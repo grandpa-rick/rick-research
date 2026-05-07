@@ -44,7 +44,7 @@ Four paths, four files:
 
 - **`questions/closed-form-positivity-criteria.md`** (NEW) — the B_2 sufficient condition λ = k·θ_L (long-root direction) does NOT extend to B_3 as λ = (k,k,0): the latter is non-acyclic-negative. So clean closed-form positivity criteria break beyond rank 2. Open: is there *any* uniform closed-form positivity criterion across rank, or is the boundary between acyclic and non-acyclic cells genuinely irregular and only describable case-by-case via Verma support intersections?
 
-- **`questions/q-zero-CHA.md`** — OQ4. K_0-level (Krob–Thibon) and derived-level (Almousa–Lu) both answered. Open extensions: type B (NSym^B from H^B_*(0) — central open gap; Mantaci-Reutenauer is candidate), cyclotomic, and **the non-acyclic side**: do there exist 0-Hecke-style towers whose Almousa–Lu-style complexes are bigraded-non-acyclic? Their K_0 would categorify a Hopf algebra with negative structure constants.
+- **`questions/q-zero-CHA.md`** — OQ4. K_0-level (Krob–Thibon) and derived-level (Almousa–Lu) both answered. Open extensions: type B (NSym^B from H^B_*(0) — central open gap; Mantaci-Reutenauer is candidate; **type B candidate path: P^B_α via Huang-style SRT, then Krob-Thibon iso**. Defant-Searles arXiv:2404.04961 builds only the QSym^B side (G_0 → QSym^B), not P^B_α / NSym^B — peripheral to the construction), cyclotomic, and **the non-acyclic side**: do there exist 0-Hecke-style towers whose Almousa–Lu-style complexes are bigraded-non-acyclic? Their K_0 would categorify a Hopf algebra with negative structure constants.
 
 ## What's been built
 
@@ -66,6 +66,7 @@ Four paths, four files:
 
 `projects/papers/almousa-lu-notes.md` — close-reading notes on arXiv:2601.13324.
 `projects/papers/choi-kim-lee-notes.md` — close-reading notes on arXiv:2412.20757.
+`projects/papers/defant-searles-notes.md` — close-reading notes on arXiv:2404.04961 (read 2026-05-07): builds QSym^B side (G_0 → QSym^B) only, does NOT build P^B_α / NSym^B. NSym^B gap remains; Almousa-Lu ribbon-complex machinery premature without P^B_α.
 
 ## Next session focus (priority order)
 
@@ -73,7 +74,7 @@ Four paths, four files:
 
 **P1 — Write up the spin-shift mechanism cleanly.** This is the *actual content* of the B_3 test — the integer-pair χ-tautology is interesting but the half-integer support shift forcing acyclicity is the genuine theorem. Draft a precise statement: for spin λ in B_n, the supports of M(w·λ)_0 across w ∈ W lie in disjoint half-integer cosets of the integer weight lattice, hence cannot cancel in bigrading, hence χ-acyclic implies acyclic implies positive. Should generalize to all simply-laced + B/C/D from short/long-root parity argument alone. **High-value, mostly write-up.** (Likely subsumed into P0 if (SA) is the right framing.)
 
-**P2 — NSym^B from Defant–Searles.** Read arXiv:2404.04961 (CJM 2026, technical foundation for Kim-Searles). Examine type-B 0-Hecke-Clifford structure for Almousa–Lu-style ribbon complex applicability. Goal: build NSym^B = K_0^{proj}(H^B_*(0)) explicitly as the missing half of Krob-Thibon^B.
+**P2 — NSym^B: P^B_α via Huang-style type-B SRT.** Defant-Searles arXiv:2404.04961 (read 2026-05-07) constructs only the QSym^B side (G_0(H^B_n(0)) → QSym^B); does NOT build NSym^B = K_0^proj or any indecomposable projective P^B_α. The actual gap is constructing P^B_α with a Huang-style type-B SRT model — Almousa-Lu's ribbon-complex machinery is premature without P^B_α as input. Right next paper is Kim-Searles 2026 arXiv:2601.22926 (the type-B poset-modules sequel), or Chow 2001 thesis, or Huang 2016 (whether anyone extended SRT to type B), or Bergeron-Hivert-Thibon math/0307372 (Mantaci-Reutenauer Hopf-algebraically).
 
 **P3 — Type-D test of the conjecture.** Adapt `bgg_decomposition_B3.py` to D_4 (W(D_4) = 192, 12 positive roots). Spin lattice in type D is half-spin (not full spin) — different parity structure. If dichotomy still holds with appropriate redefinition of "spin," that pins down the support-shift mechanism as the real engine, not type-specific accident. Concrete, parallel to today's work.
 

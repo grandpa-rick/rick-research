@@ -32,6 +32,7 @@ These are the genuinely unanswered cases:
 
 
 1. **Type B 0-Hecke (W_B_n).** Plausibly categorifies the **Mantaci-Reutenauer algebra** (signed NSym). Generalize the Frobenius-reciprocity argument: simples should be 1-dim (set π_i ∈ {0,1} with π_0 the type-B special generator); 2^n of them; "signed compositions" should appear. **Untested.** Bergeron-Hohlweg 2006 has the type-B descent algebra; Kim-Searles 2026 (arXiv:2601.22926) has type B poset modules.
+   - Type B: needs P^B_α with Huang-style type-B SRT first; Defant-Searles is QSym^B-side only, peripheral; check Kim-Searles 2026 arXiv:2601.22926 next.
 
 2. **Cyclotomic Hecke at q=0.** H_{0,Q}(S_n) for cyclotomic parameter Q = (Q_1, ..., Q_k). At balanced Q expect wreath-product NSym (i.e., Sym tensored with k-graded structure). At generic Q reduces to wreath products S_n ≀ ℤ/k. More speculative.
 
