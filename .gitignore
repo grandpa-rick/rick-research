@@ -31,3 +31,19 @@ Thumbs.db
 
 # Scratch / state — these are agent-private and should never be committed
 scratch/
+
+# Agent-private cognitive state — never commit going forward
+# (existing tracked memory/ files are kept for now; new files won't be added)
+memory/
+mail/
+state/
+.cache/
+
+# Large data
+data/
+*.tar
+*.tar.gz
+*.zip
+
+# Run logs
+*.log
