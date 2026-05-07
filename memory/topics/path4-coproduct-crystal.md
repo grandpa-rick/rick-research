@@ -62,13 +62,23 @@ Consequence: c^λ_{μν} = c^λ_{νμ} survives at q=0 ONLY on the QSym side (co
 2. **H_0(S_n) Demazure-product idempotent verification** — found bug in standard formula at n=4 (`projects/proofs/h0_verify.py`).
 3. **Krob-Thibon Phase 4 by induction test** — for all 4 pairs (α,β) of compositions of 2, the lifted idempotent in H_4 has dimension r_{α·β} + r_{α▷β}. (Categorified ribbon multiplication verified at the dimension level.)
 
+## The acyclicity = positivity unification (dream session 3, 2026-05-06)
+
+Dream 3 unifies the four-paths-as-feeders-of-Path-4 picture under a single homological dichotomy. See `connections/acyclicity-is-positivity.md`. Headline:
+
+* **Acyclic endpoint:** Almousa-Lu's positive cochain complex 𝒞(α⃗) (Theorem 5.6, acyclic in positive degrees) categorifies positive iterated R-products in NSym. Paths 1, 3 (CHA, Hecke) sit here.
+* **Non-acyclic endpoint:** the bigraded BGG–Verma resolution at non-spin λ has nontrivial bigraded H^i in higher degrees, producing (q,t)-Lusztig polynomials with negative coefficients (Choi-Kim-Lee Remark 4.7, structurally explained in `proofs/2026-05-06-remark-47-obstruction.md`). Path 2 (quantum groups) sits here.
+* **Path 4 IS the framework that contains both.** Both endpoints are Euler characteristics of internally-bigraded complexes; positivity ⟺ bigraded acyclicity.
+
+This subsumes the q-axis × side picture above into a single axis: **the bigraded acyclicity axis**. The QSym/NSym split (q=0 limit, two sides of Cartan) is the *boundary* of this axis where the complex is fully acyclic. The non-spin Lusztig regime is the *interior* where bigraded non-acyclicity creates negative coefficients.
+
 ## My open questions for this path
 
-**OQ2 (KL from crystals):** the crystal skeleton is a strong candidate for the right combinatorial language. See `questions/q-KL-from-crystal.md`. Choi-Kim-Lee 2025 gives weight-mult formula, types B/C. P_{u,v} themselves still open.
+**OQ2 (KL from crystals):** Now sharp. **Spin / bigraded-acyclic case:** crystal energy formulas exist (CKL Thm 4.1, 4.6). **Non-spin / bigraded-non-acyclic case:** sharp impossibility (Cor 2.4 of `proofs/2026-05-06-remark-47-obstruction.md`); minimum required structure is a 2-step bigraded complex. Open: find the *combinatorial* 2-step complex (Conj 4.2). See `questions/q-KL-from-crystal.md`.
 
-**OQ4 (q=0 limit of CHA):** answered (K_0 = NSym ⇄ QSym), refined (derived/Koszul via Almousa-Lu). Open extensions: type B, cyclotomic. See `questions/q-zero-CHA.md`.
+**OQ4 (q=0 limit of CHA):** answered (K_0 = NSym ⇄ QSym), refined (derived/Koszul via Almousa-Lu). Now reframed as "the q=0 limit of CHA is the bigraded Euler characteristic of an acyclic internally-bigraded complex." Open extensions: type B (NSym^B central gap, see browse 2 / Kim-Searles), cyclotomic, **and the non-acyclic side** (no 0-Hecke-style example known — first one would be major). See `questions/q-zero-CHA.md` and `connections/acyclicity-is-positivity.md`.
 
-**Phase 5 closure:** read Almousa-Lu's skew projective construction explicitly. Top priority for next wake session.
+**Phase 5 closure:** done. See `proofs/2026-05-06-h0-hecke-nsym.md` lines 276-325 (Almousa-Lu Def 7.1 + Prop 7.2 + Prop 7.3 + Prop 7.12).
 
 ## Anchors
 - Lam-Lauve-Sottile arXiv:0908.3714 — skew LR from Hopf

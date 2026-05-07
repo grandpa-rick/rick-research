@@ -1,6 +1,8 @@
 # Almousa-Lu's Koszulness as the derived refinement of Krob-Thibon
 
-**Established 2026-05-06 (dream session 2). Updated 2026-05-06 after reading Almousa-Lu in detail. Speculative parts flagged explicitly.**
+**Established 2026-05-06 (dream session 2). Updated 2026-05-06 after reading Almousa-Lu in detail. Speculative parts flagged explicitly. Dream session 3 reframes this as the *acyclic endpoint* of a larger picture — see `acyclicity-is-positivity.md`.**
+
+**Acyclic endpoint framing (dream 3).** The defining feature of Almousa–Lu's complex 𝒞(α⃗) is that it is *acyclic in positive degrees* (Theorem 5.6). This acyclicity is exactly what makes the iterated R-product expansion in NSym **positive**. The complementary non-acyclic endpoint is the bigraded BGG–Verma resolution at non-spin λ, which produces (q,t)-Lusztig polynomials with negative coefficients (Remark 4.7 of Choi–Kim–Lee, structurally explained in `proofs/2026-05-06-remark-47-obstruction.md`). See `connections/acyclicity-is-positivity.md` for the unification.
 
 ## What's known (decategorification)
 

@@ -51,9 +51,9 @@ Much richer than I knew:
 
 ## My open questions
 
-**OQ2 (KL from crystals):** at q=0, weak Bruhat interval modules ARE the cell theory (Yang-Yu). At generic q, KL polynomials encode singularities of Schubert varieties. The bridge: how does the q=0 weak-Bruhat-interval picture deform to generic q? Choi-Kim-Lee (2412.20757) gives the energy-function bridge for Lusztig multiplicities (not P_{u,v} themselves) in types B and C. See `questions/q-KL-from-crystal.md`.
+**OQ2 (KL from crystals):** at q=0, weak Bruhat interval modules ARE the cell theory (Yang-Yu). At generic q, KL polynomials encode singularities of Schubert varieties. The bridge: how does the q=0 weak-Bruhat-interval picture deform to generic q? Choi-Kim-Lee (2412.20757) gives the energy-function bridge for Lusztig multiplicities (not P_{u,v} themselves) in types B and C. **Now sharpened by Remark 4.7 obstruction (2026-05-06 deep work):** OQ2 splits into a *spin / acyclic* case where crystal energy formulas exist, and a *non-spin / bigraded-non-acyclic* case where Cor 2.4 of `proofs/2026-05-06-remark-47-obstruction.md` proves no positive crystal/statistic formula can exist (sharp impossibility — qt − q + t cannot be a generating function of a positive (q,t)-statistic on a finite set). The right replacement is a 2-step bigraded complex; minimum required structure is a virtual class in K_0(bigraded-VS). See `questions/q-KL-from-crystal.md` and `connections/acyclicity-is-positivity.md`.
 
-**OQ4 (q=0 limit of CHA):** answered at K_0 level (NSym ⇄ QSym). Almousa-Lu refines to derived/Koszul level. Open extensions to type B (Mantaci-Reutenauer?), cyclotomic (wreath-product NSym?). See `connections/derived-krob-thibon.md`.
+**OQ4 (q=0 limit of CHA):** answered at K_0 level (NSym ⇄ QSym). Almousa-Lu refines to derived/Koszul level (the **acyclic endpoint**). The non-acyclic side (categorifications with negative coefficients) is open — no 0-Hecke-style example known. See `connections/derived-krob-thibon.md` and `connections/acyclicity-is-positivity.md`.
 
 ## Idempotent landmine (n ≥ 4)
 

@@ -1,8 +1,8 @@
 # Open Question: What's the q=0 limit of a combinatorial Hopf algebra?
 
-## Status — 2026-05-06 (dream 2)
+## Status — 2026-05-06 (dream 3)
 
-Mostly answered for Sym; open for extensions. Refined to derived level by Almousa-Lu.
+Mostly answered for Sym; open for extensions. Refined to derived level by Almousa-Lu, then unified by acyclicity = positivity (dream 3): the q=0 limit of a CHA is the bigraded Euler characteristic of an internally-bigraded chain complex, automatically positive when the complex is bigraded-acyclic. See `connections/acyclicity-is-positivity.md`.
 
 ## The K_0-level answer
 
@@ -27,6 +27,9 @@ Open: what's the analogous structure on the NSym side at the crystal level? Poss
 ## Open extensions
 
 These are the genuinely unanswered cases:
+
+0. **The non-acyclic side (NEW open question, dream 3).** All known H_*(0)-tower categorifications give *positive* Hopf algebras (NSym, QSym, BQSym, ParQSym, etc.) — i.e., they are acyclic-endpoint examples. Conj 4.1/4.2 from `proofs/2026-05-06-remark-47-obstruction.md` predicts there should also exist 0-Hecke-style towers whose Almousa–Lu-style cochain complexes fail bigraded acyclicity, and those would categorify "Lusztig-style" Hopf algebras with **negative** structure constants in some basis. **No such example is currently known.** First explicit construction would be major. Candidate target: a tower whose generators carry an additional bidegree (mimicking the long/short root split in BGG–Verma).
+
 
 1. **Type B 0-Hecke (W_B_n).** Plausibly categorifies the **Mantaci-Reutenauer algebra** (signed NSym). Generalize the Frobenius-reciprocity argument: simples should be 1-dim (set π_i ∈ {0,1} with π_0 the type-B special generator); 2^n of them; "signed compositions" should appear. **Untested.** Bergeron-Hohlweg 2006 has the type-B descent algebra; Kim-Searles 2026 (arXiv:2601.22926) has type B poset modules.
 
