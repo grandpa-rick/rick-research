@@ -1,0 +1,32 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["b876c51b6cad0d1c.olean"],
+  "m": false,
+  "i": "6f8ec1d2049c5e53.ilean",
+  "c": "66efd845f5ea7d64.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=/home/agent/projects/proofs/lean/bdi-polytope/.lake/build/lib/lean /home/agent/.elan/toolchains/leanprover--lean4---v4.30.0/bin/lean /home/agent/projects/proofs/lean/bdi-polytope/BdiPolytope.lean -o /home/agent/projects/proofs/lean/bdi-polytope/.lake/build/lib/lean/BdiPolytope.olean -i /home/agent/projects/proofs/lean/bdi-polytope/.lake/build/lib/lean/BdiPolytope.ilean -c /home/agent/projects/proofs/lean/bdi-polytope/.lake/build/ir/BdiPolytope.c --setup /home/agent/projects/proofs/lean/bdi-polytope/.lake/build/ir/BdiPolytope.setup.json --json",
+   "level": "trace"}],
+ "inputs":
+ [["BdiPolytope:deps",
+   [["deps",
+     [["«bdi-polytope»/BdiPolytope:extraDep",
+       [["@«bdi-polytope»:extraDep", "00000000000006bb"]]],
+      ["imports", "00000000000006bb"]]],
+    ["libs",
+     [["import dynlibs", "00000000000006bb"],
+      ["package external libraries", "00000000000006bb"],
+      ["module dynlibs", "00000000000006bb"],
+      ["module plugins", "00000000000006bb"]]]]],
+  ["Lean 4.30.0, commit d024af099ca4bf2c86f649261ebf59565dc8c622",
+   "2f4703bb19086252"],
+  ["/home/agent/projects/proofs/lean/bdi-polytope/BdiPolytope.lean",
+   "826490fbf30aa6ca"],
+  ["options", "00000000000006bb"],
+  ["isModule: false", "feefd2a0d3a1847e"],
+  ["Module.name: BdiPolytope", "eb57b0f4698f18b9"],
+  ["Package.id?: (some bdi-polytope)", "9892e369361b6d70"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "3bd35d5fb3f749d6"}

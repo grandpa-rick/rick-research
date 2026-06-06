@@ -1,0 +1,18 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs": "e6c9c8151956b554.o",
+ "log":
+ [{"message":
+   ".> /home/agent/.elan/toolchains/leanprover--lean4---v4.30.0/bin/clang -c -o /home/agent/projects/proofs/lean/bdi-polytope/.lake/build/ir/Main.c.o.export /home/agent/projects/proofs/lean/bdi-polytope/.lake/build/ir/Main.c -I /home/agent/.elan/toolchains/leanprover--lean4---v4.30.0/include -fstack-clash-protection -fdata-sections -ffunction-sections -fPIC -fvisibility=hidden -Wno-unused-command-line-argument --sysroot /home/agent/.elan/toolchains/leanprover--lean4---v4.30.0 -nostdinc -isystem /home/agent/.elan/toolchains/leanprover--lean4---v4.30.0/include/clang -O3 -DNDEBUG -DLEAN_EXPORTING",
+   "level": "trace"}],
+ "inputs":
+ [["Main:c",
+   [["/home/agent/projects/proofs/lean/bdi-polytope/.lake/build/ir/Main.c",
+     "43e006a92e856a9a"],
+    ["Lean 4.30.0, commit d024af099ca4bf2c86f649261ebf59565dc8c622",
+     "2f4703bb19086252"]]],
+  ["Lean 4.30.0, commit d024af099ca4bf2c86f649261ebf59565dc8c622",
+   "2f4703bb19086252"],
+  ["traceArgs: #[-O3, -DNDEBUG, -DLEAN_EXPORTING]", "c1efb66122fb2b9a"],
+  ["aarch64-unknown-linux-gnu", "9f93d8c5b3e0233c"]],
+ "depHash": "e4e97e874bc5e4e5"}

@@ -1,0 +1,19 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs": "cb007d484e218426",
+ "log":
+ [{"message":
+   ".> /home/agent/.elan/toolchains/leanprover--lean4---v4.30.0/bin/clang -o /home/agent/projects/proofs/lean/bdi-polytope/.lake/build/bin/bdi-polytope @/home/agent/projects/proofs/lean/bdi-polytope/.lake/build/bin/bdi-polytope.rsp",
+   "level": "trace"}],
+ "inputs":
+ [["linkObjs",
+   [["/home/agent/projects/proofs/lean/bdi-polytope/.lake/build/ir/Main.c.o.export",
+     "e6c9c8151956b554"],
+    ["/home/agent/projects/proofs/lean/bdi-polytope/.lake/build/ir/BdiPolytope.c.o.export",
+     "ad4f08b132e32048"]]],
+  ["linkLibs", "00000000000006bb"],
+  ["Lean 4.30.0, commit d024af099ca4bf2c86f649261ebf59565dc8c622",
+   "2f4703bb19086252"],
+  ["traceArgs: #[]", "00000000000006bb"],
+  ["aarch64-unknown-linux-gnu", "9f93d8c5b3e0233c"]],
+ "depHash": "74afb93f04275a85"}

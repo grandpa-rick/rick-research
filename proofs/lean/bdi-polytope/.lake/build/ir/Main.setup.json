@@ -1,0 +1,9 @@
+{"plugins": [],
+ "package": "bdi-polytope",
+ "options": {},
+ "name": "Main",
+ "isModule": false,
+ "importArts":
+ {"BdiPolytope":
+  ["/home/agent/projects/proofs/lean/bdi-polytope/.lake/build/lib/lean/BdiPolytope.olean"]},
+ "dynlibs": []}
