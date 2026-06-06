@@ -1,0 +1,43 @@
+=== B_2 special case: exceptional iso so_5 = sp_4 ===
+  Total B_2 HW configs (max_c=6): 34
+  Kwon_chain trivially true on B_2: True
+  Any config with M_1 > 0 at B_2: False
+  → At B_2, both M_1 = 0 and T_1 <= B_1 are forced by HW_1.
+  → B_2's HW set is trivially constrained; the rank-2 'exceptional iso' regime.
+
+=== B_3, max_c=4: 72 HW configs, 54 weights ===
+  Weights where Kwon-passing < HW-count: 8
+  Weights where Kwon-passing = 0 but HW > 0: 3
+  Total HW: 72, total Kwon-passing: 64
+  Deficit (HW - Kwon-passing): 8
+
+=== B_3, max_c=5: 147 HW configs, 90 weights ===
+  Weights where Kwon-passing < HW-count: 15
+  Weights where Kwon-passing = 0 but HW > 0: 0
+  Total HW: 147, total Kwon-passing: 130
+  Deficit (HW - Kwon-passing): 17
+
+=== B_3, max_c=6: 286 HW configs, 149 weights ===
+  Weights where Kwon-passing < HW-count: 33
+  Weights where Kwon-passing = 0 but HW > 0: 6
+  Total HW: 286, total Kwon-passing: 246
+  Deficit (HW - Kwon-passing): 40
+
+=== B_3, max_c=7: 509 HW configs, 215 weights ===
+  Weights where Kwon-passing < HW-count: 52
+  Weights where Kwon-passing = 0 but HW > 0: 0
+  Total HW: 509, total Kwon-passing: 434
+  Deficit (HW - Kwon-passing): 75
+
+=== B_4, max_c=4: 221 HW configs, 140 weights ===
+  Weights where Kwon-passing < HW-count: 35
+  Weights where Kwon-passing = 0 but HW > 0: 12
+  Total HW: 221, total Kwon-passing: 178
+  Deficit (HW - Kwon-passing): 43
+
+=== B_4, max_c=5: 566 HW configs, 264 weights ===
+  Weights where Kwon-passing < HW-count: 79
+  Weights where Kwon-passing = 0 but HW > 0: 6
+  Total HW: 566, total Kwon-passing: 446
+  Deficit (HW - Kwon-passing): 120
+

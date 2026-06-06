@@ -1,0 +1,30 @@
+=== B_2 chain+singleton verification (content ≤ 4) ===
+  70/70 configs: (E_π, E_π) ≡_∞ 1. PASS.
+
+=== B_3 chain+singleton verification (content ≤ 3) ===
+  120/120 configs: (E_π, E_π) ≡_∞ 1. PASS.
+
+=== Sample diagonal entries at B_2 ===
+  cfg=(0, 0, 0, 0): (E_π, E_π) = 1
+             ≈ 1 + O(t^4) at qh = 1/t ↘ 0
+  cfg=(1, 0, 0, 0): (E_π, E_π) = qh**2/(qh**2 - 1)
+             ≈ t**2 + 1 + O(t^4) at qh = 1/t ↘ 0
+  cfg=(0, 0, 0, 1): (E_π, E_π) = qh**2/(qh**2 - 1)
+             ≈ t**2 + 1 + O(t^4) at qh = 1/t ↘ 0
+  cfg=(2, 0, 0, 0): (E_π, E_π) = qh**6/((qh**2 - 1)*(qh**4 - 1))
+             ≈ t**2 + 1 + O(t^4) at qh = 1/t ↘ 0
+  cfg=(0, 1, 1, 0): (E_π, E_π) = q**4/(q**2 - 1)**2
+             ≈ 1 + O(t^4) at qh = 1/t ↘ 0
+  cfg=(1, 1, 1, 1): (E_π, E_π) = q**4*qh**4/((q**2 - 1)**2*(qh**2 - 1)**2)
+             ≈ 2*t**2 + 1 + O(t^4) at qh = 1/t ↘ 0
+  cfg=(0, 2, 2, 0): (E_π, E_π) = q**12/((q**2 - 1)**2*(q**4 - 1)**2)
+             ≈ 1 + O(t^4) at qh = 1/t ↘ 0
+
+=== Off-diagonal entries ===
+By Lusztig [Lus93] Prop 38.2.3 / §38.2: the PBW basis associated
+to a convex order on R^+ is *exactly* orthogonal under the Kashiwara
+form on f. Hence (E_π, E_π') = 0 whenever π ≠ π' (across all
+weights, not just within blocks). No numerical check needed.
+
+ALL DIAGONAL CHECKS PASS.
+Verdict: (W) — chain-factor basis is almost-orthonormal.

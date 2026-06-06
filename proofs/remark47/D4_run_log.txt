@@ -1,0 +1,177 @@
+======================================================================
+Sanity tests — Kostant function
+======================================================================
+K_qt((0,0,0,0)) = 1  (expected: 1)
+K_qt((1,1,0,0)) = q + 4*qt + 6*qt^2 + 3*qt^3 + qt^4
+   brute force:  q + 4*qt + 6*qt^2 + 3*qt^3 + qt^4
+   MATCH: True
+K_qt((2,0,0,0)) = 3*qt + 6*qt^2 + 7*qt^3 + 3*qt^4 + qt^5
+   brute force:  3*qt + 6*qt^2 + 7*qt^3 + 3*qt^4 + qt^5
+   MATCH: True
+K_qt((1,1,1,1)) = 3*q^2 + 6*q^2t + 7*q^2t^2 + 3*q^2t^3 + q^2t^4
+   brute force:  3*q^2 + 6*q^2t + 7*q^2t^2 + 3*q^2t^3 + q^2t^4
+   MATCH: True
+K_qt((1,1,1,-1)) = 3*qt + 6*qt^2 + 7*qt^3 + 3*qt^4 + qt^5
+   brute force:  3*qt + 6*qt^2 + 7*qt^3 + 3*qt^4 + qt^5
+   MATCH: True
+K_qt((1,1,1,-1)) = K_qt((1,1,1,1)) at the matching bidegrees?
+
+Building W(D_4) ...
+|W(D_4)| = 192 (expected 192)
+Length distribution: {0: 1, 1: 4, 2: 9, 3: 16, 4: 23, 5: 28, 6: 30, 7: 28, 8: 23, 9: 16, 10: 9, 11: 4, 12: 1}
+Expected from Poincaré [2][4][4][6]: {0: 1, 1: 4, 2: 9, 3: 16, 4: 23, 5: 28, 6: 30, 7: 28, 8: 23, 9: 16, 10: 9, 11: 4, 12: 1}
+Sum check: 192 == 192? True
+
+======================================================================
+INTEGER pairs, λ_1 ≤ 3
+======================================================================
+Note on bigrading: in D_4 (simply-laced), the (q,t)-bigrading L=e_i+e_j,
+S=e_i-e_j is NOT W(D_4)-invariant.  We thus track BOTH the bigraded χ_{q,t}
+and the canonical single-graded χ_q (every root contributes q^1).
+
+Total integer pairs (λ ≥ μ in box, both dominant): 1811
+Pairs with nonzero contribution: 562
+
+Bigraded confusion (acyclic_qt, positive_qt):
+  (True, True): 429
+  (True, False): 0
+  (False, True): 0
+  (False, False): 133
+  Off-diagonal: (True, False) = 0, (False, True) = 0
+  Off-diagonal empty (tautological sanity check passes).
+
+Single-graded χ_q analysis:
+  positive_q = True: 562
+  positive_q = False: 0
+  ALL integer pairs have nonneg single-graded χ_q (consistent with
+  Kazhdan-Lusztig positivity for the simply-laced type D_4).
+
+======================================================================
+SPIN pairs, λ_1 ≤ 9/2
+======================================================================
+Total spin pairs: 13284
+Pairs with nonzero contribution: 3912
+
+Bigraded confusion (acyclic_qt, positive_qt):
+  (True, True): 3031
+  (True, False): 0
+  (False, True): 0
+  (False, False): 881
+
+Single-graded χ_q analysis:
+  positive_q = True: 3912
+  positive_q = False: 0
+  ALL spin pairs have nonneg single-graded χ_q.
+  (Consistent with KL positivity at simply-laced D_4.)
+
+Breakdown by (λ_type, μ_type) — type = sign of last coord (spin1 = +, spin2 = -):
+  ('spin1', 'spin1'): nonzero=1137, acyclic+pos_qt=1084, nonac+neg_qt=53, pos_q=1137, neg_q=0
+  ('spin1', 'spin2'): nonzero=819, acyclic+pos_qt=701, nonac+neg_qt=118, pos_q=819, neg_q=0
+  ('spin2', 'spin1'): nonzero=819, acyclic+pos_qt=594, nonac+neg_qt=225, pos_q=819, neg_q=0
+  ('spin2', 'spin2'): nonzero=1137, acyclic+pos_qt=652, nonac+neg_qt=485, pos_q=1137, neg_q=0
+
+======================================================================
+EXAMPLES (integer)
+======================================================================
+
+Pairs with both χ_{q,t} and χ_q nonneg (acyclic-and-positive bigraded):
+  λ=(0, 0, 0, 0), μ=(0, 0, 0, 0)
+    χ_{q,t} = 1
+    χ_q     = 1
+  λ=(1, 0, 0, 0), μ=(1, 0, 0, 0)
+    χ_{q,t} = 1
+    χ_q     = 1
+  λ=(1, 1, 0, 0), μ=(1, 1, 0, 0)
+    χ_{q,t} = 1
+    χ_q     = 1
+  λ=(1, 1, 1, -1), μ=(1, 1, 0, 0)
+    χ_{q,t} = t
+    χ_q     = q
+  λ=(1, 1, 1, -1), μ=(1, 1, 1, -1)
+    χ_{q,t} = 1
+    χ_q     = 1
+
+Pairs with bigraded χ_{q,t} NEGATIVE but χ_q nonneg (artifact of bigrading):
+  λ=(1, 1, 0, 0), μ=(0, 0, 0, 0)
+    χ_{q,t} = -t^2 - t^4 + q + qt + 2*qt^2 + qt^3 + qt^4
+    χ_q     = q + 2*q^3 + q^5
+  λ=(1, 1, 1, -1), μ=(0, 0, 0, 0)
+    χ_{q,t} = -t^3 - t^4 - t^5 + qt + qt^2 + 2*qt^3 + qt^4 + qt^5
+    χ_q     = q^2 + q^4 + q^6
+  λ=(2, 0, 0, 0), μ=(0, 0, 0, 0)
+    χ_{q,t} = -t^3 - t^4 - t^5 + qt + qt^2 + 2*qt^3 + qt^4 + qt^5
+    χ_q     = q^2 + q^4 + q^6
+  λ=(2, 1, 0, 0), μ=(1, 0, 0, 0)
+    χ_{q,t} = -t^2 - t^3 - t^4 + q + 2*qt + 3*qt^2 + 2*qt^3 + qt^4
+    χ_q     = q + q^2 + 2*q^3 + q^4 + q^5
+  λ=(2, 1, 1, -1), μ=(1, 0, 0, 0)
+    χ_{q,t} = -t^2 - 2*t^3 - 2*t^4 - t^5 + 2*qt + 3*qt^2 + 4*qt^3 + 2*qt^4 + qt^5
+    χ_q     = q^2 + q^3 + 2*q^4 + q^5 + q^6
+
+Pairs with χ_q NEGATIVE (would contradict KL positivity):
+  (none — KL positivity holds for all integer pairs.)
+
+======================================================================
+EXAMPLES (spin)
+======================================================================
+
+Pairs with both χ_{q,t} and χ_q nonneg:
+  λ=(Fraction(1, 2), Fraction(1, 2), Fraction(1, 2), Fraction(1, 2)) (spin1), μ=(Fraction(1, 2), Fraction(1, 2), Fraction(1, 2), Fraction(1, 2)) (spin1)
+    χ_{q,t} = 1
+    χ_q     = 1
+  λ=(Fraction(1, 2), Fraction(1, 2), Fraction(1, 2), Fraction(-1, 2)) (spin2), μ=(Fraction(1, 2), Fraction(1, 2), Fraction(1, 2), Fraction(-1, 2)) (spin2)
+    χ_{q,t} = 1
+    χ_q     = 1
+  λ=(Fraction(3, 2), Fraction(1, 2), Fraction(1, 2), Fraction(1, 2)) (spin1), μ=(Fraction(1, 2), Fraction(1, 2), Fraction(1, 2), Fraction(-1, 2)) (spin2)
+    χ_{q,t} = q + qt + qt^2
+    χ_q     = q + q^2 + q^3
+  λ=(Fraction(3, 2), Fraction(1, 2), Fraction(1, 2), Fraction(1, 2)) (spin1), μ=(Fraction(3, 2), Fraction(1, 2), Fraction(1, 2), Fraction(1, 2)) (spin1)
+    χ_{q,t} = 1
+    χ_q     = 1
+  λ=(Fraction(3, 2), Fraction(1, 2), Fraction(1, 2), Fraction(-1, 2)) (spin2), μ=(Fraction(1, 2), Fraction(1, 2), Fraction(1, 2), Fraction(1, 2)) (spin1)
+    χ_{q,t} = t + t^2 + t^3
+    χ_q     = q + q^2 + q^3
+
+Pairs with bigraded χ_{q,t} NEGATIVE but χ_q nonneg (artifact of bigrading):
+  λ=(Fraction(3, 2), Fraction(3, 2), Fraction(1, 2), Fraction(-1, 2)) (spin2), μ=(Fraction(1, 2), Fraction(1, 2), Fraction(1, 2), Fraction(-1, 2)) (spin2)
+    χ_{q,t} = -t^2 - t^3 - t^4 + q + 2*qt + 3*qt^2 + 2*qt^3 + qt^4
+    χ_q     = q + q^2 + 2*q^3 + q^4 + q^5
+  λ=(Fraction(3, 2), Fraction(3, 2), Fraction(3, 2), Fraction(-3, 2)) (spin2), μ=(Fraction(1, 2), Fraction(1, 2), Fraction(1, 2), Fraction(-1, 2)) (spin2)
+    χ_{q,t} = -t^3 - t^4 - t^5 + qt + qt^2 + 2*qt^3 + qt^4 + qt^5
+    χ_q     = q^2 + q^4 + q^6
+  λ=(Fraction(5, 2), Fraction(1, 2), Fraction(1, 2), Fraction(-1, 2)) (spin2), μ=(Fraction(1, 2), Fraction(1, 2), Fraction(1, 2), Fraction(-1, 2)) (spin2)
+    χ_{q,t} = -t^2 - 2*t^3 - 2*t^4 - t^5 + 2*qt + 3*qt^2 + 4*qt^3 + 2*qt^4 + qt^5
+    χ_q     = q^2 + q^3 + 2*q^4 + q^5 + q^6
+  λ=(Fraction(5, 2), Fraction(3, 2), Fraction(1, 2), Fraction(1, 2)) (spin1), μ=(Fraction(1, 2), Fraction(1, 2), Fraction(1, 2), Fraction(-1, 2)) (spin2)
+    χ_{q,t} = -t^3 - t^4 - t^5 - t^6 + q^2 + 3*q^2t + 5*q^2t^2 + 5*q^2t^3 + 4*q^2t^4 + 2*q^2t^5 + q^2t^6
+    χ_q     = q^2 + 2*q^3 + 4*q^4 + 4*q^5 + 3*q^6 + 2*q^7 + q^8
+  λ=(Fraction(5, 2), Fraction(3, 2), Fraction(1, 2), Fraction(-1, 2)) (spin2), μ=(Fraction(1, 2), Fraction(1, 2), Fraction(1, 2), Fraction(1, 2)) (spin1)
+    χ_{q,t} = -t^3 - t^4 - 2*t^5 - 2*t^6 - t^7 + qt + 3*qt^2 + 5*qt^3 + 6*qt^4 + 5*qt^5 + 3*qt^6 + qt^7
+    χ_q     = q^2 + 2*q^3 + 4*q^4 + 4*q^5 + 3*q^6 + 2*q^7 + q^8
+
+Pairs with χ_q NEGATIVE:
+  (none — KL positivity holds for all spin pairs.)
+
+======================================================================
+SUMMARY
+======================================================================
+INTEGER: 562 nonzero pairs.
+  Bigraded acyclic-and-positive: 429
+  Bigraded non-acyclic-and-negative: 133
+  Off-diagonal: 0 (tautological)
+  Single-graded χ_q nonneg: 562/562
+
+SPIN: 3912 nonzero pairs.
+  Bigraded acyclic-and-positive: 3031
+  Bigraded non-acyclic-and-negative: 881
+  Off-diagonal: 0 (tautological)
+  Single-graded χ_q nonneg: 3912/3912
+
+CONCLUSION:
+  The canonical (single-q) KL polynomial is positive for BOTH integer
+  and spin pairs in D_4 — consistent with KL positivity for simply-laced.
+  In D_n there is no canonical (q,t)-bigrading (all roots same length).
+  The B_n integer/spin dichotomy (which uses root-length bigrading)
+  does NOT obviously survive at D_4 because the dichotomy itself
+  requires two root lengths.
+

@@ -1,0 +1,72 @@
+======================================================================
+BDIqLR — all tests at B_2, B_3, B_4
+======================================================================
+
+==================================================
+B_2: rank-2 anchor
+==================================================
+  per-element B_2-highest: 126/126 agree, 0 disagree
+  reconstruction: 70 ok, 0 fail
+
+==================================================
+B_3
+==================================================
+  per-element B_3-highest: 792/792 agree, 0 disagree
+  multiplicity (|w|_1 <= 3, saturated): 22 agree, 0 disagree, 0 skipped
+  reconstruction: 736 ok, 0 fail
+
+==================================================
+B_4
+==================================================
+  per-element B_4-highest (chain+sing only): 1001/1001 agree, 0 disagree
+  multiplicity (|w|_1 <= 3, saturated): 39 agree, 0 disagree, 7 skipped
+
+======================================================================
+ALL TESTS PASSED.
+======================================================================
+
+========================================================================
+Re-run after promoting reconstruct to bdi_qLR.py + adding B_4 reconstruction test
+========================================================================
+
+======================================================================
+BDIqLR — all tests at B_2, B_3, B_4
+======================================================================
+
+==================================================
+B_2: rank-2 anchor
+==================================================
+  per-element B_2-highest: 126/126 agree, 0 disagree
+  reconstruction: 70 ok, 0 fail
+
+==================================================
+B_3
+==================================================
+  per-element B_3-highest: 792/792 agree, 0 disagree
+  multiplicity (|w|_1 <= 3, saturated): 22 agree, 0 disagree, 0 skipped
+  reconstruction: 736 ok, 0 fail
+
+==================================================
+B_4
+==================================================
+  per-element B_4-highest (chain+sing only): 1001/1001 agree, 0 disagree
+  multiplicity (|w|_1 <= 3, saturated): 39 agree, 0 disagree, 7 skipped
+  reconstruction: 1001 ok, 0 fail
+
+======================================================================
+ALL TESTS PASSED.
+======================================================================
+
+========================================================================
+BDIqLR multiplicity formula vs direct enumeration (saturated)
+========================================================================
+
+B_3 saturated test (weights with |w|_1 <= 3, MAX_LO=12, MAX_HI=14)
+  saturated weights: 22 (unsaturated: 0)
+  agree: 22, disagree: 0
+
+B_4 saturated test (weights with |w|_1 <= 3, MAX_LO=8, MAX_HI=10)
+  saturated weights: 39 (unsaturated: 7)
+  agree: 39, disagree: 0
+
+ALL TESTS PASSED

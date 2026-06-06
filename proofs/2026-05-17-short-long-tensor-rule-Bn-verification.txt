@@ -1,0 +1,61 @@
+=== Type-uniform witness verification at B_5 (Day 20) ===
+Proof: proofs/2026-05-17-short-long-tensor-rule-Bn.md
+
+All 45 catalog entries reproduced by type-uniform witness templates:
+
+--- Intra-chain (12 entries: 3 per chain x 4 chains) ---
+  intra MM ch1: pi=2*e1 -> delta={'e1-e5': 2, 'e1': -2} match=True
+  intra TT ch1: pi=2*e1+e5 -> delta={'e1': 2, 'e1+e5': -2} match=True
+  intra MT ch1: pi=1*e1 + 1*e1+e5 -> delta={'e1-e5': 1, 'e1+e5': -1} match=True
+  intra MM ch2: pi=2*e2 -> delta={'e2-e5': 2, 'e2': -2} match=True
+  intra TT ch2: pi=2*e2+e5 -> delta={'e2': 2, 'e2+e5': -2} match=True
+  intra MT ch2: pi=1*e2 + 1*e2+e5 -> delta={'e2-e5': 1, 'e2+e5': -1} match=True
+  intra MM ch3: pi=2*e3 -> delta={'e3-e5': 2, 'e3': -2} match=True
+  intra TT ch3: pi=2*e3+e5 -> delta={'e3': 2, 'e3+e5': -2} match=True
+  intra MT ch3: pi=1*e3 + 1*e3+e5 -> delta={'e3-e5': 1, 'e3+e5': -1} match=True
+  intra MM ch4: pi=2*e4 -> delta={'e4-e5': 2, 'e4': -2} match=True
+  intra TT ch4: pi=2*e4+e5 -> delta={'e4': 2, 'e4+e5': -2} match=True
+  intra MT ch4: pi=1*e4 + 1*e4+e5 -> delta={'e4-e5': 1, 'e4+e5': -1} match=True
+  TOTAL intra: 12/12
+
+--- Singleton-involving (9 entries: SS + 2 per chain x 4 chains) ---
+  SS: pi=2*e5 -> delta={'e5': -2} match=True
+  sing S+MB ch1: pi=1*e1 + 2*e5 -> delta={'e5': -1, 'e1-e5': 1, 'e1': -1} match=True
+  sing S+TM ch1: pi=1*e1+e5 + 1*e5 -> delta={'e1': 1, 'e1+e5': -1, 'e5': -1} match=True
+  sing S+MB ch2: pi=1*e2 + 2*e5 -> delta={'e5': -1, 'e2-e5': 1, 'e2': -1} match=True
+  sing S+TM ch2: pi=1*e2+e5 + 1*e5 -> delta={'e2': 1, 'e2+e5': -1, 'e5': -1} match=True
+  sing S+MB ch3: pi=1*e3 + 2*e5 -> delta={'e5': -1, 'e3-e5': 1, 'e3': -1} match=True
+  sing S+TM ch3: pi=1*e3+e5 + 1*e5 -> delta={'e3': 1, 'e3+e5': -1, 'e5': -1} match=True
+  sing S+MB ch4: pi=1*e4 + 2*e5 -> delta={'e5': -1, 'e4-e5': 1, 'e4': -1} match=True
+  sing S+TM ch4: pi=1*e4+e5 + 1*e5 -> delta={'e4': 1, 'e4+e5': -1, 'e5': -1} match=True
+  TOTAL singleton: 9/9
+
+--- Cross-chain (24 entries: 4 per chain pair x 6 chain pairs) ---
+  cross TT (1,2) [adjacent]: pi=1*e1 + 1*e1+e5 + 1*e2+e5 -> delta={'e1': 1, 'e2': 1, 'e1+e5': -1, 'e2+e5': -1} match=True
+  cross TM (1,2) [adjacent]: pi=1*e1+e5 + 1*e2 -> delta={'e2-e5': 1, 'e1': 1, 'e1+e5': -1, 'e2': -1} match=True
+  cross MT (1,2) [adjacent]: pi=1*e1 + 1*e2+e5 -> delta={'e2': 1, 'e1-e5': 1, 'e1': -1, 'e2+e5': -1} match=True
+  cross MM (1,2) [adjacent]: pi=1*e1 + 2*e2 -> delta={'e2': -1, 'e2-e5': 1, 'e1-e5': 1, 'e1': -1} match=True
+  cross TT (1,3) [non-adjacent]: pi=1*e1 + 1*e1+e5 + 1*e3+e5 -> delta={'e1': 1, 'e3': 1, 'e1+e5': -1, 'e3+e5': -1} match=True
+  cross TM (1,3) [non-adjacent]: pi=1*e1+e5 + 1*e3 -> delta={'e3-e5': 1, 'e1': 1, 'e1+e5': -1, 'e3': -1} match=True
+  cross MT (1,3) [non-adjacent]: pi=1*e1 + 1*e3+e5 -> delta={'e3': 1, 'e1-e5': 1, 'e1': -1, 'e3+e5': -1} match=True
+  cross MM (1,3) [non-adjacent]: pi=1*e1 + 2*e3 -> delta={'e3': -1, 'e3-e5': 1, 'e1-e5': 1, 'e1': -1} match=True
+  cross TT (1,4) [non-adjacent]: pi=1*e1 + 1*e1+e5 + 1*e4+e5 -> delta={'e1': 1, 'e4': 1, 'e1+e5': -1, 'e4+e5': -1} match=True
+  cross TM (1,4) [non-adjacent]: pi=1*e1+e5 + 1*e4 -> delta={'e4-e5': 1, 'e1': 1, 'e1+e5': -1, 'e4': -1} match=True
+  cross MT (1,4) [non-adjacent]: pi=1*e1 + 1*e4+e5 -> delta={'e4': 1, 'e1-e5': 1, 'e1': -1, 'e4+e5': -1} match=True
+  cross MM (1,4) [non-adjacent]: pi=1*e1 + 2*e4 -> delta={'e4': -1, 'e4-e5': 1, 'e1-e5': 1, 'e1': -1} match=True
+  cross TT (2,3) [adjacent]: pi=1*e2 + 1*e2+e5 + 1*e3+e5 -> delta={'e2': 1, 'e3': 1, 'e2+e5': -1, 'e3+e5': -1} match=True
+  cross TM (2,3) [adjacent]: pi=1*e2+e5 + 1*e3 -> delta={'e3-e5': 1, 'e2': 1, 'e2+e5': -1, 'e3': -1} match=True
+  cross MT (2,3) [adjacent]: pi=1*e2 + 1*e3+e5 -> delta={'e3': 1, 'e2-e5': 1, 'e2': -1, 'e3+e5': -1} match=True
+  cross MM (2,3) [adjacent]: pi=1*e2 + 2*e3 -> delta={'e3': -1, 'e3-e5': 1, 'e2-e5': 1, 'e2': -1} match=True
+  cross TT (2,4) [non-adjacent]: pi=1*e2 + 1*e2+e5 + 1*e4+e5 -> delta={'e2': 1, 'e4': 1, 'e2+e5': -1, 'e4+e5': -1} match=True
+  cross TM (2,4) [non-adjacent]: pi=1*e2+e5 + 1*e4 -> delta={'e4-e5': 1, 'e2': 1, 'e2+e5': -1, 'e4': -1} match=True
+  cross MT (2,4) [non-adjacent]: pi=1*e2 + 1*e4+e5 -> delta={'e4': 1, 'e2-e5': 1, 'e2': -1, 'e4+e5': -1} match=True
+  cross MM (2,4) [non-adjacent]: pi=1*e2 + 2*e4 -> delta={'e4': -1, 'e4-e5': 1, 'e2-e5': 1, 'e2': -1} match=True
+  cross TT (3,4) [adjacent]: pi=1*e3 + 1*e3+e5 + 1*e4+e5 -> delta={'e3': 1, 'e4': 1, 'e3+e5': -1, 'e4+e5': -1} match=True
+  cross TM (3,4) [adjacent]: pi=1*e3+e5 + 1*e4 -> delta={'e4-e5': 1, 'e3': 1, 'e3+e5': -1, 'e4': -1} match=True
+  cross MT (3,4) [adjacent]: pi=1*e3 + 1*e4+e5 -> delta={'e4': 1, 'e3-e5': 1, 'e3': -1, 'e4+e5': -1} match=True
+  cross MM (3,4) [adjacent]: pi=1*e3 + 2*e4 -> delta={'e4': -1, 'e4-e5': 1, 'e3-e5': 1, 'e3': -1} match=True
+  TOTAL cross: 24/24
+
+GRAND TOTAL: 45/45
+Verifies: type-uniform witness templates of Phase C reproduce all 45 catalog entries at B_5.

@@ -1,0 +1,585 @@
+% ==============================================================================
+% v3 BDI §3 — The cumulative carry $P_a$ as analytical backbone
+% Standalone fragment; to be \input{} into v3 main.tex.
+% ==============================================================================
+%
+% Macros the v3 preamble must provide (inherited from v2 main.tex unless flagged NEW):
+%
+%   \Kp, \NT, \Sing, \Chain, \MB, \TM, \Cmid, \Csing, \KK, \Z, \Zn,
+%   \g, \eps, \labr, \labl                                            (v2)
+%
+%   \newcommand{\Pcum}{P^{\mathrm{cum}}}                              (NEW)
+%   \newcommand{\Pn}{\mathcal{P}}                                     (NEW; chain polytope)
+%   \newcommand{\hw}{\mathrm{hw}}                                     (NEW)
+%   \newcommand{\piNT}{\pi^{\NT}}                                     (NEW)
+%   \newcommand{\Rec}{\mathcal{R}}                                    (NEW; recording set)
+%   \newcommand{\HW}{\mathrm{HW}}                                     (NEW)
+%   \DeclareMathOperator{\wt}{wt}                                     (NEW)
+%
+% Theorem environments are those declared in v2: theorem, proposition, lemma,
+% corollary, definition, example, remark.  Numbering continues from \section{}.
+% ==============================================================================
+
+\section{The cumulative carry $P_a$ as analytical backbone}\label{sec:carry}
+
+%-------------------------------------------------------------------------------
+\subsection{Roadmap}\label{ssec:carry-roadmap}
+
+Throughout this section $\g$ is of type $B_n$, $n \ge 2$, and $\pi \in \Kp(\infty)$
+has the chain--sing coordinates
+\[
+   \bigl((M_a, B_a, T_a)_{a=1}^{n-1},\; S,\; \piNT\bigr)
+\]
+of \S\ref{sec:prelim}. We isolate a single scalar, the \emph{cumulative carry}
+\[
+   P_a \;:=\; \sum_{b=1}^{a} 2(B_b - T_b), \qquad P_0 := 0,
+\]
+and show that it carries the entire short-simple analytic content of the
+chain--singleton decomposition at $B_n$. The carry plays five structurally
+distinct roles, the first four forced by the single left-to-right bracket scan
+of Theorem~\ref{thm:carry-A}, the fifth obtained from the first by Farkas-polar:
+
+\begin{enumerate}[label=(R\arabic*),leftmargin=2.5em]
+  \item \textbf{Descent recording} (\S\ref{ssec:carry-descent}). $P_a$ is one-sided
+    monotone along forward $\widetilde{e}_n$-descent. This obstructs any local
+    witness for the image $\Rec(\pi^{\hw})$, closing v3 OPEN-3 by impossibility.
+  \item \textbf{Singleton cross-chain coupling} (\S\ref{ssec:carry-cross}). The
+    unique cross-chain condition in the $B_n$-highest indicator is the carry
+    sum lift $[\,S \le P_{n-1}\,]$, type-uniform in $n$.
+  \item \textbf{Carry-recursive factorisation} (\S\ref{ssec:carry-factor}). Per-chain
+    MB and TM tests couple chain $a$ to all prior chains through $P_{a-1}$;
+    the $B_n$-HW indicator factors carry-recursively, not as a strict tensor.
+  \item \textbf{Polytope completeness} (\S\ref{ssec:carry-polytope}). The chain-side
+    HW polytope $\Pn_n$ has exactly $2n - 3$ non-redundant carry-derived facets,
+    namely $\{L_a, U_a : 2 \le a \le n-1\} \cup \{E\}$, with $L_1$ degenerate
+    and $U_1$ redundant.
+  \item \textbf{Weight-space simplicial cone} (\S\ref{ssec:weight-simplicial}).
+    Under the chain-to-weight map $\Phi$, the image cone $\Kp_n \subset
+    \mathbb{R}^n$ is simplicial with exactly $n$ facets; of the $2n - 3$
+    chain-side carry-derived facets, only $E$ survives projection, and the
+    chain-to-weight contraction has ratio $(2n - 3)/n \to 2$.
+\end{enumerate}
+
+External polyhedral and algebraic shadows are recorded in
+\S\ref{ssec:kobayashi-fences} (Kobayashi) and \S\ref{ssec:carry-shadows}
+(Watanabe, Meereboer, Frohmader); the closing remark (\S\ref{ssec:carry-closing})
+collects the five roles as five views of one object.
+
+%-------------------------------------------------------------------------------
+\subsection{The cumulative carry $P_a$ and Theorem A}\label{ssec:carry-Pa}
+
+We recall the chain--sing alphabet of \S\ref{sec:prelim}. For each
+$a = 1, \dots, n-1$, the chain-$a$ multiplicities $(M_a, B_a, T_a)$ count the
+roots $(E_a,\, E_a - E_n,\, E_a + E_n)$ respectively; the singleton multiplicity
+$S$ counts $E_n$. The non-touching block $\piNT$ contributes no bracket symbols
+at $\alpha_n$ and is fixed under the $B_n$-action; it plays no role in this
+section, and we drop it from notation after Lemma~\ref{lem:carry-mono}.
+
+The CST bracket sequence $S_n(\pi)$ for the short simple $\alpha_n$ is the
+left-to-right concatenation, for $a = 1, \dots, n-1$, of the per-chain block
+\[
+   \labr{E_a}^{M_a}\;\labl{E_a - E_n}^{2 B_a}\;\labr{E_a + E_n}^{2 T_a}\;\labl{E_a}^{M_a},
+\]
+followed by the singleton block $\labr{E_n}^{S}$. Standard cancellation defines
+$\eps_n(\pi)$.
+
+\begin{definition}[Cumulative carry]\label{def:carry}
+Set $P_0 := 0$ and, for $a = 1, \dots, n-1$,
+\[
+   P_a \;:=\; P_{a-1} + 2(B_a - T_a) \;=\; \sum_{b=1}^{a} 2(B_b - T_b).
+\]
+We occasionally write $\Pcum_a$ when the cumulative nature is the focus.
+\end{definition}
+
+Up to sign, $P_a = -\langle \alpha_n^\vee,\, \wt(\pi)|_{\le a}\rangle$: the carry
+records twice the cumulative deficit of $E_n$-content over chains $1, \dots, a$.
+
+\begin{lemma}[One-sided monotonicity]\label{lem:carry-mono}
+Each forward chain-factor descent step ($\widetilde{e}_n$ acting on the rightmost
+surviving $\labr{}$ in $S_n(\pi)$) adjusts $P_a$ as follows:
+\begin{itemize}[leftmargin=2em]
+  \item $\Sing$: $S \mapsto S - 1$; no change to any $P_a$.
+  \item $\MB(a)$: $(M_a, B_a, T_a) \mapsto (M_a - 1, B_a + 1, T_a)$; $P_b \mapsto P_b + 2$ for $b \ge a$.
+  \item $\TM(a)$: $(M_a, B_a, T_a) \mapsto (M_a + 1, B_a, T_a - 1)$; $P_b \mapsto P_b + 2$ for $b \ge a$.
+\end{itemize}
+No letter decreases any $P_a$ under forward descent.
+\end{lemma}
+
+\begin{proof}
+Direct from Definitions~\ref{def:step-types} and~\ref{def:carry}.
+\end{proof}
+
+The next statement is Theorem~A in carry form, with $P_a$ as the load-bearing
+object. It is the master lemma on which \S\ref{ssec:carry-descent}--\S\ref{ssec:weight-simplicial} rest.
+
+\begin{theorem}[Theorem~A in carry form]\label{thm:carry-A}
+$\eps_n(\pi) = 0$ if and only if
+\begin{align}
+   (\HW_a) \quad & M_a \le P_{a-1} \;\text{ and }\; M_a \le P_a,
+   && a = 1, \dots, n-1, \label{eq:carry-HWa}\\
+   (\HW_{\mathrm{sing}}) \quad & S \le P_{n-1}. \label{eq:carry-HWsing}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+A left-to-right scan of $S_n(\pi)$ tracking the running open-paren count $Q$. By
+induction on $a$, on entry to chain $a$ we have $Q = P_{a-1}$ provided no
+$\labr{}$ has survived; the chain-$a$ subscan survives a $\labr{}$ in exactly
+the cases excluded by~\eqref{eq:carry-HWa}, after rewriting the second of the
+two original inequalities ($M_a + 2 T_a \le P_{a-1} + 2 B_a$) as $M_a \le P_a$.
+The singleton block then processes against $Q = P_{n-1}$, giving
+\eqref{eq:carry-HWsing}.
+\end{proof}
+
+We use the clean form~\eqref{eq:carry-HWa} throughout the remainder of the section.
+
+%-------------------------------------------------------------------------------
+\subsection{Descent role: no local witness}\label{ssec:carry-descent}
+
+Theorem~B (\S\ref{sec:phaseB}) makes the descent step
+$\pi \mapsto (\pi^{\hw}, R(\pi))$ a bijection
+\[
+   \Kp(\infty)/B_n \;\longrightarrow\; \bigsqcup_{\pi^{\hw}} \{\pi^{\hw}\} \times \Rec(\pi^{\hw}),
+\]
+where $\Rec(\pi^{\hw})$ is the set of valid recording words. The natural question
+(v3 OPEN-3) is whether $\Rec(\pi^{\hw})$ admits a \emph{local} characterisation:
+a finite list of prefix/suffix inequalities on a candidate word $R$ that
+decides membership without replaying the descent.
+
+\begin{proposition}[No local witness]\label{prop:no-local-witness}
+There is no signed prefix or suffix invariant on the recording word $R$ whose
+non-negativity (or vanishing) characterises $R \in \Rec(\pi^{\hw})$.
+\end{proposition}
+
+\begin{proof}
+By Lemma~\ref{lem:carry-mono}, every forward step adds $0$ or $+2$ to each $P_b$
+and never decreases any. The reverse-played word therefore monotonically
+\emph{drains} $P_b$. For a candidate word $R$ that is not in $\Rec(\pi^{\hw})$,
+intermediate states during reverse-play can drive some $P_b$ arbitrarily
+negative with no later letter able to compensate; the failure cannot be diagnosed
+by any signed counter on $R$ alone. The only correct test is the oracle: $R \in
+\Rec(\pi^{\hw})$ iff reverse-playing $R$ from $\pi^{\hw}$ stays coordinate-nonnegative
+and forward descent of the resulting Kostant partition recovers $R$.
+\end{proof}
+
+Proposition~\ref{prop:no-local-witness} is supported by a three-probe falsification
+arc on the candidate inequalities (i)~prefix carry $\ge 0$, (i$'$)~pair-aware
+prefix carry, (iii)~per-chain suffix balance. All three give zero false positives
+and monotonically growing false negatives ($268, 360, 410$) as the candidate
+tightens: the signature of an impossibility, not a tuning miss.
+
+\begin{remark}[Asymmetric mirror]\label{rmk:asymmetric-mirror}
+Lemma~\ref{lem:carry-mono} is the analytical heart of an
+\emph{asymmetric-mirror} phenomenon: forward and
+reverse descent are not exchanged by a local involution because the alphabet
+$\{\Sing, \MB(a), \TM(a)\}$ has no signed compensator at the carry level. The
+chain-factor alphabet is rank-3, but the carry sees only a $\{0, +2\}$ bit. The
+signed slack data $(t_0^{(i)}, r^{(i)})$ that Azenhas's type-AII recording
+exploits has no chain-factor analogue: $\MB(a)$ and $\TM(a)$ are distinct
+chain-factor bits but contribute identically to $P_a$. This is the
+rank-3-chain-factor-vs-rank-1-strip distinction of \S\ref{ssec:scope} at the
+analytic level, and it is why no local witness exists for $\Rec(\pi^{\hw})$.
+\end{remark}
+
+%-------------------------------------------------------------------------------
+\subsection{Projection role: Theorem E}\label{ssec:carry-cross}
+
+The second role of the carry is to mediate the unique cross-chain condition in
+the $B_n$-highest indicator.
+
+\begin{theorem}[Singleton cross-chain coupling]\label{thm:carry-E}
+Let $\pi \in \Kp(\infty)$ have chain--sing coordinates
+$((M_a, B_a, T_a)_{a=1}^{n-1}, S)$. Then $\pi$ is $B_n$-highest if and only if
+\[
+   (\HW_a) \quad M_a \le P_{a-1}\ \text{and}\ M_a \le P_a, \quad a = 1, \dots, n-1,
+\]
+\[
+   (\HW_{\mathrm{sing}}) \quad S \le P_{n-1} \;=\; \sum_{a=1}^{n-1} 2(B_a - T_a).
+\]
+In particular, the only cross-chain condition is the cumulative carry bound
+\[
+   \mathrm{Cross}(M, B, T, S) \;=\; [\,S \le P_{n-1}\,] \;=\; \Bigl[\, S \le \sum_{a=1}^{n-1} 2(B_a - T_a) \,\Bigr],
+\]
+which depends only on the final cumulative carry and is type-uniform in $n$.
+\end{theorem}
+
+\begin{proof}
+The biconditional is Theorem~\ref{thm:carry-A}. The proof there is a single
+left-to-right scan whose recurrence and per-block surviving-bracket count have
+no $n$-dependence beyond the chain index, and whose singleton block always
+processes against $P_{n-1}$.
+\end{proof}
+
+\begin{remark}[The NT block contributes zero]\label{rmk:NT-drop}
+The non-touching block $\piNT$ contributes no bracket symbols at $\alpha_n$
+(every non-touching root has $\langle \cdot, \alpha_n^\vee\rangle = 0$ and trivial
+$\alpha_n$-string), so it appears in neither $S_n(\pi)$ nor any $P_a$. The cross-chain
+sum~\eqref{eq:carry-HWsing} therefore reads against the chain--sing coordinates
+alone, and $\piNT$ is free under the $B_n$-action. This is the silent assumption
+underlying Theorem~\ref{thm:carry-E} and Corollary~\ref{cor:carry-factor}: every analytic
+identity at $\alpha_n$ is invariant under arbitrary changes to $\piNT$.
+\end{remark}
+
+\begin{example}[Singleton draws on cumulative carry]\label{ex:carry-cross-B4}
+At $B_4$ the configuration $(M, B, T, S) = ((0,0,0), (0,1,0), (0,0,0),\, 2)$ has
+$P_1 = 0$, $P_2 = 2$, $P_3 = 2$, so $S = 2 = P_{n-1}$ and the configuration is
+$B_4$-highest with all $(\HW_a)$ trivially satisfied. The singleton capacity
+is supplied by chain~$2$ alone, confirming that the cross-chain condition is
+genuinely cumulative, not pointwise per-chain.
+\end{example}
+
+Empirically, on the $1716$ chain+sing configurations at $B_3$, content $\le 6$,
+the sum-lift $[S \le P_{n-1}]$ is the unique candidate (among pointwise
+$\bigwedge_a [S \le 2(B_a - T_a)]$, sum lift, cumulative-and, min, max) with zero
+false negatives; the same dataset falsifies the strict tensor factorisation
+``$\chi_1(M_1, B_1, T_1) \cdot \chi_2(M_2, B_2, T_2) \cdot \mathrm{Cross}$'' with
+$34$ inconsistent $(\mathrm{chain}_1, \Delta P_2, S)$-keys. A $B_4$ spot check
+($3003$ configurations at content $\le 5$) gives $3003/3003$. Full write-up:
+\url{proofs/2026-05-20-pnu-Bn-cross-chain.md}.
+
+%-------------------------------------------------------------------------------
+\subsection{Carry-recursive factorisation}\label{ssec:carry-factor}
+
+Theorem~\ref{thm:carry-E} admits an immediate corollary in factorised form.
+
+\begin{corollary}[Carry-recursive factorisation]\label{cor:carry-factor}
+The $B_n$-HW indicator factors as
+\[
+   [\,B_n\text{-HW}(M, B, T, S)\,]
+   \;=\; \prod_{a=1}^{n-1} \chi_a(M_a, B_a, T_a;\, P_{a-1}) \,\cdot\, [\,S \le P_{n-1}\,],
+\]
+with $\chi_a = [M_a \le P_{a-1}] \wedge [M_a \le P_a]$ and the carry update
+$P_a = P_{a-1} + 2(B_a - T_a)$, $P_0 = 0$.
+\end{corollary}
+
+The factorisation is \emph{carry-recursive}, not strict tensor: $\chi_a$ depends
+on the incoming scalar $P_{a-1}$ as well as on $(M_a, B_a, T_a)$, and the
+singleton factor uses $P_{n-1}$. As in Remark~\ref{rmk:NT-drop}, the NT block
+contributes neither to the per-chain factors $\chi_a$ nor to the singleton
+bound, so it is absent from the corollary. Corollary~\ref{cor:carry-factor} is
+the unified replacement for the descent-recording and projection-cross-chain
+results of the old v3 outline: both follow from a single left-to-right bracket
+scan acting on a single scalar.
+
+%-------------------------------------------------------------------------------
+\subsection{Polytope completeness (Theorem~F)}\label{ssec:carry-polytope}
+
+The fourth role of the carry is structural. The system $(\HW_a) \cup
+(\HW_{\mathrm{sing}})$ of Theorem~\ref{thm:carry-A} is a list of $2n - 1$ linear
+inequalities; we ask how many of them are non-redundant facets of the
+chain-side HW polytope, and which.
+
+\begin{definition}[Chain HW polytope]\label{def:chain-polytope}
+The \emph{chain HW polytope} at $B_n$ is
+\[
+   \Pn_n \;:=\; \bigl\{ (M, B, T, S) \in \Z_{\ge 0}^{3(n-1) + 1} : \pi \text{ is } B_n\text{-highest} \bigr\}
+\]
+(viewing $\Pn_n$ as a lattice polytope, equivalently the intersection of
+non-negativity with the carry system).
+\end{definition}
+
+Label the $2n - 1$ carry-derived inequalities of $\Pn_n$ as
+\[
+   L_a : M_a \le P_{a-1}, \quad U_a : M_a \le P_a \qquad (1 \le a \le n - 1),
+   \qquad E : S \le P_{n-1}.
+\]
+
+\begin{theorem}[Polytope completeness]\label{thm:carry-F}
+Let $n \ge 2$. The chain HW polytope $\Pn_n$ has exactly $2n - 3$ non-redundant
+carry-derived facets, namely
+\[
+   \{L_a, U_a : 2 \le a \le n-1\} \;\cup\; \{E\}.
+\]
+The boundary inequalities at $a = 1$ are special:
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+  \item $L_1$ is \emph{degenerate}: it is non-redundant as an inequality but is
+    saturated on every $\pi \in \Pn_n$, forcing $M_1 = 0$ identically. Equivalently,
+    $\Pn_n$ lies in the affine hyperplane $\{M_1 = 0\}$.
+  \item $U_1$ is \emph{redundant}: it is implied by $L_1$ together with non-negativity
+    of $M_2$ (for $n \ge 3$) or of $S$ (for $n = 2$), via $L_2 + (M_2 \ge 0)$
+    respectively $E + (S \ge 0)$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\emph{(i)~$L_1$ degenerate.} $L_1$ reads $M_1 \le P_0 = 0$. With $M_1 \ge 0$,
+this forces $M_1 = 0$ on $\Pn_n$. Non-redundancy: the configuration
+$(M_1, B_1, T_1) = (1, 1, 0)$ (other coordinates zero) has $P_1 = 2$ and
+satisfies every $L_a, U_a$ for $a \ge 2$ and $E$ (each reads against $M_a = 0$
+or $S = 0$ with $P_{n-1} = 2$), but violates $L_1$. So $L_1$ is needed; on
+$\Pn_n$ it is always tight.
+
+\emph{(ii)~$U_1$ redundant.} By (i), $M_1 = 0$ on $\Pn_n$, so $U_1$ becomes the
+slack inequality $0 \le P_1$. If $n = 2$, fence $E$ reads $S \le P_1$ and
+non-negativity gives $P_1 \ge S \ge 0$. If $n \ge 3$, fence $L_2$ reads
+$M_2 \le P_1$ and non-negativity gives $P_1 \ge M_2 \ge 0$. Either way, the
+other inequalities together with non-negativity force $U_1$.
+
+\emph{(iii)~$\{L_a, U_a : 2 \le a \le n-1\} \cup \{E\}$ are non-redundant.} For
+each, we exhibit a chain configuration that satisfies every \emph{other}
+inequality of the system but violates the named one (existence of such a witness
+proves non-redundancy; saturation then has a relative-interior point, giving a
+codimension-$1$ face).
+
+\smallskip
+\noindent\textit{Witness for $L_a$ ($2 \le a \le n-1$):} set $M_a = 1$,
+$B_a = 1$, all other coordinates zero. Then $P_b = 0$ for $b < a$ and $P_b = 2$
+for $b \ge a$. Every $L_b, U_b$ for $b < a$ has $M_b = 0 \le 0$; $U_a$ reads
+$1 \le 2$; every $L_b, U_b$ for $b > a$ reads $0 \le 2$; $E$ reads $0 \le 2$;
+$L_a$ reads $1 \le 0$ and is the unique violation.
+
+\smallskip
+\noindent\textit{Witness for $U_a$ ($2 \le a \le n-1$):} set $M_a = 1$,
+$B_{a-1} = 1$, $T_a = 1$, all other coordinates zero. Then $P_b = 0$ for
+$b < a-1$, $P_{a-1} = 2$, $P_b = 0$ for $b \ge a$. $L_a$ reads $1 \le 2$;
+$U_a$ reads $1 \le 0$ and is the unique violation; all others are slack.
+
+\smallskip
+\noindent\textit{Witness for $E$:} set $S = 1$, all chain coordinates zero. Then
+$P_{n-1} = 0$; every $L_a, U_a$ reads $0 \le 0$; $E$ reads $1 \le 0$ and is the
+unique violation.
+
+\smallskip
+\noindent To upgrade non-redundancy to codimension-$1$, type-uniform
+relative-interior witnesses are constructed in
+\texttt{verify\_facet\_interiors.py} (verified at $n = 3, \dots, 7$); we sketch:
+for $L_a$, take $B_b = 1$ ($1 \le b \le a-1$), $M_a = 2(a-1)$, $B_a = 1$, giving
+$L_a$ saturated and all others strict; for $U_a$ ($a \ge 3$), take the same
+prefix with $M_a = 2(a-2)$, $T_a = 1$, $B_a = 0$, giving $U_a$ saturated and all
+others strict; for $U_2$, take $B_1 = 2$, $M_2 = 2$, $T_2 = 1$; for $E$, take
+$B_b = 1$ ($1 \le b \le n-1$), $S = 2(n-1)$.
+\end{proof}
+
+\begin{remark}[Boundary behaviour]\label{rmk:boundary-asymmetry}
+The asymmetry at $a = 1$ is structural rather than incidental: the carry
+recursion starts at $P_0 = 0$, so $L_1$ is the strongest possible mid-bound
+($M_1 \le 0$) and $U_1$ is the corresponding slack form ($P_1 \ge 0$) that the
+next downstream constraint enforces. Internally ($2 \le a \le n-1$), $P_{a-1}$
+and $P_a$ both range over positive values and neither is universally tighter,
+so both $L_a$ and $U_a$ contribute honest facets.
+\end{remark}
+
+\begin{remark}[Computational verification]\label{rmk:carry-F-verification}
+The script \texttt{verify\_witnesses.py} verifies the three-class structure
+($L_1$ degenerate, $U_1$ redundant, all other carry-derived inequalities
+non-redundant) for $n \le 7$, and \texttt{classify\_fences.py} enumerates all
+chain configurations of total content $\le C$ at $B_n$, $n \le 6$, classifying
+each inequality by saturation count, strict-satisfaction count, and explicit
+non-redundancy count. The polytope-completeness data table (Day-$28$ proof,
+\url{proofs/2026-05-21-bdi-kobayashi-faces.md}) records the explicit
+non-redundancy counts at $(n, C) = (2, 8), (3, 6), (4, 6), (5, 4), (6, 3)$.
+\end{remark}
+
+The polytope role completes the chain-side unification: $P_a$ is the analytical
+backbone in \S\ref{ssec:carry-Pa}, the descent potential in
+\S\ref{ssec:carry-descent}, the cross-chain coupling in
+\S\ref{ssec:carry-cross}, the recursive scalar in \S\ref{ssec:carry-factor},
+and the facet-counting object in \S\ref{ssec:carry-polytope}. The same scan
+that proves Theorem~\ref{thm:carry-A} proves all four. The fifth role
+(\S\ref{ssec:weight-simplicial}) is obtained from the same chain-side data by
+Farkas-polar under the chain-to-weight projection $\Phi$.
+
+%-------------------------------------------------------------------------------
+\subsubsection{Weight-space image is simplicial (Theorem~G)}\label{ssec:weight-simplicial}
+
+Theorem~\ref{thm:carry-F} counts the carry-derived facets of $\Pn_n$ on the
+chain side, in the $3(n-1) + 1$ chain--singleton coordinates. The
+representation-theoretic object of interest is, however, the image of $\Pn_n$
+under the chain-to-weight map
+\[
+   \Phi : \Pn_n \times \Z_{\ge 0}^{\NT} \;\longrightarrow\; X^+(B_n) \otimes \mathbb{R}
+   \;\cong\; \mathbb{R}^n,
+\]
+which records the highest weight $\nu = \sum_\beta m_\beta\,\beta$ in the
+$(E_1, \dots, E_n)$ basis. Concretely $\lambda_a = M_a + B_a + T_a +
+(\text{NT contribs at } E_a)$ for $a \le n - 1$, and
+$\lambda_n = S + \sum_{a=1}^{n-1}(T_a - B_a)$. Let
+$\Kp_n := \Phi(\Pn_n \times \Z_{\ge 0}^{\NT}) \subset \mathbb{R}^n$.
+
+\begin{theorem}[Weight-space image polytope]\label{thm:carry-G}
+Let $n \ge 2$. The image cone $\Kp_n$ is the rational polyhedral cone in
+$\mathbb{R}^n$ cut out by exactly $n$ facets:
+\begin{equation}
+\begin{aligned}
+   &\lambda_1 + \lambda_2 + \cdots + \lambda_k \;\ge\; 0
+   && (1 \le k \le n - 2),\\
+   &\sum_{i=1}^{n} \lambda_i \;\ge\; 0, \qquad
+   \lambda_n \;\le\; \sum_{i=1}^{n-1} \lambda_i.
+\end{aligned}\label{eq:carry-G}
+\end{equation}
+The $n$ inequalities are pairwise non-redundant. In particular $\Kp_n$ is a
+\emph{simplicial cone} in $\mathbb{R}^n$ (the minimum possible facet count for a
+full-dimensional polyhedral cone).
+\end{theorem}
+
+Theorem~\ref{thm:carry-G} should be compared with Theorem~\ref{thm:carry-F}:
+the chain side carries $2n - 3$ non-redundant carry-derived facets, the
+weight side carries only $n$. The chain-to-weight projection is contractive of
+ratio $(2n - 3)/n \to 2$ as $n \to \infty$: roughly half the chain
+combinatorial structure is invisible from weight space. Of the $2n - 3$ chain
+facets $\{L_a, U_a : 2 \le a \le n-1\} \cup \{E\}$, only $E$ survives
+projection (as $\lambda_n \le \sum_{i \le n-1} \lambda_i$); every $L_a$ and
+$U_a$ collapses, and the NT block contributes \emph{zero} new facets while
+\emph{absorbing} the partial-sum facet at $k = n - 1$.
+
+\begin{proof}[Proof sketch]
+\emph{(i) Polar duality framing.} To find the facet normals of an image cone
+$\Phi(C)$, one polars: $c \in \Kp_n^*$ iff $\langle c, \Phi(x)\rangle \le 0$
+for all $x$ in the source cone, iff $\Phi^T c \in \Pn_n^*$, iff $\Phi^T c$ is a
+non-negative combination of the rows of the source H-representation (Farkas).
+Facets of $\Kp_n$ are then read off as extreme rays of $\Kp_n^*$.
+
+\emph{(ii) Explicit verification at $B_3$.} The chain-side H-representation has
+rows $L_2, U_2, E$ together with coordinate non-negativities. Writing
+$c = (c_1, c_2, c_3)$ and computing $\Phi^T c$ component-by-component in the
+order $(B_1, T_1, M_2, B_2, T_2, S, N^-_{12}, N^+_{12})$ gives an eight-equation
+system in the multipliers $(p, q, r) = (\mu_{L_2}, \mu_{U_2}, \mu_E)$ and the
+non-negativity multipliers. The NT rows force $c_1 \le c_2$ and
+$c_1 + c_2 \le 0$ directly; the chain rows reduce, after eliminating $(p, q)$,
+to the bound $|c_3| \le -c_2$. The polar cone is
+\[
+   \Kp_3^* \;=\; \{c \in \mathbb{R}^3 : c_1 \le c_2 \le c_3,\;\; c_2 + c_3 \le 0\},
+\]
+whose three extreme rays $(-1, 0, 0), (-1, -1, -1), (-1, -1, 1)$ give exactly
+the three image facets $\lambda_1 \ge 0$, $\sum_i \lambda_i \ge 0$, and
+$\lambda_3 \le \lambda_1 + \lambda_2$.
+
+\emph{(iii) Type-uniform mechanism.} The same polar argument carries over for
+$n \ge 2$. The NT pairs $(a, b)$ with $a < b \le n - 1$ contribute
+$c_a \le c_b$ and $c_a + c_b \le 0$, producing the total order
+$c_1 \le c_2 \le \cdots \le c_{n-1} \le 0$. The chain rows $L_a, U_a$ pull
+back, via $\Phi^T$, into the interior of the polar relative to the dominant
+binding constraints from $E$ and from non-negativity: their multipliers can
+always be set to zero, so $L_a, U_a$ are Farkas-redundant in the projected
+H-rep (this is the formal sense in which $\Phi(L_a)$ and $\Phi(U_a)$ cover the
+full image cone). Only $\mu_E$ remains as a non-trivial extreme contribution,
+yielding the final binding inequality $c_{n-1} + c_n \le 0$. The polar cone
+$\Kp_n^* = \{c : c_1 \le \cdots \le c_n,\; c_{n-1} + c_n \le 0\}$ has exactly
+$n$ extreme rays $\rho_k = -(e_1 + \cdots + e_k)$ for $1 \le k \le n - 2$,
+$\rho_{\mathrm{sum}} = -(e_1 + \cdots + e_n)$, and $\rho_E = -(e_1 + \cdots +
+e_{n-1}) + e_n$, giving the $n$ facets of~\eqref{eq:carry-G}. NT absorption of
+the would-be facet $\sum_{i \le n-1} \lambda_i \ge 0$ is automatic: $\piNT$
+contributes negative-coordinate moves into $\lambda_{n-1}$ (and into earlier
+$\lambda_a$), and the partial sum at $k = n - 1$ is also implied by the
+combination of the full sum and the $E$-facet.\footnote{Verified
+computationally at $B_2, B_3, B_4, B_5$; see
+\url{proofs/2026-05-21-weight-space-projection.md}.}
+\end{proof}
+
+\begin{remark}[Weight-indistinguishability of MB and TM]\label{rmk:weight-indistinguishability}
+Theorem~\ref{thm:carry-G} provides the abstract justification for the
+MB/TM weight-indistinguishability used in Theorem~B (Phase~B): on weight
+space, the chain inequalities $L_a$ and $U_a$ produce the same shadow,
+because both pull back via $\Phi^T$ into the Farkas interior of the polar
+cone. The signed difference $L_a - U_a = 2(T_a - B_a)$ is precisely the
+$\lambda_n$-content of chain $a$; this differential is visible in $\lambda_n$
+but does not generate an additional facet, so the $\{L_a, U_a\}$ pair is
+weight-indistinguishable in the polytope sense. Whatever finer information
+the chain framework records is by construction invisible from the highest-weight
+polytope alone, and must be recovered via the carry recursion of
+Corollary~\ref{cor:carry-factor}.
+\end{remark}
+
+%-------------------------------------------------------------------------------
+\subsection{External shadow: Kobayashi's BDI fences}\label{ssec:kobayashi-fences}
+
+Kobayashi~\cite{Kobayashi2604} establishes that for orthogonal symmetric pairs
+of BDI type, in particular $(O(n+1), O(n))$, branching multiplicities are
+governed by piecewise-linear ``fence'' hyperplanes of the form
+$\xi_i \pm \delta\nu_j = \pm 1/2$ in infinitesimal-character space, decomposing
+the parameter region into convex chambers on which the multiplicity function is
+locally polynomial. The fences exist abstractly, but Kobayashi does not give
+an explicit list in highest-weight coordinates. Theorem~\ref{thm:carry-F}
+(chain side, $2n - 3$ facets) together with Theorem~\ref{thm:carry-G}
+(image side, $n$ facets) supply the first explicit determination of the BDI
+fences in the chain--sing coordinates of \S\ref{sec:prelim}: the $n$ facets
+of $\Kp_n$ in~\eqref{eq:carry-G} are precisely the stability fences of
+$(O(n+1), O(n))$-branching, and the additional $n - 3$ chain-side carry walls
+$\{L_a, U_a : 2 \le a \le n - 1\}$ describe the sub-fence structure that
+becomes invisible on projection. Read this way, the carry framework is the
+\emph{combinatorial content} of Kobayashi's analytic stability statement: the
+chain side records fine multiplicity-level data, the weight side records the
+coarse fence chamber structure, and the chain-to-weight contraction is the
+explicit form of Kobayashi's piecewise-linearity. The precise coordinate
+match between Kobayashi's $\xi_i + \delta\nu_j = \pm 1/2$ form and the
+chain-side wall list $\{L_a, U_a, E\}$ is expected by representation theory but
+not yet verified term by term; we record this as the open question OQ-KFENCE
+and defer it to v4.
+
+%-------------------------------------------------------------------------------
+\subsection{Other external shadows}\label{ssec:carry-shadows}
+
+Three further external papers give shadows that the carry framework illuminates.
+(Kobayashi's BDI fences are treated separately in \S\ref{ssec:kobayashi-fences}.)
+
+\paragraph{Algebraic existence.} Watanabe \cite{Watanabe2407} (Prop.~4.3.2, \S5)
+establishes existence of the abstract orthogonal projection
+$p_\nu : V(\nu) \to V^\imath_{\mathrm{BDI}}(\nu)$ under Bao--Wang preferred
+parameters, type-uniformly in $n$. Theorem~\ref{thm:carry-E} gives the explicit
+shape of $p_\nu$ in the chain-factor basis: a carry-recursive product whose only
+cross-chain ingredient is the cumulative bound $[S \le P_{n-1}]$. The shadow
+says $p_\nu$ exists; the carry says what it looks like.
+
+\paragraph{Base case.} Meereboer \cite{Meereboer2510} (Lemma~6.2, \S6) treats the
+$n = 1$ base case from a combinatorial leading-term recipe. At $n = 1$,
+Theorem~\ref{thm:carry-E} collapses to $S \le P_0 = 0$, i.e., $S = 0$, matching
+Meereboer's recipe. Meereboer's Lemmas~4.3, 4.5, 7.4 collapse at multiplicity
+$> 1$; the higher-multiplicity, higher-rank carry-recursive structure fills the
+gap above $n = 1$.
+
+\paragraph{An alternate combinatorial model.} Frohmader \cite{Frohmader2312v2}
+gives a different combinatorial model for BDI branching as a sum, over partitions
+$\mu$ with even rows, of modified Littlewood--Richardson coefficients with an
+$O_n$-highlighted-box flag. The decomposition is not of chain-factor type:
+Frohmader's $\mu$-index aggregates the chain data and the singleton in a way
+that has no direct counterpart in $\{L_a, U_a, E\}$. Numerical multiplicities
+agree by representation theory, so a small-rank numerical match would not
+be informative; a structural correspondence at the level of indices would be,
+and is open. We record the construction as an alternate combinatorial viewpoint;
+it is \emph{not} an independent confirmation of the chain-factor framework. The
+carry-derived facet count $2n - 3$ is specific to the chain coordinates of
+\S\ref{sec:prelim}.
+
+%-------------------------------------------------------------------------------
+\subsection{Closing remark}\label{ssec:carry-closing}
+
+The cumulative carry $P_a$ is the unified analytical object at BDI.
+Definition~\ref{def:carry} introduces it; Lemma~\ref{lem:carry-mono} records its
+one-sided monotonicity; Theorem~\ref{thm:carry-A} characterises $B_n$-highest
+weight in terms of it; the four chain-side roles of
+\S\ref{ssec:carry-descent}--\S\ref{ssec:carry-polytope} are mechanically forced
+by the same left-to-right bracket scan; the weight-space simplicial role of
+\S\ref{ssec:weight-simplicial} is the Farkas-polar of the chain-side picture
+under $\Phi$; the external shadows of \S\ref{ssec:kobayashi-fences} and
+\S\ref{ssec:carry-shadows} agree.
+
+Three points warrant explicit notice. \emph{First}, the unification is
+structural, not cosmetic: the same scan proves
+Theorem~\ref{thm:carry-A}, Proposition~\ref{prop:no-local-witness},
+Theorem~\ref{thm:carry-E}, Corollary~\ref{cor:carry-factor}, and
+Theorem~\ref{thm:carry-F}, with Theorem~\ref{thm:carry-G} obtained from the
+chain-side H-representation by Farkas-polar under $\Phi$; there is no shorter
+path. \emph{Second}, the carry is type-uniform: the recurrence $P_a = P_{a-1}
++ 2(B_a - T_a)$ has no $n$-dependence beyond the chain index, the singleton
+bound always reads against $P_{n-1}$, the chain-side facet count $2n - 3$ has
+the same shape at every $n \ge 2$, and the image-cone facet count $n$ matches
+the simplicial minimum. \emph{Third}, the framework's scope coincides with the
+v2 chain-factor decomposition's scope, the $|a_{ij}| \le 2$ regime of the
+Day-$21$ trichotomy (\S\ref{ssec:scope}); the $G_2$ obstruction at $|a_{ij}|
+\ge 3$ has multiple interior bracket positions and breaks the carry recursion.
+
+The carry was, in retrospect, available in the bracket-scan argument of
+\S\ref{sec:carry} from the start. The work of v3 is to recognise that the same
+scalar plays five distinct roles, and to compress the exposition so that each
+role is a view of the same object.
+
+% ==============================================================================
+% Placeholder bibitems for v3.bib integration (Rick: integrate later).
+% ==============================================================================
+%
+% \bibitem{Watanabe2407}     H. Watanabe.  arXiv:2407.07280v3.
+% \bibitem{Meereboer2510}    M. Meereboer.  arXiv:2510.17655.
+% \bibitem{Kobayashi2604}    T. Kobayashi.  arXiv:2604.22262.
+% \bibitem{Frohmader2312v2}  A. Frohmader.  arXiv:2312.11295v2.
+%
+% (Other internal citations -- Watanabe2107, Watanabe2110, etc. -- live in v2.bib.)

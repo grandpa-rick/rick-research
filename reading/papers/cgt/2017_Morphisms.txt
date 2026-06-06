@@ -1,0 +1,1779 @@
+                                                                          Morphisms of open games
+                                                                                                    Jules Hedges
+
+
+                                            Abstract—We define a notion of morphisms between open             paper culminates in a worked example that illustrates both
+                                         games, exploiting a surprising connection between lenses in          of these aspects, in which we describe the market entry game,
+                                         computer science and compositional game theory. This extends         a simple but important example of game theory as applied to
+                                         the more intuitively obvious definition of globular morphisms as
+                                         mappings between strategy profiles that preserve best responses,     microeconomics.
+                                         and hence in particular preserve Nash equilibria. We construct          An alternative definition of morphisms between open games
+arXiv:1711.07059v2 [cs.GT] 23 Nov 2017
+
+
+
+
+                                         a symmetric monoidal double category in which the horizontal         is given in [7], in order to characterise repeated games as
+                                         1-cells are open games, vertical 1-morphisms are lenses, and 2-      final coalgebras of a functor prepending one additional stage.
+                                         cells are morphisms of open games. States (morphisms out of the      Contravariant lens morphisms are inferior for this purpose, but
+                                         monoidal unit) in the vertical category give a flexible solution
+                                         concept that includes both Nash and subgame perfect equilibria.      on the other hand, the two attractive properties of contravariant
+                                         Products in the vertical category give an external choice operator   lens morphisms identified are not shared by the morphisms of
+                                         that is reminiscent of products in game semantics, and is useful     [7]. This suggests that there is no single, canonical notion
+                                         in practical examples. We illustrate the above two features with a   of morphisms between open games, but at least two with
+                                         simple worked example from microeconomics, the market entry          different useful properties. It is expected, however, that all
+                                         game.
+                                                                                                              ‘reasonable’ definitions of morphisms between open games
+                                                                                                              will form a symmetric monoidal double category, and will
+                                                               I. I NTRODUCTION
+                                                                                                              agree on globular morphisms.
+                                            Open games provide a foundation to (economic) game the-
+                                                                                                                   II. N ORMAL - FORM AND EXTENSIVE - FORM GAMES
+                                         ory that is strongly compositional. In general open games are
+                                         fragments of games that can be composed either sequentially             In this section we recall some basic definitions and results
+                                         or in parallel. Key to this is the step of viewing open open         of game theory, which can be found in any standard textbook,
+                                         games as the morphisms of a symmetric monoidal category.             such as [6].
+                                         (This is an instance of the more general research programme          Definition 1. An n-player normal form game consists of the
+                                         of categorical open systems [5].)                                    following data:
+                                            However, there are reasons that one might also wish to view          • A sequence of sets X1 , . . . , Xn of choices for each player
+                                         open games as the objects of a category. Most obviously, we             • A payoff function
+                                         would like to characterise certain open games using universal                                      Y n
+                                         properties, in order to reason about them in a more abstract                                  k:          X i → Rn
+                                         way. In this paper we define a general notion of morphisms                                         i=1
+                                         between open games, which we call contravariant lens mor-                 giving a real-valued payoff for each player given choices
+                                         phisms. This heavily makes use of the factorisation of open               by each player
+                                         games in terms of polymorphic lenses introduced in [9].              A (pure) strategy for player i in a normal form gameQnis simply
+                                            We prove that open games and contravariant lens morphisms         a choice σi : Xi , and a (pure) strategy profile σ : i=1 Xi is
+                                         form a symmetric monoidal pseudo double category [17], the           a choice of strategy for each player.
+                                         expected structure of 2-cells between arbitrary morphisms in
+                                         a symmetric monoidal category. Open games and globular                 The adjective ‘pure’ means ‘deterministic’, in contrast with
+                                         morphisms (morphisms between open games of the same type)            ‘mixed’ or probabilistic strategies. The equivalence of strate-
+                                         moreover form a symmetric monoidal bicategory, however we            gies and choices characterises a normal form game as both
+                                         argue by example that the more general double-categorical            deterministic and simultaneous: in the probabilistic setting
+                                         structure is useful.                                                 a strategy is a probability distribution over choices, and in
+                                                                                                              a dynamic (sequential) game a strategy is a function from
+                                            There are many possible inequivalent ways to define mor-
+                                                                                                              observations to choices.
+                                         phisms between open games, and we argue in favour of
+                                                                                                                Given a tuple x : ni=1 Xi , we write xi : Xi for the ith
+                                                                                                                                   Q
+                                         contravariant lens morphisms in particular by identifying two
+                                                                                                              projection,
+                                         attractive properties. Firstly states of open games, that is                                        Y
+                                         morphisms out of the monoidal unit open game, provide a                                     x−i :         Xj
+                                                                                                                                            1≤j≤n
+                                         fully compositional solution concept that subsumes both Nash                                        j6=i
+                                         and subgame perfect equilibria in a flexible way. Secondly,          for the projection onto all but the ith component, and
+                                         categorical products of open games correspond to an external                                             n
+                                         choice operator that is highly reminiscent of products in
+                                                                                                                                                  Y
+                                                                                                                                       ′
+                                                                                                                                    (xi , x−i ) :   Xj
+                                         game semantics, and is useful in practical examples. This                                                j=1
+for the modification of x with ith component x′i : Xi . (This          player in the original game. The payoffs k are determined by
+notation is slightly imprecise, but is both useful and standard        the play associated to the strategy profile. A Nash equilibrium
+in game theory.)                                                       of an extensive form game is a strategy profile that is a Nash
+                                                 n                     equilibrium of its normalisation.
+      Qn 2. Given a normal form game ((Xi )i=1 , q), let
+Definition
+Σ = i=1 Xi be its set of strategy profiles. We define the              Definition 6. A subgame of an extensive form game G is a
+best response relation B ⊆ Σ × Σ by (σ, σ ′ ) ∈ B iff for all          subtree H with the property that if x is any node in H, then
+players 1 ≤ i ≤ n and all xi : Xi ,                                    any node in G in the same information set as x is also in
+                                                                       H. The subtree H inherits the structure of an extensive form
+                 (k (σi′ , σ−i ))i ≥ (k (xi , σ−i ))i                  game from G.
+    A pure strategy profile is called a (pure) Nash equilibrium if        A subgame perfect equilibrium of an extensive form game
+it is a fixpoint of the best response relation, that is, if (σ, σ) ∈   is a strategy profile that restricts to a Nash equilibrium on
+B.                                                                     every subgame.
+
+  Equivalently, σ is a Nash equilibrium iff for all players 1 ≤          (This definition implies that the root node of a subgame
+i ≤ n and all unilateral deviations x′i : Xi ,                         must be in a singleton information set.)
+                                                                         We will see an example illustrating these definitions in
+                    (k(σ))i ≥ (k (x′i , σ−i ))i                        section IX.
+                                                                         The remainder of this section considers a simplified special
+In words, a Nash equilibrium is a strategy profile in which            case of perfect information games, taken from [3], [4].
+no player can strictly increase their payoff by unilaterally
+deviating to another pure strategy. (‘Unilateral’ means that the       Definition 7. An n-player sequential game is an extensive-
+strategy profiles of all other players remain fixed.)                  form game of perfect information in which at level i of the
+                                                                       tree all choices are made by player i, and in which any two
+Definition 3. An n-player game extensive form game is a                nodes at the same level have the same set of actions available.
+tree where
+                                                                         The second condition implies that the tree of a sequential
+   • Each non-leaf node is labelled by a player, who makes
+                                                                       game is balanced. An n-player sequential game is equivalently
+     the decision at that node
+   • Each leaf node is labelled by an n-tuple of real payoffs              Qn by sets X1 , . . . , Xn of actions, and a payoff function
+                                                                       defined
+                                                                       k : i=1 Xi → Rn . Subgames are in bijection with partial
+   • Each edge is labelled by an action, such that no two
+                                                                       plays x1 , . . . , xi−1 for 1 ≤ i ≤ n. A strategy for player i is a
+     outgoing edges of a single node are labelled by the same
+                                                                       function
+     action                                                                                           Yi
+   • The nodes of the tree are partitioned into information                                      σi :    Xj → Xi
+     sets                                                                                            j=1
+
+   An information set is a nonempty subset of nodes such that          and a strategy profile is a tuple
+   • Any pair of nodes in the same information set are labelled
+                                                                                                               
+                                                                                              Yn    Yi
+     by the same player                                                                  σ:            Xj → Xi 
+   • Any pair of nodes in the same information set have the                                   i=1     j=1
+     same set of actions labelling their successors
+                                                                       Definition 8. Let (Xi )ni=1 be a sequence of sets for n ≥ 1.
+   A game of perfect information is an extensive form game             Let 1 ≤ p ≤ q ≤ n. For a sequence
+whose information sets are all singletons.                                                               q−1
+                                                                                                         Y
+  In section VII we will define a simpler subclass of games                                         x:            Xi
+of perfect information called sequential games.                                                             j=1
+
+Definition 4. A strategy for a player i in an extensive-form           and a sequence of functions
+                                                                                                             
+game is a map that takes each information set x owned by                                    Yn    i−1
+                                                                                                  Y
+player i, to a choice of action among successors of nodes in                            σ:           Xj → Xi 
+x. A strategy profile is a tuple of strategies for each player.                               i=p     j=1
+
+  A strategy profile induces a play, which is a path from              we define a sequence
+the root node to a leaf node. Plays are in bijection with leaf                                              n
+                                                                                                            Y
+nodes, and so each strategy profile determines a payoff for                                         vxσ :         Xi
+each player.                                                                                                i=1
+                                                                       extending x, called the strategic extension of x by σ, by the
+Definition 5. Each n-player extensive form game induces                course-of-values recursion
+an n-player normal form game called its normalisation or                                (
+strategic form as follows. The set of choices for player i in                     σ       xi                              if i < q
+                                                                               (vx )i =         σ                σ
+the normalisation is defined to be the set of strategies for that                         σi ((vx )1 , . . . , (vx )i−1 ) if i ≥ q
+   With this notation, a strategy profile σ of a sequential game     [10, section 1.3]. The category s(Set) has as objects pairs of
+is a Nash equilibrium iff                                            sets, and as morphisms (X, S) → (Y, R) pairs of functions
+       
+             σ
+                                            
+                                                   σ
+                                                                   X → Y and X × S → R.
+        k v(v  σ) i−1
+                      ,σ′ ((v σ ) i−1
+                                      )
+                                           ≥  k  v(v σ ) i−1
+                                                             ,x
+                  1   i    1       i             1    i       i      Proposition 4. V is the fibrewise opposite of the simple
+for all players 1 ≤ i ≤ n and deviations xi : Xi . It is a           fibration s(Set) → Set.
+subgame-perfect equilibrium iff for all players 1 ≤ i ≤ n, all
+subgames x1 , . . . , xi−1 and all deviations xi : Xi ,              Proof. The fibre of s(Set) over X is the kleisli category
+                                                             co-kl(X×) [10, exercise 1.3.4]. Proving this is essentially the
+           k vxσ1 ,...,xi−1    ≥ k vxσ1 ,...,xi−1 ,xi                same as the above proof.
+                               i                          i
+               III. T HE CATEGORY OF LENSES                          Proposition 5. There is an identity-on-objects functor (−, −) :
+  In this section we recall and extend ideas from [9] on lenses.     Set × Setop → Lens defined by v(f,g) = f and u(f,g) =
+                                                                     g ◦ π2 .
+Definition 9. Let X, S, Y, R be sets. A lens λ : (X, S) →
+(Y, R) consists of a pair of functions vλ : X → Y , uλ :             Proof. Routine.
+X × R → S.
+                                                                        Note that this functor is ‘almost’ faithful, but there are
+  We refer to such a pair (X, S) as a diset. We write Φ, Ψ, Θ        counterexamples involving the empty set. For example, take
+to refer to disets. This is not really a formal notion, but it       the unique function f : 0 → 1 and the two functions
+carries a connotation that X should be thought of ‘covariantly’      g1 6= g2 : 1 → 2 = {L, R}. Then there is an equality of
+and S ‘contravariantly’. (To say of a category C that its objects    lenses (f, g1 ) = (f, g2 ) : (0, 2) → I. In [9] the category of
+are disets is really to say that there is an identity-on-objects     nonempty sets is identified with a subcategory of the category
+functor Set × Setop → C.)                                            of lenses based on nonempty sets.
+  This definition of lens is called concrete lenses in [15],            Next, we define a symmetric monoidal structure of Lens.
+and is essentially polymorphic lenses in the absence of a
+polymorphic typesystem. The relationship between this and            Definition 10. We define the monoidal product of disets to be
+the more familiar monomorphic lenses is discussed in [9].            (X, S) ⊗ (X ′ , S ′ ) = (X × X ′ , S × S ′ ), with monoidal unit
+                                                                     I = (1, 1). Given lenses λ : Φ → Ψ and λ′ : Φ′ → Ψ′ , we
+Proposition 1. There is a category Lens whose objects are            define a lens λ ⊗ λ′ : Φ ⊗ Φ′ → Ψ ⊗ Ψ′ by
+disets and whose morphisms are lenses. The identity lens
+(X, S) → (X, S) consists of the identity function X → X                                  vλ⊗λ′ (x, x′ ) = (vλ (x), vλ′ (x′ ))
+and the right projection X × S → S. The composition of                       uλ⊗λ′ ((x, x′ ), (r, r′ )) = (uλ (x, r), uλ′ (x′ , r′ ))
+λ : (X, S) → (Y, R) and µ : (Y, R) → (Z, Q) is given by
+vµ◦λ = vµ ◦ vλ and uµ◦λ (x, q) = uλ (x, uµ (vλ (x), q)).               We define the structure morphisms of Lens to be the image
+                                                                     under (−, −) of the corresponding structure morphisms of the
+Proof. Routine.                                                      cartesian monoidal category Set × Setop . That is to say,
+Proposition 2. v defines a fibration V : Lens → Set.
+                                                                             a(X,S),(X ′ ,S ′ ),(X ′′ ,S ′′ ) = (aX,X ′ ,X ′′ , a−1
+                                                                                                                                 S,S ′ ,S ′′ )
+Proof. See appendix.                                                                               l(X,S) = (lX , lS−1 )
+  For each set X there is a left-multiplication comonad                                           r(X,S) = (rX , rS−1 )
+(X×) : Set → Set. The co-kleisli category of this comonad                               s(X,S),(X ′ ,S ′ ) = (sX,X ′ , s−1
+                                                                                                                        S,S ′ )
+has objects sets and morphisms
+                                                                     Proposition 6. Lens is a symmetric monoidal category.
+             homco-kl(X×) (R, S) = X × R → S
+                                                                     Proof. Instead of proving the Mac Lane axioms directly,
+  Every function f : X → Y induces an identity-on-objects
+                                                                     we show that this monoidal structure results from a simpler
+functor f ∗ : co-kl(Y ×) → co-kl(X×), where the maps
+                                                                     symmetric monoidal structure on the fibres V−1 (X), by the
+       f ∗ : homco-kl(Y ×) (R, S) → homco-kl(X×) (R, S)              Grothendieck construction for symmetric monoidal categories
+                                                                     [16, theorem 12.7].
+are given by f ∗ (u)(x, r) = u(f (x), r). Thus we have a
+                                                                        co-kl(X) has finite products, given by cartesian products
+pseudofunctor co-kl(−×) : Setop → Cat.
+                                                                     of sets. Consequently, cartesian products of sets give co-
+Proposition 3. V−1 (X) ∼= co-kl(X×)op for each set X, and            products in co-kl(X×)op . The reindexing functors (f ∗ )op :
+for f : X → Y the reindexing functor f ∗ : V−1 (Y ) →                co-kl(Y ×)op → co-kl(X×)op are identity-on-objects, and so
+V−1 (X) is the opposite functor of that given above.                 preserve finite coproducts. This means in particular that the
+                                                                     fibres V−1 (X) are symmetric monoidal and the reindexing
+Proof. See appendix.
+                                                                     functors are strong monoidal, and the base category Set is
+   The simple fibration s(Set) → Set is a fibration that plays       cartesian monoidal, and so the Grothendieck construction can
+a central role in the categorical semantics of simple type theory    be applied.
+             IV. O PEN GAMES AND MORPHISMS                           necessary. The morphisms we define in this paper are very
+                                               op
+Proposition 7. There is a functor K : Lens → Set, called             different to those in [7], but indeed agree on the globular
+the continuation functor, defined on disets by K(X, S) =             morphisms.
+X → S, and on lenses λ : (X, S) → (Y, R) by K(λ)(k)(x) =                The following definition is the key definition of this paper.
+uλ (x, k(vλ (x))).                                                   Definition 14. Let G : Φ −→ 7 Ψ and G : Φ′ −→
+                                                                                                                 7 Ψ′ be open
+Proof. Routine.                                                      games. A contravariant lens morphism α : G → G ′ consists
+                                                                     of the following data:
+Definition 11. The context functor C : Lens × Lensop →                                     ′                ′
+                                                                        • Lenses s(α) : Φ → Φ and t(α) : Ψ → Ψ
+Set is defined by C(Φ, Ψ) = V(Φ) × K(Ψ).                                • A function Σ(α) : Σ(G) → Σ(G )
+                                                                                                          ′
+
+   Although we could see C as a profunctor Lens → Lens,              satisfying the following two axioms:
+this will not be a helpful point of view.                               • For all σ : Σ(G), the following diagram in Lens
+
+Proposition 8. homLens (I, (X, S)) ∼= X defines a represen-                commutes:
+tation V ∼
+         = hom  Lens (I, −), and hom                  ∼
+                                     Lens ((X, S), I) = X →
+                                                                                                  G(σ)
+                                                                                          Φ                 Ψ
+S defines a representation K ∼=  homLens (−, I).
+Proof. Routine.
+   We summarise this by the slogan that in the category of                                    s(α)                     t(α)
+lenses, states (morphisms from I) are points, and effects
+(morphisms to I) are continuations.
+   For convenience, we will immediately redefine V and K to                                       G ′ (Σ(α)(σ))
+                                                                                             Φ′                       Ψ′
+be equal to these hom-functors, so that we can write their
+action on lenses in terms of lens composition.                         •   For all (h, k) : C(Φ′ , Ψ) and all σ, σ ′ : Σ(G), if
+Definition 12. Let Φ, Ψ be disets. An open game G : Φ −→
+                                                       7 Ψ                                   (σ, σ ′ ) ∈ BG (s(α) ◦ h, k)
+consists of the following data:
+                                                                           then
+  • A set Σ(G) of strategy profiles
+  • For every σ : Σ(G), a lens G(σ) : Φ → Ψ                                        (Σ(α)(σ), Σ(α)(σ ′ )) ∈ BG ′ (h, k ◦ t(α))
+  • For every c : C(Φ, Ψ), a best response relation B(c) ⊆
+     Σ(G) × Σ(G)                                                        We call a pair (h, k) : C(Φ′ , Ψ) a context for α.
+                                                                        We represent a contravariant lens morphism α : G → G ′ as
+   We call a pair c = (h, k) : C(Φ, Ψ) a context for G, where        a square
+h : V(Φ) is the history and k : K(Ψ) the continuation. We
+also write s(G) = Φ and t(G) = Ψ for the source and target                                           G
+                                                                                        Φ                         Ψ
+of G.                                                                                              Σ(G)
+   The equivalence between this definition and the more con-
+crete definition in [8, section 2.1.4] (over the category of sets)
+is easy to see. If Φ = (X, S) and Ψ = (Y, R) then the                                     s(α)           Σ(α)      t(α)
+family of lenses G(σ) is the same as the play and coplay
+functions Σ(G) → (X → Y ), Σ(G) → (X × R → S). By
+the isomorphisms V(Φ) ∼    = X and K(Ψ) ∼    = Y → R, the best                                       G′
+response relation can equivalently be written as a function                             Φ′                        Ψ′
+                                                                                                   Σ(G ′ )
+X × (Y → R) → (Σ(G) → P(Σ(G))), where P is powerset.
+   We note that given a pair of games G, G ′ : Φ −→      7 Ψ of      anticipating the double category structure.
+the same type, there is an obvious way to define morphisms              Having done the work of representing open games in terms
+between them.                                                        of lenses, this definition is almost automatic, but with one
+Definition 13. Let G, G ′ : Φ −→
+                               7 Ψ be open games. A globular         crucial twist: the lenses s(α) and t(α) go in the opposite
+morphism α : G → G ′ is a function Σ(α) : Σ(G) → Σ(G ′ )             direction to α. If they were covariant then the resulting
+such that                                                            definition would be similar to that of [7] and have many
+                                                                     features in common, including the elegant representation of
+  • G(σ) = G(Σ(α)(σ)) for all σ : Σ(G)
+            ′                                 ′                      repeated games. However, we will demonstrate in this paper
+  • If (σ, σ ) ∈ BG (c) then (Σ(α)(σ), Σ(α)(σ )) ∈ BG ′ (c)
+                                                                     that the alternative definition has several attractive features.
+   It is expected that all reasonable definitions of general         We give the definition the more specific name contravariant
+morphisms between open games will agree on the globular              lens morphism to distinguish it from alternatives, but since this
+morphisms. However it is demonstrated by example, both in            definition is the subject of this paper, we will simply refer to
+this paper and in [7], that the more general morphisms are           it as a morphism from now.
+Proposition 9. Open games and morphisms form a category              2-cells inclusion. Another has as objects categories, horizontal
+Gamev , with identities and composition lifted from Set and          1-cells profunctors, vertical 1-cells functors and 2-cells natural
+Lens.                                                                transformations. We will show that there is a double category
+                                                                     whose 1-cells are disets, horizontal 1-cells are open games,
+Proof. Routine.
+                                                                     vertical 1-cells are reversed lenses, and 2-cells are contravari-
+   The symbol Gamev is mnemonic for vertical, hinting that           ant lens morphisms.
+this will be the vertical category of our double category. (Note        In this paper we mostly follow the notation of [17], which
+that we follow the orientation convention of [17].)                  gives an explicit definition of symmetric monoidal pseudo
+                                                                     double categories.
+Proposition 10. Let G, G ′ : Φ −→7   Ψ be open games.
+Then globular morphisms G → G ′ as previously defined are            Definition 15. Let Φ be a diset. We define an open game
+equivalent to morphisms α : G → G ′ with s(α) = idΦ and              u(Φ) : Φ −→7 Φ by Σ(u(Φ)) = 1, u(Φ)(∗) = idΦ and (∗, ∗) ∈
+t(α) = idΨ .                                                         Bu(Φ) (c) for all contexts c : C(Φ, Φ).
+Proof. Trivial.                                                      Proposition 13. For each lens λ : Φ → Ψ there is a morphism
+Proposition 11.                                                      of open games u(λ) : u(Ψ) → u(Φ) defined by s(u(λ)) =
+  • s : Game → Lens
+                          op
+                              is an opfibration whose opcarte-       t(u(λ)) = λ and Σ(u(λ)) = id1 . Then u defines a functor
+    sian liftings are t-vertical and Σ-vertical                      Lensop → Gamev .
+                            op
+  • t : Game → Lens             is a fibration whose cartesian       Proof. Trivial.
+    liftings are s-vertical and Σ-vertical
+  • Σ : Game → Set is a fibration whose cartesian liftings           Definition 16. Let G : Φ −→
+                                                                                               7 Ψ and H : Ψ −→
+                                                                                                              7 Θ be open
+    are s-vertical and t-vertical                                    games. The open game H ⊙ G : Φ −→
+                                                                                                     7 Θ is defined by
+Proof. See appendix.                                                   • Σ(H ⊙ G) = Σ(G) × Σ(H)
+                                                                       • (H ⊙ G)(σ, τ ) = H(τ ) ◦ G(σ)
+Proposition 12. There is a fibred forgetful functor from                             ′   ′
+                                                                       • ((σ, τ ), (σ , τ )) ∈ BH⊙G (h, k) iff
+the fibration Σ : Game → Set to the family fibration
+Fam(Lens) → Set, that forgets best response.                                              (σ, σ ′ ) ∈ BG (h, k ◦ H(τ ))
+Proof. Routine.
+                                                                           and
+        V. T HE DOUBLE CATEGORY OF OPEN GAMES
+                                                                                          (τ, τ ′ ) ∈ BH (G(σ) ◦ h, k)
+   A double category [12] is defined as an internal category
+object in the category of large categories and functors. (Com-          In the previous section we noted that the definition of
+pare that a 2-category is defined as a category enriched over        open games in this paper is equivalent to that of [8]. Under
+categories.) Equivalently, a 2-category contains four sorts of       this equivalence, the composition H ⊙ G corresponds to the
+things: objects, horizontal 1-cells, vertical 1-morphisms, and       definition H ◦N G in [8, sections 2.2.3 and 2.2.4], in which
+2-cells. Given a pair of horizontal 1-cells F : X −→     7 Y,        the continuation k ◦ H(τ ) of G in the previous definition is
+G : W −→   7 Z, a 2-cell α : F → G consists of a pair of             referred to as kτ ◦ . This is a primitive form of sequential play,
+vertical 1-morphisms f : X → W , g : Y → X between the               which will be illustrated in practice in the last section of this
+objects, and a square                                                paper.
+                               G                                                                  G    H                  G′    H′
+                    X                     Y                          Proposition 14. Let Φ −→
+                                                                                            7 Ψ −→ 7 Θ and Φ′ −→  7 Ψ′ −→7 Θ′
+                                                                     be open games, and let α : G → G and β : H → H′ be
+                                                                                                        ′
+
+                                                                     morphisms such that t(α) = s(β). Then there is a morphism
+                                                                     β ⊙ α : H ⊙ G → H′ ⊙ G ′ defined by s(β ⊙ α) = s(α),
+                      f       ⇓α              g                      t(β ⊙ α) = t(β) and Σ(β ⊙ α) = Σ(α) × Σ(β).
+                                                                     Proof. See appendix.
+                               H
+                   W                      Z                          Proposition 15. ⊙ defines a functor
+   In this paper we are concerned with pseudo double cate-                         Game ×Lensop Game → Game
+gories, in which the vertical morphisms form a category, but
+the horizontal morphisms form a category only up to invertible       where the pullback is over
+2-cells. Hence, there is a category of vertical morphisms and
+                                                                                              s             t
+a bicategory of horizontal morphisms.                                               Game −→ Lensop ←− Game
+   A standard example of a double category has as objects
+sets, horizontal 1-cells relations, vertical 1-cells functions and   Proof. See appendix.
+Proposition 16. There are globular natural isomorphisms                                          Definition 19. Let G1 : Φ1 −→    7 Ψ1 and G2 : Φ2 −→
+                                                                                                                                                    7 Ψ2 be
+                                             ∼
+                                             =                                                   open games. We define an open game G1 ⊗ G2 : Φ1 ⊗ Φ2 −→ 7
+                aI,H,G : (I ⊙ H) ⊙ G −→ I ⊙ (H ⊙ G)                                              Ψ1 ⊗ Ψ2 by
+                                             ∼
+                                             =
+                    lG : u(t(G)) ⊙ G −→ G                                                          • Σ(G1 ⊗ G2 ) = Σ(G1 ) × Σ(G2 )
+                                             ∼
+                                             =                                                     • (G1 ⊗ G2 )(σ1 , σ2 ) = G1 (σ1 ) ⊗ G2 (σ2 )
+                   rG : G ⊙ u(s(G)) −→ G                                                                            ′    ′
+                                                                                                   • ((σ1 , σ2 ), (σ1 , σ2 )) ∈ BG1 ⊗G2 (c) iff
+Proof. Each of these morphisms is over the correspond-
+                                                                                                                     (σ1 , σ1′ ) ∈ BG1 (L(G2 (σ2 ))(c))
+ing structure morphism of the cartesian monoidal category
+Set.                                                                                                   and
+                                                                                                                     (σ2 , σ2′ ) ∈ BG2 (R(G1 (σ1 ))(c))
+Proposition 17. The above structures form a pseudo double
+category whose category of objects is Lensop and whose                                              Continuing the connection between definitions in this pa-
+category of morphisms is Gamev .                                                                 per and those of [8], this definition corresponds to [8, sec-
+                                                                                                 tion 2.2.7], also denoted G1 ⊗ G2 . It is a primitive form
+Proof. See appendix.
+                                                                                                 of simultaneous play. The continuation parts of the con-
+   It follows immediately that open games and globular mor-                                      texts L(G2 (σ2 ))((h1 , h2 ), k) and R(G1 (σ1 ))((h1 , h2 ), k) are
+phisms form a bicategory. The equivalence relation ∼ on                                          respectively referred to as k⊗σ2 (h2 ) and kσ1 (h1 )⊗ .
+games defined in [8, section 2.2.2] is precisely the relation of
+                                                                                                 Proposition 19. Let α1 : G1 → G1′ and α2 : G2 → G2′ be
+globular isomorphism, and the category Game(Set) is pre-
+                                                                                                 morphisms of open games. Then there is a morphism α1 ⊗α2 :
+cisely the category of horizontal morphisms modulo globular
+                                                                                                 G1 ⊗ G2 → G1′ → G2′ defined by s(α1 ⊗ α2 ) = s(α1 ) ⊗ s(α2 ),
+isomorphism.
+                                                                                                 t(α1 ⊗α2 ) = t(α1 )⊗t(α2 ), and Σ(α1 ⊗α2 ) = Σ(α1 )×Σ(α2 ).
+Definition 17. Let Φ1 , Φ2 be disets. Since V(Φ1 ⊗ Φ2 ) ∼
+                                                        =                                        Proof. See appendix.
+V(Φ1 ) × V(Φ2 ), we have projections
+                          1π             2                   π                                   Proposition 20. ⊗ defines a functor Gamev × Gamev →
+                  V(Φ1 ) ←− V(Φ1 ⊗ Φ2 ) −→ V(Φ2 )                                                Gamev .
+Definition 18. Let Φ, Φ′ , Ψ, Ψ′ be disets. We define functions                                  Proof. Trivial.
+                     ′     ′                         ′                  ′
+ L : homLens (Φ , Ψ ) → (C(Φ ⊗ Φ , Ψ ⊗ Ψ ) → C(Φ, Ψ))                                            Proposition 21. There are natural isomorphisms
+                                                 ′                  ′                 ′   ′                                             ∼
+                                                                                                                                        =
+ R : homLens (Φ, Ψ) → (C(Φ ⊗ Ψ , Ψ ⊗ Ψ ) → C(Φ , Ψ ))                                                         αG,H,I : (G ⊗ H) ⊗ I −→ G ⊗ (H ⊗ I)
+                                                                                                                                    ∼
+                                                                                                                                    =
+by                                                                                                                 λG : u(I) ⊗ G −→ G
+                                                                                                                                    ∼
+                                                                                                                                    =
+                                                          −1
+       L(λ′ )(h, k) = (π1 (h), k ◦ (Ψ ⊗ (λ′ ◦ π2 (h))) ◦ rΨ  )                                                     ρG : G ⊗ u(I) −→ G
+                                                                                                                                ∼
+                                                                                                                                =
+                                                         −1
+       R(λ)(h, k) = (π2 (h), k ◦ ((λ ◦ π1 (h)) ⊗ Ψ′ ) ◦ lΨ ′ )
+                                                                                                               σG,H : G ⊗ H −→ H ⊗ G
+
+     These continuations are, more explicitly,                                                   Proof. These are the same as the structure morphisms in the
+                                                                                                 symmetric monoidal category Lensop × Set× Lensop , where
+          r −1            Ψ⊗π2 (h)                           Ψ⊗λ′                     k
+         Ψ
+      Ψ −−→ Ψ ⊗ I −−−−−−→ Ψ ⊗ Φ′ −−−→ Ψ ⊗ Ψ′ −
+                                             →I                                                  Set is cartesian monoidal. It is routine to verify that these still
+                                                                                                 natural isomorphisms in Gamev .
+          l−1             π1 (h)⊗Ψ′                          λ⊗Ψ′                     k
+      Ψ′ −−→ I ⊗ Ψ′ −−−−−−→ Φ ⊗ Ψ′ −−−→ Ψ ⊗ Ψ′ −
+          Ψ ′
+                                               →I                                                Proposition 22. Gamev is a symmetric monoidal category.
+                                                                                ′            ′
+                               κ         λ           µ                      ′ κ           ′ λ
+Proposition 18. Let Ξ −
+                      →Φ−
+                        →Ψ−
+                          → Θ and Ξ −→ Φ −→                                                      Proof. Routine.
+    ′
+ ′ µ        ′
+Ψ −→ Θ be lenses. Then the following diagram commutes:                                           Proposition 23. s, t : Game → Lensop are strict symmetric
+       L(µ′ ◦ λ′ ◦ κ′ )            R(µ ◦ λ ◦ κ)                                                  monoidal functors.
+                           ′       ′
+  C(Ξ, Θ)           C(Ξ ⊗ Ξ , Θ ⊗ Θ )         C(Ξ′ , Θ′ )                                        Proof. Trivial.
+                                                                                                 Proposition 24. There are globular isomorphisms
+                                                                                                                                        ∼
+                                                                                                                                        =
+                                                                                                             UX1 ,X2 : u(X1 ⊗ X2 ) −→ u(X1 ) ⊗ u(X2 )
+                                     ′                   ′                  ′     ′
+         C(κ, µ)          C(κ ⊗ κ , µ ⊗ µ )                             C(κ , µ )
+                                                                                                 and
+                                                                                                                                            ∼
+                                                                                                                                            =
+                                                                                                 XG1 ,G2 ,H1 ,H2 : (H1 ⊗H2 )⊙(G1 ⊗G2 ) −→ (H1 ⊙G1 )⊗(H2 ⊙G2 )
+                 L(λ′ )                                          R(λ)                            Proof. See appendix.
+ C(Φ, Ψ)                  C(Φ ⊗ Φ′ , Ψ ⊗ Ψ′ )                                   C(Φ′ , Ψ′ )
+                                                                                                 Theorem 1. Disets, open games and morphisms form a
+Proof. See appendix.                                                                             symmetric monoidal pseudo double category.
+Proof. See appendix.                                                Proof. Let h : V(s(G ′ )). Since σ is a state of G over k, we
+                                                                    have
+   Note that we cannot immediately apply [17, theorem 5.1]                           (σ, σ) ∈ BG (s(α) ◦ h, k)
+to deduce that the horizontal bicategory is also symmetric
+                                                                    Since α is a morphism, it follows that
+monoidal, because the horizontal bicategory is not framed
+[16]. However, the hypotheses of this theorem appear to                        (Σ(α)(σ), Σ(α)(σ)) ∈ BG ′ (h, k ◦ t(α))
+be stronger than necessary: all vertical isomorphisms, which
+includes the structure morphisms of the symmetric monoidal          Proposition 26. S defines a functor Gamev → Set.
+structure, have companions and conjoints. This will not impact      Proof. Routine.
+us in practice, because we will work directly with the double
+category rather than the bicategory structure.                      Theorem 2. S ∼
+                                                                                 = homGamev (u(I), −).
+   A common (and reasonable) complaint has been that little         Proof. States (σ, k) of G are in bijection with morphisms α :
+game-theoretic information can be obtained from the string di-      u(I) → G, as follows. There is a unique choice s(α) = k ◦
+agram alone. For example, no information about the equilibria       G(σ) satisfying the first axiom. Since by definition (∗, ∗) ∈
+of a game can be understood from its string diagram. Thus,          Bu(I) (c) for all c : C(I, I), and all split contexts for α are of
+despite having a graphical language, in order to answer any         the form (h, idI ) for h : V(Φ), the second axiom is equivalent
+nontrivial question about an open game given its diagram it         to the condition that (σ, σ) ∈ BG (h, k) for all h : V(Φ).
+is still necessary to explicitly calculate the denotation, which
+is tedious and error-prone, and makes compositionality much           This is summarised in the diagram
+less useful in practice.
+                                                                                                       u(I)
+   It is expected that a monoidal double category supports                                    I                     I
+a 3-dimensional graphical calculus of surface diagrams. To                                              1
+completely formalise these claims appears to still require a
+large amount of foundational work, however.
+                                                                                   k ◦ G(σ)                 σ           k
+   Having obtained a higher-dimensional categorical language
+that is fully compositional and has the potential to be graph-
+ical, the next step is to formalise interesting game-theoretic
+                                                                                                       G
+concepts using this language. This is the subject of the                                     Φ                     Ψ
+remainder of this paper. The long-term aim towards which                                               ΣG
+we are working is to be able to reason about game-theoretic
+concepts using nothing but surface diagrams.                          Noting that u(I) is the monoidal unit of Gamev , states of
+                                                                    open games are indeed states in the more general sense of
+                                                                    monoidal categories.
+                VI. S TATES OF OPEN GAMES
+                                                                    Corollary 1 (Backward induction). Let G and H be open
+Definition 20. Let G : Φ −→   7 Ψ be an open game. A state          games with t(G) = s(H). Let τ be a state of H over k, and
+of G is a pair (σ, k) where σ : Σ(G) and k : K(Ψ) with the          let σ be a state of G over k ◦ H(τ ). Then (σ, τ ) is a state of
+property that for all h : V(Φ), (σ, σ) ∈ BG (h, k). We also         H ⊙ G over k.
+say that σ is a state of G over k. We write S(G) for the set of
+                                                                       As its name suggests, the previous result is similar to the
+states of G.
+                                                                    backward induction method of game theory, although in a far
+   Informally, a state consists of a choice of continuation         more general form. The intuition is that we first fix the strategy
+and a choice of strategy that is a Nash equilibrium for that        profile τ of H, and then players in G reason as though players
+continuation, for all histories. As we will see, this combines      in H play τ .
+aspects of Nash and subgame perfect equilibria in a flexible        Corollary 2. Let G1 and G2 be open games. Let σ1 be a state
+way. The definition of states is a weakening of the definition of   of G1 over k1 , and let σ2 be a state of G2 over k2 . Then
+solution considered in [8, section 3.3], in which σ may depend      (σ1 , σ2 ) is a state of G1 ⊗ G2 over k1 ⊗ k2 .
+on k, but not on h. The latter is more game-theoretically
+plausible (because many open games have interesting solutions       Definition 21. An open game G : Φ −→               7  Ψ is called
+in this sense), but is incompatible with ⊗ and hence not fully      strategically trivial if it satisfies the following two properties:
+compositional. The definition of state is intended as a compro-        • Σ(G) ∼ =1
+mise between game-theoretic usefulness and compositionality.           • (∗, ∗) ∈ BG (h, k) for all contexts (h, k) : C(Φ, Ψ)
+
+Proposition 25. Let α : G → G ′ be a morphism of open                  Since a strategically trivial open game G : (X, S) −→7
+games, and let σ be a state of G over k. Then Σ(α)(σ) is            (Y, R) is defined up to globular isomorphism by its lens
+a state of G ′ over t(α) ◦ k. Thus we have a function S(α) :        G(∗) : (X, S) → (Y, R), the (horizontal) subcategory of
+S(G) → S(G ′ ).                                                     strategically trivial games is equivalent to Lens. Given a
+lens λ : (X, S) → (Y, R), we abuse notation and write                  •   Pure Nash equilibria of the n-player normal form game
+λ : (X, S) −→  7   (Y, R) for the corresponding strategically              with outcome function k
+trivial open game. In particular, for functions f : X → Y and
+                                                                     Proof. See appendix.
+g : R → S we have an open game (f, g) : (X, S) −→    7 (Y, R),
+and for each set X there is a strategically trivial open game           Note that if α1 is a state of DI,Y1 over k1 and α2 is a state
+ε : (X, X) −→ 7 I corresponding to the counit lens [9] with          of DI,Y2 over k2 then α1 ⊗ α2 is a state of DI,Y1 ⊗ DI,Y2 over
+update function uε (x, ∗) = x.                                       k1 ⊗ k2 . However, the continuation k1 ⊗ k2 corresponds to
+Proposition 27. Let G : Φ −→ 7 Ψ be a strategically trivial          a function Y1 × Y2 → R2 that is ‘separable’, in the sense
+game. Then for every continuation k : K(Ψ), G has exactly            that (k1 ⊗ k2 )(y1 , y2 ) = (k1 (y1 ), k2 (y2 )), and hence the
+one state over k. In particular, a strategically trivial effect      ⊗-separable states can only be equilibria of these separable
+G : Φ −→
+       7 I has a unique state.                                       games. Such games are game-theoretically trivial in the sense
+                                                                     that there is no strategic interaction between players, and so
+Proof. The unique morphism is                                        a game degenerates into a tuple of independent maximisation
+                                                                     problems. Only the ⊗-inseparable states of tensor products of
+                                  u(I)
+                          I                    I                     decisions correspond to nontrivial Nash equilibria.
+                                    1                                   Despite the abstractions introduced in this paper the proof
+                                                                     of the previous theorem is notably ‘manual’, and so the reader
+                                                                     might be left wondering what the purpose of the abstraction
+               k ◦ G(∗)                            k                 was. The point of this theorem is that it allows us to talk about
+                                                                     Nash equilibria purely internally in a categorical structure,
+                                                                     which can be combined with the other abstractions we have
+                                   G                                 introduced in order to later reason about Nash equilibria in
+                        Φ                     Ψ
+                                   1                                 purely abstract terms.
+                                                                        In the last section we will see both of these points illustrated:
+   Note that the strategically trivial effects (X, S) −→
+                                                       7 I are
+                                                                     a Nash equilibrium of a bimatrix game must be introduced
+‘internal continuations’, and are in bijection with functions
+                                                                     ‘atomically’ since it cannot be composed from simpler com-
+X → S. These include the utility functions of game theory.
+                                                                     ponents, but once it has been introduced, it can be further
+Definition 22. For all sets X and Y we define an open game           composed using purely categorical methods.
+DX,Y : (X, 1) −→ 7 (Y, R) (where R is the set of real numbers,
+                                                                                      VII. BACKWARD INDUCTION
+interpreted as utility) called a decision, as follows:
+   • Σ(DX,Y ) = X → Y                                                  The previous theorem characterised Nash equilibria of nor-
+   • DX,Y (σ) is the unique lens (X, 1) → (Y, R) with                mal form games in terms of states of open games. In this
+     V(DX,Y (σ)) = σ                                                 section we do the same to Nash and subgame perfect equilibria
+          ′                        ′
+   • (σ, σ ) ∈ DX,Y (h, k) iff k(σ (h)) ≥ k(y) for all y : Y         of extensive form games of perfect information.
+
+Proposition 28. Let X, Y be sets and k : Y → R. Then there           Definition 23. Let n ≥ 1 and let X1 , . . . , Xn be a sequence
+is a bijective correspondence between                                of sets. We define an open game
+   • States of DX,Y over k                                                                 n−1
+                                                                                                        !          n
+                                                                                                                              !
+                                                                                           Y                       Y
+                                                                              ∆
+   • Functions X → arg max(k), where arg max(k) ⊆ Y is                      DX 1 ,...,Xn
+                                                                                         :     Xi , Rn−1 −→
+                                                                                                          7          X i , Rn
+     the set of maximising points of k                                                     i=1                            i=1
+
+In particular, if Y is finite then DX,Y has at least one state       by the string diagram in figure 1, where the black node is the
+over every k.                                                        (strategically trivial) copying open game
+                                                                                            n−1
+                                                                                                      !      n−1      n−1
+                                                                                                                                 !
+Proof. The pair (σ, k) is a state of DX,Y iff k(σ(x)) ≥ k(y)                              Y                Y        Y
+for all x : X and y : Y , which is equivalent to the range of σ         ∆Qn−1 Xi , 1 :          Xi , 1 −→
+                                                                                                        7        Xi ×     Xi , 1
+                                                                            i=1
+                                                                                            i=1                     i=1         i=1
+being arg max(k).
+                                                                                                    ∆
+                                                                       It is routine to check that DX1 ,...,Xn
+                                                                                                              is concretely given
+  The following theorem and its proof are essentially restate-
+                                                                     as follows, up to globular isomorphism. The set of strategy
+ments of [8, sections 3.1.2 – 3.1.4]. This is one of the key
+                                                                     profiles is
+connections between open games and classical game theory,
+characterising tensor products of decisions as normal form                              ∆
+                                                                                                     n−1
+                                                                                                       Y
+                                                                                   Σ DX   1 ,...,Xn
+                                                                                                     =    Xi → Xn
+games.                                                                                                      i=1
+
+Theorem 3. Let Y1Q   , . . . , Yn be an indexed family of sets for                ∆                       ∆
+                                                                                             
+                                                                     Given σ : Σ DX1 ,...,Xn
+                                                                                              , the lens DX1 ,...,Xn
+                                                                                                                     (σ) has
+                        n
+n ≥ 1, and let k : i=1 Yi → Rn be a function. Then there
+                                                                                               n−1          n
+is a bijective correspondence between                                                          Y            Y
+                Nn                                                          vDX
+                                                                              ∆
+                                                                                ,...,X (σ)
+                                                                                           :         Xi →         Xi , x 7→ (x, σ(x))
+   • States of    i=1 D1,Yi over k
+                                                                                  1   n
+                                                                                               i=1          i=1
+                                                                      n−1
+                                                                      Y          class (for example extensive-form games) one can define a
+                                                                            Xi   variety of solution concepts (for example pure Nash equilib-
+ n−1
+                                                                      i=1        rium, mixed Nash equilibrium, subgame perfect equilibrium,
+ Y                                                                               correlated equilibrium, Bayesian Nash equilibrium). A curious
+       Xi                                                              Xn
+                                                                                 fact about open games is that the representation of a model as
+ i=1                                DQn−1 Xi ,Xn
+                                           i=1                                   an open game automatically ‘builds in’ a particular solution
+  Rn−1                                                                Rn−1       concept, namely pure Nash equilibrium. This is because the
+                                                                                 ⊙ and ⊗ operators make essential use of Nash-like reasoning,
+                                                                          R      in which the players in each component act as though they
+                                                                                 know which strategies will be played in the other component.
+                              ∆
+                                                                                    In particular, it has proven to be difficult to characterise
+       Fig. 1. Definition of DX           in terms of DQn−1 X ,X
+                                1 ,...,Xn                   i=1   i   n          subgame perfect equilibria, despite the fact that the repre-
+                                                                                 sentation of open games appears to be dynamic (that is,
+                                                                                 has a temporal component; subgame perfect equilibrium is
+and                                                                              specifically intended for dynamic games). A failed attempt
+                          n−1
+                          Y                                                      was made in [8] by modifying the operator ⊙, there called
+      u DX
+         ∆
+           ,...,X (σ)
+                      :         Xi × Rn → Rn−1 , (x, r) 7→ r−n                   ◦SP , but it fails to form a symmetric monoidal category with
+            1      n
+                          i=1                                                    ⊗, and hence does not support a string diagram language. (See
+For h :
+           Qn−1                   Qn                 n                           the conclusion section of [8].)
+                i=1 Xi and k :      i=1 Xi → R           , the best response
+relation                                                                            A direct solution is given in [7] by defining a ‘subgame
+                       (σ, σ ′ ) ∈ BDX
+                                     ∆        (h, k)                             perfection operator’ that modifies an open game’s solution
+                                       ,...,X
+                                       1         n                               concept from Nash to subgame perfect equilibrium. From a
+holds iff                                                                        practical perspective their solution is similar to the one in this
+                       k(h, σ ′ (h))n ≥ k(h, xn )n                               paper, offering flexibility between Nash and subgame perfect
+                                                                                 equilibrium. Ours has the specific advantage that it separates
+for all xn : Xn .                                                                the representation of a game from its analysis, as in standard
+   We now come to one of the key results of this paper: For                      game theory.
+an extensive form game, Nash equilibria correspond to states
+in general, and subgame perfect equilibria correspond to ⊙-                                VIII. L IMITS AND COLIMITS OF LENSES
+separable states. Using this, we can use the category-theoretic                     We will begin, for completeness of presentation, by consid-
+notion of ⊙-separability (which could moreover be visible in                     ering limits of lenses. However, we will not use them in this
+a surface diagram as a glued boundary) to define the game-                       paper.
+theoretic notion of subgame perfection for general open games.                      Let hV, Ki : Lens → Set × Setop be the universal
+We state and prove the theorem for the special case of finite                    morphism
+sequential games (defined in section II) for simplicity, but we                                                          K
+                                                                                            Lens
+will see an example in section IX that is not in this special
+case.                                                                                                  hV, Ki
+Theorem 4. Let X1Q   , . . . , Xn be an indexed family of sets for
+                        n
+n ≥ 1, and let k : i=1 Yi → Rn . Then there is a bijective                                                               π2
+correspondence between:                                                                                Set × Setop               Setop
+                Jn       ∆
+  • States of     i=1 DX1 ,...,Xi over k                                                         V
+  • Pure Nash equilibria of the n-player sequential game
+                                                                                                                π1
+     with outcome function k
+Moreover there is a bijective correspondence between:
+                 Jn       ∆
+  • States of
+     Jn            i=1 DX1 ,...,Xi over k that are of the form                                             Set
+                                                 ∆
+        i=1 αi , where each αi is a state of DX1 ,...,Xi
+  • Subgame perfect equilibria of the n-player sequential                        Then hV, Ki ⊣ (−, −), since the left adjoint acts on disets by
+     game with outcome function k                                                                 hV, Ki (X, S) = (X, X → S)
+Proof. See appendix.                                                             and there are natural isomorphisms
+  The previous proof can be equivalently written as a proof by                                homSet×Setop ((X, X → S), (Y, R))
+backward induction, which is a proof by finite bar induction                                = (X → Y ) × (R → (X → S))
+on the tree of subgames.                                                                    ∼
+                                                                                            = (X → Y ) × (X × R → S)
+  In standard game theory, the representation of a game is
+typically dissociated from its analysis. On any game of a given                             = homLens ((X, S), (Y, R))
+   Since (−, −) is a right adjoint, it preserves limits. Since                Noting that                                   !
+limits in Set × Setop are computed pointwise from limits
+                                                                                                                                ∼
+                                                                                                           a                          a
+and colimits in Set, this allows us to compute various limits                                         V          Xi , S         =           Xi
+                                                                                                           i:I                        i:I
+in Lens. For example, products in Lens are given by
+                                              !                               the best response relation
+               Y               Y        a
+                  (Xi , Si ) =     Xi ,    Si                                                        (σ, σ ′ ) ∈ BQi:I Gi (ιj (h), k)
+                  i:I                        i:I          i:I
+                                                                              holds iff
+   More generally, since (X×) : Set → Set preserves col-
+imits, co-kl(X×) has all limits, and so the fibres V−1 (X) ∼                                     (σj , σj′ ) ∈ BGj (h, k ◦ ιj )
+                                                             =
+co-kl(X×)op have all limits. Moreover, we can show that the
+                                                                                                   Q
+                                                                              The projections πj : i:I Gi → Gj are given by
+reindexing functors f ∗ : V−1 (Y ) → V−1 (X) preserve limits.                                                Y
+We can then apply [10, exercise 9.2.4] to deduce that Lens                                       !                Gi                       !
+has all limits and V preserves them.                                                  a                       i:I              a
+   As an application of this, since Lens has pullbacks we can                             Xi , S           Y                        Yi , R
+define a category of symmetric lenses as spans in Lens. This                          i:I                       Σ(Gi )          i:I
+                                                                                                                 i:I
+contrasts with monomorphic lenses, in which pullbacks do not
+exist in general unless the put-get law is imposed [11]. This
+                                                                                              (ιj , S)                  πj                              (ιj , R)
+can be used to give a definition of symmetric lawless lenses. It
+may be possible to apply this to develop a more symmetrical
+theory of open games, where the horizontal category Game                                                               Gj
+is generalised from teleological [9] to †-compact closed.                                 (Xj , S)                                               (Yj , R)
+                                                                                                                  Σ(Gj )
+   The simplest example of this is that any two objects over 0
+in Lens are uniquely isomorphic, and every object over 0 is
+                                                                              Proof. See appendix.
+initial.
+   Next we come to colimits. For each set S, let FS : Lens →                    The product G1 × G2 is an external choice, in which
+Set be the functor given on objects by FS (Y, R) = Y ×(R →                    the decision of whether G1 or G2 is played is determined
+S). Then (−, S) ⊣ FS , since there are natural isomorphisms                   by the history. This is strongly reminiscent of products in
+                                                                              categories in game semantics [1] and additive conjunction
+                    homLens ((X, S), (Y, R))
+                                                                              in linear logic. In particular, it is typical of products in
+                  = (X → Y ) × (X × R → S)                                    game semantics that strategies compose by cartesian product,
+                  = X → Y × (R → S)                                           and plays compose by disjoint union. This analogy suggests
+                  = homSet (X, FS (Y, R))                                     the following correspondence between game semantics and
+                                                                              compositional game theory: The player of game semantics
+  Since (−, S) is a left adjoint, it preserves colimits. In                   corresponds to the n ≥ 0 noncooperative players in an open
+particular, Lens has coproducts of the form                                   game, and the opponent of game semantics corresponds to the
+                 a              a
+                                           !                                  context (h, k).
+                    (Xi , S) =      Xi , S
+                                                                              Proposition 30. Let Gi : (Xi , R) −→  Q7 (Yi , S) be a family
+                        i:I                       i:I
+                                                                              of open games. Then a state of          i:I Gi consists, up to
+For example, (1, 0) is terminal in Lens.                                      isomorphism, of a state for each Gi .
+Proposition 29. The product in Gamev of a family of open                      Proof. Since homGamev (u(I), −) preserves limits,
+games                                                                                                  !
+                 Gi : (Xi , S) −→
+                                7 (Yi , R)                                       homGame u(I),
+                                                                                                 Y
+                                                                                                     Gi = ∼
+                                                                                                            Y
+                                                                                                                homGame (u(I), Gi )
+                                                                                              v                                                     v
+
+is                                           !                            !                                i:I                  i:I
+           Y                  a                            a
+                  Gi :              Xi , S       −→
+                                                  7              Yi , R
+            i:I               i:I                          i:I                             IX. E XAMPLE : M ARKET ENTRY GAME
+given as follows. The set of strategy profiles is                                We illustrate the previous three sections by considering the
+                                                                              market entry game, a standard example of game theory in
+                             !
+                      Y            Y
+                   Σ      Gi =        Σ(Gi )                                  microeconomics [14, example 9.B.3]. This game is played
+                                i:I                i:I                        between two players: a prospective entrant E into a market,
+The lenses are given by                                                       and an incumbent I in that market. In the first stage, E has
+                                      !                                       the choice to either enter the market, or immediately quit. If
+                          Y                        a                          E chooses to quit the game ends immediately. If E chooses
+                                Gi        (σ) =          Gi (σi )
+                                                                              to enter, in the second stage E and I simultaneously choose
+                          i:I                      i:I
+                     E
+
+            Q                  C
+
+   (0, 2)                            E                                                             X                        U
+                                                                                                                X
+                           F                    A
+                                                                          D1,X                   D1,X
+                                                                                     R                                     R
+                     I                                 I
+
+                F          A                    F           A                                                                R
+
+         (−3, −1)         (1, −2)        (−2, −1)           (3, 1)
+                                                                        R
+      Fig. 2. Extensive form representation of market entry game
+                                                                                 Fig. 3. String diagram for the right subgame G
+
+to either fight or accommodate the other (which could mean,
+for example, setting a low or high price).                           subgame with only a single choice, which has no effect on
+   The extensive form representation is depicted in figure 2.        the equilibrium analysis but is more faithful to the economic
+The dotted line denotes that the two connected nodes share an        situation.) As a strategically trivial effect, (1, c0 ) has a unique
+information set, meaning that the firm I does not know which         state αL , given by the unique lenses s(αL ) : (1, R) → I,
+of the two nodes they are in; in this way, the right hand subtree    t(αL ) : I → I and function Σ(αL ) : 1 → 1.
+represents a simultaneous game. (More precisely, the word               The right subgame is an open game
+‘simultaneous’ means the choices are made independently, but
+                                                                                              G : (1, R) −→
+                                                                                                          7 I
+the physical timing might or might not be simultaneous.)
+   The feature of this game that is specifically awkward for         which can be built compositionally from a pair of utility-
+approaches based on theoretical computer science is that             maximising decisions D1,X : I −→    7   (X, R), where X =
+the extensive-form tree is unbalanced. Other approaches use          {F, A} is the set containing the choice to fight or accom-
+dependent types to allow types of choices to dependent on            modate, and the utility function U : X × X → R2 . This is
+earlier values, but can still only allow more general ‘dependent     represented by the string diagram in figure 3.
+subgames’ such as in the market entry game using encoding               By the coherence theorem for teleological categories [9]
+tricks such as dummy moves, and using large negative utilities       this diagram defines G up to (in general non-globular) iso-
+to rule out certain plays. (Examples of game theory developed        morphism. Algebraically, in the terminology of this paper it
+in a dependent type system include [13], [2].) An external           is given by
+choice operator solves the more general problem of dependent
+subgames in an elegant way.                                                           εR ⊙ (u(R, 1) ⊗ εR ⊗ u(1, R))
+   We represent the market entry game as an open game as                                 ⊙ (U, idR2 )
+follows. The decision of the first player (corresponding to                              ⊙ (u(X, 1) ⊗ (id1 , ∆R ))
+the root node in figure 2) is modelled as a utility-maximising
+                                                                                         ⊙ (D1,X ⊗ u(1, R))
+decision
+                    D1,1+1 : I −→ 7 (1 + 1, R)                       Concretely, G is given as follows:
+                                                                                       2
+where the choice ι1 (∗) represents not entering the market, and         • Σ(G) = X
+ι2 (∗) represents entering the market.                                  • G(σ) : (1, R) → I is the lens with uG(σ) (∗, ∗) = U (σ)1 ,
+   The left subgame is represented by                                     i.e. the utility for player E given strategy profile σ for
+                                                                          the subgame
+                      (1, c0 ) : (1, R) −→
+                                         7 I                                    ′                           ′
+                                                                        • (σ, σ ) ∈ BG (∗, ∗) iff U (σ1 , σ2 )1 ≥ U (σ1  ′ , σ ) and
+                                                                                                                              2 1
+                                                                                   ′               ′
+where c0 : 1 → R is the constant function with c0 (∗) = 0.                U (σ1 , σ2 )2 ≥ U (σ1 , σ2 )2 , where − : X → X gives the
+Notice that the utility of 2 for player I in the left subgame             other choice, i.e. BG (∗, ∗) is the best response function
+has a clear economic interpretation as the profit for the                 for the right simultaneous game
+incumbent firm, but it plays no role game-theoretically, and            The right subgame has a unique Nash equilibrium (A, A)
+it never appears in the open game representation. (We could          in which both players accommodate. Hence G has a unique
+however add an additional utility-maximising player in the left      state α2 with Σ(α)(∗) = (A, A), in which the lens s(α2 ) :
+(1, R) → I has us(α2 ) (∗, ∗) = 3. This is the payoff U (A, A)1       holds iff the following three conditions hold:
+for player E in the Nash equilibrium.                                           ′                                            ′
+                                                                         • If σ1 = ι1 (∗) then 0 ≥ U (σ2 , σ3 )1 , and if σ1 = ι2 (∗)
+  The product (1, c0 ) × G : (1 + 1, R) −→     7  (1 + 1, 1) is             then 0 ≤ U (σ2 , σ3 )1
+concretely given as follows:                                                                        ′              ′,σ )
+                                                                         • If σ1 = ι1 (∗) then U (σ2 , σ3 )1 ≥ U (σ2    3 1
+  • Σ((1, c0 ) × G) ∼
+                    =X ×X                                                                               ′               ′)
+                                                                         • If σ1 = ι1 (∗) then U (σ2 , σ3 )2 ≥ U (σ2 , σ3 2
+  • ((1, c0 ) × G)(σ) is the lens (1 + 1, R) → (1 + 1, 1) with           By the previous reasoning H has a unique ⊙-separable state,
+     view function                                                    namely α = hαL , αR i ⊙ α1 . This corresponds to the unique
+                        v((1,c0 )×G)(σ) = id1+1                       subgame perfect equilibrium of the market entry game, namely
+                                                                      that the entrant enters the market (choice C or ι2 (∗)), and then
+      and update function                                             both players accommodate (choice A). H has two additional
+                                      (                               states that are not ⊙-separable, corresponding to the non-
+                                          0       if h = ι1 (∗)
+           u((1,c0 )×G)(σ) (h, ∗) =                                   subgame-perfect Nash equilibria of the market entry game (or,
+                                          U (σ)   if h = ι2 (∗)       equivalently, to the two additional fixpoints of BH (∗, k)). One
+  •   The best response relation (σ, σ ′ ) ∈ B(1,c0 )×G (h, k) iff    of these chooses the strategy profile (ι1 (∗), A, F ), the other,
+      either h = ι1 (∗), or U (σ1′ , σ2 )1 ≥ U (σ1′ , σ2 )1 and       (ι1 (∗), F, F ).
+      U (σ1 , σ2′ )2 ≥ U (σ1 , σ2′ )2                                                              R EFERENCES
+   Unlike the subgames (1, c0 ) and G, the product (1, c0 ) × G        [1] Samson Abramsky and Guy McCusker. Game semantics. In Com-
+cannot be seen as directly corresponding to a game in the                  putational logic, volume 165 of NATO ASI Series. Springer, 1999.
+classical sense. By proposition 30, hαL , α2 i is the unique state         doi:10.1007/978-3-642-58622-4_1.
+                                                                       [2] Nicola Botta, Cezar Ionescu, and Edwin Brady. Sequential decision
+of (1, c0 )×G, which is over the unique lens t(hαL , αR i) : (1+           problems, dependently typed solutions. In Proeedings of PLMMS13,
+1, 1) → I. It has Σ(hαL , αR i)(∗) = (A, A), and s(hαL , αR i) :           2013.
+(1 + 1, R) → I is the lens with                                        [3] Martin Escardó and Paulo Oliva. Sequential games and optimal
+                                      (                                    strategies. Proceedings of the Royal Society A, 467:1519–1545, 2011.
+                                                                           doi:10.1098/rspa.2010.0471.
+                                        0 if h = ι1 (∗)                [4] Martin Escardó and Paulo Oliva. Computing Nash equilibria of un-
+              us(hαL ,αR i) (h, ∗) =
+                                        3 if h = ι2 (∗)                    bounded games. Proceedings of the Turing centenary conference, 2012.
+                                                                       [5] Brendan Fong. The algebra of open and interconnected systems. PhD
+Call this lens λ.                                                          thesis, University of Oxford, 2016.
+  Since the previous function has a single maximising point,           [6] Drew Fudenberg and Jean Tirole. Game theory. MIT Press, 1991.
+                                                                       [7] Neil Ghani, Clemens Kupke, Alasdair Lambert, and Fredrik Nord-
+namely ι2 (∗), by proposition 28 the decision D1,1+1 has a                 vall Forsberg. A compositional treatment of iterated open games.
+unique state α over λ. This state has Σ(α)(∗) : 1 → 1 + 1                  arXiv:1711.07968, 2017.
+given by Σ(α)(∗)(∗) = ι2 (∗).                                          [8] Jules Hedges. Towards compositional game theory. PhD thesis, Queen
+                                                                           Mary University of London, 2016.
+  The open game                                                        [9] Jules Hedges. Coherence for lenses and open games. arXiv:1704.02230,
+                                                                           2017.
+        H = ((1, c0 ) × G) ⊙ D1,1+1 : I −→
+                                         7 (1 + 1, 1)                 [10] Bart Jacobs. Categorical logic and type theory. Studies in logic and the
+                                                                           foundations of mathematics. Elsevier, 1999.
+will be our representation of the original market entry game.         [11] Michael Johnson and Robert Rosebrugh. Spans of lenses. In Proceedings
+It is concretely given, up to globular isomorphism, as follows.            of the Workshops of the EDBT/ICDT 2014 Joint Conference, volume
+                                                                           1133 of CEUR Workshop Proceedings, pages 112–118, 2014.
+The set of strategy profiles is                                       [12] G. M. Kelly and Ross Street. Review of the elements of 2-categories.
+                                                                           In Category seminar, volume 420 of Lecture notes in mathematics.
+                     Σ(H) = (1 + 1) × X 2                                  Springer, 1974. doi:10.1007/BFb0063101.
+                                                                      [13] Pierre Lescanne and Matthieu Perrinel. “Backward” coinduction,
+consisting of a strategy for E in the first round, and a strategy          Nash equilibrium and the rationality of escalation. Acta Informatica,
+for both players in the subgame in which E enters in the first             49(3):117–137, 2012.
+round. This is the same as the set of pure strategy profiles          [14] Andreu Mas-Colell, Michael Whinston, and Jerry Green. Microeconomic
+                                                                           theory. Oxford University Press, 1995.
+of the original extensive-form game. (As in classical game            [15] Matthew      Pickering,   Jeremy     Gibbons, and        Nicolas    Wu.
+theory, player E is required to choose a contingent strategy               Profunctor optics: Modular data accessors.                    The art,
+for the second round, even if the strategy in the first round is to        science     and    engineering    of    programming,      1(2),    2017.
+                                                                           doi:10.22152/programming-journal.org/2017/1/7.
+quit.) H can be straightforwardly made into a scalar I −→     7 I     [16] Michael Shulman. Framed bicategories and monoidal fibrations. Theory
+by postcomposing with the (unique) strategically trivial game              and applications of categories, 20(18):650–738, 2008.
+(1 + 1, 1) −→
+            7 I.                                                      [17] Michael Shulman. Constructing symmetric monoidal bicategories.
+                                                                           arXiv:1004.0993, 2010.
+   The lens H(σ1 , σ2 , σ3 ) : I → (1 + 1, 1) has view function
+                      vH(σ1 ,σ2 ,σ3 ) (∗) = σ1
+   The best response relation BH (∗, k) is the same as the best
+response relation for the market entry game given by classical
+game theory. Concretely, the relation
+                       (σ, σ ′ ) ∈ BH (∗, k)
+                                                             A PPENDIX
+Proof (proposition 2). It is trivial that V is a functor.
+   We define the following cleavage for V. Given a function f : X → Y we define f ∗ (Y, R) = (X, R). The cartesian lifting
+f (Y, R) : (X, R) → (Y, R) is the lens defined by vf (Y,R) = f and uf (Y,R) (x, r) = r.
+   To show that f (Y, R) is indeed cartesian, let λ : (W, T ) → (Y, R) be a lens such that vλ = f ◦ g for some function
+g : W → X. Define another lens µ : (W, T ) → (X, S) by vµ = g and uµ = uλ . Then f (Y, R) ◦ µ = λ, because
+                                             vf (Y,R)◦µ = vf (Y,R) ◦ vµ = f ◦ g = vλ
+and
+                                    uf(Y,R)◦µ (w, r) = uµ (w, uf (Y,R) (vµ (w), r)) = uλ (w, r)
+Proof (proposition 3). The fibre V−1 (X) by definition has as objects bisets (X, S) and as morphisms lenses λ : (X, S) →
+(X, R) with vλ = idX . On the other hand objects of co-kl(X×)op are sets, and morphisms are
+                                  homco-kl(X×)op (S, R) = homco-kl(X×) (R, S) = X × R → S
+Therefore it can directly be seen that the functor V−1 (X) → co-kl(X×)op given by (X, S) 7→ S and λ 7→ uλ is an
+isomorphism.
+   By definition, the reindexing functor f ∗ : V−1 (Y ) → V−1 (X) acts on objects by f ∗ (Y, S) = (X, S), and takes a lens
+λ : (Y, S) → (Y, R) with vλ = idX to f ∗ (λ) : (X, S) → (X, R) with vf ∗ (λ) = idX and uf ∗ (λ) (x, r) = uλ (f (x), r). This
+f ∗ (λ) is the unique lens making the diagram
+
+                                                               f (Y, S)
+                                                    (X, S)                 (Y, S)
+
+
+
+                                                        f ∗ (λ)                λ
+
+
+                                                              f (Y, R)
+                                                   (X, R)                  (Y, R)
+
+commute. On the other hand, the functor (f ∗ )op : co-kl(Y ×)op → co-kl(X×)op has maps
+                                    (f ∗ )op : homco-kl(Y ×)op (S, R) → homco-kl(X×)op (S, R)
+given by
+                                                   (f ∗ )op (u)(x, r) = u(f (x), r)
+These can be directly seen to be equal under the isomorphism.
+Proof (proposition 11). It is trivial that s, t and Σ are functors. We prove that s is an opfibration, with the others being similar.
+  Let λ : Φ → Ψ be a lens, so λ : homLensop (Ψ, Φ), and let G be an open game with s(G) = Ψ. Let λ! (G) : Φ −→               7 t(G)
+be the open game defined by Σ(λ! (G)) = Σ(G), λ! (G)(σ) = G(σ) ◦ λ and Bλ! (G) (c) = BG (c). λ(G) : G → λ! (G) is the
+morphism defined by s(λ(G)) = λ, t(λ(G)) = idt(G) and Σ(λ(G)) = idΣ(G) . The morphism axioms can be easily checked.
+λ(G) is t-vertical and Σ-vertical by construction.
+  Let α : G → H be a morphism such that s(α) = λ ◦ µ for some lens µ : s(H) → Φ (hence s(α) = µ ◦ λ for
+µ : homLensop (Φ, s(H))). Then there is a morphism β : λ! (G) → H defined by s(β) = µ, t(β) = t(α) and Σ(β) = Σ(α).
+The morphism axioms for β follow from those for α, together with λ ◦ µ = s(α). Then
+                                          s(β ◦ λ(G)) = s(λ(G)) ◦ s(β) = λ ◦ µ = s(α)
+and
+                                       t(β ◦ λ(G)) = s(λ(G)) ◦ t(β) = idt(G) ◦t(α) = t(α)
+and
+                                    Σ(β ◦ λ(G)) = Σ(β) ◦ Σ(λ(G)) = Σ(α) ◦ idΣ(G) = Σ(α)
+Therefore β ◦ λ(G) = α. This situation is illustrated in figure 4.
+
+Proof (proposition 14). The first axiom can be checked by diagram pasting:
+                                                                 G
+                                                    Ψ                        t(G)
+                                                               Σ(G)
+
+
+                                                       λ
+
+
+                                                              λ! (G)
+                                                    Φ                        t(G)
+                                                               Σ(G)
+
+
+                                                       µ             Σ(α)        t(α)
+
+
+                                                                H
+                                                  s(H)                       t(H)
+                                                               Σ(H)
+
+                                                  Fig. 4. Illustration of proposition 11
+
+
+                                                  G(σ)                      H(τ )
+                                       Φ                         Ψ                         Θ
+
+
+
+                                         s(α)              t(α) = s(β)                      t(β)
+
+
+                                             G ′ (Σ(α)(σ))             H′ (Σ(β)(τ ))
+                                       Φ′                       Ψ′                         Θ′
+
+  For the second axiom, let (h, k) : C(Φ′ , Θ) be a context for β ⊙ α and let σ, σ ′ : ΣG and τ, τ ′ : ΣH be strategy profiles.
+Suppose
+                                            ((σ, τ ), (σ ′ , τ ′ )) ∈ BH⊙G (s(α) ◦ h, k)
+so
+                                                (σ, σ ′ ) ∈ BG (s(α) ◦ h, k ◦ H(τ ))
+and
+                                            (τ, τ ′ ) ∈ BH (G(σ) ◦ s(α) ◦ h, k)
+                                                      = BH (t(α) ◦ G ′ (Σ(α)(σ)) ◦ h, k)
+                                                   = BH (s(β) ◦ G ′ (Σ(α)(σ)) ◦ h, k)
+Then
+                                   (Σ(α)(σ), Σ(α)(σ ′ )) ∈ BG ′ (h, k ◦ H(τ ) ◦ t(α))
+                                                            = BG ′ (h, k ◦ H(τ ) ◦ s(β))
+                                                            = BG ′ (h, k ◦ t(β) ◦ H′ (Σ(β)(τ )))
+and
+                                   (Σ(β)(τ ), Σ(β)(τ ′ )) ∈ BH′ (G ′ (Σ(α)(σ)) ◦ h, k ◦ t(β))
+Therefore
+                             ((Σ(α)(σ), Σ(β)(τ )), (Σ(α)(σ ′ ), Σ(β)(τ ′ ))) ∈ BH′ ⊙G ′ (h, k ◦ t(β))
+and we are done.
+                                                                                                G         H           G′       H′
+Proof (proposition 15). This amounts to the following distributivity law: let Φ −→    7 Θ, Φ′ −→
+                                                                                 7 Ψ −→        7 Ψ′ −→
+                                                                                                     7 Θ′ and
+    G ′′        H′′                                    α     α′              β        β′
+Φ′′ −→
+     7 Ψ′′ −→ 7 Θ′′ be open games, and let G −→ G′ −→ G ′′ and H −    → H′ −→ H′′ be refinements such that t(α) = s(β) and
+  ′       ′
+(α ) = s(β ). Then
+                                        (β ′ ⊙ α′ ) ◦ (β ⊙ α) = (β ′ ◦ β) ⊙ (α′ ◦ α)
+  For the source component,
+                                             s((β ′ ⊙ α′ ) ◦ (β ⊙ α)) = s(β ′ ⊙ α′ ) ◦ s(β ⊙ α)
+                                                                     = s(α′ ) ◦ s(α)
+                                                                     = s(α′ ◦ α)
+                                                                     = s((β ′ ◦ β) ⊙ (α′ ◦ α))
+and similarly for the target component. For the best response component,
+                                 Σ((β ′ ⊙ α′ ) ◦ (β ⊙ α))(σ, τ ) = Σ(β ′ ⊙ α′ )(Σ(β ⊙ α)(σ, τ ))
+                                                                  = Σ(β ′ ⊙ α′ )(Σ(α)(σ), Σ(β)(τ ))
+                                                                  = (Σ(α′ )(Σ(α)(σ)), Σ(β ′ )(Σ(β)(τ )))
+                                                                  = (Σ(α′ ◦ α)(σ), Σ(β ′ ◦ β)(τ ))
+                                                                  = (Σ((β ′ ◦ β) ⊙ (α′ ◦ α))(σ, τ ))
+Proof (proposition 17). It remains to prove that the following two diagrams (Mac Lane triangle and pentagon) commute:
+
+                                                                                             ((J ⊙ I) ⊙ H) ⊙ G
+
+                                                                                                                  aJ ⊙I,H,G
+                                                                             aJ ,I,H ⊙ G
+
+
+                                                                       (J ⊙ (I ⊙ H)) ⊙ G                         (J ⊙ I) ⊙ (H ⊙ G)
+                                 aG,uY ,H
+           (H ⊙ u(t(G))) ⊙ G                   H ⊙ (u(t(G)) ⊙ G)
+                                                                      aJ ,I⊙H,G                                            aJ ,I,H⊙G
+                      rH ⊙ G
+                                                   H ⊙ lG
+                                                                                                    J ⊙ aI,H,G
+                                  H⊙G                                  J ⊙ ((I ⊙ H) ⊙ G)                         J ⊙ (I ⊙ (H ⊙ G))
+
+Each composition path results in a globular morphism. Hence equality of the refinements follows from equality between the
+Σ components, which are obtained from the corresponding Mac Lane axioms for the cartesian monoidal category Set.
+Proof (proposition 18). The first component
+                                                      π1                         π2
+                                            V(Ξ)            V(Ξ) × V(Ξ′ )                  V(Ξ′ )
+
+
+
+                                               V(κ)                  V(κ) × V(κ′ )            V(κ′ )
+
+
+                                                      π1                         π2
+                                         V(Φ)               V(Φ) × V(Φ′ )                  V(Φ′ )
+
+holds because π1 , π2 are (isomorphic to) projections from a cartesian product of sets.
+  For the second component, let h : V(Ξ ⊗ Ξ′ ). We reason that
+                                                        −1                                          −1
+                       (Θ ⊗ (µ′ ◦ λ′ ◦ κ′ ◦ π2 (h))) ◦ rΨ  ◦ µ = (Ψ ⊗ (λ′ ◦ π2 ((κ ⊗ κ′ ) ◦ h))) ◦ rΨ  ◦ (µ ⊗ µ′ )
+from which commutativity of the left-hand square follows. (The proof for the right-hand square is symmetric.)
+                                                                        µ
+                                                        Ψ                                Θ
+
+
+
+
+                                                           −1                               −1
+                                                          rΨ                               rΘ
+
+
+
+                                                                      µ⊗I
+                                                    Ψ⊗I                               Θ⊗I
+
+
+
+                                                                   Ψ ⊗ π2 (h)                       Θ ⊗ π2 (h)
+                       Ψ ⊗ π2 ((κ ⊗ κ′ ) ◦ h)
+                                                        (∗)
+
+
+                                                    Ψ ⊗ κ′                            µ ⊗ Ξ′
+                                    Ψ ⊗ Φ′                           Ψ ⊗ Ξ′                           Θ ⊗ Ξ′
+
+
+
+                                                 Ψ ⊗ λ′
+                                                                   Ψ ⊗ (λ′ ◦ κ′ )                   Θ ⊗ (µ′ ◦ λ′ ◦ κ′ )
+
+
+
+                                                                      µ ⊗ µ′
+                                                    Ψ ⊗ Ψ′                            Θ ⊗ Θ′
+
+                                           Fig. 5. Commuting diagram used to prove proposition 18
+
+
+
+  See figure 5. Commutativity of the triangle labelled (∗) follows from chasing h around the right-hand square of the first
+component. Commutativity of the top square is naturality of r−1 , and the other regions of the diagram commute by functorality
+of ⊗.
+
+
+Proof (proposition 19). For the first axiom, commutativity of the square
+
+                                                                G1 (σ) ⊗ G2 (τ )
+                                      s(G1 ) ⊗ s(G2 )                                   t(G1 ) ⊗ t(G2 )
+
+
+
+                                                s(α1 ) ⊗ s(α2 )                 t(α1 ) ⊗ t(α2 )
+
+                                                   G1′ (Σ(α1 )(σ)) ⊗ G2′ (Σ(α2 )(τ ))
+                                         ′        ′
+                                      s(G1 ) ⊗ s(G2 )                              t(G1′ ) ⊗ t(G2′ )
+
+follows from the first axioms of α1 and α2 .
+   For the second axiom, let c : C(s(G1′ ⊗ G2′ ), t(G1 ⊗ G2 )) be a context for α1 ⊗ α2 , and let σ1 , σ1′ : Σ(G1 ) and σ2 , σ2′ : Σ(G2 )
+be strategy profiles such that
+
+                                   ((σ1 , σ2 ), (σ1′ , σ2′ )) ∈ BG1 ⊗G2 (C(s(α1 ⊗ α2 ), t(G1 ⊗ G2 ))(c))
+Then
+                                 (σ1 , σ1′ ) ∈ BG1 (L(G2 (σ2 ))(C(s(α1 ⊗ α2 ), t(G1 ⊗ G2 ))(c)))
+                                           = BG1 (C(s(α1 ), t(G1 ))(L(G2 (σ2 ) ◦ s(α2 ))(c)))
+                                           = BG1 (C(s(α1 ), t(G1 ))(L(t(α2 ) ◦ G2′ (Σ(α2 )(σ2 )))(c)))
+and
+                                 (σ2 , σ2′ ) ∈ BG2 (R(G1 (σ1 ))(C(s(α1 ⊗ α2 ), t(G1 ⊗ G2 ))(c)))
+                                           = BG2 (C(s(α2 ), t(G2 ))(R(G1 (σ1 ) ◦ s(α1 ))(c)))
+                                           = BG2 (C(s(α2 ), t(G2 ))(R(t(α1 ) ◦ G1′ (Σ(α1 )(σ1 )))(c)))
+Therefore
+                     (Σ(α1 )(σ1 ), Σ(α1 )(σ1′ )) ∈ BG1′ (C(s(G1′ ), t(α1 ))(L(t(α2 ) ◦ G2′ (Σ(α2 )(σ2 )))(c)))
+                                                   = BG1′ (L(G2′ (Σ(α2 )(σ2 )))(C(s(G1′ ⊗ G2′ ), t(α1 ⊗ α2 ))(c)))
+and
+                     (Σ(α2 )(σ2 ), Σ(α2 )(σ2′ )) ∈ BG2′ (C(s(G2′ ), t(α2 ))(R(t(α1 ) ◦ G1′ (Σ(α1 )(σ1 )))(c)))
+                                                   = BG2′ (R(G1′ (Σ(α1 )(σ1 )))(C(s(G1′ ⊗ G2′ ), t(α1 ⊗ α2 ))(c)))
+These combine to give
+                ((Σ(α1 )(σ1 ), Σ(α2 )(σ2 )), (Σ(α1 )(σ1′ ), Σ(α2 )(σ2′ ))) ∈ BG1′ ⊗G2′ (C(s(G1′ ⊗ G2′ ), t(α1 ⊗ α2 ))(c))
+as required.
+Proof (proposition 24). The first is trivial, with ΣUX1 ,X2 : 1 → 1 × 1, ∗ 7→ (∗, ∗).
+  For the second we take
+                    ΣX : (Σ(G1 ) × Σ(G2 )) × (Σ(H1 ) × Σ(H2 )) → (Σ(G1 ) × Σ(H1 )) × (Σ(G2 ) × Σ(H2 )),
+                                                  ((σ1 , σ2 ), (τ1 , τ2 )) 7→ ((σ1 , τ1 ), (σ2 , τ2 ))
+The first axiom follows from bifunctorality of ⊗ on Lens:
+                      (H1 (τ1 ) ⊗ H2 (τ2 )) ◦ (G1 (σ1 ) ⊗ G2 (σ2 )) = (H1 (τ1 ) ◦ G1 (σ1 )) ⊗ (H2 (τ2 ) ◦ G2 (σ2 ))
+For the second axiom we calculate:
+                                (((σ1 , σ2 ), (τ1 , τ2 )), ((σ1′ , σ2′ ), (τ1′ , τ2′ ))) ∈ B(H1 ⊗H2 )⊙(G1 ⊗G2 ) (c)
+                             ⇐⇒ ((σ1 , σ2 ), (σ1′ , σ2′ )) ∈ BG1 ⊗G2 (C(idX1 ⊗X2 , H1 (τ1 ) ⊗ H2 (τ2 ))(c))
+                              and ((τ1 , τ2 ), (τ1′ , τ2′ )) ∈ BH1 ⊗H2 (C(G1 (σ1 ) ⊗ G2 (σ2 ), idZ1 ⊗Z2 )(c))
+                             ⇐⇒ (σ1 , σ1′ ) ∈ BG1 (L(G2 (σ2 ))(C(idX1 ⊗X2 , H1 (τ1 ) ⊗ H2 (τ2 ))(c)))
+                              and (σ2 , σ2′ ) ∈ BG2 (R(G1 (σ1 ))(C(idX1 ⊗X2 , H1 (τ1 ) ⊗ H2 (τ2 ))(c)))
+                              and (τ1 , τ1′ ) ∈ BH1 (L(H2 (τ2 ))(C(G1 (σ1 ) ⊗ G2 (σ2 ), idZ1 ⊗Z2 )(c)))
+                              and (τ2 , τ2′ ) ∈ BH2 (R(H1 (τ1 ))(C(G1 (σ1 ) ⊗ G2 (σ2 ), idZ1 ⊗Z2 )(c)))
+                             ⇐⇒ (σ1 , σ1′ ) ∈ BG1 (C(idX1 , H1 (τ1 ))(L(H2 (τ2 ) ◦ G2 (σ2 ))(c)))
+                              and (τ1 , τ1′ ) ∈ BH1 (C(G1 (σ1 ), idZ1 )(L(H2 (τ2 ) ◦ G2 (σ2 ))(c)))
+                              and (σ2 , σ2′ ) ∈ BG2 (C(idX2 , H2 (τ2 ))(R(H1 (τ1 ) ◦ G1 (σ1 ))(c)))
+                              and (τ2 , τ2′ ) ∈ BH2 (C(G2 (σ2 ), idZ2 )(R(H1 (τ1 ) ◦ G1 (σ1 ))(c)))
+                             ⇐⇒ ((σ1 , τ1 ), (σ1′ , τ1′ )) ∈ BH1 ⊙G1 (L(H2 (τ2 ) ◦ G2 (σ2 ))(c))
+                              and ((σ2 , τ2 ), (σ2′ , τ2′ )) ∈ BH2 ⊙G2 (R(H1 (τ1 ) ◦ G1 (σ1 ))(c))
+                             ⇐⇒ (((σ1 , τ1 ), (σ2 , τ2 )), ((σ1′ , τ1′ ), (σ2′ , τ2′ ))) ∈ B(H1 ⊙G1 )⊗(H2 ⊙G2 ) (c)
+The relevant equalities between contexts, which all follow from proposition 18, are summarised in figure 6.
+
+Proof (theorem 1). Following [17], it remains to show that various diagrams commute. These are shown in figures 7, 8, 9 and
+10. These are all trivial to prove, by checking the s, t and Σ components separately.
+                                                                                                 R(G1 (σ1 ))
+           C(X1 , Y1 )                               C(X1 ⊗ X2 , Y1 ⊗ Y2 )                                          C(X2 , Y2 )
+                              L(G2 (σ2 ))
+
+
+                 C(idX1 , H1 (τ1 ))                                    C(idX1 ⊗X2 , H1 (τ1 ) ⊗ H2 (τ2 ))                  C(idX2 , H2 (τ2 ))
+
+
+                                                                                           R(H1 (τ1 ) ◦ G1 (σ1 ))
+           C(X1 , Z1 )                               C(X1 ⊗ X2 , Z1 ⊗ Z2 )                                          C(X2 , Z2 )
+                         L(H2 (τ2 ) ◦ G2 (σ2 ))
+
+
+                 C(G1 (σ1 ), idZ1 )                                    C(G1 (σ1 ) ⊗ G2 (σ2 ), idZ1 ⊗Z2 )                  C(G2 (σ2 ), idZ2 )
+
+
+                                                                                                 R(H1 (τ1 ))
+           C(Y1 , Z1 )                               C(Y1 ⊗ Y2 , Z1 ⊗ Z2 )                                          C(Y2 , Z2 )
+                              L(H2 (τ2 ))
+
+                                         Fig. 6. Instances of proposition 18 used in proof of proposition 24
+
+
+
+Proof (theorem 3). We prove by induction on n that the open game
+                                                      n                              n
+                                                                                                         !
+                                                      O                              Y
+                                                                                                     n
+                                                             D1,Yi : I −→
+                                                                        7                  Yi , R
+                                                       i=1                           i=1
+
+is concretely given, up to unique natural isomorphism, as follows. Its set of strategy profiles is
+                                                       n
+                                                                !      n
+                                                      O               Y
+                                                  Σ       D1,Yi =         Yi
+                                                                i=1                    i=1
+
+The lens                                                           !                                         !
+                                                     n
+                                                     O                                 n
+                                                                                       Y
+                                                                                                         n
+                                                           D1,Yi       (σ) : I →                Yi , R
+                                                     i=1                               i=1
+
+is the unique one with                                                           !         !
+                                                                n
+                                                                O
+                                                         V               D1,Yi       (σ)       =σ
+                                                                   i=1
+
+The best response relation
+                                                         (σ, σ ′ ) ∈ BNni=1 D1,Yi (h, k)
+holds iff, for all 1 ≤ j ≤ n and all yj : Yj ,
+                                                   k(σj′ , σ−j )j ≥ k(yj , σ−j )j
+                                                             Nn
+  The result follows, since the set of strategy profiles of i=1 D1,Yi is the set of strategy profiles of the normal form game,
+and fixpoints of BNni=1 D1,Yi (∗, k) are Nash equilibria by definition.
+  The set of strategy profiles follows since Σ : Gamev → Set is a symmetric monoidal functor. For the lens we have
+                               n
+                                        !     !           n
+                                                                       !     n                    n
+                              O                        O                    Y                     Y
+                       V           D1,Yi (σ) = V            D1,Yi (σi ) =        V(D1,Yi (σi )) =   σi = σ
+                               i=1                             i=1                             i=1                  i=1
+
+   We prove the claim about best responses by induction on n. When n = 1, we have by definition that (σ1 , σ1′ ) ∈ B1,Y1 (∗, k)
+iff k(σ1′ ) ≥ k(y1 ) for all y1 : Y1 . This has the required form because k(y1 , σ−1 )1 = k(y1 ).
+   For the inductive step, by definition
+                                                      (σ, σ ′ ) ∈ BNn+1 D1,Y (∗, k)
+                                                                            i=1            i
+
+iff
+                                                  ′
+                                      (σ−(n+1) , σ−(n+1) ) ∈ BNni=1 D1,Yi (L(D1,Yn+1 (σn+1 ))(∗, k))
+                                                   Ut(G1 ),t(G2 ) ⊙ (G1 ⊗ G2 )
+               u(t(G1 ) ⊗ t(G2 )) ⊙ (G1 ⊗ G2 )                                             (u(t(G1 )) ⊗ u(t(G2 ))) ⊙ (G1 ⊗ G2 )
+
+
+
+                                lG1 ⊗G2                                               XG,H,u(t(G1 )),u(t(G2 ))
+
+
+
+                            G1 ⊗ G2                                                        (u(t(G1 )) ⊙ G1 ) ⊗ (u(t(G2 )) ⊙ G2 )
+                                                        lG1 ⊗ lG2
+                                                   (G1 ⊗ G2 ) ⊙ Us(G1 ),s(G2 )
+               (G1 ⊗ G2 ) ⊙ u(s(G1 ) ⊗ s(G2 ))                                            (G1 ⊗ G2 ) ⊙ (u(s(G1 )) ⊗ u(s(G2 )))
+
+
+
+                                rG1 ⊗G2                                             Xu(s(G1 )),u(s(G2 )),G1 ,G2
+
+
+
+                            G1 ⊗ G2                                                       (G1 ⊙ u(s(G1 ))) ⊗ (G2 ⊙ u(s(G2 )))
+                                                        rG1 ⊗ rG2
+                                                        XH1 ,H2 ,I1 ,I2 ⊙ (G1 ⊗ G2 )
+        ((I1 ⊗ I2 ) ⊙ (H1 ⊗ H2 )) ⊙ (G1 ⊗ G2 )                                                ((I1 ⊙ H1 ) ⊗ (I2 ⊙ H2 )) ⊙ (G1 ⊗ G2 )
+
+
+
+                              aI1 ⊗I2 ,H1 ⊗H2 ,G1 ⊗G2                                       XG1 ,G2 ,I1 ⊙H1 ,I2 ⊙H2
+
+
+
+        (I1 ⊗ I2 ) ⊙ ((H1 ⊗ H2 ) ⊙ (G1 ⊗ G2 ))                                                ((I1 ⊙ H1 ) ⊙ G1 ) ⊗ ((I2 ⊙ H2 ) ⊙ G2 )
+
+
+
+                              (I1 ⊗ I2 ) ⊙ XG1 ,G2 ,H1 ,H2                                aI1 ,H1 ,G1 ⊗ aI2 ,H2 ,G2
+
+
+                                                           XH1 ⊙G1 ,H2 ⊙G2 ,I1 ,I2
+        (I1 ⊗ I2 ) ⊙ ((H1 ⊙ G1 ) ⊗ (H2 ⊙ G1 ))                                                (I1 ⊙ (H1 ⊙ G1 )) ⊗ (I2 ⊙ (H2 ⊙ G2 ))
+
+                                                   Fig. 7. Axioms for theorem 1, part 1
+
+
+
+and                                                                                     !               !         !
+                                                                          n
+                                                                          O
+                                        ′
+                               (σn+1 , σn+1 ) ∈ BD1,Yn+1            R           D1,Yi       (σ−(n+1) ) (∗, k)
+                                                                          i=1
+
+  Writing
+                                                 L(D1,Yn+1 (σn+1 ))(∗, k) = (∗, kL )
+
+and                                                             !               !
+                                                 n
+                                                 O
+                                          R             D1,Yi       (σ−(n+1) ) (∗, k) = (∗, kR )
+                                                 i=1
+
+we can directly calculate
+                                              kL (y−(n+1) ) = k(y−(n+1) , σn+1 )−(n+1)
+
+and
+                                                 kR (yn+1 ) = k(σ−(n+1) , yn+1 )n+1
+                                                          u(αX1 ,X2 ,X3 )
+                            u((X1 ⊗ X2 ) ⊗ X3 )                                      u(X1 ⊗ (X2 ⊗ X3 ))
+
+
+
+                                       UX1 ⊗X2 ,X3                                               UX1 ,X2 ⊗X3
+
+
+
+                           u(X1 ⊗ X2 ) ⊗ u(X3 )                                     u(X1 ) ⊗ u(X2 ⊗ X3 )
+
+
+
+                                       UX1 ,X2 ⊗ u(X3 )                                          u(X1 ) ⊗ UX2 ,X3
+
+
+                                                        αu(X1 ),u(X2 ),u(X3 )
+                        (u(X1 ) ⊗ u(X2 )) ⊗ u(X3 )                               u(X1 ) ⊗ (u(X2 ) ⊗ u(X3 ))
+                                                        αH1 ,H2 ,H3 ⊙ αG1 ,G2 ,G3
+        ((H1 ⊗ H2 ) ⊗ H3 ) ⊙ ((G1 ⊗ G2 ) ⊗ G3 )                                         (H1 ⊗ (H2 ⊗ H3 )) ⊙ (G1 ⊗ (G2 ⊗ G3 ))
+
+
+
+                              XG1 ⊗G2 ,G3 ,H1 ⊗H2 ,H3                                 XG1 ,G2 ⊗G3 ,H1 ,H2 ⊗H3
+
+
+
+        ((H1 ⊗ H2 ) ⊙ (G1 ⊗ G2 )) ⊗ (H3 ⊙ G3 )                                          (H1 ⊙ G1 ) ⊗ ((H2 ⊗ H3 ) ⊙ (G2 ⊗ G3 ))
+
+
+
+                              XG1 ,G2 ,H1 ,H2 ⊗ (H3 ⊙ G3 )                      (H1 ⊙ G1 ) ⊗ XG2 ,G3 ,H2 ,H3
+
+
+                                                        αH1 ⊙G1 ,H2 ⊙G2 ,H3 ⊙G3
+        ((H1 ⊙ G1 ) ⊗ (H2 ⊙ G2 )) ⊗ (H3 ⊙ G3 )                                          (H1 ⊙ G1 ) ⊗ ((H2 ⊙ G2 ) ⊗ (H3 ⊙ G3 ))
+
+                                                   Fig. 8. Axioms for theorem 1, part 2
+
+
+
+  By the inductive hypothesis, the first condition
+                                                          ′
+                                              (σ−(n+1) , σ−(n+1) ) ∈ BNni=1 D1,Yi (∗, kL )
+holds iff for all 1 ≤ j ≤ n and all yj : Yj ,
+                                           ′
+                                     kL ((σ−(n+1) )j , (σ−(n+1) )−j )j ≥ kL (yj , (σ−(n+1) )−j )j
+After substituting kL this is equivalent to
+                           ′
+                      (k((σ−(n+1) )j , (σ−(n+1) )−j , σn+1 )−(n+1) )j ≥ (k(yj , (σ−(n+1) )−j , σn+1 )−(n+1) )j
+and hence, after composing projectors, to
+                                                      k(σj′ , σ−j )j ≥ k(yj , σ−j )j
+  The second condition
+                                                           ′
+                                                  (σn+1 , σn+1 ) ∈ BD1,Yn+1 (∗, kR )
+holds by definition iff for all yn+1 : Yn+1 ,
+                                                             ′
+                                                        kR (σn+1 ) ≥ kR (yn+1 )
+which is
+                                                       ′
+                                          k(σ−(n+1) , σn+1 )n+1 ≥ k(σ−(n+1) , yn+1 )n+1
+                                                                                               Xu(I),G,u(I),H
+                             XI,X                       (u(I) ⊗ H) ⊙ (u(I) ⊗ G)                                        (u(I) ⊙ u(I)) ⊗ (H ⊙ G)
+           u(I ⊗ X)                    u(I) ⊗ u(X)
+
+
+                                                                          λH ⊙ λG                                                  lu(I) ⊗ (H ⊙ G)
+                      u(λX )                  λu(X)
+
+
+                                                                   H⊙G                                                     u(I) ⊗ (H ⊙ G)
+                                           u(X)                                                 λH⊙G
+                                                                                               XG,u(I),H,u(I)
+                             XX,I                       (H ⊗ u(I)) ⊙ (G ⊗ u(I))                                        (H ⊙ G) ⊗ (u(I) ⊙ u(I))
+           u(X ⊗ I)                    u(X) ⊗ u(I)
+
+
+
+                                              ρu(X)                       ρH ⊙ ρG                                                  (H ⊙ G) ⊗ ru(I)
+                      u(ρX )
+
+
+                                                                   H⊙G                                                     (H ⊙ G) ⊗ u(I)
+                                          u(X)                                                  ρH⊙G
+
+                                                           Fig. 9. Axioms for theorem 1, part 3
+
+
+                        UX1 ,X2                                                                         σH1 ,H2 ⊙ σG1 ,G2
+    u(X1 ⊗ X2 )                         u(X1 ) ⊗ u(X2 )            (H1 ⊗ H2 ) ⊙ (G1 ⊗ G2 )                                     (H2 ⊗ H1 ) ⊙ (G2 ⊗ G1 )
+
+
+
+               u(σX1 ,X2 )                        σu(X1 ),u(X2 )                         XG1 ,G2 ,H1 ,H2                                    XG2 ,G1 ,H2 ,H1
+
+
+                        UX2 ,X1                                                                          σH1 ⊙G1 ,H2 ⊙G2
+    u(X2 ⊗ X1 )                         u(X2 ) ⊗ u(X1 )            (H1 ⊙ G1 ) ⊗ (H2 ⊙ G2 )                                     (H2 ⊙ G2 ) ⊗ (H1 ⊙ G1 )
+
+                                                           Fig. 10. Axioms for theorem 1, part 4
+
+
+
+  Putting these two conditions together, we have the inductive hypothesis for n + 1.
+Proof (theorem 4). Let                                                                                                 !
+                                                                 n
+                                                                 K                                 n
+                                                                                                   Y
+                                                                        ∆                                          n
+                                                GX1 ,...,Xn =          DX1 ,...,Xi
+                                                                                   : I −→
+                                                                                        7                Xi , R
+                                                                 i=1                               i=1
+
+We prove that GX1 ,...,Xn is given explicitly as follows, up to globular isomorphism. The set of strategy profiles is
+                                                                                
+                                                                n
+                                                                Y   i−1
+                                                                    Y
+                                              Σ(GX1 ,...,Xn ) =        Xj → Xi 
+                                                                               i=1       j=1
+
+For σ : Σ(GX1 ,...,Xn ), the lens GX1 ,...,Xn (σ) is the unique one with
+                                                              V(GX1 ,...,Xn (σ))(∗) = v σ
+          Qn                 n
+For k :    i=1 Xi → R            , the best response relation
+                                                              (σ, σ ′ ) ∈ BGX1 ,...,Xn (∗, k)
+holds iff for all 1 ≤ i ≤ n and all xi : Xi ,
+                                                                                                    
+                                                       σ                                  σ
+                                                    k v(v σ )i−1 ,σ ′ ((v σ )i−1 )   ≥ k v(v σ )i−1 ,x
+                                                             1     i       1         i              1      i   i
+                                                                                                  ∆
+  We prove the first claim by induction on n. It is straightforward to check the base case GX1 = DX1
+                                                                                                     : I −→
+                                                                                                          7 (X1 , R).
+  The inductive step is
+                                                             ∆
+                                      GX1 ,...,Xn ,Xn+1 = DX  1 ,...,Xn ,Xn+1
+                                                                              ⊙ GX1 ,...,Xn
+Its set of strategies is
+                                                                               ∆
+                                  Σ(GX1 ,...,Xn ,Xn+1 ) = Σ(GX1 ,...,Xn ) × Σ(DX ,...,X ,X  )
+                                                                              1  n n+1          
+                                                           n
+                                                          Y Y  i−1                    Yn
+                                                        =           Xj → Xi ×         Xj → Xn+1 
+                                                                  i=1     j=1                               j=1
+                                                                                                   
+                                                                  n+1
+                                                                  Y           i−1
+                                                                              Y
+                                                             =                       Xj → Xi 
+                                                                  i=1         j=1
+
+The lens is
+                                                        ∆
+                      V(GX1 ,...,Xn ,Xn+1 (σ))(∗) = (V(DX1 ,...,Xn ,Xn+1
+                                                                         (σn+1 )) ◦ V(GX1 ,...,Xn (σ−(n+1) )))(∗)
+                                                              ∆
+                                                         = V(DX1 ,...,Xn ,Xn+1
+                                                                               (σn+1 ))(v σ−(n+1) )
+                                                         = (v σ−(n+1) , σn+1 (v σ−(n+1) ))
+                                                         = vσ
+            Qn+1            n+1
+  For k :     i=1 Xi → R          , the best response relation
+                                                           (σ, σ ′ ) ∈ BGX1 ,...,Xn ,Xn+1 (∗, k)
+holds iff
+                                              ′                              ∆
+                                  (σ−(n+1) , σ−(n+1) ) ∈ BGX1 ,...,Xn (∗, K(DX1 ,...,Xn ,Xn+1
+                                                                                              (σn+1 ))(k))                                        (1)
+and
+                                             ′
+                                    (σn+1 , σn+1 ) ∈ BD X
+                                                        ∆
+                                                          ,...,X ,X
+                                                                                        (V(GX1 ,...,Xn (σ−(n+1) ))(∗), k)                         (2)
+                                                                  1       n       n+1
+
+  In condition 1, the continuation is
+                                                                                                     n
+                                                                                                     Y
+                                                    ∆
+                                                 K(DX1 ,...,Xn ,Xn+1
+                                                                     (σn+1 ))(k) :                         X i → Rn
+                                                                                                     i=1
+
+                       x 7→ uDX
+                              ∆
+                                ,...,X ,X            (σn+1 ) (x, k(vDX
+                                                                     ∆
+                                                                       ,...,Xn ,X                  (σn+1 ) (x))) = k(x, σn+1 (x))−(n+1)
+                                   1       n   n+1                            1              n+1
+
+By the inductive hypothesis, this relation holds iff for all 1 ≤ i ≤ n and xi : Xi ,
+                                                                                                                            
+                  ∆                                σ                              ∆                                σ
+            K(DX   1 ,...,Xn ,Xn+1
+                                   (σn+1 ))(k)   v   σ
+                                                  (v ) i−1   ′   σ
+                                                           ,σ ((v ) i−1
+                                                                        )
+                                                                            ≥ K(DX 1 ,...,Xn ,Xn+1
+                                                                                                   (σn+1 ))(k)   v   σ
+                                                                                                                  (v ) i−1
+                                                                                                                           ,xi
+                                                              1       i           1      i                                                    1
+
+The left hand side of this inequation is
+                                                                                                                             
+         ∆                           σ                                σ                            σ
+   K(DX1 ,...,Xn ,Xn+1 (σn+1 ))(k) v(vσ )i−1 ,σ′ ((vσ )i−1 ) = k v(vσ )i−1 ,σ′ ((vσ )i−1 ) , σn+1 v(vσ )i−1 ,σ′ ((vσ )i−1 )
+                                         1     i       1     i             1      i      1              1     i       1       −(n+1) i
+                                                                                            
+                                                                    σ
+                                                               = k v(vσ )i−1 ,σ′ ((vσ )i−1 )
+                                                                                              1      i      1        i
+and similarly the right hand side is
+                                                                                                            
+                                          ∆                                σ                      σ
+                                       K(DX1 ,...,Xn ,Xn+1
+                                                           (σn+1 ))(k)   v(v σ ) i−1
+                                                                                     ,x
+                                                                                          = k   v(v σ ) i−1
+                                                                                                            ,x
+                                                                                               1      i                      1       i    i
+  In condition 2, by the inductive hypothesis the history is
+                                                       V(GX1 ,...,Xn (σ−(n+1) ))(∗) = v σ−(n+1)
+                  ∆
+By definition of DX1 ,...,Xn ,Xn+1
+                                   , condition 2 holds iff
+                                                         ′
+                                          k(v σ−(n+1) , σn+1 (v σ−(n+1) ))n+1 ≥ k(v σ−(n+1) , xn+1 )n+1
+for all xn+1 : Xn+1 . The left hand side of this inequation is
+                                                       ′
+                                        k(v σ−(n+1) , σn+1 (v σ−(n+1) ))n+1 = k(v(v
+                                                                                 σ
+                                                                                    σ )n ,σ ′                             σ )n )   )n+1
+                                                                                       1                        n+1 ((v      1
+and similarly the right hand side is
+                                            k(v σ−(n+1) , xn+1 )n+1 = k(v(v
+                                                                         σ
+                                                                            σ )n ,x
+                                                                               1
+                                                                                       )
+                                                                                    n+1 n+1
+
+
+  Putting together conditions 1 and 2, we obtain the inductive hypothesis for n + 1.
+  Next we prove by induction on i that there is a bijective correspondence between:
+  • States α of                                                                            
+                                      Kn                    n−i
+                                                            Y                    n
+                                                                                 Y
+                                             ∆
+                                           DX  1 ,...,Xj
+                                                         :     Xj , Rn−i  −→
+                                                                             7      X j , Rn 
+                                       j=n−i+1                    j=1                            j=1
+
+     that are of the form                                                  n
+                                                                           K
+                                                                α=                 αj
+                                                                      j=n−i+1
+
+                                 ∆
+    where each αj is a state of DX1 ,...,Xj
+  • Strategy profiles
+                                                                                 j−1
+                                                                      n
+                                                                                                 !
+                                                                      Y          Y
+                                                     n
+                                                    σn−i+1 :                           Xl → Xj
+                                                                j=n−i+1          l=1
+                                                                              Qj−1
+     with the property that for all j ≥ n − i + 1, all subgames x :               l=1 Xl and all deviations xj : Xj ,
+                                                               σ              σ
+                                                            k(vx,σ     ) ≥ k(vx,x
+                                                                  j (x) j
+                                                                                   )
+                                                                                  j j
+
+                                                                    ∆
+ In the base case i = 1, we have immediately that states α of DX     1 ,...,Xn
+                                                                                over k are in bijection with strategies σn :
+Qn−1                                                       Qn−1
+ l=1 X l → X n with the property that for all subgames x :  j=1 X j and    all deviations xn : Xn ,
+                                         σ                                                σ
+                                      k(vx,σ     ) = k(x, σn (x))n ≥ k(x, xn )n = k(vx,x
+                                            n (x) n
+                                                                                             )
+                                                                                            n n
+                                                     Jn          ∆
+  For the inductive step, a ⊙-separable state α of j=n−i DX       1 ,...,Xj
+                                                                            is of the form α = α′ ⊙ αn−i , where αn−i is a state of
+  ∆                 ′
+                                                  Jn           ∆
+DX1 ,...,Xn−i and α is a ⊙-separable state of j=n−i+1 DX1 ,...,Xj . This situation is depicted in figure 11. By the inductive
+hypothesis, the latter are in bijection with strategy profiles
+                                                                 j−1
+                                                          n
+                                                                                  !
+                                                         Y       Y
+                                                    σ:                 Xl → Xj
+                                                           j=n−i+1      l=1
+                                                                      Qj−1
+with the property that for all j ≥ n − i + 1, all subgames x :             l=1 Xl and all deviations xj : Xj ,
+                                                             σ              σ
+                                                          k(vx,σ     ) ≥ k(vx,x
+                                                                j (x) j
+                                                                                 )
+                                                                                j j
+
+
+  The state αn−i is over the continuation
+                                                                           
+                                                 n
+                                                 K                                       n−i
+                                                                                         Y
+                                                           ∆
+                                       K                DX1 ,...,Xj
+                                                                       (σ) (k) :             Xj → Rn−i
+                                              j=n−i+1                                    j=1
+
+We call this continuation k ′ . It is given by
+                                                                     ′ n−i
+                                                          k ′ (x) = k vxσ
+                                                                                   1
+                                                                  ′
+Thus states αn−i with the property that the composition α ⊙ αn−i is well-defined are in bijection with strategies
+                                                                  n−i−1
+                                                                     Y
+                                                     ∆
+                                           σn−i : Σ DX1 ,...,Xn−i
+                                                                   =      Xj → Xn−i
+                                                                                 j=1
+
+with the property that for all histories
+                                                                                                
+                                                   n−i−1                  n−i−1
+                                                           Xj ∼
+                                                    Y                      Y
+                                              h:              = V                Xj , Rn−i−1 
+                                                    j=1                    j=1
+
+and all deviations xn−i : Xn−i ,
+                                                 k ′ (h, σn−i (h))n−i ≥ k ′ (h, xn−i )n−i
+                                                 u(I)                                                           u(I)
+                           I                                                        I                                                         I
+                                                      1                                                          1
+
+                                                                                        k′                           σ′                           k
+                                                          σn−i
+                                                                                                        n
+                                                                                                        K
+                                                                                                                     ∆
+                                                                                                                DX1 ,...,Xj
+                                                                                                                                                     
+                                            ∆
+                 n−i−1
+                  Y                        DX1 ,...,Xn−i
+                                                                            n−i
+                                                                            Y                      j=n−i+1
+                                                                                                                                       n
+                                                                                                                                       Y
+                        Xj , Rn−i−1                                            Xj , Rn−i                                      !         X j , Rn 
+                                         n−i−1                                                    n             j−1
+                  j=1                     Y                                 j=1                   Y             Y                      j=1
+                                                  Xj → Xn−i                                                           Xl → Xj
+                                          j=1                                                   j=n−i+1         l=1
+
+
+
+                                                              Fig. 11. Inductive step of theorem 4
+
+
+
+that is to say
+                                                        ′                            ′       
+                                                         σ                              σ
+                                                      k vh,σn−i (h)
+                                                                                   ≥ k vh,x n−i
+                                                                            n−i                        n−i
+
+  Putting these together gives equivalence to the inductive hypothesis for i + 1.
+  The second claim of the theorem follows by taking i = n.
+
+
+
+Proof (proposition
+           Q       29). We first prove that the projections πj satisfy the axioms of a morphism of open games. For a strategy
+profile σ : i:I Σ(Gi ) the diagram
+
+                                                               !        `                                        !
+                                                                            i:I Gi (σi )
+                                                a                                                a
+                                                      Xi , S                                            Yi , R
+                                                i:I                                               i:I
+
+
+
+
+                                                           (ιj , S)                                        (ιj , R)
+
+                                                                            Gj (σj )
+                                                (Xj , S)                                          (Yj , R)
+
+
+commutes by the universal property of the coproduct in Lens. The second axiom of morphisms holds directly by definition.
+   Suppose we have an open game H : Φ −→  7 Ψ and a family of morphisms αi : H −→ 7 Gi . We have unique choices for the
+s, t and Σ-components of the universal morphism, namely
+
+                                                                             H
+                                                      Φ                                                Ψ
+                                                                            Σ(H)
+
+                                                          [s(αi )]i:I             hΣ(αi )ii:I           [t(αi )]i:I
+
+                                                                            Y
+                                                              !                   Gi                            !
+                                            a                               i:I                  a
+                                                  Xi , S                Y                              Yi , R
+                                            i:I                               Σ(Gi )             i:I
+                                                                        i:I
+
+
+
+It suffices to prove that this does indeed define a morphism of open games. For a strategy profile σ : Σ(H), commutativity of
+                                                                      H(σ)
+                                               Φ                                             Ψ
+
+
+                                                 [s(αi )]i:I                                  [t(αi )]i:I
+
+                                                              a
+                                                          !         Gi (Σ(αi )(σ))                    !
+                                        a                     i:I                      a
+                                               Xi , S                                        Yi , R
+                                         i:I                                           i:I
+
+
+follows from the individual αi being morphisms. `
+   For the second axiom, let σ, σ ′ : Σ(H), ιj (h) : i:I Xi and k : K(Ψ). Suppose that
+                                                      (σ, σ ′ ) ∈ BH (V(s(αj ))(h), k)
+Since
+                                                   V([s(αi )]i:I )(ιj (h)) = V(s(αj ))(h)
+by the second axiom of αj we have
+                                        (Σ(αj )(σ), Σ(αj )(σ ′ )) ∈ BGj (h, K(t(αj ))(k))
+Since the diagram
+                                                                    K(t(αj ))(k)
+                                                Yj                                            R
+
+
+                                                     ιj                        K([t(αi )]i:I )(k)
+
+
+                                               a
+                                                     Yi
+                                               i:I
+
+
+commutes, it follows that
+                             (hΣ(αi )ii:I (σ), hΣ(αi )ii:I (σ ′ )) ∈ BQi:I Gi (ιj (h), K([t(αi )]i:I )(k))
+as required.
+

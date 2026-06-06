@@ -88,11 +88,15 @@ Choi–Kim–Lee prove this for the **summed** invariant in B-spin / C. The ques
 
 OQ2 now splits cleanly along an acyclic / non-acyclic axis (see `connections/acyclicity-is-positivity.md`):
 
-**Spin / acyclic case:** for spin λ in types B and C (and minuscule etc.), the bigraded BGG–Verma resolution at weight μ is *bigraded-acyclic*; the (q,t)-Lusztig polynomial collapses to a single positive energy sum on a KR-crystal tensor product. **Crystal energy formula EXISTS** (Choi–Kim–Lee Theorems 4.1, 4.6 do this). Settled.
+**Spin / acyclic case:** for spin λ in types B and C (and minuscule etc.), the bigraded BGG–Verma resolution at weight μ is *bigraded-acyclic*; the (q,t)-Lusztig polynomial collapses to a single positive energy sum on a KR-crystal tensor product. **Crystal energy formula EXISTS** (Choi–Kim–Lee Theorems 4.1, 4.6 do this). Settled at the polynomial level.
 
-**Non-spin / bigraded-non-acyclic case:** Cor 2.4 of `proofs/2026-05-06-remark-47-obstruction.md` proves: there is **no** statistic on a finite combinatorial set producing qt − q + t. Sharp impossibility. Crystal energy formula **CANNOT EXIST** in the naive sense. The minimum required structure is a 2-step bigraded complex (or, equivalently, a virtual class in K_0 of bigraded vector spaces — not in K_0^{≥0}).
+**Spin / acyclic case sharpened (2026-05-07 PROVE-2): NOW THEOREM.** Originally framed (SA) as the W-indexed-bidegree-pointwise lift of CKL Thm 4.6 — but careful re-reading on 2026-05-07 reveals CKL Thm 4.6 IS the bigraded statement (not q=t=1 as earlier extracted). With one elementary fillable gap (Lemma 3.1 in `proofs/2026-05-07-BMR-via-CKL.md`: vac-invariance under Aug, 2-line proof), (SA) for dominant spin λ, μ in B_n is a **theorem**.
 
-**Type D:** open. The acyclicity-is-positivity framework predicts that type-D's analog of "spin lattice" is the locus where bigraded BGG–Verma is acyclic at weight μ. This is testable.
+**The W-indexed Aug~ on (w, π) pairs is now an independent combinatorial structure question** — not a proof route. Two routes open: (A) CKL pullback via Lecouvey/CKL bijections, (B) cactus categorification a la Rouquier-White. **Aug~ is now the leading candidate for the missing type-B cactus realization** (open since 2006). See `connections/aug-tilde-as-type-B-cactus.md`.
+
+**Non-spin / bigraded-non-acyclic case:** Cor 2.4 of `proofs/2026-05-06-remark-47-obstruction.md` proves: there is **no** statistic on a finite combinatorial set producing qt − q + t. Sharp impossibility. Crystal energy formula **CANNOT EXIST** in the naive sense. The minimum required structure is a 2-step bigraded complex (or, equivalently, a virtual class in K_0 of bigraded vector spaces — not in K_0^{≥0}). **Empirical density (B_3, 2026-05-07): 47% of nonzero integer dominant pairs at $\lambda_1 \le 3$ are non-acyclic-negative.** The obstruction is endemic.
+
+**Type D:** open. The acyclicity-is-positivity framework predicts that type-D's analog of "spin lattice" is the locus where bigraded BGG–Verma is acyclic at weight μ. This is testable. **Now also tractable (2026-05-07):** Fujita–Qin (arXiv:2601.00687, Jan 2026) proves (q,t)-characters for ALL classical types including type D — gives the (q,t)-data for cross-check. Adapt `bgg_decomposition_B3.py` to D_4 (W = 192, 12 positive roots). Concrete next experiment.
 
 ### What's the right replacement for non-spin / non-acyclic?
 

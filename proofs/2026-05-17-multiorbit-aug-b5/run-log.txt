@@ -1,0 +1,146 @@
+########################################################################
+# verify_catalog_b5.py
+########################################################################
+======================================================================
+B_5: catalog of e_5^2 net moves on slice S_5 (eps_5 >= 2)
+======================================================================
+  max_total=3: 1142 on-slice partitions, 45 distinct net moves
+  max_total=4: 9827 on-slice partitions, 45 distinct net moves
+  max_total=5: 66404 on-slice partitions, 45 distinct net moves
+
+Total distinct net moves observed at B_5 i=5: 45
+Predicted: 45 (= C(9+1, 2) for 9 e_5-primitives)
+
+    [-1*e1+e5, +1*e1-e5]  (9081 cases)
+    [-1*e4+e5, +1*e4-e5]  (8550 cases)
+    [-1*e2+e5, +1*e2-e5]  (8225 cases)
+    [-1*e3+e5, +1*e3-e5]  (8051 cases)
+    [-2*e1, +2*e1-e5]  (3010 cases)
+    [+2*e4, -2*e4+e5]  (2744 cases)
+    [-2*e2, +2*e2-e5]  (2519 cases)
+    [+2*e3, -2*e3+e5]  (2303 cases)
+    [-2*e3, +2*e3-e5]  (2122 cases)
+    [+2*e2, -2*e2+e5]  (1947 cases)
+    [+1*e4, -1*e4+e5, -1*e5]  (1937 cases)
+    [+1*e1, -1*e1+e5, -1*e2, +1*e2-e5]  (1879 cases)
+    [+1*e3, -1*e3+e5, -1*e4, +1*e4-e5]  (1877 cases)
+    [+1*e2, -1*e2+e5, -1*e3, +1*e3-e5]  (1858 cases)
+    [-2*e4, +2*e4-e5]  (1801 cases)
+    [-2*e5]  (1713 cases)
+    [+2*e1, -2*e1+e5]  (1658 cases)
+    [+1*e3, -1*e3+e5, -1*e5]  (1447 cases)
+    [+1*e1, -1*e1+e5, -1*e3, +1*e3-e5]  (1411 cases)
+    [+1*e2, -1*e2+e5, -1*e4, +1*e4-e5]  (1410 cases)
+    [+1*e2, -1*e2+e5, -1*e5]  (1077 cases)
+    [+1*e1, -1*e1+e5, -1*e4, +1*e4-e5]  (1060 cases)
+    [-1*e1, +1*e1-e5, +1*e2, -1*e2+e5]  (982 cases)
+    [-1*e1, +1*e1-e5, +1*e4, -1*e4+e5]  (966 cases)
+    [-1*e1, +1*e1-e5, +1*e3, -1*e3+e5]  (950 cases)
+    [-1*e3, +1*e3-e5, +1*e4, -1*e4+e5]  (948 cases)
+    [-1*e2, +1*e2-e5, +1*e4, -1*e4+e5]  (933 cases)
+    [-1*e2, +1*e2-e5, +1*e3, -1*e3+e5]  (933 cases)
+    [+1*e1, -1*e1+e5, -1*e5]  (809 cases)
+    [-1*e1, +1*e1-e5, -1*e2, +1*e2-e5]  (248 cases)
+    [-1*e1, +1*e1-e5, -1*e3, +1*e3-e5]  (229 cases)
+    [+1*e3, -1*e3+e5, +1*e4, -1*e4+e5]  (228 cases)
+    [-1*e2, +1*e2-e5, -1*e3, +1*e3-e5]  (211 cases)
+    [+1*e2, -1*e2+e5, +1*e4, -1*e4+e5]  (210 cases)
+    [-1*e1, +1*e1-e5, -1*e4, +1*e4-e5]  (210 cases)
+    [-1*e1, +1*e1-e5, -1*e5]  (206 cases)
+    [-1*e2, +1*e2-e5, -1*e4, +1*e4-e5]  (194 cases)
+    [+1*e2, -1*e2+e5, +1*e3, -1*e3+e5]  (193 cases)
+    [-1*e2, +1*e2-e5, -1*e5]  (192 cases)
+    [+1*e1, -1*e1+e5, +1*e4, -1*e4+e5]  (192 cases)
+    [-1*e3, +1*e3-e5, -1*e5]  (178 cases)
+    [-1*e3, +1*e3-e5, -1*e4, +1*e4-e5]  (178 cases)
+    [+1*e1, -1*e1+e5, +1*e3, -1*e3+e5]  (177 cases)
+    [-1*e4, +1*e4-e5, -1*e5]  (164 cases)
+    [+1*e1, -1*e1+e5, +1*e2, -1*e2+e5]  (162 cases)
+
+real	0m2.263s
+user	0m2.243s
+sys	0m0.020s
+
+########################################################################
+# characterize_moves_b5.py
+########################################################################
+Characterizing e_5^2 net moves on S_5 at B_5 (max_total=5)
+Slice S_5 = {pi : eps_5(pi) >= 2}
+
+Built 45 predicted moves.
+  Predicted class counts: intra=12, cross=24, singleton=9
+
+Observed 45 distinct e_5^2 net moves (66404 on-slice partitions).
+
+Observed class counts (from 45 matched moves):
+  intra:      12  (predicted 12)
+  cross:      24  (predicted 24)
+  singleton:  9  (predicted 9)
+  total:      45  (predicted 45)
+
+All observed moves matched a predicted entry.
+
+All predicted moves were observed.
+
+======================================================================
+Full catalog (each predicted move with empirical occurrence count):
+======================================================================
+
+  Class: intra  (12 moves)
+    intra-A: T-T (T->M twice)                [+2*e1, -2*e1+e5]  (1452 cases)
+    intra-A: B-B (M->B twice)                [-2*e1, +2*e1-e5]  (2674 cases)
+    intra-A: T-B (T->M then M->B)            [-1*e1+e5, +1*e1-e5]  (7647 cases)
+    intra-B: T-T (T->M twice)                [+2*e2, -2*e2+e5]  (1709 cases)
+    intra-B: B-B (M->B twice)                [-2*e2, +2*e2-e5]  (2225 cases)
+    intra-B: T-B (T->M then M->B)            [-1*e2+e5, +1*e2-e5]  (6879 cases)
+    intra-C: T-T (T->M twice)                [+2*e3, -2*e3+e5]  (2029 cases)
+    intra-C: B-B (M->B twice)                [-2*e3, +2*e3-e5]  (1866 cases)
+    intra-C: T-B (T->M then M->B)            [-1*e3+e5, +1*e3-e5]  (6723 cases)
+    intra-D: T-T (T->M twice)                [+2*e4, -2*e4+e5]  (2430 cases)
+    intra-D: B-B (M->B twice)                [-2*e4, +2*e4-e5]  (1579 cases)
+    intra-D: T-B (T->M then M->B)            [-1*e4+e5, +1*e4-e5]  (7170 cases)
+
+  Class: cross  (24 moves)
+    cross-AB: TM+TM                          [+1*e1, -1*e1+e5, +1*e2, -1*e2+e5]  (145 cases)
+    cross-AB: TM+MB                          [+1*e1, -1*e1+e5, -1*e2, +1*e2-e5]  (1644 cases)
+    cross-AB: MB+TM                          [-1*e1, +1*e1-e5, +1*e2, -1*e2+e5]  (837 cases)
+    cross-AB: MB+MB                          [-1*e1, +1*e1-e5, -1*e2, +1*e2-e5]  (226 cases)
+    cross-AC: TM+TM                          [+1*e1, -1*e1+e5, +1*e3, -1*e3+e5]  (159 cases)
+    cross-AC: TM+MB                          [+1*e1, -1*e1+e5, -1*e3, +1*e3-e5]  (1218 cases)
+    cross-AC: MB+TM                          [-1*e1, +1*e1-e5, +1*e3, -1*e3+e5]  (807 cases)
+    cross-AC: MB+MB                          [-1*e1, +1*e1-e5, -1*e3, +1*e3-e5]  (208 cases)
+    cross-AD: TM+TM                          [+1*e1, -1*e1+e5, +1*e4, -1*e4+e5]  (173 cases)
+    cross-AD: TM+MB                          [+1*e1, -1*e1+e5, -1*e4, +1*e4-e5]  (903 cases)
+    cross-AD: MB+TM                          [-1*e1, +1*e1-e5, +1*e4, -1*e4+e5]  (822 cases)
+    cross-AD: MB+MB                          [-1*e1, +1*e1-e5, -1*e4, +1*e4-e5]  (190 cases)
+    cross-BC: TM+TM                          [+1*e2, -1*e2+e5, +1*e3, -1*e3+e5]  (174 cases)
+    cross-BC: TM+MB                          [+1*e2, -1*e2+e5, -1*e3, +1*e3-e5]  (1624 cases)
+    cross-BC: MB+TM                          [-1*e2, +1*e2-e5, +1*e3, -1*e3+e5]  (791 cases)
+    cross-BC: MB+MB                          [-1*e2, +1*e2-e5, -1*e3, +1*e3-e5]  (191 cases)
+    cross-BD: TM+TM                          [+1*e2, -1*e2+e5, +1*e4, -1*e4+e5]  (190 cases)
+    cross-BD: TM+MB                          [+1*e2, -1*e2+e5, -1*e4, +1*e4-e5]  (1217 cases)
+    cross-BD: MB+TM                          [-1*e2, +1*e2-e5, +1*e4, -1*e4+e5]  (791 cases)
+    cross-BD: MB+MB                          [-1*e2, +1*e2-e5, -1*e4, +1*e4-e5]  (175 cases)
+    cross-CD: TM+TM                          [+1*e3, -1*e3+e5, +1*e4, -1*e4+e5]  (207 cases)
+    cross-CD: TM+MB                          [+1*e3, -1*e3+e5, -1*e4, +1*e4-e5]  (1642 cases)
+    cross-CD: MB+TM                          [-1*e3, +1*e3-e5, +1*e4, -1*e4+e5]  (805 cases)
+    cross-CD: MB+MB                          [-1*e3, +1*e3-e5, -1*e4, +1*e4-e5]  (160 cases)
+
+  Class: singleton  (9 moves)
+    singleton: E5-E5 (self-pair)             [-2*e5]  (1504 cases)
+    singleton: E5-A_TM                       [+1*e1, -1*e1+e5, -1*e5]  (682 cases)
+    singleton: E5-A_MB                       [-1*e1, +1*e1-e5, -1*e5]  (186 cases)
+    singleton: E5-B_TM                       [+1*e2, -1*e2+e5, -1*e5]  (919 cases)
+    singleton: E5-B_MB                       [-1*e2, +1*e2-e5, -1*e5]  (173 cases)
+    singleton: E5-C_TM                       [+1*e3, -1*e3+e5, -1*e5]  (1252 cases)
+    singleton: E5-C_MB                       [-1*e3, +1*e3-e5, -1*e5]  (160 cases)
+    singleton: E5-D_TM                       [+1*e4, -1*e4+e5, -1*e5]  (1699 cases)
+    singleton: E5-D_MB                       [-1*e4, +1*e4-e5, -1*e5]  (147 cases)
+
+======================================================================
+VERDICT: three-strand braid hypothesis CONFIRMED at B_5.
+======================================================================
+
+real	0m1.914s
+user	0m1.896s
+sys	0m0.018s

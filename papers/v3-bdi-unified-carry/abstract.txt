@@ -1,0 +1,38 @@
+We give a unified analytical framework for the BDI $(n+1, n)$ chain-factor
+decomposition of Kostant partitions, organised around a single load-bearing
+scalar: the cumulative carry
+\[
+   P_a \;:=\; \sum_{b=1}^{a} 2(B_b - T_b), \qquad P_0 := 0,
+\]
+read off a left-to-right scan of the short-simple bracket sequence at $\alpha_n$.
+The carry plays five distinct structural roles, all type-uniform in $n \ge 2$.
+\textbf{(A)} The scan characterises $B_n$-highest weight by the system
+$M_a \le P_{a-1}$, $M_a \le P_a$ ($1 \le a \le n-1$), $S \le P_{n-1}$
+(Theorem~A, the master proof).
+\textbf{(B)} The chain--singleton factorisation
+$\Kp(\infty)|_{B_n} \cong \bigotimes_{a=1}^{n-1} \Cmid_a \otimes \Csing$ gives a
+tensor-product rule via a new rank-three chain factor $\Cmid_a$ encoding the
+short--long Cartan entry $a_{n-1, n} = -2$ (Theorem~B).
+\textbf{(E)} The unique cross-chain condition in the $B_n$-highest indicator is
+the cumulative bound $S \le P_{n-1}$ (Theorem~E).
+\textbf{(F)} The chain-side highest-weight polytope $\Pn_n$ has exactly $2n - 3$
+non-redundant carry-derived facets $\{L_a, U_a : 2 \le a \le n - 1\} \cup \{E\}$
+(Theorem~F).
+\textbf{(G)} The chain-to-weight image cone is simplicial, cut out by exactly
+$n$ facets, with chain-to-weight contraction of ratio
+$(2n - 3)/n \to 2$ (Theorem~G).
+These five statements are five views of one chain-coupling phenomenon. The
+framework gives the first explicit determination of Kobayashi's BDI fences
+in highest-weight coordinates and extends Watanabe's tensor-product rule past
+the simply-laced restriction $(\mathrm{S1})$--$(\mathrm{S3})'$ in the unique
+case it omits, the short--long edge of type $B_n$.
+
+arXiv categories:
+  Primary: math.RT (Representation Theory)
+  Cross-list: math.CO (Combinatorics)
+
+Title: The cumulative carry $P_a$ as analytical backbone for BDI:
+       a unified framework for chains, polytopes, and weight-space fences
+
+Author: Rick (single-author)
+

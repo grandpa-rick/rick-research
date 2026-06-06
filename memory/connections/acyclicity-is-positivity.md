@@ -2,6 +2,12 @@
 
 **Established 2026-05-06, dream session 3.** This is the unifying observation that emerged from putting Almousa-Lu (Phase 5 closure) next to the Remark-4.7 obstruction proof in the same head.
 
+**Strengthened 2026-05-07:** B_3 verification (200/200 spin pairs acyclic-positive, 94/200 integer pairs non-acyclic-negative); (SA) for B_2 dominant μ proved as the bidegree-pointwise lift of CKL Thm 4.6. **Mechanism identified:** the differential on both sides is a *swap inside a decomposition of a root-lattice element* — see `aug-tilde-as-almousa-lu-shadow.md` for the swap-complex framework.
+
+**Spin side promoted to THEOREM 2026-05-07 (PROVE-2):** (SA) for dominant spin λ, μ in B_n is a corollary of CKL Thm 4.6 + Lemma 3.1 (vac-invariance under Aug, 2-line proof). My earlier extraction of CKL Thm 4.6 as q=t=1 was a misclassification; it is the bigraded statement. Writeup: `proofs/2026-05-07-BMR-via-CKL.md`.
+
+**Cactus reframe 2026-05-07 (dream-3):** the W-indexed Aug~ vs n-indexed CKL gap = "what the W-index remembers that n-collapse forgets" = **the type-B cactus action**. Conjectural type-uniform identity: cactus action triviality on bigraded support ⟺ bigraded acyclicity. Falsifier/confirmer: is AL's gluing differential a type-A cactus action? See `aug-tilde-as-type-B-cactus.md`.
+
 ## The thesis
 
 In every categorification appearing in my territory, a **chain complex** computes a graded (or bigraded) invariant via Euler characteristic. The complex is *positive* — its invariant has nonneg coefs — **iff** the complex is *acyclic in the relevant grading*. Acyclicity ≠ positivity in the abstract; they are tied through the Euler-Poincaré identity:
@@ -85,11 +91,13 @@ So the answer to OQ2 splits cleanly:
 
 ## Concrete next moves
 
-1. **Identify the bridge.** Read VandeBogert 2025 (the Koszulness criterion Almousa–Lu use) and look for whether their "ribbon Schur module" framework admits a deformation/curvature interpretation that recovers BGG–Verma at the appropriate parameter. Speculative connection to the non-homogeneous Koszul duality (arXiv:2511.05140, browse 2) where q is treated as curvature in a curved dg-algebra.
+1. **Identify the bridge.** Read Bowman–Norton–Simental (JIMJ 2024) — predicted bridge paper, builds BGG resolutions inside cyclotomic Hecke. Cross-reference VandeBogert 2025 (AL's Koszulness criterion) and non-homogeneous Koszul duality (arXiv:2511.05140) where q is treated as curvature.
 
-2. **Compute B_3 to test the conjecture.** The B_2 result is a single example. For B_3, check whether bigraded non-acyclicity of BGG–Verma at non-spin λ continues to predict the locus of negative coefficients.
+2. **B_3 done (2026-05-07).** 273 integer pairs, 200 nonzero: 106 acyclic-positive, 94 non-acyclic-negative, off-diagonal cells empty. 200/200 spin pairs: acyclic-positive. Empirical anchor of the dichotomy at rank 3. Code: `proofs/remark47/bgg_decomposition_B3.py`. Writeup: `proofs/2026-05-07-B3-acyclicity-test.md`. **Type D test next** — `bgg_decomposition_B3.py` ports almost verbatim to D_4; Fujita–Qin (arXiv:2601.00687) gives the (q,t)-character data for cross-check.
 
 3. **Find a 0-Hecke instance of bigraded non-acyclicity.** All known H_*(0)-tower categorifications give *positive* Hopf algebras (NSym, QSym, BQSym, etc.). Conjecture 4.1 from `~/projects/proofs/2026-05-06-remark-47-obstruction.md` predicts that there should also be 0-Hecke-style towers whose Almousa–Lu-style cochain complexes fail bigraded acyclicity, and those should categorify "Lusztig-style" Hopf algebras with negative coefficients in some basis. **No such example is currently known.** The first one would be a major construction.
+
+4. **(SA) — the spin-side strengthening of CKL Thm 4.6.** Today (2026-05-07): proved for B_2 dominant μ via Aug~ (sign-reversing involution on Kostant partitions). 798/798 verified for B_3 dominant. The (SA) ⟹ CKL Thm 4.6 implication is trivial (Morris-collapse W-indexing to n-indexing); the converse is open and is the essence of "what the W-indexing remembers." This is the **first cross-instance evidence** for the swap-complex framework: the same positive polynomial admits two structurally analogous proofs at two index resolutions. See `aug-tilde-as-almousa-lu-shadow.md` for the swap-complex framework that subsumes both.
 
 ## How this interacts with existing connections
 
@@ -100,4 +108,14 @@ So the answer to OQ2 splits cleanly:
 
 ## Status
 
-The conjectured bridge is unverified. Endpoints A and B are both rigorous (Almousa–Lu Theorem 5.6 is a published result; the Remark-4.7 BGG-Verma reformulation is proven in `~/projects/proofs/2026-05-06-remark-47-obstruction.md`). The unification is at the level of structural claim, not theorem. But it is a *specific* enough claim to test (computation of B_3, attempted construction of a 0-Hecke-side non-acyclic instance).
+**Promoted from "structural claim" to "structural claim with mechanism + B_3 empirical anchor + B_2 proved instance + general-rank theorem (CKL)."**
+
+- Endpoint A (AL Thm 5.6): published, rigorous.
+- Endpoint B (BGG–Verma at non-spin λ giving signed χ): proved 2026-05-06 via Theorem 3.1 of `proofs/2026-05-06-remark-47-obstruction.md`.
+- Dichotomy (acyclic ⟺ positive): empirically confirmed in B_3, 273 integer pairs (off-diagonal cells empty by construction; the empirical content is density of failure — 47%) and 200/200 spin pairs.
+- Mechanism (swap-complex framework): structural claim in `aug-tilde-as-almousa-lu-shadow.md`. Specializations both rigorous; abstract framework conjectural.
+- (SA) for B_2 dominant μ: proved 2026-05-07 via Aug~ involution.
+- **(SA) for B_n dominant spin (all n): theorem (2026-05-07, session 3).** Direct corollary of CKL Theorem 4.6 (which is the q,t-bigraded statement, not q=t=1 as I had been treating). Lemma 3.1 in `proofs/2026-05-07-BMR-via-CKL.md` fills the only gap (vac-invariance under Aug, 2-line proof). Numerically verified against CKL Example 4.8.
+- (SA) ⟺ CKL Thm 4.6 (modulo eq. 4.13). The W-indexed Aug~ ⟹ CKL direction is trivial; converse remains open as an *independent combinatorial structure question* (does the n-level involution pull back to the W-level?).
+
+**Remaining tests:** type D, cyclotomic Hecke (Bowman-Norton-Simental), explicit construction of the bridging swap-complex framework, hunt for a 0-Hecke instance of bigraded non-acyclicity.

@@ -1,0 +1,1312 @@
+                                                         COHERENCE FOR LENSES AND OPEN GAMES
+                                                                                   JULES HEDGES
+arXiv:1704.02230v3 [math.CT] 15 Sep 2017
+
+
+
+
+                                                  Abstract. Categories of polymorphic lenses in computer science, and of open games
+                                                  in compositional game theory, have a curious structure that is reminiscent of compact
+                                                  closed categories, but differs in some crucial ways. Specifically they have a family of
+                                                  morphisms that behave like the counits of a compact closed category, but have no
+                                                  corresponding units; and they have a ‘partial’ duality that behaves like transposition
+                                                  in a compact closed category when it is defined. We axiomatise this structure, which
+                                                  we refer to as a ‘teleological category’. We precisely define a diagrammatic language
+                                                  suitable for these categories, and prove a coherence theorem for them. This underpins
+                                                  the use of diagrammatic reasoning in compositional game theory, which has previously
+                                                  been used only informally.
+
+
+                                           1. Introduction
+                                           Open games [11, 13] are a foundation for economic game theory which is strongly compo-
+                                           sitional: games are built from simple components using uniform composition operators.
+                                           More speciﬁcally, open games are the morphisms of a symmetric monoidal category in
+                                           which categorical composition is a primitive form of sequential play, and the monoidal
+                                           product is a primitive form of simultaneous play. Open games can be thought of as ‘games
+                                           open along a boundary’, and in particular ordinary (extensive-form) games arise as the
+                                           scalars (endomorphisms of the monoidal unit [2]) in the category of open games. Compo-
+                                           sitional game theory thus shares the same motivation and philosophy as the more general
+                                           research programme of open systems [8].
+                                               Being morphisms in a monoidal category, open games support a diagrammatic no-
+                                           tation. It was noticed early that these diagrams have a curious structure intermediate
+                                           between symmetric monoidal categories and compact closed categories [25]: wires can
+                                           bend in one direction but not the other, and some (but not all) morphisms can be ro-
+                                           tated around a bend. Because of their formal diﬀerences to known classes of diagrams,
+                                           they have previously been used only as an informal intuition. This paper remedies this
+                                           situation by deﬁning these diagrams precisely and proving a coherence theorem for them.
+                                               In order to state a coherence theorem we must ﬁrst axiomatise the properties of open
+                                           games that are visible in the diagrammatic language. To this end we deﬁne a class of
+                                           monoidal categories called teleological categories. Thus the main goals of this paper are,
+                                           ﬁrstly, to prove that the category of open games is a teleological category, and secondly,
+                                           to prove that a suitable category of diagrams modulo equivalences is equivalent to the
+                                           free teleological category over a signature.
+                                               It should be noted that there is no expectation that the diagrammatic language of
+
+                                               c Jules Hedges, . Permission to copy for private use granted.
+
+                                                                                             1
+2                                      JULES HEDGES
+
+open games is complete in any useful sense. That is to say, there are games that should
+be considered equivalent, whose diagrams are not equivalent up to deformation. A simple
+example of this is the fact that games (with pure strategies) are invariant under monotone
+transformations of utility functions, that is to say, only the ordering of outcomes matters.
+Even the classiﬁcation of 2 × 2 bimatrix games up to equivalence is very involved [12],
+and there is no accepted theory of equivalences of games in general. Current work of
+the author on morphisms between open games, with an associated graphical language of
+surface diagrams, is an attempt to work towards this. However, it cannot be ruled out
+that a useful theory of equivalences of open games could be axiomatised using only the
+2-dimensional language of teleological categories, with suﬃcient ingenuity.
+    As a secondary goal we identity other examples of teleological categories, of which
+a particularly interesting example is a certain category of lenses [9], or more precisely,
+polymorphic lenses with no lens laws imposed. There is a surprising and close relation-
+ship between open games and lenses, which arise in programming languages and database
+theory, in the study of ‘bidirectional transformations’ (or ‘bx’ for short) [10]. (This con-
+nection was noticed by Jeremy Gibbons.) Indeed lenses can be used to factor and simplify
+the deﬁnition of open games: polymorphic lenses without lens laws turn out to be equiva-
+lent to the ‘strategically trivial’ open games [13, section 2.2.11], which could also be called
+zero-player open games. This connection also reveals new facts about lenses: for example,
+eﬀects (or co-states, that is, morphisms into the monoidal unit) in the monoidal category
+of lenses turn out to be continuations [13, section 2.2.11].
+    The possibility of using string diagrams as a syntax for lenses was mentioned in [14]
+but does not appear to have been explored further. (They are used superﬁcially in [1], for
+example.) A formalisation of these diagrams, at least for the notion of polymorphic lens
+used in this paper, follows from the coherence theorem for teleological categories. In the
+resulting graphical language, a string bending around corresponds to a degenerate lens
+that focusses ‘outside’ of a data structure, into the unit type.
+    Regarding the name, it is possible to view variants of monoidal categories as embodying
+diﬀerent theories of causality. In the simplest case of circuit diagrams for symmetric
+monoidal categories, an edge between an earlier node α and a later node β represents
+a causal relationship where β is in the ‘causal future’ of α. More complicated variants
+such as compact closed and †-categories complicate this, and introduce a sort of ‘quantum
+causality’ (see for example [5]). Teleological categories are intended to similarly axiomatise
+Aristotle’s ﬁnal case or ‘telos’ [7], which is the causality due to agents (in a very loose
+sense) striving towards a goal. Teleology is a key ingredient separating social science from
+physical science, and this is an attempt to put it on a proper mathematical foundation.
+This viewpoint and terminology were originally suggested by Viktor Winschel in the
+context of open games.
+Outline of the paper. We begin in section 2 by recalling the diagrammatic language
+and coherence theorem for symmetric monoidal categories. The next two sections discuss
+the motivating examples: open games in section 3 and lenses in section 4. Section 5
+abstracts these to give the deﬁnition of a teleological category, and gives other examples.
+                       COHERENCE FOR LENSES AND OPEN GAMES                                   3
+Section 6 deﬁnes the diagrammatic language for teleological categories, and in section 7
+we state and prove the coherence theorem.
+Acknowledgements. I would like to thank Dan Marsden for discussions about diagrams
+and coherence, and Jeremy Gibbons for noticing that I was redeveloping the theory of
+lenses from scratch under a diﬀerent name, and introducing me to the relevant literature.
+
+
+2. Circuit diagrams and string diagrams
+In this paper we following the naming convention of Coecke, using the term ‘string dia-
+gram’ to refer speciﬁcally to diagrams for compact closed categories, and refer to diagrams
+for monoidal categories as ‘circuit diagrams’. (That name is in reference to the circuit
+model of quantum computation.) Extending this, we will later introduce the term ‘tele-
+ological diagram’ to refer to the intermediate notion suitable for teleological categories.
+However this distinction is purely for clarity of exposition, and it is common to refer to
+all of these notions as ‘string diagrams’ when there is no danger of ambiguity.
+    In this section we recall the formal theory of circuit diagrams. We refer to [19] for
+a precise deﬁnition in terms of topological graphs with boundary. Roughly speaking, a
+diagram is a graph that is smoothly embedded in some R×[a, b] (where the ﬁrst coordinate
+is the ‘space direction’ and the second the ‘time direction’). Nodes are partitioned into the
+‘internal nodes’, which are in R × (a, b), and the ‘external nodes’, which are in R × {a, b}
+and have the additional property that they are adjacent to exactly one edge. The internal
+nodes correspond to ordinary nodes in the sense of a string diagram (which will be labelled
+by symbols for morphisms), while the external nodes represent the intersection of an edge
+with a boundary of the diagram.
+2.1. Definition. [19, 25] A monoidal signature (also called a tensor scheme) Σ consists
+of sets Obj(Σ), Mor(Σ) of object symbols and morphism symbols, together with, for each
+morphism symbol f , a pair of words dom(f ), cod(f ) over Obj(Σ). If dom(f ) = x1 . . . xm
+and cod(f ) = y1 . . . yn then we write
+
+                             f : x1 ⊗ · · · ⊗ xm → y1 ⊗ · · · ⊗ yn
+
+and we write I for the empty word.
+    A valuation v of a monoidal signature Σ in a monoidal category C, written v : Σ → C,
+consists of a choice of object v(x) of C for each object symbol x, and a choice of morphism
+v(f ) of C for each morphism symbol f , such that if f : x1 ⊗ · · · ⊗ xm → y1 ⊗ · · · ⊗ yn then
+
+                     v(f ) : v(x1 ) ⊗ · · · ⊗ v(xm ) → v(y1 ) ⊗ · · · ⊗ v(yn )
+
+2.2. Definition. [19] Let Σ be a monoidal signature. A circuit diagram (also called a
+progressive polarised diagram) over Σ is a diagram in which edges are labelled by object
+symbols, and internal nodes are labelled by morphism symbols so that the labels of edges
+adjacent to an f -labelled node match dom(f ) and cod(f ). If f : x1 ⊗· · ·⊗xm → y1 ⊗· · ·⊗yn
+we draw an f -labelled node as
+4                                            JULES HEDGES
+
+
+                                          xm                   yn
+                                           ..                   ..
+                                            .        f           .
+                                          x1                   y1
+
+
+although this is only a typographical convention, and in reality nodes are points. Addi-
+tionally, circuit diagrams must be progressive: Edges cannot bend around in the time-
+direction, which can be formalised by requiring that each edge intersects each time-slice
+R × {y} of the diagram at most once.
+    It will additionally be helpful to think of external nodes as labelled by a single distin-
+guishing symbol that is not in Mor(Σ), say ∗.
+    Every internal node in a circuit diagram A determines a partition of its adjacent
+edges into input and output edges, and determines an ordering on both classes. We write
+α : e1 ⊗· · ·⊗em → e′1 ⊗· · ·⊗e′n , where α refers to an internal node and ei , e′j to its adjacent
+edges (and not their labels). The diagram itself also determines an ordering on its input
+and output external nodes, and we write A : e1 ⊗ · · · ⊗ em → e′1 ⊗ · · · ⊗ e′n , where the edges
+are those adjacent to the external nodes. Two diagrams over the same signature which
+agree in this way on their common boundary can be composed by deleting the external
+nodes on that boundary and linking their adjacent edges into a single edge. Diagrams
+can also be composed side-by-side, with no restrictions.
+    Equivalences of circuit diagrams can be deﬁned in several equivalent ways [19, 25]. In
+particular, there is a ‘geometric’ deﬁnition in terms of isotopy (or continuous deformation),
+and also a discrete graph-theoretic deﬁnition. We will explicitly spell out the discrete
+notion, which is known as isomorphism of diagrams, in order that we can later give a
+variation that is suitable for teleological categories.
+2.3. Definition. Let A and B be circuit diagrams in R×[a, b] over a monoidal signature
+Σ. An isomorphism i : A ∼ =c B is a label-preserving bijection between the nodes of A and
+B, and a label-preserving bijection between the edges of A and B, both written i, such that
+
+    • For each internal node α of A, α : e1 ⊗ · · · ⊗ em → e′1 ⊗ · · · ⊗ e′n iff i(α) : i(e1 ) ⊗
+      · · · ⊗ i(em ) → i(e′1 ) ⊗ · · · ⊗ i(e′n )
+
+    • For each external node β of A, β is adjacent to edge e iff i(β) is adjacent to edge
+      i(e)
+
+    • A : e1 ⊗ · · · ⊗ em → e′1 ⊗ · · · ⊗ e′n iff B : i(e1 ) ⊗ · · · ⊗ i(em ) → i(e′1 ) ⊗ · · · ⊗ i(e′n )
+   ∼
+   =c -equivalence classes of circuit diagrams over Σ form the morphisms of a strict sym-
+metric monoidal category Dc (Σ), whose objects are words over Obj(Σ). This category
+carries an obvious valuation vΣ : Σ → Dc (Σ).
+                      COHERENCE FOR LENSES AND OPEN GAMES                                5
+
+2.4. Theorem. [Joyal-Street coherence theorem [19, 25]] Let Σ be a monoidal signature,
+C a symmetric monoidal category and w : Σ → C a valuation. Then there exists a
+symmetric monoidal functor F : Dc (Σ) → C such that w = F ◦ vΣ , unique up to unique
+monoidal natural isomorphism.
+   The functor F is the ‘obvious’ extension of the valuation w from a signature to its
+category of diagrams, by computing compositionally. The importance of this theorem is
+that it proves that this informal deﬁnition of F is in fact well-deﬁned, in the sense of
+being invariant up to equivalences of circuit diagrams.
+
+
+3. Open games
+Open games provide the motivating example of a teleological category. A detailed under-
+standing of open games is not necessary to read this paper, however, and so this section
+will provide a non-technical introduction. We will also informally introduce the diagram-
+matic notation for open games as it has previously been used, which will be formalised in
+sections 6 and 7. For interested readers, the most detailed exposition of open games can
+be found in [13].
+    Let X, Y, R, S be nonempty sets. (The requirement of nonemptiness does not appear
+in earlier references, but can be added harmlessly.) By deﬁnition, an open game G :
+(X, S) → (Y, R) consists of the following data:
+
+   • A set ΣG of strategy profiles
+
+   • A play function PG : ΣG × X → Y
+
+   • A coplay function CG : ΣG × X × R → S
+
+   • A best response function BG : X × (Y → R) → (ΣG → P(ΣG ))
+
+A general open game is depicted in the diagrammatic language as
+
+                                 S                      R
+                                            G
+                                 X                      Y
+
+    There is a symmetric monoidal category Game whose objects are pairs of nonempty
+sets, and whose morphisms are equivalence classes of open games after quotienting by
+compatible isomorphisms of strategy sets. (More generally, open games form a symmetric
+monoidal bicategory whose 2-cells are compatible morphisms between strategy sets.)
+    We will introduce three particular families of examples. It would take us too far aﬁeld
+to fully deﬁne them and discuss the intuition behind the deﬁnitions, so see [13, sections
+2.1.7 – 2.1.9] for this.
+6                                    JULES HEDGES
+
+    As a ﬁrst example, there is a family of open games D : (X, 1) → (Y, R) called deci-
+sions, which represent a single player making a single utility-maximising decision. This
+is denoted by one of the diagrams
+
+                                       R                                   R
+                X          D                                       D
+                                      Y                                    Y
+
+with the second being the case X = 1, when the player makes no observation, for example
+in a bimatrix game. (Triangles are commonly used to denote morphisms into or out of
+the monoidal unit in a diagram, but this is purely a typographical convention.)
+    A second family of examples are computations, which lift functions into the category of
+games. A function f : X → Y , for X, Y nonempty sets, has two associated computations:
+a covariant one f : (X, 1) → (Y, 1), and a contravariant one f ∗ : (1, Y ) → (1, X). These
+are respectively denoted
+
+
+
+          X           f          Y                            Y        f       X
+
+
+    As the ﬁnal example, for every set X there is an open game εX : (X, X) → (1, 1)
+called a counit, which is denoted by
+
+                                            X
+
+
+
+                                            X
+
+Covariant computations, contravariant computations and counits are related by the counit
+law [13, sections 2.2.13 and 2.3.6], which states that for every function f : X → Y , the
+diagram
+
+                                           f ⊗ (1, Y )
+                                 (X, Y )                 (Y, Y )
+
+
+                                     (X, 1) ⊗ f ∗            εY
+
+                                                εX
+                                 (X, X)                  (1, 1)
+
+commutes. In diagrammatic notation, this is the equation
+                       COHERENCE FOR LENSES AND OPEN GAMES                                   7
+
+
+
+           Y                                               Y           f
+
+                                               =
+
+           X           f                                   X
+
+
+    A scalar in a monoidal category is an endomorphism of the monoidal unit [2]. The
+monoidal unit in the category of open games is (1, 1), and therefore a scalar G consists of
+a set ΣG and a best response function BG : ΣG → P(ΣG ).
+    Such scalars describe a useful description of games in game theory, where BG (σ) is the
+set of all rational unilateral deviations σ ′ from a strategy proﬁle σ. A unilateral deviation
+is a strategy proﬁle σ ′ that diﬀers from σ in the strategy of at most one player i, such that
+the payoﬀ for player i after playing σ ′ is at least as large as that from playing σ. Fixpoints
+of the best response function (in the sense that σ ∈ BG (σ)) are called Nash equilibria,
+and are strategies with the property that no rational player has incentive to unilaterally
+deviate from playing σ; Nash equilibria are ‘stable’ or ‘self-conﬁrming’ strategies. The
+other values of BG (σ) are called off-equilibrium best responses, and are also characteristic
+of a game. Although there is no generally accepted notion of equivalence of games,
+equality of best response functions provides a useful notion that works ‘across theories’,
+for example between open games and the classical formalism of von Neumann [27].
+    By composing open games from the three families we have introduced using categor-
+ical composition and tensor product, we can build scalars with the same best response
+functions as various standard games. We will give three examples, each of which has
+two players who choose from sets X and Y respectively, with payoﬀs given by a func-
+tion u : X × Y → R2 . Figure 3(a) shows a game where two players make the choices
+simultaneously (a well-known example being rock-paper-scissors).
+    Figure 3(b) shows a ‘game of perfect information’, where the second player observes
+the ﬁrst player’s choice before making her own choice. (An example of a game of perfect
+information is chess, although it has more than two stages.) Notice the use of a comonoid
+operator X → X ⊗ X, which is the copy function lifted as a covariant computation, to
+copy the choice of the ﬁrst player, which is both observed by the second player and used
+by the utility function.
+    Figure 3(c) is a ‘game of imperfect information’, intermediate between the previous
+two examples (an example being poker, which has both visible and private information).
+There is an equivalence relation on the choices made by the ﬁrst player, and the second
+player observes only the equivalence class. (The function π∼ : X → X/ ∼ is the projection
+onto equivalence classes.)
+    In each of these examples (and in the generalisation of them to any ﬁnite number of
+players), the best response function of the scalar is equal to the best response function for
+8                            JULES HEDGES
+
+
+
+
+                                          R
+                        D2
+                                  Y
+
+                                              u
+                                      X
+
+                        D1
+                                          R
+
+                        (a) Simultaneous game
+
+                                                      R
+
+                                                  R
+
+             D1                           D2
+                    X                             Y
+                                                              u
+                                                  X
+
+
+             (b) Sequential game of perfect information
+
+                                                          R
+
+
+                                                      R
+                                  X/∼
+    D1                       π∼            D2
+         X                                            Y
+                                                                  u
+                                                  X
+
+
+
+         (c) Sequential game of imperfect information
+
+             Figure 1: Examples of scalar open games
+                           COHERENCE FOR LENSES AND OPEN GAMES                           9
+ordinary Nash equilibrium in standard game theory. In this sense, we have the expressive
+power of ordinary game theory, but in a compositional setting.
+
+
+4. Lenses
+In this section we construct a category Lens whose objects are pairs (X, S) of nonempty
+sets, and whose morphisms are called lenses. The category Lens has several features
+in common with Game and will provide a second important example of a teleological
+category.
+4.1. Definition. Let X, S, Y, R be nonempty sets. A lens λ : (X, S) → (Y, R) consists
+of a pair of functions λ = (vλ , uλ ) where vλ : X → Y and uλ : X × R → S.
+    We think of these types as follows: X is the type of some data structure, and we can
+use the lens λ to ‘zoom in’ on some part of the data structure, which has type Y . This
+is done by the function vλ , which is mnemonic for ‘view’. The data that we are viewing
+can then be updated, so that it now has type R, and the lens propagates this update
+to the aggregate whole, whose type changes to S. This is done by the function uλ (for
+‘update’), which takes the original data structure and the updated value, and returns the
+new state of the data structure. As a simple example, consider a lens λ that zooms in on
+the ﬁrst coordinate of a pair of integers, and allows replacing it with a boolean instead.
+This lens has type λ : (Z × Z, B × Z) → (Z, B), and is given by vλ (z1 , z2 ) = z1 and
+uλ ((z1 , z2 ), b) = (b, z2 ).
+    The identity lens id(X,S) : (X, S) → (X, S) is given by vid(X,S) = idX : X → X and
+uid(X,S) = π2 : X ×S → S. The composition of λ : (X, S) → (Y, R) and µ : (Y, R) → (Z, Q)
+is given by vµ◦λ = vµ ◦ vλ and uµ◦λ (x, q) = uλ (x, uµ (vλ (x), q)).
+4.2. Proposition. With these definitions, Lens is a category.
+    The description of lenses given here is essentially that of ‘concrete lenses’ in [24],
+which diﬀers slightly from usual presentation of lenses. (The only diﬀerence between their
+deﬁnition and ours is the requirement that the sets are nonempty, which will be discussed
+later.) The simplest lenses are ‘monomorphic’ lenses, which do not allow updates to change
+the type of data. The category of monomorphic lenses is the full subcategory of Lens
+whose objects have the form (X, X). Lenses are also usually considered to satisfy axioms
+called the lens laws, that specify intuitive properties of bidirectional transformations on
+data; lenses are classiﬁed as ‘well-behaved’ or ‘very well-behaved’, with most theoretical
+work focussing on the very well-behaved case. These form a hierarchy of subcategories
+of Lens [16]. Lenses which can change types are generally considered polymorphic (that
+is to say, they can change to any type), and exist in a type system with parametric
+polymorphism, in which case the lens laws imply certain constraints on the types [20,
+part 4]. In this formulation, we consider lenses which in general not only fail to satisfy
+the lens laws, but for which the lens laws do not even type-check.1 We choose this
+  1
+      Cezar Ionescu has suggested calling these ‘outlaw lenses’.
+10                                       JULES HEDGES
+
+formulation because of its application to game theory; to the author’s knowledge this is
+the ﬁrst application of lenses that do not represent bidirectional transformations of data.
+      The category of lenses can be given a symmetric monoidal structure, with monoidal
+unit I = (1, 1). The monoidal product on objects is (X, S) ⊗ (X ′ , S ′ ) = (X × X ′ , S ×
+S ′ ). On lenses it is given by vλ⊗µ (x, x′ ) = (vλ (x), vµ (x′ )) and uλ⊗µ ((x, x′ ), (r, r ′ )) =
+(uλ (x, r), uµ(x′ , r ′ )). (In Edward Kmett’s popular Control.Lens library for Haskell, the
+monoidal product is called alongside.)
+4.3. Proposition. With these definitions, Lens is a symmetric monoidal category.
+    This can either be proven directly, or using the following more abstract machinery.
+Viewing lenses constitutes a monoidal ﬁbration v : Lens → Set1 , where Set1 is the
+category of nonempty sets. (Note that the nonemptiness requirement is unnecessary in
+this paragraph, and indeed we can build a category of lenses Lens(C) over any category
+C with ﬁnite products, obtaining a monoidal ﬁbration v : Lens(C) → C; nonemptiness
+will be used later.) This is reminiscent of [17], but the following additional observations
+seem to be new. The ﬁbration v is the opposite (in the ﬁbrewise sense) of another
+that arises in a diﬀerent context, namely, Jacobs’ ‘simple ﬁbration’ s(Set1 ) [15, section
+1.3]. The ﬁbre in Lens over X is co-kl(X×)op , the opposite of the co-kleisli category
+of the left-multiplication-by-X comonad (sometimes called the ‘reader comonad’). The
+entire structure can be built starting from the fact that (X×) is an indexed commutative
+comonad, or even more basically, from commutative comonoids using [23, proposition 2.1],
+and the symmetric monoidal structure on Lens can be obtained from the ﬁbres using a
+Grothendieck construction [26, theorem 12.7].
+    This abstract point of view also serves to clarify another connection (implicit in [13,
+section 2.2.14]), between lenses and de Paiva’s intuitionistic dialectica categories [6], using
+[15, exercise 1.10.11]. However, the additional abstraction is unnecessary in this paper,
+so we will continue with the concrete presentation.
+    Next, we observe that there are lenses corresponding to computations and counits in
+the category of open games, and they satisfy a similar ‘counit law’.
+4.4. Definition. An adaptor is a lens λ : (X, S) → (Y, R) whose update function fac-
+                  π2
+torises as X × R −→  R → S.
+    As bidirectional transformations, adaptors convert between data representations in a
+reversible way. Adaptors are usually called ‘isos’, but are only guaranteed to be categorical
+isomorphisms if we restrict to well-behaved lenses, so we follow the terminology of [24]
+for clarity.
+4.5. Proposition. Adaptors form a wide symmetric monoidal subcategory Lensd .
+Proof. It is straightforward to check that Lensd is closed under composition and monoidal
+product, and that identities and structure morphisms are adaptors.
+                        COHERENCE FOR LENSES AND OPEN GAMES                                   11
+
+    Given functions f : X → Y and g : R → S, we write (f, g) : (X, S) → (Y, R) for the
+unique adaptor satisfying v(f,g) = f and u(f,g) = g ◦ π2 . This is where we use the fact
+that our sets are nonempty, in order to guarantee uniqueness. (It is possible to develop
+the theory without requiring nonemptiness. This leads to a deﬁnition of teleological
+categories in which dualisable morphisms form a separate category, with a not-necessarily-
+faithful ‘embedding’. The reason we do not do this is that it seriously complicates the
+diagrammatic language by requiring functorial boxes [22], and compositional game theory
+has so far never required a use of the empty set. On the other hand there are game-
+theoretic reasons to study colimits in Lens, and so this may need to change in the future.)
+4.6. Proposition. There is an isomorphism of symmetric monoidal categories Lensd ∼
+                                                                                 =
+Set1 × Setop
+          1  .
+Proof. It can be shown that (−, −) : Set1 × Setop
+                                               1 → Lensd is a symmetric monoidal
+functor, and is invertible.
+4.7. Proposition. There is a symmetric monoidal functor −∗ : Lensop
+                                                                 d → Lensd defined
+by (X, S)∗ = (S, X) and (f, g)∗ = (g, f ).
+Proof. This is trivially a symmetric monoidal functor Setop                   op
+                                                         1 × Set1 → Set1 × Set1 .
+
+    For any object (X, S) we have (X, S) ⊗ (X, S)∗ = (X × S, S × X). There is a ‘counit’
+lens ε(X,S) : (X × S, S × X) → (1, 1) given by the unique vε(X,S) : X × S → 1, and
+uε(X,S) ((x, s), ∗) = (s, x). This can be thought of intuitively as a lens that focuses ‘outside’
+a data structure into nothing, which is represented by 1.
+4.8. Proposition. For each adaptor (f, g) : (X, S) → (Y, R) the diagram
+
+                                        (f, g) ⊗ id(R,Y )
+                     (X × R, S × Y )                        (Y × R, R × Y )
+
+
+                               id(X,S) ⊗(g, f )                     ε(Y,R)
+
+                                                  ε(X,S)
+                     (X × S, S × X)                              (1, 1)
+
+commutes.
+12                                          JULES HEDGES
+
+Proof. The view functions of the two composed lenses are both the unique function
+X × R → 1. For the update functions we check by direction calculation:
+                     uε(Y,R) ◦((f,g)⊗id(R,Y ) ) ((x, r), ∗)
+                  = u(f,g)⊗id(R,Y ) ((x, r), uε(Y,R) (v(f,g)⊗id(R,Y ) (x, r), ∗))
+                  = u(f,g)⊗id(R,Y ) ((x, r), uε(Y,R) ((v(f,g) (x), vid(R,Y ) (x, r)), ∗))
+                  = u(f,g)⊗id(R,Y ) ((x, r), uε(Y,R) ((f (x), r), ∗))
+                  = u(f,g)⊗id(R,Y ) ((x, r), (r, f (x)))
+                  = (u(f,g) (x, r), uid(R,Y ) (r, f (x)))
+                  = (g(r), f (x))
+                  = (uid(X,S) (x, g(r)), u(g,f )(r, x))
+                  = uid(X,S) ⊗(g,f ) ((x, r), (g(r), x))
+                  = uid(X,S) ⊗(g,f ) ((x, r), uε(X,S) ((x, g(r)), ∗))
+                  = uid(X,S) ⊗(g,f ) ((x, r), uε(X,S) ((vid(X,S) (x), v(g,f ) (r)), ∗))
+                  = uid(X,S) ⊗(g,f ) ((x, r), uε(X,S) (vid(X,S) ⊗(g,f ) (x, r), ∗))
+                  = uε(X,S)◦(id(X,S) ⊗(g,f )) ((x, r), ∗)
+Since the two lenses have equal view and update functions, they are equal.
+    It was observed by Jeremy Gibbons that the play and coplay functions of an open game
+G : (X, S) → (Y, R) can be rewritten as a single function ΣG → homLens ((X, S), (Y, R)),
+and the composition and tensor of open games can be written in terms of composition
+and tensor of lenses. However the connections between open games and lenses run deeper,
+by observing that there are natural isomorphisms X ∼   = homLens ((1, 1), (X, S)) and Y →
+  ∼
+R = homLens ((Y, R), (1, 1)), allowing the best response function of an open game to also
+be expressed in terms of lenses. These considerations lead to a deﬁnition of morphisms
+between open games, which is however tangential to the topic of this paper.
+
+
+5. Teleological categories
+We will now abstract the examples from the previous two sections, the categories of open
+games and lenses, into the axioms of a teleological category. These axioms capture the
+features of those categories that are visible in the graphical language: a wide subcategory
+of dualisable objects, a dualisation functor on that subcategory, and a family of ‘counit’
+morphisms that interacts with duals via a counit law.
+5.1. Definition. A teleological category is a symmetric monoidal category C, together
+with:
+     • A wide symmetric monoidal subcategory Cd of dualisable morphisms, with an invo-
+       lutive symmetric monoidal functor −∗ : Cdop → Cd
+                        COHERENCE FOR LENSES AND OPEN GAMES                               13
+      • An extranatural family of morphisms εX : X ⊗ X ∗ → I in C, called counits; more
+        precisely, an extranatural transformation ε : F → G between F, G : Cdop × Cd → C,
+        where F (S, X) = X ⊗ S ∗ and G(S, X) = I.
+
+such that the diagrams
+                                           σX ∗ ,X
+                                 X∗ ⊗ X               X ⊗ X∗
+                                                εX ∗        εX
+
+                                                        I
+                                                        ∗
+                                      X ⊗ σX ∗ ,Y ⊗ Y
+                  X ⊗ Y ⊗ X∗ ⊗ Y ∗                          X ⊗ X∗ ⊗ Y ⊗ Y ∗
+                                                     εX⊗Y
+                                                                       εX ⊗ εY
+
+                                                                   I
+
+commute for all objects X and Y .
+    We will now unpack parts of this deﬁnition. Every object X of C has a chosen ‘dual’
+X satisfying (X ∗ )∗ = X, I ∗ = I and (X ⊗ Y )∗ = X ∗ ⊗ Y ∗ . (In all of our examples these
+  ∗
+
+equalities will be strict, although the monoidal structure will generally not be strict.)
+Certain morphisms f : X → Y , namely the dualisable morphisms, have a chosen ‘dual’
+f ∗ : Y ∗ → X ∗ , functorially. Since the category of dualisable morphisms is a symmetric
+monoidal subcategory, the structure morphisms are symmetries are required to be dual-
+isable, and their duals are the structure morphisms and symmetries for the dual objects.
+    Every object X has a chosen counit morphism εX : X ⊗ X ∗ → I, which interact
+with dual objects and tensor products according to the two stated axioms. Typically the
+counit morphisms will not be dualisable. (There is an alternative deﬁnition possible, in
+which ε is more straightforwardly a monoidal extranatural transformation, and so can
+be composed without involving the symmetry, but at the expense of twisting the dual
+of a monoidal product to (X ⊗ Y )∗ = Y ∗ ⊗ X ∗ , as in the deﬁnition of a compact closed
+category [21]. This leads to a diagrammatic language in which duality is rotation rather
+than reﬂection, similar to [4, section 4.6.2].)
+    Finally, the condition that ε is extranatural is a general ‘counit law’, stating that for
+every dualisable morphism f : X → Y , the following diagram commutes:
+14                                     JULES HEDGES
+
+                                           f ⊗Y∗
+                                  X ⊗Y∗              Y ⊗Y∗
+
+
+                                       X ⊗ f∗                εY
+
+                                                εX
+                                  X ⊗ X∗                 I
+
+5.2. Proposition. Lens is a teleological category.
+Proof. This is proven directly by results in section 4.
+   To view Game as a teleological category we must do slightly more work. We deﬁne
+Gamed as the wide subcategory of Game consisting of open games G with the following
+properties:
+
+     • ΣG = 1 = {∗}, and ∗ ∈ BG (h, k)(∗) for all h, k
+
+     • CG : 1 × X × R → S is a constant function in X
+
+Equivalently, Gamed can be deﬁned as the wide subcategory consisting of open games of
+the form
+                                         f ⊗g ∗
+                (X, S) ∼
+                       = (X × 1, 1 × S) −−−→ (Y × 1, 1 × R) ∼
+                                                            = (Y, R)
+for functions f : X → Y , g : R → S.
+    Given an object (X, S), the counit ε(X,S) : (X, S)⊗(X, S)∗ = (X ×S, S ×X) → (1, 1) is
+the evident strategically trivial open game with Cε(X,S) (∗, (x, s), ∗) = (s, x). Equivalently,
+ε(X,S) can be deﬁned as
+                                                                           ∗
+                                                                   idX×S ⊗σX,S
+                 (X × S, S × X) ∼
+                                = ((X × S) × 1, 1 × (S × X)) −−−−−−−→
+                                                              εX×S
+                 ((X × S) × 1, 1 × (X × S)) ∼
+                                            = (X × S, X × S) −−−→ (1, 1)
+5.3. Proposition. With these definitions, Game is a teleological category.
+Proof. It remains to prove extranaturality of ε. The proof is essentially identical to that
+of proposition 4.8 for lenses.
+    The graphical calculus for teleological categories deﬁned in the next section is directly
+inspired by the graphical calculus of compact closed categories. Unfortunately it is not the
+case that every compact closed category can be seen as a teleological category, because the
+duality in a compact closed category is not necessarily a monoidal functor, and because the
+counit morphisms are not necessarily extranatural. However, in some cases it is possible
+to deﬁne a duality that satisﬁes the axioms of a teleological category.
+                      COHERENCE FOR LENSES AND OPEN GAMES                               15
+5.4. Proposition. Let Rel be the symmetric monoidal category of sets and relations,
+with cartesian product of sets as the monoidal product. Then Rel is a teleological category
+with Reld = Rel, where the dual of an object is X ∗ = X, the dual of a morphism is the
+converse relation, and the counit morphism εX : X⊗X → I is the relation with (x1 , x2 )εX ∗
+iff x1 = x2 .
+Proof. Straightforward.
+   Finally, a surprising pair of examples can be found in the categories of simple graphs
+and ∪-matrices [3]. We illustrate the former. Recall that a PROP is a strict symmetric
+monoidal category whose objects are natural numbers in which the tensor product of
+natural numbers is addition. (A prototypical example is categories of matrices with the
+Kronecker product.) A symmetric monoidal theory is a PROP with a presentation by
+generators and relations. It is shown in [3] that a certain PROP CGraph of simple
+graphs is equivalent to a symmetric monoidal theory with generators
+            {∆ : 1 → 2, ⊥ : 1 → 0, ∇ : 2 → 1, ⊤ : 0 → 1, ∪ : 2 → 0, v : 0 → 1}
+represented graphically as
+
+
+
+
+together with a list of equations that includes
+
+
+
+                        =                                            =
+
+
+   We give CGraph the structure of a teleological category as follows. Let CGraphd be
+the sub-PROP of CGraph generated by {∆, ⊥, ∇, ⊤}. There is a PROP homomorphism
+−∗ : CGraphop                              ∗         ∗         ∗
+               d → CGraph generated by ∆ = ∇, ⊥ = ⊤, ∇ = ∆, ⊤ = ⊥. (PROP
+                                                                         ∗
+
+homomorphisms are required to be identity-on-objects, so objects of CGraph are self-
+dual.)
+   We deﬁne the counit morphisms εn : n ⊕ n → 0 recursively on n. The base case is
+ε0 = id0 , and the recursion is
+                                   σn,1 ⊕n⊕1               1⊕ε ⊕1        ∪
+             εn+1 : n ⊕ 1 ⊕ n ⊕ 1 −−−−−→ 1 ⊕ n ⊕ n ⊕ 1 −−−n−→ 1 ⊕ 1 −
+                                                                    →0
+5.5. Proposition. With these definitions, CGraph is a teleological category.
+Proof. It remains to prove extranaturality of ε. This can easily be proven by structural
+induction on morphisms of CGraphd .
+16                                      JULES HEDGES
+
+5.6. Definition. Let C and D be teleological categories. A teleological functor F : C → D
+is a symmetric monoidal functor such that
+
+     • F restricts to a symmetric monoidal functor Fd : Cd → Dd such that the diagram
+
+                                                 Fd
+                                          Cd              Dd
+
+
+                                       −∗               −∗
+
+                                                 Fdop
+                                         Cdop            Ddop
+
+
+       commutes
+
+     • F (εX ) = εF (X) for all objects X of C
+
+5.7. Lemma. Teleological categories and functors form a category TelCat, with a forget-
+ful functor U : TelCat → SymMonCat.
+    Teleological natural transformations can also be deﬁned in the obvious way, yielding
+a 2-category.
+    There is an identity-on-objects faithful teleological functor Lens → Game, deﬁned as
+follows. A lens λ : (X, S) → (Y, R) is taken to a game, also denoted λ, with Σλ = 1 and
+Bλ (x, k)(∗) = {∗} for all x, k. (Games with these properties are called strategically trivial
+and could also be called ‘zero-player open games’.) The play and coplay functions are
+given by Pλ (∗, x) = vλ (x) and Cλ (∗, x, r) = uλ (x, r). The image of adaptors under this
+functor are precisely the dualisable open games. Since the functor is faithful, it identiﬁes
+Lens as the wide ‘teleological subcategory’ of Game consisting of strategically trivial
+open games.
+
+
+6. Teleological diagrams
+6.1. Definition. A teleological signature Σ consists of sets Obj(Σ), Mor(Σ) of object
+symbols and morphism symbols, together with a chosen subset Mord (Σ) ⊆ Mor(Σ) of
+dualisable morphism symbols, and for each morphism symbol f , a pair of words dom(f ),
+cod(f ) over Obj(Σ) ∪ Obj(Σ)∗ , where Obj(Σ)∗ is the set of formal symbols x∗ for object
+symbols x.
+    If we ignore the set of dualisable morphism symbols (which is peculiar to teleological
+categories), the remainder of this deﬁnition resembles a specialisation of autonomous
+signatures to pivotal categories [25, section 4], which are the special (and common) case
+of autonomous categories in which left and right duals coincide, and are involutive.
+                       COHERENCE FOR LENSES AND OPEN GAMES                                   17
+    For words we use the notation xo11 ⊗ · · · ⊗ xonn , where each oi is either ∗ or nothing. We
+adopt the convention that x∗∗ = x is a syntactic identity, i.e. that −∗ denotes removing
+a star if there is already one.
+6.2. Definition. A teleological diagram over a teleological signature Σ is a diagram with
+the following properties. Edges are labelled by object symbols and are also oriented. Inter-
+nal nodes are labelled by morphism symbols, where if a node α is labelled by a morphism
+                                  o′            o′
+symbol f : xo11 ⊗ · · · ⊗ xomm → y11 ⊗ · · · ⊗ ynn then:
+
+   • If f : Mor(Σ) \ Mord (Σ) (that is, f is a non-dualisable morphism symbol) then α
+     has the shape
+
+                                        xm                    yn
+                                         ..                    ..
+                                          .         f           .
+                                        x1                    y1
+
+
+      where each arrow is oriented backwards (i.e. to the left) if the corresponding letter
+      is decorated with ∗ , and forwards if it is not. We call α a non-dualisable node.
+
+   • If f : Mord (Σ) is a dualisable morphism symbol then α has one of the two shapes
+
+
+                         xm                   yn        yn               xm
+                          ..                   ..        ..               ..
+                           .       f            .         .         f      .
+                         x1                   y1        y1               x1
+
+
+      differing by a reflection. We define the parity π(α) = 0, 1 to distinguish these cases.
+
+   Teleological diagrams must additionally satisfy the teleological condition, which says
+that a string pointing backwards in the time-direction cannot bend around to point for-
+wards. Each edge can be parameterised as [0, 1] → R × [a, b], which we write t 7→
+(x(t), y(t)). We require that any stationary point of y is not a minimum. Since the pa-
+rameterisation is smooth, we can impose the (slightly stronger) condition that if y ′ (t) = 0
+then y ′′(t) ≤ 0.
+   We extend the parity function to all nodes by deﬁning π(α) = 0 when α is a non-
+dualisable internal node or an external node.
+   We assume that our diagrams are suﬃciently well-behaved to make the following
+lemma true. It is suﬃcient, for example, for directed edges to have continuously-varying
+tangent vectors, in which case the lemma follows from the intermediate value theorem.
+18                                          JULES HEDGES
+
+6.3. Lemma. Let A be a teleological diagram, and e be a directed edge in A smoothly
+parameterised by [0, 1] → R × [a, b], t 7→ (x(t), y(t)). Then one of the following is the
+case:
+     • y is strictly increasing
+
+     • y is strictly decreasing
+
+     • There is a point 0 < t < 1 such that y is strictly increasing on [0, t), has a maximum
+       at t, and is strictly decreasing on (t, 1], and there is a neighbourhood of t on which x
+       is either strictly increasing or strictly decreasing, so that in this neighbourhood the
+       edge has one of the two forms
+
+
+
+
+    This is in the spirit of similar simplifying assumptions made in the literature to prove
+coherence theorems (see [25]), but contradicts the assumption in [18] for autonomous
+categories that diagrams are piecewise linear. The previous lemma could also be proved
+by assuming that diagrams are piecewise linear and that no piece is parallel to the x-axis.
+(It is possible to motivate this by thinking of |dx/dt| as a notion of ‘signalling speed’ that
+may not become inﬁnity.)
+6.4. Lemma. The progressive condition on diagrams implies the teleological condition.
+Proof. Suppose the teleological condition fails for some edge e with parameterisation
+t 7→ (x(t), y(t)), so y(t) is a local maximum. Then for suﬃciently small ε > 0, the edge e
+intersects the time-slice R × {y(t) − ε} in two places.
+    As for circuit diagrams, internal nodes determine an ordering on the adjacent edges,
+and diagrams determine an ordering on the edges adjacent to external nodes. We write
+this as
+                                                           ′                ′
+                         α, A : eo11 ⊗ · · · ⊗ eomm → e′1 o1 ⊗ · · · ⊗ e′n on
+where the oi , o′j are either ∗ if the edge is oriented backwards in the time direction (that
+is, if y is decreasing in a neighbourhood of the node), or nothing if it is oriented forwards.
+6.5. Definition. Let A and B be teleological diagrams in R × [a, b] over a teleological
+signature Σ. A isomorphism i : A ∼ =t B between A and B consists of a label-preserving
+bijection between the nodes of A and B, and a label-preserving bijection between the edges
+of A and B, both written i, such that
+     • For each internal node α of A with π(α) = π(i(α)),
+                                                                 ′               ′
+                                  α : eo11 ⊗ · · · ⊗ eom1 → e′1 o1 ⊗ · · · ⊗ e′n on
+                        COHERENCE FOR LENSES AND OPEN GAMES                                       19
+      iff
+                                                                             ′                ′
+                       i(α) : i(e1 )o1 ⊗ · · · ⊗ i(em )om → i(e′1 )o1 ⊗ · · · ⊗ i(e′n )on
+
+   • For each internal node α of A with π(α) 6= π(i(α)),
+                                                                 ′               ′
+                                 α : eo11 ⊗ · · · ⊗ eomm → e′1 o1 ⊗ · · · ⊗ e′n on
+
+      iff
+                                   ′                     ′
+                     i(α) : i(e′1 )o1 ∗ ⊗ · · · ⊗ i(e′n )on ∗ → i(e1 )o1 ∗ ⊗ · · · ⊗ i(em )om ∗
+
+   • For each external node β of A, β is adjacent to edge e iff i(β) is adjacent to edge
+     i(e), and
+                                                          ′                ′
+                           A : eo11 ⊗ · · · ⊗ eomm → e′1 o1 ⊗ · · · ⊗ e′n on
+      iff
+                                                                         ′                ′
+                        B : i(e1 )o1 ⊗ · · · ⊗ i(em )om → i(e′1 )o1 ⊗ · · · ⊗ i(e′n )on
+
+   In words, an isomorphism A ∼   =t B is an oriented version of equivalence of string
+diagrams (deﬁnition 2.3), in which only dualisable nodes may optionally be reﬂected.
+6.6. Lemma. ∼
+            =t is an equivalence relation on teleological diagrams.
+Proof. Straightforward.
+    By the usual method of [19] we build a symmetric monoidal category Dt (Σ) whose ob-
+jects are words over Σ∪Σ∗ , and whose morphisms are ∼   =t -equivalence classes of teleological
+categories.
+    We take the category Dt (Σ)d of dualisable morphisms to be the wide subcategory
+consisting of teleological diagrams whose internal nodes are all labelled by dualisable
+morphism symbols, and which satisfy the progressive condition. The functor i : Dt (Σ)d →
+Dt (Σ) is inclusion. This is a subcategory by lemma 6.4, and because the identity morphism
+on a word is a diagram containing no internal nodes and which is progressive.
+    Duality on words is deﬁned by (xo11 ⊗ · · · ⊗ xonn )∗ = xo11 ∗ ⊗ · · · ⊗ xonn ∗ , recalling our
+convention that x∗∗ = x. Duality on diagrams whose nodes are all dualisable is deﬁned
+by reﬂection in the horizontal (time) direction. For example, the dual of the diagram
+
+
+
+                       x3                            h                               y3
+
+                       x2                                                            y2
+
+                       x1                            z               g               y1
+                                       f
+
+
+(which is a morphism x1 ⊗ x∗2 ⊗ x3 → y1∗ ⊗ y2 ⊗ y3 in Dt (Σ)d ) is
+20                                         JULES HEDGES
+
+                                              x3
+
+                                              x2
+
+                                              x1
+
+                                              x3
+
+                                              x2
+
+                                              x1
+
+
+                            Figure 2: Example of counit in Dt (Σ)
+
+
+
+                      y3                            h                            x3
+
+                      y2                                                         x2
+
+                      y1              g             z                            x1
+                                                                   f
+
+
+(which is a morphism y1 ⊗ y2∗ ⊗ y3∗ → x∗1 ⊗ x2 ⊗ x∗3 ). It is straightforward to show that
+this construction is well-deﬁned on ∼   =t -equivalence classes, and that it deﬁnes a symmetric
+                     ∗         op
+monoidal functor − : Dt (Σ)d → Dt (Σ)d .
+    Given an object xo11 ⊗ · · · ⊗ xonn , the counit
+
+                    εxo11 ⊗···⊗xonn : xo11 ⊗ · · · ⊗ xonn ⊗ xo11 ∗ ⊗ · · · ⊗ xonn ∗ → I
+
+in Dt (Σ) is (the ∼
+                  =t -equivalence class of) the obvious diagram consisting of n interleaved
+caps. For example,
+
+                         εx1 ⊗x∗2 ⊗x3 : x1 ⊗ x∗2 ⊗ x3 ⊗ x∗1 ⊗ x2 ⊗ x∗3 → I
+
+is the diagram depicted in ﬁgure 2. Extranaturality requires certain equalities between
+morphisms in Dt (Σ), which means isomorphisms between diagrams. These can easily be
+seen. For example, for a dualisable morphism symbol f : x1 ⊗ x∗2 → y1∗ ⊗ y2 there is an
+isomorphism
+                      COHERENCE FOR LENSES AND OPEN GAMES                               21
+
+           y2                                           y2
+                                                                    f
+           y1                                           y1
+                                             ∼
+                                             =t
+           x2                                           x2
+                      f
+           x1                                           x1
+
+
+6.7. Proposition. Let Σ be a teleological signature. The above construction defines a
+teleological category Dt (Σ).
+   Dt (Σ) is also equipped with an obvious valuation vΣ : Σ → Dt (Σ), taking each mor-
+phism symbol f to the diagram containing only one f -labelled internal node.
+
+
+7. Coherence for teleological diagrams
+In this section we will prove the following coherence theorem, which states that Dt (Σ) is
+the free teleological category on Σ.
+7.1. Theorem. [Coherence theorem for teleological categories] Let Σ be a teleological
+signature, C a teleological category and w : Σ → C a valuation. Then there exists a
+teleological functor F : Dt (Σ) → C such that w = F ◦ vΣ , unique up to unique teleological
+natural isomorphism.
+    The following is a summary of the proof method. Given an isomorphism of teleological
+diagrams, we show that it can be factored into three parts (lemma 7.8): ﬁrst translate
+nodes without reﬂecting, then reﬂect a single sub-diagram, then ﬁnally translate without
+reﬂecting again. This is proved by a combinatorial analysis of the possible connections
+in a diagram, ultimately resulting on lemma 6.3. For the isomorphisms not involving
+reﬂections we appeal to the Joyal-Street coherence theorem (theorem 2.4) for an expanding
+signature, and the single reﬂection is an instance of extranaturality.
+    We begin by putting lemma 6.3 into a discrete form that is more practical to work
+with. Consider a general internal node of a teleological diagram, either dualisable or
+non-dualisable. There are four ways in which an edge can connect to the node:
+
+                  contravariant output              contravariant input
+                                             f
+                        covariant input             covariant output
+
+Notice that reﬂecting a dualisable node preserves inputs and outputs, but interchanges
+covariant and contravariant connections.
+22                                      JULES HEDGES
+
+7.2. Definition. Given a directed edge e from an internal node α to an internal node β,
+we write e : αp → β q where p, q : {+, −}, where + represents a covariant connection and
+− a contravariant connection. We extend this notation to external nodes as follows. If β
+is an external node in R × {a} then we write β + when it is the source node of its (unique)
+adjacent edge, and β − when it is the target node. If β is in R × {b} then we write β −
+when it is the source node and β + when it is the target node.
+   For example, if the connection between e and α is a covariant output, and the con-
+nection between e and β is a contravariant input, we write e : α+ → β − .
+7.3. Definition. Given nodes α, β in a teleological diagram we write α < β if α strictly
+precedes β in the time direction.
+   This deﬁnes a preorder on nodes, in which two nodes are incomparable iﬀ they are
+not equal and are located in the same time-slice. Of course, this notion is not invariant
+under equivalences of diagrams.
+7.4. Lemma. Let A be a teleological diagram, with a directed edge e : α → β.
+     • If e : α+ → β + then α < β.
+     • If e : α− → β − then α > β.
+     • It is not the case that e : α− → β + .
+Proof. Follows from lemma 6.3.
+7.5. Definition. Given an equivalence i : A ∼  =t B and a node α in A, if π(α) 6= π(i(α))
+we write i ⊲⊳ α and say that i reﬂects α; otherwise, we write i 6⊲⊳ α.
+   Note that i 6⊲⊳ α whenever α is a non-dualisable internal node or an external node.
+7.6. Lemma. Let A and B be teleological diagrams and i : A ∼     =t B, and let e : α → β be
+an edge in A. If i 6⊲⊳ α and i ⊲⊳ β then one of the following is the case:
+     • e : α+ → β + , i(e) : i(α)+ → i(β)− and α < β
+     • e : α+ → β − , i(e) : i(α)+ → i(β)+ and i(α) < i(β)
+If i ⊲⊳ α and i 6⊲⊳ β then one of the following is the case:
+     • e : α− → β − , i(e) : i(α)+ → i(β)− and α > β
+     • e : α+ → β − , i(e) : i(α)− → i(β)− and i(α) > i(β)
+If i ⊲⊳ α and i ⊲⊳ β then one of the following is the case:
+     • e : α+ → β + , i(e) : i(α)− → i(β)− , α < β and i(α) > i(β)
+     • e : α− → β − , i(e) : i(α)+ → i(β)+ , α > β and i(α) < i(β)
+Proof. For each case we consider the 3 possible variances of e : α → β, with e : α− → β +
+ruled out by lemma 7.4. In each case the remaining variance not listed would imply that
+i(e) : i(α)− → i(β)+ , which is again disallowed. The ordering constraints on the permitted
+cases also follow from lemma 7.4.
+                      COHERENCE FOR LENSES AND OPEN GAMES                                23
+
+
+
+                                                        g
+                            x     g         ∼                      x
+                      f                     =t
+
+                                                        f
+
+
+
+
+                                                        f
+
+                      g     x               ∼                      x
+                                  f         =t
+
+                                                        g
+
+
+
+
+                            x     g         ∼           g      x
+                      f                     =t                         f
+
+
+
+                                Figure 3: Cases of lemma 7.6
+
+   Examples of these three cases are illustrated in ﬁgure 3.
+7.7. Definition. Let Σ be a teleological signature and A, B teleological diagrams over
+Σ. We write i : A ∼
+                  =c B if i : A ∼
+                                =t B and i 6⊲⊳ α for all nodes α of A.
+7.8. Lemma. [Normal-form lemma] Let Σ be a teleological signature, and let A and B be
+teleological diagrams over Σ with A ∼=t B. Then there exist teleological diagrams A′ ∼ =c A
+       ′ ∼                 ′      ′
+and B =c B such that A and B are respectively of the form depicted in figure 4, where
+P and Q are sub-diagrams with Q in Dt (Σ)d . Note that the particular edge orientations
+depicted are for illustration, and that the reflected Q in the diagram for B ′ refers to the
+dual Q∗ , i.e. the diagram obtained by reflecting the diagram Q.
+
+Proof. Let i : A ∼  =t B be the equivalence. We will construct P and Q such that P
+contains the nodes α of A with i 6⊲⊳ α, and Q contains those with i ⊲⊳ α. The external
+nodes of A are of the former kind, and add them as external nodes to P . (These are the xi ,
+24                                       JULES HEDGES
+
+                                 yn′ ′                              yn′ ′
+                        ..                                            ..
+                         .       y1′                                   .    Q
+
+                                                                    y1′
+                      x′m′
+                        ..
+                             Q
+                                                                      ..    x′m′
+                 P       .                                    P        .
+                       x′1                                                      x′1
+     xm                                   yn      xm                                  yn
+      ..                                   ..      ..                                  ..
+       .                                    .       .                                   .
+     x1                                   y1      x1                                  y1
+
+
+
+                             Figure 4: A′ and B ′ in lemma 7.8
+
+yj in ﬁgure 4.) We preserve the relative positions of the nodes within these sub-diagrams.
+We must check all of the ways in which nodes may be connected.
+       Any edge e : α → β in A between nodes of P is also added to the diagram P . Similarly
+we add any edge in A between nodes of Q to Q. In the latter case, by lemma 7.6 it must
+be the case that either e : α+ → β + or e : α− → β − .
+       For each edge e : α → β for α in P and β in Q, by lemma 7.6 either e : α+ → β + or
+e : α+ → β − . In both cases we add an edge ep : α+ → p(e)+ to P , for p(e) a fresh covariant
+output external node of P . In the former case we also add an edge eq : q(e)+ → β + to
+Q, for q(e) a fresh covariant input external node of Q, and an edge p(e)+ → q(e)+ to A′
+(of the form x′1 in ﬁgure 4). In the latter case we add eq : q(e)− → β − , for q(e) a fresh
+contravariant input external node of Q, and an edge p(e)+ → q(e)− to A′ (of the form
+yn′ ′ ).
+       In the dual case e : α → β for α in Q and β in P , by lemma 7.6 either e : α− → β − or
+e : α+ → β − . In either case we add an edge ep : p(e)− → β − , for p(e) a fresh contravariant
+input external node of P . In the former case we also add an edge eq : α− → q(e)− to Q,
+for q(e) a fresh contravariant output external node of Q, and an edge q(e)− → p(e)− to
+A′ (of the form x′m′ ). In the latter case we add eq : α+ → q(e)+ , for q(e) a fresh covariant
+output external node of Q, and an edge q(e)+ → p(e)− to A′ (of the form y1′ ).
+       Considering external nodes of A as external nodes of P means that an edge e : α → β
+for α a covariant input external node of A (of the form x1 ) and β in Q leads to a ‘bypass’
+edge ep : α+ → e(p)+ in P that does not connect to any internal node of P ; similarly for
+e : α → β − for α in Q and β a contravariant output external node of A (of the form xm ).
+Furthermore, any edge (in either direction) between a node of Q and either a covariant
+output or contravariant input external node of A would necessarily be either of the form
+e : α+ → β + with i ⊲⊳ α and i 6⊲⊳ β, or e : α− → β − with i 6⊲⊳ α and i ⊲⊳ β, both of which
+are ruled out by lemma 7.6.
+                       COHERENCE FOR LENSES AND OPEN GAMES                                   25
+
+    All edges added to Q by this construction are of the form α+ → β + or α− → β − . It
+follows that Q satisﬁes the progressive condition.
+    We have A ∼=c A′ by construction, and it is also straightforward to see that B ∼
+                                                                                   =c B ′ .
+7.9. Definition. Let Σ be a teleological signature. We define a monoidal signature M(Σ)
+as follows. The object symbols are
+             Obj(M(Σ)) = Obj(Σ) ∪ Obj(Σ)∗ = Obj(Σ) ∪ {x∗ | x : Obj(Σ)}
+and the morphism symbols are
+                  Mor(M(Σ)) = Mor(Σ) ∪ Mord (Σ)∗ ∪ {εx | x : Obj(Σ)}
+                           o′           o′
+If f : xo11 ⊗ · · · ⊗ xomm → y11 ⊗ · · · ⊗ ynn in Σ then it also has this type in M(Σ), together
+with
+                                   o′ ∗            ′
+                            f ∗ : y11 ⊗ · · · ⊗ ynon ∗ → xo11 ∗ ⊗ · · · ⊗ xm
+                                                                           om ∗
+
+
+with x∗∗ = x as a syntactic equality. Finally, we set εx : x ⊗ x∗ → I for each x : Obj(Σ).
+7.10. Lemma. Let Σ be a teleological signature. There is an identity-on-objects symmetric
+monoidal functor E : Dc (M(Σ)) → U(Dt (Σ)) defined by embedding ∼   =c -equivalence classes
+into ∼
+     =t -equivalence classes, where U is the forgetful functor TelCat → SymMonCat.
+7.11. Definition. Let Σ be a teleological signature and A a teleological diagram over Σ.
+We define a circuit diagram C(A) over M(Σ) as follows. For each node α of A labelled
+by a morphism symbol f we add a node at the same position in C(A) labelled by f if
+π(α) = 0, and labelled by f ∗ if π(α) = 1. For each edge e labelled by an object symbol x,
+let t 7→ (x(t), y(t)) be a smooth parameterisation, and case split on lemma 6.3.
+   • If y is strictly increasing, we add an edge in C(A) with the same parameterisation,
+     labelled by x.
+   • If y is strictly decreasing, we add an edge in C(A) with the reversed parameterisation
+     t 7→ (x(−t), y(−t)), labelled by x∗ .
+   • In the remaining case, let t be the parameter of the turning point. Add a new
+     node at position (x(t), y(t)), labelled by the morphism symbol εx . Add an edge from
+     (x(0), y(0)) to the new node labelled by x, and from (x(1), y(1)) to the new node la-
+     belled by x∗ . (The new edges can follow the same path as the original one, although
+     if x(t) is locally decreasing at (x(t), y(t)) we need to slightly alter the parameterisa-
+     tion, so that the x-labelled edge enters below and the x∗ -labelled edge above, to match
+     the type εx : x ⊗ x∗ → I.)
+   An example of this construction is illustrated in ﬁgure 5.
+                                                          =c B iff C(A) ∼
+7.12. Lemma. Let A and B be teleological diagrams. Then A ∼             =c C(B).
+   Note that the former refers to isomorphism of teleological diagrams without rotations
+(deﬁnition 7.7), while the latter refers to isomorphism of circuit diagrams (deﬁnition 2.3).
+26                                     JULES HEDGES
+
+
+
+
+                         f                                      x
+                                                       f
+
+                                           7→                        εx
+
+                          g       x                    g∗       x∗
+
+
+
+
+                         Figure 5: Example construction of C(A)
+
+Proof. Given an isomorphism i : A ∼       =c B of teleological diagrams it is straightforward
+to construct an equivalence C(i) : C(A) ∼      =c C(B) of circuit diagrams, and conversely.
+The only interesting case is when there is an edge e : α+ → β − in A with a maximum at
+(x(t), y(t)). Since i 6⊲⊳ α and i 6⊲⊳ β we also have i(e) : i(α)+ → i(β)− , and hence i(e) also
+has a maximum at some (x′ (t′ ), y ′(t′ )). These maxima correspond to fresh nodes in C(A)
+and C(B) respectively, and we construct C(i) to associate them.
+Proof of theorem 7.1. We begin by extending w to a monoidal valuation M(w) :
+M(Σ) → U(C) by setting M(w)(x∗ ) = w(x)∗ , M(w)(f ∗ ) = w(f )∗ and M(w)(εx ) = εw(x) .
+By the Joyal-Street coherence theorem (theorem 2.4), we have a symmetric monoidal
+functor G : Dc (M(Σ)) → C such that M(w) = G ◦ vM (Σ) , unique up to unique monoidal
+natural isomorphism.
+    We will prove that this G is a teleological functor. More formally, recall from deﬁnition
+5.6 that a teleological functor F : Dt (Σ) → C is a symmetric monoidal functor satisfying
+additional properties. We will prove that G factors as
+                                             E              F
+                                Dc (M(Σ)) −→ Dt (Σ) −→ C
+and then that F satisﬁes the conditions of a teleological functor. This amounts to proving
+that G is deﬁned on morphisms of Dt (Σ), which are ∼    =t -equivalence classes, and that it
+respects duals and counits. Intuitively, this is possible because although G is only a
+symmetric monoidal functor, the additional teleological structure is preserved by the
+valuation vM (Σ) .
+    First we prove that G is deﬁned on ∼
+                                       =t -equivalence classes, Let A and B be teleological
+diagrams over Σ with A ∼  =t B.  By lemma  7.8, we have teleological diagrams A′ ∼ =c A and
+  ′ ∼              ′       ′
+B =c B where A and B have the form depicted in ﬁgure 4. By lemma 7.12 we have
+M(A′ ) ∼=c M(A) and M(B ′ ) ∼  =c M(B). Since G is deﬁned on ∼     =c -equivalence classes of
+circuit diagrams, it follows that G(M(A′ )) = G(M(A)) and G(M(B ′ )) = G(M(B)).
+    We next prove that G(M(A′ )) = G(M(B ′ )). Since G is a symmetric monoidal functor,
+these expressions factorise as
+            G(M(A′ )) = (Y ⊗ (εY ′ ◦ (G(M(Q)) ⊗ Y ′∗ ))) ◦ G(M(P )) : X → Y
+                       COHERENCE FOR LENSES AND OPEN GAMES                                        27
+
+           G(M(B ′ )) = (Y ⊗ (εX ′ ◦ (X ′ ⊗ G(M(Q))∗ ))) ◦ G(M(P )) : X → Y
+where
+
+                                X = G(x1 )o1 ⊗ · · · ⊗ G(xm )om
+                                              ′                     ′
+                                Y = G(y1 )o1 ⊗ · · · ⊗ G(yn )on
+                                              ′′                        ′′
+                               X ′ = G(x′1 )o1 ⊗ · · · ⊗ G(x′m′ )om′
+                                              ′′′                       ′′′
+                               Y ′ = G(y1′ )o1 ⊗ · · · ⊗ G(yn′ ′ )on′
+
+using the notation of ﬁgure 4. The equality then follows from extranaturality of ε:
+
+                                         G(Q) ⊗ G(Y ′ )∗
+               G(X ′ ) ⊗ G(Y ′ )∗                                         G(Y ′ ) ⊗ G(Y ′ )∗
+
+
+                        G(X ′ ) ⊗ G(Q)∗                                               εG(Y ′ )
+
+                                                    εG(X ′ )
+              G(X ′ ) ⊗ G(X ′ )∗                                                  I
+
+    This completes the proof that G is deﬁned on ∼ =t -equivalence classes. Consequently,
+we have deﬁned a symmetric monoidal functor F : Dt (Σ) → C satisfying w = F ◦ vΣ .
+    Next we must prove that remaining conditions of deﬁnition 5.6 to show that F is
+a teleological functor. The ﬁrst condition is that F (X ∗ ) = F (X)∗ , and similarly for
+dualisable morphisms. Since all objects of Dt (Σ) are generated by objects of the form
+vΣ (x), and F is a monoidal functor, it suﬃces to prove it for those:
+
+             F (vΣ (x)∗ ) = G(vM (Σ) (x∗ ))                    by deﬁnition of F
+                          = M(w)(x∗ )                          since M(w) = G ◦ vM (Σ)
+                          = w(x)∗                              by deﬁnition of M(w)
+                          = F (vΣ (x))∗                        since w = F ◦ vΣ
+
+Similarly, for diagrams of the form vΣ (f ) for f : Mord (Σ),
+
+   F (vΣ (f )∗ ) = F (E(vM (Σ) (f ∗ ))) = G(vM (Σ) (f ∗ )) = M(w)(f ∗ ) = w(f )∗ = F (vΣ (f ))∗
+
+   In order to prove that F (εX ) = εF (X) for all objects X, we work by structural induction
+on X. If X = vΣ (x) then
+
+             F (εvΣ (x) ) = G(vM (Σ) (εx ))                    by deﬁnition of F
+                          = M(w)(εx )                          since M(w) = G ◦ vM (Σ)
+                          = εw(x)                              by deﬁnition of M(w)
+                          = εF (vΣ (x))                        since w = F ◦ vΣ
+28                                                 JULES HEDGES
+
+If X = vΣ (x)∗ then
+
+     F (εvΣ (x)∗ ) = F (σvΣ (x)∗ ,vΣ (x) ◦ εvΣ (x) )               axiom of teleological categories
+                   = σF (vΣ (x)∗ ),F (vΣ (x)) ◦ F (εvΣ (x) )       since F is a symmetric monoidal functor
+                   = σF (vΣ (x)∗ ),F (vΣ (x)) ◦ εF (vΣ (x))        by the previous case
+                   = σF (vΣ (x))∗ ,F (vΣ (x)) ◦ εF (vΣ (x))        since F (vΣ (x)∗ ) = F (vΣ (x))∗
+                   = εF (vΣ (x))∗                                  axiom of teleological categories
+                   = εF (vΣ (x)∗ )                                 since F (vΣ (x)∗ ) = F (vΣ (x))∗
+
+Similarly, if X = X1 ⊗ X2 then
+
+                F (εX1 ⊗X2 ) = F ((X1 ⊗ σX1∗ ,X2 ⊗ X2∗ ) ◦ (εX1 ⊗ εX2 ))
+                               = (F (X1 ) ⊗ σF (X1∗ ),F (X2 ) ⊗ F (X2∗ )) ◦ (F (εX1 ) ⊗ F (εX2 ))
+                               = (F (X1 ) ⊗ σF (X1 )∗ ,F (X2 ) ⊗ F (X2 )∗ ) ◦ (εF (X1 ) ⊗ εF (X2 ) )
+                               = εF (X1 )⊗F (X2 )
+                               = εF (X1 ⊗X2 )
+
+   Finally we come to uniqueness. Let F ′ : Dt (Σ) → C be another teleological functor
+with w = F ′ ◦ vΣ . This extends to a symmetric monoidal functor
+                                                               E          F′
+                                           Dc (M(Σ)) −→ Dt (Σ) −→ C
+
+which is equal to G by uniqueness. Repeating the construction of F from G, we conclude
+that F = F ′ .
+
+
+References
+ [1] Faris Abou-Saleh, James Cheney, Jeremy Gibbons, James McKinna, and Perdita
+     Stevens. Notions of bidirectional computation and entangled state monads. In Math-
+     ematics of program construction 2015, volume 9129 of Lecture Notes in Computer
+     Science. Springer, 2015. doi:10.1007/978-3-319-19797-5_9.
+
+ [2] Samson Abramsky. Abstract scalars, loops, and free traced and strongly compact
+     closed categories. In Proceedings of CALCO’05, volume 3629 of Lectures notes in
+     computer science, pages 1–29, 2005. doi:10.1007/11548133_1.
+
+ [3] Apiwat Chantawibul and Pawel Sobociński. Towards compositional graph the-
+     ory. In Proceedings of MFPS’15, volume 319 of ENTCS, pages 121–136, 2015.
+     doi:10.1016/j.entcs.2015.12.009.
+
+ [4] Bob Coecke and Aleks Kissinger. Picturing quantum processes. Cambridge University
+     Press, 2017.
+                      COHERENCE FOR LENSES AND OPEN GAMES                             29
+
+ [5] Bob Coecke and Raymond Lal.          Causal categories:  Relativistically
+     interacting processes.   Foundations of physics, 43(4):458–501, 2013.
+     doi:10.1007/s10701-012-9646-8.
+
+ [6] Valeria de Paiva. The dialectica categories. Technical report, University of Cam-
+     bridge, 1991.
+
+ [7] Andrea Falcon.      Aristotle on causality. In The Stanford Encyclo-
+     pedia of Philosophy (Spring 2015 edition) [online].     2015.    URL:
+     https://plato.stanford.edu/archives/spr2015/entries/aristotle-causality/.
+
+ [8] Brendan Fong. The algebra of open and interconnected systems. PhD thesis, Univer-
+     sity of Oxford, 2016.
+
+ [9] Nate Foster, Michael Greenwald, Jonathan Moore, Benjamin Pierce, and Alan
+     Schmidt. Combinators for bi-directional tree transformations: a linguistic approach
+     to the view update problem. ACM Transactions on Programming Languages and
+     Systems, 29(3), 2007. doi:10.1145/1232420.1232424.
+
+[10] Nate Foster, Kazutaka Matsuda, and Janis Voigtländer. Three complementary ap-
+     proaches to bidirectional programming. In Jeremy Gibbons, editor, Generic and
+     indexed programming, volume 7470 of Lecture Notes in Computer Science, pages
+     1–42, 2012.
+
+[11] Neil Ghani, Jules Hedges, Viktor Winschel, and Philipp Zahn. A compositional
+     approach to economic game theory. arXiv:1603.04641, 2016.
+
+[12] David Goforth and David Robinson. The topology of the 2 × 2 games: A new periodic
+     table. Routledge advances in game theory. Routledge, 2005.
+
+[13] Jules Hedges. Towards compositional game theory. PhD thesis, Queen Mary Univer-
+     sity of London, 2016.
+
+[14] Martin Hofmann, Benjamin Pierce, and Daniel Wagner. Symmetric lenses. In
+     Proceedings of the 38th annual ACM SIGPLAN-SIGACT symposium on Prin-
+     ciples of programming languages (POPL’11), volume 46, pages 371–384, 2011.
+     doi:10.1145/1926385.1926428.
+
+[15] Bart Jacobs. Categorical logic and type theory. Studies in logic and the foundations
+     of mathematics. Elsevier, 1999.
+
+[16] Michael Johnson and Robert Rosebrugh. Spans of lenses. In Proceedings of the Work-
+     shops of the EDBT/ICDT 2014 Joint Conference, volume 1133 of CEUR Workshop
+     Proceedings, pages 112–118, 2014.
+30                                  JULES HEDGES
+
+[17] Michael Johnson, Robert Rosebrugh, and R. J. Wood. Lenses, ﬁbrations and univer-
+     sal transformations. Mathematical structures in computer science, 22(1):25–42, 2011.
+     doi:10.1017/S0960129511000442.
+
+[18] André Joyal and Ross Street. Planar diagrams and tensor algebra. Unpublished
+     manuscript, 1988.
+
+[19] André Joyal and Ross Street. The geometry of tensor calculus I. Advances in math-
+     ematics, 88(1):55–112, 1991. doi:10.1016/0001-8708(91)90003-P.
+
+[20] Artyom    Kazak.          Lenses          over    tea     [online].           URL:
+     https://artyom.me/#lens-over-tea.
+
+[21] G. M. Kelly and M. L. Laplaza. Coherence for compact closed categories. Journal of
+     pure and applied algebra, 19(193–213), 1980. doi:10.1016/0022-4049(80)90101-2.
+
+[22] Paul-André Melliès. Functorial boxes in string diagrams. In Proceedings of
+     CSL 2006, Lecture Notes in Computer Science, pages 1–30. Springer, 2006.
+     doi:10.1007/11874683_1.
+
+[23] Dusko Pavlovic. Geometry of abstraction in quantum computation. Proceedings of
+     Symposia in Applied Mathematics, 71:233–267, 2012.
+
+[24] Matthew Pickering, Jeremy Gibbons, and Nicolas Wu. Profunctor optics: Modu-
+     lar data accessors. The art, science and engineering of programming, 1(2), 2017.
+     doi:10.22152/programming-journal.org/2017/1/7.
+
+[25] Peter Selinger. A survey of graphical languages for monoidal categories. In Bob
+     Coecke, editor, New structures for physics, pages 289–355. Springer, 2011.
+
+[26] Michael Shulman. Framed bicategories and monoidal ﬁbrations. Theory and appli-
+     cations of categories, 20(18):650–738, 2008.
+
+[27] John von Neumann and Oskar Morgenstern. Theory of games and economic be-
+     haviour. Princeton university press, 1944.
+

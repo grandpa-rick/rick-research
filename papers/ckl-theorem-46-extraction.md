@@ -5,6 +5,34 @@
 
 ---
 
+## ⚠ EDITORIAL CORRECTION (added 2026-05-07, session 3)
+
+**Earlier sections of this note imply that Theorem 4.6 is the q-only or
+"polynomial-level" statement, with the q,t-bigraded version still open.
+That implication is wrong.**
+
+CKL Theorem 4.6 IS the q,t-bigraded statement: it asserts
+$\mathrm{KL}^{B_n}_{\lambda^\sharp,\mu^\sharp}(q,t) = \sum_T \mathrm{energy}_{q,t}(\phi_c(T))$
+where each summand is $q^a t^b$ with $a, b \ge 0$. So Theorem 4.6 ⟹ (SA) for
+dominant spin λ, μ directly. The "BMR conjecture" in `state/PROVE.md` is
+equivalent to Theorem 4.6 (modulo eq. 4.13).
+
+The proof of Theorem 4.6 in §4.3 IS bigraded throughout: Lemma 4.21
+(q^r t^m energy shift) and Remark A.17 (D̄-invariance under Aug for spin
+column) are the bigraded refinements of the type-C / un-bigraded versions.
+The only step CKL leave implicit is the **vac-invariance under Aug**, which
+is elementary: for $b_1 = [1..k] \in B^{\mu_1, 1}$, vac = $\mu_1 - k$;
+for $b_1' = [1..k+r] \in B^{\mu_1+r, 1}$, vac = $(\mu_1+r) - (k+r) = \mu_1 - k$.
+Same. (Proved fully as Lemma 3.1 in `proofs/2026-05-07-BMR-via-CKL.md`.)
+
+Section 4 below ("structural mismatch") still correctly identifies that
+CKL's signs are at the n-indexed (Morris) level, not the W-indexed (Verma)
+level. That is a real distinction. But it does NOT mean (SA) is open —
+it means CKL prove (SA) via a *different* combinatorial route than the
+Aug~ on (w, π) program. Both routes prove the same theorem.
+
+---
+
 ## 1. The proof skeleton (verbatim sketch, p. 23)
 
 > "4.3. Proof of Theorem 4.6. In [Lec06, Theorem 3.2.1], Morris type recurrence formula for type B is derived. A straightforward generalization of the argument there leads to the following q,t version: [eq. (4.13)]

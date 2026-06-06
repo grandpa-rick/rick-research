@@ -53,6 +53,20 @@ Much richer than I knew:
 
 **OQ2 (KL from crystals):** at q=0, weak Bruhat interval modules ARE the cell theory (Yang-Yu). At generic q, KL polynomials encode singularities of Schubert varieties. The bridge: how does the q=0 weak-Bruhat-interval picture deform to generic q? Choi-Kim-Lee (2412.20757) gives the energy-function bridge for Lusztig multiplicities (not P_{u,v} themselves) in types B and C. **Now sharpened by Remark 4.7 obstruction (2026-05-06 deep work):** OQ2 splits into a *spin / acyclic* case where crystal energy formulas exist, and a *non-spin / bigraded-non-acyclic* case where Cor 2.4 of `proofs/2026-05-06-remark-47-obstruction.md` proves no positive crystal/statistic formula can exist (sharp impossibility — qt − q + t cannot be a generating function of a positive (q,t)-statistic on a finite set). The right replacement is a 2-step bigraded complex; minimum required structure is a virtual class in K_0(bigraded-VS). See `questions/q-KL-from-crystal.md` and `connections/acyclicity-is-positivity.md`.
 
+## (SA) — Support Absorption (2026-05-07)
+
+**(SA) for B_2 dominant μ — proved.** Sign-reversing involution Aug~ on (Weyl element, Kostant partition) pairs with two elementary moves: M_1 (short-short swap, paired with simple long $\alpha_0$), M_2 (long-long swap, paired with simple short $\alpha_1$). Priority M_2 first. Five lemmas (bidegree preservation, parity flip, self-inverse, priority compatibility, applicability) all algebraic; computer-verified on 140 dominant spin pairs at $\lambda_1 \le 9/2$.
+
+**Refined statement.** Original PROVE.md "any half-integer μ" was too strong: counter-example $\mathrm{KL}^{B_2}_{(1/2,1/2),(-3/2,1/2)}(q,t) = q^2 t^2 - q$ (negative, but μ outside convex hull of V(σ)). Right scope: dominant μ.
+
+**B_3 dominant: 798/798 verified** at $\lambda_1 \le 9/2$ via direct count.
+
+**B_n obstruction.** Simple-reflection moves alone are insufficient for $n \ge 3$. Required: long-long swaps with shifted index. Concrete failure pinned in B_3 at $\lambda = (3/2, 3/2, 1/2), \mu = (1/2, 1/2, 1/2)$, item $w = s_0, \pi = \{(0,1,-1):2, (0,0,1):2\}$ at bidegree (2,2). Fix: replace one $(e_1 - e_2)$ with $(e_0 - e_2)$ (long-long swap with shifted index 0).
+
+**(SA) ⟹ CKL Thm 4.6** trivially via Morris collapse (W-indexing → $\{1,\ldots,n\}$-indexing). Converse open. (SA) is the bidegree-pointwise W-indexed lift of CKL's polynomial-level n-indexed positivity. **First instance** of a positive polynomial admitting two structurally analogous proofs at two index resolutions. See `connections/aug-tilde-as-almousa-lu-shadow.md` for the swap-complex framework that subsumes both.
+
+Writeups: `proofs/2026-05-07-SA-B2-proof-and-Bn-program.md`, `for-collaborator/2026-05-07-SA-for-B2-proved.md`. Code: `proofs/remark47/aug_tilde_B2.py`, `aug_tilde_Bn.py`, `sa_matching_test.py`.
+
 **OQ4 (q=0 limit of CHA):** answered at K_0 level (NSym ⇄ QSym). Almousa-Lu refines to derived/Koszul level (the **acyclic endpoint**). The non-acyclic side (categorifications with negative coefficients) is open — no 0-Hecke-style example known. See `connections/derived-krob-thibon.md` and `connections/acyclicity-is-positivity.md`.
 
 ## Idempotent landmine (n ≥ 4)

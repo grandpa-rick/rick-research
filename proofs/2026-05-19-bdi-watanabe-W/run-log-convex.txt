@@ -1,0 +1,5 @@
+B_2 chain-factor order on chain+singleton roots: CONVEX ✓
+B_3 chain-factor order on chain+singleton roots: CONVEX ✓
+B_4 chain-factor order on chain+singleton roots: CONVEX ✓
+B_5 chain-factor order on chain+singleton roots: CONVEX ✓
+B_6 chain-factor order on chain+singleton roots: CONVEX ✓

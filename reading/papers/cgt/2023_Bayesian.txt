@@ -1,0 +1,3107 @@
+                                                                                                                         Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+                                         Bayesian open games
+                                         Joe Bolt, Jules Hedges1,2,3 , and Philipp Zahn2,3
+                                         1 Department of Computer and Information Sciences, University of Strathclyde, 26 Richmond Street, Glasgow, G11XH,
+
+                                          U.K.
+                                         2 20squares, https://20squares.xyz
+
+                                         3 CyberCat Institute, https://cybercat.institute
+
+
+
+
+                                                 This paper generalises the treatment of compositional game theory as introduced by
+                                                 Ghani et al. in 2018, where games are modelled as morphisms of a symmetric monoidal
+arXiv:1910.03656v2 [cs.GT] 28 Sep 2023
+
+
+
+
+                                                 category. From an economic modelling perspective, the notion of a game in the work
+                                                 by Ghani et al. is not expressive enough for many applications. This includes stochastic
+                                                 environments, stochastic choices by players, as well as incomplete information regarding
+                                                 the game being played. The current paper addresses these three issues all at once.
+
+
+
+                                         1 Introduction
+                                         In [13] the first compositional treatment of economic game theory was introduced. Following the
+                                         literature on categorical open systems [7], open games are modelled as morphisms of a symmetric
+                                         monoidal category.
+                                             A distinctive and non-obvious feature of this approach is that the Nash equilibrium condition
+                                         [30], one of the central concepts in classical game theory to analyse rational behaviour of agents
+                                         (cf. [12, Chapter 1.2] and [33, Chapter 2]), is itself compositional.
+                                             While an important first step, the treatment in [13] has two severe limitations:
+
+                                            1. Games are deterministic and as a consequence, there are no chance elements in the games
+                                               and players have to choose deterministically.
+
+                                            2. Players have complete information about all relevant data of the game such as payoffs, number
+                                               of players etc.
+
+                                             Many interesting strategic situations feature chance elements. Poker is one example – already
+                                         discussed in the ground-breaking work of von Neumann and Morgenstern [31]. In an economic
+                                         context, the environment also often is non-deterministic. Two competing companies face uncertain
+                                         demand, exchange rates, lawsuits etc.
+                                             More subtle but also important is that players may need and may want to randomise their
+                                         actions. There are well known situations like Matching Pennies (see, for instance, [12, p. 16])
+                                         where playing deterministically means being ‘beaten’ all the time. Conceptually, from a game
+                                         theory perspective, this means that there are games where equilibria do not exist when players are
+                                         limited to deterministic strategies (known as ‘pure strategies’) whereas they do exist when players
+                                         can choose stochastically (known as ‘mixed strategies’).
+                                             Lastly, it is a crude approximation to assume that players have complete information. Examples
+                                         abound. A used-car dealer knows how good the car is that he is trying to sell to you. You may
+                                         not know. Banks sitting on toxic assets know how little value they actually have. The government
+                                         trying to buy these assets in order to save the financial system from collapse may not know. An
+                                         agent bidding in an auction may not know how many other bidders he competes with. In most
+                                         situations incomplete information is the norm and not the exception.
+                                         Jules Hedges: jules.hedges@strath.ac.uk
+                                         Philipp Zahn: philipp@20squares.xyz
+
+
+
+                                             Accepted in Compositionality on 2021-11-27.                                                                1
+                                                                        Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+    The above limitations restrict the applicability of compositional game theory to economic phe-
+nomena. And it restricts its usefulness for economists. After all, classical game theory already
+deals with these complications.
+    In this paper we provide a generalisation of open games which solves the three problems above
+in one go. We adapt the core definition of compositional game theory such that the environment
+can be stochastic and players can also choose in a non-deterministic fashion. Doing so, we also
+introduce a way to deal with incomplete information. Essentially we are lifting the same ‘trick’,
+which has been introduced in classical game theory to deal with games of incomplete information
+by John Harsanyi [17–19], to compositional game theory.
+    Harsanyi argued that instead of dealing with games of incomplete information directly, which
+poses formidable conceptual problems, we can transform such games into games of imperfect infor-
+mation by introducing the notion of (game) types. Players have access to probability distributions
+characterising these games as well as partial access to this information. For instance, in an auction
+a player may know how much he values the good to be auctioned. However, he may not know how
+other agents value the good. Assuming that players update information according to Bayes’ rule
+and adapting the equilibrium notion of Nash, to what is called Bayesian Nash equilibrium, game
+theorists can work with such interactions no differently to how they deal with chance elements in
+Poker. Thus by transforming the problem, Harsanyi essentially opened the path to using tools
+that were more or less already introduced by von Neumann and Morgenstern [31].
+    We are applying the same strategy. By introducing stochastic environments and adapting
+the equilibrium notion from Nash to Bayesian Nash we show that our compositional framework
+captures exactly Bayesian Games and thus allows to deal with stochastic environments as well
+as with situations of incomplete information. This distinguishes our work also from [15] which
+addresses the issue of deterministic players in isolation.
+
+1.1 Technical introduction
+Contrary at least to our own initial beliefs, addressing these issues requires some significant adap-
+tions of open games as defined in [13].
+    The recent understanding of open games has been based on lenses, which consist of a pair of
+functions X → Y and X × R → S packaged into a single morphism (X, S) → (Y, R) of a category.
+Here, the function X → Y is the play function, which plays out a given strategy by taking an
+initial state to a final state of the open game. The function X × R → S, known as the coplay
+function or coutility function, is more subtle: It ‘backpropagates’ payoffs into the past, given an
+initial state. This operation is ‘counterfactual’, and the composition of lenses (which is not trivial
+to define, nor is obvious to see is associative) intertwines ordinary forward and counterfactual (or
+‘teleological’) information flow.
+    An open game can then be viewed as a family of lenses indexed by a set of strategy profiles,
+together with another component describing which strategy profiles are Nash equilibria in a given
+context. A context for an open game consists of an initial state (X) and a function from final
+states to payoffs (Y → R). Contexts turn out also to be intimately connected to lenses, and indeed
+this was the initial hint that viewing open games in terms of lenses is a deep idea rather than a
+coincidence.
+    To someone trained in thinking about processes with side effects, it is entirely natural to begin
+by inserting a (finite support) probability monad D, and take the components of the lenses to be
+Kleisli morphisms X → D(Y ) and X ×R → D(S), or equivalently to use lenses over the category of
+sets and (finite support) stochastic functions. This allows the strategies of an open game to describe
+probabilistic behaviours, which are known as behavioural strategies in game theory. Unfortunately
+this doesn’t work: In order to prove that lenses form a category (i.e. are associative and unital) it
+is necessary that the forwards maps X → Y are homomorphisms of copying, and in the category
+of stochastic processes this characterises those processes that are actually deterministic.
+    Fortunately this problem has already been solved in the theory of lenses, although the solution
+is far from obvious. We use the existential lenses or coend lenses as developed by Riley [36]. This
+means we replace the pair or functions X → D(Y ) and X × R → D(S) with three things: A choice
+of set A, a function X → D(A × Y ) and a function A × R → D(S). Moreover a certain equivalence
+relation needs to be imposed, and this is precisely given by the following coend [27] (one of the
+
+
+   Accepted in Compositionality on 2021-11-27.                                                         2
+                                                                              Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+universal constructions of category theory):
+                                    Z A
+                                          (X → D(A × Y )) × (A × R → D(S)).
+
+The proofs in this paper make heavy use of a diagrammatic language for existential lenses developed
+in [36].
+     The second question is what should be considered a context of a Bayesian open game, i.e. a
+replacement for the pair X × (Y → R). There is an existing characterisation of these contexts
+in terms of deterministic lenses, namely as a ‘state’ lens (1, 1) → (X, S) and a ‘costate’ lens
+(Y, R) → (1, 1). However this turns out to be a red herring: in Section 3.4 we show that generalising
+from this causes the category of open games to fail to be monoidal in an unexpected way.
+     It turns out that the appropriate notion of context consists of three things: a set Θ of un-
+observable states, a joint distribution on Θ × X (i.e. an element of D(Θ × X)) and a function
+Θ × Y → D(R). Again we need to impose a certain equivalence relation, which again turns out
+to be precisely a coend. Remarkably this is equivalent to a state in the category of double lenses,
+i.e. lenses over the category of lenses. This brings an unexpected theoretical unity to Bayesian
+open games, and means that the graphical language of [36] can be used throughout.
+
+
+2 Concrete open games
+We begin with a self-contained introduction to deterministic open games. In essence, we will
+introduce the necessary machinery so that we can represent simple classical games with diagrams
+as depicted below.
+
+                                             X
+                                                             Y          ck
+                                     A                 B
+
+
+
+
+    This diagram displays an interaction between two agents, A and B. Player A moves first;
+player B observes the choice by A and then moves afterwards. Both moves are consumed by an
+environment ck which provides the payoff for both players.
+    To get to a full understanding of this diagram (and deterministic open games), in this section
+we introduce several building blocks. Roughly, they can be classified in two kinds.
+    First, we need a way to architecture the information flow. As we will see in Sections 2.1 to
+2.3, lenses play a crucial role by providing us with a categorical structure on which to build open
+games.
+    Second, we need to flesh out the internals of the boxes in the diagram. Specifically, how
+does strategic reasoning actually take place? Central here is the notion of an agent who makes
+observations and chooses a course of action. As we will see in Section 2.5 and Section 2.6, the key
+insight is to model an agent as choosing against a context which comprises how the environment
+reacts to an agent’s choices. The context is also the glue that keeps the outside information flow
+and the internal reasoning together.
+    Once we have introduced all the relevant parts, we will come back to the example above.
+    Note: The exposition in this section slightly deviates from previous work. We believe this eases
+the way for the generalisations to come in Section 3 and thereafter.
+
+2.1 Lenses
+The history of mathematical lenses is complicated, involving many independent discoveries and
+fresh starts across numerous areas of mathematics and computer science [2, 5, 9, 26, 32, 34]. An
+in-depth description of this history can be found at [25]. We use lenses to describe the flow of
+
+
+   Accepted in Compositionality on 2021-11-27.                                                               3
+                                                                          Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+information through a game. A lens for a given game describes which players have access to what
+information when making a strategic decision, and also how information about players’ strategic
+decisions is ultimately fed into the outcome function for the game. For example, it may specify
+an order of play, or whether two players are playing in parallel, or even whether some players are
+privy to certain information in the environment that other players are not.
+     In general, lenses can be thought of as processes that perform some computation and then
+propagate some resulting feedback from the environment backwards through a system of which they
+are a part. In particular, this means that lenses have both covariant and contravariant components.
+The covariant component carries out the initial computation and the contravariant component
+propagates the resulting feedback back through the system. Crucially, lenses are also compositional
+in the sense that they admit both sequential and parallel composition and, consequently, form a
+symmetric monoidal category.
+     The lenses used in this paper are direct descendants of the lenses of database theory. Given
+some data x of type X we may want to view some part of it y of type Y . This is encapsulated by
+a view function v : X → Y . From this ‘close-up’ view of the database we may want to edit the
+database by updating y. Given an update of the view y we then need to know how this update
+propagates to an update of the original data x. That is, given initial data x and an updated view
+y ′ : Y , we should specify some updated x′ : X given by some update function u : X × Y → X. The
+pair (v, u) is a lens with type X → Y . The connection to our previous abstract definition of lenses
+is as follows:
+  • The covariant computation associated with the lens is the view function v : X → Y ,
+  • the resulting feedback from the environment is the update made to the subdatabase returned
+    by the view function, and
+
+  • this feedback is propagated back to the whole database via the update function u : X × Y →
+    X.
+Abstracting away from databases, there is no reason to demand that the feedback generated by the
+environment will have the same type as the output of the lens computation. Similarly, we may be
+interested in cases where the update function is not-so-literally an ‘update’ function, but merely a
+function that propagates some kind of feedback back through the system. As such, the lenses we
+will be using will have types of the form (X, S) → (Y, R) where the covariant component of the
+lens is of type X → Y and the contravariant component is of type X × R → S.
+    In game theory, we can regard players as ‘lenses that care about the feedback they receive from
+the environment’. In a game with sequential play, players make some play (computation), receive
+some utility (feedback) from the outcome function, and then pass some feedback to earlier players in
+the game (their outcome function given the moves that the later players chose). Moreover, given
+that lenses admit parallel composition as well as sequential composition, we obtain a nuanced
+notion of information flow in a game.
+    In the next subsections we describe a symmetric monoidal category of concrete lenses. ‘Con-
+crete’ here refers to the fact that the view and update functions are functions in Set. We then
+come to the core of this section, the definition of a concrete open game.
+
+2.2 The category of concrete lenses
+Definition 2.2.1 (Concrete lens). Let X, S, Y and R be sets. A concrete lens l : (X, S) → (Y, R)
+is a pair of functions (lv : X → Y, lu : X × R → S).
+   As a trivial first example, there is an obvious mapping that takes a morphism of Set × Setop
+and returns a concrete lens.
+Example 2.2.2. Let f : X → Y and g : R → S. Define a concrete lens ⟨f, g⟩ : (X, S) → (Y, R) by
+
+                                                     ⟨f, g⟩v = f
+                                                 ⟨f, g⟩u (x, r) = g(r).
+
+
+
+   Accepted in Compositionality on 2021-11-27.                                                           4
+                                                                                                 Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+Definition 2.2.3 (Sequential composition of concrete lenses). Let l : (X, S) → (Y, R) and t :
+(Y, R) → (Z, Q) be concrete lenses. The sequential composite t ◦ l : (X, S) → (Z, Q) is given by
+ (t ◦ l)v : X → Z, (t ◦ l)u : X × Q → S where
+
+                                                          (t ◦ l)v = tv ◦ lv
+
+and (t ◦ l)u is given by
+
+                    ∆X × idX                idX × lv × idQ                     idX × tu                     lu
+           X ×Q                X ×X ×Q                         X ×Y ×Q                      X ×R                    S.
+
+As a string diagram (t ◦ l)u is given by
+
+
+                                      X
+                                                               Y
+                                                          lv                       lu        S
+                                                                   tu
+                                                                           R
+                                       Q
+
+
+
+Lemma 2.2.4 (Sequential composition of concrete lenses is associative). Suppose we have concrete
+lenses
+                                            l                      m                    n
+                              (X, S)                  (Y, R)              (Z, Q)             (W, T )
+
+Then n ◦ (m ◦ l) = (n ◦ m) ◦ l.
+Theorem 2.2.5 (Concrete lenses form a category). There is a category CL with pairs of sets as
+objects and concrete lenses as morphisms.
+
+2.3 The monoidal structure of concrete lenses
+Definition 2.3.1 (Tensor composition of concrete lenses). Let l1 : (X1 , S1 ) → (Y1 , R1 ) and l2 :
+(X2 , S2 ) → (Y2 , R2 ) be concrete lenses. The tensor     composition l1 ⊗ l2 : (X1 × X2 , S1 × S2 ) →
+(Y1 × Y2 , R1 × R2 ) is given by (l1 ⊗ l2 )v , (l1 ⊗ l2 )u where
+
+                                                      (l1 ⊗ l2 )v = l1v × l2v
+
+and (l1 ⊗ l2 )u is given by
+
+
+                                                      ∼
+                                                      =                                     l1u × l2u
+                  X1 × X2 × R1 × R2                            X1 × R1 × X2 × R2                        S1 × S2 .
+
+In a diagram, (l1 ⊗ l2 )u is
+
+                                                 X1
+                                                                   l 1u            S1
+                                                 X2
+
+
+                                                 R1
+                                                                   l 2u            S2
+                                                 R2
+
+
+Lemma 2.3.2. ⊗ is a functor.
+Theorem 2.3.3. There is a symmetric monoidal category CL where the objects are pairs of sets
+and the morphisms are concrete lenses. Sequential composition and the monoidal tensor are as in
+the above definitions. The monoidal unit is I = ({∗}, {∗}).
+
+
+   Accepted in Compositionality on 2021-11-27.                                                                                  5
+                                                                            Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+    The following observations about states and effects in CL will be useful in the remainder of
+this section.
+Lemma 2.3.4. CL I, (X, S) ∼      = X.
+                               
+
+Proof. This is easily seen, as a state l ∈ CL I, (X, S) is given by a pair
+                                                        
+
+                                   s : {⋆} → X, e : {⋆} × S → {⋆} .
+                                                                 
+
+
+
+Lemma 2.3.5. CL (Y, R), I =    ∼ (Y → R)
+                             
+
+Proof. An effect l ∈ CL (Y, R), I is given by a pair
+                                 
+
+                                           v : Y → {⋆}, u : Y × {⋆} → R .
+                                                                       
+
+
+
+
+2.4 Concrete open games
+Now we have the necessary prerequisites in place to introduce the notion of a concrete open game.
+A concrete open game consists of a set of strategy profiles; a family of concrete lenses indexed by
+the set of strategy profiles; and a best-response function.
+Definition 2.4.1 (Concrete open game). Let X, S, Y, and R be sets. A concrete open game
+G : (X, S) → (Y, R) is given by
+  1. A set of strategy profiles Σ;
+  2. A play function P : Σ → CL (X, S), (Y, R) ; and
+                                              
+
+  3. A best-response function B : X × (Y → R) → Rel(Σ).
+     Here Rel(Σ) = P(Σ × Σ) is the set of binary relations on Σ. In this paper we will usually
+specify a relation in terms of its forward images Σ → P(Σ).
+     The type X is the type of observations made by the game; the type Y is the type of actions that
+can be chosen; the type R is the type of outcomes; and the type S is the type of co-outcomes. Of the
+four types associated with a concrete open game, the type S is the most mysterious. Succinctly, its
+purpose is to relay information about outcomes to games acting earlier. In a sequential composite
+H ◦ G of open games (we will define sequential composition of concrete open games shortly), the
+co-outcome type of H is also the outcome type of G. We think of H as receiving some outcome
+which is then acted upon by the contravariant component of a concrete lens given by H’s play
+function before being passed back to G as G’s outcome.
+     The best-response function of an open game is an abstraction from the utility functions of
+classical game theory. Recall that a Nash equilibrium for a normal-form game is a strategy profile
+in which no player has incentive to unilaterally deviate. We can instead think of a relation on the
+set of strategy profiles for a normal-form game where strategy profiles σ and τ are related if τ is the
+result of players unilaterally deviating from σ to their most profitable unilateral deviation. Nash
+equilibria are then the fixed points of this relation. For convenience, in the definition of a concrete
+open game we work directly with a best-response relation rather than preference relations.
+     The play function takes a strategy as argument and returns a concrete lens that describes an
+open play of the game G (‘open’ here means ‘lacking a particular observation and outcome function’
+and is explained in the next paragraph). To justify this interpretation, recall that a concrete lens
+l : (X, S) → (Y, R) consists of v : X → Y and u : X × R → S. The view function v describes how
+a game decides on an action given an observation (similar to how strategies for sequential games
+work). The update function u describes precisely how games relay information about outcomes to
+other games acting earlier.
+     As the name suggests, concrete open games are open to their environment. The appropriate
+notion of a context for a concrete open game is given in the following definition. A concrete open
+game together with a context can be thought of as a full description of a game.
+
+
+   Accepted in Compositionality on 2021-11-27.                                                             6
+                                                                                   Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+Definition 2.4.2. Let G : (X, S) → (Y, R). A history for G is an element x of X, an outcome
+function for G is a function k : Y → R, and a context for G is a pair (x, k) : X × (Y → R).
+
+    We are now in a position to justify the type of the best-response function. The best response
+functions takes a context as argument, and a context is precisely the information required for
+resolving the ‘openness’ of a concrete open game. Given a context, the best response function then
+returns the set of best deviations from a strategy profile σ.
+    We represent a concrete open game G : (X, S) → (Y, R) using the diagram
+
+                                                 X                    Y
+                                                         G
+                                                 S                   R
+
+   This diagrammatic notation emphasises the point that information flows both covariantly
+through G from observations to actions, and contravariantly through G from outcomes to co-
+outcomes. These diagrams constitute a bona fide diagrammatic calculus for the category of concrete
+open games defined in the remainder, as detailed in [21].
+Notation 2.4.3. String diagrams in the category of open games will always be drawn with ar-
+rowheads on wires, whilst string diagrams in the ambient category will always be drawn without
+arrowheads.
+    Atomic concrete open games are an important class of concrete open games, and are the basic
+components out of which more complex games are constructed. Whilst concrete open games can,
+in general, represent aggregates of agents responding to each other (in a way that will be made
+precise in 2.7 and 2.8), atomic concrete open games describe games in which there is no strategic
+interaction. Examples are simple computations in which no decisions are made whatsoever, and
+single agents that are sensitive only to a given context.
+Definition 2.4.4 (Atomic concrete open game). A concrete open game a : (X, S) → (Y, R) is
+atomic if
+   1. Σa ⊆ CL (X, S), (Y, R) ;
+                            
+
+  2. For all l ∈ Σa , PG (l) = l; and
+  3. For all contexts c : X × (Y → R), Ba (c) : Σa → P(Σa ) is constant.
+We sometimes refer to an atomic concrete open game simply as an atom.
+
+    Note that an atom a : (X, S) → (Y, R) is fully determined by a subset Σa ⊆ CL (X, S), (Y, R)
+                                                                                                 
+
+and a selection function 1 ε : X × (Y → R) → P(Σa ).
+    Given f : X → Y and g : R → S, as in CL, the pair (f, g) ∈ Set × Setop can be represented
+as a concrete open game. We refer to such games as computations, as no strategic choice is being
+made.
+
+Example 2.4.5 (Computation). Let f : X → Y and g : R → S. The atom ⟨f, g⟩ : (X, S) → (Y, R)
+is given by
+  1. Σ = {⟨f, g⟩}; and
+  2. For all c : X × (Y → R), ε(c) = {⟨f, g⟩}.
+
+    Similar to CL, the following computations will turn out to be the underlying structural maps
+for the symmetric monoidal category of concrete open games.
+
+  1 Selection functions have been studied in a game-theoretic context in other form. See, e.g. [6] or [24].
+
+
+
+
+   Accepted in Compositionality on 2021-11-27.                                                                    7
+                                                                                      Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+Definition 2.4.6 (Structural computations). Define identity, associator, swaps, and left/right
+unitor computations to be the atomic concrete open games given by
+
+                                                      id(X,S) = ⟨idX , idS ⟩
+                                                                    −1
+                                     αX⊗(Y ⊗Z),A⊗(B⊗C) = ⟨αX,Y,Z , αA,B,C ⟩
+                                                 s(X,A),(Y,B) = ⟨s(X,Y ) , s−1
+                                                                            (A,B) ⟩
+
+                                                      ρ(X,Y ) = ⟨ρX , ρ−1
+                                                                       Y ⟩
+                                                      λ(X,Y ) = ⟨λX , λ−1
+                                                                       Y ⟩
+
+where the Set functions on the right-hand side of the equalities are the obvious Set isomorphisms.
+   Counit games are an interesting class of atoms that reverse the direction of information flow in
+a concrete open game.
+Definition 2.4.7 (Counit). Let f : X → S. Define an atomic concrete open game cf : (X, S) →
+({⋆}, {⋆}) by
+  1. Σcf = {⟨!, f ⟩}; and
+  2. For all c : X × ({⋆} → {⋆}), ε(c) = Σcf .
+   We are being slightly relaxed with notation here as the update function for cf has type X ×
+{⋆} → S while f has type X → S. We represent cf as follows.
+                                                      X
+                                                                  f
+                                                      S
+
+
+2.5 Agents
+So far we have only seen open games for which the set of strategies is a singleton, describing games
+with no strategic decisions. Our first examples of a concrete open game with non-trivial strategy
+set are agents. These can be used to represent the utility maximising agents of traditional game
+theory or, more generally, to represent players trying to influence the outcome of a game.
+Definition 2.5.1 (Agent).
+                         An agent A : (X, {⋆}) → (Y, R) is an atom whose set of strategies is
+Σ = CL (X, {⋆}), (Y, R) .
+   Recall that a concrete lens l : CL (X, {⋆}), (Y, R) is a pair (v : X → Y, u : X × R → {⋆}) and,
+                                                      
+
+hence, is uniquely determined by a function of type X → Y . Consequently, a strategy for an agent
+specifies how an agent map chooses an action of type Y given an observation of type X. Given
+a context c : X × (Y → R), BA (c) picks out the set of strategies A considers acceptable in the
+context c. Agents are represented diagrammatically by
+                                                                         Y
+                                                 X          A
+                                                                        R
+
+   We can specialise the definition above to model the utility-maximising agents of traditional
+game theory.
+Example 2.5.2 (Utility maximising agent). The utility maximising agent A : (X, {⋆}) → (Y, R)
+is given by
+                        ε(x, k) = σ : X → Y σ(x) ∈ arg max(k) .
+                                 
+
+    There are other decision criteria one could use. For instance, MinMax and regret minimisation
+would be candidates. We could also consider models from behavioural game theory such as prospect
+theory. The only (very weak) requirement is that the decision criterion can be described by a
+selection function [23, 24]. In this paper we focus on utility-maximising agents as a simplification
+and in order to match traditional game theory.
+
+
+   Accepted in Compositionality on 2021-11-27.                                                                       8
+                                                                               Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+2.6 Best-response with concrete lenses
+Recall from 2.3.4 and 2.3.5 that CL I, (X, S) ∼   = X and that CL I, (Y, R) ∼   = Y → R. Using
+                                                                            
+
+these facts we can rephrase the type of best response for a concrete open game G : (X, S) → (Y, R)
+as
+                         BG : CL I, (X, S) × CL (Y, R), I → Rel(ΣG ).
+                                                            
+
+    This formulation allows for a concise and natural definition of sequential composition for con-
+crete open games where it would otherwise seem ad hoc. To make matters clear, we write x when
+talking about elements of X and x⋆ when talking about concrete lenses with type CL I, (X, S) .
+                                                                                                 
+
+Similarly, we write k : Y → R when talking about functions in Set and we write k⋆ when talking
+about effects in CL (Y, R), I .
+
+2.7 Sequential composition of concrete open games
+In this section we specify how to define the sequential composite H ◦ G : (X, S) → (Z, Q) of two
+concrete open games G : (X, S) → (Y, R) and H : (Y, R) → (Z, Q).
+    We imagine that this composition really is sequential in a straightforward way. G is ‘played
+out’ according to some strategy σ ∈ ΣG and then H is ‘played out’ according to some τ ∈ ΣH . A
+choice of (σ, τ ) ∈ ΣG × ΣH therefore determines an open play of G and H played in sequence, and
+so we take ΣG × ΣH to be the set of strategy profiles of H ◦ G.
+    The play function of the sequential composite is defined straightforwardly using the sequential
+composition of concrete lenses defined in 2.2.3.
+    Defining best response for a sequential composite is a bit more delicate and, for explanatory
+purposes, we make use of the informal notion of a local context for a subgame. Given a context
+c = (x : X, k : Z → Q) and a strategy (σ, τ ) for H ◦ G, the best-response relation of H ◦ G is
+specified by calling the best-response function of G with a modified context corresponding to how
+c ‘appears’ to G when H plays according to τ and, similarly, calling the best-response function of
+H with a modified context corresponding to how c ‘appears’ to H when G plays according to σ. In
+practice we define these ‘local contexts’ in the obvious way that type checks, but this is because
+the work has already been done in carefully choosing the correct definitions.
+Definition 2.7.1 (Sequential composition for concrete open games). Let G = (ΣG , PG , BG ) :
+(X, S) → (Y, R) and H = (ΣH , PH , BH ) : (Y, R) → (Z, Q) be concrete open games. Define
+  1. ΣH◦G = ΣG × ΣH ,
+
+  2. PH◦G (σ, τ ) = PH (τ ) ◦ PG (σ) (where ◦ composition is in CL), and
+  3. BH◦G (x⋆ , k⋆ )(σ, τ ) = BG (x⋆ , k⋆ ◦ PH (τ ))σ × BH (PG (σ) ◦ x⋆ , k⋆ )(τ ).
+We represent H ◦ G with the diagram
+                                                      Y
+                                        X                                Z
+                                                 G           H
+                                         S                               Q
+                                                      R
+
+
+2.8 Tensor composition for concrete open games
+The tensor composition of open games represents simultaneous play. Given concrete open games
+G : (X1 , S1 ) → (Y1 , R1 ) and H : (X2 , S2 ) → (Y2 , R2 ), the strategy set for G ⊗ H is ΣG × ΣH ; we
+make use of the tensor composition in CL in defining the play function; and the best-response
+function is given by modifying the context c to give local contexts for G and H.
+
+Definition 2.8.1 (Local contexts for tensor composition). Define the left local tensor context
+operator                                                     
+                  L : X ′ × (X ′ → Y ′ ) × (Y × Y ′ → R × R′ ) → (Y → R)
+
+
+
+   Accepted in Compositionality on 2021-11-27.                                                                9
+                                                                                                 Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+by
+                                            L(x′ , p′ , k)(y) = π1 ◦ k(y, p′ (x′ )).
+As a diagram, L(x′ , p′ , l) is the function
+
+                                      Y
+                                                                                             R
+                                                                               k
+                                                            X′            Y′            R′
+                                                   x′            p′
+
+
+Similarly, define the right local tensor context operator
+                                                           
+                      R : X × (X → Y ) × (Y × Y ′ → R × R′ ) → (Y ′ → R′ )
+
+by
+                                             R(x, p, k)(y ′ ) = π2 ◦ k(p(x), y).
+As a diagram,
+
+                                                            X             Y             R
+                                                   x             p
+                                                                               k
+                                                                                             R′
+                                     Y′
+
+    Suppose we have concrete open games G : (X, S) → (Y, R) and H : (X ′ , S ′ ) → (Y ′ , R′ ) and
+we wish to combine them to create some game G ⊗ H : (X × X ′ , S × S ′ ) → (Y × Y ′ , R × R′ ).
+Consider the left context operator L acting on some triple (x′ , p′ , k). If k is an outcome function
+for the game G ⊗ H and H observes x′ and plays according to the function p′ , then L(x′ , p′ , k) is
+the ‘apparent’ outcome function for G. Similarly, R(x, p, k) is the ‘apparent’ outcome function for
+H when G observes x and plays according to p. With this in mind, we define tensor composition
+for concrete open games as follows.
+Definition 2.8.2 (Tensor composition of concrete open games). Let G : (X, S) → (Y, R) and
+H : (X ′ , S ′ ) → (Y ′ , R′ ) be concrete open games. Define
+
+                                   G ⊗ H : (X × X ′ , S × S ′ ) → (Y × Y ′ , R × R′ )
+
+by
+     1. ΣG⊗H = ΣG × ΣH ,
+
+     2. PG⊗H (σ, τ ) = PG (σ) ⊗ PH (τ ) (in CL),
+                                                
+     3. BG⊗H : (X × X ′ ) × (Y × Y ′ → R × R′ ) → Rel(ΣG⊗H ) is given by
+
+                             BG⊗H (x, x′ )⋆ , k⋆ (σ, τ ) = BG x⋆ , L(x′ , (PH (τ ))v , k)⋆ (σ)
+                                                                                         
+
+                                                           × BH x′⋆ , R(x, (PG (σ))v , k)⋆ (τ )
+                                                                                            
+
+
+G ⊗ H is represented by the diagram
+                                                    X                              Y
+                                                                      G
+                                                        S                          R
+
+                                                   X′                              Y′
+                                                                      H
+                                                    S′                             R′
+
+
+
+
+     Accepted in Compositionality on 2021-11-27.                                                                               10
+                                                                              Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+2.9 Equivalence of open games
+One subtlety remains before we can define the category of concrete open games. We aim to define
+a category with pairs of sets as objects and morphisms given by concrete open games. If carried
+out naı̈vely, this runs into the problem that strategy sets which should be identical are merely
+isomorphic. For instance, the strategy set of K ◦ (H ◦ G) is (ΣG × ΣH ) × ΣK whilst the strategy set
+of (K ◦ H) ◦ G is ΣG × (ΣH × ΣK ). In order for concrete open games to form a category, we must
+first take an appropriate quotient.
+    There are several different reasonable choices of quotient. Since this is an orthogonal consider-
+ation to this paper’s topic, we choose the most straightforward, which is to identify open games
+that have a compatible isomorphism between their sets of strategies. Other choices that can be
+made are bisimulations [3] and surjections [8]. Alternatively, instead of taking a quotient, open
+games can be considered as the 1-cells of a bicategory [22].
+Definition 2.9.1. Let G, H : (X, S) → (Y, R) be concrete open games. An isomorphism α : G → H
+is given by a bijection α : ΣG → ΣH such that
+  1. PG (σ) = PH (α(σ)) for all σ ∈ ΣG
+  2. For all σ, σ ′ ∈ ΣG and c ∈ X × (Y → R), (σ, σ ′ ) ∈ BG (c) iff (α(σ), α(σ ′ )) ∈ BH (c)
+
+Definition 2.9.2. Let G, H : (X, S) → (Y, R) be concrete open games. G and H are equivalent,
+written G ∼ H, if there exists an isomorphism α : G → H. We write [G] for the equivalence class
+of G under this relation. We also say that the isomorphism α witnesses the equivalence between G
+                     α
+and H and write G ∼ H.
+   The following results demonstrate that sequential and tensor composition of concrete open
+respects equivalence of concrete open games.
+
+Lemma 2.9.3. Let G, G ′ : (X, S) → (Y, R) and H, H′ : (Y, R) → (Z, Q) be concrete open games.
+If G ∼ G ′ and H ∼ H′ , then H ◦ G ∼ H′ ◦ G ′ .
+                       α               β
+Proof. Suppose G ∼ H and G ′ ∼ H′ . Then α × β : ΣG × ΣG → ΣG ′ × ΣH′ given by
+
+                                             (α × β)(σ, τ ) = (α(σ), β(τ ))
+                       α×β
+is such that H ◦ G ∼ H′ ◦ G ′ .
+
+Lemma 2.9.4. Let G, H : (X, S) → (Y, R) and G ′ , H′ : (X ′ , S ′ ) → (Y ′ , R′ ) be concrete open
+games. If G ∼ H and G ′ ∼ H′ , then G ⊗ G ′ ∼ H ⊗ H′ .
+              α               β                      α×β
+Proof. If G ∼ H and G ′ ∼ H′ , then G ⊗ G ′ ∼ H ⊗ H′ as in the previous lemma.
+
+2.10 The category of concrete open games
+We are now finally in a position to show that concrete open games form a symmetric monoidal
+category.
+Notation 2.10.1. In string diagrams we refer to a play function applied to a strategy simply
+by the strategy. For example, σ may refer to PG (σ). In practice this does not lead to ambiguity
+because proofs and definitions proceed by assigning fixed strategies to particular open games. This
+notational convention allows for less cluttered string diagrams.
+Lemma 2.10.2. Sequential composition of concrete open games is associative up to equivalence.
+
+   The identity morphism (X, S) → (X, S) is given by the computation ⟨idX , idS ⟩.
+Lemma 2.10.3. Let G : (X, S) → (Y, R). Then [G] = [G ◦ ⟨idX , idS ⟩] = [⟨idY , idR ⟩ ◦ G].
+Corollary 2.10.4. There is a category ConGame with pairs of sets as object and equivalence
+classes of concrete open games as morphisms.
+
+
+   Accepted in Compositionality on 2021-11-27.                                                              11
+                                                                                          Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+   We now move on to proving that ConGame is symmetric monoidal.
+Lemma 2.10.5. ⊗ : ConGame × ConGame → ConGame is a functor.
+Lemma 2.10.6. The associator in ConGame is natural.
+   We include the proof of this lemma specifically because it will be important later.
+Proof. Let Gi : (Xi , Si ) → (Yi , Ri ) be open games where i ∈ {1, 2, 3}. We need to show that
+α ◦ (G1 ⊗ (G2 ⊗ G3 )) ∼ ((G1 ⊗ G2 ) ⊗ G3 ) ◦ α. Define
+                                                     β : (ΣG1 × (ΣG2 × ΣG3 )) × {⋆} → {⋆} × ((ΣG1 ×
+ΣG2 ) × ΣG3 ) by β (σ, (τ, µ)), ⋆ = ⋆, ((σ, τ ), µ) .
+    As CL is symmetric monoidal, we have that
+                           α ◦ PG1 ⊗(G2 ⊗G3 ) (σ, (τ, µ)) = P(G1 ⊗G2 )⊗G2 ((σ, τ ), µ) ◦ α.
+     Let xi ∈ Xi and k : (Y1 × Y2 × Y3 ) → (R1 × R2 × R3 ). We will show that the local contexts for
+G1 , G2 , and G3 are the same in both G1 ⊗ (G2 ⊗ G2 ) and (G1 ⊗ G2 ) ⊗ G3 . First we consider G1 . Let
+k ′ := L(x3 , PG3 µ, k). Then,
+                                  kG1 := L (x2 , x3 ), PG2 ⊗G3 (τ, µ), k
+                                                                         
+
+
+                  Y1
+
+                                                X2                                            R1
+   =                                                                   Y2
+                                                                                k
+                              (x2 , x3 )               (τ ⊗ µ)v
+                                                                       Y3
+                                                X3
+
+
+
+
+                                Y1
+
+                                                                                         R1
+                                                  X2         Y2
+                                            x2          τv                  k
+   =
+
+
+                                            x3          µv        Y3
+                                                  X3
+
+
+
+                              Y1                                                    R1
+   =                                                                   k′
+                                                 X2          Y2
+                                           x2          τv
+
+
+
+                                                                              
+                                            = L x2 , PG2 (τ ), L x3 , PG3 µ, k
+Similar arguments hold for G2 and G3 , showing that
+                                                                                     
+            kG2 := R x1 , PG1 (σ), L x3 , PG3 (µ), k = L x3 , PG3 (µ), R x1 , PG1 (σ), k
+
+and                                                                                      
+                kG3 := R (x1 , x2 ), PG1 ⊗G2 (σ, τ ), k = R x2 , PG2 (τ ), R x1 , PG1 (σ), k .
+Then
+                    (⋆, (σ, (τ, µ))), (⋆, (σ ′ , (τ ′ , µ′ ))) ∈ Bα◦(G1 ⊗(G2 ⊗G3 )) (x1 , (x2 , x3 )), k
+                                                                                                        
+
+           ⇐⇒ (σ, σ ′ ) ∈ BG1 (x1 , kG1 ) and (τ, τ ′ ) ∈ BG2 (x2 , kG2 ) and (µ, µ′ ) ∈ BG3 (x3 , kG3 )
+           ⇐⇒ (((σ, τ ), µ), ⋆), (((σ ′ , τ ′ ), µ′ ), ⋆) ∈ B((G1 ⊗G2 )⊗G3 )◦α ((x1 , x2 ), x3 ), k
+                                                                                                   
+
+
+
+
+   Accepted in Compositionality on 2021-11-27.                                                                          12
+                                                                              Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+   The above lemma relies on the fact that the monoidal tensor in Set is cartesian. In particular
+we needed that bipartite states s : I → S1 ⊗ S2 in Set (i.e. elements of S1 × S2 ) correspond to
+pairs of states (s1 : I → S1 , s2 : I → S2 ). In an arbitrary monoidal category, it need not be the
+case that for all states s : I → S1 ⊗ S2 there exist states s1 : I → S1 and s2 : I → S2 such that
+
+                                                                s1       S1
+                                                     S1
+                                             s            =
+                                                     S2
+                                                                s2       S2
+
+
+
+This poses a significant barrier to generalising concrete open games to monoidal categories where
+the monoidal tensor is not cartesian, and Section 3 addresses this problem.
+Lemma 2.10.7. The structural computations λ, ρ, and s are natural in ConGame.
+Theorem 2.10.8. ConGame is symmetric monoidal.
+
+2.11 Encoding functions as games
+Recall that, given functions f : X → Y and g : R → S, there is a computation of concrete open
+games ⟨f, g⟩ : (X, S) → (Y, R). In fact, this operation is functorial.
+Lemma 2.11.1 ([20]). Define F : Set × Setop → ConGame by F (X, S) = (X, S) and F (f :
+X → Y, g : R → S) = ⟨f, g⟩. Then F is a faithful monoidal functor.
+
+   We also incorporate computations directly into the diagrammatic calculus for concrete open
+games, representing the computation ⟨f, g⟩ : (X, S) → (Y, R) by
+
+                                                 X        f          Y
+
+
+                                                 S         g         R
+
+
+Two particularly useful examples of this notation are the covariant and contravariant copying
+computations ⟨∆X , id1 ⟩ : (X, 1) → (X × X, 1) and ⟨id1 , ∆R ⟩ : (1, R × R) → (1, R) which are
+represented by
+                                                     X          R
+
+                                  X                       and                 R
+
+                                                     X          R
+
+respectively.
+
+2.12 Game theory with concrete open games
+In this section we give some examples of games modelled using concrete open games. We will
+be light on details, aiming to simply demonstrate some of the expressive power of concrete open
+games. We direct the reader to [20] for more details.
+
+2.12.1   Bimatrix games
+Bimatrix games are simply two-player normal-form games, the most well-known example of which
+is likely the prisoner’s dilemma. We assume the set of actions available to each player is finite for
+simplicity.
+
+Definition 2.12.2. A bimatrix game consists of
+
+
+   Accepted in Compositionality on 2021-11-27.                                                              13
+                                                                                 Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+  1. Finite set of actions A and B; and
+
+  2. An outcome function k : A × B → R2 .
+   A bimatrix game G = (A, B, k) is represented by the concrete open game
+
+                                                   A
+                                             A
+                                                   R
+                                                                       ck
+                                                   B
+                                             B
+                                                   R
+
+where A and B are utility maximising agents and ck is the counit game associated with k. In
+diagrammatic form, the structure of the game is made clear. Players A and B make independent
+choices from A and B respectively which are then used to generate two real numbers as outcomes.
+Bimatrix games may not have a Nash equilibrium in pure strategies, but in cases that do have
+Nash equilibria, they appear as fixed points of the best-response function B : A × B → P(A × B)
+of the above concrete open game, i.e. strategy profiles (a, b) satisfying (a, b) ∈ B(a, b).
+
+2.12.3   Two-player sequential game
+A two-player sequential game is defined by the same data as a bimatrix game (sets A and B and a
+function k : A × B → R2 ), but we allow the second player to observe the first player’s move before
+making a choice, so strategies for the second player are functions A → B. This is represented by
+the concrete open game
+
+                                             X
+                                                               Y            ck
+                                     A                  B
+
+
+
+
+where A and B are utility maximising agents and ck is the counit game associated with k.
+   Crucially, the fixed points of the concrete open game are not subgame perfect Nash equilibria,
+but rather plain old Nash equilibria. It is also possible to define a concrete open game that captures
+subgame perfect equilibria, but this requires an additional operator defined in [14].
+
+2.12.4   Normal-form games
+Let Γ = N, (Si )Ni=1 , (ui )i=1 be a normal-form game for N players. Si denotes the set of strategies
+                            N
+                               
+                                                                                    QN
+available to player i. The function ui maps a strategy tuple for all players, i=1 Si , to player i’s
+                            QN
+payoff, in R. Define k : i=1 Si → RN by s = (s1 , · · · , sN ) 7→ (u1 (s), · · · , uN (s)). We can model
+this normal-form game using the concrete open game
+                                                         N
+                                                        O         
+                                                 ck ◦         Ai
+                                                        i=1
+
+where Ai : I → (Si , R) is the utility maximising agent. The fixed points of this game’s best-response
+relation are then the pure-strategy Nash equilibria of the normal-form game.
+
+
+
+
+   Accepted in Compositionality on 2021-11-27.                                                                 14
+                                                                                                Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+3 General open games
+The notion of open game we introduced in the section before can emulate some standard games
+such as the prisoner’s dilemma. On the other hand, classical game theory has a much wider reach.
+It can model situations with which a concrete open game cannot deal. This involves stochastic
+environments, probabilistic choices by players, and incomplete information.
+    In this section, we will significantly generalise the notion of an open game, to make room for
+these three extensions (and beyond). The first order of business, to make progress in this direction,
+is to generalise concrete lenses.
+
+3.1 Generalising concrete lenses
+In the proof of Lemma 2.2.4 we made use of the fact that every Set function is a comonoid homo-
+morphism for the copy/delete comonoid. Recall that a morphism is a comonoid homomorphism if
+it can be ‘moved through’ the comonoid structure.
+
+                                                                                            f
+                                         f                         =
+                                                                                            f
+
+
+                                                         f                 =
+
+    If Set is replaced with some arbitrary symmetric monoidal category C and the copy/delete
+comonoid is replaced with some arbitrary comonoid in C, sequential composition of lenses, as
+defined in Definition 2.2.3, may not be associative. This presents a substantive problem — there
+exist categories relevant to game theory in which sequential composition of concrete lenses is not
+associative. Of particular interest is the Kleisli category of the finitary distribution monad, Kl(D),
+which we will need in order to model Bayesian games (discussed in Section 4). Kl(D) inherits
+a copy/delete comonoid from Set, but its comonoid homomorphisms are the deterministic maps
+(i.e. precisely the non-probabilistic maps).
+    In the next section we introduce coends, a piece of categorical machinery that allows for an
+elegant generalisation of concrete lenses to arbitrary symmetric monoidal categories. We call these
+generalised lenses coend lenses or, simply, lenses. We will first introduce the technical notion before
+magicking it away with a diagrammatic calculus that represents what is ‘really’ going on.
+
+3.2 Co-wedges and Coends
+Co-wedges are a variant of co-cones of natural transformations applying to functors that act both
+covariantly and contravariantly on an argument. In Section 2.1 we noted that lenses have both
+covariant and contravariant components. We will see that this behaviour can be described by
+coends, which are initial co-wedges. For extra motivation, discussion, and examples, we refer the
+reader to [27].
+
+Definition 3.2.1 (Co-wedge). Let
+                                F : C × C → D be a functor. A co-wedge c : F → α′ is an
+                                         op
+
+object α : D together with maps ca : F (a, a) → α a : C such that, for any morphism f : a → a,
+the diagram
+                                                              ca
+                                                   α                           F (a, a)
+                                             ca′                                     F (f, a)
+
+                                          F (a′ , a′ )                         F (a′ , a)
+                                                             F (a′ , f )
+
+
+commutes.
+
+
+   Accepted in Compositionality on 2021-11-27.                                                                                15
+                                                                                              Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+Definition 3.2.2 (Coend). A coend is  a couniversal co-wedge. Diagrammatically, the coend of a
+functor F : C op × C → D is a co-wedge ca : F (a, a) → coend(F ) a : C such that for any other
+co-wedge da : F (a, a) → α a : C and morphism f : a′ → a the diagram
+
+                               α                             da
+
+                                      h
+                                                                       ca
+                                          coend(F )                                 F (a, a)
+                               da′
+                                           ca′                                            F (f, a)
+
+                                          F (a′ , a′ )                              F (a′ , a)
+                                                              F (a′ , f )
+
+
+commutes for a unique morphism h : coend(F ) → α.
+   We adopt the integral notation for coends, writing
+                                         Z a:C
+                                               F (a, a)
+
+for coend(F ). We will make use of the fact that coends can be characterised by the following
+coequaliser.
+                                                                                R a:C
+Lemma 3.2.3. Let F : C op × C → D. If D is cocomplete and C is small, the coend       F (a, a) is
+given by the coequaliser of the pair of arrows
+                                       a                          F1        a
+                                                F (a, a′ )                        F (a, a),
+                                      a,a′ :C                     F2        a:C
+                                     f :a′ →a
+
+
+where the f : a′ → a components of F1 and F2 are F (f, a′ ) and F (a, f ) respectively.
+   When C is not small (as it usually is not), we need to show directly that coends exist.
+
+3.3 Coend lenses
+Much of the material in this section is worked out in much greater detail in [36], which serves as a
+good standard reference for coend lenses. We first give an abstract definition of coend lenses, then
+provide some justification.
+Definition 3.3.1 (Coend lens). Let X, S, Y, and R be objects in a symmetric monoidal category
+C. A coend lens l : (X, S) → (Y, R) is an element of the set
+                                          Z A:C
+                                                   C(X, A ⊗ Y ) × C(A ⊗ R, S).
+
+    We think of the coend in the above definition as acting as a kind of existential quantifier over
+the type variable A, followed by a quotient (to be described) over the resulting structure. That
+is, a coend lens l : (X, S) → (Y, R) consists of an equivalence relation over triples comprised of a
+choice of type A, a morphism v : X → A ⊗ Y , and another morphism u : A ⊗ R → S.
+    By Lemma 3.2.3 we can characterise coend lenses (X, S) → (Y, R) as the elements of a particular
+coequaliser. Moreover, coequalisers in Set are given by quotients. Unpacking the coequaliser
+explicitly, coend lenses (X, S) → (Y, R) are given by the set of triples of the form described
+above, quotiented by the equivalence relation generated by (i.e. the smallest equivalence relation
+containing)
+                                (f ⊗ idY ) ◦ v, u ∼ v, u ◦ (f ⊗ idR )
+                                                                    
+
+for all A, B : C and f : A → B. In diagrammatic form, the pair
+
+
+   Accepted in Compositionality on 2021-11-27.                                                                              16
+                                                                                                                                            Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+                                                                A
+                                                                        f               B               B
+                                        X               v                                                               u                   S
+                                                                                        Y           , R
+is related to the pair
+                                                                                                                B
+                                                                    A                   A               f
+                                    X               v                                                                       u                   S
+                                                                    Y           ,       R
+
+
+We refer to the types A and B as bound types (B is bound in the first diagram, A in the second).
+In Section 4, we will see that this bound type keeps track of correlations between random variables
+in the Kleisli category of the distribution monad.
+    In vague terms, two pairs of morphisms are related if one can get from one to the other by
+‘sliding’ a morphism off the bound type of one morphism on to the bound type of the other. Given
+a pair of morphisms (v : X → A ⊗ Y, u : A ⊗ R → S), we write [v, u] for their equivalence class.
+When we need to talk explicitly about the bound type of [v, u] we write [A, v, u] to specify that
+the pair (v, u) has bound type A. We also adopt the convention that l = [Al , lv , lu ] where, as with
+concrete lenses, we say that lv is the view morphism and lu is the update morphism. We follow [36],
+taking the hint from the diagrammatic representation of the equivalence relation by representing
+a coend lens [v, u] : (X, S) → (Y, R) as
+
+
+                                    X                       v                                                       u                       S
+                                                                            Y                   R
+
+
+We usually omit the bound type in diagrams for clarity. The equivalence relation is then simply
+
+                                f                                                                                                                   f
+            X          v                                        u               S       ∼       X               v                                           u       S
+                                Y               R                                                                                   Y               R
+
+
+
+The equivalence relation permits the cancelling of isomorphisms:
+
+                                                                                                                                f                   f −1
+        X         v                                         u               S       ∼       X               v                                                   u       S
+                            Y               R                                                                                       Y               R
+
+
+
+Many proofs in this section proceed by allowing symmetric monoidal structure to interact with
+coend structure as, for example, in the following diagram.
+
+
+         X         v                                                u               S   ∼           X               v                                           u       S
+                                Y               R                                                                                       Y               R
+
+
+
+   The formal foundations of this class of diagrams are investigated in [37].
+Example 3.3.2 (Identity lens). The identity lens id(X,S) : (X, S) → (X, S) is given by [I, idX :
+X → X, idS : S → S]. Diagrammatically,
+
+                                                            X               X                   S               S
+
+
+Example 3.3.3. A pair of morphisms (f : X → Y, g : R → S) is encoded by the coend lens
+[I, f, g] : (X, S) → (Y, R):
+
+                                            X               f               Y                   R               g                       S
+
+
+
+
+   Accepted in Compositionality on 2021-11-27.                                                                                                                              17
+                                                                                          Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+Definition 3.3.4 (Sequential composition of coend lenses). Let [v, u] : (X, S) → (Y, R) and
+[v ′ , u′ ] : (Y, R) → (Z, Q) be coend lenses. Define [v ′ , u′ ] ◦ [v, u] : (X, S) → (Z, Q) to be
+
+
+                  X            v                                                             u          S
+                                                   ′                             ′
+                                               v                                 u
+                                      Y                      Z          Q             R
+
+
+
+Explicitly,
+                        [A′ , v ′ , u′ ] ◦ [A, v, u] = [A ⊗ A′ , (v ′ ⊗ idA ) ◦ v, u ◦ (idA ⊗ u′ )].
+Theorem 3.3.5 (Coend lenses form a category). Suppose C is a monoidal category such that, for
+all objects X, S, Y, R ∈ C,
+                             Z A:C
+                                   C(X, A ⊗ Y ) × C(A ⊗ R, S)
+
+exists. Then there is a category LensC whose objects are pairs of objects in C and where
+                                                              Z A:C
+                         LensC (X, S), (Y, R) =                       C(X, A ⊗ Y ) × C(A ⊗ R, S).
+                                                       
+
+
+    When C is small, the existence of sets of coend lenses of each type is guaranteed by the cocom-
+pleteness of Set. When C is not small, and the lens types correspond to coends indexed by a large
+category, we must verify that these sets exist by some other means (by, for example, giving a Set
+isomorphism). Fortunately, this is not difficult for the categories of interest in this work.
+Definition 3.3.6 (Tensor composition of coend lenses). Let [v, u] : (X, S) → (Y, R) and [v ′ , u′ ] :
+(X ′ , S ′ ) → (Y ′ , R′ ) be coend lenses. Define [v, u] ⊗ [v ′ , u′ ] : (X ⊗ X ′ , S ⊗ S ′ ) → (Y ⊗ Y ′ , R ⊗ R′ )
+to be
+
+                           X            v                                            u           S
+
+
+                                                             Y          R
+                                           ′
+                          X′           v                                             u′          S′
+                                                             Y′        R′
+
+
+Explicitly, [A, v, u] ⊗ [A′ , v ′ , u′ ] is given by
+              h                                                                                 i
+                (A ⊗ A′ , idA ⊗ sY,A′ ⊗ idY ′ ) ◦ (v ⊗ v ′ ), (u ⊗ u′ ) ◦ (idA ⊗ sA′ ,R ⊗ idR′ ) .
+
+Theorem 3.3.7 (LensC is symmetric monoidal). The category LensC is symmetric monoidal with
+the tensor given in Definition 3.3.6, monoidal unit I = (IC , IC ), and with structural morphisms
+inherited from C given by
+                                                                          −1
+                                          α(X,A),(Y,B),(Z,C) = [αX,Y,Z , αA,B,C ]
+                                                        λ(X,A) = [λX , λ−1
+                                                                        A ]
+                                                           ρ(X,A) = [ρX , ρ−1
+                                                                           A ]
+                                                   s(X,A),(Y,B) = [sX,Y , sB,A ].
+
+Lemma 3.3.8. LensSet is isomorphic to CL. (More generally, when ⊗ is cartesian, LensC is
+isomorphic to an appropriately generalised definition of CLC .)
+
+
+
+
+    Accepted in Compositionality on 2021-11-27.                                                                         18
+                                                                               Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+3.4 Towards generalising open games
+We could, at this point, attempt to define a (generalised) open game G : (X, S) → (Y, R) over a
+symmetric monoidal category C as
+  1. A set Σ of strategies;
+  2. A play function P : Σ → LensC (X, S), (Y, R) ; and
+                                                 
+
+  3. A best-response function B : C(I, X) × C(Y, R) → Rel(Σ).
+    Call such generalised open games interim open games (for they will not live long). Sequential
+composition and tensor composition of interim open games could be defined much as we did for
+concrete open games. The problems begin to arise when one attempts to prove that this definition
+results in a symmetric monoidal category.
+    In proving that the associator was natural in CL, we used the fact that the monoidal tensor
+in Set is cartesian. If the tensor of C is not cartesian, the local context of G in G ⊗ (H ⊗ K) is
+different to the local context of G in (G ⊗ H) ⊗ K. Let
+
+                                                 G : (X1 , S1 ) → (Y1 , R1 )
+                                                 H : (X2 , S2 ) → (Y2 , R2 )
+                                                 K : (X3 , S3 ) → (Y3 , R3 )
+
+be interim open games, p ∈ C(I, X1 ⊗ X2 ⊗ X3 ), k ∈ C(Y1 ⊗ Y2 ⊗ Y3 , R1 ⊗ R2 ⊗ R3 ), and (σ, τ, µ) ∈
+ΣG × ΣH × ΣK . The local context of G in G ⊗ (H ⊗ K) is given by
+
+                              Y1
+
+                                                                                R1
+                                                    X2          Y2
+                                        p                 τv              k
+
+                                                         µv         Y3
+                                                    X3
+
+
+whilst the local context of G in (G ⊗ H) ⊗ K is given by
+
+                               Y1
+
+                                                                                R1
+                                                    X2         Y2
+                                          p              τv              k
+
+
+                                          p
+                                                    X3
+                                                         µv
+                                                               Y3
+
+
+    In general, these morphisms are not the same. In the case where C is the Kleisli category of
+the distribution monad, the first morphism contains information about correlations between the
+types X2 and X3 whilst the second morphism does not. Consequently, the distinction between
+these two local contexts for G is substantive. Fortunately, coend lenses also provide a solution to
+this problem.
+    The high-level approach for defining a category of generalised open games is to use as few
+‘deleting’ maps as possible. We do this by ‘hiding’ information in the bound variable of a coend
+lens whenever we would otherwise delete it. A consequence of this approach is that the correct
+definition of a ‘context’ for generalised open games is quite abstract, but we will see that this
+abstractness allows for more elegant proofs and, in any case, disappears when dealing with the
+categories we are actually interested in.
+
+
+
+
+   Accepted in Compositionality on 2021-11-27.                                                               19
+                                                                                         Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+3.5 States, continuations, and contexts
+In this section we define a generalised notion of context for open games. Observe that a state
+[s, s′ ] ∈ LensC (I, (X, S)) has the form
+
+
+                                                   s                        s′
+                                                             X       S
+
+
+More verbosely, a state s ∈ LensC (I, (X, S)) is the equivalence class of a choice of type A : C
+together with a state s : C(I, A ⊗ X) in C and an effect s′ : C(A ⊗ S, I) in C. A useful interpretation
+of states in LensC is as a history/cohistory pair. (Cohistories are not yet well understood. They
+make proofs easier, but vanish in categories which make game-theoretic sense.)
+    An effect [e, e′ ] ∈ LensC ((Y, R), I) has the form
+
+                                        Y              e                   e′        R
+
+
+
+                                                             I        I
+
+
+Concerning effects, we have the following result.
+
+Lemma 3.5.1. C(Y, R) ∼
+                     = LensC ((Y, R), I)
+Proof. The isomorphism i : C(Y, R) → LensC ((Y, R), I) is given by
+
+                                       i(f : Y → R) = [R, f, idR ] = [Y, idY , f ].
+
+
+
+This result captures the idea that ‘effects in LensC are outcome functions in C’.
+    We can now define (generalised) contexts which consist of a coend over a state in LensC (a
+history/cohistory pair) and an effect in LensC (an outcome function). Contexts are therefore
+members of a double coend. This double coend turns out to be a state in the double lens category
+LensLensC . From a purely technical standpoint, using double lenses allows for elegant proofs.
+From a heuristic perspective, we will see that the extra bound variable the double lens affords us
+enables us, in the case C = Kl(D), to store information about correlations between variables where
+we would otherwise have to take marginals.
+Definition 3.5.2 (Context functor). The context functor C : LensC × Lensop
+                                                                        C → Set is given by
+                                            Z Θ:LensC
+                           C(Φ, Ψ) =                       LensC (I, Θ ⊗ Φ) × LensC (Θ ⊗ Ψ, I)
+
+                                       = LensLensC (I, (Φ, Ψ))
+
+Elements of C(Φ, Ψ) are called contexts.
+
+     (We use the letters Φ, Ψ to refer to objects of LensC , which are pairs of objects of C.)
+     As a context [p, k] ∈ C(Φ, Ψ) is just a state in LensLensC , so it admits a graphical representation
+as
+
+                                                   p                        k
+                                                             Φ       Ψ
+                                                                                 .
+This is neat, and means many of the results in the rest of this section can be carried out graphically.
+
+
+
+
+     Accepted in Compositionality on 2021-11-27.                                                                       20
+                                                                             Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+3.6 General open games
+We have now arrived at a level of generality where we can define generalised open games in a
+way that is obviously analogous to concrete open games. Given Φ, Ψ ∈ LensC , an open game
+consists of a set of strategy profiles, a family of lenses indexed by the set of strategy profiles, and
+a best-response function which takes a context as input and returns a relation on strategy profiles.
+Definition 3.6.1 (Open game). Let Φ, Ψ ∈ LensC . An open game G : Φ → Ψ consists of
+  1. A set of strategy profiles Σ;
+  2. A play function P : Σ → LensC (Φ, Ψ); and
+  3. A best-response function B : C(Φ, Ψ) → Rel(Σ).
+    The rationale here is much the same as it is with concrete open games. The play function takes
+a strategy profile as input and returns a lens describing an open play of the game. Best response
+takes a context as argument that provides the information necessary for the game to make informed
+strategic decisions, and returns a relation on strategies.
+    As with concrete open games, we define a notion of atomic open game:
+Definition 3.6.2. An atomic open game a : Φ → Ψ is an open game such that
+  1. Σa ⊆ LensC (Φ, Ψ);
+  2. For all l ∈ Σa , Pa (l) = l; and
+  3. For all contexts c ∈ C(Φ, Ψ), Ba (c) is constant.
+    Atomic open games are uniquely specified by a subset Σ ⊆ LensC (Φ, Ψ) and a selection function
+B : C(Φ, Ψ) → P(Σ), and we will sometimes specify atomic open games via this data. We refer to
+atomic open games simply as atoms.
+Example 3.6.3. The identity atom idΦ : Φ → Φ is given by Σ = {idΦ }, B(c) = {idΦ } for all
+c ∈ C(Φ, Φ).
+Example 3.6.4 (Computation). Let f : C(X, Y ) and g : C(R, S) be morphisms in C. Define the
+atom ⟨f, g⟩ : (X, S) → (Y, R) by
+  1. Σ⟨f,g⟩ = {[f, g]}; and
+
+  2. B⟨f,g⟩ (c) = {[f, g]} for all c ∈ C (X, S), (Y, R) .
+                                                       
+
+
+3.7 Composing open games
+The heuristic for sequential composition of general open games is much the same as for concrete
+open games in Subsection 2.7. The only difference is that we are now using coend lenses rather than
+concrete lenses, and contexts also are slightly different. Best response of a sequential composite
+H ◦ G is still defined by forming local contexts for G and H.
+Definition 3.7.1 (Sequential composition of open games). Let G : Φ → Ψ and H : Ψ → Ξ be
+open games. Define H ◦ G : Φ → Ξ by
+  1. ΣH◦G = ΣG × ΣH ,
+  2. PH◦G (σ, τ ) = PH (τ ) ◦ PG (σ),
+  3. BH◦G ([p, k])(σ, τ ) = BG ([p, k ◦ PH (τ )])(σ) × BH ([PG (σ) ◦ p, k])(τ ).
+   Given a context [p, k] ∈ C(Φ, Ξ) represented by the diagram
+
+                                                 p                k
+                                                     Φ    Ψ
+
+
+
+
+   Accepted in Compositionality on 2021-11-27.                                                             21
+                                                                                          Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+the local context for G given a strategy τ ∈ ΣH is given by
+
+
+                                         p                                            k
+                                                   Φ       Ψ             τ
+                                                                                  Ξ
+
+
+and given a strategy σ ∈ ΣG the local context for H is given by
+
+
+                                         p                                            k
+                                              Φ
+                                                   σ           Ψ         Ξ
+
+
+In this representation the process of taking a local context is non-arbitrary, and obviously associa-
+tive.
+
+3.8 The tensor of open games
+Again, the heuristic for defining the tensor of open games is much as it was for concrete open
+games. We will first formalise the notion of ‘local context’ for tensored general open games.
+Definition 3.8.1 (Local contexts for tensor composition). Define the left local context function
+
+                          LΦ,Φ′ ,Ψ,Ψ′ : C(Φ ⊗ Φ′ , Ψ ⊗ Ψ′ ) × LensC (Φ′ , Ψ′ ) → C(Φ, Ψ)
+
+by
+
+                                                           Φ′           Ψ′
+                                                       p           l                      k
+                                  L([p, k], l) =
+                                                                   Φ         Ψ
+
+
+Define the right local context function
+
+                          RΦ,Φ′ ,Ψ,Ψ′ : C(Φ ⊗ Φ′ , Ψ ⊗ Ψ′ ) × LensC (Φ, Ψ) → C(Φ′ , Ψ′ )
+
+by
+
+                                                           Φ             Ψ
+                                                       p           l                      k
+                                  R([p, k], l) =
+                                                                   Φ′        Ψ′
+
+
+     We will usually suppress the subscripts of L and R as the types can be inferred from context.
+Definition 3.8.2 (Tensor composition of open games). Let G : Φ → Ψ and H : Φ′ → Ψ′ be open
+games. Define G ⊗ H : Φ ⊗ Φ′ → Ψ ⊗ Ψ′ by
+     • ΣG⊗H = ΣG × ΣH ;
+
+     • PG⊗H (σ, τ ) = PG (σ) ⊗ PH (τ ) (in LensC );
+     • Define BG⊗H : C(Φ ⊗ Φ′ , Ψ ⊗ Ψ′ ) → Rel(ΣG⊗H ) by
+
+                              BG⊗H (c)(σ, τ ) = BG (L(c, PH (τ )))(σ) × BH (R(c, PG (σ)))(τ )
+
+
+
+
+     Accepted in Compositionality on 2021-11-27.                                                                        22
+                                                                             Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+3.9 Equivalence of open games
+As in Section 2.9, we need to quotient open games in order to obtain a category.
+Definition 3.9.1 (Isomorphism of open games). Let G, H : Φ → Ψ be open games. An isomor-
+phism of open games α : G → H is a bijection α : ΣG → ΣH such that
+  1. PG (σ) = PH (α(σ)) for all σ ∈ ΣG ; and
+
+  2. For all σ, σ ′ ∈ ΣG and c ∈ C(Φ, Ψ), (σ, σ ′ ) ∈ BG (c) iff (α(σ), α(σ ′ )) ∈ BH (c) .
+Definition 3.9.2 (Equivalence of open games). Let G, H : Φ → Ψ be open games. G and H
+are equivalent, written G ∼ H, if there exists an isomorphism α : G → H. We write [G] for the
+equivalence class of G under this relation.
+Lemma 3.9.3. Let G, G ′ : Φ → Ψ, H, H′ : Ψ → Ξ, and K, K′ : Φ′ → Ψ′ be open games. Then
+
+  1. If G ∼ G ′ and H ∼ H′ , then H ◦ G ∼ H′ ◦ G ′ ; and
+  2. If G ∼ G ′ and K ∼ K′ , then G ⊗ K ∼ G ′ ⊗ K′ .
+
+
+
+   Demonstrating equivalence in the cases of interest will always be trivial, and so we simply
+specify the witnessing bijection between strategy sets.
+
+3.10 The category of open games
+That equivalence classes of open games form a category follows easily from the fact that coend
+lenses form a category.
+
+Lemma 3.10.1. Sequential composition of equivalence classes of open games is associative.
+Proof. Suppose we have open games
+                                                 G       H          K
+                                          Φ          Ψ        Ξ         Υ.
+
+The equivalence between (K ◦ H) ◦ G and K ◦ (H ◦ G) will be witnessed by the isomorphism
+β : ΣG × (ΣH × ΣK ) → (ΣG × ΣH ) × ΣK , (σ, (τ, µ)) 7→ ((σ, τ ), µ). Let σ ∈ ΣG , τ ∈ ΣH , and
+µ ∈ ΣK . Then P(K◦H)◦G (σ, (τ, µ)) = PK◦(H◦G) ((σ, τ ), µ) by associativity of composition in LensC .
+Let [p, k] ∈ C(Φ, Υ) be a context. Then
+
+          ((σ, (τ, µ)), (σ ′ , (τ ′ , µ′ ))) ∈ B(K◦H)◦G ([p, k])
+                                                                                       
+       ⇐⇒ (σ, σ ) ∈ BG [p, k ◦ PK (µ) ◦ PH (τ )] and (τ, τ ) ∈ BH [PG (σ) ◦ p, k ◦ PK (µ)]
+                ′                                                ′
+
+                                                             
+           and (µ, µ ) ∈ BK [PH (τ ) ◦ PG (σ) ◦ p, k]
+                      ′
+
+
+       ⇐⇒ (((σ, τ ), µ), ((σ ′ , τ ′ ), µ′ )) ∈ BK◦(H◦G) ([p, k])
+
+
+
+Theorem 3.10.2. If LensC exists, there exists a category GameC with pairs of objects in C as
+objects and equivalence classes of open games as morphisms.
+Proof. All that remains to be checked is that the identity computation defined in Example 3.6.3
+is an identity morphism, and this follows from easy checks.
+
+
+
+
+   Accepted in Compositionality on 2021-11-27.                                                             23
+                                                                                          Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+3.11 The symmetric monoidal structure of open games
+We now prove that ⊗ is functorial. The proof is a good demonstration of the utility of coend
+diagrams. In the commutative squares in the following lemma, the top path describes how local
+contexts are formed in, say, (H ⊗ H′ ) ◦ (G ⊗ G ′ ) and the bottom path describes how local contexts
+are formed in (H◦G)⊗(H′ ◦G ′ ). That the squares commute follows by inspection of the appropriate
+coend diagrams.
+
+Lemma 3.11.1. Suppose we have coend lenses
+
+                                                        l           m
+                                             Φ               Ψ               Ξ
+
+                                                        l′          m′
+                                             Φ′              Ψ′              Ξ′
+
+The following diagrams commute:
+
+  1.
+
+                                                                   L(−, l′ ◦ m′ )
+                                           C(Φ ⊗ Φ′ , Ξ ⊗ Ξ′ )                       C(Φ, Ξ)
+
+                                 C(Φ ⊗ Φ′ , m ⊗ m′ )                                       C(Φ, m)
+
+                                           C(Φ ⊗ Φ′ , Ψ ⊗ Ψ′ )                       C(Φ, Ψ)
+                                                                      L(−, l′ )
+
+
+  2.
+
+                                                                   L(−, l′ ◦ m′ )
+                                           C(Φ ⊗ Φ′ , Ξ ⊗ Ξ′ )                       C(Φ, Ξ)
+
+                                  C(l ⊗ l′ , m ⊗ m′ )                                      C(l, Ξ)
+
+                                           C(Ψ ⊗ Ψ′ , Ξ ⊗ Ξ′ )                       C(Ψ, Ξ)
+                                                                     L(−, m′ )
+
+
+  3.
+
+                                                                   R(−, l ◦ m)
+                                           C(Φ ⊗ Φ′ , Ξ ⊗ Ξ′ )                       C(Φ′ , Ξ′ )
+
+                                C(Φ ⊗ Φ′ , m ⊗ m′ )                                         C(Φ, m)
+
+                                           C(Φ ⊗ Φ′ , Ψ ⊗ Ψ′ )                       C(Φ′ , Ψ′ )
+                                                                     R(−, l)
+
+
+  4.
+
+                                                                  R(−, l ◦ m)
+                                         C(Φ ⊗ Φ′ , Ξ ⊗ Ξ′ )                        C(Φ′ , Ξ′ )
+
+                                  C(l ⊗ l′ , Ξ ⊗ Ξ′ )                                     C(l′ , Ξ′ )
+
+                                         C(Ψ ⊗ Ψ′ , Ξ ⊗ Ξ′ )                        C(Ψ′ , Ξ′ )
+                                                                   R(−, m)
+
+
+Proof. The four squares are given respectively by the following equalities of coend diagrams:
+  1.
+
+
+   Accepted in Compositionality on 2021-11-27.                                                                          24
+                                                                                                              Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+                         p                                                                                     m             k
+                                                                                                                     Ξ
+
+                              Φ′           l′              m′       Ξ′
+                                                                                  Φ         Ψ                        Ξ′
+                                                 Ψ′
+
+
+                                                                                  =
+
+
+                               p                                                                      m              k
+                                                                                                                Ξ
+
+                                      Φ′             l′        Ξ′
+                                                                         Φ             Ψ              m′       Ξ′
+
+
+2.
+
+                                                                                                               Ξ′
+                          p Φ                                                                                                k
+
+                               Φ′           l′                 m′                  l        Ψ              Ξ
+                                                     Ψ′             Ξ′
+
+
+                                                                                  =
+
+
+                                           Φ
+                                  p                   l                                                              k
+
+                                       Φ′             l′            m′                  Ψ         Ξ
+                                                               Ψ′            Ξ′
+
+
+3.
+
+                                      Φ                    Ψ                                Ξ
+                              p                  l                  m                                                    k
+
+                                                                                  Φ′        Ψ         m′        Ξ′
+
+
+                                                                                  =
+
+
+                                                 Φ                                Ψ                       Ξ
+                                      p                    l                                     m              k
+
+                                                                         Φ′            Ξ′        m′    Ξ′
+
+
+4.
+
+                                      Φ                    Ψ                                Ξ
+                              p                  l                  m                                                    k
+
+                                      Φ′                                          l′        Ψ′        Ξ′
+
+
+
+                                                                                  =
+
+
+
+Accepted in Compositionality on 2021-11-27.                                                                                                 25
+                                                                                          Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+                                            Φ             Ψ
+                                       p             l        m                               k
+
+                                                    l′                 Ψ′           Ξ′
+                                            Φ′
+
+
+
+    Functoriality of the tensor in GameC then follows easily.
+Corollary 3.11.2. ⊗ : GameC × GameC → GameC is a functor.
+Proof. Suppose we have open games
+                                                         G             H
+                                              Φ                Ψ               Ξ
+
+                                                         G′           H′
+                                             Φ′                Ψ′              Ξ′
+
+Note that Σ(H◦G)⊗(H′ ◦G ′ ) = (ΣG ×ΣH )×(ΣG ′ ×ΣH′ ) and Σ(H⊗H′ )◦(G⊗G ′ ) = (ΣG ×ΣG ′ )×(ΣH ×ΣH′ ).
+The isomorphism β : (ΣG ×ΣH )×(ΣG ′ ×ΣH′ ) → (ΣG ×ΣG ′ )×(ΣH ×ΣH′ ) witnessing the equivalence
+between (H ◦ G) ⊗ (H′ ◦ G ′ ) and (H ⊗ H′ ) ◦ (G ⊗ G ′ ) is given by ((σ, τ ), (σ ′ , τ ′ )) 7→ ((σ, σ ′ ), (τ, τ ′ )).
+LensC is symmetric monoidal and, hence,
+
+                      P(H◦G)⊗(H′ ⊗G ′ ) ((σ, τ ), (σ ′ , τ ′ )) = P(H⊗H′ )◦(G⊗G) ((σ, σ ′ ), (τ, τ ′ )).
+
+Using Lemma 3.11.1,
+
+                    ((σ, τ ), (σ ′ , τ ′ )), ((σ ′′ , τ ′′ ), (σ ′′′ , τ ′′′ )) ∈ B(H◦G)⊗(H′ ◦G ′ ) (c)
+                                                                               
+                                                                                                 
+                ⇐⇒ (σ, σ ′′ ) ∈ BG C(Φ, PH (τ )) ◦ L(−, PH′ (τ ′ ) ◦ PG ′ (σ ′ ))(c)
+                                                                                                       
+                    and (τ, τ ′′ ) ∈ BH C(PG (σ), Ξ) ◦ L(−, PH′ (τ ′ ) ◦ PG ′ (σ ′ ))(c)
+                                                                                                          
+                    and (σ ′ , σ ′′′ ) ∈ BG ′ C(Φ′ , PH′ (τ ′ )) ◦ R(−, PH (τ ) ◦ PH (σ))(c)
+                                                                                                        
+                    and (τ ′ , τ ′′′ ) ∈ BH′ C(PG ′ (σ ′ ), Ξ′ ) ◦ R(i, PH (τ ) ◦ PH (σ))(c)
+                                                                                                        
+                ⇐⇒ (σ, σ ′′ ) ∈ BG L(−, PG ′ (σ ′ )) ◦ C(Φ ⊗ Φ′ , PH (τ ) ⊗ PH′ (τ ′ ))(c)
+                                                                                                              
+                    and (σ ′ , σ ′′′ ) ∈ BG ′ R(−, PG (σ)) ◦ C(Φ ⊗ Φ′ , PH (τ ) ⊗ PH′ (τ ′ ))(c)
+                                                                                                            
+                    and (τ, τ ′′ ) ∈ BH L(−, PH′ (τ ′ )) ◦ C(PG (σ) ⊗ PG ′ (σ ′ ), Ξ ⊗ Ξ′ )(c)
+                                                                                                             
+                    and (τ ′ , τ ′′′ ) ∈ BH′ R(−, PH (τ )) ◦ C(PG (σ) ⊗ PG ′ (σ ′ ), Ξ ⊗ Ξ′ )(c)
+                ⇐⇒ ((σ, σ ′ ), (τ, τ ′ )), ((σ ′′ , σ ′′′ ), (τ ′′ , τ ′′′ )) ∈ B(H⊗H′ )◦(G⊗G ′ ) (c).
+                                                                               
+
+
+
+
+Definition 3.11.3. The structural isomorphisms in GameC are given by
+                                                                        −1
+                                        α(X,A),(Y,B),(Z,C) = ⟨αX,Y,Z , αA,B,C ⟩
+                                                         ρ(X,A) = ⟨ρX , ρ−1
+                                                                         A ⟩
+                                                         λ(X,A) = ⟨λX , λ−1
+                                                                         A ⟩
+                                                  s(X,A),(Y,B) = ⟨sX,Y , sB,Y ⟩.
+
+Lemma 3.11.4. The structural isomorphisms are natural in GameC .
+
+
+
+
+    Accepted in Compositionality on 2021-11-27.                                                                         26
+                                                                                           Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+Proof. We show that the associator is natural. Naturality of the other stuctural maps follow by
+similar arguments.      Let Gi : Φi → Ψi for i ∈ {1, 2, 3}. Note that Σα◦(G1 ⊗(G2 ⊗G3 )) = ΣG1 ×
+(ΣG2 × ΣG3 ) × {α}      and Σ((G1 ⊗G2 )⊗G3 )◦α
+                                             = {α} × (ΣG1 × ΣG2 ) × ΣG3 . The equivalence between
+               
+
+α ◦ G1 ⊗ (G2 ⊗   G3 ) and (G1 ⊗ G2 ) ⊗ G3 ◦ α will be witnessed by the isomorphism (σ, (τ, µ)), α 7→
+                                                                                                     
+
+ α, ((σ, τ ), µ) . Let σ ∈ ΣG1 , τ ∈ ΣG2 , µ ∈ ΣG3 , and [p, k] ∈ C (Φ1 ⊗ (Φ2 ⊗ Φ3 )), ((Ψ1 ⊗ Ψ2 ) ⊗ Ψ3 ) .
+                                                                                                         
+
+We note that the local context for G1 given this data is the same for both games. The local context
+of G1 is given by
+
+
+                               Φ2                                 Ψ2
+                                        τ
+                     p                                                                               k
+                                                 Φ3                    Ψ3
+                                                         µ
+
+                                                                       Φ1        Ψ1
+
+
+in α ◦ G1 ⊗ (G2 ⊗ G3 ) and by
+                      
+
+
+
+                                            Φ2                    Ψ2
+                                                     τ
+                               p                                                             k
+                                            Φ3       µ            Ψ3
+
+
+                                                                  Φ1        Ψ1
+
+
+in (G1 ⊗ G2 ) ⊗ G3 ◦ α. This two morphisms are evidently equal. Similar diagrams demonstrate
+                   
+
+that the local contexts for G2 and G3 are the same in both games also.
+Theorem 3.11.5. GameC is symmetric monoidal.
+
+Proof. All that remains to be shown is that the Mac Lane pentagon and triangle axioms are
+satisfied, but this follows easily as the underlying category C is symmetric monoidal.
+
+3.12 Nice categories of open games
+In this section we show how the notion of ‘cohistory’ collapses when the monoidal unit I of the
+underlying monoidal category C is terminal. With cohistories gone, we will see that GameC has a
+very natural game-theoretic interpretation.
+Lemma 3.12.1 ([36]). If the monoidal unit of C is terminal, then LensC (I, (X, S)) ∼
+                                                                                   = C(I, X).
+   The isomorphism i : C(I, X) → LensC (I, (X, S)) is explicitly given by p 7→ [p, !s ]. In a diagram,
+
+
+                                    p            X       7→   p             X         S
+
+
+
+  The following fact appears as [27, exercise 1.13]; thanks to Guillaume Boisseau and Amar
+Hadzihasanovic for the discussion at [39].
+
+Lemma 3.12.2. If F ⊣ U : D → C is any adjunction and G : Dop × C → Set any functor, then
+                                    Z C∈C                         Z D∈D
+                                             G(F (C), C) ∼
+                                                         =                  G(D, U (D)).
+
+
+
+
+   Accepted in Compositionality on 2021-11-27.                                                                           27
+                                                                                     Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+Proof.
+   Z C∈C                        Z Z C∈C,D∈D
+            G(F (C), C) ∼
+                        =                         G(D, C) × D(F (C), D)         (ninja Yoneda lemma)
+                                Z Z D∈D,C∈C
+                            ∼
+                            =                     G(D, C) × C(C, U (D))         (adjunction, Fubini theorem)
+                                Z D∈D
+                            ∼
+                            =            G(D, U (D))                            (ninja Yoneda lemma)
+
+Lemma 3.12.3. If the monoidal unit of C is terminal, then
+
+                                   C((X, S), (Y, R)) ∼
+                                                     = LensC ((I, R), (X, Y )).
+
+Proof. Let F : C → LensC be the embedding F (X) = (X, I). When the monoidal unit of C is
+terminal, this functor has a right adjoint U : LensC → C that is given on objects by U (X, S) = X.
+On morphisms U is defined by the universal maps
+                           Z A∈C
+                                  C(X, A ⊗ Y ) × C(A ⊗ R, S) → C(X, Y )
+
+induced by the dinatural (in A) maps C(X, A ⊗ Y ) × C(A ⊗ R, S) → C(X, Y ), taking (v, u) to
+    v        !A ⊗Y
+X −→ A ⊗ Y −−  −−→ I ⊗ Y ∼= Y . The adjunction F ⊣ U is given by the natural isomorphism
+   Z A∈C                                            Z A∈C
+           C(X, A ⊗ Y ) × C(A ⊗ R, I) ∼
+                                      =                     C(X, A ⊗ Y ) × C(A, I) ∼
+                                                                                   = C(X, I ⊗ Y ) ∼
+                                                                                                  = C(X, Y ).
+
+In the previous lemma we take G : Lensop
+                                      C × C → Set to be
+
+                         G((Φ, Φ′ ), Θ) = C(I, Θ ⊗ X) × LensC ((Φ, Φ′ ) ⊗ (Y, R), I).
+
+Then
+                           Z (Θ,Θ′ )∈LensC                         Z Θ∈C
+                   ∼
+ C((X, S), (Y, R)) =                             G((Θ, Θ ), Θ) ∼
+                                                        ′
+                                                               =                        ∼ LensC ((I, R), (X, Y ))
+                                                                           G((Θ, I), Θ) =
+
+with the three isomorphisms respectively using Lemmas 3.12.1, 3.12.2 and 3.5.1.
+   In the case where the monoidal unit of C is terminal, the type of best response for an open
+game G : (X, S) → (Y, R) is equivalently
+
+                                     BG : LensC ((I, R), (X, Y )) → Rel(ΣG ).
+
+We have seen that expressing contexts as states in the double lens category is a good level of
+abstraction for categories of open games, allowing for elegant diagrammatic proofs. From a game-
+theoretic perspective, however, it will make more sense to express contexts as equivalence classes
+[p, k, Θ] : LensC ((I, R), (X, Y )). This is because a state p : C(I, Θ ⊗ X) is easily seen to correspond
+to a history for an open game and the function k : Θ ⊗ Y → R acts like an outcome function. In
+this way, we can specify a context for an open game in much the same way as we did for concrete
+open games in section 2.
+    The coend diagram
+
+
+                                         p                            k          R
+                                                   X         Y
+
+
+of a context [p, k] ∈ LensC ((I, R), (X, Y )) neatly illustrates that a context is a game state with
+a ‘hole’ in it. If we think of a game G : (X, S) → (Y, R) as a player in a larger game, then p
+corresponds to the things that have happened in the game before G gets to act; k corresponds to
+what will happen in the game after G acts; and the gap in the diagram corresponds to the part of
+
+   Accepted in Compositionality on 2021-11-27.                                                                     28
+                                                                                       Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+the game where G gets to influence the outcome. Alternatively, a context is that which becomes a
+game once G has decided which strategy to play, whereby playing that strategy will fill in the gap
+in the context.
+    Given open games G : (X, S) → (Y, R), H : (Y, R) → (Z, Q), strategies σ ∈ ΣG , τ ∈ ΣH , and a
+context [p, k] ∈ LensC ((I, R), (X, Z)), the local context for G in H ◦ G is given by
+
+
+                    p                                                                  τu              R
+                                 X            Y        τv                  k
+                                                                               Q
+                                                                 Z
+
+and the local context for H is given by
+
+
+                             p
+                                         σv                                    k              Q
+                                     X
+                                                        Y            Z
+
+
+Given another open game K : (X ′ , S ′ ) → (Y ′ , R′ ), a context [p, k] ∈ LensC ((I, R ⊗ R′ ), (X ⊗
+X ′ , Y ⊗ Y ′ )), and a strategy µ ∈ ΣH , the local contexts for G and H in G ⊗ H are given by
+
+
+                        p
+                                  X′
+                                         µv                                                       R
+                                                             Y′
+                                                                                   k
+                                                       X             Y                   R′
+
+
+
+and
+
+
+                              X                                                          R
+                        p                σv
+                                                             Y
+                                                                                   k
+                                                                                                  R′
+                                                      X′          Y′
+
+
+respectively.
+
+
+4 Bayesian open games
+In this section we will zero in on open games with a specific lens structure. As we will show this
+class of open games will address the shortcomings of concrete open games.
+
+4.1 Commutative monads
+Recall that a monad T over a monoidal category C is strong if it comes with a strength natural
+transformation tA,B : A ⊗ T B → T (A ⊗ B) satisfying various coherence conditions.
+   We have the following result guaranteeing the existence of a large class of coend lens categories.
+We refer the reader to [36] for a much more in-depth discussion of the following result, and many
+more examples of when lens categories exist.
+Theorem 4.1.1 ([36]). If T is a strong monad, then LensKl(T ) exists2 .
+  2 In [36], lenses over a Kleisli category are called effectful optics.
+
+
+
+
+   Accepted in Compositionality on 2021-11-27.                                                                       29
+                                                                                           Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+Definition 4.1.2 (Commutative monad). Let T be a strong monad with strength t over a monoidal
+category C. Define the costrength natural transformation t′A,B : T A ⊗ B → T (A ⊗ B) to be the
+composite
+                               sT A,B                      tB,A                      T (sB,A )
+                TA ⊗ B                      B ⊗ TA                  T (B ⊗ A)                        T (A ⊗ B).
+
+T is commutative if the diagram
+
+                                             tT A,B                     T (t′A,B )
+                           TA ⊗ TB                       T (T A ⊗ B)                  T 2 (A ⊗ B)
+                          t′A,T B                                                                µ
+
+                          T (A ⊗ T B)                     T 2 (A ⊗ B)       µ
+                                                                                       T (A ⊗ B)
+                                             T (tA,B )
+
+
+commutes for all objects A and B in C.
+   If a monad is commutative then we get that its Kleisli category is symmetric monoidal for free
+with the monoidal tensor ⊗ (on objects) and unit being the same as in the underlying category C .
+Lemma 4.1.3 ([35]). If T is a commutative monad over a symmetric monoidal category C, then
+Kl(T ) is symmetric monoidal.
+   Commutative monads over Set also come with canonical copy/delete comonoid structures for
+every object. Copying cX : X → T (X × X) is given by
+                                             ∆                      η
+                                    X                  X ×X                T (X × X)
+
+and deleting dX : X → I is given by
+                                                  !                 η
+                                        X                  {⋆}             T ({⋆}).
+
+From this comonoid structure we obtain canonical projections
+                                                      id ⊗ d               ρ
+                                        X ⊗Y                     X ⊗I                 X
+
+and
+                                                      d ⊗ id               λ
+                                        X ⊗Y                     I ⊗Y                 Y.
+
+Crucially, it is not guaranteed that the monoidal tensor of Kl(T ) is cartesian.
+
+4.2 The category of sets and random functions
+We now turn to the category of interest for this section.
+    The finitary distribution monad D : Set → Set maps a set X to the set of finitary probability
+distributions on X (finitary in the sense that only finitely many elements are assigned non-zero
+probability).
+Definition 4.2.1 (Finitary distribution monad). Define D : Set → Set by
+                         n                                  X            o
+                 D(X) = α : X → [0, 1] supp(α) < ℵ0 ,            α(x) = 1
+                                                                               x∈supp(α)
+
+where supp(α) is x ∈ X α(x) ̸= 0 , the support of α. D acts on morphisms by
+                
+
+                                                        X
+                       D(f : X → Y )(α : D(X))(y) =          α(x).
+                                                                          f (x)=y
+
+
+   Accepted in Compositionality on 2021-11-27.                                                                           30
+                                                                                                   Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+The monad structure of D is given as follows. The unit is given by
+
+                                                         ηX (x) = δx
+
+where                                                      (
+                                                            1 if x = x′
+                                                 δx (x ) =
+                                                     ′
+                                                            0 otherwise
+and the extension f † : D(X) → D(Y ) of f : X → D(Y ) is
+                                              X
+                                  f † (α) =        f (x)(y).
+                                                             x∈supp(α)
+
+Lemma 4.2.2. D is a commutative monad.
+Corollary 4.2.3. Kl(D) is symmetric monoidal with canonical copy/delete comonoids and pro-
+jection maps.
+   The monoidal tensor in Kl(D), which represents joint distributions, is not cartesian.
+Definition 4.2.4 (Copy/delete comonoid for Kl(D)). The copying map in Kl(D) is given explic-
+itly by cX : X → D(X × X) where
+                                              (
+                                               1 if x = x1 = x2
+                             c(x)(x1 , x2 ) =
+                                               0 otherwise.
+
+The monoidal unit of Kl(D) is terminal, and hence the deleting map dX : X → D({⋆}) must be
+given by d(x)(⋆) = 1. As this map is unique, we refer to it as !.
+   Whenever we are working in Kl(D) we denote cX and !X by
+                                                             X
+                                          X                         and        X
+                                                             X
+
+respectively.
+   The canonical projections in Kl(D) correspond to taking marginals.
+Definition 4.2.5 (Marginals). Let
+                                P p : D(X × Y ) be a joint distribution. The left marginal
+pX : D(X) is given by pX (x) = y∈supp(p(x,−)) p(x, y). The right marginal pY : D(Y ) is given
+similarly by pY (y) = x∈supp(p(−,y)) p(x, y). As diagrams, these are given by
+                     P
+
+
+                                                         X                     X
+                                           p                   and         p
+                                                 Y                                     Y
+
+
+respectively.
+   An important operation on probability distributions is Bayesian updating where an agent has
+some prior distribution (initial belief), makes an observation, and then updates their prior to a
+new, posterior distribution.
+Definition 4.2.6 (Update operator). Let X and Θ be sets. We think of Θ as a type which an
+agent has a probabilistic belief about, and X as a type that will be observed by an agent. Define
+the update operator UΘ : D(Θ × X) → (X → D(Θ)) by
+
+                                                                       p(ϑ, x)
+                                      UΘ (p)(x)(ϑ) = P                                         .
+                                                                 (ϑ′ ,x)∈supp(p)   p(ϑ′ , x)
+
+We also write p(ϑ|x) for UΘ (p)(x)(ϑ).
+
+   Accepted in Compositionality on 2021-11-27.                                                                                   31
+                                                                                      Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+Lemma 4.2.7. The update operator is natural in Θ. That is, the following diagram commutes for
+any f : Θ1 → Θ2 :
+                                                        UΘ1
+                                      D(Θ1 × X)                      X → D(Θ1 )
+
+
+                                  D(f × X)                                   D(f ) ◦ −
+
+
+
+                                      D(Θ2 × X)                      X → D(Θ2 ).
+                                                        UΘ2
+
+
+Proof. Let p ∈ D(Θ1 × X), x ∈ X, ϑ1 ∈ Θ1 , and ϑ2 ∈ Θ2 . The top of the square is given by
+                                                X
+                       D(f ) ◦ UΘ1 (p)(x)(ϑ2 ) =         UΘ1 (p)(x)(ϑ1 )
+                                                          f (ϑ1 )=ϑ2
+
+                                                              P
+                                                                   f (ϑ1 )=ϑ2 p(ϑ1 , x)
+                                                        =P                            ′   .                        (⋆)
+                                                              ϑ′1 ∈supp(p(−,x)) p(ϑ1 , x)
+
+The bottom of the square is given by
+                                                      D(f × X)(p)(ϑ2 , x)
+                           UΘ2 D(f × X)(p) (x)(ϑ2 ) = P                  ′
+                                                       ϑ′ D(f × X)(p)(ϑ2 , x)
+                                                                 2
+
+                                                                P
+                                                                    f (ϑ1 )=ϑ2 p(ϑ1 , x)
+                                                          =P        P                   ′      .                  (⋆⋆)
+                                                                ϑ′2     f (ϑ′1 )=ϑ′2 p(ϑ1 , x)
+
+The result follows, noting that the denominators of (⋆) and (⋆⋆) are equal.
+
+
+4.3 Bayesian open games
+Definition 4.3.1 (Bayesian open game). A Bayesian open game is a morphism in GameKl(D) .
+Explicitly, a Bayesian open game G : (X, S) → (Y, R) is given by
+  1. A set of strategies Σ,
+  2. A play function
+                                         Z Θ:Set
+                             P:Σ→                  X → D(Θ × Y ) × (Θ × R) → D(S) ,
+                                                                                
+
+
+  3. A best-response function
+
+                                         B : LensKl(D) ((I, R), (X, Y )) → Rel(Σ)
+
+We refer to atoms in the category of Bayesian open games as Bayesian atoms.
+   We unpack the definition of the play function to emphasise that, when we wish to actually
+specify a Bayesian open game, it is usually easier to specify P(σ) as the equivalence class of a pair
+of morphisms.
+
+
+
+
+   Accepted in Compositionality on 2021-11-27.                                                                      32
+                                                                            Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+4.4 Bayesian agents
+We will now define Bayesian agents which, as with concrete open games, have constant best-
+response functions. Bayesian agents capture the notion of rational agents that
+  1. Have a correct prior about the various types in a game;
+  2. Update this prior based on an observation to a new posterior;
+  3. Attempt to maximise their expected utility given their posterior.
+Definition 4.4.1 (Bayesian agent). Let X, Y be sets. The Bayesian agent A(X,Y ) : (X, I) →
+(Y, R) is the Bayesian atom given by
+  1. ΣA = X → D(Y ),
+  2.
+
+                                  Pσ = [σ, !R ] =    X    σ         Y       R
+
+
+
+  3. The selection function ε : LensKl(D) ((I, R), (X, Y )) → P(X → D(Y )) is given by
+                              
+                 εA ([p, k]) = σ : X → D(Y ) ∀x ∈ supp(p2 ),
+                                                               h                i
+                                               σ(x) ∈ arg max E k (UΘ (p)(x), α)
+                                                                  †
+                                                                                     .
+                                                              α∈D(Y )
+
+
+    It is worth explaining this last formula in words. A(X,Y ) represents an agent choosing an
+element of Y after observing an element of X. The context of the decision consists of a set Θ
+of unobservable states, a prior joint distribution p : D(Θ × X) on unobservable and observable
+states, and a utility function k : Θ × Y → D(R) that depends on the unobservable state and
+the agent’s choice. The optimality condition says that for all observations x that the agent could
+make with nonzero probability, the strategy σ(x) maximises the expected value of k(ϑ′ , −), where
+ϑ′ = UΘ (p)(x) is the posterior distribution on the unobservable state given the observation of x.
+Lemma 4.4.2. The selection function of a Bayesian agent is well-defined. That is, it is indepen-
+dent of the choice of representative of the coend equivalence relation.
+Proof. This result follows from the fact that Bayesian updating is natural in the bound type of a
+coend lens (4.2.7).
+   In the next definition we formalise the idea that a player in a game might be assigned a (game-
+theoretic) type on which their utility function depends. We can do this simply using a Bayesian
+agent and a copying computation.
+Definition 4.4.3. Let A(X,Y ) : (X, I) → (Y, R) be a Bayesian agent. Define A∆    (X,Y ) : (X, I) →
+(X × Y, R) to be the Bayesian open game (id(X,1) ⊗ A(X,Y ) ) ◦ ∆X , or as a string diagram,
+
+                                                                    X
+                                                 X                  Y
+                                                         A
+                                                                    R
+
+
+              (X,Y ) is explicitly given, up to isomorphism, by
+Lemma 4.4.4. A∆
+
+  1. ΣA∆           = X → D(Y );
+          (X,Y )
+
+
+  2. PA∆           : ΣA∆       → LensKl(D) (X, I), (X × Y, R) is given by
+                                                             
+          (X,Y )      (X,Y )
+
+
+
+
+   Accepted in Compositionality on 2021-11-27.                                                            33
+                                                                                                     Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+                                                                                         X
+                           PA∆           (σ)   =       X                                               R                    ;
+                                (X,Y )
+                                                                              σ          Y
+
+
+
+   3. Let [p, k] ∈ LensKl(D) (I, R), (X, X × Y ) . Best response is given, up to isomorphism, by
+                                                   
+
+      BA∆ ([p, k]) = BA(X,Y ) ([p, k]′ ) where [p, k]′ is the context given by
+          (X,Y )
+
+
+
+
+                                          p                                              k                 R
+
+
+                                                           X         Y
+
+
+
+Proof. This result follows from definition chasing, noting that A(X,Y ) is the only component with
+non-trivial strategy profile set.
+                                                                               n    Nn
+Lemma 4.4.5. Let A(Xi ,Yi ) be Bayesian agents for i ∈ {1, · · · , n}. Then A∆ = i=1 A∆   (Xi ,Yi ) is
+explicitly given as follows.
+                Qn
+   1. ΣA∆n = i=1 (Xi → D(Yi ));
+
+   2. The play function
+                                                                      n
+                                                                     Y                  n
+                                                                                         Y                                  
+                           PA∆n : ΣA∆n → LensKl(D)                                             (Xi × Yi ), R        n
+                                                                                                                       
+                                                                              Xi , I ,
+                                                                     i=1                 i=1
+
+      is given by
+
+                                                                                                X1
+                                                               X1                                              R
+                                                                                   σ1           Y1
+                                                                         ..                     ..             ..
+                           PAn◦ (σ1 , · · · , σn )     =                  .                      .              .
+                                                                                                Xn
+                                                               Xn                                              R
+                                                                                  σn            Yn
+
+                                                          
+   3. Let [p, k] ∈ LensKl(D) (I, Rn ), ( i Xi , i Xi × Yi ) . Best response
+                                        Q      Q
+
+
+                                                      BA∆n ([p, k])(σ1 , · · · , σn )
+
+      is given, up to isomorphism, by
+                     n 
+                     Y
+                             σi : Xi → D(Yi ) ∀xi ∈ supp(pσ−i ),
+                     i=1
+                                                                                                       
+                                                                                                      
+                                                     σi (xi ) ∈ arg max E k σ−i UΘ−i (pσ−i )(xi ), αi
+                                                               αi ∈D(Yi )
+
+
+where [pσ−i , k σ−i ] is the context given by
+
+
+
+
+   Accepted in Compositionality on 2021-11-27.                                                                                     34
+                                                                                                    Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+                        X1                                                                              X1                    R
+                                                                                               σ1
+                         ..                                                                                 Y1                ..
+                          .                                                                    ..                              .
+                                                                                                .
+                        Xi                                                                              Xi
+              p                                                                                                       k            R
+
+                         ..                                                                    ..           Yi                ..
+                          .                                                                     .                              .
+
+                         Xn                                                                             Xn                    R
+                                                                                               σn
+                                                                                                        Yn
+
+
+
+                                                      Xi               Yi
+
+
+
+Proof. (1) and (2) follow easily from definitions. As for (3), we need to prove that the local context
+for each A(Xi ,Yi ) is [pσ−i , k σ−i ]. Note that the previous Lemma 4.4.4 serves as the base case (n = 1)
+for an induction argument. The result then follows easily by considering that
+
+          BA∆n ([p, k])(σ1 , · · · , σn ) = BA∆                   ([p, k]1 )(σ1 ) × BNn        A∆       ([p, k]−1 )(σ−1 )
+                                                      (X1 ,Y1 )                          i=2    (X ,Y )
+                                                                                                    i   i
+
+
+and applying the inductive hypothesis, where [p, k]−1 is the context
+
+
+                                  X1                                                       X1                    R
+                                                                                    σ1
+                                                                                           Y1
+
+
+                                                              X2
+                       p                         X2                                                         k             R
+                                                                  Y2
+                                       ..                                      ..                                ..
+                                        .                                       .                                 .
+
+                                                              Xn
+                                                 Xn                                                                       R
+                                                              Yn
+
+
+
+
+4.5 Decisions under risk
+In this section we introduce another type of situation involving a Bayesian agent that can be
+modelled using Bayesian open games.
+    A decision problem under risk is a decision problem for which one can sensibly assign proba-
+bilities to possible outcomes. A good example is roulette. When making a bet in roulette, you can
+calculate the likelihood of success and also your expected return on any bet. Decision problems
+under risk are generally represented by Bayesian open games constructed from computations and
+precisely one Bayesian agent. A simple subclass of decision problems under risk are represented
+by Bayesian open games of the form
+
+
+
+
+   Accepted in Compositionality on 2021-11-27.                                                                                         35
+                                                                                             Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+                                                                 Z
+
+                                                 p                         Y       u
+                                                                 A
+                                                       X
+                                                                           R
+
+
+in which an agent A attempts to maximise their outcome which is, in part, dependent on the type
+Z which A does not observe.
+    We now give a fully worked out example of a Bayesian open game in which an agent has a
+prior, makes an observation, updates their prior as a consequence of that observation, and then
+makes a prediction based on their posterior.
+
+Example 4.5.1 (Biased coin). Suppose we give an agent A a biased coin which lands on one side
+75% of the time and the other side 25% of the time. It is not known which side the coin is biased
+towards, but it is known that it is equally likely to be biased towards heads as towards tails. A flips
+the coin whilst another identical coin (i.e. another coin biased the same way) is flipped in secret.
+A observes her coin flip and is then asked to predict which side up the secret coin landed. If she
+is correct she receives an outcome of 1 with probability 1. If she is wrong she receives an outcome
+of 0 with probability 1. The optimal strategy for A is to guess that the coin flipped in secret will
+land the same way up as the coin she flipped. If, for instance, A’s coin comes up heads, then there
+is a 75% chance that both coins are biased towards heads. Consequently the coin flipped in secret
+is more likely to show heads. A symmetric argument applies if A’s coin shows tails.
+    We can represent this game using the open game
+
+                                                               {H, T }
+
+                                                 p                       {H, T }
+                                                                                   u
+                                                                 A
+                                                     {H, T }
+                                                                           R
+
+where
+                                      1 9              1         3         3
+                                                                               
+                p : D({H, T }2 ) =          (T, T ) + (H, H) + (T, H) + (H, T )
+                                      2 16             16       16        16
+                                         1 9               1       3          3
+                                                                                  
+                                      +        (H, H) + (T, T ) + (H, T ) + (T, H)
+                                         2 16             16       16        16
+                                       5             5        3        3
+                                    =    (H, H) + (T, T ) + (T, H) + (H, T )
+                                      16            16       16       16
+and
+
+                                                      u : {H, T }2 → DR
+                                                           (
+                                                             δ1 if x = y
+                                                 (x, y) 7→
+                                                             δ0 otherwise.
+
+Explicitly, the game is given by G := u ◦ (A ⊗ id{H,T } ) ◦ p. Note that ΣG ∼     = ΣA = {H, T } →
+D({H, T }). Also note that there is precisely one context for G since its type is I → I (that is,
+(1, 1) → (1, 1)) and, moreover, as the best-response functions for u, id{H,T } , and p are trivial, the
+best-response function for G is isomorphic to the constant relation
+                    
+       BA ([p, k]) = σ : {H, T } → D({H, T }) ∀x ∈ {H, T },
+                                                                                             
+                                               σ(x) ∈ arg   max      E[k(U{H,T } (p)(x), α)] .
+                                                                               α∈D({H,T })
+
+
+
+
+   Accepted in Compositionality on 2021-11-27.                                                                             36
+                                                                               Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+   The posterior U{H,T } (p)(H)(H) is given by
+
+                                                                p(H, H)
+                                  U{H,T } (p)(H)(H) = P
+                                                           (ϑ,H)∈supp(p) p(ϑ, H)
+                                                       5
+                                                   =
+                                                       8
+and hence U{H,T } (p)(H)(T ) = 83 . Similarly, U{H,T } (p)(T ) = 85 T + 38 H. It follows that
+                                                                
+                           arg maxα E[k † (U{H,T } (p)(H), α)] = {δH }
+                                                                
+                            arg maxα E[k † (U{H,T } (p)(T ), α)] = {δT }.
+
+Hence BA ([p, k]) is a singleton set containing the strategy σ where σ(H) = δH and σ(T ) = δT , as
+expected.
+
+4.6 Relating Bayesian Open Games to Bayesian Games
+The example given in the previous section illustrates two important improvements over the version
+of open games as introduced in [13]. There, everything is deterministic – the environment, the
+players moves etc. Here, the environment as well as the players’ moves can be probabilistic.
+    Still, we only consider a single player. We could consider examples with more players and with
+probabilistic behaviour induced by nature or games where probabilistic behaviour is key, such as
+matching pennies. In [15] a definition of open games is given that can handle mixed strategies.
+    Instead, we want to focus on another aspect of Bayesian open games, which we believe is much
+less obvious, particularly to readers with no game theory background: From a game-theoretic
+perspective, we introduced a new solution concept. For random environments and probabilistic
+moves, there is no real difference to standard Nash equilibria. However, there are important classes
+of games for which the new equilibrium notion brings material change.
+    Reconsider Example 4.5.1. Here, the agent has some prior information about the nature of the
+coin. Given observations from the coin and the prior information, the agent updates beliefs about
+the true nature of the coin and maximises accordingly. Thus, we maintain not only an assumption
+that the agent maximises but also how she deals with information.
+    The example is very simple. After all, there is only one agent. Our interest lies of course in
+the interaction of such Bayesian agents. While the strategic reasoning is more complicated in such
+situations the overall structure is the same as in Example 4.5.1: Each agent has access to some
+prior information, some (partial) information is revealed, and the agent makes a decision.
+    In the game-theory literature such a game is called a ‘Bayesian game’ or also ‘game in Bayesian
+form’ and the solution concept we sketched is called ‘Bayesian Nash Equilibrium’. Next, we intro-
+duce the standard economic notion of such games, then provide a simple example, an auction, and
+followed by a general construction that allows us to translate an arbitrary Bayesian game into a
+Bayesian open game.
+
+4.6.1   Games in Bayesian form
+Denote with ΓB = N, (Ai )Ni=1 , (Θi )i=1 , π, (ui )i=1 a Bayesian game. Before we explain the com-
+                                     N             N
+                                                      
+
+ponents we add some useful notation: we write Θ−i = j∈N,j̸=i Θj for the possible combinations
+                                                          Q
+of Θj other than i.
+
+   • N denotes the number of players.
+   • Ai defines a set of actions available to the players.3
+   • Θi defines the a set of (player) types each player i can have.
+
+  3 Note, we intenionally refer to this as actions and not as strategies. This will be clear once we compare the
+
+Bayesian game to a normal-form game.
+
+
+
+   Accepted in Compositionality on 2021-11-27.                                                               37
+                                                                                  Volume 5, Issue 9. ISSN 2631-4444
+
+
+              Q            
+                   N
+   • π:D           i=1 Θi       is a joint prior distribution on the types that is common knowledge.
+         QN       QN
+   • ui : i=1 Θi × i=1 Ai → R defines a utility for any profile of player types and any profile
+     of actions.
+
+    This definition is rather cryptic at first. So let us try to dissect its components. Then we will
+compare it to the definition of a normal form which we introduced in 2.12.4. This hopefully further
+helps to make sense of it.
+    Let us begin with Θi , the player type, which is probably most obscure and most central at the
+same time. One way to think of types is imagining player i having different realisations or versions,
+one of which ends up playing the game. Each realisation, or type, summarises information relevant
+for the game. Often, this information will concern the payoffs.4 For example, player i may consider
+to bid in an auction. His type determines his evaluation for the good, that is, how much he values
+owning the good. It is easily conceivable that i may have different evaluations before the auction
+really takes place.
+    This example also illustrates another aspect of this structure. While player i may have different
+types, before he has to choose his action, he typically will know his type. So, once the bidding
+starts, he knows how much he values the good. But crucially, he does not know the types of the
+other players, only a probability distribution – conditional on his own observed type. The last
+aspect also already alludes to the role of Bayesian updating: Given his own observed type, a player
+may refine his belief about the other players’ types.
+    The payoff function ui , as with a normal form, maps choices of players into a payoff. Here,
+however, player i’s type may affect the payoff. Think again about an auction, naturally the bidding
+behaviour will affect i’s payoff. But so does his type, the evaluation for the good. Note that the
+definition above includes the possibility that the whole realisation of types affects i’s payoff. In
+the case of bidding for a private good, only i’s type will typically be relevant.
+    Lastly, Ai represents the set of actions player i can take in the game. Note, that we intentionally
+refer to this as actions and not as strategies. To understand this it is best to compare the above
+definition to a normal-form game.
+    Recall its notation: Γ = N, (Si )N  i=1 , (ui )i=1 . Here, Si refers to a strategy which is a complete
+                                                   N
+                                                      
+
+contingent plan for all possible occasions where i can make a move. Note that Si can be a shorthand
+for some complicated dynamic structure where i moves several times.
+    Analogously, Ai in the Bayesian game refers to a complete contingent plan once the game
+‘begins’, i.e. after i has learned his type. This could involve a complicated dynamic structure.
+Crucially, however, this is not the same as a strategy for the Bayesian game. Why? A strategy of
+the Bayesian game must include a contingent plan also for each realisation of i’s type!
+    Formally, a pure strategy for a game in Bayesian form is a mapping si : Θi → Ai for all Θi . A
+behavioural strategy σi for player i is a mapping σi : Θi → D(Ai ), i.e for each type of player i a
+behavioural strategy assigns a probability distribution over the available actions.5
+    For each player we can now define the (conditional) expected utility for player i given be-
+havioural strategy profile σ with
+                                                X
+                            Eui (σ | ti ) ≡           pπ (t−i | ti )ui ((ti , t−i ), σ)
+                                                  t−i ∈Θ−i
+
+    Note, that pπ (·|·) updates the prior information π for player i given Bayes’ rule. Equipped with
+all that we can finally define a Bayesian Nash equilibrium.
+
+  4 The concept of a type is much more expressive. It can express all sorts of uncertainty with respect to a game.
+
+We will not discuss this here as it would lead us too far astray. Compare, for instance, Chapters 9-11 in [29] for
+more background on the notion of type.
+   5 In the context of the a game in Bayesian form, similar to a game in normal form, it is more common to use mixed
+
+strategies of type D(Si ) = D(Θi → Ai ), i.e. distributions on pure strategies. However, as any game in Bayesian
+form can be equivalently modelled as a game in extensive form, and both, behavioural and mixed strategies lead
+to the same equilibria (under mild assumptions automatically fulfilled in our setup), the difference is immaterial.
+The reason for our choice of using behavioural strategies is that open games share properties from both standard
+formulations and it is easier to connect behavioural strategies to our formulation. More on that in Section 4.7.
+
+
+
+
+    Accepted in Compositionality on 2021-11-27.                                                                  38
+                                                                            Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+Definition 4.6.2 (Bayesian equilibrium). A (behavioural) strategy profile σ ∗ = (σ1∗ , σ2∗ , ..., σN
+                                                                                                   ∗
+                                                                                                     ) is
+a Bayesian Nash equilibrium if for each player i ∈ N , each type ϑi ∈ Θi , and each possible action
+ai ∈ Ai it holds that:
+                                 Eui (σ ∗ | ϑi ) ≥ Eui (ai , σ−i | ϑi )
+
+4.6.3   An auction example
+Suppose two agents are bidding for a good that is being sold in a first-price sealed-bid auction.
+Here ‘first-price’ means that whichever agent bids higher receives the good and pays her/his own
+bid, with the other agent neither gaining nor losing anything. ‘Sealed-bid’ means neither player
+can observe the other’s bid, meaning the bidding is effectively simultaneous.
+    Both players have a private valuation for the good, which are drawn from a joint random
+distribution π : D(Θ × Θ), where Θ ⊆ [0, ∞) is the range of possible values. As usual, we
+assume this prior is common knowledge. One consequence thereof is that a player knowing their
+own valuation can update their beliefs about the other’s valuation. Obviously, whether there is
+something to learn from one’s own valuation about others’ valuations depends on the type of
+good being auctioned. For instance, if we are bidding on a construction contract, then the value
+that contract has for me will be correlated with your evaluation. If, however, we are bidding
+on a painting by some obscure painter, it is less clear that I can learn something about others’
+valuations.
+    The winning bidder’s utility is given by their valuation of the good minus the bid that they
+must pay. (This can be negative if the bid is higher than the valuation.) We must also choose a
+way to resolve a tie if the bids are equal: we assume that the winner is determined by a fair coin
+flip. Thus the expected utilities, for private valuations ϑi ∈ Θ and bids bi ∈ Θ, are given by
+                                                  
+                                                  (ϑ1 − b1 , 0)
+                                                                 if b1 > b2
+                          U (ϑ1 , b1 , ϑ2 , b2 ) = (0, ϑ2 − b2 )  if b1 < b2
+                                                    ( 2 , 2 ) if b1 = b2 .
+                                                   ϑ1 −b1 ϑ2 −b2
+                                                  
+
+
+   In order to formalise this situation as a Bayesian game as defined in the previous section, we
+take N = 2, A1 = A2 = Θ, and π.
+   The Bayesian open game describing this situation is given by the string diagram
+
+                                                               Θ
+
+
+                                      Θ                        Θ
+                                                     A(Θ,Θ)
+                                                 Θ             R
+                                π
+                                                                        U
+                                                               Θ
+
+                                      Θ                        Θ
+                                                     A(Θ,Θ)
+                                                 Θ             R
+
+
+   As a morphism G : I → I in the category of Bayesian open games, this has ΣG = (Θ →
+D(Θ)) × (Θ → D(Θ)), the set of behavioural strategy profiles for the auction, and BG (∗) the
+best-response relation for behavioural strategy profiles.
+
+4.6.4   General construction for games in Bayesian form
+Generalising the previous example, we can give a construction for converting any game in Bayesian
+form into a Bayesian open game of type I → I that has the same best-response relation.
+
+
+
+   Accepted in Compositionality on 2021-11-27.                                                            39
+                                                                                                  Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+   Consider a general Bayesian game (N, (Ai ), (Θi ), π, U ). For each player i, recall the copying
+agent A∆
+       (Θi ,Ai ) : (Θi , 1) → (Θi × Ai , R). Their tensor product has type
+
+                            N                N
+                                                     !      N
+                                                                              !
+                            O               Y              Y
+                               A(Θi ,Ai ) :
+                                ∆
+                                               Θi , 1 →       (Θi × Ai ), R N
+                                                                                .
+                                   i=1                 i=1                  i=1
+
+    The full game is given by
+                                         N
+                                         O
+                                     !         A∆
+                                                (Θi ,Ai )                               !
+                          N                                   N
+            ⟨π,1⟩         Y              i=1
+                                                              Y                              ⟨U,idRN ⟩         εR N
+         I −−−→                 Θi , 1   −−−−−−−−−→                 (Θi × Ai ), R   N
+                                                                                            −−−−−−→ (RN , RN ) −− → I.
+                          i=1                                 i=1
+
+Proposition 4.6.5. Let G = (N, (Ai ), (Ti ), π, U ) be a game Bayesian form, and let
+                                           N
+                                                    !     N
+                                                                          !!
+                                          Y              Y
+                    c = (1, π, U ) : C        Ti , 1 ,      (Ti × Ai ), R    .
+                                                             i=1             i=1
+
+Then BNN           A∆
+                               (c) is the best-response relation for behavioural strategy profiles of G.
+             i=1    (T ,A )
+                      i    i
+
+   The main part of the proof of this result is contained in Lemma 4.4.5, which characterises the
+tensor product of copying agents.
+
+4.7 Extensive form
+The normal-form representation as well as the representation of Bayesian Games really are strategy-
+centric. They both condense the strategic situation in a way that makes them most amenable to
+analysis from the point of view of a specific equilibrium concept such as Nash/Bayesian Nash
+equilibrium.
+    Open games have baked in a notion of equilibrium and thus certainly share this focus. And
+for that reason, comparisons to classical game theory in this paper have been limited to these
+representations.
+    In classical game theory, an alternative to the normal-form representation of a game is its
+extensive form. This representation can also be used for games in Bayesian form. We will not
+give a definition here, as standard definitions are cumbersome and will not add much value. What
+is important though is what the extensive form represents: it provides a detailed account about
+which player knows what at which point and what actions he has then available. One can think of
+the extensive form as a detailed account of how a game and the players’ information unfolds. Thus,
+it provides much more information than its corresponding normal form, to which each extensive
+form can be reduced.
+    For instance, one reason to consider the extensive form representation of a game is that it
+explicitly captures temporal information, say, if one player moves before the other player.6
+    Open games as a representation of a strategic situation have much in common with its extensive
+form representation. After all they provide an expressive language to represent a detailed account
+of a strategic interaction. In the following, we will make the relationship between Bayesian open
+games as presented in this paper and the extensive form representation of Bayesian games more
+concrete.
+    We begin with a concrete example that illustrates how open games deal with sequential moves
+of players in the presence of asymmetric information.
+
+4.7.1   The market for lemons
+The following is a simple version of a classic model going back to [1].7 There are two players, a
+seller and a buyer. The seller wants to sell a used car to the buyer; he offers the buyer a price
+   6 One other important reason to use the extensive form is to consider different, typically refined versions of Nash
+
+equilibria which take into account the dynamic dimension of games. But this goes beyond our current paper.
+  7 Note that the original model is not game-theoretic in nature. See [28] Chapter 13 for a discussion and a richer
+
+game-theoretic model than presented here.
+
+
+    Accepted in Compositionality on 2021-11-27.                                                                                 40
+                                                                                   Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+P ; the buyer can either accept or reject the offer. Both players have some evaluation for the car
+which will affect their profit/utility.
+    Their evaluation depends on the quality Q of the car. It is drawn from some fixed distribution π.
+Critically, the seller observes the quality before offering a price to the buyer. The buyer, however,
+does not directly observe the quality.
+    The open game below represents this situation.
+
+                                                                                      Q
+
+                              Q                                                       P
+                      π                                    P                          B
+                                                                                              U
+                                                  S                            B      R
+                                             Q                           P
+
+                                                                       R
+
+    As Akerlof [1] observed, due to the asymmetry in information, a transaction may not occur even
+though such a transaction would be efficient (and would take place if both players were perfectly
+informed). The reason is simple. For each price the buyer has to take into consideration what
+quality of car the seller would be willing to offer. As each seller will only offer prices equal to or
+above his evaluation for the car, a low price indicates low quality. However, a high price does not
+necessarily reflect high quality; it could just mean that the seller is charging a high price for an
+actual ‘lemon’. Thus, the buyer, given his prior will update his estimate of the quality for each
+price offered. And depending on the parameters, transactions may only occur for low quality cars
+but not for high quality cars.
+    Note that, similar to our remark in 2.12.3, even though the interaction (and the representation
+as an open game) is sequential, the equilibrium notion is static and does not consider the timing
+of moves.8
+
+4.7.2   A general construction
+To translate an arbitrary extensive form game to a string diagram requires an additional external
+choice operator like the one developed in [22], which is currently not well understood in the Bayesian
+setting. We will instead give a much simpler translation for a certain subclass of extensive form
+games, roughly those whose trees are perfectly balanced. Specifically we require:
+   • All paths from the root to a leaf have the same length
+   • All information sets intersect only one level of the tree (where the ith level is the set of all
+     nodes that are i steps away from the root)
+   • All information sets on the same level are owned by the same player (the root node is always
+     owned by Nature)
+   • All nodes on the same level have the same number of outgoing edges, labelled by the same
+     edge labels
+Any extensive form game can be converted into one satisfying these conditions that is equivalent
+for most game-theoretic purposes, by adding (potentially many) dummy nodes and moves leading
+to redundant subtrees with only strictly dominated payoffs. Obviously this is unsatisfactory, and
+the construction in this section should be thought of as an argument that Bayesian open games
+have the same ‘expressive power’ as extensive form, and not as a practical translation.
+
+   8 See remark in Section 4.7. There are refinements of Bayesian Nash Equilibria which take the dynamics into
+
+account. In the context of the lemon market this is relevant if one considers extensions of that model. One prominent
+example is the role of costly signals that the informed side may use in order to reduce the uncertainty of the buyer.
+Cf. [28] Chapter 13.C.
+
+
+
+
+    Accepted in Compositionality on 2021-11-27.                                                                   41
+                                                                                    Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+    Consider an extensive form game G satisfying these conditions, with N > 0 players, and L > 0
+‘ordinary’ levels with choice nodes, together with level 0 (the root) and level L + 1 (the leaves).
+    At an ordinary level 1 ≤ i ≤ L, suppose the set of nodes is Xi , the information equivalence
+relation is ∼i (and so the set of information sets at level i is Xi /∼i ), all information sets are owned
+by player 1 ≤ Pi ≤ N , and the set of outgoing edge labels for all nodes is Ai . We summarise the
+connectivity between level i and level i + 1 as a transition function qi : Xi × Ai → Xi+1 .
+    The data at the root node is a probability distribution π : D(X1 ) on the Nature moves. Finally,
+XL+1 is the set of leaf nodes, and the assignment of payoffs at leaf nodes is summarised as a utility
+function U : XL+1 → RN .
+    We translate each level of the tree into a Bayesian open game, which we then sequentially
+compose together. An ordinary level 1 ≤ i ≤ L will be translated to an open game of type
+Gi : (Xi , RN ) → (Xi+1 , RN ), level 0 to an open game G0 : (1, 1) → (X1 , RN ) and level L + 1
+to an open game GL+1 : (XL+1 , RN ) → (1, 1). Thus, the final result will be an open game
+G = GL+1 ◦ · · · ◦ G0 : (1, 1) → (1, 1).
+    We define G0 to be the computation ⟨π, !⟩, where π : 1 → D(X1 ) is the prior considered as a
+state in the Kleisli category, and ! : RN → D(1) = 1 is the discard map. That is to say, it is the
+atomic open game with ΣG0 = {[π, !]} and BG0 (c) = {[π, !]} for all contexts c ∈ C (I, I), (X1 , RN ) .
+                                                                                                        
+
+G0 is simply depicted by the string diagram
+
+                                                       π            X1
+
+                                                                    RN
+and the optic [π, !] by the coend diagram
+
+                                                 π         X1       RN
+
+    Similarly, we define GL+1 to be the atomic  open game with ΣGL+1 = {U } and BGL+1 (c) = {U }
+for all contexts c ∈ C (XL+1 , RN ), (I, I) , where U : (XL+1 , RN ) → (I, I) is the optic given by
+                                           
+
+(RN , U, id), with the coend diagram
+
+                                       XL+1                     U             RN
+
+
+
+                                                        1            1
+
+GL+1 is itself denoted by the string diagram
+
+                                                      XL+1
+                                                                    U
+                                                       RN
+   The open game Gi for 1 ≤ i ≤ L is defined by the string diagram
+
+                                                      Xi
+
+
+           Xi                                Xi /∼i                      Ai   qi                   Xi+1
+                                    π ∼i                   AXi /∼i ,Ai
+
+
+                                                                         R    πPi
+           RN                                                                                       RN
+
+Unwinding this definition, we get that
+
+
+   Accepted in Compositionality on 2021-11-27.                                                                    42
+                                                                                       Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+  • ΣG i ∼
+         = ΣA(Xi /∼i ,Ai ) = Xi /∼i → D(Ai )
+  • For σi : Xi /∼i → D(Ai ), PGi (σi ) is the optic (Xi , Rn ) → (Xi+1 , Rn ) given by the coend
+    diagram
+
+
+
+                                                                    Xi
+
+          Xi                                                                  qi         Xi+1      RN           RN
+                                                                     Ai
+                                                 Xi /∼i
+                                      π∼i                     σi
+
+
+  • For a context c = (Θ, p, k) : (I, RN ) → (Xi , Xi+1 ), BGi (c) is the constant relation
+           
+             σi : Xi /∼i → D(Ai ) σi ([xi ]∼i ) ∈ arg max E[πPi (k(p1 , q(p2 , ai ))) | p2 = xi ]
+                                                                     ai ∈Ai
+                                                                       
+                                                 for all xi ∈ supp(p2 ) ,
+
+      where E[πPi (k(p1 , q(p2 , ai ))) | p2 = xi ] is the conditional expectation of
+                                      p                Θ⊗q(−,ai )                  k    πP
+                                  I −→ Θ ⊗ Xi −−−−−−−→ Θ ⊗ Xi+1 −→ RN −−→
+                                                                        i
+                                                                          R
+
+      given that the right marginal of p is xi .
+    In order to characterise G = GL+1 ◦ · · · ◦ G0 inductively we have a choice to either work forwards
+from G0 or backwards from GL+1 , corresponding roughly to forward induction and backward in-
+duction in game theory. We choose the former. The inductive hypothesis is encapsulated in the
+following lemma.
+Lemma 4.7.3. For 1 ≤ i ≤ L, consider the extensive form game Gi without specified payoffs
+given by truncating the original extensive form game G to the first i + 1 levels (i proper levels
+plus the root node). Note that the set of leaves of Gi is (labelled by) Xi+1 . Then the open game
+Gi ◦ · · · ◦ G0 : (1, 1) → (Xi+1 , RN ) is given by the following:
+                                                                                         Qi
+   • ΣGi ◦···◦G0 is the set of behavioural strategy profiles of Gi , namely ΣGi ◦···◦G0 = j=1 (Xj /∼j →
+        D(Aj ))
+  • (Gi ◦ · · · ◦ G0 )(σ) is the optic (1, a, !), where a : 1 → D(Xi+1 ) is the probability distribution
+    on the leaf nodes of Gi resulting from playing the behavioural strategy profile σ
+  • Every context of Gi ◦ · · · ◦ G0 has the form
+
+                                                          Θ
+                                          p
+                                                                              k′         RN
+                                                   1       Xi+1
+
+
+      and thus is equivalent to one of the form (1, ∗, k) where ∗ is the unique distribution on one
+      point and k : Xi → D(RN ), by taking k to be the partial application of k ′ : Θ×Xi+1 → D(RN )
+      to p : D(Θ). Then BGi ◦···◦G0 ([∗, k])(σ) is the set of best responses to σ in the extensive form
+      game given by Gi together with payoffs, where the ith player’s payoff from the leaf node x ∈ Xi
+      is E[k(x)i ] (where k(x)i is the ith marginal of the joint distribution k(x) : D(RN )).
+    By taking i = L in the previous lemma and then post-composing with GL+1 , we obtain the
+final result.
+
+
+   Accepted in Compositionality on 2021-11-27.                                                                       43
+                                                                                   Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+Theorem 4.7.4. G = GL+1 ◦ · · · ◦ G0 : (1, 1) → (1, 1) is given by the following:
+
+   • The set of strategy profiles of G is the set of behavioural strategy profiles of the original
+     extensive form game G
+   • Every context is equivalent to one of the form (1, ∗, ∗), and for a behavioural strategy profile
+     σ, BG (1, ∗, ∗)(σ) is the set of best responses to σ in G
+
+
+5 Conclusion
+In this last section we will discuss the wider context of this work, as well as some work in progress
+and future work.
+
+Computer support. Due to the complexity of the definition of Bayesian open games, in practice
+computer support is necessary to work with real models in the framework. We have created such a
+software tool in the form of a Haskell library (available at https://github.com/jules-hedges/open-g
+ames-hs), consisting of a ‘core’ implementation of the monoidal category of Bayesian open games,
+together with a domain-specific embedded programming language that provides a higher level of
+description roughly equivalent to string diagrams. We have found this to be a practical tool for
+modelling, especially for rapid prototyping of models, in a variety of applied domains including
+auction design, governance modelling and blockchain protocol modelling. The implementation of
+this tool, and these applied case studies, will be described in a series of future papers.
+
+Non-finitary probability. In Section 3 we gave a general theory of open games over a monoidal
+category. And then, in Section 4 specialised it to the Kleisli category of the finite support probabil-
+ity monad. This restriction to finite support distributions was done for simplicity, but the general
+machinery we have introduced is applicable to any category of probabilistic functions. Examples
+include the Kleisli categories of the Giry monads on measurable and Polish spaces [16], the Radon
+monad on compact Hausdorff spaces [38], and the Kantorovich monad on complete metric spaces
+[11]. In fact, we believe that Bayesian open games can be formulated over any Markov category
+[10], which encompasses all of these examples.
+
+Other solution concepts. In this paper we have focused on the solution concept of Bayesian
+Nash equilibrium. It is one of the central solution concepts in applied economic modelling as it
+allows us to model situations of asymmetric information. It is probably no exaggeration that for
+most economic situations information is asymmetric and thus the default. Hence, this paper is an
+important step in making the theory of open games practically useful for a wide range of situations.
+As a side effect, both ordinary mixed strategy Nash equilibria and correlated equilibria are obtained
+as special cases of Bayesian Nash equilibrium. However, for dynamic games it is common to use
+equilibrium refinements such as perfect Bayesian equilibrium or sequential equilibrium, in which
+individual players’ beliefs are represented explicitly.9 It is an open question whether it is possible
+to extend compositional game theory with these stronger solution concepts.
+
+Behavioural aspects. A currently-unexplored benefit of Bayesian open games is that neither
+maximisation of real numbers nor Bayes’ law is involved in the definition of the categorical struc-
+ture, and instead both enter when decisions are defined. This means that the same framework can
+equally well accommodate agents who neither perfectly maximise, nor update their beliefs strictly
+according to Bayes’ law. This could make our framework useful for behavioural game theory, where
+such alternatives are considered (see, e.g. [4]).
+
+   9 See Chapter 7 in [29] for a general discussion of equilibrium refinements and Chapter 9 in [28] for a discussion
+
+of refinements for dynamic games.
+
+
+
+
+    Accepted in Compositionality on 2021-11-27.                                                                   44
+                                                                        Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+5.1 Acknowledgements
+The text of this paper is closely based on the first author’s PhD thesis, [3]. The authors gratefully
+thank Mitchell Riley, whose suggestion to apply coend lenses to open games was crucial and very
+timely.
+
+
+References
+ [1] George A. Akerlof. The market for ‘lemons’: Quality uncertainty and the market mechanism.
+     Quarterly Journal of Economics, 84(3):488–500, 1970. https://doi.org/10.2307/1879431. 40,
+     41
+ [2] Jeremy Avigad and Solomon Feferman. Gödel’s functional (“Dialectica”) interpretation. In
+     Handbook of proof theory, volume 137 of Studies in logic and the foundations of mathematics,
+     pages 337–405. Elsevier, 1998. https://doi.org/10.2307/420972. 3
+ [3] Joe Bolt. Probability and nondeterminism in compositional game theory. PhD thesis, Univer-
+     sity of Oxford, 2019. 11, 45
+ [4] Colin F Camerer. Behavioral game theory: Experiments in strategic interaction. Princeton
+     University Press, 2011. 44
+ [5] Valeria de Paiva. The dialectica categories. Technical report, University of Cambridge, 1991.
+     3
+ [6] Martin Escardó and Paulo Oliva.           Selection functions, bar recursion and back-
+     ward induction.     Mathematical Structures in Computer Science, 20(2):127–168, 2010.
+     https://doi.org/10.1017/S0960129509990351. 7
+ [7] Brendan Fong. The algebra of open and interconnected systems. PhD thesis, University of
+     Oxford, 2016. 1
+ [8] Brendan Fong, David Spivak, and Rémy Tuyéras. Backprop as functor: A compositional
+     perspective on supervised learning. In Proceedings of Logic in Computer Science (LiCS)
+     2019. ACM, 2019. https://doi.org/10.1109/LICS.2019.8785665. 11
+ [9] Nate Foster, Michael Greenwald, Jonathan Moore, Benjamin Pierce, and Alan Schmitt.
+     Combinators for bi-directional tree transformations: A linguistic approach to the view up-
+     date problem. ACM Transactions on Programming Languages and Systems, 29(3), 2007.
+     https://doi.org/10.1145/1232420.1232424. 3
+[10] Tobias Fritz.       A synthetic approach to Markov kernels, conditional indepen-
+     dence and theorems on sufficient statistics.        Advances in Mathematics, 370, 2020.
+     https://doi.org/10.1016/j.aim.2020.107239. 44
+[11] Tobias Fritz and Paolo Perrone. A probability monad as the colimit of spaces of finite samples.
+     Theory and Applications of Categories, 34(7), 2019. 44
+[12] Drew Fudenberg and Jean Tirole. Game theory. MIT Press, 1991. 1
+[13] Neil Ghani, Jules Hedges, Viktor Winschel, and Philipp Zahn. Compositional game theory. In
+     Proceedings of the 33rd Annual ACM/IEEE Symposium on Logic in Computer Science, pages
+     472–481. ACM, 2018. https://doi.org/10.1145/3209108.3209165. 1, 2, 37
+[14] Neil Ghani, Clemens Kupke, Alasdair Lambert, and Fredrik Nordvall Forsberg. A composi-
+     tional treatment of iterated open games. Theoretical Computer Science, 741:48 – 57, 2018.
+     ISSN 0304-3975. https://doi.org/10.1016/j.tcs.2018.05.026. An Observant Mind : Essays
+     Dedicated to Don Sannella on the Occasion of his 60th Birthday. 14
+[15] Neil Ghani, Clemens Kupke, Alasdair Lambert, and Fredrik Nordvall Forsberg. Composi-
+     tional game theory with mixed strategies: Probabilistic open games using a distributive law.
+     In Proceedings of ACT 2019, volume 323 of Electronic Proceedings in Theoretical Computer
+     Science, 2020. https://doi.org/10.4204/EPTCS.323.7. 2, 37
+[16] Michèlle Giry. A categorical approach to probability theory. Categorical aspects of topology
+     and analysis, pages 68–85, 1982. https://doi.org/10.1007/BFb0092872. 44
+[17] John C Harsanyi.       Games with incomplete information played by “Bayesian” play-
+     ers, I–III Part I. The basic model.           Management Science, 14(3):159–182, 1967.
+     https://doi.org/10.1287/mnsc.14.3.159. 2
+
+
+
+
+   Accepted in Compositionality on 2021-11-27.                                                        45
+                                                                      Volume 5, Issue 9. ISSN 2631-4444
+
+
+
+
+[18] John C Harsanyi.        Games with incomplete information played by “Bayesian” play-
+     ers part II. Bayesian equilibrium points. Management Science, 14(5):320–334, 1968.
+     https://doi.org/10.1287/mnsc.14.5.320.
+[19] John C Harsanyi. Games with incomplete information played by “Bayesian” players, part III.
+     The basic probability distribution of the game. Management Science, 14(7):486–502, 1968.
+     https://doi.org/10.1287/mnsc.14.7.486. 2
+[20] Jules Hedges. Towards compositional game theory. PhD thesis, Queen Mary University of
+     London, 2016. 13
+[21] Jules Hedges.        Coherence for lenses and open games.           arXiv:1704.02230, 2017.
+     https://doi.org/10.48550/arXiv.1704.02230. 7
+[22] Jules Hedges. Morphisms of open games. Electronic Notes in Theoretical Computer Science,
+     341:151 – 177, 2018. ISSN 1571-0661. https://doi.org/10.1016/j.entcs.2018.11.008. Pro-
+     ceedings of the Thirty-Fourth Conference on the Mathematical Foundations of Programming
+     Semantics (MFPS XXXIV). 11, 41
+[23] Jules Hedges, Paulo Oliva, Evguenia Shprits, Viktor Winschel, and Philipp Zahn. Higher-order
+     decision theory. In International Conference on Algorithmic DecisionTheory, pages 241–254.
+     Springer, 2017. https://doi.org/10.1007/978-3-319-67504-6˙17. 8
+[24] Jules Hedges, Paulo Oliva, Evguenia Shprits, Viktor Winschel, and Philipp Zahn. Selection
+     equilibria of higher-order games. In International Symposium on Practical Aspects of Declara-
+     tive Languages, pages 136–151. Springer, 2017. https://doi.org/10.1007/978-3-319-51676-9˙9.
+     7, 8
+[25] Julian Hedges. Lenses for philosophers, 2018. Available at https://julesh.com/2018/08/16/le
+     nses-for-philosophers/. 3
+[26] Martin Hofmann and Benjamin Pierce. Positive subtyping. Information and Computation,
+     126:11–33, 1996. https://doi.org/10.1006/inco.1996.0031. 3
+[27] F. Loregian. Coend Calculus, volume 468 of London Mathematical Society Lecture Note Series.
+     Cambridge University Press, first edition, 07 2021. https://doi.org/10.1017/9781108778657.
+     2, 15, 27
+[28] Andreu Mas-Colell, Michael D. Whinston, and Jerry Green. Microeconomic Theory. Oxford
+     University Press, 1995. ISBN 0195102681. 40, 41, 44
+[29] Michael Maschler, Eilon Solan, and Shmuel Zamir. Game Theory. Cambridge University
+     Press, 2013. https://doi.org/10.1017/CBO9780511794216. 38, 44
+[30] John Nash. Equilibrium points in n-person games. Proceedings of the national academy of
+     sciences, 36(1):48–49, 1950. https://doi.org/10.1073/pnas.36.1.48. 1
+[31] John Von Neumann and Oskar Morgenstern. Theory of games and economic behavior. Prince-
+     ton university press, 1944. 1, 2
+[32] Frank Oles. A category-theoretic approach to the semantics of programming languages. PhD
+     thesis, Syracuse University, 1982. 3
+[33] Martin J Osborne and Ariel Rubinstein. A course in game theory. MIT press, 1994. 1
+[34] Luke Palmer. Making Haskell nicer for game programming. Available at https://lukepalmer
+     .wordpress.com/2007/07/26/making-haskell-nicer-for-game-programming/, 2007. 3
+[35] John Power and Edmund Robinson.                  Premonoidal categories and notions of
+     computation.       Mathematical Structures in Computer Science, 7(5):453–468, 1997.
+     https://doi.org/10.1017/S0960129597002375. 30
+[36] Mitchell Riley. Categories of optics. arXiv:1809.00738v2, 2018. 2, 3, 16, 17, 27, 29
+[37] Mario Román. Open diagrams via coend calculus. In Proceedings of Applied Category
+     Theory 2020, volume 333 of Electronic Proceedings in Theoretical Computer Science, 2021.
+     https://doi.org/10.4204/EPTCS.333.5. 17
+[38] T. Świrszcz. Monadic functors and convexity. Bulletin de l’Acaédemie Polonaise des Sciences,
+     22(1), 1974. 44
+[39] Category Theory Zulip. Change of domain for coends. Archived at https://mattecapu.gith
+     ub.io/ct-zulip-archive/stream/229199-learning:-questions/topic/topic .22change.20of.20do
+     main.22.20for.20coends.html, 2021. 27
+
+
+
+
+   Accepted in Compositionality on 2021-11-27.                                                      46
+

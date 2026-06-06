@@ -1,0 +1,82 @@
+/home/agent/projects/proofs/remark47/bgg_aug_compare_F4.py:1: SyntaxWarning: invalid escape sequence '\ '
+  """
+Building W(F_4) and orbit data ...
+  done in 0.3s. |W| = 1152
+Test set: 15 (lambda, mu) pairs.
+
+  [1/15] lam=(Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)) mu=(Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)): items=1 odd=0 even=1 pure=0 mixed=0 unm_o=0 unm_e=1 (2.4s)
+  [2/15] lam=(Fraction(1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)) mu=(Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)): items=124 odd=57 even=67 pure=51 mixed=0 unm_o=6 unm_e=16 (2.5s)
+  [3/15] lam=(Fraction(1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)) mu=(Fraction(1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)): items=1 odd=0 even=1 pure=0 mixed=0 unm_o=0 unm_e=1 (2.4s)
+  [4/15] lam=(Fraction(1, 1), Fraction(1, 1), Fraction(0, 1), Fraction(0, 1)) mu=(Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)): items=542 odd=259 even=283 pure=168 mixed=29 unm_o=62 unm_e=86 (2.8s)
+  [5/15] lam=(Fraction(1, 1), Fraction(1, 1), Fraction(0, 1), Fraction(0, 1)) mu=(Fraction(1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)): items=4 odd=0 even=4 pure=0 mixed=0 unm_o=0 unm_e=4 (2.4s)
+  [6/15] lam=(Fraction(1, 1), Fraction(1, 1), Fraction(0, 1), Fraction(0, 1)) mu=(Fraction(1, 1), Fraction(1, 1), Fraction(0, 1), Fraction(0, 1)): items=1 odd=0 even=1 pure=0 mixed=0 unm_o=0 unm_e=1 (2.4s)
+  [7/15] lam=(Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(0, 1)) mu=(Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)): items=1734 odd=867 even=867 pure=652 mixed=40 unm_o=175 unm_e=175 (3.5s)
+  [8/15] lam=(Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(0, 1)) mu=(Fraction(1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)): items=28 odd=14 even=14 pure=8 mixed=0 unm_o=6 unm_e=6 (2.4s)
+  [9/15] lam=(Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(0, 1)) mu=(Fraction(1, 1), Fraction(1, 1), Fraction(0, 1), Fraction(0, 1)): items=4 odd=2 even=2 pure=0 mixed=0 unm_o=2 unm_e=2 (2.4s)
+  [10/15] lam=(Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(0, 1)) mu=(Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(0, 1)): items=2 odd=1 even=1 pure=0 mixed=0 unm_o=1 unm_e=1 (2.4s)
+  [11/15] lam=(Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(1, 1)) mu=(Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)): items=4425 odd=2253 even=2172 pure=2031 mixed=56 unm_o=166 unm_e=85 (6.2s)
+  [12/15] lam=(Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(1, 1)) mu=(Fraction(1, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)): items=95 odd=54 even=41 pure=40 mixed=0 unm_o=14 unm_e=1 (2.5s)
+  [13/15] lam=(Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(1, 1)) mu=(Fraction(1, 1), Fraction(1, 1), Fraction(0, 1), Fraction(0, 1)): items=13 odd=8 even=5 pure=4 mixed=0 unm_o=4 unm_e=1 (2.4s)
+  [14/15] lam=(Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(1, 1)) mu=(Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(0, 1)): items=3 odd=2 even=1 pure=1 mixed=0 unm_o=1 unm_e=0 (2.4s)
+  [15/15] lam=(Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(1, 1)) mu=(Fraction(1, 1), Fraction(1, 1), Fraction(1, 1), Fraction(1, 1)): items=2 odd=1 even=1 pure=0 mixed=0 unm_o=1 unm_e=1 (2.4s)
+
+Total: 41.7s
+
+======================================================================
+BGG-Aug F_4 COMPARISON SUMMARY
+======================================================================
+# (lambda, mu) pairs processed:        15
+# total basis items:                   6979
+# total odd-length items:              3518
+# total even-length items:             3461
+# odd items matched by PURE moves:     2955
+# odd items matched by MIXED moves:    125
+# odd items UNMATCHED:                 438
+# even items UNUSED:                   381
+
+(A) LEFT-mult check (w' = s_i . w): 3080/3080 = 100.00%
+(B') within-one-s_i orbit-swap check: 3080/3080 = 100.00%
+BGG signed-sum consistency at each bd: 218/218
+
+Per-s_i pure-orbit usage:
+  s_0: 1460 pure pairs
+  s_1: 1075 pure pairs
+  s_2: 109 pure pairs
+  s_3: 244 pure pairs
+
+Per-s_i mixed-pair count:
+  s_0: 49 mixed pairs, 33 distinct distribution combos
+  s_1: 68 mixed pairs, 25 distinct distribution combos
+  s_2: 1 mixed pairs, 1 distinct distribution combos
+  s_3: 74 mixed pairs, 20 distinct distribution combos
+
+Sample mixed pair examples:
+  lam=(Fraction(1, 1), Fraction(1, 1), Fraction(0, 1), Fraction(0, 1)) mu=(Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)) s_0
+    odd_pi = {(Fraction(1, 2), Fraction(-1, 2), Fraction(-1, 2), Fraction(-1, 2)): 1, (Fraction(1, 2), Fraction(-1, 2), Fraction(1, 2), Fraction(-1, 2)): 1, (Fraction(0, 1), Fraction(0, 1), Fraction(1, 1), Fraction(-1, 1)): 1, (Fraction(0, 1), Fraction(0, 1), Fraction(1, 1), Fraction(1, 1)): 1, (Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(1, 1)): 1}
+    even_pi = {(Fraction(1, 2), Fraction(-1, 2), Fraction(-1, 2), Fraction(-1, 2)): 1, (Fraction(1, 2), Fraction(1, 2), Fraction(-1, 2), Fraction(-1, 2)): 1, (Fraction(0, 1), Fraction(1, 1), Fraction(0, 1), Fraction(-1, 1)): 1, (Fraction(0, 1), Fraction(0, 1), Fraction(1, 1), Fraction(1, 1)): 1, (Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(1, 1)): 1}
+    distribution = {(('swap', ((Fraction(0, 1), Fraction(1, 1), Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1), Fraction(1, 1), Fraction(-1, 1)))), '+'): 1, (('swap', ((Fraction(1, 2), Fraction(1, 2), Fraction(-1, 2), Fraction(-1, 2)), (Fraction(1, 2), Fraction(-1, 2), Fraction(1, 2), Fraction(-1, 2)))), '+'): 1}
+    pi_diff = {(Fraction(1, 2), Fraction(1, 2), Fraction(-1, 2), Fraction(-1, 2)): 1, (Fraction(1, 2), Fraction(-1, 2), Fraction(1, 2), Fraction(-1, 2)): -1, (Fraction(0, 1), Fraction(0, 1), Fraction(1, 1), Fraction(-1, 1)): -1, (Fraction(0, 1), Fraction(1, 1), Fraction(0, 1), Fraction(-1, 1)): 1}
+  lam=(Fraction(1, 1), Fraction(1, 1), Fraction(0, 1), Fraction(0, 1)) mu=(Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)) s_0
+    odd_pi = {(Fraction(1, 2), Fraction(-1, 2), Fraction(-1, 2), Fraction(-1, 2)): 2, (Fraction(0, 1), Fraction(0, 1), Fraction(1, 1), Fraction(0, 1)): 1, (Fraction(0, 1), Fraction(0, 1), Fraction(1, 1), Fraction(-1, 1)): 2, (Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(1, 1)): 3}
+    even_pi = {(Fraction(1, 2), Fraction(-1, 2), Fraction(-1, 2), Fraction(-1, 2)): 2, (Fraction(0, 1), Fraction(1, 1), Fraction(0, 1), Fraction(0, 1)): 1, (Fraction(0, 1), Fraction(1, 1), Fraction(0, 1), Fraction(-1, 1)): 1, (Fraction(0, 1), Fraction(0, 1), Fraction(1, 1), Fraction(-1, 1)): 1, (Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(1, 1)): 3}
+    distribution = {(('swap', ((Fraction(0, 1), Fraction(1, 1), Fraction(0, 1), Fraction(-1, 1)), (Fraction(0, 1), Fraction(0, 1), Fraction(1, 1), Fraction(-1, 1)))), '+'): 1, (('swap', ((Fraction(0, 1), Fraction(1, 1), Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1), Fraction(1, 1), Fraction(0, 1)))), '+'): 1}
+    pi_diff = {(Fraction(0, 1), Fraction(0, 1), Fraction(1, 1), Fraction(0, 1)): -1, (Fraction(0, 1), Fraction(1, 1), Fraction(0, 1), Fraction(0, 1)): 1, (Fraction(0, 1), Fraction(0, 1), Fraction(1, 1), Fraction(-1, 1)): -1, (Fraction(0, 1), Fraction(1, 1), Fraction(0, 1), Fraction(-1, 1)): 1}
+  lam=(Fraction(1, 1), Fraction(1, 1), Fraction(0, 1), Fraction(0, 1)) mu=(Fraction(0, 1), Fraction(0, 1), Fraction(0, 1), Fraction(0, 1)) s_3
+    odd_pi = {(Fraction(1, 2), Fraction(1, 2), Fraction(-1, 2), Fraction(-1, 2)): 1, (Fraction(0, 1), Fraction(1, 1), Fraction(0, 1), Fraction(0, 1)): 1, (Fraction(0, 1), Fraction(0, 1), Fraction(1, 1), Fraction(1, 1)): 1}
+    even_pi = {(Fraction(1, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1)): 1, (Fraction(0, 1), Fraction(1, 1), Fraction(0, 1), Fraction(0, 1)): 2}
+    distribution = {(('swap', ((Fraction(1, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1)), (Fraction(0, 1), Fraction(0, 1), Fraction(1, 1), Fraction(1, 1)))), '+'): 1, (('swap', ((Fraction(1, 2), Fraction(1, 2), Fraction(-1, 2), Fraction(-1, 2)), (Fraction(0, 1), Fraction(1, 1), Fraction(0, 1), Fraction(0, 1)))), '-'): 1}
+    pi_diff = {(Fraction(1, 1), Fraction(-1, 1), Fraction(0, 1), Fraction(0, 1)): 1, (Fraction(1, 2), Fraction(1, 2), Fraction(-1, 2), Fraction(-1, 2)): -1, (Fraction(0, 1), Fraction(1, 1), Fraction(0, 1), Fraction(0, 1)): 1, (Fraction(0, 1), Fraction(0, 1), Fraction(1, 1), Fraction(1, 1)): -1}
+
+
+==========================================================================
+EXTENDED RUN (lambda_1 = 2, mu = 0)
+==========================================================================
+Setup: 0.31s
+lam=(2, 0, 0, 0) mu=(0, 0, 0, 0): items=4388 pure=2016 all=2065 mixed=143 unm=90 A=2065/2065 time=5.9s
+lam=(2, 1, 0, 0) mu=(0, 0, 0, 0): items=13590 pure=5748 all=6118 mixed=1027 unm=537 A=6118/6118 time=15.3s
+lam=(2, 1, 1, 0) mu=(0, 0, 0, 0): items=34961 pure=16004 all=16523 mixed=2095 unm=819 A=16523/16523 time=42.0s
+lam=(2, 2, 0, 0) mu=(0, 0, 0, 0): items=36633 pure=14466 all=16212 mixed=4441 unm=1936 A=16212/16212 time=44.9s
+lam=(2, 1, 1, 1) mu=(0, 0, 0, 0): items=72992 pure=34292 all=34430 mixed=535 unm=2066 A=34430/34430 time=75.6s
+
+TOTAL across 5 extra pairs: A = 75348/75348
+

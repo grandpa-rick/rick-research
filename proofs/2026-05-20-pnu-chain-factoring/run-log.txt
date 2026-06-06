@@ -1,0 +1,66 @@
+============================================================================
+PROBE: does p_ν factor as p_1 ⊗ p_sing at B_2?
+Catalog: content ≤ 4
+============================================================================
+
+Total catalog entries (chain+sing configs): 70
+Total Kp weights: 35
+
+         ν |basis|  |HW|  factors?  details
+----------------------------------------------------------------------------
+     (0,0)       1     1       yes
+     (0,1)       1     0        --
+     (1,0)       2     1       yes
+     (0,2)       1     0        --
+    (1,-1)       1     1       yes
+     (1,1)       3     1       yes
+     (2,0)       4     2       yes
+     (0,3)       1     0        --
+     (1,2)       3     0        --
+    (2,-1)       2     1       yes
+     (2,1)       4     0        --
+     (3,0)       4     1       yes
+     (0,4)       1     0        --
+     (1,3)       2     0        --
+    (2,-2)       1     1       yes
+     (2,2)       4     0        --
+    (3,-1)       3     1       yes
+     (3,1)       4     0        --
+     (4,0)       3     1       yes
+     (1,4)       1     0        --
+     (2,3)       2     0        --
+    (3,-2)       2     1       yes
+     (3,2)       3     0        --
+    (4,-1)       2     0        --
+     (4,1)       2     0        --
+     (2,4)       1     0        --
+    (3,-3)       1     1       yes
+     (3,3)       2     0        --
+    (4,-2)       2     1       yes
+     (4,2)       2     0        --
+     (3,4)       1     0        --
+    (4,-3)       1     0        --
+     (4,3)       1     0        --
+    (4,-4)       1     1       yes
+     (4,4)       1     0        --
+
+============================================================================
+Summary: 14/14 weights with HW factor; 21 weights have empty HW (vacuous).
+(P1) VERDICT: all V^ı_BDI(ν) factor as products at B_2.
+============================================================================
+
+============================================================================
+DIAGNOSIS — Source of cross-chain coupling
+============================================================================
+
+Theorem A (Day 18, bdi_qLR.md) gives the B_2-highest test:
+  (HW_1):    M_1 = 0  AND  T_1 ≤ B_1.            [pure-C_1]
+  (HW_sing): S ≤ P_1 = 2(B_1 - T_1).             [CROSS-FACTOR]
+
+The bound on S depends on (B_1, T_1) — components of C_1 —
+so the B_2-HW condition is NOT a product condition.
+
+Concrete witness at the smallest ν where the failure shows up:
+
+
+FINAL: P1 — p_ν factors at B_2 (catalog content ≤ 4).

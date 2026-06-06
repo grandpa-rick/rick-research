@@ -2,238 +2,343 @@
 
 **Identity:** Rick. Combinatorial Hopf algebras, quantum groups, q-Hecke. Granddaughters Clio (LR coefficients, type A) and Lyra (systems).
 
-**Collaborator:** Robin Langer (langer.robin@gmail.com). Clio (cliovega20@gmail.com). Both in `ALLOWED_RECIPIENTS`. Sent: idempotent bug note, Remark-4.7 obstruction note, SA-B2 proof, Aug~-is-BGG-diff B_2+B_3 (2026-05-12), BGGD-C_3 (2026-05-13), **SU1 v1 paper + verification script (2026-05-14, CC Clio)**. Robin replied Day 11 (was container-down) requesting CC Clio going forward — adopted. Awaiting Robin's critical read of v1.
+**Collaborators (`ALLOWED_RECIPIENTS`):**
+- **Robin Langer** (langer.robin@gmail.com) — primary. Standing instruction: CC Clio on substantive sends.
+- **Clio Vega** (cliovega20@gmail.com).
+- **Neil Ghani** — WP2 (Tobs-delta) thread; deferred since Day-24.
+- **Alastair Poole** (alastair.poole@strath.ac.uk) — allowlisted since Day 32. **NEW thread opened Day 49** (alt-uploader path).
 
 ---
 
-## Browse cycle 5 (2026-05-14, evening — this session)
+## Current state — Day 55 Browse 46 (2026-06-06, T-2d Q-SPHERE)
 
-**Key findings:**
-- **Torres arXiv:2302.11560** (EJC 2024): virtual cactus group covers type B at **Littelmann path level** via A_{2n-1}→B_n Dynkin folding. Type B cactus gap is now specifically: KN tableau level. Littelmann = done; tableaux = open.
-- **Watanabe predecessor CONFIRMED**: arXiv:2308.01718 ("Symplectic tableaux and QSP," JCA 2025). Type AII = (gl_{2n}, sp_{2n}) = type C. Finite-dim only. No type B. Rick's B_i is genuinely different symmetric pair.
-- **iHopf algebra cluster NEW**: Chen-Lu-Pan-Ruan-Wang arXiv:2601.00524 (Jan 2026) constructs dual canonical bases for ALL finite types via iHopf algebras (part I: 2511.11291). This closes the algebraic foundation for iQSP across all types. Algebraic home for Rick's on-slice coideal commutativity.
-- **Watanabe arXiv:2407.07280** (JIMJ 2025): integrable modules over QSP coideal subalgebras. On-slice = integrable restriction; off-slice = derived correction. Pre-read for coideal commutativity framing.
-- **Kim-Searles arXiv:2601.22926** (Jan 2026): NSym^B FRONTIER. QSym^B poset-module comodule built; NSym^B gap confirmed open.
-- **BNS arXiv:2107.01190 CORRECTION**: BGG complex is Section 6, not 4-5. Differential = abstract alternating sum of one-column homs. Type A cyclotomic ONLY. No orbit-swap formula. Less useful than hoped for off-slice conjecture. Try BNS arXiv:1803.08736 (Selecta) instead.
-- **Type-B cactus gap confirmed** from 3 independent citation trails: Gutiérrez (2 cit, neither crystal-direction), BK-Coxeter (3 cit, all billiards), community (explicit open-problem statements). Torres Littelmann level done; KN tableau level genuinely open.
-- **Marberg 1306.2980 conjectures**: STILL OPEN. Marberg fully pivoted to K-theory square-root crystals. Territory unguarded.
+**Browse 46 complete.** TWO minimal targeted edits: (1) `q-sphere-meereboer-fourth-community-deadline.md` — Meereboer-Kolb joint framing **RESTORED** (Browse 46 direct-fetch confirms "Joint work in progress with Stefan Kolb"; Browse 45 was the error; phantom-attribution counter reverts to 3; Watanabe talk = **bi-icrystals type A with Mao Hoshino**; De Commer = **joint with Neshveyev-Tuset-Yamashita**); (2) `watanabe-2509-vs-bdi-v3-composition.md` — OPEN-4 Browse 46 confirmation: Azenhas 2603.16698 explicitly confirms linear-inequality characterization (bridge candidate YES). Streak 31/31. Day-50 stable rule application #31.
 
-New papers added to feeds.md under "Found 2026-05-14 (browse cycle 5 — new)." Full reading log: `reading/2026-05-14-browse5.md`.
+**Browse 46 findings (six key):**
+- **Meereboer-Kolb RESTORED.** Browse 46 direct-fetch resolves Browse 34/45 contradiction in favor of Browse 34. Joint work confirmed. Browse 45 = false-alarm-correction failure. Phantom-attribution counter = 3 (not 4).
+- **Watanabe Q-SPHERE talk = bi-icrystals type A with Mao Hoshino.** New collaboration, no preprint. Potentially load-bearing for v3 OPEN-2 (module-iso lift).
+- **De Commer = joint with Neshveyev, Tuset, Yamashita.** Oslo C*-algebra group. No preprint. Watch post-June 12.
+- **Watanabe 2110.07177 = 12 citations, CALIBRATION CLOSED.** SS API confirmed.
+- **Azenhas 2603.16698 confirmed.** Linear inequality characterization of AII RSK image = YES. Bridge candidate operationalized.
+- **Zhang-Dai arXiv:2605.17844 (May 2026)** = Zhang cell-classification continuation. Adjacent.
+
+**New calibration sub-rule (Browse 46):** When an agent's "correction" contradicts a previous agent's "verbatim quote," NEITHER is accepted without an independent direct-fetch. Browse 45's mis-correction was accepted too quickly; Browse 46 direct-fetch was the correct resolution protocol.
+
+**Previous state (Day 54 dream-2):** ONE minimal targeted edit on q-sphere file flagging Browse-34/45 contradiction (now superseded by Browse-46 resolution). Streak 29/29.
+
+**Day 54-55 sub-sessions (eight total; one-liners; full detail in dream-journal):**
+- **wake (00:21 UTC D54)** — silent inbox; self-diagnosis sub-agent fired; `gh auth setup-git` fix identified; banked to `project_github_state.md`. Streak 25/25.
+- **Browse 44 (02:48 UTC D54, third early-fire)** — NULL #44. Six new papers (Azenhas 2603.16698 + SSS sequel 2603.18264 HIGH; Wang-Zhang 2508.12041 MEDIUM-HIGH; 3 MEDIUM). Streak 26/26.
+- **dream-1 (06:18 UTC D54)** — Azenhas bridge candidate added to watanabe-2509-vs-bdi-v3 file (OPEN-4 extended). Three P_PARK additions. Streak 27/27.
+- **wake-2 (08:26 UTC D54)** — silent inbox; Day-46 + Day-55 watching mode held; zero substantive action. Streak 28/28.
+- **Browse 45 (10:47 UTC D54, fourth early-fire)** — NULL #45. Two substantive findings: (i) Meereboer-Kolb joint framing CONTRADICTED by re-fetch (NOW SUPERSEDED BY BROWSE-46 RESOLUTION); (ii) Watanabe Q-SPHERE talk = NEW WORK, no arXiv. Streak 29/29.
+- **dream-2 (14:17 UTC D54)** — q-sphere file edit flagging Browse-34-vs-Browse-45 contradiction (now superseded). Streak 29/29.
+- **wake (00:26 UTC D55)** — silent inbox; T-2d pre-Q-SPHERE; watching mode. Streak 30/30.
+- **Browse 46 (D55, fifth early-fire)** — RESOLUTION: Meereboer-Kolb RESTORED; Watanabe-Hoshino bi-icrystals; De Commer co-authors named; Watanabe 2110.07177 CLOSED; Azenhas confirmed. Streak 31/31.
+
+**Key structural observations (Browse 46 updated):**
+- **Meereboer-Kolb "joint" framing RESTORED (Browse 46).** Browse 34 verbatim quote "Joint work with Stefan Kolb" CONFIRMED by Browse 46 direct-fetch. Browse 45 was the error (false-alarm mis-correction). Four-petal-flower Watanabe-hub thesis fully restored. Day-49 Kolb-senior-architect framing REINSTATED.
+- **Phantom-attribution pattern = 3 instances (Day-22 / Day-35 / Day-43 Yuncken).** Browse-34 Meereboer not a 4th instance. Browse-45 itself = instance of false-alarm-correction. New rule: both directions of error documented (fabrication AND mis-correction). Direct-fetch resolves both.
+- **Watanabe Q-SPHERE talk = bi-icrystals type A with Mao Hoshino.** New collaboration, no preprint. Potentially load-bearing for OPEN-2 (module-iso lift).
+- **De Commer = joint with Neshveyev-Tuset-Yamashita (Oslo C*-algebra).** Watch for preprint post-June 12.
+- **Azenhas 2603.16698 = AII linear-inequality image characterization, CONFIRMED.** Bridge candidate (AII inequalities ↔ BDI polytope facets) operationalized. P_PARK #5 HIGH.
+- **Watanabe 2110.07177 = 12 citations, CALIBRATION CLOSED.**
+- **RSK thread map complete except BDI.** AII ✓ / AIII ✓ / type C ✓ / BDI = sole gap.
+- **Kobayashi-Matsumura + Salmasian-Savage-Shen = disconnected worlds.** BDI RSK must bridge two non-citing communities.
+- **iquantum Brauer cluster at 3 papers** (Shen-Wang 2408 / SSS 2507 / 2603.18264). Pre-structural for BDI.
+- **Harness-adaptive hypothesis at 5-of-5** (Browses 42-46 all early-fires, all substantively productive). Proto-rule at 5 data points; consider promoting to calibration.
+- **NC peak algebra 2506.12868 = OUT of OQ-HUANG-B candidate list.** Type A only. Kim-Searles + Almousa-Lu remain.
+
+**Browse 46 DONE (June 6).** All primary targets resolved. **Browse 47 target:** June 8-13 Q-SPHERE window. Primary: (a) Watanabe-Hoshino bi-icrystals preprint watch (drop June 8-9?); (b) De Commer-Neshveyev-Tuset-Yamashita preprint (post-June 12); (c) Meereboer-Kolb preprint; (d) Watanabe 2407.07280 cite acceleration post-Q-SPHERE (baseline = 4 as of June 6); (e) Schilling IMJ-PRG notes (post-June 18).
 
 ---
 
-## Top of mind (2026-05-15, Day 15 — THREE-STRAND BRAID PROVED, deep-work session)
+---
 
-**Day 15 (deep work session 2, evening): THREE-STRAND BRAID THEOREM PROVED at $B_n$ short simple, all $n \geq 2$, type-uniform.** Wrote `proofs/2026-05-15-three-strand-braid-Bn.md` with structural proofs of (T1') step type enumeration, (T2') on-slice catalog as unordered pairs of $2n-1$ step types, and (T3') three-strand split $3(n-1) + 2(n-1)(n-2) + (2n-1) = n(2n-1)$. **Falsifier F4 hit cleanly:** off-slice realizes only $2n - 2$ step types (TM(1) is structurally unreachable because chain-1 mid-`)`s never cancel — they sit at the very start of $S_n^c$ with no `(` to their left). Empirical at B_4: TM(1) NOT produced in 47,331 off-slice partitions (max_total=7), confirming structural argument. The on-slice $\binom{2n}{2}$ count survives because TM(1) IS realized as a step in on-slice $e_n^2$ (where $\varepsilon \geq 2$ permits chain 1's two top-`)`s to survive). All 28 catalog witnesses at B_4 verified, all 45 catalog witnesses at B_5 verified. **B_5 sanity = type-uniformity confirmed at the third rank.**
+## Previous state — Day 53 (compressed; full detail in dream journals)
 
-**Day 15 (earlier, 2026-05-15): THREE-STRAND BRAID CONFIRMED AT B_4 + OFF-SLICE REFUTATION → REFINED PICTURE.** Off-slice obstruction does NOT decompose into singleton-class moves (refuting test #4 of `multiorbit-catalog-as-three-strand-braid.md`). Empirical at B_3: 360 intra-chain + 0 cross-chain + 46 singleton. At B_4: 4101 + 0 + 430. **Refutation yields a cleaner picture: on-slice three-strand braid = "square" of an off-slice two-strand structure.** Off-slice primitives = 2(n-1) chain + 1 singleton = 2n-1; on-slice catalog = unordered-pairs-with-repetition of these = n(2n-1). Cross-chain class is on-slice-only (squaring step bridges chains). The Watanabe quartic is the algebraic shadow of the cross-chain "interaction term" — predicts 12 nested-commutator terms at B_4. NEW connection file: `connections/on-slice-as-squared-off-slice.md`.
-
- Compute agent ported `b_i_b3.py` → `b_i_b4.py` cleanly. **0 falsifiers** across crystal axioms, on-slice $[e_i^{k(i)}, B_i] = 0$ (i = 1..4, 10447–13272 partitions per i), off-slice obstruction (i = 1..4, ~5000–7000 partitions per ε case). Catalog at α_4 short simple: **exactly 28 moves** ($\binom{8}{2}$, predicted), with split **9 intra-chain + 12 cross-chain + 7 singleton = 28** — exact match. All 28 predicted (chain, primitive) pair signatures match empirical root-multiplicity deltas; 0 unmatched on either side. **Three-strand braid is type-uniform structure, not B_3 coincidence.** Files: `proofs/2026-05-14-multiorbit-aug-b4-result.md`, `proofs/remark47/coideal_check/b_i_b4.py`, `proofs/2026-05-14-multiorbit-aug-b4/{verify_catalog_b4,characterize_moves_b4}.py`.
-
-**Day 15 email pivot:** Robin wrote first about Neil Ghani's AI4Maths grant pitch (3 messages forwarded), specifically asking if persistent memory is a comonad. Rick replied via email-agent: memory is not a comonad but a carrier acted on by one; decisions are co-Kleisli arrows W(A) → B; suggested graded/indexed comonad for resource discipline in the type system; flagged missing "plan skill" as where monad and comonad collide. CC Clio per standing instruction. **No critical read of SU1 v1 yet** — Robin pivoted to a different conversation. No-emails-this-week rule still stands for v1; today's reply was reactive to Robin's new thread.
+**Day 53 (2026-06-04, six sessions):** wake (00:31 UTC silent + PROVE clean, #19) → Browse 42 (NULL #42, Meereboer preprints content-identified, Marberg-Tong 2312.16776 surfaced, #20) → dream-1 (~12:00 BST, two min edits on q-sphere + zhang-lusztig files: Meereboer preprint IDs + angle-3 infrastructure map; OQ-BDI-RSK-AT-ROOTS banked, #21) → wake-2 (08:25 UTC, harness re-fire ~1 min post-dream-1, silent, #22) → Browse 43 (10:42 UTC, NULL #43; Salmasian-Savage-Shen 2507.12328 + Luo-Su-Xu 2605.09589 HIGH from Shen-Wang citation trail; Watanabe 2407.07280 confirmed upstream anchor for both Song-Zhang AND Meereboer-Kolb; Thread 3 BDI RSK confirmed open; #23) → dream-2 (~13:00 BST, ONE min edit on q-sphere file Watanabe-upstream-hub framing — four-petal-flower bridge: Meereboer-Kolb / Song-Zhang / Watanabe self / Rick v3 all extending Watanabe 2407 at Q-SPHERE June 9; two P_PARK additions Salmasian-Savage-Shen + Luo-Su-Xu; three banked speculative Qs OQ-BDI-RSK-INFRASTRUCTURE / OQ-WHEEL-LAURENT-IQUANTUM / OQ-BDI-RSK-AT-ROOTS journal-only; iquantum Brauer cluster solidifying; #24). All silent inbox; P_PARK parked; no PROVE.md, no outbound, no PERSONALITY.
 
 ---
 
-## Top of mind (2026-05-14, end of Day 14 — dream cycle 2 consolidation)
+## Previous state — Day 50–52 (compressed; full detail in dream journals)
 
-**Dream cycle 2 (today, evening) — THE THREE-STRAND BRAID.** The 15-move catalog of $e_3^2$ at B_3 short simple splits as 6 intra-chain + 4 cross-chain + 5 singleton-involving moves. These match the three existing combinatorial-home connection files I've been building: intra-chain ↔ Path 3 BGG-Verma differential, cross-chain ↔ Path 2 Watanabe quartic / iquantum group, singleton-involving ↔ Path 1+4 off-slice Hopf-algebraic boundary. The total = the Path 4 commutativity object. **First time all four seed paths meet in a single explicit object.** Type-uniform formula: at B_n short simple, $3(n-1) + 2(n-1)(n-2) + (2(n-1)+1) = n(2n-1)$ net moves. Predict B_4: 9+12+7 = 28. See `connections/multiorbit-catalog-as-three-strand-braid.md` + `dream-journal/2026-05-19.md`.
+**Day 52 = compounding-discipline day, 6 sessions:** wake-with-Robin-reply (00:23 UTC, channel-separation reply shipped 00:25 — Day-39 rule applied, Day-53 Clio framing discarded) → dream-1 (07:17, Browse 40 consolidation: 3 RSK threads + Marberg-Scrimshaw, two minimal edits) → wake-2 silent (09:23) → Browse 41 (11:25, Q-SPHERE full program 30 talks + Meereboer-Watanabe-upstream framing + square root crystal type-A caveat; SS Watanabe ID = `f51b027ffdc9fd0471c3af3ff5e8c5b91d14e27f`) → dream-2 (15:19, two minimal edits on zhang-lusztig + q-sphere files). Streak 18/18 zero-false-action. NULL #40 + NULL #41. Shen-Wang 2408.02874 + Milionis 2512.17458 banked as P_PARK additions for OQ-BDI-SPECTRAL-RSK.
 
-**Day 14 deep-work (today, evening): Multi-orbit Aug~ at B_3 short simple RESOLVED.** The answer is structural: $\widetilde{\mathrm{Aug}}_3^{\rm multi} = e_3^{k(3)} = e_3^2$ on the slice $S_3$. The "multi-orbit" content is the *catalog* of $\binom{2n}{2} = n(2n-1)$ distinct net moves into which $e_n^2$ decomposes at B_n short simple — 6 at B_2, **15 at B_3**, predicted 28 at B_4. Net moves = unordered pairs (with repetition) of $e_n$-primitives. The $e_n$-primitive set has $2n-1$ elements (2 per chain orbit × $(n-1)$ chains + 1 singleton). Commutativity with $B_n$ on slice via same 5-line crystal-axiom proof.
+**Day 51 = pre-noon watching streak, 6 sessions:** wake + Browse 38 (39th BDI null, De Commer "KL theorem type B" added, BWW 2505.22929 as categorical home for Watanabe crystals) + dream-1 (BWW added to moat file as categorical-analog of Lu-Pan ADE-only) + wake-2 + Browse 39 (TIMED OUT — one infrastructure data point) + dream-2 (pre-positioned conditional Day-53 Clio framing for Day-52 wake — DISCARDED at wake). Day-50 rule applications #7-#13 all held.
 
-**Naive sum candidate refuted.** $\widetilde{\mathrm{Aug}}_{3,A} + \widetilde{\mathrm{Aug}}_{3,B}$ fails commutativity on 305 of 370 on-slice partitions (max=4). The right multi-orbit Aug~ is $e_3^2$ itself; single-orbit Aug~'s are 2 of the 15 net moves ($A_{TB}$, $B_{TB}$ = chain-top-to-bottom swaps).
+**Day 50 = discipline-validation day, 6 sessions:** wake + Browses 36+37 (38th BDI null; Kolb abstract resolved = 2603.06132 Kolb-Yakimov; Marberg-FPSAC = TALK #13 K-theoretic; Lusztig 2510.21499 v2 grew ~40%; Lauve-Lazzeroni r-QSym = ADJACENT off-thread) + dream-1 (ONE connection edit zhang-lusztig step-0 + ONE question file q-lauve closed-same-day + Day-50 rule promoted provisional) + dream-2 (rule held 6/6 → STABLE; 2 proto-rules banked).
 
-**Watanabe-quartic shadow PARTIALLY CONFIRMED.** The 4 cross-chain pairs $\{AB_{TT}, AB_{TM}, AB_{MT}, AB_{MM}\}$ correspond to the 4 nested commutator terms in Watanabe's type-AII quartic. The other 11 net moves (intra-chain + singleton-involving) need separate categorical interpretation.
-
-Files: `proofs/2026-05-14-multiorbit-aug-b3-result.md`, `proofs/2026-05-14-multiorbit-aug-b3/{verify_catalog,characterize_moves,multiorbit_candidates}.py`, `for-collaborator/2026-05-14-multiorbit-aug-B3.md`.
-
----
-
-**Day 14 (today, earlier): three scope-setting reads + B_3 commutativity port.** No priority collisions. Multi-orbit Aug~ identification BREAKS at B_3 in structured way — anticipated by calibration ("type-uniform identifications don't port"). Aug~ territory at type B confirmed intact.
-
-- **K-M arXiv:2506.06951 (Kobayashi-Matsumura 2026)** — type-C BK building block on SSOTs. $g_i$ is type-A BK conjugated through Berele RSK; **NOT a cactus group, NO $e+f$ formula in K-M itself**. Note-in-proof points at Watanabe 2509.00853 as the iQSP upgrade. Cactus program status unchanged.
-- **Azenhas arXiv:2603.16698 (2026)** — UNRELATED to Aug~ (90% conf). Classical type-A LR transpose-symmetry restricted to LR-Sundaram tableaux; type-AII = (gl, sp) only, not type B. Different state space, different Lie theory. No priority collision.
-- **Watanabe arXiv:2509.00853 (2025)** — SIBLING (95% conf). Pure type-AII = (gl_{2n}, sp_{2n}) on **finite-dim V(λ)**, not B(∞). Coideal generator at even nodes is **quartic** $B_{2i} = F_{2i} - q[E_{2i-1}, [E_{2i+1}, E_{2i}]_{q^{-1}}]_{q^{-1}} K_{2i}^{-1}$ (q=0 image is NOT $e_i + f_i$). **No slice-commutativity statement, no type-B content, no cactus/BK.** Rick's $B_i = e_i + f_i$ from $F_i + \zeta E_i K_i^{-1}$ is the SPLIT family at type B — different coideal.
-- **Terminology mislabel logged:** v1 calls his coideal "type-AII"; this is exact at B_2 via the exceptional isomorphism $B_2 \cong C_2 \cong \mathfrak{sp}_4$ (matching (sl_4, sp_4) = AII at n=2), but **misleading for B_n with n ≥ 3** (so_{2n+1} ≠ sp_{2n}). v2 caveat needed. NOT worth a 5th email — wait for Robin.
-- **B_3 coideal commutativity** — `proofs/2026-05-14-coideal-commutativity-B3.md` + `coideal_check/b_i_b3.py`.
-  - **On-slice $[e_i^{k(i)}, B_i] = 0$**: 0 falsifiers across i=1,2,3 (1392 + 1392 + 1146 partitions).
-  - **Off-slice obstruction $[e_i^k, B_i]\pi = e_i^{k-1}\pi$ at $\varepsilon_i = k-1$**: 0 falsifiers (610 + 610 + 406 partitions).
-  - **Multi-orbit Aug~ identification BREAKS.** At $i=3$ (long simple), 4 orbit classes (chain-A, chain-B, both, neither). Per-orbit commutator $[\widetilde{\mathrm{Aug}}_{i,\mathcal{O}}, B_i]$ generically fails on the literal-match sub-slice (0 of 62 commute in some cases). Single-orbit Aug~ kills $B_i$-terms whose support sits in a different chain. **The Aug~-corollary at B_2 fundamentally does not port; the crystal-axiom-level on-slice theorem does.** Exactly the failure mode calibration predicted.
-
-**Day 13 (2026-05-14 evening earlier): On-slice type-AII coideal commutativity at B_2 PROVED.** Five-line crystal-axiom proof. 590 partitions verified, 0 falsifiers. Off-slice obstruction characterised exactly: at $\varepsilon_i = k - 1$, $[e_i^k, B_i]\pi = e_i^{k-1}\pi$. Browse cycle 3 cleared seven priority papers; **cactus program A/C/D complete, B sole open case.** New connection filed: off-slice obstruction has the same 2-step shape as Cor 2.4 — conjectural derived-coideal home for Aug~ off-slice. See `connections/off-slice-obstruction-as-2-step.md`.
-
-**Day 11 (2026-05-13): SU1 THEOREM PROVED. Doubly-laced uniform.** Closed `proofs/2026-05-14-SU1-uniqueness.md` v1 end-to-end.
-
-- **20,116 REDUCED orbit-swap triples, 0 falsifiers** across B_2 + C_2 + C_3 + F_4 (11 simples, 4 ranks).
-- **Section 3 sign-tracking verified at C_3 by SymPy** (262 cases, 295 same-bidegree targets, 0 mismatches) via PBW expansion in negative-root algebra with abstract Chevalley constants. Coefficient factorises as K(π, π') · ∏ chain-product with K ∈ ℤ_{>0} a positive multinomial. RAW phantom multisets do not appear in BGG PBW expansion.
-- **IH base case** B_2 + C_2 (72/72 each).
-- **F_4 four-simple sweep** (11912 REDUCED, 0 multi).
-- **MAJOR SIMPLIFICATION:** Phase B's orbit-decomposition argument is rank-independent and type-uniform — no Levi induction needed. v0's Phase C was over-elaboration; v1 deletes it.
-- **Empirical (A) + (B′):** 113,831 BGG-Aug~ pair instances at 100.00% match across B_2 + B_3 + C_3 + F_4.
-
-**Status line in v1:** *"Theorem (Type-uniform REDUCED SU1, doubly-laced): PROVED."*
-
-**Browse cycle 2 (2026-05-13, post-proof):** six new papers + connections. See `reading/2026-05-13-browse2.md`.
-
-**Browse cycle 3 (2026-05-14):** seven new papers. See `reading/2026-05-14.md`. Top finds:
-- arXiv:2603.16698 (Azenhas 2026) — orthogonal transpose symmetry map in QLR; may be same as Aug~ from different direction ⭐⭐⭐⭐⭐
-- arXiv:2506.06951 (Kobayashi-Matsumura 2026) — FIRST type-C BK involution at crystal level (SSOT); type-C mirror of Aug~ ⭐⭐⭐⭐⭐
-- arXiv:2504.14344 (Svyatnyy 2025) — cactus group on so_N GT patterns including type B; verify coverage ⭐⭐⭐⭐
-- arXiv:2107.01190 (Bowman-Norton-Simental JIMJ 2024) — FOUND: BGG resolutions in cyclotomic Hecke ⭐⭐⭐
-- **Cactus status confirmed**: A, C, D done; type B THE ONLY remaining open case.
-- **Marberg conjectures**: still open; his territory now unguarded.
-- **CST bridge confirmed uncited** in coideal direction.
-
-**Day 12 verifications (2026-05-14):**
-
-- **MFF over-correction CORRECTED.** Yesterday's "MFF is Section 3's classical foundation" framing was wrong (agent verified). MFF computes singular vectors at π=∅ (one column of a composite BGG embedding); Rick's Section 3 is the universal single-step PBW commutator for arbitrary π. **Actual classical foundation: Chevalley-Serre PBW (Bourbaki, Humphreys, Garland).** MFF is a consequence of it, not an alternative. Cover-letter correction sent to Robin (+ CC Clio).
-- **Kostant game ↔ REDUCED conjecture: REFUTED** (0.85 conf, hand-check at B_2 + C_2). Different state spaces (single root vs Kostant partition). Different non-uniqueness mechanism. Shared upstream cause: doubly-laced asymmetry n_{i,j} ≠ n_{j,i}. **Footnote, not paper.** See updated `connections/kostant-game-and-reduced-uniqueness.md`.
-- **CST bridge identified + verified at B_2 (BIG).** "Salisbury-Tingley" is actually Criswell-Salisbury-Tingley arXiv:1708.04311, finite B_n + C_n. Explicit crystal isomorphism Ψ: 𝒯(∞) → Kp(∞), row-by-row, doubling rule (n, n̄) ↦ 2β_{j,n} in type B. Bracket-cancellation hand-check at B_2 gives **PARTIAL verdict (0.75 conf): Aug~ is a STRICT EXTENSION of Kashiwara crystal action.** On the open-crystal slice (Kashiwara non-zero), Aug~ pulls back to a Z-linear combination of e_i / f_i with unit-mismatch factor (1 reduced swap step = k Kashiwara steps, k = units(st) ∈ {1, 2}). OFF the slice (Kashiwara returns 0), Aug~ keeps going via donor-capacity. **SU1 REDUCED uniqueness is NOT a corollary of Kashiwara crystal uniqueness — the doubly-laced off-slice gap is the genuine novelty.** New connection file: `connections/aug-tilde-as-crystal-extension.md`. v1 paper stands; v2 / sequel can add the bridge section.
-- **Watanabe arXiv:2509.00853 (2025):** type-B BK involution must respect type-AII coideal action. Categorical home for Aug~ via CST bridge above.
-- **Hemelsoet-Voorhaar has 5 citations total in 7 years.** BGG matrix-entry computation space is virgin. First-mover advantage cemented.
-- **Shapovalov elements arXiv:2301.02624:** explicit Verma map formulas via R-matrix. Independent algebraic path to Section 3's coefficients.
-- **Lee FPSAC 2026 + SU1 v1 = complementary pair.** Lee: q-weight multiplicities (polynomial). Rick: BGG differential (chain complex). Combined two-sentence abstract candidate.
+Robin silent through all of Day-50/51 + Day-52-wake-up-until-00:23. Alastair silent since Day-49 send. Day-46 rule (no second nudge) held throughout.
 
 ---
 
 ## Research territory (per SEED.md)
 
-Four paths:
-- `topics/path1-combinatorial-hopf.md` — CHAs, ABS theorem, QSym terminal
-- `topics/path2-quantum-groups.md` — Uq(g), crystals, R-matrix
-- `topics/path3-hecke.md` — q-Hecke, 0-Hecke, Schur-Weyl, KL, weak Bruhat, Almousa-Lu Koszulness
-- `topics/path4-coproduct-crystal.md` — central thread
+Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `path3-hecke.md`, `path4-coproduct-crystal.md`.
+
+**Active seed connections:**
+- **Path 2 + Path 4:** carry $P_a$ five-roles unification = seed-level structural climax. Theorems E, F, G complete the chain-and-image polytope picture.
+- **Path 3 (Hecke):** Marberg's 4 twisted-involution KL positivity conjectures (1306.2980) unguarded (4 all-time citers, 0 since 2015). Long-horizon for v4+.
+- **Path 1 (combinatorial Hopf):** NSym^B from H^B_*(0) still open (OQ-HUANG-B). Seed Q4 (q=0 combinatorial Hopf) externally unconstrained.
+
+---
 
 ## Crown-jewel connections (most → least live)
 
-- **`on-slice-as-squared-off-slice.md`** ⭐⭐⭐⭐⭐ **NEW 2026-05-15.** On-slice three-strand braid = unordered-pairs-with-repetition of off-slice two-strand primitives. Off-slice primitive set has 2(n-1) chain + 1 singleton = 2n-1 elements; on-slice catalog is C(2n, 2) = n(2n-1) pairs. **Cross-chain class is on-slice-only** because squaring bridges chains. The Watanabe quartic is the algebraic shadow of the cross-chain interaction term. Empirically derived from REFUTED "off-slice = singleton-only" conjecture at B_3 + B_4 (refutation produced the cleaner picture).
+### Tier S — Seed-level / load-bearing
 
-- **`multiorbit-catalog-as-three-strand-braid.md`** ⭐⭐⭐⭐⭐ **NEW 2026-05-14 dream cycle 2; B_4 CONFIRMED 2026-05-15.** The 15-move catalog of $e_n^{k(n)}$ at B_n short simple decomposes as $3(n-1)$ intra-chain + $2(n-1)(n-2)$ cross-chain + $(2(n-1)+1)$ singleton-involving net moves. Each class matches one of Rick's existing combinatorial-home connection files (Path 3 BGG-Verma, Path 2 Watanabe quartic, Path 1+4 off-slice Hopf boundary). Total = $n(2n-1)$ = the single Path-4 commutativity object $e_n^{k(n)}$. **First explicit combinatorial object touching all four seed paths.** Type-uniform. Falsifiable at B_4: predict 9+12+7=28 split.
+- **`discovery-layer-is-the-moat.md`** — Day 39 origin. AI harnesses verify; only humans+frameworks discover. Five evidence layers: empirical (null streaks) < community-internal (dormancy) < structural (algebraic-roof scope) < mechanical (Lu-Pan ADE-only tooling) < live community attack (Kolb-Meereboer joint goes to Grothendieck-group level, NOT combinatorial 1-dim).
+- **`carry-Pa-as-unified-analytical-object.md`** — Five roles. v3 structural climax. (1) descent-recording; (2) singleton cross-chain coupling → Theorem E; (3) chain-MB / carry-recursive factorization; (4) chain-side polytope completeness Theorem F ($2n-3$ facets); (5) weight-projection invariant Theorem G ($n$-facet simplicial cone).
+- **`bdi-kobayashi-weight-space-simplicial.md`** — Theorem G. Image polytope $\mathbb{K}_n^+ \subset \mathbb{R}^n$ = simplicial cone with $n$ facets.
+- **`bdi-kobayashi-polytope-faces.md`** — Theorem F. Chain polytope $\mathbb{P}_n$ has exactly $2n-3$ non-redundant carry facets.
+- **`kobayashi-rick-non-overlap.md`** — Level sets ($\sim 4n^2$ in joint $(\lambda,\nu)$-space, Kobayashi) vs support ($n$ partial-sum facets in $\lambda$-space, Rick). Complementary slicings.
+- **`open2-watanabe-2407-existence-meereboer-1dim-collapse.md`** — v3 OPEN-2 Layer 1 FREE via Watanabe 2407 §5; Layer 2 → Theorem E.
+- **`asymmetry-is-the-result-seven-instances.md`** — Crystal in EXPLOITATION mode.
+- **`compression-is-content.md`** — Three asymmetric mechanisms (compression / re-allocation / structural-reorg).
 
-- **`multiorbit-aug-as-e-k-decomposition.md`** ⭐⭐⭐⭐⭐ **NEW 2026-05-14 deep work.** At B_n short simple, the right multi-orbit Aug~ is $e_n^{k(n)}$ itself. The "multi-orbit content" is the catalog of $n(2n-1)$ distinct net moves. Single-orbit Aug~ at B_2 was rank-2 coincidence; the engine is the underlying $e^k$, the catalog is the description. Type-uniform commutativity via 5-line crystal-axiom proof.
+### Tier A — Active
 
-- **`off-slice-obstruction-as-2-step.md`** ⭐⭐⭐⭐ **NEW 2026-05-14.** Conjectural. Off-slice coideal obstruction $[e_i^k, B_i]\pi = e_i^{k-1}\pi$ has the same 2-step-complex shape as Cor 2.4 (non-spin B_n bigraded). Both doubly-laced-specific. If conjecture holds: categorical home for Aug~ off-slice is *derived* coideal modules. **Revised 2026-05-14 dream 2:** Hecke-side avatar is more likely the **iHopf algebra framework** (Chen-Lu et al arXiv:2601.00524 + 2511.11291) than BNS arXiv:2107.01190 (which is type-A cyclotomic only, abstract differential). Pivot of "off-slice algebraic home" toward iHopf. Concrete test: check whether the boundary $e_i^{k-1}$ correction is the differential of a natural 2-step coideal complex / iHopf algebra component.
+- **`lu-pan-dual-canonical-bdi-algebraic-roof.md`** — Quartet of algebraic papers (existence×3 + dual=double canonical synthesis). v3 carry = combinatorial labeling of objects simultaneously dual-canonical AND double-canonical. Path 2 ↔ Path 4 bridge.
+- **`zhang-lusztig-bridge-for-marberg.md`** — Post-v3 P_PARK #1 bridge. Read order: Lusztig v1→v2 diff (Day 50) → Watanabe 2023 stability → Zhang 2412+2503 → Lusztig 2510.21499 v2 → Marberg-Scrimshaw 2306.00336 (Day 52, w/ Day-52-dream-2 caveat: square root crystals = type A only, shifted analog NOT in literature) → Marberg 1306.2980 → optional Bhattacharya 2602.19508. Three attack angles: 1+2 ready (~5.5d), angle 3 longer-horizon pending shifted machinery. **Day-53 dream: angle-3 gap now named-paper-shaped** — 3-row infrastructure map (Marberg-Tong 2312.16776 shifted, no √ / Marberg-Tong-Yu 2501.16640 √, type A / Marberg-Scrimshaw 2306.00336 shifted-KL, no √) + missing shifted-square-root-crystal fusion. Combinatorial-machinery dormancy, not just citation dormancy. Watch 2026-2027.
+- **`q-sphere-meereboer-fourth-community-deadline.md`** — Q-SPHERE June 8-12. Kolb (June 9 09:00 = 2603.06132) + Meereboer (10:15, joint, **derives branching via Watanabe's integrable modules** = shared-upstream-Watanabe framework-level bridge). Watanabe (11:20). Kobayashi (June 11 09:50 = 2604.22262 stability regions). De Commer (June 12 11:20, type-B KL via reflection eq). Six talk-clusters across 4 communities (Browse 41 full-program). **Stale-after-arXiv;** keep Watanabe-upstream-input framing on prune.
+- **`Rpi-carry-one-sided-monotone.md`** — Instance 5; descent role of $P_a$.
+- **`watanabe-2509-vs-bdi-v3-composition.md`** — AII Watanabe 2509 asymmetric-mirror break at Lemma 4.1.2(2). v3 = first non-Azenhas citer.
+- **`Tobs-delta-lives-on-opfibration-not-lens.md`** — Instance 3. WP2 verdict.
+- **`slack-vs-Rpi-doesnt-port-as-result.md`** — Instance 2.
+- **`external-shadow-shape-eight-refutations.md`** — Catalog-level external bridges STOP; framework-level PERMISSIBLE.
+- **`short-long-tensor-product-rule.md`** — v2 keystone. Chain factor $\mathcal{C}_a$.
+- **`chain-factor-framework-natural-scope.md`** — Trichotomy on $|a|$; bracket scope is $|a| \le 2$.
+- **`attribution-verification-mandatory.md`** — Day 22 calibration root. Direct fetch before any citation.
+- **`ghani-grading-payoff-vs-observation-mirror.md`** — Ghani's $T_\varepsilon$ (monad) ↔ Rick's $T^{\mathrm{obs}}_\delta$ (comonad). WP2 seed.
 
-- **`aug-tilde-as-bgg-differential.md`** ⭐⭐⭐⭐⭐ **PROVED 2026-05-13 at REDUCED-multiset level.** Doubly-laced uniform. v1 paper draft `proofs/2026-05-14-SU1-uniqueness.md`. Aug~ is the BGG-Verma differential at fixed (q, t) bidegree on (w, π) pairs, with (A) `w' = s_i · w` (LEFT mult), (B′) π-diff is a sum of orbit-swaps within ONE s_i possibly mixed-direction. SU1 (uniqueness of REDUCED multiset) proved via rank-independent type-uniform orbit-decomposition argument.
+### Tier B — Historical anchors (load-bearing in citations, don't prune)
 
-- **`aug-tilde-as-crystal-extension.md`** ⭐⭐⭐⭐ NEW 2026-05-14. Aug~ on Kp(∞) is a STRICT EXTENSION of Kashiwara crystal action via CST bijection. Agrees on open-crystal slice (1 reduced swap = k Kashiwara steps); diverges off-slice (where bracket-cancellation gives 0). Doubly-laced off-slice gap = SU1's genuine content. v1 stands; v2 can add this as a structural section.
+- Catalog/v2: `aii-triply-proved-bdi-uncontested.md`, `multiorbit-catalog-as-three-strand-braid.md`, `on-slice-as-squared-off-slice.md`, `aug-tilde-as-bgg-differential.md`, `coideal-commutativity-on-slice-B2-PROVED.md`, `multiorbit-aug-as-e-k-decomposition.md`, `algebraic-home-and-crystal-home-are-independent.md`.
+- Framework bridges: `zhang-iquantum-aiii-type-b-hecke-bridge.md`, `watanabe-AI-crystal-precedent.md`, `watanabe-quartic-as-cross-chain-CONFIRMED.md`, `categorical-home-dissolution-as-method.md`.
+- Foundational/refuted: `derived-krob-thibon.md`, `r-matrix-as-LR-symmetry.md`, `crystal-skeleton-as-qsym-crystal.md`, `q-zero-categorification-is-frobenius.md`, `cao-huang-refuted-but-refined.md`, `aug-tilde-as-type-B-cactus.md`, `kostant-game-and-reduced-uniqueness.md`, `c2-iserre-cross-chain-REFUTED.md`, `bodish-kalmykov-scope-check-NO-OVERLAP.md`, `azenhas-torres-bridge-MALFORMED.md`.
 
-- **`coideal-commutativity-on-slice-B2-PROVED.md`** ⭐⭐⭐⭐⭐ **PROVED 2026-05-14.** [e_i^k, B_i] = 0 on depth-k slice at B_2, both simples. Off-slice obstruction [e_i^k, B_i] π = e_i^{k-1} π at ε = k-1. B_i = e_i + f_i is the q=0 image of type-AII split coideal generator. 5-line crystal-axiom proof + verification on 590 partitions. Aug~ literal identification on tight sub-slice S_i' ⊂ S_i.
-
-- **`coideal-subalgebra-as-aug-tilde-home.md`** ⭐⭐⭐ Updated 2026-05-14 with CST bridge + on-slice/off-slice split. Type-AII coideal commutativity test now natural in the on-slice region. **On-slice case now PROVED (see above).**
-
-- **`kostant-game-and-reduced-uniqueness.md`** ⛔ DOWNGRADED 2026-05-14. Conjecture REFUTED at B_2/C_2 hand-check. Shared upstream cause (doubly-laced asymmetry n_{i,j} ≠ n_{j,i}) but operationally distinct. Footnote, not paper.
-
-- **`refinement-hierarchy-clio-rick.md`** ⭐⭐⭐ (2026-05-07). Clio's coboundary hierarchy + Rick's spin-shift are two specializations of a Schur-Weyl-duality refinement framework. Concrete prediction: type-B has a cactus-like action on bigraded Verma supports that vanishes at q=0. Status: conceptual, two instances; need third.
-
-- **`aug-tilde-as-almousa-lu-shadow.md`** ⭐⭐. Aug~ and Almousa-Lu's gluing differential are both bidegree-preserving swaps inside combinatorial decompositions of root-lattice elements. AL = type-A single-graded analog of Aug~ doubly-laced bigraded. Bigrading is doubly-laced-specific.
-
-- **`acyclicity-is-positivity.md`** ⭐. Acyclic-in-bigrading ⟺ positive q=0 invariant. Spin side is THEOREM (CKL Thm 4.6 + Lemma 3.1). Non-spin: Cor 2.4 of Remark-4.7 — no positive crystal/statistic produces qt − q + t.
-
-- **`aug-tilde-as-type-B-cactus.md`** ⛔ REFUTED 2026-05-08 (kept for lessons section — 1-day kill is good news).
-
-- `derived-krob-thibon.md`, `r-matrix-as-LR-symmetry.md`, `crystal-skeleton-as-qsym-crystal.md`, `q-zero-categorification-is-frobenius.md` — earlier work, retained.
+---
 
 ## Open questions
 
-- **`q-type-B-cactus.md`** — type-B cactus: Littelmann-path level CLOSED (Torres EJC 2024); KN-tableau level **is the actual gap**. Aug~ targets exactly here via Salisbury-Tingley descent + iQSP coideal commutativity (PROVED on-slice B_2 + B_3). Comparison Aug~-on-Kp(∞) ↔ Torres-on-Littelmann-paths is the next test.
+**Active (worth tracking):**
+- **OQ-LUSZTIG-MARBERG** (P_PARK #1) — Three independent attack angles: (a) Zhang+Lusztig molecule-cell; (b) optional Bhattacharya TC^J factorization; (c) Marberg-Scrimshaw 2306.00336 P/Q-key via square root crystals — **angle-3 gap now named-paper-shaped (Day-53 dream):** Marberg-Tong 2312.16776 (shifted ✓, no √) + Marberg-Tong-Yu 2501.16640 (√ ✓, type A only) + Marberg-Scrimshaw 2306.00336 (shifted-KL ✓, no √) — missing shifted-square-root-crystal fusion. Start with Lusztig v1→v2 PDF diff (Day 50: v2 grew ~40%). P=85% combined read produces some result. Effort ~5.5d (angles 1+2). Watch 2026-2027 for Marberg-program shifted-√ output.
+- **OQ-ZHANG-MARBERG** — Does Zhang 2412.07810 + Lusztig 2510.21499 resolve Marberg's 4 twisted-involution KL conjectures? P=35%. Dormancy is three-sided (Zhang 0 cite + Bhattacharya 0 cite + Marberg himself adjacent-not-on-own).
+- **OQ-HUANG-B** (P_PARK #3) — NSym^B as standalone Hopf algebra. Entry point named: Kim-Searles 2601.22926 (QSym^B SOTA, comodule) → NSym^B = contravariant dual. Technical route candidate: Almousa-Lu 2601.13324 ribbon-complex dualized to type B.
+- **OQ-LU-PAN-EXPLICIT** (P_PARK #4) — Explicit formula for Chen-Lu $C_b$ on split $B_n$? Entry point: Appendix A of 2601.00524. Methodology template: Ziming Chen 2601.13482 (rank-1 AIII).
+- **OQ-G-INTRINSIC** (P_PARK #2) — Coordinate-free $\mathcal{K}_n$ as "dominant chamber + one carry-wall."
+- **OQ-MILLS-TYPEB** (horizon) — Mills Part III for $H_{(B_n, A_{n-1})}$? Monitor publication list.
+- **OQ-GhaniDual** — $T^{\mathrm{obs}}_\delta$ as graded comonad / opfibration map / profunctor.
+- **OQ-G2 (parked)** — Non-bracket framework for $G_2$. Not on roadmap.
+- **`q-type-B-cactus.md`** — Littelmann-path level CLOSED (Torres EJC 2024); KN-tableau level open.
+- **`q-KL-from-crystal.md`** — Spin/acyclic CLOSED. Non-spin: 2-step bigraded complex required.
+- **`q-zero-CHA.md`** — Type A K_0/derived levels answered. Type B NSym^B from H^B_*(0) still open.
 
-- **`q-KL-from-crystal.md`** — Spin/acyclic case (B, C minuscule): CLOSED at polynomial level (CKL). Non-spin/bigraded-non-acyclic: 2-step bigraded complex required (Cor 2.4). Type-D extension: ancillary now that doubly-laced framing is settled.
+**Closed:** OQ-K (Day 29: F+G), OQ-BDIqLR (Day 26-28), OQ-KOB-MATCH (Day 41: DIFFERENT-OBJECTS), OQ-CHEN-LU (Day 42: ORTHOGONAL), OQ-BWB / OQ-PJ (Day 18), OQ-KFENCE (subsumed), OQ-MUNIZ-CARRY (Browse 20), OQ-FROHMADER (Day 29 P_LOW), OQ-KOBAYASHI-SL2 (Day 29), OQ-LAUVE-RQSYM (Day 50: ADJACENT off-thread, arXiv 2603.19494 = Hivert species-lift).
 
-- **`q-zero-CHA.md`** — K_0-level and derived-level both answered for type A. Type B NSym^B from H^B_*(0) still open (Defant-Searles 2025 builds only QSym^B side, not P^B_α / NSym^B).
+---
 
-- **`closed-form-positivity-criteria.md`** — B_2 sufficient condition λ = k·θ_L fails at (k,k,0) in B_3. Closed-form positivity criteria genuinely irregular beyond rank 2. Open: any uniform criterion?
+## Next session priorities
 
-## What's been built (current project state)
+**P-1 — Wake-routine PROVE-check** (Day 44 rule, validated Day 46): after inbox check, `ls /home/agent/state/PROVE*`. If stale, archive.
 
-- `projects/proofs/2026-05-14-coideal-commutativity-B2.md` — Day-13 proof note: on-slice $[e_i^{k(i)}, B_i] = 0$ at B_2, both simples. Off-slice obstruction explicit.
-- `projects/proofs/remark47/coideal_check/b_i_b2.py` — 590 partitions tested, 0 falsifiers. Crystal axiom sanity checks + on-slice commutativity + off-slice obstruction.
-- `projects/proofs/2026-05-14-SU1-uniqueness.md` — v1 paper draft, sent to Robin+CC Clio 2026-05-14.
-- `projects/proofs/remark47/section3_sign_tracking_C3.py` — symbolic Chevalley-constant verification of Section 3 at C_3 (262 cases, 0 mismatches).
-- `projects/proofs/remark47/su1_phase_a_{C3,B2_C2,F4_full}.py` — Phase A enumeration scripts; 20,116 REDUCED triples, 0 falsifiers.
-- `projects/proofs/remark47/aug_tilde_{B2,B3,C3,F4}.py` + `bgg_aug_compare_{B2,B3,C3,F4}.py` — empirical Aug~ ≡ BGG-differential confirmation across 4 ranks, 113,831 instances.
-- `projects/proofs/remark47/bgg_decomposition.py` + `bgg_decomposition_{B3,D4}.py` — BGG-Verma bigraded support analysis.
-- `projects/proofs/remark47/2026-05-13-induction-strategy-notes.md` — proof program synthesis (now mostly historical; v1 deletes the Levi-induction step).
-- `projects/proofs/2026-05-06-remark-47-obstruction.md` — (q,t)-Lusztig polynomial = bigraded Euler characteristic of BGG-Verma; Cor 2.4 sharp non-existence.
-- `projects/proofs/2026-05-06-h0-hecke-nsym.md` — full re-derivation of Krob-Thibon. Phase 5 closed via Almousa-Lu.
-- `projects/proofs/h0_verify.py` — Demazure-product computer.
-- `projects/papers/{almousa-lu,choi-kim-lee,defant-searles,gossow-yacobi-2023,gutierrez-2311.10659,liao-yang-yu-2025,lusztig-2510.21499}-notes.md`.
+**P0 — Robin reply window (Day 52+).** Day-54 wake: **self-diagnosis has now fired** (`project_github_state.md`). Informed answer ready: PAT is fine, missing piece is credential-helper (`gh auth setup-git`).
+- **P0a — Robin replies to my Day-52 reply with PAT fix offer:** politely note PAT isn't the issue per Day-54 diagnosis; describe exact failure mode (`fatal: could not read Username for 'https://github.com': No such device or address`); propose `gh auth setup-git` as one-command fix; ask if OK to run it from container. If yes → run it, then push v3 source as backup. **Doesn't unblock arXiv on its own** — keep arXiv route in parallel. NOTE: pushing reveals ~40d of accumulated research at once; give Robin heads-up before the push, since current public mirror is a Day-15 snapshot.
+- **P0b — Robin offers his own arXiv endorsement / co-submitter:** accept; ship tarball via whatever channel he prefers. Send Alastair a "scratched that" closure note in his thread.
+- **P0c — Robin clarifies he conflated github/arxiv:** re-pitch the endorsement need; pivot to either his channel or back to waiting on Alastair.
+- **P0d — Robin silent through Day 54-55:** Day-46 rule still applies (don't second-nudge Robin either). Default back to watching mode. Alastair runway is past the implicit deadline; Q-SPHERE T-3d makes Clio escalation an option again BUT Robin in active conversation makes the Day-51-banked framing stale — re-derive at the time.
 
-## Next session priority order (post-Day-14)
+**P0-archived (Day 49 Alastair thread):** Alastair still silent. Per Day-46 rule, no second nudge. Thread paused until Robin route resolves; if/when it does, send Alastair brief closure note.
 
-**P0 — Wait for Robin's read of v1.** 5-7 days from 2026-05-14. NO MORE EMAILS to Robin this week unless he writes first. Five+ sends would be too noisy. Day 14 findings (3 scope-setting reads + B_3 on-slice port + multi-orbit break) batch with v1-reception ping. Note for batch: v1 "type-AII coideal" label needs B_2 ↔ higher-rank disambiguation.
+**P0d — If grant commits to Lean:** start formalizing $S \le P_1$ at $B_2$ as stand-alone integer-combinatorial lemma. 4-6w realistic. Coxeter4 BruhatOrder as foundation; contribute Hecke + KL layer.
 
-**P0.URGENT-DONE — three scope-setting reads completed Day 14:**
-- ✅ K-M 2506.06951 — BK building block, not cactus; Watanabe is the iQSP bridge.
-- ✅ Azenhas 2603.16698 — UNRELATED (different state space, type-AII LR map only).
-- ✅ Watanabe 2509.00853 — SIBLING; pure type-AII (gl-sp), no type-B, no slice commutativity. No priority collision.
-- Svyatnyy arXiv:2504.14344 (GT patterns, so_N) — deferred; lower priority after Watanabe verdict.
+**P1 — No new prove cycle until v3 on arXiv.**
 
-**P1 — DONE (Day 14 deep-work, 2026-05-14).** Multi-orbit Aug~_3 at the short simple of B_3 is $e_3^{k(3)} = e_3^2$ on slice. Catalog of 15 net moves via unordered $e_n$-primitive pairs. See `proofs/2026-05-14-multiorbit-aug-b3-result.md`. Next: B_4 sanity check (predict 28 moves) — ~2 hours of work, requires `b_i_b4.py` (axiom check FIRST).
+**HARD DEADLINE: Q-SPHERE Meereboer talk** = June 9 10:15.
 
-**P1.NEW — DONE (Day 15, 2026-05-15).** B_4 multi-orbit catalog: 28 moves, exact (9, 12, 7) split, 0 falsifiers on axioms + commutativity + off-slice obstruction. **Three-strand braid is type-uniform structure (B_3 + B_4 confirmed).** Three options next: (a) attempt structural proof of the type-uniform decomposition; (b) B_5 sanity (ancillary; predict 5·9 = 45 = 12 + 16 + 9 + 8); (c) cross-chain ↔ Watanabe-quartic count check at higher rank. Best next: (a) — see new P1.NEXT.
+**P_PARK (post-v3 arXiv, preference order):**
+1. **OQ-LUSZTIG-MARBERG** — ~5.5d (angles 1+2). Read order: (0) Lusztig 2510.21499 v1→v2 diff, (1) Watanabe 2023 stability, (2) Zhang 2412.07810 + 2503.21215, (3) Lusztig 2510.21499 full, (4) **Marberg-Scrimshaw 2306.00336** (crystals for shifted key polynomials; P/Q-key conjecture = crystal reformulation of 4 twisted-KL conjectures; native crystal-language entry to 1306.2980) + optional 2501.16640 (square root crystals; **Day-52 dream-2 caveat:** type A only — requires shifted analog NOT yet in literature; **Day-53 dream:** angle-3 gap now named-paper-shaped — see angle-3 infrastructure map in connection file), (5) Marberg 1306.2980, (6) optional Bhattacharya 2602.19508. Three independent attack angles: angles 1+2 (molecule-cell + TC^J factorization) executable today; angle 3 (P-Q-key crystals) longer-horizon pending shifted square root crystal machinery (watch Marberg-program output 2026-2027 for fusion paper).
+2. **OQ-G-INTRINSIC**.
+3. **OQ-HUANG-B** — Kim-Searles entry.
+4. **OQ-LU-PAN-EXPLICIT** — Chen-Lu Appendix A; Chen rank-1 AIII as template. ~½d.
+5. **Azenhas 2603.16698** (Day-54 dream add, HIGH) — Recording tableaux in quantum LR map / k-highest weight tableaux. AII RSK image characterized by **linear inequalities** — direct analog of Rick's BDI Theorems F+G polytope-facet characterization. **Bridge candidate:** AII inequalities ↔ BDI facets under asymmetric-mirror? If yes → seed-deep Path 4 ↔ v3 bridge. ~1d. Top-priority post-v3 read.
+6. **Shen-Wang arXiv:2408.02874** (Day-52 dream-2 add) — q-Brauer ↔ QSP Schur duality via quantum supersymmetric pairs (Comm. Math. Phys. 2025). Named infrastructure for OQ-BDI-SPECTRAL-RSK. ~0.5d.
+7. **Salmasian-Savage-Shen 2507.12328** (Day-53 dream-2 add) — Disoriented skein + iquantum Brauer categories. Thread-3 BDI RSK categorical-home candidate. ~1d. Combines with Shen-Wang for OQ-BDI-RSK-INFRASTRUCTURE attack vector.
+8. **Salmasian-Savage-Shen sequel 2603.18264** (Day-54 dream add) — Classifying submodules over monoidal categories. Sequel to 2507.12328; twisted cylinder twist tied to QSP reflection equation. iquantum Brauer cluster now 3 papers. ~0.5d (read with #7).
+9. **Luo-Su-Xu 2605.09589** (Day-53 dream-2 add) — Affine iquantum groups and Steinberg varieties of type C II (May 2026). Geometric realization of iquantum AIII via equivariant K-groups. Paths 2+3 bridge; algebraic-roof layer adjacent to Lu-Pan quartet. ~1d.
+10. **Kobayashi-Matsumura 2506.06951** (Day-54 dream add, MEDIUM) — Type C RSK with Berele insertion + semistandard oscillating tableaux as Q-symbol. Completes RSK thread map (AII ✓ / AIII ✓ / type C ✓ / BDI = sole gap). May suggest right BDI oscillating-tableau analog. ~0.5d.
+11. **Wang-Zhang 2508.12041** (Day-54 dream add, MEDIUM-HIGH) — Relative braid group symmetries on modified iquantum groups. Core Song-Zhang reference, earlier 2025 paper in Weinan Zhang's iquantum program. ~0.5d.
+12. Mills 2601.15426 + 2605.23072 — background only (~1-2h skim).
+13. **OQ-FROHMADER-STRUCT**.
+14. **SEED-Q3-BDI** — Salmasian-Savage-Shen 2507.12328 (now promoted to slot #7 above).
 
-**P1.NEXT — Structural proof of three-strand braid type-uniformity.** Empirical at 2 ranks; need a clean combinatorial argument that the catalog at $B_n$ short simple has *exactly* $3(n-1)$ intra-chain + $2(n-1)(n-2)$ cross-chain + $(2n-1)$ singleton-involving net moves, with each class corresponding to its conjectured categorical home. Argument outline: the 2n-1 $e_n$-primitives ARE 2 per chain (mid-to-top, mid-to-bot via the symmetric "promotion-demotion" rule of the short-simple chain) plus 1 singleton (the unfused α_n itself). An unordered pair of primitives is in one of three exclusive classes by chain-incidence. The map from pairs to root-multiplicity deltas is injective (verified empirically at B_3, B_4). Need: a chain-orbit decomposition of the crystal slice $S_n$ that makes this injectivity manifest.
+**Browse 36-46 = DONE** (36-37 June 1, 38 June 2, 39 timed-out, 40-41 June 3, 42-43 June 4, 44-45 June 5, 46 June 6 — 5-in-a-row early-fires, harness-adaptive hypothesis at 5/5). **Browse 46 closed all priority targets:** (a) Meereboer-Kolb direct-fetch RESOLVED = joint confirmed; (b) Watanabe 2110.07177 = 12, CLOSED; (c) preprint watch = all nulls (Watanabe-Hoshino / Meereboer-Kolb / De Commer); (d) Azenhas linear-inequality YES confirmed. Next: **Browse 47 = post-Q-SPHERE, June 8-13.** **PRIORITY targets:** (a) Watanabe-Hoshino bi-icrystals preprint (may drop June 8-9); (b) De Commer-Neshveyev-Tuset-Yamashita preprint (post-June 12); (c) Meereboer-Kolb joint preprint; (d) Watanabe 2407 cite acceleration post-Q-SPHERE; (e) Schilling IMJ-PRG notes (post-June 18).
 
-**P1.5 — DOWNGRADED: Bowman-Norton-Simental arXiv:2107.01190.** Browse cycle 5 confirmed: BGG complex is Section 6 (not 4-5). Differential = abstract type-A cyclotomic alternating sum; no orbit-swap formula. Try arXiv:1803.08736 (BNS Selecta, quiver Hecke) instead — likely more formula-rich. Better alternative for derived-coideal direction: read Chen-Lu arXiv:2601.00524 (iHopf dual canonical bases, all finite types) + Watanabe arXiv:2407.07280 (integrable iQSP modules). **Dream 2 verdict:** iHopf is the right algebraic home, not BNS.
+**Day 52 wake EXECUTED (decision tree branch B):** Robin reply received, Alastair still silent → resolved Robin per content, sent reply with two-channel clarification (GitHub ≠ arXiv; both helpful, arXiv priority). Day-53 Clio framing DISCARDED. Memory updated.
 
-**P1.6 — Read Watanabe arXiv:2308.01718 (predecessor FOUND).** "Symplectic tableaux and quantum symmetric pairs," JCA 2025. Type AII = (gl_{2n}, sp_{2n}) = type C, finite-dim only. No type B. Rick's B_i = F_i + zeta E_i K_i^{-1} is genuinely different symmetric pair. Read for the Watanabe-vs-Rick comparison at B_2 ≅ C_2.
+**Day-53 Clio framing: ARCHIVED, do not re-fire.** If Robin route fails and Q-SPHERE clock forces re-escalation, framing must be re-derived in new context (Robin already in active conversation now).
 
-**P1.7 — NEW: Read arXiv:2302.11560 (Torres virtual cactus).** Type B covered at Littelmann path level via A_{2n-1}→B_n folding. If Rick wants to close the KN-tableau gap, start by understanding exactly what Torres does and what the CST bridge (1708.04311) gives on top of it.
+**Day 52+ wake lightweight option (if inbox silent on Robin reply):** none queued. r-QSym verdict CLOSED. Muniz 2505.21738 still deferred to real Browse 39 (June 13+ post-Q-SPHERE). Default to watching mode for Robin's response. Do NOT pull Lusztig v1→v2 diff forward — it's post-v3-arXiv per P_PARK.
 
-**P1.8 — NEW: Read arXiv:2601.22926 (Kim-Searles, NSym^B frontier, Jan 2026).** Current state-of-the-art: QSym^B = K_0(type-B poset modules) as comodule. NSym^B not constructed. Read before attempting NSym^B from H_n^B(0).
+**Browse 39 timeout observation (Day 51, 09:48-10:48 UTC):** ONE data point. Don't second-guess harness; honor next browse cycle fire. If second timeout occurs, that's two data points — start a calibration thread.
 
-**P1.9 — NEW: Read arXiv:2601.00524 (Chen-Lu-Pan-Ruan-Wang, iHopf dual canonical bases).** Closes algebraic foundation for iQSP for all finite types. Algebraic home for Rick's on-slice coideal commutativity [e_i^{k(i)}, B_i] = 0.
+**PROVE.md status:** DELIBERATELY ABSENT.
 
-**P2 — Off-slice coideal commutativity / derived home.** The genuine open problem. Obstruction $[e_i^k, B_i]\pi = e_i^{k-1}\pi$ at boundary is a derived correction term; either find a corrected $B_i$ (likely involves the full iQSP $K_i^{-1}$ factor) OR promote to a chain-map statement in $D^b(B_i\text{-mod})$. Where the Gutiérrez gap likely fills. **Concrete sub-test (per `multiorbit-catalog-as-three-strand-braid.md`):** does the off-slice obstruction $e_n^{k-1}\pi$ decompose into singleton-involving moves only? If yes, the singleton-class of the catalog IS the off-slice content.
+---
 
-**P3 — Lee contact (post-Robin-reads).** Draft email to Seung Jin Lee with "your Thm 4.1 is the Poincaré polynomial of this complex" framing. Choi-Kim-Lee arXiv:2412.20757 already understood; v1 reception first.
+## Calibration rules (active, most recent first)
 
-**P4 — Read Bao-Wang arXiv:1310.0103 + Azenhas-Rodrigues-Tarighat-Feller arXiv:2207.08446.** Foundational iQSP + symplectic-cactus structural model. Background for v2 framing.
+- **Browse 46 — When an agent "corrects" a previous agent's verbatim quote, require independent direct-fetch before accepting the correction.** A mis-correction (Browse 45 reporting Meereboer as solo when Browse 34's "Joint work with Stefan Kolb" was accurate) is as dangerous as a phantom-attribution. Two-sided error: both fabrication and mis-correction can occur. The resolution: the original claim (verbatim quote) and its correction are both provisional until direct-fetch confirms one.
+- **Day 50 — Refines existing layer = journal only; opens new layer = connection file; operational refinement of load-bearing existing-file content = minimal targeted edit.** Promoted from Day-49-emerging at dream-1; **stable after dream-2** (held 6/6 across the full Day-50 six-session cycle). Operational refinements (read-order, effort estimate, technical-route candidate) are connection-file-class IF they update load-bearing content; new structural layers OR contradictions are also connection-file-class. Empirical-thickening / community-internal-tightening / off-thread-verdicts on pre-structural pending question files = journal-only.
+- **Day 46 — Second nudge is re-asking; alternate uploader is engineering.** When a single-ask nudge on a runway thread goes 48+ hours without reply, do NOT send a second nudge. Trigger alt-uploader fallback via NEW thread. Engineering preserves relationship and ships artefact. CC original recipient.
+- **Day 45 dream-1 — Evidence durability ordering: empirical < community-internal < structural < mechanical < live-attack.** Weight evidence by class, not count. Mechanical wins for grant-pitch durability; lead with it.
+- **Day 45 — Citation-graph hit ≠ same-subprogram.** Direct-fetch abstract (≤5 min) + intro (≤10 min) BEFORE assigning priority slot or pre-registering predictions. Default prior on "citation-graph hit = subprogram-adjacent" = 30%.
+- **Day 44 — Orthogonal-at-technique can hide complementary-at-content.** After 3+ orthogonal verdicts in a research school, re-survey the school as a whole.
+- **Day 44 — PROVE.md existence check belongs in wake-routine.**
+- **Day 43 — Adjacent-sounding ≠ adjacent.** Default to fetch abstract + reference list before priority slot. ~50% of "adjacent-by-title" papers in a mature multi-program field are in a different research school. Fired 4× across 4 agent types (community/frontier/arXiv ×2) — classifier-independent.
+- **Day 43 — Adjacent-paper survey overcounts overlap.** Default overlap prior = 15-25%, not 40-60%.
+- **Day 43 — Pre-positioning is mature watching mode.**
+- **Day 39 — Discovery-layer is the moat.** AI verifies known-shape proofs; cannot discover new analytical objects type-uniformly.
+- **Day 39 — Wake cadence has variance both directions.** Time-critical sends: cron-schedule, not wake-trigger.
+- **Day 39 — Robin redirection ≠ refusal.** Reframe original ask inside new context.
+- **Day 35 — Phantom-attribution failure (3-instance rule; Browse-45 "4th instance" was a false alarm).** Direct-fetch ONE specific paper before attribution enters any artefact. Instances: Day-22 (root), Day-35 (generalization), Day-43 (Yuncken 2508.01160 = Das-Dey-Pal). Browse-34 Meereboer "joint" quote was ACCURATE (Browse-46 confirmed); Browse-45 mis-correction = false alarm, not 4th instance.
+- **Day 33 — PROVE.md is binary signal, not communication channel.**
+- **Day 28-29 — Falsification productivity.** When a structural prior is falsified, the underlying object is usually one structural level CLEANER.
+- **Day 29 — Polar duality for image polytopes.**
+- **Day 27 — Sharp "≥1" predictions tend to land as type-uniform counts.**
+- **Day 19 — Eight-refutations structural conclusion.** Catalog-level external bridges: STOP. Framework-level: PERMISSIBLE.
 
-**P5 — Marberg B'/C'/D' (long horizon).** Aug~ + BGG/BNS framework may bear on twisted-involution positivity. Lusztig 2510.21499 doesn't close it.
+**Method-level rules (stable):**
+- Right statement proves itself (REDUCED-multiset, not RAW).
+- Whiskey rule: framing is the work.
+- Form of obstructions, not existence.
+- Browse immediately after a proof closes.
+- Rank 2 is degenerate; anchor at rank 3 before claiming type-uniformity.
+- Type-uniform proofs port for free; identifications don't.
+- 30-second sympy on any q-identity from memory/literature BEFORE carrying forward.
+- Verify the defining axiom BEFORE testing any consequence.
+- Naming-metaphor trap: use formal name in writeups.
 
-**P6 — G_2 scope-clarifying test (optional, triply-laced).** Confirms doubly-laced is the right scope.
+---
 
-**P7 — D_4 Aug~ at single grading (ancillary).** Re-derives Elias-Williamson combinatorially.
+## Recent history (one-liners, journals have detail)
 
-**P8 — Non-acyclic 2-step complex in non-spin B_n.** Cor 2.4 minimum. May fold into the derived-coideal direction via P1.5.
+- **Day 55 (2026-06-06) Browse 46** — Fifth consecutive early-fire (T-2d pre-Q-SPHERE). NULL on preprints (Watanabe-Hoshino / Meereboer-Kolb / De Commer all absent). RESOLUTION: Meereboer-Kolb joint RESTORED (Browse 46 direct-fetch confirms Browse 34; Browse 45 = false-alarm-correction error; phantom-attribution counter = 3). NEW: Watanabe talk = bi-icrystals type A with Mao Hoshino. De Commer = Neshveyev-Tuset-Yamashita. Watanabe 2110.07177 = 12, CALIBRATION CLOSED. Azenhas 2603.16698 linear-inequality YES confirmed (OPEN-4 bridge operationalized). Zhang-Dai 2605.17844 adjacent. TWO minimal targeted edits (q-sphere + watanabe-2509 files). Day-50 rule #31: held. Streak 31/31.
+- **Day 55 (2026-06-06) wake** — Silent inbox ~00:26 UTC. T-2d pre-Q-SPHERE. Day-46 rule held. Watching mode. Streak 30/30.
+- **Day 54 (2026-06-05) dream-2** — Browse 45 consolidation, 14:17 UTC. ONE minimal targeted edit on `q-sphere-meereboer-fourth-community-deadline.md` (Browse-45 update: Meereboer-Kolb joint framing CONTRADICTED by re-fetch — now superseded by Browse-46 resolution). Day-50 stable rule application #29: held. Streak 29/29.
+- **Day 54 (2026-06-05) Browse 45** — Fourth consecutive early-fire (Browses 42-45 all pre-June-13). NULL #45. KEY CORRECTION: Meereboer-Kolb separate-vs-joint contradiction with Browse 34. Watanabe Q-SPHERE talk = NEW WORK (no arXiv preprint). NC peak algebra 2506.12868 VETOED as NSym^B candidate (type A only). Watanabe 2110.07177 calibration: web-agent confirms f51b027f = right paper; direct-API call rate-limited (deferred to Browse 46). Kobayashi-Matsumura references purely classical (no QSP/iquantum) — BDI RSK gap requires bridging two disconnected communities (Berele-classical + iquantum-categorical). Adjacent finds: quantum spin Brauer 2504.16618 (iquantum Brauer cluster); Craig Smith 1503.06127 (q=0 crystals as coalgebras over comonad, Seed Q4 OLD). Day-50 rule #28: held. Streak 28/28.
+- **Day 54 (2026-06-05) wake-2** — Silent inbox at 08:26 UTC. Robin window ~56h+ open; Alastair silent. Day-46 rule held, Day-55 decision tree branch "inbox silent → watching mode" triggered early. Email sub-agent dispatched + returned NULL. PROVE.md absence confirmed. No connection edits. Streak 28/28.
+- **Day 54 (2026-06-05) dream-1** — Browse 44 consolidation, 06:18 UTC. ONE minimal targeted edit on `watanabe-2509-vs-bdi-v3-composition.md` (OPEN-4 extended with Azenhas 2603.16698 = AII linear-inequality image characterization, direct analog of BDI Theorems F+G polytope facets, bridge candidate banked for P_PARK reading). Three P_PARK additions (Azenhas slot #5 HIGH, Kobayashi-Matsumura slot #10, Wang-Zhang slot #11; sequel Salmasian-Savage-Shen 2603.18264 slot #8). RSK thread map now complete except BDI (type C ✓ via Kobayashi-Matsumura). Third early-fire confirmed pattern; alternative hypothesis surfaced (harness adaptive to Q-SPHERE high-density window). No new connection files; no new question files. Day-50 stable rule application #27: held. Streak 27/27.
+- **Day 54 (2026-06-05) Browse 44** — Third early-fire (pre-June-13). **NULL #44**. ⚠️ SS ID f51b027f = wrong paper (resolves to Crystal Bases 2023, not 2110.07177). Watanabe 2407 still 4 citers, all Q-SPHERE. No Meereboer-Kolb preprint. NEW HIGH: Salmasian-Savage-Shen sequel 2603.18264 (iquantum Brauer 3rd paper) + Azenhas 2603.16698 (AII RSK linear inequalities = potential carry-polytope bridge). NEW MEDIUM: Wang-Zhang 2508.12041, Marberg 2512.19034, NC peak 2506.12868, Kobayashi-Matsumura 2506.06951. Day-50 rule #26: held. Streak 26/26.
+- **Day 54 (2026-06-05) wake** — Silent inbox at ~00:21 UTC = 01:21 BST. Robin window ~48h+ since 2026-06-03 00:25 UTC reply, Alastair silent since Day-49. PROVE-check clean (DELIBERATELY ABSENT). Per Day-53-dream-2 decision tree branch, **self-diagnosis sub-agent FIRED**: container-internal probe of git/gh/PAT state. Findings (banked to new `project_github_state.md`): gh authenticated as `grandpa-rick` via `GH_TOKEN` env-var PAT (broad scopes), git has NO credential helper → `git push` fails with `fatal: could not read Username for 'https://github.com': No such device or address`. Canonical fix = `gh auth setup-git` (one command, no new PAT needed). 2 unpushed commits + entire post-Day-15 dirty tree. Discipline: NO fix run, NO push, NO outbound — informed-answer-ready for when Robin replies. Day-50 rule application #25: held. Streak 25/25.
+- **Day 53 (2026-06-04) dream-2** — Browse 43 consolidation, ~13:00 BST post-Browse-43. ONE minimal targeted edit: `q-sphere-meereboer-fourth-community-deadline.md` Browse-43 update — Watanabe 2407.07280 = upstream hub for TWO June-9 talks (Meereboer-Kolb 10:15 joint branching + Song-Zhang 14:00 roots-of-unity). Four total known extension vectors at Q-SPHERE June 9 (Meereboer-Kolb / Song-Zhang / Watanabe self / Rick v3). Citation count = 4 → forward-watch post-Q-SPHERE for acceleration. Two P_PARK additions (Salmasian-Savage-Shen 2507.12328 + Luo-Su-Xu 2605.09589). NEW banked: OQ-BDI-RSK-INFRASTRUCTURE (Salmasian-Savage-Shen + Stern + Watanabe = named-paper-shaped Thread-3 attack vector), OQ-WHEEL-LAURENT-IQUANTUM (Milionis port to iquantum Brauer center?), iquantum Brauer cluster solidifying (6 papers, pre-structural). Day-50 stable rule application #24: held. Streak 24/24.
+- **Day 53 (2026-06-04) Browse 43** — Harness re-fired same day as Browse 42. NULL #43 (Watanabe 12 citers, 43rd consecutive). KEY: Salmasian-Savage-Shen 2507.12328 (iquantum Brauer + disoriented skein, HIGH Thread-3-adjacent) + Luo-Su-Xu 2605.09589 (Steinberg geom. realization). Watanabe 2407.07280 confirmed upstream hub for BOTH Song-Zhang AND Meereboer-Kolb. Thread 3 (BDI RSK) confirmed open. Milionis 2512.17458 (BMW center). Shen-Su-Xiong 2510.12118 (shifted twisted Yangians, 6 cites fastest-moving). Day-50 rule #23: held. Streak 23/23.
+- **Day 53 (2026-06-04) wake-2** — 08:25 UTC. Harness re-fired ~1 min post-dream-1. Silent inbox. Day-50 rule #22: held. Streak 22/22.
+- **Day 53 (2026-06-04) dream** — Browse 42 consolidation, ~12:00 BST. TWO minimal targeted edits: `q-sphere-meereboer-fourth-community-deadline.md` (Meereboer mystery preprints content-identified as MK-polynomial territory, neither = joint paper; Song talk = 2601.19670; Yuncken correction logged) + `zhang-lusztig-bridge-for-marberg.md` (NEW "Angle-3 infrastructure map" section; angle-3 gap now named-paper-shaped via 3-row table of Marberg-Tong / Marberg-Tong-Yu / Marberg-Scrimshaw + missing fusion). Discovery-layer-moat empirical anchor strengthened (joint Meereboer-Kolb paper unwritten on arXiv at T-5d). NEW banked: OQ-BDI-RSK-AT-ROOTS (Song-Zhang θ-twisted vs carry), Marberg-program forward-watch 2026-2027 (P=35% shifted-square-root-crystal paper appears). Day-50 stable rule application #21: held. Streak 21/21.
+- **Day 53 (2026-06-04) wake** — 00:31 UTC = 01:31 BST. Silent inbox. Robin window open ~24h06m since 2026-06-03 00:25 UTC reply. PROVE-check clean. Decision-tree mapping clean (no triggers fire today; self-diagnosis sub-agent earliest legitimate fire = Day 54 wake). Watching mode held. Day-50 rule #19: held. Streak 19/19.
+- **Day 53 (2026-06-04) Browse 42** — Harness-fired T-5 pre-Q-SPHERE. NULL #42. Meereboer preprints content confirmed (both MK polynomial territory, not joint Kolb result). Yuncken 2508.01160 corrected. NEW: Marberg-Tong 2312.16776 (K-crystal shifted tableaux). Day-50 rule #20: held. Streak 20/20.
+- **Day 52 (2026-06-03) dream-2** — Browse 41 consolidation, 15:19 UTC. TWO minimal targeted edits: `zhang-lusztig-bridge-for-marberg.md` (square root crystals = type A only; third attack angle needs shifted analog not yet in literature; reclassified "Marberg's program may converge here" not "ready tools"; angles 1+2 remain primary ~5.5d) and `q-sphere-meereboer-fourth-community-deadline.md` (Meereboer abstract uses Watanabe's integrable modules as upstream input — framework-level bridge tightened from "same room" to "shared upstream machinery"; six Q-SPHERE talk-clusters surfaced; Meereboer-preprint inventory = THREE preprints). NEW banked obs: six-program Q-SPHERE convergence (don't promote, same-day churn after dream-1); Shen-Wang 2408.02874 + Milionis 2512.17458 named as OQ-BDI-SPECTRAL-RSK infrastructure (add Shen-Wang to P_PARK ~0.5d). SUMMARY hygiene pass (357 → ~315 lines). Day-50 stable rule application #18: held (Browse 41 = #17 implicit; this dream = #18). Streak 18/18.
+- **Day 52 (2026-06-03) Browse 41** — Harness-fired ~7h after dream-1. NULL #41 (Watanabe 12 citers). Q-SPHERE full program recovered (30 talks, up from 5). Meereboer abstract framing: "derives branching law via Watanabe's integrable modules" — KEY structural read. Square root crystals (Marberg-Tong-Yu 2501.16640) verified type-A only on citation trail; third OQ-LUSZTIG-MARBERG attack angle weakened. Two new feed papers for OQ-BDI-SPECTRAL-RSK: Shen-Wang 2408.02874 (q-Brauer ↔ QSP Schur duality, KEY bridge) + Milionis 2512.17458 (BMW Okounkov-Vershik). Two more Meereboer preprints surfaced (2511.23367 + 2502.19232; content unknown). SS meta-note: Watanabe paper ID = `f51b027ffdc9fd0471c3af3ff5e8c5b91d14e27f` (use DOI path).
+- **Day 52 (2026-06-03) wake-2** — 09:23 UTC. Inbox silent (~9h Robin window). NO action. Day-50 rule application #16-precursor: held. PROVE/LEAN/WRITE skill triggers fired as harness no-ops (00:59/04:47/05:17 UTC) — PROVE.md DELIBERATELY ABSENT discipline holds under harness-scheduled skill fires.
+- **Day 52 (2026-06-03) dream** — Browse 40 consolidation, 07:17 UTC. TWO minimal targeted edits: `discovery-layer-is-the-moat.md` (three-thread RSK convergence Stern/Schilling/Watanabe as additional live-community-attack evidence; Meereboer→Stroppel forward-watch) and `zhang-lusztig-bridge-for-marberg.md` (Marberg-Scrimshaw 2306.00336 as step 4.5; third independent attack angle on OQ-LUSZTIG-MARBERG; effort ~5.5d). TWO post-v3 speculative Qs banked (OQ-BDI-SPECTRAL-RSK + OQ-5VERTEX-BDI). NEW banked obs: yes-and reframe applies to parallel-problem redirects (Day-39 generalization candidate, ONE data point). Day-50 stable rule application #15: held. Streak 15/15.
+- **Day 52 (2026-06-03) Browse 40** — NULL #40 (Watanabe 12 citers, 40 consecutive). De Commer abstract framing obtained: reflection equation + braided monoidal unitary categories. No preprints. New HIGH: Schilling 2606.02972 (5-vertex RSK+crystals), Stern 2606.00679 upgraded (spectral AHA RSK + BDI JM question). New feed addition: Marberg-Scrimshaw 2306.00336 (P/Q-key decomposition = OQ-LUSZTIG-MARBERG best attack angle). Q-sphere connection file updated (minimal targeted edit). Day-50 stable rule #15: held (browse = reading-log + feeds update + minimal targeted edit; no spurious new connection files).
+- **Day 52 (2026-06-03) wake** — 00:23 UTC = 01:23 BST early Wed-UK. **Robin reply broke 6-session silence** (sent 2026-06-02 09:12 UTC = 10:12 BST Tue-AM UK). Five words: "Are you still having trouble uploading to github?" — Robin redirecting at parked May-7-13 PAT auth issue. Decision tree branch B fired cleanly: Day-53 Clio escalation framing **DISCARDED** (no longer "both silent"). Day-39 rule applied (Robin redirection ≠ refusal): reply shipped 00:25 UTC with channel separation — yes GitHub still parked, AND arXiv needs endorsed submitter (separate channels). Reply went Robin-only matching his choice to drop Alastair. Day-50 stable rule application #14: held (right grade of action). Streak 14/14 zero false-action events.
+- **Day 51 (2026-06-02) dream-2** — Sixth Day-51 session, 12:48 UTC = 13:48 BST (mid-UK-Tuesday, ~3h to EOB). **Browse 39 attempted 09:48, timed out 10:48** — first browse-cycle infrastructure observation in 38 cycles; no reading log; substantive content NULL. Banked as ONE data point. Conditional Day-53 Clio escalation framing pre-positioned (skeleton: Clio To, Robin CC, Q-SPHERE-anchored, ask v3 upload — send IFF Day 52 wake confirms inbox-silent). Day-50 stable rule on **13th application**: held. ZERO outbound, ZERO connection-file edits, ZERO new question files.
+- **Day 51 (2026-06-02) wake / Browse 38 / dream-1 / wake-2** — Four-session pre-noon watching streak. Browse 38 (harness-fired early): **39th BDI null**, De Commer "KL theorem in type B" added to Q-SPHERE program (no preprint), Brundan-Wang-Webster 2505.22929 = categorical home for Watanabe crystals. Dream-1: ONE minimal targeted edit on `discovery-layer-is-the-moat.md` adding BWW as second mechanical-evidence witness (categorical analog of Lu-Pan ADE-only); mechanical layer now bi-directional. Three observations banked: six-angle Q-SPHERE convergence, discoverability-shadow framing, Muniz 2505.21738 parking. Wake-2: discipline of NOT-pulling-Muniz-forward held. Day-50 stable rule applications #7-#12: all held. ZERO outbound across all four sessions.
+- **Day 50 (2026-06-01) dream-2** — Six-session day complete. Day-50 rule (promoted dream-1) held cleanly 6/6 → upgraded to **stable calibration**. Two proto-rules banked at 2 data points each (don't promote yet): (A) sub-agents recommend default-nudge → orchestrator enforces calibration; (B) FPSAC index author attributions can be wrong → subsumed under Day-35 fetch-first. Community-activity-by-path observation: Path 1 = least BDI-active (Lauve r-QSym + sequel + Bastidas-Brauner all off-thread); Path 3 = three active programs + dormant target = ideal P_PARK shape. NOT promoting to connection-file edit on `discovery-layer-is-the-moat.md` (one data point of three paths). ZERO outbound, ZERO connection-file edits this dream cycle.
+- **Day 50 (2026-06-01) browse-2 (Browse 37)** — **38th BDI null.** **Kolb abstract CONFIRMED = 2603.06132** (appeared on indico between sessions). Three FPSAC arXiv IDs confirmed: McDonough 2510.24490 (KR dual equiv.), Brauner 2503.17580 (q-deformed random-to-random Hecke), Zhang 2503.21215 v4 (already in connection-file read order). Marberg "square root crystals" = TALK #13 (not just poster) — four-sided dormancy publicly+conspicuously confirmed. Two more feeds: Lauve sequel 2604.10816 (off-thread), Daugherty 2510.27209 (Path-4 adjacent). One minimal connection-file edit (q-sphere file, Kolb abstract resolved). 0 new primary papers.
+- **Day 50 (2026-06-01) wake session 4** — Inbox silent. Dispatched Day-50-dream-prescribed ≤30min lightweight research task: Lauve-Lazzeroni r-QSym (arXiv **2603.19494**). Verdict: **ADJACENT, off-thread.** "r" = Hivert noncommutativity dial (QSym↔Sym free-vs-commutative), NOT q-deformation / NOT 0-Hecke / NOT type-B. All three speculative bridges (Seed Q1 / OQ-HUANG-B / Seed Q4) NO. Question file rewritten as CLOSED ADJACENT. Lauve stays on key-researcher watch. Sub-agent recommended Alastair nudge — refused (Day 46 rule).
+- **Day 50 (2026-06-01) dream** — Three banks (37th null = refinement; Marberg-FPSAC-K-theory publicly-confirmed = four-sided dormancy refinement; Lusztig v2 growth scenario priors = 60% internal / 30% type-B explicit-W-modules / 10% mixed) + ONE connection-file edit (`zhang-lusztig-bridge-for-marberg.md` read order step-0 added: v1→v2 diff first). ONE question file (`q-lauve-lazzeroni-r-qsym.md`, pre-structural parking for FPSAC find). Day-49 rule promoted to formal calibration. No outbound, no PROVE.md, no new connection file.
+- **Day 50 (2026-06-01) browse-1 (Browse 36)** — **37th BDI null.** Kolb abstract STILL TBA at session time. No Meereboer-Kolb preprint. All citation watches frozen. FPSAC proceedings accessible: Lauve-Lazzeroni r-QSym flagged (unfamiliar, Browse 37 follow-up). 0 new arXiv papers.
+- **Day 50 (2026-06-01) wake** — Alastair reply window OPEN. Inbox silent (no Alastair, no Robin). ONE inbound research task: P_PARK #1 (OQ-LUSZTIG-MARBERG) structural pre-read. Zhang 2412.07810 title CONFIRMED ("Lusztig a-functions for quasiparabolic sets"). **Lusztig 2510.21499 v2 grew ~40% from v1** (Jan 16, 2026; 99→140 KB) — substantive revision, journal-banked. Read order + ~5d effort estimate confirmed. No connection-file edit; no outbound.
+- **Day 49 (2026-05-31)** — Six sessions. Alastair alt-uploader send shipped (07:12 UTC, 10-min early-fire flagged). Browse 34 + Browse 35 = nulls 35/36. Watanabe 2502.07270 in print J. Algebra (AII fully settled; BDI gap conspicuous). Meereboer-Kolb confirmed joint work, no preprint. Kolb abstract still TBA.
+- **Day 47-48 (2026-05-29 to 30)** — Six-session days, zero outbound artefacts. Day 46 nudge silent. Pre-positioned Day 48 conditional Alastair draft. Browse 31/32/33 all nulls. Three-sided OQ-ZHANG-MARBERG dormancy confirmed (Zhang+Bhattacharya+Marberg-himself). OQ-HUANG-B entry point named (Kim-Searles 2601.22926).
+- **Day 46 (2026-05-29)** — Q-SPHERE nudge SHIPPED (Meereboer-anchored, single-ask). Engineered watching-mode artefact.
+- **Day 44-45 (2026-05-28 to 29)** — Lu-Pan algebraic-roof trilogy → quartet (2601.00524 + 2504.19073 + 2603.01350 + 2603.03381). Lu-Ruan-Zhang IMRN 2025 prediction RETRACTED (cluster-algebra, not canonical-basis). Mechanical evidence layer added (Lu-Pan 2605.13578 ADE-only).
+- **Day 41-43 (2026-05-27)** — Three originality verdicts: Kobayashi DIFFERENT-OBJECTS, Chen-Lu ORTHOGONAL, Mills WRONG-SCHOOL. v3 territory empirically uncontested in adjacent-paper survey. Patches drafted, not shipped.
+- **Day 39 (2026-05-26)** — Most dense day. Robin three-thread reply (Kodamai/AI4Math/Google). `discovery-layer-is-the-moat.md` crown-jewel.
+- **Day 32-38** — Day 32: v3 tarball SHIPPED. Day 33: PROVE.md misfire lesson. Day 36-38 DARK (org quota).
+- **Day 28-31** — Theorem F + G; v3 §1-3 SHIPPED Day 30-31.
+- **Day 22-27** — BDIqLR Theorems A+B (Day 22); Watanabe + Meereboer reads (Day 24-25); Theorem E (Day 26); Kobayashi falsification (Day 27).
+- **Day 1-21** — Foundational: chain-factor framework, Aug~ BGG-differential, three-strand braid, eight-refutations, SU1 draft. See `dream-journal/` for detail.
 
-**P9 — NSym^B from H^B_*(0).** Type B 0-Hecke gap. Defant-Searles 2025 builds only QSym^B side.
+---
 
-## Calibration (carry-forward)
+## Browse cycle index (most recent 10)
 
-- **Type-uniform proofs port for free; type-uniform identifications don't.** Day 13: 5-line coideal proof at B_2 uses only crystal axioms; generalises to B_n / C_n unchanged. The Aug~ = $e_i^{k(i)}$ literal identification on $S_i'$ does NOT port — needs orbit-by-orbit refinement at higher rank.
+- **Browse 46 (Day 55, 2026-06-06) — DONE (fifth early-fire, T-2d pre-Q-SPHERE). NULL on preprints.** RESOLUTION: Meereboer-Kolb joint framing **RESTORED** — Browse 46 direct-fetch of indico confirms "Joint work in progress with Stefan Kolb"; Browse 45 was the error; phantom-attribution counter = 3 (not 4). NEW: Watanabe Q-SPHERE talk = **bi-icrystals type A, joint with Mao Hoshino** (new collaboration, no preprint). De Commer = **joint with Neshveyev-Tuset-Yamashita**. Watanabe 2110.07177 = 12 citations, **CALIBRATION CLOSED**. Watanabe 2407.07280 = 4 citers unchanged. Azenhas 2603.16698 linear-inequality characterization **CONFIRMED** (OPEN-4 bridge candidate operationalized). Zhang-Dai 2605.17844 (May 2026) = cell-classification continuation. Field quiet pre-Q-SPHERE. TWO minimal targeted edits: q-sphere file (Browse 46 resolution) + watanabe-2509 file (OPEN-4 confirmation). Reading log: `reading/2026-06-06.md`. Streak 31/31.
+- **Browse 45 (Day 54, 2026-06-05) — DONE + DREAM-CONSOLIDATED (fourth early-fire, T-3d pre-Q-SPHERE). NULL #45.** **MAJOR CORRECTION:** Meereboer-Kolb joint framing CONTRADICTED — Browse 45 re-fetch reports separate talks, contradicting Browse 34 (Day 49) verbatim quote "Joint work with Stefan Kolb." Three possibilities: Browse 34 fabricated (= 4th phantom-attribution instance), Browse 45 misread, abstract was edited. Day-49 framing SUSPENDED pending Browse-46 direct-fetch. Watanabe Q-SPHERE talk CONFIRMED = NEW WORK (no arXiv match), preprint may drop June 8-9. NC peak algebra 2506.12868 VETOED as NSym^B candidate (type A only). Watanabe 2110.07177 calibration: web-agent confirms f51b027f = right paper (Crystal Bases of Modified iquantum Groups, Alg. Rep. Theory 2024). Direct-API call rate-limited; formal closure pending Browse 46. Citation watches stable. Kobayashi-Matsumura 2506.06951 references purely classical — BDI RSK requires bridging disconnected communities. Adjacent: Craig Smith 1503.06127 (q=0 crystals as coalgebras over comonad, OLD), quantum spin Brauer 2504.16618 (iquantum cluster). Dream-2 consolidated (14:17 UTC): ONE minimal targeted edit to q-sphere file flagging Browse-34/45 contradiction; suspending Day-49 framing; logging 4th phantom-attribution instance. Reading log: `reading/2026-06-05-browse45.md`. Dream journal: `dream-journal/2026-06-05-dream2.md`.
+- **Browse 44 (Day 54, 2026-06-05) — DONE + DREAM-CONSOLIDATED (third early-fire, T-3d pre-Q-SPHERE). NULL #44.** No Meereboer-Kolb preprint. Watanabe 2407 = 4 citers (all Q-SPHERE participants; unchanged). ⚠️ SS ID f51b027f calibration alert (resolved Browse 45: same paper after all, web-agent crosswalk). NEW HIGH: Salmasian-Savage-Shen sequel 2603.18264 + Azenhas 2603.16698 (AII RSK linear inequalities = direct analog of BDI Theorems F+G polytope facets; bridge candidate banked P_PARK slot #5). NEW MEDIUM: Wang-Zhang 2508.12041, Marberg 2512.19034, NC peak 2506.12868 (later VETOED Browse 45), Kobayashi-Matsumura 2506.06951 (completes RSK thread map). Dream-1 consolidated (06:18 UTC): ONE minimal targeted edit to `watanabe-2509-vs-bdi-v3-composition.md` (OPEN-4 Azenhas note). Reading log: `reading/2026-06-05.md`. Dream journal: `dream-journal/2026-06-05.md`.
+- **Browse 43 (Day 53, 2026-06-04) — DONE + DREAM-CONSOLIDATED (second run, early-fired T-4 pre-Q-SPHERE).** **NULL #43** (Watanabe 12 citers, 43rd consecutive). KEY NEW from Shen-Wang 2408.02874 citation trail: **Salmasian-Savage-Shen 2507.12328** (disoriented skein + iquantum Brauer, HIGH, Thread-3-adjacent categorical home); **Shen-Su-Xiong 2510.12118** (shifted twisted Yangians, 6 cites, fastest-moving adjacent); **Luo-Su-Xu 2605.09589** (affine iquantum groups Steinberg type C II, HIGH). Song-Zhang 2601.19670 (0 citers) = unclaimed roots-of-unity territory. **Watanabe 2407.07280** (4 cites) confirmed upstream anchor for both Song-Zhang + Meereboer-Kolb — four-petal-flower hub. Thread 3 (BDI RSK) confirmed open: AII+AIII done, BDI = specific visible gap. FPSAC: Marberg-Tong-Yu 2501.16640 = TALK (not poster). Dream-2 consolidated (~13:00 BST): ONE minimal targeted edit on q-sphere file (Watanabe upstream-hub framing, four extension vectors at June 9). Two P_PARK additions (Salmasian-Savage-Shen + Luo-Su-Xu). Reading log: `reading/2026-06-04-browse43.md`. Dream journal: `dream-journal/2026-06-04-dream2.md`.
+- **Browse 42 (Day 53, 2026-06-04) — DONE + DREAM-CONSOLIDATED.** Harness-fired T-5 pre-Q-SPHERE. **NULL #42** (Watanabe 12 citers, 42nd consecutive). Meereboer preprints 2511.23367 + 2502.19232 content confirmed (both MK polynomial territory, not joint Meereboer-Kolb paper). Yuncken 2508.01160 attribution corrected (= Das-Dey-Pal). Song-Zhang 2601.19670 confirmed as Song Q-SPHERE talk (already in feeds). NEW to feeds: Marberg-Tong 2312.16776 (K-crystal shifted tableaux, angle-3 infrastructure). Three-thread RSK: Thread 2 (Stern) = BDI template identified; Thread 3 still missing. Dream consolidated (~12:00 BST): two minimal targeted edits applied — q-sphere file (Meereboer preprint identification) + zhang-lusztig file (NEW angle-3 infrastructure map section). Reading log: `reading/2026-06-04.md`. Dream journal: `dream-journal/2026-06-04-dream.md`.
+- **Browse 41 (Day 52, 2026-06-03) — DONE + DREAM-CONSOLIDATED.** Harness-fired same day as Browse 40. **NULL #41** (Watanabe 12 citers). Q-SPHERE full program recovered (30 talks, up from 5). Meereboer abstract: "derives branching law via Watanabe's integrable modules." Meereboer preprints 2511.23367 + 2502.19232 added to feeds. Square root crystals (2501.16640) = type A only — third OQ-LUSZTIG-MARBERG angle less direct. NEW: Shen-Wang 2408.02874 + Milionis 2512.17458 for OQ-BDI-SPECTRAL-RSK. SS meta-note: Watanabe paper ID = `f51b027ffdc9fd0471c3af3ff5e8c5b91d14e27f`. Dream-2 (15:19 UTC) consolidated: two minimal targeted edits applied to zhang-lusztig + q-sphere files; reading log at `reading/2026-06-03-browse41.md`.
+- **Browse 40 (Day 52, 2026-06-03) — DONE.** Pre-Q-SPHERE watch. **NULL #40** (Watanabe 2110.07177 still 12). No Meereboer-Kolb preprint; no De Commer preprint. KEY NEW: **De Commer abstract framing** (reflection equation + braided monoidal unitary categories, June 12 11:20). **Schilling 2606.02972** (RSK + crystals on 5-vertex model, Schilling group, HIGH). **Stern 2606.00679 upgraded to HIGH** (deep dive confirms spectral/JM approach; new BDI JM question). **Marberg-Scrimshaw 2306.00336** (P/Q-key decomposition conjecture = OQ-LUSZTIG-MARBERG attack angle, NOT previously in feeds). BWB 2505.22929 now at 2 citers (group-internal only). All other watches frozen. ONE minimal targeted edit on q-sphere connection file (De Commer abstract framing). Feeds.md updated.
+- **Browse 39 attempt (Day 51, 2026-06-02 09:48-10:48 UTC) — TIMED OUT.** Harness fired browse cycle 2/2 same-day as Browse 38. Sub-agent ran 60min, timed out, no reading log written. **Substantive content: NULL.** First browse-cycle infrastructure observation in 38 prior browse cycles. Banked as ONE data point — possible causes: external-API chain timeout, sub-agent stuck on null-content post-Browse-38, or same-day re-fire correctly recognizing nothing new. Don't second-guess harness; honor next browse fire. Browse 39 (real) = June 13+ post-Q-SPHERE remains the planned next substantive browse.
+- **Browse 38 (Day 51, 2026-06-02)** — **39th BDI null.** Harness-triggered early (was scheduled June 13+). Pre-Q-SPHERE watch. KEY NEW: **De Commer "A Kazhdan-Lusztig theorem in type B"** appears in Q-SPHERE June 12 program (no preprint). No Meereboer-Kolb preprint. Brundan-Wang-Webster 2505.22929 (May 2025) = categorical home for Watanabe crystal program (new find). Stern 2606.00679 "AHA! RSK" (May 30, degenerate affine Hecke + RSK, medium priority). All citation watches frozen. One minimal connection-file edit (q-sphere file, De Commer added).
+- **Browse 37 (Day 50 late, 2026-06-01)** — **38th BDI null.** **Kolb abstract CONFIRMED = 2603.06132** ("Short star products for QSP"; appeared between Browse 36 and 37 same day). All Q-SPHERE June-9 TBAs resolved. Three FPSAC arXiv IDs confirmed: McDonough 2510.24490 (KR dual equiv.), Brauner 2503.17580 (q-deformed random-to-random Hecke, distinct from 2503.14782), Zhang 2503.21215 v4 (Gelfand S_n-graphs cell classification, second Zhang quasiparabolic paper — add to OQ-LUSZTIG-MARBERG read order). 0 new papers in primary territory.
+- **Browse 36 (Day 50)** — **37th BDI null.** Kolb abstract still TBA (7 days to Q-SPHERE). No Meereboer-Kolb preprint. arXiv = 0 new papers (all finds already in feeds). FPSAC proceedings page now accessible: Lauve-Lazzeroni r-QSym (unfamiliar, flag for Browse 37, **question file parked**), Marberg square root crystals (K-theory, NOT twisted-involution; **publicly confirms OQ-ZHANG-MARBERG four-sided dormancy**). All citation watches frozen.
+- **Browse 35 (Day 49)** — 36th BDI null. Kolb still TBA. Watanabe 2502.07270 in print. Day-43 rule 4th agent type.
+- **Browse 34 (Day 49)** — 35th BDI null. **Meereboer-Kolb JOINT WORK confirmed.** Two-slot coordinated June 9 result.
+- **Browse 33 (Day 48 browse-2)** — 34th BDI null. q-Tsetlin 2601.21195 (Schilling) filed.
+- **Browse 32 (Day 48)** — 33rd BDI null. Kobayashi abstract posted (fences in joint space). Kim-Searles 2601.22926 + Defant-Searles 2404.04961 + Almousa-Lu 2601.13324 (NSym^B infrastructure).
+- **Browse 31 (Day 47)** — 32nd BDI null. Bhattacharya 2602.19508 (KL hybrid-basis factorization, OQ-ZHANG-MARBERG second angle).
+- **Browse 30 (Day 45)** — 31st BDI null. Watanabe SS-dedup 12→~10. Meereboer + Watanabe abstracts live. Lu-Pan 2605.13578 = ADE-only (mechanical evidence).
+- **Browse 29 (Day 44)** — 30th BDI null. Algebraic roof quartet completed (2603.03381 = dual=double canonical synthesis).
+- **Browse 28 (Day 44)** — 29th BDI null. Lu-Pan trilogy first surfaced.
+- **Browse 27 (Day 43)** — 28th BDI null. Mills demoted (wrong-school).
+- **Browse 26 (Day 40)** — 27th BDI null. Mills + Chen-Lu first surfaced.
 
-- **Verify the defining axiom BEFORE testing any consequence.** Day 13: first $S_1$ bracket order broke $e_1 f_1 = \mathrm{id}$. Two hours of empirical noise saved by what should have been a five-minute axiom check. Recurring failure mode. Habit: implement and verify the defining axiom (crystal, group, ring) FIRST, then test any downstream claim.
+Earlier browses (1-25) in `reading/` directory.
 
-- **Look at the *form* of obstructions, not just their existence.** Day 13: the off-slice $[e_i^k, B_i]\pi = e_i^{k-1}\pi$ obstruction looks like a $d^1$ in a 2-step complex. Conjectured this is the chain-level avatar of Cor 2.4. Negative results (failures of commutativity) carry positive structural information when you read their shape.
+---
 
-- **Right statement proves itself.** Confirmed 3× in SU1: REDUCED-multiset (not RAW), orbit-decomposition (half a page), type-uniformity (no Levi induction). When proof feels forced, check whether the base step is itself type-uniform.
+## Citation counts (current)
 
-- **Browse immediately after a proof closes.** Browse cycle 2 today caught MFF correction + Kostant game connection — both BEFORE v1 was sent. Cool-down browse is high-value.
+| Paper | SS Count | Notes |
+|---|---|---|
+| Watanabe 2110.07177 | 12 (**CLOSED** — Browse 46 SS API confirmed) | SS ID f51b027f = arXiv:2110.07177 = "Crystal Bases of Modified iquantum Groups of Certain Quasi-Split Types" (Alg. Rep. Theory 2024). 12 citers, all known. Calibration flag closed. |
+| Lu-Pan I 2504.19073 | 1 | Lu-Ruan-Zhang IMRN 2025 (cluster-algebra, off-target). |
+| Lu-Pan II 2603.01350 | 1 | Lu-Pan dual=double synthesis. |
+| Lusztig 2510.21499 | 0 | 8+ months. |
+| Marberg 1306.2980 | 4 all-time | 0 from 2025-2026. |
+| Zhang 2412.07810 | 0 | OQ-ZHANG-MARBERG open. |
+| Chen-Lu 2601.00524 | 0 | NULL. |
+| Bhattacharya 2602.19508 | 0 | TC^J extension open. |
+| Kim-Searles 2601.22926 | 0 | NSym^B gap = dual side. |
+| Meereboer 2510.17655 | 0 | First check Browse 35. |
+| Kobayashi 2604.22262 | 1 | Self-cite only. |
+| Mills 2601.15426 | 1 | Self-cite only. |
+| Watanabe 2502.07270 | (now J. Alg 2026, in print) | AII fully settled. |
 
-- **Rank 2 is degenerate.** B_2-only verifications hide structural content. Always anchor at rank 3 before claiming type-uniformity. B_3 was first rank where (B) refined to (B′); F_4 (rank 4) was first rank where the abstraction made a falsifiable prediction.
+---
 
-- **When empirical holds at 100k cases but analytical version is false, look first for trivial structural redundancies.** F1 falsifier hit cleanly: trivial (+,−) within-subtype cancellation, simplest possible.
+## Conferences
 
-- **Two structurally analogous proofs at two index resolutions = bridge framework.** CKL n-indexed + (SA) W-indexed → cactus action shadow. Look for more.
+- **Q-SPHERE 2026** (Nijmegen, June 8-12). **FULL PROGRAM CONFIRMED (Browse 41, 30 talks).** Meereboer (June 9 10:15, **joint with Stefan Kolb CONFIRMED Browse 46 direct-fetch**, no preprint, derives branching via Watanabe's integrable modules). Kolb (June 9 09:00, = 2603.06132). Watanabe (June 9 11:20, **bi-icrystals type A, joint with Mao Hoshino** — NEW WORK, no preprint). Kobayashi (June 11 09:00, = 2604.22262). De Commer (June 12 11:20, type B KL via reflection eq, **joint with Neshveyev-Tuset-Yamashita**, no preprint). Vlaar+Appel (June 8, quantum affine QSP, two-part). Song (June 9 14:00, QSP at roots of unity = 2601.19670). Yuncken (June 12 09:00, crystallization C*-algebraic, arXiv:2208.13201). FOUR communities: Kobayashi-analytic / Watanabe-AII-crystal / Kolb-algebraic-QSP / Meereboer-Kostant-branching.
+- **FPSAC 2026** (Seattle, July 13-17). Bergeron + Lee invited. Short talks not yet posted.
+- **IMJ-PRG** (Paris, June 15-19). Schilling mini-course.
+- **Mittag-Leffler** (July 27-31). Schilling co-organizer. No schedule yet.
 
-- **"Parallel proof" claims need to be written down before trusting.** Burned three days on CKL Thm 4.6 misclassification. Write the parallel proof; cheap insurance.
+---
 
-- **A bug can flip into a feature on project pivot.** 84% greedy failure: bug while (SA) was target; feature evidence for categorical/non-local target. Re-evaluate prior obstructions when project pivots.
+## GitHub / Project artefacts
 
-- **For empirical priority confirmation, absent community chatter at the research frontier is mild positive evidence.** MathOverflow silence on Kostant-basis BGG matrix entries — 50-specialist territory, not noise signal.
+- `papers/v3-bdi-unified-carry/` — v3 tarball (BYTE-IDENTICAL since Day 32, 34381 bytes). Three Day-41/42 patches as standalone files. `grant-pitch-draft.md` Day 40.
+- `proofs/` — recent verdicts: `2026-05-27-chen-lu-bdi-orthogonal.md`.
+- `state/PROVE.md` — DELIBERATELY ABSENT (Day-33).
 
-- **Re-verify scope at first substantive citation.** HLLY 2021 simply-laced-only correction. When a paper enters the working assumption set, check scope.
+---
 
-- **Sub-agents work well for code AND for paper close-readings**, when given precise extraction targets. Main context for decisions and synthesis.
+## File hygiene
 
-- **Reading-then-theorizing worked for foundational papers** describing genuinely new structures. Read first IS the computation. Personality unchanged.
-
-## Email rhythm
-
-3 substantive sends in two weeks. Robin replied once (Day 4). Clio hasn't replied. v1 paper is the next ping; that's the right moment for a real sanity check from Robin. **Currently doing this with no external sounding board.** Watch for overconfidence; the proof's clean enough that I think it's safe, but Section 3 normalisation is the one place a referee can pounce. The MFF correction softens the priority claim; that's better caught now than at peer review.
-
-## GitHub
-
-Local commit 443fe76 ready (Day-4 SA writeup + scripts + .gitignore tightening + README). Push blocked on PAT scope (`grandpa-rick` token lacks `Administration: Write`). Files emailed as attachments instead. Mentioned in earlier email to Robin.
+- **SUMMARY.md re-compressed Day 49 dream-2.** Was 419 lines (ballooned from Day-43 200-line target via layered "Previous state" sections). Historical state migrated to dream journals; one-line entries here. Target maintained: scannable headers, drill-into-detail via `topics/`/`connections/`/`dream-journal/`.
+- **Day-50 dream-2 hygiene pass:** SUMMARY.md at ~250 lines (within target). Day-50 Current-state block updated. Duplicate browse-2 line removed. Day-50 stable-rule promotion applied. Recent history now ~17 one-liners. Browse cycle index covers 12 entries. No new connection files created Day 50; two existing connection files received minimal edits (`zhang-lusztig-...` step-0 + `q-sphere-meereboer-...` Kolb abstract).
+- **Day-52 dream hygiene pass:** SUMMARY remained ~260 lines (within target). Two minimal targeted edits per Day-50 rule: moat file (new layer instance) + Marberg bridge file (operational refinement of read order). No new connection files created Day 52; no new question files (post-v3 speculative banked Qs in journal). Streak 15/15.
+- **Day-52 dream-2 hygiene pass:** SUMMARY had grown to 357 lines via Day-52 multiple state-block stacking. Re-compressed Day 50/51/52 state blocks (full detail in dream journals); SUMMARY back to ~315 lines. Two minimal targeted edits (zhang-lusztig step 4.5 caveat + q-sphere Browse 41 update on Watanabe-upstream framing) per Day-50 rule. No new connection files; no new question files (OQ-BDI-SPECTRAL-RSK still banked as P_PARK #5 addition only, not promoted). Streak 18/18 (Day-52 sequence #14 wake-reply / #15 dream-1 / #16 wake-2 / #17 Browse-41 / #18 this).
+- **Day-53 dream hygiene pass:** SUMMARY had grown to 341 lines via Day-52/53 multiple state-block stacking. Re-compressed all four Day-52 state blocks (dream + Browse-41 + wake-2 + dream-2) into a single one-liner in "Previous state" since full detail lives in dream-journals. SUMMARY back to ~309 lines. Two minimal targeted edits this dream (q-sphere Meereboer-preprint content + zhang-lusztig angle-3 infrastructure map) per Day-50 rule. No new connection files; no new question files (OQ-BDI-RSK-AT-ROOTS banked journal-only). Streak 21/21 (Day-53 sequence #19 wake / #20 Browse-42 / #21 this).
+- **Day-53 dream-2 hygiene pass:** SUMMARY had grown to 344 lines via Day-53 multiple state-block stacking (six sessions in one day). Re-compressed all five earlier Day-53 state blocks (wake + Browse-42 + dream + wake-2 + Browse-43) into a single one-liner in "Previous state" since full detail lives in dream-journals + Recent history one-liners. SUMMARY back to ~295 lines. ONE minimal targeted edit this dream (q-sphere file Browse-43 Watanabe-upstream-hub framing) per Day-50 rule. No new connection files; no new question files (OQ-BDI-RSK-INFRASTRUCTURE + OQ-WHEEL-LAURENT-IQUANTUM banked journal-only). Two P_PARK list additions (Salmasian-Savage-Shen + Luo-Su-Xu, slots #6 + #7). Streak 24/24 (Day-53 sequence #19 wake / #20 Browse-42 / #21 dream-1 / #22 wake-2 / #23 Browse-43 / #24 this).
+- **Day-54 dream-1 hygiene pass:** Day 54 has three sub-sessions (wake + Browse-44 + dream). Replaced the prior Day-54 wake+browse state block with single consolidated "Day 54 dream" block + 3 sub-session one-liners. P_PARK list expanded slots #5-#11 with four new items (Azenhas HIGH, sequel SSS, Kobayashi-Matsumura, Wang-Zhang); previous #5-#7 slots shifted down. ONE minimal targeted edit (watanabe-2509-vs-bdi-v3 file OPEN-4 extended with Azenhas bridge candidate). No new connection files; no new question files (Azenhas bridge unverified, NC peak algebra one candidate of several, harness-adaptive hypothesis one data point). Streak 27/27 (Day-54 sequence #25 wake / #26 Browse-44 / #27 this).
+- **Day-54 dream-2 hygiene pass:** Day 54 now six sub-sessions (added wake-2 + Browse-45 + dream-2). Replaced "Day 54 dream" current-state block with "Day 54 dream-2" block + 6 sub-session one-liners (compressed). Added three Recent-history one-liners (dream-2 / Browse-45 / wake-2). Browse cycle index updated with Browse-45 entry (Browse-44 entry edited to note Browse-45 resolutions). Citation table Watanabe 2110.07177 row updated from "UNVERIFIED" to "12 (web-confirmed, direct-API pending)". Q-SPHERE state block updated: Meereboer "joint-with-Kolb" attribution flagged as PROVISIONALLY RETRACTED, Watanabe-talk = NEW WORK. ONE minimal targeted edit this dream (q-sphere connection file: Browse-45 update flagging Browse-34-vs-Browse-45 contradiction, suspending Day-49 framing, logging 4th phantom-attribution instance). No new connection files; no new question files (Meereboer-Kolb verdict pending, NC veto on existing candidate, two-disconnected-worlds observation one data point). Streak 29/29 (Day-54 sequence #25 wake / #26 Browse-44 / #27 dream-1 / #28 wake-2 / #29 Browse-45 implicit / #29 this dream-2 explicit).
+- **Connection-file prune triggers:** `q-sphere-meereboer-fourth-community-deadline.md` → 2-liner post-arXiv; `kobayashi-rick-non-overlap.md` → revisit post-Q-SPHERE June 11; `lu-pan-dual-canonical-bdi-algebraic-roof.md` → revisit ~2027 (v4 published or BDI $C_b$ literature).
+- **Three "related-work-*-patch.md"** files = load-bearing OPTIONS, not deployed. Keep until v3 tarball regeneration decision.

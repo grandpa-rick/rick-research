@@ -1,0 +1,72 @@
+
+=== content ≤ 4 (70 configs) ===
+  ν=(2, 0): |basis|=4, |HW|=2, factors=yes
+    HW: M=0, B=1, T=1, S=0
+    HW: M=0, B=2, T=0, S=2
+
+=== content ≤ 6 (larger catalog) ===
+  ν=(2, 0): |basis|=4, |HW|=2, factors=yes
+    HW: M=0, B=1, T=1, S=0
+    HW: M=0, B=2, T=0, S=2
+  ν=(3, 0): |basis|=6, |HW|=2, factors=yes
+    HW: M=0, B=2, T=1, S=1
+    HW: M=0, B=3, T=0, S=3
+  ν=(3, -1): |basis|=4, |HW|=2, factors=yes
+    HW: M=0, B=2, T=1, S=0
+    HW: M=0, B=3, T=0, S=2
+  ν=(4, 0): |basis|=7, |HW|=2, factors=yes
+    HW: M=0, B=2, T=2, S=0
+    HW: M=0, B=3, T=1, S=2
+  ν=(4, -2): |basis|=4, |HW|=2, factors=yes
+    HW: M=0, B=3, T=1, S=0
+    HW: M=0, B=4, T=0, S=2
+
+=== content ≤ 8 (extensive) ===
+  ν=(2, 0): |basis|=4, |HW|=2, factors=yes
+    HW: M=0, B=1, T=1, S=0
+    HW: M=0, B=2, T=0, S=2
+  ν=(3, 0): |basis|=6, |HW|=2, factors=yes
+    HW: M=0, B=2, T=1, S=1
+    HW: M=0, B=3, T=0, S=3
+  ν=(3, -1): |basis|=4, |HW|=2, factors=yes
+    HW: M=0, B=2, T=1, S=0
+    HW: M=0, B=3, T=0, S=2
+  ν=(3, 1): |basis|=8, |HW|=2, factors=yes
+    HW: M=0, B=2, T=1, S=2
+    HW: M=0, B=3, T=0, S=4
+  ν=(4, 0): |basis|=9, |HW|=3, factors=yes
+    HW: M=0, B=2, T=2, S=0
+    HW: M=0, B=3, T=1, S=2
+    HW: M=0, B=4, T=0, S=4
+  ν=(4, -1): |basis|=6, |HW|=2, factors=yes
+    HW: M=0, B=3, T=1, S=1
+    HW: M=0, B=4, T=0, S=3
+  ν=(5, 0): |basis|=10, |HW|=2, factors=yes
+    HW: M=0, B=3, T=2, S=1
+    HW: M=0, B=4, T=1, S=3
+  ν=(4, -2): |basis|=4, |HW|=2, factors=yes
+    HW: M=0, B=3, T=1, S=0
+    HW: M=0, B=4, T=0, S=2
+  ν=(5, -1): |basis|=8, |HW|=2, factors=yes
+    HW: M=0, B=3, T=2, S=0
+    HW: M=0, B=4, T=1, S=2
+  ν=(6, 0): |basis|=10, |HW|=2, factors=yes
+    HW: M=0, B=3, T=3, S=0
+    HW: M=0, B=4, T=2, S=2
+  ν=(5, -2): |basis|=6, |HW|=2, factors=yes
+    HW: M=0, B=4, T=1, S=1
+    HW: M=0, B=5, T=0, S=3
+  ν=(5, -3): |basis|=4, |HW|=2, factors=yes
+    HW: M=0, B=4, T=1, S=0
+    HW: M=0, B=5, T=0, S=2
+  ν=(6, -2): |basis|=7, |HW|=2, factors=yes
+    HW: M=0, B=4, T=2, S=0
+    HW: M=0, B=5, T=1, S=2
+  ν=(6, -4): |basis|=4, |HW|=2, factors=yes
+    HW: M=0, B=5, T=1, S=0
+    HW: M=0, B=6, T=0, S=2
+
+============================================================
+content ≤ 4: 1 weights with |HW|≥2, 0 fail factoring
+content ≤ 6: 5 weights with |HW|≥2, 0 fail factoring
+content ≤ 8: 14 weights with |HW|≥2, 0 fail factoring

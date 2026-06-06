@@ -1,0 +1,829 @@
+             Compositional Game Theory, Compositionally
+
+              Robert Atkey             Bruno Gavranović                     Neil Ghani
+             Clemens Kupke              Jérémy Ledent                 Fredrik Nordvall Forsberg
+                                     The MSP Group, University of Strathclyde
+                                             Glasgow, Écosse Libre
+
+
+
+      We present a new compositional approach to compositional game theory (CGT) based upon Arrows, a
+      concept originally from functional programming, closely related to Tambara modules, and operators
+      to build new Arrows from old. We model equilibria as a module over an Arrow and define an operator
+      to build a new Arrow from such a module over an existing Arrow. We also model strategies as graded
+      Arrows and define an operator which builds a new Arrow by taking the colimit of a graded Arrow. A
+      final operator builds a graded Arrow from a graded bimodule. We use this compositional approach
+      to CGT to show how known and previously unknown variants of open games can be proven to form
+      symmetric monoidal categories.
+
+
+1    Introduction
+A new strain of game theory — Compositional Game Theory (CGT) — was introduced recently [9]. At
+its core, CGT involves a completely new representation of games — open games — with operators for
+constructing larger and more complex games from smaller, simpler (and hence easier to reason about)
+ones. Despite recent substantial interest and further development [13, 10, 7, 6, 4, 11, 14], open games
+remain complex structures, e.g. the simplest form of an open game is an 8-tuple consisting of 4 ports, a
+set of strategies, play and coplay functions and an equilibrium predicate. More advanced versions [4]
+require sophisticated structures such as coends. This causes problems: (i) complex definitions lead to
+complex and even error prone proofs; (ii) proofs are programs and overly complex proofs turn into overly
+complex programs; (iii) even worse, this complexity deters experimentation and innovation, for instance
+the authors of [10] were deterred from trying alternative definitions as the work became prohibitive; and
+(iv) worse still, this complexity suggests we do not fully understand the mathematical structure of open
+games.
+     Category theorists have an answer to such complexity: trade complex definitions in a simple category
+for simpler definitions in a more complex category. This simplified open games by factoring their definition
+via the category of lenses, and this more abstract perspective led directly to the discovery of Bayesian
+Open Games [4] where one naturally swaps out lenses in favour of optics when one starts with a monoidal
+category. Swapping out a subcomponent for another is a hallmark of compositionality, but, because the
+definition of open games is not compositional, one has to redevelop all the structure of open games built
+over optics from scratch. The same thing happens with open games with mixed strategies [10] where a
+small change — here to the type of the equilibrium predicate — leads to the need to redevelop the full
+theory of these open games. The same story is true if we want to (i) replace equilibria with best-response;
+or (ii) add type dependency; or (iii) allow the covariant play function and contravariant co-play function
+to live in different categories; or (iv) build open games over monadic effects; or (v) consider a host of
+other variations of open games. Every single time we must show from scratch that a given variant of open
+game forms a monoidal category — a highly non-trivial task.
+
+David I. Spivak and Jamie Vicary (Eds.):
+Applied Category Theory 2020 (ACT2020)                                   This work is dedicated to the public domain.
+EPTCS 333, 2021, pp. 198–214, doi:10.4204/EPTCS.333.14
+R. Atkey, B. Gavranović, N. Ghani, C. Kupke, J. Ledent & F. Nordvall Forsberg                           199
+
+
+    We present a compositional approach to CGT which allows us exactly to make small modifications to
+the definition of an open game, check these modifications have suitable local properties, and conclude the
+resulting open games do indeed form a monoidal category. As with compositionality in general, we start
+with a semantic structure and define operators to build more complex examples from smaller ones. The
+semantic structure we use is a presentation of monoidal categories using profunctors and Arrows [17].
+This simplifies the treatment of the monoidal structure to that of a strength, and also allows us to work in
+a purely functorial setting. We stress that arrows are just a convenient tool — it would also be possible to
+work with monoidal categories directly. This paper develops a three phase compositional axiomatisation
+of CGT: (i) the first phase consists of selecting an arrow to represent the play/coplay structure of open
+games; (ii) the second phase abstracts the equilibrium predicate to a bimodule over an arrow, and defines
+an operator for building new arrows from an old arrow and a bimodule over it; and (iii) the final phase
+abstracts the indexing of open games by strategies by defining an operator which maps a graded arrow to
+an arrow. This provides a simple, compositional axiomatisation of CGT in arrow theoretic terms. We
+also show we can add the strategies first and then later add the equilibrium predicate. This later approach
+also allows us to treat probabilistic games and open games based upon best response functions. The
+closest approach in the literature is Hedges [14, §8], and while there are notable similarities there are also
+significant differences, e.g. while Hedges [14] provides an axiomatisation of certain forms of open games,
+it does not do so compositionally, and is not general enough to cover probabilistic or dependently typed
+open games.
+    In summary, this more abstract picture clearly exposes the fundamental mathematical structure of
+open games in a way which has not been done before. The originality of the paper lies in its conceptual
+reimagining of open games as a compositional structure using canonical mathematical structures such
+as arrows, modules and grading. Its utility is demonstrated by the variety of examples — some known
+and others new to this paper — encompassed by our framework. As a result, we believe our presentation
+will both (i) lead to further new variants of open games; and (ii) become the default presentation of open
+games.
+
+
+2    Profunctors and Arrows
+Definition 1 (Profunctor). Given two categories C and D, a profunctor F from C to D, denoted by
+F : C −7→ D, is a functor F : C op × D → Set.
+Example 2. Let C be a category. Then HomC : C op × C → Set is a profunctor.
+    Profunctors, strong profunctors and monoids therein form our bedrock and much of this paper is a
+toolbox for building new examples of arrows from old. The bicategory Prof has categories as objects,
+profunctors as morphisms, and natural transformations as 2-cells. Composition of profunctors is given by
+the the following coend formula, for F : C −7→ D and G : D −7→ E .
+                                                   Z Y :D
+                                (G • F)(X, Z) :=            F(X,Y ) × G(Y, Z)
+
+The identity profunctor on C is HomC . We now fix a monoidal category C and focus on the cate-
+gory Prof(C ) of profunctors from C to C and natural transformations between them.
+Definition 3 (Strength). A (right) strength for a profunctor F : Prof(C ) is a family of morphisms
+stX,Y,Z : F(X,Y ) → F(X ⊗ Z,Y ⊗ Z) (natural in X,Y , and dinatural in Z) making the following two
+diagrams commute. We often write stZ or just st when the subscripts can be inferred from context.
+200                                                                      Compositional Game Theory, Compositionally
+
+                              stZ⊗Z 0
+              F(X,Y )                     F(X ⊗ (Z ⊗ Z 0 ),Y ⊗ (Z ⊗ Z 0 ))                                  F(X,Y )
+                stZ                                         F(α −1 ,α)                 and          F(ρ,ρ −1 )      stI
+                                  stZ 0
+         F(X ⊗ Z,Y ⊗ Z)                   F((X ⊗ Z) ⊗ Z 0 , (Y ⊗ Z) ⊗ Z 0 )                            F(X ⊗ I,Y ⊗ I)
+    Such a pair (F, st) is called a strong profunctor1 . Note that several strengths may exist for the same
+profunctor. When several strengths for different profunctors (say F and G) are involved, we distinguish
+them using superscripts, stF and stG . A strong natural transformation from (F, stF ) to (G, stG ) is a natural
+transformation τ : F → G that commutes with the strengths:
+                                                           stF
+                                          F(X,Y )                     F(X ⊗ Z,Y ⊗ Z)
+                                          τX,Y                                   τX⊗Z,Y ⊗Z
+                                                           stG
+                                          G(X,Y )                     G(X ⊗ Z,Y ⊗ Z)
+    The category StrProf(C ) of strong profunctors and strong natural transformations is monoidal, where
+the tensor product is the composition operator •, and the unit is the functor HomC . This allows us to talk
+about monoids inside StrProf(C ).
+Definition 4 (Arrow). An arrow is a monoid in (StrProf(C ), •, HomC ), i.e. a strong profunctor (A, st)
+together with strong natural transformations pure : HomC → A and >>>: A • A → A, satisfying the expected
+monoid laws.
+If we unpack Definition 4 (and use the universal property of coends), an arrow on C can be described
+more concretely by the following data:
+      • A family of sets A : |C | × |C | → Set;
+      • A family of functions pureXY : HomC (X,Y ) → A(X,Y );
+      • A family of functions >>>XY Z : A(X,Y ) × A(Y, Z) → A(X, Z), called arrow composition;
+      • A family of functions stXY Z : A(X,Y ) → A(X ⊗ Z,Y ⊗ Z);
+subject to a number of arrow equations expressing functoriality, naturality, and so on (see e.g. Atkey [2]).
+We often use this presentation in the rest of the paper. We sometimes omit the subscripts to reduce notation
+when they can be inferred; and sometimes add a superscript, e.g. >>>A , to specify which arrow they belong
+to.
+    There is a notion of a left strength F(X,Y ) → F(Z ⊗ X, Z ⊗Y ), analogous to Definition 3, that satisfies
+similar properties. When the category C is symmetric monoidal, left and right strengths are interdefinable:
+Lemma 5. Let C be symmetric monoidal. A right strength st for a profunctor F : Prof(C ), induces a
+left strength st0 : F(X,Y ) → F(Z ⊗ X, Z ⊗Y ) as st0XY Z = F(σZX , σY Z ) ◦ st. The left strength satisfies the
+(di)-naturality conditions and analogues of the diagrams in Definition 3.
+    In general, arrows give rise to premonoidal categories [2]. The reason we do not get a monoidal
+category is that there are two ways to define a map A(X,Y ) × A(X 0 ,Y 0 ) → A(X ⊗ X 0 ,Y ⊗Y 0 ), and they
+need not coincide. Since we are interested in (symmetric) monoidal categories, we need to restrict to
+commutative arrows2 .
+   1 See also Rivas and Jaskelioff [24] for a similar definition in the case when C is cartesian. This definition is also the same as
+
+Pastro and Street’s definition of the additional structure required for a profunctor to be a Tambara module [22].
+   2 There is a similar situation with strong monads, whose Kleisli category is in general only premonoidal. To get a monoidal
+
+category, we need the stronger notion of commutative monad (a.k.a. monoidal monad). See Example 9.
+R. Atkey, B. Gavranović, N. Ghani, C. Kupke, J. Ledent & F. Nordvall Forsberg                         201
+
+
+Definition 6. Let C be symmetric monoidal. An arrow (A, pure, >>>, st) is commutative if the following
+diagram mixing left strength, right strength, and composition commutes:
+                                            stX 0 ×stY0
+                  A(X,Y ) × A(X 0 ,Y 0 )                  A(X ⊗ X 0 ,Y ⊗ X 0 ) × A(Y ⊗ X 0 ,Y ⊗Y 0 )
+                                                                               >
+                                                                               >
+                                                                               >
+
+                             ∼
+                             =                                       A(X ⊗ X 0 ,Y ⊗Y 0 )
+                                                                               >
+                                                                               >
+                                                                               >
+                                            st0X ×stY 0
+                  A(X 0 ,Y 0 ) × A(X,Y )                  A(X ⊗ X 0 , X ⊗Y 0 ) × A(X ⊗Y 0 ,Y ⊗Y 0 )
+The following is a mild extension of results in the literature [16, 24].
+Proposition 7. Let C be symmetric monoidal. Every commutative arrow A : Prof(C ) gives rise to a
+symmetric monoidal category whose objects are the objects of C , and whose morphisms from X to Y are
+the elements of A(X,Y ). Moreover, there is a strict monoidal functor J : C → A where we abuse notation
+and write A for both the arrow and the monoidal category it induces.
+Example 8. For any symmetric monoidal category C , the functor HomC : C op × C → Set is an arrow,
+whose associated monoidal category is C itself.
+Example 9. Let T : C → C be a strong monad on C . The Kleisli arrow of T is defined by AT (X,Y ) :=
+HomC (X, TY ). If T is commutative, then the arrow AT is also commutative. Its associated monoidal
+category is the Kleisli category CT . Dually, if T : C → C is a strong comonad on C , its co-Kleisli arrow
+is defined by AT (X,Y ) := HomC (T X,Y ).
+    We use this last example to show lenses form an arrow in the next section. This example also
+demonstrates the interest in arrows from the functional programming community, as arrows provide a
+single framework within which computations with both effects and coeffects can live. To summarise:
+arrows provide a presentation of monoidal categories where the monoidal structure is induced by strength,
+and generalise both monadic and comonadic computation. We can use constructions on functors and
+internal monoids to build new arrows from old; this flexibility underpins their use in this paper.
+
+
+3     Open Games
+Rather than hit the reader with the full profunctor framework we have developed, we show first how a
+compositional treatment of open games is possible, which abstracts away from any specific notion of lens
+as the primitive building block for open games. As this is expository material we only sketch proofs, and
+work with Set-based open games.
+
+3.1     Open games, concretely
+Open games were originally presented as follows [12]:
+Definition 10 (Open Game). Let X,Y, R and S be sets. A pure open game G = (JG , PG ,CG , EG ) : (X, S) →
+(Y, R) consists of:
+      • A set JG , called the set of strategies of G,
+      • A function PG : JG × X → Y , called the play function of G,
+      • A function CG : JG × X × R → S, called the coutility function of G, and
+202                                                               Compositional Game Theory, Compositionally
+
+
+      • A predicate EG : X × (Y → R) → P(JG ), called the equilibrium function of G3 (where P is the
+        powerset functor).
+    An important conceptual step was the lens-ification of open games [9]. The functor W : Set × Setop →
+Set × Setop defined by W (X, S) = (X, X → S) is a comonad. The category of lenses Lens is the co-
+Kleisli category of W : concretely, its objects are pairs of sets, and the morphisms from (X, S) to (Y, R)
+are pairs of functions ( f , g) with f : X → Y and g : X × R → S. Noting that X ∼ = Lens(1, 1)(X, S) and
+         ∼
+(Y → R) = Lens(Y, R)(1, 1), we have:
+Theorem 11. Let I = (1, 1) and A and B be objects of Set × Setop . An open game G : A → B is given by:
+(i) a set JG of strategies; (ii) a function pG : JG → Lens(A, B); and (iii) a predicate EG : JG × Lens(I, A) ×
+Lens(B, I) → Bool.
+    Apart from internalising the notion of open games into structure internal to the category of lenses, and
+combining the treatment of play and coplay into a single morphism, this more abstract formulation gives
+cleaner proofs of the following fundamental theorem:
+Theorem 12. There is a symmetric monoidal category Op whose objects are pairs of sets, and whose
+morphisms are open games, with games with isomorphic strategy sets identified4 . This structure reflects
+the sequential and parallel composition of open games.
+
+3.2    A Compositional Treatment of Open Games
+Rather than proving that open games and similar structures form a monoidal category in one fell swoop,
+i.e. non-compositionally, we adopt a more compositional, step by step approach. As mentioned in the
+introduction we do this by using profunctors and arrows. The first step is easy: by Example 9, the comonad
+W (X, S) = (X, X → S) gives rise to an arrow on Set × Setop , that we also denote by Lens, like its induced
+symmetric monoidal category. Note that the strength of W is defined with respect to the monoidal structure
+of Set × Setop (not its cartesian structure), which sends (X,Y ) and (X 0 ,Y 0 ) to (X × X 0 ,Y ×Y 0 ). The unit
+of this monoidal structure is I = (1, 1).
+Proposition 13. The profunctor Lens : Prof(Set × Setop ) is a commutative arrow.
+    This establishes the well-known fact that the category of lenses is symmetric monoidal. Further,
+the unit of this arrow is the core of the lifting of functions through open games. The next part of our
+compositional construction requires that an arrow that satisfies a property called projection at points — a
+property that the key case of Lens has. Condition (1) below essentially expresses that the projection map
+p0 is an internal natural transformation. In particular, it implies naturality of p0 in both parameters.
+Definition 14 (Projection at points). Let A : Prof(Set × Setop ) be an arrow. Then A has projection at
+points if there is a family of maps p0X,X 0 : A(I, X ⊗ X 0 ) → A(I, X) such that
+
+             0
+            pY,X      >> stX 0 (a)) = p0X,X 0 ( j) >>> a
+                 0( j >                                     and       p0X,Y 0 ( j >>> st0X (a0 )) = p0X,X 0 ( j)   (1)
+
+for all j ∈ A(I, X ⊗ X 0 ), a ∈ A(X,Y ) and a0 ∈ A(X 0 ,Y 0 ). Using symmetry, this means that there also
+is a projection p1X,X 0 : A(I, X ⊗ X 0 ) → A(I, X 0 ) given by p1X,X 0 := p0X,X 0 ◦ A(id, σ ) that satisfies similar
+conditions.
+   3 Hedges [12] presents open games with best response functions rather than equilibrium functions, but we prefer the
+
+presentation using equilibria for simplicity. We will show how to also define open games with best response functions
+compositionally in Section 6.
+   4 An alternative to this quotient would be to work with bicategories instead.
+R. Atkey, B. Gavranović, N. Ghani, C. Kupke, J. Ledent & F. Nordvall Forsberg                           203
+
+
+    Given any arrow A (such as Lens) with projection at points, which we think of as representing some
+primitive building block, we now want to attach to it an equilibrium predicate — the key feature of open
+games. The type of this equilibrium predicate is Equib(A)(X,Y ) := A(I, X) × A(Y, I) → Bool. Note that
+Equib(A) itself is not an arrow: it has a structure that we call an A-bimodule in Section 4.1. However, by
+bundling together A and Equib(A), we do get an arrow:
+Proposition 15. Let A : Prof(Set × Setop ) be a commutative arrow with projection at points. Then the
+profunctor A × Equib(A) : Prof(Set × Setop ) defined by
+
+                      (A × Equib(A))(X,Y ) = A(X,Y ) × (A(I, X) × A(Y, I) → Bool)
+
+is a commutative arrow.
+
+Proof. The unit of A × Equib(A) is built from the unit of A and an equilibrium predicate which always
+returns true. The composition
+
+            >>>X,Y,Z : (A × Equib(A))(X,Y ) × (A × Equib(A))(Y, Z) → (A × Equib(A))(X, Z)
+
+is obtained as follows. We are given four arguments s : A(X,Y ), t : A(Y, Z), f : A(I, X) × A(Y, I) → Bool,
+and g : A(I,Y ) × A(Z, I) → Bool, and we define
+
+                    (s, f ) >>> (t, g) := s >>>A t, λ xλ z. f (x,t >>>A z) ∧ g(x >>>A s, z)
+                                                                                           
+
+
+where >>>A is the multiplication of A.
+    To define the strength stX,Y,Z : (A × Equib(A))(X,Y ) → (A × Equib(A))(X ⊗ Z,Y ⊗ Z), we are given
+an element s : A(X,Y ) and a predicate f : A(I, X) × A(Y, I) → Bool. We put
+                                                                                      
+                                                                      A
+                        stZ (s, f ) := stAZ (s), λ xλ y. f p0 (x), st0Y (p1 (x)) >>>A y
+
+where stA denotes the strength of A, st0 A left strength and p0 and p1 are the projections at points. We omit
+the proof of commutativity of the arrow.
+
+     Those familiar with the intricacies of the monoidal and sequential composition of open games will
+notice their essence above. What is really surprising is that this can be carried out for any set-based arrow
+satisfying projection at points and not just for lenses. This generality was not expected. Finally, we turn to
+indexing by sets of strategies. Again, we work solely with arrows and introduce an arrow constructor to
+deal with strategies. The simplest, used here, is a variant of the fundamental families construction from
+categorical logic [19, Def. 1.2.1] where we refer to a function J → X as a J-indexed collection of X’s.
+Proposition 16. Let A : Prof(Set × Setop ) be a commutative arrow. Then the profunctor Fam(A) :
+Prof(Set × Setop ) defined by
+
+                               Fam(A)(X,Y ) = colimitJ:Setiso (J → A(X,Y ))
+
+is a commutative arrow.
+
+Proof. The unit of Fam(A) is the singleton family built from the unit of A. The composition of Fam(A)
+sends (J, F : J → A(X,Y )) and (K, G : K → A(Y, Z)) to (J × K, ( j, k) 7→ F( j) >>>A G(k)) (see also Han-
+cock’s tensor on containers [18, Def. 2.3]). Finally, strength for Fam(A) takes a family and post-composes
+it with the strength of A.
+204                                                                   Compositional Game Theory, Compositionally
+
+
+    Note that in the definition of Fam(A), taking the colimit over the category Setiso of sets and bijective
+functions is crucial. Indeed, it ensures that families indexed by isomorphic strategy sets are identified. This
+quotient is important to prove the associativity of arrow composition; the same issue comes up in the usual
+treatment of open games [9]. Combining Propositions 13, 15, 16 and 7, we get a symmetric monoidal
+category Op = Fam(Lens × Equib(Lens)) and an embedding Set × Setop → Op, in a compositional
+manner.
+
+
+4     Bimodules and Graded Arrows
+We now upgrade the expository illustration of the previous section. The simplest observation is that there
+is nothing special about the category Set — any monoidal category can be used. We then generalise
+the (− × Equib(−)) construction using a general notion of bimodule for an arrow in Section 4.1. We
+decompose Fam(A) using a notion of graded arrow in Section 4.2. In Sections 5 and 6 we will use the
+work in this section to reconstruct open games on optics [4] and other known and new variations of open
+games, respectively.
+
+4.1    Bimodules
+The cumbersome proof of Proposition 15 can be further decomposed. Notice that the arrow
+                         (A × Equib(A))(X,Y ) = A(X,Y ) × (A(I, X) × A(Y, I) → Bool)
+is obtained by combining the arrow A with the predicate type Equib(A)(X,Y ) := A(I, X) × A(Y, I) → Bool.
+As it turns out, Equib(A) has a nice structure that we call an A-bimodule5 . We will use this technology to
+prove Proposition 33, which generalizes Proposition 15.
+     We also take the opportunity to notice that there is nothing special about the Booleans in the definition
+of concrete open games, and replace them with an arbitrary monoid with suggestively named operations
+(M, ∧, tt) — Hedges’ software implementation [15] uses this insight to collect more in-depth diagnostics
+when checking equilibria.
+Definition 17 (Bimodule). Let A : C −7→ C be an arrow. An A-bimodule is a profunctor B : C −7→ C
+equipped with natural transformations ` : A • B → B and r : B • A → B, such that:
+    1. ` is a left-action, i.e., the two diagrams below commute;
+                                              α                                                        λ
+                       A • (A • B)                       (A • A) • B                  HomC • B               B
+                         A•`                                    >
+                                                                >
+                                                                >•B                  pure•B
+                                                                                                       `
+
+                          A•B                B                 A•B                         A•B
+                                      `              `
+
+    2. r is a right-action (similar diagrams);
+    3. ` commutes with r, i.e.,
+                                                                  α
+                                           A • (B • A)                        (A • B) • A
+                                             A•r                                     `•A
+
+                                              A•B          `
+                                                                  B       r      B•A
+    5 Note that our notion of an A-bimodule is equivalent to a profunctor for the (pre)monoidal category induced by A (Proposi-
+
+tion 7), matching the alternative name “bimodule” for profunctors.
+R. Atkey, B. Gavranović, N. Ghani, C. Kupke, J. Ledent & F. Nordvall Forsberg                                              205
+
+
+When B is a strong profunctor, ` and r are also required to be strong natural transformations.
+Definition 18. Let A be an arrow and B : StrProf(C ) an A-bimodule. We say that B is commutative when
+the following diagram (akin to the one of Definition 6) commutes.
+                                                  stX 0 ×stY0
+                A(X,Y ) × B(X 0 ,Y 0 )                            A(X ⊗ X 0 ,Y ⊗ X 0 ) × B(Y ⊗ X 0 ,Y ⊗Y 0 )
+                                                                                          `
+
+                            ∼
+                            =                                                B(X ⊗ X 0 ,Y ⊗Y 0 )
+                                                                                          r
+                                                  st0X ×stY 0
+                B(X 0 ,Y 0 ) × A(X,Y )                            B(X ⊗ X 0 , X ⊗Y 0 ) × A(X ⊗Y 0 ,Y ⊗Y 0 )
+    Recall that profunctors inherit the cartesian structure of Set. Given F, G : C −7→ D, their product is
+defined by (F × G)(c, d) := F(c, d) × G(c, d); and the terminal profunctor 1 : C −7→ D is the constant
+functor that picks out a singleton set. It is easy to check that this is also a cartesian structure on StrProf(C ).
+Finally, note that • distributes over ×, in the sense that there is a strong natural transformation of type
+F • (G × H) → (F • G) × (F • H), and similarly with F on the right.
+Definition 19 (Bimodule with monoid). When B additionally has a monoid structure (B, m, e) w.r.t. the
+cartesian product (×, 1) in StrProf(C ), we also require that ` and r preserve the monoid structure of B:
+
+                                 distributivity                                                       id•e
+              A • (B × B)                              (A • B) × (A • B)                       A•1           A•B
+                A•m                                                `•`                         !                 `
+
+                  A•B                 B            m            B×B                             1      e       B
+                             `
+
+
+Theorem 20. Assume A : C −7→ C is an arrow, and B : StrProf(C ) is a monoid w.r.t. cartesian product
+(×, 1) and an A-bimodule, then A × B is an arrow. Moreover, if both A and B are commutative (as an
+arrow, as a monoid and as a bimodule), then so is A × B.
+
+Proof. Since A and B are strong profunctors, then so is A × B. Moreover, our hypothesis gives us the
+following strong natural transformations:
+
+               pureA : HomC → A                                 ` : A•B → B                         e:1→B
+                >>>A : A • A → A                                r : B•A → B                        m : B×B → B
+
+Then we define pureA×B := pureA × e, and >>>A×B is given by
+
+                             distributivity       (A • A) × (A • B)           >A × ` × r × !
+                                                                              >
+                                                                              >                              id × m
+       (A × B) • (A × B)                                                                       A×B×B                  A×B
+                                                  ×(B • A) × (B • B)
+
+One can then check that the arrow laws are satisfied.
+
+    In virtue of Theorem 20, the proof of Proposition 15 now amounts to showing that Equib(A) is a
+commutative A-bimodule with a (×, 1)-monoid structure. In fact, we can further decompose this proof by
+introducing the following notion of context. A similar notion of context appears in Hedges [14], where it
+is axiomatized at the level of the monoidal category induced by the arrow A.
+206                                                         Compositional Game Theory, Compositionally
+
+
+Definition 21 (Context). Let A : C −7→ C be an arrow. A profunctor B : C −7→ C is called a context
+when it is a commutative A-bimodule equipped with a costrength cstXY Z : B(X ⊗ Z,Y ⊗ Z) → B(X,Y ),
+satisfying some coherence diagrams similar to the ones for strength (full details in Appendix A).
+    The notion of costrength is a weakening of the notion of a trace for a symmetric monoidal category
+to arbitrary profunctors — in particular if the profunctor B is the Hom-functor of a traced monoidal
+category, then B has a canonical costrength. The meat of Proposition 15 lies in the next lemma. Notice
+that the position of X and Y is reversed; hence the pre-composition with flip : C op × C → C × C op in
+Theorem 23. Another example of context, which does not require projection at points, will be given later
+in Definition 31.
+Lemma 22. If A has projection at points, then CtxtA (X,Y ) = A(I,Y ) × A(X, I) is a context.
+
+Proof. The left action is given by the family `XY Z : A(X,Y ) × CtxtA (Y, Z) → CtxtA (X, Z), defined by:
+
+            `XY Z := (s, z, y) 7→ (z, s >>>A y) : A(X,Y ) × A(I, Z) × A(Y, I) −→ A(I, Z) × A(X, I)
+
+The right action is similar. To define the costrength, we use the strength of A and the projections p0 , p1 :
+
+      cstXY Z := (y, x) 7→ (p0 (y), st0A  1
+                                                >>A x) : A(I,Y ⊗ Z) × A(X ⊗ Z, I) −→ A(I,Y ) × A(X, I)
+                                      X (p (y)) >
+
+Theorem 23. Let A be a commutative arrow, B : C −7→ C be a context for A, and (M, ∧, tt) be a
+commutative monoid (in Set). Then M B ◦ flip is a commutative A-bimodule and (×, 1)-monoid.
+
+Proof. The left and right actions are given by the families of functions
+
+          `XY Z : A(X,Y ) × M B(Z,Y ) −→ M B(Z,X)           rXY Z : M B(Y,X) × A(Y, Z) −→ M B(Z,X)
+                 (a, h) 7−→ λ b. h(rB b a)                         (h, a) 7−→ λ b. h(`B a b)
+
+The (×, 1)-monoid structure is inherited from the one of M:
+
+                 eXY : 1 −→ M B(Y,X)                  mXY : M B(Y,X) × M B(Y,X) −→ M B(Y,X)
+                      ∗ 7−→ λ b. tt                         (h, h0 ) 7−→ λ b. h b ∧ h0 b
+
+Finally, the strength st : M B(Y,X) −→ M B(Y ⊗Z,X⊗Z) is obtained by pre-composing with cstB . All the
+bimodule axioms of M B ◦ flip can then be easily derived from those of B.
+
+4.2    Graded Arrows and graded bimodules
+The Fam(A) construction is really a two step construction: it takes an arrow A and parameterises by
+elements of sets J, then the parameter sets are hidden using a colimit. The intermediate step in this process
+is not an arrow because its composition composes morphisms with different parameter sets. However, it is
+a graded arrow, which we define by adapting the definition of graded monads [20]. Graded monads have
+been used to model programming languages with variable sets of possible side effects. The multiplication
+of a graded monad is a natural transformation Tp Tq ⇒ Tpq , where the p, q are from a symmetric monoidal
+category (P, i, ·) of grades. Graded monads are lax monoidal functors P → Endo(C ). Swapping
+endofunctors for strong profunctors yields:
+Definition 24. A P-graded arrow is a lax monoidal functor A : P → StrProf(C ).
+R. Atkey, B. Gavranović, N. Ghani, C. Kupke, J. Ledent & F. Nordvall Forsberg                         207
+
+
+     Unfolding this definition shows that a graded arrow comes equipped with graded composition
+A p (X,Y ) × Aq (Y, Z) → A pq (X, Z) and unit HomC (X,Y ) → Ai (X,Y ) that use the monoidal structure of P.
+Strength A p (X,Y ) → A p (X ⊗ Z,Y ⊗ Z) is provided for every grade p, but when we use strength to define
+parallel composition we will use the monoidal structure of grades. To make sure that parallel composition
+makes sense, graded arrows must be commutative. Note that the symmetry of P’s monoidal structure is
+required for this definition to make sense.
+Definition 25 (Commutative Graded Arrow). A P-graded arrow A is commutative if the two functions
+A p (X,Y ) × Aq (X 0 ,Y 0 ) → A pq (X ⊗ X 0 ,Y ⊗Y 0 ) defined using left and right strength are equal.
+   When a graded arrow is commutative we obtain a canonical parallel composition of morphisms that
+commutes with sequential composition. Note that the composition of parameters is the same as in the
+sequential case, forced by an Eckmann-Hilton style argument.
+   We now use graded arrows to reconstuct Fam(A). The first step is this proposition, which follows
+because the graded arrow is constructed pointwise.
+Proposition 26. Let (P, i, ·) be a symmetric monoidal subcategory of (Set, 1, ×), and let A : StrProf(C )
+be an arrow. Then (− → A) p (X,Y ) = p → A(X,Y ) is a P op -graded arrow. If A is commutative, then so
+is − → A.
+   The second step in the Fam(A) construction is the following result, which shows that there is a general
+way of “summing out” the grading of a graded arrow to recover an (ungraded) arrow.
+Proposition 27. For every graded arrow A : P → StrProf(C ), (colim A)(X,Y ) = colim p A p (X,Y ) is
+an arrow. If A is commutative, then so is colim A.
+
+Proof. colim A is certainly a profunctor, so it remains to construct the monoid operations. The unit is
+                                          pure            ι
+defined by the composite HomC (X,Y ) → i Ai (X,Y ) → colim p A p (X,Y ) , where ι is the injection into the
+colimit. Composition is defined using colimits commuting with products in Set: (colim p Fp (X,Y )) ×
+                                                      colim>>
+                                                            > p,q
+(colimq Fq (Y, Z)) ∼
+                   = colim p,q (Fp (X,Y ) × Fq (Y, Z)) −→ colim p,q Fpq (X, Z) → colimr Fr (X, Z). Strength
+                              colim st
+is defined as colim p Fp (X,Y ) −→ colim p Fp (X ⊗ Z,Y ⊗ Z). Each of the axioms follows from the corre-
+sponding axiom for the graded arrow A.
+
+    Thus we have decomposed the Fam(A) construction into colim (− → A), using the intermediate
+concept of graded arrow. We will also use this technology in Proposition 30 to prove that optics form an
+arrow, as well as in Section 6 to introduce other indexing operators besides Fam. For variations such as
+best-response games and probabilistic games, we need to introduce a graded version of bimodules:
+Definition 28 (Graded bimodule). Let A : P → StrProf(C ) be a graded arrow. A graded A-bimodule is a
+functor B : P → Prof(C ) equipped with natural transformations ` pq : A p • Bq → B pq and r pq : B p • Aq →
+B pq natural in p and q, satisfying the bimodule axioms:
+   1. ` is a left action,
+   2. r is a right action,
+   3. ` commutes with r.
+When B : P → StrProf(C ), we moreover require ` pq and r pq to be strong natural transformations. As
+in Section 4.1, we can define the notion of a commutative graded bimodule; and when each B p has a
+(×, 1)-monoid structure, we require that ` and r should preserve it.
+The following theorem is the graded generalisation of Theorem 20.
+208                                                          Compositional Game Theory, Compositionally
+
+
+Theorem 29. Assume A : P → StrProf(C ) is a commutative graded arrow, and B : P → StrProf(C )
+is a commutative graded A-bimodule, such that B p is a commutative (×, 1)-monoid for every p. Then
+A × B : P → StrProf(C ) is a commutative graded arrow.
+
+Proof. The proof is very similar to the proof of Theorem 20.
+
+
+5     Open games based on optics
+In this section, we use graded arrows and bimodules compositionally define open games starting from a
+monoidal category, so as to treat open games containing computational effects via the Kleisli category.
+We fundamentally achieve the same result as [4], but we do so in a compositonal manner. Lenses only
+define a monoidal category when the underlying category is cartesian. In a monoidal category we work
+with optics [22, 5, 23, 3] instead:
+Proposition 30. Let C be symmetric monoidal, and A : Prof(C ) a commutative arrow. Then the profunc-
+tor OpticA : Prof(C × C op ) defined by
+                                                   Z P∈C
+                       OpticA ((X, S), (Y, R)) =           A(X, P ⊗Y ) × A(P ⊗ R, S)
+
+is also a commutative arrow.
+
+Proof. By Proposition 27, and using that coends can be reduced to colimits using the twisted arrow
+category Tw(C op )op (with objects arrows f : P0 → P in C ) [21, Remark 1.2.3], it is enough to show that
+the assignment OpticTw
+                     A : Tw(C ) → StrProf(C × C ) given by
+                                 op op                   op
+
+
+                     OpticTw
+                               f
+                               − P0 , (X, S), (Y, R)) = A(X, P0 ⊗Y ) × A(P ⊗ R, S)
+                          A (P ←
+
+is a commutative graded arrow, which follows from A being a commutative arrow and C being symmetric
+monoidal.
+
+    This compositional proof has factored out the coend calculations involved into a separate statement
+about graded arrows. We expect many other monoidal categories defined in similar ways, e.g. combs [25],
+can be proved monoidal using graded arrows to similarly avoid coend manipulation. Next, we follow Bolt,
+Hedges and Zahn [4, §3.4] in generalising the type of the equilibrium function as needed when working
+in a monoidal setting.
+Definition 31. Let A : Prof(C ) be an arrow, and M a monoid. We define the context and equilibrium type
+profunctors CtxtCA , EquibCM (A) : Prof(C ) by
+
+                                    CtxtCA (X,Y ) = OpticA ((I, I), (Y, X))
+                               EquibCM (A)(X,Y ) = CtxtCA (Y, X) → M
+
+      We now prove the optics analogue of Lemma 22:
+Lemma 32. Let A : Prof(C ) be a commutative arrow. Then CtxtCA is a context, i.e. a commutative
+A-bimodule coherently equipped with a costrength.
+
+Proof. The left costrength is given by the Θ-indexed family of maps (cst0Z )Θ = ιΘ⊗Z . The actions
+are defined using composition and the strength of A, e.g. for the left action A(X,Y ) × CtxtCA (Y, Z) →
+CtxtCA (X, Z):
+R. Atkey, B. Gavranović, N. Ghani, C. Kupke, J. Ledent & F. Nordvall Forsberg                          209
+
+
+                    A(X,Y ) × CtxtCA (Y, Z)
+                  ∼
+                  =
+                    RP
+                       A(I, P ⊗ Z) × A(X,Y ) × A(P ⊗Y, I)
+                           RP
+                                (id×st0P ×id)
+                                                                   RP
+                                                                        (id×>
+                                                                            >
+                                                                            >)
+                                                                                 CtxtCA (X, Z)
+               RP
+                    A(I, P ⊗ Z) × A(P ⊗ X, P ⊗Y ) × A(P ⊗Y, I)
+
+One can then check that all the required laws of a bimodule with costrength are satisfied.
+
+   Applying Theorem 20 together with Theorem 23, we thus immediately get the optics analogue of
+Proposition 15, but this time we do not need the assumption of projection at points:
+Proposition 33. Let A : Prof(C ) be a commutative arrow and M a monoid. The profunctor A ×
+EquibCM (A) : Prof(C ) defined by
+
+                          (A × EquibCM (A))(X,Y ) := A(X,Y ) × EquibCM (A)(X,Y )
+
+is a commutative arrow.
+    To parameterise by strategies, we use graded arrows from Section 4.2. By Proposition 26 and
+Proposition 27, when A is an arrow, Fam(A) = colim (− → A) is an arrow. Composing the steps, we get
+the following theorem. By using the abstract framework in the previous section, the proofs are much
+shorter.
+Theorem 34. Let C be a symmetric monoidal category and M a monoid. There is a symmetric monoidal
+category OpC = Fam(OpticHomC × EquibCM (OpticHomC )) of open games in C , and an embedding C ×
+C op → OpC .
+
+
+6    Other variants of open games
+We demonstrate the power of our framework by showing how a host of variations of open games can be
+easily proven to form monoidal categories.
+Example 35 (Fibred Open games). Lets say we want to add a little bit of type dependency so coutility
+can depend on state and utility on the moved played. Type dependency is modelled fibrationally [19], e.g.
+via the families fibration, which is split. Given a (split) fibration p : E → B, define the monoidal category
+of fibrational lenses Lens p to have the same objects as E , and with morphisms from E to E 0 given by pairs
+( f , g), where f : pE → pE 0 is a morphism in B and g : f ∗ E 0 → E is a morphism in E . If p is a symmetric
+monoidal fibration [26] then Lens p is a commutative arrow. Defining Fam and (− × EquibCM (−)) as
+in Section 5, we hence get an arrow Fam(Lens p × EquibCM (Lens p )) of fibrational open games. This
+subsumes the use of container morphisms [1] as dependently typed open games. The point of this example
+is not that this is necessarily the right way to do dependent games — clearly a lot more dependency is
+possible — but rather to show how new variants of open games can easily be shown monoidal in our
+compositional framework.
+Example 36 (Best Response). Using graded bimodules (Definition 28) and Theorem 29, we can recover
+best response games [12, §2.1.5]. In these games, the equilibrium predicate is a relation on strategies in
+context, expressed as a graded bimodule w.r.t. the graded arrow AJ := J → A, for a given arrow A.
+
+                             BestRespJ (X,Y ) = CtxtCA (Y, X) → J × J → Bool
+210                                                            Compositional Game Theory, Compositionally
+
+
+The left action, of type AJ (X,Y ) × BestRespJ 0 (Y, Z) → BestRespJ×J 0 (X, Z), can be defined as follows.
+Given a context c ∈ CtxtCA (Z, X) and a strategy j ∈ J, we can use the right action of the context (which is
+an A-bimodule) to get a context c0 ∈ CtxtCA (Z,Y ). Thus, given four parameters ( j1 , j10 , j2 , j20 ), we use j1 to
+create a new context and feed it to BestRespJ 0 (Y, Z) together with ( j10 , j20 ) to obtain a boolean. Note that j2
+is discarded, which is also what happens when we define the sequential composition of best response         
+games. Best response games are then defined as colimJ (J → Lens(X,Y )) × BestRespJ (X,Y ) , which
+automatically gives a symmetric monoidal category by Theorem 29 and Proposition 7.
+Example 37 (Probabilistic games). Surprisingly, Probabilistic Open Games [11] can be recovered using
+a construction similar to the one of Example 36. The main difference is that the graded bimodule is now
+indexed by D(J), where D is the finite distribution monad. However, for it to work properly, we need to
+make some assumptions on C and A.
+    For base category, we take C = Set × (D-Alg)op , where D-Alg is the category of algebras for
+the monad D. There is a forgetful functor U : Set × (D-Alg)op → Set × Setop to the “usual” base
+category Set × Setop , obtained by sending an algebra to its carrier set. Over this category, the profunctor
+Lens(U−,U−) = Lens ◦ (U op ×U) can easily be seen to be a commutative arrow (because Lens is), and
+thus by Proposition 26, AJ (X,Y ) = J → Lens(U(X),U(Y ) is a Setiso -graded arrow. With these choices
+of C and A, the graded A-bimodule for probabilistic equilibria selection is:
+
+                        ProbEquibJ (X,Y ) = CtxtCLens (U(Y ),U(X)) → D(J) → Bool
+
+To match Definition 12 in [11], the left and right actions are defined quite differently: while the left
+action relies on the so-called Kleisli predicate lifting D # [11, Def. 11], the right action uses the D-algebra
+structure to compute the expectation of the payoff.                        
+    Finally, we define OpProb = colimJ AJ (X,Y ) × ProbEquibJ (X,Y ) , which again automatically yields
+a symmetric monoidal category by our results. This links nicely to the definition of the equilibrium
+for sequential composition of probabilistic open games [11, Def. 12]: the definition in loc.cit. uses a
+conjunction whose conjuncts correspond to the left and right bimodule actions, respectively. This matches
+the arrow composition of OpProb given by Theorem 29 (cf. proof of Theorem 20).
+    So far all examples have had sets of strategies. Its not surprising this does not have to be the case and
+there are other options. Our framework means this can be handled compositionally.
+Example 38 (Strategies need not be Sets). Consider the parametrisation functor Para : Prof(C ) →
+Prof(C ) defined by (Para A)(X,Y ) = colimJ:Ciso A(J ⊗ X,Y ) [7, 8]. By our theorem on colimits of graded
+arrows, Para maps commutative arrows to commutative arrows and hence could replace Fam. More
+generally, given F : B × C → C , we define (ParaF A)(X,Y ) = colimJ:Biso A(F(J, X),Y ). Again ParaF
+maps commutative arrows to commutative arrows, and can hence be used to construct open games
+ParaF (Lens × EquibCM (Lens)) with strategies living in a different category than the play/coplay function.
+Example 39 (Learners). If we take the category of lenses, omit the equilibria (or, equivalently, take
+equilibria valued in the trivial monoid), and use the Para construction above, we get Fong, Spivak and
+Tuyéras’ monoidal category of learners [7]. That is, defining Learn = Para(Lens) makes learners an
+instance of our framework.
+Example 40 (Effectful coplay and utility functions). Let C be a symmetric monoidal category. In
+Section 5, we used optics to define an arrow on C × C op , but the coend machinery used in its def-
+inition is quite heavy, e.g. one might worry about the existence of the coends. An alternative con-
+struction (folklore according to [27, §2.2]), instead defines an arrow on Comon(C ) × C op , where
+Comon(C ) is the category of commutative comonoids in C . The underlying profunctor is defined
+R. Atkey, B. Gavranović, N. Ghani, C. Kupke, J. Ledent & F. Nordvall Forsberg                          211
+
+
+by LensC ((X, S), (Y, R)) = HomComon(C ) (X,Y ) × HomC (X ⊗ R, S), i.e. the same as for ordinary lenses,
+except that the play functions must respect the comonoid structure. In particular, If C is a Kleisli category
+for a commutative monad on a cartesian category, then every object has a natural comonoid structure.
+Further, in this case LensC has projections at points, and so we can use Lemma 22 and Theorems 20
+and 23 to equip it with a notion of equilibrium function LensC × E(LensC ). In the resulting notion of
+games Fam(LensC × E(LensC )), comonoid homomorphisms are intuitively ‘pure’ maps, so this notion of
+game allows ‘effectful‘ coplay and utility functions, while the play function and the state in the equlibrium
+predicate remain pure.
+
+
+
+7    Conclusions and future work
+We have developed a new framework for open games. Conceptually, our framework is not just an
+axiomatisation of open games, but a compositional framework allowing us to vary and reorder components
+without having to redevelop the whole theory of the resulting open games. This is achieved using standard
+mathematical structures: arrows, bimodules and gradings. These structures allow us to define new arrows
+from old which is the hallmark of compositionality. Collectively, we demonstrate the utility of this
+framework by showing how a number of existing and new variants of open games can be shown to form
+monoidal categories with relative ease. This is important as the monoidal structure reflects the parallel
+and sequential composition of open games.
+    As is becoming clear, there is a huge variety of open games each with their pros and cons and each of
+which makes sense to use in some circumstances. We must now work to determine which of the categories
+of Open Games we have constructed are useful for Compositional Game Theory. To do this, we will need
+to gain experience in modelling game theoretic concepts in our categories, and to observe how modifying
+the constructions using the building blocks we have developed here affects the game theoretic models. We
+will be aided in this investigation by studying embeddings between the various categories of Open Games.
+    We have built tools to prove that categories are symmetric monoidal. However, there are other
+operators on games beyond parallel and sequential composition, e.g. an operator for repeated games is
+needed. A start is given by [10], but we want to integrate such operators into our general compositional
+framework.
+    All our profunctors have been of the form C op × C → Set but we could replace Set by some other
+cocomplete monoidal category with (we conjecture) minimal disruption. This would give us an enriched
+theory of open games which will be important for the investigation of topological games, with notions of
+limit games.
+    Finally, it will be interesting to see if this framework has ramifications for software for open games by
+providing all the benefits compositionality does. That is, rather than implementing a specific notion of
+open games and expecting users to use that notion, our compositional framework would allow users to
+build their own notion of open games suitable for their own needs (mixing both predefined components
+such as for example Fam or Para with their own specific definitions). The fact that we have used
+canonical categorical structures such as profunctors, modules and gradings means the road to a Haskell
+implementation should be a pleasant road to engage with. We hope to make it so as a matter of priority.
+
+
+Acknowledgements. The authors would like to thank Exequiel Rivas and Jules Hedges for helpful
+discussions and comments.
+212                                                         Compositional Game Theory, Compositionally
+
+
+References
+ [1] Michael Gordon Abbott, Thorsten Altenkirch & Neil Ghani (2003): Categories of Containers. In Andrew D.
+     Gordon, editor: Foundations of Software Science and Computational Structures (FOSSACS 2003), Lecture
+     Notes in Computer Science 2620, Springer, pp. 23–38, doi:10.1007/3-540-36576-1_2.
+ [2] Robert Atkey (2011): What is a Categorical Model of Arrows? Electron. Notes Theor. Comput. Sci. 229(5),
+     pp. 19–37, doi:10.1016/j.entcs.2011.02.014.
+ [3] Guillaume Boisseau & Jeremy Gibbons (2018): What You Needa Know about Yoneda: Profunctor Optics and
+     the Yoneda Lemma (Functional Pearl). Proc. ACM Program. Lang. 2(ICFP), doi:10.1145/3236779.
+ [4] Joe Bolt, Jules Hedges & Philipp Zahn (2019): Bayesian open games. arXiv:1910.03656.
+ [5] Bryce Clarke, Derek Elkins, Jeremy Gibbons, Fosco Loregiàn, Bartosz Milewski, Emily Pillmore & Mario
+     Román (2020): Profunctor optics, a categorical update. arXiv:2001.07488.
+ [6] David Dalrymple (2019): Dioptics: a Common Generalization of Open Games and Gradient-Based Learners.
+     In: Fifth Symposium on Compositional Structures (SYCO 5).
+ [7] Brendan Fong, David I. Spivak & Rémy Tuyéras (2019): Backprop as Functor: A compositional perspective on
+     supervised learning. In: Logic in Computer Science (LICS 2019), pp. 1–13, doi:10.1109/LICS.2019.8785665.
+ [8] Bruno Gavranović (2019): Compositional Deep Learning. Master’s thesis, University of Zagreb. Available at
+     arXiv:1907.08292.
+ [9] Neil Ghani, Jules Hedges, Viktor Winschel & Philipp Zahn (2018): Compositional Game Theory.
+     In Anuj Dawar & Erich Grädel, editors: Logic in Computer Science (LICS 2018), pp. 472–481,
+     doi:10.1145/3209108.3209165.
+[10] Neil Ghani, Clemens Kupke, Alasdair Lambert & Fredrik Nordvall Forsberg (2018): A compositional treatment
+     of iterated open games. Theor. Comput. Sci. 741, pp. 48–57, doi:10.1016/j.tcs.2018.05.026.
+[11] Neil Ghani, Clemens Kupke, Alasdair Lambert & Fredrik Nordvall Forsberg (2019): Compositional Game
+     Theory with Mixed Strategies: Probabilistic Open Games Using a Distributive Law. In: Applied Category
+     Theory (ACT 2019).
+[12] Jules Hedges (2016): Towards compositional game theory. Ph.D. thesis, Queen Mary University of London.
+[13] Jules Hedges (2018): Morphisms of Open Games. In Sam Staton, editor: Mathematical Foundations of
+     Programming Semantics (MFPS 2018), Electronic Notes in Theoretical Computer Science 341, pp. 151–177,
+     doi:10.1016/j.entcs.2018.11.008.
+[14] Jules Hedges (2019): The game semantics of game theory. arXiv:1904.11287.
+[15] Jules Hedges (2020): Open games in Haskell. Repository at https://github.com/jules-hedges/
+     open-games-hs.
+[16] Chris Heunen & Bart Jacobs (2006): Arrows, like Monads, are Monoids. In: Mathematical Foundations of
+     Programming Semantics (MFPS 2006), Electronic Notes in Theoretical Computer Science 158, Elsevier, pp.
+     219–236, doi:10.1016/j.entcs.2006.04.012.
+[17] John Hughes (2000): Generalising monads to arrows. Science of Computer Programming 37(1–3), pp.
+     67–111, doi:10.1016/s0167-6423(99)00023-4.
+[18] Pierre Hyvernat (2014): A linear category of polynomial diagrams. Mathematical Structures in Computer
+     Science 24(1), doi:10.1017/S0960129512001016.
+[19] Bart Jacobs (1998): Categorical Logic and Type Theory. Studies in Logic and the Foundations of Mathematics
+     141, Elsevier, doi:10.1016/S0049-237X(98)80028-1.
+[20] Shin-ya Katsumata (2014): Parametric effect monads and semantics of effect systems. In: Proceedings of
+     the 41st ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages, pp. 633–645,
+     doi:10.1145/2578855.2535846.
+[21] Fosco Loregian (2019): Coend calculus. arXiv:1501.02503.
+R. Atkey, B. Gavranović, N. Ghani, C. Kupke, J. Ledent & F. Nordvall Forsberg                             213
+
+
+[22] Craig Pastro & Ross Street (2008): Doubles for monoidal categories. Theory and Applications of Categories
+     21(4), pp. 61–75.
+[23] Mitchell Riley (2018): Categories of Optics. arXiv:1809.00738.
+[24] Exequiel Rivas & Mauro Jaskelioff (2017): Notions of computation as monoids. J. Funct. Program. 27, p. e21,
+     doi:10.1017/S0956796817000132.
+[25] Mario Román (2020): Comb Diagrams for Discrete-Time Feedback. arXiv:2003.06214.
+[26] Michael Shulman (2008): Framed bicategories and monoidal fibrations. Theory and applications of categories
+     20(18), pp. 650–738.
+[27] David I. Spivak (2019): Generalized Lens Categories via functors Cop → Cat. arXiv:1908.02202.
+214                                                                               Compositional Game Theory, Compositionally
+
+
+A     Definition of a bimodule with costrength
+For the sake of completeness, we spell in full details the definition of a costrength, and of a bimodule
+equipped with a costrength (used to define the notion of context, Definition 21).
+Definition 41 (Costrength). A (right) costrength for a profunctor F : C −7→ C is a family of morphisms
+cstX,Y,Z : F(X ⊗ Z,Y ⊗ Z) → F(X,Y ) (natural in X,Y and dinatural in Z) making two diagrams commute:
+                                                      cstZ 0
+       F((X ⊗ Z) ⊗ Z 0 , (Y ⊗ Z) ⊗ Z 0 )                       F(X ⊗ Z,Y ⊗ Z)                                          F(X ⊗ I,Y ⊗ I)
+                         F(α −1 ,α)                                         cstZ                      and           F(ρ −1 ,ρ)   cstI
+
+       F(X ⊗ (Z ⊗ Z 0 ),Y ⊗ (Z ⊗ Z 0 ))                 cstZ⊗Z 0
+                                                                      F(X,Y )                                               F(X,Y )
+Given a profunctor F : C −7→ C with a right costrength, assuming C is symmetric, we can define the left
+costrength cst0X,Y,Z : F(Z ⊗ X, Z ⊗Y ) → F(X,Y ) by cst0 := cst ◦ F(σ , σ ).
+    When an A-bimodule has a strength, the two actions ` and r are required to be strong natural
+transformations. When it has a costrength, we require similar conditions:
+Definition 42 (Bimodule with costrength). Let A : C −7→ C be an arrow. When an A-bimodule B : C −7→ C
+is equipped with a costrength, we also require the two commutative diagrams below, relating the strength
+of A, costrength of B and the left and right actions ` and r:
+                                                                                        `
+                  A(X ⊗W,Y ⊗W ) × B(Y ⊗W, Z ⊗W )                                                       B(X ⊗W, Z ⊗W )
+                                    stW ×id
+
+                       A(X,Y ) × B(Y ⊗W, Z ⊗W )                                                                     cstW
+
+                                   id×cstW
+                                                                                    `
+                                  A(X,Y ) × B(Y, Z)                                                         B(X, Z)
+and
+                                                                                        r
+                  B(X ⊗W,Y ⊗W ) × A(Y ⊗W, Z ⊗W )                                                       B(X ⊗W, Z ⊗W )
+                                    id×stW
+
+                        B(X ⊗W,Y ⊗W ) × A(Y, Z)                                                                     cstW
+
+                                   cstW ×id
+                                                                                    r
+                                  B(X,Y ) × A(Y, Z)                                                         B(X, Z)
+Finally, we also have a counterpart of the commutativity condition, mixing strength and costrength.
+Definition 43 (Commutative bimodule with costrength). An A-bimodule B with a costrength is commuta-
+tive when the following diagram commutes:
+                                                                       ∼
+                                                                       =
+             A(X,Y ) × B(Y ⊗ X 0 , X ⊗Y 0 )                                                 B(Y ⊗ X 0 , X ⊗Y 0 ) × A(X,Y )
+                      stX 0 ×id                                                                                 id×stY 0
+
+        A(X ⊗ X 0 ,Y ⊗ X 0 ) × B(Y ⊗ X 0 , X ⊗Y 0 )                                B(Y ⊗ X 0 , X ⊗Y 0 ) × A(X ⊗Y 0 ,Y ⊗Y 0 )
+                             `                                                                                  r
+
+                   B(X ⊗ X 0 , X ⊗Y 0 )                                                               B(Y ⊗ X 0 ,Y ⊗Y 0 )
+
+                                              cst0X                                           cstY0
+                                                                   B(X 0 ,Y 0 )
+

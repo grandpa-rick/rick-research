@@ -1,0 +1,97 @@
+% Standalone TikZ figure for the bracket-framework trichotomy.
+% Requires \usetikzlibrary{decorations.pathreplacing,calc} in the preamble.
+% Insert anywhere in main.tex (suggested: just after \end{remark} of the
+% "Scope of the bracket framework" remark in Section 1).
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+  every node/.style={font=\small},
+  chainnode/.style={circle, draw, thick, minimum size=5mm, inner sep=0pt, fill=white},
+  interior/.style={circle, draw, very thick, minimum size=5mm, inner sep=0pt, fill=black!10},
+  badinterior/.style={circle, draw, very thick, minimum size=5mm, inner sep=0pt, fill=white, dashed},
+  bond/.style={thick},
+  brace/.style={decorate, decoration={brace, amplitude=4pt, raise=4pt}, thick},
+  panellabel/.style={font=\small\itshape, align=center, text width=4.2cm},
+  paneltitle/.style={font=\small\bfseries, align=center}
+]
+
+%========== PANEL 1: simply-laced, |a| <= 1 ==========
+\begin{scope}[xshift=0cm]
+  \node[paneltitle] at (1.0, 2.6) {Panel 1: $|a_{ij}| \leq 1$};
+  \node[paneltitle] at (1.0, 2.2) {(simply-laced, Watanabe)};
+
+  \node[chainnode] (a1) at (0, 0) {};
+  \node[chainnode] (a2) at (2, 0) {};
+  \draw[bond] (a1) -- (a2);
+
+  \node[below=2pt] at (a1.south) {$\beta_1$};
+  \node[below=2pt] at (a2.south) {$\beta_2$};
+  \node[above=2pt] at (a1.north) {\scriptsize $-1$};
+  \node[above=2pt] at (a2.north) {\scriptsize $+1$};
+
+  \node[panellabel] at (1.0, -1.6) {no interior position; bracket framing trivial};
+\end{scope}
+
+%========== PANEL 2: short-long, |a| = 2 (this paper) ==========
+\begin{scope}[xshift=5.4cm]
+  \node[paneltitle] at (2.0, 2.6) {Panel 2: $|a_{ij}| = 2$};
+  \node[paneltitle] at (2.0, 2.2) {(short--long, \textbf{this paper})};
+
+  \node[chainnode] (b1) at (0, 0) {};
+  \node[interior]  (b2) at (2, 0) {};
+  \node[chainnode] (b3) at (4, 0) {};
+  \draw[bond] (b1) -- (b2) -- (b3);
+
+  \node[below=2pt] at (b1.south) {$\beta_1$};
+  \node[below=2pt] at (b2.south) {$\beta_2$};
+  \node[below=2pt] at (b3.south) {$\beta_3$};
+  \node[above=2pt] at (b1.north) {\scriptsize $-2$};
+  \node[above=2pt] at (b2.north) {\scriptsize $0$};
+  \node[above=2pt] at (b3.north) {\scriptsize $+2$};
+
+  \draw[brace] ($(b1.east) + (0.15, 0.55)$) -- ($(b3.west) + (-0.15, 0.55)$)
+    node[midway, above=6pt] {mid-bracket frame};
+
+  \node[font=\small, align=center] at (2, -1.15)
+    {$\labr{\beta_2}^{M}\;\labl{\beta_1}^{2B}\;\labr{\beta_3}^{2T}\;\labl{\beta_2}^{M}$};
+
+  \node[panellabel] at (2.0, -1.95) {one interior; framable by a single mid-bracket pair};
+\end{scope}
+
+%========== PANEL 3: G_2, |a| = 3 ==========
+\begin{scope}[xshift=11.8cm]
+  \node[paneltitle] at (2.4, 2.6) {Panel 3: $|a_{ij}| = 3$};
+  \node[paneltitle] at (2.4, 2.2) {($G_2$, obstructed)};
+
+  \node[chainnode]   (c1) at (0, 0) {};
+  \node[badinterior] (c2) at (1.6, 0) {};
+  \node[badinterior] (c3) at (3.2, 0) {};
+  \node[chainnode]   (c4) at (4.8, 0) {};
+  \draw[bond] (c1) -- (c2) -- (c3) -- (c4);
+
+  \node[below=2pt] at (c1.south) {$\beta_1$};
+  \node[below=2pt] at (c2.south) {$\beta_2$};
+  \node[below=2pt] at (c3.south) {$\beta_3$};
+  \node[below=2pt] at (c4.south) {$\beta_4$};
+  \node[above=2pt] at (c1.north) {\scriptsize $-3$};
+  \node[above=2pt] at (c2.north) {\scriptsize $-1$};
+  \node[above=2pt] at (c3.north) {\scriptsize $+1$};
+  \node[above=2pt] at (c4.north) {\scriptsize $+3$};
+
+  \node[font=\bfseries] at (c2.center) {?};
+  \node[font=\bfseries] at (c3.center) {?};
+
+  \node[font=\small, align=center] at (2.4, -1.15) {no consistent bracket frame};
+  \node[panellabel] at (2.4, -1.95) {two interiors; injectivity violated under $f_i$};
+\end{scope}
+
+\end{tikzpicture}
+\caption{The bracket framework for $\Cmid_a$ admits clean structure only at
+$|a_{ij}| \leq 2$: simply-laced edges have no interior (left), the short--long edge has
+exactly one interior framable by a single mid-bracket pair (centre, this paper), and the
+$G_2$ triple edge has two interiors with no consistent framing (right). Numbers above each
+chain node record the pairing $\langle \beta_k, \alpha_i^\vee\rangle$ with the active simple
+coroot.}
+\label{fig:bracket-trichotomy}
+\end{figure}

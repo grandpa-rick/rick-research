@@ -1,0 +1,103 @@
+============================================================================
+PROBE (corrected): does p factor as p_1 ⊗ p_sing globally?
+============================================================================
+
+=== Structural analysis ===
+Theorem A (B_2):
+  (HW_1):    M_1 = 0  AND  T_1 ≤ B_1.   [pure C_1 condition]
+  (HW_sing): S ≤ 2(B_1 - T_1) = P_1.    [DEPENDS ON B_1, T_1]
+
+If HW = A_chain × A_sing for some A_chain ⊂ C_1, A_sing ⊂ N, then
+the upper bound on S must be uniform across A_chain.
+But P_1 = 2(B_1 - T_1) varies: e.g., B_1=T_1=1 gives P_1=0 (only S=0),
+while B_1=2, T_1=0 gives P_1=4 (S ∈ {0,1,2,3,4}).
+
+Concrete cross-chain obstruction:
+  chain c_a := (M=0, B=1, T=1):  ALLOWED S values: {0} (P_1=0).
+  chain c_b := (M=0, B=2, T=0):  ALLOWED S values: {0,1,2,3,4} (P_1=4).
+
+Both c_a and c_b are B_2-HW for S=0.
+(c_a, S=2): is it B_2-HW? M=0,B=1,T=1,S=2.  P_1 = 2(1-1) = 0, S=2 > 0 → NOT HW.
+(c_b, S=2): is it B_2-HW? M=0,B=2,T=0,S=2.  P_1 = 2(2-0) = 4, S=2 ≤ 4 → HW.
+
+If HW factored as A_chain × A_sing, then S=2 ∈ A_sing (witnessed by c_b)
+AND c_a ∈ A_chain (witnessed by S=0), so (c_a, S=2) ∈ A_chain × A_sing.
+But (c_a, S=2) is NOT B_2-HW. → CONTRADICTION.
+
+⇒ HW does NOT factor as a Cartesian product across Kp(∞).
+⇒ p_ν does NOT factor as p_1 ⊗ p_sing globally.
+
+
+=== Global factoring test, content ≤ 4 ===
+  Total pairs (catalog size): 70
+  B_2-HW pairs: 15
+  Chain coords appearing in HW: 9
+  Sing coords appearing in HW: [0, 1, 2]
+  → FACTORING FAILS: 4 (c, s) ∈ A_chain × B_sing but NOT B_2-HW
+    c=(M=0,B=0,T=0), s=1: NOT HW. (HW_sing demands S ≤ 0; here S=1)
+    c=(M=0,B=0,T=0), s=2: NOT HW. (HW_sing demands S ≤ 0; here S=2)
+    c=(M=0,B=1,T=1), s=1: NOT HW. (HW_sing demands S ≤ 0; here S=1)
+    c=(M=0,B=1,T=1), s=2: NOT HW. (HW_sing demands S ≤ 0; here S=2)
+
+=== Global factoring test, content ≤ 5 ===
+  Total pairs (catalog size): 126
+  B_2-HW pairs: 23
+  Chain coords appearing in HW: 12
+  Sing coords appearing in HW: [0, 1, 2, 3]
+  → FACTORING FAILS: 8 (c, s) ∈ A_chain × B_sing but NOT B_2-HW
+    c=(M=0,B=0,T=0), s=1: NOT HW. (HW_sing demands S ≤ 0; here S=1)
+    c=(M=0,B=0,T=0), s=2: NOT HW. (HW_sing demands S ≤ 0; here S=2)
+    c=(M=0,B=0,T=0), s=3: NOT HW. (HW_sing demands S ≤ 0; here S=3)
+    c=(M=0,B=1,T=0), s=3: NOT HW. (HW_sing demands S ≤ 2; here S=3)
+    c=(M=0,B=1,T=1), s=1: NOT HW. (HW_sing demands S ≤ 0; here S=1)
+
+=== Global factoring test, content ≤ 6 ===
+  Total pairs (catalog size): 210
+  B_2-HW pairs: 34
+  Chain coords appearing in HW: 16
+  Sing coords appearing in HW: [0, 1, 2, 3, 4]
+  → FACTORING FAILS: 13 (c, s) ∈ A_chain × B_sing but NOT B_2-HW
+    c=(M=0,B=0,T=0), s=1: NOT HW. (HW_sing demands S ≤ 0; here S=1)
+    c=(M=0,B=0,T=0), s=2: NOT HW. (HW_sing demands S ≤ 0; here S=2)
+    c=(M=0,B=0,T=0), s=3: NOT HW. (HW_sing demands S ≤ 0; here S=3)
+    c=(M=0,B=0,T=0), s=4: NOT HW. (HW_sing demands S ≤ 0; here S=4)
+    c=(M=0,B=1,T=0), s=3: NOT HW. (HW_sing demands S ≤ 2; here S=3)
+
+=== Global factoring test, content ≤ 8 ===
+  Total pairs (catalog size): 495
+  B_2-HW pairs: 64
+  Chain coords appearing in HW: 25
+  Sing coords appearing in HW: [0, 1, 2, 3, 4, 5]
+  → FACTORING FAILS: 24 (c, s) ∈ A_chain × B_sing but NOT B_2-HW
+    c=(M=0,B=0,T=0), s=1: NOT HW. (HW_sing demands S ≤ 0; here S=1)
+    c=(M=0,B=0,T=0), s=2: NOT HW. (HW_sing demands S ≤ 0; here S=2)
+    c=(M=0,B=0,T=0), s=3: NOT HW. (HW_sing demands S ≤ 0; here S=3)
+    c=(M=0,B=0,T=0), s=4: NOT HW. (HW_sing demands S ≤ 0; here S=4)
+    c=(M=0,B=0,T=0), s=5: NOT HW. (HW_sing demands S ≤ 0; here S=5)
+
+=== Per-weight analysis (weaker question) ===
+  35 weights in catalog (content ≤ 4)
+
+  Crucial observation: at fixed ν = (ν_1, ν_2), the basis is
+  parametrized by (M, B, T) — given the chain coord, S is
+  determined by S = ν_2 - T + B. So V(ν) doesn't have an
+  independent chain × sing tensor decomposition; the factoring
+  question reduces to the global Kp(∞) one.
+
+  Therefore the per-weight rectangle tests are vacuous (no two
+  basis pairs share a chain or sing coord within a single weight).
+
+============================================================================
+FINAL VERDICT
+============================================================================
+
+¬P1 — p does NOT factor as p_1 ⊗ p_sing at B_2.
+
+Root cause: the B_2-highest condition (HW_sing): S ≤ 2(B_1 - T_1)
+            couples the singleton bound to the chain coords.
+            The B_2-HW set is NOT a Cartesian product A × B
+            in C_1-coords × C_sing-coords.
+
+Implication: p_ν has a cross-chain term tracking the carry P_1.
+             This fires Instance 7 of asymmetric-mirror (global
+             recording level).

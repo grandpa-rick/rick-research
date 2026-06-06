@@ -1,0 +1,1888 @@
+LYNDON BASES OF SPLIT ıQUANTUM GROUPS
+
+arXiv:2502.20958v2 [math.QA] 16 Nov 2025
+
+RUN-QIANG JIAN, LI LUO, AND XIANFA WU
+Abstract. We introduce and study Lyndon bases of the split ıquantum groups
+Uı (g). Especially, we provide the relation between Lyndon bases and Lusztig’s PBWtype bases of Uı (g), as well as a construction of canonical bases of Uı (g) under an
+integral condition.
+
+1. Introduction
+An ıquantum group is a coideal subalgebra Uı (g) of a Drinfeld-Jimbo quantum group
+U(g) such that (U(g), Uı (g)) forms a quantum symmetric pair in the sense of Letzter
+[Let99, Let02]. The classification of quantum symmetric pairs (and hence ıquantum
+groups) is formulated by Satake diagrams, where a Satake diagram (I = I◦ ∪ I• , τ )
+consists of a bicolored partition of the Dynkin diagram I = I◦ ∪ I• and a (possibly
+trivial) diagram involution τ subject to some compatibility conditions. The associated
+ıquantum groups are called quasi-split if I• = ∅; and are called split if it further
+satisfies τ = id. Thanks to their pioneering work [BW18a] indicating the importance
+of ıquantum groups in Kazhdan-Luszitg theory, Bao and Wang suggested to generalize
+fundamental constructions for quantum groups to ıquantum groups.
+In the classical theory of quantum groups, there are several kinds of bases, such as
+PBW-type bases [Lu93], canonical bases [Lu90], and crystal bases [Ka91]. They play
+essential roles in the representation theory of quantum groups. It is a natural question
+that if such kinds of bases can be constructed in the framework of ıquantum groups.
+The study of canonical bases of modified ıquantum groups (named ıcanonical bases) was
+initiated in [BW18a] and improved in [BW18b, BW21] by Bao and Wang. In addition,
+there are completely different “dual ıcanonical bases” of universal ıquantum groups via
+a quiver variety construction by Lu and Wang [LW21b]. The crystal bases of ıquantum
+groups were investigated by Watanabe for some quasi-split types [Wat20, Wat24].
+The first work on PBW-type bases of ıquantum groups is Iorgov and Klimyk’s investigation [IK00] for the special split ıquantum group associated with the type An Dynkin
+diagram, which is the non-standard q-deformation of U (son+1 ) introduced in [GK91].
+Xu and Yang [XY14] explicitly constructed PBW-type bases for all split ıquantum
+groups by using the braid group actions given in [KP11]. Lu and Wang [LW22] provided PBW-type bases of quasi-split ıquantum groups associated with simply laced
+2020 Mathematics Subject Classification. 16T20,17B37,20G42.
+Key words and phrases. Split ıquantum group, good word, Lyndon word, Lyndon basis.
+1
+
+2
+
+RUN-QIANG JIAN, LI LUO, AND XIANFA WU
+
+type ADE Dynkin digrams via an ıHall algebra approach originating from Ringel’s
+construction [Rin96], and further described these PBW-type bases more explicitly in
+[LW21a] by using the braid group actions.
+On the other hand, in their work [LR95], Lalonde and Ram constructed a new type
+of Gröbner basis, which are called Lyndon bases nowadays, for universal enveloping
+algebras of Lie algebras in terms of good words and Lyndon words. Based on his
+quantum shuffle approach to quantum groups (see [Ro98]), Rosso generalized this construction of Lyndon bases to the positive part of quantum groups in an unpublished
+paper [Ro02]. As applications, he derived a multiplicative formula for the universal
+R-matrix as a product of q-exponentials, and provided a new proof of the existence of
+canonical bases. In [Lec04], Leclerc showed that Rosso’s Lyndon bases are proportional
+to Lusztig’s PBW-type bases obtained by braid group actions, and used this fact to
+provide another proof of the existence of dual canonical bases. A direct shuffle construction of dual canonical bases (in a super generalization) is due to Clark, Hill and
+Wang [CHW16].
+Contrary to those constructions of bases mentioned before, Lyndon bases are much
+easier to compute. However, there has been no work to give bases for ıquantum groups
+by using good Lyndon words yet. In this paper, we aim at generalizing the construction
+in [LR95] to split ıquantum groups. We introduce good words for any split ıquantum
+group Uı (g) in the sense of [LR95], and give the good Lyndon words by which we can
+construct a Lyndon basis of Uı (g) (see Theorem 4.1.5). Furthermore, we provide a relationship between the Lyndon basis and Xu-Yang’s PBW-type basis in Theorem 4.2.4,
+which says that each Lyndon basis element is the leading term of a PBW-type basis
+element in some sense. In particular, we prove in Corollary 4.3.2 that the Lyndon basis
+coincides with Xu-Yang’s PBW-type basis for the type A split ıquantum group Uı (sln ).
+These Lyndon bases enable us to construct canonical bases for Uı (g), as Rosso [Ro02]
+and Leclerc [Lec04] did for quantum groups. However, their approach does not work
+in our case due to the lack of quantum shuffle realization of ıquantum groups at this
+stage. Instead, we introduce an integral condition by which a canonical basis can be
+produced (Theorem 5.1.12). As an application, in Theorem 5.2.3 we show that the
+split ıquantum groups Uı (sln ) satisfy this integral condition and hence afford canonical
+bases. We believe that the integral condition would have further interests; but on the
+other hand, we must also acknowledge that it is not always valid (see Example 5.1.6
+for type G2 ).
+The paper is organized as follows. In Section 2, we recall the basic definitions of
+quantum groups and split ıquantum groups. In Section 3, we introduce good Lyndon words and study some of their properties. We construct Lyndon bases for split
+ıquantum groups in Section 4. We also study the relationship between Lyndon bases
+and PBW-type bases. Finally, we establish canonical bases for the split ıquantum
+groups Uı (sln ) in Section 5.
+
+LYNDON BASES OF SPLIT ıQUANTUM GROUPS
+
+3
+
+Acknowledgement. We are grateful to Marc Rosso for sharing his unpublished paper
+[Ro02] with us. We thank Weiqiang Wang for confirming the reasonableness of our
+canonical bases and informing the work [LW21b]. Finally, we thank the referee for
+his/her careful reading and suggestions. LL is partially supported by the National Key
+R&D Program of China (No. 2024YFA1013802) and the NSF of China (No. 12371028).
+2. Quantum groups and split ıquantum groups
+In this section, we recall the notions of quantum groups and split ıquantum groups.
+We start by fixing some notations that will be used in the sequel. Let g be a complex
+simple Lie algebra of rank n. We fix a set of simple roots Π = {α1 , α2 , . . . , αn } of g. Let
+Φ+ be the set of positive roots, and (·, ·) a symmetric bilinear form on the root lattice
+2(α ,α )
+ZΠ. Denote by A = (aij )1≤i,j≤n the corresponding Cartan matrix, i.e., aij = (αii,αij) .
+Write di = (αi2,αi ) . Let W be the Weyl group of g, which is generated by the simple
+reflections si = sαi (1 ≤ i ≤ n).
+2.1. Quantum groups. Suppose that q ∈ C is not a root of unity and set qi = q di for
+any 1 ≤ i ≤ n. For any positive integer k, the quantum integers, quantum factorials,
+and quantum binomial coefficients are defined respectively by
+
+
+qik − qi−k
+[m]i [m − 1]i · · · [m − k + 1]i
+m
+[k]i =
+[k]i ! = [1]i [2]i · · · [k]i ,
+=
+,
+−1 ,
+k
+[k]i !
+qi − q i
+i
+where m ∈ N with k ≤ m. If di = 1, we shall write [k] = [k]i and [k]! = [k]i !.
+The quantum group U = Uq (g) is the Q(q)-algebra generated by Ei , Fi , Ki and Ki−1
+for 1 ≤ i ≤ n subject to the following relations: for 1 ≤ i, j ≤ n,
+Ki Ki−1 = 1 = Ki−1 Ki ,
+a
+Ki Ej Ki−1 = qi ij Ej ,
+
+Ki Kj = Kj Ki ,
+−aij
+
+Ki Fj Ki−1 = qi
+
+Fj ,
+
+Ki − Ki−1
+Ei Fj − Fj Ei = δij
+,
+qi − qi−1
+
+
+1−aij
+X
+1−a −k
+k 1 − aij
+(−1)
+Ei ij Ej Eik = 0,
+k
+i
+k=0
+1−aij
+
+X
+k=0
+
+k
+
+(−1)
+
+
+
+
+1 − aij
+1−a −k
+Fi ij Fj Fik = 0,
+k
+i
+
+(i ̸= j),
+
+(i ̸= j).
+
+As usual, we denote by U+ (resp. U− ) the subalgebra of U generated by Ei (resp.
+Fi ) for 1 ≤ i ≤ n.
+2.2. Split ıquantum groups. The split ıquantum group Uı = Uı (g) is the Q(q)subalgebra of U generated by Bi = Fi + ξi Ei Ki−1 (1 ≤ i ≤ n), where {ξi }1≤i≤n are
+parameters in Q(q)× . It was shown in [Let02] and [LW21a, Lemma 8.6] that the above
+
+4
+
+RUN-QIANG JIAN, LI LUO, AND XIANFA WU
+
+algebras with different choice of {ξi }1≤i≤n are isomorphic. By [Ko14] and [CLW21],
+these generators Bi (1 ≤ i ≤ n) satisfy the following relations: for 1 ≤ i ̸= j ≤ n,
+1−aij
+
+X
+
+(−1)
+
+k
+
+
+
+k=0
+
+
+1 − aij
+1−a −k
+Bi ij Bj Bik
+k
+i
+
+
+
+0,
+if aij = 0,
+
+
+
+
+
+
+qξB ,
+if aij = −1,
+
+
+ i i j
+= [2]2i qi ξi (Bi Bj − Bj Bi ),
+if aij = −2,
+
+
+
+
+
+([3]2i + 1)qi ξi (Bi2 Bj + Bj Bi2 )
+
+
+
+
+ −[2] ([2] [4] + q 2 + q −2 )q ξ B B B − [3]2 (q ξ )2 B , if a = −3.
+i
+i
+i
+i i i j i
+j
+ij
+i
+i i i
+i
+Let V be a vector space over Q(q) with a fixed basis v1 , v2 , . . . , vn . Denote by T (V )
+the tensor algebra built on V . For any 1 ≤ i ̸= j ≤ n, we set
+
+
+0,
+if aij = 0,
+
+
+
+
+
+
+qξv ,
+if aij = −1,
+
+
+ i i j
+hij = [2]2i qi ξi (vi ⊗ vj − vj ⊗ vi ),
+if aij = −2,
+
+
+
+
+
+([3]2i + 1)qi ξi (vi ⊗ vi ⊗ vj + vj ⊗ vi ⊗ vi )
+
+
+
+
+ −[2] ([2] [4] + q 2 + q −2 )q ξ v ⊗ v ⊗ v − [3]2 (q ξ )2 v , if a = −3.
+i
+i
+i
+i i i
+j
+i
+j
+ij
+i
+i i i
+i
+Let I be the two-sided ideal generated by elements
+
+
+1−aij
+X
+⊗(1−aij −k)
+k 1 − aij
+(−1)
+vi
+⊗ vj ⊗ vi⊗k − hij ,
+k
+i
+
+i ̸= j.
+
+k=0
+
+Then the quotient algebra T (V )/I is isomorphic to Uı . Denote by π ı : T (V ) → Uı the
+homomorphism satisfying π ı (vi ) = Bi .
+L
+⊗k with m ≥ 0. Let Uı =
+Consider
+the filtration of T (V ) given by Tm (V ) = m
+m
+k=0 V
+
+ı
+ı
+ı
+π Tm (V ) for m ≥ 0 and U−1 = 0. Then we have Um ⊂ Uım+1 and Uım Uıl ⊂ Uım+l .
+Hence Uım (m ≥ 0) provide a filtration on Uı . Let
+gr(Uı ) =
+
+∞
+M
+
+grm (Uı )
+
+m=0
+
+be the associated graded algebra. Here
+gr0 (Uı ) = Uı0
+
+and
+
+grm (Uı ) = Uım /Uım−1
+
+(for m > 0).
+
+One can define a surjective algebra homomorphism φ− : U− → gr(Uı ) which sends Fi
+to the image of Bi in gr(Uı ). In general,
+φ− (Fi1 Fi2 · · · Fik ) = Bi1 Bi2 · · · Bik + Uık−1 ,
+
+k ≥ 1.
+
+LYNDON BASES OF SPLIT ıQUANTUM GROUPS
+
+5
+
+−
+For each nonnegative integer m, denote by U−
+m the subspace of U spanned by elements
+ı
+of the form Fi1 Fi2 · · · Fim . Obviously, one has dim U−
+m ≥ dim grm (U ). By an argument
+−
+in [Let02] (see also the proof of [XY14, Theorem 4.4]), dim Um ≤ dim grm (Uı ). So
+ı
+dim U−
+m = dim grm (U ) for each m, and hence φ is an isomorphism.
++
+Similarly, define φ : U+ → gr(Uı ) to be the algebra isomorphism sending Ei to the
+image of Bi in gr(Uı ).
+
+3. Lyndon words and good words
+In this section, we will introduce the notion of Uı -good word. We will always assume
+that V is a vector space over Q(q) with a preferred basis v1 , v2 , . . . , vn . For simplicity,
+we always write a pure tensor vi1 ⊗ · · · ⊗ vik in T (V ) as vi1 · · · vik . We call the basis
+elements vi letters, and call a pure tensor in T (V ) a word. The set of words is denote by
+W. The set including all words and the empty word is denoted by W∗ . Therefore, W∗ is
+a basis of T (V ). For a word w = vi1 · · · vik , the number k is called the length of w, and is
+denoted by ℓ(w). We assign each word x = vi1 · · · vik an NΠ-degree |x| = αi1 + · · · + αik .
+Given ν ∈ Q(q), the ν-commutator [·, ·]ν on T (V ) is defined to be
+[x, y]ν = xy − ν (|x|,|y|) yx,
+for any x, y ∈ W.
+3.1. Lyndon words. We endow the set W with the following lexicographic order <:
+(1) v1 < v2 < · · · < vn ;
+(2) for any x, y ∈ W, x < y if either y = xz for some z ∈ W of length ≥ 1, or
+x = uvi w1 and y = uvj w2 with vi < vj and u, w1 , w2 ∈ W∗ .
+Definition 3.1.1. A word l = vi1 · · · vik is called a Lyndon word if either ℓ(l) = 1 or
+l < vij vij+1 · · · vik
+
+for all j = 2, . . . , k.
+
+We denote by L the set of Lyndon words.
+Proposition 3.1.2.
+(1) A word l is Lyndon if and only if either l = vi for some
+i, or l = l1 l2 for some l1 , l2 ∈ L with l1 < l2 .
+(2) Any word w can be written uniquely in the form
+w = l1 l2 · · · lm
+for some l1 , . . . , lm ∈ L with l1 ≥ l2 ≥ · · · ≥ lm .
+Proof. See e.g., [Lo97, Proposition 5.1.3 & Theorem 5.1.5].
+
+□
+
+Remark 3.1.3. Given l ∈ L with ℓ(l) > 1, by the above proposition, one can write
+l = l1 l2 , where l1 is the left proper Lyndon factor of l with maximal length. Then l1 ∈ L
+and l1 < l2 . We call the pair (l1 , l2 ) the co-standard factorization of l, and denote it by
+µ(l).
+
+6
+
+RUN-QIANG JIAN, LI LUO, AND XIANFA WU
+
+Given a Lyndon word l ∈ L, we define the q −1 -bracketing [l] of l inductively by [l] = l
+if l is a letter, and
+[l] = [[l1 ], [l2 ]]q−1 ∈ T (V )
+if ℓ(l) > 1 and µ(l) = (l1 , l2 ). For any w ∈ W, if w = l1 l2 · · · lm for some l1 , . . . , lm ∈ L
+with l1 ≥ l2 ≥ · · · ≥ lm , then we define [w] = [l1 ][l2 ] · · · [lm ]. We also need the notion
+of q-bracketing {w} of w which replaces the q −1 -commutator by the q-commutator in
+the above definition.
+3.2. Good words. Following [LR95], we define another total order ⪯ on W as follows.
+For any x, y ∈ W, x ≺ y if either the length of x is strictly less than that of y, or they
+have the same length and x > y. Notice that there are only finitely many words less
+than a given word with respect to this order. So (W, ≺) is well ordered. We can apply
+the well-founded induction to (W, ≺).
+The following properties of the order ≺ are useful in our study of Lyndon bases.
+Proposition 3.2.1. Suppose that x, y ∈ W satisfy x ≺ y.
+(1) For any w, z ∈ W∗ , wxz ≺ wyz.
+(2) If ℓ(x) = ℓ(y), then xw ≺ yz for any w, z ∈ W∗ with ℓ(w) = ℓ(z).
+Proof. Observe that if ℓ(x) < ℓ(y), then ℓ(wxz) < ℓ(wyz).
+If ℓ(x) = ℓ(y), then x = uvi x′ and y = uvj y ′ for some u, x′ , y ′ ∈ W and 1 ≤ j < i ≤ n.
+Obviously one has
+wuvi x′ z > wuvj y ′ z
+and
+uvi x′ w > uvj y ′ z.
+□
+For any word w = vi1 vi2 · · · vik , we write Bw = Bi1 Bi2 · · · Bik in Uı . If x =
+ai wi ∈
+P
+T (V ) with ai ∈ Q(q) and wi ∈ W, we write Bx =
+ai Bwi . Similar conventions are
+adopted for elements in U+ and U− .
+P
+
+Definition 3.2.2. A word g ∈ W is said to be Uı -good if Bg ∈ Uı can not be expressed
+as a linear combination of Bw ∈ Uı for w ∈ W with w ≺ g. We denote by G(Uı ) the
+set of Uı -good words.
+Remark 3.2.3. A word w is not Uı -good if and only if
+X
+Bw −
+au,w Bu ∈ Uıℓ(w)−1 ,
+ℓ(u)=ℓ(w),u>w
+
+where au,w ∈ Q(q). In fact, a word w is not Uı -good if and only if
+X
+X
+Bw =
+au,w Bu +
+av,w Bv ,
+ℓ(u)=ℓ(w),u>w
+
+ℓ(v)<ℓ(w)
+
+LYNDON BASES OF SPLIT ıQUANTUM GROUPS
+
+7
+
+where au,w , av,w ∈ Q(q) and some of them are nonzero. Moreover, since Bx ∈
+/ Uıℓ(x)−1
+for all x ∈ W, any of the above expressions of Bw with w ∈
+/ G(Uı ) must imply that
+some au,w should be nonzero.
+Recall that a word g is U+ -good if Eg ∈ U+ cannot be expressed as a linear combination of Ew ∈ U+ for w ∈ W with w > g (for more details, see [Lec04]).
+Proposition 3.2.4. A word is Uı -good if and only if it is U+ -good.
+Proof. We will show the equivalent statement that a word is not Uı -good if and only
+if it is not U+ -good.
+If w is not Uı -good, then
+
+Ew = (φ+ )−1 Bw + Uıℓ(w)−1
+
+
+X
+= (φ+ )−1
+au,w Bu + Uıℓ(w)−1
+ℓ(u)=ℓ(w),u>w
+
+X
+
+=
+
+au,w Eu .
+
+ℓ(u)=ℓ(w),u>w
+
+Here, φ+ is the algebra isomorphism from U+ to gr(Uı ) given in the last section. So
+w is not U+ -good.
+Conversely, if g is not U+ -good, then
+X
+Ew =
+au,w Eu ,
+ℓ(u)=ℓ(w),u>w
+
+with au ∈ Q(q). Therefore,
+Bw + Uıℓ(w)−1 = φ+ (Ew )
+
+X
++
+=φ
+
+
+au,w Eu
+
+ℓ(u)=ℓ(w),u>w
+
+=
+
+X
+
+au,w Bu + Uıℓ(w)−1 ,
+
+ℓ(u)=ℓ(w),u>w
+
+which means w is not Uı -good.
+
+□
+
+We denote GL(Uı ) = G(Uı ) ∩ L, the set of Uı -good Lyndon words.
+Remark 3.2.5. In [Lec04, Section 8], Leclerc gave a complete description of the sets
+of U+ -good Lyndon words. By Proposition 3.2.4, one has a complete description of
+GL(Uı ).
+The following property of Uı -good words is a direct modification of the one for
+classical good words (see [LR95, Proposition 2.4]). For the completeness of the paper,
+we provide its proof here.
+
+8
+
+RUN-QIANG JIAN, LI LUO, AND XIANFA WU
+
+Proposition 3.2.6. Every factor of a Uı -good word is Uı -good.
+Proof. Suppose that x, y, z ∈ W∗ satisfy xyz ∈ G(Uı ) but y ∈
+/ G(Uı ). Thus
+X
+By =
+au,y Bu ,
+u≺y
+
+with au,y ∈ Q(q). Since u ≺ y, we have xuz ≺ xyz. So
+
+X
+X
+X
+au,y Bx Bu Bz =
+au,y Bxuz ,
+au,y Bu Bz =
+Bxyz = Bx By Bz = Bx
+u≺y
+
+u≺y
+
+u≺y
+
+and hence xyz ∈
+/ G(Uı ), a contradiction.
+
+□
+
+The following result follows immediately from Propositions 3.1.2 & 3.2.6.
+Proposition 3.2.7. Any Uı -good word g can be written uniquely in the form
+g = l1 l2 · · · lm
+for some l1 , . . . , lm ∈ GL(Uı ) with l1 ≥ l2 ≥ · · · ≥ lm .
+4. Lyndon bases of ıquantum groups
+In this section, we will construct the Lyndon basis of Uı . We keep all assumptions
+in the above sections.
+4.1. Lyndon bases of Uı .
+Theorem 4.1.1. The set
+BG = {Bg | g ∈ G(Uı )}
+forms a basis of Uı .
+Proof. We first show that Uı is spanned by the set {Bg | g ∈ G(Uı )}. It suffices to
+show that for any word w the element Bw is a linear combination of Bg with g ∈ G(Uı ).
+P
+If w ∈ G(Uı ), we are done. If not, then Bw = x≺w ax,w Bx for some ax,w ∈ Q(q). If
+all x appearing in the sum are good, we are done. If there exists a word x ≺ w such
+that x ∈
+/ G(Uı ), we can express Bx as a linear combination of By with y ≺ x. Since the
+number of words strictly smaller than w with respect to ≺ is finite, we get the desired
+result.
+P
+Now assume that g∈G(Uı ) ag Bg = 0 with ag = 0 for all but finitely many g. If
+there exist some g ∈ G(Uı ) such that ag ̸= 0, then choose the maximal one g0 among
+these elements. Then one can express Bg0 as a linear combination of Bg with g ≺ g0 ,
+a contradiction.
+□
+Remark 4.1.2. In the proof of the above theorem, one sees that the expression of an
+element Bw ∈ Uı with w ∈ W in terms of BG is of the form
+X
+Bw =
+ag,w Bg ,
+g∈G(Uı ),g⪯w
+
+LYNDON BASES OF SPLIT ıQUANTUM GROUPS
+
+9
+
+where ag,w ∈ Q(q).
+Lemma 4.1.3. For any l ∈ L, we have
+[l] = l +
+
+X
+
+bw,l w
+
+ℓ(w)=ℓ(l),w>l
+
+for some bw,l ∈ Z[q, q −1 ].
+Proof. It is an easy induction on ℓ(l). For more details, see [Lec04, Prop. 19].
+
+□
+
+In fact, this lemma can be generalized to arbitrary words.
+Proposition 4.1.4. For any w ∈ W, we have
+X
+[w] = w +
+
+bx,w x,
+
+ℓ(x)=ℓ(w),x>w
+
+where bx,w ∈ Z[q, q −1 ].
+Proof. Write w = l1 l2 · · · lk with l1 , l2 , . . . , lk ∈ L and l1 ≥ l2 ≥ · · · ≥ lk . We use
+induction on k. If k = 1, it is just above lemma. Assume that k > 1 and the result
+holds for k − 1. Set w′ = l2 · · · lk . Then by the inductive hypothesis,
+X
+[w′ ] = w′ +
+by,w′ y
+ℓ(y)=ℓ(w′ ),y>w′
+
+where by,w′ ∈ Z[q, q −1 ]. We also write
+X
+
+[l1 ] = l1 +
+
+bx,l1 x
+
+ℓ(x)=ℓ(l1 ),x>l1
+
+for some bx,l1 ∈ Z[q, q −1 ]. Hence
+[w] = [l1 ][w′ ]
+
+= l1 +
+
+X
+
+
+bx,l1 x w′ +
+
+X
+
+= l1 w +
+
+bx,l1 xw′ +
+
+X
+
+X
+
+by,w′ l1 y
+
+ℓ(y)=ℓ(w′ ),y>w′
+
+ℓ(x)=ℓ(l1 ),x>l1
+
++
+
+by,w′ y
+
+ℓ(y)=ℓ(w′ ),y>w′
+
+ℓ(x)=ℓ(l1 ),x>l1
+′
+
+
+
+X
+
+X
+
+bx,l1 by,w′ xy.
+
+ℓ(x)=ℓ(l1 ),x>l1 ℓ(y)=ℓ(w′ ),y>w′
+
+By Proposition 3.2.1, one has xw′ , l1 y, xy ≺ w. Since ℓ(xw′ ) = ℓ(l1 y) = ℓ(xy) = ℓ(w),
+we have xw′ , l1 y, xy > w.
+□
+Theorem 4.1.5. Each of the following sets is a basis of Uı :
+(1) BGL = {Bl1 l2 ···lm | l1 , . . . , lm ∈ GL(Uı ) and l1 ≥ · · · ≥ lm };
+(2) BL = {B[l1 ][l2 ]···[lm ] | l1 , . . . , lm ∈ GL(Uı ) and l1 ≥ · · · ≥ lm }.
+
+10
+
+RUN-QIANG JIAN, LI LUO, AND XIANFA WU
+
+Proof. For (1), we first note, from Proposition 3.2.7 and Theorem 4.1.1, that Uı =
+SpanBGL . Assume that there exists a subset S of W and nonzero numbers {aw }w∈S ⊂
+P
+Q(q) such that Bw ∈ BGL and
+w∈S aw Bw = 0. Let S0 be the set of words with
+P
+maximal length in S. Then w∈S0 aw Bw + Uım−1 is zero in grm (Uı ), where m is the
+length of words in S0 . As a consequence,
+ X
+
+X
++ −1
+ı
+aw Ew = (φ )
+aw Bw + Um−1 = 0.
+w∈S0
+
+w∈S0
+
+But the set
+{El1 l2 ···lm | l1 , . . . , lm ∈ GL(U+ ) and l1 ≥ · · · ≥ lm }
+forms a basis of U+ (see Theorem 23 in [Lec04]), a contradiction.
+Statement (2) follows immediately from (1) and Lemma 4.1.3.
+
+□
+
+Remark 4.1.6. By the above theorem, we have
+G(Uı ) = {l1 l2 · · · lm | l1 , . . . , lm ∈ GL(Uı ) and l1 ≥ · · · ≥ lm }.
+Indeed, it follows from Proposition 3.2.7 that G(Uı ) is contained in the set on the right
+hand side. Conversely, since both BG and BGL are bases of Uı , we get the inclusion in
+the other direction.
+Definition 4.1.7. We call BL the Lyndon basis of Uı .
+Example 4.1.8 (Lyndon basis of type A2 ). By Lemma 3.2.5 and [Lec04, 8.1], the good
+Lyndon words in type A2 are v1 , v1 v2 , v2 . We have
+B[v1 ] = Bv1 ,
+B[v1 v2 ] = Bv1 v2 − qBv2 v1 ,
+B[v2 ] = Bv2 .
+Example 4.1.9 (Lyndon basis of type B2 ). By Lemma 3.2.5 and [Lec04, 8.2], the good
+Lyndon words are v1 , v1 v2 , v1 v2 v2 , v2 . We adopt the convention that
+(α1 , α1 ) = 4,
+
+(α2 , α2 ) = 2,
+
+(α1 , α2 ) = −1.
+
+Then
+B[v1 ] = Bv1 ,
+B[v1 v2 ] = Bv1 v2 − q 2 Bv2 v1 ,
+B[v1 v2 v2 ] = Bv1 v2 v2 − (q 2 + 1)Bv2 v1 v2 + q 2 Bv2 v2 v1 ,
+B[v2 ] = Bv2 .
+
+LYNDON BASES OF SPLIT ıQUANTUM GROUPS
+
+11
+
+4.2. Relations with PBW-type bases. In this subsection, we fix ξi = −qi−2 , for all
+i, in the definition of Bi .
+In [Lu93], Lusztig defined a series of braid group actions on U. For 1 ≤ i ≤ n, let Ti
+be the algebra automorphism on U defined below:
+Ti (Ei ) = −Ki−1 Fi ,
+
+Ti (Ki ) = Ki−1 ,
+
+Ti (Fi ) = −Ei Ki ,
+
+and for j ̸= i,
+−aij
+
+Ti (Ej ) =
+
+X
+
+−aij
+(−a −s)
+(s)
+(−1)s qi−s Ei Ej Ei ij ,
+
+Ti (Fj ) =
+
+s=0
+
+X
+
+(−aij −s)
+
+(−1)s qis Fi
+
+(s)
+
+Fj Fi ,
+
+s=0
+
+−a
+Ti (Kj ) = Kj Ki ij .
+′
+The notation Ti is just the one Ti,−1
+in [Lu93, 37.1.3] with v = q. Our choice of braid
+group actions here coincides with those in [KP11] and [XY14]. Notice that the braid
+′
+actions used in [Lec04] are Ti,−1
+’s with v = q −1 .
+Denote by τ : U → U the unique Q-algebra antiautomorphism satisfying
+
+τ (q) = q −1 ,
+
+τ Ei = Fi ,
+
+τ (Fi ) = Ei ,
+
+τ (Ki ) = Ki−1 .
+
+Then one has
+τ Ti = Ti τ
+for each i.
+Let w0 = si1 si2 · · · siN be a reduced expression of the longest element w0 ∈ W .
+Denote βj = si1 si2 · · · sij−1 (αj ) for 1 ≤ j ≤ N . Then Φ+ = {β1 , β2 , . . . , βN }. Denote
+Fβj = Ti1 Ti2 · · · Tij−1 (Fij ),
+
+1 ≤ j ≤ N.
+
+Lusztig showed that the set
+{Fβa11 Fβa22 · · · FβaNN | a1 , a2 , . . . , aN ∈ Z≥0 }
+is a basis of U− .
+Kolb and Pellegrini established the braid group actions for Uı as follows:
+Proposition 4.2.1 ([KP11, Theorem 3.3]). There exist n algebra automorphisms τi
+(1 ≤ i ≤ n) such that
+
+
+Bj ,
+if aij = 0 or 2,
+
+
+
+
+
+B B − qi Bj Bi ,
+if aij = −1,
+
+ i j
+2
+P
+(2−s)
+(s)
+τi (Bj ) =
+(−1)s q s Bi
+Bj Bi + Bj ,
+if aij = −2,
+
+
+s=0
+
+
+
+3
+P
+
+−q 3 Bj Bi
+
+ (−1)s q s Bi(3−s) Bj Bi(s) + Bi Bj q[3]!
++ Bi Bj − qBj Bi , if aij = −3,
+s=0
+
+for all 1 ≤ i, j ≤ n.
+Denote
+Bβj = τi1 τi2 · · · τij−1 (Bij ),
+
+1 ≤ j ≤ N.
+
+12
+
+RUN-QIANG JIAN, LI LUO, AND XIANFA WU
+
+Proposition 4.2.2 ([XY14, Theorem 4.4]). The set
+N
+| a1 , a2 , . . . , aN ∈ Z≥0 }
+BPBW = {Bβa11 Bβa22 · · · BβaN
+
+forms a basis of Uı .
+Denote by GL(U+ ) the set of U+ -good Lyndon words. Recall that the map ψ :
+GL(U+ ) → Φ+ , given by l 7→ |l|, is a bijection (see [Lec04, Proposition 18]). For each
+P
+P
+β ∈ Φ+ , we set l(β) = ψ −1 (β). We also set ht(β) = ni=1 ki if β = ni=1 ki αi . We now
+discuss the relationship between BL and BPBW .
+Consider the unique Q-algebra anti-automorphism ω of T (V ) defined by ω(q) = q −1
+and ω(vi1 vi2 · · · vik ) = vik · · · vi2 vi1 . Let π + (resp. π − ) be the algebra homomorphism
+from T (V ) to U+ (resp. U− ) that maps vi to Ei (resp. Fi ) for each i. Then τ π + = π − ω
+and τ π − = π + ω.
+P
+For each λ = ni=1 ki αi ∈ NΠ, denote
+
+
+n
+X
+1
+N(λ) =
+(λ, λ) −
+ki (αi , αi ) .
+2
+i=1
+
+Given w ∈ W, we denote N(w) = N(|w|) for convenience.
+Lemma 4.2.3. For any l ∈ L, we have
+ω([l]) = −q −N(l) [l].
+Proof. We use induction on ℓ(l). If ℓ(l) = 1, the result is trivial. We assume that
+ℓ(l) > 1 and the result holds for Lyndon words with length < ℓ(l). Let µ(l) = (l1 , l2 )
+be the co-standard factorization of l = l1 l2 . Then
+
+ω([l]) = ω [l1 ][l2 ] − q (|l1 |,|l2 |) [l2 ][l1 ]
+= ω([l2 ])ω([l1 ]) − q −(|l1 |,|l2 |) ω([l1 ])ω([l2 ])
+= q −N(l1 )−N(l2 ) [l2 ][l1 ] − q −(|l1 |,|l2 |)−N(l1 )−N(l2 ) [l1 ][l2 ]
+
+= −q −(|l1 |,|l2 |)−N(l1 )−N(l2 ) [l1 ][l2 ] − q (|l1 |,|l2 |) [l2 ][l1 ]
+= −q −N(l) [l],
+where the last equality follows from the identity (|l1 |, |l2 |) + N(l1 ) + N(l2 ) = N(l).
+
+□
+
+Theorem 4.2.4. For any positive root β ∈ Φ+ , there exists a polynomial hβ with
+deg hβ < ht(β) and non-zero κβ ∈ Q(q) such that
+Bβ = κβ B[l(β)] + hβ (B1 , . . . , Bn ).
+Proof. For 1 ≤ j ≤ p, we write Eβj = Ti1 Ti2 · · · Tij−1 (Eij ). Notice that Fβj = τ (Eβj ).
+It follows from [Lec04, Theorem 28] that E[l(β)] = E {l(β)} is proportional to E β , say
+
+LYNDON BASES OF SPLIT ıQUANTUM GROUPS
+
+13
+
+E β = cβ E[l(β)] . Here, · is the bar involution on U, which is the unique Q-algebra
+automorphism that preserves the generators and maps q to q = q −1 . Therefore
+
+Fβ = τ cβ E[l(β)] = cβ τ π + ([l(β)])
+
+= cβ π − ω([l(β)]) = cβ π − q −N(β) [l(β)]
+
+= cβ q −N(β) π − [l(β)] = cβ q −N(β) F[l(β)]
+= κβ F[l(β)] ,
+where κβ = cβ q −N(β) ̸= 0. Since φ− is an isomorphism of algebras, we have
+
+φ− (Fβ ) = κβ φ− F[l(β)] = κβ B[l(β)] + Uıℓ(l(β))−1 .
+On the other hand, by [XY14, Proposition 4.3], there exist polynomials f and g in
+Q(q)[x1 , . . . , xn ] with f homogeneous and deg f > deg g such that
+Fβ = f (F1 , F2 , . . . , Fn ),
+and
+Bβ = f (B1 , B2 , . . . , Bn ) + g(B1 , B2 , . . . , Bn ).
+Then
+φ− (Fβ ) = f φ− (F1 ), φ− (F2 ), . . . , φ− (Fn )
+
+
+
+= f (B1 , B2 , . . . , Bn ) + Uıdeg f −1 = Bβ + Uıdeg f −1 .
+In conclusion, Bβ − κβ B[l(β)] ∈ Uıdeg f −1 as desired.
+
+□
+
+4.3. PBW-type bases of Uı (sln+1 ). In this subsection we keep all conventions used
+before and assume that Uı = Uı (sln+1 ) is the type An split ıquantum group. Rearranging the order of the simple roots if necessary, we may assume that the longest
+element w0 of W has the following reduced expression
+w0 = s1 s2 · · · sn s1 s2 · · · sn−1 · · · s1 s2 s1 .
+Sometimes we denote by si1 si2 · · · sir a right factor of the above expression with length
+r ≤ n(n+1)
+in the sequel.
+2
+Let C = (cij ) be the Cartan matrix of type An . Since si (αj ) = αj − cij αi , the above
+reduced expression of w0 provides the following order of positive roots:
+β1 = α1 < β2 = α1 + α2 < · · ·
+< βn+1 = α2
+< ···
+···
+···
+
+< βn = α1 + α2 + · · · αn
+< β2n−1 = α2 + · · · αn
+···
+< β n(n+1) = αn .
+2
+
+By Proposition 3.2.4 and [Lec04, 8.1],
+GL(Uı ) = {vi vi+1 · · · vj | 1 ≤ i ≤ j ≤ n}.
+So the above chain corresponds to that of good Lyndon words with respect to lexicographic order.
+
+14
+
+RUN-QIANG JIAN, LI LUO, AND XIANFA WU
+
+Now Uı is generated by B1 , B2 , . . . , Bn subject to relations
+Bi Bj = Bj Bi , if cij = 0,
+Bi2 Bj − [2]Bi Bj Bi + Bj Bi2 = −q −1 Bj , if cij = −1.
+The braid group actions τi on Uı are given by:
+(
+Bj ,
+τi (Bj ) =
+Bi Bj − qBj Bi ,
+
+if cij = 0 or 2;
+if cij = −1.
+
+We define a bilinear map [·, ·]q : Uı × Uı → Uı as follows: for any P, Q ∈ Uı ,
+[P, Q]q = P Q − qQP.
+It is easy to see that this map is well-defined. For 1 ≤ i < n, by a direct calculation,
+we have
+τi (Bi+1 ) = [Bi , Bi+1 ]q , τi τi+1 (Bi ) = Bi+1 .
+Proposition 4.3.1. For any positive root
+βr = αi + αi+1 + · · · + αi+k , 1 ≤ i ≤ i + k ≤ n,
+we have
+Bβr =
+
+(
+[. . . [[Bi , Bi+1 ]q , Bi+2 ]q . . . , Bi+k ]q ,
+Bi ,
+
+if k > 0,
+if k = 0.
+
+Proof. We prove it by induction on the rank n. The case A2 follows immediately from
+a simple calculation. Suppose that n > 2 and the result is true for the type An−1 .
+For type An , consider the prefix wr = si1 · · · sir−1 of w0 . If r ≤ n, then
+βr = α1 + · · · + αr−1 = s1 · · · sr−1 (αr ).
+It is easy to check the result for Bβr since Bβr = τ1 · · · τr−1 (Br ).
+If r > n, wr = s1 · · · sn sin+1 · · · sir−1 . Note that sin+1 · · · sir−1 is a prefix of the longest
+element
+s1 s2 · · · sn−1 s1 s2 · · · sn−2 · · · s1 s2 s1
+of the Weyl group of type An−1 , and
+γr = sin+1 · · · sir−1 (αr )
+is a positive root of type An−1 . Suppose
+γr = αj + · · · + αj+k ,
+for some j, k. Then by the inductive hypothesis,
+(
+[. . . [[Bj , Bj+1 ]q , Bj+2 ]q . . . , Bj+k ]q ,
+τin+1 · · · τir−1 (Br ) =
+Bj ,
+Note that for 1 ≤ k < n,
+s1 s2 · · · sn (αk ) = s1 s2 · · · sk sk+1 (αk ) = αk+1 ,
+
+if k > 0
+if k = 0.
+
+LYNDON BASES OF SPLIT ıQUANTUM GROUPS
+
+15
+
+and
+τ1 τ2 · · · τn (Bk ) = τ1 τ2 · · · τk τk+1 (Bk ) = τ1 τ2 · · · τk−1 (Bk+1 ) = Bk+1 .
+Thus
+βr = s1 s2 · · · sn (γr ) = αj+1 + · · · + αj+k+1 ,
+Bβr = τ1 τ2 · · · τn τin+1 · · · τir−1 (Br )
+(
+[. . . [[Bj+1 , Bj+2 ]q , Bj+3 ]q . . . , Bj+k+1 ]q ,
+=
+Bj+1 ,
+
+if k > 0,
+if k = 0.
+□
+
+Corollary 4.3.2. The bases BL and BPBW coincide for split ıquantum groups Uı (sln ).
+Proof. We adopt all conventions above. For any good Lyndon word vi vi+1 · · · vi+k with
+k ≥ 1, we have
+[vi vi+1 · · · vi+k ] = [[vi vi+1 · · · vi+k−1 ], vi+k ]q−1 = · · ·
+= [. . . [[vi , vi+1 ]q−1 , vi+2 ]q−1 . . . , vi+k ]q−1 .
+Note that q −(αj ,αj+1 ) = q. So Bβr = B[l(βr )] for any positive root βr .
+
+□
+
+5. Canonical bases of ıquantum groups
+In this section, we denote by · the bar involution on Uı which is the unique Qalgebra automorphism defined on the generators by B i = Bi and q = q −1 . For the
+existence of · , we refer the reader to [BK15].
+5.1. Integral conditions. Denote
+X = {(l1 , l2 ) | l1 , l2 ∈ GL(Uı ), l1 < l2 , l1 l2 ∈
+/ G(Uı )}.
+Lemma 5.1.1. Suppose that l is a Lyndon word. If l is not Uı -good, then l has a
+factor of the form l1 l2 for some (l1 , l2 ) ∈ X.
+Proof. We use induction on the length of l. Since letters are always Uı -good, we assume
+that ℓ(l) ≥ 2. Suppose l = vi vj with i < j. If l is not Uı -good, itself is such a requested
+factor. Assume that ℓ(l) > 2 and the result holds for length < ℓ(l). Since l is Lyndon,
+we have a decomposition l1 l2 = l with l1 , l2 ∈ L and l1 < l2 . If both of l1 and l2 are
+Uı -good, then l1 l2 is such a not Uı -good factor of l. If one of l1 , l2 is not Uı -good, say
+l1 , then by the inductive hypothesis we are done.
+□
+Before stating our next result, we introduce a condition on Uı which enables us to
+express certain elements in Uı as linear combinations of BG with Z[q, q −1 ]-coefficients.
+A word w is said to be integral with respect to BG if
+X
+Bw =
+cg,w Bg with cg,w ∈ Z[q, q −1 ].
+g∈G(Uı ),g⪯w
+
+16
+
+RUN-QIANG JIAN, LI LUO, AND XIANFA WU
+
+We introduce the integral condition (IC) for the ıquantum group Uı as follows.
+• Condition (IC):
+
+All words are integral with respect to BG .
+
+Proposition 5.1.2. The split ıquantum group Uı satisfies the condition (IC) if and
+only if, for every (l1 , l2 ) ∈ X, l1 l2 is integral with respect to BG .
+Proof. Suppose that l1 l2 is integral with respect to BG for every (l1 , l2 ) ∈ X. We use
+well-founded induction on (W, ≺). If w is a letter, then Bw is Uı -good. There is nothing
+to prove. We assume that ℓ(w) ≥ 2 and every word ≺ w is integral with respect to BG .
+Write w = l1 l2 · · · lk with l1 , l2 , . . . , lk ∈ L and l1 ≥ l2 ≥ · · · ≥ lk . If each li is Uı -good,
+then so is w. We are done. If not, say lj is not Uı -good, then by Lemma 5.1.1, there
+exist x, y ∈ W∗ and (lj′ , lj′′ ) ∈ X such that lj = xlj′ lj′′ y. By our assumption,
+X
+Blj′ lj′′ =
+cg,lj′ lj′′ Bg ,
+g∈G(Uı ),g≺lj′ lj′′
+
+for some cg,lj′ lj′′ ∈ Z[q, q −1 ]. Thus
+Bw =
+
+X
+
+cg,lj′ lj′′ Bl1 ···lj−1 xgylj+1 ···lk .
+
+g∈G(Uı ),g≺lj′ lj′′
+
+By Proposition 3.2.1, each summand on the right hand side is strictly smaller than w
+with respect to the order ≺. By the inductive hypothesis, all of them are integral with
+respect to BG , and hence w is integral.
+The reverse statement is trivial.
+□
+Remark 5.1.3. The condition (IC) is essential for our proof of existence of canonical
+bases below. In order to verify it, we just need to consider the set X by the above
+proposition. Since the set of good Lyndon words is finite, it can be checked case by
+case.
+Example 5.1.4 (Type A2 ). Set ξi = qi−1 in the definition of Bi for i = 1, 2. Then the
+type A2 split ıquantum group Uı (sl3 ) is generated by B1 , B2 subject to relations
+B12 B2 − [2]B1 B2 B1 + B2 B12 = B2 ,
+B22 B1 − [2]B2 B1 B2 + B1 B22 = B1 .
+By Lemma 3.2.5 and [Lec04, 8.1], the good Lyndon words are v1 , v1 v2 , v2 . So all good
+words are of the form
+v2k1 (v1 v2 )k2 v1k3
+
+with k1 , k2 , k3 ∈ Z≥0 .
+
+Thus
+X = {(v1 , v1 v2 ), (v1 v2 , v2 )}.
+Note that
+Bv1 v1 v2 = −Bv2 v12 + [2]B(v1 v2 )v1 + Bv2
+
+LYNDON BASES OF SPLIT ıQUANTUM GROUPS
+
+17
+
+and
+Bv1 v2 v2 = −Bv22 v1 + [2]Bv2 (v1 v2 ) + Bv1 .
+Hence, the split ıquantum group Uı (sl3 ) satisfies the condition (IC).
+In fact, we will show in the next subsection that this keeps true for all Uı (sln ).
+Example 5.1.5 (Type B2 ). Set ξi = qi−1 again. The type B2 split ıquantum group
+Uı (so5 ) is generated by B1 , B2 subject to relations
+B12 B2 − [2]q2 B1 B2 B1 + B2 B12 = B2 ,
+B23 B1 − [3]B22 B1 B2 + [3]B2 B1 B22 − B1 B23 = [2]2 (B2 B1 − B1 B2 ).
+4
+
+−4
+
+−q
+Here [2]q2 = qq2 −q
+−2 . By Lemma 3.2.5 and [Lec04, 8.2], the good Lyndon words are
+v1 , v1 v2 , v1 v2 v2 , v2 . Here we adopt the usual convention of Dynkin diagram of B2 whose
+arrow is opposite to that in [Lec04, 8.2]. So all good words are of the form
+
+v2k1 (v1 v2 v2 )k2 (v1 v2 )k3 v1k4
+
+with k1 , k2 , k3 , k4 ∈ Z≥0 .
+
+Thus
+X = {(v1 , v1 v2 ), (v1 , v1 v2 v2 ), (v1 v2 , v1 v2 v2 ), (v1 v2 v2 , v2 )}.
+A direct computation shows that
+Bv1 v1 v2 = [2]q2 B(v1 v2 )v1 − Bv2 v12 + B2 ,
+Bv1 v1 v2 v2 = [2]q2 B(v1 v2 )2 − [2]q2 Bv2 (v1 v2 )v1 + Bv22 v12 ,
+Bv1 v2 v1 v2 v2 = −2Bv23 v12 + ([3] + [2]q2 )Bv22 (v1 v2 )v1 − [3]Bv2 (v1 v2 v2 )v1
++ [3]B(v1 v2 v2 )(v1 v2 ) − [2]q2 Bv2 (v1 v2 )2 − [2]q2 [2]2 B(v1 v2 )v1
++ 2[2]2 Bv2 v12 + Bv23 − [2]2 Bv2 ,
+Bv1 v2 v2 ,v2 = Bv23 v1 − [3]Bv22 (v1 v2 ) + [3]Bv2 (v1 v2 v2 ) − [2]2 Bv2 v1 + [2]2 Bv1 v2 .
+So the split ıquantum group Uı (so5 ) satisfies the condition (IC) as well.
+Example 5.1.6 (Type G2 ). This is a counterexample for the condition (IC). Set
+ξi = qi−1 . The split ıquantum group of type G2 is generated by B1 , B2 subject to the
+relations
+B22 B1 − [2]q3 B2 B1 B2 + B1 B22 = B1 ,
+and
+B14 B2 − [4]B13 B2 B1 +
+
+
+
+4
+2
+
+
+
+B12 B2 B12 − [4]B1 B2 B13 + B2 B14
+
+= ([3]2 + 1)(B12 B2 + B2 B12 ) − [2]([2][4] + q −2 + q 2 )B1 B2 B1 − [3]2 B2 .
+6
+
+−6
+
+. According to Lemma 3.2.5 and [Lec04, 5.5.4], the good Lyndon
+Here [2]q3 = qq3 −q
+−q −3
+words are
+v1 , v1 v1 v1 v2 , v1 v1 v2 , v1 v1 v2 v1 v2 , v1 v2 , v2 .
+
+18
+
+RUN-QIANG JIAN, LI LUO, AND XIANFA WU
+
+Consider the pair (v1 v1 v1 v2 , v1 v2 ). Observe that (v1 v1 v1 v2 , v1 v2 ) ∈ X and
+Bv1 v1 v1 v2 v1 v2
+= Bv2 (v1 v2 )v13 + (q 2 − 1 + q −2 )B(v1 v2 )2 v12 − (q 2 − 1 + q −2 )B(v1 v1 v2 v1 v2 )v1
+ 
+1
+4
+B(v1 v1 v2 )2 − (q 2 + q −2 )B(v1 v2 )(v1 v1 v1 v2 )
++
+[2] 2
+ 
+1
+4
+2
+−2
+Bv2 (v1 v1 v2 )v12
++ (q + q )Bv2 (v1 v1 v1 v2 )v1 −
+[2] 2
++ (−q 6 + q 2 + 1 + q −2 − q −6 )B(v1 v2 )2 + (q 6 − q 2 − 1 − q −2 + q −6 )Bv2 (v1 v2 )v1 .
+ 
+2
+−2
+2 +q −2 )
+4
+1
+The number [2]
+= (q +1+qq+q)(q
+does not belong to Z[q, q −1 ]. So the case of
+−1
+2
+type G2 does not satisfy the condition (IC).
+Lemma 5.1.7. If Uı satisfies the condition (IC), then for any g ∈ G(Uı ),
+X
+Bg = B[g] +
+rw,g B[w]
+w∈G(Uı ),w≺g
+
+where rw,g ∈ Z[q, q −1 ].
+Proof. By Lemma 4.1.3,
+[g] = g +
+
+X
+
+bw,g w,
+
+w>g,ℓ(w)=ℓ(g)
+
+with bw,g ∈ Z[q, q −1 ]. It follows from Proposition 5.1.2 that
+X
+X
+B[g] = Bg +
+bw,g Bw = Bg +
+w>g,ℓ(w)=ℓ(g)
+
+X
+
+bw,g cu,w Bu ,
+
+w>g,ℓ(w)=ℓ(g) u∈G(Uı ),u⪯w
+
+where cu,w ∈ Z[q, q −1 ]. As a consequence, the transition matrix from the basis BG to
+BL is upper unitriangular and each entry is a number in Z[q, q −1 ]. Then its inverse
+matrix is upper unitriangular and has Z[q, q −1 ]-entries as well, as desired.
+□
+Lemma 5.1.8. If w, x, y, z ∈ W satisfy w ≺ x and y ≺ z, then all of the following
+words
+wy, wz, xy
+are strictly smaller than xz with respect to the order ≺.
+Moreover, if x, z ∈ L and x < z, then all of the following words
+yx, yw, zw
+are strictly smaller than xz with respect to ≺.
+Proof. If ℓ(w) < ℓ(x) or ℓ(y) < ℓ(z), then both of ℓ(wy) is strictly smaller that ℓ(xz),
+and hence wy ≺ xz. Assume that ℓ(w) = ℓ(x) and ℓ(y) = ℓ(z). By (2) of Proposition
+3.2.1, we have wy ≺ xz.
+
+LYNDON BASES OF SPLIT ıQUANTUM GROUPS
+
+19
+
+On the other hand, if ℓ(w) < ℓ(x), then ℓ(wz) < ℓ(xz). Thus wz ≺ xz. If ℓ(w) =
+ℓ(x), then by Proposition 3.2.1 again, wz ≺ xz. The case of xy follows from (1) of
+Proposition 3.2.1 immediately.
+If x, z ∈ L and x < z, then xz ∈ L by Proposition 3.1.2. As a consequence,
+xz < z < zx.
+By Proposition 3.2.1,
+yx ≺ zx ≺ xz,
+yw ≺ zw ≺ zx ≺ xz,
+and
+zw ≺ zx ≺ xz.
+□
+Proposition 5.1.9. Suppose that x, y ∈ W and l1 , l2 ∈ L satisfy x ≺ l1 , y ≺ l2 and
+l1 < l2 . If Uı satisfies the condition (IC), then all of the elements
+B[x] B[y] , B[y] B[x] , B[x] B[l2 ] , B[l2 ] B[x] , B[l1 ] B[y] , B[y] B[l1 ]
+are in the space spanned by the set {B[g] |g ∈ G(Uı ), g ≺ l1 l2 } over Z[q, q −1 ].
+Proof. By Proposition 4.1.4, we have
+X
+[x] = x +
+bu,x u
+
+and
+
+X
+
+[y] = y +
+
+u>x,ℓ(u)=ℓ(x)
+
+bw,y w,
+
+w>y,ℓ(w)=ℓ(y)
+
+where bu,x , bw,y ∈ Z[q, q −1 ]. Then
+X
+
+B[x] B[y] = Bxy +
+
+u>x,ℓ(u)=ℓ(x)
+
+X
+
++
+
+X
+
+bu,x Buy +
+
+bw,y Bxw
+
+w>y,ℓ(w)=ℓ(y)
+
+X
+
+bu,x bw,y Buw
+
+u>x,ℓ(u)=ℓ(x) w>y,ℓ(w)=ℓ(y)
+
+X
+
+=
+
+az,l1 l2 Bz ,
+
+z≺l1 l2
+
+where az,l1 l2 ∈ Z[q, q −1 ]. Here the last equality follows from the above lemma.
+By Proposition 5.1.2 and Lemma 5.1.7, we have
+X
+X
+B[x][y] =
+az,l1 l2
+cg,z Bg
+z≺l1 l2
+
+=
+
+X
+
+g∈G(Uı ),g⪯z
+
+X
+
+
+
+X
+
+az,l1 l2 cg,z B[g] +
+
+z≺l1 l2 g∈G(Uı ),g⪯z
+
+
+rg′ ,g B[g′ ]
+
+g ′ ∈G(Uı ),g ′ ≺g
+
+∈ SpanZ[q,q−1 ] {B[g] |g ∈ G(Uı ), g ≺ l1 l2 }.
+The other cases can be proven similarly.
+
+□
+
+20
+
+RUN-QIANG JIAN, LI LUO, AND XIANFA WU
+
+Theorem 5.1.10. If Uı satisfies the condition (IC), then for every l ∈ L, we have
+X
+B[l] = B[l] +
+hg,l B[g] ,
+g≺l,
+
+where hg,l
+
+∈ Z[q, q −1 ].
+
+Proof. By Proposition 4.1.4,
+X
+
+[l] = l +
+
+bw,l w,
+
+w>l,ℓ(w)=ℓ(l)
+
+for some bw,l ∈ Z[q, q −1 ]. Thus, by Proposition 5.1.2 and Lemma 5.1.7, we have
+X
+B[l] = Bl +
+bw,l Bw
+w>l,ℓ(w)=ℓ(l)
+
+X
+
+= Bl +
+
+bw,l Bw
+
+w>l,ℓ(w)=ℓ(l)
+
+X
+
+= B[l] −
+
+w>l,ℓ(w)=ℓ(l)
+
+X
+
+= B[l] +
+
+X
+
+bw,l Bw +
+
+w>l,ℓ(w)=ℓ(l)
+
+(bw,l − bw,l )
+
+X
+
+X
+
+X
+
+(bw,l − bw,l )cg,w
+
+w>l,ℓ(w)=ℓ(l) u∈G(Uı ),u⪯w
+
+= B[l] +
+
+X
+
+cg,w Bu
+
+u∈G(Uı ),u⪯w
+
+w>l,ℓ(w)=ℓ(l)
+
+= B[l] +
+
+bw,l Bw
+
+X
+
+rg,u B[g]
+
+g∈G(Uı ),g⪯u
+
+hg,l B[g] .
+
+g≺l,
+
+Here all coefficients are in Z[q, q −1 ].
+
+□
+
+Corollary 5.1.11. If Uı satisfies the condition (IC), then for any good word g, we
+have
+X
+B[g] = B[g] +
+hw,g B[w] ,
+w∈G(Uı ),w≺g
+
+where hw,g ∈ Z[q, q −1 ].
+Proof. Write g = g1 g2 · · · gk with g1 , g2 , . . . , gk ∈ GL(Uı ) and g1 ≥ g2 ≥ · · · ≥ gk . We
+use induction on k. When k = 1, it is a direct consequence of the above theorem.
+Assume that k ≥ 2 and the result holds for k − 1. We set g ′ = g2 g3 · · · gk . Then g ′ is a
+good word and g = g1 g ′ . By inductive hypothesis,
+X
+hw,g′ B[w] ,
+B[g′ ] = B[g′ ] +
+w∈G(Uı ),w≺g ′
+
+where hw,g′ ∈ Z[q, q −1 ]. Thus
+B[g] = B[g1 ] B[g′ ]
+
+LYNDON BASES OF SPLIT ıQUANTUM GROUPS
+
+=
+
+
+B[g1 ] +
+
+X
+
+hx,g1 B[x]
+
+
+B[g′ ] +
+
+X
+
++
+
+hx,g1 B[x] B[g′ ] +
+
+x∈G(Uı ),x≺g
+
+1
+
+X
+
+X
+
+x∈G(Uı ),x≺g
+
+y∈G(Uı ),y≺g ′
+
+1
+
+
+hy,g′ B[y]
+
+y∈G(Uı ),y≺g ′
+
+x∈G(Uı ),x≺g1
+
+= B[g] +
+
+X
+
+21
+
+X
+
+hy,g′ B[g1 ] B[y]
+
+y∈G(Uı ),y≺g ′
+
+hx,g1 hy,g′ B[x] B[y] .
+
+By Proposition 5.1.9, we get the desired result.
+
+□
+
+Theorem 5.1.12. Suppose that Uı admits the condition (IC). Then there exists a
+unique basis (called the canonical basis) Bcan = {Cg | g ∈ G(Uı )} of Uı such that, for
+each g ∈ G(Uı ),
+(1) Cg = Cg ;
+P
+(2) Cg = B[g] + w∈G(Uı ),w≺g pg,w B[w] , where pg,w ∈ qZ[q].
+Proof. It is a direct consequence of the above corollary and the standard procedure for
+producing canonical bases (see, e.g., [DDPW08, Theorem 0.28]).
+□
+Example 5.1.13 (Canonical basis of type A2 ). The first few elements of canonical
+basis of Uı (sl3 ) are
+Cv1 = B[v1 ] = Bv1 ,
+Cv2 v1 = B[v2 v1 ] = Bv2 v1 ,
+Cv1 v2 = B[v1 v2 ] + qB[v2 v1 ] = Bv1 v2 ,
+Cv2 = B[v2 ] = Bv2 .
+Example 5.1.14 (Canonical basis of type B2 ). We adopt the convention in Example
+4.1.9 for simple roots. The first few elements of canonical basis of Uı (so5 ) are
+Cv1 = B[v1 ] = Bv1 ,
+Cv2 = B[v2 ] = Bv2 ,
+Cv2 v1 = B[v2 v1 ] = Bv2 v1 ,
+Cv1 v2 = B[v1 v2 ] + q 2 B[v2 v1 ] = Bv1 v2 ,
+Cv2 v2 v1 = B[v2 v2 v1 ] = Bv2 v2 v1 ,
+Cv2 v1 v2 = B[v2 v1 v2 ] + q 2 B[v2 v2 v1 ] = Bv2 v1 v2 ,
+Cv1 v2 v2 = B[v1 v2 v2 ] + q 2 B[v2 v1 v2 ] + (q 4 − q 2 )B[v2 v2 v1 ]
+= Bv1 v2 v2 − Bv2 v1 v2 .
+Remark 5.1.15. (1) Our canonical bases of split ıquantum groups are not special
+cases of the “dual ıcanonical bases” of universal ıquantum groups established by Lu
+and Wang in [LW21b]. The discrepancy arises due to different selections of the PBW
+type bases serving as the standard bases.
+
+22
+
+RUN-QIANG JIAN, LI LUO, AND XIANFA WU
+
+Moreover, our canonical bases and Lu-Wang’s “dual ıcanonical bases” are both completely different from the ıcanonical bases of modified ıquantum groups investigated by
+Bao and Wang in [BW18b]. The connection among these three canonical bases remains
+unclear.
+(2) Since the order ≺ can also be used in the half quantum group U+ , our discussion
+is still valid for U+ . In this case, we just ignore the shorter-length terms in the formulas
+because U+ is a graded algebra, and the results in this section hold as well.
+5.2. Canonical bases of Uı (sln+1 ). In this subsection, we assume that n ≥ 3 and fix
+ξi = qi−1 in the definition of Bi for all i.
+The split ıquantum group Uı = Uı (sln+1 ) of type An is generated by B1 , B2 , . . . , Bn
+subject to relations
+Bi Bj = Bj Bi , if |i − j| ≥ 2,
+Bi2 Bi+1 − [2]Bi Bi+1 Bi + Bi+1 Bi2 = Bi+1 ,
+2
+2
+Bi+1
+Bi − [2]Bi+1 Bi Bi+1 + Bi Bi+1
+= Bi ,
+
+for 1 ≤ i < n.
+By Proposition 3.2.4 and [Lec04, 8.1], we have
+GL(Uı ) = {vi vi+1 · · · vj |1 ≤ i ≤ j ≤ n}.
+Recall that
+G(Uı ) = {l1 l2 · · · lm |l1 , . . . , lm ∈ GL(Uı ) and l1 ≥ · · · ≥ lm }.
+Lemma 5.2.1. For any i ≥ 1, each of the words
+vi vi vi+1 , vi vi+1 vi+1 , vi vi+1 vi+2 vi+1 , vi vi+1 vi vi+1 vi+2
+is integral with respect to BG .
+Proof. In order to simplify the notation, we use a vector x ∈ T (V ) to denote the
+corresponding element Bx in Uı . Using the defining relations of Uı , we have
+vi vi vi+1 = −vi+1 vi vi + [2]vi vi+1 vi + vi+1 ,
+vi vi+1 vi+1 = −vi+1 vi+1 vi + [2]vi+1 vi vi+1 + vi ,
+1
+vi vi+1 vi+2 vi+1 =
+(vi vi+1 vi+1 vi+2 + vi+2 vi vi+1 vi+1 − vi+2 vi ),
+[2]
+1
+=
+(−vi+1 vi+1 vi vi+2 + [2]vi+1 vi vi+1 vi+2 + vi+2 vi )
+[2]
+1
+1
++ (−vi+2 vi+1 vi+1 vi + [2]vi+2 vi+1 vi vi+1 + vi+2 vi ) − vi+2 vi ,
+[2]
+[2]
+1
+= − vi+1 vi+1 vi+2 vi + vi+1 vi vi+1 vi+2
+[2]
+
+LYNDON BASES OF SPLIT ıQUANTUM GROUPS
+
+−
+
+23
+
+1
+1
+vi+2 vi+1 vi+1 vi + vi+2 vi+1 vi vi+1 + vi+2 vi ,
+[2]
+[2]
+
+1
+(vi+2 vi+1 vi+1 vi − [2]vi+1 vi+2 vi+1 vi − vi+2 vi ) + vi+1 vi vi+1 vi+2
+[2]
+1
+1
+− vi+2 vi+1 vi+1 vi + vi+2 vi+1 vi vi+1 + vi+2 vi ,
+[2]
+[2]
+= −vi+1 vi+2 vi+1 vi + vi+1 vi vi+1 vi+2 + vi+2 vi+1 vi vi+1 ,
+=
+
+1
+(vi vi vi+1 vi+1 vi+2 + vi vi+1 vi+1 vi+2 vi − vi+2 vi vi )
+[2]
+1
+(−vi vi vi+2 vi+1 vi+1 + [2]vi vi vi+1 vi+2 vi+1 + vi+2 vi vi )
+=
+[2]
+1
++ (−vi+1 vi+1 vi+2 vi vi + [2]vi+1 vi vi+1 vi+2 vi + vi+2 vi vi )
+[2]
+1
+− vi+2 vi vi
+[2]
+1
+= − vi+2 vi vi vi+1 vi+1 + vi vi vi+1 vi+2 vi+1
+[2]
+1
+1
+− vi+1 vi+1 vi+2 vi vi + vi+1 vi vi+1 vi+2 vi + vi+2 vi vi
+[2]
+[2]
+1
+= − vi+2 vi vi vi+1 vi+1 + vi vi vi+1 vi+2 vi+1
+[2]
+1
++ vi+2 vi+1 vi+1 vi vi − vi+1 vi+2 vi+1 vi vi + vi+1 vi vi+1 vi+2 vi
+[2]
+1
+= − vi+2 vi vi vi+1 vi+1
+[2]
++ vi+1 vi+2 vi+1 vi vi − [2]vi+1 vi+2 vi vi+1 vi + [2]vi vi+1 vi+2 vi vi+1
+1
++ vi+2 vi+1 vi+1 vi vi − vi+1 vi+2 vi+1 vi vi + vi+1 vi vi+1 vi+2 vi
+[2]
+1
+= − vi+2 vi+1 vi+1 vi vi + vi+2 vi+1 vi vi+1 vi − vi+2 vi vi+1 vi vi+1
+[2]
++ vi+1 vi+2 vi+1 vi vi − [2]vi+1 vi+2 vi vi+1 vi + [2]vi vi+1 vi+2 vi vi+1
+1
++ vi+2 vi+1 vi+1 vi vi − vi+1 vi+2 vi+1 vi vi + vi+1 vi vi+1 vi+2 vi
+[2]
+= vi+2 vi+1 vi vi+1 vi − vi+2 vi vi+1 vi vi+1
+
+vi vi+1 vi vi+1 vi+2 =
+
+− [2]vi+1 vi+2 vi vi+1 vi + [2]vi vi+1 vi+2 vi vi+1 + vi+1 vi vi+1 vi+2 vi .
+□
+
+24
+
+RUN-QIANG JIAN, LI LUO, AND XIANFA WU
+
+For any 1 ≤ i < j ≤ n, we set v[i, j] = vi vi+1 · · · vj−1 . We consider the set
+Y = {(l1 , l2 )|l1 , l2 ∈ GL(Uı ), l1 < l2 }
+= {(v[i, j], v[r, s])|i < r} ∪ {(v[r, j], v[r, s])|j < s},
+which contains X.
+Proposition 5.2.2. For any (v[i, j], v[r, s]) ∈ Y , v[i, j]v[r, s] is integral with respect to
+BG .
+Proof. Set
+Yk = {l1 l2 |(l1 , l2 ) ∈ Y and ℓ(l1 l2 ) = k}
+S
+for each k ≥ 2, and let Y = k≥2 Yk . We use well-founded induction on (Y, ≺).
+We first observe that v[i, j]v[r, s] is integral with respect to BG if j ≤ r. Indeed, if
+j = r, then v[i, j]v[j, s] = v[i, s] ∈ G(Uı ). If j < r, then Bv[i,j] Bv[r,s] = Bv[r,s] Bv[i,j] and
+v[r, s]v[i, j] ∈ G(Uı ).
+We verify that the result holds for Y2 and Y3 . The case of Y2 is a direct consequence
+of the above observation. Note that
+Y3 = {vi vr vr+1 , vi vi+1 vr , vi vi vi+1 |i < r}.
+By the above observation and Lemma 5.2.1, every element in Y3 is integral with respect
+to BG .
+Suppose that v[i, j]v[r, s] ∈ Ym with m > 3 and the result holds for all elements
+≺ v[i, j]v[r, s]. We also assume that j > r. In the following discussion, we adopt the
+convention used before which abbreviates Bx to x. If i < r and j ≥ r + 2, then
+v[i, j]v[r, s] = v[i, r − 1]v[r − 1, r + 2]v[r + 2, j]vr v[r + 1, s]
+= v[i, r − 1]v[r − 1, r + 2]vr v[r + 2, j]v[r + 1, s].
+By the previous lemma,
+v[r − 1, r + 2]vr = vr−1 vr vr+1 vr = −vr vr+1 vr vr−1 + vr vr−1 vr vr+1 + vr+1 vr vr−1 vr .
+Then
+v[i, j]v[r, s] = −v[i, r − 1]vr vr+1 vr vr−1 v[r + 2, j]v[r + 1, s]
++ v[i, r − 1]vr vr−1 vr vr+1 v[r + 2, j]v[r + 1, s]
++ v[i, r − 1]vr+1 vr vr−1 vr v[r + 2, j]v[r + 1, s].
+All terms on the right hand side are ≺ v[i, j]v[r, s]. By the inductive hypothesis, we
+are done.
+If i < r and j = r + 1, then
+v[i, j]v[r, s] = v[i, r − 1]v[r − 1, r + 1]vr v[r + 1, s].
+Note that v[r − 1, r + 1]vr = vr−1 vr vr and work like before.
+
+LYNDON BASES OF SPLIT ıQUANTUM GROUPS
+
+25
+
+The next step is to treat the elements v[r, j]v[r, s] with j < s. If r < j ≤ r + 2, we
+note that
+v[r, r + 1]v[r, s] = vr vr vr+1 v[r + 2, s]
+and
+v[r, r + 2]v[r, s] = vr vr+1 vr vr+1 vr+2 v[r + 3, s].
+These two cases can be dealt with as before by using Lemma 5.2.1.
+If j ≥ r + 3,
+v[r, j]v[r, s] = vr vr+1 v[r + 2, j]vr v[r + 1, s]
+= vr vr+1 vr v[r + 2, j]v[r + 1, s]
+1
+=
+(vr vr vr+1 + vr+1 vr vr − vr+1 )v[r + 2, j]v[r + 1, s]
+[2]
+1
+=
+vr vr v[r + 1, j]v[r + 1, s]
+[2]
+1
+1
++ vr+1 v[r + 2, j]vr vr vr+1 v[r + 2, s] − vr+1 v[r + 2, j]v[r + 1, s]
+[2]
+[2]
+1
+=
+vr vr v[r + 1, j]v[r + 1, s]
+[2]
+1
+− v[r + 1, j]v[r + 1, s]vr vr + v[r + 1, j]v[r, s]vr
+[2]
+1
+=
+vr vr v[r + 1, j]v[r + 1, j + 1]v[j + 1, s]
+[2]
+1
+− v[r + 1, j]v[r + 1, j + 1]v[j + 1, s]vr vr + v[r + 1, j]v[r, s]vr .
+[2]
+By the inductive hypothesis, v[r + 1, j]v[r + 1, j + 1] can be written as combinations of
+good words with Z[q, q −1 ] coefficients.
+We claim that in the good word representation of v[i, j]v[i, j + 1] (i ≥ r + 1), the
+multiplicity of a letter vk appearing in each term of the representation is the same as
+that of vk appearing in v[i, j]v[i, j + 1]. We can see it by induction on j − i. Small cases
+j = i + 1, i + 2 have been checked before. For general case, we note that a good word
+in type A which is composed of letters of v[i, j]v[i, j + 1] must be of the form:
+v[j, j + 1]r · · · v[i, i + 2]s v[i, i + 1]t , for s, t, · · · , r ≥ 0.
+On the other hand,
+vi−1 vi−1 vi vi = −vi vi−1 vi−1 vi + [2]vi−1 vi vi−1 vi + vi vi
+= vi vi vi−1 vi−1 − [2]vi vi−1 vi vi−1 + [2]vi−1 vi vi−1 vi ,
+vi−1 vi−1 vi vi+1 vi = −vi vi−1 vi−1 vi+1 vi + [2]vi−1 vi vi−1 vi+1 vi + vi vi+1 vi
+= −vi vi+1 vi−1 vi−1 vi + [2]vi−1 vi vi+1 vi−1 vi + vi vi+1 vi
+= vi vi+1 vi vi−1 vi−1 − [2]vi vi+1 vi−1 vi vi−1 + [2]vi−1 vi vi+1 vi−1 vi .
+
+26
+
+RUN-QIANG JIAN, LI LUO, AND XIANFA WU
+
+Thus,
+vi−1 vi−1 v[j, j + 1]r · · · v[i, i + 2]s v[i, i + 1]t
+= · · · vi−1 vi−1 vi · · · vi · · ·
+= · · · vi · · · vi · · · vi−1 vi−1 − [2] · · · vi · · · vi−1 vi · · · vi−1 + [2] · · · vi−1 vi · · · vi−1 vi · · · .
+Hence
+v[r, j]v[r, s]
+1
+=
+vr vr v[r + 1, j]v[r + 1, j + 1]v[j + 1, s]
+[2]
+1
+− v[r + 1, j]v[r + 1, j + 1]v[j + 1, s]vr vr + v[r + 1, j]v[r, s]vr
+[2]
+
+1
+=
+v[r + 1, j]v[r + 1, j + 1]vr vr + [2]( integral terms ≺ v[r, j]v[r, j + 1]) v[j + 1, s]
+[2]
+1
+− v[r + 1, j]v[r + 1, j + 1]v[j + 1, s]vr vr + v[r + 1, j]v[r, s]vr
+[2]
+= v[r + 1, j]v[r, s]vr
++ integral terms ≺ v[r, j]v[r, j + 1]v[j + 1, s].
+It satisfies the inductive hypothesis.
+
+□
+
+Thanks to Proposition 5.1.2 and Theorem 5.1.12, we get the following theorem.
+Theorem 5.2.3. The split ıquantum group Uı (sln ) satisfies the condition (IC), and
+hence affords a canonical basis.
+References
+[BK15]
+
+M. Balagović and S. Kolb, The bar involution for quantum symmetric pairs, Represent. Theory 19 (2015), 186-210.
+[BW18a] H. Bao and W. Wang, A new approach to Kazhdan-Lusztig theory of type B via quantum
+symmetric pairs, Asterisque 402 (2018), vii+134 pp.
+[BW18b] H. Bao and W. Wang, Canonical bases arising from quantum symmetric pairs, Invent. Math.
+213 (2018), no. 3, 1099–1177.
+[BW21] H. Bao and W. Wang, Canonical bases arising from quantum symmetric pairs of Kac-Moody
+type, Compos. Math. 157 (2021), no. 7, 1507–1537.
+[CHW16] S. Clark, D. Hill and W. Wang, Quantum shuffles and quantum supergroups of basic type,
+Quantum Topol. 7 (2016), no. 3, 553–638.
+[CLW21] X. Chen, M. Lu and W. Wang, A Serre Presentation for the ıquantum groups, Transform.
+Groups, 26(3) (2021), 827–857.
+[DDPW08] B. Deng, J. Du, B. Parshall and J. Wang, Finite dimensional algebras and quantum groups,
+Mathematical Surveys and Monographs 150, American Mathematical Society, Providence, RI,
+2008
+[GK91] A. Gavrilik and A. Klimyk, q-deformed orthogonal and pseudo-orthogonal algebras and their
+representations, Lett. Math. Phys. 21 (1991), 215–220.
+
+LYNDON BASES OF SPLIT ıQUANTUM GROUPS
+
+27
+
+N. Iorgov and A. Klimyk, The nonstandard deformation Uq′ (so(n, C)) for q a root of unity,
+Methords Funct. Anal. Topology 6 (2000), 56–71.
+[Ka91] M. Kashiwara, On crystal bases of the q-analogue of universal enveloping algebras, Duke
+Math. J. 63 (1991), 465–516.
+[KP11] S. Kolb and J. Pellegrini, Braid group actions on coideal subalgebras of quantized enveloping
+algebras, J. Algebra 336 (2011), 395–416.
+[Ko14] S. Kolb, Quantum symmetric Kac-Moody pairs, Adv. Math. 267 (2014), 395–469.
+[LR95] P. Lalonde and A. Ram, Standard Lyndon bases of Lie algebras and enveloping algebras,
+Trans. Amer. Math. Soc. 347 (1995), 1821–1830.
+[Lec04] B. Leclerc, Dual canonical bases, quantum shuffles and q-characters, Math. Z. 246 (2004),
+691–732.
+[Let99] G. Letzter, Symmetric pairs for quantized enveloping algebras, J. Algebra 220, (1999), 729–
+767.
+[Let02] G. Letzter, Coideal subalgebras and quantum symmetric pairs, New directions in Hopf algebras
+(Cambridge), MSRI publications, vol. 43, Cambridge Univ. Press, 2002, 117–166.
+[Lo97]
+M. Lothaire, Combinatorics on words, Cambridge university press, 1997.
+[Lu90]
+G. Lusztig, Canonical bases arising from quantized enveloping algebras, J. Amer. Math. Soc.
+3 (1990), 447–498.
+[Lu93]
+G. Lusztig, Introduction to Quantum Groups, Progr. Math., vol. 110, Birkhuser, Boston, MA,
+1993.
+[LW21a] M. Lu and W. Wang, ıHall algebras and quantum symmetric pairs II: Reflection functors,
+Commun. Math. Phys. 381 (2021), 799–855.
+[LW21b] M. Lu and W. Wang, ıHall algebras and quantum symmetric pairs III: Quiver varieties, Adv.
+Math. 393 (2021), paper no. 108071, 70pp.
+[LW22] M. Lu and W. Wang, Hall algebras and quantum symmetric pairs I: Foundations, Proc.
+London Math. Soc. (3) 124 (2022), 1–82.
+[Rin96] C. Ringel, PBW-bases of quantum groups, J. Reine Angew. Math. 470 (1996), 51–88.
+[Ro98]
+M. Rosso, Quantum groups and quantum shuffles, Invent. Math. 133 (1998), 399–416.
+[Ro02]
+M. Rosso, Lyndon words and universal R-matrices, preprint.
+[Wat20] H. Watanabe, Crystal basis theory for a quantum symmetric pair (U, Uȷ ), Int. Math. Res.
+Not. 2020 (2020), no. 22, 8292–8352.
+[Wat24] H. Watanabe, Crystal bases of modified ıquantum groups of certain quasi-split types, Algbr.
+Represnt. Theory 27 (2024), no. 1, 1–76.
+[XY14] Y. Xu and S. Yang, PBW-deformations of quantum groups, J. Algebra 408 (2014), 222–249.
+[IK00]
+
+Department of mathematics, Dongguan University of Technology, Dongguan 523808,
+China
+Email address: jianrq@dgut.edu.cn (Jian)
+School of Mathematical Sciences, Key Laboratory of MEA (Ministry of Education)
+& Shanghai Key Laboratory of PMMP, East China Normal University, Shanghai 200241,
+China
+Email address: lluo@math.ecnu.edu.cn (Luo), 52275500051@stu.ecnu.edu.cn (Wu)
+
+

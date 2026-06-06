@@ -1,0 +1,1750 @@
+                                                       A Higher-order Framework for
+                                                       Decision Problems and Games∗
+                                                             Jules Hedges, Paulo Oliva
+arXiv:1409.7411v1 [cs.LO] 25 Sep 2014
+
+
+
+
+                                              School of Electronic Engineering and Computer Science
+                                                          Queen Mary University London
+
+                                                Evguenia Winschel, Viktor Winschel, Philipp Zahn
+                                                          Department of Economics
+                                                           University of Mannheim
+                                                                        October 8, 2018
+
+
+                                                                             Abstract
+                                                  We introduce a new unified framework for modelling both decision
+                                              problems and finite games based on quantifiers and selection functions.
+                                              We show that the canonical utility maximisation is one special case
+                                              of a quantifier and that our more abstract framework provides several
+                                              additional degrees of freedom in modelling. In particular, incomplete
+                                              preferences, non-maximising heuristics, and context-dependent mo-
+                                              tives can be taken into account when describing an agent’s goal. We
+                                              introduce a suitable generalisation of Nash equilibrium for games in
+                                              terms of quantifiers and selection functions. Moreover, we introduce a
+                                              refinement of Nash that captures context-dependency of goals. Mod-
+                                              elling in our framework is compositional as the parts of the game are
+                                              modular and can be easily exchanged. We provide an extended ex-
+                                              ample where we illustrate concepts and highlight the benefits of our
+                                              alternative modelling approach.
+                                        JEL codes: C0, D01, D03, D63, D64
+                                        Keywords: behavioural economics, foundations of game theory, decision
+                                        theory, beauty contest, higher order functions, quantifiers, selection functions
+                                          ∗
+                                            We thank seminar participants at the University of Mannheim, the Dagstuhl Perspec-
+                                        tives Workshop “Categorical Methods at the Crossroads”, the Computing in Economics
+                                        and Finance Conference 2014 in Oslo, and the “Cogrow” Workshop in Nijmegen 2014 for
+                                        helpful comments.
+
+                                                                                  1
+1       Introduction
+In this paper we introduce a new formal framework to reason about decision
+problems and finite games. This framework has been developed in computer
+science as a game theoretical approach to proof theory1 and is based on higher
+order functions [6, 7]. We adopt and develop it further to make it accessible
+to economics.
+   The core concept is the modelling of the agent’s goal as a quantifier, i.e.
+a higher-order function of type (X → R) → R, where X is the set of choices
+and R is the set of possible outcomes. A corresponding notion is that of a
+selection function, i.e. a higher-order function of type (X → R) → X which
+calculates a choice that “meets” the desired goal. In Section 2 we have a
+brief introduction to higher-order functions, and give the precise definitions of
+quantifiers and selection functions. We will also illustrate how these provide
+a powerful and flexible way to model agents.
+   In economic theory, agents are typically assumed to maximise an utility
+function. This is a special case of a quantifier and a particularly structured
+outcome space, max : (X → R) → R. The corresponding selection function
+is arg max : (X → R) → X. Our aim with this paper is to show that repre-
+senting decision problems and games in the more abstract form of quantifiers
+and selection functions offers three advantages over the special cases of max
+and arg max.
+   First, selection functions and quantifiers are more expressive as they pro-
+vide additional degrees of freedom in modelling behaviour. Different quanti-
+fiers other than the max operator are possible, for instance, decision heuris-
+tics where agents do not fully optimise. The outcome space can have any
+structure and is not restricted to the structure imposed by utility functions
+(or, equivalently, rational preferences). In particular, one can directly model
+preference relations that are incomplete. Also, since quantifiers and selec-
+tion functions take functions as input, context-dependent goals (where not
+    1
+    Proof theory is a branch of mathematical logic which investigates the structure and
+meaning of formal mathematical proofs. It has been recently discovered that certain
+proofs of high logical complexity can be interpreted as computer programs which compute
+equilibria of suitable generalised games.
+
+
+                                          2
+only outcomes matter but also how outcomes come about) can be seamlessly
+modelled. In Section 3 we explain how these generalisations can be done step
+by step and give various examples.
+   As a second advantage, quantifiers and selection functions model not only
+decisions but also interactions and thereby unify decision problems and games
+in one formal framework. In Section 4 we formally introduce games and a
+generalised notion of Nash equilibrium in terms of quantifiers. As it is possi-
+ble to define an equilibrium in terms of selection functions, we also introduce
+what we call selection Nash equilibrium. We prove that Nash equilibrium
+and selection equilibrium are isomorphic in the case of classical operators
+max and argmax. Moreover, we prove that, generally, this isomorphism does
+not hold true: For other quantifiers and selection functions the two different
+concepts yield different sets of equilibria. In fact, the selection equilibrium
+is a refinement of the generalised Nash equilibrium.
+    The third advantage of our approach is compositionality in modelling.
+We think of a game as consisting of a global outcome function determining
+outcomes for each given play of the game, and local quantifiers or selection
+functions describing each of the particular players’ intentions. Selection func-
+tions and quantifiers are modular as, for instance, if in a particular game,
+one would like to consider the consequences of changing the preferable out-
+comes for one player, only this player’s quantifier or selection function need
+to change. This is of particular advantage in the case of context-dependent
+goals. With utility functions it may be necessary to redefine the outcome
+space or to manipulate payoffs by hand such that a context-dependency is
+encoded. In Section 6 we discuss at length the relationship between games
+based on classical payoff functions and based on selection function as well as
+how to automatically compile a selection function game into a classical one.
+   All these concepts are illustrated in Section 5 where we provide an ex-
+tended example. We consider several variants of a beauty contest. While
+the rules of the contest are fixed, the goals of agents change from variant to
+variant to illustrate the compositionality of the selection function approach.
+We begin with considering agents who care about the outcome of the beauty
+contest. Next, we introduce some agents who only care about choosing the
+
+                                       3
+winner of the contest, i.e. the votes of the other players. We show how
+this concern can be nicely modelled as a context-dependent fixpoint quan-
+tifier: The agent wants his vote to be the same as the majority decision of
+the overall game. Beyond this particular example, we discuss how fixpoint
+operations in general capture coordination goals of agents at a higher level,
+highlighting again the expressivity of selection functions. As a last point, this
+example also teaches the intuition about the selection equilibrium, and how
+it refines the generalised Nash, as it takes into account goals that depend on
+the context under which they are attained.
+    A notable feature of our approach, which we do not explore in detail in this
+paper but still consider to be important, is that it is directly implementable in
+functional programming languages such as Haskell. Hence, large and complex
+games can be programmed and computer assistance in analysing these games
+is readily available. This is discussed in Section 7.
+
+
+2     Quantifiers and Selection Functions
+A higher order function (or functional ) is a function whose domain is itself
+a set of functions. Given sets X and Y we denote by X → Y the set of
+all functions with domain X and codomain Y . A higher order function is
+therefore a function f : (X → Y ) → Z where X, Y and Z are sets.
+    A simple example of a higher order function is the function that evalulates
+its argument at a constant point. To give a specific example, we take the
+sets R (real numbers) and Z (integers), and pick a constant real number,
+such as π. We can then define a function Φ : (R → Z) → Z by the equation
+Φ(f ) = f (π). We can illustrate the behaviour of Φ by giving it a specific
+function f : R → Z as an input. For example, let f be the function that
+takes a real number to its integer lower bound. The integer lower bound to
+π is 3, therefore Φ(f ) = 3.
+  There are familiar examples of higher-order functions, for example in the
+maximum operator the name of the variable which ranges over the set X is
+
+
+
+
+                                       4
+not relevant, i.e.
+                                max f (x) = max f (y)
+                                   x∈X           y∈X
+
+and similarly with the variable over which one performs integration, i.e.
+                               Z                 Z
+                                    f (x) dx =       f (y) dy
+
+In this section we define two particular classes of higher-order functions:
+quantifiers and selection functions. Subsequently (Section 3) we represent
+the classical approach to decision theory via preference relations and max
+and arg max operators within the new formalism. We will also explain how
+to arrive at the notion of a quantifier via a series of generalisations from
+utility functions.
+
+
+2.1     Quantifiers
+Suppose we have an agent A. We can place A into any economic situation
+or context and observe his motivations and his choices. We know that he is
+deterministic (or predictable) in the sense that his moves are not dependent
+on chance.2
+   By a ‘situation’ or ‘context’ we mean an object that encodes all of the rel-
+evant information the agent could consider when choosing a move or strategy.
+Assume our agent is choosing a move in the set X, and the set of possible
+final outcomes is R. The context will normally include other agents and all
+the other choices that together with the choice of our agent A will determine
+a final outcome. If all we care about is the final outcome, then our context
+can be modelled simply by a function p : X → R that maps each of the
+agent’s moves to a specific outcome. In other words, to give the context of
+an agent is the same as to define precisely what final outcomes will result
+after each of the agent’s choices. That is all that our agent needs to know
+about this “context” in order to make the good choice.
+
+Definition 2.1 (Agent context). For an agent A choosing a move from a set
+   2
+    This is without loss of generality, because we can always allow the set of outcomes to
+be a set of probability distributions.
+
+                                            5
+X, having in sight a final outcome in a set R, we call any function p : X → R
+a possible context for the agent A.
+
+       Suppose that A makes a decision in the context p. Then the agent will
+consider some outcomes to be good (or acceptable), and other outcomes to
+be bad. We are going to allow the set of outcomes that the agent considers
+good to be totally arbitrary.
+
+Definition 2.2 (Quantifier, [6, 7]). Mappings
+
+                                 ϕ : (X → R) → P(R)
+
+from contexts p : X → R to sets of outcomes φ(p) ⊆ R are called quantifiers3 .
+If ϕ(p) 6= ∅ for all p : X → R we say that the quantifier ϕ is total.
+
+       We be will modelling agents A as quantifiers ϕA , and in such cases we wish
+to think of ϕ(p) as the set of outcomes the agent A considers preferable in
+each context p : X → R. Our main objective in this paper is to convince the
+reader that this is a general, modular, and highly flexible way of describing
+an agent’s goal or objective.
+   The classical example of a quantifier is utility maximisation. In this case
+the set of outcomes is R = Rn , where the ith element represents the utility
+of the i-th player. Given a context p : X → Rn , the good outcomes for the
+ith player are precisely those for which the ith coordinate, i.e. his utility
+function, is maximal. This quantifier is given by
+
+                i-max(p) = {r ∈ Im(p) | ri ≥ p(x′ )i for all x′ ∈ X}
+
+where Im(p) denotes the image of the function p : X → R. Note that the
+image mapping Im(·) is itself a quantifier, although not a particularly in-
+teresting one, as it corresponds to the agent that considers any possible
+attainable outcome to be good.
+   3
+    The terminology comes from the observation that the usual existential ∃ and universal
+∀ quantifiers of logic can be seen as operations of type (X → B) → B, where B is the
+type of booleans. Mostowski [16] also called arbitrary functionals of type (X → B) → B
+generalised quantifiers. We are choosing to generalise this further by replacing the booleans
+B with an arbitrary type R, and allowing for the operation to be multi-valued.
+
+                                             6
+Definition 2.3 (Context-independent quantifiers). A quantifier ϕ : (X →
+R) → P(R) is said to be context-independent if the value ϕ(p) only depen-
+dents on Im(p), i.e.
+
+                       Im(p) = Im(p′ ) =⇒ ϕ(p) = ϕ(p′ ).
+
+Hence, a quantifier ϕ will be called context-dependent if for some contexts
+p and p′ , with Im(p) = Im(p′ ), the sets of preferred outcomes ϕ(p) and ϕ(p′ )
+are different.
+
+    Intuitively, a context-dependent quantifier will select good outcomes not
+just based on which outcomes are possible, but will also take into account
+how the outcomes are actually achieved. It is easy to see that the quantifier
+i-max(p) is context-independent, since it can be written as a function of
+Im(p) only. An example of a context-dependent quantifier is the fixpoint
+operator. Recall that a fixpoint of a function f : X → X is a point x ∈ X
+satisfying f (x) = x. When the set of moves is equal to the set of outcomes
+there is a quantifier whose good outcomes are precisely the fixpoints of the
+context. If the context has no fixpoint and the agent will be equally happy
+(or equally unhappy) with any outcome, then the quantifier is given by
+
+                            fix : (X → X) → P(X)
+                        
+                        {x ∈ X | p(x) = x}      if nonempty
+               fix(p) =
+                        X                       otherwise
+
+Clearly fix(·) is context-dependent, since we could have two maps p, p′ : X →
+X having the same image set Im(p) = Im(p′ ) but with p and p′ having
+different sets of fixed points.
+    We will discuss several examples of fixpoint quantifiers at great length in
+Section 5.
+
+
+
+
+                                      7
+2.2    Selection Functions
+Just as a quantifier tells us which outcomes an agent considers good in each
+given context, one can also consider the higher-order function that determines
+which moves an agent considers good in any given context.
+
+Definition 2.4 (Selection functions). A selection function is any function
+of the form
+                             ε : (X → R) → P(X)
+
+If ε(p) 6= ∅ for all p : X → R we say that the selection function is total.
+
+   We will mainly consider total selection functions and quantifiers, because
+the agent must always have some preferred outcomes and moves.
+   In the computer science literature where selection functions have been
+considered previously [6, 7] the focus was on single-valued ones. However, as
+multi-valued selection functions are extremely important in our examples we
+have adapted the definitions accordingly.
+  Similarly to quantifiers, the canonical example of a selection function is
+maximising one coordinate in Rn , defined by
+
+            i-arg max(p) = {x ∈ X | p(x)i ≥ p(x′ )i for all x′ ∈ X}
+
+Even in one-dimensional R1 the arg max selection function is naturally multi-
+valued: a function may attain its maximum value at several different points.
+    There is an important relation between quantifiers and selection functions
+called attainment. Intuitively this means that the outcome of a good move
+should be a good outcome.
+
+Definition 2.5. Given a quantifier ϕ : (X → R) → P(R) and a total
+selection function ε : (X → R) → P(X), we say that ε attains ϕ iff for all
+contexts p : X → R it is the case that
+
+                           x ∈ ε(p) =⇒ p(x) ∈ ϕ(p)
+
+Clearly, if ϕ is attainable then it is also total.
+
+
+                                        8
+    The attainability relation holds between the quantifier maxi and the se-
+lection function arg maxi . The fixpoint quantifier is also itself a selection
+function, and it attains itself since
+
+                         x ∈ fix(p) =⇒ p(x) ∈ fix(p)
+
+    Given a selection function ε, we can form the ‘smallest’ quantifier which
+it attains as follows.
+Definition 2.6. Given a selection function ε : (X → R) → P(X), define the
+quantifier ε : (X → R) → P(R) as
+
+                           ε(p) = {p(x) | x ∈ ε(p)}.
+
+    We can use the mapping between selection functions and quantifiers in
+order to transfer back properties of quantifiers to selection functions. For
+instance, we can then say that a selection function ε : (X → R) → P(X)
+is context-independent if its associated quantifier ε : (X → R) → P(R) is
+context-independent. Here are the three main properties of the map ε 7→ ε.
+Proposition 2.7. Given any selection function ε : (X → R) → P(X) the
+following three properties are easy to check:
+  (i) Totality. If ε is total then so is the quantifier ε.
+
+ (ii) Attainability. If ε is total then ε attains ε.
+
+(iii) Minimality. ε(p) ⊆ ϕ(p), for any quantifier ϕ attainable by ε.
+  Therefore, the good outcomes according to the quantifier ε : (X → R) →
+P(R) are exactly the outcomes resulting from good moves according to the
+selection function ε : (X → R) → P(X).
+    Conversely, for a quantifier ϕ : (X → R) → P(R) we can define a corre-
+sponding selection function as follows.
+Definition 2.8. Given a quantifier ϕ : (X → R) → P(R), define the selec-
+tion function ϕ : (X → R) → P(X) as
+
+                           ϕ(p) = {x | p(x) ∈ ϕ(p)}.
+
+                                        9
+   We use the same “overline” notation, as it will be clear from the context
+whether we are applying it to a quantifier or a selection function.
+
+Proposition 2.9. Given any quantifier ϕ : (X → R) → P(R) the following
+three properties are easy to check:
+
+  (i) Totality. If ϕ is attainable then the selection function ϕ is total.
+
+ (ii) Attainability. If ϕ is attainable then ϕ attains ϕ.
+
+(iii) Maximality. ε(p) ⊆ ϕ(p), for any selection function ε attaining ϕ.
+
+   Let us briefly reflect on the game-theoretic meaning of attainability, and
+the translations between quantifiers and selection functions. Suppose we
+have a quantifier ϕ which describes the outcomes that an agent considers
+to be good. The quantifier might be unrealistic in the sense that it has no
+attainable good outcome. For example, an agent may consider it a good
+outcome if he received a million dollars, but in his current context there
+may just not be a move available which will lead to this outcome. Given
+a context p, the set of attainable outcomes is precisely the image of p. A
+realistic quantifier is simply a quantifier in which every context with a good
+outcome has an attainable good outcome. We can write it in symbols as
+
+                        ϕ(p) 6= ∅ =⇒ ϕ(p) ∩ Im(p) 6= ∅.
+
+Proposition 2.10. For a total quantifier ϕ the following are equivalent
+
+   • ϕ is realistic,
+
+   • ϕ is attainable,
+
+   • ϕ is total.
+
+     Thus total selection functions are a way to describe total realistic quan-
+tifiers. One can consider translating quantifiers into selection function and
+back into quantifiers, or conversely.
+
+Proposition 2.11. For all p : X → R we have ϕ(p) = ϕ(p) and ε(p) ⊆ ε(p).
+
+                                        10
+   The proposition above shows that on quantifiers the double-overline op-
+eration calculates the same quantifier we started with. However, on selection
+functions the the mapping ε 7→ ε can be viewed as a closure operator. Intu-
+itively, the new selection function ε will have the same good outcomes as the
+original one, but it might consider many more moves to be good as well, as
+it does not distinguish moves which both lead to equally good outcomes. As
+such, one can think of multi-valued selection function as a finer way to de-
+scribe agents’ motivations. As we will see in Section 4, selection functions are
+also crucial to define a useful equilibrium concept for games with agents who
+have context-dependent quantifiers, which is finer than previously considered
+equilibrium concepts.
+
+Remark 2.12. The theory of quantifiers and selection functions has been
+developed in stages. Single-valued selection functions and quantifiers in the
+general form used here first appeared in [6], unifying earlier definitions in
+proof theory and type theory. That is also where the connection between
+selection functions and game theory also first established. Multi-valued quan-
+tifiers appeared in [7], which allows us to capture more important examples in
+a more natural way. The connections between selection functions and game
+theory were explored in more depth in [8] and [10], and the latter contains
+the definition of attainment given here. Finally [11] contains the terminology
+context and the definition of a realistic quantifier.
+
+
+3     Decisions
+In this section we relate the concepts of quantifiers and selection functions to
+the standard utility approach in decision theory. We show that the choices
+motivated by utility maximisation are a special case of context-independent
+quantifiers. Next, we show that the set of context-independent quantifiers
+contains elements that allow to model decisions with fewer assumptions than
+utility theory and also in a more expressive way. Lastly, we consider quan-
+tifiers that are context-dependent. We provide examples along the way to
+illustrate the concepts.
+
+
+                                       11
+   Suppose R is the set of possible final outcomes, and each agent i has a
+partial order relation i on R, so that x i y means that agent i prefers the
+outcome x to y. These partial orders lead to choice functions fi : P(R) →
+P(R) where fi (S) are the maximal elements in the set of possible outcomes
+S with respect to the order i . Note that these fi satisfy fi (S) ⊆ S, and
+fi (S) 6= ∅ for non-empty S.
+    Every such fi can be turned into a quantifier ϕi in a generic way, using
+the fact that the image operator is a higher-order function Im : (X → R) →
+P(R):
+                                   Im        fi
+                        (X → R) −→ P(R) −    → P(R)
+
+so that fi ◦ Im : (X → R) → P(R) are quantifiers.
+
+Proposition 3.1. Assume |X| ≥ |R|. Then a quantifier φ : (X → R) →
+P(R) is context-independent if and only if φ = f ◦ Im, for some choice
+function f : P(R) → P(R).
+
+Proof. If φ = f ◦ Im then clearly φ is context-independent. For the other
+direction, note that since |X| ≥ |R| we have for any subset S ⊆ R a map
+uS : X → R such that Im(uS ) = S. Hence, assume φ is context-independent
+and define f (S) = φ(uS ). Clearly,
+
+                        φ(p) = φ(uIm(p) ) = f (Im(p))
+
+where the first step uses that φ is context-independent and that Im(p) =
+Im(uIm(p) ) by the assumption on the family of maps uS .
+
+   Agents who are defined by context-independent quantifiers are choosing
+the set of good outcomes simply by ranking the set of outcomes that can be
+achieved in a given context; but are forgetting all the information about how
+each of the outcomes arise from particular choices of moves. For instance,
+we might have a set of actions that will lead us to earn some large sums of
+money. Some of these, however, might be illicit. A maximising agent defined
+in a context-independent way would choose the outcome that gives himself
+the maximum return. If we have control over which actions lead to which
+outcomes, we might consider other choices as preferable.
+
+                                      12
+Proposition 3.2. Whenever fi is a choice function arising from a partial
+order i , then the context-independent quantifier φi = fi ◦ Im is attainable
+(and hence realistic).
+
+Proof. Define a selection function for φi as
+
+                      εi (p) = {x | p(x) is i -maximal in Im(p)}.
+
+Clearly if x ∈ εi (p) then p(x) ∈ fi (Im(p)) = φi (p). Also, ε(p) is total, since
+Im(p) is always non-empty.
+
+
+3.1       Rational Preferences and Utility Functions
+The usual approach to model behaviour in economics is to either postulate
+a preference relation on the set of alternatives or to directly assume a utility
+function [14]. Typically, a certain structure is imposed on preference relations
+mainly for two reasons: either because additional structure is deemed to be a
+characteristic of an agent’s rationality4 , or because one wishes to work with
+utility functions. It is a classical result that for utility functions to exist,
+preferences relations have to be rational [14].
+   Now, rational preferences and utility functions are special cases of the
+generic construction of a context-independent quantifier we outlined in the
+last section. They are special because (i) we impose additional structure on
+R, that is, i is a total preorder and (ii) we focus on one particular fi , that
+is, fi : P(R) → P(R) defined by
+
+                         fi (S) = {i -maximal elements of S}
+
+      A rational preference relation can always be represented by a utility func-
+tion. Translated into the selection function approach, the utility function can
+be characterised as the environment which is a mapping p : X → R, attach-
+ing a real number to each element of the set of choices X. So, we can define
+  4
+      This issue has been intensely debated, see [21, 15, 14].
+
+
+
+
+                                              13
+the quantifier
+                                      φ(p) = max p
+
+which is attained by the selection function
+
+                                    ε(p) = arg max p
+
+Note the types φ : (X → R) → P(R) and ε : (X → R) → X respectively
+and that ε(p) = φ(p). Thus, max and arg max operators, which are univer-
+sally used in the economic literature, become the prototypical examples of a
+context-independent quantifier and a selection function attaining it.
+   We can use selection functions in situations where instead of using utility
+functions we directly work with preferences. We demonstrate this with the
+following example.
+
+Example 3.3. Consider a simple decision problem of an agent who has to
+choose between three alternatives X = {A, B, C}. Assume the agent has the
+following (total and transitive) preference order5 {A 1 B , B 1 C , A 1
+C}. To use the standard maximisation tools one would associate each alter-
+native with some numerical payoff or define an utility function for the agent.
+For example, assume that the payoff of the agent is equal to pA = 1 if he
+chooses alternative A, pB = 0.5 if he chooses B and pC = 0 otherwise. Then
+the utility function u(x) = px represents the preferences of the agent.
+We can work with this utility function in the selection function framework.
+The utility function is then just the environment p : X → R and the quan-
+tifier is the max operator, the selection function is the argmax operator, re-
+spectively.
+But we also can work directly with the preference order. Then, our environ-
+ment function is p : X → X. And we obtain a quantifier and a selection
+function, which takes the maximal element with respect to the preference or-
+    5
+      We use an index in the ordering as we will consider further refinements of this example
+in the rest of this section.
+
+
+
+
+                                             14
+dering 1 , namely
+
+               φ1 (p) = max p(x)          and ε1 (p) = arg max p(x).
+                         x∈(X,1 )                         x∈(X,1 )
+
+
+3.2     Beyond Rational Preferences
+The generic construction of context-independent quantifiers instantiates choices
+based on rational preferences (or equivalently on utility maximisation) as
+special cases. In this section we show that we can go beyond these cases by
+allowing for a different structure on R or by allowing for a different fi (or by
+relaxing both).
+    Utility functions are considered as a very convenient tool to represent
+and analyse choice behaviour. Still, the assumption that the preorder is to-
+tal, which guarantees the existence of a utility function, is demanding and
+in fact more demanding than is necessary to rationalise choice behaviour
+[21]. Secondly, when taking the perspective of preferences, from a posi-
+tive as well as a normative viewpoint, there are good reason why a rational
+decision-maker may exhibit “indecisiveness”, meaning that his preference for
+a pair of outcomes is not defined [2]. Thirdly, consider a situation where the
+economist or some other agents/principal has only partial information about
+the preferences of an agent and considers him “as if” he has incomplete pref-
+erences [5]. Lastly, R may be a set of alternatives to be chosen by a group
+of agents. Even if each individual’s preferences are complete, the aggregate
+social welfare ordering does not have to be [17].
+    There have been various attempts to change standard formalisms to allow
+for an utility theory without the need to fulfil the completeness assumption.6
+When working with quantifiers and selection functions, the set of outcomes
+R can have any order. In particular, the preference relation does not have
+to be total. That is, given any preference relation  ⊆ R × R, an agent
+chooses the best alternatives as outlined above. So, one can very easily
+consider choices not in the scope of utility functions without the need to
+   6
+     For an important early contribution see [2]. More recent contributions include [17]
+for utility representations in certain environments and [5] for uncertain environments. See
+also references in [17].
+
+
+                                            15
+change the framework. To be clear, the selection function corresponding to
+the preference ordering is
+
+              arg max(p) = {x ∈ X | r  p(x) =⇒ r 6∈ Im(p)}
+
+ie. a maximal outcome is one which is not known to be worse than any
+attainable outcome.
+
+Example 3.4. Continuing from our earlier Example 3.3, suppose the agent,
+who has to choose between alternatives X = {A, B, C}, prefers A over B,
+but he has incomplete preferences and cannot rank the alternative C. In this
+case the order relation is simply A 2 B. In our setting this is seamlessly
+dealt with, as we are simply picking the maximal element with respect to this
+partial ordering. In particular, the quantifiers and selection functions are the
+same, only the ordering has changed
+
+             φ2 (p) = max p(x)       and ε2 (p) = arg max p(x).
+                         x∈(X,2 )                  x∈(X,2 )
+
+
+   Note that it is not directly possible to use the max operator and a utility
+function for the last example. However, using selection functions and working
+directly on the preorders, we can just use the same operator as for preference
+orders that are total.
+
+
+3.3    Beyond Maximisation and Standard Rationality
+The utility approach is intimately linked to the assumption that the agent
+fully optimises. The behavioural economic literature as well as the psycholog-
+ical literature have documented deviations from optimising behaviour, and
+have collected various decision “heuristics” [4, 12]. Quantifiers provide a nice
+way to model such deviations. Moreover, even situations that can be mod-
+elled with utility functions may have (more) natural representations in the
+quantifier framework.
+
+Example 3.5. Consider a simple heuristic of a person ordering wine in a
+restaurant. Suppose he always chooses the second most-expensive wine. In
+
+                                      16
+terms of selection functions, let X be the set of wines available in a restaurant,
+and p : X → R the price attached to each wine xi (i = 1, ..., N) on the menu.
+Denote with ri = p(xi ) the price of wine xi . Given a maximal strict chain
+rn > rn−1 > . . . > r1 in R, let us call rn−1 a sub-maximal element. The
+“goal” of the agent can be described by the quantifier
+
+    φ> (pX→R ) = {sub-maximal elements with respect to > within Im(p)}.
+
+Such quantifiers are attainable with selection functions
+
+          ε> (pX→R ) = {x | p(x) is a sub-maximal element of Im(p)}
+
+since clearly p(x) ∈ φ> (p) for x ∈ ε> (p).
+
+   A crucial point of the above example is the additional degree of freedom
+of modelling as it is possible to vary the choice operator itself and not being
+automatically restricted to the max operator and to consider behaviour to
+be rationalised by preferences.7
+   Obviously, one could rationalise the above choice as the outcome of a
+maximisation. One could redefine preferences and utility functions such that
+the outcome of the maximisation is just the second most expensive wine.8
+However, while equivalent in outcome, the causal model of behaviour is dif-
+ferent. The classical approach would force the choice to be rational, whereas
+in our setting this question remains open. The quantifier just formally de-
+scribes an agent’s behaviour. It could be that the choice pattern is a habitual
+heuristic or it could be the reduced form pattern of rational decision-making
+in a larger context.
+    Of course, instead of using the second most expensive wine, one could
+consider alternative heuristics, such as choosing the wine closest to the av-
+erage price of all available wines on the menu, or within a class of wines,
+etc..
+   7
+     In some sense, our viewpoint is similar to choice rules or choice functions. The be-
+haviour is the focal point of analysis. See [15] or [22].
+   8
+     Note, if the prices of the wines represented preferences, a rationalisation of 2nd best
+choices were not possible (see [22]).
+
+
+                                            17
+   Moreover, one could also combine this heuristic with preferences. Say,
+the guest is a fan of white wines, and he strictly prefers Chardonnay over
+Riesling. One could model the agent as first restricting the choices to the
+wines that are Chardonnay (if available) and then apply his second most
+expensive decision heuristic to the class of Chardonnay available.
+
+
+3.4    Context-Dependent Decision Problem
+So far, we have focused only on the generic context-independent quantifiers.
+As the last examples illustrate with this construction we can already go
+beyond choices motivated by rational preferences. Yet, we can do more. We
+can allow for quantifiers that do not only take the image of p as input but
+the complete function.
+   Next, we provide an example to illustrate that this opens up a complete
+new dimension. Indeed, with context-dependent quantifiers it is possible to
+go far beyond what can be modelled using utility functions.
+
+Example 3.6 (Keynesian beauty contest). Consider the following situation:
+there are three players, the judges J = {J1 , J2 , J3 }. Each judge votes for two
+contestants A and B. The set of outcomes is given by X = {A, B} denoting
+the winner of the contest. The winner is determined by the simple majority
+rule of type maj : X × X × X → X. To begin with, we assume that the
+judges rank the contestants according to a preference ordering. For example,
+suppose judges 1 and 2 prefer A and judge 3 prefers B. We consider the
+decision problem of the first judge who observes the choices of two others.
+Suppose, judge 1 observes that judge 2 votes for A and judge 3 votes for B,
+and he has to decide how to cast his vote. The order relation of the first judge
+is A 1 B. Thus we obtain a quantifier and a selection function, which is
+taking the maximal element with respect to the ordering, as before:
+
+                φ1 (p) = max p(x)           ε1 (p) = arg max p(x)
+                         x∈(X,1 )                  x∈(X,1 )
+
+
+Now, assume judges 2 and 3 continue to prefer contestants A and B respec-
+tively, but judge 1 has different preferences: he prefers to support the winner
+
+                                       18
+of the contest. He is only interested in voting for the winner of the contest
+and he has no preferences for the contestants per se. Again, judge 1 observes
+that judges 2 and 3 vote for contestants A and B. He can be described by a
+fixed point operator:
+
+                   ϕ′1 (p) = ε′1 (p) = {x ∈ {A, B} | p(x) = x}
+
+   In practice, most functions do not have a fixed point and so the fixed
+point quantifier will often give the empty set. For the purposes of modelling
+a particular situation we might want to ‘complete’ ϕ in different ways, de-
+scribing what an agent might do in the event that no fixed point exists. Our
+examples in Section 5 suggest that the best way to do this is to return the en-
+tire set X, modelling the fact that the agent is equally ‘happy’ (or unhappy)
+with any choice if no good choice exists.
+   The situation above becomes far more interesting when considered as a
+game in which several agents with potentially different concerns cast a vote.
+We analyse this in detail in Section 5.
+
+
+4      General Games
+Quantifiers and selection functions as introduced in the previous section for
+decision problems can be directly adapted to model games. All the additional
+expressiveness introduced before can be used in games as well. In this section,
+we first define a game and the adequate Nash equilibrium concept. Moreover,
+we define a refinement of Nash equilibria that becomes relevant with context-
+dependent quantifiers.
+
+Definition 4.1 (General Games). A general n-players game, with a set R
+of outcomes and sets Xi of strategies for the ith player, consists of
+
+    1. for each player 1 ≤ i ≤ n, a selection function
+
+                               εi : (Xi → R) → P(Xi )
+
+       representing that player’s preferred strategies in each game context.
+
+                                       19
+  2. the outcome function
+                                       n
+                                       Y
+                                  q:         Xi → R
+                                       i=1
+
+     i.e., a mapping from the strategy profile to the final outcome.
+
+   Intuitively, we think of the outcome function q as representing the ‘sit-
+uation’, or the rules of the game, while we think of the selection functions
+as describing the agents. Thus we can imagine the same agent in different
+situations, and different agents in the same situation. This allows us to de-
+compose a modelling problem into a global and a local part: modelling the
+situation and modelling the players.
+
+Remark 4.2 (Strategic game [18]). The ordinary definition of a strategic
+game of n- players with standard payoff functions is a particular case of
+Definition 4.1 when
+
+   • for each player i set of strategies Xi
+
+   • the set of outcomes R is Rn , modelling the vector of payoffs obtained
+     by each player,
+
+   • the selection function of player i is i-arg max : (Xi → Rn ) → P(Xi ),
+     i.e. arg max with respect to the i-th coordinate, representing the idea
+     that each player is solely interested in maximising their own payoff,
+
+   • the i-th component of the outcome function q : ni=1 Xi → Rn can be
+                                                    Q
+
+     viewed as the payoff function qi : nj=1 Xj → R of the i-th player.
+                                       Q
+
+
+In the following when we refer to normal forms games we mean the special
+case of Definition 4.1 with outcome type and selection functions as above.
+
+   We illustrate this by modelling the classic “Battle of the Sexes” game
+using our framework.
+
+Example 4.3 (Battle of the Sexes). A couple agrees to meet together, but
+both cannot remember if they will be attending the ballet (B) or a football
+match (F). The husband prefers football over ballet, while the wife prefers
+
+                                       20
+                         Table 1: Battle of the Sexes
+
+                         Strategy Ballet     Football
+                          Ballet   3,2         1,1
+                         Football  0,0         2,3
+
+
+
+ballet over football. But irrespective of their personal preferences, they would
+rather be together than by themselves in different places. In this game the
+set of outcomes is R = R2 and the possible strategies for both players are
+Xh = Xw = {B, F }. What is normally described as the payoff matrix for
+us shall be viewed as the outcome function Xw × Xh → R, i.e. a mapping
+from strategy profiles to outcomes. For the game in question the outcome
+function is shown in Table 1. As standard in classical game theory, both
+players in this case are trying to maximise their corresponding coordinate of
+the outcome tuple (rw , rh ), i.e. the wife wants to maximise rw whereas the
+husband would like to maximise rh . Therefore, the selection functions for the
+two players are the maximisation functions
+
+   • εw (p) = {rw | p(rw ) = maxx∈Xw π1 (p(x))}
+
+   • εh (p) = {rh | p(rh ) = maxx∈Xh π2 (p(x))}
+
+where π1 , π2 : R2 → R are the first and second projections, respectively.
+Note the types of the selection functions are εw : (Xw → R) → P(Xw ) and
+εh : (Xh → R) → P(Xh ).
+
+    In order to illustrate the need for multi-valued selection functions, let us
+also consider an extension of the Battle of the Sexes game where an interme-
+diate possibility is included, namely going to the cinema (C ). Consider also
+that if the husband had to go alone somewhere he would prefer football over
+cinema, and cinema over ballet. The wife on the other hand, if she had to go
+alone, she would prefer ballet over cinema, and cinema over football. If they
+are together then the husband would prefer to be at the football, but would
+consider ballet and cinema almost as nice. For the wife, if they are together
+
+
+                                      21
+                   Table 2: Extended Battle of the Sexes
+
+                    Strategy Ballet         Cinema   Football
+                     Ballet   3,2             2,1      2,2
+                    Cinema    1,0             2,2      1,2
+                    Football  0,0             0,1      2,3
+
+
+
+she would rather be at the ballet, but would consider being at the football
+or cinema equally pleasant.
+
+Example 4.4 (Extended Battle of the Sexes I). In this extended version of
+the Battle of Sexes the set of outcomes is R = R2 and the possible strategies
+for both players are Xh = Xw = {B, C, F }. The outcome function is shown
+in Table 2. But notice that although we have extended the game by expanding
+the sets of strategies, and hence the outcome function, the selection functions
+of both husband and wife are still the same as in Example 4.3, as they both
+still aim to maximise their own payoffs.
+
+
+4.1       Nash Equilibrium
+Consider a strategy profile x ∈ ni=1 Xi . The outcome of this strategy profile
+                               Q
+
+is q(x). We want to define the context in which one player unilaterally
+changes his strategy. This is given by the function
+
+                           Uiq (x)(x) = q(x[i 7→ x])
+
+of type
+                                  n
+                                  Y
+                          Uiq :         Xj → (Xi → R).
+                                  j=1
+
+Here x[i 7→ x] is the tuple obtained from x by replacing the ith entry with
+x. We call the n functions Uiq (1 ≤ i ≤ n) the unilateral maps of a given
+strategy profile x. They were introduced in [10] in which it is shown that
+the proof of Nash’s theorem amounts to showing that the unilateral maps
+have certain topological (continuity and closure) properties. The concept of a
+
+                                          22
+context was introduced later in [11], so now we can say that Uiq (x) : Xi → R
+is the context in which the ith player has unilaterally changed his strategy,
+so we call it a unilateral context.
+
+Example 4.5 (Extended Battle of the Sexes II). Continuing from Example
+4.4, let us illustrate the notion of a unilateral map. Consider the wife (w)
+and the strategy profile x = (B, C), i.e. she decided to go the the ballet and
+he goes to the cinema. Her unilateral context with respect to this strategy
+profile is Uwq (B, C)(x) = q(x, C). Or, unfolding the definition of q this can
+be written more explicitly as
+                                      
+                                      
+                                      
+                                      (2, 1)       if x = B
+                                      
+                       Uwq (B, C)(x) = (2, 2)       if x = C
+                                      
+                                      
+                                      (0, 1)
+                                      
+                                                    if x = F.
+
+The map describes what are the possible payoffs as the wife explores her differ-
+ent choices given that the choice of the husband is fixed. Using her quantifier
+εw on this unilateral context Uwq (B, C) we obtain her preferred outcomes for
+the context
+
+  εw (Uwq (B, C)) = {(rw , rh ) | rw ∈ max π1 (Uwq (B, C)(x))} = {(2, 1), (2, 2)}
+                                      x∈Xw
+
+
+since maxx∈Xw π1 (Uwq (B, C)(x)) = {2}. Similarly, for the husband, his uni-
+lateral context with respect to this strategy profile x = (B, C) is
+                                         
+                                         
+                                         
+                                          (3, 2)   if x = B
+                                         
+                       Uhq (B, C)(x) =     (2, 1)   if x = C
+                                         
+                                         
+                                         (2, 2)
+                                         
+                                                    if x = F.
+
+Hence, his preferred outcomes for this context are
+
+   εh (Uhq (B, C)) = {(rw , rh ) | rh ∈ max π2 (Uhq (B, C)(x))} = {(3, 2), (2, 2)}.
+                                      x∈Xh
+
+
+   Using this notion of a unilateral map we can abstract the classical defini-
+
+                                          23
+tion of Nash equilibrium to general games defined by selection functions as
+follows.
+
+Definition 4.6 (General Nash equilibrium). Given a general game (εi , q),
+we say that a strategy profile x is in Nash equilibrium iff
+
+                               q(x) ∈ εi (Uiq (x))
+
+for all players 1 ≤ i ≤ n.
+
+   As with the usual notion of Nash equilibrium, we are also saying that
+a strategy profile is in Nash equilibrium if no player has a motivation to
+unilaterally change their strategy. This is expressed formally by saying that
+preferred outcomes, specified by the selection function when applied to the
+unilateral context, contain the outcome obtained by sticking with the current
+strategy. We illustrate now how this notion indeed coincides with the usual
+notion when selection functions are maximisation functions:
+
+Example 4.7 (Extended Battle of the Sexes III). There are obviously four
+strategy profiles which are Nash equilibria, namely x = (B, B) and x = (C, C)
+and x = (F, F ) and x = (B, F ), in the standard sense. Let us see how
+x = (B, C) is not an equilibrium, also in our sense. Consider first the wife
+(w). As we have calculated her set of preferred outcomes in her unilateral
+context Uwq (B, C) is {(2, 1), (2, 2)}, and indeed
+
+              q(B, C) = (2, 1) ∈ {(2, 1), (2, 2)} = εw (Uwq (B, C))
+
+so that the wife is happy with the current choice (she is happy to be alone,
+as long as she is at the ballet). On the other hand, for the husband we have
+calculated that his preferred outcomes in the unilateral context Uhq (B, C) are
+{(3, 2), (2, 2)}, which in this case does not include the current outcome
+
+                               / {(3, 2), (2, 2)} = εh (Uhq (B, C)).
+              q(B, C) = (2, 1) ∈
+
+Hence, the husband can improve his situation by either going to the football
+on his own or joining his wife at the ballet. Similarly to above one can verify
+
+                                       24
+that all four standard equilibria are also equilibria in the sense of Definition
+4.6.
+
+
+4.2    Selection Equilibrium
+The definition of Nash equilibrium is based on quantifiers. However, we can
+also use selection functions directly to define an equilibrium condition.
+
+Definition 4.8 (Selection equilibrium). Suppose each player’s move is a good
+move in the unilateral context, that is,
+
+                                xi ∈ εi (Uiq (x))
+
+for all players 1 ≤ i ≤ n, where xi is the ith component of the tuple x. A
+strategy profile satisfying this condition for each player is called a selection
+equilibrium.
+
+   Our goal in this section is to show that selection equilibrium is a strict
+refinement of generalised Nash equilibrium. We start by showing that every
+selection equilibrium is also an equilibrium in the sense of Definition 4.6.
+
+Theorem 4.9. Every selection equilibrium is a generalised Nash equilibrium.
+
+Proof. Recall that by definition, for every context p we have
+
+                          x ∈ εi (p) =⇒ p(x) ∈ εi (p)
+
+since εi (p) = {p(x) | x ∈ εi (p)}. Assuming that x is a selection equilibrium
+we have
+                                xi ∈ εi (Uiq (x))
+
+Therefore
+                            Uiq (x)(xi ) ∈ εi (Uiq (x))
+
+It remains to note that Uiq (x)(xi ) = q(x), because x[i 7→ xi ] = x.
+
+   Let us again illustrate this new concept using our running example.
+
+
+                                        25
+Example 4.10 (Extended Battle of the Sexes IV). As before, to illustrate
+concepts, consider the wife and the strategy profile x = (B, C). Her selection
+function yields:
+
+   εw (Uwq (B, C)) = {rw | Uwq (B, C)(rw ) ∈ max π1 (Uwq (B, C)(x))} = {C}.
+                                                x∈Xw
+
+
+As it holds that her current choice xw = B does not belong to this set of
+preferred strategies, the strategy profile would not be in selection equilibrium
+from the point of view of the wife. Looking from the point of view of the
+husband, on the strategy profile x = (B, C) we can calculate his preferred
+strategies using his selection function as
+
+   εh (Uhq (B, C)) = {rh | Uhq (B, C)(rh ) ∈ max π2 (Uhq (B, C)(x))} = {B, F }.
+                                               x∈Xh
+
+
+But his current choice is xh = C, so he would also be tempted to change his
+mind and go to either the ballet with his wife, or to the football on his own.
+
+   In our version of the Battle of the Sexes game the set of generalised Nash
+equilibria and the set selection equilibria are in fact identical. This is not
+a coincidence, as the following theorem shows that for games based on the
+maximisation selection function the classical notion, and our two generalised
+notions coincide.
+
+Theorem 4.11. In a strategic game (see Remark 4.2) the standard definition
+of Nash equilibrium and the equilibrium notions of Definitions 4.6 and 4.8
+are equivalent.
+
+Proof. Suppose the set of outcomes R is Rn and that the selection functions
+εi are i-arg max, i.e. maximising with respect to i-th coordinate. Unfolding
+Definition 4.8 and that of a unilateral context Uiq (x), we see that a tuple x
+is an equilibrium strategy profile if for all 1 ≤ i ≤ n
+
+                         xi ∈ i- arg max q(x[i 7→ x])).
+                                   x∈Xi
+
+
+But xi is a point on which the function p(x) = q(x[i 7→ x]) attains its
+
+                                          26
+maximum precisely when p(xi ) ∈ maxx∈Xi p(x). Hence
+
+          q(x) = q(x[i 7→ xi ]) = p(xi ) = max p(x) = max q(x[i 7→ x])
+                                              x∈Xi      x∈Xi
+
+
+which is the standard definition of a Nash equilibrium: for each player i, the
+outcome obtained by not changing the strategy, i.e. q(x), is the best possible
+amongst the outcomes when any other available strategy is considered, i.e.
+maxx∈Xi q(x[i 7→ x]). The same holds for our Definition 4.6 based on the
+quantifier εi .
+
+   Theorem 4.11 above shows that in the case of “classical” strategic games
+the usual concept of a Nash equilibrium coincides with both the general Nash
+equilibrium and the selection equilibrium. On the other hand, for general
+games, Theorem 4.9 proves that every selection equilibrium is a generalised
+Nash equilibrium
+
+                  selection equilibria ( generalised Nash equilibria
+
+In Section 5 we give several examples showing that the inclusion above is
+strict, i.e. that there are games where selection equilibrium is a strict refine-
+ment of generalised Nash equilibrium.
+   We close this section with a last consideration of the classic Battle of the
+Sexes (Example 4.3). Here, we analyze the game in a different way. We
+do not use utility functions and we do not use max operators as selection
+functions.
+
+
+4.3     Battle of the Sexes – Qualitatively
+Let us represent the Battle of the Sexes game in our framework in a truly
+idiomatic way, by removing numerical utilities completely and focussing only
+on the qualitative information. The choices of moves are still Xw = Xh =
+{B, F }, but now the outcomes are merely a description of what happens,
+namely who goes to which event. We set R = Xw × Xh = {B, F }2 , so an
+element of R is a pair where the first coordinate tells what the wife chose,
+
+
+                                         27
+and the second tells what the husband chose. Now the outcome function
+q : Xw × Xh → R is simply the identity function.
+    We build selection functions for each player in a compositional way, by
+observing that each player has a lexicographic preference: their first priority
+is to be coordinated, and all else being equal, their second priority is to
+go to their favourite event (ballet and football, respectively). We describe
+an element of R as ‘coordinated’ if its first coordinate equals its second
+coordinate, so the coordinated outcomes are (B, B) and (F, F ). There is
+a selection function εc that chooses all moves that lead to a coordinated
+outcome, which we can write as an inverse image
+
+                        εc (p) = p−1 ({(B, B), (F, F )})
+
+Next we have a pair of selection functions εb , εf representing the ‘purely
+selfish’ aims of attending ballet and football respectively:
+
+                        εb (p) = p−1 ({(B, B), (B, F )})
+
+                        εf (p) = p−1 ({(B, F ), (F, F )})
+
+Now we are ready to build our players’ selection functions compositionally.
+Given a context, the joint selection function checks whether there are any
+moves which satisfy both ‘personalities’ given by the coordinating and selfish
+selection functions. If so, the joint selection function returns those moves. If
+there are no moves satisfying both then the coordination takes priority, and
+the selfish aspect is ignored. Therefore the wife’s selection function is
+                              
+                              ε (p) ∩ ε (p)   if nonempty
+                                 c      b
+                   εw (p) =
+                              ε (p)           otherwise
+                                 c
+
+
+and the husband’s selection function is
+                          
+                          ε (p) ∩ ε (p)       if nonempty
+                              c      f
+                 εh (p) =
+                          ε (p)               otherwise
+                                c
+
+
+
+
+                                       28
+Observe that in building these selection functions we have not assumed that
+the game’s outcome function is the identity function, and so these selection
+functions will still work correctly if we change the rules of the game, for
+example if the couple have an agreement that sometimes forces them to go
+against their choices.
+   We will verify that (B, B) is a selection equilibrium, and (B, F ) is not.
+For the strategy (B, B) the wife’s unilateral context is
+
+                            Uwid (B, B)(x) = (x, B)
+
+The individual selection functions give
+
+               εc (Uwid (B, B)) = {B}        εb (Uwid (B, B)) = {B}
+
+and so the wife’s selection function gives
+
+                            εw (Uwid (B, B)) = {B}
+
+which means the wife has no incentive to deviate. The husband’s unilateral
+context is
+                            Uhid (B, B)(x) = (B, x)
+
+The individual selection functions give
+
+               εc (Uhid (B, B)) = {B}        εf (Uhid (B, B)) = {F }
+
+Now we have a clash between the two personalities because these sets do not
+intersect. The coordination takes priority, and so
+
+                            εh (Uhid (B, B)) = {B}
+
+and the husband has no incentive to deviate. Therefore (B, B) is a selection
+equilibrium.
+   For the strategy (B, F ) we see that the husband has an incentive to
+
+
+
+                                        29
+unilaterally deviate to B. His unilateral context is
+
+                            Uhid (B, F )(x) = (B, x)
+
+The individual selection functions give
+
+               εc (Uhid (B, F )) = {B}        εf (Uhid (B, F )) = {F }
+
+and so
+                             εh (Uhid (B, F )) = {B}
+
+Therefore the husband has an incentive to deviate to B, and so (B, F ) is not
+a selection equilibrium.
+    Although this is a trivial example, we believe that this method of mod-
+elling will distinguish itself from utility-based methods in its ability to scale
+easily to very complex situations. A realistic agent may have many com-
+peting aims, some context-dependent and some context-independent (for ex-
+ample immediate profit, long-term profit, fairness concerns, environmental
+concerns). Using selection functions allows us to treat each aim individually,
+and then afterwards combine them (with rules for breaking ties, such as the
+lexicographic rule in this example) into a realistic description of the agent.
+We will discuss these ideas in the conclusion.
+
+
+5     Examples
+In this section we continue to work on Example 3.6 where three judges J =
+{J1 , J2 , J3 } vote for two contestants A and B. The set of possible outcomes is
+X = {A, B} and the actual outcome is determined by the majority function
+maj : X × X × X → X. We have chosen to work with three judges and two
+possible outcomes in order to simplify the exposition, so that maj becomes
+a total function.
+    In contrast to Example 3.6, where the decisions of judges 2 and 3 were
+fixed, in the current section we analyse a game where all three players make
+strategic decisions. We analyse several instances of this game with different
+
+                                         30
+motivations of players in order to illustrate the expressiveness of selection
+functions. Moreover, we explore the distinction between Nash equilibria and
+selection equilibria. Our specific examples contain implausible Nash equilib-
+ria which are not selection equilibria. Indeed, we have examples in which
+every strategy is a Nash equilibrium, but there are few selection equilibria.
+
+
+5.1    Games with Context-independent Selection Func-
+       tions
+In a strategic game, the judges rank the contestants according to a preference
+ordering. For example, suppose judges 1 and 2 prefer A and judge 3 prefers
+B. Thus for each judge we have an order relation on X. Suppose the order
+relation of the first judge is B 1 A, the second judge is B 2 A and the
+third is A 3 B.
+    The judges now attempt to maximise the outcome with respect to their
+preferred ordering. Hence we obtain 3 different selection functions, which are
+maximisation with respect to each ordering:
+
+                           ε1 (p) = arg max p(x1 )
+                                    x1 ∈(X,1 )
+
+                           ε2 (p) = arg max p(x2 )
+                                    x2 ∈(X,2 )
+
+                           ε3 (p) = arg max p(x3 ).
+                                    x3 ∈(X,3 )
+
+
+In this particular example (but not in general) we can fix a ‘global’ order
+B  A and notice that 3 is the dual order. Thus we can for short refer to
+ε1 and ε2 as arg max and ε3 as arg min.
+   The game is represented in Table 3. Notice that Nash and selection
+equilibria coincide for this game, because it is a strategic game.
+   There is a subtle difference between this setup and the usual strategic
+game. In the classical approach, each judge’s ordering would be seen as a
+preference relation. This would typically be used to derive payoffs [18], which
+amounts to an order embedding of X into R. Here there are no payoffs: we
+directly maximise over the discrete order X.
+
+                                      31
+                     Table 3: Agents: max, max, min
+
+        Strategy Outcome       Nash       Defects    Selection   Defects
+         AAA        A
+         AAB        A
+         ABA        A            -           J3          -         J3
+         ABB        B            -           J2          -         J2
+         BAA        A            -           J3          -         J3
+         BAB        B            -           J1          -         J1
+         BBA        B            -         J1 , J2       -       J1 , J2
+         BBB        B
+
+
+
+   We now want to give the calculations of the Nash equilibria of Table 3 in
+the notation of selection functions and unilateral contexts. First we take a
+look at the Nash equilibrium BBB with outcome maj(BBB) = B and give
+the rationale of player 1. The unilateral context of player 1 is
+
+                     U1maj (BBB)(x) = maj(xBB) = B
+
+meaning that in the given context the outcome is B no matter what player
+1 chooses to play. The minimisation quantifier applied to such unilateral
+context gives
+
+                ε1 (U1maj (BBB)) = max(U1maj (BBB)) = {B}
+                                     1
+
+
+meaning that, in the given context, player 1’s preferred outcome is B. Hence,
+we can conclude by B = maj(BBB) ∈ ε1 (U1maj (BBB)(x)) = {B} that B is a
+Nash equilibrium strategy for player 1. This condition holds for each player
+and allows us to conclude that BBB is a Nash equilibrium. In a similar way
+way we see in
+
+                             / ε1 (U1maj (BBA)(x)) = {A}
+                B = maj(BBA) ∈
+
+since U1maj (BBA)(x) = maj(xBA) = x, so that BBA is not a Nash equi-
+
+
+                                      32
+librium. In other words, in the context BBA player 1 has an incentive to
+change his strategy to A, so that the new outcome maj(ABA) = A is better
+than the previous outcome B.
+
+
+5.2    Keynesian Beauty Contest
+Let us now consider the Keynesian beauty contest as the paradigmatic exam-
+ple of a game with some players having context-dependent selection functions.
+The first judge J1 ranks the candidates according to a preference ordering
+B  A. The second and third judges, however, are ‘Keynesian agents’: they
+have no preference relations over the candidates per se, but want to vote for
+the winning candidate.
+   The selection equilibria are precisely those in which J2 and J3 are coordi-
+nated, and J1 is not pivotal in any of these. In the next section we will explain
+in more detail how the fixpoint selection function models coordination. Table
+4 contains a summary of the equilibria.
+   Consider the strategy AAA, which is a selection equilibrium of this game.
+Suppose the moves of J1 and J2 are fixed, but J3 may unilaterally change
+strategy. The unilateral context is
+
+                      U3maj (AAA)(x) = maj(AAx) = A
+
+Thus the unilateral context is a constant function, and its set of fixpoints is
+
+                            fix(U3maj (AAA)) = {A}
+
+This tells us that J3 has no incentive to unilaterally change to the strategy
+B, because he will no longer be voting for the winner.
+   On the other hand, for the strategy ABB the two Keynes agents are
+indifferent, because if either of them unilaterally changes to A then A will
+become the majority and they will still be voting for the winner. This is still
+a selection equilibrium (as we would expect) because the unilateral context
+is the identity function, and in particular B is a fixpoint.
+   There are two selection equilibria, BAA and BBB, which are implausible
+
+                                       33
+                       Table 4: Agents: max, fix, fix
+
+        Strategy Outcome       Nash    Defects   Selection   Defects
+         AAA        A
+         AAB        A                                -         J3
+         ABA        A                                -         J2
+         ABB        B
+         BAA        A
+         BAB        B            -         J1        -       J1 , J2
+         BBA        B            -         J1        -       J1 , J3
+         BBB        B
+
+
+
+in the sense that J1 is not voting for his preferred candidate.
+    We now calculate the Nash and the selection rationale for the strategy
+profile AAB of the Keynesian player 3. The outcome of AAB is maj(AAB) =
+A. The unilateral context of player 3 is
+
+                     U3maj (AAB)(x) = maj(AAx) = A
+
+meaning that the outcome is (still) A if player 3 unilaterally changes from B
+to A. The minimisation quantifier applied to this context gives
+
+                 ε3 (U3maj (AAB)) = fix(U3maj (AAB)) = {A}
+
+meaning that A is the outcome resulting from an optimal choice. Hence, we
+can conclude by
+
+                 A = maj(AAB) ∈ ε3 (U3maj (AAB)) = {A}
+
+that B is a Nash equilibrium strategy for player 3.
+   The rationale for the selection equilibrium is as follows: the strategy
+B∈ / ε3 (U3maj (AAB)) = fix(U3maj (AAB)) = {A} meaning that AAB is not a
+selection equilibrium.
+
+
+
+
+                                      34
+                         Table 5: Agents: fix, fix, fix
+
+         Strategy Outcome       Nash    Defects    Selection   Defects
+          AAA        A
+          AAB        A                                    -      J3
+          ABA        A                                    -      J2
+          ABB        B                                    -      J1
+          BAA        A                                    -      J1
+          BAB        B                                    -      J2
+          BBA        B                                    -      J3
+          BBB        B
+
+
+
+5.3    Coordination Game
+We consider a game where all agents act according to a fixpoint goal. Judges
+J1 , J2 and J3 want to vote for the winner, so the selection functions are
+given by the fixpoint operator (X → X) → P(X). As can be seen in Table
+5, the selection equilibria are exactly the coordinated strategies. Note that
+the fixpoint selection function models coordination, and the game in which
+all selection functions are fixpoints is a coordination game. This gives us a
+new perspective on the Keynesian beauty contest as a one-sided coordination
+game: the Keynesian agent would like to coordinate with the group, whereas
+the agents of the group are not interested in coordination.
+   This game is a good example of why ordinary Nash equilibria are not
+suitable for modelling games with context-dependent quantifiers: it can be
+seen in the table that every strategy is a Nash equilibrium of this game, but
+the selection equilibrium captures our intuition perfectly that the equilibria
+should be the strategy profiles that are maximally coordinated, namely AAA
+and BBB.
+
+
+5.4    Anti-coordination Game
+Just as the fixpoint selection function models coordination, so there is a ‘non-
+fixpoint’ selection function which models anti-coordination (or differentiation
+
+
+                                       35
+                  Table 6: Agents: non-fix, non-fix, non-fix
+
+        Strategy Winner          Nash   Defects    Selection       Defects
+         AAA       A                                   -          J1 , J2 , J3
+         AAB       A
+         ABA       A
+         ABB       B
+         BAA       A
+         BAB       B
+         BBA       B
+         BBB       B                                     -        J1 , J2 , J3
+
+
+
+as in the minority game [1, 13]). The set of non-fixpoints of a function
+p : X → X is
+                       non-fix(p) = {x ∈ X | x 6= p(x)}
+
+Obviously this set might be empty, for instance when p is the identity func-
+tion. Hence, we extend this to a total selection function by specifying that
+the player is indifferent in the event that there are no non-fixpoints
+                            
+                            non-fix(p)      if non-fix(p) 6= ∅
+                   ε(p) =
+                            X               otherwise
+
+Unlike for fixpoints, this selection function does not attain itself when con-
+sidered as a quantifier. The corresponding quantifier is instead:
+
+                            ε(p) = {p(x) | x 6= p(x)}
+
+In a game such as an election, an agent whose selection function is non-fix is
+a ‘punk’ who aims to be in a minority. Therefore, let us consider the game in
+which all three judges are punks (see Table 6). Of course only one can actually
+be in a minority, so the selection equilibria are precisely the ‘maximally anti-
+coordinated’ strategy profiles, namely those in which one judge differs from
+the other two. This is another example of a game in which every strategy
+is a Nash equilibrium, but the selection equilibrium corresponds perfectly to
+
+                                        36
+our intuition.
+
+
+6     Compiling Games
+In Section 5.2, we modeled the Keynesian beauty contest. We showed that
+the set of Nash equilibria and the set of selection equilibria do not coincide. In
+Section 4.2 we proved that both equilibrium concepts are isomorphic when we
+only consider max and argmax as quantifier, respectively selection function.
+The natural question for the Keynesian beauty contest is: Is there a way
+to model the game using standard payoff functions and what is the set of
+equilibria we get?
+   For the reasons exposed in Section 3.4, there is no general utility represen-
+tation of the fixpoint goals. As long as the outcomes are defined in terms of
+the candidate who wins the contest, it is not possible to consider an ordering
+of these outcomes alone but contextual information is also important.
+    There are two things an analyst can do. First, he can redefine the out-
+come space and define new utility functions on these outcomes for the Keynes
+agents. This, however, would make it necessary to change the outcome func-
+tion globally for all players. Secondly, for the given outcome function, he can
+find payoffs by hand that mimick an agent’s fixpoint goals. That would mean
+to give up a compact and meaningful description of an agent via a utility
+function. Moreover, for each new game payoffs have to be calculated again.
+    Table 7 illustrates this approach for the Keynesian beauty contest. The
+last three columns depict the computed payoff matrix. In column ‘NE sim.
+SNE’ (‘Nash equilibrium simulating selection equilibrium’) we denote the
+Nash equilibria. Comparing it to Table 4 shows that the Nash equilibria now
+simulate the selection equilibria. To attain the payoff functions for jugdes 2
+and 3 (judge 1 prefers candidate A over B), the analyst solves the game for
+their fixpoint goals.
+    Consider the strategy profiles AAA and AAB. These strategy profiles
+yield the same outcome: A is the winner of the contest. In this situation
+judge 3 is not pivotal; independently of his action, A will win the contest.
+Now, to achieve the context-dependency in this game using payoff functions,
+
+                                       37
+                          Table 7: Agents: max, fix, fix
+
+       Strategy Outcome         NE sim. S NE       Defects    PJ 1   PJ 2   PJ 3
+        AAA        A                                           1      1      1
+        AAB        A                    -             J3       1      1      0
+        ABA        A                    -             J2       1      0      1
+        ABB        B                                           0      1      1
+        BAA        A                                           1      1      1
+        BAB        B                    -           J1 , J2    0      0      1
+        BBA        B                    -           J1 , J3    0      1      0
+        BBB        B                                           0      1      1
+
+
+
+the analyst has to introduce differences in the payoffs for the same final
+outcome. I.e., he provides different payoffs for the different actions leading
+to the same outcome and is thus implicitly using contextual information.
+    Contrast this with the selection function approach. Selection functions
+can not only be defined on the set of outcomes but on the whole function
+space of unilateral contexts. Thus, when considering the beauty contest, the
+outcome function is the same for an agent who is merely concerned with the
+final outcomes, such as judge 1 in our example, or who is concerned with the
+context, like the fixpoint judges 2 and 3. Selection functions do not convey
+implicitly the context-dependency but explicitly highlight it.
+   Fixpoint goals are but one example. In general, the feature that we can
+equip players with goals depending on the game description itself (described
+by the outcome function) makes the selection approach more expressive and
+more compositional because there is no need to change the global outcome
+function but only the local representation of one player.9 As a further con-
+sequence, this widens the possibilites to do comparative statics within the
+same game.
+    In the case an analyst wants to encode context-dependent information in
+a given game, there is a very simple procedure for calculating the payoffs such
+that the Nash equilibrium mimicks the selection one: we write 0 whenever
+   9
+    Or, alternatively, there is no need to solve the game and encode context-dependent
+information by hand.
+
+
+                                            38
+the player defects and 1 whenever they do not defect (cf Table 7).
+   Besides convenience, there is another reason this is important: it gives
+a very simple way to talk about mixed strategies. A good example of this
+is the beauty context variant (max, min, fix). In this game J1 prefers A, J2
+prefers B and J3 would like to vote for the winner. Intuitively we expect
+this game to have an equilibrium in which J1 votes for A, J2 votes for B and
+J3 mixes with arbitrary probability. By ‘compiling’ the game to a classical
+utility function representation we regain these mixed equilibria. Although we
+are working on directly representing mixed strategies in the selection function
+framework, using this procedure is simple and effective. In particular, if we
+begin with a finite game and compile it, we obtain a strategic game to which
+Nash’s theorem applies (whereas there is no reason to expect our original
+game to have any equilibria).
+
+Theorem 6.1. Consider a game G defined by total selection functions εi :
+                                           Q
+(Xi → R) → PXi and outcome function q : i Xi → R. We define a
+strategic game G ′ to have the same move sets Xi , and the utility for the ith
+                          Q
+player of the strategy x : i Xi is defined by the outcome function
+                                  
+                                  1       if xi ∈ εi (Uiq x)
+                          q(x)i =
+                                  0       otherwise
+
+Then
+
+   1. A strategy x of G ′ is a Nash equilibrum iff all players receive utility 1
+
+   2. The Nash equilibria of G ′ are exactly the selection equilibria of G
+
+Proof. Notice that (2) follows immediately from (1), since by the construction
+of q ′ a strategy x is a selection equilibria of G iff all players receive utility 1 in
+G ′ . To prove (1) we first note that if all players receive 1 utility from a strategy
+x then trivially it is a Nash equilibrium, since getting more than 1 utility is
+impossible. Now suppose we have a strategy x where some player (say the
+ith) receives utility 0, and we will prove that x it is not a Nash equilibrium of
+G ′ . Let p be the unilateral context p = Uiq (x). Since a selection function can
+
+                                          39
+never return the empty set, choose some x′ ∈ εi (p). In particular, x′ 6= xi
+since otherwise we would have q ′ (x)i = 1. Let x′ = x[i 7→ x′ ] be the strategy
+in which player i unilaterally changed from xi to x′ , and let p′ = Uiq (x′ ) be
+its unilateral context. Since Uiq (x) is independent of the value of xi , we have
+an equality of contexts p = p′ , and so in particular εi (p) = εi (p′ ). Therefore
+x′ ∈ εi (p′ ), so q ′ (x′ )i = 1, which proves that player i can increase his utility
+from 0 to 1 by unilaterally changing from x to x′ .
+
+
+7     Conclusions
+In this paper we propose the use of quantifiers and selection functions to
+model individual choices and games. Our framework instantiates preferences
+and utility functions as a special case but we can also model agents whose
+preferences are incomplete, who deviate from maximization, whose motives
+are not only influenced by the outcome but also by the way outcomes realize.
+    In practice, economists often restrict themselves to model decisions or
+interactions using utility functions. We think this practice has two main
+negative side-effects our framework helps to overcome.
+   First, sticking to utility functions excludes interesting phenomena from
+analysis. The descriptions and explanations of behavior exclusively live in
+the framework of full optimization (or equivalently in having rational prefer-
+ences). Yet, empirical evidence suggests that people’s behavior deviates from
+this benchmark. Our framework contributes by introducing a whole new set
+of alternatives to describe behavior.
+    Secondly, utility functions and preferences are but one formal encoding
+of economic situations. Even if a formal equivalence between utility maxi-
+mization and selection functions exists, the naturalness of representing the
+economic problem via selection functions may be different and more insight-
+ful. Selection functions allow a high-level and a more abstract description
+than utility functions. We illustrated this focusing on one example: fixpoint
+selection functions as a high-level representation of coordination goals. The
+abstraction has a further crucial advantage: It introduces compositionality.
+Whereas with utility functions it can be necessary to either change the out-
+
+                                         40
+come space or change payoffs for a given outcome function by hand in order
+to model behavior, with selection functions the global outcome function re-
+mains unchanged and only the local selection functions have to be changed.
+    More generally, our modelling perspective on the different levels of ab-
+straction is a well known pattern studied extensively in computer science.
+Any mathematical or logical language for knowledge representation [9] faces
+a trade off between the goals of representation and reasoning [3], page 327:
+”[. . .] why do we not attempt to define a formal knowledge representation
+language that is coextensive with a natural language like English? [. . .] Al-
+though such a highly expressive language would certainly be desirable from
+a representation standpoint, it leads to serious difficulties from a reasoning
+standpoint.”
+    The difference between using utility functions and selection functions is
+that both differ in their representational power. The natural language de-
+scription of an economic situation can be more directly translated into the
+high level formal system of selection functions as opposed to the low level
+classical approach. We have depicted both in Figure 1. In our approach,
+the payoff matrix as in Table 7, can be automatically computed, and the
+modeller needs only to decide which selection functions represent the agents
+and which outcome function represents the situation. The classical approach
+is depicted in Figure 1 by a translation into the payoff matrices.
+    Our approach of context-dependent modeling of the left part of Figure
+1 can thus be seen as a modelling technique to reduce the gap between the
+high level description of an economic situation in natural language and the
+formal modelling language. Selection functions are mid-level in between the
+high level natural language and the low level language of utility maximization
+represented traditionally in calculus in classical games.
+   An account for the representational power of languages is an involved
+research topic and even more raising the expressivity while not sacrificing
+reasonability. However, our hypothesis is that this higher-order approach
+increases the expressivity of the representation language for game theory
+while not sacrificing reasoning possibilities.
+    In fact, our framework is ready for automated reasoning, as opposed to
+
+                                     41
+              Figure 1: Context depended and classical modelling
+  Economics        Description        in natural      language             Policy
+
+                          Context
+                         dependent
+                           model
+
+     Type           Selection Haskell Selection           Classical
+    theory          functions         equilibria           model
+
+
+                                            Haskell
+
+                                                                 Analyst Classical
+   Calculus                             Payoff        matrix
+                                                                         equilibria
+
+
+
+
+calculus [19]. Our approach is directly programmable in modern functional
+languages like Haskell that has been developed within the high level mod-
+ern mathematical type theory [20] in order to increase the expressivity of
+imperative languages such as Fortran or Matlab. The essence of functional
+languages is the usage of higher order functions that take and output other
+functions like selection functions, quantifier and outcome functions. Func-
+tional programming languages can be understood as languages to design
+languages. A typical approach to programing via functional languages is to
+design a domain specific language that allows to express the problems in a
+most direct and natural way while the program is compiled with its problem
+declaration into the low level solution steps of an intermediate imperative or
+a very low level machine language. This is much in the spirit of our approach
+to compile the selection function model into the payoff matrix of a classical
+representation of the Keynesian beauty contest game in Table 7.
+    Regarding automation, we have heavily taken advantage of a prototype
+Haskell tool that calculates equilibria by brute force (enumeration of all
+strategies) for the games we have discussed in this paper. In fact the discov-
+ery of the notion of selection equilibrium has been a direct consequence of
+using the tool. Before using the software we were misguided by our intuition,
+and did not recognise the difference between Nash equilibria and selection
+
+                                         42
+equilibria.
+   There are several avenues for future research. In this paper, we introduced
+a framework, so clearly the overall usefulness of our approach will depend
+on providing interesting applications. Secondly, we will extend the theory of
+selection functions to other classes of games, such as repeated and sequential
+games, as well as games of incomplete information. Lastly, we see a huge po-
+tential in using functional languages to model games, in particular large and
+complex games. We are currently working on a prototpye Haskell tool that
+allows us to do exactly that. Moreover we are working on the use of mon-
+ads (a very powerful paradigm for programming with higher order functions,
+implemented with great success in Haskell) to model computational effects
+in economics such as non-determinism, stochastic choice, memory and global
+state.
+
+
+References
+ [1] W. B. Arthur. Inductive reasoning and bounded rationality. The Amer-
+     ican economic review, 84(2):406411, 1994.
+
+ [2] Robert J. Aumann. Utility theory without the completeness axiom.
+     Econometrica, 30(3):pp. 445–462, 1962.
+
+ [3] Ronald Brachman and Hector Levesque. Knowledge Representation and
+     Reasoning. Morgan Kaufmann, 1 edition, May 2004.
+
+ [4] C.F. Camerer. Behavioral Game Theory: Experiments in Strategic In-
+     teraction. The Roundtable Series in Behavioral Economics. Princeton
+     University Press, 2011.
+
+ [5] Juan Dubra, Fabio Maccheroni, and Efe A. Ok. Expected utility the-
+     ory without the completeness axiom. Journal of Economic Theory,
+     115(1):118–133, March 2004.
+
+
+
+
+                                     43
+ [6] Martin Escardó and Paulo Oliva. Selection functions, bar recursion
+     and backward induction. Mathematical structures in computer science,
+    20(2):127–168, 2010.
+
+ [7] Martı́n Escardo and Paulo Oliva. Sequential games and optimal strate-
+     gies. Proceedings of the Royal Society A: Mathematical, Physical and
+    Engineering Science, 467(2130):1519–1545, 2011.
+
+ [8] Martin Escardó and Paulo Oliva. Computing Nash equilibria of un-
+    bounded games. Proceedings of the Turing centenary conference, 2012.
+
+ [9] Frank Van Harmelen, Vladimir Lifschitz, and Bruce Porter. Handbook
+     of Knowledge Representation. Elsevier New York, 2007.
+
+[10] Jules Hedges. A generalisation of Nash’s theorem with higher-order
+     functionals. Proc R Soc A, 469(2154), 2013.
+
+[11] Jules Hedges. Monad transformers for backtracking search. 2014.
+
+[12] D. Kahneman. Thinking, Fast and Slow. Farrar, Straus and Giroux,
+     2011.
+
+[13] Willemien Kets. The minority game: An economics perspective.
+     arXiv:0706.4432 [physics, q-fin], June 2007.
+
+[14] D.M. Kreps. Microeconomic Foundations I: Choice and Competitive
+     Markets. Number Bd. 1 in Microeconomic Foundations. Princeton Uni-
+    versity Press, 2012.
+
+[15] Andreu Mas-Colell, Michael D. Whinston, and Jerry Green. Microeco-
+     nomic Theory. 1995.
+
+[16] A. Mostowski. On a generalization of quantifiers. Fundamenta Mathe-
+     maticae, 44:12–36, 1957.
+
+[17] Efe A. Ok. Utility representation of an incomplete preference relation.
+     Journal of Economic Theory, 104(2):429–449, June 2002.
+
+
+
+                                    44
+[18] M.J. Osborne and A. Rubinstein. A Course in Game Theory. MIT
+     Press, 1994.
+
+[19] D. Pavlovic and M. H. Escardo. Calculus in coinductive form. In Logic
+     in Computer Science, 1998. Proceedings. Thirteenth Annual IEEE Sym-
+     posium on, page 408417, 2002.
+
+[20] Benjamin C Pierce. Types and programming languages. MIT press, 2002.
+
+[21] M. Richter. Rational choice. In John Chipman, L. Hurwicz, and H. Son-
+    nenschein, editors, Preferences, utility, and demand. Harcourt Brace Jo-
+    vanovich, New York, 1971.
+
+[22] A. Rubinstein. Lecture Notes in Microeconomic Theory: The Economic
+    Agent. Princeton University Press, 2006.
+
+
+
+
+                                    45
+
