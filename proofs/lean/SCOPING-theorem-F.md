@@ -1,7 +1,8 @@
 # Lean Scoping: Theorem F (BDI Carry-Polytope Facet Structure)
 
-**Date.** 2026-06-06
-**Status.** Scoping only — no Lean code yet. Pre-formalization design doc.
+**Date.** 2026-06-06 (created); 2026-06-07 (updated through `U_1`-redundancy).
+**Status.** In progress. Lemmas 1 + 6 + 7 of §3 are type-checked under
+lean 4.30.0 (pure stdlib, no Mathlib). See `bdi-polytope/BdiPolytope.lean`.
 **Source.** `2026-05-21-bdi-kobayashi-faces.md` (Day-28 proof).
 **Lean toolchain.** lean 4.30.0, lake 5.0.0, Mathlib (target: a recent release matching 4.30.0).
 
@@ -183,13 +184,13 @@ exists a configuration where this fence is tight and all others are strict."
 
 In rough order of difficulty:
 
-1. **`P_zero : P c 0 = 0`** — definitional.
-2. **`P_succ : P c (a+1) = P c a + 2 * (c.B a - c.T a)`** — definitional (the recursion).
-3. **`L1_implies_M1_zero`** — Part 1 of the theorem. One-step `linarith`. **First lemma to attempt.**
-4. **`P1_nonneg_from_L2_M2_nonneg` (n ≥ 3)** — chain $L_2 \wedge M_2 \ge 0 \Rightarrow P_1 \ge 0$.
-5. **`P1_nonneg_from_E_S_nonneg` (n = 2)** — chain $E \wedge S \ge 0 \Rightarrow P_1 \ge 0$.
-6. **`U1_redundant_n_ge_3`** — combines 3, 4 to derive $U_1$.
-7. **`U1_redundant_n_eq_2`** — combines 3, 5 to derive $U_1$.
+1. **`P_zero : P c 0 = 0`** — definitional. ✅ Done (Day 55).
+2. **`P_succ : P c (a+1) = P c a + 2 * (c.B a - c.T a)`** — definitional (the recursion). ✅ Done (Day 55).
+3. **`L1_implies_M1_zero`** — Part 1 of the theorem. One-step `linarith`. ✅ Done (Day 55).
+4. **`P1_nonneg_from_L2_M2_nonneg` (n ≥ 3)** — chain $L_2 \wedge M_2 \ge 0 \Rightarrow P_1 \ge 0$. ✅ Absorbed into omega in lemma 6 — no need to factor out.
+5. **`P1_nonneg_from_E_S_nonneg` (n = 2)** — chain $E \wedge S \ge 0 \Rightarrow P_1 \ge 0$. ✅ Absorbed into omega in lemma 7 — no need to factor out.
+6. **`U1_redundant_n_ge_3`** — combines 3, 4 to derive $U_1$. ✅ Done (Day 56) — single `omega` after invoking lemma 3.
+7. **`U1_redundant_n_eq_2`** — combines 3, 5 to derive $U_1$. ✅ Done (Day 56) — same shape using `S_nonneg` and `hE : S ≤ P_1`.
 8. **`L_a_witness_satisfies_other_fences` (a ≥ 2)** — bulk arithmetic on prefix sums.
 9. **`L_a_witness_violates_L_a`** — single-line check.
 10. **`U_a_witness_satisfies_other_fences` (a ≥ 2)** — same shape as 8.
@@ -200,8 +201,31 @@ In rough order of difficulty:
 15. *(Optional, hard)* **`facet_interior_witnesses`** — type-uniform interior witnesses
     from §"Facet verification" of the proof doc; saturate exactly one fence.
 
-Lemmas 1–7 are the entire "structural" part. Lemmas 8–13 are bookkeeping over `Fin (n-1)`
-that `omega` + `decide` should handle after the right `simp` normalization.
+Lemmas 1–7 are the entire "structural" part. **Through Day 56, 1+6+7 are done; 4 and 5
+collapse into them so the structural half of Theorem F is complete in 18 lines of Lean,
+no Mathlib.**
+
+Lemmas 8–13 are bookkeeping over `Fin (n-1)` that `omega` + `decide` should handle
+after the right `simp` normalization. *Open question:* my current `ChainConfig` indexes
+`M, B, T` by `Nat` (total functions) rather than `Fin (n-1)`. For witnesses we'll need
+to either (a) commit to `Fin` (and add an `n : Nat` field to `ChainConfig`), or
+(b) keep `Nat` indexing and construct witnesses as explicit `Nat → Int` functions with
+`Nat.casesOn`-style definitions. **(b)** keeps us stdlib-only; **(a)** is closer to the
+math but introduces a `Fin (n-1)` empty-when-`n=0` corner case that needs `[hn : 2 ≤ n]`.
+Decide next session — probably **(b)** to stay Mathlib-free as long as possible.
+
+### Re-ranking remaining lemmas by easiness (Day 56)
+
+The next-cheapest lemmas to attack:
+
+- **13 (`E_witness_violates_E`)** — literally `1 > 0`. Trivial; do it as a warmup.
+- **12 (`E_witness_satisfies_others`)** — construct the witness `S = 1`, all else 0,
+  then unfold P recursively. Should be `simp` + `omega`.
+- **9 (`L_a_witness_violates_L_a`)** — single inequality at one index. `omega`.
+- **11 (`U_a_witness_violates_U_a`)** — same shape as 9.
+- **8, 10** — bulk arithmetic; the real work. Need a lemma about $P$ on the carry witness.
+
+Recommend: next session = lemmas 12 + 13 (the `E` witness, fully done).
 
 ---
 
@@ -292,8 +316,13 @@ risk that Mathlib's convex polytope API is thin (still under development as of M
 ## 8. Status
 
 - Lean 4.30.0 + Lake 5.0.0 installed; toolchain works.
-- Scoping doc complete. **No Lean code written yet** — that's session 1's work.
-- Recommended first move: `lake new bdi_facets math` to scaffold a Mathlib-dependent
-  project, then attempt Lemma 1 (`L1_implies_M1_zero`).
+- ~~Scoping doc complete. **No Lean code written yet** — that's session 1's work.~~
+- **Day 55:** `ChainConfig`, `P`, `P_zero`, `P_succ`, `L1_implies_M1_zero` ✅
+- **Day 56:** `U1_redundant_n_ge_3`, `U1_redundant_n_eq_2` ✅. Structural half of
+  Theorem F (lemmas 1–7) is done in `BdiPolytope.lean` (~80 lines, pure stdlib).
+- Decision validated: pure `Int` + `omega` is enough for the structural half. No
+  Mathlib has been needed so far, contrary to the §5 anticipation.
+- Open question for Robin: should we keep `Nat`-indexing for witnesses (lemmas 8–13)
+  or switch to `Fin (n-1)`? See §3 re-ranking discussion above.
 
 — Rick

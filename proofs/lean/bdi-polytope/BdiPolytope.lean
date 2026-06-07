@@ -66,4 +66,44 @@ theorem L1_implies_M1_zero (c : ChainConfig)
   have hM : 0 ≤ c.M 0 := c.M_nonneg 0
   omega
 
+/-- **Lemma 4 of Theorem F: `U_1` is redundant when `n ≥ 3`.**
+
+The upper-fence inequality `U_1` says `M_1 ≤ P_1`. We show it is implied
+by `L_1` (which forces `M_1 = 0` via lemma 1) together with `L_2 : M_2 ≤ P_1`
+and the non-negativity `M_2 ≥ 0`.
+
+Chain:
+* `L_1` plus nonneg ⇒ `M_1 = 0`               (lemma 1)
+* `L_2` says `M_2 ≤ P_1`
+* `M_2 ≥ 0` (structural)
+* Hence `0 ≤ M_2 ≤ P_1`, so `M_1 = 0 ≤ P_1`.
+
+**Indexing note.** In our `ChainConfig`, `M, B, T` are total functions on `Nat`,
+so there is no explicit `n` constraint; the meaning "`n ≥ 3`" is captured by
+the fact that `L_2 : M_2 ≤ P_1` (a hypothesis here) only appears among the
+fences when `n ≥ 3`. The companion result `U1_redundant_n_eq_2` will replace
+`hL2` with the end-fence `E : S ≤ P_{n-1}`. -/
+theorem U1_redundant_n_ge_3 (c : ChainConfig)
+    (hL1 : c.M 0 ≤ P c 0)
+    (hL2 : c.M 1 ≤ P c 1) :
+    c.M 0 ≤ P c 1 := by
+  have h0 : c.M 0 = 0 := L1_implies_M1_zero c hL1
+  have h2 : 0 ≤ c.M 1 := c.M_nonneg 1
+  omega
+
+/-- **Companion lemma: `U_1` is redundant when `n = 2`.**
+
+The same statement as `U1_redundant_n_ge_3`, but using the end-fence `E`
+instead of `L_2` to witness `P_1 ≥ 0`. In the `n = 2` case the polytope has
+no `L_2` (math has fences only for `a ∈ {1, ..., n-1}`, so for `n = 2`
+the only `L` fence is `L_1`). Instead, the end-fence `E : S ≤ P_{n-1}`
+specialises to `S ≤ P_1`, and `S ≥ 0` gives `P_1 ≥ 0`. -/
+theorem U1_redundant_n_eq_2 (c : ChainConfig)
+    (hL1 : c.M 0 ≤ P c 0)
+    (hE  : c.S ≤ P c 1) :
+    c.M 0 ≤ P c 1 := by
+  have h0 : c.M 0 = 0 := L1_implies_M1_zero c hL1
+  have hS : 0 ≤ c.S := c.S_nonneg
+  omega
+
 end BdiPolytope
