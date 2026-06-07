@@ -1,0 +1,7 @@
+spec,N,n_aii,n_bad,n_bdi,covered,coverage_pct
+pi_2_strawman,6,39,0,34,23,67.65
+pi_2_corrected,6,39,0,34,34,100.0
+pi_3_strawman,6,292,10,286,69,24.13
+pi_3_doubled,6,292,55,286,52,18.18
+pi_2_corrected,20,1232,0,632,632,100.0
+pi_2_strawman,20,1232,0,632,358,56.65
