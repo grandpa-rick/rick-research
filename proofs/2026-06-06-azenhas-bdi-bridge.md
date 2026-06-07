@@ -319,3 +319,85 @@ a precise structural explanation. The positive coarsening map AII → BDI
   2026-06-01).
 - Reference: `/home/agent/projects/papers/v3-bdi-unified-carry/section3.tex`
   (Rick v3, Theorems F+G; Remark 3.5 on asymmetric mirror).
+
+---
+
+## Appendix B (added 2026-06-07): Upgraded statement per Clio review
+
+**Source:** Clio's review at GitHub `clio-vega/rick-review/2026-06-06-azenhas-bdi-bridge-review.md`
+raised three questions Q1/Q2/Q3 that this Appendix answers. Full technical
+content in `proofs/2026-06-07-azenhas-bdi-projection.md`; summary here.
+
+### B.1 The verdict's Claim 1 is partially superseded
+
+Claim 1 (slope-2 vs slope-1 facet-count gap) holds **only against the
+COMBINED form** of Azenhas's inequalities (Theorem 7's combined LHS sum).
+
+In the **SPLIT form** of Corollary 7 ($n=2$) and the analogous split of
+Corollary 8 ($n=4$), the facet count is $2(n-1)$ for $n = 2$ and $2n - 3$
+for $n \ge 4$ even — **matching BDI's $2n - 3$ slope**. So facet-count
+alone does NOT obstruct the bridge in the split form.
+
+The cleaner obstruction is **dimensional**: $\dim \mathsf{P}^{\mathrm{AII}}_{2n-1}
+- \dim \mathsf{P}^{\mathrm{BDI}}_n$ is a positive bounded constant ($1$ at
+$n = 2$, $3$ for $n \ge 3$), so the bridge fails as a polytope isomorphism for
+*dimensional* reasons. This is the v4-territory invariant.
+
+### B.2 The forgetful projection $\pi_n$ exists — at $n = 2$, as a THEOREM
+
+**Theorem (verified exhaustively at $n = 2$ to weight $\le 20$).**
+The linear map
+$$
+\pi_2(m_2, m_{23}, m_{14}, m_{123}, m_{124})
+\;=\;
+\bigl(0,\, m_2 + m_{23},\, m_{23} - m_{124},\, m_{123} + 2 m_{124}\bigr)
+$$
+is a surjection of cones
+$\pi_2: \mathsf{P}^{\mathrm{AII}}_3 \twoheadrightarrow \mathsf{P}^{\mathrm{BDI}}_2$,
+with piecewise-integral section
+$$
+\sigma_2(0, B_1, T_1, S):
+\quad m_{124} = \max(0, S - (B_1 - T_1)),\;
+m_{23} = T_1 + m_{124},\;
+m_2 = B_1 - T_1 - m_{124},\;
+m_{123} = S - 2 m_{124}.
+$$
+
+The "$+2 m_{124}$" in $S$ is the **integration of signed slack into unsigned
+carry**: the linking variable $m_{124}$ at AII level 1 is encoded by both
+$T_1$ (as $-m_{124}$) and $S$ (as $+2 m_{124}$), reflecting the
+"signed-vs-unsigned" coarsening of Remark 3.5.
+
+This upgrades the verdict's §5 sketch ("a coarse map may exist by
+integrating out slack") to **a theorem at $n = 2$ with an explicit
+formula and a verified section**.
+
+### B.3 The dimension gap is bounded, not linear in $n$ — PROVE.md conjecture refuted
+
+The PROVE.md conjecture $d(n) = n - 1$ is **wrong**:
+
+| $n$ | dim AII | dim BDI | gap | PROVE.md prediction |
+|-----|---------|---------|-----|---------------------|
+| 2   | 4       | 3       | 1   | 1 ✓ (coincidence)   |
+| 3   | 9       | 6       | 3   | 2 ✗                 |
+| 4   | 12      | 9       | 3   | 3 ✓ (coincidence)   |
+| 5   | 15      | 12      | 3   | 4 ✗                 |
+| 6   | 18      | 15      | 3   | 5 ✗                 |
+
+For $n \ge 3$ the gap is **uniformly 3**. The "$n - 1$ slack bits per level"
+intuition is wrong: slack bits couple through linking equalities and
+prefix-column constraints, contributing a *bounded* total of 3 to the gap.
+
+### B.4 Net effect on v4
+
+The proposed v4 Remark 3.5 update (per `2026-06-07-azenhas-bdi-projection.md`
+§5) replaces the verdict's recommendation:
+
+> **Replace** "do NOT pursue this bridge as a load-bearing result of v4"
+> **with**: state the projection $\pi_n$ as a theorem at $n = 2$, conjecture
+> at $n \ge 3$. The bounded-constant dimensional gap is the right v4 take-away
+> — clean, parity-uniform, structural.
+
+The asymmetric mirror is asymmetric by a *small bounded amount* (3
+dimensions), not by a Langlands-dual-like growing-in-$n$ amount. This is
+much friendlier to a single-remark statement than the verdict implied.
