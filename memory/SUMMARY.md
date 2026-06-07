@@ -108,12 +108,13 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 ## Open questions
 
 **Active (worth tracking):**
-- **OQ-PIN-SURJ** (NEW Day 56) — Surjectivity of $\tilde\pi_n$ at $n \ge 3$. Singleton-fiber obstruction at n=3 named. Modified projection conjectured (Singleton-aware double-prefix absorption). Named-paper-shaped. Effort ~1-2d at n=3. **PROVE.md candidate for Day 57.** See `questions/q-pi-n-surjectivity.md`.
+- **OQ-PIN-SURJ** (NEW Day 56, partial progress Day 57) — Surjectivity of $\tilde\pi_n$ at $n \ge 3$. **Day 57 update:** §4 lands-in-cone VERIFIED in the FULL 9-var Cor 6 polytope (was a 7-var enum bug, not a structural failure); 100% land-in-cone at $N \le 10$, 6375 pts. Best linear $\tilde\pi_3'$ candidate (`R_double_m2345`) reaches 68–80% coverage but stabilises ~68%. Three missing fibre families identified: $M_2 > B_1 - T_1$, $T_2 > B_1 - T_1$, $S$ with all carry-mass on level 1. Piecewise-linear $\tilde\pi_3'$ conjectured (cases on Singleton saturation + on $M_2 \lessgtr B_1 - T_1$). See `proofs/2026-06-08-pi3-section4-fix.md` and `code/2026-06-08-pi3-construction/`.
 - **OQ-LUSZTIG-MARBERG** (P_PARK #1) — Three attack angles: (a) Zhang+Lusztig molecule-cell; (b) optional Bhattacharya TC^J; (c) Marberg-Scrimshaw P/Q-key via square root crystals — angle-3 gap named-paper-shaped (Marberg-Tong / Marberg-Tong-Yu / Marberg-Scrimshaw). Effort ~5.5d (angles 1+2). Watch 2026-2027 for Marberg-program shifted-√ output.
 - **OQ-ZHANG-MARBERG** — Does Zhang 2412.07810 + Lusztig 2510.21499 resolve Marberg's 4 twisted-involution KL conjectures? P=35%. Three-sided dormancy.
 - **OQ-HUANG-B** (P_PARK #3) — NSym^B as standalone Hopf algebra. Entry point: Kim-Searles 2601.22926 (QSym^B SOTA, comodule) → NSym^B = contravariant dual. Technical route: Almousa-Lu 2601.13324 ribbon-complex dualized to type B.
 - **OQ-LU-PAN-EXPLICIT** (P_PARK #4) — Explicit formula for Chen-Lu $C_b$ on split $B_n$? Entry: Appendix A of 2601.00524. Template: Ziming Chen 2601.13482 (rank-1 AIII).
 - **OQ-G-INTRINSIC** (P_PARK #2) — Coordinate-free $\mathcal{K}_n$ as "dominant chamber + one carry-wall."
+- **OQ-AHA-RSK** (NEW Day 57 Browse 49) — Does Berele insertion (Watanabe's type-AII RSK) admit spectral basis-change realization in degenerate affine iquantum algebra H^imath_n, analogous to Stern's AHA result for classical RSK via JM elements? Template: Stern 2606.00679. Target: Watanabe 2509.00853. ~1d. See `questions/q-iquantum-aha-rsk.md`.
 - **OQ-MILLS-TYPEB** (horizon) — Mills Part III for $H_{(B_n, A_{n-1})}$? Mills 2605.23072 = Part II (Browse 48).
 - **OQ-GhaniDual** — $T^{\mathrm{obs}}_\delta$ as graded comonad / opfibration map / profunctor.
 - **OQ-G2 (parked)** — Non-bracket framework for $G_2$.
@@ -148,22 +149,28 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 3. **OQ-HUANG-B** — Kim-Searles entry.
 4. **OQ-LU-PAN-EXPLICIT** — Chen-Lu Appendix A; Chen rank-1 AIII template. ~½d.
 5. **OQ-PIN-SURJ** (Day 56 add, promoted from P_PARK #5 reframe) — n=3 modified projection. ~1-2d at n=3. Singleton-aware double-prefix conjecture. May upgrade to P1 if Robin gives green light to substantive work pre-Q-SPHERE.
-6. **Shen-Wang arXiv:2408.02874** — q-Brauer ↔ QSP Schur duality via QSP. ~0.5d.
-7. **Salmasian-Savage-Shen 2507.12328** — Disoriented skein + iquantum Brauer. ~1d.
-8. **Salmasian-Savage-Shen sequel 2603.18264** — Twisted cylinder twist + QSP reflection eq. ~0.5d (read w/ #7).
-9. **Luo-Su-Xu 2605.09589** — Affine iquantum + Steinberg type C II. ~1d.
-10. **Kobayashi-Matsumura 2506.06951** — Type C RSK + Berele insertion. ~0.5d.
-11. **Wang-Zhang 2508.12041** — Relative braid group symmetries on modified iquantum.
-12. Mills 2601.15426 + 2605.23072 (Part II) — background. ~1-2h skim.
-13. **OQ-FROHMADER-STRUCT**.
+6. **Stern 2606.00679** — AHA RSK = spectral basis change in H_n via JM elements. HIGH. Entry point for OQ-AHA-RSK. ~0.5d read. (Browse 49)
+7. **Shen-Wang arXiv:2408.02874** — q-Brauer ↔ QSP Schur duality via QSP. ~0.5d.
+8. **Salmasian-Savage-Shen 2507.12328** — Disoriented skein + iquantum Brauer. ~1d.
+9. **Salmasian-Savage-Shen sequel 2603.18264** — Twisted cylinder twist + QSP reflection eq. ~0.5d (read w/ #8).
+10. **Luo-Su-Xu 2605.09589** — Affine iquantum + Steinberg type C II. ~1d.
+11. **Kobayashi-Matsumura 2506.06951** — Type C RSK + Berele insertion. ~0.5d. (read abstract Browse 49)
+12. **Wang-Zhang 2508.12041** — Relative braid group symmetries on modified iquantum.
+13. Mills 2601.15426 + 2605.23072 (Part II) — background. ~1-2h skim.
+14. **He-Tubbenhauer 2606.02249** — Presentations for crystal monoidal categories. MEDIUM-HIGH. ~0.5d. (Browse 49)
+15. **iHopf algebras 2511.11291** (Chen-Lu-Pan-Ruan-Wang Part I) — iHopf framework, settles Berenstein-Greenstein. Path 1+2 bridge. ~1d. (Browse 49)
+16. **Schlösser-Meereboer 2511.23367** — Matrix spherical functions + Macdonald polynomials via QSP. MEDIUM. ~0.5d post-Q-SPHERE. (Browse 49)
+17. **OQ-FROHMADER-STRUCT**.
 
-**Browse 48 DONE (June 7).** Browse 49 target = June 8-12 Q-SPHERE window: (a) Watanabe preprint drop June 8-9?; (b) Meereboer-Kolb preprint drop?; (c) De Commer preprint drop post-June 12; (d) Watanabe 2407.07280 cite acceleration (baseline 4); (e) Schilling IMJ-PRG notes (post-June 15).
+**Browse 49 DONE (June 8, T-0d Q-SPHERE).** No preprint drops (normal lag). Watanabe 2407 = flat (4). Q-SPHERE schedule confirmed exact. **Key find: Stern 2606.00679 (AHA RSK = spectral basis change in H_n, HIGH, OQ-AHA-RSK filed).** Browse 50 target: (a) Watanabe preprint drop June 9+; (b) Meereboer-Kolb preprint; (c) cite acceleration check post-talks; (d) Kobayashi June 11 + De Commer June 12 preprints; (e) Schilling IMJ-PRG notes (check June 17+).
 
 **PROVE.md status:** WRITE FOR DAY 57. Target OQ-PIN-SURJ at n=3.
 
 ---
 
 ## Calibration rules (active, most recent first)
+
+- **Day 57 — Parallel-enum drift.** When the codebase has multiple enumerations of the "same" polytope (e.g., fast-script + full-script), they CAN drift apart silently. The fast version may be a relaxation (missing an inequality). When a verification result contradicts a proof claim, check whether they used the SAME polytope before assuming the proof is wrong. Lattice counts ($c_N$ sequence) are the fastest cross-check vs §1 dim count.
 
 - **Browse 46 — Two-sided correction rule.** When agent B's "correction" contradicts agent A's verbatim quote, NEITHER is accepted without independent direct-fetch. Both fabrication and mis-correction occur.
 - **Day 50 — Promotion thresholds.** Refines existing layer = journal only; opens new layer = connection file; operational refinement of load-bearing existing-file content = minimal targeted edit. STABLE at 41+ consecutive applications.
@@ -200,6 +207,8 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 
 ## Recent history (one-liners, journals have detail)
 
+- **Day 57 (2026-06-08) prove deep-session** — Half 1 CLOSED, Half 2 PARTIAL. §4 of `2026-06-07-azenhas-bdi-projection.md` reconciled with FINDINGS: the contradiction was a **code bug in `task2_verify_pi.py`** (used a 7-var sub-polytope omitting Main$_3$ + cols $m_{1234}, m_{23456}$). In the FULL 9-var polytope, §4's $\tilde\pi_3$ lands in BDI cone 100% to $N = 10$ (6375 AII pts, 0 violations). 4-line proof using Main$_3$ twice. The "phantom" $m_{1234}$ is the genuine level-3 Cor 6 slack column. Fix note + §4 in-place patch + collaborator note for Clio. Half 2 (surjective $\tilde\pi_3'$): 6+ linear candidates tested, best is `R_double_m2345` at ~68% coverage stabilising; piecewise-linear conjectured but not constructed. Day-29 falsification-productivity rule still holds: $m_{1234}$ is structurally cleaner than feared (it's the obvious n=3 analog of n=2's $m_{124}$). **New calibration:** parallel codebase enumerations can DRIFT — `enum_full.py` was correct, `task2_verify_pi.py` enum was a stale copy without Main$_3$. Cross-check lattice counts vs §1 dim count when verifying.
+
 - **Day 56 (2026-06-07) dream** — 14:29 UTC. ONE new connection file (`azenhas-bdi-canonical-projection.md`, Tier S). ONE new question file (`q-pi-n-surjectivity.md`, OQ-PIN-SURJ). TWO targeted edits (watanabe-2509 OPEN-4 RESOLVED + carry-Pa six-roles add). SUMMARY recompression (359 → ~250 lines). Streak 41/41.
 - **Day 56 Lean** — 11:52 UTC. U1_redundant_n_ge_3 + U1_redundant_n_eq_2 type-check via omega. Structural half of Theorem F (lemmas 1-7) DONE in ~80 lines pure stdlib. Scoping lemmas 4+5 collapse inline. Indexing decision shipped to Robin.
 - **Day 56 Code** — 09:40 UTC. N=20 tables reproduce Clio's. BDI cubic 1/18; Azenhas quartic 1/288; BOTH period-6 quasipolynomials (new). π_3 straw-man fails on Singleton fiber. Combined-vs-split facet counts settled by LP.
@@ -227,6 +236,7 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 
 ## Browse cycle index (most recent 10)
 
+- **Browse 49 (Day 57, 2026-06-08) — DONE.** T-0d Q-SPHERE, opening day. All three priority preprints NOT FOUND (normal arXiv lag). Watanabe 2407 cite: flat (4). Key finds: Stern 2606.00679 (AHA RSK = H_n spectral basis change via JM elements, HIGH, OQ-AHA-RSK filed); Johnston-Nguyen-Schilling 2606.02972 read (5-vertex K-theoretic crystal, type-A); He-Tubbenhauer 2606.02249 (crystal category presentations, MEDIUM-HIGH); Neguț-Wang 2606.02471 (twisted q-characters, Hernandez conjecture); iHopf algebras 2511.11291+2601.00524 banked (settles Berenstein-Greenstein, Path 1+2 bridge); Q-SPHERE schedule confirmed exact; Kobayashi-Matsumura 2506.06951 read (type-C RSK, SSOT); Schlösser-Meereboer 2511.23367 (spherical functions + Macdonald). Marberg 1306 flat (4). Reading log: `reading/2026-06-08.md`.
 - **Browse 48 (Day 56, 2026-06-07) — DONE.** T-1d Q-SPHERE, sixth consecutive early-fire. All three priority preprints NOT FOUND (Watanabe-Hoshino / Meereboer-Kolb / De Commer). Direct indico fetch: Watanabe official title = "Quantizations of coordinate algebras of symmetric pair subalgebras," no Hoshino as co-speaker; De Commer shown solo (NTY co-authorship unconfirmed); both suspended per two-sided correction. Kobayashi time 09:50→09:00. New feeds: Johnston-Nguyen-Schilling 2606.02972 (5-vertex RSK HIGH), Stern 2606.00679 (AHA! RSK MEDIUM-HIGH), Mills 2605.23072 (Part II type-D MEDIUM), Lu-Wang-Weekes 2603.28446 (shifted affine iquantum MEDIUM). Citation counts: Watanabe 2407 = 4 (flat), Marberg 1306 = 4 (flat). Reading log: `reading/2026-06-07.md`.
 - **Browse 47 (Day 55, 2026-06-06) — DONE.** Bi-icrystal = iquantum Peter-Weyl confirmed. Mao Hoshino = RIKEN iTHEMS C*-algebraist. De Commer "MODULE" precision upgrade. Azenhas P_PARK #5 = two-paper block. Harness-adaptive → FORMAL CALIBRATION 6/6. 4 new feed papers.
 - **Browse 46 (Day 55, 2026-06-06) — DONE.** T-2d. RESOLUTION: Meereboer-Kolb joint framing RESTORED (Browse 45 was mis-correction); phantom-attribution counter = 3 (not 4). Watanabe = bi-icrystals w/ Hoshino. De Commer = NTY co-authors. Watanabe 2110.07177 = 12, CALIBRATION CLOSED. Azenhas linear-inequality CONFIRMED. Two-sided-correction sub-rule added.
@@ -247,7 +257,7 @@ Earlier browses (1-38) in `reading/` directory.
 | Paper | SS Count | Notes |
 |---|---|---|
 | Watanabe 2110.07177 | 12 (**CLOSED** Browse 46) | All known. |
-| Watanabe 2407.07280 | 4 (Browse 48 flat) | All Q-SPHERE participants. Forward-watch post-conference. |
+| Watanabe 2407.07280 | 4 (Browse 49 flat, T-0d) | All Q-SPHERE participants. Expect acceleration post-June 9 talks. |
 | Lu-Pan I 2504.19073 | 1 | Lu-Ruan-Zhang IMRN 2025 (cluster, off-target). |
 | Lu-Pan II 2603.01350 | 1 | Lu-Pan dual=double synthesis. |
 | Lusztig 2510.21499 | 0 | 8+ months. |
@@ -282,7 +292,7 @@ Earlier browses (1-38) in `reading/` directory.
 - `clio-vega/rick-review` (Clio's repo) — her review of my work; Day-56 morning entry on Azenhas verdict.
 - `grandpa-rick/clio-review` (Rick's repo) — my reviews of Clio's work; Day-56 entry on two-row d=4 reduction.
 - `grandpa-rick/rick-research` — main work. Day 56 commits: `575f25c` (projection theorem), `[lean] 2026-06-07 — U_1 redundancy`.
-- `state/PROVE.md` — Day 56 PROVE used (Azenhas reply). Day 57: target OQ-PIN-SURJ at n=3.
+- `state/PROVE.md` — Day 56 PROVE used (Azenhas reply). Day 57 PROVE used (§4 reconciliation): Half 1 CLOSED, Half 2 PARTIAL.
 
 ---
 

@@ -273,7 +273,22 @@ $\tilde\pi_2(\sigma_2(q)) = q$; the projection is **lattice-surjective**.
 
 ---
 
-## 4. Sketch at $n = 3$ (open)
+## 4. Sketch at $n = 3$ (lands-in-cone proved; surjectivity open)
+
+**UPDATE 2026-06-08:** §4 lands-in-cone claim is **VERIFIED**. The
+contradiction with FINDINGS task 2 (10/292 violations) was a code bug in
+`code/2026-06-07-aziplot-N20/task2_verify_pi.py`: the script used a
+7-variable subpolytope omitting $m_{1234}$, $m_{23456}$, and the Main$_3$
+inequality. See `proofs/2026-06-08-pi3-section4-fix.md` for the full
+reconciliation and reading of $m_{1234}$ as the genuine level-3 Cor 6 slack.
+
+The full Cor 6 polytope at $n = 3$ has 9 variables (per §1.2):
+$m_2, m_{23}, m_{236}, m_{23456}, m_{12356}, m_{12346}, m_{2345}, m_{1235}, m_{1234}$
+with Main$_2$ ($m_{12356} + m_{1235} \le m_2$), Main$_3$ ($m_{12346} +
+m_{1234} \le m_{23}$), Singleton ($0 \le m_{12346} - m_{1235} - m_{2345}
+\le m_{23}$), all $\ge 0$, $m_{23456}$ free. (Lattice counts: 1, 5, 18, 51,
+127, 284, 589, 1145, 2116, 3741, 6375 for $N = 0, \ldots, 10$ — matches
+§7 "full Theorem 6".)
 
 Define a candidate $\tilde\pi_3$ using the "Main slack absorbed into chain"
 template:
@@ -282,28 +297,28 @@ template:
 - $B_2 = m_{23} + m_{1235}$, $T_2 = m_{1235}$
 - $S = m_{12346} + 2 m_{1234}$
 
-**Verified (script `/tmp/test_n3.py`):** $\tilde\pi_3$ lands in BDI cone for
-all AII points up to $N = 6$ (589 AII points, 0 violations). Lands-in-cone
-condition follows from Main$_2$ ($m_{12356} + m_{1235} \le m_2$), Main$_3$
-($m_{12346} + m_{1234} \le m_{23}$), and trivial non-negativity.
+**Theorem ($\tilde\pi_3$ lands in cone).** $\tilde\pi_3(\mathsf{P}^{\mathrm{AII}}_5)
+\subset \mathsf{P}^{\mathrm{BDI}}_3$.
 
-**NOT verified:** surjectivity at $n = 3$. The image at $N = 6$ has 97
-elements out of 286 BDI lattice points (34% coverage). The construction
-analogous to $\sigma_2$ does not extend uniformly, because at $n = 3$ there
-is no single "linking variable" to encode the doubling structure that gave
-$\sigma_2$ surjectivity.
+*Proof.* $P_1 = 2 m_2$, $P_2 = 2(m_2 + m_{23})$. Need $S \le P_2$. By Main$_3$,
+$m_{12346} \le m_{23} - m_{1234}$ and $m_{1234} \le m_{23}$, so
+$S = m_{12346} + 2 m_{1234} \le m_{23} - m_{1234} + 2 m_{1234} = m_{23} + m_{1234}
+\le 2 m_{23} \le P_2$. The other inequalities are immediate. $\square$
 
-**Conjecture.** A modified projection
-$$
-\tilde\pi_3': B_1 = m_2 + m_{23}, \quad B_2 = m_{23} + m_{236}, \quad T_a = \text{(something with red-inv at } a+1\text{)}
-$$
-analogous to the $n=2$ "double-prefix" form should be surjective, but I have
-not constructed it. The technical obstacle is that at $n = 3$ (odd), the
-Singleton replaces the Linking, and the Singleton involves $m_{2345}$ (slack
-at $i = 1$) that has no clean analog to the linking var $m_{124}$ at $n = 2$.
+**Verified to $N = 10$:** 6375 AII lattice points, **0 violations**
+(`code/2026-06-08-pi3-construction/verify_full.py`).
 
-**Status:** $\tilde\pi_3$ is well-defined and lands in BDI cone; surjectivity
-remains open.
+**Surjectivity is NOT achieved by this $\tilde\pi_3$.** Coverage:
+27% at $N = 6$, 16% at $N = 10$ (decreasing, as expected — AII is 9-dim and
+BDI is 6-dim). Multiple linear extensions tested (`verify_full_v3.py`); best
+linear candidate `R_double_m2345` reaches 68–80% coverage. None of the
+linear maps tested is surjective, suggesting a **piecewise-linear**
+$\tilde\pi_3'$ is required (analogous to how $\sigma_2$ is piecewise at $n = 2$).
+
+**Status:** $\tilde\pi_3$ is well-defined and lands in BDI cone (proved).
+Surjective $\tilde\pi_3'$ remains open; conjectured to be piecewise-linear
+with cases on the saturation of the Singleton range and on whether
+$M_2 \le B_1 - T_1$ (since BDI allows $M_2 \le P_1 = 2(B_1 - T_1)$).
 
 ---
 
@@ -344,10 +359,11 @@ exist") to a proved result at $n = 2$ with the higher-$n$ case sketched.
 
 ## 6. Gaps (precisely stated)
 
-1. **Surjectivity of $\tilde\pi_3$:** the projection lands in BDI cone (verified
-   computationally) but is not surjective with the naive construction. A
-   modified projection encoding the Singleton structure analogously to $n = 2$'s
-   linking-doubling is conjectured but not constructed.
+1. **Surjectivity of $\tilde\pi_3$:** the projection lands in BDI cone
+   (verified to $N = 10$ in the full 9-var polytope — see Day-57 fix note
+   `proofs/2026-06-08-pi3-section4-fix.md`). It is NOT surjective; the best
+   linear candidate tested (`R_double_m2345`) reaches ~68% coverage. A
+   piecewise-linear $\tilde\pi_3'$ is conjectured but not constructed.
 
 2. **Linearity of $\pi_n$:** at $n = 2$, $\tilde\pi_2$ is linear and $\sigma_2$
    is piecewise-linear (Case 1 vs Case 2). It's open whether $\sigma_n$ can
