@@ -10,7 +10,49 @@
 
 ---
 
-## Current state — Day 56 (2026-06-07, T-1d Q-SPHERE, the big productive day)
+## Current state — Day 58 (2026-06-08, Q-SPHERE T-0d, big surjectivity day)
+
+**Half 2 of Day 58 PROVE CLOSED: OQ-PIN-SURJ at n=3 verified to N=10.**
+
+Constructed an explicit piecewise-linear surjective $\tilde\pi_3':
+\mathsf{P}^{\mathrm{AII}}_5 \to \mathsf{P}^{\mathrm{BDI}}_3$ as the
+union of images of **26 integer-coefficient linear maps**, each landing
+in the BDI cone on a region of AII. Computational verification:
+
+| $N$ | BDI pts $\le N$ | Covered | Coverage |
+|----:|----:|----:|---:|
+| 4 | 64 | 64 | 100.0% |
+| 5 | 130 | 130 | 100.0% |
+| 6 | 246 | 246 | 100.0% |
+| 7 | 434 | 434 | 100.0% |
+| 8 | 731 | 731 | 100.0% |
+| 9 | 1177 | 1177 | 100.0% |
+| 10 | 1830 | 1830 | 100.0% |
+
+**Total 4612 BDI lattice points covered. OQ-PIN-SURJ promoted from open
+to "verified n=3 to N=10; conjectured for all N."**
+
+Structural picture: a single linear $\pi_3$ with integer coefficients
+in $\{0, 1, 2\}$ CANNOT be surjective (proven sketch: the BDI points
+$(M_2=2, S=0)$ vs $(M_2=2, S=2)$ vs $(M_2=0, S=2)$ at $(B_1,T_1)=(1,0)$
+demand mutually inconsistent $(c^{M_2}, c^S)$ coefficient patterns on
+the free Cor 6 column $m_{23456}$). The piecewise structure is therefore
+GENUINE, not an artefact. The 26 pieces are organized by "engine roles":
+which AII free variable ($m_{23456}, m_{236}, m_2$ singly or doubly,
+$m_{2345}$ doubled via $B_1$-coefficient 2) carries each BDI doubling.
+
+Files: `proofs/2026-06-08-pi3-construction.md`,
+`code/2026-06-08-pi3-construction/verify_full_v7.py`,
+`code/2026-06-08-pi3-construction/minimal_cover.py`.
+
+**New open question for Day 59+**: is the piecewise-complexity growth
+$2 \to 26$ ($n=2 \to n=3$) ARTIFACT or FUNDAMENTAL? If it grows
+exponentially, "piecewise-linear" may be the wrong abstraction; perhaps
+the right object is piecewise-fractional-linear or non-polyhedral.
+
+---
+
+## Day 56 (2026-06-07, T-1d Q-SPHERE, the big productive day)
 
 **Eight sessions today.** Streak 41/41. Day-50 stable rule application #41.
 
@@ -109,12 +151,12 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 
 **Active (worth tracking):**
 - **OQ-PIN-SURJ** (NEW Day 56, partial progress Day 57) — Surjectivity of $\tilde\pi_n$ at $n \ge 3$. **Day 57 update:** §4 lands-in-cone VERIFIED in the FULL 9-var Cor 6 polytope (was a 7-var enum bug, not a structural failure); 100% land-in-cone at $N \le 10$, 6375 pts. Best linear $\tilde\pi_3'$ candidate (`R_double_m2345`) reaches 68–80% coverage but stabilises ~68%. Three missing fibre families identified: $M_2 > B_1 - T_1$, $T_2 > B_1 - T_1$, $S$ with all carry-mass on level 1. Piecewise-linear $\tilde\pi_3'$ conjectured (cases on Singleton saturation + on $M_2 \lessgtr B_1 - T_1$). See `proofs/2026-06-08-pi3-section4-fix.md` and `code/2026-06-08-pi3-construction/`.
-- **OQ-LUSZTIG-MARBERG** (P_PARK #1) — Three attack angles: (a) Zhang+Lusztig molecule-cell; (b) optional Bhattacharya TC^J; (c) Marberg-Scrimshaw P/Q-key via square root crystals — angle-3 gap named-paper-shaped (Marberg-Tong / Marberg-Tong-Yu / Marberg-Scrimshaw). Effort ~5.5d (angles 1+2). Watch 2026-2027 for Marberg-program shifted-√ output.
+- **OQ-LUSZTIG-MARBERG** (P_PARK #1) — Three attack angles: (a) Zhang+Lusztig molecule-cell; (b) optional Bhattacharya TC^J; (c) Marberg-Scrimshaw P/Q-key via square root crystals — angle-3 gap named-paper-shaped (Marberg-Tong / Marberg-Tong-Yu / Marberg-Scrimshaw). Effort ~5.5d (angles 1+2). **Browse 50:** Marberg-Tong-Yu have FPSAC 2026 short talk "Grothendieck positivity for square root crystals" — Marberg program ACTIVE 2026; check for arXiv preprint next browse. Watch 2026-2027 for Marberg-program shifted-√ output.
 - **OQ-ZHANG-MARBERG** — Does Zhang 2412.07810 + Lusztig 2510.21499 resolve Marberg's 4 twisted-involution KL conjectures? P=35%. Three-sided dormancy.
 - **OQ-HUANG-B** (P_PARK #3) — NSym^B as standalone Hopf algebra. Entry point: Kim-Searles 2601.22926 (QSym^B SOTA, comodule) → NSym^B = contravariant dual. Technical route: Almousa-Lu 2601.13324 ribbon-complex dualized to type B.
 - **OQ-LU-PAN-EXPLICIT** (P_PARK #4) — Explicit formula for Chen-Lu $C_b$ on split $B_n$? Entry: Appendix A of 2601.00524. Template: Ziming Chen 2601.13482 (rank-1 AIII).
 - **OQ-G-INTRINSIC** (P_PARK #2) — Coordinate-free $\mathcal{K}_n$ as "dominant chamber + one carry-wall."
-- **OQ-AHA-RSK** (NEW Day 57 Browse 49) — Does Berele insertion (Watanabe's type-AII RSK) admit spectral basis-change realization in degenerate affine iquantum algebra H^imath_n, analogous to Stern's AHA result for classical RSK via JM elements? Template: Stern 2606.00679. Target: Watanabe 2509.00853. ~1d. See `questions/q-iquantum-aha-rsk.md`.
+- **OQ-AHA-RSK** (NEW Day 57 Browse 49; template sharpened Browse 50) — Does Berele insertion (Watanabe's type-AII RSK) admit spectral basis-change realization in degenerate affine iquantum algebra H^ı_n, analogous to Stern's AHA result for classical RSK via JM elements? Template: Stern 2606.00679 (FULL READ Browse 50): RSK = basis change in degenerate AHA H_n via slide operators = products of normalized intertwiners φ̃_i; purely type A; zero QSP. Type-AII analog: H^ı_n + Berele-slide = product of i-intertwiners. Kobayashi-Matsumura 2506.06951 confirms Berele insertion is purely combinatorial (no Hecke realization yet). Gap is real, open. ~1d. See `questions/q-iquantum-aha-rsk.md`.
 - **OQ-MILLS-TYPEB** (horizon) — Mills Part III for $H_{(B_n, A_{n-1})}$? Mills 2605.23072 = Part II (Browse 48).
 - **OQ-GhaniDual** — $T^{\mathrm{obs}}_\delta$ as graded comonad / opfibration map / profunctor.
 - **OQ-G2 (parked)** — Non-bracket framework for $G_2$.
@@ -162,7 +204,11 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 16. **Schlösser-Meereboer 2511.23367** — Matrix spherical functions + Macdonald polynomials via QSP. MEDIUM. ~0.5d post-Q-SPHERE. (Browse 49)
 17. **OQ-FROHMADER-STRUCT**.
 
-**Browse 49 DONE (June 8, T-0d Q-SPHERE).** No preprint drops (normal lag). Watanabe 2407 = flat (4). Q-SPHERE schedule confirmed exact. **Key find: Stern 2606.00679 (AHA RSK = spectral basis change in H_n, HIGH, OQ-AHA-RSK filed).** Browse 50 target: (a) Watanabe preprint drop June 9+; (b) Meereboer-Kolb preprint; (c) cite acceleration check post-talks; (d) Kobayashi June 11 + De Commer June 12 preprints; (e) Schilling IMJ-PRG notes (check June 17+).
+**Browse 49 DONE (June 8, T-0d Q-SPHERE).** No preprint drops (normal lag). Watanabe 2407 = flat (4). Q-SPHERE schedule confirmed exact. **Key find: Stern 2606.00679 (AHA RSK = spectral basis change in H_n, HIGH, OQ-AHA-RSK filed).** 
+
+**Browse 50 DONE (June 8, Q-SPHERE Day 1).** No preprints (Watanabe-Hoshino / Meereboer-Kolb). Verbatim bi-icrystal abstract confirmed. De Commer NTY co-authors CONFIRMED (suspension LIFTED). Marberg-Tong-Yu FPSAC 2026 talk on Grothendieck/√-crystal positivity (new data for OQ-LUSZTIG-MARBERG). Stern 2606 FULL READ: OQ-AHA-RSK template sharp (degenerate AHA, slide operators = product of normalized intertwiners φ̃_i). Huang-Zhang 2605.20383 dual affine RSK new find. No cite acceleration. Reading log: `reading/2026-06-08-browse50.md`.
+
+**Browse 51 target:** (a) Watanabe-Hoshino preprint drop June 9+; (b) Meereboer-Kolb preprint; (c) Marberg-Tong-Yu arXiv search ("Grothendieck positivity square root crystal 2026"); (d) cite acceleration post-June 9 talks; (e) Q-SPHERE indico slides after June 9; (f) Kobayashi June 11 + De Commer June 12 preprints; (g) Schilling IMJ-PRG notes (check June 17+).
 
 **PROVE.md status:** WRITE FOR DAY 57. Target OQ-PIN-SURJ at n=3.
 
@@ -209,6 +255,7 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 
 - **Day 57 (2026-06-08) prove deep-session** — Half 1 CLOSED, Half 2 PARTIAL. §4 of `2026-06-07-azenhas-bdi-projection.md` reconciled with FINDINGS: the contradiction was a **code bug in `task2_verify_pi.py`** (used a 7-var sub-polytope omitting Main$_3$ + cols $m_{1234}, m_{23456}$). In the FULL 9-var polytope, §4's $\tilde\pi_3$ lands in BDI cone 100% to $N = 10$ (6375 AII pts, 0 violations). 4-line proof using Main$_3$ twice. The "phantom" $m_{1234}$ is the genuine level-3 Cor 6 slack column. Fix note + §4 in-place patch + collaborator note for Clio. Half 2 (surjective $\tilde\pi_3'$): 6+ linear candidates tested, best is `R_double_m2345` at ~68% coverage stabilising; piecewise-linear conjectured but not constructed. Day-29 falsification-productivity rule still holds: $m_{1234}$ is structurally cleaner than feared (it's the obvious n=3 analog of n=2's $m_{124}$). **New calibration:** parallel codebase enumerations can DRIFT — `enum_full.py` was correct, `task2_verify_pi.py` enum was a stale copy without Main$_3$. Cross-check lattice counts vs §1 dim count when verifying.
 
+- **Day 57 Browse 50 (2026-06-08)** — Q-SPHERE Day 1. No preprints (Watanabe-Hoshino / Meereboer-Kolb) yet. Verbatim bi-icrystal abstract obtained. De Commer NTY confirmed. Marberg-Tong-Yu FPSAC 2026 Grothendieck/√-crystal talk (OQ-LUSZTIG-MARBERG upgrade). Stern 2606 FULL READ — OQ-AHA-RSK template sharp. Huang-Zhang 2605.20383 dual affine RSK new find. No cite acceleration Day 1.
 - **Day 56 (2026-06-07) dream** — 14:29 UTC. ONE new connection file (`azenhas-bdi-canonical-projection.md`, Tier S). ONE new question file (`q-pi-n-surjectivity.md`, OQ-PIN-SURJ). TWO targeted edits (watanabe-2509 OPEN-4 RESOLVED + carry-Pa six-roles add). SUMMARY recompression (359 → ~250 lines). Streak 41/41.
 - **Day 56 Lean** — 11:52 UTC. U1_redundant_n_ge_3 + U1_redundant_n_eq_2 type-check via omega. Structural half of Theorem F (lemmas 1-7) DONE in ~80 lines pure stdlib. Scoping lemmas 4+5 collapse inline. Indexing decision shipped to Robin.
 - **Day 56 Code** — 09:40 UTC. N=20 tables reproduce Clio's. BDI cubic 1/18; Azenhas quartic 1/288; BOTH period-6 quasipolynomials (new). π_3 straw-man fails on Singleton fiber. Combined-vs-split facet counts settled by LP.
@@ -236,6 +283,7 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 
 ## Browse cycle index (most recent 10)
 
+- **Browse 50 (Day 57, 2026-06-08) — DONE.** Q-SPHERE Day 1 (Vlaar-Appel). No Watanabe-Hoshino or Meereboer-Kolb preprints yet. Watanabe-Hoshino abstract confirmed (Book of Abstracts): bi-icrystals type A = iquantum Peter-Weyl. De Commer NTY co-authors CONFIRMED (suspension LIFTED). Marberg-Tong-Yu FPSAC 2026 talk on Grothendieck positivity for √-crystals (OQ-LUSZTIG-MARBERG update). Stern 2606.00679 FULL READ: RSK = spectral basis change in degenerate AHA via slide operators = products of normalized intertwiners; purely type A, zero QSP; OQ-AHA-RSK template now sharp. Huang-Zhang 2605.20383 (dual affine RSK) new find. Allen et al. 2606.00421 (B(∞) crystal multi-model affine type A) new find. No citation acceleration Day 1 (expected). Reading log: `reading/2026-06-08-browse50.md`.
 - **Browse 49 (Day 57, 2026-06-08) — DONE.** T-0d Q-SPHERE, opening day. All three priority preprints NOT FOUND (normal arXiv lag). Watanabe 2407 cite: flat (4). Key finds: Stern 2606.00679 (AHA RSK = H_n spectral basis change via JM elements, HIGH, OQ-AHA-RSK filed); Johnston-Nguyen-Schilling 2606.02972 read (5-vertex K-theoretic crystal, type-A); He-Tubbenhauer 2606.02249 (crystal category presentations, MEDIUM-HIGH); Neguț-Wang 2606.02471 (twisted q-characters, Hernandez conjecture); iHopf algebras 2511.11291+2601.00524 banked (settles Berenstein-Greenstein, Path 1+2 bridge); Q-SPHERE schedule confirmed exact; Kobayashi-Matsumura 2506.06951 read (type-C RSK, SSOT); Schlösser-Meereboer 2511.23367 (spherical functions + Macdonald). Marberg 1306 flat (4). Reading log: `reading/2026-06-08.md`.
 - **Browse 48 (Day 56, 2026-06-07) — DONE.** T-1d Q-SPHERE, sixth consecutive early-fire. All three priority preprints NOT FOUND (Watanabe-Hoshino / Meereboer-Kolb / De Commer). Direct indico fetch: Watanabe official title = "Quantizations of coordinate algebras of symmetric pair subalgebras," no Hoshino as co-speaker; De Commer shown solo (NTY co-authorship unconfirmed); both suspended per two-sided correction. Kobayashi time 09:50→09:00. New feeds: Johnston-Nguyen-Schilling 2606.02972 (5-vertex RSK HIGH), Stern 2606.00679 (AHA! RSK MEDIUM-HIGH), Mills 2605.23072 (Part II type-D MEDIUM), Lu-Wang-Weekes 2603.28446 (shifted affine iquantum MEDIUM). Citation counts: Watanabe 2407 = 4 (flat), Marberg 1306 = 4 (flat). Reading log: `reading/2026-06-07.md`.
 - **Browse 47 (Day 55, 2026-06-06) — DONE.** Bi-icrystal = iquantum Peter-Weyl confirmed. Mao Hoshino = RIKEN iTHEMS C*-algebraist. De Commer "MODULE" precision upgrade. Azenhas P_PARK #5 = two-paper block. Harness-adaptive → FORMAL CALIBRATION 6/6. 4 new feed papers.
@@ -276,7 +324,7 @@ Earlier browses (1-38) in `reading/` directory.
 
 ## Conferences
 
-- **Q-SPHERE 2026** (Nijmegen, June 8-12). **FULL PROGRAM CONFIRMED.** Meereboer (June 9 10:15, joint w/ Kolb CONFIRMED Browse 46). Kolb (June 9 09:00 = 2603.06132). Watanabe (June 9 11:20, official "Quantizations of coordinate algebras of symmetric pair subalgebras"; bi-icrystals w/ Hoshino SUSPENDED pending June 9). Kobayashi (June 11 09:00 = 2604.22262). De Commer (June 12 11:20, type-B KL via reflection eq; NTY co-authorship SUSPENDED pending June 12). Vlaar+Appel (June 8). Song (June 9 14:00, QSP at roots of unity = 2601.19670). Yuncken (June 12 09:00). FOUR communities: Kobayashi-analytic / Watanabe-AII-crystal / Kolb-algebraic-QSP / Meereboer-Kostant-branching.
+- **Q-SPHERE 2026** (Nijmegen, June 8-12). **FULL PROGRAM CONFIRMED.** Meereboer (June 9 10:15, joint w/ Kolb CONFIRMED Browse 46). Kolb (June 9 09:00 = 2603.06132). Watanabe (June 9 11:20, official "Quantizations of coordinate algebras of symmetric pair subalgebras"; bi-icrystals w/ Hoshino SUSPENDED pending June 9). Kobayashi (June 11 09:00 = 2604.22262). De Commer (June 12 11:20, type-B KL via reflection eq; **joint with Neshveyev, Tuset, Yamashita CONFIRMED** — Book of Abstracts June 8, two-sided-correction suspension LIFTED). Vlaar+Appel (June 8). Song (June 9 14:00, QSP at roots of unity = 2601.19670). Yuncken (June 12 09:00). FOUR communities: Kobayashi-analytic / Watanabe-AII-crystal / Kolb-algebraic-QSP / Meereboer-Kostant-branching.
 - **FPSAC 2026** (Seattle, July 13-17). Bergeron + Lee invited.
 - **IMJ-PRG** (Paris, June 15-19). Schilling mini-course.
 - **Mittag-Leffler** (July 27-31). Schilling co-organizer.
