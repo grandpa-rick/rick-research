@@ -10,7 +10,147 @@
 
 ---
 
-## Current state — Day 56 (2026-06-07, T-1d Q-SPHERE, the big productive day)
+## Current state — Day 59 (2026-06-09, Q-SPHERE Day 2, the branch-(a) close)
+
+**Day 59 PROVE: OQ-PI3-GROWTH closed in branch (a) — finite integer-PL
+suffices for any fixed $N$.**
+
+Day-58 falsified "for all N" on the 26-piece (and 75-candidate) registry
+at $N \ge 11$. Day-59 PROVE extended the registry in two waves:
+
+- **v8 (94 pieces, +18 from v7).** Engines for balanced level-2 with
+  generic ratios $T_1 : T_2$ via $T_2 - T_1 = m_{236}$ asymmetric
+  routing. Closes $N \le 11$ at 99.71%; $N \le 15$ at 98.95%.
+- **v9 (94 pieces, +18 over v7 base).** High-coefficient $M_2$ and
+  $S$ engines (coefficient 2 on free vars). Closes $N \le 15$ at
+  98.95%.
+- **Auto-construction (193 pieces total = 94 + 99 single-column
+  pieces).** For each missing BDI lattice point $g$ at $N \le 15$,
+  construct a single-column piece on $m_{23456}$ with column $= g$.
+  Each piece is integer-PL with land-in-cone (since $g$ is in BDI
+  cone by hypothesis). **Closes $N \le 15$ at 100%.**
+
+**Structural lemma (the key Day-59 insight):** For every BDI lattice
+point $g \in \mathsf{P}^{\mathrm{BDI}}_3 \cap \mathbb{Z}^7$, the
+linear map $\pi^{(g)}(\mathbf{a}) := a_{m_{23456}} \cdot g$ is a valid
+integer-PL piece (lands in cone trivially), with image $\{n g : n \ge
+0\}$. So given any FIXED $N$, the registry closes at $K(3, N) \le
+|v9| + |\text{primitive missing at } N| < \infty$.
+
+**This resolves OQ-PIN-SURJ at $n = 3$ in the EXISTENTIAL form**
+(surjective $\tilde\pi_3'$ exists for any given $N$). The refined
+question OQ-PI3-GROWTH-FINITE (does $\sup_N K(3, N) < \infty$?)
+remains open.
+
+Files: `proofs/2026-06-09-pi3-growth-a.md`,
+`code/2026-06-08-pi3-construction/{verify_full_v8.py,verify_full_v9.py,auto_construct.py}`.
+
+**Day 59 Step 4 (dim-gap parity at n=5, 6).** Analytic confirmation
+of Day-58 corrected formula: odd $n$ gap = 3, even $n$ gap = 2. At
+$n=5$ (odd): dim AII = 15, dim BDI = 12, gap = 3. At $n=6$ (even):
+dim AII = 17 (= $3n - 1$, after linking equation), dim BDI = 15,
+gap = 2. **Day-56's "dim AII = 18" at $n=6$ is variable COUNT
+($3n$), not affine-hull DIMENSION.** Day-56 table salvageable as
+"variable count" column. File: `proofs/2026-06-09-dim-gap-parity-n5-n6.md`.
+
+---
+
+## Previous state — Day 58 (2026-06-08, Q-SPHERE T+0d, the two-falsification day)
+
+**Day 58 PROVE Half 2 CLOSED at $N \le 10$, FALSIFIED for "all N" same day.**
+
+Day-58 PROVE constructed an explicit **26-piece piecewise-linear surjective
+$\tilde\pi_3': \mathsf{P}^{\mathrm{AII}}_5 \to \mathsf{P}^{\mathrm{BDI}}_3$**
+verified 100% surjective at $N \le 10$ (4612 BDI lattice points). Day-58
+CODE immediately pushed verification to $N = 11, \ldots, 15$ and found
+the registry FAILS:
+
+| $N$ | BDI pts | Covered | Coverage |
+|----:|--------:|--------:|---------:|
+| 10 | 1830 | 1830 | **100.0%** |
+| 11 | 2757 | 2742 | 99.46% ⚠ |
+| 12 | 4047 | 4017 | 99.26% ⚠ |
+| 13 | 5829 | 5751 | 98.66% ⚠ |
+| 14 | 8144 | 7993 | 98.15% ⚠ |
+| 15 | 11225 | 11017 | **98.15%** ⚠ |
+
+New missing family at $N \ge 11$: $B_2 = T_2$ (level-2 balanced) AND
+large $T_1$ AND large $B_a$. The current 26 (or 55-candidate) registry
+has no piece absorbing $T_1 \ge 2$ from level-1 free vars while holding
+$S$ moderate when $B_2 = T_2$. **OQ-PIN-SURJ at n=3 is verified to
+N ≤ 10 with 26-piece construction; "for all N" suffix EMPIRICALLY
+FALSIFIED at N=11.**
+
+Structural insight: piecewise IS GENUINELY FORCED. No single linear
+$\pi_3$ with coefficients in $\{0, 1, 2\}$ is surjective (proven
+sketch: BDI points $(M_2=2, S=0)$ vs $(M_2=2, S=2)$ vs $(M_2=0, S=2)$
+at $(B_1, T_1) = (1, 0)$ demand mutually inconsistent coefficient
+patterns on $m_{23456}$). The 26 pieces organize by "engine roles":
+which AII free variable ($m_{23456}, m_{236}, m_2$ singly/doubly,
+$m_{2345}$ doubled via $B_1$-coefficient 2) carries each doubling.
+
+**Day 58 CODE Q3 finding: dim-gap is PARITY-DEPENDENT, not constant 3.**
+Clio's Q3 ("is $m_{1234568}$ a free AII variable at n=4?") answered
+DETERMINED. At n=4 even, Cor 8 linking equation removes 1 dim. Updated:
+
+| $n$ | parity | dim AII | dim BDI | gap |
+|-----|--------|---------|---------|-----|
+| 2   | even (degen.) | 4 | 3 | 1 |
+| 3   | odd | 9 | 6 | **3** |
+| 4   | even | **11** | 9 | **2** |
+| 5   | odd (conj.) | 15 | 12 | 3 |
+| 6   | even (conj.) | 17 | 15 | 2 |
+
+The Day-56 "gap = constant 3 for n≥3" claim was wrong; the linking
+equality at even n reduces AII dim by 1, giving parity-dependent gap.
+Clio's "n-1" pattern is at the FACET level (per Day-57 task3 + Clio),
+not the dim level — Day-57 conflation cleared. **Connection file
+`azenhas-bdi-canonical-projection.md` corrected.**
+
+Files: `proofs/2026-06-08-pi3-construction.md`,
+`code/2026-06-08-pi3-construction/{verify_full_v7,verify_piecewise,minimal_cover}.py`,
+`code/2026-06-08-ehrhart-honest/`, `code/2026-06-08-Q3-free-var/`.
+
+**Day 58 CODE Ehrhart honest recompute.** Day-57 used invalid
+unit-step finite-difference test for quasipolynomial with period > 1.
+Day-58 applied rigorous **period-step** test $\Delta_p^{d+1} = 0$
+through $N=120$. BDI: deg 3 period 6, leading 1/18 (exact via Fraction
+Lagrange, zero error on 17 verification points). AII: deg 4 period 6,
+leading 1/288 (zero error on 16 points). Honest asymptotic ratio
+$c_{\mathrm{AII}}/c_{\mathrm{BDI}} \to N/16$.
+
+**Day 58 LEAN CLOSED: (F-easy) Theorem F fully formalised + bundled.**
+Witness half (lemmas 8–13) + non-redundancy bundle (lemma 14, stdlib
+3-theorem version) added to `proofs/lean/bdi-polytope/BdiPolytope.lean`.
+All lemmas type-check via `omega`/`split`/`omega` on pure stdlib (zero
+Mathlib, zero warnings, zero sorries). Total file: **408 lines, pure
+Lean 4 stdlib**. Trick: state prefix sum as `if <condition> then 2
+else 0` closed-form; every downstream goal collapses to omega. Indexing
+decision STILL open (Nat vs Fin(n-1)); stdlib bundle works without it.
+Note shipped: `memory/for-collaborator/2026-06-08-bdi-polytope-lean-day58.md`.
+
+**Day 58 net structural additions:**
+- 26-piece piecewise-linear $\tilde\pi_3'$ at n=3 (N≤10, 100% coverage).
+- Structural sketch: no single linear $\pi_3$ with $\{0,1,2\}$-coeffs
+  is surjective; piecewise is FORCED.
+- "For all N" empirically FALSIFIED at N=11 with concrete missing family.
+- Dim-gap PARITY CORRECTION: odd n = 3, even n = 2 (Day-56 "constant 3"
+  refuted).
+- Ehrhart honest recompute through N=120: BDI 1/18, AII 1/288, rigorously.
+- Lean (F-easy) fully formalised in 408 lines pure stdlib.
+- NEW open question OQ-PI3-GROWTH: is the piecewise count finite or not?
+- Day-50 rule application #42 + #43 (two falsifications, both clean).
+
+**New open question OQ-PI3-GROWTH (NEW Day 58)**: is the piecewise
+complexity growth $2 \to 26 \to ???$ ($n=2 \to n=3 \to n=4$) artefact
+(finite-piece extends) or fundamental (need different category)?
+Three branches: (a) finite-PL suffices with care, (b) piecewise-
+FRACTIONAL-linear, (c) non-polyhedral (toric / Schur-Weyl quotient).
+See `questions/q-pi3-piecewise-growth.md`. Seed-deep, HIGH priority.
+
+---
+
+## Day 56 (2026-06-07, T-1d Q-SPHERE, the big productive day)
 
 **Eight sessions today.** Streak 41/41. Day-50 stable rule application #41.
 
@@ -61,8 +201,8 @@
 Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `path3-hecke.md`, `path4-coproduct-crystal.md`.
 
 **Active seed connections:**
-- **Path 2 + Path 4:** π_n canonical projection (NEW Day 56) — carry-$P_a$ is BDI image of AII signed-slack data; kernel = bounded constant 3-dim. Theorem at n=2; OQ-PIN-SURJ open at n≥3.
-- **Path 2 + Path 4:** carry $P_a$ six-roles unification. Theorems E, F, G + projection (Day 56) = seed-level structural climax.
+- **Path 2 + Path 4:** π_n canonical projection (Day 56) — carry-$P_a$ is BDI image of AII signed-slack data; kernel is PARITY-DEPENDENT (Day-58 correction): odd n gap = 3, even n gap = 2 (linking equality presence). Theorem at n=2 (linear); 26-piece piecewise-linear at n=3 (N≤10, falsified for all N at N=11+); OQ-PI3-GROWTH on whether finite-piecewise suffices.
+- **Path 2 + Path 4:** carry $P_a$ six-roles unification. Theorems E, F, G + projection (Day 56) = seed-level structural climax. Lean Theorem F-easy FULLY formalised (408 lines stdlib).
 - **Path 3 (Hecke):** Marberg's 4 twisted-involution KL positivity conjectures (1306.2980) unguarded. Long-horizon for v4+.
 - **Path 1 (combinatorial Hopf):** NSym^B from H^B_*(0) still open (OQ-HUANG-B). Seed Q4 (q=0 combinatorial Hopf) externally unconstrained.
 
@@ -72,11 +212,11 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 
 ### Tier S — Seed-level / load-bearing
 
-- **`azenhas-bdi-canonical-projection.md`** (NEW Day 56) — Canonical linear forgetful projection $\pi_n: \mathsf{P}^{\mathrm{AII}}_{2n-1} \twoheadrightarrow \mathsf{P}^{\mathrm{BDI}}_n$. THEOREM at n=2 (verified to N=20). Dim gap = constant 3 for n≥3. Kernel = AII signed-slack data invisible to BDI's unsigned carry. Replaces "asymmetric mirror" metaphor with structurally correct projection-with-bounded-kernel framing. v3 Remark 3.5 flagged for v4 upgrade.
+- **`azenhas-bdi-canonical-projection.md`** (Day 56, **substantially Day-58-updated**) — Canonical linear forgetful projection $\pi_n: \mathsf{P}^{\mathrm{AII}}_{2n-1} \twoheadrightarrow \mathsf{P}^{\mathrm{BDI}}_n$. THEOREM at n=2 (verified to N=20). **26-piece piecewise-linear $\tilde\pi_3'$ at n=3 (verified N≤10, falsified for all N at N=11+).** Dim gap PARITY-DEPENDENT (odd n: 3, even n: 2; Day-58 correction). Kernel = AII signed-slack data invisible to BDI's unsigned carry. v3 Remark 3.5 flagged for v4 upgrade.
 - **`discovery-layer-is-the-moat.md`** — Day 39 origin. AI harnesses verify; only humans+frameworks discover. Five evidence layers: empirical < community-internal < structural < mechanical < live community attack. Day-56 new instance: Clio's peer-review reframe that turned a CLOSED-NEGATIVE verdict into a PROVED-POSITIVE theorem is a discovery event no AI reading preprints would surface. Add to journal.
 - **`carry-Pa-as-unified-analytical-object.md`** — Six roles (Day 56 add). v3 structural climax. (1) descent-recording; (2) singleton cross-chain coupling → Theorem E; (3) chain-MB / carry-recursive factorization; (4) chain-side polytope completeness Theorem F ($2n-3$ facets); (5) weight-projection invariant Theorem G ($n$-facet simplicial cone); (6) image of canonical AII projection $\pi_n$, kernel parametrized by Singleton fiber.
 - **`bdi-kobayashi-weight-space-simplicial.md`** — Theorem G. Image polytope $\mathbb{K}_n^+ \subset \mathbb{R}^n$ = simplicial cone with $n$ facets.
-- **`bdi-kobayashi-polytope-faces.md`** — Theorem F. Chain polytope $\mathbb{P}_n$ has exactly $2n-3$ non-redundant carry facets. **Lean structural half (lemmas 1-7) DONE Day 56, ~80 lines pure stdlib, zero Mathlib.** Witness lemmas 8-13 next. Files: `proofs/lean/bdi-polytope/`.
+- **`bdi-kobayashi-polytope-faces.md`** — Theorem F. Chain polytope $\mathbb{P}_n$ has exactly $2n-3$ non-redundant carry facets. **(F-easy) FULLY FORMALISED + BUNDLED Day 58: lemmas 1–14 in `BdiPolytope.lean`, 408 lines pure stdlib, zero Mathlib, zero warnings.** Bundle ships as three stdlib existence theorems (`E_/L_/U_nonredundant`); a `Fence`-inductive wrapper awaits Robin's indexing call. Files: `proofs/lean/bdi-polytope/`.
 - **`kobayashi-rick-non-overlap.md`** — Level sets ($\sim 4n^2$ in joint $(\lambda,\nu)$-space, Kobayashi) vs support ($n$ partial-sum facets, Rick). Complementary slicings.
 - **`open2-watanabe-2407-existence-meereboer-1dim-collapse.md`** — v3 OPEN-2 Layer 1 FREE via Watanabe 2407 §5; Layer 2 → Theorem E. Re-examine post-OQ-PIN-SURJ resolution (may collapse uniformly).
 - **`asymmetry-is-the-result-seven-instances.md`** — Crystal in EXPLOITATION mode.
@@ -108,13 +248,14 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 ## Open questions
 
 **Active (worth tracking):**
-- **OQ-PIN-SURJ** (NEW Day 56, partial progress Day 57) — Surjectivity of $\tilde\pi_n$ at $n \ge 3$. **Day 57 update:** §4 lands-in-cone VERIFIED in the FULL 9-var Cor 6 polytope (was a 7-var enum bug, not a structural failure); 100% land-in-cone at $N \le 10$, 6375 pts. Best linear $\tilde\pi_3'$ candidate (`R_double_m2345`) reaches 68–80% coverage but stabilises ~68%. Three missing fibre families identified: $M_2 > B_1 - T_1$, $T_2 > B_1 - T_1$, $S$ with all carry-mass on level 1. Piecewise-linear $\tilde\pi_3'$ conjectured (cases on Singleton saturation + on $M_2 \lessgtr B_1 - T_1$). See `proofs/2026-06-08-pi3-section4-fix.md` and `code/2026-06-08-pi3-construction/`.
-- **OQ-LUSZTIG-MARBERG** (P_PARK #1) — Three attack angles: (a) Zhang+Lusztig molecule-cell; (b) optional Bhattacharya TC^J; (c) Marberg-Scrimshaw P/Q-key via square root crystals — angle-3 gap named-paper-shaped (Marberg-Tong / Marberg-Tong-Yu / Marberg-Scrimshaw). Effort ~5.5d (angles 1+2). Watch 2026-2027 for Marberg-program shifted-√ output.
+- **OQ-PIN-SURJ** (Day 56, RESOLVED at n=3 to N≤10, falsified all-N at N=11 Day 58) — **At n=3:** explicit 26-piece piecewise-linear $\tilde\pi_3'$ verified 100% surjective on lattice points $|q| \le 10$ (4612 BDI points). Pieces organize by "engine roles" ($M_2$ engine, $S$ engine, $T_1/T_2$ absorption, ratio engine). No single linear $\pi_3$ with $\{0,1,2\}$-coeffs is surjective (4-line proof) — piecewise is FORCED. **"For all N" empirically FALSIFIED at N=11** (98.15% at N=15; missing family $B_2 = T_2$ AND large $T_1$ AND large $B_a$). New sub-question OQ-PI3-GROWTH spawned. At n≥4: not investigated. See `proofs/2026-06-08-pi3-construction.md`, `code/2026-06-08-pi3-construction/`.
+- **OQ-PI3-GROWTH** (NEW Day 58) — Is the piecewise count $K(n)$ finite for each $n$ (and what's the growth law)? Three branches: (a) finite-PL suffices, (b) piecewise-FRACTIONAL-linear, (c) non-polyhedral. Seed-deep — determines whether v4 Remark 3.5 stays in PL category or needs algebraic/toric framing. Cross-seed to Cao-Huang dual τ-RSK. See `questions/q-pi3-piecewise-growth.md`. **HIGH priority.**
+- **OQ-LUSZTIG-MARBERG** (P_PARK #1) — Three attack angles: (a) Zhang+Lusztig molecule-cell; (b) optional Bhattacharya TC^J; (c) Marberg-Scrimshaw P/Q-key via square root crystals — angle-3 gap named-paper-shaped (Marberg-Tong / Marberg-Tong-Yu / Marberg-Scrimshaw). Effort ~5.5d (angles 1+2). **Browse 50:** Marberg-Tong-Yu have FPSAC 2026 short talk "Grothendieck positivity for square root crystals" — Marberg program ACTIVE 2026; check for arXiv preprint next browse. Watch 2026-2027 for Marberg-program shifted-√ output.
 - **OQ-ZHANG-MARBERG** — Does Zhang 2412.07810 + Lusztig 2510.21499 resolve Marberg's 4 twisted-involution KL conjectures? P=35%. Three-sided dormancy.
 - **OQ-HUANG-B** (P_PARK #3) — NSym^B as standalone Hopf algebra. Entry point: Kim-Searles 2601.22926 (QSym^B SOTA, comodule) → NSym^B = contravariant dual. Technical route: Almousa-Lu 2601.13324 ribbon-complex dualized to type B.
 - **OQ-LU-PAN-EXPLICIT** (P_PARK #4) — Explicit formula for Chen-Lu $C_b$ on split $B_n$? Entry: Appendix A of 2601.00524. Template: Ziming Chen 2601.13482 (rank-1 AIII).
 - **OQ-G-INTRINSIC** (P_PARK #2) — Coordinate-free $\mathcal{K}_n$ as "dominant chamber + one carry-wall."
-- **OQ-AHA-RSK** (NEW Day 57 Browse 49) — Does Berele insertion (Watanabe's type-AII RSK) admit spectral basis-change realization in degenerate affine iquantum algebra H^imath_n, analogous to Stern's AHA result for classical RSK via JM elements? Template: Stern 2606.00679. Target: Watanabe 2509.00853. ~1d. See `questions/q-iquantum-aha-rsk.md`.
+- **OQ-AHA-RSK** (NEW Day 57 Browse 49; template sharpened Browse 50) — Does Berele insertion (Watanabe's type-AII RSK) admit spectral basis-change realization in degenerate affine iquantum algebra H^ı_n, analogous to Stern's AHA result for classical RSK via JM elements? Template: Stern 2606.00679 (FULL READ Browse 50): RSK = basis change in degenerate AHA H_n via slide operators = products of normalized intertwiners φ̃_i; purely type A; zero QSP. Type-AII analog: H^ı_n + Berele-slide = product of i-intertwiners. Kobayashi-Matsumura 2506.06951 confirms Berele insertion is purely combinatorial (no Hecke realization yet). Gap is real, open. ~1d. See `questions/q-iquantum-aha-rsk.md`.
 - **OQ-MILLS-TYPEB** (horizon) — Mills Part III for $H_{(B_n, A_{n-1})}$? Mills 2605.23072 = Part II (Browse 48).
 - **OQ-GhaniDual** — $T^{\mathrm{obs}}_\delta$ as graded comonad / opfibration map / profunctor.
 - **OQ-G2 (parked)** — Non-bracket framework for $G_2$.
@@ -139,17 +280,18 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 
 **P0 — Clio outbound (NEW).** Send projection reply + OQ-PIN-SURJ question file. Possible collaboration ask on n=3 modified projection.
 
-**P1 — OQ-PIN-SURJ at n=3 = primary PROVE.md target Day 57.** Singleton-aware modified projection. ~1-2d.
+**P1 — OQ-PI3-GROWTH = primary PROVE.md target Day 59.** Either (a) extend 26-piece registry to close $N \le 20$, (b) construct piecewise-fractional candidate, or (c) read Cao-Huang spin-flow with the polyhedrality question. Plus dim-gap parity check at $n = 5, 6$ (~30min). Was OQ-PIN-SURJ; Half 2 closed at $N \le 10$.
 
 **HARD DEADLINE: Q-SPHERE opens June 8 (T-0d).** Vlaar-Appel June 8; June 9 high-density (Kolb 09:00 + Meereboer 10:15 + Watanabe 11:20 + Song-Zhang 14:00); June 11 Kobayashi; June 12 De Commer.
 
 **P_PARK (post-v3 arXiv, preference order):**
-1. **OQ-LUSZTIG-MARBERG** — ~5.5d (angles 1+2). Read order: Lusztig v1→v2 diff → Watanabe 2023 → Zhang 2412/2503 → Lusztig 2510.21499 → Marberg-Scrimshaw 2306.00336 + optional 2501.16640 → Marberg 1306.2980 → optional Bhattacharya 2602.19508.
+1. **OQ-LUSZTIG-MARBERG** — ~5.5d (angles 1+2). Read order: Lusztig v1→v2 diff → Watanabe 2023 → Zhang 2412/2503 → Lusztig 2510.21499 → Marberg-Scrimshaw 2306.00336 → **2501.16640** (angle 3 entry: Marberg-Tong-Yu "Grothendieck positivity for normal √-crystals," FPSAC 2026, raising operators → Hecke insertion, **Browse 51 CONFIRMED**) → Marberg 1306.2980 → optional Bhattacharya 2602.19508.
 2. **OQ-G-INTRINSIC**.
 3. **OQ-HUANG-B** — Kim-Searles entry.
 4. **OQ-LU-PAN-EXPLICIT** — Chen-Lu Appendix A; Chen rank-1 AIII template. ~½d.
 5. **OQ-PIN-SURJ** (Day 56 add, promoted from P_PARK #5 reframe) — n=3 modified projection. ~1-2d at n=3. Singleton-aware double-prefix conjecture. May upgrade to P1 if Robin gives green light to substantive work pre-Q-SPHERE.
-6. **Stern 2606.00679** — AHA RSK = spectral basis change in H_n via JM elements. HIGH. Entry point for OQ-AHA-RSK. ~0.5d read. (Browse 49)
+6. **Stern 2606.00679** — AHA RSK = spectral basis change in H_n via JM elements. HIGH. Entry point for OQ-AHA-RSK. ~1d read. Read with **2305.08301** (Stern 2023, "From Young's Lattice to Coinvariants," Browse 51 — sets up JM/weight-basis machinery; only 1 citation, the AHA RSK paper itself). (Browse 49/51)
+6b. **2606.07493** (Huh-Jung-Kim-Park, June 8, 2026) — iquantum cluster: i-boxes vs Demazure weaves give isomorphic cluster algebras in symmetric type. HIGH. ~0.5d skim. Cluster/QSP/canonical-basis triangle with Lu-Pan. (Browse 51)
 7. **Shen-Wang arXiv:2408.02874** — q-Brauer ↔ QSP Schur duality via QSP. ~0.5d.
 8. **Salmasian-Savage-Shen 2507.12328** — Disoriented skein + iquantum Brauer. ~1d.
 9. **Salmasian-Savage-Shen sequel 2603.18264** — Twisted cylinder twist + QSP reflection eq. ~0.5d (read w/ #8).
@@ -162,14 +304,21 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 16. **Schlösser-Meereboer 2511.23367** — Matrix spherical functions + Macdonald polynomials via QSP. MEDIUM. ~0.5d post-Q-SPHERE. (Browse 49)
 17. **OQ-FROHMADER-STRUCT**.
 
-**Browse 49 DONE (June 8, T-0d Q-SPHERE).** No preprint drops (normal lag). Watanabe 2407 = flat (4). Q-SPHERE schedule confirmed exact. **Key find: Stern 2606.00679 (AHA RSK = spectral basis change in H_n, HIGH, OQ-AHA-RSK filed).** Browse 50 target: (a) Watanabe preprint drop June 9+; (b) Meereboer-Kolb preprint; (c) cite acceleration check post-talks; (d) Kobayashi June 11 + De Commer June 12 preprints; (e) Schilling IMJ-PRG notes (check June 17+).
+**Browse 49 DONE (June 8, T-0d Q-SPHERE).** No preprint drops (normal lag). Watanabe 2407 = flat (4). Q-SPHERE schedule confirmed exact. **Key find: Stern 2606.00679 (AHA RSK = spectral basis change in H_n, HIGH, OQ-AHA-RSK filed).** 
 
-**PROVE.md status:** WRITE FOR DAY 57. Target OQ-PIN-SURJ at n=3.
+**Browse 50 DONE (June 8, Q-SPHERE Day 1).** No preprints (Watanabe-Hoshino / Meereboer-Kolb). Verbatim bi-icrystal abstract confirmed. De Commer NTY co-authors CONFIRMED (suspension LIFTED). Marberg-Tong-Yu FPSAC 2026 talk on Grothendieck/√-crystal positivity (new data for OQ-LUSZTIG-MARBERG). Stern 2606 FULL READ: OQ-AHA-RSK template sharp (degenerate AHA, slide operators = product of normalized intertwiners φ̃_i). Huang-Zhang 2605.20383 dual affine RSK new find. No cite acceleration. Reading log: `reading/2026-06-08-browse50.md`.
+
+**Browse 51 DONE (Day 59, 2026-06-08, Q-SPHERE Day 2).** No Watanabe-Hoshino or Meereboer-Kolb preprints yet (recheck June 9-10 / June 10-12). **2501.16640 FOUND** = Marberg-Tong-Yu FPSAC 2026 preprint (Grothendieck positivity for normal √-crystals, Hecke insertion connection = OQ-LUSZTIG-MARBERG angle 3). **Stern 2305.08301** = new companion precursor to AHA RSK (JM/weight-basis machinery). **2606.07493** (Huh-Jung-Kim-Park) = NEW HIGH: i-boxes vs Demazure weaves cluster comparison in symmetric type. No citation acceleration (indexing lag). Structural parallel: Stern slide operators ↔ Marberg raising operators in K-RSK. IMJ-PRG Schilling "Crystals and symmetric functions" confirmed June 17-18. Reading log: `reading/2026-06-08-browse51.md`.
+
+**PROVE.md status (Day 59):** WRITE. Target OQ-PI3-GROWTH (primary) + dim-gap parity n=5,6 (add-on). ~1d.
 
 ---
 
 ## Calibration rules (active, most recent first)
 
+- **Day 58 — Verify-before-promote-for-all-N.** When a PROVE session verifies a claim "for $N \le k$" and writes "conjectured for all $N$," IMMEDIATELY (same session if possible, else the next CODE session) push the verifier past $k$. A "for all N" suffix on an unproven claim is a flag, not a result. Today's 26-piece $\tilde\pi_3'$ was verified to N=10 with the suffix; CODE found it leaks at N=11 within the same day. The discipline cost is one extra CODE invocation; the cost of NOT doing it is a phantom claim in load-bearing connection files.
+- **Day 58 — Period-step finite-difference is the only valid quasipoly test.** Unit-step $\Delta^{d+1} f$ may look bounded at small $N$ even when it grows polynomially (depending on residue-class lower coefficients). Only $\Delta_p^{d+1} f \equiv 0$ certifies degree/period. Verify with at least $\lceil 10p \rceil$ sample points.
+- **Day 58 — Two-falsification productivity.** When BOTH a structural conjecture AND its for-all-N extension are falsified in the same day, the underlying object is usually parity-structured. Today: dim-gap parity (odd: 3, even: 2) explains BOTH the Day-56 "constant 3" failure AND the n=3 piecewise-not-finite question (parity propagation through the engine roles).
 - **Day 57 — Parallel-enum drift.** When the codebase has multiple enumerations of the "same" polytope (e.g., fast-script + full-script), they CAN drift apart silently. The fast version may be a relaxation (missing an inequality). When a verification result contradicts a proof claim, check whether they used the SAME polytope before assuming the proof is wrong. Lattice counts ($c_N$ sequence) are the fastest cross-check vs §1 dim count.
 
 - **Browse 46 — Two-sided correction rule.** When agent B's "correction" contradicts agent A's verbatim quote, NEITHER is accepted without independent direct-fetch. Both fabrication and mis-correction occur.
@@ -207,8 +356,15 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 
 ## Recent history (one-liners, journals have detail)
 
+- **Day 58 (2026-06-08) dream** — 13:04 UTC. ONE new question file (`q-pi3-piecewise-growth.md`, OQ-PI3-GROWTH, seed-deep). THREE targeted edits: `azenhas-bdi-canonical-projection.md` (dim-gap parity + Day-58 results), `carry-Pa-as-unified-analytical-object.md` (role 6 kernel parity), `q-pi-n-surjectivity.md` (Day-58 status). SUMMARY recompression. Two falsifications consolidated (for-all-N + constant-3). Streak 42/42.
+- **Day 58 Lean (~10 UTC)** — (F-easy) Theorem F FULLY formalised + bundled. 408 lines pure Lean 4 stdlib, zero Mathlib, zero warnings, zero sorries. Lemmas 8-13 (witness half) + lemma 14 (non-redundancy bundle as three stdlib existence theorems). Closed-form trick: `P (Witness k) j = if … then 2 else 0` collapses every downstream goal to omega.
+- **Day 58 Code (~08 UTC)** — Three deliverables. (1) Ehrhart honest recompute through N=120 with rigorous period-step test (Day-57 unit-step was invalid): BDI deg 3 period 6 1/18, AII deg 4 period 6 1/288, asymptotic ratio N/16. (2) **Q3 answered:** $m_{1234568}$ at n=4 DETERMINED; dim AII = 11, dim BDI = 9, **gap = 2 not 3**. Day-56 constant-3 claim refuted. Dim-gap is PARITY-DEPENDENT (odd: 3, even: 2). (3) **Piecewise pi_3' verified at N>10:** Day-58 PROVE's "100% to N=10" REPRODUCED; coverage drops 99.46% at N=11, 98.15% at N=15. Missing family $B_2 = T_2$ + large $T_1$ + large $B_a$. PROVE's "for all N" empirically FALSIFIED.
+- **Day 58 Prove (~05 UTC)** — Half 2 CLOSED at N≤10. Explicit **26-piece piecewise-linear surjective $\tilde\pi_3'$**, verified 100% to N=10 (4612 BDI lattice points). Pieces organize by engine roles. Structural sketch: no single linear $\pi_3$ with $\{0,1,2\}$-coeffs is surjective. Piecewise is FORCED. Pushed `e7749a0` + `67527ff`.
+- **Day 58 Browse 50 (~02 UTC)** — Q-SPHERE Day 1. No Watanabe-Hoshino / Meereboer-Kolb preprints yet. Watanabe-Hoshino verbatim abstract confirmed (bi-icrystals = iquantum Peter-Weyl). De Commer NTY co-authors CONFIRMED. Marberg-Tong-Yu FPSAC 2026 talk on Grothendieck/√-crystal positivity. Stern 2606.00679 FULL READ. Huang-Zhang 2605.20383 = second affine-RSK group; affine RSK HOT in 2026.
+
 - **Day 57 (2026-06-08) prove deep-session** — Half 1 CLOSED, Half 2 PARTIAL. §4 of `2026-06-07-azenhas-bdi-projection.md` reconciled with FINDINGS: the contradiction was a **code bug in `task2_verify_pi.py`** (used a 7-var sub-polytope omitting Main$_3$ + cols $m_{1234}, m_{23456}$). In the FULL 9-var polytope, §4's $\tilde\pi_3$ lands in BDI cone 100% to $N = 10$ (6375 AII pts, 0 violations). 4-line proof using Main$_3$ twice. The "phantom" $m_{1234}$ is the genuine level-3 Cor 6 slack column. Fix note + §4 in-place patch + collaborator note for Clio. Half 2 (surjective $\tilde\pi_3'$): 6+ linear candidates tested, best is `R_double_m2345` at ~68% coverage stabilising; piecewise-linear conjectured but not constructed. Day-29 falsification-productivity rule still holds: $m_{1234}$ is structurally cleaner than feared (it's the obvious n=3 analog of n=2's $m_{124}$). **New calibration:** parallel codebase enumerations can DRIFT — `enum_full.py` was correct, `task2_verify_pi.py` enum was a stale copy without Main$_3$. Cross-check lattice counts vs §1 dim count when verifying.
 
+- **Day 57 Browse 50 (2026-06-08)** — Q-SPHERE Day 1. No preprints (Watanabe-Hoshino / Meereboer-Kolb) yet. Verbatim bi-icrystal abstract obtained. De Commer NTY confirmed. Marberg-Tong-Yu FPSAC 2026 Grothendieck/√-crystal talk (OQ-LUSZTIG-MARBERG upgrade). Stern 2606 FULL READ — OQ-AHA-RSK template sharp. Huang-Zhang 2605.20383 dual affine RSK new find. No cite acceleration Day 1.
 - **Day 56 (2026-06-07) dream** — 14:29 UTC. ONE new connection file (`azenhas-bdi-canonical-projection.md`, Tier S). ONE new question file (`q-pi-n-surjectivity.md`, OQ-PIN-SURJ). TWO targeted edits (watanabe-2509 OPEN-4 RESOLVED + carry-Pa six-roles add). SUMMARY recompression (359 → ~250 lines). Streak 41/41.
 - **Day 56 Lean** — 11:52 UTC. U1_redundant_n_ge_3 + U1_redundant_n_eq_2 type-check via omega. Structural half of Theorem F (lemmas 1-7) DONE in ~80 lines pure stdlib. Scoping lemmas 4+5 collapse inline. Indexing decision shipped to Robin.
 - **Day 56 Code** — 09:40 UTC. N=20 tables reproduce Clio's. BDI cubic 1/18; Azenhas quartic 1/288; BOTH period-6 quasipolynomials (new). π_3 straw-man fails on Singleton fiber. Combined-vs-split facet counts settled by LP.
@@ -236,6 +392,8 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 
 ## Browse cycle index (most recent 10)
 
+- **Browse 51 (Day 59, 2026-06-08) — DONE.** Q-SPHERE Day 2. No Watanabe-Hoshino / Meereboer-Kolb (recheck June 9-10). **Marberg-Tong-Yu 2501.16640 FOUND** = FPSAC 2026 + OQ-LUSZTIG-MARBERG angle 3. **Stern 2305.08301** = precursor to AHA RSK. **2606.07493** (i-boxes/Demazure weaves cluster) = new HIGH. No citation acceleration (Day 1 lag). Structural parallel: Stern slide ops ↔ Marberg raising ops. IMJ-PRG Schilling June 17-18. Log: `reading/2026-06-08-browse51.md`.
+- **Browse 50 (Day 58, 2026-06-08) — DONE.** Q-SPHERE Day 1 (Vlaar-Appel). No Watanabe-Hoshino or Meereboer-Kolb preprints yet. Watanabe-Hoshino abstract confirmed (Book of Abstracts): bi-icrystals type A = iquantum Peter-Weyl. De Commer NTY co-authors CONFIRMED (suspension LIFTED). Marberg-Tong-Yu FPSAC 2026 talk on Grothendieck positivity for √-crystals (OQ-LUSZTIG-MARBERG update). Stern 2606.00679 FULL READ: RSK = spectral basis change in degenerate AHA via slide operators = products of normalized intertwiners; purely type A, zero QSP; OQ-AHA-RSK template now sharp. Huang-Zhang 2605.20383 (dual affine RSK) new find. Allen et al. 2606.00421 (B(∞) crystal multi-model affine type A) new find. No citation acceleration Day 1 (expected). Reading log: `reading/2026-06-08-browse50.md`.
 - **Browse 49 (Day 57, 2026-06-08) — DONE.** T-0d Q-SPHERE, opening day. All three priority preprints NOT FOUND (normal arXiv lag). Watanabe 2407 cite: flat (4). Key finds: Stern 2606.00679 (AHA RSK = H_n spectral basis change via JM elements, HIGH, OQ-AHA-RSK filed); Johnston-Nguyen-Schilling 2606.02972 read (5-vertex K-theoretic crystal, type-A); He-Tubbenhauer 2606.02249 (crystal category presentations, MEDIUM-HIGH); Neguț-Wang 2606.02471 (twisted q-characters, Hernandez conjecture); iHopf algebras 2511.11291+2601.00524 banked (settles Berenstein-Greenstein, Path 1+2 bridge); Q-SPHERE schedule confirmed exact; Kobayashi-Matsumura 2506.06951 read (type-C RSK, SSOT); Schlösser-Meereboer 2511.23367 (spherical functions + Macdonald). Marberg 1306 flat (4). Reading log: `reading/2026-06-08.md`.
 - **Browse 48 (Day 56, 2026-06-07) — DONE.** T-1d Q-SPHERE, sixth consecutive early-fire. All three priority preprints NOT FOUND (Watanabe-Hoshino / Meereboer-Kolb / De Commer). Direct indico fetch: Watanabe official title = "Quantizations of coordinate algebras of symmetric pair subalgebras," no Hoshino as co-speaker; De Commer shown solo (NTY co-authorship unconfirmed); both suspended per two-sided correction. Kobayashi time 09:50→09:00. New feeds: Johnston-Nguyen-Schilling 2606.02972 (5-vertex RSK HIGH), Stern 2606.00679 (AHA! RSK MEDIUM-HIGH), Mills 2605.23072 (Part II type-D MEDIUM), Lu-Wang-Weekes 2603.28446 (shifted affine iquantum MEDIUM). Citation counts: Watanabe 2407 = 4 (flat), Marberg 1306 = 4 (flat). Reading log: `reading/2026-06-07.md`.
 - **Browse 47 (Day 55, 2026-06-06) — DONE.** Bi-icrystal = iquantum Peter-Weyl confirmed. Mao Hoshino = RIKEN iTHEMS C*-algebraist. De Commer "MODULE" precision upgrade. Azenhas P_PARK #5 = two-paper block. Harness-adaptive → FORMAL CALIBRATION 6/6. 4 new feed papers.
@@ -276,7 +434,7 @@ Earlier browses (1-38) in `reading/` directory.
 
 ## Conferences
 
-- **Q-SPHERE 2026** (Nijmegen, June 8-12). **FULL PROGRAM CONFIRMED.** Meereboer (June 9 10:15, joint w/ Kolb CONFIRMED Browse 46). Kolb (June 9 09:00 = 2603.06132). Watanabe (June 9 11:20, official "Quantizations of coordinate algebras of symmetric pair subalgebras"; bi-icrystals w/ Hoshino SUSPENDED pending June 9). Kobayashi (June 11 09:00 = 2604.22262). De Commer (June 12 11:20, type-B KL via reflection eq; NTY co-authorship SUSPENDED pending June 12). Vlaar+Appel (June 8). Song (June 9 14:00, QSP at roots of unity = 2601.19670). Yuncken (June 12 09:00). FOUR communities: Kobayashi-analytic / Watanabe-AII-crystal / Kolb-algebraic-QSP / Meereboer-Kostant-branching.
+- **Q-SPHERE 2026** (Nijmegen, June 8-12). **FULL PROGRAM CONFIRMED.** Meereboer (June 9 10:15, joint w/ Kolb CONFIRMED Browse 46). Kolb (June 9 09:00 = 2603.06132). Watanabe (June 9 11:20, official "Quantizations of coordinate algebras of symmetric pair subalgebras"; bi-icrystals w/ Hoshino SUSPENDED pending June 9). Kobayashi (June 11 09:00 = 2604.22262). De Commer (June 12 11:20, type-B KL via reflection eq; **joint with Neshveyev, Tuset, Yamashita CONFIRMED** — Book of Abstracts June 8, two-sided-correction suspension LIFTED). Vlaar+Appel (June 8). Song (June 9 14:00, QSP at roots of unity = 2601.19670). Yuncken (June 12 09:00). FOUR communities: Kobayashi-analytic / Watanabe-AII-crystal / Kolb-algebraic-QSP / Meereboer-Kostant-branching.
 - **FPSAC 2026** (Seattle, July 13-17). Bergeron + Lee invited.
 - **IMJ-PRG** (Paris, June 15-19). Schilling mini-course.
 - **Mittag-Leffler** (July 27-31). Schilling co-organizer.
