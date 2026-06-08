@@ -1,0 +1,152 @@
+# Brute-force sanity check
+
+  weight=0: count=1
+  weight=1: count=1
+  weight=2: count=3
+  weight=3: count=4
+  weight=4: count=7
+  weight=5: count=9
+  weight=6: count=14
+  weight=7: count=17
+  weight=8: count=24
+  weight=9: count=29
+  weight=10: count=38
+  weight=11: count=45
+  weight=12: count=57
+  weight=13: count=66
+  weight=14: count=81
+  weight=15: count=93
+  weight=16: count=111
+  weight=17: count=126
+  weight=18: count=148
+  weight=19: count=166
+  weight=20: count=192
+  weight=21: count=214
+  weight=22: count=244
+  weight=23: count=270
+  weight=24: count=305
+  weight=25: count=335
+  weight=26: count=375
+  weight=27: count=410
+  weight=28: count=455
+  weight=29: count=495
+  weight=30: count=546
+
+# Cumulative counts
+  N=0: brute=1, csv=1  OK
+  N=1: brute=2, csv=2  OK
+  N=2: brute=5, csv=5  OK
+  N=3: brute=9, csv=9  OK
+  N=4: brute=16, csv=16  OK
+  N=5: brute=25, csv=25  OK
+  N=6: brute=39, csv=39  OK
+  N=7: brute=56, csv=56  OK
+  N=8: brute=80, csv=80  OK
+  N=9: brute=109, csv=109  OK
+  N=10: brute=147, csv=147  OK
+  N=11: brute=192, csv=192  OK
+  N=12: brute=249, csv=249  OK
+  N=13: brute=315, csv=315  OK
+  N=14: brute=396, csv=396  OK
+  N=15: brute=489, csv=489  OK
+  N=16: brute=600, csv=600  OK
+  N=17: brute=726, csv=726  OK
+  N=18: brute=874, csv=874  OK
+  N=19: brute=1040, csv=1040  OK
+  N=20: brute=1232, csv=1232  OK
+  N=21: brute=1446, csv=1446  OK
+  N=22: brute=1690, csv=1690  OK
+  N=23: brute=1960, csv=1960  OK
+  N=24: brute=2265, csv=2265  OK
+  N=25: brute=2600, csv=2600  OK
+  N=26: brute=2975, csv=2975  OK
+  N=27: brute=3385, csv=3385  OK
+  N=28: brute=3840, csv=3840  OK
+  N=29: brute=4335, csv=4335  OK
+  N=30: brute=4881, csv=4881  OK
+
+# Exact weight counts (Ehrhart of the slice {weight = N})
+# This is a degree-3 quasipoly of the slice 3-dim polytope.
+
+  f(0) = 1
+  f(1) = 1
+  f(2) = 3
+  f(3) = 4
+  f(4) = 7
+  f(5) = 9
+  f(6) = 14
+  f(7) = 17
+  f(8) = 24
+  f(9) = 29
+  f(10) = 38
+  f(11) = 45
+  f(12) = 57
+  f(13) = 66
+  f(14) = 81
+  f(15) = 93
+  f(16) = 111
+  f(17) = 126
+  f(18) = 148
+  f(19) = 166
+  f(20) = 192
+  f(21) = 214
+  f(22) = 244
+  f(23) = 270
+  f(24) = 305
+  f(25) = 335
+  f(26) = 375
+  f(27) = 410
+  f(28) = 455
+  f(29) = 495
+  f(30) = 546
+  f(31) = 591
+  f(32) = 648
+  f(33) = 699
+  f(34) = 762
+  f(35) = 819
+  f(36) = 889
+  f(37) = 952
+  f(38) = 1029
+  f(39) = 1099
+  f(40) = 1183
+  f(41) = 1260
+  f(42) = 1352
+  f(43) = 1436
+  f(44) = 1536
+  f(45) = 1628
+  f(46) = 1736
+  f(47) = 1836
+  f(48) = 1953
+  f(49) = 2061
+  f(50) = 2187
+  f(51) = 2304
+  f(52) = 2439
+  f(53) = 2565
+  f(54) = 2710
+  f(55) = 2845
+  f(56) = 3000
+  f(57) = 3145
+  f(58) = 3310
+  f(59) = 3465
+  f(60) = 3641
+
+Finite differences of f_N (Ehrhart of slice):
+  d^1 tail: [108, 126, 117, 135, 126, 145, 135, 155, 145, 165, 155, 176]
+  d^2 tail: [-9, 18, -9, 18, -9, 19, -10, 20, -10, 20, -10, 21]
+  d^3 tail: [-26, 27, -27, 27, -27, 28, -29, 30, -30, 30, -30, 31]
+  d^4 tail: [-51, 53, -54, 54, -54, 55, -57, 59, -60, 60, -60, 61]
+  d^5 tail: [-100, 104, -107, 108, -108, 109, -112, 116, -119, 120, -120, 121]
+
+d^4(f_N)[N+6] - d^4(f_N)[N]:
+  N=43: -6
+  N=44: 6
+  N=45: -6
+  N=46: 6
+  N=47: -6
+  N=48: 6
+  N=49: -6
+  N=50: 6
+  N=51: -6
+  N=52: 6
+  N=53: -6
+  N=54: 6

@@ -1,0 +1,134 @@
+# Day 58 Task 1: Honest Ehrhart recompute, N up to 80
+
+Enumerating BDI n=2 to N=80...
+  c_BDI(N=20) = 632 (Day-57 said 632)
+  c_BDI(N=40) = 4263 (Day-57 said 4263)
+  c_BDI(N=80) = 31192
+
+Enumerating AII n=2 to N=80...
+  c_AII(N=20) = 1232 (Day-57 said 1232)
+  c_AII(N=40) = 13552 (Day-57 said 13552)
+  c_AII(N=80) = 176792
+
+## Finite differences in the tail (last 12 values, all integer)
+
+### BDI
+  d^1 (N=69..80): [840, 864, 888, 913, 937, 963, 988, 1014, 1040, 1067, 1093, 1121]
+  d^2 (N=69..80): [23, 24, 24, 25, 24, 26, 25, 26, 26, 27, 26, 28]
+  d^3 (N=69..80): [-1, 1, 0, 1, -1, 2, -1, 1, 0, 1, -1, 2]
+  d^4 (N=69..80): [-3, 2, -1, 1, -2, 3, -3, 2, -1, 1, -2, 3]
+  d^5 (N=69..80): [-6, 5, -3, 2, -3, 5, -6, 5, -3, 2, -3, 5]
+  d^6 (N=69..80): [-11, 11, -8, 5, -5, 8, -11, 11, -8, 5, -5, 8]
+
+### AII
+  d^1 (N=69..80): [5394, 5628, 5850, 6097, 6331, 6591, 6838, 7111, 7371, 7658, 7931, 8232]
+  d^2 (N=69..80): [210, 234, 222, 247, 234, 260, 247, 273, 260, 287, 273, 301]
+  d^3 (N=69..80): [-12, 24, -12, 25, -13, 26, -13, 26, -13, 27, -14, 28]
+  d^4 (N=69..80): [-36, 36, -36, 37, -38, 39, -39, 39, -39, 40, -41, 42]
+  d^5 (N=69..80): [-72, 72, -72, 73, -75, 77, -78, 78, -78, 79, -81, 83]
+  d^6 (N=69..80): [-143, 144, -144, 145, -148, 152, -155, 156, -156, 157, -160, 164]
+
+## Residue-class stabilisation: for each (k, p) report whether
+## d^k is constant within each residue class mod p in the tail (N >= ~50).
+
+system   k   p   stable       max tail variation across residues
+BDI      3   2    False                                        1
+BDI      3   3    False                                        2
+BDI      3   4    False                                        1
+BDI      3   6     True                                        0
+BDI      3   8    False                                        1
+BDI      3  12     True                                        0
+BDI      4   2    False                                        2
+BDI      4   3    False                                        4
+BDI      4   4    False                                        2
+BDI      4   6     True                                        0
+BDI      4   8    False                                        2
+BDI      4  12     True                                        0
+BDI      5   2    False                                        3
+BDI      5   4    False                                        3
+BDI      5   6     True                                        0
+BDI      5   8    False                                        3
+BDI      5  12     True                                        0
+BDI      6   6     True                                        0
+BDI      6  12     True                                        0
+
+## Local degree estimates α(N) = log(c(N+dN)/c(N)) / log((N+dN)/N)
+## True degree = lim α(N) as N -> ∞.
+
+   N |    α_BDI |    α_AII
+------------------------------
+  10 |   2.6130 |   3.1883
+  15 |   2.7008 |   3.3561
+  20 |   2.7539 |   3.4594
+  25 |   2.7910 |   3.5348
+  30 |   2.8171 |   3.5895
+  35 |   2.8378 |   3.6334
+  40 |   2.8541 |   3.6678
+  45 |   2.8672 |   3.6967
+  50 |   2.8782 |   3.7205
+  55 |   2.8876 |   3.7411
+  60 |   2.8954 |   3.7586
+
+## Asymptotic ratio c_AII(N) / c_BDI(N)
+
+   N |      c_AII |      c_BDI |      ratio |    ratio/N
+  10 |        147 |        108 |     1.3611 |    0.13611
+  20 |       1232 |        632 |     1.9494 |    0.09747
+  30 |       4881 |       1906 |     2.5609 |    0.08536
+  40 |      13552 |       4263 |     3.1790 |    0.07947
+  50 |      30537 |       8037 |     3.7996 |    0.07599
+  60 |      59961 |      13561 |     4.4216 |    0.07369
+  70 |     106782 |      21168 |     5.0445 |    0.07206
+  80 |     176792 |      31192 |     5.6679 |    0.07085
+
+## Hypothesis test: AII is degree-4 period-6 quasipolynomial
+##   If true: d^4(c_AII) restricted to each residue class mod 6
+##   is constant in N. Equivalently d^5(c_AII)[N] - d^5(c_AII)[N+6] = 0.
+
+d^4(c_AII)[N+6] - d^4(c_AII)[N]  (should be 0 if degree=4 period=6):
+
+   N |   d^4[N] |   d^4[N+6] |     diff
+  60 |       31 |         34 |       +3
+  61 |      -32 |        -35 |       -3
+  62 |       33 |         36 |       +3
+  63 |      -33 |        -36 |       -3
+  64 |       33 |         36 |       +3
+  65 |      -33 |        -36 |       -3
+  66 |       34 |         37 |       +3
+  67 |      -35 |        -38 |       -3
+  68 |       36 |         39 |       +3
+  69 |      -36 |        -39 |       -3
+  70 |       36 |         39 |       +3
+
+Same test for d^3 (Day-57 wrongly suggested period-6 quartic;
+if AII degree-5 then d^5 - not d^4 - would be constant per residue):
+
+   N |   d^3[N] |   d^3[N+6] |     diff
+  60 |       21 |         23 |       +2
+  61 |      -11 |        -12 |       -1
+  62 |       22 |         24 |       +2
+  63 |      -11 |        -12 |       -1
+  64 |       22 |         24 |       +2
+  65 |      -11 |        -12 |       -1
+  66 |       23 |         25 |       +2
+  67 |      -12 |        -13 |       -1
+  68 |       24 |         26 |       +2
+  69 |      -12 |        -13 |       -1
+  70 |       24 |         26 |       +2
+  71 |      -12 |        -13 |       -1
+
+Same test for d^5 (the Day-57 'bounded period 6' claim):
+   N |   d^5[N] |   d^5[N+6] |     diff
+  60 |       61 |         67 |       +6
+  61 |      -63 |        -69 |       -6
+  62 |       65 |         71 |       +6
+  63 |      -66 |        -72 |       -6
+  64 |       66 |         72 |       +6
+  65 |      -66 |        -72 |       -6
+  66 |       67 |         73 |       +6
+  67 |      -69 |        -75 |       -6
+  68 |       71 |         77 |       +6
+  69 |      -72 |        -78 |       -6
+
+CSV saved to /home/agent/projects/code/2026-06-08-ehrhart-honest/differences.csv
+Raw counts saved to /home/agent/projects/code/2026-06-08-ehrhart-honest/raw_counts.csv
