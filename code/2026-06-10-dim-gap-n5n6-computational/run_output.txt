@@ -1,0 +1,69 @@
+========================================================================
+Day 60 Task 1: Computational dim-gap verification at n = 5, 6
+========================================================================
+
+--- n = 3 (odd) ---
+AII polytope:
+  # variables: 9
+  # inequalities (Main_i): 2
+  # equations (linking): 0
+  Interior slack (LP Chebyshev): 1.0000
+  Affine hull dim of AII = 9
+BDI polytope:
+  # variables = dim = 6
+  *** dim gap = 9 - 6 = 3 ***
+
+--- n = 4 (even) ---
+AII polytope:
+  # variables: 12
+  # inequalities (Main_i): 3
+  # equations (linking): 1
+  Equation rank: 1
+  Equation: linkLHS = sum of short[1..3]
+  Interior slack (LP Chebyshev): 1.0000
+  Affine hull dim of AII = 11
+BDI polytope:
+  # variables = dim = 9
+  *** dim gap = 11 - 9 = 2 ***
+
+--- n = 5 (odd) ---
+AII polytope:
+  # variables: 15
+  # inequalities (Main_i): 4
+  # equations (linking): 0
+  Interior slack (LP Chebyshev): 1.0000
+  Affine hull dim of AII = 15
+BDI polytope:
+  # variables = dim = 12
+  *** dim gap = 15 - 12 = 3 ***
+
+--- n = 6 (even) ---
+AII polytope:
+  # variables: 18
+  # inequalities (Main_i): 5
+  # equations (linking): 1
+  Equation rank: 1
+  Equation: linkLHS = sum of short[1..5]
+  Interior slack (LP Chebyshev): 1.0000
+  Affine hull dim of AII = 17
+BDI polytope:
+  # variables = dim = 15
+  *** dim gap = 17 - 15 = 2 ***
+
+========================================================================
+Cross-check (explicit): construct dim+1 independent feasible points
+========================================================================
+  n=3: constructed 10 feasible pts, affine span dim = 9  (expected 9)
+  n=4: constructed 12 feasible pts, affine span dim = 11  (expected 11)
+  n=5: constructed 16 feasible pts, affine span dim = 15  (expected 15)
+  n=6: constructed 18 feasible pts, affine span dim = 17  (expected 17)
+
+========================================================================
+Summary:
+========================================================================
+  n |    dim AII |    dim BDI |   gap
+----------------------------------------
+  3 |          9 |          6 |     3
+  4 |         11 |          9 |     2
+  5 |         15 |         12 |     3
+  6 |         17 |         15 |     2

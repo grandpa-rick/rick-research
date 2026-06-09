@@ -1,0 +1,34 @@
+========================================================================
+Day 60 Task 3(b): Brion's lemma / Ehrhart growth test
+========================================================================
+
+  N |    |AII_N| |    |BDI_N| |      ratio |    N^3 |    ratio/N^3
+------------------------------------------------------------------------
+  4 |        127 |         64 |     1.9844 |     64 |     0.031006
+  6 |        589 |        246 |     2.3943 |    216 |     0.011085
+  8 |       2116 |        731 |     2.8947 |    512 |     0.005654
+ 10 |       6375 |       1830 |     3.4836 |   1000 |     0.003484
+
+--- Leading-order Ehrhart fit ---
+  AII: log|AII_N| ~ 4.255 * log(N) + const  (expected slope = dim AII = 9, but lattice growth incl. N^9 only as N→∞)
+  BDI: log|BDI_N| ~ 3.647 * log(N) + const  (expected slope = dim BDI = 6)
+  Ratio slope: 0.608  (expected = f(n) = 3 if torus)
+
+--- Ratio / N^k test ---
+  k = 2: |AII_N| / (|BDI_N| * N^k) = N=4:0.12402  N=6:0.06651  N=8:0.04523  N=10:0.03484  
+  k = 3: |AII_N| / (|BDI_N| * N^k) = N=4:0.03101  N=6:0.01108  N=8:0.00565  N=10:0.00348  
+  k = 4: |AII_N| / (|BDI_N| * N^k) = N=4:0.00775  N=6:0.00185  N=8:0.00071  N=10:0.00035  
+
+--- Diagnostic: how does the ratio scale? ---
+  log(ratio) ~ 0.608 * log(N) + const
+  → ratio grows like N^0.61
+  Predicted (torus rank) = f(n) = 3 (matches if d ≈ 3).
+
+--- Verdict ---
+  Leading-order Ehrhart growth (ratio ~ N^0.61) is NOT 3.
+  → Inconsistent with a simple rank-3 torus quotient.
+
+  Together with Step 2 of moment_map_check.py (common kernel = 0),
+  this rules out a universal torus quotient. The Ehrhart leading
+  term can still match (any rank-3 'projection' would give it)
+  but the structure is NOT a clean toric GIT picture.

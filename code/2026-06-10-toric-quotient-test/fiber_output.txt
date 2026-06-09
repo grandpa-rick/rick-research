@@ -1,0 +1,63 @@
+========================================================================
+Day 60 Task 3(c): Fiber enumerate at n=3
+========================================================================
+
+--- N = 6 ---
+  BDI lattice pts: 246
+  Covered: 246, missing: 0
+  Within-piece fiber size dist (Counter): {1: 36923, 2: 4553, 3: 1192, 4: 501, 5: 202, 6: 90, 7: 31, 8: 4}...
+  # pieces hitting g dist: {1: 2454, 2: 1213, 3: 905, 4: 411, 5: 239, 6: 242, 7: 181, 8: 121}...
+
+--- N = 8 ---
+  BDI lattice pts: 731
+  Covered: 731, missing: 0
+  Within-piece fiber size dist (Counter): {1: 110458, 2: 20662, 3: 5429, 4: 2602, 5: 1088, 6: 553, 7: 263, 8: 109}...
+  # pieces hitting g dist: {1: 9398, 2: 4305, 3: 2984, 4: 1493, 5: 899, 6: 787, 7: 609, 8: 444}...
+
+--- N = 10 ---
+  BDI lattice pts: 1830
+  Covered: 1830, missing: 0
+  Within-piece fiber size dist (Counter): {1: 273361, 2: 68002, 3: 19950, 4: 10510, 5: 4405, 6: 2537, 7: 1321, 8: 700}...
+  # pieces hitting g dist: {1: 27662, 2: 12644, 3: 8220, 4: 4131, 5: 2653, 6: 2265, 7: 1644, 8: 1185}...
+
+========================================================================
+--- Detailed fiber analysis at N = 10 ---
+========================================================================
+  g = (0, 0, 0, 0, 0, 0): # pieces = 94, |fiber (union)| = 66
+    section_4_strawman: 66 AII pts under this piece
+    section_4_aug_M2: 1 AII pts under this piece
+  g = (0, 1, 0, 0, 0, 0): # pieces = 65, |fiber (union)| = 101
+    section_4_aug_M2: 2 AII pts under this piece
+    P5a_m2_in_S: 1 AII pts under this piece
+  g = (0, 1, 1, 0, 0, 0): # pieces = 23, |fiber (union)| = 2
+    R_double_m2345: 1 AII pts under this piece
+    R_double_both: 1 AII pts under this piece
+  g = (2, 1, 0, 0, 0, 0): # pieces = 21, |fiber (union)| = 12
+    P4a_M2_dbl_23456: 10 AII pts under this piece
+    P4i_M2_23456_S_236: 1 AII pts under this piece
+  g = (2, 1, 0, 0, 0, 2): # pieces = 18, |fiber (union)| = 13
+    P4b_M2_S_dbl_23456: 10 AII pts under this piece
+    P4c_M2_S_dbl_both: 10 AII pts under this piece
+  g = (0, 0, 0, 1, 1, 0): # pieces = 30, |fiber (union)| = 2
+    P4o_M2_236_S_m2: 1 AII pts under this piece
+    P5e_M2_via_236: 1 AII pts under this piece
+
+========================================================================
+--- N = 11 missing analysis ---
+========================================================================
+  BDI lattice pts at N=11: 2757
+  Missing under 94-piece registry: 7
+  Missing list (first 20):
+    g (M_2,B_1,T_1,B_2,T_2,S) = (4, 2, 0, 2, 2, 1), T_1:T_2 = 0:2
+    g (M_2,B_1,T_1,B_2,T_2,S) = (3, 3, 1, 0, 0, 4), T_1:T_2 = 1:0
+    g (M_2,B_1,T_1,B_2,T_2,S) = (4, 3, 1, 0, 0, 3), T_1:T_2 = 1:0
+    g (M_2,B_1,T_1,B_2,T_2,S) = (2, 2, 1, 3, 3, 0), T_1:T_2 = 1:3
+    g (M_2,B_1,T_1,B_2,T_2,S) = (4, 2, 0, 1, 1, 3), T_1:T_2 = 0:1
+    g (M_2,B_1,T_1,B_2,T_2,S) = (3, 3, 0, 0, 0, 5), T_1:T_2 = 0:0
+    g (M_2,B_1,T_1,B_2,T_2,S) = (4, 3, 1, 1, 1, 1), T_1:T_2 = 1:1
+
+  T_1:T_2 ratio distribution in missing:
+    ('any', 0): 3
+    (0, 'any'): 2
+    (1, 3): 1
+    (1, 1): 1

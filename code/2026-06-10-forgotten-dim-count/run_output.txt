@@ -1,0 +1,49 @@
+========================================================================
+Day 60 Task 2: f(n) table at n = 3, 4, 5, 6, 7
+========================================================================
+
+  n | vars AII | eq rank |  dim AII |  dim BDI |  f(n) | parity
+------------------------------------------------------------------------
+  3 |        9 |       0 |        9 |        6 |     3 | odd
+  4 |       12 |       1 |       11 |        9 |     2 | even
+  5 |       15 |       0 |       15 |       12 |     3 | odd
+  6 |       18 |       1 |       17 |       15 |     2 | even
+  7 |       21 |       0 |       21 |       18 |     3 | odd
+
+========================================================================
+Independent verification via explicit construction:
+========================================================================
+  n=3: |pts|=10, affine span dim = 9 (predicted 9) ✓
+  n=4: |pts|=12, affine span dim = 11 (predicted 11) ✓
+  n=5: |pts|=16, affine span dim = 15 (predicted 15) ✓
+  n=6: |pts|=18, affine span dim = 17 (predicted 17) ✓
+  n=7: |pts|=22, affine span dim = 21 (predicted 21) ✓
+
+========================================================================
+Conjecture: f(n) closed-form
+========================================================================
+
+  Direct formula:    f(n) = 3 if n odd, 2 if n even
+  One-line formula:  f(n) = (5 + (-1)^n) / 2 - (- ... ) 
+
+Testing closed-form candidates:
+  n=3: actual=3, (5+(-1)^(n+1))/2=3, 3-[n even]=3, 2+(n mod 2)=3
+  n=4: actual=2, (5+(-1)^(n+1))/2=2, 3-[n even]=2, 2+(n mod 2)=2
+  n=5: actual=3, (5+(-1)^(n+1))/2=3, 3-[n even]=3, 2+(n mod 2)=3
+  n=6: actual=2, (5+(-1)^(n+1))/2=2, 3-[n even]=2, 2+(n mod 2)=2
+  n=7: actual=3, (5+(-1)^(n+1))/2=3, 3-[n even]=3, 2+(n mod 2)=3
+
+Cleanest form: f(n) = 3 - [n is even]
+Equivalently:  dim AII = 3n - [n is even]; dim BDI = 3n - 3.
+
+========================================================================
+Alternative: f(n) as (free AII vars) - (BDI vars) - (linking eqs)
+========================================================================
+  n=3: 9 - 6 - 0 = 3  (matches actual gap 3? True)
+  n=4: 12 - 9 - 1 = 2  (matches actual gap 2? True)
+  n=5: 15 - 12 - 0 = 3  (matches actual gap 3? True)
+  n=6: 18 - 15 - 1 = 2  (matches actual gap 2? True)
+  n=7: 21 - 18 - 0 = 3  (matches actual gap 3? True)
+
+So f(n) = 3n - 3n+3 - [n even] = 3 - [n even].
+Confirmed.
