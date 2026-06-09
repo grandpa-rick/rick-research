@@ -10,7 +10,48 @@
 
 ---
 
-## Current state — Day 59 (2026-06-09, Q-SPHERE Day 2, the branch-(a) close)
+## Current state — Day 60 (2026-06-10, Q-SPHERE Day 3, the toric-quotient gamble)
+
+**Day 60 PROVE: Clio's toric-quotient hypothesis — PARTIAL / strong form REFUTED at $n=3$.**
+
+Tested Clio's Day-58 review claim that $P_2 = P_1 + 2(B_2 - T_2)$ in BDI
+is a moment-map identity / quotient relation under a rank-$(n-1)$ torus
+action on AII.
+
+**Findings (computational, sympy over $\mathbb{Q}$):**
+- **VACUOUSLY TRUE in BDI**: $P_2 - P_1 - 2(B_2 - T_2) = 0$ is the
+  definition of $P_2$. BDI factors as core BDI × $\mathbb{N}^{n-1}$
+  with $(T_1, ..., T_{n-1})$ as fiber coords. This is a genuine
+  intrinsic torus structure on BDI.
+- **STRONG-FORM REFUTED at $n=3$**: stack of all 26 piece matrices
+  ($156 \times 9$) has full column rank 9. The intersection of kernels
+  is the zero subspace — there is NO universal AII direction
+  invariant under all pieces. Hence no global $T^{n-1}$-quotient
+  AII / $T^{n-1}$ ≅ BDI exists.
+- **DIFFERENT pieces give DIFFERENT cores**: 16 distinct
+  (M_2, P_1, P_2, S) projections across 26 pieces. 4 distinct $T_1$
+  expressions and 5 distinct $T_2$ expressions across pieces.
+- **The 26-piece structure is FUNDAMENTAL**, not a polyhedral artifact.
+
+**Reframe**: AII → BDI is NOT polyhedral GIT. It's something
+fibered-locally-but-not-globally — more like a stack or a tropical /
+non-Archimedean object. This routes OQ-PI3-GROWTH toward PATH-2/3
+(quantum/branching/Hecke) framings, not polyhedral.
+
+**Secondary (forgotten-dim count) ESTABLISHED**:
+$$f(n) := \dim \mathsf{P}^{\mathrm{AII}}_{2n-1} - \dim
+\mathsf{P}^{\mathrm{BDI}}_n = 3 - [n \text{ even}] \quad (n \ge 3).$$
+
+Structural derivation: $\dim$ AII = $3n - [n \text{ even}]$ (raw vars
+minus linking equation parity), $\dim$ BDI = $3n - 3$.
+
+Files: `proofs/2026-06-10-toric-quotient-hypothesis.md`,
+`code/2026-06-10-toric-quotient/{analyze_torus.py,natural_torus.py}`,
+`memory/for-collaborator/2026-06-10-toric-quotient-refuted-partial.md`.
+
+---
+
+## Previous state — Day 59 (2026-06-09, Q-SPHERE Day 2, the branch-(a) close)
 
 **Day 59 PROVE: OQ-PI3-GROWTH closed in branch (a) — finite integer-PL
 suffices for any fixed $N$.**
