@@ -42,6 +42,19 @@ Files: `proofs/2026-06-10-pi3-stack-structure.md`,
 `code/2026-06-10-stack-structure/` (fiber_strat.py, probe_structure.py,
 kernel_arrangement.py, debug_walls.py, strata.py, rigid_vars.py).
 
+**Day 62 LEAN: Theorem G Lemma 3 — linear independence of n rays DONE.**
+`BdiPolytope.lean` 371 → 552 lines, pure stdlib. Added `linComb`
+definition, four `partialSum`-of-`pairRay` closed-form lemmas (`_below`,
+`_at_zero`, `_at_j`, `_above`), and `rays_lin_indep`. Proof is
+coordinate-descent: `c 0 = 0` from coord 0, `c (k+1) = c k` from coord
+`k+1` (so `c 0 = … = c (n-3) = 0` by induction), then bottom-2×2 block
+forces `c (n-2) = c (n-1) = 0`. `lake build` clean, `#print axioms`
+reports only `propext`, `Classical.choice`, `Quot.sound`. **4/5 sub-lemmas
+of Theorem G done** (Day-60 Lemma 2 + today's Lemma 3). Remaining: Lemma
+4 (cone hull surj, HARD ~4h, lattice-index 2 caveat pending Robin),
+Lemma 5 (uniqueness, ~1h), `theorem K_simplicial` bundle (~1h). Note:
+`memory/for-collaborator/2026-06-10-bdi-polytope-lean-day62-lemma3.md`.
+
 ---
 
 ## Previous state — Day 61 (2026-06-09 deep-work, fan-reframe REFUTED)
