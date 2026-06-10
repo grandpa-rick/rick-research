@@ -1,0 +1,208 @@
+# pieces in MIN_COVER_26: 26
+# pieces resolved in ALL_PI: 26
+
+=== N = 4, # AII lattice pts = 127, # pieces = 26 ===
+
+  Distribution of |V(p)| (# valid pieces per p):
+    |V|=25 :     29 pts   (22.83%)
+    |V|=26 :     98 pts   (77.17%)
+    mean |V| = 25.772
+    max  |V| = 26
+    min  |V| = 25
+
+  Distribution of |I(p)| (# distinct images per p):
+    |I|= 1 :      9 pts   ( 7.09%)
+    |I|= 2 :      7 pts   ( 5.51%)
+    |I|= 4 :     13 pts   (10.24%)
+    |I|= 5 :     13 pts   (10.24%)
+    |I|= 7 :      1 pts   ( 0.79%)
+    |I|= 9 :     30 pts   (23.62%)
+    |I|=10 :      3 pts   ( 2.36%)
+    |I|=11 :      1 pts   ( 0.79%)
+    |I|=12 :      5 pts   ( 3.94%)
+    |I|=13 :      9 pts   ( 7.09%)
+    |I|=14 :      2 pts   ( 1.57%)
+    |I|=16 :      9 pts   ( 7.09%)
+    |I|=17 :      7 pts   ( 5.51%)
+    |I|=21 :      8 pts   ( 6.30%)
+    |I|=22 :      4 pts   ( 3.15%)
+    |I|=25 :      4 pts   ( 3.15%)
+    |I|=26 :      2 pts   ( 1.57%)
+    mean |I| = 10.504
+    max  |I| = 26
+    min  |I| = 1
+
+  AII pts with |I(p)| > 1 (genuine multivaluedness): 118/127 (92.91%)
+
+  VERDICT: CANDIDATE B (genuine multivaluedness): different pieces give different images at the same p.
+
+=== N = 5, # AII lattice pts = 284, # pieces = 26 ===
+
+  Distribution of |V(p)| (# valid pieces per p):
+    |V|=25 :     63 pts   (22.18%)
+    |V|=26 :    221 pts   (77.82%)
+    mean |V| = 25.778
+    max  |V| = 26
+    min  |V| = 25
+
+  Distribution of |I(p)| (# distinct images per p):
+    |I|= 1 :     12 pts   ( 4.23%)
+    |I|= 2 :     12 pts   ( 4.23%)
+    |I|= 3 :      1 pts   ( 0.35%)
+    |I|= 4 :     22 pts   ( 7.75%)
+    |I|= 5 :     30 pts   (10.56%)
+    |I|= 7 :      3 pts   ( 1.06%)
+    |I|= 8 :      1 pts   ( 0.35%)
+    |I|= 9 :     55 pts   (19.37%)
+    |I|=10 :      8 pts   ( 2.82%)
+    |I|=11 :      3 pts   ( 1.06%)
+    |I|=12 :      9 pts   ( 3.17%)
+    |I|=13 :     25 pts   ( 8.80%)
+    |I|=14 :      9 pts   ( 3.17%)
+    |I|=16 :     21 pts   ( 7.39%)
+    |I|=17 :     21 pts   ( 7.39%)
+    |I|=18 :      1 pts   ( 0.35%)
+    |I|=21 :     15 pts   ( 5.28%)
+    |I|=22 :     14 pts   ( 4.93%)
+    |I|=25 :     13 pts   ( 4.58%)
+    |I|=26 :      9 pts   ( 3.17%)
+    mean |I| = 11.852
+    max  |I| = 26
+    min  |I| = 1
+
+  AII pts with |I(p)| > 1 (genuine multivaluedness): 272/284 (95.77%)
+
+  VERDICT: CANDIDATE B (genuine multivaluedness): different pieces give different images at the same p.
+
+=== N = 6, # AII lattice pts = 589, # pieces = 26 ===
+
+  Distribution of |V(p)| (# valid pieces per p):
+    |V|=25 :    125 pts   (21.22%)
+    |V|=26 :    464 pts   (78.78%)
+    mean |V| = 25.788
+    max  |V| = 26
+    min  |V| = 25
+
+  Distribution of |I(p)| (# distinct images per p):
+    |I|= 1 :     16 pts   ( 2.72%)
+    |I|= 2 :     21 pts   ( 3.57%)
+    |I|= 3 :      2 pts   ( 0.34%)
+    |I|= 4 :     34 pts   ( 5.77%)
+    |I|= 5 :     64 pts   (10.87%)
+    |I|= 7 :      7 pts   ( 1.19%)
+    |I|= 8 :      4 pts   ( 0.68%)
+    |I|= 9 :     91 pts   (15.45%)
+    |I|=10 :     18 pts   ( 3.06%)
+    |I|=11 :      7 pts   ( 1.19%)
+    |I|=12 :     16 pts   ( 2.72%)
+    |I|=13 :     54 pts   ( 9.17%)
+    |I|=14 :     29 pts   ( 4.92%)
+    |I|=16 :     44 pts   ( 7.47%)
+    |I|=17 :     50 pts   ( 8.49%)
+    |I|=18 :      3 pts   ( 0.51%)
+    |I|=19 :      2 pts   ( 0.34%)
+    |I|=21 :     29 pts   ( 4.92%)
+    |I|=22 :     32 pts   ( 5.43%)
+    |I|=23 :      1 pts   ( 0.17%)
+    |I|=24 :      1 pts   ( 0.17%)
+    |I|=25 :     34 pts   ( 5.77%)
+    |I|=26 :     30 pts   ( 5.09%)
+    mean |I| = 12.925
+    max  |I| = 26
+    min  |I| = 1
+
+  AII pts with |I(p)| > 1 (genuine multivaluedness): 573/589 (97.28%)
+
+  VERDICT: CANDIDATE B (genuine multivaluedness): different pieces give different images at the same p.
+
+  # walls (1-step shifts where (nV,nI) changes): 50 (showing 3)
+    p={'m_2': 0, 'm_23': 0, 'm_236': 0, 'm_23456': 1, 'm_12356': 0, 'm_12346': 0, 'm_2345': 0, 'm_1235': 0, 'm_1234': 0}
+      shift -m_23456 -> neighbour with (nV,nI)=(26,1); p has (26,9)
+    p={'m_2': 0, 'm_23': 0, 'm_236': 1, 'm_23456': 0, 'm_12356': 0, 'm_12346': 0, 'm_2345': 0, 'm_1235': 0, 'm_1234': 0}
+      shift -m_236 -> neighbour with (nV,nI)=(26,1); p has (25,9)
+    p={'m_2': 0, 'm_23': 0, 'm_236': 1, 'm_23456': 1, 'm_12356': 0, 'm_12346': 0, 'm_2345': 0, 'm_1235': 0, 'm_1234': 0}
+      shift -m_236 -> neighbour with (nV,nI)=(26,9); p has (25,21)
+
+=== N = 7, # AII lattice pts = 1145, # pieces = 26 ===
+
+  Distribution of |V(p)| (# valid pieces per p):
+    |V|=25 :    234 pts   (20.44%)
+    |V|=26 :    911 pts   (79.56%)
+    mean |V| = 25.796
+    max  |V| = 26
+    min  |V| = 25
+
+  Distribution of |I(p)| (# distinct images per p):
+    |I|= 1 :     20 pts   ( 1.75%)
+    |I|= 2 :     31 pts   ( 2.71%)
+    |I|= 3 :      5 pts   ( 0.44%)
+    |I|= 4 :     50 pts   ( 4.37%)
+    |I|= 5 :    118 pts   (10.31%)
+    |I|= 7 :     14 pts   ( 1.22%)
+    |I|= 8 :     13 pts   ( 1.14%)
+    |I|= 9 :    144 pts   (12.58%)
+    |I|=10 :     36 pts   ( 3.14%)
+    |I|=11 :     14 pts   ( 1.22%)
+    |I|=12 :     25 pts   ( 2.18%)
+    |I|=13 :    107 pts   ( 9.34%)
+    |I|=14 :     76 pts   ( 6.64%)
+    |I|=16 :     84 pts   ( 7.34%)
+    |I|=17 :    108 pts   ( 9.43%)
+    |I|=18 :      8 pts   ( 0.70%)
+    |I|=19 :      8 pts   ( 0.70%)
+    |I|=21 :     46 pts   ( 4.02%)
+    |I|=22 :     71 pts   ( 6.20%)
+    |I|=23 :      4 pts   ( 0.35%)
+    |I|=24 :      3 pts   ( 0.26%)
+    |I|=25 :     74 pts   ( 6.46%)
+    |I|=26 :     86 pts   ( 7.51%)
+    mean |I| = 13.893
+    max  |I| = 26
+    min  |I| = 1
+
+  AII pts with |I(p)| > 1 (genuine multivaluedness): 1125/1145 (98.25%)
+
+  VERDICT: CANDIDATE B (genuine multivaluedness): different pieces give different images at the same p.
+
+=== N = 8, # AII lattice pts = 2116, # pieces = 26 ===
+
+  Distribution of |V(p)| (# valid pieces per p):
+    |V|=25 :    415 pts   (19.61%)
+    |V|=26 :   1701 pts   (80.39%)
+    mean |V| = 25.804
+    max  |V| = 26
+    min  |V| = 25
+
+  Distribution of |I(p)| (# distinct images per p):
+    |I|= 1 :     25 pts   ( 1.18%)
+    |I|= 2 :     46 pts   ( 2.17%)
+    |I|= 3 :      9 pts   ( 0.43%)
+    |I|= 4 :     70 pts   ( 3.31%)
+    |I|= 5 :    209 pts   ( 9.88%)
+    |I|= 7 :     25 pts   ( 1.18%)
+    |I|= 8 :     31 pts   ( 1.47%)
+    |I|= 9 :    215 pts   (10.16%)
+    |I|=10 :     66 pts   ( 3.12%)
+    |I|=11 :     25 pts   ( 1.18%)
+    |I|=12 :     39 pts   ( 1.84%)
+    |I|=13 :    192 pts   ( 9.07%)
+    |I|=14 :    172 pts   ( 8.13%)
+    |I|=16 :    150 pts   ( 7.09%)
+    |I|=17 :    210 pts   ( 9.92%)
+    |I|=18 :     18 pts   ( 0.85%)
+    |I|=19 :     25 pts   ( 1.18%)
+    |I|=21 :     75 pts   ( 3.54%)
+    |I|=22 :    133 pts   ( 6.29%)
+    |I|=23 :     11 pts   ( 0.52%)
+    |I|=24 :      8 pts   ( 0.38%)
+    |I|=25 :    152 pts   ( 7.18%)
+    |I|=26 :    210 pts   ( 9.92%)
+    mean |I| = 14.702
+    max  |I| = 26
+    min  |I| = 1
+
+  AII pts with |I(p)| > 1 (genuine multivaluedness): 2091/2116 (98.82%)
+
+  VERDICT: CANDIDATE B (genuine multivaluedness): different pieces give different images at the same p.
+
+Wrote /home/agent/projects/code/2026-06-10-stack-structure/fiber_strat_result.json
