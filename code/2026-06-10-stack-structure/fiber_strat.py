@@ -145,10 +145,17 @@ def main():
         print(f"# missing: {missing}")
 
     out = {}
-    for N in [4, 5, 6, 7, 8]:
+    for N in [4, 5, 6, 7, 8, 9, 10]:
         rows = compute_VI(N, pieces)
         summary = summarize(rows, N, len(pieces))
         out[f"N={N}"] = summary
+
+        # collect top-|I| examples ("genuinely multivalued" wall points)
+        top_I = sorted(rows, key=lambda r: -len(r["I"]))[:5]
+        out[f"N={N}_top_I"] = [
+            {"p": r["p"], "nV": len(r["V"]), "nI": len(r["I"])}
+            for r in top_I
+        ]
 
         if N == 6:
             walls = find_wall_points(rows, N)
