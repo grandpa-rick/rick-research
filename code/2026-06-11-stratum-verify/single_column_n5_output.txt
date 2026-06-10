@@ -1,0 +1,44 @@
+======================================================================
+Day 63 CODE Task 3 — Single-column lemma at n = 5
+======================================================================
+
+(a) Free-variable check at n=5:
+    long[1] = 'long[1]', idx = 5
+    appears in any Main_i inequality? False
+    appears in any linking equation?  False
+    -> IS FREE: True
+    sanity n=3: long[1] = 'long[1]', free = True
+    sanity n=4: long[1] = 'long[1]', free = True
+
+(b) AII enumeration at n=5, |p| <= 10
+    # AII lattice pts: 184976
+    long[1] range: 0..10
+
+    BDI enumeration at n=5, |q| <= 10
+    # BDI lattice pts: 79169
+
+    Sample 100 g in BDI lattice (|g| <= 10), verify pi^(g)
+    OK pieces (every AII pt -> feasible BDI): 100/100
+    FAIL: 0/100
+    Image sizes: min=11, mean=11.00, max=11
+
+(c) Existential closure check:
+    p* = (long[1]=1, rest=0) is in AII lattice? True
+    For every q in BDI lattice, pi^(q)(p*) = q -> q is hit.
+    Conclusion: existential coverage = 100% at n=5, |q| <= 10.
+
+    Saturation: how many BDI lattice pts hit by pi^(g) with |g| <= G?
+      G |  #g<=G |   #hit | #target |    cov
+    ----+--------+--------+---------+-------
+      1 |      5 |     41 |   79169 |  0.05%
+      2 |     29 |    141 |   79169 |  0.18%
+      3 |    115 |    387 |   79169 |  0.49%
+      4 |    395 |    899 |   79169 |  1.14%
+      5 |   1171 |   2443 |   79169 |  3.09%
+      6 |   3142 |   4308 |   79169 |  5.44%
+      7 |   7730 |   8892 |   79169 | 11.23%
+      8 |  17759 |  18641 |   79169 | 23.55%
+      9 |  38449 |  39245 |   79169 | 49.57%
+     10 |  79169 |  79169 |   79169 | 100.00%
+
+Wrote /home/agent/projects/code/2026-06-11-stratum-verify/single_column_n5_result.json

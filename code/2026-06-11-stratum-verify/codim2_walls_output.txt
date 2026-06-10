@@ -1,0 +1,69 @@
+Scanning pairs for rank-2 differences...
+  108 rank-2 pairs found.
+  11 distinct codim-2 wall subspaces (from 108 pairs).
+
+Integerised: 11 walls ready for testing.
+
+Enumerating AII lattice points at N = 12...
+  16859 points in 0.0s
+Computing per-point stats...
+  1.4s
+
+=== Per-stratum |I| histogram split: codim-2-MISS vs HIT (N=12) ===
+
+--- sigma = 000  (miss=0, hit=249) ---
+  codim-2 MISS |I| histogram: {}
+  codim-2 HIT  |I| histogram: {1: 49, 2: 144, 3: 56}
+  Wall (hit)     MODE: 2
+
+--- sigma = 001  (miss=0, hit=681) ---
+  codim-2 MISS |I| histogram: {}
+  codim-2 HIT  |I| histogram: {9: 339, 10: 342}
+  Wall (hit)     MODE: 10
+
+--- sigma = 010  (miss=0, hit=681) ---
+  codim-2 MISS |I| histogram: {}
+  codim-2 HIT  |I| histogram: {9: 448, 10: 83, 11: 150}
+  Wall (hit)     MODE: 9
+
+--- sigma = 011  (miss=1146, hit=288) ---
+  codim-2 MISS |I| histogram: {21: 110, 22: 905, 23: 131}
+  codim-2 HIT  |I| histogram: {21: 206, 22: 82}
+  Generic (miss) MODE: 22
+  Wall (hit)     MODE: 21
+
+--- sigma = 100  (miss=0, hit=1957) ---
+  codim-2 MISS |I| histogram: {}
+  codim-2 HIT  |I| histogram: {4: 203, 5: 1209, 7: 136, 8: 409}
+  Wall (hit)     MODE: 5
+
+--- sigma = 101  (miss=2774, hit=684) ---
+  codim-2 MISS |I| histogram: {13: 684, 14: 2090}
+  codim-2 HIT  |I| histogram: {12: 147, 13: 537}
+  Generic (miss) MODE: 14
+  Wall (hit)     MODE: 13
+
+--- sigma = 110  (miss=549, hit=2909) ---
+  codim-2 MISS |I| histogram: {18: 26, 19: 523}
+  codim-2 HIT  |I| histogram: {16: 959, 17: 1761, 18: 189}
+  Generic (miss) MODE: 19
+  Wall (hit)     MODE: 17
+
+--- sigma = 111  (miss=4341, hit=600) ---
+  codim-2 MISS |I| histogram: {24: 3, 25: 949, 26: 3389}
+  codim-2 HIT  |I| histogram: {23: 12, 24: 96, 25: 492}
+  Generic (miss) MODE: 26
+  Wall (hit)     MODE: 25
+
+
+=== # codim-2 walls hit per point, by stratum ===
+  000: {10: 109, 11: 140}
+  001: {1: 681}
+  010: {1: 233, 2: 448}
+  011: {0: 1146, 1: 288}
+  100: {1: 545, 2: 1412}
+  101: {0: 2774, 1: 684}
+  110: {0: 549, 1: 2414, 2: 495}
+  111: {0: 4341, 1: 600}
+
+Wrote codim2_walls_result.json
