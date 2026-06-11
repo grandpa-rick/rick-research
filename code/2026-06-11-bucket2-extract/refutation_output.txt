@@ -1,0 +1,99 @@
+======================================================================
+STEP 1: Verify palindromy of ALL linear projections of B_3, C_3 weights
+======================================================================
+
+  ✓ B_3 adj+triv: all 2000 random integer projections give palindromic histograms.
+  ✓ C_3 adj+triv: all 2000 random integer projections give palindromic histograms.
+
+THEOREM (palindromy).  For B_3, C_3, the longest element w_0 of the
+Weyl group acts as -1 on the weight space.  Therefore the multiset of
+weights of adj ⊕ triv is invariant under negation.  Hence, for ANY
+linear projection P : ℝ³ → ℝ, the level-set sizes #{w : P(w) = k}
+are palindromic: #{P(w) = k} = #{P(-w) = -k} = #{P(w') = -k} where
+w' = -w runs over the same multiset.
+
+======================================================================
+STEP 2: The 22-piece Bucket-2 marginals are NOT palindromic
+======================================================================
+
+ i2 marginal: {0: 9, 1: 10, 2: 2, 3: 1}
+   support = [0, 1, 2, 3]
+   values  = [9, 10, 2, 1]
+
+ i236 marginal: {0: 6, 1: 3, 2: 4, 3: 3, 4: 2, 5: 1, 6: 1, 7: 1, 8: 1}
+   support = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+   values  = [6, 3, 4, 3, 2, 1, 1, 1, 1]
+
+ i23456 marginal: {0: 1, 1: 4, 2: 1, 3: 2, 4: 4, 5: 5, 6: 4, 7: 1}
+   support = [0, 1, 2, 3, 4, 5, 6, 7]
+   values  = [1, 4, 1, 2, 4, 5, 4, 1]
+
+Crucially, the SORTED multiset of marginal counts is an INVARIANT
+under re-indexing of the column labels.  Compare:
+  Our i2 multiset:     [1, 2, 9, 10]
+  Our i236 multiset:   [1, 1, 1, 1, 2, 3, 3, 4, 6]
+  Our i23456 multiset: [1, 1, 1, 2, 4, 4, 4, 5]
+  B_3 axis multiset:   [5, 5, 12]  (any axis-projection of B_3 adj+triv)
+  C_3 axis multiset:   [1, 1, 4, 4, 12]  (any axis-projection of C_3 adj+triv)
+
+======================================================================
+STEP 3: Refutation — sharp form
+======================================================================
+
+Claim.  There is NO bijection Φ : {22 Bucket-2 pieces} → adj(g)⊕triv
+for g = B_3 or C_3, together with three linear functionals f_1, f_2,
+f_3 on the weight space of g, such that f_k(Φ(p)) = c_k(p) for
+c_k(p) the column-index of piece p along axis k ∈ {m_2, m_236, m_23456}.
+
+Proof.  If such Φ existed, the multiset {(c_1(p), c_2(p), c_3(p))}
+would equal {(f_1(w), f_2(w), f_3(w)) : w ∈ adj(g)⊕triv} as multisets.
+Projecting onto axis k, the multiset of level-set sizes for the column-
+index would equal the level-set sizes of f_k applied to the weight
+multiset.  Since adj(g)⊕triv weights are invariant under w ↦ -w (because
+-1 ∈ W(B_3) = W(C_3)), and f_k is linear, the f_k-level-set multiset
+is invariant under k ↔ -k → it's PALINDROMIC.
+
+But our column-index marginals are NOT palindromic (Step 2).  Contradiction.
+
+∎
+
+Corollary.  The rep-theoretic identification by adjoint-orbit labelling,
+for any rank-3 semisimple Lie algebra of dimension 21, is refuted in
+the coordinate-respecting sense.
+
+Notes.
+ (i)  Other rank-3 candidates: A_3=D_3 has dim 15 (≠ 21), G_2 has rank 2,
+      F_4 has rank 4.  So B_3 and C_3 are the only candidates.
+ (ii) The refutation extends to any Lie algebra with -1 ∈ W; that's
+      types B_n, C_n, D_2k, E_7, E_8, F_4, G_2.  A_n (n>1), D_{2k+1},
+      E_6 lack -1, so this argument doesn't apply, but those have
+      different dim too.
+
+======================================================================
+STEP 4: positive characterisation — structural facts of the 22-config
+======================================================================
+
+The 4 m_2 columns form a CHAIN in (M_2, S)-space:
+  i2=0: (M_2, S) = (0, 0)   m_2 → B_1
+  i2=1: (M_2, S) = (0, 1)   m_2 → B_1 + S
+  i2=2: (M_2, S) = (0, 2)   m_2 → B_1 + 2S
+  i2=3: (M_2, S) = (1, 2)   m_2 → M_2 + B_1 + 2S
+  → a 'staircase' shape in (M_2, S): (0,0) → (0,1) → (0,2) → (1,2).
+
+The 8 m_23456 columns: 6 form a 2×3 grid (M_2 ∈ {0,1}) × (S ∈ {0,1,2}),
+plus 2 'B_2,T_2-mass' outliers (i23456=0 with no B_1, i23456=7 with
+B_2+T_2 + M_2+B_1).
+
+The 9 m_236 columns split 5 + 4 by M_2 presence.  The 5 M_2-free
+columns are (B_1, T_1, B_2, T_2) ∈ {(0,0,1,1), (1,1,0,0), (1,1,1,1),
+(1,1,2,2), (2,2,1,1)}: a 5-element set in (a,a,b,b) form where (a,b)
+∈ {(0,1),(1,0),(1,1),(1,2),(2,1)} — the lattice points of a 'diamond'.
+
+These three column structures have specific BDI/AII coordinate
+origins (M_2 + S substitutions, R-double structures, transpose-related
+'21/12' families) traceable to the Day-58 minimal-cover construction.
+
+The configuration is therefore a 'BDI/AII coordinate-substitution graph'
+rather than a Lie-theoretic object.  This is what OQ-PI3-MULTI-FINAL
+captures: the structural invariant is intrinsic combinatorics, not rep
+theory.

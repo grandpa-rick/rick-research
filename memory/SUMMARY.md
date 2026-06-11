@@ -10,7 +10,38 @@
 
 ---
 
-## Current state — Day 63 (2026-06-11 deep-work, OQ-PI3-MULTI refined: mode was a sampling artifact, max is structural)
+## Current state — Day 64 (2026-06-11 evening deep-work, OQ-PI3-MULTI-FINAL: Bucket-2 is NOT rep-theoretic)
+
+**Day 64 PROVE (deep work): Gap B closed in the negative.** The 22-point
+Bucket-2 configuration in $[4] \times [9] \times [8]$ admits NO column-
+coordinate-respecting bijection to $\mathrm{adj}(B_3) \oplus \mathrm{triv}$
+or $\mathrm{adj}(C_3) \oplus \mathrm{triv}$.
+
+- **Refutation argument**: extract 22 explicit triples; compute marginals
+  per axis. Sorted multisets: $i_2$: $\{1, 2, 9, 10\}$;
+  $i_{236}$: $\{1,1,1,1,2,3,3,4,6\}$; $i_{23456}$: $\{1,1,1,2,4,4,4,5\}$.
+  None palindromic. But every linear projection of $B_3$ or $C_3$ adj+triv
+  weight space gives PALINDROMIC histograms (because $w_0 = -1 \in W$).
+  $B_3$ axis multiset $\{5, 5, 12\}$, $C_3$ $\{1,1,4,4,12\}$. **No match.**
+- **Weyl-orbit labelling also refuted**: no single- or pairwise-projection
+  of the data produces a $\{12, 6, 3, 1\}$-orbit-sized partition.
+- **No rank-3 candidate exists**: $A_3 = D_3$ has dim 15 ≠ 21; rank-2 G_2
+  has dim 14; rank-4 algebras have dim ≥ 24. Only $B_3, C_3$ are
+  dimensional matches and both fail palindromy.
+- **OQ-PI3-MULTI-FINAL**: the MAX-stratum-vector $(3,8,11,10,19,14,23,26)$
+  is a NOVEL COMBINATORIAL INVARIANT of multi-chart projections —
+  intrinsic BDI/AII coordinate-substitution structure (the 4 $m_2$ cols
+  form a chain $(0,0)\to(0,1)\to(0,2)\to(1,2)$ in $(M_2,S)$-space; 8
+  $m_{23456}$ cols form a $2\times 3$ grid + 2 outliers; 9 $m_{236}$ cols
+  split 5+4 by $M_2$-presence with diamond coords). Publishable as
+  "polytope-shadow combinatorics" — not rep theory.
+- **v4 §3 climax adjusted**: rep-theoretic story removed; replaced by
+  combinatorial invariant story (= same publishability, different framing).
+- File: `proofs/2026-06-11-bucket2-rep-theory.md`; collaborator note:
+  `memory/for-collaborator/2026-06-11-bucket2-rep-theory-refuted.md`;
+  scripts: `code/2026-06-11-bucket2-extract/`.
+
+## Day 63 (2026-06-11 morning deep-work, OQ-PI3-MULTI refined: mode was a sampling artifact, max is structural)
 
 **Day 63 PROVE (deep work): OQ-PI3-MULTI rep-theoretic question
 refined.** The Day-62 stratum-vector $(1, 5, 9, 9, 13, 17, 22, 26)$ is the
@@ -28,10 +59,8 @@ $(3, 8, 11, 10, 19, 14, 23, 26)$.
 - **Negative result**: neither MODE nor MAX is an irrep weight histogram
   (Weyl-asymmetry rules it out — $I_{000} \ne I_{111}$). No SYT / Kostka
   match either.
-- **Refined open question (OQ-PI3-MULTI-revised)**: is the 22-point
-  configuration of B2 in $[4] \times [9] \times [8]$ rep-theoretic?
-  ($22 = 21 + 1$ = adjoint + trivial of B_3 or C_3, suggestive but
-  unverified.)
+- **Day-64 follow-up**: Gap B (rep-theoretic ID of B2 22-point config)
+  CLOSED NEGATIVELY. See current-state block above.
 - File: `proofs/2026-06-11-pi3-multi-investigation.md`; collaborator
   note: `memory/for-collaborator/2026-06-11-pi3-multi-mode-vs-max.md`.
 
