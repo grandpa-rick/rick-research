@@ -549,4 +549,197 @@ theorem rays_lin_indep (n : Nat) (hn : 3 ≤ n) (c : Nat → Int)
     · have hk_eq2 : k = n - 1 := by omega
       rw [hk_eq2]; omega
 
+/-! ## Theorem G — Lemma 4: cone-hull surjection (form (b), `N = 2`)
+
+For `n ≥ 3`, every `v ∈ K_n` admits an explicit non-negative integer linear
+combination of the `n` rays equal to `2 · v`.  The factor of `2` is the
+lattice-index obstruction (§4 of `TheoremG-scoping.md`): the ray lattice has
+index `2` in `ℤⁿ`, so an arbitrary integer `v ∈ K_n` need not be a
+non-negative integer combination of the rays — but `2 v` always is.
+
+This is statement form (b) of the three options discussed in `TheoremG-scoping.md`
+§4 / `LEAN.md`.  Forms (a) (pure rational) and (c) (integer with explicit
+2-torsion correction) are deferred to Robin's lattice-index call.
+
+### Coefficient closed form
+
+* `c k = 2 · partialSum v (k + 1)`      for `0 ≤ k ≤ n - 3` (pair-ray coeffs),
+* `c (n - 2) = partialSum v n`          (sum-ray coeff),
+* `c (n - 1) = partialSum v (n - 1) - v (n - 1)` (E-ray coeff).
+
+All three are non-negative on `K_n` by the three facet inequalities. -/
+
+/-- Coefficient function witnessing Lemma 4 (form (b), `N = 2`). -/
+def coneCoeff (n : Nat) (v : Nat → Int) (k : Nat) : Int :=
+  if k + 3 ≤ n then 2 * partialSum v (k + 1)
+  else if k + 2 = n then partialSum v n
+  else partialSum v (n - 1) - v (n - 1)
+
+/-- `coneCoeff` on the pair-ray range `0 ≤ k ≤ n - 3`. -/
+theorem coneCoeff_low (n : Nat) (v : Nat → Int) (k : Nat) (hk : k + 3 ≤ n) :
+    coneCoeff n v k = 2 * partialSum v (k + 1) := by
+  unfold coneCoeff; rw [if_pos hk]
+
+/-- `coneCoeff` at the sum-ray slot `k = n - 2`. -/
+theorem coneCoeff_n_minus_two (n : Nat) (hn : 2 ≤ n) (v : Nat → Int) :
+    coneCoeff n v (n - 2) = partialSum v n := by
+  unfold coneCoeff
+  rw [if_neg (show ¬ (n - 2 + 3 ≤ n) by omega),
+      if_pos (show (n - 2) + 2 = n by omega)]
+
+/-- `coneCoeff` at the `E`-ray slot `k = n - 1`. -/
+theorem coneCoeff_n_minus_one (n : Nat) (hn : 2 ≤ n) (v : Nat → Int) :
+    coneCoeff n v (n - 1) = partialSum v (n - 1) - v (n - 1) := by
+  unfold coneCoeff
+  rw [if_neg (show ¬ (n - 1 + 3 ≤ n) by omega),
+      if_neg (show ¬ (n - 1 + 2 = n) by omega)]
+
+/-- Each `coneCoeff` value is `≥ 0` when `v ∈ K_n`. -/
+theorem coneCoeff_nonneg (n : Nat) (hn : 3 ≤ n) (v : Nat → Int) (h : InKone n v)
+    (k : Nat) (hk : k < n) : 0 ≤ coneCoeff n v k := by
+  obtain ⟨h1, h2, h3⟩ := h
+  by_cases hca : k + 3 ≤ n
+  · -- Pair-ray slot: c k = 2 · partialSum v (k + 1), with k + 1 ∈ {1, …, n - 2}.
+    rw [coneCoeff_low n v k hca]
+    have hp : 0 ≤ partialSum v (k + 1) := h1 (k + 1) (by omega) (by omega)
+    omega
+  · by_cases hcb : k + 2 = n
+    · -- Sum-ray slot: c (n - 2) = partialSum v n ≥ 0 (full-sum facet).
+      have hk_eq : k = n - 2 := by omega
+      rw [hk_eq, coneCoeff_n_minus_two n (by omega) v]
+      exact h2
+    · -- E-ray slot: c (n - 1) = partialSum v (n - 1) - v (n - 1) ≥ 0 (E facet).
+      have hk_eq : k = n - 1 := by omega
+      rw [hk_eq, coneCoeff_n_minus_one n (by omega) v]
+      omega
+
+/-! ### Bridge: rewriting `partialSum` under pointwise equality -/
+
+/-- If `f` and `g` agree on `{0, …, m - 1}`, their partial sums up to `m` agree. -/
+theorem partialSum_congr {f g : Nat → Int} (m : Nat)
+    (h : ∀ k, k < m → f k = g k) :
+    partialSum f m = partialSum g m := by
+  induction m with
+  | zero => rfl
+  | succ p ih =>
+    show partialSum f p + f p = partialSum g p + g p
+    have h_lt : ∀ k, k < p → f k = g k := fun k hk => h k (by omega)
+    have ih_val : partialSum f p = partialSum g p := ih h_lt
+    have hp : f p = g p := h p (by omega)
+    rw [ih_val, hp]
+
+/-- "Telescoping" step: when `n ≥ 1`, `partialSum v n = partialSum v (n - 1) + v (n - 1)`.
+
+This is the variant of `partialSum_succ` we need when the predecessor is given by
+`n - 1` (Nat subtraction) rather than by destructuring `n = k + 1`. -/
+theorem partialSum_step (v : Nat → Int) (n : Nat) (hn : 1 ≤ n) :
+    partialSum v n = partialSum v (n - 1) + v (n - 1) := by
+  cases n with
+  | zero => omega
+  | succ m => rfl
+
+/-- For any coordinate `j` and any upper bound `m ≤ n - 2`, the partial sum of the
+pair-ray contributions using `coneCoeff n v` equals the partial sum using the
+"low" closed form `2 · partialSum v (k + 1)`.
+
+Reason: all indices `k < m ≤ n - 2` satisfy `k + 3 ≤ n`, so `coneCoeff` lands in
+its pair-ray branch. -/
+theorem partialSum_pair_coneCoeff_eq (n : Nat) (v : Nat → Int) (j m : Nat)
+    (hm : m + 2 ≤ n) :
+    partialSum (fun k => coneCoeff n v k * pairRay k j) m =
+    partialSum (fun k => 2 * partialSum v (k + 1) * pairRay k j) m := by
+  apply partialSum_congr
+  intro k hk
+  have hk_n : k + 3 ≤ n := by omega
+  rw [coneCoeff_low n v k hk_n]
+
+/-! ### Theorem G — Lemma 4 -/
+
+/-- **Theorem G, Lemma 4 (form (b), `N = 2`).**  For `n ≥ 3`, every `v ∈ K_n`
+admits an explicit non-negative integer linear combination of the `n` extreme
+rays equal to `2 · v`.  Witness: `coneCoeff n v`.
+
+Statement: there exists `c : Nat → Int` with
+* `c k ≥ 0` for `k < n`, and
+* `2 · v j = linComb n c j` for all `j < n`.
+
+The factor of `2` is the lattice-index obstruction (§4 of scoping doc): the ray
+lattice has index `2` in `ℤⁿ`.  See `Kone_two_in_cone_hull`'s body for the
+constructive witness and `TheoremG-scoping.md` §4 for the math context. -/
+theorem Kone_two_in_cone_hull (n : Nat) (hn : 3 ≤ n) (v : Nat → Int)
+    (h : InKone n v) :
+    ∃ c : Nat → Int,
+      (∀ k, k < n → 0 ≤ c k) ∧
+      (∀ j, j < n → 2 * v j = linComb n c j) := by
+  refine ⟨coneCoeff n v, coneCoeff_nonneg n hn v h, ?_⟩
+  intro j hj
+  unfold linComb
+  rw [partialSum_pair_coneCoeff_eq n v j (n - 2) (by omega),
+      coneCoeff_n_minus_two n (by omega) v,
+      coneCoeff_n_minus_one n (by omega) v]
+  -- Goal:
+  -- 2 * v j = partialSum (fun k => 2 * partialSum v (k + 1) * pairRay k j) (n - 2)
+  --        + partialSum v n * sumRay n j
+  --        + (partialSum v (n - 1) - v (n - 1)) * eRay n j
+  by_cases hj0 : j = 0
+  · -- Coordinate j = 0: only `pairRay 0` contributes; sumRay, eRay vanish at 0.
+    subst hj0
+    rw [partialSum_pair_at_zero (fun k => 2 * partialSum v (k + 1)) (n - 2)
+          (by omega),
+        sumRay_off n 0 (by omega) (by omega),
+        eRay_off n 0 (by omega) (by omega)]
+    -- Goal:
+    --   2 * v 0 = 2 * partialSum v (0 + 1)
+    --           + partialSum v n * 0
+    --           + (partialSum v (n - 1) - v (n - 1)) * 0
+    rw [partialSum_succ, partialSum_zero]
+    omega
+  · by_cases hjm2 : j = n - 2
+    · -- Coordinate j = n - 2: pair part = -c (n - 3), sumRay = 1, eRay = 1.
+      subst hjm2
+      rw [partialSum_pair_at_j (fun k => 2 * partialSum v (k + 1)) (n - 2)
+            (by omega),
+          sumRay_at_n_minus_two n,
+          eRay_at_n_minus_two n]
+      -- After β: pair part = -(2 * partialSum v ((n - 2 - 1) + 1)).
+      have h_nm21 : n - 2 - 1 + 1 = n - 2 := by omega
+      rw [h_nm21]
+      -- partialSum v n unfolds via n = (n - 1) + 1 (using partialSum_step).
+      have hpn : partialSum v n = partialSum v (n - 1) + v (n - 1) :=
+        partialSum_step v n (by omega)
+      -- partialSum v (n - 1) unfolds via (n - 1) = (n - 2) + 1.
+      have hpn1 : partialSum v (n - 1) = partialSum v (n - 2) + v (n - 2) :=
+        partialSum_step v (n - 1) (by omega)
+      omega
+    · by_cases hjm1 : j = n - 1
+      · -- Coordinate j = n - 1: pair part = 0 (all k ≤ n - 3 are "below"),
+        --   sumRay = 1, eRay = -1.
+        subst hjm1
+        rw [partialSum_pair_below (fun k => 2 * partialSum v (k + 1)) (n - 1)
+              (n - 2) (by omega),
+            sumRay_at_n_minus_one n (by omega),
+            eRay_at_n_minus_one n (by omega)]
+        -- Goal: 2 * v (n - 1) = 0 + partialSum v n * 1
+        --                     + (partialSum v (n - 1) - v (n - 1)) * (-1)
+        have hpn : partialSum v n = partialSum v (n - 1) + v (n - 1) :=
+          partialSum_step v n (by omega)
+        omega
+      · -- Coordinate j with 1 ≤ j ≤ n - 3: pair part = c j - c (j - 1),
+        --   sumRay = 0, eRay = 0.  This is the "interior" range.
+        have hj_pos : 1 ≤ j := by omega
+        have hj_le : j + 1 ≤ n - 2 := by omega
+        rw [partialSum_pair_above (fun k => 2 * partialSum v (k + 1)) j (n - 2)
+              hj_pos hj_le,
+            sumRay_off n j (by omega) (by omega),
+            eRay_off n j (by omega) (by omega)]
+        -- Goal: 2 * v j = 2 * partialSum v (j + 1) - 2 * partialSum v ((j - 1) + 1)
+        --              + (...) * 0 + (...) * 0
+        have h_jm1 : j - 1 + 1 = j := by omega
+        rw [h_jm1, partialSum_succ]
+        omega
+
+/-! ### Sanity check: kernel axioms -/
+
+#print axioms Kone_two_in_cone_hull
+
 end BdiPolytope
