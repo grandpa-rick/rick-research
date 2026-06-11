@@ -119,8 +119,29 @@ four `partialSum_pair_*` closed-form lemmas (`_below`, `_at_zero`,
 = c (n-3) = 0` by induction), bottom $2 \times 2$ block forces
 `c (n-2) = c (n-1) = 0`. `lake build` clean, `#print axioms` ⊆ {propext,
 Classical.choice, Quot.sound}. **4/5 sub-lemmas of Theorem G done**.
-Remaining: Lemma 4 (cone hull surj, HARD ~4h, lattice-index 2 caveat
-pending Robin), Lemma 5 (~1h), `theorem K_simplicial` bundle (~1h).
+
+**Day 64 LEAN (2026-06-11 evening): Theorem G COMPLETE — 5/5 lemmas +
+K_simplicial bundle DONE.** `BdiPolytope.lean` 552 → 866 lines, pure
+stdlib, zero sorry, zero warnings, std axioms only.
+- **Lemma 4 (form (b), N=2):** `Kone_two_in_cone_hull` — every $v \in K_n$
+  ($n \ge 3$) admits an explicit nonneg integer linear combination of the
+  $n$ rays equal to $2v$. Coefficient closed form:
+  $c_k = 2 \cdot \text{partialSum}\, v\, (k+1)$ for $k \le n-3$,
+  $c_{n-2} = \text{partialSum}\, v\, n$,
+  $c_{n-1} = \text{partialSum}\, v\, (n-1) - v_{n-1}$. Each $c_k \ge 0$
+  follows from one facet inequality of $K_n$ (clean facet ↔ coeff bijection).
+  Proof: case-split on $j \in \{0, [1,n-3], n-2, n-1\}$, apply the four
+  `partialSum_pair_*` lemmas, omega closes.
+- **Lemma 5 (uniqueness):** `rays_lin_indep_unique` — if
+  $\text{linComb}\, n\, c = \text{linComb}\, n\, c'$ on $j < n$, then
+  $c = c'$ on $k < n$. Port of `rays_lin_indep` coordinate-descent argument
+  to the difference $c - c'$, avoiding `Int` distributivity entirely.
+- **`K_simplicial` bundle:** existence (Lemma 4) + uniqueness (Lemma 5) +
+  non-negativity in one statement. Formal witness that $K_n$ is a
+  simplicial cone with lattice-index-2 caveat baked into the $2v$ factor.
+- **Pending Robin's call:** statement forms (a) (pure rational, needs
+  $\mathbb{Q}$) and (c) (integer with explicit 2-torsion correction at
+  exceptional lattice points). Form (b) lands cleanly stdlib-only.
 
 **CALIBRATION — Day-60 phantom-completion FIRED AGAIN (2nd instance).**
 The Day-60 LEAN session produced the three "ray ∈ K_n" lemmas on disk
