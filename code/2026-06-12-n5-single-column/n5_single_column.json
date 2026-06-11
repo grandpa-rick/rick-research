@@ -1,0 +1,75 @@
+{
+  "verify_long1_free_n5": {
+    "long1_var": "long[1]",
+    "long1_idx": 5,
+    "appears_in_ineq": false,
+    "appears_in_eq": false,
+    "is_free": true
+  },
+  "n": 5,
+  "N": 8,
+  "n_aii_pts": 36693,
+  "n_bdi_pts": 17759,
+  "sample_size": 100,
+  "pieces_ok": 100,
+  "pieces_fail": 0,
+  "saturation": [
+    {
+      "G": 1,
+      "n_g": 5,
+      "n_hit": 33,
+      "n_target": 17759,
+      "coverage_pct": 0.18582127372036714
+    },
+    {
+      "G": 2,
+      "n_g": 29,
+      "n_hit": 113,
+      "n_target": 17759,
+      "coverage_pct": 0.6362970888000451
+    },
+    {
+      "G": 3,
+      "n_g": 115,
+      "n_hit": 277,
+      "n_target": 17759,
+      "coverage_pct": 1.5597725097133848
+    },
+    {
+      "G": 4,
+      "n_g": 395,
+      "n_hit": 789,
+      "n_target": 17759,
+      "coverage_pct": 4.442817726223323
+    },
+    {
+      "G": 5,
+      "n_g": 1171,
+      "n_hit": 1561,
+      "n_target": 17759,
+      "coverage_pct": 8.789909341742215
+    },
+    {
+      "G": 6,
+      "n_g": 3142,
+      "n_hit": 3426,
+      "n_target": 17759,
+      "coverage_pct": 19.291626780787208
+    },
+    {
+      "G": 7,
+      "n_g": 7730,
+      "n_hit": 8010,
+      "n_target": 17759,
+      "coverage_pct": 45.103890984852754
+    },
+    {
+      "G": 8,
+      "n_g": 17759,
+      "n_hit": 17759,
+      "n_target": 17759,
+      "coverage_pct": 100.0
+    }
+  ],
+  "conclusion": "Single-column lemma EXTENDS to n=5"
+}

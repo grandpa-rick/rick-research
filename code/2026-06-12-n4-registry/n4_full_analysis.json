@@ -1,0 +1,232 @@
+{
+  "feasible_pieces": [
+    "P4_base",
+    "P4_Lambda_in_BT1",
+    "P4_Lambda_in_BT2",
+    "P4_L1_B2",
+    "P4_L1_B3",
+    "P4_P4_B3",
+    "P4_P4_BT1",
+    "P4_L2_in_S",
+    "P4_L3_in_S",
+    "P4_L1_M2dbl",
+    "P4_L1_M3dbl_b3dbl",
+    "P4_L1_M2M3dbl",
+    "P4_P4_in_M2",
+    "P4_P4_in_M3",
+    "P4_L1_M2only",
+    "P4_L1_M2M3",
+    "P4_P4_dbl_BT2",
+    "P4_L1_M2dbl_p4_T2",
+    "P4_L1_BT2",
+    "P4_P4_BT1_BT2_split"
+  ],
+  "rank_distribution": {
+    "1": 71,
+    "2": 118
+  },
+  "rank1_walls": [
+    {
+      "v_normalized": [
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "nonzero_vars": [
+        [
+          "short[1]",
+          1.0
+        ],
+        [
+          "short[2]",
+          1.0
+        ],
+        [
+          "short[3]",
+          1.0
+        ]
+      ],
+      "n_piece_pairs": 3,
+      "is_coord": false,
+      "meets_cone_interior": false
+    },
+    {
+      "v_normalized": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nonzero_vars": [
+        [
+          "long[1]",
+          1.0
+        ]
+      ],
+      "n_piece_pairs": 44,
+      "is_coord": true,
+      "meets_cone_interior": true
+    },
+    {
+      "v_normalized": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nonzero_vars": [
+        [
+          "prefix[4]",
+          1.0
+        ]
+      ],
+      "n_piece_pairs": 21,
+      "is_coord": true,
+      "meets_cone_interior": true
+    },
+    {
+      "v_normalized": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nonzero_vars": [
+        [
+          "long[2]",
+          1.0
+        ]
+      ],
+      "n_piece_pairs": 1,
+      "is_coord": true,
+      "meets_cone_interior": true
+    },
+    {
+      "v_normalized": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "nonzero_vars": [
+        [
+          "long[3]",
+          1.0
+        ]
+      ],
+      "n_piece_pairs": 1,
+      "is_coord": true,
+      "meets_cone_interior": true
+    },
+    {
+      "v_normalized": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "nonzero_vars": [
+        [
+          "prefix[4]",
+          1.0
+        ],
+        [
+          "short[1]",
+          1.0
+        ],
+        [
+          "short[2]",
+          1.0
+        ],
+        [
+          "short[3]",
+          1.0
+        ]
+      ],
+      "n_piece_pairs": 1,
+      "is_coord": false,
+      "meets_cone_interior": false
+    }
+  ],
+  "col_counts": {
+    "prefix[1]": 1,
+    "prefix[2]": 1,
+    "prefix[3]": 1,
+    "prefix[4]": 7,
+    "long[1]": 9,
+    "long[2]": 2,
+    "long[3]": 2,
+    "long[4]": 1,
+    "short[1]": 3,
+    "short[2]": 3,
+    "short[3]": 3
+  },
+  "rigid": [
+    "prefix[1]",
+    "prefix[2]",
+    "prefix[3]",
+    "long[4]"
+  ],
+  "binary": [
+    "long[2]",
+    "long[3]"
+  ],
+  "axis": [
+    "long[1]",
+    "prefix[4]"
+  ],
+  "n_axis": 2,
+  "axis_pair_counts": [
+    [
+      "long[1]",
+      44
+    ],
+    [
+      "prefix[4]",
+      21
+    ]
+  ]
+}
