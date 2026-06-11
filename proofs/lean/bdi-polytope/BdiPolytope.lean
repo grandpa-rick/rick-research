@@ -738,8 +738,129 @@ theorem Kone_two_in_cone_hull (n : Nat) (hn : 3 ≤ n) (v : Nat → Int)
         rw [h_jm1, partialSum_succ]
         omega
 
+/-! ## Theorem G — Lemma 5: uniqueness of coefficients
+
+If two integer coefficient sequences `c, c'` both produce the same vector via
+`linComb`, they must agree on `{0, …, n - 1}`.  This is the "rays are a basis
+of their span" content of Lemma 3 phrased as uniqueness of decomposition.
+
+The proof mirrors `rays_lin_indep` but is phrased directly on the difference
+`c - c'` without invoking `Int` distributivity (the case-by-case linComb
+evaluation gives a linear system on differences that `omega` closes). -/
+
+/-- **Theorem G, Lemma 5 (uniqueness).** Coordinate-wise injectivity of
+`linComb n c` on `{0, …, n - 1}` viewed as a function of `c`.
+
+If `linComb n c j = linComb n c' j` for every `j < n`, then `c k = c' k` for
+every `k < n`. -/
+theorem rays_lin_indep_unique (n : Nat) (hn : 3 ≤ n) (c c' : Nat → Int)
+    (h : ∀ j, j < n → linComb n c j = linComb n c' j) :
+    ∀ k, k < n → c k = c' k := by
+  -- Step 1: c k = c' k for k ≤ n - 3, by induction on k (coordinate-descent).
+  have hc_low : ∀ k, k ≤ n - 3 → c k = c' k := by
+    intro k hk
+    induction k with
+    | zero =>
+      have h0 := h 0 (by omega)
+      unfold linComb at h0
+      have e1c  : partialSum (fun k => c k * pairRay k 0) (n - 2) = c 0 :=
+        partialSum_pair_at_zero c (n - 2) (by omega)
+      have e1c' : partialSum (fun k => c' k * pairRay k 0) (n - 2) = c' 0 :=
+        partialSum_pair_at_zero c' (n - 2) (by omega)
+      have e2 : sumRay n 0 = 0 := sumRay_off n 0 (by omega) (by omega)
+      have e3 : eRay   n 0 = 0 := eRay_off   n 0 (by omega) (by omega)
+      rw [e1c, e1c', e2, e3] at h0
+      omega
+    | succ p ih =>
+      have ih_val : c p = c' p := ih (by omega)
+      have hj := h (p + 1) (by omega)
+      unfold linComb at hj
+      have e1c : partialSum (fun k => c k * pairRay k (p + 1)) (n - 2) =
+          c (p + 1) - c p :=
+        partialSum_pair_above c (p + 1) (n - 2) (by omega) (by omega)
+      have e1c' : partialSum (fun k => c' k * pairRay k (p + 1)) (n - 2) =
+          c' (p + 1) - c' p :=
+        partialSum_pair_above c' (p + 1) (n - 2) (by omega) (by omega)
+      have e2 : sumRay n (p + 1) = 0 :=
+        sumRay_off n (p + 1) (by omega) (by omega)
+      have e3 : eRay n (p + 1) = 0 :=
+        eRay_off n (p + 1) (by omega) (by omega)
+      rw [e1c, e1c', e2, e3] at hj
+      omega
+  -- Step 2: c (n - 3) = c' (n - 3) (special case).
+  have hcnm3 : c (n - 3) = c' (n - 3) := hc_low (n - 3) (by omega)
+  -- Step 3: c (n - 2) + c (n - 1) = c' (n - 2) + c' (n - 1) from j = n - 2.
+  have hsum : c (n - 2) + c (n - 1) = c' (n - 2) + c' (n - 1) := by
+    have hj := h (n - 2) (by omega)
+    unfold linComb at hj
+    have e1c  : partialSum (fun k => c k * pairRay k (n - 2)) (n - 2) =
+        -c (n - 3) :=
+      partialSum_pair_at_j c (n - 2) (by omega)
+    have e1c' : partialSum (fun k => c' k * pairRay k (n - 2)) (n - 2) =
+        -c' (n - 3) :=
+      partialSum_pair_at_j c' (n - 2) (by omega)
+    have e2 : sumRay n (n - 2) = 1 := sumRay_at_n_minus_two n
+    have e3 : eRay   n (n - 2) = 1 := eRay_at_n_minus_two   n
+    rw [e1c, e1c', e2, e3] at hj
+    omega
+  -- Step 4: c (n - 2) - c (n - 1) = c' (n - 2) - c' (n - 1) from j = n - 1.
+  have hdiff : c (n - 2) - c (n - 1) = c' (n - 2) - c' (n - 1) := by
+    have hj := h (n - 1) (by omega)
+    unfold linComb at hj
+    have e1c  : partialSum (fun k => c k * pairRay k (n - 1)) (n - 2) = 0 :=
+      partialSum_pair_below c (n - 1) (n - 2) (by omega)
+    have e1c' : partialSum (fun k => c' k * pairRay k (n - 1)) (n - 2) = 0 :=
+      partialSum_pair_below c' (n - 1) (n - 2) (by omega)
+    have e2 : sumRay n (n - 1) = 1 := sumRay_at_n_minus_one n (by omega)
+    have e3 : eRay   n (n - 1) = -1 := eRay_at_n_minus_one   n (by omega)
+    rw [e1c, e1c', e2, e3] at hj
+    omega
+  -- Conclude: solve the 2x2 system for c (n - 2), c (n - 1).
+  intro k hk
+  by_cases hk_low : k ≤ n - 3
+  · exact hc_low k hk_low
+  · by_cases hk_eq : k = n - 2
+    · rw [hk_eq]; omega
+    · have hk_eq2 : k = n - 1 := by omega
+      rw [hk_eq2]; omega
+
+/-! ## Theorem G — Headline bundle: `K_simplicial`
+
+The headline result of Theorem G, bundling Lemmas 1–5: for `n ≥ 3`, every
+`v ∈ K_n` admits a unique non-negative integer linear combination of the `n`
+extreme rays equal to `2 v` (the factor of 2 is the lattice-index obstruction
+from `TheoremG-scoping.md` §4).
+
+This is the formal Lean witness that `K_n` is a simplicial cone (the rays are
+a basis of `K_n` as a rational cone, with explicit lattice-index-2 caveat). -/
+
+/-- **Theorem G (form (b) bundle):** `K_n` is a simplicial cone in the sense
+that every `v ∈ K_n` admits a unique non-negative integer combination of the
+`n` rays equal to `2 v`.
+
+Combines:
+* Lemma 4 (`Kone_two_in_cone_hull`) — existence and non-negativity,
+* Lemma 5 (`rays_lin_indep_unique`) — uniqueness on `{0, …, n - 1}`. -/
+theorem K_simplicial (n : Nat) (hn : 3 ≤ n) (v : Nat → Int) (h : InKone n v) :
+    ∃ c : Nat → Int,
+      (∀ k, k < n → 0 ≤ c k) ∧
+      (∀ j, j < n → 2 * v j = linComb n c j) ∧
+      (∀ c' : Nat → Int,
+         (∀ j, j < n → 2 * v j = linComb n c' j) →
+         ∀ k, k < n → c k = c' k) := by
+  obtain ⟨c, hc_nn, hc_eq⟩ := Kone_two_in_cone_hull n hn v h
+  refine ⟨c, hc_nn, hc_eq, ?_⟩
+  intro c' hc'_eq k hk
+  apply rays_lin_indep_unique n hn c c' _ k hk
+  intro j hj
+  have h1 : 2 * v j = linComb n c j := hc_eq j hj
+  have h2 : 2 * v j = linComb n c' j := hc'_eq j hj
+  omega
+
 /-! ### Sanity check: kernel axioms -/
 
 #print axioms Kone_two_in_cone_hull
+#print axioms rays_lin_indep_unique
+#print axioms K_simplicial
 
 end BdiPolytope
