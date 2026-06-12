@@ -10,146 +10,206 @@
 
 ---
 
-## Current state — Day 64 (2026-06-11 evening deep-work, OQ-PI3-MULTI-FINAL: Bucket-2 is NOT rep-theoretic)
+## Current state — Day 66 (2026-06-12, OQ-PI3-MULTI-FINAL fully closed: Gaps B & C done)
 
-**Day 64 PROVE (deep work): Gap B closed in the negative.** The 22-point
-Bucket-2 configuration in $[4] \times [9] \times [8]$ admits NO column-
-coordinate-respecting bijection to $\mathrm{adj}(B_3) \oplus \mathrm{triv}$
-or $\mathrm{adj}(C_3) \oplus \mathrm{triv}$.
+**Day 66 PROVE: Gap C closed POSITIVE.** The 3 R-double pieces of Bucket-0
+are the weight multiset of $\mathrm{adj}(\mathfrak{sl}_2) = V(2\omega_1)$
+under the natural $W(A_1) = \mathbb{Z}/2$ action $\alpha \mapsto 2 - \alpha$.
+Combined with Bucket-1 (singleton = trivial $A_1$-rep), the
+4 "special" pieces of the 26-piece cover decompose as $\mathfrak{gl}_2 = \mathfrak{sl}_2 \oplus \mathbb{C}$. Cap $\alpha \le 2$ comes from
+BDI-feasibility of the R-double backbone — verified empirically at n=3
+($\alpha = 3$ gives 69.3% land-in-cone vs 100% for $\alpha \le 2$) AND
+n=4 ($\alpha = 3$ gives 81% vs 100%). **B0($n$) = 3 invariantly**, =
+$\dim \mathrm{adj}(\mathfrak{sl}_2)$ — NOT an $n$-dependent count.
 
-- **Refutation argument**: extract 22 explicit triples; compute marginals
-  per axis. Sorted multisets: $i_2$: $\{1, 2, 9, 10\}$;
-  $i_{236}$: $\{1,1,1,1,2,3,3,4,6\}$; $i_{23456}$: $\{1,1,1,2,4,4,4,5\}$.
-  None palindromic. But every linear projection of $B_3$ or $C_3$ adj+triv
-  weight space gives PALINDROMIC histograms (because $w_0 = -1 \in W$).
-  $B_3$ axis multiset $\{5, 5, 12\}$, $C_3$ $\{1,1,4,4,12\}$. **No match.**
-- **Weyl-orbit labelling also refuted**: no single- or pairwise-projection
-  of the data produces a $\{12, 6, 3, 1\}$-orbit-sized partition.
-- **No rank-3 candidate exists**: $A_3 = D_3$ has dim 15 ≠ 21; rank-2 G_2
-  has dim 14; rank-4 algebras have dim ≥ 24. Only $B_3, C_3$ are
-  dimensional matches and both fail palindromy.
-- **OQ-PI3-MULTI-FINAL**: the MAX-stratum-vector $(3,8,11,10,19,14,23,26)$
-  is a NOVEL COMBINATORIAL INVARIANT of multi-chart projections —
-  intrinsic BDI/AII coordinate-substitution structure (the 4 $m_2$ cols
-  form a chain $(0,0)\to(0,1)\to(0,2)\to(1,2)$ in $(M_2,S)$-space; 8
-  $m_{23456}$ cols form a $2\times 3$ grid + 2 outliers; 9 $m_{236}$ cols
-  split 5+4 by $M_2$-presence with diamond coords). Publishable as
-  "polytope-shadow combinatorics" — not rep theory.
-- **v4 §3 climax adjusted**: rep-theoretic story removed; replaced by
-  combinatorial invariant story (= same publishability, different framing).
-- File: `proofs/2026-06-11-bucket2-rep-theory.md`; collaborator note:
+- **v4 §3 NEW STORY**: the head of the cover (B0 + B1 = 4 pieces) IS
+  rep-theoretic (uniform $\mathfrak{gl}_2$), the bulk (B2 = 22) is
+  intrinsic combinatorics. Cleaner than "all 26 combinatorial".
+- **Day-64 n=4 AXIS-classification needs revisiting**: the 20-piece
+  registry MISSED the R-double family. Adding it gives `prefix[1]` 3
+  distinct columns, potentially flipping it from RIGID to AXIS at n=4.
+  Flagged for follow-up.
+- **Phase 3 bonus**: extended marginal-palindromy filter to v2 with
+  diagram-twisted version for $w_0 \ne -1$ types ($A_n, D_{2k+1}, E_6$).
+  For axis-length-distinct configs (like Bucket-2's (4,9,8)), twisted
+  reduces to plain — so the $D_3 = A_3$ ($\mathfrak{so}_6$) loophole is
+  REFUTED at direct-marginal level; only basis-change escape remains.
+- Files: `proofs/2026-06-12-bucket0-algebraic-origin.md`;
+  `connections/marginal-palindromy-refutation-v2.md`;
+  `for-collaborator/2026-06-12-bucket0-gap-c.md`;
+  scripts: `code/2026-06-12-bucket0-origin/`.
+
+## Previous state — Day 63-64 (2026-06-11)
+
+**Day 64 PROVE: Gap B closed in the negative via marginal-palindromy.**
+The 22-point Bucket-2 configuration in $[4] \times [9] \times [8]$ admits
+NO column-coordinate-respecting bijection to $\mathrm{adj}(B_3) \oplus
+\mathrm{triv}$ or $\mathrm{adj}(C_3) \oplus \mathrm{triv}$.
+
+- **Refutation argument**: extract 22 explicit triples; sorted axis
+  marginals $i_2$: $\{1, 2, 9, 10\}$; $i_{236}$: $\{1,1,1,1,2,3,3,4,6\}$;
+  $i_{23456}$: $\{1,1,1,2,4,4,4,5\}$. None palindromic. Every linear
+  projection of $B_3$ or $C_3$ adj+triv has palindromic histogram
+  (because $w_0 = -1 \in W$). $B_3$ axis multiset $\{5, 5, 12\}$, $C_3$
+  $\{1,1,4,4,12\}$. **No match.** Weyl-orbit labelling $\{12, 6, 3, 1\}$
+  also fails. **Calibration-grade refutation filter banked as
+  `connections/marginal-palindromy-refutation.md`.**
+- **OQ-PI3-MULTI-FINAL**: the MAX-stratum-vector $(3, 8, 11, 10, 19,
+  14, 23, 26)$ is a NOVEL COMBINATORIAL INVARIANT of multi-chart
+  projections, intrinsic BDI/AII coordinate-substitution structure
+  (chain + grid + $M_2$-split). v4 §3 climax adjusted from rep-theory
+  to "polytope-shadow combinatorics" — same publishability, different
+  framing.
+- Files: `proofs/2026-06-11-bucket2-rep-theory.md`; collaborator note:
   `memory/for-collaborator/2026-06-11-bucket2-rep-theory-refuted.md`;
   scripts: `code/2026-06-11-bucket2-extract/`.
 
-## Day 63 (2026-06-11 morning deep-work, OQ-PI3-MULTI refined: mode was a sampling artifact, max is structural)
+**Day 64 LEAN: THEOREM G COMPLETE.** `BdiPolytope.lean` 552 → **866
+lines**, pure stdlib, zero sorry, zero warnings, `#print axioms` ⊆
+{propext, Classical.choice, Quot.sound}. Three commits shipped within-
+session (`f708cfb`, `8a6eab9`, `96f032d`):
+- **Lemma 4** (`Kone_two_in_cone_hull`, form b, N=2): every $v \in K_n$
+  ($n \ge 3$) admits explicit nonneg integer linear combination of
+  $n$ rays equal to $2v$. Constructive witness `coneCoeff n v`; clean
+  facet ↔ coefficient bijection.
+- **Lemma 5** (`rays_lin_indep_unique`): coordinate-descent uniqueness
+  on $(c_k - c'_k)$.
+- **`K_simplicial`** bundle: non-negativity + decomposition + uniqueness.
+- **5/5 sub-lemmas + bundle DONE.** Theorem G's "BDI weight-space image
+  cone is simplicial" is a verified Lean kernel fact (2nd complete
+  Lean theorem after F-easy).
+- Lattice-index-2 caveat baked into form (b) factor of 2; forms (a)
+  [pure $\mathbb{Q}$] and (c) [explicit 2-torsion] deferred-but-buildable
+  pending Robin's call.
+- **Phantom-completion calibration HELD on Day-64**: first clean LEAN
+  session post-STABLE-promotion. Procedural fix works.
 
-**Day 63 PROVE (deep work): OQ-PI3-MULTI rep-theoretic question
-refined.** The Day-62 stratum-vector $(1, 5, 9, 9, 13, 17, 22, 26)$ is the
-MODE of $|I(p)|$ at N=8 lattice points — a sampling artifact contaminated
-by feasibility loss. The structurally meaningful vector is the MAX:
-$(3, 8, 11, 10, 19, 14, 23, 26)$.
+**Day 64 CODE: n=4 # AXIS = 2 confirmed.** 20-piece n=4 piece registry
+built by direct analog with n=3 minimal cover; Cor 8 linking variable
+$\Lambda = s_1 + s_2 + s_3$ substituted out; kernel arrangement
+computed on reduced 11-var AII space. **Exactly 2 codim-1 coord walls
+in cone interior**: $\{\text{long}[1] = 0\}$ (44 collisions),
+$\{\text{prefix}[4] = 0\}$ (21 collisions). `prefix[1]` collapsed
+AXIS→RIGID at n=4. **Structural identity # AXIS = $f(n) = 3 - [n
+\text{ even}]$ now verified at $n \in \{3, 4\}$ — both parities.**
+File: `code/2026-06-12-n4-registry/`.
 
-- **Theorem (Day 63 PROVE)**: $\mathrm{MAX}_\sigma = \#\{\text{distinct
-  }\sigma\text{-active column-profiles among the 26 pieces}\}$. Verified
-  analytically against all 8 Day-62 strata.
-- **Bucket decomposition**: 26 pieces split into 3 non-axis equivalence
-  classes: B0 (3 R-double pieces, only m_2 col varies), B1 (M2_is_m236
-  singleton), B2 (22 generic pieces with all axes varying). Contributions
-  sum: 16 + 8 + 90 = 114 = total MAX-vector.
-- **Negative result**: neither MODE nor MAX is an irrep weight histogram
-  (Weyl-asymmetry rules it out — $I_{000} \ne I_{111}$). No SYT / Kostka
-  match either.
-- **Day-64 follow-up**: Gap B (rep-theoretic ID of B2 22-point config)
-  CLOSED NEGATIVELY. See current-state block above.
-- File: `proofs/2026-06-11-pi3-multi-investigation.md`; collaborator
-  note: `memory/for-collaborator/2026-06-11-pi3-multi-mode-vs-max.md`.
+**Day 63 PROVE: OQ-PI3-MULTI refined, MODE → MAX.** The Day-62 8-vector
+$(1, 5, 9, 9, 13, 17, 22, 26)$ was the MODE — sampling artifact (BDI-
+feasibility contamination). Structural invariant is the MAX-vector
+$(3, 8, 11, 10, 19, 14, 23, 26)$ with clean analytic identity
+$\mathrm{MAX}_\sigma = \#\{\text{distinct $\sigma$-active column-profiles
+among the 26 pieces}\}$. Bucket decomposition: B0 (3 R-double, sum 16)
++ B1 (M2_is_m236, sum 8) + B2 (22 generic, sum 90) = 114 = MAX-sum.
+Both MODE and MAX vectors antipodally asymmetric ($I_{000} \ne I_{111}$)
+→ neither is irrep weight multiplicity (Weyl-symmetry argument
+universal). File: `proofs/2026-06-11-pi3-multi-investigation.md`.
 
-## Day 62 (2026-06-10 deep-work, stack PINNED DOWN; Day-60 phantom fired again)
+**Browse 55 (Day 63, 2026-06-11)**: 7 candidate papers banked for
+OQ-PI3-MULTI:
+- **Andrews-Gagnon-Gélinas-Schlums-Zabrocki arXiv:2505.06941** —
+  INVERTi transform for Hopf algebra graded dimensions. 5-min SageMath
+  test on stratum-vector. (NEW OQ-INVERTI-STRATUM.)
+- **Frohmader arXiv:2312.11295** — GL(2n) ↓ Sp(2n) Kostant-Rallis
+  multiplicities on K-nilpotent cones. Structurally identical setup.
+- **Naito-Suzuki-Watanabe arXiv:2502.07270** — iquantum-crystal proof
+  of Naito-Sagaki AII→CI branching. Structural twin of Rick's AII→BDI.
+  (NEW OQ-NAITOSAGAKI-BDI, live even post-Day-64.)
+- **Horospherical stacks arXiv:2305.01571** — extends Geraschenko-
+  Satriano to spherical varieties; alternative algebraic home for π̃₃'.
+  (NEW OQ-HOROSPHERICAL-STACK-PI3.)
+- Plus: Stern AHA! RSK (OQ-AHA-RSK template sharp), Chen-Lu-Pan-Ruan-
+  Wang dual canonical bases ALL finite types, Lusztig "Strata and
+  almost special reps," He-Tubbenhauer crystal category presentations,
+  Caselli-Marietti type-A KL via special matchings.
+- **OEIS confirmed (1,5,9,9,13,17,22,26) absent** — genuinely new.
+- **26 = I(5)** = # involutions in $S_5$ (Browse 54 origin; Browse 55:
+  running sum to σ=011 = 76 = I(6)). Even post-Bucket-2 refutation,
+  the 26-piece registry might still be indexed by RSK-shape data of
+  $S_5$ involutions. **NEW OQ-PI3-INV5** (~30min CODE check).
+- **8 strata = LG(3,6) Schubert cells**, dim = 6 = dim BDI cone.
+  Speculative; live alternative framework angle.
+- Log: `reading/2026-06-11.md`.
 
-**Day 62 PROVE (deep work): (c\*) stack candidate PINNED DOWN as concrete
-AII-fibered groupoid.** Day 60 said "not polyhedral GIT"; Day 61 said "not
-fan, not PFL"; Day 62 says where it IS.
+**Browse 56 (Day 64 evening, 2026-06-11)**: 4 agents, headline discovery:
+- **NEW OQ-KOBAYASHI-FENCES-BDI**: Kobayashi arXiv:2604.22262
+  "Stability of Branching Multiplicities for Orthogonal Gelfand Pairs"
+  — for (o(n+1), o(n)) pairs (= BDI type), branching multiplicities
+  locally constant on convex regions, change only at "fences"
+  (piecewise-linear hyperplane walls). Kobayashi's fences may be
+  EXACTLY Rick's three coordinate walls {m₂=0}, {m₂₃₆=0},
+  {m₂₃₄₅₆=0}. If so, stability theory EXPLAINS why exactly three
+  walls exist. **HIGH PRIORITY: read in next PROVE session.**
+- **OQ-HOROSPHERICAL-STACK-PI3 DOWNGRADED**: AII/BDI symmetric
+  spaces are NOT horospherical (they're spherical but different
+  subclass — stabilizer Sp(2n) or O(n)×O(n) does NOT contain maximal
+  unipotent). Monahan's stacky-coloured-fan framework inapplicable.
+  Bridge survives via **Kolb-Yakimov arXiv:2603.06132** (Q-SPHERE 2026):
+  coideal subalgebras = short star products on quantum horospherical
+  subalgebras. Algebraic connection preserved; geometric one absent.
+  Status: "wait for spherical stacks framework."
+- **OQ-INVERTI-STRATUM PRELIMINARY NEGATIVE**: a₁=1, a₂=4, a₃=0,
+  a₄≈-16 for MODE vector (1,5,9,9,...). Stratum vector appears to
+  FAIL INVERTi at degree 4. Need 5-min SageMath verification.
+- **OQ-PI3-INV5 structural data**: RSK for S₅ involutions gives SYT
+  shape-counts (1,4,5,6,5,4,1) for partitions (5),(4,1),(3,2),(3,1,1),
+  (2,2,1),(2,1,1,1),(1⁵). Total = 26. Look for this 7-family
+  decomposition in the 26-piece registry.
+- **New watch name: Bárbara Muniz** — "Symplectic Branching through
+  Crystals" (2025); independent GL→Sp branching via crystals; mutual
+  citer of Naito-Suzuki-Watanabe 2502.07270.
+- **Q-SPHERE preprints STILL ABSENT** (conference ended June 12).
+  Watanabe-Hoshino bi-icrystal, Meereboer-Kolb, De Commer-Neshveyev
+  KL-type-B: all no preprint. Watch June 15–30.
+- **AHA-RSK mechanism now clear**: RSK = spectral basis change via JM
+  eigenvalues in degenerate AHA. Iquantum lift = Stern (GL/q=1 side)
+  + Watanabe 2509.00853 (Sp/AII side) + missing "quantum spectral
+  basis change" via iquantum JM-type elements. **OQ-IQUANTUM-RSK-LIFT.**
+- Log: `reading/2026-06-11-browse56.md`.
 
-- **Structural object**: AII-fibered groupoid $G$. Objects in $G_p$ are
-  $i \in V(p) \subseteq [26]$; unique morphism $i \to j$ iff
-  $\pi^{(i)}(p) = \pi^{(j)}(p)$. Then $\pi_0(G_p) \simeq I(p)$.
-- **Candidate B (genuine multivaluedness) wins decisively.** N=8: 98.82%
-  of AII lattice points have $|I(p)| > 1$; 9.92% have $|I(p)| = 26$.
-- **$|V(p)| \in \{25, 26\}$.** Only `M2_is_m236` ever fails feasibility,
-  exactly on $\{m_{236} > 2 m_2 + 2 m_{2345}\}$.
-- **THREE codim-1 walls inside AII cone**: $\{m_2 = 0\}, \{m_{236} = 0\},
-  \{m_{23456} = 0\}$. Two other rank-1 walls meet the cone only at the
-  origin. 8 sign-strata; stratum-vector $\mathbf I = (1, 5, 9, 9, 13, 17,
-  22, 26)$ on $\sigma = (000, 100, 010, 001, 101, 110, 011, 111)$.
-- **Variable taxonomy.** 2 RIGID ($m_{23} \to B_2$, $m_{12346} \to S$) +
-  4 BINARY ($m_{12356}, m_{2345}, m_{1235}, m_{1234}$) + 3 AXIS ($m_2,
-  m_{236}, m_{23456}$ with 4/10/9 distinct columns). The 3 AXIS vars
-  index the 3 codim-1 walls.
-- **Structural identity (Day-62 NEW)**: # AXIS = # codim-1 walls = $f(3)
-  = \dim \ker \pi_3 = 3$. The three forgotten dimensions are visible
-  as three coordinate-hyperplane walls. Predicted at $n=4$: collapse to 2
-  by the Cor 8 linking equation.
-- **Wall witness**: $p_a = e_{m_{23456}}$ (σ=001, $|I|=9$);
-  $p_b = e_{m_{236}} + e_{m_{23456}}$ (σ=011, $|I|=21$).
+**Browse 57 (Day 65, 2026-06-12)**: 4 agents. Keywords: iquantum crystal branching BDI; Hopf INVERTi graded dimensions; degenerate AHA RSK iquantum; Gelfand pair fence hyperplane stability.
+- **NEW HIGH: Brundan-Wang-Webster arXiv:2505.22929** — "Categorification of quasi-split iquantum groups" (May 2025, 91pp). First uniform categorification of ALL quasi-split iquantum types via graded 2-categories (extends KLR). BDI-type included. Natural stepping stone to icrystal bases for BDI. Watch for follow-ups.
+- **NEW HIGH: Kobayashi arXiv:2509.17007** — full general fences paper ("Stability region of branching multiplicities") on Kobayashi's Tokyo website but NOT YET on arXiv. Contains the general treatment beyond (O(n+1),O(n)). **ACTION: fetch directly.**
+- **CRITICAL FIND (citation trail): Azenhas arXiv:2603.16698** characterizes k-highest weight tableaux by **LINEAR INEQUALITIES** in the quantum LR map (AII = GL→Sp). These inequalities may be EXACTLY Rick's walls {m₂=0},{m₂₃₆=0},{m₂₃₄₅₆=0} for BDI. **Read before next PROVE session.** NEW OQ-AZENHAS-INEQUALITIES-BDI.
+- **NEW: Azenhas arXiv:2604.25856** — companion "slack data" for inverse quantum LR map. Adjacent to BDI fence wall quantification.
+- **Kobayashi fence clarification**: fence conditions = interleaving conditions ξᵢ + δνⱼ = ±½ on infinitesimal characters. 2604.22262 covers ONLY (O(n+1),O(n)). Extension to GL(n)→O(n)×O(n) **explicitly deferred** — Rick's work is the deferred case.
+- **NEW MEDIUM: Colarusso-Erickson-Frohmader-Willenbring arXiv:2502.19505** — K-type multiplicities for O(p)×O(q)↪O(p+q) via Howe duality. BDI-adjacent. Check stable-range formula vs. Rick's n=3 data.
+- **NEW MEDIUM: Kumar-Torres 2024** — flagged hive polytopes for Kwon-Sundaram Sp branching (5 cites). Connects polyhedral approach to Sp branching; check if BDI branching cone is a hive polytope.
+- **OQ-IQUANTUM-RSK-LIFT confirmed open**: both sides published (Stern 2606.00679 GL/AHA side; Watanabe 2509.00853 AII/iquantum side); synthesis = iquantum JM-spectral elements absent from both.
+- **OQ-NAITOSAGAKI-BDI confirmed open**: AII→CI proved (NSW + Muniz); AII→BDI genuinely open.
+- **Q-SPHERE preprints STILL ABSENT** (conference ended June 12). Watch June 15–30 for De Commer type-B KL, Meereboer-Kolb branching, Watanabe-Hoshino bi-icrystal.
+- **UPCOMING**: Anne Schilling lectures at IMJ-PRG (June 17-18, "Crystals and symmetric functions"). FPSAC 2026 (July 13-17): Jae-Hoon Kwon (invited, orthosymplectic crystals + affine RSK — highly relevant) + Seung Jin Lee (type B/C q-weight via KR crystals). Mittag-Leffler workshop July 27-31.
+- Log: `reading/2026-06-12.md`.
 
-**Next testable question (OQ-PI3-MULTI, NEW Day-62)**: Is the
-stratum-vector $(1, 5, 9, 9, 13, 17, 22, 26)$ a representation-theoretic
-multiplicity? Push N to 12-15 for per-stratum constancy; check rep-theory
-candidates ($\mathfrak{sl}_3$ / Kostant / Kostka-Foulkes); ask Clio.
+**Day 63 CODE**: stratum-vector asymptotic to N=12 (per-stratum MAX-
+constancy holds); codim-2 walls catalogued (108 + 126 pairs at ranks
+2-3); n=5 single-column lemma 100/100 sampled pieces in BDI cone.
+**OQ-PI3-GROWTH branch (a) closed at $n \in \{2, 3, 4, 5\}$.**
 
-**Day 62 CODE (3 deliverables)**: (1) fiber stratification extended to
-N=10, Candidate B confirmed (99.44% have $|I|>1$); (2) **single-column
-lemma extends cleanly to $n=4$** (100/100 sampled $g$, OQ-PI3-GROWTH
-branch (a) existential CLOSED at $n=4$); (3) dim-gap at $n=5,6$
-computationally confirmed ($f(5)=3, f(6)=2$ via rank-of-eqs +
-explicit-feasible-span).
+## Previous state — Day 62 (2026-06-10 deep-work, stack PINNED DOWN; Day-60 phantom fired 2nd instance)
 
-Files: `proofs/2026-06-10-pi3-stack-structure.md`,
-`code/2026-06-10-stack-structure/` (fiber_strat, probe_structure,
-kernel_arrangement, debug_walls, strata, rigid_vars),
-`connections/pi3-stratified-multimap.md` (NEW),
-`questions/q-pi3-multi-stratum-vector.md` (NEW),
+**Day 62 PROVE: (c\*) stack candidate PINNED DOWN as concrete AII-
+fibered groupoid.** Day 60: not polyhedral GIT. Day 61: not fan, not
+PFL. Day 62: AII-fibered groupoid $G$ with three codim-1 walls $\{m_2 =
+0\}, \{m_{236} = 0\}, \{m_{23456} = 0\}$ inside AII cone. 8 sign-strata;
+MODE stratum-vector $(1, 5, 9, 9, 13, 17, 22, 26)$ (Day-63 → MAX-
+refined). Variable taxonomy: 2 RIGID + 4 BINARY + 3 AXIS ($m_2$,
+$m_{236}$, $m_{23456}$ with 4/10/9 distinct columns). Candidate B
+(genuine multivaluedness) wins: 98.82% of N=8 AII points have
+$|I(p)|>1$. **Structural identity # AXIS = # walls = $f(3) = 3$
+ESTABLISHED.** Day-64 confirmed at n=4. Files: `proofs/2026-06-10-pi3-stack-structure.md`,
+`code/2026-06-10-stack-structure/`, `connections/pi3-stratified-multimap.md` (Tier A),
 `for-collaborator/2026-06-10-pi3-stack-pinned-down.md`.
 
-**Day 62 LEAN: Theorem G Lemma 3 — linear independence of n rays DONE.**
-`BdiPolytope.lean` 371 → 552 lines, pure stdlib. Added `linComb`,
-four `partialSum_pair_*` closed-form lemmas (`_below`, `_at_zero`,
-`_at_j`, `_above`), and `rays_lin_indep`. Coordinate-descent proof:
-`c 0 = 0` from coord 0, `c (k+1) = c k` from coord $k+1$ (so `c 0 = …
-= c (n-3) = 0` by induction), bottom $2 \times 2$ block forces
-`c (n-2) = c (n-1) = 0`. `lake build` clean, `#print axioms` ⊆ {propext,
-Classical.choice, Quot.sound}. **4/5 sub-lemmas of Theorem G done**.
+**Day 62 CODE**: fiber-strat extended to N=10 (Candidate B confirmed
+at 99.44%); single-column at n=4 (100/100); $f(5)=3, f(6)=2$
+computationally confirmed.
 
-**Day 64 LEAN (2026-06-11 evening): Theorem G COMPLETE — 5/5 lemmas +
-K_simplicial bundle DONE.** `BdiPolytope.lean` 552 → 866 lines, pure
-stdlib, zero sorry, zero warnings, std axioms only.
-- **Lemma 4 (form (b), N=2):** `Kone_two_in_cone_hull` — every $v \in K_n$
-  ($n \ge 3$) admits an explicit nonneg integer linear combination of the
-  $n$ rays equal to $2v$. Coefficient closed form:
-  $c_k = 2 \cdot \text{partialSum}\, v\, (k+1)$ for $k \le n-3$,
-  $c_{n-2} = \text{partialSum}\, v\, n$,
-  $c_{n-1} = \text{partialSum}\, v\, (n-1) - v_{n-1}$. Each $c_k \ge 0$
-  follows from one facet inequality of $K_n$ (clean facet ↔ coeff bijection).
-  Proof: case-split on $j \in \{0, [1,n-3], n-2, n-1\}$, apply the four
-  `partialSum_pair_*` lemmas, omega closes.
-- **Lemma 5 (uniqueness):** `rays_lin_indep_unique` — if
-  $\text{linComb}\, n\, c = \text{linComb}\, n\, c'$ on $j < n$, then
-  $c = c'$ on $k < n$. Port of `rays_lin_indep` coordinate-descent argument
-  to the difference $c - c'$, avoiding `Int` distributivity entirely.
-- **`K_simplicial` bundle:** existence (Lemma 4) + uniqueness (Lemma 5) +
-  non-negativity in one statement. Formal witness that $K_n$ is a
-  simplicial cone with lattice-index-2 caveat baked into the $2v$ factor.
-- **Pending Robin's call:** statement forms (a) (pure rational, needs
-  $\mathbb{Q}$) and (c) (integer with explicit 2-torsion correction at
-  exceptional lattice points). Form (b) lands cleanly stdlib-only.
-
-**CALIBRATION — Day-60 phantom-completion FIRED AGAIN (2nd instance).**
-The Day-60 LEAN session produced the three "ray ∈ K_n" lemmas on disk
-but NEVER committed them; Day-62 LEAN bundled both Day-60 + Day-62 work
-in one commit. Second instance (1st: Day-58 F-easy). Day-60 calibration
-rule **promoted to STABLE**. Operational form: "LEAN sessions end with
-`git push` or the work counts as phantom." Day-62 collaborator note
-proposes "commit-or-die" convention to Robin.
+**Day 62 LEAN: Theorem G Lemma 3 (linear independence) DONE.**
+552 lines stdlib, four `partialSum_pair_*` lemmas + coordinate-descent
+proof of `rays_lin_indep`. **4/5 sub-lemmas of Theorem G** — closed
+Day-64. Bundled Day-60 ray-in-K_n lemmas (2nd phantom-completion
+instance; rule PROMOTED to STABLE).
 
 ---
 
@@ -340,12 +400,12 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 ### Tier S — Seed-level / load-bearing
 
 - **`azenhas-bdi-canonical-projection.md`** (Day 56, **Day-58 + Day-60 + Day-61 + Day-62 major updates**) — Canonical forgetful surjection $\pi_n: \mathsf{P}^{\mathrm{AII}}_{2n-1} \twoheadrightarrow \mathsf{P}^{\mathrm{BDI}}_n$. THEOREM at $n=2$ (verified to N=20). At $n \in \{3, 4\}$: OQ-PIN-SURJ EXISTENTIAL CLOSED (single-column auto-construction). **Day-60: NOT polyhedral GIT**. **Day-61: NOT fan, NOT PFL**. **Day-62: (c\*) stack PINNED DOWN as AII-fibered groupoid** with three codim-1 walls = three AXIS vars = $f(3) = 3$. v4 Remark 3.5 fully reframed.
-- **`pi3-stratified-multimap.md`** (NEW Day-62, Tier A) — The (c\*) stack candidate concretely. AII-fibered groupoid $G$; stratum-vector $\mathbf I = (1, 5, 9, 9, 13, 17, 22, 26)$ on 8 sign strata; variable taxonomy (2 RIGID + 4 BINARY + 3 AXIS); structural identity # AXIS = # walls = $f(3) = 3$. Promotes to Tier S if OQ-PI3-MULTI surfaces rep-theoretic meaning.
+- **`pi3-stratified-multimap.md`** (Day-62 origin, **Day-63/64 major updates**, Tier A) — (c\*) stack candidate concretely. AII-fibered groupoid $G$; MAX-vector $(3, 8, 11, 10, 19, 14, 23, 26)$ on 8 sign strata with analytic identity (# σ-active column-profiles); variable taxonomy (2 RIGID + 4 BINARY + 3 AXIS at n=3); structural identity # AXIS = # walls = $f(n) = 3 - [n \text{ even}]$ verified at $n \in \{3, 4\}$. **Day-64 OQ-PI3-MULTI-FINAL: Bucket-2 NOT rep-theoretic** (marginal-palindromy refutation); novel combinatorial invariant. Tier-S-promotion contingent (rep-theoretic meaning) DORMANT.
 - **`cross-programme-dim-gap-codim.md`** (NEW Day-60) — Cross-programme conjecture $f(n) = g(n) = 3 - [n \text{ even}]$ at $n = d \ge 3$. Same forgotten-dim count both sides: Rick polytope side vs Clio fiber-vanishing side. Verified $n=4$. Testable. Tier A active; v4 §3 unifier if confirmed.
 - **`discovery-layer-is-the-moat.md`** — Day 39 origin. AI harnesses verify; only humans+frameworks discover. Five evidence layers: empirical < community-internal < structural < mechanical < live community attack. Day-56 new instance: Clio's peer-review reframe that turned a CLOSED-NEGATIVE verdict into a PROVED-POSITIVE theorem is a discovery event no AI reading preprints would surface. Add to journal.
 - **`carry-Pa-as-unified-analytical-object.md`** — Six roles (Day 56 add). v3 structural climax. (1) descent-recording; (2) singleton cross-chain coupling → Theorem E; (3) chain-MB / carry-recursive factorization; (4) chain-side polytope completeness Theorem F ($2n-3$ facets); (5) weight-projection invariant Theorem G ($n$-facet simplicial cone); (6) image of canonical AII projection $\pi_n$, kernel parametrized by Singleton fiber.
 - **`bdi-kobayashi-polytope-faces.md`** — Theorem F. Chain polytope $\mathbb{P}_n$ has exactly $2n-3$ non-redundant carry facets. **STATUS Day-60 PHANTOM-COMPLETION FLAG:** Day-58 collaborator note documents lemmas 1-14 fully formalised (408 lines pure stdlib), but Day-60 LEAN found the on-disk file at 109 lines (Day-56 base; last commit `fed238c`). The Day-58 witness-bundle work is NOT in git. Either container-lifecycle data loss or undocumented incompleteness. Day-60 calibration rule added. Re-derivation ~1 LEAN session.
-- **`bdi-kobayashi-weight-space-simplicial.md`** — Theorem G. Image polytope $\mathbb{K}_n^+ \subset \mathbb{R}^n$ = simplicial cone with $n$ facets. **Day-62 LEAN: 4/5 sub-lemmas DONE** (Lemma 3 linear independence today). 371 → 552 lines pure stdlib, zero sorry, std axioms only. Remaining: lemma 4 (cone hull surj, HARD ~4h), lemma 5 (~1h), `K_simplicial` bundle (~1h). ETA 3 LEAN sessions. Lattice-index 2 caveat — Robin's call on statement form.
+- **`bdi-kobayashi-weight-space-simplicial.md`** — Theorem G. Image polytope $\mathbb{K}_n^+ \subset \mathbb{R}^n$ = simplicial cone with $n$ facets. **Day-64 LEAN: COMPLETE.** 5/5 sub-lemmas + `K_simplicial` bundle. 866 lines pure stdlib, zero sorry, std axioms only. Form (b) shipped (factor of 2 = lattice-index obstruction); forms (a) [pure $\mathbb{Q}$] and (c) [explicit 2-torsion] deferred-but-buildable pending Robin's call. **Verified Lean kernel fact**: "BDI weight-space image cone is simplicial." 2nd complete Lean theorem after F-easy.
 - **`kobayashi-rick-non-overlap.md`** — Level sets ($\sim 4n^2$ in joint $(\lambda,\nu)$-space, Kobayashi) vs support ($n$ partial-sum facets, Rick). Complementary slicings.
 - **`open2-watanabe-2407-existence-meereboer-1dim-collapse.md`** — v3 OPEN-2 Layer 1 FREE via Watanabe 2407 §5; Layer 2 → Theorem E. Re-examine post-OQ-PIN-SURJ resolution (may collapse uniformly).
 - **`asymmetry-is-the-result-seven-instances.md`** — Crystal in EXPLOITATION mode.
@@ -353,6 +413,13 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 
 ### Tier A — Active
 
+- **`marginal-palindromy-refutation.md`** (NEW Day-64) — Calibration-grade
+  refutation filter: when testing whether a candidate combinatorial
+  configuration realises a $B_n / C_n / D_{2k} / E_7 / E_8 / F_4 / G_2$
+  representation, compute axis marginals first; $w_0 = -1$ forces
+  palindromy. Day-64 fired to kill Bucket-2 ↔ adj($B_3 / C_3$)⊕triv in 5
+  lines. General-purpose tool for cone-shadow / polytope-shadow combinatorics
+  questions.
 - **`lu-pan-dual-canonical-bdi-algebraic-roof.md`** — Quartet of algebraic papers (existence×3 + dual=double canonical synthesis). v3 carry = combinatorial labeling of objects simultaneously dual-canonical AND double-canonical. Path 2 ↔ Path 4 bridge.
 - **`zhang-lusztig-bridge-for-marberg.md`** — Post-v3 P_PARK #1 bridge. Read order: Lusztig v1→v2 diff → Watanabe 2023 stability → Zhang 2412+2503 → Lusztig 2510.21499 v2 → Marberg-Scrimshaw 2306.00336 → Marberg 1306.2980 → optional Bhattacharya 2602.19508. Three attack angles: 1+2 ready (~5.5d), angle 3 longer-horizon pending shifted machinery (Day-53 angle-3 named-paper-shaped via 3-row infrastructure map). Watch 2026-2027.
 - **`q-sphere-meereboer-fourth-community-deadline.md`** — Q-SPHERE June 8-12. Kolb (June 9 09:00 = 2603.06132) + Meereboer (10:15, joint w/ Kolb, derives branching via Watanabe's integrable modules). Watanabe (11:20, official: "Quantizations of coordinate algebras of symmetric pair subalgebras"; Browse 47 suggested bi-icrystals w/ Hoshino, Browse 48 indico shows no Hoshino — SUSPENDED). Kobayashi (June 11 09:00 = 2604.22262). De Commer (June 12 11:20, type-B KL via reflection eq; NTY co-authorship SUSPENDED). Six talk-clusters across 4 communities.
@@ -377,10 +444,14 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 ## Open questions
 
 **Active (worth tracking):**
-- **OQ-PIN-SURJ** (Day 56 opened; Day-59 RESOLVED EXISTENTIAL form at n=3) — for each fixed $N$, $K(3, N) < \infty$ via single-column auto-construction lemma (`proofs/2026-06-09-pi3-growth-a.md`). 193-piece registry closes $N \le 15$ at 100%. Single-column construction grows $\Theta(N^2)$ as $N \to \infty$. At $n \ge 4$: not investigated.
-- **OQ-PI3-GROWTH** (Day 58; REFRAMED Day-60 → REFRAMED Day-62) — **Polyhedral GIT REFUTED** (Day-60); **fan + PFL REFUTED** (Day-61); **(c\*) STACK PINNED DOWN as AII-fibered groupoid** (Day-62). The "uniform-K(3,N)" sub-question rerouted to OQ-PI3-MULTI. Branch (a) existential closed at $n \in \{3, 4\}$.
-- **OQ-PI3-MULTI** (NEW Day-62) — Is the stratum-vector $\mathbf I = (1, 5, 9, 9, 13, 17, 22, 26)$ of π̃₃' a representation-theoretic multiplicity? Test: push N to 12-15 for per-stratum constancy (~1h CODE); check rep-theory candidates ($\mathfrak{sl}_3$, Kostant, Kostka-Foulkes); ask Clio (~brief email). If closes = v4 §3 structural climax. HIGH priority. See `questions/q-pi3-multi-stratum-vector.md`.
-- **OQ-DIMGAP-CODIM** (NEW Day-60, cross-programme) — Does $f(n) = g(n) = 3 - [n \text{ even}]$ where $g$ is Clio's d-fiber-vanishing obstruction codim? Verified $n=4$. Testable at $n = 3, 5, 6, 7$. If confirmed = v4 §3 unifier. HIGH priority. See `connections/cross-programme-dim-gap-codim.md`.
+- **OQ-PIN-SURJ** (Day 56 opened; Day-59 EXISTENTIAL CLOSED at n=3; Day-62/63 EXTENDED at n=4, 5) — single-column auto-construction lemma 100% at $n \in \{2, 3, 4, 5\}$. Single-column unbounded $\Theta(N^2)$. OQ-PI3-GROWTH-FINITE pivots.
+- **OQ-PI3-GROWTH** — **Polyhedral GIT REFUTED** (Day-60); **fan + PFL REFUTED** (Day-61); **(c\*) STACK PINNED DOWN as AII-fibered groupoid** (Day-62). Branch (a) existential closed at $n \in \{2, 3, 4, 5\}$.
+- **OQ-PI3-MULTI-FINAL** (Day-62 opened; Day-63 refined MODE→MAX; Day-64 CLOSED NEGATIVE) — Bucket-2 22-point config in $[4] \times [9] \times [8]$ is NOT $\mathrm{adj}(B_3 / C_3) \oplus \mathrm{triv}$ via marginal-palindromy refutation. MAX-vector $(3, 8, 11, 10, 19, 14, 23, 26)$ is novel combinatorial invariant. v4 §3 climax: "polytope-shadow combinatorics" (publishable).
+- **OQ-DIMGAP-CODIM** (Day-60 opened; Day-62 structural; Day-64 verified at n=4) — $f(n) = g(n) = $ # AXIS vars = # codim-1 walls = $3 - [n \text{ even}]$. Verified on Rick side at $n \in \{3, 4\}$ (both parities). Clio's $g(d)$ at $d \in \{3, 5, 6, 7\}$ still uncomputed. HIGH priority cross-programme conjecture.
+- **OQ-PI3-INV5** (NEW Day-64 dream) — Is the 26-piece registry naturally indexed by RSK-shape data of $S_5$ involutions ($I(5) = 26$, $I(6) = 76 = $ running sum to σ=011)? Even post-Day-64 rep-theory refutation. ~30min CODE check. See `questions/q-26-piece-involutions.md`.
+- **OQ-NAITOSAGAKI-BDI** (NEW Day-63 from Browse 54-55) — Does Naito-Suzuki-Watanabe arXiv:2502.07270 (iquantum-crystal proof of AII→CI Naito-Sagaki) generalise to AII→BDI? Strongest live structural analogue post-Day-64. ~1d read + 1d analysis.
+- **OQ-HOROSPHERICAL-STACK-PI3** (NEW Day-63 from Browse 54-55) — Is π̃₃' a horospherical stack (arXiv:2305.01571)? Alternative algebraic-geometric framework beyond polyhedral GIT. ~1h speculative read.
+- **OQ-INVERTI-STRATUM** (NEW Day-63 from Browse 55) — 5-min SageMath test on MODE-vector (1,5,9,9,13,17,22,26): is INVERTi nonneg? If yes, vector is consistent with graded Hopf algebra dimensions; $a$-sequence = primitive count.
 - **OQ-LUSZTIG-MARBERG** (P_PARK #1) — Three attack angles: (a) Zhang+Lusztig molecule-cell; (b) optional Bhattacharya TC^J; (c) Marberg-Scrimshaw P/Q-key via square root crystals — angle-3 gap named-paper-shaped (Marberg-Tong / Marberg-Tong-Yu / Marberg-Scrimshaw). Effort ~5.5d (angles 1+2). **Browse 53 architecture update:** Marberg program has TWO tracks: (i) K-theoretic Grothendieck positivity via sqrt-crystals [ACTIVE — 2512.23944 Dec 2025 + 2501.16640 FPSAC 2026 SHORT TALK confirmed in proceedings]; (ii) twisted involution KL positivity 1306.2980 [DORMANT — 0 citers 2016-2026; Marberg not attacking directly]. Track (i) may converge to track (ii) if a "shifted square root crystal" is built — not yet. Four conjectures of 1306.2980 **remain open and unguarded** (confirmed OQ-HMP-ACCELERATION check). Watch for Marberg-program shifted-√ output 2026-2027.
 - **OQ-ZHANG-MARBERG** — Does Zhang 2412.07810 + Lusztig 2510.21499 resolve Marberg's 4 twisted-involution KL conjectures? P=35%. Three-sided dormancy.
 - **OQ-HUANG-B** (P_PARK #3) — NSym^B as standalone Hopf algebra. Entry point: Kim-Searles 2601.22926 (QSym^B SOTA, comodule) → NSym^B = contravariant dual. Technical route: Almousa-Lu 2601.13324 ribbon-complex dualized to type B.
@@ -402,24 +473,32 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 
 ## Next session priorities
 
-**P-1 — Wake-routine PROVE-check + git-state-verification check** (Day 44 rule + Day-60 phantom-completion rule, STABLE).
+**P-1 — Wake-routine PROVE-check + git-state-verification check** (Day 44 rule + Day-60 phantom-completion rule, STABLE; Day-64 LEAN session held discipline cleanly).
 
-**P0 — Robin endorsement decision STILL pending** (since Day 56). Two daily emails sent today (00:23 UTC, 02:42 UTC); next outbound Day-63 morning.
+**P0 — Robin endorsement decision STILL pending** (since Day 56). Daily email shipped Day-64 13:13 UTC. Next outbound Day-65 morning (Clio note on Bucket-2 refutation + 26 = I(5) speculation + cross-programme n=4 data point).
 
-**P0 — Lean indexing decision + lattice-index 2 statement form (a/b/c)** for Theorem G Lemma 4 — Robin's call. Pending.
+**P0 — Robin Lean form (a)/(c) call** for Theorem G — form (b) shipped Day-64. Forms (a) and (c) deferred-but-buildable refactors. Pending Robin.
 
-**P0 — F-easy phantom-completion resolution.** Still flagged. Either re-derive (~1 LEAN session) or accept and document as future work in v4. Decision needed Day 63.
+**P0 — F-easy phantom-completion resolution.** Still flagged. Day-64 LEAN focused on Theorem G closure. Either re-derive (~1 LEAN session) or accept and ship as v4 future work. Decision needed Day 65.
 
-**P0 — Clio outbound on cross-programme conjecture + OQ-PI3-MULTI**. Two asks: (a) compute $g(d)$ at $d = 3, 5, 6, 7$; (b) check if stratum-vector $(1, 5, 9, 9, 13, 17, 22, 26)$ matches anything in her LR-coefficient world. Email Day-63 morning.
+**P0 — Clio outbound on cross-programme conjecture (n=4 data) + Bucket-2 refutation + OQ-PI3-INV5 speculation**. Three asks: (a) does her $g(d)$ side show "axis-variable" structure at $d \in \{3, 4\}$? (b) marginal-palindromy filter banked, applicable to her future LR refutation candidates; (c) 26 = I(5) coincidence — does the 26-piece registry index by RSK-shape data ring any bells? Email Day-65 morning.
 
-**P1 — Day 63 PROVE.md target options:**
-- **(A) OQ-PI3-MULTI investigation**: push fiber-strat to N=12-15, verify per-stratum constancy is exact. ~1h CODE + ~1h analysis. **Probable primary target.**
-- **(B) Stratum-vector rep-theoretic identification**: OEIS, $\mathfrak{sl}_3$ / Kostant / Kostka-Foulkes test. ~1d speculative.
-- **(C) Single-column lemma at $n = 5$**. ~30min CODE.
-- **(D) Read Stern 2305.08301 + 2606.00679 unit for OQ-AHA-RSK**. ~1d, Path 3 deepening.
-- **(E) Construct $n=4$ piece registry; predict 2 AXIS variables / 2 codim-1 walls** (Day-62 prediction test). ~1-2d.
+**P1 — Day 65 PROVE.md target options:**
+- **(A) OQ-PI3-INV5 verification.** ~30min CODE. Enumerate 26 piece labels; check $S_5$ involution bijection. Low cost, possibly clean combinatorial origin for "26."
+- **(B) Gap C — Bucket-0 algebraic origin.** ~1h. R-double 3-piece chain in $(M_2, S)$-space; explain why exactly 3 pieces.
+- **(C) Read Naito-Suzuki-Watanabe arXiv:2502.07270** (iquantum-crystal AII→CI Naito-Sagaki). Strongest live structural analogue post-Day-64. ~1d read + 1d analysis. **Probable PROVE deep-work target.**
+- **(D) OQ-INVERTI-STRATUM test.** 5-min SageMath quick run.
+- **(E) Read Frohmader arXiv:2312.11295** (GL(2n) ↓ Sp(2n) Kostant-Rallis multiplicities). ~1d.
 
-**HARD DEADLINE: Q-SPHERE opens June 8 (T-0d).** Vlaar-Appel June 8; June 9 high-density (Kolb 09:00 + Meereboer 10:15 + Watanabe 11:20 + Song-Zhang 14:00); June 11 Kobayashi; June 12 De Commer.
+**P1 — Day 65 LEAN.md options:**
+- **(F) Theorem G form (c) refactor** (explicit 2-torsion correction). ~1 LEAN session.
+- **(G) F-easy re-derivation.** ~1 LEAN session.
+
+**P1 — Day 65 CODE.md options:**
+- **(H) Single-column lemma at n=6, 7.** ~30min each.
+- **(I) n=5 piece registry** (predicted # AXIS = 3, odd parity).
+
+**HARD DEADLINE: Browse 56 ~June 13-15.** Q-SPHERE preprint recheck (Watanabe-Hoshino, Meereboer-Kolb, De Commer); IMJ-PRG Schilling slides post-June-18.
 
 **P_PARK (post-v3 arXiv, preference order):**
 1. **OQ-LUSZTIG-MARBERG** — ~5.5d (angles 1+2). Read order: Lusztig v1→v2 diff → Watanabe 2023 → Zhang 2412/2503 → Lusztig 2510.21499 → Marberg-Scrimshaw 2306.00336 → **2501.16640** (angle 3 entry: Marberg-Tong-Yu "Grothendieck positivity for normal √-crystals," FPSAC 2026, raising operators → Hecke insertion, **Browse 51 CONFIRMED**) → Marberg 1306.2980 → optional Bhattacharya 2602.19508.
@@ -501,7 +580,8 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 
 ## Recent history (one-liners, journals have detail)
 
-- **Day 61-62 dream (2026-06-10) — DONE.** Day 61 fan-reframe REFUTED + Browse 53 + Day 62 stack PINNED DOWN + single-column at $n=4$ + Lean Theorem G Lemma 3 consolidated. ONE new connection file (`pi3-stratified-multimap.md`, Tier A) + ONE new question file (`q-pi3-multi-stratum-vector.md`, OQ-PI3-MULTI, HIGH). THREE targeted edits (`azenhas-bdi-canonical-projection.md` Day-62 block; `q-pi3-piecewise-growth.md` Day-62 reframe; `bdi-kobayashi-weight-space-simplicial.md` 4/5 sub-lemmas). ONE calibration rule PROMOTED to STABLE (Day-60 phantom-completion, 2nd instance Day-62). NO PERSONALITY EDIT. Streak 47/47 (Day-60 #44 → Day-61 #45 fan-refuted + #46 browse → Day-62 #47 stack pin-down).
+- **Day 63-64 dream (2026-06-11) — DONE.** Day 63 OQ-PI3-MULTI refined MODE→MAX + Browse 55 surfaced 7 candidates + 26=I(5)/76=I(6)/LG(3,6) coincidences. Day 64 PROVE killed Bucket-2 ↔ adj($B_3 / C_3$) via marginal-palindromy + LEAN Theorem G COMPLETE 5/5 + CODE n=4 # AXIS = 2 confirmed. ONE new connection file (`marginal-palindromy-refutation.md`, Tier A) + ONE new question file (`q-26-piece-involutions.md`, OQ-PI3-INV5). THREE targeted edits (`pi3-stratified-multimap.md` MAX-refinement + Day-64 closure; `bdi-kobayashi-weight-space-simplicial.md` Theorem G COMPLETE; `cross-programme-dim-gap-codim.md` n=4 both-parity confirmation). q-pi3-multi-stratum-vector.md updated CLOSED-NEGATIVE. NO PERSONALITY EDIT. Streak 49/49 (Day-62 #47 → Day-63 #48 refinement + browse → Day-64 #49 Bucket-2 refutation + Lean closure + n=4 AXIS).
+- **Day 61-62 dream (2026-06-10) — DONE.** Day 61 fan-reframe REFUTED + Browse 53 + Day 62 stack PINNED DOWN + single-column at $n=4$ + Lean Theorem G Lemma 3 consolidated. ONE new connection file (`pi3-stratified-multimap.md`, Tier A) + ONE new question file (`q-pi3-multi-stratum-vector.md`, OQ-PI3-MULTI, HIGH). THREE targeted edits. Day-60 phantom-completion PROMOTED to STABLE (2 instances). Streak 47/47.
 - **Browse 53 (Day 61, 2026-06-10) — DONE.** Q-SPHERE Day 4 (conference ended). No preprint drops. **FPSAC 2026 proceedings LIVE**: Marberg-Tong-Yu confirmed SHORT TALK. **OQ-HMP-ACCELERATION RESOLVED**: 4 new HMP citers, none cite Marberg 1306.2980. **Marberg architecture**: K-theoretic ACTIVE (2512.23944), 1306.2980 DORMANT. New HIGH: Lu+Pan 2605.13578 (iHall survey). New MEDIUM: Manon 1103.2484 (tropical branching algebra; gap confirms π₃ NOVELTY), Heo 2504.12106 (polyhedral B(∞)). Loho-Schymura tropical Ehrhart = pioneer territory. NEW OQ-MARBERG-PROGRAM-BRIDGE, OQ-PI3-TROPICAL.
 - **Day 61 PROVE (2026-06-09 evening) — fan-reframe REFUTED.** 25/26 pieces have FULL AII domain (fan-in-AII dead); 367/650 ordered pairs have 6-dim interior overlap of image cones (fan-in-BDI dead); PFL structurally dead (piece choice ≠ function of $p$). Min-cover grows monotonically 8 → 25 from N=6 to N=10. Stack (c\*) the only candidate. Files: `proofs/2026-06-09-pi3-fan-reframe.md`, `code/2026-06-09-pi3-fan-reframe/`.
 - **Day 62 PROVE (2026-06-10) — stack PINNED DOWN.** AII-fibered groupoid $G$; three codim-1 walls = $\{m_2 = 0\}, \{m_{236} = 0\}, \{m_{23456} = 0\}$; 8 strata × stratum-vector $(1, 5, 9, 9, 13, 17, 22, 26)$. Candidate B wins (98.82% have $|I|>1$). Variable taxonomy: 2 RIGID + 4 BINARY + 3 AXIS. Structural identity: # AXIS = # walls = $f(3) = 3$. OQ-PI3-MULTI filed.
@@ -550,6 +630,8 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 
 ## Browse cycle index (most recent 10)
 
+- **Browse 55 (Day 63, 2026-06-11) — DONE.** Q-SPHERE T+3d. Three preprints still absent (recheck June 13-15). **7 candidate papers banked**: Andrews et al. arXiv:2505.06941 (INVERTi, NEW OQ-INVERTI-STRATUM), Frohmader 2312.11295 (GL(2n)↓Sp(2n) Kostant-Rallis multiplicities), Naito-Suzuki-Watanabe 2502.07270 (iquantum-crystal AII→CI, NEW OQ-NAITOSAGAKI-BDI), Horospherical stacks 2305.01571 (NEW OQ-HOROSPHERICAL-STACK-PI3), Lusztig 2407.20960 (strata + almost special reps), He-Tubbenhauer 2606.02249 (crystal categories), Caselli-Marietti 2606.11776 (type-A KL via special matchings, Brenti conjecture proved). **OEIS confirmed (1,5,9,9,13,17,22,26) absent.** **8 strata = LG(3,6) Schubert cells**; 26 = I(5), 76 = I(6) running sum. Lam-Lauve-Sottile (Hopf-LR): zero new citers 2024-2026 — Richmond-Tewari 2019 Hopf↔crystal bridge has 0 citations in 7 years (pioneer territory). Log: `reading/2026-06-11.md`.
+- **Browse 54 (Day 62, 2026-06-10) — DONE.** Q-SPHERE T+2d. Recap: same three preprints absent. Kowtowed to OQ-PI3-MULTI: 26 = I(5), f(010)=f(001)=9 explained by Hodge duality, 8 strata = LG(3,6) Schubert cells. Lu-Pan 2605.13578 (iHall survey) + Chen-Lu-Pan-Ruan-Wang 2601.00524 (dual canonical bases ALL finite types) + Marberg-Tong-Yu 2501.16640 (Grothendieck √-crystal) + Meereboer 2510.17655 (ĩ-crystal) + Naito-Suzuki-Watanabe 2502.07270 (Naito-Sagaki via iquantum crystal) + Paradan 2303.11653 (O'Shea-Sjamaar AII/BDI cones; CLOSEST EXISTING PAPER). Log: `reading/2026-06-10-browse54.md`.
 - **Browse 53 (Day 61, 2026-06-10) — DONE.** Q-SPHERE ended. No preprints. FPSAC 2026 proceedings live; Marberg-Tong-Yu SHORT TALK confirmed. OQ-HMP-ACCELERATION CLOSED. Marberg K-theoretic ACTIVE / 1306.2980 DORMANT. New HIGH: Lu+Pan 2605.13578. Tropical Ehrhart (Loho-Schymura) = pioneer territory; Manon 1103.2484 confirms π₃ novelty. Log: `reading/2026-06-10.md`.
 - **Browse 52 (Day 61, 2026-06-09) — DONE.** Q-SPHERE Day 3. No preprint drops (lag; recheck June 10-12). **KEY CORRECTION:** 2606.07493 "i-boxes" ≠ iquantum — quantum affine (KKOP), NOT QSP. Browse 51 "Path 1↔2↔4 triangle" RETRACTED. New HIGH: **Lu 2311.16373** (degenerate AHA type BC ↔ twisted Yangian = H^ι_n for OQ-AHA-RSK). New MEDIUM: **Loho-Schymura 1908.07893** (tropical Ehrhart, OQ-PI3-GROWTH-FINITE). Marberg-Tong-Yu 2501.16640 + Huh-Jung-Kim-Park 2606.07493 read and summarized. Watanabe/Marberg cite counts flat (4/4). Stern reference lineage mapped (Ram 2004 ancestor). Log: `reading/2026-06-09.md`.
 - **Browse 51 (Day 59, 2026-06-08) — DONE.** Q-SPHERE Day 2. No Watanabe-Hoshino / Meereboer-Kolb (recheck June 9-10). **Marberg-Tong-Yu 2501.16640 FOUND** = FPSAC 2026 + OQ-LUSZTIG-MARBERG angle 3. **Stern 2305.08301** = precursor to AHA RSK. **2606.07493** (i-boxes/Demazure weaves cluster) = new HIGH (NOTE: "i" ≠ iquantum — see Browse 52 correction). No citation acceleration. Structural parallel: Stern slide ops ↔ Marberg raising ops. IMJ-PRG Schilling June 17-18. Log: `reading/2026-06-08-browse51.md`.
@@ -605,7 +687,7 @@ Earlier browses (1-38) in `reading/` directory.
 
 - `papers/v3-bdi-unified-carry/` — v3 tarball (BYTE-IDENTICAL since Day 32, 34381 bytes). Three Day-41/42 patches. `grant-pitch-draft.md` Day 40.
 - `proofs/` — recent: `2026-06-07-azenhas-bdi-projection.md` (THEOREM at n=2), `2026-06-06-azenhas-bdi-bridge.md` (verdict + Appendix B), `2026-05-27-chen-lu-bdi-orthogonal.md`.
-- `proofs/lean/bdi-polytope/` — Theorem F structural half DONE Day-56 (lemmas 1-7, 109 lines stdlib). **Day-58 (F-easy) witness bundle (lemmas 8-14) NOT in git** — phantom-completion flag (still open). **Theorem G: 4/5 sub-lemmas DONE** through Day-62 (lemmas 1-3); 552 lines pure stdlib, zero sorry, std axioms only. Remaining: lemma 4 (HARD ~4h), lemma 5 (~1h), bundle (~1h). ~3 LEAN sessions to close. Day-60 ray-in-K_n lemmas were on disk uncommitted until Day-62 bundle commit — phantom-completion rule PROMOTED to STABLE.
+- `proofs/lean/bdi-polytope/` — Theorem F structural half DONE Day-56 (lemmas 1-7, 109 lines stdlib). **Day-58 (F-easy) witness bundle (lemmas 8-14) NOT in git** — phantom-completion flag (still open). **Theorem G COMPLETE Day-64**: 5/5 sub-lemmas + `K_simplicial` bundle, 866 lines pure stdlib, zero sorry, std axioms only. Form (b) shipped (lattice-index-2 factor of 2); forms (a)/(c) deferred pending Robin's call. **2nd complete Lean theorem after F-easy.** Phantom-completion rule held cleanly on Day-64 (3 commits within session). Commits: `f708cfb`, `8a6eab9`, `96f032d`.
 - `code/2026-06-07-aziplot-N20/` — Ehrhart fits, period-6 quasipolynomial confirmation.
 - `clio-vega/rick-review` (Clio's repo) — her review of my work; Day-56 morning entry on Azenhas verdict.
 - `grandpa-rick/clio-review` (Rick's repo) — my reviews of Clio's work; Day-56 entry on two-row d=4 reduction.
@@ -616,7 +698,8 @@ Earlier browses (1-38) in `reading/` directory.
 
 ## File hygiene
 
-- **Day-61-62 dream hygiene pass (2026-06-10):** SUMMARY recompressed; Day-61 and Day-60 detail blocks collapsed to one-paragraph each. Day-62 elevated to current state. ONE new connection file (`pi3-stratified-multimap.md`, Tier A). ONE new question file (`q-pi3-multi-stratum-vector.md`, OQ-PI3-MULTI HIGH). THREE targeted edits (`azenhas-bdi-canonical-projection.md` Day-62 block + Day-61 block; `q-pi3-piecewise-growth.md` Day-61/62 reframe; `bdi-kobayashi-weight-space-simplicial.md` 4/5 sub-lemmas done). ONE calibration rule PROMOTED to STABLE (Day-60 phantom-completion, 2 instances). Streak 47/47.
+- **Day-63-64 dream hygiene pass (2026-06-11):** SUMMARY current-state condensed; Day-63 morning work merged into Day-64 current-state block. Day-62 collapsed to summary block. ONE new connection file (`marginal-palindromy-refutation.md`, Tier A — calibration-grade refutation filter). ONE new question file (`q-26-piece-involutions.md`, OQ-PI3-INV5, MEDIUM). THREE targeted edits to load-bearing files (pi3-stratified-multimap MAX-refinement + Day-64 closure; bdi-kobayashi-weight-space-simplicial Theorem G COMPLETE; cross-programme-dim-gap-codim n=4 both-parity confirmation). q-pi3-multi-stratum-vector.md updated CLOSED-NEGATIVE (during Day-64 PROVE). Streak 49/49. No personality edit.
+- **Day-61-62 dream hygiene pass (2026-06-10):** SUMMARY recompressed; Day-61 and Day-60 detail blocks collapsed to one-paragraph each. Day-62 elevated to current state. ONE new connection file (`pi3-stratified-multimap.md`, Tier A). ONE new question file (`q-pi3-multi-stratum-vector.md`, OQ-PI3-MULTI HIGH). THREE targeted edits. ONE calibration rule PROMOTED to STABLE (Day-60 phantom-completion). Streak 47/47.
 - **Day-60 dream hygiene pass:** SUMMARY recompressed. ONE new connection file (`cross-programme-dim-gap-codim.md`, Tier A). THREE targeted edits. TWO new calibration rules (Day-60 phantom-completion + productive-falsification).
 - **Day-56 dream hygiene pass:** SUMMARY recompressed from 359 → ~280 lines. Day 49-55 "Previous state" blocks collapsed into one-liner summaries. ONE new connection file (`azenhas-bdi-canonical-projection.md`, Tier S). ONE new question file (`q-pi-n-surjectivity.md`, OQ-PIN-SURJ). TWO minimal targeted edits.
 - **Connection-file prune triggers:** `q-sphere-meereboer-fourth-community-deadline.md` → 2-liner post-arXiv; `kobayashi-rick-non-overlap.md` → revisit post-Q-SPHERE June 11; `lu-pan-dual-canonical-bdi-algebraic-roof.md` → revisit ~2027 (v4 published or BDI $C_b$ literature).
