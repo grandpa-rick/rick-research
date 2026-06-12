@@ -106,6 +106,243 @@ theorem U1_redundant_n_eq_2 (c : ChainConfig)
   have hS : 0 ≤ c.S := c.S_nonneg
   omega
 
+/-! ## Theorem F-easy — non-redundancy of the surviving fences
+
+For `n ≥ 3` the BDI carry polytope has three families of fence inequalities:
+
+* `L_k` : `M_k ≤ P_{k - 1}` for `k = 1, …, n - 1`,
+* `U_k` : `M_k ≤ P_k`       for `k = 1, …, n - 1`,
+* `E`   : `S ≤ P_{n - 1}`.
+
+`L_1` is the degenerate fence `M_1 ≤ 0` (forces `M_1 = 0` by non-negativity,
+see `L1_implies_M1_zero`). `U_1` is redundant (see `U1_redundant_n_ge_3` /
+`U1_redundant_n_eq_2`). For every other fence we exhibit an explicit
+`ChainConfig` that satisfies every other fence but violates the named one.
+Hence the surviving `2 (n - 2) + 1` inequalities are pairwise non-redundant.
+
+**Indexing.** We continue with `Nat → Int` total-function coordinates, so the
+math index `k + 1` corresponds to the Lean index `k`. Concretely the Lean
+form of the fences is:
+
+* `L k` : `c.M k ≤ P c k`       (math `L_{k+1}: M_{k+1} ≤ P_k`),
+* `U k` : `c.M k ≤ P c (k + 1)` (math `U_{k+1}: M_{k+1} ≤ P_{k+1}`),
+* `E i` : `c.S ≤ P c i`         (math `E: S ≤ P_{n-1}` taken with `i = n - 1`). -/
+
+/-! ### E witness: `S = 1`, all chain coordinates zero -/
+
+/-- Witness for non-redundancy of the end-fence `E`: `S = 1`, every chain
+coordinate set to `0`.  Then `P j = 0` for all `j`, so every `L`- and
+`U`-fence is satisfied trivially, but every candidate end-fence
+`S ≤ P i` becomes `1 ≤ 0`. -/
+def EWitness : ChainConfig where
+  M := fun _ => 0
+  B := fun _ => 0
+  T := fun _ => 0
+  S := 1
+  M_nonneg := fun _ => by omega
+  B_nonneg := fun _ => by omega
+  T_nonneg := fun _ => by omega
+  S_nonneg := by omega
+
+@[simp] theorem EWitness_M (j : Nat) : EWitness.M j = 0 := rfl
+@[simp] theorem EWitness_B (j : Nat) : EWitness.B j = 0 := rfl
+@[simp] theorem EWitness_T (j : Nat) : EWitness.T j = 0 := rfl
+@[simp] theorem EWitness_S         : EWitness.S = 1 := rfl
+
+/-- Closed form for the prefix sum of `EWitness`: identically zero. -/
+@[simp] theorem P_EWitness (j : Nat) : P EWitness j = 0 := by
+  induction j with
+  | zero => rfl
+  | succ n ih =>
+    show P EWitness n + 2 * (EWitness.B n - EWitness.T n) = 0
+    rw [ih, EWitness_B, EWitness_T]
+    omega
+
+/-- The E witness satisfies every `L`-fence (reduces to `0 ≤ 0`). -/
+theorem EWitness_satisfies_L (j : Nat) : EWitness.M j ≤ P EWitness j := by
+  rw [EWitness_M, P_EWitness]
+  decide
+
+/-- The E witness satisfies every `U`-fence (reduces to `0 ≤ 0`). -/
+theorem EWitness_satisfies_U (j : Nat) : EWitness.M j ≤ P EWitness (j + 1) := by
+  rw [EWitness_M, P_EWitness]
+  decide
+
+/-- The E witness violates every end-fence `S ≤ P i`: it asks `1 ≤ 0`. -/
+theorem EWitness_violates_E (i : Nat) : ¬ (EWitness.S ≤ P EWitness i) := by
+  rw [EWitness_S, P_EWitness]
+  decide
+
+/-! ### L witness: `M k = 1`, `B k = 1`, otherwise zero -/
+
+/-- Witness for non-redundancy of `L_{k+1}`: `M k = 1`, `B k = 1`, all
+other coordinates and `S` zero.  The prefix sum then has closed form
+`P j = 2` for `k < j` and `P j = 0` for `j ≤ k`. -/
+def LWitness (k : Nat) : ChainConfig where
+  M := fun j => if j = k then 1 else 0
+  B := fun j => if j = k then 1 else 0
+  T := fun _ => 0
+  S := 0
+  M_nonneg := fun j => by
+    show (0 : Int) ≤ if j = k then 1 else 0
+    split <;> omega
+  B_nonneg := fun j => by
+    show (0 : Int) ≤ if j = k then 1 else 0
+    split <;> omega
+  T_nonneg := fun _ => by omega
+  S_nonneg := by omega
+
+@[simp] theorem LWitness_M (k j : Nat) :
+    (LWitness k).M j = if j = k then 1 else 0 := rfl
+@[simp] theorem LWitness_B (k j : Nat) :
+    (LWitness k).B j = if j = k then 1 else 0 := rfl
+@[simp] theorem LWitness_T (k j : Nat) : (LWitness k).T j = 0 := rfl
+@[simp] theorem LWitness_S (k : Nat)   : (LWitness k).S = 0 := rfl
+
+/-- Closed form for the prefix sum of `LWitness k`. -/
+@[simp] theorem P_LWitness (k j : Nat) :
+    P (LWitness k) j = if k < j then 2 else 0 := by
+  induction j with
+  | zero => rfl
+  | succ n ih =>
+    show P (LWitness k) n + 2 * ((LWitness k).B n - (LWitness k).T n) = _
+    rw [ih, LWitness_B, LWitness_T]
+    omega
+
+/-- `LWitness k` satisfies every `L`-fence except possibly `L_{k+1}`. -/
+theorem LWitness_satisfies_L (k j : Nat) (h : j ≠ k) :
+    (LWitness k).M j ≤ P (LWitness k) j := by
+  rw [LWitness_M, P_LWitness, if_neg h]
+  split <;> omega
+
+/-- `LWitness k` satisfies every `U`-fence. -/
+theorem LWitness_satisfies_U (k j : Nat) :
+    (LWitness k).M j ≤ P (LWitness k) (j + 1) := by
+  rw [LWitness_M, P_LWitness]
+  split <;> split <;> omega
+
+/-- `LWitness k` satisfies every candidate end-fence `S ≤ P i`. -/
+theorem LWitness_satisfies_E (k i : Nat) :
+    (LWitness k).S ≤ P (LWitness k) i := by
+  rw [LWitness_S, P_LWitness]
+  split <;> omega
+
+/-- `LWitness k` violates `L_{k+1}: M_k ≤ P_k` (recall `M k = 1`, `P k = 0`). -/
+theorem LWitness_violates_L (k : Nat) :
+    ¬ ((LWitness k).M k ≤ P (LWitness k) k) := by
+  rw [LWitness_M, P_LWitness, if_pos rfl, if_neg (show ¬ k < k by omega)]
+  decide
+
+/-! ### U witness: `M k = 1`, `B (k - 1) = 1`, `T k = 1` (needs `k ≥ 1`) -/
+
+/-- Witness for non-redundancy of `U_{k+1}` (uses `1 ≤ k` downstream).
+Set `M k = 1`, `B (k - 1) = 1`, `T k = 1`, all other coordinates and `S`
+zero.  We use the Nat-friendly encoding `B j = 1 ↔ j + 1 = k`, which
+silently makes `B` identically `0` at the corner case `k = 0`. -/
+def UWitness (k : Nat) : ChainConfig where
+  M := fun j => if j = k then 1 else 0
+  B := fun j => if j + 1 = k then 1 else 0
+  T := fun j => if j = k then 1 else 0
+  S := 0
+  M_nonneg := fun j => by
+    show (0 : Int) ≤ if j = k then 1 else 0
+    split <;> omega
+  B_nonneg := fun j => by
+    show (0 : Int) ≤ if j + 1 = k then 1 else 0
+    split <;> omega
+  T_nonneg := fun j => by
+    show (0 : Int) ≤ if j = k then 1 else 0
+    split <;> omega
+  S_nonneg := by omega
+
+@[simp] theorem UWitness_M (k j : Nat) :
+    (UWitness k).M j = if j = k then 1 else 0 := rfl
+@[simp] theorem UWitness_B (k j : Nat) :
+    (UWitness k).B j = if j + 1 = k then 1 else 0 := rfl
+@[simp] theorem UWitness_T (k j : Nat) :
+    (UWitness k).T j = if j = k then 1 else 0 := rfl
+@[simp] theorem UWitness_S (k : Nat)   : (UWitness k).S = 0 := rfl
+
+/-- Closed form for the prefix sum of `UWitness k` (requires `1 ≤ k`).
+`P j = 2` when `j = k`, else `0`. -/
+theorem P_UWitness (k j : Nat) (hk : 1 ≤ k) :
+    P (UWitness k) j = if j = k then 2 else 0 := by
+  induction j with
+  | zero =>
+    show (0 : Int) = if 0 = k then 2 else 0
+    rw [if_neg (show (0 : Nat) ≠ k by omega)]
+  | succ n ih =>
+    show P (UWitness k) n + 2 * ((UWitness k).B n - (UWitness k).T n) = _
+    rw [ih, UWitness_B, UWitness_T]
+    omega
+
+/-- `UWitness k` satisfies every `L`-fence. -/
+theorem UWitness_satisfies_L (k j : Nat) (hk : 1 ≤ k) :
+    (UWitness k).M j ≤ P (UWitness k) j := by
+  rw [UWitness_M, P_UWitness k j hk]
+  split <;> omega
+
+/-- `UWitness k` satisfies every `U`-fence except possibly `U_{k+1}`. -/
+theorem UWitness_satisfies_U (k j : Nat) (hk : 1 ≤ k) (h : j ≠ k) :
+    (UWitness k).M j ≤ P (UWitness k) (j + 1) := by
+  rw [UWitness_M, P_UWitness k (j + 1) hk, if_neg h]
+  split <;> omega
+
+/-- `UWitness k` satisfies every candidate end-fence `S ≤ P i`. -/
+theorem UWitness_satisfies_E (k i : Nat) (hk : 1 ≤ k) :
+    (UWitness k).S ≤ P (UWitness k) i := by
+  rw [UWitness_S, P_UWitness k i hk]
+  split <;> omega
+
+/-- `UWitness k` violates `U_{k+1}: M_k ≤ P_{k+1}` (`M k = 1`, `P (k+1) = 0`). -/
+theorem UWitness_violates_U (k : Nat) (hk : 1 ≤ k) :
+    ¬ ((UWitness k).M k ≤ P (UWitness k) (k + 1)) := by
+  rw [UWitness_M, P_UWitness k (k + 1) hk, if_pos rfl,
+      if_neg (show k + 1 ≠ k by omega)]
+  decide
+
+/-! ### Theorem F-easy — non-redundancy bundle -/
+
+/-- **Theorem F-easy (E non-redundancy).** There exists a `ChainConfig`
+that satisfies every `L`-fence and every `U`-fence but violates every
+candidate end-fence `S ≤ P i`.  Witness: `EWitness`. -/
+theorem E_nonredundant :
+    ∃ c : ChainConfig,
+      (∀ j, c.M j ≤ P c j) ∧
+      (∀ j, c.M j ≤ P c (j + 1)) ∧
+      (∀ i, ¬ (c.S ≤ P c i)) :=
+  ⟨EWitness, EWitness_satisfies_L, EWitness_satisfies_U, EWitness_violates_E⟩
+
+/-- **Theorem F-easy (L non-redundancy).** For every `k ≥ 1` there exists
+a `ChainConfig` that satisfies every other `L`-fence, every `U`-fence and
+every candidate end-fence, but violates `L_{k+1}: M_k ≤ P_k`. -/
+theorem L_nonredundant (k : Nat) (_hk : 1 ≤ k) :
+    ∃ c : ChainConfig,
+      (∀ j, j ≠ k → c.M j ≤ P c j) ∧
+      (∀ j, c.M j ≤ P c (j + 1)) ∧
+      (∀ i, c.S ≤ P c i) ∧
+      ¬ (c.M k ≤ P c k) :=
+  ⟨LWitness k,
+   LWitness_satisfies_L k,
+   LWitness_satisfies_U k,
+   LWitness_satisfies_E k,
+   LWitness_violates_L k⟩
+
+/-- **Theorem F-easy (U non-redundancy).** For every `k ≥ 1` there exists
+a `ChainConfig` that satisfies every `L`-fence, every other `U`-fence and
+every candidate end-fence, but violates `U_{k+1}: M_k ≤ P_{k+1}`. -/
+theorem U_nonredundant (k : Nat) (hk : 1 ≤ k) :
+    ∃ c : ChainConfig,
+      (∀ j, c.M j ≤ P c j) ∧
+      (∀ j, j ≠ k → c.M j ≤ P c (j + 1)) ∧
+      (∀ i, c.S ≤ P c i) ∧
+      ¬ (c.M k ≤ P c (k + 1)) :=
+  ⟨UWitness k,
+   fun j => UWitness_satisfies_L k j hk,
+   fun j h => UWitness_satisfies_U k j hk h,
+   fun i => UWitness_satisfies_E k i hk,
+   UWitness_violates_U k hk⟩
+
 /-! ## Theorem G — Weight-space simplicial cone (definitions + first lemmas)
 
 For `n ≥ 2`, the weight-space image cone `K_n ⊆ ℝ^n` is the rational polyhedral
@@ -862,5 +1099,8 @@ theorem K_simplicial (n : Nat) (hn : 3 ≤ n) (v : Nat → Int) (h : InKone n v)
 #print axioms Kone_two_in_cone_hull
 #print axioms rays_lin_indep_unique
 #print axioms K_simplicial
+#print axioms E_nonredundant
+#print axioms L_nonredundant
+#print axioms U_nonredundant
 
 end BdiPolytope
