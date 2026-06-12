@@ -39,6 +39,20 @@ $\dim \mathrm{adj}(\mathfrak{sl}_2)$ — NOT an $n$-dependent count.
   `for-collaborator/2026-06-12-bucket0-gap-c.md`;
   scripts: `code/2026-06-12-bucket0-origin/`.
 
+**Day 66 LEAN: Theorem F-easy formalised — Day-58 phantom flag CLEARED.**
+Non-redundancy bundle (`E_nonredundant`, `L_nonredundant`,
+`U_nonredundant`) shipped in `BdiPolytope.lean` (866 → 1106 lines,
++240).  Three witnesses (`EWitness`, `LWitness k`, `UWitness k`) with
+closed-form `P`-lemmas, twelve satisfies/violates lemmas, plus the
+bundle.  Axiom set `[propext, Quot.sound]` only — strictly cleaner
+than the Theorem G headline which uses `Classical.choice`.  Pure
+stdlib, zero sorrys, zero warnings.  Commit `b0a79b2` on
+`prove-day-59`, pushed to origin.  Note:
+`for-collaborator/2026-06-12-bdi-polytope-lean-f-easy-resolved.md`.
+This is the FIRST phantom-completion flag closed by post-fix
+re-derivation — the Day-60 calibration rule has now been validated
+on the worst case.
+
 ## Previous state — Day 63-64 (2026-06-11)
 
 **Day 64 PROVE: Gap B closed in the negative via marginal-palindromy.**
@@ -389,7 +403,7 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 - **Path 2 + Path 4:** π_n canonical projection (Day 56). Day-58 parity correction + Day-60 closed-form $f(n) = 3 - [n \text{ even}]$. Theorem at $n=2$ (linear); existential close at $n=3,4$ (single-column lemma); **Day-60 NOT polyhedral GIT**; **Day-61 NOT fan, NOT PFL**; **Day-62 (c\*) stack PINNED DOWN as AII-fibered groupoid** with three codim-1 walls + stratum-vector $(1,5,9,9,13,17,22,26)$ + structural identity # AXIS = # walls = $f(3) = 3$.
 - **Path 2 + Path 4 NEW Day-62:** π̃₃' stratified multimap (`connections/pi3-stratified-multimap.md`). Concrete realisation of (c\*) stack candidate. Tier A; could promote to Tier S if OQ-PI3-MULTI surfaces rep-theoretic meaning.
 - **Path 2 + Path 4 Day-60:** Cross-programme dim-gap = obstruction codim conjecture. $f(n) = g(n) = 3 - [n \text{ even}]$. Day-62 strengthened by structural identity at $n=3$. Testable at $n = 3,5,6,7$.
-- **Path 2 + Path 4:** carry $P_a$ six-roles unification (Day 56). Theorems E, F, G + projection. Lean Theorem F-easy CLAIMED in Day-58 collaborator note but NOT in git (Day-60 phantom-completion flag); Theorem G 3/5 sub-lemmas in git (Day-60).
+- **Path 2 + Path 4:** carry $P_a$ six-roles unification (Day 56). Theorems E, F, G + projection. **Lean Theorem F-easy COMPLETE Day-66** (`b0a79b2`, axiom set `[propext, Quot.sound]`); Theorem G COMPLETE Day-64 (`K_simplicial`, form (b), axiom set `[propext, Classical.choice, Quot.sound]`).
 - **Path 3 (Hecke):** Marberg's 4 twisted-involution KL positivity conjectures (1306.2980) unguarded. Marberg-Tong-Yu 2501.16640 (Day-59 found) = OQ-LUSZTIG-MARBERG angle 3 entry. Long-horizon for v4+.
 - **Path 1 (combinatorial Hopf):** NSym^B from H^B_*(0) still open (OQ-HUANG-B). Seed Q4 (q=0 combinatorial Hopf) externally unconstrained.
 
@@ -404,8 +418,8 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 - **`cross-programme-dim-gap-codim.md`** (NEW Day-60) — Cross-programme conjecture $f(n) = g(n) = 3 - [n \text{ even}]$ at $n = d \ge 3$. Same forgotten-dim count both sides: Rick polytope side vs Clio fiber-vanishing side. Verified $n=4$. Testable. Tier A active; v4 §3 unifier if confirmed.
 - **`discovery-layer-is-the-moat.md`** — Day 39 origin. AI harnesses verify; only humans+frameworks discover. Five evidence layers: empirical < community-internal < structural < mechanical < live community attack. Day-56 new instance: Clio's peer-review reframe that turned a CLOSED-NEGATIVE verdict into a PROVED-POSITIVE theorem is a discovery event no AI reading preprints would surface. Add to journal.
 - **`carry-Pa-as-unified-analytical-object.md`** — Six roles (Day 56 add). v3 structural climax. (1) descent-recording; (2) singleton cross-chain coupling → Theorem E; (3) chain-MB / carry-recursive factorization; (4) chain-side polytope completeness Theorem F ($2n-3$ facets); (5) weight-projection invariant Theorem G ($n$-facet simplicial cone); (6) image of canonical AII projection $\pi_n$, kernel parametrized by Singleton fiber.
-- **`bdi-kobayashi-polytope-faces.md`** — Theorem F. Chain polytope $\mathbb{P}_n$ has exactly $2n-3$ non-redundant carry facets. **STATUS Day-60 PHANTOM-COMPLETION FLAG:** Day-58 collaborator note documents lemmas 1-14 fully formalised (408 lines pure stdlib), but Day-60 LEAN found the on-disk file at 109 lines (Day-56 base; last commit `fed238c`). The Day-58 witness-bundle work is NOT in git. Either container-lifecycle data loss or undocumented incompleteness. Day-60 calibration rule added. Re-derivation ~1 LEAN session.
-- **`bdi-kobayashi-weight-space-simplicial.md`** — Theorem G. Image polytope $\mathbb{K}_n^+ \subset \mathbb{R}^n$ = simplicial cone with $n$ facets. **Day-64 LEAN: COMPLETE.** 5/5 sub-lemmas + `K_simplicial` bundle. 866 lines pure stdlib, zero sorry, std axioms only. Form (b) shipped (factor of 2 = lattice-index obstruction); forms (a) [pure $\mathbb{Q}$] and (c) [explicit 2-torsion] deferred-but-buildable pending Robin's call. **Verified Lean kernel fact**: "BDI weight-space image cone is simplicial." 2nd complete Lean theorem after F-easy.
+- **`bdi-kobayashi-polytope-faces.md`** — Theorem F. Chain polytope $\mathbb{P}_n$ has exactly $2n-3$ non-redundant carry facets. **STATUS Day-66: F-easy RESOLVED.** Re-derived in `BdiPolytope.lean` commit `b0a79b2` (Day-66 LEAN), 240-line non-redundancy bundle (`E_/L_/U_nonredundant`), pure stdlib, axiom set `[propext, Quot.sound]`. Day-58 phantom-completion flag CLEARED.  Hard half (codim-1 verification using convex-polytope library) still future work, would need Mathlib.
+- **`bdi-kobayashi-weight-space-simplicial.md`** — Theorem G. Image polytope $\mathbb{K}_n^+ \subset \mathbb{R}^n$ = simplicial cone with $n$ facets. **Day-64 LEAN: COMPLETE.** 5/5 sub-lemmas + `K_simplicial` bundle. 866 lines pure stdlib, zero sorry, std axioms only. Form (b) shipped (factor of 2 = lattice-index obstruction); forms (a) [pure $\mathbb{Q}$] and (c) [explicit 2-torsion] deferred-but-buildable pending Robin's call. **Verified Lean kernel fact**: "BDI weight-space image cone is simplicial." Companion: Day-66 LEAN shipped Theorem F-easy non-redundancy (`b0a79b2`), so the F & G Lean ledger is now in sync with the Day-58/Day-60 collaborator-note claims.
 - **`kobayashi-rick-non-overlap.md`** — Level sets ($\sim 4n^2$ in joint $(\lambda,\nu)$-space, Kobayashi) vs support ($n$ partial-sum facets, Rick). Complementary slicings.
 - **`open2-watanabe-2407-existence-meereboer-1dim-collapse.md`** — v3 OPEN-2 Layer 1 FREE via Watanabe 2407 §5; Layer 2 → Theorem E. Re-examine post-OQ-PIN-SURJ resolution (may collapse uniformly).
 - **`asymmetry-is-the-result-seven-instances.md`** — Crystal in EXPLOITATION mode.
@@ -479,7 +493,7 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 
 **P0 — Robin Lean form (a)/(c) call** for Theorem G — form (b) shipped Day-64. Forms (a) and (c) deferred-but-buildable refactors. Pending Robin.
 
-**P0 — F-easy phantom-completion resolution.** Still flagged. Day-64 LEAN focused on Theorem G closure. Either re-derive (~1 LEAN session) or accept and ship as v4 future work. Decision needed Day 65.
+**P0 — F-easy phantom-completion resolution.** **RESOLVED Day-66** via re-derivation in commit `b0a79b2` (`E_nonredundant`, `L_nonredundant`, `U_nonredundant`, axiom set `[propext, Quot.sound]`).  This was the oldest open phantom in the calibration ledger; closure validates the Day-60 commit-or-die discipline.
 
 **P0 — Clio outbound on cross-programme conjecture (n=4 data) + Bucket-2 refutation + OQ-PI3-INV5 speculation**. Three asks: (a) does her $g(d)$ side show "axis-variable" structure at $d \in \{3, 4\}$? (b) marginal-palindromy filter banked, applicable to her future LR refutation candidates; (c) 26 = I(5) coincidence — does the 26-piece registry index by RSK-shape data ring any bells? Email Day-65 morning.
 
