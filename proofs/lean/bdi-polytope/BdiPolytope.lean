@@ -1273,4 +1273,71 @@ theorem K_simplicial (n : Nat) (hn : 3 ≤ n) (v : Nat → Int) (h : InKone n v)
 #print axioms Fence_L_kind_ne_Fence_E_kind
 #print axioms Fence_U_kind_ne_Fence_E_kind
 
+/-! ## Day 69 — # AXIS = 3 statement: `BdiCoord` and `AxisTriple`
+
+Skeletal Lean formalization of the Day 69 PROVE result
+`# AXIS(n) = 3, AXIS(n) = {prefix[1], prefix[n], long[1]}`
+(1-indexed math; 0-indexed Lean: `prefix[0], prefix[n-1], long[0]`).
+
+This section pins down the **statement** of the result: a 3-element
+`List (BdiCoord n)` with no duplicates and length 3.  The matching
+predicate `IsAxis : BdiCoord n → Prop` (three rank-1 piece-pair
+collisions on the coordinate wall) and the structural equality
+`{c | IsAxis n c} = AxisTriple` are deferred to Day 70+, pending the
+`Piece` / BDI-feasibility infrastructure and the proof of Lemma D
+(exhaustion: no further AXIS coordinates).
+
+The current skeletal `BdiCoord n` carries only the `prefix` and `long`
+families, which are the two families touched by the AXIS triple at
+uniform `n`.  Extending the type with the `short` family and the
+even-n `linkLHS` coordinate is a deliberate next step. -/
+
+/-- AII coordinate index at parameter `n`.  Skeletal: only the prefix
+and long families are recorded.  TODO Day 70: extend with `short`
+and (even-n) `linkLHS`. -/
+inductive BdiCoord (n : Nat) where
+  | prefix (i : Fin n) : BdiCoord n
+  | long   (i : Fin n) : BdiCoord n
+  deriving DecidableEq
+
+/-- The AXIS triple at parameter `n ≥ 3`:
+`[prefix[0], prefix[n-1], long[0]]` (0-indexed; math: prefix[1],
+prefix[n], long[1]).  Represented as a `List` since this project is
+stdlib-only; combine with `AxisTriple_nodup` to read off "3 distinct
+elements." -/
+def AxisTriple (n : Nat) (hn : 3 ≤ n) : List (BdiCoord n) :=
+  [BdiCoord.prefix ⟨0, by omega⟩,
+   BdiCoord.prefix ⟨n - 1, by omega⟩,
+   BdiCoord.long   ⟨0, by omega⟩]
+
+/-- The AXIS triple has length 3, uniformly in `n ≥ 3`. -/
+theorem AxisTriple_length (n : Nat) (hn : 3 ≤ n) :
+    (AxisTriple n hn).length = 3 := by
+  rfl
+
+/-- The AXIS triple has no duplicates: `prefix[0], prefix[n-1], long[0]`
+are pairwise distinct in `BdiCoord n` whenever `n ≥ 3`.
+Combined with `AxisTriple_length`, this is the Lean-level statement of
+"# AXIS ≥ 3 with the explicit triple." -/
+theorem AxisTriple_nodup (n : Nat) (hn : 3 ≤ n) :
+    (AxisTriple n hn).Nodup := by
+  simp [AxisTriple, List.Nodup]
+  intro h
+  omega
+
+/-- **# AXIS = 3 — Lean-level statement (skeletal).**
+The AXIS triple is a 3-element list of pairwise distinct
+`BdiCoord n` values, uniformly in `n ≥ 3`.  This is the stdlib-only
+analogue of `Finset.card (AxisTriple n) = 3` — without Mathlib's
+`Finset` we package the claim as the conjunction of `length = 3`
+(by `rfl`) and `Nodup` (by constructor disjointness + omega). -/
+theorem AxisTriple_card (n : Nat) (hn : 3 ≤ n) :
+    (AxisTriple n hn).length = 3 ∧ (AxisTriple n hn).Nodup :=
+  ⟨AxisTriple_length n hn, AxisTriple_nodup n hn⟩
+
+#print axioms AxisTriple
+#print axioms AxisTriple_length
+#print axioms AxisTriple_nodup
+#print axioms AxisTriple_card
+
 end BdiPolytope
