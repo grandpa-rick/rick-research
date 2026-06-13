@@ -10,7 +10,44 @@
 
 ---
 
-## Current state — Day 66 (2026-06-12, OQ-PI3-MULTI-FINAL fully closed: Gaps B & C done)
+## Current state — Day 68 (2026-06-13, # AXIS conjecture REVISED: uniform 3 across $n \ge 3$)
+
+**Day 68 PROVE: # AXIS conjecture revised to uniform 3.** Day-62
+$\#\mathrm{AXIS}(n) = 3 - [n\text{ even}]$ refuted Day 67 at $n=4$
+(R-double family was missed). Day-68 re-derived at $n=3$ from first
+principles using the same kernel-arrangement methodology: full
+26-piece cover (with R-double) gives # AXIS = 3; remove R-double
+and # AXIS drops to 2. Same at $n=4$. **Uniform statement:**
+$\#\mathrm{AXIS}(n) = 3$ for $n \ge 3$, AXIS triple
+$\{\mathrm{prefix}[1], \mathrm{prefix}[n], \mathrm{long}[1]\}$.
+Decomposition: 1 (R-double / $\mathrm{adj}(\mathfrak{sl}_2)$,
+head) + 2 (Bucket-2 free-extrusion, bulk). The dim-gap parity
+$f(n) = 3 - [n\text{ even}]$ SURVIVES at AII-polytope-dim level
+(Cor 8 linking eq) but is **decoupled** from # AXIS. v4 §3 narrative
+needs to drop "# AXIS = dim-gap" identity. Files:
+`proofs/2026-06-13-axis-conjecture-revision.md`;
+`code/2026-06-13-axis-n3-verify/`;
+`for-collaborator/2026-06-13-axis-conjecture-revision.md`;
+`connections/cross-programme-dim-gap-codim.md` updated with Day-68
+addendum. Open: $n=5$ verification (Day-68 CODE follow-up).
+
+## Prior state — Day 65-66 (2026-06-12, mixed-structure result locked: head $\mathfrak{gl}_2$ + bulk novel; OQ-NAITOSAGAKI-BDI fully closed; F-easy phantom CLEARED)
+
+**Day 66 CODE: OQ-NAITOSAGAKI-BDI fully closed-negative.**
+Pure-Python $\mathfrak{sl}_6 \supset \mathfrak{so}_6$ branching via
+exceptional iso $D_3 \cong A_3$ + Littlewood rule. Exhaustive sweep of
+all 56 partitions $\lambda \subset (5^3)$ + sub-collection search +
+basis-change marginal search. **Three independent obstructions:**
+(i) dim gap (no $\lambda$ has $\dim V_\lambda = 22$; jumps 21 → 56);
+(ii) branching obstruction (zero sub-collections sum to 22 across all
+56 $\lambda$); (iii) marginal-pattern obstruction (none of 16 abstract
+dim-22 decomps + $|coord| \le 10$ functionals match Bucket-2 marginals).
+The $\mathfrak{so}_6$ loophole left at Day-65 is killed cold. Bucket-2
+is genuinely novel combinatorics — not a $\mathfrak{so}_n$-branching
+shadow at any rank ≤ 3. Files:
+`code/2026-06-12-so6-branching-test/`;
+`for-collaborator/2026-06-12-so6-branching-verdict.md`;
+`questions/q-naitosagaki-bdi.md` CLOSED-NEGATIVE.
 
 **Day 66 PROVE: Gap C closed POSITIVE.** The 3 R-double pieces of Bucket-0
 are the weight multiset of $\mathrm{adj}(\mathfrak{sl}_2) = V(2\omega_1)$
@@ -52,6 +89,119 @@ stdlib, zero sorrys, zero warnings.  Commit `b0a79b2` on
 This is the FIRST phantom-completion flag closed by post-fix
 re-derivation — the Day-60 calibration rule has now been validated
 on the worst case.
+
+**Day 65 PROVE: Naito-Suzuki-Watanabe arXiv:2502.07270 deep read +
+AII→BDI sketch.** NSW v3 (50 pp). Extracted iquantum-crystal machinery
+in 5 bullets ($U^\imath$, `suc` map, iquantum LR bijection,
+$\mathrm{Res}/\mathrm{pr}$ operators, local→global to $\mathfrak{sp}_4$).
+**Verdict:** OQ-NAITOSAGAKI-BDI mostly closed-negative. Marginal-
+palindromy obstruction inherits to $\imath$-crystal level (components
+carry $\mathfrak{k}$-irrep weight characters); rules out
+$\mathfrak{sp}_{2n}, \mathfrak{so}_{2n+1}, \mathfrak{so}_{2(2k)}$
+targets at all $n$. **Single surviving loophole:** $\mathfrak{so}_6
+\cong D_3 = A_3$ at $n = 3$ via $w_0 \ne -1$. Day-66 CODE prescription
+issued; Day-66 fully closed it (above). Side benefits banked:
+NSW local-global structure portable to BDI (base case $\mathfrak{so}_4 =
+\mathfrak{sl}_2 \oplus \mathfrak{sl}_2$ strictly easier than NSW's
+$\mathfrak{sp}_4$). Files: `proofs/2026-06-12-naito-suzuki-watanabe-read.md`;
+`for-collaborator/2026-06-12-naito-sagaki-bdi-sketch.md`.
+
+**Day 65 CODE: three quick follow-ups.**
+- **OQ-INVERTI-STRATUM CLOSED-NEGATIVE.** Both MODE
+  $(1,5,9,9,13,17,22,26)$ (fails $n=4$, $b_4 = -20$) and MAX
+  $(3,8,11,10,19,14,23,26)$ (fails $n=2$, $b_2 = -1$) FAIL INVERTi
+  nonnegativity. Neither is the graded-dim sequence of a free
+  noncommutative cocommutative connected Hopf algebra. Cleanest Hopf
+  candidate ruled out.
+- **OQ-PI3-INV5 CLOSED-COINCIDENTAL.** 26 piece marginals
+  $[1,3,11,11]$ / $[1,1,1,1,1,2,3,3,4,9]$ / $[1,1,1,2,4,4,4,4,5]$ don't
+  match $I(5)$ cycle types $[1,10,15]$ or RSK shapes $[1,1,4,4,5,5,6]$.
+  Bonus: n=4 has 20 pieces ≠ $I(6) = 76$. $26 = |I(5)|$ is a numerical
+  coincidence at $n=3$; $I(n+2)$-growth hypothesis killed already at
+  $n=4$. Move on.
+- **OQ-PI3-GROWTH branch (a) extended to n=6, 7.** Single-column lemma
+  100/100 at each. Structural reason: BDI is rational polyhedral cone
+  (no equations) → closed under nonneg integer scaling.
+  **Branch (a) closed at $n \in \{2, 3, 4, 5, 6, 7\}$.**
+- Files: `code/2026-06-12-{inverti-stratum,pi3-inv5,single-column-n67}/`;
+  `for-collaborator/2026-06-12-code-results.md`.
+
+**Browse 57 (Day 65, 2026-06-12)**: 4 agents. Keywords: iquantum crystal
+branching BDI; Hopf INVERTi graded dimensions; degenerate AHA RSK
+iquantum; Gelfand pair fence hyperplane stability.
+- **NEW HIGH: Brundan-Wang-Webster arXiv:2505.22929** — "Categorification
+  of quasi-split iquantum groups" (May 2025, 91pp). First uniform
+  categorification of ALL quasi-split iquantum types via graded
+  2-categories (extends KLR). BDI-type included. Natural stepping stone
+  to icrystal bases for BDI. Watch for follow-ups.
+- **~~NEW HIGH: Kobayashi arXiv:2509.17007~~** — **CORRECTION (Browse 58):**
+  arXiv:2509.17007 is Harris-Kobayashi-Speh "Translation functors + Shimura
+  varieties" — UNRELATED. The actual "Stability region of branching
+  multiplicities" preprint has NO arXiv ID; it is ~6pp on Kobayashi's Tokyo
+  webpage (tk2026b) and covers ONLY (gl(n+1),gl(n)) and (o(n+1),o(n)).
+  **GL(n)→O(n)×O(n) = AII→BDI NOT covered. SCENARIO B CONFIRMED: Rick's
+  walls are an independent discovery.** Discovery-layer moat intact.
+- **CRITICAL FIND (citation trail): Azenhas arXiv:2603.16698**
+  characterizes k-highest weight tableaux by **LINEAR INEQUALITIES** in
+  the quantum LR map (AII = GL→Sp). These inequalities may be EXACTLY
+  Rick's walls $\{m_2=0\},\{m_{236}=0\},\{m_{23456}=0\}$ for BDI.
+  **Read before next PROVE session.** NEW OQ-AZENHAS-INEQUALITIES-BDI.
+- **NEW: Azenhas arXiv:2604.25856** — companion "slack data" for inverse
+  quantum LR map. Adjacent to BDI fence wall quantification.
+- **Kobayashi fence clarification**: fence conditions = interleaving
+  conditions $\xi_i + \delta\nu_j = \pm 1/2$ on infinitesimal characters.
+  2604.22262 covers ONLY (O(n+1),O(n)). Extension to GL(n)→O(n)×O(n)
+  **explicitly deferred** — Rick's work is the deferred case.
+- **NEW MEDIUM: Colarusso-Erickson-Frohmader-Willenbring arXiv:2502.19505**
+  — K-type multiplicities for $O(p)\times O(q) \hookrightarrow O(p+q)$
+  via Howe duality. BDI-adjacent. Check stable-range formula vs. Rick's
+  n=3 data.
+- **NEW MEDIUM: Kumar-Torres 2024** — flagged hive polytopes for
+  Kwon-Sundaram Sp branching (5 cites). Connects polyhedral approach to
+  Sp branching; check if BDI branching cone is a hive polytope.
+- **OQ-IQUANTUM-RSK-LIFT confirmed open**: both sides published (Stern
+  2606.00679 GL/AHA side; Watanabe 2509.00853 AII/iquantum side);
+  synthesis = iquantum JM-spectral elements absent from both.
+- **OQ-NAITOSAGAKI-BDI confirmed open** (later CLOSED Day-66).
+- **Q-SPHERE preprints STILL ABSENT** (conference ended June 12).
+  Watch June 15-30 for De Commer type-B KL, Meereboer-Kolb branching,
+  Watanabe-Hoshino bi-icrystal.
+- **UPCOMING**: Anne Schilling lectures at IMJ-PRG (June 17-18,
+  "Crystals and symmetric functions"). FPSAC 2026 (July 13-17):
+  **Seung Jin Lee** (invited, q-weight multiplicities + KR crystals types B/C,
+  arXiv:2412.20757). **NOTE: Kwon is NOT a FPSAC 2026 invited speaker** —
+  that was FPSAC 2025 (Sapporo). Mittag-Leffler workshop July 27-31
+  (Schilling organizer, "Solvable lattice models + quantum groups").
+- Log: `reading/2026-06-12.md`.
+
+**Browse 58 (Day 67, 2026-06-12)**: 4 agents. Keywords: iquantum crystal BDI
+icrystal; combinatorial Hopf algebra quantum symmetric pair; Kobayashi stability
+Gelfand pair fence; Azenhas quantum LR linear inequalities.
+- **MAJOR CORRECTION: arXiv:2509.17007 misidentification.** Harris-Kobayashi-Speh
+  = Shimura varieties paper, NOT "Stability region." Kobayashi's actual stability
+  preprint = ~6pp, no arXiv ID, covers only (gl(n+1),gl(n)) and (o(n+1),o(n)).
+  **GL(n)→O(n)×O(n) NOT covered. SCENARIO B CONFIRMED.** Discovery-layer moat intact.
+- **Azenhas 2603.16698 abstract confirmed** — explicitly says "characterize by
+  certain linear inequalities a family of k-highest weight semi-standard tableaux"
+  in the AII (GL→Sp) quantum LR map. This IS the AII analogue of Rick's BDI walls.
+  **OQ-AZENHAS-INEQUALITIES-BDI still OPEN — read 2603.16698 ASAP.**
+- **Q-SPHERE preprints STILL ABSENT** (conference concluded June 12, Radboud
+  University Nijmegen). De Commer type-B KL theorem talk was June 12 (final talk).
+  Watanabe solo. Meereboer "work in progress." Watch arxiv.org June 13+.
+- **FPSAC 2026 Kwon correction**: Kwon = FPSAC 2025 invited (Sapporo); FPSAC 2026
+  relevant invited speaker = **Seung Jin Lee** (q-weight multiplicities via KR
+  crystals, types B/C, arXiv:2412.20757).
+- **NEW HIGH: arXiv:2510.24451 (Jang-Kwon-Uruno Oct 2025)** — crystal bases for
+  quantum orthosymplectic superalgebra; "Burge correspondence of orthosymplectic
+  type." Directly neighbors OQ-IQUANTUM-RSK-LIFT.
+- **NEW: arXiv:2601.19670 (Song-Zhang Jan 2026)** — QSP at roots of unity; cites
+  both Watanabe 2407.07280 and 2509.00853. Skim for roots-of-unity BDI structure.
+- **Kobayashi 2604.22262 citations**: 1 (self-citation only). Azenhas 2603.16698
+  citations: 2 (self only). Rick's 2407.07280: still 5 — no new citers post-Q-SPHERE.
+- **Mittag-Leffler July 27-31**: Schilling organizer, 33 participants. RIGHT after FPSAC 2026.
+- **nLab**: quantum symmetric pair page thin; coideal subalgebra page missing.
+- **Grinberg-Reiner**: minor corrections update May 14, 2026.
+- Log: `reading/2026-06-12-browse58.md`.
 
 ## Previous state — Day 63-64 (2026-06-11)
 
@@ -427,6 +577,15 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 
 ### Tier A — Active
 
+- **`bucket-0-as-sl2-rump.md`** (NEW Day-66) — PARTIAL REP-THEORETIC
+  RESCUE of OQ-PI3-MULTI-FINAL. After Day-64 refuted "all 26 pieces are
+  rep-theoretic," Day-66 PROVE showed the 4 special pieces (Bucket-0 +
+  Bucket-1) form $\mathrm{adj}(\mathfrak{sl}_2) \oplus \mathbb{C} =
+  \mathfrak{gl}_2$ as an $A_1$-module, uniform in $n$. B0 = 3 weights of
+  $V(2\omega_1)$ via $\alpha \mapsto 2 - \alpha$ reflection on $S$-mass
+  coordinate; B1 = trivial. Cap $\alpha \le 2$ is BDI-feasibility-forced
+  AND equals $\dim V(2\omega_1) - 1$, invariant in $n$. v4 §3 now has
+  mixed-structure climax: head $\mathfrak{gl}_2$ + bulk novel.
 - **`marginal-palindromy-refutation.md`** (NEW Day-64) — Calibration-grade
   refutation filter: when testing whether a candidate combinatorial
   configuration realises a $B_n / C_n / D_{2k} / E_7 / E_8 / F_4 / G_2$
@@ -434,6 +593,13 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
   palindromy. Day-64 fired to kill Bucket-2 ↔ adj($B_3 / C_3$)⊕triv in 5
   lines. General-purpose tool for cone-shadow / polytope-shadow combinatorics
   questions.
+- **`marginal-palindromy-refutation-v2.md`** (NEW Day-66) — Twisted
+  extension to $w_0 \ne -1$ types ($A_n, D_{2k+1}, E_6$). Twisted
+  condition $H_{\ell_i}(k) = H_{\ell_{\sigma_0(i)}}(-k)$; for
+  axis-length-distinct configs, reduces to plain palindromy.
+  **Closes the catalogue: all simple Lie types covered.** Day-66 fired
+  to refute the $D_3 = A_3$ ($\mathfrak{so}_6$) loophole at direct-marginal
+  level *before* SageMath enumeration.
 - **`lu-pan-dual-canonical-bdi-algebraic-roof.md`** — Quartet of algebraic papers (existence×3 + dual=double canonical synthesis). v3 carry = combinatorial labeling of objects simultaneously dual-canonical AND double-canonical. Path 2 ↔ Path 4 bridge.
 - **`zhang-lusztig-bridge-for-marberg.md`** — Post-v3 P_PARK #1 bridge. Read order: Lusztig v1→v2 diff → Watanabe 2023 stability → Zhang 2412+2503 → Lusztig 2510.21499 v2 → Marberg-Scrimshaw 2306.00336 → Marberg 1306.2980 → optional Bhattacharya 2602.19508. Three attack angles: 1+2 ready (~5.5d), angle 3 longer-horizon pending shifted machinery (Day-53 angle-3 named-paper-shaped via 3-row infrastructure map). Watch 2026-2027.
 - **`q-sphere-meereboer-fourth-community-deadline.md`** — Q-SPHERE June 8-12. Kolb (June 9 09:00 = 2603.06132) + Meereboer (10:15, joint w/ Kolb, derives branching via Watanabe's integrable modules). Watanabe (11:20, official: "Quantizations of coordinate algebras of symmetric pair subalgebras"; Browse 47 suggested bi-icrystals w/ Hoshino, Browse 48 indico shows no Hoshino — SUSPENDED). Kobayashi (June 11 09:00 = 2604.22262). De Commer (June 12 11:20, type-B KL via reflection eq; NTY co-authorship SUSPENDED). Six talk-clusters across 4 communities.
@@ -462,10 +628,15 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 - **OQ-PI3-GROWTH** — **Polyhedral GIT REFUTED** (Day-60); **fan + PFL REFUTED** (Day-61); **(c\*) STACK PINNED DOWN as AII-fibered groupoid** (Day-62). Branch (a) existential closed at $n \in \{2, 3, 4, 5\}$.
 - **OQ-PI3-MULTI-FINAL** (Day-62 opened; Day-63 refined MODE→MAX; Day-64 CLOSED NEGATIVE) — Bucket-2 22-point config in $[4] \times [9] \times [8]$ is NOT $\mathrm{adj}(B_3 / C_3) \oplus \mathrm{triv}$ via marginal-palindromy refutation. MAX-vector $(3, 8, 11, 10, 19, 14, 23, 26)$ is novel combinatorial invariant. v4 §3 climax: "polytope-shadow combinatorics" (publishable).
 - **OQ-DIMGAP-CODIM** (Day-60 opened; Day-62 structural; Day-64 verified at n=4) — $f(n) = g(n) = $ # AXIS vars = # codim-1 walls = $3 - [n \text{ even}]$. Verified on Rick side at $n \in \{3, 4\}$ (both parities). Clio's $g(d)$ at $d \in \{3, 5, 6, 7\}$ still uncomputed. HIGH priority cross-programme conjecture.
-- **OQ-PI3-INV5** (NEW Day-64 dream) — Is the 26-piece registry naturally indexed by RSK-shape data of $S_5$ involutions ($I(5) = 26$, $I(6) = 76 = $ running sum to σ=011)? Even post-Day-64 rep-theory refutation. ~30min CODE check. See `questions/q-26-piece-involutions.md`.
-- **OQ-NAITOSAGAKI-BDI** (NEW Day-63 from Browse 54-55) — Does Naito-Suzuki-Watanabe arXiv:2502.07270 (iquantum-crystal proof of AII→CI Naito-Sagaki) generalise to AII→BDI? Strongest live structural analogue post-Day-64. ~1d read + 1d analysis.
-- **OQ-HOROSPHERICAL-STACK-PI3** (NEW Day-63 from Browse 54-55) — Is π̃₃' a horospherical stack (arXiv:2305.01571)? Alternative algebraic-geometric framework beyond polyhedral GIT. ~1h speculative read.
-- **OQ-INVERTI-STRATUM** (NEW Day-63 from Browse 55) — 5-min SageMath test on MODE-vector (1,5,9,9,13,17,22,26): is INVERTi nonneg? If yes, vector is consistent with graded Hopf algebra dimensions; $a$-sequence = primitive count.
+- **OQ-PI3-INV5** (Day-64 opened; **Day-65 CLOSED-COINCIDENTAL**) — 26-piece registry marginals don't match $I(5)$ cycle types or RSK shapes; n=4 has 20 pieces ≠ $I(6) = 76$. Numerical coincidence at $n=3$ only.
+- **OQ-NAITOSAGAKI-BDI** (Day-63 opened; Day-65 NSW deep read narrowed to so_6 loophole; **Day-66 fully CLOSED-NEGATIVE**) — three independent obstructions kill Bucket-2 ↔ $\mathfrak{so}_6$ branching: dim gap, branching obstruction, marginal-pattern. Bucket-2 is genuinely novel combinatorics, not a $\mathfrak{so}_n$-branching shadow at any rank ≤ 3.
+- **OQ-INVERTI-STRATUM** (Day-63 opened; **Day-65 CLOSED-NEGATIVE**) — Both MODE and MAX vectors FAIL INVERTi nonnegativity. Cleanest Hopf candidate (free noncommutative cocommutative connected) ruled out for both stratum vectors.
+- **OQ-KOBAYASHI-FENCES-BDI / OQ-KOBAYASHI-2509.17007** (NEW Day-65 Browse 57, HIGH) — Are Rick's three coordinate walls $\{m_2=0\}, \{m_{236}=0\}, \{m_{23456}=0\}$ the deferred AII→BDI fences in Kobayashi's program? Kobayashi 2604.22262 explicitly defers GL(n)→O(n)×O(n) case; Kobayashi 2509.17007 (on his Tokyo webpage, NOT YET on arXiv) may already cover it. **HIGHEST priority action: fetch 2509.17007 directly.** See `questions/q-kobayashi-fences-bdi.md`.
+- **OQ-AZENHAS-INEQUALITIES-BDI** (NEW Day-65 Browse 57, HIGH) — Are Azenhas's linear inequalities for $k$-highest weight tableaux in the quantum LR map (arXiv:2603.16698) the same as Rick's three coordinate walls? Companion 2604.25856 on "slack data" adjacent. **Read both before next wall-structure PROVE.** See `questions/q-azenhas-inequalities-bdi.md`.
+- **OQ-AZENHAS-SLACK** (NEW Day-65 Browse 57, MEDIUM) — Slack-data quantification of "distance to wall." Adjacent to Kobayashi stability regions. ~0.5d.
+- **OQ-BRUNDAN-WANG-WEBSTER-BDI** (NEW Day-65 Browse 57, MEDIUM) — Does Brundan-Wang-Webster arXiv:2505.22929 (uniform categorification of quasi-split iquantum groups) produce BDI icrystal bases? Watch for follow-ups.
+- **OQ-KUMAR-TORRES-HIVES** (NEW Day-65 Browse 57, MEDIUM) — Is BDI branching cone a hive polytope or face of one? Kumar-Torres 2024 polyhedral approach to Sp branching.
+- **OQ-HOROSPHERICAL-STACK-PI3** (Day-63 opened; status DORMANT post-Browse 54-55, spherical-but-not-horospherical) — Bridge survives via Kolb-Yakimov but geometric connection absent. Wait for spherical stacks framework.
 - **OQ-LUSZTIG-MARBERG** (P_PARK #1) — Three attack angles: (a) Zhang+Lusztig molecule-cell; (b) optional Bhattacharya TC^J; (c) Marberg-Scrimshaw P/Q-key via square root crystals — angle-3 gap named-paper-shaped (Marberg-Tong / Marberg-Tong-Yu / Marberg-Scrimshaw). Effort ~5.5d (angles 1+2). **Browse 53 architecture update:** Marberg program has TWO tracks: (i) K-theoretic Grothendieck positivity via sqrt-crystals [ACTIVE — 2512.23944 Dec 2025 + 2501.16640 FPSAC 2026 SHORT TALK confirmed in proceedings]; (ii) twisted involution KL positivity 1306.2980 [DORMANT — 0 citers 2016-2026; Marberg not attacking directly]. Track (i) may converge to track (ii) if a "shifted square root crystal" is built — not yet. Four conjectures of 1306.2980 **remain open and unguarded** (confirmed OQ-HMP-ACCELERATION check). Watch for Marberg-program shifted-√ output 2026-2027.
 - **OQ-ZHANG-MARBERG** — Does Zhang 2412.07810 + Lusztig 2510.21499 resolve Marberg's 4 twisted-involution KL conjectures? P=35%. Three-sided dormancy.
 - **OQ-HUANG-B** (P_PARK #3) — NSym^B as standalone Hopf algebra. Entry point: Kim-Searles 2601.22926 (QSym^B SOTA, comodule) → NSym^B = contravariant dual. Technical route: Almousa-Lu 2601.13324 ribbon-complex dualized to type B.
@@ -481,38 +652,43 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 - **`q-KL-from-crystal.md`** — Spin/acyclic CLOSED. Non-spin: 2-step bigraded complex required.
 - **`q-zero-CHA.md`** — Type A K_0/derived levels answered. Type B NSym^B from H^B_*(0) still open.
 
-**Closed:** OQ-K (Day 29: F+G), OQ-BDIqLR (Day 26-28), OQ-KOB-MATCH (Day 41), OQ-CHEN-LU (Day 42), OQ-BWB / OQ-PJ (Day 18), OQ-MUNIZ-CARRY (Browse 20), OQ-FROHMADER (Day 29), OQ-KOBAYASHI-SL2 (Day 29), OQ-LAUVE-RQSYM (Day 50). **OQ-AZENHAS-BDI (P_PARK #5):** verdict CLOSED-NEGATIVE Day 55; REFRAMED to canonical-projection theorem Day 56 (proved at n=2, open at n≥3 via OQ-PIN-SURJ).
+**Closed:** OQ-K (Day 29: F+G), OQ-BDIqLR (Day 26-28), OQ-KOB-MATCH (Day 41), OQ-CHEN-LU (Day 42), OQ-BWB / OQ-PJ (Day 18), OQ-MUNIZ-CARRY (Browse 20), OQ-FROHMADER (Day 29), OQ-KOBAYASHI-SL2 (Day 29), OQ-LAUVE-RQSYM (Day 50), **OQ-PI3-MULTI-FINAL Gap B** (Day 64: Bucket-2 not rep theory at $B_3, C_3$), **Gap C** (Day 66: Bucket-0 + Bucket-1 = $\mathfrak{gl}_2$ POSITIVE), **OQ-NAITOSAGAKI-BDI** (Day 66: so_6 fully closed-negative), **OQ-INVERTI-STRATUM** (Day 65: both MODE and MAX fail), **OQ-PI3-INV5** (Day 65: 26 = I(5) coincidental). **OQ-AZENHAS-BDI (P_PARK #5):** verdict CLOSED-NEGATIVE Day 55; REFRAMED to canonical-projection theorem Day 56 (proved at n=2, open at n≥3 via OQ-PIN-SURJ).
 
 ---
 
 ## Next session priorities
 
-**P-1 — Wake-routine PROVE-check + git-state-verification check** (Day 44 rule + Day-60 phantom-completion rule, STABLE; Day-64 LEAN session held discipline cleanly).
+**P-1 — Wake-routine PROVE-check + git-state-verification check** (Day 44 rule + Day-60 phantom-completion rule, STABLE; Day-64 LEAN session held discipline cleanly; Day-66 LEAN F-easy phantom CLEARED via re-derivation — calibration rule validated on its worst case).
 
-**P0 — Robin endorsement decision STILL pending** (since Day 56). Daily email shipped Day-64 13:13 UTC. Next outbound Day-65 morning (Clio note on Bucket-2 refutation + 26 = I(5) speculation + cross-programme n=4 data point).
+**P0 — Fetch Kobayashi arXiv:2509.17007 directly from his Tokyo webpage** (Browse 58, ~June 13-15). Most actionable next move. May already contain the deferred GL(n)→O(n)×O(n) case Rick is computing.
+
+**P0 — Read Azenhas arXiv:2603.16698 + 2604.25856.** Are the linear inequalities characterising k-highest weight tableaux in the AII quantum LR map the same as Rick's three coordinate walls? Most actionable PROVE move on wall structure.
+
+**P0 — Robin endorsement decision STILL pending** (since Day 56). Daily email shipped Day-64 13:13 UTC. Day-67 outbound: Bucket-0 = $\mathfrak{sl}_2$ rescue note for Clio + cross-programme n=4 data point + n=4 R-double correction flag.
 
 **P0 — Robin Lean form (a)/(c) call** for Theorem G — form (b) shipped Day-64. Forms (a) and (c) deferred-but-buildable refactors. Pending Robin.
 
 **P0 — F-easy phantom-completion resolution.** **RESOLVED Day-66** via re-derivation in commit `b0a79b2` (`E_nonredundant`, `L_nonredundant`, `U_nonredundant`, axiom set `[propext, Quot.sound]`).  This was the oldest open phantom in the calibration ledger; closure validates the Day-60 commit-or-die discipline.
 
-**P0 — Clio outbound on cross-programme conjecture (n=4 data) + Bucket-2 refutation + OQ-PI3-INV5 speculation**. Three asks: (a) does her $g(d)$ side show "axis-variable" structure at $d \in \{3, 4\}$? (b) marginal-palindromy filter banked, applicable to her future LR refutation candidates; (c) 26 = I(5) coincidence — does the 26-piece registry index by RSK-shape data ring any bells? Email Day-65 morning.
+**P0 — Clio outbound** on Bucket-0 = $\mathfrak{sl}_2$ rescue + cross-programme n=4 data point + n=4 R-double correction flag. Day-67 morning.
 
-**P1 — Day 65 PROVE.md target options:**
-- **(A) OQ-PI3-INV5 verification.** ~30min CODE. Enumerate 26 piece labels; check $S_5$ involution bijection. Low cost, possibly clean combinatorial origin for "26."
-- **(B) Gap C — Bucket-0 algebraic origin.** ~1h. R-double 3-piece chain in $(M_2, S)$-space; explain why exactly 3 pieces.
-- **(C) Read Naito-Suzuki-Watanabe arXiv:2502.07270** (iquantum-crystal AII→CI Naito-Sagaki). Strongest live structural analogue post-Day-64. ~1d read + 1d analysis. **Probable PROVE deep-work target.**
-- **(D) OQ-INVERTI-STRATUM test.** 5-min SageMath quick run.
-- **(E) Read Frohmader arXiv:2312.11295** (GL(2n) ↓ Sp(2n) Kostant-Rallis multiplicities). ~1d.
+**P1 — Day 67 PROVE.md target options:**
+- **(A) Read Azenhas arXiv:2603.16698 + 2604.25856.** Are the linear inequalities Rick's three walls? Single most actionable PROVE move on wall structure. **PROBABLE PRIMARY TARGET.** ~1d.
+- **(B) Fetch Kobayashi arXiv:2509.17007** from his Tokyo webpage and check for GL(n)→O(n)×O(n) case. ~2-4h. CODE/Browse-adjacent.
+- **(C) Read Brundan-Wang-Webster arXiv:2505.22929 abstract+intro** for BDI icrystal infrastructure status. ~0.5d.
+- **(D) Read Colarusso-Erickson-Frohmader-Willenbring 2502.19505** stable-range formula vs Rick's n=3 data. ~1d.
 
-**P1 — Day 65 LEAN.md options:**
-- **(F) Theorem G form (c) refactor** (explicit 2-torsion correction). ~1 LEAN session.
-- **(G) F-easy re-derivation.** ~1 LEAN session.
+**P1 — Day 67 LEAN.md options:**
+- **(E) Theorem G form (c) refactor** (explicit 2-torsion correction). ~1 LEAN session.
+- **(F) `Fin (n-1)` Fence inductive wrapper** over F-easy + F lemmas. ~1 LEAN session.
+- **(G) Move past polytope:** formalise Corollary 6 (Azenhas projection) or Day-66 Bucket-0 = $\mathfrak{sl}_2$ result.
 
-**P1 — Day 65 CODE.md options:**
-- **(H) Single-column lemma at n=6, 7.** ~30min each.
-- **(I) n=5 piece registry** (predicted # AXIS = 3, odd parity).
+**P1 — Day 67 CODE.md options:**
+- **(H) n=4 R-double registry correction.** Re-classify `prefix[1]` with 3 R-double pieces added; check if # AXIS = 2 at n=4 still holds. ~30min.
+- **(I) Single-column lemma at n=8+** (continuing the chain). ~30min.
+- **(J) n=5 piece registry** (predicted # AXIS = 3, odd parity). ~2-3h.
 
-**HARD DEADLINE: Browse 56 ~June 13-15.** Q-SPHERE preprint recheck (Watanabe-Hoshino, Meereboer-Kolb, De Commer); IMJ-PRG Schilling slides post-June-18.
+**HARD DEADLINE: Browse 58 ~June 13-15.** PRIORITY: fetch Kobayashi 2509.17007. Plus Q-SPHERE preprint recheck (Watanabe-Hoshino, Meereboer-Kolb, De Commer); IMJ-PRG Schilling slides post-June-18.
 
 **P_PARK (post-v3 arXiv, preference order):**
 1. **OQ-LUSZTIG-MARBERG** — ~5.5d (angles 1+2). Read order: Lusztig v1→v2 diff → Watanabe 2023 → Zhang 2412/2503 → Lusztig 2510.21499 → Marberg-Scrimshaw 2306.00336 → **2501.16640** (angle 3 entry: Marberg-Tong-Yu "Grothendieck positivity for normal √-crystals," FPSAC 2026, raising operators → Hecke insertion, **Browse 51 CONFIRMED**) → Marberg 1306.2980 → optional Bhattacharya 2602.19508.
@@ -594,6 +770,7 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 
 ## Recent history (one-liners, journals have detail)
 
+- **Day 65-66 dream (2026-06-12) — DONE.** Day 65: NSW deep read + OQ-NAITOSAGAKI-BDI mostly closed-negative with so_6 loophole + INVERTi/26=I(5)/single-column n=6,7 follow-ups + Browse 57 (Kobayashi 2509.17007, Azenhas linear inequalities, Brundan-Wang-Webster categorification). Day 66: PROVE Gap C closed POSITIVE (B0 + B1 = $\mathfrak{gl}_2$ uniform in $n$) + LEAN F-easy phantom CLEARED (240 lines, axiom set [propext, Quot.sound]) + CODE OQ-NAITOSAGAKI-BDI fully closed via so_6 enumeration + marginal palindromy v2 (twisted, closes catalogue). ONE new connection (`bucket-0-as-sl2-rump.md`, Tier A — partial rep-theoretic rescue). TWO new questions (`q-kobayashi-fences-bdi.md`, `q-azenhas-inequalities-bdi.md`, both HIGH). THREE targeted edits (`pi3-stratified-multimap.md` head/bulk update; `azenhas-bdi-canonical-projection.md` Day-65/66 status; `bdi-kobayashi-polytope-faces.md` F-easy CLEARED). NO PERSONALITY EDIT. Streak 51/51.
 - **Day 63-64 dream (2026-06-11) — DONE.** Day 63 OQ-PI3-MULTI refined MODE→MAX + Browse 55 surfaced 7 candidates + 26=I(5)/76=I(6)/LG(3,6) coincidences. Day 64 PROVE killed Bucket-2 ↔ adj($B_3 / C_3$) via marginal-palindromy + LEAN Theorem G COMPLETE 5/5 + CODE n=4 # AXIS = 2 confirmed. ONE new connection file (`marginal-palindromy-refutation.md`, Tier A) + ONE new question file (`q-26-piece-involutions.md`, OQ-PI3-INV5). THREE targeted edits (`pi3-stratified-multimap.md` MAX-refinement + Day-64 closure; `bdi-kobayashi-weight-space-simplicial.md` Theorem G COMPLETE; `cross-programme-dim-gap-codim.md` n=4 both-parity confirmation). q-pi3-multi-stratum-vector.md updated CLOSED-NEGATIVE. NO PERSONALITY EDIT. Streak 49/49 (Day-62 #47 → Day-63 #48 refinement + browse → Day-64 #49 Bucket-2 refutation + Lean closure + n=4 AXIS).
 - **Day 61-62 dream (2026-06-10) — DONE.** Day 61 fan-reframe REFUTED + Browse 53 + Day 62 stack PINNED DOWN + single-column at $n=4$ + Lean Theorem G Lemma 3 consolidated. ONE new connection file (`pi3-stratified-multimap.md`, Tier A) + ONE new question file (`q-pi3-multi-stratum-vector.md`, OQ-PI3-MULTI, HIGH). THREE targeted edits. Day-60 phantom-completion PROMOTED to STABLE (2 instances). Streak 47/47.
 - **Browse 53 (Day 61, 2026-06-10) — DONE.** Q-SPHERE Day 4 (conference ended). No preprint drops. **FPSAC 2026 proceedings LIVE**: Marberg-Tong-Yu confirmed SHORT TALK. **OQ-HMP-ACCELERATION RESOLVED**: 4 new HMP citers, none cite Marberg 1306.2980. **Marberg architecture**: K-theoretic ACTIVE (2512.23944), 1306.2980 DORMANT. New HIGH: Lu+Pan 2605.13578 (iHall survey). New MEDIUM: Manon 1103.2484 (tropical branching algebra; gap confirms π₃ NOVELTY), Heo 2504.12106 (polyhedral B(∞)). Loho-Schymura tropical Ehrhart = pioneer territory. NEW OQ-MARBERG-PROGRAM-BRIDGE, OQ-PI3-TROPICAL.
@@ -644,6 +821,8 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`, `pa
 
 ## Browse cycle index (most recent 10)
 
+- **Browse 57 (Day 65, 2026-06-12) — DONE.** Q-SPHERE T+4d. Three preprints STILL ABSENT (recheck June 13-30). **HIGH-priority finds**: Kobayashi arXiv:2509.17007 (general fences paper on Kobayashi's Tokyo webpage but NOT YET on arXiv — may already contain deferred GL(n)→O(n)×O(n) case; **ACTION: fetch directly**); Azenhas arXiv:2603.16698 (LINEAR INEQUALITIES characterizing k-highest weight tableaux in AII quantum LR map — possibly Rick's three walls; **READ before next PROVE**); Azenhas arXiv:2604.25856 ("slack data" companion); Brundan-Wang-Webster arXiv:2505.22929 (categorification of ALL quasi-split iquantum groups, 91pp, BDI included — categorical home for BDI icrystals). **NEW MEDIUM**: Colarusso-Erickson-Frohmader-Willenbring 2502.19505 (Howe duality O(p)×O(q)↪O(p+q) BDI-adjacent); Kobayashi 2604.25242 (sl_2 expository companion); Schilling 2606.02972 (5-vertex RSK + crystals); Kumar-Torres hive polytopes for Sp branching. Kobayashi 2604.22262 explicitly defers GL(n)→O(n)×O(n) to subsequent work — Rick is doing the deferred case. NEW OQs: OQ-KOBAYASHI-FENCES-BDI, OQ-AZENHAS-INEQUALITIES-BDI, OQ-AZENHAS-SLACK, OQ-BRUNDAN-WANG-WEBSTER-BDI, OQ-KUMAR-TORRES-HIVES. Log: `reading/2026-06-12.md`.
+- **Browse 56 (Day 64 evening, 2026-06-11) — DONE.** 4 agents. Headline find: **NEW OQ-KOBAYASHI-FENCES-BDI** — Kobayashi arXiv:2604.22262 "Stability of Branching Multiplicities for Orthogonal Gelfand Pairs" — for (O(n+1), O(n)) pairs (= BDI type), branching multiplicities locally constant on convex regions, change only at "fences" (piecewise-linear hyperplane walls). Kobayashi's fences may be EXACTLY Rick's three coordinate walls. **OQ-HOROSPHERICAL-STACK-PI3 DOWNGRADED**: AII/BDI symmetric spaces are NOT horospherical. Bridge survives via Kolb-Yakimov arXiv:2603.06132. **OQ-INVERTI-STRATUM PRELIMINARY NEGATIVE** (confirmed Day-65). **OQ-PI3-INV5 structural data**: RSK shape-counts (1,4,5,6,5,4,1) for S_5 involutions. AHA-RSK mechanism clear: RSK = spectral basis change via JM eigenvalues. Q-SPHERE preprints STILL ABSENT. Log: `reading/2026-06-11-browse56.md`.
 - **Browse 55 (Day 63, 2026-06-11) — DONE.** Q-SPHERE T+3d. Three preprints still absent (recheck June 13-15). **7 candidate papers banked**: Andrews et al. arXiv:2505.06941 (INVERTi, NEW OQ-INVERTI-STRATUM), Frohmader 2312.11295 (GL(2n)↓Sp(2n) Kostant-Rallis multiplicities), Naito-Suzuki-Watanabe 2502.07270 (iquantum-crystal AII→CI, NEW OQ-NAITOSAGAKI-BDI), Horospherical stacks 2305.01571 (NEW OQ-HOROSPHERICAL-STACK-PI3), Lusztig 2407.20960 (strata + almost special reps), He-Tubbenhauer 2606.02249 (crystal categories), Caselli-Marietti 2606.11776 (type-A KL via special matchings, Brenti conjecture proved). **OEIS confirmed (1,5,9,9,13,17,22,26) absent.** **8 strata = LG(3,6) Schubert cells**; 26 = I(5), 76 = I(6) running sum. Lam-Lauve-Sottile (Hopf-LR): zero new citers 2024-2026 — Richmond-Tewari 2019 Hopf↔crystal bridge has 0 citations in 7 years (pioneer territory). Log: `reading/2026-06-11.md`.
 - **Browse 54 (Day 62, 2026-06-10) — DONE.** Q-SPHERE T+2d. Recap: same three preprints absent. Kowtowed to OQ-PI3-MULTI: 26 = I(5), f(010)=f(001)=9 explained by Hodge duality, 8 strata = LG(3,6) Schubert cells. Lu-Pan 2605.13578 (iHall survey) + Chen-Lu-Pan-Ruan-Wang 2601.00524 (dual canonical bases ALL finite types) + Marberg-Tong-Yu 2501.16640 (Grothendieck √-crystal) + Meereboer 2510.17655 (ĩ-crystal) + Naito-Suzuki-Watanabe 2502.07270 (Naito-Sagaki via iquantum crystal) + Paradan 2303.11653 (O'Shea-Sjamaar AII/BDI cones; CLOSEST EXISTING PAPER). Log: `reading/2026-06-10-browse54.md`.
 - **Browse 53 (Day 61, 2026-06-10) — DONE.** Q-SPHERE ended. No preprints. FPSAC 2026 proceedings live; Marberg-Tong-Yu SHORT TALK confirmed. OQ-HMP-ACCELERATION CLOSED. Marberg K-theoretic ACTIVE / 1306.2980 DORMANT. New HIGH: Lu+Pan 2605.13578. Tropical Ehrhart (Loho-Schymura) = pioneer territory; Manon 1103.2484 confirms π₃ novelty. Log: `reading/2026-06-10.md`.
@@ -712,6 +891,7 @@ Earlier browses (1-38) in `reading/` directory.
 
 ## File hygiene
 
+- **Day-65-66 dream hygiene pass (2026-06-12):** Current state condensed to Day 65 + Day 66 combined block; Day 65 PROVE/CODE + Browse 57 added; OQ list refreshed (5 closed, 5 new). ONE new connection file (`bucket-0-as-sl2-rump.md`, Tier A — partial rep-theoretic rescue, Path 2 + Path 4). TWO new question files (`q-kobayashi-fences-bdi.md`, `q-azenhas-inequalities-bdi.md`, both HIGH-priority). THREE targeted edits to load-bearing files (`pi3-stratified-multimap.md` Day-66 head/bulk split; `azenhas-bdi-canonical-projection.md` Day-65/66 status; `bdi-kobayashi-polytope-faces.md` F-easy phantom CLEARED). Tier A list updated with B0=sl2 connection + palindromy v2. Browse cycle index updated (Browse 56-57). Streak 51/51. No personality edit.
 - **Day-63-64 dream hygiene pass (2026-06-11):** SUMMARY current-state condensed; Day-63 morning work merged into Day-64 current-state block. Day-62 collapsed to summary block. ONE new connection file (`marginal-palindromy-refutation.md`, Tier A — calibration-grade refutation filter). ONE new question file (`q-26-piece-involutions.md`, OQ-PI3-INV5, MEDIUM). THREE targeted edits to load-bearing files (pi3-stratified-multimap MAX-refinement + Day-64 closure; bdi-kobayashi-weight-space-simplicial Theorem G COMPLETE; cross-programme-dim-gap-codim n=4 both-parity confirmation). q-pi3-multi-stratum-vector.md updated CLOSED-NEGATIVE (during Day-64 PROVE). Streak 49/49. No personality edit.
 - **Day-61-62 dream hygiene pass (2026-06-10):** SUMMARY recompressed; Day-61 and Day-60 detail blocks collapsed to one-paragraph each. Day-62 elevated to current state. ONE new connection file (`pi3-stratified-multimap.md`, Tier A). ONE new question file (`q-pi3-multi-stratum-vector.md`, OQ-PI3-MULTI HIGH). THREE targeted edits. ONE calibration rule PROMOTED to STABLE (Day-60 phantom-completion). Streak 47/47.
 - **Day-60 dream hygiene pass:** SUMMARY recompressed. ONE new connection file (`cross-programme-dim-gap-codim.md`, Tier A). THREE targeted edits. TWO new calibration rules (Day-60 phantom-completion + productive-falsification).
