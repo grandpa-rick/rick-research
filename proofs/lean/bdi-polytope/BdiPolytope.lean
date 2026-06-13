@@ -343,6 +343,168 @@ theorem U_nonredundant (k : Nat) (hk : 1 ≤ k) :
    fun i => UWitness_satisfies_E k i hk,
    UWitness_violates_U k hk⟩
 
+/-! ## Theorem F-easy — `Fin (n - 1)` Fence wrapper
+
+Re-packages the F-easy bundle (`E_nonredundant`, `L_nonredundant`,
+`U_nonredundant`) as a single uniform indexed family of `BdiPolytopeFace n`
+values, one per non-redundant facet of the BDI carry polytope.
+
+Indexing:
+* `Fence_L n` : `Fin (n - 1) → BdiPolytopeFace n` — all `n - 1` `L` facets
+  (math `L_1, …, L_{n-1}`).  `L_1` is non-redundant as a half-space (it
+  collapses to `M_1 = 0` only after combining with non-negativity).
+* `Fence_U n` : `Fin (n - 2) → BdiPolytopeFace n` — the `n - 2` surviving `U`
+  facets (math `U_2, …, U_{n-1}`).  Math `U_1` is eliminated by Theorem F,
+  Lemma 4 (`U1_redundant_n_ge_3`), and is therefore absent from this family.
+* `Fence_E n` : `BdiPolytopeFace n` — the singleton end fence.
+
+Total face count: `(n - 1) + (n - 2) + 1 = 2 n - 2`. -/
+
+/-- Kind tag for the three fence families of the BDI carry polytope at
+parameter `n`.  Each constructor carries enough indexing data to determine the
+underlying half-space via `FenceKind.halfspace`. -/
+inductive FenceKind (n : Nat) where
+  /-- `L_{k+1}` (math): the half-space `M_{k+1} ≤ P_k`, Lean `c.M k ≤ P c k`. -/
+  | L : Fin (n - 1) → FenceKind n
+  /-- `U_{k+2}` (math): the half-space `M_{k+2} ≤ P_{k+1}`, Lean
+  `c.M (k + 1) ≤ P c (k + 2)`.  The `+1` shift on the `Fin` index reflects
+  the omission of the redundant math `U_1`. -/
+  | U : Fin (n - 2) → FenceKind n
+  /-- End fence `E` (math): the half-space `S ≤ P_{n-1}`. -/
+  | E : FenceKind n
+  deriving DecidableEq
+
+namespace FenceKind
+
+/-- The half-space cut out by a fence kind. -/
+def halfspace {n : Nat} : FenceKind n → ChainConfig → Prop
+  | .L k, c => c.M k.val ≤ P c k.val
+  | .U k, c => c.M (k.val + 1) ≤ P c (k.val + 2)
+  | .E,   c => c.S ≤ P c (n - 1)
+
+end FenceKind
+
+/-- A face of the BDI carry polytope at parameter `n`: a fence kind together
+with a witness configuration that violates this fence while satisfying every
+other fence.  This is the Mathlib-style uniform packaging of the three F-easy
+non-redundancy theorems. -/
+structure BdiPolytopeFace (n : Nat) where
+  /-- The fence kind. -/
+  kind : FenceKind n
+  /-- Witness configuration for non-redundancy. -/
+  witness : ChainConfig
+  /-- The witness violates this face's fence. -/
+  violates : ¬ kind.halfspace witness
+  /-- The witness satisfies every other fence in the polytope. -/
+  satisfies_others : ∀ k : FenceKind n, k ≠ kind → k.halfspace witness
+
+/-- L-fence family: `Fence_L n hn i` packages `L_{i.val + 1}` (math) as a
+`BdiPolytopeFace n`.  Witness: `LWitness i.val`. -/
+def Fence_L (n : Nat) (_hn : 3 ≤ n) (i : Fin (n - 1)) : BdiPolytopeFace n where
+  kind := .L i
+  witness := LWitness i.val
+  violates := LWitness_violates_L i.val
+  satisfies_others := by
+    intro k hk
+    cases k with
+    | L j =>
+      have hji : j.val ≠ i.val := fun heq =>
+        hk (congrArg FenceKind.L (Fin.ext heq))
+      exact LWitness_satisfies_L i.val j.val hji
+    | U j =>
+      exact LWitness_satisfies_U i.val (j.val + 1)
+    | E =>
+      exact LWitness_satisfies_E i.val (n - 1)
+
+/-- U-fence family: `Fence_U n hn i` packages `U_{i.val + 2}` (math) as a
+`BdiPolytopeFace n`.  Witness: `UWitness (i.val + 1)`.  The `+1` shift
+on the `Fin` index is the omission of math `U_1`, which is redundant
+by Theorem F, Lemma 4 (`U1_redundant_n_ge_3`). -/
+def Fence_U (n : Nat) (_hn : 3 ≤ n) (i : Fin (n - 2)) : BdiPolytopeFace n where
+  kind := .U i
+  witness := UWitness (i.val + 1)
+  violates := UWitness_violates_U (i.val + 1) (by omega)
+  satisfies_others := by
+    intro k hk
+    cases k with
+    | L j =>
+      exact UWitness_satisfies_L (i.val + 1) j.val (by omega)
+    | U j =>
+      have hji : j.val ≠ i.val := fun heq =>
+        hk (congrArg FenceKind.U (Fin.ext heq))
+      have hji' : j.val + 1 ≠ i.val + 1 := fun h => hji (by omega)
+      exact UWitness_satisfies_U (i.val + 1) (j.val + 1) (by omega) hji'
+    | E =>
+      exact UWitness_satisfies_E (i.val + 1) (n - 1) (by omega)
+
+/-- End-fence singleton: `Fence_E n hn` packages the end fence `E` (math
+`S ≤ P_{n-1}`) as a `BdiPolytopeFace n`.  Witness: `EWitness`. -/
+def Fence_E (n : Nat) (_hn : 3 ≤ n) : BdiPolytopeFace n where
+  kind := .E
+  witness := EWitness
+  violates := EWitness_violates_E (n - 1)
+  satisfies_others := by
+    intro k hk
+    cases k with
+    | L j => exact EWitness_satisfies_L j.val
+    | U j => exact EWitness_satisfies_U (j.val + 1)
+    | E   => exact absurd rfl hk
+
+/-! ### Fence kind extraction (defeq sanity) -/
+
+/-- The kind of `Fence_L n hn i` is `.L i`. -/
+@[simp] theorem Fence_L_kind (n : Nat) (hn : 3 ≤ n) (i : Fin (n - 1)) :
+    (Fence_L n hn i).kind = .L i := rfl
+
+/-- The kind of `Fence_U n hn i` is `.U i`. -/
+@[simp] theorem Fence_U_kind (n : Nat) (hn : 3 ≤ n) (i : Fin (n - 2)) :
+    (Fence_U n hn i).kind = .U i := rfl
+
+/-- The kind of `Fence_E n hn` is `.E`. -/
+@[simp] theorem Fence_E_kind (n : Nat) (hn : 3 ≤ n) :
+    (Fence_E n hn).kind = .E := rfl
+
+/-! ### Fence distinctness
+
+Distinct `Fin (n-1)`/`Fin (n-2)` indices yield distinct face kinds within each
+family; across families the kinds differ via `noConfusion` on `FenceKind`. -/
+
+/-- Within the L family: distinct indices produce distinct face kinds. -/
+theorem Fence_L_distinct (n : Nat) (hn : 3 ≤ n) {i j : Fin (n - 1)} (hij : i ≠ j) :
+    (Fence_L n hn i).kind ≠ (Fence_L n hn j).kind := by
+  simp only [Fence_L_kind]
+  intro h
+  exact hij (FenceKind.L.inj h)
+
+/-- Within the U family: distinct indices produce distinct face kinds. -/
+theorem Fence_U_distinct (n : Nat) (hn : 3 ≤ n) {i j : Fin (n - 2)} (hij : i ≠ j) :
+    (Fence_U n hn i).kind ≠ (Fence_U n hn j).kind := by
+  simp only [Fence_U_kind]
+  intro h
+  exact hij (FenceKind.U.inj h)
+
+/-- Cross-family L vs U: the face kinds always differ. -/
+theorem Fence_L_kind_ne_Fence_U_kind (n : Nat) (hn : 3 ≤ n)
+    (i : Fin (n - 1)) (j : Fin (n - 2)) :
+    (Fence_L n hn i).kind ≠ (Fence_U n hn j).kind := by
+  intro h
+  rw [Fence_L_kind, Fence_U_kind] at h
+  cases h
+
+/-- Cross-family L vs E: the face kinds always differ. -/
+theorem Fence_L_kind_ne_Fence_E_kind (n : Nat) (hn : 3 ≤ n) (i : Fin (n - 1)) :
+    (Fence_L n hn i).kind ≠ (Fence_E n hn).kind := by
+  intro h
+  rw [Fence_L_kind, Fence_E_kind] at h
+  cases h
+
+/-- Cross-family U vs E: the face kinds always differ. -/
+theorem Fence_U_kind_ne_Fence_E_kind (n : Nat) (hn : 3 ≤ n) (j : Fin (n - 2)) :
+    (Fence_U n hn j).kind ≠ (Fence_E n hn).kind := by
+  intro h
+  rw [Fence_U_kind, Fence_E_kind] at h
+  cases h
+
 /-! ## Theorem G — Weight-space simplicial cone (definitions + first lemmas)
 
 For `n ≥ 2`, the weight-space image cone `K_n ⊆ ℝ^n` is the rational polyhedral
@@ -1102,5 +1264,13 @@ theorem K_simplicial (n : Nat) (hn : 3 ≤ n) (v : Nat → Int) (h : InKone n v)
 #print axioms E_nonredundant
 #print axioms L_nonredundant
 #print axioms U_nonredundant
+#print axioms Fence_L
+#print axioms Fence_U
+#print axioms Fence_E
+#print axioms Fence_L_distinct
+#print axioms Fence_U_distinct
+#print axioms Fence_L_kind_ne_Fence_U_kind
+#print axioms Fence_L_kind_ne_Fence_E_kind
+#print axioms Fence_U_kind_ne_Fence_E_kind
 
 end BdiPolytope
