@@ -1,0 +1,321 @@
+{
+  "6": {
+    "n": 6,
+    "n_pieces": 36,
+    "n_bdi": 15,
+    "interior_is": [
+      2,
+      3,
+      4
+    ],
+    "per_interior_i": {
+      "2": {
+        "n_distinct_routings": 1,
+        "routings": [
+          {
+            "column": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "labelled": {
+              "B_2": 1
+            },
+            "n_pieces": 36,
+            "example_pieces": [
+              "P6_base",
+              "P6_Pn_in_BT1",
+              "P6_Pn_in_BT3",
+              "P6_Pn_in_BT4",
+              "P6_Pn_in_BT5"
+            ]
+          }
+        ],
+        "d_pi_holds": true
+      },
+      "3": {
+        "n_distinct_routings": 1,
+        "routings": [
+          {
+            "column": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "labelled": {
+              "B_3": 1
+            },
+            "n_pieces": 36,
+            "example_pieces": [
+              "P6_base",
+              "P6_Pn_in_BT1",
+              "P6_Pn_in_BT3",
+              "P6_Pn_in_BT4",
+              "P6_Pn_in_BT5"
+            ]
+          }
+        ],
+        "d_pi_holds": true
+      },
+      "4": {
+        "n_distinct_routings": 1,
+        "routings": [
+          {
+            "column": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "labelled": {
+              "B_4": 1
+            },
+            "n_pieces": 36,
+            "example_pieces": [
+              "P6_base",
+              "P6_Pn_in_BT1",
+              "P6_Pn_in_BT3",
+              "P6_Pn_in_BT4",
+              "P6_Pn_in_BT5"
+            ]
+          }
+        ],
+        "d_pi_holds": true
+      }
+    },
+    "boundary_summary": {
+      "1": {
+        "n_distinct_routings": 3,
+        "is_axis_or_rigid": "AXIS"
+      },
+      "5": {
+        "n_distinct_routings": 1,
+        "is_axis_or_rigid": "RIGID"
+      },
+      "6": {
+        "n_distinct_routings": 11,
+        "is_axis_or_rigid": "AXIS"
+      }
+    },
+    "d_pi_verdict": "VERIFIED"
+  },
+  "7": {
+    "n": 7,
+    "n_pieces": 44,
+    "n_bdi": 18,
+    "interior_is": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "per_interior_i": {
+      "2": {
+        "n_distinct_routings": 1,
+        "routings": [
+          {
+            "column": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "labelled": {
+              "B_2": 1
+            },
+            "n_pieces": 44,
+            "example_pieces": [
+              "P7_base",
+              "P7_Pn_in_BT1",
+              "P7_Pn_in_BT3",
+              "P7_Pn_in_BT4",
+              "P7_Pn_in_BT5"
+            ]
+          }
+        ],
+        "d_pi_holds": true
+      },
+      "3": {
+        "n_distinct_routings": 1,
+        "routings": [
+          {
+            "column": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "labelled": {
+              "B_3": 1
+            },
+            "n_pieces": 44,
+            "example_pieces": [
+              "P7_base",
+              "P7_Pn_in_BT1",
+              "P7_Pn_in_BT3",
+              "P7_Pn_in_BT4",
+              "P7_Pn_in_BT5"
+            ]
+          }
+        ],
+        "d_pi_holds": true
+      },
+      "4": {
+        "n_distinct_routings": 1,
+        "routings": [
+          {
+            "column": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "labelled": {
+              "B_4": 1
+            },
+            "n_pieces": 44,
+            "example_pieces": [
+              "P7_base",
+              "P7_Pn_in_BT1",
+              "P7_Pn_in_BT3",
+              "P7_Pn_in_BT4",
+              "P7_Pn_in_BT5"
+            ]
+          }
+        ],
+        "d_pi_holds": true
+      },
+      "5": {
+        "n_distinct_routings": 1,
+        "routings": [
+          {
+            "column": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "labelled": {
+              "B_5": 1
+            },
+            "n_pieces": 44,
+            "example_pieces": [
+              "P7_base",
+              "P7_Pn_in_BT1",
+              "P7_Pn_in_BT3",
+              "P7_Pn_in_BT4",
+              "P7_Pn_in_BT5"
+            ]
+          }
+        ],
+        "d_pi_holds": true
+      }
+    },
+    "boundary_summary": {
+      "1": {
+        "n_distinct_routings": 3,
+        "is_axis_or_rigid": "AXIS"
+      },
+      "6": {
+        "n_distinct_routings": 1,
+        "is_axis_or_rigid": "RIGID"
+      },
+      "7": {
+        "n_distinct_routings": 13,
+        "is_axis_or_rigid": "AXIS"
+      }
+    },
+    "d_pi_verdict": "VERIFIED"
+  }
+}
