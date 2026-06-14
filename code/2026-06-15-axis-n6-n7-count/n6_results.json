@@ -1,0 +1,261 @@
+{
+  "n": 6,
+  "N_max_lattice": 6,
+  "n_lattice_pts": 5190,
+  "n_candidate_pieces": 38,
+  "n_feasible_pieces": 36,
+  "n_infeasible_pieces": 2,
+  "feasible_names": [
+    "P6_L1_BT2",
+    "P6_L1_M2dbl",
+    "P6_L1_in_B2",
+    "P6_L1_in_B3",
+    "P6_L1_in_B4",
+    "P6_L1_in_B5",
+    "P6_L1_in_M2",
+    "P6_L1_in_M3",
+    "P6_L1_in_M4",
+    "P6_L1_in_M5",
+    "P6_Pn_dbl_BT2",
+    "P6_Pn_in_BT1",
+    "P6_Pn_in_BT3",
+    "P6_Pn_in_BT4",
+    "P6_Pn_in_BT5",
+    "P6_Pn_in_M2",
+    "P6_Pn_in_M3",
+    "P6_Pn_in_M4",
+    "P6_Pn_in_M5",
+    "P6_Pn_split_BT2_BT3",
+    "P6_base",
+    "Rdouble_lv1_alpha0",
+    "Rdouble_lv1_alpha1",
+    "Rdouble_lv1_alpha2",
+    "Rdouble_lv2_alpha0",
+    "Rdouble_lv2_alpha1",
+    "Rdouble_lv2_alpha2",
+    "Rdouble_lv3_alpha0",
+    "Rdouble_lv3_alpha1",
+    "Rdouble_lv3_alpha2",
+    "Rdouble_lv4_alpha0",
+    "Rdouble_lv4_alpha1",
+    "Rdouble_lv4_alpha2",
+    "Rdouble_lv5_alpha0",
+    "Rdouble_lv5_alpha1",
+    "Rdouble_lv5_alpha2"
+  ],
+  "infeasible_names": [
+    "P6_L1_in_S",
+    "P6_Pn_in_S"
+  ],
+  "full_analysis": {
+    "label": "n=6 FULL registry",
+    "n_pieces": 36,
+    "col_counts": {
+      "prefix[1]": 3,
+      "prefix[2]": 1,
+      "prefix[3]": 1,
+      "prefix[4]": 1,
+      "prefix[5]": 1,
+      "prefix[6]": 11,
+      "long[1]": 12,
+      "long[2]": 1,
+      "long[3]": 1,
+      "long[4]": 1,
+      "long[5]": 1,
+      "long[6]": 1,
+      "short[1]": 2,
+      "short[2]": 2,
+      "short[3]": 2,
+      "short[4]": 2,
+      "short[5]": 2,
+      "linkLHS": 1
+    },
+    "rigid": [
+      "prefix[2]",
+      "prefix[3]",
+      "prefix[4]",
+      "prefix[5]",
+      "long[2]",
+      "long[3]",
+      "long[4]",
+      "long[5]",
+      "long[6]",
+      "linkLHS"
+    ],
+    "binary": [
+      "short[1]",
+      "short[2]",
+      "short[3]",
+      "short[4]",
+      "short[5]"
+    ],
+    "axis_by_colcount": [
+      "prefix[1]",
+      "prefix[6]",
+      "long[1]"
+    ],
+    "axis_by_walls": [
+      "prefix[6]",
+      "long[1]",
+      "prefix[1]"
+    ],
+    "axis_pair_counts": {
+      "prefix[6]": 55,
+      "long[1]": 55,
+      "prefix[1]": 15
+    },
+    "n_axis": 3,
+    "rank_distribution": {
+      "1": 129,
+      "2": 217,
+      "3": 240,
+      "4": 44
+    },
+    "rank1_walls_summary": [
+      {
+        "wall_coords": [
+          [
+            "prefix[6]",
+            1.0
+          ]
+        ],
+        "n_pair_collisions": 55
+      },
+      {
+        "wall_coords": [
+          [
+            "long[1]",
+            1.0
+          ]
+        ],
+        "n_pair_collisions": 55
+      },
+      {
+        "wall_coords": [
+          [
+            "prefix[1]",
+            1.0
+          ]
+        ],
+        "n_pair_collisions": 15
+      },
+      {
+        "wall_coords": [
+          [
+            "short[2]",
+            1.0
+          ]
+        ],
+        "n_pair_collisions": 1
+      },
+      {
+        "wall_coords": [
+          [
+            "short[3]",
+            1.0
+          ]
+        ],
+        "n_pair_collisions": 1
+      },
+      {
+        "wall_coords": [
+          [
+            "short[4]",
+            1.0
+          ]
+        ],
+        "n_pair_collisions": 1
+      },
+      {
+        "wall_coords": [
+          [
+            "short[5]",
+            1.0
+          ]
+        ],
+        "n_pair_collisions": 1
+      }
+    ]
+  },
+  "no_rd_analysis": {
+    "label": "n=6 R-double REMOVED",
+    "n_pieces": 21,
+    "col_counts": {
+      "prefix[1]": 1,
+      "prefix[2]": 1,
+      "prefix[3]": 1,
+      "prefix[4]": 1,
+      "prefix[5]": 1,
+      "prefix[6]": 11,
+      "long[1]": 11,
+      "long[2]": 1,
+      "long[3]": 1,
+      "long[4]": 1,
+      "long[5]": 1,
+      "long[6]": 1,
+      "short[1]": 1,
+      "short[2]": 1,
+      "short[3]": 1,
+      "short[4]": 1,
+      "short[5]": 1,
+      "linkLHS": 1
+    },
+    "rigid": [
+      "prefix[1]",
+      "prefix[2]",
+      "prefix[3]",
+      "prefix[4]",
+      "prefix[5]",
+      "long[2]",
+      "long[3]",
+      "long[4]",
+      "long[5]",
+      "long[6]",
+      "short[1]",
+      "short[2]",
+      "short[3]",
+      "short[4]",
+      "short[5]",
+      "linkLHS"
+    ],
+    "binary": [],
+    "axis_by_colcount": [
+      "prefix[6]",
+      "long[1]"
+    ],
+    "axis_by_walls": [
+      "prefix[6]",
+      "long[1]"
+    ],
+    "axis_pair_counts": {
+      "prefix[6]": 55,
+      "long[1]": 55
+    },
+    "n_axis": 2,
+    "rank_distribution": {
+      "1": 110,
+      "2": 100
+    },
+    "rank1_walls_summary": [
+      {
+        "wall_coords": [
+          [
+            "prefix[6]",
+            1.0
+          ]
+        ],
+        "n_pair_collisions": 55
+      },
+      {
+        "wall_coords": [
+          [
+            "long[1]",
+            1.0
+          ]
+        ],
+        "n_pair_collisions": 55
+      }
+    ]
+  },
+  "verdict": "CONFIRMED: # AXIS(6) = 3, AXIS = ['prefix[6]', 'long[1]', 'prefix[1]']. Lemma D upper bound has empirical support at n=6."
+}
