@@ -1340,4 +1340,79 @@ theorem AxisTriple_card (n : Nat) (hn : 3 ≤ n) :
 #print axioms AxisTriple_nodup
 #print axioms AxisTriple_card
 
+/-! ## Day 70 — `Piece n hn` and basic projections
+
+Day-70 LEAN scaffolding for Lemmas A/B/C of the Day-69 PROVE writeup
+(`proofs/2026-06-14-axis-uniform3-proof.md`).  Each AXIS coordinate is
+forced by a **uniform 3-piece family**:
+
+| Lemma | Family       | Wall coordinate          | Multiplicity `k` |
+|-------|--------------|--------------------------|------------------|
+| A     | R-double     | `prefix[0]`              | `k = 0, 1, 2`    |
+| B     | free-top     | `prefix[n-1]`            | `k = 0, 1, 2`    |
+| C     | free-bottom  | `long[0]`                | `k = 0, 1, 2`    |
+
+`Piece n hn` is the disjoint union of these three families; the
+constructor index `k : Fin 3` plays the role of the multiplicity that
+ranges through `{0, 1, 2}` in the informal proof.  This is the
+infrastructure layer — later sessions will attach BDI-feasibility
+content (Lemmas A, B, C, D) on top.  Stdlib only. -/
+
+/-- A Day-69 piece: one of three uniform 3-piece families, indexed by
+multiplicity `Fin 3`.  Constructors correspond to Lemmas A / B / C of
+the Day-69 PROVE writeup. -/
+inductive Piece (n : Nat) (hn : 3 ≤ n) where
+  | RDouble     (α : Fin 3) : Piece n hn
+  | FreeTop     (k : Fin 3) : Piece n hn
+  | FreeBottom  (k : Fin 3) : Piece n hn
+
+/-- The AXIS coordinate that a piece projects onto.  R-double pieces
+collide on `prefix[0]`; free-top on `prefix[n-1]`; free-bottom on
+`long[0]`.  This matches the column shape of the Day-69 proof: pieces
+within a family agree on every AII column except their AXIS coord. -/
+def Piece.axisCoord {n : Nat} {hn : 3 ≤ n} (p : Piece n hn) : BdiCoord n := by
+  cases p with
+  | RDouble    _ => exact BdiCoord.prefix ⟨0, by omega⟩
+  | FreeTop    _ => exact BdiCoord.prefix ⟨n - 1, by omega⟩
+  | FreeBottom _ => exact BdiCoord.long   ⟨0, by omega⟩
+
+/-- The multiplicity attached to a piece: literally the constructor's
+`Fin 3` index, as a `Nat`.  By construction `mult ∈ {0, 1, 2}`. -/
+def Piece.mult {n : Nat} {hn : 3 ≤ n} (p : Piece n hn) : Nat := by
+  cases p with
+  | RDouble    α => exact α.val
+  | FreeTop    k => exact k.val
+  | FreeBottom k => exact k.val
+
+/-- Every piece's AXIS coordinate is one of the three AxisTriple
+entries.  Discharged by case analysis on the piece. -/
+theorem Piece.axisCoord_in_AxisTriple
+    {n : Nat} {hn : 3 ≤ n} (p : Piece n hn) :
+    p.axisCoord ∈ AxisTriple n hn := by
+  cases p <;> simp [Piece.axisCoord, AxisTriple]
+
+/-- **Three multiplicities on each AXIS coord.**  For every AXIS
+coordinate `c`, the matching family produces three pieces with
+multiplicities `0`, `1`, `2` (all projecting onto `c`).  This is the
+Lean-side packaging of Lemmas A, B, C of Day-69: "each AXIS coord
+admits three distinct rank-1 piece-pair collisions." -/
+theorem Piece.three_mults_on_axisCoord
+    (n : Nat) (hn : 3 ≤ n) (c : BdiCoord n) (hc : c ∈ AxisTriple n hn) :
+    ∃ p0 p1 p2 : Piece n hn,
+      p0.axisCoord = c ∧ p1.axisCoord = c ∧ p2.axisCoord = c ∧
+      p0.mult = 0 ∧ p1.mult = 1 ∧ p2.mult = 2 := by
+  simp [AxisTriple] at hc
+  rcases hc with hc | hc | hc
+  · exact ⟨Piece.RDouble 0, Piece.RDouble 1, Piece.RDouble 2,
+      hc.symm, hc.symm, hc.symm, rfl, rfl, rfl⟩
+  · exact ⟨Piece.FreeTop 0, Piece.FreeTop 1, Piece.FreeTop 2,
+      hc.symm, hc.symm, hc.symm, rfl, rfl, rfl⟩
+  · exact ⟨Piece.FreeBottom 0, Piece.FreeBottom 1, Piece.FreeBottom 2,
+      hc.symm, hc.symm, hc.symm, rfl, rfl, rfl⟩
+
+#print axioms Piece.axisCoord
+#print axioms Piece.mult
+#print axioms Piece.axisCoord_in_AxisTriple
+#print axioms Piece.three_mults_on_axisCoord
+
 end BdiPolytope
