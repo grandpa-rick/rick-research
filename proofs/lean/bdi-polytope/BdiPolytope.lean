@@ -1415,4 +1415,249 @@ theorem Piece.three_mults_on_axisCoord
 #print axioms Piece.axisCoord_in_AxisTriple
 #print axioms Piece.three_mults_on_axisCoord
 
+/-! ## Day 72 — AII rays and Feasibility Ray-Characterisation (Theorem 4.2)
+
+Lean-level formalisation of Theorem 4.2 of the Day-70 PROVE writeup
+`proofs/2026-06-15-axis-uniform3-upper-bound.md` §4.
+
+The AII cone at parameter `n ≥ 3` (odd `n`, no Singleton) has exactly
+`3 * n` extreme rays (Lemma 4.1):
+
+  `R_{p_j} = e_{p_j}`                  for `j = 1..n`      (`n` rays)
+  `R_{l_1} = e_{l_1}`, `R_{s_1} = e_{s_1}`                 (`2` rays)
+  `R_{l_j} = e_{p_{j-1}} + e_{l_j}`    for `j = 2..n`      (`n-1` rays)
+  `R_{s_j} = e_{p_{j-1}} + e_{s_j}`    for `j = 2..n`      (`n-1` rays)
+
+A piece `π : AIICoord n → BdiPt` is AII-feasible iff its image at each
+of the `3 * n` rays lies in the BDI polytope.  The (⇒) direction is
+trivial (each ray IS an AII lattice point).  The (⇐) direction reduces
+to:
+* `aii_cone_generated_by_rays` (axiom) — every AII lattice point is a
+  non-negative integer combination of the rays;
+* `IsBdiSemigroup` (assumption) — the BDI polytope is closed under
+  non-negative integer combinations.
+
+The substantive formal content is `coniclyCombine_mem`: any conic
+combination of in-polytope vectors is in the polytope.  Theorem 4.2
+in conic form (`feasibility_ray_char`) is a one-line corollary.
+
+Naming note: this section's `AIICoord` is the **source** side (three
+families: `prefix`, `long`, `short`).  The legacy `BdiCoord` of §"Day
+69" is a 2-family AXIS-side skeleton — unrelated; not used here.  The
+BDI **target** side is modelled abstractly as `Nat → Nat`. -/
+
+/-- AII source coord at parameter `n`: three families indexed by `Fin n`,
+matching math coords `p_j, l_j, s_j` for `j = 1..n` (Lean is 0-indexed). -/
+inductive AIICoord (n : Nat) where
+  | prefix (i : Fin n) : AIICoord n
+  | long   (i : Fin n) : AIICoord n
+  | short  (i : Fin n) : AIICoord n
+  deriving DecidableEq
+
+/-- BDI target point: an abstract `Nat`-valued vector indexed by `Nat`. -/
+abbrev BdiPt : Type := Nat → Nat
+
+/-- Pointwise sum of two BDI points. -/
+def BdiPt.add (f g : BdiPt) : BdiPt := fun b => f b + g b
+
+instance : Add BdiPt := ⟨BdiPt.add⟩
+
+@[simp] theorem BdiPt.add_apply (f g : BdiPt) (b : Nat) :
+    (f + g) b = f b + g b := rfl
+
+/-- A piece at parameter `n`: a `Nat`-valued matrix.  `π c : BdiPt` is the
+"column at AII coord `c`". -/
+abbrev Piece' (n : Nat) : Type := AIICoord n → BdiPt
+
+/-- An AII point: a non-negative integer assignment to each AII coord. -/
+abbrev AIIPoint (n : Nat) : Type := AIICoord n → Nat
+
+/-- A ray of the AII cone — five constructors:
+* `directPrefix j`       : `e_{p_{j+1}}` (Lean 0-indexed; math `j = 1..n`).
+* `directLongBase h`     : `e_{l_1}`; requires `0 < n`.
+* `directShortBase h`    : `e_{s_1}`.
+* `liftedLong  j hj`     : `e_{p_j} + e_{l_{j+1}}` (math), valid `j = 1..n-1`.
+* `liftedShort j hj`     : `e_{p_j} + e_{s_{j+1}}` (math), valid `j = 1..n-1`. -/
+inductive AIIRay (n : Nat) where
+  | directPrefix    (j : Fin n) : AIIRay n
+  | directLongBase  (hn : 0 < n) : AIIRay n
+  | directShortBase (hn : 0 < n) : AIIRay n
+  | liftedLong  (j : Fin n) (hj : 0 < j.val) : AIIRay n
+  | liftedShort (j : Fin n) (hj : 0 < j.val) : AIIRay n
+
+/-- The BDI image of a ray under a piece, as a `BdiPt`.
+Direct rays project to a single column; lifted rays sum two columns. -/
+def AIIRay.image {n : Nat} (π : Piece' n) : AIIRay n → BdiPt
+  | directPrefix j      => π (AIICoord.prefix j)
+  | directLongBase h    => π (AIICoord.long ⟨0, h⟩)
+  | directShortBase h   => π (AIICoord.short ⟨0, h⟩)
+  | liftedLong  j _     =>
+      π (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩) +
+      π (AIICoord.long j)
+  | liftedShort j _     =>
+      π (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩) +
+      π (AIICoord.short j)
+
+/-- The list of `3 * n` AII cone rays at parameter `n ≥ 3`. -/
+def AIIRays (n : Nat) (hn : 3 ≤ n) : List (AIIRay n) :=
+  (List.finRange n).map AIIRay.directPrefix
+  ++ [AIIRay.directLongBase (by omega), AIIRay.directShortBase (by omega)]
+  ++ (List.finRange (n - 1)).map (fun j =>
+       AIIRay.liftedLong  ⟨j.val + 1, by have := j.isLt; omega⟩ (Nat.succ_pos _))
+  ++ (List.finRange (n - 1)).map (fun j =>
+       AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩ (Nat.succ_pos _))
+
+/-- The length of `AIIRays n hn` is exactly `3 * n`. -/
+theorem AIIRays_length (n : Nat) (hn : 3 ≤ n) :
+    (AIIRays n hn).length = 3 * n := by
+  simp [AIIRays, List.length_append, List.length_map, List.length_finRange]
+  omega
+
+/-- The non-negative integer combination of ray-images under `π`,
+weighted by `coeffs : AIIRay n → Nat`, over a list `rs` of rays.
+This is `Σ_{r ∈ rs} coeffs r * r.image π`, summed pointwise. -/
+def coniclyCombine {n : Nat} (rs : List (AIIRay n))
+    (coeffs : AIIRay n → Nat) (π : Piece' n) : BdiPt :=
+  fun b => (rs.map (fun r => coeffs r * r.image π b)).foldr (· + ·) 0
+
+@[simp] theorem coniclyCombine_nil {n : Nat}
+    (coeffs : AIIRay n → Nat) (π : Piece' n) :
+    coniclyCombine ([] : List (AIIRay n)) coeffs π = fun _ => 0 := rfl
+
+@[simp] theorem coniclyCombine_cons {n : Nat} (r : AIIRay n)
+    (rs : List (AIIRay n)) (coeffs : AIIRay n → Nat) (π : Piece' n) :
+    coniclyCombine (r :: rs) coeffs π
+      = (fun b => coeffs r * r.image π b) + coniclyCombine rs coeffs π := by
+  funext b
+  simp [coniclyCombine]
+
+/-- BDI polytope membership predicate (parameter). -/
+abbrev BdiSet : Type := BdiPt → Prop
+
+/-- The BDI polytope is closed under non-negative integer combinations:
+`0 ∈ P`, closed under `+`, closed under `Nat`-scalar multiplication.
+All three follow from the BDI defining inequalities being homogeneous
+linear (`T_a ≤ B_a`, `M_a ≤ P_{a-1}`, `S ≤ P_{n-1}`, entries `≥ 0`). -/
+class IsBdiSemigroup (P : BdiSet) : Prop where
+  zero_mem  : P (fun _ => 0)
+  add_mem   : ∀ {v w}, P v → P w → P (v + w)
+  nsmul_mem : ∀ (k : Nat) {v}, P v → P (fun b => k * v b)
+
+/-- Any conic combination of ray-images, each in `P`, is in `P`. -/
+theorem coniclyCombine_mem {n : Nat} (P : BdiSet) [hP : IsBdiSemigroup P]
+    (π : Piece' n) (coeffs : AIIRay n → Nat) :
+    ∀ (rs : List (AIIRay n)), (∀ r ∈ rs, P (r.image π)) →
+      P (coniclyCombine rs coeffs π)
+  | [], _ => hP.zero_mem
+  | r :: rs', hrs => by
+      rw [coniclyCombine_cons]
+      refine hP.add_mem ?_ ?_
+      · exact hP.nsmul_mem (coeffs r) (hrs r List.mem_cons_self)
+      · exact coniclyCombine_mem P π coeffs rs'
+          (fun r' hr' => hrs r' (List.mem_cons_of_mem r hr'))
+
+/-- The AII lattice point underlying a ray: each ray is an AII lattice
+point with at most two coords set to `1`. -/
+def AIIRay.point {n : Nat} : AIIRay n → AIIPoint n
+  | directPrefix j     => fun c => match c with
+      | AIICoord.prefix k => if k = j then 1 else 0
+      | _                 => 0
+  | directLongBase _   => fun c => match c with
+      | AIICoord.long k => if k.val = 0 then 1 else 0
+      | _               => 0
+  | directShortBase _  => fun c => match c with
+      | AIICoord.short k => if k.val = 0 then 1 else 0
+      | _                => 0
+  | liftedLong  j _    => fun c => match c with
+      | AIICoord.prefix k => if k.val + 1 = j.val then 1 else 0
+      | AIICoord.long   k => if k = j then 1 else 0
+      | _                 => 0
+  | liftedShort j _    => fun c => match c with
+      | AIICoord.prefix k => if k.val + 1 = j.val then 1 else 0
+      | AIICoord.short  k => if k = j then 1 else 0
+      | _                 => 0
+
+/-- The Main_j slack condition characterising AII-polytope membership
+(no Singleton; valid at odd `n ≥ 5`; statement applies for any `n ≥ 3`
+modulo Singleton-specific tightening at `n = 3`, see §4.3 of the writeup). -/
+def InAIIPolytope {n : Nat} (p : AIIPoint n) : Prop :=
+  ∀ j : Fin n, 0 < j.val →
+    p (AIICoord.long j) + p (AIICoord.short j) ≤
+    p (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩)
+
+/-- **AII cone ray-generation (axiom — Lemma 4.1).**
+
+Every AII lattice point `p ∈ P^{AII}_ℤ` is a non-negative integer
+combination of the 3n rays.  The combination is encoded by a
+coefficient map `coeffs : AIIRay n → Nat`.
+
+This packages the geometric content of Lemma 4.1 (informal decomposition:
+`p = p_n R_{p_n} + Σ_j δ_j R_{p_{j-1}} + l_1 R_{l_1} + s_1 R_{s_1} +
+Σ_{j ≥ 2} l_j R_{l_j} + Σ_{j ≥ 2} s_j R_{s_j}` with `δ_j = p_{j-1} -
+l_j - s_j` the Main_j slack) — deferred per Day-72 LEAN.md target B. -/
+axiom aii_cone_generated_by_rays
+    {n : Nat} (hn : 3 ≤ n) {p : AIIPoint n} (_hp : InAIIPolytope p) :
+    ∃ coeffs : AIIRay n → Nat,
+      ∀ c : AIICoord n,
+        p c =
+          ((AIIRays n hn).map
+             (fun r => coeffs r * r.point c)).foldr (· + ·) 0
+
+/-- The linear extension of a piece `π` to an AII point with given
+`coeffs` decomposition: `Σ_{r ∈ AIIRays} coeffs r * r.image π`. -/
+abbrev Piece'.extend {n : Nat} (hn : 3 ≤ n) (π : Piece' n)
+    (coeffs : AIIRay n → Nat) : BdiPt :=
+  coniclyCombine (AIIRays n hn) coeffs π
+
+/-- **Theorem 4.2 (Feasibility Ray-Characterisation — conic form, (⇐)).**
+
+If every ray's BDI image lies in `P`, then so does any conic
+combination of ray-images (in particular, the BDI image of any AII
+lattice point, via `aii_cone_generated_by_rays`).
+
+Together with the trivial (⇒) direction (each ray is itself an AII
+lattice point), this is the Lean-level statement of the math Theorem
+4.2 — modulo the deferred geometric axiom and the BDI semigroup
+hypothesis. -/
+theorem feasibility_ray_char
+    {n : Nat} (P : BdiSet) [IsBdiSemigroup P]
+    (hn : 3 ≤ n) (π : Piece' n)
+    (hrays : ∀ r ∈ AIIRays n hn, P (r.image π))
+    (coeffs : AIIRay n → Nat) :
+    P (π.extend hn coeffs) :=
+  coniclyCombine_mem P π coeffs (AIIRays n hn) hrays
+
+/-- **Theorem 4.2 — lattice form, modulo `aii_cone_generated_by_rays`.**
+
+For any AII lattice point `p ∈ P^{AII}_ℤ`, there exists a `Nat`-valued
+ray-coefficient assignment `coeffs` such that
+  (i) `p` decomposes as `Σ_r coeffs r * r.point` (Lemma 4.1), and
+  (ii) the corresponding linear image `π.extend hn coeffs` lies in `P`.
+
+This is the math Theorem 4.2's (⇐) direction at the level of AII
+lattice points (not just conic-combination coefficients). It invokes
+the deferred geometric axiom `aii_cone_generated_by_rays`. The
+`coniclyCombine_mem` lemma (which is `[propext, Quot.sound]`-only)
+provides the BDI conic-closure step. -/
+theorem feasibility_ray_char_lattice
+    {n : Nat} (P : BdiSet) [IsBdiSemigroup P]
+    (hn : 3 ≤ n) (π : Piece' n)
+    (hrays : ∀ r ∈ AIIRays n hn, P (r.image π))
+    {p : AIIPoint n} (hp : InAIIPolytope p) :
+    ∃ coeffs : AIIRay n → Nat,
+      (∀ c : AIICoord n,
+         p c =
+           ((AIIRays n hn).map
+              (fun r => coeffs r * r.point c)).foldr (· + ·) 0) ∧
+      P (π.extend hn coeffs) := by
+  obtain ⟨coeffs, hdecomp⟩ := aii_cone_generated_by_rays hn hp
+  refine ⟨coeffs, hdecomp, ?_⟩
+  exact coniclyCombine_mem P π coeffs (AIIRays n hn) hrays
+
+#print axioms AIIRays
+#print axioms AIIRays_length
+#print axioms coniclyCombine_mem
+#print axioms feasibility_ray_char
+#print axioms feasibility_ray_char_lattice
+
 end BdiPolytope
