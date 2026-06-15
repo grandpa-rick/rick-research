@@ -1,0 +1,126 @@
+{
+  "weights": [
+    {
+      "src": "Lam2V",
+      "weight": [
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "src": "Lam2V",
+      "weight": [
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "src": "Lam2V",
+      "weight": [
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "src": "Lam2Vstar",
+      "weight": [
+        -1,
+        -1,
+        0
+      ]
+    },
+    {
+      "src": "Lam2Vstar",
+      "weight": [
+        -1,
+        0,
+        -1
+      ]
+    },
+    {
+      "src": "Lam2Vstar",
+      "weight": [
+        0,
+        -1,
+        -1
+      ]
+    }
+  ],
+  "constraints": [
+    {
+      "description": "Lam2V((1, 1, 0)): a_1 + a_2 >= 0",
+      "weight": [
+        1,
+        1,
+        0
+      ],
+      "type": "geq"
+    },
+    {
+      "description": "Lam2V((1, 0, 1)): a_1 + a_3 >= 0",
+      "weight": [
+        1,
+        0,
+        1
+      ],
+      "type": "geq"
+    },
+    {
+      "description": "Lam2V((0, 1, 1)): a_2 + a_3 >= 0",
+      "weight": [
+        0,
+        1,
+        1
+      ],
+      "type": "geq"
+    },
+    {
+      "description": "Lam2Vstar((-1, -1, 0)): -(a_1 + a_2) >= 0  i.e. a_1 + a_2 <= 0",
+      "weight": [
+        -1,
+        -1,
+        0
+      ],
+      "type": "leq"
+    },
+    {
+      "description": "Lam2Vstar((-1, 0, -1)): -(a_1 + a_3) >= 0  i.e. a_1 + a_3 <= 0",
+      "weight": [
+        -1,
+        0,
+        -1
+      ],
+      "type": "leq"
+    },
+    {
+      "description": "Lam2Vstar((0, -1, -1)): -(a_2 + a_3) >= 0  i.e. a_2 + a_3 <= 0",
+      "weight": [
+        0,
+        -1,
+        -1
+      ],
+      "type": "leq"
+    }
+  ],
+  "symbolic_solution": [
+    [
+      0,
+      0,
+      0
+    ]
+  ],
+  "numerical_admissible_box5": [
+    [
+      0,
+      0,
+      0
+    ]
+  ],
+  "n_admissible": 1,
+  "n_nontrivial_admissible": 0,
+  "prediction_confirmed": true,
+  "pivot_to_type_II_for_day74": true
+}
