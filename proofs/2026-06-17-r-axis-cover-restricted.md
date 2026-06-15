@@ -315,6 +315,19 @@ Each works individually, but checking that no two auxiliaries
 accidentally share a signature is left to CODE Day-73 (it is a finite
 verification).
 
+**Update (Day 73 CODE Task A — `code/2026-06-18-class34-aux-n5/`).**
+The "$\sim 15$ misaligned pairs" estimate was a combinatorial
+over-count.  The actual enumeration at $n = 5$ yields exactly
+**3 genuine Class-3 cases**: $(M_3, B_1)$, $(M_4, B_1)$, $(M_4, B_2)$.
+The other 6 combinatorial pairs are **vacuous**: the BDI point
+$e_{M_j} + e_{B_i}$ is itself infeasible when $i > j - 1$
+(structural reason: $M_j = 1$ requires $P_{j-1} \ge 1$, but
+$e_{B_i}$ with $i > j - 1$ contributes nothing to $P_{j-1}$, so
+$P_{j-1} = 0 < 1 = M_j$ fails the BDI inequality
+$M_j \le P_{j-1}$).  All 3 genuine cases passed feasibility +
+unique-signature verification, and the combined registry has zero
+non-AXIS 3-cliques: Lemma 4.3 confirmed.
+
 ### Class 4: $\{B_i, T_i\}$ for $i = 2, 3$.
 
 Points: $e_{B_3} + e_{T_3}$ (and $e_{B_2} + e_{T_2}$ — hmm, the latter
@@ -336,11 +349,14 @@ The construction at $n = 5$:
 - AXIS pieces: 8 (base + R-double_α(0,1,2) + PN_1, PN_2 + L1_0, L1_2).
 - Class 1: 3 (AUX_{B_2,S}, AUX_{B_3,S}, AUX_{B_4,S}).
 - Class 2: 3 (AUX_{B_i, 2S} for i = 2, 3, 4).
-- Class 3: ~15 (one per misaligned $(M_j, B_i)$ pair).
-- Class 4: 2 (B_2T_2, B_3T_3 — though B_2T_2 might be in base image).
+- Class 3: **3** (revised Day-73: $(M_3, B_1), (M_4, B_1), (M_4, B_2)$;
+  see `code/2026-06-18-class34-aux-n5/`).
+- Class 4: 2 (B_2T_2, B_3T_3).  EXACT-target verified Day-73.
 - Class 5: automatic.
 
-Total: ~28-30 pieces.
+Total: **16 pieces** (revised from "~28-30").  The estimate
+shrank because most "misaligned" combinatorial pairs correspond
+to infeasible BDI points and need no aux.
 
 **Minimality.** Each AXIS piece uniquely covers a BDI point not in the
 others' images (the R-double piece $\pi^{Rd}(\alpha=2)$ uniquely hits

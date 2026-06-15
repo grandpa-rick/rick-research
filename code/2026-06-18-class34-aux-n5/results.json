@@ -1,0 +1,200 @@
+{
+  "class3": [
+    {
+      "name": "AUXc3_M3B1",
+      "j": 3,
+      "i": 1,
+      "signature": [
+        "long[2]",
+        "short[3]"
+      ],
+      "image_at_target_aii": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "feasible": true,
+      "hits_target_pair": true,
+      "n_failures": 0
+    },
+    {
+      "name": "AUXc3_M4B1",
+      "j": 4,
+      "i": 1,
+      "signature": [
+        "long[2]",
+        "short[4]"
+      ],
+      "image_at_target_aii": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "feasible": true,
+      "hits_target_pair": true,
+      "n_failures": 0
+    },
+    {
+      "name": "AUXc3_M4B2",
+      "j": 4,
+      "i": 2,
+      "signature": [
+        "long[3]",
+        "short[4]"
+      ],
+      "image_at_target_aii": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "feasible": true,
+      "hits_target_pair": true,
+      "n_failures": 0
+    }
+  ],
+  "class4": [
+    {
+      "name": "AUXc4_B2T2",
+      "i": 2,
+      "signature": [
+        "prefix[1]",
+        "long[2]"
+      ],
+      "image_at_target_aii": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "feasible": true,
+      "exact_target_hit": true,
+      "n_failures": 0
+    },
+    {
+      "name": "AUXc4_B3T3",
+      "i": 3,
+      "signature": [
+        "prefix[2]",
+        "long[3]"
+      ],
+      "image_at_target_aii": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "feasible": true,
+      "exact_target_hit": true,
+      "n_failures": 0
+    }
+  ],
+  "feasibility_summary": {},
+  "signature_uniqueness": {
+    "n_distinct_signatures": 5,
+    "n_aux_pieces": 5,
+    "duplicates": {}
+  },
+  "three_clique_check": {
+    "n_pieces": 52,
+    "n_class3_added": 3,
+    "n_class4_added": 2,
+    "n_3cliques": 482,
+    "walls_hit": [
+      "long[1]",
+      "long[2]",
+      "long[3]",
+      "long[4]",
+      "prefix[1]",
+      "prefix[2]",
+      "prefix[3]",
+      "prefix[5]"
+    ],
+    "axis_vars": [
+      "long[1]",
+      "long[2]",
+      "long[3]",
+      "long[4]",
+      "prefix[1]",
+      "prefix[2]",
+      "prefix[3]",
+      "prefix[5]"
+    ],
+    "non_axis_walls_violating_lemma43": {},
+    "lemma_4_3_verified": true
+  },
+  "class3_vacuous_pairs": [
+    {
+      "j": 2,
+      "i": 2,
+      "reason": "BDI gap point e_M2+e_B2 infeasible since M_2=1 > P_1=0 (i=2 > j-1=1)"
+    },
+    {
+      "j": 2,
+      "i": 3,
+      "reason": "BDI gap point e_M2+e_B3 infeasible since M_2=1 > P_1=0 (i=3 > j-1=1)"
+    },
+    {
+      "j": 2,
+      "i": 4,
+      "reason": "BDI gap point e_M2+e_B4 infeasible since M_2=1 > P_1=0 (i=4 > j-1=1)"
+    },
+    {
+      "j": 3,
+      "i": 3,
+      "reason": "BDI gap point e_M3+e_B3 infeasible since M_3=1 > P_2=0 (i=3 > j-1=2)"
+    },
+    {
+      "j": 3,
+      "i": 4,
+      "reason": "BDI gap point e_M3+e_B4 infeasible since M_3=1 > P_2=0 (i=4 > j-1=2)"
+    },
+    {
+      "j": 4,
+      "i": 4,
+      "reason": "BDI gap point e_M4+e_B4 infeasible since M_4=1 > P_3=0 (i=4 > j-1=3)"
+    }
+  ]
+}
