@@ -1,0 +1,629 @@
+{
+  "task": "Day 75 CODE Task A -- D-pi verification at n = 6, 7",
+  "statement": "For each interior i in {2,...,n-2} and alpha in {0,1,2}, the piece pi_alpha^{(i)} = base + (alpha, p_i) on the S row is BDI-feasible; the three p_i columns are e_{B_i} + alpha * e_S and are pairwise distinct.",
+  "overall_verdict": "PASS",
+  "summary_per_n": {
+    "n=6": {
+      "n_interior": 3,
+      "n_pieces_tested": 9,
+      "n_pass": 9,
+      "n_fail": 0,
+      "verdict": "PASS"
+    },
+    "n=7": {
+      "n_interior": 4,
+      "n_pieces_tested": 12,
+      "n_pass": 12,
+      "n_fail": 0,
+      "verdict": "PASS"
+    }
+  },
+  "rows": [
+    {
+      "n": 6,
+      "i": 2,
+      "alpha": 0,
+      "n_aii_pts_tested": 13500,
+      "n_infeasible_images": 0,
+      "feasible": true,
+      "p_i_col_label": "B_2",
+      "p_i_col_correct": true,
+      "diff_from_alpha0_only_on_p_i": null,
+      "pass": true
+    },
+    {
+      "n": 6,
+      "i": 2,
+      "alpha": 1,
+      "n_aii_pts_tested": 13500,
+      "n_infeasible_images": 0,
+      "feasible": true,
+      "p_i_col_label": "B_2 + S",
+      "p_i_col_correct": true,
+      "diff_from_alpha0_only_on_p_i": true,
+      "pass": true
+    },
+    {
+      "n": 6,
+      "i": 2,
+      "alpha": 2,
+      "n_aii_pts_tested": 13500,
+      "n_infeasible_images": 0,
+      "feasible": true,
+      "p_i_col_label": "B_2 + 2*S",
+      "p_i_col_correct": true,
+      "diff_from_alpha0_only_on_p_i": true,
+      "pass": true
+    },
+    {
+      "n": 6,
+      "i": 3,
+      "alpha": 0,
+      "n_aii_pts_tested": 13500,
+      "n_infeasible_images": 0,
+      "feasible": true,
+      "p_i_col_label": "B_3",
+      "p_i_col_correct": true,
+      "diff_from_alpha0_only_on_p_i": null,
+      "pass": true
+    },
+    {
+      "n": 6,
+      "i": 3,
+      "alpha": 1,
+      "n_aii_pts_tested": 13500,
+      "n_infeasible_images": 0,
+      "feasible": true,
+      "p_i_col_label": "B_3 + S",
+      "p_i_col_correct": true,
+      "diff_from_alpha0_only_on_p_i": true,
+      "pass": true
+    },
+    {
+      "n": 6,
+      "i": 3,
+      "alpha": 2,
+      "n_aii_pts_tested": 13500,
+      "n_infeasible_images": 0,
+      "feasible": true,
+      "p_i_col_label": "B_3 + 2*S",
+      "p_i_col_correct": true,
+      "diff_from_alpha0_only_on_p_i": true,
+      "pass": true
+    },
+    {
+      "n": 6,
+      "i": 4,
+      "alpha": 0,
+      "n_aii_pts_tested": 13500,
+      "n_infeasible_images": 0,
+      "feasible": true,
+      "p_i_col_label": "B_4",
+      "p_i_col_correct": true,
+      "diff_from_alpha0_only_on_p_i": null,
+      "pass": true
+    },
+    {
+      "n": 6,
+      "i": 4,
+      "alpha": 1,
+      "n_aii_pts_tested": 13500,
+      "n_infeasible_images": 0,
+      "feasible": true,
+      "p_i_col_label": "B_4 + S",
+      "p_i_col_correct": true,
+      "diff_from_alpha0_only_on_p_i": true,
+      "pass": true
+    },
+    {
+      "n": 6,
+      "i": 4,
+      "alpha": 2,
+      "n_aii_pts_tested": 13500,
+      "n_infeasible_images": 0,
+      "feasible": true,
+      "p_i_col_label": "B_4 + 2*S",
+      "p_i_col_correct": true,
+      "diff_from_alpha0_only_on_p_i": true,
+      "pass": true
+    },
+    {
+      "n": 7,
+      "i": 2,
+      "alpha": 0,
+      "n_aii_pts_tested": 161525,
+      "n_infeasible_images": 0,
+      "feasible": true,
+      "p_i_col_label": "B_2",
+      "p_i_col_correct": true,
+      "diff_from_alpha0_only_on_p_i": null,
+      "pass": true
+    },
+    {
+      "n": 7,
+      "i": 2,
+      "alpha": 1,
+      "n_aii_pts_tested": 161525,
+      "n_infeasible_images": 0,
+      "feasible": true,
+      "p_i_col_label": "B_2 + S",
+      "p_i_col_correct": true,
+      "diff_from_alpha0_only_on_p_i": true,
+      "pass": true
+    },
+    {
+      "n": 7,
+      "i": 2,
+      "alpha": 2,
+      "n_aii_pts_tested": 161525,
+      "n_infeasible_images": 0,
+      "feasible": true,
+      "p_i_col_label": "B_2 + 2*S",
+      "p_i_col_correct": true,
+      "diff_from_alpha0_only_on_p_i": true,
+      "pass": true
+    },
+    {
+      "n": 7,
+      "i": 3,
+      "alpha": 0,
+      "n_aii_pts_tested": 161525,
+      "n_infeasible_images": 0,
+      "feasible": true,
+      "p_i_col_label": "B_3",
+      "p_i_col_correct": true,
+      "diff_from_alpha0_only_on_p_i": null,
+      "pass": true
+    },
+    {
+      "n": 7,
+      "i": 3,
+      "alpha": 1,
+      "n_aii_pts_tested": 161525,
+      "n_infeasible_images": 0,
+      "feasible": true,
+      "p_i_col_label": "B_3 + S",
+      "p_i_col_correct": true,
+      "diff_from_alpha0_only_on_p_i": true,
+      "pass": true
+    },
+    {
+      "n": 7,
+      "i": 3,
+      "alpha": 2,
+      "n_aii_pts_tested": 161525,
+      "n_infeasible_images": 0,
+      "feasible": true,
+      "p_i_col_label": "B_3 + 2*S",
+      "p_i_col_correct": true,
+      "diff_from_alpha0_only_on_p_i": true,
+      "pass": true
+    },
+    {
+      "n": 7,
+      "i": 4,
+      "alpha": 0,
+      "n_aii_pts_tested": 161525,
+      "n_infeasible_images": 0,
+      "feasible": true,
+      "p_i_col_label": "B_4",
+      "p_i_col_correct": true,
+      "diff_from_alpha0_only_on_p_i": null,
+      "pass": true
+    },
+    {
+      "n": 7,
+      "i": 4,
+      "alpha": 1,
+      "n_aii_pts_tested": 161525,
+      "n_infeasible_images": 0,
+      "feasible": true,
+      "p_i_col_label": "B_4 + S",
+      "p_i_col_correct": true,
+      "diff_from_alpha0_only_on_p_i": true,
+      "pass": true
+    },
+    {
+      "n": 7,
+      "i": 4,
+      "alpha": 2,
+      "n_aii_pts_tested": 161525,
+      "n_infeasible_images": 0,
+      "feasible": true,
+      "p_i_col_label": "B_4 + 2*S",
+      "p_i_col_correct": true,
+      "diff_from_alpha0_only_on_p_i": true,
+      "pass": true
+    },
+    {
+      "n": 7,
+      "i": 5,
+      "alpha": 0,
+      "n_aii_pts_tested": 161525,
+      "n_infeasible_images": 0,
+      "feasible": true,
+      "p_i_col_label": "B_5",
+      "p_i_col_correct": true,
+      "diff_from_alpha0_only_on_p_i": null,
+      "pass": true
+    },
+    {
+      "n": 7,
+      "i": 5,
+      "alpha": 1,
+      "n_aii_pts_tested": 161525,
+      "n_infeasible_images": 0,
+      "feasible": true,
+      "p_i_col_label": "B_5 + S",
+      "p_i_col_correct": true,
+      "diff_from_alpha0_only_on_p_i": true,
+      "pass": true
+    },
+    {
+      "n": 7,
+      "i": 5,
+      "alpha": 2,
+      "n_aii_pts_tested": 161525,
+      "n_infeasible_images": 0,
+      "feasible": true,
+      "p_i_col_label": "B_5 + 2*S",
+      "p_i_col_correct": true,
+      "diff_from_alpha0_only_on_p_i": true,
+      "pass": true
+    }
+  ],
+  "by_n_details": {
+    "n=6": {
+      "n": 6,
+      "n_aii_pts": 13500,
+      "interior": [
+        2,
+        3,
+        4
+      ],
+      "by_i": {
+        "2": {
+          "three_pieces_feasible": true,
+          "three_columns_distinct": true,
+          "p_i_col_labels": [
+            "B_2",
+            "B_2 + S",
+            "B_2 + 2*S"
+          ],
+          "per_alpha": {
+            "0": {
+              "n": 6,
+              "i": 2,
+              "alpha": 0,
+              "n_aii_pts_tested": 13500,
+              "n_infeasible_images": 0,
+              "feasible": true,
+              "p_i_col_label": "B_2",
+              "p_i_col_correct": true,
+              "diff_from_alpha0_only_on_p_i": null,
+              "pass": true
+            },
+            "1": {
+              "n": 6,
+              "i": 2,
+              "alpha": 1,
+              "n_aii_pts_tested": 13500,
+              "n_infeasible_images": 0,
+              "feasible": true,
+              "p_i_col_label": "B_2 + S",
+              "p_i_col_correct": true,
+              "diff_from_alpha0_only_on_p_i": true,
+              "pass": true
+            },
+            "2": {
+              "n": 6,
+              "i": 2,
+              "alpha": 2,
+              "n_aii_pts_tested": 13500,
+              "n_infeasible_images": 0,
+              "feasible": true,
+              "p_i_col_label": "B_2 + 2*S",
+              "p_i_col_correct": true,
+              "diff_from_alpha0_only_on_p_i": true,
+              "pass": true
+            }
+          }
+        },
+        "3": {
+          "three_pieces_feasible": true,
+          "three_columns_distinct": true,
+          "p_i_col_labels": [
+            "B_3",
+            "B_3 + S",
+            "B_3 + 2*S"
+          ],
+          "per_alpha": {
+            "0": {
+              "n": 6,
+              "i": 3,
+              "alpha": 0,
+              "n_aii_pts_tested": 13500,
+              "n_infeasible_images": 0,
+              "feasible": true,
+              "p_i_col_label": "B_3",
+              "p_i_col_correct": true,
+              "diff_from_alpha0_only_on_p_i": null,
+              "pass": true
+            },
+            "1": {
+              "n": 6,
+              "i": 3,
+              "alpha": 1,
+              "n_aii_pts_tested": 13500,
+              "n_infeasible_images": 0,
+              "feasible": true,
+              "p_i_col_label": "B_3 + S",
+              "p_i_col_correct": true,
+              "diff_from_alpha0_only_on_p_i": true,
+              "pass": true
+            },
+            "2": {
+              "n": 6,
+              "i": 3,
+              "alpha": 2,
+              "n_aii_pts_tested": 13500,
+              "n_infeasible_images": 0,
+              "feasible": true,
+              "p_i_col_label": "B_3 + 2*S",
+              "p_i_col_correct": true,
+              "diff_from_alpha0_only_on_p_i": true,
+              "pass": true
+            }
+          }
+        },
+        "4": {
+          "three_pieces_feasible": true,
+          "three_columns_distinct": true,
+          "p_i_col_labels": [
+            "B_4",
+            "B_4 + S",
+            "B_4 + 2*S"
+          ],
+          "per_alpha": {
+            "0": {
+              "n": 6,
+              "i": 4,
+              "alpha": 0,
+              "n_aii_pts_tested": 13500,
+              "n_infeasible_images": 0,
+              "feasible": true,
+              "p_i_col_label": "B_4",
+              "p_i_col_correct": true,
+              "diff_from_alpha0_only_on_p_i": null,
+              "pass": true
+            },
+            "1": {
+              "n": 6,
+              "i": 4,
+              "alpha": 1,
+              "n_aii_pts_tested": 13500,
+              "n_infeasible_images": 0,
+              "feasible": true,
+              "p_i_col_label": "B_4 + S",
+              "p_i_col_correct": true,
+              "diff_from_alpha0_only_on_p_i": true,
+              "pass": true
+            },
+            "2": {
+              "n": 6,
+              "i": 4,
+              "alpha": 2,
+              "n_aii_pts_tested": 13500,
+              "n_infeasible_images": 0,
+              "feasible": true,
+              "p_i_col_label": "B_4 + 2*S",
+              "p_i_col_correct": true,
+              "diff_from_alpha0_only_on_p_i": true,
+              "pass": true
+            }
+          }
+        }
+      }
+    },
+    "n=7": {
+      "n": 7,
+      "n_aii_pts": 161525,
+      "interior": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "by_i": {
+        "2": {
+          "three_pieces_feasible": true,
+          "three_columns_distinct": true,
+          "p_i_col_labels": [
+            "B_2",
+            "B_2 + S",
+            "B_2 + 2*S"
+          ],
+          "per_alpha": {
+            "0": {
+              "n": 7,
+              "i": 2,
+              "alpha": 0,
+              "n_aii_pts_tested": 161525,
+              "n_infeasible_images": 0,
+              "feasible": true,
+              "p_i_col_label": "B_2",
+              "p_i_col_correct": true,
+              "diff_from_alpha0_only_on_p_i": null,
+              "pass": true
+            },
+            "1": {
+              "n": 7,
+              "i": 2,
+              "alpha": 1,
+              "n_aii_pts_tested": 161525,
+              "n_infeasible_images": 0,
+              "feasible": true,
+              "p_i_col_label": "B_2 + S",
+              "p_i_col_correct": true,
+              "diff_from_alpha0_only_on_p_i": true,
+              "pass": true
+            },
+            "2": {
+              "n": 7,
+              "i": 2,
+              "alpha": 2,
+              "n_aii_pts_tested": 161525,
+              "n_infeasible_images": 0,
+              "feasible": true,
+              "p_i_col_label": "B_2 + 2*S",
+              "p_i_col_correct": true,
+              "diff_from_alpha0_only_on_p_i": true,
+              "pass": true
+            }
+          }
+        },
+        "3": {
+          "three_pieces_feasible": true,
+          "three_columns_distinct": true,
+          "p_i_col_labels": [
+            "B_3",
+            "B_3 + S",
+            "B_3 + 2*S"
+          ],
+          "per_alpha": {
+            "0": {
+              "n": 7,
+              "i": 3,
+              "alpha": 0,
+              "n_aii_pts_tested": 161525,
+              "n_infeasible_images": 0,
+              "feasible": true,
+              "p_i_col_label": "B_3",
+              "p_i_col_correct": true,
+              "diff_from_alpha0_only_on_p_i": null,
+              "pass": true
+            },
+            "1": {
+              "n": 7,
+              "i": 3,
+              "alpha": 1,
+              "n_aii_pts_tested": 161525,
+              "n_infeasible_images": 0,
+              "feasible": true,
+              "p_i_col_label": "B_3 + S",
+              "p_i_col_correct": true,
+              "diff_from_alpha0_only_on_p_i": true,
+              "pass": true
+            },
+            "2": {
+              "n": 7,
+              "i": 3,
+              "alpha": 2,
+              "n_aii_pts_tested": 161525,
+              "n_infeasible_images": 0,
+              "feasible": true,
+              "p_i_col_label": "B_3 + 2*S",
+              "p_i_col_correct": true,
+              "diff_from_alpha0_only_on_p_i": true,
+              "pass": true
+            }
+          }
+        },
+        "4": {
+          "three_pieces_feasible": true,
+          "three_columns_distinct": true,
+          "p_i_col_labels": [
+            "B_4",
+            "B_4 + S",
+            "B_4 + 2*S"
+          ],
+          "per_alpha": {
+            "0": {
+              "n": 7,
+              "i": 4,
+              "alpha": 0,
+              "n_aii_pts_tested": 161525,
+              "n_infeasible_images": 0,
+              "feasible": true,
+              "p_i_col_label": "B_4",
+              "p_i_col_correct": true,
+              "diff_from_alpha0_only_on_p_i": null,
+              "pass": true
+            },
+            "1": {
+              "n": 7,
+              "i": 4,
+              "alpha": 1,
+              "n_aii_pts_tested": 161525,
+              "n_infeasible_images": 0,
+              "feasible": true,
+              "p_i_col_label": "B_4 + S",
+              "p_i_col_correct": true,
+              "diff_from_alpha0_only_on_p_i": true,
+              "pass": true
+            },
+            "2": {
+              "n": 7,
+              "i": 4,
+              "alpha": 2,
+              "n_aii_pts_tested": 161525,
+              "n_infeasible_images": 0,
+              "feasible": true,
+              "p_i_col_label": "B_4 + 2*S",
+              "p_i_col_correct": true,
+              "diff_from_alpha0_only_on_p_i": true,
+              "pass": true
+            }
+          }
+        },
+        "5": {
+          "three_pieces_feasible": true,
+          "three_columns_distinct": true,
+          "p_i_col_labels": [
+            "B_5",
+            "B_5 + S",
+            "B_5 + 2*S"
+          ],
+          "per_alpha": {
+            "0": {
+              "n": 7,
+              "i": 5,
+              "alpha": 0,
+              "n_aii_pts_tested": 161525,
+              "n_infeasible_images": 0,
+              "feasible": true,
+              "p_i_col_label": "B_5",
+              "p_i_col_correct": true,
+              "diff_from_alpha0_only_on_p_i": null,
+              "pass": true
+            },
+            "1": {
+              "n": 7,
+              "i": 5,
+              "alpha": 1,
+              "n_aii_pts_tested": 161525,
+              "n_infeasible_images": 0,
+              "feasible": true,
+              "p_i_col_label": "B_5 + S",
+              "p_i_col_correct": true,
+              "diff_from_alpha0_only_on_p_i": true,
+              "pass": true
+            },
+            "2": {
+              "n": 7,
+              "i": 5,
+              "alpha": 2,
+              "n_aii_pts_tested": 161525,
+              "n_infeasible_images": 0,
+              "feasible": true,
+              "p_i_col_label": "B_5 + 2*S",
+              "p_i_col_correct": true,
+              "diff_from_alpha0_only_on_p_i": true,
+              "pass": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "task": "Day 75 CODE Task C (stretch) -- strict #AXIS at n = 8",
+  "verdict": "PASS",
+  "n5_regression": {
+    "strict_n_axis": 8,
+    "expected": 8,
+    "ok": true
+  },
+  "n8_target": {
+    "strict_n_axis": 14,
+    "expected": 14,
+    "count_match": true,
+    "var_set_match": true,
+    "axis_vars": [
+      "long[1]",
+      "long[2]",
+      "long[3]",
+      "long[4]",
+      "long[5]",
+      "long[6]",
+      "long[7]",
+      "prefix[1]",
+      "prefix[2]",
+      "prefix[3]",
+      "prefix[4]",
+      "prefix[5]",
+      "prefix[6]",
+      "prefix[8]"
+    ],
+    "predicted_axis_vars": [
+      "long[1]",
+      "long[2]",
+      "long[3]",
+      "long[4]",
+      "long[5]",
+      "long[6]",
+      "long[7]",
+      "prefix[1]",
+      "prefix[2]",
+      "prefix[3]",
+      "prefix[4]",
+      "prefix[5]",
+      "prefix[6]",
+      "prefix[8]"
+    ],
+    "missing_predicted": [],
+    "extra_unpredicted": [],
+    "n_pieces": 77
+  }
+}
