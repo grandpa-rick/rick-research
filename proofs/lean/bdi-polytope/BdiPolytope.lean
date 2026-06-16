@@ -1415,7 +1415,7 @@ theorem Piece.three_mults_on_axisCoord
 #print axioms Piece.axisCoord_in_AxisTriple
 #print axioms Piece.three_mults_on_axisCoord
 
-/-! ## Day 72 — AII rays and Feasibility Ray-Characterisation (Theorem 4.2)
+/-! ## Day 72–74 — AII rays and Feasibility Ray-Characterisation (Theorem 4.2)
 
 Lean-level formalisation of Theorem 4.2 of the Day-70 PROVE writeup
 `proofs/2026-06-15-axis-uniform3-upper-bound.md` §4.
@@ -1429,17 +1429,22 @@ The AII cone at parameter `n ≥ 3` (odd `n`, no Singleton) has exactly
   `R_{s_j} = e_{p_{j-1}} + e_{s_j}`    for `j = 2..n`      (`n-1` rays)
 
 A piece `π : AIICoord n → BdiPt` is AII-feasible iff its image at each
-of the `3 * n` rays lies in the BDI polytope.  The (⇒) direction is
-trivial (each ray IS an AII lattice point).  The (⇐) direction reduces
-to:
-* `aii_cone_generated_by_rays` (axiom) — every AII lattice point is a
-  non-negative integer combination of the rays;
-* `IsBdiSemigroup` (assumption) — the BDI polytope is closed under
-  non-negative integer combinations.
+of the `3 * n` rays lies in the BDI polytope.  Both directions are now
+proved:
+* (⇐) `feasibility_ray_char` (Day 72) — conic-form via
+  `coniclyCombine_mem`; reduces to:
+  - `aii_cone_generated_by_rays` (axiom) — every AII lattice point is a
+    non-negative integer combination of the rays;
+  - `IsBdiSemigroup` (assumption) — the BDI polytope is closed under
+    non-negative integer combinations.
+* (⇒) `feasibility_ray_char_forward` (Day 74) — each ray is a
+  singleton conic combination with coefficient `1`, so feasibility
+  specialises to it directly. No axiom dependence beyond `propext`,
+  `Quot.sound`.
 
+The biconditional `feasibility_ray_char_iff` packages both directions.
 The substantive formal content is `coniclyCombine_mem`: any conic
-combination of in-polytope vectors is in the polytope.  Theorem 4.2
-in conic form (`feasibility_ray_char`) is a one-line corollary.
+combination of in-polytope vectors is in the polytope.
 
 Naming note: this section's `AIICoord` is the **source** side (three
 families: `prefix`, `long`, `short`).  The legacy `BdiCoord` of §"Day
@@ -1659,5 +1664,57 @@ theorem feasibility_ray_char_lattice
 #print axioms coniclyCombine_mem
 #print axioms feasibility_ray_char
 #print axioms feasibility_ray_char_lattice
+
+/-! ### Day-74: (⇒) direction and iff form of Theorem 4.2 (conic form)
+
+Day-72 supplied the (⇐) direction (`feasibility_ray_char`). Day-74 closes
+the loop with the converse — feasibility (every conic combination of
+ray-images is in `P`) implies each individual ray's image is in `P`.
+Each AII ray is itself a singleton conic combination with coefficient
+`1`, so feasibility specialises to it directly. -/
+
+/-- A piece `π` is **feasible** (w.r.t. a BDI predicate `P`) if every
+non-negative integer combination of its ray-images lies in `P` — i.e.
+`π` sends the AII cone into `P`. Equivalent to "every individual ray's
+image is in `P`" (see `feasibility_ray_char_iff`). -/
+def IsFeasible {n : Nat} (P : BdiSet) (π : Piece' n) : Prop :=
+  ∀ (rs : List (AIIRay n)) (coeffs : AIIRay n → Nat),
+    P (coniclyCombine rs coeffs π)
+
+/-- **Theorem 4.2 (⇒) — forward direction (conic form).**
+
+If `π` is feasible, then each individual AII ray's BDI image is in `P`.
+
+Proof: instantiate feasibility at the singleton list `[r]` with the
+constant-`1` coefficient map; `coniclyCombine [r] (fun _ => 1) π`
+reduces pointwise to `1 * r.image π b + 0 = r.image π b`. -/
+theorem feasibility_ray_char_forward
+    {n : Nat} (P : BdiSet) (π : Piece' n)
+    (hfeas : IsFeasible P π) :
+    ∀ r : AIIRay n, P (r.image π) := by
+  intro r
+  have h := hfeas [r] (fun _ => 1)
+  have heq : coniclyCombine [r] (fun _ => 1) π = r.image π := by
+    funext b
+    show 1 * r.image π b + 0 = r.image π b
+    omega
+  exact heq ▸ h
+
+/-- **Theorem 4.2 — biconditional (conic form).**
+
+`π` is feasible iff every individual AII ray's BDI image is in `P`. The
+(⇒) is `feasibility_ray_char_forward` (singleton selection); the (⇐) is
+`coniclyCombine_mem` (closure under conic combinations, from
+`IsBdiSemigroup`). Axiom cost: `[propext, Quot.sound]` only. -/
+theorem feasibility_ray_char_iff
+    {n : Nat} (P : BdiSet) [IsBdiSemigroup P]
+    (π : Piece' n) :
+    IsFeasible P π ↔ ∀ r : AIIRay n, P (r.image π) :=
+  ⟨feasibility_ray_char_forward P π,
+   fun hrays rs coeffs =>
+     coniclyCombine_mem P π coeffs rs (fun r _ => hrays r)⟩
+
+#print axioms feasibility_ray_char_forward
+#print axioms feasibility_ray_char_iff
 
 end BdiPolytope
