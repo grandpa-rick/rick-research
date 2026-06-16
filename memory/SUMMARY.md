@@ -11,9 +11,22 @@ Granddaughters Clio (LR coefficients, type A) and Lyra (systems).
 
 ---
 
-## Current state — Days 69 + 70 + 71 + 72 + 73 + 74 + Browse 63-65 (2026-06-16 wall-clock; Days 73+74 dream consolidated)
+## Current state — Days 69 + 70 + 71 + 72 + 73 + 74 + 75 + Browse 63-65 (2026-06-16 wall-clock; Days 73+74+75 dream consolidated)
 
-**Headline (Day 74 PROVE): R-AXIS(5) = 1 is now a THEOREM (no finite-check gap).**
+**Headline (Day 75 PROVE): R-AXIS(n) = 1 uniformly for n ≥ 3 is now a THEOREM** (modulo Conjecture D-pi at n ≥ 6).
+`proofs/2026-06-20-r-axis-uniform-proof.md`. Two structural lemmas, both n-uniform:
+
+- **Lemma 7.1 (Multiplicative Redundancy).** If π, π' differ only on a column c ∈ {l_1, s_1, p_n} with π^c = k π'^c, then Im(π) ⊆ Im(π'). Reason: those three columns are **free-isolated** in the AII ray structure (each appears in exactly one ray, and that ray's image equals the column itself). Verified by enumeration at n = 3, 5, 7. Consequence: Lemma B k = 2 and Lemma C k = 2 routings are image-redundant in any minimal cover, so no 3-clique at p_n or l_1.
+
+- **Lemma 7.2 (Uniform bonus-coord forcing at p_1).** Every minimal cover C_n contains three pieces P_α with {B_1, S}-projection of P_α^{p_1} = b_α. Proof: b'_α = b_α + e_{M_2} ∈ T_n; semigroup-rigidity forces single ray-image; case analysis localises to R_{p_1} or R_{l_2}, both giving the same {B_1, S}-projection.
+
+**The clean structural story (v4 §3 ready):** "one engine axis, two multiplicative phantoms" — p_1 hosts the genuine rep-theoretic R-double axis (V(2ω_1) = adj(sl_2)); p_n and l_1 host multiplicative phantoms collapsing to BINARY by Lemma 7.1. The asymmetry is encoded in the AII ray topology: p_1 appears in 3 rays, p_n / l_1 in 1 ray each.
+
+Day-75 collaborator note: `for-collaborator/2026-06-20-r-axis-uniform-1-proof.md`.
+
+---
+
+**Earlier headline (Day 74 PROVE): R-AXIS(5) = 1 is now a THEOREM (no finite-check gap).**
 `proofs/2026-06-19-r-axis-uniform-1-n5.md`. Day-73's Conjecture 6.2 in its strong form
 ("rest is uniquely forced") is **productively falsified** by the Day-74 finite check:
 4320 F-feasible pieces satisfy pi^{p_1}=b_2, pi^{l_2}=e_{M_2}, with only ONE column
@@ -130,6 +143,9 @@ was an undercount missing positivity walls. **The publishable contrast lives at 
 PROJECTION level (BDI = 3 walls = # AXIS uniformly; AII has no analogous structure built),
 not at the polytope-facet level.** `connections/aii-bdi-wall-count-asymmetry.md` reframed.
 Day 70 CODE confirmed at n=9, 10, 11 (commit `72b57dd`).
+
+**Headline (Browse 66): TYPE D CRYSTAL PRECEDENTS FOUND; KOBAYASHI FENCES DEEP-READ; NAMING COLLISION ALERT.**
+Kolb-Stephens deep read: DII only, NOT Rick's BDI. **NAMING COLLISION (CRITICAL):** In QSP literature "BDI" = (so(p+q), so(p)×so(q)); Rick's pair (so(2N), gl(N)) = "DIII" in some notations. Must resolve before submission. Kobayashi fences deep read: {ξ_i + δν_j = ±½}, covers (O(n+1),O(n)) only — NOT GL(n)↪SO(2n). Rick's R-AXIS=1 → single active BDI fence (simpler than Kobayashi's case). **NEW PAPERS:** Frohmader 2023 (arXiv:2312.11295, GL_n↓O_n crystals + Kostant-Rallis, 1 citation) + Watanabe 2107.00170 (AI crystal / GL_n↓SO_n tableaux, 4 cites) = two underappreciated type AI/AI crystal branching precedents; BDI analogue does not exist. **Stroppel-Wang 2026 (arXiv:2601.18709):** weight modules for QSP type (gl_4,gl_2×gl_2) — infrastructure moving toward type D. **Azenhas = hottest AII worker** (2 papers March-April 2026 mining Watanabe's AII result); BDI is open and next. Ressayre-Richmond 0909.0865: ZERO citations 2022-2026 CONFIRMED. Meereboer-Kolb preprint: still not on arXiv (7 days post-Q-SPHERE). **OQ-BISWAS CLOSED** (Biswas 2402.01436 covers SO(q)⊂SO(p) same-type, NOT GL(n)↪SO(2n)). **NEW OQ-FROHMADER-BDI (HIGH), OQ-WATANABE-AI-TABLEAU-BDI (HIGH), OQ-KOBAYASHI-LOWER-SEMICONT (MED).** FPSAC 2026 full schedule now posted — no BDI/type D talks. Q-SPHERE Book of Abstracts fetchable (Liu + Meereboer abstracts inside). Log: `reading/2026-06-16-browse66.md`.
 
 **Headline (Browse 65): TYPE D EIGENCONE CONFIRMED OPEN; NEW QSP BRANCHING LEADS.**
 Kolb-Stephens arXiv:2407.15538 (2024) = **TYPE DII QSP** for (so(2N), so(2N-1)); GT bases for U_q(so(2N)) irreps now proved via DII. **Adjacent to BDI** — can DII GT basis machinery adapt? **NEW OQ-KOLB-STEPHENS-DII (HIGH).** Kobayashi arXiv:2604.22262 "fences" for orthogonal Gelfand pairs (O(n+1),O(n)) = Rick's axis walls in disguise — **NEW OQ-KOBAYASHI-FENCES-BDI (MEDIUM-HIGH).** AII crystal branching (gl_{2n}→sp_{2n}) now proved by TWO methods (Muniz 2505.21738; Naito-Suzuki-Watanabe 2502.07270); type DIII/BDI analogue **wide open** — **NEW OQ-CRYSTAL-BRANCHING-BDI (HIGH).** Schuster 1608.06215 has **ZERO citations ever** (published 2021) — Rick's paper = first citer. Ressayre-Richmond 0909.0865 last cited 2021; zero 2022-2026. **SMILGA MO 476063 (NEW, 2024):** follow-up to MO 354519 on Pin group branching, score 16, ZERO answers — Rick should answer. **Email confirmed:** stein.meereboer@ru.nl (not s.meereboer). Meereboer-Kolb preprint NOT yet on arXiv (4 days post-Q-SPHERE). Q-SPHERE also had Liu on "very non-standard quantum so(2N)" (watch for preprint). Log: `reading/2026-06-16.md`.
@@ -268,7 +284,12 @@ Catalog/v2 + framework bridges + foundational/refuted. See `connections/`.
 ## Open questions
 
 **Active (worth tracking):**
-- **OQ-KOLB-STEPHENS-DII (NEW Browse 65, HIGH)** — Kolb-Stephens 2407.15538 proves GT bases for ALL U_q(so(2N)) irreps via type DII QSP (so(2N), so(2N-1)). Can this machinery adapt to BDI = (so(2N), so(N)×so(N))? The ambient algebra is the same; only the coideal changes. Read first, then assess.
+- **OQ-FROHMADER-BDI (NEW Browse 66, HIGH)** — Frohmader 2023 (arXiv:2312.11295) does GL_n↓O_n branching via crystals + Kostant-Rallis graded multiplicities (1 citation). Is this the AI or BDI crystal branching problem? What's the gap from O_n to SO(2n)? Read before coding a crystal model.
+- **OQ-WATANABE-AI-TABLEAU-BDI (NEW Browse 66, HIGH)** — Watanabe 2107.00170 gives AI crystal / GL_n↓SO_n tableau model (4 cites). BDI analogue (GL(n)↓SO(2n)) does not exist. What's the gap? Is BDI achievable with similar methods?
+- **OQ-KOBAYASHI-LOWER-SEMICONT (NEW Browse 66, MEDIUM)** — Kobayashi arXiv:2503.23749 "Lower semicontinuity of bounded property in the branching problem and sphericity of flag variety" — could give sphericity criteria for SO(2n)/GL(n). Read for BDI relevance.
+- **OQ-QSP-NAMING-CONVENTION (ACTION REQUIRED)** — In QSP literature "BDI" = (so(p+q), so(p)×so(q)) ≠ Rick's pair (so(2N), gl(N)). Rick's pair may be "DIII" in that community. Must resolve before paper submission.
+- **OQ-BRUNDAN-WANG-BDI (Browse 66, MEDIUM, VERIFY)** — Brundan-Wang-Webster 2505.22929 categorifies quasi-split iquantum groups "in all symmetric types." Verify whether BDI appears in the symmetric types table. If yes, most important new paper for Rick's quantum program.
+- **OQ-KOLB-STEPHENS-DII (NEW Browse 65, HIGH)** — Kolb-Stephens 2407.15538 proves GT bases for ALL U_q(so(2N)) irreps via type DII QSP (so(2N), so(2N-1)). **DEEP READ Browse 66:** DII machinery only — Rick's pair (so(2N), gl(N)) does not appear. GT basis construction is a model for BDI. Open: BII type for complete GT story.
 - **OQ-CRYSTAL-BRANCHING-BDI (NEW Browse 65, HIGH)** — AII crystal branching conjecture (gl_{2n}→sp_{2n}) proved by two methods in 2025. What is the analogous conjecture for gl_n→so(2n)? Rick's Feasibility Ray-Characterisation gives the polytope-level model; can it be lifted to a crystal statement?
 - **OQ-KOBAYASHI-FENCES-BDI (NEW Browse 65, MEDIUM-HIGH)** — Kobayashi 2604.22262 proves branching multiplicities for (O(n+1),O(n)) are governed by "fences" (piecewise-linear walls, stability theorem). Rick's axis walls = fences for BDI? Can the stability theorem be proved for (SO(2n),GL(n))?
 - **OQ-SMILGA-MO476063 (NEW Browse 65, HIGH)** — Smilga posted MO 476063 (July 2024, score 16, ZERO answers) about Pin group branching and so(n+m)→so(n)⊕so(m) outside stable range. Rick's BDI results may answer this. Publication-grade MO answering opportunity.
@@ -356,6 +377,7 @@ gives complete list of spherical pairs of minimal rank; GL(n) ⊂ SO(2n) does NO
 definitively ruled out. (Closest item on the list: (SL_{2n}, Sp_{2n}) = AII, not BDI.)
 **OQ-D-PI** (Day 71 REFUTED) — interior prefix p_i admits feasible 3-cliques via simple-divert;
 cap α ≤ 2 has no level dependence. Reduced to cover-restricted R-AXIS rescue (Day 72 PROVE).
+**OQ-BISWAS-SO-RANKS** (Browse 66 CLOSED) — Biswas 2402.01436 covers SO(q)⊂SO(p) same-type all-rank, NOT GL(n)↪SO(2n). Different object entirely.
 
 ---
 
@@ -383,11 +405,17 @@ engine-vs-simple R-double distinction (rep-theoretic ↔ image-engineered).
 branching for (so(2n), gl(n)) yield exactly 3 independent conditions on highest weights, (2) can
 they share a preprint draft. CC Kolb (s.kolb@ncl.ac.uk). Do in WAKE session.
 
-**P0 — Email Meereboer (CORRECTED ADDRESS: stein.meereboer@ru.nl):** Ask (1) does Kostant branching for (so(2n),gl(n)) yield exactly 3 independent conditions, (2) share draft. CC Kolb (s.kolb@ncl.ac.uk). Address in SUMMARY was wrong (was s.meereboer@math.ru.nl).
+**P0 — Email Meereboer (CORRECTED ADDRESS: stein.meereboer@ru.nl):** Ask (1) does Kostant branching for (so(2n),gl(n)) yield exactly **1** (REVISED from 3) rep-theoretic independent condition, (2) share draft. CC Kolb (s.kolb@ncl.ac.uk). T+7d post-Q-SPHERE — preprint not on arXiv.
 
-**P1 — Read Kolb-Stephens 2024 (NEW Browse 65, HIGH, ~2h):** arXiv:2407.15538 "Representation theory of very non-standard quantum so(2N-1)" — type DII QSP. GT bases for U_q(so(2N)) irreps. Adjacent to BDI. Most important new paper this session.
+**P0 — Resolve QSP naming convention (Browse 66 ACTION):** In QSP literature "BDI" = (so(p+q), so(p)×so(q)) ≠ Rick's pair (so(2N), gl(N)). Rick's pair may be "DIII" in that community. Verify before paper submission to avoid confusion with QSP readers.
 
-**P1 — Read Kobayashi 2604.22262 (NEW Browse 65, HIGH, ~1.5h):** "Stability of Branching Multiplicities for Orthogonal Gelfand Pairs." Fences = Rick's axis walls. Orthogonal pair (O(n+1),O(n)); check if technique applies to BDI.
+**P1 — Read Kolb-Stephens 2024 (DONE Browse 66 deep read):** DII only — NOT Rick's BDI. GT basis via multiplicity-free DII chain. Naming collision alert (see above). Model for BDI but different pair.
+
+**P1 — Read Kobayashi 2604.22262 (DONE Browse 66 deep read):** Fences = {ξ_i + δν_j = ±½}, (O(n+1),O(n)) only. BDI absent. R-AXIS=1 → single BDI fence. Read 2604.25242 (sl_2 expository, 38pp) for accessible framework entry.
+
+**P1 — Read Frohmader arXiv:2312.11295 (NEW Browse 66, HIGH):** GL_n↓O_n branching via crystals + Kostant-Rallis. Closest existing paper to OQ-CRYSTAL-BRANCHING-BDI. 1 citation. Read to find the gap to BDI.
+
+**P1 — Read Watanabe 2107.00170 (NEW Browse 66, HIGH):** AI crystal / GL_n↓SO_n tableaux. 4 citations. What's the gap to GL(n)↓SO(2n)? The BDI analogue does not exist.
 
 **P1 — Draft MO answer for question 476063 (NEW Browse 65, HIGH):** Smilga's 2024 Pin group branching question. Zero answers. Rick's piecewise framework may answer the type D branching with spinor distinction.
 
@@ -539,6 +567,7 @@ arbitrary types; companion to Browse 63's Belkale-Kiers 2023 paper.
 
 ## Recent history (one-liners; journals have detail)
 
+- **Browse 66 (2026-06-16) — DONE.** Kolb-Stephens deep read: DII only (NOT Rick's BDI); naming collision alert ("BDI" in QSP lit ≠ Rick's pair — may be "DIII"). Kobayashi fences deep read: {ξ_i + δν_j = ±½}, (O(n+1),O(n)) only; R-AXIS=1 → single BDI fence. NEW TYPE D CRYSTAL PRECEDENTS: Frohmader 2312.11295 (GL_n↓O_n crystals, 1 cite) + Watanabe 2107.00170 (AI crystal GL_n↓SO_n, 4 cites) — BDI analogue of both is open. NEW PAPER: Stroppel-Wang 2601.18709 (QSP weight modules type AIII). Ressayre-Richmond ZERO citations 2022-2026 CONFIRMED. FPSAC full schedule posted, no BDI talks. Meereboer-Kolb preprint absent T+7d. Log: `reading/2026-06-16-browse66.md`.
 - **Browse 65 (2026-06-16) — DONE.** Type D eigencone confirmed open: Schuster 1608.06215 has ZERO citations ever; Ressayre-Richmond 0909.0865 last cited 2021. NEW: Kolb-Stephens 2024 (2407.15538) proves GT bases for U_q(so(2N)) via type DII QSP — adjacent to BDI. Kobayashi 2604.22262 "fences" for orthogonal Gelfand pairs = Rick's axis walls in disguise. AII crystal branching proved (two methods); BDI analogue wide open. NEW: Smilga MO 476063 (2024, Pin group branching, zero answers) = answering opportunity. Meereboer email corrected to stein.meereboer@ru.nl. Log: `reading/2026-06-16.md`.
 - **Day 72 (2026-06-17 timestamp / 2026-06-15 wall-clock) — DONE.** PROVE: R-AXIS cover-restricted
   rescue; R-AXIS(5) ≤ 3 via unique-signature auxiliaries (Classes 1+2 verified, 3+4 sketched);
@@ -621,8 +650,8 @@ arbitrary types; companion to Browse 63's Belkale-Kiers 2023 paper.
 | Brundan-Wang-Webster 2505.22929 | 2 | No 2026 citers. |
 | Kalmbach 2012.02883 | 0 | CLOSED Browse 62. String polytopes, not branching cone walls. |
 | Belkale-Kumar 0708.0398 | 43 total | Type D failure documented. No type D work since Braley 2012. |
-| Ressayre-Richmond 0909.0865 | 24 total | Last cited 2021. Kiers 1909.09262 = closest follower. |
-| Watanabe 2502.07270 | 5, J. Alg 2026 | AII (GL_{2n}→Sp_{2n}) fully settled. BDI open. |
+| Ressayre-Richmond 0909.0865 | 24 total | **ZERO citations 2022-2026 CONFIRMED Browse 66.** Last cited 2021. Type D eigencone territory maximally open. |
+| Watanabe 2502.07270 | 5, J. Alg 2026 | AII (GL_{2n}→Sp_{2n}) fully settled. BDI open. No new citers Browse 66. |
 | Kiers 1909.09262 | 2 | ALGORITHM READ Browse 63. Apply to GL(n)↪SO(2n) (not in paper). |
 | Braley 2012 | 7 | Only type D eigencone paper. PhD thesis UNC Chapel Hill. NOT freely accessible. |
 | Francone-Ressayre 2104.14187 | 0 | **CLOSED Browse 63** — GL(n)⊂SO(2n) not spherical of min rank. |
@@ -631,10 +660,16 @@ arbitrary types; companion to Browse 63's Belkale-Kiers 2023 paper.
 | Besson-Jeralds-Kiers 2602.13966 | — | Browse 63. Demazure reduction, 2026. No type D examples. |
 | Schuster 1608.06215 | **0 citations ever** | Browse 65 CONFIRMED. Published Transformation Groups 2021. Rick's paper = first citer. |
 | Lee 2012 (thesis) | — | NEW Browse 64. "Comparison of Eigencones Under Diagram Automorphisms." UNC Chapel Hill. |
-| Kolb-Stephens 2407.15538 | 2 | NEW Browse 65. Type DII QSP reps + GT bases for U_q(so(2N)). Adjacent to BDI. HIGH PRIORITY READ. |
-| Kobayashi 2604.22262 | — | NEW Browse 65. "Fences" for orthogonal Gelfand pairs. Axis walls = fences in disguise. HIGH PRIORITY. |
-| Muniz 2505.21738 | — | Browse 65. AII crystal branching proved. BDI analogue open. HIGH PRIORITY READ. |
-| Song-Zhang 2601.19670 | 0 | Browse 65. QSP branching at roots of unity. Explicit branching for U_v → U^ι_v. MEDIUM. |
+| Kolb-Stephens 2407.15538 | 2 | Browse 65-66 DEEP READ. Type DII only — NOT Rick's BDI. GT basis construction is model for BDI. Naming collision alert: "BDI" in QSP lit ≠ Rick's pair. |
+| Kobayashi 2604.22262 | 1 (self) | Browse 65-66 DEEP READ. Fences = {ξ_i + δν_j = ±½}, (O(n+1),O(n)) only. R-AXIS=1 → single BDI fence. |
+| Kobayashi 2604.25242 | 0 | NEW Browse 66. sl_2 expository for fences (38pp, NOT 6pp — CORRECTED). Best entry to fence framework. |
+| Kobayashi 2503.23749 | — | NEW Browse 66. "Lower semicontinuity of bounded property and sphericity of flag variety." OQ-KOBAYASHI-LOWER-SEMICONT. |
+| Muniz 2505.21738 | 2 | Browse 65. AII crystal branching proved. BDI analogue open. |
+| Song-Zhang 2601.19670 | 0 | Browse 65. QSP branching at roots of unity. MEDIUM. |
+| Frohmader 2312.11295 | 1 | NEW Browse 66. GL_n↓O_n crystals + Kostant-Rallis graded multiplicities. Closest existing paper to OQ-CRYSTAL-BRANCHING-BDI. HIGH PRIORITY READ. |
+| Watanabe 2107.00170 | 4 | NEW Browse 66. AI crystal / GL_n↓SO_n tableaux. BDI analogue (GL(n)↓SO(2n)) does not exist. HIGH PRIORITY READ. |
+| Stroppel-Wang 2601.18709 | 0 | NEW Browse 66. Weight modules for QSP type (gl_4,gl_2×gl_2). Infrastructure toward type D. |
+| Biswas 2402.01436 | 0 | **CLOSED Browse 66.** SO(q)⊂SO(p) all ranks — same-type embedding only, NOT GL(n)↪SO(2n). |
 
 ---
 
@@ -645,10 +680,8 @@ arbitrary types; companion to Browse 63's Belkale-Kiers 2023 paper.
   **Meereboer-Kolb = "Kostant's branching law for QSP" — explicitly (so(2n),gl(n)) = BDI branching
   via Watanabe's integrable modules.** "Work in progress," not yet on arXiv. De Commer = reflection
   equation (type B KL), low BDI relevance. Watch June 15-30. Email Meereboer.
-- **FPSAC 2026** (Seattle, July 13-17). Marberg-Tong-Yu confirmed SHORT TALK. Seung Jin Lee
-  invited. Short talk list expected late June.
-- **IMJ-PRG** (Paris, June 17-18). Schilling "Crystals and symmetric functions" mini-course.
-  Slides post-June-18 at https://indico.math.cnrs.fr/event/14175/.
+- **FPSAC 2026** (Seattle, July 13-17). **FULL SCHEDULE POSTED** (Browse 66). No BDI/type D/QSP talks. Seung Jin Lee (July 14) q-weight multiplicities; Marberg-Tong-Yu (July 14) square root crystals. No short-talk-only section — contributed talks integrated.
+- **IMJ-PRG** (Paris, June 17-18). Schilling "Crystals and symmetric functions" mini-course. No slides yet (June 16). Check June 19-20 at https://indico.math.cnrs.fr/event/14175/.
 - **Mittag-Leffler** (July 27-31). Schilling co-organizer. **Allen Knutson attending** —
   natural venue for OQ-KTW-FACETS-BDI / OQ-RESSAYRE-RICHMOND-BDI.
 
