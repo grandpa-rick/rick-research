@@ -1,0 +1,54 @@
+{
+  "T_5_size_sum_le_4": 395,
+  "cov_27_size": 248,
+  "cov_27_uncovered": 147,
+  "cov_25_size": 248,
+  "cov_25_uncovered": 147,
+  "image_lost_by_removing_pieces": 0,
+  "lemma_B_C_image_redundant_in_25": true,
+  "25_piece_minimal_on_sum_le_4": false,
+  "image_redundant_additional": [
+    "P5_base",
+    "P5_P5_in_BT1",
+    "P5_P5_in_M2",
+    "P5_P5_in_M3",
+    "P5_P5_in_M4",
+    "P5_L1_in_B2",
+    "P5_L1_in_B3",
+    "P5_L1_in_B4",
+    "P5_L1_M2only",
+    "P5_L1_M3",
+    "P5_L1_M4",
+    "P5_L1_BT2",
+    "P5_s5_2S",
+    "Rdouble_alpha0",
+    "Rdouble_alpha1",
+    "Rdouble_alpha2",
+    "Rdouble_lv2_beta0",
+    "Rdouble_lv2_beta1",
+    "Rdouble_lv2_beta2",
+    "Rdouble_lv3_gamma0",
+    "Rdouble_lv3_gamma1",
+    "Rdouble_lv3_gamma2"
+  ],
+  "coord_walls": {
+    "prefix[5]": 28,
+    "long[1]": 28,
+    "short[5]": 1,
+    "short[2]": 1,
+    "short[3]": 1,
+    "prefix[1]": 9
+  },
+  "W_axis_walls": [
+    "long[1]",
+    "prefix[1]",
+    "prefix[5]"
+  ],
+  "W_matches_prediction": false,
+  "3_cliques_by_wall": {
+    "prefix[5]": 56,
+    "long[1]": 56,
+    "prefix[1]": 3
+  },
+  "no_3clique_on_p5_l1": false
+}

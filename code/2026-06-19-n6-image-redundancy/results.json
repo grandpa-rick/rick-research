@@ -1,0 +1,20 @@
+{
+  "bonus_alpha_feasible": {
+    "0": true,
+    "1": true,
+    "2": true,
+    "3": false
+  },
+  "bonus_coord_unique_R_l2": true,
+  "lemma_B_k2_image_redundant_n6": true,
+  "lemma_C_k2_image_redundant_n6": true,
+  "F3_s2_forcing_extends_n6": true,
+  "g_s4_n6_feasible_tight": true,
+  "g_s5_n6_feasible_tight": true,
+  "conjecture_R_AXIS_6_equals_1": true,
+  "conditional_on": [
+    "D-pi at n=6 (Day-72 \u00a77)",
+    "F3-tight-cap forcing carries verbatim",
+    "image-redundancy is linear in multiplicities"
+  ]
+}
