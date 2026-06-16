@@ -11,7 +11,7 @@ Granddaughters Clio (LR coefficients, type A) and Lyra (systems).
 
 ---
 
-## Current state — Days 69 + 70 + 71 + 72 + 73 + 74 + Browse 63 (2026-06-19 wall-clock)
+## Current state — Days 69 + 70 + 71 + 72 + 73 + 74 + Browse 63-65 (2026-06-16 wall-clock; Days 73+74 dream consolidated)
 
 **Headline (Day 74 PROVE): R-AXIS(5) = 1 is now a THEOREM (no finite-check gap).**
 `proofs/2026-06-19-r-axis-uniform-1-n5.md`. Day-73's Conjecture 6.2 in its strong form
@@ -72,13 +72,18 @@ Coincidentally matches Browse-59's original incorrect AII heuristic but applied 
 *different object* (BDI strict piecewise). Polytope facets at n=12,13 still match closed
 forms ($3n - [n \text{ even}]$ / $4n - 5$). AII rays n=8: 23 = 3n-1 ✓ (even-n Λ collapse).
 
-**Headline (Day 72 LEAN): Theorem 4.2 Feasibility Ray-Characterisation SHIPPED.**
-`proofs/lean/bdi-polytope/BdiPolytope.lean` 1418 → 1663 lines (+245, commit `c7aa9a1`).
-Three families AIICoord + 5 ray constructors AIIRay + `IsBdiSemigroup` typeclass. Conic form
-`feasibility_ray_char` axioms ⊆ {propext, Quot.sound} — cleaner than LEAN.md target B.
-Lattice form `feasibility_ray_char_lattice` + axiom `aii_cone_generated_by_rays` (deferred
-geometric Lemma 4.1, ~50-80 lines mechanical to discharge). No sorry. No Classical.choice.
-Stdlib only. Day-71 LEAN no-show diagnosed (no commit produced).
+**Headline (Day 72 + 74 LEAN): Theorem 4.2 Feasibility Ray-Characterisation BOTH DIRECTIONS SHIPPED.**
+`proofs/lean/bdi-polytope/BdiPolytope.lean` 1418 → 1720 lines.
+- Day 72 (commit `c7aa9a1`, +245 lines): three families AIICoord + 5 ray constructors AIIRay
+  + `IsBdiSemigroup` typeclass + conic-form (⇐) `feasibility_ray_char` axioms ⊆ {propext,
+  Quot.sound}. Lattice form `feasibility_ray_char_lattice` + axiom
+  `aii_cone_generated_by_rays` (deferred Lemma 4.1).
+- Day 74 (commit `122eed4`, +57 lines): conic-form (⇒) `feasibility_ray_char_forward` +
+  biconditional `feasibility_ray_char_iff`. Axioms ⊆ {propext, Quot.sound} — same clean set.
+  Singleton-list trick sidesteps DecidableEq on AIIRay (Prop-arg constructors).
+- Outstanding: `aii_cone_generated_by_rays` axiom (Lemma 4.1, ~50-80 lines mechanical).
+No sorry. No Classical.choice. Stdlib only. Note to Robin:
+`for-collaborator/2026-06-19-feasibility-ray-char-forward-lean.md`.
 
 **Headline (Day 71 PROVE, PRODUCTIVE FALSIFICATION): Conjecture D-pi REFUTED.**
 `proofs/2026-06-16-conjecture-d-pi.md` (commit `b1643a0`). For every n ≥ 5 and interior
@@ -207,11 +212,16 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`,
 
 ### Tier S — Seed-level / load-bearing
 
-- **`cover-restricted-axis-as-right-invariant.md`** — NEW Day 71+72. R-AXIS = 3 uniformly
-  cover-restricted; strict #AXIS = 2(n-1) is the wrong invariant; sharpening through productive
-  falsification. Replaces "uniform-3 modulo D-pi" as the structural headline.
+- **`cover-restricted-axis-as-right-invariant.md`** — UPDATED Day 73+74. **R-AXIS(n) = 1 uniformly**
+  at p_1 (theorem at n=5, conjecture n ≥ 6). Five-iteration sharpening from "uniform-3 strict"
+  through three productive falsifications. Cap α ≤ 2 triple-anchored. Replaces "uniform-3
+  cover-restricted" as the structural headline.
+- **`bucket-0-as-sl2-rump.md`** — PROMOTED to Tier S Day 73+74. After R-AXIS collapsed to 1,
+  Bucket-0 ≅ adj(sl_2) is THE structural anchor. Triple-anchored cap α ≤ 2 (BDI S-budget,
+  dim V(2ω_1) − 1, R-AXIS multiplicity = 1). Single rep-theoretic axis.
 - **`aii-bdi-wall-count-asymmetry.md`** — UPDATED Day 72 with three-level table (polytope /
-  strict #AXIS / R-AXIS). The structural contrast lives at the cover-restricted level only.
+  strict #AXIS / R-AXIS). Day 73+74: R-AXIS = 1 (cleaner than 3). The structural contrast
+  is "BDI has a single rep-theoretic axis; AII has none."
 - **`feasibility-ray-char-as-restriction-shadow.md`** — Day-70 PROVE; LEAN SHIPPED Day 72
   (245 lines, axioms ⊆ {propext, Quot.sound} for conic form).
 - **`azenhas-bdi-canonical-projection.md`** — Canonical forgetful surjection π_n. THEOREM at n=2;
@@ -234,9 +244,10 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`,
 
 ### Tier A — Active
 
-- **`bucket-0-as-sl2-rump.md`** (Day-66 + Day-69 update) — B0+B1 = adj(sl_2) ⊕ C = gl_2 as
-  A_1-module, uniform in n. Day-69 confirmed: the cap α ≤ 2 in Lemma A is JOINTLY BDI-S-budget-sharp
-  (from S ≤ P_{n−1}) AND dim V(2ω_1) − 1 sharp. Two independent ceilings coincide.
+- **`engine-vs-base-canonical-degeneracy.md`** — NEW Day-74. Within the R-double family,
+  π^{s_1} engine partially redundant with π^{p_1}'s S=2 (paired coordinate coupling);
+  π^{s_4} engine genuine (uniquely realises tight-cap point g_{s_4}). May reflect residual
+  sl_2-symmetry of Bucket-0. Worth CODE session to map coordinate-pair coupling.
 - **`marginal-palindromy-refutation.md` + `-v2.md`** (Day-64, Day-66) — Calibration-grade
   refutation filter.
 - **`lu-pan-dual-canonical-bdi-algebraic-roof.md`** — Quartet of algebraic papers. Path 2 ↔ Path 4 bridge.
@@ -261,10 +272,11 @@ Catalog/v2 + framework bridges + foundational/refuted. See `connections/`.
 - **OQ-CRYSTAL-BRANCHING-BDI (NEW Browse 65, HIGH)** — AII crystal branching conjecture (gl_{2n}→sp_{2n}) proved by two methods in 2025. What is the analogous conjecture for gl_n→so(2n)? Rick's Feasibility Ray-Characterisation gives the polytope-level model; can it be lifted to a crystal statement?
 - **OQ-KOBAYASHI-FENCES-BDI (NEW Browse 65, MEDIUM-HIGH)** — Kobayashi 2604.22262 proves branching multiplicities for (O(n+1),O(n)) are governed by "fences" (piecewise-linear walls, stability theorem). Rick's axis walls = fences for BDI? Can the stability theorem be proved for (SO(2n),GL(n))?
 - **OQ-SMILGA-MO476063 (NEW Browse 65, HIGH)** — Smilga posted MO 476063 (July 2024, score 16, ZERO answers) about Pin group branching and so(n+m)→so(n)⊕so(m) outside stable range. Rick's BDI results may answer this. Publication-grade MO answering opportunity.
-- **OQ-R-AXIS-UNIFORM (NEW Day 72, HIGH)** — Is R-AXIS(n) = 3 uniformly at W = {p_1, p_n, l_1}?
-  Constructed at n=5 (Classes 1+2 verified, Classes 3+4 sketched). Extension sketched at n=6 via
-  $l_j$-divert. Lower bound R-AXIS(n) ≥ 3 sketched; rigorous proof requires finite enumeration.
-  CODE Day-73 task. See `questions/q-r-axis-uniform.md` (TODO).
+- **OQ-R-AXIS-UNIFORM (REVISED Day 74, HIGH)** — Is R-AXIS(n) = **1** uniformly at W = {p_1}?
+  PROVED at n=5 (Day-74 Theorem 6.2 modulo D-pi at n=5, verified). n=6 sanity check confirms
+  extension; rigorous proof conditional on D-pi at n=6 (CODE Day-75). The R-AXIS = 3 conjecture
+  was refuted Day-73 by image-redundancy of Lemma B/C k=2 multiplicities. See
+  `questions/q-r-axis-uniform.md` (UPDATED Day 74).
 - **OQ-D-PI** (Day 70) — **REFUTED Day 71.** Interior prefix $p_i$ admits feasible 3-cliques via
   simple-divert; cap α ≤ 2 has no level dependence. CLOSED. See refutation
   `proofs/2026-06-16-conjecture-d-pi.md`.
@@ -424,8 +436,9 @@ arbitrary types; companion to Browse 63's Belkale-Kiers 2023 paper.
 - (E) Read Meereboer arXiv:2510.17655 — iota crystal 1-dim foundational.
 
 **P1 — Next LEAN.md options:**
-- (A) **`feasibility_ray_char` (⇒) direction** (~30-50 lines, indicator-coefficient + sum-collapse).
-- (B) **Discharge `aii_cone_generated_by_rays`** (~50-80 lines mechanical).
+- (A) ~~`feasibility_ray_char` (⇒) direction~~ **DONE Day 74** (commit `122eed4`, +57 lines,
+  axioms ⊆ {propext, Quot.sound}). Singleton-list selection trick — no DecidableEq needed.
+- (B) **Discharge `aii_cone_generated_by_rays`** (~50-80 lines mechanical) — promoted to P1.
 - (C) **`IsBdiSemigroup` for concrete BDI polytope** — typeclass instantiation, integrates with ChainConfig.
 - (D) **R-AXIS as Lean def + Lemma 4.3** (unique-signature → no new 3-cliques) — short clean target.
 - (E) Lemma A formalisation with `IsFeasible : Piece n hn → Prop`.
@@ -660,6 +673,13 @@ arbitrary types; companion to Browse 63's Belkale-Kiers 2023 paper.
 
 ## File hygiene
 
+- **Days 73+74 dream hygiene pass (2026-06-16):** SUMMARY updated with R-AXIS = 1 collapse
+  (was 3 Day-72). REVISED `cover-restricted-axis-as-right-invariant.md` (TL;DR table, FIVE
+  iterations history, triple-anchored cap section). REVISED `bucket-0-as-sl2-rump.md`
+  (promoted to Tier S, triple-anchored cap, Day-74 NEW SURPRISE on paired-coordinate coupling).
+  NEW connection `engine-vs-base-canonical-degeneracy.md` (Tier A; π^{s_1} vs π^{s_4} engine
+  stratification). REVISED `q-r-axis-uniform.md` (conjecture now "= 1" not "= 3"). Dream
+  journal `2026-06-16.md` records two-cycle sharpening (Days 73+74) + Browse 65 findings.
 - **Days 71+72 dream hygiene pass (2026-06-15):** SUMMARY updated with Day-72 R-AXIS rescue
   + LEAN Theorem 4.2 + strict #AXIS = 2(n-1). NEW connection file
   `cover-restricted-axis-as-right-invariant.md` (Tier S candidate, replaces "uniform-3 strict"
