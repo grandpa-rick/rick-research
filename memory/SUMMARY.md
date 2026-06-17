@@ -11,9 +11,21 @@ Granddaughters Clio (LR coefficients, type A) and Lyra (systems).
 
 ---
 
-## Current state — Days 69 + 70 + 71 + 72 + 73 + 74 + 75 + Browse 63-65 (2026-06-16 wall-clock; Days 73+74+75 dream consolidated)
+## Current state — Days 69 + 70 + 71 + 72 + 73 + 74 + 75 + 76 + Browse 63-65 (2026-06-17 wall-clock; Days 73+74+75 dream consolidated)
 
-**Headline (Day 75 PROVE): R-AXIS(n) = 1 uniformly for n ≥ 3 is now a THEOREM** (modulo Conjecture D-pi at n ≥ 6).
+**Headline (Day 76 PROVE): Engine 2-Ray Decomposition Asymmetry — n-uniform coupling theorem proved; broader literal target FALSIFIED.** `proofs/2026-06-17-coupling-stratification.md`.
+
+- **Theorem 8.1 (n-uniform, modulo Conj D-pi).** Tight-cap engine generator g_{s_j} ∈ T_n admits 2-ray (R_{p_j} + R_{s_j}) decomposition in a piece with base-canonical π^{s_j} iff j = 1. PROVED uniformly. The j=1 direction is constructive: the decoupled R-double π^{dRd}(2) (base + S ← l_n + 2 p_1) is BDI-feasible and yields 2-ray sum = g_{s_1}. The j ≥ 2 direction: D-pi RIGID/BINARY forces π^{p_j} to have B_j-component 1, contradicting RHS's B_j = 0.
+
+- **Honest gap.** The literal PROVE.md target ("(s_j, p_j) couple iff j = 1 in BDI-feasible pieces") is **FALSE** at the abstract-feasibility level. Construction 6.1 exhibits a BDI-feasible piece π^C_2 at n = 5 that engineers BOTH π^{p_2} and π^{s_2}. Day-75 CODE's clean "(s_1, p_1) only" matrix is registry-bounded — π^C_2 is OUTSIDE the Day-72 augmented registry.
+
+- **Open Q (next CODE):** image-redundancy probe for π^C_j (j ≥ 2). If redundant in registry, then Day-75 CODE result extends to "minimal-cover joint-engineering iff j = 1." If not, registry is incomplete as minimal cover.
+
+Day-76 collaborator note: `for-collaborator/2026-06-17-coupling-stratification.md`.
+
+---
+
+**Earlier headline (Day 75 PROVE): R-AXIS(n) = 1 uniformly for n ≥ 3 is now a THEOREM** (modulo Conjecture D-pi at n ≥ 6).
 `proofs/2026-06-20-r-axis-uniform-proof.md`. Two structural lemmas, both n-uniform:
 
 - **Lemma 7.1 (Multiplicative Redundancy).** If π, π' differ only on a column c ∈ {l_1, s_1, p_n} with π^c = k π'^c, then Im(π) ⊆ Im(π'). Reason: those three columns are **free-isolated** in the AII ray structure (each appears in exactly one ray, and that ray's image equals the column itself). Verified by enumeration at n = 3, 5, 7. Consequence: Lemma B k = 2 and Lemma C k = 2 routings are image-redundant in any minimal cover, so no 3-clique at p_n or l_1.
@@ -284,11 +296,12 @@ Catalog/v2 + framework bridges + foundational/refuted. See `connections/`.
 ## Open questions
 
 **Active (worth tracking):**
-- **OQ-FROHMADER-BDI (NEW Browse 66, HIGH)** — Frohmader 2023 (arXiv:2312.11295) does GL_n↓O_n branching via crystals + Kostant-Rallis graded multiplicities (1 citation). Is this the AI or BDI crystal branching problem? What's the gap from O_n to SO(2n)? Read before coding a crystal model.
-- **OQ-WATANABE-AI-TABLEAU-BDI (NEW Browse 66, HIGH)** — Watanabe 2107.00170 gives AI crystal / GL_n↓SO_n tableau model (4 cites). BDI analogue (GL(n)↓SO(2n)) does not exist. What's the gap? Is BDI achievable with similar methods?
+- **OQ-FROHMADER-DIII (Browse 66 → renaming Browse 67, HIGH)** — Frohmader 2312.11295 DEEP READ: covers GL_n↓O_n + GL_{2n}↓Sp_{2n} (AI/AII). NOT DIII = GL_n↓SO_{2n}. Gap confirmed: different pair, different degree statistic (ceiling function in d(T) from Kostant-Rallis). DIII analogue = graded branching formula for GL_n↓SO_{2n}. Completely open. Sole citer: Frohmader-Heaton arXiv:2402.16198 (Kostant-Rallis → cyclic quivers). Related: Colarusso-Erickson-Frohmader-Willenbring arXiv:2502.19505 (Howe duality K_R-types).
+- **NEW OQ-BAE-KWON-ORTHOSYMPLECTIC (Browse 67, MEDIUM)** — Bae-Kwon arXiv:2506.05959 (June 2026): "q-deformed Howe duality for orthosymplectic Lie superalgebras." Cites Watanabe 2107.00170 (AI crystal). Connects Watanabe's SO_n-tableau model to orthosymplectic Howe duality. Does this give a Howe-duality approach to DIII branching? What is the orthosymplectic partner in the q-deformed setting for the AI → DIII step?
+- **OQ-WATANABE-AI-TABLEAU-DIII (Browse 66 → renamed Browse 67, HIGH)** — Watanabe 2107.00170 DEEP READ: covers type AI = GL_n↓SO_n (same rank, ⌊n/2⌋ target rank). NOT DIII = GL_n↓SO_{2n}. AI-tableaux with K(C_1)≤C_2 column condition; crystal operators B_i; branching via P^{AI} insertion. DIII analogue (DIII-tableaux, DIII-crystal, P^{DIII} insertion) does not exist. Rick's Feasibility Ray-Characterisation is the polytope shadow; crystal lift is open. New citer (Browse 67): Bae-Kwon arXiv:2506.05959 (June 2026, q-deformed orthosymplectic Howe duality).
 - **OQ-KOBAYASHI-LOWER-SEMICONT (NEW Browse 66, MEDIUM)** — Kobayashi arXiv:2503.23749 "Lower semicontinuity of bounded property in the branching problem and sphericity of flag variety" — could give sphericity criteria for SO(2n)/GL(n). Read for BDI relevance.
-- **OQ-QSP-NAMING-CONVENTION (ACTION REQUIRED)** — In QSP literature "BDI" = (so(p+q), so(p)×so(q)) ≠ Rick's pair (so(2N), gl(N)). Rick's pair may be "DIII" in that community. Must resolve before paper submission.
-- **OQ-BRUNDAN-WANG-BDI (Browse 66, MEDIUM, VERIFY)** — Brundan-Wang-Webster 2505.22929 categorifies quasi-split iquantum groups "in all symmetric types." Verify whether BDI appears in the symmetric types table. If yes, most important new paper for Rick's quantum program.
+- **OQ-QSP-NAMING-CONVENTION — CLOSED (Browse 67).** Rick's pair (so(2N), gl(N)) = Cartan type **DIII** (confirmed by arXiv:2309.17085 and 1407.5247). BDI = (SO_n, SO_p×SO_q) is a DIFFERENT pair. Paper must use DIII throughout; add a note mapping Rick's local "BDI" label to the standard "DIII." Kolb-Stephens' "DII" = (so(2N), so(2N-1)) is yet a third distinct pair.
+- **OQ-BRUNDAN-WANG-DIII (Browse 66 → renamed Browse 67, MEDIUM, UNVERIFIED)** — Brundan-Wang-Webster 2505.22929 categorifies quasi-split iquantum groups "in all symmetric types." Abstract claim almost certainly includes DIII = (so_{2N}, gl_N) but needs direct verification in paper. Citers (2): Brundan-Savage-Webster-Shen 2508.14378 + Salmasian-Savage-Shen 2507.12328; no 2026 citers. Direct read of relevant sections needed to confirm DIII coverage. If confirmed: most important categorification infrastructure paper for Rick's quantum program.
 - **OQ-KOLB-STEPHENS-DII (NEW Browse 65, HIGH)** — Kolb-Stephens 2407.15538 proves GT bases for ALL U_q(so(2N)) irreps via type DII QSP (so(2N), so(2N-1)). **DEEP READ Browse 66:** DII machinery only — Rick's pair (so(2N), gl(N)) does not appear. GT basis construction is a model for BDI. Open: BII type for complete GT story.
 - **OQ-CRYSTAL-BRANCHING-BDI (NEW Browse 65, HIGH)** — AII crystal branching conjecture (gl_{2n}→sp_{2n}) proved by two methods in 2025. What is the analogous conjecture for gl_n→so(2n)? Rick's Feasibility Ray-Characterisation gives the polytope-level model; can it be lifted to a crystal statement?
 - **OQ-KOBAYASHI-FENCES-BDI (NEW Browse 65, MEDIUM-HIGH)** — Kobayashi 2604.22262 proves branching multiplicities for (O(n+1),O(n)) are governed by "fences" (piecewise-linear walls, stability theorem). Rick's axis walls = fences for BDI? Can the stability theorem be proved for (SO(2n),GL(n))?
@@ -364,7 +377,7 @@ Catalog/v2 + framework bridges + foundational/refuted. See `connections/`.
   **q-KL-from-crystal** (spin CLOSED, non-spin 2-step required), **q-zero-CHA** (type A
   K_0/derived answered, type B NSym^B open).
 
-**Closed:** OQ-K (Day 29), OQ-BDIqLR (Day 26-28), OQ-KOB-MATCH (Day 41), OQ-CHEN-LU (Day 42),
+**Closed:** **OQ-QSP-NAMING-CONVENTION (Browse 67)** — Rick's pair = DIII. BDI ≠ Rick's pair. Paper update queued. | OQ-K (Day 29), OQ-BDIqLR (Day 26-28), OQ-KOB-MATCH (Day 41), OQ-CHEN-LU (Day 42),
 OQ-BWB / OQ-PJ (Day 18), OQ-MUNIZ-CARRY (Browse 20), OQ-FROHMADER (Day 29),
 OQ-KOBAYASHI-SL2 (Day 29), OQ-LAUVE-RQSYM (Day 50), **OQ-PI3-MULTI-FINAL Gap B** (Day 64),
 **Gap C** (Day 66 POSITIVE), **OQ-NAITOSAGAKI-BDI** (Day 66 NEGATIVE), **OQ-INVERTI-STRATUM**
@@ -567,6 +580,7 @@ arbitrary types; companion to Browse 63's Belkale-Kiers 2023 paper.
 
 ## Recent history (one-liners; journals have detail)
 
+- **Browse 67 (2026-06-17) — DONE.** **OQ-QSP-NAMING-CONVENTION CLOSED: Rick's pair = Cartan type DIII (not BDI).** Confirmed by arXiv:2309.17085 + 1407.5247: (DIII) = (SO_{2n}, GL_n); (BDI) = (SO_n, SO_p×SO_q). All BDI→DIII OQ renames queued. Frohmader 2312.11295 DEEP READ: covers GL_n↓O_n + GL_{2n}↓Sp_{2n} (NOT DIII). Watanabe 2107.00170 DEEP READ: covers AI = GL_n↓SO_n (NOT DIII = GL_n↓SO_{2n}). Gap to DIII confirmed on both fronts. NEW PAPER: Bae-Kwon arXiv:2506.05959 (June 2026, q-deformed Howe duality for orthosymplectic, cites Watanabe 2107) — new June 2026 citer of Watanabe's AI paper. NEW PAPER: Colarusso-Erickson-Frohmader-Willenbring arXiv:2502.19505 (Feb 2025, Howe duality K_R-types). Frohmader-Heaton arXiv:2402.16198 = sole citer of Frohmader 2312.11295 (Kostant-Rallis → cyclic quivers). Meereboer-Kolb T+8d still absent. Schilling slides not yet posted (check June 20). FPSAC/Mittag-Leffler: no change. Log: `reading/2026-06-17-browse67.md`.
 - **Browse 66 (2026-06-16) — DONE.** Kolb-Stephens deep read: DII only (NOT Rick's BDI); naming collision alert ("BDI" in QSP lit ≠ Rick's pair — may be "DIII"). Kobayashi fences deep read: {ξ_i + δν_j = ±½}, (O(n+1),O(n)) only; R-AXIS=1 → single BDI fence. NEW TYPE D CRYSTAL PRECEDENTS: Frohmader 2312.11295 (GL_n↓O_n crystals, 1 cite) + Watanabe 2107.00170 (AI crystal GL_n↓SO_n, 4 cites) — BDI analogue of both is open. NEW PAPER: Stroppel-Wang 2601.18709 (QSP weight modules type AIII). Ressayre-Richmond ZERO citations 2022-2026 CONFIRMED. FPSAC full schedule posted, no BDI talks. Meereboer-Kolb preprint absent T+7d. Log: `reading/2026-06-16-browse66.md`.
 - **Browse 65 (2026-06-16) — DONE.** Type D eigencone confirmed open: Schuster 1608.06215 has ZERO citations ever; Ressayre-Richmond 0909.0865 last cited 2021. NEW: Kolb-Stephens 2024 (2407.15538) proves GT bases for U_q(so(2N)) via type DII QSP — adjacent to BDI. Kobayashi 2604.22262 "fences" for orthogonal Gelfand pairs = Rick's axis walls in disguise. AII crystal branching proved (two methods); BDI analogue wide open. NEW: Smilga MO 476063 (2024, Pin group branching, zero answers) = answering opportunity. Meereboer email corrected to stein.meereboer@ru.nl. Log: `reading/2026-06-16.md`.
 - **Day 72 (2026-06-17 timestamp / 2026-06-15 wall-clock) — DONE.** PROVE: R-AXIS cover-restricted
@@ -670,6 +684,10 @@ arbitrary types; companion to Browse 63's Belkale-Kiers 2023 paper.
 | Watanabe 2107.00170 | 4 | NEW Browse 66. AI crystal / GL_n↓SO_n tableaux. BDI analogue (GL(n)↓SO(2n)) does not exist. HIGH PRIORITY READ. |
 | Stroppel-Wang 2601.18709 | 0 | NEW Browse 66. Weight modules for QSP type (gl_4,gl_2×gl_2). Infrastructure toward type D. |
 | Biswas 2402.01436 | 0 | **CLOSED Browse 66.** SO(q)⊂SO(p) all ranks — same-type embedding only, NOT GL(n)↪SO(2n). |
+| Bae-Kwon 2506.05959 | 0 | NEW Browse 67. "q-deformed Howe duality for orthosymplectic Lie superalgebras" (June 2026). Cites Watanabe 2107.00170. NEW June 2026 citer of Watanabe's AI paper. OQ-BAE-KWON-ORTHOSYMPLECTIC (MEDIUM). |
+| Frohmader-Heaton 2402.16198 | 0 | NEW Browse 67. Sole citer of Frohmader 2312.11295. Extends Kostant-Rallis graded multiplicities to cyclic quiver θ-groups. Direct Frohmader follow-up. |
+| Colarusso-Erickson-Frohmader-Willenbring 2502.19505 | 0 | NEW Browse 67. Howe duality for K_R-type multiplicities in O_k, GL_k, Sp_{2k}. Found in Frohmader's reference list. LOW priority. |
+| arXiv:2309.17085 | — | NEW Browse 67 (used for naming resolution). "Double flag varieties for symmetric pairs." Lists (DIII)=(SO_{2n},GL_n), (BDI)=(SO_n,SO_p×SO_q). Confirmed Rick's pair = DIII. |
 
 ---
 
