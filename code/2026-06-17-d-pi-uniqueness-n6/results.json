@@ -1,0 +1,76 @@
+{
+  "interior": [
+    2,
+    3,
+    4
+  ],
+  "by_i": {
+    "2": {
+      "verdict": "FAIL",
+      "n_distinct_classes_simpdiv": 3,
+      "pairwise_equivalent": {
+        "0-1": false,
+        "1-2": false,
+        "0-2": false
+      },
+      "per_alpha_n_feasible": {
+        "0": 93312,
+        "1": 62208,
+        "2": 15552
+      },
+      "n_distinct_sig_alpha_classes": 163944,
+      "containment_counts_by_alpha": {
+        "0": 6,
+        "1": 6,
+        "2": 6
+      },
+      "n_not_contained": 171054,
+      "n_not_contained_sigs": 163929
+    },
+    "3": {
+      "verdict": "FAIL",
+      "n_distinct_classes_simpdiv": 3,
+      "pairwise_equivalent": {
+        "0-1": false,
+        "1-2": false,
+        "0-2": false
+      },
+      "per_alpha_n_feasible": {
+        "0": 93312,
+        "1": 62208,
+        "2": 15552
+      },
+      "n_distinct_sig_alpha_classes": 163944,
+      "containment_counts_by_alpha": {
+        "0": 6,
+        "1": 6,
+        "2": 6
+      },
+      "n_not_contained": 171054,
+      "n_not_contained_sigs": 163929
+    },
+    "4": {
+      "verdict": "FAIL",
+      "n_distinct_classes_simpdiv": 3,
+      "pairwise_equivalent": {
+        "0-1": false,
+        "1-2": false,
+        "0-2": false
+      },
+      "per_alpha_n_feasible": {
+        "0": 93312,
+        "1": 62208,
+        "2": 15552
+      },
+      "n_distinct_sig_alpha_classes": 163944,
+      "containment_counts_by_alpha": {
+        "0": 6,
+        "1": 6,
+        "2": 6
+      },
+      "n_not_contained": 171054,
+      "n_not_contained_sigs": 163929
+    }
+  },
+  "overall_verdict": "FAIL"
+}

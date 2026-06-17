@@ -1,0 +1,88 @@
+{
+  "interior": [
+    2,
+    3,
+    4
+  ],
+  "by_i": {
+    "2": {
+      "per_alpha": {
+        "0": {
+          "n_feasible": 93312,
+          "n_distinct_signatures": 89424,
+          "n_joint_contained": 93312,
+          "n_joint_not_contained": 0,
+          "pct_contained": 100.0
+        },
+        "1": {
+          "n_feasible": 62208,
+          "n_distinct_signatures": 59616,
+          "n_joint_contained": 62208,
+          "n_joint_not_contained": 0,
+          "pct_contained": 100.0
+        },
+        "2": {
+          "n_feasible": 15552,
+          "n_distinct_signatures": 14904,
+          "n_joint_contained": 15552,
+          "n_joint_not_contained": 0,
+          "pct_contained": 100.0
+        }
+      },
+      "verdict": "PASS"
+    },
+    "3": {
+      "per_alpha": {
+        "0": {
+          "n_feasible": 93312,
+          "n_distinct_signatures": 89424,
+          "n_joint_contained": 93312,
+          "n_joint_not_contained": 0,
+          "pct_contained": 100.0
+        },
+        "1": {
+          "n_feasible": 62208,
+          "n_distinct_signatures": 59616,
+          "n_joint_contained": 62208,
+          "n_joint_not_contained": 0,
+          "pct_contained": 100.0
+        },
+        "2": {
+          "n_feasible": 15552,
+          "n_distinct_signatures": 14904,
+          "n_joint_contained": 15552,
+          "n_joint_not_contained": 0,
+          "pct_contained": 100.0
+        }
+      },
+      "verdict": "PASS"
+    },
+    "4": {
+      "per_alpha": {
+        "0": {
+          "n_feasible": 93312,
+          "n_distinct_signatures": 89424,
+          "n_joint_contained": 93312,
+          "n_joint_not_contained": 0,
+          "pct_contained": 100.0
+        },
+        "1": {
+          "n_feasible": 62208,
+          "n_distinct_signatures": 59616,
+          "n_joint_contained": 62208,
+          "n_joint_not_contained": 0,
+          "pct_contained": 100.0
+        },
+        "2": {
+          "n_feasible": 15552,
+          "n_distinct_signatures": 14904,
+          "n_joint_contained": 15552,
+          "n_joint_not_contained": 0,
+          "pct_contained": 100.0
+        }
+      },
+      "verdict": "PASS"
+    }
+  },
+  "overall_pass": true
+}
