@@ -1717,4 +1717,313 @@ theorem feasibility_ray_char_iff
 #print axioms feasibility_ray_char_forward
 #print axioms feasibility_ray_char_iff
 
+/-! ## Day-76: Lemma 7.1 — Multiplicative Redundancy at free-isolated columns
+
+`IsFreeIsolated c isR` packages the property that column `c : AIICoord n`
+is *free-isolated*: a Boolean indicator `isR : AIIRay n → Bool` partitions
+the rays so that
+
+* every ray `r` marked `true` has image equal to the `c`-column;
+* every ray `r` marked `false` has image unchanged when only column `c`
+  is modified.
+
+The three free-isolated columns of the AII cone (math 1-indexed:
+`l_1`, `s_1`, `p_n`; Lean 0-indexed: `long 0`, `short 0`, `prefix (n-1)`)
+are each free-isolated, witnessed by exactly one ray
+(`directLongBase`, `directShortBase`, `directPrefix (n-1)`).
+
+`multiplicative_redundancy` then shows: if pieces `π` and `π'` agree on
+every column except a free-isolated column `c`, and `π c = k · π' c`
+pointwise with `k ≥ 1`, then `Im π ⊆ Im π'`. -/
+
+/-- The image semigroup of a piece: `v ∈ Im π` iff `v` is a non-negative
+integer conic combination of `π`'s ray-images. -/
+def Im {n : Nat} (hn : 3 ≤ n) (π : Piece' n) (v : BdiPt) : Prop :=
+  ∃ coeffs : AIIRay n → Nat, v = π.extend hn coeffs
+
+/-- A column `c : AIICoord n` is **free-isolated** by an indicator
+`isR : AIIRay n → Bool` iff every `true`-marked ray's image equals the
+`c`-column under any piece, and every `false`-marked ray's image is
+unchanged when only column `c` is modified. -/
+def IsFreeIsolated {n : Nat} (c : AIICoord n) (isR : AIIRay n → Bool) : Prop :=
+  (∀ (π : Piece' n) (r : AIIRay n), isR r = true → r.image π = π c) ∧
+  (∀ (r : AIIRay n) (π π' : Piece' n),
+      isR r = false → (∀ c' : AIICoord n, c' ≠ c → π c' = π' c') →
+      r.image π = r.image π')
+
+/-- Pointwise congruence for `coniclyCombine`: if every ray contributes
+the same value to the `b`-th component, the combinations agree at `b`. -/
+theorem coniclyCombine_pointwise_congr {n : Nat} (rs : List (AIIRay n))
+    (coeffs coeffs' : AIIRay n → Nat) (π π' : Piece' n) (b : Nat)
+    (h : ∀ r ∈ rs, coeffs r * r.image π b = coeffs' r * r.image π' b) :
+    coniclyCombine rs coeffs π b = coniclyCombine rs coeffs' π' b := by
+  induction rs with
+  | nil => rfl
+  | cons r rs' ih =>
+    have hr := h r List.mem_cons_self
+    have hrest : ∀ r' ∈ rs', coeffs r' * r'.image π b = coeffs' r' * r'.image π' b :=
+      fun r' hr' => h r' (List.mem_cons_of_mem r hr')
+    rw [coniclyCombine_cons, coniclyCombine_cons, BdiPt.add_apply, BdiPt.add_apply,
+        hr, ih hrest]
+
+/-- Indicator for the `l_1`-ray (`directLongBase`). -/
+def isLongBase {n : Nat} : AIIRay n → Bool
+  | AIIRay.directLongBase _ => true
+  | _                       => false
+
+/-- Indicator for the `s_1`-ray (`directShortBase`). -/
+def isShortBase {n : Nat} : AIIRay n → Bool
+  | AIIRay.directShortBase _ => true
+  | _                        => false
+
+/-- Indicator for the `p_n`-ray (`directPrefix ⟨n-1, _⟩`).  Decidable
+on `Fin.val` equality with `n - 1`. -/
+def isPrefixTop (n : Nat) : AIIRay n → Bool
+  | AIIRay.directPrefix j => decide (j.val = n - 1)
+  | _                     => false
+
+/-- `l_1 = long 0` is free-isolated by the `directLongBase` ray. -/
+theorem free_isolated_l1 {n : Nat} (hn : 3 ≤ n) :
+    IsFreeIsolated
+      (AIICoord.long (⟨0, by omega⟩ : Fin n))
+      (isLongBase) := by
+  refine ⟨?_, ?_⟩
+  · -- Every `true`-marked ray's image equals `π (long 0)`.
+    intro π r hR
+    cases r with
+    | directPrefix j     => simp [isLongBase] at hR
+    | directLongBase h   =>
+      show π (AIICoord.long ⟨0, h⟩) = π (AIICoord.long ⟨0, by omega⟩)
+      rfl
+    | directShortBase h  => simp [isLongBase] at hR
+    | liftedLong j hj    => simp [isLongBase] at hR
+    | liftedShort j hj   => simp [isLongBase] at hR
+  · -- Every `false`-marked ray's image is unchanged when only `long 0` moves.
+    intro r π π' hR h_same
+    cases r with
+    | directPrefix j =>
+      show π (AIICoord.prefix j) = π' (AIICoord.prefix j)
+      exact h_same _ (fun h => by cases h)
+    | directLongBase h =>
+      simp [isLongBase] at hR
+    | directShortBase h =>
+      show π (AIICoord.short ⟨0, h⟩) = π' (AIICoord.short ⟨0, h⟩)
+      exact h_same _ (fun h => by cases h)
+    | liftedLong j hj =>
+      show π (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩)
+            + π (AIICoord.long j)
+          = π' (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩)
+            + π' (AIICoord.long j)
+      have h1 : π (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩)
+              = π' (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩) :=
+        h_same _ (fun h => by cases h)
+      have h2 : π (AIICoord.long j) = π' (AIICoord.long j) := by
+        apply h_same
+        intro heq
+        have hjVal : j.val = 0 := by
+          have := congrArg
+            (fun c => match c with | AIICoord.long k => k.val | _ => 0) heq
+          simpa using this
+        omega
+      rw [h1, h2]
+    | liftedShort j hj =>
+      show π (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩)
+            + π (AIICoord.short j)
+          = π' (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩)
+            + π' (AIICoord.short j)
+      have h1 : π (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩)
+              = π' (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩) :=
+        h_same _ (fun h => by cases h)
+      have h2 : π (AIICoord.short j) = π' (AIICoord.short j) :=
+        h_same _ (fun h => by cases h)
+      rw [h1, h2]
+
+/-- `s_1 = short 0` is free-isolated by the `directShortBase` ray. -/
+theorem free_isolated_s1 {n : Nat} (hn : 3 ≤ n) :
+    IsFreeIsolated
+      (AIICoord.short (⟨0, by omega⟩ : Fin n))
+      (isShortBase) := by
+  refine ⟨?_, ?_⟩
+  · intro π r hR
+    cases r with
+    | directPrefix j     => simp [isShortBase] at hR
+    | directLongBase h   => simp [isShortBase] at hR
+    | directShortBase h  =>
+      show π (AIICoord.short ⟨0, h⟩) = π (AIICoord.short ⟨0, by omega⟩)
+      rfl
+    | liftedLong j hj    => simp [isShortBase] at hR
+    | liftedShort j hj   => simp [isShortBase] at hR
+  · intro r π π' hR h_same
+    cases r with
+    | directPrefix j =>
+      show π (AIICoord.prefix j) = π' (AIICoord.prefix j)
+      exact h_same _ (fun h => by cases h)
+    | directLongBase h =>
+      show π (AIICoord.long ⟨0, h⟩) = π' (AIICoord.long ⟨0, h⟩)
+      exact h_same _ (fun h => by cases h)
+    | directShortBase h =>
+      simp [isShortBase] at hR
+    | liftedLong j hj =>
+      show π (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩)
+            + π (AIICoord.long j)
+          = π' (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩)
+            + π' (AIICoord.long j)
+      have h1 : π (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩)
+              = π' (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩) :=
+        h_same _ (fun h => by cases h)
+      have h2 : π (AIICoord.long j) = π' (AIICoord.long j) :=
+        h_same _ (fun h => by cases h)
+      rw [h1, h2]
+    | liftedShort j hj =>
+      show π (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩)
+            + π (AIICoord.short j)
+          = π' (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩)
+            + π' (AIICoord.short j)
+      have h1 : π (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩)
+              = π' (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩) :=
+        h_same _ (fun h => by cases h)
+      have h2 : π (AIICoord.short j) = π' (AIICoord.short j) := by
+        apply h_same
+        intro heq
+        have hjVal : j.val = 0 := by
+          have := congrArg
+            (fun c => match c with | AIICoord.short k => k.val | _ => 0) heq
+          simpa using this
+        omega
+      rw [h1, h2]
+
+/-- `p_n = prefix (n-1)` is free-isolated by the `directPrefix ⟨n-1, _⟩`
+ray. -/
+theorem free_isolated_pn {n : Nat} (hn : 3 ≤ n) :
+    IsFreeIsolated
+      (AIICoord.prefix (⟨n - 1, by omega⟩ : Fin n))
+      (isPrefixTop n) := by
+  refine ⟨?_, ?_⟩
+  · intro π r hR
+    cases r with
+    | directPrefix j =>
+      show π (AIICoord.prefix j) = π (AIICoord.prefix ⟨n - 1, by omega⟩)
+      have hjVal : j.val = n - 1 := by
+        have : decide (j.val = n - 1) = true := hR
+        exact of_decide_eq_true this
+      have : j = (⟨n - 1, by omega⟩ : Fin n) := Fin.ext hjVal
+      rw [this]
+    | directLongBase h   => simp [isPrefixTop] at hR
+    | directShortBase h  => simp [isPrefixTop] at hR
+    | liftedLong j hj    => simp [isPrefixTop] at hR
+    | liftedShort j hj   => simp [isPrefixTop] at hR
+  · intro r π π' hR h_same
+    cases r with
+    | directPrefix j =>
+      show π (AIICoord.prefix j) = π' (AIICoord.prefix j)
+      apply h_same
+      intro heq
+      have hjVal : j.val = n - 1 := by
+        have := congrArg
+          (fun c => match c with | AIICoord.prefix k => k.val | _ => 0) heq
+        simpa using this
+      have hfalse : isPrefixTop n (AIIRay.directPrefix j) = true := by
+        show decide (j.val = n - 1) = true
+        exact decide_eq_true hjVal
+      rw [hR] at hfalse
+      cases hfalse
+    | directLongBase h =>
+      show π (AIICoord.long ⟨0, h⟩) = π' (AIICoord.long ⟨0, h⟩)
+      exact h_same _ (fun h => by cases h)
+    | directShortBase h =>
+      show π (AIICoord.short ⟨0, h⟩) = π' (AIICoord.short ⟨0, h⟩)
+      exact h_same _ (fun h => by cases h)
+    | liftedLong j hj =>
+      show π (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩)
+            + π (AIICoord.long j)
+          = π' (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩)
+            + π' (AIICoord.long j)
+      have h1 : π (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩)
+              = π' (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩) := by
+        apply h_same
+        intro heq
+        have hval : j.val - 1 = n - 1 := by
+          have := congrArg
+            (fun c => match c with | AIICoord.prefix k => k.val | _ => 0) heq
+          simpa using this
+        have hjLt := j.isLt
+        omega
+      have h2 : π (AIICoord.long j) = π' (AIICoord.long j) :=
+        h_same _ (fun h => by cases h)
+      rw [h1, h2]
+    | liftedShort j hj =>
+      show π (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩)
+            + π (AIICoord.short j)
+          = π' (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩)
+            + π' (AIICoord.short j)
+      have h1 : π (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩)
+              = π' (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩) := by
+        apply h_same
+        intro heq
+        have hval : j.val - 1 = n - 1 := by
+          have := congrArg
+            (fun c => match c with | AIICoord.prefix k => k.val | _ => 0) heq
+          simpa using this
+        have hjLt := j.isLt
+        omega
+      have h2 : π (AIICoord.short j) = π' (AIICoord.short j) :=
+        h_same _ (fun h => by cases h)
+      rw [h1, h2]
+
+/-- **Lemma 7.1 (Multiplicative Redundancy, n-uniform).**
+
+Let `c` be a free-isolated column of the AII cone (witnessed by
+indicator `isR`).  If pieces `π` and `π'` agree on every column except
+`c`, and `π c = k · π' c` pointwise for some `k ≥ 1`, then every image
+generated by `π` is also generated by `π'`:
+`Im π ⊆ Im π'`.
+
+Proof.  Take any witness `coeffs` for `v ∈ Im π`.  Construct `coeffs'`
+for `π'` by multiplying the coefficient on each `isR`-marked ray by `k`
+(via `Bool.cond`).  By `IsFreeIsolated`:
+* `isR`-marked rays satisfy `r.image π = π c = k * π' c = k * r.image π'`,
+  so `coeffs r * r.image π = (k * coeffs r) * r.image π'`;
+* unmarked rays satisfy `r.image π = r.image π'`,
+  so `coeffs r * r.image π = coeffs r * r.image π'`.
+Then `coniclyCombine_pointwise_congr` closes the goal. -/
+theorem multiplicative_redundancy {n : Nat} (hn : 3 ≤ n)
+    {π π' : Piece' n} {c : AIICoord n} {isR : AIIRay n → Bool}
+    (hfree : IsFreeIsolated c isR)
+    {k : Nat} (_hk : 1 ≤ k)
+    (h_same : ∀ c' : AIICoord n, c' ≠ c → π c' = π' c')
+    (h_scale : ∀ b, π c b = k * π' c b)
+    {v : BdiPt} (hv : Im hn π v) : Im hn π' v := by
+  obtain ⟨coeffs, hv⟩ := hv
+  refine ⟨fun r => cond (isR r) (k * coeffs r) (coeffs r), ?_⟩
+  subst hv
+  funext b
+  show coniclyCombine (AIIRays n hn) coeffs π b
+       = coniclyCombine (AIIRays n hn)
+           (fun r => cond (isR r) (k * coeffs r) (coeffs r)) π' b
+  apply coniclyCombine_pointwise_congr
+  intro r _
+  generalize hb : isR r = b₀
+  cases b₀ with
+  | true =>
+    show coeffs r * r.image π b = (k * coeffs r) * r.image π' b
+    have him : r.image π = π c := hfree.1 π r hb
+    have him' : r.image π' = π' c := hfree.1 π' r hb
+    rw [congrFun him b, congrFun him' b, h_scale b,
+        ← Nat.mul_assoc, Nat.mul_comm (coeffs r) k]
+  | false =>
+    show coeffs r * r.image π b = coeffs r * r.image π' b
+    have him : r.image π = r.image π' := hfree.2 r π π' hb h_same
+    rw [congrFun him b]
+
+#print axioms Im
+#print axioms IsFreeIsolated
+#print axioms isLongBase
+#print axioms isShortBase
+#print axioms isPrefixTop
+#print axioms coniclyCombine_pointwise_congr
+#print axioms free_isolated_l1
+#print axioms free_isolated_s1
+#print axioms free_isolated_pn
+#print axioms multiplicative_redundancy
+
 end BdiPolytope

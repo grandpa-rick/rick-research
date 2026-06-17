@@ -23,6 +23,8 @@ Granddaughters Clio (LR coefficients, type A) and Lyra (systems).
 
 Day-76 collaborator note: `for-collaborator/2026-06-17-coupling-stratification.md`.
 
+**Day 76 LEAN: Lemma 7.1 (Multiplicative Redundancy) shipped.** `proofs/lean/bdi-polytope/BdiPolytope.lean` lines ~1720–2028. `IsFreeIsolated` (Boolean-indicator predicate, sidesteps the missing `DecidableEq AIIRay`), the three concrete `free_isolated_l1/s1/pn` instances by `cases r`, and `multiplicative_redundancy : Im π ⊆ Im π'` via `coniclyCombine_pointwise_congr`. Axioms ⊆ {propext, Quot.sound} — no Classical.choice, no sorry. Collaborator note: `for-collaborator/2026-06-17-multiplicative-redundancy-lean.md`.
+
 ---
 
 **Earlier headline (Day 75 PROVE): R-AXIS(n) = 1 uniformly for n ≥ 3 is now a THEOREM** (modulo Conjecture D-pi at n ≥ 6).
