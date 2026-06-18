@@ -1,0 +1,576 @@
+{
+  "by_i_alpha": {
+    "i=2_alpha=1": {
+      "carriers": [
+        "simpdiv_p2_a1",
+        "aux_class1_p2"
+      ],
+      "n_carrier_unique_rays": 3,
+      "carrier_unique_rays": [
+        {
+          "vec": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          "coords": {
+            "B1": 1,
+            "B2": 1,
+            "B3": 1,
+            "B5": 1,
+            "T1": 1,
+            "T3": 1,
+            "T5": 1,
+            "S": 1
+          },
+          "sum": 8
+        },
+        {
+          "vec": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          "coords": {
+            "B2": 1,
+            "B3": 1,
+            "B5": 1,
+            "T3": 1,
+            "T5": 1,
+            "S": 1
+          },
+          "sum": 6
+        },
+        {
+          "vec": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "coords": {
+            "B2": 1,
+            "S": 1
+          },
+          "sum": 2
+        }
+      ],
+      "lifted_long_covers_all_unique": true,
+      "lifted_short_covers_all_unique": true
+    },
+    "i=2_alpha=2": {
+      "carriers": [
+        "simpdiv_p2_a2"
+      ],
+      "n_carrier_unique_rays": 2,
+      "carrier_unique_rays": [
+        {
+          "vec": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1,
+            2
+          ],
+          "coords": {
+            "B2": 1,
+            "B3": 1,
+            "B5": 1,
+            "T3": 1,
+            "T5": 1,
+            "S": 2
+          },
+          "sum": 7
+        },
+        {
+          "vec": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          "coords": {
+            "B2": 1,
+            "S": 2
+          },
+          "sum": 3
+        }
+      ],
+      "lifted_long_covers_all_unique": true,
+      "lifted_short_covers_all_unique": true
+    },
+    "i=3_alpha=1": {
+      "carriers": [
+        "simpdiv_p3_a1",
+        "aux_class1_p3"
+      ],
+      "n_carrier_unique_rays": 3,
+      "carrier_unique_rays": [
+        {
+          "vec": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          "coords": {
+            "B2": 1,
+            "B3": 1,
+            "B4": 1,
+            "B5": 1,
+            "T2": 1,
+            "T4": 1,
+            "T5": 1,
+            "S": 1
+          },
+          "sum": 8
+        },
+        {
+          "vec": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "coords": {
+            "B3": 1,
+            "B4": 1,
+            "B5": 1,
+            "T4": 1,
+            "T5": 1,
+            "S": 1
+          },
+          "sum": 6
+        },
+        {
+          "vec": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "coords": {
+            "B3": 1,
+            "S": 1
+          },
+          "sum": 2
+        }
+      ],
+      "lifted_long_covers_all_unique": true,
+      "lifted_short_covers_all_unique": true
+    },
+    "i=3_alpha=2": {
+      "carriers": [
+        "simpdiv_p3_a2"
+      ],
+      "n_carrier_unique_rays": 2,
+      "carrier_unique_rays": [
+        {
+          "vec": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2
+          ],
+          "coords": {
+            "B3": 1,
+            "B4": 1,
+            "B5": 1,
+            "T4": 1,
+            "T5": 1,
+            "S": 2
+          },
+          "sum": 7
+        },
+        {
+          "vec": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          "coords": {
+            "B3": 1,
+            "S": 2
+          },
+          "sum": 3
+        }
+      ],
+      "lifted_long_covers_all_unique": true,
+      "lifted_short_covers_all_unique": true
+    },
+    "i=4_alpha=1": {
+      "carriers": [
+        "simpdiv_p4_a1",
+        "aux_class1_p4"
+      ],
+      "n_carrier_unique_rays": 3,
+      "carrier_unique_rays": [
+        {
+          "vec": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1
+          ],
+          "coords": {
+            "B4": 1,
+            "B5": 2,
+            "T5": 2,
+            "S": 1
+          },
+          "sum": 6
+        },
+        {
+          "vec": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            0,
+            0,
+            1,
+            0,
+            2,
+            1
+          ],
+          "coords": {
+            "B3": 1,
+            "B4": 1,
+            "B5": 2,
+            "T3": 1,
+            "T5": 2,
+            "S": 1
+          },
+          "sum": 8
+        },
+        {
+          "vec": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "coords": {
+            "B4": 1,
+            "S": 1
+          },
+          "sum": 2
+        }
+      ],
+      "lifted_long_covers_all_unique": true,
+      "lifted_short_covers_all_unique": true
+    },
+    "i=4_alpha=2": {
+      "carriers": [
+        "simpdiv_p4_a2"
+      ],
+      "n_carrier_unique_rays": 2,
+      "carrier_unique_rays": [
+        {
+          "vec": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2
+          ],
+          "coords": {
+            "B4": 1,
+            "S": 2
+          },
+          "sum": 3
+        },
+        {
+          "vec": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            2,
+            0,
+            0,
+            0,
+            0,
+            2,
+            2
+          ],
+          "coords": {
+            "B4": 1,
+            "B5": 2,
+            "T5": 2,
+            "S": 2
+          },
+          "sum": 7
+        }
+      ],
+      "lifted_long_covers_all_unique": true,
+      "lifted_short_covers_all_unique": true
+    }
+  },
+  "summary": {
+    "all_droppable_max_sum_8": true
+  },
+  "deep_results_max_sum_8": [
+    {
+      "i": 2,
+      "alpha": 1,
+      "witness_kind": "lifted_long",
+      "max_sum": 8,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true
+    },
+    {
+      "i": 2,
+      "alpha": 1,
+      "witness_kind": "lifted_short",
+      "max_sum": 8,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true
+    },
+    {
+      "i": 2,
+      "alpha": 2,
+      "witness_kind": "lifted_long",
+      "max_sum": 8,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true
+    },
+    {
+      "i": 2,
+      "alpha": 2,
+      "witness_kind": "lifted_short",
+      "max_sum": 8,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true
+    },
+    {
+      "i": 3,
+      "alpha": 1,
+      "witness_kind": "lifted_long",
+      "max_sum": 8,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true
+    },
+    {
+      "i": 3,
+      "alpha": 1,
+      "witness_kind": "lifted_short",
+      "max_sum": 8,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true
+    },
+    {
+      "i": 3,
+      "alpha": 2,
+      "witness_kind": "lifted_long",
+      "max_sum": 8,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true
+    },
+    {
+      "i": 3,
+      "alpha": 2,
+      "witness_kind": "lifted_short",
+      "max_sum": 8,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true
+    },
+    {
+      "i": 4,
+      "alpha": 1,
+      "witness_kind": "lifted_long",
+      "max_sum": 8,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true
+    },
+    {
+      "i": 4,
+      "alpha": 1,
+      "witness_kind": "lifted_short",
+      "max_sum": 8,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true
+    },
+    {
+      "i": 4,
+      "alpha": 2,
+      "witness_kind": "lifted_long",
+      "max_sum": 8,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true
+    },
+    {
+      "i": 4,
+      "alpha": 2,
+      "witness_kind": "lifted_short",
+      "max_sum": 8,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true
+    }
+  ]
+}

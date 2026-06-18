@@ -1,0 +1,255 @@
+{
+  "n": 6,
+  "max_sum": 6,
+  "n_pieces": 53,
+  "n_distinct_rays": 64,
+  "original_image_size": 4123,
+  "checks": [
+    {
+      "i": 2,
+      "alpha": 1,
+      "witness_kind": "lifted_long",
+      "carrier_names": [
+        "simpdiv_p2_a1",
+        "aux_class1_p2"
+      ],
+      "n_carriers": 2,
+      "T_coords": {
+        "B2": 1,
+        "S": 1
+      },
+      "max_sum": 6,
+      "original_image_size": 4123,
+      "modified_image_size": 4123,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "i": 2,
+      "alpha": 1,
+      "witness_kind": "lifted_short",
+      "carrier_names": [
+        "simpdiv_p2_a1",
+        "aux_class1_p2"
+      ],
+      "n_carriers": 2,
+      "T_coords": {
+        "B2": 1,
+        "S": 1
+      },
+      "max_sum": 6,
+      "original_image_size": 4123,
+      "modified_image_size": 4123,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "i": 2,
+      "alpha": 2,
+      "witness_kind": "lifted_long",
+      "carrier_names": [
+        "simpdiv_p2_a2"
+      ],
+      "n_carriers": 1,
+      "T_coords": {
+        "B2": 1,
+        "S": 2
+      },
+      "max_sum": 6,
+      "original_image_size": 4123,
+      "modified_image_size": 4123,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "i": 2,
+      "alpha": 2,
+      "witness_kind": "lifted_short",
+      "carrier_names": [
+        "simpdiv_p2_a2"
+      ],
+      "n_carriers": 1,
+      "T_coords": {
+        "B2": 1,
+        "S": 2
+      },
+      "max_sum": 6,
+      "original_image_size": 4123,
+      "modified_image_size": 4123,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "i": 3,
+      "alpha": 1,
+      "witness_kind": "lifted_long",
+      "carrier_names": [
+        "simpdiv_p3_a1",
+        "aux_class1_p3"
+      ],
+      "n_carriers": 2,
+      "T_coords": {
+        "B3": 1,
+        "S": 1
+      },
+      "max_sum": 6,
+      "original_image_size": 4123,
+      "modified_image_size": 4123,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "i": 3,
+      "alpha": 1,
+      "witness_kind": "lifted_short",
+      "carrier_names": [
+        "simpdiv_p3_a1",
+        "aux_class1_p3"
+      ],
+      "n_carriers": 2,
+      "T_coords": {
+        "B3": 1,
+        "S": 1
+      },
+      "max_sum": 6,
+      "original_image_size": 4123,
+      "modified_image_size": 4123,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "i": 3,
+      "alpha": 2,
+      "witness_kind": "lifted_long",
+      "carrier_names": [
+        "simpdiv_p3_a2"
+      ],
+      "n_carriers": 1,
+      "T_coords": {
+        "B3": 1,
+        "S": 2
+      },
+      "max_sum": 6,
+      "original_image_size": 4123,
+      "modified_image_size": 4123,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "i": 3,
+      "alpha": 2,
+      "witness_kind": "lifted_short",
+      "carrier_names": [
+        "simpdiv_p3_a2"
+      ],
+      "n_carriers": 1,
+      "T_coords": {
+        "B3": 1,
+        "S": 2
+      },
+      "max_sum": 6,
+      "original_image_size": 4123,
+      "modified_image_size": 4123,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "i": 4,
+      "alpha": 1,
+      "witness_kind": "lifted_long",
+      "carrier_names": [
+        "simpdiv_p4_a1",
+        "aux_class1_p4"
+      ],
+      "n_carriers": 2,
+      "T_coords": {
+        "B4": 1,
+        "S": 1
+      },
+      "max_sum": 6,
+      "original_image_size": 4123,
+      "modified_image_size": 4123,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "i": 4,
+      "alpha": 1,
+      "witness_kind": "lifted_short",
+      "carrier_names": [
+        "simpdiv_p4_a1",
+        "aux_class1_p4"
+      ],
+      "n_carriers": 2,
+      "T_coords": {
+        "B4": 1,
+        "S": 1
+      },
+      "max_sum": 6,
+      "original_image_size": 4123,
+      "modified_image_size": 4123,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "i": 4,
+      "alpha": 2,
+      "witness_kind": "lifted_long",
+      "carrier_names": [
+        "simpdiv_p4_a2"
+      ],
+      "n_carriers": 1,
+      "T_coords": {
+        "B4": 1,
+        "S": 2
+      },
+      "max_sum": 6,
+      "original_image_size": 4123,
+      "modified_image_size": 4123,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "i": 4,
+      "alpha": 2,
+      "witness_kind": "lifted_short",
+      "carrier_names": [
+        "simpdiv_p4_a2"
+      ],
+      "n_carriers": 1,
+      "T_coords": {
+        "B4": 1,
+        "S": 2
+      },
+      "max_sum": 6,
+      "original_image_size": 4123,
+      "modified_image_size": 4123,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    }
+  ]
+}
