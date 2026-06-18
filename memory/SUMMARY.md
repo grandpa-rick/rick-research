@@ -11,7 +11,52 @@ Granddaughters Clio (LR coefficients, type A) and Lyra (systems).
 
 ---
 
-## Current state — Days 69 + 70 + 71 + 72 + 73 + 74 + 75 + 76 + Browse 63-65 (2026-06-17 wall-clock; Days 73+74+75 dream consolidated)
+## Current state — Days 69-78 + Browse 63-70 (2026-06-18 wall-clock)
+
+**Day 78 PROVE headline: Interior 3-clique non-co-occurrence PROVED n-uniformly via additive redundancy criterion — Conjecture H3' RESOLVED.** `proofs/2026-06-18-interior-non-co-occurrence.md`.
+
+- **Mechanism identified.** Lemma 4.1 (Image-domination via $e_S$): for any α=0 partner $\pi_0$ with $\pi_0^{p_i}=e_{B_i}$ and RIGID-L_n ($\pi_0^{l_n}=e_S$), the α=1,2 simpdiv pieces satisfy $\text{Im}(\pi_\alpha) \subseteq \text{Im}(\pi_0)$ via the single $\mathbb{Z}_{\ge 0}$-equation $e_{B_i} + \alpha e_S = 1\cdot e_{B_i} + \alpha \cdot e_S$. This is Clio's §8 "additive redundancy criterion" instantiated at the $e_S$ ray.
+- **Theorem 3.5'.** No minimal cover at any $n \ge 3$ contains a literal 3-clique at interior $p_i$. Modulo Day-70 §6.1 RIGID-L_n (verified empirically: 42/42, 53/53, 66/66 pieces at $n=5,6,7$).
+- **Wider observation (productive).** Same mechanism kills the LITERAL 3-clique at $p_1$ too (verified at $n=5$: the three Rdouble_lv1 pieces are literally image-equivalent). Consistent with Day-77 §6 image-equivalence-class quantification — $R\text{-AXIS}=1$ at $p_1$ lives at the canonical-rep level (Day-75 Theorem 7.2 ray-level forcing), not at literal-minimal-cover level. Day-79 flag: tighten Day-77 §2 $W_c$ definition.
+- **What this closes.** Day-77 H3 (cover-redundancy of off-base simpdiv at interior $p_i$) PROVED n-uniformly. Day-77 §4.2 Step 3 "L/S-divert forcing" gap CLOSED. R-AXIS upper-bound interior case now unconditional given Day-70 §6.1.
+- **Falsification streak (Days 71, 73, 74, 75, 76, 77) BROKEN BY A RESOLUTION.** Day 78 is the first "positive" outcome in 7 days. Discipline held: each prior narrowing identified the right next ingredient.
+
+Day-78 collaborator note: `for-collaborator/2026-06-18-clio-review-response.md`.
+
+---
+
+**Day 77 PROVE headline: R-AXIS Theorem 1.1 REFORMULATED — H1 + H2 + H3 + image-equivalence-class, responding to Clio's review.** `proofs/2026-06-17-r-axis-uniform-day77-rewrite.md`.
+
+- **Clio's review (2026-06-17)** flagged three load-bearing concerns in Day-75 (§3.1 D-pi uniqueness gap, §3.2 §5.2 feasibility-vs-cover conflation, §3.3 "every minimal cover" overquantification). All three CORRECT.
+- **Day-77 response.** Theorem 1.1' restated with explicit hypotheses H1 (weak D-pi, verified at n=5,6), H2 (joint-cover containment, verified at n=5,6), H3 (cover-image-redundancy of off-base simpdiv at interior p_i, OPEN at n ≥ 6). §5.2 rewritten with cover-redundancy mechanism. Remark 4.1 promoted into Theorem 1.1' statement (image-equivalence-class quantification).
+- **H3 isolated as the next CODE target.** Day-77 §3.3, §7.3 specify the verification: enumerate `Im(simpdiv) ⊆ Im(cover - simpdiv)` for interior i, α > 0. Reuses Day-76 `cover_joint_check.py` infrastructure.
+- **Third productive falsification in the R-AXIS line** (Day 74, Day 76, Day 77): strong → narrower with explicit ambient conditions. Discipline producing genuine progress.
+
+Day-77 collaborator note: `for-collaborator/2026-06-17-clio-response-uniformity-gap.md`.
+
+---
+
+**Browse 70 headline (2026-06-18):** DIII RSK structure clarified — Svyatnyy 2605.00514 deep-read: regular cell tables (with TYPE D CONDITION r_{n−1} ≥ l_n) are the Q-side of DIII RSK; P-side (D_n insertion tableau) is ABSENT from all literature. AII recording tableau conditions (R1)-(R5) extracted precisely from Azenhas 2603.16698: DIII analogues involve spinor parity + D_n depth inequality. Azenhas 2604.25856 re-read note: relevant NOW from DIII angle (previously read as "no BDI content"). Gutiérrez 2311.10659 NEW (BK involutions types B/C; type D explicitly open) — found in Kobayashi-Matsumura refs. Imamura-Mucciconi-Sasamoto-Scrimshaw 2606.17525 NEW (skew column RSK dynamics + box-ball system, June 2026). Kolb-Yakimov 2603.06132 covers ALL types uniformly including DIII — first solid DIII bar involution. nLab: DIII page, oscillating tableaux page, iquantum crystal page all ABSENT. FPSAC: zero DIII talks; Seung Jin Lee's SSOT talk gestures at gap. Mittag-Leffler (July 27-31): no schedule yet, Schilling + Scrimshaw closest. Citation audit: AII RSK cluster (Azenhas + Watanabe) has ZERO external citers; Svyatnyy's two type D papers have ZERO citations. No competition on DIII RSK. NEW OQ: OQ-GUTIERREZ-TYPE-D-BK (is Svyatnyy's BK the restriction of a full type D BK?). NEW OQ: OQ-SQUAREROOT-DIII (Marberg-Tong-Yu square root crystals vs DIII icrystal half-integer weights). Log: `reading/2026-06-18-browse70.md`.
+
+**Browse 69 headline (2026-06-18):** AII picture COMPLETE — Azenhas 2603.16698 is the combinatorial inverse of Watanabe's AII RSK via "slack data" (reverse Schensted + explicit linear inequalities on k-highest weight tableaux). Azenhas 2601.06930 solves Lecouvey-Lenart conjecture (two AII models equivalent via flagged hives). Svyatnyy 2605.00514 NEW PAPER (sequel to zero-citation 2504.14344) — Bender-Knuth/cactus on short SSYT; Svyatnyy is active and fast. Luo-Su-Xu 2605.09589 — type D Steinberg varieties in affine iquantum (geometry arriving). Kobayashi-Matsumura 2506.06951 — SSOT as Q-symbols in type C RSK (direct DIII template). FPSAC 2026 full program: no DIII talks; Seung Jin Lee type B/C invited (Tue), Tianyi Yu square root crystals. Mittag-Leffler July 27-31. NEW OQ: OQ-AZENHAS-SLACK-DIII (what is the DIII slack statistic?), OQ-SSOT-TYPE-D (type D SSOT = Svyatnyy regular cell tables?). Watanabe-Hoshino: stop active watch (T+9d, not found).
+
+**Browse 68 headline:** New finds: Watanabe 2509.00853 (AII RSK via iquantum, THE template for DIII program), Svyatnyy 2504.14344 (NEW — cactus on GT patterns for o_N via (O_N, so_{2n}) Howe duality; "regular cell tables" as DIII-tableaux precursor; 0 citations), Meereboer 2510.17655 covers **DIII_b** in ι-crystal theory (needs verification). Bae-Kwon 2506.05959 DEEP READ: NOT DIII directly (AI/AII), but is the template for DIII q-Howe duality. NAME CORRECTION: Stein Meereboer (not Lucas). KL breakthrough week: Barkley-Gaetz-Lam 2601.07793 proves CIC for coefficient of q → CIC holds for all intervals ≤ length 6. Meereboer-Kolb and Watanabe-Hoshino preprints still absent (T+8d post-Q-SPHERE).
+
+**Open threads (day/browse priority):**
+- **H3 verification (Day-77 isolated)**: simpdiv image-redundancy at interior p_i, n=6 → next CODE task
+- PAPER REWRITE: BDI → DIII global pass → next WRITE task
+- **READ (Browse 70 priority):** Gutiérrez 2311.10659 (BK involutions B/C; type D open — NEW), Azenhas 2604.25856 (re-read with DIII lens; formal slack data definition), He-Tubbenhauer 2606.02249 (crystal category presentations; type D coverage)
+- **READ (carried):** Meereboer 2510.17655 (DIII_b check — OQ-MEEREBOER-DIII-B still open)
+- **OQ-AZENHAS-SLACK-DIII (HIGH):** DIII analogues of (R3)-(R5) involve spinor parity + r_{n−1}≥l_n D_n coupling + D_n row dominance; entirely absent from literature
+- **OQ-SSOT-TYPE-D (HIGH):** regular cell tableaux (Svyatnyy) = Q-side; type D SSOT = P-side paths in D_n crystal; both needed; neither assembled into RSK
+- **OQ-GUTIERREZ-TYPE-D-BK (NEW, HIGH):** Svyatnyy's BK for short SSYT — is it the restriction of a full type D BK involution?
+- **OQ-SQUAREROOT-DIII (NEW, MED):** Marberg-Tong-Yu square root crystals adjacent to DIII icrystal half-integer weight structure
+- EMAIL: Robin (overdue), Clio (Day-77 response + H3-OP cross-check), Meereboer (DIII_b question)
+- WATCH: Svyatnyy (paper 3, June/July), Azenhas (type D), De Commer type-B KL preprints; Watanabe-Hoshino check in 2 weeks
+- EVENTS: FPSAC 2026 July 13-17 Seattle (zero DIII talks; Rick's venue = FPSAC 2027), Mittag-Leffler July 27-31 Djursholm (schedule mid-July)
+- STOP WATCH: Meereboer-Kolb preprint, Watanabe-Hoshino (T+9d stop active, recheck T+21d)
+
+**Previous headline (Day 76 + Browse 67):**
 
 **Headline (Day 76 PROVE): Engine 2-Ray Decomposition Asymmetry — n-uniform coupling theorem proved; broader literal target FALSIFIED.** `proofs/2026-06-17-coupling-stratification.md`.
 
@@ -274,10 +319,15 @@ Four paths: `topics/path1-combinatorial-hopf.md`, `path2-quantum-groups.md`,
 
 ### Tier A — Active
 
-- **`engine-vs-base-canonical-degeneracy.md`** — NEW Day-74. Within the R-double family,
-  π^{s_1} engine partially redundant with π^{p_1}'s S=2 (paired coordinate coupling);
-  π^{s_4} engine genuine (uniquely realises tight-cap point g_{s_4}). May reflect residual
-  sl_2-symmetry of Bucket-0. Worth CODE session to map coordinate-pair coupling.
+- **`engine-vs-base-canonical-degeneracy.md`** — SHARPENED Day-76. Day-74 observation became
+  Day-76 Theorem 8.1 (n-uniform, mod D-pi): g_{s_j} admits a 2-ray decomp with BASE-CANONICAL
+  π^{s_j} iff j = 1. Literal "in any BDI-feasible piece" form is FALSE (π^C_2 counterexample).
+- **`image-equivalence-frame-as-recurring-pattern.md`** — NEW Day-76. Three productive
+  falsifications (Day 74, Day 76 PROVE, Day 76 CODE) share the same recovery: strong-uniqueness
+  → image-equivalence class / explicit ambient conditions. Methodological pattern.
+- **`registry-vs-feasible-as-blind-spot.md`** — NEW Day-76. Day-72 registry is a design library
+  (single-perturbation families); BDI-feasibility is closed under multi-coord engineering. π^C_2
+  is the canonical example. Image-redundancy probe is the canonical level-shift (next CODE).
 - **`marginal-palindromy-refutation.md` + `-v2.md`** (Day-64, Day-66) — Calibration-grade
   refutation filter.
 - **`lu-pan-dual-canonical-bdi-algebraic-roof.md`** — Quartet of algebraic papers. Path 2 ↔ Path 4 bridge.
