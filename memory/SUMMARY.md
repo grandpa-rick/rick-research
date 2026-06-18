@@ -157,6 +157,17 @@ forms ($3n - [n \text{ even}]$ / $4n - 5$). AII rays n=8: 23 = 3n-1 ✓ (even-n 
 No sorry. No Classical.choice. Stdlib only. Note to Robin:
 `for-collaborator/2026-06-19-feasibility-ray-char-forward-lean.md`.
 
+**Day 78 LEAN: `aii_cone_generated_by_rays` DISCHARGED — Theorem 4.2 chain now
+fully axiom-free modulo `{propext, Quot.sound}`.** `BdiPolytope.lean` 2029 → 2577
+lines (+548). Constructive proof via `aiiCoeffs`: coeffs read off directly from
+`p`, prefix-direct coeff = Main_{j+1} slack. Componentwise verification with
+four pure-stdlib indicator-sum lemmas (`finRange_indicator_sum`,
+`finRange_select`, `finRange_nat_select`, `foldr_const_zero`).
+`feasibility_ray_char_lattice` now `{propext, Quot.sound}`-only.
+Tricky bit: Nat truncation around `k.val = 0` for lifted-block sums at
+`long k` / `short k` forces an extra case split. Note:
+`for-collaborator/2026-06-18-aii-cone-rays-lean.md`.
+
 **Headline (Day 71 PROVE, PRODUCTIVE FALSIFICATION): Conjecture D-pi REFUTED.**
 `proofs/2026-06-16-conjecture-d-pi.md` (commit `b1643a0`). For every n ≥ 5 and interior
 i ∈ {2, …, n−2}, π_α^(i) := base + (α copies of p_i in S row), α ∈ {0,1,2}, are BDI-feasible,

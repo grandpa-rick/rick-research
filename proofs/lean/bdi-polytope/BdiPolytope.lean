@@ -1590,23 +1590,569 @@ def InAIIPolytope {n : Nat} (p : AIIPoint n) : Prop :=
     p (AIICoord.long j) + p (AIICoord.short j) ≤
     p (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩)
 
-/-- **AII cone ray-generation (axiom — Lemma 4.1).**
+/-! ### Day-78: AII cone ray-generation (Lemma 4.1) — axiom discharged.
+
+Replaces the Day-72 axiom with a constructive proof.  For an AII lattice
+point `p`, the coefficient on each ray is read off directly from `p`:
+
+* `liftedLong  j` (`j.val ≥ 1`): coefficient `p (long j)`.
+* `liftedShort j` (`j.val ≥ 1`): coefficient `p (short j)`.
+* `directLongBase`: coefficient `p (long ⟨0, _⟩)`.
+* `directShortBase`: coefficient `p (short ⟨0, _⟩)`.
+* `directPrefix j`:
+  * if `j.val + 1 < n`: `p (prefix j) - p (long ⟨j+1,_⟩) - p (short ⟨j+1,_⟩)`,
+    nonnegative by the `Main_{j+1}` AII polytope inequality.
+  * if `j.val + 1 = n`: `p (prefix j)` (no lifted ray contributes to this prefix).
+
+Verification is componentwise over `AIICoord n = prefix ⊕ long ⊕ short`.
+Axioms ⊆ `{propext, Quot.sound}`; no `Classical.choice`, no `sorry`. -/
+
+/-- Indicator-sum over `List.finRange n`: the entry at the matching
+index dominates; others are zero.  Pure Lean stdlib (no Mathlib). -/
+private theorem finRange_indicator_sum :
+    ∀ {n : Nat} (k : Fin n) (v : Nat),
+      ((List.finRange n).map
+        (fun j : Fin n => if j = k then v else 0)).foldr (· + ·) 0 = v
+  | 0, k, _ => k.elim0
+  | n + 1, k, v => by
+    rw [List.finRange_succ, List.map_cons, List.foldr_cons, List.map_map]
+    by_cases h0 : k = 0
+    · rw [if_pos h0.symm]
+      have hmap :
+          (List.finRange n).map
+            ((fun j : Fin (n + 1) => if j = k then v else 0) ∘ Fin.succ) =
+          (List.finRange n).map (fun _ : Fin n => (0 : Nat)) := by
+        apply List.map_congr_left
+        intro j _
+        show (if Fin.succ j = k then v else 0) = 0
+        rw [if_neg]
+        intro heq
+        have hsv : (Fin.succ j).val = k.val := congrArg Fin.val heq
+        have hkv : k.val = j.val + 1 := by simpa [Fin.succ] using hsv.symm
+        have hk0 : k.val = 0 := by rw [h0]; rfl
+        omega
+      rw [hmap]
+      have hsum_zero :
+          ((List.finRange n).map (fun _ : Fin n => (0 : Nat))).foldr (· + ·) 0 = 0 := by
+        induction List.finRange n with
+        | nil => rfl
+        | cons _ t ih => simp [List.foldr_cons, ih]
+      omega
+    · have h_head_ne : ((0 : Fin (n + 1)) ≠ k) := fun h => h0 h.symm
+      rw [if_neg h_head_ne]
+      have hkpos : 0 < k.val := by
+        rcases Nat.eq_zero_or_pos k.val with hv | hv
+        · exact absurd (Fin.eq_of_val_eq (n := n + 1) (i := k) (j := 0) hv) h0
+        · exact hv
+      let k' : Fin n := ⟨k.val - 1, by have := k.isLt; omega⟩
+      have hk_succ : Fin.succ k' = k := by
+        apply Fin.eq_of_val_eq
+        show k.val - 1 + 1 = k.val
+        omega
+      have hmap :
+          (List.finRange n).map
+            ((fun j : Fin (n + 1) => if j = k then v else 0) ∘ Fin.succ) =
+          (List.finRange n).map (fun j : Fin n => if j = k' then v else 0) := by
+        apply List.map_congr_left
+        intro j _
+        show (if Fin.succ j = k then v else 0) = (if j = k' then v else 0)
+        by_cases heq : j = k'
+        · rw [if_pos heq, if_pos]; rw [heq]; exact hk_succ
+        · rw [if_neg heq, if_neg]
+          intro hsj
+          apply heq
+          apply Fin.eq_of_val_eq
+          have hval : (Fin.succ j).val = (Fin.succ k').val := by
+            rw [hk_succ]; exact congrArg Fin.val hsj
+          simpa [Fin.succ] using hval
+      rw [hmap]
+      have ih := @finRange_indicator_sum n k' v
+      omega
+
+/-- Sum of `(fun _ => 0)` over any list is `0`. -/
+private theorem foldr_const_zero {α : Type _} (l : List α) :
+    (l.map (fun _ => (0 : Nat))).foldr (· + ·) 0 = 0 := by
+  induction l with
+  | nil => rfl
+  | cons _ t ih => simp [List.foldr_cons, ih]
+
+/-- Indicator-sum variant: a multiplicative factor `f j` times the
+indicator selects the value at the matching index. -/
+private theorem finRange_select {n : Nat} (k : Fin n) (f : Fin n → Nat) :
+    ((List.finRange n).map
+      (fun j : Fin n => f j * (if k = j then 1 else 0))).foldr (· + ·) 0 = f k := by
+  have hmap :
+      (List.finRange n).map (fun j : Fin n => f j * (if k = j then 1 else 0)) =
+      (List.finRange n).map (fun j : Fin n => if j = k then f k else 0) := by
+    apply List.map_congr_left
+    intro j _
+    by_cases h : k = j
+    · rw [if_pos h, if_pos h.symm]; subst h; simp
+    · have h' : j ≠ k := fun he => h he.symm
+      rw [if_neg h, if_neg h']; simp
+  rw [hmap]
+  exact finRange_indicator_sum k (f k)
+
+/-- Indicator-sum with `Nat` comparison on `j.val`: the entry at index
+`k` (if `k < m`) dominates; otherwise the sum is `0`. -/
+private theorem finRange_nat_select (m : Nat) (k : Nat) (f : Fin m → Nat) :
+    ((List.finRange m).map
+      (fun j : Fin m => f j * (if k = j.val then 1 else 0))).foldr (· + ·) 0
+    = if h : k < m then f ⟨k, h⟩ else 0 := by
+  by_cases hk : k < m
+  · rw [dif_pos hk]
+    have hmap :
+        (List.finRange m).map (fun j : Fin m => f j * (if k = j.val then 1 else 0)) =
+        (List.finRange m).map
+          (fun j : Fin m => f j * (if (⟨k, hk⟩ : Fin m) = j then 1 else 0)) := by
+      apply List.map_congr_left
+      intro j _
+      by_cases h : k = j.val
+      · have hjk : (⟨k, hk⟩ : Fin m) = j := Fin.eq_of_val_eq h
+        rw [if_pos h, if_pos hjk]
+      · have hjk : (⟨k, hk⟩ : Fin m) ≠ j := fun he => h (congrArg Fin.val he)
+        rw [if_neg h, if_neg hjk]
+    rw [hmap]
+    exact finRange_select (⟨k, hk⟩ : Fin m) f
+  · rw [dif_neg hk]
+    have hmap :
+        (List.finRange m).map
+          (fun j : Fin m => f j * (if k = j.val then 1 else 0)) =
+        (List.finRange m).map (fun _ : Fin m => (0 : Nat)) := by
+      apply List.map_congr_left
+      intro j _
+      have : k ≠ j.val := fun he => hk (he ▸ j.isLt)
+      rw [if_neg this]; simp
+    rw [hmap]; exact foldr_const_zero _
+
+/-- `Nat`-`foldr` is additive over list concatenation. -/
+private theorem foldr_add_append (l₁ l₂ : List Nat) :
+    (l₁ ++ l₂).foldr (· + ·) 0 = l₁.foldr (· + ·) 0 + l₂.foldr (· + ·) 0 := by
+  induction l₁ with
+  | nil => simp
+  | cons _ t ih => simp [List.foldr_cons, ih, Nat.add_assoc]
+
+/-- Coefficient function used in the constructive ray-decomposition. -/
+def aiiCoeffs {n : Nat} (p : AIIPoint n) : AIIRay n → Nat
+  | AIIRay.directPrefix j =>
+      if h : j.val + 1 < n then
+        p (AIICoord.prefix j) -
+          (p (AIICoord.long ⟨j.val + 1, h⟩) +
+           p (AIICoord.short ⟨j.val + 1, h⟩))
+      else
+        p (AIICoord.prefix j)
+  | AIIRay.directLongBase h => p (AIICoord.long ⟨0, h⟩)
+  | AIIRay.directShortBase h => p (AIICoord.short ⟨0, h⟩)
+  | AIIRay.liftedLong j _ => p (AIICoord.long j)
+  | AIIRay.liftedShort j _ => p (AIICoord.short j)
+
+/-- **AII cone ray-generation (Lemma 4.1).**
 
 Every AII lattice point `p ∈ P^{AII}_ℤ` is a non-negative integer
-combination of the 3n rays.  The combination is encoded by a
-coefficient map `coeffs : AIIRay n → Nat`.
+combination of the `3n` rays.  The decomposition is via `aiiCoeffs p`.
 
-This packages the geometric content of Lemma 4.1 (informal decomposition:
-`p = p_n R_{p_n} + Σ_j δ_j R_{p_{j-1}} + l_1 R_{l_1} + s_1 R_{s_1} +
-Σ_{j ≥ 2} l_j R_{l_j} + Σ_{j ≥ 2} s_j R_{s_j}` with `δ_j = p_{j-1} -
-l_j - s_j` the Main_j slack) — deferred per Day-72 LEAN.md target B. -/
-axiom aii_cone_generated_by_rays
-    {n : Nat} (hn : 3 ≤ n) {p : AIIPoint n} (_hp : InAIIPolytope p) :
+This is the Day-78 discharge of the Day-72 axiom of the same name.
+Axioms ⊆ `{propext, Quot.sound}`. -/
+theorem aii_cone_generated_by_rays
+    {n : Nat} (hn : 3 ≤ n) {p : AIIPoint n} (hp : InAIIPolytope p) :
     ∃ coeffs : AIIRay n → Nat,
       ∀ c : AIICoord n,
         p c =
           ((AIIRays n hn).map
-             (fun r => coeffs r * r.point c)).foldr (· + ·) 0
+             (fun r => coeffs r * r.point c)).foldr (· + ·) 0 := by
+  refine ⟨aiiCoeffs p, ?_⟩
+  intro c
+  unfold AIIRays
+  rw [List.map_append, List.map_append, List.map_append,
+      foldr_add_append, foldr_add_append, foldr_add_append]
+  cases c with
+  | «prefix» k =>
+    -- (1) directPrefix block: selects `aiiCoeffs p (directPrefix k)`.
+    have h_dp :
+        ((((List.finRange n).map AIIRay.directPrefix)).map
+            (fun r => aiiCoeffs p r * r.point (AIICoord.prefix k))).foldr (· + ·) 0
+        = aiiCoeffs p (AIIRay.directPrefix k) := by
+      rw [List.map_map]
+      exact finRange_select k (fun j => aiiCoeffs p (AIIRay.directPrefix j))
+    -- (2) bases block: 0 (neither base contributes to prefix coords).
+    have h_bs :
+        ([AIIRay.directLongBase (by omega : 0 < n),
+          AIIRay.directShortBase (by omega : 0 < n)].map
+            (fun r => aiiCoeffs p r * r.point (AIICoord.prefix k))).foldr
+              (· + ·) 0 = 0 := by
+      simp [AIIRay.point]
+    -- (3) liftedLong block: `p (long ⟨k.val+1,_⟩)` if `k.val + 1 < n`, else 0.
+    have h_ll :
+        (((List.finRange (n - 1)).map (fun j =>
+             AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                               (Nat.succ_pos _))).map
+            (fun r => aiiCoeffs p r * r.point (AIICoord.prefix k))).foldr (· + ·) 0
+        = if h : k.val + 1 < n then p (AIICoord.long ⟨k.val + 1, h⟩) else 0 := by
+      rw [List.map_map]
+      show ((List.finRange (n - 1)).map (fun j =>
+            aiiCoeffs p
+              (AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                                 (Nat.succ_pos _)) *
+              (AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                                  (Nat.succ_pos _)).point
+                (AIICoord.prefix k))).foldr (· + ·) 0 = _
+      have hmap :
+          (List.finRange (n - 1)).map
+            (fun j => aiiCoeffs p
+                       (AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                                          (Nat.succ_pos _)) *
+              (AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                                  (Nat.succ_pos _)).point
+                (AIICoord.prefix k)) =
+          (List.finRange (n - 1)).map
+            (fun j : Fin (n - 1) =>
+              p (AIICoord.long ⟨j.val + 1, by have := j.isLt; omega⟩) *
+                (if k.val = j.val then 1 else 0)) := by
+        apply List.map_congr_left
+        intro j _
+        show aiiCoeffs p _ * _ = _
+        unfold aiiCoeffs
+        congr 1
+        show (if k.val + 1 = j.val + 1 then (1 : Nat) else 0) = _
+        by_cases h : k.val = j.val
+        · simp [h]
+        · rw [if_neg (by omega), if_neg h]
+      rw [hmap]
+      have := finRange_nat_select (n - 1) k.val
+        (fun j : Fin (n - 1) =>
+          p (AIICoord.long ⟨j.val + 1, by have := j.isLt; omega⟩))
+      rw [this]
+      by_cases h1 : k.val < n - 1
+      · have h2 : k.val + 1 < n := by omega
+        rw [dif_pos h1, dif_pos h2]
+      · have h2 : ¬ k.val + 1 < n := by have := k.isLt; omega
+        rw [dif_neg h1, dif_neg h2]
+    -- (4) liftedShort block: symmetric to (3) with `short` in place of `long`.
+    have h_ls :
+        (((List.finRange (n - 1)).map (fun j =>
+             AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                                (Nat.succ_pos _))).map
+            (fun r => aiiCoeffs p r * r.point (AIICoord.prefix k))).foldr (· + ·) 0
+        = if h : k.val + 1 < n then p (AIICoord.short ⟨k.val + 1, h⟩) else 0 := by
+      rw [List.map_map]
+      show ((List.finRange (n - 1)).map (fun j =>
+            aiiCoeffs p
+              (AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                                  (Nat.succ_pos _)) *
+              (AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                                   (Nat.succ_pos _)).point
+                (AIICoord.prefix k))).foldr (· + ·) 0 = _
+      have hmap :
+          (List.finRange (n - 1)).map
+            (fun j => aiiCoeffs p
+                       (AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                                           (Nat.succ_pos _)) *
+              (AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                                   (Nat.succ_pos _)).point
+                (AIICoord.prefix k)) =
+          (List.finRange (n - 1)).map
+            (fun j : Fin (n - 1) =>
+              p (AIICoord.short ⟨j.val + 1, by have := j.isLt; omega⟩) *
+                (if k.val = j.val then 1 else 0)) := by
+        apply List.map_congr_left
+        intro j _
+        show aiiCoeffs p _ * _ = _
+        unfold aiiCoeffs
+        congr 1
+        show (if k.val + 1 = j.val + 1 then (1 : Nat) else 0) = _
+        by_cases h : k.val = j.val
+        · simp [h]
+        · rw [if_neg (by omega), if_neg h]
+      rw [hmap]
+      have := finRange_nat_select (n - 1) k.val
+        (fun j : Fin (n - 1) =>
+          p (AIICoord.short ⟨j.val + 1, by have := j.isLt; omega⟩))
+      rw [this]
+      by_cases h1 : k.val < n - 1
+      · have h2 : k.val + 1 < n := by omega
+        rw [dif_pos h1, dif_pos h2]
+      · have h2 : ¬ k.val + 1 < n := by have := k.isLt; omega
+        rw [dif_neg h1, dif_neg h2]
+    rw [h_dp, h_bs, h_ll, h_ls]
+    -- Unfold the directPrefix coefficient via its dependent-if form.
+    have hc_dp : aiiCoeffs p (AIIRay.directPrefix k) =
+        if h : k.val + 1 < n then
+          p (AIICoord.prefix k) -
+            (p (AIICoord.long ⟨k.val + 1, h⟩) +
+             p (AIICoord.short ⟨k.val + 1, h⟩))
+        else p (AIICoord.prefix k) := rfl
+    rw [hc_dp]
+    by_cases h : k.val + 1 < n
+    · rw [dif_pos h, dif_pos h, dif_pos h]
+      -- `Main_{k+1}` slack: `long(k+1) + short(k+1) ≤ prefix k`.
+      have hpoly := hp ⟨k.val + 1, h⟩ (Nat.succ_pos k.val)
+      have hk_eq : (⟨(⟨k.val + 1, h⟩ : Fin n).val - 1, by
+            have := (⟨k.val + 1, h⟩ : Fin n).isLt; omega⟩ : Fin n) = k := by
+        apply Fin.eq_of_val_eq; simp
+      rw [hk_eq] at hpoly
+      omega
+    · rw [dif_neg h, dif_neg h, dif_neg h]
+      omega
+  | long k =>
+    -- (1) directPrefix block at long: 0.
+    have h_dp :
+        ((((List.finRange n).map AIIRay.directPrefix)).map
+            (fun r => aiiCoeffs p r * r.point (AIICoord.long k))).foldr (· + ·) 0 = 0 := by
+      rw [List.map_map]
+      have hmap :
+          (List.finRange n).map
+            ((fun r => aiiCoeffs p r * r.point (AIICoord.long k)) ∘
+              AIIRay.directPrefix) =
+          (List.finRange n).map (fun _ : Fin n => (0 : Nat)) := by
+        apply List.map_congr_left
+        intro j _
+        show aiiCoeffs p (AIIRay.directPrefix j) *
+            (AIIRay.directPrefix j).point (AIICoord.long k) = 0
+        simp [AIIRay.point]
+      rw [hmap]; exact foldr_const_zero _
+    -- (2) bases at long: `p (long ⟨0,_⟩)` if `k.val = 0`, else 0.
+    have h_bs :
+        ([AIIRay.directLongBase (by omega : 0 < n),
+          AIIRay.directShortBase (by omega : 0 < n)].map
+            (fun r => aiiCoeffs p r * r.point (AIICoord.long k))).foldr
+              (· + ·) 0 = if k.val = 0 then p (AIICoord.long ⟨0, by omega⟩) else 0 := by
+      show aiiCoeffs p (AIIRay.directLongBase _) *
+          (AIIRay.directLongBase _).point (AIICoord.long k) +
+          (aiiCoeffs p (AIIRay.directShortBase _) *
+            (AIIRay.directShortBase _).point (AIICoord.long k) + 0) = _
+      simp [AIIRay.point, aiiCoeffs]
+      split <;> simp
+    -- (3) liftedLong at long: `p (long k)` if `k.val > 0`, else 0.
+    have h_ll :
+        (((List.finRange (n - 1)).map (fun j =>
+             AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                               (Nat.succ_pos _))).map
+            (fun r => aiiCoeffs p r * r.point (AIICoord.long k))).foldr (· + ·) 0
+        = if 0 < k.val then p (AIICoord.long k) else 0 := by
+      rw [List.map_map]
+      show ((List.finRange (n - 1)).map (fun j =>
+            aiiCoeffs p
+              (AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                                 (Nat.succ_pos _)) *
+              (AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                                  (Nat.succ_pos _)).point
+                (AIICoord.long k))).foldr (· + ·) 0 = _
+      by_cases hk0 : 0 < k.val
+      · rw [if_pos hk0]
+        have hkm1 : k.val - 1 < n - 1 := by have := k.isLt; omega
+        have hmap :
+            (List.finRange (n - 1)).map
+              (fun j => aiiCoeffs p
+                         (AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                                            (Nat.succ_pos _)) *
+                (AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                                    (Nat.succ_pos _)).point
+                  (AIICoord.long k)) =
+            (List.finRange (n - 1)).map
+              (fun j : Fin (n - 1) =>
+                p (AIICoord.long ⟨j.val + 1, by have := j.isLt; omega⟩) *
+                  (if k.val - 1 = j.val then 1 else 0)) := by
+          apply List.map_congr_left
+          intro j _
+          show aiiCoeffs p _ * _ = _
+          unfold aiiCoeffs
+          congr 1
+          show (if k = ⟨j.val + 1, by have := j.isLt; omega⟩ then (1 : Nat) else 0) = _
+          by_cases h : k.val - 1 = j.val
+          · have hk_eq : k.val = j.val + 1 := by omega
+            rw [if_pos (Fin.eq_of_val_eq hk_eq), if_pos h]
+          · have hk_neq : k.val ≠ j.val + 1 := by omega
+            rw [if_neg, if_neg h]
+            intro he; apply hk_neq; exact congrArg Fin.val he
+        rw [hmap]
+        rw [finRange_nat_select (n - 1) (k.val - 1)
+              (fun j : Fin (n - 1) => p (AIICoord.long ⟨j.val + 1, by have := j.isLt; omega⟩))]
+        rw [dif_pos hkm1]
+        have hke : (⟨(⟨k.val - 1, hkm1⟩ : Fin (n - 1)).val + 1, by
+            have := k.isLt; omega⟩ : Fin n) = k :=
+          Fin.eq_of_val_eq (by show k.val - 1 + 1 = k.val; omega)
+        rw [hke]
+      · rw [if_neg hk0]
+        have hkv : k.val = 0 := by omega
+        have hmap :
+            (List.finRange (n - 1)).map
+              (fun j => aiiCoeffs p
+                         (AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                                            (Nat.succ_pos _)) *
+                (AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                                    (Nat.succ_pos _)).point
+                  (AIICoord.long k)) =
+            (List.finRange (n - 1)).map (fun _ : Fin (n - 1) => (0 : Nat)) := by
+          apply List.map_congr_left
+          intro j _
+          show aiiCoeffs p _ * _ = 0
+          unfold aiiCoeffs
+          show p (AIICoord.long _) *
+              (if k = ⟨j.val + 1, by have := j.isLt; omega⟩ then (1 : Nat) else 0) = 0
+          have hne : k ≠ ⟨j.val + 1, by have := j.isLt; omega⟩ := by
+            intro he
+            have : k.val = j.val + 1 := congrArg Fin.val he
+            omega
+          rw [if_neg hne]; simp
+        rw [hmap]; exact foldr_const_zero _
+    -- (4) liftedShort at long: 0.
+    have h_ls :
+        (((List.finRange (n - 1)).map (fun j =>
+             AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                                (Nat.succ_pos _))).map
+            (fun r => aiiCoeffs p r * r.point (AIICoord.long k))).foldr (· + ·) 0 = 0 := by
+      rw [List.map_map]
+      have hmap :
+          (List.finRange (n - 1)).map
+            ((fun r => aiiCoeffs p r * r.point (AIICoord.long k)) ∘
+              (fun j : Fin (n - 1) =>
+                AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                                   (Nat.succ_pos _))) =
+          (List.finRange (n - 1)).map (fun _ : Fin (n - 1) => (0 : Nat)) := by
+        apply List.map_congr_left
+        intro j _
+        show aiiCoeffs p _ * _ = 0
+        simp [AIIRay.point]
+      rw [hmap]; exact foldr_const_zero _
+    rw [h_dp, h_bs, h_ll, h_ls]
+    by_cases hk0 : k.val = 0
+    · have hk : (⟨0, by have := k.isLt; omega⟩ : Fin n) = k := Fin.eq_of_val_eq hk0.symm
+      have hk0' : ¬ 0 < k.val := by omega
+      rw [if_pos hk0, hk, if_neg hk0']
+      omega
+    · have hk0' : 0 < k.val := Nat.pos_of_ne_zero hk0
+      rw [if_neg hk0, if_pos hk0']
+      omega
+  | short k =>
+    -- (1) directPrefix at short: 0.
+    have h_dp :
+        ((((List.finRange n).map AIIRay.directPrefix)).map
+            (fun r => aiiCoeffs p r * r.point (AIICoord.short k))).foldr (· + ·) 0 = 0 := by
+      rw [List.map_map]
+      have hmap :
+          (List.finRange n).map
+            ((fun r => aiiCoeffs p r * r.point (AIICoord.short k)) ∘
+              AIIRay.directPrefix) =
+          (List.finRange n).map (fun _ : Fin n => (0 : Nat)) := by
+        apply List.map_congr_left
+        intro j _
+        show aiiCoeffs p (AIIRay.directPrefix j) *
+            (AIIRay.directPrefix j).point (AIICoord.short k) = 0
+        simp [AIIRay.point]
+      rw [hmap]; exact foldr_const_zero _
+    -- (2) bases at short: `p (short ⟨0,_⟩)` if `k.val = 0`, else 0.
+    have h_bs :
+        ([AIIRay.directLongBase (by omega : 0 < n),
+          AIIRay.directShortBase (by omega : 0 < n)].map
+            (fun r => aiiCoeffs p r * r.point (AIICoord.short k))).foldr
+              (· + ·) 0 = if k.val = 0 then p (AIICoord.short ⟨0, by omega⟩) else 0 := by
+      show aiiCoeffs p (AIIRay.directLongBase _) *
+          (AIIRay.directLongBase _).point (AIICoord.short k) +
+          (aiiCoeffs p (AIIRay.directShortBase _) *
+            (AIIRay.directShortBase _).point (AIICoord.short k) + 0) = _
+      simp [AIIRay.point, aiiCoeffs]
+      split <;> simp
+    -- (3) liftedLong at short: 0.
+    have h_ll :
+        (((List.finRange (n - 1)).map (fun j =>
+             AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                               (Nat.succ_pos _))).map
+            (fun r => aiiCoeffs p r * r.point (AIICoord.short k))).foldr (· + ·) 0 = 0 := by
+      rw [List.map_map]
+      have hmap :
+          (List.finRange (n - 1)).map
+            ((fun r => aiiCoeffs p r * r.point (AIICoord.short k)) ∘
+              (fun j : Fin (n - 1) =>
+                AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                                  (Nat.succ_pos _))) =
+          (List.finRange (n - 1)).map (fun _ : Fin (n - 1) => (0 : Nat)) := by
+        apply List.map_congr_left
+        intro j _
+        show aiiCoeffs p _ * _ = 0
+        simp [AIIRay.point]
+      rw [hmap]; exact foldr_const_zero _
+    -- (4) liftedShort at short: `p (short k)` if `k.val > 0`, else 0.
+    have h_ls :
+        (((List.finRange (n - 1)).map (fun j =>
+             AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                                (Nat.succ_pos _))).map
+            (fun r => aiiCoeffs p r * r.point (AIICoord.short k))).foldr (· + ·) 0
+        = if 0 < k.val then p (AIICoord.short k) else 0 := by
+      rw [List.map_map]
+      show ((List.finRange (n - 1)).map (fun j =>
+            aiiCoeffs p
+              (AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                                  (Nat.succ_pos _)) *
+              (AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                                   (Nat.succ_pos _)).point
+                (AIICoord.short k))).foldr (· + ·) 0 = _
+      by_cases hk0 : 0 < k.val
+      · rw [if_pos hk0]
+        have hkm1 : k.val - 1 < n - 1 := by have := k.isLt; omega
+        have hmap :
+            (List.finRange (n - 1)).map
+              (fun j => aiiCoeffs p
+                         (AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                                             (Nat.succ_pos _)) *
+                (AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                                     (Nat.succ_pos _)).point
+                  (AIICoord.short k)) =
+            (List.finRange (n - 1)).map
+              (fun j : Fin (n - 1) =>
+                p (AIICoord.short ⟨j.val + 1, by have := j.isLt; omega⟩) *
+                  (if k.val - 1 = j.val then 1 else 0)) := by
+          apply List.map_congr_left
+          intro j _
+          show aiiCoeffs p _ * _ = _
+          unfold aiiCoeffs
+          congr 1
+          show (if k = ⟨j.val + 1, by have := j.isLt; omega⟩ then (1 : Nat) else 0) = _
+          by_cases h : k.val - 1 = j.val
+          · have hk_eq : k.val = j.val + 1 := by omega
+            rw [if_pos (Fin.eq_of_val_eq hk_eq), if_pos h]
+          · have hk_neq : k.val ≠ j.val + 1 := by omega
+            rw [if_neg, if_neg h]
+            intro he; apply hk_neq; exact congrArg Fin.val he
+        rw [hmap]
+        rw [finRange_nat_select (n - 1) (k.val - 1)
+              (fun j : Fin (n - 1) => p (AIICoord.short ⟨j.val + 1, by have := j.isLt; omega⟩))]
+        rw [dif_pos hkm1]
+        have hke : (⟨(⟨k.val - 1, hkm1⟩ : Fin (n - 1)).val + 1, by
+            have := k.isLt; omega⟩ : Fin n) = k :=
+          Fin.eq_of_val_eq (by show k.val - 1 + 1 = k.val; omega)
+        rw [hke]
+      · rw [if_neg hk0]
+        have hkv : k.val = 0 := by omega
+        have hmap :
+            (List.finRange (n - 1)).map
+              (fun j => aiiCoeffs p
+                         (AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                                             (Nat.succ_pos _)) *
+                (AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                                     (Nat.succ_pos _)).point
+                  (AIICoord.short k)) =
+            (List.finRange (n - 1)).map (fun _ : Fin (n - 1) => (0 : Nat)) := by
+          apply List.map_congr_left
+          intro j _
+          show aiiCoeffs p _ * _ = 0
+          unfold aiiCoeffs
+          show p (AIICoord.short _) *
+              (if k = ⟨j.val + 1, by have := j.isLt; omega⟩ then (1 : Nat) else 0) = 0
+          have hne : k ≠ ⟨j.val + 1, by have := j.isLt; omega⟩ := by
+            intro he
+            have : k.val = j.val + 1 := congrArg Fin.val he
+            omega
+          rw [if_neg hne]; simp
+        rw [hmap]; exact foldr_const_zero _
+    rw [h_dp, h_bs, h_ll, h_ls]
+    by_cases hk0 : k.val = 0
+    · have hk : (⟨0, by have := k.isLt; omega⟩ : Fin n) = k := Fin.eq_of_val_eq hk0.symm
+      have hk0' : ¬ 0 < k.val := by omega
+      rw [if_pos hk0, hk, if_neg hk0']
+      omega
+    · have hk0' : 0 < k.val := Nat.pos_of_ne_zero hk0
+      rw [if_neg hk0, if_pos hk0']
+      omega
 
 /-- The linear extension of a piece `π` to an AII point with given
 `coeffs` decomposition: `Σ_{r ∈ AIIRays} coeffs r * r.image π`. -/
@@ -1664,6 +2210,8 @@ theorem feasibility_ray_char_lattice
 #print axioms coniclyCombine_mem
 #print axioms feasibility_ray_char
 #print axioms feasibility_ray_char_lattice
+#print axioms aiiCoeffs
+#print axioms aii_cone_generated_by_rays
 
 /-! ### Day-74: (⇒) direction and iff form of Theorem 4.2 (conic form)
 
