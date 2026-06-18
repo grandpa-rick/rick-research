@@ -1,0 +1,92 @@
+{
+  "by_i_alpha": {
+    "i=2_alpha=1": {
+      "i": 2,
+      "alpha": 1,
+      "target_T_coords": {
+        "B2": 1,
+        "S": 1
+      },
+      "carrier_piece_names": [
+        "simpdiv_p2_a1",
+        "aux_class1_p2"
+      ],
+      "n_remaining_pieces": 51,
+      "T_appears_as_ray_in_remaining": [],
+      "answer_T_covered_after_removal": false
+    },
+    "i=2_alpha=2": {
+      "i": 2,
+      "alpha": 2,
+      "target_T_coords": {
+        "B2": 1,
+        "S": 2
+      },
+      "carrier_piece_names": [
+        "simpdiv_p2_a2"
+      ],
+      "n_remaining_pieces": 52,
+      "T_appears_as_ray_in_remaining": [],
+      "answer_T_covered_after_removal": false
+    },
+    "i=3_alpha=1": {
+      "i": 3,
+      "alpha": 1,
+      "target_T_coords": {
+        "B3": 1,
+        "S": 1
+      },
+      "carrier_piece_names": [
+        "simpdiv_p3_a1",
+        "aux_class1_p3"
+      ],
+      "n_remaining_pieces": 51,
+      "T_appears_as_ray_in_remaining": [],
+      "answer_T_covered_after_removal": false
+    },
+    "i=3_alpha=2": {
+      "i": 3,
+      "alpha": 2,
+      "target_T_coords": {
+        "B3": 1,
+        "S": 2
+      },
+      "carrier_piece_names": [
+        "simpdiv_p3_a2"
+      ],
+      "n_remaining_pieces": 52,
+      "T_appears_as_ray_in_remaining": [],
+      "answer_T_covered_after_removal": false
+    },
+    "i=4_alpha=1": {
+      "i": 4,
+      "alpha": 1,
+      "target_T_coords": {
+        "B4": 1,
+        "S": 1
+      },
+      "carrier_piece_names": [
+        "simpdiv_p4_a1",
+        "aux_class1_p4"
+      ],
+      "n_remaining_pieces": 51,
+      "T_appears_as_ray_in_remaining": [],
+      "answer_T_covered_after_removal": false
+    },
+    "i=4_alpha=2": {
+      "i": 4,
+      "alpha": 2,
+      "target_T_coords": {
+        "B4": 1,
+        "S": 2
+      },
+      "carrier_piece_names": [
+        "simpdiv_p4_a2"
+      ],
+      "n_remaining_pieces": 52,
+      "T_appears_as_ray_in_remaining": [],
+      "answer_T_covered_after_removal": false
+    }
+  },
+  "clio_prediction_confirmed": true
+}

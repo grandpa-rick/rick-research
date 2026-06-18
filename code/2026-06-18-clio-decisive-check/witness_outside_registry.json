@@ -1,0 +1,186 @@
+{
+  "witnesses": [
+    {
+      "i": 2,
+      "alpha": 1,
+      "route": "lifted-long p_1 + l_2 (split_BS)",
+      "witness_columns": {
+        "p1": {
+          "B2": 1
+        },
+        "l2": {
+          "S": 1
+        }
+      },
+      "in_registry": false,
+      "registry_name": null
+    },
+    {
+      "i": 2,
+      "alpha": 1,
+      "route": "lifted-short p_1 + s_2 (split_BS)",
+      "witness_columns": {
+        "p1": {
+          "B2": 1
+        },
+        "s2": {
+          "S": 1
+        }
+      },
+      "in_registry": false,
+      "registry_name": null
+    },
+    {
+      "i": 2,
+      "alpha": 2,
+      "route": "lifted-long p_1 + l_2 (split_BS)",
+      "witness_columns": {
+        "p1": {
+          "B2": 1
+        },
+        "l2": {
+          "S": 2
+        }
+      },
+      "in_registry": false,
+      "registry_name": null
+    },
+    {
+      "i": 2,
+      "alpha": 2,
+      "route": "lifted-short p_1 + s_2 (split_BS)",
+      "witness_columns": {
+        "p1": {
+          "B2": 1
+        },
+        "s2": {
+          "S": 2
+        }
+      },
+      "in_registry": false,
+      "registry_name": null
+    },
+    {
+      "i": 3,
+      "alpha": 1,
+      "route": "lifted-long p_1 + l_2 (split_BS)",
+      "witness_columns": {
+        "p1": {
+          "B3": 1
+        },
+        "l2": {
+          "S": 1
+        }
+      },
+      "in_registry": false,
+      "registry_name": null
+    },
+    {
+      "i": 3,
+      "alpha": 1,
+      "route": "lifted-short p_1 + s_2 (split_BS)",
+      "witness_columns": {
+        "p1": {
+          "B3": 1
+        },
+        "s2": {
+          "S": 1
+        }
+      },
+      "in_registry": false,
+      "registry_name": null
+    },
+    {
+      "i": 3,
+      "alpha": 2,
+      "route": "lifted-long p_1 + l_2 (split_BS)",
+      "witness_columns": {
+        "p1": {
+          "B3": 1
+        },
+        "l2": {
+          "S": 2
+        }
+      },
+      "in_registry": false,
+      "registry_name": null
+    },
+    {
+      "i": 3,
+      "alpha": 2,
+      "route": "lifted-short p_1 + s_2 (split_BS)",
+      "witness_columns": {
+        "p1": {
+          "B3": 1
+        },
+        "s2": {
+          "S": 2
+        }
+      },
+      "in_registry": false,
+      "registry_name": null
+    },
+    {
+      "i": 4,
+      "alpha": 1,
+      "route": "lifted-long p_1 + l_2 (split_BS)",
+      "witness_columns": {
+        "p1": {
+          "B4": 1
+        },
+        "l2": {
+          "S": 1
+        }
+      },
+      "in_registry": false,
+      "registry_name": null
+    },
+    {
+      "i": 4,
+      "alpha": 1,
+      "route": "lifted-short p_1 + s_2 (split_BS)",
+      "witness_columns": {
+        "p1": {
+          "B4": 1
+        },
+        "s2": {
+          "S": 1
+        }
+      },
+      "in_registry": false,
+      "registry_name": null
+    },
+    {
+      "i": 4,
+      "alpha": 2,
+      "route": "lifted-long p_1 + l_2 (split_BS)",
+      "witness_columns": {
+        "p1": {
+          "B4": 1
+        },
+        "l2": {
+          "S": 2
+        }
+      },
+      "in_registry": false,
+      "registry_name": null
+    },
+    {
+      "i": 4,
+      "alpha": 2,
+      "route": "lifted-short p_1 + s_2 (split_BS)",
+      "witness_columns": {
+        "p1": {
+          "B4": 1
+        },
+        "s2": {
+          "S": 2
+        }
+      },
+      "in_registry": false,
+      "registry_name": null
+    }
+  ],
+  "n_in_registry": 0,
+  "n_outside_registry": 12
+}
