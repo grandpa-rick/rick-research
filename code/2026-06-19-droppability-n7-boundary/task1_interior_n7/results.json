@@ -1,0 +1,369 @@
+{
+  "n": 7,
+  "max_sum": 8,
+  "n_pieces": 66,
+  "n_distinct_rays": 78,
+  "original_image_size": 57643,
+  "results": [
+    {
+      "n": 7,
+      "i": 2,
+      "alpha": 1,
+      "witness_kind": "lifted_long",
+      "carrier_names": [
+        "simpdiv_p2_a1",
+        "aux_class1_p2"
+      ],
+      "n_carriers": 2,
+      "T_coords": {
+        "B2": 1,
+        "S": 1
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 57643,
+      "modified_image_size": 57643,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "n": 7,
+      "i": 2,
+      "alpha": 1,
+      "witness_kind": "lifted_short",
+      "carrier_names": [
+        "simpdiv_p2_a1",
+        "aux_class1_p2"
+      ],
+      "n_carriers": 2,
+      "T_coords": {
+        "B2": 1,
+        "S": 1
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 57643,
+      "modified_image_size": 57643,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "n": 7,
+      "i": 2,
+      "alpha": 2,
+      "witness_kind": "lifted_long",
+      "carrier_names": [
+        "simpdiv_p2_a2"
+      ],
+      "n_carriers": 1,
+      "T_coords": {
+        "B2": 1,
+        "S": 2
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 57643,
+      "modified_image_size": 57643,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "n": 7,
+      "i": 2,
+      "alpha": 2,
+      "witness_kind": "lifted_short",
+      "carrier_names": [
+        "simpdiv_p2_a2"
+      ],
+      "n_carriers": 1,
+      "T_coords": {
+        "B2": 1,
+        "S": 2
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 57643,
+      "modified_image_size": 57643,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "n": 7,
+      "i": 3,
+      "alpha": 1,
+      "witness_kind": "lifted_long",
+      "carrier_names": [
+        "simpdiv_p3_a1",
+        "aux_class1_p3"
+      ],
+      "n_carriers": 2,
+      "T_coords": {
+        "B3": 1,
+        "S": 1
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 57643,
+      "modified_image_size": 57643,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "n": 7,
+      "i": 3,
+      "alpha": 1,
+      "witness_kind": "lifted_short",
+      "carrier_names": [
+        "simpdiv_p3_a1",
+        "aux_class1_p3"
+      ],
+      "n_carriers": 2,
+      "T_coords": {
+        "B3": 1,
+        "S": 1
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 57643,
+      "modified_image_size": 57643,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "n": 7,
+      "i": 3,
+      "alpha": 2,
+      "witness_kind": "lifted_long",
+      "carrier_names": [
+        "simpdiv_p3_a2"
+      ],
+      "n_carriers": 1,
+      "T_coords": {
+        "B3": 1,
+        "S": 2
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 57643,
+      "modified_image_size": 57643,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "n": 7,
+      "i": 3,
+      "alpha": 2,
+      "witness_kind": "lifted_short",
+      "carrier_names": [
+        "simpdiv_p3_a2"
+      ],
+      "n_carriers": 1,
+      "T_coords": {
+        "B3": 1,
+        "S": 2
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 57643,
+      "modified_image_size": 57643,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "n": 7,
+      "i": 4,
+      "alpha": 1,
+      "witness_kind": "lifted_long",
+      "carrier_names": [
+        "simpdiv_p4_a1",
+        "aux_class1_p4"
+      ],
+      "n_carriers": 2,
+      "T_coords": {
+        "B4": 1,
+        "S": 1
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 57643,
+      "modified_image_size": 57643,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "n": 7,
+      "i": 4,
+      "alpha": 1,
+      "witness_kind": "lifted_short",
+      "carrier_names": [
+        "simpdiv_p4_a1",
+        "aux_class1_p4"
+      ],
+      "n_carriers": 2,
+      "T_coords": {
+        "B4": 1,
+        "S": 1
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 57643,
+      "modified_image_size": 57643,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "n": 7,
+      "i": 4,
+      "alpha": 2,
+      "witness_kind": "lifted_long",
+      "carrier_names": [
+        "simpdiv_p4_a2"
+      ],
+      "n_carriers": 1,
+      "T_coords": {
+        "B4": 1,
+        "S": 2
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 57643,
+      "modified_image_size": 57643,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "n": 7,
+      "i": 4,
+      "alpha": 2,
+      "witness_kind": "lifted_short",
+      "carrier_names": [
+        "simpdiv_p4_a2"
+      ],
+      "n_carriers": 1,
+      "T_coords": {
+        "B4": 1,
+        "S": 2
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 57643,
+      "modified_image_size": 57643,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "n": 7,
+      "i": 5,
+      "alpha": 1,
+      "witness_kind": "lifted_long",
+      "carrier_names": [
+        "simpdiv_p5_a1",
+        "aux_class1_p5"
+      ],
+      "n_carriers": 2,
+      "T_coords": {
+        "B5": 1,
+        "S": 1
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 57643,
+      "modified_image_size": 57643,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "n": 7,
+      "i": 5,
+      "alpha": 1,
+      "witness_kind": "lifted_short",
+      "carrier_names": [
+        "simpdiv_p5_a1",
+        "aux_class1_p5"
+      ],
+      "n_carriers": 2,
+      "T_coords": {
+        "B5": 1,
+        "S": 1
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 57643,
+      "modified_image_size": 57643,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "n": 7,
+      "i": 5,
+      "alpha": 2,
+      "witness_kind": "lifted_long",
+      "carrier_names": [
+        "simpdiv_p5_a2"
+      ],
+      "n_carriers": 1,
+      "T_coords": {
+        "B5": 1,
+        "S": 2
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 57643,
+      "modified_image_size": 57643,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "n": 7,
+      "i": 5,
+      "alpha": 2,
+      "witness_kind": "lifted_short",
+      "carrier_names": [
+        "simpdiv_p5_a2"
+      ],
+      "n_carriers": 1,
+      "T_coords": {
+        "B5": 1,
+        "S": 2
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 57643,
+      "modified_image_size": 57643,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    }
+  ]
+}

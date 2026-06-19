@@ -1,0 +1,193 @@
+{
+  "n": 6,
+  "max_sum": 8,
+  "n_pieces": 53,
+  "n_distinct_rays": 64,
+  "original_image_size": 25368,
+  "results": [
+    {
+      "n": 6,
+      "i": 1,
+      "alpha": 1,
+      "witness_kind": "lifted_long",
+      "carrier_names": [
+        "Rdouble_lv1_alpha1",
+        "Rdouble_lv2_alpha1",
+        "Rdouble_lv3_alpha1",
+        "Rdouble_lv4_alpha1",
+        "Rdouble_lv5_alpha1"
+      ],
+      "n_carriers": 5,
+      "T_coords": {
+        "B1": 1,
+        "S": 1
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 25368,
+      "modified_image_size": 25368,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "n": 6,
+      "i": 1,
+      "alpha": 1,
+      "witness_kind": "lifted_short",
+      "carrier_names": [
+        "Rdouble_lv1_alpha1",
+        "Rdouble_lv2_alpha1",
+        "Rdouble_lv3_alpha1",
+        "Rdouble_lv4_alpha1",
+        "Rdouble_lv5_alpha1"
+      ],
+      "n_carriers": 5,
+      "T_coords": {
+        "B1": 1,
+        "S": 1
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 25368,
+      "modified_image_size": 25368,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "n": 6,
+      "i": 1,
+      "alpha": 2,
+      "witness_kind": "lifted_long",
+      "carrier_names": [
+        "Rdouble_lv1_alpha2",
+        "Rdouble_lv2_alpha2",
+        "Rdouble_lv3_alpha2",
+        "Rdouble_lv4_alpha2",
+        "Rdouble_lv5_alpha2"
+      ],
+      "n_carriers": 5,
+      "T_coords": {
+        "B1": 1,
+        "S": 2
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 25368,
+      "modified_image_size": 25368,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "n": 6,
+      "i": 1,
+      "alpha": 2,
+      "witness_kind": "lifted_short",
+      "carrier_names": [
+        "Rdouble_lv1_alpha2",
+        "Rdouble_lv2_alpha2",
+        "Rdouble_lv3_alpha2",
+        "Rdouble_lv4_alpha2",
+        "Rdouble_lv5_alpha2"
+      ],
+      "n_carriers": 5,
+      "T_coords": {
+        "B1": 1,
+        "S": 2
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 25368,
+      "modified_image_size": 25368,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "n": 6,
+      "i": 5,
+      "alpha": 1,
+      "witness_kind": "lifted_long",
+      "carrier_names": [],
+      "n_carriers": 0,
+      "T_coords": {
+        "B5": 1,
+        "S": 1
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 25368,
+      "modified_image_size": 25368,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "n": 6,
+      "i": 5,
+      "alpha": 1,
+      "witness_kind": "lifted_short",
+      "carrier_names": [],
+      "n_carriers": 0,
+      "T_coords": {
+        "B5": 1,
+        "S": 1
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 25368,
+      "modified_image_size": 25368,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "n": 6,
+      "i": 5,
+      "alpha": 2,
+      "witness_kind": "lifted_long",
+      "carrier_names": [],
+      "n_carriers": 0,
+      "T_coords": {
+        "B5": 1,
+        "S": 2
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 25368,
+      "modified_image_size": 25435,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    },
+    {
+      "n": 6,
+      "i": 5,
+      "alpha": 2,
+      "witness_kind": "lifted_short",
+      "carrier_names": [],
+      "n_carriers": 0,
+      "T_coords": {
+        "B5": 1,
+        "S": 2
+      },
+      "witness_F_feasible": true,
+      "max_sum": 8,
+      "original_image_size": 25368,
+      "modified_image_size": 25435,
+      "n_losses": 0,
+      "smallest_losses": [],
+      "covers_all": true,
+      "T_in_modified_image": true
+    }
+  ]
+}
