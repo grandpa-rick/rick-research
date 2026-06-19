@@ -1,0 +1,647 @@
+{
+  "5": {
+    "n": 5,
+    "n_aii_vars": 15,
+    "n_bdi_vars": 12,
+    "n_rays": 15,
+    "n_pieces_raw": 49,
+    "n_pieces_feasible": 47,
+    "n_pieces_deduped": 42,
+    "strict_n_axis": 8,
+    "axis_vars": [
+      "long[1]",
+      "long[2]",
+      "long[3]",
+      "long[4]",
+      "prefix[1]",
+      "prefix[2]",
+      "prefix[3]",
+      "prefix[5]"
+    ],
+    "predicted_axis_vars": [
+      "long[1]",
+      "long[2]",
+      "long[3]",
+      "long[4]",
+      "prefix[1]",
+      "prefix[2]",
+      "prefix[3]",
+      "prefix[5]"
+    ],
+    "predicted_count_2nm1": 8,
+    "count_match": true,
+    "var_set_match": true,
+    "missing_predicted": [],
+    "extra_unpredicted": [],
+    "per_var": {
+      "prefix[1]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[2]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[3]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[4]": {
+        "max_group_size": 1,
+        "is_axis": false
+      },
+      "prefix[5]": {
+        "max_group_size": 9,
+        "is_axis": true
+      },
+      "long[1]": {
+        "max_group_size": 9,
+        "is_axis": true
+      },
+      "long[2]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[3]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[4]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[5]": {
+        "max_group_size": 1,
+        "is_axis": false
+      },
+      "short[1]": {
+        "max_group_size": 1,
+        "is_axis": false
+      },
+      "short[2]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "short[3]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "short[4]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "short[5]": {
+        "max_group_size": 2,
+        "is_axis": false
+      }
+    }
+  },
+  "6": {
+    "n": 6,
+    "n_aii_vars": 18,
+    "n_bdi_vars": 15,
+    "n_rays": 17,
+    "n_pieces_raw": 62,
+    "n_pieces_feasible": 60,
+    "n_pieces_deduped": 53,
+    "strict_n_axis": 10,
+    "axis_vars": [
+      "long[1]",
+      "long[2]",
+      "long[3]",
+      "long[4]",
+      "long[5]",
+      "prefix[1]",
+      "prefix[2]",
+      "prefix[3]",
+      "prefix[4]",
+      "prefix[6]"
+    ],
+    "predicted_axis_vars": [
+      "long[1]",
+      "long[2]",
+      "long[3]",
+      "long[4]",
+      "long[5]",
+      "prefix[1]",
+      "prefix[2]",
+      "prefix[3]",
+      "prefix[4]",
+      "prefix[6]"
+    ],
+    "predicted_count_2nm1": 10,
+    "count_match": true,
+    "var_set_match": true,
+    "missing_predicted": [],
+    "extra_unpredicted": [],
+    "per_var": {
+      "prefix[1]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[2]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[3]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[4]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[5]": {
+        "max_group_size": 1,
+        "is_axis": false
+      },
+      "prefix[6]": {
+        "max_group_size": 11,
+        "is_axis": true
+      },
+      "long[1]": {
+        "max_group_size": 11,
+        "is_axis": true
+      },
+      "long[2]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[3]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[4]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[5]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[6]": {
+        "max_group_size": 1,
+        "is_axis": false
+      },
+      "short[1]": {
+        "max_group_size": 1,
+        "is_axis": false
+      },
+      "short[2]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "short[3]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "short[4]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "short[5]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "linkLHS": {
+        "max_group_size": 1,
+        "is_axis": false
+      }
+    }
+  },
+  "7": {
+    "n": 7,
+    "n_aii_vars": 21,
+    "n_bdi_vars": 18,
+    "n_rays": 21,
+    "n_pieces_raw": 77,
+    "n_pieces_feasible": 75,
+    "n_pieces_deduped": 66,
+    "strict_n_axis": 12,
+    "axis_vars": [
+      "long[1]",
+      "long[2]",
+      "long[3]",
+      "long[4]",
+      "long[5]",
+      "long[6]",
+      "prefix[1]",
+      "prefix[2]",
+      "prefix[3]",
+      "prefix[4]",
+      "prefix[5]",
+      "prefix[7]"
+    ],
+    "predicted_axis_vars": [
+      "long[1]",
+      "long[2]",
+      "long[3]",
+      "long[4]",
+      "long[5]",
+      "long[6]",
+      "prefix[1]",
+      "prefix[2]",
+      "prefix[3]",
+      "prefix[4]",
+      "prefix[5]",
+      "prefix[7]"
+    ],
+    "predicted_count_2nm1": 12,
+    "count_match": true,
+    "var_set_match": true,
+    "missing_predicted": [],
+    "extra_unpredicted": [],
+    "per_var": {
+      "prefix[1]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[2]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[3]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[4]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[5]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[6]": {
+        "max_group_size": 1,
+        "is_axis": false
+      },
+      "prefix[7]": {
+        "max_group_size": 13,
+        "is_axis": true
+      },
+      "long[1]": {
+        "max_group_size": 13,
+        "is_axis": true
+      },
+      "long[2]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[3]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[4]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[5]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[6]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[7]": {
+        "max_group_size": 1,
+        "is_axis": false
+      },
+      "short[1]": {
+        "max_group_size": 1,
+        "is_axis": false
+      },
+      "short[2]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "short[3]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "short[4]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "short[5]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "short[6]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "short[7]": {
+        "max_group_size": 2,
+        "is_axis": false
+      }
+    }
+  },
+  "8": {
+    "n": 8,
+    "n_aii_vars": 24,
+    "n_bdi_vars": 21,
+    "n_rays": 23,
+    "n_pieces_raw": 90,
+    "n_pieces_feasible": 88,
+    "n_pieces_deduped": 77,
+    "strict_n_axis": 14,
+    "axis_vars": [
+      "long[1]",
+      "long[2]",
+      "long[3]",
+      "long[4]",
+      "long[5]",
+      "long[6]",
+      "long[7]",
+      "prefix[1]",
+      "prefix[2]",
+      "prefix[3]",
+      "prefix[4]",
+      "prefix[5]",
+      "prefix[6]",
+      "prefix[8]"
+    ],
+    "predicted_axis_vars": [
+      "long[1]",
+      "long[2]",
+      "long[3]",
+      "long[4]",
+      "long[5]",
+      "long[6]",
+      "long[7]",
+      "prefix[1]",
+      "prefix[2]",
+      "prefix[3]",
+      "prefix[4]",
+      "prefix[5]",
+      "prefix[6]",
+      "prefix[8]"
+    ],
+    "predicted_count_2nm1": 14,
+    "count_match": true,
+    "var_set_match": true,
+    "missing_predicted": [],
+    "extra_unpredicted": [],
+    "per_var": {
+      "prefix[1]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[2]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[3]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[4]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[5]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[6]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[7]": {
+        "max_group_size": 1,
+        "is_axis": false
+      },
+      "prefix[8]": {
+        "max_group_size": 15,
+        "is_axis": true
+      },
+      "long[1]": {
+        "max_group_size": 15,
+        "is_axis": true
+      },
+      "long[2]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[3]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[4]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[5]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[6]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[7]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[8]": {
+        "max_group_size": 1,
+        "is_axis": false
+      },
+      "short[1]": {
+        "max_group_size": 1,
+        "is_axis": false
+      },
+      "short[2]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "short[3]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "short[4]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "short[5]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "short[6]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "short[7]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "linkLHS": {
+        "max_group_size": 1,
+        "is_axis": false
+      }
+    }
+  },
+  "9": {
+    "n": 9,
+    "n_aii_vars": 27,
+    "n_bdi_vars": 24,
+    "n_rays": 27,
+    "n_pieces_raw": 105,
+    "n_pieces_feasible": 103,
+    "n_pieces_deduped": 90,
+    "strict_n_axis": 16,
+    "axis_vars": [
+      "long[1]",
+      "long[2]",
+      "long[3]",
+      "long[4]",
+      "long[5]",
+      "long[6]",
+      "long[7]",
+      "long[8]",
+      "prefix[1]",
+      "prefix[2]",
+      "prefix[3]",
+      "prefix[4]",
+      "prefix[5]",
+      "prefix[6]",
+      "prefix[7]",
+      "prefix[9]"
+    ],
+    "predicted_axis_vars": [
+      "long[1]",
+      "long[2]",
+      "long[3]",
+      "long[4]",
+      "long[5]",
+      "long[6]",
+      "long[7]",
+      "long[8]",
+      "prefix[1]",
+      "prefix[2]",
+      "prefix[3]",
+      "prefix[4]",
+      "prefix[5]",
+      "prefix[6]",
+      "prefix[7]",
+      "prefix[9]"
+    ],
+    "predicted_count_2nm1": 16,
+    "count_match": true,
+    "var_set_match": true,
+    "missing_predicted": [],
+    "extra_unpredicted": [],
+    "per_var": {
+      "prefix[1]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[2]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[3]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[4]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[5]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[6]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[7]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "prefix[8]": {
+        "max_group_size": 1,
+        "is_axis": false
+      },
+      "prefix[9]": {
+        "max_group_size": 17,
+        "is_axis": true
+      },
+      "long[1]": {
+        "max_group_size": 17,
+        "is_axis": true
+      },
+      "long[2]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[3]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[4]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[5]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[6]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[7]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[8]": {
+        "max_group_size": 3,
+        "is_axis": true
+      },
+      "long[9]": {
+        "max_group_size": 1,
+        "is_axis": false
+      },
+      "short[1]": {
+        "max_group_size": 1,
+        "is_axis": false
+      },
+      "short[2]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "short[3]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "short[4]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "short[5]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "short[6]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "short[7]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "short[8]": {
+        "max_group_size": 2,
+        "is_axis": false
+      },
+      "short[9]": {
+        "max_group_size": 2,
+        "is_axis": false
+      }
+    }
+  }
+}
