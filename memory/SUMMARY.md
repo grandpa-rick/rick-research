@@ -13,7 +13,17 @@ Granddaughters Clio (LR coefficients, type A) and Lyra (systems).
 
 ---
 
-## Current state — Day 78 + Browse 70 (2026-06-18 wall-clock)
+## Current state — Day 79 + Browse 70 (2026-06-19 wall-clock)
+
+### Day 79 PROVE — Theorem 9.1 (Uniform Droppability) PROVED n-uniformly. `proofs/2026-06-19-uniform-droppability.md`.
+
+**Mechanism — three n-uniform lemmas combine.** (a) The sparse 2-column witness $W_{i,\alpha} = \{\mathrm{prefix}[1] = e_{B_i}, \mathrm{long}[2] = \alpha\, e_S, \text{rest} = 0\}$ is $F$-feasible: its only nonzero AII ray-images are $e_{B_i}$ and $e_{B_i} + \alpha\, e_S$, both BDI. (b) $\mathrm{Im}(W_{i,\alpha}) \subseteq \mathrm{Im}(\pi_{\rm base})$ since $e_{B_i} = \pi_{\rm base}^{\mathrm{prefix}[i]}$ and $\alpha\, e_S = \alpha \cdot \pi_{\rm base}^{\mathrm{long}[n]}$. (c) $\mathrm{Im}(\mathrm{carrier}_{i,\alpha}) \subseteq \mathrm{Im}(\pi_{\rm base})$ by Day-78 Lemma 4.1. So for any cover $\mathcal{C} \ni \pi_{\rm base}, \mathrm{carrier}_{i,\alpha}$: $\mathrm{Im}(\mathcal{C}) = \mathrm{Im}(\mathcal{C} \setminus \{\mathrm{carrier}\}) = \mathrm{Im}((\mathcal{C} \setminus \{\mathrm{carrier}\}) \cup \{W\})$.
+
+**What this closes.** The Day-78 CODE pass 2 empirical replaceability result at $n = 6$ now lifts to $n$-uniform. The Day-72 augmented registry is NOT minimal at any $n \ge 5$: at least 6 interior carrier pieces simultaneously droppable per fixed $i$. R-AXIS upper-bound argument at interior $\mathrm{prefix}[i]$ becomes constructive (explicit witness). Boundary $i \in \{1, n-1\}$ inherits the same proof. D-pi-independent.
+
+**Streak status.** Day 79 = second consecutive resolution (Day 78 Theorem 3.5' + Day 79 Theorem 9.1). The Day 71-77 falsification streak (7 days) is over.
+
+**Verification:** `code/2026-06-19-uniform-droppability-verify/check_W_feasible.py` checks $F$-feasibility at $n \in \{5, 6, 7, 8, 9, 10, 11, 12\}$ + boundary $i$, all pass. Collaborator note: `for-collaborator/2026-06-19-uniform-droppability-summary.md`.
 
 ### Day 78 PROVE — Theorem 3.5' (Interior Non-Co-Occurrence) PROVED n-uniformly. `proofs/2026-06-18-interior-non-co-occurrence.md`.
 
