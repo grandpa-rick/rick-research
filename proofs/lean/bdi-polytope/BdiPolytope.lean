@@ -2574,4 +2574,430 @@ theorem multiplicative_redundancy {n : Nat} (hn : 3 ≤ n)
 #print axioms free_isolated_pn
 #print axioms multiplicative_redundancy
 
+/-! ## Day-79: Lemma 4.1 — Additive Redundancy at the long(n-1) column.
+
+  Companion to Day-76's `multiplicative_redundancy`. Suppose pieces `π_0`
+  and `π_α` agree on every AII column except `prefix i` for some
+  interior `i : Fin n` (with `1 ≤ i.val` and `i.val + 1 < n`), and on
+  the differing column they relate by
+
+      π_α (prefix i) b = π_0 (prefix i) b + α · π_0 (long ⟨n - 1, _⟩) b.
+
+  If RIGID-L_n (`π_0 (long 0) = π_0 (long ⟨n - 1, _⟩)` — equivalently,
+  both endpoints carry the same `e_S` column) holds, then
+  `Im π_α ⊆ Im π_0`.
+
+  The proof rides on the single `Z_{≥0}` identity:
+
+      e_{B_i} + α · e_S  =  1·π_0(p_i) + α·π_0(l_0)            (h_shift + h_rigid)
+
+  Concretely, the only rays whose image involves column `prefix i` are
+  `directPrefix i`, `liftedLong ⟨i.val+1, _⟩`, and
+  `liftedShort ⟨i.val+1, _⟩` (the "affected" triple). Each contributes
+  one `α · π_0(l_n)` shift, all absorbed by an `α · (Σ coeffs over the
+  affected triple)` increment on the `directLongBase` coefficient (whose
+  ray-image is `π_0(long 0) = π_0(l_n)` by RIGID-L_n).
+
+  Axioms ⊆ `{propext, Quot.sound}`. -/
+
+/-- Indicator for the three rays whose image involves column `prefix i`.
+Returns 1 on those rays (`directPrefix i`, `liftedLong ⟨i.val + 1, _⟩`,
+`liftedShort ⟨i.val + 1, _⟩`) and 0 on every other ray. -/
+def affectedByPrefix {n : Nat} (i : Fin n) : AIIRay n → Nat
+  | AIIRay.directPrefix j     => if i.val = j.val then 1 else 0
+  | AIIRay.directLongBase _   => 0
+  | AIIRay.directShortBase _  => 0
+  | AIIRay.liftedLong  j _    => if i.val + 1 = j.val then 1 else 0
+  | AIIRay.liftedShort j _    => if i.val + 1 = j.val then 1 else 0
+
+/-- Indicator for the unique `directLongBase` ray. -/
+def isDirectLongBase {n : Nat} : AIIRay n → Nat
+  | AIIRay.directPrefix _    => 0
+  | AIIRay.directLongBase _  => 1
+  | AIIRay.directShortBase _ => 0
+  | AIIRay.liftedLong  _ _   => 0
+  | AIIRay.liftedShort _ _   => 0
+
+/-- **Helper A** — pointwise image-shift identity.
+
+If every ray's image under `π` exceeds its image under `π'` (at the `b`-th
+component) by `ind r * d`, then any conic combination over `π` exceeds the
+corresponding combination over `π'` by `(Σ coeffs r * ind r) * d`. -/
+private theorem coniclyCombine_image_shift {n : Nat}
+    (rs : List (AIIRay n)) (coeffs : AIIRay n → Nat)
+    (π π' : Piece' n) (ind : AIIRay n → Nat) (d : Nat) (b : Nat)
+    (h : ∀ r ∈ rs, r.image π b = r.image π' b + ind r * d) :
+    coniclyCombine rs coeffs π b
+      = coniclyCombine rs coeffs π' b
+        + (rs.map (fun r => coeffs r * ind r)).foldr (· + ·) 0 * d := by
+  induction rs with
+  | nil =>
+    show (0 : Nat) = 0 + 0 * d
+    omega
+  | cons r rs' ih =>
+    have hr := h r List.mem_cons_self
+    have hrest : ∀ r' ∈ rs', r'.image π b = r'.image π' b + ind r' * d :=
+      fun r' hr' => h r' (List.mem_cons_of_mem r hr')
+    have ih' := ih hrest
+    rw [coniclyCombine_cons, BdiPt.add_apply,
+        coniclyCombine_cons, BdiPt.add_apply,
+        List.map_cons, List.foldr_cons,
+        ih', hr]
+    rw [Nat.mul_add, ← Nat.mul_assoc, Nat.add_mul]
+    omega
+
+/-- **Helper B** — pointwise coefficient-shift identity.
+
+Incrementing the coefficient of every `ind`-marked ray by `x` (more
+precisely, by `ind r * x`) shifts the conic combination by
+`(Σ ind r * r.image π b) * x`. -/
+private theorem coniclyCombine_coeff_shift {n : Nat}
+    (rs : List (AIIRay n)) (coeffs : AIIRay n → Nat)
+    (π : Piece' n) (ind : AIIRay n → Nat) (x : Nat) (b : Nat) :
+    coniclyCombine rs (fun r => coeffs r + ind r * x) π b
+      = coniclyCombine rs coeffs π b
+        + (rs.map (fun r => ind r * r.image π b)).foldr (· + ·) 0 * x := by
+  induction rs with
+  | nil =>
+    show (0 : Nat) = 0 + 0 * x
+    omega
+  | cons r rs' ih =>
+    rw [coniclyCombine_cons, BdiPt.add_apply,
+        coniclyCombine_cons, BdiPt.add_apply,
+        List.map_cons, List.foldr_cons,
+        ih]
+    rw [Nat.add_mul, Nat.add_mul,
+        Nat.mul_assoc (ind r), Nat.mul_comm x (r.image π b),
+        ← Nat.mul_assoc (ind r)]
+    omega
+
+/-- The indicator-image sum `Σ_r isDirectLongBase r * r.image π b` over
+`AIIRays n hn` evaluates to the `directLongBase` column,
+`π (long ⟨0, _⟩) b`.  Computed by splitting `AIIRays` into its four
+sublists; only the `[directLongBase, directShortBase]` middle pair
+contributes. -/
+private theorem isDLB_image_sum {n : Nat} (hn : 3 ≤ n)
+    (π : Piece' n) (b : Nat) :
+    ((AIIRays n hn).map (fun r => isDirectLongBase r * r.image π b)).foldr (· + ·) 0
+    = π (AIICoord.long ⟨0, by omega⟩) b := by
+  unfold AIIRays
+  rw [List.map_append, foldr_add_append,
+      List.map_append, foldr_add_append,
+      List.map_append, foldr_add_append]
+  -- Part 1: directPrefix sublist — every isDirectLongBase entry is 0.
+  have hL1 :
+      (((List.finRange n).map AIIRay.directPrefix).map
+          (fun r => isDirectLongBase r * r.image π b)).foldr (· + ·) 0 = 0 := by
+    rw [List.map_map]
+    have hmap :
+        (List.finRange n).map
+            ((fun r => isDirectLongBase r * r.image π b) ∘ AIIRay.directPrefix)
+        = (List.finRange n).map (fun _ : Fin n => (0 : Nat)) := by
+      apply List.map_congr_left
+      intro j _
+      show isDirectLongBase (AIIRay.directPrefix j) * AIIRay.image π (AIIRay.directPrefix j) b = 0
+      show (0 : Nat) * AIIRay.image π (AIIRay.directPrefix j) b = 0
+      exact Nat.zero_mul _
+    rw [hmap]; exact foldr_const_zero _
+  -- Part 2: [directLongBase, directShortBase] — directLongBase contributes
+  -- its image; directShortBase contributes 0.
+  have hL2 :
+      ([AIIRay.directLongBase (by omega : 0 < n),
+        AIIRay.directShortBase (by omega : 0 < n)].map
+          (fun r => isDirectLongBase r * r.image π b)).foldr (· + ·) 0
+      = π (AIICoord.long ⟨0, by omega⟩) b := by
+    show 1 * π (AIICoord.long ⟨0, _⟩) b + (0 * _ + 0) = π (AIICoord.long ⟨0, _⟩) b
+    omega
+  -- Part 3: liftedLong sublist — every entry is 0.
+  have hL3 :
+      (((List.finRange (n - 1)).map (fun j : Fin (n - 1) =>
+          AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+            (Nat.succ_pos _))).map
+          (fun r => isDirectLongBase r * r.image π b)).foldr (· + ·) 0 = 0 := by
+    rw [List.map_map]
+    have hmap :
+        (List.finRange (n - 1)).map
+          ((fun r => isDirectLongBase r * r.image π b) ∘
+            (fun j : Fin (n - 1) =>
+              AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                (Nat.succ_pos _)))
+        = (List.finRange (n - 1)).map (fun _ : Fin (n - 1) => (0 : Nat)) := by
+      apply List.map_congr_left
+      intro j _
+      show (0 : Nat) * AIIRay.image π
+            (AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+              (Nat.succ_pos _)) b = 0
+      exact Nat.zero_mul _
+    rw [hmap]; exact foldr_const_zero _
+  -- Part 4: liftedShort sublist — every entry is 0.
+  have hL4 :
+      (((List.finRange (n - 1)).map (fun j : Fin (n - 1) =>
+          AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+            (Nat.succ_pos _))).map
+          (fun r => isDirectLongBase r * r.image π b)).foldr (· + ·) 0 = 0 := by
+    rw [List.map_map]
+    have hmap :
+        (List.finRange (n - 1)).map
+          ((fun r => isDirectLongBase r * r.image π b) ∘
+            (fun j : Fin (n - 1) =>
+              AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                (Nat.succ_pos _)))
+        = (List.finRange (n - 1)).map (fun _ : Fin (n - 1) => (0 : Nat)) := by
+      apply List.map_congr_left
+      intro j _
+      show (0 : Nat) * AIIRay.image π
+            (AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+              (Nat.succ_pos _)) b = 0
+      exact Nat.zero_mul _
+    rw [hmap]; exact foldr_const_zero _
+  rw [hL1, hL2, hL3, hL4]
+  omega
+
+/-- The image-shift hypothesis for the additive setup, packaged per ray.
+
+For every ray `r ∈ AIIRays n hn`, the image of `r` under `π_α` exceeds
+the image under `π_0` by `affectedByPrefix i r * (α * π_0(long ⟨n-1, _⟩) b)`.
+Affected rays carry indicator `1` and contribute the full additive shift;
+unaffected rays carry `0` and contribute nothing. -/
+private theorem ray_image_shift {n : Nat} (hn : 3 ≤ n)
+    {π_0 π_α : Piece' n}
+    {i : Fin n} (hi_lo : 1 ≤ i.val) (hi_hi : i.val + 1 < n)
+    (α : Nat)
+    (h_same : ∀ c' : AIICoord n, c' ≠ AIICoord.prefix i → π_α c' = π_0 c')
+    (h_shift : ∀ b, π_α (AIICoord.prefix i) b
+                  = π_0 (AIICoord.prefix i) b
+                    + α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b)
+    (b : Nat) :
+    ∀ r ∈ AIIRays n hn,
+      r.image π_α b
+      = r.image π_0 b
+        + affectedByPrefix i r * (α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b) := by
+  intro r _
+  cases r with
+  | directPrefix j =>
+    by_cases hji : i.val = j.val
+    · have hij : i = j := Fin.ext hji
+      subst hij
+      show π_α (AIICoord.prefix i) b
+          = π_0 (AIICoord.prefix i) b
+            + (if i.val = i.val then 1 else 0)
+              * (α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b)
+      rw [if_pos rfl, Nat.one_mul]
+      exact h_shift b
+    · have hcoord : (AIICoord.prefix j : AIICoord n) ≠ AIICoord.prefix i := by
+        intro hc
+        apply hji
+        have hval : j.val = i.val := by
+          have := congrArg
+            (fun c => match c with | AIICoord.prefix k => k.val | _ => 0) hc
+          simpa using this
+        exact hval.symm
+      show π_α (AIICoord.prefix j) b
+          = π_0 (AIICoord.prefix j) b
+            + (if i.val = j.val then 1 else 0)
+              * (α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b)
+      rw [if_neg hji, Nat.zero_mul, Nat.add_zero]
+      exact congrFun (h_same _ hcoord) b
+  | directLongBase h =>
+    show π_α (AIICoord.long ⟨0, h⟩) b
+        = π_0 (AIICoord.long ⟨0, h⟩) b
+          + 0 * (α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b)
+    rw [Nat.zero_mul, Nat.add_zero]
+    have : (AIICoord.long ⟨0, h⟩ : AIICoord n) ≠ AIICoord.prefix i := by
+      intro hc; cases hc
+    exact congrFun (h_same _ this) b
+  | directShortBase h =>
+    show π_α (AIICoord.short ⟨0, h⟩) b
+        = π_0 (AIICoord.short ⟨0, h⟩) b
+          + 0 * (α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b)
+    rw [Nat.zero_mul, Nat.add_zero]
+    have : (AIICoord.short ⟨0, h⟩ : AIICoord n) ≠ AIICoord.prefix i := by
+      intro hc; cases hc
+    exact congrFun (h_same _ this) b
+  | liftedLong j hj =>
+    -- r.image π b = π (prefix ⟨j.val - 1, _⟩) + π (long j).
+    -- Affected iff j.val = i.val + 1.
+    by_cases hji : i.val + 1 = j.val
+    · -- j.val = i.val + 1, so j.val - 1 = i.val, so prefix ⟨j.val-1, _⟩ = prefix i.
+      have hjv : j.val - 1 = i.val := by omega
+      have hj_eq_iplus1 : j = ⟨i.val + 1, by omega⟩ := Fin.ext hji.symm
+      -- Need π_α at the two columns.
+      have h_long_eq : π_α (AIICoord.long j) b = π_0 (AIICoord.long j) b := by
+        have : (AIICoord.long j : AIICoord n) ≠ AIICoord.prefix i := by
+          intro hc; cases hc
+        exact congrFun (h_same _ this) b
+      have h_prefix_match : (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩ : AIICoord n)
+                          = AIICoord.prefix i := by
+        apply congrArg AIICoord.prefix
+        apply Fin.ext
+        show j.val - 1 = i.val
+        exact hjv
+      show π_α (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩) b
+            + π_α (AIICoord.long j) b
+          = π_0 (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩) b
+            + π_0 (AIICoord.long j) b
+            + (if i.val + 1 = j.val then 1 else 0)
+              * (α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b)
+      rw [if_pos hji, Nat.one_mul, h_long_eq, h_prefix_match]
+      have hpi_α : π_α (AIICoord.prefix i) b
+                 = π_0 (AIICoord.prefix i) b
+                   + α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b := h_shift b
+      omega
+    · -- j.val ≠ i.val + 1, so prefix ⟨j.val - 1, _⟩ ≠ prefix i.
+      have h_long_eq : π_α (AIICoord.long j) b = π_0 (AIICoord.long j) b := by
+        have : (AIICoord.long j : AIICoord n) ≠ AIICoord.prefix i := by
+          intro hc; cases hc
+        exact congrFun (h_same _ this) b
+      have h_prefix_eq : π_α (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩) b
+                       = π_0 (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩) b := by
+        have hne : (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩ : AIICoord n)
+                 ≠ AIICoord.prefix i := by
+          intro hc
+          apply hji
+          have hval : j.val - 1 = i.val := by
+            have := congrArg
+              (fun c => match c with | AIICoord.prefix k => k.val | _ => 0) hc
+            simpa using this
+          show i.val + 1 = j.val
+          omega
+        exact congrFun (h_same _ hne) b
+      show π_α (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩) b
+            + π_α (AIICoord.long j) b
+          = π_0 (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩) b
+            + π_0 (AIICoord.long j) b
+            + (if i.val + 1 = j.val then 1 else 0)
+              * (α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b)
+      rw [if_neg hji, Nat.zero_mul, Nat.add_zero, h_prefix_eq, h_long_eq]
+  | liftedShort j hj =>
+    -- Symmetric to liftedLong case.
+    by_cases hji : i.val + 1 = j.val
+    · have hjv : j.val - 1 = i.val := by omega
+      have h_short_eq : π_α (AIICoord.short j) b = π_0 (AIICoord.short j) b := by
+        have : (AIICoord.short j : AIICoord n) ≠ AIICoord.prefix i := by
+          intro hc; cases hc
+        exact congrFun (h_same _ this) b
+      have h_prefix_match : (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩ : AIICoord n)
+                          = AIICoord.prefix i := by
+        apply congrArg AIICoord.prefix
+        apply Fin.ext
+        show j.val - 1 = i.val
+        exact hjv
+      show π_α (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩) b
+            + π_α (AIICoord.short j) b
+          = π_0 (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩) b
+            + π_0 (AIICoord.short j) b
+            + (if i.val + 1 = j.val then 1 else 0)
+              * (α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b)
+      rw [if_pos hji, Nat.one_mul, h_short_eq, h_prefix_match]
+      have hpi_α : π_α (AIICoord.prefix i) b
+                 = π_0 (AIICoord.prefix i) b
+                   + α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b := h_shift b
+      omega
+    · have h_short_eq : π_α (AIICoord.short j) b = π_0 (AIICoord.short j) b := by
+        have : (AIICoord.short j : AIICoord n) ≠ AIICoord.prefix i := by
+          intro hc; cases hc
+        exact congrFun (h_same _ this) b
+      have h_prefix_eq : π_α (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩) b
+                       = π_0 (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩) b := by
+        have hne : (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩ : AIICoord n)
+                 ≠ AIICoord.prefix i := by
+          intro hc
+          apply hji
+          have hval : j.val - 1 = i.val := by
+            have := congrArg
+              (fun c => match c with | AIICoord.prefix k => k.val | _ => 0) hc
+            simpa using this
+          show i.val + 1 = j.val
+          omega
+        exact congrFun (h_same _ hne) b
+      show π_α (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩) b
+            + π_α (AIICoord.short j) b
+          = π_0 (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩) b
+            + π_0 (AIICoord.short j) b
+            + (if i.val + 1 = j.val then 1 else 0)
+              * (α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b)
+      rw [if_neg hji, Nat.zero_mul, Nat.add_zero, h_prefix_eq, h_short_eq]
+
+/-- **Lemma 4.1 — Additive Redundancy at the `long(n-1)` column.**
+
+Let `π_0, π_α : Piece' n` be pieces that agree on every AII column
+except `prefix i`, where `i : Fin n` is interior (`1 ≤ i.val` and
+`i.val + 1 < n`).  Suppose
+
+* (`h_rigid`) `π_0 (long ⟨0, _⟩) = π_0 (long ⟨n - 1, _⟩)` — both
+  endpoints carry the same `e_S` BDI column (RIGID-L_n, plus
+  canonicality of the base-long column);
+* (`h_shift`) `π_α (prefix i) b = π_0 (prefix i) b + α · π_0 (long ⟨n - 1, _⟩) b`
+  pointwise — the additive shift defining `π_α` from `π_0`.
+
+Then `Im π_α ⊆ Im π_0`.
+
+**Proof sketch.** Take any witness `coeffs` for `v ∈ Im π_α`. Define
+`coeffs'` to be `coeffs` with the `directLongBase` coefficient
+incremented by `α · S`, where
+`S := Σ coeffs r * affectedByPrefix i r`. The image-shift (`Helper A`)
+and coefficient-shift (`Helper B`) identities give a matched pair of
+`* (α · π_0(long(n-1)))` and `* (α · S · π_0(long 0))` terms; by
+`h_rigid` these two are equal, so `v = coniclyCombine ... coeffs' π_0`. -/
+theorem additive_redundancy_at_eS {n : Nat} (hn : 3 ≤ n)
+    {π_0 π_α : Piece' n}
+    {i : Fin n} (hi_lo : 1 ≤ i.val) (hi_hi : i.val + 1 < n)
+    (α : Nat)
+    (h_rigid : π_0 (AIICoord.long ⟨0, by omega⟩)
+             = π_0 (AIICoord.long ⟨n - 1, by omega⟩))
+    (h_same : ∀ c' : AIICoord n, c' ≠ AIICoord.prefix i → π_α c' = π_0 c')
+    (h_shift : ∀ b, π_α (AIICoord.prefix i) b
+                  = π_0 (AIICoord.prefix i) b
+                    + α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b)
+    {v : BdiPt} (hv : Im hn π_α v) : Im hn π_0 v := by
+  obtain ⟨coeffs, hv⟩ := hv
+  subst hv
+  -- Define the magic redistribution: bump directLongBase by α · S.
+  let S : Nat :=
+    ((AIIRays n hn).map (fun r => coeffs r * affectedByPrefix i r)).foldr (· + ·) 0
+  let coeffs' : AIIRay n → Nat := fun r => coeffs r + isDirectLongBase r * (α * S)
+  refine ⟨coeffs', ?_⟩
+  funext b
+  -- Apply Helper A (image-shift): conicly Combine π_α = conicly Combine π_0 + S · (α · π_0(l_n) b).
+  have hA :=
+    coniclyCombine_image_shift (AIIRays n hn) coeffs π_α π_0
+      (affectedByPrefix i) (α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b) b
+      (ray_image_shift hn hi_lo hi_hi α h_same h_shift b)
+  -- Apply Helper B (coeff-shift): conicly Combine coeffs' π_0 = conicly Combine coeffs π_0
+  --   + (Σ isDLB r * r.image π_0 b) · (α · S).
+  have hB :=
+    coniclyCombine_coeff_shift (AIIRays n hn) coeffs π_0
+      isDirectLongBase (α * S) b
+  -- The dLB image sum evaluates to π_0(long 0) b.
+  have hT : ((AIIRays n hn).map (fun r => isDirectLongBase r * r.image π_0 b)).foldr (· + ·) 0
+          = π_0 (AIICoord.long ⟨0, by omega⟩) b :=
+    isDLB_image_sum hn π_0 b
+  -- Plug it in and use h_rigid to cancel.
+  show (Piece'.extend hn π_α coeffs) b = (Piece'.extend hn π_0 coeffs') b
+  show coniclyCombine (AIIRays n hn) coeffs π_α b
+       = coniclyCombine (AIIRays n hn) coeffs' π_0 b
+  rw [show coeffs' = fun r => coeffs r + isDirectLongBase r * (α * S) from rfl]
+  rw [hA, hB, hT]
+  have h_rigid_b : π_0 (AIICoord.long ⟨0, by omega⟩) b
+                 = π_0 (AIICoord.long ⟨n - 1, by omega⟩) b := congrFun h_rigid b
+  rw [h_rigid_b]
+  -- Goal:
+  --   coniclyCombine ... coeffs π_0 b + S * (α * π_0(l_n) b)
+  --     = coniclyCombine ... coeffs π_0 b + π_0(l_n) b * (α * S)
+  -- Reduce to AC-of-Nat-mul identity: S * (α * x) = x * (α * S).
+  have key : S * (α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b)
+           = π_0 (AIICoord.long ⟨n - 1, by omega⟩) b * (α * S) := by
+    rw [Nat.mul_left_comm,
+        Nat.mul_comm S (π_0 (AIICoord.long ⟨n - 1, by omega⟩) b),
+        ← Nat.mul_left_comm]
+  rw [key]
+
+#print axioms affectedByPrefix
+#print axioms isDirectLongBase
+#print axioms coniclyCombine_image_shift
+#print axioms coniclyCombine_coeff_shift
+#print axioms isDLB_image_sum
+#print axioms ray_image_shift
+#print axioms additive_redundancy_at_eS
+
 end BdiPolytope
