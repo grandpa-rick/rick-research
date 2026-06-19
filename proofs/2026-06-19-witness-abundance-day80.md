@@ -1,0 +1,506 @@
+---
+title: "Day 80 PROVE: Witness Abundance — Theorem 9.2, n-uniform corollary of Day-79 Theorem 9.1"
+author: Rick
+date: 2026-06-19
+status: |
+  PROVED, n-uniform, n >= 5.
+
+  Theorem 9.2 (Witness Abundance, single-column form): for every
+  n >= 5, every i in {1,...,n-1}, every alpha in {1, 2}, every AII
+  piece column c at level n, the SINGLE-COLUMN witness
+
+      W_{i,alpha,c} := piece with W^c = T_{i,alpha} and W^{c'} = 0
+                       for c' != c, where T_{i,alpha} = e_{B_i} + alpha*e_S
+
+  satisfies:
+    (a) W is F-feasible.
+    (b) Im(W) ⊆ Im(pi_base).
+    (c) For every AII extreme ray r containing c, the ray-image of
+        r under W is exactly T_{i,alpha}.
+
+  COROLLARY (the PROVE.md statement). Every AII extreme ray r at level
+  n supports >= 1 F-feasible single-ray witness W_{i,alpha,r} with
+  Im(W) ⊆ Im(pi_base) and ray-image(r) = T_{i,alpha}. (Pick any column
+  c in r and use W_{i,alpha,c}.)
+
+  KEY OBSERVATION. The single-column witness lifts Day-79 CODE Task 3's
+  empirical "17/17 at n=6, 21/21 at n=7" finding to a structural
+  theorem: there is NO ray excluded by structure — the witness count
+  per ray is >= 1 trivially because there is at least one column to
+  drop T into, and the F-feasibility check on the resulting piece is
+  vacuous (every ray-image is T or 0).
+
+  THE STRUCTURAL INGREDIENT, EVEN SIMPLER THAN HYPOTHESISED.
+  PROVE.md guessed: "each AII ray r has the property r(prefix i) in
+  {0, e_{B_i}, e_{B_i} +/- e_S}, and r(long j) in {0, e_S}, so a
+  single-ray rescaling plus pi_base absorption catches every case."
+  The truth is sharper: nothing ray-specific is needed. T being BDI
+  (Day-79 §3, interior i + alpha <= 2 gives S = alpha <= P_{n-1} = 2)
+  and T being a Z_>=0-combo of two pi_base columns (RIGID-L_n + base
+  canonical prefix) are the only ingredients, and they are
+  ray-agnostic.
+
+  WHAT IS NOT CLAIMED:
+    - That single-column witnesses are MINIMAL among single-ray
+      witnesses. Empirically the Day-79 CODE Task 3 multiset counts
+      (1, 3, 4, 5, 7) reveal richer decomposition structure for
+      multi-column rays; the single-column witness is a sub-class.
+    - That every "column-c witness" is image-equivalent to every
+      other. They are all image-equivalent to ℤ_>=0 . T, so they
+      ARE pairwise image-equal, but that's a corollary not an input.
+    - That carrier_{i,alpha} is droppable in COVERS not containing
+      pi_base. The Day-79 Theorem 9.1 caveat from §6.2 stands:
+      pi_base (or a base-canonical surrogate satisfying both
+      base hypotheses) must be in the cover.
+
+related:
+  - proofs/2026-06-19-uniform-droppability.md (Day 79 Theorem 9.1 —
+    same algebraic facts, instantiated at one specific 2-column witness)
+  - proofs/2026-06-18-interior-non-co-occurrence.md (Day 78 — Lemma 4.1,
+    image-domination via e_S, the column-algebra underlying 9.1 Phase 2.2)
+  - proofs/2026-06-15-axis-uniform3-upper-bound.md (Day 70 — RIGID-L_n
+    in §6.1 and F-feasibility Cor 5.1)
+  - code/2026-06-19-droppability-n7-boundary/ (Day-79 CODE Task 3 —
+    17/17 (n=6) and 21/21 (n=7) per-ray witness counts; pure
+    enumeration that THIS proof lifts)
+  - code/2026-06-19-uniform-droppability-verify/check_W_feasible.py
+    (Day-79 CODE — 2-column lifted-long witness check, n=5..12)
+---
+
+# §1. The theorem
+
+**Setup.** Conventions from Day-79 §2 (`proofs/2026-06-19-uniform-droppability.md`)
+are inherited verbatim:
+
+- AII coords at level $n$: $\{\mathrm{prefix}[j]\}_{j=1}^n$,
+  $\{\mathrm{long}[j]\}_{j=1}^n$, plus $\{\mathrm{short}[j]\}_{j=1}^n$
+  (odd $n$) or $\{\mathrm{short}[j]\}_{j=1}^{n-1} \cup
+  \{\mathrm{linkLHS}\}$ (even $n$). Total $3n$ vars.
+- BDI coords: $\{M_a\}_{a=2}^{n-1} \cup \{B_a\}_{a=1}^{n-1} \cup
+  \{T_a\}_{a=1}^{n-1} \cup \{S\}$. Total $3n-3$ coords.
+- A **piece** $\pi$ at level $n$ is a map (piece column) $\mapsto$
+  (BDI lattice vector).
+- BDI-feasibility (Day-70 §3): nonneg; $T_a \le B_a$;
+  $P_a := 2\sum_{b\le a}(B_b - T_b) \ge 0$; $M_a \le \min(P_{a-1}, P_a)$;
+  $S \le P_{n-1}$.
+- AII extreme rays $\mathrm{AIIRays}(n)$ (Day-79 §2, Day-70 Thm 4.2):
+  total $3n-1$ (even $n$) or $3n$ (odd $n$).
+   1. $\mathrm{prefix}[j]$ pure for $j=1,\ldots,n$ — $n$ rays.
+   2. $\mathrm{long}[1]$ pure — 1 ray.
+   3. $\mathrm{short}[1]$ pure (odd $n$) or $\mathrm{short}[1] +
+      \mathrm{linkLHS}$ (even $n$) — 1 ray.
+   4. $\mathrm{prefix}[j-1] + \mathrm{long}[j]$ for $j = 2,\ldots,n$ —
+      $n-1$ rays.
+   5. $\mathrm{prefix}[j-1] + \mathrm{short}[j]$ for $j = 2,\ldots,n$
+      (odd) or $\mathrm{prefix}[j-1] + \mathrm{short}[j] +
+      \mathrm{linkLHS}$ for $j = 2,\ldots,n-1$ (even) — $n-1$ or
+      $n-2$ rays.
+- $F$-feasibility (Day-70 Cor 5.1): a piece $\pi$ is $F$-feasible iff
+  $\pi(r)$ is BDI for every $r \in \mathrm{AIIRays}(n)$, where
+  $\pi(r) = \sum_{c \in r} \pi^c$.
+- $\operatorname{Im}(\pi) :=$ the $\mathbb{Z}_{\ge 0}$-semigroup
+  generated by $\pi$'s columns (equivalently, by $\pi$'s ray-images,
+  see Day-79 §2).
+- $\pi_{\rm base}$ at level $n$ (Day-72 base piece): in particular
+  $\pi_{\rm base}^{\,\mathrm{prefix}[i]} = e_{B_i}$ for $i =
+  1,\ldots,n-1$ and $\pi_{\rm base}^{\,\mathrm{long}[n]} = e_S$
+  (RIGID-L_n, Day-70 Lemma 6.1).
+- Target $T_{i,\alpha} := e_{B_i} + \alpha\, e_S$.
+
+**Definition 1.1 (Single-column witness).** Let $n \ge 5$,
+$i \in \{1, \ldots, n-1\}$, $\alpha \in \{0, 1, 2\}$, $c$ a piece
+column at level $n$. The **single-column witness**
+$W_{i,\alpha,c}$ is the piece defined by
+$$
+  W_{i,\alpha,c}^{\,c} \;=\; T_{i,\alpha}, \qquad
+  W_{i,\alpha,c}^{\,c'} \;=\; 0 \quad \text{for } c' \neq c.
+$$
+
+**Theorem 9.2 (Witness Abundance).** Let $n \ge 5$, $i \in
+\{1, \ldots, n-1\}$, $\alpha \in \{1, 2\}$, and $c$ ANY piece column.
+Then:
+
+1. **(F-feasibility, $c$-uniform)** $W_{i,\alpha,c}$ is $F$-feasible.
+
+2. **(Image-containment in base)** $\operatorname{Im}(W_{i,\alpha,c})
+   \subseteq \operatorname{Im}(\pi_{\rm base})$.
+
+3. **(Single-ray support)** For every AII extreme ray $r \in
+   \mathrm{AIIRays}(n)$ with $c \in r$:
+   $$
+     W_{i,\alpha,c}(r) \;=\; T_{i,\alpha}.
+   $$
+
+**Corollary 9.2' (PROVE.md statement).** Every AII extreme ray $r \in
+\mathrm{AIIRays}(n)$ admits $\ge 1$ $F$-feasible single-ray witness
+$W_{i,\alpha,r}$ with $\operatorname{Im}(W) \subseteq \operatorname{Im}(\pi_{\rm base})$
+and $W(r) = T_{i,\alpha}$.
+
+*Proof of Corollary 9.2' from Theorem 9.2.* Pick any column $c \in r$
+(every AII extreme ray has $\ge 1$ column, by direct inspection of
+the ray enumeration). Set $W_{i,\alpha,r} := W_{i,\alpha,c}$. Apply
+parts (1)–(3) of Theorem 9.2. $\square$
+
+# §2. Proof of Theorem 9.2
+
+The proof reuses two algebraic facts already verified $n$-uniformly
+in Day-79 (`proofs/2026-06-19-uniform-droppability.md`):
+
+**Fact A (Target BDI, Day-79 §3).** For every $n \ge 3$, every $i \in
+\{1, \ldots, n-1\}$, every $\alpha \in \{0, 1, 2\}$, the lattice point
+$T_{i,\alpha} = e_{B_i} + \alpha\, e_S$ is BDI:
+- Nonneg ✓.
+- $T_a = 0 \le B_a = \delta_{a=i}$ ✓.
+- $P_a = 2 \cdot \mathbf{1}[a \ge i] \in \{0, 2\}$ ✓.
+- $M_a = 0 \le \min(P_{a-1}, P_a)$ ✓.
+- $S = \alpha \le 2 = P_{n-1}$ (since $B_i = 1, i \le n-1$, all other
+  $B_a, T_a$ vanish) ✓.
+
+**Fact B (Target as base-column combo, Day-79 §4.1).** For every
+$n \ge 3$, every $i \in \{1, \ldots, n-1\}$, every $\alpha \in
+\{0, 1, 2\}$:
+$$
+  T_{i,\alpha} \;=\; \pi_{\rm base}^{\,\mathrm{prefix}[i]} \;+\;
+                     \alpha \cdot \pi_{\rm base}^{\,\mathrm{long}[n]}.
+$$
+This is direct from $\pi_{\rm base}^{\,\mathrm{prefix}[i]} = e_{B_i}$
+(base canonical, $i \le n-1$) and
+$\pi_{\rm base}^{\,\mathrm{long}[n]} = e_S$ (RIGID-L_n).
+
+Both facts are $n$-uniform (no parity dependence; no $n$-specific
+piece structure required beyond the two named base columns).
+
+**Proof of (1) — F-feasibility.**
+
+Let $r \in \mathrm{AIIRays}(n)$. The image $W_{i,\alpha,c}(r) =
+\sum_{c' \in r} W_{i,\alpha,c}^{\,c'}$. By construction, $W^{c'} = 0$
+for $c' \neq c$. So:
+$$
+  W_{i,\alpha,c}(r) \;=\;
+  \begin{cases}
+    W^{c} \;=\; T_{i,\alpha} & \text{if } c \in r, \\
+    0 & \text{if } c \notin r.
+  \end{cases}
+$$
+Both candidates are BDI: $T_{i,\alpha}$ by Fact A; $0$ trivially.
+So every AII ray-image of $W_{i,\alpha,c}$ is BDI. By Day-70 Cor 5.1,
+$W_{i,\alpha,c}$ is $F$-feasible. $\square$
+
+**Proof of (2) — Image containment.**
+
+$W_{i,\alpha,c}$ has exactly one nonzero column. So the $\mathbb{Z}_{\ge 0}$-
+span of its columns is
+$$
+  \operatorname{Im}(W_{i,\alpha,c}) \;=\; \mathbb{Z}_{\ge 0} \cdot
+  T_{i,\alpha}.
+$$
+By Fact B, $T_{i,\alpha} = \pi_{\rm base}^{\,\mathrm{prefix}[i]} +
+\alpha \cdot \pi_{\rm base}^{\,\mathrm{long}[n]}$ is a $\mathbb{Z}_{\ge 0}$-
+combination of two columns of $\pi_{\rm base}$. Hence $T_{i,\alpha}
+\in \operatorname{Im}(\pi_{\rm base})$, and since
+$\operatorname{Im}(\pi_{\rm base})$ is closed under $\mathbb{Z}_{\ge 0}$-
+sums, $\mathbb{Z}_{\ge 0} \cdot T_{i,\alpha} \subseteq
+\operatorname{Im}(\pi_{\rm base})$.
+$\square$
+
+**Proof of (3) — Single-ray support.**
+
+Recapitulating the computation in (1): for $c \in r$, the only
+nonzero contribution to $W_{i,\alpha,c}(r) = \sum_{c' \in r} W^{c'}$
+is the $c' = c$ term, giving $W^c = T_{i,\alpha}$. $\square$
+
+This completes the proof of Theorem 9.2. $\square\square\square$
+
+# §3. Why Theorem 9.2 is a corollary, not a strengthening
+
+The Day-79 proof of Theorem 9.1 made TWO specific column-choices:
+$\mathrm{prefix}[1]$ for the $e_{B_i}$ part, and $\mathrm{long}[2]$
+for the $\alpha\, e_S$ part. The Day-79 §3 verification showed: the
+only nonzero ray-images of this 2-column $W$ are $e_{B_i}$ and
+$e_{B_i} + \alpha\, e_S$, both BDI for interior $i$.
+
+The Day-80 Theorem 9.2 above made ONE column-choice: any column $c$
+holds the WHOLE $T_{i,\alpha}$. The verification is even shorter:
+the only nonzero ray-image is $T_{i,\alpha}$, which is BDI by Fact A.
+
+In particular:
+- The 2-column witness $W_{i,\alpha} := \{\mathrm{prefix}[1] \to e_{B_i},
+  \mathrm{long}[2] \to \alpha\, e_S\}$ of Day-79 Theorem 9.1 has
+  $\operatorname{Im}(W) = \{a \cdot e_{B_i} + b \cdot \alpha\, e_S :
+  a, b \in \mathbb{Z}_{\ge 0}\}$.
+- The 1-column witness $W_{i,\alpha,c} := \{c \to T_{i,\alpha}\}$ of
+  Day-80 Theorem 9.2 has $\operatorname{Im}(W) = \mathbb{Z}_{\ge 0}
+  \cdot T_{i,\alpha} \subsetneq \{a \cdot e_{B_i} + b \cdot \alpha\, e_S\}$.
+
+So the 1-column witness has a strictly SMALLER image but still
+contains $T_{i,\alpha}$ as a generator. It is "more concentrated"
+than the 2-column witness.
+
+The droppability conclusion (Day-79 Theorem 9.1 §4.3) still goes
+through with the 1-column witness, because the only requirement on
+$W$ is $\operatorname{Im}(W) \subseteq \operatorname{Im}(\pi_{\rm base})$
+— which is automatically inherited from
+$T_{i,\alpha} \in \operatorname{Im}(\pi_{\rm base})$.
+
+# §4. Empirical confirmation
+
+## §4.1 Day-79 CODE Task 3 (n=6, n=7)
+
+`code/2026-06-19-droppability-n7-boundary/task3_witness_clean.py`
+enumerates pieces with support exactly equal to a chosen ray's columns
+and checks $F$-feasibility. The result table (from
+`task3_clean_output.log`):
+
+| Ray kind | columns | # witnesses, α=1 | # witnesses, α=2 |
+|:--|:--:|:--:|:--:|
+| singleton $\mathrm{prefix}[j]$ | 1 | 1 | 1 |
+| singleton $\mathrm{long}[1]$ | 1 | 1 | 1 |
+| singleton $\mathrm{short}[1]$ (odd $n$) | 1 | 1 | 1 |
+| pair $\mathrm{short}[1] + \mathrm{linkLHS}$ (even $n$) | 2 | 3 | 4 |
+| pair $\mathrm{prefix}[j-1] + \mathrm{long}[j]$ | 2 | 3 | 4 |
+| triple $\mathrm{prefix}[j-1] + \mathrm{short}[j] + \mathrm{linkLHS}$ (even $n$) | 3 | 5 | 7 |
+| pair $\mathrm{prefix}[j-1] + \mathrm{short}[j]$ (odd $n$) | 2 | 3 | 4 |
+
+At $n = 6$, $i \in \{2,3,4\}$, $\alpha \in \{1,2\}$: **17 of 17 rays
+support $\ge 1$ witness** (45 witnesses total at α=1, 59 at α=2).
+At $n = 7$, $i \in \{2,3,4,5\}$, $\alpha \in \{1,2\}$: **21 of 21
+rays support $\ge 1$ witness**.
+
+Theorem 9.2 explains 17/17 and 21/21 structurally: every ray has
+$\ge 1$ column, so the single-column witness (with $W^{c} = T$ for
+that column) is a support-$r$ witness in the Task 3 sense, with
+support $\{c\} \subseteq $ ray columns.
+
+## §4.2 Day-80 single-column witness check (n = 5..12)
+
+Direct verification at $n \in \{5, 6, 7, 8, 9, 10, 11, 12\}$, every
+$i \in \{1, \ldots, n-1\}$, every $\alpha \in \{1, 2\}$, every
+piece column $c$:
+
+```
+Single-column witness F-feasibility check
+  (n in 5..12, i in 1..n-1, alpha in 1..2):
+  failures: 0
+  ALL single-column witnesses F-feasible.
+```
+
+At each $n$ the witness count per $(i, \alpha)$ is exactly the
+number of piece columns (= $3n$ at odd $n$, $3n-1$ at even $n$):
+
+| $n$ | # piece columns | # AII rays |
+|:--:|:--:|:--:|
+| 5 | 15 | 15 |
+| 6 | 18 | 17 |
+| 7 | 21 | 21 |
+| 8 | 24 | 23 |
+| 9 | 27 | 27 |
+| 10 | 30 | 29 |
+| 11 | 33 | 33 |
+| 12 | 36 | 35 |
+
+Every piece column appears in $\ge 1$ AII ray (verified
+combinatorially $n$-uniformly), so the column-count is exactly the
+single-column witness count.
+
+(Reference script: `code/2026-06-19-droppability-n7-boundary/bdi_universal.py`
+combined with the inline check above.)
+
+# §5. What the 1, 3, 4, 5, 7 counts mean (and why they're not the
+structural point)
+
+The Task 3 counts give DECOMPOSITION multiplicity:
+
+- For a singleton ray $r = \{c\}$, the only decomposition of $T$
+  into 1 part is $T$ itself. 1 witness.
+- For a pair ray $r = \{c_1, c_2\}$, the decompositions of $T_{i,\alpha}$
+  (a vector with $B_i = 1$, $S = \alpha$) into 2 nonneg int vectors are
+  $|\mathrm{comp}(1, 2)| \cdot |\mathrm{comp}(\alpha, 2)| = 2 \cdot (\alpha+1)$
+  total. The $F$-feasibility filter removes those where $\mathrm{val}_1$
+  fails BDI (specifically $S$-coords without $B_i$). At $\alpha=1$:
+  $4 - 1 = 3$. At $\alpha=2$: $6 - 2 = 4$. Matches.
+- For a triple ray (even $n$, $\mathrm{prefix}[j-1] + \mathrm{short}[j]
+  + \mathrm{linkLHS}$), the decompositions of $T$ into 3 parts are
+  $3 \cdot \binom{\alpha+2}{2}$. At $\alpha=1$: $3 \cdot 3 = 9$. The
+  $F$-feasibility filter removes both $\mathrm{val}_1$ failures (2)
+  and $\mathrm{val}_3$ failures (2), with overlap impossible because
+  $\mathrm{val}_1$ and $\mathrm{val}_3$ both bad would split $S = 1$
+  between two slots ($S \ge 1$ in val_1 AND val_3) impossibly. Total
+  $9 - 4 = 5$. Matches. At $\alpha=2$: $3 \cdot 6 = 18$, minus
+  $6 + 6 = 12$ failures, plus 1 overlap (val_1 takes 1 S, val_3 takes
+  1 S, val_2 takes 0), gives $18 - 11 = 7$. Matches.
+
+These multiplicities are nice combinatorial bookkeeping but not the
+structural content of Theorem 9.2. The structural content is
+**"every column suffices"** — much sharper, totally ray-agnostic.
+
+# §6. Honest gap accounting and limits
+
+## 6.1 What requires what
+
+Theorem 9.2's proof uses:
+- Fact A (T BDI): one paragraph in Day-79 §3. **No Conjecture D-pi.**
+- Fact B (T = base-column combo): two lines in Day-79 §4.1. **No D-pi.**
+- Combinatorial "every column is in some ray" check: trivially $n$-uniform.
+
+Theorem 9.2 is $n$-uniformly **independent of Conjecture D-pi**
+(consistent with Day-79's Theorem 9.1 independence claim, §6.1).
+
+## 6.2 Does Theorem 9.2 imply droppability?
+
+Yes for **interior** $i \in \{2, \ldots, n-2\}$ (the Day-71 simpdiv
+carrier scope) and for **boundary** $i \in \{1, n-1\}$ (Day-79 §6.3
+extension):
+
+For every cover $\mathcal{C}$ containing $\pi_{\rm base}$ and
+$\operatorname{carrier}_{i,\alpha}$, and for every single-column witness
+$W_{i,\alpha,c}$:
+$$
+  \operatorname{Im}(\mathcal{C} \setminus \{\operatorname{carrier}_{i,\alpha}\})
+  \;=\; \operatorname{Im}(\mathcal{C})
+  \;=\; \operatorname{Im}((\mathcal{C} \setminus
+        \{\operatorname{carrier}_{i,\alpha}\}) \cup \{W_{i,\alpha,c}\}).
+$$
+The proof is verbatim the Day-79 §4.3 argument: Day-78 Lemma 4.1
+absorbs $\operatorname{carrier}_{i,\alpha}$ into $\pi_{\rm base}$;
+$W_{i,\alpha,c}$'s image is in $\operatorname{Im}(\pi_{\rm base})$ by
+Theorem 9.2 (2). $\square$
+
+So Theorem 9.2 strengthens Theorem 9.1 in the following sense:
+**every column gives a valid replacement witness**, not just the
+specific $\{\mathrm{prefix}[1], \mathrm{long}[2]\}$ pair Day-79 chose.
+
+## 6.3 What Theorem 9.2 does NOT claim
+
+The PROVE.md (Day-80) hypothesis suggested ray-specific structure
+(prefix-column ray-images in $\{0, e_{B_i}, e_{B_i} \pm e_S\}$).
+The proof above does NOT establish this — it bypasses it. The
+hypothesis MIGHT hold (as a separate combinatorial check on AII
+extreme rays applied to $\pi_{\rm base}$), but is not needed for
+Theorem 9.2.
+
+Similarly, Theorem 9.2 does NOT claim:
+- Minimality of any single-column witness in any specific cover.
+- That distinct columns give distinct witness PIECES — they do, but
+  they give the SAME image semigroup $\mathbb{Z}_{\ge 0} \cdot T$.
+- Any statement about the H3-OP question (Day 76 §6.4) which
+  concerns covers without $\pi_{\rm base}$.
+- Anything about $\alpha = 0$ carrier droppability (vacuous for
+  $\alpha = 0$: the carrier IS $\pi_{\rm base}$).
+
+## 6.4 LEAN target
+
+The Phase 1 / §2 (1) lemma extracted in standalone form:
+
+> **Lemma 9.2.A (Single-column witness feasibility).** For every
+> $n \ge 3$, every $i \in \{1, \ldots, n-1\}$, every $\alpha \in
+> \{0, 1, 2\}$, every piece column $c$ at level $n$, the
+> single-column witness $W_{i,\alpha,c}$ is $F$-feasible.
+
+Proof: Fact A + ray-image computation (one paragraph).
+
+Lemma 9.2.A is even shorter than Day-79's Lemma 3.A target (the
+2-column lemma) — estimated $\sim 50$ LEAN lines on top of the
+existing BdiPolytope.lean scaffolding, since the AII ray
+enumeration is already in place.
+
+# §7. The headline, stated three ways
+
+**As a corollary to Day-79 Theorem 9.1.** Every AII piece column $c$
+gives an even more concentrated F-feasible witness for $T_{i,\alpha}$
+than the Day-79 2-column witness. The droppability conclusion of
+Theorem 9.1 carries over with this 1-column witness in place of the
+$\{\mathrm{prefix}[1], \mathrm{long}[2]\}$ pair, with no change of
+proof structure.
+
+**As a structural statement.** $F$-feasibility of the target
+$T_{i,\alpha}$ alone (a pointwise BDI check on a single lattice
+vector) suffices to manufacture single-ray witnesses for every AII
+extreme ray, $n$-uniformly. There is no ray-level structural
+obstruction — only the trivial $T$-BDI check.
+
+**As a meta-observation.** The Day-79 CODE Task 3 finding (17/17 at
+$n = 6$, 21/21 at $n = 7$) was not a coincidence of n=6,7 but a
+consequence of ray enumeration + target BDI. It would hold at every
+$n \ge 3$, and at every interior or boundary $i$. The Day-78
+"three families" classification was thus a tiny slice — the
+abundance is **maximal** and the only obstruction is the BDI status
+of the single point $T$.
+
+# §8. Calibration notes
+
+- **Day-78 streak-breaks-positively rule.** Held. The streak from
+  Day 78 §4.1 → Day 79 Theorem 9.1 → Day 80 Theorem 9.2 reveals each
+  step as a structurally sharper version of the previous: 4.1 was
+  about a particular carrier replacement piece (the $\pi_\alpha$
+  with $\mathrm{prefix}[i] = e_{B_i} + \alpha\, e_S$); 9.1 was about
+  the 2-column witness; 9.2 is about the 1-column witness. Each
+  result is a corollary, not a new theorem.
+
+- **Whiskey rule.** Held — and emphatically so. Phase 1 + Phase 2 +
+  Phase 3 took 40 minutes total. The remaining time was Phase 4
+  (empirical confirmation script) + this writeup. The right
+  statement WAS the witness, the witness WAS the column, the column
+  WAS the lattice point — and now even more so: the lattice point
+  is the only thing being checked.
+
+- **Day-79 PROVE.md "clean and short beats long" instruction.**
+  Followed. Total proof body (§2): 3 lemmas, each $\le 5$ lines.
+  Total writeup: $\sim 200$ lines including context, calibration,
+  and §4–§7 implications.
+
+- **Computation-first methodology.** Single-column witness conjecture
+  was verified at $n \in \{5, 6, 7, 8, 9, 10, 11, 12\}$ for every
+  $(i, c, \alpha)$ before being lifted to a proof. The proof is
+  trivial because the computation revealed the right object.
+
+# §9. Files
+
+- This file: `proofs/2026-06-19-witness-abundance-day80.md`.
+- Underlying Theorem 9.1: `proofs/2026-06-19-uniform-droppability.md`.
+- Empirical CODE Task 3: `code/2026-06-19-droppability-n7-boundary/`.
+- Single-column verification (this PROVE): inline check via
+  `bdi_universal.py` (n=5..12, all columns).
+- LEAN target: extend `proofs/lean/bdi-polytope/BdiPolytope.lean`
+  with Lemma 9.2.A.
+
+# §10. Open follow-ups
+
+1. **Joint replacement (Day-79 §10.4 open).** When all three
+   $\alpha \in \{0, 1, 2\}$ carriers at one $(n, i)$ are dropped
+   simultaneously, the single-column witness $W_{i,\alpha,c}$
+   replaces each individually. Question: can a single 1-column piece
+   replace MULTIPLE $\alpha$-carriers at once? Probably yes — set
+   $W^c = T_{i,2}$, and use the multi-$\alpha$ closure
+   $T_{i,1} \in \operatorname{Im}(W)$ via $T_{i,1} = T_{i,2} - e_S$
+   ... wait, no, $\operatorname{Im}$ is closed under $\mathbb{Z}_{\ge 0}$
+   only. So $T_{i,1}$ is NOT in $\mathbb{Z}_{\ge 0} \cdot T_{i,2}$.
+   Need a more delicate construction or two columns. Open.
+
+2. **Witness-cover minimality.** With Theorem 9.2 in hand, the
+   minimal witness count per cover is $\le 1$ per $(i, \alpha)$
+   triple (one single-column witness suffices). Question: is it
+   strictly less in good covers? Open computational target for
+   Day 81+.
+
+3. **Image-essential single-ray witness (H3-OP, Day 76 §6.4).**
+   Theorem 9.2 assumes $\pi_{\rm base}$ is in the cover. Drop this
+   assumption: when is $W_{i,\alpha,c}$ image-essential? Open.
+
+4. **Extension to boundary $\alpha = 0$.** Vacuous (the carrier IS
+   $\pi_{\rm base}$ at $\alpha = 0$), but might give cleaner LEAN
+   statements. Cosmetic.
+
+5. **Single-column witness for non-interior $i$.** The proof works
+   verbatim at $i \in \{1, n-1\}$ (Day-79 §6.3 boundary extension):
+   $T_{i,\alpha}$ BDI for all $i \le n-1$, and the column
+   $\pi_{\rm base}^{\,\mathrm{prefix}[i]} = e_{B_i}$ for all such $i$.
+   Recorded but unsurprising.
+
+— Rick, Day 80 PROVE, 2026-06-19
+
+*Closing whiskey-note: the discipline this cycle is "if the witness
+has fewer columns, the proof has fewer lines, and the freedom is
+greater." Theorem 9.1 was a 2-column witness, 1-page proof. Theorem
+9.2 is a 1-column witness, 5-line proof. The next step would be a
+0-column witness, 0-line proof, but that would just be $\pi_{\rm
+base}$ itself, and we already knew that worked.*
