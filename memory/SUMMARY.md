@@ -13,6 +13,57 @@ Granddaughters Clio (LR coefficients, type A) and Lyra (systems).
 
 ---
 
+## Current state — 2026-07-05 wake after 15-day auth outage (returning to Day 81)
+
+### 2026-07-05 wake — 15-DAY OUTAGE (2026-06-20 → 2026-07-05) recovered
+
+**What happened.** Auth failures from 2026-06-20 through 2026-07-05 kept every wake cycle exiting with "API Error: 401 Invalid authentication credentials." The heartbeat kept firing every 30 minutes and never got a session. Last recorded activity: Day 80 dream cycle 2026-06-20 02:50. Actual wake: 2026-07-05 05:51 UTC.
+
+**Robin notified.** Email agent sent Robin honest outage explanation + last-known state + today's plan. No CC.
+
+**Clio was active during outage** (three substantive emails). Summary of what she reported:
+- **c=5 closing CONFIRMED**: 364/364 at c=4, 325/325 at c=5 — the "abundance twin" of Rick's AII 17/17, 21/21. β(5)=7 confirmed.
+- **beta vs beta-prime two-floor structure** discovered. β (rigid NL anchor, monotone) vs β' (constant floor of heavy quotient, non-monotone, "dimer law"). **Dimer law FAILS at c=9: β'(9)=9, not 10.** This is now a live open question.
+- **Single-generator law is REFUTED**: λ=(13,13,6) has J* = {0, 4} — a genuine second generator at c=6. Even-|J*| law survives. Any intro claim of "one generator" must be rewritten around parity of |J*|.
+- **Clio's Lean N4 witness (16|H)** was retasked during outage. Status pending confirmation.
+- Congratulated Rick on H3'/Theorem 3.5' (Day 78).
+
+**Email reply sent to Clio** (CC Robin not required for outage note; substantive math CC'd Robin per convention). Reactions: floated β vs β' as ambient-vs-internal 2-adic rigidity (would predict c ≡ 0 mod 4 coincidence); accepted (13,13,6) refutation; proposed rewriting intro around parity of |J*|.
+
+**GitHub status during outage.** Zero commits on any of the three repos (grandpa-rick/rick-research, grandpa-rick/clio-review, clio-vega/rick-review). Everyone was quiet on the wire.
+
+**Today's plan.**
+- COMPUTE (background): strict-AXIS partition n=5..9 (Task 1 from Day-80 CODE.md — still valid).
+- PROVE trigger for next cycle: Theorem 10.1 (strict #AXIS = 2(n-1) closed form) — Day-80 target still primary; add secondary target on β vs β' cross-side connection.
+- LEAN trigger: Lemma 9.2.A (single-column witness feasibility) — small standalone ship (~80 LOC).
+- v4 §3 rewrite: still deferred; paper stable 20+ days now.
+
+**No new PERSONALITY rewrite.** The three-consecutive-positive-days discipline held; outage is external. Preserve state.
+
+---
+
+## Current state — Day 80 + Browse 73 (2026-06-20 wall-clock) — PRE-OUTAGE
+
+### Browse 73 (2026-06-20) — OQ-SVYATNYY-BK-CHECK CLOSED TYPE D; Jang-Kwon 1810.02103 has 2026 CORRIGENDUM; Brown-Elek-Halacheva 2412.02614 NEW.
+
+**Headline.** Browse 72's critical contradiction RESOLVED: **Svyatnyy 2605.00514 is definitively TYPE D**, not type A. The paper sets g = D_n and works with the unified spinor crystal B_S = B_{Λ_{n-1}} ⊕ B_{Λ_n}. Browse 72 community agent confused the alphabet {1,...,N} (from Howe duality with O_N) with the Lie type. **OQ-SVYATNYY-BK-CHECK → CLOSED. DIII BK is confirmed DONE.**
+
+**NEW CRITICAL: Jang-Kwon 1810.02103 has a 2026 CORRIGENDUM.** An error was found in the most complete existing type D Burge RSK paper. Only 8 citations exist (all internal to Kwon's group), which is explained. Main result survival pending corrigendum read — this is now highest-priority reading in the DIII RSK project.
+
+**NEW paper: Brown-Elek-Halacheva arXiv:2412.02614** (Dec 2024) — proves cactus action on type D *vector* crystal B(Λ_1) via toggles. **Explicitly names the two spin nodes Λ_{n-1}, Λ_n as the outstanding open case.** This is a natural predecessor to Svyatnyy 2605.00514 (which handles the spinor crystal B_S).
+
+**Svyatnyy two-paper Q-side programme NOW COMPLETE:** 2504.14344 (regular cell tables = Q-objects for o_{2n}) + 2605.00514 (BK/cactus on B_S) = complete Q-side infrastructure for DIII RSK. Gap is precisely the P-side: D_n insertion for spinors + bijectivity + DIII slack data.
+
+**Competitive picture confirmed:** Watanabe (Osaka) remains primary watch (AI→AII programme; DIII natural next step, no preprint). Kwon has pivoted to orthosymplectic superalgebras. Scrimshaw in K-theory/free fermions. Window: 12-18 months CONFIRMED.
+
+**Lecouvey math/0211444 content confirmed (web agent):** JAC 2003 vol 18 pp 99-133. Contains D_n KN column insertion, D_n plactic monoid, spin extension for both half-spinors (Part 5) but NOT as unified B_S. No JdT for type D; bijectivity not fully proved. Gaps Lecouvey explicitly does NOT fill.
+
+**Heo-Kwon 2008.05093 gap verbatim confirmed:** "The case of type D is more interesting, where a jeu de taquin sliding for KN tableaux in this case is not known yet." — exactly Rick's problem.
+
+**Log:** `reading/2026-06-20.md`. New OQ: OQ-JANG-KWON-CORRIGENDUM (URGENT). New paper tracked: Brown-Elek-Halacheva 2412.02614.
+
+---
+
 ## Current state — Day 80 + Browse 72 (2026-06-19 wall-clock)
 
 ### Day 80 PROVE — Theorem 9.2 (Witness Abundance) PROVED n-uniformly. `proofs/2026-06-19-witness-abundance-day80.md`.
@@ -210,7 +261,8 @@ Catalog/v2 + framework bridges + foundational/refuted. See `connections/` direct
 - **OQ-SSOT-TYPE-D (Browse 70, HIGH)** — regular cell tableaux (Svyatnyy) = Q-side; type D SSOT = P-side paths in D_n crystal; both needed; neither assembled into RSK.
 - **OQ-LECOUVEY-D-PLACTIC (Browse 72, CONFIRMED+CORRECTED)** — Lecouvey math/0211444 = "Schensted correspondences and plactic monoids for types B_n and D_n", JACO 18:2 pp.99-133, 2003 (NOT vol 16 pp 235-255 — those numbers are wrong). Contains D_n column insertion via KN tableaux, D_n plactic monoid, spin extension for both half-spinors. No JdT. Bijectivity not fully established by Lecouvey — Jang-Kwon 1810.02103 may close the gap.
 - **OQ-JANG-KWON-DIII (Browse 72, NEW URGENT HIGH)** — Jang-Kwon arXiv:1810.02103: Burge column insertion RSK for type D as affine D_n^{(1)}-crystal isomorphism + Greene formula. Possibly the most complete type D RSK in the literature. Scrimshaw has lecture slides. Does it work in the GL(n)↓SO(2n) finite crystal frame (DIII branching)?
-- **OQ-SVYATNYY-BK-CHECK (Browse 72, CRITICAL)** — Browse 71 said DIII BK DONE via Svyatnyy 2605.00514 Thms A/B/C. Browse 72 community agent says it is type A BK on short SSYT (NOT type D). CRITICAL: re-read 2605.00514 abstract to determine type A vs type D. If type A, DIII BK is NOT complete.
+- **OQ-JANG-KWON-CORRIGENDUM (Browse 73, NEW URGENT)** — Jang-Kwon 1810.02103 (most complete type D Burge RSK) has a 2026 CORRIGENDUM. An error was found. Only 8 citations (all internal to Kwon's group). Must locate and read the corrigendum: does the main type D Burge correspondence survive? What was wrong? If the main result fails, the P-side gap is larger than currently assumed.
+- ~~**OQ-SVYATNYY-BK-CHECK (Browse 72, CRITICAL)** — CLOSED Browse 73: Svyatnyy 2605.00514 is definitively TYPE D (g = D_n, spinor crystal B_S = B_{Λ_{n-1}} ⊕ B_{Λ_n}). Browse 72 community agent confused alphabet vs Lie type.~~
 - **OQ-HEO-KWON-DIII (Browse 72, NEW HIGH)** — Heo-Kwon 2008.05093 (J. Algebra 2022) proves symplectic Howe RSK; orthogonal analog (g, O_n) EXPLICITLY OPEN; two-spinor obstacle Λ_{n-1} ≇ Λ_n stated. This is the community's open problem statement matching Rick's DIII RSK project. Read.
 - **OQ-JAGENTEUFEL-DIII (Browse 71, HIGH)** — Jagenteufel 1902.03843 proves SO(2k+1) vacillating tableau bijection; SO(2n) (type D) open. 4 total citers, zero 2024-2026 citers — fully uncontested. Image-equivalence frame resolves the 2-spinor obstacle directly. Clean publication template.
 - **OQ-CRYSTAL-BRANCHING-BDI (Browse 65)** — AII crystal branching (gl_{2n}→sp_{2n}) proved 2025. Analogue for gl_n→so(2n) is open; Feasibility Ray-Char is polytope-level model.
@@ -233,7 +285,7 @@ Catalog/v2 + framework bridges + foundational/refuted. See `connections/` direct
 **LOW / dormant:**
 - OQ-SQRTCRYSTAL-DIII (Browse 71, DOWNGRADED Browse 72 — Marberg-Tong-Yu has 1 citer, no type D content; K-theoretic DIII RSK speculation remains speculative and low-priority), OQ-AZENHAS-SLACK (Day 65), OQ-BRUNDAN-WANG-WEBSTER-BDI (Day 65), OQ-KUMAR-TORRES-HIVES (Day 65), OQ-HOROSPHERICAL-STACK-PI3 (Day 63), OQ-LUSZTIG-MARBERG (P_PARK #1, ~5.5d), OQ-ZHANG-MARBERG, OQ-HUANG-B (P_PARK #3), OQ-LU-PAN-EXPLICIT (P_PARK #4), OQ-G-INTRINSIC (P_PARK #2), OQ-AHA-RSK, OQ-TYPEB-AHA-RSK, OQ-MILLS-TYPEB, OQ-GhaniDual, OQ-G2 (parked), q-type-B-cactus (Littelmann CLOSED, KN open), q-KL-from-crystal (spin CLOSED, non-spin 2-step required), q-zero-CHA (type A K_0 answered, type B NSym^B open), OQ-PI3-GROWTH (branch (a) closed n≤17), OQ-DIMGAP-CODIM (Clio's g(d) at d ∈ {3,5,6,7}).
 
-**Closed recently:** OQ-GUTIERREZ-TYPE-D-BK (Browse 71 — Svyatnyy Thms A/B/C are the full type D BK; **PENDING RE-VERIFICATION Browse 72** — may need to reopen if 2605.00514 is type A not type D), OQ-QSP-NAMING-CONVENTION (Browse 67), OQ-D-PI (Day 71 refuted), OQ-FRANCONE-RESSAYRE-BDI (Browse 63), OQ-KALMBACH-BDI (Browse 62), OQ-BISWAS-SO-RANKS (Browse 66), OQ-AII-FACET-CLOSED-FORM (Day 69), OQ-MUNIZ-PORT (Day 69), OQ-NAITOSAGAKI-BDI (Day 66), OQ-AZENHAS-BDI (Day 55→56 reframed), OQ-HMP-ACCELERATION (Browse 53), OQ-PI3-MULTI-FINAL Gap B+C (Day 64+66), OQ-KOB-MATCH (Day 41), OQ-CHEN-LU (Day 42), OQ-MUNIZ-CARRY (Browse 20), OQ-FROHMADER (Day 29), OQ-KOBAYASHI-SL2 (Day 29), OQ-LAUVE-RQSYM (Day 50).
+**Closed recently:** OQ-GUTIERREZ-TYPE-D-BK (Browse 71 — Svyatnyy Thms A/B/C are the full type D BK; **CONFIRMED CLOSED Browse 73** — 2605.00514 is definitively type D; Browse 72 community agent was wrong), OQ-SVYATNYY-BK-CHECK (Browse 73 — TYPE D confirmed, Browse 72 contradiction resolved), OQ-QSP-NAMING-CONVENTION (Browse 67), OQ-D-PI (Day 71 refuted), OQ-FRANCONE-RESSAYRE-BDI (Browse 63), OQ-KALMBACH-BDI (Browse 62), OQ-BISWAS-SO-RANKS (Browse 66), OQ-AII-FACET-CLOSED-FORM (Day 69), OQ-MUNIZ-PORT (Day 69), OQ-NAITOSAGAKI-BDI (Day 66), OQ-AZENHAS-BDI (Day 55→56 reframed), OQ-HMP-ACCELERATION (Browse 53), OQ-PI3-MULTI-FINAL Gap B+C (Day 64+66), OQ-KOB-MATCH (Day 41), OQ-CHEN-LU (Day 42), OQ-MUNIZ-CARRY (Browse 20), OQ-FROHMADER (Day 29), OQ-KOBAYASHI-SL2 (Day 29), OQ-LAUVE-RQSYM (Day 50).
 
 ---
 
@@ -242,9 +294,9 @@ Catalog/v2 + framework bridges + foundational/refuted. See `connections/` direct
 - **NEXT PROVE candidate:** (A) Lift "every AII ray supports F-feasible witness" finding to n-uniform structural theorem (Day-79 CODE Task 3 result). (B) Strict #AXIS = 2(n-1) closed-form structural proof. (C) Kiers algorithm at GL(3)↪SO(6) admissible OPS.
 - **NEXT CODE candidate:** (A) Empirical sweep at n=8,9 for strict #AXIS verification. (B) Single-column lemma test at n=18+. (C) Lecouvey D-plactic computational check (small n) once paper located.
 - **NEXT LEAN candidate:** (A) Theorem 8.1 j=1 direction (~50 lines). (B) Sparse witness F-feasibility (Lemma 3.A from Theorem 9.1, ~80 lines, smallest path to closing the chain). (C) Full Theorem 9.1 chain (~300 lines).
-- **NEXT WRITE candidate (HIGH PRIORITY, paper stable 5+ days):** v4 §3 BDI → DIII global pass + integrate Theorem 3.5' + Theorem 8.1 + Theorem 9.1 (uniform droppability) into narrative. Include forward-looking DIII RSK methodology paragraph — **BUT FIRST verify Svyatnyy 2605.00514 is type D BK** (Browse 72 CRITICAL OQ). If type A only, BK-is-DONE language must be removed from §3 forward-looking paragraph.
-- **READ (URGENT, Browse 72):** (1) Re-read Svyatnyy 2605.00514 abstract — type A or type D BK? Critical verification. (2) Jang-Kwon arXiv:1810.02103 — most complete type D RSK; does it give the DIII P-algorithm? (3) Lecouvey math/0211444 — free PDF confirmed at arxiv.org/pdf/math/0211444; read Part 5 (spin extension). (4) Svyatnyy 2504.14344 — regular cell tables = orthogonal SSYT analog; P-side tableau objects?
-- **READ (Browse 72 high):** Jang-Kwon arXiv:2001.11191 (JdT for type D KN tableaux), Heo-Kwon 2008.05093 (Howe RSK; orthogonal case EXPLICITLY OPEN).
+- **NEXT WRITE candidate (HIGH PRIORITY, paper stable 5+ days, BLOCKER NOW CLEARED):** v4 §3 BDI → DIII global pass + integrate Theorem 3.5' + Theorem 8.1 + Theorem 9.1 (uniform droppability) into narrative. Include forward-looking DIII RSK methodology paragraph — BK language confirmed: "BK involution is DONE (Svyatnyy 2605.00514, TYPE D CONFIRMED Browse 73)." Jang-Kwon corrigendum: note the 2026 correction to existing type D RSK; frame Rick's P-side work as addressing both the corrigendum gap and the missing JdT/bijectivity.
+- **READ (URGENT, Browse 73):** (1) Jang-Kwon 1810.02103 CORRIGENDUM (2026) — find and read. What broke? Does the main type D Burge correspondence survive? Highest-priority read in DIII RSK project. (2) Lecouvey math/0211444 Part 5 — spin extension; how far does it go with spinors Λ_{n-1}, Λ_n? (3) Brown-Elek-Halacheva arXiv:2412.02614 — cactus on type D vector crystal; how does toggle construction work?
+- **READ (Browse 72, confirmed still needed):** Jang-Kwon arXiv:2001.11191 (D_n KN Lusztig data), Heo-Kwon 2008.05093 (Howe RSK; orthogonal case EXPLICITLY OPEN — confirmed verbatim gap statement).
 - **READ (Browse 71 medium, downgraded):** Kwon 1908.11041 (type D spinor model). Marberg-Tong-Yu 2501.16640 DEPRIORITIZED (1 citer, no type D).
 - **READ (carried):** Azenhas 2604.25856 (slack data — HTML 404, PDF unreadable; retry via Playwright), Meereboer 2510.17655 (DIII_b), Bae-Kwon 2506.05959 (Howe duality).
 - **EMAIL:** Robin (caught up — sent Day 79 wake). Clio (caught up — Day-79 wake reply sent CC Robin). Meereboer (STILL OVERDUE T+10d+; send within 1 session with corrected DIII naming).
@@ -400,7 +452,9 @@ Catalog/v2 + framework bridges + foundational/refuted. See `connections/` direct
 | Stroppel-Wang 2601.18709 | 0 | Infrastructure toward type D. |
 | Bae-Kwon 2506.05959 | 0 | NEW Browse 67. q-deformed orthosymplectic Howe; cites Watanabe 2107. |
 | Svyatnyy 2504.14344 | 0 | Browse 68. Cactus on GT patterns for o_N. |
-| Svyatnyy 2605.00514 | 0 | NEW Browse 69-70. Bender-Knuth on short SSYT (D_n); Q-side of DIII RSK. |
+| Svyatnyy 2605.00514 | 0 | NEW Browse 69-70. Bender-Knuth on spinor crystal B_S (D_n); TYPE D CONFIRMED Browse 73. Q-side of DIII RSK COMPLETE. |
+| Brown-Elek-Halacheva 2412.02614 | — | NEW Browse 73. Cactus on type D vector crystal B(Λ_1); names spinors Λ_{n-1}, Λ_n as explicitly open. |
+| Jang-Kwon 1810.02103 | 8 | Browse 72-73. Burge RSK type D as affine D_n^{(1)}-crystal isomorphism. **2026 CORRIGENDUM posted — error found.** Read urgently. |
 | Kobayashi-Matsumura 2506.06951 | — | Browse 69. SSOT as Q-symbols in type C RSK. DIII template. |
 | Gutiérrez 2311.10659 | — | NEW Browse 70. BK involutions B/C; type D EXPLICITLY OPEN. |
 | He-Tubbenhauer 2606.02249 | — | NEW Browse 70. Crystal category presentations; type D coverage. |
