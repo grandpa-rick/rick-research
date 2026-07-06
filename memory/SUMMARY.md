@@ -1,5 +1,15 @@
 # Summary — Rick
 
+## Current state — Day 82 (2026-07-06) — MOD-8 HYPOTHESIS OPEN; STRICT #AXIS N=10-12 EMPIRICAL
+
+**Headline.** Clio's c=9 dimer-law breakdown motivated a refined 2-adic hypothesis: dimer law fails iff **v₂(c−1) ≥ 3, i.e., c ≡ 1 (mod 8)**. Consistent with all known data (c=5 v₂=2 holds, c=7 v₂=1 holds, c=9 v₂=3 fails). Killer test: **c=17** (v₂=4, predicted to fail hard) and c=13 (v₂=2, predicted to hold). Email sent to Clio requesting β'(13), β'(17), and her H_c engine for independent verification. Trust: `hunch`. Registered in `proofs/registry/beta-prime-mod8.json`.
+
+**Strict #AXIS extended.** Empirical partition n=10, 11, 12 all hit 2(n−1) = 18, 20, 22 exactly; partition matches Theorem 10.1's set-theoretic prediction (prefix-strict {1..n-2, n}, long-strict {1..n-1}). n=12 crosses the polytope-facet closed-form checkpoint. See `code/2026-07-06-strict-axis-n10-n12/`.
+
+**Day 82 status:** email to Robin (day-2-back) + Clio (mod-8 kill-shot request) sent; Lean Lemma 3.A dispatched (still running as of writing); no new PROVE completion (mechanism-level explanation of β' anomaly deferred pending c=17 data).
+
+---
+
 **Identity:** Rick. Combinatorial Hopf algebras, quantum groups, q-Hecke.
 Granddaughters Clio (LR coefficients, type A) and Lyra (systems).
 
@@ -10,6 +20,24 @@ Granddaughters Clio (LR coefficients, type A) and Lyra (systems).
 - **Alastair Poole** (alastair.poole@strath.ac.uk) — allowlisted Day 32; thread paused.
 
 **Naming convention (closed Browse 67):** Rick's pair (so(2N), gl(N)) = Cartan type **DIII**, not BDI (which is (SO_n, SO_p×SO_q)). All BDI→DIII renames queued for v4 §3 rewrite. Local writeups and lemma names still use "BDI" for continuity — paper-level swap is one-pass.
+
+---
+
+## Browse 74 (2026-07-05) — JANG-KWON v5 FOUND; KWON GROUP PIVOTS TO ORTHOSYMPLECTIC; WINDOW INTACT
+
+**Headline.** OQ-JANG-KWON-CORRIGENDUM PARTIALLY RESOLVED: arXiv:1810.02103 updated to **v5 (2025-11-11)** with corrected Section 5 (crystal isomorphism / Greene formula). Main result (Burge RSK = D_n^(1) crystal isomorphism) **NOT RETRACTED**. JCTA corrigendum published (DOI: 10.1016/j.jcta.2026.106161). Uruno found the error and became co-author on sequel 2510.24451.
+
+**CRITICAL NEW PAPER: arXiv:2510.24451** (Jang-Kwon-Uruno, Oct 2025, 55pp) — "Crystal base of quantum orthosymplectic superalgebra." Mentions "new crystal theoretic realization of Burge correspondence of orthosymplectic type." Kwon group has pivoted from type D Burge RSK to orthosymplectic superalgebras (osp_{2n|2m}). CRITICAL QUESTION: does this subsume DIII RSK? Orthosymplectic ≠ DIII symmetric pair — if their Burge RSK doesn't restrict to the finite GL(n)↓SO(2n) frame, window unchanged.
+
+**NEW OVERLOOKED PAPER: arXiv:2208.09773** (Aboumrad, 2022, UNPUBLISHED) — "Skew Howe duality for types BD via q-Clifford algebras." Multiplicity-free decomp of U_q(so_{2n}) spin tensor powers. Directly relevant to spinor crystal algebraic foundation. Why unpublished after 4 years?
+
+**POTENTIAL FUTURE COMPETITION: Kobayashi-Matsumura** (arXiv:2506.06951, 2601.17603) building type C SSOT + Berele + BK framework. Natural next step = type D. They have the methodology; the two-spinor obstacle (Λ_{n-1} ≠ Λ_n) is the only thing they'd need Rick's image-equivalence frame to resolve.
+
+**Window status:** Svyatnyy papers still 0 citations. Brown-Elek-Halacheva still 0 citations. Zero community discussion (no MO threads on type D JdT, insertion, vacillating tableaux). **12-18 months CONFIRMED EXTENDED.** FPSAC 2026 schedule live — no DIII talks. No new external competitors identified.
+
+**New OQs:** OQ-JANG-KWON-URUNO (URGENT: does 2510.24451 compete with DIII RSK?), OQ-ABOUMRAD-BD (MEDIUM: 2208.09773 unpublished q-Clifford approach), OQ-KOBAYASHI-MATSUMURA-D (MEDIUM: watch for type D push).
+
+**Log:** `reading/2026-07-05.md`. Sources initialized: `reading/sources.json`.
 
 ---
 
@@ -261,7 +289,10 @@ Catalog/v2 + framework bridges + foundational/refuted. See `connections/` direct
 - **OQ-SSOT-TYPE-D (Browse 70, HIGH)** — regular cell tableaux (Svyatnyy) = Q-side; type D SSOT = P-side paths in D_n crystal; both needed; neither assembled into RSK.
 - **OQ-LECOUVEY-D-PLACTIC (Browse 72, CONFIRMED+CORRECTED)** — Lecouvey math/0211444 = "Schensted correspondences and plactic monoids for types B_n and D_n", JACO 18:2 pp.99-133, 2003 (NOT vol 16 pp 235-255 — those numbers are wrong). Contains D_n column insertion via KN tableaux, D_n plactic monoid, spin extension for both half-spinors. No JdT. Bijectivity not fully established by Lecouvey — Jang-Kwon 1810.02103 may close the gap.
 - **OQ-JANG-KWON-DIII (Browse 72, NEW URGENT HIGH)** — Jang-Kwon arXiv:1810.02103: Burge column insertion RSK for type D as affine D_n^{(1)}-crystal isomorphism + Greene formula. Possibly the most complete type D RSK in the literature. Scrimshaw has lecture slides. Does it work in the GL(n)↓SO(2n) finite crystal frame (DIII branching)?
-- **OQ-JANG-KWON-CORRIGENDUM (Browse 73, NEW URGENT)** — Jang-Kwon 1810.02103 (most complete type D Burge RSK) has a 2026 CORRIGENDUM. An error was found. Only 8 citations (all internal to Kwon's group). Must locate and read the corrigendum: does the main type D Burge correspondence survive? What was wrong? If the main result fails, the P-side gap is larger than currently assumed.
+- **OQ-JANG-KWON-CORRIGENDUM (Browse 74, PARTIALLY RESOLVED)** — v5 arXiv (2025-11-11) + JCTA corrigendum (DOI: 10.1016/j.jcta.2026.106161). Section 5 corrected (crystal isomorphism / Greene formula). Main result **NOT retracted**. Must read v5 Section 5 to confirm what changed. Downgrade from URGENT to HIGH. Found via citation trail.
+- **OQ-JANG-KWON-URUNO (Browse 74, NEW URGENT HIGH)** — arXiv:2510.24451 (Jang-Kwon-Uruno, Oct 2025, 55pp): "Crystal base of quantum orthosymplectic superalgebra." Mentions Burge correspondence of orthosymplectic type. Does this compete with DIII RSK? Orthosymplectic (osp_{2n|2m}) ≠ DIII symmetric pair (GL(n), SO(2n)). Critical question: does their Burge RSK restrict to the finite GL(n)↓SO(2n) frame? Read introduction ASAP.
+- **OQ-ABOUMRAD-BD (Browse 74, NEW MEDIUM-HIGH)** — arXiv:2208.09773 (Aboumrad, 2022, UNPUBLISHED 4 years): "Skew Howe duality for types BD via q-Clifford algebras." Multiplicity-free decomp of U_q(so_{2n}) spin tensor powers. Why unpublished? Does it produce insertion-type structures? Compare with Bae-Kwon 2506.05959.
+- **OQ-KOBAYASHI-MATSUMURA-D (Browse 74, NEW MEDIUM)** — Kobayashi-Matsumura type C SSOT + Berele insertion papers (2506.06951, 2601.17603) are the natural precursor to type D. Watch for type D push. Their methodology matches Rick's frame; two-spinor obstacle is the gap they'd need to cross.
 - ~~**OQ-SVYATNYY-BK-CHECK (Browse 72, CRITICAL)** — CLOSED Browse 73: Svyatnyy 2605.00514 is definitively TYPE D (g = D_n, spinor crystal B_S = B_{Λ_{n-1}} ⊕ B_{Λ_n}). Browse 72 community agent confused alphabet vs Lie type.~~
 - **OQ-HEO-KWON-DIII (Browse 72, NEW HIGH)** — Heo-Kwon 2008.05093 (J. Algebra 2022) proves symplectic Howe RSK; orthogonal analog (g, O_n) EXPLICITLY OPEN; two-spinor obstacle Λ_{n-1} ≇ Λ_n stated. This is the community's open problem statement matching Rick's DIII RSK project. Read.
 - **OQ-JAGENTEUFEL-DIII (Browse 71, HIGH)** — Jagenteufel 1902.03843 proves SO(2k+1) vacillating tableau bijection; SO(2n) (type D) open. 4 total citers, zero 2024-2026 citers — fully uncontested. Image-equivalence frame resolves the 2-spinor obstacle directly. Clean publication template.
@@ -454,7 +485,11 @@ Catalog/v2 + framework bridges + foundational/refuted. See `connections/` direct
 | Svyatnyy 2504.14344 | 0 | Browse 68. Cactus on GT patterns for o_N. |
 | Svyatnyy 2605.00514 | 0 | NEW Browse 69-70. Bender-Knuth on spinor crystal B_S (D_n); TYPE D CONFIRMED Browse 73. Q-side of DIII RSK COMPLETE. |
 | Brown-Elek-Halacheva 2412.02614 | — | NEW Browse 73. Cactus on type D vector crystal B(Λ_1); names spinors Λ_{n-1}, Λ_n as explicitly open. |
-| Jang-Kwon 1810.02103 | 8 | Browse 72-73. Burge RSK type D as affine D_n^{(1)}-crystal isomorphism. **2026 CORRIGENDUM posted — error found.** Read urgently. |
+| Jang-Kwon 1810.02103 | 8 | v5 (2025-11-11): Section 5 corrected. Main result not retracted. JCTA corrigendum DOI 10.1016/j.jcta.2026.106161. Uruno found error → co-author on 2510.24451. |
+| Jang-Kwon-Uruno 2510.24451 | — | NEW Browse 74. "Crystal base of quantum orthosymplectic superalgebra." Burge RSK orthosymplectic type. 55pp. Critical: subsume DIII RSK? |
+| Aboumrad 2208.09773 | — | NEW Browse 74. Skew Howe duality types BD via q-Clifford algebras. Unpublished 4 years. Spin decomp U_q(so_{2n}). |
+| Kobayashi-Matsumura 2506.06951 | — | NEW Browse 74. King tableaux / Berele insertion type C SSOT. Heo-Kwon citer. Potential future competition on type D. |
+| Kobayashi-Matsumura 2601.17603 | — | NEW Browse 74. SSOT symmetry / BK for type C. Companion to 2506.06951. |
 | Kobayashi-Matsumura 2506.06951 | — | Browse 69. SSOT as Q-symbols in type C RSK. DIII template. |
 | Gutiérrez 2311.10659 | — | NEW Browse 70. BK involutions B/C; type D EXPLICITLY OPEN. |
 | He-Tubbenhauer 2606.02249 | — | NEW Browse 70. Crystal category presentations; type D coverage. |

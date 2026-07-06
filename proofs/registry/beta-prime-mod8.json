@@ -1,0 +1,73 @@
+{
+  "conjecture": "The dimer law beta'(2k+1) = beta'(2k) - 1 fails exactly when c ≡ 1 (mod 8), i.e., when v_2(c-1) >= 3",
+  "status": "in-progress",
+  "date_opened": "2026-07-06",
+  "date_closed": null,
+  "tree": {
+    "id": "root",
+    "approach": "Rick's mod-8 refinement of Clio's c=9 dimer-law breakdown: FREE tracks ambient Kummer floor beta; RIGID/heavy-quotient tracks internal beta'; the two channels decouple when v_2(c-1) >= 3, forcing an extra 2-adic collapse in H_c that beta cannot detect",
+    "trust": "in-progress",
+    "file": "proofs/2026-07-06-beta-prime-c9-analysis.md",
+    "children": [
+      {
+        "id": "clio-empirical-c4-c10",
+        "approach": "Clio's empirical beta'(c) for c in {4..10}: 4, 3, 7, 6, 11, 9, 14. Includes the c=9 anomaly witness at (a,b,j) = (31,24,2). Received via email 2026-07-04, 2026-07-05.",
+        "trust": "peer-claimed",
+        "claimed_by": "Clio Vega — mail 2026-07-04, 2026-07-05",
+        "file": null,
+        "children": [],
+        "role": "premise"
+      },
+      {
+        "id": "beta-closed-form",
+        "approach": "beta(c) = 2(c-1) - s_2(c-1) — Rick's ambient Kummer floor from single binomial C(m,j). Computed independently in code/2026-07-06-beta-prime-analysis.py.",
+        "trust": "computed",
+        "file": "code/2026-07-06-beta-prime-analysis.py",
+        "children": [],
+        "role": "premise"
+      },
+      {
+        "id": "mod-4-hypothesis-refuted",
+        "approach": "Initial hunch (Rick email 2026-07-05): dimer law fails at c ≡ 1 mod 4. Refuted by c=5 (c=5 has c ≡ 1 mod 4 but dimer HOLDS).",
+        "trust": "dead-end",
+        "reason": "c=5 is c ≡ 1 mod 4 and the dimer law holds. Mod-4 is too coarse.",
+        "refutation": "computed",
+        "file": "proofs/2026-07-06-beta-prime-c9-analysis.md",
+        "children": [],
+        "role": "attempt"
+      },
+      {
+        "id": "mod-8-hypothesis",
+        "approach": "Refined hunch: dimer law fails iff v_2(c-1) >= 3, equivalently c ≡ 1 (mod 8). Consistent with c=5 (v_2=2 holds), c=7 (v_2=1 holds), c=9 (v_2=3 fails).",
+        "trust": "hunch",
+        "file": "proofs/2026-07-06-beta-prime-c9-analysis.md",
+        "children": [],
+        "role": "attempt"
+      },
+      {
+        "id": "dip-scaling-hunch",
+        "approach": "Secondary hunch: at odd c, Delta(beta - beta') across (c-1) -> c scales like 2*v_2(c-1) with a +1 correction when s_2 climbs. Fits 4->5 (dip 4 = 2*v_2(4)), 8->9 (dip 6 = 2*v_2(8)); off by 1 at 6->7.",
+        "trust": "hunch",
+        "file": "proofs/2026-07-06-beta-prime-c9-analysis.md",
+        "children": [],
+        "role": "attempt"
+      },
+      {
+        "id": "kill-shot-c17",
+        "approach": "Ask Clio for beta'(17). v_2(16) = 4 > v_2(8) = 3; if mod-8 hypothesis is right, dimer fails at c=17 harder than at c=9. Also ask for beta'(13) (v_2(12)=2, predicted to hold).",
+        "trust": "in-progress",
+        "file": null,
+        "children": [],
+        "role": "attempt"
+      },
+      {
+        "id": "kummer-jump-mechanism",
+        "approach": "Story: v_2((c-1)!) picks up a jump of exactly v_2(c-1) when c-1 crosses a power of 2. beta absorbs it additively (via s_2). H_c absorbs it multiplicatively via run-content; when the jump is >= 3, the internal factorization admits an extra collapse at some (a,b,j) that beta cannot see. Hand-wavy — not a proof.",
+        "trust": "hunch",
+        "file": null,
+        "children": [],
+        "role": "attempt"
+      }
+    ]
+  }
+}
