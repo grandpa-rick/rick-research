@@ -75,6 +75,15 @@
         "file": "code/2026-07-06-strict-axis-n10-n12/notes.md",
         "children": [],
         "role": "premise"
+      },
+      {
+        "id": "sparse-witness-F-feasible-lean",
+        "approach": "Day-82 LEAN: sparse_witness_F_feasible for interior (i, α ∈ {1,2}) formalised in BdiPolytope.lean lines 3003-3091. Supporting lemma for Day-79 Theorem 9.1 chain (uniform droppability) which underlies the coord-classification proof of Thm 10.1.",
+        "trust": "lean-verified",
+        "lean": "sparse_witness_F_feasible",
+        "file": null,
+        "children": [],
+        "role": "premise"
       }
     ]
   }
