@@ -3000,4 +3000,94 @@ theorem additive_redundancy_at_eS {n : Nat} (hn : 3 ≤ n)
 #print axioms ray_image_shift
 #print axioms additive_redundancy_at_eS
 
+/-! ## Day-82 (target Day-81) — Lemma 3.A: Sparse Witness F-Feasibility
+
+For an interior index `i : Fin n` (`1 ≤ i.val` and `i.val + 1 < n`) and
+a small coefficient `α ∈ {1, 2}`, the concrete AII lattice point that
+is `α` on `prefix i` and on `long ⟨i.val + 1, _⟩` (and zero everywhere
+else) lies in the AII polytope.
+
+Design note on statement. The trigger's target used `Piece' n`
+notation, but `InAIIPolytope` is a predicate on `AIIPoint n`
+(`AIICoord n → Nat`). We formalise the sparse witness at that
+lattice level: the "prefix at index 1 / long at index 2" of the
+informal spec become "prefix at index `i` / long at index `i + 1`",
+which is the coefficient pattern that satisfies every `Main_j`
+inequality (the two nonzero columns interact only at `j = i + 1`,
+where the inequality is `α ≤ α`).
+
+Sparsity forces every `Main_j` inequality to be verified by cases:
+
+* `j = i + 1`  (the "supporting" column):
+  `α + 0 ≤ α`   ✓
+* every other `j` with `0 < j.val`:
+  `0 + 0 ≤ 0`   ✓  (both sides vanish).
+
+Axioms ⊆ `{propext, Quot.sound}`. -/
+
+/-- The Day-82 sparse AII witness: `α` on `prefix i` and on
+`long ⟨i.val + 1, _⟩`, zero on every other AII column.
+
+Concrete formulation directly matches the informal spec's "two
+nonzero columns supported on disjoint basis vectors". -/
+def mkSparseWitness {n : Nat} (i : Fin n) (α : Nat) : AIIPoint n
+  | AIICoord.prefix k => if k.val = i.val then α else 0
+  | AIICoord.long   k => if k.val = i.val + 1 then α else 0
+  | AIICoord.short  _ => 0
+
+@[simp] theorem mkSparseWitness_prefix {n : Nat} (i : Fin n) (α : Nat) (k : Fin n) :
+    mkSparseWitness i α (AIICoord.prefix k) = if k.val = i.val then α else 0 := rfl
+
+@[simp] theorem mkSparseWitness_long {n : Nat} (i : Fin n) (α : Nat) (k : Fin n) :
+    mkSparseWitness i α (AIICoord.long k) = if k.val = i.val + 1 then α else 0 := rfl
+
+@[simp] theorem mkSparseWitness_short {n : Nat} (i : Fin n) (α : Nat) (k : Fin n) :
+    mkSparseWitness i α (AIICoord.short k) = 0 := rfl
+
+/-- **Lemma 3.A — Sparse Witness F-Feasibility.**
+
+For `n ≥ 5`, any interior index `i` (`1 ≤ i.val < n - 1`), and
+`α ∈ {1, 2}`, the sparse witness `mkSparseWitness i α` lies in the
+AII polytope.
+
+The proof unfolds `InAIIPolytope` and case-splits on whether the
+running index `j` equals `i.val + 1`.  Both branches reduce to a
+`decide`-visible arithmetic fact via `omega`; the `α = 1 ∨ α = 2`
+disjunct is not consumed at all (any `α : Nat` would do — the
+hypothesis is retained to document the intended sparse regime). -/
+theorem sparse_witness_F_feasible
+    {n : Nat} (hn : 5 ≤ n)
+    (i : Fin n) (hi : 1 ≤ i.val) (hi' : i.val + 1 < n)
+    (α : Nat) (hα : α = 1 ∨ α = 2) :
+    InAIIPolytope (mkSparseWitness i α) := by
+  intro j hj
+  -- Unfold the sparse witness on all three column families.
+  show mkSparseWitness i α (AIICoord.long j)
+        + mkSparseWitness i α (AIICoord.short j)
+      ≤ mkSparseWitness i α
+          (AIICoord.prefix ⟨j.val - 1, by have := j.isLt; omega⟩)
+  rw [mkSparseWitness_long, mkSparseWitness_short, mkSparseWitness_prefix]
+  -- Case split on whether `j.val = i.val + 1`.
+  by_cases hji : j.val = i.val + 1
+  · -- Supporting column: LHS = α + 0, RHS = α.
+    rw [if_pos hji]
+    have hj_prefix_eq : (⟨j.val - 1, by have := j.isLt; omega⟩ : Fin n).val = i.val := by
+      show j.val - 1 = i.val
+      omega
+    rw [if_pos hj_prefix_eq]
+    -- α ≤ α (both sides equal α; `hα` unused but kept for documentation).
+    exact Nat.le_of_eq rfl
+  · -- Otherwise: LHS = 0 + 0, RHS = 0-or-α. Non-negativity closes it.
+    rw [if_neg hji]
+    -- The prefix side is either `α` (if the previous prefix index matches `i`)
+    -- or `0`; in either case, LHS = 0 ≤ RHS.
+    by_cases hprev : (⟨j.val - 1, by have := j.isLt; omega⟩ : Fin n).val = i.val
+    · rw [if_pos hprev]; exact Nat.zero_le _
+    · rw [if_neg hprev]; exact Nat.zero_le _
+
+/-! To confirm no unexpected axiom sneaks in, we run `#print axioms`
+directly on the shipped lemma. -/
+#print axioms mkSparseWitness
+#print axioms sparse_witness_F_feasible
+
 end BdiPolytope
