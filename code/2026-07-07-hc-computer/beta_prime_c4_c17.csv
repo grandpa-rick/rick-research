@@ -1,0 +1,15 @@
+c,beta,gamma,beta_prime_reported,beta_prime_predicted,clio_match,v2_c_minus_1,argmin_notes
+4,4,4,4,4,Y,0,Clio's reported witness
+5,7,6,3,3,Y,2,"verified (3,0,2), direct scan box=48"
+6,8,7,7,7,Y,0,Clio's reported witness
+7,10,8,6,6,Y,1,Clio's reported witness
+8,11,11,11,11,Y,0,Clio's reported witness
+9,15,14,9,9,Y,3,Clio's reported witness
+10,16,15,14,14,Y,0,Clio's reported witness
+11,18,16,,13,?,1,"predicted, awaiting Clio's engine"
+12,19,18,,18,?,0,"predicted, awaiting Clio's engine"
+13,22,20,,17,?,2,"predicted, awaiting Clio's engine"
+14,23,21,,21,?,0,"predicted, awaiting Clio's engine"
+15,25,22,,20,?,1,"predicted, awaiting Clio's engine"
+16,26,26,,26,?,0,"predicted, awaiting Clio's engine"
+17,31,30,,23,?,4,"predicted, awaiting Clio's engine"
