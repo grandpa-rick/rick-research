@@ -96,6 +96,74 @@
         "file": "proofs/2026-07-07-dip-formula.md §4",
         "children": [],
         "role": "attempt"
+      },
+      {
+        "id": "four-period-identity",
+        "approach": "Lemma 3 (Day 84): Assuming D1 (odd c) + (E) beta'(4k)=beta(4k), we have Delta beta'(4k+2) + Delta beta'(4k+4) = 9 + 2 v_2(k) for all k >= 1. Elementary proof via Kummer identity for Delta beta and case analysis on D1. Data-verified at k=1,2. Consequence: closes half of the even-c dip pattern.",
+        "trust": "proved",
+        "conditional_on": ["refined-dip-formula", "anchor-identity-E"],
+        "file": "proofs/2026-07-08-d1-partial.md",
+        "children": [],
+        "role": "premise"
+      },
+      {
+        "id": "anchor-identity-E",
+        "approach": "(E): beta'(4k) = beta(4k) for all k >= 1. Empirical at k=1 (beta'(4)=4) and k=2 (beta'(8)=11). Structural rationale: at c=0 mod 4 the ambient Kummer floor and the heavy-quotient floor coincide because the internal 2-adic slack (opened at odd c=1 mod 8) closes back up at the next 4-boundary.",
+        "trust": "sketched",
+        "file": "proofs/2026-07-08-d1-partial.md",
+        "children": [],
+        "role": "premise"
+      },
+      {
+        "id": "conjecture-D2",
+        "approach": "D2: for k >= 1, beta'(4k+2) = beta(4k+2) - 1 - v_2(k). Data-consistent at k=1 (D(6)=1) and k=2 (D(10)=2). Not implied by D1+(E) individually — only the sum Delta beta'(4k+2) + Delta beta'(4k+4) is forced. D2 is the natural interpolation of the data.",
+        "trust": "sketched",
+        "file": "proofs/2026-07-08-d1-partial.md",
+        "children": [],
+        "role": "premise"
+      },
+      {
+        "id": "beta-prime-closed-form-conditional",
+        "approach": "Theorem 4 (Day 84): Under D1+(E)+D2, beta'(c) = beta(c) - D(c) where D(4k)=0, D(4k+1)=4+2v_2(k), D(4k+2)=1+v_2(k), D(4k+3)=4+v_2(k). Reproduces beta'(4..10) = 4,3,7,6,11,9,14 exactly (7/7 match). Predicts beta'(11..17) = 13,19,18,22,21,26,23.",
+        "trust": "sketched",
+        "conditional_on": ["refined-dip-formula", "anchor-identity-E", "conjecture-D2"],
+        "file": "proofs/2026-07-08-d1-partial.md",
+        "children": [],
+        "role": "attempt"
+      },
+      {
+        "id": "clio-lemma1-template-uniform",
+        "approach": "Verified computationally: Clio's Lemma 1 template has uniform c-dependent constants (alpha, gamma, beta, delta, const) = (c-2, c-1, c+1, {1..c}, c!). Inversion via M_0 = f^lambda + hook-length reproduces H_c(a,b,0) = (a+3)..(a+c+1)(b+2)..(b+c) for c=5,6,7 across 55 test shapes with 100% match. Consequence: constructing H_c(a,b,j) for j>0 and c>5 now reduces to identifying M_j's combinatorial formula for j > 0.",
+        "trust": "checked-sober",
+        "recheck": "2026-07-08 (Rick, code/2026-07-08-Hc-inversion.py)",
+        "file": "code/2026-07-08-Hc-inversion.py",
+        "children": [],
+        "role": "premise"
+      },
+      {
+        "id": "structural-conjecture-S",
+        "approach": "At odd c with v_2(c-1) <= 2, minimising (a*, b*, j*) has j*=2 (picking C(j,k*) with v_2=0), (a+2)(b+1) small-odd (killing polynomial factor's v_2), and run products contributing exactly min-v_2 of length-(c-3) consecutive runs. Illustrated concretely at c=5 with (3,0,2): v_2 = 1 (from -10 constant) + 1 + 1 (from run products) + 0 (from (5-24)) = 3.",
+        "trust": "hunch",
+        "file": "proofs/2026-07-08-d1-partial.md",
+        "children": [],
+        "role": "attempt"
+      },
+      {
+        "id": "Mj-identification",
+        "approach": "Theorem (Day 85, c = 5): M_j(a, b, 5) = sum over partitions mu of 2j (with at most 3 rows) of K_{mu^T, (2^j)} * f^{(a,b,5)/mu}, where K_{mu^T, (2^j)} = [s_mu : e_2^j] = coefficient of s_mu in e_2^j. Equivalent Hall-inner-product form: M_j = <s_lambda, e_2^j * p_1^{n-2j}>. Coefficient sums (1, 1, 2, 4, 9, 21) are Motzkin numbers. Identification by (i) polynomial fit of P_j = M_j*M_0^{-1}*(n)_{2j} for j=1..5 giving explicit P_j; (ii) linear-algebra fit of coefficients c_mu using 70+ (a, b) points at c=5 for each j; (iii) pattern-recognition of coefficients as [s_mu : e_2^j]; (iv) independent Pieri iteration confirms coefficients exactly. Verified 482/482 (a, b, j) test cases at c=5. Reconstructed H_5 matches Clio's polynomial at 20/20 test points. Polynomial identity extends to all (a, b) by density.",
+        "trust": "checked-sober",
+        "recheck": "2026-07-09 (Rick, code/2026-07-09-Mj-final.py, 482/482 match)",
+        "file": "proofs/2026-07-09-Mj-identification.md",
+        "children": [],
+        "role": "premise"
+      },
+      {
+        "id": "Mj-c-uniform-conjecture",
+        "approach": "Conjecture: the M_j identification (Mj-identification) extends c-uniformly to all c >= 1. Specifically, for any valid partition lambda = (a, b, c) with a >= b >= c, M_j(a, b, c) = sum_{mu ⊢ 2j, ≤ 3 rows} K_{mu^T, (2^j)} * f^{lambda/mu}. Motivation: the RHS is manifestly c-agnostic (depends only on the shape lambda), and Clio's Lemma 1 template is checked-sober c-uniform at c ≤ 7 (Day 84 §6.5). Verification blocked on Clio's explicit H_c at c > 5 (or an independent structural argument).",
+        "trust": "sketched",
+        "file": "proofs/2026-07-09-Mj-identification.md",
+        "children": [],
+        "role": "attempt"
       }
     ]
   }

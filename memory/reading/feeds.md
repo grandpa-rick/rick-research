@@ -38,7 +38,12 @@
 - Bowman, Norton, Simental — BGG resolutions in cyclotomic Hecke algebras (JIMJ 2024) ⭐ BRIDGE PAPER
 - Marberg — twisted-involution KL positivity, type B/D (arXiv:1306.2980 — 4 open conjectures)
 
-## People to watch (added 2026-05-16, updated 2026-05-17)
+## People to watch (added 2026-05-16, updated 2026-07-05)
+
+- **Akito Uruno** — NEW Browse 74. Found the error in Jang-Kwon 1810.02103 Section 5; became co-author on 2510.24451 (orthosymplectic crystal base + Burge RSK). Student/postdoc in Kwon group. Watch for follow-up on type D specifically.
+- **Masahide Kobayashi + Hiroshi Matsumura** — NEW Browse 74. Two type C SSOT papers (2506.06951 "King tableaux with Berele insertion" + 2601.17603 "SSOT symmetry"). Cite Heo-Kwon. Building SSOT + Berele + BK framework for type C — the exact toolkit that would yield type D if they push there. Watch for type D extension.
+- **Willie Aboumrad** — NEW Browse 74. arXiv:2208.09773 "Skew Howe duality for types BD via q-Clifford algebras" (2022, UNPUBLISHED). Multiplicity-free decomp of U_q(so_{2n}) spin tensor powers. Directly relevant to DIII RSK algebraic foundation. Why unpublished after 4 years?
+- **Luis Cardenas** — NEW Browse 74. MO511324 (May 2026): working on right key tableaux for type C/D KN tableaux, no answers. Active researcher in adjacent territory. Check if any arXiv preprints.
 - Igor Svyatnyy — cactus on GT patterns for o_N (2504.14344) and short SSYT/spinor crystal (2605.00514); both type D orthogonal via Howe duality; working toward type B-adjacent cactus; watch for next paper. **Browse 69 note: two papers in 2 months — active trajectory. Natural next step = iquantum crystal structure on regular cell tables. HIGH WATCH.**
 - **Olga Azenhas** (Univ. Coimbra) — **NEW Browse 69.** Two 2026 papers on AII combinatorics: 2603.16698 (combinatorial inverse of Watanabe AII RSK via "slack data", v5 June 10 2026) and 2601.06930 (Lecouvey-Lenart conjecture solved via flagged hives). Her group is developing the combinatorial inverse / bijective RSK direction for AII. The DIII analogue of her "slack data" is a high-priority open question. Watch for type D extension.
 - **Stefan Kolb** (Newcastle) + Milen Yakimov — **NEW Browse 69.** 2603.06132 "Short star products" (March 2026) — cleaner foundations for bar involution and quasi K-matrix in QSP. Core QSP foundational work. Kolb is the main source for QSP algebra foundations (alongside Letzter). Watch for further simplifications of iquantum RSK machinery.
@@ -167,6 +172,27 @@
 - arXiv:2604.24454 (Young-Hun Kim Apr 2026) — 0-Hecke modules → Grassmannian K-theory (genomic Schur)
 - arXiv:2604.24903 (Bergeron-Gagnon-Spink-Tewari Apr 2026) — Quasisymmetric Grassmannian via positroid varieties
 - arXiv:2602.19508 (Bhattacharya-Mishra-Srivastava Feb 2026) — KL matrix factors into nonneg pieces
+
+---
+
+### Browse 71 additions (2026-06-19) — DIII RSK landscape
+
+**TYPE D BK NOW COMPLETE:** Svyatnyy 2605.00514 resolves Gutiérrez's open type D BK problem via spinor crystal B_S = B_{Λ_{n-1}} ⊕ B_{Λ_n}, three cases (Thms A/B/C). OQ-GUTIERREZ-TYPE-D-BK → **CLOSED**.
+
+**HIGH PRIORITY reads (DIII RSK prerequisite):**
+- **Lecouvey (2002)** "Schensted-Type Correspondences and Plactic Monoids for Types B_n and D_n" — 52 citations; ONLY paper in entire citation survey engaging type D combinatorics; He-Tubbenhauer cite it; potentially MISSING from Rick's bibliography. Contains type D Schensted correspondence. **READ IMMEDIATELY — OQ-LECOUVEY-D-PLACTIC.**
+- **Jagenteufel 1902.03843** "Vacillating tableaux for SO(2k+1)" — Sundaram-type bijection for odd orthogonal; even case SO(2n) EXPLICITLY OPEN. Direct structural template for DIII RSK. **OQ-JAGENTEUFEL-DIII (HIGH).**
+- **Kobayashi-Matsumura-Sugimoto 2601.17603** "Symmetry of the generating function of semistandard oscillating tableaux" — new companion in K-M type C RSK series (0 external citers); type D analogue needed.
+- **RETRY Azenhas 2604.25856** — HTML 404 in Browse 71; PDF not extractable. Try Playwright or direct PDF download.
+
+**NEW OQ-SQRTCRYSTAL-DIII (MEDIUM):** Marberg-Tong-Yu square root crystals have (φ_i - ε_i)/2 = wt_i - wt_{i+1} structure. D_n spinors have half-integer weights. Structural parallel: a "square root D_n crystal" might encode DIII RSK K-theoretically (characters = symmetric Grothendieck polynomials).
+
+**DIII component count (Browse 71 upgrade):** Five components: alg foundation ✓, Q-symbol ✓ (Svyatnyy), BK involution ✓ (Svyatnyy), **P-side ✗**, **inverse RSK / slack data ✗**.
+
+**New papers to watch:**
+- **Luo-Xu-Yang 2606.15722** — K-theoretic affine iquantum groups of type AIII with three parameters; verify not already logged from Browse 68 notes.
+- He-Tubbenhauer 2606.02249 — crystal category presentations; only sl_2/sl_3/sp_4/G_2 covered; type D_n ABSENT; methodology (cactus crossings + atoms) IS the right framework to eventually extend to type D.
+- Kwon 1908.11041 "Flagged LR Tableaux and Branching Rules for Classical Groups" — spinor model + separation algorithm for type D crystals; check if relevant to DIII P-side.
 - Carlini-Shen arXiv:2305.12290 (2024, JPAA) — quasi-parabolic KL bases type B; adjacent to twisted involutions
 
 ### Found 2026-06-06 (browse cycle 47 — sixth early-fire, T-2d pre-Q-SPHERE, same-day second browse):

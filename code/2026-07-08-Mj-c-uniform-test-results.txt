@@ -1,0 +1,94 @@
+Day 85+: c-uniformity test for M_j identification formula
+==============================================================================
+Formula: M_j(a, b, c) = sum_{mu ⊢ 2j, ≤3 rows} K_{mu^T, (2^j)} · f^{lam/mu}
+Empirical: Clio Lemma-1 template inversion (c-uniform, checked-sober Day 84).
+
+SCOPE NOTE: At c > 5 we only have H_c(a, b, 0) empirically (Day 84 §6.5).
+Thus the empirical inversion for M_j is available ONLY at j = 0.
+For j >= 1, we test that the formula returns positive integers (necessary,
+not sufficient); a genuine empirical comparison awaits Clio's H_c at c > 5.
+
+==============================================================================
+  c = 6  —  448 test points
+==============================================================================
+
+  j = 0 (empirical inversion vs formula):
+    64/64 matches
+    No mismatches at j = 0.
+
+  j >= 1 (formula-only; no empirical H_c available at c > 5):
+    total: 384   positive: 384   zero: 0   negative: 0   None: 0
+
+  Sample predicted M_j at c = 6 (j >= 1):
+         (a,b)   j          formula M_j
+    ( 6, 6)      1                36036
+    ( 6, 6)      2                15015
+    ( 6, 6)      3                 6336
+    ( 6, 6)      4                 2709
+    ( 6, 6)      5                 1173
+    ( 6, 6)      6                  513
+    ( 7, 7)      1               554268
+    ( 7, 7)      2               223652
+    ( 7, 7)      3                91091
+    ( 7, 7)      4                37466
+    ( 7, 7)      5                15565
+    ( 7, 7)      6                 6529
+    ( 8, 6)      1               875160
+    ( 8, 6)      2               347776
+    ( 8, 6)      3               139139
+
+==============================================================================
+  c = 7  —  343 test points
+==============================================================================
+
+  j = 0 (empirical inversion vs formula):
+    49/49 matches
+    No mismatches at j = 0.
+
+  j >= 1 (formula-only; no empirical H_c available at c > 5):
+    total: 294   positive: 294   zero: 0   negative: 0   None: 0
+
+  Sample predicted M_j at c = 7 (j >= 1):
+         (a,b)   j          formula M_j
+    ( 8, 7)      1              3602742
+    ( 8, 7)      2              1429428
+    ( 8, 7)      3               571428
+    ( 8, 7)      4               230230
+    ( 8, 7)      5                93500
+    ( 8, 7)      6                38265
+    ( 9, 8)      1             52470704
+    ( 9, 8)      2             20356752
+    ( 9, 8)      3              7942740
+    ( 9, 8)      4              3117504
+    ( 9, 8)      5              1231100
+    ( 9, 8)      6               489160
+    (10, 7)      1             48498450
+    (10, 7)      2             18517590
+    (10, 7)      3              7095426
+
+==============================================================================
+OVERALL SUMMARY (j = 0 empirical inversion vs formula)
+==============================================================================
+  c = 6: see per-c above
+  c = 7: see per-c above
+  Total j=0 matches: 113/113
+
+==============================================================================
+CONTROL: c = 5 (Clio's H_5 known; genuine empirical M_j at all j)
+==============================================================================
+  c = 5: 433/433 matches
+
+==============================================================================
+CONCLUSION
+==============================================================================
+  c = 5 control (Clio H_5 exact): 433/433 matches
+  c = 6, 7 (j = 0 only, via Day-84 checked-sober H_c(a,b,0)): 113/113 matches
+
+  For c = 6, 7 at j >= 1, the c-uniformity CONJECTURE remains untested
+  empirically: we need Clio's explicit H_c(a, b, j) for c > 5, j > 0.
+  Formula produces well-formed positive integers at all tested c > 5, j >= 1.
+
+  Registry recommendation:
+    - c=5: checked-sober (unchanged)
+    - c=6, 7 at j = 0: checked-sober (agrees with hook-length and inversion)
+    - c=6, 7 at j >= 1: SKETCHED (cannot promote without H_c(a, b, j))
