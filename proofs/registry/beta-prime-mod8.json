@@ -1,5 +1,5 @@
 {
-  "conjecture": "The dimer law beta'(2k+1) = beta'(2k) - 1 fails exactly when c ≡ 1 (mod 8), i.e., when v_2(c-1) >= 3",
+  "conjecture": "The dimer law beta'(2k+1) = beta'(2k) - 1 fails exactly when c \u2261 1 (mod 8), i.e., when v_2(c-1) >= 3",
   "status": "in-progress",
   "date_opened": "2026-07-06",
   "date_closed": null,
@@ -13,7 +13,7 @@
         "id": "clio-empirical-c4-c10",
         "approach": "Clio's empirical beta'(c) for c in {4..10}: 4, 3, 7, 6, 11, 9, 14. Includes the c=9 anomaly witness at (a,b,j) = (31,24,2). Received via email 2026-07-04, 2026-07-05.",
         "trust": "peer-claimed",
-        "claimed_by": "Clio Vega — mail 2026-07-04, 2026-07-05",
+        "claimed_by": "Clio Vega \u2014 mail 2026-07-04, 2026-07-05",
         "file": null,
         "children": [
           {
@@ -30,7 +30,7 @@
       },
       {
         "id": "beta-closed-form",
-        "approach": "beta(c) = 2(c-1) - s_2(c-1) — Rick's ambient Kummer floor from single binomial C(m,j). Computed independently in code/2026-07-06-beta-prime-analysis.py.",
+        "approach": "beta(c) = 2(c-1) - s_2(c-1) \u2014 Rick's ambient Kummer floor from single binomial C(m,j). Computed independently in code/2026-07-06-beta-prime-analysis.py.",
         "trust": "computed",
         "file": "code/2026-07-06-beta-prime-analysis.py",
         "children": [
@@ -38,7 +38,7 @@
             "id": "delta-beta-kummer-identity",
             "approach": "Lemma 1: Delta beta(c) = 1 + v_2(c-1) for all c >= 2. Elementary Kummer identity s_2(n+1) - s_2(n) = 1 - v_2(n+1) applied to beta closed form.",
             "trust": "proved",
-            "file": "proofs/2026-07-07-dip-formula.md §1",
+            "file": "proofs/2026-07-07-dip-formula.md \u00a71",
             "children": [],
             "role": "lemma"
           }
@@ -47,9 +47,9 @@
       },
       {
         "id": "mod-4-hypothesis-refuted",
-        "approach": "Initial hunch (Rick email 2026-07-05): dimer law fails at c ≡ 1 mod 4. Refuted by c=5 (c=5 has c ≡ 1 mod 4 but dimer HOLDS).",
+        "approach": "Initial hunch (Rick email 2026-07-05): dimer law fails at c \u2261 1 mod 4. Refuted by c=5 (c=5 has c \u2261 1 mod 4 but dimer HOLDS).",
         "trust": "dead-end",
-        "reason": "c=5 is c ≡ 1 mod 4 and the dimer law holds. Mod-4 is too coarse.",
+        "reason": "c=5 is c \u2261 1 mod 4 and the dimer law holds. Mod-4 is too coarse.",
         "refutation": "computed",
         "file": "proofs/2026-07-06-beta-prime-c9-analysis.md",
         "children": [],
@@ -57,9 +57,9 @@
       },
       {
         "id": "mod-8-hypothesis",
-        "approach": "Refined hunch: dimer law fails iff v_2(c-1) >= 3, equivalently c ≡ 1 (mod 8). Consistent with c=5 (v_2=2 holds), c=7 (v_2=1 holds), c=9 (v_2=3 fails).",
+        "approach": "Refined hunch: dimer law fails iff v_2(c-1) >= 3, equivalently c \u2261 1 (mod 8). Consistent with c=5 (v_2=2 holds), c=7 (v_2=1 holds), c=9 (v_2=3 fails).",
         "trust": "sketched",
-        "promotion_note": "Promoted from hunch to sketched on 2026-07-07: follows as a one-line corollary of refined-dip-formula (Conjecture D1). See proofs/2026-07-07-dip-formula.md §3.",
+        "promotion_note": "Promoted from hunch to sketched on 2026-07-07: follows as a one-line corollary of refined-dip-formula (Conjecture D1). See proofs/2026-07-07-dip-formula.md \u00a73.",
         "file": "proofs/2026-07-07-dip-formula.md",
         "children": [],
         "role": "attempt"
@@ -93,7 +93,7 @@
         "id": "kummer-jump-mechanism",
         "approach": "Story: v_2((c-1)!) picks up a jump of exactly v_2(c-1) when c-1 crosses a power of 2. beta absorbs it additively (via s_2). H_c absorbs it multiplicatively via run-content; when the jump is >= 3, the internal factorization admits an extra collapse at some (a,b,j) that beta cannot see. This mechanism is now precisely the max(2, v_2(c-1)) clamp in Conjecture D1.",
         "trust": "hunch",
-        "file": "proofs/2026-07-07-dip-formula.md §4",
+        "file": "proofs/2026-07-07-dip-formula.md \u00a74",
         "children": [],
         "role": "attempt"
       },
@@ -101,7 +101,10 @@
         "id": "four-period-identity",
         "approach": "Lemma 3 (Day 84): Assuming D1 (odd c) + (E) beta'(4k)=beta(4k), we have Delta beta'(4k+2) + Delta beta'(4k+4) = 9 + 2 v_2(k) for all k >= 1. Elementary proof via Kummer identity for Delta beta and case analysis on D1. Data-verified at k=1,2. Consequence: closes half of the even-c dip pattern.",
         "trust": "proved",
-        "conditional_on": ["refined-dip-formula", "anchor-identity-E"],
+        "conditional_on": [
+          "refined-dip-formula",
+          "anchor-identity-E"
+        ],
         "file": "proofs/2026-07-08-d1-partial.md",
         "children": [],
         "role": "premise"
@@ -116,7 +119,7 @@
       },
       {
         "id": "conjecture-D2",
-        "approach": "D2: for k >= 1, beta'(4k+2) = beta(4k+2) - 1 - v_2(k). Data-consistent at k=1 (D(6)=1) and k=2 (D(10)=2). Not implied by D1+(E) individually — only the sum Delta beta'(4k+2) + Delta beta'(4k+4) is forced. D2 is the natural interpolation of the data.",
+        "approach": "D2: for k >= 1, beta'(4k+2) = beta(4k+2) - 1 - v_2(k). Data-consistent at k=1 (D(6)=1) and k=2 (D(10)=2). Not implied by D1+(E) individually \u2014 only the sum Delta beta'(4k+2) + Delta beta'(4k+4) is forced. D2 is the natural interpolation of the data.",
         "trust": "sketched",
         "file": "proofs/2026-07-08-d1-partial.md",
         "children": [],
@@ -126,7 +129,11 @@
         "id": "beta-prime-closed-form-conditional",
         "approach": "Theorem 4 (Day 84): Under D1+(E)+D2, beta'(c) = beta(c) - D(c) where D(4k)=0, D(4k+1)=4+2v_2(k), D(4k+2)=1+v_2(k), D(4k+3)=4+v_2(k). Reproduces beta'(4..10) = 4,3,7,6,11,9,14 exactly (7/7 match). Predicts beta'(11..17) = 13,19,18,22,21,26,23.",
         "trust": "sketched",
-        "conditional_on": ["refined-dip-formula", "anchor-identity-E", "conjecture-D2"],
+        "conditional_on": [
+          "refined-dip-formula",
+          "anchor-identity-E",
+          "conjecture-D2"
+        ],
         "file": "proofs/2026-07-08-d1-partial.md",
         "children": [],
         "role": "attempt"
@@ -159,10 +166,54 @@
       },
       {
         "id": "Mj-c-uniform-conjecture",
-        "approach": "Conjecture: the M_j identification (Mj-identification) extends c-uniformly to all c >= 1. Specifically, for any valid partition lambda = (a, b, c) with a >= b >= c, M_j(a, b, c) = sum_{mu ⊢ 2j, ≤ 3 rows} K_{mu^T, (2^j)} * f^{lambda/mu}. Motivation: the RHS is manifestly c-agnostic (depends only on the shape lambda), and Clio's Lemma 1 template is checked-sober c-uniform at c ≤ 7 (Day 84 §6.5). Verification blocked on Clio's explicit H_c at c > 5 (or an independent structural argument).",
-        "trust": "sketched",
-        "file": "proofs/2026-07-09-Mj-identification.md",
-        "children": [],
+        "approach": "Conjecture: the M_j identification (Mj-identification) extends c-uniformly to all c >= 1. Specifically, for any valid partition lambda = (a, b, c) with a >= b >= c, M_j(a, b, c) = sum_{mu \u22a2 2j, \u2264 3 rows} K_{mu^T, (2^j)} * f^{lambda/mu}. Motivation: the RHS is manifestly c-agnostic (depends only on the shape lambda), and Clio's Lemma 1 template is checked-sober c-uniform at c \u2264 7 (Day 84 \u00a76.5).",
+        "trust": "checked-sober",
+        "recheck": "2026-07-08 (Rick, proofs/2026-07-08-Mj-c-uniform-structural.md + code/2026-07-08-Mj-c-uniform-symbolic.py). Sym-side identity proved rigorously as a Sym-function theorem; P_1 = (a+c+1)(b+c) - c(c-1) proved SYMBOLICALLY in (a,b,c); P_2,P_3,P_4 closed forms computed and match Day 85 empirical polynomials at c=5 exactly. Pieri recursion M_j(lam) = sum M_{j-1}(nu) over v-2-strips proved via e_2-adjoint. H_c^pred(a,b,j) via inversion at c=5 matches Clio's H_5 at 114/114 test points where j<=5.",
+        "promotion_note": "Day 86 promotes sketched -> checked-sober. Sym-side is c-uniform BY CONSTRUCTION (no c-specific constants appear in <s_lam, e_2^j p_1^{n-2j}>). Full 'proved' grade requires either Clio's H_c empirical data at c>5,j>=1 or a structural derivation of Clio's Lemma-1 template constants from first principles (rep theory). See file \u00a77 for gaps.",
+        "file": "proofs/2026-07-08-Mj-c-uniform-structural.md",
+        "children": [
+          {
+            "id": "Mj-sym-side-identity",
+            "approach": "Theorem A: <s_lam, e_2^j p_1^{n-2j}> = sum_{mu partition of 2j, <= 3 rows} K_{mu^T,(2^j)} f^{lam/mu}. Proof by Sym function identities: (i) e_2^j = sum K_{mu^T,(2^j)} s_mu (omega of h_2^j Kostka expansion); (ii) iterated Pieri s_mu p_1^k = sum f^{nu/mu} s_nu; (iii) Schur orthonormality. Independent of c and manifestly c-uniform.",
+            "trust": "proved",
+            "file": "proofs/2026-07-08-Mj-c-uniform-structural.md",
+            "children": [],
+            "role": "premise"
+          },
+          {
+            "id": "Mj-P1-closed-form",
+            "approach": "Theorem B: P_1(a,b,c) = (a+c+1)(b+c) - c(c-1) for any 3-row lambda=(a,b,c). Proved symbolically via Aitken determinant identity D_{(1,1)} = (A-B)(B-C)(A-C) [(A+C-1)(B+C-1) - C(C-1)] where A=a+2, B=b+1, C=c. Independently derived via Pieri recursion sum over 3 vertical-2-strips of (a,b,c).",
+            "trust": "proved",
+            "file": "proofs/2026-07-08-Mj-c-uniform-structural.md",
+            "children": [],
+            "role": "premise"
+          },
+          {
+            "id": "Mj-Pj-closed-forms",
+            "approach": "P_2, P_3, P_4 c-uniform closed forms computed symbolically via Aitken determinant. Total degree 2j in (a,b,c). At c=5 they match Day 85's empirically-fit polynomials exactly. Verified numerically at 16 shape/j points.",
+            "trust": "checked-sober",
+            "recheck": "2026-07-08 (code/2026-07-08-Mj-c-uniform-symbolic.py)",
+            "file": "proofs/2026-07-08-Mj-c-uniform-structural.md",
+            "children": [],
+            "role": "premise"
+          },
+          {
+            "id": "Mj-Pieri-recursion",
+            "approach": "Theorem D (Pieri recursion): M_j^Sym(lambda) = sum_{nu: lambda/nu vertical 2-strip} M_{j-1}^Sym(nu), base M_0 = f^lambda. Proved via e_2-perp adjoint on the Hall pairing. c-agnostic, inductive method for arbitrary j.",
+            "trust": "proved",
+            "file": "proofs/2026-07-08-Mj-c-uniform-structural.md",
+            "children": [],
+            "role": "premise"
+          },
+          {
+            "id": "Hc-predicted-at-cge6",
+            "approach": "For c > 5, invert Clio's Lemma-1 template using M_j^Sym to get H_c^predicted(a,b,j). At c=6,7 gives integer polynomial values; at j=0 reduces to (a+3)..(a+c+1)(b+2)..(b+c) [Day 84 closed form] at c in {5,6,7}. At c=5 matches Clio's H_5 exactly at 114 test points (j <= 5). Candidate for the actual H_c awaiting Clio's empirical data.",
+            "trust": "computed",
+            "file": "code/2026-07-08-Mj-c-uniform-symbolic.py",
+            "children": [],
+            "role": "attempt"
+          }
+        ],
         "role": "attempt"
       }
     ]
