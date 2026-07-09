@@ -1,0 +1,318 @@
+==============================================================================
+Day 87 CODE Task 3 — v_2(H_4(a, b, j)) sweep at c=4
+==============================================================================
+
+Sample size (parity shell a+b even): 3321
+Sample size (off-shell a+b odd):    3112
+
+Off-shell MIN v_2 (a+b odd, for reference): 2
+Off-shell min pt: (a, b, j) = (6, 3, 0), H_4 = 207900
+
+PARITY-SHELL MIN v_2 = 4  (expected β'(4) = 4)
+Number of (a, b, j) at min: 1216
+
+First 20 minimizers (a, b, j, H_4, v_2):
+  a=  0  b=  0  j=  2  H_4=                48  v_2=4
+  a=  0  b=  0  j=  6  H_4=            -17904  v_2=4
+  a=  0  b=  0  j= 10  H_4=          -1466640  v_2=4
+  a=  1  b=  1  j=  3  H_4=               144  v_2=4
+  a=  1  b=  1  j=  7  H_4=            -42192  v_2=4
+  a=  1  b=  1  j= 11  H_4=          -1980720  v_2=4
+  a=  2  b=  0  j=  0  H_4=              5040  v_2=4
+  a=  2  b=  0  j=  4  H_4=               -48  v_2=4
+  a=  2  b=  0  j=  8  H_4=           -138128  v_2=4
+  a=  2  b=  0  j= 12  H_4=          -2655600  v_2=4
+  a=  2  b=  2  j=  0  H_4=             25200  v_2=4
+  a=  2  b=  2  j=  1  H_4=             18000  v_2=4
+  a=  2  b=  2  j=  2  H_4=             10320  v_2=4
+  a=  2  b=  2  j=  4  H_4=               144  v_2=4
+  a=  2  b=  2  j=  5  H_4=               240  v_2=4
+  a=  2  b=  2  j=  6  H_4=              -720  v_2=4
+  a=  2  b=  2  j=  8  H_4=            -98256  v_2=4
+  a=  2  b=  2  j=  9  H_4=           -310896  v_2=4
+  a=  2  b=  2  j= 10  H_4=           -785520  v_2=4
+  a=  2  b=  2  j= 12  H_4=          -3403440  v_2=4
+
+Top-30 lowest-v_2 (a, b, j, H_4, v_2):
+  a=  0  b=  0  j=  2  H_4=                48  v_2=4
+  a=  0  b=  0  j=  6  H_4=            -17904  v_2=4
+  a=  0  b=  0  j= 10  H_4=          -1466640  v_2=4
+  a=  1  b=  1  j=  3  H_4=               144  v_2=4
+  a=  1  b=  1  j=  7  H_4=            -42192  v_2=4
+  a=  1  b=  1  j= 11  H_4=          -1980720  v_2=4
+  a=  2  b=  0  j=  0  H_4=              5040  v_2=4
+  a=  2  b=  0  j=  4  H_4=               -48  v_2=4
+  a=  2  b=  0  j=  8  H_4=           -138128  v_2=4
+  a=  2  b=  0  j= 12  H_4=          -2655600  v_2=4
+  a=  2  b=  2  j=  0  H_4=             25200  v_2=4
+  a=  2  b=  2  j=  1  H_4=             18000  v_2=4
+  a=  2  b=  2  j=  2  H_4=             10320  v_2=4
+  a=  2  b=  2  j=  4  H_4=               144  v_2=4
+  a=  2  b=  2  j=  5  H_4=               240  v_2=4
+  a=  2  b=  2  j=  6  H_4=              -720  v_2=4
+  a=  2  b=  2  j=  8  H_4=            -98256  v_2=4
+  a=  2  b=  2  j=  9  H_4=           -310896  v_2=4
+  a=  2  b=  2  j= 10  H_4=           -785520  v_2=4
+  a=  2  b=  2  j= 12  H_4=          -3403440  v_2=4
+  a=  3  b=  1  j=  2  H_4=              7920  v_2=4
+  a=  3  b=  1  j=  6  H_4=             -2928  v_2=4
+  a=  3  b=  1  j= 10  H_4=           -657360  v_2=4
+  a=  3  b=  3  j=  1  H_4=             55440  v_2=4
+  a=  3  b=  3  j=  2  H_4=             37680  v_2=4
+  a=  3  b=  3  j=  3  H_4=             20016  v_2=4
+  a=  3  b=  3  j=  5  H_4=               240  v_2=4
+  a=  3  b=  3  j=  6  H_4=               240  v_2=4
+  a=  3  b=  3  j=  7  H_4=             -8400  v_2=4
+  a=  3  b=  3  j=  9  H_4=           -249264  v_2=4
+
+v_2 distribution:
+  v_2 =   4: 1216
+  v_2 =   5: 992
+  v_2 =   6: 560
+  v_2 =   7: 272
+  v_2 =   8: 155
+  v_2 =   9: 71
+  v_2 =  10: 29
+  v_2 =  11: 11
+  v_2 =  12: 6
+  v_2 =  13: 5
+  v_2 =  14: 1
+  v_2 =  16: 1
+  v_2 =  17: 1
+  v_2 =  18: 1
+
+==============================================================================
+Day-87 expected minimizer (a, b, j) = (0, 0, 2)
+==============================================================================
+
+--- (a, b, j) = (0, 0, 2)  N=0  H_4=48  v_2(H_4)=4
+    (tip term = 0, only M_j-contribution)
+    Numerator factors:
+      const=24=4!                     v_2 = 3
+      a+5-j=3                         v_2 = 0
+      b+1-j=-1                        v_2 = 0
+      b+2-j=0                         v_2 = inf
+      b+3-j=1                         v_2 = 0
+      b+4-j=2                         v_2 = 1
+      M_2(a,b,4)=1                    v_2 = 0
+      TOTAL numerator v_2 = 4
+    Denominator factors:
+      a-b+1=1                         v_2 = 0
+      C(N=0,b-j=-2)                   v_2 = inf
+      a-2=-2                          v_2 = 1
+      b-3=-3                          v_2 = 0
+      TOTAL denominator v_2 = 1
+    NET (num - den) = 3, actual v_2(H_4) = 4
+
+==============================================================================
+Top-10 non-degenerate low-v_2 points (a≠2, b≠3, a-b+1≠0):
+==============================================================================
+
+--- (a, b, j) = (4, 4, 2)  N=8  H_4=105840  v_2(H_4)=4
+    (tip term = 0, only M_j-contribution)
+    Numerator factors:
+      const=24=4!                     v_2 = 3
+      a+5-j=7                         v_2 = 0
+      b+1-j=3                         v_2 = 0
+      b+2-j=4                         v_2 = 2
+      b+3-j=5                         v_2 = 0
+      b+4-j=6                         v_2 = 1
+      M_2(a,b,4)=98                   v_2 = 1
+      TOTAL numerator v_2 = 7
+    Denominator factors:
+      a-b+1=1                         v_2 = 0
+      C(N=8,b-j=2)                    v_2 = 2
+      a-2=2                           v_2 = 1
+      b-3=1                           v_2 = 0
+      TOTAL denominator v_2 = 3
+    NET (num - den) = 4, actual v_2(H_4) = 4
+
+--- (a, b, j) = (5, 5, 3)  N=8  H_4=179280  v_2(H_4)=4
+    (tip term = 0, only M_j-contribution)
+    Numerator factors:
+      const=24=4!                     v_2 = 3
+      a+5-j=7                         v_2 = 0
+      b+1-j=3                         v_2 = 0
+      b+2-j=4                         v_2 = 2
+      b+3-j=5                         v_2 = 0
+      b+4-j=6                         v_2 = 1
+      M_3(a,b,4)=498                  v_2 = 1
+      TOTAL numerator v_2 = 7
+    Denominator factors:
+      a-b+1=1                         v_2 = 0
+      C(N=8,b-j=2)                    v_2 = 2
+      a-2=3                           v_2 = 0
+      b-3=2                           v_2 = 1
+      TOTAL denominator v_2 = 3
+    NET (num - den) = 4, actual v_2(H_4) = 4
+
+--- (a, b, j) = (6, 0, 0)  N=10  H_4=23760  v_2(H_4)=4
+    (tip term = 0, only M_j-contribution)
+    Numerator factors:
+      const=24=4!                     v_2 = 3
+      a+5-j=11                        v_2 = 0
+      b+1-j=1                         v_2 = 0
+      b+2-j=2                         v_2 = 1
+      b+3-j=3                         v_2 = 0
+      b+4-j=4                         v_2 = 2
+      M_0(a,b,4)=0                    v_2 = inf
+      TOTAL numerator v_2 = 6
+    Denominator factors:
+      a-b+1=7                         v_2 = 0
+      C(N=10,b-j=0)                   v_2 = 0
+      a-2=4                           v_2 = 2
+      b-3=-3                          v_2 = 0
+      TOTAL denominator v_2 = 2
+    NET (num - den) = 4, actual v_2(H_4) = 4
+
+--- (a, b, j) = (6, 2, 0)  N=12  H_4=118800  v_2(H_4)=4
+    (tip term = 0, only M_j-contribution)
+    Numerator factors:
+      const=24=4!                     v_2 = 3
+      a+5-j=11                        v_2 = 0
+      b+1-j=3                         v_2 = 0
+      b+2-j=4                         v_2 = 2
+      b+3-j=5                         v_2 = 0
+      b+4-j=6                         v_2 = 1
+      M_0(a,b,4)=0                    v_2 = inf
+      TOTAL numerator v_2 = 6
+    Denominator factors:
+      a-b+1=5                         v_2 = 0
+      C(N=12,b-j=2)                   v_2 = 1
+      a-2=4                           v_2 = 2
+      b-3=-1                          v_2 = 0
+      TOTAL denominator v_2 = 3
+    NET (num - den) = 3, actual v_2(H_4) = 4
+
+--- (a, b, j) = (6, 2, 1)  N=10  H_4=97200  v_2(H_4)=4
+    (tip term = 0, only M_j-contribution)
+    Numerator factors:
+      const=24=4!                     v_2 = 3
+      a+5-j=10                        v_2 = 1
+      b+1-j=2                         v_2 = 1
+      b+2-j=3                         v_2 = 0
+      b+3-j=4                         v_2 = 2
+      b+4-j=5                         v_2 = 0
+      M_1(a,b,4)=-675                 v_2 = 0
+      TOTAL numerator v_2 = 7
+    Denominator factors:
+      a-b+1=5                         v_2 = 0
+      C(N=10,b-j=1)                   v_2 = 1
+      a-2=4                           v_2 = 2
+      b-3=-1                          v_2 = 0
+      TOTAL denominator v_2 = 3
+    NET (num - den) = 4, actual v_2(H_4) = 4
+
+--- (a, b, j) = (6, 2, 2)  N=8  H_4=71280  v_2(H_4)=4
+    (tip term = 0, only M_j-contribution)
+    Numerator factors:
+      const=24=4!                     v_2 = 3
+      a+5-j=9                         v_2 = 0
+      b+1-j=1                         v_2 = 0
+      b+2-j=2                         v_2 = 1
+      b+3-j=3                         v_2 = 0
+      b+4-j=4                         v_2 = 2
+      M_2(a,b,4)=-275                 v_2 = 0
+      TOTAL numerator v_2 = 6
+    Denominator factors:
+      a-b+1=5                         v_2 = 0
+      C(N=8,b-j=0)                    v_2 = 0
+      a-2=4                           v_2 = 2
+      b-3=-1                          v_2 = 0
+      TOTAL denominator v_2 = 2
+    NET (num - den) = 4, actual v_2(H_4) = 4
+
+--- (a, b, j) = (6, 4, 1)  N=12  H_4=287280  v_2(H_4)=4
+    (tip term = 0, only M_j-contribution)
+    Numerator factors:
+      const=24=4!                     v_2 = 3
+      a+5-j=10                        v_2 = 1
+      b+1-j=4                         v_2 = 2
+      b+2-j=5                         v_2 = 0
+      b+3-j=6                         v_2 = 1
+      b+4-j=7                         v_2 = 0
+      M_1(a,b,4)=3762                 v_2 = 1
+      TOTAL numerator v_2 = 8
+    Denominator factors:
+      a-b+1=3                         v_2 = 0
+      C(N=12,b-j=3)                   v_2 = 2
+      a-2=4                           v_2 = 2
+      b-3=1                           v_2 = 0
+      TOTAL denominator v_2 = 4
+    NET (num - den) = 4, actual v_2(H_4) = 4
+
+--- (a, b, j) = (6, 4, 2)  N=10  H_4=228528  v_2(H_4)=4
+    (tip term = 0, only M_j-contribution)
+    Numerator factors:
+      const=24=4!                     v_2 = 3
+      a+5-j=9                         v_2 = 0
+      b+1-j=3                         v_2 = 0
+      b+2-j=4                         v_2 = 2
+      b+3-j=5                         v_2 = 0
+      b+4-j=6                         v_2 = 1
+      M_2(a,b,4)=1587                 v_2 = 0
+      TOTAL numerator v_2 = 6
+    Denominator factors:
+      a-b+1=3                         v_2 = 0
+      C(N=10,b-j=2)                   v_2 = 0
+      a-2=4                           v_2 = 2
+      b-3=1                           v_2 = 0
+      TOTAL denominator v_2 = 2
+    NET (num - den) = 4, actual v_2(H_4) = 4
+
+--- (a, b, j) = (6, 4, 3)  N=8  H_4=162000  v_2(H_4)=4
+    (tip term = 0, only M_j-contribution)
+    Numerator factors:
+      const=24=4!                     v_2 = 3
+      a+5-j=8                         v_2 = 3
+      b+1-j=2                         v_2 = 1
+      b+2-j=3                         v_2 = 0
+      b+3-j=4                         v_2 = 2
+      b+4-j=5                         v_2 = 0
+      M_3(a,b,4)=675                  v_2 = 0
+      TOTAL numerator v_2 = 9
+    Denominator factors:
+      a-b+1=3                         v_2 = 0
+      C(N=8,b-j=1)                    v_2 = 3
+      a-2=4                           v_2 = 2
+      b-3=1                           v_2 = 0
+      TOTAL denominator v_2 = 5
+    NET (num - den) = 4, actual v_2(H_4) = 4
+
+--- (a, b, j) = (6, 6, 3)  N=10  H_4=406224  v_2(H_4)=4
+    (tip term = 0, only M_j-contribution)
+    Numerator factors:
+      const=24=4!                     v_2 = 3
+      a+5-j=8                         v_2 = 3
+      b+1-j=4                         v_2 = 2
+      b+2-j=5                         v_2 = 0
+      b+3-j=6                         v_2 = 1
+      b+4-j=7                         v_2 = 0
+      M_3(a,b,4)=3627                 v_2 = 0
+      TOTAL numerator v_2 = 9
+    Denominator factors:
+      a-b+1=1                         v_2 = 0
+      C(N=10,b-j=3)                   v_2 = 3
+      a-2=4                           v_2 = 2
+      b-3=3                           v_2 = 0
+      TOTAL denominator v_2 = 5
+    NET (num - den) = 4, actual v_2(H_4) = 4
+
+==============================================================================
+COMPARISON: β'(5) - β'(4) = Δβ'(5) mechanism
+==============================================================================
+
+From Task 1:  β'(5) = 3, min at (3, 0, 2), H_5 = 88200 = 2^3 · 11025.
+From Task 3:  β'(4) = 4, min at (0, 0, 2), H_4 = 48.
+Δβ'(5) = β'(5) - β'(4) = 3 - 4 = -1.
+D1 predicts Δβ'(5) = 1 - max(2, v_2(5-1)) = 1 - max(2, 2) = -1.
+Empirical match: True
+
+PER-FACTOR shift: v_2 of the c! constant
+  c=5: v_2(120) = 3   (= β'(5))
+  c=4: v_2(24)  = 3   (= β'(4))
+  Δ = v_2(5!) - v_2(4!) = 3 - 3 = 0.
+
+So the c! constant DOES NOT explain Δβ'(5) = -1. The mechanism
+must come from ONE OTHER factor whose v_2 contribution differs
+between c=5 and c=4 minimizers.
