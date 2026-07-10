@@ -1,0 +1,48 @@
+==============================================================================
+Sanity: closed-form h_k^{(8)} vs H_c_template pipeline
+==============================================================================
+  Sanity vs template at j <= 5:  918 match, 0 fail
+
+==============================================================================
+v_2(H_8(a, b, j)) sweep  (closed form, truncated at k <= 5)
+  a in range(8, 40), b in range(8, 40), j in range(0, 6), a+b even
+==============================================================================
+
+  min v_2 = 11
+  witness: (a, b, j) = (8, 8, 2),  H_8 = 3403353310156800,  v_2(H_8) = 11
+  v_2 distribution (exact j <= 5):
+    v_2 =  11:     316 cases
+    v_2 =  12:     222 cases
+    v_2 =  13:     387 cases
+    v_2 =  14:     289 cases
+    v_2 =  15:     233 cases
+    v_2 =  16:     110 cases
+    v_2 =  17:      48 cases
+    v_2 =  18:      13 cases
+    v_2 =  19:       8 cases
+    v_2 =  20:       6 cases
+
+==============================================================================
+v_2(H_8(a, b, j)) sweep  (closed form, truncated at k <= 5)
+  a in range(8, 80), b in range(8, 80), j in range(0, 6), a+b even
+==============================================================================
+
+  min v_2 = 11
+  witness: (a, b, j) = (8, 8, 2),  H_8 = 3403353310156800,  v_2(H_8) = 11
+  v_2 distribution (exact j <= 5):
+    v_2 =  11:    1458 cases
+    v_2 =  12:    1117 cases
+    v_2 =  13:    1659 cases
+    v_2 =  14:    1497 cases
+    v_2 =  15:    1012 cases
+    v_2 =  16:     655 cases
+    v_2 =  17:     328 cases
+    v_2 =  18:     147 cases
+    v_2 =  19:      73 cases
+    v_2 =  20:      25 cases
+    v_2 =  21:       8 cases
+    v_2 =  22:       7 cases
+    v_2 =  23:       3 cases
+    v_2 =  24:       1 cases
+    v_2 =  25:       1 cases
+    v_2 =  26:       1 cases
