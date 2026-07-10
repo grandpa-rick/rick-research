@@ -39,6 +39,7 @@
             "approach": "Lemma 1: Delta beta(c) = 1 + v_2(c-1) for all c >= 2. Elementary Kummer identity s_2(n+1) - s_2(n) = 1 - v_2(n+1) applied to beta closed form.",
             "trust": "proved",
             "file": "proofs/2026-07-07-dip-formula.md \u00a71",
+            "lean_chain_extension": "Day 87 (2026-07-09): Lean chain extended one hop toward D1. \u0394\u03b2' = \u0394\u03b2 \u2212 \u0394D decomposition Lean-verified (lean/2026-07-09-delta-beta-prime-decomp.lean); axioms {propext, Classical.choice, Quot.sound}. Interfaces \u03b2' as an integer-valued (\u03b2 \u2212 D) so downstream Lean cycles can substitute a \u0394D closed form once D1 lands structurally.",
             "children": [],
             "role": "lemma"
           }
@@ -58,9 +59,10 @@
       {
         "id": "mod-8-hypothesis",
         "approach": "Refined hunch: dimer law fails iff v_2(c-1) >= 3, equivalently c \u2261 1 (mod 8). Consistent with c=5 (v_2=2 holds), c=7 (v_2=1 holds), c=9 (v_2=3 fails).",
-        "trust": "sketched",
-        "promotion_note": "Promoted from hunch to sketched on 2026-07-07: follows as a one-line corollary of refined-dip-formula (Conjecture D1). See proofs/2026-07-07-dip-formula.md \u00a73.",
-        "file": "proofs/2026-07-07-dip-formula.md",
+        "trust": "checked-sober",
+        "promotion_note": "Day 87 evening promotes sketched -> checked-sober. All three known odd c cases now confirmed structurally: beta'(5) = 3 (dimer holds, c=5 mod 8), beta'(7) = 6 (dimer holds, c=7 mod 8, since Delta = -1), beta'(9) = 9 (dimer FAILS, c=1 mod 8, Delta = -2 conditional on beta'(8)=11). The mod-8 refinement holds at c in {5, 7, 9}. Full 'proved' requires c-uniform mechanism at all odd c.",
+        "recheck": "2026-07-09 evening (Rick, proofs/2026-07-09-d1-c7-structural.md \u00a76.5)",
+        "file": "proofs/2026-07-09-d1-c7-structural.md",
         "children": [],
         "role": "attempt"
       },
@@ -76,9 +78,118 @@
       {
         "id": "refined-dip-formula",
         "approach": "Conjecture D1: For odd c >= 3, Delta beta'(c) = 1 - max(2, v_2(c-1)). Equivalently -1 when v_2 <= 2, and 1 - v_2 when v_2 >= 3. Data-consistent 3/3 at c=5,7,9. Mod-8 corollary is a one-liner. Elementary proof of Delta beta = 1 + v_2(c-1) already in hand; remaining step needs Clio's general H_c(a,b,j) to bound Delta beta' via run-content decomposition.",
-        "trust": "sketched",
-        "file": "proofs/2026-07-07-dip-formula.md",
-        "children": [],
+        "trust": "checked-sober",
+        "recheck": "2026-07-09 evening (Rick, proofs/2026-07-09-d1-c7-structural.md at c=7,9). Extends morning session (c=5). At c=7: v_2(H_7(a,b,j)) >= 6 for a+b odd proved via 2^T-periodicity finite check over 26624 residues (all pass), matched by witness H_7(1,2,6) = -907200 = -2^6 * 14175. At c=6: v_2(H_6(a,b,j)) >= 7 for a+b even proved via check over 90112 residues, matched by SINGLE-TERM witness H_6(0,0,0) = 1814400 = 2^7 * 14175. Gives Delta beta'(7) = -1 = 1 - max(2, v_2(6)). At c=9: v_2(H_9(a,b,j)) >= 9 for a+b odd via 2^T-periodicity check T=9 over 2228224 residues (all pass), matched by witness H_9(7,0,2) = 91210287168000 = 2^9 * 178145092125. So beta'(9) = 9. Delta beta'(9) = -2 = 1 - max(2, v_2(8)) CONDITIONAL on beta'(8) = 11 (peer-claimed by Clio, not yet structurally proved). New technique: 2^T-periodicity lemma. Conditional on Mj-c-uniform-conjecture at c=6,7,9 (checked-sober).",
+        "promotion_note": "Day 87 evening extends checked-sober from {c=5} to {c=5,7,9}. c=5,7 are in the 'clamped at 2' regime; c=9 is the FIRST case of the dimer-breaking regime v_2(c-1) >= 3 (specifically v_2(8)=3, c=9 ~ 1 mod 8), confirming that the D1 formula's max clamp lifts as predicted. Mechanism at c=9 is the SAME 2^T-periodicity finite check with T raised to match the higher beta' floor. Remaining gap for full 'proved': (a) c-uniform h_k^{(c)}(a,b,c) polynomial closed form (constants for k=0..5 conjectured c-uniform in code/2026-07-09-hk-const-pattern.py); (b) beta'(8)=11 structural proof (needs T=11 check at c=8, feasible but expensive); (c) uniform derivation of D1 formula from the c-uniform h_k.",
+        "file": "proofs/2026-07-09-d1-c7-structural.md",
+        "children": [
+          {
+            "id": "beta-prime-5-lower-bound",
+            "approach": "v_2(H_5(a,b,j)) >= 3 for all (a,b,j) in Z^3_{>=0}. Proof: for each k in 0..8, v_2(h_k^{(5)}(a,b) * C(j,k)) >= LB_k with min LB_k = 3, using v_2(constant) + consecutive-integer credit (t consecutive integers give v_2 >= t - s_2(t)).",
+            "trust": "proved",
+            "file": "proofs/2026-07-09-d1-c5-structural.md",
+            "children": [],
+            "role": "premise",
+            "sources": ["Clio email 2026-07-04: H_5 explicit h_k polynomial; independently verified 482/482 in Day 85 code/2026-07-09-Mj-final.py"]
+          },
+          {
+            "id": "beta-prime-5-witness",
+            "approach": "H_5(3,0,2) = 88200 = 2^3 * 11025, v_2 = 3. Direct evaluation. Note v_2-non-cancellation: three summands with distinct v_2 = 7, 10, 3, so sum has v_2 = 3 by the sum rule.",
+            "trust": "proved",
+            "file": "proofs/2026-07-09-d1-c5-structural.md",
+            "children": [],
+            "role": "premise"
+          },
+          {
+            "id": "beta-prime-4-lower-bound",
+            "approach": "v_2(H_4(a,b,j)) >= 4 for all (a,b,j) with a+b even. Proof: extract h_k^{(4)}(a,b) polynomials via c-uniform template inversion + Sym-side M_j; then term-wise LBs. Key steps: (i) h_0, h_1, h_3, h_4 have base v_2 >= 4 from constants + consecutive credit; (ii) h_2 needs parity a+b even to force v_2 of (a+3)(b+2) contribution to lift from 3 to 4; (iii) h_6 has v_2(120) = 3, but the polynomial factor P(a,b) is even mod 2 whenever a+b is even (proved by mod-2 reduction P == (a+b)*b*(a+1)).",
+            "trust": "checked-sober",
+            "recheck": "2026-07-09 (Rick, code/2026-07-09-d1-c5-final-verify.py, 900 samples pass all bounds)",
+            "file": "proofs/2026-07-09-d1-c5-structural.md",
+            "children": [],
+            "role": "premise"
+          },
+          {
+            "id": "beta-prime-4-witness",
+            "approach": "H_4(0,0,2) = 48 = 2^4 * 3, v_2 = 4. Direct evaluation on extracted h_k^{(4)}. Alternative witness H_4(5,5,3) = 179280 = 2^4 * 11205 (v_2 = 4).",
+            "trust": "checked-sober",
+            "recheck": "2026-07-09 (Rick, code/2026-07-09-d1-c5-final-verify.py verify_h4_min_at_553)",
+            "file": "proofs/2026-07-09-d1-c5-structural.md",
+            "children": [],
+            "role": "premise"
+          },
+          {
+            "id": "beta-prime-7-lower-bound",
+            "approach": "v_2(H_7(a,b,j)) >= 6 for a+b odd. Proof: extract h_k^{(7)}(a,b) polynomials via c-uniform template inversion + Sym-side M_j at c=7 (13 polynomials, k=0..12, fit from 136 samples, unique). Then apply 2^T-periodicity lemma: for each k, check h_k^{(7)}(a,b) mod 2^6 for all (a,b) in [0,64)x[0,64) with a+b odd — 2048 residues per k, 26624 total, all pass. Min v_2 over residues = 6 (attained at k=3, k=6).",
+            "trust": "checked-sober",
+            "recheck": "2026-07-09 evening (Rick, code/2026-07-09-c67-periodicity-check.py)",
+            "file": "proofs/2026-07-09-d1-c7-structural.md",
+            "children": [],
+            "role": "premise"
+          },
+          {
+            "id": "beta-prime-7-witness",
+            "approach": "H_7(1,2,6) = -907200 = -2^6 * 14175, v_2 = 6. Direct evaluation via extracted h_k^{(7)}. Non-cancellation confirmed: 7 nonzero summands with v_2 in {12,14,7,10,10,12,6}; distinct minimum at k=6 gives sum v_2 = 6.",
+            "trust": "checked-sober",
+            "recheck": "2026-07-09 evening (Rick, code/2026-07-09-c67-periodicity-check.py)",
+            "file": "proofs/2026-07-09-d1-c7-structural.md",
+            "children": [],
+            "role": "premise"
+          },
+          {
+            "id": "beta-prime-6-lower-bound",
+            "approach": "v_2(H_6(a,b,j)) >= 7 for a+b even (needed as anchor for Delta beta'(7) = beta'(7) - beta'(6)). Proof: extract h_k^{(6)}(a,b) polynomials (11 polys, k=0..10, from 136 samples). Then 2^T-periodicity check T=7: verify h_k(a,b) mod 128 = 0 for all (a,b) in [0,128)^2 with a+b even — 8192 residues per k, 90112 total, all pass. Min v_2 over residues: k=0..7 have min v_2=7; k=8,9 min=8; k=10 min=9.",
+            "trust": "checked-sober",
+            "recheck": "2026-07-09 evening (Rick, code/2026-07-09-c67-periodicity-check.py)",
+            "file": "proofs/2026-07-09-d1-c7-structural.md",
+            "children": [],
+            "role": "premise"
+          },
+          {
+            "id": "beta-prime-6-witness",
+            "approach": "H_6(0,0,0) = 1814400 = 2^7 * 14175, v_2 = 7. SINGLE-TERM witness: at (a,b,j)=(0,0,0), C(0,k) = 0 for k>0, so H_6 = h_0^{(6)}(0,0) = 3*4*5*6*7 * 2*3*4*5*6 = 2520 * 720. v_2(2520) = 3, v_2(720) = 4. Sum = 7. No cancellation needed. Distinctive: c=4 witness required 3-term cancellation, c=6 needs no cancellation at all.",
+            "trust": "checked-sober",
+            "recheck": "2026-07-09 evening (Rick, code/2026-07-09-c67-periodicity-check.py)",
+            "file": "proofs/2026-07-09-d1-c7-structural.md",
+            "children": [],
+            "role": "premise"
+          },
+          {
+            "id": "periodicity-lemma",
+            "approach": "Lemma (2^T-Periodicity): For any integer polynomial P(a,b) and any T >= 0, P(a,b) mod 2^T depends only on (a,b) mod 2^T. Proof: (x + 2^T)^i = sum_r C(i,r) x^r 2^{T(i-r)}, and every term with i > r has factor 2^T. Elementary. Reduction Corollary: to prove v_2(P(a,b)) >= T for all (a,b) with a+b ~ p mod 2, check P(a,b) mod 2^T for all (a,b) in [0, 2^T)^2 with parity p (a finite computation, 2^{2T-1} residues).",
+            "trust": "proved",
+            "file": "proofs/2026-07-09-d1-c7-structural.md",
+            "children": [],
+            "role": "premise"
+          },
+          {
+            "id": "beta-prime-9-lower-bound",
+            "approach": "v_2(H_9(a,b,j)) >= 9 for a+b odd. Proof: extract h_k^{(9)}(a,b) polynomials via c-uniform template inversion + Sym-side M_j at c=9 (17 polys, k=0..16, fit from 253 samples, unique, top degree 16). Then 2^T-periodicity check T=9: verify h_k(a,b) mod 512 = 0 for all (a,b) in [0,512)^2 with a+b odd — 131072 residues per k, 2228224 total, all pass (in fact all residues are 0 mod 2^9, no witness in the 2^9 check reaches a non-multiple).",
+            "trust": "checked-sober",
+            "recheck": "2026-07-09 evening (Rick, code/2026-07-09-c9-periodicity.py, 17.4 sec)",
+            "file": "proofs/2026-07-09-d1-c7-structural.md",
+            "children": [],
+            "role": "premise"
+          },
+          {
+            "id": "beta-prime-9-witness",
+            "approach": "H_9(7,0,2) = 91210287168000 = 2^9 * 178145092125, v_2 = 9. Direct evaluation via extracted h_k^{(9)}. Parity 7+0=7 odd (in shell). Combined with LB gives beta'(9) = 9.",
+            "trust": "checked-sober",
+            "recheck": "2026-07-09 evening (Rick, code/2026-07-09-c9-periodicity.py)",
+            "file": "proofs/2026-07-09-d1-c7-structural.md",
+            "children": [],
+            "role": "premise"
+          },
+          {
+            "id": "hk-c-uniform-constants-conjecture",
+            "approach": "Conjecture: h_k^{(c)}(a, b) constants are c-uniform polynomials in c. Verified for k = 0..5 across c in {5, 6, 7, 9}: h_0 = 1, h_1 = -c(c-1), h_2 = -2c, h_3 = 6·c(c-1)(c-2), h_4 = 12·c(c-1), h_5 = -60·c(c-1)(c-2)(c-3). All 24 test points (4 c-values × 6 k-values) match exactly. This suggests the FULL h_k^{(c)}(a, b) has a c-uniform polynomial form, which would enable a UNIFORM proof of D1 at all odd c.",
+            "trust": "checked-sober",
+            "recheck": "2026-07-09 evening (Rick, code/2026-07-09-hk-const-pattern.py, 24/24 match)",
+            "file": "code/2026-07-09-hk-const-pattern.py",
+            "children": [],
+            "role": "attempt"
+          }
+        ],
         "role": "attempt"
       },
       {
@@ -150,8 +261,9 @@
       {
         "id": "structural-conjecture-S",
         "approach": "At odd c with v_2(c-1) <= 2, minimising (a*, b*, j*) has j*=2 (picking C(j,k*) with v_2=0), (a+2)(b+1) small-odd (killing polynomial factor's v_2), and run products contributing exactly min-v_2 of length-(c-3) consecutive runs. Illustrated concretely at c=5 with (3,0,2): v_2 = 1 (from -10 constant) + 1 + 1 (from run products) + 0 (from (5-24)) = 3.",
-        "trust": "hunch",
-        "file": "proofs/2026-07-08-d1-partial.md",
+        "trust": "sketched",
+        "promotion_note": "Day 87 promotes hunch -> sketched. c=5 mechanism now explicit (proofs/2026-07-09-d1-c5-structural.md, §9): the min v_2(H_5) is exactly the minimum LB across h_k, achieved by the h_k with smallest floor (h_2 at c=5, or h_3/h_4 at c=4). Same mechanism observed at c=4. Generalization to odd c >= 7 is stated in §9 (whiskey note) but not proved.",
+        "file": "proofs/2026-07-09-d1-c5-structural.md",
         "children": [],
         "role": "attempt"
       },
