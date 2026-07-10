@@ -1,0 +1,21 @@
+samples per c: {4: 20, 5: 20, 6: 20, 7: 20, 9: 15}, total: 95
+
+--- degree <= 6 ---
+  N = 84 monomials
+  under-determined (71 pivots)
+
+--- degree <= 7 ---
+  N = 120 monomials
+  under-determined
+
+--- degree <= 8 ---
+  N = 165 monomials
+  under-determined
+
+--- degree <= 9 ---
+  N = 220 monomials
+  under-determined
+
+--- degree <= 10 ---
+  N = 286 monomials
+  under-determined

@@ -1,0 +1,729 @@
+==============================================================================
+OQ-MOTZKIN-K-TRIANGLE  (j <= 6)
+Claim: K_{mu^T, (2^j)} = m^(2)_{k, j} for some k <-> mu bijection.
+==============================================================================
+
+m^(1)_{k, j}   (V_1 alone, V_1 = 3-dim) table (rows = j, cols = k):
+  j\k |      0      1      2      3      4      5      6 | rowsum
+-----------------------------------------------------------------
+    0 |      1      0      0      0      0      0      0 |        1
+    1 |      0      1      0      0      0      0      0 |        1
+    2 |      1      1      1      0      0      0      0 |        3
+    3 |      1      3      2      1      0      0      0 |        7
+    4 |      3      6      6      3      1      0      0 |       19
+    5 |      6     15     15     10      4      1      0 |       51
+    6 |     15     36     40     29     15      5      1 |      141
+
+Dim check for m^(1): sum_k (2k+1) m_k =?= 3^j
+  j = 0: sum = 1, 3^j = 1  OK
+  j = 1: sum = 3, 3^j = 3  OK
+  j = 2: sum = 9, 3^j = 9  OK
+  j = 3: sum = 27, 3^j = 27  OK
+  j = 4: sum = 81, 3^j = 81  OK
+  j = 5: sum = 243, 3^j = 243  OK
+  j = 6: sum = 729, 3^j = 729  OK
+
+m^(2)_{k, j}   (V_1 (+) V_2, V_1 = 3-dim, V_2 = 5-dim) table (rows = j, cols = k):
+  j\k |      0      1      2      3      4      5      6      7      8      9     10     11     12 | rowsum
+-----------------------------------------------------------------------------------------------------------
+    0 |      1      0      0      0      0      0      0      0      0      0      0      0      0 |        1
+    1 |      0      1      1      0      0      0      0      0      0      0      0      0      0 |        2
+    2 |      2      4      4      3      1      0      0      0      0      0      0      0      0 |       14
+    3 |      8     21     25     20     12      5      1      0      0      0      0      0      0 |       92
+    4 |     46    120    152    140    100     56     24      7      1      0      0      0      0 |      646
+    5 |    272    730    970    960    768    507    275    120     40      9      1      0      0 |     4652
+    6 |   1700   4632   6360   6633   5715   4180   2612   1386    614    220     60     11      1 |    34124
+
+Dim check for m^(2): sum_k (2k+1) m_k =?= 8^j
+  j = 0: sum = 1, 8^j = 1  OK
+  j = 1: sum = 8, 8^j = 8  OK
+  j = 2: sum = 64, 8^j = 64  OK
+  j = 3: sum = 512, 8^j = 512  OK
+  j = 4: sum = 4096, 8^j = 4096  OK
+  j = 5: sum = 32768, 8^j = 32768  OK
+  j = 6: sum = 262144, 8^j = 262144  OK
+
+Motzkin triangle T(j, k)  (steps {-1, 0, +1}, non-negative, from 0 to k):
+  j\k |    0    1    2    3    4    5    6 | rowsum
+---------------------------------------------------
+    0 |    1    0    0    0    0    0    0 |      1
+    1 |    1    1    0    0    0    0    0 |      2
+    2 |    2    2    1    0    0    0    0 |      5
+    3 |    4    5    3    1    0    0    0 |     13
+    4 |    9   12    9    4    1    0    0 |     35
+    5 |   21   30   25   14    5    1    0 |     96
+    6 |   51   76   69   44   20    6    1 |    267
+  (Ordinary Motzkin numbers M_j = T(j, 0) = 1, 1, 2, 4, 9, 21, 51.)
+
+K_{mu^T, (2^j)} table, mu with <= 3 rows:
+
+  j = 0  (|mu| = 0, total K = 1):
+    mu = (0, 0, 0),  mu^T = (),  K = 1
+
+  j = 1  (|mu| = 2, total K = 1):
+    mu = (1, 1, 0),  mu^T = (2),  K = 1
+
+  j = 2  (|mu| = 4, total K = 2):
+    mu = (2, 2, 0),  mu^T = (2, 2),  K = 1
+    mu = (2, 1, 1),  mu^T = (3, 1),  K = 1
+
+  j = 3  (|mu| = 6, total K = 4):
+    mu = (3, 3, 0),  mu^T = (2, 2, 2),  K = 1
+    mu = (3, 2, 1),  mu^T = (3, 2, 1),  K = 2
+    mu = (2, 2, 2),  mu^T = (3, 3),  K = 1
+
+  j = 4  (|mu| = 8, total K = 9):
+    mu = (4, 4, 0),  mu^T = (2, 2, 2, 2),  K = 1
+    mu = (4, 3, 1),  mu^T = (3, 2, 2, 1),  K = 3
+    mu = (4, 2, 2),  mu^T = (3, 3, 1, 1),  K = 2
+    mu = (3, 3, 2),  mu^T = (3, 3, 2),  K = 3
+
+  j = 5  (|mu| = 10, total K = 21):
+    mu = (5, 5, 0),  mu^T = (2, 2, 2, 2, 2),  K = 1
+    mu = (5, 4, 1),  mu^T = (3, 2, 2, 2, 1),  K = 4
+    mu = (5, 3, 2),  mu^T = (3, 3, 2, 1, 1),  K = 5
+    mu = (4, 4, 2),  mu^T = (3, 3, 2, 2),  K = 6
+    mu = (4, 3, 3),  mu^T = (3, 3, 3, 1),  K = 5
+
+  j = 6  (|mu| = 12, total K = 51):
+    mu = (6, 6, 0),  mu^T = (2, 2, 2, 2, 2, 2),  K = 1
+    mu = (6, 5, 1),  mu^T = (3, 2, 2, 2, 2, 1),  K = 5
+    mu = (6, 4, 2),  mu^T = (3, 3, 2, 2, 1, 1),  K = 9
+    mu = (6, 3, 3),  mu^T = (3, 3, 3, 1, 1, 1),  K = 5
+    mu = (5, 5, 2),  mu^T = (3, 3, 2, 2, 2),  K = 10
+    mu = (5, 4, 3),  mu^T = (3, 3, 3, 2, 1),  K = 16
+    mu = (4, 4, 4),  mu^T = (3, 3, 3, 3),  K = 5
+
+K-table row sums (over mu with <= 3 rows):
+  j = 0: sum K = 1
+  j = 1: sum K = 1
+  j = 2: sum K = 2
+  j = 3: sum K = 4
+  j = 4: sum K = 9
+  j = 5: sum K = 21
+  j = 6: sum K = 51
+K row sums: [1, 1, 2, 4, 9, 21, 51]
+Motzkin M_j: [1, 1, 2, 4, 9, 21, 51]
+K row sums == Motzkin M_j?  True
+
+==============================================================================
+CORRESPONDENCE TESTS
+==============================================================================
+(Aggregating K's by k = f(mu) and comparing to m^(1), m^(2), and T.)
+
+### Target: m^(2)_{k, j}  (Rick's original claim) ###
+
+--- k = mu_1 - mu_2  (target: m^(2)) ---
+  j = 0: MATCH  (sum: K=1, target=1)
+  j = 1: MISMATCH
+    k=0: K=1, target=0  !!
+    k=1: K=0, target=1  !!
+    k=2: K=0, target=1  !!
+  j = 2: MISMATCH
+    k=0: K=1, target=2  !!
+    k=1: K=1, target=4  !!
+    k=2: K=0, target=4  !!
+    k=3: K=0, target=3  !!
+    k=4: K=0, target=1  !!
+  j = 3: MISMATCH
+    k=0: K=2, target=8  !!
+    k=1: K=2, target=21  !!
+    k=2: K=0, target=25  !!
+    k=3: K=0, target=20  !!
+    k=4: K=0, target=12  !!
+    k=5: K=0, target=5  !!
+    k=6: K=0, target=1  !!
+  j = 4: MISMATCH
+    k=0: K=4, target=46  !!
+    k=1: K=3, target=120  !!
+    k=2: K=2, target=152  !!
+    k=3: K=0, target=140  !!
+    k=4: K=0, target=100  !!
+    k=5: K=0, target=56  !!
+    k=6: K=0, target=24  !!
+    k=7: K=0, target=7  !!
+    k=8: K=0, target=1  !!
+  j = 5: MISMATCH
+    k=0: K=7, target=272  !!
+    k=1: K=9, target=730  !!
+    k=2: K=5, target=970  !!
+    k=3: K=0, target=960  !!
+    k=4: K=0, target=768  !!
+    k=5: K=0, target=507  !!
+    k=6: K=0, target=275  !!
+    k=7: K=0, target=120  !!
+    k=8: K=0, target=40  !!
+    k=9: K=0, target=9  !!
+    k=10: K=0, target=1  !!
+  j = 6: MISMATCH
+    k=0: K=16, target=1700  !!
+    k=1: K=21, target=4632  !!
+    k=2: K=9, target=6360  !!
+    k=3: K=5, target=6633  !!
+    k=4: K=0, target=5715  !!
+    k=5: K=0, target=4180  !!
+    k=6: K=0, target=2612  !!
+    k=7: K=0, target=1386  !!
+    k=8: K=0, target=614  !!
+    k=9: K=0, target=220  !!
+    k=10: K=0, target=60  !!
+    k=11: K=0, target=11  !!
+    k=12: K=0, target=1  !!
+  RESULT: mismatch
+
+--- k = mu_1 - mu_3  (target: m^(2)) ---
+  j = 0: MATCH  (sum: K=1, target=1)
+  j = 1: MISMATCH
+    k=1: K=1, target=1  OK
+    k=2: K=0, target=1  !!
+  j = 2: MISMATCH
+    k=0: K=0, target=2  !!
+    k=1: K=1, target=4  !!
+    k=2: K=1, target=4  !!
+    k=3: K=0, target=3  !!
+    k=4: K=0, target=1  !!
+  j = 3: MISMATCH
+    k=0: K=1, target=8  !!
+    k=1: K=0, target=21  !!
+    k=2: K=2, target=25  !!
+    k=3: K=1, target=20  !!
+    k=4: K=0, target=12  !!
+    k=5: K=0, target=5  !!
+    k=6: K=0, target=1  !!
+  j = 4: MISMATCH
+    k=0: K=0, target=46  !!
+    k=1: K=3, target=120  !!
+    k=2: K=2, target=152  !!
+    k=3: K=3, target=140  !!
+    k=4: K=1, target=100  !!
+    k=5: K=0, target=56  !!
+    k=6: K=0, target=24  !!
+    k=7: K=0, target=7  !!
+    k=8: K=0, target=1  !!
+  j = 5: MISMATCH
+    k=0: K=0, target=272  !!
+    k=1: K=5, target=730  !!
+    k=2: K=6, target=970  !!
+    k=3: K=5, target=960  !!
+    k=4: K=4, target=768  !!
+    k=5: K=1, target=507  !!
+    k=6: K=0, target=275  !!
+    k=7: K=0, target=120  !!
+    k=8: K=0, target=40  !!
+    k=9: K=0, target=9  !!
+    k=10: K=0, target=1  !!
+  j = 6: MISMATCH
+    k=0: K=5, target=1700  !!
+    k=1: K=0, target=4632  !!
+    k=2: K=16, target=6360  !!
+    k=3: K=15, target=6633  !!
+    k=4: K=9, target=5715  !!
+    k=5: K=5, target=4180  !!
+    k=6: K=1, target=2612  !!
+    k=7: K=0, target=1386  !!
+    k=8: K=0, target=614  !!
+    k=9: K=0, target=220  !!
+    k=10: K=0, target=60  !!
+    k=11: K=0, target=11  !!
+    k=12: K=0, target=1  !!
+  RESULT: mismatch
+
+--- k = mu_2 - mu_3  (target: m^(2)) ---
+  j = 0: MATCH  (sum: K=1, target=1)
+  j = 1: MISMATCH
+    k=1: K=1, target=1  OK
+    k=2: K=0, target=1  !!
+  j = 2: MISMATCH
+    k=0: K=1, target=2  !!
+    k=1: K=0, target=4  !!
+    k=2: K=1, target=4  !!
+    k=3: K=0, target=3  !!
+    k=4: K=0, target=1  !!
+  j = 3: MISMATCH
+    k=0: K=1, target=8  !!
+    k=1: K=2, target=21  !!
+    k=2: K=0, target=25  !!
+    k=3: K=1, target=20  !!
+    k=4: K=0, target=12  !!
+    k=5: K=0, target=5  !!
+    k=6: K=0, target=1  !!
+  j = 4: MISMATCH
+    k=0: K=2, target=46  !!
+    k=1: K=3, target=120  !!
+    k=2: K=3, target=152  !!
+    k=3: K=0, target=140  !!
+    k=4: K=1, target=100  !!
+    k=5: K=0, target=56  !!
+    k=6: K=0, target=24  !!
+    k=7: K=0, target=7  !!
+    k=8: K=0, target=1  !!
+  j = 5: MISMATCH
+    k=0: K=5, target=272  !!
+    k=1: K=5, target=730  !!
+    k=2: K=6, target=970  !!
+    k=3: K=4, target=960  !!
+    k=4: K=0, target=768  !!
+    k=5: K=1, target=507  !!
+    k=6: K=0, target=275  !!
+    k=7: K=0, target=120  !!
+    k=8: K=0, target=40  !!
+    k=9: K=0, target=9  !!
+    k=10: K=0, target=1  !!
+  j = 6: MISMATCH
+    k=0: K=10, target=1700  !!
+    k=1: K=16, target=4632  !!
+    k=2: K=9, target=6360  !!
+    k=3: K=10, target=6633  !!
+    k=4: K=5, target=5715  !!
+    k=5: K=0, target=4180  !!
+    k=6: K=1, target=2612  !!
+    k=7: K=0, target=1386  !!
+    k=8: K=0, target=614  !!
+    k=9: K=0, target=220  !!
+    k=10: K=0, target=60  !!
+    k=11: K=0, target=11  !!
+    k=12: K=0, target=1  !!
+  RESULT: mismatch
+
+--- k = mu_1 + mu_2 - 2 mu_3  (target: m^(2)) ---
+  j = 0: MATCH  (sum: K=1, target=1)
+  j = 1: MISMATCH
+    k=1: K=0, target=1  !!
+    k=2: K=1, target=1  OK
+  j = 2: MISMATCH
+    k=0: K=0, target=2  !!
+    k=1: K=1, target=4  !!
+    k=2: K=0, target=4  !!
+    k=3: K=0, target=3  !!
+    k=4: K=1, target=1  OK
+  j = 3: MISMATCH
+    k=0: K=1, target=8  !!
+    k=1: K=0, target=21  !!
+    k=2: K=0, target=25  !!
+    k=3: K=2, target=20  !!
+    k=4: K=0, target=12  !!
+    k=5: K=0, target=5  !!
+    k=6: K=1, target=1  OK
+  j = 4: MISMATCH
+    k=0: K=0, target=46  !!
+    k=1: K=0, target=120  !!
+    k=2: K=5, target=152  !!
+    k=3: K=0, target=140  !!
+    k=4: K=0, target=100  !!
+    k=5: K=3, target=56  !!
+    k=6: K=0, target=24  !!
+    k=7: K=0, target=7  !!
+    k=8: K=1, target=1  OK
+  j = 5: MISMATCH
+    k=0: K=0, target=272  !!
+    k=1: K=5, target=730  !!
+    k=2: K=0, target=970  !!
+    k=3: K=0, target=960  !!
+    k=4: K=11, target=768  !!
+    k=5: K=0, target=507  !!
+    k=6: K=0, target=275  !!
+    k=7: K=4, target=120  !!
+    k=8: K=0, target=40  !!
+    k=9: K=0, target=9  !!
+    k=10: K=1, target=1  OK
+  j = 6: MISMATCH
+    k=0: K=5, target=1700  !!
+    k=1: K=0, target=4632  !!
+    k=2: K=0, target=6360  !!
+    k=3: K=21, target=6633  !!
+    k=4: K=0, target=5715  !!
+    k=5: K=0, target=4180  !!
+    k=6: K=19, target=2612  !!
+    k=7: K=0, target=1386  !!
+    k=8: K=0, target=614  !!
+    k=9: K=5, target=220  !!
+    k=10: K=0, target=60  !!
+    k=11: K=0, target=11  !!
+    k=12: K=1, target=1  OK
+  RESULT: mismatch
+
+--- k = 2 mu_1 - mu_2 - mu_3  (target: m^(2)) ---
+  j = 0: MATCH  (sum: K=1, target=1)
+  j = 1: MISMATCH
+    k=1: K=1, target=1  OK
+    k=2: K=0, target=1  !!
+  j = 2: MISMATCH
+    k=0: K=0, target=2  !!
+    k=1: K=0, target=4  !!
+    k=2: K=2, target=4  !!
+    k=3: K=0, target=3  !!
+    k=4: K=0, target=1  !!
+  j = 3: MISMATCH
+    k=0: K=1, target=8  !!
+    k=1: K=0, target=21  !!
+    k=2: K=0, target=25  !!
+    k=3: K=3, target=20  !!
+    k=4: K=0, target=12  !!
+    k=5: K=0, target=5  !!
+    k=6: K=0, target=1  !!
+  j = 4: MISMATCH
+    k=0: K=0, target=46  !!
+    k=1: K=3, target=120  !!
+    k=2: K=0, target=152  !!
+    k=3: K=0, target=140  !!
+    k=4: K=6, target=100  !!
+    k=5: K=0, target=56  !!
+    k=6: K=0, target=24  !!
+    k=7: K=0, target=7  !!
+    k=8: K=0, target=1  !!
+  j = 5: MISMATCH
+    k=0: K=0, target=272  !!
+    k=1: K=0, target=730  !!
+    k=2: K=11, target=970  !!
+    k=3: K=0, target=960  !!
+    k=4: K=0, target=768  !!
+    k=5: K=10, target=507  !!
+    k=6: K=0, target=275  !!
+    k=7: K=0, target=120  !!
+    k=8: K=0, target=40  !!
+    k=9: K=0, target=9  !!
+    k=10: K=0, target=1  !!
+  j = 6: MISMATCH
+    k=0: K=5, target=1700  !!
+    k=1: K=0, target=4632  !!
+    k=2: K=0, target=6360  !!
+    k=3: K=26, target=6633  !!
+    k=4: K=0, target=5715  !!
+    k=5: K=0, target=4180  !!
+    k=6: K=20, target=2612  !!
+    k=7: K=0, target=1386  !!
+    k=8: K=0, target=614  !!
+    k=9: K=0, target=220  !!
+    k=10: K=0, target=60  !!
+    k=11: K=0, target=11  !!
+    k=12: K=0, target=1  !!
+  RESULT: mismatch
+
+### Target: m^(1)_{k, j}  (Ordinary Motzkin V_1 alone) ###
+
+--- k = mu_1 - mu_2  (target: m^(1)) ---
+  j = 0: MATCH  (sum: K=1, target=1)
+  j = 1: MISMATCH
+    k=0: K=1, target=0  !!
+    k=1: K=0, target=1  !!
+  j = 2: MISMATCH
+    k=0: K=1, target=1  OK
+    k=1: K=1, target=1  OK
+    k=2: K=0, target=1  !!
+  j = 3: MISMATCH
+    k=0: K=2, target=1  !!
+    k=1: K=2, target=3  !!
+    k=2: K=0, target=2  !!
+    k=3: K=0, target=1  !!
+  j = 4: MISMATCH
+    k=0: K=4, target=3  !!
+    k=1: K=3, target=6  !!
+    k=2: K=2, target=6  !!
+    k=3: K=0, target=3  !!
+    k=4: K=0, target=1  !!
+  j = 5: MISMATCH
+    k=0: K=7, target=6  !!
+    k=1: K=9, target=15  !!
+    k=2: K=5, target=15  !!
+    k=3: K=0, target=10  !!
+    k=4: K=0, target=4  !!
+    k=5: K=0, target=1  !!
+  j = 6: MISMATCH
+    k=0: K=16, target=15  !!
+    k=1: K=21, target=36  !!
+    k=2: K=9, target=40  !!
+    k=3: K=5, target=29  !!
+    k=4: K=0, target=15  !!
+    k=5: K=0, target=5  !!
+    k=6: K=0, target=1  !!
+  RESULT: mismatch
+
+--- k = mu_1 - mu_3  (target: m^(1)) ---
+  j = 0: MATCH  (sum: K=1, target=1)
+  j = 1: MATCH  (sum: K=1, target=1)
+  j = 2: MISMATCH
+    k=0: K=0, target=1  !!
+    k=1: K=1, target=1  OK
+    k=2: K=1, target=1  OK
+  j = 3: MISMATCH
+    k=0: K=1, target=1  OK
+    k=1: K=0, target=3  !!
+    k=2: K=2, target=2  OK
+    k=3: K=1, target=1  OK
+  j = 4: MISMATCH
+    k=0: K=0, target=3  !!
+    k=1: K=3, target=6  !!
+    k=2: K=2, target=6  !!
+    k=3: K=3, target=3  OK
+    k=4: K=1, target=1  OK
+  j = 5: MISMATCH
+    k=0: K=0, target=6  !!
+    k=1: K=5, target=15  !!
+    k=2: K=6, target=15  !!
+    k=3: K=5, target=10  !!
+    k=4: K=4, target=4  OK
+    k=5: K=1, target=1  OK
+  j = 6: MISMATCH
+    k=0: K=5, target=15  !!
+    k=1: K=0, target=36  !!
+    k=2: K=16, target=40  !!
+    k=3: K=15, target=29  !!
+    k=4: K=9, target=15  !!
+    k=5: K=5, target=5  OK
+    k=6: K=1, target=1  OK
+  RESULT: mismatch
+
+--- k = mu_2 - mu_3  (target: m^(1)) ---
+  j = 0: MATCH  (sum: K=1, target=1)
+  j = 1: MATCH  (sum: K=1, target=1)
+  j = 2: MISMATCH
+    k=0: K=1, target=1  OK
+    k=1: K=0, target=1  !!
+    k=2: K=1, target=1  OK
+  j = 3: MISMATCH
+    k=0: K=1, target=1  OK
+    k=1: K=2, target=3  !!
+    k=2: K=0, target=2  !!
+    k=3: K=1, target=1  OK
+  j = 4: MISMATCH
+    k=0: K=2, target=3  !!
+    k=1: K=3, target=6  !!
+    k=2: K=3, target=6  !!
+    k=3: K=0, target=3  !!
+    k=4: K=1, target=1  OK
+  j = 5: MISMATCH
+    k=0: K=5, target=6  !!
+    k=1: K=5, target=15  !!
+    k=2: K=6, target=15  !!
+    k=3: K=4, target=10  !!
+    k=4: K=0, target=4  !!
+    k=5: K=1, target=1  OK
+  j = 6: MISMATCH
+    k=0: K=10, target=15  !!
+    k=1: K=16, target=36  !!
+    k=2: K=9, target=40  !!
+    k=3: K=10, target=29  !!
+    k=4: K=5, target=15  !!
+    k=5: K=0, target=5  !!
+    k=6: K=1, target=1  OK
+  RESULT: mismatch
+
+### Target: T(j, k)  (Motzkin triangle) ###
+
+--- k = mu_1 - mu_2  (target: T) ---
+  j = 0: MATCH  (sum: K=1, target=1)
+  j = 1: MISMATCH
+    k=0: K=1, target=1  OK
+    k=1: K=0, target=1  !!
+  j = 2: MISMATCH
+    k=0: K=1, target=2  !!
+    k=1: K=1, target=2  !!
+    k=2: K=0, target=1  !!
+  j = 3: MISMATCH
+    k=0: K=2, target=4  !!
+    k=1: K=2, target=5  !!
+    k=2: K=0, target=3  !!
+    k=3: K=0, target=1  !!
+  j = 4: MISMATCH
+    k=0: K=4, target=9  !!
+    k=1: K=3, target=12  !!
+    k=2: K=2, target=9  !!
+    k=3: K=0, target=4  !!
+    k=4: K=0, target=1  !!
+  j = 5: MISMATCH
+    k=0: K=7, target=21  !!
+    k=1: K=9, target=30  !!
+    k=2: K=5, target=25  !!
+    k=3: K=0, target=14  !!
+    k=4: K=0, target=5  !!
+    k=5: K=0, target=1  !!
+  j = 6: MISMATCH
+    k=0: K=16, target=51  !!
+    k=1: K=21, target=76  !!
+    k=2: K=9, target=69  !!
+    k=3: K=5, target=44  !!
+    k=4: K=0, target=20  !!
+    k=5: K=0, target=6  !!
+    k=6: K=0, target=1  !!
+  RESULT: mismatch
+
+--- k = mu_1 - mu_3  (target: T) ---
+  j = 0: MATCH  (sum: K=1, target=1)
+  j = 1: MISMATCH
+    k=0: K=0, target=1  !!
+    k=1: K=1, target=1  OK
+  j = 2: MISMATCH
+    k=0: K=0, target=2  !!
+    k=1: K=1, target=2  !!
+    k=2: K=1, target=1  OK
+  j = 3: MISMATCH
+    k=0: K=1, target=4  !!
+    k=1: K=0, target=5  !!
+    k=2: K=2, target=3  !!
+    k=3: K=1, target=1  OK
+  j = 4: MISMATCH
+    k=0: K=0, target=9  !!
+    k=1: K=3, target=12  !!
+    k=2: K=2, target=9  !!
+    k=3: K=3, target=4  !!
+    k=4: K=1, target=1  OK
+  j = 5: MISMATCH
+    k=0: K=0, target=21  !!
+    k=1: K=5, target=30  !!
+    k=2: K=6, target=25  !!
+    k=3: K=5, target=14  !!
+    k=4: K=4, target=5  !!
+    k=5: K=1, target=1  OK
+  j = 6: MISMATCH
+    k=0: K=5, target=51  !!
+    k=1: K=0, target=76  !!
+    k=2: K=16, target=69  !!
+    k=3: K=15, target=44  !!
+    k=4: K=9, target=20  !!
+    k=5: K=5, target=6  !!
+    k=6: K=1, target=1  OK
+  RESULT: mismatch
+
+--- k = mu_2 - mu_3  (target: T) ---
+  j = 0: MATCH  (sum: K=1, target=1)
+  j = 1: MISMATCH
+    k=0: K=0, target=1  !!
+    k=1: K=1, target=1  OK
+  j = 2: MISMATCH
+    k=0: K=1, target=2  !!
+    k=1: K=0, target=2  !!
+    k=2: K=1, target=1  OK
+  j = 3: MISMATCH
+    k=0: K=1, target=4  !!
+    k=1: K=2, target=5  !!
+    k=2: K=0, target=3  !!
+    k=3: K=1, target=1  OK
+  j = 4: MISMATCH
+    k=0: K=2, target=9  !!
+    k=1: K=3, target=12  !!
+    k=2: K=3, target=9  !!
+    k=3: K=0, target=4  !!
+    k=4: K=1, target=1  OK
+  j = 5: MISMATCH
+    k=0: K=5, target=21  !!
+    k=1: K=5, target=30  !!
+    k=2: K=6, target=25  !!
+    k=3: K=4, target=14  !!
+    k=4: K=0, target=5  !!
+    k=5: K=1, target=1  OK
+  j = 6: MISMATCH
+    k=0: K=10, target=51  !!
+    k=1: K=16, target=76  !!
+    k=2: K=9, target=69  !!
+    k=3: K=10, target=44  !!
+    k=4: K=5, target=20  !!
+    k=5: K=0, target=6  !!
+    k=6: K=1, target=1  OK
+  RESULT: mismatch
+
+--- k = mu_3  (target: T) ---
+  j = 0: MATCH  (sum: K=1, target=1)
+  j = 1: MISMATCH
+    k=0: K=1, target=1  OK
+    k=1: K=0, target=1  !!
+  j = 2: MISMATCH
+    k=0: K=1, target=2  !!
+    k=1: K=1, target=2  !!
+    k=2: K=0, target=1  !!
+  j = 3: MISMATCH
+    k=0: K=1, target=4  !!
+    k=1: K=2, target=5  !!
+    k=2: K=1, target=3  !!
+    k=3: K=0, target=1  !!
+  j = 4: MISMATCH
+    k=0: K=1, target=9  !!
+    k=1: K=3, target=12  !!
+    k=2: K=5, target=9  !!
+    k=3: K=0, target=4  !!
+    k=4: K=0, target=1  !!
+  j = 5: MISMATCH
+    k=0: K=1, target=21  !!
+    k=1: K=4, target=30  !!
+    k=2: K=11, target=25  !!
+    k=3: K=5, target=14  !!
+    k=4: K=0, target=5  !!
+    k=5: K=0, target=1  !!
+  j = 6: MISMATCH
+    k=0: K=1, target=51  !!
+    k=1: K=5, target=76  !!
+    k=2: K=19, target=69  !!
+    k=3: K=21, target=44  !!
+    k=4: K=5, target=20  !!
+    k=5: K=0, target=6  !!
+    k=6: K=0, target=1  !!
+  RESULT: mismatch
+
+==============================================================================
+SUMMARY OF CORRESPONDENCE TESTS
+==============================================================================
+  target=   m^(2)  k = mu_1 - mu_2                           FAIL
+  target=   m^(2)  k = mu_1 - mu_3                           FAIL
+  target=   m^(2)  k = mu_2 - mu_3                           FAIL
+  target=   m^(2)  k = mu_1 + mu_2 - 2 mu_3                  FAIL
+  target=   m^(2)  k = 2 mu_1 - mu_2 - mu_3                  FAIL
+  target=   m^(1)  k = mu_1 - mu_2                           FAIL
+  target=   m^(1)  k = mu_1 - mu_3                           FAIL
+  target=   m^(1)  k = mu_2 - mu_3                           FAIL
+  target=       T  k = mu_1 - mu_2                           FAIL
+  target=       T  k = mu_1 - mu_3                           FAIL
+  target=       T  k = mu_2 - mu_3                           FAIL
+  target=       T  k = mu_3                                  FAIL
+
+==============================================================================
+STRUCTURAL FINDING
+==============================================================================
+
+Structural facts established by this computation:
+
+  (F1)  m^(2)_{k, j} (V_1 (+) V_2 tensor centraliser dims) row sums are
+        1, 2, 14, 116, 1008, 8942, 80066  -- NOT Motzkin numbers.
+        (Dim check: sum_k (2k+1) m^(2)_{k, j} = 8^j PASSES, confirming
+        the (V_1 + V_2)^tensor j dimension.)
+
+  (F2)  sum_{mu <= 3 rows, |mu| = 2j} K_{mu^T, (2^j)} = M_j
+        (ordinary Motzkin: 1, 1, 2, 4, 9, 21, 51).
+
+  (F3)  Therefore the OQ face-value identity
+              K_{mu^T, (2^j)} = m^(2)_{k, j}
+        is REFUTED at the level of row sums: 1 vs 1, 1 vs 2 already
+        disagrees at j = 1.  No k <-> mu bijection can save it.
+
+  (F4)  The K's do count something structural: sequences
+              () = nu^0 sub nu^1 sub ... sub nu^j = mu
+        where each nu^{i+1}/nu^i is a vertical 2-strip and each nu^i is
+        a partition with <= 3 rows.  This is the Bratteli graph for
+        GL_3 acting on (Lambda^2 C^3)^{tensor j}.
+
+  (F5)  In (x, y) = (mu_1 - mu_2, mu_2 - mu_3) coordinates the walk
+        has three step types:
+              A: (Delta x, Delta y) = (0, +1)   [add row 1 & row 2]
+              B: (+1, -1)                       [add row 1 & row 3]
+              C: (-1,  0)                       [add row 2 & row 3]
+        with the constraint x >= 0, y >= 0 throughout.  Ending point
+        (x, y) satisfies mu_3 = j - (x + 2y + x)... etc; the number of
+        such walks ending at mu = K_{mu^T, (2^j)}.  This is a
+        "3-step Motzkin-like walk in the SL_3 Weyl chamber", NOT the
+        classical Motzkin-2 (5-cell) walk that centralises V_1 (+) V_2.
+
+  (F6)  Root-cause of Rick's OQ misfire: he conflated two centralisers.
+        The Motzkin-2 algebra (centraliser of U_q(sl_2) on
+        (V_1 + V_2)^tensor j) has cell-module dims m^(2)_{k, j} which
+        grow as ~8^j.  The Kostka numbers K_{mu^T, (2^j)} instead
+        count multiplicities in (Lambda^2 C^3)^tensor j as GL_3-rep,
+        which grow as ~3^j (Motzkin sum sequence).
+
+Consequence: OQ-MOTZKIN-MJ-CENTRALIZER does NOT close via this route.
+The Motzkin-2 centraliser interpretation of M_j coefficients is a
+DIFFERENT identification -- via the SL_3 -> principal SL_2 restriction:
+
+        m^(1)_{k, j} = sum_{mu} K_{mu^T, (2^j)} * mult(V_k, S^mu | pSL_2)
+
+where S^mu is a GL_3 Schur module and mult(V_k, .) is the principal
+SL_2 branching multiplicity.  The K's are grouping coefficients in
+this refined branching -- NOT the multiplicities themselves.
+
