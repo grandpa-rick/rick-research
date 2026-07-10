@@ -216,6 +216,26 @@
 - **arXiv:2506.06951 (Kobayashi-Matsumura, June 2025, older) NEW TO FEEDS** ⭐⭐ **MEDIUM** — "Type C RSK for King tableaux with Berele insertion." King tableaux + semistandard oscillating tableaux as Q-symbol for type C. Kobayashi = Q-SPHERE speaker. RSK thread map: AII ✓ (Watanabe 2509) / AIII ✓ (Muniz 2505) / type C ✓ (this) / BDI = remaining gap.
 - **Kolb-Stephens 2407.15538 (July 2024) IDENTIFIED** — "Very non-standard quantum so(2N-1)." One of the 4 citers of Watanabe 2407.07280. Kolb-adjacent. Low relevance to BDI crystal program.
 
+### Found 2026-07-09 (Browse 78):
+
+- **arXiv:2607.03966 (Gerber-Ion-Lecouvey-Lenart, July 4, 2026) NEW TO FEEDS** ⭐⭐⭐⭐ **HIGH** — "Quantized Howe-type dualities via Koornwinder polynomials and the X=K phenomenon." Proves X=K for KR column crystal 1D-sums in most classical affine types via Koornwinder polynomial dual Cauchy. **Explicitly excludes B_n^(1) and D_n^(1).** Lecouvey co-author. Confirms type-D X=K is known open at the highest level. OQ-GERBER-LECOUVEY-D-XK. Upstream of McDonough-Pylyavskyy-Wang KR DEGs (2510.24490).
+
+- **arXiv:2602.22325 (Kannan-Song, Feb 2026) NEW TO FEEDS** ⭐⭐⭐ **HIGH** — "Pólya enumeration, wreath product symmetric functions, and moduli spaces of curves." FPSAC 2026 poster. Develops Λ^[2] = Grothendieck ring of polynomial functors on symmetric sequences; action on Sym via Adams + power-sum skewing. **Direct hit for M_j structural proof:** M_j = Frobenius-char of Ind_{S_2 ≀ S_j × S_{n-2j}}^{S_n} lives in Λ^[2]. OQ-MJ-LAMBDA2.
+
+- **arXiv:2603.19069 (March 2026) NEW TO FEEDS** ⭐⭐⭐ **HIGH** — "Pascal, Catalan, Motzkin triangles and tensor product multiplicities." Motzkin numbers as tensor product multiplicities in quantum groups. OQ-MOTZKIN-MJ-CENTRALIZER: K_{μ^T,(2^j)} = Motzkin centralizer dims for U_q(sl_2) on (V_1 ⊕ V_2)^{⊗j}? See also Benkart-Halverson 1106.5277 (Motzkin algebra).
+
+- **arXiv:2512.19045 (Marberg, Dec 2025) UPGRADED PRIORITY** ⭐⭐⭐ **HIGH** — "Classical double Grothendieck transitions." MISSED until Browse 78 (same submission date as 2512.19034). K-type-D Stanley functions expand positively in K-Schur P/Q-functions. K-theoretic DIII RSK program: this is the K-level version of the atom expansion question. Was in feeds at ⭐ LOW from Browse 17 — now upgraded.
+
+- **arXiv:2406.09057 (Du-Li-Zhao, 2024) NEW TO FEEDS** ⭐⭐ **MEDIUM-HIGH** — "q-Schur algebras of type D and Schur-Weyl-Hecke duality." Journal of Algebra 2025. Resolves 30-year open problem: Schur-Weyl-Hecke duality for type D. Part I only. Rick's SEED Q3 = Hopf-algebraic formulation of this functor. OQ-DU-LI-ZHAO-HOPF.
+
+- **arXiv:2510.24490 (McDonough-Pylyavskyy-Wang, Oct 2025) UPGRADED** ⭐⭐⭐ **HIGH (upgraded from LOW)** — KR dual equivalence graphs, FPSAC 2026 poster. Upgraded because: Gerber-Ion-Lecouvey-Lenart 2607.03966 explicitly leaves D_n^(1) X=K open; KR DEGs = natural tool to close this gap. OQ-KR-DEG-TYPE-D.
+
+- **Marberg 2512.19034 v2 (July 1, 2026) MAJOR REVISION** — "Brion atoms for classical types." §8 = type DIII atom proofs; §9 = involution Schubert polynomials + 7 open DIII conjectures. "Many corrections" may have changed atom description. Bingham at FPSAC 2026 (July 13-17) — ask him whether DIII clans = fpf-involution atoms. OQ-MARBERG-V2-ATOM-CORRECTION, OQ-THREE-Q-DESCRIPTIONS.
+
+- **All 5 DIII sentinels still 0 citations.** Window confirmed open. Browses 73-78 = sixth consecutive zero sweep.
+
+- **Anne Schilling Paris slides available:** https://www.math.ucdavis.edu/~anne/talk-Paris2026.pdf — "Crystals and Symmetric Functions," IMJ-PRG June 2026. Fetch next browse.
+
 ### Found 2026-06-18 (Browse 70):
 
 - **arXiv:2311.10659 (Gutiérrez, Nov 2023) NEW TO FEEDS** ⭐⭐⭐ **HIGH** — "Bender-Knuth involutions for types B and C." Types B and C BK involution algorithms, fully explicit. **Type D explicitly stated as open.** Surfaced from Kobayashi-Matsumura 2506.06951 references. Svyatnyy 2605.00514 partially answers type D for short SSYT; Gutiérrez is the baseline. **OQ-GUTIERREZ-TYPE-D-BK (NEW HIGH).** Read alongside Svyatnyy.

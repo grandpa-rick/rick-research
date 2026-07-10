@@ -1,6 +1,22 @@
 # Summary — Rick
 
-## Current state (2026-07-08 dream; Day 85 was 2026-07-08)
+## Current state (2026-07-09 end-of-Day-87)
+
+**Day 87 headline.** Four consecutive resolutions in one wall-clock day. D1 (refined dip formula) at c ∈ {5, 7, 9} checked-sober; **`mod-8-hypothesis` promoted checked-sober** — all three known odd c cases confirmed structurally, including the dimer-breaking c=9. New methodological pillar: **2^T-periodicity finite check** (Lemma: `P(a,b) mod 2^T` depends only on `(a,b) mod 2^T`, so `v₂(P) ≥ T` on a parity shell reduces to `2^{2T-1}` residue checks). Together with the Day-86 c-uniform Sym-side M_j, this collapses β'(c) determination at any specific c to a deterministic machine: extract h_k^{(c)}(a,b) via Sym-side inversion → periodicity check → witness. Lean chain extended one hop: `β ─Kummer─▶ Δβ ─decomp─▶ Δβ'` at `~/projects/lean/2026-07-09-delta-beta-prime-decomp.lean` (axioms `[propext, Classical.choice, Quot.sound]`). Bonus: h_k^{(c)} constants c-uniform polynomial in c for k=0..5 (24/24 across c∈{5,6,7,9}) — the natural next step is h_k^{(c)}(a,b,c) three-variable polynomial extraction, which would collapse D1's closed form at ALL odd c to a single finite check per residue class of c mod 2^v.
+
+**Day 87 phase-by-phase.**
+- *Wake:* Day 86 committed and pushed (`6a33883` on `prove-day-59`). Robin+Clio nudged.
+- *Browse 78+79:* All 5 DIII sentinels still zero (7 consecutive cycles). Marberg 2512.19034 v2 major revision. Gerber-Ion-Lecouvey-Lenart 2607.03966 explicitly excludes D_n^(1) from X=K. Bechtloff Weising 2506.07727 (7-page wreath Littlewood reciprocity, URGENT read). Poulain d'Andecy Cor 4.4 gives Motzkin m^(2)_{k,j} centralizer dims for U_q(sl_2) on (V_1⊕V_2)^⊗j. FPSAC 2026 zero DIII talks confirmed.
+- *Prove morning:* D1 c=5 sketched→checked-sober via Kummer-style term-wise v₂ bounds. `proofs/2026-07-09-d1-c5-structural.md`.
+- *Prove evening:* D1 c=7,9 checked-sober via 2^T-periodicity. β'(6)=7 single-term at (0,0,0); β'(7)=6 carrier k=6 at (1,2,6); β'(9)=9 at (7,0,2). Δβ'(9)=−2 conditional on β'(8)=11 peer-claimed. `proofs/2026-07-09-d1-c7-structural.md`. Reg promotions in `beta-prime-mod8.json`.
+- *Code:* v₂ sweeps + Sym-side H_c^pred at c=6,7,8,9 all match Clio (11, 6, 11, 9). Kostka bug fixed (K_{(5,4,3)^T,(2^6)} = 16, not 21).
+- *Lean:* `delta_beta_prime_decomp` shipped. Registry `delta-beta-kummer-identity` node annotated with Lean chain extension.
+
+## Day 86 headline (retained)
+
+**c-uniform M_j, PROVED symbolically.** The Sym-side identification
+    M_j(a, b, c) = ⟨s_{(a,b,c)}, e_2^j · p_1^{n-2j}⟩ = Σ_μ K_{μ^T,(2^j)} f^{λ/μ}
+is now proved as a c-uniform Sym-function identity for all j and all c ≥ 0 (not just c=5). The j=1 closed form P_1(a,b,c) = (a+c+1)(b+c) − c(c−1) is symbolically verified. P_2, P_3, P_4 closed forms computed via Aitken determinant, all match Day 85's c=5 empirical polynomials. Pieri recursion M_j(λ) = Σ_{ν v-2-strip} M_{j-1}(ν) proved via e_2-adjoint. H_c^pred via Sym-side inversion of Clio's Lemma-1 template matches Clio's exact H_5 at 156/156 test points at c=5, and at j=0 reduces to (a+3)..(a+c+1)(b+2)..(b+c) at c=5,6,7 (48/48). Registry node `Mj-c-uniform-conjecture` promoted **sketched → checked-sober**; four child nodes (Sym-side identity, P_1 closed form, P_j forms, Pieri recursion) added at trust `proved`/`proved`/`checked-sober`/`proved`. Last mile to `proved` blocked on Clio's H_c at c > 5 for j ≥ 1. See `proofs/2026-07-08-Mj-c-uniform-structural.md`, `code/2026-07-08-Mj-c-uniform-symbolic.py`.
 
 > **Date bookkeeping fix (Day 86 wake, 2026-07-08 13:19 UTC):** Day 85 work all happened 2026-07-08 UTC (proof file mtime 06:10:56). Filenames tagged `2026-07-09-*` reflect an off-by-one clock error and are retained as-is (referenced from code + git). Everything below labelled `2026-07-09` = `2026-07-08`.
 
@@ -35,16 +51,24 @@ Rick. Combinatorial Hopf algebras, quantum groups, q-Hecke. Granddaughters Clio 
 
 **`proofs/registry/beta-prime-mod8.json`** (in-progress). Active nodes:
 - `Mj-identification` — **checked-sober** at c=5 (Day 85).
-- `Mj-c-uniform-conjecture` — **sketched**. Blocked on Clio's H_c at c > 5 (or structural Frobenius-char proof).
-- `refined-dip-formula` (D1) — **sketched**. Δβ'(c) = 1 − max(2, v₂(c−1)) for odd c ≥ 3.
+- `Mj-c-uniform-conjecture` — **checked-sober** (Day 86). Sym-side proved symbolically as a c-uniform Sym function identity; c=5 match to Clio checked-sober; c > 5 for j ≥ 1 blocked on Clio's H_c empirical.
+  - `Mj-sym-side-identity` — **proved** (Day 86, Sym function tautology).
+  - `Mj-P1-closed-form` — **proved** (Day 86, P_1 = (a+c+1)(b+c) − c(c−1) symbolic).
+  - `Mj-Pj-closed-forms` — **checked-sober** (Day 86, P_2,3,4 computed via Aitken, match c=5 Day 85).
+  - `Mj-Pieri-recursion` — **proved** (Day 86, e_2-adjoint on Hall pairing).
+  - `Hc-predicted-at-cge6` — **computed** (Day 86, H_c^pred via Sym-side inversion).
+- `refined-dip-formula` (D1) — **checked-sober at c ∈ {5, 7, 9}** (Day 87). Δβ'(c) = 1 − max(2, v₂(c−1)) for odd c ≥ 3. c=5,7 in clamped-at-2 regime; c=9 is the FIRST case of the dimer-breaking regime v₂(c-1) ≥ 3 (Δβ'(9)=-2 conditional on β'(8)=11 peer-claimed).
+  - `beta-prime-{5,6,7,9}-{lower-bound,witness}` — checked-sober (Day 87). LBs via 2^T-periodicity finite check; witnesses direct.
+  - `periodicity-lemma` — **proved** (elementary; Day 87). `P(a,b) mod 2^T` depends only on `(a,b) mod 2^T`.
+  - `hk-c-uniform-constants-conjecture` — checked-sober (Day 87). h_k^{(c)} constants c-uniform polynomial in c for k=0..5 (24/24 across c∈{5,6,7,9}).
+- `mod-8-hypothesis` — **checked-sober** (Day 87 evening). Dimer law fails iff v₂(c-1) ≥ 3. Confirmed at c=5,7,9.
 - `anchor-identity-E` — sketched. β'(4k) = β(4k).
 - `conjecture-D2` — sketched. β'(4k+2) = β(4k+2) − 1 − v₂(k).
 - `four-period-identity` — **proved** (conditional on D1 + E).
 - `beta-prime-closed-form-conditional` — sketched (conditional on D1 + E + D2).
-- `mod-8-hypothesis` — sketched (corollary of D1).
 - `clio-lemma1-template-uniform` — **checked-sober** at c ≤ 7.
-- `delta-beta-kummer-identity` — **proved**.
-- `structural-conjecture-S` — hunch.
+- `delta-beta-kummer-identity` — **proved**, **lean-verified** (Day 86, `~/projects/lean/2026-07-08-delta-beta-kummer.lean`, axioms `[propext, Classical.choice, Quot.sound]`). Day 87: chain extended by `Δβ' = Δβ − ΔD` decomposition (`~/projects/lean/2026-07-09-delta-beta-prime-decomp.lean`, same axiom set).
+- `structural-conjecture-S` — sketched at c=5 → checked-sober at c∈{5,6,7} (Day 87).
 - `kummer-jump-mechanism` — hunch (now precisely the max(2, v₂(c−1)) clamp in D1).
 
 **`proofs/registry/strict-axis-closed-form.json`** — strict #AXIS = 2(n−1) empirically (n ≤ 12), closed form conjectured.
@@ -104,7 +128,7 @@ Four paths + one active-central bridge:
 
 **Tier B — speculative but tracked:** `sqrt-crystals-as-diii-k-theoretic.md`.
 
-**Tier A — bridges/refinements/calibrations:** `marginal-palindromy-refutation.md` + `-v2.md`, `lu-pan-dual-canonical-bdi-algebraic-roof.md`, `zhang-lusztig-bridge-for-marberg.md`, `q-sphere-meereboer-fourth-community-deadline.md`, `Rpi-carry-one-sided-monotone.md`, `watanabe-2509-vs-bdi-v3-composition.md`, `Tobs-delta-lives-on-opfibration-not-lens.md`, `slack-vs-Rpi-doesnt-port-as-result.md`, `external-shadow-shape-eight-refutations.md`, `short-long-tensor-product-rule.md`, `chain-factor-framework-natural-scope.md`, `attribution-verification-mandatory.md`, `ghani-grading-payoff-vs-observation-mirror.md`.
+**Tier A — bridges/refinements/calibrations:** `2T-periodicity-as-sym-2adic-bridge.md` (NEW Day 87 — methodological, machine-pipeline from Sym-side h_k to β'(c) via finite residue check), `marginal-palindromy-refutation.md` + `-v2.md`, `lu-pan-dual-canonical-bdi-algebraic-roof.md`, `zhang-lusztig-bridge-for-marberg.md`, `q-sphere-meereboer-fourth-community-deadline.md`, `Rpi-carry-one-sided-monotone.md`, `watanabe-2509-vs-bdi-v3-composition.md`, `Tobs-delta-lives-on-opfibration-not-lens.md`, `slack-vs-Rpi-doesnt-port-as-result.md`, `external-shadow-shape-eight-refutations.md`, `short-long-tensor-product-rule.md`, `chain-factor-framework-natural-scope.md`, `attribution-verification-mandatory.md`, `ghani-grading-payoff-vs-observation-mirror.md`.
 
 **Tier B historical anchors (don't prune):** catalog/v2 + framework bridges + foundational-refuted files. See `connections/` directly.
 
@@ -125,14 +149,20 @@ Four paths + one active-central bridge:
 
 ## Open questions (active)
 
-**HIGH priority (Day-85 refresh):**
-- **c-uniform M_j conjecture** — RHS is c-agnostic. Needs Clio's H_c at c=6,7 or structural Frobenius-char proof.
-- **D1 promotion** — Δβ'(c) = 1 − max(2, v₂(c−1)) for odd c. Now a finite optimization on v₂ of skew-SYT sums; feasible.
-- **OQ-LECOUVEY-PART5-Q-RECORDING (Browse 77 NEW)** — is Lecouvey's oscillating Q-tableau (spinor parity conditions) the same as Svyatnyy's short SSYT?
-- **OQ-THREE-Q-DESCRIPTIONS (Browse 77 NEW)** — Svyatnyy short SSYT vs Marberg fpf-involution atoms vs Bingham-Ugurlu DIII clans. All the same object?
+**HIGH priority (Browse 79 refresh):**
+- **OQ-MOTZKIN-K-TRIANGLE (Browse 79 NEW)** — Is K_{μ^T,(2^j)} = m^(2)_{k,j} (Motzkin triangle entry = mult of V_k in (V_1⊕V_2)^{⊗j})? Poulain d'Andecy Cor 4.4 gives the centralizer; need K = m^(2) match to close OQ-MOTZKIN-MJ-CENTRALIZER. ONE CODE SESSION.
+- **OQ-BECHTLOFF-MJ (Browse 79 NEW)** — Bechtloff Weising 2506.07727 (7 pages): does G=Z/2Z Littlewood reciprocity give M_j as a branching coefficient directly? If yes, c-uniformity is immediate. URGENT READ.
+- **c-uniform M_j conjecture** — RHS is c-agnostic. Needs Clio's H_c at c=6,7 or structural proof. Three attack angles now: Kannan-Song Λ^[2] Theorem 4, Hudak-Lai Hecke cellularity, Bechtloff Weising Littlewood reciprocity. OQ-MJ-LAMBDA2.
+- **D1 promotion** — Δβ'(c) = 1 − max(2, v₂(c−1)) for odd c. Finite optimization on v₂ of skew-SYT sums; feasible.
+- **OQ-MARBERG-V2-ATOM-CORRECTION (Browse 78 NEW)** — Marberg 2512.19034 v2 "many corrections"; did the type-DIII atom description change? Compare v1 vs v2 §8. Urgent before OQ-THREE-Q-DESCRIPTIONS comparison.
+- **OQ-THREE-Q-DESCRIPTIONS (Browse 77, updated 79)** — Svyatnyy short SSYT vs Marberg fpf-involution atoms (v2 corrected) vs Bingham-Ugurlu DIII clans. Bingham at FPSAC 2026 but presenting chromatic SF, NOT clans — approach informally.
+- **OQ-GERBER-LECOUVEY-D-XK (Browse 78 NEW)** — D_n^(1) excluded from Gerber-Ion-Lecouvey-Lenart 2607.03966 X=K. Structural exclusion (Koornwinder/BC_n can't handle D spinors). McDonough-Pylyavskyy-Wang KR DEGs (2510.24490) at FPSAC = best current tool.
+- **OQ-MOTZKIN-MJ-CENTRALIZER (Browse 78, updated 79)** — are M_j Motzkin coefficients K_{μ^T,(2^j)} dims of centralizer of U_q(sl_2/gl_2) on (V_1 ⊕ V_2)^⊗j? Halfway confirmed; last step = OQ-MOTZKIN-K-TRIANGLE computation.
+- **OQ-HUDAK-LAI-HECKE (Browse 79 NEW)** — Hudak-Lai 2606.03759 wreath Hecke cellularity: does it give explicit basis for q-M_j? Hecke complement to Kannan-Song Sym side.
+- **OQ-LECOUVEY-PART5-Q-RECORDING (Browse 77)** — is Lecouvey's oscillating Q-tableau (spinor parity conditions) the same as Svyatnyy's short SSYT?
 - **OQ-JANG-KWON-CORRIGENDUM** — JCTA DOI 10.1016/j.jcta.2026.106161, journal-only; need direct access.
 - **OQ-TYPE-D-JDT-NON-LOCAL (updated Browse 77)** — Lecouvey obstruction: horizontal slide depends on full C_2. Can non-local rules be written? Or does Jang-Kwon 2001.11191's type-A-embedding route become the only path?
-- **OQ-AZENHAS-GONZALEZ-VIRTUALIZATION (Browse 77 NEW)** — 2409.12666 keys/evacuation via virtualization; type D JdT applicable?
+- **OQ-AZENHAS-GONZALEZ-VIRTUALIZATION (Browse 77)** — 2409.12666 keys/evacuation via virtualization; type D JdT applicable?
 - **OQ-AZENHAS-SLACK-DIII (Browse 70)** — DIII analogues of (R3)-(R5).
 - **OQ-SSOT-TYPE-D (Browse 70)** — regular cell tableaux Q-side; type D SSOT P-side.
 - **OQ-JAGENTEUFEL-DIII (Browse 71)** — SO(2n) vacillating tableau bijection open; clean template.
@@ -172,6 +202,8 @@ Four paths + one active-central bridge:
 
 ## Recent history (one-liners; journals + registry have detail)
 
+- **Day 87 (2026-07-09) — DONE.** D1 at c ∈ {5,7,9} checked-sober; `mod-8-hypothesis` promoted checked-sober (dimer breaks at c=9 confirmed structurally). New tool: 2^T-periodicity finite check. Sym-side H_c^pred at c=6,7,8,9 all match Clio. Lean chain extended: `Δβ' = Δβ − ΔD`. Bonus: c-uniform h_k^{(c)} constants polynomial in c for k=0..5 (24/24).
+- **Day 86 (2026-07-08) — DONE.** c-uniform M_j proved symbolically as Sym function identity. Registry `Mj-c-uniform-conjecture` sketched→checked-sober with 4 subordinate nodes (Sym-side identity `proved`, P_1 closed form `proved`, P_j closed forms `checked-sober`, Pieri recursion `proved`). H_c^pred at c > 5 via Sym-side inversion.
 - **Day 85 (2026-07-08) — DONE.** M_j identified as ⟨s_λ, e_2^j·p_1^{n-2j}⟩ (skew-SYT sum with Motzkin-Kostka coefficients). 482/482 verified c=5. Registry `Mj-identification` checked-sober.
 - **Day 84 (2026-07-08) — DONE.** D1 extended to conditional closed-form β'(c). Four-period identity proved conditional on D1+(E). Clio Lemma-1 template constants c-uniform at c ≤ 7.
 - **Day 83 (2026-07-07) — DONE.** D1 = Δβ'(c) = 1 − max(2, v₂(c−1)) for odd c ≥ 3 sketched. Mod-8 becomes one-line corollary. `refined-dip-formula` sketched, `mod-8-hypothesis` promoted hunch→sketched, `delta-beta-kummer-identity` proved.
@@ -198,6 +230,8 @@ Four paths + one active-central bridge:
 - **Days 1-21 — DONE.** Foundational chain-factor framework.
 
 **Browse history (compressed):**
+- Browse 79 (2026-07-09) — All 5 sentinels still 0. OQ-MOTZKIN-MJ-CENTRALIZER halfway confirmed: Poulain d'Andecy Cor 4.4 gives m^(2)_{k,j} = mult of V_k in (V_1⊕V_2)^{⊗j}; missing link is K_{μ^T,(2^j)} = m^(2)_{k,j} (computable, j≤6). NEW: Bechtloff Weising 2506.07727 (7 pages) — wreath Littlewood reciprocity; G=Z/2Z case may give M_j directly. NEW: Hudak-Lai 2606.03759 — Hecke cellularity for wreath products (type D_{2m}). FPSAC: Bingham presenting chromatic SF not clans (correction); Lee plenary confirms type D KR energy = next open case; Kannan-Song/McDonough-Pylyavskyy-Wang at posters. Benkart-Halverson 1106.5277 indexed (foundational Motzkin centralizer). He-Tubbenhauer 2026 bridges Motzkin → crystal theory. New OQs: OQ-MOTZKIN-K-TRIANGLE, OQ-BECHTLOFF-MJ, OQ-HUDAK-LAI-HECKE, OQ-TUBBENHAUER-MOTZKIN-CRYSTAL.
+- Browse 78 (2026-07-09) — All 5 sentinels still 0. Marberg v2 (July 1, major revision) §8-9 = DIII atoms + involution Schubert polynomials + 7 open conjectures. FPSAC 2026 (July 13-17) confirmed zero DIII talks; Bingham presenting. NEW: Gerber-Ion-Lecouvey-Lenart 2607.03966 (July 4!) — X=K proved most affine types, D_n^(1) explicitly excluded. NEW: Kannan-Song 2602.22325 — wreath product Sym algebra Λ^[2], DIRECT HIT for M_j structural proof. Motzkin connection: K_{μ^T,(2^j)} = Motzkin centralizer dims for U_q(sl_2). New OQs: OQ-MJ-LAMBDA2, OQ-MOTZKIN-MJ-CENTRALIZER, OQ-GERBER-LECOUVEY-D-XK, OQ-KR-DEG-TYPE-D.
 - Browse 77 (2026-07-08) — Lecouvey obstruction precise, Bingham-Ugurlu new, three Q-descriptions problem.
 - Browse 76 (2026-07-07) — orbit papers, methodological blueprint (Estupiñán-Salamanca–Pechenik type B), sentinels still zero.
 - Browse 75 (2026-07-06) — zero citations all 5, Jang-Kwon-Uruno is I-SSYT not KN, FPSAC 2026 clear.
@@ -242,36 +276,42 @@ Four paths + one active-central bridge:
 
 **P-1 — Wake routine.** PROVE-check + git-state-verification. Day-44 + Day-60 phantom-completion rules stable.
 
-**P0 — Daily email to Robin.** Day 85 M_j identification headline + registry promotion + Mj-c-uniform-conjecture (ask Robin to nudge Clio on H_6, H_7 verification). CC Clio if Clio hasn't replied.
+**P0 — Daily email to Robin.** Day 87 headline: D1 checked-sober at c ∈ {5,7,9}, mod-8-hypothesis promoted, 2^T-periodicity tool added, Lean Δβ' decomposition shipped. Ask Robin for judgment on "checked-sober at c ∈ {5,7,9} + Sym-side c-uniform" as paper-ready OR push for `proved unconditional` at all odd c. CC Clio if she hasn't replied to Day 86 Mj-identification note or Day 87 D1 notes.
 
-**P0 — Await Clio response** to Mj-identification email (SENT 2026-07-08 Day-86 wake, after audit caught phantom-completion in Day-85 dream journal). Expect either c=6,7 H_c verification (unblocks Mj-c-uniform-conjecture) or a falsification signal.
+**P0 — Await Clio response** to Day-86 Mj-identification email and Day-87 D1 notes. Expect either c ∈ {6,7} H_c empirical (unblocks Mj-c-uniform-conjecture from checked-sober to proved) or β'(11), β'(13) empirical values to test D1's prediction Δβ'(11)=0, Δβ'(13)=-1.
 
-**P0 — v4 §3 REWRITE (deferred but sitting).** BDI→DIII global pass + integrate Theorem 3.5' + Theorem 9.1 + Theorem 9.2 (witness abundance) + Day 85 M_j identification (if relevant to intro/outlook). Paper stable 25+ days.
+**P0 — v4 §3 REWRITE (deferred but sitting).** BDI→DIII global pass + integrate Theorem 3.5' + Theorem 9.1 + Theorem 9.2 (witness abundance) + Day 85-87 β' / M_j chain (D1 + mod-8 + Lean bookkeeping). Paper stable 26+ days.
+
+**P0 URGENT — Read Bechtloff Weising 2506.07727.** 7 pages. G=Z/2Z wreath Littlewood reciprocity may give M_j directly as a branching coefficient — if so, c-uniformity is immediate by construction. Highest payoff-per-minute read since Day 85.
+
+**P0 URGENT — Compute K_{μ^T,(2^j)} vs m^(2)_{k,j} for j ≤ 6.** One CODE session. Closes OQ-MOTZKIN-K-TRIANGLE. If confirmed, OQ-MOTZKIN-MJ-CENTRALIZER becomes a theorem via Poulain d'Andecy Cor 4.4.
 
 **P1 — Next PROVE options:**
-- (A) Structural proof of D1 at c=5 via skew-SYT sum 2-adic minimization. Highest leverage; closes β' registry root node.
-- (B) Structural proof of c-uniform M_j via Frobenius characteristic + Clio's Lemma-1 template. Path 1 Hopf-algebra move.
-- (C) Extend Aitken determinant to non-partition (a, b), sweep β'(c) at even c=6..10.
+- (A) **Three-variable h_k^{(c)}(a,b,c) polynomial extraction.** If h_k^{(c)} is polynomial in c across k (Day 87 bonus: 24/24 for constants at k=0..5), the entire D1 closed form collapses to a single 2^T-periodicity check per residue class of c mod 2^v. This is the direct path to `proved` on D1.
+- (B) Structural proof of c-uniform M_j via Bechtloff Weising / Kannan-Song Λ^[2] Theorem 4 / Hudak-Lai cellularity. Try Bechtloff Weising first (7 pages).
+- (C) β'(8) = 11 structural proof via T=11 2^T-periodicity check at c=8 (~80M residues, feasible in ~1h). Would upgrade Δβ'(9) = −2 from conditional to unconditional.
 - (D) Sharp Cancellation Lemma at c=5 (structural-conjecture-S promotion).
 
 **P1 — Next LEAN options:**
-- (A) Lemma Δβ = 1 + v₂(c−1) (elementary Kummer, no dependencies; ~80 LOC).
-- (B) Sparse witness LEAN chain finalization.
+- (A) ΔD closed form under {D1, E, D2}. ~100-200 LOC. Requires formalising Day 84 §5 c mod 4 case split.
+- (B) Sparse witness LEAN chain finalization (independent of β' program).
 
 **P1 — Next CODE options:**
-- (A) β' full sweep at c=6,7 with non-partition (a,b) allowed (mechanical, closes even-c gap).
-- (B) Motzkin coefficient extension to j ≥ 6 (harden the identification pattern).
+- (A) OQ-MOTZKIN-K-TRIANGLE numeric check for j ≤ 6.
+- (B) h_k^{(c)}(a,b,c) three-variable polynomial fit at (a,b,c) ∈ [0,10]³, Aitken determinant across c.
+- (C) β' full sweep at c=6,7 with non-partition (a,b) allowed (mechanical, closes even-c gap).
 
-**P1 — Reads queued:** Bingham-Ugurlu AJC 79 (PDF available); Lecouvey math/0211444 Part 5 directly (Q-recording oscillating tableau); Azenhas-González-Huang-Torres 2409.12666 (virtualization); Jang-Kwon 1810.02103 v5 §5.4 (Burge type D algorithm); Marberg 2512.19034 v2 (7 conjectures on Stanley symmetric functions for DIII atoms).
+**P1 — Reads queued:** Bechtloff Weising 2506.07727 (URGENT); Kannan-Song 2602.22325 §Theorem 4 (Λ^[2] structure); Bingham-Ugurlu AJC 79; Lecouvey math/0211444 Part 5 (Q-recording); Azenhas-González-Huang-Torres 2409.12666; Jang-Kwon 1810.02103 v5 §5.4; Marberg 2512.19034 v2 §8-9 (7 DIII Stanley conjectures).
 
 ---
 
 ## File hygiene
 
-- **Day-85 dream hygiene (2026-07-08):** SUMMARY.md compressed 621 → ~230 lines. Day 70-85 histories collapsed to one-liners; browse notes 65-72 collapsed to one-liners with pointers to reading logs. Preserved: current-state Day 85 headline, registry snapshot, live seed connections, methodological pillars, calibration rules, next-session priorities. NEW `connections/Mj-as-sym-function-multiplicity.md` (Tier S) + `dream-journal/2026-07-08.md`.
+- **Day-87 dream hygiene (2026-07-09):** SUMMARY.md current-state block rewritten to Day-87 headline (four resolutions in one day). Registry snapshot updated: `refined-dip-formula`, `mod-8-hypothesis` promoted checked-sober; new nodes `periodicity-lemma` (proved), `hk-c-uniform-constants-conjecture` (checked-sober), `beta-prime-{5,6,7,9}-{lower-bound,witness}` (checked-sober). Duplicate HIGH-priority OQ block deduped (was in place since Browse 77). NEW `connections/2T-periodicity-as-sym-2adic-bridge.md` (Tier A methodological) + `dream-journal/2026-07-09.md`. **Second dream cycle 17:07 UTC:** added "two programs, one engine" addendum to Day-87 journal — β' arithmetic (Program A) and BDI polytope (Program B) share the "collapse infinite to finite via structural insight" meta-methodology; both Lean-shipped this week. No new connection file created; observation captured in journal.
+- **Day-85 dream hygiene (2026-07-08):** SUMMARY.md compressed 621 → ~230 lines. Day 70-85 histories collapsed to one-liners; browse notes 65-72 collapsed to one-liners with pointers to reading logs.
 - **Connection-file prune triggers:**
-  - `q-sphere-meereboer-fourth-community-deadline.md` → resolve or archive when preprint drops (T+30d+ post-Q-SPHERE now; consider archive at T+60d).
+  - `q-sphere-meereboer-fourth-community-deadline.md` → resolve or archive when preprint drops (T+31d+ post-Q-SPHERE now; consider archive at T+60d).
   - `kobayashi-rick-non-overlap.md` → resolved Day-65 (negative). Retain as historical.
   - `lu-pan-dual-canonical-bdi-algebraic-roof.md` → revisit ~2027.
 - **`project_*.md`** files: `project_alastair_poole.md`, `project_github_state.md`. Light prune candidates.
-- **Bulk-status files** — `for-dream/` is empty. `for-collaborator/` has 14 files, mostly historical; Day-85 note added.
+- **Bulk-status files** — `for-dream/` is empty. `for-collaborator/` has **80 files** (drift from stale count of 17): 27 from May 2026, 43 from June 2026, 9 from July 2026, plus 1 pre-May Alastair draft. Sizable prune candidate — the May-June bulk pre-dates the DIII / β' pivot and most of it is superseded by SUMMARY.md and the connections files. Not pruned this cycle; queue for a dedicated hygiene pass after the D1 → `proved` promotion or v4 §3 rewrite completes.
