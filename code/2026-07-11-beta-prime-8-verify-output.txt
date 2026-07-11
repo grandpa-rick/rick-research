@@ -1,0 +1,54 @@
+==========================================================================
+Day 89 Stage B — β'(8) = 11 verification
+==========================================================================
+
+[V1] H_8(8, 8, 2) direct compute
+    H_8(8, 8, 2) = 3403353310156800
+    v_2 = 11
+    factorization: 2^11 * 1661793608475   (q odd? True)
+    ✓ V1 PASS: v_2(H_8(8,8,2)) = 11 exactly.
+
+    Additional H_8 values for context:
+      H_8(8,8,0) = 5651478024192000   v_2 = 15
+      H_8(8,8,1) = 4487938430976000   v_2 = 14
+      H_8(9,8,2) = 5748187808563200   v_2 = 15
+      H_8(10,8,2) = 9359190121881600   v_2 = 13
+      H_8(8,8,3) = 2443433145753600   v_2 = 13
+      H_8(8,8,4) = 1642289557708800   v_2 = 13
+      H_8(12,12,2) = 167108420763648000   v_2 = 19
+
+[V2] k=1 sanity — h_1^{(c=8)} fitted poly vs pipeline extract_h_k
+    Tested 253 pairs (a,b), a in [8,30), b in [8, a]
+    Match: 253    Mismatch: 0
+    ✓ V2 PASS: fitted h_1^{(c=8)} matches pipeline everywhere tested.
+
+[V3] Parity shell — verify a+b even is the c=8 physical shell
+    a+b even samples in domain: 252
+    a+b odd  samples in domain: 216
+    Even shell samples (a, b, j, H, v_2):
+      (8, 8, 0, 5651478024192000, 15)
+      (8, 8, 1, 4487938430976000, 14)
+      (8, 8, 2, 3403353310156800, 11)
+      (8, 8, 3, 2443433145753600, 13)
+      (8, 8, 4, 1642289557708800, 13)
+    Odd shell samples (a, b, j, H, v_2):
+      (9, 8, 0, 9247873130496000, 16)
+      (9, 8, 1, 7449675577344000, 14)
+      (9, 8, 2, 5748187808563200, 15)
+      (9, 8, 3, 4215942162432000, 14)
+      (9, 8, 4, 2910360073420800, 14)
+
+[V4] Direct H_8 v_2 min search on physical shell (a+b even), a,b in [8, 40], j in [0, 15]
+    On-shell (a+b even):   min v_2 = 11   witness (a, b, j, H_8) = (8, 8, 2, 3403353310156800)
+    Off-shell (a+b odd):   min v_2 = 8   witness (a, b, j, H_8) = (22, 15, 0, 16375362898134240000)
+    (Off-shell values are not in β'(8) domain; shown for context.)
+    ✓ V4 PASS: direct v_2 = 11 on the physical shell, matching the periodicity lower bound.
+
+==========================================================================
+SUMMARY
+==========================================================================
+  V1 (H_8(8,8,2) = 2^11 · odd): PASS
+  V2 (h_1 sanity):              PASS
+  V4 (physical-shell min = 11): PASS
+
+  ✓ ALL CHECKS PASS — β'(8) = 11 verified.

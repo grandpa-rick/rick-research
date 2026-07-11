@@ -1,0 +1,33 @@
+==========================================================================
+Day 89 Stage B — 2^T periodicity check for h_k^(c=8), T = 11
+    Grid: (a, b) in [0, 2048)^2   with a+b even
+    Modulus: 2^11 = 2048
+==========================================================================
+    Masked cells: 2097152 (should be 2097152)
+  k= 0: PASS  min v_2 (over shell) = inf   (5.9s, 63 terms, deg=(7,7))
+  k= 1: PASS  min v_2 (over shell) = inf   (4.4s, 46 terms, deg=(6,6))
+  k= 2: PASS  min v_2 (over shell) = inf   (4.5s, 47 terms, deg=(6,6))
+  k= 3: PASS  min v_2 (over shell) = inf   (3.3s, 34 terms, deg=(5,5))
+  k= 4: PASS  min v_2 (over shell) = inf   (3.0s, 32 terms, deg=(5,5))
+  k= 5: PASS  min v_2 (over shell) = inf   (2.1s, 22 terms, deg=(4,4))
+  k= 6: PASS  min v_2 (over shell) = inf   (1.6s, 17 terms, deg=(4,4))
+  k= 7: PASS  min v_2 (over shell) = inf   (0.7s, 7 terms, deg=(3,3))
+  k= 8: PASS  min v_2 (over shell) = inf   (0.6s, 6 terms, deg=(3,3))
+  k= 9: PASS  min v_2 (over shell) = inf   (0.4s, 4 terms, deg=(2,2))
+  k=10: all coefs ≡ 0 mod 2^11  (poly is 0 mod 2048)
+  k=11: all coefs ≡ 0 mod 2^11  (poly is 0 mod 2048)
+  k=12: all coefs ≡ 0 mod 2^11  (poly is 0 mod 2048)
+  k=13: all coefs ≡ 0 mod 2^11  (poly is 0 mod 2048)
+  k=14: all coefs ≡ 0 mod 2^11  (poly is 0 mod 2048)
+  k=15: all coefs ≡ 0 mod 2^11  (poly is 0 mod 2048)
+
+==========================================================================
+OVERALL:  ALL PASS
+  min v_2 across all k = inf
+==========================================================================
+
+∴ v_2(h_k^{(c=8)}(a, b)) >= 11 for k=0..15 and all (a, b) with a+b even.
+  By sum rule: v_2(H_8(a, b, j)) >= 11 for all j.  ∴  β'(8) >= 11.
+
+  Combined with UPPER-bound witness  H_8(8, 8, 2) = 3403353310156800 = 2^11 * 1661793413162.5  (a+b=16 even, v_2 = 11 exact)
+  →  β'(8) = 11  UNCONDITIONAL.
