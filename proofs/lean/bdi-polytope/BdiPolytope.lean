@@ -3090,4 +3090,448 @@ directly on the shipped lemma. -/
 #print axioms mkSparseWitness
 #print axioms sparse_witness_F_feasible
 
+/-! ## Day-83 — Sparse Witness Image Containment (Lemma 3.B)
+
+Companion to Day-82's `sparse_witness_F_feasible` and Day-79's
+`additive_redundancy_at_eS`.  The third ingredient of the uniform
+droppability chain.
+
+Setup.  Fix an interior index `i : Fin n` (`1 ≤ i.val`,
+`i.val + 1 < n`) and any `α : Nat`.  Let `π_0 : Piece' n` satisfy the
+RIGID-L_n identity (base-long and top-long columns coincide), and let
+`π_W : Piece' n` be a *sparse witness*: it agrees with `π_0` on
+`prefix i`, its `long ⟨i.val + 1, _⟩` column equals
+`α · π_0(long ⟨n - 1, _⟩)` pointwise, and every other AII column is
+the zero `BdiPt`.
+
+Claim.  `Im π_W ⊆ Im π_0`.
+
+Proof idea.  Given `v = π_W.extend hn coeffs`, sparsity means only
+three rays contribute non-trivially: `directPrefix i`,
+`liftedLong ⟨i.val + 1, _⟩ _`, and `liftedShort ⟨i.val + 1, _⟩ _`.
+Their combined contribution is
+
+  `A · π_0(prefix i) + α · B · π_0(long ⟨n - 1, _⟩)`
+
+where `A = coeffs(rP) + coeffs(rL) + coeffs(rS)` and `B = coeffs(rL)`.
+On the `π_0` side, choose `coeffs'` supported on `directPrefix i`
+(value `A`) and `directLongBase` (value `α · B`).  Its image sum is
+
+  `A · π_0(prefix i) + α · B · π_0(long ⟨0, _⟩)`.
+
+The `h_rigid` hypothesis identifies the two `long`-endpoint columns and
+closes the equation. -/
+theorem sparse_witness_image_containment {n : Nat} (hn : 3 ≤ n)
+    {π_0 π_W : Piece' n}
+    {i : Fin n} (_hi_lo : 1 ≤ i.val) (hi_hi : i.val + 1 < n)
+    (α : Nat)
+    (h_rigid : π_0 (AIICoord.long ⟨0, by omega⟩)
+             = π_0 (AIICoord.long ⟨n - 1, by omega⟩))
+    (h_prefix : π_W (AIICoord.prefix i) = π_0 (AIICoord.prefix i))
+    (h_long : ∀ b, π_W (AIICoord.long ⟨i.val + 1, hi_hi⟩) b
+                  = α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b)
+    (h_zero : ∀ c : AIICoord n,
+                c ≠ AIICoord.prefix i →
+                c ≠ AIICoord.long ⟨i.val + 1, hi_hi⟩ →
+                π_W c = fun _ => 0)
+    {v : BdiPt} (hv : Im hn π_W v) : Im hn π_0 v := by
+  obtain ⟨coeffs, hv⟩ := hv
+  -- Distinguished rays: prefix[i], lifted-long at i+1, lifted-short at i+1.
+  have hjstar_lt : i.val + 1 < n := hi_hi
+  have hjstar_pos : 0 < i.val + 1 := Nat.succ_pos _
+  let rP : AIIRay n := AIIRay.directPrefix i
+  let rL : AIIRay n := AIIRay.liftedLong ⟨i.val + 1, hjstar_lt⟩ hjstar_pos
+  let rS : AIIRay n := AIIRay.liftedShort ⟨i.val + 1, hjstar_lt⟩ hjstar_pos
+  let A : Nat := coeffs rP + coeffs rL + coeffs rS
+  let B : Nat := coeffs rL
+  -- Repackage into a coeffs' supported on prefix[i] and the base-long ray.
+  let coeffs' : AIIRay n → Nat := fun r =>
+    match r with
+    | AIIRay.directPrefix j    => if j.val = i.val then A else 0
+    | AIIRay.directLongBase _  => α * B
+    | AIIRay.directShortBase _ => 0
+    | AIIRay.liftedLong  _ _   => 0
+    | AIIRay.liftedShort _ _   => 0
+  refine ⟨coeffs', ?_⟩
+  subst hv
+  funext b
+  -- Column-values of π_W at the b-th BDI coordinate.
+  have hWpref : ∀ (j : Fin n), π_W (AIICoord.prefix j) b
+                = if j.val = i.val then π_0 (AIICoord.prefix i) b else 0 := by
+    intro j
+    by_cases hj : j.val = i.val
+    · rw [if_pos hj]
+      have hji : j = i := Fin.ext hj
+      subst hji
+      exact congrFun h_prefix b
+    · rw [if_neg hj]
+      have hne : (AIICoord.prefix j : AIICoord n) ≠ AIICoord.prefix i := by
+        intro heq
+        apply hj
+        have := congrArg
+          (fun c : AIICoord n => match c with | AIICoord.prefix k => k.val | _ => 0) heq
+        simpa using this
+      have hne' : (AIICoord.prefix j : AIICoord n) ≠ AIICoord.long ⟨i.val + 1, hi_hi⟩ := by
+        intro heq; cases heq
+      exact congrFun (h_zero _ hne hne') b
+  have hWlong : ∀ (j : Fin n), π_W (AIICoord.long j) b
+                = if j.val = i.val + 1
+                    then α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b
+                    else 0 := by
+    intro j
+    by_cases hj : j.val = i.val + 1
+    · rw [if_pos hj]
+      have hji : j = ⟨i.val + 1, hi_hi⟩ := Fin.ext hj
+      subst hji
+      exact h_long b
+    · rw [if_neg hj]
+      have hne : (AIICoord.long j : AIICoord n) ≠ AIICoord.long ⟨i.val + 1, hi_hi⟩ := by
+        intro heq
+        apply hj
+        have := congrArg
+          (fun c : AIICoord n => match c with | AIICoord.long k => k.val | _ => 0) heq
+        simpa using this
+      have hne' : (AIICoord.long j : AIICoord n) ≠ AIICoord.prefix i := by
+        intro heq; cases heq
+      exact congrFun (h_zero _ hne' hne) b
+  have hWshort : ∀ (j : Fin n), π_W (AIICoord.short j) b = 0 := by
+    intro j
+    have hne : (AIICoord.short j : AIICoord n) ≠ AIICoord.prefix i := by
+      intro heq; cases heq
+    have hne' : (AIICoord.short j : AIICoord n) ≠ AIICoord.long ⟨i.val + 1, hi_hi⟩ := by
+      intro heq; cases heq
+    exact congrFun (h_zero _ hne hne') b
+  -- The goal reduces to comparing two Nat sums.
+  show coniclyCombine (AIIRays n hn) coeffs π_W b
+     = coniclyCombine (AIIRays n hn) coeffs' π_0 b
+  -- Compute the π_W-side sum: only rP, rL, rS contribute non-trivially.
+  have hW_side : coniclyCombine (AIIRays n hn) coeffs π_W b
+               = A * π_0 (AIICoord.prefix i) b
+                 + α * B * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b := by
+    show ((AIIRays n hn).map (fun r => coeffs r * r.image π_W b)).foldr (· + ·) 0 = _
+    unfold AIIRays
+    rw [List.map_append, foldr_add_append,
+        List.map_append, foldr_add_append,
+        List.map_append, foldr_add_append]
+    -- Part 1 (π_W): directPrefix sublist.
+    have hP1 : (((List.finRange n).map AIIRay.directPrefix).map
+                (fun r => coeffs r * r.image π_W b)).foldr (· + ·) 0
+             = coeffs rP * π_0 (AIICoord.prefix i) b := by
+      rw [List.map_map]
+      have hmap :
+          (List.finRange n).map
+            ((fun r => coeffs r * r.image π_W b) ∘ AIIRay.directPrefix) =
+          (List.finRange n).map
+            (fun j : Fin n =>
+              (coeffs (AIIRay.directPrefix j) * π_0 (AIICoord.prefix i) b)
+                * (if i = j then 1 else 0)) := by
+        apply List.map_congr_left
+        intro j _
+        show coeffs (AIIRay.directPrefix j) * π_W (AIICoord.prefix j) b
+           = coeffs (AIIRay.directPrefix j) * π_0 (AIICoord.prefix i) b
+             * (if i = j then 1 else 0)
+        rw [hWpref j]
+        by_cases hj : j.val = i.val
+        · have hij : i = j := (Fin.ext hj).symm
+          rw [if_pos hj, if_pos hij]
+          exact (Nat.mul_one _).symm
+        · have hij : ¬ i = j := fun heq => hj (congrArg Fin.val heq).symm
+          rw [if_neg hj, if_neg hij]
+          rw [Nat.mul_zero, Nat.mul_zero]
+      rw [hmap]
+      exact finRange_select i
+        (fun j : Fin n => coeffs (AIIRay.directPrefix j) * π_0 (AIICoord.prefix i) b)
+    -- Part 2 (π_W): [directLongBase, directShortBase].
+    have hP2 : (([AIIRay.directLongBase (by omega : 0 < n),
+                  AIIRay.directShortBase (by omega : 0 < n)]).map
+                (fun r => coeffs r * r.image π_W b)).foldr (· + ·) 0 = 0 := by
+      show coeffs (AIIRay.directLongBase (by omega : 0 < n))
+             * π_W (AIICoord.long ⟨0, by omega⟩) b
+           + (coeffs (AIIRay.directShortBase (by omega : 0 < n))
+               * π_W (AIICoord.short ⟨0, by omega⟩) b + 0)
+         = 0
+      rw [hWshort ⟨0, by omega⟩]
+      rw [hWlong ⟨0, by omega⟩]
+      have h0ne : ¬ ((⟨0, by omega⟩ : Fin n).val = i.val + 1) := by
+        show ¬ (0 = i.val + 1); omega
+      rw [if_neg h0ne, Nat.mul_zero, Nat.mul_zero]
+    -- Part 3 (π_W): liftedLong sublist.
+    have hP3 : (((List.finRange (n - 1)).map (fun j : Fin (n - 1) =>
+                  AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                    (Nat.succ_pos _))).map
+                (fun r => coeffs r * r.image π_W b)).foldr (· + ·) 0
+             = coeffs rL * π_0 (AIICoord.prefix i) b
+               + α * B * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b := by
+      rw [List.map_map]
+      have hmap :
+          (List.finRange (n - 1)).map
+            ((fun r => coeffs r * r.image π_W b) ∘
+              (fun j : Fin (n - 1) =>
+                AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                  (Nat.succ_pos _))) =
+          (List.finRange (n - 1)).map
+            (fun j : Fin (n - 1) =>
+              (coeffs (AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                          (Nat.succ_pos _))
+                * (π_0 (AIICoord.prefix i) b
+                   + α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b))
+              * (if i.val = j.val then 1 else 0)) := by
+        apply List.map_congr_left
+        intro j _
+        show coeffs (AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                        (Nat.succ_pos _))
+              * (π_W (AIICoord.prefix
+                        ⟨(⟨j.val + 1, by have := j.isLt; omega⟩ : Fin n).val - 1,
+                          by have := j.isLt; omega⟩) b
+                 + π_W (AIICoord.long
+                          ⟨j.val + 1, by have := j.isLt; omega⟩) b)
+           = coeffs (AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                        (Nat.succ_pos _))
+             * (π_0 (AIICoord.prefix i) b
+                + α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b)
+             * (if i.val = j.val then 1 else 0)
+        rw [hWpref ⟨(⟨j.val + 1, by have := j.isLt; omega⟩ : Fin n).val - 1,
+                     by have := j.isLt; omega⟩]
+        rw [hWlong ⟨j.val + 1, by have := j.isLt; omega⟩]
+        by_cases hj : j.val = i.val
+        · have h1 : j.val + 1 - 1 = i.val := by omega
+          have h2 : j.val + 1 = i.val + 1 := by omega
+          rw [if_pos h1, if_pos h2, if_pos hj.symm]
+          exact (Nat.mul_one _).symm
+        · have h1 : ¬ j.val + 1 - 1 = i.val := by intro; apply hj; omega
+          have h2 : ¬ j.val + 1 = i.val + 1 := by intro; apply hj; omega
+          have h3 : ¬ i.val = j.val := fun heq => hj heq.symm
+          rw [if_neg h1, if_neg h2, if_neg h3]
+          simp only [Nat.add_zero, Nat.mul_zero]
+      rw [hmap]
+      -- Apply finRange_nat_select with m = n - 1, k = i.val.
+      rw [finRange_nat_select (n - 1) i.val
+        (fun j : Fin (n - 1) =>
+          coeffs (AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                    (Nat.succ_pos _))
+          * (π_0 (AIICoord.prefix i) b
+             + α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b))]
+      have hilt : i.val < n - 1 := by omega
+      rw [dif_pos hilt]
+      -- ⟨i.val, hilt⟩ : Fin (n-1). The ray at this index has j.val + 1 = i.val + 1.
+      show coeffs (AIIRay.liftedLong ⟨i.val + 1, by omega⟩ (Nat.succ_pos _))
+             * (π_0 (AIICoord.prefix i) b
+                + α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b)
+         = coeffs rL * π_0 (AIICoord.prefix i) b
+           + α * B * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b
+      show coeffs rL * (π_0 (AIICoord.prefix i) b
+                        + α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b)
+         = coeffs rL * π_0 (AIICoord.prefix i) b
+           + α * B * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b
+      show coeffs rL * (π_0 (AIICoord.prefix i) b
+                        + α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b)
+         = coeffs rL * π_0 (AIICoord.prefix i) b
+           + α * coeffs rL * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b
+      rw [Nat.mul_add, Nat.mul_left_comm (coeffs rL) α, ← Nat.mul_assoc]
+    -- Part 4 (π_W): liftedShort sublist.
+    have hP4 : (((List.finRange (n - 1)).map (fun j : Fin (n - 1) =>
+                  AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                    (Nat.succ_pos _))).map
+                (fun r => coeffs r * r.image π_W b)).foldr (· + ·) 0
+             = coeffs rS * π_0 (AIICoord.prefix i) b := by
+      rw [List.map_map]
+      have hmap :
+          (List.finRange (n - 1)).map
+            ((fun r => coeffs r * r.image π_W b) ∘
+              (fun j : Fin (n - 1) =>
+                AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                  (Nat.succ_pos _))) =
+          (List.finRange (n - 1)).map
+            (fun j : Fin (n - 1) =>
+              (coeffs (AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                          (Nat.succ_pos _))
+                * π_0 (AIICoord.prefix i) b)
+              * (if i.val = j.val then 1 else 0)) := by
+        apply List.map_congr_left
+        intro j _
+        show coeffs (AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                        (Nat.succ_pos _))
+              * (π_W (AIICoord.prefix
+                        ⟨(⟨j.val + 1, by have := j.isLt; omega⟩ : Fin n).val - 1,
+                          by have := j.isLt; omega⟩) b
+                 + π_W (AIICoord.short
+                          ⟨j.val + 1, by have := j.isLt; omega⟩) b)
+           = coeffs (AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                        (Nat.succ_pos _))
+             * π_0 (AIICoord.prefix i) b
+             * (if i.val = j.val then 1 else 0)
+        rw [hWpref ⟨(⟨j.val + 1, by have := j.isLt; omega⟩ : Fin n).val - 1,
+                     by have := j.isLt; omega⟩]
+        rw [hWshort ⟨j.val + 1, by have := j.isLt; omega⟩]
+        by_cases hj : j.val = i.val
+        · have h1 : j.val + 1 - 1 = i.val := by omega
+          rw [if_pos h1, if_pos hj.symm]
+          simp only [Nat.add_zero, Nat.mul_one]
+        · have h1 : ¬ j.val + 1 - 1 = i.val := by intro; apply hj; omega
+          have h3 : ¬ i.val = j.val := fun heq => hj heq.symm
+          rw [if_neg h1, if_neg h3]
+          simp only [Nat.add_zero, Nat.mul_zero]
+      rw [hmap]
+      rw [finRange_nat_select (n - 1) i.val
+        (fun j : Fin (n - 1) =>
+          coeffs (AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                    (Nat.succ_pos _))
+          * π_0 (AIICoord.prefix i) b)]
+      have hilt : i.val < n - 1 := by omega
+      rw [dif_pos hilt]
+    rw [hP1, hP2, hP3, hP4]
+    -- Goal: coeffs rP * X + 0 + (coeffs rL * X + α * B * Y) + coeffs rS * X
+    --     = A * X + α * B * Y
+    -- with A = coeffs rP + coeffs rL + coeffs rS.
+    show coeffs rP * π_0 (AIICoord.prefix i) b + 0
+         + (coeffs rL * π_0 (AIICoord.prefix i) b
+            + α * B * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b)
+         + coeffs rS * π_0 (AIICoord.prefix i) b
+       = (coeffs rP + coeffs rL + coeffs rS) * π_0 (AIICoord.prefix i) b
+         + α * B * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b
+    rw [Nat.add_mul, Nat.add_mul]
+    omega
+  -- Compute the π_0-side sum: only directPrefix i and directLongBase contribute.
+  have h0_side : coniclyCombine (AIIRays n hn) coeffs' π_0 b
+               = A * π_0 (AIICoord.prefix i) b
+                 + α * B * π_0 (AIICoord.long ⟨0, by omega⟩) b := by
+    show ((AIIRays n hn).map (fun r => coeffs' r * r.image π_0 b)).foldr (· + ·) 0 = _
+    unfold AIIRays
+    rw [List.map_append, foldr_add_append,
+        List.map_append, foldr_add_append,
+        List.map_append, foldr_add_append]
+    -- Part 1 (π_0): directPrefix sublist, only j = i contributes.
+    have hQ1 : (((List.finRange n).map AIIRay.directPrefix).map
+                (fun r => coeffs' r * r.image π_0 b)).foldr (· + ·) 0
+             = A * π_0 (AIICoord.prefix i) b := by
+      rw [List.map_map]
+      have hmap :
+          (List.finRange n).map
+            ((fun r => coeffs' r * r.image π_0 b) ∘ AIIRay.directPrefix) =
+          (List.finRange n).map
+            (fun j : Fin n =>
+              (A * π_0 (AIICoord.prefix i) b) * (if i = j then 1 else 0)) := by
+        apply List.map_congr_left
+        intro j _
+        show coeffs' (AIIRay.directPrefix j) * π_0 (AIICoord.prefix j) b
+           = A * π_0 (AIICoord.prefix i) b * (if i = j then 1 else 0)
+        show (if j.val = i.val then A else 0) * π_0 (AIICoord.prefix j) b
+           = A * π_0 (AIICoord.prefix i) b * (if i = j then 1 else 0)
+        by_cases hj : j.val = i.val
+        · have hij : i = j := (Fin.ext hj).symm
+          have hji : j = i := Fin.ext hj
+          rw [if_pos hj, if_pos hij]
+          subst hji
+          simp only [Nat.mul_one]
+        · have hij : ¬ i = j := fun heq => hj (congrArg Fin.val heq).symm
+          rw [if_neg hj, if_neg hij]
+          simp only [Nat.mul_zero, Nat.zero_mul]
+      rw [hmap]
+      exact finRange_select i (fun _ : Fin n => A * π_0 (AIICoord.prefix i) b)
+    -- Part 2 (π_0): [directLongBase, directShortBase] — only directLongBase contributes.
+    have hQ2 : (([AIIRay.directLongBase (by omega : 0 < n),
+                  AIIRay.directShortBase (by omega : 0 < n)]).map
+                (fun r => coeffs' r * r.image π_0 b)).foldr (· + ·) 0
+             = α * B * π_0 (AIICoord.long ⟨0, by omega⟩) b := by
+      show α * B * π_0 (AIICoord.long ⟨0, by omega⟩) b
+             + (0 * π_0 (AIICoord.short ⟨0, by omega⟩) b + 0)
+         = α * B * π_0 (AIICoord.long ⟨0, by omega⟩) b
+      simp only [Nat.zero_mul, Nat.add_zero]
+    -- Part 3 (π_0): liftedLong sublist — all coeffs' are 0.
+    have hQ3 : (((List.finRange (n - 1)).map (fun j : Fin (n - 1) =>
+                  AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                    (Nat.succ_pos _))).map
+                (fun r => coeffs' r * r.image π_0 b)).foldr (· + ·) 0 = 0 := by
+      rw [List.map_map]
+      have hmap :
+          (List.finRange (n - 1)).map
+            ((fun r => coeffs' r * r.image π_0 b) ∘
+              (fun j : Fin (n - 1) =>
+                AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                  (Nat.succ_pos _))) =
+          (List.finRange (n - 1)).map (fun _ : Fin (n - 1) => (0 : Nat)) := by
+        apply List.map_congr_left
+        intro j _
+        show coeffs' (AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                        (Nat.succ_pos _))
+              * (AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                    (Nat.succ_pos _)).image π_0 b = 0
+        show (0 : Nat) * (AIIRay.liftedLong ⟨j.val + 1, by have := j.isLt; omega⟩
+                            (Nat.succ_pos _)).image π_0 b = 0
+        exact Nat.zero_mul _
+      rw [hmap]; exact foldr_const_zero _
+    -- Part 4 (π_0): liftedShort sublist — all coeffs' are 0.
+    have hQ4 : (((List.finRange (n - 1)).map (fun j : Fin (n - 1) =>
+                  AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                    (Nat.succ_pos _))).map
+                (fun r => coeffs' r * r.image π_0 b)).foldr (· + ·) 0 = 0 := by
+      rw [List.map_map]
+      have hmap :
+          (List.finRange (n - 1)).map
+            ((fun r => coeffs' r * r.image π_0 b) ∘
+              (fun j : Fin (n - 1) =>
+                AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                  (Nat.succ_pos _))) =
+          (List.finRange (n - 1)).map (fun _ : Fin (n - 1) => (0 : Nat)) := by
+        apply List.map_congr_left
+        intro j _
+        show coeffs' (AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                        (Nat.succ_pos _))
+              * (AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                    (Nat.succ_pos _)).image π_0 b = 0
+        show (0 : Nat) * (AIIRay.liftedShort ⟨j.val + 1, by have := j.isLt; omega⟩
+                            (Nat.succ_pos _)).image π_0 b = 0
+        exact Nat.zero_mul _
+      rw [hmap]; exact foldr_const_zero _
+    rw [hQ1, hQ2, hQ3, hQ4]
+    omega
+  rw [hW_side, h0_side]
+  have hrb : π_0 (AIICoord.long ⟨n - 1, by omega⟩) b
+           = π_0 (AIICoord.long ⟨0, by omega⟩) b := (congrFun h_rigid b).symm
+  rw [hrb]
+
+#print axioms sparse_witness_image_containment
+
+/-! ### Day-83 follow-up — `uniform_droppability`.
+
+Bundles Day-79's `additive_redundancy_at_eS` and Day-83's
+`sparse_witness_image_containment` into a single statement:
+
+- the additively-shifted `π_α` (Day-71 simpdiv carrier at interior `i`,
+  offset by `α · e_S`) is image-dominated by `π_0`;
+- the sparse two-column witness `π_W` (nonzero on `prefix i` and
+  `long ⟨i.val + 1, _⟩` only, matching `π_0(prefix i)` and
+  `α · π_0(long ⟨n - 1, _⟩)` respectively) is likewise image-dominated
+  by `π_0`.
+
+Together these are the "drop + replace" content of the informal
+Theorem 9.1 at the Lean level.  Modulo Day-70's RIGID-L_n (assumed via
+`h_rigid`), the statement is uniform in `n ≥ 3` and any interior
+`i` and `α : Nat`. -/
+theorem uniform_droppability {n : Nat} (hn : 3 ≤ n)
+    {π_0 π_α π_W : Piece' n}
+    {i : Fin n} (hi_lo : 1 ≤ i.val) (hi_hi : i.val + 1 < n)
+    (α : Nat)
+    (h_rigid : π_0 (AIICoord.long ⟨0, by omega⟩)
+             = π_0 (AIICoord.long ⟨n - 1, by omega⟩))
+    (h_alpha_same : ∀ c' : AIICoord n, c' ≠ AIICoord.prefix i → π_α c' = π_0 c')
+    (h_alpha_shift : ∀ b, π_α (AIICoord.prefix i) b
+                        = π_0 (AIICoord.prefix i) b
+                          + α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b)
+    (h_W_prefix : π_W (AIICoord.prefix i) = π_0 (AIICoord.prefix i))
+    (h_W_long : ∀ b, π_W (AIICoord.long ⟨i.val + 1, hi_hi⟩) b
+                    = α * π_0 (AIICoord.long ⟨n - 1, by omega⟩) b)
+    (h_W_zero : ∀ c : AIICoord n,
+                  c ≠ AIICoord.prefix i →
+                  c ≠ AIICoord.long ⟨i.val + 1, hi_hi⟩ →
+                  π_W c = fun _ => 0) :
+    (∀ v : BdiPt, Im hn π_α v → Im hn π_0 v)
+    ∧ (∀ v : BdiPt, Im hn π_W v → Im hn π_0 v) :=
+  ⟨fun _ hv =>
+      additive_redundancy_at_eS hn hi_lo hi_hi α h_rigid h_alpha_same h_alpha_shift hv,
+   fun _ hv =>
+      sparse_witness_image_containment hn hi_lo hi_hi α h_rigid h_W_prefix h_W_long h_W_zero hv⟩
+
+#print axioms uniform_droppability
+
 end BdiPolytope
