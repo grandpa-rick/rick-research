@@ -188,6 +188,16 @@
             "file": "code/2026-07-09-hk-const-pattern.py",
             "children": [],
             "role": "attempt"
+          },
+          {
+            "id": "hk-c-uniform-three-var-conjecture",
+            "approach": "Structural theorem (Day 88, both cycles): For all 0 <= k <= 2c-1, h_k^{(c)}(a, b) factors as (a+3)_{c-1-k} * (b+2)_{c-1-k} * Q_k(a, b, c) where (x)_n is the Pochhammer symbol interpreted UNIFORMLY as a Gamma-ratio Gamma(x+n)/Gamma(x) — polynomial for n >= 0, inverse Pochhammer for n < 0 — and Q_k(a, b, c) is in Q[a, b, c] (defined uniformly by the finite-difference formula Q_k = sum_{j=0..k} (-1)^{k-j} C(k,j) (a+c-k+2)_{k-j} (b+c-k+1)_{k-j} P_j(a,b,c) for all k). Consequence: the leading coefficient D_k(c) := (top-monomial coefficient of Q_k) is polynomial in c for all k. Derivation (Cycle 1): substitute M_j = sum_mu K_{mu^T,(2^j)} R_mu(a,b,c) (Sym-side, Day 86 checked-sober) into Clio's Lemma-1 template inversion identity, telescope factorials as Gamma-ratios, cancel Vandermonde D_∅ = (a-b+1)(b-c+1)(a-c+2) against template denominators. Result (♦-ext, Cycle 2): H_c(a,b,j) = (a+3)_{c-1-j}(b+2)_{c-1-j} P_j(a,b,c) for ALL 0 <= j <= 2c-1 as a rational identity in Q(a,b,c). Boundary case (j > c-1) forces P_j to be divisible by (a+c-j+2)_{j-c+1}(b+c-j+1)_{j-c+1}; verified numerically. Then h_k^{(c)} = sum_{j=0..k} (-1)^{k-j} C(k,j) H_c(a,b,j) inherits the extended factorization via Möbius inversion.",
+            "trust": "checked-sober",
+            "recheck": "2026-07-10 (Rick, three verification scripts). Clean regime (k <= c-1): code/2026-07-10-hk-three-var-verify.py — factorization verified integer at c in {4,5,6,7} across 200+ samples, D_k(c) matches Day 87 pattern for k in 0..5, K_2(c) = -(c-3)(c^2-c+2)/2 fits h_2 constants at c in {4,5,6,7}. Boundary regime (c-1 < k <= 2c-1): code/2026-07-10-boundary-check.py — 1650/1650 samples pass at c in {4,5,6,7}, k in {c,...,2c-1}. Fundamental identity: code/2026-07-10-Hc-boundary-check.py — 1650/1650 samples pass verifying (♦-boundary) directly on H_c.",
+            "file": "proofs/2026-07-10-hk-three-var-structural.md",
+            "children": [],
+            "role": "attempt",
+            "gap": "Depends on internal premises Mj-c-uniform-conjecture (checked-sober, Day 86) and clio-lemma1-template-uniform (checked-sober, Day 84). Boundary regime gap (previous concern) is CLOSED — the same identity extends via Gamma-ratio interpretation of the Pochhammer, verified 1650/1650 samples. Full 'proved' requires promoting Mj-c-uniform to proved."
           }
         ],
         "role": "attempt"
