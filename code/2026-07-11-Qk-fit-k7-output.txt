@@ -1,0 +1,20 @@
+============================================================================
+Day 89 CODE — targeted Q_7(a, b, c) fit
+============================================================================
+  Collecting samples for k=7, c_vals=(7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19), ab_range=(7, 45)...
+    c=8: 703 samples (running total 703, 0.2s)
+    c=9: 666 samples (running total 1369, 0.4s)
+    c=10: 630 samples (running total 1999, 0.6s)
+    c=11: 595 samples (running total 2594, 0.8s)
+    c=12: 561 samples (running total 3155, 1.0s)
+    c=13: 528 samples (running total 3683, 1.2s)
+    c=14: 496 samples (running total 4179, 1.4s)
+    c=15: 465 samples (running total 4644, 1.5s)
+    c=16: 435 samples (running total 5079, 1.7s)
+    c=17: 406 samples (running total 5485, 1.8s)
+    c=18: 378 samples (running total 5863, 2.0s)
+    c=19: 351 samples (running total 6214, 2.1s)
+  Total samples (post-cap): 1200
+  Trying total degree ≤ 13...
+    #monomials = 560, #samples = 1200
+    Built matrix in 0.2s. Running rref...

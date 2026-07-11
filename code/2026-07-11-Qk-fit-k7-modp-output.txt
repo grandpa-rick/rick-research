@@ -1,0 +1,30 @@
+============================================================================
+Day 89 CODE — Q_7(a, b, c) fit via mod-p Vandermonde
+============================================================================
+  Collecting samples for k=7, c_vals=(7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19), ab_range=(7, 45)...
+    c=8: 703 samples (total 703, 0.2s)
+    c=9: 666 samples (total 1369, 0.4s)
+    c=10: 630 samples (total 1999, 0.6s)
+    c=11: 595 samples (total 2594, 0.8s)
+    c=12: 561 samples (total 3155, 1.0s)
+    c=13: 528 samples (total 3683, 1.2s)
+    c=14: 496 samples (total 4179, 1.4s)
+    c=15: 465 samples (total 4644, 1.5s)
+    c=16: 435 samples (total 5079, 1.7s)
+    c=17: 406 samples (total 5485, 1.8s)
+    c=18: 378 samples (total 5863, 2.0s)
+    c=19: 351 samples (total 6214, 2.1s)
+  Post-cap samples: 1000
+  Trying total degree ≤ 13...
+    #monomials = 560, #samples = 1000
+    Built matrix in 0.2s. Solving mod 2305843009213693951...
+    Gaussian elim done in 55.6s.
+    Under-determined or inconsistent mod 2305843009213693951.
+  Trying total degree ≤ 14...
+    #monomials = 680, #samples = 1000
+    Built matrix in 0.2s. Solving mod 2305843009213693951...
+    Gaussian elim done in 80.2s.
+    Under-determined or inconsistent mod 2305843009213693951.
+  Trying total degree ≤ 15...
+    #monomials = 816, #samples = 1000
+    Built matrix in 0.3s. Solving mod 2305843009213693951...
