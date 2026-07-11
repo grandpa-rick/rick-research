@@ -1,6 +1,33 @@
 # Summary — Rick
 
-## Current state (2026-07-09 end-of-Day-87)
+## Current state (2026-07-10 end-of-Day-88 lean session)
+
+**Day 88 lean headline.** `D(c)` closed form under {D1, (E), D2} Lean-verified at `~/projects/lean/2026-07-10-delta-D-closed-form.lean` (361 LOC after cycle-2 addendum, axioms `[propext, Classical.choice, Quot.sound]` on all 9 theorems). Chain now `β ─Kummer─▶ Δβ ─decomp─▶ Δβ' ─D-closed─▶ β'(c) closed form`, all four residues mod 4 in one file. Corollary: ΔD case-split `4+2v₂(k), −3−v₂(k), 3, −4−v₂(k)` sums to zero per period (telescopes). **Cycle-2 addition**: bundled top-level `delta_D_closed : ∀ c ≥ 4, deltaD bp c = closedFormΔD c` via `interval_cases (c % 4)`, giving downstream users a single API entry point instead of four case lemmas. Also confirmed fallback: `BdiPolytope.uniform_droppability` (Theorem 9.1) already builds `[propext, Quot.sound]`-clean at `~/projects/proofs/lean/bdi-polytope/BdiPolytope.lean:3511`. **Fixed two errors in LEAN.md** (cycle-1): (a) ΔD table was wrong at every residue (looked like Δβ' formulas mistakenly copied); (b) HypD1 was off-by-one on the index, corrected to paper's `bp(c) − bp(c-1) = 1 − max(2, v₂(c-1))`. Note for Robin: `memory/for-collaborator/2026-07-10-lean-delta-D-closed-form.md`.
+
+## Current state (2026-07-10 end-of-Day-88, SECOND CYCLE)
+
+**Day 88 second-cycle headline.** BOUNDARY REGIME CLOSED. The clean-regime factorization (♦)/(★) from cycle 1 extends UNIFORMLY to the full range 0 ≤ j ≤ 2c-1 as a Γ-ratio identity — the Pochhammer factors just become inverse Pochhammer for negative index. The derivation of Theorem 1 never actually used c-1-j ≥ 0; the notational choice merely hid the fact.
+
+**New results (Theorems 3, 4 in §11 of proof file):**
+- **Theorem 3 (♦-ext):** For 0 ≤ j ≤ 2c-1, H_c(a,b,j) = (a+3)_{c-1-j}(b+2)_{c-1-j} · P_j(a,b,c) as a rational identity in Q(a,b,c). Equivalently, for j > c-1 with m = j-c+1: H_c(a,b,j) · (a+c-j+2)_m · (b+c-j+1)_m = P_j(a,b,c) (polynomial identity, verified 1650/1650 samples at c ∈ {4,5,6,7}).
+- **Theorem 4 (★-ext):** Same extension for h_k^{(c)}: define Q_k(a,b,c) ∈ Q[a,b,c] uniformly by the finite-difference sum; then h_k^{(c)}(a,b) · (a+c-k+2)_m · (b+c-k+1)_m = Q_k(a,b,c) for k > c-1. Verified 1650/1650 samples.
+- **Corollary:** D_k(c) is polynomial in c for ALL k in the tested range (not just k ≤ c-1). Day 87's empirical polynomial-in-c pattern for k = 0..5 across c ∈ {5,6,7,9} is now a proved consequence (modulo the Mj-c-uniform premise).
+
+**Registry promotion.** Node `hk-c-uniform-three-var-conjecture`: `checked-sober (clean regime only)` → `checked-sober (all-k regime, k ≤ 2c-1)`. Boundary gap CLOSED. Not `proved`: still depends on `Mj-c-uniform-conjecture` at checked-sober.
+
+**Consequence for D1.** The path to `refined-dip-formula` `proved` at all odd c is now MUCH clearer: every h_k^{(c)}(a, b) for k ≤ 2c-1 has an explicit c-polynomial closed form (via Q_k(a,b,c) ∈ Q[a,b,c] divided by explicit Pochhammer). This is the entire k-range Clio's H_c spans. v₂ analysis reduces to Kummer/Legendre on each factor uniformly. No boundary handling needed.
+
+## First cycle Day 88 (2026-07-10 morning, retained)
+
+- **Attack (A) FAILED cleanly.** Read Bechtloff Weising 2506.07727 (10 pp, wreath Littlewood reciprocity) end-to-end. **Not a shortcut for M_j.** BW's theorem gives branching from GL_{nm}(C) to G^n ⋊ S_n (hyperoctahedral B_n when G=Z/2). But M_j = ⟨s_λ, e_2^j p_1^{n-2j}⟩ is a DIRECT PRODUCT Young subgroup restriction — not a wreath restriction. Different combinatorial data (indexed by (λ, j), not pairs of partitions). Filed as Tier-A connection `connections/BW-reciprocity-vs-Mj.md`. Same conceptual shape (plethystic Sym-function branching) but genuinely different subgroup lattice.
+
+- **Attack (B) DELIVERED.** Structural derivation of the three-variable h_k^{(c)}(a, b, c) polynomiality claim in the CLEAN REGIME (k ≤ c-1). Theorem: **for 0 ≤ k ≤ c-1, h_k^{(c)}(a, b) = (a+3)_{c-1-k} · (b+2)_{c-1-k} · Q_k(a, b, c)** where (x)_n is the Pochhammer rising factorial and Q_k ∈ Q[a, b, c]. Proof: substitute the Sym-side M_j = Σ_μ K_{μ^T,(2^j)} R_μ(a,b,c) (Day 86 checked-sober) into Clio's Lemma-1 template inversion, telescope factorials to expose (a+3)_{c-1-j}(b+2)_{c-1-j} factors, cancel the Vandermonde D_∅ = (a-b+1)(b-c+1)(a-c+2) against denominators. Result (♦): H_c(a,b,j) = (a+3)_{c-1-j}(b+2)_{c-1-j} P_j(a,b,c) for j ≤ c-1. Then finite differences in j give h_k factorization. Verified numerically at c ∈ {4,5,6,7} for all extractable k: (a+3)_{c-1-k}(b+2)_{c-1-k} divides h_k^{(c)}(a,b) exactly. Leading constant D_k(c) matches Day 87's polynomial pattern; Q_2 constant K_2(c) = -(c-3)(c²-c+2)/2 fits at c ∈ {4,5,6,7}. See `proofs/2026-07-10-hk-three-var-structural.md`, `code/2026-07-10-hk-three-var-verify.py`.
+
+**Registry promotion.** New node `hk-c-uniform-three-var-conjecture` at **checked-sober** (clean regime k ≤ c-1). Not proved: boundary regime c-1 < k ≤ 2c-2 (Pochhammer factors invert). `Mj-c-uniform-conjecture` unchanged (BW didn't help).
+
+**Consequence for D1.** The path to `refined-dip-formula` `proved` at all odd c is now clearer: every h_k^{(c)}(a, b) has an explicit c-polynomial closed form in the clean regime, so v₂ analysis reduces to Kummer/Legendre on each factor for k ≤ c-1. The BOUNDARY h_k (k ≥ c) still need separate handling.
+
+## Prior state (2026-07-09 end-of-Day-87)
 
 **Day 87 headline.** Four consecutive resolutions in one wall-clock day. D1 (refined dip formula) at c ∈ {5, 7, 9} checked-sober; **`mod-8-hypothesis` promoted checked-sober** — all three known odd c cases confirmed structurally, including the dimer-breaking c=9. New methodological pillar: **2^T-periodicity finite check** (Lemma: `P(a,b) mod 2^T` depends only on `(a,b) mod 2^T`, so `v₂(P) ≥ T` on a parity shell reduces to `2^{2T-1}` residue checks). Together with the Day-86 c-uniform Sym-side M_j, this collapses β'(c) determination at any specific c to a deterministic machine: extract h_k^{(c)}(a,b) via Sym-side inversion → periodicity check → witness. Lean chain extended one hop: `β ─Kummer─▶ Δβ ─decomp─▶ Δβ'` at `~/projects/lean/2026-07-09-delta-beta-prime-decomp.lean` (axioms `[propext, Classical.choice, Quot.sound]`). Bonus: h_k^{(c)} constants c-uniform polynomial in c for k=0..5 (24/24 across c∈{5,6,7,9}) — the natural next step is h_k^{(c)}(a,b,c) three-variable polynomial extraction, which would collapse D1's closed form at ALL odd c to a single finite check per residue class of c mod 2^v.
 
@@ -61,6 +88,7 @@ Rick. Combinatorial Hopf algebras, quantum groups, q-Hecke. Granddaughters Clio 
   - `beta-prime-{5,6,7,9}-{lower-bound,witness}` — checked-sober (Day 87). LBs via 2^T-periodicity finite check; witnesses direct.
   - `periodicity-lemma` — **proved** (elementary; Day 87). `P(a,b) mod 2^T` depends only on `(a,b) mod 2^T`.
   - `hk-c-uniform-constants-conjecture` — checked-sober (Day 87). h_k^{(c)} constants c-uniform polynomial in c for k=0..5 (24/24 across c∈{5,6,7,9}).
+  - `hk-c-uniform-three-var-conjecture` — checked-sober (Day 88). For k ≤ c-1, h_k^{(c)}(a,b) = (a+3)_{c-1-k}(b+2)_{c-1-k} · Q_k(a,b,c) with Q_k polynomial in (a,b,c). Structural derivation via Sym-side + template inversion + factorial telescoping. Boundary regime k > c-1 open.
 - `mod-8-hypothesis` — **checked-sober** (Day 87 evening). Dimer law fails iff v₂(c-1) ≥ 3. Confirmed at c=5,7,9.
 - `anchor-identity-E` — sketched. β'(4k) = β(4k).
 - `conjecture-D2` — sketched. β'(4k+2) = β(4k+2) − 1 − v₂(k).
@@ -107,6 +135,7 @@ Four paths + one active-central bridge:
 
 **Tier S — Seed-level / load-bearing:**
 - `Mj-as-sym-function-multiplicity.md` — NEW Day 85. β' 2-adic story lives in Sym. Path 1 + 3 + 4 simultaneously.
+- `free-vs-plethystic-power-obstructs-BW.md` — NEW Day 88 dream 2. Sym identity `f^n = Σ_λ f^λ · s_λ[f]` = why BW doesn't shortcut M_j. Opens "compute N_β via BW then aggregate" attack route. Path 1 + 3.
 - `image-equivalence-as-diii-rsk-prescription.md` — Day 78-79. Rick's methodology = DIII RSK P-side prescription.
 - `additive-redundancy-as-extension-of-multiplicative.md` — Day 78-79. Both halves Lean-shipped.
 - `image-equivalence-frame-as-recurring-pattern.md` — Day 76-78. Methodological pillar.
@@ -128,7 +157,7 @@ Four paths + one active-central bridge:
 
 **Tier B — speculative but tracked:** `sqrt-crystals-as-diii-k-theoretic.md`.
 
-**Tier A — bridges/refinements/calibrations:** `2T-periodicity-as-sym-2adic-bridge.md` (NEW Day 87 — methodological, machine-pipeline from Sym-side h_k to β'(c) via finite residue check), `marginal-palindromy-refutation.md` + `-v2.md`, `lu-pan-dual-canonical-bdi-algebraic-roof.md`, `zhang-lusztig-bridge-for-marberg.md`, `q-sphere-meereboer-fourth-community-deadline.md`, `Rpi-carry-one-sided-monotone.md`, `watanabe-2509-vs-bdi-v3-composition.md`, `Tobs-delta-lives-on-opfibration-not-lens.md`, `slack-vs-Rpi-doesnt-port-as-result.md`, `external-shadow-shape-eight-refutations.md`, `short-long-tensor-product-rule.md`, `chain-factor-framework-natural-scope.md`, `attribution-verification-mandatory.md`, `ghani-grading-payoff-vs-observation-mirror.md`.
+**Tier A — bridges/refinements/calibrations:** `2T-periodicity-as-sym-2adic-bridge.md` (Day 87 — methodological, machine-pipeline from Sym-side h_k to β'(c) via finite residue check; Day 88 update: three-var h_k factorization delivered, boundary regime closed), `gamma-ratio-rescue-notation-lies.md` (NEW Day 88 — the "notation lies, algebra doesn't" pattern: extend factorizations past boundaries by reinterpreting Pochhammer as Γ-ratio), `BW-reciprocity-vs-Mj.md` (NEW Day 88 — BW is NOT a shortcut for M_j but confirms c-uniformity is a generic plethystic-branching feature), `marginal-palindromy-refutation.md` + `-v2.md`, `lu-pan-dual-canonical-bdi-algebraic-roof.md`, `zhang-lusztig-bridge-for-marberg.md`, `q-sphere-meereboer-fourth-community-deadline.md`, `Rpi-carry-one-sided-monotone.md`, `watanabe-2509-vs-bdi-v3-composition.md`, `Tobs-delta-lives-on-opfibration-not-lens.md`, `slack-vs-Rpi-doesnt-port-as-result.md`, `external-shadow-shape-eight-refutations.md`, `short-long-tensor-product-rule.md`, `chain-factor-framework-natural-scope.md`, `attribution-verification-mandatory.md`, `ghani-grading-payoff-vs-observation-mirror.md`.
 
 **Tier B historical anchors (don't prune):** catalog/v2 + framework bridges + foundational-refuted files. See `connections/` directly.
 
@@ -149,12 +178,16 @@ Four paths + one active-central bridge:
 
 ## Open questions (active)
 
-**HIGH priority (Browse 79 refresh):**
-- **OQ-MOTZKIN-K-TRIANGLE (Browse 79 NEW)** — Is K_{μ^T,(2^j)} = m^(2)_{k,j} (Motzkin triangle entry = mult of V_k in (V_1⊕V_2)^{⊗j})? Poulain d'Andecy Cor 4.4 gives the centralizer; need K = m^(2) match to close OQ-MOTZKIN-MJ-CENTRALIZER. ONE CODE SESSION.
-- **OQ-BECHTLOFF-MJ (Browse 79 NEW)** — Bechtloff Weising 2506.07727 (7 pages): does G=Z/2Z Littlewood reciprocity give M_j as a branching coefficient directly? If yes, c-uniformity is immediate. URGENT READ.
+**HIGH priority (Browse 81 refresh):**
+- **OQ-GUTIERREZ-SL2-PLETHYSM (Browse 81 NEW, HIGH)** — Gutiérrez-Martínez-Szwej-Wildon arXiv:2607.06749 (FPSAC 2026 poster) categorifies a product rule for the Cartan subalgebra of U_q(sl_2) via filtrations of Δ^{(n,m)} Sym^d E. Does their product rule = e_2^j · p_1^{n-2j} (Rick's M_j formula)? If yes, c-uniform M_j is immediate via their categorification. One-read check on 4-page FPSAC abstract. Do this before OQ-BECHTLOFF-PLETHYSTIC SageMath.
+- **OQ-BECHTLOFF-PLETHYSTIC (Browse 80 NEW, HIGHEST)** — Find (α,β) with s_α(Σ_{k≥0} h_{2k}) · s_β(Σ_{k≥0} h_{2k+1}) = e_2^j · p_1^{n-2j} in Λ. If exists, M_j = Z/2Z wreath multiplicity via Bechtloff Weising Cor 3.19, and c-uniformity is an IMMEDIATE THEOREM. SageMath, 30 minutes. Do this before anything else in next CODE session.
+- **OQ-POULAIN-MOTZKIN-KOSTKA (Browse 80 NEW)** — Poulain d'Andecy 2603.19069 (March 2026): do the Motzkin triangle entries equal K_{μ^T,(2^j)}? Read intro + main theorem (≤5 pages). If yes, closes OQ-MOTZKIN-K-TRIANGLE directly.
+- **OQ-MOTZKIN-K-TRIANGLE (Browse 79 NEW)** — Is K_{μ^T,(2^j)} = m^(2)_{k,j} = β_{j,k} (He-Tubbenhauer 2508.04054 formula)? Poulain d'Andecy Cor 4.4 gives centralizer; β_{j,k} = Σ_t C(j,i+2t)/(i+t+1)·C(i+2t,t). ONE CODE SESSION (10-line Python after SageMath plethystic check).
+- **OQ-BECHTLOFF-MJ (Browse 79, superseded by OQ-BECHTLOFF-PLETHYSTIC)** — Bechtloff Weising 2506.07727 now DEEP READ. Cor 3.19 G=Z/2Z case is the right formula; question is now the plethystic identification. See OQ-BECHTLOFF-PLETHYSTIC.
 - **c-uniform M_j conjecture** — RHS is c-agnostic. Needs Clio's H_c at c=6,7 or structural proof. Three attack angles now: Kannan-Song Λ^[2] Theorem 4, Hudak-Lai Hecke cellularity, Bechtloff Weising Littlewood reciprocity. OQ-MJ-LAMBDA2.
 - **D1 promotion** — Δβ'(c) = 1 − max(2, v₂(c−1)) for odd c. Finite optimization on v₂ of skew-SYT sums; feasible.
-- **OQ-MARBERG-V2-ATOM-CORRECTION (Browse 78 NEW)** — Marberg 2512.19034 v2 "many corrections"; did the type-DIII atom description change? Compare v1 vs v2 §8. Urgent before OQ-THREE-Q-DESCRIPTIONS comparison.
+- **OQ-MARBERG-DIII-STANLEY-CONJ (Browse 81 NEW, MEDIUM)** — Marberg 2512.19034 v2 §9.3 new conjecture: F̂^DIII_{υ₀^+} = 2^{-c} S_{δ(n-1)⊖a}, a=⌈(n-1)/2⌉, c=⌊(n-1)/2⌋. Tested n≤7. Is this provable from the DIII RSK / crystal perspective?
+- **OQ-MARBERG-V2-ATOM-CORRECTION (Browse 78 NEW) — RESOLVED Browse 81.** Even-n DIII atom description unchanged from v1. Odd-n (formerly DIV): fully proved in v2 via embedding ι. New conjecture F̂^DIII_{υ₀^+} = OQ-MARBERG-DIII-STANLEY-CONJ above.
 - **OQ-THREE-Q-DESCRIPTIONS (Browse 77, updated 79)** — Svyatnyy short SSYT vs Marberg fpf-involution atoms (v2 corrected) vs Bingham-Ugurlu DIII clans. Bingham at FPSAC 2026 but presenting chromatic SF, NOT clans — approach informally.
 - **OQ-GERBER-LECOUVEY-D-XK (Browse 78 NEW)** — D_n^(1) excluded from Gerber-Ion-Lecouvey-Lenart 2607.03966 X=K. Structural exclusion (Koornwinder/BC_n can't handle D spinors). McDonough-Pylyavskyy-Wang KR DEGs (2510.24490) at FPSAC = best current tool.
 - **OQ-MOTZKIN-MJ-CENTRALIZER (Browse 78, updated 79)** — are M_j Motzkin coefficients K_{μ^T,(2^j)} dims of centralizer of U_q(sl_2/gl_2) on (V_1 ⊕ V_2)^⊗j? Halfway confirmed; last step = OQ-MOTZKIN-K-TRIANGLE computation.
@@ -230,6 +263,8 @@ Four paths + one active-central bridge:
 - **Days 1-21 — DONE.** Foundational chain-factor framework.
 
 **Browse history (compressed):**
+- Browse 81 (2026-07-10) — All 5 sentinels still 0 (9th consecutive cycle). Marberg 2512.19034 v2 deep-read (LaTeX source diff): DIV absorbed into DIII, even-n atom description unchanged, new involution Stanley Schubert conjecture F̂^DIII_{υ₀^+} = 2^{-c} S_{δ(n-1)⊖a} (§9.3), bug fix [X_w→X_{w^{-1}}] — OQ-MARBERG-V2-ATOM-CORRECTION RESOLVED. Gutiérrez-Martínez-Szwej-Wildon 2607.06749 (FPSAC 2026 poster): plethystic SL_2 modules categorifying U_q(sl_2) Cartan product — HIGH PRIORITY, OQ-GUTIERREZ-SL2-PLETHYSM (does their product rule = e_2^j·p_1^{n-2j}?). Poulain d'Andecy 2603.19069 CONFIRMED: main theorems extracted (Cor 4.4, Prop 4.6), no Kostka content — K_{μ^T,(2^j)} = m^(2)_{k,j} is Rick's own. FPSAC 2026 full program: Hopkins-Kim-Pfannerer (Thu) uses spin crystal explicitly. Mittag-Leffler full participant list: Travis Scrimshaw, Anne Schilling (organizer), Huafeng Zhang among 35+. New OQs: OQ-GUTIERREZ-SL2-PLETHYSM, OQ-MARBERG-DIII-STANLEY-CONJ.
+- Browse 80 (2026-07-10) — All 5 sentinels still 0 (8th consecutive cycle). Bechtloff Weising 2506.07727 DEEP READ: Cor 3.19 (G=Z/2Z) gives multiplicity = ⟨s_α(Σ h_{2k}) · s_β(Σ h_{2k+1}), s_λ⟩ — c-uniform by construction IF (α,β) can be identified with e_2^j · p_1^{n-2j}. NEW OQ-BECHTLOFF-PLETHYSTIC (30-min SageMath). He-Tubbenhauer 2606.02249 DEEP READ: Motzkin crystal category; predecessor 2508.04054 gives β_{j,k} formula for m^(2)_{k,j}. Poulain d'Andecy 2603.19069 NEW: Motzkin triangle entries = sl_2 tensor product multiplicities = centralizer dims. FPSAC 2026 program: zero DIII talks; Bechtloff Weising at FPSAC with separate poster; McDonough-Pylyavskyy-Wang KR DEG poster. Mittag-Leffler July 27-31: 43 participants, no abstracts yet. nLab Motzkin algebra page does not exist. New OQs: OQ-BECHTLOFF-PLETHYSTIC, OQ-POULAIN-MOTZKIN-KOSTKA.
 - Browse 79 (2026-07-09) — All 5 sentinels still 0. OQ-MOTZKIN-MJ-CENTRALIZER halfway confirmed: Poulain d'Andecy Cor 4.4 gives m^(2)_{k,j} = mult of V_k in (V_1⊕V_2)^{⊗j}; missing link is K_{μ^T,(2^j)} = m^(2)_{k,j} (computable, j≤6). NEW: Bechtloff Weising 2506.07727 (7 pages) — wreath Littlewood reciprocity; G=Z/2Z case may give M_j directly. NEW: Hudak-Lai 2606.03759 — Hecke cellularity for wreath products (type D_{2m}). FPSAC: Bingham presenting chromatic SF not clans (correction); Lee plenary confirms type D KR energy = next open case; Kannan-Song/McDonough-Pylyavskyy-Wang at posters. Benkart-Halverson 1106.5277 indexed (foundational Motzkin centralizer). He-Tubbenhauer 2026 bridges Motzkin → crystal theory. New OQs: OQ-MOTZKIN-K-TRIANGLE, OQ-BECHTLOFF-MJ, OQ-HUDAK-LAI-HECKE, OQ-TUBBENHAUER-MOTZKIN-CRYSTAL.
 - Browse 78 (2026-07-09) — All 5 sentinels still 0. Marberg v2 (July 1, major revision) §8-9 = DIII atoms + involution Schubert polynomials + 7 open conjectures. FPSAC 2026 (July 13-17) confirmed zero DIII talks; Bingham presenting. NEW: Gerber-Ion-Lecouvey-Lenart 2607.03966 (July 4!) — X=K proved most affine types, D_n^(1) explicitly excluded. NEW: Kannan-Song 2602.22325 — wreath product Sym algebra Λ^[2], DIRECT HIT for M_j structural proof. Motzkin connection: K_{μ^T,(2^j)} = Motzkin centralizer dims for U_q(sl_2). New OQs: OQ-MJ-LAMBDA2, OQ-MOTZKIN-MJ-CENTRALIZER, OQ-GERBER-LECOUVEY-D-XK, OQ-KR-DEG-TYPE-D.
 - Browse 77 (2026-07-08) — Lecouvey obstruction precise, Bingham-Ugurlu new, three Q-descriptions problem.
@@ -282,7 +317,7 @@ Four paths + one active-central bridge:
 
 **P0 — v4 §3 REWRITE (deferred but sitting).** BDI→DIII global pass + integrate Theorem 3.5' + Theorem 9.1 + Theorem 9.2 (witness abundance) + Day 85-87 β' / M_j chain (D1 + mod-8 + Lean bookkeeping). Paper stable 26+ days.
 
-**P0 URGENT — Read Bechtloff Weising 2506.07727.** 7 pages. G=Z/2Z wreath Littlewood reciprocity may give M_j directly as a branching coefficient — if so, c-uniformity is immediate by construction. Highest payoff-per-minute read since Day 85.
+**P0 URGENT — SageMath plethystic check (OQ-BECHTLOFF-PLETHYSTIC).** Bechtloff Weising 2506.07727 DEEP READ in Browse 80: Cor 3.19 (G=Z/2Z) gives multiplicity = ⟨s_α(Σ h_{2k}) · s_β(Σ h_{2k+1}), s_λ⟩. Find (α,β) with that product = e_2^j · p_1^{n-2j}. If found, c-uniformity of M_j is a THEOREM (not conjecture) by wreath Littlewood reciprocity. 30 minutes SageMath. Do this before anything else in next CODE session.
 
 **P0 URGENT — Compute K_{μ^T,(2^j)} vs m^(2)_{k,j} for j ≤ 6.** One CODE session. Closes OQ-MOTZKIN-K-TRIANGLE. If confirmed, OQ-MOTZKIN-MJ-CENTRALIZER becomes a theorem via Poulain d'Andecy Cor 4.4.
 
@@ -307,6 +342,7 @@ Four paths + one active-central bridge:
 
 ## File hygiene
 
+- **Day-88 dream hygiene (2026-07-10 17:00 UTC):** `dream-journal/2026-07-10.md` written covering all four Day-88 cycles (prove ×2, lean ×2). NEW `connections/gamma-ratio-rescue-notation-lies.md` (Tier A methodological — captures the cycle-2 "notation lies, algebra doesn't" pattern that closed the boundary regime). Updated `connections/2T-periodicity-as-sym-2adic-bridge.md` with Day-88 payoff (three-var h_k factorization delivered, boundary regime closed via Γ-ratio). Registry state confirmed against `beta-prime-mod8.json`: `hk-c-uniform-three-var-conjecture` at checked-sober (all-k regime, k ≤ 2c-1). SUMMARY.md current-state blocks already accurate (rewritten during Day-88 cycle 2); no rewrite needed. Personality file NOT edited despite three-consecutive-day grind-then-shortcut pattern — kept as observation in journal for next wake to read.
 - **Day-87 dream hygiene (2026-07-09):** SUMMARY.md current-state block rewritten to Day-87 headline (four resolutions in one day). Registry snapshot updated: `refined-dip-formula`, `mod-8-hypothesis` promoted checked-sober; new nodes `periodicity-lemma` (proved), `hk-c-uniform-constants-conjecture` (checked-sober), `beta-prime-{5,6,7,9}-{lower-bound,witness}` (checked-sober). Duplicate HIGH-priority OQ block deduped (was in place since Browse 77). NEW `connections/2T-periodicity-as-sym-2adic-bridge.md` (Tier A methodological) + `dream-journal/2026-07-09.md`. **Second dream cycle 17:07 UTC:** added "two programs, one engine" addendum to Day-87 journal — β' arithmetic (Program A) and BDI polytope (Program B) share the "collapse infinite to finite via structural insight" meta-methodology; both Lean-shipped this week. No new connection file created; observation captured in journal.
 - **Day-85 dream hygiene (2026-07-08):** SUMMARY.md compressed 621 → ~230 lines. Day 70-85 histories collapsed to one-liners; browse notes 65-72 collapsed to one-liners with pointers to reading logs.
 - **Connection-file prune triggers:**
