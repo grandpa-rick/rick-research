@@ -8,6 +8,26 @@ Formalises Theorem 4 (extended ★) of
 the three-variable structural factorization of `h_k^{(c)}(a,b)` in its
 unified (clean + boundary) form, expressed as a polynomial identity using
 positive-power Pochhammer factors on both sides.
+
+Day-89 mandatory pre-Lean k=1 data check (per LEAN.md meta-rule):
+
+  Test: at c ∈ {4, 5, 6, 7}, k = 1 (clean regime, k ≤ c-1), the quotient
+    h_1^{(c)}(a,b) / [(a+3)_{c-2} · (b+2)_{c-2}]
+  must equal a constant (a,b-independent) matching D_1(c) = −c(c−1).
+
+  Verified numerically via `code/2026-07-10-hk-three-var-verify.py`:
+      c=4 → −12  ✓ = −4·3
+      c=5 → −20  ✓ = −5·4
+      c=6 → −30  ✓ = −6·5
+      c=7 → −42  ✓ = −7·6
+  Matches D_1(c) = −c(c−1) predicted by Day-88 §4 Corollary. All 91/78/66/55
+  sample (a,b) points respectively give the same quotient — `Q_1` is a
+  constant, as it collapses via the two-term Möbius sum. Compatibility with
+  this file: in the clean regime, `hk_three_var_factorization` combined
+  with `pochL_clean, pochR_clean` reads
+    h_k = (a+3)_{c-1-k} · (b+2)_{c-1-k} · Q_k
+  which is (★) of Day-88 §3 verbatim, and the k=1 check confirms that our
+  `Q_k` definition matches Day-88's `Q_k`.
 -/
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.BigOperators.Ring.Finset
@@ -416,5 +436,42 @@ theorem hk_three_var_factorization
   · exact hk_three_var_factorization_clean hc hkc hyp a b
   · have hklb : c ≤ k := by omega
     exact hk_three_var_factorization_boundary hc hklb hk hyp a b
+
+/-! ### Direct (unfolded) corollaries
+
+The `hk_three_var_factorization*` theorems above phrase both regimes via a
+uniform `pochL, pochR` pair, so the statement matches (★-ext). For a
+consumer that only cares about one regime, the direct forms are cleaner:
+the `pochL = 1` clean form and the `pochR = 1` boundary form. -/
+
+/-- Clean-regime **direct** form of (★): when `k ≤ c-1`,
+`h_k^{(c)}(a,b) = (a+3)_{c-1-k} · (b+2)_{c-1-k} · Q_k`.
+This is Day-88 §3 Theorem 2 verbatim. -/
+theorem hk_three_var_factorization_clean_direct
+    {H P : ℕ → ℕ → ℕ → ℤ} {c k : ℕ} (hc : 3 ≤ c) (hk : k ≤ c - 1)
+    (hyp : HFactorization H P c) (a b : ℕ) :
+    h_k_c H k a b
+      = ascPoch ((a : ℤ) + 3) (c - 1 - k)
+        * ascPoch ((b : ℤ) + 2) (c - 1 - k)
+        * Q_k P c k a b := by
+  have h := hk_three_var_factorization_clean hc hk hyp a b
+  rw [pochL_clean hk, pochR_clean hk] at h
+  linarith
+
+/-- Boundary-regime **direct** form of (★): when `c ≤ k ≤ 2c-1`,
+`h_k^{(c)}(a,b) · (a+c-k+2)_{k-c+1} · (b+c-k+1)_{k-c+1} = Q_k`.
+This is Day-88 §11 boundary rescue in polynomial (positive-power) form. -/
+theorem hk_three_var_factorization_boundary_direct
+    {H P : ℕ → ℕ → ℕ → ℤ} {c k : ℕ} (hc : 3 ≤ c)
+    (hk_lb : c ≤ k) (hk_ub : k ≤ 2 * c - 1)
+    (hyp : HFactorization H P c) (a b : ℕ) :
+    h_k_c H k a b
+        * ascPoch ((a : ℤ) + (c : ℤ) - (k : ℤ) + 2) (k - c + 1)
+        * ascPoch ((b : ℤ) + (c : ℤ) - (k : ℤ) + 1) (k - c + 1)
+      = Q_k P c k a b := by
+  have h := hk_three_var_factorization_boundary hc hk_lb hk_ub hyp a b
+  have hkc : ¬ k ≤ c - 1 := by omega
+  rw [pochL_boundary hkc, pochR_boundary hkc] at h
+  linarith
 
 end HkThreeVar
