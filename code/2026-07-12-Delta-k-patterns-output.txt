@@ -1,0 +1,101 @@
+==========================================================================
+Δ_k^{(c)} closed-form pattern hunt (Stage 2)
+==========================================================================
+
+--- Δ_k^{(c)} sequences (c = 5..11), and closed-form checks ---
+
+k= 0: Δ_k^{(c)} = [0, inf, 0, inf, 0, inf, 0]
+       Guess: Δ_0 = 0 (Poch-min locus non-empty case).
+k= 1: Δ_k^{(c)} = [2, 1, 1, 3, 3, 1, 1]
+       Guess: Δ_1 = v_2(c(c-1)) = [2, 1, 1, 3, 3, 1, 1]  MATCH
+k= 2: Δ_k^{(c)} = [1, inf, 1, inf, 1, inf, 1]
+       Guess: Δ_2 = 1 for odd c, inf for even c: [1, 'inf', 1, 'inf', 1, 'inf', 1]
+k= 3: Δ_k^{(c)} = [5, 5, 4, 5, 6, 7, 5]
+       v_2(c(c-1)(c-2)) = [2, 3, 1, 4, 3, 4, 1], so Δ_3 - v_2(base) = [3, 2, 3, 1, 3, 3, 4]
+k= 4: Δ_k^{(c)} = [5, inf, 5, inf, 6, inf, 6]
+k= 5: Δ_k^{(c)} = [None, 7, 7, 9, 10, 8, 8]
+k= 6: Δ_k^{(c)} = [None, None, 6, inf, 8, inf, 6]
+k= 7: Δ_k^{(c)} = [None, None, None, 11, 11, 12, 12]
+k= 8: Δ_k^{(c)} = [None, None, None, None, 13, inf, 14]
+k= 9: Δ_k^{(c)} = [None, None, None, None, None, 15, 15]
+k=10: Δ_k^{(c)} = [None, None, None, None, None, None, 14]
+
+--- LB_direct = min v_2(h_k) over shell, as sequence in c ---
+
+k= 0: LB_k = [6, 7, 8, 11, 14, 15, 16]
+k= 1: LB_k = [4, 7, 7, 11, 11, 15, 15]
+k= 2: LB_k = [3, 7, 7, 11, 9, 15, 15]
+k= 3: LB_k = [5, 7, 6, 11, 12, 15, 13]
+k= 4: LB_k = [5, 7, 7, 11, 12, 14, 14]
+k= 5: LB_k = [None, 7, 7, 11, 12, 14, 14]
+k= 6: LB_k = [None, None, 6, 11, 10, 14, 12]
+k= 7: LB_k = [None, None, None, 11, 11, 14, 14]
+k= 8: LB_k = [None, None, None, None, 13, 15, 16]
+k= 9: LB_k = [None, None, None, None, None, 15, 15]
+k=10: LB_k = [None, None, None, None, None, None, 14]
+
+--- min_k LB_direct per c ---
+
+  c= 5 (c-1= 4, s_2(c)=2, v_2(c!)=3): β'(c) = 3, k* ∈ [2]
+  c= 6 (c-1= 5, s_2(c)=2, v_2(c!)=4): β'(c) = 7, k* ∈ [0, 1, 2, 3, 4, 5]
+  c= 7 (c-1= 6, s_2(c)=3, v_2(c!)=4): β'(c) = 6, k* ∈ [3, 6]
+  c= 8 (c-1= 7, s_2(c)=1, v_2(c!)=7): β'(c) = 11, k* ∈ [0, 1, 2, 3, 4, 5, 6, 7]
+  c= 9 (c-1= 8, s_2(c)=2, v_2(c!)=7): β'(c) = 9, k* ∈ [2]
+  c=10 (c-1= 9, s_2(c)=2, v_2(c!)=8): β'(c) = 14, k* ∈ [4, 5, 6, 7]
+  c=11 (c-1=10, s_2(c)=3, v_2(c!)=8): β'(c) = 12, k* ∈ [6]
+
+--- β'(c) closed-form candidates ---
+
+Odd c:
+  c=5: β'=3, 3(c-3)/2=3   MATCH
+  c=7: β'=6, 3(c-3)/2=6   MATCH
+  c=9: β'=9, 3(c-3)/2=9   MATCH
+  c=11: β'=12, 3(c-3)/2=12   MATCH
+
+Even c candidates:
+  c=6: β'=7
+     c + v_2((c/2)!): 7  ✓
+     2c - 2s_2(c-1) + v_2(c) - 1: 7  ✓
+     3(c-2)/2 + 1: 7  ✓
+     2·v_2((c-1)!) + v_2(c): 7  ✓
+     2·v_2((c-1)!) + 1: 7  ✓
+  c=8: β'=11
+     c + v_2((c/2)!): 11  ✓
+     2c - 2s_2(c-1) + v_2(c) - 1: 11  ✓
+     3(c-2)/2 + 1: 10  ✗
+     2·v_2((c-1)!) + v_2(c): 11  ✓
+     2·v_2((c-1)!) + 1: 9  ✗
+  c=10: β'=14
+     c + v_2((c/2)!): 13  ✗
+     2c - 2s_2(c-1) + v_2(c) - 1: 15  ✗
+     3(c-2)/2 + 1: 13  ✗
+     2·v_2((c-1)!) + v_2(c): 15  ✗
+     2·v_2((c-1)!) + 1: 15  ✗
+
+--- Δ_1^{(c)} test: v_2(c(c-1)) hypothesis ---
+
+  c=5: Δ_1=2, v_2(c(c-1))=2   MATCH
+  c=6: Δ_1=1, v_2(c(c-1))=1   MATCH
+  c=7: Δ_1=1, v_2(c(c-1))=1   MATCH
+  c=8: Δ_1=3, v_2(c(c-1))=3   MATCH
+  c=9: Δ_1=3, v_2(c(c-1))=3   MATCH
+  c=10: Δ_1=1, v_2(c(c-1))=1   MATCH
+  c=11: Δ_1=1, v_2(c(c-1))=1   MATCH
+
+--- Uniformity of LB_k^{(c)} across k, per c ---
+
+  c=5: LB values [3, 4, 5, 6], distribution {3: 1, 4: 1, 5: 2, 6: 1}
+  c=6: LB values [7], distribution {7: 6}
+  c=7: LB values [6, 7, 8], distribution {6: 2, 7: 4, 8: 1}
+  c=8: LB values [11], distribution {11: 8}
+  c=9: LB values [9, 10, 11, 12, 13, 14], distribution {9: 1, 10: 1, 11: 2, 12: 3, 13: 1, 14: 1}
+  c=10: LB values [14, 15], distribution {14: 4, 15: 6}
+  c=11: LB values [12, 13, 14, 15, 16], distribution {12: 1, 13: 1, 14: 4, 15: 3, 16: 2}
+
+--- Δβ'(c) sequential differences ---
+  Δβ'(6) = β'(6) - β'(5) = 7 - 3 = 4   D1_pred=(even c)
+  Δβ'(7) = β'(7) - β'(6) = 6 - 7 = -1   D1_pred=-1
+  Δβ'(8) = β'(8) - β'(7) = 11 - 6 = 5   D1_pred=(even c)
+  Δβ'(9) = β'(9) - β'(8) = 9 - 11 = -2   D1_pred=-2
+  Δβ'(10) = β'(10) - β'(9) = 14 - 9 = 5   D1_pred=(even c)
+  Δβ'(11) = β'(11) - β'(10) = 12 - 14 = -2   D1_pred=-1
