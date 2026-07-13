@@ -1,0 +1,199 @@
+==========================================================================
+Day 93 — Δ_k^{(c)} catalog extension for c ∈ [12..17]
+==========================================================================
+
+==========================================================================
+c = 12, shell parity a+b ≡ 0, formula predicts β'(12) = 18 (β=19, D=1)
+==========================================================================
+  k= 0: L=11, v_2(L!)= 8, Δ=inf, LB = 2·8 + inf = inf  (catalog, 0.0s)
+          achievers: 
+  k= 1: L=10, v_2(L!)= 8, Δ=2, LB = 2·8 + 2 = 18  (catalog, 0.0s)
+          achievers: (2,0,v2=2), (2,4,v2=2), (2,16,v2=2)
+  k= 2: L= 9, v_2(L!)= 7, Δ=inf, LB = 2·7 + inf = inf  (catalog, 0.0s)
+          achievers: 
+  k= 3: L= 8, v_2(L!)= 7, Δ=4, LB = 2·7 + 4 = 18  (catalog, 0.0s)
+          achievers: (0,0,v2=4), (0,2,v2=4), (0,4,v2=4)
+  k= 4: L= 7, v_2(L!)= 4, Δ=inf, LB = 2·4 + inf = inf  (catalog, 0.0s)
+          achievers: 
+  k= 5: L= 6, v_2(L!)= 4, Δ=10, LB = 2·4 + 10 = 18  (catalog, 0.0s)
+          achievers: (6,0,v2=10), (6,8,v2=10), (6,16,v2=10)
+  k= 6: L= 5, v_2(L!)= 3, Δ=inf, LB = 2·3 + inf = inf  (catalog, 0.0s)
+          achievers: 
+    [ extract hk c=12,k=7: 435 samples ]
+  k= 7: L= 4, v_2(L!)= 3, Δ=12, LB = 2·3 + 12 = 18  (extract, 3.2s)
+          achievers: (0,0,v2=12), (0,2,v2=12), (0,8,v2=12)
+    [ extract hk c=12,k=8: 435 samples ]
+  k= 8: L= 3, v_2(L!)= 1, Δ=inf, LB = 2·1 + inf = inf  (extract, 3.3s)
+          achievers: 
+    [ extract hk c=12,k=9: 435 samples ]
+  k= 9: L= 2, v_2(L!)= 1, Δ=16, LB = 2·1 + 16 = 18  (extract, 2.6s)
+          achievers: (2,0,v2=16), (2,8,v2=16), (2,16,v2=16)
+    [ extract hk c=12,k=10: 435 samples ]
+  k=10: L= 1, v_2(L!)= 0, Δ=inf, LB = 2·0 + inf = inf  (extract, 1.9s)
+          achievers: 
+    [ extract hk c=12,k=11: 435 samples ]
+  k=11: L= 0, v_2(L!)= 0, Δ=18, LB = 2·0 + 18 = 18  (extract, 5.2s)
+          achievers: (0,0,v2=18), (0,2,v2=18), (0,4,v2=18)
+
+==========================================================================
+c = 13, shell parity a+b ≡ 1, formula predicts β'(13) = 16 (β=22, D=6)
+==========================================================================
+  k= 0: L=12, v_2(L!)=10, Δ=0, LB = 2·10 + 0 = 20  (catalog, 0.0s)
+          achievers: (0,1,v2=0)
+  k= 1: L=11, v_2(L!)= 8, Δ=2, LB = 2·8 + 2 = 18  (catalog, 0.0s)
+          achievers: (2,3,v2=2), (2,15,v2=2), (2,19,v2=2)
+  k= 2: L=10, v_2(L!)= 8, Δ=1, LB = 2·8 + 1 = 17  (catalog, 0.0s)
+          achievers: (3,0,v2=1), (3,4,v2=1), (3,16,v2=1)
+  k= 3: L= 9, v_2(L!)= 7, Δ=5, LB = 2·7 + 5 = 19  (catalog, 0.0s)
+          achievers: (0,3,v2=5), (0,15,v2=5), (0,19,v2=5)
+  k= 4: L= 8, v_2(L!)= 7, Δ=5, LB = 2·7 + 5 = 19  (catalog, 0.0s)
+          achievers: (1,0,v2=5), (1,2,v2=5), (1,4,v2=5)
+  k= 5: L= 7, v_2(L!)= 4, Δ=9, LB = 2·4 + 9 = 17  (catalog, 0.0s)
+          achievers: (6,7,v2=9), (6,15,v2=9), (6,23,v2=9)
+  k= 6: L= 6, v_2(L!)= 4, Δ=8, LB = 2·4 + 8 = 16  (catalog, 0.0s)
+          achievers: (7,0,v2=8), (7,8,v2=8), (7,16,v2=8)
+    [ extract hk c=13,k=7: 496 samples ]
+  k= 7: L= 5, v_2(L!)= 3, Δ=11, LB = 2·3 + 11 = 17  (extract, 8.3s)
+          achievers: (0,1,v2=11), (0,9,v2=11), (0,17,v2=11)
+    [ extract hk c=13,k=8: 496 samples ]
+  k= 8: L= 4, v_2(L!)= 3, Δ=13, LB = 2·3 + 13 = 19  (extract, 8.3s)
+          achievers: (1,2,v2=13), (1,10,v2=13), (1,18,v2=13)
+    [ extract hk c=13,k=9: 496 samples ]
+  k= 9: L= 3, v_2(L!)= 1, Δ=16, LB = 2·1 + 16 = 18  (extract, 4.0s)
+          achievers: (2,7,v2=16), (2,15,v2=16), (2,23,v2=16)
+    [ extract hk c=13,k=10: 496 samples ]
+  k=10: L= 2, v_2(L!)= 1, Δ=14, LB = 2·1 + 14 = 16  (extract, 4.6s)
+          achievers: (3,4,v2=14), (3,12,v2=14), (3,20,v2=14)
+    [ extract hk c=13,k=11: 496 samples ]
+  k=11: L= 1, v_2(L!)= 0, Δ=19, LB = 2·0 + 19 = 19  (extract, 4.3s)
+          achievers: (0,1,v2=19), (0,3,v2=19), (0,5,v2=19)
+    [ extract hk c=13,k=12: 496 samples ]
+  k=12: L= 0, v_2(L!)= 0, Δ=19, LB = 2·0 + 19 = 19  (extract, 8.2s)
+          achievers: (1,0,v2=19), (1,2,v2=19), (1,4,v2=19)
+
+==========================================================================
+c = 14, shell parity a+b ≡ 0, formula predicts β'(14) = 20 (β=23, D=3)
+==========================================================================
+  k= 0: L=13, v_2(L!)=10, Δ=inf, LB = 2·10 + inf = inf  (catalog, 0.0s)
+          achievers: 
+  k= 1: L=12, v_2(L!)=10, Δ=1, LB = 2·10 + 1 = 21  (catalog, 0.0s)
+          achievers: (0,0,v2=1), (0,2,v2=1), (0,16,v2=1)
+  k= 2: L=11, v_2(L!)= 8, Δ=inf, LB = 2·8 + inf = inf  (catalog, 0.0s)
+          achievers: 
+  k= 3: L=10, v_2(L!)= 8, Δ=5, LB = 2·8 + 5 = 21  (catalog, 0.0s)
+          achievers: (2,0,v2=5), (2,4,v2=5), (2,16,v2=5)
+  k= 4: L= 9, v_2(L!)= 7, Δ=inf, LB = 2·7 + inf = inf  (catalog, 0.0s)
+          achievers: 
+  k= 5: L= 8, v_2(L!)= 7, Δ=7, LB = 2·7 + 7 = 21  (catalog, 0.0s)
+          achievers: (0,0,v2=7), (0,4,v2=7), (0,16,v2=7)
+  k= 6: L= 7, v_2(L!)= 4, Δ=inf, LB = 2·4 + inf = inf  (catalog, 0.0s)
+          achievers: 
+    [ extract hk c=14,k=7: 561 samples ]
+  k= 7: L= 6, v_2(L!)= 4, Δ=13, LB = 2·4 + 13 = 21  (extract, 25.2s)
+          achievers: (6,0,v2=13), (6,16,v2=13), (6,32,v2=13)
+    [ extract hk c=14,k=8: 561 samples ]
+  k= 8: L= 5, v_2(L!)= 3, Δ=inf, LB = 2·3 + inf = inf  (extract, 25.2s)
+          achievers: 
+    [ extract hk c=14,k=9: 561 samples ]
+  k= 9: L= 4, v_2(L!)= 3, Δ=15, LB = 2·3 + 15 = 21  (extract, 8.8s)
+          achievers: (0,0,v2=15), (0,2,v2=15), (0,8,v2=15)
+    [ extract hk c=14,k=10: 561 samples ]
+  k=10: L= 3, v_2(L!)= 1, Δ=inf, LB = 2·1 + inf = inf  (extract, 8.9s)
+          achievers: 
+    [ extract hk c=14,k=11: 561 samples ]
+  k=11: L= 2, v_2(L!)= 1, Δ=19, LB = 2·1 + 19 = 21  (extract, 5.1s)
+          achievers: (2,0,v2=19), (2,4,v2=19), (2,8,v2=19)
+    [ extract hk c=14,k=12: 561 samples ]
+  k=12: L= 1, v_2(L!)= 0, Δ=inf, LB = 2·0 + inf = inf  (extract, 4.2s)
+          achievers: 
+
+==========================================================================
+c = 15, shell parity a+b ≡ 1, formula predicts β'(15) = 19 (β=25, D=6)
+==========================================================================
+  k= 0: L=14, v_2(L!)=11, Δ=0, LB = 2·11 + 0 = 22  (catalog, 0.0s)
+          achievers: (14,15,v2=0)
+  k= 1: L=13, v_2(L!)=10, Δ=1, LB = 2·10 + 1 = 21  (catalog, 0.0s)
+          achievers: (0,1,v2=1), (0,15,v2=1), (0,17,v2=1)
+  k= 2: L=12, v_2(L!)=10, Δ=1, LB = 2·10 + 1 = 21  (catalog, 0.0s)
+          achievers: (1,0,v2=1), (1,2,v2=1), (1,16,v2=1)
+  k= 3: L=11, v_2(L!)= 8, Δ=4, LB = 2·8 + 4 = 20  (catalog, 0.0s)
+          achievers: (2,3,v2=4), (2,15,v2=4), (2,19,v2=4)
+  k= 4: L=10, v_2(L!)= 8, Δ=5, LB = 2·8 + 5 = 21  (catalog, 0.0s)
+          achievers: (3,0,v2=5), (3,4,v2=5), (3,16,v2=5)
+  k= 5: L= 9, v_2(L!)= 7, Δ=7, LB = 2·7 + 7 = 21  (catalog, 0.0s)
+          achievers: (0,3,v2=7), (0,15,v2=7), (0,19,v2=7)
+  k= 6: L= 8, v_2(L!)= 7, Δ=6, LB = 2·7 + 6 = 20  (catalog, 0.0s)
+          achievers: (1,2,v2=6), (1,6,v2=6), (1,18,v2=6)
+    [ extract hk c=15,k=7: 630 samples ]
+  k= 7: L= 7, v_2(L!)= 4, Δ=11, LB = 2·4 + 11 = 19  (extract, 80.8s)
+          achievers: (6,7,v2=11), (6,15,v2=11), (6,23,v2=11)
+    [ extract hk c=15,k=8: 630 samples ]
+  k= 8: L= 6, v_2(L!)= 4, Δ=13, LB = 2·4 + 13 = 21  (extract, 80.8s)
+          achievers: (7,0,v2=13), (7,8,v2=13), (7,16,v2=13)
+    [ extract hk c=15,k=9: 630 samples ]
+  k= 9: L= 5, v_2(L!)= 3, Δ=15, LB = 2·3 + 15 = 21  (extract, 26.0s)
+          achievers: (0,7,v2=15), (0,15,v2=15), (0,23,v2=15)
+    [ extract hk c=15,k=10: 630 samples ]
+  k=10: L= 4, v_2(L!)= 3, Δ=14, LB = 2·3 + 14 = 20  (extract, 26.2s)
+          achievers: (1,2,v2=14), (1,10,v2=14), (1,18,v2=14)
+    [ extract hk c=15,k=11: 630 samples ]
+  k=11: L= 3, v_2(L!)= 1, Δ=18, LB = 2·1 + 18 = 20  (extract, 10.0s)
+          achievers: (2,7,v2=18), (2,15,v2=18), (2,23,v2=18)
+    [ extract hk c=15,k=12: 630 samples ]
+  k=12: L= 2, v_2(L!)= 1, Δ=19, LB = 2·1 + 19 = 21  (extract, 11.1s)
+          achievers: (3,0,v2=19), (3,8,v2=19), (3,16,v2=19)
+
+==========================================================================
+c = 16, shell parity a+b ≡ 0, formula predicts β'(16) = 25 (β=26, D=1)
+==========================================================================
+  k= 0: L=15, v_2(L!)=11, Δ=inf, LB = 2·11 + inf = inf  (catalog, 0.0s)
+          achievers: 
+  k= 1: L=14, v_2(L!)=11, Δ=4, LB = 2·11 + 4 = 26  (catalog, 0.0s)
+          achievers: (14,0,v2=4), (14,16,v2=4), (14,32,v2=4)
+  k= 2: L=13, v_2(L!)=10, Δ=inf, LB = 2·10 + inf = inf  (catalog, 0.0s)
+          achievers: 
+  k= 3: L=12, v_2(L!)=10, Δ=6, LB = 2·10 + 6 = 26  (catalog, 0.0s)
+          achievers: (0,0,v2=6), (0,2,v2=6), (0,16,v2=6)
+  k= 4: L=11, v_2(L!)= 8, Δ=inf, LB = 2·8 + inf = inf  (catalog, 0.0s)
+          achievers: 
+  k= 5: L=10, v_2(L!)= 8, Δ=10, LB = 2·8 + 10 = 26  (catalog, 0.0s)
+          achievers: (2,0,v2=10), (2,4,v2=10), (2,16,v2=10)
+  k= 6: L= 9, v_2(L!)= 7, Δ=inf, LB = 2·7 + inf = inf  (catalog, 0.0s)
+          achievers: 
+    [ extract hk c=16,k=7: 703 samples ]
+  k= 7: L= 8, v_2(L!)= 7, Δ=12, LB = 2·7 + 12 = 26  (extract, 251.7s)
+          achievers: (0,0,v2=12), (0,2,v2=12), (0,4,v2=12)
+    [ extract hk c=16,k=8: 703 samples ]
+  k= 8: L= 7, v_2(L!)= 4, Δ=inf, LB = 2·4 + inf = inf  (extract, 251.7s)
+          achievers: 
+    [ extract hk c=16,k=9: 703 samples ]
+  k= 9: L= 6, v_2(L!)= 4, Δ=18, LB = 2·4 + 18 = 26  (extract, 81.9s)
+          achievers: (6,0,v2=18), (6,8,v2=18), (6,16,v2=18)
+    [ extract hk c=16,k=10: 703 samples ]
+  k=10: L= 5, v_2(L!)= 3, Δ=inf, LB = 2·3 + inf = inf  (extract, 82.0s)
+          achievers: 
+    [ extract hk c=16,k=11: 703 samples ]
+  k=11: L= 4, v_2(L!)= 3, Δ=20, LB = 2·3 + 20 = 26  (extract, 27.0s)
+          achievers: (0,0,v2=20), (0,2,v2=20), (0,8,v2=20)
+    [ extract hk c=16,k=12: 703 samples ]
+  k=12: L= 3, v_2(L!)= 1, Δ=inf, LB = 2·1 + inf = inf  (extract, 27.0s)
+          achievers: 
+
+==========================================================================
+c = 17, shell parity a+b ≡ 1, formula predicts β'(17) = 23 (β=31, D=8)
+==========================================================================
+  k= 0: L=16, v_2(L!)=15, Δ=0, LB = 2·15 + 0 = 30  (catalog, 0.0s)
+          achievers: (0,1,v2=0)
+  k= 1: L=15, v_2(L!)=11, Δ=4, LB = 2·11 + 4 = 26  (catalog, 0.0s)
+          achievers: (14,15,v2=4), (14,31,v2=4), (14,47,v2=4)
+  k= 2: L=14, v_2(L!)=11, Δ=1, LB = 2·11 + 1 = 23  (catalog, 0.0s)
+          achievers: (15,0,v2=1), (15,16,v2=1), (15,32,v2=1)
+  k= 3: L=13, v_2(L!)=10, Δ=7, LB = 2·10 + 7 = 27  (catalog, 0.0s)
+          achievers: (0,1,v2=7), (0,17,v2=7), (0,33,v2=7)
+  k= 4: L=12, v_2(L!)=10, Δ=7, LB = 2·10 + 7 = 27  (catalog, 0.0s)
+          achievers: (1,0,v2=7), (1,2,v2=7), (1,16,v2=7)
+  k= 5: L=11, v_2(L!)= 8, Δ=11, LB = 2·8 + 11 = 27  (catalog, 0.0s)
+          achievers: (2,3,v2=11), (2,19,v2=11), (2,35,v2=11)
+  k= 6: L=10, v_2(L!)= 8, Δ=9, LB = 2·8 + 9 = 25  (catalog, 0.0s)
+          achievers: (3,0,v2=9), (3,4,v2=9), (3,16,v2=9)
+    [ extract hk c=17,k=7: 780 samples ]
