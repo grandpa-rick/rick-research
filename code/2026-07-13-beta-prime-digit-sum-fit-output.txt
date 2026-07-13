@@ -1,0 +1,53 @@
+======================================================================
+Registry beta'(c) table (canonical)
+======================================================================
+  c  beta(c)  beta_prime   D(c)                  c              s2(c)            s2(c-1)            s2(c+1)            s2(c-2)              v2(c)            v2(c-1)      s2(cm1_div_4)     s2(c_choose_2) s2(c-1)-s2((c-1)//2)        s2(c) mod 2             c%4==0             c%4==1             c%4==2             c%4==3
+  4        4           4      0                  4                  1                  2                  2                  1                  2                  0                  0                  2                  1                  1                  1                  0                  0                  0
+  5        7           3      4                  5                  2                  1                  2                  2                  0                  2                  1                  2                  0                  0                  0                  1                  0                  0
+  6        8           7      1                  6                  2                  2                  3                  1                  1                  0                  1                  4                  1                  0                  0                  0                  1                  0
+  7       10           6      4                  7                  3                  2                  1                  2                  0                  1                  1                  3                  0                  1                  0                  0                  0                  1
+  8       11          11      0                  8                  1                  3                  2                  2                  3                  0                  1                  3                  1                  1                  1                  0                  0                  0
+  9       15           9      6                  9                  2                  1                  2                  3                  0                  3                  1                  2                  0                  0                  0                  1                  0                  0
+ 10       16          14      2                 10                  2                  2                  3                  1                  1                  0                  1                  4                  1                  0                  0                  0                  1                  0
+ 11       18          12      6                 11                  3                  2                  2                  2                  0                  1                  1                  5                  0                  1                  0                  0                  0                  1
+
+c (UB)  beta(c)  b_prime_UB  D_lower
+    12       19          18        1
+    13       22          16        6
+    15       25          20        5
+    17       31          23        8
+
+======================================================================
+Fit D(c) as integer linear combo of features (coeffs in [-3, 3])
+======================================================================
+  No exact integer fit found in [-3,3]^k for the tested subsets.
+
+  Best least-squares fits (real coefficients, subset by subset):
+    ['s2(c)', 's2(c-1)']: lstsq coefs=[2.06, -1.762, 2.06], max_res=1.655; rounded=[2, -2, 2], max_res_int=2
+    ['s2(c)', 's2(c-1)', 's2(c+1)']: lstsq coefs=[1.9, -1.791, -0.609, 3.727], max_res=1.482; rounded=[2, -2, -1, 4], max_res_int=2
+    ['s2(c)', 's2(c-1)', 'v2(c-1)']: lstsq coefs=[1.817, 0.398, 1.564, -2.876], max_res=1.062; rounded=[2, 0, 2, -3], max_res_int=1
+    ['s2(c-1)', 'v2(c-1)']: lstsq coefs=[0.265, 1.912, 0.706], max_res=2.853; rounded=[0, 2, 1], max_res_int=3
+    ['s2(c-1)-s2((c-1)//2)', 'v2(c-1)']: lstsq coefs=[-3.614, 0.364, 4.364], max_res=1.273; rounded=[-4, 0, 4], max_res_int=2
+    ['s2(cm1_div_4)', 'v2(c-1)']: lstsq coefs=[1.661, 1.625, -0.0], max_res=2.714; rounded=[2, 2, 0], max_res_int=2
+    ['s2(cm1_div_4)', 's2(c-1)', 'v2(c-1)']: lstsq coefs=[1.75, -0.25, 1.5, 0.5], max_res=2.750; rounded=[2, 0, 2, 0], max_res_int=2
+    ['s2(c-1)', 's2(c+1)', 'v2(c-1)']: lstsq coefs=[0.132, -0.171, 1.814, 1.403], max_res=2.860; rounded=[0, 0, 2, 1], max_res_int=3
+    ['s2(c_choose_2)', 's2(c)']: lstsq coefs=[-0.811, 3.108, -0.807], max_res=2.212; rounded=[-1, 3, -1], max_res_int=3
+    ['c%4==1', 'c%4==3', 'v2(c-1)']: lstsq coefs=[-0.75, 2.25, 2.0, 0.75], max_res=1.250; rounded=[-1, 2, 2, 1], max_res_int=1
+    ['c%4==0', 'c%4==1', 'c%4==2', 'c%4==3', 'v2(c-1)']: lstsq coefs=[-0.9, -0.9, 0.6, 2.1, 2.0, 0.9], max_res=1.000; rounded=[-1, -1, 1, 2, 2, 1], max_res_int=1
+    ['c%4==1', 'c%4==3', 'v2(c-1)', 's2(cm1_div_4)']: lstsq coefs=[-1.0, 2.0, 2.0, 1.0, 0.0], max_res=1.000; rounded=[-1, 2, 2, 1, 0], max_res_int=1
+
+======================================================================
+Fit beta'(c) directly as integer linear combo of features
+======================================================================
+  No exact integer fit found in [-4,4]^k for the tested subsets on beta'(c) directly.
+    ['c', 's2(c)']: lstsq coefs=[1.712, -1.818, -0.955], max_res=1.818; rounded=[2, -2, -1], max_res_int=4
+    ['c', 's2(c-1)']: lstsq coefs=[1.388, 1.797, -5.532], max_res=2.055; rounded=[1, 2, -6], max_res_int=6
+    ['c', 's2(c)', 's2(c-1)']: lstsq coefs=[1.601, -1.348, 1.217, -3.348], max_res=1.594; rounded=[2, -1, 1, -3], max_res_int=6
+    ['c', 's2(c-1)', 's2(c+1)']: lstsq coefs=[1.333, 1.758, 1.576, -8.394], max_res=0.939; rounded=[1, 2, 2, -8], max_res_int=2
+    ['c', 's2(c)', 'v2(c-1)']: lstsq coefs=[1.698, -1.327, -0.94, -1.008], max_res=0.748; rounded=[2, -1, -1, -1], max_res_int=5
+    ['c', 's2(c-1)', 'v2(c-1)']: lstsq coefs=[1.518, 0.074, -1.154, -2.267], max_res=1.430; rounded=[2, 0, -1, -2], max_res_int=7
+    ['c', 's2(c)', 's2(c-1)', 'v2(c-1)']: lstsq coefs=[1.756, -1.43, -0.692, -1.254, 0.334], max_res=0.723; rounded=[2, -1, -1, -1, 0], max_res_int=4
+    ['c', 's2(c-1)-s2((c-1)//2)']: lstsq coefs=[1.6, 3.1, -5.3], max_res=0.400; rounded=[2, 3, -5], max_res_int=5
+    ['c', 's2(cm1_div_4)', 'v2(c-1)']: lstsq coefs=[1.529, -0.076, -1.184, -2.117], max_res=1.445; rounded=[2, 0, -1, -2], max_res_int=7
+    ['c', 's2(cm1_div_4)', 's2(c-1)']: lstsq coefs=[1.447, -0.684, 1.737, -5.263], max_res=2.000; rounded=[1, -1, 2, -5], max_res_int=6
+    ['c', 's2(cm1_div_4)']: lstsq coefs=[1.571, -1.429, -2.286], max_res=2.143; rounded=[2, -1, -2], max_res_int=7
