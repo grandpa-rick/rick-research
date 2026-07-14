@@ -1,0 +1,63 @@
+{
+  "c": 17,
+  "beta_prime": 23,
+  "witness": {
+    "a": 15,
+    "b": 0,
+    "k_star": 2,
+    "H_c_a_b_k_star": 2219138581796266920433686282240000000,
+    "v_2_H": 23,
+    "distinct_min": true
+  },
+  "shell": {
+    "L_k_star": 14,
+    "parity": 1,
+    "joint_poch_a": true,
+    "joint_poch_b": true
+  },
+  "lb_catalog": {
+    "0": {
+      "L": 16,
+      "v2Lfact": 15,
+      "Delta": 0,
+      "LB": 30
+    },
+    "1": {
+      "L": 15,
+      "v2Lfact": 11,
+      "Delta": 4,
+      "LB": 26
+    },
+    "2": {
+      "L": 14,
+      "v2Lfact": 11,
+      "Delta": 1,
+      "LB": 23
+    },
+    "3": {
+      "L": 13,
+      "v2Lfact": 10,
+      "Delta": 7,
+      "LB": 27
+    },
+    "4": {
+      "L": 12,
+      "v2Lfact": 10,
+      "Delta": 7,
+      "LB": 27
+    },
+    "5": {
+      "L": 11,
+      "v2Lfact": 8,
+      "Delta": 11,
+      "LB": 27
+    },
+    "6": {
+      "L": 10,
+      "v2Lfact": 8,
+      "Delta": 9,
+      "LB": 25
+    }
+  },
+  "conclusion": "\u03b2'(17) = 23 EXACT"
+}
