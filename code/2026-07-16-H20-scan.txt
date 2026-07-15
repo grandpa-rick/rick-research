@@ -1,0 +1,94 @@
+==============================================================================
+Day 98 (2026-07-16) — H_20 direct evaluation at witness candidates
+==============================================================================
+c = 20, T = 32, natural shell [0, 2T)^2 = [0, 64)^2
+v_2(c-i) i=1..5: [0, 1, 0, 4, 0]
+
+Predictions:
+  digit-sum: β'(20) = 34
+  β(20) = 2·19 - s_2(19) = 38 - 3 = 35
+  Day 97: h_11^(20) at (2,4) beats corner by 1
+
+-- Fitting Q_k^(20) for k in [0, 15] --
+  k=0: fit OK (0.0s)
+  k=1: fit OK (0.0s)
+  k=2: fit OK (0.1s)
+  k=3: fit OK (0.0s)
+  k=4: fit OK (0.1s)
+  k=5: fit OK (0.1s)
+  k=6: fit OK (0.1s)
+  k=7: fit OK (0.1s)
+  k=8: fit OK (0.3s)
+  k=9: fit OK (0.3s)
+  k=10: fit OK (0.5s)
+  k=11: fit OK (0.6s)
+  k=12: fit OK (1.1s)
+  k=13: fit OK (1.2s)
+  k=14: fit OK (2.6s)
+  k=15: fit OK (2.6s)
+
+-- Scanning 33 witness candidates --
+                   C1_(T-2,0)_kstar=1 (a,b,k*)=(30, 0, 1) v_H=  39 min_per_k=  34 distinct=False
+                     C4_(0,0)_kstar=1 (a,b,k*)=( 0, 0, 1) v_H=  36 min_per_k=  35 distinct=False
+                   C1_(T-2,0)_kstar=3 (a,b,k*)=(30, 0, 3) v_H=  39 min_per_k=  34 distinct=False
+                     C4_(0,0)_kstar=3 (a,b,k*)=( 0, 0, 3) v_H=None min_per_k=  34 distinct=False
+                   C1_(T-2,0)_kstar=5 (a,b,k*)=(30, 0, 5) v_H=  37 min_per_k=  34 distinct=False
+                     C4_(0,0)_kstar=5 (a,b,k*)=( 0, 0, 5) v_H=None min_per_k=  35 distinct=False
+                   C1_(T-2,0)_kstar=7 (a,b,k*)=(30, 0, 7) v_H=  37 min_per_k=  34 distinct=False
+                     C4_(0,0)_kstar=7 (a,b,k*)=( 0, 0, 7) v_H=None min_per_k=  34 distinct=False
+                   C1_(T-2,0)_kstar=9 (a,b,k*)=(30, 0, 9) v_H=  38 min_per_k=  34 distinct=False
+                     C4_(0,0)_kstar=9 (a,b,k*)=( 0, 0, 9) v_H=None min_per_k=  35 distinct=False
+                  C1_(T-2,0)_kstar=11 (a,b,k*)=(30, 0,11) v_H=  38 min_per_k=  34 distinct=False
+                    C4_(0,0)_kstar=11 (a,b,k*)=( 0, 0,11) v_H=None min_per_k=  34 distinct=False
+                  C1_(T-2,0)_kstar=13 (a,b,k*)=(30, 0,13) v_H=  37 min_per_k=  34 distinct=False
+                    C4_(0,0)_kstar=13 (a,b,k*)=( 0, 0,13) v_H=None min_per_k=  35 distinct=False
+                  C1_(T-2,0)_kstar=15 (a,b,k*)=(30, 0,15) v_H=  37 min_per_k=  34 distinct=False
+                    C4_(0,0)_kstar=15 (a,b,k*)=( 0, 0,15) v_H=None min_per_k=  34 distinct=False
+               interior_(2,4)_kstar=1 (a,b,k*)=( 2, 4, 1) v_H=  34 min_per_k=  34 distinct=True
+               interior_(2,4)_kstar=3 (a,b,k*)=( 2, 4, 3) v_H=  34 min_per_k=  34 distinct=False
+               interior_(2,4)_kstar=5 (a,b,k*)=( 2, 4, 5) v_H=  34 min_per_k=  34 distinct=False
+               interior_(2,4)_kstar=7 (a,b,k*)=( 2, 4, 7) v_H=  34 min_per_k=  34 distinct=False
+               interior_(2,4)_kstar=9 (a,b,k*)=( 2, 4, 9) v_H=None min_per_k=  33 distinct=False
+              interior_(2,4)_kstar=11 (a,b,k*)=( 2, 4,11) v_H=None min_per_k=  33 distinct=False
+              interior_(2,4)_kstar=13 (a,b,k*)=( 2, 4,13) v_H=None min_per_k=  33 distinct=False
+              interior_(2,4)_kstar=15 (a,b,k*)=( 2, 4,15) v_H=None min_per_k=  33 distinct=False
+              interior_(2,8)_kstar=11 (a,b,k*)=( 2, 8,11) v_H=  33 min_per_k=  33 distinct=False
+              interior_(4,4)_kstar=11 (a,b,k*)=( 4, 4,11) v_H=None min_per_k=  33 distinct=False
+              interior_(4,8)_kstar=11 (a,b,k*)=( 4, 8,11) v_H=  36 min_per_k=  34 distinct=False
+              interior_(2,8)_kstar=13 (a,b,k*)=( 2, 8,13) v_H=None min_per_k=  33 distinct=False
+              interior_(4,4)_kstar=13 (a,b,k*)=( 4, 4,13) v_H=None min_per_k=  34 distinct=False
+              interior_(4,8)_kstar=13 (a,b,k*)=( 4, 8,13) v_H=  35 min_per_k=  35 distinct=False
+              interior_(2,8)_kstar=15 (a,b,k*)=( 2, 8,15) v_H=None min_per_k=  33 distinct=False
+              interior_(4,4)_kstar=15 (a,b,k*)=( 4, 4,15) v_H=None min_per_k=  33 distinct=False
+              interior_(4,8)_kstar=15 (a,b,k*)=( 4, 8,15) v_H=None min_per_k=  33 distinct=False
+
+==============================================================================
+AGGREGATE — min v_2(H_20) over attempted witnesses
+==============================================================================
+  min v_2(H_20) seen = 33
+  Achieved by:
+                     interior_(2,8)_kstar=11  (a,b,k*)=(2,8,11)  v_H = 33  distinct = False
+
+  ⇒ DIGIT-SUM FALSIFIED at c=20: found v_2(H_20) = 33 < 34
+
+==============================================================================
+Interior (2, 4) v_2 progression across k*:
+==============================================================================
+  k*= 1: v_2(H_20) =  34, per-k v_2 = [35, 34]
+  k*= 3: v_2(H_20) =  34, per-k v_2 = [35, 34, 34, 34]
+  k*= 5: v_2(H_20) =  34, per-k v_2 = [35, 34, 35, 35, 36, 35]
+  k*= 7: v_2(H_20) =  34, per-k v_2 = [35, 34, 34, 34, 36, 35, 36, 38]
+
+==============================================================================
+Corner (T-2, 0) = (30, 0) v_2 progression across k*:
+==============================================================================
+  k*= 1: v_2(H_20) =  39, per-k v_2 = [34, 34]
+  k*= 3: v_2(H_20) =  39, per-k v_2 = [34, 34, 34, 34]
+  k*= 5: v_2(H_20) =  37, per-k v_2 = [34, 34, 35, 35, 34, 34]
+  k*= 7: v_2(H_20) =  37, per-k v_2 = [34, 34, 34, 34, 34, 34, 34, 34]
+  k*= 9: v_2(H_20) =  38, per-k v_2 = [34, 34, 36, 36, 35, 35, 36, 36, 34, 34]
+  k*=11: v_2(H_20) =  38, per-k v_2 = [34, 34, 34, 34, 35, 35, 35, 35, 34, 34, 34, 34]
+  k*=13: v_2(H_20) =  37, per-k v_2 = [34, 34, 35, 35, 34, 34, 36, 36, 34, 34, 35, 35, 34, 34]
+  k*=15: v_2(H_20) =  37, per-k v_2 = [34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34, 34]
+
+Saved /home/agent/projects/code/2026-07-16-H20-scan.json
