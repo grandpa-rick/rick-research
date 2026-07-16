@@ -1,0 +1,13 @@
+Day 99 — Interior anchor c ∈ {11, 13}
+============================================================
+
+c = 11: β'(11) = 12 (confirmed)
+  anchor (a*, b*, j*, k*) = (1, 2, 6, 6)
+  sweep min v_2 = 12
+  shifts from corners: {'C4': {'delta_a': 1, 'delta_b': 2}, 'C1': {'delta_a': -13, 'delta_b': 2}, 'C2': {'delta_a': 1, 'delta_b': -12}, 'C3': {'delta_a': -13, 'delta_b': -12}}
+
+c = 13: β'(13) = 16 (confirmed)
+  anchor (a*, b*, j*, k*) = (7, 0, 6, 6)
+  sweep min v_2 = 16
+  shifts from corners: {'C4': {'delta_a': 7, 'delta_b': 0}, 'C1': {'delta_a': -7, 'delta_b': 0}, 'C2': {'delta_a': 7, 'delta_b': -14}, 'C3': {'delta_a': -7, 'delta_b': -14}}
+

@@ -1,0 +1,16 @@
+Day 99 CROWN JEWEL — c = 68
+============================================================
+
+c = 68, T = 128
+v_2(c-4) = 6, predicted gap = 3
+
+  k min_corner  true_min  gap
+ 11        130       127    3
+  9        130       127    3
+ 13        130       127    3
+ 15        130       127    3
+ 17        130       128    2
+
+Best gap: 3 at k = 11
+VERDICT: CONFIRMED — linear scaling gap = v_2(c-4) - 3 holds at c ∈ {20, 36, 68}
+Interior winner at best k: [2, 4, 127]
