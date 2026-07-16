@@ -1,0 +1,351 @@
+{
+  "note": "Day 100 anchor uniqueness sweep at c \u2261 2 mod 4, c \u2208 [130, 200]",
+  "date": "2026-07-16",
+  "c_vals": [
+    134,
+    138,
+    142,
+    146,
+    150,
+    154,
+    158,
+    162,
+    166,
+    170,
+    174,
+    178,
+    182,
+    186,
+    190,
+    194,
+    198
+  ],
+  "ab_max": 6,
+  "j_max": 12,
+  "k_max": 12,
+  "per_c": [
+    {
+      "c": 134,
+      "beta": 263,
+      "Delta": 2,
+      "u_c": 261,
+      "min_over_ab": 257,
+      "min_ab": [
+        4,
+        6,
+        12
+      ],
+      "clean": false,
+      "num_violations": 2,
+      "violations_top5": [
+        {
+          "a": 4,
+          "b": 6,
+          "min_v2": 257,
+          "best_j": 12
+        },
+        {
+          "a": 5,
+          "b": 5,
+          "min_v2": 257,
+          "best_j": 12
+        }
+      ]
+    },
+    {
+      "c": 138,
+      "beta": 271,
+      "Delta": 3,
+      "u_c": 268,
+      "min_over_ab": 268,
+      "min_ab": [
+        0,
+        4,
+        4
+      ],
+      "clean": true,
+      "num_violations": 0,
+      "violations_top5": []
+    },
+    {
+      "c": 142,
+      "beta": 278,
+      "Delta": 3,
+      "u_c": 275,
+      "min_over_ab": 275,
+      "min_ab": [
+        0,
+        0,
+        0
+      ],
+      "clean": true,
+      "num_violations": 0,
+      "violations_top5": []
+    },
+    {
+      "c": 146,
+      "beta": 287,
+      "Delta": 4,
+      "u_c": 283,
+      "min_over_ab": 283,
+      "min_ab": [
+        0,
+        4,
+        4
+      ],
+      "clean": true,
+      "num_violations": 0,
+      "violations_top5": []
+    },
+    {
+      "c": 150,
+      "beta": 294,
+      "Delta": 3,
+      "u_c": 291,
+      "min_over_ab": 290,
+      "min_ab": [
+        4,
+        6,
+        12
+      ],
+      "clean": false,
+      "num_violations": 2,
+      "violations_top5": [
+        {
+          "a": 4,
+          "b": 6,
+          "min_v2": 290,
+          "best_j": 12
+        },
+        {
+          "a": 5,
+          "b": 5,
+          "min_v2": 290,
+          "best_j": 12
+        }
+      ]
+    },
+    {
+      "c": 154,
+      "beta": 302,
+      "Delta": 4,
+      "u_c": 298,
+      "min_over_ab": 298,
+      "min_ab": [
+        0,
+        4,
+        4
+      ],
+      "clean": true,
+      "num_violations": 0,
+      "violations_top5": []
+    },
+    {
+      "c": 158,
+      "beta": 309,
+      "Delta": 4,
+      "u_c": 305,
+      "min_over_ab": 305,
+      "min_ab": [
+        0,
+        0,
+        0
+      ],
+      "clean": true,
+      "num_violations": 0,
+      "violations_top5": []
+    },
+    {
+      "c": 162,
+      "beta": 319,
+      "Delta": 5,
+      "u_c": 314,
+      "min_over_ab": 314,
+      "min_ab": [
+        0,
+        4,
+        4
+      ],
+      "clean": true,
+      "num_violations": 0,
+      "violations_top5": []
+    },
+    {
+      "c": 166,
+      "beta": 326,
+      "Delta": 3,
+      "u_c": 323,
+      "min_over_ab": 321,
+      "min_ab": [
+        4,
+        6,
+        12
+      ],
+      "clean": false,
+      "num_violations": 2,
+      "violations_top5": [
+        {
+          "a": 4,
+          "b": 6,
+          "min_v2": 321,
+          "best_j": 12
+        },
+        {
+          "a": 5,
+          "b": 5,
+          "min_v2": 321,
+          "best_j": 12
+        }
+      ]
+    },
+    {
+      "c": 170,
+      "beta": 334,
+      "Delta": 4,
+      "u_c": 330,
+      "min_over_ab": 330,
+      "min_ab": [
+        0,
+        4,
+        4
+      ],
+      "clean": true,
+      "num_violations": 0,
+      "violations_top5": []
+    },
+    {
+      "c": 174,
+      "beta": 341,
+      "Delta": 4,
+      "u_c": 337,
+      "min_over_ab": 337,
+      "min_ab": [
+        0,
+        0,
+        0
+      ],
+      "clean": true,
+      "num_violations": 0,
+      "violations_top5": []
+    },
+    {
+      "c": 178,
+      "beta": 350,
+      "Delta": 5,
+      "u_c": 345,
+      "min_over_ab": 345,
+      "min_ab": [
+        0,
+        4,
+        4
+      ],
+      "clean": true,
+      "num_violations": 0,
+      "violations_top5": []
+    },
+    {
+      "c": 182,
+      "beta": 357,
+      "Delta": 4,
+      "u_c": 353,
+      "min_over_ab": 352,
+      "min_ab": [
+        4,
+        6,
+        12
+      ],
+      "clean": false,
+      "num_violations": 2,
+      "violations_top5": [
+        {
+          "a": 4,
+          "b": 6,
+          "min_v2": 352,
+          "best_j": 12
+        },
+        {
+          "a": 5,
+          "b": 5,
+          "min_v2": 352,
+          "best_j": 12
+        }
+      ]
+    },
+    {
+      "c": 186,
+      "beta": 365,
+      "Delta": 5,
+      "u_c": 360,
+      "min_over_ab": 360,
+      "min_ab": [
+        0,
+        4,
+        4
+      ],
+      "clean": true,
+      "num_violations": 0,
+      "violations_top5": []
+    },
+    {
+      "c": 190,
+      "beta": 372,
+      "Delta": 5,
+      "u_c": 367,
+      "min_over_ab": 367,
+      "min_ab": [
+        0,
+        0,
+        0
+      ],
+      "clean": true,
+      "num_violations": 0,
+      "violations_top5": []
+    },
+    {
+      "c": 194,
+      "beta": 383,
+      "Delta": 6,
+      "u_c": 377,
+      "min_over_ab": 377,
+      "min_ab": [
+        0,
+        4,
+        4
+      ],
+      "clean": true,
+      "num_violations": 0,
+      "violations_top5": []
+    },
+    {
+      "c": 198,
+      "beta": 390,
+      "Delta": 3,
+      "u_c": 387,
+      "min_over_ab": 384,
+      "min_ab": [
+        4,
+        6,
+        12
+      ],
+      "clean": false,
+      "num_violations": 2,
+      "violations_top5": [
+        {
+          "a": 4,
+          "b": 6,
+          "min_v2": 384,
+          "best_j": 12
+        },
+        {
+          "a": 5,
+          "b": 5,
+          "min_v2": 384,
+          "best_j": 12
+        }
+      ]
+    }
+  ],
+  "clean_count": 12,
+  "total_violations": 10,
+  "verdict": "VIOLATION \u2014 10 counterexamples found; investigate."
+}

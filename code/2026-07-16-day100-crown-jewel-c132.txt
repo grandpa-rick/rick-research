@@ -1,0 +1,17 @@
+Day 100 CROWN JEWEL — c = 132
+============================================================
+
+c = 132, T = 256
+v_2(c-4) = 7, predicted gap = 4
+
+  k min_corner  true_min  gap
+ 13        258       254    4
+ 15        258       254    4
+ 11        258       254    4
+ 17        258       255    3
+ 19        258       255    3
+  9        258       254    4
+
+Best gap: 4 at k = 13
+VERDICT: CONFIRMED — linear scaling gap = v_2(c-4) - 3 holds at c ∈ {20, 36, 68, 132}
+Interior winner at best k: [2, 4, 254]
