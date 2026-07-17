@@ -1,0 +1,55 @@
+Day 101 — c-odd j* = 7 verification sweep
+============================================================
+
+c_vals (this cycle): [21, 23, 25, 27, 29]
+Prior data (Day 100 catalog): c=15 (β'=19 at j=7),
+  c=17 (j-set [2,3,6,7,10]), c=19 (j-set [6,7]).
+
+Per-c results:
+   c |  β(c) | β'(c) |     argmin j-set     | j=7? | delta(j7-β')
+  15 |    25 |    19 | {7}                  | YES  | 0
+  17 |    31 |    23 | {2, 3, 6, 7, 10}     | YES  | 0
+  19 |    34 |    26 | {6, 7}               | YES  | 0
+  21 |    38 |    30 | {10, 11}             | NO   | 1
+  23 |    41 |    34 | {7}                  | YES  | 0
+  25 |    46 |    38 | {10, 11}             | NO   | 1
+  27 |    49 |    42 | {6, 7, 11}           | YES  | 0
+  29 |    53 |    46 | {6, 7, 10, 11}       | YES  | 0
+
+Confirmations: 6/8 total (3/5 this cycle).
+Exceptions: c = 21, c = 25. Both delta = 1.
+
+Structural inspection of exceptions:
+   c |  binary  | s_2(c) | c-1 mod 8 | v_2(c-1) | v_2(c-3)
+  15 | 01111    |   4    |    6      |    1     |    2
+  17 | 10001    |   2    |    0      |    4     |    1
+  19 | 10011    |   3    |    2      |    1     |    4
+  21 | 10101    |   3    |    4      |    2     |    1  <-- fail
+  23 | 10111    |   4    |    6      |    1     |    2
+  25 | 11001    |   3    |    0      |    3     |    1  <-- fail
+  27 | 11011    |   4    |    2      |    1     |    3
+  29 | 11101    |   4    |    4      |    2     |    1
+
+Patterns tried:
+- s_2(c)=3 → fail? NO, c=19 (s_2=3) works.
+- v_2(c-3)=1 AND s_2(c)=3? c ∈ {21, 25} match. c=19 escapes with
+  v_2(c-3)=4. c=17 has v_2(c-3)=1 but s_2=2.
+- Working hypothesis: exceptions have s_2(c) = 3 AND v_2(c-3) = 1
+  simultaneously. c=21 and c=25 are the only c ∈ [15, 29] with
+  this joint condition.
+
+Next-check predictions (using this hypothesis):
+- c=31: s_2=5 → j=7 works.
+- c=33: s_2=2 → j=7 works.
+- c=35: s_2=3, v_2(32)=5 → j=7 works (v_2(c-3) is anomalous, escapes).
+- c=37: s_2=3, v_2(34)=1 → j=7 FAILS predicted.
+- c=39: s_2=4 → j=7 works.
+
+Registry action:
+- `c-odd-jstar-7`: 3/10 → 6/10 (grew by 3 net, minus 2 exceptions).
+  With 8 data points, hunch strength increases but exceptions block
+  clean promotion.
+- Register new hunch: `c-odd-jstar-not-7-when-s2c-eq-3-and-v2cm3-eq-1`
+  at 2/10 (predicts c=37 will fail).
+- These two hunches together partition the c-odd space cleanly on
+  current data.
