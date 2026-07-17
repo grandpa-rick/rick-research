@@ -1,0 +1,27 @@
+Day 101 — anchor-46 c ≡ 6 mod 16 growth sweep
+============================================================
+
+c_vals (new): [118, 214, 230, 246, 262, 278]
+(a, b) targets: [(4, 6), (5, 5), (5, 7), (6, 6)]
+j_range: [8, 9, 10, 11, 12, 13, 14, 15, 16]
+
+   c |  u(c) | (4,6,12).v_2 | delta | v_2(c-6)  status
+ 118 |   225 |          224 |     1 |        4  CONFIRM
+ 214 |   417 |          416 |     1 |        4  CONFIRM
+ 230 |   449 |          447 |     2 |        5  CONFIRM
+ 246 |   479 |          478 |     1 |        4  CONFIRM
+ 262 |   517 |          512 |     5 |        8  CONFIRM
+ 278 |   547 |          546 |     1 |        4  CONFIRM
+
+Confirmations this cycle: 6/6
+Total confirmations (prior + this): 11
+
+Prior Day 100 data:
+  c=134: v_2=(4,6,12)=257, u(c)=261, delta=4
+  c=150: v_2=(4,6,12)=290, u(c)=291, delta=1
+  c=166: v_2=(4,6,12)=321, u(c)=323, delta=2
+  c=182: v_2=(4,6,12)=352, u(c)=353, delta=1
+  c=198: v_2=(4,6,12)=384, u(c)=387, delta=3
+
+CLEAN — 6/6 new c-values confirm (4,6,j=12) beats (0,2)
+Total confirmations (prior + new): 11
