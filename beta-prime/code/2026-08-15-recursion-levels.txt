@@ -1,0 +1,224 @@
+Iterated Q_{2R} recursion — levels 0..R at R=3 and R=4.
+Hypothesis at level k:
+  T_k(a, b, c) = ( T_{k-1} - P_tilde^{(k-1)}(c) ) / ( (a + 3 - k)(b + 2 - k) )
+  T_k(a = k-2, b, c) = T_k(a, b = k-1, c) = P_tilde^{(k)}(c),
+  a polynomial in c alone (with (c-R)^2 as a factor for 1 <= k < R).
+At level k=R, expect P_tilde^{(R)}(R) = (-1)^R (2R)!.
+
+========================================================================
+RECURSION LEVELS TEST, R = 3, running levels 0..3
+========================================================================
+Building M_j tables up to j = 8 ...
+  built in 0.00s.
+
+Fitting Q_{6}(a,b,c) at c = 8 .. 23
+  fit 16 c-values in 2.6s
+
+P_tilde_R^(0)(c) = c*(c - 6)*(c - 5)**2*(c - 4)**2*(c - 3)**2*(c - 2)**2*(c - 1)**2
+  Leading coef: 1
+
+----------------------------------------------------------------------
+LEVEL 1:  peeling (a + 2)(b + 1)  from T_0 - P_tilde^(0)
+----------------------------------------------------------------------
+  Division by (a - -2)(b - -1) succeeded for all c.
+
+  Check A: T_1(a = -1, b, c) — b-independence?
+    Verdict A: YES (b-indep)
+  Check B: T_1(a, b = 0, c) — a-independence?
+    Verdict B: YES (a-indep)
+    Verdict C (A==B): AGREE
+    Fitted degree = 9
+    P_tilde_R^(1)(c) = -30*c**9 + 720*c**8 - 7380*c**7 + 42120*c**6 - 146070*c**5 + 314280*c**4 - 408120*c**3 + 290880*c**2 - 86400*c
+    Factored:            -30*c*(c - 5)*(c - 4)**2*(c - 3)**2*(c - 2)**2*(c - 1)
+    Leading coefficient: -30
+  (c - 3)^2 IS a factor.
+  Multiplicity of (c-3) root = 2
+
+----------------------------------------------------------------------
+LEVEL 2:  peeling (a + 1)(b + 0)  from T_1 - P_tilde^(1)
+----------------------------------------------------------------------
+  Division by (a - -1)(b - 0) succeeded for all c.
+
+  Check A: T_2(a = 0, b, c) — b-independence?
+    Verdict A: YES (b-indep)
+  Check B: T_2(a, b = 1, c) — a-independence?
+    Verdict B: YES (a-indep)
+    Verdict C (A==B): AGREE
+    Fitted degree = 6
+    P_tilde_R^(2)(c) = 180*c**6 - 2340*c**5 + 11700*c**4 - 27900*c**3 + 31320*c**2 - 12960*c
+    Factored:            180*c*(c - 4)*(c - 3)**2*(c - 2)*(c - 1)
+    Leading coefficient: 180
+  (c - 3)^2 IS a factor.
+  Multiplicity of (c-3) root = 2
+
+----------------------------------------------------------------------
+LEVEL 3:  peeling (a + 0)(b + -1)  from T_2 - P_tilde^(2)
+----------------------------------------------------------------------
+  Division by (a - 0)(b - 1) succeeded for all c.
+
+  Check A: T_3(a = 1, b, c) — b-independence?
+    Verdict A: YES (b-indep)
+  Check B: T_3(a, b = 2, c) — a-independence?
+    Verdict B: YES (a-indep)
+    Verdict C (A==B): AGREE
+    Fitted degree = 3
+    P_tilde_R^(3)(c) = -120*c**3 + 360*c**2 - 240*c
+    Factored:            -120*c*(c - 2)*(c - 1)
+    Leading coefficient: -120
+
+  TERMINAL LEVEL k = R = 3:
+  T_R at c = R = 3: expect (-1)^3 * (2R)! = -720
+    P_tilde_R^(3)(c=3) = -720
+    Expected (-1)^3 * (6)! = -720
+    Match: True
+
+  T_R(a,b,c) shape at each c (should perhaps be a constant in a,b at c = R, but generally a polynomial):
+    c=8: total_deg=0
+    c=9: total_deg=0
+    c=10: total_deg=0
+    c=11: total_deg=0
+    c=12: total_deg=0
+    Full T_R at c=8:
+      -40320
+
+----------------------------------------------------------------------
+SUMMARY for R = 3
+----------------------------------------------------------------------
+  Level 0: P_tilde_R^(0)(c) = c*(c - 6)*(c - 5)**2*(c - 4)**2*(c - 3)**2*(c - 2)**2*(c - 1)**2
+           Leading coef: 1
+  Level 1: P_tilde_R^(1)(c) = -30*c*(c - 5)*(c - 4)**2*(c - 3)**2*(c - 2)**2*(c - 1)
+           Leading coef: -30
+  Level 2: P_tilde_R^(2)(c) = 180*c*(c - 4)*(c - 3)**2*(c - 2)*(c - 1)
+           Leading coef: 180
+  Level 3: P_tilde_R^(3)(c) = -120*c*(c - 2)*(c - 1)
+           Leading coef: -120
+
+R=3 total time: 3.1s
+
+========================================================================
+RECURSION LEVELS TEST, R = 4, running levels 0..4
+========================================================================
+Building M_j tables up to j = 10 ...
+  built in 0.00s.
+
+Fitting Q_{8}(a,b,c) at c = 10 .. 29
+  fit 20 c-values in 6.7s
+
+P_tilde_R^(0)(c) = c*(c - 8)*(c - 7)**2*(c - 6)**2*(c - 5)**2*(c - 4)**2*(c - 3)**2*(c - 2)**2*(c - 1)**2
+  Leading coef: 1
+
+----------------------------------------------------------------------
+LEVEL 1:  peeling (a + 2)(b + 1)  from T_0 - P_tilde^(0)
+----------------------------------------------------------------------
+  Division by (a - -2)(b - -1) succeeded for all c.
+
+  Check A: T_1(a = -1, b, c) — b-independence?
+    Verdict A: YES (b-indep)
+  Check B: T_1(a, b = 0, c) — a-independence?
+    Verdict B: YES (a-indep)
+    Verdict C (A==B): AGREE
+    Fitted degree = 13
+    P_tilde_R^(1)(c) = -56*c**13 + 2688*c**12 - 58072*c**11 + 745920*c**10 - 6337128*c**9 + 37465344*c**8 - 157809736*c**7 + 476333760*c**6 - 1020372416*c**5 + 1508871168*c**4 - 1457188992*c**3 + 821560320*c**2 - 203212800*c
+    Factored:            -56*c*(c - 7)*(c - 6)**2*(c - 5)**2*(c - 4)**2*(c - 3)**2*(c - 2)**2*(c - 1)
+    Leading coefficient: -56
+  (c - 4)^2 IS a factor.
+  Multiplicity of (c-4) root = 2
+
+----------------------------------------------------------------------
+LEVEL 2:  peeling (a + 1)(b + 0)  from T_1 - P_tilde^(1)
+----------------------------------------------------------------------
+  Division by (a - -1)(b - 0) succeeded for all c.
+
+  Check A: T_2(a = 0, b, c) — b-independence?
+    Verdict A: YES (b-indep)
+  Check B: T_2(a, b = 1, c) — a-independence?
+    Verdict B: YES (a-indep)
+    Verdict C (A==B): AGREE
+    Fitted degree = 10
+    P_tilde_R^(2)(c) = 840*c**10 - 27720*c**9 + 398160*c**8 - 3260880*c**7 + 16740360*c**6 - 55689480*c**5 + 119545440*c**4 - 158749920*c**3 + 117331200*c**2 - 36288000*c
+    Factored:            840*c*(c - 6)*(c - 5)**2*(c - 4)**2*(c - 3)**2*(c - 2)*(c - 1)
+    Leading coefficient: 840
+  (c - 4)^2 IS a factor.
+  Multiplicity of (c-4) root = 2
+
+----------------------------------------------------------------------
+LEVEL 3:  peeling (a + 0)(b + -1)  from T_2 - P_tilde^(2)
+----------------------------------------------------------------------
+  Division by (a - 0)(b - 1) succeeded for all c.
+
+  Check A: T_3(a = 1, b, c) — b-independence?
+    Verdict A: YES (b-indep)
+  Check B: T_3(a, b = 2, c) — a-independence?
+    Verdict B: YES (a-indep)
+    Verdict C (A==B): AGREE
+    Fitted degree = 7
+    P_tilde_R^(3)(c) = -3360*c**7 + 63840*c**6 - 487200*c**5 + 1898400*c**4 - 3944640*c**3 + 4085760*c**2 - 1612800*c
+    Factored:            -3360*c*(c - 5)*(c - 4)**2*(c - 3)*(c - 2)*(c - 1)
+    Leading coefficient: -3360
+  (c - 4)^2 IS a factor.
+  Multiplicity of (c-4) root = 2
+
+----------------------------------------------------------------------
+LEVEL 4:  peeling (a + -1)(b + -2)  from T_3 - P_tilde^(3)
+----------------------------------------------------------------------
+  Division by (a - 1)(b - 2) succeeded for all c.
+
+  Check A: T_4(a = 2, b, c) — b-independence?
+    Verdict A: YES (b-indep)
+  Check B: T_4(a, b = 3, c) — a-independence?
+    Verdict B: YES (a-indep)
+    Verdict C (A==B): AGREE
+    Fitted degree = 4
+    P_tilde_R^(4)(c) = 1680*c**4 - 10080*c**3 + 18480*c**2 - 10080*c
+    Factored:            1680*c*(c - 3)*(c - 2)*(c - 1)
+    Leading coefficient: 1680
+
+  TERMINAL LEVEL k = R = 4:
+  T_R at c = R = 4: expect (-1)^4 * (2R)! = 40320
+    P_tilde_R^(4)(c=4) = 40320
+    Expected (-1)^4 * (8)! = 40320
+    Match: True
+
+  T_R(a,b,c) shape at each c (should perhaps be a constant in a,b at c = R, but generally a polynomial):
+    c=10: total_deg=0
+    c=11: total_deg=0
+    c=12: total_deg=0
+    c=13: total_deg=0
+    c=14: total_deg=0
+    Full T_R at c=10:
+      8467200
+
+----------------------------------------------------------------------
+SUMMARY for R = 4
+----------------------------------------------------------------------
+  Level 0: P_tilde_R^(0)(c) = c*(c - 8)*(c - 7)**2*(c - 6)**2*(c - 5)**2*(c - 4)**2*(c - 3)**2*(c - 2)**2*(c - 1)**2
+           Leading coef: 1
+  Level 1: P_tilde_R^(1)(c) = -56*c*(c - 7)*(c - 6)**2*(c - 5)**2*(c - 4)**2*(c - 3)**2*(c - 2)**2*(c - 1)
+           Leading coef: -56
+  Level 2: P_tilde_R^(2)(c) = 840*c*(c - 6)*(c - 5)**2*(c - 4)**2*(c - 3)**2*(c - 2)*(c - 1)
+           Leading coef: 840
+  Level 3: P_tilde_R^(3)(c) = -3360*c*(c - 5)*(c - 4)**2*(c - 3)*(c - 2)*(c - 1)
+           Leading coef: -3360
+  Level 4: P_tilde_R^(4)(c) = 1680*c*(c - 3)*(c - 2)*(c - 1)
+           Leading coef: 1680
+
+R=4 total time: 8.1s
+
+========================================================================
+OVERALL SUMMARY
+========================================================================
+
+R = 3:
+  levels completed: 0..3
+    level 0: leading coef = 1
+    level 1: leading coef = -30
+    level 2: leading coef = 180
+    level 3: leading coef = -120
+
+R = 4:
+  levels completed: 0..4
+    level 0: leading coef = 1
+    level 1: leading coef = -56
+    level 2: leading coef = 840
+    level 3: leading coef = -3360
+    level 4: leading coef = 1680

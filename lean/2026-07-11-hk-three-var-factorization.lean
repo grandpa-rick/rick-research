@@ -474,4 +474,20 @@ theorem hk_three_var_factorization_boundary_direct
   rw [pochL_boundary hkc, pochR_boundary hkc] at h
   linarith
 
+/-! ### Non-vacuity
+
+`HFactorization` is inhabited: taking `H = 0` and `P = 0` satisfies the
+identity trivially. This shows the hypothesis of the main theorem does not
+force a contradiction (Day-89 note to Robin, option 2 partial). A genuine
+non-trivial witness — Clio's `H_c` with the Sym-side `P_j` — is a much
+larger formalisation project (Day-84 §6.5 + Day-86 Sym-side identities). -/
+
+/-- The zero H-function `H a b j = 0` and zero P-polynomial `P a b c = 0`
+trivially satisfy `HFactorization`, so the hypothesis of the main theorem
+is not vacuous. -/
+lemma HFactorization_zero (c : ℕ) :
+    HFactorization (fun _ _ _ => (0 : ℤ)) (fun _ _ _ => (0 : ℤ)) c := by
+  intro j a b _
+  simp
+
 end HkThreeVar

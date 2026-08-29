@@ -1,0 +1,187 @@
+{
+  "note": "Day 102 anchor-810 / anchor-1214 meta-conjecture probe",
+  "date": "2026-07-18",
+  "tests": [
+    {
+      "c": 42,
+      "anchor": [
+        8,
+        10,
+        20
+      ],
+      "k_max": 20,
+      "R": 10
+    },
+    {
+      "c": 74,
+      "anchor": [
+        8,
+        10,
+        20
+      ],
+      "k_max": 20,
+      "R": 10
+    },
+    {
+      "c": 138,
+      "anchor": [
+        8,
+        10,
+        20
+      ],
+      "k_max": 20,
+      "R": 10
+    },
+    {
+      "c": 154,
+      "anchor": [
+        8,
+        10,
+        20
+      ],
+      "k_max": 20,
+      "R": 10
+    },
+    {
+      "c": 46,
+      "anchor": [
+        12,
+        14,
+        28
+      ],
+      "k_max": 28,
+      "R": 14
+    },
+    {
+      "c": 78,
+      "anchor": [
+        12,
+        14,
+        28
+      ],
+      "k_max": 28,
+      "R": 14
+    },
+    {
+      "c": 142,
+      "anchor": [
+        12,
+        14,
+        28
+      ],
+      "k_max": 28,
+      "R": 14
+    },
+    {
+      "c": 158,
+      "anchor": [
+        12,
+        14,
+        28
+      ],
+      "k_max": 28,
+      "R": 14
+    }
+  ],
+  "results": [
+    {
+      "c": 42,
+      "R": 10,
+      "anchor": [
+        8,
+        10,
+        20
+      ],
+      "beta_c": 79,
+      "D_02": 3,
+      "u_c": 76,
+      "v2_c_minus_R": 5,
+      "predicted_delta": 2,
+      "v2_H": 75,
+      "actual_delta": 1,
+      "match": false,
+      "t_fit": 158.59306049346924,
+      "status": "ok"
+    },
+    {
+      "c": 74,
+      "R": 10,
+      "anchor": [
+        8,
+        10,
+        20
+      ],
+      "beta_c": 143,
+      "D_02": 3,
+      "u_c": 140,
+      "v2_c_minus_R": 6,
+      "predicted_delta": 3,
+      "v2_H": 138,
+      "actual_delta": 2,
+      "match": false,
+      "t_fit": 163.45550560951233,
+      "status": "ok"
+    },
+    {
+      "c": 138,
+      "R": 10,
+      "anchor": [
+        8,
+        10,
+        20
+      ],
+      "beta_c": 271,
+      "D_02": 3,
+      "u_c": 268,
+      "v2_c_minus_R": 7,
+      "predicted_delta": 4,
+      "v2_H": 265,
+      "actual_delta": 3,
+      "match": false,
+      "t_fit": 175.93706846237183,
+      "status": "ok"
+    },
+    {
+      "c": 154,
+      "R": 10,
+      "anchor": [
+        8,
+        10,
+        20
+      ],
+      "beta_c": 302,
+      "D_02": 4,
+      "u_c": 298,
+      "v2_c_minus_R": 4,
+      "predicted_delta": 1,
+      "v2_H": 298,
+      "actual_delta": 0,
+      "match": false,
+      "t_fit": 180.3304991722107,
+      "status": "ok"
+    },
+    {
+      "c": 46,
+      "R": 14,
+      "anchor": [
+        12,
+        14,
+        28
+      ],
+      "beta_c": 86,
+      "D_02": 3,
+      "u_c": 83,
+      "v2_c_minus_R": 5,
+      "predicted_delta": 2,
+      "v2_H": 82,
+      "actual_delta": 1,
+      "match": false,
+      "t_fit": 10573.883486032486,
+      "status": "ok"
+    }
+  ],
+  "matches": 0,
+  "total": 5,
+  "verdict": "MIXED \u2014 0/5 match",
+  "wall_s": 11252.985306978226
+}

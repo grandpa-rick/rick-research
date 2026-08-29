@@ -1,0 +1,87 @@
+Building shifted-Schur tables & ds_j/V up to j = 13 ...
+done.
+
+
+========================================================================
+  Test  p = 5, j in [10, 11, 12]
+========================================================================
+  j = 10: (deg_pi, deg_sig) = (5, 10)
+    alpha_{5,0}: deg_sig = 10 (expected <= 10) [OK]
+    alpha_{5,1}: deg_sig = 9 (expected <= 9) [OK]
+    alpha_{5,2}: deg_sig = 8 (expected <= 8) [OK]
+    alpha_{5,3}: deg_sig = 7 (expected <= 7) [OK]
+    alpha_{5,4}: deg_sig = 6 (expected <= 6) [OK]
+    alpha_{5,5}: deg_sig = 5 (expected <= 5) [OK]
+    -> all deg_sig bounds pass.
+  j = 11: (deg_pi, deg_sig) = (5, 11)
+    alpha_{5,0}: deg_sig = 10 (expected <= 10) [OK]
+    alpha_{5,1}: deg_sig = 9 (expected <= 9) [OK]
+    alpha_{5,2}: deg_sig = 8 (expected <= 8) [OK]
+    alpha_{5,3}: deg_sig = 7 (expected <= 7) [OK]
+    alpha_{5,4}: deg_sig = 6 (expected <= 6) [OK]
+    alpha_{5,5}: deg_sig = 5 (expected <= 5) [OK]
+    -> all deg_sig bounds pass.
+  j = 12: (deg_pi, deg_sig) = (5, 12)
+    alpha_{5,0}: deg_sig = 10 (expected <= 10) [OK]
+    alpha_{5,1}: deg_sig = 9 (expected <= 9) [OK]
+    alpha_{5,2}: deg_sig = 8 (expected <= 8) [OK]
+    alpha_{5,3}: deg_sig = 7 (expected <= 7) [OK]
+    alpha_{5,4}: deg_sig = 6 (expected <= 6) [OK]
+    alpha_{5,5}: deg_sig = 5 (expected <= 5) [OK]
+    -> all deg_sig bounds pass.
+
+========================================================================
+  Test  p = 6, j in [12, 13]
+========================================================================
+  j = 12: (deg_pi, deg_sig) = (6, 12)
+    alpha_{6,0}: deg_sig = 12 (expected <= 12) [OK]
+    alpha_{6,1}: deg_sig = 11 (expected <= 11) [OK]
+    alpha_{6,2}: deg_sig = 10 (expected <= 10) [OK]
+    alpha_{6,3}: deg_sig = 9 (expected <= 9) [OK]
+    alpha_{6,4}: deg_sig = 8 (expected <= 8) [OK]
+    alpha_{6,5}: deg_sig = 7 (expected <= 7) [OK]
+    alpha_{6,6}: deg_sig = 6 (expected <= 6) [OK]
+    -> all deg_sig bounds pass.
+  j = 13: (deg_pi, deg_sig) = (6, 13)
+    alpha_{6,0}: deg_sig = 12 (expected <= 12) [OK]
+    alpha_{6,1}: deg_sig = 11 (expected <= 11) [OK]
+    alpha_{6,2}: deg_sig = 10 (expected <= 10) [OK]
+    alpha_{6,3}: deg_sig = 9 (expected <= 9) [OK]
+    alpha_{6,4}: deg_sig = 8 (expected <= 8) [OK]
+    alpha_{6,5}: deg_sig = 7 (expected <= 7) [OK]
+    alpha_{6,6}: deg_sig = 6 (expected <= 6) [OK]
+    -> all deg_sig bounds pass.
+
+========================================================================
+  j-degree bounds on alpha_{p,k}(j, sigma) — need deg_j <= 2p
+========================================================================
+
+  p = 5: fitting alpha_{5,k}(j, sigma) using j = [10, 11, 12]
+    alpha_{5,0}: max sigma-degree observed = 10
+      worst deg_j across all d = 2 (expected <= 10) [OK]
+    alpha_{5,1}: max sigma-degree observed = 9
+      worst deg_j across all d = 2 (expected <= 10) [OK]
+    alpha_{5,2}: max sigma-degree observed = 8
+      worst deg_j across all d = 2 (expected <= 10) [OK]
+    alpha_{5,3}: max sigma-degree observed = 7
+      worst deg_j across all d = 2 (expected <= 10) [OK]
+    alpha_{5,4}: max sigma-degree observed = 6
+      worst deg_j across all d = 2 (expected <= 10) [OK]
+    alpha_{5,5}: max sigma-degree observed = 5
+      worst deg_j across all d = 2 (expected <= 10) [OK]
+
+  p = 6: fitting alpha_{6,k}(j, sigma) using j = [12, 13]
+    alpha_{6,0}: max sigma-degree observed = 12
+      worst deg_j across all d = 1 (expected <= 12) [OK]
+    alpha_{6,1}: max sigma-degree observed = 11
+      worst deg_j across all d = 1 (expected <= 12) [OK]
+    alpha_{6,2}: max sigma-degree observed = 10
+      worst deg_j across all d = 1 (expected <= 12) [OK]
+    alpha_{6,3}: max sigma-degree observed = 9
+      worst deg_j across all d = 1 (expected <= 12) [OK]
+    alpha_{6,4}: max sigma-degree observed = 8
+      worst deg_j across all d = 1 (expected <= 12) [OK]
+    alpha_{6,5}: max sigma-degree observed = 7
+      worst deg_j across all d = 1 (expected <= 12) [OK]
+    alpha_{6,6}: max sigma-degree observed = 6
+      worst deg_j across all d = 1 (expected <= 12) [OK]

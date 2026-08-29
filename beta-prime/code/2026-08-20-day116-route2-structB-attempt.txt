@@ -1,0 +1,103 @@
+Homogeneous decomposition of S_j and e-wdeg per grade
+==============================================================================
+
+  j = 0:  hom-grades of S_j (ord-deg d -> component):
+    d = 0: e-wdeg = 0,  theoretical min = 0, target <= j = 0
+
+  j = 1:  hom-grades of S_j (ord-deg d -> component):
+    d = 0: e-wdeg = 0,  theoretical min = 0, target <= j = 1
+    d = 1: e-wdeg = 1,  theoretical min = 1, target <= j = 1
+    d = 2: e-wdeg = 1,  theoretical min = 1, target <= j = 1
+
+  j = 2:  hom-grades of S_j (ord-deg d -> component):
+    d = 0: e-wdeg = 0,  theoretical min = 0, target <= j = 2
+    d = 1: e-wdeg = 1,  theoretical min = 1, target <= j = 2
+    d = 2: e-wdeg = 2,  theoretical min = 1, target <= j = 2
+    d = 3: e-wdeg = 2,  theoretical min = 2, target <= j = 2
+    d = 4: e-wdeg = 2,  theoretical min = 2, target <= j = 2
+
+  j = 3:  hom-grades of S_j (ord-deg d -> component):
+    d = 0: e-wdeg = 0,  theoretical min = 0, target <= j = 3
+    d = 1: e-wdeg = 1,  theoretical min = 1, target <= j = 3
+    d = 2: e-wdeg = 2,  theoretical min = 1, target <= j = 3
+    d = 3: e-wdeg = 3,  theoretical min = 2, target <= j = 3
+    d = 4: e-wdeg = 3,  theoretical min = 2, target <= j = 3
+    d = 5: e-wdeg = 3,  theoretical min = 3, target <= j = 3
+    d = 6: e-wdeg = 3,  theoretical min = 3, target <= j = 3
+
+  j = 4:  hom-grades of S_j (ord-deg d -> component):
+    d = 0: e-wdeg = 0,  theoretical min = 0, target <= j = 4
+    d = 1: e-wdeg = 1,  theoretical min = 1, target <= j = 4
+    d = 2: e-wdeg = 2,  theoretical min = 1, target <= j = 4
+    d = 3: e-wdeg = 3,  theoretical min = 2, target <= j = 4
+    d = 4: e-wdeg = 4,  theoretical min = 2, target <= j = 4
+    d = 5: e-wdeg = 4,  theoretical min = 3, target <= j = 4
+    d = 6: e-wdeg = 4,  theoretical min = 3, target <= j = 4
+    d = 7: e-wdeg = 4,  theoretical min = 4, target <= j = 4
+    d = 8: e-wdeg = 4,  theoretical min = 4, target <= j = 4
+
+  j = 5:  hom-grades of S_j (ord-deg d -> component):
+    d = 0: e-wdeg = 0,  theoretical min = 0, target <= j = 5
+    d = 1: e-wdeg = 1,  theoretical min = 1, target <= j = 5
+    d = 2: e-wdeg = 2,  theoretical min = 1, target <= j = 5
+    d = 3: e-wdeg = 3,  theoretical min = 2, target <= j = 5
+    d = 4: e-wdeg = 4,  theoretical min = 2, target <= j = 5
+    d = 5: e-wdeg = 5,  theoretical min = 3, target <= j = 5
+    d = 6: e-wdeg = 5,  theoretical min = 3, target <= j = 5
+    d = 7: e-wdeg = 5,  theoretical min = 4, target <= j = 5
+    d = 8: e-wdeg = 5,  theoretical min = 4, target <= j = 5
+    d = 9: e-wdeg = 5,  theoretical min = 5, target <= j = 5
+    d = 10: e-wdeg = 5,  theoretical min = 5, target <= j = 5
+
+  j = 6:  hom-grades of S_j (ord-deg d -> component):
+    d = 0: e-wdeg = 0,  theoretical min = 0, target <= j = 6
+    d = 1: e-wdeg = 1,  theoretical min = 1, target <= j = 6
+    d = 2: e-wdeg = 2,  theoretical min = 1, target <= j = 6
+    d = 3: e-wdeg = 3,  theoretical min = 2, target <= j = 6
+    d = 4: e-wdeg = 4,  theoretical min = 2, target <= j = 6
+    d = 5: e-wdeg = 5,  theoretical min = 3, target <= j = 6
+    d = 6: e-wdeg = 6,  theoretical min = 3, target <= j = 6
+    d = 7: e-wdeg = 6,  theoretical min = 4, target <= j = 6
+    d = 8: e-wdeg = 6,  theoretical min = 4, target <= j = 6
+    d = 9: e-wdeg = 6,  theoretical min = 5, target <= j = 6
+    d = 10: e-wdeg = 6,  theoretical min = 5, target <= j = 6
+    d = 11: e-wdeg = 6,  theoretical min = 6, target <= j = 6
+    d = 12: e-wdeg = 6,  theoretical min = 6, target <= j = 6
+
+
+Per-mu, per-hom-grade e-wdeg of s*_mu:
+==============================================================================
+
+  j = 0:
+    mu=(0, 0, 0), d=0: e-wdeg = 0, kap=1
+
+  j = 1:
+    mu=(1, 1, 0), d=0: e-wdeg = 0, kap=1
+    mu=(1, 1, 0), d=1: e-wdeg = 1, kap=1
+    mu=(1, 1, 0), d=2: e-wdeg = 1, kap=1
+
+  j = 2:
+    mu=(2, 2, 0), d=0: e-wdeg = 0, kap=1
+    mu=(2, 2, 0), d=1: e-wdeg = 1, kap=1
+    mu=(2, 2, 0), d=2: e-wdeg = 2, kap=1
+    mu=(2, 2, 0), d=3: e-wdeg = 2, kap=1
+    mu=(2, 2, 0), d=4: e-wdeg = 3, kap=1
+    mu=(2, 1, 1), d=3: e-wdeg = 2, kap=1
+    mu=(2, 1, 1), d=4: e-wdeg = 3, kap=1
+
+  j = 3:
+    mu=(3, 3, 0), d=0: e-wdeg = 0, kap=1
+    mu=(3, 3, 0), d=1: e-wdeg = 1, kap=1
+    mu=(3, 3, 0), d=2: e-wdeg = 2, kap=1
+    mu=(3, 3, 0), d=3: e-wdeg = 3, kap=1
+    mu=(3, 3, 0), d=4: e-wdeg = 3, kap=1
+    mu=(3, 3, 0), d=5: e-wdeg = 4, kap=1
+    mu=(3, 3, 0), d=6: e-wdeg = 4, kap=1
+    mu=(3, 2, 1), d=3: e-wdeg = 2, kap=2
+    mu=(3, 2, 1), d=4: e-wdeg = 3, kap=2
+    mu=(3, 2, 1), d=5: e-wdeg = 4, kap=2
+    mu=(3, 2, 1), d=6: e-wdeg = 4, kap=2
+    mu=(2, 2, 2), d=3: e-wdeg = 2, kap=1
+    mu=(2, 2, 2), d=4: e-wdeg = 3, kap=1
+    mu=(2, 2, 2), d=5: e-wdeg = 3, kap=1
+    mu=(2, 2, 2), d=6: e-wdeg = 4, kap=1

@@ -1,0 +1,7 @@
+Scan min v_2(h_k^{(13)}(a, b)) over a+b odd, a, b in [0, 256)
+  k=7: min v_2 = 17, argmin (a, b) = (0, 1)
+  k=8: min v_2 = 19, argmin (a, b) = (1, 2)
+  k=9: min v_2 = 18, argmin (a, b) = (2, 7)
+  k=10: min v_2 = 16, argmin (a, b) = (3, 4)
+  k=11: min v_2 = 19, argmin (a, b) = (0, 1)
+  k=12: min v_2 = 19, argmin (a, b) = (1, 0)

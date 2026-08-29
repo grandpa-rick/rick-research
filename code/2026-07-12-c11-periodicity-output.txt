@@ -1,0 +1,43 @@
+================================================================================
+Day 91 — c=11 periodicity check (T=12) to prove beta'(11) >= 12
+================================================================================
+
+[extract] h_k^(11)(a, b) for k=0..10 via Sym-side extraction
+           276 samples in 0.2s
+
+  k=0: deg <= 20, ok
+  k=1: deg <= 18, ok
+  k=2: deg <= 18, ok
+  k=3: deg <= 16, ok
+  k=4: deg <= 16, ok
+  k=5: deg <= 14, ok
+  k=6: deg <= 14, ok
+  k=7: deg <= 12, ok
+  k=8: deg <= 12, ok
+  k=9: deg <= 10, ok
+  k=10: deg <= 10, ok
+
+[periodicity] T = 12, mod 2^12 = 4096
+  Checking each h_k mod 2^12 == 0 for all (a, b) in [0, 2^12)^2 with a+b odd
+  Total grid: 2^23 = 8388608 residues per k
+
+  k= 0: min v_2 = >=12, 8388608/8388608 zero mod 2^12, 63.5s
+  k= 1: min v_2 = >=12, 8388608/8388608 zero mod 2^12, 53.0s
+  k= 2: min v_2 = >=12, 8388608/8388608 zero mod 2^12, 53.0s
+  k= 3: min v_2 = >=12, 8388608/8388608 zero mod 2^12, 42.1s
+  k= 4: min v_2 = >=12, 8388608/8388608 zero mod 2^12, 43.2s
+  k= 5: min v_2 = >=12, 8388608/8388608 zero mod 2^12, 33.9s
+  k= 6: min v_2 = >=12, 8388608/8388608 zero mod 2^12, 34.0s
+  k= 7: min v_2 = >=12, 8388608/8388608 zero mod 2^12, 25.4s
+  k= 8: min v_2 = >=12, 8388608/8388608 zero mod 2^12, 26.3s
+  k= 9: min v_2 = >=12, 8388608/8388608 zero mod 2^12, 19.1s
+  k=10: min v_2 = >=12, 8388608/8388608 zero mod 2^12, 18.8s
+
+================================================================================
+Summary
+================================================================================
+  If all min v_2 >= 12 for all k, then LB_k^{(11)} >= 12 for all k.
+  By v_2(sum) >= min(v_2), v_2(H_11(a, b, j)) >= 12 for all (a, b, j) in shell.
+  Combined with witness H_11(1, 2, 6) = -3017710080000 = 2^12 * odd:
+     beta'(11) = 12 EXACTLY.
+  D2 predicted beta'(11) = 13 — FALSIFIED.

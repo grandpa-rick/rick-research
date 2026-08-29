@@ -1,0 +1,275 @@
+========================================================================
+(T) Total-degree bound investigation — Day 111
+Target: Q_{2R}(a, b, c) has total (a, b)-degree <= 2R.
+========================================================================
+Building partition tables up to j = 10...
+  built in 0.00s
+V = ds_0 = (a - b + 1)*(a - c + 2)*(b - c + 1)
+
+Computing ds_j/V for j = 0..10 (symbolic in a,b,c):
+  j=0: total (a,b,c)-deg = 0, (a,b)-deg = 0  (0.00s)
+  j=1: total (a,b,c)-deg = 2, (a,b)-deg = 2  (0.01s)
+  j=2: total (a,b,c)-deg = 4, (a,b)-deg = 4  (0.04s)
+  j=3: total (a,b,c)-deg = 6, (a,b)-deg = 6  (0.11s)
+  j=4: total (a,b,c)-deg = 8, (a,b)-deg = 8  (0.25s)
+  j=5: total (a,b,c)-deg = 10, (a,b)-deg = 10  (0.53s)
+  j=6: total (a,b,c)-deg = 12, (a,b)-deg = 12  (1.25s)
+  j=7: total (a,b,c)-deg = 14, (a,b)-deg = 14  (2.44s)
+  j=8: total (a,b,c)-deg = 16, (a,b)-deg = 16  (4.62s)
+  j=9: total (a,b,c)-deg = 18, (a,b)-deg = 18  (8.33s)
+  j=10: total (a,b,c)-deg = 20, (a,b)-deg = 20  (13.49s)
+
+
+########################################################################
+# PART A: Total (a,b)-degree of Q_{2R}(a,b,c) for R = 2, 3, 4, 5
+########################################################################
+
+========================================================================
+PART A: R = 2, 2R = 4. Q_{2R}(a,b,c) at c in [6, 7, 8]
+========================================================================
+  c =  6: a-deg=2, b-deg=2, total(a,b)-deg=4, (0.15s)
+         top_{(a,b)}(Q) = 360*a**2*b**2
+  c =  7: a-deg=2, b-deg=2, total(a,b)-deg=4, (0.24s)
+         top_{(a,b)}(Q) = 504*a**2*b**2
+  c =  8: a-deg=2, b-deg=2, total(a,b)-deg=4, (0.43s)
+         top_{(a,b)}(Q) = 672*a**2*b**2
+  ...total time R = 2: 0.8s
+
+========================================================================
+PART A: R = 3, 2R = 6. Q_{2R}(a,b,c) at c in [8, 9, 10]
+========================================================================
+  c =  8: a-deg=3, b-deg=3, total(a,b)-deg=6, (0.21s)
+         top_{(a,b)}(Q) = -40320*a**3*b**3
+  c =  9: a-deg=3, b-deg=3, total(a,b)-deg=6, (0.74s)
+         top_{(a,b)}(Q) = -60480*a**3*b**3
+  c = 10: a-deg=3, b-deg=3, total(a,b)-deg=6, (1.03s)
+         top_{(a,b)}(Q) = -86400*a**3*b**3
+  ...total time R = 3: 2.0s
+
+========================================================================
+PART A: R = 4, 2R = 8. Q_{2R}(a,b,c) at c in [10, 11, 12]
+========================================================================
+  c = 10: a-deg=4, b-deg=4, total(a,b)-deg=8, (0.43s)
+         top_{(a,b)}(Q) = 8467200*a**4*b**4
+  c = 11: a-deg=4, b-deg=4, total(a,b)-deg=8, (1.85s)
+         top_{(a,b)}(Q) = 13305600*a**4*b**4
+  c = 12: a-deg=4, b-deg=4, total(a,b)-deg=8, (2.42s)
+         top_{(a,b)}(Q) = 19958400*a**4*b**4
+  ...total time R = 4: 4.7s
+
+========================================================================
+PART A: R = 5, 2R = 10. Q_{2R}(a,b,c) at c in [12, 13, 14]
+========================================================================
+  c = 12: a-deg=5, b-deg=5, total(a,b)-deg=10, (0.99s)
+         top_{(a,b)}(Q) = -2874009600*a**5*b**5
+  c = 13: a-deg=5, b-deg=5, total(a,b)-deg=10, (3.84s)
+         top_{(a,b)}(Q) = -4670265600*a**5*b**5
+  c = 14: a-deg=5, b-deg=5, total(a,b)-deg=10, (4.86s)
+         top_{(a,b)}(Q) = -7264857600*a**5*b**5
+  ...total time R = 5: 9.7s
+
+
+########################################################################
+# PART B: Ansatz-difference check for R = 2, 3
+########################################################################
+
+========================================================================
+PART B: Ansatz-difference check at R = 2
+========================================================================
+
+Building tilde_P_R^(k)(c) closed forms for R = 2:
+  P_R^(0)(c) = c*(c - 4)*(c - 3)**2*(c - 2)**2*(c - 1)**2
+  P_R^(1)(c) = -12*c*(c - 3)*(c - 2)**2*(c - 1)
+  Fitting P_R^(2)(c) via slice (a,b) = (0, 1)...
+    P_R^(2)(c) = 12*c*(c - 1)
+    deg_c = 2, LC = 12, expected LC = 12, match? True
+
+Check ansatz identity at each c in [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]:
+  c =  6: diff = 0  (ansatz holds identically)
+  c =  7: diff = 0  (ansatz holds identically)
+  c =  8: diff = 0  (ansatz holds identically)
+  c =  9: diff = 0  (ansatz holds identically)
+  c = 10: diff = 0  (ansatz holds identically)
+  c = 11: diff = 0  (ansatz holds identically)
+  c = 12: diff = 0  (ansatz holds identically)
+  c = 13: diff = 0  (ansatz holds identically)
+  c = 14: diff = 0  (ansatz holds identically)
+  c = 15: diff = 0  (ansatz holds identically)
+  c = 16: diff = 0  (ansatz holds identically)
+  c = 17: diff = 0  (ansatz holds identically)
+  c = 18: diff = 0  (ansatz holds identically)
+
+Ansatz identity Q_{2R} == sum_k P_k * (a+2)_↓k (b+1)_↓k holds at all tested c? True
+>>> The ansatz appears IDENTICALLY TRUE.
+>>> This means (T) is trivially implied by the ansatz (top-degree = 2R comes from k=R term, all others have degree <= 2R-2 or 2R).
+  ...total time R = 2: 23.5s
+
+========================================================================
+PART B: Ansatz-difference check at R = 3
+========================================================================
+
+Building tilde_P_R^(k)(c) closed forms for R = 3:
+  P_R^(0)(c) = c*(c - 6)*(c - 5)**2*(c - 4)**2*(c - 3)**2*(c - 2)**2*(c - 1)**2
+  P_R^(1)(c) = -30*c*(c - 5)*(c - 4)**2*(c - 3)**2*(c - 2)**2*(c - 1)
+  Fitting P_R^(2)(c) via slice (a,b) = (0, 1)...
+    P_R^(2)(c) = 180*c*(c - 4)*(c - 3)**2*(c - 2)*(c - 1)
+    deg_c = 6, LC = 180, expected LC = 180, match? True
+  Fitting P_R^(3)(c) via slice (a,b) = (1, 2)...
+    P_R^(3)(c) = -120*c*(c - 2)*(c - 1)
+    deg_c = 3, LC = -120, expected LC = -120, match? True
+
+Check ansatz identity at each c in [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]:
+  c =  8: diff = 0  (ansatz holds identically)
+  c =  9: diff = 0  (ansatz holds identically)
+  c = 10: diff = 0  (ansatz holds identically)
+  c = 11: diff = 0  (ansatz holds identically)
+  c = 12: diff = 0  (ansatz holds identically)
+  c = 13: diff = 0  (ansatz holds identically)
+  c = 14: diff = 0  (ansatz holds identically)
+  c = 15: diff = 0  (ansatz holds identically)
+  c = 16: diff = 0  (ansatz holds identically)
+  c = 17: diff = 0  (ansatz holds identically)
+  c = 18: diff = 0  (ansatz holds identically)
+  c = 19: diff = 0  (ansatz holds identically)
+  c = 20: diff = 0  (ansatz holds identically)
+  c = 21: diff = 0  (ansatz holds identically)
+  c = 22: diff = 0  (ansatz holds identically)
+  c = 23: diff = 0  (ansatz holds identically)
+  c = 24: diff = 0  (ansatz holds identically)
+
+Ansatz identity Q_{2R} == sum_k P_k * (a+2)_↓k (b+1)_↓k holds at all tested c? True
+>>> The ansatz appears IDENTICALLY TRUE.
+>>> This means (T) is trivially implied by the ansatz (top-degree = 2R comes from k=R term, all others have degree <= 2R-2 or 2R).
+  ...total time R = 3: 133.6s
+
+
+########################################################################
+# PART C: Structural analysis of H_c(a,b,j) top degrees
+########################################################################
+
+========================================================================
+PART C: Top-(a,b)-degree of H_c(a,b,j) at c = 6, R = 2, 2R = 4
+========================================================================
+  j = 0: (a,b)-deg(H) = 10, (a,b)-deg(ds_j/V) = 0, L = 5, 2L + D_j = 10
+  j = 1: (a,b)-deg(H) = 10, (a,b)-deg(ds_j/V) = 2, L = 4, 2L + D_j = 10
+  j = 2: (a,b)-deg(H) = 10, (a,b)-deg(ds_j/V) = 4, L = 3, 2L + D_j = 10
+  j = 3: (a,b)-deg(H) = 10, (a,b)-deg(ds_j/V) = 6, L = 2, 2L + D_j = 10
+  j = 4: (a,b)-deg(H) = 10, (a,b)-deg(ds_j/V) = 8, L = 1, 2L + D_j = 10
+
+Top parts:
+  j = 0: top has 1 monomials, lead (5, 5) coef = 1
+  j = 1: top has 1 monomials, lead (5, 5) coef = 1
+  j = 2: top has 1 monomials, lead (5, 5) coef = 1
+  j = 3: top has 1 monomials, lead (5, 5) coef = 1
+  j = 4: top has 1 monomials, lead (5, 5) coef = 1
+
+Alternating sum of top parts (at the max degree, then descending):
+  h_{2R} at c = 6: (a,b)-deg = 6
+  denominator (a+3)_{1} (b+2)_{1}: (a,b)-deg = 2 (but denom is a * b factored — Q's deg is h_deg - denom_deg IF exact division).
+  Q_{2R}(a,b,c) at c = 6: (a,b)-deg = 4 (predicted)
+  Target: 2R = 4
+  MATCHES 2R = 4: (T) verified at c = 6, R = 2.
+
+  Max H_c(a,b,j) (a,b)-deg = 10
+  Sum cancels down to h_deg = 6, a cancellation of 4.
+  Then division by denom drops another 2 degrees to get Q_{2R}.
+  Net Q_{2R} (a,b)-deg = 4 = 2R = 4? True
+  ...total time R = 2: 0.1s
+
+========================================================================
+PART C: Top-(a,b)-degree of H_c(a,b,j) at c = 8, R = 3, 2R = 6
+========================================================================
+  j = 0: (a,b)-deg(H) = 14, (a,b)-deg(ds_j/V) = 0, L = 7, 2L + D_j = 14
+  j = 1: (a,b)-deg(H) = 14, (a,b)-deg(ds_j/V) = 2, L = 6, 2L + D_j = 14
+  j = 2: (a,b)-deg(H) = 14, (a,b)-deg(ds_j/V) = 4, L = 5, 2L + D_j = 14
+  j = 3: (a,b)-deg(H) = 14, (a,b)-deg(ds_j/V) = 6, L = 4, 2L + D_j = 14
+  j = 4: (a,b)-deg(H) = 14, (a,b)-deg(ds_j/V) = 8, L = 3, 2L + D_j = 14
+  j = 5: (a,b)-deg(H) = 14, (a,b)-deg(ds_j/V) = 10, L = 2, 2L + D_j = 14
+  j = 6: (a,b)-deg(H) = 14, (a,b)-deg(ds_j/V) = 12, L = 1, 2L + D_j = 14
+
+Top parts:
+  j = 0: top has 1 monomials, lead (7, 7) coef = 1
+  j = 1: top has 1 monomials, lead (7, 7) coef = 1
+  j = 2: top has 1 monomials, lead (7, 7) coef = 1
+  j = 3: top has 1 monomials, lead (7, 7) coef = 1
+  j = 4: top has 1 monomials, lead (7, 7) coef = 1
+  j = 5: top has 1 monomials, lead (7, 7) coef = 1
+  j = 6: top has 1 monomials, lead (7, 7) coef = 1
+
+Alternating sum of top parts (at the max degree, then descending):
+  h_{2R} at c = 8: (a,b)-deg = 8
+  denominator (a+3)_{1} (b+2)_{1}: (a,b)-deg = 2 (but denom is a * b factored — Q's deg is h_deg - denom_deg IF exact division).
+  Q_{2R}(a,b,c) at c = 8: (a,b)-deg = 6 (predicted)
+  Target: 2R = 6
+  MATCHES 2R = 6: (T) verified at c = 8, R = 3.
+
+  Max H_c(a,b,j) (a,b)-deg = 14
+  Sum cancels down to h_deg = 8, a cancellation of 6.
+  Then division by denom drops another 2 degrees to get Q_{2R}.
+  Net Q_{2R} (a,b)-deg = 6 = 2R = 6? True
+  ...total time R = 3: 0.3s
+
+========================================================================
+PART C: Top-(a,b)-degree of H_c(a,b,j) at c = 10, R = 4, 2R = 8
+========================================================================
+  j = 0: (a,b)-deg(H) = 18, (a,b)-deg(ds_j/V) = 0, L = 9, 2L + D_j = 18
+  j = 1: (a,b)-deg(H) = 18, (a,b)-deg(ds_j/V) = 2, L = 8, 2L + D_j = 18
+  j = 2: (a,b)-deg(H) = 18, (a,b)-deg(ds_j/V) = 4, L = 7, 2L + D_j = 18
+  j = 3: (a,b)-deg(H) = 18, (a,b)-deg(ds_j/V) = 6, L = 6, 2L + D_j = 18
+  j = 4: (a,b)-deg(H) = 18, (a,b)-deg(ds_j/V) = 8, L = 5, 2L + D_j = 18
+  j = 5: (a,b)-deg(H) = 18, (a,b)-deg(ds_j/V) = 10, L = 4, 2L + D_j = 18
+  j = 6: (a,b)-deg(H) = 18, (a,b)-deg(ds_j/V) = 12, L = 3, 2L + D_j = 18
+  j = 7: (a,b)-deg(H) = 18, (a,b)-deg(ds_j/V) = 14, L = 2, 2L + D_j = 18
+  j = 8: (a,b)-deg(H) = 18, (a,b)-deg(ds_j/V) = 16, L = 1, 2L + D_j = 18
+
+Top parts:
+  j = 0: top has 1 monomials, lead (9, 9) coef = 1
+  j = 1: top has 1 monomials, lead (9, 9) coef = 1
+  j = 2: top has 1 monomials, lead (9, 9) coef = 1
+  j = 3: top has 1 monomials, lead (9, 9) coef = 1
+  j = 4: top has 1 monomials, lead (9, 9) coef = 1
+  j = 5: top has 1 monomials, lead (9, 9) coef = 1
+  j = 6: top has 1 monomials, lead (9, 9) coef = 1
+  j = 7: top has 1 monomials, lead (9, 9) coef = 1
+  j = 8: top has 1 monomials, lead (9, 9) coef = 1
+
+Alternating sum of top parts (at the max degree, then descending):
+  h_{2R} at c = 10: (a,b)-deg = 10
+  denominator (a+3)_{1} (b+2)_{1}: (a,b)-deg = 2 (but denom is a * b factored — Q's deg is h_deg - denom_deg IF exact division).
+  Q_{2R}(a,b,c) at c = 10: (a,b)-deg = 8 (predicted)
+  Target: 2R = 8
+  MATCHES 2R = 8: (T) verified at c = 10, R = 4.
+
+  Max H_c(a,b,j) (a,b)-deg = 18
+  Sum cancels down to h_deg = 10, a cancellation of 8.
+  Then division by denom drops another 2 degrees to get Q_{2R}.
+  Net Q_{2R} (a,b)-deg = 8 = 2R = 8? True
+  ...total time R = 4: 0.9s
+
+
+========================================================================
+FINAL SUMMARY
+========================================================================
+
+PART A: total (a,b)-degree of Q_{2R}
+  R = 2, c = 6: total (a,b)-deg = 4  [OK]
+  R = 2, c = 7: total (a,b)-deg = 4  [OK]
+  R = 2, c = 8: total (a,b)-deg = 4  [OK]
+  R = 3, c = 8: total (a,b)-deg = 6  [OK]
+  R = 3, c = 9: total (a,b)-deg = 6  [OK]
+  R = 3, c = 10: total (a,b)-deg = 6  [OK]
+  R = 4, c = 10: total (a,b)-deg = 8  [OK]
+  R = 4, c = 11: total (a,b)-deg = 8  [OK]
+  R = 4, c = 12: total (a,b)-deg = 8  [OK]
+  R = 5, c = 12: total (a,b)-deg = 10  [OK]
+  R = 5, c = 13: total (a,b)-deg = 10  [OK]
+  R = 5, c = 14: total (a,b)-deg = 10  [OK]
+
+PART B: Ansatz identity check
+  R = 2: ansatz identically true? True
+  R = 3: ansatz identically true? True
+
+PART C: top-degree cancellation
+  R = 2: Q_{2R} (a,b)-deg = 4 (target 2R = 4)
+  R = 3: Q_{2R} (a,b)-deg = 6 (target 2R = 6)
+  R = 4: Q_{2R} (a,b)-deg = 8 (target 2R = 8)

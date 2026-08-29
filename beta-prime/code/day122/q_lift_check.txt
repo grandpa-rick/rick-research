@@ -1,0 +1,44 @@
+======================================================================
+Sanity: K(q=1) matches classical K
+======================================================================
+Verify K(q=1) = classical K for a few (mu, j):
+  mu=(2, 1, 1), j=2: K(q) = q, K(1)=1, classical K = 1  OK
+  mu=(3, 2, 1), j=3: K(q) = q**3 + q, K(1)=2, classical K = 2  OK
+  mu=(4, 3, 3), j=5: K(q) = q**12 + q**10 + q**8 + 2*q**6, K(1)=5, classical K = 5  OK
+  mu=(5, 3, 2), j=5: K(q) = 2*q**10 + 2*q**6 + q**3, K(1)=5, classical K = 5  OK
+  mu=(5, 5, 0), j=5: K(q) = 1, K(1)=1, classical K = 1  OK
+
+======================================================================
+Kostka-Foulkes q-lift of Identity (A) at d = d_max
+======================================================================
+
+j=1, d = d_max = 1 (odd-family Identity A):
+  Alternating sum = ZERO
+
+j=3, d = d_max = 4 (odd-family Identity A):
+  mu=(2, 2, 2), sign=+1: K(q) = q**3
+  Alternating sum = NONZERO = q**3
+
+j=5, d = d_max = 7 (odd-family Identity A):
+  mu=(4, 3, 3), sign=+1: K(q) = q**12 + q**10 + q**8 + 2*q**6
+  mu=(4, 4, 2), sign=-1: K(q) = 2*q**11 + 2*q**7 + q**5 + q**3
+  Alternating sum = NONZERO = q**12 - 2*q**11 + q**10 + q**8 - 2*q**7 + 2*q**6 - q**5 - q**3
+
+======================================================================
+Kostka-Foulkes q-lift of Identity (B) at d = d_max
+======================================================================
+
+j=1, d = d_max = 1 (odd-family Identity B):
+  mu=(1, 1, 0), sign=+1, wt=1: K(q) = 1
+  Alternating sum = NONZERO = 1
+
+j=3, d = d_max = 4 (odd-family Identity B):
+  mu=(3, 2, 1), sign=+1, wt=1: K(q) = q**3 + q
+  mu=(3, 3, 0), sign=-1, wt=2: K(q) = 1
+  Alternating sum = NONZERO = q**3 + q - 2
+
+j=5, d = d_max = 7 (odd-family Identity B):
+  mu=(5, 3, 2), sign=+1, wt=1: K(q) = 2*q**10 + 2*q**6 + q**3
+  mu=(5, 4, 1), sign=-1, wt=2: K(q) = q**10 + q**6 + q**3 + q
+  mu=(5, 5, 0), sign=+1, wt=3: K(q) = 1
+  Alternating sum = NONZERO = -q**3 - 2*q + 3

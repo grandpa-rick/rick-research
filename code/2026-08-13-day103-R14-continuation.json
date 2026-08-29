@@ -1,0 +1,64 @@
+{
+  "note": "Day 103 R=14 continuation + R=6 sanity check",
+  "date": "2026-08-13",
+  "budget_s": 12600.0,
+  "tests_planned": [
+    {
+      "c": 294,
+      "anchor": [
+        4,
+        6,
+        12
+      ],
+      "k_max": 12,
+      "R": 6,
+      "label": "R6-sanity"
+    },
+    {
+      "c": 78,
+      "anchor": [
+        12,
+        14,
+        28
+      ],
+      "k_max": 28,
+      "R": 14,
+      "label": "R14-probe-1"
+    },
+    {
+      "c": 158,
+      "anchor": [
+        12,
+        14,
+        28
+      ],
+      "k_max": 28,
+      "R": 14,
+      "label": "R14-probe-2"
+    }
+  ],
+  "results": [
+    {
+      "c": 294,
+      "R": 6,
+      "anchor": [
+        4,
+        6,
+        12
+      ],
+      "label": "R6-sanity",
+      "beta_c": 582,
+      "D_02": 3,
+      "u_c": 579,
+      "v2_c_minus_R": 5,
+      "t_fit_s": 13.29181432723999,
+      "t_total_s": 13.322726011276245,
+      "status": "ok",
+      "v2_H": 577,
+      "actual_delta": 2,
+      "inferred_eps": 3
+    }
+  ],
+  "status": "running",
+  "started": "2026-08-13 11:24:26"
+}

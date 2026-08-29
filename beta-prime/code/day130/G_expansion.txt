@@ -1,0 +1,15 @@
+Full G(T) = F(T) / (1+T*E1)^{E2/E1 - 1} coefficients:
+g_0(E1,E2,E3) = 1
+    factored: 1
+g_1(E1,E2,E3) = 0
+    factored: 0
+g_2(E1,E2,E3) = -3*E3/2
+    factored: -3*E3/2
+g_3(E1,E2,E3) = 8*E1*E3/3
+    factored: 8*E1*E3/3
+g_4(E1,E2,E3) = -15*E1**2*E3/4 + 9*E3**2/8
+    factored: -3*E3*(10*E1**2 - 3*E3)/8
+g_5(E1,E2,E3) = 24*E1**3*E3/5 - 4*E1*E3**2
+    factored: 4*E1*E3*(6*E1**2 - 5*E3)/5
+g_6(E1,E2,E3) = -35*E1**4*E3/6 + 661*E1**2*E3**2/72 - 9*E3**3/16
+    factored: -E3*(840*E1**4 - 1322*E1**2*E3 + 81*E3**2)/144

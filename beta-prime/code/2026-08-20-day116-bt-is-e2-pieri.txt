@@ -1,0 +1,11 @@
+Computing bt(j) tables and (e_2)^j Schur expansions for j <= 8 ...
+
+j=0: bt(j) == [s_mu]((e_2)^j) coefficients in 3 vars?  OK  (#nonzero: bt=1, e2=1)
+j=1: bt(j) == [s_mu]((e_2)^j) coefficients in 3 vars?  OK  (#nonzero: bt=1, e2=1)
+j=2: bt(j) == [s_mu]((e_2)^j) coefficients in 3 vars?  OK  (#nonzero: bt=2, e2=2)
+j=3: bt(j) == [s_mu]((e_2)^j) coefficients in 3 vars?  OK  (#nonzero: bt=3, e2=3)
+j=4: bt(j) == [s_mu]((e_2)^j) coefficients in 3 vars?  OK  (#nonzero: bt=4, e2=4)
+j=5: bt(j) == [s_mu]((e_2)^j) coefficients in 3 vars?  OK  (#nonzero: bt=5, e2=5)
+j=6: bt(j) == [s_mu]((e_2)^j) coefficients in 3 vars?  OK  (#nonzero: bt=7, e2=7)
+j=7: bt(j) == [s_mu]((e_2)^j) coefficients in 3 vars?  OK  (#nonzero: bt=8, e2=8)
+j=8: bt(j) == [s_mu]((e_2)^j) coefficients in 3 vars?  OK  (#nonzero: bt=10, e2=10)

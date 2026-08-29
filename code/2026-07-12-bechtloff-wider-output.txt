@@ -1,0 +1,24 @@
+=== n=3, j=0, K=6 ===
+  target = 1 * p[1, 1, 1]
+  Exact matches: 0
+  Scalar-multiple matches: 0
+=== n=3, j=1, K=6 ===
+  target = 1/2 * p[1, 1, 1] + -1/2 * p[2, 1]
+  Exact matches: 0
+  Scalar-multiple matches: 0
+=== n=4, j=0, K=6 ===
+  target = 1 * p[1, 1, 1, 1]
+  Exact matches: 0
+  Scalar-multiple matches: 0
+=== n=4, j=1, K=6 ===
+  target = 1/2 * p[1, 1, 1, 1] + -1/2 * p[2, 1, 1]
+  Exact matches: 0
+  Scalar-multiple matches: 0
+=== n=4, j=2, K=6 ===
+  target = 1/4 * p[1, 1, 1, 1] + -1/2 * p[2, 1, 1] + 1/4 * p[2, 2]
+  Exact matches: 0
+  Scalar-multiple matches: 0
+=== n=5, j=2, K=5 ===
+  target = 1/4 * p[1, 1, 1, 1, 1] + -1/2 * p[2, 1, 1, 1] + 1/4 * p[2, 2, 1]
+  Exact matches: 0
+  Scalar-multiple matches: 0

@@ -1,0 +1,111 @@
+========================================================================
+Extended verification of candidate EGF for Ψ(e_2^b)|_top
+  F(T) = (1+E1 T)^{E2/E1 - 1}
+       · exp( E3 * [ T/(E1(1+E1 T)^2) - log(1+E1 T)/E1^2 ] )
+========================================================================
+
+Step 1: Expand candidate EGF via generalized binomial + exp series
+  (No sympy series() — direct polynomial construction.)
+  Done in 0.10s
+  [T^0] F = polynomial of (1,1,2)-weight 0  (expected ≤ 0)
+  [T^1] F = polynomial of (1,1,2)-weight 1  (expected ≤ 1)
+  [T^2] F = polynomial of (1,1,2)-weight 2  (expected ≤ 2)
+  [T^3] F = polynomial of (1,1,2)-weight 3  (expected ≤ 3)
+  [T^4] F = polynomial of (1,1,2)-weight 4  (expected ≤ 4)
+  [T^5] F = polynomial of (1,1,2)-weight 5  (expected ≤ 5)
+  [T^6] F = polynomial of (1,1,2)-weight 6  (expected ≤ 6)
+  [T^7] F = polynomial of (1,1,2)-weight 7  (expected ≤ 7)
+  [T^8] F = polynomial of (1,1,2)-weight 8  (expected ≤ 8)
+
+Step 2: Compute Ψ(e_2^b) (full and top) for b=0..8
+  b=1: computed in 0.02s, max-weight of full Ψ = 1 (expected 1)
+  b=2: computed in 0.06s, max-weight of full Ψ = 2 (expected 2)
+  b=3: computed in 0.16s, max-weight of full Ψ = 3 (expected 3)
+  b=4: computed in 0.41s, max-weight of full Ψ = 4 (expected 4)
+  b=5: computed in 0.93s, max-weight of full Ψ = 5 (expected 5)
+  b=6: computed in 2.06s, max-weight of full Ψ = 6 (expected 6)
+  b=7: computed in 4.25s, max-weight of full Ψ = 7 (expected 7)
+  b=8: computed in 8.40s, max-weight of full Ψ = 8 (expected 8)
+
+Step 3: Compare Ψ(e_2^b)|_top vs b! · [T^b] F(T), monomial-by-monomial
+  b=0: MATCH  (checked 1 monomials of weight 0)
+  b=1: MATCH  (checked 2 monomials of weight 1)
+  b=2: MATCH  (checked 4 monomials of weight 2)
+  b=3: MATCH  (checked 6 monomials of weight 3)
+  b=4: MATCH  (checked 9 monomials of weight 4)
+  b=5: MATCH  (checked 12 monomials of weight 5)
+  b=6: MATCH  (checked 16 monomials of weight 6)
+  b=7: MATCH  (checked 20 monomials of weight 7)
+  b=8: MATCH  (checked 25 monomials of weight 8)
+
+  b=0: PASS
+  b=1: PASS
+  b=2: PASS
+  b=3: PASS
+  b=4: PASS
+  b=5: PASS
+  b=6: PASS
+  b=7: PASS
+  b=8: PASS
+
+Step 4: Sub-top terms in the FULL Ψ(e_2^b)
+  If full Ψ = top part, then EGF captures the full crown-jewel.
+  Otherwise, EGF captures ONLY the top slice.
+  b=2: full Ψ has SUB-TOP TERMS (3 nonzero monomials of weight ≤ 1 < 2)
+       sub-top part = -6*E1 + 5*E2 + 4
+  b=3: full Ψ has SUB-TOP TERMS (7 nonzero monomials of weight ≤ 2 < 3)
+       sub-top part = 36*E1**2 - 48*E1*E2 - 66*E1 + 14*E2**2 + 49*E2 - 57*E3 + 36
+  b=4: full Ψ has SUB-TOP TERMS (13 nonzero monomials of weight ≤ 3 < 4)
+       sub-top part = -240*E1**3 + 404*E1**2*E2 + 840*E1**2 - 200*E1*E2**2 - 1030*E1*E2 + 1072*E1*E3 - 1200*E1 + 30*E2**3 + 273*E2**2 - 360*E2*E3 + 820*E2 - 1422*E3 + 576
+  b=5: full Ψ has SUB-TOP TERMS (22 nonzero monomials of weight ≤ 4 < 5)
+       sub-top part = 1800*E1**4 - 3510*E1**3*E2 - 10200*E1**3 + 2279*E1**2*E2**2 + 16090*E1**2*E2 - 15390*E1**2*E3 + 27000*E1**2 - 600*E1*E2**3 - 7395*E1*E2**2 + 9098*E1*E2*E3 - 31050*E1*E2 + 49150*E1*E3 - 32880*E1 + 55*E2**4 + 1023*E2**3 - 1290*E2**2*E3 + 7645*E2**2 - 15810*E2*E3 + 21076*E2 + 2223*E3**2 - 49110*E3 + 14400
+
+Step 5: Structural weight check on candidate EGF
+  Factor A(T) = (1+E1 T)^{E2/E1 - 1}.
+  Its T^n coefficient equals ∏_{r=1..n}(E2 - r E1) / n!  (from our
+  binomial expansion), which is a polynomial in E1,E2 of degree n
+  and (1,1,·)-weight n.  E1^i E2^j appears only if i+j = n, so
+  (1,1,2)-weight = n ≤ n.  OK.  (In particular NO E1 in denominator.)
+    A: [T^0] weight = 0  (bound n = 0)
+    A: [T^1] weight = 1  (bound n = 1)
+    A: [T^2] weight = 2  (bound n = 2)
+    A: [T^3] weight = 3  (bound n = 3)
+    A: [T^4] weight = 4  (bound n = 4)
+    A: [T^5] weight = 5  (bound n = 5)
+    A: [T^6] weight = 6  (bound n = 6)
+    A: [T^7] weight = 7  (bound n = 7)
+    A: [T^8] weight = 8  (bound n = 8)
+
+  Factor exp(E3·M(T,E1)) where
+    [T^n] M = (-1)^(n-1) (n^2-1)/n · E1^(n-2)  for n≥2, zero for n=0,1.
+  Each factor of E3 has (1,1,2)-weight 2; each factor of E1 has
+  weight 1.  [T^n] M has weight (n-2) + 0 = n-2 (in E1) + 0 (no E3
+  yet since we haven't multiplied E3 in — wait, M was defined
+  WITHOUT the E3 prefactor; we absorbed E3 into L earlier).  With E3
+  attached: [T^n] (E3·M) has weight (n-2) + 2 = n.  OK.
+  In exp(L), [T^n] contains (E3·M)^k terms with total T-degree n.
+  Each factor (E3·M) at T^{n_j} contributes weight n_j, and weights
+  add ⇒ (1,1,2)-weight of [T^n] exp(L) ≤ n.  OK.
+    F: [T^0] weight = 0  (bound n = 0)
+    F: [T^1] weight = 1  (bound n = 1)
+    F: [T^2] weight = 2  (bound n = 2)
+    F: [T^3] weight = 3  (bound n = 3)
+    F: [T^4] weight = 4  (bound n = 4)
+    F: [T^5] weight = 5  (bound n = 5)
+    F: [T^6] weight = 6  (bound n = 6)
+    F: [T^7] weight = 7  (bound n = 7)
+    F: [T^8] weight = 8  (bound n = 8)
+
+========================================================================
+SUMMARY
+========================================================================
+  Verification for b=0..8: ALL PASS
+    b=0: PASS
+    b=1: PASS
+    b=2: PASS
+    b=3: PASS
+    b=4: PASS
+    b=5: PASS
+    b=6: PASS
+    b=7: PASS
+    b=8: PASS

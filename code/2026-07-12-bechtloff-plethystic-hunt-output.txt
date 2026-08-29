@@ -1,0 +1,93 @@
+======================================================================
+OQ-BECHTLOFF-PLETHYSTIC hunt
+======================================================================
+
+Environment: Python 3 + sympy fractions (SageMath not available).
+All computations in Lambda = Q[p_1, p_2, ...] truncated to deg <= n.
+
+Sanity: e_2 = 1/2 * p[1, 1] + -1/2 * p[2]
+Sanity: e_2 * p_1^0 (n=2, j=1): 1/2 * p[1, 1] + -1/2 * p[2]
+Sanity: h_2 = 1/2 * p[1, 1] + 1/2 * p[2]
+Sanity: p_1^2 (n=2, j=0): 1 * p[1, 1]
+
+chi^(2) on (2): 1
+chi^(2) on (1,1): 1
+chi^(1,1) on (2): -1
+chi^(1,1) on (1,1): 1
+chi^(3) on (3): 1
+chi^(2,1) on (3): -1
+chi^(2,1) on (2,1): 0
+chi^(2,1) on (1,1,1): 2
+
+p_2[h_1] = 1 * p[2]
+h_2[p_1] = 1/2 * p[1, 1] + 1/2 * p[2]
+
+--- n = 2 ---
+  n=2, j=0, target = e_2^0 p_1^2
+    target = 1 * p[1, 1]
+    NO MATCHES.
+  n=2, j=1, target = e_2^1 p_1^0
+    target = 1/2 * p[1, 1] + -1/2 * p[2]
+    3 match(es):
+      alpha=(), beta=(1, 1)
+      alpha=(1,), beta=(1, 1)
+      alpha=(2,), beta=(1, 1)
+
+--- n = 3 ---
+  n=3, j=0, target = e_2^0 p_1^3
+    target = 1 * p[1, 1, 1]
+    NO MATCHES.
+  n=3, j=1, target = e_2^1 p_1^1
+    target = 1/2 * p[1, 1, 1] + -1/2 * p[2, 1]
+    NO MATCHES.
+
+--- n = 4 ---
+  n=4, j=0, target = e_2^0 p_1^4
+    target = 1 * p[1, 1, 1, 1]
+    NO MATCHES.
+  n=4, j=1, target = e_2^1 p_1^2
+    target = 1/2 * p[1, 1, 1, 1] + -1/2 * p[2, 1, 1]
+    NO MATCHES.
+  n=4, j=2, target = e_2^2 p_1^0
+    target = 1/4 * p[1, 1, 1, 1] + -1/2 * p[2, 1, 1] + 1/4 * p[2, 2]
+    NO MATCHES.
+
+--- n = 5 ---
+  n=5, j=0, target = e_2^0 p_1^5
+    target = 1 * p[1, 1, 1, 1, 1]
+    NO MATCHES.
+  n=5, j=1, target = e_2^1 p_1^3
+    target = 1/2 * p[1, 1, 1, 1, 1] + -1/2 * p[2, 1, 1, 1]
+    NO MATCHES.
+  n=5, j=2, target = e_2^2 p_1^1
+    target = 1/4 * p[1, 1, 1, 1, 1] + -1/2 * p[2, 1, 1, 1] + 1/4 * p[2, 2, 1]
+    NO MATCHES.
+
+--- n = 6 ---
+  n=6, j=0, target = e_2^0 p_1^6
+    target = 1 * p[1, 1, 1, 1, 1, 1]
+    NO MATCHES.
+  n=6, j=1, target = e_2^1 p_1^4
+    target = 1/2 * p[1, 1, 1, 1, 1, 1] + -1/2 * p[2, 1, 1, 1, 1]
+    NO MATCHES.
+  n=6, j=2, target = e_2^2 p_1^2
+    target = 1/4 * p[1, 1, 1, 1, 1, 1] + -1/2 * p[2, 1, 1, 1, 1] + 1/4 * p[2, 2, 1, 1]
+    NO MATCHES.
+  n=6, j=3, target = e_2^3 p_1^0
+    target = 1/8 * p[1, 1, 1, 1, 1, 1] + -3/8 * p[2, 1, 1, 1, 1] + 3/8 * p[2, 2, 1, 1] + -1/8 * p[2, 2, 2]
+    NO MATCHES.
+
+--- n = 7 ---
+  n=7, j=0, target = e_2^0 p_1^7
+    target = 1 * p[1, 1, 1, 1, 1, 1, 1]
+    NO MATCHES.
+  n=7, j=1, target = e_2^1 p_1^5
+    target = 1/2 * p[1, 1, 1, 1, 1, 1, 1] + -1/2 * p[2, 1, 1, 1, 1, 1]
+    NO MATCHES.
+  n=7, j=2, target = e_2^2 p_1^3
+    target = 1/4 * p[1, 1, 1, 1, 1, 1, 1] + -1/2 * p[2, 1, 1, 1, 1, 1] + 1/4 * p[2, 2, 1, 1, 1]
+    NO MATCHES.
+  n=7, j=3, target = e_2^3 p_1^1
+    target = 1/8 * p[1, 1, 1, 1, 1, 1, 1] + -3/8 * p[2, 1, 1, 1, 1, 1] + 3/8 * p[2, 2, 1, 1, 1] + -1/8 * p[2, 2, 2, 1]
+    NO MATCHES.
+

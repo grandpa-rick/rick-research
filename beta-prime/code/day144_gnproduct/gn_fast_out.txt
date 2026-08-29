@@ -1,0 +1,23 @@
+=== Approach A: z=tau, lam=constant ===
+[z^k] G = 2 lam^k (lam-1)^{k-1}
+Match b_1: 2 lam = 3 -> lam = 3/2
+Then b_2 should be 2 lam^2 (lam-1) = 2 (9/4)(1/2) = 9/4. Actual b_2 = 27. MISMATCH.
+
+=== Approach B: z=tau, lam(tau) power series ===
+  k=2: lam_1 = 18/5
+  k=3: lam_2 = 1672/135
+  k=4: lam_3 = 1350976/14625
+  k=5: lam_4 = 337173791488/302079375
+  k=6: lam_5 = 8123880543232/503465625
+  k=7: lam_6 = 420774566791682048/1590447909375
+  k=8: lam_7 = 602328261341062168576/128119414921875
+
+Final lam(tau) coefficients:
+  lam_0 = 3/2   (num factors: {3: 1}, den factors: {2: 1})
+  lam_1 = 18/5   (num factors: {2: 1, 3: 2}, den factors: {5: 1})
+  lam_2 = 1672/135   (num factors: {2: 3, 11: 1, 19: 1}, den factors: {3: 3, 5: 1})
+  lam_3 = 1350976/14625   (num factors: {2: 6, 11: 1, 19: 1, 101: 1}, den factors: {3: 2, 5: 3, 13: 1})
+  lam_4 = 337173791488/302079375   (num factors: {2: 8, 127: 1, 1193: 1, 8693: 1}, den factors: {3: 7, 5: 4, 13: 1, 17: 1})
+  lam_5 = 8123880543232/503465625   (num factors: {2: 10, 7933477093: 1}, den factors: {3: 6, 5: 5, 13: 1, 17: 1})
+  lam_6 = 420774566791682048/1590447909375   (num factors: {2: 11, 11: 1, 256031: 1, 72951511: 1}, den factors: {3: 11, 5: 5, 13: 2, 17: 1})
+  lam_7 = 602328261341062168576/128119414921875   (num factors: {2: 16, 9190799886185641: 1}, den factors: {3: 9, 5: 7, 13: 2, 17: 1, 29: 1})

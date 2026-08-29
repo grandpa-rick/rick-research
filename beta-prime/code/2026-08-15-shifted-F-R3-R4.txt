@@ -1,0 +1,223 @@
+Shifted Appendix F (T_1 recursion) test at R = 3 (and R = 4 if time).
+Hypothesis: T_1(-1,b,c) = T_1(a,0,c) = P_tilde_R^{(1)}(c),
+            with (c-R)^2 as a factor.
+
+======================================================================
+SHIFTED-F (T_1) TEST, R = 3
+======================================================================
+P_tilde_R(c) = c*(c - 6)*(c - 5)**2*(c - 4)**2*(c - 3)**2*(c - 2)**2*(c - 1)**2
+
+Building M_j tables up to j = 8 ...
+  built in 0.00s.
+
+Fitting Q_{6}(a,b,c) at c = 8 .. 23
+  c=8: T_1 computed (0.2s cumulative)
+  c=9: T_1 computed (0.3s cumulative)
+  c=10: T_1 computed (0.5s cumulative)
+  c=11: T_1 computed (0.7s cumulative)
+  c=12: T_1 computed (0.8s cumulative)
+  c=13: T_1 computed (1.0s cumulative)
+  c=14: T_1 computed (1.2s cumulative)
+  c=15: T_1 computed (1.3s cumulative)
+  c=16: T_1 computed (1.5s cumulative)
+  c=17: T_1 computed (1.7s cumulative)
+  c=18: T_1 computed (1.8s cumulative)
+  c=19: T_1 computed (2.0s cumulative)
+  c=20: T_1 computed (2.2s cumulative)
+  c=21: T_1 computed (2.4s cumulative)
+  c=22: T_1 computed (2.5s cumulative)
+  c=23: T_1 computed (2.7s cumulative)
+
+--- Check A: T_1(a=-1, b, c) — b-independence? ---
+    c=8: b-independent, const = -72576000
+    c=9: b-independent, const = -381024000
+    c=10: b-independent, const = -1524096000
+    c=11: b-independent, const = -5029516800
+    c=12: b-independent, const = -14370048000
+    c=13: b-independent, const = -36694944000
+    c=14: b-independent, const = -85621536000
+    c=15: b-independent, const = -185513328000
+    c=16: b-independent, const = -377772595200
+    c=17: b-independent, const = -729787968000
+    c=18: b-independent, const = -1347300864000
+    c=19: b-independent, const = -2391088896000
+    c=20: b-independent, const = -4099009536000
+    c=21: b-independent, const = -6814603353600
+    c=22: b-independent, const = -11023623072000
+    c=23: b-independent, const = -17400032496000
+  Verdict: YES (b-independent)
+
+--- Check B: T_1(a, b=0, c) — a-independence? ---
+    c=8: a-independent, const = -72576000
+    c=9: a-independent, const = -381024000
+    c=10: a-independent, const = -1524096000
+    c=11: a-independent, const = -5029516800
+    c=12: a-independent, const = -14370048000
+    c=13: a-independent, const = -36694944000
+    c=14: a-independent, const = -85621536000
+    c=15: a-independent, const = -185513328000
+    c=16: a-independent, const = -377772595200
+    c=17: a-independent, const = -729787968000
+    c=18: a-independent, const = -1347300864000
+    c=19: a-independent, const = -2391088896000
+    c=20: a-independent, const = -4099009536000
+    c=21: a-independent, const = -6814603353600
+    c=22: a-independent, const = -11023623072000
+    c=23: a-independent, const = -17400032496000
+  Verdict: YES (a-independent)
+
+--- Check C: A-consts vs B-consts equality ---
+    c=8: A=B=-72576000
+    c=9: A=B=-381024000
+    c=10: A=B=-1524096000
+    c=11: A=B=-5029516800
+    c=12: A=B=-14370048000
+    c=13: A=B=-36694944000
+    c=14: A=B=-85621536000
+    c=15: A=B=-185513328000
+    c=16: A=B=-377772595200
+    c=17: A=B=-729787968000
+    c=18: A=B=-1347300864000
+    c=19: A=B=-2391088896000
+    c=20: A=B=-4099009536000
+    c=21: A=B=-6814603353600
+    c=22: A=B=-11023623072000
+    c=23: A=B=-17400032496000
+  Verdict: AGREE
+
+--- Check D: fit P_tilde_R^{(1)}(c) as polynomial in c ---
+  Fitted degree = 9
+  P_tilde_R^{(1)}(c) = -30*c**9 + 720*c**8 - 7380*c**7 + 42120*c**6 - 146070*c**5 + 314280*c**4 - 408120*c**3 + 290880*c**2 - 86400*c
+  Factored:              -30*c*(c - 5)*(c - 4)**2*(c - 3)**2*(c - 2)**2*(c - 1)
+  (c - 3)^2 IS a factor.
+  Quotient P_tilde_R^{(1)}(c) / (c-3)^2 = -30*c*(c - 5)*(c - 4)**2*(c - 2)**2*(c - 1)
+  Multiplicity of (c-3) root = 2
+
+R=3 total time: 2.9s
+
+======================================================================
+SHIFTED-F (T_1) TEST, R = 4
+======================================================================
+P_tilde_R(c) = c*(c - 8)*(c - 7)**2*(c - 6)**2*(c - 5)**2*(c - 4)**2*(c - 3)**2*(c - 2)**2*(c - 1)**2
+
+Building M_j tables up to j = 10 ...
+  built in 0.00s.
+
+Fitting Q_{8}(a,b,c) at c = 10 .. 29
+  c=10: T_1 computed (0.4s cumulative)
+  c=11: T_1 computed (0.7s cumulative)
+  c=12: T_1 computed (1.0s cumulative)
+  c=13: T_1 computed (1.4s cumulative)
+  c=14: T_1 computed (1.8s cumulative)
+  c=15: T_1 computed (2.1s cumulative)
+  c=16: T_1 computed (2.4s cumulative)
+  c=17: T_1 computed (2.8s cumulative)
+  c=18: T_1 computed (3.2s cumulative)
+  c=19: T_1 computed (3.5s cumulative)
+  c=20: T_1 computed (3.9s cumulative)
+  c=21: T_1 computed (4.2s cumulative)
+  c=22: T_1 computed (4.6s cumulative)
+  c=23: T_1 computed (5.0s cumulative)
+  c=24: T_1 computed (5.3s cumulative)
+  c=25: T_1 computed (5.7s cumulative)
+  c=26: T_1 computed (6.0s cumulative)
+  c=27: T_1 computed (6.4s cumulative)
+  c=28: T_1 computed (6.8s cumulative)
+  c=29: T_1 computed (7.1s cumulative)
+
+--- Check A: T_1(a=-1, b, c) — b-independence? ---
+    c=10: b-independent, const = -682795008000
+    c=11: b-independent, const = -5633058816000
+    c=12: b-independent, const = -33798352896000
+    c=13: b-independent, const = -161105482137600
+    c=14: b-independent, const = -644421928550400
+    c=15: b-independent, const = -2243969215488000
+    c=16: b-independent, const = -6981237559296000
+    c=17: b-independent, const = -19780173084672000
+    c=18: b-independent, const = -51788089530777600
+    c=19: b-independent, const = -126723885745766400
+    c=20: b-independent, const = -292439736336384000
+    c=21: b-independent, const = -641117883506688000
+    c=22: b-independent, const = -1343294613061632000
+    c=23: b-independent, const = -2703380408786534400
+    c=24: b-independent, const = -5247738440585625600
+    c=25: b-independent, const = -9860946416133120000
+    c=26: b-independent, const = -17991902232944640000
+    c=27: b-independent, const = -31959300019046400000
+    c=28: b-independent, const = -55396120033013760000
+    c=29: b-independent, const = -93885632004003840000
+  Verdict: YES (b-independent)
+
+--- Check B: T_1(a, b=0, c) — a-independence? ---
+    c=10: a-independent, const = -682795008000
+    c=11: a-independent, const = -5633058816000
+    c=12: a-independent, const = -33798352896000
+    c=13: a-independent, const = -161105482137600
+    c=14: a-independent, const = -644421928550400
+    c=15: a-independent, const = -2243969215488000
+    c=16: a-independent, const = -6981237559296000
+    c=17: a-independent, const = -19780173084672000
+    c=18: a-independent, const = -51788089530777600
+    c=19: a-independent, const = -126723885745766400
+    c=20: a-independent, const = -292439736336384000
+    c=21: a-independent, const = -641117883506688000
+    c=22: a-independent, const = -1343294613061632000
+    c=23: a-independent, const = -2703380408786534400
+    c=24: a-independent, const = -5247738440585625600
+    c=25: a-independent, const = -9860946416133120000
+    c=26: a-independent, const = -17991902232944640000
+    c=27: a-independent, const = -31959300019046400000
+    c=28: a-independent, const = -55396120033013760000
+    c=29: a-independent, const = -93885632004003840000
+  Verdict: YES (a-independent)
+
+--- Check C: A-consts vs B-consts equality ---
+    c=10: A=B=-682795008000
+    c=11: A=B=-5633058816000
+    c=12: A=B=-33798352896000
+    c=13: A=B=-161105482137600
+    c=14: A=B=-644421928550400
+    c=15: A=B=-2243969215488000
+    c=16: A=B=-6981237559296000
+    c=17: A=B=-19780173084672000
+    c=18: A=B=-51788089530777600
+    c=19: A=B=-126723885745766400
+    c=20: A=B=-292439736336384000
+    c=21: A=B=-641117883506688000
+    c=22: A=B=-1343294613061632000
+    c=23: A=B=-2703380408786534400
+    c=24: A=B=-5247738440585625600
+    c=25: A=B=-9860946416133120000
+    c=26: A=B=-17991902232944640000
+    c=27: A=B=-31959300019046400000
+    c=28: A=B=-55396120033013760000
+    c=29: A=B=-93885632004003840000
+  Verdict: AGREE
+
+--- Check D: fit P_tilde_R^{(1)}(c) as polynomial in c ---
+  Fitted degree = 13
+  P_tilde_R^{(1)}(c) = -56*c**13 + 2688*c**12 - 58072*c**11 + 745920*c**10 - 6337128*c**9 + 37465344*c**8 - 157809736*c**7 + 476333760*c**6 - 1020372416*c**5 + 1508871168*c**4 - 1457188992*c**3 + 821560320*c**2 - 203212800*c
+  Factored:              -56*c*(c - 7)*(c - 6)**2*(c - 5)**2*(c - 4)**2*(c - 3)**2*(c - 2)**2*(c - 1)
+  (c - 4)^2 IS a factor.
+  Quotient P_tilde_R^{(1)}(c) / (c-4)^2 = -56*c*(c - 7)*(c - 6)**2*(c - 5)**2*(c - 3)**2*(c - 2)**2*(c - 1)
+  Multiplicity of (c-4) root = 2
+
+R=4 total time: 7.4s
+
+======================================================================
+SUMMARY
+======================================================================
+
+R = 3:
+  A (b-indep at a=-1): True
+  B (a-indep at b= 0): True
+  C (A==B):            True
+  fitted deg:          9
+  P_tilde^(1):         -30*c*(c - 5)*(c - 4)**2*(c - 3)**2*(c - 2)**2*(c - 1)
+
+R = 4:
+  A (b-indep at a=-1): True
+  B (a-indep at b= 0): True
+  C (A==B):            True
+  fitted deg:          13
+  P_tilde^(1):         -56*c*(c - 7)*(c - 6)**2*(c - 5)**2*(c - 4)**2*(c - 3)**2*(c - 2)**2*(c - 1)

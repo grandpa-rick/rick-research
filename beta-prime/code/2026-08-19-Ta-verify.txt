@@ -1,0 +1,139 @@
+========================================================================
+Day 112: (T-a) 1D degree bound verification
+========================================================================
+Building partition tables up to j = 11...
+  built in 0.00s
+Computing ds_j/V symbolically in (a, b, c), j = 0..11...
+  done in 48.20s total.
+
+========================================================================
+STEP 1: a-degree of ds_j/V (symbolic in c) — expect <= j.
+========================================================================
+  j=0: a-deg = 0 (expect <= j = 0) [OK]
+  j=1: a-deg = 1 (expect <= j = 1) [OK]
+  j=2: a-deg = 2 (expect <= j = 2) [OK]
+  j=3: a-deg = 3 (expect <= j = 3) [OK]
+  j=4: a-deg = 4 (expect <= j = 4) [OK]
+  j=5: a-deg = 5 (expect <= j = 5) [OK]
+  j=6: a-deg = 6 (expect <= j = 6) [OK]
+  j=7: a-deg = 7 (expect <= j = 7) [OK]
+  j=8: a-deg = 8 (expect <= j = 8) [OK]
+  j=9: a-deg = 9 (expect <= j = 9) [OK]
+  j=10: a-deg = 10 (expect <= j = 10) [OK]
+  j=11: a-deg = 11 (expect <= j = 11) [OK]
+
+STEP 1 result: PASS
+
+========================================================================
+STEP 2: j-degree of a-layer [a^(c-1-d)] H_c(a,b,j) at c=15
+        for d = 0, 1, ..., 8. Claim: j-degree <= d.
+========================================================================
+Sampling j in [0, 11] for polynomial-in-j fits.
+  d = 0: a-power = 14. b-slots: 15. max j-deg = 0 (expect <= d = 0) [OK]
+  d = 1: a-power = 13. b-slots: 15. max j-deg = 2 (expect <= d = 1) [!!14 VIOLATIONS!!]
+  d = 2: a-power = 12. b-slots: 15. max j-deg = 4 (expect <= d = 2) [!!13 VIOLATIONS!!]
+  d = 3: a-power = 11. b-slots: 15. max j-deg = 6 (expect <= d = 3) [!!13 VIOLATIONS!!]
+  d = 4: a-power = 10. b-slots: 15. max j-deg = 8 (expect <= d = 4) [!!12 VIOLATIONS!!]
+  d = 5: a-power = 9. b-slots: 15. max j-deg = 10 (expect <= d = 5) [!!12 VIOLATIONS!!]
+  d = 6: a-power = 8. b-slots: 15. max j-deg = 11 (expect <= d = 6) [!!11 VIOLATIONS!!]
+  d = 7: a-power = 7. b-slots: 15. max j-deg = 11 (expect <= d = 7) [!!11 VIOLATIONS!!]
+  d = 8: a-power = 6. b-slots: 15. max j-deg = 11 (expect <= d = 8) [!!10 VIOLATIONS!!]
+
+STEP 2 result: FAIL
+  Per-d max j-deg: [0, 2, 4, 6, 8, 10, 11, 11, 11]
+  Per-d violations: [0, 14, 13, 13, 12, 12, 11, 11, 10]
+
+========================================================================
+STEP 3: Direct check — deg_a Q_{2R} at multiple (R, c)
+========================================================================
+  R = 1, c = 4: deg_a h_{2R} = 2 [OK], deg_a Q = 1 (expect <= R = 1) [OK], deg_b Q = 1
+  R = 1, c = 5: deg_a h_{2R} = 3 [OK], deg_a Q = 1 (expect <= R = 1) [OK], deg_b Q = 1
+  R = 1, c = 7: deg_a h_{2R} = 5 [OK], deg_a Q = 1 (expect <= R = 1) [OK], deg_b Q = 1
+  R = 2, c = 6: deg_a h_{2R} = 3 [OK], deg_a Q = 2 (expect <= R = 2) [OK], deg_b Q = 2
+  R = 2, c = 7: deg_a h_{2R} = 4 [OK], deg_a Q = 2 (expect <= R = 2) [OK], deg_b Q = 2
+  R = 2, c = 9: deg_a h_{2R} = 6 [OK], deg_a Q = 2 (expect <= R = 2) [OK], deg_b Q = 2
+  R = 3, c = 8: deg_a h_{2R} = 4 [OK], deg_a Q = 3 (expect <= R = 3) [OK], deg_b Q = 3
+  R = 3, c = 9: deg_a h_{2R} = 5 [OK], deg_a Q = 3 (expect <= R = 3) [OK], deg_b Q = 3
+  R = 3, c = 11: deg_a h_{2R} = 7 [OK], deg_a Q = 3 (expect <= R = 3) [OK], deg_b Q = 3
+  R = 4, c = 10: deg_a h_{2R} = 5 [OK], deg_a Q = 4 (expect <= R = 4) [OK], deg_b Q = 4
+  R = 4, c = 11: deg_a h_{2R} = 6 [OK], deg_a Q = 4 (expect <= R = 4) [OK], deg_b Q = 4
+  R = 4, c = 13: deg_a h_{2R} = 8 [OK], deg_a Q = 4 (expect <= R = 4) [OK], deg_b Q = 4
+
+========================================================================
+STEP 4: h_{2R} a-layer vanishing at R = 2, c = 6
+========================================================================
+  h_{2R} has a-degree 3
+  Expected drop from top c-1 = 5: 2
+    d = 0: a-power = 5: vanishes [vanish]
+    d = 1: a-power = 4: vanishes [vanish]
+    d = 2: a-power = 3: nonzero (b-poly of deg 3) [NONZERO]
+    d = 3: a-power = 2: nonzero (b-poly of deg 3) [NONZERO]
+    d = 4: a-power = 1: nonzero (b-poly of deg 3) [NONZERO]
+    d = 5: a-power = 0: nonzero (b-poly of deg 3) [NONZERO]
+
+========================================================================
+STEP 4: h_{2R} a-layer vanishing at R = 3, c = 8
+========================================================================
+  h_{2R} has a-degree 4
+  Expected drop from top c-1 = 7: 3
+    d = 0: a-power = 7: vanishes [vanish]
+    d = 1: a-power = 6: vanishes [vanish]
+    d = 2: a-power = 5: vanishes [vanish]
+    d = 3: a-power = 4: nonzero (b-poly of deg 4) [NONZERO]
+    d = 4: a-power = 3: nonzero (b-poly of deg 4) [NONZERO]
+    d = 5: a-power = 2: nonzero (b-poly of deg 4) [NONZERO]
+    d = 6: a-power = 1: nonzero (b-poly of deg 4) [NONZERO]
+    d = 7: a-power = 0: nonzero (b-poly of deg 3) [NONZERO]
+
+========================================================================
+STEP 5: Full profile: max j-deg per a-layer d, c = 15
+========================================================================
+  d = 0: max j-deg over b-slots = 0
+  d = 1: max j-deg over b-slots = 2
+  d = 2: max j-deg over b-slots = 4
+  d = 3: max j-deg over b-slots = 6
+  d = 4: max j-deg over b-slots = 8
+  d = 5: max j-deg over b-slots = 10
+  d = 6: max j-deg over b-slots = 11
+  d = 7: max j-deg over b-slots = 11
+  d = 8: max j-deg over b-slots = 11
+  d = 9: max j-deg over b-slots = 11
+  d = 10: max j-deg over b-slots = 11
+  d = 11: max j-deg over b-slots = 11
+  d = 12: max j-deg over b-slots = 11
+
+Actual j-degrees per d at c = 15: [(0, 0), (1, 2), (2, 4), (3, 6), (4, 8), (5, 10), (6, 11), (7, 11), (8, 11), (9, 11), (10, 11), (11, 11), (12, 11)]
+
+========================================================================
+STEP 6: Refined sub-claim (⋆⋆-a''): Q_j * A_p / (b+2)_{c-1-2p} has
+        j-degree <= 2p per b-slot.
+========================================================================
+
+  c = 12:
+    p = 0: R_p max j-deg per b-slot = 0 (expect <= 2p = 0) [OK]
+    p = 1: R_p max j-deg per b-slot = 2 (expect <= 2p = 2) [OK]
+    p = 2: R_p max j-deg per b-slot = 4 (expect <= 2p = 4) [OK]
+    p = 3: R_p max j-deg per b-slot = 5 (expect <= 2p = 6) [OK]
+    p = 4: R_p max j-deg per b-slot = 4 (expect <= 2p = 8) [OK]
+
+  c = 15:
+    p = 0: R_p max j-deg per b-slot = 0 (expect <= 2p = 0) [OK]
+    p = 1: R_p max j-deg per b-slot = 2 (expect <= 2p = 2) [OK]
+    p = 2: R_p max j-deg per b-slot = 4 (expect <= 2p = 4) [OK]
+    p = 3: R_p max j-deg per b-slot = 5 (expect <= 2p = 6) [OK]
+    p = 4: R_p max j-deg per b-slot = 4 (expect <= 2p = 8) [OK]
+
+  c = 18:
+    p = 0: R_p max j-deg per b-slot = 0 (expect <= 2p = 0) [OK]
+    p = 1: R_p max j-deg per b-slot = 2 (expect <= 2p = 2) [OK]
+    p = 2: R_p max j-deg per b-slot = 4 (expect <= 2p = 4) [OK]
+    p = 3: R_p max j-deg per b-slot = 5 (expect <= 2p = 6) [OK]
+    p = 4: R_p max j-deg per b-slot = 4 (expect <= 2p = 8) [OK]
+
+========================================================================
+SUMMARY
+========================================================================
+STEP 1 (deg_a ds_j/V <= j): PASS
+STEP 2 (a-layer j-deg <= d, TOO STRONG): FAIL (expected — actual is 2d)
+STEP 3 (deg_a Q <= R): PASS
+STEP 6 (refined (⋆⋆-a''): Q_j*A_p / (b+2)_{c-1-2p} has j-deg <= 2p per b-slot): PASS

@@ -1,0 +1,549 @@
+==========================================================================
+Day 132 — MacBeth sweep: Ψ(e_2^a · e_1^c) and Ψ(e_2^a · e_3^c)
+==========================================================================
+
+Precomputing Ψ(e_2^a) for a = 0..4 ...
+  a=0: 0.00s
+  a=1: 0.02s
+  a=2: 0.04s
+  a=3: 0.10s
+  a=4: 0.20s
+
+Precomputing Ψ(e_3^c) for c = 0..2 ...
+  c=0: 0.00s
+  c=1: 0.01s
+  c=2: 0.03s
+
+==========================================================================
+SERIES 1: Ψ(e_2^a · e_1^c)   (a + c ≤ 6, a ≤ 4, c ≤ 4)
+==========================================================================
+
+Factorization check + top-weight analysis:
+  (a=0, c=1)  w=1: direct=0.01s  fact=MATCH  |  #possible=2  #nonzero=1  #cancel=1  rank=1
+  (a=0, c=2)  w=2: direct=0.02s  fact=MATCH  |  #possible=4  #nonzero=1  #cancel=3  rank=2
+  (a=0, c=3)  w=3: direct=0.04s  fact=MATCH  |  #possible=6  #nonzero=1  #cancel=5  rank=3
+  (a=0, c=4)  w=4: direct=0.07s  fact=MATCH  |  #possible=9  #nonzero=1  #cancel=8  rank=4
+  (a=1, c=0)  w=1: direct=0.00s  fact=MATCH  |  #possible=2  #nonzero=2  #cancel=0  rank=2
+  (a=1, c=1)  w=2: direct=0.03s  fact=MATCH  |  #possible=4  #nonzero=2  #cancel=2  rank=4
+  (a=1, c=2)  w=3: direct=0.06s  fact=MATCH  |  #possible=6  #nonzero=2  #cancel=4  rank=6
+  (a=1, c=3)  w=4: direct=0.10s  fact=MATCH  |  #possible=9  #nonzero=2  #cancel=7  rank=8
+  (a=1, c=4)  w=5: direct=0.17s  fact=MATCH  |  #possible=12  #nonzero=2  #cancel=10  rank=11
+  (a=2, c=0)  w=2: direct=0.01s  fact=MATCH  |  #possible=4  #nonzero=4  #cancel=0  rank=6
+  (a=2, c=1)  w=3: direct=0.07s  fact=MATCH  |  #possible=6  #nonzero=4  #cancel=2  rank=9
+  (a=2, c=2)  w=4: direct=0.14s  fact=MATCH  |  #possible=9  #nonzero=4  #cancel=5  rank=13
+  (a=2, c=3)  w=5: direct=0.20s  fact=MATCH  |  #possible=12  #nonzero=4  #cancel=8  rank=17
+  (a=2, c=4)  w=6: direct=0.33s  fact=MATCH  |  #possible=16  #nonzero=4  #cancel=12  rank=22
+  (a=3, c=0)  w=3: direct=0.02s  fact=MATCH  |  #possible=6  #nonzero=6  #cancel=0  rank=12
+  (a=3, c=1)  w=4: direct=0.16s  fact=MATCH  |  #possible=9  #nonzero=6  #cancel=3  rank=17
+  (a=3, c=2)  w=5: direct=0.26s  fact=MATCH  |  #possible=12  #nonzero=6  #cancel=6  rank=23
+  (a=3, c=3)  w=6: direct=0.41s  fact=MATCH  |  #possible=16  #nonzero=6  #cancel=10  rank=30
+  (a=4, c=0)  w=4: direct=0.19s  fact=MATCH  |  #possible=9  #nonzero=9  #cancel=0  rank=21
+  (a=4, c=1)  w=5: direct=0.33s  fact=MATCH  |  #possible=12  #nonzero=9  #cancel=3  rank=29
+  (a=4, c=2)  w=6: direct=0.50s  fact=MATCH  |  #possible=16  #nonzero=9  #cancel=7  rank=38
+
+==========================================================================
+SERIES 2: Ψ(e_2^a · e_3^c)   (a + 2c ≤ 8, a ≤ 4, c ≤ 2)
+==========================================================================
+
+Factorization check + top-weight analysis:
+  (a=0, c=1)  w=2: direct=0.01s  fact=MATCH  |  #possible=4  #nonzero=1  #cancel=3  rank=1
+  (a=0, c=2)  w=4: direct=0.03s  fact=MATCH  |  #possible=9  #nonzero=1  #cancel=8  rank=1
+  (a=1, c=0)  w=1: direct=0.01s  fact=MATCH  |  #possible=2  #nonzero=2  #cancel=0  rank=2
+  (a=1, c=1)  w=3: direct=0.02s  fact=MATCH  |  #possible=6  #nonzero=2  #cancel=4  rank=2
+  (a=1, c=2)  w=5: direct=0.06s  fact=MATCH  |  #possible=12  #nonzero=2  #cancel=10  rank=2
+  (a=2, c=0)  w=2: direct=0.04s  fact=MATCH  |  #possible=4  #nonzero=4  #cancel=0  rank=6
+  (a=2, c=1)  w=4: direct=0.07s  fact=MATCH  |  #possible=9  #nonzero=4  #cancel=5  rank=6
+  (a=2, c=2)  w=6: direct=0.16s  fact=MATCH  |  #possible=16  #nonzero=4  #cancel=12  rank=6
+  (a=3, c=0)  w=3: direct=0.10s  fact=MATCH  |  #possible=6  #nonzero=6  #cancel=0  rank=12
+  (a=3, c=1)  w=5: direct=0.16s  fact=MATCH  |  #possible=12  #nonzero=6  #cancel=6  rank=12
+  (a=3, c=2)  w=7: direct=0.32s  fact=MATCH  |  #possible=20  #nonzero=6  #cancel=14  rank=12
+  (a=4, c=0)  w=4: direct=0.19s  fact=MATCH  |  #possible=9  #nonzero=9  #cancel=0  rank=21
+  (a=4, c=1)  w=6: direct=0.37s  fact=MATCH  |  #possible=16  #nonzero=9  #cancel=7  rank=21
+  (a=4, c=2)  w=8: direct=0.60s  fact=MATCH  |  #possible=25  #nonzero=9  #cancel=16  rank=21
+
+==========================================================================
+CANCELLATION DRILL-DOWN
+==========================================================================
+
+e_1 series [Ψ(e_2^a · e_1^c)]: 17 case(s) with cancellations.
+
+  --- (a=0, c=1, w=1) ---
+  Top-weight polynomial: E1
+  Full top-weight coefficient table (marking ZEROs):
+    E1^1 E2^0 E3^0: 1
+    E1^0 E2^1 E3^0: 0  <-- ZERO
+  Zero e-monomials: [(0, 1, 0)]
+
+  --- (a=0, c=2, w=2) ---
+  Top-weight polynomial: E1**2
+  Full top-weight coefficient table (marking ZEROs):
+    E1^2 E2^0 E3^0: 1
+    E1^1 E2^1 E3^0: 0  <-- ZERO
+    E1^0 E2^2 E3^0: 0  <-- ZERO
+    E1^0 E2^0 E3^1: 0  <-- ZERO
+  Zero e-monomials: [(1, 1, 0), (0, 2, 0), (0, 0, 1)]
+
+  --- (a=0, c=3, w=3) ---
+  Top-weight polynomial: E1**3
+  Full top-weight coefficient table (marking ZEROs):
+    E1^3 E2^0 E3^0: 1
+    E1^2 E2^1 E3^0: 0  <-- ZERO
+    E1^1 E2^2 E3^0: 0  <-- ZERO
+    E1^0 E2^3 E3^0: 0  <-- ZERO
+    E1^1 E2^0 E3^1: 0  <-- ZERO
+    E1^0 E2^1 E3^1: 0  <-- ZERO
+  Zero e-monomials: [(2, 1, 0), (1, 2, 0), (0, 3, 0), (1, 0, 1), (0, 1, 1)]
+
+  --- (a=0, c=4, w=4) ---
+  Top-weight polynomial: E1**4
+  Full top-weight coefficient table (marking ZEROs):
+    E1^4 E2^0 E3^0: 1
+    E1^3 E2^1 E3^0: 0  <-- ZERO
+    E1^2 E2^2 E3^0: 0  <-- ZERO
+    E1^1 E2^3 E3^0: 0  <-- ZERO
+    E1^0 E2^4 E3^0: 0  <-- ZERO
+    E1^2 E2^0 E3^1: 0  <-- ZERO
+    E1^1 E2^1 E3^1: 0  <-- ZERO
+    E1^0 E2^2 E3^1: 0  <-- ZERO
+    E1^0 E2^0 E3^2: 0  <-- ZERO
+  Zero e-monomials: [(3, 1, 0), (2, 2, 0), (1, 3, 0), (0, 4, 0), (2, 0, 1), (1, 1, 1), (0, 2, 1), (0, 0, 2)]
+
+  --- (a=1, c=1, w=2) ---
+  Top-weight polynomial: -E1**2 + E1*E2
+  Full top-weight coefficient table (marking ZEROs):
+    E1^2 E2^0 E3^0: -1
+    E1^1 E2^1 E3^0: 1
+    E1^0 E2^2 E3^0: 0  <-- ZERO
+    E1^0 E2^0 E3^1: 0  <-- ZERO
+  Zero e-monomials: [(0, 2, 0), (0, 0, 1)]
+
+  --- (a=1, c=2, w=3) ---
+  Top-weight polynomial: -E1**3 + E1**2*E2
+  Full top-weight coefficient table (marking ZEROs):
+    E1^3 E2^0 E3^0: -1
+    E1^2 E2^1 E3^0: 1
+    E1^1 E2^2 E3^0: 0  <-- ZERO
+    E1^0 E2^3 E3^0: 0  <-- ZERO
+    E1^1 E2^0 E3^1: 0  <-- ZERO
+    E1^0 E2^1 E3^1: 0  <-- ZERO
+  Zero e-monomials: [(1, 2, 0), (0, 3, 0), (1, 0, 1), (0, 1, 1)]
+
+  --- (a=1, c=3, w=4) ---
+  Top-weight polynomial: -E1**4 + E1**3*E2
+  Full top-weight coefficient table (marking ZEROs):
+    E1^4 E2^0 E3^0: -1
+    E1^3 E2^1 E3^0: 1
+    E1^2 E2^2 E3^0: 0  <-- ZERO
+    E1^1 E2^3 E3^0: 0  <-- ZERO
+    E1^0 E2^4 E3^0: 0  <-- ZERO
+    E1^2 E2^0 E3^1: 0  <-- ZERO
+    E1^1 E2^1 E3^1: 0  <-- ZERO
+    E1^0 E2^2 E3^1: 0  <-- ZERO
+    E1^0 E2^0 E3^2: 0  <-- ZERO
+  Zero e-monomials: [(2, 2, 0), (1, 3, 0), (0, 4, 0), (2, 0, 1), (1, 1, 1), (0, 2, 1), (0, 0, 2)]
+
+  --- (a=1, c=4, w=5) ---
+  Top-weight polynomial: -E1**5 + E1**4*E2
+  Full top-weight coefficient table (marking ZEROs):
+    E1^5 E2^0 E3^0: -1
+    E1^4 E2^1 E3^0: 1
+    E1^3 E2^2 E3^0: 0  <-- ZERO
+    E1^2 E2^3 E3^0: 0  <-- ZERO
+    E1^1 E2^4 E3^0: 0  <-- ZERO
+    E1^0 E2^5 E3^0: 0  <-- ZERO
+    E1^3 E2^0 E3^1: 0  <-- ZERO
+    E1^2 E2^1 E3^1: 0  <-- ZERO
+    E1^1 E2^2 E3^1: 0  <-- ZERO
+    E1^0 E2^3 E3^1: 0  <-- ZERO
+    E1^1 E2^0 E3^2: 0  <-- ZERO
+    E1^0 E2^1 E3^2: 0  <-- ZERO
+  Zero e-monomials: [(3, 2, 0), (2, 3, 0), (1, 4, 0), (0, 5, 0), (3, 0, 1), (2, 1, 1), (1, 2, 1), (0, 3, 1), (1, 0, 2), (0, 1, 2)]
+
+  --- (a=2, c=1, w=3) ---
+  Top-weight polynomial: 2*E1**3 - 3*E1**2*E2 + E1*E2**2 - 3*E1*E3
+  Full top-weight coefficient table (marking ZEROs):
+    E1^3 E2^0 E3^0: 2
+    E1^2 E2^1 E3^0: -3
+    E1^1 E2^2 E3^0: 1
+    E1^0 E2^3 E3^0: 0  <-- ZERO
+    E1^1 E2^0 E3^1: -3
+    E1^0 E2^1 E3^1: 0  <-- ZERO
+  Zero e-monomials: [(0, 3, 0), (0, 1, 1)]
+
+  --- (a=2, c=2, w=4) ---
+  Top-weight polynomial: 2*E1**4 - 3*E1**3*E2 + E1**2*E2**2 - 3*E1**2*E3
+  Full top-weight coefficient table (marking ZEROs):
+    E1^4 E2^0 E3^0: 2
+    E1^3 E2^1 E3^0: -3
+    E1^2 E2^2 E3^0: 1
+    E1^1 E2^3 E3^0: 0  <-- ZERO
+    E1^0 E2^4 E3^0: 0  <-- ZERO
+    E1^2 E2^0 E3^1: -3
+    E1^1 E2^1 E3^1: 0  <-- ZERO
+    E1^0 E2^2 E3^1: 0  <-- ZERO
+    E1^0 E2^0 E3^2: 0  <-- ZERO
+  Zero e-monomials: [(1, 3, 0), (0, 4, 0), (1, 1, 1), (0, 2, 1), (0, 0, 2)]
+
+  --- (a=2, c=3, w=5) ---
+  Top-weight polynomial: 2*E1**5 - 3*E1**4*E2 + E1**3*E2**2 - 3*E1**3*E3
+  Full top-weight coefficient table (marking ZEROs):
+    E1^5 E2^0 E3^0: 2
+    E1^4 E2^1 E3^0: -3
+    E1^3 E2^2 E3^0: 1
+    E1^2 E2^3 E3^0: 0  <-- ZERO
+    E1^1 E2^4 E3^0: 0  <-- ZERO
+    E1^0 E2^5 E3^0: 0  <-- ZERO
+    E1^3 E2^0 E3^1: -3
+    E1^2 E2^1 E3^1: 0  <-- ZERO
+    E1^1 E2^2 E3^1: 0  <-- ZERO
+    E1^0 E2^3 E3^1: 0  <-- ZERO
+    E1^1 E2^0 E3^2: 0  <-- ZERO
+    E1^0 E2^1 E3^2: 0  <-- ZERO
+  Zero e-monomials: [(2, 3, 0), (1, 4, 0), (0, 5, 0), (2, 1, 1), (1, 2, 1), (0, 3, 1), (1, 0, 2), (0, 1, 2)]
+
+  --- (a=2, c=4, w=6) ---
+  Top-weight polynomial: 2*E1**6 - 3*E1**5*E2 + E1**4*E2**2 - 3*E1**4*E3
+  Full top-weight coefficient table (marking ZEROs):
+    E1^6 E2^0 E3^0: 2
+    E1^5 E2^1 E3^0: -3
+    E1^4 E2^2 E3^0: 1
+    E1^3 E2^3 E3^0: 0  <-- ZERO
+    E1^2 E2^4 E3^0: 0  <-- ZERO
+    E1^1 E2^5 E3^0: 0  <-- ZERO
+    E1^0 E2^6 E3^0: 0  <-- ZERO
+    E1^4 E2^0 E3^1: -3
+    E1^3 E2^1 E3^1: 0  <-- ZERO
+    E1^2 E2^2 E3^1: 0  <-- ZERO
+    E1^1 E2^3 E3^1: 0  <-- ZERO
+    E1^0 E2^4 E3^1: 0  <-- ZERO
+    E1^2 E2^0 E3^2: 0  <-- ZERO
+    E1^1 E2^1 E3^2: 0  <-- ZERO
+    E1^0 E2^2 E3^2: 0  <-- ZERO
+    E1^0 E2^0 E3^3: 0  <-- ZERO
+  Zero e-monomials: [(3, 3, 0), (2, 4, 0), (1, 5, 0), (0, 6, 0), (3, 1, 1), (2, 2, 1), (1, 3, 1), (0, 4, 1), (2, 0, 2), (1, 1, 2), (0, 2, 2), (0, 0, 3)]
+
+  --- (a=3, c=1, w=4) ---
+  Top-weight polynomial: -6*E1**4 + 11*E1**3*E2 - 6*E1**2*E2**2 + 25*E1**2*E3 + E1*E2**3 - 9*E1*E2*E3
+  Full top-weight coefficient table (marking ZEROs):
+    E1^4 E2^0 E3^0: -6
+    E1^3 E2^1 E3^0: 11
+    E1^2 E2^2 E3^0: -6
+    E1^1 E2^3 E3^0: 1
+    E1^0 E2^4 E3^0: 0  <-- ZERO
+    E1^2 E2^0 E3^1: 25
+    E1^1 E2^1 E3^1: -9
+    E1^0 E2^2 E3^1: 0  <-- ZERO
+    E1^0 E2^0 E3^2: 0  <-- ZERO
+  Zero e-monomials: [(0, 4, 0), (0, 2, 1), (0, 0, 2)]
+
+  --- (a=3, c=2, w=5) ---
+  Top-weight polynomial: -6*E1**5 + 11*E1**4*E2 - 6*E1**3*E2**2 + 25*E1**3*E3 + E1**2*E2**3 - 9*E1**2*E2*E3
+  Full top-weight coefficient table (marking ZEROs):
+    E1^5 E2^0 E3^0: -6
+    E1^4 E2^1 E3^0: 11
+    E1^3 E2^2 E3^0: -6
+    E1^2 E2^3 E3^0: 1
+    E1^1 E2^4 E3^0: 0  <-- ZERO
+    E1^0 E2^5 E3^0: 0  <-- ZERO
+    E1^3 E2^0 E3^1: 25
+    E1^2 E2^1 E3^1: -9
+    E1^1 E2^2 E3^1: 0  <-- ZERO
+    E1^0 E2^3 E3^1: 0  <-- ZERO
+    E1^1 E2^0 E3^2: 0  <-- ZERO
+    E1^0 E2^1 E3^2: 0  <-- ZERO
+  Zero e-monomials: [(1, 4, 0), (0, 5, 0), (1, 2, 1), (0, 3, 1), (1, 0, 2), (0, 1, 2)]
+
+  --- (a=3, c=3, w=6) ---
+  Top-weight polynomial: -6*E1**6 + 11*E1**5*E2 - 6*E1**4*E2**2 + 25*E1**4*E3 + E1**3*E2**3 - 9*E1**3*E2*E3
+  Full top-weight coefficient table (marking ZEROs):
+    E1^6 E2^0 E3^0: -6
+    E1^5 E2^1 E3^0: 11
+    E1^4 E2^2 E3^0: -6
+    E1^3 E2^3 E3^0: 1
+    E1^2 E2^4 E3^0: 0  <-- ZERO
+    E1^1 E2^5 E3^0: 0  <-- ZERO
+    E1^0 E2^6 E3^0: 0  <-- ZERO
+    E1^4 E2^0 E3^1: 25
+    E1^3 E2^1 E3^1: -9
+    E1^2 E2^2 E3^1: 0  <-- ZERO
+    E1^1 E2^3 E3^1: 0  <-- ZERO
+    E1^0 E2^4 E3^1: 0  <-- ZERO
+    E1^2 E2^0 E3^2: 0  <-- ZERO
+    E1^1 E2^1 E3^2: 0  <-- ZERO
+    E1^0 E2^2 E3^2: 0  <-- ZERO
+    E1^0 E2^0 E3^3: 0  <-- ZERO
+  Zero e-monomials: [(2, 4, 0), (1, 5, 0), (0, 6, 0), (2, 2, 1), (1, 3, 1), (0, 4, 1), (2, 0, 2), (1, 1, 2), (0, 2, 2), (0, 0, 3)]
+
+  --- (a=4, c=1, w=5) ---
+  Top-weight polynomial: 24*E1**5 - 50*E1**4*E2 + 35*E1**3*E2**2 - 190*E1**3*E3 - 10*E1**2*E2**3 + 118*E1**2*E2*E3 + E1*E2**4 - 18*E1*E2**2*E3 + 27*E1*E3**2
+  Full top-weight coefficient table (marking ZEROs):
+    E1^5 E2^0 E3^0: 24
+    E1^4 E2^1 E3^0: -50
+    E1^3 E2^2 E3^0: 35
+    E1^2 E2^3 E3^0: -10
+    E1^1 E2^4 E3^0: 1
+    E1^0 E2^5 E3^0: 0  <-- ZERO
+    E1^3 E2^0 E3^1: -190
+    E1^2 E2^1 E3^1: 118
+    E1^1 E2^2 E3^1: -18
+    E1^0 E2^3 E3^1: 0  <-- ZERO
+    E1^1 E2^0 E3^2: 27
+    E1^0 E2^1 E3^2: 0  <-- ZERO
+  Zero e-monomials: [(0, 5, 0), (0, 3, 1), (0, 1, 2)]
+
+  --- (a=4, c=2, w=6) ---
+  Top-weight polynomial: 24*E1**6 - 50*E1**5*E2 + 35*E1**4*E2**2 - 190*E1**4*E3 - 10*E1**3*E2**3 + 118*E1**3*E2*E3 + E1**2*E2**4 - 18*E1**2*E2**2*E3 + 27*E1**2*E3**2
+  Full top-weight coefficient table (marking ZEROs):
+    E1^6 E2^0 E3^0: 24
+    E1^5 E2^1 E3^0: -50
+    E1^4 E2^2 E3^0: 35
+    E1^3 E2^3 E3^0: -10
+    E1^2 E2^4 E3^0: 1
+    E1^1 E2^5 E3^0: 0  <-- ZERO
+    E1^0 E2^6 E3^0: 0  <-- ZERO
+    E1^4 E2^0 E3^1: -190
+    E1^3 E2^1 E3^1: 118
+    E1^2 E2^2 E3^1: -18
+    E1^1 E2^3 E3^1: 0  <-- ZERO
+    E1^0 E2^4 E3^1: 0  <-- ZERO
+    E1^2 E2^0 E3^2: 27
+    E1^1 E2^1 E3^2: 0  <-- ZERO
+    E1^0 E2^2 E3^2: 0  <-- ZERO
+    E1^0 E2^0 E3^3: 0  <-- ZERO
+  Zero e-monomials: [(1, 5, 0), (0, 6, 0), (1, 3, 1), (0, 4, 1), (1, 1, 2), (0, 2, 2), (0, 0, 3)]
+
+e_3 series [Ψ(e_2^a · e_3^c)]: 10 case(s) with cancellations.
+
+  --- (a=0, c=1, w=2) ---
+  Top-weight polynomial: E3
+  Full top-weight coefficient table (marking ZEROs):
+    E1^2 E2^0 E3^0: 0  <-- ZERO
+    E1^1 E2^1 E3^0: 0  <-- ZERO
+    E1^0 E2^2 E3^0: 0  <-- ZERO
+    E1^0 E2^0 E3^1: 1
+  Zero e-monomials: [(2, 0, 0), (1, 1, 0), (0, 2, 0)]
+
+  --- (a=0, c=2, w=4) ---
+  Top-weight polynomial: E3**2
+  Full top-weight coefficient table (marking ZEROs):
+    E1^4 E2^0 E3^0: 0  <-- ZERO
+    E1^3 E2^1 E3^0: 0  <-- ZERO
+    E1^2 E2^2 E3^0: 0  <-- ZERO
+    E1^1 E2^3 E3^0: 0  <-- ZERO
+    E1^0 E2^4 E3^0: 0  <-- ZERO
+    E1^2 E2^0 E3^1: 0  <-- ZERO
+    E1^1 E2^1 E3^1: 0  <-- ZERO
+    E1^0 E2^2 E3^1: 0  <-- ZERO
+    E1^0 E2^0 E3^2: 1
+  Zero e-monomials: [(4, 0, 0), (3, 1, 0), (2, 2, 0), (1, 3, 0), (0, 4, 0), (2, 0, 1), (1, 1, 1), (0, 2, 1)]
+
+  --- (a=1, c=1, w=3) ---
+  Top-weight polynomial: -3*E1*E3 + E2*E3
+  Full top-weight coefficient table (marking ZEROs):
+    E1^3 E2^0 E3^0: 0  <-- ZERO
+    E1^2 E2^1 E3^0: 0  <-- ZERO
+    E1^1 E2^2 E3^0: 0  <-- ZERO
+    E1^0 E2^3 E3^0: 0  <-- ZERO
+    E1^1 E2^0 E3^1: -3
+    E1^0 E2^1 E3^1: 1
+  Zero e-monomials: [(3, 0, 0), (2, 1, 0), (1, 2, 0), (0, 3, 0)]
+
+  --- (a=1, c=2, w=5) ---
+  Top-weight polynomial: -5*E1*E3**2 + E2*E3**2
+  Full top-weight coefficient table (marking ZEROs):
+    E1^5 E2^0 E3^0: 0  <-- ZERO
+    E1^4 E2^1 E3^0: 0  <-- ZERO
+    E1^3 E2^2 E3^0: 0  <-- ZERO
+    E1^2 E2^3 E3^0: 0  <-- ZERO
+    E1^1 E2^4 E3^0: 0  <-- ZERO
+    E1^0 E2^5 E3^0: 0  <-- ZERO
+    E1^3 E2^0 E3^1: 0  <-- ZERO
+    E1^2 E2^1 E3^1: 0  <-- ZERO
+    E1^1 E2^2 E3^1: 0  <-- ZERO
+    E1^0 E2^3 E3^1: 0  <-- ZERO
+    E1^1 E2^0 E3^2: -5
+    E1^0 E2^1 E3^2: 1
+  Zero e-monomials: [(5, 0, 0), (4, 1, 0), (3, 2, 0), (2, 3, 0), (1, 4, 0), (0, 5, 0), (3, 0, 1), (2, 1, 1), (1, 2, 1), (0, 3, 1)]
+
+  --- (a=2, c=1, w=4) ---
+  Top-weight polynomial: 12*E1**2*E3 - 7*E1*E2*E3 + E2**2*E3 - 3*E3**2
+  Full top-weight coefficient table (marking ZEROs):
+    E1^4 E2^0 E3^0: 0  <-- ZERO
+    E1^3 E2^1 E3^0: 0  <-- ZERO
+    E1^2 E2^2 E3^0: 0  <-- ZERO
+    E1^1 E2^3 E3^0: 0  <-- ZERO
+    E1^0 E2^4 E3^0: 0  <-- ZERO
+    E1^2 E2^0 E3^1: 12
+    E1^1 E2^1 E3^1: -7
+    E1^0 E2^2 E3^1: 1
+    E1^0 E2^0 E3^2: -3
+  Zero e-monomials: [(4, 0, 0), (3, 1, 0), (2, 2, 0), (1, 3, 0), (0, 4, 0)]
+
+  --- (a=2, c=2, w=6) ---
+  Top-weight polynomial: 30*E1**2*E3**2 - 11*E1*E2*E3**2 + E2**2*E3**2 - 3*E3**3
+  Full top-weight coefficient table (marking ZEROs):
+    E1^6 E2^0 E3^0: 0  <-- ZERO
+    E1^5 E2^1 E3^0: 0  <-- ZERO
+    E1^4 E2^2 E3^0: 0  <-- ZERO
+    E1^3 E2^3 E3^0: 0  <-- ZERO
+    E1^2 E2^4 E3^0: 0  <-- ZERO
+    E1^1 E2^5 E3^0: 0  <-- ZERO
+    E1^0 E2^6 E3^0: 0  <-- ZERO
+    E1^4 E2^0 E3^1: 0  <-- ZERO
+    E1^3 E2^1 E3^1: 0  <-- ZERO
+    E1^2 E2^2 E3^1: 0  <-- ZERO
+    E1^1 E2^3 E3^1: 0  <-- ZERO
+    E1^0 E2^4 E3^1: 0  <-- ZERO
+    E1^2 E2^0 E3^2: 30
+    E1^1 E2^1 E3^2: -11
+    E1^0 E2^2 E3^2: 1
+    E1^0 E2^0 E3^3: -3
+  Zero e-monomials: [(6, 0, 0), (5, 1, 0), (4, 2, 0), (3, 3, 0), (2, 4, 0), (1, 5, 0), (0, 6, 0), (4, 0, 1), (3, 1, 1), (2, 2, 1), (1, 3, 1), (0, 4, 1)]
+
+  --- (a=3, c=1, w=5) ---
+  Top-weight polynomial: -60*E1**3*E3 + 47*E1**2*E2*E3 - 12*E1*E2**2*E3 + 43*E1*E3**2 + E2**3*E3 - 9*E2*E3**2
+  Full top-weight coefficient table (marking ZEROs):
+    E1^5 E2^0 E3^0: 0  <-- ZERO
+    E1^4 E2^1 E3^0: 0  <-- ZERO
+    E1^3 E2^2 E3^0: 0  <-- ZERO
+    E1^2 E2^3 E3^0: 0  <-- ZERO
+    E1^1 E2^4 E3^0: 0  <-- ZERO
+    E1^0 E2^5 E3^0: 0  <-- ZERO
+    E1^3 E2^0 E3^1: -60
+    E1^2 E2^1 E3^1: 47
+    E1^1 E2^2 E3^1: -12
+    E1^0 E2^3 E3^1: 1
+    E1^1 E2^0 E3^2: 43
+    E1^0 E2^1 E3^2: -9
+  Zero e-monomials: [(5, 0, 0), (4, 1, 0), (3, 2, 0), (2, 3, 0), (1, 4, 0), (0, 5, 0)]
+
+  --- (a=3, c=2, w=7) ---
+  Top-weight polynomial: -210*E1**3*E3**2 + 107*E1**2*E2*E3**2 - 18*E1*E2**2*E3**2 + 61*E1*E3**3 + E2**3*E3**2 - 9*E2*E3**3
+  Full top-weight coefficient table (marking ZEROs):
+    E1^7 E2^0 E3^0: 0  <-- ZERO
+    E1^6 E2^1 E3^0: 0  <-- ZERO
+    E1^5 E2^2 E3^0: 0  <-- ZERO
+    E1^4 E2^3 E3^0: 0  <-- ZERO
+    E1^3 E2^4 E3^0: 0  <-- ZERO
+    E1^2 E2^5 E3^0: 0  <-- ZERO
+    E1^1 E2^6 E3^0: 0  <-- ZERO
+    E1^0 E2^7 E3^0: 0  <-- ZERO
+    E1^5 E2^0 E3^1: 0  <-- ZERO
+    E1^4 E2^1 E3^1: 0  <-- ZERO
+    E1^3 E2^2 E3^1: 0  <-- ZERO
+    E1^2 E2^3 E3^1: 0  <-- ZERO
+    E1^1 E2^4 E3^1: 0  <-- ZERO
+    E1^0 E2^5 E3^1: 0  <-- ZERO
+    E1^3 E2^0 E3^2: -210
+    E1^2 E2^1 E3^2: 107
+    E1^1 E2^2 E3^2: -18
+    E1^0 E2^3 E3^2: 1
+    E1^1 E2^0 E3^3: 61
+    E1^0 E2^1 E3^3: -9
+  Zero e-monomials: [(7, 0, 0), (6, 1, 0), (5, 2, 0), (4, 3, 0), (3, 4, 0), (2, 5, 0), (1, 6, 0), (0, 7, 0), (5, 0, 1), (4, 1, 1), (3, 2, 1), (2, 3, 1), (1, 4, 1), (0, 5, 1)]
+
+  --- (a=4, c=1, w=6) ---
+  Top-weight polynomial: 360*E1**4*E3 - 342*E1**3*E2*E3 + 119*E1**2*E2**2*E3 - 498*E1**2*E3**2 - 18*E1*E2**3*E3 + 190*E1*E2*E3**2 + E2**4*E3 - 18*E2**2*E3**2 + 27*E3**3
+  Full top-weight coefficient table (marking ZEROs):
+    E1^6 E2^0 E3^0: 0  <-- ZERO
+    E1^5 E2^1 E3^0: 0  <-- ZERO
+    E1^4 E2^2 E3^0: 0  <-- ZERO
+    E1^3 E2^3 E3^0: 0  <-- ZERO
+    E1^2 E2^4 E3^0: 0  <-- ZERO
+    E1^1 E2^5 E3^0: 0  <-- ZERO
+    E1^0 E2^6 E3^0: 0  <-- ZERO
+    E1^4 E2^0 E3^1: 360
+    E1^3 E2^1 E3^1: -342
+    E1^2 E2^2 E3^1: 119
+    E1^1 E2^3 E3^1: -18
+    E1^0 E2^4 E3^1: 1
+    E1^2 E2^0 E3^2: -498
+    E1^1 E2^1 E3^2: 190
+    E1^0 E2^2 E3^2: -18
+    E1^0 E2^0 E3^3: 27
+  Zero e-monomials: [(6, 0, 0), (5, 1, 0), (4, 2, 0), (3, 3, 0), (2, 4, 0), (1, 5, 0), (0, 6, 0)]
+
+  --- (a=4, c=2, w=8) ---
+  Top-weight polynomial: 1680*E1**4*E3**2 - 1066*E1**3*E2*E3**2 + 251*E1**2*E2**2*E3**2 - 950*E1**2*E3**3 - 26*E1*E2**3*E3**2 + 262*E1*E2*E3**3 + E2**4*E3**2 - 18*E2**2*E3**3 + 27*E3**4
+  Full top-weight coefficient table (marking ZEROs):
+    E1^8 E2^0 E3^0: 0  <-- ZERO
+    E1^7 E2^1 E3^0: 0  <-- ZERO
+    E1^6 E2^2 E3^0: 0  <-- ZERO
+    E1^5 E2^3 E3^0: 0  <-- ZERO
+    E1^4 E2^4 E3^0: 0  <-- ZERO
+    E1^3 E2^5 E3^0: 0  <-- ZERO
+    E1^2 E2^6 E3^0: 0  <-- ZERO
+    E1^1 E2^7 E3^0: 0  <-- ZERO
+    E1^0 E2^8 E3^0: 0  <-- ZERO
+    E1^6 E2^0 E3^1: 0  <-- ZERO
+    E1^5 E2^1 E3^1: 0  <-- ZERO
+    E1^4 E2^2 E3^1: 0  <-- ZERO
+    E1^3 E2^3 E3^1: 0  <-- ZERO
+    E1^2 E2^4 E3^1: 0  <-- ZERO
+    E1^1 E2^5 E3^1: 0  <-- ZERO
+    E1^0 E2^6 E3^1: 0  <-- ZERO
+    E1^4 E2^0 E3^2: 1680
+    E1^3 E2^1 E3^2: -1066
+    E1^2 E2^2 E3^2: 251
+    E1^1 E2^3 E3^2: -26
+    E1^0 E2^4 E3^2: 1
+    E1^2 E2^0 E3^3: -950
+    E1^1 E2^1 E3^3: 262
+    E1^0 E2^2 E3^3: -18
+    E1^0 E2^0 E3^4: 27
+  Zero e-monomials: [(8, 0, 0), (7, 1, 0), (6, 2, 0), (5, 3, 0), (4, 4, 0), (3, 5, 0), (2, 6, 0), (1, 7, 0), (0, 8, 0), (6, 0, 1), (5, 1, 1), (4, 2, 1), (3, 3, 1), (2, 4, 1), (1, 5, 1), (0, 6, 1)]
+
+==========================================================================
+MARKDOWN TABLES
+==========================================================================
+
+### Series 1: Ψ(e_2^a · e_1^c)
+
+| a | c | weight | #possible | #nonzero | #cancel | Schur rank |
+|---|---|--------|-----------|----------|---------|------------|
+| 0 | 1 | 1 | 2 | 1 | 1 | 1 |
+| 0 | 2 | 2 | 4 | 1 | 3 | 2 |
+| 0 | 3 | 3 | 6 | 1 | 5 | 3 |
+| 0 | 4 | 4 | 9 | 1 | 8 | 4 |
+| 1 | 0 | 1 | 2 | 2 | 0 | 2 |
+| 1 | 1 | 2 | 4 | 2 | 2 | 4 |
+| 1 | 2 | 3 | 6 | 2 | 4 | 6 |
+| 1 | 3 | 4 | 9 | 2 | 7 | 8 |
+| 1 | 4 | 5 | 12 | 2 | 10 | 11 |
+| 2 | 0 | 2 | 4 | 4 | 0 | 6 |
+| 2 | 1 | 3 | 6 | 4 | 2 | 9 |
+| 2 | 2 | 4 | 9 | 4 | 5 | 13 |
+| 2 | 3 | 5 | 12 | 4 | 8 | 17 |
+| 2 | 4 | 6 | 16 | 4 | 12 | 22 |
+| 3 | 0 | 3 | 6 | 6 | 0 | 12 |
+| 3 | 1 | 4 | 9 | 6 | 3 | 17 |
+| 3 | 2 | 5 | 12 | 6 | 6 | 23 |
+| 3 | 3 | 6 | 16 | 6 | 10 | 30 |
+| 4 | 0 | 4 | 9 | 9 | 0 | 21 |
+| 4 | 1 | 5 | 12 | 9 | 3 | 29 |
+| 4 | 2 | 6 | 16 | 9 | 7 | 38 |
+
+### Series 2: Ψ(e_2^a · e_3^c)
+
+| a | c | weight | #possible | #nonzero | #cancel | Schur rank |
+|---|---|--------|-----------|----------|---------|------------|
+| 0 | 1 | 2 | 4 | 1 | 3 | 1 |
+| 0 | 2 | 4 | 9 | 1 | 8 | 1 |
+| 1 | 0 | 1 | 2 | 2 | 0 | 2 |
+| 1 | 1 | 3 | 6 | 2 | 4 | 2 |
+| 1 | 2 | 5 | 12 | 2 | 10 | 2 |
+| 2 | 0 | 2 | 4 | 4 | 0 | 6 |
+| 2 | 1 | 4 | 9 | 4 | 5 | 6 |
+| 2 | 2 | 6 | 16 | 4 | 12 | 6 |
+| 3 | 0 | 3 | 6 | 6 | 0 | 12 |
+| 3 | 1 | 5 | 12 | 6 | 6 | 12 |
+| 3 | 2 | 7 | 20 | 6 | 14 | 12 |
+| 4 | 0 | 4 | 9 | 9 | 0 | 21 |
+| 4 | 1 | 6 | 16 | 9 | 7 | 21 |
+| 4 | 2 | 8 | 25 | 9 | 16 | 21 |
+
+==========================================================================
+VERDICT
+==========================================================================
+  e_1 series: total cancellations across sweep = 96
+  e_3 series: total cancellations across sweep = 85

@@ -1,0 +1,142 @@
+==============================================================================
+Lemma 1 verification: ds_j / V |_{a=-2} = b^{j-fall} (c-1)^{j-fall}
+==============================================================================
+
+--- j = 3 ---
+|S_3| = 3
+partitions in S_3 (mu, ell(mu), kappa):
+  mu=(3, 3, 0)  ell=2  kappa=1
+  mu=(3, 2, 1)  ell=3  kappa=2
+  mu=(2, 2, 2)  ell=3  kappa=1
+unique-partition claim (ell<=2 unique, =(3, 3, 0), kappa=1): PASS  (found 1, mu=(3, 3, 0), kappa=1)
+ds_j divisible by V: YES
+PASS: ds_3/V |_{a=-2} = b^fall_3 * (c-1)^fall_3
+  = b*(b - 2)*(b - 1)*(c - 3)*(c - 2)*(c - 1)
+
+--- j = 4 ---
+|S_4| = 4
+partitions in S_4 (mu, ell(mu), kappa):
+  mu=(4, 4, 0)  ell=2  kappa=1
+  mu=(4, 3, 1)  ell=3  kappa=3
+  mu=(4, 2, 2)  ell=3  kappa=2
+  mu=(3, 3, 2)  ell=3  kappa=3
+unique-partition claim (ell<=2 unique, =(4, 4, 0), kappa=1): PASS  (found 1, mu=(4, 4, 0), kappa=1)
+ds_j divisible by V: YES
+PASS: ds_4/V |_{a=-2} = b^fall_4 * (c-1)^fall_4
+  = b*(b - 3)*(b - 2)*(b - 1)*(c - 4)*(c - 3)*(c - 2)*(c - 1)
+
+--- j = 5 ---
+|S_5| = 5
+partitions in S_5 (mu, ell(mu), kappa):
+  mu=(5, 5, 0)  ell=2  kappa=1
+  mu=(5, 4, 1)  ell=3  kappa=4
+  mu=(5, 3, 2)  ell=3  kappa=5
+  mu=(4, 4, 2)  ell=3  kappa=6
+  mu=(4, 3, 3)  ell=3  kappa=5
+unique-partition claim (ell<=2 unique, =(5, 5, 0), kappa=1): PASS  (found 1, mu=(5, 5, 0), kappa=1)
+ds_j divisible by V: YES
+PASS: ds_5/V |_{a=-2} = b^fall_5 * (c-1)^fall_5
+  = b*(b - 4)*(b - 3)*(b - 2)*(b - 1)*(c - 5)*(c - 4)*(c - 3)*(c - 2)*(c - 1)
+
+--- j = 6 ---
+|S_6| = 7
+partitions in S_6 (mu, ell(mu), kappa):
+  mu=(6, 6, 0)  ell=2  kappa=1
+  mu=(6, 5, 1)  ell=3  kappa=5
+  mu=(6, 4, 2)  ell=3  kappa=9
+  mu=(6, 3, 3)  ell=3  kappa=5
+  mu=(5, 5, 2)  ell=3  kappa=10
+  mu=(5, 4, 3)  ell=3  kappa=16
+  mu=(4, 4, 4)  ell=3  kappa=5
+unique-partition claim (ell<=2 unique, =(6, 6, 0), kappa=1): PASS  (found 1, mu=(6, 6, 0), kappa=1)
+ds_j divisible by V: YES
+PASS: ds_6/V |_{a=-2} = b^fall_6 * (c-1)^fall_6
+  = b*(b - 5)*(b - 4)*(b - 3)*(b - 2)*(b - 1)*(c - 6)*(c - 5)*(c - 4)*(c - 3)*(c - 2)*(c - 1)
+
+--- j = 7 ---
+|S_7| = 8
+partitions in S_7 (mu, ell(mu), kappa):
+  mu=(7, 7, 0)  ell=2  kappa=1
+  mu=(7, 6, 1)  ell=3  kappa=6
+  mu=(7, 5, 2)  ell=3  kappa=14
+  mu=(7, 4, 3)  ell=3  kappa=14
+  mu=(6, 6, 2)  ell=3  kappa=15
+  mu=(6, 5, 3)  ell=3  kappa=35
+  mu=(6, 4, 4)  ell=3  kappa=21
+  mu=(5, 5, 4)  ell=3  kappa=21
+unique-partition claim (ell<=2 unique, =(7, 7, 0), kappa=1): PASS  (found 1, mu=(7, 7, 0), kappa=1)
+ds_j divisible by V: YES
+PASS: ds_7/V |_{a=-2} = b^fall_7 * (c-1)^fall_7
+  = b*(b - 6)*(b - 5)*(b - 4)*(b - 3)*(b - 2)*(b - 1)*(c - 7)*(c - 6)*(c - 5)*(c - 4)*(c - 3)*(c - 2)*(c - 1)
+
+--- j = 8 ---
+|S_8| = 10
+partitions in S_8 (mu, ell(mu), kappa):
+  mu=(8, 8, 0)  ell=2  kappa=1
+  mu=(8, 7, 1)  ell=3  kappa=7
+  mu=(8, 6, 2)  ell=3  kappa=20
+  mu=(8, 5, 3)  ell=3  kappa=28
+  mu=(8, 4, 4)  ell=3  kappa=14
+  mu=(7, 7, 2)  ell=3  kappa=21
+  mu=(7, 6, 3)  ell=3  kappa=64
+  mu=(7, 5, 4)  ell=3  kappa=70
+  mu=(6, 6, 4)  ell=3  kappa=56
+  mu=(6, 5, 5)  ell=3  kappa=42
+unique-partition claim (ell<=2 unique, =(8, 8, 0), kappa=1): PASS  (found 1, mu=(8, 8, 0), kappa=1)
+ds_j divisible by V: YES
+PASS: ds_8/V |_{a=-2} = b^fall_8 * (c-1)^fall_8
+  = b*(b - 7)*(b - 6)*(b - 5)*(b - 4)*(b - 3)*(b - 2)*(b - 1)*(c - 8)*(c - 7)*(c - 6)*(c - 5)*(c - 4)*(c - 3)*(c - 2)*(c - 1)
+
+--- j = 9 ---
+|S_9| = 12
+partitions in S_9 (mu, ell(mu), kappa):
+  mu=(9, 9, 0)  ell=2  kappa=1
+  mu=(9, 8, 1)  ell=3  kappa=8
+  mu=(9, 7, 2)  ell=3  kappa=27
+  mu=(9, 6, 3)  ell=3  kappa=48
+  mu=(9, 5, 4)  ell=3  kappa=42
+  mu=(8, 8, 2)  ell=3  kappa=28
+  mu=(8, 7, 3)  ell=3  kappa=105
+  mu=(8, 6, 4)  ell=3  kappa=162
+  mu=(8, 5, 5)  ell=3  kappa=84
+  mu=(7, 7, 4)  ell=3  kappa=120
+  mu=(7, 6, 5)  ell=3  kappa=168
+  mu=(6, 6, 6)  ell=3  kappa=42
+unique-partition claim (ell<=2 unique, =(9, 9, 0), kappa=1): PASS  (found 1, mu=(9, 9, 0), kappa=1)
+ds_j divisible by V: YES
+PASS: ds_9/V |_{a=-2} = b^fall_9 * (c-1)^fall_9
+  = b*(b - 8)*(b - 7)*(b - 6)*(b - 5)*(b - 4)*(b - 3)*(b - 2)*(b - 1)*(c - 9)*(c - 8)*(c - 7)*(c - 6)*(c - 5)*(c - 4)*(c - 3)*(c - 2)*(c - 1)
+
+--- j = 10 ---
+|S_10| = 14
+partitions in S_10 (mu, ell(mu), kappa):
+  mu=(10, 10, 0)  ell=2  kappa=1
+  mu=(10, 9, 1)  ell=3  kappa=9
+  mu=(10, 8, 2)  ell=3  kappa=35
+  mu=(10, 7, 3)  ell=3  kappa=75
+  mu=(10, 6, 4)  ell=3  kappa=90
+  mu=(10, 5, 5)  ell=3  kappa=42
+  mu=(9, 9, 2)  ell=3  kappa=36
+  mu=(9, 8, 3)  ell=3  kappa=160
+  mu=(9, 7, 4)  ell=3  kappa=315
+  mu=(9, 6, 5)  ell=3  kappa=288
+  mu=(8, 8, 4)  ell=3  kappa=225
+  mu=(8, 7, 5)  ell=3  kappa=450
+  mu=(8, 6, 6)  ell=3  kappa=252
+  mu=(7, 7, 6)  ell=3  kappa=210
+unique-partition claim (ell<=2 unique, =(10, 10, 0), kappa=1): PASS  (found 1, mu=(10, 10, 0), kappa=1)
+ds_j divisible by V: YES
+PASS: ds_10/V |_{a=-2} = b^fall_10 * (c-1)^fall_10
+  = b*(b - 9)*(b - 8)*(b - 7)*(b - 6)*(b - 5)*(b - 4)*(b - 3)*(b - 2)*(b - 1)*(c - 10)*(c - 9)*(c - 8)*(c - 7)*(c - 6)*(c - 5)*(c - 4)*(c - 3)*(c - 2)*(c - 1)
+
+==============================================================================
+SUMMARY
+==============================================================================
+  j = 3: PASS   unique-mu=True
+  j = 4: PASS   unique-mu=True
+  j = 5: PASS   unique-mu=True
+  j = 6: PASS   unique-mu=True
+  j = 7: PASS   unique-mu=True
+  j = 8: PASS   unique-mu=True
+  j = 9: PASS   unique-mu=True
+  j = 10: PASS   unique-mu=True

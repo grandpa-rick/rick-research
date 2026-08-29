@@ -1,0 +1,553 @@
+Building shifted-Schur tables & ds_j/V up to j = 12...
+
+========================================================================
+STEP 1  Verify ansatz at p = 4.
+        Fit A_4 = sum_{k=0..4} alpha_k(sigma) * pi^k * (sigma-9)^{↓(j-8)}
+========================================================================
+  j = 8: symmetric under (b,c)->(c-1,b+1)? True;  (deg_pi, deg_sig) = (4, 8)
+  j = 9: symmetric under (b,c)->(c-1,b+1)? True;  (deg_pi, deg_sig) = (4, 9)
+  j = 10: symmetric under (b,c)->(c-1,b+1)? True;  (deg_pi, deg_sig) = (4, 10)
+  j = 11: symmetric under (b,c)->(c-1,b+1)? True;  (deg_pi, deg_sig) = (4, 11)
+  j = 12: symmetric under (b,c)->(c-1,b+1)? True;  (deg_pi, deg_sig) = (4, 12)
+
+  j = 8: FIT with D_alpha = 8.
+      alpha_{4,0}(sigma) [deg_sig=8] = 889*(sigma - 8)*(sigma - 7)*(sigma - 6)*(sigma - 5)*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)
+      alpha_{4,1}(sigma) [deg_sig=7] = -560*(5*sigma**7 - 208*sigma**6 + 3613*sigma**5 - 33526*sigma**4 + 176416*sigma**3 - 515698*sigma**2 + 760538*sigma - 428940)
+      alpha_{4,2}(sigma) [deg_sig=6] = 70*(33*sigma**6 - 1436*sigma**5 + 25284*sigma**4 - 227546*sigma**3 + 1083843*sigma**2 - 2528474*sigma + 2215080)
+      alpha_{4,3}(sigma) [deg_sig=5] = -140*(sigma - 10)*(sigma - 9)*(5*sigma**3 - 122*sigma**2 + 909*sigma - 1820)
+      alpha_{4,4}(sigma) [deg_sig=4] = 70*(sigma - 12)*(sigma - 11)*(sigma - 10)*(sigma - 9)
+  j = 9: FIT with D_alpha = 8.
+      alpha_{4,0}(sigma) [deg_sig=8] = 4809*(sigma - 8)*(sigma - 7)*(sigma - 6)*(sigma - 5)*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)
+      alpha_{4,1}(sigma) [deg_sig=7] = -252*(39*sigma**7 - 1710*sigma**6 + 31412*sigma**5 - 309762*sigma**4 + 1743713*sigma**3 - 5497392*sigma**2 + 8814740*sigma - 5436240)
+      alpha_{4,2}(sigma) [deg_sig=6] = 126*(49*sigma**6 - 2292*sigma**5 + 43480*sigma**4 - 423090*sigma**3 + 2190391*sigma**2 - 5596338*sigma + 5417160)
+      alpha_{4,3}(sigma) [deg_sig=5] = -252*(sigma - 11)*(sigma - 10)*(6*sigma**3 - 157*sigma**2 + 1261*sigma - 2772)
+      alpha_{4,4}(sigma) [deg_sig=4] = 126*(sigma - 13)*(sigma - 12)*(sigma - 11)*(sigma - 10)
+  j = 10: FIT with D_alpha = 8.
+      alpha_{4,0}(sigma) [deg_sig=8] = 17913*(sigma - 8)*(sigma - 7)*(sigma - 6)*(sigma - 5)*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)
+      alpha_{4,1}(sigma) [deg_sig=7] = -210*(133*sigma**7 - 6048*sigma**6 + 115152*sigma**5 - 1177566*sigma**4 + 6882843*sigma**3 - 22562898*sigma**2 + 37640864*sigma - 24128160)
+      alpha_{4,2}(sigma) [deg_sig=6] = 210*(68*sigma**6 - 3371*sigma**5 + 67727*sigma**4 - 697823*sigma**3 + 3825725*sigma**2 - 10351022*sigma + 10605336)
+      alpha_{4,3}(sigma) [deg_sig=5] = -420*(sigma - 12)*(sigma - 11)*(7*sigma**3 - 194*sigma**2 + 1649*sigma - 3850)
+      alpha_{4,4}(sigma) [deg_sig=4] = 210*(sigma - 14)*(sigma - 13)*(sigma - 12)*(sigma - 11)
+  j = 11: FIT with D_alpha = 8.
+      alpha_{4,0}(sigma) [deg_sig=8] = 53823*(sigma - 8)*(sigma - 7)*(sigma - 6)*(sigma - 5)*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)
+      alpha_{4,1}(sigma) [deg_sig=7] = -330*(208*sigma**7 - 9743*sigma**6 + 190631*sigma**5 - 2001239*sigma**4 + 12005153*sigma**3 - 40384658*sigma**2 + 69090640*sigma - 45347232)
+      alpha_{4,2}(sigma) [deg_sig=6] = 330*(90*sigma**6 - 4691*sigma**5 + 98877*sigma**4 - 1066871*sigma**3 + 6114177*sigma**2 - 17252870*sigma + 18385080)
+      alpha_{4,3}(sigma) [deg_sig=5] = -660*(sigma - 13)*(sigma - 12)*(8*sigma**3 - 233*sigma**2 + 2073*sigma - 5054)
+      alpha_{4,4}(sigma) [deg_sig=4] = 330*(sigma - 15)*(sigma - 14)*(sigma - 13)*(sigma - 12)
+  j = 12: FIT with D_alpha = 8.
+      alpha_{4,0}(sigma) [deg_sig=8] = 139623*(sigma - 8)*(sigma - 7)*(sigma - 6)*(sigma - 5)*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)
+      alpha_{4,1}(sigma) [deg_sig=7] = -990*(153*sigma**7 - 7356*sigma**6 + 147218*sigma**5 - 1577928*sigma**4 + 9655697*sigma**3 - 33109404*sigma**2 + 57682532*sigma - 38496192)
+      alpha_{4,2}(sigma) [deg_sig=6] = 495*(115*sigma**6 - 6270*sigma**5 + 137818*sigma**4 - 1546440*sigma**3 + 9191779*sigma**2 - 26813418*sigma + 29436960)
+      alpha_{4,3}(sigma) [deg_sig=5] = -990*(sigma - 14)*(sigma - 13)*(9*sigma**3 - 274*sigma**2 + 2533*sigma - 6384)
+      alpha_{4,4}(sigma) [deg_sig=4] = 495*(sigma - 16)*(sigma - 15)*(sigma - 14)*(sigma - 13)
+
+Ansatz status at p=4: VERIFIED
+
+========================================================================
+STEP 2  Extract alpha_{p,k}(j, sigma) for p in {2, 3, 4}, all k.
+========================================================================
+
+  === p = 2 ===
+
+  --- alpha_{2,0}(j, sigma) ---
+      alpha_{2,0}[sigma^0]: deg-4 in j, poly = j*(j - 2)*(j - 1)*(3*j - 13)
+      alpha_{2,0}[sigma^1]: deg-4 in j, poly = -25*j*(j - 2)*(j - 1)*(3*j - 13)/12
+      alpha_{2,0}[sigma^2]: deg-4 in j, poly = 35*j*(j - 2)*(j - 1)*(3*j - 13)/24
+      alpha_{2,0}[sigma^3]: deg-4 in j, poly = -5*j*(j - 2)*(j - 1)*(3*j - 13)/12
+      alpha_{2,0}[sigma^4]: deg-4 in j, poly = j*(j - 2)*(j - 1)*(3*j - 13)/24
+
+  --- alpha_{2,1}(j, sigma) ---
+      alpha_{2,1}[sigma^0]: deg-4 in j, poly = j*(j - 1)*(13*j**2 - 33*j - 70)/2
+      alpha_{2,1}[sigma^1]: deg-4 in j, poly = -j*(j - 1)*(8*j**2 - 4*j - 85)/2
+      alpha_{2,1}[sigma^2]: deg-4 in j, poly = j*(j - 1)*(j**2 + 6*j - 30)/2
+      alpha_{2,1}[sigma^3]: deg-3 in j, poly = -j*(j - 3)*(j - 1)/2
+
+  --- alpha_{2,2}(j, sigma) ---
+      alpha_{2,2}[sigma^0]: deg-4 in j, poly = j*(j - 1)*(j + 1)*(j + 2)/2
+      alpha_{2,2}[sigma^1]: deg-3 in j, poly = -j*(j - 1)*(2*j + 3)/2
+      alpha_{2,2}[sigma^2]: deg-2 in j, poly = j*(j - 1)/2
+
+  === p = 3 ===
+
+  --- alpha_{3,0}(j, sigma) ---
+      alpha_{3,0}[sigma^0]: deg-6 in j, poly = -15*j*(j - 3)*(j - 2)*(j - 1)*(j**2 - 7*j + 8)
+      alpha_{3,0}[sigma^1]: deg-6 in j, poly = 147*j*(j - 3)*(j - 2)*(j - 1)*(j**2 - 7*j + 8)/4
+      alpha_{3,0}[sigma^2]: deg-6 in j, poly = -203*j*(j - 3)*(j - 2)*(j - 1)*(j**2 - 7*j + 8)/6
+      alpha_{3,0}[sigma^3]: deg-6 in j, poly = 245*j*(j - 3)*(j - 2)*(j - 1)*(j**2 - 7*j + 8)/16
+      alpha_{3,0}[sigma^4]: deg-6 in j, poly = -175*j*(j - 3)*(j - 2)*(j - 1)*(j**2 - 7*j + 8)/48
+      alpha_{3,0}[sigma^5]: deg-6 in j, poly = 7*j*(j - 3)*(j - 2)*(j - 1)*(j**2 - 7*j + 8)/16
+      alpha_{3,0}[sigma^6]: deg-6 in j, poly = -j*(j - 3)*(j - 2)*(j - 1)*(j**2 - 7*j + 8)/48
+
+  --- alpha_{3,1}(j, sigma) ---
+      alpha_{3,1}[sigma^0]: deg-6 in j, poly = -j*(j - 2)*(j - 1)*(319*j**3 - 2046*j**2 + 269*j + 6954)/6
+      alpha_{3,1}[sigma^1]: deg-6 in j, poly = j*(j - 2)*(j - 1)*(162*j**3 - 798*j**2 - 1278*j + 4933)/3
+      alpha_{3,1}[sigma^2]: deg-6 in j, poly = -j*(j - 2)*(j - 1)*(437*j**3 - 1124*j**2 - 9583*j + 20238)/24
+      alpha_{3,1}[sigma^3]: deg-6 in j, poly = j*(j - 2)*(j - 1)*(60*j**3 + 117*j**2 - 2969*j + 4790)/24
+      alpha_{3,1}[sigma^4]: deg-6 in j, poly = -j*(j - 2)*(j - 1)*(3*j**3 + 44*j**2 - 385*j + 546)/24
+      alpha_{3,1}[sigma^5]: deg-5 in j, poly = j*(j - 2)**2*(j - 1)*(3*j - 13)/24
+
+  --- alpha_{3,2}(j, sigma) ---
+      alpha_{3,2}[sigma^0]: deg-6 in j, poly = -5*j*(j - 2)*(j - 1)*(j + 1)*(5*j**2 - 11*j - 60)/3
+      alpha_{3,2}[sigma^1]: deg-6 in j, poly = j*(j - 2)*(j - 1)*(39*j**3 + 180*j**2 - 1005*j - 2026)/12
+      alpha_{3,2}[sigma^2]: deg-6 in j, poly = -j*(j - 2)*(j - 1)*(j**3 + 26*j**2 - 30*j - 331)/4
+      alpha_{3,2}[sigma^3]: deg-5 in j, poly = j*(j - 2)*(j - 1)*(3*j**2 + 15*j - 88)/6
+      alpha_{3,2}[sigma^4]: deg-4 in j, poly = -j*(j - 3)*(j - 2)*(j - 1)/4
+
+  --- alpha_{3,3}(j, sigma) ---
+      alpha_{3,3}[sigma^0]: deg-6 in j, poly = -j*(j - 2)*(j - 1)*(j + 1)*(j + 2)*(j + 3)/6
+      alpha_{3,3}[sigma^1]: deg-5 in j, poly = j*(j - 2)*(j - 1)*(3*j**2 + 12*j + 11)/6
+      alpha_{3,3}[sigma^2]: deg-4 in j, poly = -j*(j - 2)*(j - 1)*(j + 2)/2
+      alpha_{3,3}[sigma^3]: deg-3 in j, poly = j*(j - 2)*(j - 1)/6
+
+  === p = 4 ===
+
+  --- alpha_{4,0}(j, sigma) ---
+      alpha_{4,0}[sigma^0]: deg-4 in j, poly = 3360*(6731*j**4 - 228534*j**3 + 2947525*j**2 - 17060922*j + 37295676)
+      alpha_{4,0}[sigma^1]: deg-4 in j, poly = -9132*(6731*j**4 - 228534*j**3 + 2947525*j**2 - 17060922*j + 37295676)
+      alpha_{4,0}[sigma^2]: deg-4 in j, poly = 29531*(6731*j**4 - 228534*j**3 + 2947525*j**2 - 17060922*j + 37295676)/3
+      alpha_{4,0}[sigma^3]: deg-4 in j, poly = -5607*(6731*j**4 - 228534*j**3 + 2947525*j**2 - 17060922*j + 37295676)
+      alpha_{4,0}[sigma^4]: deg-4 in j, poly = 7483*(6731*j**4 - 228534*j**3 + 2947525*j**2 - 17060922*j + 37295676)/4
+      alpha_{4,0}[sigma^5]: deg-4 in j, poly = -378*(6731*j**4 - 228534*j**3 + 2947525*j**2 - 17060922*j + 37295676)
+      alpha_{4,0}[sigma^6]: deg-4 in j, poly = 91*(6731*j**4 - 228534*j**3 + 2947525*j**2 - 17060922*j + 37295676)/2
+      alpha_{4,0}[sigma^7]: deg-4 in j, poly = -3*(6731*j**4 - 228534*j**3 + 2947525*j**2 - 17060922*j + 37295676)
+      alpha_{4,0}[sigma^8]: deg-4 in j, poly = (6731*j**4 - 228534*j**3 + 2947525*j**2 - 17060922*j + 37295676)/12
+
+  --- alpha_{4,1}(j, sigma) ---
+      alpha_{4,1}[sigma^0]: deg-4 in j, poly = 840*(169387*j**4 - 5715786*j**3 + 73362881*j**2 - 423037458*j + 922034520)
+      alpha_{4,1}[sigma^1]: deg-4 in j, poly = -5*(121854847*j**4 - 4098063282*j**3 + 52470754253*j**2 - 302018040042*j + 657362535984)/3
+      alpha_{4,1}[sigma^2]: deg-4 in j, poly = 2*(165452039*j**4 - 5542290264*j**3 + 70758929554*j**2 - 406419263409*j + 883176865560)/3
+      alpha_{4,1}[sigma^3]: deg-4 in j, poly = -(362925253*j**4 - 12101232678*j**3 + 153980835923*j**2 - 882229995618*j + 1913541276240)/12
+      alpha_{4,1}[sigma^4]: deg-4 in j, poly = (13847608*j**4 - 459235203*j**3 + 5820480443*j**2 - 33250625808*j + 71959203360)/3
+      alpha_{4,1}[sigma^5]: deg-4 in j, poly = -(2391101*j**4 - 78775176*j**3 + 993584221*j**2 - 5655427266*j + 12205108080)/6
+      alpha_{4,1}[sigma^6]: deg-4 in j, poly = 5*(10874*j**4 - 355089*j**3 + 4449181*j**2 - 25197510*j + 54168048)/3
+      alpha_{4,1}[sigma^7]: deg-4 in j, poly = -(3989*j**4 - 128514*j**3 + 1593679*j**2 - 8953554*j + 19126800)/12
+
+  --- alpha_{4,2}(j, sigma) ---
+      alpha_{4,2}[sigma^0]: deg-4 in j, poly = 210*(216373*j**4 - 7207614*j**3 + 91653479*j**2 - 524904414*j + 1138185576)
+      alpha_{4,2}[sigma^1]: deg-4 in j, poly = -(448790029*j**4 - 14832569454*j**3 + 187561214879*j**2 - 1069802758014*j + 2312659831680)/12
+      alpha_{4,2}[sigma^2]: deg-4 in j, poly = 3*(30171379*j**4 - 986703314*j**3 + 12383918209*j**2 - 70250785634*j + 151247965440)/8
+      alpha_{4,2}[sigma^3]: deg-4 in j, poly = -5*(979148*j**4 - 31563750*j**3 + 392131885*j**2 - 2208079443*j + 4727801628)/3
+      alpha_{4,2}[sigma^4]: deg-4 in j, poly = 5*(96475*j**4 - 3049122*j**3 + 37357205*j**2 - 208257006*j + 442599696)/4
+      alpha_{4,2}[sigma^5]: deg-4 in j, poly = -(52171*j**4 - 1602186*j**3 + 19236821*j**2 - 105693846*j + 222227280)/12
+      alpha_{4,2}[sigma^6]: deg-4 in j, poly = (473*j**4 - 13878*j**3 + 161323*j**2 - 865998*j + 1789920)/8
+
+  --- alpha_{4,3}(j, sigma) ---
+      alpha_{4,3}[sigma^0]: deg-4 in j, poly = 420*(6455*j**4 - 210522*j**3 + 2638957*j**2 - 14962218*j + 32206680)
+      alpha_{4,3}[sigma^1]: deg-4 in j, poly = -(7299631*j**4 - 233815146*j**3 + 2895061061*j**2 - 16271763306*j + 34802032320)/6
+      alpha_{4,3}[sigma^2]: deg-4 in j, poly = (2201123*j**4 - 68470338*j**3 + 831136513*j**2 - 4606859298*j + 9753670080)/12
+      alpha_{4,3}[sigma^3]: deg-4 in j, poly = -(145553*j**4 - 4326438*j**3 + 50967163*j**2 - 276790998*j + 577558080)/12
+      alpha_{4,3}[sigma^4]: deg-4 in j, poly = (4213*j**4 - 115998*j**3 + 1301303*j**2 - 6844398*j + 13970880)/12
+      alpha_{4,3}[sigma^5]: deg-4 in j, poly = -(41*j**4 - 966*j**3 + 9811*j**2 - 48486*j + 95040)/12
+
+  --- alpha_{4,4}(j, sigma) ---
+      alpha_{4,4}[sigma^0]: deg-4 in j, poly = 6930*(5*j**4 - 158*j**3 + 1943*j**2 - 10878*j + 23208)
+      alpha_{4,4}[sigma^1]: deg-4 in j, poly = -(24511*j**4 - 731226*j**3 + 8665061*j**2 - 47294346*j + 99063360)/4
+      alpha_{4,4}[sigma^2]: deg-4 in j, poly = (8651*j**4 - 233346*j**3 + 2605081*j**2 - 13690146*j + 27941760)/24
+      alpha_{4,4}[sigma^3]: deg-4 in j, poly = -(31*j**4 - 666*j**3 + 6581*j**2 - 32346*j + 63360)/4
+      alpha_{4,4}[sigma^4]: deg-4 in j, poly = j*(j - 3)*(j - 2)*(j - 1)/24
+
+========================================================================
+STEP 3  Hunt for closed-form pattern in alpha_{p,k}.
+========================================================================
+
+  --- (3a) Check alpha_{p,p} = (j)_p/p! * prod_{i=1..p} (sigma - j - i - 1) ---
+    p = 2: MISMATCH
+      conjecture = (j - sigma + 2)*(j - sigma + 3)*binomial(j, 2)
+      empirical  = j*(j - 1)*(j - sigma + 1)*(j - sigma + 2)/2
+      diff = j**4/2 - j**3*sigma + j**3 + j**2*sigma**2/2 - j**2*sigma/2 - j**2*binomial(j, 2) - j**2/2 - j*sigma**2/2 + 2*j*sigma*binomial(j, 2) + 3*j*sigma/2 - 5*j*binomial(j, 2) - j - sigma**2*binomial(j, 2) + 5*sigma*binomial(j, 2) - 6*binomial(j, 2)
+    p = 3: MISMATCH
+      conjecture = -(j - sigma + 2)*(j - sigma + 3)*(j - sigma + 4)*binomial(j, 3)
+      empirical  = -j*(j - 2)*(j - 1)*(j - sigma + 1)*(j - sigma + 2)*(j - sigma + 3)/6
+      diff = -j**6/6 + j**5*sigma/2 - j**5/2 - j**4*sigma**2/2 + j**4*sigma/2 + 5*j**4/6 + j**3*sigma**3/6 + j**3*sigma**2/2 - 19*j**3*sigma/6 + j**3*binomial(j, 3) + 5*j**3/2 - j**2*sigma**3/2 + 2*j**2*sigma**2 - 3*j**2*sigma*binomial(j, 3) - 3*j**2*sigma/2 + 9*j**2*binomial(j, 3) - 2*j**2/3 + j*sigma**3/3 + 3*j*sigma**2*binomial(j, 3) - 2*j*sigma**2 - 18*j*sigma*binomial(j, 3) + 11*j*sigma/3 + 26*j*binomial(j, 3) - 2*j - sigma**3*binomial(j, 3) + 9*sigma**2*binomial(j, 3) - 26*sigma*binomial(j, 3) + 24*binomial(j, 3)
+    p = 4: MISMATCH
+      conjecture = (j - sigma + 2)*(j - sigma + 3)*(j - sigma + 4)*(j - sigma + 5)*binomial(j, 4)
+      empirical  = (j**4*sigma**4 - 186*j**4*sigma**3 + 8651*j**4*sigma**2 - 147066*j**4*sigma + 831600*j**4 - 6*j**3*sigma**4 + 3996*j**3*sigma**3 - 233346*j**3*sigma**2 + 4387356*j**3*sigma - 26278560*j**3 + 11*j**2*sigma**4 - 39486*j**2*sigma**3 + 2605081*j**2*sigma**2 - 51990366*j**2*sigma + 323159760*j**2 - 6*j*sigma**4 + 194076*j*sigma**3 - 13690146*j*sigma**2 + 283766076*j*sigma - 1809228960*j - 380160*sigma**3 + 27941760*sigma**2 - 594380160*sigma + 3859954560)/24
+      diff = j**4*sigma**4/24 - 31*j**4*sigma**3/4 + 8651*j**4*sigma**2/24 - 24511*j**4*sigma/4 - j**4*binomial(j, 4) + 34650*j**4 - j**3*sigma**4/4 + 333*j**3*sigma**3/2 - 38891*j**3*sigma**2/4 + 4*j**3*sigma*binomial(j, 4) + 365613*j**3*sigma/2 - 14*j**3*binomial(j, 4) - 1094940*j**3 + 11*j**2*sigma**4/24 - 6581*j**2*sigma**3/4 - 6*j**2*sigma**2*binomial(j, 4) + 2605081*j**2*sigma**2/24 + 42*j**2*sigma*binomial(j, 4) - 8665061*j**2*sigma/4 - 71*j**2*binomial(j, 4) + 13464990*j**2 - j*sigma**4/4 + 4*j*sigma**3*binomial(j, 4) + 16173*j*sigma**3/2 - 42*j*sigma**2*binomial(j, 4) - 2281691*j*sigma**2/4 + 142*j*sigma*binomial(j, 4) + 23647173*j*sigma/2 - 154*j*binomial(j, 4) - 75384540*j - sigma**4*binomial(j, 4) + 14*sigma**3*binomial(j, 4) - 15840*sigma**3 - 71*sigma**2*binomial(j, 4) + 1164240*sigma**2 + 154*sigma*binomial(j, 4) - 24765840*sigma - 120*binomial(j, 4) + 160831440
+
+  --- (3b) Check alpha_{p,0} = C_p(j) * (sigma-1)^{↓(2p)}; report C_p(j) ---
+    p = 2: C_p(j) = j*(j - 2)*(j - 1)*(3*j - 13)/24
+    p = 3: C_p(j) = -j*(j - 3)*(j - 2)*(j - 1)*(j**2 - 7*j + 8)/48
+    p = 4: C_p(j) = (6731*j**4 - 228534*j**3 + 2947525*j**2 - 17060922*j + 37295676)/12
+
+  --- (3c) Middle alpha_{p,k}: try factorization hunts ---
+
+    alpha_{2,0}(j, sigma):
+      raw factored:  j*(j - 2)*(j - 1)*(3*j - 13)*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)/24
+      substitute sigma = tau + j:  j*(j - 2)*(j - 1)*(3*j - 13)*(j + tau - 4)*(j + tau - 3)*(j + tau - 2)*(j + tau - 1)/24
+      substitute sigma = tau + 2p (= tau + 4):  j*tau*(j - 2)*(j - 1)*(3*j - 13)*(tau + 1)*(tau + 2)*(tau + 3)/24
+      leading sigma^4 coefficient = j*(j - 2)*(j - 1)*(3*j - 13)/24
+      sigma^0 coefficient = j*(j - 2)*(j - 1)*(3*j - 13)
+
+    alpha_{2,1}(j, sigma):
+      raw factored:  j*(j - 1)*(j**2*sigma**2 - 8*j**2*sigma + 13*j**2 - j*sigma**3 + 6*j*sigma**2 + 4*j*sigma - 33*j + 3*sigma**3 - 30*sigma**2 + 85*sigma - 70)/2
+      substitute sigma = tau + j:  -j*(j - 1)*(j**3*tau - j**3 + 2*j**2*tau**2 - 13*j**2*tau + 13*j**2 + j*tau**3 - 15*j*tau**2 + 56*j*tau - 52*j - 3*tau**3 + 30*tau**2 - 85*tau + 70)/2
+      substitute sigma = tau + 2p (= tau + 4):  j*(j - 1)*(j**2*tau**2 - 3*j**2 - j*tau**3 - 6*j*tau**2 + 4*j*tau + 15*j + 3*tau**3 + 6*tau**2 - 11*tau - 18)/2
+      leading sigma^3 coefficient = -j*(j - 3)*(j - 1)/2
+      sigma^0 coefficient = j*(j - 1)*(13*j**2 - 33*j - 70)/2
+
+    alpha_{2,2}(j, sigma):
+      raw factored:  j*(j - 1)*(j - sigma + 1)*(j - sigma + 2)/2
+      substitute sigma = tau + j:  j*(j - 1)*(tau - 2)*(tau - 1)/2
+      substitute sigma = tau + 2p (= tau + 4):  j*(j - 1)*(j - tau - 3)*(j - tau - 2)/2
+      leading sigma^2 coefficient = j*(j - 1)/2
+      sigma^0 coefficient = j*(j - 1)*(j + 1)*(j + 2)/2
+
+    alpha_{3,0}(j, sigma):
+      raw factored:  -j*(j - 3)*(j - 2)*(j - 1)*(sigma - 6)*(sigma - 5)*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)*(j**2 - 7*j + 8)/48
+      substitute sigma = tau + j:  -j*(j - 3)*(j - 2)*(j - 1)*(j + tau - 6)*(j + tau - 5)*(j + tau - 4)*(j + tau - 3)*(j + tau - 2)*(j + tau - 1)*(j**2 - 7*j + 8)/48
+      substitute sigma = tau + 2p (= tau + 6):  -j*tau*(j - 3)*(j - 2)*(j - 1)*(tau + 1)*(tau + 2)*(tau + 3)*(tau + 4)*(tau + 5)*(j**2 - 7*j + 8)/48
+      leading sigma^6 coefficient = -j*(j - 3)*(j - 2)*(j - 1)*(j**2 - 7*j + 8)/48
+      sigma^0 coefficient = -15*j*(j - 3)*(j - 2)*(j - 1)*(j**2 - 7*j + 8)
+
+    alpha_{3,1}(j, sigma):
+      raw factored:  -j*(j - 2)*(j - 1)*(3*j**3*sigma**4 - 60*j**3*sigma**3 + 437*j**3*sigma**2 - 1296*j**3*sigma + 1276*j**3 - 3*j**2*sigma**5 + 44*j**2*sigma**4 - 117*j**2*sigma**3 - 1124*j**2*sigma**2 + 6384*j**2*sigma - 8184*j**2 + 19*j*sigma**5 - 385*j*sigma**4 + 2969*j*sigma**3 - 9583*j*sigma**2 + 10224*j*sigma + 1076*j - 26*sigma**5 + 546*sigma**4 - 4790*sigma**3 + 20238*sigma**2 - 39464*sigma + 27816)/24
+      substitute sigma = tau + j:  j*(j - 2)*(j - 1)*(3*j**6*tau - 3*j**6 + 12*j**5*tau**2 - 91*j**5*tau + 91*j**5 + 18*j**4*tau**3 - 274*j**4*tau**2 + 1147*j**4*tau - 1095*j**4 + 12*j**3*tau**4 - 306*j**3*tau**3 + 2484*j**3*tau**2 - 7547*j**3*tau + 6713*j**3 + 3*j**2*tau**5 - 139*j**2*tau**4 + 1917*j**2*tau**3 - 11059*j**2*tau**2 + 27152*j**2*tau - 22278*j**2 - 19*j*tau**5 + 515*j*tau**4 - 5153*j*tau**3 + 23953*j*tau**2 - 50700*j*tau + 38388*j + 26*tau**5 - 546*tau**4 + 4790*tau**3 - 20238*tau**2 + 39464*tau - 27816)/24
+      substitute sigma = tau + 2p (= tau + 6):  -j*(j - 2)*(j - 1)*(3*j**3*tau**4 + 12*j**3*tau**3 + 5*j**3*tau**2 + 60*j**3*tau + 160*j**3 - 3*j**2*tau**5 - 46*j**2*tau**4 - 141*j**2*tau**3 - 206*j**2*tau**2 - 1164*j**2*tau - 1920*j**2 + 19*j*tau**5 + 185*j*tau**4 + 569*j*tau**3 + 1739*j*tau**2 + 6360*j*tau + 7520*j - 26*tau**5 - 234*tau**4 - 1046*tau**3 - 4206*tau**2 - 10664*tau - 9600)/24
+      leading sigma^5 coefficient = j*(j - 2)**2*(j - 1)*(3*j - 13)/24
+      sigma^0 coefficient = -j*(j - 2)*(j - 1)*(319*j**3 - 2046*j**2 + 269*j + 6954)/6
+
+    alpha_{3,2}(j, sigma):
+      raw factored:  -j*(j - 2)*(j - 1)*(j - sigma + 1)*(3*j**2*sigma**2 - 39*j**2*sigma + 100*j**2 - 3*j*sigma**3 + 36*j*sigma**2 - 41*j*sigma - 220*j + 9*sigma**3 - 167*sigma**2 + 826*sigma - 1200)/12
+      substitute sigma = tau + j:  -j*(j - 2)*(j - 1)*(tau - 1)*(3*j**3*tau - 6*j**3 + 6*j**2*tau**2 - 60*j**2*tau + 108*j**2 + 3*j*tau**3 - 63*j*tau**2 + 375*j*tau - 606*j - 9*tau**3 + 167*tau**2 - 826*tau + 1200)/12
+      substitute sigma = tau + 2p (= tau + 6):  -j*(j - 2)*(j - 1)*(j - tau - 5)*(3*j**2*tau**2 - 3*j**2*tau - 26*j**2 - 3*j*tau**3 - 18*j*tau**2 + 67*j*tau + 182*j + 9*tau**3 - 5*tau**2 - 206*tau - 312)/12
+      leading sigma^4 coefficient = -j*(j - 3)*(j - 2)*(j - 1)/4
+      sigma^0 coefficient = -5*j*(j - 2)*(j - 1)*(j + 1)*(5*j**2 - 11*j - 60)/3
+
+    alpha_{3,3}(j, sigma):
+      raw factored:  -j*(j - 2)*(j - 1)*(j - sigma + 1)*(j - sigma + 2)*(j - sigma + 3)/6
+      substitute sigma = tau + j:  j*(j - 2)*(j - 1)*(tau - 3)*(tau - 2)*(tau - 1)/6
+      substitute sigma = tau + 2p (= tau + 6):  -j*(j - 2)*(j - 1)*(j - tau - 5)*(j - tau - 4)*(j - tau - 3)/6
+      leading sigma^3 coefficient = j*(j - 2)*(j - 1)/6
+      sigma^0 coefficient = -j*(j - 2)*(j - 1)*(j + 1)*(j + 2)*(j + 3)/6
+
+    alpha_{4,0}(j, sigma):
+      raw factored:  (sigma - 8)*(sigma - 7)*(sigma - 6)*(sigma - 5)*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)*(6731*j**4 - 228534*j**3 + 2947525*j**2 - 17060922*j + 37295676)/12
+      substitute sigma = tau + j:  (j + tau - 8)*(j + tau - 7)*(j + tau - 6)*(j + tau - 5)*(j + tau - 4)*(j + tau - 3)*(j + tau - 2)*(j + tau - 1)*(6731*j**4 - 228534*j**3 + 2947525*j**2 - 17060922*j + 37295676)/12
+      substitute sigma = tau + 2p (= tau + 8):  tau*(tau + 1)*(tau + 2)*(tau + 3)*(tau + 4)*(tau + 5)*(tau + 6)*(tau + 7)*(6731*j**4 - 228534*j**3 + 2947525*j**2 - 17060922*j + 37295676)/12
+      leading sigma^8 coefficient = (6731*j**4 - 228534*j**3 + 2947525*j**2 - 17060922*j + 37295676)/12
+      sigma^0 coefficient = 3360*(6731*j**4 - 228534*j**3 + 2947525*j**2 - 17060922*j + 37295676)
+
+    alpha_{4,1}(j, sigma):
+      raw factored:  -(3989*j**4*sigma**7 - 217480*j**4*sigma**6 + 4782202*j**4*sigma**5 - 55390432*j**4*sigma**4 + 362925253*j**4*sigma**3 - 1323616312*j**4*sigma**2 + 2437096940*j**4*sigma - 1707420960*j**4 - 128514*j**3*sigma**7 + 7101780*j**3*sigma**6 - 157550352*j**3*sigma**5 + 1836940812*j**3*sigma**4 - 12101232678*j**3*sigma**3 + 44338322112*j**3*sigma**2 - 81961265640*j**3*sigma + 57615122880*j**3 + 1593679*j**2*sigma**7 - 88983620*j**2*sigma**6 + 1987168442*j**2*sigma**5 - 23281921772*j**2*sigma**4 + 153980835923*j**2*sigma**3 - 566071436432*j**2*sigma**2 + 1049415085060*j**2*sigma - 739497840480*j**2 - 8953554*j*sigma**7 + 503950200*j*sigma**6 - 11310854532*j*sigma**5 + 133002503232*j*sigma**4 - 882229995618*j*sigma**3 + 3251354107272*j*sigma**2 - 6040360800840*j*sigma + 4264217576640*j + 19126800*sigma**7 - 1083360960*sigma**6 + 24410216160*sigma**5 - 287836813440*sigma**4 + 1913541276240*sigma**3 - 7065414924480*sigma**2 + 13147250719680*sigma - 9294107961600)/12
+      substitute sigma = tau + j:  -(3989*j**11 + 27923*j**10*tau - 345994*j**10 + 83769*j**9*tau**2 - 2204478*j**9*tau + 13477661*j**9 + 139615*j**8*tau**3 - 5960994*j**8*tau**2 + 77677443*j**8*tau - 310877958*j**8 + 139615*j**7*tau**4 - 8847590*j**7*tau**3 + 187815979*j**7*tau**2 - 1605890086*j**7*tau + 4710111507*j**7 + 83769*j**6*tau**5 - 7760190*j**6*tau**4 + 245636385*j**6*tau**3 - 3430625046*j**6*tau**2 + 21529970017*j**6*tau - 49100986254*j**6 + 27923*j**5*tau**6 - 4003674*j**5*tau**5 + 186216475*j**5*tau**4 - 3890112038*j**5*tau**3 + 39943020851*j**5*tau**2 - 195133056166*j**5*tau + 358168974367*j**5 + 3989*j**4*tau**7 - 1117078*j**4*tau**6 + 80860141*j**4*tau**5 - 2491270882*j**4*tau**4 + 38330814921*j**4*tau**3 - 306677804698*j**4*tau**2 + 1207117342661*j**4*tau - 1819806932090*j**4 - 128514*j**3*tau**7 + 18257533*j**3*tau**6 - 879476706*j**3*tau**5 + 20001474022*j**3*tau**4 - 240004684286*j**3*tau**3 + 1548398010873*j**3*tau**2 - 5012141379118*j**3*tau + 6271925591452*j**3 + 1593679*j**2*tau**7 - 151658498*j**2*tau**6 + 5412532442*j**2*tau**5 - 96086608832*j**2*tau**4 + 930093010451*j**2*tau**3 - 4939782303926*j**2*tau**2 + 13292747128324*j**2*tau - 13845273565800*j**2 - 8953554*j*tau**7 + 637837800*j*tau**6 - 17811020292*j*tau**5 + 255053584032*j*tau**4 - 2033577249378*j*tau**3 + 8991977935992*j*tau**2 - 20171190649800*j*tau + 17411468296320*j + 19126800*tau**7 - 1083360960*tau**6 + 24410216160*tau**5 - 287836813440*tau**4 + 1913541276240*tau**3 - 7065414924480*tau**2 + 13147250719680*tau - 9294107961600)/12
+      substitute sigma = tau + 2p (= tau + 8):  -(3989*j**4*tau**7 + 5904*j**4*tau**6 - 295622*j**4*tau**5 - 1400272*j**4*tau**4 - 4091451*j**4*tau**3 - 15490496*j**4*tau**2 + 2315820*j**4*tau + 74088000*j**4 - 128514*j**3*tau**7 - 95004*j**3*tau**6 + 10612272*j**3*tau**5 + 49664652*j**3*tau**4 + 147108186*j**3*tau**3 + 535488816*j**3*tau**2 - 118667880*j**3*tau - 2578262400*j**3 + 1593679*j**2*tau**7 + 262404*j**2*tau**6 - 142140742*j**2*tau**5 - 660731612*j**2*tau**4 - 1975305261*j**2*tau**3 - 6985381576*j**2*tau**2 + 1948655940*j**2*tau + 33887851200*j**2 - 8953554*j*tau**7 + 2551176*j*tau**6 + 845178492*j*tau**5 + 3912826272*j*tau**4 + 11771753886*j*tau**3 + 40729330776*j*tau**2 - 13230736200*j*tau - 199034236800*j + 19126800*tau**7 - 12260160*tau**6 - 1884690720*tau**5 - 8702432640*tau**4 - 26296593840*tau**3 - 89464668480*tau**2 + 32369388480*tau + 440082720000)/12
+      leading sigma^7 coefficient = -(3989*j**4 - 128514*j**3 + 1593679*j**2 - 8953554*j + 19126800)/12
+      sigma^0 coefficient = 840*(169387*j**4 - 5715786*j**3 + 73362881*j**2 - 423037458*j + 922034520)
+
+    alpha_{4,2}(j, sigma):
+      raw factored:  (1419*j**4*sigma**6 - 104342*j**4*sigma**5 + 2894250*j**4*sigma**4 - 39165920*j**4*sigma**3 + 271542411*j**4*sigma**2 - 897580058*j**4*sigma + 1090519920*j**4 - 41634*j**3*sigma**6 + 3204372*j**3*sigma**5 - 91473660*j**3*sigma**4 + 1262550000*j**3*sigma**3 - 8880329826*j**3*sigma**2 + 29665138908*j**3*sigma - 36326374560*j**3 + 483969*j**2*sigma**6 - 38473642*j**2*sigma**5 + 1120716150*j**2*sigma**4 - 15685275400*j**2*sigma**3 + 111455263881*j**2*sigma**2 - 375122429758*j**2*sigma + 461933534160*j**2 - 2597994*j*sigma**6 + 211387692*j*sigma**5 - 6247710180*j*sigma**4 + 88323177720*j*sigma**3 - 632257070706*j*sigma**2 + 2139605516028*j*sigma - 2645518246560*j + 5369760*sigma**6 - 444454560*sigma**5 + 13277990880*sigma**4 - 189112065120*sigma**3 + 1361231688960*sigma**2 - 4625319663360*sigma + 5736455303040)/24
+      substitute sigma = tau + j:  (1419*j**10 + 8514*j**9*tau - 145976*j**9 + 21285*j**8*tau**2 - 771514*j**8*tau + 6582591*j**8 + 28380*j**7*tau**3 - 1667930*j**7*tau**2 + 30502674*j**7*tau - 171711216*j**7 + 21285*j**6*tau**4 - 1876100*j**6*tau**3 + 56668755*j**6*tau**2 - 691348574*j**6*tau + 2871566013*j**6 + 8514*j**5*tau**5 - 1146220*j**5*tau**4 + 53300100*j**5*tau**3 - 1090046050*j**5*tau**2 + 9902756442*j**5*tau - 32155350024*j**5 + 1419*j**4*tau**6 - 354146*j**4*tau**5 + 26175645*j**4*tau**4 - 841756860*j**4*tau**3 + 12977912631*j**4*tau**2 - 92927179430*j**4*tau + 243812091309*j**4 - 41634*j**3*tau**6 + 6108186*j**3*tau**5 - 322811780*j**3*tau**4 + 7966686720*j**3*tau**3 - 97866962706*j**3*tau**2 + 570657163350*j**3*tau - 1232817940144*j**3 + 483969*j**2*tau**6 - 54061606*j**2*tau**5 + 2258201010*j**2*tau**4 - 45120661720*j**2*tau**3 + 456092742321*j**2*tau**2 - 2206972766530*j**2*tau + 3962770739148*j**2 - 2597994*j*tau**6 + 243606252*j*tau**5 - 8469982980*j*tau**4 + 141435141240*j*tau**3 - 1199593266066*j*tau**2 + 4862068893948*j*tau - 7270837909920*j + 5369760*tau**6 - 444454560*tau**5 + 13277990880*tau**4 - 189112065120*tau**3 + 1361231688960*tau**2 - 4625319663360*tau + 5736455303040)/24
+      substitute sigma = tau + 2p (= tau + 8):  (1419*j**4*tau**6 - 36230*j**4*tau**5 + 82810*j**4*tau**4 + 1201760*j**4*tau**3 - 4095349*j**4*tau**2 - 3271530*j**4*tau + 43394400*j**4 - 41634*j**3*tau**6 + 1205940*j**3*tau**5 - 3267420*j**3*tau**4 - 40141200*j**3*tau**3 + 143376414*j**3*tau**2 + 91367100*j**3*tau - 1510125120*j**3 + 483969*j**2*tau**6 - 15243130*j**2*tau**5 + 46380710*j**2*tau**4 + 510353080*j**2*tau**3 - 1886335799*j**2*tau**2 - 972420270*j**2*tau + 19848598560*j**2 - 2597994*j*tau**6 + 86683980*j*tau**5 - 286276740*j*tau**4 - 2918883720*j*tau**3 + 11062717134*j*tau**2 + 4665586140*j*tau - 116577195840*j + 5369760*tau**6 - 186706080*tau**5 + 654778080*tau**4 + 6319067040*tau**3 - 24398668800*tau**2 - 8495435520*tau + 257762736000)/24
+      leading sigma^6 coefficient = (473*j**4 - 13878*j**3 + 161323*j**2 - 865998*j + 1789920)/8
+      sigma^0 coefficient = 210*(216373*j**4 - 7207614*j**3 + 91653479*j**2 - 524904414*j + 1138185576)
+
+    alpha_{4,3}(j, sigma):
+      raw factored:  -(41*j**4*sigma**5 - 4213*j**4*sigma**4 + 145553*j**4*sigma**3 - 2201123*j**4*sigma**2 + 14599262*j**4*sigma - 32533200*j**4 - 966*j**3*sigma**5 + 115998*j**3*sigma**4 - 4326438*j**3*sigma**3 + 68470338*j**3*sigma**2 - 467630292*j**3*sigma + 1061030880*j**3 + 9811*j**2*sigma**5 - 1301303*j**2*sigma**4 + 50967163*j**2*sigma**3 - 831136513*j**2*sigma**2 + 5790122122*j**2*sigma - 13300343280*j**2 - 48486*j*sigma**5 + 6844398*j*sigma**4 - 276790998*j*sigma**3 + 4606859298*j*sigma**2 - 32543526612*j*sigma + 75409578720*j + 95040*sigma**5 - 13970880*sigma**4 + 577558080*sigma**3 - 9753670080*sigma**2 + 69604064640*sigma - 162321667200)/12
+      substitute sigma = tau + j:  -(41*j**9 + 205*j**8*tau - 5179*j**8 + 410*j**7*tau**2 - 21682*j**7*tau + 271362*j**7 + 410*j**6*tau**3 - 34938*j**6*tau**2 + 949706*j**6*tau - 7877350*j**6 + 205*j**5*tau**4 - 26512*j**5*tau**3 + 1230757*j**5*tau**2 - 22829202*j**5*tau + 140976201*j**5 + 41*j**4*tau**5 - 9043*j**4*tau**4 + 707655*j**4*tau**3 - 23473115*j**4*tau**2 + 332294219*j**4*tau - 1622061883*j**4 - 966*j**3*tau**5 + 165053*j**3*tau**4 - 10016510*j**3*tau**3 + 263388615*j**3*tau**2 - 3016159832*j**3*tau + 12035570380*j**3 + 9811*j**2*tau**5 - 1543733*j**2*tau**4 + 79295155*j**2*tau**3 - 1745334787*j**2*tau**2 + 16736514958*j**2*tau - 55597539972*j**2 - 48486*j*tau**5 + 7319598*j*tau**4 - 332674518*j*tau**3 + 6339533538*j*tau**2 - 52050866772*j*tau + 145013643360*j + 95040*tau**5 - 13970880*tau**4 + 577558080*tau**3 - 9753670080*tau**2 + 69604064640*tau - 162321667200)/12
+      substitute sigma = tau + 2p (= tau + 8):  -(41*j**4*tau**5 - 2573*j**4*tau**4 + 36977*j**4*tau**3 - 115723*j**4*tau**2 - 461074*j**4*tau + 1999200*j**4 - 966*j**3*tau**5 + 77358*j**3*tau**4 - 1232742*j**3*tau**3 + 4233138*j**3*tau**2 + 14999244*j**3*tau - 69572160*j**3 + 9811*j**2*tau**5 - 908863*j**2*tau**4 + 15604507*j**2*tau**3 - 57392633*j**2*tau**2 - 186506054*j**2*tau + 914434080*j**2 - 48486*j*tau**5 + 4904958*j*tau**4 - 88801302*j*tau**3 + 343875858*j*tau**2 + 1046684364*j*tau - 5370765120*j + 95040*tau**5 - 10169280*tau**4 + 191315520*tau**3 - 770489280*tau**2 - 2229448320*tau + 11875248000)/12
+      leading sigma^5 coefficient = -(41*j**4 - 966*j**3 + 9811*j**2 - 48486*j + 95040)/12
+      sigma^0 coefficient = 420*(6455*j**4 - 210522*j**3 + 2638957*j**2 - 14962218*j + 32206680)
+
+    alpha_{4,4}(j, sigma):
+      raw factored:  (j**4*sigma**4 - 186*j**4*sigma**3 + 8651*j**4*sigma**2 - 147066*j**4*sigma + 831600*j**4 - 6*j**3*sigma**4 + 3996*j**3*sigma**3 - 233346*j**3*sigma**2 + 4387356*j**3*sigma - 26278560*j**3 + 11*j**2*sigma**4 - 39486*j**2*sigma**3 + 2605081*j**2*sigma**2 - 51990366*j**2*sigma + 323159760*j**2 - 6*j*sigma**4 + 194076*j*sigma**3 - 13690146*j*sigma**2 + 283766076*j*sigma - 1809228960*j - 380160*sigma**3 + 27941760*sigma**2 - 594380160*sigma + 3859954560)/24
+      substitute sigma = tau + j:  (j**8 + 4*j**7*tau - 192*j**7 + 6*j**6*tau**2 - 582*j**6*tau + 12658*j**6 + 4*j**5*tau**3 - 594*j**5*tau**2 + 29334*j**5*tau - 419904*j**5 + j**4*tau**4 - 210*j**4*tau**3 + 20705*j**4*tau**2 - 732240*j**4*tau + 8018113*j**4 - 6*j**3*tau**4 + 4040*j**3*tau**3 - 351840*j**3*tau**2 + 10179746*j**3*tau - 92339232*j**3 + 11*j**2*tau**4 - 39510*j**2*tau**3 + 3187309*j**2*tau**2 - 80511138*j**2*tau + 634867596*j**2 - 6*j*tau**4 + 194076*j*tau**3 - 14830626*j*tau**2 + 339649596*j*tau - 2403609120*j - 380160*tau**3 + 27941760*tau**2 - 594380160*tau + 3859954560)/24
+      substitute sigma = tau + 2p (= tau + 8):  (j**4*tau**4 - 154*j**4*tau**3 + 4571*j**4*tau**2 - 42314*j**4*tau + 117600*j**4 - 6*j**3*tau**4 + 3804*j**3*tau**3 - 139746*j**3*tau**2 + 1408764*j**3*tau - 4092480*j**3 + 11*j**2*tau**4 - 39134*j**2*tau**3 + 1661641*j**2*tau**2 - 17867854*j**2*tau + 53790240*j**2 - 6*j*tau**4 + 193884*j*tau**3 - 9034626*j*tau**2 + 101974044*j*tau - 315927360*j - 380160*tau**3 + 18817920*tau**2 - 220302720*tau + 698544000)/24
+      leading sigma^4 coefficient = j*(j - 3)*(j - 2)*(j - 1)/24
+      sigma^0 coefficient = 6930*(5*j**4 - 158*j**3 + 1943*j**2 - 10878*j + 23208)
+
+  --- (3d) Check alpha_{p,k} / binomial(j, p-k) for cleanness ---
+    alpha_{2,0} / binomial(j, 2)  =  (j - 2)*(3*j - 13)*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)/12
+    alpha_{2,1} / binomial(j, 1)  =  (j - 1)*(j**2*sigma**2 - 8*j**2*sigma + 13*j**2 - j*sigma**3 + 6*j*sigma**2 + 4*j*sigma - 33*j + 3*sigma**3 - 30*sigma**2 + 85*sigma - 70)/2
+    alpha_{2,2} / binomial(j, 0)  =  j*(j - 1)*(j - sigma + 1)*(j - sigma + 2)/2
+    alpha_{3,0} / binomial(j, 3)  =  -(j - 3)*(sigma - 6)*(sigma - 5)*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)*(j**2 - 7*j + 8)/8
+    alpha_{3,1} / binomial(j, 2)  =  -(j - 2)*(3*j**3*sigma**4 - 60*j**3*sigma**3 + 437*j**3*sigma**2 - 1296*j**3*sigma + 1276*j**3 - 3*j**2*sigma**5 + 44*j**2*sigma**4 - 117*j**2*sigma**3 - 1124*j**2*sigma**2 + 6384*j**2*sigma - 8184*j**2 + 19*j*sigma**5 - 385*j*sigma**4 + 2969*j*sigma**3 - 9583*j*sigma**2 + 10224*j*sigma + 1076*j - 26*sigma**5 + 546*sigma**4 - 4790*sigma**3 + 20238*sigma**2 - 39464*sigma + 27816)/12
+    alpha_{3,2} / binomial(j, 1)  =  -(j - 2)*(j - 1)*(j - sigma + 1)*(3*j**2*sigma**2 - 39*j**2*sigma + 100*j**2 - 3*j*sigma**3 + 36*j*sigma**2 - 41*j*sigma - 220*j + 9*sigma**3 - 167*sigma**2 + 826*sigma - 1200)/12
+    alpha_{3,3} / binomial(j, 0)  =  -j*(j - 2)*(j - 1)*(j - sigma + 1)*(j - sigma + 2)*(j - sigma + 3)/6
+    alpha_{4,0}: (j)_4 does NOT divide cleanly
+    alpha_{4,1}: (j)_3 does NOT divide cleanly
+    alpha_{4,2}: (j)_2 does NOT divide cleanly
+    alpha_{4,3}: (j)_1 does NOT divide cleanly
+    alpha_{4,4} / binomial(j, 0)  =  (j**4*sigma**4 - 186*j**4*sigma**3 + 8651*j**4*sigma**2 - 147066*j**4*sigma + 831600*j**4 - 6*j**3*sigma**4 + 3996*j**3*sigma**3 - 233346*j**3*sigma**2 + 4387356*j**3*sigma - 26278560*j**3 + 11*j**2*sigma**4 - 39486*j**2*sigma**3 + 2605081*j**2*sigma**2 - 51990366*j**2*sigma + 323159760*j**2 - 6*j*sigma**4 + 194076*j*sigma**3 - 13690146*j*sigma**2 + 283766076*j*sigma - 1809228960*j - 380160*sigma**3 + 27941760*sigma**2 - 594380160*sigma + 3859954560)/24
+
+========================================================================
+STEP 4  Vanishing pattern of A_p at integer (b, c) points.
+        Corresponds to shifted-Schur vanishing at 'partitions'.
+========================================================================
+
+  ~~ A_1 vanishing scan ~~
+    A_1(j=4) vanishes at 16 integer (b, c) pts in [-2..6] x [0..6]
+      (b, c) = (-2, 4)   pi = -4, sigma = 3
+      (b, c) = (-2, 5)   pi = -5, sigma = 4
+      (b, c) = (-1, 1)   pi = 0, sigma = 1
+      (b, c) = (-1, 2)   pi = 0, sigma = 2
+      (b, c) = (-1, 3)   pi = 0, sigma = 3
+      (b, c) = (-1, 4)   pi = 0, sigma = 4
+      (b, c) = (0, 0)   pi = 0, sigma = 1
+      (b, c) = (0, 2)   pi = 2, sigma = 3
+      (b, c) = (0, 3)   pi = 3, sigma = 4
+      (b, c) = (1, 0)   pi = 0, sigma = 2
+      (b, c) = (1, 1)   pi = 2, sigma = 3
+      (b, c) = (1, 2)   pi = 4, sigma = 4
+      (b, c) = (2, 0)   pi = 0, sigma = 3
+      (b, c) = (2, 1)   pi = 3, sigma = 4
+      (b, c) = (3, 0)   pi = 0, sigma = 4
+      (b, c) = (6, 1)   pi = 7, sigma = 8
+
+  ~~ A_2 vanishing scan ~~
+    A_2(j=4) vanishes at 12 integer (b, c) pts in [-2..6] x [0..6]
+      (b, c) = (-1, 1)   pi = 0, sigma = 1
+      (b, c) = (-1, 2)   pi = 0, sigma = 2
+      (b, c) = (-1, 3)   pi = 0, sigma = 3
+      (b, c) = (-1, 4)   pi = 0, sigma = 4
+      (b, c) = (0, 0)   pi = 0, sigma = 1
+      (b, c) = (0, 2)   pi = 2, sigma = 3
+      (b, c) = (0, 3)   pi = 3, sigma = 4
+      (b, c) = (1, 0)   pi = 0, sigma = 2
+      (b, c) = (1, 1)   pi = 2, sigma = 3
+      (b, c) = (2, 0)   pi = 0, sigma = 3
+      (b, c) = (2, 1)   pi = 3, sigma = 4
+      (b, c) = (3, 0)   pi = 0, sigma = 4
+    A_2(j=5) vanishes at 21 integer (b, c) pts in [-2..6] x [0..6]
+      (b, c) = (-2, 6)   pi = -6, sigma = 5
+      (b, c) = (-1, 1)   pi = 0, sigma = 1
+      (b, c) = (-1, 2)   pi = 0, sigma = 2
+      (b, c) = (-1, 3)   pi = 0, sigma = 3
+      (b, c) = (-1, 4)   pi = 0, sigma = 4
+      (b, c) = (-1, 5)   pi = 0, sigma = 5
+      (b, c) = (0, 0)   pi = 0, sigma = 1
+      (b, c) = (0, 2)   pi = 2, sigma = 3
+      (b, c) = (0, 3)   pi = 3, sigma = 4
+      (b, c) = (0, 4)   pi = 4, sigma = 5
+      (b, c) = (0, 5)   pi = 5, sigma = 6
+      (b, c) = (1, 0)   pi = 0, sigma = 2
+      (b, c) = (1, 1)   pi = 2, sigma = 3
+      (b, c) = (1, 3)   pi = 6, sigma = 5
+      (b, c) = (2, 0)   pi = 0, sigma = 3
+      (b, c) = (2, 1)   pi = 3, sigma = 4
+      (b, c) = (2, 2)   pi = 6, sigma = 5
+      (b, c) = (3, 0)   pi = 0, sigma = 4
+      (b, c) = (3, 1)   pi = 4, sigma = 5
+      (b, c) = (4, 0)   pi = 0, sigma = 5
+      (b, c) = (4, 1)   pi = 5, sigma = 6
+    A_2(j=6) vanishes at 26 integer (b, c) pts in [-2..6] x [0..6]
+      (b, c) = (-2, 6)   pi = -6, sigma = 5
+      (b, c) = (-1, 1)   pi = 0, sigma = 1
+      (b, c) = (-1, 2)   pi = 0, sigma = 2
+      (b, c) = (-1, 3)   pi = 0, sigma = 3
+      (b, c) = (-1, 4)   pi = 0, sigma = 4
+      (b, c) = (-1, 5)   pi = 0, sigma = 5
+      (b, c) = (-1, 6)   pi = 0, sigma = 6
+      (b, c) = (0, 0)   pi = 0, sigma = 1
+      (b, c) = (0, 2)   pi = 2, sigma = 3
+      (b, c) = (0, 3)   pi = 3, sigma = 4
+      (b, c) = (0, 4)   pi = 4, sigma = 5
+      (b, c) = (0, 5)   pi = 5, sigma = 6
+      (b, c) = (1, 0)   pi = 0, sigma = 2
+      (b, c) = (1, 1)   pi = 2, sigma = 3
+      (b, c) = (1, 3)   pi = 6, sigma = 5
+      (b, c) = (1, 4)   pi = 8, sigma = 6
+      (b, c) = (2, 0)   pi = 0, sigma = 3
+      (b, c) = (2, 1)   pi = 3, sigma = 4
+      (b, c) = (2, 2)   pi = 6, sigma = 5
+      (b, c) = (2, 3)   pi = 9, sigma = 6
+      (b, c) = (3, 0)   pi = 0, sigma = 4
+      (b, c) = (3, 1)   pi = 4, sigma = 5
+      (b, c) = (3, 2)   pi = 8, sigma = 6
+      (b, c) = (4, 0)   pi = 0, sigma = 5
+      (b, c) = (4, 1)   pi = 5, sigma = 6
+      (b, c) = (5, 0)   pi = 0, sigma = 6
+
+  ~~ A_3 vanishing scan ~~
+    A_3(j=6) vanishes at 26 integer (b, c) pts in [-2..6] x [0..6]
+      (b, c) = (-2, 1)   pi = -1, sigma = 0
+      (b, c) = (-1, 1)   pi = 0, sigma = 1
+      (b, c) = (-1, 2)   pi = 0, sigma = 2
+      (b, c) = (-1, 3)   pi = 0, sigma = 3
+      (b, c) = (-1, 4)   pi = 0, sigma = 4
+      (b, c) = (-1, 5)   pi = 0, sigma = 5
+      (b, c) = (-1, 6)   pi = 0, sigma = 6
+      (b, c) = (0, 0)   pi = 0, sigma = 1
+      (b, c) = (0, 2)   pi = 2, sigma = 3
+      (b, c) = (0, 3)   pi = 3, sigma = 4
+      (b, c) = (0, 4)   pi = 4, sigma = 5
+      (b, c) = (0, 5)   pi = 5, sigma = 6
+      (b, c) = (1, 0)   pi = 0, sigma = 2
+      (b, c) = (1, 1)   pi = 2, sigma = 3
+      (b, c) = (1, 2)   pi = 4, sigma = 4
+      (b, c) = (1, 3)   pi = 6, sigma = 5
+      (b, c) = (1, 4)   pi = 8, sigma = 6
+      (b, c) = (2, 0)   pi = 0, sigma = 3
+      (b, c) = (2, 1)   pi = 3, sigma = 4
+      (b, c) = (2, 2)   pi = 6, sigma = 5
+      (b, c) = (3, 0)   pi = 0, sigma = 4
+      (b, c) = (3, 1)   pi = 4, sigma = 5
+      (b, c) = (3, 2)   pi = 8, sigma = 6
+      (b, c) = (4, 0)   pi = 0, sigma = 5
+      (b, c) = (4, 1)   pi = 5, sigma = 6
+      (b, c) = (5, 0)   pi = 0, sigma = 6
+    A_3(j=7) vanishes at 31 integer (b, c) pts in [-2..6] x [0..6]
+      (b, c) = (-1, 1)   pi = 0, sigma = 1
+      (b, c) = (-1, 2)   pi = 0, sigma = 2
+      (b, c) = (-1, 3)   pi = 0, sigma = 3
+      (b, c) = (-1, 4)   pi = 0, sigma = 4
+      (b, c) = (-1, 5)   pi = 0, sigma = 5
+      (b, c) = (-1, 6)   pi = 0, sigma = 6
+      (b, c) = (0, 0)   pi = 0, sigma = 1
+      (b, c) = (0, 2)   pi = 2, sigma = 3
+      (b, c) = (0, 3)   pi = 3, sigma = 4
+      (b, c) = (0, 4)   pi = 4, sigma = 5
+      (b, c) = (0, 5)   pi = 5, sigma = 6
+      (b, c) = (0, 6)   pi = 6, sigma = 7
+      (b, c) = (1, 0)   pi = 0, sigma = 2
+      (b, c) = (1, 1)   pi = 2, sigma = 3
+      (b, c) = (1, 3)   pi = 6, sigma = 5
+      (b, c) = (1, 4)   pi = 8, sigma = 6
+      (b, c) = (1, 5)   pi = 10, sigma = 7
+      (b, c) = (2, 0)   pi = 0, sigma = 3
+      (b, c) = (2, 1)   pi = 3, sigma = 4
+      (b, c) = (2, 2)   pi = 6, sigma = 5
+      (b, c) = (2, 4)   pi = 12, sigma = 7
+      (b, c) = (3, 0)   pi = 0, sigma = 4
+      (b, c) = (3, 1)   pi = 4, sigma = 5
+      (b, c) = (3, 2)   pi = 8, sigma = 6
+      (b, c) = (3, 3)   pi = 12, sigma = 7
+      (b, c) = (4, 0)   pi = 0, sigma = 5
+      (b, c) = (4, 1)   pi = 5, sigma = 6
+      (b, c) = (4, 2)   pi = 10, sigma = 7
+      (b, c) = (5, 0)   pi = 0, sigma = 6
+      (b, c) = (5, 1)   pi = 6, sigma = 7
+      (b, c) = (6, 0)   pi = 0, sigma = 7
+    A_3(j=8) vanishes at 37 integer (b, c) pts in [-2..6] x [0..6]
+      (b, c) = (-1, 1)   pi = 0, sigma = 1
+      (b, c) = (-1, 2)   pi = 0, sigma = 2
+      (b, c) = (-1, 3)   pi = 0, sigma = 3
+      (b, c) = (-1, 4)   pi = 0, sigma = 4
+      (b, c) = (-1, 5)   pi = 0, sigma = 5
+      (b, c) = (-1, 6)   pi = 0, sigma = 6
+      (b, c) = (0, 0)   pi = 0, sigma = 1
+      (b, c) = (0, 2)   pi = 2, sigma = 3
+      (b, c) = (0, 3)   pi = 3, sigma = 4
+      (b, c) = (0, 4)   pi = 4, sigma = 5
+      (b, c) = (0, 5)   pi = 5, sigma = 6
+      (b, c) = (0, 6)   pi = 6, sigma = 7
+      (b, c) = (1, 0)   pi = 0, sigma = 2
+      (b, c) = (1, 1)   pi = 2, sigma = 3
+      (b, c) = (1, 3)   pi = 6, sigma = 5
+      (b, c) = (1, 4)   pi = 8, sigma = 6
+      (b, c) = (1, 5)   pi = 10, sigma = 7
+      (b, c) = (1, 6)   pi = 12, sigma = 8
+      (b, c) = (2, 0)   pi = 0, sigma = 3
+      (b, c) = (2, 1)   pi = 3, sigma = 4
+      (b, c) = (2, 2)   pi = 6, sigma = 5
+      (b, c) = (2, 4)   pi = 12, sigma = 7
+      (b, c) = (2, 5)   pi = 15, sigma = 8
+      (b, c) = (3, 0)   pi = 0, sigma = 4
+      (b, c) = (3, 1)   pi = 4, sigma = 5
+      (b, c) = (3, 2)   pi = 8, sigma = 6
+      (b, c) = (3, 3)   pi = 12, sigma = 7
+      (b, c) = (3, 4)   pi = 16, sigma = 8
+      (b, c) = (4, 0)   pi = 0, sigma = 5
+      (b, c) = (4, 1)   pi = 5, sigma = 6
+      (b, c) = (4, 2)   pi = 10, sigma = 7
+      (b, c) = (4, 3)   pi = 15, sigma = 8
+      (b, c) = (5, 0)   pi = 0, sigma = 6
+      (b, c) = (5, 1)   pi = 6, sigma = 7
+      (b, c) = (5, 2)   pi = 12, sigma = 8
+      (b, c) = (6, 0)   pi = 0, sigma = 7
+      (b, c) = (6, 1)   pi = 7, sigma = 8
+
+  ~~ A_p(pi, sigma) evaluated at partition-point (pi, sigma) values ~~
+     (b, c) integer points -> compute (pi, sigma), evaluate A_p_ps.
+
+    A_2(j=4) in (pi, sigma):
+      zeros at partition pts (mu_1 >= mu_2 >= 0, mu_1 <= 6): 6 found
+        mu = (1, 0), (pi, sigma) = (0, 1), |mu| = 1
+        mu = (2, 0), (pi, sigma) = (0, 2), |mu| = 2
+        mu = (2, 1), (pi, sigma) = (2, 3), |mu| = 3
+        mu = (3, 0), (pi, sigma) = (0, 3), |mu| = 3
+        mu = (3, 1), (pi, sigma) = (3, 4), |mu| = 4
+        mu = (4, 0), (pi, sigma) = (0, 4), |mu| = 4
+
+    A_2(j=5) in (pi, sigma):
+      zeros at partition pts (mu_1 >= mu_2 >= 0, mu_1 <= 6): 10 found
+        mu = (1, 0), (pi, sigma) = (0, 1), |mu| = 1
+        mu = (2, 0), (pi, sigma) = (0, 2), |mu| = 2
+        mu = (2, 1), (pi, sigma) = (2, 3), |mu| = 3
+        mu = (3, 0), (pi, sigma) = (0, 3), |mu| = 3
+        mu = (3, 1), (pi, sigma) = (3, 4), |mu| = 4
+        mu = (3, 2), (pi, sigma) = (6, 5), |mu| = 5
+        mu = (4, 0), (pi, sigma) = (0, 4), |mu| = 4
+        mu = (4, 1), (pi, sigma) = (4, 5), |mu| = 5
+        mu = (5, 0), (pi, sigma) = (0, 5), |mu| = 5
+        mu = (5, 1), (pi, sigma) = (5, 6), |mu| = 6
+
+    A_2(j=6) in (pi, sigma):
+      zeros at partition pts (mu_1 >= mu_2 >= 0, mu_1 <= 6): 13 found
+        mu = (1, 0), (pi, sigma) = (0, 1), |mu| = 1
+        mu = (2, 0), (pi, sigma) = (0, 2), |mu| = 2
+        mu = (2, 1), (pi, sigma) = (2, 3), |mu| = 3
+        mu = (3, 0), (pi, sigma) = (0, 3), |mu| = 3
+        mu = (3, 1), (pi, sigma) = (3, 4), |mu| = 4
+        mu = (3, 2), (pi, sigma) = (6, 5), |mu| = 5
+        mu = (3, 3), (pi, sigma) = (9, 6), |mu| = 6
+        mu = (4, 0), (pi, sigma) = (0, 4), |mu| = 4
+        mu = (4, 1), (pi, sigma) = (4, 5), |mu| = 5
+        mu = (4, 2), (pi, sigma) = (8, 6), |mu| = 6
+        mu = (5, 0), (pi, sigma) = (0, 5), |mu| = 5
+        mu = (5, 1), (pi, sigma) = (5, 6), |mu| = 6
+        mu = (6, 0), (pi, sigma) = (0, 6), |mu| = 6
+
+    A_3(j=6) in (pi, sigma):
+      zeros at partition pts (mu_1 >= mu_2 >= 0, mu_1 <= 6): 13 found
+        mu = (1, 0), (pi, sigma) = (0, 1), |mu| = 1
+        mu = (2, 0), (pi, sigma) = (0, 2), |mu| = 2
+        mu = (2, 1), (pi, sigma) = (2, 3), |mu| = 3
+        mu = (2, 2), (pi, sigma) = (4, 4), |mu| = 4
+        mu = (3, 0), (pi, sigma) = (0, 3), |mu| = 3
+        mu = (3, 1), (pi, sigma) = (3, 4), |mu| = 4
+        mu = (3, 2), (pi, sigma) = (6, 5), |mu| = 5
+        mu = (4, 0), (pi, sigma) = (0, 4), |mu| = 4
+        mu = (4, 1), (pi, sigma) = (4, 5), |mu| = 5
+        mu = (4, 2), (pi, sigma) = (8, 6), |mu| = 6
+        mu = (5, 0), (pi, sigma) = (0, 5), |mu| = 5
+        mu = (5, 1), (pi, sigma) = (5, 6), |mu| = 6
+        mu = (6, 0), (pi, sigma) = (0, 6), |mu| = 6
+
+    A_3(j=7) in (pi, sigma):
+      zeros at partition pts (mu_1 >= mu_2 >= 0, mu_1 <= 6): 15 found
+        mu = (1, 0), (pi, sigma) = (0, 1), |mu| = 1
+        mu = (2, 0), (pi, sigma) = (0, 2), |mu| = 2
+        mu = (2, 1), (pi, sigma) = (2, 3), |mu| = 3
+        mu = (3, 0), (pi, sigma) = (0, 3), |mu| = 3
+        mu = (3, 1), (pi, sigma) = (3, 4), |mu| = 4
+        mu = (3, 2), (pi, sigma) = (6, 5), |mu| = 5
+        mu = (4, 0), (pi, sigma) = (0, 4), |mu| = 4
+        mu = (4, 1), (pi, sigma) = (4, 5), |mu| = 5
+        mu = (4, 2), (pi, sigma) = (8, 6), |mu| = 6
+        mu = (4, 3), (pi, sigma) = (12, 7), |mu| = 7
+        mu = (5, 0), (pi, sigma) = (0, 5), |mu| = 5
+        mu = (5, 1), (pi, sigma) = (5, 6), |mu| = 6
+        mu = (5, 2), (pi, sigma) = (10, 7), |mu| = 7
+        mu = (6, 0), (pi, sigma) = (0, 6), |mu| = 6
+        mu = (6, 1), (pi, sigma) = (6, 7), |mu| = 7
+
+    A_3(j=8) in (pi, sigma):
+      zeros at partition pts (mu_1 >= mu_2 >= 0, mu_1 <= 6): 18 found
+        mu = (1, 0), (pi, sigma) = (0, 1), |mu| = 1
+        mu = (2, 0), (pi, sigma) = (0, 2), |mu| = 2
+        mu = (2, 1), (pi, sigma) = (2, 3), |mu| = 3
+        mu = (3, 0), (pi, sigma) = (0, 3), |mu| = 3
+        mu = (3, 1), (pi, sigma) = (3, 4), |mu| = 4
+        mu = (3, 2), (pi, sigma) = (6, 5), |mu| = 5
+        mu = (4, 0), (pi, sigma) = (0, 4), |mu| = 4
+        mu = (4, 1), (pi, sigma) = (4, 5), |mu| = 5
+        mu = (4, 2), (pi, sigma) = (8, 6), |mu| = 6
+        mu = (4, 3), (pi, sigma) = (12, 7), |mu| = 7
+        mu = (4, 4), (pi, sigma) = (16, 8), |mu| = 8
+        mu = (5, 0), (pi, sigma) = (0, 5), |mu| = 5
+        mu = (5, 1), (pi, sigma) = (5, 6), |mu| = 6
+        mu = (5, 2), (pi, sigma) = (10, 7), |mu| = 7
+        mu = (5, 3), (pi, sigma) = (15, 8), |mu| = 8
+        mu = (6, 0), (pi, sigma) = (0, 6), |mu| = 6
+        mu = (6, 1), (pi, sigma) = (6, 7), |mu| = 7
+        mu = (6, 2), (pi, sigma) = (12, 8), |mu| = 8

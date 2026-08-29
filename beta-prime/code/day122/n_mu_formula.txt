@@ -1,0 +1,37 @@
+======================================================================
+Verify N_mu / (t(t-j+1)) = direct s*_mu specialized
+======================================================================
+  mu=(3, 2, 1): OK  (8 monomials, deg_t=4)
+  mu=(4, 2, 1): OK  (13 monomials, deg_t=5)
+  mu=(3, 3, 2): OK  (11 monomials, deg_t=5)
+  mu=(2, 1, 0): OK  (8 monomials, deg_t=2)
+  mu=(3, 1, 0): OK  (13 monomials, deg_t=3)
+  mu=(4, 3, 3): OK  (18 monomials, deg_t=7)
+  mu=(5, 3, 2): OK  (22 monomials, deg_t=7)
+  mu=(5, 4, 1): OK  (26 monomials, deg_t=7)
+  mu=(5, 5, 0): OK  (42 monomials, deg_t=7)
+  mu=(5, 3, 2): OK  (22 monomials, deg_t=7)
+  mu=(5, 4, 1): OK  (26 monomials, deg_t=7)
+  mu=(5, 5, 0): OK  (42 monomials, deg_t=7)
+  mu=(7, 4, 3): OK  (46 monomials, deg_t=10)
+  mu=(7, 5, 2): OK  (50 monomials, deg_t=10)
+  mu=(7, 6, 1): OK  (54 monomials, deg_t=10)
+  mu=(7, 7, 0): OK  (76 monomials, deg_t=10)
+
+All match: YES
+
+======================================================================
+Sample N_mu closed forms:
+======================================================================
+
+mu = (3, 2, 1), k = (5, 3, 1)
+  N_mu(j,t) has deg_t = 6, deg_j = 3
+  F_mu(j,t) has deg_t = 4, deg_j = 2
+
+mu = (4, 2, 1), k = (6, 3, 1)
+  N_mu(j,t) has deg_t = 7, deg_j = 4
+  F_mu(j,t) has deg_t = 5, deg_j = 3
+
+mu = (5, 3, 2), k = (7, 4, 2)
+  N_mu(j,t) has deg_t = 9, deg_j = 5
+  F_mu(j,t) has deg_t = 7, deg_j = 4

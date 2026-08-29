@@ -1,0 +1,86 @@
+Building shifted-Schur tables & ds_j/V up to j = 12 ...
+done.
+
+==============================================================================
+ DIVISIBILITY CHECK: A_p / (b + c - 2p)^{↓(j-2p)}
+==============================================================================
+  p = 1, j =  2: Q has deg_b=2 [<=2 OK], deg_pi=1 [<=1 OK], total_deg=3 [<=3 OK], deg_sig=2
+  p = 1, j =  3: Q has deg_b=2 [<=2 OK], deg_pi=1 [<=1 OK], total_deg=3 [<=3 OK], deg_sig=1
+  p = 1, j =  4: Q has deg_b=2 [<=2 OK], deg_pi=1 [<=1 OK], total_deg=3 [<=3 OK], deg_sig=2
+  p = 1, j =  5: Q has deg_b=2 [<=2 OK], deg_pi=1 [<=1 OK], total_deg=3 [<=3 OK], deg_sig=2
+  p = 1, j =  6: Q has deg_b=2 [<=2 OK], deg_pi=1 [<=1 OK], total_deg=3 [<=3 OK], deg_sig=2
+  p = 1, j =  7: Q has deg_b=2 [<=2 OK], deg_pi=1 [<=1 OK], total_deg=3 [<=3 OK], deg_sig=2
+  p = 1, j =  8: Q has deg_b=2 [<=2 OK], deg_pi=1 [<=1 OK], total_deg=3 [<=3 OK], deg_sig=2
+  p = 1, j =  9: Q has deg_b=2 [<=2 OK], deg_pi=1 [<=1 OK], total_deg=3 [<=3 OK], deg_sig=2
+  p = 1, j = 10: Q has deg_b=2 [<=2 OK], deg_pi=1 [<=1 OK], total_deg=3 [<=3 OK], deg_sig=2
+  p = 1, j = 11: Q has deg_b=2 [<=2 OK], deg_pi=1 [<=1 OK], total_deg=3 [<=3 OK], deg_sig=2
+  p = 1, j = 12: Q has deg_b=2 [<=2 OK], deg_pi=1 [<=1 OK], total_deg=3 [<=3 OK], deg_sig=2
+  p = 2, j =  4: Q has deg_b=4 [<=4 OK], deg_pi=2 [<=2 OK], total_deg=6 [<=6 OK], deg_sig=4
+  p = 2, j =  5: Q has deg_b=4 [<=4 OK], deg_pi=2 [<=2 OK], total_deg=6 [<=6 OK], deg_sig=4
+  p = 2, j =  6: Q has deg_b=4 [<=4 OK], deg_pi=2 [<=2 OK], total_deg=6 [<=6 OK], deg_sig=4
+  p = 2, j =  7: Q has deg_b=4 [<=4 OK], deg_pi=2 [<=2 OK], total_deg=6 [<=6 OK], deg_sig=4
+  p = 2, j =  8: Q has deg_b=4 [<=4 OK], deg_pi=2 [<=2 OK], total_deg=6 [<=6 OK], deg_sig=4
+  p = 2, j =  9: Q has deg_b=4 [<=4 OK], deg_pi=2 [<=2 OK], total_deg=6 [<=6 OK], deg_sig=4
+  p = 2, j = 10: Q has deg_b=4 [<=4 OK], deg_pi=2 [<=2 OK], total_deg=6 [<=6 OK], deg_sig=4
+  p = 2, j = 11: Q has deg_b=4 [<=4 OK], deg_pi=2 [<=2 OK], total_deg=6 [<=6 OK], deg_sig=4
+  p = 2, j = 12: Q has deg_b=4 [<=4 OK], deg_pi=2 [<=2 OK], total_deg=6 [<=6 OK], deg_sig=4
+  p = 3, j =  6: Q has deg_b=6 [<=6 OK], deg_pi=3 [<=3 OK], total_deg=9 [<=9 OK], deg_sig=6
+  p = 3, j =  7: Q has deg_b=6 [<=6 OK], deg_pi=3 [<=3 OK], total_deg=9 [<=9 OK], deg_sig=6
+  p = 3, j =  8: Q has deg_b=6 [<=6 OK], deg_pi=3 [<=3 OK], total_deg=9 [<=9 OK], deg_sig=6
+  p = 3, j =  9: Q has deg_b=6 [<=6 OK], deg_pi=3 [<=3 OK], total_deg=9 [<=9 OK], deg_sig=6
+  p = 3, j = 10: Q has deg_b=6 [<=6 OK], deg_pi=3 [<=3 OK], total_deg=9 [<=9 OK], deg_sig=6
+  p = 3, j = 11: Q has deg_b=6 [<=6 OK], deg_pi=3 [<=3 OK], total_deg=9 [<=9 OK], deg_sig=6
+  p = 3, j = 12: Q has deg_b=6 [<=6 OK], deg_pi=3 [<=3 OK], total_deg=9 [<=9 OK], deg_sig=6
+  p = 4, j =  8: Q has deg_b=8 [<=8 OK], deg_pi=4 [<=4 OK], total_deg=12 [<=12 OK], deg_sig=8
+  p = 4, j =  9: Q has deg_b=8 [<=8 OK], deg_pi=4 [<=4 OK], total_deg=12 [<=12 OK], deg_sig=8
+  p = 4, j = 10: Q has deg_b=8 [<=8 OK], deg_pi=4 [<=4 OK], total_deg=12 [<=12 OK], deg_sig=8
+  p = 4, j = 11: Q has deg_b=8 [<=8 OK], deg_pi=4 [<=4 OK], total_deg=12 [<=12 OK], deg_sig=8
+  p = 4, j = 12: Q has deg_b=8 [<=8 OK], deg_pi=4 [<=4 OK], total_deg=12 [<=12 OK], deg_sig=8
+  p = 5, j = 10: Q has deg_b=10 [<=10 OK], deg_pi=5 [<=5 OK], total_deg=15 [<=15 OK], deg_sig=10
+  p = 5, j = 11: Q has deg_b=10 [<=10 OK], deg_pi=5 [<=5 OK], total_deg=15 [<=15 OK], deg_sig=10
+  p = 5, j = 12: Q has deg_b=10 [<=10 OK], deg_pi=5 [<=5 OK], total_deg=15 [<=15 OK], deg_sig=10
+
+==============================================================================
+ALL DIVISIBILITY + DEGREE BOUNDS: PASS
+==============================================================================
+
+==============================================================================
+ INPUT DEGREE BOUND VERIFICATION: deg_b A_p <= j, pi-degree A_p <= p
+==============================================================================
+  p = 1, j =  2: A has deg_b=2 [<=2 OK], deg_pi=1 [<=1 OK], total=3 [<=3 OK]
+  p = 1, j =  3: A has deg_b=3 [<=3 OK], deg_pi=1 [<=1 OK], total=4 [<=4 OK]
+  p = 1, j =  4: A has deg_b=4 [<=4 OK], deg_pi=1 [<=1 OK], total=5 [<=5 OK]
+  p = 1, j =  5: A has deg_b=5 [<=5 OK], deg_pi=1 [<=1 OK], total=6 [<=6 OK]
+  p = 1, j =  6: A has deg_b=6 [<=6 OK], deg_pi=1 [<=1 OK], total=7 [<=7 OK]
+  p = 1, j =  7: A has deg_b=7 [<=7 OK], deg_pi=1 [<=1 OK], total=8 [<=8 OK]
+  p = 1, j =  8: A has deg_b=8 [<=8 OK], deg_pi=1 [<=1 OK], total=9 [<=9 OK]
+  p = 1, j =  9: A has deg_b=9 [<=9 OK], deg_pi=1 [<=1 OK], total=10 [<=10 OK]
+  p = 1, j = 10: A has deg_b=10 [<=10 OK], deg_pi=1 [<=1 OK], total=11 [<=11 OK]
+  p = 1, j = 11: A has deg_b=11 [<=11 OK], deg_pi=1 [<=1 OK], total=12 [<=12 OK]
+  p = 1, j = 12: A has deg_b=12 [<=12 OK], deg_pi=1 [<=1 OK], total=13 [<=13 OK]
+  p = 2, j =  4: A has deg_b=4 [<=4 OK], deg_pi=2 [<=2 OK], total=6 [<=6 OK]
+  p = 2, j =  5: A has deg_b=5 [<=5 OK], deg_pi=2 [<=2 OK], total=7 [<=7 OK]
+  p = 2, j =  6: A has deg_b=6 [<=6 OK], deg_pi=2 [<=2 OK], total=8 [<=8 OK]
+  p = 2, j =  7: A has deg_b=7 [<=7 OK], deg_pi=2 [<=2 OK], total=9 [<=9 OK]
+  p = 2, j =  8: A has deg_b=8 [<=8 OK], deg_pi=2 [<=2 OK], total=10 [<=10 OK]
+  p = 2, j =  9: A has deg_b=9 [<=9 OK], deg_pi=2 [<=2 OK], total=11 [<=11 OK]
+  p = 2, j = 10: A has deg_b=10 [<=10 OK], deg_pi=2 [<=2 OK], total=12 [<=12 OK]
+  p = 2, j = 11: A has deg_b=11 [<=11 OK], deg_pi=2 [<=2 OK], total=13 [<=13 OK]
+  p = 2, j = 12: A has deg_b=12 [<=12 OK], deg_pi=2 [<=2 OK], total=14 [<=14 OK]
+  p = 3, j =  6: A has deg_b=6 [<=6 OK], deg_pi=3 [<=3 OK], total=9 [<=9 OK]
+  p = 3, j =  7: A has deg_b=7 [<=7 OK], deg_pi=3 [<=3 OK], total=10 [<=10 OK]
+  p = 3, j =  8: A has deg_b=8 [<=8 OK], deg_pi=3 [<=3 OK], total=11 [<=11 OK]
+  p = 3, j =  9: A has deg_b=9 [<=9 OK], deg_pi=3 [<=3 OK], total=12 [<=12 OK]
+  p = 3, j = 10: A has deg_b=10 [<=10 OK], deg_pi=3 [<=3 OK], total=13 [<=13 OK]
+  p = 3, j = 11: A has deg_b=11 [<=11 OK], deg_pi=3 [<=3 OK], total=14 [<=14 OK]
+  p = 3, j = 12: A has deg_b=12 [<=12 OK], deg_pi=3 [<=3 OK], total=15 [<=15 OK]
+  p = 4, j =  8: A has deg_b=8 [<=8 OK], deg_pi=4 [<=4 OK], total=12 [<=12 OK]
+  p = 4, j =  9: A has deg_b=9 [<=9 OK], deg_pi=4 [<=4 OK], total=13 [<=13 OK]
+  p = 4, j = 10: A has deg_b=10 [<=10 OK], deg_pi=4 [<=4 OK], total=14 [<=14 OK]
+  p = 4, j = 11: A has deg_b=11 [<=11 OK], deg_pi=4 [<=4 OK], total=15 [<=15 OK]
+  p = 4, j = 12: A has deg_b=12 [<=12 OK], deg_pi=4 [<=4 OK], total=16 [<=16 OK]
+  p = 5, j = 10: A has deg_b=10 [<=10 OK], deg_pi=5 [<=5 OK], total=15 [<=15 OK]
+  p = 5, j = 11: A has deg_b=11 [<=11 OK], deg_pi=5 [<=5 OK], total=16 [<=16 OK]
+  p = 5, j = 12: A has deg_b=12 [<=12 OK], deg_pi=5 [<=5 OK], total=17 [<=17 OK]
+
+DEGREE BOUNDS ON A_p: PASS

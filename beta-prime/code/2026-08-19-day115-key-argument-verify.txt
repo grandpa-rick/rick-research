@@ -1,0 +1,170 @@
+Building A_p up to j = 12 ...
+done.
+
+==============================================================================
+ DIRECT VERIFICATION: A_p|_{sigma=t} = 0 as polynomial in pi, for t in [2p+1, j]
+==============================================================================
+  p=1, j=2: deg_pi(A_p) = 1 [<=1 OK]
+  p=1, j=3: deg_pi(A_p) = 1 [<=1 OK]
+      t =  3: partitions|mu|=2: count=2 (>= p+1 = 2?), A_p|_{sigma=3} = ZERO
+  p=1, j=4: deg_pi(A_p) = 1 [<=1 OK]
+      t =  3: partitions|mu|=2: count=2 (>= p+1 = 2?), A_p|_{sigma=3} = ZERO
+      t =  4: partitions|mu|=3: count=2 (>= p+1 = 2?), A_p|_{sigma=4} = ZERO
+  p=1, j=5: deg_pi(A_p) = 1 [<=1 OK]
+      t =  3: partitions|mu|=2: count=2 (>= p+1 = 2?), A_p|_{sigma=3} = ZERO
+      t =  4: partitions|mu|=3: count=2 (>= p+1 = 2?), A_p|_{sigma=4} = ZERO
+      t =  5: partitions|mu|=4: count=3 (>= p+1 = 2?), A_p|_{sigma=5} = ZERO
+  p=1, j=6: deg_pi(A_p) = 1 [<=1 OK]
+      t =  3: partitions|mu|=2: count=2 (>= p+1 = 2?), A_p|_{sigma=3} = ZERO
+      t =  4: partitions|mu|=3: count=2 (>= p+1 = 2?), A_p|_{sigma=4} = ZERO
+      t =  5: partitions|mu|=4: count=3 (>= p+1 = 2?), A_p|_{sigma=5} = ZERO
+      t =  6: partitions|mu|=5: count=3 (>= p+1 = 2?), A_p|_{sigma=6} = ZERO
+  p=1, j=7: deg_pi(A_p) = 1 [<=1 OK]
+      t =  3: partitions|mu|=2: count=2 (>= p+1 = 2?), A_p|_{sigma=3} = ZERO
+      t =  4: partitions|mu|=3: count=2 (>= p+1 = 2?), A_p|_{sigma=4} = ZERO
+      t =  5: partitions|mu|=4: count=3 (>= p+1 = 2?), A_p|_{sigma=5} = ZERO
+      t =  6: partitions|mu|=5: count=3 (>= p+1 = 2?), A_p|_{sigma=6} = ZERO
+      t =  7: partitions|mu|=6: count=4 (>= p+1 = 2?), A_p|_{sigma=7} = ZERO
+  p=1, j=8: deg_pi(A_p) = 1 [<=1 OK]
+      t =  3: partitions|mu|=2: count=2 (>= p+1 = 2?), A_p|_{sigma=3} = ZERO
+      t =  4: partitions|mu|=3: count=2 (>= p+1 = 2?), A_p|_{sigma=4} = ZERO
+      t =  5: partitions|mu|=4: count=3 (>= p+1 = 2?), A_p|_{sigma=5} = ZERO
+      t =  6: partitions|mu|=5: count=3 (>= p+1 = 2?), A_p|_{sigma=6} = ZERO
+      t =  7: partitions|mu|=6: count=4 (>= p+1 = 2?), A_p|_{sigma=7} = ZERO
+      t =  8: partitions|mu|=7: count=4 (>= p+1 = 2?), A_p|_{sigma=8} = ZERO
+  p=1, j=9: deg_pi(A_p) = 1 [<=1 OK]
+      t =  3: partitions|mu|=2: count=2 (>= p+1 = 2?), A_p|_{sigma=3} = ZERO
+      t =  4: partitions|mu|=3: count=2 (>= p+1 = 2?), A_p|_{sigma=4} = ZERO
+      t =  5: partitions|mu|=4: count=3 (>= p+1 = 2?), A_p|_{sigma=5} = ZERO
+      t =  6: partitions|mu|=5: count=3 (>= p+1 = 2?), A_p|_{sigma=6} = ZERO
+      t =  7: partitions|mu|=6: count=4 (>= p+1 = 2?), A_p|_{sigma=7} = ZERO
+      t =  8: partitions|mu|=7: count=4 (>= p+1 = 2?), A_p|_{sigma=8} = ZERO
+      t =  9: partitions|mu|=8: count=5 (>= p+1 = 2?), A_p|_{sigma=9} = ZERO
+  p=1, j=10: deg_pi(A_p) = 1 [<=1 OK]
+      t =  3: partitions|mu|=2: count=2 (>= p+1 = 2?), A_p|_{sigma=3} = ZERO
+      t =  4: partitions|mu|=3: count=2 (>= p+1 = 2?), A_p|_{sigma=4} = ZERO
+      t =  5: partitions|mu|=4: count=3 (>= p+1 = 2?), A_p|_{sigma=5} = ZERO
+      t =  6: partitions|mu|=5: count=3 (>= p+1 = 2?), A_p|_{sigma=6} = ZERO
+      t =  7: partitions|mu|=6: count=4 (>= p+1 = 2?), A_p|_{sigma=7} = ZERO
+      t =  8: partitions|mu|=7: count=4 (>= p+1 = 2?), A_p|_{sigma=8} = ZERO
+      t =  9: partitions|mu|=8: count=5 (>= p+1 = 2?), A_p|_{sigma=9} = ZERO
+      t = 10: partitions|mu|=9: count=5 (>= p+1 = 2?), A_p|_{sigma=10} = ZERO
+  p=1, j=11: deg_pi(A_p) = 1 [<=1 OK]
+      t =  3: partitions|mu|=2: count=2 (>= p+1 = 2?), A_p|_{sigma=3} = ZERO
+      t =  4: partitions|mu|=3: count=2 (>= p+1 = 2?), A_p|_{sigma=4} = ZERO
+      t =  5: partitions|mu|=4: count=3 (>= p+1 = 2?), A_p|_{sigma=5} = ZERO
+      t =  6: partitions|mu|=5: count=3 (>= p+1 = 2?), A_p|_{sigma=6} = ZERO
+      t =  7: partitions|mu|=6: count=4 (>= p+1 = 2?), A_p|_{sigma=7} = ZERO
+      t =  8: partitions|mu|=7: count=4 (>= p+1 = 2?), A_p|_{sigma=8} = ZERO
+      t =  9: partitions|mu|=8: count=5 (>= p+1 = 2?), A_p|_{sigma=9} = ZERO
+      t = 10: partitions|mu|=9: count=5 (>= p+1 = 2?), A_p|_{sigma=10} = ZERO
+      t = 11: partitions|mu|=10: count=6 (>= p+1 = 2?), A_p|_{sigma=11} = ZERO
+  p=1, j=12: deg_pi(A_p) = 1 [<=1 OK]
+      t =  3: partitions|mu|=2: count=2 (>= p+1 = 2?), A_p|_{sigma=3} = ZERO
+      t =  4: partitions|mu|=3: count=2 (>= p+1 = 2?), A_p|_{sigma=4} = ZERO
+      t =  5: partitions|mu|=4: count=3 (>= p+1 = 2?), A_p|_{sigma=5} = ZERO
+      t =  6: partitions|mu|=5: count=3 (>= p+1 = 2?), A_p|_{sigma=6} = ZERO
+      t =  7: partitions|mu|=6: count=4 (>= p+1 = 2?), A_p|_{sigma=7} = ZERO
+      t =  8: partitions|mu|=7: count=4 (>= p+1 = 2?), A_p|_{sigma=8} = ZERO
+      t =  9: partitions|mu|=8: count=5 (>= p+1 = 2?), A_p|_{sigma=9} = ZERO
+      t = 10: partitions|mu|=9: count=5 (>= p+1 = 2?), A_p|_{sigma=10} = ZERO
+      t = 11: partitions|mu|=10: count=6 (>= p+1 = 2?), A_p|_{sigma=11} = ZERO
+      t = 12: partitions|mu|=11: count=6 (>= p+1 = 2?), A_p|_{sigma=12} = ZERO
+  p=2, j=4: deg_pi(A_p) = 2 [<=2 OK]
+  p=2, j=5: deg_pi(A_p) = 2 [<=2 OK]
+      t =  5: partitions|mu|=4: count=3 (>= p+1 = 3?), A_p|_{sigma=5} = ZERO
+  p=2, j=6: deg_pi(A_p) = 2 [<=2 OK]
+      t =  5: partitions|mu|=4: count=3 (>= p+1 = 3?), A_p|_{sigma=5} = ZERO
+      t =  6: partitions|mu|=5: count=3 (>= p+1 = 3?), A_p|_{sigma=6} = ZERO
+  p=2, j=7: deg_pi(A_p) = 2 [<=2 OK]
+      t =  5: partitions|mu|=4: count=3 (>= p+1 = 3?), A_p|_{sigma=5} = ZERO
+      t =  6: partitions|mu|=5: count=3 (>= p+1 = 3?), A_p|_{sigma=6} = ZERO
+      t =  7: partitions|mu|=6: count=4 (>= p+1 = 3?), A_p|_{sigma=7} = ZERO
+  p=2, j=8: deg_pi(A_p) = 2 [<=2 OK]
+      t =  5: partitions|mu|=4: count=3 (>= p+1 = 3?), A_p|_{sigma=5} = ZERO
+      t =  6: partitions|mu|=5: count=3 (>= p+1 = 3?), A_p|_{sigma=6} = ZERO
+      t =  7: partitions|mu|=6: count=4 (>= p+1 = 3?), A_p|_{sigma=7} = ZERO
+      t =  8: partitions|mu|=7: count=4 (>= p+1 = 3?), A_p|_{sigma=8} = ZERO
+  p=2, j=9: deg_pi(A_p) = 2 [<=2 OK]
+      t =  5: partitions|mu|=4: count=3 (>= p+1 = 3?), A_p|_{sigma=5} = ZERO
+      t =  6: partitions|mu|=5: count=3 (>= p+1 = 3?), A_p|_{sigma=6} = ZERO
+      t =  7: partitions|mu|=6: count=4 (>= p+1 = 3?), A_p|_{sigma=7} = ZERO
+      t =  8: partitions|mu|=7: count=4 (>= p+1 = 3?), A_p|_{sigma=8} = ZERO
+      t =  9: partitions|mu|=8: count=5 (>= p+1 = 3?), A_p|_{sigma=9} = ZERO
+  p=2, j=10: deg_pi(A_p) = 2 [<=2 OK]
+      t =  5: partitions|mu|=4: count=3 (>= p+1 = 3?), A_p|_{sigma=5} = ZERO
+      t =  6: partitions|mu|=5: count=3 (>= p+1 = 3?), A_p|_{sigma=6} = ZERO
+      t =  7: partitions|mu|=6: count=4 (>= p+1 = 3?), A_p|_{sigma=7} = ZERO
+      t =  8: partitions|mu|=7: count=4 (>= p+1 = 3?), A_p|_{sigma=8} = ZERO
+      t =  9: partitions|mu|=8: count=5 (>= p+1 = 3?), A_p|_{sigma=9} = ZERO
+      t = 10: partitions|mu|=9: count=5 (>= p+1 = 3?), A_p|_{sigma=10} = ZERO
+  p=2, j=11: deg_pi(A_p) = 2 [<=2 OK]
+      t =  5: partitions|mu|=4: count=3 (>= p+1 = 3?), A_p|_{sigma=5} = ZERO
+      t =  6: partitions|mu|=5: count=3 (>= p+1 = 3?), A_p|_{sigma=6} = ZERO
+      t =  7: partitions|mu|=6: count=4 (>= p+1 = 3?), A_p|_{sigma=7} = ZERO
+      t =  8: partitions|mu|=7: count=4 (>= p+1 = 3?), A_p|_{sigma=8} = ZERO
+      t =  9: partitions|mu|=8: count=5 (>= p+1 = 3?), A_p|_{sigma=9} = ZERO
+      t = 10: partitions|mu|=9: count=5 (>= p+1 = 3?), A_p|_{sigma=10} = ZERO
+      t = 11: partitions|mu|=10: count=6 (>= p+1 = 3?), A_p|_{sigma=11} = ZERO
+  p=2, j=12: deg_pi(A_p) = 2 [<=2 OK]
+      t =  5: partitions|mu|=4: count=3 (>= p+1 = 3?), A_p|_{sigma=5} = ZERO
+      t =  6: partitions|mu|=5: count=3 (>= p+1 = 3?), A_p|_{sigma=6} = ZERO
+      t =  7: partitions|mu|=6: count=4 (>= p+1 = 3?), A_p|_{sigma=7} = ZERO
+      t =  8: partitions|mu|=7: count=4 (>= p+1 = 3?), A_p|_{sigma=8} = ZERO
+      t =  9: partitions|mu|=8: count=5 (>= p+1 = 3?), A_p|_{sigma=9} = ZERO
+      t = 10: partitions|mu|=9: count=5 (>= p+1 = 3?), A_p|_{sigma=10} = ZERO
+      t = 11: partitions|mu|=10: count=6 (>= p+1 = 3?), A_p|_{sigma=11} = ZERO
+      t = 12: partitions|mu|=11: count=6 (>= p+1 = 3?), A_p|_{sigma=12} = ZERO
+  p=3, j=6: deg_pi(A_p) = 3 [<=3 OK]
+  p=3, j=7: deg_pi(A_p) = 3 [<=3 OK]
+      t =  7: partitions|mu|=6: count=4 (>= p+1 = 4?), A_p|_{sigma=7} = ZERO
+  p=3, j=8: deg_pi(A_p) = 3 [<=3 OK]
+      t =  7: partitions|mu|=6: count=4 (>= p+1 = 4?), A_p|_{sigma=7} = ZERO
+      t =  8: partitions|mu|=7: count=4 (>= p+1 = 4?), A_p|_{sigma=8} = ZERO
+  p=3, j=9: deg_pi(A_p) = 3 [<=3 OK]
+      t =  7: partitions|mu|=6: count=4 (>= p+1 = 4?), A_p|_{sigma=7} = ZERO
+      t =  8: partitions|mu|=7: count=4 (>= p+1 = 4?), A_p|_{sigma=8} = ZERO
+      t =  9: partitions|mu|=8: count=5 (>= p+1 = 4?), A_p|_{sigma=9} = ZERO
+  p=3, j=10: deg_pi(A_p) = 3 [<=3 OK]
+      t =  7: partitions|mu|=6: count=4 (>= p+1 = 4?), A_p|_{sigma=7} = ZERO
+      t =  8: partitions|mu|=7: count=4 (>= p+1 = 4?), A_p|_{sigma=8} = ZERO
+      t =  9: partitions|mu|=8: count=5 (>= p+1 = 4?), A_p|_{sigma=9} = ZERO
+      t = 10: partitions|mu|=9: count=5 (>= p+1 = 4?), A_p|_{sigma=10} = ZERO
+  p=3, j=11: deg_pi(A_p) = 3 [<=3 OK]
+      t =  7: partitions|mu|=6: count=4 (>= p+1 = 4?), A_p|_{sigma=7} = ZERO
+      t =  8: partitions|mu|=7: count=4 (>= p+1 = 4?), A_p|_{sigma=8} = ZERO
+      t =  9: partitions|mu|=8: count=5 (>= p+1 = 4?), A_p|_{sigma=9} = ZERO
+      t = 10: partitions|mu|=9: count=5 (>= p+1 = 4?), A_p|_{sigma=10} = ZERO
+      t = 11: partitions|mu|=10: count=6 (>= p+1 = 4?), A_p|_{sigma=11} = ZERO
+  p=3, j=12: deg_pi(A_p) = 3 [<=3 OK]
+      t =  7: partitions|mu|=6: count=4 (>= p+1 = 4?), A_p|_{sigma=7} = ZERO
+      t =  8: partitions|mu|=7: count=4 (>= p+1 = 4?), A_p|_{sigma=8} = ZERO
+      t =  9: partitions|mu|=8: count=5 (>= p+1 = 4?), A_p|_{sigma=9} = ZERO
+      t = 10: partitions|mu|=9: count=5 (>= p+1 = 4?), A_p|_{sigma=10} = ZERO
+      t = 11: partitions|mu|=10: count=6 (>= p+1 = 4?), A_p|_{sigma=11} = ZERO
+      t = 12: partitions|mu|=11: count=6 (>= p+1 = 4?), A_p|_{sigma=12} = ZERO
+  p=4, j=8: deg_pi(A_p) = 4 [<=4 OK]
+  p=4, j=9: deg_pi(A_p) = 4 [<=4 OK]
+      t =  9: partitions|mu|=8: count=5 (>= p+1 = 5?), A_p|_{sigma=9} = ZERO
+  p=4, j=10: deg_pi(A_p) = 4 [<=4 OK]
+      t =  9: partitions|mu|=8: count=5 (>= p+1 = 5?), A_p|_{sigma=9} = ZERO
+      t = 10: partitions|mu|=9: count=5 (>= p+1 = 5?), A_p|_{sigma=10} = ZERO
+  p=4, j=11: deg_pi(A_p) = 4 [<=4 OK]
+      t =  9: partitions|mu|=8: count=5 (>= p+1 = 5?), A_p|_{sigma=9} = ZERO
+      t = 10: partitions|mu|=9: count=5 (>= p+1 = 5?), A_p|_{sigma=10} = ZERO
+      t = 11: partitions|mu|=10: count=6 (>= p+1 = 5?), A_p|_{sigma=11} = ZERO
+  p=4, j=12: deg_pi(A_p) = 4 [<=4 OK]
+      t =  9: partitions|mu|=8: count=5 (>= p+1 = 5?), A_p|_{sigma=9} = ZERO
+      t = 10: partitions|mu|=9: count=5 (>= p+1 = 5?), A_p|_{sigma=10} = ZERO
+      t = 11: partitions|mu|=10: count=6 (>= p+1 = 5?), A_p|_{sigma=11} = ZERO
+      t = 12: partitions|mu|=11: count=6 (>= p+1 = 5?), A_p|_{sigma=12} = ZERO
+  p=5, j=10: deg_pi(A_p) = 5 [<=5 OK]
+  p=5, j=11: deg_pi(A_p) = 5 [<=5 OK]
+      t = 11: partitions|mu|=10: count=6 (>= p+1 = 6?), A_p|_{sigma=11} = ZERO
+  p=5, j=12: deg_pi(A_p) = 5 [<=5 OK]
+      t = 11: partitions|mu|=10: count=6 (>= p+1 = 6?), A_p|_{sigma=11} = ZERO
+      t = 12: partitions|mu|=11: count=6 (>= p+1 = 6?), A_p|_{sigma=12} = ZERO
+
+==============================================================================
+KEY ARGUMENT RESULT: PASS
+==============================================================================

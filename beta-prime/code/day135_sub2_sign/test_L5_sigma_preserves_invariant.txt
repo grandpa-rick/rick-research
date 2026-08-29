@@ -1,0 +1,11 @@
+==============================================================================
+Day 135 bonus — L5 test: does σ preserve the Ψ-global sign invariant?
+For each pure monomial E_1^{a_1} E_2^{a_2} E_3^{a_3}, compute σ(monomial),
+expand, and check every coefficient's sign against (-1)^{a_1+a_3+y_1+y_3}.
+==============================================================================
+
+Total pure monomials tested (weight ≤ 8): 95
+Total sign mismatches: 0
+
+L5 STATUS: EMPIRICALLY CONFIRMED (pure monomials, weight ≤ 8).
+σ preserves the Ψ-global sign invariant. This unlocks the induction plan.

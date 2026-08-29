@@ -1,0 +1,166 @@
+Building shifted-Schur tables & ds_j/V up to j = 12...
+
+========================================================================
+STEP 1  Extract A_2 for j = 4..12 and verify (b,c)->(c-1,b+1) symmetry.
+        Then convert to (pi, sigma) = ((b+1)c, b+c+1).
+========================================================================
+  j = 4:  (pi, sigma)-degrees = (2, 4)
+  j = 5:  (pi, sigma)-degrees = (2, 5)
+  j = 6:  (pi, sigma)-degrees = (2, 6)
+  j = 7:  (pi, sigma)-degrees = (2, 7)
+  j = 8:  (pi, sigma)-degrees = (2, 8)
+  j = 9:  (pi, sigma)-degrees = (2, 9)
+  j = 10:  (pi, sigma)-degrees = (2, 10)
+  j = 11:  (pi, sigma)-degrees = (2, 11)
+  j = 12:  (pi, sigma)-degrees = (2, 12)
+
+  KEY OBSERVATION: deg_pi(A_2) = 2 for all j >= 4 !
+  This is what the task's pi = c convention hides.
+
+========================================================================
+STEP 2  Fit  A_2 = sum_{k=0..2} alpha_k(sigma) * pi^k * (sigma-5)^{↓(j-4)}
+        with alpha_k(sigma) polynomial in sigma of small degree.
+========================================================================
+  j = 4: FIT with D_alpha = 4.  alpha_k(sigma):
+      alpha_0(sigma) = -(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)
+      alpha_1(sigma) = -6*(sigma**3 - 10*sigma**2 + 27*sigma - 6)
+      alpha_2(sigma) = 6*(sigma - 6)*(sigma - 5)
+  j = 5: FIT with D_alpha = 4.  alpha_k(sigma):
+      alpha_0(sigma) = 5*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)
+      alpha_1(sigma) = -10*(2*sigma**3 - 25*sigma**2 + 95*sigma - 90)
+      alpha_2(sigma) = 10*(sigma - 7)*(sigma - 6)
+  j = 6: FIT with D_alpha = 4.  alpha_k(sigma):
+      alpha_0(sigma) = 25*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)
+      alpha_1(sigma) = -15*(3*sigma**3 - 42*sigma**2 + 179*sigma - 200)
+      alpha_2(sigma) = 15*(sigma - 8)*(sigma - 7)
+  j = 7: FIT with D_alpha = 4.  alpha_k(sigma):
+      alpha_0(sigma) = 70*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)
+      alpha_1(sigma) = -21*(sigma - 7)*(4*sigma**2 - 33*sigma + 48)
+      alpha_2(sigma) = 21*(sigma - 9)*(sigma - 8)
+  j = 8: FIT with D_alpha = 4.  alpha_k(sigma):
+      alpha_0(sigma) = 154*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)
+      alpha_1(sigma) = -28*(sigma - 6)*(5*sigma**2 - 52*sigma + 83)
+      alpha_2(sigma) = 28*(sigma - 10)*(sigma - 9)
+  j = 9: FIT with D_alpha = 4.  alpha_k(sigma):
+      alpha_0(sigma) = 294*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)
+      alpha_1(sigma) = -36*(6*sigma**3 - 105*sigma**2 + 527*sigma - 686)
+      alpha_2(sigma) = 36*(sigma - 11)*(sigma - 10)
+  j = 10: FIT with D_alpha = 4.  alpha_k(sigma):
+      alpha_0(sigma) = 510*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)
+      alpha_1(sigma) = -45*(7*sigma**3 - 130*sigma**2 + 675*sigma - 900)
+      alpha_2(sigma) = 45*(sigma - 12)*(sigma - 11)
+  j = 11: FIT with D_alpha = 4.  alpha_k(sigma):
+      alpha_0(sigma) = 825*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)
+      alpha_1(sigma) = -55*(8*sigma**3 - 157*sigma**2 + 839*sigma - 1140)
+      alpha_2(sigma) = 55*(sigma - 13)*(sigma - 12)
+  j = 12: FIT with D_alpha = 4.  alpha_k(sigma):
+      alpha_0(sigma) = 1265*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)
+      alpha_1(sigma) = -66*(9*sigma**3 - 186*sigma**2 + 1019*sigma - 1406)
+      alpha_2(sigma) = 66*(sigma - 14)*(sigma - 13)
+
+========================================================================
+STEP 3  Fit each alpha_k(j, sigma) as bivariate polynomial
+        (poly in j, poly in sigma).
+========================================================================
+
+  --- k = 0 ---
+      alpha_{2,0}[sigma^0]: deg-4 in j, poly = j*(j - 2)*(j - 1)*(3*j - 13)
+      alpha_{2,0}[sigma^1]: deg-4 in j, poly = -25*j*(j - 2)*(j - 1)*(3*j - 13)/12
+      alpha_{2,0}[sigma^2]: deg-4 in j, poly = 35*j*(j - 2)*(j - 1)*(3*j - 13)/24
+      alpha_{2,0}[sigma^3]: deg-4 in j, poly = -5*j*(j - 2)*(j - 1)*(3*j - 13)/12
+      alpha_{2,0}[sigma^4]: deg-4 in j, poly = j*(j - 2)*(j - 1)*(3*j - 13)/24
+
+  --- k = 1 ---
+      alpha_{2,1}[sigma^0]: deg-4 in j, poly = j*(j - 1)*(13*j**2 - 33*j - 70)/2
+      alpha_{2,1}[sigma^1]: deg-4 in j, poly = -j*(j - 1)*(8*j**2 - 4*j - 85)/2
+      alpha_{2,1}[sigma^2]: deg-4 in j, poly = j*(j - 1)*(j**2 + 6*j - 30)/2
+      alpha_{2,1}[sigma^3]: deg-3 in j, poly = -j*(j - 3)*(j - 1)/2
+
+  --- k = 2 ---
+      alpha_{2,2}[sigma^0]: deg-4 in j, poly = j*(j - 1)*(j + 1)*(j + 2)/2
+      alpha_{2,2}[sigma^1]: deg-3 in j, poly = -j*(j - 1)*(2*j + 3)/2
+      alpha_{2,2}[sigma^2]: deg-2 in j, poly = j*(j - 1)/2
+
+========================================================================
+STEP 4  Test the same structure on A_3.
+        Extract A_3 for j = 6..12; check symmetry; convert to (pi, sigma).
+========================================================================
+  j = 6: symmetric? True  (deg_pi, deg_sig) = (3, 6)
+  j = 7: symmetric? True  (deg_pi, deg_sig) = (3, 7)
+  j = 8: symmetric? True  (deg_pi, deg_sig) = (3, 8)
+  j = 9: symmetric? True  (deg_pi, deg_sig) = (3, 9)
+  j = 10: symmetric? True  (deg_pi, deg_sig) = (3, 10)
+  j = 11: symmetric? True  (deg_pi, deg_sig) = (3, 11)
+  j = 12: symmetric? True  (deg_pi, deg_sig) = (3, 12)
+
+  A_3 fits.  Try  A_3 = sum_{k=0..k_max} alpha_k(sigma) * pi^k * (sigma-shift)^{↓length}
+  with (shift, length) chosen by empirical inspection.
+
+  --- Attempt A: shift = 2*p+1 = 7, length = j - 6 = j - 2p, k_max = 3 ---
+    j = 6: FIT with D_alpha = 6.
+        alpha_0(sigma) = -15*(sigma - 6)*(sigma - 5)*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)
+        alpha_1(sigma) = 20*(sigma - 1)*(5*sigma**4 - 112*sigma**3 + 925*sigma**2 - 3242*sigma + 3816)
+        alpha_2(sigma) = -10*(sigma - 7)*(9*sigma**3 - 157*sigma**2 + 824*sigma - 1080)
+        alpha_3(sigma) = 20*(sigma - 9)*(sigma - 8)*(sigma - 7)
+    j = 7: FIT with D_alpha = 6.
+        alpha_0(sigma) = -140*(sigma - 6)*(sigma - 5)*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)
+        alpha_1(sigma) = 35*(10*sigma**5 - 259*sigma**4 + 2580*sigma**3 - 11993*sigma**2 + 24902*sigma - 18000)
+        alpha_2(sigma) = -70*(sigma - 8)*(3*sigma**3 - 58*sigma**2 + 343*sigma - 540)
+        alpha_3(sigma) = 35*(sigma - 10)*(sigma - 9)*(sigma - 8)
+    j = 8: FIT with D_alpha = 6.
+        alpha_0(sigma) = -560*(sigma - 6)*(sigma - 5)*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)
+        alpha_1(sigma) = 28*(33*sigma**5 - 909*sigma**4 + 9623*sigma**3 - 47691*sigma**2 + 106324*sigma - 82980)
+        alpha_2(sigma) = -28*(sigma - 9)*(15*sigma**3 - 313*sigma**2 + 1998*sigma - 3440)
+        alpha_3(sigma) = 56*(sigma - 11)*(sigma - 10)*(sigma - 9)
+    j = 9: FIT with D_alpha = 6.
+        alpha_0(sigma) = -1638*(sigma - 6)*(sigma - 5)*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)
+        alpha_1(sigma) = 42*(49*sigma**5 - 1416*sigma**4 + 15643*sigma**3 - 80760*sigma**2 + 187564*sigma - 152400)
+        alpha_2(sigma) = -84*(sigma - 10)*(9*sigma**3 - 200*sigma**2 + 1351*sigma - 2460)
+        alpha_3(sigma) = 84*(sigma - 12)*(sigma - 11)*(sigma - 10)
+    j = 10: FIT with D_alpha = 6.
+        alpha_0(sigma) = -3990*(sigma - 6)*(sigma - 5)*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)
+        alpha_1(sigma) = 240*(17*sigma**5 - 512*sigma**4 + 5850*sigma**3 - 31126*sigma**2 + 74353*sigma - 62022)
+        alpha_2(sigma) = -60*(sigma - 11)*(21*sigma**3 - 493*sigma**2 + 3484*sigma - 6600)
+        alpha_3(sigma) = 120*(sigma - 13)*(sigma - 12)*(sigma - 11)
+    j = 11: FIT with D_alpha = 6.
+        alpha_0(sigma) = -8580*(sigma - 6)*(sigma - 5)*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)
+        alpha_1(sigma) = 165*(45*sigma**5 - 1407*sigma**4 + 16537*sigma**3 - 90117*sigma**2 + 219878*sigma - 186936)
+        alpha_2(sigma) = -660*(sigma - 12)*(3*sigma**3 - 74*sigma**2 + 543*sigma - 1060)
+        alpha_3(sigma) = 165*(sigma - 14)*(sigma - 13)*(sigma - 12)
+    j = 12: FIT with D_alpha = 6.
+        alpha_0(sigma) = -16830*(sigma - 6)*(sigma - 5)*(sigma - 4)*(sigma - 3)*(sigma - 2)*(sigma - 1)
+        alpha_1(sigma) = 110*(115*sigma**5 - 3723*sigma**4 + 44845*sigma**3 - 249261*sigma**2 + 618484*sigma - 533580)
+        alpha_2(sigma) = -110*(sigma - 13)*(27*sigma**3 - 697*sigma**2 + 5282*sigma - 10560)
+        alpha_3(sigma) = 220*(sigma - 15)*(sigma - 14)*(sigma - 13)
+
+  Attempt A SUCCESS: fit alpha_k(j, sigma) uniformly in j.
+
+    --- A_3, k = 0 ---
+      alpha_{3,0}[sigma^0]: deg-6 in j, poly = -15*j*(j - 3)*(j - 2)*(j - 1)*(j**2 - 7*j + 8)
+      alpha_{3,0}[sigma^1]: deg-6 in j, poly = 147*j*(j - 3)*(j - 2)*(j - 1)*(j**2 - 7*j + 8)/4
+      alpha_{3,0}[sigma^2]: deg-6 in j, poly = -203*j*(j - 3)*(j - 2)*(j - 1)*(j**2 - 7*j + 8)/6
+      alpha_{3,0}[sigma^3]: deg-6 in j, poly = 245*j*(j - 3)*(j - 2)*(j - 1)*(j**2 - 7*j + 8)/16
+      alpha_{3,0}[sigma^4]: deg-6 in j, poly = -175*j*(j - 3)*(j - 2)*(j - 1)*(j**2 - 7*j + 8)/48
+      alpha_{3,0}[sigma^5]: deg-6 in j, poly = 7*j*(j - 3)*(j - 2)*(j - 1)*(j**2 - 7*j + 8)/16
+      alpha_{3,0}[sigma^6]: deg-6 in j, poly = -j*(j - 3)*(j - 2)*(j - 1)*(j**2 - 7*j + 8)/48
+
+    --- A_3, k = 1 ---
+      alpha_{3,1}[sigma^0]: deg-6 in j, poly = -j*(j - 2)*(j - 1)*(319*j**3 - 2046*j**2 + 269*j + 6954)/6
+      alpha_{3,1}[sigma^1]: deg-6 in j, poly = j*(j - 2)*(j - 1)*(162*j**3 - 798*j**2 - 1278*j + 4933)/3
+      alpha_{3,1}[sigma^2]: deg-6 in j, poly = -j*(j - 2)*(j - 1)*(437*j**3 - 1124*j**2 - 9583*j + 20238)/24
+      alpha_{3,1}[sigma^3]: deg-6 in j, poly = j*(j - 2)*(j - 1)*(60*j**3 + 117*j**2 - 2969*j + 4790)/24
+      alpha_{3,1}[sigma^4]: deg-6 in j, poly = -j*(j - 2)*(j - 1)*(3*j**3 + 44*j**2 - 385*j + 546)/24
+      alpha_{3,1}[sigma^5]: deg-5 in j, poly = j*(j - 2)**2*(j - 1)*(3*j - 13)/24
+
+    --- A_3, k = 2 ---
+      alpha_{3,2}[sigma^0]: deg-6 in j, poly = -5*j*(j - 2)*(j - 1)*(j + 1)*(5*j**2 - 11*j - 60)/3
+      alpha_{3,2}[sigma^1]: deg-6 in j, poly = j*(j - 2)*(j - 1)*(39*j**3 + 180*j**2 - 1005*j - 2026)/12
+      alpha_{3,2}[sigma^2]: deg-6 in j, poly = -j*(j - 2)*(j - 1)*(j**3 + 26*j**2 - 30*j - 331)/4
+      alpha_{3,2}[sigma^3]: deg-5 in j, poly = j*(j - 2)*(j - 1)*(3*j**2 + 15*j - 88)/6
+      alpha_{3,2}[sigma^4]: deg-4 in j, poly = -j*(j - 3)*(j - 2)*(j - 1)/4
+
+    --- A_3, k = 3 ---
+      alpha_{3,3}[sigma^0]: deg-6 in j, poly = -j*(j - 2)*(j - 1)*(j + 1)*(j + 2)*(j + 3)/6
+      alpha_{3,3}[sigma^1]: deg-5 in j, poly = j*(j - 2)*(j - 1)*(3*j**2 + 12*j + 11)/6
+      alpha_{3,3}[sigma^2]: deg-4 in j, poly = -j*(j - 2)*(j - 1)*(j + 2)/2
+      alpha_{3,3}[sigma^3]: deg-3 in j, poly = j*(j - 2)*(j - 1)/6

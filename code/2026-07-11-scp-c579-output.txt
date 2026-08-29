@@ -1,0 +1,172 @@
+==========================================================================
+Day 89 Attack C — Sharp Cancellation Principle re-verify c=5,7,9
+==========================================================================
+==========================================================================
+CASE: c = 5, beta'(5) target = 3
+==========================================================================
+
+[extract] h_k^{(c=5)}(a,b) for k=0..8, a in [5,18), b in [b0, a+1]
+          55 samples in 0.0s
+  k=0: deg <=  8   h_0 = (a + 3)*(a + 4)*(a + 5)*(a + 6)*(b + 2)*(b + 3)*(b + 4)*(b + 5)
+  k=1: deg <=  6   h_1 = -20*(a + 3)*(a + 4)*(a + 5)*(b + 2)*(b + 3)*(b + 4)
+  k=2: deg <=  6   h_2 = -10*(a + 3)*(a + 4)*(b + 2)*(b + 3)*(a*b + a + 2*b - 22)
+  k=3: deg <=  4   h_3 = 360*(a + 3)*(b + 2)*(a*b + a + 2*b - 2)
+  k=4: deg <=  4   h_4 = 240*(a**2*b**2 + a**2*b + 3*a*b**2 - 15*a*b - 18*a + 2*b**2 - 34*b - 24)
+  k=5: deg <=  2   h_5 = -7200*(a*b + b - 2)
+  k=6: deg <=  2   h_6 = -7200*(a*b - a - 6)
+  k=7: deg <=  0   h_7 = 100800
+  k=8: deg <=  0   h_8 = 201600
+
+[floor] per-k v_2 floor via search over a+b odd shell, [0, 64)^2:
+  k= 0: min v_2 = 6   (achieved at [(0, 1), (0, 7), (0, 9)])
+  k= 1: min v_2 = 4   (achieved at [(2, 3), (2, 7), (2, 11)])
+  k= 2: min v_2 = 3   (achieved at [(3, 0), (3, 4), (3, 8)]) <-- CARRIER
+  k= 3: min v_2 = 5   (achieved at [(0, 3), (0, 7), (0, 11)])
+  k= 4: min v_2 = 5   (achieved at [(1, 0), (1, 2), (1, 4)])
+  k= 5: min v_2 = 5   (achieved at [(0, 1), (0, 3), (0, 5)])
+  k= 6: min v_2 = 5   (achieved at [(1, 0), (1, 2), (1, 4)])
+  k= 7: min v_2 = 6   (achieved at [(0, 1), (0, 3), (0, 5)])
+  k= 8: min v_2 = 7   (achieved at [(0, 1), (0, 3), (0, 5)])
+
+[carrier] identified k* = 2, floor = 3
+
+[witness search] trying achievers for k=2:
+  (a*,b*)=(3,0): H_5 = 88200, v_2 = 3, carrier v_2 = 3 OK distinct-min
+  (a*,b*)=(3,4): H_5 = 4611096, v_2 = 3, carrier v_2 = 3 OK distinct-min
+  (a*,b*)=(3,8): H_5 = 33180840, v_2 = 3, carrier v_2 = 3 OK distinct-min
+  (a*,b*)=(3,12): H_5 = 123956280, v_2 = 3, carrier v_2 = 3 OK distinct-min
+  (a*,b*)=(3,16): H_5 = 333675720, v_2 = 3, carrier v_2 = 3 OK distinct-min
+
+[SCP witness at c=5]: (a*, b*, k*=j*) = (3, 0, 2)
+  H_5(3,0,2) = 88200
+  v_2 = 3   (target beta'(c) = 3)
+  Per-summand v_2 breakdown:
+    k= 0: h_k =             362880  C(2,0)=1      contrib =               362880  v_2 = 7
+    k= 1: h_k =            -161280  C(2,1)=2      contrib =              -322560  v_2 = 10
+    k= 2: h_k =              47880  C(2,2)=1      contrib =                47880  v_2 = 3  <-- CARRIER
+
+[registry consistency] v_2 = 3 vs target beta'(5) = 3: MATCH
+==========================================================================
+CASE: c = 7, beta'(7) target = 6
+==========================================================================
+
+[extract] h_k^{(c=7)}(a,b) for k=0..12, a in [7,30), b in [b0, a+1]
+          171 samples in 0.2s
+  k=0: deg <= 12   h_0 = (a + 3)*(a + 4)*(a + 5)*(a + 6)*(a + 7)*(a + 8)*(b + 2)*(b + 3)*(b + 4)*(b + 5)*(b + 6)*(b + 7)
+  k=1: deg <= 10   h_1 = -42*(a + 3)*(a + 4)*(a + 5)*(a + 6)*(a + 7)*(b + 2)*(b + 3)*(b + 4)*(b + 5)*(b + 6)
+  k=2: deg <= 10   h_2 = -14*(a + 3)*(a + 4)*(a + 5)*(a + 6)*(b + 2)*(b + 3)*(b + 4)*(b + 5)*(a*b + a + 2*b - 88)
+  k=3: deg <=  8   h_3 = 1260*(a + 3)*(a + 4)*(a + 5)*(b + 2)*(b + 3)*(b + 4)*(a*b + a + 2*b - 18)
+  k=4: deg <=  8   h_4 = 504*(a + 3)*(a + 4)*(b + 2)*(b + 3)*(a**2*b**2 + a**2*b + 3*a*b**2 - 97*a*b - 100*a + 2*b**2 - 198*b...
+  k=5: deg <=  6   h_5 = -50400*(a + 3)*(b + 2)*(a**2*b**2 + a**2*b + 3*a*b**2 - 17*a*b - 20*a + 2*b**2 - 38*b - 4)
+  k=6: deg <=  6   h_6 = -25200*(a**3*b**3 - a**3*b + 3*a**2*b**3 - 72*a**2*b**2 - 75*a**2*b + 2*a*b**3 - 216*a*b**2 + 142*a*...
+  k=7: deg <=  4   h_7 = 2116800*(a**2*b**2 - a**2*b + a*b**2 - 13*a*b - 12*b + 12)
+  k=8: deg <=  4   h_8 = 1411200*(a**2*b**2 - 3*a**2*b + 2*a**2 - a*b**2 - 33*a*b + 34*a + 72)
+  k=9: deg <=  2   h_9 = -76204800*(a*b - 2*a - b - 2)
+  k=10: deg <=  2   h_10 = -76204800*(a*b - 3*a - 2*b - 4)
+  k=11: deg <=  0   h_11 = 1676505600
+  k=12: deg <=  0   h_12 = 3353011200
+
+[floor] per-k v_2 floor via search over a+b odd shell, [0, 64)^2:
+  k= 0: min v_2 = 8   (achieved at [(6, 7), (6, 15), (6, 23)])
+  k= 1: min v_2 = 7   (achieved at [(0, 1), (0, 7), (0, 9)])
+  k= 2: min v_2 = 7   (achieved at [(1, 0), (1, 2), (1, 8)])
+  k= 3: min v_2 = 6   (achieved at [(2, 3), (2, 7), (2, 11)]) <-- CARRIER
+  k= 4: min v_2 = 7   (achieved at [(3, 0), (3, 4), (3, 8)])
+  k= 5: min v_2 = 7   (achieved at [(0, 3), (0, 7), (0, 11)])
+  k= 6: min v_2 = 6   (achieved at [(1, 2), (1, 6), (1, 10)])
+  k= 7: min v_2 = 8   (achieved at [(1, 0), (1, 4), (1, 8)])
+  k= 8: min v_2 = 9   (achieved at [(1, 0), (1, 2), (1, 4)])
+  k= 9: min v_2 = 8   (achieved at [(0, 1), (0, 3), (0, 5)])
+  k=10: min v_2 = 8   (achieved at [(1, 0), (1, 2), (1, 4)])
+  k=11: min v_2 = 9   (achieved at [(0, 1), (0, 3), (0, 5)])
+  k=12: min v_2 = 10   (achieved at [(0, 1), (0, 3), (0, 5)])
+
+[carrier] identified k* = 3, floor = 6
+
+[witness search] trying achievers for k=3:
+  (a*,b*)=(2,3): H_7 = 2605780800, v_2 = 6, carrier v_2 = 6 OK distinct-min
+  (a*,b*)=(2,7): H_7 = 84453969600, v_2 = 6, carrier v_2 = 6 OK distinct-min
+  (a*,b*)=(2,11): H_7 = 755957966400, v_2 = 6, carrier v_2 = 6 OK distinct-min
+  (a*,b*)=(2,15): H_7 = 3751606756800, v_2 = 6, carrier v_2 = 6 OK distinct-min
+  (a*,b*)=(2,19): H_7 = 13266118958400, v_2 = 6, carrier v_2 = 6 OK distinct-min
+
+[SCP witness at c=7]: (a*, b*, k*=j*) = (2, 3, 3)
+  H_7(2,3,3) = 2605780800
+  v_2 = 6   (target beta'(c) = 6)
+  Per-summand v_2 breakdown:
+    k= 0: h_k =        22861440000  C(3,0)=1      contrib =          22861440000  v_2 = 10
+    k= 1: h_k =        -9601804800  C(3,1)=3      contrib =         -28805414400  v_2 = 9
+    k= 2: h_k =         2924006400  C(3,2)=3      contrib =           8772019200  v_2 = 10
+    k= 3: h_k =         -222264000  C(3,3)=1      contrib =           -222264000  v_2 = 6  <-- CARRIER
+
+[registry consistency] v_2 = 6 vs target beta'(7) = 6: MATCH
+==========================================================================
+CASE: c = 9, beta'(9) target = 9
+==========================================================================
+
+[extract] h_k^{(c=9)}(a,b) for k=0..16, a in [9,34), b in [b0, a+1]
+          171 samples in 0.5s
+  k=0: deg <= 16   h_0 = (a + 3)*(a + 4)*(a + 5)*(a + 6)*(a + 7)*(a + 8)*(a + 9)*(a + 10)*(b + 2)*(b + 3)*(b + 4)*(b + 5)*(b ...
+  k=1: deg <= 14   h_1 = -72*(a + 3)*(a + 4)*(a + 5)*(a + 6)*(a + 7)*(a + 8)*(a + 9)*(b + 2)*(b + 3)*(b + 4)*(b + 5)*(b + 6)*...
+  k=2: deg <= 14   h_2 = -18*(a + 3)*(a + 4)*(a + 5)*(a + 6)*(a + 7)*(a + 8)*(b + 2)*(b + 3)*(b + 4)*(b + 5)*(b + 6)*(b + 7)*...
+  k=3: deg <= 12   h_3 = 3024*(a + 3)*(a + 4)*(a + 5)*(a + 6)*(a + 7)*(b + 2)*(b + 3)*(b + 4)*(b + 5)*(b + 6)*(a*b + a + 2*b ...
+  k=4: deg <= 12   h_4 = 864*(a + 3)*(a + 4)*(a + 5)*(a + 6)*(b + 2)*(b + 3)*(b + 4)*(b + 5)*(a**2*b**2 + a**2*b + 3*a*b**2 -...
+  k=5: deg <= 10   h_5 = -181440*(a + 3)*(a + 4)*(a + 5)*(b + 2)*(b + 3)*(b + 4)*(a**2*b**2 + a**2*b + 3*a*b**2 - 67*a*b - 70...
+  k=6: deg <= 10   h_6 = -60480*(a + 3)*(a + 4)*(b + 2)*(b + 3)*(a**3*b**3 - a**3*b + 3*a**2*b**3 - 270*a**2*b**2 - 273*a**2*...
+  k=7: deg <=  8   h_7 = 12700800*(a + 3)*(b + 2)*(a**3*b**3 - a**3*b + 3*a**2*b**3 - 60*a**2*b**2 - 63*a**2*b + 2*a*b**3 - 1...
+  k=8: deg <=  8   h_8 = 5080320*(a**4*b**4 - 2*a**4*b**3 - a**4*b**2 + 2*a**4*b + 2*a**3*b**4 - 204*a**3*b**3 - 2*a**3*b**2 ...
+  k=9: deg <=  6   h_9 = -914457600*(a**3*b**3 - 3*a**3*b**2 + 2*a**3*b - 40*a**2*b**2 + 40*a**2*b - a*b**3 - 37*a*b**2 + 254...
+  k=10: deg <=  6   h_10 = -457228800*(a**3*b**3 - 6*a**3*b**2 + 11*a**3*b - 6*a**3 - 3*a**2*b**3 - 102*a**2*b**2 + 327*a**2*b ...
+  k=11: deg <=  4   h_11 = 60354201600*(a**2*b**2 - 5*a**2*b + 6*a**2 - 3*a*b**2 - 5*a*b + 22*a + 2*b**2 + 10*b + 12)
+  k=12: deg <=  4   h_12 = 40236134400*(a**2*b**2 - 7*a**2*b + 12*a**2 - 5*a*b**2 - 19*a*b + 102*a + 6*b**2 + 66*b - 72)
+  k=13: deg <=  2   h_13 = -3138418483200*(a*b - 4*a - 3*b + 6)
+  k=14: deg <=  2   h_14 = -3138418483200*(a*b - 5*a - 4*b + 6)
+  k=15: deg <=  0   h_15 = 94152554496000
+  k=16: deg <=  0   h_16 = 188305108992000
+
+[floor] per-k v_2 floor via search over a+b odd shell, [0, 64)^2:
+  k= 0: min v_2 = 14   (achieved at [(0, 1), (0, 3), (0, 5)])
+  k= 1: min v_2 = 11   (achieved at [(6, 7), (6, 15), (6, 23)])
+  k= 2: min v_2 = 9   (achieved at [(7, 0), (7, 8), (7, 16)]) <-- CARRIER
+  k= 3: min v_2 = 12   (achieved at [(0, 1), (0, 9), (0, 17)])
+  k= 4: min v_2 = 12   (achieved at [(1, 0), (1, 2), (1, 8)])
+  k= 5: min v_2 = 12   (achieved at [(0, 1), (0, 3), (0, 9)])
+  k= 6: min v_2 = 10   (achieved at [(3, 0), (3, 4), (3, 8)])
+  k= 7: min v_2 = 11   (achieved at [(0, 1), (0, 5), (0, 9)])
+  k= 8: min v_2 = 13   (achieved at [(1, 0), (1, 4), (1, 8)])
+  k= 9: min v_2 = 12   (achieved at [(2, 3), (2, 7), (2, 11)])
+  k=10: min v_2 = 11   (achieved at [(3, 0), (3, 4), (3, 8)])
+  k=11: min v_2 = 13   (achieved at [(0, 3), (0, 7), (0, 11)])
+  k=12: min v_2 = 13   (achieved at [(1, 0), (1, 2), (1, 4)])
+  k=13: min v_2 = 13   (achieved at [(0, 1), (0, 3), (0, 5)])
+  k=14: min v_2 = 13   (achieved at [(1, 0), (1, 2), (1, 4)])
+  k=15: min v_2 = 14   (achieved at [(0, 1), (0, 3), (0, 5)])
+  k=16: min v_2 = 15   (achieved at [(0, 1), (0, 3), (0, 5)])
+
+[carrier] identified k* = 2, floor = 9
+
+[witness search] trying achievers for k=2:
+  (a*,b*)=(7,0): H_9 = 91210287168000, v_2 = 9, carrier v_2 = 9 OK distinct-min
+  (a*,b*)=(7,8): H_9 = 515463622914240000, v_2 = 9, carrier v_2 = 9 OK distinct-min
+  (a*,b*)=(7,16): H_9 = 28596543132725568000, v_2 = 9, carrier v_2 = 9 OK distinct-min
+  (a*,b*)=(7,24): H_9 = 407832722284059072000, v_2 = 9, carrier v_2 = 9 OK distinct-min
+  (a*,b*)=(7,32): H_9 = 2984871684629330496000, v_2 = 9, carrier v_2 = 9 OK distinct-min
+
+[SCP witness at c=9]: (a*, b*, k*=j*) = (7, 0, 2)
+  H_9(7,0,2) = 91210287168000
+  v_2 = 9   (target beta'(c) = 9)
+  Per-summand v_2 breakdown:
+    k= 0: h_k =    355687428096000  C(2,0)=1      contrib =      355687428096000  v_2 = 15
+    k= 1: h_k =   -167382319104000  C(2,1)=2      contrib =     -334764638208000  v_2 = 19
+    k= 2: h_k =     70287497280000  C(2,2)=1      contrib =       70287497280000  v_2 = 9  <-- CARRIER
+
+[registry consistency] v_2 = 9 vs target beta'(9) = 9: MATCH
+
+==========================================================================
+SUMMARY
+==========================================================================
+  c=5: witness (a*,b*,k*)=(3,0,2), H_c = 88200, v_2 = 3 (target 3), MATCH
+  c=7: witness (a*,b*,k*)=(2,3,3), H_c = 2605780800, v_2 = 6 (target 6), MATCH
+  c=9: witness (a*,b*,k*)=(7,0,2), H_c = 91210287168000, v_2 = 9 (target 9), MATCH
+
+  Overall: ALL MATCH

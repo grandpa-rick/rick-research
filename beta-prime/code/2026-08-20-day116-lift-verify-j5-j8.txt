@@ -1,0 +1,41 @@
+Building bt(j) tables up to j = 8 ...
+  j=0: 1 partitions, entries: [((0, 0, 0), 1)]
+  j=1: 1 partitions, entries: [((1, 1, 0), 1)]
+  j=2: 2 partitions, entries: [((2, 2, 0), 1), ((2, 1, 1), 1)]
+  j=3: 3 partitions, entries: [((3, 3, 0), 1), ((3, 2, 1), 2), ((2, 2, 2), 1)]
+  j=4: 4 partitions, entries: [((4, 4, 0), 1), ((4, 3, 1), 3), ((4, 2, 2), 2), ((3, 3, 2), 3)]
+  j=5: 5 partitions, entries: [((5, 5, 0), 1), ((5, 4, 1), 4), ((5, 3, 2), 5), ((4, 4, 2), 6), ((4, 3, 3), 5)]
+  j=6: 7 partitions, entries: [((6, 6, 0), 1), ((6, 5, 1), 5), ((6, 4, 2), 9), ((6, 3, 3), 5), ((5, 5, 2), 10), ((5, 4, 3), 16), ((4, 4, 4), 5)]
+  j=7: 8 partitions, entries: [((7, 7, 0), 1), ((7, 6, 1), 6), ((7, 5, 2), 14), ((7, 4, 3), 14), ((6, 6, 2), 15), ((6, 5, 3), 35), ((6, 4, 4), 21), ((5, 5, 4), 21)]
+  j=8: 10 partitions, entries: [((8, 8, 0), 1), ((8, 7, 1), 7), ((8, 6, 2), 20), ((8, 5, 3), 28), ((8, 4, 4), 14), ((7, 7, 2), 21), ((7, 6, 3), 64), ((7, 5, 4), 70), ((6, 6, 4), 56), ((6, 5, 5), 42)]
+
+==============================================================================
+STEP 1: Verify kap_mu = K_{mu', (2^j)} via SSYT counting
+==============================================================================
+  j=0: bt table == K_{mu', (2^j)}  (1 nonzero mus)  OK
+  j=1: bt table == K_{mu', (2^j)}  (1 nonzero mus)  OK
+  j=2: bt table == K_{mu', (2^j)}  (2 nonzero mus)  OK
+  j=3: bt table == K_{mu', (2^j)}  (3 nonzero mus)  OK
+  j=4: bt table == K_{mu', (2^j)}  (4 nonzero mus)  OK
+  j=5: bt table == K_{mu', (2^j)}  (5 nonzero mus)  OK
+  j=6: bt table == K_{mu', (2^j)}  (7 nonzero mus)  OK
+  j=7: bt table == K_{mu', (2^j)}  (8 nonzero mus)  OK
+  j=8: bt table == K_{mu', (2^j)}  (10 nonzero mus)  OK
+
+==============================================================================
+STEP 2: Verify LIFT: S_j == sum_mu kap_mu * s^*_mu(u, y, c) for j <= 8.
+        Using kap_mu from Kostka (independent of bt).
+==============================================================================
+  j=0: S_j (total_deg=0) == sum kap * s^*_mu ?  True  [PASS]
+  j=1: S_j (total_deg=2) == sum kap * s^*_mu ?  True  [PASS]
+  j=2: S_j (total_deg=4) == sum kap * s^*_mu ?  True  [PASS]
+  j=3: S_j (total_deg=6) == sum kap * s^*_mu ?  True  [PASS]
+  j=4: S_j (total_deg=8) == sum kap * s^*_mu ?  True  [PASS]
+  j=5: S_j (total_deg=10) == sum kap * s^*_mu ?  True  [PASS]
+  j=6: S_j (total_deg=12) == sum kap * s^*_mu ?  True  [PASS]
+  j=7: S_j (total_deg=14) == sum kap * s^*_mu ?  True  [PASS]
+  j=8: S_j (total_deg=16) == sum kap * s^*_mu ?  True  [PASS]
+
+==============================================================================
+SUMMARY: If all j in {0,...,8} PASS, LIFT THEOREM is EMPIRICALLY ROBUST.
+==============================================================================

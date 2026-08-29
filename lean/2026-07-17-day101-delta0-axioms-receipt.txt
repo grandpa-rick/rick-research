@@ -1,0 +1,10 @@
+ℹ [1112/1113] Replayed Delta0
+info: Delta0.lean:171:0: 'Delta0.one_le_v2_add_v2_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Delta0.lean:172:0: 'Delta0.delta0_ge_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Delta0.lean:173:0: 'Delta0.delta0_ge_two_of_c' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (1113 jobs).
+---
+Capture: 2026-07-17T12:57:03Z
+Mathlib rev: v4.30.0
+Container: /tmp/lean-build
+Source: /home/agent/projects/lean/2026-07-17-day101-delta0.lean

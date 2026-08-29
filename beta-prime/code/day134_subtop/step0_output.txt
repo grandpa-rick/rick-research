@@ -1,0 +1,128 @@
+======================================================================
+STEP 0: sub_1[b] := Ψ(e_2^b)|_{weight = b-1}, for b = 2..8
+======================================================================
+
+--- b = 2 (Psi t=0.05s, sym→E t=0.01s) ---
+  |allowed triples (x1+x2+2*x3 = 1)| = 2
+  |nonzero coefficients|               = 2
+  distinct signs = {1, -1}
+  sign fit (-1)^{b-x2-x3}   mismatches: 2
+  sign fit (-1)^{b-1-x2-x3} mismatches: 0
+  Weight-1 coefficient table:
+    E1^1 E2^0 E3^0: -6
+    E1^0 E2^1 E3^0: 5
+
+--- b = 3 (Psi t=0.09s, sym→E t=0.07s) ---
+  |allowed triples (x1+x2+2*x3 = 2)| = 4
+  |nonzero coefficients|               = 4
+  distinct signs = {1, -1}
+  sign fit (-1)^{b-x2-x3}   mismatches: 4
+  sign fit (-1)^{b-1-x2-x3} mismatches: 0
+  Weight-2 coefficient table:
+    E1^2 E2^0 E3^0: 36
+    E1^1 E2^1 E3^0: -48
+    E1^0 E2^2 E3^0: 14
+    E1^0 E2^0 E3^1: -57
+
+--- b = 4 (Psi t=0.18s, sym→E t=0.22s) ---
+  |allowed triples (x1+x2+2*x3 = 3)| = 6
+  |nonzero coefficients|               = 6
+  distinct signs = {1, -1}
+  sign fit (-1)^{b-x2-x3}   mismatches: 6
+  sign fit (-1)^{b-1-x2-x3} mismatches: 0
+  Weight-3 coefficient table:
+    E1^3 E2^0 E3^0: -240
+    E1^2 E2^1 E3^0: 404
+    E1^1 E2^2 E3^0: -200
+    E1^0 E2^3 E3^0: 30
+    E1^1 E2^0 E3^1: 1072
+    E1^0 E2^1 E3^1: -360
+
+--- b = 5 (Psi t=0.32s, sym→E t=0.59s) ---
+  |allowed triples (x1+x2+2*x3 = 4)| = 9
+  |nonzero coefficients|               = 9
+  distinct signs = {1, -1}
+  sign fit (-1)^{b-x2-x3}   mismatches: 9
+  sign fit (-1)^{b-1-x2-x3} mismatches: 0
+  Weight-4 coefficient table:
+    E1^4 E2^0 E3^0: 1800
+    E1^3 E2^1 E3^0: -3510
+    E1^2 E2^2 E3^0: 2279
+    E1^1 E2^3 E3^0: -600
+    E1^0 E2^4 E3^0: 55
+    E1^2 E2^0 E3^1: -15390
+    E1^1 E2^1 E3^1: 9098
+    E1^0 E2^2 E3^1: -1290
+    E1^0 E2^0 E3^2: 2223
+
+--- b = 6 (Psi t=0.62s, sym→E t=1.39s) ---
+  |allowed triples (x1+x2+2*x3 = 5)| = 12
+  |nonzero coefficients|               = 12
+  distinct signs = {1, -1}
+  sign fit (-1)^{b-x2-x3}   mismatches: 12
+  sign fit (-1)^{b-1-x2-x3} mismatches: 0
+  Weight-5 coefficient table:
+    E1^5 E2^0 E3^0: -15120
+    E1^4 E2^1 E3^0: 32724
+    E1^3 E2^2 E3^0: -25284
+    E1^2 E2^3 E3^0: 8939
+    E1^1 E2^4 E3^0: -1470
+    E1^0 E2^5 E3^0: 91
+    E1^3 E2^0 E3^1: 208476
+    E1^2 E2^1 E3^1: -165978
+    E1^1 E2^2 E3^1: 42298
+    E1^0 E2^3 E3^1: -3480
+    E1^1 E2^0 E3^2: -85938
+    E1^0 E2^1 E3^2: 18063
+
+--- b = 7 (Psi t=1.11s, sym→E t=3.03s) ---
+  |allowed triples (x1+x2+2*x3 = 6)| = 16
+  |nonzero coefficients|               = 16
+  distinct signs = {1, -1}
+  sign fit (-1)^{b-x2-x3}   mismatches: 16
+  sign fit (-1)^{b-1-x2-x3} mismatches: 0
+  Weight-6 coefficient table:
+    E1^6 E2^0 E3^0: 141120
+    E1^5 E2^1 E3^0: -330624
+    E1^4 E2^2 E3^0: 289288
+    E1^3 E2^3 E3^0: -123872
+    E1^2 E2^4 E3^0: 27804
+    E1^1 E2^5 E3^0: -3136
+    E1^0 E2^6 E3^0: 140
+    E1^4 E2^0 E3^1: -2844576
+    E1^3 E2^1 E3^1: 2750506
+    E1^2 E2^2 E3^1: -958531
+    E1^1 E2^3 E3^1: 143808
+    E1^0 E2^4 E3^1: -7875
+    E1^2 E2^0 E3^2: 2252206
+    E1^1 E2^1 E3^2: -865998
+    E1^0 E2^2 E3^2: 81648
+    E1^0 E2^0 E3^3: -89019
+
+--- b = 8 (Psi t=1.78s, sym→E t=6.55s) ---
+  |allowed triples (x1+x2+2*x3 = 7)| = 20
+  |nonzero coefficients|               = 20
+  distinct signs = {1, -1}
+  sign fit (-1)^{b-x2-x3}   mismatches: 20
+  sign fit (-1)^{b-1-x2-x3} mismatches: 0
+  Weight-7 coefficient table:
+    E1^7 E2^0 E3^0: -1451520
+    E1^6 E2^1 E3^0: 3622464
+    E1^5 E2^2 E3^0: -3485376
+    E1^4 E2^3 E3^0: 1713480
+    E1^3 E2^4 E3^0: -471744
+    E1^2 E2^5 E3^0: 73500
+    E1^1 E2^6 E3^0: -6048
+    E1^0 E2^7 E3^0: 204
+    E1^5 E2^0 E3^1: 40124736
+    E1^4 E2^1 E3^1: -44661984
+    E1^3 E2^2 E3^1: 19126432
+    E1^2 E2^3 E3^1: -3967824
+    E1^1 E2^4 E3^1: 400568
+    E1^0 E2^5 E3^1: -15792
+    E1^3 E2^0 E3^2: -51201120
+    E1^2 E2^1 E3^2: 27297128
+    E1^1 E2^2 E3^2: -4756920
+    E1^0 E2^3 E3^2: 271908
+    E1^1 E2^0 E3^3: 5841360
+    E1^0 E2^1 E3^3: -893592

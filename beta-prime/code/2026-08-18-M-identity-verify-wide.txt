@@ -1,0 +1,40 @@
+Master identity (M) verification, k = 1..K_max
+Q_k(-2, b, c) = Q_k(a, -1, c) = (-1)^k * c * (c-k) * prod_{j=1}^{k-1}(c-j)^2
+
+build_e2_tables(max_j=17): 0.0s
+
+=== k = 1 ===
+  a=-2 slice: b-indep=PASS, RHS-match=PASS, time=0.0s
+  b=-1 slice: a-indep=PASS, RHS-match=PASS, time=0.0s
+
+=== k = 2 ===
+  a=-2 slice: b-indep=PASS, RHS-match=PASS, time=0.2s
+  b=-1 slice: a-indep=PASS, RHS-match=PASS, time=0.2s
+
+=== k = 3 ===
+  a=-2 slice: b-indep=PASS, RHS-match=PASS, time=0.3s
+  b=-1 slice: a-indep=PASS, RHS-match=PASS, time=0.3s
+
+=== k = 4 ===
+  a=-2 slice: b-indep=PASS, RHS-match=PASS, time=0.9s
+  b=-1 slice: a-indep=PASS, RHS-match=PASS, time=0.9s
+
+=== k = 5 ===
+  a=-2 slice: b-indep=PASS, RHS-match=PASS, time=1.1s
+  b=-1 slice: a-indep=PASS, RHS-match=PASS, time=1.1s
+
+=== k = 6 ===
+  a=-2 slice: b-indep=PASS, RHS-match=PASS, time=2.8s
+  b=-1 slice: a-indep=PASS, RHS-match=PASS, time=2.7s
+
+=== k = 7 ===
+  a=-2 slice: b-indep=PASS, RHS-match=PASS, time=3.3s
+  b=-1 slice: a-indep=PASS, RHS-match=PASS, time=3.3s
+
+=== k = 8 ===
+  a=-2 slice: b-indep=PASS, RHS-match=PASS, time=7.2s
+  b=-1 slice: a-indep=PASS, RHS-match=PASS, time=7.2s
+
+=== k = 9 ===
+  a=-2 slice: b-indep=PASS, RHS-match=PASS, time=8.5s
+  b=-1 slice: a-indep=PASS, RHS-match=PASS, time=8.4s

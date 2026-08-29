@@ -1,0 +1,24 @@
+c = 13. Scan h_k^{(13)}(a, b) for k=0..6, shell a+b odd, a, b < 100.
+
+Per-k min v_2(h_k^{(13)}) in [0, 100)^2:
+  k=0: min v_2 = 20   at (0, 1)
+  k=1: min v_2 = 18   at (2, 3)
+  k=2: min v_2 = 17   at (3, 0)
+  k=3: min v_2 = 19   at (0, 3)
+  k=4: min v_2 = 19   at (1, 0)
+  k=5: min v_2 = 17   at (6, 7)
+  k=6: min v_2 = 16   at (7, 0)
+
+argmin k* = 6, min v_2 = 16
+
+Scanning H_13(a, b, j) for j=0..6, a+b odd, a,b<30 for lowest v_2:
+  j=0: min v_2(H_13(a,b,0)) = 20   at (0, 1)
+  j=1: min v_2(H_13(a,b,1)) = 18   at (2, 3)
+  j=2: min v_2(H_13(a,b,2)) = 17   at (3, 0)
+  j=3: min v_2(H_13(a,b,3)) = 17   at (3, 0)
+  j=4: min v_2(H_13(a,b,4)) = 18   at (3, 0)
+  j=5: min v_2(H_13(a,b,5)) = 17   at (6, 7)
+  j=6: min v_2(H_13(a,b,6)) = 16   at (7, 0)
+
+Global min v_2(H_13(a, b, j)) for j <= 6 in scan = 16
+Hence beta'(13) <= 16.

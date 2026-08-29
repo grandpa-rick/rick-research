@@ -1,0 +1,330 @@
+========================================================================
+Day 112: Sub-claim (**) verification for (T) total-degree bound
+========================================================================
+Building partition tables up to j = 18...
+  built in 0.00s
+V at c=25: (a - 23)*(b - 24)*(a - b + 1)
+
+Computing ds_j/V at c=25 for j = 0..18:
+  j=0: (a,b)-deg = 0  (0.00s)
+  j=1: (a,b)-deg = 2  (0.01s)
+  j=2: (a,b)-deg = 4  (0.02s)
+  j=3: (a,b)-deg = 6  (0.04s)
+  j=4: (a,b)-deg = 8  (0.08s)
+  j=5: (a,b)-deg = 10  (0.14s)
+  j=6: (a,b)-deg = 12  (0.28s)
+  j=7: (a,b)-deg = 14  (0.47s)
+  j=8: (a,b)-deg = 16  (0.78s)
+  j=9: (a,b)-deg = 18  (1.21s)
+  j=10: (a,b)-deg = 20  (1.78s)
+  j=11: (a,b)-deg = 22  (2.56s)
+  j=12: (a,b)-deg = 24  (3.75s)
+  j=13: (a,b)-deg = 26  (5.14s)
+  j=14: (a,b)-deg = 28  (6.96s)
+  j=15: (a,b)-deg = 30  (9.26s)
+  j=16: (a,b)-deg = 32  (12.04s)
+  j=17: (a,b)-deg = 34  (15.54s)
+  j=18: (a,b)-deg = 36  (19.86s)
+
+========================================================================
+Sanity: (a,b)-degree of ds_j/V (at c fixed)
+========================================================================
+  j=0: (a,b)-deg = 0 (expect <= 2j = 0) [OK]
+  j=1: (a,b)-deg = 2 (expect <= 2j = 2) [OK]
+  j=2: (a,b)-deg = 4 (expect <= 2j = 4) [OK]
+  j=3: (a,b)-deg = 6 (expect <= 2j = 6) [OK]
+  j=4: (a,b)-deg = 8 (expect <= 2j = 8) [OK]
+  j=5: (a,b)-deg = 10 (expect <= 2j = 10) [OK]
+  j=6: (a,b)-deg = 12 (expect <= 2j = 12) [OK]
+  j=7: (a,b)-deg = 14 (expect <= 2j = 14) [OK]
+  j=8: (a,b)-deg = 16 (expect <= 2j = 16) [OK]
+  j=9: (a,b)-deg = 18 (expect <= 2j = 18) [OK]
+  j=10: (a,b)-deg = 20 (expect <= 2j = 20) [OK]
+  j=11: (a,b)-deg = 22 (expect <= 2j = 22) [OK]
+  j=12: (a,b)-deg = 24 (expect <= 2j = 24) [OK]
+  j=13: (a,b)-deg = 26 (expect <= 2j = 26) [OK]
+  j=14: (a,b)-deg = 28 (expect <= 2j = 28) [OK]
+  j=15: (a,b)-deg = 30 (expect <= 2j = 30) [OK]
+  j=16: (a,b)-deg = 32 (expect <= 2j = 32) [OK]
+  j=17: (a,b)-deg = 34 (expect <= 2j = 34) [OK]
+  j=18: (a,b)-deg = 36 (expect <= 2j = 36) [OK]
+
+========================================================================
+Exploration: structure of top (a,b) part of ds_j/V (at c fixed)
+========================================================================
+  j = 1: (a,b)-top-deg = 2 = 2j = 2? True
+    top: a*b
+  j = 2: (a,b)-top-deg = 4 = 2j = 4? True
+    top: a**2*b**2
+  j = 3: (a,b)-top-deg = 6 = 2j = 6? True
+    top: a**3*b**3
+  j = 4: (a,b)-top-deg = 8 = 2j = 8? True
+    top: a**4*b**4
+  j = 5: (a,b)-top-deg = 10 = 2j = 10? True
+    top: a**5*b**5
+
+========================================================================
+Sub-claim (**) verification: R = 2, c = 25
+========================================================================
+Sampling j in [0, 12] to fit poly-in-j up to degree ~ 12.
+TOP = 2(c-1) = 48. Layers d in [0, 6].
+
+  d = 0: layer (a,b)-deg = 48. max j-deg over slots = 0 (expect <= d = 0) [OK]
+      j-deg = 0: 1 slots [(24,24)]
+
+  d = 1: layer (a,b)-deg = 47. max j-deg over slots = 0 (expect <= d = 1) [OK]
+      j-deg = 0: 2 slots [(24,23), (23,24)]
+
+  d = 2: layer (a,b)-deg = 46. max j-deg over slots = 2 (expect <= d = 2) [OK]
+      j-deg = 0: 2 slots [(24,22), (22,24)]
+      j-deg = 2: 1 slots [(23,23)]
+
+  d = 3: layer (a,b)-deg = 45. max j-deg over slots = 2 (expect <= d = 3) [OK]
+      j-deg = 0: 2 slots [(24,21), (21,24)]
+      j-deg = 2: 2 slots [(23,22), (22,23)]
+
+  d = 4: layer (a,b)-deg = 44. max j-deg over slots = 4 (expect <= d = 4) [OK]
+      j-deg = 0: 2 slots [(24,20), (20,24)]
+      j-deg = 2: 2 slots [(23,21), (21,23)]
+      j-deg = 4: 1 slots [(22,22)]
+
+  d = 5: layer (a,b)-deg = 43. max j-deg over slots = 4 (expect <= d = 5) [OK]
+      j-deg = 0: 2 slots [(24,19), (19,24)]
+      j-deg = 2: 2 slots [(23,20), (20,23)]
+      j-deg = 4: 2 slots [(22,21), (21,22)]
+
+  d = 6: layer (a,b)-deg = 42. max j-deg over slots = 6 (expect <= d = 6) [OK]
+      j-deg = 0: 2 slots [(24,18), (18,24)]
+      j-deg = 2: 2 slots [(23,19), (19,23)]
+      j-deg = 4: 2 slots [(22,20), (20,22)]
+      j-deg = 6: 1 slots [(21,21)]
+  ...time R = 2: 47.7s
+
+========================================================================
+Sub-claim (**) verification: R = 3, c = 25
+========================================================================
+Sampling j in [0, 14] to fit poly-in-j up to degree ~ 14.
+TOP = 2(c-1) = 48. Layers d in [0, 8].
+
+  d = 0: layer (a,b)-deg = 48. max j-deg over slots = 0 (expect <= d = 0) [OK]
+      j-deg = 0: 1 slots [(24,24)]
+
+  d = 1: layer (a,b)-deg = 47. max j-deg over slots = 0 (expect <= d = 1) [OK]
+      j-deg = 0: 2 slots [(24,23), (23,24)]
+
+  d = 2: layer (a,b)-deg = 46. max j-deg over slots = 2 (expect <= d = 2) [OK]
+      j-deg = 0: 2 slots [(24,22), (22,24)]
+      j-deg = 2: 1 slots [(23,23)]
+
+  d = 3: layer (a,b)-deg = 45. max j-deg over slots = 2 (expect <= d = 3) [OK]
+      j-deg = 0: 2 slots [(24,21), (21,24)]
+      j-deg = 2: 2 slots [(23,22), (22,23)]
+
+  d = 4: layer (a,b)-deg = 44. max j-deg over slots = 4 (expect <= d = 4) [OK]
+      j-deg = 0: 2 slots [(24,20), (20,24)]
+      j-deg = 2: 2 slots [(23,21), (21,23)]
+      j-deg = 4: 1 slots [(22,22)]
+
+  d = 5: layer (a,b)-deg = 43. max j-deg over slots = 4 (expect <= d = 5) [OK]
+      j-deg = 0: 2 slots [(24,19), (19,24)]
+      j-deg = 2: 2 slots [(23,20), (20,23)]
+      j-deg = 4: 2 slots [(22,21), (21,22)]
+
+  d = 6: layer (a,b)-deg = 42. max j-deg over slots = 6 (expect <= d = 6) [OK]
+      j-deg = 0: 2 slots [(24,18), (18,24)]
+      j-deg = 2: 2 slots [(23,19), (19,23)]
+      j-deg = 4: 2 slots [(22,20), (20,22)]
+      j-deg = 6: 1 slots [(21,21)]
+
+  d = 7: layer (a,b)-deg = 41. max j-deg over slots = 6 (expect <= d = 7) [OK]
+      j-deg = 0: 2 slots [(24,17), (17,24)]
+      j-deg = 2: 2 slots [(23,18), (18,23)]
+      j-deg = 4: 2 slots [(22,19), (19,22)]
+      j-deg = 6: 2 slots [(21,20), (20,21)]
+
+  d = 8: layer (a,b)-deg = 40. max j-deg over slots = 8 (expect <= d = 8) [OK]
+      j-deg = 0: 2 slots [(24,16), (16,24)]
+      j-deg = 2: 2 slots [(23,17), (17,23)]
+      j-deg = 4: 2 slots [(22,18), (18,22)]
+      j-deg = 6: 2 slots [(21,19), (19,21)]
+      j-deg = 8: 1 slots [(20,20)]
+  ...time R = 3: 13.3s
+
+========================================================================
+Sub-claim (**) verification: R = 4, c = 25
+========================================================================
+Sampling j in [0, 16] to fit poly-in-j up to degree ~ 16.
+TOP = 2(c-1) = 48. Layers d in [0, 10].
+
+  d = 0: layer (a,b)-deg = 48. max j-deg over slots = 0 (expect <= d = 0) [OK]
+      j-deg = 0: 1 slots [(24,24)]
+
+  d = 1: layer (a,b)-deg = 47. max j-deg over slots = 0 (expect <= d = 1) [OK]
+      j-deg = 0: 2 slots [(24,23), (23,24)]
+
+  d = 2: layer (a,b)-deg = 46. max j-deg over slots = 2 (expect <= d = 2) [OK]
+      j-deg = 0: 2 slots [(24,22), (22,24)]
+      j-deg = 2: 1 slots [(23,23)]
+
+  d = 3: layer (a,b)-deg = 45. max j-deg over slots = 2 (expect <= d = 3) [OK]
+      j-deg = 0: 2 slots [(24,21), (21,24)]
+      j-deg = 2: 2 slots [(23,22), (22,23)]
+
+  d = 4: layer (a,b)-deg = 44. max j-deg over slots = 4 (expect <= d = 4) [OK]
+      j-deg = 0: 2 slots [(24,20), (20,24)]
+      j-deg = 2: 2 slots [(23,21), (21,23)]
+      j-deg = 4: 1 slots [(22,22)]
+
+  d = 5: layer (a,b)-deg = 43. max j-deg over slots = 4 (expect <= d = 5) [OK]
+      j-deg = 0: 2 slots [(24,19), (19,24)]
+      j-deg = 2: 2 slots [(23,20), (20,23)]
+      j-deg = 4: 2 slots [(22,21), (21,22)]
+
+  d = 6: layer (a,b)-deg = 42. max j-deg over slots = 6 (expect <= d = 6) [OK]
+      j-deg = 0: 2 slots [(24,18), (18,24)]
+      j-deg = 2: 2 slots [(23,19), (19,23)]
+      j-deg = 4: 2 slots [(22,20), (20,22)]
+      j-deg = 6: 1 slots [(21,21)]
+
+  d = 7: layer (a,b)-deg = 41. max j-deg over slots = 6 (expect <= d = 7) [OK]
+      j-deg = 0: 2 slots [(24,17), (17,24)]
+      j-deg = 2: 2 slots [(23,18), (18,23)]
+      j-deg = 4: 2 slots [(22,19), (19,22)]
+      j-deg = 6: 2 slots [(21,20), (20,21)]
+
+  d = 8: layer (a,b)-deg = 40. max j-deg over slots = 8 (expect <= d = 8) [OK]
+      j-deg = 0: 2 slots [(24,16), (16,24)]
+      j-deg = 2: 2 slots [(23,17), (17,23)]
+      j-deg = 4: 2 slots [(22,18), (18,22)]
+      j-deg = 6: 2 slots [(21,19), (19,21)]
+      j-deg = 8: 1 slots [(20,20)]
+
+  d = 9: layer (a,b)-deg = 39. max j-deg over slots = 8 (expect <= d = 9) [OK]
+      j-deg = 0: 2 slots [(24,15), (15,24)]
+      j-deg = 2: 2 slots [(23,16), (16,23)]
+      j-deg = 4: 2 slots [(22,17), (17,22)]
+      j-deg = 6: 2 slots [(21,18), (18,21)]
+      j-deg = 8: 2 slots [(20,19), (19,20)]
+
+  d = 10: layer (a,b)-deg = 38. max j-deg over slots = 10 (expect <= d = 10) [OK]
+      j-deg = 0: 2 slots [(24,14), (14,24)]
+      j-deg = 2: 2 slots [(23,15), (15,23)]
+      j-deg = 4: 2 slots [(22,16), (16,22)]
+      j-deg = 6: 2 slots [(21,17), (17,21)]
+      j-deg = 8: 2 slots [(20,18), (18,20)]
+      j-deg = 10: 1 slots [(19,19)]
+  ...time R = 4: 17.9s
+
+========================================================================
+Sub-claim (**) verification: R = 5, c = 25
+========================================================================
+Sampling j in [0, 18] to fit poly-in-j up to degree ~ 18.
+TOP = 2(c-1) = 48. Layers d in [0, 12].
+
+  d = 0: layer (a,b)-deg = 48. max j-deg over slots = 0 (expect <= d = 0) [OK]
+      j-deg = 0: 1 slots [(24,24)]
+
+  d = 1: layer (a,b)-deg = 47. max j-deg over slots = 0 (expect <= d = 1) [OK]
+      j-deg = 0: 2 slots [(24,23), (23,24)]
+
+  d = 2: layer (a,b)-deg = 46. max j-deg over slots = 2 (expect <= d = 2) [OK]
+      j-deg = 0: 2 slots [(24,22), (22,24)]
+      j-deg = 2: 1 slots [(23,23)]
+
+  d = 3: layer (a,b)-deg = 45. max j-deg over slots = 2 (expect <= d = 3) [OK]
+      j-deg = 0: 2 slots [(24,21), (21,24)]
+      j-deg = 2: 2 slots [(23,22), (22,23)]
+
+  d = 4: layer (a,b)-deg = 44. max j-deg over slots = 4 (expect <= d = 4) [OK]
+      j-deg = 0: 2 slots [(24,20), (20,24)]
+      j-deg = 2: 2 slots [(23,21), (21,23)]
+      j-deg = 4: 1 slots [(22,22)]
+
+  d = 5: layer (a,b)-deg = 43. max j-deg over slots = 4 (expect <= d = 5) [OK]
+      j-deg = 0: 2 slots [(24,19), (19,24)]
+      j-deg = 2: 2 slots [(23,20), (20,23)]
+      j-deg = 4: 2 slots [(22,21), (21,22)]
+
+  d = 6: layer (a,b)-deg = 42. max j-deg over slots = 6 (expect <= d = 6) [OK]
+      j-deg = 0: 2 slots [(24,18), (18,24)]
+      j-deg = 2: 2 slots [(23,19), (19,23)]
+      j-deg = 4: 2 slots [(22,20), (20,22)]
+      j-deg = 6: 1 slots [(21,21)]
+
+  d = 7: layer (a,b)-deg = 41. max j-deg over slots = 6 (expect <= d = 7) [OK]
+      j-deg = 0: 2 slots [(24,17), (17,24)]
+      j-deg = 2: 2 slots [(23,18), (18,23)]
+      j-deg = 4: 2 slots [(22,19), (19,22)]
+      j-deg = 6: 2 slots [(21,20), (20,21)]
+
+  d = 8: layer (a,b)-deg = 40. max j-deg over slots = 8 (expect <= d = 8) [OK]
+      j-deg = 0: 2 slots [(24,16), (16,24)]
+      j-deg = 2: 2 slots [(23,17), (17,23)]
+      j-deg = 4: 2 slots [(22,18), (18,22)]
+      j-deg = 6: 2 slots [(21,19), (19,21)]
+      j-deg = 8: 1 slots [(20,20)]
+
+  d = 9: layer (a,b)-deg = 39. max j-deg over slots = 8 (expect <= d = 9) [OK]
+      j-deg = 0: 2 slots [(24,15), (15,24)]
+      j-deg = 2: 2 slots [(23,16), (16,23)]
+      j-deg = 4: 2 slots [(22,17), (17,22)]
+      j-deg = 6: 2 slots [(21,18), (18,21)]
+      j-deg = 8: 2 slots [(20,19), (19,20)]
+
+  d = 10: layer (a,b)-deg = 38. max j-deg over slots = 10 (expect <= d = 10) [OK]
+      j-deg = 0: 2 slots [(24,14), (14,24)]
+      j-deg = 2: 2 slots [(23,15), (15,23)]
+      j-deg = 4: 2 slots [(22,16), (16,22)]
+      j-deg = 6: 2 slots [(21,17), (17,21)]
+      j-deg = 8: 2 slots [(20,18), (18,20)]
+      j-deg = 10: 1 slots [(19,19)]
+
+  d = 11: layer (a,b)-deg = 37. max j-deg over slots = 10 (expect <= d = 11) [OK]
+      j-deg = 0: 2 slots [(24,13), (13,24)]
+      j-deg = 2: 2 slots [(23,14), (14,23)]
+      j-deg = 4: 2 slots [(22,15), (15,22)]
+      j-deg = 6: 2 slots [(21,16), (16,21)]
+      j-deg = 8: 2 slots [(20,17), (17,20)]
+      j-deg = 10: 2 slots [(19,18), (18,19)]
+
+  d = 12: layer (a,b)-deg = 36. max j-deg over slots = 12 (expect <= d = 12) [OK]
+      j-deg = 0: 2 slots [(24,12), (12,24)]
+      j-deg = 2: 2 slots [(23,13), (13,23)]
+      j-deg = 4: 2 slots [(22,14), (14,22)]
+      j-deg = 6: 2 slots [(21,15), (15,21)]
+      j-deg = 8: 2 slots [(20,16), (16,20)]
+      j-deg = 10: 2 slots [(19,17), (17,19)]
+      j-deg = 12: 1 slots [(18,18)]
+  ...time R = 5: 23.9s
+
+========================================================================
+Verify ds_j/V shell layer j-degree at c = 25
+For each r in [0, 11], j varies
+========================================================================
+  r = 0, alpha = 0: j-deg (slot a^0 b^{2j-r-alpha}) = 18 (expect <= r = 0) [!!]
+  r = 1, alpha = 0: j-deg (slot a^0 b^{2j-r-alpha}) = 17 (expect <= r = 1) [!!]
+  r = 1, alpha = 1: j-deg (slot a^1 b^{2j-r-alpha}) = 17 (expect <= r = 1) [!!]
+  r = 2, alpha = 0: j-deg (slot a^0 b^{2j-r-alpha}) = 17 (expect <= r = 2) [!!]
+  r = 3, alpha = 0: j-deg (slot a^0 b^{2j-r-alpha}) = 16 (expect <= r = 3) [!!]
+  r = 3, alpha = 1: j-deg (slot a^1 b^{2j-r-alpha}) = 16 (expect <= r = 3) [!!]
+  r = 4, alpha = 0: j-deg (slot a^0 b^{2j-r-alpha}) = 16 (expect <= r = 4) [!!]
+  r = 5, alpha = 0: j-deg (slot a^0 b^{2j-r-alpha}) = 15 (expect <= r = 5) [!!]
+  r = 5, alpha = 1: j-deg (slot a^1 b^{2j-r-alpha}) = 15 (expect <= r = 5) [!!]
+  r = 6, alpha = 0: j-deg (slot a^0 b^{2j-r-alpha}) = 15 (expect <= r = 6) [!!]
+  r = 7, alpha = 0: j-deg (slot a^0 b^{2j-r-alpha}) = 14 (expect <= r = 7) [!!]
+  r = 7, alpha = 1: j-deg (slot a^1 b^{2j-r-alpha}) = 14 (expect <= r = 7) [!!]
+  r = 8, alpha = 0: j-deg (slot a^0 b^{2j-r-alpha}) = 14 (expect <= r = 8) [!!]
+  r = 9, alpha = 0: j-deg (slot a^0 b^{2j-r-alpha}) = 13 (expect <= r = 9) [!!]
+  r = 9, alpha = 1: j-deg (slot a^1 b^{2j-r-alpha}) = 13 (expect <= r = 9) [!!]
+  r = 10, alpha = 0: j-deg (slot a^0 b^{2j-r-alpha}) = 13 (expect <= r = 10) [!!]
+  r = 11, alpha = 0: j-deg (slot a^0 b^{2j-r-alpha}) = 12 (expect <= r = 11) [!!]
+  r = 11, alpha = 1: j-deg (slot a^1 b^{2j-r-alpha}) = 12 (expect <= r = 11) [!!]
+
+
+========================================================================
+SUMMARY: Sub-claim (**) status
+========================================================================
+  R = 2: 28 slots checked. per-d max j-deg: [0, 0, 2, 2, 4, 4, 6]. violations (jd > d): 0
+  R = 3: 45 slots checked. per-d max j-deg: [0, 0, 2, 2, 4, 4, 6, 6, 8]. violations (jd > d): 0
+  R = 4: 66 slots checked. per-d max j-deg: [0, 0, 2, 2, 4, 4, 6, 6, 8, 8, 10]. violations (jd > d): 0
+  R = 5: 91 slots checked. per-d max j-deg: [0, 0, 2, 2, 4, 4, 6, 6, 8, 8, 10, 10, 12]. violations (jd > d): 0

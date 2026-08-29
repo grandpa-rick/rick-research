@@ -1,0 +1,129 @@
+==============================================================================
+PART A: Per-term s^*_mu e-wdeg for each mu in bt(j) tables (j <= 5)
+==============================================================================
+
+  j = 0:
+    mu=(0, 0, 0) kap=1: e-wdeg s^*_mu = 0  [target <= 0: ok]
+
+  j = 1:
+    mu=(1, 1, 0) kap=1: e-wdeg s^*_mu = 1  [target <= 1: ok]
+
+  j = 2:
+    mu=(2, 2, 0) kap=1: e-wdeg s^*_mu = 3  [target <= 2: VIOLATES]
+    mu=(2, 1, 1) kap=1: e-wdeg s^*_mu = 3  [target <= 2: VIOLATES]
+
+  j = 3:
+    mu=(3, 3, 0) kap=1: e-wdeg s^*_mu = 4  [target <= 3: VIOLATES]
+    mu=(3, 2, 1) kap=2: e-wdeg s^*_mu = 4  [target <= 3: VIOLATES]
+    mu=(2, 2, 2) kap=1: e-wdeg s^*_mu = 4  [target <= 3: VIOLATES]
+
+  j = 4:
+    mu=(4, 4, 0) kap=1: e-wdeg s^*_mu = 6  [target <= 4: VIOLATES]
+    mu=(4, 3, 1) kap=3: e-wdeg s^*_mu = 6  [target <= 4: VIOLATES]
+    mu=(4, 2, 2) kap=2: e-wdeg s^*_mu = 6  [target <= 4: VIOLATES]
+    mu=(3, 3, 2) kap=3: e-wdeg s^*_mu = 5  [target <= 4: VIOLATES]
+
+  j = 5:
+    mu=(5, 5, 0) kap=1: e-wdeg s^*_mu = 7  [target <= 5: VIOLATES]
+    mu=(5, 4, 1) kap=4: e-wdeg s^*_mu = 7  [target <= 5: VIOLATES]
+    mu=(5, 3, 2) kap=5: e-wdeg s^*_mu = 7  [target <= 5: VIOLATES]
+    mu=(4, 4, 2) kap=6: e-wdeg s^*_mu = 7  [target <= 5: VIOLATES]
+    mu=(4, 3, 3) kap=5: e-wdeg s^*_mu = 7  [target <= 5: VIOLATES]
+
+==============================================================================
+PART B: Ordinary Schur s_lam e-wdeg (should be exact for ordinary Schurs).
+==============================================================================
+
+  Looking at ordinary Schurs s_lam for |lam| <= 2j=0, ell<=3.
+    lam=(0, 0, 0): ordinary s_lam e-wdeg = 0   (|lam|=0)
+
+  Looking at ordinary Schurs s_lam for |lam| <= 2j=2, ell<=3.
+    lam=(1, 1, 0): ordinary s_lam e-wdeg = 1   (|lam|=2)
+
+  Looking at ordinary Schurs s_lam for |lam| <= 2j=4, ell<=3.
+    lam=(2, 2, 0): ordinary s_lam e-wdeg = 3   (|lam|=4)
+    lam=(2, 1, 1): ordinary s_lam e-wdeg = 3   (|lam|=4)
+
+  Looking at ordinary Schurs s_lam for |lam| <= 2j=6, ell<=3.
+    lam=(3, 3, 0): ordinary s_lam e-wdeg = 4   (|lam|=6)
+    lam=(3, 2, 1): ordinary s_lam e-wdeg = 4   (|lam|=6)
+    lam=(2, 2, 2): ordinary s_lam e-wdeg = 4   (|lam|=6)
+
+  Looking at ordinary Schurs s_lam for |lam| <= 2j=8, ell<=3.
+    lam=(4, 4, 0): ordinary s_lam e-wdeg = 6   (|lam|=8)
+    lam=(4, 3, 1): ordinary s_lam e-wdeg = 6   (|lam|=8)
+    lam=(4, 2, 2): ordinary s_lam e-wdeg = 6   (|lam|=8)
+    lam=(3, 3, 2): ordinary s_lam e-wdeg = 5   (|lam|=8)
+
+  Looking at ordinary Schurs s_lam for |lam| <= 2j=10, ell<=3.
+    lam=(5, 5, 0): ordinary s_lam e-wdeg = 7   (|lam|=10)
+    lam=(5, 4, 1): ordinary s_lam e-wdeg = 7   (|lam|=10)
+    lam=(5, 3, 2): ordinary s_lam e-wdeg = 7   (|lam|=10)
+    lam=(4, 4, 2): ordinary s_lam e-wdeg = 7   (|lam|=10)
+    lam=(4, 3, 3): ordinary s_lam e-wdeg = 7   (|lam|=10)
+
+==============================================================================
+PART C: The lower-triangular change from s^*_mu to s_lam.
+        We express each s^*_mu = sum_lam c^mu_lam s_lam (|lam| <= |mu|).
+==============================================================================
+
+  j = 0:
+    s^*_(0, 0, 0): [((0, 0, 0), 1)]
+
+  j = 1:
+    s^*_(1, 1, 0): [((1, 1, 0), 1), ((1, 0, 0), -1), ((0, 0, 0), 1)]
+
+  j = 2:
+    s^*_(2, 2, 0): [((2, 2, 0), 1), ((2, 1, 0), -3), ((2, 0, 0), 2), ((1, 1, 0), 7), ((1, 0, 0), -6), ((0, 0, 0), 4)]
+    s^*_(2, 1, 1): [((2, 1, 1), 1), ((1, 1, 1), -6)]
+
+  j = 3:
+    s^*_(3, 3, 0): [((3, 3, 0), 1), ((3, 2, 0), -6), ((3, 1, 0), 11), ((3, 0, 0), -6), ((2, 2, 0), 25), ((2, 1, 0), -60), ((2, 0, 0), 36), ((1, 1, 0), 85), ((1, 0, 0), -66), ((0, 0, 0), 36)]
+    s^*_(3, 2, 1): [((3, 2, 1), 1), ((3, 1, 1), -3), ((2, 2, 1), -10), ((2, 1, 1), 30), ((1, 1, 1), -55)]
+    s^*_(2, 2, 2): [((2, 2, 2), 1), ((2, 2, 1), -1), ((2, 1, 1), 1), ((1, 1, 1), -1)]
+
+  j = 4:
+    s^*_(4, 4, 0): [((4, 4, 0), 1), ((4, 3, 0), -10), ((4, 2, 0), 35), ((4, 1, 0), -50), ((4, 0, 0), 24), ((3, 3, 0), 65), ((3, 2, 0), -300), ((3, 1, 0), 476), ((3, 0, 0), -240), ((2, 2, 0), 725), ((2, 1, 0), -1510), ((2, 0, 0), 840), ((1, 1, 0), 1660), ((1, 0, 0), -1200), ((0, 0, 0), 576)]
+    s^*_(4, 3, 1): [((4, 3, 1), 1), ((4, 2, 1), -6), ((4, 1, 1), 11), ((3, 3, 1), -15), ((3, 2, 1), 90), ((3, 1, 1), -165), ((2, 2, 1), -285), ((2, 1, 1), 661), ((1, 1, 1), -831)]
+    s^*_(4, 2, 2): [((4, 2, 2), 1), ((4, 2, 1), -1), ((4, 1, 1), 1), ((3, 2, 2), -15), ((3, 2, 1), 15), ((3, 1, 1), -15), ((2, 2, 2), 85), ((2, 2, 1), -85), ((2, 1, 1), 85), ((1, 1, 1), -71)]
+    s^*_(3, 3, 2): [((3, 3, 2), 1), ((3, 3, 1), -1), ((3, 2, 2), -6), ((3, 2, 1), 6), ((3, 1, 1), -5), ((2, 2, 2), 25), ((2, 2, 1), -25), ((2, 1, 1), 24), ((1, 1, 1), -19)]
+
+  j = 5:
+    s^*_(5, 5, 0): [((5, 5, 0), 1), ((5, 4, 0), -15), ((5, 3, 0), 85), ((5, 2, 0), -225), ((5, 1, 0), 274), ((5, 0, 0), -120), ((4, 4, 0), 140), ((4, 3, 0), -1050), ((4, 2, 0), 3101), ((4, 1, 0), -3990), ((4, 0, 0), 1800), ((3, 3, 0), 3850), ((3, 2, 0), -15015), ((3, 1, 0), 21490), ((3, 0, 0), -10200), ((2, 2, 0), 27335), ((2, 1, 0), -51450), ((2, 0, 0), 27000), ((1, 1, 0), 48076), ((1, 0, 0), -32880), ((0, 0, 0), 14400)]
+    s^*_(5, 4, 1): [((5, 4, 1), 1), ((5, 3, 1), -10), ((5, 2, 1), 35), ((5, 1, 1), -50), ((4, 4, 1), -21), ((4, 3, 1), 210), ((4, 2, 1), -735), ((4, 1, 1), 1050), ((3, 3, 1), -1015), ((3, 2, 1), 4501), ((3, 1, 1), -6986), ((2, 2, 1), -9485), ((2, 1, 1), 19110), ((1, 1, 1), -19460)]
+    s^*_(5, 3, 2): [((5, 3, 2), 1), ((5, 3, 1), -1), ((5, 2, 2), -6), ((5, 2, 1), 6), ((5, 1, 1), -5), ((4, 3, 2), -21), ((4, 3, 1), 21), ((4, 2, 2), 126), ((4, 2, 1), -126), ((4, 1, 1), 105), ((3, 3, 2), 175), ((3, 3, 1), -175), ((3, 2, 2), -1050), ((3, 2, 1), 1050), ((3, 1, 1), -875), ((2, 2, 2), 2786), ((2, 2, 1), -2786), ((2, 1, 1), 2631), ((1, 1, 1), -1856)]
+    s^*_(4, 4, 2): [((4, 4, 2), 1), ((4, 4, 1), -1), ((4, 3, 2), -10), ((4, 3, 1), 10), ((4, 2, 2), 35), ((4, 2, 1), -35), ((4, 1, 1), 26), ((3, 3, 2), 65), ((3, 3, 1), -65), ((3, 2, 2), -300), ((3, 2, 1), 300), ((3, 1, 1), -236), ((2, 2, 2), 725), ((2, 2, 1), -725), ((2, 1, 1), 670), ((1, 1, 1), -460)]
+    s^*_(4, 3, 3): [((4, 3, 3), 1), ((4, 3, 2), -3), ((4, 3, 1), 2), ((4, 2, 2), 7), ((4, 2, 1), -6), ((4, 1, 1), 4), ((3, 3, 3), -15), ((3, 3, 2), 45), ((3, 3, 1), -30), ((3, 2, 2), -105), ((3, 2, 1), 90), ((3, 1, 1), -60), ((2, 2, 2), 194), ((2, 2, 1), -180), ((2, 1, 1), 152), ((1, 1, 1), -96)]
+
+==============================================================================
+PART D: Structural check — does s_lam(u, y, c) always have e-wdeg <= |lam|/2 + ...?
+        We check: for lam with |lam| <= 2j and ell<=3,
+        what is the e-wdeg of s_lam?
+        For lam = (a, b, c) descending: leading e-monomial is
+        e_1^{a-b} e_2^{b-c} e_3^c, with wdeg = (a-b) + (b-c) + 2c = a + c.
+        Hmm. So e-wdeg of s_lam is a + c = lam_1 + lam_3.
+        For lam = (j,j,0): e-wdeg = j + 0 = j.  ok.
+        For lam = (2j, 0, 0): e-wdeg = 2j. TOO BIG (only appears if j <= 1).
+==============================================================================
+    lam=(0, 0, 0): claimed e-wdeg = a+c = 0, actual = 0, match=True
+  j=0: max s_lam e-wdeg among bt(j) = 0, need <= 0
+    lam=(1, 1, 0): claimed e-wdeg = a+c = 1, actual = 1, match=True
+  j=1: max s_lam e-wdeg among bt(j) = 1, need <= 1
+    lam=(2, 2, 0): claimed e-wdeg = a+c = 2, actual = 3, match=False
+    lam=(2, 1, 1): claimed e-wdeg = a+c = 3, actual = 3, match=True
+  j=2: max s_lam e-wdeg among bt(j) = 3, need <= 2
+    lam=(3, 3, 0): claimed e-wdeg = a+c = 3, actual = 4, match=False
+    lam=(3, 2, 1): claimed e-wdeg = a+c = 4, actual = 4, match=True
+    lam=(2, 2, 2): claimed e-wdeg = a+c = 4, actual = 4, match=True
+  j=3: max s_lam e-wdeg among bt(j) = 4, need <= 3
+    lam=(4, 4, 0): claimed e-wdeg = a+c = 4, actual = 6, match=False
+    lam=(4, 3, 1): claimed e-wdeg = a+c = 5, actual = 6, match=False
+    lam=(4, 2, 2): claimed e-wdeg = a+c = 6, actual = 6, match=True
+    lam=(3, 3, 2): claimed e-wdeg = a+c = 5, actual = 5, match=True
+  j=4: max s_lam e-wdeg among bt(j) = 6, need <= 4
+    lam=(5, 5, 0): claimed e-wdeg = a+c = 5, actual = 7, match=False
+    lam=(5, 4, 1): claimed e-wdeg = a+c = 6, actual = 7, match=False
+    lam=(5, 3, 2): claimed e-wdeg = a+c = 7, actual = 7, match=True
+    lam=(4, 4, 2): claimed e-wdeg = a+c = 6, actual = 7, match=False
+    lam=(4, 3, 3): claimed e-wdeg = a+c = 7, actual = 7, match=True
+  j=5: max s_lam e-wdeg among bt(j) = 7, need <= 5

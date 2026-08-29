@@ -1,0 +1,197 @@
+==============================================================================
+Day 135: sub_2[b] := Ψ(e_2^b)|_{weight = b-2}, uniform-sign test
+Conjecture:  sign(coeff at E_1^x1 E_2^x2 E_3^x3) == (-1)^{x1 + x3}
+==============================================================================
+
+--- b = 2 (target weight = 0) ---
+  timing:  Psi = 0.05s, sym→E = 0.01s
+  |allowed triples (x1+x2+2 x3 = 0)| = 1  (A002620(2) = floor(2^2/4) = 1)
+  |nonzero coefficients|                 = 1
+  |zero coefficients (support holes)|    = 0
+  |sign mismatches|                      = 0
+  full sub_2[2] coefficient table:
+     x1  x2  x3          coefficient   expected    match?
+      0   0   0                    4         +1        OK
+
+--- b = 3 (target weight = 1) ---
+  timing:  Psi = 0.09s, sym→E = 0.07s
+  |allowed triples (x1+x2+2 x3 = 1)| = 2  (A002620(3) = floor(3^2/4) = 2)
+  |nonzero coefficients|                 = 2
+  |zero coefficients (support holes)|    = 0
+  |sign mismatches|                      = 0
+  full sub_2[3] coefficient table:
+     x1  x2  x3          coefficient   expected    match?
+      1   0   0                  -66         -1        OK
+      0   1   0                   49         +1        OK
+
+--- b = 4 (target weight = 2) ---
+  timing:  Psi = 0.18s, sym→E = 0.22s
+  |allowed triples (x1+x2+2 x3 = 2)| = 4  (A002620(4) = floor(4^2/4) = 4)
+  |nonzero coefficients|                 = 4
+  |zero coefficients (support holes)|    = 0
+  |sign mismatches|                      = 0
+  full sub_2[4] coefficient table:
+     x1  x2  x3          coefficient   expected    match?
+      2   0   0                  840         +1        OK
+      1   1   0                -1030         -1        OK
+      0   2   0                  273         +1        OK
+      0   0   1                -1422         -1        OK
+
+--- b = 5 (target weight = 3) ---
+  timing:  Psi = 0.32s, sym→E = 0.59s
+  |allowed triples (x1+x2+2 x3 = 3)| = 6  (A002620(5) = floor(5^2/4) = 6)
+  |nonzero coefficients|                 = 6
+  |zero coefficients (support holes)|    = 0
+  |sign mismatches|                      = 0
+  full sub_2[5] coefficient table:
+     x1  x2  x3          coefficient   expected    match?
+      3   0   0               -10200         -1        OK
+      2   1   0                16090         +1        OK
+      1   2   0                -7395         -1        OK
+      0   3   0                 1023         +1        OK
+      1   0   1                49150         +1        OK
+      0   1   1               -15810         -1        OK
+
+--- b = 6 (target weight = 4) ---
+  timing:  Psi = 0.62s, sym→E = 1.39s
+  |allowed triples (x1+x2+2 x3 = 4)| = 9  (A002620(6) = floor(6^2/4) = 9)
+  |nonzero coefficients|                 = 9
+  |zero coefficients (support holes)|    = 0
+  |sign mismatches|                      = 0
+  full sub_2[6] coefficient table:
+     x1  x2  x3          coefficient   expected    match?
+      4   0   0               126000         +1        OK
+      3   1   0              -233100         -1        OK
+      2   2   0               142504         +1        OK
+      1   3   0               -35133         -1        OK
+      0   4   0                 3003         +1        OK
+      2   0   1             -1168020         -1        OK
+      1   1   1               669188         +1        OK
+      0   2   1               -89985         -1        OK
+      0   0   2               172458         +1        OK
+
+--- b = 7 (target weight = 5) ---
+  timing:  Psi = 1.11s, sym→E = 3.03s
+  |allowed triples (x1+x2+2 x3 = 5)| = 12  (A002620(7) = floor(7^2/4) = 12)
+  |nonzero coefficients|                 = 12
+  |zero coefficients (support holes)|    = 0
+  |sign mismatches|                      = 0
+  full sub_2[7] coefficient table:
+     x1  x2  x3          coefficient   expected    match?
+      5   0   0             -1622880         -1        OK
+      4   1   0              3361176         +1        OK
+      3   2   0             -2469544         -1        OK
+      2   3   0               826446         +1        OK
+      1   4   0              -128184         -1        OK
+      0   5   0                 7462         +1        OK
+      3   0   1             24333624         +1        OK
+      2   1   1            -18926138         -1        OK
+      1   2   1              4622145         +1        OK
+      0   3   1              -359919         -1        OK
+      1   0   2            -10290168         -1        OK
+      0   1   2              2099565         +1        OK
+
+--- b = 8 (target weight = 6) ---
+  timing:  Psi = 1.79s, sym→E = 6.55s
+  |allowed triples (x1+x2+2 x3 = 6)| = 16  (A002620(8) = floor(8^2/4) = 16)
+  |nonzero coefficients|                 = 16
+  |zero coefficients (support holes)|    = 0
+  |sign mismatches|                      = 0
+  full sub_2[8] coefficient table:
+     x1  x2  x3          coefficient   expected    match?
+      6   0   0             22014720         +1        OK
+      5   1   0            -49672224         -1        OK
+      4   2   0             41631960         +1        OK
+      3   3   0            -17008920         -1        OK
+      2   4   0              3631374         +1        OK
+      1   5   0              -388584         -1        OK
+      0   6   0                16422         +1        OK
+      4   0   1           -483479136         -1        OK
+      3   1   1            459324512         +1        OK
+      2   2   1           -154572792         -1        OK
+      1   3   1             22142172         +1        OK
+      0   4   1             -1148952         -1        OK
+      2   0   2            393567928         +1        OK
+      1   1   2           -147876420         -1        OK
+      0   2   2             13444542         +1        OK
+      0   0   3            -15687756         -1        OK
+
+--- b = 9 (target weight = 7) ---
+  timing:  Psi = 2.94s, sym→E = 13.51s
+  |allowed triples (x1+x2+2 x3 = 7)| = 20  (A002620(9) = floor(9^2/4) = 20)
+  |nonzero coefficients|                 = 20
+  |zero coefficients (support holes)|    = 0
+  |sign mismatches|                      = 0
+  full sub_2[9] coefficient table:
+     x1  x2  x3          coefficient   expected    match?
+      7   0   0           -315705600         -1        OK
+      6   1   0            762484320         +1        OK
+      5   2   0           -706675320         -1        OK
+      4   3   0            333504120         +1        OK
+      3   4   0            -87902550         -1        OK
+      2   5   0             13082130         +1        OK
+      1   6   0             -1026270         -1        OK
+      0   7   0                32946         +1        OK
+      5   0   1           9520083360         +1        OK
+      4   1   1         -10455936768         -1        OK
+      3   2   1           4348927128         +1        OK
+      2   3   1           -867191580         -1        OK
+      1   4   1             83562804         +1        OK
+      0   5   1             -3129336         -1        OK
+      3   0   2         -12507551352         -1        OK
+      2   1   2           6548095668         +1        OK
+      1   2   2          -1107146970         -1        OK
+      0   3   2             60860106         +1        OK
+      1   0   3           1442521836         +1        OK
+      0   1   3           -215594460         -1        OK
+
+--- b = 10 (target weight = 8) ---
+  timing:  Psi = 4.76s, sym→E = 25.01s
+  |allowed triples (x1+x2+2 x3 = 8)| = 25  (A002620(10) = floor(10^2/4) = 25)
+  |nonzero coefficients|                 = 25
+  |zero coefficients (support holes)|    = 0
+  |sign mismatches|                      = 0
+  full sub_2[10] coefficient table:
+     x1  x2  x3          coefficient   expected    match?
+      8   0   0           4790016000         +1        OK
+      7   1   0         -12233548800         -1        OK
+      6   2   0          12285126720         +1        OK
+      5   3   0          -6477386520         -1        OK
+      4   4   0           1990284120         +1        OK
+      3   5   0           -368789850         -1        OK
+      2   6   0             40560630         +1        OK
+      1   7   0             -2435730         -1        OK
+      0   8   0                61446         +1        OK
+      6   0   1        -189505958400         -1        OK
+      5   1   1         232757030880         +1        OK
+      4   2   1        -112994754600         -1        OK
+      3   3   1          28079507880         +1        OK
+      2   4   1          -3795397830         -1        OK
+      1   5   1            265895220         +1        OK
+      0   6   1             -7569450         -1        OK
+      4   0   2         363348388800         +1        OK
+      3   1   2        -237278017920         -1        OK
+      2   2   2          56348057088         +1        OK
+      1   3   2          -5802672330         -1        OK
+      0   4   2            219555090         +1        OK
+      2   0   3         -81229943520         -1        OK
+      1   1   3          22767841008         +1        OK
+      0   2   3          -1564659990         -1        OK
+      0   0   4           1312328304         +1        OK
+
+==============================================================================
+SUMMARY
+==============================================================================
+    b   #allowed   #nonzero   #zero   #mismatch  A002620(b)
+    2          1          1       0           0           1
+    3          2          2       0           0           2
+    4          4          4       0           0           4
+    5          6          6       0           0           6
+    6          9          9       0           0           9
+    7         12         12       0           0          12
+    8         16         16       0           0          16
+    9         20         20       0           0          20
+   10         25         25       0           0          25
+
+VERDICT: YES — uniform sign (-1)^{x1+x3} confirmed for sub_2[b]
+         across every nonzero coefficient for b = 2..10.

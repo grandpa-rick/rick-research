@@ -1,0 +1,87 @@
+======================================================================
+Day 132: Density conjecture at b=7 (and b=8 if time permits)
+======================================================================
+
+--- b = 7 ---
+  Psi(e_2^7) time = 1.09s
+  sym->E time = 3.11s
+  max (1,1,2)-weight = 7  (bound: b = 7)  OK
+  cross-check S(Psi) via reduce_y <-> e-basis: MATCH  (1.90s)
+  # weight-7 e-monomials p_{1,1,2}(7) = 20
+  # top-weight monomials NONZERO = 20
+  # top-weight monomials ZERO   = 0
+  top-weight polynomial (weight = 7):
+    -5040*E1**7 + 13068*E1**6*E2 - 13132*E1**5*E2**2 + 128052*E1**5*E3 + 6769*E1**4*E2**3 - 145600*E1**4*E2*E3 - 1960*E1**3*E2**4 + 64771*E1**3*E2**2*E3 - 158788*E1**3*E3**2 + 322*E1**2*E2**5 - 14105*E1**2*E2**3*E3 + 86905*E1**2*E2*E3**2 - 28*E1*E2**6 + 1505*E1*E2**4*E3 - 15750*E1*E2**2*E3**2 + 17955*E1*E3**3 + E2**7 - 63*E2**5*E3 + 945*E2**3*E3**2 - 2835*E2*E3**3
+  Pattern coefficients (top weight):
+    [E_1^7]           = -5040
+    [E_2^7]           = 1
+    [E_1^6 E_2]     = 13068
+  full top-weight coefficient table:
+    E1^7 E2^0 E3^0  (weight 7): -5040
+    E1^6 E2^1 E3^0  (weight 7): 13068
+    E1^5 E2^2 E3^0  (weight 7): -13132
+    E1^4 E2^3 E3^0  (weight 7): 6769
+    E1^3 E2^4 E3^0  (weight 7): -1960
+    E1^2 E2^5 E3^0  (weight 7): 322
+    E1^1 E2^6 E3^0  (weight 7): -28
+    E1^0 E2^7 E3^0  (weight 7): 1
+    E1^5 E2^0 E3^1  (weight 7): 128052
+    E1^4 E2^1 E3^1  (weight 7): -145600
+    E1^3 E2^2 E3^1  (weight 7): 64771
+    E1^2 E2^3 E3^1  (weight 7): -14105
+    E1^1 E2^4 E3^1  (weight 7): 1505
+    E1^0 E2^5 E3^1  (weight 7): -63
+    E1^3 E2^0 E3^2  (weight 7): -158788
+    E1^2 E2^1 E3^2  (weight 7): 86905
+    E1^1 E2^2 E3^2  (weight 7): -15750
+    E1^0 E2^3 E3^2  (weight 7): 945
+    E1^1 E2^0 E3^3  (weight 7): 17955
+    E1^0 E2^1 E3^3  (weight 7): -2835
+
+--- b = 8 (time-capped ~10 min) ---
+  Psi(e_2^8) time = 1.78s
+  sym->E time = 6.56s
+  max (1,1,2)-weight = 8  (bound: b = 8)  OK
+  cross-check S(Psi) via reduce_y <-> e-basis: MATCH  (3.95s)
+  # weight-8 e-monomials p_{1,1,2}(8) = 25
+  # top-weight monomials NONZERO = 25
+  # top-weight monomials ZERO   = 0
+  top-weight polynomial (weight = 8):
+    40320*E1**8 - 109584*E1**7*E2 + 118124*E1**6*E2**2 - 1341936*E1**6*E3 - 67284*E1**5*E2**3 + 1692776*E1**5*E2*E3 + 22449*E1**4*E2**4 - 869652*E1**4*E2**2*E3 + 2422700*E1**4*E3**2 - 4536*E1**3*E2**5 + 233156*E1**3*E2**3*E3 - 1638924*E1**3*E2*E3**2 + 546*E1**2*E2**6 - 34440*E1**2*E2**4*E3 + 412510*E1**2*E2**2*E3**2 - 528780*E1**2*E3**3 - 36*E1*E2**7 + 2660*E1*E2**5*E3 - 45780*E1*E2**3*E3**2 + 154980*E1*E2*E3**3 + E2**8 - 84*E2**6*E3 + 1890*E2**4*E3**2 - 11340*E2**2*E3**3 + 8505*E3**4
+  Pattern coefficients (top weight):
+    [E_1^8]           = 40320
+    [E_2^8]           = 1
+    [E_1^7 E_2]     = -109584
+    [E_3^4]         = 8505
+  full top-weight coefficient table:
+    E1^8 E2^0 E3^0  (weight 8): 40320
+    E1^7 E2^1 E3^0  (weight 8): -109584
+    E1^6 E2^2 E3^0  (weight 8): 118124
+    E1^5 E2^3 E3^0  (weight 8): -67284
+    E1^4 E2^4 E3^0  (weight 8): 22449
+    E1^3 E2^5 E3^0  (weight 8): -4536
+    E1^2 E2^6 E3^0  (weight 8): 546
+    E1^1 E2^7 E3^0  (weight 8): -36
+    E1^0 E2^8 E3^0  (weight 8): 1
+    E1^6 E2^0 E3^1  (weight 8): -1341936
+    E1^5 E2^1 E3^1  (weight 8): 1692776
+    E1^4 E2^2 E3^1  (weight 8): -869652
+    E1^3 E2^3 E3^1  (weight 8): 233156
+    E1^2 E2^4 E3^1  (weight 8): -34440
+    E1^1 E2^5 E3^1  (weight 8): 2660
+    E1^0 E2^6 E3^1  (weight 8): -84
+    E1^4 E2^0 E3^2  (weight 8): 2422700
+    E1^3 E2^1 E3^2  (weight 8): -1638924
+    E1^2 E2^2 E3^2  (weight 8): 412510
+    E1^1 E2^3 E3^2  (weight 8): -45780
+    E1^0 E2^4 E3^2  (weight 8): 1890
+    E1^2 E2^0 E3^3  (weight 8): -528780
+    E1^1 E2^1 E3^3  (weight 8): 154980
+    E1^0 E2^2 E3^3  (weight 8): -11340
+    E1^0 E2^0 E3^4  (weight 8): 8505
+
+======================================================================
+Summary (b, #possible, #nonzero)
+======================================================================
+  b=7: possible = 20, nonzero = 20  (FULLY DENSE)
+  b=8: possible = 25, nonzero = 25  (FULLY DENSE)

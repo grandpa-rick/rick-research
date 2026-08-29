@@ -1,0 +1,209 @@
+Building shifted-Schur tables up to j = 4 ...
+  j=0: [((0, 0, 0), 1)]
+  j=1: [((1, 1, 0), 1)]
+  j=2: [((2, 2, 0), 1), ((2, 1, 1), 1)]
+  j=3: [((3, 3, 0), 1), ((3, 2, 1), 2), ((2, 2, 2), 1)]
+  j=4: [((4, 4, 0), 1), ((4, 3, 1), 3), ((4, 2, 2), 2), ((3, 3, 2), 3)]
+
+==============================================================================
+STEP 1: Compute h_2^* = s^*_{(2)}(u, y, c) using Attack B's convention.
+==============================================================================
+h_2^*(u,y,c) = c**2 + c*u + c*y - 6*c + u**2 + u*y - 6*u + y**2 - 6*y + 11
+expanded = c**2 + c*u + c*y - 6*c + u**2 + u*y - 6*u + y**2 - 6*y + 11
+
+Ordinary h_2(u,y,c) = c**2 + c*u + c*y + u**2 + u*y + y**2
+
+Difference h_2^* - h_2 = -6*c - 6*u - 6*y + 11
+
+==============================================================================
+STEP 2: Compute S_j and (h_2^*)^j for j=0..4 and compare.
+==============================================================================
+
+--- j = 0 ---
+  S_j vs h_2^{*j} EQUAL? True
+
+--- j = 1 ---
+  S_j vs h_2^{*j} EQUAL? False
+  S_j - h_2^*^j = -c**2 + 5*c - u**2 + 5*u - y**2 + 5*y - 10
+
+--- j = 2 ---
+  S_j vs h_2^{*j} EQUAL? False
+  S_j - h_2^*^j = -c**4 - 2*c**3*u - 2*c**3*y + 12*c**3 - 2*c**2*u**2 - 2*c**2*u*y + 21*c**2*u - 2*c**2*y**2 + 21*c**2*y - 56*c**2 - 2*c*u**3 - 2*c*u**2*y + 21*c*u**2 - 2*c*u*y**2 + 24*c*u*y - 85*c*u - 2*c*y**3 + 21*c*y**2 - 85*c*y + 126*c - u**4 - 2*u**3*y + 12*u**3 - 2*u**2*y**2 + 21*u**2*y - 56*u**2 - 2*u*y**3 + 21*u*y**2 - 85*u*y + 126*u - y**4 + 12*y**3 - 56*y**2 + 126*y - 117
+
+--- j = 3 ---
+  S_j vs h_2^{*j} EQUAL? False
+  S_j - h_2^*^j = -c**6 - 3*c**5*u - 3*c**5*y + 18*c**5 - 6*c**4*u**2 - 9*c**4*u*y + 54*c**4*u - 6*c**4*y**2 + 54*c**4*y - 141*c**4 - 6*c**3*u**3 - 12*c**3*u**2*y + 84*c**3*u**2 - 12*c**3*u*y**2 + 132*c**3*u*y - 379*c**3*u - 6*c**3*y**3 + 84*c**3*y**2 - 379*c**3*y + 606*c**3 - 6*c**2*u**4 - 12*c**2*u**3*y + 84*c**2*u**3 - 15*c**2*u**2*y**2 + 159*c**2*u**2*y - 495*c**2*u**2 - 12*c**2*u*y**3 + 159*c**2*u*y**2 - 780*c**2*u*y + 1374*c**2*u - 6*c**2*y**4 + 84*c**2*y**3 - 495*c**2*y**2 + 1374*c**2*y - 1515*c**2 - 3*c*u**5 - 9*c*u**4*y + 54*c*u**4 - 12*c*u**3*y**2 + 132*c*u**3*y - 379*c*u**3 - 12*c*u**2*y**3 + 159*c*u**2*y**2 - 780*c*u**2*y + 1374*c*u**2 - 9*c*u*y**4 + 132*c*u*y**3 - 780*c*u*y**2 + 2247*c*u*y - 2618*c*u - 3*c*y**5 + 54*c*y**4 - 379*c*y**3 + 1374*c*y**2 - 2618*c*y + 2112*c - u**6 - 3*u**5*y + 18*u**5 - 6*u**4*y**2 + 54*u**4*y - 141*u**4 - 6*u**3*y**3 + 84*u**3*y**2 - 379*u**3*y + 606*u**3 - 6*u**2*y**4 + 84*u**2*y**3 - 495*u**2*y**2 + 1374*u**2*y - 1515*u**2 - 3*u*y**5 + 54*u*y**4 - 379*u*y**3 + 1374*u*y**2 - 2618*u*y + 2112*u - y**6 + 18*y**5 - 141*y**4 + 606*y**3 - 1515*y**2 + 2112*y - 1295
+
+--- j = 4 ---
+  S_j vs h_2^{*j} EQUAL? False
+  S_j - h_2^*^j = -c**8 - 4*c**7*u - 4*c**7*y + 24*c**7 - 10*c**6*u**2 - 16*c**6*u*y + 96*c**6*u - 10*c**6*y**2 + 96*c**6*y - 260*c**6 - 16*c**5*u**3 - 36*c**5*u**2*y + 216*c**5*u**2 - 36*c**5*u*y**2 + 360*c**5*u*y - 996*c**5*u - 16*c**5*y**3 + 216*c**5*y**2 - 996*c**5*y + 1656*c**5 - 18*c**4*u**4 - 48*c**4*u**3*y + 302*c**4*u**3 - 66*c**4*u**2*y**2 + 690*c**4*u**2*y - 1957*c**4*u**2 - 48*c**4*u*y**3 + 690*c**4*u*y**2 - 3350*c**4*u*y + 5782*c**4*u - 18*c**4*y**4 + 302*c**4*y**3 - 1957*c**4*y**2 + 5782*c**4*y - 6750*c**4 - 16*c**3*u**5 - 48*c**3*u**4*y + 302*c**3*u**4 - 76*c**3*u**3*y**2 + 800*c**3*u**3*y - 2368*c**3*u**3 - 76*c**3*u**2*y**3 + 1068*c**3*u**2*y**2 - 5356*c**3*u**2*y + 9658*c**3*u**2 - 48*c**3*u*y**4 + 800*c**3*u*y**3 - 5356*c**3*u*y**2 + 16628*c**3*u*y - 20392*c**3*u - 16*c**3*y**5 + 302*c**3*y**4 - 2368*c**3*y**3 + 9658*c**3*y**2 - 20392*c**3*y + 17976*c**3 - 10*c**2*u**6 - 36*c**2*u**5*y + 216*c**2*u**5 - 66*c**2*u**4*y**2 + 690*c**2*u**4*y - 1957*c**2*u**4 - 76*c**2*u**3*y**3 + 1068*c**2*u**3*y**2 - 5356*c**2*u**3*y + 9658*c**2*u**3 - 66*c**2*u**2*y**4 + 1068*c**2*u**2*y**3 - 6966*c**2*u**2*y**2 + 21924*c**2*u**2*y - 27737*c**2*u**2 - 36*c**2*u*y**5 + 690*c**2*u*y**4 - 5356*c**2*u*y**3 + 21924*c**2*u*y**2 - 47794*c**2*u*y + 44186*c**2*u - 10*c**2*y**6 + 216*c**2*y**5 - 1957*c**2*y**4 + 9658*c**2*y**3 - 27737*c**2*y**2 + 44186*c**2*y - 30620*c**2 - 4*c*u**7 - 16*c*u**6*y + 96*c*u**6 - 36*c*u**5*y**2 + 360*c*u**5*y - 996*c*u**5 - 48*c*u**4*y**3 + 690*c*u**4*y**2 - 3350*c*u**4*y + 5782*c*u**4 - 48*c*u**3*y**4 + 800*c*u**3*y**3 - 5356*c*u**3*y**2 + 16628*c*u**3*y - 20392*c*u**3 - 36*c*u**2*y**5 + 690*c*u**2*y**4 - 5356*c*u**2*y**3 + 21924*c*u**2*y**2 - 47794*c*u**2*y + 44186*c*u**2 - 16*c*u*y**6 + 360*c*u*y**5 - 3350*c*u*y**4 + 16628*c*u*y**3 - 47794*c*u*y**2 + 77208*c*u*y - 55096*c*u - 4*c*y**7 + 96*c*y**6 - 996*c*y**5 + 5782*c*y**4 - 20392*c*y**3 + 44186*c*y**2 - 55096*c*y + 30744*c - u**8 - 4*u**7*y + 24*u**7 - 10*u**6*y**2 + 96*u**6*y - 260*u**6 - 16*u**5*y**3 + 216*u**5*y**2 - 996*u**5*y + 1656*u**5 - 18*u**4*y**4 + 302*u**4*y**3 - 1957*u**4*y**2 + 5782*u**4*y - 6750*u**4 - 16*u**3*y**5 + 302*u**3*y**4 - 2368*u**3*y**3 + 9658*u**3*y**2 - 20392*u**3*y + 17976*u**3 - 10*u**2*y**6 + 216*u**2*y**5 - 1957*u**2*y**4 + 9658*u**2*y**3 - 27737*u**2*y**2 + 44186*u**2*y - 30620*u**2 - 4*u*y**7 + 96*u*y**6 - 996*u*y**5 + 5782*u*y**4 - 20392*u*y**3 + 44186*u*y**2 - 55096*u*y + 30744*u - y**8 + 24*y**7 - 260*y**6 + 1656*y**5 - 6750*y**4 + 17976*y**3 - 30620*y**2 + 30744*y - 14065
+
+==============================================================================
+STEP 3: If not equal, check RATIO and small variants.
+==============================================================================
+  j=1: h_2^*^j does NOT divide S_j (remainder degree = 2)
+  j=2: h_2^*^j does NOT divide S_j (remainder degree = 4)
+  j=3: h_2^*^j does NOT divide S_j (remainder degree = 6)
+  j=4: h_2^*^j does NOT divide S_j (remainder degree = 8)
+
+==============================================================================
+STEP 4: Compare kappa_mu coefficients to Kostka numbers K_{mu,(2^j)}.
+        The expansion h_2^j = sum_mu K_{mu,(2^j)} s_mu in ORDINARY Schurs.
+        If kappa_mu match, then S_j = 'shifted analogue of h_2^j'.
+==============================================================================
+
+  j = 0:  ordinary h_2^j Schur expansion:
+     mu=(0, 0, 0): coef = 1
+  Attack B's kappa_mu (from bt table):
+     mu=(0, 0, 0): kap = 1
+  MATCH? True
+
+  j = 1:  ordinary h_2^j Schur expansion:
+     mu=(2, 0, 0): coef = 1
+  Attack B's kappa_mu (from bt table):
+     mu=(1, 1, 0): kap = 1
+     MISMATCH at mu=(2, 0, 0): kappa=0, K_Kostka=1
+     MISMATCH at mu=(1, 1, 0): kappa=1, K_Kostka=0
+  MATCH? False
+
+  j = 2:  ordinary h_2^j Schur expansion:
+     mu=(4, 0, 0): coef = 1
+     mu=(3, 1, 0): coef = 1
+     mu=(2, 2, 0): coef = 1
+  Attack B's kappa_mu (from bt table):
+     mu=(2, 2, 0): kap = 1
+     mu=(2, 1, 1): kap = 1
+     MISMATCH at mu=(4, 0, 0): kappa=0, K_Kostka=1
+     MISMATCH at mu=(3, 1, 0): kappa=0, K_Kostka=1
+     MISMATCH at mu=(2, 1, 1): kappa=1, K_Kostka=0
+  MATCH? False
+
+  j = 3:  ordinary h_2^j Schur expansion:
+     mu=(6, 0, 0): coef = 1
+     mu=(5, 1, 0): coef = 2
+     mu=(4, 2, 0): coef = 3
+     mu=(4, 1, 1): coef = 1
+     mu=(3, 3, 0): coef = 1
+     mu=(3, 2, 1): coef = 2
+     mu=(2, 2, 2): coef = 1
+  Attack B's kappa_mu (from bt table):
+     mu=(3, 3, 0): kap = 1
+     mu=(3, 2, 1): kap = 2
+     mu=(2, 2, 2): kap = 1
+     MISMATCH at mu=(6, 0, 0): kappa=0, K_Kostka=1
+     MISMATCH at mu=(5, 1, 0): kappa=0, K_Kostka=2
+     MISMATCH at mu=(4, 2, 0): kappa=0, K_Kostka=3
+     MISMATCH at mu=(4, 1, 1): kappa=0, K_Kostka=1
+  MATCH? False
+
+  j = 4:  ordinary h_2^j Schur expansion:
+     mu=(8, 0, 0): coef = 1
+     mu=(7, 1, 0): coef = 3
+     mu=(6, 2, 0): coef = 6
+     mu=(6, 1, 1): coef = 3
+     mu=(5, 3, 0): coef = 6
+     mu=(5, 2, 1): coef = 8
+     mu=(4, 4, 0): coef = 3
+     mu=(4, 3, 1): coef = 7
+     mu=(4, 2, 2): coef = 6
+     mu=(3, 3, 2): coef = 3
+  Attack B's kappa_mu (from bt table):
+     mu=(4, 4, 0): kap = 1
+     mu=(4, 3, 1): kap = 3
+     mu=(4, 2, 2): kap = 2
+     mu=(3, 3, 2): kap = 3
+     MISMATCH at mu=(8, 0, 0): kappa=0, K_Kostka=1
+     MISMATCH at mu=(7, 1, 0): kappa=0, K_Kostka=3
+     MISMATCH at mu=(6, 2, 0): kappa=0, K_Kostka=6
+     MISMATCH at mu=(6, 1, 1): kappa=0, K_Kostka=3
+     MISMATCH at mu=(5, 3, 0): kappa=0, K_Kostka=6
+     MISMATCH at mu=(5, 2, 1): kappa=0, K_Kostka=8
+     MISMATCH at mu=(4, 4, 0): kappa=1, K_Kostka=3
+     MISMATCH at mu=(4, 3, 1): kappa=3, K_Kostka=7
+     MISMATCH at mu=(4, 2, 2): kappa=2, K_Kostka=6
+  MATCH? False
+
+==============================================================================
+STEP 5: The DEFINITIVE test — is S_j == (e_2^*)^j?
+        Attack B's kappa_mu are supported on partitions of 2j with
+        at most 3 parts and first part <= j.  This is EXACTLY the
+        Pieri-rule support for iterated multiplication by e_2, not h_2.
+        So conjecture: S_j = (e_2^*)^j where e_2^* = s^*_{(1,1)}.
+==============================================================================
+e_2^*(u,y,c) = c*u + c*y - c + u*y - u - y + 1
+e_2(u,y,c)   = c*u + c*y + u*y
+e_2^* - e_2  = -c - u - y + 1
+  j=0: S_j == (e_2^*)^j?  True
+  j=1: S_j == (e_2^*)^j?  True
+  j=2: S_j == (e_2^*)^j?  False
+    diff = -c**2*u - c**2*y + c**2 - c*u**2 - 6*c*u*y + 5*c*u - c*y**2 + 5*c*y - 4*c - u**2*y + u**2 - u*y**2 + 5*u*y - 4*u + y**2 - 4*y + 3
+  j=3: S_j == (e_2^*)^j?  False
+    diff = -3*c**3*u**2 - 6*c**3*u*y + 8*c**3*u - 3*c**3*y**2 + 8*c**3*y - 5*c**3 - 3*c**2*u**3 - 24*c**2*u**2*y + 27*c**2*u**2 - 24*c**2*u*y**2 + 87*c**2*u*y - 57*c**2*u - 3*c**2*y**3 + 27*c**2*y**2 - 57*c**2*y + 33*c**2 - 6*c*u**3*y + 8*c*u**3 - 24*c*u**2*y**2 + 87*c*u**2*y - 57*c*u**2 - 6*c*u*y**3 + 87*c*u*y**2 - 213*c*u*y + 112*c*u + 8*c*y**3 - 57*c*y**2 + 112*c*y - 63*c - 3*u**3*y**2 + 8*u**3*y - 5*u**3 - 3*u**2*y**3 + 27*u**2*y**2 - 57*u**2*y + 33*u**2 + 8*u*y**3 - 57*u*y**2 + 112*u*y - 63*u - 5*y**3 + 33*y**2 - 63*y + 35
+  j=4: S_j == (e_2^*)^j?  False
+    diff = -6*c**4*u**3 - 18*c**4*u**2*y + 29*c**4*u**2 - 18*c**4*u*y**2 + 58*c**4*u*y - 46*c**4*u - 6*c**4*y**3 + 29*c**4*y**2 - 46*c**4*y + 23*c**4 - 6*c**3*u**4 - 60*c**3*u**3*y + 84*c**3*u**3 - 108*c**3*u**2*y**2 + 428*c**3*u**2*y - 326*c**3*u**2 - 60*c**3*u*y**3 + 428*c**3*u*y**2 - 888*c**3*u*y + 484*c**3*u - 6*c**3*y**4 + 84*c**3*y**3 - 326*c**3*y**2 + 484*c**3*y - 236*c**3 - 18*c**2*u**4*y + 29*c**2*u**4 - 108*c**2*u**3*y**2 + 428*c**2*u**3*y - 326*c**2*u**3 - 108*c**2*u**2*y**3 + 972*c**2*u**2*y**2 - 2232*c**2*u**2*y + 1189*c**2*u**2 - 18*c**2*u*y**4 + 428*c**2*u*y**3 - 2232*c**2*u*y**2 + 3842*c**2*u*y - 1726*c**2*u + 29*c**2*y**4 - 326*c**2*y**3 + 1189*c**2*y**2 - 1726*c**2*y + 834*c**2 - 18*c*u**4*y**2 + 58*c*u**4*y - 46*c*u**4 - 60*c*u**3*y**3 + 428*c*u**3*y**2 - 888*c*u**3*y + 484*c*u**3 - 18*c*u**2*y**4 + 428*c*u**2*y**3 - 2232*c*u**2*y**2 + 3842*c*u**2*y - 1726*c*u**2 + 58*c*u*y**4 - 888*c*u*y**3 + 3842*c*u*y**2 - 5892*c*u*y + 2484*c*u - 46*c*y**4 + 484*c*y**3 - 1726*c*y**2 + 2484*c*y - 1196*c - 6*u**4*y**3 + 29*u**4*y**2 - 46*u**4*y + 23*u**4 - 6*u**3*y**4 + 84*u**3*y**3 - 326*u**3*y**2 + 484*u**3*y - 236*u**3 + 29*u**2*y**4 - 326*u**2*y**3 + 1189*u**2*y**2 - 1726*u**2*y + 834*u**2 - 46*u*y**4 + 484*u*y**3 - 1726*u*y**2 + 2484*u*y - 1196*u + 23*y**4 - 236*y**3 + 834*y**2 - 1196*y + 575
+
+==============================================================================
+STEP 6: Compare kappa_mu to ordinary Schur expansion of (e_2)^j.
+        (e_2)^j = sum_mu K_{mu', (2^j)} s_mu  (transpose Kostka).
+==============================================================================
+
+  j = 0: ordinary (e_2)^j Schur expansion:
+     mu=(0, 0, 0): coef = 1
+  Attack B's kappa_mu:
+     mu=(0, 0, 0): kap = 1
+  MATCH? True
+
+  j = 1: ordinary (e_2)^j Schur expansion:
+     mu=(1, 1, 0): coef = 1
+  Attack B's kappa_mu:
+     mu=(1, 1, 0): kap = 1
+  MATCH? True
+
+  j = 2: ordinary (e_2)^j Schur expansion:
+     mu=(2, 2, 0): coef = 1
+     mu=(2, 1, 1): coef = 1
+  Attack B's kappa_mu:
+     mu=(2, 2, 0): kap = 1
+     mu=(2, 1, 1): kap = 1
+  MATCH? True
+
+  j = 3: ordinary (e_2)^j Schur expansion:
+     mu=(3, 3, 0): coef = 1
+     mu=(3, 2, 1): coef = 2
+     mu=(2, 2, 2): coef = 1
+  Attack B's kappa_mu:
+     mu=(3, 3, 0): kap = 1
+     mu=(3, 2, 1): kap = 2
+     mu=(2, 2, 2): kap = 1
+  MATCH? True
+
+  j = 4: ordinary (e_2)^j Schur expansion:
+     mu=(4, 4, 0): coef = 1
+     mu=(4, 3, 1): coef = 3
+     mu=(4, 2, 2): coef = 2
+     mu=(3, 3, 2): coef = 3
+  Attack B's kappa_mu:
+     mu=(4, 4, 0): kap = 1
+     mu=(4, 3, 1): kap = 3
+     mu=(4, 2, 2): kap = 2
+     mu=(3, 3, 2): kap = 3
+  MATCH? True
+
+==============================================================================
+STEP 7: Top-degree comparison.  s^*_mu = s_mu + lower.  So
+        LeadingDeg(S_j) = sum_mu kap_mu s_mu = (e_2)^j.
+        Verify: top-degree-2j part of S_j equals (e_2)^j.
+==============================================================================
+  j=0: top-degree 0 of S_j == (e_2)^j?  True
+  j=1: top-degree 2 of S_j == (e_2)^j?  True
+  j=2: top-degree 4 of S_j == (e_2)^j?  True
+  j=3: top-degree 6 of S_j == (e_2)^j?  True
+  j=4: top-degree 8 of S_j == (e_2)^j?  True
+
+==============================================================================
+STEP 8: For deg_pi bound: use e-basis wdeg with wdeg(e_1)=1, wdeg(e_2)=2,
+        wdeg(e_3)=2 (Attack B's structural claim in step 7 of its output).
+        Since sum kap_mu s_mu = e_2^j, and e_2^j has e-degree j in e_2,
+        the structural bound is:
+        S_j is 'e_2^j + lower shifted corrections' in e-basis.
+==============================================================================

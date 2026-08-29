@@ -1,0 +1,208 @@
+Building A_p tables and coeffs...
+...done
+==============================================================================
+(1) VERIFYING p=1 seed formula.
+    Conjecture (even j = 2k):
+      c_{lam=(k+i, k-i)}(seed) = -k(2k-3) * T_catalan(2k, k+i)
+    where T_catalan(n, r) = binom(n, r) - binom(n, r-1).
+==============================================================================
+
+  j = 2 (k = 1):
+    lam=(1, 1), i=0: actual=1, predicted=1 => OK
+    lam=(2, 0), i=1: actual=1, predicted=-1 => FAIL
+
+  j = 4 (k = 2):
+    lam=(2, 2), i=0: actual=-4, predicted=-4 => OK
+    lam=(3, 1), i=1: actual=-6, predicted=4 => FAIL
+    lam=(4, 0), i=2: actual=-2, predicted=6 => FAIL
+
+  j = 6 (k = 3):
+    lam=(3, 3), i=0: actual=-45, predicted=-45 => OK
+    lam=(4, 2), i=1: actual=-81, predicted=45 => FAIL
+    lam=(5, 1), i=2: actual=-45, predicted=81 => FAIL
+    lam=(6, 0), i=3: actual=-9, predicted=45 => FAIL
+
+  j = 8 (k = 4):
+    lam=(4, 4), i=0: actual=-280, predicted=-280 => OK
+    lam=(5, 3), i=1: actual=-560, predicted=280 => FAIL
+    lam=(6, 2), i=2: actual=-400, predicted=560 => FAIL
+    lam=(7, 1), i=3: actual=-140, predicted=400 => FAIL
+    lam=(8, 0), i=4: actual=-20, predicted=140 => FAIL
+
+  j = 10 (k = 5):
+    lam=(5, 5), i=0: actual=-1470, predicted=-1470 => OK
+    lam=(6, 4), i=1: actual=-3150, predicted=1470 => FAIL
+    lam=(7, 3), i=2: actual=-2625, predicted=3150 => FAIL
+    lam=(8, 2), i=3: actual=-1225, predicted=2625 => FAIL
+    lam=(9, 1), i=4: actual=-315, predicted=1225 => FAIL
+    lam=(10, 0), i=5: actual=-35, predicted=315 => FAIL
+
+  Even-j formula OK? False
+
+  Odd-j (j = 2k+1): m = 1, 3, ..., 2k+1  (i = 0, ..., k)
+    seeds are: j=1: [1]; j=3: [0]; j=5: [-25, -20, -5]; j=7: [-196, -196, -84, -14]; j=9: [-1134, -1296, -729, -216, -27]
+    Ratios: seed/[T(2k+1, k+i+1) - T(2k+1, k+i+2)]?
+    j=1: seeds = [1]
+           T(2k+1, k+i+1) = [0]  (i=0..0)
+           ratios = [None]
+    j=3: seeds = [0, 0]
+           T(2k+1, k+i+1) = [0, -2]  (i=0..1)
+           ratios = ['0/0', 0]
+    j=5: seeds = [-25, -20, -5]
+           T(2k+1, k+i+1) = [0, -5, -4]  (i=0..2)
+           ratios = [None, 4, 5/4]
+    j=7: seeds = [-196, -196, -84, -14]
+           T(2k+1, k+i+1) = [0, -14, -14, -6]  (i=0..3)
+           ratios = [None, 14, 6, 7/3]
+    j=9: seeds = [-1134, -1296, -729, -216, -27]
+           T(2k+1, k+i+1) = [0, -42, -48, -27, -8]  (i=0..4)
+           ratios = [None, 216/7, 243/16, 8, 27/8]
+==============================================================================
+(2) Higher-p seeds: is the ratio seed / T_catalan a low-degree poly?
+==============================================================================
+
+  --- p = 2 ---
+    j=2 (k=1): seeds=[-2, 0]
+                   T(2k, k+i)=[1, -1]
+                   ratios=[-2, 0]
+    j=4 (k=2): seeds=[-14, -15, -1]
+                   T(2k, k+i)=[2, -2, -3]
+                   ratios=[-7, 15/2, 1/3]
+    j=6 (k=3): seeds=[65, 135, 95, 25]
+                   T(2k, k+i)=[5, -5, -9, -5]
+                   ratios=[13, -27, -95/9, -5]
+    j=8 (k=4): seeds=[1876, 3808, 2800, 1022, 154]
+                   T(2k, k+i)=[14, -14, -28, -20, -7]
+                   ratios=[134, -272, -100, -511/10, -22]
+    j=10 (k=5): seeds=[20160, 43380, 36450, 17220, 4500, 510]
+                   T(2k, k+i)=[42, -42, -90, -75, -35, -9]
+                   ratios=[480, -7230/7, -405, -1148/5, -900/7, -170/3]
+
+  --- p = 3 ---
+    j=4 (k=2): seeds=[16, 18, 2]
+                   T(2k, k+i)=[2, -2, -3]
+                   ratios=[8, -9, -2/3]
+    j=6 (k=3): seeds=[285, 405, 105, -15]
+                   T(2k, k+i)=[5, -5, -9, -5]
+                   ratios=[57, -81, -35/3, 3]
+    j=8 (k=4): seeds=[-3640, -8120, -7000, -3080, -560]
+                   T(2k, k+i)=[14, -14, -28, -20, -7]
+                   ratios=[-260, 580, 250, 154, 80]
+    j=10 (k=5): seeds=[-132300, -288540, -248850, -122010, -33390, -3990]
+                   T(2k, k+i)=[42, -42, -90, -75, -35, -9]
+                   ratios=[-3150, 6870, 2765, 8134/5, 954, 1330/3]
+
+  --- p = 4 ---
+    j=4 (k=2): seeds=[24, 0, 0]
+                   T(2k, k+i)=[2, -2, -3]
+                   ratios=[12, 0, 0]
+    j=6 (k=3): seeds=[-430, -864, -460, -26]
+                   T(2k, k+i)=[5, -5, -9, -5]
+                   ratios=[-86, 864/5, 460/9, 26/5]
+    j=8 (k=4): seeds=[-7994, -12908, -4340, 1463, 889]
+                   T(2k, k+i)=[14, -14, -28, -20, -7]
+                   ratios=[-571, 922, 155, -1463/20, -127]
+    j=10 (k=5): seeds=[371826, 846090, 789075, 429135, 132237, 17913]
+                   T(2k, k+i)=[42, -42, -90, -75, -35, -9]
+                   ratios=[8853, -20145, -17535/2, -28609/5, -18891/5, -5971/3]
+
+==============================================================================
+(3) FULL Pieri-sum (variable r) test
+==============================================================================
+
+  === p=1, j=1: A_p = sum c_{lam0, r} (s^*_lam0 * h_r^*) ===
+    Consistent! rank = 4, unknowns = 7
+    Particular solution (with free params set to 0):
+      c_{lam0=(0, 0), r=2} = -1
+      c_{lam0=(1, 0), r=1} = 1
+
+  === p=1, j=2: A_p = sum c_{lam0, r} (s^*_lam0 * h_r^*) ===
+    Consistent! rank = 6, unknowns = 13
+    Particular solution (with free params set to 0):
+      c_{lam0=(0, 0), r=1} = -1
+      c_{lam0=(0, 0), r=2} = -4
+      c_{lam0=(0, 0), r=3} = -2
+      c_{lam0=(1, 0), r=1} = 1
+      c_{lam0=(1, 0), r=2} = 2
+
+  === p=1, j=3: A_p = sum c_{lam0, r} (s^*_lam0 * h_r^*) ===
+    Consistent! rank = 9, unknowns = 22
+    Particular solution (with free params set to 0):
+      c_{lam0=(0, 0), r=3} = -9
+      c_{lam0=(0, 0), r=4} = -3
+      c_{lam0=(1, 0), r=2} = -3
+      c_{lam0=(2, 0), r=2} = 3
+
+  === p=1, j=4: A_p = sum c_{lam0, r} (s^*_lam0 * h_r^*) ===
+    Consistent! rank = 12, unknowns = 34
+    Particular solution (with free params set to 0):
+      c_{lam0=(0, 0), r=3} = 18
+      c_{lam0=(0, 0), r=4} = -12
+      c_{lam0=(0, 0), r=5} = -4
+      c_{lam0=(1, 0), r=2} = 4
+      c_{lam0=(1, 0), r=3} = -18
+      c_{lam0=(1, 0), r=4} = -4
+      c_{lam0=(2, 0), r=2} = -4
+      c_{lam0=(2, 0), r=3} = 8
+
+  === p=1, j=5: A_p = sum c_{lam0, r} (s^*_lam0 * h_r^*) ===
+    Consistent! rank = 16, unknowns = 50
+    Particular solution (with free params set to 0):
+      c_{lam0=(0, 0), r=4} = 80
+      c_{lam0=(0, 0), r=5} = -10
+      c_{lam0=(0, 0), r=6} = -5
+      c_{lam0=(1, 0), r=3} = 50
+      c_{lam0=(1, 0), r=4} = -40
+      c_{lam0=(1, 0), r=5} = -10
+      c_{lam0=(2, 0), r=3} = -35
+      c_{lam0=(2, 0), r=4} = 5
+      c_{lam0=(3, 0), r=3} = 10
+
+  === p=1, j=6: A_p = sum c_{lam0, r} (s^*_lam0 * h_r^*) ===
+    Consistent! rank = 20, unknowns = 70
+    Particular solution (with free params set to 0):
+      c_{lam0=(0, 0), r=5} = 225
+      c_{lam0=(0, 0), r=7} = -6
+      c_{lam0=(1, 0), r=4} = 243
+      c_{lam0=(1, 0), r=5} = -60
+      c_{lam0=(1, 0), r=6} = -18
+      c_{lam0=(2, 0), r=3} = 45
+      c_{lam0=(2, 0), r=4} = -96
+      c_{lam0=(2, 0), r=5} = -6
+      c_{lam0=(3, 0), r=3} = -45
+      c_{lam0=(3, 0), r=4} = 30
+
+  === p=2, j=2: A_p = sum c_{lam0, r} (s^*_lam0 * h_r^*) ===
+    Consistent! rank = 9, unknowns = 22
+    Particular solution (with free params set to 0):
+      c_{lam0=(0, 0), r=1} = 2
+      c_{lam0=(0, 0), r=2} = -2
+      c_{lam0=(0, 0), r=3} = -2
+      c_{lam0=(1, 0), r=1} = -2
+      c_{lam0=(1, 0), r=2} = 1
+      c_{lam0=(1, 0), r=3} = -1
+      c_{lam0=(2, 0), r=2} = 1
+
+  === p=2, j=3: A_p = sum c_{lam0, r} (s^*_lam0 * h_r^*) ===
+    Consistent! rank = 12, unknowns = 34
+    Particular solution (with free params set to 0):
+      c_{lam0=(0, 0), r=2} = 16
+      c_{lam0=(0, 0), r=3} = -2
+      c_{lam0=(0, 0), r=4} = -3
+      c_{lam0=(1, 0), r=2} = -11
+      c_{lam0=(1, 0), r=3} = -6
+      c_{lam0=(1, 0), r=4} = -3
+      c_{lam0=(2, 0), r=2} = 3
+      c_{lam0=(2, 0), r=3} = 3
+
+  === p=2, j=4: A_p = sum c_{lam0, r} (s^*_lam0 * h_r^*) ===
+    Consistent! rank = 16, unknowns = 50
+    Particular solution (with free params set to 0):
+      c_{lam0=(0, 0), r=3} = 45
+      c_{lam0=(0, 0), r=4} = 14
+      c_{lam0=(1, 0), r=2} = 14
+      c_{lam0=(1, 0), r=3} = -1
+      c_{lam0=(1, 0), r=4} = -18
+      c_{lam0=(1, 0), r=5} = -6
+      c_{lam0=(2, 0), r=2} = -14
+      c_{lam0=(2, 0), r=3} = -6

@@ -1,0 +1,115 @@
+======================================================================
+Task 1: Ψ(e_2^b) for b = 2..6 using CORRECTED library
+======================================================================
+
+--- b = 2 ---
+  Psi time = 0.05s ; sym→E time = 0.01s
+  max (1,1,2)-weight = 2  (bound: b = 2)  OK
+  cross-check S(Ψ) via reduce_y ↔ e-basis substitution: MATCH
+  # weight-2 e-monomials (p_{1,1,2}(2)) = 4
+  # top-weight monomials with NONZERO coefficient = 4
+  top-weight polynomial (weight = 2):
+    2*E1**2 - 3*E1*E2 + E2**2 - 3*E3
+  full top-weight coefficient table:
+    E1^2 E2^0 E3^0  (weight 2): 2
+    E1^1 E2^1 E3^0  (weight 2): -3
+    E1^0 E2^2 E3^0  (weight 2): 1
+    E1^0 E2^0 E3^1  (weight 2): -3
+  full Ψ(e_2^2) in E-basis:
+    2*E1**2 - 3*E1*E2 - 6*E1 + E2**2 + 5*E2 - 3*E3 + 4
+
+--- b = 3 ---
+  Psi time = 0.10s ; sym→E time = 0.07s
+  max (1,1,2)-weight = 3  (bound: b = 3)  OK
+  cross-check S(Ψ) via reduce_y ↔ e-basis substitution: MATCH
+  # weight-3 e-monomials (p_{1,1,2}(3)) = 6
+  # top-weight monomials with NONZERO coefficient = 6
+  top-weight polynomial (weight = 3):
+    -6*E1**3 + 11*E1**2*E2 - 6*E1*E2**2 + 25*E1*E3 + E2**3 - 9*E2*E3
+  full top-weight coefficient table:
+    E1^3 E2^0 E3^0  (weight 3): -6
+    E1^2 E2^1 E3^0  (weight 3): 11
+    E1^1 E2^2 E3^0  (weight 3): -6
+    E1^0 E2^3 E3^0  (weight 3): 1
+    E1^1 E2^0 E3^1  (weight 3): 25
+    E1^0 E2^1 E3^1  (weight 3): -9
+  full Ψ(e_2^3) in E-basis:
+    -6*E1**3 + 11*E1**2*E2 + 36*E1**2 - 6*E1*E2**2 - 48*E1*E2 + 25*E1*E3 - 66*E1 + E2**3 + 14*E2**2 - 9*E2*E3 + 49*E2 - 57*E3 + 36
+
+--- b = 4 ---
+  Psi time = 0.18s ; sym→E time = 0.22s
+  max (1,1,2)-weight = 4  (bound: b = 4)  OK
+  cross-check S(Ψ) via reduce_y ↔ e-basis substitution: MATCH
+  # weight-4 e-monomials (p_{1,1,2}(4)) = 9
+  # top-weight monomials with NONZERO coefficient = 9
+  top-weight polynomial (weight = 4):
+    24*E1**4 - 50*E1**3*E2 + 35*E1**2*E2**2 - 190*E1**2*E3 - 10*E1*E2**3 + 118*E1*E2*E3 + E2**4 - 18*E2**2*E3 + 27*E3**2
+  full top-weight coefficient table:
+    E1^4 E2^0 E3^0  (weight 4): 24
+    E1^3 E2^1 E3^0  (weight 4): -50
+    E1^2 E2^2 E3^0  (weight 4): 35
+    E1^1 E2^3 E3^0  (weight 4): -10
+    E1^0 E2^4 E3^0  (weight 4): 1
+    E1^2 E2^0 E3^1  (weight 4): -190
+    E1^1 E2^1 E3^1  (weight 4): 118
+    E1^0 E2^2 E3^1  (weight 4): -18
+    E1^0 E2^0 E3^2  (weight 4): 27
+  full Ψ(e_2^4) in E-basis:
+    24*E1**4 - 50*E1**3*E2 - 240*E1**3 + 35*E1**2*E2**2 + 404*E1**2*E2 - 190*E1**2*E3 + 840*E1**2 - 10*E1*E2**3 - 200*E1*E2**2 + 118*E1*E2*E3 - 1030*E1*E2 + 1072*E1*E3 - 1200*E1 + E2**4 + 30*E2**3 - 18*E2**2*E3 + 273*E2**2 - 360*E2*E3 + 820*E2 + 27*E3**2 - 1422*E3 + 576
+
+--- b = 5 ---
+  Psi time = 0.33s ; sym→E time = 0.59s
+  max (1,1,2)-weight = 5  (bound: b = 5)  OK
+  cross-check S(Ψ) via reduce_y ↔ e-basis substitution: MATCH
+  # weight-5 e-monomials (p_{1,1,2}(5)) = 12
+  # top-weight monomials with NONZERO coefficient = 12
+  top-weight polynomial (weight = 5):
+    -120*E1**5 + 274*E1**4*E2 - 225*E1**3*E2**2 + 1526*E1**3*E3 + 85*E1**2*E2**3 - 1260*E1**2*E2*E3 - 15*E1*E2**4 + 340*E1*E2**2*E3 - 615*E1*E3**2 + E2**5 - 30*E2**3*E3 + 135*E2*E3**2
+  full top-weight coefficient table:
+    E1^5 E2^0 E3^0  (weight 5): -120
+    E1^4 E2^1 E3^0  (weight 5): 274
+    E1^3 E2^2 E3^0  (weight 5): -225
+    E1^2 E2^3 E3^0  (weight 5): 85
+    E1^1 E2^4 E3^0  (weight 5): -15
+    E1^0 E2^5 E3^0  (weight 5): 1
+    E1^3 E2^0 E3^1  (weight 5): 1526
+    E1^2 E2^1 E3^1  (weight 5): -1260
+    E1^1 E2^2 E3^1  (weight 5): 340
+    E1^0 E2^3 E3^1  (weight 5): -30
+    E1^1 E2^0 E3^2  (weight 5): -615
+    E1^0 E2^1 E3^2  (weight 5): 135
+
+--- b = 6 ---
+  Psi time = 0.63s ; sym→E time = 1.44s
+  max (1,1,2)-weight = 6  (bound: b = 6)  OK
+  cross-check S(Ψ) via reduce_y ↔ e-basis substitution: MATCH
+  # weight-6 e-monomials (p_{1,1,2}(6)) = 16
+  # top-weight monomials with NONZERO coefficient = 16
+  top-weight polynomial (weight = 6):
+    720*E1**6 - 1764*E1**5*E2 + 1624*E1**4*E2**2 - 13356*E1**4*E3 - 735*E1**3*E2**3 + 13276*E1**3*E2*E3 + 175*E1**2*E2**4 - 4845*E1**2*E2**2*E3 + 10300*E1**2*E3**2 - 21*E1*E2**5 + 770*E1*E2**3*E3 - 4095*E1*E2*E3**2 + E2**6 - 45*E2**4*E3 + 405*E2**2*E3**2 - 405*E3**3
+  full top-weight coefficient table:
+    E1^6 E2^0 E3^0  (weight 6): 720
+    E1^5 E2^1 E3^0  (weight 6): -1764
+    E1^4 E2^2 E3^0  (weight 6): 1624
+    E1^3 E2^3 E3^0  (weight 6): -735
+    E1^2 E2^4 E3^0  (weight 6): 175
+    E1^1 E2^5 E3^0  (weight 6): -21
+    E1^0 E2^6 E3^0  (weight 6): 1
+    E1^4 E2^0 E3^1  (weight 6): -13356
+    E1^3 E2^1 E3^1  (weight 6): 13276
+    E1^2 E2^2 E3^1  (weight 6): -4845
+    E1^1 E2^3 E3^1  (weight 6): 770
+    E1^0 E2^4 E3^1  (weight 6): -45
+    E1^2 E2^0 E3^2  (weight 6): 10300
+    E1^1 E2^1 E3^2  (weight 6): -4095
+    E1^0 E2^2 E3^2  (weight 6): 405
+    E1^0 E2^0 E3^3  (weight 6): -405
+
+======================================================================
+Summary of weights (should equal b in every row if bound tight)
+======================================================================
+  b=2: max weight = 2, # top-weight e-monomials = 4, # nonzero at top = 4
+  b=3: max weight = 3, # top-weight e-monomials = 6, # nonzero at top = 6
+  b=4: max weight = 4, # top-weight e-monomials = 9, # nonzero at top = 9
+  b=5: max weight = 5, # top-weight e-monomials = 12, # nonzero at top = 12
+  b=6: max weight = 6, # top-weight e-monomials = 16, # nonzero at top = 16

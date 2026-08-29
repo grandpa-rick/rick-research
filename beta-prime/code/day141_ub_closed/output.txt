@@ -1,0 +1,88 @@
+Building Day 140 P_b for b = 0..8
+
+==============================================================================
+U_b(w) for b = 2..8  (Day 140's P_b, direct from definition)
+==============================================================================
+
+  U_2(w) [deg_w = 0]:
+    [w^0]  3
+
+  U_3(w) [deg_w = 0]:
+    [w^0]  25*E1 + 9*E2 + 57
+
+  U_4(w) [deg_w = 1]:
+    [w^0]  190*E1**2 + 118*E1*E2 + 1045*E1 + 18*E2**2 + 333*E2 + 1395
+    [w^1]  27
+
+  U_5(w) [deg_w = 1]:
+    [w^0]  1526*E1**3 + 1260*E1**2*E2 + 14775*E1**2 + 340*E1*E2**2 + 8348*E1*E2 + 46312*E1 + 30*E2**3 + 1155*E2**2 + 13452*E2 + 46887
+    [w^1]  3*(205*E1 + 45*E2 + 741)
+
+  U_6(w) [deg_w = 2]:
+    [w^0]  13356*E1**4 + 13276*E1**3*E2 + 198176*E1**3 + 4845*E1**2*E2**2 + 151583*E1**2*E2 + 1072187*E1**2 + 770*E1*E2**3 + 37798*E1*E2**2 + 561902*E1*E2 + 2501274*E1 + 45*E2**4 + 3075*E2**3 + 71922*E2**2 + 674799*E2 + 2117907
+    [w^1]  10300*E1**2 + 4095*E1*E2 + 85128*E1 + 405*E2**2 + 17253*E2 + 171648
+    [w^2]  405
+
+  U_7(w) [deg_w = 2]:
+    [w^0]  128052*E1**5 + 145600*E1**4*E2 + 2685788*E1**4 + 64771*E1**3*E2**2 + 2504813*E1**3*E2 + 21940585*E1**3 + 14105*E1**2*E2**3 + 855876*E1**2*E2**2 + 15759774*E1**2*E2 + 87084755*E1**2 + 1505*E1*E2**4 + 127113*E1*E2**3 + 3682374*E1*E2**2 + 42897989*E1*E2 + 167567463*E1 + 63*E2**5 + 6930*E2**4 + 280161*E2**3 + 5149341*E2**2 + 42533604*E2 + 124748757
+    [w^1]  158788*E1**3 + 86905*E1**2*E2 + 2216296*E1**2 + 15750*E1*E2**2 + 824418*E1*E2 + 10076220*E1 + 945*E2**3 + 75978*E2**2 + 1915857*E2 + 14878584
+    [w^2]  189*(95*E1 + 15*E2 + 471)
+
+  U_8(w) [deg_w = 3]:
+    [w^0]  1341936*E1**6 + 1692776*E1**5*E2 + 37702036*E1**5 + 869652*E1**4*E2**2 + 40600360*E1**4*E2 + 430384096*E1**4 + 233156*E1**3*E2**3 + 17074998*E1**3*E2**2 + 380399880*E1**3*E2 + 2550450263*E1**3 + 34440*E1**2*E2**4 + 3509534*E1**2*E2**3 + 122956314*E1**2*E2**2 + 1737374889*E1**2*E2 + 8258346245*E1**2 + 2660*E1*E2**5 + 352898*E1*E2**4 + 17245224*E1*E2**3 + 384244859*E1*E2**2 + 3860694434*E1*E2 + 13822905201*E1 + 84*E2**6 + 13902*E2**5 + 886494*E2**4 + 27622533*E2**3 + 438913995*E2**2 + 3332246961*E2 + 9321286023
+    [w^1]  2422700*E1**4 + 1638924*E1**3*E2 + 50143560*E1**3 + 412510*E1**2*E2**2 + 25929608*E1**2*E2 + 380853163*E1**2 + 45780*E1*E2**3 + 4424280*E1*E2**2 + 134147586*E1*E2 + 1254882846*E1 + 1890*E2**4 + 249228*E2**3 + 11660193*E2**2 + 226465686*E2 + 1508901471
+    [w^2]  21*(25180*E1**2 + 7380*E1*E2 + 276945*E1 + 540*E2**2 + 41337*E2 + 745821)
+    [w^3]  8505
+
+==============================================================================
+VERIFICATION that F_140 does NOT factor as A(T) · exp(E3 · M(T))
+==============================================================================
+Highest E3-power in log F (as truncated series) by T-order:
+  T^1: max E3-degree = 0, E3-degrees present = [0]
+  T^2: max E3-degree = 1, E3-degrees present = [0, 1]
+  T^3: max E3-degree = 1, E3-degrees present = [0, 1]
+  T^4: max E3-degree = 1, E3-degrees present = [0, 1]
+  T^5: max E3-degree = 2, E3-degrees present = [0, 1, 2]
+  T^6: max E3-degree = 2, E3-degrees present = [0, 1, 2]
+  T^7: max E3-degree = 2, E3-degrees present = [0, 1, 2]
+  T^8: max E3-degree = 3, E3-degrees present = [0, 1, 2, 3]
+
+Conclusion: if log F had ONLY E3^0 and E3^1 terms, F = H·exp(E3·M) would work.
+But E3^2 appears at T^5 and E3^3 at higher orders, so factorization fails.
+
+==============================================================================
+HONEST EGF CLOSED FORM
+==============================================================================
+
+    Σ_b U_b(w) T^b/b! = [F_140(T)|_{E3 = w - φ_1} - H(T)] / (w - φ_1)
+
+where:
+    H(T) = Σ_b p_b T^b/b!,   p_b = ∏_{k=1}^b (E2 + kE1 + k²),   φ_1 = E2 + E1 + 1.
+
+This is a legitimate closed form of the EGF but F_140(T) itself does not have
+a compact known closed form (unlike Day 130's Ψ, whose EGF was A·exp(E3·M)).
+Attack angle (a) does NOT yield a simplification.
+
+==============================================================================
+PATTERNS SEEN
+==============================================================================
+
+1. Leading coefficient of U_b (in w) at highest degree ⌊(b-2)/2⌋:
+     b=2: 3
+     b=4: 27
+     b=6: 405
+     b=8: 8505
+   Ratios 9, 15, 21 = 3(2d+1); so LC(b=2d+2) = ∏_{j=1}^{d+1} 3(2j-1) = 3 · 9 · 15 · 21 · ...
+
+2. For odd b, the leading coefficient is a polynomial in E1, E2:
+     b=3: 25 E1 + 9 E2 + 57
+     b=5: 3(205 E1 + 45 E2 + 741)
+     b=7: 189(95 E1 + 15 E2 + 471)
+
+3. U_b(0) and U_b(φ_1) do not obviously factor.
+
+4. Attack angle (a) is blocked; further attack should try:
+   (i)  factor Day 140's log F structurally (why does E3^2 appear at T^5?)
+   (ii) find a substitution E3 = f(w, T, E1, E2) that DOES linearize the recursion
+   (iii) study U_b(w) as a divided difference in a broader interpolation family
+

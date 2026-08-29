@@ -1,0 +1,187 @@
+Building A_p tables and coeffs...
+...done
+==============================================================================
+SEED ANALYSIS -- (p=1 catalan pattern?)
+==============================================================================
+
+--- p = 1 ---
+  j=1: raw = [1], gcd = 1, normalized = [1]
+  j=2: raw = [1, 1], gcd = 1, normalized = [1, 1]
+  j=4: raw = [-4, -6, -2], gcd = 2, normalized = [-2, -3, -1]
+  j=5: raw = [-25, -20, -5], gcd = 5, normalized = [-5, -4, -1]
+  j=6: raw = [-45, -81, -45, -9], gcd = 9, normalized = [-5, -9, -5, -1]
+  j=7: raw = [-196, -196, -84, -14], gcd = 14, normalized = [-14, -14, -6, -1]
+  j=8: raw = [-280, -560, -400, -140, -20], gcd = 20, normalized = [-14, -28, -20, -7, -1]
+  j=9: raw = [-1134, -1296, -729, -216, -27], gcd = 27, normalized = [-42, -48, -27, -8, -1]
+  j=10: raw = [-1470, -3150, -2625, -1225, -315, -35], gcd = 35, normalized = [-42, -90, -75, -35, -9, -1]
+
+--- p = 2 ---
+  j=2: raw = [-2, 0], gcd = -2, normalized = [1, 0]
+  j=3: raw = [-8, -1], gcd = 1, normalized = [-8, -1]
+  j=4: raw = [-14, -15, -1], gcd = 1, normalized = [-14, -15, -1]
+  j=5: raw = [-15, 0, 5], gcd = 5, normalized = [-3, 0, 1]
+  j=6: raw = [65, 135, 95, 25], gcd = 5, normalized = [13, 27, 19, 5]
+  j=7: raw = [770, 812, 378, 70], gcd = 14, normalized = [55, 58, 27, 5]
+  j=8: raw = [1876, 3808, 2800, 1022, 154], gcd = 14, normalized = [134, 272, 200, 73, 11]
+  j=9: raw = [11340, 13104, 7506, 2280, 294], gcd = 6, normalized = [1890, 2184, 1251, 380, 49]
+  j=10: raw = [20160, 43380, 36450, 17220, 4500, 510], gcd = 30, normalized = [672, 1446, 1215, 574, 150, 17]
+
+--- p = 3 ---
+  j=4: raw = [16, 18, 2], gcd = 2, normalized = [8, 9, 1]
+  j=5: raw = [145, 80, 5], gcd = 5, normalized = [29, 16, 1]
+  j=6: raw = [285, 405, 105, -15], gcd = 15, normalized = [19, 27, 7, -1]
+  j=7: raw = [140, -280, -420, -140], gcd = 140, normalized = [1, -2, -3, -1]
+  j=8: raw = [-3640, -8120, -7000, -3080, -560], gcd = 280, normalized = [-13, -29, -25, -11, -2]
+  j=9: raw = [-47628, -57456, -35154, -11592, -1638], gcd = 126, normalized = [-378, -456, -279, -92, -13]
+  j=10: raw = [-132300, -288540, -248850, -122010, -33390, -3990], gcd = 210, normalized = [-630, -1374, -1185, -581, -159, -19]
+
+--- p = 4 ---
+  j=4: raw = [24, 0, 0], gcd = 24, normalized = [1, 0, 0]
+  j=5: raw = [10, -64, -6], gcd = 2, normalized = [5, -32, -3]
+  j=6: raw = [-430, -864, -460, -26], gcd = 2, normalized = [-215, -432, -230, -13]
+  j=7: raw = [-4984, -4354, -1176, 49], gcd = 7, normalized = [-712, -622, -168, 7]
+  j=8: raw = [-7994, -12908, -4340, 1463, 889], gcd = 7, normalized = [-1142, -1844, -620, 209, 127]
+  j=9: raw = [40698, 66528, 57267, 25872, 4809], gcd = 21, normalized = [1938, 3168, 2727, 1232, 229]
+  j=10: raw = [371826, 846090, 789075, 429135, 132237, 17913], gcd = 21, normalized = [17706, 40290, 37575, 20435, 6297, 853]
+
+==============================================================================
+Testing p=1 seed against Catalan/binomial formulas...
+==============================================================================
+  j=2 (k=1):  seeds = [1, 1]   abs = [1, 1]
+     candidate 'binom_diff' = [1, 1]
+     candidate 'binom_prod' = [1, 0]
+     candidate 'naray_alt' = [1, 0]
+  j=4 (k=2):  seeds = [-4, -6, -2]   abs = [4, 6, 2]
+     candidate 'binom_diff' = [2, 3, 1]
+     candidate 'binom_prod' = [2, 2, 0]
+     candidate 'naray_alt' = [2, 1, 0]
+  j=6 (k=3):  seeds = [-45, -81, -45, -9]   abs = [45, 81, 45, 9]
+     candidate 'binom_diff' = [5, 9, 5, 1]
+     candidate 'binom_prod' = [3, 9, 3, 0]
+     candidate 'naray_alt' = [3, 4, 1, 0]
+  j=8 (k=4):  seeds = [-280, -560, -400, -140, -20]   abs = [280, 560, 400, 140, 20]
+     candidate 'binom_diff' = [14, 28, 20, 7, 1]
+     candidate 'binom_prod' = [4, 24, 24, 4, 0]
+     candidate 'naray_alt' = [4, 12, 8, 1, 0]
+  j=10 (k=5):  seeds = [-1470, -3150, -2625, -1225, -315, -35]   abs = [1470, 3150, 2625, 1225, 315, 35]
+     candidate 'binom_diff' = [42, 90, 75, 35, 9, 1]
+     candidate 'binom_prod' = [5, 50, 100, 50, 5, 0]
+     candidate 'naray_alt' = [5, 25, 33, 12, 1, 0]
+
+==============================================================================
+(B) TOP-LEVEL Pieri match testing
+==============================================================================
+
+  === p=1, j=2: testing top-level Pieri matches ===
+    A_p top-level (|mu|=3): [((2, 1), 2)]
+
+  === p=1, j=3: testing top-level Pieri matches ===
+    A_p top-level (|mu|=4): [((2, 2), 3), ((3, 1), 3)]
+    lam0=(2, 1), r=1: TOP LEVEL MATCHES with factor 3
+        pieri = [((2, 2), 1), ((3, 1), 1)]
+    lam0=(2, 0), r=2: TOP LEVEL MATCHES with factor 3
+        pieri = [((2, 2), 1), ((3, 1), 1), ((4, 0), 1)]
+
+  === p=1, j=4: testing top-level Pieri matches ===
+    A_p top-level (|mu|=5): [((3, 2), 8), ((4, 1), 4)]
+
+  === p=1, j=5: testing top-level Pieri matches ===
+    A_p top-level (|mu|=6): [((3, 3), 10), ((4, 2), 15), ((5, 1), 5)]
+
+  === p=1, j=6: testing top-level Pieri matches ===
+    A_p top-level (|mu|=7): [((4, 3), 30), ((5, 2), 24), ((6, 1), 6)]
+
+  === p=1, j=7: testing top-level Pieri matches ===
+    A_p top-level (|mu|=8): [((4, 4), 35), ((5, 3), 63), ((6, 2), 35), ((7, 1), 7)]
+
+  === p=1, j=8: testing top-level Pieri matches ===
+    A_p top-level (|mu|=9): [((5, 4), 112), ((6, 3), 112), ((7, 2), 48), ((8, 1), 8)]
+    lam0=(5, 3), r=1: TOP LEVEL MATCHES with factor 112
+        pieri = [((5, 4), 1), ((6, 3), 1)]
+    lam0=(4, 3), r=2: TOP LEVEL MATCHES with factor 112
+        pieri = [((5, 4), 1), ((6, 3), 1)]
+
+  === p=2, j=4: testing top-level Pieri matches ===
+    A_p top-level (|mu|=6): [((3, 3), 6), ((4, 2), 6)]
+    lam0=(3, 1), r=2: TOP LEVEL MATCHES with factor 6
+        pieri = [((3, 3), 1), ((4, 2), 1), ((5, 1), 1)]
+    lam0=(3, 0), r=3: TOP LEVEL MATCHES with factor 6
+        pieri = [((3, 3), 1), ((4, 2), 1), ((5, 1), 1), ((6, 0), 1)]
+
+  === p=2, j=5: testing top-level Pieri matches ===
+    A_p top-level (|mu|=7): [((4, 3), 20), ((5, 2), 10)]
+
+  === p=2, j=6: testing top-level Pieri matches ===
+    A_p top-level (|mu|=8): [((4, 4), 30), ((5, 3), 45), ((6, 2), 15)]
+
+  === p=2, j=7: testing top-level Pieri matches ===
+    A_p top-level (|mu|=9): [((5, 4), 105), ((6, 3), 84), ((7, 2), 21)]
+
+  === p=2, j=8: testing top-level Pieri matches ===
+    A_p top-level (|mu|=10): [((5, 5), 140), ((6, 4), 252), ((7, 3), 140), ((8, 2), 28)]
+
+  === p=3, j=6: testing top-level Pieri matches ===
+    A_p top-level (|mu|=9): [((5, 4), 40), ((6, 3), 20)]
+
+  === p=3, j=7: testing top-level Pieri matches ===
+    A_p top-level (|mu|=10): [((5, 5), 70), ((6, 4), 105), ((7, 3), 35)]
+
+  === p=3, j=8: testing top-level Pieri matches ===
+    A_p top-level (|mu|=11): [((6, 5), 280), ((7, 4), 224), ((8, 3), 56)]
+
+  === p=4, j=8: testing top-level Pieri matches ===
+    A_p top-level (|mu|=12): [((6, 6), 140), ((7, 5), 210), ((8, 4), 70)]
+
+==============================================================================
+(D) FULL Pieri linear-combination test
+==============================================================================
+
+  === p=1, j=2: express A_p as sum of Pieri products (s^*_lam0 * h_p^*) ===
+    No exact solution. Rank(M) = 3, rank(M|y) = 4
+
+  === p=1, j=3: express A_p as sum of Pieri products (s^*_lam0 * h_p^*) ===
+    No exact solution. Rank(M) = 4, rank(M|y) = 5
+
+  === p=1, j=4: express A_p as sum of Pieri products (s^*_lam0 * h_p^*) ===
+    No exact solution. Rank(M) = 5, rank(M|y) = 6
+
+  === p=1, j=5: express A_p as sum of Pieri products (s^*_lam0 * h_p^*) ===
+    No exact solution. Rank(M) = 6, rank(M|y) = 7
+
+  === p=1, j=6: express A_p as sum of Pieri products (s^*_lam0 * h_p^*) ===
+    No exact solution. Rank(M) = 7, rank(M|y) = 8
+
+  === p=1, j=7: express A_p as sum of Pieri products (s^*_lam0 * h_p^*) ===
+    No exact solution. Rank(M) = 8, rank(M|y) = 9
+
+  === p=1, j=8: express A_p as sum of Pieri products (s^*_lam0 * h_p^*) ===
+    No exact solution. Rank(M) = 9, rank(M|y) = 10
+
+  === p=2, j=4: express A_p as sum of Pieri products (s^*_lam0 * h_p^*) ===
+    No exact solution. Rank(M) = 7, rank(M|y) = 8
+
+  === p=2, j=5: express A_p as sum of Pieri products (s^*_lam0 * h_p^*) ===
+    No exact solution. Rank(M) = 8, rank(M|y) = 9
+
+  === p=2, j=6: express A_p as sum of Pieri products (s^*_lam0 * h_p^*) ===
+    No exact solution. Rank(M) = 10, rank(M|y) = 11
+
+  === p=2, j=7: express A_p as sum of Pieri products (s^*_lam0 * h_p^*) ===
+    No exact solution. Rank(M) = 11, rank(M|y) = 12
+
+  === p=2, j=8: express A_p as sum of Pieri products (s^*_lam0 * h_p^*) ===
+    No exact solution. Rank(M) = 13, rank(M|y) = 14
+
+  === p=3, j=6: express A_p as sum of Pieri products (s^*_lam0 * h_p^*) ===
+    No exact solution. Rank(M) = 12, rank(M|y) = 13
+
+  === p=3, j=7: express A_p as sum of Pieri products (s^*_lam0 * h_p^*) ===
+    No exact solution. Rank(M) = 14, rank(M|y) = 15
+
+  === p=3, j=8: express A_p as sum of Pieri products (s^*_lam0 * h_p^*) ===
+    No exact solution. Rank(M) = 16, rank(M|y) = 17
+
+  === p=4, j=8: express A_p as sum of Pieri products (s^*_lam0 * h_p^*) ===
+    No exact solution. Rank(M) = 19, rank(M|y) = 20
+
+Done.

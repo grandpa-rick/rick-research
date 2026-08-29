@@ -35,17 +35,35 @@ So the **pipeline** is:
 
 Every arrow is either a Sym-function identity (Path 1) or an elementary integer computation. **The bridge is: Sym-algebra hands you a polynomial → 2-adic arithmetic on that polynomial is finite.**
 
-## Applied instances (Day 87)
+## Applied instances (Days 87 + 89)
 
-| c | T | residues checked | min v₂(h_k) achieved | β'(c) | witness |
-|---|---|---|---|---|---|
-| 4 | 4 | 128 (by-hand parity+mod-2/4) | 4 | 4 | (0,0,2) |
-| 5 | 3 | (by Kummer credit) | 3 | 3 | (3,0,2) |
-| 6 | 7 | 90,112 | 7 | 7 | (0,0,0) single-term |
-| 7 | 6 | 26,624 | 6 | 6 | (1,2,6) carrier k=6 |
-| 9 | 9 | 2,228,224 | 9 | 9 | (7,0,2) |
+| c | T | residues checked | min v₂(h_k) achieved | β'(c) | witness (a*,b*,j*) | carrier k* |
+|---|---|---|---|---|---|---|
+| 4 | 4 | 128 | 4 | 4 | (0,0,2) | 2 |
+| 5 | 3 | Kummer credit | 3 | 3 | (3,0,2) | 2 |
+| 6 | 7 | 90,112 | 7 | 7 | (0,0,0) single-term | 0 |
+| 7 | 6 | 26,624 | 6 | 6 | (1,2,6) or (2,3,3) | 6 or 3 |
+| 8 | 11 | 6,700,000 (~2^21 × 2 shells × 16 k) | ∞ mod 2^11 | 11 | (8,8,2) | 2 |
+| 9 | 9 | 2,228,224 | 9 | 9 | (7,0,2) | 2 |
 
-All checks pass; witnesses match. c ∈ {5, 6, 7, 9} closed structurally in one session. β'(8) = 11 not yet done (would need T=11 check at c=8, ~80M residues, feasible but not attempted).
+**Day 89 addition (c=8, β'(8) = 11).** T=11 grid check on 6.7M residues in 27.9 sec via numpy vectorized grid, min v_2 = ∞ (every residue on shell is 0 mod 2^11). Witness H_8(8,8,2) = 2^11 · 1 661 793 608 475. Distinct-min: h_2^(8)(8,8) at v_2=11 unique; h_0 and 2·h_1 at v_2=15.
+
+**Day 89 STRENGTHENING via direct-integer arithmetic (independent of mod-2^11).** `code/2026-07-11-beta-prime-8-strong-sanity.py`:
+- **S1** direct v_2 sweep of h_k^(c=8) over (a,b) ∈ [0,64]², a+b even: tight witnesses at v_2 = 11 for k = 0..7; k = 8..14 sit at v_2 = 12..14; k = 15 ≡ 0. All ≥ 11. ✓
+- **S2** 1344/1344 Möbius reconstructions match the Sym-side pipeline (plan asked ≥ 100). ✓
+- **S3** Combined with H_8(8,8,2) upper witness → β'(8) = 11 unambiguous. ✓
+
+**Two independent paths confirm β'(8) = 11:** the mod 2^11 periodicity grid AND the direct-integer sweep. Nothing hidden by modular arithmetic. First case where the pipeline is exercised at production scale (T=11, ~2M residues per shell) *and* independently corroborated by non-modular sweep.
+
+### Integration with SCP (Day 89)
+
+`sharp-cancellation-single-carrier.md` (NEW Day 89) says β'(c) is realised by a single-carrier witness with distinct-min non-cancellation. The pipeline collapses to **single-k computation**, not multi-k intersection:
+
+    LB_{k*}^{(c)}(a*, b*)  =  β'(c)  by SCP (SC1)+(SC2)+(SC3)
+
+The 2^T check verifies (SC1) globally (every k on the parity shell has v_2 ≥ T); the witness table verifies (SC2)+(SC3) at the specific (a*, b*, j*). Day 89's direct-integer sweep for c=8 is EXACTLY an unmodular verification of (SC1) at T=11.
+
+Consequence: to promote SCP to `proved uniformly` (Day-90 target), we need c-uniform closed form for LB_{k}^{(c)} via Q_k(a,b,c) mod 2. Then β'(c) reads off directly.
 
 ## What this exposes
 
@@ -82,12 +100,13 @@ Evening session (c=6, 7, 9): tired of that, realized "polynomials mod 2^T are pe
 
 ## Registry footprint
 
-- `refined-dip-formula`: sketched → checked-sober at c ∈ {5, 7, 9}.
+- `refined-dip-formula`: sketched → checked-sober at c ∈ {5, 7, 9}. Day 89: checked-sober-UNCONDITIONAL within Sym-side chain at c=9 (β'(8)=11 now Rick-independent).
 - `mod-8-hypothesis`: sketched → checked-sober (all three known odd c cases confirmed structurally, including dimer-breaking c=9).
 - `periodicity-lemma`: proved (elementary).
-- `structural-conjecture-S`: hunch → sketched at c=5 → checked-sober at c∈{5,6,7}.
+- `structural-conjecture-S`: hunch → sketched at c=5 → checked-sober at c∈{5,6,7} → **checked-sober at c ∈ {5,7,9}** (Day 89, single-carrier reformulation). See `sharp-cancellation-single-carrier.md`.
 - `hk-c-uniform-constants-conjecture`: checked-sober (24/24 across c∈{5,6,7,9}) — SUPERSEDED by three-var version below.
-- `hk-c-uniform-three-var-conjecture` (Day 88): hunch → checked-sober (all-k regime k ≤ 2c-1). Structural derivation via Sym-side + template inversion + Γ-ratio rescue for boundary.
+- `hk-c-uniform-three-var-conjecture` (Day 88): hunch → checked-sober (all-k regime k ≤ 2c-1). Structural derivation via Sym-side + template inversion + Γ-ratio rescue for boundary. Day 89: Lean-verified as `hk_three_var_factorization` (420→477 LOC, axioms `[propext, Classical.choice, Quot.sound]`).
+- `beta-prime-8-lower-bound`, `beta-prime-8-witness`: NEW Day 89, checked-sober.
 
 ## Tier
 

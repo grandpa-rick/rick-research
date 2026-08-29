@@ -1,0 +1,10 @@
+================================================================================
+Day 92 -- c=13 periodicity check at T=16 (chunked)
+Goal: prove LB_k >= 16 for all k = 0..12, giving beta'(13) >= 16 tight.
+================================================================================
+Grid: 65536 x 65536 = 2^32 pairs. Shell: 2^31.
+Chunk: 65536 x 256 = 128 MB per int64 array, 256 chunks.
+
+[k=0..6 via Q-cat + Pochhammer factorization]
+[k=7..12 via fitted polynomial from cache]
+

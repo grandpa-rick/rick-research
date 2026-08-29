@@ -1,0 +1,17 @@
+log G(T) where G(T) = F(T) * (1 + T E1)^{1 - E2/E1}
+F(T) = sum_b Psi(e_2^b)|_top * T^b / b!
+
+T^0: 0
+       factored: 0
+T^1: 0
+       factored: 0
+T^2: -3*E3/2
+       factored: -3*E3/2
+T^3: 8*E1*E3/3
+       factored: 8*E1*E3/3
+T^4: -15*E1**2*E3/4
+       factored: -15*E1**2*E3/4
+T^5: 24*E1**3*E3/5
+       factored: 24*E1**3*E3/5
+T^6: -35*E1**4*E3/6
+       factored: -35*E1**4*E3/6

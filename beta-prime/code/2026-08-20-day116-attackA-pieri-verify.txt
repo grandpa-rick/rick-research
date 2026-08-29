@@ -1,0 +1,585 @@
+==============================================================================
+Day 116 -- Attack A: A_p =? h^*_p * A_0 for A_0 = (b+c)^{↓j}.
+==============================================================================
+
+Building S_j, A_p tables up to j = 10...
+
+==============================================================================
+STEP 1: Verify A_0(b, c, j) = (b + c)^{↓j}.
+==============================================================================
+  j = 0: A_0 = (b+c)^{↓j}? FAIL diff=-1
+  j = 1: A_0 = (b+c)^{↓j}? OK
+  j = 2: A_0 = (b+c)^{↓j}? OK
+  j = 3: A_0 = (b+c)^{↓j}? OK
+  j = 4: A_0 = (b+c)^{↓j}? OK
+  j = 5: A_0 = (b+c)^{↓j}? OK
+  j = 6: A_0 = (b+c)^{↓j}? OK
+  j = 7: A_0 = (b+c)^{↓j}? OK
+  j = 8: A_0 = (b+c)^{↓j}? OK
+  j = 9: A_0 = (b+c)^{↓j}? OK
+  j = 10: A_0 = (b+c)^{↓j}? OK
+
+==============================================================================
+STEP 2: Compare A_p vs h^*_p * A_0 (as polynomials in b, c).
+==============================================================================
+
+--- p = 1 ---
+  h^*_1(b, c) = b + c
+  j=1: A_p != c * h_p*A_0. deg(diff)_{b,c} = (2, 2).
+  j=2: A_p != c * h_p*A_0. deg(diff)_{b,c} = (3, 3).
+  j=3: A_p != c * h_p*A_0. deg(diff)_{b,c} = (4, 4).
+  j=4: A_p != c * h_p*A_0. deg(diff)_{b,c} = (5, 5).
+  j=5: A_p != c * h_p*A_0. deg(diff)_{b,c} = (6, 6).
+  j=6: A_p != c * h_p*A_0. deg(diff)_{b,c} = (7, 7).
+  j=7: A_p != c * h_p*A_0. deg(diff)_{b,c} = (8, 8).
+  j=8: A_p != c * h_p*A_0. deg(diff)_{b,c} = (9, 9).
+  j=9: A_p != c * h_p*A_0. deg(diff)_{b,c} = (10, 10).
+  j=10: A_p != c * h_p*A_0. deg(diff)_{b,c} = (11, 11).
+
+--- p = 2 ---
+  h^*_2(b, c) = b**2 + b*c - b + c**2 - 2*c
+  j=2: A_p != c * h_p*A_0. deg(diff)_{b,c} = (4, 4).
+  j=3: A_p != c * h_p*A_0. deg(diff)_{b,c} = (5, 5).
+  j=4: A_p != c * h_p*A_0. deg(diff)_{b,c} = (6, 6).
+  j=5: A_p != c * h_p*A_0. deg(diff)_{b,c} = (7, 7).
+  j=6: A_p != c * h_p*A_0. deg(diff)_{b,c} = (8, 8).
+  j=7: A_p != c * h_p*A_0. deg(diff)_{b,c} = (9, 9).
+  j=8: A_p != c * h_p*A_0. deg(diff)_{b,c} = (10, 10).
+  j=9: A_p != c * h_p*A_0. deg(diff)_{b,c} = (11, 11).
+  j=10: A_p != c * h_p*A_0. deg(diff)_{b,c} = (12, 12).
+
+--- p = 3 ---
+  h^*_3(b, c) = (b + c - 2)*(b**2 - b + c**2 - 3*c)
+  j=3: A_p != c * h_p*A_0. deg(diff)_{b,c} = (6, 6).
+  j=4: A_p != c * h_p*A_0. deg(diff)_{b,c} = (7, 7).
+  j=5: A_p != c * h_p*A_0. deg(diff)_{b,c} = (8, 8).
+  j=6: A_p != c * h_p*A_0. deg(diff)_{b,c} = (9, 9).
+  j=7: A_p != c * h_p*A_0. deg(diff)_{b,c} = (10, 10).
+  j=8: A_p != c * h_p*A_0. deg(diff)_{b,c} = (11, 11).
+  j=9: A_p != c * h_p*A_0. deg(diff)_{b,c} = (12, 12).
+  j=10: A_p != c * h_p*A_0. deg(diff)_{b,c} = (13, 13).
+
+--- p = 4 ---
+  h^*_4(b, c) = b**4 + b**3*c - 6*b**3 + b**2*c**2 - 7*b**2*c + 11*b**2 + b*c**3 - 8*b*c**2 + 18*b*c - 6*b + c**4 - 9*c**3 + 26*c**2 - 24*c
+  j=4: A_p != c * h_p*A_0. deg(diff)_{b,c} = (8, 8).
+  j=5: A_p != c * h_p*A_0. deg(diff)_{b,c} = (9, 9).
+  j=6: A_p != c * h_p*A_0. deg(diff)_{b,c} = (10, 10).
+  j=7: A_p != c * h_p*A_0. deg(diff)_{b,c} = (11, 11).
+  j=8: A_p != c * h_p*A_0. deg(diff)_{b,c} = (12, 12).
+  j=9: A_p != c * h_p*A_0. deg(diff)_{b,c} = (13, 13).
+  j=10: A_p != c * h_p*A_0. deg(diff)_{b,c} = (14, 14).
+
+==============================================================================
+STEP 3: Test A_p = P_p(b,c,j) * A_0 for polynomial P_p in (b, c, j).
+        If yes, factor out A_0 and study P_p.
+==============================================================================
+
+--- p = 1 ---
+  j=1: A_p not divisible by A_0. remainder nonzero.
+  j=2: A_p not divisible by A_0. remainder nonzero.
+  j=3: A_p not divisible by A_0. remainder nonzero.
+  j=4: A_p not divisible by A_0. remainder nonzero.
+  j=5: A_p not divisible by A_0. remainder nonzero.
+  j=6: A_p not divisible by A_0. remainder nonzero.
+  j=7: A_p not divisible by A_0. remainder nonzero.
+  j=8: A_p not divisible by A_0. remainder nonzero.
+  j=9: A_p not divisible by A_0. remainder nonzero.
+  j=10: A_p not divisible by A_0. remainder nonzero.
+
+--- p = 2 ---
+  j=2: A_p not divisible by A_0. remainder nonzero.
+  j=3: A_p not divisible by A_0. remainder nonzero.
+  j=4: A_p not divisible by A_0. remainder nonzero.
+  j=5: A_p not divisible by A_0. remainder nonzero.
+  j=6: A_p not divisible by A_0. remainder nonzero.
+  j=7: A_p not divisible by A_0. remainder nonzero.
+  j=8: A_p not divisible by A_0. remainder nonzero.
+  j=9: A_p not divisible by A_0. remainder nonzero.
+  j=10: A_p not divisible by A_0. remainder nonzero.
+
+--- p = 3 ---
+  j=3: A_p not divisible by A_0. remainder nonzero.
+  j=4: A_p not divisible by A_0. remainder nonzero.
+  j=5: A_p not divisible by A_0. remainder nonzero.
+  j=6: A_p not divisible by A_0. remainder nonzero.
+  j=7: A_p not divisible by A_0. remainder nonzero.
+  j=8: A_p not divisible by A_0. remainder nonzero.
+  j=9: A_p not divisible by A_0. remainder nonzero.
+  j=10: A_p not divisible by A_0. remainder nonzero.
+
+--- p = 4 ---
+  j=4: A_p not divisible by A_0. remainder nonzero.
+  j=5: A_p not divisible by A_0. remainder nonzero.
+  j=6: A_p not divisible by A_0. remainder nonzero.
+  j=7: A_p not divisible by A_0. remainder nonzero.
+  j=8: A_p not divisible by A_0. remainder nonzero.
+  j=9: A_p not divisible by A_0. remainder nonzero.
+  j=10: A_p not divisible by A_0. remainder nonzero.
+
+==============================================================================
+STEP 4: Expand h^*_p * A_0 in shifted-Schur basis; compare to A_p.
+==============================================================================
+
+--- p = 1 ---
+
+  j=1:
+    A_p support: [(1, 0), (1, 1)]...
+    h^*_p*A_0 support: [(1, 0), (1, 1), (2, 0)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(2, 0): coeff = -1
+
+  j=2:
+    A_p support: [(1, 1), (2, 0), (2, 1)]...
+    h^*_p*A_0 support: [(1, 1), (2, 0), (2, 1), (3, 0)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(1, 1): coeff = -1
+      lam=(2, 0): coeff = -1
+      lam=(3, 0): coeff = -1
+
+  j=3:
+    A_p support: [(2, 2), (3, 1)]...
+    h^*_p*A_0 support: [(2, 1), (3, 0), (2, 2), (3, 1), (4, 0)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(2, 1): coeff = -6
+      lam=(3, 0): coeff = -3
+      lam=(2, 2): coeff = 1
+      lam=(4, 0): coeff = -1
+
+  j=4:
+    A_p support: [(2, 2), (3, 1), (4, 0), (3, 2), (4, 1)]...
+    h^*_p*A_0 support: [(2, 2), (3, 1), (4, 0), (3, 2), (4, 1), (5, 0)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(2, 2): coeff = -12
+      lam=(3, 1): coeff = -18
+      lam=(4, 0): coeff = -6
+      lam=(3, 2): coeff = 3
+      lam=(5, 0): coeff = -1
+
+  j=5:
+    A_p support: [(3, 2), (4, 1), (5, 0), (3, 3), (4, 2), (5, 1)]...
+    h^*_p*A_0 support: [(3, 2), (4, 1), (5, 0), (3, 3), (4, 2), (5, 1)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(3, 2): coeff = -50
+      lam=(4, 1): coeff = -40
+      lam=(5, 0): coeff = -10
+      lam=(3, 3): coeff = 5
+      lam=(4, 2): coeff = 6
+      lam=(6, 0): coeff = -1
+
+  j=6:
+    A_p support: [(3, 3), (4, 2), (5, 1), (6, 0), (4, 3), (5, 2)]...
+    h^*_p*A_0 support: [(3, 3), (4, 2), (5, 1), (6, 0), (4, 3), (5, 2)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(3, 3): coeff = -75
+      lam=(4, 2): coeff = -135
+      lam=(5, 1): coeff = -75
+      lam=(6, 0): coeff = -15
+      lam=(4, 3): coeff = 16
+      lam=(5, 2): coeff = 10
+      lam=(7, 0): coeff = -1
+
+  j=7:
+    A_p support: [(4, 3), (5, 2), (6, 1), (7, 0), (4, 4), (5, 3)]...
+    h^*_p*A_0 support: [(4, 3), (5, 2), (6, 1), (7, 0), (4, 4), (5, 3)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(4, 3): coeff = -294
+      lam=(5, 2): coeff = -294
+      lam=(6, 1): coeff = -126
+      lam=(7, 0): coeff = -21
+      lam=(4, 4): coeff = 21
+      lam=(5, 3): coeff = 35
+      lam=(6, 2): coeff = 15
+      lam=(8, 0): coeff = -1
+
+  j=8:
+    A_p support: [(4, 4), (5, 3), (6, 2), (7, 1), (8, 0), (5, 4)]...
+    h^*_p*A_0 support: [(4, 4), (5, 3), (6, 2), (7, 1), (8, 0), (5, 4)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(4, 4): coeff = -392
+      lam=(5, 3): coeff = -784
+      lam=(6, 2): coeff = -560
+      lam=(7, 1): coeff = -196
+      lam=(8, 0): coeff = -28
+      lam=(5, 4): coeff = 70
+      lam=(6, 3): coeff = 64
+      lam=(7, 2): coeff = 21
+      lam=(9, 0): coeff = -1
+
+--- p = 2 ---
+
+  j=2:
+    A_p support: [(1, 1), (2, 1), (2, 2)]...
+    h^*_p*A_0 support: [(2, 0), (2, 1), (3, 0), (2, 2), (3, 1), (4, 0)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(1, 1): coeff = -2
+      lam=(2, 0): coeff = -2
+      lam=(2, 1): coeff = -2
+      lam=(3, 0): coeff = -4
+      lam=(3, 1): coeff = -2
+      lam=(4, 0): coeff = -1
+
+  j=3:
+    A_p support: [(2, 1), (3, 0), (2, 2), (3, 1), (3, 2)]...
+    h^*_p*A_0 support: [(2, 1), (3, 0), (2, 2), (3, 1), (4, 0), (3, 2)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(2, 1): coeff = -14
+      lam=(3, 0): coeff = -7
+      lam=(2, 2): coeff = -3
+      lam=(3, 1): coeff = -9
+      lam=(4, 0): coeff = -6
+      lam=(4, 1): coeff = -3
+      lam=(5, 0): coeff = -1
+
+  j=4:
+    A_p support: [(2, 2), (3, 1), (4, 0), (3, 3), (4, 2)]...
+    h^*_p*A_0 support: [(2, 2), (3, 1), (4, 0), (3, 2), (4, 1), (5, 0)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(2, 2): coeff = -26
+      lam=(3, 1): coeff = -39
+      lam=(4, 0): coeff = -13
+      lam=(3, 2): coeff = -24
+      lam=(4, 1): coeff = -24
+      lam=(5, 0): coeff = -8
+      lam=(3, 3): coeff = 3
+      lam=(5, 1): coeff = -4
+      lam=(6, 0): coeff = -1
+
+  j=5:
+    A_p support: [(3, 2), (5, 0), (3, 3), (4, 2), (5, 1), (4, 3)]...
+    h^*_p*A_0 support: [(3, 2), (4, 1), (5, 0), (3, 3), (4, 2), (5, 1)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(3, 2): coeff = -75
+      lam=(4, 1): coeff = -60
+      lam=(5, 0): coeff = -15
+      lam=(3, 3): coeff = -50
+      lam=(4, 2): coeff = -90
+      lam=(5, 1): coeff = -50
+      lam=(6, 0): coeff = -10
+      lam=(4, 3): coeff = 11
+      lam=(6, 1): coeff = -5
+      lam=(7, 0): coeff = -1
+
+  j=6:
+    A_p support: [(3, 3), (4, 2), (5, 1), (6, 0), (4, 3), (5, 2)]...
+    h^*_p*A_0 support: [(3, 3), (4, 2), (5, 1), (6, 0), (4, 3), (5, 2)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(3, 3): coeff = -25
+      lam=(4, 2): coeff = -45
+      lam=(5, 1): coeff = -25
+      lam=(6, 0): coeff = -5
+      lam=(4, 3): coeff = -258
+      lam=(5, 2): coeff = -240
+      lam=(6, 1): coeff = -90
+      lam=(7, 0): coeff = -12
+      lam=(4, 4): coeff = 21
+      lam=(5, 3): coeff = 26
+      lam=(7, 1): coeff = -6
+      lam=(8, 0): coeff = -1
+
+  j=7:
+    A_p support: [(4, 3), (5, 2), (6, 1), (7, 0), (4, 4), (5, 3)]...
+    h^*_p*A_0 support: [(4, 3), (5, 2), (6, 1), (7, 0), (4, 4), (5, 3)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(4, 3): coeff = 392
+      lam=(5, 2): coeff = 392
+      lam=(6, 1): coeff = 168
+      lam=(7, 0): coeff = 28
+      lam=(4, 4): coeff = -441
+      lam=(5, 3): coeff = -833
+      lam=(6, 2): coeff = -525
+      lam=(7, 1): coeff = -147
+      lam=(8, 0): coeff = -14
+      lam=(5, 4): coeff = 77
+      lam=(6, 3): coeff = 50
+      lam=(8, 1): coeff = -7
+      lam=(9, 0): coeff = -1
+
+  j=8:
+    A_p support: [(4, 4), (5, 3), (6, 2), (7, 1), (8, 0), (5, 4)]...
+    h^*_p*A_0 support: [(4, 4), (5, 3), (6, 2), (7, 1), (8, 0), (5, 4)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(4, 4): coeff = 1372
+      lam=(5, 3): coeff = 2744
+      lam=(6, 2): coeff = 1960
+      lam=(7, 1): coeff = 686
+      lam=(8, 0): coeff = 98
+      lam=(5, 4): coeff = -2016
+      lam=(6, 3): coeff = -2112
+      lam=(7, 2): coeff = -1008
+      lam=(8, 1): coeff = -224
+      lam=(9, 0): coeff = -16
+      lam=(5, 5): coeff = 112
+      lam=(6, 4): coeff = 190
+      lam=(7, 3): coeff = 85
+      lam=(9, 1): coeff = -8
+      lam=(10, 0): coeff = -1
+
+--- p = 3 ---
+
+  j=3:
+    A_p support: [(2, 2), (3, 2), (3, 3)]...
+    h^*_p*A_0 support: [(3, 0), (3, 1), (4, 0), (3, 2), (4, 1), (5, 0)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(3, 0): coeff = -6
+      lam=(2, 2): coeff = -6
+      lam=(3, 1): coeff = -18
+      lam=(4, 0): coeff = -18
+      lam=(3, 2): coeff = -6
+      lam=(4, 1): coeff = -18
+      lam=(5, 0): coeff = -9
+      lam=(4, 2): coeff = -3
+      lam=(5, 1): coeff = -3
+      lam=(6, 0): coeff = -1
+
+  j=4:
+    A_p support: [(2, 2), (3, 1), (4, 0), (3, 2), (4, 1), (3, 3)]...
+    h^*_p*A_0 support: [(3, 1), (4, 0), (3, 2), (4, 1), (5, 0), (3, 3)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(2, 2): coeff = 16
+      lam=(3, 1): coeff = -6
+      lam=(4, 0): coeff = -22
+      lam=(3, 2): coeff = -68
+      lam=(4, 1): coeff = -76
+      lam=(5, 0): coeff = -36
+      lam=(3, 3): coeff = -6
+      lam=(4, 2): coeff = -30
+      lam=(5, 1): coeff = -36
+      lam=(6, 0): coeff = -12
+      lam=(5, 2): coeff = -6
+      lam=(6, 1): coeff = -4
+      lam=(7, 0): coeff = -1
+
+  j=5:
+    A_p support: [(3, 2), (4, 1), (5, 0), (3, 3), (4, 2), (5, 1)]...
+    h^*_p*A_0 support: [(3, 2), (4, 1), (5, 0), (3, 3), (4, 2), (5, 1)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(3, 2): coeff = 85
+      lam=(4, 1): coeff = -40
+      lam=(5, 0): coeff = -55
+      lam=(3, 3): coeff = -130
+      lam=(4, 2): coeff = -255
+      lam=(5, 1): coeff = -185
+      lam=(6, 0): coeff = -60
+      lam=(4, 3): coeff = -60
+      lam=(5, 2): coeff = -90
+      lam=(6, 1): coeff = -60
+      lam=(7, 0): coeff = -15
+      lam=(4, 4): coeff = 6
+      lam=(6, 2): coeff = -10
+      lam=(7, 1): coeff = -5
+      lam=(8, 0): coeff = -1
+
+  j=6:
+    A_p support: [(3, 3), (4, 2), (5, 1), (6, 0), (4, 3), (6, 1)]...
+    h^*_p*A_0 support: [(3, 3), (4, 2), (5, 1), (6, 0), (4, 3), (5, 2)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(3, 3): coeff = 165
+      lam=(4, 2): coeff = 45
+      lam=(5, 1): coeff = -255
+      lam=(6, 0): coeff = -135
+      lam=(4, 3): coeff = -450
+      lam=(5, 2): coeff = -540
+      lam=(6, 1): coeff = -330
+      lam=(7, 0): coeff = -90
+      lam=(4, 4): coeff = -132
+      lam=(5, 3): coeff = -270
+      lam=(6, 2): coeff = -210
+      lam=(7, 1): coeff = -90
+      lam=(8, 0): coeff = -18
+      lam=(5, 4): coeff = 26
+      lam=(7, 2): coeff = -15
+      lam=(8, 1): coeff = -6
+      lam=(9, 0): coeff = -1
+
+  j=7:
+    A_p support: [(4, 3), (5, 2), (6, 1), (7, 0), (4, 4), (5, 3)]...
+    h^*_p*A_0 support: [(4, 3), (5, 2), (6, 1), (7, 0), (4, 4), (5, 3)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(4, 3): coeff = -700
+      lam=(5, 2): coeff = -1540
+      lam=(6, 1): coeff = -1260
+      lam=(7, 0): coeff = -350
+      lam=(4, 4): coeff = -49
+      lam=(5, 3): coeff = -315
+      lam=(6, 2): coeff = -595
+      lam=(7, 1): coeff = -455
+      lam=(8, 0): coeff = -126
+      lam=(5, 4): coeff = -819
+      lam=(6, 3): coeff = -840
+      lam=(7, 2): coeff = -420
+      lam=(8, 1): coeff = -126
+      lam=(9, 0): coeff = -21
+      lam=(5, 5): coeff = 56
+      lam=(6, 4): coeff = 71
+      lam=(8, 2): coeff = -21
+      lam=(9, 1): coeff = -7
+      lam=(10, 0): coeff = -1
+
+  j=8:
+    A_p support: [(4, 4), (5, 3), (6, 2), (7, 1), (8, 0), (5, 4)]...
+    h^*_p*A_0 support: [(4, 4), (5, 3), (6, 2), (7, 1), (8, 0), (5, 4)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(4, 4): coeff = -4984
+      lam=(5, 3): coeff = -11480
+      lam=(6, 2): coeff = -10360
+      lam=(7, 1): coeff = -4760
+      lam=(8, 0): coeff = -896
+      lam=(5, 4): coeff = 3808
+      lam=(6, 3): coeff = 3136
+      lam=(7, 2): coeff = 504
+      lam=(8, 1): coeff = -448
+      lam=(9, 0): coeff = -168
+      lam=(5, 5): coeff = -1596
+      lam=(6, 4): coeff = -3084
+      lam=(7, 3): coeff = -2100
+      lam=(8, 2): coeff = -756
+      lam=(9, 1): coeff = -168
+      lam=(10, 0): coeff = -24
+      lam=(6, 5): coeff = 232
+      lam=(7, 4): coeff = 155
+      lam=(9, 2): coeff = -28
+      lam=(10, 1): coeff = -8
+      lam=(11, 0): coeff = -1
+
+--- p = 4 ---
+
+  j=4:
+    A_p support: [(2, 2), (3, 3), (4, 3), (4, 4)]...
+    h^*_p*A_0 support: [(4, 0), (4, 1), (5, 0), (4, 2), (5, 1), (6, 0)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(2, 2): coeff = 24
+      lam=(4, 0): coeff = -24
+      lam=(4, 1): coeff = -96
+      lam=(5, 0): coeff = -96
+      lam=(3, 3): coeff = -12
+      lam=(4, 2): coeff = -72
+      lam=(5, 1): coeff = -144
+      lam=(6, 0): coeff = -72
+      lam=(4, 3): coeff = -12
+      lam=(5, 2): coeff = -48
+      lam=(6, 1): coeff = -48
+      lam=(7, 0): coeff = -16
+      lam=(5, 3): coeff = -4
+      lam=(6, 2): coeff = -6
+      lam=(7, 1): coeff = -4
+      lam=(8, 0): coeff = -1
+
+  j=5:
+    A_p support: [(3, 2), (4, 1), (5, 0), (3, 3), (4, 2), (5, 1)]...
+    h^*_p*A_0 support: [(4, 1), (5, 0), (4, 2), (5, 1), (6, 0), (4, 3)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(3, 2): coeff = 10
+      lam=(4, 1): coeff = -184
+      lam=(5, 0): coeff = -126
+      lam=(3, 3): coeff = 80
+      lam=(4, 2): coeff = -150
+      lam=(5, 1): coeff = -470
+      lam=(6, 0): coeff = -240
+      lam=(4, 3): coeff = -200
+      lam=(5, 2): coeff = -370
+      lam=(6, 1): coeff = -360
+      lam=(7, 0): coeff = -120
+      lam=(4, 4): coeff = -10
+      lam=(5, 3): coeff = -70
+      lam=(6, 2): coeff = -120
+      lam=(7, 1): coeff = -80
+      lam=(8, 0): coeff = -20
+      lam=(6, 3): coeff = -10
+      lam=(7, 2): coeff = -10
+      lam=(8, 1): coeff = -5
+      lam=(9, 0): coeff = -1
+
+  j=6:
+    A_p support: [(3, 3), (4, 2), (5, 1), (6, 0), (4, 3), (5, 2)]...
+    h^*_p*A_0 support: [(4, 2), (5, 1), (6, 0), (4, 3), (5, 2), (6, 1)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(3, 3): coeff = -430
+      lam=(4, 2): coeff = -1224
+      lam=(5, 1): coeff = -1180
+      lam=(6, 0): coeff = -386
+      lam=(4, 3): coeff = 390
+      lam=(5, 2): coeff = -960
+      lam=(6, 1): coeff = -1410
+      lam=(7, 0): coeff = -480
+      lam=(4, 4): coeff = -390
+      lam=(5, 3): coeff = -945
+      lam=(6, 2): coeff = -1095
+      lam=(7, 1): coeff = -720
+      lam=(8, 0): coeff = -180
+      lam=(5, 4): coeff = -120
+      lam=(6, 3): coeff = -240
+      lam=(7, 2): coeff = -240
+      lam=(8, 1): coeff = -120
+      lam=(9, 0): coeff = -24
+      lam=(5, 5): coeff = 10
+      lam=(7, 3): coeff = -20
+      lam=(8, 2): coeff = -15
+      lam=(9, 1): coeff = -6
+      lam=(10, 0): coeff = -1
+
+  j=7:
+    A_p support: [(4, 3), (5, 2), (6, 1), (7, 0), (4, 4), (5, 3)]...
+    h^*_p*A_0 support: [(4, 3), (5, 2), (6, 1), (7, 0), (4, 4), (5, 3)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(4, 3): coeff = -5824
+      lam=(5, 2): coeff = -6874
+      lam=(6, 1): coeff = -3696
+      lam=(7, 0): coeff = -791
+      lam=(4, 4): coeff = 1155
+      lam=(5, 3): coeff = -525
+      lam=(6, 2): coeff = -4305
+      lam=(7, 1): coeff = -3465
+      lam=(8, 0): coeff = -840
+      lam=(5, 4): coeff = -1575
+      lam=(6, 3): coeff = -2520
+      lam=(7, 2): coeff = -2415
+      lam=(8, 1): coeff = -1260
+      lam=(9, 0): coeff = -252
+      lam=(5, 5): coeff = -280
+      lam=(6, 4): coeff = -630
+      lam=(7, 3): coeff = -630
+      lam=(8, 2): coeff = -420
+      lam=(9, 1): coeff = -168
+      lam=(10, 0): coeff = -28
+      lam=(6, 5): coeff = 50
+      lam=(8, 3): coeff = -35
+      lam=(9, 2): coeff = -21
+      lam=(10, 1): coeff = -7
+      lam=(11, 0): coeff = -1
+
+  j=8:
+    A_p support: [(4, 4), (5, 3), (6, 2), (7, 1), (8, 0), (5, 4)]...
+    h^*_p*A_0 support: [(4, 4), (5, 3), (6, 2), (7, 1), (8, 0), (5, 4)]...
+    DIFFERENCE (A_p - h^*_p * A_0):
+      lam=(4, 4): coeff = -9674
+      lam=(5, 3): coeff = -19628
+      lam=(6, 2): coeff = -14420
+      lam=(7, 1): coeff = -5257
+      lam=(8, 0): coeff = -791
+      lam=(5, 4): coeff = -5600
+      lam=(6, 3): coeff = -15680
+      lam=(7, 2): coeff = -16800
+      lam=(8, 1): coeff = -7840
+      lam=(9, 0): coeff = -1344
+      lam=(5, 5): coeff = 140
+      lam=(6, 4): coeff = -1260
+      lam=(7, 3): coeff = -4060
+      lam=(8, 2): coeff = -4340
+      lam=(9, 1): coeff = -2016
+      lam=(10, 0): coeff = -336
+      lam=(6, 5): coeff = -2040
+      lam=(7, 4): coeff = -2240
+      lam=(8, 3): coeff = -1400
+      lam=(9, 2): coeff = -672
+      lam=(10, 1): coeff = -224
+      lam=(11, 0): coeff = -32
+      lam=(6, 6): coeff = 120
+      lam=(7, 5): coeff = 155
+      lam=(9, 3): coeff = -56
+      lam=(10, 2): coeff = -28
+      lam=(11, 1): coeff = -8
+      lam=(12, 0): coeff = -1
+
+==============================================================================
+Done.
+==============================================================================

@@ -1,0 +1,283 @@
+========================================================================
+Motzkin triangle m^(2)_{k,j} = beta_{j,k} for j = 0..6
+(standard Motzkin-triangle recurrence: m(j,k) = m(j-1,k-1)+m(j-1,k)+m(j-1,k+1))
+========================================================================
+
+For cross-check, He-Tubbenhauer closed formula values (as Fractions):
+  j=0: ['1']
+  j=1: ['0', '1/2']
+  j=2: ['2', '0', '1/3']
+  j=3: ['0', '5/2', '0', '1/4']
+  j=4: ['9', '0', '3', '0', '1/5']
+  j=5: ['0', '15', '0', '7/2', '0', '1/6']
+  j=6: ['51', '0', '23', '0', '4', '0', '1/7']
+
+    k= 0  k= 1  k= 2  k= 3  k= 4  k= 5  k= 6  
+j= 0    1     0     0     0     0     0     0  
+j= 1    1     1     0     0     0     0     0  
+j= 2    2     2     1     0     0     0     0  
+j= 3    4     5     3     1     0     0     0  
+j= 4    9    12     9     4     1     0     0  
+j= 5   21    30    25    14     5     1     0  
+j= 6   51    76    69    44    20     6     1  
+
+Column sums (sum_k beta_{j,k}) -- should be Motzkin numbers M_j:
+  j=0: 1
+  j=1: 2
+  j=2: 5
+  j=3: 13
+  j=4: 35
+  j=5: 96
+  j=6: 267
+
+========================================================================
+Kostka search: for each (k, j) with beta_{j,k} > 0, find mu |- 2j
+with K_{mu^T, (2^j)} = beta_{j,k}. Also test specific candidate mu(k,j).
+========================================================================
+
+All matches mu |- 2j with K_{mu^T, (2^j)} = beta_{j,k}:
+------------------------------------------------------------------------
+  (k=0, j=0): beta=1, matching mu = [()]
+  (k=0, j=1): beta=1, matching mu = [(1, 1)]
+  (k=1, j=1): beta=1, matching mu = [(1, 1)]
+  (k=0, j=2): beta=2, matching mu = []
+  (k=1, j=2): beta=2, matching mu = []
+  (k=2, j=2): beta=1, matching mu = [(2, 2), (2, 1, 1), (1, 1, 1, 1)]
+  (k=0, j=3): beta=4, matching mu = []
+  (k=1, j=3): beta=5, matching mu = []
+  (k=2, j=3): beta=3, matching mu = [(2, 2, 1, 1)]
+  (k=3, j=3): beta=1, matching mu = [(3, 3), (3, 1, 1, 1), (2, 2, 2), (1, 1, 1, 1, 1, 1)]
+  (k=0, j=4): beta=9, matching mu = []
+  (k=1, j=4): beta=12, matching mu = []
+  (k=2, j=4): beta=9, matching mu = []
+  (k=3, j=4): beta=4, matching mu = []
+  (k=4, j=4): beta=1, matching mu = [(4, 4), (4, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1, 1)]
+  (k=0, j=5): beta=21, matching mu = [(4, 2, 2, 1, 1)]
+  (k=1, j=5): beta=30, matching mu = [(3, 3, 2, 1, 1), (3, 2, 2, 1, 1, 1)]
+  (k=2, j=5): beta=25, matching mu = []
+  (k=3, j=5): beta=14, matching mu = []
+  (k=4, j=5): beta=5, matching mu = [(5, 3, 2), (5, 2, 2, 1), (4, 3, 3)]
+  (k=5, j=5): beta=1, matching mu = [(5, 5), (5, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
+  (k=0, j=6): beta=51, matching mu = []
+  (k=1, j=6): beta=76, matching mu = []
+  (k=2, j=6): beta=69, matching mu = []
+  (k=3, j=6): beta=44, matching mu = []
+  (k=4, j=6): beta=20, matching mu = []
+  (k=5, j=6): beta=6, matching mu = []
+  (k=6, j=6): beta=1, matching mu = [(6, 6), (6, 1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
+
+========================================================================
+Candidate 1: mu = (j+k, j-k) two-row shape (|mu| = 2j).
+========================================================================
+   (k,j)    beta                mu               muT   K_{muT,(2^j)}  match?
+  (0,0)       1                ()                ()               1  YES
+  (0,1)       1            (1, 1)              (2,)               1  YES
+  (1,1)       1              (2,)            (1, 1)               0  NO
+  (0,2)       2            (2, 2)            (2, 2)               1  NO
+  (1,2)       2            (3, 1)         (2, 1, 1)               0  NO
+  (2,2)       1              (4,)      (1, 1, 1, 1)               0  NO
+  (0,3)       4            (3, 3)         (2, 2, 2)               1  NO
+  (1,3)       5            (4, 2)      (2, 2, 1, 1)               0  NO
+  (2,3)       3            (5, 1)   (2, 1, 1, 1, 1)               0  NO
+  (3,3)       1              (6,)  (1, 1, 1, 1, 1, 1)               0  NO
+  (0,4)       9            (4, 4)      (2, 2, 2, 2)               1  NO
+  (1,4)      12            (5, 3)   (2, 2, 2, 1, 1)               0  NO
+  (2,4)       9            (6, 2)  (2, 2, 1, 1, 1, 1)               0  NO
+  (3,4)       4            (7, 1)  (2, 1, 1, 1, 1, 1, 1)               0  NO
+  (4,4)       1              (8,)  (1, 1, 1, 1, 1, 1, 1, 1)               0  NO
+  (0,5)      21            (5, 5)   (2, 2, 2, 2, 2)               1  NO
+  (1,5)      30            (6, 4)  (2, 2, 2, 2, 1, 1)               0  NO
+  (2,5)      25            (7, 3)  (2, 2, 2, 1, 1, 1, 1)               0  NO
+  (3,5)      14            (8, 2)  (2, 2, 1, 1, 1, 1, 1, 1)               0  NO
+  (4,5)       5            (9, 1)  (2, 1, 1, 1, 1, 1, 1, 1, 1)               0  NO
+  (5,5)       1             (10,)  (1, 1, 1, 1, 1, 1, 1, 1, 1, 1)               0  NO
+  (0,6)      51            (6, 6)  (2, 2, 2, 2, 2, 2)               1  NO
+  (1,6)      76            (7, 5)  (2, 2, 2, 2, 2, 1, 1)               0  NO
+  (2,6)      69            (8, 4)  (2, 2, 2, 2, 1, 1, 1, 1)               0  NO
+  (3,6)      44            (9, 3)  (2, 2, 2, 1, 1, 1, 1, 1, 1)               0  NO
+  (4,6)      20           (10, 2)  (2, 2, 1, 1, 1, 1, 1, 1, 1, 1)               0  NO
+  (5,6)       6           (11, 1)  (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)               0  NO
+  (6,6)       1             (12,)  (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)               0  NO
+
+Candidate 1 (mu = (j+k, j-k)) all match?  False
+
+========================================================================
+Candidate 2: mu = (k+j)/... trying mu = (j+k) alone if j-k=0, etc.
+Also try mu = (2, 2, ..., 2) with j parts (2^j itself)
+and mu with muT = (j+k, j-k).
+========================================================================
+   (k,j)    beta               muT                mu   K_{muT,(2^j)}  match?
+  (0,0)       1                ()                ()               1  YES
+  (0,1)       1            (1, 1)              (2,)               0  NO
+  (1,1)       1              (2,)            (1, 1)               1  YES
+  (0,2)       2            (2, 2)            (2, 2)               1  NO
+  (1,2)       2            (3, 1)         (2, 1, 1)               1  NO
+  (2,2)       1              (4,)      (1, 1, 1, 1)               1  YES
+  (0,3)       4            (3, 3)         (2, 2, 2)               1  NO
+  (1,3)       5            (4, 2)      (2, 2, 1, 1)               3  NO
+  (2,3)       3            (5, 1)   (2, 1, 1, 1, 1)               2  NO
+  (3,3)       1              (6,)  (1, 1, 1, 1, 1, 1)               1  YES
+  (0,4)       9            (4, 4)      (2, 2, 2, 2)               3  NO
+  (1,4)      12            (5, 3)   (2, 2, 2, 1, 1)               6  NO
+  (2,4)       9            (6, 2)  (2, 2, 1, 1, 1, 1)               6  NO
+  (3,4)       4            (7, 1)  (2, 1, 1, 1, 1, 1, 1)               3  NO
+  (4,4)       1              (8,)  (1, 1, 1, 1, 1, 1, 1, 1)               1  YES
+  (0,5)      21            (5, 5)   (2, 2, 2, 2, 2)               6  NO
+  (1,5)      30            (6, 4)  (2, 2, 2, 2, 1, 1)              15  NO
+  (2,5)      25            (7, 3)  (2, 2, 2, 1, 1, 1, 1)              15  NO
+  (3,5)      14            (8, 2)  (2, 2, 1, 1, 1, 1, 1, 1)              10  NO
+  (4,5)       5            (9, 1)  (2, 1, 1, 1, 1, 1, 1, 1, 1)               4  NO
+  (5,5)       1             (10,)  (1, 1, 1, 1, 1, 1, 1, 1, 1, 1)               1  YES
+  (0,6)      51            (6, 6)  (2, 2, 2, 2, 2, 2)              15  NO
+  (1,6)      76            (7, 5)  (2, 2, 2, 2, 2, 1, 1)              36  NO
+  (2,6)      69            (8, 4)  (2, 2, 2, 2, 1, 1, 1, 1)              40  NO
+  (3,6)      44            (9, 3)  (2, 2, 2, 1, 1, 1, 1, 1, 1)              29  NO
+  (4,6)      20           (10, 2)  (2, 2, 1, 1, 1, 1, 1, 1, 1, 1)              15  NO
+  (5,6)       6           (11, 1)  (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)               5  NO
+  (6,6)       1             (12,)  (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)               1  YES
+
+Candidate 3 (muT = (j+k, j-k)) all match?  False
+
+========================================================================
+Verdict: does any single-formula family mu(k, j) match all (k, j)?
+========================================================================
+
+Rule 'mu = (j+k, j-k)':  FAILS on 26 cells
+    miss: (k,j)=(1, 1), mu=(2,), (K, beta)=(0, 1)
+    miss: (k,j)=(0, 2), mu=(2, 2), (K, beta)=(1, 2)
+    miss: (k,j)=(1, 2), mu=(3, 1), (K, beta)=(0, 2)
+    miss: (k,j)=(2, 2), mu=(4,), (K, beta)=(0, 1)
+    miss: (k,j)=(0, 3), mu=(3, 3), (K, beta)=(1, 4)
+    miss: (k,j)=(1, 3), mu=(4, 2), (K, beta)=(0, 5)
+    miss: (k,j)=(2, 3), mu=(5, 1), (K, beta)=(0, 3)
+    miss: (k,j)=(3, 3), mu=(6,), (K, beta)=(0, 1)
+
+Rule 'mu = conj(j+k, j-k)':  FAILS on 21 cells
+    miss: (k,j)=(0, 1), mu=(2,), (K, beta)=(0, 1)
+    miss: (k,j)=(0, 2), mu=(2, 2), (K, beta)=(1, 2)
+    miss: (k,j)=(1, 2), mu=(2, 1, 1), (K, beta)=(1, 2)
+    miss: (k,j)=(0, 3), mu=(2, 2, 2), (K, beta)=(1, 4)
+    miss: (k,j)=(1, 3), mu=(2, 2, 1, 1), (K, beta)=(3, 5)
+    miss: (k,j)=(2, 3), mu=(2, 1, 1, 1, 1), (K, beta)=(2, 3)
+    miss: (k,j)=(0, 4), mu=(2, 2, 2, 2), (K, beta)=(3, 9)
+    miss: (k,j)=(1, 4), mu=(2, 2, 2, 1, 1), (K, beta)=(6, 12)
+
+Rule 'mu = 2^((j+k)/2) 1^(j-k)':  FAILS on 25 cells
+    miss: (k,j)=(0, 1), mu=None, (K, beta)=None
+    miss: (k,j)=(1, 1), mu=(2,), (K, beta)=(0, 1)
+    miss: (k,j)=(0, 2), mu=(2, 1, 1), (K, beta)=(1, 2)
+    miss: (k,j)=(1, 2), mu=None, (K, beta)=None
+    miss: (k,j)=(0, 3), mu=None, (K, beta)=None
+    miss: (k,j)=(1, 3), mu=(2, 2, 1, 1), (K, beta)=(3, 5)
+    miss: (k,j)=(2, 3), mu=None, (K, beta)=None
+    miss: (k,j)=(0, 4), mu=(2, 2, 1, 1, 1, 1), (K, beta)=(6, 9)
+
+Rule 'mu = ((j+k)/2, (j-k)/2)':  FAILS on 27 cells
+    miss: (k,j)=(0, 1), mu=None, (K, beta)=None
+    miss: (k,j)=(1, 1), mu=(1,), (K, beta)=(0, 1)
+    miss: (k,j)=(0, 2), mu=(1, 1), (K, beta)=(0, 2)
+    miss: (k,j)=(1, 2), mu=None, (K, beta)=None
+    miss: (k,j)=(2, 2), mu=(2,), (K, beta)=(0, 1)
+    miss: (k,j)=(0, 3), mu=None, (K, beta)=None
+    miss: (k,j)=(1, 3), mu=(2, 1), (K, beta)=(0, 5)
+    miss: (k,j)=(2, 3), mu=None, (K, beta)=None
+
+========================================================================
+Broader search: |mu| free, but SSYT weight (2^j) requires |mu| = 2j.
+So try weight (1^j) or (2^j) with |mu| = 2j only.
+Also test the plethystic-consistent |mu| = 2j family with muT interp.
+========================================================================
+  Rule 'mu = (2^((j+k)/2), 1^(j-k))': FAILS (25 misses)
+  Rule 'mu = (2^((j-k)/2), 1^(j+k))': FAILS (21 misses)
+  Rule 'mu = (j+k, 1^(j-k))': FAILS (26 misses)
+
+========================================================================
+Alt hypothesis: maybe the intended identity is K_{mu, (1^k, 2^((j-k)/2))}
+i.e., a different content coming from V_1 vs V_2 legs.
+========================================================================
+Searching: for each (k,j) with beta>0, find (lambda, a, b) with
+  a + b = j (interpretation)?  No -- weight-sum determines |lambda|.
+Try: shapes lambda of size N in {j, j+1, ..., 2j}, content (2^b, 1^(N-2b)).
+
+Two-row generic hits (shape, content, K) equal to beta_{j,k}, j<=3:
+  (k=0, j=0), beta=1: 0 two-row (shape, content) hits
+  (k=0, j=1), beta=1: 4 two-row (shape, content) hits
+      ((1,), (1,), 1)
+      ((1, 1), (1, 1), 1)
+      ((2,), (1, 1), 1)
+      ((2,), (2,), 1)
+  (k=1, j=1), beta=1: 4 two-row (shape, content) hits
+      ((1,), (1,), 1)
+      ((1, 1), (1, 1), 1)
+      ((2,), (1, 1), 1)
+      ((2,), (2,), 1)
+  (k=0, j=2), beta=2: 3 two-row (shape, content) hits
+      ((2, 1), (1, 1, 1), 2)
+      ((2, 2), (1, 1, 1, 1), 2)
+      ((3, 1), (2, 1, 1), 2)
+  (k=1, j=2), beta=2: 3 two-row (shape, content) hits
+      ((2, 1), (1, 1, 1), 2)
+      ((2, 2), (1, 1, 1, 1), 2)
+      ((3, 1), (2, 1, 1), 2)
+  (k=2, j=2), beta=1: 12 two-row (shape, content) hits
+      ((1, 1), (1, 1), 1)
+      ((2,), (1, 1), 1)
+      ((2,), (2,), 1)
+      ((2, 1), (2, 1), 1)
+      ((3,), (1, 1, 1), 1)
+      ((3,), (2, 1), 1)
+  (k=0, j=3), beta=4: 3 two-row (shape, content) hits
+      ((4, 1), (1, 1, 1, 1, 1), 4)
+      ((4, 2), (2, 2, 1, 1), 4)
+      ((5, 1), (2, 1, 1, 1, 1), 4)
+  (k=1, j=3), beta=5: 3 two-row (shape, content) hits
+      ((3, 2), (1, 1, 1, 1, 1), 5)
+      ((3, 3), (1, 1, 1, 1, 1, 1), 5)
+      ((5, 1), (1, 1, 1, 1, 1, 1), 5)
+  (k=2, j=3), beta=3: 6 two-row (shape, content) hits
+      ((3, 1), (1, 1, 1, 1), 3)
+      ((3, 2), (2, 1, 1, 1), 3)
+      ((4, 1), (2, 1, 1, 1), 3)
+      ((3, 3), (2, 1, 1, 1, 1), 3)
+      ((4, 2), (2, 2, 2), 3)
+      ((5, 1), (2, 2, 1, 1), 3)
+  (k=3, j=3), beta=1: 17 two-row (shape, content) hits
+      ((2, 1), (2, 1), 1)
+      ((3,), (1, 1, 1), 1)
+      ((3,), (2, 1), 1)
+      ((2, 2), (2, 1, 1), 1)
+      ((2, 2), (2, 2), 1)
+      ((3, 1), (2, 2), 1)
+
+========================================================================
+Intersection: for each (k,j), which mu have K_{muT,(2^j)}=beta_{j,k}?
+Look for a pattern.
+========================================================================
+  (k=0, j=0): beta=1, mu candidates: [()]
+  (k=0, j=1): beta=1, mu candidates: [(1, 1)]
+  (k=0, j=2): beta=2, mu candidates: []
+  (k=0, j=3): beta=4, mu candidates: []
+  (k=0, j=4): beta=9, mu candidates: []
+  (k=0, j=5): beta=21, mu candidates: [(4, 2, 2, 1, 1)]
+  (k=0, j=6): beta=51, mu candidates: []
+  (k=1, j=1): beta=1, mu candidates: [(1, 1)]
+  (k=1, j=2): beta=2, mu candidates: []
+  (k=1, j=3): beta=5, mu candidates: []
+  (k=1, j=4): beta=12, mu candidates: []
+  (k=1, j=5): beta=30, mu candidates: [(3, 3, 2, 1, 1), (3, 2, 2, 1, 1, 1)]
+  (k=1, j=6): beta=76, mu candidates: []
+  (k=2, j=2): beta=1, mu candidates: [(2, 2), (2, 1, 1), (1, 1, 1, 1)]
+  (k=2, j=3): beta=3, mu candidates: [(2, 2, 1, 1)]
+  (k=2, j=4): beta=9, mu candidates: []
+  (k=2, j=5): beta=25, mu candidates: []
+  (k=2, j=6): beta=69, mu candidates: []
+  (k=3, j=3): beta=1, mu candidates: [(3, 3), (3, 1, 1, 1), (2, 2, 2), (1, 1, 1, 1, 1, 1)]
+  (k=3, j=4): beta=4, mu candidates: []
+  (k=3, j=5): beta=14, mu candidates: []
+  (k=3, j=6): beta=44, mu candidates: []
+  (k=4, j=4): beta=1, mu candidates: [(4, 4), (4, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1, 1)]
+  (k=4, j=5): beta=5, mu candidates: [(5, 3, 2), (5, 2, 2, 1), (4, 3, 3)]
+  (k=4, j=6): beta=20, mu candidates: []
+  (k=5, j=5): beta=1, mu candidates: [(5, 5), (5, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]
+  (k=5, j=6): beta=6, mu candidates: []
+  (k=6, j=6): beta=1, mu candidates: [(6, 6), (6, 1, 1, 1, 1, 1, 1), (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)]

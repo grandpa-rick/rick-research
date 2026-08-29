@@ -1,0 +1,1372 @@
+==============================================================================
+Day-114 compute pass: direct shifted-Schur interpolation of A_p
+==============================================================================
+
+[Setup] shifted-Schur sanity checks...
+  Sanity: verify s^*_lambda(lambda) = (lam_1+1)! lam_2! / (lam_1 - lam_2 + 1)
+  (with delta = (0, 0), eval at (b, c) = (lam_1, lam_2)).
+  Diagonal formula OK? True
+  Sanity: verify s^*_lambda(mu) = 0 when lambda not subset mu.
+  Vanishing OK? True
+
+[Setup] Building shifted-Schur tables & ds_j/V up to j = 12...
+
+==============================================================================
+STEP 1  Vanishing pattern of A_p at partition points.
+==============================================================================
+
+  --- delta = (0, 0) ---
+  Columns: |mu| ; (zeros, total, first nonzero (mu, F(mu+delta) or 'all zero'))
+
+  p = 2:
+    j = 4:  D_0 = 4  (first nonzero: |mu|=4, mu=(2, 2), val=-168)
+    j = 5:  D_0 = 5  (first nonzero: |mu|=5, mu=(3, 2), val=-360)
+    j = 6:  D_0 = 6  (first nonzero: |mu|=6, mu=(3, 3), val=9360)
+    j = 7:  D_0 = 7  (first nonzero: |mu|=7, mu=(4, 3), val=277200)
+    j = 8:  D_0 = 8  (first nonzero: |mu|=8, mu=(4, 4), val=5402880)
+    j = 9:  D_0 = 9  (first nonzero: |mu|=9, mu=(5, 4), val=97977600)
+    j = 10:  D_0 = 10  (first nonzero: |mu|=10, mu=(5, 5), val=1741824000)
+    j = 11:  D_0 = 11  (first nonzero: |mu|=11, mu=(6, 5), val=31534272000)
+    j = 12:  D_0 = 12  (first nonzero: |mu|=12, mu=(6, 6), val=585818956800)
+
+  p = 3:
+    j = 6:  D_0 = 6  (first nonzero: |mu|=6, mu=(3, 3), val=41040)
+    j = 7:  D_0 = 7  (first nonzero: |mu|=7, mu=(4, 3), val=50400)
+    j = 8:  D_0 = 8  (first nonzero: |mu|=8, mu=(4, 4), val=-10483200)
+    j = 9:  D_0 = 9  (first nonzero: |mu|=9, mu=(5, 4), val=-411505920)
+    j = 10:  D_0 = 10  (first nonzero: |mu|=10, mu=(5, 5), val=-11430720000)
+    j = 11:  D_0 = 11  (first nonzero: |mu|=11, mu=(6, 5), val=-292190976000)
+    j = 12:  D_0 = 12  (first nonzero: |mu|=12, mu=(6, 6), val=-7156283904000)
+
+  p = 4:
+    j = 8:  D_0 = 8  (first nonzero: |mu|=8, mu=(4, 4), val=-23022720)
+    j = 9:  D_0 = 9  (first nonzero: |mu|=9, mu=(5, 4), val=351630720)
+    j = 10:  D_0 = 10  (first nonzero: |mu|=10, mu=(5, 5), val=32125766400)
+    j = 11:  D_0 = 11  (first nonzero: |mu|=11, mu=(6, 5), val=1419161990400)
+    j = 12:  D_0 = 12  (first nonzero: |mu|=12, mu=(6, 6), val=49980463948800)
+
+  --- delta = (1, 0) ---
+  Columns: |mu| ; (zeros, total, first nonzero (mu, F(mu+delta) or 'all zero'))
+
+  p = 2:
+    j = 4:  D_0 = 3  (first nonzero: |mu|=3, mu=(2, 1), val=-120)
+    j = 5:  D_0 = 4  (first nonzero: |mu|=4, mu=(2, 2), val=-360)
+    j = 6:  D_0 = 5  (first nonzero: |mu|=5, mu=(3, 2), val=10800)
+    j = 7:  D_0 = 6  (first nonzero: |mu|=6, mu=(3, 3), val=277200)
+    j = 8:  D_0 = 7  (first nonzero: |mu|=7, mu=(4, 3), val=5483520)
+    j = 9:  D_0 = 8  (first nonzero: |mu|=8, mu=(4, 4), val=97977600)
+    j = 10:  D_0 = 9  (first nonzero: |mu|=9, mu=(5, 4), val=1749081600)
+    j = 11:  D_0 = 10  (first nonzero: |mu|=10, mu=(5, 5), val=31534272000)
+    j = 12:  D_0 = 11  (first nonzero: |mu|=11, mu=(6, 5), val=586776960000)
+
+  p = 3:
+    j = 6:  D_0 = 5  (first nonzero: |mu|=5, mu=(3, 2), val=32400)
+    j = 7:  D_0 = 6  (first nonzero: |mu|=6, mu=(3, 3), val=50400)
+    j = 8:  D_0 = 7  (first nonzero: |mu|=7, mu=(4, 3), val=-11692800)
+    j = 9:  D_0 = 8  (first nonzero: |mu|=8, mu=(4, 4), val=-411505920)
+    j = 10:  D_0 = 9  (first nonzero: |mu|=9, mu=(5, 4), val=-11633932800)
+    j = 11:  D_0 = 10  (first nonzero: |mu|=10, mu=(5, 5), val=-292190976000)
+    j = 12:  D_0 = 11  (first nonzero: |mu|=11, mu=(6, 5), val=-7199394048000)
+
+  p = 4:
+    j = 8:  D_0 = 7  (first nonzero: |mu|=7, mu=(4, 3), val=-18587520)
+    j = 9:  D_0 = 8  (first nonzero: |mu|=8, mu=(4, 4), val=351630720)
+    j = 10:  D_0 = 9  (first nonzero: |mu|=9, mu=(5, 4), val=34114348800)
+    j = 11:  D_0 = 10  (first nonzero: |mu|=10, mu=(5, 5), val=1419161990400)
+    j = 12:  D_0 = 11  (first nonzero: |mu|=11, mu=(6, 5), val=50746866508800)
+
+  D_0(p, j) summary (delta = (0, 0)):
+    p = 2:  j=4: D0=4;  j=5: D0=5;  j=6: D0=6;  j=7: D0=7;  j=8: D0=8;  j=9: D0=9;  j=10: D0=10;  j=11: D0=11;  j=12: D0=12;
+    p = 3:  j=6: D0=6;  j=7: D0=7;  j=8: D0=8;  j=9: D0=9;  j=10: D0=10;  j=11: D0=11;  j=12: D0=12;
+    p = 4:  j=8: D0=8;  j=9: D0=9;  j=10: D0=10;  j=11: D0=11;  j=12: D0=12;
+
+  D_0(p, j) summary (delta = (1, 0)):
+    p = 2:  j=4: D0=3;  j=5: D0=4;  j=6: D0=5;  j=7: D0=6;  j=8: D0=7;  j=9: D0=8;  j=10: D0=9;  j=11: D0=10;  j=12: D0=11;
+    p = 3:  j=6: D0=5;  j=7: D0=6;  j=8: D0=7;  j=9: D0=8;  j=10: D0=9;  j=11: D0=10;  j=12: D0=11;
+    p = 4:  j=8: D0=7;  j=9: D0=8;  j=10: D0=9;  j=11: D0=10;  j=12: D0=11;
+
+  Look for pattern D_0(p, j) in terms of (p, j) with delta=(0,0):
+    p = 2:  j - D_0 (delta=(0,0)) = 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    p = 3:  j - D_0 (delta=(0,0)) = 0, 0, 0, 0, 0, 0, 0, 
+    p = 4:  j - D_0 (delta=(0,0)) = 0, 0, 0, 0, 0, 
+
+==============================================================================
+STEP 2  Direct shifted-Schur expansion  A_p = sum c_lambda * s^*_lambda.
+==============================================================================
+
+  p = 2:
+    j = 4:  deg(b, c) = (4, 4); |lambda| range = 4 .. 6; # nonzero c_lambda = 5
+    j = 5:  deg(b, c) = (5, 5); |lambda| range = 5 .. 7; # nonzero c_lambda = 7
+    j = 6:  deg(b, c) = (6, 6); |lambda| range = 6 .. 8; # nonzero c_lambda = 10
+    j = 7:  deg(b, c) = (7, 7); |lambda| range = 7 .. 9; # nonzero c_lambda = 11
+    j = 8:  deg(b, c) = (8, 8); |lambda| range = 8 .. 10; # nonzero c_lambda = 13
+    j = 9:  deg(b, c) = (9, 9); |lambda| range = 9 .. 11; # nonzero c_lambda = 14
+    j = 10:  deg(b, c) = (10, 10); |lambda| range = 10 .. 12; # nonzero c_lambda = 16
+    j = 11:  deg(b, c) = (11, 11); |lambda| range = 11 .. 13; # nonzero c_lambda = 17
+    j = 12:  deg(b, c) = (12, 12); |lambda| range = 12 .. 14; # nonzero c_lambda = 19
+
+  p = 3:
+    j = 6:  deg(b, c) = (6, 6); |lambda| range = 6 .. 9; # nonzero c_lambda = 11
+    j = 7:  deg(b, c) = (7, 7); |lambda| range = 7 .. 10; # nonzero c_lambda = 14
+    j = 8:  deg(b, c) = (8, 8); |lambda| range = 8 .. 11; # nonzero c_lambda = 16
+    j = 9:  deg(b, c) = (9, 9); |lambda| range = 9 .. 12; # nonzero c_lambda = 18
+    j = 10:  deg(b, c) = (10, 10); |lambda| range = 10 .. 13; # nonzero c_lambda = 20
+    j = 11:  deg(b, c) = (11, 11); |lambda| range = 11 .. 14; # nonzero c_lambda = 22
+    j = 12:  deg(b, c) = (12, 12); |lambda| range = 12 .. 15; # nonzero c_lambda = 24
+
+  p = 4:
+    j = 8:  deg(b, c) = (8, 8); |lambda| range = 8 .. 12; # nonzero c_lambda = 19
+    j = 9:  deg(b, c) = (9, 9); |lambda| range = 9 .. 13; # nonzero c_lambda = 21
+    j = 10:  deg(b, c) = (10, 10); |lambda| range = 10 .. 14; # nonzero c_lambda = 24
+    j = 11:  deg(b, c) = (11, 11); |lambda| range = 11 .. 15; # nonzero c_lambda = 26
+    j = 12:  deg(b, c) = (12, 12); |lambda| range = 12 .. 16; # nonzero c_lambda = 29
+
+  Nonzero-c_lambda index sets:
+
+    p = 2:
+      j = 4: [(2, 2), (3, 1), (4, 0), (3, 3), (4, 2)]
+      j = 5: [(3, 2), (5, 0), (3, 3), (4, 2), (5, 1), (4, 3), (5, 2)]
+      j = 6: [(3, 3), (4, 2), (5, 1), (6, 0), (4, 3), (5, 2), (6, 1), (4, 4), (5, 3), (6, 2)]
+      j = 7: [(4, 3), (5, 2), (6, 1), (7, 0), (4, 4), (5, 3), (6, 2), (7, 1), (5, 4), (6, 3), (7, 2)]
+      j = 8: [(4, 4), (5, 3), (6, 2), (7, 1), (8, 0), (5, 4), (6, 3), (7, 2), (8, 1), (5, 5), (6, 4), (7, 3), (8, 2)]
+      j = 9: [(5, 4), (6, 3), (7, 2), (8, 1), (9, 0), (5, 5), (6, 4), (7, 3), (8, 2), (9, 1), (6, 5), (7, 4), (8, 3), (9, 2)]
+      j = 10: [(5, 5), (6, 4), (7, 3), (8, 2), (9, 1), (10, 0), (6, 5), (7, 4), (8, 3), (9, 2), (10, 1), (6, 6), (7, 5), (8, 4), (9, 3), (10, 2)]
+      j = 11: [(6, 5), (7, 4), (8, 3), (9, 2), (10, 1), (11, 0), (6, 6), (7, 5), (8, 4), (9, 3), (10, 2), (11, 1), (7, 6), (8, 5), (9, 4), (10, 3), (11, 2)]
+      j = 12: [(6, 6), (7, 5), (8, 4), (9, 3), (10, 2), (11, 1), (12, 0), (7, 6), (8, 5), (9, 4), (10, 3), (11, 2), (12, 1), (7, 7), (8, 6), (9, 5), (10, 4), (11, 3), (12, 2)]
+
+    p = 3:
+      j = 6: [(3, 3), (4, 2), (5, 1), (6, 0), (4, 3), (6, 1), (4, 4), (5, 3), (6, 2), (5, 4), (6, 3)]
+      j = 7: [(4, 3), (5, 2), (6, 1), (7, 0), (4, 4), (5, 3), (6, 2), (7, 1), (5, 4), (6, 3), (7, 2), (5, 5), (6, 4), (7, 3)]
+      j = 8: [(4, 4), (5, 3), (6, 2), (7, 1), (8, 0), (5, 4), (6, 3), (7, 2), (8, 1), (5, 5), (6, 4), (7, 3), (8, 2), (6, 5), (7, 4), (8, 3)]
+      j = 9: [(5, 4), (6, 3), (7, 2), (8, 1), (9, 0), (5, 5), (6, 4), (7, 3), (8, 2), (9, 1), (6, 5), (7, 4), (8, 3), (9, 2), (6, 6), (7, 5), (8, 4), (9, 3)]
+      j = 10: [(5, 5), (6, 4), (7, 3), (8, 2), (9, 1), (10, 0), (6, 5), (7, 4), (8, 3), (9, 2), (10, 1), (6, 6), (7, 5), (8, 4), (9, 3), (10, 2), (7, 6), (8, 5), (9, 4), (10, 3)]
+      j = 11: [(6, 5), (7, 4), (8, 3), (9, 2), (10, 1), (11, 0), (6, 6), (7, 5), (8, 4), (9, 3), (10, 2), (11, 1), (7, 6), (8, 5), (9, 4), (10, 3), (11, 2), (7, 7), (8, 6), (9, 5), (10, 4), (11, 3)]
+      j = 12: [(6, 6), (7, 5), (8, 4), (9, 3), (10, 2), (11, 1), (12, 0), (7, 6), (8, 5), (9, 4), (10, 3), (11, 2), (12, 1), (7, 7), (8, 6), (9, 5), (10, 4), (11, 3), (12, 2), (8, 7), (9, 6), (10, 5), (11, 4), (12, 3)]
+
+    p = 4:
+      j = 8: [(4, 4), (5, 3), (6, 2), (7, 1), (8, 0), (5, 4), (6, 3), (7, 2), (8, 1), (5, 5), (6, 4), (7, 3), (8, 2), (6, 5), (7, 4), (8, 3), (6, 6), (7, 5), (8, 4)]
+      j = 9: [(5, 4), (6, 3), (7, 2), (8, 1), (9, 0), (5, 5), (6, 4), (7, 3), (8, 2), (9, 1), (6, 5), (7, 4), (8, 3), (9, 2), (6, 6), (7, 5), (8, 4), (9, 3), (7, 6), (8, 5), (9, 4)]
+      j = 10: [(5, 5), (6, 4), (7, 3), (8, 2), (9, 1), (10, 0), (6, 5), (7, 4), (8, 3), (9, 2), (10, 1), (6, 6), (7, 5), (8, 4), (9, 3), (10, 2), (7, 6), (8, 5), (9, 4), (10, 3), (7, 7), (8, 6), (9, 5), (10, 4)]
+      j = 11: [(6, 5), (7, 4), (8, 3), (9, 2), (10, 1), (11, 0), (6, 6), (7, 5), (8, 4), (9, 3), (10, 2), (11, 1), (7, 6), (8, 5), (9, 4), (10, 3), (11, 2), (7, 7), (8, 6), (9, 5), (10, 4), (11, 3), (8, 7), (9, 6), (10, 5), (11, 4)]
+      j = 12: [(6, 6), (7, 5), (8, 4), (9, 3), (10, 2), (11, 1), (12, 0), (7, 6), (8, 5), (9, 4), (10, 3), (11, 2), (12, 1), (7, 7), (8, 6), (9, 5), (10, 4), (11, 3), (12, 2), (8, 7), (9, 6), (10, 5), (11, 4), (12, 3), (8, 8), (9, 7), (10, 6), (11, 5), (12, 4)]
+
+  Constraint check: for each (p, j) does every nonzero lambda satisfy lam_2 <= p AND |lambda| <= j AND |lambda| >= D_0?
+    p=2, j=4: VIOLATIONS [('|lam| > j', (4, 2)), ('lam_2 > p', (3, 3)), ('|lam| > j', (3, 3))]
+    p=2, j=5: VIOLATIONS [('|lam| > j', (5, 1)), ('|lam| > j', (4, 2)), ('lam_2 > p', (3, 3)), ('|lam| > j', (3, 3)), ('|lam| > j', (5, 2))]
+    p=2, j=6: VIOLATIONS [('lam_2 > p', (3, 3)), ('|lam| > j', (6, 1)), ('|lam| > j', (5, 2)), ('lam_2 > p', (4, 3)), ('|lam| > j', (4, 3))]
+    p=2, j=7: VIOLATIONS [('lam_2 > p', (4, 3)), ('|lam| > j', (7, 1)), ('|lam| > j', (6, 2)), ('lam_2 > p', (5, 3)), ('|lam| > j', (5, 3))]
+    p=2, j=8: VIOLATIONS [('lam_2 > p', (5, 3)), ('lam_2 > p', (4, 4)), ('|lam| > j', (8, 1)), ('|lam| > j', (7, 2)), ('lam_2 > p', (6, 3))]
+    p=2, j=9: VIOLATIONS [('lam_2 > p', (6, 3)), ('lam_2 > p', (5, 4)), ('|lam| > j', (9, 1)), ('|lam| > j', (8, 2)), ('lam_2 > p', (7, 3))]
+    p=2, j=10: VIOLATIONS [('lam_2 > p', (7, 3)), ('lam_2 > p', (6, 4)), ('lam_2 > p', (5, 5)), ('|lam| > j', (10, 1)), ('|lam| > j', (9, 2))]
+    p=2, j=11: VIOLATIONS [('lam_2 > p', (8, 3)), ('lam_2 > p', (7, 4)), ('lam_2 > p', (6, 5)), ('|lam| > j', (11, 1)), ('|lam| > j', (10, 2))]
+    p=2, j=12: VIOLATIONS [('lam_2 > p', (9, 3)), ('lam_2 > p', (8, 4)), ('lam_2 > p', (7, 5)), ('lam_2 > p', (6, 6)), ('|lam| > j', (12, 1))]
+    p=3, j=6: VIOLATIONS [('|lam| > j', (6, 1)), ('|lam| > j', (4, 3)), ('|lam| > j', (6, 2)), ('|lam| > j', (5, 3)), ('lam_2 > p', (4, 4))]
+    p=3, j=7: VIOLATIONS [('|lam| > j', (7, 1)), ('|lam| > j', (6, 2)), ('|lam| > j', (5, 3)), ('lam_2 > p', (4, 4)), ('|lam| > j', (4, 4))]
+    p=3, j=8: VIOLATIONS [('lam_2 > p', (4, 4)), ('|lam| > j', (8, 1)), ('|lam| > j', (7, 2)), ('|lam| > j', (6, 3)), ('lam_2 > p', (5, 4))]
+    p=3, j=9: VIOLATIONS [('lam_2 > p', (5, 4)), ('|lam| > j', (9, 1)), ('|lam| > j', (8, 2)), ('|lam| > j', (7, 3)), ('lam_2 > p', (6, 4))]
+    p=3, j=10: VIOLATIONS [('lam_2 > p', (6, 4)), ('lam_2 > p', (5, 5)), ('|lam| > j', (10, 1)), ('|lam| > j', (9, 2)), ('|lam| > j', (8, 3))]
+    p=3, j=11: VIOLATIONS [('lam_2 > p', (7, 4)), ('lam_2 > p', (6, 5)), ('|lam| > j', (11, 1)), ('|lam| > j', (10, 2)), ('|lam| > j', (9, 3))]
+    p=3, j=12: VIOLATIONS [('lam_2 > p', (8, 4)), ('lam_2 > p', (7, 5)), ('lam_2 > p', (6, 6)), ('|lam| > j', (12, 1)), ('|lam| > j', (11, 2))]
+    p=4, j=8: VIOLATIONS [('|lam| > j', (8, 1)), ('|lam| > j', (7, 2)), ('|lam| > j', (6, 3)), ('|lam| > j', (5, 4)), ('|lam| > j', (8, 2))]
+    p=4, j=9: VIOLATIONS [('|lam| > j', (9, 1)), ('|lam| > j', (8, 2)), ('|lam| > j', (7, 3)), ('|lam| > j', (6, 4)), ('lam_2 > p', (5, 5))]
+    p=4, j=10: VIOLATIONS [('lam_2 > p', (5, 5)), ('|lam| > j', (10, 1)), ('|lam| > j', (9, 2)), ('|lam| > j', (8, 3)), ('|lam| > j', (7, 4))]
+    p=4, j=11: VIOLATIONS [('lam_2 > p', (6, 5)), ('|lam| > j', (11, 1)), ('|lam| > j', (10, 2)), ('|lam| > j', (9, 3)), ('|lam| > j', (8, 4))]
+    p=4, j=12: VIOLATIONS [('lam_2 > p', (7, 5)), ('lam_2 > p', (6, 6)), ('|lam| > j', (12, 1)), ('|lam| > j', (11, 2)), ('|lam| > j', (10, 3))]
+
+==============================================================================
+STEP 3  Fit c_lambda(j, p) as polynomial in j for each fixed (p, lambda).
+==============================================================================
+
+  --- p = 2 ---
+    lambda = (2, 2):  c_lambda(j) = -(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)/2880
+    lambda = (3, 1):  c_lambda(j) = -(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)/2688
+    lambda = (4, 0):  c_lambda(j) = -(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)/40320
+    lambda = (3, 2):  c_lambda(j) = (j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 4)/336
+    lambda = (5, 0):  c_lambda(j) = -(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 4)/1008
+    lambda = (3, 3):  c_lambda(j) = (j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(993*j**2 - 9023*j + 20210)/20160
+    lambda = (4, 2):  c_lambda(j) = (j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(671*j**2 - 6081*j + 13590)/6720
+    lambda = (5, 1):  c_lambda(j) = (j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 4)*(137*j - 689)/2016
+    lambda = (6, 0):  c_lambda(j) = 5*(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 5)*(j - 4)/288
+    lambda = (4, 3):  c_lambda(j) = -(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 4)*(1187*j**2 - 13170*j + 36183)/1008
+    lambda = (5, 2):  c_lambda(j) = -(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 4)*(3057*j**2 - 33847*j + 92820)/2520
+    lambda = (6, 1):  c_lambda(j) = -(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 5)*(j - 4)*(131*j - 791)/240
+    lambda = (7, 0):  c_lambda(j) = -7*(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 6)*(j - 5)*(j - 4)/72
+    lambda = (4, 4):  c_lambda(j) = (j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 5)*(j - 4)*(535*j**2 - 7024*j + 22890)/144
+    lambda = (5, 3):  c_lambda(j) = (j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 5)*(j - 4)*(10699*j**2 - 140311*j + 456792)/1440
+    lambda = (6, 2):  c_lambda(j) = (j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 5)*(j - 4)*(1529*j**2 - 20009*j + 65016)/288
+    lambda = (7, 1):  c_lambda(j) = 7*(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 6)*(j - 5)*(j - 4)*(383*j - 2699)/1440
+    lambda = (8, 0):  c_lambda(j) = 77*(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/288
+    lambda = (5, 4):  c_lambda(j) = -7*(j - 12)*(j - 11)*(j - 10)*(j - 6)*(j - 5)*(j - 4)*(383*j**2 - 5807*j + 21888)/144
+    lambda = (6, 3):  c_lambda(j) = -7*(j - 12)*(j - 11)*(j - 10)*(j - 6)*(j - 5)*(j - 4)*(541*j**2 - 8191*j + 30834)/180
+    lambda = (7, 2):  c_lambda(j) = -(j - 12)*(j - 11)*(j - 10)*(j - 6)*(j - 5)*(j - 4)*(2789*j**2 - 42129*j + 158256)/240
+    lambda = (8, 1):  c_lambda(j) = -(j - 12)*(j - 11)*(j - 10)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(121*j - 975)/36
+    lambda = (9, 0):  c_lambda(j) = -49*(j - 12)*(j - 11)*(j - 10)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/120
+    lambda = (5, 5):  c_lambda(j) = 7*(j - 12)*(j - 11)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(365*j**2 - 6287*j + 26946)/144
+    lambda = (6, 4):  c_lambda(j) = (j - 12)*(j - 11)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(601*j**2 - 10343*j + 44294)/16
+    lambda = (7, 3):  c_lambda(j) = 5*(j - 12)*(j - 11)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(440*j**2 - 7559*j + 32319)/72
+    lambda = (8, 2):  c_lambda(j) = 7*(j - 12)*(j - 11)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(283*j**2 - 4849*j + 20682)/144
+    lambda = (9, 1):  c_lambda(j) = (j - 12)*(j - 11)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(27*j - 245)/8
+    lambda = (10, 0):  c_lambda(j) = 17*(j - 12)*(j - 11)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/48
+    lambda = (6, 5):  c_lambda(j) = -(j - 12)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(24583*j**2 - 474868*j + 2283765)/840
+    lambda = (7, 4):  c_lambda(j) = -(j - 12)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(59911*j**2 - 1155781*j + 5551590)/1680
+    lambda = (8, 3):  c_lambda(j) = -(j - 12)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(5467*j**2 - 105232*j + 504405)/240
+    lambda = (9, 2):  c_lambda(j) = -(j - 12)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(772*j**2 - 14812*j + 70785)/90
+    lambda = (10, 1):  c_lambda(j) = -(j - 12)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(1817*j - 18359)/1008
+    lambda = (11, 0):  c_lambda(j) = -55*(j - 12)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/336
+    lambda = (6, 6):  c_lambda(j) = (j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(25703*j**2 - 553483*j + 2967470)/3360
+    lambda = (7, 5):  c_lambda(j) = (j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(2147*j**2 - 46191*j + 247434)/128
+    lambda = (8, 4):  c_lambda(j) = 5*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(23767*j**2 - 510363*j + 2728946)/8064
+    lambda = (9, 3):  c_lambda(j) = (j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(4383*j**2 - 93835*j + 500302)/576
+    lambda = (10, 2):  c_lambda(j) = (j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(5339*j**2 - 113799*j + 604230)/2240
+    lambda = (11, 1):  c_lambda(j) = 11*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(219*j - 2449)/5760
+    lambda = (12, 0):  c_lambda(j) = 253*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/8064
+    lambda = (7, 6):  c_lambda(j) = -11*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(167*j - 1872)/840
+    lambda = (8, 5):  c_lambda(j) = -11*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(41*j - 459)/168
+    lambda = (9, 4):  c_lambda(j) = -11*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(53*j - 592)/336
+    lambda = (10, 3):  c_lambda(j) = -11*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(38*j - 423)/630
+    lambda = (11, 2):  c_lambda(j) = -11*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(13*j - 144)/1008
+    lambda = (12, 1):  c_lambda(j) = -11*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/840
+    lambda = (7, 7):  c_lambda(j) = 11*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/160
+    lambda = (8, 6):  c_lambda(j) = 33*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/224
+    lambda = (9, 5):  c_lambda(j) = 55*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/448
+    lambda = (10, 4):  c_lambda(j) = 11*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/192
+    lambda = (11, 3):  c_lambda(j) = 33*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/2240
+    lambda = (12, 2):  c_lambda(j) = 11*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/6720
+
+  --- p = 3 ---
+    lambda = (3, 3):  c_lambda(j) = 19*(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)/48
+    lambda = (4, 2):  c_lambda(j) = 9*(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)/16
+    lambda = (5, 1):  c_lambda(j) = 7*(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)/48
+    lambda = (6, 0):  c_lambda(j) = -(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)/48
+    lambda = (4, 3):  c_lambda(j) = -(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(31*j - 189)/24
+    lambda = (5, 2):  c_lambda(j) = 7*(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 6)/3
+    lambda = (6, 1):  c_lambda(j) = (j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(85*j - 511)/24
+    lambda = (7, 0):  c_lambda(j) = 7*(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 6)/6
+    lambda = (4, 4):  c_lambda(j) = -(j - 12)*(j - 11)*(j - 10)*(j - 9)*(1913*j**2 - 24964*j + 80920)/24
+    lambda = (5, 3):  c_lambda(j) = -(j - 12)*(j - 11)*(j - 10)*(j - 9)*(4252*j**2 - 55471*j + 179760)/24
+    lambda = (6, 2):  c_lambda(j) = -(j - 12)*(j - 11)*(j - 10)*(j - 9)*(3634*j**2 - 47377*j + 153440)/24
+    lambda = (7, 1):  c_lambda(j) = -35*(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 6)*(45*j - 316)/24
+    lambda = (8, 0):  c_lambda(j) = -35*(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 7)*(j - 6)/3
+    lambda = (5, 4):  c_lambda(j) = (j - 12)*(j - 11)*(j - 10)*(104815*j**3 - 2210997*j**2 + 15432110*j - 35636832)/72
+    lambda = (6, 3):  c_lambda(j) = (j - 12)*(j - 11)*(j - 10)*(62455*j**3 - 1316682*j**2 + 9185339*j - 21201768)/36
+    lambda = (7, 2):  c_lambda(j) = 7*(j - 12)*(j - 11)*(j - 10)*(j - 6)*(1189*j**2 - 17909*j + 67104)/8
+    lambda = (8, 1):  c_lambda(j) = 7*(j - 12)*(j - 11)*(j - 10)*(j - 7)*(j - 6)*(143*j - 1149)/3
+    lambda = (9, 0):  c_lambda(j) = 91*(j - 12)*(j - 11)*(j - 10)*(j - 8)*(j - 7)*(j - 6)/2
+    lambda = (5, 5):  c_lambda(j) = -7*(j - 12)*(j - 11)*(j - 6)*(5575*j**3 - 134697*j**2 + 1078376*j - 2860710)/12
+    lambda = (6, 4):  c_lambda(j) = -7*(j - 12)*(j - 11)*(j - 6)*(8013*j**3 - 193511*j**2 + 1548582*j - 4106500)/8
+    lambda = (7, 3):  c_lambda(j) = -7*(j - 12)*(j - 11)*(j - 6)*(20266*j**3 - 488967*j**2 + 3909737*j - 10360020)/24
+    lambda = (8, 2):  c_lambda(j) = -7*(j - 12)*(j - 11)*(j - 7)*(j - 6)*(3203*j**2 - 54755*j + 233060)/8
+    lambda = (9, 1):  c_lambda(j) = -7*(j - 12)*(j - 11)*(j - 8)*(j - 7)*(j - 6)*(839*j - 7595)/8
+    lambda = (10, 0):  c_lambda(j) = -665*(j - 12)*(j - 11)*(j - 9)*(j - 8)*(j - 7)*(j - 6)/8
+    lambda = (6, 5):  c_lambda(j) = (j - 12)*(j - 7)*(j - 6)*(31849*j**3 - 868239*j**2 + 7850111*j - 23540385)/3
+    lambda = (7, 4):  c_lambda(j) = (j - 12)*(j - 7)*(j - 6)*(78865*j**3 - 2148171*j**2 + 19407722*j - 58157880)/6
+    lambda = (8, 3):  c_lambda(j) = (j - 12)*(j - 7)*(j - 6)*(103475*j**3 - 2814648*j**2 + 25397041*j - 76018140)/12
+    lambda = (9, 2):  c_lambda(j) = (j - 12)*(j - 8)*(j - 7)*(j - 6)*(3371*j**2 - 64552*j + 307945)
+    lambda = (10, 1):  c_lambda(j) = (j - 12)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(2973*j - 29975)/4
+    lambda = (11, 0):  c_lambda(j) = 143*(j - 12)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)/2
+    lambda = (6, 6):  c_lambda(j) = -(j - 8)*(j - 7)*(j - 6)*(29167*j**3 - 889458*j**2 + 8999015*j - 30208200)/6
+    lambda = (7, 5):  c_lambda(j) = -3*(j - 8)*(j - 7)*(j - 6)*(28593*j**3 - 871362*j**2 + 8810311*j - 29557110)/8
+    lambda = (8, 4):  c_lambda(j) = -5*(j - 8)*(j - 7)*(j - 6)*(45779*j**3 - 1393176*j**2 + 14068171*j - 47139510)/24
+    lambda = (9, 3):  c_lambda(j) = -7*(j - 8)*(j - 7)*(j - 6)*(8611*j**3 - 261498*j**2 + 2635355*j - 8814300)/12
+    lambda = (10, 2):  c_lambda(j) = -3*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(2159*j**2 - 45939*j + 243540)/4
+    lambda = (11, 1):  c_lambda(j) = -11*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(215*j - 2399)/8
+    lambda = (12, 0):  c_lambda(j) = -187*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)/8
+    lambda = (7, 6):  c_lambda(j) = (j - 9)*(j - 8)*(j - 7)*(j - 6)*(9171*j**2 - 194950*j + 1032680)/4
+    lambda = (8, 5):  c_lambda(j) = (j - 9)*(j - 8)*(j - 7)*(j - 6)*(11239*j**2 - 238675*j + 1263130)/4
+    lambda = (9, 4):  c_lambda(j) = (j - 9)*(j - 8)*(j - 7)*(j - 6)*(14497*j**2 - 307350*j + 1624040)/8
+    lambda = (10, 3):  c_lambda(j) = (j - 9)*(j - 8)*(j - 7)*(j - 6)*(4151*j**2 - 87795*j + 462880)/6
+    lambda = (11, 2):  c_lambda(j) = 11*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(323*j - 3580)/24
+    lambda = (12, 1):  c_lambda(j) = 55*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)/4
+    lambda = (7, 7):  c_lambda(j) = -77*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(8*j - 89)/4
+    lambda = (8, 6):  c_lambda(j) = -77*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(17*j - 189)/4
+    lambda = (9, 5):  c_lambda(j) = -55*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(39*j - 433)/8
+    lambda = (10, 4):  c_lambda(j) = -77*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(38*j - 421)/24
+    lambda = (11, 3):  c_lambda(j) = -11*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(22*j - 243)/8
+    lambda = (12, 2):  c_lambda(j) = -77*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)/24
+    lambda = (8, 7):  c_lambda(j) = 77*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)/6
+    lambda = (9, 6):  c_lambda(j) = 44*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)/3
+    lambda = (10, 5):  c_lambda(j) = 33*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)/4
+    lambda = (11, 4):  c_lambda(j) = 22*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)/9
+    lambda = (12, 3):  c_lambda(j) = 11*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)/36
+
+  --- p = 4 ---
+    lambda = (4, 4):  c_lambda(j) = -3997*(j - 12)*(j - 11)*(j - 10)*(j - 9)/12
+    lambda = (5, 3):  c_lambda(j) = -3227*(j - 12)*(j - 11)*(j - 10)*(j - 9)/6
+    lambda = (6, 2):  c_lambda(j) = -1085*(j - 12)*(j - 11)*(j - 10)*(j - 9)/6
+    lambda = (7, 1):  c_lambda(j) = 1463*(j - 12)*(j - 11)*(j - 10)*(j - 9)/24
+    lambda = (8, 0):  c_lambda(j) = 889*(j - 12)*(j - 11)*(j - 10)*(j - 9)/24
+    lambda = (5, 4):  c_lambda(j) = -7*(j - 12)*(j - 11)*(j - 10)*(2887*j - 23076)/3
+    lambda = (6, 3):  c_lambda(j) = -56*(j - 12)*(j - 11)*(j - 10)*(599*j - 4797)/3
+    lambda = (7, 2):  c_lambda(j) = -7*(j - 12)*(j - 11)*(j - 10)*(2767*j - 22176)/2
+    lambda = (8, 1):  c_lambda(j) = -28*(j - 12)*(j - 11)*(j - 10)*(467*j - 3741)/3
+    lambda = (9, 0):  c_lambda(j) = -1603*(j - 12)*(j - 11)*(j - 10)*(j - 8)/2
+    lambda = (5, 5):  c_lambda(j) = 91*(j - 12)*(j - 11)*(3247*j**2 - 55384*j + 235269)/3
+    lambda = (6, 4):  c_lambda(j) = 105*(j - 12)*(j - 11)*(2132*j**2 - 36363*j + 154459)
+    lambda = (7, 3):  c_lambda(j) = 35*(j - 12)*(j - 11)*(71273*j**2 - 1215317*j + 5161140)/12
+    lambda = (8, 2):  c_lambda(j) = 35*(j - 12)*(j - 11)*(38377*j**2 - 654013*j + 2775996)/12
+    lambda = (9, 1):  c_lambda(j) = 21*(j - 12)*(j - 11)*(j - 8)*(6457*j - 58273)/4
+    lambda = (10, 0):  c_lambda(j) = 17913*(j - 12)*(j - 11)*(j - 9)*(j - 8)/4
+    lambda = (6, 5):  c_lambda(j) = -7*(j - 12)*(388249*j**3 - 10537788*j**2 + 94896473*j - 283536990)/3
+    lambda = (7, 4):  c_lambda(j) = -7*(j - 12)*(1000021*j**3 - 27132159*j**2 + 244250738*j - 729558720)/6
+    lambda = (8, 3):  c_lambda(j) = -(j - 12)*(2443709*j**3 - 66257511*j**2 + 596106652*j - 1779551730)/3
+    lambda = (9, 2):  c_lambda(j) = -6*(j - 12)*(j - 8)*(57557*j**2 - 1098553*j + 5225000)
+    lambda = (10, 1):  c_lambda(j) = -315*(j - 12)*(j - 9)*(j - 8)*(266*j - 2673)
+    lambda = (11, 0):  c_lambda(j) = -17941*(j - 12)*(j - 10)*(j - 9)*(j - 8)/2
+    lambda = (6, 6):  c_lambda(j) = 4*(628633*j**4 - 24103059*j**3 + 344672867*j**2 - 2178658221*j + 5136087825)/3
+    lambda = (7, 5):  c_lambda(j) = (15072139*j**4 - 577686138*j**3 + 8258134745*j**2 - 52183277466*j + 122985419040)/8
+    lambda = (8, 4):  c_lambda(j) = 5*(8348303*j**4 - 319736922*j**3 + 4567594045*j**2 - 28844772066*j + 67942812960)/24
+    lambda = (9, 3):  c_lambda(j) = 7*(j - 8)*(552693*j**3 - 16721966*j**2 + 167951123*j - 559994490)/4
+    lambda = (10, 2):  c_lambda(j) = 33*(j - 9)*(j - 8)*(40549*j**2 - 859369*j + 4539210)/4
+    lambda = (11, 1):  c_lambda(j) = 11*(j - 10)*(j - 9)*(j - 8)*(48381*j - 537511)/8
+    lambda = (12, 0):  c_lambda(j) = 46541*(j - 11)*(j - 10)*(j - 9)*(j - 8)/8
+    lambda = (7, 6):  c_lambda(j) = -15*(j - 8)*(39537*j**3 - 1193845*j**2 + 11969354*j - 39845256)
+    lambda = (8, 5):  c_lambda(j) = -6*(j - 8)*(123149*j**3 - 3716492*j**2 + 37242013*j - 123917970)
+    lambda = (9, 4):  c_lambda(j) = -6*(j - 8)*(81631*j**3 - 2461248*j**2 + 24642572*j - 81931080)
+    lambda = (10, 3):  c_lambda(j) = -20*(j - 9)*(j - 8)*(9712*j**2 - 205039*j + 1079232)
+    lambda = (11, 2):  c_lambda(j) = -55*(j - 10)*(j - 9)*(j - 8)*(793*j - 8772)
+    lambda = (12, 1):  c_lambda(j) = -4290*(j - 11)*(j - 10)*(j - 9)*(j - 8)
+    lambda = (7, 7):  c_lambda(j) = 35*(j - 9)*(j - 8)*(3623*j**2 - 76553*j + 403260)/2
+    lambda = (8, 6):  c_lambda(j) = 5*(j - 9)*(j - 8)*(54067*j**2 - 1141945*j + 6013128)/2
+    lambda = (9, 5):  c_lambda(j) = 25*(j - 9)*(j - 8)*(4460*j**2 - 94121*j + 495231)
+    lambda = (10, 4):  c_lambda(j) = 35*(j - 9)*(j - 8)*(2929*j**2 - 61735*j + 324456)/2
+    lambda = (11, 3):  c_lambda(j) = 275*(j - 10)*(j - 9)*(j - 8)*(47*j - 519)
+    lambda = (12, 2):  c_lambda(j) = 2805*(j - 11)*(j - 10)*(j - 9)*(j - 8)/2
+    lambda = (8, 7):  c_lambda(j) = -385*(j - 10)*(j - 9)*(j - 8)*(29*j - 321)
+    lambda = (9, 6):  c_lambda(j) = -110*(j - 10)*(j - 9)*(j - 8)*(115*j - 1272)
+    lambda = (10, 5):  c_lambda(j) = -165*(j - 10)*(j - 9)*(j - 8)*(85*j - 939)/2
+    lambda = (11, 4):  c_lambda(j) = -55*(j - 10)*(j - 9)*(j - 8)*(37*j - 408)
+    lambda = (12, 3):  c_lambda(j) = -495*(j - 11)*(j - 10)*(j - 9)*(j - 8)/2
+    lambda = (8, 8):  c_lambda(j) = 1155*(j - 11)*(j - 10)*(j - 9)*(j - 8)/4
+    lambda = (9, 7):  c_lambda(j) = 1155*(j - 11)*(j - 10)*(j - 9)*(j - 8)/2
+    lambda = (10, 6):  c_lambda(j) = 825*(j - 11)*(j - 10)*(j - 9)*(j - 8)/2
+    lambda = (11, 5):  c_lambda(j) = 1155*(j - 11)*(j - 10)*(j - 9)*(j - 8)/8
+    lambda = (12, 4):  c_lambda(j) = 165*(j - 11)*(j - 10)*(j - 9)*(j - 8)/8
+
+==============================================================================
+STEP 3.5  Degree-in-j of c_lambda for each p (level ell = |lambda| - j).
+==============================================================================
+
+  p = 2:
+    |lambda| = 4:
+      lambda = (2, 2): deg_j = 8, leading coeff = -1/2880
+      lambda = (3, 1): deg_j = 8, leading coeff = -1/2688
+      lambda = (4, 0): deg_j = 8, leading coeff = -1/40320
+    |lambda| = 5:
+      lambda = (3, 2): deg_j = 8, leading coeff = 1/336
+      lambda = (5, 0): deg_j = 8, leading coeff = -1/1008
+    |lambda| = 6:
+      lambda = (3, 3): deg_j = 8, leading coeff = 331/6720
+      lambda = (4, 2): deg_j = 8, leading coeff = 671/6720
+      lambda = (5, 1): deg_j = 8, leading coeff = 137/2016
+      lambda = (6, 0): deg_j = 8, leading coeff = 5/288
+    |lambda| = 7:
+      lambda = (4, 3): deg_j = 8, leading coeff = -1187/1008
+      lambda = (5, 2): deg_j = 8, leading coeff = -1019/840
+      lambda = (6, 1): deg_j = 8, leading coeff = -131/240
+      lambda = (7, 0): deg_j = 8, leading coeff = -7/72
+    |lambda| = 8:
+      lambda = (4, 4): deg_j = 8, leading coeff = 535/144
+      lambda = (5, 3): deg_j = 8, leading coeff = 10699/1440
+      lambda = (6, 2): deg_j = 8, leading coeff = 1529/288
+      lambda = (7, 1): deg_j = 8, leading coeff = 2681/1440
+      lambda = (8, 0): deg_j = 8, leading coeff = 77/288
+    |lambda| = 9:
+      lambda = (5, 4): deg_j = 8, leading coeff = -2681/144
+      lambda = (6, 3): deg_j = 8, leading coeff = -3787/180
+      lambda = (7, 2): deg_j = 8, leading coeff = -2789/240
+      lambda = (8, 1): deg_j = 8, leading coeff = -121/36
+      lambda = (9, 0): deg_j = 8, leading coeff = -49/120
+    |lambda| = 10:
+      lambda = (5, 5): deg_j = 8, leading coeff = 2555/144
+      lambda = (6, 4): deg_j = 8, leading coeff = 601/16
+      lambda = (7, 3): deg_j = 8, leading coeff = 275/9
+      lambda = (8, 2): deg_j = 8, leading coeff = 1981/144
+      lambda = (9, 1): deg_j = 8, leading coeff = 27/8
+      lambda = (10, 0): deg_j = 8, leading coeff = 17/48
+    |lambda| = 11:
+      lambda = (6, 5): deg_j = 8, leading coeff = -24583/840
+      lambda = (7, 4): deg_j = 8, leading coeff = -59911/1680
+      lambda = (8, 3): deg_j = 8, leading coeff = -5467/240
+      lambda = (9, 2): deg_j = 8, leading coeff = -386/45
+      lambda = (10, 1): deg_j = 8, leading coeff = -1817/1008
+      lambda = (11, 0): deg_j = 8, leading coeff = -55/336
+    |lambda| = 12:
+      lambda = (6, 6): deg_j = 8, leading coeff = 25703/3360
+      lambda = (7, 5): deg_j = 8, leading coeff = 2147/128
+      lambda = (8, 4): deg_j = 8, leading coeff = 118835/8064
+      lambda = (9, 3): deg_j = 8, leading coeff = 487/64
+      lambda = (10, 2): deg_j = 8, leading coeff = 5339/2240
+      lambda = (11, 1): deg_j = 8, leading coeff = 803/1920
+      lambda = (12, 0): deg_j = 8, leading coeff = 253/8064
+    |lambda| = 13:
+      lambda = (7, 6): deg_j = 8, leading coeff = -1837/840
+      lambda = (8, 5): deg_j = 8, leading coeff = -451/168
+      lambda = (9, 4): deg_j = 8, leading coeff = -583/336
+      lambda = (10, 3): deg_j = 8, leading coeff = -209/315
+      lambda = (11, 2): deg_j = 8, leading coeff = -143/1008
+      lambda = (12, 1): deg_j = 8, leading coeff = -11/840
+    |lambda| = 14:
+      lambda = (7, 7): deg_j = 8, leading coeff = 11/160
+      lambda = (8, 6): deg_j = 8, leading coeff = 33/224
+      lambda = (9, 5): deg_j = 8, leading coeff = 55/448
+      lambda = (10, 4): deg_j = 8, leading coeff = 11/192
+      lambda = (11, 3): deg_j = 8, leading coeff = 33/2240
+      lambda = (12, 2): deg_j = 8, leading coeff = 11/6720
+
+  p = 3:
+    |lambda| = 6:
+      lambda = (3, 3): deg_j = 6, leading coeff = 19/48
+      lambda = (4, 2): deg_j = 6, leading coeff = 9/16
+      lambda = (5, 1): deg_j = 6, leading coeff = 7/48
+      lambda = (6, 0): deg_j = 6, leading coeff = -1/48
+    |lambda| = 7:
+      lambda = (4, 3): deg_j = 6, leading coeff = -31/24
+      lambda = (5, 2): deg_j = 6, leading coeff = 7/3
+      lambda = (6, 1): deg_j = 6, leading coeff = 85/24
+      lambda = (7, 0): deg_j = 6, leading coeff = 7/6
+    |lambda| = 8:
+      lambda = (4, 4): deg_j = 6, leading coeff = -1913/24
+      lambda = (5, 3): deg_j = 6, leading coeff = -1063/6
+      lambda = (6, 2): deg_j = 6, leading coeff = -1817/12
+      lambda = (7, 1): deg_j = 6, leading coeff = -525/8
+      lambda = (8, 0): deg_j = 6, leading coeff = -35/3
+    |lambda| = 9:
+      lambda = (5, 4): deg_j = 6, leading coeff = 104815/72
+      lambda = (6, 3): deg_j = 6, leading coeff = 62455/36
+      lambda = (7, 2): deg_j = 6, leading coeff = 8323/8
+      lambda = (8, 1): deg_j = 6, leading coeff = 1001/3
+      lambda = (9, 0): deg_j = 6, leading coeff = 91/2
+    |lambda| = 10:
+      lambda = (5, 5): deg_j = 6, leading coeff = -39025/12
+      lambda = (6, 4): deg_j = 6, leading coeff = -56091/8
+      lambda = (7, 3): deg_j = 6, leading coeff = -70931/12
+      lambda = (8, 2): deg_j = 6, leading coeff = -22421/8
+      lambda = (9, 1): deg_j = 6, leading coeff = -5873/8
+      lambda = (10, 0): deg_j = 6, leading coeff = -665/8
+    |lambda| = 11:
+      lambda = (6, 5): deg_j = 6, leading coeff = 31849/3
+      lambda = (7, 4): deg_j = 6, leading coeff = 78865/6
+      lambda = (8, 3): deg_j = 6, leading coeff = 103475/12
+      lambda = (9, 2): deg_j = 6, leading coeff = 3371
+      lambda = (10, 1): deg_j = 6, leading coeff = 2973/4
+      lambda = (11, 0): deg_j = 6, leading coeff = 143/2
+    |lambda| = 12:
+      lambda = (6, 6): deg_j = 6, leading coeff = -29167/6
+      lambda = (7, 5): deg_j = 6, leading coeff = -85779/8
+      lambda = (8, 4): deg_j = 6, leading coeff = -228895/24
+      lambda = (9, 3): deg_j = 6, leading coeff = -60277/12
+      lambda = (10, 2): deg_j = 6, leading coeff = -112500*2**(39/59)*3**(56/59)*5**(19/177)*7**(170/177)/2401
+      lambda = (11, 1): deg_j = 6, leading coeff = -2365/8
+      lambda = (12, 0): deg_j = 6, leading coeff = -187/8
+    |lambda| = 13:
+      lambda = (7, 6): deg_j = 6, leading coeff = 9171/4
+      lambda = (8, 5): deg_j = 6, leading coeff = 11239/4
+      lambda = (9, 4): deg_j = 6, leading coeff = 14497/8
+      lambda = (10, 3): deg_j = 6, leading coeff = 4151/6
+      lambda = (11, 2): deg_j = 6, leading coeff = 3553/24
+      lambda = (12, 1): deg_j = 6, leading coeff = 55/4
+    |lambda| = 14:
+      lambda = (7, 7): deg_j = 6, leading coeff = -154
+      lambda = (8, 6): deg_j = 6, leading coeff = -1309/4
+      lambda = (9, 5): deg_j = 6, leading coeff = -2145/8
+      lambda = (10, 4): deg_j = 6, leading coeff = -1463/12
+      lambda = (11, 3): deg_j = 6, leading coeff = -121/4
+      lambda = (12, 2): deg_j = 6, leading coeff = -77/24
+    |lambda| = 15:
+      lambda = (8, 7): deg_j = 6, leading coeff = 77/6
+      lambda = (9, 6): deg_j = 6, leading coeff = 44/3
+      lambda = (10, 5): deg_j = 6, leading coeff = 33/4
+      lambda = (11, 4): deg_j = 6, leading coeff = 22/9
+      lambda = (12, 3): deg_j = 6, leading coeff = 11/36
+
+  p = 4:
+    |lambda| = 8:
+      lambda = (4, 4): deg_j = 4, leading coeff = -1215*2**(77/157)*3**(60/157)*5**(5/157)*7**(99/157)/28
+      lambda = (5, 3): deg_j = 4, leading coeff = -3227/6
+      lambda = (6, 2): deg_j = 4, leading coeff = -1085/6
+      lambda = (7, 1): deg_j = 4, leading coeff = 1463/24
+      lambda = (8, 0): deg_j = 4, leading coeff = 889/24
+    |lambda| = 9:
+      lambda = (5, 4): deg_j = 4, leading coeff = -20209/3
+      lambda = (6, 3): deg_j = 4, leading coeff = -33544/3
+      lambda = (7, 2): deg_j = 4, leading coeff = -19369/2
+      lambda = (8, 1): deg_j = 4, leading coeff = -13076/3
+      lambda = (9, 0): deg_j = 4, leading coeff = -1603/2
+    |lambda| = 10:
+      lambda = (5, 5): deg_j = 4, leading coeff = 295477/3
+      lambda = (6, 4): deg_j = 4, leading coeff = 223860
+      lambda = (7, 3): deg_j = 4, leading coeff = 2494555/12
+      lambda = (8, 2): deg_j = 4, leading coeff = 1343195/12
+      lambda = (9, 1): deg_j = 4, leading coeff = 135597/4
+      lambda = (10, 0): deg_j = 4, leading coeff = 17913/4
+    |lambda| = 11:
+      lambda = (6, 5): deg_j = 4, leading coeff = -2717743/3
+      lambda = (7, 4): deg_j = 4, leading coeff = -7000147/6
+      lambda = (8, 3): deg_j = 4, leading coeff = -2443709/3
+      lambda = (9, 2): deg_j = 4, leading coeff = -345342
+      lambda = (10, 1): deg_j = 4, leading coeff = -83790
+      lambda = (11, 0): deg_j = 4, leading coeff = -17941/2
+    |lambda| = 12:
+      lambda = (6, 6): deg_j = 4, leading coeff = 2514532/3
+      lambda = (7, 5): deg_j = 4, leading coeff = 15072139/8
+      lambda = (8, 4): deg_j = 4, leading coeff = 41741515/24
+      lambda = (9, 3): deg_j = 4, leading coeff = 3868851/4
+      lambda = (10, 2): deg_j = 4, leading coeff = 1338117/4
+      lambda = (11, 1): deg_j = 4, leading coeff = 532191/8
+      lambda = (12, 0): deg_j = 4, leading coeff = 46541/8
+    |lambda| = 13:
+      lambda = (7, 6): deg_j = 4, leading coeff = -593055
+      lambda = (8, 5): deg_j = 4, leading coeff = -738894
+      lambda = (9, 4): deg_j = 4, leading coeff = -489786
+      lambda = (10, 3): deg_j = 4, leading coeff = -194240
+      lambda = (11, 2): deg_j = 4, leading coeff = -43615
+      lambda = (12, 1): deg_j = 4, leading coeff = -4290
+    |lambda| = 14:
+      lambda = (7, 7): deg_j = 4, leading coeff = 126805/2
+      lambda = (8, 6): deg_j = 4, leading coeff = 270335/2
+      lambda = (9, 5): deg_j = 4, leading coeff = 111500
+      lambda = (10, 4): deg_j = 4, leading coeff = 102515/2
+      lambda = (11, 3): deg_j = 4, leading coeff = 12925
+      lambda = (12, 2): deg_j = 4, leading coeff = 2805/2
+    |lambda| = 15:
+      lambda = (8, 7): deg_j = 4, leading coeff = -11165
+      lambda = (9, 6): deg_j = 4, leading coeff = -12650
+      lambda = (10, 5): deg_j = 4, leading coeff = -14025/2
+      lambda = (11, 4): deg_j = 4, leading coeff = -2035
+      lambda = (12, 3): deg_j = 4, leading coeff = -495/2
+    |lambda| = 16:
+      lambda = (8, 8): deg_j = 4, leading coeff = 1155/4
+      lambda = (9, 7): deg_j = 4, leading coeff = 1155/2
+      lambda = (10, 6): deg_j = 4, leading coeff = 825/2
+      lambda = (11, 5): deg_j = 4, leading coeff = 1155/8
+      lambda = (12, 4): deg_j = 4, leading coeff = 165/8
+
+  Common j-factors within a level (fixed p, fixed |lambda|):
+
+    p = 2:
+      |lambda| = 4: gcd_over_lambda(c_lambda(j)) = (j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)
+      |lambda| = 5: gcd_over_lambda(c_lambda(j)) = (j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 4)
+      |lambda| = 6: gcd_over_lambda(c_lambda(j)) = (j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)
+      |lambda| = 7: gcd_over_lambda(c_lambda(j)) = (j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 4)
+      |lambda| = 8: gcd_over_lambda(c_lambda(j)) = (j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 5)*(j - 4)
+      |lambda| = 9: gcd_over_lambda(c_lambda(j)) = (j - 12)*(j - 11)*(j - 10)*(j - 6)*(j - 5)*(j - 4)
+      |lambda| = 10: gcd_over_lambda(c_lambda(j)) = (j - 12)*(j - 11)*(j - 7)*(j - 6)*(j - 5)*(j - 4)
+      |lambda| = 11: gcd_over_lambda(c_lambda(j)) = (j - 12)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)
+      |lambda| = 12: gcd_over_lambda(c_lambda(j)) = (j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)
+      |lambda| = 13: gcd_over_lambda(c_lambda(j)) = (j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)
+      |lambda| = 14: gcd_over_lambda(c_lambda(j)) = (j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)
+
+    p = 3:
+      |lambda| = 6: gcd_over_lambda(c_lambda(j)) = (j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)
+      |lambda| = 7: gcd_over_lambda(c_lambda(j)) = (j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)
+      |lambda| = 8: gcd_over_lambda(c_lambda(j)) = (j - 12)*(j - 11)*(j - 10)*(j - 9)
+      |lambda| = 9: gcd_over_lambda(c_lambda(j)) = (j - 12)*(j - 11)*(j - 10)
+      |lambda| = 10: gcd_over_lambda(c_lambda(j)) = (j - 12)*(j - 11)*(j - 6)
+      |lambda| = 11: gcd_over_lambda(c_lambda(j)) = (j - 12)*(j - 7)*(j - 6)
+      |lambda| = 12: gcd_over_lambda(c_lambda(j)) = (j - 8)*(j - 7)*(j - 6)
+      |lambda| = 13: gcd_over_lambda(c_lambda(j)) = (j - 9)*(j - 8)*(j - 7)*(j - 6)
+      |lambda| = 14: gcd_over_lambda(c_lambda(j)) = (j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)
+      |lambda| = 15: gcd_over_lambda(c_lambda(j)) = (j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)
+
+    p = 4:
+      |lambda| = 8: gcd_over_lambda(c_lambda(j)) = (j - 12)*(j - 11)*(j - 10)*(j - 9)
+      |lambda| = 9: gcd_over_lambda(c_lambda(j)) = (j - 12)*(j - 11)*(j - 10)
+      |lambda| = 10: gcd_over_lambda(c_lambda(j)) = (j - 12)*(j - 11)
+      |lambda| = 11: gcd_over_lambda(c_lambda(j)) = j - 12
+      |lambda| = 12: gcd_over_lambda(c_lambda(j)) = 1
+      |lambda| = 13: gcd_over_lambda(c_lambda(j)) = j - 8
+      |lambda| = 14: gcd_over_lambda(c_lambda(j)) = (j - 9)*(j - 8)
+      |lambda| = 15: gcd_over_lambda(c_lambda(j)) = (j - 10)*(j - 9)*(j - 8)
+      |lambda| = 16: gcd_over_lambda(c_lambda(j)) = (j - 11)*(j - 10)*(j - 9)*(j - 8)
+
+==============================================================================
+STEP 3.7  Reparametrize by (ell, m). c_{lam(j; ell, m)}(j) at fixed (p, ell, m).
+==============================================================================
+
+  p = 2:
+    (ell=0, m=0): c(j) = (45889*j**4 - 1225928*j**3 + 12012692*j**2 - 50811088*j + 77750400)/192
+    (ell=0, m=1): c(j) = 5*(4839*j**3 - 97705*j**2 + 646265*j - 1393623)/16
+    (ell=0, m=2): c(j) = (35433*j**4 - 948956*j**3 + 9314132*j**2 - 39441024*j + 60399360)/64
+    (ell=0, m=3): c(j) = (j - 5)*(31323*j**2 - 478208*j + 1819125)/16
+    (ell=0, m=4): c(j) = (104297*j**4 - 2806972*j**3 + 27642772*j**2 - 117323072*j + 179953920)/192
+    (ell=0, m=5): c(j) = (66391*j**3 - 1353681*j**2 + 9016505*j - 19539135)/48
+    (ell=0, m=6): c(j) = (141571*j**3 - 3306498*j**2 + 25362392*j - 63718560)/48
+    (ell=0, m=7): c(j) = 5*(3093*j**2 - 48604*j + 188727)/4
+    (ell=0, m=8): c(j) = (14569*j**2 - 257896*j + 1131060)/2
+    (ell=0, m=9): c(j) = 3923*j - 35013
+    (ell=0, m=10): c(j) = (13273*j - 131710)/2
+    (ell=1, m=0): c(j) = -5*(1907*j**3 - 37755*j**2 + 246613*j - 527373)/48
+    (ell=1, m=1): c(j) = -(j - 4)*(1381*j**3 - 30782*j**2 + 229096*j - 563520)/16
+    (ell=1, m=2): c(j) = -(7067*j**3 - 140535*j**2 + 920413*j - 1971585)/16
+    (ell=1, m=3): c(j) = -(j - 4)*(921*j**3 - 20668*j**2 + 154372*j - 380640)/8
+    (ell=1, m=4): c(j) = -5*(1901*j**3 - 38133*j**2 + 251119*j - 539847)/24
+    (ell=1, m=5): c(j) = -3*(j - 4)*(114*j**3 - 2587*j**2 + 19448*j - 48160)/4
+    (ell=1, m=6): c(j) = -7*(j - 5)*(353*j**2 - 5405*j + 20592)/12
+    (ell=1, m=7): c(j) = -2*(j - 6)*(178*j**2 - 3083*j + 13300)
+    (ell=1, m=8): c(j) = -45*(j - 7)*(69*j - 605)/8
+    (ell=1, m=9): c(j) = -15*(j - 8)*(79*j - 772)/2
+    (ell=1, m=10): c(j) = -385*(j - 9)/2
+    (ell=1, m=11): c(j) = -264*(j - 10)
+    (ell=2, m=0): c(j) = (163*j**4 - 4172*j**3 + 39924*j**2 - 166160*j + 251520)/64
+    (ell=2, m=1): c(j) = (1093*j**3 - 21069*j**2 + 135731*j - 287595)/48
+    (ell=2, m=2): c(j) = (373*j**4 - 9600*j**3 + 92084*j**2 - 383952*j + 581760)/64
+    (ell=2, m=3): c(j) = (685*j**3 - 13347*j**2 + 86387*j - 183645)/24
+    (ell=2, m=4): c(j) = 5*(j - 4)*(71*j**3 - 1564*j**2 + 11564*j - 28320)/64
+    (ell=2, m=5): c(j) = 3*(j - 5)*(25*j**2 - 371*j + 1386)/4
+    (ell=2, m=6): c(j) = 7*(j - 6)*(j - 4)*(29*j**2 - 478*j + 2000)/64
+    (ell=2, m=7): c(j) = (j - 7)*(j - 5)*(83*j - 693)/12
+    (ell=2, m=8): c(j) = 9*(j - 8)*(j - 6)*(17*j - 160)/16
+    (ell=2, m=9): c(j) = 55*(j - 9)*(j - 7)/8
+    (ell=2, m=10): c(j) = 33*(j - 10)*(j - 8)/4
+
+  p = 3:
+    (ell=0, m=0): c(j) = -5*(105759*j**3 - 2488322*j**2 + 19190456*j - 48408000)/16
+    (ell=0, m=1): c(j) = -(217711*j**2 - 3435608*j + 13381137)/2
+    (ell=0, m=2): c(j) = -5*(241537*j**3 - 5688130*j**2 + 43899984*j - 110800512)/16
+    (ell=0, m=3): c(j) = -(277747*j**2 - 4386776*j + 17098389)/2
+    (ell=0, m=4): c(j) = -5*(230487*j**3 - 5437790*j**2 + 42028352*j - 106195200)/16
+    (ell=0, m=5): c(j) = -3*(31958*j**2 - 505539*j + 1972971)
+    (ell=0, m=6): c(j) = -5*(135141*j**3 - 3197038*j**2 + 24762568*j - 62672448)/16
+    (ell=0, m=7): c(j) = -(80699*j**2 - 1279732*j + 5004153)/2
+    (ell=0, m=8): c(j) = -5*(39457*j**2 - 703660*j + 3104256)/2
+    (ell=0, m=9): c(j) = -3*(13367*j - 119757)
+    (ell=0, m=10): c(j) = -30*(2920*j - 29067)
+    (ell=1, m=0): c(j) = 7*(26921*j**2 - 421348*j + 1630827)/8
+    (ell=1, m=1): c(j) = 5*(30991*j**3 - 723586*j**2 + 5548536*j - 13936320)/8
+    (ell=1, m=2): c(j) = 9*(45509*j**2 - 713332*j + 2764223)/8
+    (ell=1, m=3): c(j) = (j - 6)*(99709*j**2 - 1735738*j + 7517520)/4
+    (ell=1, m=4): c(j) = 5*(70243*j**2 - 1104260*j + 4288977)/8
+    (ell=1, m=5): c(j) = (139537*j**3 - 3279846*j**2 + 25278344*j - 63735360)/8
+    (ell=1, m=6): c(j) = 7*(24457*j**2 - 386156*j + 1504899)/8
+    (ell=1, m=7): c(j) = 5*(j - 6)*(1493*j**2 - 26332*j + 115160)
+    (ell=1, m=8): c(j) = 99*(j - 7)*(59*j - 524)
+    (ell=1, m=9): c(j) = 15*(j - 8)*(765*j - 7552)
+    (ell=1, m=10): c(j) = 2805*(j - 9)
+    (ell=1, m=11): c(j) = 4950*(j - 10)
+    (ell=2, m=0): c(j) = -5*(1049*j**3 - 24162*j**2 + 183496*j - 457680)/4
+    (ell=2, m=1): c(j) = -21*(2323*j**2 - 35924*j + 137841)/8
+    (ell=2, m=2): c(j) = -3*(7723*j**3 - 178434*j**2 + 1357976*j - 3392160)/8
+    (ell=2, m=3): c(j) = -3*(4799*j**2 - 74572*j + 287133)/2
+    (ell=2, m=4): c(j) = -5*(2050*j**3 - 47649*j**2 + 364178*j - 912480)/4
+    (ell=2, m=5): c(j) = -3*(2846*j**2 - 44563*j + 172557)/2
+    (ell=2, m=6): c(j) = -7*(j - 6)*(1493*j**2 - 26046*j + 112960)/8
+    (ell=2, m=7): c(j) = -9*(j - 7)*(151*j - 1331)
+    (ell=2, m=8): c(j) = -45*(j - 8)*(j - 6)*(67*j - 650)/8
+    (ell=2, m=9): c(j) = -1485*(j - 9)*(j - 7)/8
+    (ell=2, m=10): c(j) = -1155*(j - 10)*(j - 8)/4
+    (ell=3, m=0): c(j) = 35*(11*j**2 - 166*j + 627)/2
+    (ell=3, m=1): c(j) = 5*(125*j**3 - 2826*j**2 + 21208*j - 52464)/6
+    (ell=3, m=2): c(j) = 21*(153*j**2 - 2324*j + 8811)/8
+    (ell=3, m=3): c(j) = (1543*j**3 - 35154*j**2 + 265016*j - 657600)/12
+    (ell=3, m=4): c(j) = 5*(499*j**2 - 7676*j + 29337)/8
+    (ell=3, m=5): c(j) = (j - 6)*(329*j**2 - 5618*j + 24000)/4
+    (ell=3, m=6): c(j) = 21*(j - 7)*(47*j - 407)/8
+    (ell=3, m=7): c(j) = 5*(j - 8)*(j - 6)*(35*j - 332)/6
+    (ell=3, m=8): c(j) = 165*(j - 9)*(j - 7)/8
+    (ell=3, m=9): c(j) = 55*(j - 10)*(j - 8)*(j - 6)/12
+
+  p = 4:
+    (ell=0, m=0): c(j) = (6510815*j**2 - 116435030*j + 514756104)/4
+    (ell=0, m=1): c(j) = 63*(36923*j - 331661)
+    (ell=0, m=2): c(j) = (29759983*j**2 - 532243702*j + 2353207440)/8
+    (ell=0, m=3): c(j) = 693*(8719*j - 78279)/2
+    (ell=0, m=4): c(j) = 5*(5687687*j**2 - 101743634*j + 449930160)/8
+    (ell=0, m=5): c(j) = 3*(1429721*j - 12829311)/2
+    (ell=0, m=6): c(j) = 7*(2386985*j**2 - 42721346*j + 189005400)/8
+    (ell=0, m=7): c(j) = 66*(14165*j - 127093)
+    (ell=0, m=8): c(j) = (6254377*j**2 - 112053394*j + 496154136)/8
+    (ell=0, m=9): c(j) = 21*(22541*j - 202411)/2
+    (ell=0, m=10): c(j) = 3*(233850*j - 2332529)
+    (ell=1, m=0): c(j) = -630*(1129*j - 10109)
+    (ell=1, m=1): c(j) = -10*(133015*j**2 - 2370400*j + 10450128)
+    (ell=1, m=2): c(j) = -630*(2461*j - 22033)
+    (ell=1, m=3): c(j) = -10*(169507*j**2 - 3022510*j + 13331856)
+    (ell=1, m=4): c(j) = -1575*(849*j - 7601)
+    (ell=1, m=5): c(j) = -15*(77857*j**2 - 1389820*j + 6135936)
+    (ell=1, m=6): c(j) = -1155*(569*j - 5097)
+    (ell=1, m=7): c(j) = -40*(12248*j**2 - 219029*j + 968388)
+    (ell=1, m=8): c(j) = -315*(575*j - 5159)
+    (ell=1, m=9): c(j) = -45*(j - 8)*(2637*j - 26188)
+    (ell=1, m=10): c(j) = -21945*(j - 9)
+    (ell=1, m=11): c(j) = -51480*(j - 10)
+    (ell=2, m=0): c(j) = 35*(8311*j**2 - 147238*j + 646104)/2
+    (ell=2, m=1): c(j) = 6930*(43*j - 383)
+    (ell=2, m=2): c(j) = 45*(14023*j**2 - 248690*j + 1092216)/2
+    (ell=2, m=3): c(j) = 1008*(343*j - 3058)
+    (ell=2, m=4): c(j) = 5*(53909*j**2 - 958028*j + 4214580)
+    (ell=2, m=5): c(j) = 27*(7393*j - 66033)
+    (ell=2, m=6): c(j) = 35*(3733*j**2 - 66547*j + 293484)
+    (ell=2, m=7): c(j) = 120*(512*j - 4587)
+    (ell=2, m=8): c(j) = 495*(j - 8)*(143*j - 1416)/2
+    (ell=2, m=9): c(j) = 8085*(j - 9)
+    (ell=2, m=10): c(j) = 8415*(j - 10)*(j - 8)/2
+    (ell=3, m=0): c(j) = -210*(101*j - 891)
+    (ell=3, m=1): c(j) = -140*(182*j**2 - 3197*j + 13938)
+    (ell=3, m=2): c(j) = -42*(1019*j - 9009)
+    (ell=3, m=3): c(j) = -20*(1495*j**2 - 26350*j + 115176)
+    (ell=3, m=4): c(j) = -30*(1037*j - 9207)
+    (ell=3, m=5): c(j) = -5*(7025*j**2 - 124490*j + 546432)/2
+    (ell=3, m=6): c(j) = -84*(133*j - 1188)
+    (ell=3, m=7): c(j) = -120*(j - 8)*(46*j - 453)
+    (ell=3, m=8): c(j) = -1650*(j - 9)
+    (ell=3, m=9): c(j) = -1485*(j - 10)*(j - 8)/2
+    (ell=4, m=0): c(j) = 35*(71*j**2 - 1226*j + 5280)/4
+    (ell=4, m=1): c(j) = 105*(19*j - 165)
+    (ell=4, m=2): c(j) = 105*(49*j**2 - 850*j + 3672)/4
+    (ell=4, m=3): c(j) = 42*(49*j - 429)
+    (ell=4, m=4): c(j) = 5*(787*j**2 - 13774*j + 59880)/4
+    (ell=4, m=5): c(j) = 9*(103*j - 913)
+    (ell=4, m=6): c(j) = 105*(j - 8)*(29*j - 282)/8
+    (ell=4, m=7): c(j) = 165*(j - 9)
+    (ell=4, m=8): c(j) = 495*(j - 10)*(j - 8)/8
+
+  Do the (ell, m) fits agree across p?
+    (ell=0, m=0): DIFFERS across p:
+        p=2: (45889*j**4 - 1225928*j**3 + 12012692*j**2 - 50811088*j + 77750400)/192
+        p=3: -5*(105759*j**3 - 2488322*j**2 + 19190456*j - 48408000)/16
+        p=4: (6510815*j**2 - 116435030*j + 514756104)/4
+    (ell=0, m=1): DIFFERS across p:
+        p=2: 5*(4839*j**3 - 97705*j**2 + 646265*j - 1393623)/16
+        p=3: -(217711*j**2 - 3435608*j + 13381137)/2
+        p=4: 63*(36923*j - 331661)
+    (ell=0, m=2): DIFFERS across p:
+        p=2: (35433*j**4 - 948956*j**3 + 9314132*j**2 - 39441024*j + 60399360)/64
+        p=3: -5*(241537*j**3 - 5688130*j**2 + 43899984*j - 110800512)/16
+        p=4: (29759983*j**2 - 532243702*j + 2353207440)/8
+    (ell=0, m=3): DIFFERS across p:
+        p=2: (j - 5)*(31323*j**2 - 478208*j + 1819125)/16
+        p=3: -(277747*j**2 - 4386776*j + 17098389)/2
+        p=4: 693*(8719*j - 78279)/2
+    (ell=0, m=4): DIFFERS across p:
+        p=2: (104297*j**4 - 2806972*j**3 + 27642772*j**2 - 117323072*j + 179953920)/192
+        p=3: -5*(230487*j**3 - 5437790*j**2 + 42028352*j - 106195200)/16
+        p=4: 5*(5687687*j**2 - 101743634*j + 449930160)/8
+    (ell=0, m=5): DIFFERS across p:
+        p=2: (66391*j**3 - 1353681*j**2 + 9016505*j - 19539135)/48
+        p=3: -3*(31958*j**2 - 505539*j + 1972971)
+        p=4: 3*(1429721*j - 12829311)/2
+    (ell=0, m=6): DIFFERS across p:
+        p=2: (141571*j**3 - 3306498*j**2 + 25362392*j - 63718560)/48
+        p=3: -5*(135141*j**3 - 3197038*j**2 + 24762568*j - 62672448)/16
+        p=4: 7*(2386985*j**2 - 42721346*j + 189005400)/8
+    (ell=0, m=7): DIFFERS across p:
+        p=2: 5*(3093*j**2 - 48604*j + 188727)/4
+        p=3: -(80699*j**2 - 1279732*j + 5004153)/2
+        p=4: 66*(14165*j - 127093)
+    (ell=0, m=8): DIFFERS across p:
+        p=2: (14569*j**2 - 257896*j + 1131060)/2
+        p=3: -5*(39457*j**2 - 703660*j + 3104256)/2
+        p=4: (6254377*j**2 - 112053394*j + 496154136)/8
+    (ell=0, m=9): DIFFERS across p:
+        p=2: 3923*j - 35013
+        p=3: -3*(13367*j - 119757)
+        p=4: 21*(22541*j - 202411)/2
+    (ell=0, m=10): DIFFERS across p:
+        p=2: (13273*j - 131710)/2
+        p=3: -30*(2920*j - 29067)
+        p=4: 3*(233850*j - 2332529)
+    (ell=1, m=0): DIFFERS across p:
+        p=2: -5*(1907*j**3 - 37755*j**2 + 246613*j - 527373)/48
+        p=3: 7*(26921*j**2 - 421348*j + 1630827)/8
+        p=4: -630*(1129*j - 10109)
+    (ell=1, m=1): DIFFERS across p:
+        p=2: -(j - 4)*(1381*j**3 - 30782*j**2 + 229096*j - 563520)/16
+        p=3: 5*(30991*j**3 - 723586*j**2 + 5548536*j - 13936320)/8
+        p=4: -10*(133015*j**2 - 2370400*j + 10450128)
+    (ell=1, m=2): DIFFERS across p:
+        p=2: -(7067*j**3 - 140535*j**2 + 920413*j - 1971585)/16
+        p=3: 9*(45509*j**2 - 713332*j + 2764223)/8
+        p=4: -630*(2461*j - 22033)
+    (ell=1, m=3): DIFFERS across p:
+        p=2: -(j - 4)*(921*j**3 - 20668*j**2 + 154372*j - 380640)/8
+        p=3: (j - 6)*(99709*j**2 - 1735738*j + 7517520)/4
+        p=4: -10*(169507*j**2 - 3022510*j + 13331856)
+    (ell=1, m=4): DIFFERS across p:
+        p=2: -5*(1901*j**3 - 38133*j**2 + 251119*j - 539847)/24
+        p=3: 5*(70243*j**2 - 1104260*j + 4288977)/8
+        p=4: -1575*(849*j - 7601)
+    (ell=1, m=5): DIFFERS across p:
+        p=2: -3*(j - 4)*(114*j**3 - 2587*j**2 + 19448*j - 48160)/4
+        p=3: (139537*j**3 - 3279846*j**2 + 25278344*j - 63735360)/8
+        p=4: -15*(77857*j**2 - 1389820*j + 6135936)
+    (ell=1, m=6): DIFFERS across p:
+        p=2: -7*(j - 5)*(353*j**2 - 5405*j + 20592)/12
+        p=3: 7*(24457*j**2 - 386156*j + 1504899)/8
+        p=4: -1155*(569*j - 5097)
+    (ell=1, m=7): DIFFERS across p:
+        p=2: -2*(j - 6)*(178*j**2 - 3083*j + 13300)
+        p=3: 5*(j - 6)*(1493*j**2 - 26332*j + 115160)
+        p=4: -40*(12248*j**2 - 219029*j + 968388)
+    (ell=1, m=8): DIFFERS across p:
+        p=2: -45*(j - 7)*(69*j - 605)/8
+        p=3: 99*(j - 7)*(59*j - 524)
+        p=4: -315*(575*j - 5159)
+    (ell=1, m=9): DIFFERS across p:
+        p=2: -15*(j - 8)*(79*j - 772)/2
+        p=3: 15*(j - 8)*(765*j - 7552)
+        p=4: -45*(j - 8)*(2637*j - 26188)
+    (ell=1, m=10): DIFFERS across p:
+        p=2: -385*(j - 9)/2
+        p=3: 2805*(j - 9)
+        p=4: -21945*(j - 9)
+    (ell=1, m=11): DIFFERS across p:
+        p=2: -264*(j - 10)
+        p=3: 4950*(j - 10)
+        p=4: -51480*(j - 10)
+    (ell=2, m=0): DIFFERS across p:
+        p=2: (163*j**4 - 4172*j**3 + 39924*j**2 - 166160*j + 251520)/64
+        p=3: -5*(1049*j**3 - 24162*j**2 + 183496*j - 457680)/4
+        p=4: 35*(8311*j**2 - 147238*j + 646104)/2
+    (ell=2, m=1): DIFFERS across p:
+        p=2: (1093*j**3 - 21069*j**2 + 135731*j - 287595)/48
+        p=3: -21*(2323*j**2 - 35924*j + 137841)/8
+        p=4: 6930*(43*j - 383)
+    (ell=2, m=2): DIFFERS across p:
+        p=2: (373*j**4 - 9600*j**3 + 92084*j**2 - 383952*j + 581760)/64
+        p=3: -3*(7723*j**3 - 178434*j**2 + 1357976*j - 3392160)/8
+        p=4: 45*(14023*j**2 - 248690*j + 1092216)/2
+    (ell=2, m=3): DIFFERS across p:
+        p=2: (685*j**3 - 13347*j**2 + 86387*j - 183645)/24
+        p=3: -3*(4799*j**2 - 74572*j + 287133)/2
+        p=4: 1008*(343*j - 3058)
+    (ell=2, m=4): DIFFERS across p:
+        p=2: 5*(j - 4)*(71*j**3 - 1564*j**2 + 11564*j - 28320)/64
+        p=3: -5*(2050*j**3 - 47649*j**2 + 364178*j - 912480)/4
+        p=4: 5*(53909*j**2 - 958028*j + 4214580)
+    (ell=2, m=5): DIFFERS across p:
+        p=2: 3*(j - 5)*(25*j**2 - 371*j + 1386)/4
+        p=3: -3*(2846*j**2 - 44563*j + 172557)/2
+        p=4: 27*(7393*j - 66033)
+    (ell=2, m=6): DIFFERS across p:
+        p=2: 7*(j - 6)*(j - 4)*(29*j**2 - 478*j + 2000)/64
+        p=3: -7*(j - 6)*(1493*j**2 - 26046*j + 112960)/8
+        p=4: 35*(3733*j**2 - 66547*j + 293484)
+    (ell=2, m=7): DIFFERS across p:
+        p=2: (j - 7)*(j - 5)*(83*j - 693)/12
+        p=3: -9*(j - 7)*(151*j - 1331)
+        p=4: 120*(512*j - 4587)
+    (ell=2, m=8): DIFFERS across p:
+        p=2: 9*(j - 8)*(j - 6)*(17*j - 160)/16
+        p=3: -45*(j - 8)*(j - 6)*(67*j - 650)/8
+        p=4: 495*(j - 8)*(143*j - 1416)/2
+    (ell=2, m=9): DIFFERS across p:
+        p=2: 55*(j - 9)*(j - 7)/8
+        p=3: -1485*(j - 9)*(j - 7)/8
+        p=4: 8085*(j - 9)
+    (ell=2, m=10): DIFFERS across p:
+        p=2: 33*(j - 10)*(j - 8)/4
+        p=3: -1155*(j - 10)*(j - 8)/4
+        p=4: 8415*(j - 10)*(j - 8)/2
+    (ell=3, m=0): DIFFERS across p:
+        p=3: 35*(11*j**2 - 166*j + 627)/2
+        p=4: -210*(101*j - 891)
+    (ell=3, m=1): DIFFERS across p:
+        p=3: 5*(125*j**3 - 2826*j**2 + 21208*j - 52464)/6
+        p=4: -140*(182*j**2 - 3197*j + 13938)
+    (ell=3, m=2): DIFFERS across p:
+        p=3: 21*(153*j**2 - 2324*j + 8811)/8
+        p=4: -42*(1019*j - 9009)
+    (ell=3, m=3): DIFFERS across p:
+        p=3: (1543*j**3 - 35154*j**2 + 265016*j - 657600)/12
+        p=4: -20*(1495*j**2 - 26350*j + 115176)
+    (ell=3, m=4): DIFFERS across p:
+        p=3: 5*(499*j**2 - 7676*j + 29337)/8
+        p=4: -30*(1037*j - 9207)
+    (ell=3, m=5): DIFFERS across p:
+        p=3: (j - 6)*(329*j**2 - 5618*j + 24000)/4
+        p=4: -5*(7025*j**2 - 124490*j + 546432)/2
+    (ell=3, m=6): DIFFERS across p:
+        p=3: 21*(j - 7)*(47*j - 407)/8
+        p=4: -84*(133*j - 1188)
+    (ell=3, m=7): DIFFERS across p:
+        p=3: 5*(j - 8)*(j - 6)*(35*j - 332)/6
+        p=4: -120*(j - 8)*(46*j - 453)
+    (ell=3, m=8): DIFFERS across p:
+        p=3: 165*(j - 9)*(j - 7)/8
+        p=4: -1650*(j - 9)
+    (ell=3, m=9): DIFFERS across p:
+        p=3: 55*(j - 10)*(j - 8)*(j - 6)/12
+        p=4: -1485*(j - 10)*(j - 8)/2
+
+==============================================================================
+STEP 4  Uniform-in-p pattern hunting: which lambdas are stable across p?
+==============================================================================
+
+  For each lambda that appears at multiple p, table c_lambda(j, p):
+    lambda = (3, 3): DIFFERS across p; polynomials:
+        p=2: (j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(993*j**2 - 9023*j + 20210)/20160
+        p=3: 19*(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)/48
+    lambda = (4, 2): DIFFERS across p; polynomials:
+        p=2: (j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(671*j**2 - 6081*j + 13590)/6720
+        p=3: 9*(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)/16
+    lambda = (5, 1): DIFFERS across p; polynomials:
+        p=2: (j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 4)*(137*j - 689)/2016
+        p=3: 7*(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)/48
+    lambda = (6, 0): DIFFERS across p; polynomials:
+        p=2: 5*(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 5)*(j - 4)/288
+        p=3: -(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)/48
+    lambda = (4, 3): DIFFERS across p; polynomials:
+        p=2: -(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 4)*(1187*j**2 - 13170*j + 36183)/1008
+        p=3: -(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(31*j - 189)/24
+    lambda = (5, 2): DIFFERS across p; polynomials:
+        p=2: -(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 4)*(3057*j**2 - 33847*j + 92820)/2520
+        p=3: 7*(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 6)/3
+    lambda = (6, 1): DIFFERS across p; polynomials:
+        p=2: -(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 5)*(j - 4)*(131*j - 791)/240
+        p=3: (j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(85*j - 511)/24
+    lambda = (7, 0): DIFFERS across p; polynomials:
+        p=2: -7*(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 6)*(j - 5)*(j - 4)/72
+        p=3: 7*(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 6)/6
+    lambda = (4, 4): DIFFERS across p; polynomials:
+        p=2: (j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 5)*(j - 4)*(535*j**2 - 7024*j + 22890)/144
+        p=3: -(j - 12)*(j - 11)*(j - 10)*(j - 9)*(1913*j**2 - 24964*j + 80920)/24
+        p=4: -3997*(j - 12)*(j - 11)*(j - 10)*(j - 9)/12
+    lambda = (5, 3): DIFFERS across p; polynomials:
+        p=2: (j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 5)*(j - 4)*(10699*j**2 - 140311*j + 456792)/1440
+        p=3: -(j - 12)*(j - 11)*(j - 10)*(j - 9)*(4252*j**2 - 55471*j + 179760)/24
+        p=4: -3227*(j - 12)*(j - 11)*(j - 10)*(j - 9)/6
+    lambda = (6, 2): DIFFERS across p; polynomials:
+        p=2: (j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 5)*(j - 4)*(1529*j**2 - 20009*j + 65016)/288
+        p=3: -(j - 12)*(j - 11)*(j - 10)*(j - 9)*(3634*j**2 - 47377*j + 153440)/24
+        p=4: -1085*(j - 12)*(j - 11)*(j - 10)*(j - 9)/6
+    lambda = (7, 1): DIFFERS across p; polynomials:
+        p=2: 7*(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 6)*(j - 5)*(j - 4)*(383*j - 2699)/1440
+        p=3: -35*(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 6)*(45*j - 316)/24
+        p=4: 1463*(j - 12)*(j - 11)*(j - 10)*(j - 9)/24
+    lambda = (8, 0): DIFFERS across p; polynomials:
+        p=2: 77*(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/288
+        p=3: -35*(j - 12)*(j - 11)*(j - 10)*(j - 9)*(j - 7)*(j - 6)/3
+        p=4: 889*(j - 12)*(j - 11)*(j - 10)*(j - 9)/24
+    lambda = (5, 4): DIFFERS across p; polynomials:
+        p=2: -7*(j - 12)*(j - 11)*(j - 10)*(j - 6)*(j - 5)*(j - 4)*(383*j**2 - 5807*j + 21888)/144
+        p=3: (j - 12)*(j - 11)*(j - 10)*(104815*j**3 - 2210997*j**2 + 15432110*j - 35636832)/72
+        p=4: -7*(j - 12)*(j - 11)*(j - 10)*(2887*j - 23076)/3
+    lambda = (6, 3): DIFFERS across p; polynomials:
+        p=2: -7*(j - 12)*(j - 11)*(j - 10)*(j - 6)*(j - 5)*(j - 4)*(541*j**2 - 8191*j + 30834)/180
+        p=3: (j - 12)*(j - 11)*(j - 10)*(62455*j**3 - 1316682*j**2 + 9185339*j - 21201768)/36
+        p=4: -56*(j - 12)*(j - 11)*(j - 10)*(599*j - 4797)/3
+    lambda = (7, 2): DIFFERS across p; polynomials:
+        p=2: -(j - 12)*(j - 11)*(j - 10)*(j - 6)*(j - 5)*(j - 4)*(2789*j**2 - 42129*j + 158256)/240
+        p=3: 7*(j - 12)*(j - 11)*(j - 10)*(j - 6)*(1189*j**2 - 17909*j + 67104)/8
+        p=4: -7*(j - 12)*(j - 11)*(j - 10)*(2767*j - 22176)/2
+    lambda = (8, 1): DIFFERS across p; polynomials:
+        p=2: -(j - 12)*(j - 11)*(j - 10)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(121*j - 975)/36
+        p=3: 7*(j - 12)*(j - 11)*(j - 10)*(j - 7)*(j - 6)*(143*j - 1149)/3
+        p=4: -28*(j - 12)*(j - 11)*(j - 10)*(467*j - 3741)/3
+    lambda = (9, 0): DIFFERS across p; polynomials:
+        p=2: -49*(j - 12)*(j - 11)*(j - 10)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/120
+        p=3: 91*(j - 12)*(j - 11)*(j - 10)*(j - 8)*(j - 7)*(j - 6)/2
+        p=4: -1603*(j - 12)*(j - 11)*(j - 10)*(j - 8)/2
+    lambda = (5, 5): DIFFERS across p; polynomials:
+        p=2: 7*(j - 12)*(j - 11)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(365*j**2 - 6287*j + 26946)/144
+        p=3: -7*(j - 12)*(j - 11)*(j - 6)*(5575*j**3 - 134697*j**2 + 1078376*j - 2860710)/12
+        p=4: 91*(j - 12)*(j - 11)*(3247*j**2 - 55384*j + 235269)/3
+    lambda = (6, 4): DIFFERS across p; polynomials:
+        p=2: (j - 12)*(j - 11)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(601*j**2 - 10343*j + 44294)/16
+        p=3: -7*(j - 12)*(j - 11)*(j - 6)*(8013*j**3 - 193511*j**2 + 1548582*j - 4106500)/8
+        p=4: 105*(j - 12)*(j - 11)*(2132*j**2 - 36363*j + 154459)
+    lambda = (7, 3): DIFFERS across p; polynomials:
+        p=2: 5*(j - 12)*(j - 11)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(440*j**2 - 7559*j + 32319)/72
+        p=3: -7*(j - 12)*(j - 11)*(j - 6)*(20266*j**3 - 488967*j**2 + 3909737*j - 10360020)/24
+        p=4: 35*(j - 12)*(j - 11)*(71273*j**2 - 1215317*j + 5161140)/12
+    lambda = (8, 2): DIFFERS across p; polynomials:
+        p=2: 7*(j - 12)*(j - 11)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(283*j**2 - 4849*j + 20682)/144
+        p=3: -7*(j - 12)*(j - 11)*(j - 7)*(j - 6)*(3203*j**2 - 54755*j + 233060)/8
+        p=4: 35*(j - 12)*(j - 11)*(38377*j**2 - 654013*j + 2775996)/12
+    lambda = (9, 1): DIFFERS across p; polynomials:
+        p=2: (j - 12)*(j - 11)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(27*j - 245)/8
+        p=3: -7*(j - 12)*(j - 11)*(j - 8)*(j - 7)*(j - 6)*(839*j - 7595)/8
+        p=4: 21*(j - 12)*(j - 11)*(j - 8)*(6457*j - 58273)/4
+    lambda = (10, 0): DIFFERS across p; polynomials:
+        p=2: 17*(j - 12)*(j - 11)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/48
+        p=3: -665*(j - 12)*(j - 11)*(j - 9)*(j - 8)*(j - 7)*(j - 6)/8
+        p=4: 17913*(j - 12)*(j - 11)*(j - 9)*(j - 8)/4
+    lambda = (6, 5): DIFFERS across p; polynomials:
+        p=2: -(j - 12)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(24583*j**2 - 474868*j + 2283765)/840
+        p=3: (j - 12)*(j - 7)*(j - 6)*(31849*j**3 - 868239*j**2 + 7850111*j - 23540385)/3
+        p=4: -7*(j - 12)*(388249*j**3 - 10537788*j**2 + 94896473*j - 283536990)/3
+    lambda = (7, 4): DIFFERS across p; polynomials:
+        p=2: -(j - 12)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(59911*j**2 - 1155781*j + 5551590)/1680
+        p=3: (j - 12)*(j - 7)*(j - 6)*(78865*j**3 - 2148171*j**2 + 19407722*j - 58157880)/6
+        p=4: -7*(j - 12)*(1000021*j**3 - 27132159*j**2 + 244250738*j - 729558720)/6
+    lambda = (8, 3): DIFFERS across p; polynomials:
+        p=2: -(j - 12)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(5467*j**2 - 105232*j + 504405)/240
+        p=3: (j - 12)*(j - 7)*(j - 6)*(103475*j**3 - 2814648*j**2 + 25397041*j - 76018140)/12
+        p=4: -(j - 12)*(2443709*j**3 - 66257511*j**2 + 596106652*j - 1779551730)/3
+    lambda = (9, 2): DIFFERS across p; polynomials:
+        p=2: -(j - 12)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(772*j**2 - 14812*j + 70785)/90
+        p=3: (j - 12)*(j - 8)*(j - 7)*(j - 6)*(3371*j**2 - 64552*j + 307945)
+        p=4: -6*(j - 12)*(j - 8)*(57557*j**2 - 1098553*j + 5225000)
+    lambda = (10, 1): DIFFERS across p; polynomials:
+        p=2: -(j - 12)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(1817*j - 18359)/1008
+        p=3: (j - 12)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(2973*j - 29975)/4
+        p=4: -315*(j - 12)*(j - 9)*(j - 8)*(266*j - 2673)
+    lambda = (11, 0): DIFFERS across p; polynomials:
+        p=2: -55*(j - 12)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/336
+        p=3: 143*(j - 12)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)/2
+        p=4: -17941*(j - 12)*(j - 10)*(j - 9)*(j - 8)/2
+    lambda = (6, 6): DIFFERS across p; polynomials:
+        p=2: (j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(25703*j**2 - 553483*j + 2967470)/3360
+        p=3: -(j - 8)*(j - 7)*(j - 6)*(29167*j**3 - 889458*j**2 + 8999015*j - 30208200)/6
+        p=4: 4*(628633*j**4 - 24103059*j**3 + 344672867*j**2 - 2178658221*j + 5136087825)/3
+    lambda = (7, 5): DIFFERS across p; polynomials:
+        p=2: (j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(2147*j**2 - 46191*j + 247434)/128
+        p=3: -3*(j - 8)*(j - 7)*(j - 6)*(28593*j**3 - 871362*j**2 + 8810311*j - 29557110)/8
+        p=4: (15072139*j**4 - 577686138*j**3 + 8258134745*j**2 - 52183277466*j + 122985419040)/8
+    lambda = (8, 4): DIFFERS across p; polynomials:
+        p=2: 5*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(23767*j**2 - 510363*j + 2728946)/8064
+        p=3: -5*(j - 8)*(j - 7)*(j - 6)*(45779*j**3 - 1393176*j**2 + 14068171*j - 47139510)/24
+        p=4: 5*(8348303*j**4 - 319736922*j**3 + 4567594045*j**2 - 28844772066*j + 67942812960)/24
+    lambda = (9, 3): DIFFERS across p; polynomials:
+        p=2: (j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(4383*j**2 - 93835*j + 500302)/576
+        p=3: -7*(j - 8)*(j - 7)*(j - 6)*(8611*j**3 - 261498*j**2 + 2635355*j - 8814300)/12
+        p=4: 7*(j - 8)*(552693*j**3 - 16721966*j**2 + 167951123*j - 559994490)/4
+    lambda = (10, 2): DIFFERS across p; polynomials:
+        p=2: (j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(5339*j**2 - 113799*j + 604230)/2240
+        p=3: -3*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(2159*j**2 - 45939*j + 243540)/4
+        p=4: 33*(j - 9)*(j - 8)*(40549*j**2 - 859369*j + 4539210)/4
+    lambda = (11, 1): DIFFERS across p; polynomials:
+        p=2: 11*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(219*j - 2449)/5760
+        p=3: -11*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(215*j - 2399)/8
+        p=4: 11*(j - 10)*(j - 9)*(j - 8)*(48381*j - 537511)/8
+    lambda = (12, 0): DIFFERS across p; polynomials:
+        p=2: 253*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/8064
+        p=3: -187*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)/8
+        p=4: 46541*(j - 11)*(j - 10)*(j - 9)*(j - 8)/8
+    lambda = (7, 6): DIFFERS across p; polynomials:
+        p=2: -11*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(167*j - 1872)/840
+        p=3: (j - 9)*(j - 8)*(j - 7)*(j - 6)*(9171*j**2 - 194950*j + 1032680)/4
+        p=4: -15*(j - 8)*(39537*j**3 - 1193845*j**2 + 11969354*j - 39845256)
+    lambda = (8, 5): DIFFERS across p; polynomials:
+        p=2: -11*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(41*j - 459)/168
+        p=3: (j - 9)*(j - 8)*(j - 7)*(j - 6)*(11239*j**2 - 238675*j + 1263130)/4
+        p=4: -6*(j - 8)*(123149*j**3 - 3716492*j**2 + 37242013*j - 123917970)
+    lambda = (9, 4): DIFFERS across p; polynomials:
+        p=2: -11*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(53*j - 592)/336
+        p=3: (j - 9)*(j - 8)*(j - 7)*(j - 6)*(14497*j**2 - 307350*j + 1624040)/8
+        p=4: -6*(j - 8)*(81631*j**3 - 2461248*j**2 + 24642572*j - 81931080)
+    lambda = (10, 3): DIFFERS across p; polynomials:
+        p=2: -11*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(38*j - 423)/630
+        p=3: (j - 9)*(j - 8)*(j - 7)*(j - 6)*(4151*j**2 - 87795*j + 462880)/6
+        p=4: -20*(j - 9)*(j - 8)*(9712*j**2 - 205039*j + 1079232)
+    lambda = (11, 2): DIFFERS across p; polynomials:
+        p=2: -11*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)*(13*j - 144)/1008
+        p=3: 11*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(323*j - 3580)/24
+        p=4: -55*(j - 10)*(j - 9)*(j - 8)*(793*j - 8772)
+    lambda = (12, 1): DIFFERS across p; polynomials:
+        p=2: -11*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/840
+        p=3: 55*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)/4
+        p=4: -4290*(j - 11)*(j - 10)*(j - 9)*(j - 8)
+    lambda = (7, 7): DIFFERS across p; polynomials:
+        p=2: 11*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/160
+        p=3: -77*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(8*j - 89)/4
+        p=4: 35*(j - 9)*(j - 8)*(3623*j**2 - 76553*j + 403260)/2
+    lambda = (8, 6): DIFFERS across p; polynomials:
+        p=2: 33*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/224
+        p=3: -77*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(17*j - 189)/4
+        p=4: 5*(j - 9)*(j - 8)*(54067*j**2 - 1141945*j + 6013128)/2
+    lambda = (9, 5): DIFFERS across p; polynomials:
+        p=2: 55*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/448
+        p=3: -55*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(39*j - 433)/8
+        p=4: 25*(j - 9)*(j - 8)*(4460*j**2 - 94121*j + 495231)
+    lambda = (10, 4): DIFFERS across p; polynomials:
+        p=2: 11*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/192
+        p=3: -77*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(38*j - 421)/24
+        p=4: 35*(j - 9)*(j - 8)*(2929*j**2 - 61735*j + 324456)/2
+    lambda = (11, 3): DIFFERS across p; polynomials:
+        p=2: 33*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/2240
+        p=3: -11*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(22*j - 243)/8
+        p=4: 275*(j - 10)*(j - 9)*(j - 8)*(47*j - 519)
+    lambda = (12, 2): DIFFERS across p; polynomials:
+        p=2: 11*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)*(j - 5)*(j - 4)/6720
+        p=3: -77*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)/24
+        p=4: 2805*(j - 11)*(j - 10)*(j - 9)*(j - 8)/2
+    lambda = (8, 7): DIFFERS across p; polynomials:
+        p=3: 77*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)/6
+        p=4: -385*(j - 10)*(j - 9)*(j - 8)*(29*j - 321)
+    lambda = (9, 6): DIFFERS across p; polynomials:
+        p=3: 44*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)/3
+        p=4: -110*(j - 10)*(j - 9)*(j - 8)*(115*j - 1272)
+    lambda = (10, 5): DIFFERS across p; polynomials:
+        p=3: 33*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)/4
+        p=4: -165*(j - 10)*(j - 9)*(j - 8)*(85*j - 939)/2
+    lambda = (11, 4): DIFFERS across p; polynomials:
+        p=3: 22*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)/9
+        p=4: -55*(j - 10)*(j - 9)*(j - 8)*(37*j - 408)
+    lambda = (12, 3): DIFFERS across p; polynomials:
+        p=3: 11*(j - 11)*(j - 10)*(j - 9)*(j - 8)*(j - 7)*(j - 6)/36
+        p=4: -495*(j - 11)*(j - 10)*(j - 9)*(j - 8)/2
+
+==============================================================================
+STEP 5  Fit c_lambda(j, p) as bivariate polynomial in (j, p) for each shape.
+==============================================================================
+
+  Attempting uniform-in-(j, p) fit for each lambda shape (needs >=2 p values):
+    lambda = (3, 3): NO bivariate (j, p) fit found
+    lambda = (4, 2): NO bivariate (j, p) fit found
+    lambda = (5, 1): NO bivariate (j, p) fit found
+    lambda = (6, 0): NO bivariate (j, p) fit found
+    lambda = (4, 3): NO bivariate (j, p) fit found
+    lambda = (5, 2): NO bivariate (j, p) fit found
+    lambda = (6, 1): NO bivariate (j, p) fit found
+    lambda = (7, 0): NO bivariate (j, p) fit found
+    lambda = (4, 4): NO bivariate (j, p) fit found
+    lambda = (5, 3): NO bivariate (j, p) fit found
+    lambda = (6, 2): NO bivariate (j, p) fit found
+    lambda = (7, 1): NO bivariate (j, p) fit found
+    lambda = (8, 0): NO bivariate (j, p) fit found
+    lambda = (5, 4): NO bivariate (j, p) fit found
+    lambda = (6, 3): NO bivariate (j, p) fit found
+    lambda = (7, 2): NO bivariate (j, p) fit found
+    lambda = (8, 1): NO bivariate (j, p) fit found
+    lambda = (9, 0): NO bivariate (j, p) fit found
+    lambda = (5, 5): NO bivariate (j, p) fit found
+    lambda = (6, 4): NO bivariate (j, p) fit found
+    lambda = (7, 3): NO bivariate (j, p) fit found
+    lambda = (8, 2): NO bivariate (j, p) fit found
+    lambda = (9, 1): NO bivariate (j, p) fit found
+    lambda = (10, 0): NO bivariate (j, p) fit found
+    lambda = (6, 5): NO bivariate (j, p) fit found
+    lambda = (7, 4): NO bivariate (j, p) fit found
+    lambda = (8, 3): NO bivariate (j, p) fit found
+    lambda = (9, 2): NO bivariate (j, p) fit found
+    lambda = (10, 1): NO bivariate (j, p) fit found
+    lambda = (11, 0): NO bivariate (j, p) fit found
+    lambda = (6, 6): NO bivariate (j, p) fit found
+    lambda = (7, 5): NO bivariate (j, p) fit found
+    lambda = (8, 4): NO bivariate (j, p) fit found
+    lambda = (9, 3): NO bivariate (j, p) fit found
+    lambda = (10, 2): NO bivariate (j, p) fit found
+    lambda = (11, 1): NO bivariate (j, p) fit found
+    lambda = (12, 0): NO bivariate (j, p) fit found
+    lambda = (7, 6): NO bivariate (j, p) fit found
+    lambda = (8, 5): NO bivariate (j, p) fit found
+    lambda = (9, 4): NO bivariate (j, p) fit found
+    lambda = (10, 3): NO bivariate (j, p) fit found
+    lambda = (11, 2): NO bivariate (j, p) fit found
+    lambda = (12, 1): NO bivariate (j, p) fit found
+    lambda = (7, 7): NO bivariate (j, p) fit found
+    lambda = (8, 6): NO bivariate (j, p) fit found
+    lambda = (9, 5): NO bivariate (j, p) fit found
+    lambda = (10, 4): NO bivariate (j, p) fit found
+    lambda = (11, 3): NO bivariate (j, p) fit found
+    lambda = (12, 2): NO bivariate (j, p) fit found
+    lambda = (8, 7): NO bivariate (j, p) fit found
+    lambda = (9, 6): NO bivariate (j, p) fit found
+    lambda = (10, 5): NO bivariate (j, p) fit found
+    lambda = (11, 4): NO bivariate (j, p) fit found
+    lambda = (12, 3): NO bivariate (j, p) fit found
+
+==============================================================================
+STEP 5.5  A_p(lambda) at |lambda| = j: extract 'seed' coefficient at bottom level.
+        c_lambda(bottom) = A_p(lambda) / [ (lam_1+1)! lam_2! / (lam_1 - lam_2 + 1) ]
+==============================================================================
+
+  p = 2:
+    j = 4:
+      lam = (2, 2): A_p(lam) = -168, / s^*_lam(lam) = -14
+      lam = (3, 1): A_p(lam) = -120, / s^*_lam(lam) = -15
+      lam = (4, 0): A_p(lam) = -24, / s^*_lam(lam) = -1
+    j = 5:
+      lam = (3, 2): A_p(lam) = -360, / s^*_lam(lam) = -15
+      lam = (5, 0): A_p(lam) = 600, / s^*_lam(lam) = 5
+    j = 6:
+      lam = (3, 3): A_p(lam) = 9360, / s^*_lam(lam) = 65
+      lam = (4, 2): A_p(lam) = 10800, / s^*_lam(lam) = 135
+      lam = (5, 1): A_p(lam) = 13680, / s^*_lam(lam) = 95
+      lam = (6, 0): A_p(lam) = 18000, / s^*_lam(lam) = 25
+    j = 7:
+      lam = (4, 3): A_p(lam) = 277200, / s^*_lam(lam) = 770
+      lam = (5, 2): A_p(lam) = 292320, / s^*_lam(lam) = 812
+      lam = (6, 1): A_p(lam) = 317520, / s^*_lam(lam) = 378
+      lam = (7, 0): A_p(lam) = 352800, / s^*_lam(lam) = 70
+    j = 8:
+      lam = (4, 4): A_p(lam) = 5402880, / s^*_lam(lam) = 1876
+      lam = (5, 3): A_p(lam) = 5483520, / s^*_lam(lam) = 3808
+      lam = (6, 2): A_p(lam) = 5644800, / s^*_lam(lam) = 2800
+      lam = (7, 1): A_p(lam) = 5886720, / s^*_lam(lam) = 1022
+      lam = (8, 0): A_p(lam) = 6209280, / s^*_lam(lam) = 154
+    j = 9:
+      lam = (5, 4): A_p(lam) = 97977600, / s^*_lam(lam) = 11340
+      lam = (6, 3): A_p(lam) = 99066240, / s^*_lam(lam) = 13104
+      lam = (7, 2): A_p(lam) = 100880640, / s^*_lam(lam) = 7506
+      lam = (8, 1): A_p(lam) = 103420800, / s^*_lam(lam) = 2280
+      lam = (9, 0): A_p(lam) = 106686720, / s^*_lam(lam) = 294
+    j = 10:
+      lam = (5, 5): A_p(lam) = 1741824000, / s^*_lam(lam) = 20160
+      lam = (6, 4): A_p(lam) = 1749081600, / s^*_lam(lam) = 43380
+      lam = (7, 3): A_p(lam) = 1763596800, / s^*_lam(lam) = 36450
+      lam = (8, 2): A_p(lam) = 1785369600, / s^*_lam(lam) = 17220
+      lam = (9, 1): A_p(lam) = 1814400000, / s^*_lam(lam) = 4500
+      lam = (10, 0): A_p(lam) = 1850688000, / s^*_lam(lam) = 510
+    j = 11:
+      lam = (6, 5): A_p(lam) = 31534272000, / s^*_lam(lam) = 104280
+      lam = (7, 4): A_p(lam) = 31654022400, / s^*_lam(lam) = 130845
+      lam = (8, 3): A_p(lam) = 31853606400, / s^*_lam(lam) = 87780
+      lam = (9, 2): A_p(lam) = 32133024000, / s^*_lam(lam) = 35420
+      lam = (10, 1): A_p(lam) = 32492275200, / s^*_lam(lam) = 8140
+      lam = (11, 0): A_p(lam) = 32931360000, / s^*_lam(lam) = 825
+    j = 12:
+      lam = (6, 6): A_p(lam) = 585818956800, / s^*_lam(lam) = 161436
+      lam = (7, 5): A_p(lam) = 586776960000, / s^*_lam(lam) = 363825
+      lam = (8, 4): A_p(lam) = 588692966400, / s^*_lam(lam) = 337975
+      lam = (9, 3): A_p(lam) = 591566976000, / s^*_lam(lam) = 190190
+      lam = (10, 2): A_p(lam) = 595398988800, / s^*_lam(lam) = 67122
+      lam = (11, 1): A_p(lam) = 600189004800, / s^*_lam(lam) = 13783
+      lam = (12, 0): A_p(lam) = 605937024000, / s^*_lam(lam) = 1265
+
+  p = 3:
+    j = 6:
+      lam = (3, 3): A_p(lam) = 41040, / s^*_lam(lam) = 285
+      lam = (4, 2): A_p(lam) = 32400, / s^*_lam(lam) = 405
+      lam = (5, 1): A_p(lam) = 15120, / s^*_lam(lam) = 105
+      lam = (6, 0): A_p(lam) = -10800, / s^*_lam(lam) = -15
+    j = 7:
+      lam = (4, 3): A_p(lam) = 50400, / s^*_lam(lam) = 140
+      lam = (5, 2): A_p(lam) = -100800, / s^*_lam(lam) = -280
+      lam = (6, 1): A_p(lam) = -352800, / s^*_lam(lam) = -420
+      lam = (7, 0): A_p(lam) = -705600, / s^*_lam(lam) = -140
+    j = 8:
+      lam = (4, 4): A_p(lam) = -10483200, / s^*_lam(lam) = -3640
+      lam = (5, 3): A_p(lam) = -11692800, / s^*_lam(lam) = -8120
+      lam = (6, 2): A_p(lam) = -14112000, / s^*_lam(lam) = -7000
+      lam = (7, 1): A_p(lam) = -17740800, / s^*_lam(lam) = -3080
+      lam = (8, 0): A_p(lam) = -22579200, / s^*_lam(lam) = -560
+    j = 9:
+      lam = (5, 4): A_p(lam) = -411505920, / s^*_lam(lam) = -47628
+      lam = (6, 3): A_p(lam) = -434367360, / s^*_lam(lam) = -57456
+      lam = (7, 2): A_p(lam) = -472469760, / s^*_lam(lam) = -35154
+      lam = (8, 1): A_p(lam) = -525813120, / s^*_lam(lam) = -11592
+      lam = (9, 0): A_p(lam) = -594397440, / s^*_lam(lam) = -1638
+    j = 10:
+      lam = (5, 5): A_p(lam) = -11430720000, / s^*_lam(lam) = -132300
+      lam = (6, 4): A_p(lam) = -11633932800, / s^*_lam(lam) = -288540
+      lam = (7, 3): A_p(lam) = -12040358400, / s^*_lam(lam) = -248850
+      lam = (8, 2): A_p(lam) = -12649996800, / s^*_lam(lam) = -122010
+      lam = (9, 1): A_p(lam) = -13462848000, / s^*_lam(lam) = -33390
+      lam = (10, 0): A_p(lam) = -14478912000, / s^*_lam(lam) = -3990
+    j = 11:
+      lam = (6, 5): A_p(lam) = -292190976000, / s^*_lam(lam) = -966240
+      lam = (7, 4): A_p(lam) = -296501990400, / s^*_lam(lam) = -1225620
+      lam = (8, 3): A_p(lam) = -303687014400, / s^*_lam(lam) = -836880
+      lam = (9, 2): A_p(lam) = -313746048000, / s^*_lam(lam) = -345840
+      lam = (10, 1): A_p(lam) = -326679091200, / s^*_lam(lam) = -81840
+      lam = (11, 0): A_p(lam) = -342486144000, / s^*_lam(lam) = -8580
+    j = 12:
+      lam = (6, 6): A_p(lam) = -7156283904000, / s^*_lam(lam) = -1972080
+      lam = (7, 5): A_p(lam) = -7199394048000, / s^*_lam(lam) = -4463910
+      lam = (8, 4): A_p(lam) = -7285614336000, / s^*_lam(lam) = -4182750
+      lam = (9, 3): A_p(lam) = -7414944768000, / s^*_lam(lam) = -2383920
+      lam = (10, 2): A_p(lam) = -7587385344000, / s^*_lam(lam) = -855360
+      lam = (11, 1): A_p(lam) = -7802936064000, / s^*_lam(lam) = -179190
+      lam = (12, 0): A_p(lam) = -8061596928000, / s^*_lam(lam) = -16830
+
+  p = 4:
+    j = 8:
+      lam = (4, 4): A_p(lam) = -23022720, / s^*_lam(lam) = -7994
+      lam = (5, 3): A_p(lam) = -18587520, / s^*_lam(lam) = -12908
+      lam = (6, 2): A_p(lam) = -8749440, / s^*_lam(lam) = -4340
+      lam = (7, 1): A_p(lam) = 8426880, / s^*_lam(lam) = 1463
+      lam = (8, 0): A_p(lam) = 35844480, / s^*_lam(lam) = 889
+    j = 9:
+      lam = (5, 4): A_p(lam) = 351630720, / s^*_lam(lam) = 40698
+      lam = (6, 3): A_p(lam) = 502951680, / s^*_lam(lam) = 66528
+      lam = (7, 2): A_p(lam) = 769668480, / s^*_lam(lam) = 57267
+      lam = (8, 1): A_p(lam) = 1173553920, / s^*_lam(lam) = 25872
+      lam = (9, 0): A_p(lam) = 1745089920, / s^*_lam(lam) = 4809
+    j = 10:
+      lam = (5, 5): A_p(lam) = 32125766400, / s^*_lam(lam) = 371826
+      lam = (6, 4): A_p(lam) = 34114348800, / s^*_lam(lam) = 846090
+      lam = (7, 3): A_p(lam) = 38178604800, / s^*_lam(lam) = 789075
+      lam = (8, 2): A_p(lam) = 44492716800, / s^*_lam(lam) = 429135
+      lam = (9, 1): A_p(lam) = 53317958400, / s^*_lam(lam) = 132237
+      lam = (10, 0): A_p(lam) = 65002694400, / s^*_lam(lam) = 17913
+    j = 11:
+      lam = (6, 5): A_p(lam) = 1419161990400, / s^*_lam(lam) = 4692996
+      lam = (7, 4): A_p(lam) = 1477839686400, / s^*_lam(lam) = 6108795
+      lam = (8, 3): A_p(lam) = 1577232518400, / s^*_lam(lam) = 4346430
+      lam = (9, 2): A_p(lam) = 1719735494400, / s^*_lam(lam) = 1895652
+      lam = (10, 1): A_p(lam) = 1908701625600, / s^*_lam(lam) = 478170
+      lam = (11, 0): A_p(lam) = 2148441926400, / s^*_lam(lam) = 53823
+    j = 12:
+      lam = (6, 6): A_p(lam) = 49980463948800, / s^*_lam(lam) = 13773276
+      lam = (7, 5): A_p(lam) = 50746866508800, / s^*_lam(lam) = 31465071
+      lam = (8, 4): A_p(lam) = 52291167667200, / s^*_lam(lam) = 30020925
+      lam = (9, 3): A_p(lam) = 54636359500800, / s^*_lam(lam) = 17565702
+      lam = (10, 2): A_p(lam) = 57816930124800, / s^*_lam(lam) = 6517962
+      lam = (11, 1): A_p(lam) = 61878863692800, / s^*_lam(lam) = 1421013
+      lam = (12, 0): A_p(lam) = 66879640396800, / s^*_lam(lam) = 139623
+
+==============================================================================
+STEP 6  Verify the shifted-Schur formula reproduces A_p (for each (p, j)).
+==============================================================================
+    p=2, j=4: OK
+    p=2, j=5: OK
+    p=2, j=6: OK
+    p=2, j=7: OK
+    p=2, j=8: OK
+    p=2, j=9: OK
+    p=2, j=10: OK
+    p=2, j=11: OK
+    p=2, j=12: OK
+    p=3, j=6: OK
+    p=3, j=7: OK
+    p=3, j=8: OK
+    p=3, j=9: OK
+    p=3, j=10: OK
+    p=3, j=11: OK
+    p=3, j=12: OK
+    p=4, j=8: OK
+    p=4, j=9: OK
+    p=4, j=10: OK
+    p=4, j=11: OK
+    p=4, j=12: OK
+
+  All shifted-Schur reconstructions match? True
+
+==============================================================================
+SUMMARY
+==============================================================================
+
+Vanishing pattern:
+  D_0(p, j) = j     for all (p, j) tested, with delta = (0, 0).
+  I.e., A_p(mu_1, mu_2) = 0 for every partition mu with |mu| < j.
+  (delta = (1, 0) gives D_0 = j - 1 -- less clean.)
+
+Nonzero-coefficient support (shifted-Schur expansion of A_p):
+  {lambda = (lambda_1, lambda_2) :
+     j <= |lambda| <= j + p,
+     lambda_1 - lambda_2 <= 2j - |lambda|}
+  Equivalently, in (ell, m) := (|lambda| - j, lambda_1 - lambda_2):
+     0 <= ell <= p,   0 <= m <= j - ell.
+
+Verified across (p, j) for p in {2, 3, 4}, j in {2p, ..., 12}.
+
+Closed forms for c_lambda(j) at fixed p:
+  Each c_lambda(j) is a polynomial in j, computed exactly (see Step 3).
+  The polynomial vanishes at exactly the j-values where lambda leaves
+  the support, i.e., gcd-over-lambda-at-fixed-|lambda| exactly encodes
+  the support constraint (Step 3.5).
+
+Uniform-in-p pattern:
+  BRUTALLY HONEST: for fixed (lambda) or fixed (ell, m), c_lambda(j, p)
+  does NOT agree across p as a function of j. That is, the coefficients
+  are p-dependent in a way that does not factor as c_lambda(j) * f(p).
+  A bivariate fit c(j, p) FAILED at every lambda tested (Step 5).
+
+Best-guess uniform-p closed form (verified for p in {2,3,4}):
+  A_p(b, c, j) = sum over lambda in support * c_lambda(j, p) * s^*_lambda(b, c)
+  where support is as above, and c_lambda(j, p) is the polynomial in j
+  extracted at each (p, lambda) (Step 3). Reconstruction verified: OK
+  for every (p, j) with p in {2, 3, 4}, j in {2p, ..., 12}. See Step 6.
+
+Best structural insight for follow-up:
+  The 'seed' coefficient at |lambda| = j is
+    c_lambda(bottom) = A_p(lambda) / [(lambda_1 + 1)! * lambda_2! / (lambda_1 - lambda_2 + 1)]
+  and A_p(lambda_1, lambda_2) for |lambda_1| + |lambda_2| = j often has
+  small integer factorization suggesting a hidden hook-length or Pieri
+  rule (Step 5.5). This is the natural next probe.
+
+==============================================================================
+Done.
+==============================================================================

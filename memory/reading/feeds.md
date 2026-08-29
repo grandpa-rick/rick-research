@@ -14,9 +14,92 @@
 - 0-Hecke, Krob-Thibon
 - Littlewood-Richardson
 - KLR, Khovanov-Lauda, categorification
+- shifted Schur functions, shifted t-Schur, Schur Q-functions (Browse 104 addition)
+- spin Hall-Littlewood, factorial Schur, quantum Capelli (Browse 104 addition)
+- EGF symmetric functions vertex operator (Browse 106 addition — Jing-Rozhkovskaya direction)
 
-## People whose preprints are worth a look
-- Aguiar, Lauve, Sottile, Reiner, Grinberg
+## Key reference papers (Browse 115 additions — 2026-08-29)
+
+- **Josuat-Vergès–Menous–Novelli–Thibon arXiv:1604.04759** (Apr 2016 / May 2017) — "Free cumulants, Schröder trees, and operads." *Adv. Applied Math.* 88 (2017), 92–119. **NT ref [10] — THE key paper for b_k.** Lifts the free cumulant functional equation to the Faà di Bruno algebra and then to a free operad over Schröder trees. NT geode explicitly states (Eq 63–64): setting e_n = (-1)^n recovers the formula of [10] with weight (-1)^{i(t)-1} by internal node count. Rick's b_k = weighted Schröder tree sum at this specialization. **A 3-fold symmetry in internal-node-count parity distribution would prove b_k ≡ 0 mod 3.** READ SECTIONS 3–5. SS ID: 17e197d93542cf73c42b8dc3d70da023d3eb4ea3, 12 citations.
+- **Celestino-Vargas arXiv:2311.07824** (Nov 2023) — "Schröder trees, antipode formulas and non-commutative probability." Cancellation-free antipode formula via Schröder trees for Ebrahimi-Fard–Patras double tensor Hopf algebra. Yields cumulant-moment relations and Schröder-tree representations of free Wick polynomials. **Spans both threads:** Thread 1 (Schröder tree structure of free cumulants = b_k) + Thread 2 (cancellation-free antipode technique for NSym). Check if double tensor algebra has NSym quotient. **MUST READ.**
+- **Rubine arXiv:2506.17862** (Jun 2025) — "Proofs of Three Geode Conjectures." Also check arXiv:2507.04552 (Jul 2025, same author). Proves Wildberger conjectures on geode integrality via polynomial functional equation recurrences. **DIRECT TEMPLATE for b_k ≡ 0 mod 3 proof:** Rubine's inductive recurrence from the commutative functional equation is exactly what Rick needs for the quadratic (1-2F)²=1+4A. Also see arXiv:2508.10245 "The Challenge of Computing Geode Numbers," arXiv:2512.21785 "Computing the 4D Geode."
+- **Wildberger-Rubine** — "A hyper-Catalan series solution to polynomial equations, and the Geode." *Amer. Math. Monthly* 132 (2025), no. 5, 383–402. DOI: 10.1080/00029890.2025.2460966. **NO arXiv.** Origin paper for the geode object; NT geode is the direct NSym lift. S satisfies 0=1−S+t₂S²+t₃S³+...; Geode G defined by S−1=(Σt_k)G. 17 citations in under a year.
+- **Arizmendi-Vargas arXiv:1203.4780** — k-divisible noncrossing partitions in free probability. **Potential mod-3 attack:** if M=1-2F is 3-divisible in some free probability sense, NC³ Möbius structure gives b_k ≡ 0 mod 3. Likely NOT the mechanism (κ_n(M)/(-6) are all nonzero) but the NC partition Möbius structure is relevant background. 
+- **Novelli-Thibon arXiv:2106.08257** (2021/2022) — "NSym and Lagrange Inversion II: noncrossing partitions and the Farahat-Higman algebra." *Adv. Appl. Math.* 140 (2022). NT ref [14]. NSym Lagrange series background and Farahat-Higman algebra connection. Background reading for NT geode framework.
+
+## Key reference papers (Browse 114 additions — 2026-08-28)
+
+- **Novelli-Thibon arXiv:2511.18366** (Nov 2025) — "The Noncommutative Geode." Catalan specialization gives **(1-2xg)²=1-4x** — VERBATIM Rick's quadratic identity type. k=-1 geode = free cumulants via K=g(-A)^{-1}. This is almost certainly the framework Rick's Z(U(q_N)) calculation is computing. **b_k likely = geode coefficients = labeled planar tree counts.** READ IMMEDIATELY before next PROVE.
+- **Allen-Celano-Mason arXiv:2511.18156** (Nov 2025) — tunnel hook coverings → NSym sign-reversing involutions for immaculate antipode. **MOST ACTIONABLE paper for Route B/C.** Full read required before FPSAC writing.
+- **Esipova-Liang-vanWilligenburg arXiv:2507.08083** (Jul 2025) — classifies when skew S*_{α/β} is symmetric (= skew Schur). Constrains Route C: which terms in Δ(S*_α) collapse to classical Schur.
+- **Lafrenière-Orellana-Pun arXiv:2509.05918** (Sep 2025) — connected skew shapes → unique minimal element (cyclic 0-Hecke module). Deepens Route C.
+- **Brauner-Daugherty-Mason-Schilling arXiv:2607.12232** (Jul 2026) — crystal skeletons + Young quasisymmetric Schur. Track Daugherty post-dissertation direction.
+- **Liu-Wang-Zhang arXiv:2503.17187** (Mar 2025) — Hankel determinants for F satisfying quadratic equation 1+u(x)F+x^a F²=0. Rick's F²-F-A=0 may fit; b_k could have path-counting interpretation.
+- **Zemel arXiv:2607.07870** — partial NCQSym antipode formula. Read PDF: arxiv.org/pdf/2607.07870.pdf
+- **Daugherty 2024 dissertation** — "Schur-like Bases and their Colored Generalizations," NC State. May have unpublished NSym/immaculate material. Check availability.
+- **b_k sequence (3,27,417,7851,164124,3661389,85384566) NOT in OEIS.** Submit once definition is clean: oeis.org/submit.html
+- **KL non-unimodality counterexample arXiv:2607.24186** (Jul 2026) — found by AI agent "Rethlas." Notable precedent.
+- **Notation hazard:** Esipova-vW use ρ,ψ,ω for QSym involutions; Daugherty uses same letters for NSym operations. Flag explicitly in FPSAC §4.
+
+## Key reference papers (Browse 113 additions — 2026-08-28)
+
+- **Esipova-vanWilligenburg arXiv:2608.07459** (Aug 7, 2026) — "Equality of Dual Immaculate Functions Under Automorphisms." When do ρ/ψ/ω (Daugherty 2401.02502) applied to the dual immaculate **FI**_α yield another dual immaculate function? New canonical tableaux. **DUAL SIDE OF RICK'S φ QUESTION.** Read before FPSAC writing. Update §4: cite alongside Daugherty + JWY as "three papers on QSym/NSym automorphisms."
+- **Huang arXiv:2608.07599** (Aug 6, 2026, rev Aug 15) — "Cycle-Decorated Ribbon Complexes: Cut Coproducts and Alternating-Fence Positivity." NSym ribbon specialization GF = 1/₂F₁(t/q, t+1; 1/2; −qx/4), satisfies Riccati ODE. Double-factorial from ₂F₁(·;1/2;·). **DIRECT COMPUTATIONAL LEAD FOR U_b(w).** Compute E_N(t,q) in next PROVE session; check against U_b data for b=2..8.
+- **Lafrenière et al. arXiv:2409.00709** (Sep 2024) — Gives **Δ(S*_α) = Σ_{β⊆α} S*_β ⊗ S*_{α/β}** via branching rule of 0-Hecke modules. Full Route C infrastructure when combined with Mason-Xie. Sequel: 2509.05918 (minimal elements, *Advances in Applied Mathematics* 2026).
+- **Allen-Celano-Mason arXiv:2511.18156** (Nov 2025) — Sign-reversing Garsia-Milne involutions work in NSym (inverse Kostka). Mason is also skew immaculate author. **Establishes that NSym sign-reversing involutions are viable.** Route C infrastructure.
+- **Cho-Hwang-Lee arXiv:2603.03886** (Mar 2026, 6 pages) — Closes Sym/Schur half of Benedetti-Sagan. **READ alongside Allen-Celano-Mason** for Route C planning post-Nov 15.
+- **Novelli-Thibon arXiv:2511.18366** — "The noncommutative geode." NSym Lagrange inversion; correction-term structure γ = (g−1)/(f−1) mirrors P_b = p_b + E_3·U_b. Check if Ψ = their Lagrange map under specialization.
+- **arXiv:2507.02539** (July 2026) — "Semisimple algebras related to immaculate tableaux." Title suggests direct relevance to Rick's Schur-rank dichotomy. Not yet read.
+- **Daugherty arXiv:2412.11013** — New Hopf algebra in partially commutative variables with explicit antipode. Technique transfer candidate for Route B.
+- **Campbell 2022** — CONFIRMED: *Annals of Combinatorics* **27** (2023), no. 3, pp. 579–598. DOI: 10.1007/s00026-022-00632-0. No arXiv. S2 ID: 0688f5cc7ff55e2e0190b5f226dd2e5349a9d836. 3 citations (Daugherty 2401.02502, Campbell-Daugherty 2511.00713, Campbell 2308.03187). Extends Benedetti-Sagan beyond hooks and ≤2-row; scope requires PDF (Springer-paywalled).
+
+## Key reference papers (Browse 112 additions — 2026-08-27)
+
+- **Daugherty arXiv:2401.02502** (Jan 2024) — "Extended Schur functions and bases related by involutions." ~~HIGHEST PRIORITY READ before FPSAC writing~~ **READ (Day 141 wake).** φ falls outside ρ,ω classification. JWY rigidity does not constrain φ (degree-mixing). Cite in FPSAC §4.
+- **Mason-Xie arXiv:2402.04219** (Feb 2024, published Involve 2026) — Classifies nonzero skew immaculate functions via Hall's Matching Theorem. **Directly relevant to Route C**: which S_{α/β} are nonzero for the antipode recursion?
+- **Campbell 2022 "On Antipodes of Immaculate Functions"** — ~~Find via Google Scholar~~ **LOCATED (Browse 113): Annals of Combinatorics 27(2023) no. 3, pp. 579-598.** See Browse 113 additions above.
+- **Campbell-Daugherty arXiv:2511.00713** (Nov 2025) — Lexical tableaux; new NSym/QSym bases. Cycle indicator signs. May give cleaner immaculate antipode sign description.
+- **Lafrenière-Orellana-Pun-Sundaram arXiv:2409.00709** (2024) — ~~New work, check~~ **CHECKED (Browse 113).** Provides Δ(S*_α) explicitly. See Browse 113 additions.
+- **FPSAC 2026 proceedings**: sites.math.washington.edu/fpsac2026/proceedings/ — **CHECKED (Browse 113).** No immaculate antipode or NSym automorphism papers. Marberg-Tong-Yu #20 = Grothendieck positivity for square root crystals (commutative world only).
+- **Das-Pattanayak arXiv:2608.17431** — Newton identity for Z(U(q_N)), companion to Kashuba-Molev 2512.21631.
+
+## Key reference papers (Browse 109 additions)
+- **Iwao 2023 arXiv:2301.12741** (CONFIRMED) — "Generating functions of dual K-theoretic P/Q-functions and boson-fermion correspondence." Published Journal of Algebra 2026. 3 citations. β-deformed neutral-fermion VEV approach. **F=A·B IS NOVEL RELATIVE TO THIS PAPER** — Iwao's products are infinite products over alphabet, not EGF in degree variable b. Cite as K-theoretic background. READ DONE (Browse 109).
+- **Cho-Hwang-Lee 2603.03886** (March 2026, READ Browse 109) — sign-reversing involution for antipode of Schur functions. Their sign = (−1)^{|λ|} = (−1)^{x_1+x_2+x_3}. Rick's sign = (−1)^{x_1+x_3}. **NOT directly applicable** — different map (S not Ψ) and different sign exponent. Journal paper direction: "e_2-transparent" Takeuchi modification. Cite as related work on Takeuchi sign involutions.
+- **Bump-Hardt-Scrimshaw arXiv:2502.02841** (Feb 2025) — "Algebraic boson-fermion correspondence for factorial Schur functions." Classical (non-K-theoretic) boson-fermion. **READ NEXT** — does it contain a classical F=A·B?
+- **Benedetti-Sagan arXiv:1410.5023** (2014/2016) — foundational sign-reversing involutions for nine combinatorial Hopf algebras. NSym immaculate case still open. Background for FPSAC sign discussion.
+- **de Gier–Kenyon–Wheeler–Zhou arXiv:2606.22004** — "The asymmetric five vertex model on a rectangle." Integrable systems entering K-theoretic Schur P/Q space. Wheeler's vertex-model methods on GQ/GP territory. Watch for follow-up.
+- **Brahma solo arXiv:2604.07352** (April 2026) — twisted factorial Grothendieck polynomials via weighted Grassmann orbifolds. Extension of BIAY framework. Route Arroyo data point. 0 citations.
+- **Graf-Jing arXiv:2409.01479** — plethysm stability of Schur Q-functions. "Linear increase exception" may explain why Rick's sign is x_2-free. Read in journal paper investigation.
+- **Iwao solo arXiv:2508.14484** (Aug 2025) — elementary construction of K-Q-cancellation ring. Next step in Iwao 2023 program. Background for β' paper introduction.
+- **Arroyo–Hamaker–Hawkes–Pan arXiv:2503.16641** (March 2026) — Type C K-Stanley symmetric functions and Kraszkiewicz-Hecke insertion. 2 citations. Arroyo continuing his K-theoretic Schur Q program.
+- **FPSAC 2027:** Website https://maths.universityofgalway.ie/fpsac2027/ — 7 invited speakers (Haiman, Yip, Bouvel, Fink, Iyama, Marietti, Mishna). No submission deadline posted yet. Watch for call (~Oct-Nov 2026).
+
+## Key reference papers (Browse 108 additions)
+- **Iwao 2023** — ~~PRIORITY READ~~ **READ (Browse 109).** arXiv:2301.12741. F=A·B novel relative to Iwao. See Browse 109 additions above.
+- **Cho-Hwang-Lee 2603.03886** (March 2026) — ~~Read to check Takeuchi mechanism~~ **READ (Browse 109).** Sign (−1)^{|λ|} ≠ (−1)^{x_1+x_3}. Not directly applicable. Journal paper direction.
+- **Brahma 2604.07352** (April 2026) — solo follow-up: twisted factorial Grothendieck polynomials via weighted Grassmann orbifolds. Alternating β-signs structurally matching Rick's sign pattern. Route Arroyo data point.
+- **Marberg 2512.23944** (Dec 2025) — Positive specializations of K-theoretic Schur P/Q (K-theoretic Edrei-Thoma for GQ/GP). Current frontier of K-theoretic Schur-Q, directly adjacent to Arroyo's territory.
+- **FPSAC 2027 website confirmed:** https://maths.universityofgalway.ie/fpsac2027/ Haiman + Yip invited. ~81 days from 2026-08-26.
+
+## Key reference papers (Browse 107 additions)
+- **Fernelius-Rozhkovskaya 2511.02710** (Nov 2025, revised Feb 2026) — W_{1+∞} action on Schur and Schur Q via formal distributions. READ in Browse 108: Rick's Ψ does NOT appear as W_{1+∞} specialization — ψ±(u) are free fermion fields. Paper is ambient context only. 0 citations.
+- **Greaves-Jing-Zhu 2602.14190** (Feb 2026, 6 cites) — boson-fermion correspondence for t-Schur; hub connecting Jing-Rozhkovskaya to Lee cluster.
+
+## Key reference papers (Browse 106 additions)
+- **Jing-Rozhkovskaya 1610.03396** (J. Combinatorics 2019) — vertex operator Ψ± EGF for maps Sym → shifted-Sym. CLOSEST LITERATURE PARALLEL to Rick's EGF factorization F(T) = A(T)·B(T). Priority read.
+- **Seelinger Schur Q lecture notes** (ghseeli.github.io) — classical Q(t)=E(t)·H(t) EGF parallel.
+- **FPSAC 2027** (Galway, July 5–9) — Haiman invited. Target venue for β' paper. Watch for submission deadline ~November 2026.
+- **Schilling Mittag-Leffler workshop lecture notes** (July 27–31 2026) — not yet posted; watch.
+
+## People whose preprints are worth a look (updated Browse 104, 2026-08-21)
+- **Seung Jin Lee (SNU)** — MOST URGENT WATCH. Five-paper June-July 2026 cluster on shifted t-Schur functions (2606.22058, 2606.28723, 2606.28108, 2607.01839, 2607.02108). StructB is the missing Pieri/degree result in his framework. Pieri rule for shifted t-Schur explicitly open.
+- **Iryna Kashuba + Alexander Molev** — 2512.21631 (Dec 2025): HC images of queer Lie superalgebra quantum immanants = factorial Schur Q-polynomials. Path 1+2 bridge now extends to shifted/Q world.
+- **Das, Pattanayak** — 2608.17431 (Aug 18 2026, brand new). Newton identity for q_N; Ivanov factorial Schur Q governs Z(U(q_N)). Watch for follow-up.
+- **Naihuan Jing + Ming Liu** — Active: 2408.09855 (quantum Capelli, 11 cites), 2606.15138 (skew MN rule for Hopf dual pairs + skew (q,t)-Kostka ribbon expansion, Jun 2026). Both relevant to OQ-CHARGE-LIFT-AB.
+- **Ilse Fischer + Moritz Gangl** — 2603.29836 (two Littlewood identities for spin HL, ASM/Pfaffian connection). Gangl at Lattice Path Conference 2026 (TU Wien Jul 2026). Watch for follow-up on ASM/spin HL.
+- **Diego Plaza + Sebastián Sagurie** — 2608.07703 (Aug 7 2026): new algorithm for Kostka-Foulkes via Hecke pre-canonical bases. Watch for follow-up.
+- **Aguiar, Lauve, Sottile, Reiner, Grinberg**
 - Kashiwara, Lusztig, Schilling, Vazirani, Mathas
 - Brundan, Kleshchev, Khovanov
 - Assaf, Lam (Thomas), Williams (Lauren), Bergeron (Nantel/François)
@@ -38,7 +121,12 @@
 - Bowman, Norton, Simental — BGG resolutions in cyclotomic Hecke algebras (JIMJ 2024) ⭐ BRIDGE PAPER
 - Marberg — twisted-involution KL positivity, type B/D (arXiv:1306.2980 — 4 open conjectures)
 
-## People to watch (added 2026-05-16, updated 2026-07-05)
+## People to watch (added 2026-05-16, updated 2026-08-28)
+
+- **Maria Esipova + Stephanie van Willigenburg** — **NEW Browse 113.** 2608.07459 (Aug 7, 2026): when do Daugherty's ρ/ψ/ω preserve dual immaculate functions? DUAL SIDE of Rick's φ question. High priority watch for follow-ups on immaculate automorphisms.
+- **Pyuyi Chufeng Huang** — **NEW Browse 113.** 2608.07599 (Aug 6/15, 2026): NSym ribbon specialization GF = 1/₂F₁ satisfying Riccati ODE. Double-factorial connection to U_b(w). New voice in the NSym/combinatorial area.
+- **Kyle Celano** — **NEW Browse 113.** Co-author with Allen and Mason (2511.18156): sign-reversing Garsia-Milne involutions in NSym. Mason's collaborator; watch for follow-ups on NSym involutions and skew immaculate.
+- **Younggwang Cho, Byung-Hak Hwang, Hojoon Lee** — **NEW Browse 113.** 2603.03886 (Mar 2026): Resolved Sym/Schur half of Benedetti-Sagan. Korean group; 6-page technique is the model for Route B lift to NSym.
 
 - **Akito Uruno** — NEW Browse 74. Found the error in Jang-Kwon 1810.02103 Section 5; became co-author on 2510.24451 (orthosymplectic crystal base + Burge RSK). Student/postdoc in Kwon group. Watch for follow-up on type D specifically.
 - **Masahide Kobayashi + Hiroshi Matsumura** — NEW Browse 74. Two type C SSOT papers (2506.06951 "King tableaux with Berele insertion" + 2601.17603 "SSOT symmetry"). Cite Heo-Kwon. Building SSOT + Berele + BK framework for type C — the exact toolkit that would yield type D if they push there. Watch for type D extension.
@@ -75,6 +163,65 @@
 - **Salmasian, Savage, Shen** — arXiv:2507.12328 "The disoriented skein and iquantum Brauer categories" (published Forum of Mathematics: Sigma 2025). Categorical/diagrammatic approach to iquantum algebras; cites Brundan-Wang-Webster 2505.22929. Check if BDI covered. **NEW Browse 59. MEDIUM priority.**
 - **Lu, Pan** — arXiv:2504.19073 "Dual canonical bases for iquantum groups via Hall algebras" (Apr 2025). Foundational for U^ι canonical basis / dual crystal basis theory. Adjacent to OQ-IQUANTUM-RSK-LIFT. **NEW Browse 59.**
 - **De Commer, Neshveyev, Tuset, Yamashita** — arXiv:2009.06018 "A KL theorem for quantum groups" (published Forum Math. Pi 2023). Foundational KL result. Q-SPHERE June 12 talk announced a **type B strengthening in progress** — watch for new preprint June-August 2026. **HIGH PRIORITY watch.**
+- **Álvaro Gutiérrez + Martínez + Szwej + Wildon group (Bristol/Columbia)** — NEW Browse 82 (2026-07-11). Three connected programs: (1) 2607.06749 "field-independent filtration categorifying U_q(sl₂) Cartan product rule" (full paper FPSAC 2026 poster); (2) 2412.15006 "Towards plethystic sl₂ crystals" (counting formulas for SL₂ plethystic coefficients); (3) 2511.02649 (with Orellana-Saliola-Schilling-Zabrocki) geometric/Ehrhart approach to plethysm. OQ-GUTIERREZ-PLETHYSTIC-CRYSTAL: do their counting formulas for a^{n,m}_k = Rick's M_j? Direct connection plausible. Watch for new papers.
+- **Josaphat Baolahy + Randrianirina Benjamin** — NEW Browse 86 (2026-07-14). arXiv:2604.10336 "Species, Symmetric Functions, and Kronecker Product" (Apr 2026). Introduce K_α basis = PRODUCT of C-molecules (ordinary product in Sym, not plethystic composition). PRODUCT-LAND — first 2025/2026 paper in this territory. URGENT: does K_{(2^j,1^{n-2j})} = e_2^j · p_1^{n-2j}? If yes → M_j identified via species. Watch for follow-up.
+- **Nikolai Beluhov** — NEW Browse 86 (2026-07-14). arXiv:2506.12789 "Powers of 2 in High-Dimensional Lattice Walks" (ECA 2026). ν₂ of lattice walk counts splits by d mod 4 as pure digit-sum via ABACUS METHOD (Kummer carry stratification by paired binary digits). Structural template for D(c) derivation. HIGH relevance to beta-prime-digit-sum-formula structural proof.
+- **Yifeng Zhang** (South China Normal) — NEW Browse 96 (2026-08-13). arXiv:2608.03792 "Molecules of an affine FPF W-graph and a labelled row-Beissinger reconstruction" (Aug 8, 2026). Classifies FPF W-graph molecules via affine matrix-ball construction; bridges FPF involution combinatorics to KL cells. Three papers 2023-2026 in FPF / type B/D W-graph territory. **Watch for type D / DIII extension. OQ-ZHANG-FPF-WGRAPH-DIII.**
+- **Bergeron + Gagnon + Nadeau + Spink + Tewari** — NEW Browse 96 (2026-08-13). arXiv:2508.12171 "The quasisymmetric flag variety" (Aug 2025) + arXiv:2604.24903 "The Quasisymmetric Grassmannian" (Apr 2026). Geometric foundations for QSym coinvariants; parallel to classical flag variety / Schubert calculus. May give geometric home to crystal skeleton tensor products. Path 1+4 bridge. Medium priority.
+- **Pak, Panova, Swanson** — NEW Browse 86 (2026-07-14). arXiv:2511.02312 "A combinatorial interpretation for certain plethysm and Kronecker coefficients" (2025). Explicit #P (marked trees) formula for ⟨s_μ[s_ν], s_λ⟩ when λ ≤ 2 rows. Check: M_j = ⟨s_λ, e_2^j · p_1^{n-2j}⟩ with λ two-row — does it fall in scope?
+- **Gutiérrez + Krattenthaler** — NEW Browse 86 (2026-07-14). arXiv:2509.22648 "Schur log-concavity and the quantum Pascal triangle" (2025). Quantum Pascal triangle = sl_2 Clebsch-Gordan table. Likely contains M_j table explicitly. Priority read next session.
+- **Bergeron-Gagnon-Nadeau-Spink-Tewari group** — NEW Browse 86 (2026-07-14). Four-paper series 2025-2026 building a geometric theory of quasisymmetry: quasisymmetric flag variety (2504.15234, 2508.12171), Coxeter flag variety (2601.23111), quasisymmetric Grassmannian (2604.24903). Cohomology rings = QSym coinvariants. Noncrossing partitions replace permutations. Bergeron giving FPSAC 2026 plenary Friday. Watch for Hecke/crystal interpretations.
+- **Emily Gunawan** — NEW Browse 82 (2026-07-11). April 2026 talk "Box-ball systems, RSK tableaux, and the Motzkin numbers" (egunawan.github.io). Someone connecting RSK tableaux to Motzkin numbers via box-ball systems. Potentially same phenomenon as Rick's K_{μ^T,(2^j)} = m^(2)_{k,j}. LOW-MEDIUM watch; check for arXiv paper.
+- **Sam Johnston + Khoa Nguyen + Anne Schilling** — NEW Browse 82 (2026-07-11). arXiv:2606.02972 "RSK and crystal structures via 5-vertex model uncrowding" (2026). Schilling's new approach to RSK via 5-vertex lattice model uncrowding. OQ-SCHILLING-RSK-5VERTEX: does 5-vertex model extend to type D? Watch for type D extensions.
+- **Barnard + McConville** — arXiv:**1808.05670** (CONFIRMED Browse 94). 2018 paper "Lattices from graph associahedra and subalgebras of the Malvenuto-Reutenauer algebra" (21 cites), CITED in 2607.12232 as reference [1]. The MR Hopf algebra subalgebra structure is in the crystal skeleton references but NO connection is drawn to Hopf structure. Follow-up: **Dahlberg-Fishel arXiv:2409.13898** (2024) — cited as [7] in 2607.12232, connects tubing lattice to crystal skeletons for Stanley sym fns. READ BOTH for Hopf morphism route.
+- **Loic Poulain d'Andecy** — arXiv:2603.19069 **DEEP READ (Browse 94).** sl_2 multiplicity tables are the Catalan/Motzkin/order-d triangles: c_{k,n}^{(d)} = b_{k-1,n}^{(d)} - b_{k+1,n}^{(d)}. M_j connection: if M_j = dim Hom_{sl_2}(trivial, V_2^{otimes 2j}), then M_j = c_{1,2j}^{(2)} = Catalan(j). TRANSLATION NEEDED (Frobenius formula; one computation). Paper uses q-number / Pascal language, not Sym inner products.
+- **Yu (arXiv:2607.09157)** — **CONFIRMED IRRELEVANT (Browse 94 deep read).** Math NT paper (multiple zeta/Eisenstein series) using Young tableaux as index sets. Coproduct = deconcatenation, not alphabet-doubling. No crystal content. Discard.
+- **Lai, Nakano, Xiang** — NEW Browse 82 (2026-07-11). arXiv:2511.19825 "Quantum wreath products and Schur-Weyl duality II" (Nov 2025). Constructs wreath modules for Ariki-Koike, Hu algebra, affine Hecke. **SOLVES GGOR for Type D rational Cherednik algebra** via Hu algebra wreath modules. OQ-LAI-NAKANO-XIANG-TYPE-D filed: does their Type D Category O connect to DIII RSK/crystal? The Hu algebra is H_q(D_{2m}); its modules should be DIII-adjacent.
+- **Vidas Regelskis** — NEW Browse 94 (2026-07-18). arXiv:2607.14692 "Twisted Yangians of types BI, CI, DI" (July 2026). DI = type D Yangian; Drinfeld-type current presentations; coideal coproducts. First type D quantum group paper in post-FPSAC wave. OQ-DI-YANGIAN-DIII-RSK. Watch for follow-up papers.
+- **Bodish + Elias + Rose** — NEW Browse 94 (2026-07-18). arXiv:2607.13252 "Type B Webs" (July 2026). Solves Kuperberg 1996 for type B; ι-quantum group braid symmetries. Path 2+3 categorification infrastructure.
+- **Cai, Jiang, Jing, Li, Ye** — NEW Browse 94 (2026-07-18). arXiv:2607.14362 "Measures and Generalizations of Dual Littlewood Identities" (July 2026). Types B, C, D dual Littlewood identities; Fock space; type D explicit. Path 1+2.
+- **Goertzen + Williamson** — Browse 94 URGENT, Browse 97 ID FOUND. arXiv:**2604.18894** "Kazhdan-Lusztig Basis and Optimization" (Apr 20, 2026). KL basis = maximal (1+s)-invariant cone in Specht modules. Proved: hooks, two-column, (n-2,2). Type A only — no type D anywhere. **OQ-2 territory: type D analogue completely open and uncrowded.** Williamson is the strongest KL group; type D extension is Rick's potential.
+- **Tom Goertzen** — NEW Browse 97 (2026-08-14). Postdoc at U Sydney (Williamson group). First author on 2604.18894. Watch for follow-up on KL optimization beyond type A.
+- **Lauve + Lazzeroni** — sequel arXiv:2604.10816 "Hopf substitutions in Species" (Apr 2026). NEW Browse 97. Asks which species substitutions preserve Hopf monoid structure. Direct sequel to OQ-1 (2603.19494). Read alongside the FPSAC proceedings paper.
+- **Marberg + Scrimshaw** — arXiv:2608.11009 "Square root crystals and the square root of B(∞)" (Aug 11, 2026, 54pp). NEW Browse 97. Monoidal category of N-root crystals; square root of B(∞). Marberg is Rick's primary DIII watch; this paper is about monoidal tensor structure on new crystal categories — Path 2+4 bridge.
+- **Yifeng Zhang** — arXiv:2503.21215 "Cell classification of the row Gelfand S_n-graph" v2 August 12, 2026. NEW Browse 97. Cell=molecule result in type A via Greene + Nguyen orderedness. Open type D analogue via Garfinkle insertion.
+- **Lapointe + Pena** — arXiv:2608.13276 (Aug 13, 2026). New characterization of right keys via decreasing subwords. NEW Browse 97.
+- **Nguyen-Dang** — arXiv:2608.10516 (August 2026). Lorentzian conjecture for skew Schur functions via Richardson varieties. Cites Lam-Lauve-Sottile 0908.3714 — new external community (Lorentzian polynomials) pulling on Hopf-algebraic skew LR. NEW Browse 97.
+- **Kashiwara, Kim, Oh, Park** — arXiv:2608.15020 "Monoidal seeds of the categories C_{w,v} over quiver Hecke algebras" (Aug 15, 2026, 3 days old at Browse 98). New quantum monoidal seeds for C_{wv} using reflection functors K_i, F_i. Proves K(C_{wv}) lies between cluster algebra and upper cluster algebra on coordinate ring of open Richardson variety. **Interfaces directly with 2601.07793 (Barkley-Gaetz-Lam) via Richardson variety cluster structure.** KKOP group hitting Path 2+3 intersection. **HIGH PRIORITY — read next wake.** NEW Browse 98.
+- **Jing, Liu (Naihuan Jing + Ning Liu)** — arXiv:2606.15138 "A skew Murnaghan-Nakayama rule for Hopf dual pairs" (Jun 2026). Generalizes Lam-Lauve-Sottile from LR rules to MN rules for arbitrary Hopf dual pairs including (Λ^(k), Λ_(k)) = k-Schur/affine Grassmannian Hopf pair. **THE Path 1↔4 gap**: nobody has connected the abstract skew MN for k-Schur to explicit KR crystal tensor products. **OQ-JING-LIU-KR-CRYSTAL-MN.** NEW Browse 98.
+
+- **Bump + Hardt + Scrimshaw** — arXiv:2410.06582 "Factorial Fock Free Fermions" (Oct 2024) + arXiv:2502.02841 "Boson-Fermion Correspondence for Factorial Schur Functions" (Feb 2025). **HIGHEST PRIORITY for OQ-DEG-J-ALPHA-BOUND.** Cor. 6.15 of 2410.06582 has explicit factorial Schur Pieri expansion s_λ · h_r in double supersymmetric Schur basis. Section 7 of 2502.02841 = "Skew-Pieri rule" with no cancellations at β=0. The two-alphabet parameter structure matches Rick's π=(b+1)c, σ=b+c+1. Six-vertex model / transfer matrix approach may give degree bounds. **Read Cor. 6.15 first in next PROVE session.** NEW Browse 100.
+- **Houcine Ben Dali + Lauren Williams** — arXiv:2510.02587 "Combinatorial formula for Interpolation Macdonald polynomials" (Oct 2025, FPSAC 2026 talk). + arXiv:2602.13492 "Interpolation t-Push TASEP" (Feb 2026). **Gap confirmed Browse 100:** Pieri rule M*_μ · h_p = Σ c^ν M*_ν not stated explicitly anywhere. My ballot/Catalan seed observation is a direct approach at q=t=1. NEW Browse 100.
+- **Takeshi Ikeda + Shinsuke Iwao + Mark Shimozono** — arXiv:2511.20966 "Equivariant homology of symplectic affine Grassmannian and dual affine Schur P-functions" (Nov 2025, 50pp). Dual factorial P-functions via affine nil-Hecke; open Pieri problem explicitly stated; degree-bounded polynomial coefficients = symplectic analogue of Rick's α_{p,k}(j,σ). Hopf algebra structure on H^T_*(GrSp_{2n}) deferred to future work. NEW Browse 100.
+- **Joshua Arroyo** — arXiv:2511.05734 "Pieri rule for GQ functions via strict decomposition tableaux" (Nov 2025). K-theoretic Pieri for strict partitions; ballot/Catalan structure = leading β term. NEW Browse 100.
+- **Ryan Mickler** — arXiv:2606.17822 "Congruences of Shifted Jack LR Coefficients" (June 2026). Open problem: extend to shifted Macdonald functions. NEW Browse 100.
+- **Khai-Hoan Nguyen-Dang** — arXiv:2608.10516 "Richardson volume models for skew Schur P/Q-functions" (Aug 2026). Richardson variety approach to shifted skew LR; cites Lam-Lauve-Sottile and Jing-Liu. NEW Browse 100.
+- **Loic Poulain d'Andecy + Jeremie Guilhot** — arXiv:2602.20861 "KL bases of parabolic Hecke algebras + Schur-Weyl duality" (Feb 2026). RSK indexing of KL cells; Schur-Weyl kernel via KL basis. NEW Browse 100.
+- **Shaolong Han** — arXiv:2607.20934 "Closed formulas for energy functions on tensor squares of perfect crystals in classical affine types" (Jul 2026). Explicit piecewise-linear energy formulas for all seven classical affine types at all levels. Fills long-standing gap; RR identities emerge. NEW Browse 100.
+
+- **Stepan Naprienko** — arXiv:2301.12110 "Free fermionic Schur functions" (2023, 8 citations). **HUB PAPER (Browse 101).** Unifies factorial, supersymmetric, and dual Schur functions via free fermionic six-vertex model with (a,b)-parameters. Key upstream reference for Bump-Hardt-Scrimshaw 2410.06582. The (a,b)-parameter structure matches Rick's (π,σ) = ((b+1)c, b+c+1) — **Route N for StructB.** Cited by Panova-Petrov (2409.17842), Gunna-Wheeler-Zinn-Justin (2504.19205). Watch for follow-ups on degree-bounded expansions. NEW Browse 101.
+- **Lucas Teyssier** — arXiv:2508.06770 "Bounds on skew dimensions and characters via thick hook decompositions" (2025, 2 citations). **StructB-adjacent (Browse 101).** Uses Naruse hook-length formula to prove degree bounds for standard tableaux of skew shapes; improves Féray-Śniady bounds. Methodology directly adjacent to StructB degree bound. NEW Browse 101.
+- **David Plaza + Yamil Sagurie** — arXiv:2608.07703 "Positivity of pre-canonical bases for spherical Hecke algebras — Kostka-Foulkes" (Aug 7, 2026). New Schur-positive basis via Satake isomorphism + pre-canonical Hecke transitions. Kostka-Foulkes positivity proved. Hecke-Sym bridge exactly what Rick needs for StructB. NEW Browse 101.
+- **Richmond + Tewari** — arXiv:1905.10942 "Noncommutative LR coefficients and crystal reflection operators" (2019, **0 citations** after 7 years). **URGENT READ (Browse 101).** Directly at Path 1+4 intersection: NC Schur + crystal reflection operators = explicit LLS coproduct-crystal connection. Zero citations despite being precisely on target. Either has the answer or is completely overlooked. NEW Browse 101.
+- **Hong Chen + Siddhartha Sahi** — arXiv:2403.02490 "Interpolation Polynomials, Binomial Coefficients, and Symmetric Function Inequalities" (2024, 7 citations); series of 4 papers 2024-2025 extending Knop-Sahi-Okounkov interpolation polynomial program. LR positivity and monotonicity for shifted basis Ω_λ(1+x;τ). Adjacent to Rick's shifted-Schur interpolation master technique. NEW Browse 101.
+- **D'Adderio, Interdonato, Iraci, Pagaria** — arXiv:2608.14836 "Theta conjecture proved" (Aug 14, 2026). Explicit Negut operator formula in Dyck path algebra; proves 2019 Theta conjecture; Lean-verified. Major q,t-combinatorics event this week. Not directly adjacent to Rick's work but significant. NEW Browse 101.
+- **Guo, Kang, Xiong** — arXiv:2608.11543 "Butler's positivity conjecture" (Aug 12, 2026). Proves Butler's 1994 conjecture: $(T_\lambda H̃_\mu - T_\mu H̃_\lambda)/(T_\lambda-T_\mu)$ is Schur positive. Another 32-year-old conjecture resolved this week. NEW Browse 101.
+
+- **Brahma, Ikeda, Iwao, Yang** — arXiv:2603.20865 "Neutral-Fermion Constructions of Factorial gp- and gq-Functions" (March 2026). **HUB FOR ARROYO ROUTE (Browse 105).** Neutral-fermionic vacuum expectation values for factorial GQ-functions; Pfaffian formula for factorial gq. "Remarkable coincidence": all four transition coefficient families (gp, gq, GP, GQ) equal, expressible via factorial Grothendieck type A. Setting equivariant parameter → 0 should be compared to Rick's (1,1,2)-weight computation. This is the algebraic backbone of Arroyo's SDT. **COMPUTE THIS WEEK.** NEW Browse 105.
+- **Zachary Hamaker** — coauthor on Arroyo-Hamaker-Hawkes-Pan 2025 "Type C K-Stanley symmetric functions and Kraskiewicz-Hecke insertion." Active in K-theoretic insertion / type C K-theory. Direct predecessor to Arroyo 2511.05734. Watch for new papers on K-theoretic shifted tableaux. NEW Browse 105.
+- **HUB: Ikeda + Naruse 2011** — "K-theoretic analogues of factorial Schur P- and Q-functions" (Advances in Mathematics, 121 citations). Foundational paper for GQ-functions. The beta-deformation structure that produces Arroyo's intrinsic degree bound originates here. Rick must read this to understand Route Arroyo. **PRIORITY READ.** Identified Browse 105.
+
+- **Allen + Mason** — arXiv:2511.18156 "Tunnel Hook Coverings and the Garsia-Milne Involution" (Nov 2025). **HIGHEST for OQ-KOSTKA-CANCELLATION-A-B (Browse 102).** Combinatorial proof of K⁻¹K = I via Garsia-Milne involution on SSYT with sign = (−1)^{height(rim hook)} — structurally parallel to Rick's (−1)^{(μ_2−μ_3)/2} parity signs. NSym-first-then-Sym strategy. Read §2-3 to check if involution restricts to K_{μ',(2^j)} and pairs by (μ_2−μ_3) parity.
+- **(unknown)** — arXiv:2505.10783 "Local Framework for Rectangular Kostka Matrix Inversion" (May 2025). **HIGH for OQ-KOSTKA-CANCELLATION-A-B (Browse 102).** Bijective proof for rectangular Kostka matrix inversion; K_{μ',(2^j)} explicitly in scope. Read §3-4 for the involution filtration structure.
+- **S.-J. Lee** — arXiv:2607.02108 "A Two-Color Lift of the Shifted t-Schur Measure" (July 2026). **NEW Browse 102.** Cites O-O q-alg/9605042; half-vertex operators on strict partitions via $Q_\mu(qX)$; Pfaffian correlation kernels; two-color grading may correspond to parity of (μ_2−μ_3) in Rick's shifted Schur filtration. Path 3 + shifted Schur.
+- **Gunna + Wheeler + Zinn-Justin** — arXiv:2504.19205 "Structure Constants for Spin Hall-Littlewood Functions" (Apr 2025). Main 2025 citer of Naprienko 2301.12110. Honeycomb + Yang-Baxter lattice model for spin HL structure constants. Context for Route N (Naprienko). NEW Browse 102.
+- **Cho + Hwang + Lee** — arXiv:2603.03886 "Sign-Reversing Involution for Schur Antipode" (Mar 2026). Resolves Benedetti-Sagan question on Takeuchi expansion of Schur functions; free quasi-symmetric monoid involution. Methodology adjacent to Rick's Kostka cancellation involution. NEW Browse 102.
+- **[Update]** Marberg arXiv:2512.19034 — **MAJOR REVISION July 2026**: added type D Brion atoms + involution Schubert polynomials for all classical types. Substantive new content; reread before FPSAC 2027 submission. DIII sentinel but now richer.
+
+- **Marc van Leeuwen** — arXiv:math/0602357 "Schur Functions and Alternating Sums" (2006, Memoirs AMS). **HIGHEST for OQ-KOSTKA-CANCELLATION-A-B (Browse 103).** Canonical reference for sign-reversing involutions in symmetric function theory. Rick's identities (A)/(B) are shape-indexed variants of this framework; read §2-3 to model the (μ₂-μ₃)-parity involution on SSYT(μ',(2^j)). New to feeds: not previously in Browse reading logs.
+- **Jing + Liu + Molev (Naihuan Jing, Ning Liu, Alexander Molev)** — arXiv:2408.09855 "The q-Immanants and Higher Quantum Capelli Identities" (2024). **NEW Browse 103.** Factorial Schur polynomials appear as Harish-Chandra images in Z(U_q(gl_n)); proves quantum Capelli identities. Best existing bridge between Rick's O-O master technique (shifted-Schur interpolation) and Hopf algebra filtration structure (center of U_q). OQ-HARISH-CHANDRA-STRUCTB: if S_j ∈ Z(U_q(gl_n)) via Harish-Chandra, StructB follows from center structure.
+- **Estupiñán-Salamanca + Pechenik** — arXiv:2503.14609 "Shifted LR Rule via Shifted Plactic Monoid" (March 2025). **NEW Browse 103.** First algebraic proof of shifted LR via shifted plactic monoid + "constructed tableaux" rule. Adjacent to Molev-Sagan barred/unbarred switch Rick wants for identities (A)/(B). (NB: different from their 2602.18632 which is a DIII sentinel.)
+- **FPSAC 2026 Proceedings** — LIVE at https://sites.math.washington.edu/fpsac2026/proceedings/ (confirmed Browse 103, July 27, 2026 per web agent). Check for Lauve-Lazzeroni r-QSym, Seung Jin Lee invited talk notes (q-weight multiplicities, types B/C via KR crystals + Catalan functions), Chueluecha-Morse (skew Catalan + Genocchi), Ruizhen Liu (Best Student Paper, Deligne-Lusztig + q-Klyachko).
 
 ## MathOverflow / StackExchange — PERMANENTLY BLOCKED
 
@@ -83,8 +230,8 @@
 ## Upcoming events to watch for lecture notes
 - **✅ Q-SPHERE 2026, Radboud University Nijmegen, June 8-12, 2026** — **CONCLUDED (Browse 56, June 11). T+1d (Browse 59, June 13): zero new preprints.** KEY PENDING PREPRINTS to watch (June 16–30): (1) **Watanabe-Hoshino bi-icrystals** (Watanabe @ Rikkyo University, not RIKEN — corrected Browse 59; no preprint yet; abstract mentions bicrystals; watch for joint Watanabe-Hoshino preprint); (2) **Meereboer-Kolb "Kostant's branching law for QSP"** (Meereboer solo precursor = 2510.17655 iota crystal 1-dim; joint paper in progress); (3) **De Commer-Neshveyev-Tuset-Yamashita "KL theorem in type B"** (June 12 talk confirmed this is in progress; based on arXiv:2009.06018 Forum Math. Pi 2023). Already-posted relevant preprint: **Kolb-Yakimov arXiv:2603.06132** (short star products for QSP). Details: `connections/q-sphere-meereboer-fourth-community-deadline.md`.
 - IMJ-PRG Integrable Combinatorics Summer School, Paris, **June 15-19, 2026** — Anne Schilling mini-course "Crystals and symmetric functions" (June 17-18 lectures + exercise class); indico.math.cnrs.fr/event/14175/. No slides yet. Check after June 18.
-- FPSAC 2026, Seattle, July 13-17, 2026 — **FULL PROGRAM LIVE (including short talks, Browse 68)** at sites.math.washington.edu/fpsac2026/program/; relevant invited talks: **(1) Seung Jin Lee** "Lusztig's q-weight multiplicities" (Tue July 14, KR crystals types B/C); **(2) Nantel Bergeron** "Quasisymmetric World"; short talk highlights: **Tianyi Yu** "Grothendieck positivity for square root crystals" (Tue July 14; half-integer weight crystals → DIII?), **Jaewon Min** "When is a Schubert variety spherical?"; **zero iquantum/QSP/DIII/coideal talks**
-- Mittag-Leffler workshop "Solvable Lattice Models, Rep Theory of Quantum Groups, and Algebraic Combinatorics," July 27-31, 2026 — **32 participants listed** (Schilling, Scrimshaw, Knutson, Corteel, etc.); talk schedule and abstracts NOT YET posted; check mid-June
+- FPSAC 2026, Seattle, July 13-17, 2026 — **CONCLUDED (Browse 92, July 17)**. Bergeron plenary (Fri July 17): "Crossing, or Not, in the Quasisymmetric World" — forest polynomials, geometric QSym via noncrossing partitions; slides not yet posted. Seung Jin Lee plenary (Tue July 14): q-weight multiplicities + KR crystals (arXiv:2412.20757). Notable: Lauve-Lazzeroni poster on species lift of r-QSym Hopf algebra; Pfannerer "Cyclic sieving via crystals + electrical networks" (arXiv:2607.14028). Zero DIII content. **Post-FPSAC arXiv wave expected July 18-25** — watch math.CO/math.QA daily.
+- Mittag-Leffler workshop "Solvable Lattice Models, Rep Theory of Quantum Groups, and Algebraic Combinatorics," July 27-31, 2026 — **Schedule LIVE (Browse 94, July 18).** Schilling, Scrimshaw, Knutson, Corteel ALL confirmed. Talk titles TBA — check July 24-25. No DIII content announced. Bergeron FPSAC plenary slides NOT posted (check bergeron.math.yorku.ca early August).
 
 ## Expository resources (Browse 24 — new)
 - **BIMSA course: "Introduction to Quantum Symmetric Pairs"** — Bart Vlaar, Oct–Nov 2025. Public videos + lecture notes. URL: https://www.bimsa.cn/research_detail/Inttoquasympai.html. Best new expository QSP resource since Kolb's survey.
@@ -157,6 +304,16 @@
 - Shen-Wang arXiv:2108.00630 (Adv. Math. 2023) — iSchur duality; iquantum group AIII ↔ type B Hecke; quasi-parabolic KL positivity; closest paper to type-B KL positivity ⭐⭐
 - Alqady-Stroinski 2025 — coboundary Temperley-Lieb category for sl2-crystals; type B analog?
 - Yuan Chai arXiv:2604.21731 (2026) — twisted KL conjecture p-adic GL_n (geometric proof; informational)
+
+### New additions from Browse 86 (2026-07-13):
+- **arXiv:2607.07870 (Zemel, July 2026)** NEW — Antipodes of q-QSym and NCQSym. S(F_α^{(q)}) = (−1)^n q^{inv(α^t)} F̃_{α^t}^{(q)} for braided QSym. The q^{inv} weight may connect to Hecke deformation of descent algebra (OQ-ZEMEL-HECKE-BRIDGE). Path 1 + Path 3 bridge candidate.
+- **arXiv:2406.01166 (Grinberg-Vassilieva, June 2024)** — q-fundamental QSym functions interpolating Gessel ↔ Stembridge, giving QSym expansion of Hall-Littlewood at t = -q. Crystal-QSym bridge via HL. Not previously tracked.
+- **arXiv:2404.04512 (Orellana-Saliola-Schilling-Zabrocki, 2024)** EMERGING HUB — "From QSym to Schur expansions with applications to symmetric chain decompositions and plethysm." 9 citations; being cited by plethysm community (Gutiérrez), combinatorics (Pak-Panova-Swanson), and quantum complexity (Christandl et al.). The dominant-term QSym→Schur technique in this paper is foundational infrastructure for computing M_j. FPSAC 2026 follow-up: **Castellano-Orellana-Zabrocki** poster "Transition matrices for character bases of the symmetric group" — those matrices may give M_j directly as entries. Read 2404.04512 soon.
+- **Lam-Lauve-Sottile arXiv:0908.3714 (2009) — CONFIRMED DORMANT.** Zero citations from 2024-2026. The Hopf-coproduct → skew LR-rule thread (Path 4) is wide open. Rick's M_j programme implicitly builds this Hopf ↔ LR ↔ crystal bridge. A short paper making it explicit would be uncompeted.
+- **Aquilino-Reischuk arXiv:1503.09152 + 1503.05108 (2017-18)** NEW — strict polynomial functors, internal ⊠ product, Schur functor monoidal → Kronecker. CLOSEST categorical framework to M_j structure. M_j = Hom_{S_n}(V_λ, GL-rep of outer product) is representable on Pol_n. OQ-AQUILINO-REISCHUK-MJ: Route VI candidate for M_j categorification.
+- **Allouche-Shallit p-regular sequences** — OQ-BETA-PRIME-4-REGULAR: is β(c) 4-regular? If yes, D(c) digit-sum formula derives structurally. Test in Sage: split β(c) into 4 arithmetic progressions, check Berlekamp-Massey linear recurrence.
+- **Hsiao-Petersen arXiv:math/0610976 (2006)** — BQSym Hopf algebra; BSym = NSym^B as dual. OQ-NSYMB-STRUCTURE: freeness + ribbon basis + antipode all open.
+- **Lee arXiv:2506.06951 (June 2025)** — type C RSK complete (King tableaux + SSOT). Type D RSK Q-tableau **explicitly open** (noted by Heo-Kwon 2008.05093). Type D needs oscillating tableaux for so(2N)→so(2N-2) branching including spinors s+/s−.
 
 ### On radar (not yet prioritized):
 - **arXiv:2507.12328 (Salmasian-Savage-Shen 2025)** ⭐⭐⭐ **HIGH — post-v3 priority read** — "The disoriented skein and iquantum Brauer categories." Iquantum groups + Brauer categorical machinery. Thread-3-adjacent (BDI RSK infrastructure). **Browse 43.**
@@ -574,3 +731,71 @@
 - Ilin-Kamnitzer-Li-Przytycki-Rybnikov 2023 — "virtual cactus group and moduli space of cactus flower curves"; 9 cit = hot; find arXiv ID ⭐⭐⭐
 - arXiv:2504.01623 (Khare-Matherne-St.Dizier Apr 2025) — log-concavity fails for type B Kostant partition functions
 - arXiv:2506.16561 (Liao-Rybnikov 2025) — maximal transitivity of cactus on SYT; type-B analogue open
+
+## Browse 85 updates (2026-07-13)
+
+### GMSW group — new papers added
+- arXiv:2507.06220 (Gangl-Gutiérrez-Szwej, July 8, 2026) — dual of Foulkes-Howe map = k-fold plethystic substitution; generalised Foulkes under divisibility; NEW — Track
+- arXiv:2412.15006 (Gutiérrez solo, Dec 2024) — sl_2 plethystic crystals; decomposition coefficients a_{1^n[r]}^k; Watch for recursion identification with M_j
+- arXiv:2509.01490 (GMSW, Sep 2025) — hook partition modular isomorphisms; proves Martínez-Wildon conjecture; categorifies Stanley Hook Content Formula
+- arXiv:2508.14788 (GMSW, 2025) — Weyl module as quotient by dual Garnir relations; foundation for 2607.06749
+- arXiv:2505.08422 (GMSW, 2025) — bijective proof of q-Pfaff-Saalschütz; Cartan subalgebra of U_Z(sl_2)
+- **Pipeline:** GMSW have several papers in preparation including "full filtration paper" (journal version of 2607.06749)
+
+### β'(c) digit-sum project — new predecessor identified
+- **Alekseyev-Amdeberhan-Shallit-Vukusic arXiv:2505.08935** (2025) — "p-adic valuations of values of Legendre polynomials." DIRECT predecessor to Iverson 2603.11069. Technique: find 2-adically dominant term → digit-sum formula. READ THIS before next CODE session on β'(c).
+- arXiv:2606.23398 (June 2026) — first-exit proof of Cusick conjecture. Key identity: s_2(n+t) - s_2(n) = s_2(t) - v_2(C(n+t,t)). Kummer as digit-sum.
+
+### FPSAC 2026 status (Day 1 today)
+- FPSAC started July 13, 2026. No slides posted yet. Check again July 14-15.
+- GMSW poster "Plethystic lifts of q-binomial identities" confirmed.
+- Seung Jin Lee (KR crystals types B/C) = July 14. Bergeron (QSym) = July 17.
+
+### Paris summer school slides — NOW AVAILABLE
+- Anne Schilling "Crystals and symmetric functions" (June 15-19, 2026): https://www.math.ucdavis.edu/~anne/talk-Paris2026.pdf (~10MB)
+
+### Mittag-Leffler workshop (July 27-31)
+- Abstracts still not posted (as of July 13). Recheck July 20-23.
+
+### Complexity ceiling
+- arXiv:2602.08441 (Christandl-Harrow-Panova-Posta-Walter, 2026) — "Plethysm is in #BQP." Any algorithm for M_j is in #BQP.
+
+### Type D calibration
+- arXiv:2607.03966 (Gerber-Ion-Lecouvey-Lenart, July 7, 2026) — X=K via Koornwinder. Type D_n^{(1)} EXPLICITLY EXCLUDED. Watanabe-Hoshino still not posted.
+
+## Browse 87 updates (2026-07-14, second session)
+
+### β'(c) digit-sum structural derivation — KEY NEW TOOLS
+
+- **Amdeberhan-Manna-Moll arXiv:0707.2119** (2007) — v₂((a)_k) = k − s₂(a+k−1) + s₂(a−1). The exact formula for 2-adic valuation of rising factorials. Apply to (a+3)_{c-1-k} and (b+2)_{c-1-k} in h_k^{(c)} to get digit-sum formula structurally. **Priority PROVE target.**
+- **Adamczewski et al. arXiv:2209.11075** — Christol step function: v_p((a)_k) = Σ_{r≥1}(⌊(a+k−1)/p^r⌋ − ⌊(a−1)/p^r⌋). General p-adic case.
+- **Beluhov arXiv:2504.21451** "Powers of 2 in Balanced Grid Colourings" (Apr 2026, ECA companion) — proves ν₂(B(m,n)) = s₂(m)·s₂(n). Multi-parameter (2D) Beluhov abacus — directly relevant to Rick's 3-parameter H_c(a,b,k). **Add to PROVE context.**
+
+### Baolahy-Randrianirina 2604.10336 — CORRECTION
+
+- K_{(2^j,1^{n-2j})} = **h_2^j · p_1^{n-2j}**, NOT e_2^j · p_1^{n-2j}. C_{(2)} = h_2 (trivial Z/2 action). CHECK DONE NEGATIVE for M_j identification. **New OQ-SIGN-SPECIES-E-BASIS:** sign-action analog → E_α basis with E_{(2^j,1^{n-2j})} = e_2^j · p_1^{n-2j}. Genuinely open construction.
+
+### New crystal papers
+- **He-Tubbenhauer arXiv:2606.02249** (June 2026) — "Presentations for categories of crystals." Generators and relations for monoidal crystal categories from fundamental crystals. Most direct 2026 paper for Path 4 (crystal tensor product = Sym coproduct). Priority read next session.
+
+### New Hopf algebra papers (from Grinberg-Reiner reverse citations)
+- arXiv:2506.00380 (Yichen Ma, June 2026) — "Convex Geometries and Hopf Monoids." Canonical characters + QSym invariants for convex geometries. Path 1.
+- arXiv:2504.20622 (Hao-Zhu, Apr 2026) — Graded dual of partition diagram Hopf algebra. QSym/NSym analogy.
+- arXiv:2506.08883 (Bastidas et al., June 2026) — Hecke factorizations with q-Catalan numbers. Path 3.
+
+### New KL papers (from Barkley-Gaetz-Lam reverse citations)
+- arXiv:2606.16894 (Barkley-Gaetz, June 2026) — Bounded Bruhat intervals in affine Coxeter groups. Affine extension of CIC techniques.
+- arXiv:2606.11776 (Caselli-Marietti, June 2026) — **Proves Brenti's 2003 conjecture on R-polynomials via special matchings.** KL R-polys have nonneg coefficients.
+
+### FPSAC 2026 full program (today = Day 2)
+- **CONFIRMED HAPPENING NOW:** Full program at sites.math.washington.edu/fpsac2026/program/ (109 papers)
+- TODAY: Tianyi Yu 10:00 "Grothendieck positivity for square root crystals" (arXiv:2501.16640)
+- FRIDAY: McConville-Propp-Sagan "Hyperbinary partitions and q-deformed rationals" (2-adic flavor)
+- POSTER: Gutiérrez-Martínez-Szwej-Wildon arXiv:2603.21021 "Plethystic lifts of q-binomial identities" — COMPANION to 2607.06749. Add to GMSW tracking.
+- ZERO type-D/DIII content confirmed across all 109 papers.
+
+### β'(c) OEIS gap
+- The sequence β'(c) for c = 4,5,6,... = (7,7,10,8,11,11,14,12,...) and D(c) = (1,0,2,2,3,5,3,5,...) are NOT in OEIS. Both submittable. Note: OEIS blocks automated fetches — need manual submission.
+
+### Mittag-Leffler workshop watch
+- July 27-31. Schilling + Scrimshaw (KR crystals type D) confirmed participants. Abstracts still not posted as of July 14. Check July 20-21.

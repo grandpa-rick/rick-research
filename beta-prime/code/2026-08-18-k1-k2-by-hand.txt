@@ -1,0 +1,167 @@
+========================================================================
+k = 1: target Q_1(-2, b, c) = -c(c-1)
+========================================================================
+
+det-sum ds_0 (mu = (0,0,0), shifts (2,1,0)):
+  ds_0 = (a - b + 1)*(a - c + 2)*(b - c + 1)
+  = V(x1,x2,x3), the standard Vandermonde (a-b+1)(a-c+2)(b-c+1).
+
+det-sum ds_1 (mu = (1,1,0), shifts (3,2,0)):
+  ds_1 = (a - b + 1)*(a - c + 2)*(b - c + 1)*(a*b + a*c + b*c + b + 2*c)
+  ds_1 / V  quotient = a*b + a*c + b*c + b + 2*c , remainder = 0
+
+--- Q_1(-2, b, c) evaluated at c = 2, 3, ..., 8 ---
+h_1 = H_1 - H_0.  Q_1 = h_1 / [(a+3)_{c-2} (b+2)_{c-2}].
+
+  c = 3: Q_1 = -6,  target = -6,  match = True,  rem = 0
+  c = 4: Q_1 = -12,  target = -12,  match = True,  rem = 0
+  c = 5: Q_1 = -20,  target = -20,  match = True,  rem = 0
+  c = 6: Q_1 = -30,  target = -30,  match = True,  rem = 0
+  c = 7: Q_1 = -42,  target = -42,  match = True,  rem = 0
+  c = 8: Q_1 = -56,  target = -56,  match = True,  rem = 0
+  c = 9: Q_1 = -72,  target = -72,  match = True,  rem = 0
+
+--- Structural: individual H_j(-2, b, c) as poly in b, c = 5 ---
+H_0(-2, b, 5) = 24*(b + 2)*(b + 3)*(b + 4)*(b + 5)
+H_1(-2, b, 5) = 24*b*(b + 2)*(b + 3)*(b + 4)
+H_1 - H_0    = -120*(b + 2)*(b + 3)*(b + 4)
+Denom (1)_3 (b+2)_3 = 6*(b + 2)*(b + 3)*(b + 4)
+Q_1(-2,b,5) = -20   (target -20)
+
+========================================================================
+k = 2: target Q_2(-2, b, c) = c(c-2)(c-1)^2
+========================================================================
+
+det-sum ds_2  (S_2 = {(2,2,0), (2,1,1)}, kappa = 1 each):
+  mu=(2,2,0): shifts (4,3,0);  mu=(2,1,1): shifts (4,2,1)
+  ds_2 = (a - b + 1)*(a - c + 2)*(b - c + 1)*(a**2*b**2 + 2*a**2*b*c - a**2*b + a**2*c**2 - a**2*c + 2*a*b**2*c + a*b**2 + 2*a*b*c**2 - a*b + 3*a*c**2 - 5*a*c + b**2*c**2 + b**2*c + 3*b*c**2 - 5*b*c + 2*c**2 - 6*c)
+  ds_2 / V quotient = a**2*b**2 + 2*a**2*b*c - a**2*b + a**2*c**2 - a**2*c + 2*a*b**2*c + a*b**2 + 2*a*b*c**2 - a*b + 3*a*c**2 - 5*a*c + b**2*c**2 + b**2*c + 3*b*c**2 - 5*b*c + 2*c**2 - 6*c , remainder = 0
+
+--- Q_2(-2, b, c) evaluated at c = 4, 5, ..., 10 ---
+  c = 4: Q_2 = 72,  target = 72,  match = True,  rem = 0
+  c = 5: Q_2 = 240,  target = 240,  match = True,  rem = 0
+  c = 6: Q_2 = 600,  target = 600,  match = True,  rem = 0
+  c = 7: Q_2 = 1260,  target = 1260,  match = True,  rem = 0
+  c = 8: Q_2 = 2352,  target = 2352,  match = True,  rem = 0
+  c = 9: Q_2 = 4032,  target = 4032,  match = True,  rem = 0
+  c = 10: Q_2 = 6480,  target = 6480,  match = True,  rem = 0
+
+========================================================================
+STRUCTURAL: origin of b-independence at a = -2
+========================================================================
+
+--- c = 6: coefficients in b of H_0, H_1, H_2 at a=-2 ---
+H_0(-2,b,6)  b-degree 5:
+    b^0: 86400
+    b^1: 125280
+    b^2: 69600
+    b^3: 18600
+    b^4: 2400
+    b^5: 120
+H_1(-2,b,6)  b-degree 5:
+    b^1: 14400
+    b^2: 18480
+    b^3: 8520
+    b^4: 1680
+    b^5: 120
+H_2(-2,b,6)  b-degree 5:
+    b^1: -2880
+    b^2: -240
+    b^3: 2040
+    b^4: 960
+    b^5: 120
+h_1(-2,b,6) = H_1 - H_0  b-degree 4:
+    b^0: -86400
+    b^1: -110880
+    b^2: -51120
+    b^3: -10080
+    b^4: -720
+h_2(-2,b,6) = H_2 - 2H_1 + H_0  b-degree 3:
+    b^0: 86400
+    b^1: 93600
+    b^2: 32400
+    b^3: 3600
+
+--- Factor h_1(-2,b,c) for each c: expect (1)_{c-2}(b+2)_{c-2} * (-c(c-1)) ---
+  c = 3: h_1(-2,b,3) = -6*(b + 2)
+  c = 4: h_1(-2,b,4) = -24*(b + 2)*(b + 3)
+  c = 5: h_1(-2,b,5) = -120*(b + 2)*(b + 3)*(b + 4)
+  c = 6: h_1(-2,b,6) = -720*(b + 2)*(b + 3)*(b + 4)*(b + 5)
+  c = 7: h_1(-2,b,7) = -5040*(b + 2)*(b + 3)*(b + 4)*(b + 5)*(b + 6)
+
+--- Factor h_2(-2,b,c) for each c: expect (1)_{c-3}(b+2)_{c-3} * c(c-2)(c-1)^2 ---
+  c = 4: h_2(-2,b,4) = 72*(b + 2)
+  c = 5: h_2(-2,b,5) = 480*(b + 2)*(b + 3)
+  c = 6: h_2(-2,b,6) = 3600*(b + 2)*(b + 3)*(b + 4)
+  c = 7: h_2(-2,b,7) = 30240*(b + 2)*(b + 3)*(b + 4)*(b + 5)
+  c = 8: h_2(-2,b,8) = 282240*(b + 2)*(b + 3)*(b + 4)*(b + 5)*(b + 6)
+
+========================================================================
+V-CANCELLATION: ds_j / V is a polynomial for j = 0, 1, 2
+========================================================================
+  ds_0 / V = 1   remainder = 0
+  ds_1 / V = a*b + a*c + b*c + b + 2*c   remainder = 0
+  ds_2 / V = a**2*b**2 + 2*a**2*b*c - a**2*b + a**2*c**2 - a**2*c + 2*a*b**2*c + a*b**2 + 2*a*b*c**2 - a*b + 3*a*c**2 - 5*a*c + b**2*c**2 + b**2*c + 3*b*c**2 - 5*b*c + 2*c**2 - 6*c   remainder = 0
+
+So H_c(a,b,j) = (a+c+1-j) * (a+3)_{c-j-2} * (b+2)_{c-j-1} * (ds_j/V)
+(the three linear denominators exactly cancel V).
+H_c is thus a POLYNOMIAL in (a,b,c) up to the two Pochhammer factors.
+
+--- (ds_j / V) evaluated at a = -2 ---
+  j = 0: (ds_0/V)(a=-2, b, c) = 1
+      compare to b_down_0 * (c-1)_down_0 = 1,  match = True
+  j = 1: (ds_1/V)(a=-2, b, c) = b*(c - 1)
+      compare to b_down_1 * (c-1)_down_1 = b*(c - 1),  match = True
+  j = 2: (ds_2/V)(a=-2, b, c) = b*(b - 1)*(c - 2)*(c - 1)
+      compare to b_down_2 * (c-1)_down_2 = b*(b - 1)*(c - 2)*(c - 1),  match = True
+
+--- Closed form of H_j(-2, b, c)  (using ds_j/V|_{a=-2} = b_dn_j * (c-1)_dn_j) ---
+  H_j(-2, b, c) = (c - j) * (1)_{c-j-2} * (b+2)_{c-j-1} * b_dn_j * (c-1)_dn_j
+               = (c - j)! * (b+2)_{c-j-1} * b_dn_j * (c-1)_dn_j / (c - j)
+               = (c - j - 1)! * (b+2)_{c-j-1} * b_dn_j * (c-1)_dn_j
+  c=5, j=0: closed - actual = 0
+  c=5, j=1: closed - actual = 0
+  c=5, j=2: closed - actual = 0
+  c=6, j=0: closed - actual = 0
+  c=6, j=1: closed - actual = 0
+  c=6, j=2: closed - actual = 0
+  c=7, j=0: closed - actual = 0
+  c=7, j=1: closed - actual = 0
+  c=7, j=2: closed - actual = 0
+
+--- CLOSED FORM RECIPE ---
+  H_i(-2, b, c) = (c-i-1)! * (b+2)_{c-i-1} * b_dn_i * (c-1)_dn_i
+  Q_k(-2, b, c) = sum_{i=0}^{k} (-1)^{k-i} C(k,i) *
+                   [ (c-k)_{k-i} * (b+c-k+1)_{k-i} * b_dn_i * (c-1)_dn_i ]
+  (b+c-k+1)_{k-i} carries all b-dependence; it must sum to b-independent value.
+
+--- Verify closed-form recipe for Q_1, Q_2 symbolically in b at concrete c ---
+  k=1, c=5: closed-form sum = -20,  b-degree=0,  const=-20,  target=-20,  match = True
+  k=1, c=6: closed-form sum = -30,  b-degree=0,  const=-30,  target=-30,  match = True
+  k=1, c=7: closed-form sum = -42,  b-degree=0,  const=-42,  target=-42,  match = True
+  k=2, c=5: closed-form sum = 240,  b-degree=0,  const=240,  target=240,  match = True
+  k=2, c=6: closed-form sum = 600,  b-degree=0,  const=600,  target=600,  match = True
+  k=2, c=7: closed-form sum = 1260,  b-degree=0,  const=1260,  target=1260,  match = True
+
+========================================================================
+VERIFICATION TABLE
+========================================================================
+k=1:
+  c=3: Q_1=-6,  target=-6,  match=True
+  c=4: Q_1=-12,  target=-12,  match=True
+  c=5: Q_1=-20,  target=-20,  match=True
+  c=6: Q_1=-30,  target=-30,  match=True
+  c=7: Q_1=-42,  target=-42,  match=True
+  c=8: Q_1=-56,  target=-56,  match=True
+  c=9: Q_1=-72,  target=-72,  match=True
+k=2:
+  c=4: Q_2=72,  target=72,  match=True
+  c=5: Q_2=240,  target=240,  match=True
+  c=6: Q_2=600,  target=600,  match=True
+  c=7: Q_2=1260,  target=1260,  match=True
+  c=8: Q_2=2352,  target=2352,  match=True
+  c=9: Q_2=4032,  target=4032,  match=True
+  c=10: Q_2=6480,  target=6480,  match=True
+
+k=1: ALL MATCH = True
+k=2: ALL MATCH = True

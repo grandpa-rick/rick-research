@@ -1,0 +1,153 @@
+==============================================================================
+Guess A test: B^[λ](T) = exp((E_3 − c·λ) · M(T))
+Prediction:  Q(T) = B^{(1)}/B = c · M(T)   ⇔   Q_n / M_n = c  (constant).
+==============================================================================
+
+Empirical B_m^{(1)} (from Day 134 ansatz):
+  B_0^(1) = 0
+  B_1^(1) = 0
+  B_2^(1) = 0
+  B_3^(1) = -48*E3
+  B_4^(1) = 708*E1*E3 - 78*E2*E3
+  B_5^(1) = -8400*E1**2*E3 + 1488*E1*E2*E3 + 2088*E3**2
+  B_6^(1) = 97200*E1**3*E3 - 21600*E1**2*E2*E3 - 68100*E1*E3**2 + 3510*E2*E3**2
+  B_7^(1) = -1159200*E1**4*E3 + 295200*E1**3*E2*E3 + 1547040*E1**2*E3**2 - 137424*E1*E2*E3**2 - 86184*E3**3
+  B_8^(1) = 14535360*E1**5*E3 - 4057200*E1**4*E2*E3 - 31084368*E1**3*E3**2 + 3639048*E1**2*E2*E3**2 + 4962888*E1*E3**3 - 147420*E2*E3**3
+
+Empirical Q(T) coefficients (Q_n = [T^n] Q(T)):
+  Q_0 = 0
+  Q_1 = 0
+  Q_2 = 0
+  Q_3 = -8*E3
+  Q_4 = 59*E1*E3/2 - 13*E2*E3/4
+  Q_5 = -70*E1**2*E3 + 62*E1*E2*E3/5 + 27*E3**2/5
+  Q_6 = 135*E1**3*E3 - 30*E1**2*E2*E3 - 29*E1*E3**2
+  Q_7 = -230*E1**4*E3 + 410*E1**3*E2*E3/7 + 653*E1**2*E3**2/7
+  Q_8 = 721*E1**5*E3/2 - 805*E1**4*E2*E3/8 - 931*E1**3*E3**2/4
+
+M(T) OGF coefficients [T^n] M(T):
+  M_0 = 0
+  M_1 = 0
+  M_2 = -3/4
+  M_3 = 4*E1/9
+  M_4 = -5*E1**2/32
+  M_5 = E1**3/25
+  M_6 = -7*E1**4/864
+  M_7 = E1**5/735
+  M_8 = -E1**6/5120
+
+==============================================================================
+TEST 1: Q_n / M_n = c   (constant, independent of E_i, n)?
+==============================================================================
+  n=2: Q_n = 0, M_n = -3/4 → forces c = 0
+  n=3: Q_n = -8*E3
+         M_n = 4*E1/9
+         Q_n / M_n = -18*E3/E1
+         → NOT a constant! Contains E_i.
+  n=4: Q_n = 59*E1*E3/2 - 13*E2*E3/4
+         M_n = -5*E1**2/32
+         Q_n / M_n = 8*E3*(-118*E1 + 13*E2)/(5*E1**2)
+         → NOT a constant! Contains E_i.
+  n=5: Q_n = -70*E1**2*E3 + 62*E1*E2*E3/5 + 27*E3**2/5
+         M_n = E1**3/25
+         Q_n / M_n = 5*E3*(-350*E1**2 + 62*E1*E2 + 27*E3)/E1**3
+         → NOT a constant! Contains E_i.
+  n=6: Q_n = 135*E1**3*E3 - 30*E1**2*E2*E3 - 29*E1*E3**2
+         M_n = -7*E1**4/864
+         Q_n / M_n = 864*E3*(-135*E1**2 + 30*E1*E2 + 29*E3)/(7*E1**3)
+         → NOT a constant! Contains E_i.
+  n=7: Q_n = -230*E1**4*E3 + 410*E1**3*E2*E3/7 + 653*E1**2*E3**2/7
+         M_n = E1**5/735
+         Q_n / M_n = 105*E3*(-1610*E1**2 + 410*E1*E2 + 653*E3)/E1**3
+         → NOT a constant! Contains E_i.
+  n=8: Q_n = 721*E1**5*E3/2 - 805*E1**4*E2*E3/8 - 931*E1**3*E3**2/4
+         M_n = -E1**6/5120
+         Q_n / M_n = 4480*E3*(-412*E1**2 + 115*E1*E2 + 266*E3)/E1**3
+         → NOT a constant! Contains E_i.
+
+Summary of fitted c per n:
+  n=2: c = 0
+
+Mismatches (ratio depends on E_i) at n = [3, 4, 5, 6, 7, 8]
+
+==============================================================================
+TEST 2: Predicted B_m^{(1)} = c · Σ_{r+s=m, r≥2} C(m,r) μ_r E_1^{r-2} B_s
+==============================================================================
+  m=2:
+    predicted (÷c): -3/2
+    empirical:       0
+    empirical/predicted = 0
+  m=3:
+    predicted (÷c): 8*E1/3
+    empirical:       -48*E3
+    empirical/predicted = -18*E3/E1
+    → ratio depends on E_i → GUESS A REFUTED at m=3.
+  m=4:
+    predicted (÷c): -15*E1**2/4 + 27*E3
+    empirical:       708*E1*E3 - 78*E2*E3
+    empirical/predicted = 8*E3*(-118*E1 + 13*E2)/(5*E1**2 - 36*E3)
+    → ratio depends on E_i → GUESS A REFUTED at m=4.
+  m=5:
+    predicted (÷c): 24*E1**3/5 - 320*E1*E3
+    empirical:       -8400*E1**2*E3 + 1488*E1*E2*E3 + 2088*E3**2
+    empirical/predicted = 15*E3*(-350*E1**2 + 62*E1*E2 + 87*E3)/(E1*(3*E1**2 - 200*E3))
+    → ratio depends on E_i → GUESS A REFUTED at m=5.
+  m=6:
+    predicted (÷c): -35*E1**4/6 + 36565*E1**2*E3/12 - 1215*E3**2/2
+    empirical:       97200*E1**3*E3 - 21600*E1**2*E2*E3 - 68100*E1*E3**2 + 3510*E2*E3**2
+    empirical/predicted = 72*E3*(-3240*E1**3 + 720*E1**2*E2 + 2270*E1*E3 - 117*E2*E3)/(14*E1**4 - 7313*E1**2*E3 + 1458*E3**2)
+    → ratio depends on E_i → GUESS A REFUTED at m=6.
+  m=7:
+    predicted (÷c): 48*E1**5/7 - 144732*E1**3*E3/5 + 17640*E1*E3**2
+    empirical:       -1159200*E1**4*E3 + 295200*E1**3*E2*E3 + 1547040*E1**2*E3**2 - 137424*E1*E2*E3**2 - 86184*E3**3
+    empirical/predicted = 70*E3*(-48300*E1**4 + 12300*E1**3*E2 + 64460*E1**2*E3 - 5726*E1*E2*E3 - 3591*E3**2)/(E1*(20*E1**4 - 84427*E1**2*E3 + 51450*E3**2))
+    → ratio depends on E_i → GUESS A REFUTED at m=7.
+  m=8:
+    predicted (÷c): -63*E1**6/8 + 1454159*E1**4*E3/5 - 712775*E1**2*E3**2/2 + 17010*E3**3
+    empirical:       14535360*E1**5*E3 - 4057200*E1**4*E2*E3 - 31084368*E1**3*E3**2 + 3639048*E1**2*E2*E3**2 + 4962888*E1*E3**3 - 147420*E2*E3**3
+    empirical/predicted = 480*E3*(-173040*E1**5 + 48300*E1**4*E2 + 370052*E1**3*E3 - 43322*E1**2*E2*E3 - 59082*E1*E3**2 + 1755*E2*E3**2)/(45*E1**6 - 1661896*E1**4*E3 + 2036500*E1**2*E3**2 - 97200*E3**3)
+    → ratio depends on E_i → GUESS A REFUTED at m=8.
+
+==============================================================================
+SMOKING GUN
+==============================================================================
+At n=3:
+  M_3 = μ_3 · E_1 / 3! = (8/3) · E_1 / 6 = 4*E1/9
+  c · M_3 = c · 4*E1/9   (pure E_1, no E_3)
+  Q_3     = -8*E3                     (pure E_3, no E_1)
+These live in disjoint monomial supports → no scalar c can make them equal.
+
+Furthermore: at n=2, M_2 = μ_2 / 2! = (-3/2)/2 = -3/4  (nonzero constant).
+             Q_2 = 0.  So Test 1 forces c=0, but then Q_3 = 0 must hold — it does not.
+
+VERDICT: Guess A (scalar c) is REFUTED.  Earliest failure: n = 2 (forces c=0)
+         followed by manifest inconsistency at n = 3.
+
+Shape of mismatch:
+  Under Guess A, Q(T) = c · M(T) lives entirely in ℤ[E_1] (times μ_n).
+  Empirically, EVERY nonzero Q_n contains an E_3 factor, and NO Q_n lies in ℤ[E_1] alone.
+  In particular Q(T) has no E_1-only or E_1-E_2 terms; it is E_3-supported.
+
+  Rephrased: Q(T) / M(T) is not a constant — it is a nontrivial power series in T
+  with E_3-carrying coefficients.  The λ-deformation cannot be a scalar shift of E_3.
+
+Interpretation: Guess A needs modification.  Since Q_n always carries E_3, the
+deformation likely acts on E_3 itself in a way that introduces new E_3 terms, or
+multiplies M(T) by a series in E_3 rather than a scalar.  Possible refinements:
+  (a) c depends on E_3 (e.g. c → c·E_3, making Q(T) = c·E_3·M(T))?  Test: Q_3/M_3 · 1/E_3
+      Q_3 / (E_3 · M_3) = -18/E1
+  (b) M(T) itself needs an E_3-deformation inside the exponent.
+
+==============================================================================
+TEST 3 (refinement): Q(T) = c · E_3 · M(T)?  ⇒ Q_n / (E_3 · M_n) = c constant?
+==============================================================================
+  n=2: Q_n = 0 → forces c = 0 (or M_n = 0)
+  n=3: Q_n / (E_3 · M_n) = -18/E1
+  n=4: Q_n / (E_3 · M_n) = 8*(-118*E1 + 13*E2)/(5*E1**2)
+  n=5: Q_n / (E_3 · M_n) = 5*(-350*E1**2 + 62*E1*E2 + 27*E3)/E1**3
+  n=6: Q_n / (E_3 · M_n) = 864*(-135*E1**2 + 30*E1*E2 + 29*E3)/(7*E1**3)
+  n=7: Q_n / (E_3 · M_n) = 105*(-1610*E1**2 + 410*E1*E2 + 653*E3)/E1**3
+  n=8: Q_n / (E_3 · M_n) = 4480*(-412*E1**2 + 115*E1*E2 + 266*E3)/E1**3
+
+Test 3 outcome: still not a scalar (see printed ratios).
+Even  Q(T) = f(E_3) · M(T)  fails because Q has E_3^2, E_3^3 terms that M lacks.

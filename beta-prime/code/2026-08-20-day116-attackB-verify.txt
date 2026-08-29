@@ -1,0 +1,146 @@
+Building shifted-Schur tables up to j = 6 ...
+Table sizes: {0: 1, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 7}
+
+==============================================================================
+STEP 1: Compute S_j for j = 0..J symbolically
+==============================================================================
+  j=0: S_j has deg_a=0, deg_b=0, deg_c=0, total_deg=0
+  j=1: S_j has deg_a=1, deg_b=1, deg_c=1, total_deg=2
+  j=2: S_j has deg_a=2, deg_b=2, deg_c=2, total_deg=4
+  j=3: S_j has deg_a=3, deg_b=3, deg_c=3, total_deg=6
+  j=4: S_j has deg_a=4, deg_b=4, deg_c=4, total_deg=8
+  j=5: S_j has deg_a=5, deg_b=5, deg_c=5, total_deg=10
+  j=6: S_j has deg_a=6, deg_b=6, deg_c=6, total_deg=12
+
+==============================================================================
+STEP 2: Check monomial-level weighted degree of S_j in (a, b, c)
+        Various weightings to explore Attack B.
+==============================================================================
+  j=0: wdeg(1,1,0)=0, wdeg(1,0,1)=0, wdeg(1,1,1)=0, wdeg(1,2,0)=0
+  j=1: wdeg(1,1,0)=2, wdeg(1,0,1)=2, wdeg(1,1,1)=2, wdeg(1,2,0)=3
+  j=2: wdeg(1,1,0)=4, wdeg(1,0,1)=4, wdeg(1,1,1)=4, wdeg(1,2,0)=6
+  j=3: wdeg(1,1,0)=6, wdeg(1,0,1)=6, wdeg(1,1,1)=6, wdeg(1,2,0)=9
+  j=4: wdeg(1,1,0)=8, wdeg(1,0,1)=8, wdeg(1,1,1)=8, wdeg(1,2,0)=12
+  j=5: wdeg(1,1,0)=10, wdeg(1,0,1)=10, wdeg(1,1,1)=10, wdeg(1,2,0)=15
+  j=6: wdeg(1,1,0)=12, wdeg(1,0,1)=12, wdeg(1,1,1)=12, wdeg(1,2,0)=18
+
+==============================================================================
+STEP 3: Extract A_p and check deg_pi in (pi, sigma) variables
+        This is the EMPIRICAL FACT Attack B needs to explain.
+==============================================================================
+  j=0, p=0: A_p deg_pi=0 [<=0 OK], deg_sig=0, total_pi_sig=0
+  j=1, p=0: A_p deg_pi=0 [<=0 OK], deg_sig=1, total_pi_sig=1
+  j=1, p=1: A_p deg_pi=1 [<=1 OK], deg_sig=1, total_pi_sig=1
+  j=2, p=0: A_p deg_pi=0 [<=0 OK], deg_sig=2, total_pi_sig=2
+  j=2, p=1: A_p deg_pi=1 [<=1 OK], deg_sig=2, total_pi_sig=2
+  j=2, p=2: A_p deg_pi=2 [<=2 OK], deg_sig=1, total_pi_sig=2
+  j=3, p=0: A_p deg_pi=0 [<=0 OK], deg_sig=3, total_pi_sig=3
+  j=3, p=1: A_p deg_pi=1 [<=1 OK], deg_sig=2, total_pi_sig=3
+  j=3, p=2: A_p deg_pi=2 [<=2 OK], deg_sig=3, total_pi_sig=3
+  j=3, p=3: A_p deg_pi=3 [<=3 OK], deg_sig=2, total_pi_sig=3
+  j=4, p=0: A_p deg_pi=0 [<=0 OK], deg_sig=4, total_pi_sig=4
+  j=4, p=1: A_p deg_pi=1 [<=1 OK], deg_sig=4, total_pi_sig=4
+  j=4, p=2: A_p deg_pi=2 [<=2 OK], deg_sig=4, total_pi_sig=4
+  j=4, p=3: A_p deg_pi=3 [<=3 OK], deg_sig=4, total_pi_sig=4
+  j=4, p=4: A_p deg_pi=4 [<=4 OK], deg_sig=3, total_pi_sig=4
+  j=5, p=0: A_p deg_pi=0 [<=0 OK], deg_sig=5, total_pi_sig=5
+  j=5, p=1: A_p deg_pi=1 [<=1 OK], deg_sig=5, total_pi_sig=5
+  j=5, p=2: A_p deg_pi=2 [<=2 OK], deg_sig=5, total_pi_sig=5
+  j=5, p=3: A_p deg_pi=3 [<=3 OK], deg_sig=5, total_pi_sig=5
+  j=5, p=4: A_p deg_pi=4 [<=4 OK], deg_sig=5, total_pi_sig=5
+  j=5, p=5: A_p deg_pi=5 [<=5 OK], deg_sig=4, total_pi_sig=5
+  j=6, p=0: A_p deg_pi=0 [<=0 OK], deg_sig=6, total_pi_sig=6
+  j=6, p=1: A_p deg_pi=1 [<=1 OK], deg_sig=6, total_pi_sig=6
+  j=6, p=2: A_p deg_pi=2 [<=2 OK], deg_sig=6, total_pi_sig=6
+  j=6, p=3: A_p deg_pi=3 [<=3 OK], deg_sig=6, total_pi_sig=6
+  j=6, p=4: A_p deg_pi=4 [<=4 OK], deg_sig=6, total_pi_sig=6
+  j=6, p=5: A_p deg_pi=5 [<=5 OK], deg_sig=6, total_pi_sig=6
+  j=6, p=6: A_p deg_pi=6 [<=6 OK], deg_sig=5, total_pi_sig=6
+
+EMPIRICAL (C) [deg_pi A_p <= p]: PASS
+
+==============================================================================
+STEP 4: THE Attack B TEST — try to rewrite S_j in (a, pi, sigma).
+        Since S_j itself is NOT twist-symmetric, we treat this
+        by extracting each a-coeff and rewriting in (pi, sigma).
+        Attack B: wdeg(S_j) <= j with weights (a=1, pi=1, sigma=0).
+==============================================================================
+  j=0: max wdeg(a=1,pi=1,sig=0) = 0  [<=0  OK] achieved at (p=0, deg_pi=0)
+  j=1: max wdeg(a=1,pi=1,sig=0) = 1  [<=1  OK] achieved at (p=0, deg_pi=0)
+  j=2: max wdeg(a=1,pi=1,sig=0) = 2  [<=2  OK] achieved at (p=0, deg_pi=0)
+  j=3: max wdeg(a=1,pi=1,sig=0) = 3  [<=3  OK] achieved at (p=0, deg_pi=0)
+  j=4: max wdeg(a=1,pi=1,sig=0) = 4  [<=4  OK] achieved at (p=0, deg_pi=0)
+  j=5: max wdeg(a=1,pi=1,sig=0) = 5  [<=5  OK] achieved at (p=0, deg_pi=0)
+  j=6: max wdeg(a=1,pi=1,sig=0) = 6  [<=6  OK] achieved at (p=0, deg_pi=0)
+
+ATTACK B EMPIRICAL: HOLDS
+
+==============================================================================
+STEP 5: Analyze S_j row-by-row degree structure in (a, b, c)
+        This informs whether a structural proof of Attack B exists.
+==============================================================================
+
+  j = 0:
+     mu=(0, 0, 0) (|mu|=0), k=(2, 1, 0), sum_k=3, kap=1
+
+  j = 1:
+     mu=(1, 1, 0) (|mu|=2), k=(3, 2, 0), sum_k=5, kap=1
+
+  j = 2:
+     mu=(2, 2, 0) (|mu|=4), k=(4, 3, 0), sum_k=7, kap=1
+     mu=(2, 1, 1) (|mu|=4), k=(4, 2, 1), sum_k=7, kap=1
+
+  j = 3:
+     mu=(3, 3, 0) (|mu|=6), k=(5, 4, 0), sum_k=9, kap=1
+     mu=(3, 2, 1) (|mu|=6), k=(5, 3, 1), sum_k=9, kap=2
+     mu=(2, 2, 2) (|mu|=6), k=(4, 3, 2), sum_k=9, kap=1
+
+==============================================================================
+STEP 6: Verify per-monomial wdeg(1,1,1) on ds_j <= 2j + 3, on S_j <= 2j
+==============================================================================
+  j=0: wdeg(1,1,1) ds_j = 3 [<=3 OK], S_j = 0 [<=0 OK]
+  j=1: wdeg(1,1,1) ds_j = 5 [<=5 OK], S_j = 2 [<=2 OK]
+  j=2: wdeg(1,1,1) ds_j = 7 [<=7 OK], S_j = 4 [<=4 OK]
+  j=3: wdeg(1,1,1) ds_j = 9 [<=9 OK], S_j = 6 [<=6 OK]
+  j=4: wdeg(1,1,1) ds_j = 11 [<=11 OK], S_j = 8 [<=8 OK]
+  j=5: wdeg(1,1,1) ds_j = 13 [<=13 OK], S_j = 10 [<=10 OK]
+  j=6: wdeg(1,1,1) ds_j = 15 [<=15 OK], S_j = 12 [<=12 OK]
+
+==============================================================================
+STEP 7: KEY DISCOVERY — S_j is SYMMETRIC in (u, y, c) = (a+2, b+1, c)
+        because V = (u-y)(u-c)(y-c) is the Vandermonde in (u, y, c).
+        Expand S_j in elementary symmetric functions e1, e2, e3.
+        Structural Attack B claim: c_{i1,i2,i3} = 0 unless i1 + i2 + 2*i3 <= j.
+==============================================================================
+  j=0: symmetric in u,y,c: True.  Max e-wdeg (1,1,2) = 0 [<=0  OK]  leader: (0, 0, 0, 1)
+  j=1: symmetric in u,y,c: True.  Max e-wdeg (1,1,2) = 1 [<=1  OK]  leader: (1, 0, 0, -1)
+  j=2: symmetric in u,y,c: True.  Max e-wdeg (1,1,2) = 2 [<=2  OK]  leader: (2, 0, 0, 2)
+  j=3: symmetric in u,y,c: True.  Max e-wdeg (1,1,2) = 3 [<=3  OK]  leader: (3, 0, 0, -6)
+  j=4: symmetric in u,y,c: True.  Max e-wdeg (1,1,2) = 4 [<=4  OK]  leader: (4, 0, 0, 24)
+  j=5: symmetric in u,y,c: True.  Max e-wdeg (1,1,2) = 5 [<=5  OK]  leader: (5, 0, 0, -120)
+  j=6: symmetric in u,y,c: True.  Max e-wdeg (1,1,2) = 6 [<=6  OK]  leader: (6, 0, 0, 720)
+
+STRUCTURAL Attack B CLAIM (e-basis wdeg): HOLDS
+
+==============================================================================
+STEP 8: Test whether individual factorial Schur s*_mu satisfies wdeg <= j.
+        (Would give term-by-term proof; if fails, need sum-level identity.)
+==============================================================================
+  j=0, mu=(0, 0, 0), kap=1: s*_mu has e-wdeg 0 <= 0  ok
+  j=1, mu=(1, 1, 0), kap=1: s*_mu has e-wdeg 1 <= 1  ok
+  j=2, mu=(2, 2, 0), kap=1: s*_mu has e-wdeg 3 > 2  VIOLATION
+  j=2, mu=(2, 1, 1), kap=1: s*_mu has e-wdeg 3 > 2  VIOLATION
+  j=3, mu=(3, 3, 0), kap=1: s*_mu has e-wdeg 4 > 3  VIOLATION
+  j=3, mu=(3, 2, 1), kap=2: s*_mu has e-wdeg 4 > 3  VIOLATION
+  j=3, mu=(2, 2, 2), kap=1: s*_mu has e-wdeg 4 > 3  VIOLATION
+  j=4, mu=(4, 4, 0), kap=1: s*_mu has e-wdeg 6 > 4  VIOLATION
+  j=4, mu=(4, 3, 1), kap=3: s*_mu has e-wdeg 6 > 4  VIOLATION
+  j=4, mu=(4, 2, 2), kap=2: s*_mu has e-wdeg 6 > 4  VIOLATION
+  j=4, mu=(3, 3, 2), kap=3: s*_mu has e-wdeg 5 > 4  VIOLATION
+  j=5, mu=(5, 5, 0), kap=1: s*_mu has e-wdeg 7 > 5  VIOLATION
+  j=5, mu=(5, 4, 1), kap=4: s*_mu has e-wdeg 7 > 5  VIOLATION
+  j=5, mu=(5, 3, 2), kap=5: s*_mu has e-wdeg 7 > 5  VIOLATION
+  j=5, mu=(4, 4, 2), kap=6: s*_mu has e-wdeg 7 > 5  VIOLATION
+  j=5, mu=(4, 3, 3), kap=5: s*_mu has e-wdeg 7 > 5  VIOLATION
+
+TERM-BY-TERM WDEG BOUND: FAILS (need cancellation)

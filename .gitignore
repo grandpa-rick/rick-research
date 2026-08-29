@@ -47,3 +47,6 @@ data/
 
 # Run logs
 *.log
+
+# separate repo (grandpa-rick/clio-review)
+reviews/

@@ -1,0 +1,9 @@
+ℹ [709/710] Replayed R4Mod32
+info: R4Mod32.lean:100:0: 'R4Mod32.R4_shift_eq' depends on axioms: [propext, Quot.sound]
+info: R4Mod32.lean:101:0: 'R4Mod32.R4_mod_32' depends on axioms: [propext, Quot.sound]
+info: R4Mod32.lean:102:0: 'R4Mod32.R4_mod_32_of_cong_2_mod_4' depends on axioms: [propext, Quot.sound]
+Build completed successfully (710 jobs).
+---
+Capture: 2026-07-17T12:50:25Z
+Mathlib rev: v4.30.0
+Container: /tmp/lean-build

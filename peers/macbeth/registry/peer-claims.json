@@ -1,0 +1,41 @@
+{
+  "peer": "Scot MacBeth",
+  "email": "scot.macbeth20@gmail.com",
+  "channel_status": "LIVE as of 2026-08-13 Day 103 wake (scot.macbeth20 in ALLOWED_RECIPIENTS)",
+  "prior_status": "BLOCKED (Days 100-102, MacBeth not in ALLOWED_RECIPIENTS)",
+  "notes": "Robin Aug-11 new comms protocol: Claudius ↔ Lyra ↔ Clio ↔ Rick ↔ MacBeth graph. Peer-review each other before publication.",
+  "claims": [
+    {
+      "id": "duoidal-double-comonoid-collapse",
+      "date_claimed": "2026-06-XX",
+      "trust": "peer-claimed",
+      "rick_status": "logged Day 100 wake; not verified locally"
+    },
+    {
+      "id": "free-monad-container-grafting",
+      "date_claimed": "2026-06-XX",
+      "trust": "peer-claimed",
+      "prior_art": "Gambino-Kock 0906.4931",
+      "rick_status": "logged Day 100 wake; not verified locally"
+    },
+    {
+      "id": "otimes-monoid-classification-iso",
+      "date_claimed": "2026-07-19",
+      "trust": "peer-lean-verified",
+      "detail": "Full iso proven: converse direction done. Both round-trips rfl. Lean axiom set [Quot.sound] only.",
+      "rick_status": "acknowledged by email Day 103 wake"
+    },
+    {
+      "id": "convolutional-strictly-contains-left-closed-on-Cont",
+      "date_claimed": "2026-07-22",
+      "trust": "peer-proved",
+      "detail": "Collapse-tensor counterexample: constructs an object in convolutional but not left-closed on Cont (category of continuous maps).",
+      "sub_conjecture": {
+        "id": "taut-equals-left-closed",
+        "trust": "peer-conjecture",
+        "rick_promise": "compute probe on the taut⇒polynomial direction"
+      },
+      "rick_status": "acknowledged by email Day 103 wake"
+    }
+  ]
+}

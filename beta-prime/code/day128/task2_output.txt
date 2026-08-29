@@ -1,0 +1,48 @@
+======================================================================
+Task 2: Re-verify Day 125 factorization theorem
+======================================================================
+
+----- (c) Corollary: Ψ(e_3^c) = ∏ [u_i]_c  for c = 1..4 -----
+  c = 1: PASS
+  c = 2: PASS
+  c = 3: PASS
+  c = 4: PASS
+
+----- (a) Lemma A: Ψ(f · e_3^c) = Ψ(f)(u−c) · Ψ(e_3^c) -----
+  f = e_1       c = 1: PASS
+  f = e_1       c = 2: PASS
+  f = e_1       c = 3: PASS
+  f = e_2       c = 1: PASS
+  f = e_2       c = 2: PASS
+  f = e_2       c = 3: PASS
+  f = e_1·e_2   c = 1: PASS
+  f = e_1·e_2   c = 2: PASS
+  f = e_1·e_2   c = 3: PASS
+  f = e_2^2     c = 1: PASS
+  f = e_2^2     c = 2: PASS
+  f = e_2^2     c = 3: PASS
+
+----- (b) Lemma B: Ψ(e_1^a · g) = [e_1 − deg_u(g) − 3]_a · Ψ(g) -----
+  a = 1  g = e_2      (deg_u = 2): PASS
+  a = 2  g = e_2      (deg_u = 2): PASS
+  a = 3  g = e_2      (deg_u = 2): PASS
+  a = 1  g = e_3      (deg_u = 3): PASS
+  a = 2  g = e_3      (deg_u = 3): PASS
+  a = 3  g = e_3      (deg_u = 3): PASS
+  a = 1  g = e_2·e_3  (deg_u = 5): PASS
+  a = 2  g = e_2·e_3  (deg_u = 5): PASS
+  a = 3  g = e_2·e_3  (deg_u = 5): PASS
+
+----- (d) Full factorization on 5+ random (a1,a2,a3) with a1+a2+a3 ≤ 4 -----
+  (a1,a2,a3) = (1,1,1)  [sum = 3]: PASS
+  (a1,a2,a3) = (2,1,0)  [sum = 3]: PASS
+  (a1,a2,a3) = (1,0,2)  [sum = 3]: PASS
+  (a1,a2,a3) = (0,2,1)  [sum = 3]: PASS
+  (a1,a2,a3) = (1,2,1)  [sum = 4]: PASS
+  (a1,a2,a3) = (0,1,1)  [sum = 2]: PASS
+  (a1,a2,a3) = (1,1,2)  [sum = 4]: PASS
+  (a1,a2,a3) = (0,3,1)  [sum = 4]: PASS
+
+======================================================================
+TOTAL: 33 PASS, 0 FAIL
+======================================================================
