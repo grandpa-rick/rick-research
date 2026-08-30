@@ -3,6 +3,45 @@
 **Date:** 2026-08-29 · **Status:** MAJOR STRUCTURAL ADVANCE. Theorem proved modulo one
 clean, sharply-stated, heavily-verified conjecture (Conjecture H).
 
+**Amended 2026-08-30 (Day 147) — see the corrections section immediately below.**
+
+---
+
+## Day 147 corrections (2026-08-30)
+
+Two independent verification agents audited this document on Day 147. Their working is in
+`~/projects/beta-prime/code/day147_gauss/RESULT.md`, `~/projects/beta-prime/code/day147_psi3/RESULT.md`
+and `~/projects/beta-prime/code/day147_defect/PLAN.md`. Corrections, all applied in place
+below and marked where they occur:
+
+* **§6.3 (was: "(H1) is ... *equivalent* to the theorem") — FALSE, corrected.** (H1) is
+  integrality of *all* coefficients of $H$ over $\mathbb Z$ at *all* primes. What is proved
+  is an equivalence for the $\ell_0$-**diagonal** $\mathcal H$ only, and **3-adically** only.
+  (H1) $\Rightarrow$ the theorem, and is **strictly stronger** than it.
+* **§10, Theorem 3.10 — dropped hypothesis restored.** The statement must read
+  "**Assume (H2).**" (as in §6.2 Theorem 2); the main identity and the equivalence are
+  proved only modulo (H2).
+* **§11 — same false equivalence as §6.3, corrected the same way.**
+* **§9 — RETRACTION.** `dwork.py`/`dwork2.py` implement $\varsigma=\mathrm{id}$, which is
+  **not a Frobenius lift**; the recorded claim "without the $E_3\mapsto E_3^3$ twist the
+  criterion fails numerically at $T^9$, so the twist is essential" is an **artefact of a
+  buggy script and is retracted**. Also, $\varsigma$ and $\tau$ do **not** commute on
+  $\varphi_1=0$ (they agree only mod 3), so the $\tau(K)/K$ rewriting has a gap. Done
+  properly and symbolically (`dwork_symbolic.py`), the criterion
+  $H^3/\varsigma(H)(T^3)\in 1+3T\mathbb Z[E][[T]]$ **passes for both** the naive lift
+  $E_i\mapsto E_i^3$ and the Adams operation $\psi^3$: it is **lift-independent**.
+  Consequently the Dwork reformulation is a **tautological re-encoding of integrality**
+  and its numerical verifications are **not independent evidence** for the theorem.
+* **Circularity of the $h_j$ table.** Verified Day 147 (`identity.py`): $h_0,\dots,h_{11}$
+  are reconstructible from $b_1,\dots,b_{12}$ alone, invertibly, with only $3$-power
+  denominators. The tabulated $h_j$ are therefore **zero independent evidence** for
+  $3\mid b_k$. The **165 off-diagonal coefficients of $H$** (`offdiag.py`) are the
+  non-circular evidence and should be quoted instead.
+* **New data (Day 147).** $3\mid b_k$ confirmed through $k=15$; $b_{13},b_{14},b_{15}$ and
+  $h_{13},h_{14},h_{15}$ recorded in §1 and §7.
+
+Nothing else in the document is changed; retracted text is preserved and marked, not deleted.
+
 ---
 
 ## 0. Executive summary — what happened today
@@ -80,6 +119,12 @@ Data ($k=1,\dots,12$, extended today from $k=8$):
 $$b_k = 3,\;27,\;417,\;7851,\;164124,\;3661389,\;85384566,\;2056373739,$$
 $$50751637140,\;1276862920140,\;32626363346505,\;844375375808301,$$
 $$v_3(b_k) = 1,3,1,1,2,3,2,2,1,1,2,1 .$$
+
+**[Day 147 addendum — extended to $k=15$, independently regenerated]**
+$$b_{13}=22087492351683636,\quad b_{14}=583048865756462670,\quad
+b_{15}=15511745688519457404,$$
+$$v_3(b_k)\ (k=1,\dots,15) = 1,3,1,1,2,3,2,2,1,1,2,1,\;1,\;2,\;2 .$$
+So $3\mid b_k$ is now confirmed for $k\le15$.
 
 ---
 
@@ -197,6 +242,12 @@ $\varphi(\theta+1) = \varphi_1 + (E_1+2)\theta+\theta^2$ acting on $e^{\log F_P}
 * Numerically at the four base points $(E_1,E_2) = (-2,1),(-1,0),(0,-1),(1,1)$:
   (H1),(H2) verified for $n\le 20$ (`general_pt.py`); and at $(-2,1)$ for $n \le 36$
   (`bigdata.py`).
+* **[Day 147 — the non-circular part of the evidence.]** At $(E_1,E_2)=(-2,1)$,
+  $\mathrm{BMAX}=30$, $H$ has 176 nonzero coefficients: 11 on the $\ell_0$ diagonal (the
+  $h_j$ — circular, see the warning below) and **165 off it**. The integrality and
+  order-$\ge0$ of those **165 off-diagonal coefficients is genuine, non-circular evidence
+  for (H1)/(H2)**, not implied by $3\mid b_k$ at any prime; 0 violations of either
+  (`offdiag.py`).
 * First coefficients at $(E_1,E_2)=(-2,1)$ (i.e. $(U,V)=(0,0)$):
   $$[T^n]H = 1,\;2,\;6,\;24{+}8E_3,\;120{+}90E_3,\;720{+}864E_3,\;5040{+}8456E_3{+}119E_3^2,\dots$$
   with $[E_3^0][T^n]H = (n+1)!$ exactly (this is $f^{(1,2)} = \sum_b (b+1)!\,T^b$,
@@ -209,6 +260,18 @@ $$\mathcal H = 1 + 8\vartheta + 119\vartheta^2 + 2200\vartheta^3 + 45500\varthet
 + 1007904\vartheta^5 + 23387442\vartheta^6 + 561163152\vartheta^7$$
 $$\qquad + 13809781700\vartheta^8 + 346645093984\vartheta^9
 + 8840919351575\vartheta^{10} + \dots$$
+
+> **[Day 147 — CIRCULARITY WARNING about this table.]** The integrality of the tabulated
+> $h_j := [E_3^jT^{3j}]H$ is **not** evidence for $3\mid b_k$. Verified today
+> (`identity.py`): $h_0,\dots,h_{11}$ can be reconstructed from $b_1,\dots,b_{12}$ alone
+> via $\mathcal H = (F^2-F)/(\vartheta(2F-3))$, the map is invertible, and its denominators
+> are powers of $3$ only. Hence "$h_j\in\mathbb Z_3$ for $j\le11$" and "$3\mid b_k$ for
+> $k\le12$" are **the same fact**, and the $h_j$ table is **zero independent evidence**.
+> The genuinely non-circular evidence for Conjecture H is the **165 off-diagonal
+> coefficients of $H$** listed in the third bullet above (`offdiag.py`): at
+> $(E_1,E_2)=(-2,1)$, $\mathrm{BMAX}=30$, $H$ has 176 nonzero coefficients, of which 11 lie
+> on the $\ell_0$ diagonal (circular) and **165 lie off it** — all integral, all of order
+> $\ge0$, zero violations. **Quote the 165, not the 13.**
 
 ---
 
@@ -291,8 +354,16 @@ $\Phi = \vartheta\mathcal H/(1-3\Phi+2\vartheta\mathcal H)$; conversely
 $\mathcal H = F(1-F)/\big(\vartheta(3-2F)\big)$ has $3$ in the denominator of its leading
 factor unless $3\mid F$. Hence
 $$\mathcal H \in \mathbb Z_3[[\vartheta]] \iff b_k \equiv 0 \pmod 3 \ \forall k .$$
-So (H1) is not merely sufficient — it is *equivalent* to the theorem. (H2) is the
-structural half that makes the leading-order extraction legitimate.
+**[RETRACTED Day 147 — the original sentence here read: "So (H1) is not merely
+sufficient — it is *equivalent* to the theorem." That is FALSE.]** The displayed
+equivalence is about the $\ell_0$-**diagonal** $\mathcal H = \ell_0(H)$ only, and holds
+**3-adically** only. (H1) asserts integrality of *all* coefficients of $H$, over
+$\mathbb Z$, at *all* primes. Corrected statement:
+$$\text{(H1)}\ \Longrightarrow\ \mathcal H\in\mathbb Z_3[[\vartheta]]
+\ \Longleftrightarrow\ b_k\equiv0\ (3)\ \forall k,$$
+with the first implication **strict**: (H1) is strictly stronger than the theorem, and is
+*not* equivalent to it. (H2) is the structural half that makes the leading-order
+extraction legitimate.
 
 ---
 
@@ -310,6 +381,9 @@ All code in `~/projects/beta-prime/code/day146_prove/`.
 | $H$ integral + order $\ge0$ at $(-2,1)$, $n\le36$ | `bigdata.py` | **VERIFIED** |
 | identity (6.1) at four base points | `general_pt.py` | **HOLDS** |
 | $b_k$, $h_j$ agree at all four base points | `general_pt.py` | **YES** |
+| $h_j$ reconstructible from $b_k$ alone (**circularity**, Day 147) | `identity.py` | **YES — $h_{0..11}$ from $b_{1..12}$, invertible, $3$-power denominators only** |
+| off-diagonal coefficients of $H$ integral + order $\ge0$ (Day 147) | `offdiag.py` | **165/165 OK, 0 violations — the non-circular evidence** |
+| $v_3(b_k)\ge1$, $k\le15$ (Day 147, independent regeneration) | `regen.py` | $1,3,1,1,2,3,2,2,1,1,2,1,1,2,2$ |
 | $v_3(b_k)\ge1$, $k\le12$ | `bigdata.py` | $1,3,1,1,2,3,2,2,1,1,2,1$ |
 | P-recurrence for $b_k$ or $h_j$, order $\le4$, degree $\le4$ | `search.py` | **NONE** |
 
@@ -323,6 +397,17 @@ $$b_{12}=844375375808301 .$$
 $$\mathcal H:\ 1,8,119,2200,45500,1007904,23387442,561163152,13809781700,$$
 $$346645093984,\ 8840919351575,\ 228449188011224,\ 5968029850876084 .$$
 ($\mathcal H$ is not in OEIS territory I can check offline; $v_3(h_j) = 0,0,0,0,0,1,1,1,0,0,0,0,0$.)
+
+**[Day 147 — new data, independently regenerated at $\mathrm{BMAX}=45$.]**
+$$b_{13}=22087492351683636,\quad b_{14}=583048865756462670,\quad
+b_{15}=15511745688519457404$$
+$$h_{13}=157362931790134880,\quad h_{14}=4182508112784714612,\quad
+h_{15}=111938320276080080544$$
+with $v_3(b_{13}),v_3(b_{14}),v_3(b_{15}) = 1,2,2$: **three further confirmations of
+$3\mid b_k$, now verified for $k\le15$.** The full list is
+$v_3(b_k) = 1,3,1,1,2,3,2,2,1,1,2,1,1,2,2$ for $k=1,\dots,15$.
+*(Reminder: by the circularity warning in §5, the new $h_j$ are not independent evidence —
+they are the same fact as the new $b_k$.)*
 
 ---
 
@@ -367,20 +452,70 @@ $R = \mathbb Z_3[E_1,E_2,E_3]^{\wedge}$, not $\mathbb Z_3$, so the criterion nee
 Frobenius lift $\varsigma$ on $R$; take $\varsigma(E_i) = E_i^3$. Then for
 $G\in1+TR[[T]]$,
 $$G\in 1+TR[[T]] \iff \frac{G(T)^3}{\varsigma(G)(T^3)} \in 1+3T\,R[[T]].$$
-*(Without the $E_3\mapsto E_3^3$ twist the criterion genuinely fails: numerically
-$H(T)^3/H(T^3)$ has a unit coefficient at $T^9$. With the twist it holds. Checked.)*
 
-Since $\tau$ acts on coefficients only, $\varsigma$ and $\tau$ commute on the locus
-$\varphi_1 = 0$, and $K(\tau F_P) = \tau(K(F_P))$ where
-$$K \;:=\; \frac{F_P(T)^3}{\varsigma(F_P)(T^3)} .$$
-Hence:
+**[RETRACTED Day 147.]** The original text here read:
+> *(Without the $E_3\mapsto E_3^3$ twist the criterion genuinely fails: numerically
+> $H(T)^3/H(T^3)$ has a unit coefficient at $T^9$. With the twist it holds. Checked.)*
 
+This is **withdrawn as an artefact of a buggy script.** `dwork.py` and `dwork2.py` map
+$T^b\mapsto T^{3b}$ and leave the $E_3$-key untouched, i.e. they implement
+$\varsigma = \mathrm{id}$, which is **not a Frobenius lift** of $R$ at all. The observed
+"$T^9$ violation" is therefore a statement about a non-lift, not evidence that the
+$E_3\mapsto E_3^3$ twist is essential. Additionally, a *numeric* base point cannot test any
+nontrivial $\varsigma$, because $\varsigma$ moves the point; the test must be symbolic.
+
+**Corrected finding (Day 147, `dwork_symbolic.py`, symbolic in $\mathbb Z[E_1,E_2,E_3]$ to
+$T^{12}$; corroborated by `symbolic.py` to $T^{15}$).** For
+$H^3/\varsigma(H)(T^3)\in 1+3T\,\mathbb Z[E][[T]]$:
+
+| lift $\varsigma$ | criterion |
+|---|---|
+| identity (**not a lift**) | **FAILS**, already at $T^3$ |
+| naive $E_i\mapsto E_i^3$ | **PASSES** |
+| Adams $\psi^3$ ($\psi^3(E_1)=E_1^3-3E_1E_2+3E_3$, $\psi^3(E_2)=E_2^3-3E_1E_2E_3+3E_3^2$, $\psi^3(E_3)=E_3^3$) | **PASSES** |
+
+**The criterion is lift-independent.** This is forced: Dieudonné–Dwork is an *iff*, so the
+truth value of the criterion equals "$H$ is integral" no matter which Frobenius lift is
+chosen. (The $E_1,E_2$-fixing twist $E_3\mapsto E_3^3$ used on Day 146 is *not* a lift of
+the full ring — it is the canonical lift of $\mathbb Z_3[E_3]$ after specialising
+$E_1,E_2$ to constants — and it does fail symbolically at $T^3,T^6,T^9,T^{12},T^{15}$,
+though it passes fibrewise at every base point tested.)
+
+**[RETRACTED Day 147 — the $\tau(K)/K$ rewriting.]** The original text here read:
+> *Since $\tau$ acts on coefficients only, $\varsigma$ and $\tau$ commute on the locus
+> $\varphi_1 = 0$, and $K(\tau F_P) = \tau(K(F_P))$ where
+> $K := F_P(T)^3/\varsigma(F_P)(T^3)$. Hence:*
 > **(H1) $\iff$ $\dfrac{\tau(K)}{K} \in 1+3T\,\mathbb Z_3[E_1,E_2,E_3][[T]]$.**
 > *(Verified to $T^{22}$ at three base points.)*
+> *In words: the $\tau$-variation of the Frobenius defect of $F_P$ is $\equiv1$ mod 3.
+> Note $K$ itself is not 3-integral (e.g. $v_3([E_3^2T^9]K) = -1$); only its
+> $\tau$-variation is controlled.*
 
-In words: **the $\tau$-variation of the Frobenius defect of $F_P$ is $\equiv1$ mod 3.**
-Note $K$ itself is *not* 3-integral (e.g. $v_3([E_3^2T^9]K) = -1$); only its
-$\tau$-variation is controlled.
+**The commutation claim is false.** $\varsigma$ and $\tau$ do **not** commute on the locus
+$\varphi_1=0$. Explicitly at $(E_1,E_2)=(-2,1)$ (where $\varphi_1=0$), with
+$\varsigma(E_i)=E_i^3$:
+$$\tau\varsigma(-2,1) = \tau(-8,1) = (-5,-12) \;\ne\; (1,0) = \varsigma(1,0) = \varsigma\tau(-2,1).$$
+They agree only **mod 3** — and mod-3 agreement is a triviality that holds for *any*
+Frobenius lift and *any* ring endomorphism ($\tau\varsigma(x)\equiv\tau(x^3)=\tau(x)^3
+\equiv\varsigma\tau(x)\bmod3$), so it discriminates nothing. Indeed no Frobenius lift of
+$\mathbb Z_3[E_1,E_2,E_3]$ commutes with $\tau$ exactly (Day 147, `no_commute_thm.py`).
+Since Dieudonné–Dwork applied to $H=\tau(F_P)/F_P$ needs $\varsigma\circ\tau$ in the
+numerator, the correct object is $K(\tau F_P)/K(F_P)$, not $\tau(K)/K$; the two differ,
+and the $\tau(K)/K$ form should be dropped in favour of the clean
+$H^3/\varsigma(H)(T^3)$ above.
+
+> **[Day 147 — METHODOLOGICAL NOTE, important.] The Dwork reformulation of §9 is a
+> tautological re-encoding of integrality, and the numerical verifications of the Dwork
+> criterion are NOT independent evidence for the theorem.** Dieudonné–Dwork is an *iff*;
+> passing the criterion with any lift is exactly as strong as verifying
+> $H\in1+T\mathbb Z_3[E][[T]]$ directly, which `symH.py`/`bigdata.py` already do
+> ($T^{14}$ symbolically, $T^{36}$ numerically). The "verified to $T^{22}$ at three base
+> points" line above is a re-encoding of that same $H$-integrality data. In particular the
+> choice of lift ($\psi^3$ versus $E_i\mapsto E_i^3$) is **not load-bearing**: both pass,
+> with identical sharpness ($\min v_3 = 1$ for both; 284 coefficients at the critical
+> valuation $v_3=1$ for each). **Any real gain must come from controlling
+> $\varsigma(F_P)$ via the master equation** — i.e. from a mechanism that makes
+> $\varsigma(F_P)$ satisfy something computable — not from the choice of $\varsigma$.
 
 One step of this is already free:
 
@@ -401,6 +536,12 @@ $$\frac{\tau W - W}{1+3W} \in T\,\mathbb Z_3[E][[T]] ,$$
 i.e. an *ordinary*-integrality statement about one explicit element of the
 divided-power ring $\Gamma$. The prime 3 has been fully extracted; what remains is the
 $n!$ divisibility.
+
+**[Day 147 — this paragraph inherits the retracted $\tau(K)/K$ gap.]** The "(H1) becomes"
+step above is the $\tau(K)/K$ rewriting, which is invalid as written because
+$\varsigma\tau\ne\tau\varsigma$ (see the retraction above). Lemma C itself is unaffected;
+the $(\tau W-W)/(1+3W)$ reformulation is not, and would need redoing with
+$K(\tau F_P)/K(F_P)$.
 
 The input for such a congruence should be exactly the mod-3 self-similarity found in
 §2's Corollary, $\Psi_{3m}\equiv(\gamma+\delta\sigma)^m(1)$, which is a genuine
@@ -451,9 +592,15 @@ Two exactly-solvable boundary facts found today, worth keeping:
 **Lemma 3.9.** $v_3([E_3^k]\Psi_b) \ge \max(0,3k-b)$; in particular
 $\deg_{E_3}(\Psi_b \bmod 3)\le\lfloor b/3\rfloor$.
 
-**Theorem 3.10.** With $\mathcal H = \ell_0\big(\tau(F_P)/F_P\big)$,
+**Theorem 3.10.** **Assume (H2).** With $\mathcal H = \ell_0\big(\tau(F_P)/F_P\big)$,
 $$F^2-F = \vartheta\,\mathcal H\,(2F-3),$$
 and $b_k\equiv0\pmod3\ \forall k \iff \mathcal H\in\mathbb Z_3[[\vartheta]]$.
+
+*(Day 147 correction: the hypothesis "Assume (H2)" was omitted from this statement on
+Day 146 and is restored here. It is required — §6.2 Theorem 2, from which both the identity
+and the equivalence follow, begins "Assume (H2)". Unconditionally the main identity is not
+yet available. Note also that the equivalence is about the $\ell_0$-diagonal $\mathcal H$,
+3-adically; it is **not** an equivalence with (H1).)*
 
 **Conjecture 4.5 (H).** $\tau(F_P)/F_P \in \mathbb Z[E_1,E_2,E_3][[T]]$ with
 $\deg_{E_3}[T^n] \le \lfloor n/3\rfloor$. (Verified symbolically to $T^{14}$, numerically
@@ -463,8 +610,17 @@ to $T^{36}$.) It implies FPSAC Theorem 3.9 ($3\mid b_k$).
 
 ## 11. Precisely stated gap
 
-**Everything above is proved except Conjecture H**, and Conjecture H is equivalent
-(via §6.3) to the target theorem — so it is not a weakening, it is a *reformulation*
+**Everything above is proved except Conjecture H** — with the caveat that the main
+identity (6.1), and hence the §6.3 equivalence, are themselves conditional on (H2).
+
+**[RETRACTED Day 147 — the original text here read: "and Conjecture H is equivalent (via
+§6.3) to the target theorem — so it is not a weakening, it is a *reformulation*". That is
+FALSE, for the same reason as in §6.3.]** Only the **diagonal, 3-adic shadow** of
+Conjecture H is equivalent to the target:
+$$\mathcal H = \ell_0(H) \in \mathbb Z_3[[\vartheta]] \iff b_k\equiv0\ (3)\ \forall k ,$$
+whereas (H1) demands integrality of *every* coefficient of $H$ over $\mathbb Z$ at *every*
+prime. Conjecture H is therefore **strictly stronger** than the theorem: it is not a
+weakening, but neither is it a mere reformulation — it is a *strengthened* reformulation
 into an object that is:
 * elementary to state (a ratio of two explicit divided-power series),
 * checkable to high order (done: $T^{36}$),
@@ -473,5 +629,10 @@ into an object that is:
   $p$-adic differential/difference system).
 
 That is real progress over "$b_k$ is divisible by 3 and nobody knows why": the mystery is
-now a *single* integrality statement about $\tau(F_P)/F_P$, with a concrete proposed
-mechanism (§9).
+now a *single* integrality statement about $\tau(F_P)/F_P$.
+
+*(Day 147: the last clause originally read "with a concrete proposed mechanism (§9)". The
+§9 mechanism is retracted as a mechanism — see the methodological note there: the Dwork
+criterion is lift-independent and tautologically equivalent to the integrality it is meant
+to explain. §9's exactly-solvable boundary facts and Proposition 2 stand; the Dwork
+reformulation does not supply a mechanism on its own.)*
