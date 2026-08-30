@@ -54,15 +54,25 @@ The β' arc has produced **six convergent Path 1 signals** — the phenomenology
 
 10. **β' arc CLOSED — density stretch + E_3-free explicit formula (Days 137–138):** Every allowed monomial of Ψ(e_2^b) has strictly positive P-conjugated coefficient (Day 137 CROWN #3, simultaneous P/Q density induction). Every previously-known corner formula unifies as a single product on the E_3=0 face (Day 138): **P_b|_{E_3=0} = Π_{k=1}^b (E_2 + kE_1 + k²)**, yielding N(b; x_1, x_2, 0) = Σ_{U⊆[b], |U|=b−x_2} (Π_U k)·e_{b−x_1−x_2}(U). Signed-support characterization complete — only interior x_3 ≥ 1 explicit formula remains open (sequential form via Theorem 4). **Rule 6 fires FOUR times in nine days** (density top, sign global, density stretch, slice setup). **Rule 6b candidate (slice trick):** after φ-conjugation, setting the coupling generator to zero collapses to rank-1 multiplicative recursion → product formula. **Rule 7 candidate (simultaneous-recursion induction):** two objects with shared indexing, joint IH. **Path 1 dominant with TEN convergent signals; the arc is the strongest sustained Path 1 achievement in the project.**
 
+11. **Days 141-146: from structure to arithmetic — and $\mathrm{Sym}_3$ turns out to be a λ-ring (Day 146 dream).** The β' arc's second half moved off "what is $\Psi_b$?" onto "why is $b_k$ divisible by 3?", and in doing so re-entered Path 1 by a side door.
+    - **Day 141:** $(U,V)=(u+1,v+1)$ coordinates; leading closed form $[U^{b-2k}V^{b-2k}]r_b^{(k)}=3^k(2k-1)!!\binom b{2k}$.
+    - **Day 142:** Frobenius identity $LF_P=F_PX$; the universal $(U,V)$-free invariant $a_k=[E_3^kT^{3k-1}]X$.
+    - **Day 143:** $a_k=-b_k+\sum b_ib_j$, i.e. $(1-2F)^2=1+4A$ — a *quadratic* identity, structurally the Novelli-Thibon noncommutative geode at the $k=-1$ slice (arXiv:2511.18366), where the $k=-1$ geode produces **free cumulants** via $K=g(-A)^{-1}$.
+    - **Day 145:** Reduction Theorem via Speicher's Möbius formula: for $M\in\mathbb Z[[\tau]]$ with $M(0)=1$, $\kappa_n(M)\in d\mathbb Z\ \forall n\iff m_n\in d\mathbb Z\ \forall n$. Hence $\kappa_n(1-2F)\in6\mathbb Z\iff b_n\in3\mathbb Z$. **Cleanest theorem of the arc** — one page, applies in generality, independent of the $\Psi$ setting.
+    - **Day 146 PROVE:** master equation $LF_P=E_3T^2[-3+T(E_1+6+2\theta)]\tau(F_P)$ ⟹ $F^2-F=\vartheta\mathcal H(2F-3)$ ⟹ $3\mid b_k\ \forall k\iff\mathcal H\in\mathbb Z_3[[\vartheta]]$.
+    - **Day 146 dream — the Path 1 payoff.** The coefficient ring $\mathbb Z[E_1,E_2,E_3]$ is $\mathrm{Sym}_3$, the symmetric functions in three variables: **a λ-ring**. That matters concretely, not decoratively. The proposed proof mechanism is a Dieudonné–Dwork integrality criterion, which requires a Frobenius lift on the coefficient ring; Rick picked $E_i\mapsto E_i^3$ by hand, but the λ-ring supplies the canonical one — the **Adams operation $\psi^3$** ($u_i\mapsto u_i^3$, $p_n\mapsto p_{3n}$), a legitimate lift by $\psi^p(x)\equiv x^p\ (p)$. And $\psi^3$ commutes with the shift $\tau$ mod 3 unconditionally ($(u+1)^3\equiv u^3+1$), whereas the naive lift needs the bolted-on locus $\varphi_1=0$.
+    **Reading:** the arc left Hopf algebras for ~20 days chasing arithmetic and came back to Path 1 through *λ-ring / Adams operation / Witt-vector* structure rather than through coproducts. That is the same $\mathrm{Sym}$, wearing the third of its hats. It is also the arc's first (soft) contact with **SEED Open Question 4** — mod-$p$ reduction of a combinatorial Hopf algebra *equipped with its Frobenius lift* is a characteristic-$p$ degeneration in which $\psi^p$ becomes Frobenius. Note; do not overclaim.
+    See `connections/2026-08-29-day146-dream-dwork-lambda-ring-frobenius.md`.
+
 **Consequence.** The paper's Path 1 section writes itself:
 - Setup: $\text{Sym}^*$ as a graded Hopf algebra (Molev-Olshanski / Okounkov-Olshanski).
 - Main results: Days 131 (EGF structure) + 133 (density + sign).
 - Main Conjecture = $(1-t)$-plethystic Pieri filtration (Lee 2606 open problem).
 - Long-horizon: queer PBW filtration proof via $Z(U(\mathfrak{q}_N))$.
 
-## FPSAC 2027 target (Nov 15, 2026 deadline)
+## FPSAC 2027 target — deadline **2026-11-15, now FIRM**
 
-Days 131 + 133 core. Extended abstract structure in `questions/q-fpsac-2027-writeup.md`. 82 days out. All theorems proved. Task is exposition.
+78 days out as of Day 146 (2026-08-29); submissions open Oct 1; writing kickoff Sept 1. Core = Days 131 + 133, plus Thms 3.6/3.7/3.8 (Days 141/143/145) and Thms 3.8/3.9/3.10 + Conjecture H (Day 146). Structure in `questions/q-fpsac-2027-writeup.md`, addendum in `beta-prime/fpsac2027/skeleton-addendum-day146.md`. Everything shipped is proved; Conjecture H ships as a conjecture.
 
 ## New anchors (2024-2026)
 

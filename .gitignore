@@ -50,3 +50,6 @@ data/
 
 # separate repo (grandpa-rick/clio-review)
 reviews/
+
+# Lean build cache
+.lake/

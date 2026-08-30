@@ -1,0 +1,846 @@
+\documentclass[10pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[expansion=false]{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\setlist[itemize]{itemsep=1pt,topsep=3pt,parsep=0pt}
+\usepackage[small,compact]{titlesec}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{observation}[theorem]{Observation}
+
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\Lam}{\Lambda_3}
+\newcommand{\ffal}[2]{[#1]_{#2}}
+\newcommand{\wt}{\operatorname{w}}
+\newcommand{\Psib}{\Psi_b}
+\newcommand{\sigtop}{\sigma_{\mathrm{top}}}
+
+\title{\bf The top-weight generating function of $\Psi(e_2^b)$\\[2pt]
+\large An exposition of a closed form, and of the weight bound it implies}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-2.2em}
+
+\begin{abstract}
+\noindent Let $\Psi$ be the linear map on symmetric polynomials in three variables that sends each
+Schur function $s_\mu$ to the corresponding \emph{shifted} Schur function $s^*_\mu$ of
+Okounkov and Olshanski. Writing the image in the basis of elementary symmetric polynomials
+$E_1,E_2,E_3$ and grading that polynomial ring by $\wt(E_1)=\wt(E_2)=1$, $\wt(E_3)=2$, we
+describe a closed form for the exponential generating function of the top-weight components of
+$\Psi(e_2^b)$: it factors as $(1+E_1T)^{E_2/E_1-1}\cdot\exp(E_3M(T))$ for an explicit
+$M(T)$. We explain the proof --- an operator recursion for $\Psi(e_2^b)$, a projection to top
+weight, and a uniqueness argument for a functional-differential equation --- and we give a
+careful account of the corollary that motivated the whole computation: $\Psi(e_2^b)$ has
+weight at most $b$. That bound asserts a total, exceptionless cancellation among the
+$\lfloor b/2\rfloor$ highest weight layers of a sum of shifted Schur functions with strictly
+positive coefficients. All statements are labelled as proved or as verified only in a finite
+range.
+\end{abstract}
+
+\section{Introduction}
+
+\subsection*{The object}
+
+Fix three variables. The ring $\Lam=\bbQ[e_1,e_2,e_3]$ of symmetric polynomials in
+$u_1,u_2,u_3$ carries two natural bases indexed by partitions $\mu$ with at most three
+parts: the Schur polynomials $s_\mu$, and the \emph{shifted Schur polynomials} $s^*_\mu$ of
+Okounkov--Olshanski. The second family is the ``inhomogeneous'' analogue of the first: each
+$s^*_\mu$ is a polynomial with $s^*_\mu = s_\mu + (\text{terms of lower degree})$, and it is
+characterised by a vanishing property at partition points. Both families are bases of the
+same ring, so there is a unique linear isomorphism
+\[
+  \Psi:\Lam \longrightarrow \Lam,\qquad \Psi(s_\mu)=s^*_\mu .
+\]
+This map is the transition matrix between the two bases. It is \emph{not} a ring homomorphism,
+and that is exactly what makes it interesting: one wants to know how it interacts with
+products, and in particular what it does to powers of a fixed symmetric function.
+
+The simplest nontrivial product to iterate is $e_2$. So one asks: what is $\Psi(e_2^b)$?
+
+\subsection*{Why anyone should care}
+
+Two reasons, one internal and one external.
+
+Internally, $\Psi(e_2^b)$ is a single, concrete, completely computable family that measures
+the failure of $\Psi$ to be multiplicative. Because $\Psi$ is degree-filtered rather than
+graded, $\Psi(e_2^b)$ is an inhomogeneous polynomial whose top-degree part is $e_2^b$ and
+whose lower-degree part is a genuine invariant of the shifted theory. Understanding it
+completely --- a closed generating function, a support description, a sign rule --- is a
+model case for ``how does the shifted basis distort a product?''
+
+Externally, the family arises when one pushes shifted Schur functions through a
+one-parameter specialisation. Substitute $(u_1,u_2,u_3)=(t,\,y,\,c)$, where $y,c$ are the two
+roots of a quadratic with $y+c=s$ and $yc=t$ for an auxiliary parameter $s$. Then
+\[
+ e_1\mapsto t+s,\qquad e_2\mapsto t(s+1),\qquad e_3\mapsto t^2 ,
+\]
+so the $t$-degrees of the images of $e_1,e_2,e_3$ are $1,1,2$. Consequently, if one assigns
+to a monomial $E_1^{x_1}E_2^{x_2}E_3^{x_3}$ the \emph{weight} $x_1+x_2+2x_3$, then the
+maximum weight occurring in a symmetric polynomial is an upper bound for the $t$-degree of its
+specialisation. Bounding the weight of $\Psi(e_2^b)$ therefore bounds the $t$-degree of a
+family of specialised shifted Schur sums --- and this is the form in which the question
+originally arose. The reader who does not care about the specialisation may simply take the
+$(1,1,2)$-weight as a grading given by fiat; everything below is intrinsic.
+
+\subsection*{The main theorem in one paragraph}
+
+Write $\Psi_b := \Psi(e_2^b)$, expressed as a polynomial in the elementary symmetric
+polynomials $E_1,E_2,E_3$, and let $\mathrm{tops}[b]$ be the part of $\Psi_b$ of top
+$(1,1,2)$-weight, namely weight $b$. Then the exponential generating function
+$F(T)=\sum_{b\ge0}\mathrm{tops}[b]\,T^b/b!$ factors as a product of two elementary series: a
+binomial factor $(1+E_1T)^{E_2/E_1-1}$, which involves only $E_1$ and $E_2$ and whose
+coefficients are the products $\prod_{r=1}^{n}(E_2-rE_1)$; and an exponential factor
+$\exp\!\big(E_3\,M(T)\big)$, which carries all the $E_3$-dependence, where
+$M(T)=\sum_{n\ge2}(-1)^{n-1}\tfrac{n^2-1}{n}E_1^{n-2}T^n$. The two factors are ``orthogonal'':
+one knows nothing about $E_3$, the other nothing about $E_2$. Equivalently, $F$ satisfies the
+first-order linear ODE $F'/F=(E_2-E_1)/(1+E_1T)-E_3T(3+E_1T)/(1+E_1T)^3$.
+
+The corollary the reader should care most about, and which is proved along the way rather
+than deduced from the closed form, is that $\Psi(e_2^b)$ has weight at most $b$ --- a
+statement of massive cancellation, discussed at length in \S\ref{sec:weight}.
+
+\subsection*{Provenance and honesty conventions}
+
+The results below are due to Rick (autonomous research agent); this document is an
+exposition, not a research announcement. Every assertion is labelled. ``Theorem'',
+``Lemma'', ``Proposition'', ``Corollary'' means \emph{proved}, with the proof given or
+sketched here. ``Observation'' means \emph{verified computationally in a stated finite range
+and not proved}; such statements are never used in any proof. Section~\ref{sec:status}
+collects the status of everything.
+
+\section{Definitions, and two worked examples}\label{sec:setup}
+
+\subsection{Shifted Schur polynomials in three variables}
+
+For $k\ge0$ write $\ffal{x}{k}:=x(x-1)\cdots(x-k+1)$ for the falling factorial, and set
+\[
+ V:=V(u_1,u_2,u_3)=(u_1-u_2)(u_1-u_3)(u_2-u_3).
+\]
+
+\begin{definition}\label{def:sstar}
+For a partition $\mu=(\mu_1\ge\mu_2\ge\mu_3\ge0)$ put $k_j:=\mu_j+3-j$, so
+$k_1>k_2>k_3\ge0$. The \emph{shifted Schur polynomial} is
+\[
+ s^*_\mu(u_1,u_2,u_3):=\frac{\det\big[\,\ffal{u_i}{k_j}\,\big]_{i,j=1}^{3}}{V(u_1,u_2,u_3)} .
+\]
+\end{definition}
+
+Since $\ffal{x}{k}=x^k+(\text{lower})$ is monic of degree $k$, the numerator is an
+antisymmetric polynomial, hence divisible by $V$, and $s^*_\mu$ is a symmetric polynomial.
+Replacing $\ffal{u_i}{k_j}$ by $u_i^{k_j}$ gives the Weyl determinant formula for $s_\mu$;
+comparing leading terms gives $s^*_\mu=s_\mu+(\text{lower degree})$. These are the shifted
+Schur functions of Okounkov--Olshanski written in the variables $u_i=x_i+3-i$, in which they
+become honestly symmetric.
+
+\begin{definition}\label{def:psi}
+$\Psi:\Lam\to\Lam$ is the linear map with $\Psi(s_\mu)=s^*_\mu$ for all $\mu$ with at most
+three parts.
+\end{definition}
+
+\begin{lemma}[Operator form of $\Psi$]\label{lem:operator}
+Let $T$ be the linear operator on $\bbQ[u_1,u_2,u_3]$ defined on monomials by
+\[
+ T\big(u_1^{a_1}u_2^{a_2}u_3^{a_3}\big):=\ffal{u_1}{a_1}\ffal{u_2}{a_2}\ffal{u_3}{a_3}.
+\]
+Then for every symmetric $f$ one has $\Psi(f)=T(fV)/V$.
+\end{lemma}
+
+\begin{proof}
+$T$ acts one variable at a time and therefore commutes with the permutation action, so
+$T(fV)$ is antisymmetric and divisible by $V$; thus $f\mapsto T(fV)/V$ is a well-defined
+linear map. On $f=s_\mu$ we have $s_\mu V=\det[u_i^{k_j}]$, and applying $T$ to the expanded
+determinant replaces each $u_i^{k_j}$ by $\ffal{u_i}{k_j}$, giving
+$T(s_\mu V)=\det[\ffal{u_i}{k_j}]=s^*_\mu V$. Two linear maps agreeing on a basis are equal.
+\end{proof}
+
+Lemma~\ref{lem:operator} is what makes the whole subject computable: it converts a statement
+about a change of basis into a statement about the single explicit operator $T$.
+
+\subsection{The target ring and the $(1,1,2)$-weight}
+
+We keep two notations for the same objects, to separate input from output. On the input side
+$e_1,e_2,e_3$ denote the elementary symmetric polynomials in $u_1,u_2,u_3$. On the output
+side we regard $\Lam$ as the polynomial ring $\bbQ[E_1,E_2,E_3]$, $E_i:=e_i(u_1,u_2,u_3)$,
+and we always write elements of the image of $\Psi$ as polynomials in $E_1,E_2,E_3$.
+
+\begin{definition}\label{def:weight}
+The \emph{$(1,1,2)$-weight} on $\bbQ[E_1,E_2,E_3]$ is
+$\wt(E_1^{x_1}E_2^{x_2}E_3^{x_3}):=x_1+x_2+2x_3$, extended to a polynomial $P$ by
+$\wt(P):=\max\{\wt(m): m$ a monomial with nonzero coefficient in $P\}$, with
+$\wt(0):=-\infty$. Weight is additive on products of monomials, so
+$\wt(PQ)\le \wt(P)+\wt(Q)$, and the weight-$\le w$ subspaces form a ring filtration. We
+write $P|_{\wt=w}$ for the sum of the terms of $P$ of weight exactly $w$.
+\end{definition}
+
+Note that the weight is not the degree: $E_1^{x_1}E_2^{x_2}E_3^{x_3}$ has degree
+$x_1+2x_2+3x_3$ in the $u_i$, but weight $x_1+x_2+2x_3$. The weight is the pullback of the
+$t$-degree along the specialisation described in the introduction.
+
+\begin{definition}
+$\Psi_b:=\Psi(e_2^b)\in\bbQ[E_1,E_2,E_3]$ and $\mathrm{tops}[b]:=\Psi_b|_{\wt=b}$.
+\end{definition}
+
+\subsection{Worked example 1: $b=1$ and $b=2$ by hand}\label{ex:one}
+
+\begin{example}\label{ex:b1}
+$e_2=s_{(1,1,0)}$, so $\Psi_1=s^*_{(1,1,0)}$. Here $k=(3,2,0)$ and
+\[
+ s^*_{(1,1,0)}V=\det\begin{pmatrix}
+ \ffal{u_1}{3}&\ffal{u_1}{2}&1\\
+ \ffal{u_2}{3}&\ffal{u_2}{2}&1\\
+ \ffal{u_3}{3}&\ffal{u_3}{2}&1\end{pmatrix},
+\]
+which expands to $(E_2-E_1+1)\,V$. Hence
+\[
+ \boxed{\ \Psi_1=E_2-E_1+1\ }
+\]
+of weight $1$. Its top-weight part is $\mathrm{tops}[1]=E_2-E_1$.
+\end{example}
+
+\begin{example}\label{ex:b2}
+By the Pieri/Kostka expansion $e_\lambda=\sum_\mu K_{\mu'\lambda}s_\mu$ with
+$\lambda=(2,2)$,
+\[
+ e_2^2=s_{(2,2,0)}+s_{(2,1,1)},\qquad\text{so}\qquad \Psi_2=s^*_{(2,2,0)}+s^*_{(2,1,1)} .
+\]
+The second summand can be computed with no determinant at all. Indeed
+$s_{(2,1,1)}=e_3\cdot s_{(1,0,0)}$, and Lemma~\ref{lem:e3shift} below gives
+$\Psi(e_3 f)=E_3\cdot\Psi(f)(u-1)$; since $s^*_{(1,0,0)}=E_1-3$ and $E_1$ becomes $E_1-3$
+under $u\mapsto u-1$, we get
+\[
+ s^*_{(2,1,1)}=E_3\,(E_1-6).
+\]
+Direct expansion of the other determinant gives
+$s^*_{(2,2,0)}=E_2^2-3E_1E_2+2E_1^2+3E_3+5E_2-6E_1+4$, whence
+\[
+ \boxed{\ \Psi_2=E_2^2-3E_1E_2+2E_1^2-3E_3+5E_2-6E_1+4\ }
+\]
+of weight $2$, with $\mathrm{tops}[2]=E_2^2-3E_1E_2+2E_1^2-3E_3$.
+\end{example}
+
+Example~\ref{ex:b2} already contains the phenomenon this paper is about. The two summands
+$s^*_{(2,2,0)}$ and $s^*_{(2,1,1)}$ have weights $3$ and $3$: their weight-$3$ parts are
+$-E_1E_3$ and $+E_1E_3$. They cancel. The sum has weight $2$, one less than either
+summand. We return to this in \S\ref{sec:weight}.
+
+For orientation, here are the next two values (computed from Lemma~\ref{lem:operator}):
+\begin{align*}
+ \mathrm{tops}[3]&=E_2^3-6E_1E_2^2+11E_1^2E_2-6E_1^3-9E_2E_3+25E_1E_3,\\
+ \mathrm{tops}[4]&=E_2^4-10E_1E_2^3+35E_1^2E_2^2-50E_1^3E_2+24E_1^4\\
+  &\qquad -18E_2^2E_3+118E_1E_2E_3-190E_1^2E_3+27E_3^2 .
+\end{align*}
+
+\section{The main theorem}\label{sec:main}
+
+Work in $R:=\bbQ[E_1,E_2,E_3]$ and in the formal power series ring $R[[T]]$.
+
+\begin{definition}\label{def:AB}
+Define $A(T),B(T)\in R[[T]]$ by
+\[
+ A(T):=\sum_{n\ge0}\frac{A_n}{n!}T^n,\qquad A_n:=\prod_{r=1}^{n}\big(E_2-rE_1\big),
+\]
+\[
+ B(T):=\exp\!\big(E_3\,M(T)\big),\qquad
+ M(T):=\sum_{n\ge2}(-1)^{n-1}\frac{n^2-1}{n}\,E_1^{\,n-2}T^n .
+\]
+The exponential is legitimate because $M$ has no constant term; and $[T^m]B(T)$ involves
+$E_3^k$ only for $k\le m/2$, so all coefficients lie in $R$.
+\end{definition}
+
+The suggestive notation for $A$ is $A(T)=(1+E_1T)^{E_2/E_1-1}$: formally expanding the
+binomial series and distributing one factor of $E_1$ into each bracket produces exactly
+$A_n=\prod_{r=1}^n(E_2-rE_1)$. We will not use the fractional exponent; it does not live in
+$R$, and Definition~\ref{def:AB} is the honest version. Likewise $M(T)$ has the closed form
+$T/(E_1(1+E_1T)^2)-\log(1+E_1T)/E_1^2$, which is a convenient mnemonic but again involves
+division by $E_1$.
+
+\begin{theorem}[Closed form for the top-weight generating function]\label{thm:main}
+Let $F(T):=\sum_{b\ge0}\mathrm{tops}[b]\,T^b/b!\in R[[T]]$. Then
+\[
+  \boxed{\ F(T)=A(T)\cdot B(T).\ }
+\]
+Equivalently, in terms of coefficients,
+\begin{equation}\label{eq:coeff}
+ \mathrm{tops}[b]=\sum_{n+m=b}\binom{b}{n}\,A_n\,B_m,\qquad B_m:=m!\,[T^m]B(T).
+\end{equation}
+\end{theorem}
+
+\begin{corollary}[ODE form]\label{cor:ode}
+$F$ is the unique solution in $R[[T]]$ with $F(0)=1$ of
+\[
+ \frac{F'(T)}{F(T)}=\frac{E_2-E_1}{1+E_1T}-\frac{E_3\,T\,(3+E_1T)}{(1+E_1T)^3},
+\]
+i.e.\ of $(1+E_1T)^3F'=\big[(E_2-E_1)(1+E_1T)^2-E_3T(3+E_1T)\big]F$. Extracting
+coefficients gives the three-term recursion
+\begin{align*}
+ \mathrm{tops}[b+1]&=\big(E_2-(3b+1)E_1\big)\mathrm{tops}[b]
+  +b\big(2E_1E_2-(3b-1)E_1^2-3E_3\big)\mathrm{tops}[b-1]\\
+ &\qquad + b(b-1)\big(E_1^2E_2-(b-1)E_1^3-E_1E_3\big)\mathrm{tops}[b-2].
+\end{align*}
+\end{corollary}
+
+\begin{remark}[Weight homogeneity]\label{rem:homog}
+Assign $T$ the weight $-1$. Then $A_n$ has weight $n$ (its top monomial is $E_2^n$), and each
+monomial $E_3^kE_1^{m-2k}$ of $B_m$ has weight $2k+(m-2k)=m$. So $A$, $B$, $F$ are all
+homogeneous of weight $0$ and $\mathrm{tops}[b]$ is homogeneous of weight exactly $b$ --- as
+it must be, being a top-weight component.
+\end{remark}
+
+\begin{remark}[Structural reading]
+The factorisation separates variables in a strong sense: $A$ is free of $E_3$, $B$ is free of
+$E_2$. So the whole $E_3$-dependence of the top-weight data is an exponential of a single
+explicit series, and the whole $E_2$-dependence is a shifted-factorial product. This is not
+just a compact formula; the two factors carry independent alternating signs which align
+perfectly, and that alignment is what makes the coefficient-level results of
+\S\ref{sec:closes} possible.
+\end{remark}
+
+\subsection{Worked example 2: reading $\mathrm{tops}[2]$ and $\mathrm{tops}[4]$ off the formula}
+
+\begin{example}\label{ex:check2}
+From Definition~\ref{def:AB}: $A_0=1$, $A_1=E_2-E_1$, $A_2=(E_2-E_1)(E_2-2E_1)$. The
+coefficients of $M$ are $\mu_2=-\tfrac32$, $\mu_3=\tfrac83$, $\mu_4=-\tfrac{15}4$, so
+$B_0=1$, $B_1=0$, $B_2=2!\,\mu_2E_3=-3E_3$. By \eqref{eq:coeff},
+\[
+ \mathrm{tops}[2]=\binom20A_0B_2+\binom21A_1B_1+\binom22A_2B_0
+  =-3E_3+0+E_2^2-3E_1E_2+2E_1^2,
+\]
+matching Example~\ref{ex:b2}. \emph{Check by hand.}
+\end{example}
+
+\begin{example}[The pure $E_3$ corner]\label{ex:e3corner}
+Take $b=4$ and ask for the coefficient of $E_3^2$. Only $n=0$ contributes ($A_n$ has no
+$E_3$, and $B_m$ needs $m\ge 2k=4$), so the coefficient is $[E_3^2]B_4=4!\,[T^4]\tfrac12
+M(T)^2=\tfrac{4!}2\mu_2^2=12\cdot\tfrac94=27$, using that the only way to write $4$ as an
+ordered sum of two parts each $\ge2$ is $2+2$. And indeed $\mathrm{tops}[4]$ above has
+$+27E_3^2$. The same computation for general even $b=2\ell$ gives one composition
+$(2,\dots,2)$ and
+\[
+ [E_3^{b/2}]\,\mathrm{tops}[b]=\frac{b!}{\ell!}\Big(\frac{\mu_2}{1}\Big)^{\ell}
+ =(-3)^{b/2}(b-1)!!,
+\]
+e.g.\ $-3,\,27,\,-405,\,8505$ for $b=2,4,6,8$. \emph{Check the $b=6$ value against
+$\mathrm{tops}[6]$ if you like; it is $-405$.}
+\end{example}
+
+\section{The shape of the argument}\label{sec:argument}
+
+\subsection{Strategy in prose}
+
+The naive approach --- understand $\mathrm{tops}[b]$ directly, or find a ``top-weight
+collapse'' lemma explaining the cancellations of \S\ref{ex:one} --- does not work, because
+the cancellation is not visible term by term. The successful strategy inverts the order:
+
+\begin{enumerate}
+\item[(1)] \emph{Forget the weight. Find an exact recursion for the whole polynomial
+$\Psi_b$.} Because $\Psi=T(-\,V)/V$ and $T$ satisfies a clean commutation identity with
+multiplication by $u_i$, multiplication by $e_2$ on the input side becomes an explicit
+second-order differential operator on the output side. Carrying this out and simplifying
+gives a three-term recursion for $\Psi_b$ involving one extra ingredient: the substitution
+$\sigma$ induced by the simultaneous shift $u_i\mapsto u_i-1$.
+\item[(2)] \emph{Read the weight bound off the recursion.} All coefficients in the recursion
+have small weight and $\sigma$ preserves the weight filtration, so induction gives
+$\wt(\Psi_b)\le b$ immediately. This is the corollary of \S\ref{sec:weight}, and it is
+obtained \emph{before} the closed form, not from it.
+\item[(3)] \emph{Project the recursion to top weight.} The projection replaces $\sigma$ by
+its ``leading part'' $\sigtop$, which is the simple substitution $E_2\mapsto E_2-2E_1$.
+\item[(4)] \emph{Convert the top-weight recursion into a functional-differential equation
+and solve it by uniqueness.} The equation is not an ODE: it relates $F$ to
+$\widetilde F(T)=F(T)|_{E_2\mapsto E_2-2E_1}$. But it determines $F$ uniquely from
+$F(0)=1$, and one checks directly that $A\cdot B$ satisfies it.
+\end{enumerate}
+
+\subsection{Step 1: the operator identities}
+
+Let $D_i:=u_i\,\partial/\partial u_i$ be the $i$-th Euler operator, $E:=D_1+D_2+D_3$, and
+$e_2(D):=D_1D_2+D_1D_3+D_2D_3$. Let $\sigma$ denote the simultaneous shift
+$u_i\mapsto u_i-1$; on generators,
+\begin{equation}\label{eq:sigma}
+ \sigma(E_1)=E_1-3,\qquad \sigma(E_2)=E_2-2E_1+3,\qquad \sigma(E_3)=E_3-E_2+E_1-1 .
+\end{equation}
+
+\begin{lemma}[Core umbral identity]\label{lem:I1}
+For every $h\in\bbQ[u_1,u_2,u_3]$ and every $i$: $\;T(u_i h)=u_i\,T(h)-T(D_i h)$.
+\end{lemma}
+
+\begin{proof}
+By linearity check on $h=u_i^a g$ with $g$ free of $u_i$. Then $T(u_ih)=\ffal{u_i}{a+1}T(g)$,
+while $u_iT(h)-T(D_ih)=\big(u_i-a\big)\ffal{u_i}{a}T(g)=\ffal{u_i}{a+1}T(g)$.
+\end{proof}
+
+\begin{lemma}[The $e_2$ identity for $T$]\label{lem:TId}
+For every $f\in\bbQ[u_1,u_2,u_3]$,
+\[
+ T(e_2 f)=e_2\,T(f)-\sum_{i=1}^{3}u_i\,T\big((D_j+D_k)f\big)+T\big(e_2(D)f\big),
+\]
+where in the $i$-th summand $\{i,j,k\}=\{1,2,3\}$.
+\end{lemma}
+
+\begin{proof}
+Apply Lemma~\ref{lem:I1} twice to a single product, for $p\ne q$:
+\[
+ T(u_pu_qf)=u_pT(u_qf)-T\big(D_p(u_qf)\big)
+  =u_pu_qT(f)-u_pT(D_qf)-u_qT(D_pf)+T(D_pD_qf),
+\]
+using $D_p(u_qf)=u_qD_pf$ and one more application of Lemma~\ref{lem:I1} to
+$T(u_qD_pf)$. Summing over the three pairs $\{p,q\}$: the first terms give $e_2T(f)$; the
+last give $T(e_2(D)f)$; and in the middle, for each fixed $i$ the variable $u_i$ appears
+paired with each of the other two indices, contributing $u_iT\big((D_j+D_k)f\big)$.
+\end{proof}
+
+\begin{lemma}[$e_3$-shift]\label{lem:e3shift}
+$T(e_3X)=e_3\,\sigma(T(X))$ for all $X$; consequently $\Psi(e_3f)=E_3\,\sigma(\Psi(f))$ for
+symmetric $f$.
+\end{lemma}
+
+\begin{proof}
+On a monomial, $\ffal{u_i}{c+a}=\ffal{u_i}{c}\cdot\ffal{u_i-c}{a}$; taking $c=1$ in each
+variable gives the first identity. For the second, $T(e_3fV)=e_3\,\sigma(\Psi(f)V)
+=e_3\,\sigma(V)\,\sigma(\Psi(f))$, and $\sigma(V)=V$ because a simultaneous shift preserves
+differences. Divide by $V$.
+\end{proof}
+
+\begin{lemma}[$e_1$-shift]\label{lem:e1shift}
+$\Psi(e_1f)=(E_1-3)\Psi(f)-\Psi(E f)$. In particular, if $f$ is $E$-homogeneous of degree
+$d$ then $\Psi(e_1f)=(E_1-d-3)\Psi(f)$; e.g.\ $\Psi(e_1e_2^b)=(E_1-2b-3)\Psi_b$.
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:I1}, $\Psi(e_1f)=\sum_i\big(u_iT(fV)-T(D_i(fV))\big)/V$. The first sum is
+$E_1\Psi(f)$. For the second, $D_i(fV)=D_i(f)V+fD_i(V)$ and $\sum_iD_i(V)=3V$ since $V$ is
+homogeneous of degree $3$; so $\sum_iT(D_i(fV))=T(E(f)V)+3T(fV)$.
+\end{proof}
+
+\subsection{Step 2: the exact recursion for $\Psi_b$}
+
+Apply Lemma~\ref{lem:TId} to $f=e_2^bV$ and divide by $V$. Two elementary computations do
+all the work. Both use the same trick: a sum of rational functions over ordered pairs is
+grouped into unordered pairs, where the denominator cancels.
+
+\begin{lemma}\label{lem:K1}
+$\displaystyle\sum_{i}u_i\,(D_j+D_k)\big(e_2^bV\big)
+ =(2b+1)\,e_1e_2^bV-b\,(e_1e_2-3e_3)\,e_2^{b-1}V.$
+\end{lemma}
+
+\begin{proof}
+Write $D_j+D_k=E-D_i$ and use $E(e_2^bV)=(2b+3)e_2^bV$. It remains to compute
+$\sum_iu_iD_i(e_2^bV)=b\,e_2^{b-1}V\sum_iu_iD_i(e_2)+e_2^b\sum_iu_iD_i(V)$. Now
+$\sum_iu_iD_i(e_2)=\sum_iu_i^2(u_j+u_k)=e_1e_2-3e_3$, and
+\[
+ \sum_iu_iD_i(V)=V\sum_{i\ne j}\frac{u_i^2}{u_i-u_j}
+ =V\sum_{i<j}\frac{u_i^2-u_j^2}{u_i-u_j}=V\sum_{i<j}(u_i+u_j)=2e_1V .
+\]
+Combining gives the stated identity.
+\end{proof}
+
+\begin{lemma}[The critical simplification]\label{lem:K5}
+$\displaystyle \sum_{\alpha\neq\beta}D_\alpha(e_2)\,D_\beta(V)=3\,e_2\,V$, and
+$\displaystyle \sum_{\alpha}D_\alpha(e_2)\,D_\alpha(V)=3\,e_2\,V$.
+\end{lemma}
+
+\begin{proof}
+Since $E(e_2)E(V)=2e_2\cdot 3V=6e_2V$ and the two displayed sums add up to $E(e_2)E(V)$, the
+two statements are equivalent; we prove the second. With $\{\alpha,\beta,\gamma\}=\{1,2,3\}$,
+$D_\alpha(e_2)=u_\alpha(e_1-u_\alpha)$ and $D_\alpha(V)/V=\sum_{\beta\ne\alpha}
+u_\alpha/(u_\alpha-u_\beta)$, so
+\[
+ \frac1V\sum_\alpha D_\alpha(e_2)D_\alpha(V)
+ =\sum_{\alpha\ne\beta}\frac{u_\alpha^2(e_1-u_\alpha)}{u_\alpha-u_\beta}.
+\]
+Group the ordered pairs $(\alpha,\beta)$ and $(\beta,\alpha)$:
+\[
+ \frac{u_\alpha^2(e_1-u_\alpha)-u_\beta^2(e_1-u_\beta)}{u_\alpha-u_\beta}
+ =e_1(u_\alpha+u_\beta)-(u_\alpha^2+u_\alpha u_\beta+u_\beta^2)=e_2,
+\]
+the last equality by expanding $e_1=u_\alpha+u_\beta+u_\gamma$. There are three unordered
+pairs, so the total is $3e_2$.
+\end{proof}
+
+\begin{lemma}\label{lem:Ab}
+$\displaystyle e_2(D)\big(e_2^bV\big)\big/V=(b+1)(b+2)\,e_2^b+b(b-1)\,e_1e_3\,e_2^{b-2}.$
+\end{lemma}
+
+\begin{proof}
+Expand $D_\alpha D_\beta(e_2^bV)$ by the product rule and sum over $\alpha<\beta$. Four
+elementary evaluations are needed:
+$\sum_{\alpha<\beta}D_\alpha D_\beta(e_2)=e_2$;
+$\sum_{\alpha<\beta}D_\alpha(e_2)D_\beta(e_2)=e_2^2+e_1e_3$;
+$\sum_{\alpha<\beta}D_\alpha D_\beta(V)=2V$;
+and $\sum_{\alpha\ne\beta}D_\alpha(e_2)D_\beta(V)=3e_2V$ (Lemma~\ref{lem:K5}). The first
+three are direct expansions. Collecting the coefficient of $e_2^b$ gives
+$b(b-1)+b+3b+2=(b+1)(b+2)$, and the only other surviving term is $b(b-1)e_1e_3e_2^{b-2}$
+from the $e_1e_3$ part of the second evaluation.
+\end{proof}
+
+Lemma~\ref{lem:K5} is the load-bearing step of the whole proof: a priori the sum
+$\sum_{\alpha\ne\beta}D_\alpha(e_2)D_\beta(V)$ is an unwieldy rational function, and its
+collapse to the scalar multiple $3e_2$ of $V$ is what turns Lemma~\ref{lem:Ab} into a clean
+quadratic polynomial in $b$.
+
+\begin{proposition}[Exact $\Psi$-recursion]\label{prop:fullrec}
+For all $b\ge0$, with $\Psi_{-1}=\Psi_{-2}=0$ and $\Psi_0=1$,
+\begin{equation}\label{eq:fullrec}
+ \Psi_{b+1}=\big[E_2-(b+1)E_1+(b+1)^2\big]\Psi_b
+   -3b\,E_3\,\sigma(\Psi_{b-1})
+   -b(b-1)(E_1-2b-2)\,E_3\,\sigma(\Psi_{b-2}).
+\end{equation}
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Write $\Psi_{b+1}=P_1-P_2+P_3$ for the three terms of Lemma~\ref{lem:TId} applied to
+$f=e_2^bV$ and divided by $V$; so $P_1=E_2\Psi_b$ and $P_3=\Psi\big(e_2(D)(e_2^bV)/V\big)$.
+Applying Lemma~\ref{lem:I1} once more inside $P_2$ produces $P_2=2P_3+
+T\big(\sum_iu_i(D_j+D_k)(e_2^bV)\big)/V$, because each unordered pair of indices occurs
+twice. Lemma~\ref{lem:K1} evaluates the remaining term, and Lemmas~\ref{lem:e1shift} and
+\ref{lem:e3shift} convert it into
+$(b+1)(E_1-2b-3)\Psi_b+3bE_3\sigma(\Psi_{b-1})$. Lemma~\ref{lem:Ab} together with
+Lemmas~\ref{lem:e1shift}, \ref{lem:e3shift} gives
+$P_3=(b+1)(b+2)\Psi_b+b(b-1)(E_1-2b-2)E_3\sigma(\Psi_{b-2})$. Assembling,
+$\Psi_{b+1}=P_1-P_3-\big[(b+1)(E_1-2b-3)\Psi_b+3bE_3\sigma(\Psi_{b-1})\big]$, and
+$E_2-(b+1)(E_1-2b-3)-(b+1)(b+2)=E_2-(b+1)E_1+(b+1)^2$.
+\end{proof}
+
+\subsection{Step 3: projection to top weight}
+
+\begin{lemma}\label{lem:sigmatop}
+$\sigma$ preserves the weight filtration, and there is a unique ring endomorphism $\sigtop$ of
+$\bbQ[E_1,E_2,E_3]$ such that $\sigma(P)|_{\wt=w}=\sigtop\big(P|_{\wt=w}\big)$ whenever
+$w=\wt(P)$; explicitly
+\[
+ \sigtop(E_1)=E_1,\qquad \sigtop(E_2)=E_2-2E_1,\qquad \sigtop(E_3)=E_3 .
+\]
+\end{lemma}
+
+\begin{proof}
+By \eqref{eq:sigma}, $\sigma(E_i)$ has weight $\le\wt(E_i)$, and its top-weight part is as
+displayed; the filtration statement follows since $\sigma$ is a ring map. Weight is additive
+on products of monomials, so taking top-weight parts is multiplicative on the associated
+graded, which makes $\sigtop$ a ring endomorphism.
+\end{proof}
+
+Given the weight bound $\wt(\Psi_b)\le b$ (Theorem~\ref{thm:weight} below, proved
+independently in \S\ref{sec:weight}), projecting \eqref{eq:fullrec} onto weight $b+1$
+kills the constant $(b+1)^2$ and the constant $-2b-2$, leaving:
+
+\begin{proposition}[Top-weight recursion]\label{prop:toprec}
+For all $b\ge0$, with $\mathrm{tops}[0]=1$ and $\mathrm{tops}[-1]=\mathrm{tops}[-2]=0$,
+\[
+ \mathrm{tops}[b+1]=\big(E_2-(b+1)E_1\big)\mathrm{tops}[b]
+  -3b\,E_3\,\sigtop(\mathrm{tops}[b-1])
+  -b(b-1)\,E_1E_3\,\sigtop(\mathrm{tops}[b-2]).
+\]
+\end{proposition}
+
+\subsection{Step 4: the shift equation, and uniqueness}
+
+Write $\widetilde{P}:=\sigtop(P)=P|_{E_2\mapsto E_2-2E_1}$, extended coefficientwise to
+$R[[T]]$.
+
+\begin{proposition}[Shift equation]\label{prop:shiftode}
+$F(T)$ is the unique element of $R[[T]]$ with $F(0)=1$ satisfying
+\begin{equation}\label{eq:shift}
+ (1+E_1T)\,F'(T)=(E_2-E_1)F(T)-E_3\,T\,(3+E_1T)\,\widetilde F(T).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Multiply the recursion of Proposition~\ref{prop:toprec} by $T^b/b!$ and sum over $b\ge0$.
+The four sums are $F'$, $E_2F-E_1(TF)'$, $3E_3T\widetilde F$ and $E_1E_3T^2\widetilde F$
+respectively; rearranging gives \eqref{eq:shift}. Uniqueness: extracting $[T^b/b!]$ from
+\eqref{eq:shift} returns exactly the recursion of Proposition~\ref{prop:toprec}, which
+determines $\mathrm{tops}[b+1]$ from $\mathrm{tops}[b],\mathrm{tops}[b-1],
+\mathrm{tops}[b-2]$ and their (well-defined, polynomial) images under $\sigtop$.
+\end{proof}
+
+Note that \eqref{eq:shift} is not an ordinary differential equation: the substitution
+$E_2\mapsto E_2-2E_1$ is a genuine extra operation, coupling $F$ to a different function.
+This is why the ``natural'' equation is \eqref{eq:shift} rather than the ODE of
+Corollary~\ref{cor:ode}: the latter is obtained by eliminating $\widetilde F$, which costs a
+factor $(1+E_1T)^{-2}$ and hence produces the cube in the denominator.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Set $G:=A\cdot B$; we verify \eqref{eq:shift} for $G$, with $G(0)=1$.
+
+\emph{(i) $A$ and $B$ satisfy first-order equations.} From $A_{n+1}=(E_2-(n+1)E_1)A_n$ one
+gets, comparing $[T^n/n!]$ of both sides, $(1+E_1T)A'=(E_2-E_1)A$. For $B$: the coefficient
+of $T^n$ in $-T(3+E_1T)(1+E_1T)^{-3}$ is $-(-1)^{n-1}n(n+2)E_1^{n-1}$, which equals
+$(n+1)\mu_{n+1}E_1^{n-1}=[T^n]M'(T)$ with $\mu_n=(-1)^{n-1}(n^2-1)/n$; hence
+$(1+E_1T)^3M'=-T(3+E_1T)$, and $B'/B=E_3M'$ gives
+$(1+E_1T)^3B'=-E_3T(3+E_1T)B$.
+
+\emph{(ii) The substitution.} $B$ is free of $E_2$, so $\widetilde B=B$. And
+$\widetilde{A_n}=\prod_{r=1}^n\big(E_2-(r+2)E_1\big)$, so
+$\widetilde A(T)=A(T)\,(1+E_1T)^{-2}$ in the sense that
+$(1+E_1T)^2\widetilde A=A$ (both sides satisfy the same first-order recursion with the same
+initial value; or expand the binomial series directly). Hence
+$(1+E_1T)^2\widetilde G=G$.
+
+\emph{(iii) Verification.} By (i), $G'/G=A'/A+B'/B=(E_2-E_1)/(1+E_1T)
+-E_3T(3+E_1T)/(1+E_1T)^3$. Multiplying by $(1+E_1T)G$ and using (ii),
+\[
+ (1+E_1T)G'=(E_2-E_1)G-\frac{E_3T(3+E_1T)}{(1+E_1T)^2}\,G
+ =(E_2-E_1)G-E_3T(3+E_1T)\widetilde G,
+\]
+which is \eqref{eq:shift}. By the uniqueness in Proposition~\ref{prop:shiftode}, $F=G$.
+\end{proof}
+
+\section{The weight-bound corollary}\label{sec:weight}
+
+\subsection{Statement and proof}
+
+\begin{theorem}[Weight bound]\label{thm:weight}
+For every $b\ge0$, $\wt\big(\Psi(e_2^b)\big)\le b$; in fact $\wt(\Psi(e_2^b))=b$.
+\end{theorem}
+
+\begin{proof}
+Induction on $b$ using the exact recursion \eqref{eq:fullrec}, with $\wt(\Psi_0)=0$. Assume
+$\wt(\Psi_j)\le j$ for $j\le b$. In \eqref{eq:fullrec}:
+\begin{itemize}
+\item $E_2-(b+1)E_1+(b+1)^2$ has weight $\le1$, so the first term has weight $\le b+1$;
+\item $\sigma$ preserves the weight filtration (Lemma~\ref{lem:sigmatop}), so
+$E_3\sigma(\Psi_{b-1})$ has weight $\le2+(b-1)=b+1$;
+\item likewise $(E_1-2b-2)E_3\sigma(\Psi_{b-2})$ has weight $\le1+2+(b-2)=b+1$.
+\end{itemize}
+Hence $\wt(\Psi_{b+1})\le b+1$. Sharpness: $\Psi(f)=f+(\text{lower degree})$ for homogeneous
+$f$, so the monomial $E_2^b$ occurs in $\Psi_b$ with coefficient $1$, and it has weight $b$.
+\end{proof}
+
+The proof is three lines, but note what it depends on: the exact recursion
+\eqref{eq:fullrec}, whose derivation occupies all of \S\ref{sec:argument}. In particular
+the weight bound does \emph{not} depend on Theorem~\ref{thm:main}; the logical order is
+recursion $\Rightarrow$ weight bound $\Rightarrow$ top-weight recursion $\Rightarrow$ closed
+form.
+
+\subsection{What the bound actually rules out}
+
+To appreciate the statement one must know how large the weight of a single shifted Schur
+polynomial can be. Expand $e_2^b$ in the Schur basis using Kostka numbers,
+\[
+ e_2^b=\sum_{\substack{|\mu|=2b\\ \ell(\mu)\le3}} K_{\mu',(2^b)}\,s_\mu,
+ \qquad\text{so}\qquad
+ \Psi_b=\sum_\mu K_{\mu',(2^b)}\,s^*_\mu .
+\]
+All the coefficients $K_{\mu',(2^b)}$ are \emph{strictly positive integers}. So no
+cancellation can come from the outer coefficients; whatever cancellation occurs must happen
+inside the $E$-basis expansions of the individual $s^*_\mu$.
+
+\begin{observation}[verified for $b\le5$; not used below]\label{obs:dmu}
+For $\mu$ in the support above, $\wt(s^*_\mu)=d_\mu:=\mu_1+\lfloor(|\mu|-\mu_1)/2\rfloor$.
+(The companion statement that the largest $d_\lambda$ over the Schur support of $s^*_\mu$
+equals $d_\mu$ is a theorem; the $E$-basis weight version stated here has been checked by
+direct computation for all $\mu$ occurring for $b\le5$ and is quoted only for
+illustration.)
+\end{observation}
+
+Taking $\mu=(b,b,0)$ gives $d_\mu=b+\lfloor b/2\rfloor=\lfloor 3b/2\rfloor$. So the summands
+have weight as large as $\lfloor 3b/2\rfloor$, while the sum has weight $b$.
+
+\begin{quote}
+\emph{The content of Theorem~\ref{thm:weight} is that every one of the weight layers
+$b+1,b+2,\dots,\lfloor3b/2\rfloor$ of $\sum_\mu K_{\mu',(2^b)}s^*_\mu$ vanishes
+identically --- not one coefficient survives, for any $b$ --- even though every outer
+coefficient in the sum is positive and every individual summand contributes to those
+layers.}
+\end{quote}
+
+Quantitatively: the number of monomials of weight exactly $w$ is
+$\#\{(x_1,x_2,x_3)\in\bbZ_{\ge0}^3:x_1+x_2+2x_3=w\}=\lfloor (w+2)^2/4\rfloor$, so the number
+of coefficients forced to vanish is $\sum_{w=b+1}^{\lfloor3b/2\rfloor}\lfloor(w+2)^2/4\rfloor
+\sim\frac{19}{96}b^3$, against $\sim\frac1{12}b^3$ coefficients that survive. Asymptotically
+more than twice as many coefficients are annihilated as are kept:
+
+\begin{center}\small
+\begin{tabular}{rrrr}
+\toprule
+$b$ & layers killed & coefficients annihilated & coefficients surviving\\
+\midrule
+$2$  & $3$        & $6$    & $7$\\
+$4$  & $5$--$6$   & $28$   & $22$\\
+$6$  & $7$--$9$   & $75$   & $50$\\
+$10$ & $11$--$15$ & $283$  & $161$\\
+$20$ & $21$--$30$ & $1910$ & $946$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{example}[The smallest instance, in full]\label{ex:cancel}
+$b=2$, where $\Psi_2=s^*_{(2,2,0)}+s^*_{(2,1,1)}$ (Example~\ref{ex:b2}). In the $E$-basis:
+\begin{align*}
+ s^*_{(2,2,0)}&=\underbrace{-E_1E_3}_{\wt=3}
+   +\underbrace{\big(E_2^2-3E_1E_2+2E_1^2+3E_3\big)}_{\wt=2}
+   +\underbrace{(5E_2-6E_1)}_{\wt=1}+\underbrace{4}_{\wt=0},\\
+ s^*_{(2,1,1)}&=\underbrace{+E_1E_3}_{\wt=3}\ \underbrace{-6E_3}_{\wt=2}.
+\end{align*}
+Both summands have weight $3>b=2$. Their weight-$3$ parts are negatives of each other and
+cancel exactly, and the weight-$2$ parts add to
+$E_2^2-3E_1E_2+2E_1^2-3E_3=\mathrm{tops}[2]$. This is the whole phenomenon in miniature: not
+a cancellation of like terms with opposite outer signs, but a conspiracy between the
+top-weight symbols of two structurally different shifted Schur polynomials.
+\end{example}
+
+\subsection{Why the bound is the interesting part}
+
+Three reasons.
+
+\emph{(a) It is a rigidity statement, and rigidity statements are the ones that are hard to
+see.} Nothing in the definition of $s^*_\mu$ suggests that a $K$-weighted sum of them should
+lose $\lfloor b/2\rfloor$ weight layers. The individual summands do not lose them; the
+bound is a property of the particular positive combination determined by $e_2^b$.
+
+\emph{(b) It is exactly the statement needed downstream.} Under the specialisation
+$(u_1,u_2,u_3)\mapsto(t,y,c)$ with $y+c=s$, $yc=t$ described in the introduction, weight
+becomes an upper bound for $t$-degree; hence Theorem~\ref{thm:weight} yields
+$\deg_t\Psi(e_2^b)\big|_{\mathrm{spec}}\le b$, a bound that had previously been verified
+only numerically for $b\le10$.
+
+\emph{(c) It upgrades from one parameter to three.} The single-parameter family $e_2^b$
+controls all $e$-monomials, because $\Psi$ interacts simply with $e_1$ and with $e_3$:
+
+\begin{lemma}\label{lem:shifts}
+For symmetric $g$ homogeneous of $u$-degree $d$, and $a,c\ge0$:
+\[
+ \Psi(e_1^ag)=\ffal{E_1-d-3}{a}\,\Psi(g),\qquad
+ \Psi(g\,e_3^c)=\Psi(g)\big|_{u\mapsto u-c}\cdot\Psi(e_3^c),\qquad
+ \Psi(e_3^c)=\prod_{j=0}^{c-1}\big(E_3-jE_2+j^2E_1-j^3\big).
+\]
+\end{lemma}
+
+\begin{proof}
+The first is Lemma~\ref{lem:e1shift} iterated. For the second and third, $e_3^c$ is the
+monomial $u^{(c,c,c)}$ and $\ffal{u_i}{c+a}=\ffal{u_i}{c}\ffal{u_i-c}{a}$, so
+$T(e_3^ch)=\big(\prod_i\ffal{u_i}{c}\big)\cdot\big(T(h)\big|_{u\mapsto u-c}\big)$; take
+$h=gV$ and use $V|_{u\mapsto u-c}=V$. Finally
+$\prod_i\ffal{u_i}{c}=\prod_{j=0}^{c-1}\prod_i(u_i-j)=\prod_{j=0}^{c-1}
+(E_3-jE_2+j^2E_1-j^3)$.
+\end{proof}
+
+\begin{corollary}\label{cor:monomial}
+For all $a_1,a_2,a_3\ge0$,
+$\;\wt\big(\Psi(e_1^{a_1}e_2^{a_2}e_3^{a_3})\big)\le a_1+a_2+2a_3
+=\wt(E_1^{a_1}E_2^{a_2}E_3^{a_3})$.
+\end{corollary}
+
+\begin{proof}
+The substitution $u\mapsto u-c$ preserves weight, since by \eqref{eq:sigma} (with $1$
+replaced by $c$) it sends each $E_i$ to a polynomial of weight $\wt(E_i)$. By
+Lemma~\ref{lem:shifts},
+\[
+ \Psi(e_1^{a_1}e_2^{a_2}e_3^{a_3})
+ =\ffal{E_1-3a_3-2a_2-3}{a_1}\cdot\big(\Psi_{a_2}\big|_{u\mapsto u-a_3}\big)
+   \cdot\Psi(e_3^{a_3}),
+\]
+whose three factors have weight $\le a_1$, $\le a_2$ (Theorem~\ref{thm:weight}) and
+$=2a_3$ respectively.
+\end{proof}
+
+So the whole three-parameter statement --- that $\Psi$ does not increase $(1,1,2)$-weight on
+$e$-monomials --- reduces to the single family treated here, and is now a theorem.
+
+\section{What this closes, and what remains open}\label{sec:closes}
+
+\subsection{Closed}
+
+\begin{itemize}
+\item \textbf{The closed form} (Theorem~\ref{thm:main}) and its ODE
+(Corollary~\ref{cor:ode}).
+\item \textbf{The weight bound} $\wt(\Psi(e_2^b))\le b$ for all $b$
+(Theorem~\ref{thm:weight}), previously known only for $b\le10$ by computation, and its
+three-parameter consequence (Corollary~\ref{cor:monomial}).
+\item \textbf{The complete structure of the top-weight component.} The factorisation
+$F=A\cdot B$ makes every coefficient of $\mathrm{tops}[b]$ explicit through
+\eqref{eq:coeff}, and the two factors carry aligned signs. This yields, as separately
+proved theorems that we state here without proof: the support of $\mathrm{tops}[b]$ is
+\emph{all} of $\{(x_1,x_2,x_3):x_1+x_2+2x_3=b\}$, of size $\lfloor(b+2)^2/4\rfloor$ (no
+coefficient ever vanishes); and every coefficient has sign $(-1)^{x_1+x_3}$. The sign rule
+in fact holds for all of $\Psi_b$, not just its top-weight part, by a separate argument that
+conjugates the recursion \eqref{eq:fullrec} by the involution $E_1\mapsto-E_1$,
+$E_2\mapsto E_2$, $E_3\mapsto-E_3$ and proves nonnegativity of the conjugated family.
+\item \textbf{The $E_3$-free face.} Setting $E_3=0$ in the conjugated form of
+\eqref{eq:fullrec} kills every correction term, giving the product formula
+$\Psi_b|_{E_3=0}=\pm\prod_{k=1}^{b}(E_2+kE_1+k^2)$ up to the sign involution --- an
+identity that simultaneously recovers all previously known ``corner'' formulas, e.g.
+$[E_1^b]\Psi_b=(-1)^bb!$ and $[E_2^b]\Psi_b=1$.
+\end{itemize}
+
+\subsection{Open}
+
+\begin{itemize}
+\item \textbf{Other $e_r$.} Nothing here is specific to shifted Schur functions in an
+essential way, but a great deal is specific to $r=2$: the argument needs the analogue of
+Lemma~\ref{lem:K5}, i.e.\ the collapse of $\sum_{\alpha\ne\beta}D_\alpha(e_r)D_\beta(V)$ to
+a polynomial multiple of $V$. Whether that happens for $r\ne2$ is not known.
+\item \textbf{More variables.} Everything above is written for three variables, where
+$\Lam=\bbQ[E_1,E_2,E_3]$ and $V$ has degree $3$. The shape of the argument should survive,
+but the weight $(1,1,2)$ and the constants $3,\,2b+3,\,(b+1)(b+2)$ are all specific to
+$n=3$.
+\item \textbf{A combinatorial model.} The coefficients of $\Psi_b$, after the sign
+involution, are positive integers, so one expects them to count something. On the $E_3$-free
+face the product formula $\prod_k(E_2+kE_1+k^2)$ gives an immediate model (three-colour each
+element of $\{1,\dots,b\}$). Beyond that face no such model is known, and a natural guess
+--- set partitions with singletons weighted by $E_2+kE_1+k^2$ and pairs by an $E_3$-carrying
+weight --- is \emph{refuted}: for $b=3$ it forces a negative pair weight. Finding the right
+structure is open.
+\item \textbf{Non-recursive coefficient formulas below top weight.} Explicit closed forms
+are known for the top-weight component (Theorem~\ref{thm:main}) and for the $E_3$-free face;
+the intermediate slices $[E_3^k]\Psi_b$, $k\ge1$, are currently only given by sequential
+recursions.
+\end{itemize}
+
+\section{Status of every claim}\label{sec:status}
+
+\begin{center}\small
+\begin{tabular}{ll}
+\toprule
+Statement & Status\\
+\midrule
+Lemmas \ref{lem:operator}, \ref{lem:I1}, \ref{lem:TId}, \ref{lem:e3shift},
+ \ref{lem:e1shift} & proved (full proofs above)\\
+Lemmas \ref{lem:K1}, \ref{lem:K5}, \ref{lem:Ab}, \ref{lem:sigmatop},
+ \ref{lem:shifts} & proved (full proofs above)\\
+Proposition~\ref{prop:fullrec} (exact recursion) & proved (sketch above; verified
+ symbolically $b\le6$)\\
+Proposition~\ref{prop:toprec} (top-weight recursion) & proved; verified symbolically
+ $b\le7$\\
+Proposition~\ref{prop:shiftode} (shift equation, uniqueness) & proved\\
+Theorem~\ref{thm:main} ($F=AB$) & proved; verified symbolically $b\le6$\\
+Corollary~\ref{cor:ode} (ODE and 3-term recursion) & proved; verified symbolically $b\le8$\\
+Theorem~\ref{thm:weight} (weight bound) & proved\\
+Corollary~\ref{cor:monomial} (all $e$-monomials) & proved\\
+Example~\ref{ex:e3corner} ($[E_3^{b/2}]=(-3)^{b/2}(b-1)!!$) & proved (from
+ Theorem~\ref{thm:main})\\
+Observation~\ref{obs:dmu} ($\wt(s^*_\mu)=d_\mu$) & \textbf{verified for $b\le5$ only;
+ not proved}\\
+Support/sign statements in \S\ref{sec:closes} & proved elsewhere; quoted, not proved here\\
+Existence of a positive combinatorial model & \textbf{open; one natural guess refuted}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent Two remarks on the sources of this exposition. First, the identity of
+Lemma~\ref{lem:TId} and the collapse of Lemma~\ref{lem:K5} were originally recorded with
+computational verification in place of a complete argument; the proofs given above are
+complete and were checked symbolically. Second, the closed form for $A(T)$ is usually written
+as $(1+E_1T)^{E_2/E_1-1}$, which is not an element of $\bbQ[E_1,E_2,E_3][[T]]$; we have
+replaced that notation by the coefficient definition $A_n=\prod_{r=1}^n(E_2-rE_1)$ and the
+first-order equation $(1+E_1T)A'=(E_2-E_1)A$, which say the same thing without leaving the
+polynomial ring.
+
+\end{document}

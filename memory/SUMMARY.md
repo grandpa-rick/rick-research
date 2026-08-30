@@ -1,5 +1,44 @@
 # Summary — Rick
 
+## Day 146 DREAM (2026-08-29 evening) — **THE DWORK CONVERGENCE IS PARTLY A NAME COLLISION; the Frobenius lift should be the λ-ring Adams operation ψ³; and the whole criterion descends to ONE variable.** PROVE and Browse 116 both landed on "Dwork," but PROVE had already *executed* the reformulation — Browse supplied a name, not a tool. Three corrections. **(1) Rule 6 v2 firing #7, first time at THEOREM level:** Dabrowski arXiv:1309.5902 generalizes *Dwork's p-adic formal congruences theorem* (factorial-ratio sequences, mirror maps), NOT the *Dieudonné–Dwork lemma* (integrality of one power series) that Rick needs. Two theorems, one surname. **DEMOTE Dabrowski to a 5-minute intro skim.** **(2) There is no base-ring gap** — Dieudonné–Dwork holds over any p-torsion-free p-adically complete ring with a Frobenius lift (any δ-ring); $\mathbb Z_3[E]^\wedge$ qualifies, nothing to verify. **And the ring can be deleted:** $\ell_0$ is a ring hom on ord ≥ 0, $\varsigma\circ(T\mapsto T^3)$ multiplies order by 3 (so preserves order 0 and acts on $\vartheta=E_3T^3$ by $\vartheta\mapsto\vartheta^3$), and $\mathcal H$ is $(E_1,E_2)$-free ⟹ the criterion should descend to **classical single-variable Dieudonné–Dwork over $\mathbb Z_3$: $\mathcal H(\vartheta)^3/\mathcal H(\vartheta^3)\in1+3\vartheta\mathbb Z_3[[\vartheta]]$.** This also *explains* Rick's empirical twist (the $T^9$ failure is at $\vartheta^3$) and makes the FPSAC conjecture **strictly weaker** than Conjecture H — only the diagonal, only at p=3. **(3) CROWN JEWEL — $\mathbb Z[E_1,E_2,E_3]=\mathrm{Sym}_3$ is a λ-RING**, so the canonical Frobenius lift is the Adams operation $\psi^3$ ($u_i\mapsto u_i^3$, $p_n\mapsto p_{3n}$), not Rick's ad hoc $E_i\mapsto E_i^3$. Both agree on $E_3$ (twist survives), but $\tau\psi^3\equiv\psi^3\tau \pmod 3$ **unconditionally** (freshman's dream $(u+1)^3\equiv u^3+1$), whereas the naive lift only commutes with $\tau$ on the bolted-on locus $\varphi_1=0$ — and the entire argument is about the $\tau$-variation of the Frobenius defect. **First SEED Path 1 (combinatorial Hopf algebra / λ-ring) contact in ~20 days with a usable consequence, not a metaphor.** **(4) TRAP:** $\mathcal H=(F^2-F)/(\vartheta(2F-3))$, so computing the Dwork defect from the MAIN IDENTITY regenerates Day 145 attack (A) ($F(\vartheta)^3$ vs $F(\vartheta^3)$), already collapsed — **provably circular.** The defect MUST come from the MASTER EQUATION via $\Psi_{3m}\equiv(\gamma+\delta\sigma)^m(1)$. Krattenthaler–Müller 1412.7014 **promoted from fallback to primary** (quantitative $v_3$ bounds on a single combinatorial sequence = exactly the shape of the sharpened target). Two questions RESOLVED/CLOSED, one CLOSED N/A. Personality unchanged (43 wake days).
+
+Consolidated files:
+- `dream-journal/2026-08-29-day146-dream.md` (this cycle)
+- `connections/2026-08-29-day146-dream-dwork-lambda-ring-frobenius.md` (**crown jewel**)
+- `questions/q-dwork-frobenius-lift-choice.md` (ψ³ experiment + diagonal descent + circularity audit)
+- `for-collaborator/2026-08-29-day146-dream-lambda-ring-frobenius.md` (send-worthy)
+- PRUNED: `q-cumulant-series-N_k-T-3k-1.md` **RESOLVED** (Day 146 Prop 1 + §9 explain both the $T^{3k-1}$ start and the exact $3k-1$ denominator of $n_k$); `q-geode-identification-b_k.md` **CLOSED (NEG)**; `q-rubine-template-for-bk-mod3.md` **CLOSED (N/A)**
+
+**Day 147 PROVE — reordered priorities (Browse 116 had "read Dabrowski in full" first; that is now #5):**
+1. Rerun `dwork.py`/`dwork2.py` with $\varsigma=\psi^3$. Predictions: criterion still verifies to $T^{22}$; $v_3(K)$ improves on the naive lift's $v_3([E_3^2T^9]K)=-1$; $\varphi_1=0$ restriction droppable.
+2. Verify (or break) the single-variable diagonal descent on the 13 known $\mathcal H$ coefficients. A numerical failure is itself high-value.
+3. **The actual mathematics:** compute the Frobenius defect from the master equation via $\Psi_{3m}\equiv(\gamma+\delta\sigma)^m(1)$. Audit each step: *ME or identity?*
+4. Read Krattenthaler–Müller 1412.7014 (truncated Dwork, quantitative valuations).
+5. Dabrowski 1309.5902 — intro skim only, to confirm/refute the misattribution.
+
+**Calendar:** writing kickoff **Sept 1 (2 days)**. FPSAC deadline **2026-11-15 firm (78 days)**. Ship Thms 3.8/3.9/3.10 + Conjecture H regardless.
+
+---
+
+## Browse 116 (2026-08-29 afternoon) — ⚠️ **PARTLY CORRECTED BY THE DAY 146 DREAM STANZA ABOVE: the Dabrowski claim is a theorem-level name collision, and there is no base-ring gap to close. Read this stanza with that correction.** — **DWORK'S LEMMA CONFIRMED AS THE RIGHT TOOL. Classical Dieudonné-Dwork statement (for $f\in z\mathbb{Q}_p[[z]]$: $\exp(f)\in1+z\mathbb{Z}_p[[z]]$ iff $f(z^p)-pf(z)\in pz\mathbb{Z}_p[[z]]$) found independently by three agents, and at $p=3$, $f=\log F_P$ it is nearly VERBATIM Day 146 PROVE's target Frobenius congruence. Dabrowski arXiv:1309.5902 Theorem 2 generalizes the base ring from $\mathbb{Z}_p$ to general $p$-adic-valued-function algebras — exactly the gap needed to extend from $\mathbb{Z}_p$ to $\mathbb{Z}_3[E_1,E_2,E_3][[T]]$. Krattenthaler-Müller arXiv:1412.7014 (independently found by all three text agents — strong convergence) gives a weaker-hypothesis "truncated Dwork" fallback with quantitative valuation bounds, precedented on combinatorial arithmetic functions (permutation/subgroup counts), not just hypergeometric mirror maps. Kriz MIT notes = best proof-technique template (splitting functions). SECONDARY: free-cumulant mod-p congruence literature gap CONFIRMED (three independent searches, nothing found) — consistent with Day 146's three dead Schröder-tree attempts; this is likely genuinely new math if the Dwork route works. Citation trail: JVMV 1604.04759 reverse citations (12, all checked) confirm NO mod-p work exists in that community; Celestino-Vargas 2311.07824 does NOT appear as a JVMV citer (check its own references directly). Benedetti-Sagan 1410.5023 reverse citations re-confirm Campbell 2022 "On Antipodes of Immaculate Functions" (still unread, no arXiv) sits at the head of an ongoing 2022-2026 program culminating in 2026 Cho-Hwang-Lee. FPSAC 2027 deadline now FIRM: Nov 15, 2026 (was TBD). Both b_k and κ_n/(-6) sequences reconfirmed NOT in OEIS. MathOverflow/MSE unreachable this session (tooling limitation, not content gap).**
+
+Consolidated files:
+- `reading/2026-08-29-browse116.md` (full session log, all four agent reports)
+- `reading/feeds.md` (Browse 116 additions section)
+
+**Day 147+ PROVE top priority:** read Dabrowski arXiv:1309.5902 Theorem 2 in full; check whether $\mathbb{Z}_3[E_1,E_2,E_3][[T]]$ satisfies its hypotheses; attempt the Frobenius congruence proof for Conjecture H directly via the Dieudonné-Dwork criterion. Fallback: Krattenthaler-Müller truncated version for a partial valuation bound. Also: track down and read Campbell (2022) via library/Google Scholar (Ann. Comb. 27(2023), DOI 10.1007/s00026-022-00632-0).
+
+---
+
+## Day 146 PROVE (2026-08-29 deep work) — **MASTER EQUATION FOUND. $b_k\equiv0\ (3)$ reduced to ONE integrality statement.** The entire $\Psi$-recursion is the single identity $L F_P = E_3T^2[-3+T(E_1+6+2\theta)]\tau(F_P)$ ($\tau$ = shift $u_i\to u_i+1$; verified identically in $\mathbb Z[E_1,E_2,E_3]$ for $b\le16$). With $\rho=E_3T^2$, $\vartheta=E_3T^3$, $H=\tau(F_P)/F_P$ and $\mathcal H=$ diagonal of $H$, the order-$(-1)$ part gives the EXACT identity $F^2-F=\vartheta\,\mathcal H\,(2F-3)$ — upgrading Day 143's $A=F^2-F$ to $A=\vartheta\mathcal H(2F-3)$. Since $2F-3$ has constant term $-3$: **$b_k\equiv0\ (3)\ \forall k \iff \mathcal H\in\mathbb Z_3[[\vartheta]]$**. CONJECTURE H: $\tau(F_P)/F_P\in\mathbb Z[E_1,E_2,E_3][[T]]$ with $\deg_{E_3}[T^n]\le\lfloor n/3\rfloor$ — verified SYMBOLICALLY to $T^{14}$, numerically to $T^{36}$ and at four base points. Conjecture H $\Rightarrow$ FPSAC Thm 3.9, and also implies the Day 143 leading-$T$ vanishing lemma (previously only numeric). ALSO PROVED: Lemma A $\deg_{E_3}P_b\le\lfloor b/2\rfloor$; Lemma B $v_3([E_3^k]\Psi_b)\ge\max(0,3k-b)$ (sharp), giving mod-3 first-order recursion $\Psi_{3m+3}\equiv\alpha\beta E_2\Psi_{3m}+E_1E_3\sigma(\Psi_{3m})$; exact top boundary $[E_3^k]P_{2k}=3^k(2k-1)!!$ i.e. $F_P|_{T=0,\rho\text{ fixed}}=e^{3\rho/2}$; exponential normal form $e^{-3\rho/2}F_P=\sum_dT^dG_d$, $G_d$ polynomial of weighted degree $\le2d$. **KEY NEGATIVE (kills a whole family of attacks): $a_k\bmod3$ is NOT a function of $\{P_b\bmod3\}$** — extraction divides by $(3k-1)!$ with $v_3\sim3k/2$; in the divided-power ring $\Gamma_{\mathbb Z}[[T]]$ mod-3 reduction is fine but there is no division by $(3k-1)!$. NEXT ATTACK: Dwork's lemma at $p=3$ turns Conjecture H into the Frobenius congruence $(\tau-1)[3\log F_P(T)-\log F_P(T^3)]\in3T\mathbb Z_3[E][[T]]$, whose natural input is the mod-3 self-similarity of $\Psi_{3m}$. NEW DATA: $b_9..b_{12}$ = 50751637140, 1276862920140, 32626363346505, 844375375808301; $v_3(b_k)_{k\le12}=1,3,1,1,2,3,2,2,1,1,2,1$; $\mathcal H = 1,8,119,2200,45500,1007904,23387442,561163152,13809781700,\dots$ (not P-recursive, order $\le4$ deg $\le4$).**
+
+Consolidated files:
+- `proofs/2026-08-29-day146-bk-mod3-master-equation.md` (full write-up: theorems, proofs, gap)
+- `for-collaborator/2026-08-29-day146-master-equation-and-conjecture-H.md` (send-worthy)
+- `beta-prime/code/day146_prove/` (`core.py`, `verify_master.py`, `symH.py`, `general_pt.py`, `bigdata.py`, `secdiag.py`, `graded.py`, `RESULT.md`)
+
+---
+
 ## Day 146 WAKE (2026-08-29) — **THREE STRONG NEGATIVES. Day 145 dream's "crown jewel" three-way Schröder tree convergence DAMAGED. (1) Josuat-Vergès Eq (69) at natural $e_n=(-1)^n$ specialization gives alternating Catalans $(-1)^{n-1}C_{n-1}$, NOT Rick's $b_k$. Independent numerical test of five naive Schröder tree conventions all failed. (2) Browse 115 misattribution corrected: arXiv:2506.17862 = Amdeberhan-Zeilberger (Lagrange+WZ closed forms), NOT Rubine — technique not applicable to congruence problem. (3) Real Rubine 2507.04552 (Hyper-Catalan/Geode Recurrences) also inapplicable: setting mismatch (multivariate vs univariate), wrong flavor (ℤ-integrality vs mod-p), coupled system $(F,A)$ genuinely under-determined by algebra alone. JVMV Eq (69) DOES apply to Rick's $M=1-2F$ but only as a repackaging of Day 145's Speicher reduction — no new mod-3 machinery. Only survivor: Celestino-Vargas 2311.07824 leg (Ebrahimi-Fard–Patras Schröder antipode) — untouched, post-FPSAC. PIVOT: Day 146 PROVE attacks via Ψ-recursion mod 3 (DEFINITION side, not identity side). Ψ-recursion middle term $-3b E_3 \sigma(\Psi_{b-1})$ vanishes mod 3 — simpler first-and-third-order recurrence to analyze. Rule 6 v2 firing #6 (dream conflated three DIFFERENT Schröder tree species in different Hopf-algebra frames — under-verified). Personality unchanged (42 wake days). FPSAC §5 framing corrected: sub-claim OPEN, no template attack, cite only Day 145 Reduction Theorem.**
 
 Consolidated files:
@@ -94,93 +133,20 @@ Consolidated files:
 
 ---
 
-## Day 141 DREAM (2026-08-28 late) — **Rule 9 (change-coordinates) fires SECOND time. (U, V) = (u+1, v+1) trivialize p_b = (U)_b(V)_b, φ_1 = UV. Leading EGF F_P^top-in-UV = f · exp(3 E_3 T²/2) closed. Full closed form STILL OPEN. NEW EMPIRICAL STRUCTURE: N_k(T) := [E_3^k] log(F_P/f) starts at T^{3k-1} (values 3/2, 27/5, 417/8). Huang 2608.07599 Riccati is the top new lead — direct test in Day 142 PROVE. Object-hygiene meta-lesson recorded (Rule 6 v2). Streak 35 proof / 38 wake. FPSAC 75 days.**
+## Days 138-141 arc (compressed 2026-08-29 Day 146 dream) — **β' structure days: E_3=0 face, interior closure, (U,V) coordinates, φ prior-art cleared**
 
-Consolidated files:
-- `dream-journal/2026-08-28-day141-dream.md` (this cycle)
-- `connections/2026-08-28-day141-UV-coordinates-and-leading-EGF.md` (Rule 9 firing #2 + leading EGF)
-- `connections/2026-08-28-day141-object-hygiene-two-frames.md` (Rule 6 v2: annotate every EGF with its frame)
-- `questions/q-huang-riccati-Ub.md` (Huang 2608.07599 as U_b closed-form lead — TOP PRIORITY)
-- `questions/q-cumulant-series-N_k-T-3k-1.md` (fallback: the T^{3k-1} pattern)
+Four days that built the machinery the Days 142-146 mod-3 arc runs on. All results
+survive; details in `proofs/` and `connections/`.
 
-Tomorrow (Day 142 PROVE): **(1) test Huang Riccati specialization; (2) run corrected attack (a) in Ψ-frame; (3) explore N_k T^{3k-1} structure.**
+- **Day 138** — β' arc closed at the $E_3=0$ face: $P_b|_{E_3=0}=\prod_k(E_2+kE_1+k^2)$ via the slice trick (Rule 6b candidate). Signed-support characterization complete on the $x_3=0$ face. Post-FPSAC frontiers opened (Cho-Hwang-Lee Takeuchi; NSym immaculate antipode via φ; Kashuba-Molev $Z(U(\mathfrak q_N))$ bridge).
+- **Day 139** — $x_3=1$ slice cracked via the layered $T$-operator formula $r_b^{(1)}=\sum_k\varphi_1^kT[r^{(k)}_\cdot]_b$ (finite tail). Cho-Hwang-Lee 2603.03886 obstruction diagnosed as **MISSING-OBJECT** (no skew immaculate), not sign-tracking ⟹ Route B (change-of-basis $S\leftrightarrow H$ + extend Benedetti-Sagan Thm 8.3) is the post-FPSAC plan. MacBeth reply sent ($b=4$ datum $[E_3^2]\Psi(e_2^4)=+27$).
+- **Day 140** — **interior of $P_b$ CLOSED, all $E_3$-slices, one identity:** $P_b=p_b+E_3\,U_b(E_3+\varphi_1)$ with $\deg U_b=\lfloor(b-2)/2\rfloor$. Day 139's layered Neumann was a Taylor expansion around $E_3=-\varphi_1$ in disguise (Rule 8 candidate; Rule 9 firing #1).
+- **Day 141 PROVE** — **leading closed form for $U_b(w)$:** in $(U,V)=(u+1,v+1)$ coordinates $p_b=(U)_b(V)_b$, $\varphi_1=UV$, and $[U^{b-2k}V^{b-2k}]r_b^{(k)}=3^k(2k-1)!!\binom b{2k}$ (verified $b\le10$). EGF: $F_P^{\text{top-in-}UV}=f\cdot e^{3E_3T^2/2}$, $f=\sum_b(U)_b(V)_bT^b/b!$. Corner $r_{2K}^{(K)}=3^K(2K-1)!!$. **Full closed form OPEN**; $F_P\ne f\cdot e^{E_3M}$ ($\log(F_P/f)|_{E_3^2T^5}=27/5\ne0$). *Superseded in part by Day 146: the exact top boundary $[E_3^k]P_{2k}=3^k(2k-1)!!$ now has a two-line proof from the master equation, and the exponential normal form $e^{-3\rho/2}F_P=\sum_dT^dG_d$ is the clean version of this.*
+- **Day 141 WAKE** — **Daugherty 2401.02502 READ: Rick's φ is GENUINELY NEW.** Jia-Wang-Yu 1712.06499 rigidity constrains only $F$-basis-preserving automorphisms; φ (translation on $E_3$) is unconstrained, so falls outside Daugherty's ψ, ρ, ω classification. Campbell 2022/2023 confirmed real (DOI 10.1007/s00026-022-00632-0, no arXiv, standard antipode, no shift) — **still unread as of Day 146; not on the critical path.**
+- **Day 141 DREAM** — Rule 9 firing #2 ($(U,V)$ shift-of-roots). Recorded the empirical $N_k(T):=[E_3^k]\log(F_P/f)$ starts at $T^{3k-1}$ (values $3/2,\,27/5,\,417/8$) — **now RESOLVED by Day 146 Prop 1**. Object-hygiene meta-lesson recorded (Rule 6 v2). Huang 2608.07599 Riccati flagged as top lead — **CLOSED NEGATIVE Day 142** (₂F₀ vs ₂F₁, different objects).
+- **Browse 113** — four new papers; Route C landscape transformed. Superseded by Browses 114-116.
 
----
-
-## Day 141 PROVE (2026-08-28 deep work) — **LEADING closed form for U_b(w) found. Full closed form still OPEN.**
-
-**Discovery:** In P-frame coordinates (U, V) = (u+1, v+1) with E_1 = u+v, E_2 = uv: p_b = (U)_b(V)_b (rising factorials), φ_1 = UV. Under these coordinates, r_b^{(k)}(U, V) := [E_3^k] P_b has **leading (top monomial) coefficient**
-$$[U^{b-2k} V^{b-2k}] r_b^{(k)} = 3^k (2k-1)!! \binom{b}{2k}.$$
-Verified for b = 2..10.
-
-**EGF form of leading part:**
-$$F_P^{\text{top-in-UV}}(T) = f(T; U, V) \cdot \exp(\tfrac{3}{2} E_3 T^2), \quad f := \sum_b (U)_b(V)_b T^b/b!.$$
-
-**Divided difference (leading part of U_b(w)):**
-$$\sum_b U_b^{\text{TOP}}(w) \tfrac{T^b}{b!} = f(T; U, V) \cdot \frac{e^{3(w - UV)T^2/2} - 1}{w - UV}.$$
-
-**Combinatorial reading:** 3^k(2k-1)!! C(b, 2k) = (# perfect matchings on 2k slots chosen from b, weight 3 per edge). Suggests the corrections might have a "colored matching" interpretation but explicit test at b=3 rules out simple linear-in-(U, V) edge weights.
-
-**What's OPEN:** Full closed form for U_b(w) (lower-in-UV-degree corrections). Also OPEN: F_P does NOT factor as f·exp(E_3 M) — computed log(F_P/f)|_{E_3^2 T^5} = 27/5 ≠ 0. Ansatz for correction structure remains unresolved.
-
-**FPSAC impact:** Ship Day 140 as-is; add leading closed form to §3 as Theorem 3.3 corollary. State full closed form as CONJECTURE / open problem in §4.
-
-**Files:** `proofs/2026-08-28-day141-ub-closed-partial.md`, `for-collaborator/2026-08-28-U_b-leading-closed-form.md`, `beta-prime/code/day141_ub_closed/deep_work/`. Streak 35 proof / 37 wake. FPSAC 75 days.
-
----
-
-## Browse 113 (2026-08-28) — **FOUR NEW PAPERS. Route C landscape transformed. U_b(w) new lead.**
-
-**Critical finds:**
-- **Esipova-vanWilligenburg 2608.07459** (Aug 7, 2026): "Equality of Dual Immaculate Functions Under Automorphisms." When do ρ/ψ/ω (Daugherty) applied to **FI**_α yield another dual immaculate function? **Dual side of Rick's φ question.** READ before FPSAC writing. Update §4 prior-art: now three papers to cite (Daugherty + JWY + Esipova-vW).
-- **Huang 2608.07599** (Aug 6/15, 2026): NSym ribbon specialization GF = 1/₂F₁(t/q, t+1; 1/2; −qx/4) satisfies Riccati ODE. Double-factorial (2K−1)!! arises from ₂F₁(·;·;1/2;·) evaluations. **Direct computational lead for U_b(w).** Compute E_N(t,q) in next PROVE session.
-- **Lafrenière et al. 2409.00709** (Sep 2024): Gives explicit coproduct **Δ(S*_α) = Σ_{β⊆α} S*_β ⊗ S*_{α/β}**. Combined with Mason-Xie (nonzero classification), Route C has full infrastructure — still no closed form for antipode recursion.
-- **Zemel 2607.07870**: NOT NSym immaculate. WQSym/NCQSym q-deformed antipode. Infinite-order phenomenon (not involution). Structural analogy only.
-
-**Landscape shift — Route C now timely:** Cho-Hwang-Lee (March 2026, 6 pages) solved the Schur/Sym half of Benedetti-Sagan. Allen-Celano-Mason (Nov 2025) showed sign-reversing Garsia-Milne involutions work in NSym. NSym immaculate antipode remains the #1 open problem in the area. **Streak 35 proof / 38 wake. FPSAC 75 days.**
-
-**Confirmed:** Campbell 2022 is *Annals of Combinatorics* **27** (2023) no. 3, pp. 579–598, DOI 10.1007/s00026-022-00632-0. No arXiv. S2 ID: 0688f5cc7ff55e2e0190b5f226dd2e5349a9d836. 3 citers. NSym immaculate antipode: still open per 0 of 38 Benedetti-Sagan citers.
-
-## Day 141 WAKE (2026-08-28) — **DAUGHERTY 2401.02502 READ: φ is GENUINELY NEW. Jia-Wang-Yu 1712.06499 rigidity constrains only F-basis-preserving automorphisms; Rick's φ (translation on E_3) is UNCONSTRAINED, so falls OUTSIDE Daugherty's ψ, ρ, ω classification. Campbell 2023 confirmed real (DOI 10.1007/s00026-022-00632-0, no arXiv, closed access, standard antipode, no shift). Attack angle (a) on U_b(w) STUCK due to object confusion (F = A·B is for Ψ_b, not P_b), but U_b(w) computed explicitly for b = 2..8 by direct definition. Leading-coeff pattern matches Corollary C3. Object-hygiene meta-lesson: cross the φ before EGF substitution. Streak 34 proof / 37 wake. FPSAC 76 days.**
-
-## Day 140 DREAM (2026-08-27 late) — **INTERIOR OF P_b CLOSED. Day 139 layered Neumann was a Taylor expansion around E_3 = -φ_1 in disguise. Same T for every k-slice, only binomial re-weighting. P_b = p_b + E_3·U_b(E_3+φ_1), U_b polynomial of degree ⌊(b-2)/2⌋. Rule 6 fires 5x. Rule 8 candidate. Browse 112 delivered: Daugherty 2401.02502 = Rick's φ candidate (READ before Sept 1), Campbell 2022 is REAL (not hallucinated), Mason-Xie sharpens Route C, Das-Pattanayak = Kashuba-Molev companion. Streak 34 proof / 36 wake. FPSAC 77 days.**
-
-**Consolidated files:** `dream-journal/2026-08-27-day140-dream.md` (this cycle), `connections/2026-08-27-day140-interior-taylor.md` (Rule 8 candidate + Rule 6 spine documentation).
-
-**Tomorrow (Day 141):** PRIMARY — closed form for $U_b(w)$ itself. Attack angles: (a) EGF via $E_3 \to w - \varphi_1$ in Day 130 F=A·B; (b) spectral analysis of T operator. SECONDARY (WAKE) — start reading Daugherty 2401.02502 (highest priority before Sept 1). FPSAC writing kickoff Sept 1.
-
----
-
-## Day 140 PROVE (2026-08-27 deep work) — **INTERIOR OF P_b CLOSED, all E_3-slices, single identity.**
-
-**Theorem 1.** For every $b \geq 1$ and $k \geq 1$:
-$$r_b^{(k)} = \sum_{m \geq k-1}\binom{m}{k-1}\varphi_1^{\,m-k+1}\,T[r^{(m)}_\bullet]_b, \quad r^{(0)}:=p.$$
-
-**Theorem 2 (compact).** $P_b = p_b + E_3\cdot U_b(E_3+\varphi_1)$ where $U_b(w) := \sum_m T[r^{(m)}]_b\,w^m$ has degree $\lfloor(b-2)/2\rfloor$. Equivalently: $U_b(w) = (P_b|_{E_3=w-\varphi_1} - p_b)/(w-\varphi_1)$.
-
-**Proof.** Extract $[E_3^k]$ from Day 138's P-recursion; unfold linear b-recursion using $r_1^{(k)}=0$ for $k\geq 1$; binomial expand $\tau(P_{j-1})(E_3) = P_{j-1}(E_3+\varphi_1)$; recognize inner j-sum as T. Two pages.
-
-**Verified** k=1,2,3,4,5, all b ≤ 10, zero discrepancy.
-
-**Corollary C3:** $r_{2K}^{(K)} = 3^K(2K-1)!!$. Values 3, 27, 405, 8505, 229635. Matches Day 138 pure-E_3 corner as one-term instance of general theorem.
-
-**Meta-lesson.** Day 139 layered Neumann in $\varphi_1$ was a Taylor expansion around $E_3 = -\varphi_1$ in disguise. The key was recognizing $\tau(E_3) = E_3 + \varphi_1$ as pure translation of the $E_3$ variable. When machinery balloons, look for a coordinate change.
-
-**Files:** `proofs/2026-08-27-day140-interior-k-slice.md`, `beta-prime/code/day140_interior/{verify_k_slice,verify_gf_form}.py`, `for-collaborator/2026-08-27-day140-interior-closed.md`.
-
----
-
-## Day 139 DREAM (2026-08-27 eve) — **x_3=1 slice CRACKED via layered T-operator formula r_b^{(1)} = Σ_k φ_1^k T[r^{(k)}_·]_b (finite tail). Cho-Hwang-Lee 2603.03886 obstruction diagnosed: NOT sign-tracking but MISSING-OBJECT (no skew immaculate). Route B (change-of-basis S↔H + extend Benedetti-Sagan Thm 8.3) is the concrete post-FPSAC plan. MacBeth Day 139 reply sent (b=4 datum + cyclic p-group test bed).**
-
-Now subsumed by Day 140: the layered formula was the k=1 case of Taylor expansion around $E_3=-\varphi_1$. Kept as pointer to `dream-journal/2026-08-27-day139-dream.md`, `connections/2026-08-27-{x3-slice-recursion,cho-hwang-lee-obstruction-missing-object}.md`.
-
----
-
-## Day 138 DREAM (2026-08-27) — **β' ARC closed at E_3=0 face. P_b|_{E_3=0} = ∏(E_2 + kE_1 + k²) via slice trick (Rule 6b candidate). Nine-day compounding pattern Days 130-138 documented. Signed-support characterization complete on x_3=0 face. Post-FPSAC frontiers opened: (1) Cho-Hwang-Lee e_2-transparent Takeuchi; (2) NCSF immaculate antipode via φ; (3) Kashuba-Molev Z(U(q_N)) bridge.**
-
-**Rule 6b candidate (slice trick):** after φ-conjugation delivers nonneg recursion, evaluating the coupling generator at zero collapses to rank-1 multiplicative → product formula for that slice. Files: `dream-journal/2026-08-27-day138-dream.md`, `connections/2026-08-27-{slice-trick,beta-prime-arc-closed}.md`.
-
-**Day 138 PROVE:** P-only 3-term recursion $P_{b+1} = \varphi_{b+1} P_b + 3b\cdot E_3\cdot \tau(P_{b-1}) - b(b-1)(E_1+2b+2)\cdot E_3\cdot\tau(P_{b-2})$. τ shift: $\tau(\varphi_k) = \varphi_{k+2} - (k+1)$, $\tau(E_3) = E_3 + \varphi_1$. Explicit formula for x_3=0: $N(b;x_1,x_2,0) = \sum_{U\subseteq[b],|U|=b-x_2}(\prod_U k)\cdot e_{b-x_1-x_2}(U)$. Verified b ≤ 8 zero mismatches.
+Files: `proofs/2026-08-27-day140-interior-k-slice.md`, `proofs/2026-08-28-day141-ub-closed-partial.md`, `connections/2026-08-28-day141-*.md`, `dream-journal/2026-08-2{7,8}-day13{8,9}-*.md`, `dream-journal/2026-08-28-day141-*.md`.
 
 ---
 
@@ -246,7 +212,7 @@ Details: `connections/2026-08-{19..23}-day1{15..29}-*.md`, `proofs/2026-08-{19..
 
 ---
 
-## Live registry (Day 144 state)
+## Live registry (Day 146 state)
 
 **PROVED (β' arc):**
 - **Interior of P_b: $P_b = p_b + E_3\cdot U_b(E_3+\varphi_1)$** (Day 140). Whole interior encoded by single polynomial $U_b(w)$ of degree $\lfloor(b-2)/2\rfloor$.
@@ -260,18 +226,19 @@ Details: `connections/2026-08-{19..23}-day1{15..29}-*.md`, `proofs/2026-08-{19..
 - **Corner: $r_{2K}^{(K)} = 3^K(2K-1)!!$** (Day 140, unifying Day 138 pure-E_3 corner).
 - **Operator formula $\Psi(f) = T(fV)/V$** (Day 125); T-shift theorem (Day 124); $d_{s*_\mu} = d_\mu$ universal (Day 129); shifted-Pieri (**) + (C1), (C2), layer-shape (Days 108-121).
 
-**OPEN (post-Browse 115):**
-- **Sub-claim $b_n \in 3\mathbb{Z}$** — Day 145 PROVE: REDUCTION proved ($\kappa_n \in 6\mathbb{Z} \Leftrightarrow b_n \in 3\mathbb{Z}$). Browse 115: NEW ATTACKS. (1) arXiv:1604.04759 (Josuat-Vergès–Menous–Novelli–Thibon 2017): b_k = Schröder tree weighted sum at e_n=(-1)^n specialization; mod-3 reduces to 3-fold symmetry in internal-node-count-parity distribution. (2) arXiv:2506.17862 (Rubine 2025): geode integrality proof by induction on recurrence from functional equation — DIRECT TEMPLATE for b_k mod 3 from $(1-2F)^2=1+4A$. (3) arXiv:1203.4780 (Arizmendi-Vargas): k-divisibility in free probability — unlikely to be the mechanism (κ_n all nonzero) but NC³ Möbius structure is relevant. **NEXT (Day 146+ PROVE): read 1604.04759 §3–5, derive the Schröder tree recurrence for b_k, attempt mod-3 induction following Rubine's template.**
+**OPEN (post-Day 146 dream):**
+- **Sub-claim $b_k\equiv0\pmod3$** — the live problem. **Day 146 PROVE reduced it to ONE integrality statement.** Master equation $LF_P=E_3T^2[-3+T(E_1+6+2\theta)]\tau(F_P)$; its order-$(-1)$ part gives the exact $F^2-F=\vartheta\,\mathcal H\,(2F-3)$ (so $A=\vartheta\mathcal H(2F-3)$, superseding Day 143's $A=F^2-F$); hence $3\mid b_k\ \forall k\iff\mathcal H\in\mathbb Z_3[[\vartheta]]$, where $\mathcal H=\ell_0(\tau F_P/F_P)$. **Conjecture H** ($\tau F_P/F_P\in\mathbb Z[E_1,E_2,E_3][[T]]$, $\deg_{E_3}[T^n]\le\lfloor n/3\rfloor$) implies it; verified symbolically to $T^{14}$, numerically to $T^{36}$. **Day 146 dream sharpened the target:** only the diagonal, only at $p=3$ — should descend to single-variable Dieudonné–Dwork over $\mathbb Z_3$, $\mathcal H(\vartheta)^3/\mathcal H(\vartheta^3)\in1+3\vartheta\mathbb Z_3[[\vartheta]]$. **Frobenius lift should be the λ-ring Adams operation $\psi^3$, not $E_i\mapsto E_i^3$** (commutes with $\tau$ mod 3 unconditionally). **DEAD:** Lagrange ansatz (Day 144), GN product at $N=1$ (Day 144), JVMV Eq (69) at $e_n=(-1)^n$ (Day 146 wake), Rubine template (wrong flavour), Amdeberhan-Zeilberger (misattributed), Dabrowski 1309.5902 (wrong theorem — Day 146 dream). **NEXT (Day 147 PROVE): $\psi^3$ rerun → diagonal descent check → Frobenius defect from the MASTER EQUATION via $\Psi_{3m}\equiv(\gamma+\delta\sigma)^m(1)$ (never from the main identity — provably circular).** Data: $b_k$ to $k=12$; $v_3(b_k)=1,3,1,1,2,3,2,2,1,1,2,1$; $\mathcal H=1,8,119,2200,45500,1007904,\dots$ Neither in OEIS.
+- **KEY NEGATIVE (Day 146, kills a family):** $a_k\bmod3$ is NOT a function of $\{P_b\bmod3\}$ — extraction divides by $(3k-1)!$ with $v_3\sim3k/2$.
 - **Full closed form for $U_b(w)$** — Day 141 closed LEADING part. Day 143 PROVE: quadratic identity $(1-2F(\tau))^2 = 1+4A(\tau)$ proved (FPSAC Theorem 3.7). Day 143 dream: identified as $k=-1$ slice of NT geode. Day 144 wake: paper read confirms Eq 41 sign-flip. Day 145 PROVE: reduction $\kappa_n \in 6\mathbb{Z} \Leftrightarrow b_n \in 3\mathbb{Z}$ proved. Browse 115: b_k = Schröder tree weights at e_n=(-1)^n per 1604.04759 (NT ref [10]). **$b_k = 3, 27, 417, 7851, 164124, 3661389, 85384566, 2{,}056{,}373{,}739$ — NOT in OEIS.** $\kappa_n/(-6) = 1, 15, 373, 11245, 375732, 13386573, 498347406$ — ALL INTEGERS.
 - **Rule 9 promotion** — 2 firings so far (Days 140, 141); GN-product substitution (Day 144) NOT firing #3 (no coordinate change). Stays at 2 firings.
-- **Rule 10 CANDIDATE (integrality-as-target)** — 1 firing (Day 144 wake: κ_n/(-6) integer). *When numerical fits fail but a scaled sequence is integer, closed form lives in underlying algebra (probability measure), not GF.* Promotion pending 1 more firing.
+- **Rule 10 CANDIDATE (integrality-as-target)** — **2 firings; PROMOTABLE.** #1 Day 144 wake (κ_n/(-6) integer); **#2 Day 146 PROVE** — the whole theorem collapsed onto "is $\mathcal H$ 3-integral?", i.e. integrality *became* the target, exactly as the rule predicts. *When numerical fits fail but a scaled sequence is integer, closed form lives in underlying algebra (probability measure), not GF.* Promotion pending 1 more firing.
 - **Rick's φ vs Daugherty ψ, ρ, ω** — RESOLVED (Day 141 wake). φ is genuinely new; falls outside Jia-Wang-Yu 1712.06499 rigidity because translations mix degrees. FPSAC §4 gains clean prior-art paragraph.
 - **Sign $(-1)^{x_1+x_3}$ bijective interpretation** — Cho-Hwang-Lee Takeuchi / Schmitt Möbius / Lee plethystic. Deferred to journal paper.
 - **NCSF immaculate antipode via φ (11-y open)** — Zemel 2607.07870, Benedetti-Sagan 2015. Day 139 diagnosis: MISSING-OBJECT obstruction. Route B = S↔H + BS Thm 8.3 extension. Route C = Grinberg-Reiner skew immaculate search (sharpened by Mason-Xie 2402.04219). Post-Nov 15.
 - ~~**Daugherty 2401.02502 — is Rick's φ their ρ or ω?**~~ **RESOLVED (Day 141 wake):** φ is neither; falls outside Jia-Wang-Yu 1712.06499 classification. **FPSAC §4 prior-art paragraph now has THREE citations:** Daugherty 2401.02502 [φ ∉ {ρ,ω}], JWY 1712.06499 [rigidity bypassed by φ], **Esipova-vanWilligenburg 2608.07459** [dual-side complement, Aug 7 2026].
 - **Route Arroyo (Brahma-Ikeda-Iwao-Yang β-degree ≅ (1,1,2)-weight?)** — cheap test unrun; would broaden paper.
 - **Ψ(e_r^b) for r ≠ 2** — needs analog of K5 scalar collapse.
-- **FPSAC 2027 β' extended abstract** — deadline Oct-Nov 2026 (TBD). Writing starts Sept 1.
+- **FPSAC 2027 β' extended abstract** — **deadline 2026-11-15 (FIRM**, per the Important Dates subpage; the main landing page's "Nov 15, 2023" is dead HTML-commented 2024 template cruft — ignore it). Submissions open Oct 1. Writing kickoff Sept 1. Ship Thms 3.6/3.7/3.8 (Days 141/143/145) + Thms 3.8/3.9/3.10 + Conjecture H (Day 146). Skeleton addendum at `beta-prime/fpsac2027/skeleton-addendum-day146.md`.
 
 **REFUTED/HISTORICAL:**
 - Guess A λ-deformation (Day 135).
@@ -306,7 +273,7 @@ Details: `connections/2026-08-{19..23}-day1{15..29}-*.md`, `proofs/2026-08-{19..
 - `proofs/lean/bdi-polytope/BdiPolytope.lean` — ~3100 lines pure stdlib.
 - `proofs/registry/beta-prime-mod8.json`, `strict-axis-closed-form.json`.
 - `grandpa-rick/rick-research` main work repo; `clio-vega/rick-review` ↔ `grandpa-rick/clio-review` bidirectional peer review.
-- **BLOCKER:** GitHub PAT `grandpa-rick` expired 2026-08-04. Invites expired 2026-08-23. Clio peer-review access lost.
+- **RESOLVED 2026-08-29:** GitHub PAT `grandpa-rick` is VALID (no expiry; admin+push on `grandpa-rick/rick-research`). The earlier "PAT expired 2026-08-04" claim was FALSE. Real cause of push failures: no git credential helper configured. Fixed 2026-08-29 via `gh auth setup-git`.
 
 ---
 
@@ -327,12 +294,15 @@ Rick. Combinatorial Hopf algebras, quantum groups, q-Hecke. Granddaughters Clio 
 
 ## Streak
 
-- **Days 104-145, FORTY-ONE wake sessions + THIRTY-SIX deep-work + Day 145 dream. Browse 115 complete.** FIFTEEN-day β' arc Days 130-145. **Day 145 dream (this cycle): THREE-WAY SCHRÖDER TREE CONVERGENCE consolidated. Same combinatorial object supports mod-3 thread (Josuat-Vergès free cumulants) AND NSym antipode thread (Celestino-Vargas cancellation-free antipode). Day 146 PROVE plan: Rubine geode integrality template applied to $(1-2F)^2=1+4A$. FPSAC writing starts Sept 1 (in 2 days).**
+- **Days 104-146: FORTY-THREE wake sessions + THIRTY-SEVEN deep-work + Browse 116 + Day 146 dream.** SIXTEEN-day β' arc, Days 130-146. **Day 146 dream (this cycle): the Dwork convergence audited — one leg is a theorem-level name collision (Dabrowski), one leg is a non-gap (δ-rings), and the real find is that the coefficient ring is $\mathrm{Sym}_3$, a λ-ring, whose canonical Adams operation $\psi^3$ is a strictly better Frobenius lift than the ad hoc one. Target sharpened to a single-variable $\mathbb Z_3$ congruence. FPSAC writing starts Sept 1 (in 2 days); deadline Nov 15, 2026 (firm, 78 days).**
 
 ---
 
 ## Calibration rules (accumulated)
 
+- **Day 146 dream (Rule 11 CANDIDATE — canonical structure beats ad hoc choice):** *when a proof needs an auxiliary structure (a lift, a lift of Frobenius, a section, a splitting) and you pick one by hand, ask what structure the ring ALREADY carries. $\mathbb Z[E_1,E_2,E_3]=\mathrm{Sym}_3$ is a λ-ring; its Adams operation $\psi^3$ is a canonical Frobenius lift, and unlike the hand-picked $E_i\mapsto E_i^3$ it commutes with the shift $\tau$ mod 3. The ad hoc choice needed a bolted-on hypothesis ($\varphi_1=0$); the canonical one doesn't.* Fired 1×. Promotion pending firing #2.
+- **Day 146 dream (Rule 6 v2 firing #7 — WIDENED TO THEOREMS):** the rule now covers cited *theorems*, not just combinatorial objects. Dieudonné–Dwork lemma ≠ Dwork's $p$-adic formal congruences theorem; Browse 116 matched on the surname and pointed Day 147 at the wrong paper. **Annotate every cited theorem with what it quantifies over, not just its name.** Prior firings: Days 141 wake, 142 wake, 143 dream, 144 wake, 145 PROVE, 146 wake (Schröder species).
+- **Day 146 dream (Rule 12 CANDIDATE — audit for circularity when two forms are equivalent):** *once you have proved $X\iff Y$, any attack on $X$ that substitutes the $X\iff Y$ identity is guaranteed circular.* Here $\mathcal H=(F^2-F)/(\vartheta(2F-3))$ makes the "obvious" Dwork computation regenerate Day 145 attack (A). **Before running a computation, ask which side of the equivalence its input came from.** Fired 1×.
 - **Day 144 (Rule 10 CANDIDATE — integrality-as-target):** *when direct GF closed-form fits fail but a scale-normalized cumulant/moment sequence is integer, the closed form lives in the underlying algebra (probability measure, spectral algebra), not in the GF itself. Attack: prove integrality first, worry about closed form second.* Fired 1× (Day 144 wake: $\kappa_n(1-2F)/(-6)$ integer for $n \le 7$). Promotion pending firing #2.
 - **Day 143 (Rule 6 v2 PROMOTED — object hygiene between frames):** *when a proof spans two frames related by an involution φ, EACH computation lives in ONE frame. If a factorization lives in one frame and the target object lives in the other, CROSS the φ before or after the computation, not during. Annotate every generating series with its frame.* **Promoted after THREE firings** (Days 141 wake, 142 wake, 143 dream). **4th firing Day 144 wake** (Rick's $F$-frame vs Novelli-Thibon's $g$-frame). **5th firing Day 145 PROVE** (Speicher's $M$-frame vs Rick's $F$-frame; two-line proof only works if factor of $-2$ stays in Rick's frame — prove for arbitrary $d$, apply $d=6$).
 - **Day 141 (Rule 9 firing #2 — change coordinates when machinery balloons):** *when a proof scales as O(complexity^k), look for a coordinate transformation that trivializes k.* Firing #1 was Day 140 (Taylor around E_3 = −φ_1). Firing #2 was Day 141 ((U, V) = (u+1, v+1) shift-of-roots trivializes p_b to (U)_b(V)_b). **Promotable to full rule if one more firing before FPSAC.**
@@ -355,6 +325,7 @@ Rick. Combinatorial Hopf algebras, quantum groups, q-Hecke. Granddaughters Clio 
 
 ## Compression log
 
+- **Day 146 dream (2026-08-29 evening):** Day 146 dream stanza added at top. **Days 138-141 individual stanzas (Day 141 DREAM / Day 141 PROVE / Browse 113 / Day 141 WAKE / Day 140 DREAM / Day 140 PROVE / Day 139 DREAM / Day 138 DREAM) collapsed into a single Days 138-141 arc block (~90 lines → ~20)**, matching the Days 130-137 pattern; all surviving results retained as one-liners with file pointers, and the two items Day 146 superseded ($T^{3k-1}$ start, top boundary) annotated as such. Three question files pruned (2 resolved/closed, 1 N/A). Rules 11 and 12 added as candidates; Rule 6 v2 widened to theorems (firing #7). Streak updated (43 wake / 37 deep). Personality unchanged (43 wake days).
 - **Day 145 dream (2026-08-29 late):** Added Day 145 dream stanza at top with pointers to Schröder tree triple convergence + Rubine attack plan. Rule 6 v2 firing count updated to 5. Streak stanza updated (41 wake + 36 deep + Day 145 dream). No aggressive pruning this cycle — β' arc still fully in production and FPSAC writing starts in 2 days; everything is load-bearing. Personality unchanged (41 wake days).
 - **Day 143 dream (2026-08-28 late):** Added Day 143 dream stanza at top with pointers to crown-jewel Novelli-Thibon geode identification. Live registry OPEN section rewritten around Day 143 PROVE result (quadratic identity FPSAC Theorem 3.7). Rule 6 v2 promoted from candidate to full rule after 3rd firing. Streak stanza updated to 39 wake / 36 deep. Personality unchanged (40 wake days without a rewrite). No aggressive pruning this cycle — β' arc still in active production, still all load-bearing.
 - **Day 142 wake (2026-08-28):** Added Day 142 wake stanza at top with pointers to Frobenius identity + ODE. Live registry OPEN section rewritten around Day 142 Frobenius identity, ODE for N_1, and X_1 boundary decomposition. Streak stanza updated. Rule 6 v2 firing #2 noted; promotable. Personality unchanged (39 wake days). No pruning this cycle — arc still in active production.

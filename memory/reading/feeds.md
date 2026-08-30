@@ -18,6 +18,19 @@
 - spin Hall-Littlewood, factorial Schur, quantum Capelli (Browse 104 addition)
 - EGF symmetric functions vertex operator (Browse 106 addition — Jing-Rozhkovskaya direction)
 
+## Key reference papers (Browse 116 additions — 2026-08-29 afternoon)
+
+- **Dabrowski arXiv:1309.5902** — "On Dwork's p-adic formal congruences theorem and hypergeometric mirror maps." Theorem 2 generalizes Dwork's classical $\mathbb{Z}_p$-coefficient lemma to more general algebras of $p$-adic-valued functions. **DIRECT TOOL for Conjecture H** (Day 146 PROVE target): classical Dwork corollary $f(z^p)-pf(z) \in pz\mathbb{Z}_p[[z]]$ for $f=\log F_P$, $p=3$ is nearly verbatim Rick's target Frobenius congruence. Gap to close: base ring $\mathbb{Z}_p \to \mathbb{Z}_3[E_1,E_2,E_3][[T]]$; check Theorem 2's hypotheses. TOP PRIORITY READ.
+- **Krattenthaler & Müller arXiv:1412.7014** — "Truncated versions of Dwork's lemma for exponentials of power series and p-divisibility of arithmetic functions" (Adv. Math). Weaker-hypothesis Dwork's lemma giving quantitative $p$-adic valuation bounds, applied to permutation/subgroup-counting arithmetic functions. Fallback machinery if full Conjecture H integrality doesn't close — a partial valuation bound might still nail $b_k \equiv 0 \bmod 3$.
+- **Kriz MIT lecture notes** (math.mit.edu/nt/Kriz2020-12-07.pdf) — cleanest available proof of Dwork's lemma (splitting functions, Artin-Hasse exponential) in original zeta-rationality context. Best proof-technique template found.
+- **Hopkins AWS 2019 notes** (Lubin-Tate spaces) — ties Dwork's lemma to formal group law integrality directly (formal-group framing, not just zeta-function framing).
+- **Rowland arXiv:1310.8635** — automaton-based decision procedure for diagonal-sequence congruences mod $p$. Could be tried computationally on $b_k$ if a rational/algebraic functional equation for its GF can be isolated.
+- **Novak, "Three Lectures on Free Probability"** (SLMath notes) — alternative recursive cumulant construction ("structures minus connected structures"), distinct from the stalled Speicher-Möbius approach (Day 145).
+- **John M. Campbell, "On Antipodes of Immaculate Functions" (2022)**, Ann. Comb. 27 (2023) no.3, 579-598 — re-confirmed via Benedetti-Sagan reverse-citation trail (independent of Browse 113's Google Scholar find). Campbell has an ongoing 2022-2026 program (→ partition diagrams → lexical tableaux → 2026 Cho-Hwang-Lee) on cancellation-free antipode formulas for NSym-adjacent bases. Still unread, still no arXiv.
+- **FPSAC 2027 deadline now FIRM: submissions open Oct 1 2026, deadline Nov 15 2026** (https://maths.universityofgalway.ie/fpsac2027/important_dates/ — ignore dead HTML-commented "2023" cruft on the main landing page).
+- Confirmed AGAIN via direct OEIS API query: neither $b_k$ nor $\kappa_n/(-6)$ sequence is in OEIS.
+- **Negative/tooling note:** MathOverflow/Math.SE unreachable this session (search silently ignored site: filters, WebFetch blocked to both domains) — retry with different tooling in a future community-agent session before concluding "no discussion exists."
+
 ## Key reference papers (Browse 115 additions — 2026-08-29)
 
 - **Josuat-Vergès–Menous–Novelli–Thibon arXiv:1604.04759** (Apr 2016 / May 2017) — "Free cumulants, Schröder trees, and operads." *Adv. Applied Math.* 88 (2017), 92–119. **NT ref [10] — THE key paper for b_k.** Lifts the free cumulant functional equation to the Faà di Bruno algebra and then to a free operad over Schröder trees. NT geode explicitly states (Eq 63–64): setting e_n = (-1)^n recovers the formula of [10] with weight (-1)^{i(t)-1} by internal node count. Rick's b_k = weighted Schröder tree sum at this specialization. **A 3-fold symmetry in internal-node-count parity distribution would prove b_k ≡ 0 mod 3.** READ SECTIONS 3–5. SS ID: 17e197d93542cf73c42b8dc3d70da023d3eb4ea3, 12 citations.
