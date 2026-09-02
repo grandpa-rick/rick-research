@@ -117,15 +117,29 @@ Hence $\sum_{j=0}^{2b+3} F(j) = 2(b+1)\,4^b$.
 
 ## 6. Toward a fully structural proof of Theorem C.5
 
-The lemma of §2 gives $H^{(-1)} = \mathcal W(\partial X^{(0)} + \tfrac{1}{2}\partial^2\Xi)$. The missing ingredient is a compact formula for $X^{(0)} = \ell^{\rm top}_0(\log F_P)$. Two natural routes:
+The lemma of §2 gives $H^{(-1)} = \mathcal W(\partial X^{(0)} + \tfrac{1}{2}\partial^2\Xi)$. The missing ingredient is a compact formula for $X^{(0)} = \ell^{\rm top}_0(\log F_P)$. Three natural routes:
 
 **(A) Riccati at wt $-1$.** Day 152 §4 proves $\theta\Xi = Te_2(\nu)$ from the wt-$1$ top-symbol of the Riccati (R). By the same token, applying $\ell^{\rm top}_0$ to (R) should give a coupled linear system determining $\theta X^{(0)}$ in terms of the wt-$0$ symbols of $\lambda_i, u_i + d_i$, etc. This is the natural next tool.
 
 **(B) $\varrho$-decomposition.** From Day 152 §2, $\log F_P = \varrho(S) + \varrho\log(\mathcal R/V)$. Then $X^{(0)} = \varrho S^{(0)} + \varrho[\log(\mathcal R/V)]^{(0)}$. Because $\log(\mathcal R/V)$ has wt $\le 0$ and $\mathcal R/V \in 1 + (t)$, $[\log(\mathcal R/V)]^{(0)} = \log[\ell^{\rm top}_0(\mathcal R/V)]$ (a ring homomorphism on wt $\le 0$). So this reduces to computing $\ell^{\rm top}_0(\mathcal R/V)$ — a level-3 residual in $\mathcal R$ that needs one further $\ell^{\rm top}$ extraction on $V(M)$ and $S$.
 
-Either route amounts to bookkeeping already available in Day 152's `check6.py` framework. In this session, this was computationally deferred; the structural gap is precisely *"establish $M^{(-1)}|_{E_3=0} = 6T/(q^3\phi)$"*.
+**(C) — the new hook (2026-09-02).** Computed to $n \le 8$ via `scratch/day156/test_X0_hypothesis.py`:
 
-Because both sides are polynomial in $E_1, E_2$ at each $T$-degree, and coincide for $n \le 16$, the gap is entirely down to identifying a formula for $X^{(0)}$; the identity, once formulated, will be verified by the coefficient match already in hand.
+$$\boxed{\;X^{(0)}\big|_{E_3 = 0} \;=\; \tfrac{1}{2}\,\log \mathcal W\big|_{E_3 = 0} \;=\; \tfrac{1}{2}\,\partial\Xi\big|_{E_3 = 0}\;}$$
+
+This does *not* hold globally: $X^{(0)} - \tfrac{1}{2}\log \mathcal W$ is $O(E_3)$, with the leading correction $4E_3 T^3 + 15 E_1 E_3 T^4 + (36 E_1^2 + 24 E_2) E_3 T^5 + \ldots$. But at the boundary $E_3 = 0$, the identity is exact.
+
+Consequences.
+1. $M^{(-1)}|_{E_3 = 0} = \partial X^{(0)}|_{E_3=0} + \tfrac{1}{2}\partial^2 \Xi|_{E_3=0} = \partial^2 \Xi|_{E_3=0} + E_2\,\partial_{E_3}D|_{E_3 = 0}$, where $D := X^{(0)} - \tfrac{1}{2}\log \mathcal W$. So *modulo the $E_3$-correction* to $X^{(0)}$, the answer is $\partial^2 \Xi$ (globally-computable via $\theta\partial^2\Xi = \partial^2 P/2$).
+2. The $E_3$-correction to $X^{(0)}$ is captured by a *separate* series; identifying it would immediately close C.5.
+
+The evidence is:
+- $X^{(0)}|_{E_3=0}$ matches $(1/2)\log \mathcal W|_{E_3=0}$ for $n = 1, \ldots, 8$ (all terms).
+- The failure at $E_3 \ne 0$ is *only* through explicit $E_3$-multiplied terms; the $E_3^0$ part of $X^{(0)}$ IS $(1/2)\log \mathcal W|_{E_3=0}$.
+
+*Why this happens is likely structural.* At $u_3 = 0$, $F_P|_{u_3=0}$ has a factorization that turns $\log F_P|_{u_3=0}$ into a specific "$\Xi + (1/2)\partial \Xi + \ldots$" pattern. Route (B) applied at wt 0 with $u_3 = 0$ should make this manifest.
+
+**Bottom line.** The structural gap in this session is precisely *"establish $X^{(0)}|_{E_3=0} = (1/2)\log \mathcal W|_{E_3=0}$ (or equivalently, $M^{(-1)}|_{E_3=0} = 6T/(q^3\phi)$)"*. Both are computed to $n \le 10$; the former is arguably the *cleaner* target, since it reduces to identifying an $E_3 = 0$ specialization of $F_P$ as some standard object.
 
 ## 7. Corollaries
 
