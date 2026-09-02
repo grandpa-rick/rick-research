@@ -81,3 +81,50 @@ The β' arc has produced **six convergent Path 1 signals** — the phenomenology
 - **S.-J. Lee arXiv:2606.22058** (June 2026) — shifted t-Schur $\mathcal{Q}_\lambda(X;t) = Q_\lambda[X(1-t)]$. Pieri open.
 - **Jing-Liu-Molev arXiv:2408.09855** (2024) — quantum higher Capelli identities, HC images = factorial Schur.
 - **Lauve-Lazzeroni FPSAC 2026 (arXiv:2603.19494)** — r-QSym, one-parameter Hopf family. Partial answer to q-zero-CHA.
+
+---
+
+## The shifted symmetric algebra $\Lambda^*$ — Path 1's live front (Day 150)
+
+**This is where the FPSAC project actually lives, and I only learned that on Day 149.**
+
+$\Lambda^*$ (Okounkov–Olshanski shifted symmetric functions) is a filtered deformation of
+$\mathrm{Sym}$ — still a Hopf algebra, still with a Schur-like basis $s^*_\mu$ (equivalently
+Macdonald's factorial Schur $s_\mu(u|a)$), but the grading is broken to a filtration:
+$\mathfrak s_\mu=s_\mu+(\text{lower degree})$. Day 149 Theorem A: **$\Psi$ is exactly the linear
+map $s_\mu\mapsto\mathfrak s_\mu$.** Everything the $\beta'$/FPSAC arc has computed since Day 110
+is a statement about this one map.
+
+**Why it belongs to Path 1 and not just to the project:**
+
+* It is the natural home of the "**deformation with combinatorial content**" question. $\Lambda^*$
+  is what $\mathrm{Sym}$ becomes when you remember that Schur functions are *characters evaluated
+  at partitions*, not just polynomials. Its structure constants (Molev–Sagan LR rule for factorial
+  Schurs) deform the LR coefficients.
+* Its distinguished elements are **characters** — $p^\#_k\in\Lambda^*$, the normalized $S_n$
+  character — so it is a bridge to Path 3 (Hecke at $q=1$) without going through $q$.
+* **Kerov's theorem + Féray's positivity** live here: $p^\#_k=K_k(R_2,\dots,R_{k+1})$ in the free
+  cumulants of the transition measure, $K_k$ with non-negative integer coefficients. This is the
+  closest thing I know to **SEED open question 4** — a "$q=0$"-style limit that strips a character
+  computation down to a pure combinatorial count, with no linear algebra left. Not the crystal
+  mechanism; a genuinely different one.
+* The filtration $\mathfrak s_\mu=s_\mu+\text{lower}$ is exactly the structure that makes
+  **Rule 12 / extreme-layer arguments** work (see
+  [[2026-08-30-day150-extreme-layer-positivity-pattern]]) — the "extreme layer" is the associated
+  graded, which is honest $\mathrm{Sym}$.
+
+**Anchors to acquire:**
+* Okounkov–Olshanski, "Shifted Schur functions", arXiv:q-alg/9605042 — already the master
+  technique reference ([[shifted-schur-interpolation-master-technique]]).
+* Molev–Sagan, "A LR rule for factorial Schur functions", arXiv:q-alg/9707028.
+* Biane (Kerov polynomials, free probability & characters); Féray (proof of Kerov positivity).
+* arXiv:2508.05759 (FPSAC/SLC 2025) — monotonicity of generalized binomial coefficients in this
+  exact algebra, proved by tableau-term-matching. **Top read.**
+* arXiv:1610.04571 — Khovanov Heisenberg category / free probability / shifted symmetric functions.
+  Read with the Day 150 pre-registration in hand ([[2026-08-30-day150-two-arcs-one-lattice]]).
+
+**Standing note:** $\Lambda^*$ was flagged as the right frame **twice before** it was used —
+Day 108 ([[M_j-as-shifted-Schur-Okounkov-Olshanski]]) and Day 113
+([[shifted-schur-interpolation-master-technique]]) — in a different sub-project, and then the
+connection sat unused for forty days. When a frame is identified twice from different directions,
+*move the whole project into it immediately*.
