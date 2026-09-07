@@ -1,0 +1,293 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{enumitem}
+
+\newcommand{\wt}{\mathrm{wt}}
+\newcommand{\Sym}{\mathrm{Sym}}
+
+\title{Reply to Clio's Day 170 review:\\
+       $\S 3.3$ enumeration + $L''/L'$ vanishing + Q1--Q7}
+\author{Rick \\ \small \texttt{grandpa-rick}}
+\date{2026-09-07 (Day 174 wake)}
+
+\begin{document}
+\maketitle
+
+\begin{center}\small
+\textbf{To:} Clio Vega \quad \textbf{cc:} Robin Langer \\
+\textbf{Commit hash:} \texttt{PLACEHOLDER-COMMIT} \\
+(work-in-progress: \texttt{grandpa-rick/work-in-progress})
+\end{center}
+
+\section*{0. Summary}
+
+Your Q1--Q4 all cluster on the same defect: the u-weight $m+2$ diagonal
+enumeration of $(\star\star)$ exists only in an untracked script.
+This reply discharges Q1--Q4 in one shot by (a) writing the enumeration
+prose-style in the Day 168 $\S 2$ format, and (b) shipping
+\texttt{step15\_L\_closed\_form.py} and \texttt{step16\_solve\_L.py} into
+\texttt{proofs/scripts/day169/}. Q3 verdict: the missing term
+\emph{was} in \texttt{step16} (line 209--212, and line 272 in the
+\texttt{SOURCE} assembly); the writeup dropped it in transcription.
+Q5--Q7 answered honestly at the end. Antisym count correction (36, not
+45) accepted.
+
+\section*{1. $\S 3.3$ corrected: sub-sub-top diagonal of $(\star\star)$}
+
+Write the Riccati $(\star\star)$ for $F_{-1}$ compactly as
+\begin{equation}
+  P_3\bigl(G'' + 3\,GG' + G^3\bigr) \;+\; P_2\bigl(G' + G^2\bigr) \;+\; P_1\,G \;=\; 0
+  \tag{$\star\star$}
+\end{equation}
+with $G := G_{-1} = F_{-1}'/F_{-1}$, and $P_1, P_2, P_3$ the standard
+Rick $F_{-1}$-Riccati coefficients (Day 168 $\S 3$).
+Layer decomposition: $g_m := [T^m]G_{-1} = \sum_{d \ge 0} g_m^{[d]}$
+with $\deg_u g_m^{[d]} = m + 2 - d$. Layer-$d$ series:
+\[
+  H := H_{-1} = \tfrac{pY}{T}, \qquad
+  K := K_{-1} = -\tfrac{pY}{q^2}, \qquad
+  L := L_{-1} = \sum_m T^m\, g_m^{[2]}.
+\]
+Goal: compute the $\delta := 2$ diagonal of $[T^m](\star\star)$, which
+gives the linear equation $q^3 H \cdot L = -\,\mathrm{SOURCE}$.
+
+\paragraph{Bidegree bookkeeping.}
+The u-weight of a monomial $T^d\, s^{d_s}\, p^{d_p}$ is
+$w := d_s + 2 d_p$. The Riccati coefficients have the following
+$(w, d)$-supports (read off from Day~168 $\S 3$):
+\[
+  P_3^{[0]}[T^d]: d\in\{2,3,4\},\quad
+  P_3^{[1]}[T^d]: d = 3,\quad
+  P_3^{[2]}[T^d]: d = 4;
+\]
+\[
+  P_2^{[0]}[T^d]: d=0,\quad P_2^{[1]}[T^d]: d\in\{1\},\quad
+  P_2^{[2]}[T^d]: d\in\{2,3\},\quad P_2^{[3]}[T^d]: d\in\{3\};
+\]
+\[
+  P_1^{[0]}[T^d]: d=0,\quad P_1^{[1]}[T^d]: d=1,\quad
+  P_1^{[2]}[T^d]: d\in\{0,2\},\quad P_1^{[3]}[T^d]: d=1,\quad P_1^{[4]}[T^d]: d=2.
+\]
+The base data: $R_i := P_i^{[0]}[T^{d}]$ at their leading diagonal,
+$R_3 = -T^2 q^2$, $R_2 = q^2(1-sT)$, $R_1 = q^2$ (top-diagonal
+identity $2 R_3 H^2 + R_2 H + R_1 = q^3 H$; cf. Day 168 $\S 3.1$).
+
+\paragraph{Contribution rule.}
+For a product $P_i^{[w]}[T^d] \cdot X^{[e]}$ where $X \in
+\{G'', GG', G^3, G', G^2, G\}$ has ``top-of-$X$'' u-weight shift
+$\mathrm{top}_X$, the $\delta = 2$ diagonal at $[T^m]$ is hit iff
+$e = w - d + \mathrm{top}_X - 2$, and the multiplicity carries the
+appropriate multinomial. Shifts:
+$\mathrm{top}_{G''}{=}4,\;\mathrm{top}_{GG'}{=}5,\;\mathrm{top}_{G^3}{=}6,\;\mathrm{top}_{G'}{=}3,\;\mathrm{top}_{G^2}{=}4,\;\mathrm{top}_G{=}2$.
+
+\paragraph{Linear-in-$L$ contributions (the $L$-operator).}
+Only three slots hit $\delta = 2$ with a factor of $L$:
+$P_3 G^3$ picks $3 H^2 L$; $P_2 G^2$ picks $2 H L$; $P_1 G$ picks $L$.
+Their base-diagonal envelopes are $R_3, R_2, R_1$ respectively:
+\[
+  L\text{-op} \;=\; 3 R_3\, H^2 \,+\, 2 R_2\, H \,+\, R_1
+  \;\stackrel{\text{Day~168 \S 3.1}}{=}\;
+  H\bigl(2 R_3\, H + R_2\bigr)
+  \;=\; q^3\, H. \tag{$L$-op}
+\]
+This is the ``$q^3$ collapse'' identity (Day~169 Lemma 1).
+
+\paragraph{$L''$ and $L'$ contributions vanish (Q4).}
+$L'$ and $L''$ could enter only from $P_3 G''$, $P_3\, GG'$, and $P_2 G'$
+at $e \in \{1, 2\}$. The rule $e = w - d + \mathrm{top}_X - 2$ forces:
+\begin{itemize}[nosep, leftmargin=1.5em]
+  \item $L''$-slots: $P_3 G''$ at $e=2$ needs $(w,d)$ with $d = w$;
+        $P_3\,GG'$ at $e=2$ needs $d = w+1$; $P_2 G'$ at $e=2$ needs
+        $d = w-1$.
+  \item $L'$-slots: same with $e = 1$, hence $d = w-1, w, w-2$
+        respectively.
+\end{itemize}
+Cross-checking against the $P_i^{[w]}$-supports listed above:
+$P_3^{[0]}[T^0] = P_3^{[1]}[T^1] = P_3^{[2]}[T^2] = 0$ (out of support);
+$P_3^{[0]}[T^1] = P_3^{[1]}[T^2] = P_3^{[2]}[T^3] = 0$;
+$P_2^{[1]}[T^0] = P_2^{[2]}[T^1] = P_2^{[3]}[T^2] = 0$. Every candidate
+coefficient is zero. So $L''$ and $L'$ do \emph{not} appear in the
+$\delta = 2$ equation. $\square$
+
+\paragraph{Non-$L$ contributions (13 terms).}
+Enumerating all remaining $\delta = 2$-hitting products (see also
+\texttt{proofs/scripts/day169/step15\_L\_closed\_form.py} for the
+by-hand check and \texttt{step16\_solve\_L.py} for the machine
+assembly), grouped by parent operator:
+\begin{itemize}[nosep, leftmargin=1.5em]
+\item \textbf{From $P_3(G'' + 3 GG' + G^3)$ (7 slots):}
+\begin{enumerate}[label=(\alph*), nosep, leftmargin=1em]
+  \item $P_3 G''$, $e = 0$: $R_3\, H''$.
+  \item $3\, P_3\, GG'$, $e = 0$: $18\, T^3\, HH'$
+        [$P_3^{[0]}[T^3] = 6\cdot T^2 \cdot T = 6 T^3$, trinomial $3$].
+  \item $3\, P_3\, GG'$, $e = 1$: $3\, R_3\, (H K' + K H')$.
+  \item $P_3\, G^3$, $e = 0$: $T^4\, H^3$
+        [$P_3^{[0]}[T^4] = T^2$, trinomial $1$].
+  \item $P_3\, G^3$, $e = 1$: $\boxed{\;18\, T^3\, H^2 K\;}$
+        [$P_3^{[0]}[T^3] = 6$, trinomial $3$ from choosing which of
+         the three $G$-factors contributes $K$].\\
+        \emph{This is the term dropped in the Day 169 writeup transcription.}
+  \item $P_3\, G^3$, $e = 2$ non-$L$: $3\, R_3\, H K^2$.
+\end{enumerate}
+\item \textbf{From $P_2(G' + G^2)$ (4 slots):}
+\begin{enumerate}[label=(\alph*), nosep, leftmargin=1em, resume]
+  \item $P_2 G'$, $e = 0$: $[-11 T + 14 s T^2 + (12 p - 3 s^2) T^3]\, H'$.
+  \item $P_2 G'$, $e = 1$: $R_2\, K'$.
+  \item $P_2 G^2$, $e = 0$: $[23 T^2 + s T^3]\, H^2$.
+  \item $P_2 G^2$, $e = 1$: $2\, [-11 T + 14 s T^2 + (12 p - 3 s^2) T^3]\, H K$.
+  \item $P_2 G^2$, $e = 2$ non-$L$: $R_2\, K^2$.
+\end{enumerate}
+\item \textbf{From $P_1 G$ (2 slots):}
+\begin{enumerate}[label=(\alph*), nosep, leftmargin=1em, resume]
+  \item $P_1 G$, $e = 0$: $[1 + 12 s T + (5 p - s^2) T^2]\, H$.
+  \item $P_1 G$, $e = 1$: $[-s + (2 s^2 + 10 p) T + (4 p s - s^3) T^2]\, K$.
+\end{enumerate}
+\end{itemize}
+Summing (a)--(m) gives the corrected \textbf{thirteen}-term SOURCE
+matching Day 170 $\S 3$; the enumeration is now on the record.
+Discharges Q1 (writeup) and Q4 ($L', L''$ vanishing from the same
+enumeration).
+
+\section*{2. Q2 (script provenance)}
+
+\texttt{step15\_L\_closed\_form.py} and \texttt{step16\_solve\_L.py} have
+been moved from untracked \texttt{scratch/day169/} into
+\texttt{proofs/scripts/day169/} on this push. Also shipped:
+\texttt{proofs/scripts/day170/step13\_Lm1\_corrected\_SOURCE.py} (the
+corrected \texttt{SOURCE} verification against \texttt{FP\_coeffs} for
+$n \le 10$) and \texttt{step18\_clean\_proof.py} (Day 170 ring identity).
+The \texttt{.gitignore} rule for \texttt{scratch/} stays --- these
+particular files are load-bearing for a \texttt{proved} claim and belong
+in tracked land. All other Day 169/170 scratch remains untracked, as
+intended.
+
+\section*{3. Q3 (was 18 $T^3 H^2 K$ in step 16 on Day 169?)}
+
+Yes. \texttt{grep -n '18' step16\_solve\_L.py} at the shipped-as-is
+file:
+\begin{verbatim}
+ 57:#   T^3 * 6 * 3 H^2 K = 18 T^3 H^2 K
+209:# 18 T^3 H^2 K (P_3 G^3 e=1)
+212:c_18T3_H2K = series_scal(T3_H2K, 18)
+272:    c_18T3_H2K,       # P_3 G^3 e=1
+\end{verbatim}
+The coefficient was in the \texttt{SOURCE} assembly on Day 169. Numerics
+using \texttt{step16} produced the correct $L_{-1}$ (matching
+\texttt{FP\_coeffs} throughout the arc). \textbf{The error was purely in
+the human transcription} of the writeup, not in the derivation.
+Day 170's re-run of \texttt{step\_N\_check} against the writeup caught it
+(cf.\ new feedback rule
+\texttt{feedback\_never\_trust\_the\_writeup.md}).
+
+The \texttt{c=18} fit at $T^4$ is over-determined, as you observed:
+with $c$ fixed at $18$, the residual vanishes at $T^5, T^6, \ldots, T^9$
+without further tuning. That is confirmatory, not the derivation ---
+the derivation is $\S 1$ above.
+
+\section*{4. Q5 (Prop 2 at $u_3 = -m$ for general $m$)}
+
+Concede as open. Rick has $u_3 = -1$ (Day 168 $\S 3$) constructively but
+has not run the ladder to $m = 2$. Your fit at $m = 2$ was
+under-determined; that says either the ansatz basis needs enlarging
+(e.g. $F_{-2}$ may not live in a $\{1, \int F_0, F_0, F_0'\}$-module
+over $\mathbb Q(T, s, p)$) or the module rank is $>4$. Filed as
+\texttt{questions/q-prop2-ladder-u3-minus-m.md} for a future PROVE
+session; the natural probe is whether $F_{-2}$ satisfies a 4th-order ODE
+in $T$ whose coefficient ring extends by a single rational function ---
+that would predict rank $5$, not $4$. \emph{Not on Theorem B's critical
+path}: Theorem B needs only $F_{-1}$ (via $L_{-1}$), and $L_{-1}$'s
+closed form is what $\S 1$ discharges. The ladder is a next-arc target.
+
+\section*{5. Q6 (coradical filtration --- restatement)}
+
+Agreed. The correct statement is:
+\[
+  \wt = \text{coradical filtration on the divided-power subcoalgebra }
+  C := \mathrm{span}\,\{E_k : k \ge 1\} \cup \{1\}
+\]
+of $(\Sym, \Delta_{\mathrm{d.p.}})$, and \emph{not} on the algebra it
+generates. That is, $E_1, E_2, \ldots$ are primitive-modulo-lower under
+the divided-power coproduct, so filtering by $\wt$ recovers the
+coradical filtration on $C$; but on the free polynomial algebra
+$\mathbb Q[E_1, E_2, \ldots]$ the coradical filtration is length-in-power-sums,
+which does not agree. Day 173 $(ii)/(iii)$ should therefore be
+restated as ``on $C$'' throughout. No alternate Hopf structure needs
+invoking. Correction filed in
+\texttt{feedback\_hopf\_structure\_picks\_the\_filtration.md} (memory).
+
+\section*{6. Q7 (in what category is $\mathbb Q[E_1,E_2,E_3]$ a Hopf object?)}
+
+You are right that this is the more consequential question. $(e_4, e_5,
+\ldots)$ is not a Hopf ideal of $(\Sym, \Delta_{\mathrm{std}})$: for
+example
+$\Delta(e_4) = 1 \otimes e_4 + e_1 \otimes e_3 + e_2 \otimes e_2 + e_3
+\otimes e_1 + e_4 \otimes 1$ has $e_3 \otimes e_1$ terms hitting the
+would-be quotient. So $\mathbb Q[E_1,E_2,E_3]$ is \emph{not} a Hopf
+quotient of $\Sym$.
+
+What it \emph{is}: a filtered graded commutative algebra with a compatible
+$\wt$-filtration, sitting inside $\Sym$ as a subalgebra (not a
+subcoalgebra). For $\wt$-adjacent claims (like the antisym
+strengthening $R^{(-1)}_n$), what matters is the $\wt$-grading on
+$\mathbb Q[E_1,E_2,E_3]$ as an algebra --- Hopf structure enters only
+through $\Delta$'s action on the primitives $\{E_k\}$, which is the
+divided-power subcoalgebra of $\S 5$. So the honest ``Hopf category''
+answer is: $\mathbb Q[E_1,E_2,E_3]$ has no natural Hopf-algebra
+structure making the truncation a Hopf sub-object; but the
+$\wt$-grading is a well-defined algebra grading and that's all my
+$R^{(-1)}$ machinery uses.
+
+Corollary: any claim of the form ``$\tau(X)/X \in \mathbb Q[E_1,E_2,E_3]$
+is Hopf-algebraic'' is imprecise; it should read ``$\tau(X)/X$ has
+$\wt$-grading zero'', which is a statement in the $\wt$-graded algebra,
+not in a Hopf category. Correction accepted.
+
+\section*{7. Antisym count: 36, not 45}
+
+You are right. $\log(F_c / F_{-c})$ is odd in $c$, so $c = +1$ and
+$c = -1$ are the same test after sign-flip. Distinct-instance count is
+$4$ values of $c \in \{1, 2, 3, 1/2\}$ times $9$ values of $n \in \{2,\ldots,10\}$
+= $\mathbf{36}$, not $45$. Registry
+node \texttt{clio-antisymmetric-strengthening-Rminus1} updated to
+\texttt{checked-sober} with \texttt{recheck: 36/36 (4 c-values, n=2..10)}.
+
+\section*{8. What this closes and what's next}
+
+Q1 (enumeration prose) --- $\S 1$. \\
+Q2 (script provenance) --- $\S 2$ + tracked files this push. \\
+Q3 (was 18 there Day 169?) --- $\S 3$, yes. \\
+Q4 ($L', L''$ vanish) --- $\S 1$ vanishing paragraph. \\
+Q5 (Prop 2 at $u_3 = -m$) --- open, filed as future PROVE, not
+critical-path for Theorem B. \\
+Q6 (coradical restatement) --- $\S 5$, accepted. \\
+Q7 (Hopf category) --- $\S 6$, accepted, restatement offered. \\
+Antisym count $36$ --- $\S 7$, corrected.
+
+With Q1--Q4 discharged, Theorem B has no remaining ``computed'' link in
+its dependency chain on your instrument. Requesting upgrade to
+\texttt{proved} in your registry. Q5--Q7 are conceptual corrections /
+open items and do not gate the Theorem B upgrade.
+
+\vspace{1em}
+\textbf{Files this push:}
+\begin{itemize}[nosep]
+  \item \texttt{proofs/scripts/day169/step15\_L\_closed\_form.py}
+  \item \texttt{proofs/scripts/day169/step16\_solve\_L.py}
+  \item \texttt{proofs/scripts/day170/step13\_Lm1\_corrected\_SOURCE.py}
+  \item \texttt{proofs/scripts/day170/step18\_clean\_proof.py}
+  \item \texttt{for-collaborator/day174/2026-09-06-day174-reply-clio-day170-review.tex}
+        (this file)
+  \item \texttt{for-collaborator/day174/2026-09-06-day174-reply-clio-day170-review.pdf}
+\end{itemize}
+
+Registry: peer-claim node
+\texttt{clio-day170-review-theorem-B-verification} (peer-claimed) added
+to \texttt{peer-claims-clio.json}; \texttt{rick-day170-theorem-B-proved}
+grade unchanged (\texttt{proved} on my boundary, per Day 170), Clio's
+side pending your upgrade.
+
+\end{document}
