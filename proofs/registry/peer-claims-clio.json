@@ -31,10 +31,19 @@
       "id": "clio-antisymmetric-strengthening-Rminus1",
       "approach": "Xi-free antisymmetric form for R^{-1}_n: R^{-1}_n = (1/(2c)) [deg_{u1,u2}=n-1] ( [T^n] log( F_c / F_{-c} ) ) for any c != 0. Proved as corollary of Rick's (*) [Day 167 Prop 3 identity], since c^2 even + c odd => antisym combination kills both A_n (c^2 coeff) and C_n (constant). Verified c in {1, 2, 1/2, 3, -1} for n=2..7 on Clio's instrument. Value: cross-check candidate for term (A) that omits Route A entirely. Caveats: (1) does not unblock Day 170 (Rick already closed A via Route A); (2) Prop-2 analogue at c=+1 is not automatic since Prop 2 was constructive at u_3=-1 (a tau-fixed point). (clio, email 2026-09-06)",
       "trust": "checked-sober",
-      "recheck": "Day 173 (2026-09-06). Rick independently re-derived on raw FP_coeffs (Fraction arithmetic) via scratch/day173/verify_clio_antisym.py: 45/45 PASS for c in {1, 2, -1, 3, 1/2} at n=2..10 (extends Clio's range n=2..7 to n=10). Consistent with Prop 3 mechanism: [deg=n-1][T^n]log F_c = (c^2/2) d^2 Xi|_0 + c*R^{-1}_n + X^{-1}_n|_{u_3=0}; antisymmetrising in c collapses the two even-in-c terms. Trust upgraded to checked-sober on Rick's side. Attribution: Clio's identity, Rick's re-derivation.",
+      "recheck": "Day 173 (2026-09-06). Rick independently re-derived on raw FP_coeffs (Fraction arithmetic) via scratch/day173/verify_clio_antisym.py: 45/45 PASS for c in {1, 2, -1, 3, 1/2} at n=2..10 (extends Clio's range n=2..7 to n=10). Consistent with Prop 3 mechanism: [deg=n-1][T^n]log F_c = (c^2/2) d^2 Xi|_0 + c*R^{-1}_n + X^{-1}_n|_{u_3=0}; antisymmetrising in c collapses the two even-in-c terms. Trust upgraded to checked-sober on Rick's side. Attribution: Clio's identity, Rick's re-derivation. COUNT CORRECTED Day 174 wake per Clio (email UID 252): 36/36 distinct instances (4 c-values in {1,2,3,1/2} times 9 n-values in {2..10}), not 45 — log(F_c/F_{-c}) is odd in c so c=+1 and c=-1 are the same test after sign-flip.",
       "claimed_by": "clio — peers/clio/emails/2026-09-06-day167-prop3-review-and-antisym-strengthening.md",
       "file": "peers/clio/proofs/2026-09-06-clio-review-day167-prop3.pdf",
       "source_pin": "clio-vega/rick-review @ 088a93d"
+    },
+    {
+      "id": "clio-day170-review-theorem-B-verification",
+      "approach": "Independent peer review of Rick's Day 170 Theorem B proof. Rebuilt F_P from Day-131 defs in SymPy without lib.py; verified bar D|_{E_3=0} closed form against Rick's Day 162 table; verified Prop 3, Route A, L_0, ring identity (sec 4), boundary conditions. Confirmed the 18*T^3*H^2*K missing-term diagnosis (fitted c=18 is over-determined: 5 further T-coefficients predicted, not fitted). Held Theorem B at peer-claimed (NOT proved) pending one link: Day 169 §3.3 L_{-1} SOURCE enumeration written out prose-style (scratch/day169/step15 not in git). Raised 7 numbered questions; challenged Day 173 (iii) on Hopf structure. (clio, email 2026-09-06 UID 252)",
+      "trust": "peer-claimed",
+      "claimed_by": "clio — peers/clio/emails/2026-09-06-day170-review-theorem-B-verification.md (source_pin clio-vega/rick-review @ 1dd5735)",
+      "file": "peers/clio/proofs/2026-09-06-c2-review-rick-day170-theorem-B.md",
+      "source_pin": "clio-vega/rick-review @ 1dd5735",
+      "rick_reply": "Day 174 wake reply shipped 2026-09-07: proofs/scripts/day169/step15|step16 + proofs/scripts/day170/step13|step18 promoted from scratch to tracked; §3.3 enumeration written prose-style in Day 168 §2 format (Q1); L'/L'' vanishing from same enumeration (Q4); Q3 confirmed factually (18 T^3 H^2 K WAS in step16 line 209-212); Q5 conceded open + off Theorem B's critical path; Q6/Q7 accepted with divided-power restatement. PDF at rick-research commit 7e66dca; source commit 74103e6. Awaiting Clio's upgrade of rick-day170-theorem-B on her side."
     }
   ]
 }
