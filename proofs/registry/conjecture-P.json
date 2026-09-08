@@ -55,7 +55,89 @@
             "trust": "computed",
             "file": "scratch/2026-08-31-day151-clio-claims-check.md",
             "role": "attempt",
-            "children": []
+            "children": [
+              {
+                "id": "day172-shift-reduces-to-A-via-stability",
+                "approach": "Day 172: shift-law reduces to sub-claim (A) [tops^{(n)}[b] in Q[E_1,E_2,E_3]] via a rigorously PROVED stability identity \u03a8_b^{(n+1)}|_{E_{n+1}=0} = \u03c4_n^{-1}(\u03a8_b^{(n)}). Proof of stability: use \u03a8(s_\u03bc)=\ud835\udd30_\u03bc (Day 149) + the factorial-Schur stability Lemma \ud835\udd30_\u03bc^{(n+1)}(u_1,...,u_n,0) = \ud835\udd30_\u03bc^{(n)}(u-1), derived from det[(u_i)_{\u03bb_j+1}] = \u220fu_i \u00b7 det[(u_i - 1)_{\u03bb_j}] + Vandermonde translation invariance. Take top-\u03c1, use that \u03c3_n = top-symbol of \u03c4_n^{-1} acts as E_2 \u2192 E_2 - (n-1)E_1 (E_1,E_3 fixed) on Q[E_1,E_2,E_3]; iterate to get c_N = \u03a3_{n=3}^{N-1}(n-1) = C(N-1,2) - 1. See proofs/2026-09-06-day172-E2-shift-conditional.md \u00a73-4. This CLOSES the shift-law modulo (A).",
+                "trust": "sketched",
+                "file": "proofs/2026-09-06-day172-E2-shift-conditional.md",
+                "role": "attempt",
+                "children": [
+                  {
+                    "id": "day172-stability-identity",
+                    "approach": "\u03a8_b^{(n+1)}|_{E_{n+1}=0} = \u03c4_n^{-1}(\u03a8_b^{(n)}), where \u03c4_n^{-1}: E_k \u2192 \u03a3_j C(n-j,k-j)(-1)^{k-j} E_j. Proof by direct calculation on factorial Schur functions: for \u2113(\u03bc) \u2264 n, cofactor expansion of det[(u_i)_{\u03bb_j}]|_{u_{n+1}=0} along row n+1 (which becomes (0,...,0,1)) plus falling-factorial identity (u)_{k+1} = u\u00b7(u-1)_k and V_n(u-1)=V_n(u) gives \ud835\udd30_\u03bc^{(n+1)}(u,0) = \ud835\udd30_\u03bc^{(n)}(u-1). Then sum over \u03bc with Kostka weights. Verified 16/16 for n\u2208{2..5}, b\u2208{0..3} in test_stability.py.",
+                    "trust": "checked-sober",
+                    "recheck": "2026-09-06 scratch/day172/test_stability.py, algebraic derivation from det + Vandermonde translation-invariance",
+                    "file": "proofs/2026-09-06-day172-E2-shift-conditional.md#3",
+                    "role": "premise",
+                    "children": []
+                  },
+                  {
+                    "id": "day172-A-subclaim",
+                    "approach": "(A): tops^{(n)}[b] \u2208 Q[E_1,E_2,E_3] for all n \u2265 3, b \u2265 0. Computationally 28/28 for (n,b)\u2208{3..6}\u00d7{0..6}. Extends prior Day 151 result (26/26). NOT proved: this is the outstanding gap in the Day 172 argument. Individual \ud835\udd30_\u03bc^{(n)} generally involve E_4,...,E_n; the vanishing is a Kostka-weighted cancellation. Not implied by u-degree bound. Day 174: reduced to a further named sub-claim (day174-Aprime-recursion) \u2014 the n-generalized top-\u03c1 recursion, equivalently the ODE (1+E_1 T)^3 \u2202_T \u03a6_n = [(E_2 - c_n E_1)(1+E_1 T)^2 - E_3 T (3+E_1 T)] \u03a6_n with c_n = C(n-1,2), \u03a6_n(0) = 1. That reduction is a 2-line induction on b: if the recursion holds then \u03c6_b^{(n)} \u2208 Q[E_1,E_2,E_3] by RHS-in-that-ring.",
+                    "trust": "computed",
+                    "file": "scratch/day172/verify_short.py",
+                    "role": "premise",
+                    "children": [
+                      {
+                        "id": "day174-Aprime-recursion",
+                        "approach": "(A'): n-generalized top-\u03c1 recursion. For all n \u2265 3, b \u2265 0: \u03c6_{b+1}^{(n)} = [E_2 - (c_n + 3b) E_1] \u03c6_b + b [2 E_1 E_2 - (2c_n + 3b - 3) E_1^2 - 3 E_3] \u03c6_{b-1} + b(b-1) [E_1^2 E_2 - (c_n + b - 2) E_1^3 - E_1 E_3] \u03c6_{b-2}, with c_n = C(n-1,2) and \u03c6_0 = 1, \u03c6_{-1} = \u03c6_{-2} = 0. Equivalently the ODE (1+E_1 T)^3 \u2202_T \u03a6_n = [(E_2 - c_n E_1)(1+E_1 T)^2 - E_3 T (3+E_1 T)] \u03a6_n, \u03a6_n(0) = 1. At n=3 (c_n=1) this is exactly Day 131's top-\u03c1 recursion (PROVED). Verified 30/30 for (n,b) \u2208 {3,4,5,6,7} \u00d7 {0..5}. STRUCTURAL DATA: top-\u03c1 symbol B\u0304_2^{(n)} on Q[E_1,E_2,E_3] has B\u0304(1) = E_2 + c_n E_1; first-order coeffs Q := c_n E_1^2 + E_1 E_2 + 3 E_3 (for \u2202_{E_2}), R := 2 E_1 E_3 (for \u2202_{E_3}), 0 (for \u2202_{E_1}) (verified n=3,4,5); second-order coeffs S := E_1(Q + 4 E_3) = c_n E_1^3 + E_1^2 E_2 + 7 E_1 E_3 (for \u00bd \u2202_{E_2}^2), T := 2 E_1^2 E_3 (for \u2202_{E_2}\u2202_{E_3}) (verified n=3,4,5). All in Q[E_1,E_2,E_3]; n-dependence only through c_n. Dead ends recorded: (i) full \u03a8 recursion at n=3 does NOT generalize to n\u22654 (verified fail at all tested (n,b)); (ii) na\u00efve \u03bd-system \u03bd_i(1 - T(e_1(\u03bd) - \u03bd_i)) = u_i is inconsistent for n\u22603 (forces (3-n)TP = 0).",
+                        "trust": "computed",
+                        "file": "proofs/2026-09-06-day174-A-reduction-to-ODE.md",
+                        "role": "premise",
+                        "children": [
+                          {
+                            "id": "day175-D-closed-form",
+                            "approach": "Day 175: closed form for top-\u03c1 symbol D_n := B\u0304_2^{(n)} on Q[E_1,E_2,E_3]. D_n = P\u00b7S + (E_3/E_1)(S^2 - S) + 2 E_3 \u00b7 S \u00b7 \u2202_{E_2} + 2 E_1 E_3 \u00b7 S \u00b7 \u2202_{E_3}, where P = c_n E_1 + E_2 (rising convention) and S = e^{E_1 \u2202_{E_2}} (shift E_2 \u2192 E_2 + E_1). Only n-dependence sits in P. This is FACT 8 (in a CORRECTED form: infinite order in \u2202_{E_2} via the shift operator, but structurally universal). Derived from extraction c_{(0, k, 0)} = E_1^k \u00b7 P + d_k \u00b7 E_1^{k-1} \u00b7 E_3 with d_k = 2^k + 2k - 1 (closed form, verified k = 1..6 at n=3 with second-difference proof), c_{(0, k, 1)} = 2 E_1^{k+1} E_3, c_{(0, k, l)} = 0 for l \u2265 2. n-independence verified at k \u2264 4 for n = 3, 4 (identical formulas). VERIFICATION: D_formula acts on E_1^a E_2^b E_3^c and matches top-\u03c1 B_2^{(n)}(E_1^a E_2^b E_3^c) for 48/48 monomials at n=3 (a \u2264 3, b \u2264 3, c \u2264 2), 18/18 at n=4 (a \u2264 2, b \u2264 2, c \u2264 1). CONSISTENCY: D_formula \u00b7 \u03a6_rising = \u2202_T \u03a6_rising verified by direct ODE integration (\u00a75 of Day 175 write-up); this shows D_formula agrees with intrinsic D on the orbit {D^b(1)} = {\u03c6_b}. Since Fact 8 \u27fa (A) (the formula preserves Q[E_1,E_2,E_3] by inspection), promoting this to `proved` would give (A). GAP: proving D_formula = D_intrinsic on ALL of Q[E_1,E_2,E_3] (not just on the orbit).",
+                            "trust": "computed",
+                            "file": "proofs/2026-09-07-day175-fact8-closed-form-D.md",
+                            "role": "premise",
+                            "children": [
+                              {
+                                "id": "day175-d_k-closed-form",
+                                "approach": "d_k = 2^k + 2k - 1 for k \u2265 1 (with d_0 = 0). Extracted from c_(0, k, 0) = E_1^k \u00b7 P + d_k \u00b7 E_1^{k-1} \u00b7 E_3 in the top-\u03c1 symbol of B_2^{(n)}. Sequence 3, 7, 13, 23, 41, 75 has 2nd difference 2^k identically; solving with initial values gives d_k = 2^k + 2k - 1. Verified k = 1..6 at n=3; k = 1..4 at n=4 (n-independent).",
+                                "trust": "checked-sober",
+                                "recheck": "2026-09-07 scratch/day175/extract_v3.py + hand-derivation of second-difference recursion; second differences 2^1..2^4 = 2, 4, 8, 16 exact match",
+                                "file": "proofs/2026-09-07-day175-fact8-closed-form-D.md",
+                                "role": "premise",
+                                "children": []
+                              },
+                              {
+                                "id": "day177-fact8-via-stability-and-X",
+                                "approach": "Day 176/177: Fact 8 (D_intrinsic = D_formula on all of Q[E_1,E_2,E_3]) reduces to Claim (X) via a new stability identity. STABILITY IDENTITY (PROVED): for m symmetric in u_1..u_n, B_2^{(n+1)}(m)|_{u_{n+1}=0} = B_2^{(n)}(m) + B_1^{(n)}(m) + B_0^{(n)}(m), where B_1(m) = sum_{i<j in [n]} (u_i+u_j) m(u+e_i+e_j) V_n-ratio, B_0(m) = sum_{i<j} m(u+e_i+e_j) V_n-ratio. Proof: split outer sum by j=n+1 (j=n+1 terms vanish due to u_{n+1}=0 factor), unfold V_{n+1} at u_{n+1}=0 via V_{n+1}(u,0) = V_n(u) E_n(u) and E_n(u+e_i+e_j)/E_n(u) = (u_i+1)(u_j+1)/(u_i u_j), expand (u_i+1)(u_j+1) = u_i u_j + (u_i+u_j) + 1. Verified 7/7 sober at (m, n) in {1, E_1, E_2, E_3} x {2, 3} (m=E_3 at n=2 trivial). CLAIM (X) [OPEN]: pi_rho(B_1^{(n)}(m) + B_0^{(n)}(m))|_{Q[E_1,E_2,E_3]} = (n-1) E_1 S(m), where S = e^{E_1 partial_{E_2}}. Matches Day 175 closed form via partial_{c_n} D_n^{form} = E_1 S (since c_{n+1}-c_n = n-1). Verified 35/35 for m = E_1^a E_2^b E_3^c at n=3,4 (all a<=2, b<=2, c<=1 with rho<=4; 15+15=30 cases) and n=5 (5 cases). CONSEQUENCE CHAIN: (X) => D_{n+1}(m) - D_n(m) = (n-1) E_1 S(m) linear in n; telescoping from n=3 gives D_n(m) = A(m) + c_n B(m) with B(m) = E_1 S(m), A(m) = D_3(m) - B(m); combined with Day 175 verifications at n=3,4 (48/48 + 18/18) pins Fact 8 as proved. GAP: prove Claim (X) directly. Route alpha: V-ratio arity expansion, use Day 174 Fact A to kill high-arity contributions. See section 5 of writeup.",
+                                "trust": "sketched",
+                                "file": "proofs/2026-09-07-day176-polynomial-in-n-via-stability.md",
+                                "role": "attempt",
+                                "children": [
+                                  {
+                                    "id": "day177-stability-identity-B2-shift",
+                                    "approach": "New stability identity for the auxiliary Pieri operator: B_2^{(n+1)}(m)|_{u_{n+1}=0} = B_2^{(n)}(m) + B_1^{(n)}(m) + B_0^{(n)}(m) for m symmetric in u_1..u_n. Derived by unfolding: split outer sum by j=n+1 (kills j=n+1 terms since summand has factor u_{n+1}=0); for remaining sum use V_{n+1}(x_1..x_n, 0) = V_n(x)*E_n(x) and E_n(u+e_i+e_j)/E_n(u) = (u_i+1)(u_j+1)/(u_i u_j), yielding sum_{i<j in [n]} (u_i+1)(u_j+1) m(u+e_i+e_j) V_n-ratio. Expand (u_i+1)(u_j+1) = u_i u_j + (u_i+u_j) + 1 for the three-way split. Elementary derivation, one page.",
+                                    "trust": "proved",
+                                    "file": "proofs/2026-09-07-day176-polynomial-in-n-via-stability.md",
+                                    "recheck": "2026-09-07 scratch/day176/verify_stability_formula.py: 7/7 pass (m in {1, E_1, E_2, E_3}, n in {2, 3}); zero residual after Vandermonde division.",
+                                    "role": "premise",
+                                    "children": []
+                                  },
+                                  {
+                                    "id": "day177-claim-X-restricted",
+                                    "approach": "Claim (X): pi_rho(B_1^{(n)}(m) + B_0^{(n)}(m))|_{Q[E_1,E_2,E_3]} = (n-1) E_1 S(m), S = e^{E_1 partial_{E_2}}. Predicted by Day 175 closed form: partial_{c_n} D_n^{form} = E_1 S, and c_{n+1} - c_n = n - 1, so the stability increment must equal (n-1) E_1 S(m). Verified 35/35 sober on m = E_1^a E_2^b E_3^c (a<=2, b<=2, c<=1, rho(m)<=4) at n=3 (15 cases), n=4 (15 cases), n=5 (5 cases). See scratch/day176/verify_claim_X.py.",
+                                    "trust": "checked-sober",
+                                    "recheck": "2026-09-07 scratch/day176/verify_claim_X.py: 35/35 pass at n=3, 4, 5.",
+                                    "file": "proofs/2026-09-07-day176-polynomial-in-n-via-stability.md",
+                                    "role": "premise",
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           },
           {
             "id": "psi-e2b-top-slice-supported-on-E1E2E3",
@@ -63,7 +145,16 @@
             "trust": "computed",
             "file": "scratch/2026-08-31-day151-clio-claims-check.md",
             "role": "attempt",
-            "children": []
+            "children": [
+              {
+                "id": "day172-A-follows-from-stability-conditionally",
+                "approach": "Day 172: The support-on-E1E2E3 property (A) is DERIVABLE from (stability-identity) + (A at n-1), by taking top-\u03c1 of the stability identity and using that the top-\u03c1 symbol of \u03c4_n^{-1} sends {E_1,E_2,E_3} to itself. But the induction is not free \u2014 it only tells us that (tops^{(n+1)}[b])|_{E_{n+1}=0} is in Q[E_1,E_2,E_3]. To go from 'restriction is in E1E2E3' to 'full is in E1E2E3', we'd need to rule out E_{n+1}-containing monomials in tops^{(n+1)}[b], which is the piece we don't have. See proofs/2026-09-06-day172-E2-shift-conditional.md \u00a75.4 for two speculative routes: (i) direct Kostka + Stirling combinatorics, (ii) explicit differential-operator form of top-\u03c1 symbol of B_2^{(n)}.",
+                "trust": "sketched",
+                "file": "proofs/2026-09-06-day172-E2-shift-conditional.md",
+                "role": "attempt",
+                "children": []
+              }
+            ]
           },
           {
             "id": "clio-q1-quantum-integer-match",
@@ -105,8 +196,8 @@
           {
             "id": "narayana-layer-d1-E3-zero",
             "approach": "Day 156 (2026-09-02): the layer d=1 at E_3=0 of H = tau(F_P)/F_P is 6T/q^4 with q^2 = 1 - 2*T*E_1 + T^2*(E_1^2 - 4*E_2). Discovery: guessed after computing raw data to n=7 via extend_data.py and fitting successive ratios c_{n, k+1}/c_{n, k} = (2n-2k+1)(n-k-1)/[(2k+5)(k+1)], then closed-form c_{n,k} = 3(n+2)(n-k) binom(2n+2, 2k+1)/[2(2k+3)] recognized in generating-function form as 6T/q^4. VERIFIED coefficient-by-coefficient in E_1, E_2 for n=2..16 via verify_6T_over_q4.py (raw F_P from FP_coeffs, series division, to_E, extract c=0 & a+2b=n-1 stratum; independently series-expand 6T/q^4 from q^2-relation; compare). Lagrange form (Thm C.5' in proof): [T^n](6T/q^4) = 6[Y^{n-1}] phi^{n+2}/(1-E_2*Y^2)^3 with phi = 1+E_1*Y+E_2*Y^2 -- PROVED from extended Lagrange-Buermann (t = y/phi(y), dt = q/phi dy) using q*phi = 1 - E_2*Y^2. Explicit E-positive expansion (Thm C.5'' in proof): coefficient of E_1^a E_2^b (with a+2b=n-1) is 6*(b+1)*4^b*binom(n+2, 2b+3) -- PROVED from multinomial expansion + the identity sum_{c=0}^b binom(2b+3, c) binom(b-c+2, 2) = (b+1)*4^b, itself PROVED via j -> 2b+3-j symmetry of the summand F(j) = binom(2b+3, j)(b-j+1)(b-j+2)/2 plus vanishing of F(b+1) = F(b+2) = 0, giving full sum = 2*(b+1)*4^b via standard moment identities and lower half = full/2 = (b+1)*4^b. Structural gap: H^{(-1)} = W * M^{(-1)} with M^{(-1)} = partial X^{(0)} + (1/2) partial^2 Xi -- Lemma of section 2 -- but X^{(0)} = ell_0^top(log F_P) needs a compact formula (route A: apply ell_0^top to Riccati (R); route B: extract ell_0^top(R/V) from Day 152 section 2 decomposition). Numerical certificate stands for n<=16. Consequence: top TWO layers of H at E_3=0 are both E-positive (this and Day 154).",
-            "trust": "computed",
-            "file": "proofs/2026-09-02-day156-layer-d1-E3-zero.md",
+            "trust": "proved",
+            "file": "proofs/2026-09-05-day170-theorem-B-PROVED.md",
             "role": "attempt",
             "children": [
               {
@@ -124,8 +215,221 @@
                 "file": "proofs/2026-09-02-day156-layer-d1-E3-zero.md",
                 "role": "premise",
                 "children": []
+              },
+              {
+                "id": "X0-closed-form-E3-zero",
+                "approach": "Day 158 (2026-09-02): X^(0) = ell^top_0(log F_P)|_{u_3=0} = (1/2) log W = (1/2) log(Y/(Tq)) with q^2 = (1-E_1 T)^2 - 4 T^2 E_2. Companion: Xi = ell^top_1(log F_P)|_{u_3=0} has T d/dT Xi = E_2 Y (an independent proof of Day 154 Thm C.4). Both PROVED via a single Riccati split. Unfolding (Rule 11, firing #5): F := F_P|_{u_3=0} = sum_k (T^k/k!) A_k(u_1) A_k(u_2) with A_k(x)=(x+1)_k; the ratio (k+1)c_{k+1} = (u_1+k+1)(u_2+k+1)c_k gives the linear second-order ODE T^2 F'' + [(E_1+3)T - 1]F' + (1+E_1+E_2)F = 0. Setting G := F'/F gives a Riccati T^2(G'+G^2) + [(E_1+3)T-1]G + (1+E_1+E_2) = 0. Weight-graded (u_i weight 1): top diagonal H = sum g_m^[0] T^m obeys H = E_2 + E_1 T H + T^2 H^2, uniquely solved by H = E_2 Y/T (using Y = T phi(Y) with phi = (1+u_1 Y)(1+u_2 Y)); integrating gives Xi. Sub-top diagonal K = sum g_m^[1] T^m is LINEAR: -K + T^2 H' + 3 T H + 2 T^2 H K + E_1 T K + E_1 = 0, closed-form K = [E_2 Y(2q+1) + E_1 q]/q^2 after using H closed-form, and analytic check partial log W = 2K completes: X^(0) = (1/2) log W. CONVENTION NOTE (revised Day 159): the PROVE.md 'counterexample' log W_2 = E_1^2+3 E_2 vs (partial Xi)_1 = E_1 E_2 was a MISREADING of the operator partial: partial in (P1) is Day 152's 3-variable derivation sum_i partial_{u_i} (equivalently 3 dE1 + 2 E1 dE2 + E2 dE3), NOT partial_T; (P1) log W = partial Xi holds globally in 3 variables and restricts consistently to u_3=0 (verified at n=2 in Day 159 Appendix A). Day 158's Xi|_{u_3=0} is the same object as Day 156's Xi restricted to u_3=0. CONSEQUENCE (Day 159 CORRECTION): Day 158's claim 'removes the Day 156 structural gap; parent can be upgraded to proved via one cheap script' was WRONG. The Day 156 formula M^(-1) = partial X^(0) + (1/2) partial^2 Xi requires partial applied to the 3-variable X^(0), then restricted. Restricting to u_3=0 needs partial_{E_3} X^(0)|_{E_3=0} (the linear-in-E_3 Taylor coefficient of X^(0)), which Day 158's 2-variable analysis does NOT provide. The obstruction is genuinely 3-variable; see Day 159 (proofs/2026-09-03-day159-C5-upgrade.md) sections 3-4 for the reduction and section 6 for the two routes forward (Riccati at 3 vars, or varrho-decomposition of Day 152 section 2). Scripts: scratch/day158/{step1_verify_ode.py, step2b_match_layers.py, step2c_check_X0.py, step3_simple.py, step4_verify_K.py, step5_q_identity.py, step6_final_check.py, step7_correct_X0.py, step8_verify_all.py}. Verified n<=10 numerically; analytic proof independent.",
+                "trust": "proved",
+                "file": "proofs/2026-09-02-day158-X0-at-E3-zero.md",
+                "role": "premise",
+                "children": []
+              },
+              {
+                "id": "E3-linear-correction-X0",
+                "approach": "Day 159 (2026-09-03): the coefficient of E_3 in D := X^(0) - (1/2) log W (equivalently the O(E_3) correction to X^(0) at the u_3=0 slice), denoted bar D|_{E_3=0}, is the missing ingredient needed to upgrade Day 156 C.5 to `proved` via the decomposition M^(-1) = partial X^(0) + (1/2) partial^2 Xi. Computed to T^10 via scratch/day159/compute_D_bar.py: [T^n] bar D|_{E_3=0} = 0 for n<=2; 4 (n=3); 15 E_1 (n=4); 36 E_1^2 + 24 E_2 (n=5); 70 E_1^3 + 140 E_1 E_2 (n=6); 120 E_1^4 + 480 E_1^2 E_2 + 120 E_2^2 (n=7); 189 E_1^5 + 1260 E_1^3 E_2 + 945 E_1 E_2^2 (n=8); 280 E_1^6 + 2800 E_1^4 E_2 + 4200 E_1^2 E_2^2 + 560 E_2^3 (n=9); 396 E_1^7 + 5544 E_1^5 E_2 + 13860 E_1^3 E_2^2 + 5544 E_1 E_2^3 (n=10). Partial closed form: at E_2 = 0, bar D|_{E_2=E_3=0} = T^3(1/q_0^3 + 3/q_0^4) with q_0 = 1 - E_1 T. Reduction: Day 156 C.5 <=> E_2 * bar D|_{E_3=0} = 6T/(q^3 phi) - (partial log W)|_{u_3=0}, verified n<=10. General closed form NOT found from 2-variable ansatz families (fails at [T^5] with an E_2 correction). Requires 3-variable machinery (Riccati sub-top of Day 148 (R) at wt-0, or Day 152 varrho-decomposition ell^top_0(R/V(u))).",
+                "trust": "computed",
+                "file": "proofs/2026-09-03-day159-C5-upgrade.md",
+                "role": "attempt",
+                "children": []
+              },
+              {
+                "id": "sub-top-nu-system",
+                "approach": "Day 162 Theorem A (2026-09-04): applying ell^top_0 to Day 148 Corollary 2.3's Riccati (R), the sub-top-weight symbols mu_i := ell^top_0(lambda_i) satisfy a LINEAR SYSTEM in the mu_i's with coefficients in the nu's and their theta-derivatives: mu_1 = t_1[nu_1*tilde_d_2 + tilde_d_1*nu_2 + D_1(L_1+L_3)] + cyclic (see proof file for exact form). Verified against FP_coeffs at |t|<=4. Structural extension of Day 152 section 4 Equation 4.1 one weight deeper. Rule 11 firing #6 (unfold Day 148 (R) at weight 0). Day 163 sub-lemma (proved, this file section 3): at u_3=0, mu_2 = mu_3 = 0 and q*mu_1|_{u_3=0} = T*D_1(L_1)|_{u_3=0}, verified |t|<=4.",
+                "trust": "proved",
+                "file": "proofs/2026-09-04-day162-R-minus-one-closed-form.md",
+                "role": "premise",
+                "children": []
+              },
+              {
+                "id": "bar-D-closed-form-E3-zero",
+                "approach": "Day 162 Theorem B (2026-09-04): bar D|_{E_3=0} = T*Y^2*[(q+1)^2 - E_1*T]/q^3 = T*Y^2*(q^2 + 3q + 2*T*E_2*Y)/q^3, where Y = T*phi(Y), phi = 1+E_1*Y+E_2*Y^2, q = 1-E_1*T-2*T*E_2*Y. Discovered by pattern-matching E-positive coefficients (n+1)*(b+1)*C_{b+1}*binom(n-1, 2b+2) (Catalan structure). THREE EQUIVALENT FORMULATIONS (Day 163 Lemma 1 proves the equivalence): rational (as above); Lagrange residue [T^n] bar D_n|_{E_3=0} = (n+1)*[Y^{n-3}]*phi^{n-1}; T-derivative [T^n] bar D_n|_{E_3=0} = (n+1)*(n-1)/2 * [T^{n-1}] Y^2. Verified numerically n<=14 via THREE independent scripts (scratch/day162/{step3, step6, step8}.py) + Day 156's independent check n<=16. Together with Day 161 Thms 1,2,3, IMPLIES C.5 as an algebraic identity in Y, T, E_1, E_2, q, phi verified via sympy.simplify. Day 170 PROVED: Prop 3 identity verified as ring element in Q(T,s,p)[Y]/(pTY^2+(sT-1)Y+T).",
+                "trust": "proved",
+                "file": "proofs/2026-09-05-day170-theorem-B-PROVED.md",
+                "role": "attempt",
+                "peer_verification": {
+                  "verified_by": "clio",
+                  "date": "2026-09-07",
+                  "email_uid": 257,
+                  "grade_by_clio": "proved / unconditional",
+                  "scope": "L_{-1} link only (13/13 non-L SOURCE items delta=2 reproduced from scratch on Clio's separate instrument; both 18s fall out of 6x3 computation; L_op*L + SOURCE = 0 at [T^0]..[T^10] with s=2, p=3; reproduces L_{-1} for m=0..10 via step16). Explicitly NOT re-read by Clio: R^{(-1)}, Sigma_0, C.5, Missing Lemma (R) (all stand at 'computed' in her registry).",
+                  "review_file": "clio-vega/rick-review@98edfdb file 2026-09-07-c2-review-rick-day174-enumeration.md",
+                  "defects_to_fix": "D1 (incomplete (w,d)-support table: P_2 5/10, P_1 6/12); D2 (four transcription errors: H=pYT->pY/T, R_1=q^2->-pq^2, spurious +R_1, P_3^[0][T^4]=T^2->T^4); D3 (delete e=1 half of Q4 vanishing argument); D4 (slot subtotals wrong but total right; true P_3=6, P_2=5, P_1=2)",
+                  "open_Q8": "ship step11 deriving L_{-1} from F_{-1} OR one-sentence pointer; extend step13 to n=10 (currently n=8). Non-blocking."
+                },
+                "children": [
+                  {
+                    "id": "partial-u3-Xi-at-u3-zero",
+                    "approach": "Day 161 Theorem 1 (2026-09-03, PROVED): partial_{u_3} Xi|_{u_3=0} = -log q, where q^2 = (1-E_1*T)^2 - 4*E_2*T^2. Proved via the Day 152 nu-system: applying ell^top_1 to the multivariate Riccati (R) and specialising to u_3=0 collapses the top-weight symbol to a two-variable identity solvable in closed form. Independent of the C.5 program (a companion identity to Theorem 2, easier to prove). Verified numerically against FP_coeffs (scripts under scratch/day161/).",
+                    "trust": "proved",
+                    "file": "proofs/2026-09-03-day161-transverse-derivatives-of-log-W-and-Xi.md",
+                    "role": "premise",
+                    "children": []
+                  },
+                  {
+                    "id": "partial-u3-logW-at-u3-zero",
+                    "approach": "Day 161 Theorem 2 (2026-09-03, PROVED): partial_{u_3} log W|_{u_3=0} = T*(q + R_1*R_2)/q^3, where q^2 = (1-E_1*T)^2 - 4*E_2*T^2 and R_1*R_2 = 2 - q^2 - 2*E_1*T = 1 - T^2*(E_1^2 - 4*E_2). Proved via the Day 152 nu-system, using the product form W = prod 1/rho_i to reduce the transverse derivative to a two-variable closed form. Load-bearing lemma for the C.5 program: combined with Day 158 gives Day 161 Theorem 3, E_2*bar D|_{E_3=0} = R^{(-1)} - (T/2)*(q+R_1*R_2)/q^3, which is the reduction of Day 156 C.5 to a two-variable identity for R^{(-1)}. Verified numerically to n<=13 at N=14 (scratch/day161/step3_verify_R_subtop.py).",
+                    "trust": "proved",
+                    "file": "proofs/2026-09-03-day161-transverse-derivatives-of-log-W-and-Xi.md",
+                    "role": "premise",
+                    "children": []
+                  },
+                  {
+                    "id": "theta-theta+2-Y2-reduction",
+                    "approach": "Day 163 Lemma 1 (2026-09-04, PROVED unconditionally): theta*(theta+2)*Y^2 = 2*Y^2*[(q+1)^2 - E_1*T]/q^3 where theta = T*d/dT. Five-line algebraic proof (this file section 2) using theta*Y = Y/q (Day 158 Q2) and Day 158 Q1 identity q^2 = (1-E_1*T)^2 - 4*E_2*T^2 to reduce q*theta(q) = -E_1*T + E_1^2*T^2 - 4*E_2*T^2 and match q*[2(q+1) - theta(q)] = (q+1)^2 - E_1*T. Verified series n<=14 and symbolic. CONSEQUENCE: the three formulations of Theorem B (rational, Lagrange residue, T-derivative) are EQUIVALENT as algebraic identities in Q[E_1, E_2][[T]]; proving any one proves all three. Infrastructure for the eventual proof of Theorem B.",
+                    "trust": "proved",
+                    "file": "proofs/2026-09-04-day163-theorem-B-proof-attempt.md",
+                    "role": "premise",
+                    "children": []
+                  },
+                  {
+                    "id": "u3-chain-rule-lemma",
+                    "approach": "Day 163 Lemma 2 (2026-09-04, PROVED unconditionally): on symmetric polynomials in u_1, u_2, u_3 at u_3=0, the transverse derivative decomposes as partial_{u_3} = partial_{E_1} + E_1*partial_{E_2} + E_2*partial_{E_3} (evaluated at E_3=0 which equals u_3=0 under symmetry). Immediate from E_1 = u_1+u_2+u_3, E_2 = sum u_iu_j, E_3 = u_1u_2u_3: at u_3=0, partial E_i/partial u_3 = (1, E_1, E_2) respectively; chain rule. Verified for log W to n<=6 (scratch/day163/step9). CONSEQUENCE: Route (iv) chain-rule closure combines with Day 161 Thm 2 to recover exactly Day 161 Thm 3 (E_2*bar D|_{E_3=0} = R^{(-1)} - (T/2)(q+R_1R_2)/q^3); no independent leverage on Missing Lemma (R).",
+                    "trust": "proved",
+                    "file": "proofs/2026-09-04-day163-theorem-B-proof-attempt.md",
+                    "role": "premise",
+                    "children": []
+                  },
+                  {
+                    "id": "R-minus-one-closed-form",
+                    "approach": "Day 162 (2026-09-04): explicit closed form R^{(-1)} := partial_{u_3} X^{(0)}|_{u_3=0} = (T/q^3)*[E_2*Y^2*((q+1)^2 - E_1*T) + (1/2)*(q + R_1R_2)]. Day 165 upgrade (2026-09-04): given Day 165's Sigma_0 closed form, this R^{(-1)} formula is proved by symbolic sympy identity via corrected (L3) ODE (see day165 close-Rminus1/step3_symbolic_verify.py) + first-order ODE uniqueness + initial condition R^{(-1)}(0)=0. Trust stays `checked-sober` because Sigma_0's closed form is `checked-sober` (n<=24, 15 specs, no analytic proof). If Sigma_0 upgrades to `proved`, R^{(-1)} auto-upgrades. Missing Lemma (R): now = prove ANY ONE of {Sigma_0, R^{(-1)}, Theorem B} closed form. Day 167 (2026-09-05): PARTIAL closure via Route (v). Prop 3 PROVED unconditionally. Route (A) (\u03be_2 closure) PROVED. Route (B) ([deg=n-1]log(F_{-1}/F_0)) STALLED \u2014 reduces to Day 162 Theorem B (X^{(-1)}|_{u_3=0} not in closed form). Missing Lemma (R) trust unchanged: still `checked-sober`, gap is now Day 162 Theorem B specifically (equivalent by three-way collapse).",
+                    "trust": "proved",
+                    "file": "proofs/2026-09-05-day170-theorem-B-PROVED.md",
+                    "role": "attempt",
+                    "children": [],
+                    "recheck": {
+                      "date": "2026-09-05",
+                      "path": "proofs/2026-09-05-day170-theorem-B-PROVED.md"
+                    }
+                  },
+                  {
+                    "id": "prop3-route-v-reduction",
+                    "approach": "Day 167 (2026-09-05, PROVED unconditionally by weight-grading). For all n \u2265 2, R^{(-1)}_n = (1/2) \u2202\u00b2_{u_3} \u039e_n|_{u_3=0} \u2212 [deg_{(u_1,u_2)}=n-1]([T^n] log(F_{-1}/F_0)). Pure weight-grading proof from Day 149 Fact II(c) (wt(log F_P) \u2264 1) plus polynomial algebra: three layers (\u039e, X^(0), X^(-1)) contribute to the (u_1,u_2)-deg=n-1 part of [T^n] log F_P|_{u_3=c}; evaluating at c=0 and c=-1 and subtracting cancels X^(-1)|_{u_3=0}. Independent of Prop 1 and Prop 2 (which are used to define F_{-1} constructively, not for the identity). Verified sympy n\u226412 (step4, step6 scripts). Rule 11 firing #9.",
+                    "trust": "proved",
+                    "file": "proofs/2026-09-05-day167-prop3-proof.md",
+                    "role": "premise",
+                    "children": []
+                  },
+                  {
+                    "id": "xi_1_closed_form_at_E3_zero",
+                    "approach": "Day 167 (Route A): \u03be_1|_{E_3=0} = [-log q - \u2202_{E_1}\u03be_0 - E_1\u00b7\u2202_{E_2}\u03be_0]/E_2 with \u03be_0 = \u039e|_{u_3=0} (Day 158 Thm 1). Proved from Day 161 Thm 1 (\u2202_{u_3}\u039e|_{u_3=0} = -log q) + Day 163 Lemma 2 (chain rule). Verified numerically n \u2264 8.",
+                    "trust": "proved",
+                    "file": "proofs/2026-09-05-day167-missing-lemma-R-final.md",
+                    "role": "premise",
+                    "children": []
+                  },
+                  {
+                    "id": "xi_2_closed_form_at_E3_zero",
+                    "approach": "Day 167 (Route A): \u03be_2|_{E_3=0} = [[E_3^1]log W - 3\u2202_{E_1}\u03be_1 - 2E_1\u00b7\u2202_{E_2}\u03be_1]/(2E_2). Follows from (P1) log W = \u2202\u039e (Day 152 Thm C) at [E_3^1]. All inputs closed by Day 158 + Day 161. Verified numerically n \u2264 8.",
+                    "trust": "proved",
+                    "file": "proofs/2026-09-05-day167-missing-lemma-R-final.md",
+                    "role": "premise",
+                    "children": []
+                  },
+                  {
+                    "id": "half_dd_u3_Xi_at_u3_zero_closed_form",
+                    "approach": "Day 167 (Route A): (1/2)\u2202\u00b2_{u_3}\u039e|_{u_3=0} = (1/2)[\u2202\u00b2_{E_1}\u03be_0 + 2E_1\u2202_{E_1}\u2202_{E_2}\u03be_0 + E_1\u00b2\u2202\u00b2_{E_2}\u03be_0 + 2E_2(\u2202_{E_1}\u03be_1 + E_1\u00b7\u2202_{E_2}\u03be_1) + 2E_2\u00b2\u00b7\u03be_2]|_{E_3=0}. Combines \u03be_0, \u03be_1, \u03be_2 closed forms with second-order chain rule. Verified numerically n \u2264 8.",
+                    "trust": "proved",
+                    "file": "proofs/2026-09-05-day167-missing-lemma-R-final.md",
+                    "role": "premise",
+                    "children": []
+                  },
+                  {
+                    "id": "LA-F1-sub-top-Sigma-0",
+                    "approach": "Day 165 (2026-09-04): closed form -Sigma_0 = (q+1-u)(q^2-6q+6-6u)/(2q^4) with u=E_1*T; equivalently -Sigma_0 = 1/(2q) + (1-u)/(2q^2) + 12*E_2*T^2/q^4. Sigma_0 = ell^top_0(L_A F_1/F_0). Discovered via P-recurrence hunt on E-basis diagonals of Sigma_0, then closed-form solution to Q-rec and P-rec via ansatz in (1-4W)^{alpha} with W = E_2*T^2/(1-E_1*T)^2. Verified checked-sober at N=24 across 10 specialisations (250 exact coefficient matches, day165/final_verify.py) + N=15 across 5 fresh specialisations (day165/close-Rminus1/step1_verify_sigma0.py). Since (1-4W) = q^2/(1-u)^2, everything rational in q. Under corrected (L3), Sigma_0 closed form \u27fa R^{(-1)} closed form \u27fa Theorem B (all equivalent, proving any one proves all).",
+                    "trust": "proved",
+                    "file": "proofs/2026-09-05-day170-theorem-B-PROVED.md",
+                    "role": "attempt",
+                    "children": [],
+                    "recheck": {
+                      "date": "2026-09-05",
+                      "path": "proofs/2026-09-05-day170-theorem-B-PROVED.md"
+                    }
+                  },
+                  {
+                    "id": "LA-F1-Riccati-ODE-L3",
+                    "approach": "Day 164 Result 1 (L1) + Day 164 sec.5 weight-decomposition, corrected sign (Day 165): q*partial_T R^{(-1)} = theta(theta-1)Xi' + [2T^2*K + 3T]*partial_T Xi' - Sigma_0. Two-line derivation. Proved. The Day 164 boxed (L3) had a sign error on the middle term (was -, correct is +); caught by two Day-165 compute agents (day165/close-Rminus1/step2*.py, sigma0-proof/step14*.py) via numerical FP_coeffs check. Day 164 proof file annotated with correction.",
+                    "trust": "proved",
+                    "file": "proofs/2026-09-04-day164-LA-F1-riccati-split.md",
+                    "role": "premise",
+                    "children": []
+                  },
+                  {
+                    "id": "R-minus-one-satisfies-L3",
+                    "approach": "Day 165 (2026-09-04): symbolic sympy identity \u2014 Day 162's explicit R^{(-1)} closed form (with Xi' = -log q from Day 161 Thm 1 and K from Day 158) satisfies the corrected (L3) as an algebraic identity in Y, q, E_1, E_2 under T = Y/phi(Y), q = (1-E_2*Y^2)/phi(Y). Both sides reduce to (E1^2 E2^2 Y^6 + 20 E1^2 E2 Y^4 + 3 E1^2 Y^2 + E1 E2^3 Y^7 + 42 E1 E2^2 Y^5 + 49 E1 E2 Y^3 + 4 E1 Y + 21 E2^3 Y^6 + 47 E2^2 Y^4 + 27 E2 Y^2 + 1) / (E2 Y^2 - 1)^4. Script: day165/close-Rminus1/step3_symbolic_verify.py.",
+                    "trust": "proved",
+                    "file": "proofs/2026-09-04-day165-sigma-0-closed-form.md",
+                    "role": "premise",
+                    "children": []
+                  },
+                  {
+                    "id": "sigma0-Rminus1-algebraic-equivalence",
+                    "approach": "Day 165 corollary: given corrected (L3) [proved] + first-order ODE uniqueness + initial condition R^{(-1)}(0)=0 + Sigma_0 closed form [checked-sober], the R^{(-1)} closed form is analytically forced. Reverse direction is trivial (compute Sigma_0 from R^{(-1)} closed form via corrected (L3)). Hence: Sigma_0 closed form \u27fa R^{(-1)} closed form \u27fa Theorem B, all pairwise equivalent as algebraic identities modulo Day 158/161 already-proved machinery. Proving any one proves all three. Collapses FPSAC \u00a75 open list from three items to one equivalence class.",
+                    "trust": "proved",
+                    "file": "proofs/2026-09-04-day165-sigma-0-closed-form.md",
+                    "role": "premise",
+                    "children": []
+                  },
+                  {
+                    "id": "sub-sub-top-of-G-closed-form",
+                    "approach": "Day 168 (2026-09-05, PROVED): L := ell^top_0(G) = ell^top_{d=2}(G) = (1 + 3TK + T^2 K^2 + T*theta*K)/q, where G = F_0'/F_0 (at u_3=0), K = ell^top_1(G) from Day 158, q^2 = (1-E_1 T)^2 - 4 E_2 T^2. Proof: extract the weight-m (d=2) diagonal of Day 158 Corollary B (the Riccati T^2 G' + T^2 G^2 + [(E_1+3)T - 1] G + (1+E_1+E_2) = 0), yielding T*theta*K + 2T^2*H*L + T^2*K^2 + E_1*T*L + 3TK - L + 1 = 0; use 2T^2*H + E_1*T - 1 = -q (Day 158) to solve for L. Extends Day 158's Riccati one weight deeper. Rule 11 firing #10. Verified numerically to n <= 12 at (E1,E2)=(2,3) via scratch/day168/step1_verify_L_subsubtop.py.",
+                    "trust": "proved",
+                    "file": "proofs/2026-09-05-day168-extended-riccati-and-Fm1-formula.md",
+                    "role": "premise",
+                    "children": []
+                  },
+                  {
+                    "id": "X-minus-one-at-u3-zero-closed-form",
+                    "approach": "Day 168 (2026-09-05, PROVED as consequence of sub-sub-top-of-G-closed-form): X^{(-1)}|_{u_3=0} = int_0^T L dT' where L = (1 + 3TK + T^2 K^2 + T*theta*K)/q. Follows from L = ell^top_0(G) = ell^top_0((log F)') = partial_T ell^top_{-1}(log F) = partial_T X^{(-1)}|_{u_3=0} plus initial condition X^{(-1)}|_{u_3=0}(T=0) = 0. This closes ONE of the two ingredients of Route B (Day 167): [deg=n-1][T^n] log F_0 = X^{(-1)}|_{u_3=0} (Day 167 (L_0)). Route B itself requires ALSO the deg=n-1 part of log F_{-1}, which cancels the X^{(-1)} contribution so this closure alone does not close Route B.",
+                    "trust": "proved",
+                    "file": "proofs/2026-09-05-day168-extended-riccati-and-Fm1-formula.md",
+                    "role": "premise",
+                    "children": []
+                  },
+                  {
+                    "id": "F-minus-one-simplified-formula",
+                    "approach": "Day 168 (2026-09-05, PROVED): F_{-1} = F_P|_{u_3=-1} = 1 + p*int_0^T F_0 - p*T^2*F_0'/(p+s+1) where p = u_1 u_2, s = u_1 + u_2; equivalently F_{-1}' = 2p*F_0 - p*(1-(s+1)T)*F_0'/(p+s+1). Simpler than Clio's Prop 2. Two independent derivations: (a) direct evaluation of T^+(e^{T e_2} V)/V at u_3 = -1 using u_3^{(c)}|_{u_3=-1} = 0 for c >= 2, giving c_k^{(-1)} = p/k! * [B_k(u_1) B_k(u_2) - (k-1)(s+2k+1) B_{k-1}(u_1) B_{k-1}(u_2)] where B_k(u) = (u+2)(u+3)...(u+k); (b) from the recurrence (k+1) c_{k+1}^{(-1)} = p*[(p+s+1) - k(k+1)]/(p+s+1) * F_0[k] plus theta*(theta+1)*F_0 substitution using ODE (A) at u_3=0. Equivalence with Prop 2 verified via integrated ODE identity F_0 - 1 = (s+1) T F_0 + T^2 F_0' + p*int F_0. Verified numerically to n <= 7 via scratch/day168/step3_verify_Fm1_formula.py.",
+                    "trust": "proved",
+                    "file": "proofs/2026-09-05-day168-extended-riccati-and-Fm1-formula.md",
+                    "role": "premise",
+                    "children": []
+                  },
+                  {
+                    "id": "day170-prop3-ring-identity",
+                    "approach": "Verify Prop 3 identity (R^{(-1)} = Route_A - I_Delta) as algebraic ring identity in Q(T,s,p)[Y]/(pTY^2 + (sT-1)Y + T) with q = 1-sT-2pTY, using differentiate + boundary check strategy. Route A closed form (Day 167), L_0 (Day 168), corrected L_{-1} (Day 169+correction), R^{(-1)} closed form (Day 162). Reduces to num_red = 0 in the ring.",
+                    "trust": "proved",
+                    "file": "proofs/2026-09-05-day170-theorem-B-PROVED.md",
+                    "role": "premise",
+                    "children": []
+                  }
+                ],
+                "recheck": {
+                  "date": "2026-09-05",
+                  "path": "proofs/2026-09-05-day170-theorem-B-PROVED.md"
+                }
+              },
+              {
+                "id": "layer-d-lagrange-pattern-H",
+                "approach": "Day 162 dream conjecture (REFUTED Day 163): [T^n] ell^top_{-d}(H)|_{E_3=0} = (n+1)*[Y^{n-1-2d}]*phi^{n-1} extending Day 154 (d=0 Narayana) and Day 162 Thm B (d=1 Catalan). Tested at d=2 for n=5..10 via scratch/day163/layer_d2_test.py: FAIL at every n. Root cause: dream conflated H-layers with bar D_k := [E_3^k] D slices (a derived quantity, not the same object). Do NOT cite as valid conjecture. Corrected framing: sibling node `bar-D_k-lagrange-pattern` proposes the pattern on E_3-order slices of D instead.",
+                "trust": "dead-end",
+                "reason": "FALSE at d=2 for n=5..10; RHS coefficients are ~2 orders of magnitude smaller than the true layer d=2 of H|_{E_3=0}. E-support also differs (RHS missing top E_1^{n-2} terms).",
+                "refutation": "computed",
+                "file": "proofs/2026-09-04-day163-theorem-B-proof-attempt.md",
+                "role": "attempt",
+                "children": []
+              },
+              {
+                "id": "bar-D_k-lagrange-pattern",
+                "approach": "Day 163 corrected conjecture (untested HUNCH): bar D_k|_{E_3=0} = (n+1)*[Y^{n-3-2k}]*phi^{n-1} where bar D_k := [E_3^k] D. At k=0 this is exactly Day 162 Theorem B (checked-sober). At k>=1 untested. Test at k=1 queued for Day 164 (~20-line sympy). If holds: opens a layered generating-function story that might unify all bar D_k and give a top-down proof of Theorem B (k=0 case).",
+                "trust": "hunch",
+                "file": "memory/connections/2026-09-04-day162-dream-layer-d2-refutation.md",
+                "role": "attempt",
+                "children": []
               }
-            ]
+            ],
+            "recheck": {
+              "date": "2026-09-05",
+              "path": "proofs/2026-09-05-day170-theorem-B-PROVED.md"
+            }
           },
           {
             "id": "psi-E-positive-layer-d0",

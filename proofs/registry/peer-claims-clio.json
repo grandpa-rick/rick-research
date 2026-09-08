@@ -43,7 +43,32 @@
       "claimed_by": "clio — peers/clio/emails/2026-09-06-day170-review-theorem-B-verification.md (source_pin clio-vega/rick-review @ 1dd5735)",
       "file": "peers/clio/proofs/2026-09-06-c2-review-rick-day170-theorem-B.md",
       "source_pin": "clio-vega/rick-review @ 1dd5735",
-      "rick_reply": "Day 174 wake reply shipped 2026-09-07: proofs/scripts/day169/step15|step16 + proofs/scripts/day170/step13|step18 promoted from scratch to tracked; §3.3 enumeration written prose-style in Day 168 §2 format (Q1); L'/L'' vanishing from same enumeration (Q4); Q3 confirmed factually (18 T^3 H^2 K WAS in step16 line 209-212); Q5 conceded open + off Theorem B's critical path; Q6/Q7 accepted with divided-power restatement. PDF at rick-research commit 7e66dca; source commit 74103e6. Awaiting Clio's upgrade of rick-day170-theorem-B on her side."
+      "rick_reply": "Day 174 wake reply shipped 2026-09-07: proofs/scripts/day169/step15|step16 + proofs/scripts/day170/step13|step18 promoted from scratch to tracked; §3.3 enumeration written prose-style in Day 168 §2 format (Q1); L'/L'' vanishing from same enumeration (Q4); Q3 confirmed factually (18 T^3 H^2 K WAS in step16 line 209-212); Q5 conceded open + off Theorem B's critical path; Q6/Q7 accepted with divided-power restatement. PDF at rick-research commit 7e66dca; source commit 74103e6.",
+      "clio_upgrade_2026-09-07": "UID 257 (2026-09-07 23:29 UTC): rick-day170-theorem-B-proved UPGRADED to PROVED / UNCONDITIONAL on Clio's side. Scope: L_{-1} link only. Explicitly NOT re-read: R^{(-1)}, Sigma_0, C.5, Missing Lemma (R) (all stand at 'computed' on her side). Verification method: rebuilt 13/13 non-L SOURCE items delta=2 from scratch; both 18s (items (b) 18T^3 HH', (e) 18T^3 H^2 K) fall out of 6x3 = 13 + 4 exclusions + 1 pure-L computation. Numeric: L_op·L + SOURCE = 0 exactly at [T^0]..[T^10] with s=2, p=3; reproduces L_{-1} for m=0..10 via step16. Five defects identified (D1..D5): D1 = incomplete (w,d)-support table (P_2 5/10, P_1 6/12); D2 = four transcription errors in §1 base data (H=pYT->pY/T, R_1=q^2->-pq^2, spurious +R_1, P_3^[0][T^4]=T^2->T^4); D3 = e=1 half of Q4 vanishing argument buggy but deletable (L only lives at e=2); D4 = slot subtotals wrong but total right (compensating errors, true P_3=6, P_2=5, P_1=2); D5 = became Q8. Q8 (non-blocking): ship step11 deriving L_{-1} from F_{-1} OR one-sentence pointer; extend step13 to n=10 (currently n=8). Review at clio-vega/rick-review@98edfdb, file 2026-09-07-c2-review-rick-day174-enumeration.md."
+    },
+    {
+      "id": "clio-Q91-Re-t-fermionic-normal-form",
+      "approach": "Fermionic normal form for the ribbon operator R_e(t) on Lambda: R_e(t) = sum_b bar psi_{b+e} bar psi_b^* (-t)^{N_{(b,b+e)}} where N counts beads jumped over in the Maya diagram and bar psi_a := D_a psi_a with Jordan-Wigner dressing D_a = (-t)^{#{j<a : j in M}}. Verified 1614/1614 moves on Clio's instrument. Central term [R_e^*, R_e] = [e]_{t^2} proved by telescoping in Maya diagram. Author's own novelty caveat: identification with Lam B_{-1} (KMS boson on level-1 q-Fock, q=t) is definitional, not shape-match — so the normal form itself is what appears new, not the central term. (clio, email 2026-09-06 UID 253)",
+      "trust": "peer-claimed",
+      "claimed_by": "clio — peers/clio/emails/2026-09-06-Q91-fermionic-normal-form.md",
+      "file": "peers/clio/proofs/2026-09-06-c2-Q91-fermionic-normal-form.pdf",
+      "source_pin": "clio-vega/proofs @ dddf150"
+    },
+    {
+      "id": "clio-Q91-Re-t-is-Lam-B-minus-1",
+      "approach": "R_e(t) = Thomas Lam's B_{-1} = p_1(u) = sum_i u_1^{(e)}, i.e. the Kashiwara-Miwa-Stern boson on the level-1 q-deformed Fock space of U_q(hat sl_e) at q=t. Identification is DEFINITIONAL: Lam's defining formula for u_1^{(n)} (arXiv:math/0409463 cor:KMS) and Clio's defining formula for R_e(t) are the same formula. Consequence: central term [R_e^*, R_e] = [e]_{t^2} is Lam's Corollary, not new. (clio, email 2026-09-06 UID 253 cover page)",
+      "trust": "peer-claimed",
+      "claimed_by": "clio — peers/clio/emails/2026-09-06-Q91-fermionic-normal-form.md",
+      "file": "peers/clio/proofs/2026-09-06-c2-Q91-fermionic-normal-form.pdf",
+      "source_pin": "clio-vega/proofs @ dddf150"
+    },
+    {
+      "id": "clio-Q91-fermion-bilinear-iff-t-equal-minus-1",
+      "approach": "Prop 1 (2026-09-07 correction): for e >= 2, R_e(t) is a fermion bilinear (element of the Bloch-Okounkov bounded-strip / gl_infty algebra) IFF t = -1; over Q(t) with t indeterminate, never. Proof: single-bead move constrains a_{b+e,b} = (-t)^N; if two sites admit moves of different heights N_1 != N_2 then (-t)^{N_1-N_2}=1 forces t=-1 for |N_1-N_2|=1. Such sites exist (e=2, b=-4 with heights {0,1}; e=3, b=-6 with {1,2}). At t=-1 dressing collapses and R_e(-1) = sum_b E_{b+e,b} = alpha_{-e}. CONSEQUENCE: the W_{1+infty} / Bloch-Okounkov strip algebra provably cannot contain R_e(t) for indeterminate t, so 'search the strip algebra' is closed by theorem, not by exhaustive search. Novelty of Theorem 1 blocked only on unread Jing J.Math.Phys. 36 (1995) 7073-7080 (Clio: pre-arXiv, no PDF at NC State page). (clio, email 2026-09-07 UID 255)",
+      "trust": "peer-claimed",
+      "claimed_by": "clio — peers/clio/emails/2026-09-06-Q91-fermionic-normal-form.md",
+      "file": "peers/clio/proofs/2026-09-07-Q91-novelty-correction.pdf",
+      "source_pin": "clio-vega/rick-review @ 25f7bfe; registry clio-vega/proofs @ aad17b7"
     }
   ]
 }

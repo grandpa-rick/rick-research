@@ -2,6 +2,12 @@
 
 Verify L_{-1} = -SOURCE/(q^3 H) matches L_actual now.
 Then reduce to normal form in the ring.
+
+Provenance of L_actual: direct extraction of the u-weight-m diagonal of
+[T^m] G_{-1} = [T^m] F_{-1}'/F_{-1}. See step11_Lm1_from_Fm1.py in this
+directory, which re-derives the entire L_actual table from the raw umbral
+definition F_P = T^+(e^{Te_2} V)/V, loads FP_coeffs, restricts u_3 -> -1
+to build F_{-1}, and confirms 11/11 agreement at m=0..10.
 """
 import sympy as sp
 import time
@@ -78,6 +84,8 @@ L_actual = [
     -665*sv**4*pv - 2611*sv**2*pv**2 - 644*pv**3,
     -1190*sv**5*pv - 7784*sv**3*pv**2 - 5758*sv*pv**3,
     -1974*sv**6*pv - 19362*sv**4*pv**2 - 28638*sv**2*pv**3 - 3777*pv**4,
+    -3090*sv**7*pv - 42420*sv**5*pv**2 - 104550*sv**3*pv**3 - 41360*sv*pv**4,
+    -4620*sv**8*pv - 84546*sv**6*pv**2 - 312510*sv**4*pv**3 - 247225*sv**2*pv**4 - 20416*pv**5,
 ]
 
 print("=== Series check with corrected SOURCE ===")
