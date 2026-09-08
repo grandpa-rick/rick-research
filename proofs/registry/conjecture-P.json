@@ -122,10 +122,39 @@
                                     "id": "day177-claim-X-restricted",
                                     "approach": "Claim (X): pi_rho(B_1^{(n)}(m) + B_0^{(n)}(m))|_{Q[E_1,E_2,E_3]} = (n-1) E_1 S(m), S = e^{E_1 partial_{E_2}}. Predicted by Day 175 closed form: partial_{c_n} D_n^{form} = E_1 S, and c_{n+1} - c_n = n - 1, so the stability increment must equal (n-1) E_1 S(m). Verified 35/35 sober on m = E_1^a E_2^b E_3^c (a<=2, b<=2, c<=1, rho(m)<=4) at n=3 (15 cases), n=4 (15 cases), n=5 (5 cases). See scratch/day176/verify_claim_X.py.",
                                     "trust": "checked-sober",
-                                    "recheck": "2026-09-07 scratch/day176/verify_claim_X.py: 35/35 pass at n=3, 4, 5.",
+                                    "recheck": "2026-09-07 scratch/day176/verify_claim_X.py: 35/35 pass at n=3, 4, 5. Day 178 (2026-09-08) reduced to two sub-lemmas via arity decomposition; Lemma 1 and Lemma 2 nodes below.",
                                     "file": "proofs/2026-09-07-day176-polynomial-in-n-via-stability.md",
                                     "role": "premise",
-                                    "children": []
+                                    "children": [
+                                      {
+                                        "id": "day178-arity-reduction",
+                                        "approach": "Day 178 wake (2026-09-08): reduced Claim (X) to two sub-lemmas via arity decomposition of the V-ratio. Write V_n(u+e_i+e_j)/V_n(u) = prod_{l!=i,j} q_i(l) q_j(l), q_i(l) = 1 + 1/(u_i-u_l). Expand as sum over arities |L|: q_i(l)q_j(l) = 1 + Delta_{ij}(l) where Delta_{ij}(l) = 1/(u_i-u_l) + 1/(u_j-u_l) + 1/[(u_i-u_l)(u_j-u_l)]. AR_k(m) = arity-k slice of (B_1+B_0)(m). Compute agent verified at n=4 (7/7 test m's spanning rho-weights 0..3) and n=5 (5/5 test m's): pi_rho(AR_k(m))|_{Q[E_1,E_2,E_3]} = 0 for k>=1; only AR_0 contributes. Reduces Claim (X) to: (L1) pi_rho(sum_{i<j}(u_i+u_j+1) m(u+e_i+e_j))|_{Q_{123}} = (n-1) E_1 S(m); (L2) pi_rho(AR_k(m)) in (E_{>=4}) for k>=1. Both sub-lemmas registered as children below at checked-sober.",
+                                        "trust": "checked-sober",
+                                        "recheck": "2026-09-08 scratch/day178/arity_decomposition.py (n=4 7/7) + arity_n5.py (n=5 5/5). Total 12/12 test m's, 29/29 arity slices vanish mod E_{>=4} at top-rho. See scratch/day178/claim_X_proof_draft.md for structural argument.",
+                                        "file": "scratch/day178/claim_X_proof_draft.md",
+                                        "role": "premise",
+                                        "children": [
+                                          {
+                                            "id": "day178-lemma1-arity-0-identity",
+                                            "approach": "Lemma 1: pi_rho(T(m))|_{Q[E_1,E_2,E_3]} = (n-1) E_1 S(m) where T(m) = sum_{i<j}(u_i+u_j+1) m(u+e_i+e_j) (the arity-0 slice). Sketched via operator decomposition T = BA - C + (A^2-D)/2 with A = sum_i tau_i, B = sum_i u_i tau_i, C = sum_i u_i tau_i^2, D = sum_i tau_i^2. Generating-function evaluations proved: A(H(t)) = n(1+t)H(t) - t^2 H'(t); B(H(t)) = E_1 H(t) + t H'(t). Single-E_k action A(E_k) = n E_k + (n-k+1) E_{k-1}, B(E_k) = (E_1 + k) E_k proved for k=0,1,2,3. E_1-linearity reduction (R1) proved. Base case pi_rho T(1) = (n-1) E_1 proved. GAP: closed form for D(H(t)), C(H(t)) (routine but not written); (R2') commutation with M_{E_3}; (R3) analysis on E_2^b powers. Estimated 3-5 pages of routine top-rho bookkeeping to finish.",
+                                            "trust": "checked-sober",
+                                            "recheck": "2026-09-08 scratch/day178/arity_decomposition.py + arity_n5.py: pi_rho(AR_0(m))|_{Q_{123}} = (n-1) E_1 S(m) verified 12/12 at n=4, n=5.",
+                                            "file": "scratch/day178/claim_X_proof_draft.md",
+                                            "role": "attempt",
+                                            "children": []
+                                          },
+                                          {
+                                            "id": "day178-lemma2-higher-arity-vanishing",
+                                            "approach": "Lemma 2: for k >= 1, pi_rho(AR_k(m)) in (E_{>=4})*Q[E] for m in Q[E_1,E_2,E_3]. Sketched heuristic: each Delta_{ij}(l) factor forces an E_r with r >= k+3 upon symmetrization, so top-rho of arity-k lives in E_{>=k+3}-ideal. Structural proof not written; Day 174 Fact A (E_{>=4}-freeness proved via Kostka-Stirling) is the closest template but direct import not obvious.",
+                                            "trust": "checked-sober",
+                                            "recheck": "2026-09-08 scratch/day178/arity_decomposition.py (n=4, 14/14 arity slices) + arity_n5.py (n=5, 15/15 across arities 1,2,3). Total 29/29 arity slices vanish mod E_{>=4} at top-rho.",
+                                            "file": "scratch/day178/claim_X_proof_draft.md",
+                                            "role": "attempt",
+                                            "children": []
+                                          }
+                                        ]
+                                      }
+                                    ]
                                   }
                                 ]
                               }
