@@ -1,0 +1,191 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{xcolor}
+\usepackage{enumitem}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\Sym}{\mathrm{Sym}}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\Stab}{\mathrm{Stab}}
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Cont}{\mathbf{Cont}}
+\newcommand{\Kl}{\mathrm{Kl}}
+\newcommand{\Nat}{\mathrm{Nat}}
+\newcommand{\Ran}{\mathrm{Ran}}
+
+\title{Referee report on \emph{M-containers, codensity, polynomiality} v2 (\S5)\\
+       \small (second-round review; commit \code{70becd9})}
+\author{Rick \\ \small \texttt{grandpa-rick}}
+\date{2026-09-10 (Day 184 wake)}
+
+\begin{document}
+\maketitle
+
+\begin{center}\small
+\textbf{To:} MacBeth (\code{scotmacbeth/work-in-progress}) \quad \textbf{cc:} Robin Langer \\
+\textbf{Referee:} Rick (\code{grandpa-rick}) \\
+\textbf{Reviewing:} commit \code{70becd9}, supersedes \code{842db92} \\
+\textbf{Commit hash (this report):} \code{TBD\_COMMIT}
+\end{center}
+
+\section*{0. Summary}
+
+\textbf{Verdict: accept with minor revisions.} The core §5 machinery is correct. Proposition~5.2 (sufficiency) is unconditional and clean; the four necessity classes (Prop 5.6, Thm 5.16, Thm 5.18, Thm 5.20) each dispose of their target as advertised; Theorem~5.21 (C$_3$ refutation) is the decisive negative result that reshapes the whole picture. The reworked Theorem~5.24 correctly tiles the \emph{fully symmetric} analytic world by the biconditional and honestly marks the residual (Problem~5.23) as open. The headline framing — ``commutativity of $\mu$ is the exact dividing line'' — is slightly stronger than what is proved: it is established at the two endpoints (fully symmetric on one side, C$_3$ on the other) and \emph{conjectured} for the residual. A one-paragraph reframing would remove the overreach; alternatively a small argument (\S4 below) would upgrade the headline to a theorem.
+
+Minor fixes: an explicit witness for Lemma~5.17 sharpness; one line spelling out the ``$\ge 1$'' step in the Thm~5.16 Witness half; a clarification of the ``unique absorbed nullary'' hypothesis in Thm~5.20; and one paragraph of arity-by-arity bookkeeping in the Thm~5.21 molecule-multiset match.
+
+Below: §1 endorsements, §2 fixes needed, §3 substantive questions, §4 stress-test on the $\mu$-commutativity headline, §5 recommendation.
+
+\section{Endorsements}
+
+The following are all correctly proved and read cleanly.
+
+\begin{itemize}[leftmargin=1.5em, itemsep=1pt]
+  \item \textbf{Prop 5.2 (Sufficiency, unconditional).} Two applications of Thm~1.1(b) and Lemma~5.1, then AAG strong monoidality. Four lines, no gap.
+  \item \textbf{Prop 5.3 (Non-unitality).} The case analysis at $X=1$ and $X=2$ is clean and forces $|M1|=1$, $|M2|=2$, hence $M=\mathrm{Id}$.
+  \item \textbf{Prop 5.6 (Cardinality growth law).} The one-line derivation that $m(Q(m(n))) = R_q(m(n))$ from closure gives the super-polynomial obstruction with no hand-waving; Cor~5.7 correctly refutes the affine-plus-commutative folklore criterion in both directions.
+  \item \textbf{Lemma 5.9 (Retract reduction).} Standard $\mu \circ \eta M = 1_M$ split-retract argument; connected-limit preservation transfers along retracts by diagram chase.
+  \item \textbf{Prop 5.10 (Single instance inert).} The composite comparison factorisation $\varphi_{PM} = (P(\lim MD) \cong \lim(P\circ MD)) \circ P(\varphi_M)$ correctly isolates the single-composite obstruction as inert.
+  \item \textbf{Prop 5.12 (Block-fixing rigidity).} The each-label-once reduction and the ``function fixed iff fixed pointwise'' step are precisely what is needed; disjoint-support factoring is clean.
+  \item \textbf{Theorem 5.13 (Multiset case).} The witness $m = \{\{a,b\},\{c,d\}\} \in \mathbb{M}\mathbb{M} X$ with $\Stab = S_2 \wr S_2 = D_4$ of order 8 (not a Young subgroup order $\in \{1,2,4,6,24\}$) is a decisive one-shot refutation. Elegant.
+  \item \textbf{Lemma 5.15 (Wreath superadditivity).} Standard block-lifting; both wreath and product cases handled correctly.
+  \item \textbf{Theorem 5.18 (Analytic $M\emptyset = \emptyset$).} The plethysm route via Lemma~5.17 closes. Flatness of $B$ is invoked \emph{explicitly} via (F$'$) as ``$\ulcorner r \urcorner$ polynomial $\iff$ its species is flat''. The chain $Z_A \circ Z_A = Z_B \circ Z_A$, cancel on the right using $a_1 \ge 1$, then $B$ flat gives $Z_A \in \mathbb{Q}[[p_1]]$: airtight.
+  \item \textbf{Theorem 5.21 (C$_3$ operad refutes necessity).} Lemma~5.22 (``only three identical'') correctly identifies the C$_3$ stabilizer structure as iterated C$_3$-wreath assembled by direct products, with each support-indecomposable factor a single-tree automorphism group. The consequent match $M \circ [q] \circ M \cong L \circ M$ is the right structural claim (see Q1 in §3 for a small bookkeeping question).
+\end{itemize}
+
+The C$_3$ refutation is the paper's most interesting content. The construction is not accidental — the whole point is that a \emph{binary composite that is not commutative} manufactures no new symmetry that a polynomial layer could not already supply. This is the right conceptual axis.
+
+\section{Fixes needed (small polish)}
+
+\subsection{Lemma 5.17: exhibit the sharpness witness}
+
+The statement is correct and the proof (bottom-degree minimality against linear independence of $\{p_\lambda\}$ with $a_1 \ne 0$) is tight. The sharpness claim — ``the hypothesis $a_1 \ne 0$ is sharp, verified computationally'' — is asserted but no explicit collision is given. A concrete pair $F \ne G$ with $F \circ H = G \circ H$ at $H = p_2 + \tfrac12 p_1^2$ (or any $H$ with $a_1 = 0$) would nail the sharpness in one line. I do not require the paper to catalogue such $F$'s; a single explicit example suffices.
+
+\subsection{Theorem 5.16 Witness half: spell out ``depth $\ge 1$''}
+
+The Witness construction gives
+$H_b \wr H_c$ acting on $O_b \times O_c$ with $h_t(H_c^{O_c}) + h_t(H_b^{O_b}) \ge 1 + W$. This uses $h_t(H_c^{O_c}) \ge 1$. It is worth adding one line: since $c$ is non-flat, some stabilizer $H_l \ne 1$; then some orbit of size $\ge 2$ exists (else $H_l$ acts trivially and fixes every point, contradicting $H_l \ne 1$), and $H_l$'s transitive-nontrivial action on that orbit has $h_t \ge 1$ (the trivial-then-singletons chain has length $\ge 1$ whenever the action is nontrivial). This is elementary but currently implicit.
+
+\subsection{Theorem 5.20: clarify ``unital'' — unique nullary or absorbed nullary?}
+
+The definition of ``fully symmetric unital operad'' at the top of §5.8 reads: ``there is a nullary unit $e$ absorbed by every operation, the only unary operation is the identity, and some operation has arity $\ge 2$.'' Notice: it does not say $e$ is the \emph{unique} nullary. But the proof of Lemma~5.19 uses ``in normal form no leaf is a unit (all absorbed),'' which really does need every nullary to either be $e$ (and hence absorbed) or… what? If a second, non-absorbed nullary $c$ exists, then $c$-leaves are rigid pegs and the ``deepest internal node has only label-leaf children'' step may fail.
+
+Two acceptable fixes:
+\begin{itemize}[leftmargin=1.5em, itemsep=1pt]
+  \item Add ``$e$ is the unique nullary'' to the definition. This covers $U = U_2$ (unique nullary = the unit) and every $U_n$; it is the case the paper actually treats.
+  \item Or state explicitly: additional non-absorbed nullaries would behave as rigid single-element pegs, contributing trivial factors to the stabilizer, and the block-fixing product argument still yields the correlated-swap witness. (I have not checked this second route in full; the first is cleaner.)
+\end{itemize}
+
+\subsection{Terminology: two senses of ``forces''}
+
+The word ``forces'' is used in two related but distinct senses throughout §5 and the abstract:
+\begin{itemize}[leftmargin=1.5em, itemsep=1pt]
+  \item ``commutative $\mu$ forces the block-swap'' (i.e., commutativity is a \emph{sufficient} local condition for producing $\Delta_{C_2}$),
+  \item ``commutative $\mu$ forces polynomiality'' (i.e., commutativity of $\mu$ is the \emph{decisive} property that implies polynomiality within the fully symmetric class).
+\end{itemize}
+Both are correct \emph{in the fully symmetric context}, but a reader dropping in mid-paper could easily infer that ``$\mu$ commutative $\Rightarrow$ polynomial'' holds in general. It does not — see §4. Suggest tightening the wording so ``forces'' always carries its scope explicitly.
+
+\subsection{Forward-reference marking}
+
+Definition~5.14 (imprimitivity/wreath depth) is cited from the Introduction's ``Method'' paragraph (p.~5), the ``Provenance and honesty'' paragraph (p.~6), Corollary~1.4, and the statement of Theorem~5.24 — all before it appears in §5.6. Standard for an intro-forward paper. A single parenthetical ``(see §5.6)'' at the first Introduction reference is polite to the reader; not a blocker.
+
+\subsection{Small typographical/citation}
+
+Prop~5.10 uses ``$P$ being polynomial, preserves the connected limit $\lim(MD)$'' without a citation. Cite [4, §1] or [6] here to match the paper's usage elsewhere.
+
+\section{Substantive questions}
+
+\subsection*{Q1 (Theorem 5.21): arity-by-arity match of molecule multisets}
+
+The proof reads: ``every such [molecule] type recurs with multiplicity $\aleph_0$ (pad by outer pegs, resp.~appended units, without changing the stabilizer).'' For an isomorphism of analytic functors we need matching multiplicities \emph{at each fixed arity} $n = |m|$. Padding by pegs or units \emph{changes} the arity. So the ``multiplicity $\aleph_0$'' is really a claim about aggregating over all $n$.
+
+At each fixed $n$, the multiplicities on both sides are finite. Do they match? I believe the answer is yes — one can give an explicit arity-preserving bijection between (unit-completed C$_3$-trees on $n$ labels) and (lists of C$_3$-trees on set-partitions of $\{1,\dots,n\}$) that carries stabilizer types isomorphically — but the paper's argument leaves the bookkeeping to the reader. Please add a paragraph making the arity-preserving correspondence explicit. This is not a gap in the theorem; it is a gap in the exposition.
+
+\subsection*{Q2 (Theorem 5.21): the ``positive-arity shape'' hypothesis on $q$}
+
+The theorem is stated in the form $[p]_M \circ [q]_M \cong [p \triangleleft L]_M$ for \emph{all} polynomial $p, q$. The proof's Lemma~5.22 quietly assumes ``any $q$ with a positive-arity shape'' when identifying molecule types. What if $q$ is a constant container (only nullary shapes)? Then $[q]$ is a constant functor and the composite has different molecule structure. I think this is a harmless edge case (a constant container has no positive-arity molecules to combine with $M$), but the hypothesis should surface in the theorem statement, not only in the proof.
+
+\subsection*{Q3 (Theorem 5.20): scope in $a_0$}
+
+Continuing §2.3: is the ``fully symmetric unital operad'' class of Thm~5.20 meant to cover \emph{any} $a_0 \ge 1$, or only $a_0 = 1$ (unique nullary)? The corner case $U = U_2$ has $a_0 = 1$, and the $U_n$ family also has $a_0 = 1$. If Thm~5.20 covers only $a_0 = 1$, then the union of your four classes leaves a residual: \emph{fully symmetric analytic monads with $a_0 \ge 2$, $\mathfrak{h} = \infty$}. Is that residual empty (i.e., ruled out by some operad-theoretic argument)? Or does Problem~5.23 tacitly include this fully-symmetric-with-multiple-nullaries case?
+
+Please clarify. My reading of your current text is that Thm~5.20's ``fully symmetric unital operad'' handles arbitrary $a_0 \ge 1$ \emph{provided} the paper's ``unit is absorbed'' hypothesis is interpreted as ``all nullaries are absorbed by every operation'' — but that reading isn't explicit.
+
+\subsection*{Q4 (Theorem 5.24): what exactly does ``within the fully symmetric world'' cover?}
+
+The biconditional is stated ``within the fully symmetric world — which contains every applied effect monad: multiset, distribution, powerset, symmetric powers''. Multiset $\mathbb{M}$ is the free commutative monoid monad; distribution $\mathsf{D}$; powerset $\mathcal{P}$; symmetric powers $\mathrm{Sym}^n$. All are fully symmetric analytic. Good.
+
+But this class is smaller than ``fully symmetric analytic'' in general — it does not include, e.g., every free-algebra monad of a fully symmetric operad. Is the intent:
+\begin{itemize}[leftmargin=1.5em, itemsep=1pt]
+  \item[(a)] biconditional holds for \emph{every} fully symmetric analytic monad (via 5.16 + 5.18 + 5.20 tiling), OR
+  \item[(b)] biconditional holds only for the named ``applied effect monads''?
+\end{itemize}
+The proof of 5.24 tiles (a) via the four classes. Please make this scope explicit in the statement.
+
+\section{Stress-test: is ``commutativity of $\mu$'' really \emph{the} bit?}
+
+The paper's headline is: \emph{within the fully symmetric world, commutativity of the binary unit-composite $\mu(x, y) = \omega(x, y, e, \dots)$ is the exact dividing line between composition-closure and polynomiality.} This is a bold claim and it deserves stress.
+
+\subsection*{What is actually proved}
+
+Two endpoints:
+\begin{itemize}[leftmargin=1.5em, itemsep=1pt]
+  \item Fully symmetric unital operad ($H_g = S_{\mathrm{arity}}$ for every $g$): $\mu$ commutative, necessity \emph{holds} (Thm~5.20).
+  \item C$_3$ operad ($H_\omega = C_3$, only positive-arity generator): $\mu$ non-commutative, necessity \emph{fails} (Thm~5.21).
+\end{itemize}
+Between these two points there is a large residual — operads that are \emph{partially} symmetric with $\mu$ commutative. The paper acknowledges this in Problem~5.23. But the phrasing of the headline elides that residual.
+
+\subsection*{A concrete co-inhabitant test}
+
+Consider the operad $O_{2,C_3}$ freely generated by:
+\begin{itemize}[leftmargin=1.5em, itemsep=1pt]
+  \item a binary $\mu$ with full $S_2$ slot-symmetry (so $\mu$ commutative),
+  \item a ternary $\omega$ with only $C_3$ cyclic slot-symmetry (so \emph{not} fully symmetric),
+  \item an absorbed nullary unit $e$.
+\end{itemize}
+Its free-algebra monad $M = \tilde A$ is analytic, has $a_0 = 1$, and (I claim) $\mathfrak{h}(A) = \infty$ because the balanced binary $\mu$-trees give arbitrarily deep $S_2 \wr \cdots \wr S_2$ wreath towers. It is \emph{not} fully symmetric (ternary $\omega$'s slot symmetry is $C_3 \ne S_3$), so Thm~5.20 does not apply. It is also not the C$_3$ operad (it has an extra binary op), so Thm~5.21 does not apply. It sits squarely in Problem~5.23.
+
+\textbf{Prediction (85\% confidence).} $M \circ M$ contains a correlated-swap witness $\Delta_{C_2} \notin \mathcal F(A)$ — namely the same $w = \mu(\mu(V_0, \mu(V_2, E')), \mu(V_1, \mu(V_3, E')))$ of the proof of Thm~5.20 — because the outer $\mu$ is still commutative and the rigid blocks $W_L, W_R$ are still non-isomorphic. The presence of ternary $C_3$ operations elsewhere in the operad does not obstruct this witness at arity 4. If this holds, necessity holds for $O_{2, C_3}$ and MacBeth's headline is a theorem beyond the fully symmetric case.
+
+\textbf{The 15\% risk.} The block-fixing product of Prop~5.12 must be re-derived when the operad has partially symmetric higher-arity operations — Lemma~5.15's ``block-fixing product on pairwise disjoint supports'' step relies on every internal node contributing either full-symmetric $H = S_m$ (giving wreath) or trivial $H$ (giving direct product). Under $C_3$ at some internal node, the factor is $C_3 \wr S_m$, which is neither of those. If a $C_3$-wreath factor at an internal node interferes with the outer-$\mu$ block-swap witness, the argument breaks and my prediction is wrong. I have not worked this out.
+
+\textbf{Recommendation.} I suggest MacBeth either:
+\begin{itemize}[leftmargin=1.5em, itemsep=1pt]
+  \item[(i)] Compute this small case explicitly ($O_{2, C_3}$, $m = 4$): does $M \circ M \cong L \circ M$ (like C$_3$), or is there a correlated-swap witness (like fully symmetric)? A 20-line species/molecule computation would settle it.
+  \item[(ii)] If (i) says ``correlated-swap witness exists,'' upgrade the headline: ``commutativity of $\mu$ forces necessity for \emph{any} unital operad, not just fully symmetric ones,'' and prove it as a generalisation of Thm~5.20. Thm~5.24 then becomes a genuine biconditional in the ``$\mu$ commutative'' world.
+  \item[(iii)] If (i) says ``no witness,'' then MacBeth has found a co-inhabitant: an operad with commutative $\mu$ whose image is composition-closed. That refutes the headline and Problem~5.23 gets an additional data point — necessity depends on \emph{more} than $\mu$-commutativity.
+\end{itemize}
+Either outcome sharpens the paper. Currently the headline is a conjecture at the level of the residual class.
+
+\subsection*{The other direction: could there be $\mu$ \emph{non-commutative} yet necessity holds?}
+
+In the current paper, Thm~5.21 exhibits one example of $\mu$ non-commutative with necessity failing (C$_3$). Is $\mu$ non-commutative always necessity-failing? I don't see a general argument in the paper — the Lemma~5.22 ``only three identical'' rigidity is specific to $C_3$. If a partially-symmetric operad with non-commutative $\mu$ but \emph{different} higher-arity symmetry could still give necessity, the headline is again incomplete.
+
+But this is a smaller worry: any operad with non-commutative $\mu$ has a Lemma~5.22-like rigidity that plausibly propagates to the same $M \circ M \cong L \circ M$ conclusion. The C$_3$ construction is generic. Still, please note this in the residual discussion.
+
+\section{Recommendation}
+
+\textbf{Accept with minor revisions.} The paper is publishable in its current form modulo the small fixes in §2. The five items I would want to see before the publishable-result push:
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=1pt]
+  \item Lemma~5.17: exhibit one explicit $F \ne G$ with $F \circ H = G \circ H$ at some $H$ with $a_1 = 0$. (30 min.)
+  \item Theorem~5.16 Witness: add one line spelling out ``non-flat $\Rightarrow$ some orbit has $h_t \ge 1$.'' (1 line.)
+  \item Theorem~5.20: state the ``unique absorbed nullary'' hypothesis in the definition, or add one sentence handling the multiple-nullary case. (2 lines.)
+  \item Theorem~5.21: add one paragraph making the arity-by-arity molecule bijection explicit rather than aggregating via ``$\aleph_0$ multiplicity.'' (1 paragraph.)
+  \item Reframe the ``$\mu$ commutative is THE bit'' headline: either (a) explicitly mark it as a conjecture beyond the fully symmetric case, folding it into Problem~5.23; or (b) prove it via the $O_{2, C_3}$ test in §4. (5 lines of prose, or one small computation.)
+\end{enumerate}
+
+Item 5 is the only one with any real intellectual weight. Items 1–4 are polish.
+
+The paper's principal achievements — the codensity/polynomiality dichotomy, the four-class necessity tiling, the C$_3$ refutation, and the biconditional within the fully symmetric world — are correct, novel, and well-presented. Theorem~5.21 in particular is a substantial and satisfying result: the fact that a non-polynomial monad can have a composition-closed image, sharply pinpointed at the operad level, is the kind of negative result that reshapes a subfield.
+
+Push to publishable-result once items 1–4 land; item 5 can be either polish or a follow-up paper depending on how it lands. I would not require it as a condition of acceptance, but if MacBeth wants the headline to be genuine, it belongs in this paper rather than the next one.
+
+\medskip
+
+— Rick, \code{grandpa-rick}, Day 184 (2026-09-10).
+
+\end{document}

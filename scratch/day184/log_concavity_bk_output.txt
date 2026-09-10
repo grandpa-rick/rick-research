@@ -1,0 +1,78 @@
+b_k sequence (k = 0..11):
+  b_ 0 = 1
+  b_ 1 = 3
+  b_ 2 = 27
+  b_ 3 = 417
+  b_ 4 = 7851
+  b_ 5 = 164124
+  b_ 6 = 3663984
+  b_ 7 = 85498458
+  b_ 8 = 2058089283
+  b_ 9 = 50705502591
+  b_10 = 1272084879132
+  b_11 = 32365470683334
+
+Log-concavity / log-convexity check
+D_k = b_{k-1} * b_{k+1} - b_k^2
+Log-concave <=> D_k <= 0  (equivalently b_k^2 >= b_{k-1} b_{k+1})
+Log-convex  <=> D_k >= 0
+
+  k                                      D_k       sign   log-concave   log-convex    r_k=b_{k+1}/b_k   b_k^2/(b_{k-1}b_{k+1})
+------------------------------------------------------------------------------------------------------------------------------
+  1                                       18   positive         False         True           9.000000                 0.333333
+  2                                      522   positive         False         True          15.444444                 0.582734
+  3                                    38088   positive         False         True          18.827338                 0.820320
+  4                                  6801507   positive         False         True          20.904853                 0.900620
+  5                               1829251008   positive         False         True          22.324486                 0.936409
+  6                             607570168536   positive         False         True          23.334834                 0.956702
+  7                          230819883105708   positive         False         True          24.071654                 0.969391
+  8                        99510786846050589   positive         False         True          24.637173                 0.977046
+  9                     47016263802011829075   positive         False         True          25.087709                 0.982042
+ 10                  22907517876451628444970   positive         False         True          25.442855                 0.986041
+
+All k in 1..10 log-concave? False
+All k in 1..10 log-convex?  True
+
+Growth ratios r_k = b_{k+1} / b_k for k = 0..10:
+  r_ 0 = 3.000000   (exact: 3)
+  r_ 1 = 9.000000   (exact: 9)
+  r_ 2 = 15.444444   (exact: 139/9)
+  r_ 3 = 18.827338   (exact: 2617/139)
+  r_ 4 = 20.904853   (exact: 54708/2617)
+  r_ 5 = 22.324486   (exact: 305332/13677)
+  r_ 6 = 23.334834   (exact: 14249743/610664)
+  r_ 7 = 24.071654   (exact: 686029761/28499486)
+  r_ 8 = 24.637173   (exact: 16901834197/686029761)
+  r_ 9 = 25.087709   (exact: 424028293044/16901834197)
+  r_10 = 25.442855   (exact: 5394245113889/212014146522)
+
+Trend of r_k: monotone increasing
+Consecutive differences r_{k+1} - r_k:
+  r_1 - r_0 = 6.000000
+  r_2 - r_1 = 6.444444
+  r_3 - r_2 = 3.382894
+  r_4 - r_3 = 2.077515
+  r_5 - r_4 = 1.419633
+  r_6 - r_5 = 1.010348
+  r_7 - r_6 = 0.736820
+  r_8 - r_7 = 0.565520
+  r_9 - r_8 = 0.450535
+  r_10 - r_9 = 0.355146
+
+Ratio of ratios rho_k = r_{k+1} / r_k (should tend to a limit if b_k algebraic):
+  rho_ 0 = 3.000000
+  rho_ 1 = 1.716049
+  rho_ 2 = 1.219036
+  rho_ 3 = 1.110346
+  rho_ 4 = 1.067909
+  rho_ 5 = 1.045257
+  rho_ 6 = 1.031576
+  rho_ 7 = 1.023493
+  rho_ 8 = 1.018287
+  rho_ 9 = 1.014156
+
+============================================================
+VERDICT
+============================================================
+Log-convex (strictly, for all tested k in 1..10).
+Growth-ratio trend: monotone increasing

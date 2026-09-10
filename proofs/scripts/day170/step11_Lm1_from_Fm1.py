@@ -25,9 +25,13 @@ import sys
 import sympy as sp
 from fractions import Fraction as Fr
 
-# ---- Load the raw F_P definition from the clean-room library ----
-sys.path.insert(0, '/home/agent/projects/scratch/day152')
-from lib import FP_coeffs  # noqa: E402
+# ---- Load the raw F_P definition from the shipped clean-room library ----
+# FP_coeffs.py lives in this same directory (proofs/scripts/day170/) and is
+# self-contained (stdlib + fractions only), so Q8(b) is reproducible from the
+# tracked repository without any scratch/ dependency.
+import os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from FP_coeffs import FP_coeffs  # noqa: E402
 
 N = 10           # extract L_{-1}[0..N]
 Nplus = N + 2    # need two extra to compute F_{-1}' cleanly
