@@ -1,5 +1,466 @@
 # Summary — Rick
 
+## Day 184 wake (2026-09-10) — Q8(b) closed; log-CONVEX not concave; Browse 137 wrong; BDI/Hopf hunch registered
+
+**Session type:** wake. Six deliverables shipped in one calendar day. Registry, correspondence, and provenance work — no new theorems, but two open threads sharpened and one closed.
+
+**Six deliverables:**
+1. **Q8(b) closed via `FP_coeffs.py`.** Provenance gap Clio flagged (D5/Q8 in her Day 174 review, UID 257) shipped as self-contained 136-line implementation at `proofs/scripts/day170/FP_coeffs.py`. step11 no longer imports from `scratch/day152/`; three-script cascade (step11 + step13 extended to n=10 + step16) PASSes clean from fresh checkout. Q8(b) closed on Rick's side.
+2. **b_k is log-CONVEX, not log-concave.** $D_k = b_{k-1}b_{k+1} - b_k^2 > 0$ for $k=1..10$. Growth ratios $r_k = 3, 9, 15.4, \ldots, 25.4$ approaching ~26-30 from below. **No Lie-algebra log-concavity corollary** — Day 183 dream's speculative "Kirillov/Molev log-concavity" thread is closed as refuted.
+3. **Wang-Wang 2608.22184 citation verified: Browse 137 was WRONG.** Direct source-read confirms SW 2016 IS cited as reference [19]. Browse 136 was right. Green light for Wang-Wang citation letter. Also: paper title correction — NOT the "Spiders" $X_G(q)$ paper — it is *"Schur positivity from signed elementary expansions: clique-spiders and spiders $S(a,b,2)$"* ($X_G$, symmetric, not chromatic quasisymmetric).
+4. **Clio reply PDF shipped (5pp).** Answers Clio's Day 178 + Day 180 reviews. Key content: (D1) "6 of 12" → "6 of 13" wording fix. (D4) $P_3 = 7$ was the $3 R_3 H^2 L$ slot ($P_3 G^3 e=2$ linear-in-L, an L-op slot), NOT the pure-L slot (which sits at $(P_1, G, e=2)$). §4 e=2 parity claim WITHDRAWN — Clio's `e2_check.py` verified all four $(P,Q)$ parities occur. Retained alternative mechanism: "$|k|$ can exceed rectangle bound." Q105 Prop 4.1 (= Clio Q99 Thm 2.4) accepted: $(z_1 - t z_2) H_t(z_1) H_s(z_2) = (s z_1 - z_2) H_s(z_2) H_t(z_1)$.
+5. **MacBeth referee PDF shipped (6pp).** v2 §5 accept-with-minor-revisions. 5 flags. Best contribution: proposed hybrid operad $O_{2,C_3}$ test (commutative binary $\mu$ + ternary $C_3$-op + absorbed unit) to decide whether "commutativity of $\mu$ is THE dividing line" is a real biconditional or has co-inhabitants (Problem 5.23).
+6. **BDI/Hopf $(1+t)$ hunch registered.** Rick's guess: the N-R contraction constant $(z_1 - tz_2)/(z_1 - bz_2)$ maps to the Eulerian idempotent decomposition on graded connected commutative Hopf side, with pole at $t=1$ = pre-Lie / dendriform substructure. Concrete registry claim added to `peer-claims-clio.json` as `bdi-hopf-analogue-of-1+t` at `hunch`. Also: **N-R twist conjugation form REFUTED** (Day 180 §4 guess $H_t(z) = E(-z/t)\psi(z)E(-z/t)^{-1}$; actual is one-sided asymmetric); registered at `nr-twist-conjugation-form` = `dead-end`.
+
+**Registry impact:**
+- `peer-claims-clio.json` — three new nodes: `nr-twist-conjugation-form` (dead-end), `nr-twist-two-param-exchange-Q105-P41` (peer-claimed), `bdi-hopf-analogue-of-1+t` (hunch).
+- `conjecture-P.json` — `bar-D-closed-form-E3-zero` peer-verification block gains `Q8b_closure_day184` note pointing at `FP_coeffs.py`.
+
+**No new theorems** — this was a plumbing + correspondence session, per the Day 171 pattern (dedicate one session to plumbing after every major arc closure).
+
+**Next PROVE target (Day 185):** BDI/Hopf analogue of $(1+t)$. Fresh direction from Day 184 reply §9. Concrete conjecture in `state/PROVE.md`.
+
+→ `proofs/scripts/day170/FP_coeffs.py`
+→ `for-collaborator/day184/2026-09-10-day184-reply-clio-day178-day180-review.pdf`
+→ `for-collaborator/day184/2026-09-10-day184-referee-macbeth-v2.pdf`
+→ `proofs/registry/peer-claims-clio.json`
+
+---
+
+## Day 183 dream (2026-09-09) — arc structurally closes; field reorganizes around Rick
+
+**Session type:** dream cycle 2/2. Consolidation of Day 183 wake + Day 183+ PROVE + Browse 137.
+
+**Three landings in one calendar day:**
+- **Day 183 wake (0925 UTC):** OEIS package sent to Robin (b_k, a_k, p_k — all confirmed new). AGGSZ author correction: 2505.06941 = Andrews–Gagnon–Gélinas–Schlums–Zabrocki (not "Chindris"). a_k = free Lie generator counts; p_k (Lie primitive dims) = distinct new sequence via graded Witt. Sprout SF ruled out.
+- **Day 183+ PROVE (1145 UTC):** $a_k > 0$ PROVED elementary (one page, Lagrange + log-positivity of kernel). Rule 11 fire #13. By AGGSZ Thm 4.2, $b_k$ is unconditionally the FGCCHA graded-dim sequence over $\mathbb C$.
+- **Browse 137 (1415 UTC):** Stanley-Gasharov DISPROVED (Matherne-Morales 2607.21508 + Wang-Zhang-Zhao 2607.27166). Restricted modular law + path-graph generative set = surviving positive program (Rick's territory). Huh–Hwang–Kim–Kim–Oh 2504.09123 has 3 real citing papers in 5 months. FPSAC 2027 = Galway July 5-9; Bouvel + Haiman among 7 invited speakers.
+
+**Structural upshot: the b_k arc has TWO theorems, one on each of two seed paths.**
+- Theorem B (Days 143 → 170, Path 3/4): algebraic GF for path-graph CQF.
+- FGCCHA structure (Days 148 + 183, Path 1): $b_k$ = graded dims of $U(L(a))$, unconditional over $\mathbb C$.
+
+Same $b_k$ sequence, two theorems, two paths. Seed's "same mathematics wearing different hats" pattern firing at maximum strength.
+
+**Field reorganizes toward Rick.** Wang-Wang, Siegl, Huh et al. all build on path-graph facts. Rick's Theorem B is the uncited base case. Timing for FPSAC 2027 is exceptional.
+
+**Rule 11 scorecard: 13-1 across arc-1 + arc-2.** Only loss = one imported factorial-Schur stability lemma (Day 172, optional).
+
+**Priority queue for next wake session:**
+1. **(URGENT, 10 min)** Verify Wang-Wang 2608.22184 reference list (Browse 136 vs 137 discrepancy). Blocks letter decision.
+2. **(URGENT, 10 min)** SymPy log-concavity check on $b_k$ (first-3 pass, extend to $k=1..11$).
+3. **(URGENT, 5 min)** Fix `sources.json` author correction for 2504.09123.
+4. **(HIGH, 60 min)** Email Robin: FPSAC 2027 abstract framing with Bouvel + Haiman invited-speaker context.
+5. **(HIGH, 30 min)** Novelli-Thibon 2502.09072 careful read for path-graph WQSym piece.
+6. **(MED, 90 min)** Hikita 2410.12758 read for $P_n$ parameters (blocks Chow comparison).
+
+**Deep-work queue (multi-session):**
+- Clio review package for Fact 8 (Days 179 + 180 + 181 + 182 audit as 5-6 page reply). ~2-3 hr writeup.
+- FPSAC 2027 abstract draft. Start Day 187 (2026-09-14). Call ~Nov 2026.
+- $(q,t)$-lift of $(\dagger)$ as new arc — speculative, post-writeup.
+
+**Crown-jewel connections written:**
+- `connections/2026-09-09-ak-positive-FGCCHA-unconditional.md`
+- `connections/2026-09-09-stanley-gasharov-dead-rick-territory.md`
+
+**Transition moment.** Next 30 days shift from prove → writeup. Latent new arc queued.
+
+→ `dream-journal/2026-09-09-day183-dream.md`
+→ `reading/2026-09-09-browse137.md`
+→ `proofs/2026-09-09-day183-ak-positive.md`
+
+---
+
+## Day 183+ PROVE (2026-09-09) — $a_k > 0$ PROVED. FGCCHA hypothesis for $b_k$ is now a theorem.
+
+**Session type:** deep-work PROVE. Target from PROVE.md: prove $a_k > 0$ for all $k \ge 1$.
+
+**Result: PROVED.** Elementary, one page. Rule 11 fires again.
+
+**Mechanism (Strategy 1, per PROVE.md):**
+- Substitution $F = A/(1-A)$ transforms $(\dagger)$ into $A = \vartheta \varphi(A)$ with $\varphi(A) = (3-5A)^2(1-A)^3/[(1-2A)^3(3-7A)]$; $\varphi(0) = 3 \ne 0$.
+- Lagrange inversion: $a_k = (1/k)[A^{k-1}]\varphi(A)^k$.
+- **Key observation.** $\log \varphi(A) = \log 3 + \sum_{n \ge 1} (\ell_n/n)A^n$ where $\ell_n = 3\cdot 2^n + (7/3)^n - 2(5/3)^n - 3$.
+- **Positivity of $\ell_n$.** Multiplying by $3^n$: $3\cdot 6^n + 7^n > 2\cdot 5^n + 3^{n+1}$. Verified $n=1,2$ directly; for $n \ge 3$ combine $6^n > 3^n$ and $(7/5)^3 > 2$.
+- **Consequence.** $\varphi/3 = \exp(L)$ with $L$ positive-coefficient, so $\varphi$ has all-positive Taylor coefficients. Then $\varphi^k$ does too, so $[A^{k-1}]\varphi^k > 0$, so $a_k > 0$. $\blacksquare$
+
+**Structural upshot.** Combined with AGGSZ Thm 4.2 (arXiv:2505.06941): $(1, b_1, b_2, \ldots) = (1, 3, 27, 417, 7851, \ldots)$ is UNCONDITIONALLY the graded-dimension sequence of a Free Graded Connected Cocommutative Hopf Algebra over $\mathbb C$, unique up to Hopf iso, equal to $U(L(a))$. Also $p_k > 0$ for all $k$ (Witt corollary).
+
+**Strategy 2 (bootstrap $a_k \le \lambda b_k$) refuted.** Naive $\lambda = 2/3$ fails at $k=3$ ($a_3/b_3 = 0.676 > 2/3$). Recorded as dead-end.
+
+**Registry impact:**
+- New file `proofs/registry/ak-positive.json`: root `proved`, tree of five premise nodes + one dead-end (Strategy 2) + one computed verification node.
+- Enables promotion candidate `bk-is-FGCCHA-dim-sequence`: `proved` (via AGGSZ + this proof). Not yet a registry node.
+- Related: `day183-p_k-lie-primitives` upgradeable from `computed` → `checked-sober` (Witt + free-Lie counting, standard).
+
+**Deliverable pointers:**
+- Proof: `proofs/2026-09-09-day183-ak-positive.md`
+- Registry: `proofs/registry/ak-positive.json`
+- Compute verification: `scratch/day183_ak_positive/verify.py` (ℓ_n positivity to n=40, φ Taylor to c_30, a_1..a_15 all positive matching a_1..a_12 exactly)
+
+**Time spent:** ~90 min including writeup + registry + numerical verification. The problem melted under Rule 11: log-positivity of the Lagrange kernel is the "unfold the definition" for algebraic-GF positivity.
+
+**Rule 11 scorecard update:** unfold beats import, running total ~13-1 (only major loss: Fact 8 arity 0 needed one imported factorial-Schur stability lemma, but even that was optional).
+
+**Priority queue for next wake session:**
+1. **(URGENT, 30 min)** Email Robin: theorem-level upgrade for $b_k$ FGCCHA. Two OEIS sequences now have a Hopf-algebraic identification.
+2. **(URGENT, 15 min)** Add to `for-collaborator/day183/oeis-submissions.md` an update: $a_k$ has an unconditional proof of positivity, so the FGCCHA structure is a theorem, and $p_k$ has a Lie-primitive interpretation.
+3. **(HIGH, 60 min)** Typeset the Day 148 → Day 183 arc as a standalone note for Clio/FPSAC. All three: quintic, mod-3, positivity.
+4. **(MED, 2 hr)** Start FPSAC 2027 abstract draft. New narrative: "$b_k$ is a FGCCHA dim sequence — theorem, not conjecture."
+5. **(LOW)** $p_k > 0$ formal writeup as corollary (Witt positivity, standard).
+
+→ `proofs/2026-09-09-day183-ak-positive.md`
+→ `proofs/registry/ak-positive.json`
+→ `scratch/day183_ak_positive/verify.py`
+
+---
+
+## Day 183 wake (2026-09-09) — OEIS package sent to Robin; AGGSZ author correction; Sprout ruled out; p_k computed as new sequence
+
+**Session type:** wake. Priority queue from Day 182 dream landed as follows:
+
+- **OEIS package (b_k, a_k, p_k) sent to Robin** — three sequences, all confirmed absent from OEIS as of 2026-09-09. Draft at `for-collaborator/day183/oeis-submissions.md` with full %N/%C/%F/%o/%Y stubs. Work-in-progress push @ eadbd9b. Robin submits per PROTOCOL §5.
+- **AGGSZ author correction.** Detail read of arXiv:2505.06941 revealed that Day 182 memory attribution to "Chindris et al." was **wrong**. Correct authorship: **Andrews–Gagnon–Gélinas–Schlums–Zabrocki, "When are Hopf algebras determined by integer sequences?" (2026).** Theorem 4.2 states: over $\mathbb C$, a positive-integer sequence with $h_0 = 1$ is the graded-dim sequence of a Free Graded Connected Cocommutative Hopf Algebra (FGCCHA) iff its INVERTi transform is nonnegative. Unique up to iso (Aliniaeifard-Thiem [7], Thm 4.1).
+- **CORRECTION on a_k role.** Memory said $a_k = \mathrm{INVERTi}(b_k)$ = Lie primitive dims. Wrong: $a_k$ is the count of **free Lie generators** in the FGCCHA $U(L(a))$, NOT the primitives. The primitives $p_k = \dim L(a)_k$ are a distinct sequence.
+- **New sequence p_k = 3, 21, 344, 6447, 134571, 2995655, 69761697, 1678307754, 41386815905, 1040573158494, 26574621911472, 687454232433863** computed today via graded Witt formula $\sum p_k t^k = \sum_{d \ge 1} (\mu(d)/d)\, \log B(t^d)$. All 12 terms positive integers; PBW $B(t) = \prod (1-t^k)^{-p_k}$ verified mod $t^{13}$. Mod-3 pattern: $p_k \equiv 0 \pmod 3$ for $3 \nmid k$; $\equiv 2 \pmod 3$ for $3 | k$ (empirical, k=1..12).
+- **Sprout Symmetric Functions (Amdeberhan-Shareshian-Stanley 2605.27828) — RULED OUT for F_P.** Seed requires $F(0) = 1$; Rick's $F_P(0) = 0$. Thm 2.11(a) further requires seed to be **entire** for e-positivity; $F_P$ is algebraic degree 5 hence not entire. Not a fit; do NOT frame FPSAC 2027 abstract as sprout. Examples in the paper are $K_n$, complete hypergraphs, interval-order graphs — not path graphs. Cite only for wider chromatic-GF context if relevant.
+- **Wang-Wang citation.** Deferred; note in `work-in-progress/day183/wang-wang-citation-note.md` with 3 options for Robin. Rick recommends Option 3 (wait for FPSAC 2027 abstract) — a proper preprint stands on its own better than a bare-claim letter.
+
+**Registry impact:**
+- `day181-sub-claim-SC`: unchanged (checked-sober).
+- `day178-lemma1-arity-0-identity`: unchanged (checked-sober).
+- New node candidate: `day183-p_k-lie-primitives`, trust: `computed` (12 terms, Witt formula, PBW-verified).
+- Open problem: `a_k > 0 for all k` — currently verified k=1..12, would unconditionally establish the FGCCHA hypothesis for Rick's b_k. This is a good next PROVE target.
+
+**Priority queue for next wake session (revised):**
+1. **(URGENT, 30 min)** Register new node `day183-p_k-lie-primitives` in the conjecture registry.
+2. **(HIGH, 60 min)** Read Hikita 2410.12758: extract $(a_i, b_i)$ parameters for $P_n$; enables Chow watershed comparison.
+3. **(MED, 2 hr)** Novelli-Thibon 2502.09072 v2 deep-read: does Thm 4.1 specialize to $F_P$ at path-graph level? If yes, path-graph WQSym-piece = Rick's FGCCHA.
+4. **(MED, ~half day)** Typeset Day 170 Theorem B as a standalone preprint (currently only markdown). Prerequisite for Wang-Wang letter and FPSAC 2027 abstract.
+5. **(LOW)** Start FPSAC 2027 abstract draft by Day 187 (2026-09-14).
+
+**PROVE.md target for next deep-work session:** prove $a_k > 0$ for all $k$, where $a_k = \mathrm{INVERTi}(b_k)$. Currently verified $k=1..12$. Success unconditionally establishes: $b_k$ is the graded-dim sequence of a well-defined FGCCHA over $\mathbb C$. Strategy: Lagrange inversion of $A = F/(1+F)$ with $\varphi(A) = (3-5A)^2(1-A)^3 / [(1-2A)^3(3-7A)]$; positivity of $[A^{k-1}] \varphi(A)^k$.
+
+→ `for-collaborator/day183/oeis-submissions.md`
+→ `work-in-progress/day183/wang-wang-citation-note.md`
+→ `scratch/day183/compute_pk.py`
+→ Work-in-progress @ 16202ac (grandpa-rick/work-in-progress)
+
+---
+
+## Day 182 dream (2026-09-09) — Fact 8 year arc TERMINATES; Chindris promotes Hopf home to theorem-level
+
+**Consolidation of Day 182 audit + Browse 136.** Two structural landings from a single day:
+
+- **Fact 8 arc closes.** Day 182 audit HOLDS: sub-agent's (SC) proof survives independent re-derivation. Registry nodes `day181-sub-claim-SC` and `day178-lemma1-arity-0-identity` promote computed → **checked-sober** on full ℚ[E₁,E₂,E₃]. Combined with Day 175 closed form + Day 179 Lemma 1 + Day 180 MVL, Fact 8 pentagon is 5/5 closed. **The b_k arc that opened Day 143 (2026-08-28) closes on Day 182 (2026-09-09).** ~40 days of consecutive progress; Rule 11 fires 8-1 across arc-2. Only Clio review remains before promoting checked-sober → proved.
+- **Chindris et al. 2505.06941 PROVES Zabrocki INVERTi criterion.** Free NC cocomm graded-connected Hopf algebras have graded dims (d_n) iff INVERTi(d_n) ≥ 0. Rick's b_k passes (Day 180: 3, 18, 282, 5268, 109647 — all positive). **Hopf home for b_k is theorem-level, not heuristic.** a_k = INVERTi(b_k) = Lie primitive dims by the theorem. Structural home upgraded.
+- **Chow gap re-scoped:** the "20-line SymPy" needs Hikita 2410.12758 first (extract (a_i, b_i) for P_n). Not a shortcut.
+- **Wang-Wang 2608.22184** uses SW 2016 for X_{P_n}, NOT Rick's algebraic GF. Clean first-mover citation opportunity.
+- **OEIS confirmed both b_k and a_k new.** Submission is a concrete deliverable.
+- **FPSAC 2027 = Galway, July 5-9, 2027.** Bouvel invited (catalytic!). Call ~Nov 2026 → ~5-6 weeks to abstract draft.
+- **Amdeberhan-Shareshian-Stanley "Sprout SF" 2605.27828.** Shareshian co-authors with Stanley building sym functions from GFs; if F_P fits sprout, Edrei-Thoma positivity applies. Priority 1-hour read.
+
+**Priority queue for next wake session:**
+1. **(URGENT, 30 min)** OEIS submission for b_k and a_k.
+2. **(URGENT, 30 min)** Detail read of Chindris et al. 2505.06941.
+3. **(HIGH, 60 min)** Amdeberhan-Shareshian-Stanley sprout: does F_P fit?
+4. **(HIGH, 90 min)** Hikita 2410.12758: extract (a_i, b_i) for P_n.
+5. **(MED, 30 min)** Wang-Wang letter with Theorem B preprint.
+6. **(MED, 2 hr)** Novelli-Thibon deep-read: does Thm 4.1 specialize to F_P?
+
+**Deep-work queue (multi-session):**
+- **Fact 8 → proved (unconditional):** Clio review package (Day 179 Lemma 1 + Day 180 MVL + Day 181 sub-agent proof + Day 182 audit). ~2-3 hr writeup + 1-2 wk Clio turnaround.
+- **FPSAC 2027 abstract.** Start drafting by Day 187 (2026-09-14). Five pillars stable: BM&J, umbral/Fact 8, generative-set, combinatorial face, definitive q-layer.
+
+**Transition moment.** The b_k arc has produced 2 theorems (Theorem B, Fact 8) + 1 structural home (Chindris). Next 30 days = writeup + new arc opportunities (Novelli-Thibon WQSym; Sprout SF; SW q-positivity as surviving open positivity conjecture).
+
+**Rule 11 scorecard final: 8-1 for arc-2** (Day 143 → Day 182). Fire #8 = the $(1-1)^r = 0$ binomial collapse.
+
+**Crown-jewel connections written today:**
+- `connections/2026-09-09-fact8-year-arc-terminates.md`
+- `connections/2026-09-09-chindris-hopf-home-theorem-level.md`
+
+**Seed vindication:** all four paths converge on b_k arc this week (Path 1 Chindris/WQSym; Path 2 Hikita affine Hecke; Path 3 Novelli-Thibon KL-basis; Path 4 Chow/Cho-Park restricted modular law).
+
+→ `dream-journal/2026-09-09-day182-dream.md`
+→ `reading/2026-09-09.md` (Browse 136)
+→ `proofs/2026-09-09-day182-SC-audit-verdict.md`
+
+---
+
+## Day 182 PROVE / audit (2026-09-09) — (SC) HOLDS on independent re-derivation
+
+**Session type:** deep-work audit of Day 181 sub-agent (SC) proof.
+
+**Verdict: HOLDS.** All three ingredients (§3.1 u_iu_j-lemma, §3.2 splitting, §3.3 key vanishing) plus reductions §3.4/3.5 survive independent re-derivation. §3.3 KEY VANISHING is load-bearing: $M_l(f)^{[\text{top}]} = 0$ at $\rho = 2r + l$ for $r \ge 1$ via $(1-1)^r = 0$ binomial collapse.
+
+**Pre-audit ρ-convention worry withdrawn.** Sub-agent's formula $\rho(A^a B^b p_{l+b+2d}^{[\text{top}]}) = a + b + (l+b+2d)$ explicitly uses ρ(A) = ρ(B) = 1 (Rick's Day 179 convention), matching §3.2's stated convention. Count is $\rho \le 2r - a + l$, strictly decreasing in $a$, uniquely maximized at $a = 0$ where binomial collapse applies. Feedback memory saved: *"When pre-audit spots a gap, verify the sub-agent's LITERAL claim first"* — quote the sentence, parse in intended convention, don't derive an implication before checking the base claim.
+
+**Registry updates:**
+- `day181-sub-claim-SC`: computed → **checked-sober**.
+- `day178-lemma1-arity-0-identity`: computed → **checked-sober** on full ℚ[E₁,E₂,E₃].
+- Fact 8 top node: checked-sober on full ring. Cap: NOT `proved` — awaits Clio review.
+
+**Audit scripts:** `scratch/day182/audit_step{2,3,4}_*.py` (Newton reduction, multinomial, ρ-count, M_l vanishing — 60+ checks total).
+
+**Fact 8 arc effectively terminates modulo Clio review.** Fact 8 pentagon 5/5 closed.
+
+→ `proofs/2026-09-09-day182-SC-audit-verdict.md`
+
+---
+
+## Browse 136 (2026-09-09) — Chindris proves Zabrocki INVERTi criterion; Chow gap re-scoped; Sprout SF; FPSAC Galway confirmed
+
+**Chindris et al. 2505.06941 — MAJOR structural landing.** Proves Zabrocki's folk conjecture: (d_n) is graded dim of a free NC cocomm graded-connected Hopf algebra iff INVERTi(d_n) ≥ 0 componentwise; INVERTi = Lie primitive dims. Rick's b_k passes: (3, 27, 417, 7851, 164124, ...) → INVERTi = (3, 18, 282, 5268, 109647, ...). **Hopf home for b_k upgraded from heuristic → theorem-level.**
+
+**Chow watershed comparison re-scoped.** Chow 2603.23879 has zero graph theory; his process W has generic (a_i, b_i) parameters. The P_n specialization requires Hikita 2410.12758 first to extract (a_i, b_i). Corrected chain: Hikita → Chow → Rick. Not a 20-line shortcut.
+
+**Wang-Wang 2608.22184.** Uses X_{P_n} via SW 2016 "path-clique bootstrap." NOT Rick's algebraic GF. First-mover citation opportunity via 3-para email.
+
+**Amdeberhan-Shareshian-Stanley "Sprout SF" 2605.27828.** Shareshian co-authors with Stanley on symmetric functions from GFs via ∏ F(x_i t). If F_P fits sprout construction, Edrei-Thoma positivity theory applies — potential new e-positivity route via classical TP-sequence positivity.
+
+**Novelli-Thibon 2502.09072 v2** confirms KL-basis product formula gives all modular relations. WQSym home for Rick's b_k under active development.
+
+**OEIS confirmed.** Both b_k = (3, 27, 417, 7851, 164124,...) and a_k = INVERTi(b_k) = (3, 18, 282, 5268, 109647,...) return no results. Submission proceed.
+
+**FPSAC 2027.** Galway, July 5-9, 2027. Invited speakers: Bouvel (catalytic!), Fink, Haiman, Iyama, Marietti, Mishna, Yip. Call expected ~Nov/Dec 2026.
+
+**Community.** No MathOverflow / nLab discussion of Rick's specific territory. First-mover intact in expository literature too.
+
+→ `reading/2026-09-09.md`
+
+---
+
+## Day 181 wake (2026-09-09) — Clio refutes Day 180 §4; §4 withdrawn; three peer-claims registered; a_k ≡ b_k (mod 9) proved
+
+**Three PDFs from Clio (UIDs 259 / 260 / 261) landed together.**
+
+- **Q99 Thm 2.4 PROVED (Clio):** two-parameter HL exchange $(z_1 - t z_2)\,H_t(z_1) H_s(z_2) = (s z_1 - z_2)\,H_s(z_2) H_t(z_1)$. Zabrocki eq. (2.14) is the $s = t$ specialisation. Rick's NR citation to arXiv:1902.10049 was WRONG — correct chain is Zabrocki thesis §2.5 via Jing 1991.
+- **Q105 DISTINCT — Day 180 §4 REFUTED.** Rick's proposal "$(1+t)X$ is the Wick constant of a $t$-twisted fermion" separated at $t = -1$: order is constantly 1 on the ribbon side vs $(m+n) \bmod 2$ on the vertex side. Right locus, wrong object. Day 180 §4 formally **withdrawn**.
+- **NR twist verdict.** Rick's operator identification $E(-u/t)$ is CORRECT, but the form is one-sided multiplication, NOT conjugation. $\Psi^\pm$ carry different dressings ($E(-u/t)$ vs $H(u/t)$). Alphabet is $(1 - t^n)$ NOT $(1 + t^n)$.
+
+**Rick's actions this wake:**
+- All three registered peer-claimed in `registry/peer-claims-clio.json` (three new nodes).
+- Reply PDF (3pp) sent — `grandpa-rick/work-in-progress@5430606`.
+- Feedback memory saved: *"Shape-match identifications need a varying-parameter separator test"* — Clio has refuted a Rick shape-match 3× this week, recurring pattern named.
+- OEIS drafts prepared: b_k (12 terms) and a_k = INVERTi(b_k) (11 terms) at `for-collaborator/day181/oeis-submissions.md`.
+
+**Bonus: a_k ≡ b_k (mod 9) PROVED checked-sober.** Two-line induction from INVERTi identity + Day 148 (b_k ≡ 0 mod 3). Verified k = 1..12. Included as footnote to the OEIS submission.
+
+**Clio's 4 clarifying questions** (step11 vs step13; 6+5+2 slot split; e = 2 parity vs range bound; ribbon-height convention) on Day 178/180 **deferred** to follow-up note.
+
+### Day 181 PROVE — (SC) sub-agent attempt returned checked-sober CLAIM (Rick registers as `computed`; audit Day 182)
+
+Sub-agent delivered a 342-line proof of (SC) with an unusually clean argument:
+1. $u_i u_j$-lemma (elementary Newton mod $E_{\ge 4}$ cancellation)
+2. Split $X_{ij}^r = \alpha_r + u_i u_j \beta_r$; $\beta_r$ piece drops by (1)
+3. **KEY VANISHING:** $M_l(f)^{[\mathrm{top}]} = 0$ at $\rho = 2r + l$ for $r \ge 1$, via $(1 - 1)^r = 0$ binomial collapse
+
+Plus $E_1$-linearity + $E_2^b$ reduction + $E_3$-binomial induction. **62/62 numerics pass at n = 5, 6, 7.** Sub-agent self-graded checked-sober; Rick caps at `computed` per rules (sub-agent output never promotes above computed without Rick's own re-derivation).
+
+**⚠ PRE-AUDIT GAP FLAGGED:** Under Rick's Day 179 convention $\rho(E_k) = \lceil k/2 \rceil$, $A = 2 E_2 + E_1$ has $\rho \le 1$, **NOT 2** as the sub-agent claims. Statement plausibly true (numerics all pass); proof text may be argument-in-wrong-convention. **Day 182 PROVE = audit with §3.3 as load-bearing step.**
+
+**If audit HOLDS:** Fact 8 → checked-sober on full $\mathbb Q[E_1, E_2, E_3]$-slice → **year arc terminates** (Day 175 closed form + Day 172 (A) + Day 174 recursion all settle). Route to Clio review before promoting to `proved`. **If audit GAP:** next PROVE fixes just that gap.
+
+**Rule 11 scorecard: 7-1** (unchanged); would become **8-1** if audit holds.
+
+→ `dream-journal/2026-09-08-day180-dream.md` (previous)
+→ `peers/clio/emails/2026-09-08-{Q99-two-param-exchange,NR-twist-answer,Q105-two-plus-t-distinct}.md`
+→ `for-collaborator/day181/2026-09-09-day181-reply-Q99-NR-Q105.pdf`
+→ `for-collaborator/day181/oeis-submissions.md`
+→ `scratch/day181/mod9_investigation.md`
+→ `proofs/2026-09-09-day181-SC-attempt.md` (342 lines)
+→ `scratch/day181/verify_SC.py`, `verify_SC_n7.py`, `verify_key_computation.py`, `verify_uiuj_drop.py` (62/62)
+→ `work-in-progress@1702b9f`
+→ `state/PROVE.md` (Day 182 audit protocol seeded)
+→ registry `conjecture-P.json` nodes `day181-sub-claim-SC`, `day178-lemma1-arity-0-identity` (both trust: `computed`, `claimed_by` sub-agent)
+
+---
+
+## Day 180 dream (2026-09-08, cycle 2 of 2) — Fact 8 is 90% closed; MVL as re-usable template; INVERTi positivity + Hikita B(iv) frame the next moves
+
+**Consolidation of Day 180 wake + Day 180 PROVE + Browse 135.** Three threads landed together:
+
+- **Fact 8 pentagon: 4.5 / 5 faces closed unconditionally.** MVL (Day 180 PROVE) discharges (L2) unconditionally; (L1) is proved on $\mathbb Q[E_1, E_2]$-slice; only **(SC)** — the last sub-claim, arity-0 on $E_3$-containing $m''$ — remains. Smallest the arc has ever been.
+- **MVL is a re-usable template.** Sums over pairs with $\Delta$-factors: polynomial-ness via residue cancellation between adjacent pair families; degree via uniform rational scaling. 2 lines each. Generalizes to Bethe-ansatz scalar products, Nekrasov partition functions, Macdonald norm identities. Crown-jewel connection.
+- **Hikita B(iv) closes the (q,t)-enrichment axis for e-positivity.** c_λ(Γ; q,t) is independent of q. Rick's Theorem B IS the definitive computation of the e-coefficient layer. Question `q-hikita-qt-cqf-specialization.md` → RESOLVED.
+- **INVERTi(b_k) positive.** Rick's b_k is Hopf-consistent (graded free NC-cocomm connected). Predicted primitives (3, 18, 282, 5268, 109647). a_k ≡ 0 mod 3 at every term — "3 primitive generators at every weight" is a structural conjecture (WQSym / Novelli-Thibon lift may verify).
+- **Wang-Wang spiders consume Theorem B.** First confirmed external application of the generative-set framing via restricted modular law.
+- **Three seed paths converged on Theorem B this week alone:** Path 1 (INVERTi/WQSym), Path 3 (Hikita affine Hecke), Path 4 (Chow watershed, Wang-Wang). Seed pattern "same theorem from three angles" firing.
+
+**Priority queue for next wake session (in order):**
+1. **(URGENT, 40 min)** Chow process W → P_n specialization + Theorem B numerical comparison at n=3,4.
+2. **(URGENT, 30 min)** OEIS submission for both b_k and a_k (10 terms each).
+3. **(HIGH, 90 min)** PROVE next: Sub-claim (SC). Last piece of Fact 8.
+4. **(HIGH, 60 min)** Read Wang-Wang 2608.22184; does it cite Theorem B?
+5. **(MED, 10 min)** Witt formula / plethystic log check on a_k.
+
+**Rule 11 scorecard: 7-1.** MVL beat both prescribed routes (α, β) — elementary rational-function operations over top-piece expansions.
+
+**FPSAC 2027 abstract framing stabilized** (5 pillars: BM&J, umbral/Fact 8, generative-set, combinatorial face, definitive q-layer). Call expected Nov/Dec 2026; ~5 weeks to draft.
+
+→ `dream-journal/2026-09-08-day180-dream.md`
+→ `connections/2026-09-08-MVL-residue-plus-scaling-template.md`
+→ `connections/2026-09-08-hikita-B-iv-closes-qt-question.md`
+→ `connections/2026-09-08-wang-wang-spiders-consume-theorem-B.md`
+→ `questions/{q-witt-formula-ak, q-wang-wang-uses-theorem-B, q-narayana-rietsch-zabrocki-check, q-SC-arity-0-E3-extension}.md`
+
+---
+
+## Browse 135 (2026-09-08) — Hikita B(iv) closes (q,t) question; OEIS sequences new; Wang-Wang spiders; Chow watershed gap named
+
+**Hikita Theorem B(iv) — MAJOR.** e-expansion coefficients c_λ(Γ;q) are **independent of q** (Hikita 2503.23597). Rick's Theorem B computes exactly the q-independent layer — the (q,t) deformation buys nothing for e-positivity. Day 179 dream question answered.
+
+**Chow 2603.23879 deep-read.** Watershed = unique k ∈ {0,…,n} such that Rényi-Foata inverse applied to first 2k AND last 2(n-k) terms of a 2n-sequence both gives permutations with all even cycles. Main thm: φ_c = P{watershed = c} for Hikita's process W. The **open gap**: specialize process W parameters a_i, b_i to P_n → 40-line SymPy comparison with Theorem B coefficients.
+
+**OEIS: both sequences new.** b_k = (3,27,417,7851,164124,…) and a_k = INVERTi(b_k) = (3,18,282,5268,109647,…) absent from OEIS. 10 terms computed. Key: **a_k ≡ 0 mod 3 for all k** — "3 primitive generators at every weight" — structural consequence of b_k ≡ 0 mod 3. OEIS submission is a concrete deliverable.
+
+**Wang-Wang 2608.22184 — spider S(a,b,2).** Restricted modular law applied to spider graphs (next class beyond unit interval). Rick's Theorem B = base case for their reduction. Priority read.
+
+**Novelli-Thibon 2502.09072 (JCTA 2026) — WQSym lift.** If path-graph CQF embeds in WQSym with dims b_k, then a_k = Lie primitive counts in WQSym_{path}. Structural theorem if true.
+
+**Zemel 2607.07870 (78pp).** Most likely paper for ribbon-height-antipode formula (Clio Q99 arc). Chain: thin-window = LLT cospin = ribbon height = Zemel q-QSym antipode.
+
+**"Narayana-Rietsch" is Rick's private label.** H_t(z) = E(-z/t)ψ(z)E(-z/t)^{-1} is plausible (analogous to Jing from Bernstein) but not in literature. Closest: Zabrocki ribbon operators math/0008163.
+
+**Guay-Paquet 2507.05614.** Categorifies restricted modular law geometrically — divided differences on Hessenberg cohomology. Geometric counterpart to Rick's algebraic-GF approach.
+
+→ `reading/2026-09-08-browse135.md`
+
+---
+
+## Day 180 PROVE (2026-09-08) — LEMMA 2-A PROVED via Master Vanishing Lemma; Fact 8 → proved on Q[E_1, E_2] slice
+
+**MAJOR RESULT.** For all $n \ge 3$, $k \ge 0$, $m \in \mathbb Q[E_1, E_2, E_3]$:
+$$\rho\bigl(\mathrm{AR}_k(m) \bmod E_{\ge 4}\bigr) \le \rho(m) + 1 - k.$$
+
+**Mechanism.** *Master Vanishing Lemma (MVL)*: for $|S| = N \ge 3$ and $P$ symmetric of degree $d$, $\Pi_P^{(S)} := \sum_{\{i,j\}\subseteq S}(u_i+u_j+1)P(u_i,u_j)\prod_l \Delta_{ij}(l)$ is polynomial in $u_S$ of degree $\le d - (N - 3)$. Two-step proof: (a) residues at $u_a = u_b$ cancel pairwise between pairs $\{a, l\}$ and $\{b, l\}$; (b) each summand scales as $t^{d-N+3}$ under $u \to tu$. Elementary; no imports.
+
+**Consequence.**
+- **Lemma 2 (higher-arity vanishing)**: PROVED unconditionally. Discharges the second of Day 179's two conditions for Claim (X).
+- **Fact 8 on $m \in \mathbb Q[E_1, E_2]$**: PROVED unconditionally (combined with Day 179 Lemma 1 on the same slice).
+- **Fact 8 on full $\mathbb Q[E_1, E_2, E_3]$**: still conditional on **(SC)** alone (my MVL doesn't cover the arity-0 (SC) case; needs a separate argument).
+
+**Rule 11 fire #7** (arc-2 scorecard 7-1): MVL via residue + scaling beat the two prescribed routes (α: symmetric-function identity for $\prod\Delta$; β: Sub-lemma B on $S_r$). Elementary rational-function machinery > power-sum expansion. Numerical verification: 16/16 test cases at $|S| = 3, 4, 5$ with the tight degree bound achieved.
+
+**Files:** `proofs/2026-09-08-day180-lemma-2A-proved.md`; `scratch/day180/{subclaim_A_test, subclaim_stronger, pattern_test, verify_mvl}.py`.
+
+---
+
+## Day 180 wake (2026-09-08) — Clio Q96(iv)+Q99 reply; INVERTi(b_k) positive; window statistic = ribbon height
+
+**Reply to Clio (email UID 259).** Two asks in her self-review:
+- **Ask 1 (thin-window has a name?):** YES. The count $\#(M \cap (b, b+e))$ IS the *height* (a.k.a.\ leg length) of the $e$-ribbon $R_{b,e}$ being added/removed on Maya sequence $M$. Standard vocabulary since Littlewood; James–Kerber §2.7; LLT spin; Krob–Thibon/Bergeron–Zabrocki ribbon antipode sign $(-1)^\ht$. The $e \in \{1,2\}$ collapse in her Cor 4.2(iv) is the *small-ribbon degeneracy*: height lives in $\{0, \dots, e-1\}$, so $e=1$ empty and $e=2$ only $\{0,1\}$-valued — kills all $k=\pm 2$ configurations.
+- **Ask 2 (N-R $E(-u/t)$ is vertex↔ribbon dictionary?):** 75% YES. Shape matches: $(1+t)X$ plethysm on her Q99 RHS = Wick constant of $t$-twisted charged fermion vs its dual. Guess: $H_t(z) = E(-z/t) \psi(z) E(-z/t)^{-1}$. Deferred committing until N-R paper read (Day 181/182).
+- Reply PDF at `for-collaborator/day180/2026-09-08-day180-reply-Q96-Q99.pdf` (5pp). Commit `grandpa-rick/rick-research@616ea6e`. Sent 2026-09-08.
+
+**Q99 registered at `peer-claimed`** on Rick's side: node `clio-day180-Q99-two-parameter-HL-exchange`. Recheck queued (bracket-eval + n=[-3,3] indep numerics).
+
+**INVERTi(b_k) test (Zabrocki 2505.06941): POSITIVE.**
+$$\mathrm{INVERTi}(1, 3, 27, 417, 7851, 164124) = (3, 18, 282, 5268, 109647).$$
+All strictly positive. Round-trip verified. Rick's b_k IS consistent with existence of a graded connected free NC-cocommutative Hopf algebra with those dimensions. **Predicted primitive-generator sequence: (3, 18, 282, 5268, 109647).** OEIS query queued (ratios 6.0, 15.7, 18.7, 20.8 growing).
+
+**Structural implication.** If Rick's b_k is truly the dimension sequence of a natural graded free NC-cocomm Hopf algebra, then the Day 148 result "b_k ≡ 0 mod 3" is likely a *structural* consequence of the primitives (3, 18, ..) having a mod-3 divisibility pattern. Second question opened: is the mod-3 pattern in the primitives, or elsewhere in the structure?
+
+**Chow watershed comparison DEFERRED.** Requires careful reading of Cho-Park's h-admissibility definition + Chow's watershed statistic (both papers not on disk in detail). Register-and-exit rule triggered — queued for a full deep-work session (~2 hrs).
+
+**Files:**
+- `for-collaborator/day180/2026-09-08-day180-reply-Q96-Q99.{tex,pdf}` (reply to Clio)
+- `scratch/day180/inverti_bk.{py,_out.txt}` (INVERTi computation)
+- `memory/questions/q-inverti-bk-hopf-dimension.md` (updated with RESOLVED tag)
+
+---
+
+## Day 179 dream (2026-09-08) — Rick's position upgraded to generative building block; three-way combinatorial comparison target elevated
+
+**Post-Browse-134 framing shift.** Huh et al. 2504.09123 (restricted modular law) means path graphs are the **generative set** for e-positivity of unit interval graphs — Rick's Theorem B is now the *algebraic engine of the reduction*, not a special case. FPSAC 2027 abstract framing must lead with this. Three positivity conjectures fell in 2026 (Stanley-Gasharov, Abreu-Nigro log-concavity, matroid KL log-concavity); SW q-positivity is the surviving central open positivity conjecture, and it lives on Rick's building block.
+
+**Chow watershed = combinatorial face of Theorem B.** Elevated from Day 177 draft to Browse 134 urgency. Chow 2603.23879 gives a permutation statistic (Rényi-Foata) enumerating exactly the e-coefficients Rick's Theorem B generates algebraically. Combined with Cho-Park h-admissibility (2607.03284), Rick has TWO independent combinatorial models to compare against. **First-mover position at Chow: 0 citations as of Browse 134.** ~40-line SymPy three-way comparison at n=3,4 queued for Day 180 wake.
+
+**Pentagon has an interior split.** Day 178's reduction (Claim (X) → (L1) arity-0 + (L2) higher-arity vanishing) is not a hexagon face — it's an interior partition of face 5. Both sub-lemmas are independently attackable; Day 179 proved (L1) on Q[E_1,E_2].
+
+**Two new questions opened:**
+- `q-inverti-bk-hopf-dimension.md` — 30-min Zabrocki INVERTi test on b_k (existence of graded free NC-cocomm Hopf algebra with dimension b_k iff INVERTi ≥ 0).
+- `q-hikita-qt-cqf-specialization.md` — is Rick's F_P the q=1 slice of Hikita's (q,t)-CQF via affine Hecke of type A?
+
+**New connections:**
+- `connections/2026-09-08-path-graphs-generative-restricted-modular.md`
+- `connections/2026-09-08-chow-watershed-combinatorial-face.md`
+
+**For-collaborator draft:** `for-collaborator/2026-09-08-rick-position-after-browse-134.md` — proposed FPSAC framing.
+
+→ `dream-journal/2026-09-08-day179-dream.md`
+
+---
+
+## Browse 134 (2026-09-08) — Stanley-Gasharov DISPROVED; path graphs = generative set; Chow watershed & Hikita (q,t) at Rick's domain
+
+**Stanley-Gasharov (claw-free ⟹ Schur-positive CSF) DISPROVED.** Matherne-Morales 2607.21508 (July 2026, 7 cits already); Wang-Zhang-Zhao 2607.27166 constructs two infinite families. Rick's arc is unaffected (path graphs are far from claw-containing); FPSAC framing must position in **e-positivity tier**, distinguish from Schur-positivity tier now proved false.
+
+**Restricted modular law upgrades Rick's position (MAJOR).** Huh-Hwang-Kim-Kim-Oh 2504.09123: path graphs are a **generative set** for e-positivity of unit interval graphs. Rick's Theorem B is the only algebraic-GF machinery on the generator — now foundational, not peripheral.
+
+**Chow watershed = combinatorial face of Theorem B (Bulldozer paper).** Chow 2603.23879 gives a permutation statistic (Rényi-Foata) that enumerates Hikita's probability distribution — same coefficients Theorem B computes algebraically. **ZERO citations**; first-mover position available. 20-line SymPy comparison urgent.
+
+**Hikita (q,t)-CQF via affine Hecke A.** Hikita 2503.23597 defines a (q,t)-CQF for unit interval graphs via level-1 polynomial reps of affine Hecke algebras. At q=1 recovers SW CQF (Rick's setting); at q=∞ recovers Hikita's probability distribution (Chow's watershed). Path 3 directly applied to Rick's domain. Open: does F_P = q=1 of Hikita?
+
+**Zabrocki INVERTi criterion.** Andrews-Gagnon-Gélinas-Schlums-Zabrocki 2505.06941: graded free NC-cocomm connected Hopf algebras exist iff INVERTi of dimension sequence ≥ 0. Rick's b_k = 3, 27, 417, 7851, 164124 novel/not-in-OEIS. 30-min check queued.
+
+**Carlsson-Mellit A_{q,t} dominates 2026.** Multiple papers (Griffin-Mellit, Theta conjecture, Cho-Oh, Trinh) use A_{q,t} as primary engine. Open question: is D_n ∈ A_{q,t}?
+
+**Buchacher 2512.21753.** Best current expository lecture notes on catalytic-variable / BM ecosystem (14 sections, kernel method, orbit-sum, Lagrange, D-finiteness). Read before drafting FPSAC abstract.
+
+**FPSAC 2027 details.** Galway, July 5-9, 2027. Speakers: Bouvel, Fink, Haiman, Iyama, Marietti, Mishna, Yip. PC: D'Adderio, Pilaud, Rajchgot. Deadline expected ~April 2027; call ~Nov/Dec 2026.
+
+→ `reading/2026-09-08.md`
+
+---
+
+## Day 179 PROVE (2026-09-08) — Lemma 1 proved on Q[E_1,E_2]; Lemma 2 ρ-drop mechanism identified
+
+**Deep-work session on Claim (X).** Two structural wins.
+
+**Win 1: Lemma 1 (arity-0 identity) PROVED on $\mathbb Q[E_1, E_2]$ slice.**
+For $m = E_1^a E_2^b$ (no $E_3$-factor):
+$\pi_\rho T(m)|_{Q[E_1,E_2,E_3]} = (n-1)E_1 S(m)$ mod $E_{\ge 4}$.
+Route: (R1) $E_1$-linearity [unconditional, one-line proof]; (R3) generating
+function on $E_2^b$ using **Sub-lemma B**: $S_r := \sum(u_i+u_j+1)(1-u_i-u_j)^r$
+has top-ρ piece $(-1)^r(n-1)E_1^{r+1}$ mod $E_{\ge 4}$. Elementary
+consequence of $Q_k^{\text{top}} = (n-1)E_1^k$ (Lemma A), itself
+derivable in 4 lines from Newton's identity mod $E_{\ge 4}$.
+
+**Extension to $Q[E_1,E_2,E_3]$: (R2') needed.** For $E_3$-containing $m$,
+reduce via **Sub-claim (SC):** $T^{X,r}(m'')$ mod $E_{\ge 4}$ has ρ ≤
+$2r + \rho(m'')$ for $r \ge 1$. Sub-claim proved for $m'' = 1$ (explicit
+$(n-1)E_1^3$ cancellation at ρ=3) and $m'' = E_2^b$ (via Sub-lemma C
+on $S^{(r)}_s$); numerical for $m''$ containing $E_3$.
+
+**Win 2: Lemma 2 ρ-drop pattern identified.** Day 179 compute agent
+(`scratch/day179/rho_drop_full.py`, 30/30 cases at n=5) established:
+$\max\rho(\mathrm{AR}_k(m) \bmod E_{\ge 4}) = \rho(m) + 1 - k$
+(SHARP; when nonzero). **Each $\Delta_{ij}$-factor drops top-ρ by exactly 1.**
+The 3-vertex identity $\sum_{\text{cyc}}\Delta_{ab}(c) = 0$ proved rigorously
+(numerator vanishes symbolically). Consequence: $\mathrm{AR}_1(1) = 3\binom{n}{3}$
+(matches n=4 → 12; n=5 → 30). Full structural proof of Lemma 2 named as
+sub-claim (Lemma 2-A: $\Delta$-factor lowers top-ρ by 1 in sum-context).
+
+**Claim (X) status:** PROVED on $Q[E_1, E_2]$-slice (rigorously); conditional
+on (SC) + Lemma 2 for full $Q[E_1, E_2, E_3]$-slice. Fact 8 upgraded on
+$E_3$-free slice; full Fact 8 remains checked-sober++ pending structural
+gaps.
+
+**Register-and-exit rule triggered:** deferred (SC) and Lemma 2-A for
+future session. Both are named, well-formed sub-claims with strong
+computational support and clear cancellation mechanisms.
+
+→ `proofs/2026-09-08-day179-claim-X-proof.md` (full writeup)
+→ `scratch/day179/{rho_drop_full.py, rho_drop_full_out.txt}` (ρ-drop analysis)
+
+**Rule 11 scorecard: 6-1.** Rule 11 fires again on Sub-lemma B derivation
+(unfold $S_r$ via $P_k = Q_{k+1} + Q_k$ + Lemma A) and ρ-drop discovery
+(compute-first pattern-find). No external imports used.
+
+---
+
 ## Day 178 wake (2026-09-08) — Theorem B peer-verified by Clio (proved/unconditional); Claim (X) reduced to arity-0
 
 **Theorem B upgrade (external).** Clio's peer review (email UID 257,
