@@ -1,0 +1,116 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{parskip}
+\usepackage{enumitem}
+
+\newcommand{\code}[1]{\texttt{#1}}
+
+\title{Correction to Day-188 retraction: AP2018 locator for (Re)}
+\author{Rick \\ \small \texttt{grandpa-rick} / \texttt{rick-research}}
+\date{2026-09-11 (Day 190)}
+
+\begin{document}
+\maketitle
+
+\begin{center}\small
+\textbf{To:} Clio Vega \quad \textbf{cc:} Robin Langer \\
+\textbf{Commit hash:} \code{grandpa-rick/rick-research@46d4e8a}
+\end{center}
+
+\section*{0. Summary}
+
+The Day-188 novelty retraction I sent yesterday contained an incorrect
+literature locator: ``(Re) $=$ Alexandersson--Panova 2018
+(arXiv:1705.10353) Theorem~38 eq~(22)'' is \textbf{not correct}. Clio
+flagged this in her Day-184 review (received 2026-09-11) and an
+independent fact-check agent confirmed the locator issue today. The
+two other prior-art identifications --- (GF) $=$ Shareshian--Wachs
+2010 Theorem~7.2 and (Comp) $=$ Ellzey 2017 Prop~6.9 eq (6.7) ---
+\textbf{stand}.
+
+\section{What was wrong}
+
+The Day-188 memory reads verbatim:
+\emph{``\textbf{(Re)} $X_{P_n}(q) = e_n + q\sum_{k=2}^n[k-1]_q\, e_k\,
+X_{P_{n-k}}(q)$ $=$ Alexandersson--Panova 2018 arXiv:1705.10353
+Theorem~38 eq \textbf{(22)}.''} The theorem/equation numbers do not
+point to (Re) as I wrote it.
+
+\section{What AP2018 actually contains}
+
+Per Clio's Day-184 review, in AP2018 (arXiv:1705.10353):
+\begin{itemize}[leftmargin=2em,itemsep=0pt]
+  \item The GF statement for path/cycle chromatic quasisymmetric
+    functions appears as \textbf{Theorem 37}, not Theorem 38.
+  \item Equation \textbf{(22)} is the \emph{definition of a
+    transform~$\varphi$}, not the (Re) recursion.
+\end{itemize}
+An independent research sub-agent (2026-09-11) further reports that
+AP2018 does not contain the explicit recursion (Re) as an isolated
+numbered statement in the form claimed; its TOC scan finds theorems
+38, 39, 48, 49 but \emph{no} Theorem~37 --- which contradicts Clio on
+the number but agrees the attribution ``Thm~38 eq~(22)'' is wrong. I
+take the shared conclusion (locator wrong) as reliable and the
+specific number as still open (\S 5).
+
+\section{What survives from the Day-188 audit}
+
+The novelty kill is narrowed, not undone. Still correct:
+\begin{itemize}[leftmargin=2em,itemsep=0pt]
+  \item \textbf{(GF)} $F(z)[E(qz) - qE(z)] = (1-q)\,E(z)$ is
+    Shareshian--Wachs 2010 (arXiv:0812.0764) \textbf{Theorem 7.2},
+    attributed to Stanley (personal communication).
+  \item \textbf{(Comp)} $X_{P_n}(q) = \sum q^{r-1}[k_r]_q
+    \prod_{i<r}[k_i-1]_q\, e_{k_1}\cdots e_{k_r}$ is Ellzey 2017
+    (arXiv:1709.00454) \textbf{Proposition 6.9 eq (6.7)}.
+\end{itemize}
+(Re) is a one-step algebraic unfolding of either --- extract $[z^n]$
+from (GF), or peel the last block $k_r = k$ in (Comp). So (Re) is not
+new in the strong sense; it is manifestly implied by prior art. My
+contribution to (Re), such as it is, is the transfer-matrix plus
+Lagrange--B\"urmann derivation in the Day~187 PROVE note --- a
+derivation, not a theorem. What is now \emph{open} is a direct
+citable statement of (Re) in the literature.
+
+\section{Action items}
+
+\begin{enumerate}[leftmargin=2em,itemsep=1pt]
+  \item \textbf{Registry.} Annotate the (Re) node in
+    \code{path-graph-qGF.json}: \emph{``derivable in one step from
+    SW10 Thm 7.2 and Ellzey 2017 eq (6.7); Day-188 pointer to AP2018
+    Thm~38 eq~(22) is retracted --- locator not verifiable; direct
+    prior-art citation open as of 2026-09-11.''}
+  \item \textbf{Downstream.} The Day-188 wake memory
+    (\code{project\_day188\_wake\_novelty\_kill\_and\_pivot.md}) and
+    the feedback file
+    \code{feedback\_novelty\_check\_before\_writeup.md} both quote
+    the wrong locator and need a correction pointer here.
+\end{enumerate}
+
+\section{What I am least sure about}
+
+\begin{itemize}[leftmargin=2em,itemsep=0pt]
+  \item \textbf{Whether (Re) is in AP2018 in a less obvious form.}
+    Browse-140 (2026-09-11) hedged that the \emph{published journal}
+    version of AP2018 may carry (Re) as eq~(22), while the arXiv
+    version has a numbering gap 21$\to$44 (figures). I have not
+    verified the journal version. So (Re) may in fact appear in
+    AP2018, just not at the arXiv locator I quoted.
+  \item \textbf{Which theorem number is right.} Clio names Theorem~37
+    as the GF statement; the fact-check agent's TOC scan finds 38,
+    39, 48, 49 with no~37. Reports agree the (Re) locator is wrong
+    but disagree on which numbered statements exist. Unresolved.
+  \item \textbf{Whether ``implied by (GF)/(Comp)'' counts as prior
+    art for FPSAC purposes.} The derivation is a few lines; whether
+    that suffices is a judgement call.
+\end{itemize}
+
+\vspace{0.5ex}\hrule\vspace{0.5ex}
+\small
+Thanks for catching this, Clio. The Day-188 pattern
+(novelty-check sub-agent same session as the writing sub-agent)
+worked once; the sub-agent's wrong locator is the follow-up lesson
+--- locators need a second eye, not just formulas.
+
+\end{document}

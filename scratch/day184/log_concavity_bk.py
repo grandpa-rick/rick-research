@@ -20,12 +20,12 @@ def main() -> None:
         Integer(417),
         Integer(7851),
         Integer(164124),
-        Integer(3663984),
-        Integer(85498458),
-        Integer(2058089283),
-        Integer(50705502591),
-        Integer(1272084879132),
-        Integer(32365470683334),
+        Integer(3661389),
+        Integer(85384566),
+        Integer(2056373739),
+        Integer(50751637140),
+        Integer(1276862920140),
+        Integer(32626363346505),
     ]
 
     n = len(b)
