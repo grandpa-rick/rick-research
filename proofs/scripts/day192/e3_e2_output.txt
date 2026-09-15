@@ -1,0 +1,56 @@
+========================================================================
+Compute e_3 ⋆ e_2 at m=5
+========================================================================
+[m=5] Computing e_3(Y) . e_2(X) ...
+  Y_1.e_2 done. #terms = 10
+  Y_2.e_2 done. #terms = 16
+  Y_3.e_2 done. #terms = 20
+  Y_4.e_2 done. #terms = 22
+  Y_5.e_2 done. #terms = 22
+  Y_1 Y_2.e_2 done. #terms = 10
+  Y_1 Y_3.e_2 done. #terms = 16
+  Y_2 Y_3.e_2 done. #terms = 18
+  Y_1 Y_4.e_2 done. #terms = 20
+  Y_2 Y_4.e_2 done. #terms = 26
+  Y_3 Y_4.e_2 done. #terms = 30
+  Y_1 Y_5.e_2 done. #terms = 22
+  Y_2 Y_5.e_2 done. #terms = 32
+  Y_3 Y_5.e_2 done. #terms = 40
+  Y_4 Y_5.e_2 done. #terms = 46
+  (i,j,k)=(1,2,3) done [1]; running #terms = 10
+  (i,j,k)=(1,2,4) done [2]; running #terms = 26
+  (i,j,k)=(1,3,4) done [3]; running #terms = 42
+  (i,j,k)=(2,3,4) done [4]; running #terms = 56
+  (i,j,k)=(1,2,5) done [5]; running #terms = 73
+  (i,j,k)=(1,3,5) done [6]; running #terms = 94
+  (i,j,k)=(2,3,5) done [7]; running #terms = 112
+  (i,j,k)=(1,4,5) done [8]; running #terms = 132
+  (i,j,k)=(2,4,5) done [9]; running #terms = 152
+  (i,j,k)=(3,4,5) done [10]; running #terms = 170
+[m=5] e_3 ⋆ e_2 computed. Expanding in e_lambda-basis of deg 5...
+
+e_3 ⋆ e_2 at m=5:
+----------------------------------------------------------------------
+  e_(5,): (q - 1)*(q*t**2 + q - t)*(t**4 + t**3 + t**2 + t + 1)/q**2
+  e_(4, 1): (q - 1)*(t**2 + t + 1)/q**2
+  e_(3, 2): q**(-2)
+  e_(3, 1, 1): 0
+  e_(2, 2, 1): 0
+  e_(2, 1, 1, 1): 0
+  e_(1, 1, 1, 1, 1): 0
+
+----- NONZERO SUPPORT -----
+  e_(5,) = (q - 1)*(q*t**2 + q - t)*(t**4 + t**3 + t**2 + t + 1)/q**2
+  e_(4, 1) = (q - 1)*(t**2 + t + 1)/q**2
+  e_(3, 2) = q**(-2)
+
+#nonzero terms: 3
+Meta-conjecture prediction (min(3,2)+1 = 3): PASS
+
+----- SANITY q=1: should give e_{3,2} only -----
+  e_(3, 2) @ q=1: 1
+
+----- Leading behaviour in 1/q -----
+  e_(5,): deg_num = 2, deg_den = 2, leading q^0 coeff = t**6 + t**5 + 2*t**4 + 2*t**3 + 2*t**2 + t + 1
+  e_(4, 1): deg_num = 1, deg_den = 2, leading q^-1 coeff = nan
+  e_(3, 2): deg_num = 0, deg_den = 2, leading q^-2 coeff = 1
