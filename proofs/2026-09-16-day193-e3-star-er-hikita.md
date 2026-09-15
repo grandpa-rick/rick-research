@@ -157,18 +157,25 @@ remark after Thm A(iii)).
 
 ### 4.1 The unified $\ell$-th coefficient pattern
 
-Define $\ell := 3 - k$ ("distance from the top-of-$e$-basis"). For $\ell
-= 0$ (bottom $c_3 = e_{r, 3}$): $c_3 = q^{-3}$. For $\ell = 1, 2, 3$
+Define $\ell := a - k$ ("distance from the ordinary-product bottom $e_{r, a}$"), so
+$\ell = 0$ is the bottom $c_a$ and $\ell = a$ is the top $c_0$. For $\ell
+= 0$: $c_a^{(a)}(r) = q^{-a}$ (bottom, ordinary product). For $\ell \ge 1$
 (non-trivial):
 $$
-c_{3-\ell}(r) = \frac{q - 1}{q^3} \cdot \frac{[r + 2\ell - 3]_t}{[\ell]_t !} \cdot P_\ell(q, t; r)
+c_{a-\ell}^{(a)}(r) = \frac{q - 1}{q^a} \cdot [\text{prefactor}_\ell(a, r)] \cdot P_\ell(q, t; r, a)
 $$
-where $P_\ell$ is a *polynomial in $q$ of degree $\ell - 1$* with $q^{\ell-1}$-leading
-coefficient a product of $[k]_t$-integers and $q^0$-trailing coefficient $t^{\ell(\ell-1)/2} \cdot (\text{similar})$:
+where (verified for $\ell = 1, 2, 3$ across $a = 2, 3, 4$):
+- $[\text{prefactor}_1] = [r+2-a]_t$
+- $[\text{prefactor}_2] = [r+4-a]_t/[2]_t$
+- $[\text{prefactor}_3] = [r+6-a]_t/([2]_t[3]_t)$
 
-- $P_1 = 1$.
-- $P_2 = [r]_t \cdot q - t\,[r-2]_t$.
-- $P_3 = [r+1]_t[r+2]_t\,q^2 - t\,[2]_t\,[r-1]_t\,[r+1]_t\,q + t^3\,[r-2]_t\,[r-1]_t$.
+and $P_\ell(q, t; r, a)$ is a *polynomial in $q$ of degree $\ell - 1$* with
+alternating signs, $t$-exponents $\binom{j+1}{2}$, and $[k]_t$-integer factor
+coefficients:
+
+- $P_1(q,t;r,a) = 1$.
+- $P_2(q,t;r,a) = [r+3-a]_t \cdot q - t\,[r+1-a]_t$.
+- $P_3(q,t;r,a) = [r+5-a]_t[r+4-a]_t\,q^2 - t\,[2]_t\,[r+2-a]_t[r+4-a]_t\,q + t^3\,[r+1-a]_t[r+2-a]_t$.
 
 This has the flavor of a **quadratic $q$-Vandermonde** or **$q$-Newton relation**:
 at each level, the "shift" in the $[r+\ldots]$ indices is by 2 per $q$-step,
