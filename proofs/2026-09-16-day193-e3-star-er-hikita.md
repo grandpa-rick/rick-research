@@ -44,9 +44,10 @@ $$
   D_1(r) = \frac{[r-1]_t[r+1]_t[r+3]_t}{[3]_t}, \quad
   D_0(r) = \frac{[r-2]_t[r-1]_t[r+3]_t}{[2]_t[3]_t}
   $$
-- Note that $D_0(r) = \binom{r-1}{2}_t \cdot \frac{[r+3]_t}{[3]_t}$ — this
-  is the reflection of $G(r)$ under $r \to r-4$, times a "prefactor swap"
-  $[r+2]_t \to [r-2]_t \cdot [3]_t/[3]_t$... actually $D_0(r) = G(r) \cdot [r-1]_t[r-2]_t/([r+1]_t[r+2]_t)$. (This is a *quadratic $q$-analog Vandermonde* shape.)
+- Note that $D_0(r) = \binom{r-1}{2}_t \cdot \frac{[r+3]_t}{[3]_t}$, which
+  is $G(r) \cdot \frac{[r-1]_t[r-2]_t}{[r+1]_t[r+2]_t}$ — a "shift-by-3"
+  version of $\binom{r+3}{3}_t$. This is a *quadratic $q$-analog
+  Vandermonde* shape.
 
 **All four coefficients:**
 $$
@@ -113,12 +114,37 @@ $\{(a+b-k, k) : k = 0, 1, \ldots, \min(a, b)\}$.
 | $(2, r)$, $r \le 4$ | 3 | 3 | Day 191 |
 | $(3, r)$, $r = 1..6$ | $\min(3, r)+1$ | ✓ | Day 192 (r=1..5), Day 193 (r=6) |
 | $(4, 3)$ | 4 | 4 ✓ | Day 193 ($m=7$, 223 s) |
-| $(4, 4)$ | 5 | *[compute at $m=8$]* | Day 193 |
+| $(4, 4)$ | 5 | **5** ✓ | Day 193 ($m=8$, 1167 s) |
 
-Total 14 (soon 15) cases; no counterexample. Note that $(4, 3)$ equals
-$(3, 4)$ by commutativity, so it's a sanity check rather than a new
-independent case; the $(4, 4)$ test is the first genuinely new
-$\min = 4$ case (predicting 5 terms).
+Total 15 cases; no counterexample. Note that $(4, 3)$ equals $(3, 4)$
+by commutativity, so it's a sanity check rather than a new independent
+case; the $(4, 4)$ test is the first genuinely new $\min = 4$ case
+(confirming 5 terms).
+
+**$(4, 4)$ full data (Day 193 compute):**
+$$
+\begin{aligned}
+e_4 \star e_4 = q^{-4} e_{4,4} + \frac{q-1}{q^4}\Bigl[
+&[2]_t\, e_{5,3} + [4]_t/[2]_t\,(q[3]_t - t)\, e_{6,2} \\
+&+ (t^3+1)\, \Delta_3(q, t)\, e_{7,1}  + [8]_t/[4]_t \cdot P_4^{(4)}(q, t; 4)\, e_8\Bigr]
+\end{aligned}
+$$
+where $\Delta_3 = q^2 G_c^{(3)} - qL_c^{(3)} + t^3$ is Day 192's $r=3$ polynomial, and
+$P_4^{(4)}(q, t; 4)$ is a specific polynomial of degree 3 in $q$ (see files).
+
+**Key observations from $(4, 4)$:**
+- The $\ell = 1, 2, 3$ formulas (bottom, sub-bottom, sub-sub-bottom) all
+  match the generalized $\ell$-th pattern with $a = 4$ substituted:
+  - $c_{a-1}^{(a)}(r) = (q-1)[r-1+2-a]_t/q^a$: for $(a, r) = (4, 4)$, gives $[r-1] = [3]$... wait let me redo.
+  - Actually $c_3^{(4)}(4) = (q-1)[2]_t/q^4$ (data), and formula $c_{a-1}^{(a)}(r) = (q-1)[r+2-a]_t/q^a$ at $(4,4)$: $(q-1)[r+2-a]/q^a = (q-1)[4+2-4]/q^4 = (q-1)[2]/q^4$ ✓
+  - $c_{a-2}^{(a)}(r) = (q-1)[r+4-a]_t/[2]_t \cdot (q[r+3-a] - t[r+1-a])/q^a$: at $(4,4)$: $(q-1)[4]/[2] \cdot (q[3] - t[1])/q^4 = (q-1)(1+t^2)(q(1+t+t^2) - t)/q^4$ ✓ (matches $e_{6,2}$-coeff data)
+  - $c_{a-3}^{(a)}(r) = (q-1)/q^a \cdot [r+6-a]/([2][3]) \cdot ([r+5-a][r+4-a] q^2 - t[2][r+2-a][r+4-a] q + t^3 [r+1-a][r+2-a])$: at $(4,4)$: $(q-1)/q^4 \cdot [6]/([2][3]) \cdot ([5][4]q^2 - t[2]^2[4]q + t^3[2])$; simplifying $[6]/([2][3]) = t^2-t+1$ and combining with $[2]$: matches $e_{7,1}$-coeff data with prefactor $(t+1)(t^2-t+1) = t^3+1$ ✓
+- So the level-$\ell$ formulas for $\ell = 1, 2, 3$ (as functions of $a$)
+  are **now verified across $a = 2, 3, 4$**.
+- Top term ($\ell = a = 4$) is new; explicit $P_4^{(4)}$ closed form
+  not yet extracted from single data point, but the leading
+  $q^{\ell-1}$-coefficient at $q\to\infty$ gives $\binom{r+a}{a}_t = \binom{8}{4}_t$ ✓, and
+  the trailing $q^0$-coefficient gives $-t^{a(a-1)/2}[r+a]/[a] \cdot \binom{r-1}{a-1}_t = -t^6 (1+t^4) \cdot 1$ (at $r=a=4$) ✓.
 
 **Novelty (Rick's Day 141--142 audit):** no literature Pieri rule
 for $e_a \star e_b$, $a \ge 2$, in this or any related deformation of
@@ -275,12 +301,18 @@ FPSAC anchor structure:
 - `~/projects/proofs/scripts/day193/verify_c0_closed_form.py` — Verifies full $c_0$ closed form at $r=3,4,5$; predicts $r=6$.
 - `~/projects/proofs/scripts/day193/verify_c0_r6.py` — Cross-verifies closed form against compute at $r=6$.
 - `~/projects/proofs/scripts/day193/compute_e4_star_er.py` — $a=4$ framework for meta-conjecture.
+- `~/projects/proofs/scripts/day193/sober_recheck.py` — Numeric Fraction-arithmetic
+  independent verification (framework, not yet run to completion).
 
 ---
 
 ## 9. What's next (Day 194+)
 
-1. Verify $(4, 3)$ meta-conjecture — compute in progress.
-2. Full compute for $(4, 4)$ or $(4, 5)$ to test $P_4$-shape conjecture.
-3. Analytic proof route via extending Hikita Lemma 3.11 to $p_k(Y)$.
-4. FPSAC 2027 abstract v3 — draft with $e_2, e_3$ closed forms.
+1. Full closed form for $(4, r)$: needs completing $(4, 4)$ compute
+   (still running as of Day 193 wrap-up) plus $(4, 5)$ to pin down $P_4^{(4)}$.
+2. Test the speculative "$P_4^{(4)} \approx \prod_{i=1}^{3}([r+i]q - t^i[r-i]) + \text{corrections}$" ansatz.
+3. Analytic proof route via extending Hikita Lemma 3.11 to $p_k(Y)$ (long
+   shot; the closed form suggests the underlying AHA identity is
+   elementary once found).
+4. Sober re-check via numeric Fraction arithmetic (`sober_recheck.py`).
+5. FPSAC 2027 abstract v3 — draft with $e_2, e_3$ closed forms.

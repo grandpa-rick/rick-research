@@ -1,0 +1,57 @@
+================================================================================
+Day 193 meta-conjecture test: e_4 ⋆ e_4 at m=8
+================================================================================
+[m=8] Computing e_4(Y) . e_4(X) ...
+  Y_1.e_4 done. #terms = 70
+  Y_2.e_4 done. #terms = 110
+  Y_3.e_4 done. #terms = 130
+  Y_4.e_4 done. #terms = 138
+  Y_5.e_4 done. #terms = 140
+  Y_6.e_4 done. #terms = 140
+  Y_7.e_4 done. #terms = 140
+  Y_8.e_4 done. #terms = 140
+  Y_k Y_1 pairs done.
+  Y_k Y_2 pairs done.
+  Y_k Y_3 pairs done.
+  Y_k Y_4 pairs done.
+  Y_k Y_5 pairs done.
+  Y_k Y_6 pairs done.
+  Y_k Y_7 pairs done.
+  Y_k Y_8 pairs done.
+  Y_j Y_k Y_1 triples done.
+  Y_j Y_k Y_2 triples done.
+  Y_j Y_k Y_3 triples done.
+  Y_j Y_k Y_4 triples done.
+  Y_j Y_k Y_5 triples done.
+  Y_j Y_k Y_6 triples done.
+  Y_j Y_k Y_7 triples done.
+  Y_j Y_k Y_8 triples done.
+  quadruple 5/70; running #terms = 525
+  quadruple 10/70; running #terms = 1160
+  quadruple 15/70; running #terms = 1886
+  quadruple 20/70; running #terms = 2444
+  quadruple 25/70; running #terms = 3253
+  quadruple 30/70; running #terms = 3951
+  quadruple 35/70; running #terms = 4752
+  quadruple 40/70; running #terms = 5177
+  quadruple 45/70; running #terms = 5916
+  quadruple 50/70; running #terms = 6594
+  quadruple 55/70; running #terms = 7497
+  quadruple 60/70; running #terms = 8043
+  quadruple 65/70; running #terms = 8937
+  quadruple 70/70; running #terms = 9631
+[m=8] e_4 ⋆ e_4 computed. Expanding in e_lambda-basis of deg 8...
+
+Wallclock: 1166.7s
+
+--- e_4 ⋆ e_4 at m=8 ---
+  e_(8,) = (q - 1)*(t**4 + 1)*(q**3*t**12 + q**3*t**11 + 2*q**3*t**10 + 3*q**3*t**9 + 4*q**3*t**8 + 4*q**3*t**7 + 5*q**3*t**6 + 4*q**3*t**5 + 4*q**3*t**4 + 3*q**3*t**3 + 2*q**3*t**2 + q**3*t + q**3 - q**2*t**11 - 2*q**2*t**10 - 4*q**2*t**9 - 5*q**2*t**8 - 7*q**2*t**7 - 7*q**2*t**6 - 7*q**2*t**5 - 5*q**2*t**4 - 4*q**2*t**3 - 2*q**2*t**2 - q**2*t + q*t**9 + 2*q*t**8 + 3*q*t**7 + 3*q*t**6 + 3*q*t**5 + 2*q*t**4 + q*t**3 - t**6)/q**4
+  e_(7, 1) = (q - 1)*(t + 1)*(t**2 - t + 1)*(q**2*t**6 + q**2*t**5 + 2*q**2*t**4 + 2*q**2*t**3 + 2*q**2*t**2 + q**2*t + q**2 - q*t**5 - 2*q*t**4 - 2*q*t**3 - 2*q*t**2 - q*t + t**3)/q**4
+  e_(6, 2) = (q - 1)*(t**2 + 1)*(q*t**2 + q*t + q - t)/q**4
+  e_(5, 3) = (q - 1)*(t + 1)/q**4
+  e_(4, 4) = q**(-4)
+
+  #nonzero = 5, predicted min(4,4)+1 = 5
+
+--- Sanity check: at q=1 ---
+  e_(4, 4) at q=1 = 1
