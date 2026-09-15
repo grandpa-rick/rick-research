@@ -1,0 +1,160 @@
+================================================================================
+Day 193: Compute e_3 ⋆ e_6 at m=9
+================================================================================
+[m=9] Computing e_3(Y) . e_6(X) ...
+  Y_1.e_6 done. #terms = 84
+  Y_2.e_6 done. #terms = 126
+  Y_3.e_6 done. #terms = 138
+  Y_4.e_6 done. #terms = 140
+  Y_5.e_6 done. #terms = 140
+  Y_6.e_6 done. #terms = 140
+  Y_7.e_6 done. #terms = 140
+  Y_8.e_6 done. #terms = 140
+  Y_9.e_6 done. #terms = 140
+  Y_1 Y_2.e_6 done. #terms = 84
+  Y_1 Y_3.e_6 done. #terms = 126
+  Y_2 Y_3.e_6 done. #terms = 156
+  Y_1 Y_4.e_6 done. #terms = 138
+  Y_2 Y_4.e_6 done. #terms = 188
+  Y_3 Y_4.e_6 done. #terms = 208
+  Y_1 Y_5.e_6 done. #terms = 140
+  Y_2 Y_5.e_6 done. #terms = 202
+  Y_3 Y_5.e_6 done. #terms = 210
+  Y_4 Y_5.e_6 done. #terms = 224
+  Y_1 Y_6.e_6 done. #terms = 140
+  Y_2 Y_6.e_6 done. #terms = 206
+  Y_3 Y_6.e_6 done. #terms = 218
+  Y_4 Y_6.e_6 done. #terms = 212
+  Y_5 Y_6.e_6 done. #terms = 224
+  Y_1 Y_7.e_6 done. #terms = 140
+  Y_2 Y_7.e_6 done. #terms = 206
+  Y_3 Y_7.e_6 done. #terms = 222
+  Y_4 Y_7.e_6 done. #terms = 220
+  Y_5 Y_7.e_6 done. #terms = 212
+  Y_6 Y_7.e_6 done. #terms = 224
+  Y_1 Y_8.e_6 done. #terms = 140
+  Y_2 Y_8.e_6 done. #terms = 206
+  Y_3 Y_8.e_6 done. #terms = 222
+  Y_4 Y_8.e_6 done. #terms = 224
+  Y_5 Y_8.e_6 done. #terms = 220
+  Y_6 Y_8.e_6 done. #terms = 212
+  Y_7 Y_8.e_6 done. #terms = 224
+  Y_1 Y_9.e_6 done. #terms = 140
+  Y_2 Y_9.e_6 done. #terms = 206
+  Y_3 Y_9.e_6 done. #terms = 222
+  Y_4 Y_9.e_6 done. #terms = 224
+  Y_5 Y_9.e_6 done. #terms = 224
+  Y_6 Y_9.e_6 done. #terms = 220
+  Y_7 Y_9.e_6 done. #terms = 212
+  Y_8 Y_9.e_6 done. #terms = 224
+  (i,j,k)=(1,2,3) done [1]; running #terms = 84
+  (i,j,k)=(1,2,4) done [2]; running #terms = 210
+  (i,j,k)=(1,3,4) done [3]; running #terms = 360
+  (i,j,k)=(2,3,4) done [4]; running #terms = 520
+  (i,j,k)=(1,2,5) done [5]; running #terms = 625
+  (i,j,k)=(1,3,5) done [6]; running #terms = 782
+  (i,j,k)=(2,3,5) done [7]; running #terms = 972
+  (i,j,k)=(1,4,5) done [8]; running #terms = 1106
+  (i,j,k)=(2,4,5) done [9]; running #terms = 1300
+  (i,j,k)=(3,4,5) done [10]; running #terms = 1470
+  (i,j,k)=(1,2,6) done [11]; running #terms = 1559
+  (i,j,k)=(1,3,6) done [12]; running #terms = 1691
+  (i,j,k)=(2,3,6) done [13]; running #terms = 1851
+  (i,j,k)=(1,4,6) done [14]; running #terms = 1983
+  (i,j,k)=(2,4,6) done [15]; running #terms = 2170
+  (i,j,k)=(3,4,6) done [16]; running #terms = 2355
+  (i,j,k)=(1,5,6) done [17]; running #terms = 2470
+  (i,j,k)=(2,5,6) done [18]; running #terms = 2634
+  (i,j,k)=(3,5,6) done [19]; running #terms = 2818
+  (i,j,k)=(4,5,6) done [20]; running #terms = 2982
+  (i,j,k)=(1,2,7) done [21]; running #terms = 3069
+  (i,j,k)=(1,3,7) done [22]; running #terms = 3186
+  (i,j,k)=(2,3,7) done [23]; running #terms = 3319
+  (i,j,k)=(1,4,7) done [24]; running #terms = 3437
+  (i,j,k)=(2,4,7) done [25]; running #terms = 3595
+  (i,j,k)=(3,4,7) done [26]; running #terms = 3753
+  (i,j,k)=(1,5,7) done [27]; running #terms = 3869
+  (i,j,k)=(2,5,7) done [28]; running #terms = 4020
+  (i,j,k)=(3,5,7) done [29]; running #terms = 4189
+  (i,j,k)=(4,5,7) done [30]; running #terms = 4358
+  (i,j,k)=(1,6,7) done [31]; running #terms = 4471
+  (i,j,k)=(2,6,7) done [32]; running #terms = 4608
+  (i,j,k)=(3,6,7) done [33]; running #terms = 4762
+  (i,j,k)=(4,6,7) done [34]; running #terms = 4934
+  (i,j,k)=(5,6,7) done [35]; running #terms = 5102
+  (i,j,k)=(1,2,8) done [36]; running #terms = 5188
+  (i,j,k)=(1,3,8) done [37]; running #terms = 5299
+  (i,j,k)=(2,3,8) done [38]; running #terms = 5419
+  (i,j,k)=(1,4,8) done [39]; running #terms = 5529
+  (i,j,k)=(2,4,8) done [40]; running #terms = 5674
+  (i,j,k)=(3,4,8) done [41]; running #terms = 5813
+  (i,j,k)=(1,5,8) done [42]; running #terms = 5920
+  (i,j,k)=(2,5,8) done [43]; running #terms = 6055
+  (i,j,k)=(3,5,8) done [44]; running #terms = 6207
+  (i,j,k)=(4,5,8) done [45]; running #terms = 6357
+  (i,j,k)=(1,6,8) done [46]; running #terms = 6470
+  (i,j,k)=(2,6,8) done [47]; running #terms = 6598
+  (i,j,k)=(3,6,8) done [48]; running #terms = 6745
+  (i,j,k)=(4,6,8) done [49]; running #terms = 6904
+  (i,j,k)=(5,6,8) done [50]; running #terms = 7072
+  (i,j,k)=(1,7,8) done [51]; running #terms = 7185
+  (i,j,k)=(2,7,8) done [52]; running #terms = 7307
+  (i,j,k)=(3,7,8) done [53]; running #terms = 7446
+  (i,j,k)=(4,7,8) done [54]; running #terms = 7596
+  (i,j,k)=(5,7,8) done [55]; running #terms = 7764
+  (i,j,k)=(6,7,8) done [56]; running #terms = 7931
+  (i,j,k)=(1,2,9) done [57]; running #terms = 8017
+  (i,j,k)=(1,3,9) done [58]; running #terms = 8128
+  (i,j,k)=(2,3,9) done [59]; running #terms = 8249
+  (i,j,k)=(1,4,9) done [60]; running #terms = 8359
+  (i,j,k)=(2,4,9) done [61]; running #terms = 8504
+  (i,j,k)=(3,4,9) done [62]; running #terms = 8644
+  (i,j,k)=(1,5,9) done [63]; running #terms = 8745
+  (i,j,k)=(2,5,9) done [64]; running #terms = 8874
+  (i,j,k)=(3,5,9) done [65]; running #terms = 9020
+  (i,j,k)=(4,5,9) done [66]; running #terms = 9157
+  (i,j,k)=(1,6,9) done [67]; running #terms = 9258
+  (i,j,k)=(2,6,9) done [68]; running #terms = 9375
+  (i,j,k)=(3,6,9) done [69]; running #terms = 9510
+  (i,j,k)=(4,6,9) done [70]; running #terms = 9650
+  (i,j,k)=(5,6,9) done [71]; running #terms = 9789
+  (i,j,k)=(1,7,9) done [72]; running #terms = 9902
+  (i,j,k)=(2,7,9) done [73]; running #terms = 10026
+  (i,j,k)=(3,7,9) done [74]; running #terms = 10165
+  (i,j,k)=(4,7,9) done [75]; running #terms = 10307
+  (i,j,k)=(5,7,9) done [76]; running #terms = 10460
+  (i,j,k)=(6,7,9) done [77]; running #terms = 10628
+  (i,j,k)=(1,8,9) done [78]; running #terms = 10741
+  (i,j,k)=(2,8,9) done [79]; running #terms = 10863
+  (i,j,k)=(3,8,9) done [80]; running #terms = 11003
+  (i,j,k)=(4,8,9) done [81]; running #terms = 11139
+  (i,j,k)=(5,8,9) done [82]; running #terms = 11279
+  (i,j,k)=(6,8,9) done [83]; running #terms = 11448
+  (i,j,k)=(7,8,9) done [84]; running #terms = 11616
+[m=9] e_3 ⋆ e_6 computed. Expanding in e_lambda-basis of deg 9...
+
+Wallclock: 1312.3s
+
+--- e_3 ⋆ e_6 at m=9 (n=9) ---
+  e_(9,) = (q - 1)*(t**6 + t**3 + 1)*(q**2*t**12 + q**2*t**11 + 2*q**2*t**10 + 2*q**2*t**9 + 3*q**2*t**8 + 3*q**2*t**7 + 4*q**2*t**6 + 3*q**2*t**5 + 3*q**2*t**4 + 2*q**2*t**3 + 2*q**2*t**2 + q**2*t + q**2 - q*t**11 - 2*q*t**10 - 3*q*t**9 - 4*q*t**8 - 5*q*t**7 - 5*q*t**6 - 5*q*t**5 - 4*q*t**4 - 3*q*t**3 - 2*q*t**2 - q*t + t**9 + t**8 + 2*t**7 + 2*t**6 + 2*t**5 + t**4 + t**3)/q**3
+  e_(8, 1) = (q - 1)*(q*t**4 + q*t**2 + q - t**3 - t)*(t**6 + t**5 + t**4 + t**3 + t**2 + t + 1)/q**3
+  e_(7, 2) = (q - 1)*(t**4 + t**3 + t**2 + t + 1)/q**3
+  e_(6, 3) = q**(-3)
+  #nonzero = 4, predicted min(3,6)+1 = 4
+
+--- Sanity check: at q=1 ---
+  e_(6, 3) at q=1 = 1
+
+--- Verify Day 192 predictions at r=6 ---
+  e_(6, 3): predicted = q**(-3)
+  e_(6, 3): actual    = q**(-3)
+  diff = 0
+
+  e_(7, 2): predicted = (q - 1)*(t**4 + t**3 + t**2 + t + 1)/q**3
+  e_(7, 2): actual    = (q - 1)*(t**4 + t**3 + t**2 + t + 1)/q**3
+  diff = 0
+
+  e_(8, 1): predicted = (q - 1)*(q*t**4 + q*t**2 + q - t**3 - t)*(t**6 + t**5 + t**4 + t**3 + t**2 + t + 1)/q**3
+  e_(8, 1): actual    = (q - 1)*(q*t**4 + q*t**2 + q - t**3 - t)*(t**6 + t**5 + t**4 + t**3 + t**2 + t + 1)/q**3
+  diff = 0
+

@@ -1,0 +1,46 @@
+================================================================================
+Day 193 meta-conjecture test: e_4 ⋆ e_3 at m=7
+================================================================================
+[m=7] Computing e_4(Y) . e_3(X) ...
+  Y_1.e_3 done. #terms = 35
+  Y_2.e_3 done. #terms = 55
+  Y_3.e_3 done. #terms = 67
+  Y_4.e_3 done. #terms = 73
+  Y_5.e_3 done. #terms = 75
+  Y_6.e_3 done. #terms = 75
+  Y_7.e_3 done. #terms = 75
+  Y_k Y_1 pairs done.
+  Y_k Y_2 pairs done.
+  Y_k Y_3 pairs done.
+  Y_k Y_4 pairs done.
+  Y_k Y_5 pairs done.
+  Y_k Y_6 pairs done.
+  Y_k Y_7 pairs done.
+  Y_j Y_k Y_1 triples done.
+  Y_j Y_k Y_2 triples done.
+  Y_j Y_k Y_3 triples done.
+  Y_j Y_k Y_4 triples done.
+  Y_j Y_k Y_5 triples done.
+  Y_j Y_k Y_6 triples done.
+  Y_j Y_k Y_7 triples done.
+  quadruple 5/35; running #terms = 250
+  quadruple 10/35; running #terms = 565
+  quadruple 15/35; running #terms = 896
+  quadruple 20/35; running #terms = 1188
+  quadruple 25/35; running #terms = 1553
+  quadruple 30/35; running #terms = 1903
+  quadruple 35/35; running #terms = 2288
+[m=7] e_4 ⋆ e_3 computed. Expanding in e_lambda-basis of deg 7...
+
+Wallclock: 223.3s
+
+--- e_4 ⋆ e_3 at m=7 ---
+  e_(7,) = (q - 1)*(t**6 + t**5 + t**4 + t**3 + t**2 + t + 1)*(q**2*t**6 + q**2*t**4 + q**2*t**3 + q**2*t**2 + q**2 - q*t**5 - q*t**4 - q*t**3 - q*t**2 - q*t + t**3)/q**3
+  e_(6, 1) = (q - 1)*(q*t**2 + q - t)*(t**4 + t**3 + t**2 + t + 1)/q**3
+  e_(5, 2) = (q - 1)*(t**2 + t + 1)/q**3
+  e_(4, 3) = q**(-3)
+
+  #nonzero = 4, predicted min(4,3)+1 = 4
+
+--- Sanity check: at q=1 ---
+  e_(4, 3) at q=1 = 1
