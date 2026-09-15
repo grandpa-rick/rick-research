@@ -89,7 +89,7 @@ Hence each pair-monomial term $M$ has ρ $\le a+b+1 = (u\text{-deg of }M) - 1$.
 Sum over $a, b$: $\sum_{i<j} f$ has ρ $\le d - 1$. $\square$
 
 Verified numerically for all $(a, b) \in \{1, 2, 3\}^2$ at $n=5$: 9/9 pass
-(scratch/day181/verify_uiuj_drop.py).
+(proofs/scripts/day181/verify_uiuj_drop.py).
 
 ### 3.2 Splitting $X_{ij}^r = \alpha_r + u_iu_j \beta_r$
 
@@ -151,7 +151,7 @@ $= E_1^{2r+l} \cdot (1-1)^r$
 $= 0 \quad \text{for } r \ge 1$. $\square$
 
 **Numerical verification.** For $n = 5$: 12/12 pass across $r \in \{1,2,3,4\}$
-and $l \in \{0,1,2\}$ (scratch/day181/verify_key_computation.py).
+and $l \in \{0,1,2\}$ (proofs/scripts/day181/verify_key_computation.py).
 
 ### 3.4 Reduction: $\pi_{2r+\rho(m'')+1}\sum(u_i+u_j+1)\alpha_r m''|_{ij} = 0$
 
@@ -252,7 +252,7 @@ and all $r \ge 1$. $\blacksquare$
 
 ## 4. Numerical verification
 
-**Setup:** scratch/day181/verify_SC.py, verify_key_computation.py, verify_uiuj_drop.py, verify_SC_n7.py.
+**Setup:** proofs/scripts/day181/verify_SC.py, verify_key_computation.py, verify_uiuj_drop.py, verify_SC_n7.py.
 
 - $n = 5$: 18/18 test cases pass (r ∈ {1, 2}; m'' ∈ {1, E_1, E_2, E_3, E_1E_3, E_2E_3, E_3^2, E_1^2 E_3, E_2^2}).
 - $n = 6$: 18/18 test cases pass (same as n=5).
@@ -305,9 +305,9 @@ polynomial splitting) and the top-ρ symbol formalism from Day 179.
 ## 7. Files
 
 - Proof: this file.
-- Verification: scratch/day181/verify_SC.py (main),
-  scratch/day181/verify_key_computation.py (key lemma §3.3),
-  scratch/day181/verify_uiuj_drop.py (u_iu_j-lemma §3.1).
+- Verification: proofs/scripts/day181/verify_SC.py (main),
+  proofs/scripts/day181/verify_key_computation.py (key lemma §3.3),
+  proofs/scripts/day181/verify_uiuj_drop.py (u_iu_j-lemma §3.1).
 - Priors: proofs/2026-09-08-day179-claim-X-proof.md,
   proofs/2026-09-08-day180-lemma-2A-proved.md.
 

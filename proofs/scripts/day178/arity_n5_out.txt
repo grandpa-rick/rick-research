@@ -1,0 +1,63 @@
+
+### m = 1
+rho(m) = 0, top-rho target = 1
+  pi_rho(AR_0(m)) mod E_(>=4) = 4*E1
+  pi_rho(AR_1(m)) mod E_(>=4) = 0
+  pi_rho(AR_2(m)) mod E_(>=4) = 0
+  pi_rho(AR_3(m)) mod E_(>=4) = 0
+  Predicted (n-1) E_1 S(m) = 4*E1
+  L1 CHECK: arity-0 - predicted = 0  (PASS)
+  L2 CHECK arity 1: 0  (PASS)
+  L2 CHECK arity 2: 0  (PASS)
+  L2 CHECK arity 3: 0  (PASS)
+
+### m = E_1
+rho(m) = 1, top-rho target = 2
+  pi_rho(AR_0(m)) mod E_(>=4) = 4*E1**2
+  pi_rho(AR_1(m)) mod E_(>=4) = 0
+  pi_rho(AR_2(m)) mod E_(>=4) = 0
+  pi_rho(AR_3(m)) mod E_(>=4) = 0
+  Predicted (n-1) E_1 S(m) = 4*E1**2
+  L1 CHECK: arity-0 - predicted = 0  (PASS)
+  L2 CHECK arity 1: 0  (PASS)
+  L2 CHECK arity 2: 0  (PASS)
+  L2 CHECK arity 3: 0  (PASS)
+
+### m = E_2
+rho(m) = 1, top-rho target = 2
+  pi_rho(AR_0(m)) mod E_(>=4) = 4*E1**2 + 4*E1*E2
+  pi_rho(AR_1(m)) mod E_(>=4) = 0
+  pi_rho(AR_2(m)) mod E_(>=4) = 0
+  pi_rho(AR_3(m)) mod E_(>=4) = 0
+  Predicted (n-1) E_1 S(m) = 4*E1**2 + 4*E1*E2
+  L1 CHECK: arity-0 - predicted = 0  (PASS)
+  L2 CHECK arity 1: 0  (PASS)
+  L2 CHECK arity 2: 0  (PASS)
+  L2 CHECK arity 3: 0  (PASS)
+
+### m = E_3
+rho(m) = 2, top-rho target = 3
+  pi_rho(AR_0(m)) mod E_(>=4) = 4*E1*E3
+  pi_rho(AR_1(m)) mod E_(>=4) = 0
+  pi_rho(AR_2(m)) mod E_(>=4) = 0
+  pi_rho(AR_3(m)) mod E_(>=4) = 0
+  Predicted (n-1) E_1 S(m) = 4*E1*E3
+  L1 CHECK: arity-0 - predicted = 0  (PASS)
+  L2 CHECK arity 1: 0  (PASS)
+  L2 CHECK arity 2: 0  (PASS)
+  L2 CHECK arity 3: 0  (PASS)
+
+### m = E_1*E_2
+rho(m) = 2, top-rho target = 3
+  pi_rho(AR_0(m)) mod E_(>=4) = 4*E1**3 + 4*E1**2*E2
+  pi_rho(AR_1(m)) mod E_(>=4) = 0
+  pi_rho(AR_2(m)) mod E_(>=4) = 0
+  pi_rho(AR_3(m)) mod E_(>=4) = 0
+  Predicted (n-1) E_1 S(m) = 4*E1**3 + 4*E1**2*E2
+  L1 CHECK: arity-0 - predicted = 0  (PASS)
+  L2 CHECK arity 1: 0  (PASS)
+  L2 CHECK arity 2: 0  (PASS)
+  L2 CHECK arity 3: 0  (PASS)
+
+======================================================================
+OVERALL: ALL PASS

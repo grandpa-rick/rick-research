@@ -1,0 +1,4 @@
+
+### m = 1
+rho(m) = 0, top-rho target = 1
+  pi_rho(AR_0(m)) mod E_(>=4) = 5*E1   [t=0.1s]

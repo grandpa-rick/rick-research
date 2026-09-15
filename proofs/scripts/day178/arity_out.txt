@@ -1,0 +1,185 @@
+n = 4
+Arity decomposition of (B_1 + B_0)(m), n=4
+======================================================================
+
+######################################################################
+m = 1
+rho(m) = 0, top-rho target weight = 1
+m(u) = 1
+
+--- Arity k = 0 ---
+  Polynomiality check: PASS
+  AR_0(m) in E-basis (n=4): 3*E1 + 6
+  pi_rho(AR_0(m)) | mod E_4 = 3*E1
+
+--- Arity k = 1 ---
+  Polynomiality check: PASS
+  AR_1(m) in E-basis (n=4): 12
+  pi_rho(AR_1(m)) | mod E_4 = 0
+
+--- Arity k = 2 ---
+  Polynomiality check: PASS
+  AR_2(m) in E-basis (n=4): 0
+  pi_rho(AR_2(m)) | mod E_4 = 0
+
+  SUM over arities 0,1,2 = 3*E1
+  Predicted (n=4): (n-1) E_1 S(m) = 3 * E_1 * (1) = 3*E1
+  Predicted symbolic:  (n-1) E_1 S(m) = (n-1) * E_1 * (1)
+  TOTAL - predicted (mod E_4) = 0
+  ARITY-0 - predicted (mod E_4) = 0
+
+######################################################################
+m = E_1
+rho(m) = 1, top-rho target weight = 2
+m(u) = u1 + u2 + u3 + u4
+
+--- Arity k = 0 ---
+  Polynomiality check: PASS
+  AR_0(m) in E-basis (n=4): 3*E1**2 + 12*E1 + 12
+  pi_rho(AR_0(m)) | mod E_4 = 3*E1**2
+
+--- Arity k = 1 ---
+  Polynomiality check: PASS
+  AR_1(m) in E-basis (n=4): 12*E1 + 24
+  pi_rho(AR_1(m)) | mod E_4 = 0
+
+--- Arity k = 2 ---
+  Polynomiality check: PASS
+  AR_2(m) in E-basis (n=4): 0
+  pi_rho(AR_2(m)) | mod E_4 = 0
+
+  SUM over arities 0,1,2 = 3*E1**2
+  Predicted (n=4): (n-1) E_1 S(m) = 3 * E_1 * (E1) = 3*E1**2
+  Predicted symbolic:  (n-1) E_1 S(m) = (n-1) * E_1 * (E1)
+  TOTAL - predicted (mod E_4) = 0
+  ARITY-0 - predicted (mod E_4) = 0
+
+######################################################################
+m = E_2
+rho(m) = 1, top-rho target weight = 2
+m(u) = u1*u2 + u1*u3 + u1*u4 + u2*u3 + u2*u4 + u3*u4
+
+--- Arity k = 0 ---
+  Polynomiality check: PASS
+  AR_0(m) in E-basis (n=4): 3*E1**2 + 3*E1*E2 + 12*E1 + 10*E2 + 6
+  pi_rho(AR_0(m)) | mod E_4 = 3*E1**2 + 3*E1*E2
+
+--- Arity k = 1 ---
+  Polynomiality check: PASS
+  AR_1(m) in E-basis (n=4): 12*E1 + 12*E2 - 4
+  pi_rho(AR_1(m)) | mod E_4 = 0
+
+--- Arity k = 2 ---
+  Polynomiality check: PASS
+  AR_2(m) in E-basis (n=4): -10
+  pi_rho(AR_2(m)) | mod E_4 = 0
+
+  SUM over arities 0,1,2 = 3*E1**2 + 3*E1*E2
+  Predicted (n=4): (n-1) E_1 S(m) = 3 * E_1 * (E1 + E2) = 3*E1**2 + 3*E1*E2
+  Predicted symbolic:  (n-1) E_1 S(m) = (n-1) * E_1 * (E1 + E2)
+  TOTAL - predicted (mod E_4) = 0
+  ARITY-0 - predicted (mod E_4) = 0
+
+######################################################################
+m = E_3
+rho(m) = 2, top-rho target weight = 3
+m(u) = u1*u2*u3 + u1*u2*u4 + u1*u3*u4 + u2*u3*u4
+
+--- Arity k = 0 ---
+  Polynomiality check: PASS
+  AR_0(m) in E-basis (n=4): 2*E1*E2 + 3*E1*E3 + 3*E1 + 10*E2 + 12*E3
+  pi_rho(AR_0(m)) | mod E_4 = 3*E1*E3
+
+--- Arity k = 1 ---
+  Polynomiality check: PASS
+  AR_1(m) in E-basis (n=4): -3*E1**2 - 10*E1 + 12*E2 + 12*E3 - 20
+  pi_rho(AR_1(m)) | mod E_4 = 0
+
+--- Arity k = 2 ---
+  Polynomiality check: PASS
+  AR_2(m) in E-basis (n=4): -3*E1 - 6
+  pi_rho(AR_2(m)) | mod E_4 = 0
+
+  SUM over arities 0,1,2 = 3*E1*E3
+  Predicted (n=4): (n-1) E_1 S(m) = 3 * E_1 * (E3) = 3*E1*E3
+  Predicted symbolic:  (n-1) E_1 S(m) = (n-1) * E_1 * (E3)
+  TOTAL - predicted (mod E_4) = 0
+  ARITY-0 - predicted (mod E_4) = 0
+
+######################################################################
+m = E_2^2
+rho(m) = 2, top-rho target weight = 3
+m(u) = u1**2*u2**2 + 2*u1**2*u2*u3 + 2*u1**2*u2*u4 + u1**2*u3**2 + 2*u1**2*u3*u4 + u1**2*u4**2 + 2*u1*u2**2*u3 + 2*u1*u2**2*u4 + 2*u1*u2*u3**2 + 6*u1*u2*u3*u4 + 2*u1*u2*u4**2 + 2*u1*u3**2*u4 + 2*u1*u3*u4**2 + u2**2*u3**2 + 2*u2**2*u3*u4 + u2**2*u4**2 + 2*u2*u3**2*u4 + 2*u2*u3*u4**2 + u3**2*u4**2
+
+--- Arity k = 0 ---
+  Polynomiality check: PASS
+  AR_0(m) in E-basis (n=4): 3*E1**3 + 6*E1**2*E2 + 21*E1**2 + 3*E1*E2**2 + 34*E1*E2 + 21*E1 + 14*E2**2 + 16*E2 + 6
+  pi_rho(AR_0(m)) | mod E_4 = 3*E1**3 + 6*E1**2*E2 + 3*E1*E2**2
+
+--- Arity k = 1 ---
+  Polynomiality check: PASS
+  AR_1(m) in E-basis (n=4): 15*E1**2 + 24*E1*E2 - 22*E1 + 12*E2**2 - 24*E2 - 16
+  pi_rho(AR_1(m)) | mod E_4 = 0
+
+--- Arity k = 2 ---
+  Polynomiality check: PASS
+  AR_2(m) in E-basis (n=4): -25*E1 - 20*E2 - 2
+  pi_rho(AR_2(m)) | mod E_4 = 0
+
+  SUM over arities 0,1,2 = 3*E1**3 + 6*E1**2*E2 + 3*E1*E2**2
+  Predicted (n=4): (n-1) E_1 S(m) = 3 * E_1 * (E1**2 + 2*E1*E2 + E2**2) = 3*E1**3 + 6*E1**2*E2 + 3*E1*E2**2
+  Predicted symbolic:  (n-1) E_1 S(m) = (n-1) * E_1 * (E1**2 + 2*E1*E2 + E2**2)
+  TOTAL - predicted (mod E_4) = 0
+  ARITY-0 - predicted (mod E_4) = 0
+
+######################################################################
+m = E_1 E_2
+rho(m) = 2, top-rho target weight = 3
+m(u) = u1**2*u2 + u1**2*u3 + u1**2*u4 + u1*u2**2 + 3*u1*u2*u3 + 3*u1*u2*u4 + u1*u3**2 + 3*u1*u3*u4 + u1*u4**2 + u2**2*u3 + u2**2*u4 + u2*u3**2 + 3*u2*u3*u4 + u2*u4**2 + u3**2*u4 + u3*u4**2
+
+--- Arity k = 0 ---
+  Polynomiality check: PASS
+  AR_0(m) in E-basis (n=4): 3*E1**3 + 3*E1**2*E2 + 18*E1**2 + 16*E1*E2 + 30*E1 + 20*E2 + 12
+  pi_rho(AR_0(m)) | mod E_4 = 3*E1**3 + 3*E1**2*E2
+
+--- Arity k = 1 ---
+  Polynomiality check: PASS
+  AR_1(m) in E-basis (n=4): 12*E1**2 + 12*E1*E2 + 20*E1 + 24*E2 - 8
+  pi_rho(AR_1(m)) | mod E_4 = 0
+
+--- Arity k = 2 ---
+  Polynomiality check: PASS
+  AR_2(m) in E-basis (n=4): -10*E1 - 20
+  pi_rho(AR_2(m)) | mod E_4 = 0
+
+  SUM over arities 0,1,2 = 3*E1**3 + 3*E1**2*E2
+  Predicted (n=4): (n-1) E_1 S(m) = 3 * E_1 * (E1**2 + E1*E2) = 3*E1**3 + 3*E1**2*E2
+  Predicted symbolic:  (n-1) E_1 S(m) = (n-1) * E_1 * (E1**2 + E1*E2)
+  TOTAL - predicted (mod E_4) = 0
+  ARITY-0 - predicted (mod E_4) = 0
+
+######################################################################
+m = E_2 E_3
+rho(m) = 3, top-rho target weight = 4
+m(u) = u1**2*u2**2*u3 + u1**2*u2**2*u4 + u1**2*u2*u3**2 + 3*u1**2*u2*u3*u4 + u1**2*u2*u4**2 + u1**2*u3**2*u4 + u1**2*u3*u4**2 + u1*u2**2*u3**2 + 3*u1*u2**2*u3*u4 + u1*u2**2*u4**2 + 3*u1*u2*u3**2*u4 + 3*u1*u2*u3*u4**2 + u1*u3**2*u4**2 + u2**2*u3**2*u4 + u2**2*u3*u4**2 + u2*u3**2*u4**2
+
+--- Arity k = 0 ---
+  Polynomiality check: PASS
+  AR_0(m) in E-basis (n=4): 2*E1**2*E2 + 3*E1**2*E3 + 6*E1**2 + 2*E1*E2**2 + 3*E1*E2*E3 + 21*E1*E2 + 18*E1*E3 + 3*E1 + 14*E2**2 + 16*E2*E3 + 6*E2 + 6*E3
+  pi_rho(AR_0(m)) | mod E_4 = 3*E1**2*E3 + 3*E1*E2*E3
+
+--- Arity k = 1 ---
+  Polynomiality check: PASS
+  AR_1(m) in E-basis (n=4): -3*E1**3 - 3*E1**2*E2 - 14*E1**2 + 12*E1*E3 - 44*E1 + 12*E2**2 + 12*E2*E3 - 40*E2 - 16*E3 - 16
+  pi_rho(AR_1(m)) | mod E_4 = 0
+
+--- Arity k = 2 ---
+  Polynomiality check: PASS
+  AR_2(m) in E-basis (n=4): -2*E1**2 - 3*E1*E2 - 3*E1 - 16*E2 - 10*E3 + 12
+  pi_rho(AR_2(m)) | mod E_4 = 0
+
+  SUM over arities 0,1,2 = 3*E1**2*E3 + 3*E1*E2*E3
+  Predicted (n=4): (n-1) E_1 S(m) = 3 * E_1 * (E1*E3 + E2*E3) = 3*E1**2*E3 + 3*E1*E2*E3
+  Predicted symbolic:  (n-1) E_1 S(m) = (n-1) * E_1 * (E1*E3 + E2*E3)
+  TOTAL - predicted (mod E_4) = 0
+  ARITY-0 - predicted (mod E_4) = 0

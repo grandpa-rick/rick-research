@@ -34,13 +34,22 @@ T_S(m) := \sum_{\{i,j\}\subseteq S}(u_i + u_j + 1)\, m|_{ij}\!\!\prod_{l \in S\s
 
 ## 2. Master Vanishing Lemma (MVL)
 
-**Theorem (MVL).** Let $S \subseteq [n]$ with $|S| = N \ge 3$, and let
+**Theorem (MVL).** Let $S \subseteq [n]$ with $|S| = N \ge 2$, and let
 $P(x, y)$ be a polynomial symmetric in $(x, y)$ of total degree $d$. Define
 $$\Pi_P^{(S)}(u_S) := \sum_{\{i,j\} \subseteq S}(u_i + u_j + 1)\, P(u_i, u_j) \prod_{l \in S \setminus \{i,j\}}\Delta_{ij}(l).$$
 Then $\Pi_P^{(S)}$ is a polynomial in $\{u_l : l \in S\}$, symmetric in
 these variables, of total degree $\le d - (N - 3)$.
 
 (Convention: negative degree ⇒ zero polynomial.)
+
+**$N = 2$ case (Day 192 correction, per Clio peer review UID 271).** At
+$N = 2$ there is a single pair $\{i, j\}$ and the product over
+$l \in S \setminus \{i, j\}$ is empty. So
+$\Pi_P^{(S)} = (u_i + u_j + 1)\, P(u_i, u_j)$, a polynomial of degree
+$d + 1 = d - (N - 3)$ with $N = 2$. Original statement said $N \ge 3$
+but §4 applies MVL at $N = k + 2$ for $k \ge 0$, so the $k = 0$ case
+needs $N = 2$. Verified 7/7 (identity, symmetric in $(u_i, u_j)$,
+degree bound saturating).
 
 ### 2.1 Symmetry
 
@@ -188,7 +197,7 @@ $E_3$-containing $m$):
 
 ## 6. Numerical verification (checked-sober)
 
-MVL predicted degrees vs. computed degrees, `scratch/day180/verify_mvl.py`:
+MVL predicted degrees vs. computed degrees, `proofs/scripts/day180/verify_mvl.py`:
 
 | $\lvert S \rvert$ | $P$ | $d$ | predicted deg | actual deg | status |
 |---|---|---|---|---|---|
@@ -212,7 +221,7 @@ MVL predicted degrees vs. computed degrees, `scratch/day180/verify_mvl.py`:
 **16/16 pass**, with actual degrees consistently saturating the MVL upper bound
 (not "off by more"), confirming the MVL is tight.
 
-Also: `scratch/day180/subclaim_stronger.py` confirms:
+Also: `proofs/scripts/day180/subclaim_stronger.py` confirms:
 - $|S| = 6$, $P = 1$: $\Pi_P = 0$ (predicted, since $d - (N-3) = -3$).
 - $|S| = 5$, $P = u_i^2 + u_j^2$: $\Pi_P = 15$ (const, deg 0 as predicted).
 - $|S| = 6$, $P = (u_i+u_j)^3$: $\Pi_P = 126$ (const, deg 0 as predicted).
@@ -248,13 +257,13 @@ handles all degrees uniformly.
 
 ## 9. Files
 
-- `/home/agent/projects/scratch/day180/subclaim_A_test.py` — initial
+- `/home/agent/projects/proofs/scripts/day180/subclaim_A_test.py` — initial
   vanishing test (T_S = 0 for |S| ≥ 4, m = 1).
-- `/home/agent/projects/scratch/day180/subclaim_stronger.py` — pattern
+- `/home/agent/projects/proofs/scripts/day180/subclaim_stronger.py` — pattern
   discovery: T_S^{(r)} vanishes for r < |S| - 3.
-- `/home/agent/projects/scratch/day180/pattern_test.py` — full pattern
+- `/home/agent/projects/proofs/scripts/day180/pattern_test.py` — full pattern
   verification at |S| = 4, 5, 6.
-- `/home/agent/projects/scratch/day180/verify_mvl.py` — 16-case degree
+- `/home/agent/projects/proofs/scripts/day180/verify_mvl.py` — 16-case degree
   bound verification.
 
 ## 10. Pre-registered predictions — postmortem
