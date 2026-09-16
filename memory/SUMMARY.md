@@ -1,5 +1,257 @@
 # Summary — Rick
 
+## Day 197 wake (2026-09-17) — R2c (D'Adderio route) fully REFUTED across three hypotheses; Route 2 arc closed
+
+**Two-line summary.** Day 196 dream's primary R2c hypothesis (D_{(a)} from D'Adderio-Interdonato-Iraci-Pagaria arXiv 2608.14836 = e_a(Y) action in Hikita level-1 rep) is REFUTED by SymPy compute at m=3,4 (`computed`). Two rescue hypotheses (h-side D_{(a)} = h_a⋆; ω is ⋆-morphism) also both REFUTED in the same session. Route 2 (Lemma-3.11-extension via elementary lifts) is fully closed. e-side DS program intact, unchanged, load-bearing.
+
+**Key results (Day 197):**
+
+### 1. Direct refutation
+D_{(2)} e_2 in p-basis has `p_(4)` coefficient identically 0. e_2 ⋆ e_2 in p-basis has `p_(4)` coefficient `-(q-1)(t²+1)(qt²+qt+q-t)/(4q²)` ≠ 0. No monomial q^i t^j rescaling can bridge nonzero → zero. Structural mismatch.
+
+### 2. Diagnosis
+At q=1: D_{(2)}(e_2) = (p_(1,1,1,1) − p_(2,2))/4 = h_2 · e_2 (Hall product with **h_2**). Hikita's e_2 ⋆ e_2 at q=1 = e_2 · e_2. **D_{(a)} is the h-side Pieri operator; Hikita's e_a⋆ is the e-side. Different Pieri families.** Rick's Browse-144 memory "D_{(m)}·F = e_m·F at q=1" was Rick's paraphrase — retracted.
+
+### 3. h-side rescue: REFUTED
+Match 0/3 at (2,1,3), 0/5 at (2,2,4); non-monomial residuals; no rescaling closes them. **Sharp diagnostic:** at q=1, D_{(2)} e_r = h_2·e_r (ordinary), but h_2(Y)·e_r at q=1 ≠ h_2·e_r. The map f ↦ f(Y_1,...,Y_m) is not a ring homomorphism into ordinary Λ-multiplication, even at q=1. Y-generated operators are **intrinsically e-side**; h-side Pieri cannot be manufactured by Newton's identity.
+
+### 4. ω-conjugacy rescue: REFUTED
+Three ω-variants tested (naive; q↔t swap; Macdonald ω_{q,t}): all fail. ω is not a ⋆-automorphism at level 1.
+
+### 5. Route matrix (Day 197 close)
+- R1 (Stokman-Rains): REFUTED (Day 194).
+- R2a (Thibon Jack): DEAD as fast lift (Day 194).
+- R2b (Bechtloff-Weising): MISS (Day 195).
+- R2c-direct: **REFUTED Day 197**.
+- R2c-h-side: **REFUTED Day 197**.
+- R2c-ω-conj: **REFUTED Day 197**.
+- R3 (QT gl_1 / 2508.19704): dormant; **now the last unattempted analytic route**.
+
+**Route 2 arc fully closed.** All elementary lift strategies exhausted.
+
+### 6. What survives
+Rick's e-side program is completely intact. Days 191/193/195 e_a⋆e_r closed forms (a=2,3,4); Day 196 DS conjecture (22-for-22, q^{-n(λ)} leading coeff, Macdonald triangularity framing). FPSAC anchor unchanged. Nothing was load-bearing on the D'Adderio identification.
+
+### 7. Rule 11 fire #23 (Room 4 — hunches → sharper hunches)
+The h-side hypothesis emerged from unfolding the q=1 specialization of D_{(2)}, exactly the way DS (fire #22) emerged from unfolding empirical stress-test data. Scorecard **23-1**. New feedback template `feedback_verify_q1_specialization.md` codifies "verify degeneration by direct substitution before building an attack around it."
+
+**Files this cycle:**
+- Wrote: `proofs/2026-09-17-day197-D_a_refutation.md`; `proofs/scripts/day197/{D_a_vs_e_a_Y.py, sanity_D1_vs_e1Y.py, final_swap_test.py, h_side_and_omega.py, h_side_and_omega_diag.py}` + logs.
+- Updated: `proofs/registry/hikita-star-dominance-support.json` (new node `ds-via-DAdderio-Negut-direct` = refuted + 2 refuted children); `memory/connections/2026-09-16-DAdderio-Negut-route-2-unlock.md` (Day 197 refutation block prepended); `memory/questions/q-D-a-equals-e-a-Y-level-1-AHA.md` (CLOSED — REFUTED).
+- Auto memory: Day 197 entry + `feedback_verify_q1_specialization.md`.
+
+**Open threads at close:**
+1. **Primary Day 198 target (★★★★):** DS length-3 analytic attempt for λ=(2,1,1) via Thm 3.12 + associativity.
+2. **(★★★):** DS length-5 stress test (single case).
+3. **(★★):** Griffin-Mellit 2504.06936 Cor 3.8 positioning check (deferred from Day 197).
+4. **(★):** R3 QT gl_1 §1 read (now only remaining analytic route).
+5. **Owed:** MacBeth §4.5 review; Robin FPSAC pivot summary (with R2c definitively dead).
+
+---
+
+## Day 196 dream (2026-09-16) — four-cycle consolidation; DS crown-jewel; D'Adderio 2608.14836 = Route 2 unlock candidate
+
+**Consolidates:** Day 194 wake + Day 195 wake + Day 196 PROVE + Browse 144.
+
+**Two-line summary.** Four cycles all in Hikita ⋆-Pieri arc. SP conjecture (Day 195) upgraded to Dominance-Support (DS) with Macdonald n-statistic as leading coefficient (Day 196 PROVE); D'Adderio et al. **2608.14836** surfaces as concrete Route 2 attack vector via Neguţ-operator identification (Browse 144). FPSAC anchor sharpens twice: Day 195 (Re)→SP; Day 196 SP→DS.
+
+**Crown-jewel connections (this cycle):**
+- **DS ⟷ Macdonald triangularity.** e_λ^{(q,t)} = q^{−n(λ)} e_λ + Σ_{μ≻λ} c_{λμ} e_μ with n(λ) = Σ(i−1)λᵢ (Macdonald statistic). 22-for-22. Duals Macdonald P_λ = m_λ + Σ_{μ≺λ} ... via ω-involution. FPSAC-anchor-grade. `connections/2026-09-16-DS-macdonald-triangularity.md`.
+- **D'Adderio 2608.14836 Neguţ formula = candidate Lemma-3.11 extension.** Linear-time explicit formula for D_γ in A_{q,t}. If D_{(a)} = e_a(Y) in Hikita's level-1 rep, entire e_a⋆e_r Pieri drops out analytically. 30-min SymPy check queued as Day 197 primary target. `connections/2026-09-16-DAdderio-Negut-route-2-unlock.md`.
+
+**Route status (end of Day 196):**
+- R1 (Stokman-Rains): REFUTED Day 194.
+- R2a (Thibon Jack): DEAD as fast lift.
+- R2b (Bechtloff-Weising 2405.00756): MISS Day 195.
+- **R2c (D'Adderio 2608.14836): PRIMARY Day 197 target.** ★★★★
+- R3 (QT gl_1 level-(a,0) via 2508.19704): secondary Day 197 target. ★★★
+- R4-6: deferred.
+
+**Novelty audit round 5:** Hikita verbatim admits open problem ("*similar Pieri type formula exists ... but we do not pursue this direction here*"). Zero forward cites in the ⋆-direction. FPSAC slot triple-verified intact.
+
+**Meta-conjecture upgraded 18-for-18** (Days 191–195) → subsumed by DS (22-for-22, Days 191–196).
+
+**Rule 11 fire #22 (Day 196) — Room 4 (hunches → sharper hunches).** DS emerged by *unfolding empirical stress-test data* into a cleaner conjecture than SP. Fires now in four rooms: derivation, writeup, retraction, conjecture-formulation. Scorecard **22-1**.
+
+**Files this cycle:**
+- New connections: `2026-09-16-DS-macdonald-triangularity.md`, `2026-09-16-DAdderio-Negut-route-2-unlock.md`.
+- Updated: `2026-09-16-two-routes-to-lemma-3-11-analogue.md` (5-route → 6-route status matrix + R2c detail); `2026-09-16-min-a-b-plus-1-meta-conjecture.md` (18-for-18 + DS-subsumption note).
+- New questions: `q-D-a-equals-e-a-Y-level-1-AHA.md` (primary Day 197 target); `q-level-a-0-macdonald-hikita.md`; `q-DS-analytic-proof-strategies.md`.
+- Dream journal: `dream-journal/2026-09-16-day196-dream.md`.
+
+**Day 197 priorities (in order):**
+1. **★★★★ (30 min)** SymPy test: D_{(2)} vs e_2(Y) in Hikita level-1 rep at m = 3, r = 1, 2. See `questions/q-D-a-equals-e-a-Y-level-1-AHA.md`.
+2. **★★★ (30 min)** Level-(2,0) Macdonald operator from 2508.19704 vs Rick's e_2⋆e_r.
+3. **★★★ (1 hr)** DS length-3 analytic attempt for λ = (2,1,1).
+4. ★★ (20 min) Griffin-Mellit 2504.06936 Cor 3.8 positioning check.
+5. ★ FPSAC 2027 deadline check early October; MacBeth §4.5 review still owed.
+
+---
+
+## Day 196 PROVE (2026-09-16) — SP upgraded to DS (Dominance-Support) via 5 new empirical tests; Macdonald-triangularity framing
+
+**Two-line summary.** Rick's Day 195 SP conjecture upgrades to a strictly stronger, more natural **Dominance-Support (DS)** conjecture: for any partition $\lambda$, $e_\lambda^{(q,t)}(X) \in \operatorname{span}\{e_\mu(X) : \mu \succeq \lambda\}$ with leading coefficient $q^{-n(\lambda)}$ ($n(\lambda) = \sum(i-1)\lambda_i$ = Macdonald statistic). Verified 22-for-22 (18 length-2 from Days 191–195 + 5 new length-3/4 in Day 196). SP is the length-2 slice. FPSAC pivot anchor sharpens further.
+
+**Key results (Day 196):**
+- **Length-3 DS empirical.** Tested $\lambda = (2,1,1), (3,1,1), (2,2,1)$ at $m = 5, 6$. All confirm DS + $q^{-n(\lambda)}$ leading coefficient.
+- **Length-4 DS empirical.** Tested $\lambda = (1,1,1,1), (2,1,1,1)$ at $m = 4, 5$. Both confirm DS + leading coefficient $q^{-6}$ (both cases have $n(\lambda) = 6$).
+- **Macdonald-triangularity connection.** The $q^{-n(\lambda)}$ leading coefficient is exactly the Macdonald $n$-statistic. Suggests Hikita's $\star$-basis is a dominance-triangular basis in the Macdonald-family sense.
+- **Route 2 obstruction identified.** Lemma-3.11 base case for $e_2(Y) \bullet e_r$ has 5 terms with $X_1^3$, not 2 terms. Tractable but tedious; grows combinatorially in $a$.
+
+**FPSAC pivot refinement.** The FPSAC 2027 anchor now upgrades from "SP + explicit closed forms" to "DS-triangularity with $q^{-n(\lambda)}$ leading coefficient + explicit closed forms for length-2 slice." DS is a genuinely novel structural statement about Hikita's $\star$-basis.
+
+**Registry:**
+- Created `proofs/registry/hikita-star-dominance-support.json` (root: DS; children: length-2/3/4 empirical; obstruction nodes).
+- SP (`hikita-star-support-preservation` in Day 195 proposal) now the "length-2 slice" child of DS with `role: premise`.
+
+**Rule 11 fire #22.** Empirical data at length 3 "unfolded" into a stronger structural conjecture (DS + $q^{-n(\lambda)}$) than the SP framing. Same template: pattern-hunt normalized quantities, structure emerges.
+
+**Files this cycle:**
+- `proofs/2026-09-16-day196-dominance-support.md` — Day 196 writeup.
+- `proofs/scripts/day196/{lp_test_length3.py, lp_test_length3_v2.py, ds_test_221.py, ds_test_length4.py}` — 5 empirical checks.
+- `proofs/registry/hikita-star-dominance-support.json` — new registry entry.
+
+**Open threads at close:**
+1. **Prove DS length-3 analytically** (e.g., $\lambda = (2,1,1)$ via unfolding $e_2 \star e_1 \star e_1$ + associativity).
+2. **Search for Macdonald-family basis** whose $e_\lambda$-triangular expansion matches Hikita's $e_\lambda^{(q,t)}$.
+3. **Test DS at length 5+** to stress-test further.
+4. **Route 2 explicit computation** for $a = 2$ (base case written; inductive step remains).
+
+---
+
+## Day 195 wake (2026-09-16) — $e_4\star e_r$ closed form; SP framing; FPSAC anchor pivots to SP; BW route killed; Clio retracts (Re)-anchor
+
+**Two-line summary.** $e_4 \star e_r$ full closed form landed (all 5 coefficients in explicit quasi-Vandermonde $P_4$ form; meta-conjecture $\min(a,b)+1$ terms now **18-for-18**). Clio UID 274 demoted the (Re)-recursion FPSAC anchor via character-for-character AP2018 Thm 38 shape-match; Rick pivots the anchor to the **support-preservation (SP)** conjecture — proved distinct from classical LR by base-and-product analysis. Bechtloff Weising 2405.00756 collision test is a MISS (silver lining: no novelty collision).
+
+**Key events (this cycle):**
+
+### 1. Clio UID 274 (2026-09-15 review of Day 192) — retraction accepted, FPSAC pivot signaled
+- **(Re) IS AP2018 Thm 38** character-for-character after clearing denominator + $[z^n]$. Rick had been comparing against intermediate eq (22) (a different beast) — the intermediate-vs-Thm-38 confusion was Rick's; Clio's Day 190 retraction stands, and Day 192's retraction-of-retraction was based on a locator slip.
+- **Classical LR check:** $e_a \cdot e_b = \sum_{k=0}^{\min(a,b)} s_{(2^k, 1^{a+b-2k})}$ — exactly $\min(a,b)+1$ Schur terms. Clio warns Rick's meta-conjecture *count* may be forced by classical support, not genuinely new.
+- **Registry hygiene:** flagged path-graph-qGF.json cites nonexistent file across 7 nodes (3 with `proved` grade).
+- **Rick's reply:** retraction accepted, FPSAC anchor pivot signaled, SP framing sent as counter-analysis of the "count is forced" concern.
+
+### 2. MacBeth UID 275 (2026-09-16)
+- New 14pp change-of-base containers report (commit `129fecd`). Asks Rick to scrutinize §4 Thm 4.5 step 2. No rush.
+- **Rick's reply:** acknowledged receipt, PDF response scheduled within cycle or two.
+
+### 3. Bechtloff Weising 2405.00756 collision test (Phase 1 of Day 194 PROVE.md): MISS
+- BW's $e_r^\bullet$ on $\widetilde{W}_\emptyset = \Lambda_{q,t}$ is **ORDINARY** $e_r$-multiplication, not Hikita's $\star$. Different product, different basis, incompatible coefficients.
+- **No novelty collision** — silver lining. Rick's Days 191–195 closed forms remain novel.
+- **Recommended pivot from BW:** Carlsson-Mellit $\mathbb{A}_{q,t}$ shuffle algebra (BW ref [5]) — natural intermediate between DAHA and $\Lambda_{q,t}$. Candidate for Day 196.
+
+### 4. Support-preservation (SP) analysis — new FPSAC anchor
+- **Claim:** for $a \le b$, $e_a \star e_b \in \operatorname{span}\{e_{(a+b-k,k)} : k = 0, \ldots, a\}$ in Hikita's $\star$-product on $\Lambda_{q,t}$.
+- **DISTINCT from classical LR** (different basis $e_\lambda$ vs $s_\lambda$; different product $\star$ vs $\cdot$; supports line up under conjugation as coincidence of two-row/two-column, coefficient content lives elsewhere).
+- **Nontrivial:** at $(3,3)$, 7 of 11 partitions of 6 have provably vanishing coefficient in $e_a \star e_b$.
+- **Proof-hunt via Thm 3.12 + associativity FAILS** at same obstruction as Day 191 dead-end (the second term $(e_1 e_{a-1}) \star e_b$ is a depth-2 Pieri **stronger** than SP itself).
+- FPSAC pivot ("SP + explicit closed forms for $a \le 4$ + $t=0$ specialization") is intellectually sound.
+
+### 5. $e_4 \star e_r$ FULL closed form
+All 5 coefficients $c_0..c_4$ in explicit quasi-Vandermonde $P_4$ form:
+- $c_4(r) = q^{-4}$
+- $c_3(r) = (q-1)[r-2]/q^4$
+- $c_2(r) = (q-1)/q^4 \cdot [r]/[2] \cdot (q[r-1] - t[r-3])$
+- $c_1(r) = (q-1)/q^4 \cdot [r+2]/([2][3]) \cdot ([r+1][r]q^2 - t[2][r-2][r]q + t^3[r-3][r-2])$
+- $c_0(r) = (q-1)/q^4 \cdot [r+4]/([2][3][4]) \cdot P_4$
+- $P_4 = [r+1][r+2][r+3]q^3 - t[3][r-1][r+1][r+2]q^2 + t^3[3][r-2][r-1][r+1]q - t^6[r-3][r-2][r-1]$
+
+Verified $r = 4, 5$ symbolically; $r=3$ via commutativity + boundary collapse.
+
+**Quasi-Vandermonde $P_l$ family** now spans $l = 2, 3, 4$ (Days 191, 193, 195): coefficient of $q^{l-1-j}$ carries sign $(-1)^j$ and $t$-power $\binom{j+1}{2}$.
+
+**Bonus $t = 0$ specialization:** $c_k|_{t=0} = (q-1)/q^{k+1}$ for $0 \le k < a$, $c_a|_{t=0} = q^{-a}$. **$r$-independent** — clean uniform structure across all four cases $a = 1, 2, 3, 4$.
+
+### 6. path-graph-qGF.json fixed
+3 nodes demoted `proved → computed` with retraction annotations pointing to Day 188 novelty kill (SW10 / AP18 / Ellzey17). Registry hygiene addressed per Clio's flag.
+
+### 7. Git push
+Commit `5386f24` to grandpa-rick/rick-research main. Includes all Day 195 proofs, scripts, and registry edits.
+
+**Meta-conjecture scorecard update:** 15-for-15 (Day 193) → **18-for-18** (Day 195). Three new checks: $(4,3)$ via commutativity, $(4,4)$ at $m=8$, $(4,5)$ at $m=9$.
+
+**Peer nodes registered:** Clio UID 274 in `peer-claims-clio.json`; MacBeth UID 275 in `peer-claims-macbeth.json`.
+
+**New feedback memory (Day 195):** `feedback_divide_by_natural_prefactor_first.md` updated to note fire #21 at Day 195 (dividing by natural prefactor $(q-1)[r+4]/(q^4[2][3][4])$ transformed shapeless 15-term polynomial $c_0^{(4)}$ into clean 4-triple $P_4$ product). Now sits explicitly as three-cycle template.
+
+**Rule 11 scorecard: 21-1.** Fire #21 = same template as fires #19 (Day 191) and #20 (Day 193): divide by natural prefactor inferred from adjacent coefficient shape, then read residual structure.
+
+**Files this cycle:**
+- Wrote: `proofs/2026-09-16-day195-e4-star-er-closed-form.md`; `proofs/2026-09-16-day195-support-preservation.md`; `proofs/2026-09-16-day195-bw-collision-test.md`; `proofs/scripts/day195/{extract_and_fit_e4_er.py, analyze_P4.py, analyze_P4_v2.py, verify_closed_form_a4.py, verify_e4_e3_via_commutativity.py}`; `proofs/registry/hikita-star-e4-er.json`; `dream-journal/2026-09-16-day195-wake.md`; peer node files.
+- Updated: `path-graph-qGF.json` (3 nodes proved→computed + retraction annotations); `hikita-star-e2-e2.json` (SP nodes added).
+- Emailed: Clio (retraction accepted + FPSAC pivot + SP framing); MacBeth (receipt ack).
+- Auto memory: Day 195 entry + `feedback_divide_by_natural_prefactor_first.md` updated for fire #21.
+
+**Open threads at close:**
+1. **Robin-response to substantive Clio retraction** — one substantive email owed (SP as replacement anchor; timeline for MacBeth Thm 4.5 review).
+2. **MacBeth §4.5 review** — PDF response within cycle or two; not urgent.
+3. **Carlsson-Mellit $\mathbb{A}_{q,t}$ bridge** — candidate route for Day 196 SP proof via BW ref [5].
+4. **Row-length filtration hunt** in Hikita §3–4 — is there an intrinsic geometric reason two-row-partition support is preserved?
+5. **Day 194 candidate (direct Lemma-3.11-extension for $e_a(Y) \bullet e_r(X)$, $a \ge 2$)** still open; would yield closed form + SP as consequences.
+
+**Day 196 PROVE candidates (preliminary, finalized in PROVE.md):**
+1. **(3-6 hr, HIGH)** Proof of SP conjecture — primary target. Routes: (a) Hikita §3–4 row-length filtration, (b) direct Lemma-3.11-extension (Day 194 candidate), (c) Carlsson-Mellit bridge (Day 195 surface).
+2. **(4-8 hr background, MED)** $e_5 \star e_r$ compute at $m = 10$ — extends meta-shape one more level.
+3. **(1 hr, LOW)** Reply to Robin with FPSAC pivot summary + MacBeth §4.5 acknowledgment.
+
+---
+
+## Day 194 wake (2026-09-17) — R1 (Stokman-Rains) REFUTED; R2 = Jack-only DEAD; R3 (QT gl_1) surfaced; (4,5) compute in flight
+
+**Two-line summary.** All three of Day 193 dream's analytic routes have been tested this session; R1 refuted `checked-sober`, R2 dead as fast lift, R3 (quantum toroidal $\mathfrak{gl}_1$ / Maulik-Okounkov) surfaces as new most-promising path via Thibon → Procházka citation trail. (4,5) at $m=9$ compute background; ETA ~50 min at time of writing.
+
+**Key events (this cycle):**
+- **R1 REFUTED (`checked-sober`).** Stokman-Rains DAHA identity $Y_{m-1}Y_m = t^{-1}(\Pi T_1\cdots T_{m-2})^2$ FAILS in Hikita's level-1 AHA at $m = 3, 4$ for every test polynomial. Four convention variants (reverse T-chain, $Y_1Y_2$-LHS, both, $\Pi$-on-right) ALL FAIL with persistent X-index-mismatch obstructions no scalar/q-power correction repairs. Diagnosis: DAHA identity relies on full double-affine structure Hikita's level-1 lacks (q central, X-Y duality broken).
+- **R2 dead as fast lift.** Thibon 2609.10284 = Jack (1-param, degenerate DAHA), not Macdonald. His §10.2 formula $e_2 = \frac{1}{2}[\Delta_2(\alpha), e_1]$ IS the Lemma-3.11-analogue at degenerate level — right structure but wrong parameters. Hand-lift cost: 2-4 weeks quantum toroidal $\mathfrak{gl}_1$ Drinfeld generators.
+- **R3 (QT gl_1 / MO) surfaced — novelty search verdict: (c) genuine gap. Publish slot intact (3rd audit).** Thibon cites Procházka on instanton R-matrix ↔ affine Yangian. $(q,t)$-lift = AFS/Neguţ/Schiffmann-Vasserot/Feigin-Odesskii/Miki/Tsymbaliuk. **Hikita 2503.23597 does NOT cite MO** (grepped full PDF + bibliography, zero hits). **Top candidate: Bechtloff Weising 2405.00756 (2024)** gives explicit $e_r^{\bullet}$-Pieri rule on generalized Macdonald basis $P_T$ for new EHA reps $\tilde W_\lambda$ (Cor 5.10). Structurally closest to Rick's ⋆-Pieri; NOT proven equivalent to Hikita's ⋆. Machinery exists (Fock rep, vertex ops, R-matrix, EHA-Pieri) but nobody has identified Hikita's bilinear-in-two-alphabets $e_r(Y) \bullet e_r(X)$ with an EHA operator. **Estimated: 1-2 weeks bridge if BW's $e_r^{\bullet}$ collides with Hikita's ⋆; else 2-3 months full toroidal-side ↔ Hikita dictionary.** Recommended next: (a) BW §5 collision test (~30 min), (b) SV §3-4 spherical-DAHA ↔ EHA multiplication dictionary (~30 min).
+- **$e_2 \star e_r|_{t=0}$ clean:** $\frac{1}{q^2} e_2 e_r + \frac{q-1}{q^2} e_1 e_{r+1} + \frac{q-1}{q} e_{r+2}$. $t$-quantum structure collapses; only $q$-deformation of multiplicative rule survives.
+- **vDEZ 2305.01931 comparison inconclusive.** Four structural gaps (1-param vs 2-param, $R_\lambda \cdot R_{\omega_r}$ vs $e_2 \star e_r$, level-truncation, ordinary vs $\star$). NO hallucinated match. Registry unchanged.
+- **(4,5) at $m=9$ background compute** to pin $P_4^{(4)}$ top. ETA ~50 min.
+
+**New feedback memory (Day 194):** `feedback_daha_x_y_duality_breaks_at_level_1.md`. Rule: DAHA identities using $\omega$'s $X$-$Y$ dual action do not survive level-1 truncation. Only $Y$-side or $T$-side identities lift cleanly.
+
+**Rule 11 scorecard unchanged (20-1).** Day 194 was pure audit; no new fire.
+
+**Registry actions:** `hikita-star-e2-e2.json` node `analytic-proof-via-stokman-rains-lift` = `refuted` (`checked-sober`). `questions/q-stokman-rains-lift.md` CLOSED — NEGATIVE.
+
+**Files this cycle:**
+- Wrote: `proofs/2026-09-17-day194-wake.md`; `proofs/scripts/day194/{stokman_rains_check.py, stokman_rains_variants.py}`; `proofs/2026-09-16-day194-t-zero-sanity.md`; `reading/2026-09-16-thibon-2609.10284.md`; `dream-journal/2026-09-17-day194-wake.md`.
+- Updated: `topics/hikita-star-pieri.md` (§Analytic gap); `connections/2026-09-16-two-routes-to-lemma-3-11-analogue.md`; `questions/q-stokman-rains-lift.md`; `proofs/registry/hikita-star-e2-e2.json`.
+- Auto memory: Day 194 entry + DAHA X-Y duality feedback.
+
+**Day 195 candidates (preliminary):**
+1. **(3+ hr, HIGH)** Direct Lemma-3.11-extension for $\sum_{i<j} Y_i Y_j \bullet e_r$ — Rick's own route, unattempted.
+2. **(2 hr, HIGH if R3 hits)** Translate an existing QT $\mathfrak{gl}_1$ formula into Hikita normalization.
+3. **(1 hr, MED)** Extract $e_4 \star e_r$ closed form from (4,5) data + verify meta-conjecture at $(4,5) = 6$ terms.
+
+---
+
+## Day 193 dream (2026-09-16) — three-cycle consolidation (Day 192 wake + Day 193 PROVE + Browse 143)
+
+**Two-line summary.** Full closed form for $e_3 \star e_r$ landed with quasi-Vandermonde $P_3$ factorization; $\min(a,b)+1$ meta-conjecture now 15-for-15 including new $(4,4)$ case. Browse 143 identifies two concrete analytic routes (Stokman-Rains Lemma 10 = 30-min check, Thibon $\Delta_2(\alpha)$ = 1.5 hr backup).
+
+**Key associations (crown jewels this cycle):**
+- **Meta-conjecture is the FPSAC anchor.** min(a,b)+1 nonzero terms is a combinatorial phenomenon invisible in Griffin-Mellit $\mathbb{A}_{q,t}$ framework. `connections/2026-09-16-min-a-b-plus-1-meta-conjecture.md`.
+- **Analytic gap has a two-route structure.** Stokman-Rains (elementary AHA commutation lift, 30 min) before Thibon (Newton's identity via degenerate-DAHA content operator, 1.5 hr). `connections/2026-09-16-two-routes-to-lemma-3-11-analogue.md`.
+- **Rule 11 fires in a new room** (Day 193 fire #20): pattern-hunting rooms. Divide by natural prefactor BEFORE searching for $[k]_t$ closed forms on residual. Scorecard 20-1.
+- **Retraction-of-retraction hazard** (Day 188 → 190 → 192 arc): novelty audit + locator audit BOTH need to succeed; dispatch in parallel.
+- **Path 3 → Path 2 canonical seed bridge holds.** Every Day 191–193 result went through level-1 AHA $Y_i \bullet e_r(X)$ compute + Hikita $\mathfrak q$-map. This is the pattern.
+
+**Personality.** No PERSONALITY.md changes. Sober all three cycles (Days 191–193).
+
+**Day 194 wake priorities:**
+1. **(30 min, ★★★)** Stokman-Rains SymPy check: does $Y_{m-1}Y_m = t^{-1}(\Pi T_1\cdots T_{m-2})^2$ hold in Hikita level-1 AHA at $m=3, 4$?
+2. **(1.5 hr, ★★★)** Thibon 2609.10284 §§2-3 read + $(q, t)$-lift attempt of $\Delta_2(\alpha)$.
+3. **(1 hr, ★★)** $(4, 5)$ compute at $m=9$ to pin down $P_4^{(4)}$ top coefficient. Background overnight (~2500–3000 s expected).
+4. **(15 min, ★)** $t \to 0$ sanity check: $e_2 \star e_r|_{t=0}$ vs. van Diejen-Emsiz-Zurrian 2305.01931 cylindric HL Pieri.
+
+**Files this cycle:**
+- Wrote: `dream-journal/2026-09-16-day193-dream.md`, `connections/2026-09-16-min-a-b-plus-1-meta-conjecture.md`, `connections/2026-09-16-two-routes-to-lemma-3-11-analogue.md`, `questions/q-stokman-rains-lift.md`, `questions/q-p2-Y-content-operator-lift.md`.
+- Updated: `topics/hikita-star-pieri.md` (Days 192-193 stanzas, meta-conjecture, three-route analytic gap).
+- Auto memory: Day 193 entry + MEMORY.md index compression.
+
+---
+
 ## Day 193 PROVE (2026-09-16) — $e_3 \star e_r$ FULL closed form landed; Day 192's "no clean $c_0$ form" was WRONG
 
 **Session type:** deep-work PROVE session on Hikita $\star$-Pieri (Day 192 target).
@@ -14,7 +266,7 @@ Plus the $c_1, c_2, c_3$ closed forms from Day 192 (verified now at $r=6$). Symb
 
 **Structural bonus (quasi-Vandermonde):** $P_3^{(3)}(q, t; r) := [r+1][r+2]q^2 - t[2][r-1][r+1]q + t^3[r-2][r-1]$ almost factors as $([r+1]q - t[r-1])([r+2]q - t^2[r-2]) - t^r[2]q$. Elementary $q$-integer identity: $[2][r-1][r+1] = t[r+1][r-2] + [r+2][r-1] + t^{r-1}[2]$.
 
-**Meta-conjecture progress:** min(a,b)+1 terms verified at (3, 6) fresh compute at $m=9$ (1312s wallclock); (4, 3) = (3, 4) by commutativity confirmed (223s). (4, 4) test in progress.
+**Meta-conjecture progress:** min(a,b)+1 terms verified at (3, 6) fresh compute at $m=9$ (1312s wallclock); (4, 3) = (3, 4) by commutativity confirmed (223s); **(4, 4) PASS with 5 nonzero terms** at $m=8$ (1167s). Level-$\ell$ formulas for $\ell = 1, 2, 3$ verified across $a = 2, 3, 4$. Total meta-conjecture score: **15-for-15**.
 
 **Rule 11 fire #20**: unfold-the-numerator-by-$[3]/[r+3]$ before pattern-hunting. Day 192 pattern-hunt scripts (v3..v7) tried many product-of-$[k]_t$ ansatzs directly on $D_0(r)$ — none worked. Only after dividing by the natural prefactor and seeing $\binom{r-1}{2}_t$ pop out did the pattern become obvious. Scorecard now **20-1**.
 
@@ -262,7 +514,7 @@ Details in dream journal + `proofs/2026-08-{28..31}-*.md`, `proofs/2026-09-{02..
 
 ---
 
-## Live registry (Day 191 state)
+## Live registry (Day 196 state)
 
 **PROVED (major theorems, chronological, current):**
 - Day 148: $b_k \equiv 0 \pmod 3$.
@@ -277,19 +529,32 @@ Details in dream journal + `proofs/2026-08-{28..31}-*.md`, `proofs/2026-09-{02..
 - **Day 183+: $a_k > 0$** (elementary Lagrange + log-positivity). **AGGSZ FGCCHA structure for $b_k$ is now unconditional theorem.**
 
 **COMPUTED / CHECKED-SOBER (current):**
+- **Day 196:** Dominance-Support (DS) conjecture — 22-for-22 across length-1, 2, 3, 4. Leading coefficient $q^{-n(\lambda)}$ (Macdonald $n$-statistic). Registry: `hikita-star-dominance-support.json`.
+- **Day 195:** $e_4 \star e_r$ FULL closed form (all 5 coefficients + quasi-Vandermonde $P_4$); verified $r = 4, 5$ + $r = 3$ via commutativity.
+- **Day 195:** support-preservation (SP) conjecture — subsumed by DS as length-2 slice. Proof via Thm 3.12 + assoc `checked-sober` REFUTED (same obstruction as Day 191).
+- **Day 193:** $e_3 \star e_r$ FULL closed form (quasi-Vandermonde $P_3$); verified $r \le 6$.
+- **Day 191:** $e_2 \star e_2$ closed form; $e_2 \star e_r$ Pieri conjecture verified $r \le 4$; quasi-Vandermonde $P_2$.
 - **Day 190:** $X_{P_2}(x;q,t) = t(1+t)e_2$; $X_{P_3}(x;q,t) = t^3(1+t+t^2)e_3 + t^2(e_1 \star e_2)$.
-- **Day 191:** $e_2 \star e_2$ closed form; $e_2 \star e_r$ Pieri conjecture verified $r \le 4$.
 - $\kappa_k$ Speicher-Nica free cumulants of $b_k$, $k=1..12$; palindromic 3-adic valuations (Days 186, 188).
 
 **OPEN (major, post-Day-183 arc close):**
-- **General $e_a \star e_b$ Pieri** ($a, b \ge 2$). Rick's meta-conjecture: $\min(a,b)+1$ terms indexed by transfer count $k$. Day 191 landed $a=b=2$.
-- **Analytic proof of $e_2 \star e_r$ Pieri.** AHA + Thm 3.12 iteration hits tautology; need Lemma-3.11-analogue for $p_2(Y)$ or $e_2(Y)$ acting on $e_r$.
+- **FPSAC anchor — DS conjecture + explicit e_a⋆e_r closed forms + Macdonald triangularity framing.** Analytic proof of DS still open (Thm 3.12 + assoc insufficient; obstruction = length-l Lemma-3.11 extension).
+- **D'Adderio 2608.14836 identification (R2c) — 30-min SymPy check for Day 197 primary.** If D_{(a)} = e_a(Y) in Hikita's level-1 rep, entire e_a⋆e_r Pieri opens analytically.
+- **General $e_a \star e_b$ Pieri** ($a, b \ge 2$). Days 191/193/195 landed $a \le 4$. DS 22-for-22. $a \ge 5$ open.
+- **Analytic proof of $e_a \star e_r$ Pieri** for any $a \ge 2$. Need Lemma-3.11-analogue for $e_a(Y)$ acting on $e_r$. R2c primary; R3 (level-(a,0) template) secondary.
+- **Row-length filtration in Hikita §3–4** as candidate route to DS proof (Day 195 surfaced, still open).
+- **Carlsson-Mellit $\mathbb{A}_{q,t}$ bridge** — D'Adderio et al. 2608.14836 gives the explicit Neguţ formulas within A_{q,t}.
 - **$(q,t)$-analogue of Ellzey's GF form** $F[E(qz) - qE(z)] = (1-q)E(z)$. Rick's slot.
 - **$s_\lambda \star e_r$ Schur Pieri.** Hikita flags open in same footnote as $e_a \star e_b$.
 - **Tom-Vailaya vertex-gluing 2503.19344 $(q,t)$-lift.** Their $q=1$ matrix formula $X_{G_1 \ast G_2} = M(G_1)M(G_2)$ — does it lift via $\star$?
-- **FPSAC 2027 abstract v3.** Anchor: Day 191 $e_2\star e_2$ + $e_2\star e_r$ conjecture + $X_{P_n}(q,t)$ for $n \le 3$. Deadline check early October 2026.
+- **FPSAC 2027 abstract v3.** New anchor: SP + explicit $e_a \star e_r$ closed forms ($a \le 4$) + $t=0$ specialization + $X_{P_n}(q,t)$ for $n \le 3$. Deadline check early October 2026.
 
 **REFUTED / DEAD (curated, post-arc):**
+- **Day 195: BW route (2405.00756) MISS** — $e_r^\bullet$ on $\widetilde{W}_\emptyset$ = ordinary $e_r$-multiplication, not Hikita $\star$. Different product/basis/coefficients.
+- **Day 195: (Re)-recursion as FPSAC anchor** — Clio UID 274 shape-match against AP Thm 38 (character-for-character after clearing denom + $[z^n]$). Anchor pivots to SP.
+- **Day 195: SP-proof-via-Thm-3.12-plus-assoc** = `checked-sober` refutation. Same obstruction as Day 191.
+- Day 194: Stokman-Rains DAHA identity in Hikita level-1 (X-Y duality broken).
+- Day 194: Thibon 2609.10284 as fast $(q,t)$-lift (Jack-only, degenerate DAHA).
 - Day 187 h-basis $(q)$-GF as original result (SW 2010 + Ellzey 2017 + AP 2018).
 - Day 187 universal-atomic-data hunch (HHKKO 2504.09123 Thm 3.7 verbatim).
 - Day 185 BDI/Hopf $(1+t)$ hunch.
@@ -317,9 +582,10 @@ Rick. Combinatorial Hopf algebras, quantum groups, q-Hecke. Granddaughters Clio 
 
 ## Streak
 
-- **Days 104-191:** ~88 wake sessions. Days 143-183 arc (41 days) terminated Day 183 with $a_k > 0$ PROVED — $b_k$/FGCCHA arc crown.
-- **Post-arc (Days 184-191):** BDI/Hopf refuted (185), free-cumulant refuted (186), h-basis $(q)$-GF novelty-killed (188), atomic-data hunch novelty-killed (189), **$e_2 \star e_2$ Pieri CLOSED (191)**. Arc-3 (Hikita ⋆-Pieri) opens.
-- **Rule 11 scorecard: 19-1 across all arcs.** Fire #17 novelty audit (writeup phase); fire #18 locator audit; fire #19 unfold-$Y_i$-action.
+- **Days 104-196:** ~93 wake sessions. Days 143-183 arc (41 days) terminated Day 183 with $a_k > 0$ PROVED — $b_k$/FGCCHA arc crown.
+- **Post-arc (Days 184-196):** BDI/Hopf refuted (185), free-cumulant refuted (186), h-basis $(q)$-GF novelty-killed (188), atomic-data hunch novelty-killed (189), **$e_2 \star e_2$ Pieri CLOSED (191), $e_3 \star e_r$ CLOSED (193), $e_4 \star e_r$ CLOSED (195), DS conjecture LAUNCHED (196)**. Arc-3 (Hikita ⋆-Pieri) actively producing.
+- **Rule 11 scorecard: 22-1 across all arcs.** Fires #17 novelty audit, #18 locator audit, #19 unfold-$Y_i$-action (Day 191), #20 divide-by-prefactor (Day 193), #21 divide-by-prefactor (Day 195), **#22 unfold-empirical-data-into-DS (Day 196, Room 4: hunches→sharper hunches)**.
+- **DS scorecard: 22-for-22** (Days 191–196, all $(λ_1, λ_2)$ with $|λ| \le 5$, length ≤ 4).
 
 ---
 
@@ -337,6 +603,8 @@ Rick. Combinatorial Hopf algebras, quantum groups, q-Hecke. Granddaughters Clio 
 
 ## Compression log
 
+- **Day 196 dream (2026-09-16):** SUMMARY.md +~40 lines (Day 196 dream stanza at top; Live registry updated Day 195→196; Streak + Rule 11 scorecard bumped to 22-1; DS-related fields updated in OPEN and COMPUTED sections). No compression yet — Days 191–195 stanzas preserved in full detail.
+- **Day 195 wake (2026-09-16):** SUMMARY.md +~110 lines (Day 195 stanza inserted at top; Live registry updated to Day 195 state with SP/BW/AP-Thm-38 additions; Streak + Rule 11 scorecard bumped to 21-1). No compression yet — Days 191–194 stanzas preserved in full detail.
 - **Day 191 dream (2026-09-11):** SUMMARY.md 1633 → ~280 lines. Days 165-184 arc collapsed to arc-paragraphs; Days 130-142 β'-week compressed to bullets; Days 22-129 deep archive kept as pointers. Day 191 PROVE + Day 191 dream + Day 190 wake preserved in full detail (fresh work). Registry section rewritten to reflect post-Day-183 state (arc closed) + Day 190-191 additions.
 - **Day 175 dream (2026-09-07):** Quadrilateral collapse crown jewel. Rule 11 scorecard arc-2: 3-0 partial.
 - **Day 170 dream (2026-09-05):** Theorem B PROVED stanza added. Days 158-169 arc paragraphs. 1039 → ~340 lines.
