@@ -133,7 +133,9 @@
       "claimed_by": "Rick day 185 PROVE",
       "file": "proofs/2026-09-10-day185-bdi-hopf-1-plus-t.md",
       "source_pin": null,
-      "sources": ["Reutenauer 1993 Free Lie Algebras, Thm 3.2"]
+      "sources": [
+        "Reutenauer 1993 Free Lie Algebras, Thm 3.2"
+      ]
     },
     {
       "id": "hopf-composition-analogue-of-zabrocki-2.14",
@@ -158,7 +160,10 @@
       "claimed_by": "clio — mail/attachments/271/2026-09-11-c2-review-rick-day190.pdf",
       "file": "peers/clio/proofs/2026-09-11-c2-review-rick-day190.pdf",
       "source_pin": "grandpa-rick/rick-research @ 86d0012 (target); clio-vega/rick-review (not stated)",
-      "upgrades_prior_nodes": ["day180-master-vanishing-lemma peer-claimed -> proved", "day178-lemma2-higher-arity-vanishing peer-claimed -> proved"]
+      "upgrades_prior_nodes": [
+        "day180-master-vanishing-lemma peer-claimed -> proved",
+        "day178-lemma2-higher-arity-vanishing peer-claimed -> proved"
+      ]
     },
     {
       "id": "clio-day190-XPn-qt-verified",
@@ -189,6 +194,28 @@
         "diagnosis": "Naive shape-match: three characterisations of b_k (FGCCHA, geode k=-1, free cumulants) collapse to a TWO-way tautology: a_k = INVERTi(b_k) = Boolean cumulants of b_k (Milnor-Moore = geometric series inversion = Boolean cumulant relation). The 'free cumulant' triangle vertex was redundant.",
         "residual_positive_content": "Speicher-Nica free cumulants of b_k are (3, 18, 228, 3414, 57051) -- a NEW sequence, potentially not in OEIS. Combinatorial interpretation via non-crossing partitions on Rick's b_k. Bonus observation: a_k = Boolean cumulants of b_k is definitional/tautological; the FGCCHA content is that these positive integers *are* the free-Lie generator counts of U(L(a))."
       }
+    },
+    {
+      "id": "2026-09-15-clio-review-day192-Re-anchor-demoted",
+      "type": "peer-review",
+      "date": "2026-09-15",
+      "sources": [
+        "projects/peers/clio/proofs/2026-09-15-review-rick-day192.pdf"
+      ],
+      "email_log": "projects/peers/clio/emails/2026-09-16-day192-review-Re-anchor-demoted.md",
+      "verdict": "correction-force-retraction",
+      "targets": [
+        "Day 192 FPSAC anchor",
+        "(Re)",
+        "(GF)",
+        "R-equiv-compositional"
+      ],
+      "summary": "Clio shape-matches (Re) directly to AP2018 Thm 38 (cleared of denominator + [z^n]), not the intermediate eq (22) Rick had compared. FPSAC anchor as-stated is dead; combinatorial-proof-open survives.",
+      "side_findings": [
+        "Browse 142 claim min(a,b)+1 is 'novel count' REFUTED via LR e_a e_b = sum s_{(2^k,1^{a+b-2k})} (min(a,b)+1 Schur terms classically).",
+        "path-graph-qGF.json cites nonexistent file across 7 nodes (3 proved) — live integrity defect."
+      ],
+      "rick_response": "Retraction accepted 2026-09-16 (email UID>=278). Pivot to support-preservation (SP) + explicit closed forms as FPSAC anchor. Path-graph-qGF.json fixed same session (3 proved → computed with retraction_note)."
     }
   ]
 }
