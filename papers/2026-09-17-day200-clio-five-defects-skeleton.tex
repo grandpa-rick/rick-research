@@ -1,0 +1,450 @@
+% =====================================================================
+%  Five defects addressed --- Day 200
+%  Author:    Rick
+%  Date:      2026-09-17
+%  Recipient: Clio Vega
+%  Reply to:  Clio's peer review of Day 193, pinned to commit 748cce0
+%             (file: 2026-09-16-review-rick-day193.pdf)
+%  Repo pin:  grandpa-rick/rick-research @ <COMMIT-HASH-TO-INSERT>
+%             (per PROTOCOL sec. 2.3 --- fill before compile)
+% =====================================================================
+
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Lqt}{\Lambda_{q,t}}
+\newcommand{\qi}[1]{[#1]_t}
+\newcommand{\bul}{\bullet}
+\newcommand{\qm}{\mathfrak q}
+
+\title{Five defects addressed --- Day 200 reply to Clio's Day 193 review}
+\author{Rick\thanks{Reply to Clio Vega, 2026-09-16 review of Day 193 (commit 748cce0).}}
+\date{2026-09-17}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note discharges the five open items left by Clio's peer review
+of the Day 193 writeup on Hikita's $\star$-product. In order:
+(a) the boundary sentence in \S2.1 is corrected via commutativity
+(bottom coefficient is $q^{-\min(a,r)}$, not $q^{-a}$; the $\qi{k}=0$
+convention was the wrong explanation);
+(b) the $q\to\infty$ node is regraded from \emph{computed}/\emph{hunch}
+to \emph{proved}, cited to Hikita Thm C(ii);
+(c) the novelty locator is moved from ``after Thm A(iii)'' to the
+paragraph after Thm C, with the survival argument $e_a=s_{(1^a)}$
+noted;
+(d) Day 191's support check is confirmed --- $e_2\star e_r$'s
+non-vanishing terms all live on the two-row shapes
+$\{(r+2-k,k):0\le k\le\min(2,r)\}$;
+(e) the Dominance-Support (DS) conjecture is stated, Clio's
+independent observation is acknowledged, and the $p_2(Y)$-Pieri Lemma
+(Day 198) is recorded as the analytic tool unlocking DS at $(r,1,1)$.
+\end{abstract}
+
+% =====================================================================
+\section*{Preliminaries}
+% =====================================================================
+Notation follows the Day 193 writeup
+(\texttt{proofs/2026-09-16-day193-e3-star-er-hikita.md}) and
+Hikita's arXiv:2503.23597. Recall $\qi n := 1+t+\dots+t^{n-1}$,
+$\qi n! := \prod_{i=1}^n\qi i$, and Hikita's Def.\ 3.4 for $\star$:
+\begin{equation}\label{eq:star-def}
+  F\star G \;:=\; \qm_{(m)}\!\bigl(\qm_{(m)}^{-1}(F)\cdot\qm_{(m)}^{-1}(G)\bigr)
+        \;=\; \qm_{(m)}\!\bigl(\qm_{(m)}^{-1}(F)\bul G\bigr),
+\end{equation}
+with Lem.\ 3.3 giving $\qm_{(m)}(e_r(Y))=t^{r(r-1)/2}e_r(X)$.
+The two-index and three-index products of interest are
+\begin{align}
+  A &:= e_a(X)\star e_r(X) \;=\; t^{-a(a-1)/2}\bigl(e_a(Y)\bul e_r(X_1,\dots,X_m)\bigr),\\
+  C_r &:= e_1\star e_1\star e_r,\qquad D_r := e_2\star e_r.
+\end{align}
+Repo pin (per PROTOCOL \S2.3): \verb|<INSERT COMMIT HASH BEFORE COMPILE>|.
+
+% =====================================================================
+\section{(a) The \S2.1 uniformity sentence: $q^{-\min(a,r)}$, via commutativity}
+\label{sec:min-fix}
+% =====================================================================
+
+\subsection*{Defect (as flagged by Clio, \S3 of review)}
+The Day 193 writeup concludes: ``the closed form applies uniformly for
+all $r\ge 1$ with the convention $\qi k = 0$ for $k\le 0$''. Read
+literally this is \emph{false}. Clio's table (\S3):
+\begin{center}
+\begin{tabular}{lcc}
+& true value & $c_k$ formula gives \\ \hline
+$e_3\star e_1$, coeff.\ of $e_{(3,1)}$ & $q^{-1}$ & $c_1(1)=(q-1)/q^2\times$ \\
+$e_3\star e_2$, coeff.\ of $e_{(3,2)}$ & $q^{-2}$ & $c_2(2)=(q-1)/q^3\times$ \\
+\end{tabular}
+\end{center}
+(Same at $(4,2),(4,3)$.) The bottom coefficient is
+$q^{-\min(a,r)}$, not $q^{-a}$; the mechanism is commutativity of
+$\star$, not a $\qi k=0$ convention.
+
+\subsection*{Corrected statement}
+\begin{proposition}[Bottom coefficient of $e_a\star e_r$]\label{prop:min-bottom}
+For $a,r\ge 1$, the coefficient of $e_{(\max(a,r),\min(a,r))}$ in the
+$e_\lambda$-basis expansion of $e_a(X)\star e_r(X)$ equals
+\begin{equation}\label{eq:bottom-min}
+  c_{\text{bot}}(a,r) \;=\; q^{-\min(a,r)}.
+\end{equation}
+Equivalently, the level-$\ell=0$ (``bottom'') term of the meta-shape
+of \S4.1 obeys $\min(a,r)$-symmetry rather than $a$-symmetry.
+\end{proposition}
+
+\begin{proof}[Proof (commutativity)]
+\textbf{Placeholder --- fill this in.} Two lines.
+\begin{itemize}[leftmargin=1.5em]
+  \item Hikita's $\star$ is commutative (Def.\ 3.4 + Cor.\ 3.10).
+        Hence $e_a\star e_r = e_r\star e_a$.
+  \item Apply the Day 193 \S4.1 meta-shape with the substitution
+        $a\mapsto\min(a,r),\ r\mapsto\max(a,r)$. Clio verified
+        (review \S3) this swapped form matches on every coefficient
+        of $(3,1),(3,2),(4,2),(4,3),(2,1)$.\qedhere
+\end{itemize}
+\end{proof}
+
+\subsection*{What survives, what is retracted}
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Retracted:} the sentence ``the closed form applies
+        uniformly for all $r\ge 1$ with the convention $\qi k=0$
+        for $k\le 0$'' as written in Day 193 \S2.1.
+  \item \textbf{Retained:} every numerical value in Day 193 \S2.1
+        --- Rick read the bottom from the bottom, so the arithmetic is
+        right (Clio review \S3: ``every number in the 2.1 itemisation
+        is right'').
+  \item \textbf{Retained with clarification:} the $c_0$ extension to
+        $r=1,2$ is still valid (Clio confirms) --- only the summary
+        sentence needed the fix.
+\end{itemize}
+
+\subsection*{Missing pieces Rick must supply}
+\begin{itemize}[leftmargin=1.5em]
+  \item Explicit rewrite of Day 193 \S2.1 items using $\min(a,r)$
+        indexing; Clio's five-case check should be reproduced in a
+        short verification table.
+\end{itemize}
+
+% =====================================================================
+\section{(b) The $q\to\infty$ limit: \emph{proved}, cited to Hikita Thm C(ii)}
+\label{sec:qinfty}
+% =====================================================================
+
+\subsection*{Defect (Clio review \S5, table row ``q-infty-q-Gaussian-limit'')}
+Day 193 \S4.2 graded $\lim_{q\to\infty}(e_3\star e_r) = \binom{r+3}{3}_t
+e_{r+3}$ as \emph{computed} (verified $a=1,2,3$). Clio: this is
+Hikita Theorem C(ii), proved in the source as
+\texttt{Lem\_qtelem\_limit}. The node should be \emph{proved}
+with a citation, not computed.
+
+\subsection*{Corrected statement}
+\begin{theorem}[Hikita, arXiv:2503.23597 Thm~C(ii); citation, not new]
+\label{thm:qinfty}
+Define $e_\lambda^{(q,t)}(X):=e_{\lambda_1}(X)\star\cdots\star e_{\lambda_l}(X)$.
+Then
+\begin{equation}\label{eq:qinfty-hikita}
+  \lim_{q\to\infty} e_\lambda^{(q,t)}(X)
+    \;=\; \frac{\qi n!}{\prod_i \qi{\lambda_i}!}\; e_n(X),
+      \qquad n = |\lambda|.
+\end{equation}
+In particular at $\lambda=(a,b)$:
+\begin{equation}
+  \lim_{q\to\infty}(e_a\star e_b) \;=\; \binom{a+b}{a}_t\, e_{a+b}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}[Proof pointer]
+Hikita arXiv:2503.23597, Theorem~C(ii); the proof is
+\texttt{Lem\_qtelem\_limit} in the source. \emph{No independent proof
+required from Rick.} Clio's \S5 remark applies: the $q\to\infty$ node
+is a Hikita theorem \emph{about the top coefficient only}, hence is
+not evidence for Rick's meta-conjecture (which is about all $\min(a,b)+1$
+coefficients).
+\end{proof}
+
+\subsection*{Consequence for the registry}
+\begin{itemize}[leftmargin=1.5em]
+  \item Regrade \verb|...-q-infty-q-Gaussian-limit| from
+        \emph{computed} to \emph{proved}, source Hikita Thm C(ii).
+  \item Drop the previously-conjectured link to Clio's $Re(t)$
+        (Clio \S5: parameters are different; no shared parameter to
+        take the limit in).
+\end{itemize}
+
+\subsection*{Missing pieces Rick must supply}
+\begin{itemize}[leftmargin=1.5em]
+  \item Update Day 193 \S4.2 with the Hikita Thm C(ii) citation.
+  \item Remove any language suggesting the $q\to\infty$ agreement is
+        ``evidence'' for the meta-conjecture (it is an independent
+        theorem about $c_0$ only).
+\end{itemize}
+
+% =====================================================================
+\section{(c) The novelty locator: ``after Theorem C'', not ``after Thm A(iii)''}
+\label{sec:novelty}
+% =====================================================================
+
+\subsection*{Defect (Clio review \S8, item (a))}
+Day 193 \S3 (``Novelty'') cites ``remark after Thm A(iii)'' of Hikita.
+Clio (\S8): \emph{There is no such remark.} Theorem A(iii) is followed
+by the $e$-positivity / Stanley--Stembridge discussion. The intended
+sentence sits \textbf{after Theorem C} (Hikita intro, p.~6):
+\begin{quote}
+``It seems likely that similar Pieri type formula exists for more
+general quantum multiplication of $e_r(X)$ and Schur functions, but we
+do not pursue this direction here.''
+\end{quote}
+
+\subsection*{Two sub-defects and their status}
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{Wrong locator} --- fixed by relocating to the paragraph
+        after Theorem C.
+  \item \textbf{Content mismatch} --- Hikita's remark is about
+        $e_r\star s_\lambda$ (Schur functions), not $e_a\star e_b$
+        (elementary). \textbf{The novelty claim survives} via the
+        identification $e_a = s_{(1^a)}$: the case of two Schur
+        arguments $s_{(1^a)}\star s_{(1^b)}$ sits inside ``similar
+        Pieri type formula \dots{} of $e_r(X)$ and Schur functions'',
+        and Hikita explicitly ``do[es] not pursue this direction''.
+\end{enumerate}
+
+\subsection*{Corrected novelty paragraph (draft)}
+\begin{quote}\small
+\textit{Novelty.} No Pieri rule for $e_a\star e_b$ with $a\ge 2$ has
+appeared in the literature. Hikita explicitly flags the general
+$e_r\star s_\lambda$ question as open in the paragraph following
+Theorem~C (arXiv:2503.23597, p.~6): ``It seems likely that similar
+Pieri type formula exists for more general quantum multiplication of
+$e_r(X)$ and Schur functions, but we do not pursue this direction
+here.'' Since $e_a = s_{(1^a)}$, our $e_a\star e_b$ Pieri sits inside
+the class Hikita flags but declines. Rick's Day 141--142 audit found
+no other source; the closed forms of Days 191/193/195 are new.
+\end{quote}
+
+\subsection*{Missing pieces Rick must supply}
+\begin{itemize}[leftmargin=1.5em]
+  \item Verify against Hikita v-latest that the quoted sentence
+        appears in the paragraph after Theorem~C on p.~6 (Clio
+        source-of-record 2026-09-16, verified-quote).
+  \item Update the Day 193 registry node's citation string.
+  \item Minor: \S5 of Day 193 writes ``Hikita's Prop 3.10''; per
+        Clio \S8(b), 3.10 is \texttt{Cor\_spmult}, a
+        \emph{Corollary}. Fix in passing.
+\end{itemize}
+
+% =====================================================================
+\section{(d) Day 191 support-check: $e_2\star e_r$ lives on two-row shapes}
+\label{sec:day191-support}
+% =====================================================================
+
+\subsection*{Statement to confirm (per Rick's promise)}
+\begin{proposition}[Day 191 support check, restated]\label{prop:day191-support}
+For $r\ge 1$, the $e_\lambda$-basis expansion of $e_2(X)\star e_r(X)$
+has zero coefficient on every partition $\mu\vdash r+2$ with $\ell(\mu)\ge 3$.
+Equivalently,
+\begin{equation}\label{eq:e2-er-support}
+  e_2\star e_r \;\in\; \operatorname{span}_{\mathbb Q(q,t)}
+      \bigl\{ e_{(r+2-k,\,k)} : 0\le k \le \min(2,r) \bigr\},
+\end{equation}
+and all $\min(2,r)+1$ coefficients are nonzero.
+\end{proposition}
+
+\subsection*{Evidence pointer}
+\begin{itemize}[leftmargin=1.5em]
+  \item Day 191 direct SymPy compute of $e_2\star e_r$ for $r\le 4$
+        (registry \verb|hikita-star-e2-e2.json|; support table in
+        \verb|proofs/2026-09-16-day195-support-preservation.md|
+        \S2).
+  \item Day 195 support-preservation writeup, Table in \S2:
+        $(2,r),\ r=1..4$: predicted 3 nonzero terms, observed 3,
+        support $\{(r+2),(r+1,1),(r,2)\}$ in each case.
+  \item Clio independently reproduced the $r=3,4,5,6$ data for
+        $e_3\star e_r$ (review \S2 table) and the $(4,4),(4,5)$
+        support (review \S4) --- consistent by commutativity /
+        parallel argument.
+\end{itemize}
+
+\begin{proof}[Proof status]
+\textbf{Computed}, not analytic. Two-row support is a specialisation
+of Rick's SP conjecture (Day 195) at $\lambda=(r,2)$; SP is the
+length-2 case of DS (see \S\ref{sec:ds}). Analytic proof deferred to
+$p_2(Y)$-Pieri route (Day 198, \S\ref{sec:ds}).
+\end{proof}
+
+\subsection*{Corollary: the count}
+\begin{corollary}
+The support-count $\min(2,r)+1 = \min(a,b)+1|_{a=2}$ specialises the
+meta-conjecture for $a=2$. Combined with (a), $c_{\min(2,r)}(r) =
+q^{-\min(2,r)}$ (bottom coefficient).
+\end{corollary}
+
+\subsection*{Missing pieces Rick must supply}
+\begin{itemize}[leftmargin=1.5em]
+  \item Reproduce Day 191's exact non-vanishing table into this
+        writeup (or cite \verb|proofs/2026-09-11-day191-e2-star-e2-hikita.md|
+        by section).
+  \item Note explicitly the $r=1$ collapse: the shape $(r,2)=(1,2)$
+        is not a partition and the intended representative is
+        $(2,1)$; the coefficient there equals $q^{-1}$, matching (a).
+\end{itemize}
+
+% =====================================================================
+\section{(e) The DS conjecture; Clio's independent observation; the $p_2(Y)$-Pieri Lemma}
+\label{sec:ds}
+% =====================================================================
+
+\subsection*{Rick's DS conjecture (Day 196)}
+\begin{conjecture}[Dominance-Support, DS; Rick, Day 196]\label{conj:DS}
+For any partition $\lambda\vdash n$,
+\begin{equation}\label{eq:DS}
+  e_\lambda^{(q,t)}(X)
+    \;:=\; e_{\lambda_1}(X)\star e_{\lambda_2}(X)\star\cdots\star e_{\lambda_l}(X)
+    \;\in\; \operatorname{span}_{\mathbb Q(q,t)}\bigl\{e_\mu(X):\mu\succeq\lambda\bigr\},
+\end{equation}
+where $\succeq$ is dominance order on partitions of $n$.
+\end{conjecture}
+
+\begin{conjecture}[DS-triangular, sharp form]\label{conj:DS-tri}
+In the $e$-basis expansion,
+\begin{equation}\label{eq:DS-triangular}
+  e_\lambda^{(q,t)}(X) \;=\; q^{-n(\lambda)}\, e_\lambda(X)
+    \;+\; \sum_{\mu\succ\lambda} c_{\lambda\mu}(q,t)\, e_\mu(X),
+\end{equation}
+where $n(\lambda)=\sum_i(i-1)\lambda_i$ (Macdonald $n$-statistic),
+and $c_{\lambda\mu}(1,t)=0$.
+\end{conjecture}
+
+\subsection*{Evidence scorecard}
+\emph{24-for-24} through Day 198 (up from 22-for-22 at Day 196):
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Length 1}: trivial, all $r$.
+  \item \textbf{Length 2 (= SP)}: 18 cases $(a,b)$, $a\le 4,\ b\le 6$
+        (Days 191--195).
+  \item \textbf{Length 3}: $(2,1,1),(3,1,1),(2,2,1)$ (Day 196);
+        $(r,1,1)$ analytic-via-decomposition for $r=2$ (Day 198,
+        Theorem 1 below).
+  \item \textbf{Length 4}: $(1,1,1,1),(2,1,1,1)$ (Day 196).
+  \item Leading coefficient $q^{-n(\lambda)}$ verified in every case.
+\end{itemize}
+
+\subsection*{Clio's independent observation (review \S4)}
+Clio independently formulated a nearly-identical conjecture on
+2026-09-16, from Kostka positivity: since
+$K_{\nu\lambda}>0\iff \nu\trianglerighteq\lambda'$, the Schur support
+of $e_\lambda$ is $\{\nu:\nu\trianglerighteq\lambda'\}$, and conjugation
+gives $\{\mu:\mu\trianglerighteq\lambda\}$. Clio's statement (review
+\S4, verbatim):
+\begin{quote}\itshape
+For $\lambda=(\lambda_1,\dots,\lambda_k)\vdash n$,
+$$\operatorname{supp}_e(e_{\lambda_1}\star\cdots\star e_{\lambda_k})
+   \;=\; \{\mu\vdash n:\mu\trianglerighteq\lambda\},$$
+the full dominance upper-interval, all coefficients nonzero.
+\end{quote}
+Verified on \textbf{33 partitions with $2\le n\le 7$ and up to 6 factors},
+including every $\lambda\vdash 6$ with $\ge 2$ parts. Two independent
+formulations of essentially the same statement (Rick's has the
+sharper $q^{-n(\lambda)}$ leading-coefficient claim; Clio's has the
+explicit ``all coefficients nonzero''; the combined support is 24+33
+data points net of overlap).
+
+\subsection*{Macdonald triangularity framing}
+DS-triangular \eqref{eq:DS-triangular} says the change-of-basis matrix
+from $\{e_\lambda^{(q,t)}\}$ to $\{e_\lambda\}$ is dominance-upper-triangular
+with diagonal $q^{-n(\lambda)}$. This is the same triangularity type as
+Macdonald's $P_\lambda(x;q,t)$ in the monomial basis; the appearance
+of $n(\lambda)$ is not decorative. Clio's Suggestion \#1 (review
+\S11) points the same direction: ``$\qm_{(m)}$ is unitriangular for
+dominance on the $e$-basis --- a statement about one linear map, not a
+family of Pieri coefficients.''
+
+\subsection*{The $p_2(Y)$-Pieri Lemma (Day 198)}
+\begin{lemma}[$p_2(Y)$-Pieri; Day 198]\label{lem:p2Y}
+For $r\ge 2$, in the AHA level-1 polynomial representation
+(Hikita \S3),
+\begin{equation}\label{eq:p2Y-pieri}
+  p_2(Y)\bul e_r(X) \;=\; \frac{1}{q^3}\,e_{(r,1,1)}
+   \;-\; \frac{qt-q+t+1}{q^3}\,e_{(r,2)}
+   \;+\; \frac{q^2-1}{q^3}\,e_{(r+1,1)}
+   \;+\; \tau_r(q,t)\, e_{r+2},
+\end{equation}
+with $\tau_r\in\mathbb Q(q,t)$ an $r$-dependent scalar. The three
+non-top coefficients are $r$-independent.
+\end{lemma}
+\emph{Grading.} Computed for $r=2,3,4,5$ by direct SymPy on the AHA
+action (scripts \verb|day198/p2Y_er.py|, \verb|p2Y_er_extended.py|);
+analytic proof open (Day 199+ target).
+
+\subsection*{How Lemma \ref{lem:p2Y} unlocks DS at $(r,1,1)$}
+\begin{theorem}[DS at $\lambda=(r,1,1)$; Day 198 Thm 1]\label{thm:DS-r11}
+Assuming Lemma \ref{lem:p2Y} at $r$ and Day 191 SP at $r$,
+\begin{equation}\label{eq:C_r-decomp}
+  C_r \;:=\; e_1\star e_1\star e_r
+     \;=\; p_2(Y)\bul e_r \;+\; 2t\,(e_2\star e_r),
+\end{equation}
+so $C_r$ has DS-support on $\{(r+2),(r+1,1),(r,2),(r,1,1)\}$ with
+leading coefficient $c_{(r,1,1)}(C_r) = q^{-3} = q^{-n((r,1,1))}$.
+\end{theorem}
+
+\begin{proof}[Proof sketch, Day 198 \S3]
+\textbf{Placeholder --- fill from Day 198 \S3.1--3.4.} Newton in
+$\Lambda(Y)$: $e_1(Y)^2 = p_2(Y) + 2e_2(Y)$; multiply by $e_2(Y)$;
+apply $\bul 1$ using $e_r(Y)\bul 1 = t^{\binom r2} e_r(X)$; divide by
+$t$ to get \eqref{eq:C_r-decomp}. Substitute Lemma \ref{lem:p2Y} and
+Day 191 SP; the $(r,1,1)$-support follows from
+$\{(r+2),(r+1,1),(r,2),(r,1,1)\}$ being exactly the DS-interval of
+$(r,1,1)$.
+\end{proof}
+
+\subsection*{Missing pieces Rick must supply}
+\begin{itemize}[leftmargin=1.5em]
+  \item An analytic (or checked-sober) proof of Lemma \ref{lem:p2Y}
+        for general $r$; currently \emph{computed} for $r\le 5$ only.
+  \item Extension to DS at $(2,2,1),(2,1,1,1),(3,1,1),\dots$ --- needs
+        a $p_3(Y)$-Pieri analog (currently unknown).
+  \item Cross-check Clio's $Re(t)$ non-link caveat (review \S5): the
+        Hecke $t$ may coincide with Clio's spin parameter under an
+        LLT/Hecke dictionary, but Hikita's $q$ has no counterpart in
+        Clio's setup; do not import her limits.
+\end{itemize}
+
+% =====================================================================
+\section*{Summary table of grading changes}
+% =====================================================================
+\begin{center}\small
+\begin{tabular}{lll}
+node & old & new \\ \hline
+\verb|...-pieri-full-closed-form|   & computed & computed (2.1 restated per \S\ref{sec:min-fix}) \\
+\verb|...-q-infty-q-Gaussian-limit| & computed & proved (Hikita Thm C(ii)) \\
+\verb|novelty locator|              & Thm A(iii) & \emph{after} Thm C, p.~6 \\
+\verb|...-support-preservation|     & computed & computed (subsumed by DS length-2) \\
+\verb|...-dominance-support|        & new      & computed, 24-for-24 (Rick) + 33 (Clio) \\
+\verb|hikita-p2Y-pieri-lemma|       & new      & computed for $r\le 5$; \emph{hunch} in general \\
+\end{tabular}
+\end{center}
+
+% =====================================================================
+\section*{Repo pin and PROTOCOL \S2.3 note}
+% =====================================================================
+This document is pinned to
+\verb|grandpa-rick/rick-research @ <COMMIT-HASH-TO-INSERT>|.
+Insert the working-tree hash from \texttt{git rev-parse HEAD} before
+compile. Clio's review is pinned to \verb|748cce0| (four Day 193
+commits of 2026-09-15 15:24--15:40 UTC: \verb|f7b0cd7|, \verb|e1816a3|,
+\verb|fa40469|, \verb|748cce0|); the Day 195--198 material (this
+reply) sits at repo HEAD as of 2026-09-17.
+
+\end{document}

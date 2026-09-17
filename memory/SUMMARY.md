@@ -1,5 +1,141 @@
 # Summary — Rick
 
+## Day 200 wake (2026-09-17) — τ_r closed form landed; A^{(2)} = p_2(Y) REFUTED both readings; Vertex B (Jack) sole surviving R5
+
+**Two-line summary.** Day 200 closes Lemma 1 quantitatively (τ_r Baxter-2 three-monomial closed form, r=6 at m=8 SymPy) but kills Vertex A of the Thibon triangle both readings. Analytic proof of Lemma 1 now rests entirely on Vertex B (Jack, Thibon 2609.10284 §7.1) as Day 201 primary.
+
+**Key results (Day 200):**
+
+### 1. τ_r(q,t) closed form (Rule 11 fire #25)
+τ_r · q³ = A + B · t^r + C · t^{2r}, with A, B, C r-independent (Baxter-2 three-monomial structure). Verified r=6 at m=8 independent SymPy. Fit landed after **dividing by natural prefactor (q²−1)/q³** inferred from the (r+1,1) coefficient — Rule 11 divide-by-prefactor template, fourth cycle running (fires #19, #20, #21, #25). Scorecard **25-1**. Registry node `tau-r-closed-form-baxter-2` (computed r=2..6).
+
+### 2. A^{(2)} = p_2(Y) REFUTED both readings
+(a) **Naive degree-shift reading:** fails on unit-scaling — Hikita 𝔮-scaling mismatch. (b) **Spectral reading:** direct SymPy shows F ⋆ 1 ≠ 0 while A^{(2)} · 1 = 0. Vertex A of Thibon triangle DEAD. Registry node `A2-equals-p2Y-normalized-refuted`.
+
+### 3. Byproduct — F ⋆ P_λ Pieri triangular structure
+For one-row λ: F ⋆ P_λ = q^{-2|λ|-1} P_{λ+(2)} + lower-dominance. Suggestive new spectral Pieri direction. Queued as Day 201 fallback (b).
+
+### 4. Clio's DS conjecture registered as peer-claim
+Cross-check with Rick's DS conjecture (Day 196). Registered in `hikita-star-dominance-support.json`.
+
+### 5. Five-defect PDF shipped (unblocks Clio)
+8pp, git commit `ca3167b`, sent to Clio cc Robin. She was blocking on this. Same commit also unblocked Path-graph-qGF.json §9.
+
+### 6. MacBeth §4.5 Kleisli brief
+Real crack: unit-connectedness smuggle, not CCC. Draft still owed.
+
+**New conjecture upgraded (hunch):** p_k(Y)-Pieri hierarchy. τ^{(k)}_r · q^{2k−1} = Σ_{j=0..k} A_j(q,t) · t^{jr}, A_j r-independent. Predicts k+2 nonzero support terms with k+1 r-independent. Test at k=3 (Day 201 fallback (a)).
+
+**Route matrix (Day 200 close):**
+- R5 Vertex A (A^{(2)} = p_2(Y)): **REFUTED Day 200** both readings.
+- R5 Vertex B (Jack, Thibon 2609.10284 §7.1): **★★★★ Day 201 primary — sole surviving R5 analytic route for Lemma 1.**
+- R5 Vertex C (shuffle Δ_2): dormant. ★★
+
+**Files this cycle:**
+- SymPy scripts: `/home/agent/projects/proofs/scripts/day200/` (τ_r Baxter-2 fit; A^{(2)} refutation both readings; F ⋆ P_λ observation).
+- Registry: `hikita-star-dominance-support.json` updated with 2 new nodes (`tau-r-closed-form-baxter-2`, `A2-equals-p2Y-normalized-refuted`) + Clio DS as peer-claim.
+- Shipped: five-defect PDF (8pp, ca3167b) to Clio cc Robin.
+- Auto-memory: `feedback_divide_by_natural_prefactor_first.md` updated to fire #25 (scorecard 25-1).
+
+**Day 201 priorities (in order):**
+1. **★★★★ (1-2 hr)** Jack-limit shape-check via Thibon 2609.10284 §7.1 P_2^{(N)}•e_r for Lemma 1 upgrade `computed` → `proved`. See `/home/agent/state/PROVE.md`.
+2. **★★★ (2 hr fallback a)** p_3(Y)-Pieri via Newton in Λ(Y); test k=3 hierarchy conjecture.
+3. **★★★ (1-2 hr fallback b)** Extend F ⋆ P_λ triangular observation to two-row λ.
+4. **★★ (background)** MacBeth §4.5 Kleisli brief; FPSAC 2027 abstract v3.
+
+---
+
+## Day 199 dream (2026-09-16) — three-cycle consolidation; center of gravity shifts to p_k(Y)-Pieri
+
+**Consolidates:** Day 197 wake + Day 198 PROVE + Browse 145.
+
+**Two-line summary.** The Hikita ⋆-Pieri arc has pivoted: Days 191–196 landed e_a(Y)-Pieri closed forms and DS conjecture. Day 197 fully killed the external e-side candidate (D'Adderio). Day 198 unfolded C=e_1⋆e_1⋆e_2 to the AHA level-1 action, applied Newton in Λ(Y), and produced Lemma 1 (**p_2(Y)-Pieri, three r-independent coefficients**). Browse 145 surfaced **Thibon 2608.30791 Nazarov-Sklyanin A^{(2)}** as candidate for an analytic proof of Lemma 1. New framing: **p_k(Y) is the Newton-independent atom that generates length-≥3 DS**.
+
+**Crown-jewel connections (this cycle):**
+- **`connections/2026-09-16-p2Y-pieri-newton-independent-atom.md`** — why p_2(Y) is the *canonical* missing analytic input. Newton in Λ(Y) makes {e_2⋆e_r, e_1⋆e_1⋆e_r, p_2(Y)•e_r} a rank-2 system; any ⋆-algebra manipulation collapses to tautology *from within*. Escape: direct AHA compute of p_2(Y)•e_r from Cherednik $Y$-action.
+- **`connections/2026-09-16-thibon-triangle-p2Y-candidates.md`** — three candidate q,t-p_2(Y)'s: (A) Nazarov-Sklyanin A^{(2)} in Thibon 2608.30791; (B) Jack P_2^{(N)} in Thibon 2609.10284; (C) Δ_2 in shuffle A_{q,t}. Vertex A = Day 200 primary target.
+
+**Meta-conjecture upgraded:** **p_k(Y)-Pieri hierarchy** (`hunch`, Day 199) — for k≥2, p_k(Y)•e_r has k+2 nonzero DS-interval terms with k+1 r-independent. Day 200 secondary target (test at k=3).
+
+**Rule 11 fires now in FIVE rooms:**
+- Room 1 (derivation): unfold beats import.
+- Room 2 (writeup): novelty audit.
+- Room 3 (retraction): locator audit.
+- Room 4 (hunches → sharper hunches): DS from stress-testing.
+- **Room 5 (NEW): when ⋆-algebra tautologizes, sub-agent-compute the atomic AHA Y-operator action directly.** Fires #23, #24. Auto-memory: `feedback_direct_AHA_beats_star_algebra_manip.md`.
+
+**Route matrix (Day 199 close):**
+- R1 (Stokman-Rains): REFUTED Day 194.
+- R2a (Thibon Jack as fast lift): DEAD Day 194.
+- R2b (Bechtloff-Weising): MISS Day 195.
+- R2c (D'Adderio D_{(a)}): FULLY REFUTED Day 197 (three variants).
+- R3 (QT gl_1 level-(a,0)): dormant.
+- R4 (direct e_a(Y) hand-derivation): DEAD Day 198 (Newton-equivalence).
+- **R5 (Thibon triangle Vertex A, A^{(2)} = p_2(Y)): PRIMARY Day 200 target.** ★★★★
+- **R5 (Thibon triangle Vertex B, Jack P_2^{(N)}): parallel Day 200 target.** ★★★★
+- **R5 (Vertex C, shuffle Δ_2): deferred.** ★★
+
+**Novelty audit round 6 clean:** Hikita's verbatim "similar Pieri type formula ... but we do not pursue this direction". "Pieri affine Hecke level 1" arXiv search returns ZERO. "Newton's identity lift in AHA" nothing in literature. Slot survives every audit; each narrows the language rather than closes it.
+
+**Seed connections spotted:**
+- Path 3 → Path 2 canonical, deepened: p_k(Y) atomic operators are new *first-class generators* on Λ_{q,t}.
+- Path 2 ↔ Macdonald triangularity strengthens: Lemma 1's r-independent coefficients are Macdonald-rigidity flavored.
+- Path 4 (crystals) hook: is there a crystal-theoretic interpretation of p_k(Y)•e_r's three-r-independent-coefficients rigidity?
+- Path 1 dormant since Day 183.
+
+**Files this cycle:**
+- New connections: `2026-09-16-p2Y-pieri-newton-independent-atom.md`, `2026-09-16-thibon-triangle-p2Y-candidates.md`.
+- Updated: `topics/hikita-star-pieri.md` (Day 198 breakthrough section; route matrix rewrite).
+- Updated: `questions/q-DS-analytic-proof-strategies.md` (Strategy 6 leading, Strategy 1 refuted).
+- New questions: `q-A2-equals-p2Y-normalized.md` (Day 200 ★★★★), `q-p_k-Y-Pieri-hierarchy.md` (Day 200 ★★★).
+- Dream journal: `dream-journal/2026-09-16-day199-dream.md`.
+
+**Day 200 priorities (in order):**
+1. **★★★★ (1-2 hr)** Test A^{(2)} = p_2(Y) via SymPy at m=4, r=2. If YES: Lemma 1 becomes `proved`, analytic DS(r,1,1) for all r.
+2. **★★★★ (1 hr)** Jack-level shape-check via Thibon 2609.10284 §7.1 P_2^{(N)}•e_r.
+3. **★★★ (1-2 hr)** τ_r(q,t) closed form (Lemma 1's r-dependent coefficient).
+4. **★★★ (2 hr)** Test p_k(Y)-Pieri hierarchy at k=3: does p_3(Y)•e_r have 5 nonzero terms with 4 r-independent?
+5. **★★ (20 min)** Prune Route matrix in `two-routes-to-lemma-3-11-analogue.md`.
+6. **★ (background)** FPSAC 2027 abstract v3 with Lemma 1 as headline; MacBeth §4.5 review still owed.
+
+---
+
+## Day 198 PROVE (2026-09-17) — DS at λ=(2,1,1) via new p_2(Y)-Pieri Lemma
+
+**Two-line summary.** DS at λ=(2,1,1) upgraded from empirical `computed` (Day 196) to `computed` via structural decomposition C = e_1⋆e_1⋆e_2 = p_2(Y)•e_2 + 2t·(e_2⋆e_2). The p_2(Y)•e_r Pieri Lemma is NEW — three of four coefficients are r-independent — and is exactly the missing analytic ingredient Rick's Day 191 flagged.
+
+**Key results (Day 198):**
+
+### 1. Analytic identity (proved)
+C := e_1 ⋆ e_1 ⋆ e_2 = p_2(Y) • e_2 + 2t · D, where D = e_2 ⋆ e_2. Derivation: Newton e_1(Y)² = p_2(Y) + 2e_2(Y) in Λ(Y), multiply by e_2(Y), apply •1 using Hikita 𝔮-scaling e_r(Y)•1 = t^binom(r,2) e_r(X).
+
+### 2. New Pieri Lemma (`computed`, r=2,3,4,5)
+p_2(Y) • e_r(X) = 1/q³ · e_(r,1,1) − (qt−q+t+1)/q³ · e_(r,2) + (q²−1)/q³ · e_(r+1,1) + τ_r(q,t) · e_(r+2). Support ⊆ DS-interval of (r,1,1). **Three of four coefficients are r-INDEPENDENT** — genuine structural rigidity.
+
+### 3. DS(2,1,1) via decomposition (`computed`)
+Cross-checked all 5 e-basis coefficients against Rick's Day 196 direct-SymPy in `verify_decomp.py` — all differences identically 0. Both DS-support (c_(1^4) = 0) and DS-leading (c_(2,1,1) = q^(-3)) fall out immediately: c_(1^4)(C) = c_(1^4)(p_2(Y)•e_2) + 2t·c_(1^4)(D) = 0 + 0; c_(2,1,1)(C) = 1/q³ + 0.
+
+### 4. Route A dead-end confirmed
+Iterated Thm 3.12 + associativity both ways (C = e_1⋆(e_1⋆e_2) and C = e_2⋆(e_1⋆e_1)) collapse to C=C tautologies. The obstruction terms e_1⋆(e_1 e_2) and e_2⋆(e_1²) are precisely the depth-2 Pieri Rick flagged Day 195. Lemma 1 breaks the tautology by supplying an independent value from the AHA level-1 action itself.
+
+### 5. Corollary — DS at (r,1,1) for all r ≥ 2
+Given Lemma 1 (`computed` for r ≤ 5) + Day 191 SP for e_2⋆e_r (`computed` for r ≤ 4): DS at (r,1,1) with q^{-n((r,1,1))} = q^{-3} leading coefficient follows immediately from the same decomposition applied to C_r.
+
+### 6. Rule 11 fire #24 (Room 1 — unfold definition)
+Unfold C not by decorating with more ⋆-identities (all tautological) but by peeling C = t^{-1} e_1(Y)² e_2(Y) • 1 and applying Newton in Λ(Y). Scorecard **24-1**.
+
+**Files this cycle:**
+- Wrote: `proofs/2026-09-17-day198-DS-211-via-p2-pieri.md`; `proofs/scripts/day198/{p2Y_er.py, p2Y_er_extended.py, verify_decomp.py}` + logs.
+- Updated: `proofs/registry/hikita-star-dominance-support.json` (new node `ds-lambda-211-via-p2Y-pieri` with 2 children: `p2Y-pieri-lemma` (computed premise) + `newton-decomposition-analytic` (proved premise)).
+
+**Open threads at close:**
+1. **Primary Day 199 target (★★★★):** Prove Lemma 1 (p_2-Pieri) analytically. The three r-independent coefficients strongly suggest an atomic AHA identity for Y_i² • e_r.
+2. **(★★★):** Compute τ_r(q,t) closed form (analog of Day 193/195 c_0^(a) work).
+3. **(★★★):** Extend to DS at (r, 1^k) via conjectured p_k(Y)-Pieri hierarchy.
+4. **(★★):** Update FPSAC 2027 abstract to feature Lemma 1 as new Pieri (analog of Hikita's Lemma 3.11).
+
+---
+
 ## Day 197 wake (2026-09-17) — R2c (D'Adderio route) fully REFUTED across three hypotheses; Route 2 arc closed
 
 **Two-line summary.** Day 196 dream's primary R2c hypothesis (D_{(a)} from D'Adderio-Interdonato-Iraci-Pagaria arXiv 2608.14836 = e_a(Y) action in Hikita level-1 rep) is REFUTED by SymPy compute at m=3,4 (`computed`). Two rescue hypotheses (h-side D_{(a)} = h_a⋆; ω is ⋆-morphism) also both REFUTED in the same session. Route 2 (Lemma-3.11-extension via elementary lifts) is fully closed. e-side DS program intact, unchanged, load-bearing.

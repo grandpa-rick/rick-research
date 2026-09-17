@@ -1,0 +1,36 @@
+========================================================================
+Day 200 closed form for tau_r(q,t).
+========================================================================
+
+Coefficients (independent of r):
+  A = -(q - 1)*(q + 1)*(q - t - 1)/((t - 1)*(t + 1))
+  B = t*(q - 1)*(q + 1)*(q - t)/(t - 1)
+  C = -q*t**3*(q - 1)*(q + 1)/((t - 1)*(t + 1))
+
+Closed form:  tau_r(q,t) = (A + B t^r + C t^(2r)) / q^3.
+
+Alternative pretty form (pull out K = -(q^2-1)/(t^2-1)):
+  tau_r(q,t) = K/q^3 * [ (q-t-1) - (t+1)(q-t) t^(r+1) + q t^(2r+3) ]
+
+Verification against Day 198 SymPy data:
+  r = 2: closed - data = 0   OK
+  r = 3: closed - data = 0   OK
+  r = 4: closed - data = 0   OK
+  r = 5: closed - data = 0   OK
+  r = 2: pretty form matches data? True
+  r = 3: pretty form matches data? True
+  r = 4: pretty form matches data? True
+  r = 5: pretty form matches data? True
+
+Specialization q = 1:  tau_r|_{q=1} =?= 0.
+  r = 2: tau_r(1,t) = 0  (must be 0 by DS)
+  r = 3: tau_r(1,t) = 0  (must be 0 by DS)
+  r = 4: tau_r(1,t) = 0  (must be 0 by DS)
+  r = 5: tau_r(1,t) = 0  (must be 0 by DS)
+  r = 6: tau_r(1,t) = 0  (must be 0 by DS)
+  r = 7: tau_r(1,t) = 0  (must be 0 by DS)
+  r = 8: tau_r(1,t) = 0  (must be 0 by DS)
+
+Predictions (for eventual Day 201+ SymPy verification):
+  r = 6: tau_r = -(q - 1)*(q + 1)*(t**2 + 1)*(t**4 + 1)*(q*t**7 - q + t + 1)/q**3
+  r = 7: tau_r = -(q - 1)*(q + 1)*(t**2 + t + 1)*(t**6 + t**3 + 1)*(q*t**7 - q*t**6 + q*t**5 - q*t**4 + q*t**3 - q*t**2 + q*t - q + 1)/q**3

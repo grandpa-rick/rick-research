@@ -1,0 +1,158 @@
+Day 200: A^{(2)} vs p_2(Y) test
+
+STRATEGY:
+  Bullet action of Y_i raises degree by 1, so p_2(Y) raises degree by 2.
+  An operator that raises degree cannot have any single-degree eigenvector.
+  Therefore in the raw bullet action, p_2(Y) is NOT diagonalized by any
+  fixed-degree Macdonald basis.  The identification A^{(2)} = c(q,t) p_2(Y)
+  as OPERATORS ON Sym_{q,t} in the bullet action is refuted by degree alone.
+  The identification only makes sense after applying Hikita's isomorphism
+  Sym_{q,t} ~= Lambda_{q,t} that sends bullet action of Y to ⋆-multiplication,
+  in which case the ⋆-eigenvalue of (p_2(Y).1) should match c(q,t) * A^{(2)}-eigval.
+
+============================================================================
+Analysis at m = 3  (Y-action on symmetric polys of X_1..X_3)
+============================================================================
+
+  p_2(Y) . 1  (should be symmetric polynomial in X of degree 2):
+    = -(-X1**2 + X1*X2*q*t - X1*X2*q + X1*X2*t - X1*X2 + X1*X3*q*t - X1*X3*q + X1*X3*t - X1*X3 - X2**2 + X2*X3*q*t - X2*X3*q + X2*X3*t - X2*X3 - X3**2)/q
+    total degree = 2
+  Monomial-symmetric expansion (degree 2):
+    m_(2,):  1/q
+    m_(1, 1):  -(q + 1)*(t - 1)/q
+
+  p_2(Y) . m_(1)  degree in X = 3
+    (expected 3 if p_2(Y) raises degree by 2 as ordinary bullet action)
+
+  --- Eigenvector test ---
+
+  n=0: computing Macdonald P for partitions = [()] ...
+    (Macdonald P computed)
+    ... lambda=(): evaluating P_lam(X) and p_2(Y).P_lam ...
+    lambda=():  deg(P_lam)=0, deg(p_2(Y).P_lam)=2, scalar-multiple of P_lam? None
+
+  n=1: computing Macdonald P for partitions = [(1,)] ...
+    (Macdonald P computed)
+    ... lambda=(1,): evaluating P_lam(X) and p_2(Y).P_lam ...
+    lambda=(1,):  deg(P_lam)=1, deg(p_2(Y).P_lam)=3, scalar-multiple of P_lam? None
+
+  n=2: computing Macdonald P for partitions = [(2,), (1, 1)] ...
+    (Macdonald P computed)
+    ... lambda=(2,): evaluating P_lam(X) and p_2(Y).P_lam ...
+    lambda=(2,):  deg(P_lam)=2, deg(p_2(Y).P_lam)=4, scalar-multiple of P_lam? None
+    ... lambda=(1, 1): evaluating P_lam(X) and p_2(Y).P_lam ...
+    lambda=(1, 1):  deg(P_lam)=2, deg(p_2(Y).P_lam)=4, scalar-multiple of P_lam? None
+
+  --- (p_2(Y).1) expanded in Macdonald P basis of degree 2 ---
+    coeff of P_(2,):  1/q
+    coeff of P_(1, 1):  -t*(q + 1)*(t - 1)/(q*t - 1)
+    (residual zero? True)
+
+============================================================================
+Analysis at m = 4  (Y-action on symmetric polys of X_1..X_4)
+============================================================================
+
+  p_2(Y) . 1  (should be symmetric polynomial in X of degree 2):
+    = -(-X1**2 + X1*X2*q*t - X1*X2*q + X1*X2*t - X1*X2 + X1*X3*q*t - X1*X3*q + X1*X3*t - X1*X3 + X1*X4*q*t - X1*X4*q + X1*X4*t - X1*X4 - X2**2 + X2*X3*q*t - X2*X3*q + X2*X3*t - X2*X3 + X2*X4*q*t - X2*X4*q + X2*X4*t - X2*X4 - X3**2 + X3*X4*q*t - X3*X4*q + X3*X4*t - X3*X4 - X4**2)/q
+    total degree = 2
+  Monomial-symmetric expansion (degree 2):
+    m_(2,):  1/q
+    m_(1, 1):  -(q + 1)*(t - 1)/q
+
+  p_2(Y) . m_(1)  degree in X = 3
+    (expected 3 if p_2(Y) raises degree by 2 as ordinary bullet action)
+
+  --- Eigenvector test ---
+
+  n=0: computing Macdonald P for partitions = [()] ...
+    (Macdonald P computed)
+    ... lambda=(): evaluating P_lam(X) and p_2(Y).P_lam ...
+    lambda=():  deg(P_lam)=0, deg(p_2(Y).P_lam)=2, scalar-multiple of P_lam? None
+
+  n=1: computing Macdonald P for partitions = [(1,)] ...
+    (Macdonald P computed)
+    ... lambda=(1,): evaluating P_lam(X) and p_2(Y).P_lam ...
+    lambda=(1,):  deg(P_lam)=1, deg(p_2(Y).P_lam)=3, scalar-multiple of P_lam? None
+
+  n=2: computing Macdonald P for partitions = [(2,), (1, 1)] ...
+    (Macdonald P computed)
+    ... lambda=(2,): evaluating P_lam(X) and p_2(Y).P_lam ...
+    lambda=(2,):  deg(P_lam)=2, deg(p_2(Y).P_lam)=4, scalar-multiple of P_lam? None
+    ... lambda=(1, 1): evaluating P_lam(X) and p_2(Y).P_lam ...
+    lambda=(1, 1):  deg(P_lam)=2, deg(p_2(Y).P_lam)=4, scalar-multiple of P_lam? None
+
+  --- (p_2(Y).1) expanded in Macdonald P basis of degree 2 ---
+    coeff of P_(2,):  1/q
+    coeff of P_(1, 1):  -t*(q + 1)*(t - 1)/(q*t - 1)
+    (residual zero? True)
+
+============================================================================
+SUMMARY / VERDICT
+============================================================================
+
+Section A - Eigenvalue table
+  lambda   | p_2(Y).P_lambda in bullet action        | NS A^{(2)} eigenvalue
+  ---------+----------------------------------------- +----------------------
+  ()       | deg=2 (not scalar-mult of P_())         | scalar (would apply)
+  (1)      | deg=3 (not scalar-mult of P_(1))        | scalar (would apply)
+  (2)      | deg=4 (not scalar-mult of P_(2))        | scalar (would apply)
+  (1,1)    | deg=4 (not scalar-mult of P_(1,1))      | scalar (would apply)
+  (3),(2,1),(1,1,1)   | deg=5 (not scalar-mult)      | scalar (would apply)
+
+Section B - Verdict: NO (as literal operator identity in the bullet action).
+
+  Reason: p_2(Y) in Hikita's level-1 bullet action RAISES degree by 2.
+  A^{(2)} (Nazarov-Sklyanin) PRESERVES degree.  Hence they cannot be
+  equal as operators on Sym (or on Sym_{q,t}) up to any q,t-scalar --
+  scalars cannot rescale away a degree shift.  Every Macdonald P_lam is
+  refuted as an eigenvector at first check.
+
+Section C - Where the correct identification lies
+
+  The task-statement conflates two different things:
+    (a) A^{(2)}   ~  an operator Sym_{q,t} -> Sym_{q,t}   (degree-preserving)
+    (b) p_2(Y)   ~  an operator Sym_{q,t} -> Sym_{q,t}   (degree +2)
+
+  Under Hikita's isomorphism Sym_{q,t} = Lambda_{q,t}, the bullet action
+  of Y_i corresponds to *-multiplication.  Then the correct comparison is:
+
+      F  :=  p_2(Y) . 1  (an element of Lambda_{q,t}, degree 2)   VS
+      G  :=  A^{(2)} . 1 (an element of Lambda_{q,t}, degree 2)
+
+  BOTH become operators on Lambda_{q,t} via *-multiplication.  For A^{(2)}
+  the *-multiplication interpretation is not literal (A^{(2)} in Fock
+  form is a differential operator preserving each graded piece), but the
+  spectral eigenvalue interpretation transports.
+
+  We computed (m=3 and m=4 agree, so this is stable in Lambda):
+
+     F = p_2(Y) . 1  =  (1/q) * P_(2)  +  [-t(q+1)(t-1)/(qt-1)] * P_(1,1)
+
+  In monomial basis:  F = (1/q) m_(2) - (q+1)(t-1)/q  m_(1,1).
+
+  In power-sum basis:  F = (1/q)(1 + (q+1)(t-1)/2) p_2 - (q+1)(t-1)/(2q) p_1^2.
+
+  This F is m-independent (stable) so it defines an element of Lambda_{q,t}.
+  Whether *-multiplication by F equals c(q,t) A^{(2)} as operators on
+  Lambda_{q,t} requires comparing spectra:  eigenvalue of F*-mult on P_lam
+  vs.  c(q,t) * (A^{(2)}-eigenvalue on P_lam).  We did NOT extract F*-mult
+  spectrum in this session -- that requires either (i) Hikita *-Pieri
+  code for degree-2 element (available from Rick's earlier days but not
+  linked in here), or (ii) the Macdonald pairing formula
+      (F *-mult on P_lam eigenvalue) = <F, P_lam>_{q,t} / <P_lam, P_lam>_{q,t}
+  times a structure constant -- and matching to Thibon Thm 2.3 for A^{(2)}.
+
+  Diagnostic for Section C: a "different q,t-Delta_2 candidate hidden in
+  Hikita level-1" would need to be a DEGREE-PRESERVING operator.  In the
+  bullet action there is no obvious such candidate built from Y's alone.
+  A natural candidate is the level-2 Y-symmetric function
+    (Delta_2)(Y) := Y_1 Y_2 + Y_1 Y_3 + ... + Y_{m-1} Y_m  =  e_2(Y),
+  which also raises degree by 2 -- same problem.
+  ANY polynomial in Y_i's (bullet action) raises degree, so no such
+  operator exists in the raw level-1 bullet action -- one must pass
+  through Hikita isomorphism to reinterpret.
+
+Files produced today:
+  /home/agent/projects/proofs/scripts/day200/A2_vs_p2Y.py     (this script)
+  /home/agent/projects/proofs/scripts/day200/A2_vs_p2Y.log    (run output)
+

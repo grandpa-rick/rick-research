@@ -1,0 +1,84 @@
+Day 200 predicted tau_6(q,t):
+  -(q - 1)*(q + 1)*(t**2 + 1)*(t**4 + 1)*(q*t**7 - q + t + 1)/q**3
+
+Running run_case(r=6, m=8) ...
+
+========================================================================
+r = 6,  m = 8,  degree n = r+2 = 8
+========================================================================
+[t=0.0s] Building e_6(X) in 8 variables...
+[t=0.0s] Computing p_2(Y) . e_6 = sum_i Y_i^2 . e_6...
+    [t=3.9s]  Y_1^2 . e_6: cumulative #terms = 341  (3.9s for this i)
+    [t=8.7s]  Y_2^2 . e_6: cumulative #terms = 714  (4.8s for this i)
+    [t=15.0s]  Y_3^2 . e_6: cumulative #terms = 993  (6.3s for this i)
+    [t=22.3s]  Y_4^2 . e_6: cumulative #terms = 1233  (7.4s for this i)
+    [t=30.4s]  Y_5^2 . e_6: cumulative #terms = 1463  (8.0s for this i)
+    [t=39.1s]  Y_6^2 . e_6: cumulative #terms = 1697  (8.7s for this i)
+    [t=47.3s]  Y_7^2 . e_6: cumulative #terms = 1928  (8.3s for this i)
+    [t=54.4s]  Y_8^2 . e_6: cumulative #terms = 2161  (7.1s for this i)
+[t=54.4s] Total p_2(Y).e_6: #terms = 2161
+[t=54.4s] Expanding in e-basis of degree 8...
+[t=123.8s] Factoring coefficients...
+
+FULL e-basis expansion of p_2(Y) . e_6  (degree 8):
+------------------------------------------------------------------------
+  e_(8,)  (ell=1): -(q - 1)*(q + 1)*(t**2 + 1)*(t**4 + 1)*(q*t**7 - q + t + 1)/q**3
+  e_(7, 1)  (ell=2): (q - 1)*(q + 1)/q**3
+  e_(6, 2)  (ell=2): -(q*t - q + t + 1)/q**3
+  e_(6, 1, 1)  (ell=3): q**(-3)
+  e_(5, 3)  (ell=2): 0
+  e_(5, 2, 1)  (ell=3): 0
+  e_(5, 1, 1, 1)  (ell=4): 0
+  e_(4, 4)  (ell=2): 0
+  e_(4, 3, 1)  (ell=3): 0
+  e_(4, 2, 2)  (ell=3): 0
+  e_(4, 2, 1, 1)  (ell=4): 0
+  e_(4, 1, 1, 1, 1)  (ell=5): 0
+  e_(3, 3, 2)  (ell=3): 0
+  e_(3, 3, 1, 1)  (ell=4): 0
+  e_(3, 2, 2, 1)  (ell=4): 0
+  e_(3, 2, 1, 1, 1)  (ell=5): 0
+  e_(3, 1, 1, 1, 1, 1)  (ell=6): 0
+  e_(2, 2, 2, 2)  (ell=4): 0
+  e_(2, 2, 2, 1, 1)  (ell=5): 0
+  e_(2, 2, 1, 1, 1, 1)  (ell=6): 0
+  e_(2, 1, 1, 1, 1, 1, 1)  (ell=7): 0
+  e_(1, 1, 1, 1, 1, 1, 1, 1)  (ell=8): 0
+
+SPECIFIC COEFFICIENT CHECKS:
+------------------------------------------------------------------------
+  coef of e_(7, 1): (q - 1)*(q + 1)/q**3
+    expected (q-1)(q+1)/q^3 = (q - 1)*(q + 1)/q**3
+    match? True
+  coef of e_(6, 2): -(q*t - q + t + 1)/q**3
+    expected -(q*t - q + t + 1)/q^3 = -(q*t - q + t + 1)/q**3
+    match? True
+  coef of e_(6, 1, 1): q**(-3)
+    expected 1/q^3 = q**(-3)
+    match? True
+
+  Support restriction check: all coefs on lambda NOT >= (r,1,1) should be zero.
+    e_(5, 3) (NOT >= pivot): OK (zero)
+    e_(5, 2, 1) (NOT >= pivot): OK (zero)
+    e_(5, 1, 1, 1) (NOT >= pivot): OK (zero)
+    e_(4, 4) (NOT >= pivot): OK (zero)
+    e_(4, 3, 1) (NOT >= pivot): OK (zero)
+    e_(4, 2, 2) (NOT >= pivot): OK (zero)
+    e_(4, 2, 1, 1) (NOT >= pivot): OK (zero)
+    e_(4, 1, 1, 1, 1) (NOT >= pivot): OK (zero)
+    e_(3, 3, 2) (NOT >= pivot): OK (zero)
+    e_(3, 3, 1, 1) (NOT >= pivot): OK (zero)
+    e_(3, 2, 2, 1) (NOT >= pivot): OK (zero)
+    e_(3, 2, 1, 1, 1) (NOT >= pivot): OK (zero)
+    e_(3, 1, 1, 1, 1, 1) (NOT >= pivot): OK (zero)
+    e_(2, 2, 2, 2) (NOT >= pivot): OK (zero)
+    e_(2, 2, 2, 1, 1) (NOT >= pivot): OK (zero)
+    e_(2, 2, 1, 1, 1, 1) (NOT >= pivot): OK (zero)
+    e_(2, 1, 1, 1, 1, 1, 1) (NOT >= pivot): OK (zero)
+    e_(1, 1, 1, 1, 1, 1, 1, 1) (NOT >= pivot): OK (zero)
+  All non-dominating coeffs zero? True
+
+[t=124.0s] r=6 complete.
+
+[EXTRACTED] coefficient of e_(8) = tau_6 (SymPy) = -(q - 1)*(q + 1)*(t**2 + 1)*(t**4 + 1)*(q*t**7 - q + t + 1)/q**3
+[CHECK] Day 200 closed form matches Day 198-style direct SymPy?  diff = 0   OK
