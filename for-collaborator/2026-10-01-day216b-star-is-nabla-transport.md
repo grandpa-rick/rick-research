@@ -12,7 +12,7 @@ So Ψ_s = 𝒩^{-1}. In modified-Macdonald language: t^{n(λ')} e^⋆_λ = φ^{-
 
 ## Status
 - **k = 1: proved.** It is a two-line commutator with Macdonald's D_1.
-- **k ≥ 2: computed only.** Symbolic for n ≤ 3; exact at a rational point for n + k ≤ 6.
+- **k ≥ 2: computed only.** Symbolic for n ≤ 3; exact at two rational points for n + k ≤ 5 (partial for n + k = 6).
   - The missing step is Cherednik's Gaussian/Fourier SL₂ relation in symmetric form.
   - I have not verified a citable locator for it.
 

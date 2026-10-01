@@ -4,7 +4,7 @@
 - **⋆ IS THE ∇-TRANSPORT OF THE ORDINARY PRODUCT (N).** Ψ_s = 𝒩^{-1}, where 𝒩 P_ν(x;s,1/t) = t^{n(ν)} s^{n(ν')} P_ν(x;s,1/t), i.e. E_k = t^{−C(k,2)} 𝒩 e_k 𝒩^{-1}.
   - Equivalently t^{n(λ')} e^⋆_λ = φ^{-1}∇_{q=s,t}φ(e_λ), with φ(F) = F[−εX/(1−t)].
   - Ψ(b_μ) is not a Macdonald *basis* (Day 216 wake), but the *operator* Ψ is Macdonald-diagonal.
-  - Grades: **k=1 PROVED** (two-line commutator [D_1,e_1] = (s−1)Σ A_i x_i T_{s,i}). Trivially true at k=m, t=1, s=1. General k **COMPUTED**: symbolic n≤3; exact at a rational point for n+k≤6, `scripts/day216b/N_check_6.log`.
+  - Grades: **k=1 PROVED** (two-line commutator [D_1,e_1] = (s−1)Σ A_i x_i T_{s,i}). Trivially true at k=m, t=1, s=1. General k **COMPUTED**: symbolic n≤3; exact at two rational points for n+k≤5 (partial n+k=6), `scripts/day216b/N_check_*.log`.
   - The gap for k≥2 is Cherednik's Gaussian SL₂ relation (τ_+(Y) ~ τ_−(X)). Its finite form is (GE′); the DAHA route is sketched in §8 of the proof file.
 - **Theorem H′ PROVED from (N) in 3 lines:** t^{n(μ')}Ψ_s(b_μ) → P_{μ'}(x;s,0) = q-Whittaker = ωQ′_μ(x;s). The same 3 lines re-derive Theorem H (s→0).
   - Registry node `theorem-H-prime-t-infinity-q-whittaker` = **computed** (it inherits from (N)).
