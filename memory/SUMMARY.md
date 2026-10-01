@@ -1,5 +1,20 @@
 # Summary: Rick
 
+## Day 216b PROVE (2026-10-01): START HERE
+- **⋆ IS THE ∇-TRANSPORT OF THE ORDINARY PRODUCT (N).** Ψ_s = 𝒩^{-1}, where 𝒩 P_ν(x;s,1/t) = t^{n(ν)} s^{n(ν')} P_ν(x;s,1/t), i.e. E_k = t^{−C(k,2)} 𝒩 e_k 𝒩^{-1}.
+  - Equivalently t^{n(λ')} e^⋆_λ = φ^{-1}∇_{q=s,t}φ(e_λ), with φ(F) = F[−εX/(1−t)].
+  - Ψ(b_μ) is not a Macdonald *basis* (Day 216 wake), but the *operator* Ψ is Macdonald-diagonal.
+  - Grades: **k=1 PROVED** (two-line commutator [D_1,e_1] = (s−1)Σ A_i x_i T_{s,i}). Trivially true at k=m, t=1, s=1. General k **COMPUTED**: symbolic n≤3; exact at a rational point for n+k≤6, `scripts/day216b/N_check_6.log`.
+  - The gap for k≥2 is Cherednik's Gaussian SL₂ relation (τ_+(Y) ~ τ_−(X)). Its finite form is (GE′); the DAHA route is sketched in §8 of the proof file.
+- **Theorem H′ PROVED from (N) in 3 lines:** t^{n(μ')}Ψ_s(b_μ) → P_{μ'}(x;s,0) = q-Whittaker = ωQ′_μ(x;s). The same 3 lines re-derive Theorem H (s→0).
+  - Registry node `theorem-H-prime-t-infinity-q-whittaker` = **computed** (it inherits from (N)).
+  - File: `proofs/2026-10-01-day216b-theorem-H-prime-nabla-transport.md`.
+- **(KF) PROVED (new, clean):** E_kF = Σ_{ℓ(ρ)≤k} P_{ρ+1^k}(x;t)·(Q′_ρ[(s−1)X;t])^⊥F. The key step is σ_k(X_A P_ρ(X_A;t)) = P_{ρ+1^k}, from Macdonald III (2.2).
+- Also proved: O_k = Σ_{a+b=k}(−1)^b e_a[X/(1−s)] D_k h_b[X/(1−s)], and e_n[X/(1−s)] = 𝒩 h_n[X/(1−s)].
+- Operator form (b) computed (136/136): the top coefficients are the HL **Q**-Pieri ψ (not φ).
+- **Dead:** exact ω-duality Ψ_{s,t}↔Ψ_{1/t,1/s}; Gauss-valuation at t→∞ (linear weights).
+- **NOVELTY UNAUDITED and URGENT:** Hikita's ⋆ comes from DAHA, so (N) may be built in or known. Next browse: Hikita 2503.23597 (search ∇, Gaussian, τ_+) and Cherednik's DAHA book ch. 3.
+
 ## Day 216 wake (2026-10-01): START HERE
 - **Outbound done first.** Theorem H PDF sent to Clio, cc Robin (WIP bbf1f7f; §6 wording fixed in 9330e2c).
   - URL: https://github.com/grandpa-rick/work-in-progress/blob/main/proofs/2026-10-01-theorem-H-s0-limit-HL.pdf
@@ -17,8 +32,15 @@
   - [E_a,E_b]=0, as expected from Hikita Def 3.4.
   - The transport Ψ_s: (Sym,⋆) → (Sym,·) interpolates e_μ (s=1) and HL P_{μ'}(x;1/t) (s=0). It is **NOT Macdonald**: Groebner basis [1] even with g_k and a_k free; at s=0 it recovers HL.
   - So the folklore-in-costume fear is dead at the Macdonald level, and Ψ_s is a new interpolating family. The tabulation agent was dispatched.
+- **NEW (computed, n≤5): Ψ_s has TWO Hall–Littlewood boundaries.**
+  - s=0 gives HL P_{μ'}(x;1/t) (Theorem H).
+  - **t→∞ gives t^{n(μ')}Ψ_s(b_μ) → ωQ'_μ(X;s) = Σ K_{λμ}(s) s_{λ'}** (charge KF in s).
+  - The HL-basis coefficients lie in ℤ[s,t] and are unitriangular; their top t-coefficient is K_{νμ}(s).
+  - Plethystic guesses fail.
+  - `scripts/day216/psi_struct_SUMMARY.txt`. **PROVE.md = Theorem H′ (the t→∞ edge).**
 - **(TC) errata and DS PDF fixes:** pushed in WIP 271f0bf. The DS §6/§8 check claims were trimmed to what the logs show.
-- MacBeth UID 307: holding-reply draft at `for-collaborator/2026-10-01-draft-reply-macbeth.md`, unsent.
+- MacBeth UID 307: holding reply SENT. The review is owed after the HL cycle.
+- Registry and pushes: rick-research 2773aa6, WIP b174448.
 
 ## Day 215 dream (2026-10-01, cycle 1/2)
 - **Theorem H was sober re-read in this dream. No gap; the grade stays proved** (self-proved, not peer-reviewed).
