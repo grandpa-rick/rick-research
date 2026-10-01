@@ -1,21 +1,47 @@
 # Summary: Rick
 
-## Day 216b PROVE (2026-10-01): START HERE
+## Day 216 dream (2026-10-01, cycle 2/2): START HERE
+- **(N) is PROVED for all k** (Day 216c, proof file §9). Ψ_s = 𝒩^{-1}, and **(Sym,⋆) ≅ (Sym,·) as algebras via 𝒩**: F⋆G = 𝒩(𝒩^{-1}F·𝒩^{-1}G).
+  - Engine: Lemma (I) [e_1(Y),X_1] = (s−1)X_1Y_1, by telescoping. Then (NS) γ̂X_iγ̂^{-1} = Y^•_i with the nonsymmetric Gaussian γ̂ = ∏θ(Y_i), θ(s^a t^b) = s^{C(a,2)}t^{ab}. Then 207b (A_k), and γ̂|_Sym = 𝒩.
+  - It rests on textbook Cherednik facts C1–C3, whose locators are unverified (machine-checked, `scripts/day216c/`).
+  - Theorem H′ and Theorem H are 3-line corollaries.
+  - Registry `N-star-is-nabla-transport` = proved. It inherits 207b, which is self-proved; Clio's first-hand read is pending.
+  - WIP f223c5d, rick-research 1b0b5bd.
+- **The Day 215 dream hunch was vindicated.** "If ⋆ is transport along a Macdonald-type basis change, H is a corollary." That is exactly what (N) is.
+- **Novelty (Browse 156): the arXiv + citation sweep is CLEAN.** `reading/2026-10-01-browse156.md`.
+  - Residual risk 1: Cherednik's DAHA book ch. 3.
+  - **Residual risk 2 (NEW, this dream):** (N) = ∇-conjugated e_k-multiplication, which is classical BGHT 1999 / elliptic-Hall-algebra SL₂ territory. Locators unverified, and k=1 is plausibly folklore.
+  - `questions/q-N-novelty-nabla-conjugation-prior-art.md` (★★★★★) supersedes the H-folklore question.
+- **CROWN (sketched, no computation): on the line t = 1/s, ⋆ is the LR product weighted by R-matrix monodromy.** P_ν(x;s,s) = s_ν and 𝒩 = s^{content}, so
+
+  s_λ⋆s_μ = Σ c^ν_{λμ} s^{c(ν)−c(λ)−c(μ)} s_ν = LR × eigenvalue of R₂₁R (s = q²).
+
+  - This is the Path 2 + Path 4 seed statement in one formula.
+  - `connections/2026-10-01-star-at-t-equals-1-over-s-is-ribbon-monodromy.md`. Registry node `N-specialization-t-1-over-s-ribbon-monodromy` = sketched, kept at root level because of the boundary rule.
+- **Registry:** a novelty note was added to the N node. Both copies are synced. The validator in `code/` uses a stale trust enum (it rejects sketched, checked-sober and peer-claimed), so its complaints predate this dream.
+- **Next wake, in order:**
+  1. **Outbound FIRST.** Email Clio and Robin the (N)-proved update (`for-collaborator/2026-10-01-day216b-star-is-nabla-transport.md`, updated this dream). Ask Clio directly whether ∇e_k∇^{-1} / BGHT makes (N) folklore.
+  2. Kill test of the t = 1/s monodromy claim (≤15 min; watch for poles).
+  3. Read BGHT, and check whether Hikita says "τ₊".
+  4. MacBeth review, still owed.
+  5. FPSAC outline: lead with 𝒩 and its three special lines (H, H′, t = 1/s).
+
+## Day 216b PROVE (2026-10-01)
 - **⋆ IS THE ∇-TRANSPORT OF THE ORDINARY PRODUCT (N).** Ψ_s = 𝒩^{-1}, where 𝒩 P_ν(x;s,1/t) = t^{n(ν)} s^{n(ν')} P_ν(x;s,1/t), i.e. E_k = t^{−C(k,2)} 𝒩 e_k 𝒩^{-1}.
   - Equivalently t^{n(λ')} e^⋆_λ = φ^{-1}∇_{q=s,t}φ(e_λ), with φ(F) = F[−εX/(1−t)].
   - Ψ(b_μ) is not a Macdonald *basis* (Day 216 wake), but the *operator* Ψ is Macdonald-diagonal.
-  - Grades: **k=1 PROVED** (two-line commutator [D_1,e_1] = (s−1)Σ A_i x_i T_{s,i}). Trivially true at k=m, t=1, s=1. General k **COMPUTED**: symbolic n≤3; exact at two rational points for n+k≤5 (partial n+k=6), `scripts/day216b/N_check_*.log`.
+  - Grades: **k=1 PROVED** (two-line commutator [D_1,e_1] = (s−1)Σ A_i x_i T_{s,i}). Trivially true at k=m, t=1, s=1. General k was COMPUTED at the end of 216b and is **PROVED in Day 216c** (see the top stanza). The 216b evidence was: symbolic n≤3; exact at two rational points for n+k≤5 (partial n+k=6), `scripts/day216b/N_check_*.log`.
   - The gap for k≥2 is Cherednik's Gaussian SL₂ relation (τ_+(Y) ~ τ_−(X)). Its finite form is (GE′); the DAHA route is sketched in §8 of the proof file.
 - **Theorem H′ PROVED from (N) in 3 lines:** t^{n(μ')}Ψ_s(b_μ) → P_{μ'}(x;s,0) = q-Whittaker = ωQ′_μ(x;s). The same 3 lines re-derive Theorem H (s→0).
-  - Registry node `theorem-H-prime-t-infinity-q-whittaker` = **computed** (it inherits from (N)).
+  - Registry node `theorem-H-prime-t-infinity-q-whittaker` = **proved** (it was computed until 216c proved (N)).
   - File: `proofs/2026-10-01-day216b-theorem-H-prime-nabla-transport.md`.
 - **(KF) PROVED (new, clean):** E_kF = Σ_{ℓ(ρ)≤k} P_{ρ+1^k}(x;t)·(Q′_ρ[(s−1)X;t])^⊥F. The key step is σ_k(X_A P_ρ(X_A;t)) = P_{ρ+1^k}, from Macdonald III (2.2).
 - Also proved: O_k = Σ_{a+b=k}(−1)^b e_a[X/(1−s)] D_k h_b[X/(1−s)], and e_n[X/(1−s)] = 𝒩 h_n[X/(1−s)].
 - Operator form (b) computed (136/136): the top coefficients are the HL **Q**-Pieri ψ (not φ).
 - **Dead:** exact ω-duality Ψ_{s,t}↔Ψ_{1/t,1/s}; Gauss-valuation at t→∞ (linear weights).
-- **NOVELTY UNAUDITED and URGENT:** Hikita's ⋆ comes from DAHA, so (N) may be built in or known. Next browse: Hikita 2503.23597 (search ∇, Gaussian, τ_+) and Cherednik's DAHA book ch. 3.
+- **Novelty (superseded by Browse 156 and the Day 216 dream, see the top stanza):** Hikita's ⋆ comes from DAHA, so (N) may be built in or known. Next browse: Hikita 2503.23597 (search ∇, Gaussian, τ_+) and Cherednik's DAHA book ch. 3.
 
-## Day 216 wake (2026-10-01): START HERE
+## Day 216 wake (2026-10-01)
 - **Outbound done first.** Theorem H PDF sent to Clio, cc Robin (WIP bbf1f7f; §6 wording fixed in 9330e2c).
   - URL: https://github.com/grandpa-rick/work-in-progress/blob/main/proofs/2026-10-01-theorem-H-s0-limit-HL.pdf
   - I asked Clio whether it is folklore.
@@ -66,89 +92,14 @@
 - **FPSAC 2027:** abstracts due **2026-11-15**. Robin hasn't replied to the scope note.
 - Journal: `dream-journal/2026-10-01-day215-dream.md`.
 
-## Day 215 PROVE (2026-10-01): THEOREM H PROVED
-- **The s→0 limit of Hikita ⋆ IS Hall–Littlewood multiplication.**
-  - Statement: φ∘(E_k mod s) = t^{−C(k,2)} e_k∘φ, where φ(b_μ) = t^{−n(μ')}P_{μ'}(x;1/t) and b_μ = s^{n(μ)}e_μ.
-  - One-step integrality is also proved: E_k b_μ ∈ ⊕ℚ[s,t]b_ρ.
-  - File: `proofs/2026-10-01-day215-theorem-H-s0-limit-is-HL.md`.
-- **Corollary PROVED:** d_{λμ} = t^{−n(λ')}Σ_ν K_{ν'λ}K̃_{νμ'}(t) ∈ ℕ[t], and d(1) = 0-1 matrices.
-  - Registry nodes `d-equals-hall-littlewood-transition`, `theorem-H-s0-star-is-HL-pieri` and `d-lambda-mu-t-count-01-matrices` are now proved.
-  - Unimodality and the degree formula are still only computed.
-- **Proof** = Day 214 Lemma B rerun at generic t.
-  - Admissible (v(a_β) ≥ ω(β)) equals the b-lattice.
-  - The kernel's initial form is 1, t, or the level-set HL kernel. Level-set sums give t-binomials.
-  - n(κ)−n(ρ) = C(k,2)+inv+Σr(m−r) flips HL Pieri to u = 1/t.
-  - No residues, no new machinery.
-- **Checks:** `scripts/day215b/`.
-  - The explicit L_k matrix matches the exact engine, symbolic in s and t, on all 26 cases with n+k ≤ 5. The numeric t runs are only PARTIAL: n+k ≤ 6 got through n ≤ 3, and n+k ≤ 7 through n ≤ 1. They were not complete. [Corrected at the Day 215 dream; see proof §5.1.]
-  - Macdonald III (3.2) is machine-checked.
-- **OWED:**
-  - Novelty audit of "s→0 ⋆ = HL" (no browsing this session).
-  - Tell Clio and Robin; this is the FPSAC centerpiece candidate.
-  - Pre-existing registry validator complaint: `ds-via-lemma-3-11-extension-e2Y` has invalid trust 'superseded'.
-
-## Day 215 wake (2026-10-01)
-- **Outbound done first.** Robin was sent the FPSAC 2027 scope note; he decides authorship, AI declaration and go/no-go. Clio was sent the DS PDF (WIP f00e440, `proofs/2026-10-01-DS-all-lengths.pdf`).
-- **CROWN: d_{λμ}(t) = t^{−n(λ')}⟨e_λ, H̃_{μ'}(x;t)⟩**, cocharge Kostka–Foulkes. **Grade: computed**, exact on all 233 pairs n ≤ 7.
-  - So the s→0 limit of ⋆ (b-basis) = Hall–Littlewood e→P_{μ'}(x;1/t) transition. This is the crystal contact (seed Q4 / Path 2).
-  - d ∈ ℕ[t], d(1) = 0-1 matrices, deg = n(μ')−n(λ'), unimodal. The exact val_s fails at special t (1+3t).
-  - Node `d-equals-hall-littlewood-transition`. Scripts: `scripts/day215/`.
-  - **PROVE.md targets Theorem H:** φ∘(E_k mod s) = t^{−C(k,2)} e_k∘φ, with φ(b_μ) = t^{−n(μ')}P_{μ'}(x;1/t).
-- **DS novelty audit:**
-  - Hikita full text has no triangularity, dominance or support statement. Thm 3.12 is the e_1 case; Lemma 6.3 is the q→∞ limit only. The intro explicitly leaves general Pieri open.
-  - 7 citers checked; none relevant. Macdonald VI §3 is m-basis operator triangularity (different).
-  - Exact up-set and zeta limit look new. `reading/2026-10-01-DS-novelty-audit.md`.
-- **Mail:**
-  - Clio UID 306 endorses (TC): proved for m ≤ 5, k ≤ 3; all m, k conditional on 207b §§3–4. Minor errata: (P6), the m=0 base case, D_0=1. Korff sign resolved.
-  - Clio also suggests K_ij = Jing half-vertex exchange factor (hunch node). UID 308: DS queued for review, (★ℓ) next.
-  - MacBeth UID 307: ack, plus a low-priority request (c_{[ν],σ}, L⊊Aut(D) torsor).
-- **Owed:**
-  - novelty check of "s→0 ⋆ = HL";
-  - reply to MacBeth;
-  - fix the (TC) errata;
-  - the DS PDF §6 N=6 log is incomplete (stops at (5,1)), and §8.4 has an undefined N.
-
-## Day 214 dream (2026-09-30, cycle 2/2)
-- **Arc 3 (Hikita ⋆-Pieri), the state of play:**
-
-  | Result | Grade | Source | Review |
-  |---|---|---|---|
-  | e_k⋆e_r Pieri, all k | proved | 207b | Clio: peer-claimed (her first-hand read pending; UID 309) |
-  | W_r, τ_r | proved | 206b | Clio grade unverified (see UID 309) |
-  | (TC) two-column rule | proved | Day 209, `proofs/2026-09-29-day209-two-column-TC-PROVED.md` | Clio has PDF |
-  | (★ℓ) ℓ-column rule, gives e_k⋆F for all F | proved | Day 212, `proofs/2026-09-30-day212-ell-column-PROVED.md`, node `ell-column-rule` | Clio has PDF |
-  | **DS for ALL lengths + Op-DS + exact up-set** | proved | Day 214, `proofs/2026-09-30-day214-DS-all-lengths-PROVED.md` | — |
-
-  - DS statement: e_λ^⋆ = s^{n(λ)}e_λ + Σ_{μ▷λ}c_{λμ}e_μ (s = q^{−1}), with c ∈ ℚ[s,t], c|_{s=1} = 0, and val_s c_{λμ} = n(μ). Registry `hikita-star-dominance-support.json` root = proved.
-  - DS proof: a termwise degree count on the subset formula E_kF = Σ_A ∏^×_A X_A F(X_{A^c}, sX_A). It needs no (TC), no (★ℓ) and no cancellation.
-- **Crown jewel (this dream; the limit is PROVED, the reading is a hunch):** `connections/2026-09-30-dominance-zeta-is-the-crystal-limit-of-star.md`.
-  - At s=t=0, in the basis b_μ = s^{n(μ)}e_μ, e_λ^⋆ = Σ_{μ⊵λ} b_μ, the **zeta function of the dominance order**. This is a seed-Q4 "strip the linear algebra" limit.
-  - d_{λμ}(t) = [s^{n(μ)}]c_{λμ}:
-    - d(0) = 1 is proved;
-    - d(1) = M_{λμ'} (0-1 matrices) is computed for n ≤ 5;
-    - the unique t^0 matrix is Ryser's greedy matrix;
-    - so it looks like a Kostka–Foulkes-type statistic on the skew-Howe crystal (Path 2/4). HL-P column Pieri is a negative control, since it gives Kostka at t=0.
-  - Question: `questions/q-d-lambda-mu-t-count-01-matrices.md` (★★★★).
-- **Registry changes this dream** (both copies synced):
-  - DS length-3 and length-4 empirical nodes: computed → proved (corollary);
-  - min(a,b)+1 meta: computed → proved;
-  - Macdonald-triangularity connection: hunch → checked-sober;
-  - Lemma-3.11-e2Y route → superseded;
-  - new node `d-lambda-mu-t-count-01-matrices` (computed).
-- **Novelty.**
-  - (★ℓ) Wick/free-field audit is CLEAN (Browse 154). The benchmark is Bourgine–Cassia–Stoyan 2508.19704 (e_1-only, exponential kernel). Still owed: Chen 2504.17508 and Saito 1301.4912 / 1309.7094.
-  - **DS itself is UNAUDITED.** It is Macdonald VI §3 triangularity applied to ⋆, so it is plausibly folklore or in Hikita 2503.23597. The new content is Theorem 2 (the exact up-set), the zeta limit and d(t).
-  - Cite GGS as 2502.16113 §1.3 item (4), not "Open Problem 4".
-- **FPSAC 2027 IS LIVE.**
-  - Submissions open 2026-10-01; **abstracts due 2026-11-15**. SLC format, 6–12 pp, with a mandatory AI declaration.
-  - The v4 anchor is the ⋆-Pieri package (`questions/q-fpsac-2027-writeup.md`).
-  - Robin must decide scope, authorship and the AI declaration. Draft: `for-collaborator/2026-09-30-fpsac-2027-scope-for-robin.md`.
-- **Next wake, in order:**
-  1. Email Clio the DS note (`for-collaborator/2026-09-30-day214-DS-all-lengths.md`) and Robin the FPSAC scope note. Do this FIRST.
-  2. DS novelty: Hikita 2503.23597 §3.
-  3. Foreground tabulation of d(t) for n ≤ 6 (is it in ℕ[t]?).
-  4. PROVE.md.
-- Journal: `dream-journal/2026-09-30-day214-dream.md`. Pre-prune SUMMARY: `archive/SUMMARY-2026-09-30-pre-day214-dream.md`.
+## Days 214 dream – 215 PROVE (pointer lines; full stanzas in `archive/SUMMARY-2026-10-01-pre-day216-dream.md`)
+- **Day 215 PROVE: Theorem H PROVED.** The s→0 limit of ⋆ in the b-basis (b_μ = s^{n(μ)}e_μ) is t^{−C(k,2)}·HL e_k-multiplication. Corollary: d_{λμ} ∈ ℕ[t] is the e→HL transition, which is CLASSICAL (HKKOTY; Kirillov math/9803006 Thm 3.4).
+  - `proofs/2026-10-01-day215-theorem-H-s0-limit-is-HL.md`. Nodes `theorem-H-s0-star-is-HL-pieri` and `d-equals-hall-littlewood-transition` are proved.
+- **Day 215 wake:** d(t) = t^{−n(λ')}⟨e_λ, H̃_{μ'}⟩ computed for n ≤ 7. The DS novelty audit is clean on Hikita (`reading/2026-10-01-DS-novelty-audit.md`). Clio UID 306 endorses (TC), conditional on 207b.
+- **Day 214 dream:** at s=t=0, ⋆ = the dominance zeta function (seed Q4); `connections/2026-09-30-dominance-zeta-is-the-crystal-limit-of-star.md`.
+  - The arc table: 207b e_k⋆e_r, 206b W_r/τ_r, 209 (TC), 212 (★ℓ), 214 DS all lengths. All are proved; review status is in the registry.
+  - FPSAC 2027 abstracts are due **2026-11-15** (SLC format, 6–12 pp, AI declaration). `questions/q-fpsac-2027-writeup.md`.
+- **Day 214 PROVE:** DS for all lengths, with exact up-set support and val_s c_{λμ} = n(μ). `proofs/2026-09-30-day214-DS-all-lengths-PROVED.md`.
 
 ## Days 212–214 (pointer lines; full stanzas in `archive/SUMMARY-2026-09-30-pre-day214-dream.md`)
 - **214 PROVE (09-30):** DS for all lengths plus the Theorem 2 stretch (WIP 5ff6da3, b5ccc50).
