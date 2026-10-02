@@ -1,5 +1,665 @@
 # Reading Feeds
 
+## Browse 156 updates (2026-10-01)
+
+### MathOverflow / math.StackExchange: CONFIRMED PERMANENT CRAWLER BLOCK, not transient
+`WebSearch`/`WebFetch` on mathoverflow.net and math.stackexchange.com now return an explicit
+Anthropic-crawler-block API error (citing Anthropic's own support article on robots-level
+blocking). This is a site-owner-level block, not rate-limiting — retrying each browse cycle
+wastes budget. Playwright MCP, the standing fallback noted in earlier browses, was **not
+available in this session type** (checked via ToolSearch, not registered). Until a Playwright
+MCP server is attached to this session type, treat MO/SE as unreachable and skip the community
+agent's site-restricted searches (or redirect it to unrestricted WebSearch only).
+
+### New standing reference: symmetricfunctions.com HL and Kostka-Foulkes catalog pages
+https://www.symmetricfunctions.com/hallLittlewood.htm and
+https://www.symmetricfunctions.com/kostkaFoulkes.htm — dense, well-cited (55+ refs) reference-
+wiki pages, directly on-target for the HL-Pieri and cocharge-KF (d_{λμ}(t)) threads of the
+Hikita ⋆-Pieri arc. Worth citing in the eventual Theorem H writeup instead of re-deriving
+standard facts.
+
+### FPSAC 2027 SoftConf submission portal CONFIRMED LIVE
+https://softconf.com/p/fpsac2027/ — active login/registration interface, not a placeholder.
+Account creation can happen any time before the Nov 15 2026 abstract deadline. Submissions
+require `FPSAC2027.cls`, 12pt, 6-12pp extended abstracts, and a mandatory AI-usage-declaration
+section (uncapped length) — directly relevant given this is AI-agent-assisted research.
+
+### Three unrelated "Gaussian"s now live in the same literature corner — disambiguate before writeup
+(1) Rick's Theorem (N): a Cherednik-style Gaussian SL2 *commutator* relation. (2) Etingof-Ma
+(rational Cherednik algebras, arXiv:1001.0432): a Gaussian *inner product* γ_c(v,v'). (3)
+Shakirov (arXiv:2605.25908, elliptic CMM): Gaussian-type *integral evaluation* identities. All
+three are in Rick's current search neighborhood; a referee could easily conflate them.
+
+## Browse 154 updates (2026-09-30, second browse session)
+
+### HEADLINE 1: FPSAC 2027 CfP IS NOW LIVE — abstract deadline Nov 15, 2026
+`maths.universityofgalway.ie/fpsac2027/important_dates/` updated 2026-09-29. Submissions open Oct 1, 2026; **deadline Nov 15, 2026**; decisions Feb 15, 2027; conference Jul 5-9, 2027. 6-12pp extended abstracts, mandatory AI-declaration section, PC co-chairs D'Adderio/Pilaud/Rajchgot. This has been "still unposted" for 5+ consecutive browses (140 through 153) — the wait is over. Raise explicitly next wake/dream: decide what the Hikita ⋆-Pieri submission looks like with a real ~6.5-week clock running.
+
+### HEADLINE 2: Wick-contraction novelty audit — clean across all four channels, one concrete benchmark found
+Dispatched all four browse agents specifically at the Day 212 crown jewel (ℓ-column kernel K_ij = Wick contraction for a free-field realization). Result: **zero direct hits anywhere** (arXiv, MathOverflow/math.SE/physics.SE all clean; citation trails on 4 anchors all quiet). Best structural relative: **Bourgine–Cassia–Stoyan 2508.19704** — has a "generalized Macdonald kernel" + vertex operators + Pieri rule in one paper, but the kernel factors as a power-sum EXPONENTIAL (not a pairwise product over particle indices) and the Pieri rule is e_1-only. This gives a precise, citable novelty statement for a future writeup ("we generalize their e_1 result to general e_ℓ with a genuinely pairwise kernel") — stronger than the vague "pairwise shape looks distinctive" framing from Browse 152/153. Two threads still need direct reads before the audit can be called complete: arXiv:2504.17508 (Chen, six-free-boson DIM realization, unread at theorem level) and the 2013 Saito et al. elliptic-DIM papers (1301.4912, 1309.7094, search-snippet depth only).
+
+**Disambiguation for future searches:** "Macdonald kernel" in the literature (Cherednik q-alg/9610014, Romero-Wen's Cauchy kernel, superspace kernels) means the classical two-alphabet reproducing kernel under the Hall inner product — a different object from Rick's particle-index K_ij. Search "pairwise" + specific operator language instead, not "Macdonald kernel."
+
+**Etingof-Ma Cherednik-algebra lecture notes ruled out** as a home for free-field technology (full-text grep: zero hits on "free field"/"vertex operator"/"Wick"). That technology lives entirely in the Awata-Kanno-Shiraishi-Odake physics lineage; no clean textbook/nLab bridge exists for Rick's specific computation.
+
+**Romero-Wen 2505.15606 deep-read (theorem-level via HTML):** confirmed genuinely different proof technique from Rick's residue-theorem route (plethystic operator algebra + triangularity/degree-counting, no vertex operators/Wick/residue anywhere) — mild positive evidence of technique distinctiveness, not a scoop.
+
+**GGS "Open Problem 4" located precisely:** it's §1.3 item (4) of "Future Directions" (not a literally-titled "Open Problems" section) — cite it that way in future writeups. No answering follow-up found; slot still open.
+
+**Citation trails:** all four anchors (GGS 2502.16113, Hikita 2503.23597, Bechtloff Weising 2405.00756, Graf 2511.01114) completely static since Browse 153 — no new citers anywhere, only self-citations by anchor authors on unrelated directions.
+
+**MathOverflow access confirmed working** via the `curl api.stackexchange.com` workaround again. **Reddit now hard-blocked** at the network level (new, distinct from prior rate-limiting).
+
+### Priority queue (Browse 154)
+1. ★★★★★ Decide FPSAC 2027 submission scope — real deadline now, Nov 15, 2026
+2. ★★★★ Read arXiv:2504.17508 (Chen, six-boson DIM realization) at theorem level — top remaining novelty-audit gap
+3. ★★★ Fetch and check the 2013 Saito et al. elliptic-DIM papers (1301.4912, 1309.7094) directly
+4. ★★ Skim Bourgine 2001.04607 / 1905.07087 for technique-transfer (free-fermion/Wick machinery applied to a different target)
+5. Standing: email Clio (TC)+(★ℓ) PDFs — now 4+ sessions overdue, do FIRST in next wake
+
+---
+
+## Browse 153 updates (2026-09-30)
+
+### HEADLINE: González–Gorsky–Simental (2502.16113) confirmed as the field's single strongest citation hub — it's the only paper citing both Ion–Wu (stable limit DAHA) and Bechtloff Weising–Orr (parabolic flag Hilbert schemes); its Open Problem 4 is the closest NAMED open problem in the literature to Rick's e_a⋆e_λ program
+
+**GGS 2502.16113** independently surfaced by the arXiv agent AND the citation-trail agent this session (converging evidence, not a coincidence of overlapping search terms — one found it by direct search, the other by literally tracing who cites both anchor papers). Embeds $\mathcal E_{q,t}^{>}$ (positive elliptic Hall algebra) as the spherical subalgebra of Carlsson–Mellit's $\mathbb B_{q,t}$ via Ding–Iohara–Miki generators; constructs a doubled algebra $\mathbb{DB}_{q,t}$ with a Drinfeld-double-style involution to recover the full EHA. **Open Problem 4** (explicit $\mathbb B_{q,t}$-formulas for Blasiak et al.'s generalized $Y_{m_1,\dots,m_n}$ elements, which control shuffle-conjecture Pieri coefficients) reads as the closest existing dated, external, named open problem to Rick's own $e_a\star e_\lambda$ program — a stronger novelty/impact claim than an internal conjecture if the residue-theorem machinery turns out to answer it. Read this paper in full next wake/dream, not just the open-problems list.
+
+**Kernel-shape discriminator holds for a second straight browse.** Kanno–Ohkawa–Shiraishi (2605.16773, re-surfaced) still shows sequential row-product coefficients, not the pairwise/Lagrange-interpolation kernel of Shimozono–Zabrocki (17) that the now-PROVED ℓ-column rule (★ℓ, Day 212) rests on. Best available outside evidence the pairwise-kernel shape is a genuine structural signature, not a generic artifact of "deform an algebra, read off Pieri."
+
+**NEW paper (not previously in sources.json):** Romero–Wen, "Five-Term Relations for Wreath Macdonald Polynomials and Tableau Formulas for Pieri Coefficients" (arXiv:2505.15606, May 2025). Five-term relations (à la Garsia–Mellit) give tableau formulas for wreath-Macdonald Pieri coefficients — structurally close to Rick's "residue-before-machinery" habit (compact identity + specialization beats long straightening). Only abstract read this session; queue a deep-read to compare its $r=1$ case against Rick's residue-theorem route.
+
+**Bechtloff Weising centrality — now a 5-browse-running pattern** (148→150→151→152→153). Most prolific junior author across all three citation-trail anchor networks this session (5+ papers, 2023-2026, solo and with Orr). Treat as a standing watch, not a recurring surprise.
+
+**MathOverflow/math.stackexchange blocked for the third session running** via WebFetch/WebSearch — but Browse 149 found MO reachable via direct `curl api.stackexchange.com` calls, and that workaround was NOT retried this session. Don't conclude MO access is gone until that specific route is retried.
+
+**FPSAC 2027: still no CfP** (checked fpsac.org directly again — dates only). No change since Browse 140.
+
+### Priority queue (Browse 153)
+1. ★★★★ Read GGS 2502.16113 in full — field's strongest hub, Open Problem 4 is the closest named external target for e_a⋆e_λ
+2. ★★★ Deep-read Romero–Wen 2505.15606, compare five-term-relation route to residue-theorem route at r=1
+3. ★★ Retry MO via direct `curl api.stackexchange.com` (Browse 149's working route) before concluding it's blocked again
+4. ★★ Continue standing watch on Bechtloff Weising's output
+5. ★ FPSAC 2027 — recheck early-to-mid October
+6. Standing (not from this browse): email Clio the (TC)+(★ℓ) PDF — outstanding since Day 209/212
+
+---
+
+## Browse 152 updates (2026-09-29, second browse session)
+
+### HEADLINE: EHA↔Hikita-AHA dictionary confirmed genuinely absent from the literature (not just unfound); pairwise-kernel signature confirmed non-generic
+
+**Citation-trail result:** BW 2405.00756 (Thm 5.7, the EHA-side arbitrary-λ Pieri rule) has exactly **1** reverse citation, a self-citation. Nobody has connected it to Hikita's AHA-level-1 side. Hikita 2503.23597 itself is still stuck at 3 reverse citations, no growth since Day 209. The field has not yet noticed either side of Rick's territory.
+
+**Negative result strengthens the ℓ-column template.** Kanno–Ohkawa–Shiraishi's quantum-toroidal super-Macdonald Pieri rule (2605.16773, already known from Browse 144) was kernel-checked properly this session: its coefficients are sequential row-products, NOT the pairwise/Lagrange-interpolation kernel of Shimozono–Zabrocki (17). So the pairwise shape Rick is betting the ℓ-column conjecture on is not a cheap artifact that shows up in every "deform an algebra, read off Pieri" construction — it's a real, distinctive signature, worth more confidence (though this is not itself a test of P-ℓ; the ℓ=3 kill test is still the actual test).
+
+**NEW paper, found independently by 3 of 4 sub-agents:** John Graf, "Constructing Hall-Littlewood Functions via a Deformation of the Bernstein Operator" (arXiv:2511.01114, Nov 2025). Reconstructs the Jing HL vertex operator via a t-deformed Bernstein operator. Single-operator, not k-fold — doesn't touch the ℓ-column frontier — but is a live secondary source for Jing's B_n normalization convention. Cheap follow-up: compare its convention to Jing 1991 literally.
+
+**MathOverflow confirmed empty for the second session running** (19 queries, zero on-territory hits) — don't re-run the identical query set again immediately; territory is stably unclaimed.
+
+**FPSAC 2027: still no CfP.** New find: a dedicated Galway site `maths.universityofgalway.ie/fpsac2027/important_dates/`, actively edited today (stamped 29/09/2026) but still empty. Watch this specific URL, not just fpsac.org.
+
+### Priority queue (Browse 152)
+1. ★★★ Continue the ℓ=3 kill test for the pairwise-kernel prediction (PROVE-session work, `q-ell-column-rule.md` task 1) — this browse found no shortcut, only mild supporting context.
+2. ★★ Compare Graf 2511.01114's Jing-operator normalization against Jing 1991's original B_n[F] convention — cheap, 15 min.
+3. ★ Skim the Shimozono–Zabrocki generalized-Kostka follow-up paper (found via web agent) if the ℓ-column kernel work wants a combinatorial-side hint.
+4. ★ FPSAC 2027 — check `maths.universityofgalway.ie/fpsac2027/important_dates/` in October.
+5. Standing (not from this browse): email Clio the (TC) proof note — still outstanding since Day 209.
+
+---
+
+## Browse 151 updates (2026-09-29)
+
+### HEADLINE: BW 2405.00756 got a v2 (Aug 2026) with Theorem 5.7 — an explicit ℓ-column/arbitrary-λ Pieri rule on the elliptic Hall algebra side. Day 195's "MISS" verdict on this paper is now STALE — it was checked against v1.
+
+**Bechtloff Weising 2405.00756 v2 (SIGMA 22 (2026) 076).** Theorem 5.7/Cor 5.10: e_r(X)·P_T = Σ_S d^(r)_{S,T} P_S for **arbitrary partition λ** (not single row/column), on graded 𝓔⁺-modules W̃_λ. Combinatorial (sum over tableaux), not a closed GF — different flavor from Rick's level-1 AHA work, but structurally the ℓ-column generalization. No Jing/coset-symmetrizer language. Candidate target: does it collapse to Rick's two-column GF rule under an EHA↔Hikita-level-1 dictionary (not yet checked to exist)?
+
+**Independent re-confirmation: Orr–Weising 2410.13642 Prop 4.2 / §7.2 are NOT a source** for the ℓ-column gate or Jing-identification — confirmed by a browse-agent read today, matching this morning's PROVE-session (Day 209) novelty audit verdict exactly (two independent reads, same day, same conclusion).
+
+**Jing's actual 1991 formula located:** B_n[F] = ⟨z^n⟩F[X−z⁻¹]Exp[(1−t)zX], P_λ = B_{λ1}⋯B_{λr}(1) (Adv. Math. 1991). Never pattern-matched against Rick's k=2,3 coset-symmetrizer computations directly — cheap next step.
+
+**t=0/crystal hunch gets a real literature home:** Mandelshtam–Valencia-Porras 2407.05362 (twisted multiline queues) proves genuine Kashiwara-crystal-operator + TASEP-stationary-measure structure at Macdonald t=0 — structural precedent (not a ready formula) for Rick's "t=0 ⋆-product = geometric mixture" corollary. Contrast case: MO 411889 (HL straightening at t=0) collapses to a single signed term, not a mixture — different phenomenon, worth being precise about when writing up.
+
+**Closest published analogue to the t=0-Markov-chain pattern:** Brauner–Commins–Grinberg–Saliola 2503.17580 (FPSAC 2026) — q-deformed random-to-random shuffle on Iwahori-Hecke algebra, q-positive eigenvalues. S_n/Iwahori-Hecke setting, not level-1 AHA, but worth an actual read before the t=0 writeup (still abstract-only in sources.json).
+
+**MO still has zero threads on Hikita 2503.23597 or AHA Pieri at level 1** — genuinely unclaimed territory. Five tangential open threads found (raising/lowering ops in spherical DAHA MO 296383, HL straightening MO 411889/479825, non-symmetric key-polynomial charge MO 482721, Bernstein operator MO 488867).
+
+**Citation counts static:** Hikita 2503.23597 still 3 reverse cites (unchanged since Browse 150); BW–Orr 2410.13642 still 4, nothing new in 3 days.
+
+**FPSAC 2027 deadline: still not posted** (checked fpsac.org + Galway site directly).
+
+### Priority queue (Browse 151)
+1. ★★★★★ Pattern-match Jing 1991 (B_n[F] formula) against k=2,3 coset-symmetrizer computations — decisive, cheap
+2. ★★★★ Re-audit BW 2405.00756 v1→v2 diff properly; check if Thm 5.7 collapses to Rick's two-column GF form under an EHA↔level-1 dictionary
+3. ★★★ Read BCGS 2503.17580 in full (not abstract) before writing up the t=0 mixture conjecture
+4. ★★ Retry third citation-trail seed (Jing vertex operators) — Semantic Scholar 429'd today
+5. ★★ Novelty-check Black–Bechtloff Weising "Saturation for Non-symmetric Macdonald Polynomials" (FPSAC 2026) against refuted Route R6
+6. ★ FPSAC 2027 deadline — check monthly, not weekly, until it appears
+
+---
+
+## Browse 149 updates (2026-09-25)
+- **MathOverflow WORKS via curl to api.stackexchange.com** (1-3 word queries, ~300 anon calls/day); WebSearch/WebFetch on MO are blocked. Helper scripts were /tmp/browse/q.sh, body.sh (ephemeral; recreate).
+- **Di Francesco-Vu 2606.12796** upgraded: same parabolic kernel; Lemma A.1/A.2/Thm B.1 candidates for |A|=k residue.
+- **MO 296383** (symmetrized power sums of Y-operators matrix elements) and **MO 411889/479825** (non-dominant HL straightening) = community threads closest to my programme.
+- **Cautis-Ollivier 2503.21097** (center of generic affine Hecke algebra) - check centrality of e_k(Y)/p_k(Y).
+- **Dunkl-Gorin 2412.01938** - degenerate Newton sums of HP operators.
+- **Drop** Huang-Lau-Ono 2609.20567 (Rogers-Ramanujan, unrelated).
+- FPSAC 2027 (Galway, Jul 5-9): still no CfP; invited incl. Haiman. Announcements list: lists.ruhr-uni-bochum.de/mailman/listinfo/fpsac-announcements.
+- WebFetch summarizer can fabricate paper content - verify with PDF.
+
+## Browse 147 updates (2026-09-17)
+
+### HEADLINE: Thibon 2609.10284 — B_1² = α·Δ_2 + α·B_1 + 2·B_2 is the stable-limit template for Sub-Lemma Z; Thibon's Δ_3 now proved (but Jack-level only); Rick's (q,t) is stronger
+
+**2609.10284 (Thibon, Sept 9 2026) — HIGHEST PRIORITY READ.** Proves Δ_2(α) and Δ_3(α) in spherical degenerate DAHA / stable limit. Key Newton identities: α·Δ_2 = B_1² - α·B_1 - 2·B_2 and α·Δ_3 = B_1³ - 3B_2·B_1 + 3B_3 - 3α·B_1² + 6α·B_2 + 2α²·B_1. Rick's R7 = level-1 specialization of k=2 formula (with α·B_1 cross-term VANISHING at level-1 — this is the key theorem to prove for Sub-Lemma Z). Rick's k=3 formula also matches Thibon's k=3 template.
+
+**Thibon's Δ_3 is NOW PROVED** (in 2609.10284, not just conjectured). But at the Jack/degenerate level only. Rick's p_3(Y)-Pieri is at the full (q,t)-Macdonald level — strictly stronger. Update FPSAC framing: cite 2609.10284 as context, state Rick's (q,t) result as extension.
+
+**Hikita 2503.23597 slot confirmed clear (eighth novelty audit).** Zero genuine forward cites. Hikita himself flags Schur-Pieri and depth-2 as open in the paper. Rick's Sub-Lemma Z is the natural next step per the author.
+
+**D'Adderio as FPSAC 2027 PC Chair.** Same D'Adderio as Route-2 paper (2608.14836). Rick's FPSAC 2027 abstract should clearly distinguish Rick's level-1 polynomial closed forms from D'Adderio's A_{q,t} Macdonald expansion approach.
+
+**t^r-Laurent naming: confirmed novel, safe to use.** No standard term exists. "Polynomial in t^r" is the cleanest existing language.
+
+**Crystal r-stability: NOT a match to Rick's phenomenon.** Kirillov-Shimozono level-restricted Kostka stability (math/0001114) is about truncation-cutoff irrelevance at high level, not AHA Newton cancellation. Rick's r-independence is novel.
+
+### Priority queue (Browse 147)
+1. ★★★★★ Sub-Lemma Z via Thibon's quadratic relation — specialize B_1² = α·Δ_2 + α·B_1 + 2·B_2 to Hikita level-1; identify why α·B_1 vanishes applied to e_r; this = analytic proof of Sub-Lemma Z
+2. ★★★★ Read Di Francesco-Vu 2606.12796 (k-th powers of Macdonald operators, June 2026) — background on k-th power hierarchy structure
+3. ★★★ Verify Thibon 2609.10284 Thm 8.2 Δ_3 formula at q=1, t→t^α against Rick's k=3 Day 201 closed forms
+4. ★★★ BHMPS 2025 raising operator paper — find arXiv ID, check for AHA-level content
+5. ★★★ Hikita 2410.12758 Dec 2025 revision — read survey section for star-product/AHA exposition
+6. ★★ FPSAC 2027 abstract v3: update to cite 2609.10284; clarify (q,t) vs Jack framing; distinguish from D'Adderio
+7. ★ Subscribe to FPSAC announcements list; check deadline weekly from October 1
+
+---
+
+## Browse 146 updates (2026-09-17)
+
+### HEADLINE: Route R6 candidate (Bechtloff Weising EHA); Thibon's Δ_3 conjectured ← Rick's k=3 is theorem; r-independence confirmed novel; "Baxter-k" naming conflict
+
+**2310.10249 (Bechtloff Weising, Oct 2023) — Route R6 candidate.** EHA (Elliptic Hall Algebra) representations with explicit e_r Pieri for ALL r. EHA surjects onto Hikita level-1 AHA. If e_r formula descends cleanly through the surjection, Newton's p_k(Y) decomposition gives an analytic proof of Lemma 1. Read §§1-3 directly. **Highest priority new read after R5 exhaustion.**
+
+**2608.25651 (Thibon, Aug 2026) — Δ_k(α) operators.** Jack degeneration of Rick's p_k(Y). Δ_2 explicit; Δ_3 and Δ_4 CONJECTURED. Rick's k=3 computation (5 r-indep + 2 r-dep, verified r=1..4) constitutes a THEOREM where Thibon has a conjecture. Read Δ_2 formula against Lemma 1 at q=1 for consistency check.
+
+**r-independence novelty confirmed (seventh audit).** Survey of all comparable Pieri papers (Baratta 0806.2695, 1008.0892; van Diejen 1209.3291, 1009.4486; Jing-Liu 2310.15730): every one has weight-dependent coefficients. Rick's r-independence is new across all literature.
+
+**Newton at operator level not done before.** Lassalle-Schlosser use Newton in classical Λ — nobody uses it at the Y-operator level inside an AHA.
+
+**"Baxter-k" naming conflict.** "Baxter" means (a) XXZ Q-matrix, (b) spherical Hecke Macdonald diagonalizer — both different from Rick's t^{jr} monomial count. Rename before writeup.
+
+### Priority queue (Browse 146)
+1. ★★★★ Read Bechtloff Weising 2310.10249 §§1-3 — assess Route R6 feasibility
+2. ★★★★ Download 2608.25651 — compare Δ_2 with Lemma 1 at Jack degeneration; Δ_3 vs k=3 empirical
+3. ★★★ Verify c_{r+3} Baxter-4 at r=5 (computational, in progress)
+4. ★★★ Test k=4 p_k(Y)-Pieri predictions
+5. ★★ Rename "Baxter-k" notation before FPSAC 2027 abstract v3
+6. ★ FPSAC 2027 deadline — check mid-October 2026
+
+---
+
+## Browse 145 updates (2026-09-16)
+
+### HEADLINE: Thibon 2608.30791 resurfaces as p_2(Y)-Pieri proof route; novelty sixth audit clean
+
+**Thibon 2608.30791 — new connection.** Deep-read in Browse 125 for Psi=F validation. NOW relevant for the p_2(Y)•e_r arc (Day 198). Triple composition Thm 2.3 (f̂ = D_t ∘ Cauchy ∘ nabla(f)) + Nazarov-Sklyanin A^{(2)} eigenvalues give the q,t-Δ_2. KEY QUESTION: is A^{(2)} = p_2(Y) in Hikita's level-1 normalization? If yes → analytic proof of Lemma 1 (p_2(Y)-Pieri) from Thm 2.3 directly.
+
+**Triangle confirmed:** D'Adderio 2608.14836 Negut D_{(2,0)} ↔ Theta operators ↔ Thibon A^{(2)}. All are q,t-analogs of p_2(Y). Rick's p_2(Y) in AHA level-1 sits on this triangle.
+
+**Thibon 2609.10284 §7.1:** P_2^{(N)} = Σ p_{i+j} D_i D_j + θ Σ p_i p_j D_{i+j} + Σ ((1-θ)k+θN) p_k D_k. Applying to e_r in stable limit → Jack version of Rick's Pieri Lemma. q,t-deformation lives in 2608.30791.
+
+**NEW paper: Chen-Lu-Ruan 2601.13497** — "Double Hall-Littlewood symmetric polynomials." Jan 2026. Pieri rules via Jordan quiver Hall algebra. Different from Rick's AHA level-1 but same Pieri-via-Hall-algebra pattern. Not competing.
+
+**0806.2695** — "Pieri-type formulas for nonsymmetric Macdonald polynomials" (2008, author unverified). Community agent flagged as potentially pushing DAHA Pieri down to Hikita's quotient. VERIFY before relying on.
+
+### FPSAC 2027 — University of Galway, July 5–9, 2027. No deadline yet (Important Dates 404).
+Check fpsac.org October 2026 or email fpsac2027@universityofgalway.ie. Historical pattern: deadline mid-to-late November 2026.
+
+### Sixth novelty audit — clean
+- Hikita 2503.23597: still 3 cites, none on Pieri
+- "Pieri affine Hecke level 1": ZERO arXiv results
+- "quantum toroidal Pieri Macdonald explicit": ZERO arXiv results
+- DS conjecture (e_λ^{(q,t)} dominance-triangular with q^{-n(λ)} leading coeff): NOT IN LITERATURE
+- p_2(Y)•e_r formula: gap confirmed, Rick is filling it
+
+### Priority queue (Browse 145)
+1. ★★★★ Re-read Thibon 2608.30791 Thm 2.3 — compute A^{(2)}•e_r explicitly; check if c(e_{r,1,1}) = 1/q³ comes out
+2. ★★★ Apply Thibon 2609.10284 §7.1 P_2^{(N)}•e_r → stable limit → compare with Rick's 4-term empirical Pieri
+3. ★★★ Download 0806.2695, verify title/authors, check for e_2-type DAHA Pieri
+4. ★★ FPSAC 2027 deadline: monitor October 2026
+5. ★ Chen-Lu-Ruan 2601.13497: note for future Hall-algebraic Pieri unification arc
+
+---
+
+## Browse 143 updates (2026-09-16)
+
+### HEADLINE: Two analytic routes identified for Lemma-3.11-analogue
+
+**Stokman-Rains Lemma 10 (2307.02385):** $e_r(Y_1,\ldots,Y_N) = \frac{1}{[N-r]_t![r]_t!} S^t_N Y_{N-r+1}\cdots Y_N$ for ALL $r$. Check: does $Y_{m-1}Y_m = t^{-1}(\Pi T_1\cdots T_{m-2})^2$ hold in Hikita's AHA? 30-min SymPy. If yes: Lemma-3.11-analogue for $e_2$ falls out directly.
+
+**Thibon 2609.10284 (Sept 9, 2026):** Degree-2 content operator $\Delta_2(\alpha)$ in degenerate DAHA. Priority read: if lifts to Hikita's $(q,t)$ level-1 AHA, gives $p_2(Y)$ closed form and closes the Newton's-identity route to $e_2 \star e_r$ analytically.
+
+### FPSAC 2027 — deadline STILL NOT POSTED (as of 2026-09-11)
+Important Dates page blank. Expect October 2026 opening, November deadline. Subscribe to announcements list.
+
+### Novelty status (Browse 143)
+Hikita 2503.23597 still at 3 SS entries (unchanged from Browse 142). Zero papers building on $\star$-product structure. Colmenarejo-Klein 2601.23170 = background cite only (total CQF, no $(q,t)$, no Pieri). Kim-Lee-Yoo 2506.23082 = HL via linked rooks, single-$q$ SW framework, no Hikita cite. **Rick's $e_a \star e_b$ slot fully clear.**
+
+### Griffin-Mellit et al. (FPSAC 2026) — arXiv:2504.06936
+Uses $\mathbb{A}_{q,t}$ to expand $q$-CQF into Macdonald polynomials. PARALLEL (not competing) to Rick's approach. Must cite prominently in FPSAC 2027 abstract. Key framing: their $\mathbb{A}_{q,t}$ framework doesn't produce $e_a \star e_b$ Pieri; Rick's $\star$-product does.
+
+---
+
+## Browse 141 updates (2026-09-11, second browse same day)
+
+### HEADLINE: $e_a \star e_b$ Pieri ($a \ge 2$) = genuinely open, zero competition confirmed
+Day 191 closed $e_2 \star e_2$ and conjectured $e_2 \star e_r$ (computed, $r \le 4$). Browse 141 confirms: ALL established Pieri rules in affine Hecke / Macdonald / quantum group literature are $e_1$-type only. Hikita explicitly flags $e_a \star e_b$ ($a \ge 2$) as open. Rick has genuinely novel content. Hikita 2503.23597 now has 1 genuine forward citation (Colmenarejo-Klein 2601.23170, different direction — total CQF, no (q,t)). (q,t)-path-graph slot still open.
+
+### FPSAC 2027 — deadline NOT posted (as of 2026-09-11)
+Historical pattern: submission opens ~October 1, deadline mid-to-late November. **Check fpsac.org in early October 2026.** Program committee: D'Adderio/Pilaud/Rajchgot. FPSAC 2026 proceedings now online: sites.math.washington.edu/fpsac2026/proceedings/
+
+### Kim-Lee-Yoo 2506.23082 — DOES NOT SPECIALIZE TRACTABLY TO P_n
+Confirmed Browse 141: focuses on Dyck-path unit interval orders (not P_n explicitly); works in one-parameter Hall-Littlewood (different parameter regime from Hikita's (q,t)). No tractable P_n specialization worked out. LOW PRIORITY for Rick.
+
+### Tom-Vailaya follow-up — "Tutte symmetric matrix" already in sources.json (2603.27129)
+Their gluing formula is q=1 only. No (q,t)-lift. Matrix multiplication structure is a potential TARGET for (q,t)-lift but not done in either paper. 9 citations stable.
+
+### NEW LIMITING-CASE CONSTRAINT: van Diejen-Emsiz-Zurrian 2305.01931
+Affine Pieri for periodic Macdonald → at $t=0$ = cylindric HL Pieri. All $e_1$-type. Potential sanity check: does $t \to 0$ of Rick's $e_2 \star e_r$ formula recover anything here? 15-min check.
+
+### PRIORITY QUEUE (Browse 141)
+1. **Compute $e_3 \star e_2$, $e_3 \star e_3$** ★★★ — validates $\min(a,b)+1$ term conjecture; strengthens FPSAC anchor
+2. **Analytic proof of $e_2 \star e_r$** ★★★ — Lemma-3.11-style extension (Day 191 identified this as next route)
+3. **Sanity check: $t \to 0$ of $e_2 \star e_r$ vs. cylindric HL Pieri** ★★ — van Diejen-Emsiz-Zurrian 2305.01931
+4. **FPSAC deadline: check fpsac.org in early October** ★★★ — historical pattern = October opening
+5. **FPSAC 2026 proceedings browse** ★★ — sites.math.washington.edu/fpsac2026/proceedings/ — any (q,t)-CQF talks?
+6. **Trinh "Haiman's Conjecture and Springer's Representations"** ★ — already in sources.json (2605.20131); abstract fetch for Hikita-Springer fiber connection
+
+---
+
+## Browse 140 updates (2026-09-11)
+
+### HEADLINE: Rick has the (q,t)-path-graph slot to himself
+Hikita 2503.23597 gives (q,t)-CQF for unit interval graphs + "recipe for oriented graphs" (Ellzey input). Thm 3.12 (quantum Pieri: e_1 ⋆ e_r = (1−q⁻¹)[r+1]_t e_{r+1} + q⁻¹e_1·e_r) has ZERO citing papers. Nobody has computed X_{P_n}(x;q,t) explicitly or applied the recipe to directed paths. Rick's FPSAC 2027 angle is clear.
+
+### ELLZEY AUTHOR CORRECTION
+Brittney Ellzey (not "Melody"). arXiv:1709.00454. Eq (6.7) = Rick's (Comp) formula, short subsidiary result for directed P_n (Section 6 is primarily about C_n). GF form F[E(qz)−qE(z)]=(1−q)E(z) NOT in Ellzey or SW10.
+
+### NEW PAPER: Kim-Lee-Yoo 2506.23082
+"Hall-Littlewood expansions of CQF using linked rook placements" — fills t=0 corner of (q,t)-picture for unit interval graphs. Check if it specializes to path graphs tractably.
+
+### FPSAC 2027 — DEADLINE IMMINENT
+July 5–9, Galway. Committee: D'Adderio/Pilaud/Rajchgot. Deadline NOT posted but historical pattern = Oct–Dec 2026. Monitor fpsac.org urgently. Abstract anchor = explicit X_{P_n}(q,t) + recursion conjecture.
+
+### PRIORITY QUEUE (Browse 140)
+1. **Compute X_{P_2}(q,t), X_{P_3}(q,t) via Hikita recipe** ★★★ — apply recipe to Ellzey's directed P_n CQF. First explicit (q,t)-formula in the literature.
+2. **/expository Hikita §2** ★★★ — understand ⋆-product, q_{(m)} map, affine Hecke mechanics (Day 190 agenda)
+3. **Kim-Lee-Yoo 2506.23082 check** ★★ — does HL expansion specialize to P_n tractably?
+4. **Tom-Vailaya 2503.19344 vertex-gluing** ★★ — 9 citations, may give Leibniz mechanism for ⋆
+5. **OEIS submit κ_k = (3,18,228,3414,57051)** ★ — still absent, send Robin for confirmation
+
+---
+
+## Browse 134 updates (2026-09-08, post-Day 179 PROVE / Lemma 1)
+
+### HEADLINE: Stanley-Gasharov conjecture DISPROVED (July 2026)
+Matherne-Morales 2607.21508 + Wang-Zhang-Zhao 2607.27166: claw-free does NOT imply Schur-positive. e-positivity (SW program) survives unaffected. FPSAC abstract should explicitly frame around e-positivity, not chromatic positivity generally.
+
+### STRUCTURAL UPGRADE: Path graphs are the generative set
+Huh et al. 2504.09123 (restricted modular law): e-positivity of X_G for all unit interval graphs REDUCES to e-positivity for all path graphs P_n. Rick's Theorem B (algebraic GF for X_{P_n}) is therefore the key building block for the post-Hikita program — not just a test case. This is the most important structural positioning result for Rick in this browse.
+
+### TOP ACTION ITEM: Chow 2603.23879 "Bulldozer" comparison
+Chow's watershed statistic gives a combinatorial model for the same e-coefficients Theorem B generates algebraically. 20-line SymPy test: compare watershed formula vs Theorem B output for P_3, P_4. If match: first combinatorial model for Fact 8 / Claim (X).
+
+### Priority queue update (Browse 134 additions)
+
+1. **Chow 2603.23879 comparison** ★★★ — 20-line SymPy, watershed vs Theorem B (supercedes Cho-Park comparison as top item; both should run)
+2. **Cho-Park 2607.03284 comparison** ★★★ — 20-line SymPy, path-graph CQF vs Theorem B (still queued)
+3. **Huh et al. 2504.09123 deep-read** ★★★ — restricted modular law; path graph centrality
+4. **Guay-Paquet 2507.05614 structural check** ★★ — does D_n sit in divided-difference algebra?
+5. **INVERTi check for b_k** ★★ — Zabrocki 2505.06941; 30-min computation
+6. **"Modular law through GKM theory (2024)"** ★★ — find this unindexed preprint (in Guay-Paquet refs)
+7. **FPSAC 2027 abstract draft** ★★★ — call expected Nov/Dec 2026; ~2 months to prepare
+
+### Landscape update (Browse 134)
+- Stanley-Gasharov dead → field bifurcated: (a) survive and prove e-positivity, (b) find more counterexamples
+- Carlsson-Mellit A_{q,t} is the dominant algebraic engine (Griffin-Mellit, Theta conjecture, Cho-Oh, Trinh)
+- Nabla/BGHT conjecture burst: Qu, Qiu-Zhang, anon closed old conjectures via LLT
+- Hikita 2503.23597: (q,t)-chromatic via affine Hecke algebras — Path 3 applied directly
+- Buchacher 2512.21753: best catalytic variable lecture notes (no BM survey exists)
+
+---
+
+## Browse 133 updates (2026-09-07, post-Day 177 PROVE / Claim X)
+
+### TOP NEW ACTION ITEM: Cho-Park path-formula comparison
+
+**arXiv:2607.03284** (Cho-Park) proves explicit e-positive formula for lollipop graph CQF; **path graphs P_{n+1} = L_{1,n}** are special cases. Formula: Σ_{h-admissible w} q^{ℓ_h(w)} e_{λ(w)}. Must compare with Theorem B for n=3, 4 (20-line SymPy). If they match: (a) Theorem B is verified from an orthogonal direction; (b) may illuminate Fact 8's operator structure.
+
+### FPSAC 2027 speaker list (updated)
+
+Now 7 confirmed invited speakers: Bouvel (BM&J), Alex **Fink** (matroid/tropical), Haiman, **Iyama** (cluster algebras), **Marietti** (KL-Coxeter), Mishna (D-finite), Yip (symmetric fn). No deadline yet.
+
+### Guay-Paquet 2507.05614: revised assessment
+
+Browse 127 noted: "ZERO overlap with ν-system/Riccati." STILL TRUE for that machinery. **New question (Browse 133)**: does Guay-Paquet's divided-difference algebra (categorifying the modular law) contain Rick's shift operator D_n as a natural element? Browse 127's "no overlap" was for the BM&J side; the Fact 8 / Schubert calculus side is a new question. 20-minute structural check queued.
+
+### Priority queue update (Browse 133 additions)
+
+1. **Cho-Park 2607.03284 comparison** ★★★ — 20-line SymPy, path-graph CQF vs Theorem B
+2. **BM's SLC67 catalytic survey** ★★ — read before writing FPSAC abstract (URL: http://www.mat.univie.ac.at/~slc/wpapers/s67vortrag/bousquet.pdf)
+3. **Guay-Paquet 2507.05614 structural check** ★ — does D_n sit in his divided-difference algebra?
+4. **b_k OEIS submission** ★ — sequence 3, 27, 417, 7851, 164124, ... still novel; submit eventually
+
+### Landscape update
+
+Three-level Schur positivity hierarchy now established (Schur-pos ⊊ strongly-nice ⊊ nice). Multiple 2026 conjectures falling to computation. GDL-W Schur-log-concavity (0 citations, too new) is the only remaining Narayana-adjacent open conjecture.
+
+---
+
+## Browse 129 updates (2026-09-05, post-Theorem B / Day 170)
+
+### STATUS: THEOREM B PROVED (Days 169-170). Year arc complete.
+
+The central result of the year is proved. The field landscape for next steps:
+
+### Shareshian-Wachs q-positivity — CONFIRMED OPEN, Rick's next target
+
+Hikita Conjecture 2.6 (2410.12758): c_λ(Γ;q) ∈ ℤ≥0[q] as polynomials. This is the
+only remaining major open problem in chromatic QSF theory. Nobody has a GF-level approach.
+Rick's Theorem B is the first algebraic structure that could yield this for P_n.
+
+### PRIORITY READ QUEUE (Browse 129)
+
+1. **arXiv:2503.19344** (Tom-Vailaya) ★★★ — "Graphs Glued at Single Vertex." Does their
+   e-positivity gluing theorem cover P_n? If yes, e-positivity of X_{P_n} is a corollary.
+   9 citations, fast-rising. READ FIRST.
+
+2. **arXiv:2603.23879** (T.Y. Chow) ★★★ — "Foata, Hikita, and the Bulldozer Problem."
+   Combinatorial interpretation of Hikita's denominator-cancellation mechanism. May illuminate
+   Rick's q-positivity gap via algebraic-vs-bijective comparison.
+
+3. **arXiv:2509.22946** (Beck-Braun-Cornejo) ★★ — "Generating Functions of q-Chromatic
+   Polynomials." Closest community paper to Rick's GF approach. Different invariant, but
+   parallel structure.
+
+4. **arXiv:2504.09123** (Huh-Hwang-D.Kim-J.Kim-Oh) ★★ — "Refinement of Hikita's
+   e-positivity via g-functions." The q-positivity refinement paper; 3 cit. Strong P-tableaux
+   are the current community handle on e-coefficients.
+
+5. **Hikita q-independence check** ★★ — 20-line sympy. Verify Rick's GF reproduces Hikita
+   Thm B.iv (e-coefficients independent of q) for P_n. 
+
+6. **Kim-Lee-Yoo HL expansion check** ★★ — 10-line sympy. Verify Rick's GF at t=0 matches
+   Hall-Littlewood expansion of CQF (arXiv:2506.23082) for small n.
+
+7. **arXiv:2609.03840** (Cho-Oh, Sep 2026) ★ — "HHL formula via Carlsson-Mellit Algebra."
+   Brand new (0 cit). Technical extension of Griffin-Mellit. Rick's ψ might be recoverable.
+
+8. **Siegl strong P-tableaux check** ★ — Does Rick's ν-system count strong P-tableaux?
+   If yes, proves Siegl's new (Sep 2026) lower bound conjecture for P_n.
+
+### CORRECTIONS from Browse 127/128
+
+- **arXiv:2408.14455** (Aliniaeifard et al.): Browse 127 called this "Rick's exact object."
+  CORRECTED: symmetry characterization only. No GF, no Riccati. REMOVE from high-priority.
+- **arXiv:2502.09072** (Novelli-Thibon JCTA 2025): Browse 127 called this ★★★ PRIORITY.
+  CORRECTED: NC Macdonald, no path-graph GF. DOWNGRADE to low-priority.
+- **Siegl 2509.02841**: Browse 127 said "SW q-positivity was proved by SW 2016; Siegl repackages."
+  CORRECTED: Siegl's 2026 paper proves LOWER BOUNDS for e-coefficients via strong P-tableaux.
+  The "Siegl" in Browse 126 was a different paper (Thm 1.10). The new Siegl is a new result.
+
+### FPSAC 2027
+
+July 5-9, Galway. Deadline ~April 2027 (call for papers Nov/Dec 2026). PC: D'Adderio,
+Pilaud, Rajchgot. Invited: Haiman, Martha Yip. Rick's submission framing: Theorem B fills
+the GF gap that Hikita/Griffin-Mellit leave open. Cite Griffin-Mellit 2504.06936 prominently.
+
+### NEW dominant hub: Griffin-Mellit 2504.06936 (14 cit in 5 months)
+
+Proves SS via A_{q,t} algebra. Hall-Littlewood at t=0. Does NOT prove q-polynomial positivity.
+No path-specific GF. Deep-read complete (Browse 129). Rick's techniques are orthogonal.
+
+---
+
+## Browse 127 updates (2026-09-04, post-Day-165)
+
+### PROOF MACHINE FOR Σ_0 — Bousquet-Mélou & Jehanne math/0504018
+
+Canonical algebraicity tool: polynomial equation P(F(u), F₁,...,Fₖ, t, u) = 0 with "catalytic variable" u → F algebraic (kernel method: find zero of kernel, close by resultants). Σ_0 is rational in u = E₁T (degree 1 algebraic) → kernel collapses trivially → first-order ODE suffices. **Day 166 PROVE: rewrite Day 164's Riccati ODE for Σ_0 as P(Σ_0(u), Σ_0(0), u, E₂, T) = 0 and apply BM&J.** This is the path from "checked-sober" to "proved."
+
+### FPSAC novelty — FULLY CLEARED
+
+- **Guay-Paquet 2507.05614**: DEEP-READ in Browse 127. Works in equivariant cohomology (Schubert calculus / divided differences). ZERO technical overlap with Rick's ν-system/Riccati/GF machinery. Remove from priority read queue.
+- **Siegl 2509.02841**: RESOLVED in Day 165 direct read. SW q-positivity was proved by SW 2016; Siegl repackages. Remove from urgent queue.
+- **SW q-positivity CONFIRMED OPEN** (Hikita FPSAC 2025 slides; arXiv:2210.03803 May 2025 update). Rick's approach is the only GF-level attack.
+
+### CRITICAL UNLOGGED PAPER — arXiv:2408.14455
+
+Aliniaeifard, Asgarli, Esipova, Shelburne, van Willigenburg, Whitehead McGinley (2024). "Chromatic Quasisymmetric Functions of the Path Graph." Annals Combinatorics 2025. Rick's **exact object**. Characterizes when X_{P_n}(x,t) is symmetric (different from SW positivity). No GF methods. Must read for: (a) knowing what's proved; (b) e-coefficient cross-checks for Σ_0; (c) van Willigenburg group awareness. ★★ PRIORITY.
+
+### NEW Novelli-Thibon paper — arXiv:2502.09072
+
+"Noncommutative chromatic quasisymmetric functions, Macdonald polynomials, and the Yang-Baxter equation." JCTA 2025. Unlogged. Novelli-Thibon's geode paper (2511.18366) gave Rick's quadratic identity bridge; this NEW paper does chromatic QSF in NSym/QSym + Macdonald + Yang-Baxter. Could carry analogous structural leverage. ★★★ PRIORITY.
+
+### OEIS A032443 — algebraic identity for Σ_0 proof
+
+A_Q(W) · C(W) = 1/(1-4W), i.e., Σ Q_k · Cat_{n-k} = 4^n. Somos formula: Q_k = [x^k](4x+1/(1+x))^k — Lagrange inversion kernel φ(x) = 4x+1/(1+x). Combinatorial: 4-ary words where #1's ≤ #0's (Scambler 2012). These may give a direct combinatorial proof of the Σ_0 form, independent of BM&J.
+
+### Cigler 2604.24207 — FULLY READ (Browse 127)
+
+Four J-fraction theorems at q=-1. Key identity (Sec 6): c(t,z)·c(-t,-z) = C(t²,z²) where φ(t,z)=1+(1+t)z. **Rick's test: ψ(Y,-1,...) vs Cigler's c(t,z) — 20-line sympy.** Paper is now sources.json `deep-read`; remove from "need to read" queue, add to "need to test" queue.
+
+### Updated priority queue (Browse 127)
+
+1. **Day 166 PROVE: BM&J Σ_0 attack** — rewrite Riccati ODE as catalytic variable equation, apply kernel method. FIRST priority.
+2. **arXiv:2502.09072** (Novelli-Thibon JCTA 2025) ★★★ — NEW: noncommutative chromatic QSF.
+3. **arXiv:2408.14455** (Aliniaeifard et al., 2024) ★★ — Rick's exact object, unlogged.
+4. **20-line Cigler q=-1 test** ★★ — check ψ at q=-1 vs c(t,z).
+5. **arXiv:2503.23597** (Hikita) ★★ — check quantum Pieri rule → Riccati recursion for Σ_n X_{P_n} y^n.
+6. **arXiv:2401.01027** (Wang-Zhou "neat formulas") ★ — 11 citations; closed-form CSF expressions.
+7. **arXiv:2604.24207** (Cigler) ✓ READ — only test remaining.
+8. **arXiv:2507.05614** (Guay-Paquet) ✓ READ — ZERO overlap, novelty safe. Remove queue.
+9. **arXiv:2509.02841** (Siegl) ✓ READ (Day 165) — resolved. Remove queue.
+
+### FPSAC 2027 update
+
+PC co-chairs confirmed: D'Adderio, Pilaud, **Rajchgot** (Rajchgot = new, not in prior notes). **Martha Yip** (chromatic symmetric functions) is an invited speaker — means expert eyes on Rick's submission from the start. Deadline: TBD, check October 2026.
+
+---
+
+## Browse 128 updates (2026-09-05, after Day 168 PROVE)
+
+### UPGRADE: Use Notarantonio-Yurkevich SYSTEMS extension, not base BM&J
+
+arXiv:2211.07298 (Notarantonio-Yurkevich 2022) extends BM&J from a single catalytic equation to SYSTEMS of n≥1 discrete differential equations in one catalytic variable. Gives **effective degree bounds** for minimal polynomials — computable before guessing the closed form. Rick's ν-system = multiple coupled equations → this is the right tool. Follow-up: arXiv:2310.12812 (FPSAC 2023 version). DDE-SOLVER Maple package: arXiv:2509.08639. **Strategy: compute Notarantonio-Yurkevich degree bound for Σ_0 before guessing closed form.**
+
+### CORRECTED: arXiv:2408.14455 is symmetry characterization only
+
+Browse 127 called 2408.14455 (Aliniaeifard et al.) "Rick's exact object unlogged." HTML deep-read confirms: the paper proves X(P_n; x, q) is symmetric iff the labeling is natural or reversed. **NO generating function, no Riccati, no catalytic variables.** Low direct relevance for Rick's GF program. Remove from high-priority read queue.
+
+### CORRECTED: arXiv:2502.09072 (NT) is NC Macdonald, not a GF paper
+
+Browse 127 called this ★★★ PRIORITY. HTML deep-read: NC chromatic QSF in WQSym + NC Macdonald via Haglund-Wilson + Yang-Baxter. Explicit Dyck graph formula (t−1)^n X_G((q−1)/(t−1)) = Π(q−t^{a_j}). **No path-graph GF summed over n, no Riccati, no catalytic variables.** Downgrade to low-priority (interesting but not structurally relevant).
+
+### NEW DOMINANT HUB: Griffin-Mellit et al. arXiv:2504.06936
+
+"On Macdonald expansions of q-chromatic symmetric functions and Stanley-Stembridge." 14 citations in ~5 months. Bridges Macdonald / Hilbert scheme to SW. **PRIORITY READ next wake session.** Connection to Rick's GF unclear until read.
+
+### Hikita (q,t)-lift constraint (arXiv:2503.23597 Thm B.iv)
+
+e-coefficients of X_Γ(q,t) IDENTICAL to those of X_Γ(t) — independent of his q parameter. Path graphs are unit interval graphs, so this applies. **Cross-check: if Σ_0 mixes q and t non-trivially, this provides a constraint pinning down the closed form.** May be a new angle on the Σ_0 problem.
+
+### BM&J → chromatic QSF bridge: CONFIRMED UNOCCUPIED
+
+Full citation trail of BM&J math/0504018: all 2023-2026 citations are in map enumeration / lattice walks. Zero crossover to representation theory or chromatic functions. Rick would be first. BM&J itself builds on Tutte's chromatic sum equations (1973-74) — historical chromatic connection.
+
+### Cigler q=-1 papers (for ψ-at-q=-1 test)
+
+Three 2026 Cigler papers:
+- **arXiv:2604.24207**: Jacobi CF for q-Narayana at q=-1 with closed formulas. THE paper for Rick's ψ test.
+- **arXiv:2601.08366**: N_{n,k}(q=-1) = #{symmetric Dyck paths of semi-length n with k valleys}. Combinatorial target.
+- **arXiv:2608.03363**: Examples/conjectures for q=-1 sequences. Survey-level.
+
+### A032443 OGF confirmed
+
+OGF = **(1 − x(2 + c(x))) / (1 − 4x)^{3/2}** where c(x) = Catalan OGF. Algebraic GF. Consistent with Q_k = [x^k](4x+1/(1+x))^k and A_Q(W)·C(W) = 1/(1-4W).
+
+### FPSAC 2027: Mishna AND Haiman invited
+
+Marni **Mishna** (SFU, kernel method / catalytic variable expert) confirmed invited speaker. Mark **Haiman** confirmed. PC: D'Adderio, Pilaud, Rajchgot. Rick's BM&J + chromatic QSF = squarely in Mishna's territory. Strongest FPSAC alignment possible.
+
+### Updated priority queue (Browse 128)
+
+1. **Prove Σ_0 via Notarantonio-Yurkevich systems BM&J** — compute degree bound, try DDE-SOLVER. FIRST priority.
+2. **READ arXiv:2504.06936** (Griffin-Mellit et al.) ★★★ — fast-rising hub (14 cit), Macdonald + chromatic.
+3. **ψ-at-q=-1 test** ★★ — check against N_{n,k}(q=-1) using Cigler 2601.08366.
+4. **Hikita q-independence constraint check** ★★ — verify whether Σ_0's q-structure is compatible with Thm B.iv of 2503.23597.
+
+### Stanley-Gasharov status update
+
+Wang-Zhang-Zhao 2607.27166: two infinite families of SG-counterexamples (Matherne-Morales 2607.21508: claw-free Schur-positivity REFUTED). Neither affects SW e-positivity or Rick's program (different conjectures). SW q-positivity is now THE main open chromatic positivity problem.
+
+---
+
+## Browse 126 updates (2026-09-04)
+
+### CRITICAL UNRESOLVED CONFLICT — Siegl 2509.02841
+
+arXiv agent (Browse 126) claims **Theorem 1.10** of Siegl proves SW q-positivity for path graphs
+via powerful P-tableaux: c_λ^{P_n}(q) = Σ_{T∈powSTP_n(λ)} q^{inv_{P_n}(T)} (manifestly non-neg).
+Community agent says SW q-positivity is **still open** Sep 2026.
+**MUST READ SIEGL DIRECTLY** in next PROVE session to resolve.
+
+### Hikita 2503.23597 — DEEP-READ RESULT (agent-summary level)
+
+- e-coefficients c_λ(Γ;t) are **independent of q** (q only deforms basis, not coefficients)
+- Quantum Pieri rule: e_1 ⋆ e_r = (1−q^{-1})[r+1]_t e_{r+1} + q^{-1} e_1 e_r
+- No generating function for Σ X_{P_n}(q,t) y^n; no Narayana in paper
+- SW q-positivity stated as open at line 203
+- Bridge 2 assessment: not a direct generating function bridge; quantum Pieri rule is the entry
+  point for constructing a path-graph recursion (untested)
+
+### Guay-Paquet 2507.05614 — NEW HIGH PRIORITY
+
+Mathieu Guay-Paquet (of the legendary unpublished SW proof) has a July 2025 paper:
+"Divided difference operators for Hessenberg representations" — categorifies Abreu-Nigro modular
+law. **★★★ READ.** May carry techniques from the unpublished proof.
+
+### Cigler 2604.24207 — test hook available
+
+Narayana generating function as Jacobi continued fraction; q=-1 extension.
+Rick's ψ at q=-1 is a **20-line sympy test** — do this in next wake session.
+
+### Updated priority reads (Browse 126)
+
+- **arXiv:2509.02841** (Siegl) ★★★ URGENT — resolve agent conflict: does Thm 1.10 prove SW
+  q-positivity for path graphs? READ DIRECTLY (not via agent). 43 pages.
+- **arXiv:2507.05614** (Guay-Paquet, Jul 2025) ★★★ NEW — Divided diff operators for Hessenberg;
+  by the man who proved SW. May contain unpublished proof techniques.
+- **arXiv:2503.23597** (Hikita) ★★ PARTIALLY READ — main theorems known; check specifically
+  whether quantum Pieri rule gives Riccati recursion for Σ X_{P_n}(q,t) y^n.
+- **arXiv:2604.24207** (Cigler, Apr 2026) ★★ — Narayana as Jacobi CF; q=-1 specialization.
+  Test Rick's ψ at q=-1. 20-line sympy test.
+- **arXiv:2506.23082** (Kim-Lee-Yoo, Jun 2025) ★★ — HL expansion of X_Γ(t); test path graph
+  case for connection to Narayana.
+- **arXiv:2608.30791** (Thibon) ★ REMOVE — fully read Browse 125; no new content for Rick.
+- **arXiv:2603.23879** (Chow) ★ LOW — watershed ≠ Rick's ψ; no direct connection.
+- **arXiv:2607.20595** (Kafidov) ★ DEPRIORITIZE — log-concavity fails in general; doesn't
+  affect path graph positivity.
+
+### Field status (Browse 126)
+
+- Shareshian-Wachs q-positivity: **POSSIBLE RESOLUTION** for path graphs via Siegl Thm 1.10
+  (unverified — agent conflict). Rick must resolve before framing FPSAC narrative.
+- Hikita's (q,t) framework: e-coefficients independent of his q parameter — structural constraint
+  for Rick's ν-system (which tracks SW's q = inversion weight).
+- GDL-W Bridge 1: CONFIRMED DEAD (Day 163). Bridge 2 (Hikita quantum Pieri) = active but untested.
+- Guay-Paquet new paper: ★★★ — may be the most important thing to read.
+
+### FPSAC 2027 — deadline update (Browse 126)
+
+No deadline announced. Expected call ~October-November 2026, deadline ~February 2027.
+PC chairs: D'Adderio, Pilaud, Rajchgot. Check again in October.
+
+---
+
+## Browse 125 updates (2026-09-03)
+
+### TWO NEW POTENTIAL BRIDGES — UNVERIFIED
+
+**Bridge 1 — GDL-W cubic (sympy test needed):**
+GDL-W Eq 3.3: path-graph Möbius gf satisfies F(1+F)(1+tF) = y (a cubic). If Rick's Y-equation at E_1=E_2=E_3=0 equals F(1+F)(1+qF) = T, then GDL-W's Narayana gf = Rick's ν-system corner specialization. 20-line sympy test → do in next wake.
+
+**Bridge 2 — Hikita 2503.23597 quantum Pieri rule (read needed):**
+Quantum Pieri rule: e_1 ★ e_r = (1-q^{-1})[r+1]_t e_{r+1} + q^{-1} e_1 e_r.
+Applying to path-graph gf F(y) = Σ_n X_{P_n}(q,t) y^n → possible algebraic equation = q-deformed ν-system. Nobody has done this. If it closes: Shareshian-Wachs attack via Lagrange inversion. **Read Hikita 2503.23597 in full next wake.**
+
+### Updated priority reads (Browse 125)
+- **arXiv:2503.23597** (Hikita, Mar 2025) ★★★ UPGRADED — (q,t)-chromatic QSF; quantum Pieri rule for path graphs is **THE** Shareshian-Wachs attack route. READ IN FULL next wake. (Was ★★ in Browse 124.)
+- **arXiv:2608.30791** (Thibon, Aug 2026) ★ DOWNGRADED — Triple composition read in full (Browse 125 deep-read). No Riccati, no path graphs, no Shareshian-Wachs. Validates Day 149 Psi=F at (q,t) but adds nothing for C.5. Remove from priority queue.
+- **arXiv:2509.02841** (Siegl, Aug 2025) ★★ — Strong P-tableaux + SW inversion statistic + restricted modular law. Only active user of the path-graph reduction theorem. Read to understand SW lower bounds.
+- **arXiv:2603.23879** (Chow, Mar 2026) ★★ NEW — Combinatorial anatomy of Hikita's φ_k (watershed statistic). May connect to Rick's ψ series.
+- **arXiv:2607.20595** (Kafidov, Jul 2026) ★ — c_μ(q) explicit formulas for rank ≤ 3 Hessenberg. Check against ν-system output.
+
+### Field status (Browse 125)
+- Shareshian-Wachs q-positivity: **NO PROGRESS** in Aug-Sep 2026. Rick's ν-system is the only generating-function approach. Path-graph stratum is wide open.
+- GDL-W Thm 3.2 = Rick Day 154 C.4 (same Narayana theorem, two proofs — FPSAC §6 material).
+- Restricted modular law (2504.09123 Thm 3.7) = structural reason path graphs are the base: any function satisfying the law is determined by its path-graph values.
+- Hikita 2503.23597 is the key new paper (Mar 2025, not yet in Rick's picture).
+
+### FPSAC 2027 — deadline update
+"Important Dates" page now exists (updated 2026-08-31) but body still blank. Check again early October. Historical pattern: deadline ~November 2026.
+
+---
+
+## Browse 124 updates (2026-09-03)
+
+### Griffin-Mellit ID confirmed: arXiv:2504.06936
+"On Macdonald expansions of q-chromatic symmetric functions and the Stanley-Stembridge Conjecture" (Griffin, Mellit, Romero, Weigl, Wen). t=0 gives Hall-Littlewood; t=1 gives second proof of Stanley-Stembridge. Now in sources.json.
+
+### New priority reads
+- **arXiv:2608.30791** (Thibon, Aug 2026) ★★★ — Triple composition (Cauchy ∘ integral-nabla ∘ diagonal) for Macdonald GJ product. Potential Macdonald-level version of Rick's nu-system. READ BEFORE NEXT PROVE SESSION.
+- **arXiv:2503.23597** (Hikita, Mar 2025) ★★ — (q,t)-chromatic sym fn via affine Hecke algebras. Simultaneous with Griffin-Mellit; 3 citations.
+- **arXiv:2509.02841** (Siegl, Sep 2025) ★★ — Lower bounds for e-coefficients via strong P-tableaux. State-of-art on post-Hikita combinatorial interpretation. (Updated: arXiv ID confirmed.)
+- **arXiv:2608.22184** (Wang-Wang, Aug 2026) ★★ — Clique-spiders Schur positive via restricted modular law. (Updated: arXiv ID confirmed.)
+
+### FPSAC 2027 — dates confirmed
+**July 5–9, 2027, University of Galway, Galway, Ireland.** Invited speakers: Haiman, Bouvel, Fink, Iyama, Marietti, Mishna, Yip. Submission deadline still TBD — "Important Dates" page 404 as of Aug 31. Monitor: https://maths.universityofgalway.ie/fpsac2027/
+
+### Landscape shift: Stanley-Gasharov DISPROVED
+Matherne-Morales 2607.21508 (Jul 2026): claw-free graphs NOT always Schur-positive. Smallest counterexample: 12 vertices. E-positivity for claw-free unaffected. Infinite families: 2607.27166 (Wang-Zhang-Zhao).
+
+### Reference: SymCat chromatic page (actively updated)
+https://www.symmetricfunctions.com/chromaticQuasisymmetric.htm — Bookmark. Updated with 2026 results monthly.
+
+### New connection file
+`connections/2026-09-03-shareshian-wachs-path-graph-attack.md` — The E_3=0 slice is the path-graph stratum of Shareshian-Wachs. Three communities (Huh et al., GDL-W, Hikita) independently confirm path graphs as generating stratum. Rick's nu-system is positioned to attack the q-positivity problem at the base stratum.
+
+---
+
+## Key reference papers (Browse 123 additions — 2026-09-02)
+
+- **arXiv:2608.14836** (D'Adderio, Interdonato, Iraci, Pagaria, Aug 14 2026) ★★★ — "Theta conjecture proved." Explicit Neguț operator formulas in A_{q,t}; partial Lean 4 formalization. Major result: the Theta conjecture (stated 2019) is now a theorem. READ for A_{q,t} technique transfer.
+- **arXiv:2608.03806** (Chun et al., Aug 4 2026) ★★ — Chow polynomial of NC partition lattice = descent generating function of tieless parking functions. Fourth independent combinatorial object at the NC(n)/Narayana hub.
+- **arXiv:2606.10176** (Kravitz, Jun 2026) ★★ — Hook partitions are precisely the partitions universally appearing with nonneg e-coefficients in chromatic symmetric functions across ALL graphs. Structural lower bound result.
+- **arXiv:2502.09072** (Thibon-Novelli, Feb 2026, JCTA 2026) ★ — WQSym lift of Shareshian-Wachs chromatic quasisymmetric functions; noncommutative Macdonald analogue. Not in Browse 122.
+- **arXiv:2608.10223** (Lapointe-Pena, Aug 10 2026) ★ — m-symmetric Macdonald positivity proved at t=1 via combinatorial Kostka interpretation.
+- **Griffin-Mellit-Romero-Weigl-Wen 2025** (arXiv ID unknown) ★★★ — Macdonald expansions of q-chromatic symmetric functions. **13 citations** — highest velocity paper in the Macdonald/chromatic cluster. LOOK UP arXiv ID before next browse.
+- **Siegl 2025** (arXiv ID unknown) ★★ — "Toward Lower Bounds for Chromatic Symmetric Functions in the Elementary Basis." Uses restricted modular law (Huh et al. 2504.09123 Thm 3.7) to bound e-coefficients from below.
+- **Wang & Wang 2026** (arXiv ID unknown — DIFFERENT from 2608.22184) ★★ — Schur positivity for clique-spiders via restricted modular law. One of 3 citers of 2504.09123.
+- **arXiv:2410.12758** (Hikita, Oct 2024, revised Dec 2025, **40 citations**) ★★★ — Stanley-Stembridge PROVED. Markov chain on partitions (Kato geometric realization) gives probabilistic interpretation of e-coefficients. HUB PAPER of the post-Stanley-Stembridge era. READ for proof architecture.
+
+## Tooling update (Browse 123, 2026-09-02) — Semantic Scholar rate-limit fixed
+Semantic Scholar returned data this session via S2 MCP + REST API cross-validation. Citation trails: Huh et al. 2504.09123 has 3 citers; Celestino-Vargas 2311.07824 still has 1 citer. Consider registering for free API key for higher quota.
+
+## Key caveat (Browse 123, 2026-09-02) — Thibon Δ₃ explicit formula
+Confirmed from HTML of arXiv:2608.25651: W_{1+∞} membership of the full stable series multiplication operators is proved abstractly (Thm 5.2), but explicit formulas for operators of **degree ≥ 3 are computer-assisted and unproved**. FPSAC §1 must state τ ∈ U(W_{1+∞}), NOT claim an explicit proved formula for the degree-3 action.
+
+## FPSAC 2027 update (Browse 123, 2026-09-02)
+PC co-chairs: D'Adderio, Pilaud, Rajchgot. Invited speakers: Bouvel, Fink, **Haiman** (highly relevant: parking functions / Macdonald theory), Iyama, Marietti, Mishna, Yip. Submission deadline not yet posted (expected autumn 2026). Conference: University of Galway, July 5-9 2027.
+
 ## Standing tooling issue (Browse 118, 2026-08-30) — Semantic Scholar API rate-limited
 Every `api.semanticscholar.org` request this session (4 tries, both direct `curl` and WebFetch) returned HTTP 429 "Too Many Requests" instantly, no partial data — looks like the anonymous-tier quota was already exhausted, not a transient blip. Citation-trail agent stopped rather than loop. **Retry citation trails next cycle**; if 429 recurs, consider registering for a free API key (link in the error body). Planned anchors still valid: Wang & Wang 2608.22184 references, an Okounkov–Olshanski/Molev foundational paper's 2024–2026 reverse citations, JVMV 1604.04759 reverse citations for new 2026 citers.
 
@@ -19,9 +679,64 @@ When a WebFetch prompt names a specific formula/term to look for, a fetch can re
 - **Knutson–Tao, "Puzzles and (equivariant) cohomology of Grassmannians"** (arXiv:math/0112150) — equivariant structure constants as polynomials in differences of localization parameters, abstractly positive (Graham) but needing puzzle combinatorics for a manifest proof. Same shape as Conjecture P's Π(1+(m_i−m_j)/(u_i−u_j)) factor.
 - **OEIS reconfirmed absent (proper `seq:` search this time, not free-text):** b_k = 3,27,417,7851,164124,3661389,85384566 and κ_n/(−6) = 1,15,373,11245,375732,13386573,498347406, all windows, all normalizations.
 
+## Key reference papers (Browse 119 additions — 2026-08-31)
+
+- **Thibon arXiv:2608.25651** (Aug 26 2026) — "Stable Symmetric Series, Differential Operators, and Jack Deformations." **[BROWSE 119 ENTRY WAS WRONG — see correction below.]** NOW READ (Browse 120). Proves: (1) Prop 4.1: stable algebra A ≅ Λ* (Okounkov-Olshanski) — the cleanest modern proof; (2) Thm 5.2: ×_α product diagonalizes in Q'-basis, orthogonal idempotents E^{(α)}_λ = (n!/c_λ(α))Q'_λ; (3) Thm 3.2: structure constants d^λ_{μν} are nonneg integers AT α=1 (= Ivanov-Kerov partial permutation constants). **DOES NOT PROVE the Goulden-Jackson b-positivity conjecture (nonneg integer polynomials in b=α-1 for general α) — this is explicitly deferred and remains OPEN.** No free probability, no Kerov character polynomials, no filtration. Connection to Conjecture P: A ≅ Λ* is useful background for FPSAC §1; no proof technique for E-positivity. Related: arXiv:2509.18625 (Ben Dali, "Jack super nabla operator," same operators).
+- **Ben Dali & Dołęga arXiv:2305.07966** (May 2023) — "Positivity of Jack characters / Lassalle's conjecture proved." Proves Lassalle's 2008 conjecture: Jack characters in Stanley's coordinates are integral and positive. Method: bipartite map formula. This closes Jack-character positivity (the α-deformation of Kerov's original positivity, proved by Féray 2008-2009 at α=0). Cited by Chen-Sahi 2508.05759. **Read: how does the bipartite-map technique work — does it transfer to Conjecture P?**
+- **Defant & Lee arXiv:2409.05219** (Sep 2024; Adv. Appl. Math. 2025) — "Boolean, Free, and Classical Cumulants as Tree Enumerations." Encodes cumulant conversions via binary plane trees called "weighted troupes." Does NOT cite JVMV despite covering identical territory. **Check: are troupes ↔ Schröder trees? If so, this paper bridges Boolean cumulants (from 1610.04571) to free cumulants (Rick's b_k arc).**
+- **Chen-Sahi arXiv:2403.02490** (Mar 2024, revised Mar 2026) — "Interpolation Polynomials, Binomial Coefficients, and Symmetric Function Inequalities." Direct precursor to 2508.05759; proves positivity of individual (λ,ν)_τ. **Read before attempting to apply 2508.05759's tableau-term-matching technique to P_b.**
+- **Chen-Khare-Sahi arXiv:2509.19649** (Sep 2025) — Macdonald extension of 2508.05759; majorization inequalities for Macdonald polynomial differences. Companion paper.
+- **Mickler arXiv:2605.10608** (May 2026) — "Hidden Structure of Jack LR Coefficients." Symmetry and factorization conjectures for shifted Jack LR coefficients g^λ_{μν}(α). Emerging researcher in same cluster.
+- **Mickler arXiv:2606.17822** (Jun 2026) — "Congruences of shifted Jack LR coefficients." Proves Alexandersson-Féray divisibility conjecture (congruences mod α-hook length).
+- **Alexandersson-Féray arXiv:1608.02447** — K_μ family linked to Kostka numbers has nonneg coefficients in the falling-factorial basis. Structural precedent for P_b = Σ K_{μλ} s*_λ.
+- **CORRECTION (Browse 117 entry below): Wang & Wang 2608.22184 is about CHROMATIC SYMMETRIC FUNCTIONS OF GRAPHS, not Okounkov-Olshanski positivity.** It is in the Stanley-Stembridge world. The three equivalent criteria are not immediately applicable to Conjecture P. Downgrade to: potentially transferable with significant reformulation. Background: Stanley-Stembridge conjecture proved by Hikita (2024), Griffin et al. (2025), Huh et al. (2025); claw-free conjecture independently disproved by Prajapati (2026) and Matherne-Morales (2026).
+- **CORRECTION (Browse 114 entry): Allen-Celano-Mason 2511.18156 proves inverse Kostka identity (KK⁻¹ = I in NSym) via tunnel hook coverings, NOT the antipode on the immaculate basis for general compositions.** Immaculate antipode for general compositions remains OPEN.
+- **Kvinge-Licata-Mitchell arXiv:1610.04571** (2016, publ. 2019) — NOW READ. Confirms: F: s_λ → s*_λ = Rick's Ψ exactly. Isomorphism End_{H'}(1) ≅ Λ* via Kerov's co-transition measure. Uses BOOLEAN cumulants b̂_{k+2} = |λ| m̌_k, NOT free cumulants. The arc-bridge gap: Λ* ↔ Boolean cumulants (this paper) ↔ free cumulants (needs Defant-Lee or similar).
+- **Celestino-Vargas arXiv:2311.07824** — **NOW PUBLISHED** (AIHP D Vol. 13 Issue 3, 2026). Still only 1 citation (Li 2024, post-Lie, ignoring free probability content). Underread.
+- **FPSAC 2027** (Galway, July 5-9): Mark Haiman as invited speaker. Deadline Nov 15 2026. No submission page live yet — check again Sept 2026; 6-12 pages, FPSAC20XX.cls, pdflatex.
+
+## Key reference papers (Browse 120 additions — 2026-08-31)
+
+- **González D'León & Wachs arXiv:2608.08692** (Aug 2026) ★★★ — "Weighted bond posets and a new chromatic symmetric function." Proves **e-positivity of the graded top component** of a filtered chromatic symmetric function; **Narayana polynomials appear explicitly** in the top stratum. Technique: **shellability** of a weighted bond poset. **HIGHEST PRIORITY READ** — this is the exact filtration structure of Conjecture P (Narayana in the top layer, e-positivity needed layer by layer). Shellability may provide a certificate for the top layer independent of the Lagrange inversion approach.
+- **Marberg arXiv:2512.23944** (Dec 2025) ★★ — "K-theoretic shifted Schur positivity via filtration." Proves positivity via filtration on the shifted Young lattice + harmonic function classification. **Most structurally similar to Rule 12** of all papers found. K-theoretic corrections add signs, so not directly applicable, but "harmonic function classification" for lower layers is a potential template.
+- **Qiu & Zhang arXiv:2607.00940** (Jul 2026) ★★ — "BGHT conjecture: ∇m_μ is Schur-positive." Proves 25-year-old conjecture via **recursive algebraic certificate** = Pieri recurrence + LLT positivity + inverse Kostka base case. Confirms that certificate-type proofs work for hard positivity conjectures. Structure: (1) recurrence, (2) positivity-preserving ingredient, (3) base case — compare to Conjecture P needs (1) filtration recurrence, (2) ?, (3) Narayana top layer.
+- **Ben Dali arXiv:2509.18625** (Sep 2025, rev Apr 2026) ★ — "Formula for the Jack super nabla operator." Chapuy-Dołęga + Nazarov-Sklyanin = Heisenberg algebra / W_{1+∞}. Same differential operators as Thibon 2608.25651. Relevant if operator approach to H becomes live.
+- **S.-J. Lee arXiv:2607.02108** (Jul 2026) ★ — "A Two-Color Lift of the Shifted t-Schur Measure." O-O lineage, strict partitions. File for shifted measure theory — no direct connection to Conjecture P apparent.
+- **Matherne & Morales arXiv:2607.21508** (Jul 2026) — "Chromatic symmetric functions of claw-free graphs are not Schur positive." **DISPROVES Stanley's 1995 conjecture** using AI-assisted counterexamples. Context for the landscape (Wang-Wang 2608.22184 world).
+- **Jang & Scrimshaw arXiv:2608.27949** (Aug 2026) — "Special Kirillov-Reshetikhin crystals." Uniform PBW crystal realization for all affine types. SEED Path 2 territory.
+- **ψ sequence 1,2,5,34,334,3958,52599,755256,11467146,...** — NOT IN OEIS. Growth ~21.46. Satisfies quintic f^5-f^4+W(22f^3-88f^2+64f)+W^2(-f^2+88f-16)-16W^3=0. **Submit to OEIS.**
+- **Goulden-Jackson b-positivity conjecture** — confirmed STILL OPEN as of August 2026. No proof in the literature.
+- **Defant-Lee troupes vs JVMV Schröder trees** — STRUCTURALLY INCOMPATIBLE. No specialization connects them. Neither cites the other. The Boolean-to-free bridge is algebraic (AHLV15), not tree-combinatorial. **This is an open gap in the literature worth mentioning in the FPSAC paper.**
+
+## Key reference papers (Browse 122 additions — 2026-09-02)
+
+- **τ vs Δ_3 RESOLVED.** Thibon's Δ_3(α) = p̂_3-multiplication (power sum); Rick's τ = B_3 = ê_3-multiplication (shifted elementary). Newton identity: αΔ_3(α) = B_1³ − 3B_2B_1 + 3B_3 − 3αB_1² + 6αB_2 + 2α²B_1. They're related but DISTINCT. Since B_k ∈ U(W_{1+∞}), Rick's τ ∈ U(W_{1+∞}). Thibon's commutativity of Δ_r does NOT transfer directly to τ. **Deferred question from Day 154 is now answered.**
+
+- **arXiv:2404.03904** (Ben Dali + D'Adderio, 2024) ★★★ — "Macdonald characters from a new formula for Macdonald polynomials." Introduces operator Γ creating Macdonald polynomials; defines Macdonald characters = (q,t)-generalization of Jack characters; states positivity conjectures for Macdonald characters that are the DIRECT (q,t)-lift of Rick's Conjecture P; explicitly extends Goulden-Jackson conjectures to (q,t). **HIGHEST PRIORITY read next session.** Michele D'Adderio (co-author) chairs FPSAC 2027 PC.
+
+- **arXiv:2504.09123** (Huh, Matherne, Morales et al., 2025) ★★ — "Chromatic e-positivity via restricted modular law." Refines Hikita proof of Stanley-Stembridge. KEY: restricted modular law REDUCES E-POSITIVITY OF GENERAL Ψ_G TO PATH GRAPHS. Path graphs = Rick's E_3=0 specialization. Potential template for the missing propagation mechanism (Day 154 open problem). **HIGH PRIORITY read to check transferability.**
+
+- **arXiv:2608.15100** (Gao, Liu, Yang, Zhao, 2026) — "Lascoux series, parking functions and noncrossing partitions." Lascoux polynomial for σ=[2,...,n,1] = Narayana polynomial = h-poly of NC(A_{n-1}). NEW OPERATOR route to Narayana via parking function descent statistics + isobaric divided-difference operators. Two independent routes now known: Lagrange inversion (Rick's Thm C.4) and Lascoux operators.
+
+- **arXiv:2608.30791** (Thibon, Aug 31 2026) — "Shifted Macdonald Polynomials and the (q,t)-Deformed Goulden–Jackson Product." Five days after 2608.25651. Extends to (q,t), nabla operator appears centrally. Jack limit recovers 2608.25651. Nazarov-Sklyanin A^(k) explicitly determined. Compares with Ben Dali–D'Adderio 2404.03904. Rick's τ = B_3 may be the Jack specialization of A^(3) here.
+
+- **arXiv:2401.12814** (Chidambaram, Dołęga, Osuga, 2024) — "b-Hurwitz numbers from Whittaker vectors for W-algebras." b-parameter Jack ↔ W-algebras ↔ topological recursion (Eynard-Orantin). Adjacent to b-conjecture territory.
+
+- **arXiv:2602.14532** (Hora, 2026) — "Jucys-Murphy Elements for Wreath Products..." 2026 citer of Kvinge-Licata-Mitchell 1610.04571. Wreath products, Kerov transition measures, free probability. Extends Biane-Kerov-KLM to wreath products.
+
+- **FPSAC 2027 update**: Page live (maths.universityofgalway.ie/fpsac2027/). No deadline posted as of 2026-09-02. Michele **D'Adderio chairs PC** (Macdonald characters, b-conjecture territory). Expected deadline: January–February 2027. CORRECTION from Browse 120 entry: previous entry said "Nov 15 2026" — that was the deadline estimate for 2026 (FPSAC submission cycles are 6-8 months before). Verify the actual 2027 deadline when it posts.
+
+- **Celestino-Vargas 2311.07824** — still only 1 citer (Li 2024). No 2026 citers from the chromatic e-positivity community. **Cross-domain gap confirmed**: chromatic e-positivity (GD'L-W world) and free-probability/Narayana (Celestino-Vargas world) communities not citing each other. Rick sits at the intersection — worth noting in FPSAC §6.
+
+- **ψ sequence 1,2,5,34,334,...** — OEIS direct access returning 403; search via Google also found nothing. Confirmed NOT IN OEIS as of Browse 122.
+
+- **Wachs "Poset Topology" (arXiv:math/0602226)**: 119-page IAS/Park City 2004 lecture notes. Foundational reference for EL-shellability / lexicographic shellability used by González D'León-Wachs. PDF at https://www.math.miami.edu/~wachs/papers/toolnotes.pdf.
+
+- **Mathematical Gemstones blog** (http://mathematicalgemstones.com): Grad-level Hikita proof exposition with PDF lecture notes Parts I & II on Stanley-Stembridge / e-positivity / Abreu-Nigro modular law. Background for 2504.09123.
+
 ## Key reference papers (Browse 117 additions — 2026-08-30)
 
-- **Wang & Wang arXiv:2608.22184** (Aug 23 2026) — "Schur positivity from signed elementary expansions." Three provably-equivalent criteria (matrix/transportation, Hall-marriage, dominance-order-ideal) certify Schur positivity of a signed e_I-expansion WITHOUT an explicit sign-reversing involution — the order-ideal form is a finite inequality checklist. **Actionable candidate technique for Conjecture P** (Day 149's open positivity conjecture on the Kostka-weighted factorial-Schur sum P_b): test whether P_b's E-expansion, after peeling the Weyl-dimension-like correction factor, satisfies the order-ideal inequality. Read §5 in full next.
+- **Wang & Wang arXiv:2608.22184** (Aug 23 2026) — "Schur positivity from signed elementary expansions." [**SEE CORRECTION IN BROWSE 119 ENTRY ABOVE** — this paper is about chromatic symmetric functions of graphs, not Okounkov-Olshanski positivity.] Three provably-equivalent criteria (matrix/transportation, Hall-marriage, dominance-order-ideal) for certifying Schur positivity of a signed e_I-expansion. NOT immediately actionable for Conjecture P without significant reformulation.
 - **Alexandersson & Dai arXiv:2604.25440** (Apr 2026) — "Partition division maps, symmetric functions and positivity." `rowDiv_k` map, stretched Kostka numbers, k-Yamanouchi tableaux. Schur-positive algebraically but **explicitly no known combinatorial proof for the e-basis expansion coefficients** — only aggregate-by-length positivity via sign-reversing involution. Same obstruction shape as Conjecture P; their aggregate-statistic workaround is a fallback template.
 - **Buchstaber & Veselov arXiv:2601.06814** (Jan/Apr 2026) — "Algebraic Topology of the Lagrange Inversion." Topological/cobordism derivation of Lagrange inversion via ℂPⁿ Chern numbers; k=3 case gives Fuss-Catalan via cubic formal group; identifies ℂPⁿ tangent-bundle Chern-number GF with noncrossing partitions (OEIS A134264) — direct link to Speicher moment-cumulant machinery. Third independent instance (after Dold/Puri-Ward, Rubine geode) of "integrality proved by exhibiting a geometric/dynamical realization" — reinforces Day 147's exact-realizability lead is the right shape of question.
 - **Zemel arXiv:2607.07870** (Jul 2026) — "Antipodes of q-QSym and NCQSym." Cancellation-free involution for QSym_q; for NCQSym (⊃NSym) only the extreme-permutation stratum is pinned down, explicit degree-3 obstruction beyond that. Same "clean only at the extreme layer" pattern as Rick's own Rule 12/(H2) proof.
@@ -845,3 +1560,84 @@ When a WebFetch prompt names a specific formula/term to look for, a fetch can re
 
 ### Mittag-Leffler workshop watch
 - July 27-31. Schilling + Scrimshaw (KR crystals type D) confirmed participants. Abstracts still not posted as of July 14. Check July 20-21.
+
+---
+
+## Browse 138 updates (2026-09-10, post-Day 185 PROVE / BDI-Hopf refutation)
+
+### (q,t)-LIFT ARC REDIRECTED
+
+Browse 138 confirms: Hikita 2503.23597 closes the (q,t)-lift of (†) IN THE E-BASIS (e-expansion coefficients are q-independent). But the **quantum Pieri rule** (Theorem 3.12 of 2503.23597) is new information:
+
+```
+e₁ ⋆ eᵣ = (1-q⁻¹)[r+1]_t · e_{r+1} + q⁻¹ · e₁eᵣ
+```
+
+This generates a path-graph recursion in the affine Hecke algebra framework. The open question: does this produce a closed GF identity for Σ_n X_{P_n}(q,t) z^n in the **h-basis or power-sum basis**? That is the actual (q,t)-lift arc — not e-basis (closed), but other bases.
+
+### NEW ORGANIZING STRUCTURE POST-STANLEY-GASHAROV
+
+Kai Zhang 2608.16613: "level-k nice property" hierarchy
+- Schur-positive ⊂ strongly nice ⊂ nice
+- Three infinite separating families
+- Closest thing to a new organizing conjecture
+
+### NC GEODE + FREE CUMULANTS
+
+NT 2511.18366 Browse 138 update: k=-1 geode specialization = **free cumulants**. OEIS sequences A071724, A239204, A006318 (Schröder) appear. Rick's b_k FGCCHA structure + Milnor-Moore (free Lie) + k=-1 geode (free cumulants) might all be the same thing from different angles.
+
+### CITATION ACTIVITY
+
+- Huh et al. 2504.09123: 3 citers (Wang-Wang, Siegl, Hikita). Path graphs = generative set for e-positivity is being used as a working tool.
+- Matherne-Morales 2607.21508: 7 citers in 6 weeks. **ChatGPT-5.6 Sol Pro credited by name** as having assisted in finding the counterexample — new methodology acknowledgment.
+- AGGSZ 2505.06941: 1 citer — Lauve-Lazzeroni 2603.19494 (r-quasisymmetric → Hopf monoids).
+
+### FPSAC 2027 SPEAKER LIST CONFIRMED
+
+Galway, July 5-9, 2027. **7 speakers: Bouvel, Alex Fink, Haiman, Iyama, Marietti, Mishna, Yip.** PC: D'Adderio, Pilaud, Rajchgot. No deadline yet; expect Nov-Dec call. Abstract draft target: Day 187 (2026-09-14).
+
+### Priority queue update (Browse 138 additions)
+
+1. **Hikita 2503.23597 quantum Pieri recursion for P_n** ★★★ — can the path-graph Pieri recursion close to a GF identity in h-basis?
+2. **NC Geode k=-1 ↔ free cumulant check** ★★ — is Rick's b_k GF literally the geode at k=-1, with a_k = geode free-cumulant count?
+3. **Siegl 2509.02841 strong P-tableau check** ★★ — test lower bounds against Theorem B coefficients for P_3, P_4, P_5
+4. **Kai Zhang 2608.16613 read** ★★ — level-k nice hierarchy for path graphs
+5. **Wang-Wang 2608.22184 PDF check** ★★★ — verify SW 2016 = [19] before sending letter (SS API doesn't see it)
+
+---
+
+## Browse 144 updates (2026-09-16)
+
+### HEADLINE: D'Adderio et al. 2608.14836 = potential Route-2 attack vector; novelty confirmed absolute
+
+**D'Adderio–Interdonato–Iraci–Pagaria arXiv:2608.14836 (Aug 14, 2026):** "Leaving the Hall: explicit formulas for Neguț operators." Gives explicit linear-time formula for D_γ inside A_{q,t}. At γ=(m), D_{(m)}·F = e_m·F at q=1. If D_{(a)} = e_a(Y) action in Hikita's level-1 polynomial representation, then this IS the Lemma-3.11-analogue for all a ≥ 2. **30-min SymPy check in next wake session: run D_{(2)} on e_r(X) at m=3,4 and compare with Rick's e_2 ★ e_r formula.** Also proves Theta conjecture.
+
+**arXiv:2508.19704 (Aug 2025):** "Generalized Macdonald functions and quantum toroidal gl(1)." Level-(a,0) operators diagonalized by a-tuple Macdonald functions. Route 3 template: if level-(a,0) = e_a ★ (·), entire Pieri program follows. Check level-(2,0) vs Rick's e_2 ★ e_r at small r.
+
+**Griffin-Mellit et al. arXiv:2504.06936 (Apr 2025):** Bridges A_{q,t} and Hikita. Only e_1 Pieri (Prop 2.4). Does Cor 3.8 imply Rick's closed forms? Must check (1 hr combinatorics).
+
+**Novelty confirmed:** Hikita's verbatim quote (from source text): *"It seems likely that similar Pieri type formula exists for more general quantum multiplication of e_r(X) and Schur functions, but we do not pursue this direction here."* Best possible open-problem citation for Rick's FPSAC abstract.
+
+**Hikita forward cites = 3 total** (Colmenarejo-Klein = different direction; 2 data artifacts). Zero papers build on ★-product. Rick is alone in this space.
+
+**FPSAC 2027:** July 5-9, Galway. D'Adderio is PC (ideal fit). Deadline not yet posted; check fpsac.org in early October 2026. Historical pattern: submission opens Nov 2026.
+
+### Priority queue update (Browse 144 additions)
+
+1. **D'Adderio et al. 2608.14836 §2-3 read** ★★★ — check D_{(a)} = e_a(Y) in level-1 AHA. SymPy test at m=3, a=2.
+2. **arXiv:2508.19704 §1 read** ★★★ — level-(2,0) Macdonald operator vs Rick's e_2 ★ e_r formula.
+3. **Griffin-Mellit 2504.06936 §2 Prop 2.4** ★★ — same operator as Hikita Thm 3.12? Positioning check.
+4. **Goodberry-Orr 2312.11657 Thm 6.1** ★★ — calibrate P_1 coefficient structure.
+5. **q^{-n(λ)} vs q^{n(λ)}** ★ — HHL vs DS normalization. Is this the Macdonald involution ω?
+
+## Added 2026-09-25 (Browse 148)
+- BIRS 27w5730 Multivariate Orthogonal Polynomials (Banff Jun 27–Jul 2 2027) — Macdonald-adjacent; check application window.
+- FPSAC 2027 page fpsac.org/confs/fpsac-2027/ — still no deadline; recheck mid-Oct 2026.
+- Hub: Nazarov–Sklyanin "operators at infinity" (links Thibon 2609.10284 and Di Francesco–Vu 2606.12796).
+- Note: MathOverflow/math.SE are blocked for the WebSearch/WebFetch crawler (Sep 2026) — community agent yields nothing; try Playwright or drop.
+
+## Added 2026-09-26 (Browse 150)
+- Parabolic/partially symmetric Macdonald cluster (track forward cites): BW–Orr 2410.13642, Goodberry–Orr 2312.11657, Lapointe 2206.05177, Cho–Oh 2609.03840, BHMP nonsymmetric shuffle 2509.24040, Qiu–Zhang 2604.10226.
+- FPSAC 2027 committee page updated 2026-09-11; /dates/ 404; deadline unpublished. Contact fpsac2027@universityofgalway.ie.
+- symmetricfunctions.com (SymCat) HL + chromatic pages: 2026-current reference lists.
+- MO/math.SE blocked for WebFetch AND WebSearch — need Playwright for MO 411889.

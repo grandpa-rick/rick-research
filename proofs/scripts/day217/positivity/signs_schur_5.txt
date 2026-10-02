@@ -1,0 +1,81 @@
+((1,), (1,), (1, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=1/s den=1 #terms=3 sum|c|=3  g=-s*t + t + 1
+((1,), (1,), (2,)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s den=v + 1 #terms=1 sum|c|=1  g=s
+((1,), (1, 1), (1, 1, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**(-2) den=1 #terms=7 sum|c|=11  g=-s*t**2 - s*t + t**2 + t + 1
+((1,), (1, 1), (2, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s den=v + 1 #terms=1 sum|c|=1  g=s
+((1,), (2,), (1, 1, 1)): sign - ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=1 #terms=2 sum|c|=2  g=t*(s - 1)*(s*t - 1)
+((1,), (2,), (2, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=1/s den=v + 1 #terms=5 sum|c|=7  g=-s**2*t + s + t
+((1,), (2,), (3,)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**2 den=(v + 1)**2 #terms=1 sum|c|=1  g=s**2
+((1,), (1, 1, 1), (1, 1, 1, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**(-3) den=1 #terms=13 sum|c|=43  g=-s*t**3 - s*t**2 - s*t + t**3 + t**2 + t + 1
+((1,), (1, 1, 1), (2, 1, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s den=v + 1 #terms=1 sum|c|=1  g=s
+((1,), (2, 1), (1, 1, 1, 1)): sign - ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=1 #terms=6 sum|c|=10  g=t*(s - 1)*(t + 1)*(s*t - 1)
+((1,), (2, 1), (2, 1, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**(-2) den=v + 1 #terms=10 sum|c|=23  g=-s**2*t - s*t**2 + s + t**2 + t
+((1,), (2, 1), (2, 2)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=1 den=v + 1 #terms=3 sum|c|=3  g=-s*(s*t - t - 1)
+((1,), (2, 1), (3, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**2 den=(v + 1)**2 #terms=1 sum|c|=1  g=s**2
+((1,), (3,), (1, 1, 1, 1)): sign + ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=1 #terms=3 sum|c|=4  g=-s*t**2*(s - 1)*(s*t - 1)
+((1,), (3,), (2, 1, 1)): sign - ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=v + 1 #terms=4 sum|c|=6  g=t*(s - 1)*(s + 1)*(s*t - 1)
+((1,), (3,), (2, 2)): sign + ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=v + 1 #terms=1 sum|c|=1  g=-(s - 1)*(s*t - 1)
+((1,), (3,), (3, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=1/s den=(v + 1)**2 #terms=7 sum|c|=15  g=-s**3*t + s**2 + t
+((1,), (3,), (4,)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**3 den=(v + 1)**3 #terms=1 sum|c|=1  g=s**3
+((1, 1), (1, 1), (1, 1, 1, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**(-4) den=1 #terms=21 sum|c|=163  g=s**2*t**3 - s*t**4 - 2*s*t**3 - 2*s*t**2 - s*t + t**4 + t**3 + 2*t**2 + t + 1
+((1, 1), (1, 1), (2, 1, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=1 den=v + 1 #terms=3 sum|c|=3  g=-s*(s*t - t - 1)
+((1, 1), (1, 1), (2, 2)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**2 den=(v + 1)**2 #terms=1 sum|c|=1  g=s**2
+((1, 1), (2,), (1, 1, 1, 1)): sign - ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=1 #terms=12 sum|c|=42  g=t*(s - 1)*(s*t - 1)*(t**2 + t + 1)
+((1, 1), (2,), (2, 1, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**(-2) den=v + 1 #terms=10 sum|c|=27  g=-s**2*t**2 - s**2*t + s*t + s + t**2
+((1, 1), (2,), (3, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**2 den=(v + 1)**2 #terms=1 sum|c|=1  g=s**2
+((2,), (2,), (1, 1, 1, 1)): sign + ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=v + 1 #terms=10 sum|c|=24  g=-t*(s - 1)*(s*t - 1)*(s**2*t + s*t**2 + s*t - t - 1)
+((2,), (2,), (2, 1, 1)): sign - ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=(v + 1)**2 #terms=6 sum|c|=16  g=(s - 1)*(s*t - 1)*(s**2*t + 2*s*t + t - 1)
+((2,), (2,), (2, 2)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**(-2) den=(v + 1)**2 #terms=12 sum|c|=43  g=s**3*t**2 - s**3*t - s**2*t**2 - s**2*t + s**2 - s*t**2 + s*t + t**2 + t
+((2,), (2,), (3, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=1 den=(v + 1)**3 #terms=7 sum|c|=17  g=-s*(s**3*t + s**2*t - s**2 - s*t - s - t + 1)
+((2,), (2,), (4,)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**4 den=(v + 1)**4 #terms=1 sum|c|=1  g=s**4
+((1,), (1, 1, 1, 1), (1, 1, 1, 1, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**(-4) den=1 #terms=21 sum|c|=171  g=-s*t**4 - s*t**3 - s*t**2 - s*t + t**4 + t**3 + t**2 + t + 1
+((1,), (1, 1, 1, 1), (2, 1, 1, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s den=v + 1 #terms=1 sum|c|=1  g=s
+((1,), (2, 1, 1), (1, 1, 1, 1, 1)): sign - ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=1 #terms=12 sum|c|=42  g=t*(s - 1)*(s*t - 1)*(t**2 + t + 1)
+((1,), (2, 1, 1), (2, 1, 1, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**(-3) den=v + 1 #terms=17 sum|c|=87  g=-s**2*t - s*t**3 - s*t**2 + s + t**3 + t**2 + t
+((1,), (2, 1, 1), (2, 2, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=1 den=v + 1 #terms=3 sum|c|=3  g=-s*(s*t - t - 1)
+((1,), (2, 1, 1), (3, 1, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**2 den=(v + 1)**2 #terms=1 sum|c|=1  g=s**2
+((1,), (2, 2), (1, 1, 1, 1, 1)): sign - ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=1 #terms=6 sum|c|=8  g=t**2*(s - 1)*(s*t - 1)
+((1,), (2, 2), (2, 1, 1, 1)): sign - ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=1 #terms=6 sum|c|=8  g=t**2*(s - 1)*(s*t - 1)
+((1,), (2, 2), (2, 2, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**(-2) den=v + 1 #terms=10 sum|c|=27  g=-s**2*t**2 - s**2*t + s*t + s + t**2
+((1,), (2, 2), (3, 2)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**2 den=(v + 1)**2 #terms=1 sum|c|=1  g=s**2
+((1,), (3, 1), (1, 1, 1, 1, 1)): sign + ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=1 #terms=8 sum|c|=20  g=-s*t**2*(s - 1)*(t + 1)*(s*t - 1)
+((1,), (3, 1), (2, 1, 1, 1)): sign - ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=v + 1 #terms=9 sum|c|=22  g=t*(s - 1)*(s*t - 1)*(s + t + 1)
+((1,), (3, 1), (2, 2, 1)): sign - ord_v 1 ord_w 2 g(1,1)=0 g(t=1/s)=0 den=v + 1 #terms=1 sum|c|=1  g=(s - 1)*(s*t - 1)**2
+((1,), (3, 1), (3, 1, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**(-2) den=(v + 1)**2 #terms=13 sum|c|=47  g=-s**3*t + s**2 - s*t**2 + t**2 + t
+((1,), (3, 1), (3, 2)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=1 den=(v + 1)**2 #terms=5 sum|c|=7  g=-s*(s**2*t - s - t)
+((1,), (3, 1), (4, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**3 den=(v + 1)**3 #terms=1 sum|c|=1  g=s**3
+((1,), (4,), (1, 1, 1, 1, 1)): sign - ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=1 #terms=4 sum|c|=8  g=s**2*t**3*(s - 1)*(s*t - 1)
+((1,), (4,), (2, 1, 1, 1)): sign + ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=v + 1 #terms=6 sum|c|=12  g=-s*t**2*(s - 1)*(s + 1)*(s*t - 1)
+((1,), (4,), (2, 2, 1)): sign - ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=v + 1 #terms=2 sum|c|=2  g=s*t*(s - 1)*(s*t - 1)
+((1,), (4,), (3, 1, 1)): sign - ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=(v + 1)**2 #terms=6 sum|c|=14  g=t*(s - 1)*(s*t - 1)*(s**2 + s + 1)
+((1,), (4,), (3, 2)): sign + ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=(v + 1)**2 #terms=2 sum|c|=3  g=-(s - 1)*(s + 1)*(s*t - 1)
+((1,), (4,), (4, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=1/s den=(v + 1)**3 #terms=9 sum|c|=31  g=-s**4*t + s**3 + t
+((1,), (4,), (5,)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**4 den=(v + 1)**4 #terms=1 sum|c|=1  g=s**4
+((1, 1), (1, 1, 1), (1, 1, 1, 1, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**(-6) den=1 #terms=43 sum|c|=2563  g=s**2*t**5 + s**2*t**4 + s**2*t**3 - s*t**6 - 2*s*t**5 - 3*s*t**4 - 3*s*t**3 - 2*s*t**2 - s*t + t**6 + t**5 + 2*t**4 + 2*t**3 + 2*t**2 + t + 1
+((1, 1), (1, 1, 1), (2, 1, 1, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=1/s den=v + 1 #terms=7 sum|c|=11  g=-s*(s*t**2 + s*t - t**2 - t - 1)
+((1, 1), (1, 1, 1), (2, 2, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**2 den=(v + 1)**2 #terms=1 sum|c|=1  g=s**2
+((1, 1), (2, 1), (1, 1, 1, 1, 1)): sign - ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=1 #terms=30 sum|c|=770  g=-t*(s - 1)*(t + 1)*(s*t - 1)*(s*t**2 - t**3 - t**2 - t - 1)
+((1, 1), (2, 1), (2, 1, 1, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**(-4) den=v + 1 #terms=26 sum|c|=337  g=s**3*t**3 + s**3*t**2 - s**2*t**3 - 3*s**2*t**2 - 2*s**2*t - s*t**4 - s*t**3 + s*t**2 + 2*s*t + s + t**4 + t**3 + t**2
+((1, 1), (2, 1), (2, 2, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=1/s den=(v + 1)**2 #terms=10 sum|c|=23  g=-s*(s**2*t + s*t**2 - s - t**2 - t)
+((1, 1), (2, 1), (3, 1, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s den=(v + 1)**2 #terms=3 sum|c|=3  g=-s**2*(s*t - t - 1)
+((1, 1), (2, 1), (3, 2)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**3 den=(v + 1)**3 #terms=1 sum|c|=1  g=s**3
+((1, 1), (3,), (1, 1, 1, 1, 1)): sign + ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=1 #terms=24 sum|c|=308  g=-t**2*(s - 1)*(s*t - 1)*(s*t**3 + s*t**2 + s*t + s - t)
+((1, 1), (3,), (2, 1, 1, 1)): sign - ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=v + 1 #terms=16 sum|c|=122  g=t*(s - 1)*(s*t - 1)*(s*t**2 + s*t + s + t**2 + t)
+((1, 1), (3,), (2, 2, 1)): sign + ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=1 #terms=2 sum|c|=2  g=-t*(s - 1)*(s*t - 1)
+((1, 1), (3,), (3, 1, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**(-2) den=(v + 1)**2 #terms=13 sum|c|=59  g=-s**3*t**2 - s**3*t + s**2*t + s**2 + t**2
+((1, 1), (3,), (4, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**3 den=(v + 1)**3 #terms=1 sum|c|=1  g=s**3
+((1, 1, 1), (2,), (1, 1, 1, 1, 1)): sign - ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=1 #terms=30 sum|c|=714  g=t*(s - 1)*(t**2 + 1)*(s*t - 1)*(t**2 + t + 1)
+((1, 1, 1), (2,), (2, 1, 1, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**(-3) den=v + 1 #terms=17 sum|c|=107  g=-s**2*t**3 - s**2*t**2 - s**2*t + s*t**2 + s*t + s + t**3
+((1, 1, 1), (2,), (3, 1, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**2 den=(v + 1)**2 #terms=1 sum|c|=1  g=s**2
+((2,), (2, 1), (1, 1, 1, 1, 1)): sign + ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=v + 1 #terms=27 sum|c|=440  g=-t*(s - 1)*(t + 1)*(s*t - 1)*(s**2*t + s*t**3 + s*t**2 + s*t - t**2 - t - 1)
+((2,), (2, 1), (2, 1, 1, 1)): sign - ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=(v + 1)**2 #terms=20 sum|c|=200  g=(s - 1)*(s*t - 1)*(s**2*t + 2*s*t**2 + 2*s*t + t**3 + t**2 - 1)
+((2,), (2, 1), (2, 2, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**(-3) den=(v + 1)**2 #terms=20 sum|c|=161  g=(s**2*t - s - t)*(s**2*t + s*t**2 - s - t**2 - t)
+((2,), (2, 1), (3, 1, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=1/s den=(v + 1)**3 #terms=13 sum|c|=57  g=-s*(s**3*t + s**2*t**2 + s**2*t - s**2 - 2*s*t - s - t**2 + 1)
+((2,), (2, 1), (3, 2)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s den=(v + 1)**3 #terms=5 sum|c|=7  g=-s**2*(s**2*t - s - t)
+((2,), (2, 1), (4, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**4 den=(v + 1)**4 #terms=1 sum|c|=1  g=s**4
+((2,), (3,), (1, 1, 1, 1, 1)): sign - ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=(v + 1)**2 #terms=26 sum|c|=352  g=t**2*(s - 1)*(s*t - 1)*(s**4*t + s**3*t**2 + s**3*t + s**2*t**3 + s**2*t**2 - s**2 - s*t**2 - 2*s*t - s + 1)
+((2,), (3,), (2, 1, 1, 1)): sign + ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=(v + 1)**3 #terms=19 sum|c|=160  g=-t*(s - 1)*(s*t - 1)*(s**4*t + 2*s**3*t + s**2*t**2 + 2*s**2*t - s**2 + s*t**2 - 2*s - t)
+((2,), (3,), (2, 2, 1)): sign - ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=(v + 1)**3 #terms=14 sum|c|=92  g=-(s - 1)*(s*t - 1)*(s**3*t**2 - s**3*t + s**2*t**2 - 2*s**2*t - s*t**2 - 2*s*t + s - t**2 + 1)
+((2,), (3,), (3, 1, 1)): sign - ord_v 1 ord_w 1 g(1,1)=0 g(t=1/s)=0 den=(v + 1)**4 #terms=8 sum|c|=44  g=s*(s - 1)*(s*t - 1)*(s**3*t + 2*s**2*t + 3*s*t - s + t - 1)
+((2,), (3,), (3, 2)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**(-2) den=(v + 1)**4 #terms=18 sum|c|=217  g=s**5*t**2 - s**5*t - 2*s**4*t + s**4 - s**3*t**2 + s**3 - s**2*t**2 + 2*s**2*t + s*t - s + t**2
+((2,), (3,), (4, 1)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s den=(v + 1)**5 #terms=9 sum|c|=37  g=-s**2*(s**4*t + s**3*t - s**3 - s**2 - s*t - t + 1)
+((2,), (3,), (5,)): sign + ord_v 0 ord_w 0 g(1,1)=1 g(t=1/s)=s**6 den=(v + 1)**6 #terms=1 sum|c|=1  g=s**6

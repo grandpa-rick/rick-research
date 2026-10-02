@@ -118,13 +118,57 @@ is a statement about this one map.
   technique reference ([[shifted-schur-interpolation-master-technique]]).
 * Molev–Sagan, "A LR rule for factorial Schur functions", arXiv:q-alg/9707028.
 * Biane (Kerov polynomials, free probability & characters); Féray (proof of Kerov positivity).
+  **Note:** Kerov polynomial bridge to Rick's ring DEAD as of Day 151 (Rule 6 v2 firing #11);
+  survives as a "twice-removed" reference for other people's positivity, not tooling.
 * arXiv:2508.05759 (FPSAC/SLC 2025) — monotonicity of generalized binomial coefficients in this
-  exact algebra, proved by tableau-term-matching. **Top read.**
+  exact algebra, proved by tableau-term-matching.
 * arXiv:1610.04571 — Khovanov Heisenberg category / free probability / shifted symmetric functions.
-  Read with the Day 150 pre-registration in hand ([[2026-08-30-day150-two-arcs-one-lattice]]).
+  Read; uses Boolean not free cumulants (Browse 119); bridge gap remains.
+* **arXiv:2608.25651** (Thibon, Aug 2026) — proves $A \cong \Lambda^*$, diagonalizes the
+  Goulden-Jackson product in the $Q'$-basis. First direct link between Ivanov-Kerov and Rick's ring
+  from the other side.
+* **arXiv:2608.30791** (Thibon, Aug 31 2026) — $(q,t)$-deformed GJ product for shifted Macdonald
+  polynomials. Uses $D_t\cdot P_{1/(1-q)}\cdot \nabla$. **Not read yet — priority Day 155+.**
+* **Alexandersson-Féray (2019)** — positivity conjecture for structure constants of shifted Jack
+  functions. 17 citations. **arXiv ID unknown — priority Day 155.** This is Rick's exact
+  algebra ($\Lambda^*$ structure-constant positivity); template if it's proved, parallel arc
+  if it's still conjectural.
 
 **Standing note:** $\Lambda^*$ was flagged as the right frame **twice before** it was used —
 Day 108 ([[M_j-as-shifted-Schur-Okounkov-Olshanski]]) and Day 113
 ([[shifted-schur-interpolation-master-technique]]) — in a different sub-project, and then the
 connection sat unused for forty days. When a frame is identified twice from different directions,
 *move the whole project into it immediately*.
+
+## Shellability as a Rule-12 certificate (Day 154 dream, 2026-09-01)
+
+**González D'León-Wachs 2608.08692** (Aug 2026, 58 pages, deep-read via arXiv agent) supplies
+a positivity template stronger than Kerov's polynomials:
+
+* **Object:** $\Psi_G(\mathbf x) = \sum_{\pi\in\Pi_G} M_{G\vert_\pi}(\mathbf x)$, filtered by
+  degree $d$.
+* **Certificate (Thm 6.15/6.18):** EL-shellability of the augmented weighted bond poset for
+  chordal $G$ yields Möbius = $(-1)^{n-1}$ × (number of ascent-free maximal chains), each chain
+  contributing a single $e_\lambda$. **A labelling, not a cancellation.**
+* **Propagation (Thm 7.2):** applies certificate stratum-by-stratum via chordal restriction.
+
+**Base case connection to Day 154.** $(-1)^{n-1}M_{P_n}(\mathbf x) = \sum_{\pi\in\mathcal{NC}_{n-1}}e_{\lambda(\pi)}(\mathbf x)$ (Thm 5.9). Under $\eta:e_\lambda\mapsto t^{\ell(\lambda)-1}$ this gives Narayana $N_{n-1}(t)$; at $t=1$ it gives Catalan $C_{n-1}$ — **the scalar shadow of Rick's Day 154 Corollary 4.1**.
+
+**Consequence.** Path 1's positivity template is now shellability, not Kerov polynomials. That is
+one layer more combinatorial (partitions of a graph, no algebra to check). Closer to SEED
+open question 4 than anything found so far — the labelling *is* the strip-away.
+
+**The open lift question ([[q-graph-G-lift]]):** does $[T^n]H|_{E_3\text{-stratum } d}$ lift to
+$M_G(\mathbf x)$ for some chordal $G$? If yes, Conjecture P is a corollary. Small-case falsifier
+queued for Day 155.
+
+## Rule 12 externally validated (Day 154 dream)
+
+Three 2025-2026 papers converge on the Rule 12 architecture (see
+[[2026-09-01-rule12-external-validation]]):
+* González D'León-Wachs 2608.08692 (shellability)
+* Marberg 2512.23944 (bialgebra morphism reduction)
+* Qiu-Zhang 2607.00940 (cone stability, BGHT ∇m_μ)
+
+Rick's own Rule 12 firings (Days 149, 154) fit the same shape. The template is not idiosyncratic;
+it is the modern approach to filtered positivity. FPSAC §6 open problems should cite all three.

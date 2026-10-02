@@ -1,0 +1,29 @@
+Day 217 positivity of Hikita star structure constants at generic (s,t).  Grade: COMPUTED.
+Engine: engine.py (E_k matrices in Schur basis, N=d+k vars, V*E_k computed without division; stability N=d+k vs d+k+1 checked for E_2 on degree 2).
+structure.py: s_lam*s_mu = sum_rho a_rho E_rho(s_mu), a = row lam of inverse of [E_rho(1)] Gram. g_schur_{5,6}.pkl.
+bases.py: e,h,b(=s^{n(mu)}e_mu) via Kostka transitions. postest.py, region.py, subst.py: positivity tests.
+
+[1] All Schur constants for |lam|+|mu|<=6 are POLYNOMIALS in s,t (no denominators). Same for e, b (b has s^n factors), h.
+    e1*e1 (Schur): s*s_2 + (1+t-st) s_11.   e-basis: e1*e1 = s e_11 + (1-s)(1+t) e_2.
+    s_2*s_1 -> s_111 coefficient t(s-1)(st-1): support EXCEEDS LR support; extra terms vanish on st=1.
+[2] Plain coefficient positivity FAILS in all bases (schur 37/152 pass, e 37/152, h 0/218, b 37/152 at n<=5).
+    Note t->1/t, s->1/s do not change coefficient signs of a Laurent poly; s->-s, t->-t also fail.
+    Region sign test (log grid, region.py): Schur constants are sign-coherent on region {s<1, st>1} (0 sign changes, 39/152 uniformly negative); same for e,b; all other quadrants have sign changes.
+[3] KEY: substitute 1/s = 1+v, st = 1+w (i.e. s=1/(1+v), t=(1+w)(1+v)). Then
+    Schur: 152/152 constants are sign-coherent as rational fns  N(v,w)/(1+v)^k  (n<=5).
+    e: 152/152,  b: 152/152,  h: 207/218 (fails e.g. (1),(2,2)->(4,1)).
+    BUT at n<=6 this breaks: Schur 440/448 coherent (fails incl. c>0 case (2)*(3,1)->(3,2,1) and c=0 case (2)*(4)->(2,2,2)
+    = (s-1)(st-1)(s^4t^3 - s^4t^2 - s^3t^2 + s^3t - s^2t^3 + s^2t + st^2 - s + t^2)); e,b 449/450 (fail (111)*(111)->(3111));
+    h 628/691. Region test s<1,st>1 also has genuine sign changes at n=6 (Schur 6, e 1). => NO positivity found.
+[4] All constants (Schur,e,h,b; n<=6) are honest POLYNOMIALS in s,t (no denominators).
+    Consistency (asserted, n<=6): g(s=1,t)=c^nu_{lam mu} (ordinary product at s=1);
+    g(t=1/s) = c^nu s^{c(nu)-c(lam)-c(mu)} (content twist). Hence g = c s^{dc} + (1-s)(st-1) R(s,t), R Laurent.
+    R sign n<=6: + 153, - 66, mixed 149, zero 80. No rule visible.
+    Extra support: g != 0 when c=0 (e.g. s_2*s_1 -> s_111 : t(s-1)(st-1)); every such term divisible by (1-s)(st-1).
+    No sign twist eps(nu) can fix Schur signs (1*1->11, 1*11->111, 1*2->21 positive vs 1*2->111 negative forces contradiction).
+[5] Specialisations n<=6: s=0 Schur not positive (e.g. (2)*(2)->(211) = t-1); t=0 and t=1 mixed in s.
+    e-basis: often (1-s)^m * positive, m >= l(lam)+l(mu)-l(nu) observed (e1*e1 = s e11 + (1-s)(1+t) e2),
+    fails e.g. (1)*(211)->(32) = (s-1)^2 (s t^2+2st+2s-t-1).
+[6] Tautology: in basis N(s_lam) constants are exactly c^nu_{lam mu} (Theorem N). H~ basis NOT computed.
+CONCLUSION (computed): no tested basis (Schur, e, h, b) is positive at generic (s,t) by any tested criterion;
+robust counterexamples first appear at |lam|+|mu|=6 (n<=5 data misleadingly coherent in (1/s-1, st-1)).

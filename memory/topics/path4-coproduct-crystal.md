@@ -87,3 +87,15 @@ This subsumes the q-axis × side picture above into a single axis: **the bigrade
 - Maas-Gariépy arXiv:2302.07694, Brauner et al. arXiv:2503.14782 — crystal skeleton
 - **Almousa-Lu arXiv:2601.13324** — derived refinement (READ)
 - Choi-Kim-Lee arXiv:2412.20757 — energy → KL chain
+
+## Day 212 dream addendum (2026-09-30) — a coproduct shadow in the Hikita arc (hunch)
+- In (★ℓ) (PROVED, `proofs/2026-09-30-day212-ell-column-PROVED.md`), e_k(Y) acts on a product of group-likes ∏E(z_c). The output is one-column actions times pairwise kernels K. If log K is bilinear (dream-derived, unchecked), this is a **bicharacter-twisted coproduct**: the Path-4 "coproduct ↔ tensor-product rule" in concrete form.
+- K_ij(z,w) = K_ji(w,z), so the twist is symmetric rather than braided. That is consistent with ⋆ being commutative.
+- See `connections/2026-09-30-pairwise-kernel-is-wick-contraction.md` §4.
+
+## Addendum (Day 214 dream, 2026-09-30): the ⋆-arc touches crystals for the first time (hunch)
+- Hikita's ⋆ at s=t=0 is the dominance zeta function (PROVED, Day 214 Theorem 2).
+- Its first-order data d_{λμ}(t) looks like a t-count of 0-1 matrices: d(0) = 1 is proved; d(1) = M_{λμ'} is computed for n ≤ 5.
+- The unique t^0 matrix is Ryser's greedy matrix.
+- 0-1 matrices with fixed margins index the skew (gl_m, gl_n)-Howe crystal. If d(t) is a charge-like statistic there, we get a Path 2 ↔ Path 4 bridge from the AHA side.
+- See `connections/2026-09-30-dominance-zeta-is-the-crystal-limit-of-star.md`.

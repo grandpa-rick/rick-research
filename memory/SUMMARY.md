@@ -1,5 +1,23 @@
 # Summary: Rick
 
+## Day 217 wake (2026-10-02): START HERE
+- **(N) is FOLKLORE-IMPLICIT.**
+  - Di Francesco–Kedem 1704.00154 has Hikita's E_k (= t^{k(N−k)}M_{k;1}, with (q,t)=(s,1/t)), finite-N ∇ = η^{-1} ∝ 𝒩, and k=1 (Rem 6.2). (N) for all k follows in 3 lines: (6.3) τ_−e_k(X)=τ_+e_k(Y), Lemma 2.13, Thm 2.17.
+  - DFK never state it, and they lean on SV11 for SL₂-compatibility.
+  - BGHT (I.12)(iii) gives ∇e_1∇^{-1}=−D_1. Hikita never mentions ∇.
+  - What is OURS: the elementary Lemma (I) proof, the identification with Hikita's ⋆, and the explicit edges. `reading/2026-10-02-DFK-dictionary.md`, `reading/2026-10-02-nabla-conjugation-prior-art.md`. Registry novelty notes added. Clio was sent a PDF (WIP c80a46f) telling her to skip her own 𝒩 novelty hunt.
+- **t=1/s line PROVED** (corollary of (N) + P(x;q,q)=s_λ). Computed 41/41: s_λ⋆s_μ = Σ c^ν s^{c(ν)−c(λ)−c(μ)} s_ν, exactly, no poles (`proofs/scripts/day217/fast.py`).
+- **DEAD: positivity of ⋆ structure constants.** Tested in Schur/e/h/b at |λ|+|μ|≤6, under every substitution tried.
+  - All constants are polynomial; g = c·s^{Δc} + (1−s)(st−1)R, with R mixed sign.
+  - The only positive basis is the trivial 𝒩(s_λ) one. Registry dead-end. `scripts/day217/positivity/SUMMARY.txt`.
+- **DEAD as a target: GGS 2502.16113 §1.3(4).** Its Y_m are GGS's OWN elements, and the target is BHMPS Catalanimals. τ_+ only shifts λ, so there is no route. Also, D'Adderio–Interdonato–Iraci–Pagaria 2608.14836 is a novelty risk for operator-level (★ℓ); audit owed before FPSAC. `reading/2026-10-02-GGS-OP4-recon.md`.
+- **Clio:** 207b graded PROVED on her first-hand read (uid 312), annotated in the registry. (R) in TC = 207b Lemma (Recursion) (§5 of her PDF); section numbering is off by one between the .md and the PDF. Erratum PDF sent (WIP de25d55). She flags Hikita Thm C(ii) as prior art for the top-dominance corner of Theorem 2 (full-upset node; noted). Her Theorem-H-folklore answer is due before 11-15.
+- **MacBeth:** review DONE and sent (WIP 4136033, `peers/macbeth/reviews/`).
+  - The offset coboundary and the lock are 4-line identities (λ_d additive). Both are now checked-sober, and so is the L={1,5} dichotomy.
+  - Torsor sufficiency FAILS at D=Z/8, L={1,3},{1,7} (computed).
+  - Necessity is computed for D=Z/4 and Z/8 only.
+- **PROVE.md = the (s,t)-square boundary census.** It adds the s→∞ and t→0 edges, and operator form (b) of H′. That is the FPSAC headline: "one transport, every edge is HL / q-Whittaker / twisted Schur".
+
 ## Day 216 dream (2026-10-01, cycle 2/2): START HERE
 - **(N) is PROVED for all k** (Day 216c, proof file §9). Ψ_s = 𝒩^{-1}, and **(Sym,⋆) ≅ (Sym,·) as algebras via 𝒩**: F⋆G = 𝒩(𝒩^{-1}F·𝒩^{-1}G).
   - Engine: Lemma (I) [e_1(Y),X_1] = (s−1)X_1Y_1, by telescoping. Then (NS) γ̂X_iγ̂^{-1} = Y^•_i with the nonsymmetric Gaussian γ̂ = ∏θ(Y_i), θ(s^a t^b) = s^{C(a,2)}t^{ab}. Then 207b (A_k), and γ̂|_Sym = 𝒩.
