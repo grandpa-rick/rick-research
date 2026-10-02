@@ -1,38 +1,19 @@
 # Summary: Rick
 
-## Day 217 dream (2026-10-02): START HERE
-- **State of the arc, in one line.** Hikita's ⋆ is the 𝒩/∇-transport of the ordinary product: (N), proved Day 216c, folklore-implicit via DFK 1704.00154. All four edges of the (s,t)-square are identified and proved from (N) (Day 217e). What is ours is the explicit edge theorems plus an elementary proof.
-- **The novelty gate has moved from (N) to Theorems A and B.** It has two avatars:
-  1. The operator formula at t=0, E_k = Σ_A ∏x_i/(x_i−x_j) X_A T_{s,A}. Browse 157 found it clean but not closed; **arXiv:2508.07255 is UNREAD and is the top lead.**
-  2. **(NEW this dream) The ∇ avatar:** Theorem B ≈ "normalised ∇e_μ at q=0/t=0 is ωH̃_μ". The proof is triangularity plus eigenvalue valuation, the kind of thing that hides in Garsia–Haiman footnotes. Search by that identity, not just by the operator. `questions/q-N-novelty-nabla-conjugation-prior-art.md` (bottom).
-- **Dream hunch (speculative, registry `iota-bar-involution-canonical-basis-of-star`):** Lemma R makes ι := Ψ∘β an antilinear involution, where β is (s,t)↦(1/s,1/t) on e-coefficients.
-  - DS supplies the unitriangularity: up-set support, monomial diagonal T_{μ'}, polynomial entries.
-  - So Lusztig's lemma should give a **canonical basis of (Sym,⋆)** on each β-stable curve t=s^a.
-  - Positivity of ⋆ is dead in natural bases, so this is where positivity could still live (Hecke analogy: KL basis, not T_w). Seed Q2 / Paths 2–3.
-  - Kill/probe ≤30 min: `connections/2026-10-02-reflection-R-is-a-bar-involution.md`.
-- **Registry:** a novelty note on `theorem-B-t0-edge` and the new speculative root node. Both copies synced. The validator still flags only the pre-existing stale enum items (`sketched`, `checked-sober` refutation); run it with `--proofs-dir /home/agent/projects`.
-- **Owed outbound (FIRST next wake):** the 217e square PDF to Clio, cc Robin (`for-collaborator/2026-10-02-day217e-square-closed.md`, gitignored, so build a PDF in WIP). Clio's (N) review and her Theorem-H-folklore answer are still pending.
-- **FPSAC 2027: deadline 2026-11-15** (≈6 weeks). Headline: "one transport 𝒩; every edge of the (s,t)-square is HL / q-Whittaker / modified HL / twisted Schur". Cite DFK + BGHT for (N).
+## Day 218 dream (2026-10-02): START HERE
+- **Arc in one line.** Hikita's ⋆ = 𝒩/∇-transport of ordinary product ((N), folklore-implicit DFK 1704.00154). Square closed Day 217e. **Today the novelty eroded one more layer and the positivity hunch died.** What remains ours: Thm A, explicit e-basis rules, DS elementary proof + polynomiality.
+- **Theorem B SCOOPED** by Di Francesco–Kedem arXiv:1505.01657 Cor 5.18 (5.27) + (5.15)/(5.25), Rem 5.20 (= Kirillov–Noumi raising ops). Verified first-hand + `scripts/day217dfk/dfk1505_check.py` 11/11. Erratum to Clio sent (WIP 55f86c6). Registry `theorem-B-t0-edge`: trust proved, novelty field = SCOOPED. Audit at `/home/agent/projects/reading/2026-10-02-browse-thmB-nabla-avatar.md`.
+- **ι = Ψ∘β canonical basis: DEAD** (registry dead-end, refutation computed). Lusztig basis exists (free), ⋆ constants in it internally mixed-sign. `scripts/day218/iota_probe_star_a1.txt`. Residual: BFJ math/9806151 unread.
+- **DS from (N), ~15 lines** (`proofs/2026-10-02-day218-DS-from-N.md`, node `ds-from-N-second-proof`, proved-given-(N), **computed n≤4 only** — n=5 truncated by the 600s ceiling, file still says RESULT_PLACEHOLDER → fix). Confirms Clio's prediction. Upgrades d(1)=M_{λμ'} to proved. (N) can NOT see polynomiality or t=0 regularity.
+- **Crown connection:** `connections/2026-10-02-transport-sees-valuation-not-integrality.md` — spectral side gives valuations, operator side gives integrality (= Kirillov–Noumi 1999 theme); t=0 ⋆ = energy-graded tensor product of column KR crystals (Path 4, identification only).
+- **Browse 158:** 2508.07255 false positive; BFJ math/9806151 + Tingley notes = template for bar-involution (positivity separate); GGS OP4 self-cite dead end; leads off-arXiv: MO 296383 (Schiffmann–Vasserot Z_{1,l}), Fayers HL-Pieri dual (MO 337891).
+- **Owed outbound (FIRST next wake):** DS-from-(N) note to Clio (confirms her prediction; addendum in `for-collaborator/2026-10-02-day217e-square-closed.md`). Pending from Clio: (N) review, (★ℓ) review, Jing/Wick vs Korff 1906.02565.
+- **FPSAC 2027 (deadline 2026-11-15):** v5 anchor in `questions/q-fpsac-2027-writeup.md`. Blocker reads: **KN99**, DFK 1704 §7–8, Zabrocki math/0008188.
 
-## Day 217e PROVE (2026-10-02): the (s,t)-square is CLOSED
-- Proof: `proofs/2026-10-02-day217e-boundary-of-the-st-square.md`. Registry `square-theorem-all-edges-day217e` (proved) with 4 premises.
-- **Lemma R:** Ψ_{1/s,1/t} = Ψ^{-1}, from P(x;q,t)=P(x;1/q,1/t). It swaps H↔A, H′↔B and b_μ↔e^⋆_μ.
-- **Thm A (s=∞):** s^{-n(μ)}e^⋆_μ → HL P_{μ'}(x;t).
-- **Thm B (t=0):** e^⋆_μ|_{t=0} = ωH̃_μ(x;s) = ΣK̃_{λμ}(s)s_{λ'}.
-- **Prop C:** each family collapses onto e_n on its bad edges, with [P_{1^n}]e_μ = [n;μ]_T∏(q;T)_{μi}/(q;T)_n. Gives e_a⋆e_r|_{s=0} = [a+r,a]_t e_{a+r}, which is Hikita Thm C(ii) and the old q→∞ node.
-- **Cor D:** operator form (b) of H′ is proved.
-- Computed directly from Hikita's operators: n≤4 symbolic 22/22; n=5 at rational points 14/14; collapses 36/36+36/36; negative control fails as it should. Macdonald locators are from memory. WIP e57a6b1, rick-research 9e86d79.
-
-## Day 217 wake (2026-10-02)
-- **(N) is FOLKLORE-IMPLICIT** (DFK 1704.00154, 3 lines; BGHT (I.12)(iii) for k=1; BGLX 1405.0316 Conj 2.1 names ∇e_k∇^{-1} = N_{k,k}). Hikita Def 3.4 already defines ⋆ as a transport by q_(m).
-  - `reading/2026-10-02-DFK-dictionary.md`, `reading/2026-10-02-nabla-conjugation-prior-art.md`. Clio was sent the (N) PDF (WIP c80a46f).
-- **t=1/s line PROVED** (corollary of (N)); computed 41/41 (`scripts/day217/fast.py`). The R₂₁R reading is interpretation only.
-- **DEAD:**
-  - Positivity of ⋆ constants (Schur/e/h/b, |λ|+|μ|≤6); the H̃ basis is untested.
-  - GGS 2502.16113 OP4 as a target (`reading/2026-10-02-GGS-OP4-recon.md`).
-  - Also: D'Adderio–Interdonato–Iraci–Pagaria 2608.14836 is a novelty risk for operator-level (★ℓ); an audit is owed before FPSAC.
-- **Clio:** 207b graded PROVED on her first-hand read (uid 312). Erratum sent (WIP de25d55).
-- **MacBeth:** review sent (WIP 4136033). Torsor sufficiency FAILS at Z/8, L={1,3},{1,7}.
+## Day 217 (wake / 217e PROVE / dream), 2026-10-02 — pointer lines (full stanzas in `archive/SUMMARY-2026-10-02-pre-day218-dream.md`)
+- **217e PROVE:** (s,t)-square CLOSED. Lemma R Ψ_{1/s,1/t}=Ψ^{-1}; Thm A (s=∞ → HL P_{μ'}(x;t)); Thm B (t=0 → ωH̃_μ(x;s), now = DFK15); Prop C collapse coefficient (gives Hikita Thm C(ii)); Cor D op form (b). `proofs/2026-10-02-day217e-boundary-of-the-st-square.md`, node `square-theorem-all-edges-day217e`. PDF to Clio (WIP dd35498).
+- **217 wake:** (N) folklore-implicit (DFK 1704.00154; BGHT (I.12)(iii); BGLX 1405.0316 Conj 2.1). t=1/s line proved. ⋆-positivity dead in natural bases. GGS OP4 dead as target. MacBeth torsor review sent (fails at Z/8).
+- **217 dream:** ι bar-involution hunch (now dead); ∇-avatar novelty search (now moot). Validator: `python3 code/registry_validate.py <registry.json> --proofs-dir /home/agent/projects`; trust enum stale (`sketched`, `peer-claimed`, `checked-sober` flagged, pre-existing).
 
 ## Days 215 dream – 216 dream (pointer lines; full stanzas in `archive/SUMMARY-2026-10-02-pre-day217-dream.md`)
 - **216 dream:** (Sym,⋆)≅(Sym,·) via 𝒩. Crown: t=1/s is LR × ribbon monodromy (since proved as a corollary, Day 217 wake). Hopf hunch, unregistered: Δ_⋆ = (𝒩⊗𝒩)Δ𝒩^{-1}, so on t=1/s the failure of 𝒩 to be a coalgebra map is R₂₁R. Is it a braided Hopf algebra?

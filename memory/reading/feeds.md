@@ -1,5 +1,64 @@
 # Reading Feeds
 
+## Browse 158 updates (2026-10-02, second browse session)
+
+### arXiv:2508.07255 novelty-audit CLOSED — confirmed false positive
+Full HTML read, targeted string search: no "Hall-Littlewood," no "t=0"/"q=0," no `E_k` operator.
+Actual content is Kirillov–Noumi (1998) Dunkl-operator column-creation for Schur/Jack/Macdonald.
+The earlier Semantic-Scholar abstract-level match was a mis-paraphrase. Theorem B's operator
+formula currently has **no live arXiv novelty-audit lead** — the closest remaining threads both
+point off-arXiv: the dormant MO 296383 (Schiffmann–Vasserot Z_{1,l} lemma, secondhand/unread)
+and Fayers' unpublished HL-Pieri dual (MO 337891, would need an email).
+
+### New standing reference for the bar-involution/canonical-basis hunch: Beck–Frenkel–Jing, arXiv:math/9806151
+Surfaced independently by both the arXiv and web sub-agents this session — a strong signal.
+"Canonical Basis and Macdonald Polynomials" (1998, Adv. Math.): bar involution + Macdonald
+polynomials (at t=q²) + canonical-basis unitriangularity + positivity/integrality discussion, in
+U_q(ŝl₂)'s basic representation realized on symmetric functions. This is the direct intellectual
+ancestor of the Day 217 dream's ι=Ψ∘β idea. **Read before further PROVE investment on that
+hunch** — paired with Peter Tingley's lecture notes (webpages.math.luc.edu/~ptingley/lecturenotes/
+Lusztig-basis.pdf), which give the clean general template: prove bar-involution unit-triangularity
+first (existence/uniqueness, crystal-compatible, "elementary"), treat positivity as a separate,
+harder fact that doesn't automatically follow — not a failure if Rick's version is "only"
+triangular.
+
+### GGS Open Problem 4 — standing TODO closed, still wide open
+2601.22287 (the self-citation on GGS 2502.16113 found last session) read at theorem level: it
+cites 2502.16113 only once, to name-check B_{q,t} as the object generalized to arbitrary quivers;
+the paper itself is pure quiver-variety geometry and defers all algebra (including any contact
+with Open Problem 4 / Blasiak et al.'s Y_{m_1,...,m_n} elements) to an unposted companion paper.
+No threat, no progress. **Titling correction for the log**: 2502.16113's real title is "The
+elliptic Hall algebra and the double Dyck path algebra," not "Smooth correspondences between
+quiver varieties" — that title belongs to the citing paper 2601.22287 (same three authors).
+
+### D'Adderio–Interdonato–Iraci–Pagaria 2608.14836 picked up 2 new citations
+Interdonato–Iraci's "The Theta Conjecture" (2609.17744) is a direct algebraic sequel (bivariate
+Θ-operator refinement, Schröder case proved) — worth a theorem-level read next session, closest
+live activity to the standing novelty-risk anchor. Huang–Lau–Ono's Rogers–Ramanujan paper
+(2609.20567) cites it only as elliptic-Hall/Negut background; opened a new, fast-moving but
+tangential 2026 torus-knot/Rogers–Ramanujan/shuffle-algebra cluster (2608.16086 looks like its
+hub) downstream of the compositional rational shuffle theorem, not of Hikita's AHA-level-1 line.
+
+### MO 337891 (Fayers) — live dangling lead
+Self-answered "Pieri-type rule for Schur P-functions" thread; a Feb-2021 edit claims an unposted
+Hall-Littlewood-function Pieri dual "using duality," dual to Macdonald III.5.7 — "e-mail me for
+details." Directly in Rick's HL-Pieri territory if it overlaps.
+
+### FPSAC 2027 — new submission requirement
+Confirmed still live, deadline 2026-11-15 unchanged. New this session: submissions require a
+mandatory, uncapped "AI declaration" section (excluded from the 12-page cap) — draft this
+alongside any eventual abstract, don't leave it to the last week.
+
+### Priority queue (Browse 158)
+1. ★★★★★ Read Beck–Frenkel–Jing math/9806151 in full before further bar-involution/canonical-basis PROVE work
+2. ★★★ Read Interdonato–Iraci 2609.17744 at theorem level (Theta/Negut novelty-risk watch)
+3. ★★★ Read Schiffmann–Vasserot's actual EHA/DAHA paper for the Z_{1,l} lemma (MO 296383 has nothing more to give)
+4. ★★ Decide whether to email Matt Fayers about MO 337891's unpublished HL-Pieri dual
+5. ★ Retry Matvieievskyi's EHA lecture notes PDF (TLS cert was broken this session)
+6. Standing: draft FPSAC 2027's AI-declaration section whenever a submission is prepared
+
+---
+
 ## Browse 157 updates (2026-10-02)
 
 ### MathOverflow/SE API workaround CONFIRMED WORKING AGAIN — stop treating as permanently blocked
