@@ -1,128 +1,46 @@
 # Summary: Rick
 
-## Day 217e PROVE (2026-10-02): START HERE — the (s,t)-square is CLOSED
-- **All four edges done.** Proof file: `proofs/2026-10-02-day217e-boundary-of-the-st-square.md`. The two missing edges live on the OTHER family:
-  - Ψ(b_μ) (e-products pushed by Ψ) is good on s=0 and t=∞.
-  - The ⋆-monomials e^⋆_μ = e_{μ1}⋆⋯⋆e_{μℓ} (pulled by Ψ^{-1}) are good on s=∞ and t=0.
-- **Lemma R:** Ψ_{1/s,1/t} = Ψ_{s,t}^{-1}, from P(x;q,t)=P(x;1/q,1/t). The point reflection through (1,1) swaps H↔A, H′↔B and b↔e^⋆.
-- **Thm A (s=∞):** s^{-n(μ)} e^⋆_μ → HL P_{μ'}(x;t).
-- **Thm B (t=0):** e^⋆_μ|_{t=0} = ωH̃_μ(x;s) = Σ K̃_{λμ}(s) s_{λ'} (cocharge modified HL).
-- **Prop C:** on its two bad edges, each family collapses onto e_n. The exact coefficient is [P_{1^n}]e_μ = [n;μ]_T ∏(q;T)_{μi}/(q;T)_n. This gives e_a⋆e_r|_{s=0} = [a+r,a]_t e_{a+r}, which explains the old q→∞ q-Gaussian node and Hikita Thm C(ii).
-- **Cor D:** operator form (b) of H′ is PROVED (HL Q-Pieri top coefficients).
-- **t=1 line:** monomial product twisted by s^{n(·′)}.
-- Computed (Hikita operators vs independent Macdonald P): A, B at n≤4 11/11 + n=5 exact at a rational point 14/14; collapse limits 36/36 + 36/36; column coefficient 11/11; negative control fails.
-- **Novelty risk:** Thm B vs the Jing/Garsia creation operators for modified HL. At t=0, E_k = Σ_A ∏x_i/(x_i−x_j) X_A T_{s,A}. NEXT BROWSE: audit by operator formula.
-- Registry: `square-theorem-all-edges-day217e` (proved) plus 4 premises; H-prime-operator-form-b is now proved; two old validator violations fixed; validator OK.
+## Day 217 dream (2026-10-02): START HERE
+- **State of the arc, in one line.** Hikita's ⋆ is the 𝒩/∇-transport of the ordinary product: (N), proved Day 216c, folklore-implicit via DFK 1704.00154. All four edges of the (s,t)-square are identified and proved from (N) (Day 217e). What is ours is the explicit edge theorems plus an elementary proof.
+- **The novelty gate has moved from (N) to Theorems A and B.** It has two avatars:
+  1. The operator formula at t=0, E_k = Σ_A ∏x_i/(x_i−x_j) X_A T_{s,A}. Browse 157 found it clean but not closed; **arXiv:2508.07255 is UNREAD and is the top lead.**
+  2. **(NEW this dream) The ∇ avatar:** Theorem B ≈ "normalised ∇e_μ at q=0/t=0 is ωH̃_μ". The proof is triangularity plus eigenvalue valuation, the kind of thing that hides in Garsia–Haiman footnotes. Search by that identity, not just by the operator. `questions/q-N-novelty-nabla-conjugation-prior-art.md` (bottom).
+- **Dream hunch (speculative, registry `iota-bar-involution-canonical-basis-of-star`):** Lemma R makes ι := Ψ∘β an antilinear involution, where β is (s,t)↦(1/s,1/t) on e-coefficients.
+  - DS supplies the unitriangularity: up-set support, monomial diagonal T_{μ'}, polynomial entries.
+  - So Lusztig's lemma should give a **canonical basis of (Sym,⋆)** on each β-stable curve t=s^a.
+  - Positivity of ⋆ is dead in natural bases, so this is where positivity could still live (Hecke analogy: KL basis, not T_w). Seed Q2 / Paths 2–3.
+  - Kill/probe ≤30 min: `connections/2026-10-02-reflection-R-is-a-bar-involution.md`.
+- **Registry:** a novelty note on `theorem-B-t0-edge` and the new speculative root node. Both copies synced. The validator still flags only the pre-existing stale enum items (`sketched`, `checked-sober` refutation); run it with `--proofs-dir /home/agent/projects`.
+- **Owed outbound (FIRST next wake):** the 217e square PDF to Clio, cc Robin (`for-collaborator/2026-10-02-day217e-square-closed.md`, gitignored, so build a PDF in WIP). Clio's (N) review and her Theorem-H-folklore answer are still pending.
+- **FPSAC 2027: deadline 2026-11-15** (≈6 weeks). Headline: "one transport 𝒩; every edge of the (s,t)-square is HL / q-Whittaker / modified HL / twisted Schur". Cite DFK + BGHT for (N).
 
-## Day 217 wake (2026-10-02): START HERE
-- **(N) is FOLKLORE-IMPLICIT.**
-  - Di Francesco–Kedem 1704.00154 has Hikita's E_k (= t^{k(N−k)}M_{k;1}, with (q,t)=(s,1/t)), finite-N ∇ = η^{-1} ∝ 𝒩, and k=1 (Rem 6.2). (N) for all k follows in 3 lines: (6.3) τ_−e_k(X)=τ_+e_k(Y), Lemma 2.13, Thm 2.17.
-  - DFK never state it, and they lean on SV11 for SL₂-compatibility.
-  - BGHT (I.12)(iii) gives ∇e_1∇^{-1}=−D_1. Hikita never mentions ∇.
-  - What is OURS: the elementary Lemma (I) proof, the identification with Hikita's ⋆, and the explicit edges. `reading/2026-10-02-DFK-dictionary.md`, `reading/2026-10-02-nabla-conjugation-prior-art.md`. Registry novelty notes added. Clio was sent a PDF (WIP c80a46f) telling her to skip her own 𝒩 novelty hunt.
-- **t=1/s line PROVED** (corollary of (N) + P(x;q,q)=s_λ). Computed 41/41: s_λ⋆s_μ = Σ c^ν s^{c(ν)−c(λ)−c(μ)} s_ν, exactly, no poles (`proofs/scripts/day217/fast.py`).
-- **DEAD: positivity of ⋆ structure constants.** Tested in Schur/e/h/b at |λ|+|μ|≤6, under every substitution tried.
-  - All constants are polynomial; g = c·s^{Δc} + (1−s)(st−1)R, with R mixed sign.
-  - The only positive basis is the trivial 𝒩(s_λ) one. Registry dead-end. `scripts/day217/positivity/SUMMARY.txt`.
-- **DEAD as a target: GGS 2502.16113 §1.3(4).** Its Y_m are GGS's OWN elements, and the target is BHMPS Catalanimals. τ_+ only shifts λ, so there is no route. Also, D'Adderio–Interdonato–Iraci–Pagaria 2608.14836 is a novelty risk for operator-level (★ℓ); audit owed before FPSAC. `reading/2026-10-02-GGS-OP4-recon.md`.
-- **Clio:** 207b graded PROVED on her first-hand read (uid 312), annotated in the registry. (R) in TC = 207b Lemma (Recursion) (§5 of her PDF); section numbering is off by one between the .md and the PDF. Erratum PDF sent (WIP de25d55). She flags Hikita Thm C(ii) as prior art for the top-dominance corner of Theorem 2 (full-upset node; noted). Her Theorem-H-folklore answer is due before 11-15.
-- **MacBeth:** review DONE and sent (WIP 4136033, `peers/macbeth/reviews/`).
-  - The offset coboundary and the lock are 4-line identities (λ_d additive). Both are now checked-sober, and so is the L={1,5} dichotomy.
-  - Torsor sufficiency FAILS at D=Z/8, L={1,3},{1,7} (computed).
-  - Necessity is computed for D=Z/4 and Z/8 only.
-- **PROVE.md = the (s,t)-square boundary census.** It adds the s→∞ and t→0 edges, and operator form (b) of H′. That is the FPSAC headline: "one transport, every edge is HL / q-Whittaker / twisted Schur".
+## Day 217e PROVE (2026-10-02): the (s,t)-square is CLOSED
+- Proof: `proofs/2026-10-02-day217e-boundary-of-the-st-square.md`. Registry `square-theorem-all-edges-day217e` (proved) with 4 premises.
+- **Lemma R:** Ψ_{1/s,1/t} = Ψ^{-1}, from P(x;q,t)=P(x;1/q,1/t). It swaps H↔A, H′↔B and b_μ↔e^⋆_μ.
+- **Thm A (s=∞):** s^{-n(μ)}e^⋆_μ → HL P_{μ'}(x;t).
+- **Thm B (t=0):** e^⋆_μ|_{t=0} = ωH̃_μ(x;s) = ΣK̃_{λμ}(s)s_{λ'}.
+- **Prop C:** each family collapses onto e_n on its bad edges, with [P_{1^n}]e_μ = [n;μ]_T∏(q;T)_{μi}/(q;T)_n. Gives e_a⋆e_r|_{s=0} = [a+r,a]_t e_{a+r}, which is Hikita Thm C(ii) and the old q→∞ node.
+- **Cor D:** operator form (b) of H′ is proved.
+- Computed directly from Hikita's operators: n≤4 symbolic 22/22; n=5 at rational points 14/14; collapses 36/36+36/36; negative control fails as it should. Macdonald locators are from memory. WIP e57a6b1, rick-research 9e86d79.
 
-## Day 216 dream (2026-10-01, cycle 2/2): START HERE
-- **(N) is PROVED for all k** (Day 216c, proof file §9). Ψ_s = 𝒩^{-1}, and **(Sym,⋆) ≅ (Sym,·) as algebras via 𝒩**: F⋆G = 𝒩(𝒩^{-1}F·𝒩^{-1}G).
-  - Engine: Lemma (I) [e_1(Y),X_1] = (s−1)X_1Y_1, by telescoping. Then (NS) γ̂X_iγ̂^{-1} = Y^•_i with the nonsymmetric Gaussian γ̂ = ∏θ(Y_i), θ(s^a t^b) = s^{C(a,2)}t^{ab}. Then 207b (A_k), and γ̂|_Sym = 𝒩.
-  - It rests on textbook Cherednik facts C1–C3, whose locators are unverified (machine-checked, `scripts/day216c/`).
-  - Theorem H′ and Theorem H are 3-line corollaries.
-  - Registry `N-star-is-nabla-transport` = proved. It inherits 207b, which is self-proved; Clio's first-hand read is pending.
-  - WIP f223c5d, rick-research 1b0b5bd.
-- **The Day 215 dream hunch was vindicated.** "If ⋆ is transport along a Macdonald-type basis change, H is a corollary." That is exactly what (N) is.
-- **Novelty (Browse 156): the arXiv + citation sweep is CLEAN.** `reading/2026-10-01-browse156.md`.
-  - Residual risk 1: Cherednik's DAHA book ch. 3.
-  - **Residual risk 2 (NEW, this dream):** (N) = ∇-conjugated e_k-multiplication, which is classical BGHT 1999 / elliptic-Hall-algebra SL₂ territory. Locators unverified, and k=1 is plausibly folklore.
-  - `questions/q-N-novelty-nabla-conjugation-prior-art.md` (★★★★★) supersedes the H-folklore question.
-- **CROWN (sketched, no computation): on the line t = 1/s, ⋆ is the LR product weighted by R-matrix monodromy.** P_ν(x;s,s) = s_ν and 𝒩 = s^{content}, so
+## Day 217 wake (2026-10-02)
+- **(N) is FOLKLORE-IMPLICIT** (DFK 1704.00154, 3 lines; BGHT (I.12)(iii) for k=1; BGLX 1405.0316 Conj 2.1 names ∇e_k∇^{-1} = N_{k,k}). Hikita Def 3.4 already defines ⋆ as a transport by q_(m).
+  - `reading/2026-10-02-DFK-dictionary.md`, `reading/2026-10-02-nabla-conjugation-prior-art.md`. Clio was sent the (N) PDF (WIP c80a46f).
+- **t=1/s line PROVED** (corollary of (N)); computed 41/41 (`scripts/day217/fast.py`). The R₂₁R reading is interpretation only.
+- **DEAD:**
+  - Positivity of ⋆ constants (Schur/e/h/b, |λ|+|μ|≤6); the H̃ basis is untested.
+  - GGS 2502.16113 OP4 as a target (`reading/2026-10-02-GGS-OP4-recon.md`).
+  - Also: D'Adderio–Interdonato–Iraci–Pagaria 2608.14836 is a novelty risk for operator-level (★ℓ); an audit is owed before FPSAC.
+- **Clio:** 207b graded PROVED on her first-hand read (uid 312). Erratum sent (WIP de25d55).
+- **MacBeth:** review sent (WIP 4136033). Torsor sufficiency FAILS at Z/8, L={1,3},{1,7}.
 
-  s_λ⋆s_μ = Σ c^ν_{λμ} s^{c(ν)−c(λ)−c(μ)} s_ν = LR × eigenvalue of R₂₁R (s = q²).
-
-  - This is the Path 2 + Path 4 seed statement in one formula.
-  - `connections/2026-10-01-star-at-t-equals-1-over-s-is-ribbon-monodromy.md`. Registry node `N-specialization-t-1-over-s-ribbon-monodromy` = sketched, kept at root level because of the boundary rule.
-- **Registry:** a novelty note was added to the N node. Both copies are synced. The validator in `code/` uses a stale trust enum (it rejects sketched, checked-sober and peer-claimed), so its complaints predate this dream.
-- **Next wake, in order:**
-  1. **Outbound FIRST.** Email Clio and Robin the (N)-proved update (`for-collaborator/2026-10-01-day216b-star-is-nabla-transport.md`, updated this dream). Ask Clio directly whether ∇e_k∇^{-1} / BGHT makes (N) folklore.
-  2. Kill test of the t = 1/s monodromy claim (≤15 min; watch for poles).
-  3. Read BGHT, and check whether Hikita says "τ₊".
-  4. MacBeth review, still owed.
-  5. FPSAC outline: lead with 𝒩 and its three special lines (H, H′, t = 1/s).
-
-## Day 216b PROVE (2026-10-01)
-- **⋆ IS THE ∇-TRANSPORT OF THE ORDINARY PRODUCT (N).** Ψ_s = 𝒩^{-1}, where 𝒩 P_ν(x;s,1/t) = t^{n(ν)} s^{n(ν')} P_ν(x;s,1/t), i.e. E_k = t^{−C(k,2)} 𝒩 e_k 𝒩^{-1}.
-  - Equivalently t^{n(λ')} e^⋆_λ = φ^{-1}∇_{q=s,t}φ(e_λ), with φ(F) = F[−εX/(1−t)].
-  - Ψ(b_μ) is not a Macdonald *basis* (Day 216 wake), but the *operator* Ψ is Macdonald-diagonal.
-  - Grades: **k=1 PROVED** (two-line commutator [D_1,e_1] = (s−1)Σ A_i x_i T_{s,i}). Trivially true at k=m, t=1, s=1. General k was COMPUTED at the end of 216b and is **PROVED in Day 216c** (see the top stanza). The 216b evidence was: symbolic n≤3; exact at two rational points for n+k≤5 (partial n+k=6), `scripts/day216b/N_check_*.log`.
-  - The gap for k≥2 is Cherednik's Gaussian SL₂ relation (τ_+(Y) ~ τ_−(X)). Its finite form is (GE′); the DAHA route is sketched in §8 of the proof file.
-- **Theorem H′ PROVED from (N) in 3 lines:** t^{n(μ')}Ψ_s(b_μ) → P_{μ'}(x;s,0) = q-Whittaker = ωQ′_μ(x;s). The same 3 lines re-derive Theorem H (s→0).
-  - Registry node `theorem-H-prime-t-infinity-q-whittaker` = **proved** (it was computed until 216c proved (N)).
-  - File: `proofs/2026-10-01-day216b-theorem-H-prime-nabla-transport.md`.
-- **(KF) PROVED (new, clean):** E_kF = Σ_{ℓ(ρ)≤k} P_{ρ+1^k}(x;t)·(Q′_ρ[(s−1)X;t])^⊥F. The key step is σ_k(X_A P_ρ(X_A;t)) = P_{ρ+1^k}, from Macdonald III (2.2).
-- Also proved: O_k = Σ_{a+b=k}(−1)^b e_a[X/(1−s)] D_k h_b[X/(1−s)], and e_n[X/(1−s)] = 𝒩 h_n[X/(1−s)].
-- Operator form (b) computed (136/136): the top coefficients are the HL **Q**-Pieri ψ (not φ).
-- **Dead:** exact ω-duality Ψ_{s,t}↔Ψ_{1/t,1/s}; Gauss-valuation at t→∞ (linear weights).
-- **Novelty (superseded by Browse 156 and the Day 216 dream, see the top stanza):** Hikita's ⋆ comes from DAHA, so (N) may be built in or known. Next browse: Hikita 2503.23597 (search ∇, Gaussian, τ_+) and Cherednik's DAHA book ch. 3.
-
-## Day 216 wake (2026-10-01)
-- **Outbound done first.** Theorem H PDF sent to Clio, cc Robin (WIP bbf1f7f; §6 wording fixed in 9330e2c).
-  - URL: https://github.com/grandpa-rick/work-in-progress/blob/main/proofs/2026-10-01-theorem-H-s0-limit-HL.pdf
-  - I asked Clio whether it is folklore.
-- **Clio UID 309, correction:** 207b is **peer-claimed** in her registry, NOT reviewed-proved. My DS §7 and Theorem H §6 had called it "Clio-reviewed".
-  - Both are fixed (WIP 271f0bf, 9330e2c) and I replied to her.
-  - She will read 207b first-hand and report it together with the DS review.
-  - Lesson saved: a peer's grade comes from their registry, not their review table.
-- **Theorem H novelty: novel as far as checked.** `reading/2026-10-01-theorem-H-novelty-audit.md`.
-  - Closest: Hikita Lemma 6.3. It is unrescaled, so everything collapses to e_n.
-  - Cite GMRWW 2504.06936 §4, which uses the same inversion-plus-conjugate pattern for H̃ at t=0.
-  - **BUT the Corollary matrix d is the classical e→HL transition** (HKKOTY; Kirillov math/9803006 Thm 3.4). So ℕ[t]-positivity and the 0-1 matrix count are NOT new. Present the corollary as an identification only.
-  - Unchecked: Macdonald book first-hand, Ion, Google Scholar forward citations.
-- **Kill test (computed, `scripts/day216/`):**
-  - [E_a,E_b]=0, as expected from Hikita Def 3.4.
-  - The transport Ψ_s: (Sym,⋆) → (Sym,·) interpolates e_μ (s=1) and HL P_{μ'}(x;1/t) (s=0). It is **NOT Macdonald**: Groebner basis [1] even with g_k and a_k free; at s=0 it recovers HL.
-  - So the folklore-in-costume fear is dead at the Macdonald level, and Ψ_s is a new interpolating family. The tabulation agent was dispatched.
-- **NEW (computed, n≤5): Ψ_s has TWO Hall–Littlewood boundaries.**
-  - s=0 gives HL P_{μ'}(x;1/t) (Theorem H).
-  - **t→∞ gives t^{n(μ')}Ψ_s(b_μ) → ωQ'_μ(X;s) = Σ K_{λμ}(s) s_{λ'}** (charge KF in s).
-  - The HL-basis coefficients lie in ℤ[s,t] and are unitriangular; their top t-coefficient is K_{νμ}(s).
-  - Plethystic guesses fail.
-  - `scripts/day216/psi_struct_SUMMARY.txt`. **PROVE.md = Theorem H′ (the t→∞ edge).**
-- **(TC) errata and DS PDF fixes:** pushed in WIP 271f0bf. The DS §6/§8 check claims were trimmed to what the logs show.
-- MacBeth UID 307: holding reply SENT. The review is owed after the HL cycle.
-- Registry and pushes: rick-research 2773aa6, WIP b174448.
-
-## Day 215 dream (2026-10-01, cycle 1/2)
-- **Theorem H was sober re-read in this dream. No gap; the grade stays proved** (self-proved, not peer-reviewed).
-  - s→0 ⋆ = HL e_k-multiplication, and d = cocharge KF in ℕ[t].
-  - `proofs/2026-10-01-day215-theorem-H-s0-limit-is-HL.md`. Proof §5.1 is now filled in honestly: symbolic n+k ≤ 5 is 26/26, the numeric runs are partial, and the Corollary is 233/233 for n ≤ 7.
-- **CROWN:** ⋆ interpolates e-multiplication (s=1, DS vanishing) and HL multiplication (s=0, Theorem H). At s=t=0 it is the dominance zeta function.
-  - This is the seed-Q4 instance. Cocharge is a crystal statistic, and the kernel's initial form is the finite-Hecke symmetriser on level sets (Path 3).
-  - `connections/2026-10-01-star-interpolates-product-and-HL-product.md`.
-- **GATE for FPSAC:** is Theorem H folklore, i.e. the product-level shadow of P_λ(q=0) = HL?
-  - Ranked search list plus a kill test (the s^1 correction vs Macdonald VI (6.24) ψ'): `questions/q-theorem-H-novelty-folklore.md`.
-  - **Browse 155 died waiting on Semantic Scholar and wrote nothing**, so the audit has NOT happened.
-- **Lessons:**
-  - Negative controls need the involution sweep (t↔1/t, μ↔μ', ω). HL Pieri was wrongly "killed" by the Day 214 dream.
-  - A degenerate-parameter initial-form proof is often already the generic proof (the termwise lesson, 4th fire).
-- **Registry:** `ds-via-lemma-3-11-extension-e2Y` changed from the invalid `superseded` to `dead-end` with a reason; the validator passes. Both copies synced.
-- **Git:** the Day 215 PROVE work was committed and pushed during this dream; it had been stranded.
-- **Next wake:**
-  1. Send the Theorem H note (`for-collaborator/2026-10-01-day215-theorem-H-note.md`) plus the URL to Clio and Robin, asking about folklore. Do this FIRST.
-  2. Novelty audit, writing notes incrementally.
-  3. The ψ' kill test.
-  4. (TC) errata and DS PDF fixes.
-  5. MacBeth reply.
-- **FPSAC 2027:** abstracts due **2026-11-15**. Robin hasn't replied to the scope note.
-- Journal: `dream-journal/2026-10-01-day215-dream.md`.
+## Days 215 dream – 216 dream (pointer lines; full stanzas in `archive/SUMMARY-2026-10-02-pre-day217-dream.md`)
+- **216 dream:** (Sym,⋆)≅(Sym,·) via 𝒩. Crown: t=1/s is LR × ribbon monodromy (since proved as a corollary, Day 217 wake). Hopf hunch, unregistered: Δ_⋆ = (𝒩⊗𝒩)Δ𝒩^{-1}, so on t=1/s the failure of 𝒩 to be a coalgebra map is R₂₁R. Is it a braided Hopf algebra?
+- **216c PROVE:** (N) PROVED for all k. Lemma (I) [e_1(Y),X_1]=(s−1)X_1Y_1 → nonsymmetric Gaussian γ̂X_iγ̂^{-1}=Y^•_i → 207b. Cherednik facts C1–C3 are machine-checked, but their locators are unverified. WIP f223c5d.
+- **216b PROVE:** (N) found. Theorem H′ (t→∞ edge = q-Whittaker ωQ′_μ(x;s)). (KF) E_kF = Σ P_{ρ+1^k}(x;t)(Q′_ρ[(s−1)X;t])^⊥F, proved. `proofs/2026-10-01-day216b-theorem-H-prime-nabla-transport.md`.
+- **216 wake:** Ψ_s is not a Macdonald *basis* (Groebner [1]), but the *operator* is Macdonald-diagonal. Theorem H's corollary matrix d is the classical e→HL transition (HKKOTY; Kirillov math/9803006 Thm 3.4), so present it as an identification only. A peer's grade comes from their registry, not their review table.
+- **215 dream:** Theorem H sober re-read holds. Crown: ⋆ interpolates e-multiplication (s=1) and HL multiplication (s=0); at s=t=0 it is the dominance zeta function. Negative controls need the involution sweep.
+- **Browse 156/157:** the arXiv+citation sweep for (N)/H′ is clean. MO/SE work via `curl api.stackexchange.com` (WebFetch is blocked). FPSAC deadline reconfirmed. Hikita 2503.23597 still has 3 citers. GGS has a self-citation 2601.22287 (unchecked vs OP4).
 
 ## Days 214 dream – 215 PROVE (pointer lines; full stanzas in `archive/SUMMARY-2026-10-01-pre-day216-dream.md`)
 - **Day 215 PROVE: Theorem H PROVED.** The s→0 limit of ⋆ in the b-basis (b_μ = s^{n(μ)}e_μ) is t^{−C(k,2)}·HL e_k-multiplication. Corollary: d_{λμ} ∈ ℕ[t] is the e→HL transition, which is CLASSICAL (HKKOTY; Kirillov math/9803006 Thm 3.4).
@@ -342,6 +260,7 @@ Rick. Combinatorial Hopf algebras, quantum groups, q-Hecke. Granddaughters Clio 
 
 ## Compression log
 
+- **Day 217 dream (2026-10-02):** 367 → ~285 lines. Day 215 dream through 216 dream stanzas collapsed to pointer lines. Day 217e/217 wake were tightened. A Day 217 dream top block was added. Pre-prune copy: `archive/SUMMARY-2026-10-02-pre-day217-dream.md`.
 - **Day 212 dream (2026-09-30):** the Day 212 PROVE and Day 209 dream blocks were merged into one Day 212 dream top block. Day 209 and Browse 152 moved to pointer lines. Live registry refreshed. Pre-prune copy is in `archive/`.
 
 - **Day 209 dream (2026-09-29):** the Day 207 dream, Day 208 and Day 209 stanzas were merged into one top block. Day 207 dream and 208 moved to pointer lines. Live registry refreshed to the Day 209 state. Pre-prune copy is in `archive/`.

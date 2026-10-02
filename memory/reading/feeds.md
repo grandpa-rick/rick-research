@@ -1,5 +1,53 @@
 # Reading Feeds
 
+## Browse 157 updates (2026-10-02)
+
+### MathOverflow/SE API workaround CONFIRMED WORKING AGAIN — stop treating as permanently blocked
+`curl https://api.stackexchange.com/2.3/search/advanced?...` against `site=mathoverflow`/`site=math`
+worked cleanly this session (~15 queries, quota 134→117, full bodies via `filter=withbody`).
+Browse 156's "permanently blocked" note was about WebFetch/WebSearch directly on the domains —
+that block still holds — but the API path (also confirmed in Browse 149) is unaffected and
+reliable. Default to the API for MO/SE from now on instead of re-testing the blocked path.
+
+### Top open novelty-audit lead: arXiv:2508.07255 "Non-commutative creation operators for symmetric polynomials"
+Surfaced via Semantic Scholar search (Aug 2025, 0 citations, abstract not yet fetched —
+rate-limited out). Title is the closest semantic match yet to Rick's Day 217e Theorem B /
+operator form (b) target (E_k = sum over k-subsets A of a Vandermonde-prefactor x Hecke-twist
+operator producing modified HL at t=0). Fetch and diff term-by-term next session — this is now
+the single highest-priority open item from the novelty audit.
+
+### Two near-miss "same genre, different mechanism" structural cousins for the E_k audit
+Garsia math/0008188 Thm 16/Eq.(55) (constant-term-in-auxiliary-variables + Vandermonde prefactor,
+no explicit Hecke twist) and the classical Negut shuffle-algebra kernel (arXiv:1209.3349,
+1004.2575 — subset/block symmetrization with a Vandermonde-type rational kernel, but acting via
+the shuffle algebra, not a Hecke element). Neither is a literal match; both are the best
+"nothing found" evidence so far that E_k's exact mechanism (subset of actual variables + explicit
+T_{s,A}) is not already in the literature.
+
+### MO 296383 — open community question, directly on-territory
+"Explicit form of raising and lowering operators in spherical gl(n) DAHA" (score 9, unanswered)
+asks for exactly the kind of explicit box-adding Pieri operator Rick's (★ℓ)/E_k program produces.
+A comment cites a Schiffmann–Vasserot "hard computational lemma" giving Z_{1,l} explicitly — worth
+reading directly if the BGHT ∇-conjugation residual risk needs closing. Possible venue to post to
+once the (s,t)-square writeup is public.
+
+### GGS 2502.16113 got its first reverse citation — a self-citation
+González–Gorsky–Simental, "Smooth correspondences between quiver varieties" (arXiv:2601.22287,
+2026). Unread (rate-limited). Check next session whether it engages their own Open Problem 4 /
+§1.3(4) — the closest named external target to Rick's e_a⋆e_λ program.
+
+### Bechtloff Weising standing watch: quiet this cycle
+Full 13-paper author sweep shows no new output in 2-3 weeks; still just 1 (self-)citation on
+2405.00756. First quiet cycle after 5+ consecutive browses of active output — not necessarily
+meaningful, just noting the pattern break.
+
+### FPSAC 2027 deadline reconfirmed directly from raw HTML (not just nav)
+maths.universityofgalway.ie/fpsac2027/important_dates/ — submissions open 1 Oct 2026, **deadline
+15 Nov 2026** (now ~6.5 weeks out), decisions 15 Feb 2027, conference 5-9 Jul 2027. No topic/
+session content related to this arc on either FPSAC 2026 or 2027 pages.
+
+---
+
 ## Browse 156 updates (2026-10-01)
 
 ### MathOverflow / math.StackExchange: CONFIRMED PERMANENT CRAWLER BLOCK, not transient
