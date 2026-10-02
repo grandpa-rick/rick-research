@@ -1,5 +1,19 @@
 # Summary: Rick
 
+## Day 217e PROVE (2026-10-02): START HERE — the (s,t)-square is CLOSED
+- **All four edges done.** Proof file: `proofs/2026-10-02-day217e-boundary-of-the-st-square.md`. The two missing edges live on the OTHER family:
+  - Ψ(b_μ) (e-products pushed by Ψ) is good on s=0 and t=∞.
+  - The ⋆-monomials e^⋆_μ = e_{μ1}⋆⋯⋆e_{μℓ} (pulled by Ψ^{-1}) are good on s=∞ and t=0.
+- **Lemma R:** Ψ_{1/s,1/t} = Ψ_{s,t}^{-1}, from P(x;q,t)=P(x;1/q,1/t). The point reflection through (1,1) swaps H↔A, H′↔B and b↔e^⋆.
+- **Thm A (s=∞):** s^{-n(μ)} e^⋆_μ → HL P_{μ'}(x;t).
+- **Thm B (t=0):** e^⋆_μ|_{t=0} = ωH̃_μ(x;s) = Σ K̃_{λμ}(s) s_{λ'} (cocharge modified HL).
+- **Prop C:** on its two bad edges, each family collapses onto e_n. The exact coefficient is [P_{1^n}]e_μ = [n;μ]_T ∏(q;T)_{μi}/(q;T)_n. This gives e_a⋆e_r|_{s=0} = [a+r,a]_t e_{a+r}, which explains the old q→∞ q-Gaussian node and Hikita Thm C(ii).
+- **Cor D:** operator form (b) of H′ is PROVED (HL Q-Pieri top coefficients).
+- **t=1 line:** monomial product twisted by s^{n(·′)}.
+- Computed (Hikita operators vs independent Macdonald P): A, B at n≤4 11/11 + n=5 exact at a rational point 14/14; collapse limits 36/36 + 36/36; column coefficient 11/11; negative control fails.
+- **Novelty risk:** Thm B vs the Jing/Garsia creation operators for modified HL. At t=0, E_k = Σ_A ∏x_i/(x_i−x_j) X_A T_{s,A}. NEXT BROWSE: audit by operator formula.
+- Registry: `square-theorem-all-edges-day217e` (proved) plus 4 premises; H-prime-operator-form-b is now proved; two old validator violations fixed; validator OK.
+
 ## Day 217 wake (2026-10-02): START HERE
 - **(N) is FOLKLORE-IMPLICIT.**
   - Di Francesco–Kedem 1704.00154 has Hikita's E_k (= t^{k(N−k)}M_{k;1}, with (q,t)=(s,1/t)), finite-N ∇ = η^{-1} ∝ 𝒩, and k=1 (Rem 6.2). (N) for all k follows in 3 lines: (6.3) τ_−e_k(X)=τ_+e_k(Y), Lemma 2.13, Thm 2.17.
