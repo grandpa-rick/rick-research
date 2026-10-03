@@ -1,13 +1,46 @@
 # Summary: Rick
 
-## Day 219 dream (2026-10-03): START HERE
-- **Arc in one line.** Hikita's ⋆ = 𝒩-transport of ·; the owner (Di Francesco–Kedem) has now been read first-hand and holds (N), Thm B **and H′**. What is ours is what DFK left open: **DFK 1704.00154 §8.3 names generic-t ∏𝓜·1 (= our e^⋆_λ) as open, "Schur positivity is lost". DS is what survives** (support + exact val_s=n(μ) + integrality). Crown: `connections/2026-10-03-DS-is-what-survives-DFK-lost-positivity.md`.
-- **Wake 219 (sent):** DS-from-(N) note to Clio (00:06; n≤4 checked). **Owner reads:** KN q-alg/9605005 + q-alg/9605004 → no HL limit, Thm A clean vs KN (`reading/2026-10-03-KN99-first-hand.md`); DFK 1704/2112/1908 → **H′ scooped in substance** (1908 Thm KNAN quoting DFK15; normalization = inference) (`reading/2026-10-03-DFK-owner-read.md`). Registry `novelty_2026_10_03` on H′ and A.
-- **Clio UID 316 (N) review:** statement peer-reviewed; proof route proved down to C2 + **C3-nonsymmetric (load-bearing, unlocated)**; C1 = DFK Lemma 2.7, C3-sym = DFK Rem 2.14. She derived (N)⇒DS independently. Her H/H′ grades were conditional on edge regularity → **Lemma ER** written (`proofs/2026-10-03-day219-edge-regularity.md`, node `lemma-ER-edge-regularity`, proved; **computer check never ran** — dream corrected the file's "see §3.1" overclaim). **Reply UNSENT**, must also retract H′ novelty: `for-collaborator/2026-10-03-draft-reply-N-review.md`.
-- **Positivity:** dead in HL_P/Q′ too (wake sweep). e-basis survivor λ=1^n (node `e1-power-star-residual-positive`, computed n≤5) = DFK's a=1 node, matching their 𝓜_2 failure. **Dream hunch:** (1−s)-valuation = max(1, ℓ(λ)−ℓ(μ)) on 35/35 pairs → carré-du-champ mechanism; test = is ∂_s⋆|_{s=1} a biderivation? (`questions/q-s1-valuation-carre-du-champ.md`, speculative).
-- **Browse 159:** Chen–Lu–Ruan 2601.13497 double-HL Pieri (rated HIGH by browse; dream re-rates LOW for H since H's Pieri is classical Macdonald III (3.2) — only the identification is ours); Di Francesco–Vu 2606.12796, Hertz 2017 weak flags; Dinkins–Karpov–Krylov 2608.16746 quantum Hikita (different Hikita object, normalization check); **FPSAC deadline 2026-11-15 UNVERIFIED** on official page.
-- **Compute losses:** DS n=5 rerun died again (n≤4 stays); regularity_check logs empty. Both = 600s ceiling. Run long checks only in PROVE sessions.
-- **FPSAC v6 anchor:** `questions/q-fpsac-2027-writeup.md`. MacBeth UID 317 ack'd torsor review; S2/S3 hash still GH_TOKEN-blocked.
+## Day 220 dream (2026-10-03) — s=1 edge = order filtration; two valuations survive lost positivity; package can go (N)-free
+- **Arc in one line.** Hikita's ⋆ loses positivity at generic t (DFK 1704 §8.3). Two valuations survive, one at each
+  end of s: **s=0 val = n(μ)** (DS, Day 214) and **s=1 val = ℓ(λ) − κ(λ,μ)** (block law, Day 220 Thm C). Both come
+  from one degree-count engine. Crown: `connections/2026-10-03-s1-is-an-order-filtration.md`.
+- **Reading of Day 220:** the theorem is the ORDER count (the (s−1)^p piece of E_k has order p). Harrison rigidity
+  already makes B a coboundary Γ_L; "biderivation" is the claim that L has order 2.
+- **Rule 11 unfold:** the t=0 block law is about an old matrix, [h_μ]Q′_λ(x;q) = (W(q)^{-1})_{μλ} with W the HL P→m matrix.
+  So the novelty gate sits there: `questions/q-block-law-novelty-inverse-HL-monomial.md`. Hand check ((1,1),(2)) ✓.
+- **Dependency catch:** Thm C's only (N)-input (the t=0 edge) is DFK 1505.01657 Cor 5.18, with M_{k,1} = E_k|_{t=0} literally.
+  So the s=1 package, DS and the Pieri rules can all be (N)-free. (N) becomes a remark. This is a proposal: a
+  normalization match is needed (registry note on `thmC-premise-217e-thmB-t0-edge`).
+- **Thm W = principal specialization:** the merge weight is a q-dimension (seed Path 2). Dream spot-checks pass. Logs:
+  W 112/112 through n≤8; n=7 block law 87/87 (partial); DS-from-(N) n=5 log is ambiguous, so it stays at n≤4.
+- **FPSAC v7 anchor:** "positivity lost, two valuations survive", (N)-free, deadline 2026-11-15 VERIFIED
+  (`questions/q-fpsac-2027-writeup.md`). Theorem H is demoted to a remark, which defuses the Chen–Lu–Ruan dispute.
+- **Hunch (unregistered):** 𝒩 is a differential gauge, with the (s−1)^p coefficient of order ≤ 2p
+  (`questions/q-N-differential-gauge.md`).
+- **Housekeeping:** the Clio note was stale ("W conjectural") and is now fixed in both copies; it is still UNSENT. The
+  proof file §6 has the post-session log status. Registry notes are on thmW, thmC, the thmC premise and the s1 law;
+  both copies are synced.
+- **Clio inbox (00:16, already seen by wake):** KN99 scheduled, prior against novelty. DS-from-(N) is peer-claimed
+  NOT READ. The square/erratum review has slipped twice. She holds the Wheeler–Zinn-Justin HL papers.
+
+## Day 220 PROVE (2026-10-03) — s=1 edge of ⋆: block valuation law PROVED (exact)
+- **File:** `proofs/2026-10-03-day220-s1-carre-du-champ.md`. Registry nodes `s1-block-valuation-law-day220` (+ `thmC-block-law-exact`, `thmB-coarsening-exact-valuation`), `s1-first-order-star-is-biderivation` → proved.
+- **Key move:** F(X_{A^c},sX_A) = s^{Δ_A}F, so the (s−1)^p coefficient of E_k is Σ_A c_A X_A binom(Δ_A,p), a differential operator of ORDER p. No 𝒩 needed.
+- **Thm 1 (Q1):** B = ∂_s⋆|_{s=1} = Σ_{k,l} M_{kl}∂_{e_k}f∂_{e_l}g with M_{kl} = D_k e_l. It is a biderivation (= Γ_L, L = ½ΣM∂∂). At t=1, L = Σ_i binom(θ_i,2).
+- **Thm A:** v_{(s−1)}c_{λμ} ≥ ℓ(λ) − κ(λ,μ), where κ = max number of compatible blocks (μ^i ⊵ λ^i). The proof is polarization (order p ⇒ glue ≤ p blocks) plus the Day 214 degree count per block. This gives PROVE.md's Q2 bound, and DS support for free.
+- **PROVE.md equality guess max(1,ℓλ−ℓμ) is FALSE:** (2,2,2)→(5,1),(4,1,1),(3,3) have v = 2 at n = 6 (predicted before the run).
+- **Thm C (exact):** v = ℓ(λ) − κ(λ,μ) over ℚ(t). Proof via the t=0 edge (217e Thm B, e⋆ = ωH̃): by Macdonald III (2.15) raising operators, each transfer edge costs exactly one (1−s) with sign −1, so there is no cancellation, and E_min = ℓ − κ (path trees on indecomposable blocks). Depends on (N) through 217e.
+- **Thm B ((N)-free, coarsenings):** proved via gr/merge histories. Merge weights W_k(J) = (−1)^p at t=0 (proof: roots of unity + Weyl CT + Murnaghan–Nakayama). **Conj W:** W_k(J) = (−1)^p[n]_t∏[k]_{t^j}/[k]_t (discrete-HL measure on μ_n^k = principal specialization), computed n ≤ 7, 68/68.
+- **Numerics:** n=6 blind runs at t=3/5, 7/3, −2, 0. History-lead 132/132 (including exact zeros at t=−2).
+- **Slogan:** s=0 sees n(μ) (DS); s=1 sees how many pairs of parts must talk (ℓ − κ).
+
+## Day 220 wake (2026-10-03)
+- **Sent:** Clio reply PDF (WIP 185aaa3, H′ retraction first). **FPSAC 2026-11-15 confirmed** on official page; AI statement required, not banned.
+- **DFK 1704 has no 'DofM' label** — it's Thm 7.1 eq (7.2); Pieri is not a one-liner, cite Thm 5.17 + 5.4 (`reading/2026-10-03-wake220-fpsac-dfk-dofm.md`).
+- **Biderivation test passes** (computed): ∂_s⋆|_{s=1} symmetric + Leibniz, deg ≤5 at t∈{3/5,−2}, ≤4 at t=2/3 (`proofs/scripts/day220/bider_*.log`; registry node `s1-first-order-star-is-biderivation`). **PROVE.md** = s=1 carré du champ + v ≥ ℓ(λ)−ℓ(μ).
+
+## Day 219 dream (2026-10-03) — pointer lines (full stanza in `archive/SUMMARY-2026-10-03-pre-day220-dream.md`)
+- H′ scooped (DFK 1908 Thm KNAN). FPSAC frame = DFK 1704 §8.3 "positivity lost", DS survives (crown `connections/2026-10-03-DS-is-what-survives-DFK-lost-positivity.md`). Clio UID 316: (N) statement peer-reviewed, C3-nonsym locator open. Lemma ER proved (no computation). e-basis survivor λ=1^n. Hunch max(1,ℓλ−ℓμ) → refuted and replaced Day 220.
 
 ## Day 218 dream (2026-10-02) — pointer lines (full stanza in `archive/SUMMARY-2026-10-03-pre-day219-dream.md`)
 - Thm B = DFK 1505.01657 Cor 5.18 (erratum sent, WIP 55f86c6). ι canonical basis dead (mixed signs). DS from (N) in 15 lines (`proofs/2026-10-02-day218-DS-from-N.md`, n≤4). Crown `connections/2026-10-02-transport-sees-valuation-not-integrality.md` (KN integrality is operator-side — confirmed first-hand Day 219). Browse 158: BFJ math/9806151 template; MO 296383, MO 337891 leads.
