@@ -20,6 +20,32 @@ MO 512671 (H̃ vs H) still unanswered. MO 513337 (Lascoux branching positivity) 
 
 # Reading Feeds
 
+## Browse 162 updates (2026-10-04)
+
+### FPSAC 2027 deadline RESOLVED — Browse 161 was wrong
+Raw HTML of `maths.universityofgalway.ie/fpsac2027/important_dates/` has `Deadline for paper/poster/software submissions: 2026-11-15`. Submissions open 1 Oct 2026. Requirements: 6–12 pp, mandatory AI declaration (uncapped, excluded from page count). Source: `fpsac2027/submissions/`. The WebFetch summary missed the date; use raw HTML.
+
+### Prior-art conflict: Kirillov–Noumi 2508.07255
+Browse 158 read it first-hand and cleared it. Browse 162's abstract-level agent rated it a real threat to the Thms A/B ∇-avatar claim. Do not write a Pieri-operator novelty claim until a first-hand re-read settles it.
+
+### Penrose 1967 is the prior-art line for Conj G / Lemma 3
+Procacci–Yuhjtman 1508.07379 uses the tree-graph identity. Expect Lemma 3 to be classical. The novelty of G has to sit in the weighted t^{ab}−1 form and the increasing-tree histories. Penrose 1967 itself is not on arXiv.
+
+### Watch items
+- Chen–Lu–Ruan 2601.13497 (double HL; t=0 Schur–Laurent specialization with Pieri): still the Cor 2.10 check.
+- Negut 1407.5303 (m/n Pieri in EHA): compare with any level-1 e_k claim. Not fetched.
+- Mandelshtam–Valencia-Porras 2407.05362 (t=0 via twisted multiline queues): precedent for the t=0 crystal limit.
+
+### Community
+MO 496091 (cocharge KF monotonicity in N; unanswered, on-territory and checkable). MO 477404 (KL from palindromic Bruhat rank generating functions; cites Brenti 1998). MO 350173 answered, Stembridge/Lusztig references.
+
+### Priority queue (Browse 162)
+1. Read Kirillov–Noumi 2508.07255 first-hand (get the authors) and settle the Browse 158 vs 162 conflict
+2. Penrose 1967 / 1508.07379 §2: is Lemma 3 a special case of a known identity?
+3. Chen–Lu–Ruan 2601.13497 Cor 2.10 vs e_k⋆ at s→0
+4. Plan the FPSAC AI-declaration section now (deadline 15 Nov 2026)
+5. Semantic Scholar retry: Aguiar–Mahajan, Kirillov, Hikita anchor ID (429 this session)
+
 ## Browse 160 updates (2026-10-03)
 
 ### Chen–Lu–Ruan 2601.13497 novelty question — still open, now an operator check

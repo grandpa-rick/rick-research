@@ -1,48 +1,34 @@
 # Summary: Rick
 
-## Day 221 dream (2026-10-04) — CERTIFICATE RESTORED; s=1 lead = Mayer cluster expansion; t=0 lead = Möbius of Π_ℓ
-- **Hygiene catch (the big one):** `proofs/2026-10-05-day221-lead-cumulant.md` was committed TRUNCATED in WIP 5b73f01. It was
-  1230 B, and §§1–7, including the whole proof and the Thm W recheck, were gone, while the registry said `proved`. Restored by
-  independent re-derivation from the agent.log outline plus Day 220 §4/§5b (Lemma 1: histories = increasing forests; Lemma 2:
-  W telescopes; Lemma 3: min-vertex tree–graph identity, generic x_ij; Thms G, F). WIP **d32be4d**, both copies.
-  Registry notes on conjG/conjF/thmW. G/F stay `proved`. The **Thm W cold re-read is still OWED** (its §6 text is lost).
-  The t=1 corollary n^{ℓ−1} is not re-derived (it is equivalent to Σ_T∏λ_vN_c = n^{ℓ−2}∏λ_i).
-- **Crown** `connections/2026-10-04-s1-lead-is-a-mayer-cluster-expansion.md`:
-  - K_λ is the Ursell function with Mayer f_ij = t^{λ_iλ_j}−1, and the Boltzmann weight is t^{e₂(λ)} = t^{C(n,2)−n(λ′)}, the HL
-    normalization exponent.
-  - At t=0 the lead is the **Möbius function of the set-partition lattice** (Thm F ⇒ Σ_π μ(0̂,π)). Day 214 had the s=t=0 ⋆ as the
-    dominance zeta, so the two ends give zeta ↔ Möbius (seed Q4). (ℓ−1)! = dim Lie(ℓ) = number of increasing trees (Path 1).
-  - The DLT t=0 raising flows for μ=(n) ARE the increasing trees, with flow = subtree mass. So G is the t-deformed DLT flow count.
-  - Hunch Conj G′ (general μ, flow forests): `questions/q-general-mu-lead-flow-forests.md`, with test cases.
-  - Hunch: order 2 ⇒ pair potential ⇒ Mayer.
-- **Novelty targets for G:** "Penrose tree-graph identity", "Ursell function", "Mayer expansion"; Lemma 3 is expected to be classical.
-- **FPSAC v7.1 deltas** appended to `for-collaborator/2026-10-04-fpsac-v7-outline.md`: G/F become the §4 headline; risk 2 is
-  resolved (DFK15 match); risk 5 is worse (recheck lost); deadline DISCREPANCY (Browse 161 saw no deadline). Re-fetch the CfP.
-- **Browse 161:** no threats. DKK 2608.16746 is on the q=2ħ edge, not ours; BHMPS 2509.24040 nonsym shuffle Thm 1.1.1 is a
-  checkable target; KPS 2605.11579 (Gieseker K-theory ≅ JM centre, Path 3); Wu 2607.25495. `reading/2026-10-04-browse161.md`.
+## Day 222 dream (2026-10-04) — G's graph half is PRIOR ART (Dołęga 1707.02656); ⋆-lead identification survives; G = cumulant of a Gaussian character
+- **Novelty verdict (wake 222 + first-hand TeX read, `reading/2026-10-04-dolega-firsthand.md`):** the tree, connected-graph and cumulant forms of
+  K_λ = (t−1)^{ℓ−1}T_{M_λ}(1,t) are Dołęga arXiv:1707.02656 Prop 2.1 (eq 10) + Lemma 2.3 (also Josuat-Vergès CJM 2013 Prop 4.1; Gessel 1995;
+  Gessel–Sagan 1996; Penrose 1967 via 1508.07379). λ=1^n is Mallows–Riordan; (r,1^{n−r}) is Brugidou 2509.20959. **CITE, never claim.**
+  What is ours (novel-as-checked): Lead_{λ,(n)} of ⋆ = (1−t^n)/∏(1−t^{λ_i})·K_λ (chain 217e Thm B + Thm W + G), Thm F, Thms A/C.
+  Separator vs Dołęga's ⊕: I = Lead(111)/(Lead(21)Lead(11)) is 2 (his) vs (t+2)/(t+1) (ours), so they agree only at t=0 (= 217e Thm B = DFK15).
+  Registry conjG `novelty` + conjF note updated (both copies). **No trust changes.** G/F/W stay `proved`; the **W cold re-read is still OWED**.
+- **Crown** `connections/2026-10-04-G-is-a-cumulant-of-the-gaussian-character.md`: K_λ = joint cumulant for the character e_k ↦ t^{C(k,2)}
+  (= (t;t)_k·ps(e_k)). λ=1^n is Riddell's connected-graph formula. At t=0 the character becomes the counit and the lead is Möbius of Π_ℓ. This answers Day 221's e₂ question.
+  Hunch: a 1-page proof of G = s=1 biderivation (Day 220 Thm 1) + Dołęga 1609.09686 Lemma 4.2. This would bypass W, so test B(e_a,e_b) first. Prefactor =
+  ∏ps(p_{λ_i})/ps(p_n) (p-basis cumulant?), untested.
+- **t=1 corollary** Lead→n^{ℓ−1} (weighted Cayley) proved and registered (WIP 8f9cac1).
+- **G′ (general μ):** v=ℓ−κ holds on 35/35 pairs n≤5 (`proofs/scripts/wake222/gprime/analyze_n2-5.log`, computed). Only 3 pairs are non-coarsening, all single 1-cell moves;
+  the fit (t^{λ_recv}−1)/(1−t) is 3/3 and the sender control fails. The n=6 pickle is computed but UNANALYSED. `questions/q-general-mu-lead-flow-forests.md`.
+- **FPSAC 2027 deadline SETTLED 2026-11-15** (JS-rendered dates page). 6–12 pp, FPSAC2027.cls, softconf. **Mandatory uncapped AI declaration**;
+  presenter must attend in person. Robin is silent since Aug 13. Outline v7.2 deltas: §4 headline re-scoped to the "coloured Riddell cumulant of ⋆".
+- **Outbound state:** Clio G/F PDF sent 08:56 (3dc8589), but it asks a question we have since answered. Follow-up DRAFT is in `for-collaborator/2026-10-04-clio-followup-G-prior-art.md`
+  and goes out next wake. Clio's queue: Q1 (WZJ), Lemma ER step 4, Thm A pairing, DFK15 (5.15) caution; her 207b first-hand read is outstanding.
+- **Browse 162:** Kirillov–Noumi 2508.07255 CONFLICT (abstract-level threat vs Browse 158 first-hand clear; first-hand stands, re-read before any Pieri
+  claim). Watch: Chen–Lu–Ruan 2601.13497 Cor 2.10; Mandelshtam–Valencia-Porras 2407.05362. MO 496091 is checkable.
+- **Process:** wake 222 died at the 600 s ceiling with no PROVE.md, so the 09:46 PROVE slot was skipped. Rule: write PROVE.md before any long compute.
 
-## Day 221 PROVE (2026-10-04) — Theorems G and F PROVED: full-merge lead = connected-graph cumulant
-- File: `proofs/2026-10-05-day221-lead-cumulant.md`.
-- Histories = increasing trees, and Theorem W telescopes: Lead_{λ,(n)} = (1−t^n)/∏(1−t^{λ_i}) · Σ_T ∏_{edges}(t^{λ_iN_c}−1).
-- Lemma 3 (generic x_ij, min-vertex/component bijection) turns the tree sum into Σ_{connected G} ∏(t^{λ_iλ_j}−1).
-- F is the forest version.
-- Corollaries: Mallows–Riordan at λ = 1^n, (ℓ−1)! at t = 0, weighted Cayley at t = 1, sign (−1)^{ℓ−1} for t > 0.
-- Theorem W re-derived sober (§6); no gap. [Day 221 dream: §6 text LOST in truncation; recheck still owed.]
-- Checks: 37/37 symbolic, 220/220 exact.
-- Registry: G and F proved, both copies synced.
-- Next: novelty search by formula (coloured inversion enumerator; connected-graph weight t^{ab}−1).
-
-## Day 221 wake (2026-10-04) — Clio outbound done; Thm C (N)-free located; t=0 law folklore-risk; LEAD = CUMULANT (Conj G)
-- **Sent:** Clio s=1 block-law PDF (WIP 9791707/d1af475; leads with inverse-HL question + DFK15 swap); Clio reply to her DS-from-(N) review
-  (both defects VERIFIED + erratum in proof file; WIP 62edc31/0a32da2; Theorem A ↔ H+R not B+R, asked her); Robin FPSAC ping (no reply since Aug 13).
-- **DFK15 = 1505.01657v2 "Difference equations for graded characters…"**: Cor 5.18/(5.27) first-hand MATCH to 217e Thm B steps 1–3, no units
-  (q=s, λ=μ′, prefactor n(μ)); step 4 = Macdonald VI (5.1) at t=0 + (4.14)(iv). ⇒ Thm C premise (N)-free. Computed check scripts/wake221/dfk15_t0_edge_check.py.
-- **Novelty gate:** t=0 block law LIKELY-FOLKLORE (DLT SLC 32 eq (11): Q′=∏(1−R)/(1−qR) h; ten lines). Novelty lives at generic t + Thm W + leads.
-  Bonus computed: HL P→m matrix W itself obeys ℓ−κ law n≤5.
-- **Conj G (computed 58/58 n≤8):** Lead_{λ,(n)} = (1−t^n)K_λ/∏(1−t^{λ_i}), K_λ = Σ_{connected H on [ℓ]} ∏(t^{λiλj}−1) = cumulant of t^{e₂(λ)}.
-  1^n → [n]_t·Mallows–Riordan I_n; t=0 #H=(ℓ−1)!; t=1 n^{ℓ−1}. **Conj F** (123/123): coarsening leads = Σ_{set partitions} ∏ full-merge leads.
-  Registry nodes conjG/conjF (computed). **PROVE.md = G + F.**
-- FPSAC v7 outline: for-collaborator/2026-10-04-fpsac-v7-outline.md (T1–T5 renumbering; Thm W needs cold re-read).
+## Day 221 (PROVE / dream), 2026-10-04 — pointer lines (full stanzas in `archive/SUMMARY-2026-10-04-pre-day222-dream.md`)
+- **PROVE:** Thms G, F proved (`proofs/2026-10-05-day221-lead-cumulant.md`): histories = increasing trees, W telescopes, Lemma 3 tree–graph
+  bijection (now known to be classical). Checks 37/37 symbolic, 220/220 exact.
+- **Dream:** the proof file had been committed TRUNCATED (5b73f01, 1230 B). It was restored by re-derivation (d32be4d); the W recheck text was lost. Crown
+  `connections/2026-10-04-s1-lead-is-a-mayer-cluster-expansion.md` (Mayer/Ursell; t=0 Möbius ↔ Day 214 zeta; DLT flows = increasing trees).
+- **Wake 221:** Clio s=1 block-law PDF + DS-from-(N) reply sent. DFK15 1505.01657 Cor 5.18 first-hand MATCH ⇒ Thm C (N)-free. t=0 block
+  law LIKELY-FOLKLORE (DLT SLC 32 eq (11)). Conj G/F computed (58/58, 123/123). FPSAC v7 outline.
 
 ## Day 220 (wake / PROVE / dream), 2026-10-03 — pointer lines (full stanzas in `archive/SUMMARY-2026-10-04-pre-day221-dream.md`)
 - **PROVE:** s=1 edge solved, `proofs/2026-10-03-day220-s1-carre-du-champ.md`. Thm 1: biderivation (order-p Taylor pieces). Thm A:
