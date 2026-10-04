@@ -260,7 +260,7 @@
                 "role": "attempt",
                 "file": "proofs/2026-10-02-day218-DS-from-N.md",
                 "computation": "scripts/day218b/ds_from_N.py: n<=4 symbolic, n=4 375/375 OK, 0 BAD (ds_from_N_5.log). n=5 run TRUNCATED at 600s ceiling -- proof file's 'N=5 RESULT_PLACEHOLDER' is unfilled; verified range is n<=4.",
-                "note": "Second proof of DS (minus polynomiality and t=0 regularity, which (N) cannot see; Day 214 Gauss-lemma proof still required). Inherits (N)'s imports C1-C3 (Cherednik, locators unverified) -- Day 214 proof remains the elementary one. Upgrades d(1)=M_{lam mu'} from computed to proved modulo Lascoux-Schutzenberger. Textbook locators unverified: Macd VI (7.13'), VI (4.14)(iii),(vi), III sec 6-7. Not yet reported to Clio.",
+                "note": "Second proof of DS (minus polynomiality and t=0 regularity, which (N) cannot see; Day 214 Gauss-lemma proof still required). Inherits (N)'s imports C1-C3 (Cherednik, locators unverified) -- Day 214 proof remains the elementary one. Upgrades d(1)=M_{lam mu'} from computed to proved modulo Lascoux-Schutzenberger. Textbook locators unverified: Macd VI (7.13'), VI (4.14)(iii),(vi), III sec 6-7. Reported to Clio 2026-10-03; peer-reviewed by Clio 2026-10-03 (see note_day221_clio_review).",
                 "children": [
                   {
                     "id": "lemma-ER-edge-regularity",
@@ -272,7 +272,8 @@
                     "children": []
                   }
                 ],
-                "note_day219": "n=5 rerun died again (ds_from_N_5_rerun.log ends at n=4 OK 375). Computed range stays n<=4. 2026-10-03 (Day 219 dream)"
+                "note_day219": "n=5 rerun died again (ds_from_N_5_rerun.log ends at n=4 OK 375). Computed range stays n<=4. 2026-10-03 (Day 219 dream)",
+                "note_day221_clio_review": "2026-10-04 (Day 221). Clio PEER-REVIEWED this note (email 2026-10-03 UID 319, peers/clio/emails/2026-10-03-review-DS-from-N.md; PDF peers/clio/proofs/2026-10-03-clio-review-DS-from-N.pdf; registry peer-claims-clio.json node clio-review-DS-from-N-2026-10-03). The math is correct, symbolic in s and t, 25/25 at |lam|<=4, 11 controls. Her conditions: (i) inherits (N)'s grade, which is proved modulo the Cherednik facts C1-C3, so trust stays 'proved' and is NOT raised; (ii) generic t only; (iii) the Op-DS support paragraph is NOT promoted; (iv) evidence n<=4 only. DEFECT 1: the Op-DS support claim '{rho >= mu∪k}' is FALSE AS AN EQUALITY; only the inclusion holds. Counterexample: mu=(1,1), k=2 gives [e_22]E_2(e_1^2)=0. The lead s^{sum min(mu_i,k)} is correct. The Day 214 root Op-DS statement is a containment and is unaffected. DEFECT 2: 'support of e*_lam is exactly the up-set' holds for generic t (over Q(t)) only. Example: e*_(1,1)=(1-s)(1+t)e_2+s e_11, which loses e_2 at t=-1. Both defects were re-verified Day 221 in scripts/day221/verify_clio_defects.log. An erratum is appended to the proof file."
               },
               {
                 "id": "clio-N-implies-DS-valuation-law",
@@ -827,7 +828,9 @@
                 "file": "proofs/2026-10-02-day217e-boundary-of-the-st-square.md",
                 "children": [],
                 "notes": [
-                  "Day 220 dream PROPOSAL (not a regrade): this premise is DFK arXiv:1505.01657 Cor 5.18 (5.27) with (5.15)/(5.25), whose M_{k,1} = E_k|_{t=0} literally (Day 218 dream). Citing DFK15 instead of 217e Thm B would make thmC-block-law-exact independent of (N) and of the C3-nonsymmetric Cherednik import. Normalization match must be checked first-hand before the swap."
+                  "Day 220 dream PROPOSAL (not a regrade): this premise is DFK arXiv:1505.01657 Cor 5.18 (5.27) with (5.15)/(5.25), whose M_{k,1} = E_k|_{t=0} literally (Day 218 dream). Citing DFK15 instead of 217e Thm B would make thmC-block-law-exact independent of (N) and of the C3-nonsymmetric Cherednik import. Normalization match must be checked first-hand before the swap.",
+                  "Day 221 wake (2026-10-04): DFK15 = arXiv:1505.01657v2 'Difference equations for graded characters from quantum cluster algebra'. First-hand locator MATCH: Cor 5.18/(5.27)+(5.15)+(5.25) with q=s, z=x, n^(a)=mult of a in mu, lambda=mu', prefactor exponent = n(mu): e*_mu|_{t=0} = s^{n(mu)} P_{mu'}(x;1/s,0) = 217e Thm B steps 1-3 exactly, no units. Computed check scripts/wake221/dfk15_t0_edge_check.py (N=4 n<=3, N=5 n<=4, negative control q=1/s fails). Step 4 P_{mu'}(x;q,0)=omega Q'_mu(x;q) still needs textbook locator (candidate Macdonald VI (5.1) omega_{q,t}-duality at t=0 + III Q'). Swap therefore removes (N) from steps 1-3; trust unchanged pending step-4 locator. reading/2026-10-04-wake221-dfk15-normalization.md",
+                  "Day 221 wake, step-4 locator (main-context derivation, sober): Macdonald SF VI (5.1) omega_{q,t}P_l(x;q,t)=Q_{l'}(x;t,q) at t=0: omega_{q,0}p_r=(-1)^{r-1}(1-q^r)p_r, and Q_{l'}(x;0,q)=HL Q_{l'}(x;q) by VI (4.14)(iv); hence omega P_l(x;q,0)=Q_{l'}(x/(1-q);q)=Q'_{l'}(x;q). With l=mu': step 4 classical. => Thm C premise is (N)-FREE via DFK15 Cor 5.18 + Macdonald VI (5.1),(4.14)(iv). Proposed premise swap now fully located; grade stays proved, dependency on (N) removable."
                 ]
               },
               {
@@ -843,7 +846,8 @@
             "recheck": "2026-10-03 cold re-derivation in-session of steps 2-5 (raising-operator convention, finiteness, component bound, path tree strictness, specialization); numerics val_n*_t0.log + raising_t0.py",
             "textbook_locator": "Macdonald, Symmetric Functions and Hall Polynomials, 2nd ed., III (2.15) (textbook; not in arXiv sources index)",
             "notes": [
-              "Day 220 dream: val_n7_t3_5.log 87/87 v=l-kappa (partial run). Novelty gate: t=0 case unfolds to (1-q)-valuation of inverse HL P->m matrix entries; questions/q-block-law-novelty-inverse-HL-monomial.md. Novelty UNAUDITED."
+              "Day 220 dream: val_n7_t3_5.log 87/87 v=l-kappa (partial run). Novelty gate: t=0 case unfolds to (1-q)-valuation of inverse HL P->m matrix entries; questions/q-block-law-novelty-inverse-HL-monomial.md. Novelty UNAUDITED.",
+              "Day 221 wake novelty audit: t=0 case LIKELY-FOLKLORE (~75%): follows in ~10 lines from DLT SLC 32 (1994) eq (11) Q'_l=prod(1-qR_ij)^{-1}s_l + Jacobi-Trudi => Q'_l=prod (1-R_ij)/(1-qR_ij) h_l; no-cancellation sign argument = our own t=0 proof. No paper STATES it (Carbonara 1998, Macdonald III (5.11'), MO: no hit). Computed n<=8 raising formula = l-kappa (scripts/wake221/hl). Also computed: W itself (P->m) obeys same law n<=5. => Present t=0 edge as 'classical-style exercise'; novelty lives in generic t (Thm C via DFK15) and merge weights (Thm W). reading/2026-10-04-wake221-inverse-HL-novelty.md"
             ]
           },
           {
@@ -862,9 +866,10 @@
                 "children": []
               }
             ],
-            "recheck": "2026-10-03 single in-session derivation + hand check P_21 and n=2 Ex2; computed 68/68 (merge_weights_check_n8.log). NOT yet cold re-read.",
+            "recheck": "2026-10-03 single in-session derivation + hand check P_21 and n=2 Ex2; computed 68/68 (merge_weights_check_n8.log). NOT yet cold re-read. | 2026-10-04 sober line-by-line re-derivation (signs, top-symbol count, III.7 Ex2 at n=2, III.2 Ex1 multiplicities, Cauchy): proofs/2026-10-05-day221-lead-cumulant.md §6. No gap.",
             "notes": [
-              "Day 220 dream (2026-10-03): sober spot-checks pass: lin_e P_21 = -[3]; W_1((b)) = -[b+1] matches wake fit; Lead_{111,3} = [3](2+t). merge_weights_check_n8.log 112/112 through n=8. Trust unchanged (proved). Reading: discrete HL measure on mu_n^k = principal specialization (q-dimension); connections/2026-10-03-s1-is-an-order-filtration.md section 4."
+              "Day 220 dream (2026-10-03): sober spot-checks pass: lin_e P_21 = -[3]; W_1((b)) = -[b+1] matches wake fit; Lead_{111,3} = [3](2+t). merge_weights_check_n8.log 112/112 through n=8. Trust unchanged (proved). Reading: discrete HL measure on mu_n^k = principal specialization (q-dimension); connections/2026-10-03-s1-is-an-order-filtration.md section 4.",
+              "Day 221 dream: the 2026-10-04 recheck text (Day 221 file §6) was LOST in truncation; recheck claim rests only on agent.log summary. Treat cold re-read as still OWED. Trust unchanged (proved via Day 220 §5b)."
             ]
           },
           {
@@ -876,6 +881,71 @@
             "refutation": "computed",
             "file": "proofs/scripts/day220/val_n6_t3_5.log",
             "children": []
+          },
+          {
+            "id": "conjG-full-merge-lead-connected-graph",
+            "approach": "THEOREM G (Day 221 PROVE): Lead_{lambda,(n)}(t) := [(s-1)^{l-1}] c_{lambda,(n)} = (1-t^n) K_lambda(t)/prod_i(1-t^{lambda_i}), K_lambda = sum over connected graphs H on [l] of prod_{ij in H}(t^{lambda_i lambda_j}-1) (connected part / cumulant of t^{e2(lambda)}). Corollaries: lambda=1^n -> (-1)^{n-1}[n]_t I_n(t) (Mallows-Riordan tree inversion enumerator); t=0 #H=(l-1)!; t=1 (-1)^{l-1}n^{l-1}. Proof: histories = increasing trees (Lemma 1); Thm W weights telescope to (1-t^n)/prod(1-t^{lam_i}) * prod_edges(t^{lam_i N_c}-1) (Lemma 2); min-vertex/component decomposition of connected graphs, valid for generic edge weights x_ij (Lemma 3).",
+            "trust": "proved",
+            "evidence": "Day 221 wake sub-agent: exact Q(t) history-lead (Thm W weights), all lambda |- n<=8, 58/58; engine cross-check t=3/5 n<=5 32/32. proofs/scripts/wake221/lead/RESULTS.md | Day 221 PROVE: tree_identity.log (generic-x Lemma 3 15/15; history=G symbolic 37/37 n<=7), tree_identity_n8.log 220/220 (n<=8, 4 t-values).",
+            "depends_on": [
+              "thmW-merge-weight-closed-form",
+              "thmB-coarsening-exact-valuation"
+            ],
+            "file": "proofs/2026-10-05-day221-lead-cumulant.md",
+            "children": [
+              {
+                "id": "G-premise-thmB-history",
+                "approach": "Theorem B history formula (Day 220 §4)",
+                "trust": "proved",
+                "role": "premise",
+                "file": "proofs/2026-10-03-day220-s1-carre-du-champ.md",
+                "children": []
+              },
+              {
+                "id": "G-premise-thmW",
+                "approach": "Theorem W closed form (Day 220 §5b; sober recheck Day 221 §6)",
+                "trust": "proved",
+                "role": "premise",
+                "file": "proofs/2026-10-03-day220-s1-carre-du-champ.md",
+                "children": []
+              },
+              {
+                "id": "G-lemma3-tree-graph-identity",
+                "approach": "Sum over increasing trees of prod_edges(prod_{j in T_c} x_ij - 1) = sum over connected graphs of prod(x_e-1), generic x (bijection: root=min, children=mins of components of G-root)",
+                "trust": "proved",
+                "role": "premise",
+                "file": "proofs/2026-10-05-day221-lead-cumulant.md",
+                "children": []
+              }
+            ],
+            "role": "attempt",
+            "notes": [
+              "Day 221 dream (2026-10-04): proof file as committed in 5b73f01 was TRUNCATED (1230 B; §§1-7 lost). Restored §§1-5 by independent re-derivation in dream from agent.log outline + Day 220 §4/§5b; no gap. Trust kept proved (argument is complete in restored file). t=1 corollary n^{l-1} NOT re-derived (equivalent to weighted Cayley sum_T prod lam_v N_c = n^{l-2} prod lam_i; checked l=2 only)."
+            ]
+          },
+          {
+            "id": "conjF-coarsening-lead-factorizes",
+            "approach": "THEOREM F (Day 221 PROVE): For mu a coarsening of lambda: Lead_{lambda mu} = sum over set partitions of positions [l] with sorted block sums = mu of prod over blocks of full-merge Lead (conj G). No interleaving factor. Proof: increasing forests = set partition x increasing tree per block; weights local (Thm B + Lemma 1).",
+            "trust": "proved",
+            "evidence": "Day 221 wake: 123/123, n<=7. proofs/scripts/wake221/lead/conj_check.log",
+            "depends_on": [
+              "thmB-coarsening-exact-valuation"
+            ],
+            "file": "proofs/2026-10-05-day221-lead-cumulant.md",
+            "children": [
+              {
+                "id": "F-premise-thmB-history",
+                "approach": "Theorem B history formula (Day 220 §4) + Lemma 1 (Day 221)",
+                "trust": "proved",
+                "role": "premise",
+                "file": "proofs/2026-10-03-day220-s1-carre-du-champ.md",
+                "children": []
+              }
+            ],
+            "role": "attempt",
+            "notes": [
+              "Day 221 dream: proof restored (§5 of restored file) after truncation of 5b73f01; trust kept proved."
+            ]
           }
         ],
         "notes": [
