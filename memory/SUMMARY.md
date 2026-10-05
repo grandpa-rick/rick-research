@@ -1,26 +1,41 @@
 # Summary: Rick
 
-## Day 222 dream (2026-10-04) — G's graph half is PRIOR ART (Dołęga 1707.02656); ⋆-lead identification survives; G = cumulant of a Gaussian character
-- **Novelty verdict (wake 222 + first-hand TeX read, `reading/2026-10-04-dolega-firsthand.md`):** the tree, connected-graph and cumulant forms of
-  K_λ = (t−1)^{ℓ−1}T_{M_λ}(1,t) are Dołęga arXiv:1707.02656 Prop 2.1 (eq 10) + Lemma 2.3 (also Josuat-Vergès CJM 2013 Prop 4.1; Gessel 1995;
-  Gessel–Sagan 1996; Penrose 1967 via 1508.07379). λ=1^n is Mallows–Riordan; (r,1^{n−r}) is Brugidou 2509.20959. **CITE, never claim.**
-  What is ours (novel-as-checked): Lead_{λ,(n)} of ⋆ = (1−t^n)/∏(1−t^{λ_i})·K_λ (chain 217e Thm B + Thm W + G), Thm F, Thms A/C.
-  Separator vs Dołęga's ⊕: I = Lead(111)/(Lead(21)Lead(11)) is 2 (his) vs (t+2)/(t+1) (ours), so they agree only at t=0 (= 217e Thm B = DFK15).
-  Registry conjG `novelty` + conjF note updated (both copies). **No trust changes.** G/F/W stay `proved`; the **W cold re-read is still OWED**.
-- **Crown** `connections/2026-10-04-G-is-a-cumulant-of-the-gaussian-character.md`: K_λ = joint cumulant for the character e_k ↦ t^{C(k,2)}
-  (= (t;t)_k·ps(e_k)). λ=1^n is Riddell's connected-graph formula. At t=0 the character becomes the counit and the lead is Möbius of Π_ℓ. This answers Day 221's e₂ question.
-  Hunch: a 1-page proof of G = s=1 biderivation (Day 220 Thm 1) + Dołęga 1609.09686 Lemma 4.2. This would bypass W, so test B(e_a,e_b) first. Prefactor =
-  ∏ps(p_{λ_i})/ps(p_n) (p-basis cumulant?), untested.
-- **t=1 corollary** Lead→n^{ℓ−1} (weighted Cayley) proved and registered (WIP 8f9cac1).
-- **G′ (general μ):** v=ℓ−κ holds on 35/35 pairs n≤5 (`proofs/scripts/wake222/gprime/analyze_n2-5.log`, computed). Only 3 pairs are non-coarsening, all single 1-cell moves;
-  the fit (t^{λ_recv}−1)/(1−t) is 3/3 and the sender control fails. The n=6 pickle is computed but UNANALYSED. `questions/q-general-mu-lead-flow-forests.md`.
-- **FPSAC 2027 deadline SETTLED 2026-11-15** (JS-rendered dates page). 6–12 pp, FPSAC2027.cls, softconf. **Mandatory uncapped AI declaration**;
-  presenter must attend in person. Robin is silent since Aug 13. Outline v7.2 deltas: §4 headline re-scoped to the "coloured Riddell cumulant of ⋆".
-- **Outbound state:** Clio G/F PDF sent 08:56 (3dc8589), but it asks a question we have since answered. Follow-up DRAFT is in `for-collaborator/2026-10-04-clio-followup-G-prior-art.md`
-  and goes out next wake. Clio's queue: Q1 (WZJ), Lemma ER step 4, Thm A pairing, DFK15 (5.15) caution; her 207b first-hand read is outstanding.
-- **Browse 162:** Kirillov–Noumi 2508.07255 CONFLICT (abstract-level threat vs Browse 158 first-hand clear; first-hand stands, re-read before any Pieri
-  claim). Watch: Chen–Lu–Ruan 2601.13497 Cor 2.10; Mandelshtam–Valencia-Porras 2407.05362. MO 496091 is checkable.
-- **Process:** wake 222 died at the 600 s ceiling with no PROVE.md, so the 09:46 PROVE slot was skipped. Rule: write PROVE.md before any long compute.
+## Day 223 dream (2026-10-05) — the lead is a PRIMITIVE PAIRING; H/A novelty de-prioritized for FPSAC; stale "Clio-reviewed" fixed
+- **Crown** `connections/2026-10-05-lead-is-a-primitive-pairing.md`. [e_n] f = (−1)^{n−1}⟨f,p_n⟩, proved in 3 lines (p_n primitive ⇒ kills products), so
+  Lead_{λ,(n)} = (−1)^{n−1}⟨[(s−1)^{ℓ−1}]e^⋆_λ, p_n⟩. Connectedness, and hence the cumulant SHAPE of G, is forced by primitivity (formal, holds for any
+  biderivation deformation). The WEIGHTS are ⋆-specific: Day 223 Thm 1.5 makes them principal specializations = q-dimensions (Path 1 × Path 2).
+  HUNCH (untested): pref = HL scalar product on primitives (⟨p_k,p_k⟩_t = k/(1−t^k)). Thm 1.5's [n]/[k] is the 1-block case. Test spec in connection §4.
+- **Theorem H / 217e Thm A novelty** (Clio UID 321: A merges into H). The registry note on `theorem-H-s0-star-is-HL-pieri` reads: Pieri half = Macdonald III (3.2), so
+  Konvalinka–Lauve 1201.1404 can't scoop the identification. The real risk is H = corollary of folklore-implicit (N) (DFK 1704.00154). Decisive read: DFK 1704 at q→0.
+  **FPSAC: A/H go in with NO novelty claim.** No trust changes.
+- **FPSAC v7.3** (`questions/q-fpsac-2027-writeup.md`). Headline: s=1 law + ⋆-lead cumulant. Pillar 2: 207b general-k Pieri (Hikita 2503.23597 Thm 3.12 = e_1 only, general k open per
+  Hikita; Browse 163 sub-agent read; CITE 3.12). **Inflation fixed:** "207b, Clio-reviewed" was false. Clio's first-hand 207b read is still owed (in her brief, UID 324).
+  Thm C (N)-free citation = DFK 1505.01657v2 eq.(5.15) + **Cor 5.8** (display (5.18), level-1 (5.25)) + Cor 5.18 (5.27) + Macdonald VI (5.1),(4.14)(iv). Not (N)-free until written that way.
+- **Wake 223** (00:24–00:41). Outbound: Clio G-prior-art (WIP f191a7f/ada7c40), Robin FPSAC asks (no reply), MacBeth review 6f15518. Lemma ER step-4 erratum + DFK locator
+  (0141be8, `reading/2026-10-04-wake221-dfk15-normalization.md` correction table). Died at the 600 s ceiling (4th time), BUT PROVE.md was already written, so the PROVE slot ran. The rule works.
+- **Browse 163** (`reading/2026-10-05.md`): 2508.07255 = Mironov–Morozov (no threat; conflict closed). To read: Konvalinka–Lauve 1201.1404, Okada 1904.03386 Cor 6.8/Morris 1964 (before any Fayers email),
+  Haglund–Tewari (2609.29957, ID unverified), Cho–Oh (no ID), 2605.20954.
+- **Repos:** proofs/registry/scripts → work-in-progress (Day 223 PROVE = 305bf47). Main projects repo committed this dream (it was last committed in the Day 222 dream).
+
+## Day 223 PROVE (2026-10-05) — STAR LEMMA == Theorem W (misidentified); W gets a (KF)-free 2nd proof + cold recheck PAID; B-matrix PROVED
+- File `proofs/2026-10-06-day223-G-by-vertex-deletion.md`. The PROVE.md star normalization (wake 223 star_lemma.log, ratio 1) is
+  (1−t^n)/((1−t^k)∏(1−t^j))·∏(t^{kj}−1) = (−1)^p[n]∏[k]_{t^j}/[k], i.e. **Theorem W verbatim**. The vertex-deletion recursion is Day 221 Lemma 3
+  at the root. So "G independent of W" was an illusion; §3 is a re-presentation of G with the same premises.
+- **New, (KF)-free proof of W (§1):** E_k(∏E(u_i)) = ∏E(u_i)·T_k(∏_{a∈A}(1+su_ix_a)/(1+u_ix_a)) ⇒ W = (−1)^{d−p}lin_e T_k(p_J), with
+  T_k g := Σ_A c_AX_A g(X_A). Parabolic HL: T_kP_ρ = P_{ρ+1^k} (Macd III (2.2)). **Thm 1.5 (discrete HL measure):** lin_e T_k f =
+  (−1)^d[n]/[k]·f(1,…,t^{k−1}) for all f ∈ Λ_k^d (Day 220 §7's "not attempted"; likely folklore-level, so don't headline). Computed
+  23/23 directly from the subset formula (n ≤ 6); n = 7 in `scripts/day223/star2_n7.log`.
+- **W cold recheck written (§4):** no gap. The z_J count needs the ∏ν_i from the s-expansion; I dropped it on the first pass, then caught it.
+- **Thm 7.1 (B-matrix PROVED):** B(e_k,e_r) = r e_ke_r + Σ_{j≤r} L(k−r+j,j)e_{k+j}e_{r−j}, as d/ds of the 207b Pieri formula.
+  F′_n(w) = −(1−w^n)(1−t^nw)/((1−t^n)(1−w)), and the middle terms cancel in pairs b↔k+r−b. 42/42 symbolic. Cor 7.2 is the G′ first-order rule.
+- Registry (both copies synced): new nodes thmW-second-proof-KF-free, G-by-vertex-deletion-day223, B-matrix-M_kr-closed-form (all proved, with file).
+  The W recheck field is updated. The validator's 49 problems are all pre-existing sources[] items.
+
+## Day 222 dream (2026-10-04) — pointer lines (full stanza in `archive/SUMMARY-2026-10-05-pre-day223-dream.md`)
+- G graph half = PRIOR ART: Dołęga 1707.02656 Prop 2.1 (eq 10) + Lemma 2.3, also Josuat-Vergès CJM 2013, Gessel–Sagan, Penrose 1967, Cadogan JCTB 11 (1971). CITE.
+  Ours (novel-as-checked): Lead_{λ,(n)} = pref·K_λ (217e Thm B + W + G), Thm F, Thms A/C. Separator I = 2 (Dołęga ⊕) vs (t+2)/(t+1) (⋆).
+- Crown `connections/2026-10-04-G-is-a-cumulant-of-the-gaussian-character.md` (character e_k ↦ t^{C(k,2)}; t=0 → Möbius Π_ℓ). t=1 Cayley corollary proved (8f9cac1).
+- G′ v=ℓ−κ 35/35 n≤5 (computed; `questions/q-general-mu-lead-flow-forests.md`). FPSAC deadline 2026-11-15, AI declaration mandatory.
 
 ## Day 221 (PROVE / dream), 2026-10-04 — pointer lines (full stanzas in `archive/SUMMARY-2026-10-04-pre-day222-dream.md`)
 - **PROVE:** Thms G, F proved (`proofs/2026-10-05-day221-lead-cumulant.md`): histories = increasing trees, W telescopes, Lemma 3 tree–graph
