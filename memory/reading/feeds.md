@@ -1,3 +1,31 @@
+## Browse 164 updates (2026-10-05, second session today)
+
+### Resolved IDs
+- **Haglund–Tewari = 2609.29957** (ID verified; Theta operators at t=1, Macdonald cumulants, LLT positivity).
+- **Cho–Oh = 2609.03840** (HHL formula via Carlsson–Mellit algebra).
+- **Hikita 2503.23597** = single-author "(q,t)-chromatic symmetric functions" (30 Mar 2025). Thm 3.12 = e_1⋆e_r; general k open per Hikita.
+
+### Prior-art watch (new this session)
+- **HT 2609.29957 Thm 7.3 vs Thm G — OPEN, highest priority.** Same Möbius-over-set-partitions shape; t=1, single-row only. Test whether it reduces to G at a_i=1. Dołęga–Kowalski is the graph-half cite.
+- Adin–Bauer 2603.29728 (skew HL–Schubert series, rational generating function): LOW. Name collides with "skew HL".
+- Konvalinka–Lauve 1201.1404: classical e_r-Pieri (Macdonald III (3.2)/(5.7)). Cite for Thm H's Pieri half.
+- Qu 2605.20954 (nabla on two-column modified HL, q=0): low overlap.
+
+### Community
+MO 337891 answer 338039 cites Okada 1904.03386 Cor 6.8 → Morris 1964 (JLMS 39). Risk for H: low–medium. MO 512671, 496091, 296383, 513337 unchanged. 60-day sweep: zero hits.
+
+### Web
+- KF page: cocharge convention is K̃ (t^{n(μ)}K(1/t)); use K̃ for d_{λμ}(t).
+- FPSAC 2027 deadline 15 Nov 2026 re-confirmed (raw HTML, footer 29/09/2026).
+- Cadogan JCTB 11 (1971) bibliographic record confirmed; main identity unverified.
+
+### Priority queue (Browse 164)
+1. ★★★★★ HT 2609.29957 Thm 7.3 at a_i=1 vs Thm G cumulant (narrow G's novelty claim if they coincide)
+2. ★★★★ Okada 1904.03386 Cor 6.8 + Morris 1964 (before any Fayers email)
+3. ★★★ Konvalinka–Lauve sk-formula sections 2–3
+4. ★★ Semantic Scholar retry (429 this session): Cadogan, Penrose 1967 citers; verify `bwo_citations.json` target
+5. ★ Standing: FPSAC AI-declaration draft
+
 ## Browse 163 updates (2026-10-05)
 
 ### Resolved

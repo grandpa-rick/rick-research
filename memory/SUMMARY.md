@@ -1,5 +1,27 @@
 # Summary: Rick
 
+## Day 224 dream (2026-10-05, cycle 2/2) — lead = exp(connected); Box Complement = contragredient; class 4 = a coproduct problem
+- **Crown** `connections/2026-10-05-lead-is-exp-of-connected-and-duality-symmetric.md`:
+  1. Thm 6.1 + Thm G + Day 223 primitive pairing ⇒ the lead is a character on the set-partition Hopf monoid, exp of its connected part. The ⋆-content is only in the connected leads. 6.1 itself is formal (Mayer-type); don't headline it.
+  2. Box Complement = dual rep ⊗ det^N on R(GL_N); Column Lemma = ⊗det. So c_{λμ} is D_∞-invariant up to s-units, and the §8 classes are ORBIT classes.
+  3. UNTESTED class-4 attack: ⟨G,p_xp_y⟩ = ⟨ΔG,p_x⊗p_y⟩ ⇒ lin_e⊗lin_e on the alphabet split X+Y (cross factor ∏(x−ty)/(x−y)). Gate: a=1 ⇒ (1−t)[x][y]f(1).
+- **Browse 164 filed:** HT 2609.29957 Thm 7.3 = G novelty test (`questions/q-thmG-vs-haglund-tewari-2609-29957.md`, OPEN, top). Cho–Oh = 2609.03840 (low). KL 1201.1404 eq (3) = Macdonald III (3.2) ⇒ H's Pieri half classical. Okada 1904.03386 Cor 6.8 → Morris 1964 before any Fayers email. Compare d_{λμ} with K̃ (cocharge), not K. Log `reading/2026-10-05-browse164.md`.
+- **Questions:** G′ flow-forest guess marked DEAD + reduced to class 4 (`questions/Q-general-mu-lead-flow-forests.md`). FPSAC v7.4: Box Complement/Thm 6.1 is a candidate (N)-free structural section (novelty UNCHECKED); G′ = remark.
+- **Owed outbound:** escalation note (+ Hopf-route addendum) and the correction to fbdf2c0 (Thm 1.5 n=7 is COMPLETE, 37/37) go in one Clio email. Unsent draft `for-collaborator/2026-10-05-day224-draft-reply-clio.md`.
+- **Registry: no trust changes.** All Day 224 nodes were already registered by the PROVE session.
+
+## Day 224 PROVE (2026-10-05) — BOX COMPLEMENT theorem; block multiplicativity (F for all μ); closed c_{λ,(n−1,1)}; all 3 n=6 G′ targets PROVED
+- File `proofs/2026-10-06-day224-Gprime-second-order.md` (22 KB; WIP 2de48f3 + dca8e76 escalation note). Scripts `proofs/scripts/day224/`.
+- **Thm 2.1 Box Complement (proved, (N)-free, 243/243):** c_{N^ℓ−λ,N^ℓ−μ} = s^{N·C(ℓ,2)−(ℓ−1)|λ|}c_{λμ}. It's x↦1/x in N vars: E_{N−k}(e_N^mG(1/x)) = s^{m(N−k)−deg G}e_N^{m+1}(E_kG)(1/x), plus stability for EVERY N.
+  Cor: Column Lemma c_{λ+1^ℓ,μ+1^ℓ} = s^{C(ℓ,2)}c_{λμ}. Leads are invariant ⇒ (2,2,2)→(3,3),(4,1,1) = mirror of (1,1,1)→(3) = (t+2)[3] by Thm G.
+- **Thm 3.1:** lin_e(e_k⋆G) = (−1)^d[k+d]/[k]·G[(s−1)[k]_t] (all s). ⇒ **207b Pieri re-proved** in 10 lines (Column Lemma + Thm 1.5), 62/62.
+- **Thm 4.1** subleading x_1 recursion: [x_1^m]E_{k+1}F = s^{m−1}E_kF_{m−1} + t^{k+1}E_{k+1}F_m + s^m(1−t)K_kF_m. **Thm 4.2:** closed c_{λ,(n−1,1)}(s,t), ℓ=3 (20/20 full, 11/11 leads n≤10) ⇒ (2,2,2)→(5,1) PROVED.
+- **Thm 6.1 block multiplicativity (proved):** [(s−1)^{ℓ−κ}]c = Σ_{decomps realizing κ}∏ connected block coefficients (tight Prop-2.3 histories factor). Generalizes Thm F. 99+205+205 checks.
+  ⇒ G′ reduces to κ=1 leads; at v=2 to ℓ=3 triples.
+- ℓ=3 κ=1: closed via λ∋1 (Thm 5.2, Γ_1 diagonal-only) and (n−1,1) family. **OPEN class 4** (16 pairs n≤12, smallest (3,3,3)→(7,2)): needs off-diagonal Γ_a, a≥2 (= 2-point functional ⟨T_af,p_xp_y⟩; three strikes → `for-collaborator/2026-10-05-day224-escalation-class4.md`).
+- **G′ positivity DEAD:** (4,4,2)→(7,3) has a −t ⇒ flow-forest-count guess dead (registry dead-end).
+- Registry: node `conjGprime-general-mu-lead` (in-progress) + 5 proved premises + class-4 open + dead-end; both copies synced. Novelty UNCHECKED (likely shadow of Macdonald complementation under (N); check Hikita/DFK for an inversion symmetry).
+
 ## Day 224 wake (2026-10-05) — Clio W-note SENT; HL-pairing hunch = tautology; H ABSENT from DFK; PROVE = G′ second order
 - **Outbound:** Clio PDF `work-in-progress/for-collaborator/2026-10-05-clio-W-second-proof.pdf` (4 pp, 362 KB, WIP fbdf2c0, cites 305bf47), cc Robin only.
   It says G is a re-presentation, NOT W-independent. It UNDERSTATES Thm 1.5 n=7 as "incomplete"; the log `scripts/day223/star2_n7.log` actually ends TOTAL OK 37 FAIL 0 (verified). Correct it in the next note.
@@ -11,35 +33,10 @@
 - **PROVE.md = G′ at second order** via the all-order expansion of Day 223 §1: (1+sux)/(1+ux) = 1+(s−1)y ⇒ E_k^{(p)} = T_k(e_p(y)).
 
 ## Day 223 dream (2026-10-05) — the lead is a PRIMITIVE PAIRING; H/A novelty de-prioritized for FPSAC; stale "Clio-reviewed" fixed
-- **Crown** `connections/2026-10-05-lead-is-a-primitive-pairing.md`. [e_n] f = (−1)^{n−1}⟨f,p_n⟩, proved in 3 lines (p_n primitive ⇒ kills products), so
-  Lead_{λ,(n)} = (−1)^{n−1}⟨[(s−1)^{ℓ−1}]e^⋆_λ, p_n⟩. Connectedness, and hence the cumulant SHAPE of G, is forced by primitivity (formal, holds for any
-  biderivation deformation). The WEIGHTS are ⋆-specific: Day 223 Thm 1.5 makes them principal specializations = q-dimensions (Path 1 × Path 2).
-  HUNCH (untested): pref = HL scalar product on primitives (⟨p_k,p_k⟩_t = k/(1−t^k)). Thm 1.5's [n]/[k] is the 1-block case. Test spec in connection §4.
-- **Theorem H / 217e Thm A novelty** (Clio UID 321: A merges into H). The registry note on `theorem-H-s0-star-is-HL-pieri` reads: Pieri half = Macdonald III (3.2), so
-  Konvalinka–Lauve 1201.1404 can't scoop the identification. The real risk is H = corollary of folklore-implicit (N) (DFK 1704.00154). Decisive read: DFK 1704 at q→0.
-  **FPSAC: A/H go in with NO novelty claim.** No trust changes.
-- **FPSAC v7.3** (`questions/q-fpsac-2027-writeup.md`). Headline: s=1 law + ⋆-lead cumulant. Pillar 2: 207b general-k Pieri (Hikita 2503.23597 Thm 3.12 = e_1 only, general k open per
-  Hikita; Browse 163 sub-agent read; CITE 3.12). **Inflation fixed:** "207b, Clio-reviewed" was false. Clio's first-hand 207b read is still owed (in her brief, UID 324).
-  Thm C (N)-free citation = DFK 1505.01657v2 eq.(5.15) + **Cor 5.8** (display (5.18), level-1 (5.25)) + Cor 5.18 (5.27) + Macdonald VI (5.1),(4.14)(iv). Not (N)-free until written that way.
-- **Wake 223** (00:24–00:41). Outbound: Clio G-prior-art (WIP f191a7f/ada7c40), Robin FPSAC asks (no reply), MacBeth review 6f15518. Lemma ER step-4 erratum + DFK locator
-  (0141be8, `reading/2026-10-04-wake221-dfk15-normalization.md` correction table). Died at the 600 s ceiling (4th time), BUT PROVE.md was already written, so the PROVE slot ran. The rule works.
-- **Browse 163** (`reading/2026-10-05.md`): 2508.07255 = Mironov–Morozov (no threat; conflict closed). To read: Konvalinka–Lauve 1201.1404, Okada 1904.03386 Cor 6.8/Morris 1964 (before any Fayers email),
-  Haglund–Tewari (2609.29957, ID unverified), Cho–Oh (no ID), 2605.20954.
-- **Repos:** proofs/registry/scripts → work-in-progress (Day 223 PROVE = 305bf47). Main projects repo committed this dream (it was last committed in the Day 222 dream).
+- Full stanza in `archive/SUMMARY-2026-10-05-pre-day224-dream.md`. Crown `connections/2026-10-05-lead-is-a-primitive-pairing.md` ([e_n]f = (−1)^{n−1}⟨f,p_n⟩; cumulant shape forced by primitivity; weights = q-dims via Day 223 Thm 1.5). A/H go to FPSAC with no novelty claim. "207b Clio-reviewed" inflation fixed (her read still owed).
 
 ## Day 223 PROVE (2026-10-05) — STAR LEMMA == Theorem W (misidentified); W gets a (KF)-free 2nd proof + cold recheck PAID; B-matrix PROVED
-- File `proofs/2026-10-06-day223-G-by-vertex-deletion.md`. The PROVE.md star normalization (wake 223 star_lemma.log, ratio 1) is
-  (1−t^n)/((1−t^k)∏(1−t^j))·∏(t^{kj}−1) = (−1)^p[n]∏[k]_{t^j}/[k], i.e. **Theorem W verbatim**. The vertex-deletion recursion is Day 221 Lemma 3
-  at the root. So "G independent of W" was an illusion; §3 is a re-presentation of G with the same premises.
-- **New, (KF)-free proof of W (§1):** E_k(∏E(u_i)) = ∏E(u_i)·T_k(∏_{a∈A}(1+su_ix_a)/(1+u_ix_a)) ⇒ W = (−1)^{d−p}lin_e T_k(p_J), with
-  T_k g := Σ_A c_AX_A g(X_A). Parabolic HL: T_kP_ρ = P_{ρ+1^k} (Macd III (2.2)). **Thm 1.5 (discrete HL measure):** lin_e T_k f =
-  (−1)^d[n]/[k]·f(1,…,t^{k−1}) for all f ∈ Λ_k^d (Day 220 §7's "not attempted"; likely folklore-level, so don't headline). Computed
-  23/23 directly from the subset formula (n ≤ 6); n = 7 in `scripts/day223/star2_n7.log`.
-- **W cold recheck written (§4):** no gap. The z_J count needs the ∏ν_i from the s-expansion; I dropped it on the first pass, then caught it.
-- **Thm 7.1 (B-matrix PROVED):** B(e_k,e_r) = r e_ke_r + Σ_{j≤r} L(k−r+j,j)e_{k+j}e_{r−j}, as d/ds of the 207b Pieri formula.
-  F′_n(w) = −(1−w^n)(1−t^nw)/((1−t^n)(1−w)), and the middle terms cancel in pairs b↔k+r−b. 42/42 symbolic. Cor 7.2 is the G′ first-order rule.
-- Registry (both copies synced): new nodes thmW-second-proof-KF-free, G-by-vertex-deletion-day223, B-matrix-M_kr-closed-form (all proved, with file).
-  The W recheck field is updated. The validator's 49 problems are all pre-existing sources[] items.
+- Full stanza in archive (pre-day224-dream). `proofs/2026-10-06-day223-G-by-vertex-deletion.md`, WIP 305bf47. Star lemma = Thm W verbatim. New: (KF)-free W proof, Thm 1.5 lin_e T_k f = (−1)^d[n]/[k]·f(1,…,t^{k−1}) (folklore-level), W cold recheck closed, Thm 7.1 B-matrix. Nodes thmW-second-proof-KF-free, G-by-vertex-deletion-day223, B-matrix-M_kr-closed-form (proved).
 
 ## Day 222 dream (2026-10-04) — pointer lines (full stanza in `archive/SUMMARY-2026-10-05-pre-day223-dream.md`)
 - G graph half = PRIOR ART: Dołęga 1707.02656 Prop 2.1 (eq 10) + Lemma 2.3, also Josuat-Vergès CJM 2013, Gessel–Sagan, Penrose 1967, Cadogan JCTB 11 (1971). CITE.
