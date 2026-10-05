@@ -1,0 +1,1977 @@
+                                                          THE MONOMIAL EXPANSION FORMULA FOR
+                                                             HALL-LITTLEWOOD P -POLYNOMIALS
+
+                                                                               ARITRA BHATTACHARYA
+arXiv:2407.14652v1 [math.CO] 19 Jul 2024
+
+
+
+
+                                                   Abstract. We give a Hecke algebra derivation of Macdonald’s expansion formula
+                                                   for Hall-Littlewood polynomials in terms of semistandard Young tableaux. This is
+                                                   accomplished by first obtaining a Hecke algebra lift of the expansion coefficients and
+                                                   then proving a generalization of Klostermann’s recursions.
+
+
+                                                                                  1. Introduction
+                                           1.1. The Hall-Littlewood polynomials are a simultaneous generalization of the Schur
+                                           polynomials, which are characters of the irreducible rational representations of GLn (C)
+                                           and the monomial symmetric polynomials, the naive basis of the space of symmetric
+                                           polynomials, obtained from a monomial by symmetrizing over the symmetric group Sn .
+                                           In fact, when the space of symmetric polynomials is seen as the spherical Hecke algebra
+                                           through Satake isomorphism, the Hall-Littlewood polynomials become the naive basis
+                                           of this space, where one obtains these polynomials by Hecke symmetrizing a monomial.
+                                           In this article, we obtain another proof of the monomial expansion formula for Hall-
+                                           Littlewood polynomials due to Macdonald, by use of an affine Hecke algebra lift.
+
+                                           1.2. The Hall-Littlewood P -polynomials is a family (Pλ (t) : λ ∈ (Zn )+ ) of polynomials
+                                           that form a graded Z[t±1 ]-basis of the space of symmetric polynomials in n variables
+                                           Z[t±1 ][X1±1 , . . . , Xn±1 ]Sn , which is the t-analog of the character ring of rational represen-
+                                           tations of GLn (C). Two important specializations are the Schur polynomials sλ , and
+                                           the monomial symmetric polynomials mλ .
+
+                                                                        sλ       t=0      Pλ (t)      t=1      mλ
+                                              The transition matrices between these three bases are well-studied. The transition
+                                           matrix coefficients between the Schur polynomials and the monomial symmetric poly-
+                                           nomials are given by the Kostka numbers, which counts the number of semistandard
+                                           Young tableaux of a given shape and content. The transition matrix coefficients be-
+                                           tween the Schur polynomials and the Hall-Littlewood polynomials are given by the
+                                           Kostka-Foulkes polynomials, which counts the semistandard tableaux with a statistic
+                                           called charge. Both the Kostka numbers and the Kostka-Foulkes polynomials appear in
+                                           ubiquity in combinatorial, representation theoretic and geometric contexts. For a survey
+                                           of Hall-Littlewood and Kostka-Foulkes polynomials see [Mac95], [NR03], [DLT94].
+
+                                             Date: July 23, 2024.
+                                             2020 Mathematics Subject Classification. Primary 05E05; Secondary 33D52.
+                                             Key words and phrases. Hall-Littlewood polynomials, Hecke Algebras, Symmetric Functions.
+                                                                                             1
+2                                ARITRA BHATTACHARYA
+
+1.3. This paper focuses on the transition matrix between the Hall-Littlewood poly-
+nomials and the monomial symmetric polynomials. In [Mac95], Macdonald obtained
+the monomial expansion formula for Pλ (t) as a sum over semistandard Young tableaux
+of shape λ, and the weight associated to each tableau T is a polynomial ψT ∈ Z[t].
+Macdonald’s formula reads
+                              X
+                     Pλ (t) =      ψT xT ,      for λ ∈ (Zn≥0 )+ ,             (1.1)
+                               T ∈B(λ)
+
+where B(λ) denotes the set of semistandard Young tableaux of shape λ with fillings from
+[n]. The definition of semistandard Young tableaux and Macdonald’s ψT is recalled in
+§4.2, §4.3.
+   In fact, the Hall-Littlewood polynomials Pλ (t) may be defined more generally as an
+element of Z[t][P ]W , where P is the weight lattice and W the Weyl group of a given
+root system or a root datum of a reductive linear algebraic group, and λ varies over
+P+ , the set of dominant integral weights. The Pλ (t) discussed in previous paragraphs
+are the type GLn Hall-Littlewood polynomials.
+   In [GL12], Gaussent and Littelmann obtained a monomial expansion formula for
+the Hall-Littlewood polynomials as a sum over positively folded one-skeleton galleries
+in the standard apartment of the affine building. Their formula works for all types.
+Klostermann [Klo13] showed that for type GLn the Gaussent-Littelmann formula and
+Macdonald’s formula agrees term-by-term via a bijection between the positively folded
+one-skeleton galleries and the semistandard Young tableaux.
+   The Gaussent-Littelmann formula has as its predecessor the formula by Schwer in
+[Sch06]. Schwer’s formula expresses the monomial coefficients in Pλ (t) as a sum of
+positively folded alcove galleries in the standard apartment of the affine building. An
+exposition of Schwer’s formula can be found in [Ram06], where positively folded galleries
+are replaced with positively folded alcove walks. In [RY11], the alcove walk formula were
+generalized to give a monomial expansion formula for the Macdonald polynomials, which
+are generalizations of Hall-Littlewood polynomials. Schwer’s approach to calculating
+the transition matrix coefficients between (Pλ (t))λ and (mλ )λ is through an affine Hecke
+algebra lift, which we now describe.
+
+1.4. Throughout the paper our exposition will be in type GLn for some fixed n ∈ Z>0 ,
+although some (but not all) of the statements make sense in general type.
+   Let H be the affine Hecke algebra (defined in §3.1). The set {X µ Tw | µ ∈ Zn , w ∈ Sn }
+is a Z[t±1 ]-basis for H. Define the finite Hecke symmetrizer
+                                             X
+                                       10 =      Tw .
+                                              w∈Sn
+
+Then the Satake isomorphism theorem says that
+                           10 H10 ∼
+                                  = Z[t±1 ][X1±1 , . . . , Xn±1 ]Sn ,
+and the Hall-Littlewood polynomials Pλ (t) are defined as the image of the element
+   1
+        10 X λ 10 , where Wλ (t) is a polynomial in t, such that the coefficient of X λ in
+Wλ (t)
+Pλ (t) is 1.
+   THE MONOMIAL EXPANSION FORMULA FOR                 HALL-LITTLEWOOD P -POLYNOMIALS      3
+
+   Schwer first expresses the element 10 X λ of H in the basis {X µ Tw | µ ∈ Zn , w ∈ Sn }
+of H. The formula for Pλ (t) is then obtained by right multiplication with 10 and using
+Tw 10 = tℓ(w) 10 for w ∈ Sn .
+   Gaussent and Littelmann in [GL12] obtained another formula for the monomial
+expansions of Pλ (t), using a ‘geometric compression’ to Schwer’s formula. Kloster-
+mann [Klo13] showed that this formula agrees with Macdonald’s formula (1.1). Kloster-
+mann’s proof uses the fact that for a tableau T with columns Cr , . . . , C1 (from left-to-
+right),
+                           r−1
+                           Y
+                    ψT =         ψCj+1 ⊗Cj ,   ( see (4.9) for a proof ) ,
+                           j=1
+
+where Cj+1 ⊗ Cj denotes the two column tableau with columns Cj+1 and Cj . For
+two column tableaux, ψ satisfies the recursions in Proposition 4.6. These recursions
+look exactly like the recursions for R-polynomials in Kazhdan-Lusztig theory, see for
+example Theorem 5.1.1 in [BB05] and compare with (7.5).
+
+1.5. In this article we follow Schwer and Ram’s idea to compute the monomial expan-
+sion of Pλ (t), we first write 10 X λ in the basis {X µ Tw | µ ∈ Zn , w ∈ Sn } of H.
+   Let ̟k be the kth fundamental weight (see (2.8) for the notation). For µ ∈ Zn let
+Sn,µ = {w ∈ Sn |wµ = µ}.
+   Let T ∈ B(̟ℓr ) ⊗ . . . ⊗ B(̟ℓ1 ) with 1 ≤ ℓ1 ≤ . . . ≤ ℓr ≤ n. We define an element
+ΨT in the finite Hecke algebra Hn by a recursive definition.
+   For a column C ∈ B(̟ℓ ), define
+
+                               ΨC = tℓ(uC ) (Tu−1 )−1 1̟ℓ ,                           (1.2)
+                                               C
+                                                   P
+where 1̟ℓ is the parabolic Hecke symmetrizer            Tw .
+                                                    w∈Sn,̟ℓ
+  Suppose we have obtained ΨCk ⊗...⊗C1 where Ci ∈ B(̟ℓi ). Then we write
+                    X
+     ΨCk ⊗...⊗C1 =         TuC hC,Ck ,...,C1 , with      hC,Ck ,...,C1 ∈ Hn,̟ℓk+1 ,
+                    C∈B(̟ℓk+1 )
+
+
+where for µ ∈ Zn , Hn,µ is the subalgebra of H generated by {Tw | w ∈ Sn,µ }, and uC s
+are the minimal length coset representatives of Sn /Sn,̟ℓk+1 . Then define
+
+                      ΨCk+1 ⊗...⊗C1 = tℓ(uCk+1 ) (Tu−1 )−1 hCk+1 ,...,C1 .            (1.3)
+                                                    Ck+1
+
+
+   Let Hn be the finite Hecke algebra inside the affine Hecke algebra H. For a column
+strict filling T of partition shape the above paragraph defines an element ΨT ∈ Hn .
+   A tableau is called highest weight if all entries in the ith row is equal to i. We show
+in Theorem 5.6 and Proposition 6.3 that
+Theorem 1.1. Let λ = ̟ℓr + . . . + ̟ℓ1 with 1 ≤ ℓ1 ≤ . . . ≤ ℓr ≤ n. Let T ∈
+B(̟ℓr ) ⊗ . . . ⊗ B(̟ℓ1 ) . Then
+   (a) If T is not semistandard then ΨT = 0.
+   (b) If T is highest weight then ΨT = 1λ .
+4                                       ARITRA BHATTACHARYA
+
+    Our first main result is Theorem 5.6, which says that
+                                           X
+                                  10 X λ =      X T ΨT ,
+                                                    T ∈B(λ)
+
+this is an affine Hecke algebra lift of Macdonald’s formula (1.1).
+  We then describe the elements ΨT by a recursion in Theorem 6.5. Using this, we
+show that if
+                                   1
+                         ψeT =         Ψ T 10 ,   for T ∈ B(λ) ,
+                               Wλ (t)
+then ψeT ∈ Z[t±1 ] and
+                                  ψeT = ψT ,            for T ∈ B(λ) ,
+i.e, our ψe agrees with Macdonald’s ψ (Corollary 7.3). To show this, we first show that
+if T has columns Cr , . . . , C1 (from left to right) then
+                                          r−1
+                                          Y
+                                  ψeT =         ψeCj+1 ⊗Cj ,        ((7.4)) .
+                                          j=1
+
+Then we find a recursion for ψeF ⊗E in (7.5) which agrees with the recursion for ψF ⊗E
+from Proposition 4.6. Then our ψeT and Macdonald’s ψT satisfies the same recurrence
+and intital conditions, this proves their equality.
+
+1.6. Finally, we remark that just like the methods used in Schwer’s formula were
+generalized to obtain the alcove walk formula for Macdonald polynomials, we hope that
+our methods may in future generalize to give a compressed alcove walk formula for
+Macdonald polynomials.
+
+Acknowledgements. We are very grateful to Arun Ram for suggesting this project
+and providing his initial computations, valuable insights and comments. We thank S.
+Viswanath for helpful discussions.
+
+                                  2. The Symmetric Group
+   In this section we review some well-known facts about the symmetric group seen
+from a Coxeter theoretic point of view. We will use results from this section to deduce
+identities in the affine Hecke algebra.
+   Fix n ∈ Z>0 .
+
+2.1. Symmetric Group. For two integers 1 ≤ a ≤ b ≤ n, let [a, b] denote the interval
+{a, a + 1, . . . , b}, and [n] = [1, n]. Let S[a,b] denote the symmetric group on [a, b], i.e,
+S[a,b] is the set of all bijections [a, b] → [a, b], and Sn = S[1,n] . Then S[a,b] ⊆ S[1,n] = Sn .
+   Let si denote the simple transposition (i, i + 1) in Sn . Then the set s1 , . . . , sn−1 form
+a presentation of the group Sn with the following relations.
+                      s2i = 1 ,           for i ∈ [n − 1] ,                                 (2.1)
+                      si si+1 si = si+1 si si+1 ,              for i ∈ [n − 1] ,            (2.2)
+                      si sj = sj si ,           for i, j ∈ [n − 1], j ∈
+                                                                      / {i ± 1} .           (2.3)
+    THE MONOMIAL EXPANSION FORMULA FOR                            HALL-LITTLEWOOD P -POLYNOMIALS                    5
+
+2.2. Action on Zn . The symmetric group Sn acts on Zn by permuting co-ordinates.
+  Let εk = (0, . . . , 0, 1, 0, . . . , 0) ∈ Zn be the vector with 1 in the k-th position and 0
+everywhere else. Equip Zn with the standard bilinear form (εi , εj ) = δi,j for i, j ∈ [n] .
+This form is Sn -invariant: (wα, wβ) = (α, β) for w ∈ Sn , α, β ∈ Zn .
+  Let
+                                αi = εi − εi+1 ,       for i ∈ [n − 1] .
+                             n
+  The action of si on Z can be described as
+                           si β = β − (β, αi )αi ,           for i ∈ [n − 1], β ∈ Zn .                         (2.4)
+In particular, if (β, αi ) = 0 then si β = β.
+2.3. The length function. Every element w ∈ Sn can be expressed as a word in
+s1 , . . . , sn−1 . The length of w, ℓ(w) is the length of the smallest word for w. A reduced
+expression for w is an expression for w with length ℓ(w).
+    Let
+                     R+ = {εi − εj | 1 ≤ i < j ≤ n}       and     R− = −R+ .
+    For w ∈ Sn , the set of inversions of w is
+                                     Inv(w) = {γ ∈ R+ | wγ ∈ R− } .
+  Let w = si1 . . . siℓ be a reduced expression for w. Then [Bou02, Chap. VI, §1.6,
+Corollary 2] says
+                            Inv(w) = {siℓ . . . sij+1 αij | j ∈ [ℓ]} .        (2.5)
+Consequently,
+                                    ℓ(w) = #Inv(w) .                          (2.6)
+2.4. Parabolic subgroups and quotients. Let
+   (Zn )+ = {λ ∈ Zn | λ1 ≥ . . . ≥ λn } , and (Zn≥0 )+ = {λ ∈ Zn≥0 | λ1 ≥ . . . ≥ λn } .                       (2.7)
+  For λ ∈ Zn≥0 denote by Sn,λ the stabilizer subgroup {w ∈ Sn | wλ = λ} and let Snλ
+be the set of minimal length coset representatives of Sn /Sn,λ . If λ = (nmn , . . . , 1m1 ) =
+(n, . . . , n, . . . , 1, . . . , 1), then Sn,λ = S[1,mn ] × . . . × S[n−m1 +1,n] . For 1 ≤ a ≤ b ≤ n, the
+ | {z }                | {z }
+    mn                m1
+subgroup S[a,b] of Sn is isomorphic to Sb−a+1 and is generated by sa , . . . , sb−1 , and Sn,λ
+is generated by {si | si λ = λ} .
+   The following proposition will be crucial in our analysis.
+Proposition 2.1. [BB05, Proposition 2.4.4] Let λ ∈ (Zn≥0 )+ . Then every element
+w ∈ Sn has a unique factorization as w = uv with u ∈ Snλ , v ∈ Sn,λ . Moreover,
+ℓ(w) = ℓ(u) + ℓ(v).
+Lemma 2.2. Let λ ∈ (Zn≥0 )+ and u ∈ Snλ and β ∈ Inv(u). Then (λ, β) > 0.
+Proof. (λ, β) ≥ 0 since λ ∈ (Zn≥0 )+ and β ∈ R+ . We will show that if (λ, β) = 0 then
+there is an element shorter than u in uSn,λ.
+   Suppose u = si1 . . . siℓ is a reduced expression for u. Since β ∈ Inv(u), by (2.5),
+β = siℓ . . . sij+1 αij for some j ∈ [ℓ].
+   If (λ, β) = 0, then by the Sn -invariance of (−, −), (sij+1 . . . siℓ λ, αij ) = 0. So by (2.4),
+sij (sij+1 . . . siℓ λ) = sij+1 . . . siℓ λ, which gives siℓ . . . sij . . . siℓ λ = λ, i.e, siℓ . . . sij . . . siℓ ∈
+Sn,λ . Then sij . . . siℓ Sn,λ = sij+1 . . . siℓ Sn,λ . So uSn,λ = si1 . . . sij−1 sij+1 . . . siℓ Sn,λ .            
+6                                      ARITRA BHATTACHARYA
+
+    Let
+                               ̟ k = ε1 + . . . + εk ,        for k ∈ [n] .                           (2.8)
+Corollary 2.3. Let u ∈ Sn̟k with a reduced expression u = si1 . . . siℓ .
+Then (sij+1 . . . siℓ ̟k , αij ) = 1 for every j ∈ [ℓ].
+Proof. For j ∈ [ℓ], (sij+1 . . . siℓ ̟k , αij ) = (̟k , siℓ . . . sij+1 αij ) > 0 . Since (̟k , α) ∈ {0, 1}
+for α ∈ R+ , hence (sij+1 . . . siℓ ̟k , αij ) = 1 .                                                     
+2.5. Columns. A column of length ℓ is a sequence I = (i1 , . . . , iℓ ) such that 1 ≤ i1 <
+. . . < iℓ ≤ n. Denote the set of columns of length ℓ by B(̟ℓ ). We can draw a column
+I ∈ B(̟ℓ ) as a filling of the Young diagram of the partition ̟ℓ = (1, . . . , 1, 0, . . . , 0).
+    For example, if n ≥ 4 then
+                                                     1
+                                      (1, 2, 4) = 2 ∈ B(̟3 ) .
+                                                     4
+   A column of length ℓ can be identified with a subset of size ℓ from [n]. For I ∈ B(̟ℓ ),
+let I c be the column of length n−ℓ whose entries are the elements of the complementary
+set [n] − I, written in increasing order.
+   If I = (i1 , . . . , iℓ ) ∈ B(̟ℓ ) and I c = (icℓ+1 , . . . , icn ) then let
+                                                                            
+                                          1 ... ℓ ℓ + 1 ... n
+                                  uI =                                          .    (2.9)
+                                          i1 . . . iℓ icℓ+1 . . . icn
+Proposition 2.4. [BB05, §2.4] For ℓ ∈ [n], Sn̟ℓ = {uI : I ∈ B(̟ℓ )}.
+  Define a partial order ≤ on B(̟ℓ ) as follows.
+Let E = (e1 , . . . , eℓ ), F = (f1 , . . . , fℓ ) ∈ B(̟ℓ ). Define
+                             E≤F            if      ei ≤ fi for all i ∈ [ℓ] .                        (2.10)
+Figure 1 shows the Hasse diagram of the poset B(̟3 ) when n = 5.
+  Next, we define an action of the symmetric group Sn on B(̟ℓ ).
+                                                                 ~ = εc1 + . . . + εc ∈ Zn .
+We can identify a column C = (c1 , . . . , cℓ ) with the element C                   ℓ
+
+Then define sj C to be the column obtained from sj C.   ~
+Equivalently,
+       if either both j, j + 1 ∈ C or both j, j + 1 ∈ / C then sj C = C,
+       if j ∈ C, j + 1 ∈
+                       / C, then sj C is obtained by replacing j with j + 1 in C,
+       if j ∈
+            / C, j + 1 ∈ C, then sj C is obtained by replacing j + 1 with j in C.
+This defines an action of the symmetric group Sn on B(̟ℓ ).
+Example 2.5.
+                1                           1                 1                 1                1
+     If C = 2 ,         then      s1 C = 2 ,        s2 C = 3 ,        s3 C = 2 ,       s4 C = 2 .
+                5                           5                 5                 5                4
+  The following lemma is a consequence of the definition of the partial order ≤ on
+columns and the action of the symmetric group on columns, as defined above.
+    THE MONOMIAL EXPANSION FORMULA FOR               HALL-LITTLEWOOD P -POLYNOMIALS          7
+
+ Lemma 2.6. Let ℓ ∈ [n] and E ∈ B(̟ℓ ). Then
+(1) sj E < E if and only if j ∈                              ~ αj ) = −1,
+                              / E, j + 1 ∈ E if and only if (E,
+(2) sj E > E if and only if j ∈ E, j + 1 ∈                   ~ αj ) = +1,
+                                         / E if and only if (E,
+(3) sj E = E if and only if either both j, j + 1 ∈ E or both j, j + 1 ∈
+                                                                      / E if and only if
+  ~
+ (E, αj ) = 0.
+   The following lemma is fundamental to all our proofs.
+ Lemma 2.7. Let E ∈ B(̟ℓ ) for some ℓ ∈ [n]. Then
+                              (
+                               ℓ(uE ) − 1 , if j ∈
+                                                 / E, j + 1 ∈ E,
+                  ℓ(sj uE ) =
+                               ℓ(uE ) + 1 , otherwise.
+ Moreover, if sj E 6= E then sj uE = usj E , and if sj E = E then sj uE = uE sk where
+ k = u−1
+      E (j).
+
+ Proof.
+(1) Suppose j ∈/ E, j + 1 ∈ E. Since multiplying by sj on the left interchanges the
+ preimage of j and j + 1, sj uE has one less inversion than uE .
+                                                                         
+                          1    ·········       ℓ ℓ + 1 ········· n
+                 uE =                                                       ,
+                          e1 · · · j + 1 · · · eℓ ecℓ+1 · · · j · · · ecn
+                                                                           
+                            1 ········· ℓ ℓ + 1 ·········                 n
+                 sj u E =                                                     .
+                            e1 · · · j · · · eℓ ecℓ+1 · · · j + 1 · · · ecn
+ Since sj E is obtained by replacing j + 1 by j in E, sj uE = usj E .
+(2) If sj E = E, then either both j, j + 1 ∈ E or both j, j + 1 ∈       / E. Since multiplying
+ by sj on the left interchanges the preimage of j and j + 1, sj uE has one more inversion
+ than uE .
+                                                                        
+                              1      ·········         ℓ ℓ+1 ··· n
+                     uE =                                                  ,
+                              e1 · · · j, j + 1 · · · eℓ ecℓ+1 · · · ecn
+                                                                          
+                                1       ·········       ℓ ℓ+1 ··· n
+                     sj u E =                                                ,
+                                e1 · · · j + 1, j · · · eℓ ecℓ+1 · · · ecn
+                                                                        
+                              1 ··· ℓ ℓ+1               ·········     n
+                     uE =                                                  ,
+                              e1 · · · eℓ ecℓ+1 · · · j, j + 1 · · · ecn
+                                                                          
+                                1 ··· ℓ ℓ+1               ·········      n
+                     sj u E =                                                .
+                                e1 · · · eℓ ecℓ+1 · · · j + 1, j · · · ecn
+   Since u−1                                      −1      −1            −1       −1
+           E sj uE is a transposition and uE sj uE (uE (j)) = uE (j + 1) = uE (j) + 1,
+ hence sj uE = uE sk where k = u−1  E (j).
+(3) Suppose j ∈ E, j + 1 ∈    / E. Since multiplying by sj on the left interchanges the
+ preimage of j and j + 1, sj uE has one more inversion than uE .
+                                                                          
+                           1 ········· ℓ ℓ + 1 ·········                 n
+                  uE =                                                       ,
+                           e1 · · · j · · · eℓ ecℓ+1 · · · j + 1 · · · ecn
+                                                                            
+                             1    ·········        ℓ ℓ + 1 ········· n
+                  sj u E =                                                     .
+                             e1 · · · j + 1 · · · eℓ ecℓ+1 · · · j · · · ecn
+ Since sj E is obtained by replacing j by j + 1 in E, sj uE = usj E .
+8                                  ARITRA BHATTACHARYA
+
+                                                                                             
+2.6. The Bruhat order. The Bruhat order ≤ is a partial order on Sn . For two
+elements u, v ∈ Sn , u ≤ v if any (or some) reduced expression for v contains a subex-
+pression for u. For more on Bruhat order see [BB05, Chapter 2]. In particular, if w
+and i is such that ℓ(si w) > ℓ(w) then si w > w.
+   For a subset I of [n] of size k, let I≤ be the ordered tuple (i1 , . . . , ik ) of increasing
+arrangement of I, i.e, i1 = min I and ij = min(I \ {i1 , . . . , ij−1}) for j ∈ [2, k]. Then
+for a subset I of size k of [n], I≤ ∈ B(̟k ).
+   For w ∈ Sn , let w[k] = {w1 , . . . , wk }. The following theorem is known as the tableau
+criterion for Bruhat order.
+Theorem 2.8. [BB96] [Hum92, §5.9] Let u, v ∈ Sn . Then u ≤ v in Bruhat order if
+and only if u[k]≤ ≤ v[k]≤ in the partial order on B(̟k ) for all k ∈ [n].
+  Suppose L1 , L2 ∈ B(̟k ) for some k ∈ [n]. Then by [BB05, Proposition 2.4.8],
+L1 ≤ L2 in the partial order on columns from (2.10) if and only if uL1 ≤ uL2 in the
+Bruhat order.
+
+                                                      3
+                                                      4
+                                                      5
+
+                                                          s2
+
+                                                      2
+                                                      4
+                                                      5
+                                            s3                 s1
+
+                                        2                           1
+                                        3                           4
+                                        5                           5
+
+                                   s4                                   s3
+                                                 s1
+                                        2                           1
+                                        3                           3
+                                        4                           5
+
+                                   s1                                   s2
+                                                          s4
+                                        1                           1
+                                        3                           2
+                                        4                           5
+
+                                            s2                 s4
+                                                      1
+                                                      2
+                                                      4
+
+                                                 s3
+
+                                                      1
+                                                      2
+                                                      3
+
+
+
+            Figure 1. The Hasse diagram of the poset B(̟3 ) when n = 5.
+   THE MONOMIAL EXPANSION FORMULA FOR                       HALL-LITTLEWOOD P -POLYNOMIALS                   9
+
+                             3. The affine Hecke algebra
+  This section presents the definition of the type GLn affine Hecke algebra through
+generators and relations.P We review the finite Hecke symmetrizer 10 , which is a t-
+analog of the element      w in the group algebra of the symmetric group Sn . We
+                          w∈Sn
+present with complete proofs various commutation relations between the Ti s and the
+Xj s. Finally we recall the Satake isomorphism theorem which says that the spherical
+Hecke algebra is isomorphic to the space of symmetric polynomials which in turn is the
+ring of rational representations of GLn (C).
+
+3.1. The affine Hecke algebra. The affine Hecke algebra (AHA) is the Z[t±1 ] algebra
+H with generators T1 , . . . , Tn−1 and X1±1 , . . . Xn±1 subject to the following relations
+                       Ti2 = (t − 1)Ti + t ,          for i ∈ [n − 1],                               (3.1)
+                       Ti Ti+1 Ti = Ti+1 Ti Ti+1 ,          for i ∈ [n − 2],                         (3.2)
+                       Ti Tj = Tj Ti ,        for i, j ∈ [n − 1], |i − j| > 1,                       (3.3)
+and
+                                  Xi Xj = Xj Xi ,           if i, j ∈ [n],                           (3.4)
+and
+                Ti Xi Ti = tXi+1 ,              if i ∈ [n − 1],                                      (3.5)
+                Ti Xj = Xj Ti ,          if i ∈ [n − 1], j ∈ [n], and j ∈
+                                                                        / {i, i + 1}.                (3.6)
+
+  We will use the following equivalent form of (3.1)
+                                          tTi−1 = Ti + 1 − t .                                       (3.7)
+  For w ∈ Sn , let w = si1 . . . siℓ be a reduced expression. Then define Tw = Ti1 . . . Tim .
+Since any two reduced expressions for w are related by the braid relations (2.2), (2.3)
+and T1 , . . . , Tn−1 satisfies the braid relations (3.2),(3.3), Tw is a well defined element of
+H.
+  Then
+                  (                              (
+                    Tsi w ,       if si w > w,     Tsi w ,                if si w > w,
+      Ti Tw =                                  =                                           (3.8)
+                    Ti Ti Tsi w , if si w < w,     (t − 1)Tw + tTsi w , if si w < w.
+  In particular,
+                    Tuv = Tu Tv ,           if u, v ∈ Sn , ℓ(uv) = ℓ(u) + ℓ(v).                      (3.9)
+
+3.2. The finite Hecke symmetrizer. Let
+                                    X
+                               10 =    Tw .                                                         (3.10)
+                                                  w∈Sn
+
+  Using (3.8),
+         X               X                                  X
+ Ti 10 =     Ti Tw =              (Ti Tw + Ti Tsi w ) =              (Tsi w + (t − 1)Tsi w + tTw ) = t10 .
+         w∈Sn          w:si w>w                           w:si w>w
+10                                         ARITRA BHATTACHARYA
+
+Therefore,
+                                     Tw 10 = tℓ(w) 10 ,            for w ∈ Sn ,                          (3.11)
+and
+                                       X                 X
+                              120 =           Tw 10 =           tℓ(w) 10 = W0 (t)10 ,                    (3.12)
+                                       w∈Sn              w∈Sn
+
+where                                                      X
+                                               W0 (t) =           tℓ(w) .                                (3.13)
+                                                          w∈Sn
+
+   Let (Z )+ = {α ∈ Z | α1 ≥ α2 ≥ . . . ≥ αn }. The symmetric group Sn acts on Zn by
+             n                n
+
+permuting co-ordinates. For λ ∈ (Zn )+ , let Sn,λ = {w ∈ Sn | wλ = λ} and Snλ be the
+set of minimal length coset representatives in Sn /Sn,λ .
+   Let w = w λwλ be the factorization of w with w λ ∈ Snλ and wλ ∈ Sn,λ , according to
+Proposition 2.1. Since ℓ(w) = ℓ(w λ ) + ℓ(wλ ), using (3.9),
+                                        Tw = Twλ Twλ            for w ∈ Sn .
+Therefore,
+                                                   10 = 1λ 1 λ ,                                         (3.14)
+where                                  X                                      X
+                             1λ =             Tw        and         1λ =              Tw .               (3.15)
+                                         λ
+                                      w∈Sn                                   w∈Sn,λ
+
+Note that
+                                  1λ 10 = Wλ (t)10 ,             for λ ∈ (Zn≥0 )+ ,                      (3.16)
+where                                                      X
+                                              Wλ (t) =             tℓ(w) .
+                                                          w∈Sn,λ
+
+
+3.3. Commutation relations between the T and X in H. Define for µ = (µ1 , . . . , µn ) ∈
+Zn , X µ = X1µ1 . . . Xnµn . Then by (3.4), X µ X ν = X µ+ν = X ν X µ for µ, ν ∈ Zn .
+Lemma 3.1. [Mac03, (4.3.15)] Let µ ∈ Zn . Then
+                                                           t−1
+                                  Ti X µ − X si µ Ti =            (X µ − X si µ ) .
+                                                         1 − X αi
+Proof. If the statement is true for µ, ν ∈ Zn then it is true for µ + ν:
+          Ti X µ+ν − X si (µ+ν) Ti = Ti X µ+ν − X si µ Ti X ν + X si µ Ti X ν − X si (µ+ν) Ti
+                                       (t − 1)(X µ − X siµ ) ν                           ν
+                                                                          si µ (t − 1)(X − X
+                                                                                               si ν
+                                                                                                    )
+                                       =                        X   +   X
+                                              1 − X αi                               1 − X αi
+                                                  µ+ν        si (µ+ν)
+                                       (t − 1)(X        −X            )
+                                    =                                   .
+                                                 1 − X αi
+     If the statement is true for µ ∈ Zn then it is true for −µ:
+                                                                             t−1
+          X si µ (Ti X −µ − X si (−µ) Ti )X µ = X si µ Ti − Ti X µ = −               (X µ − X si µ ) ,
+                                                                          1 − X αi
+     THE MONOMIAL EXPANSION FORMULA FOR                        HALL-LITTLEWOOD P -POLYNOMIALS 11
+
+ which gives
+                                             t−1
+                         Ti X −µ − X si(−µ) Ti =  α
+                                                     (X −µ − X si (−µ) ) .
+                                            1−X    i
+
+
+   Therefore, it is enough to prove the statement for µ = εj for j ∈ [n].
+   Suppose j ∈/ {i, i + 1}. Then si εj = εj and Ti Xj − Xj Ti = 0.
+   Suppose j = i. Then
+      Ti Xi − Xi+1 Ti = Ti Xi − t−1 Ti Xi Ti Ti = Ti Xi − t−1 Ti Xi ((t − 1)Ti + t)
+                                                                     t−1
+      = Ti Xi − t−1 (t − 1)Ti Xi Ti − Ti Xi = −(t − 1)Xi+1 =                (Xi − Xi+1 ) .
+                                                                  1 − X αi
+   Suppose j = i + 1. Then
+            Ti Xi+1 − Xi Ti = Ti t−1 Ti Xi Ti − Xi Ti = t−1 ((t − 1)Ti + t)Xi Ti − Xi Ti
+                                                  t−1
+                            = (t − 1)Xi+1 =              (Xi+1 − Xi ) .
+                                                1 − X αi
+                                                                                                               
+ Corollary 3.2. Let µ ∈ Zn . Then
+(a) if (µ, αi ) = 1 then Ti X µ Ti = tX si µ ,
+(b) if (µ, αi ) = 0 then Ti X µ = X µ Ti .
+ Proof. By Lemma 3.1, if (µ, αi ) ≥ 0 then
+                                                                (µ,αi )
+                                                                X
+                                Ti X µ = X si µ Ti + (1 − t)              X µ−jαi .
+                                                                 j=1
+
+(a) Let (µ, αi ) = 1. Then si µ = µ − (µ, αi )αi = µ − αi .
+   Then using (3.7),
+                               Ti X µ = X µ−αi (Ti + 1 − t) = X siµ tTi−1 .
+(b) Let (µ, αi ) = 0. Then si µ = µ, so
+                                              Ti X µ = X si µ Ti .
+                                                                                                               
+ Corollary 3.3. Let µ ∈ Zn and w ∈ Sn such that wµ = µ. Then Tw X µ = X µ Tw .
+ Proof. Since Sn,µ is a subgroup with generators {si | si ∈ Sn,µ , i ∈ [n − 1]}, the element
+ w ∈ Sn,µ can be uniquely factored as a product of si s, each of which fixes µ. Then use
+ Corollary 3.2[(b)].                                                                      
+ Proposition 3.4. Let I ∈ B(̟k ) for some k ∈ [n]. Then as elements of H,
+                                      TuI X ̟k = X I tℓ(uI ) (Tu−1 )−1 .
+                                                                  I
+
+ Proof. Let uI = si1 . . . siℓ be a reduced expression. By Corollary 2.3, (sij+1 . . . siℓ ̟k , αij ) =
+ 1 for every j ∈ [ℓ]. Then applying Corollary 3.2, Tij X sij+1 ...siℓ ̟k = X sij sij+1 ...siℓ ̟k tTi−1
+                                                                                                    j
+                                                                                                       .
+ Then
+     TuI X ̟k = Ti1 . . . Tiℓ X ̟k = Ti1 . . . Tiℓ−1 X siℓ ̟k tTi−1
+                                                                 ℓ
+                                                                    = . . . = X si1 ...siℓ ̟k tℓ (Tu−1 )−1 .
+                                                                                                    I
+
+                                                                                                               
+12                                       ARITRA BHATTACHARYA
+
+     Using Proposition 3.4 gives
+                                                               X
+         10 X ̟ k = 1̟ k 1̟ k X ̟ k = 1̟ k X ̟ k 1̟ k =                 X I tℓ(uI ) (Tu−1 )−1 1̟k .   (3.17)
+                                                                                      I
+                                                             I∈B(̟k )
+
+Remark 3.5. The calculation (3.17) is central to our work. Tracing back its proof, this
+uses Proposition 3.4, which in turn uses Corollary 2.3. The statement of Corollary 2.3
+does not hold true for other types, it uses the fact that all the fundamental weights in
+type GLn are minuscule weights.
+3.4. The Satake Isomorphism.
+Theorem 3.6. [Mac03, (4.2.6)]) The affine Hecke algebra H is a free Z[t±1 ]-module
+with basis {X α Tw | α ∈ Zn , w ∈ Sn } .
+  Since Tw 10 = tℓ(w) 10 , we have H10 ⊆ Z[t±1 ][X1±1 , . . . , Xn±1 ]10 . In fact, since for a
+polynomial f (X) = f (X1 , . . . , Xn ) ∈ Z[t±1 ][X1 , . . . , Xn ], we have f (X)10 6= 0, we can
+identify f (X) with its image in H10 as f (X)10 . So
+                H10 = Z[t±1 ][X ±1 , . . . , X ±1 ]10 ∼
+                                         1           n= Z[t±1 ][X ±1 , . . . , X ±1 ] ,
+                                                                             1            n
+
+where the isomorphism is f (X)10 7→ f (X).
+Theorem 3.7. [NR03, Theorem 1.4, Theorem 2.4] The above map restricts to
+the following isomorphism.
+   10 H10 = Z(H)10 = Z[t±1 ][X ±1 , . . . , X ±1 ]Sn 10 ∼
+                                         1           n  = Z[t±1 ][X ±1 , . . . , X ±1 ]Sn = Z(H) ,
+                                                                                 1            n
+
+where Z(H) denotes the center of the affine Hecke algebra H.
+
+                           4. The Hall-Littlewood Polynomials
+   In this section we recall the definition of Hall-Littlewood polynomials and describe
+Macdonald’s formula for the monomial expansion of these polynomials. We then red-
+erive a recursive way to compute the monomial expansion, using ideas of Klostermann.
+4.1. The Hall-Littlewood polynomials. Recall the notations in §2.4 and let
+                              X
+                     Wλ (t) =   tℓ(w) ,   for λ ∈ (Zn )+ .                 (4.1)
+                                          w∈Sn,λ
+
+   The Hall-Littlewood P -polynomials are Pλ (t) ∈ Z[t±1 ][X1±1 , . . . , Xn±1 ]Sn for λ ∈ (Zn )+
+defined by
+                                    1
+                     Pλ (t)10 =         1 0 X λ 10 ,          for λ ∈ (Zn )+ .              (4.2)
+                                 Wλ (t)
+   For a proof that Pλ (t) ∈ Z[t±1 ][X1±1 , . . . , Xn±1 ]Sn see [NR03].
+   Since w̟n = ̟n for every w ∈ Sn , by Corollary 3.3 we have Tw X1 . . . Xn = X1 . . . Xn Tw
+for every w ∈ Sn . Therefore
+         P(λ1 +k,...,λn +k) (t) = (X1 . . . Xn )k Pλ (t) ,       for λ ∈ (Zn )+ and k ∈ Z .            (4.3)
+   For the rest of the article we only focus on Pλ (t) where λ ∈ (Zn≥0 )+ . In this case
+Pλ (t) ∈ Z[t][X1 , . . . , Xn ]Sn . For such λs, Macdonald obtained a monomial expansion
+formula as a sum over semistandard Young tableaux, which we describe in the next
+subsections.
+     THE MONOMIAL EXPANSION FORMULA FOR                    HALL-LITTLEWOOD P -POLYNOMIALS 13
+
+4.2. Tableaux. Let λ ∈ (Zn≥0 )+ .
+   The Young diagram of λ is the upper-left justified arrangement of boxes with λi many
+boxes in the ith row from top. We can assign a co-ordinate to each box of the diagram
+so that (i, j) denotes the box in ith row from the top and jth column from the left.
+   The length of λ, ℓ(λ), is the length of the first column of the diagram of λ.
+   A filling of λ is an assignment of numbers from [n] to the boxes of the Young diagram
+of λ. Identifying λ with the collection of boxes in its Young diagram, a filling T of λ is
+a function T : λ 7→ [n].
+   A semistandard Young tableau of shape λ is a filling of λ such that the entries are
+weakly increasing along each row from left-to-right and the entries are strictly increasing
+along each column from top-to-bottom. The set of semistandard Young tableaux of
+shape λ is denoted by B(λ).
+Example 4.1. Let n = 3. The semistandard Young tableaux of shape (2, 1, 0) are
+ 1    1       1    1       1   2       1   2           1   3       1   3           2   2       2   3
+          ,            ,           ,           ,               ,           ,               ,           .
+ 2            3            2           3               2           3               3           3
+  Suppose λ, µ ∈ (Zn≥0 )+ are such that the smallest column length of λ is at-least as
+big as the biggest column length of µ. In other words, if λ = ̟ap + . . . + ̟a1 and
+µ = ̟bq + . . . + ̟b1 with n ≥ ap ≥ . . . ≥ a1 ≥ 1 and n ≥ bq ≥ . . . ≥ b1 ≥ 1 then
+a1 ≥ bq . If T1 and T2 are fillings of λ and µ respectively then we write T1 ⊗ T2 to denote
+the filling of λ + µ obtained by filling the first p columns by T1 and the next q columns
+by T2 . For λ, µ satisfying the condition above let
+                   B(λ) ⊗ B(µ) = {T1 ⊗ T2 | T1 ∈ B(λ) and T2 ∈ B(µ)} .                             (4.4)
+  Note that even if T1 , T2 are semistandard, T1 ⊗ T2 may not be semistandard.
+                               1                                               1   1
+                                                   1
+Example 4.2. Let T1 = 3            and T2 =            . Then T1 ⊗ T2 = 3          2 .
+                                                   2
+                               4                                               4
+  Let λ = ̟ap + . . . + ̟a1 , with n ≥ ap ≥ . . . ≥ a1 ≥ 1. With the above notations, we
+can write
+                             B(λ) ⊆ B(̟ap ) ⊗ . . . ⊗ B(̟a1 ) .                    (4.5)
+4.3. Macdonald’s formula. For two elements µ, λ ∈ (Zn≥0 )+ write µ ⊆ λ if λi ≥ µi
+for all i ∈ [n]. The set theoretic difference of the Young diagrams λ − µ is called a skew
+diagram. If λ1 ≥ µ1 ≥ λ2 ≥ µ2 ≥ . . . then we call λ − µ a horizontal strip.
+   A semistandard tableau T of shape λ may be written as a flag of partitions GT(T ) =
+(T≤1 ⊆ T≤2 ⊆ . . . ⊆ T≤n ) where T≤i is the shape with fillings ≤ i. Then T≤i+1 − T≤i is
+a horizontal strip for each i ∈ [n − 1].
+   Let θ = λ − µ be a horizontal strip. Let
+                  J = {j ∈ Z≥1 | θj′ < θj+1
+                                        ′
+                                            } = {j ∈ Z≥1 | θj′ = 0, θj+1
+                                                                     ′
+                                                                         = 1} ,
+where θi′ denotes the length of the ith column of θ. Then define
+                                         Y
+                                 ψλ/µ =     (1 − tmj (µ) ) ,
+                                            j∈J
+14                                ARITRA BHATTACHARYA
+
+where mj (µ) = #{i ∈ [n] | µi = j}.
+  Let T be a semi-standard Young tableau of shape λ, with corresponding sequence
+GT(T ) as above. Let
+                                               n−1
+                                               Y
+                                    ψT =             ψT≤i+1 /T≤i .
+                                               i=1
+
+                                                     Q                   Q
+                                                                         n
+     For a tableau T : λ → [n], define X T =               XT (b) =            Xici , where ci = #T −1 (i), i.e,
+                                                     b∈λ                 i=1
+the number of i in T .
+  Then
+
+Theorem 4.3. [Mac95, Chapter III, (5.11’) ]
+                         X
+                Pλ (t) =   ψT X T ,     for λ ∈ (Zn≥0 )+ .                                                 (4.6)
+                                T ∈B(λ)
+
+Example 4.4. Let n = 3, λ = (2, 1, 0). Then the coefficient of X1 X2 X3 in P(2,1,0) is
+
+                                          ψ1 2 +ψ1 3 ,
+                                           3               2
+
+where
+
+ ψ1 2 =ψ          ·ψ     = (1 − t) · 1 ,             and          ψ1 3 =ψ             ·ψ      = 1 · (1 − t2 ) .
+      3                                                              2
+
+Remark 4.5. Note that the above example shows that even though Pλ is symmetric
+the ψT s are not directly symmetric, i.e, ψT may not equal ψwT for w ∈ Sn where wT
+denotes the crystal action of w on T .
+
+  Klostermann [Klo13] obtained a recursive formula describing ψT . We rederive these
+recursions in Proposition 4.6. We then obtain a Hecke algebra lift of Klostermann’s
+recursions. This provides another proof of Macdonald’s formula.
+  The next two subsections are for obtaining the recursions for ψT .
+
+4.4. Writing ψT box-by-box and column-by-column. For a box b in the diagram
+of λ we write b ∈ λ. For a box b ∈ λ, let Leg(b, λ) denote the set of all boxes below b
+in the same column.
+   Let T ∈ B(λ). Let legT (b, < i) = #{b′ ∈ Leg(b, λ) | T (b′) < i}.
+   For a box b = (r, c) ∈ λ define
+              (
+               1 − tlegT (b,<i)+1 , if T (r, c + 1) = i and i ∈
+                                                              / T (Legλ (b)) ∪ T (b),
+     ψT (b) =                                                                         (4.7)
+               1,                   otherwise.
+
+     Then
+                                                 Y
+                                      ψT =             ψT (b) .                                            (4.8)
+                                                 b∈λ
+    THE MONOMIAL EXPANSION FORMULA FOR                  HALL-LITTLEWOOD P -POLYNOMIALS 15
+
+ 4.5. Klostermann recursions. Recall the action of Sn on the set of all columns from
+ §2.5.
+    The following recursions were first described by Klostermann in the proof of propo-
+ sition 27 in [Klo13].
+ Proposition 4.6.     (1) Suppose 1 ≤ ℓ1 ≤ . . . ≤ ℓr ≤ n. If T = Cr ⊗ . . . ⊗ C1 with
+      Ci ∈ B(̟ℓi ) then
+                                      r−1
+                                      Y
+                                ψT =      ψCj+1 ⊗Cj .                            (4.9)
+                                            j=1
+    (2) Let 1 ≤ a ≤ b ≤ n. For F ∈ B(̟b ), E ∈ B(̟a ), the ψF ⊗E are determined by
+        the following recursions.
+         (a) If F ⊗ E is not semistandard then ψF ⊗E = 0,
+         (b) If E = (1, . . . , a) and F ⊗ E is semistandard then ψF ⊗E = 1.
+         (c) Suppose F ⊗ E is semistandard. If j ∈       / E, j + 1 ∈ E then
+                       (
+                          tψsj F ⊗sj E + (1 − t)ψF ⊗sj E , if j ∈ F, j + 1 ∈
+                                                                           /F,
+              ψF ⊗E =
+                          ψsj F ⊗sj E ,                     otherwise .
+ Proof.
+(1) Since each ψT (b) depends on only the column of b and the column right next to it,
+ (4.9) follows.
+(2.a) is part of the definition of ψF ⊗E .
+(2.b) Since F ⊗ E is semistandard, f1 = 1, . . . , fa = a. So the first a entries of F is the
+ same as the corresponding entries in E, hence ψF ⊗E = 1.
+(2.c) Let ← k denote the box in F immediate left of the box in E containing k, and let
+ ψF ⊗E (← k) denote the contribution from the box in F immediate left of the box in E
+ containing k.
+ Suppose j ∈ / E, j + 1 ∈ E.
+    Case 1: Suppose j ∈ F, j + 1 ∈       / F . If d = leg(← j + 1, < j + 1) + 1 > 1 then
+ ψF ⊗E (← j + 1) = 1 − td , ψsj F ⊗sj E (← j) = 1 − td−1 , ψF ⊗sj E (← j) = 1.
+
+
+                  .    j+1                         .      j                    .    j
+                  ..                               ..                          ..
+     F ⊗E =        .         ,   sj F ⊗ sj E =      .         ,   F ⊗ sj E =    .       .
+
+                  j                               j+1                          j
+
+ And ψF ⊗E (← k) = ψsj F ⊗sj E (← k) = ψF ⊗sj E (← k) for k ∈     / {j, j + 1}. Then since
+        d           d−1
+ (1 − t ) = t(1 − t ) + (1 − t)1 we get ψF ⊗E = tψsj F ⊗sj E + (1 − t)ψF ⊗sj E .
+    If d = 1 then sj F ⊗ sj E is not semistandard, so ψsj F ⊗sj E = 0 and ψF ⊗E (← j + 1) =
+ 1 − t, ψF ⊗sj E (← j) = 1.
+
+
+     F ⊗E =       j    j+1 ,     sj F ⊗ sj E = j + 1      j   ,   F ⊗ sj E =   j    j   .
+
+ In this case the statement is true since (1 − t1 ) = t · 0 + (1 − t) · 1.
+16                                  ARITRA BHATTACHARYA
+
+   Case 2: Suppose j, j + 1 ∈ F . Note that since F ⊗ E is semistandard, j + 1 of E is
+above or in the same row of j + 1 of F . If j + 1 of E is in the same row as j + 1 of F
+then by semistandardness of F ⊗ E, j ∈ E also.
+   If j+1 of E is in a row strictly above j+1 of F then ψF ⊗E (← j+1) = 1 = ψsj F ⊗sj E (←
+j), and ψF ⊗E (← k) = ψsj F ⊗sj E (← k) for k ∈
+                                              / {j, j + 1}. So ψF ⊗E = ψsj F ⊗sj E .
+
+
+                               .     j+1                         .    j
+                               ..                                ..
+                                .                                 .
+                  F ⊗E =                    ,   sj F ⊗ sj E =             .
+                              j                                  j
+
+                            j+1                                 j+1
+
+                      / F then ψF ⊗E (← j + 1) = 1 − td = ψsj F ⊗sj E (← j), where
+  Case 3: If j, j + 1 ∈
+d = leg(← j + 1, < j + 1) + 1, and ψF ⊗E (← k) = ψsj F ⊗sj E (← k) for k 6= j + 1. So
+ψF ⊗E = ψsj F ⊗sj E .
+
+
+                               .     j+1                         .    j
+                               ..                                ..
+                  F ⊗E =        .           ,   sj F ⊗ sj E =     .       .
+
+                               .                                 .
+
+  Case 4: If j ∈ / F, j + 1 ∈ F then ψF ⊗E (← j + 1) = 1, ψsj F ⊗sj E (← j) = 1, and
+ψF ⊗E (← k) = ψsj F ⊗sj E (← k) for k ∈
+                                      / {j, j + 1}. So ψF ⊗E = ψsj F ⊗sj E .
+
+
+                               .     j+1                         .    j
+                               ..                                ..
+                  F ⊗E =        .           ,   sj F ⊗ sj E =     .       .
+
+                            j+1                                  j
+
+                                                                                        
+
+Example 4.7.
+
+           ψ 1 2 = tψ 2 1 + (1 − t)ψ 1 1 = t · 0 + (1 − t) · 1 = 1 − t ,
+             3         3                3
+           ψ 1 2 = ψ 1 1 = 1,
+             2        2
+
+           ψ 1 3 = tψ 1 2 + (1 − t)ψ 1 2 = t · (1 − t) + (1 − t) · 1 = 1 − t2 .
+             2         3                2
+   THE MONOMIAL EXPANSION FORMULA FOR                   HALL-LITTLEWOOD P -POLYNOMIALS 17
+
+                                     5. AHA lift of ψT
+   This section defines our main objects of study, the ΨT ∈ Hn , where T is a column-
+strict filling. Our main goal in this section is to establish Theorem 5.6, which gives an
+affine Hecke algebra lift of the monomial expansion formula of Macdonald Theorem 4.3.
+5.1. Parabolic Expansions. Let Hn be the Z[t±1 ] subalgebra of H generated by
+T1 , . . . , Tn−1 . Then Hn has Z[t±1 ]-basis {Tw | w ∈ Sn }. Let Hn,λ be the subalgebra
+of Hn with basis {Tw | w ∈ Sn,λ }. In particular, for ℓ ∈ [n], Hn,̟ℓ is the subalgebra of
+Hn generated by T1 , . . . , Tℓ−1 , Tℓ+1 , . . . , Tn−1 . Hence, Hn,̟ℓ ∼
+                                                                       = Hℓ × Hn−ℓ .
+Lemma 5.1. Let h ∈ Hn and ℓ ∈ [n]. There exists unique decomposition
+                        X
+                  h=         TuF hF ,      with hF ∈ Hn,̟ℓ .
+                              F ∈B(̟ℓ )
+
+Proof. Since Hn has Z[t±1 ] basis {Tw | w ∈ Sn }, it is enough to decompose each Tw . From
+Proposition 2.1, w has a unique factorization w = uv with u ∈ Sn̟ℓ and v ∈ Sn,̟ℓ , with
+ℓ(w) = ℓ(u) + ℓ(v). By Proposition 2.4, u = uF for some F ∈ B(̟ℓ ). Then by (3.9),
+Tw = TuF Tv , and Tv ∈ Hn,̟ℓ .                                                           
+  The following proposition follows from the subword property of the Bruhat order and
+the quadratic relation (3.1) in the Hecke algebra. For a complete proof see [EMTW20,
+Lemma 3.6].
+Proposition 5.2. There exists polynomials av (t) ∈ Z[t±1 ] such that
+                                         X
+                             (Tw−1 )−1 =     av (t)Tv .
+                                                  v≤w
+
+. In other words, (Tw−1 )−1 is a linear combination of Tv with v ≤ w.
+Proposition 5.3. Let h ∈ Hn,̟a . Let E be a column of length a and let b ≥ a. Write
+                                   X
+             tℓ(uE ) (Tu−1 )−1 h =    TuF hF ,     with hF ∈ Hn,̟b .           (5.1)
+                          E
+                                      F ∈B(̟b )
+
+If F ⊗ E is not semistandard then hF = 0.
+Proof. Since for any k ∈ [n], Sn,̟k is a group, and the subalgebra Hn,̟k of Hn is invariant
+under taking inverses, it is enough to prove the proposition for tℓ(uE ) (Tu−1 )−1 (Tv−1 )−1 for
+                                                                            E
+some v ∈ Sn,̟a . Let w = uE v, then, (Tu−1 )−1 (Tv−1 )−1 = (Tw−1 )−1 . Using Proposition 5.2,
+                                           E
+(Tw−1 )−1 is a linear combination of Tx with x ≤ w. Now, write x = uF z for uF ∈ Sn̟b
+and z ∈ Sn,̟b , according to Proposition 2.1. Then Tx = TuF Tz . Therefore, the terms
+appearing in (Tw−1 )−1 correspond to uF for uF ≤ w = uE v. Then by Theorem 2.8,
+uF [a]≤ ≤ w[a]≤ = E, since v fixes [a] and uE [a]≤ = E. Let uF [a]≤ = (f1′ , . . . , fa′ ). Since
+uF [b]≤ = F = (f1 , . . . , fb ), and b ≥ a, we have fi ≤ fi′ for i ∈ [a]. Hence F ⊗ E is
+semistandard.                                                                                  
+Example 5.4. Let n = 3, a = 1, b = 2. Then S3,̟1 = S[1] × S[2,3] = {1, s2 },
+                                                                
+    ̟1            1 2 3               1 2 3                  1 2 3
+   S3 = {u 1 =              ,u 2 =             = s1 , u 3 =              = s2 s1 }.
+                  1 2 3               2 1 3                  3 1 2
+18                                             ARITRA BHATTACHARYA
+
+And S3,̟2 = S[1,2] × S[3] = {1, s1 },
+                                                               
+    ̟2               1 2 3                1 2 3                1 2 3
+  S3 = {u 1 =                 = 1, u 1 =         = s2 , u 2 =         = s1 s2 }.
+            2
+                     1 2 3            3
+                                          1 3 2           3
+                                                               2 3 1
+
+         ℓ(u       )
+        t      1
+                       (Tu−1 )−1 = 1 ∈ H3,̟2 ,
+                           1
+         ℓ(u       )
+        t      2
+                       (Tu−1 )−1 = tT1−1 = 1 · (T1 + 1 − t) ∈ H3,̟2 ,
+                           2
+         ℓ(u       )
+        t      3
+                       (Tu−1 )−1 = tT2−1 tT1−1 = (T2 + 1 − t)tT1−1 = T2 · tT1−1 + 1 · (1 − t)tT1−1
+                           3
+
+                                = Tu       · tT1−1 + Tu        · (1 − t)tT1−1 .
+                                       1                  1
+                                       3                  2
+
+     In particular, when E = (1, . . . , a) we get the following corollary.
+Corollary 5.5. Let 1 ≤ a ≤ b ≤ n. Suppose h ∈ Hn,̟a . Then write
+                          X
+                    h=         TuF hF ,     with hF ∈ Hn,̟b .
+                                       F ∈B(̟b )
+
+Then hF 6= 0 only if f1 = 1, . . . , fa = a.
+
+5.2. Definition of ΨT . Let T ∈ B(̟ℓr ) ⊗ . . . ⊗ B(̟ℓ1 ) with 1 ≤ ℓ1 ≤ . . . ≤ ℓr ≤ n.
+We will now give a recursive definition of an element ΨT for each such T
+  For a column C ∈ B(̟ℓ ), define
+                                               ΨC = tℓ(uC ) (Tu−1 )−1 1̟ℓ .                          (5.2)
+                                                                    C
+
+  Suppose T = C ⊗ S with C ∈ B(̟ℓ ) and S ∈ B(̟ℓr ) ⊗ . . . ⊗ B(̟ℓ1 ), where
+1 ≤ ℓ1 ≤ . . . ≤ ℓr ≤ ℓ ≤ n.
+By Lemma 5.1, write
+                            X
+                    ΨS =      TuE hE,S with hE,S ∈ Hn,̟ℓ .
+                                    E∈B(̟ℓ )
+
+Then define
+                              ΨT = tℓ(uC ) (Tu−1 )−1 hC,S .                   (5.3)
+                                              C
+This defines ΨT ∈ Hn for every T .
+  The following theorem says that the function Ψ picks up the Cartan component (i.e,
+the semistandard Young tableaux) from tensor product of column crystals.
+Theorem 5.6. Let T ∈ B(̟ℓr ) ⊗ . . . ⊗ B(̟ℓ1 ) with 1 ≤ ℓ1 ≤ . . . ≤ ℓr ≤ n.
+  (a) If T is not semistandard then ΨT = 0.
+  (b) For ℓ ∈ [n],                      X
+                           ΨT X ̟ ℓ =         X C ΨC⊗T .                                             (5.4)
+                                                          C∈B(̟ℓ )
+      (c) Let λ ∈ (Zn≥0 )+ . Then
+                                                               X
+                                               10 X λ =                 X T ΨT .                     (5.5)
+                                                              T ∈B(λ)
+    THE MONOMIAL EXPANSION FORMULA FOR                         HALL-LITTLEWOOD P -POLYNOMIALS 19
+
+ Proof.
+(a) If T has only one column then T is semistandard, so the statement is true.
+   Suppose T has two columns. Write T = F ⊗ E with F ∈ B(̟b ) and E ∈ B(̟a ).
+ Using the definition of Ψ and Lemma 5.1 write
+                                        X
+           ΨE = tℓ(uE ) (Tu−1 )−1 1̟a =     TuC hC,E with hC,E ∈ Hn,̟b .
+                           E
+                                             C∈B(̟b )
+
+Taking h = 1̟a in Proposition 5.3, if F ⊗ E is not semistandard then hF,E = 0, so
+
+                                  ΨT = tℓ(uF ) (Tu−1 )−1 hF,E = 0 .
+                                                      F
+
+
+   Assume now that the statement is true for r ≥ 2 columns, i.e, ΨS = 0 if S is not
+semistandard and S has ≤ r columns. We will prove the statement for r + 1 columns.
+Let T = C ⊗ Cr . . . ⊗ C1 with C ∈ B(̟ℓ ), Ci ∈ B(̟ℓi ) for i ∈ [r], and 1 ≤ ℓ1 ≤ . . . ≤
+ℓr ≤ ℓ ≤ n. Let S = Cr ⊗ . . . ⊗ C1 and S ′ = Cr−1 ⊗ . . . ⊗ C1 .
+Using the definition of Ψ and Lemma 5.1, write
+                                            X
+         ΨS = tℓ(uCr ) (Tu−1 )−1 hCr ,S ′ =   TuC hC,S with hC,S ∈ Hn,̟ℓ .
+                           Cr
+                                               C∈B(̟ℓ )
+
+Taking h = hCr ,S , and E = Cr in Proposition 5.3, if C ⊗ Cr is not semistandard then
+hC,S = 0, so
+                                  ΨT = tℓ(uC ) (Tu−1 )−1 hC,S = 0 .
+                                                      C
+
+(b) Write
+                                  X
+                      ΨT =                 TuC hC,T       with hC,T ∈ Hn,̟ℓ .
+                                C∈B(̟ℓ )
+
+By Corollary 3.3,
+                                       hC,T X ̟ℓ = X ̟ℓ hC,T .
+Using Proposition 3.4,
+                             X                                X
+              ΨT X ̟ ℓ =              TuC hC,T X ̟ℓ =                TuC X ̟ℓ hC,T
+                           C∈B(̟ℓ )                       C∈B(̟ℓ )
+                             X                                          X
+                       =              X C tℓ(uC ) (Tu−1 )−1 hC,T =               X C ΨC⊗T .
+                                                      C
+                           C∈B(̟ℓ )                                   C∈B(̟ℓ )
+
+(c) Let λ = ̟ℓ1 + . . . + ̟ℓk with 1 ≤ ℓ1 ≤ . . . ≤ ℓk ≤ n. Then by (3.17) and (5.2),
+                               X                             X
+                10 X ̟ ℓ 1 =         X C tℓ(uC ) (Tu−1 )−1 =      X C ΨC .
+                                                          C
+                                C∈B(̟ℓ1 )                            C∈B(̟ℓ1 )
+
+
+Let j ∈ [k] and λ(j) = ̟ℓ1 + . . . + ̟ℓj . Suppose that
+                                      (j)
+                                              X
+                                10 X λ =            X S ΨS .
+                                                  S∈B(λ(j) )
+20                                                     ARITRA BHATTACHARYA
+
+Then by (5.4),
+                 (j) +̟                 X
+          10 X λ           ℓj+1
+                                  =                    X S ΨS X ̟ℓj+1
+                                      S∈B(λ(j) )
+                                        X                         X                                        X
+                                  =                    XS                            X C ΨC⊗S =                        X T ΨT .
+                                      S∈B(λ(j) )              C∈B(̟ℓj+1 )                              T ∈B(λ(j+1) )
+                                                            C⊗S semistandard
+
+This proves the statement by induction.
+                                                                                                                                  
+
+Example 5.7. Let n = 3. For T ∈ B((2, 1, 0)), we compute ΨT .
+ Note that 1̟1 = 1 + T2 .
+ Since
+                                         ℓ(u       )
+                               Ψ1 =t           1
+                                                       (Tu−1 )−1 1̟1 = 1 + T2 = Tu                    + Tu       ,
+                                                            1                                    1           1
+                                                                                                 2           3
+
+then
+
+                                           Ψ 1 1 = 1,                  Ψ 1 1 = tT2−1 .
+                                                   2                         3
+
+     Since
+
+         Ψ 2 = tT1−1 (1 + T2 ) = (T1 + 1 − t)(1 + T2 ) = 1 · tT1−1 + T2 · (1 − t) + T1 T2
+              = Tu             · tT1−1 + Tu            · (1 − t) + Tu            ,
+                           1                       1                     2
+                           2                       3                     3
+
+then
+
+              Ψ 1 2 = tT1−1 ,                      Ψ 1 2 = tT2−1 (1 − t) ,                     Ψ 2 2 = t2 T1−1 T2−1 .
+                     2                                  3                                         3
+
+     Since
+
+     Ψ 3 = tT2−1 tT1−1 (1 + T2 ) = tT2−1 tT1−1 (t + tT2−1 ) = t3 T2−1 T1−1 + t3 T2−1 T1−1 T2−1
+          = t3 T2−1 T1−1 + t3 T1−1 T2−1 T1−1 = (t + tT1−1 )t2 T2−1 T1−1 = (1 + T2 )tT2−1 tT1−1
+          = (1 + T1 )(T2 + 1 − t)tT1−1 = 1 · (1 − t)(1 + T1 )tT1−1 + T2 · tT1−1 + T1 T2 · tT1−1
+          = Tu           · (1 − t)(1 + T1 )tT1−1 + Tu                 · tT1−1 + Tu             · tT1−1 ,
+                 1                                                1                        2
+                 2                                                3                        3
+
+then
+
+             Ψ 1 3 = (1 − t)(1 + T1 )tT1−1 = (1 − t)(tT1−1 + t) = (1 − t)(1 + T1 ) ,
+                 2
+
+                                       Ψ 1 3 = tT2−1 · tT1−1 ,                       Ψ 2 3 = t2 T1−1 T2−1 · tT1−1 .
+                                           3                                           3
+    THE MONOMIAL EXPANSION FORMULA FOR                             HALL-LITTLEWOOD P -POLYNOMIALS 21
+
+                                      6. Recursions for ΨT
+   This section presents a recursive formula to compute the elements ΨT ∈ Hn , with an
+initial condition. The recursion aims to lower the rightmost column of T which is not
+highest weight, thus by repeated application of the recursion one can compute ΨT from
+that of a highest weight tableau.
+6.1. Initial Conditions. A column C ∈ B(̟ℓ ) of length ℓ is called highest weight if
+C = (1, . . . , ℓ). A tableau T is called highest weight if all its columns are highest weight.
+  For λ ∈ (Zn≥0 )+ , there is a unique highest weight tableau Tλ0 of shape λ, whose all
+entries in the ith row is i.
+Example 6.1. For n = 3 and λ = (2, 1, 0),
+
+                                               0
+                                                           1       1
+                                             T(2,1,0) =                .
+                                                           2
+Remark 6.2. The highest weight column in B(̟ℓ ) is actually the lowest element in
+the poset B(̟ℓ ) with the partial order ≤ on columns from (2.10). The terminology
+highest weight comes from crystal basis theory, since the highest weight tableaux are
+the highest weight elements in the crystal of tableaux.
+  Recall that for λ ∈ (Zn≥0 )+ , the element 1λ was defined in (3.15). For 1 ≤ a ≤ b ≤ n
+define                                        X
+                                     1[a,b] =     Tw .
+                                                      w∈S[a,b]
+
+If λ = ̟ℓ1 + . . . + ̟ℓr with 1 ≤ ℓ1 ≤ . . . ≤ ℓr ≤ n then Sn,λ = S[1,ℓ1 ] × S[ℓ1 +1,ℓ2 ] × . . . ×
+S[ℓr +1,n] . It follows that
+                              1λ = 1[1,ℓ1 ] 1[ℓ1 +1,ℓ2 ] . . . 1[ℓr +1,n] .
+Proposition 6.3. Let Tµ0 be the highest weight tableau of shape µ ∈ (Zn≥0 )+ . Let
+ℓ ≥ ℓ(µ) and let F ∈ B(̟ℓ ) such that F ⊗ Tµ0 is semistandard. Then
+                                   ΨF ⊗Tµ0 = tℓ(uF ) (Tu−1 )−1 1̟ℓ +µ .
+                                                               F
+
+In particular,
+                                  ΨTλ0 = 1λ ,             for λ ∈ (Zn≥0 )+ .
+Proof. Suppose C = (1, . . . , ℓ) ∈ B(̟ℓ ) is highest weight for some ℓ ∈ [n]. Then uC = 1,
+hence by (5.2),
+                           ΨT̟0 = ΨC = tℓ(uC ) (Tu−1 )−1 1̟ℓ = 1̟ℓ .
+                                ℓ                             C
+  Let k ≥ 1. Suppose λ = ̟ℓk+1 + ̟ℓk + . . . + ̟ℓ1 , with 1 ≤ ℓ1 ≤ . . . ≤ ℓk ≤ ℓk+1 ≤ n.
+Let µ = ̟ℓk + . . . + ̟ℓ1 . Assume that ΨTµ0 = 1µ .
+Since Sn,̟ℓk = S[1,ℓk ] × S[ℓk +1,n] , S[1,ℓ1 ] , . . . , S[ℓk−1 +1,ℓk ] , S[ℓk +1,n] ⊆ Sn,̟ℓk . Then
+         ΨTµ0 = 1µ = 1̟ℓ1 +...+̟ℓk = 1[1,ℓ1 ] 1[ℓ1 +1,ℓ2 ] . . . 1[ℓk−1 +1,ℓk ] 1[ℓk +1,n] ∈ Hn,̟ℓk .
+By Proposition 2.1,                                                        !
+                                                     X
+                              1[ℓk +1,n] =                         TuF 1[ℓk+1 ,n] .
+                                                F ∈B(̟ℓk+1 )
+                                               f1 =1,...,fℓk =ℓk
+22                                               ARITRA BHATTACHARYA
+
+If F ∈ B(̟ℓk+1 ) is such that f1 = 1, . . . , fℓk = ℓk , then wuF = uF w for all w ∈
+S[1,ℓ1 ] × . . . × S[ℓk−1 +1,ℓk ] . So, Tw TuF = TuF Tw for all such w and F . Therefore,
+
+     ΨTµ0 = 1[1,ℓ1 ] 1[ℓ1 +1,ℓ2 ] . . . 1[ℓk−1 +1,ℓk ] 1[ℓk +1,n]
+                                                                                 !
+                                                                X
+           = 1[1,ℓ1 ] 1[ℓ1 +1,ℓ2 ] . . . 1[ℓk−1 +1,ℓk ]                       TuF 1[ℓk+1,n]
+                                                           F ∈B(̟ℓk+1 )
+                                                          f1 =1,...,fℓk =ℓk
+                                           !
+                        X                                                                                X
+           =                          TuF 1[1,ℓ1 ] 1[ℓ1 +1,ℓ2 ] . . . 1[ℓk−1 +1,ℓk ] 1[ℓk+1,n] =                       TuF 1λ .
+                   F ∈B(̟ℓk+1 )                                                                     F ∈B(̟ℓk+1 )
+                  f1 =1,...,fℓk =ℓk                                                                f1 =1,...,fℓk =ℓk
+
+
+So by the definition of Ψ,
+                                               ΨF ⊗Tµ0 = tℓ(uF ) (Tu−1 )−1 1λ ,
+                                                                        F
+
+
+for F ∈ B(̟ℓk+1 ) such that f1 = 1, . . . , fℓk = ℓk .
+                                                                                                                                  
+
+
+6.2. The recursions for ΨT . Let C ∈ B(̟ℓ ) for some ℓ ∈ [n]. Define
+                  (                    (
+              j     −1, if sj C > C,     −1, if j ∈ C, j + 1 ∈ / C,
+             σC =                    =
+                    +1, if sj C ≤ C,     +1, if otherwise .
+
+Example 6.4.
+
+                      1
+                      3
+         If C =            ,     then            σC1 = −1, σC2 = +1, σC3 = +1, σC4 = −1, σC5 = +1 .
+                      4
+                      7
+
+  Let 1 ≤ ℓ1 ≤ . . . ≤ ℓr ≤ n. For T = Cr ⊗ . . . ⊗ C1 ∈ B(̟ℓr ) ⊗ . . . ⊗ B(̟ℓ1 ), with
+Ci ∈ B(̟ℓi ) for i ∈ [r], and k ∈ [r], define
+
+                                 Ωjk (T ) = Cr ⊗ . . . ⊗ Ck+1 ⊗ sj Ck ⊗ . . . sj C1 .                                       (6.1)
+
+     The following theorem is the Hecke algebra lift of Klostermann’s recursions Proposition 4.6.
+
+Theorem 6.5. Let T = Cr ⊗ . . . ⊗ C1 ∈ B(̟ℓr ) ⊗ . . . ⊗ B(̟ℓ1 ), with Ci ∈ B(̟ℓi ) for
+i ∈ [r].
+      (a) If T is not semistandard then ΨT = 0.
+                                              P
+                                              r
+      (b) If T is highest weight of shape λ(=   ̟ℓi ), then ΨT = 1λ .
+                                                                 i=1
+      (c) Suppose µ ∈ (Zn≥0 )+ and T ⊗ Tµ0 is semistandard.
+    THE MONOMIAL EXPANSION FORMULA FOR                                HALL-LITTLEWOOD P -POLYNOMIALS 23
+
+             If j ∈/ C1 , j + 1 ∈ C1 then
+                                       X
+             
+             
+               Tj Ψ  j       0
+                     Ωr (T )⊗Tµ +                 σCj k (1 − t)ΨΩj (T )⊗Tµ0 ,                  if j ∈ Cr , j + 1 ∈
+                                                                                                                 / Cr ,
+             
+                                                                k
+             
+                                      r>k≥1
+             
+             
+                                   j
+                                  σC σC j
+                                              =−1
+                                     k    k+1
+ ΨT ⊗Tµ0 =                              X
+             
+             
+             
+              tTj
+                  −1
+                     Ψ  j       0
+                       Ωr (T )⊗Tµ +             σCj k (1 − t)ΨΩj (T )⊗Tµ0 ,                    otherwise .
+             
+                                                              k
+             
+                                      r>k≥1
+                                   σj σj   =−1
+                                           Ck Ck+1
+
+                                                                                                                  (6.2)
+   We prove Theorem 6.5 by induction on the number of columns r. In the next sub-
+ sections we work out the base cases of r = 1 and r = 2.
+ 6.3. One-Column.
+ Proposition 6.6.
+(1) Let λ ∈ (Zn≥0 )+ and ℓ ≥ ℓ(λ). Let E ∈ B(̟ℓ ), with E ⊗ Tλ0 semistandard. If
+ j∈/ E, j + 1 ∈ E, then
+                              ΨE⊗Tλ0 = tTj−1 Ψsj E⊗Tλ0 .
+(2) If E ∈ B(̟ℓ ) and sj E ≤ E, then
+                                                       ΨE = tTj−1 Ψsj E .
+ Proof.
+(1) Suppose j ∈
+              / E, j + 1 ∈ E. By Lemma 2.7, uE = sj usj E and ℓ(uE ) = ℓ(usj E ) + 1.
+ Then
+      ΨE⊗Tλ0 = tℓ(uE ) (Tu−1 )−1 1̟ℓ +λ = tℓ(usj E )+1 Tj−1 (Tu−1 )−1 1̟ℓ +λ = tTj−1 Ψsj E⊗Tλ0 .
+                               E                                              sj E
+
+
+(2) If sj E < E then j ∈/ E, j + 1 ∈ E, so this is the statement of (1) with λ = 0.
+    If sj E = E then by Lemma 2.7 sj uE = uE sk where k = u−1    E (j). Since either both
+ j, j + 1 ∈ E or j, j + 1 ∈
+                          / E, so k ∈ [1, ℓ − 1] ∪ [ℓ + 1, n − 1] and sk ∈ Sn,̟ℓ . Hence
+ tTk−1 1̟ℓ = 1̟ℓ . Then
+          tTj−1 Ψsj E = tTj−1 ΨE = tTj−1 tℓ(uE ) (Tu−1 )−1 1̟ℓ = tℓ(uE )+1 (Tu−1 sj )−1 1̟ℓ
+                                                                  E                               E
+                             ℓ(uE )+1                   −1         ℓ(uE )+1               −1
+                         =t             (Tsk u−1 ) 1̟ℓ = t                    (Tk Tu−1 ) 1̟ℓ
+                                                  E                                  E
+                             ℓ(uE )
+                         =t           (Tu−1   )   −1
+                                                       tTk−1 1̟ℓ = tℓ(uE ) (Tu−1 )−1 1̟ℓ = ΨE .
+                                         E                                    E
+
+                                                                                                                     
+ 6.4. Fundamental Lemma. The following lemma is the source of the signs in (6.2).
+ Lemma 6.7. Let K ∈ B(̟ℓr ) ⊗ . . . ⊗ B(̟ℓ1 ) with 1 ≤ ℓ1 ≤ . . . ≤ ℓr ≤ n. Let
+ n ≥ ℓ ≥ ℓr . Then
+                          X                       X
+                                      C
+                      −1
+                    tTj             X ΨC⊗K =            X D fD,K ,
+                                              C∈B(̟ℓ )                          D∈B(̟ℓ )
+                                         X                                    X
+                         and       Tj                     X C ΨC⊗K        =              X D gD,K ,
+                                           C∈B(̟ℓ )                           D∈B(̟ℓ )
+24                                           ARITRA BHATTACHARYA
+
+with fD,K , gD,K ∈ Hn given by
+                         (
+                           tTj−1 Ψsj D⊗K ,                                     if sj D ≤ D ,
+                  fD,K =
+                           Tj Ψsj D⊗K + (1 − t)ΨD⊗K ,                          if sj D ≥ D ,
+and
+                                   (
+                                       tTj−1 Ψsj D⊗K − (1 − t)ΨD⊗K ,            if sj D ≤ D ,
+                         gD,K =
+                                       Tj Ψsj D⊗K ,                             if sj D ≥ D .
+Proof. Note that since tTj−1 = Tj + 1 − t, the cases are consistent when sj D = D.
+  Recall that for a column C = (c1 , . . . , cℓ ) the element C ~ = εc + . . . + εc ∈ Zn .
+                                                                      1            ℓ
+Then by Lemma 2.6,
+                     sj C ≤ C if and only if (C,        ~ αi ) ∈ {0, −1} ,
+                               sj C ≥ C       if and only if        ~ αi ) ∈ {0, +1} .
+                                                                   (C,
+(a) Using (3.7) and Corollary 3.2,
+          X
+                tTj−1 X C ΨC⊗K
+           C
+           X                                  X
+ =                  tTj−1 X C ΨC⊗K +                    (tTj−1 X C ΨC⊗K + tTj−1 X sj C Ψsj C⊗K )
+         ~ j )=0
+      C:(C,α                                  ~ j )=1
+                                           C:(C,α
+           X                                  X
+ =                  tTj−1 X C ΨC⊗K +                    ((Tj + 1 − t)X C ΨC⊗K + tTj−1 X sj C Ψsj C⊗K )
+         ~ j )=0
+      C:(C,α                                  ~ j )=1
+                                           C:(C,α
+           X                                  X
+ =                  X C tTj−1 ΨC⊗K +                    ((X sj C tTj−1 + (1 − t)X C )ΨC⊗K + X C Tj Ψsj C⊗K )
+         ~ j )=0
+      C:(C,α                                  ~ j )=1
+                                           C:(C,α
+           X                                  X
+ =                  X C tTj−1 ΨC⊗K +                    X C (Tj Ψsj C⊗K + (1 − t)ΨC⊗K )
+         ~ j )=0
+      C:(C,α                                  ~ j )=1
+                                           C:(C,α
+                  X
+          +                  X C tTj−1 Ψsj C⊗K .
+                  ~ j )=−1
+               C:(C,α
+                                                   P
+Therefore, the coefficient of X D in                   tTj−1 X C ΨC⊗K is
+                                                   C
+                                 (
+                                  tTj−1 Ψsj D⊗K ,                              if sj D ≤ D ,
+                          fD,K =
+                                  Tj Ψsj D⊗K + (1 − t)ΨD⊗K ,                   if sj D ≥ D .
+(b) Using Corollary 3.2 and (3.1),
+  X                    X                                        X
+     Tj X C ΨC⊗K =           Tj X C ΨC⊗K +                                (Tj X C ΨC⊗K + Tj X sj C Ψsj C⊗K )
+     C                           ~ j )=0
+                              C:(C,α                            ~ j )=1
+                                                             C:(C,α
+            X                              X
+  =                   Tj X C ΨC⊗K +                  (Tj X C ΨC⊗K + Tj t−1 Tj X C Tj Ψsj C⊗K )
+            ~ j )=0
+         C:(C,α                            ~ j )=1
+                                        C:(C,α
+            X                              X
+  =                   Tj X C ΨC⊗K +                  (Tj X C ΨC⊗K + t−1 ((t − 1)Tj + t)X C Tj Ψsj C⊗K )
+            ~ j )=0
+         C:(C,α                            ~ j )=1
+                                        C:(C,α
+      THE MONOMIAL EXPANSION FORMULA FOR                      HALL-LITTLEWOOD P -POLYNOMIALS 25
+         X                             X
+  =                X C Tj ΨC⊗K +                 (X sj C tTj−1 ΨC⊗K + ((t − 1)X sj C + X C Tj )Ψsj C⊗K )
+         ~ j )=0
+      C:(C,α                           ~ j )=1
+                                    C:(C,α
+         X                             X
+  =                X C Tj ΨC⊗K +                 X C Tj Ψsj C⊗K
+         ~ j )=0
+      C:(C,α                           ~ j )=1
+                                    C:(C,α
+                X
+        +                  X C (tTj−1 Ψsj C⊗K + (t − 1)ΨC⊗K ) .
+                ~ j )=−1
+             C:(C,α
+                                             P
+ Therefore, the coefficient of X D in              Tj X C ΨC⊗K is
+                                             C
+                             (
+                              tTj−1 Ψsj D⊗K + (t − 1)ΨD⊗K ,                  if sj D ≤ D ,
+                      gD,K =
+                              Tj Ψsj D⊗K ,                                   if sj D ≥ D .
+                                                                                                              
+                                                                    P
+   Lemma 6.7 shows that multiplying by tTj−1 to                              X C ΨC⊗K produces a ‘+’ sign
+                                                                  C∈B(̟ℓ )
+ in every case, whereas, multiplying by Tj produces a ‘−’ sign when sj D < D.
+ 6.5. Two Columns.
+ Proposition 6.8.
+(1) Let µ ∈ (Zn≥0 )+ . Let n ≥ b ≥ a ≥ ℓ(µ). Let Tµ0 be the highest weight tableau of shape
+ µ. Let E ∈ B(̟a ), F ∈ B(̟b ) such that E ⊗ Tµ0 is semistandard.
+   If j ∈
+        / E, j + 1 ∈ E then
+                          (
+                            tTj−1 Ψsj F ⊗sj E⊗Tµ0 ,                    if sj F ≤ F ,
+            ΨF ⊗E⊗Tµ =0                                                                (6.3)
+                            Tj Ψsj F ⊗sj E⊗Tµ0 + (1 − t)ΨF ⊗sj E⊗Tµ0 , if sj F ≥ F .
+(2) Let n ≥ b ≥ a ≥ 1. Let E ∈ B(̟a ), F ∈ B(̟b ). If sj E ≤ E then
+                         (
+                           tTj−1 Ψsj F ⊗sj E ,                if sj F ≤ F ,
+                ΨF ⊗E =                                                                                    (6.4)
+                           Tj Ψsj F ⊗sj E + (1 − t)ΨF ⊗sj E , if sj F ≥ F .
+
+ Proof. Note that since tTj−1 = Tj + 1 − t, the cases are consistent when sj F = F .
+(1) Let j ∈
+          / E, j + 1 ∈ E. Then by Proposition 6.6[(1)]
+                                        ΨE⊗Tµ0 = tTj−1 Ψsj E⊗Tµ0 .
+ Then using (5.4),
+   X                                                                                X
+        X F ΨF ⊗E⊗Tµ0 = ΨE⊗Tµ0 X ̟b = tTj−1 Ψsj E⊗Tµ0 X ̟b = tTj−1                            X F ΨF ⊗sj E⊗Tµ0 .
+ F ∈B(̟b )                                                                        F ∈B(̟b )
+
+ In the notation of Lemma 6.7, taking K = sj E ⊗ Tµ0 , we get fF,K = ΨF ⊗E⊗Tµ0 . Then
+ by Lemma 6.7, if sj F ≤ F then
+                      ΨF ⊗E⊗Tµ0 = fF,K = tTj−1 Ψsj F ⊗K = tTj−1 Ψsj F ⊗sj E⊗Tµ0 ,
+ and if sj F ≥ F then
+  ΨF ⊗E⊗Tµ0 = fF,K = Tj Ψsj F ⊗K + (1 − t)ΨF ⊗K = Tj Ψsj F ⊗sj E⊗Tµ0 + (1 − t)ΨF ⊗sj E⊗Tµ0 .
+26                                   ARITRA BHATTACHARYA
+
+(2) Let sj E ≤ E. Then by Proposition 6.6[(2)]
+                                         ΨE = tTj−1 Ψsj E .
+Then the proof proceeds exactly as (1) with µ = 0.
+                                                                                                           
+6.6. proof of Theorem 6.5. Part (a) and (b) are the statements of Theorem 5.6[(a)]
+and Proposition 6.3.
+   The proof of part (c) is by induction on the number of columns r.
+The base cases r = 1 and r = 2 are Proposition 6.6[(1)] and Proposition 6.8[(1)].
+Let r ≥ 2. Assume that (6.2) holds for r. We will prove (6.2) for r + 1 columns.
+Let 1 ≤ ℓ1 ≤ . . . ≤ ℓr ≤ ℓr+1 ≤ n. Let T = Cr+1 ⊗ Cr ⊗ . . . ⊗ C1 with Ci ∈ B(̟ℓi ) for
+i ∈ [r + 1]. Let S = Cr ⊗ . . . ⊗ C1 . We will prove (6.2) for T assuming the statement
+for S.
+Let ℓ = ℓr+1 , and σkj = σCj k for k ∈ [r + 1].
+By (5.4),
+               ΨT ⊗Tµ0 = ΨCr+1 ⊗S⊗Tµ0 = coefficient of X Cr+1 in ΨS⊗Tµ0 X ̟ℓ .
+  Case 1: σrj = 1.
+By the induction assumption,
+                                                     X
+                  ΨS⊗Tµ0 = tTj−1 ΨΩjr (S)⊗Tµ0 +                  σkj (1 − t)ΨΩj (S)⊗Tµ0 .
+                                                                                  k
+                                                    r>k≥1
+                                                       j
+                                                  σkj σk+1 =−1
+
+Then, using (5.4),
+               X                                        X              X
+ΨS⊗Tµ0 X ̟ℓ =      tTj−1 X C ΨC⊗Ωjr (S)⊗Tµ0 +                                   σkj (1 − t)X C ΨC⊗Ωj (S)⊗Tµ0 .
+                                                                                                    k
+                C∈B(̟ℓ )                             C∈B(̟ℓ )      r>k≥1
+                                                                 σkj σk+1
+                                                                      j
+                                                                          =−1
+                                                                                                        (6.5)
+The first sum of (6.5) is
+                  X                                          X
+                         tTj−1 X C ΨC⊗Ωjr (S)⊗Tµ0 =                    X D fD,Ωjr (S)⊗Tµ0 ,
+                   C∈B(̟ℓ )                               D∈B(̟ℓ )
+
+where fD,Ωjr (S)⊗Tµ0 is given by Lemma 6.7. Then, using (5.4),
+
+              ΨCr+1 ⊗S⊗Tµ0 = coefficient of X Cr+1 in ΨS⊗Tµ0 X ̟ℓ
+                                                  X
+                           = fCr+1 ,Ωjr (S)⊗Tµ0 +      σkj (1 − t)ΨCr+1 ⊗Ωj (S)⊗Tµ0
+                                                                                        k
+                                                      r>k≥1
+                                                       j
+                                                  σkj σk+1 =−1
+
+         j
+     If σr+1 = 1, then by Lemma 6.7,
+                                                           X
+         ΨCr+1 ⊗S⊗Tµ0 = tTj−1 Ψsj Cr+1 ⊗Ωjr (S)⊗Tµ0 +                  σkj (1 − t)ΨCr+1 ⊗Ωj (S)⊗Tµ0 .
+                                                                                              k
+                                                          r>k≥1
+                                                             j
+                                                        σkj σk+1 =−1
+
+                     j
+Since σrj = 1, when σr+1 = 1, there are no extra sign changes, hence the above equation
+agrees with (6.2).
+   THE MONOMIAL EXPANSION FORMULA FOR                      HALL-LITTLEWOOD P -POLYNOMIALS 27
+
+      j
+  If σr+1 = −1, then by Lemma 6.7,
+  ΨCr+1 ⊗S⊗Tµ0
+                                                                    X
+  = Tj Ψsj Cr+1 ⊗Ωjr (S)⊗Tµ0 + (1 − t)ΨCr+1 ⊗Ωjr (S)⊗Tµ0 +                     σkj (1 − t)ΨCr+1 ⊗Ωj (S)⊗Tµ0 .
+                                                                                                   k
+                                                                  r>k≥1
+                                                                σkj σk+1
+                                                                     j
+                                                                         =−1
+
+                     j
+Since σrj = 1, when σr+1 = −1 then there is an extra sign change in r-th place. Hence,
+the above equation agrees with (6.2).
+  Case 2: σrj = −1.
+By the induction assumption,
+                                             X
+                  ΨS⊗Tµ0 = Tj ΨΩjr (S)⊗Tµ0 +      σkj (1 − t)ΨΩj (S)⊗Tµ0
+                                                                                  k
+                                                     r>k≥1
+                                                      j
+                                                 σkj σk+1 =−1
+
+Then, using (5.4),
+                X                                    X             X
+ ΨS⊗Tµ0 X ̟ℓ =     Tj X C ΨC⊗Ωjr (S)⊗Tµ0 +                                     σkj (1 − t)X C ΨC⊗Ωj (S)⊗Tµ0 .
+                                                                                                       k
+                 C∈B(̟ℓ )                          C∈B(̟ℓ )         r>k≥1
+                                                                     j
+                                                                σkj σk+1 =−1
+                                                                                                           (6.6)
+The first sum of (6.6) is
+                    X                                      X
+                               Tj X C ΨC⊗Ωjr (S)⊗Tµ0 =              X D gD,Ωjr (S)⊗Tµ0 ,
+                    C∈B(̟ℓ )                             D∈B(̟ℓ )
+
+where gD,Ωjr (S)⊗Tµ0 is given by Lemma 6.7. Then, using (5.4),
+             ΨCr+1⊗S⊗Tµ0 = coefficient of X Cr+1 in ΨS⊗Tµ0 X ̟ℓ
+                                               X
+                         = gCr+1,Ωjr (S)⊗Tµ0 +       σkj (1 − t)ΨCr+1 ⊗Ωj (S)⊗Tµ0
+                                                                                         k
+                                                    r>k≥1
+                                                  σkj σk+1
+                                                       j
+                                                           =−1
+
+      j
+  If σr+1 = 1, then by Lemma 6.7,
+ΨCr+1 ⊗S⊗Tµ0
+                                                                     X
+ = tTj−1 Ψsj Cr+1 ⊗Ωjr (S)⊗Tµ0 − (1 − t)ΨCr+1 ⊗Ωjr (S)⊗Tµ0 +                    σkj (1 − t)ΨCr+1 ⊗Ωj (S)⊗Tµ0 .
+                                                                                                       k
+                                                                    r>k≥1
+                                                                      j
+                                                                 σkj σk+1 =−1
+
+                        j
+Since σrj = −1, when σr+1   = 1 then there is an extra sign change in r-th place. Hence,
+the above equation agrees with (6.2).
+      j
+  If σr+1 = −1, then by Lemma 6.7,
+                                                   X
+         ΨCr+1 ⊗S⊗Tµ0 = Tj Ψsj Cr+1 ⊗Ωjr (S)⊗Tµ0 +     σkj (1 − t)ΨCr+1 ⊗Ωj (S)⊗Tµ0 .
+                                                                                             k
+                                                         r>k≥1
+                                                         j
+                                                    σkj σk+1 =−1
+
+                        j
+Since σrj = −1, when σr+1   = −1, there are no extra sign changes, hence, the above
+equation agrees with (6.2).
+                                                                                
+28                                   ARITRA BHATTACHARYA
+
+Example 6.9. Let n = 3 and λ = (2, 1, 0). Then 1(2,1,0) = 1.
+        Ψ 1 1 = 1(2,1,0) = 1 ,
+           2
+
+        Ψ 1 1 = tT2−1 Ψ 1 1 = tT2−1 1(2,1,0) = tT2−1 ,
+           3                2
+
+        Ψ 1 2 = tT1−1 Ψ 1 1     = tT1−1 1(2,1,0) = tT1−1 ,
+          2             2
+
+        Ψ 1 2 = T1 Ψ 2 1 + (1 − t)Ψ 1 1 = T1 · 0 + (1 − t) · tT2−1 = (1 − t)tT2−1 ,
+           3            3                 3
+
+        Ψ 2 2 = tT1−1 Ψ 1 1     = tT1−1 tT2−1 ,
+          3             3
+
+        Ψ 1 3 = T2 Ψ 1 2 + (1 − t)Ψ 1 2 = T2 · (1 − t)tT2−1 + (1 − t) · tT1−1
+           2            3                 2
+
+                    = (1 − t)(t + tT1−1 ) = (1 − t)(1 + T1 ) ,
+        Ψ 1 3 = tT2−1 Ψ 1 2 = tT2−1 tT1−1 ,
+           3                2
+
+        Ψ 2 3 = tT2−1 Ψ 2 2     = tT2−1 tT1−1 tT2−1
+          3             3
+
+
+                        7. Relation to Macdonald’s formula
+   In this section we derive that the projection of ΨT onto Z[t] satisfies the same recur-
+sions as that of Macdonald’s ψT , thus proving their equality.
+   Let λ = ̟ℓr + . . . + ̟ℓ1 with 1 ≤ ℓ1 ≤ . . . ≤ ℓr ≤ n. Let T ∈ B(̟ℓr ) ⊗ . . . ⊗ B(̟ℓ1 ).
+Since ΨT ∈ Hn , and Tw 10 = tℓ(w) 10 for w ∈ Sn , then there exists ψeT ∈ Z(t±1 ) such that
+                                                1
+                                   ψeT 10 =        Ψ T 10 .                            (7.1)
+                                            Wλ (t)
+Apriori, ψeT is a rational function in t±1 . A consequence of Theorem 7.1 is that ψeT ∈ Z[t].
+ Let λ ∈ (Zn≥0 )+ . Then (4.2) and (5.5) gives
+                                               X
+                                    Pλ (t) =        ψeT X T .                          (7.2)
+                                                  T ∈B(λ)
+
+   Let T = Cr ⊗ . . . ⊗ C1 ∈ B(̟ℓr ) ⊗ . . . ⊗ B(̟ℓ1 ), with Ci ∈ B(̟ℓi ) for i ∈ [r]. Suppose
+T ⊗ Tµ0 is semistandard. Suppose that j ∈          / C1 , j + 1 ∈ C1 . Assume that the shape of
+                                               1
+T ⊗ Tµ0 is λ. Multiplying (6.2) with                 10 on the right and using tTj−1 10 = 10 and
+                                            Wλ (t)
+Tj 10 = t10 we get
+                                     P
+             
+             tψeΩjr (T )⊗Tµ0 +               σCj k (1 − t)ψeΩj (T )⊗Tµ0 , if j ∈ Cr , j + 1 ∈
+                                                                                             / Cr ,
+             
+                                   r>k≥1                      k
+             
+                                j
+                                σC  σj    =−1
+    e
+    ψT ⊗Tµ0 = e                    k Ck+1
+                                     P
+             
+             ψΩjr (T )⊗Tµ0 +               σCj k (1 − t)ψeΩj (T )⊗Tµ0 , otherwise .
+             
+                                  r>k≥1                     k
+             
+                              σj σj
+                                Ck Ck+1 =−1
+
+                                                                                             (7.3)
+    THE MONOMIAL EXPANSION FORMULA FOR                    HALL-LITTLEWOOD P -POLYNOMIALS 29
+
+Theorem 7.1.     (1) Suppose 1 ≤ ℓ1 ≤ . . . ≤ ℓr ≤ n. If T = Cr ⊗ . . . ⊗ C1 with
+     Ci ∈ B(̟ℓi ) then
+                                   r−1
+                                   Y
+                               e
+                              ψT =     ψeCj+1 ⊗Cj .                          (7.4)
+                                              j=1
+
+    (2) Let 1 ≤ a ≤ b ≤ n. For F ∈ B(̟b ), E ∈ B(̟a ), the ψeF ⊗E are determined by
+        the following recursions.
+         (a) If F ⊗ E is not semistandard then ψeF ⊗E = 0,
+         (b) If E = (1, . . . , a) and F ⊗ E is semistandard then ψeF ⊗E = 1.
+         (c) Suppose F ⊗ E is semistandard. If sj E ≤ E then
+                              (
+                                 tψes F ⊗sj E + (1 − t)ψeF ⊗sj E , if sj F ≥ F ,
+                  ψeF ⊗E = e j                                                   (7.5)
+                                 ψsj F ⊗sj E ,                     if sj F ≤ F .
+ Proof.
+(2.a) Theorem 5.6 gives that if T is not semistandard then ψeT = 0.
+(2.b) Follows from Proposition 6.3, by using (3.16).
+                                                  1
+(2.c) Let λ = ̟b + ̟a . Multiplying (6.4) with         10 gives (7.5).
+                                                Wλ (t)
+(1) If T is not semistandard then one of Cj+1 ⊗ Cj is not semistandard. Hence both
+ sides of (7.4) is 0.
+    From Proposition 6.3, using (3.16), we get
+                               ψeTλ0 = 1 ,          for λ ∈ (Zn≥0 )+ .                     (7.6)
+  Without loss of generality we can assume that T is semistandard and T = S ⊗ Tµ0
+where S = Cr ⊗ . . . ⊗ C1 with Ci ∈ B(̟ℓi ). We want to prove that
+                                              r−1
+                                              Y
+                                      ψeT =         ψeCi+1 ⊗Ci .                           (7.7)
+                                              i=1
+
+  If r = 0 or r = 1 then (7.7) is true since both sides equal 1.
+  Assume r ≥ 2. Let S ′ = Cr−1 ⊗ . . . ⊗ C1 . Then to prove (7.7) it is enough to show
+that
+                                 ψeT = ψeCr ⊗Cr−1 · ψeS ′ ⊗Tµ0 .
+  Assume that (7.7) is true whenever 1 ≤ r < m. We will prove (7.7) for r = m.
+  Case I: Suppose C1 is highest weight. Then ψeC2 ⊗C1 = 1, hence (7.7) is true in this
+case by induction assumption.
+  Case II: Suppose C1 is not highest weight. Suppose that (7.7) for r = m is true
+when C1 is replaced by a column less than C1 in the ≤ order on columns. Since C1 is
+not highest weight, there exists j ∈ [n − 1] such that j ∈       / C1 , j + 1 ∈ C1 . By induction
+assumption,
+                     ψeLm ⊗...⊗L2 ⊗sj C1 ⊗Tµ0 = ψeLm ⊗Lm−1 . . . ψeL2 ⊗sj C1 ,
+for all columns Li ∈ B(̟ℓi ) for i ∈ [2, m].
+   Let σij = σCj i for i ∈ [m].
+              j          j
+   Case 1: σm     = 1, σm−1  = 1.
+30                                         ARITRA BHATTACHARYA
+
+     By (7.5),
+
+                                        ψeCm ⊗Cm−1 = ψesj Cm ⊗sj Cm−1 .
+
+Then by (7.3) and the induction assumption
+                                     X
+          ψeT = ψeΩjm (S)⊗Tµ0 +                  σkj (1 − t)ψeΩj (S)⊗Tµ0
+                                                                   k
+                                   1≤k<m−1
+                                  σkj σk+1
+                                       j
+                                           =−1
+                                                                               X
+              = ψesj Cm ⊗sj Cm−1 ψeΩj      ′   0      + ψeCm ⊗Cm−1                        σkj (1 − t)ψeΩj (S ′ )⊗Tµ0
+                                     m−1 (S )⊗Tµ                                                                k
+                                                                            1≤k<m−1
+                                                                                j
+                                                                           σkj σk+1 =−1
+                                                                          X
+              = ψeCm ⊗Cm−1 ψeΩj         ′
+                                                     e
+                                            0 + ψCm ⊗Cm−1                             σkj (1 − t)ψeΩj (S ′ )⊗Tµ0
+                                  m−1 (S )⊗Tµ                                                           k
+                                                                        1≤k<m−1
+                                                                            j
+                                                                       σkj σk+1 =−1
+                                                             X                                     
+              = ψeCm ⊗Cm−1 ψeΩj          (S ′ )⊗Tµ0 +                  σkj (1 − t)ψeΩj (S ′ )⊗Tµ0
+                                   m−1                                                    k
+                                                         1≤k<m−1
+                                                        σkj σk+1
+                                                             j
+                                                                 =−1
+
+              = ψeCm ⊗Cm−1 ψeS ′ ⊗Tµ0 .
+
+                  j       j
+     Case 2: σm     = 1, σm−1 = −1.
+     Since sj (sj Cm−1 ) = Cm−1 < sj Cm−1 , and sj (sj Cm ) = Cm ≥ sj Cm , by (7.5),
+
+                        ψesj Cm ⊗sj Cm−1 = tψeCm ⊗Cm−1 + (1 − t)ψesj Cm ⊗Cm−1 .
+
+Then by (7.3) and the induction assumption,
+                                                                             X
+            ψeT = ψeΩjm (S)⊗Tµ0 − (1 − t)ψeΩj                0 +                       σkj (1 − t)ψeΩj (S)⊗Tµ0
+                                                    m−1 (S)⊗Tµ                                              k
+                                                                         1≤k<m−1
+                                                                        σkj σk+1
+                                                                             j
+                                                                                 =−1
+                                                         
+                 = ψesj Cm ⊗sj Cm−1 − (1 − t)ψeCm ⊗sj Cm−1 ψeΩj (S ′ )⊗Tµ0
+                                                              m−1
+                                      X
+                    + ψeC ⊗Cm     m−1        σ (1 − t)ψe j ′ 0
+                                               j
+                                                         k               Ωk (S )⊗Tµ
+                                         1≤k<m−1
+                                             j
+                                        σkj σk+1 =−1
+                                                                X                                          
+                 = ψeCm ⊗Cm−1 tψeΩj            (S ′ )⊗Tµ0 +                  σkj (1 − t)ψeΩj (S ′ )⊗Tµ0
+                                         m−1                                                  k
+                                                               1≤k<m−1
+                                                                   j
+                                                              σkj σk+1 =−1
+
+                 = ψeCm ⊗Cm−1 ψeS ′ ⊗Tµ0 .
+
+               j        j
+     Case 3: σm  = −1, σm−1 = 1.
+     By (7.5),
+
+                        ψeCm ⊗Cm−1 = tψesj Cm ⊗sj Cm−1 + (1 − t)ψeCm ⊗sj Cm−1 .
+   THE MONOMIAL EXPANSION FORMULA FOR                              HALL-LITTLEWOOD P -POLYNOMIALS 31
+
+Then by (7.3) and the induction assumption
+                                                                          X
+         ψeT = tψeΩjm (S)⊗Tµ0 + (1 − t)ψeΩj           (S)⊗Tµ0 +                    σkj (1 − t)ψeΩj (S)⊗Tµ0
+                                               m−1                                                       k
+                                                                     1≤k<m−1
+                                                                    σkj σk+1
+                                                                         j
+                                                                             =−1
+                                                      
+             = tψesj Cm ⊗sj Cm−1 + (1 − t)ψeCm ⊗sj Cm−1 ψeΩj (S ′ )⊗Tµ0
+                                                              m−1
+                                  X
+                   e
+                + ψCm ⊗Cm−1                j        e
+                                         σk (1 − t)ψΩj (S ′ )⊗Tµ0
+                                                                     k
+                                    1≤k<m−1
+                                        j
+                                   σkj σk+1 =−1
+                                                        X                                           
+             = ψeCm ⊗Cm−1 ψeΩj         (S ′ )⊗Tµ0 +                  σkj (1 − t)ψeΩj (S ′ )⊗Tµ0
+                                 m−1                                                        k
+                                                       1≤k<m−1
+                                                      σkj σk+1
+                                                           j
+                                                               =−1
+
+             = ψeCm ⊗Cm−1 ψeS ′ ⊗Tµ0 .
+               j        j
+  Case 4: σm     = −1, σm−1 = −1.
+  Since sj (sj Cm−1 ) = Cm−1 < sj Cm−1 , and sj (sj Cm ) = Cm < sj Cm , by (7.5),
+                                     ψesj Cm ⊗sj Cm−1 = ψeCm ⊗Cm−1 .
+Then by (7.3) and the induction assumption
+                             X
+      ψeT = tψeΩjm (S)⊗Tµ0 +      σkj (1 − t)ψeΩj (S)⊗Tµ0
+                                                               k
+                               1≤k<m−1
+                              σkj σk+1
+                                   j
+                                       =−1
+                                                                            X
+          = tψesj Cm ⊗sj Cm−1 ψeΩj     ′   0      + ψeCm ⊗Cm−1                          σkj (1 − t)ψeΩj (S ′ )⊗Tµ0
+                                 m−1 (S )⊗Tµ                                                                 k
+                                                                          1≤k<m−1
+                                                                         σkj σk+1
+                                                                              j
+                                                                                  =−1
+                                                                         X
+          = tψeCm ⊗Cm−1 ψeΩj                    e
+                                   (S ′ )⊗Tµ0 + ψCm ⊗Cm−1                         σkj (1 − t)ψeΩj (S ′ )⊗Tµ0
+                             m−1                                                                     k
+                                                                    1≤k<m−1
+                                                                        j
+                                                                   σkj σk+1 =−1
+                                                      X                                         
+          = ψeCm ⊗Cm−1 tψeΩj         ′   0     +                   σkj (1 − t)ψeΩj (S ′ )⊗Tµ0
+                               m−1 (S )⊗Tµ                                              k
+                                                    1≤k<m−1
+                                                        j
+                                                   σkj σk+1 =−1
+
+          = ψeCm ⊗Cm−1 ψeS ′ ⊗Tµ0 .
+                                                                                                                     
+Remark 7.2. (7.4) does not hold true if one replaces ψ with Ψ. For example, if n = 3
+then ΨT(3,2,0)
+       0       = 1(3,2,0) = 1, and ΨT(2,2,0)
+                                     0       = 1 + T1 , and ΨT(2,1,0)
+                                                              0       = 1. So
+                                      Ψ 1 1 1 6= Ψ 1 1 · Ψ 1 1 .
+                                         2 2             2 2          2
+
+  Comparing Proposition 4.6 and Theorem 7.1 we get
+Corollary 7.3. Let T ∈ B(̟ℓr ) ⊗ . . . ⊗ B(̟ℓ1 ) with 1 ≤ ℓ1 ≤ . . . ≤ ℓr ≤ n. Then
+                                               ψeT = ψT .
+32                                  ARITRA BHATTACHARYA
+
+                                          8. Examples
+8.1. ΨT for T ∈ B((3, 2, 0)).
+
+Since 1(3,2,0) = 1,
+
+
+     Ψ 1 1 1 = 1(3,2,0) = 1 ,
+       2 2
+
+
+     Ψ 1 1 1 = T2 Ψ 1 1 1 + (1 − t)Ψ 1 1 1 = 0 + (1 − t)1(3,2,0) = (1 − t) ,
+       2 3            3 2                2 2
+
+
+     Ψ 1 1 1 = tT2−1 Ψ 1 1 1 = tT2−1 1(3,2,0) = tT2−1 ,
+       3 3              2 2
+
+
+     Ψ 1 1 2 = tT1−1 Ψ 1 1 1 = tT1−1 1(3,2,0) = tT1−1 ,
+       2 2              2 2
+
+
+     Ψ 1 1 2 = tT1−1 Ψ 1 2 1 − (1 − t)Ψ 1 2 1 + (1 − t)Ψ 1 1 1
+       2 3              2 3                 2 3                     2 3
+                                                                2
+               = 0 + 0 + (1 − t) · (1 − t)1(3,2,0) = (1 − t) ,
+
+     Ψ 1 1 2 = T1 Ψ 2 2 1 + (1 − t)Ψ 1 1 1 = 0 + (1 − t)tT2−1 1(3,2,0) = (1 − t)tT2−1 ,
+       3 3            3 3                3 3
+
+
+     Ψ 1 1 3 = T2 Ψ 1 1 2 + (1 − t)Ψ 1 1 2
+       2 2            3 3                2 2
+
+               = T2 · (1 − t)tT2−1 1(3,2,0) + (1 − t)tT1−1 1(3,2,0)
+               = t(1 − t)1(3,2,0) + (1 − t)tT1−1 1(3,2,0) = t(1 − t) + (1 − t)tT1−1 ,
+
+     Ψ 1 1 3 = T2 Ψ 1 1 2 + (1 − t)Ψ 1 1 2 = 0 + (1 − t)tT1−1 1(3,2,0) = (1 − t)tT1−1 ,
+       2 3            3 2                2 2
+
+
+     Ψ 1 1 3 = tT2−1 Ψ 1 1 2 = tT2−1 · (1 − t)tT1−1 1(3,2,0) = (1 − t)tT2−1 tT1−1 ,
+       3 3              2 2
+
+
+     Ψ 1 2 2 = tT1−1 Ψ 1 1 1 = tT1−1 (1 − t)tT1−1 1(3,2,0) = (1 − t)tT1−1 tT1−1 ,
+       2 3              2 3
+
+
+     Ψ 1 2 2 = T1 Ψ 2 1 1 + (1 − t)Ψ 1 1 1 = 0 + (1 − t)tT2−1 1(3,2,0) = (1 − t)tT2−1 ,
+       3 3            3 3                3 3
+
+
+     Ψ 1 2 3 = T2 Ψ 1 2 2 + (1 − t)Ψ 1 2 2
+       2 3            3 3                2 3
+
+               = T2 · (1 − t)tT2−1 1(3,2,0) + (1 − t) · tT1−1 (1 − t)tT1−1 1(3,2,0)
+   THE MONOMIAL EXPANSION FORMULA FOR                      HALL-LITTLEWOOD P -POLYNOMIALS 33
+
+                  = (1 − t)t + (1 − t)2 tT1−1 tT1−1 ,
+
+   Ψ 1 2 3 = tT2−1 Ψ 1 2 2 = tT2−1 · tT1−1 (1 − t)tT1−1 1(3,2,0) = (1 − t)tT2−1 tT1−1 tT1−1 ,
+      3 3                  2 3
+
+
+   Ψ 2 2 2 = tT1−1 Ψ 1 1 1 = tT1−1 · tT2−1 1(3,2,0) = tT1−1 tT2−1 ,
+      3 3                  3 3
+
+
+   Ψ 2 2 3 = tT2−1 Ψ 2 2 2 = tT2−1 · tT1−1 tT2−1 1(3,2,0) = tT2−1 tT1−1 tT2−1 .
+      3 3                  3 3
+
+
+8.2. ψT for T ∈ B((3, 2, 0)).
+
+                    1
+Using ψT 10 =             Ψ T 10 ,
+                   Wλ (t)
+
+
+  ψ 1 1 1 = 1,                                                               ψ 1 1 1 = (1 − t) ,
+     2 2                                                                        2 3
+
+
+  ψ 1 1 1 = 1,                                                                        ψ 1 1 2 = 1,
+     3 3                                                                               2 2
+
+
+  ψ 1 1 2 = (1 − t)2 ,                                                       ψ 1 1 2 = (1 − t) ,
+     2 3                                                                        3 3
+
+
+  ψ 1 1 3 = t(1 − t) + (1 − t) = (1 − t2 ) ,                                 ψ 1 1 3 = (1 − t) ,
+     2 2                                                                        2 3
+
+
+  ψ 1 1 3 = (1 − t) ,                                                        ψ 1 2 2 = (1 − t) ,
+     3 3                                                                        2 3
+
+
+  ψ 1 2 2 = (1 − t) ,                                   ψ 1 2 3 = t(1 − t) + (1 − t)2 = (1 − t) ,
+     3 3                                                  2 3
+
+
+  ψ 1 2 3 = (1 − t) ,                                                                 ψ 2 2 2 = 1,
+     3 3                                                                               3 3
+
+
+  ψ 2 2 3 = 1.
+     3 3
+
+
+8.3. Example of (7.4). Suppose T = Cr ⊗ . . . ⊗ C1 . If T is not semistandard then
+ψeT = 0 and atleast one of Ci+1 ⊗ Ci is not semistandard, so ψeCi+1 ⊗Ci = 0. Hence
+      Q e
+      r−1
+ψeT =     ψCi+1 ⊗Ci .
+      i=1
+  Since ψe 1 1 1 = 1 = ψe 1 1 ψe 1 1 , using (7.5),
+            2 2                  2 2   2
+34                                                ARITRA BHATTACHARYA
+
+
+
+           ψe 1 1 1 = tψe 1 1 1 + (1 − t)ψe 1 1 1 = tψe 1 1 ψe 1 1 + (1 − t)ψe 1 1 ψe 1 1
+             2 3              3 2                      2 2                 3 2        2                   2 2   2
+                                          
+                    = tψ 1 1 + (1 − t)ψ 1 1 ψe 1 1 = ψe 1 1 ψe 1 1 .
+                       e              e
+                               3 2                    2 2          2             2 3       2
+
+     Similarly, using ψe 1 2 = ψe 1 1 , and ψe 1 2 = tψe 2 1 + (1 − t)ψe 1 1 ,
+                             2 3          2 3               3              3                        3
+
+               ψe 1 1 2 = ψe 1 2 1 − (1 − t)ψe 1 2 1 + ψe 1 1 1
+                   2 3              2 3                      2 3                2 3
+
+                             = ψe 1 2 ψe 2 1 − (1 − t)ψe 1 2 ψe 2 1 + (1 − t)ψe 1 1 ψe 1 1
+                                    2 3       3                    2 3      3                       2 3    3
+                                                                           
+                             = ψe 1 2 tψe 2 1 + (1 − t)ψe 1 1                    = ψe 1 1 ψe 1 2 .
+                                    2 3           3                    3                  2 3   3
+
+                                                      References
+[BB96]      Anders Björner and Francesco Brenti. An improved tableau criterion for Bruhat order.
+            Electron. J. Comb., 3(1):research paper r22, 5, 1996.
+[BB05]      Anders Björner and Francesco Brenti. Combinatorics of Coxeter groups, volume 231 of
+            Grad. Texts Math. New York, NY: Springer, 2005.
+[Bou02]     Nicolas Bourbaki. Lie groups and Lie algebras. Chapters 4–6. Elements of Mathemat-
+            ics (Berlin). Springer-Verlag, Berlin, 2002. Translated from the 1968 French original by
+            Andrew Pressley.
+[DLT94]     J. Désarménien, B. Leclerc, and J.-Y. Thibon. Hall-Littlewood functions and Kostka-
+            Foulkes polynomials in representation theory. Sém. Lothar. Combin., 32:Art. B32c, approx.
+            38, 1994.
+[EMTW20] Ben Elias, Shotaro Makisumi, Ulrich Thiel, and Geordie Williamson. Introduction to
+            Soergel bimodules, volume 5 of RSME Springer Ser. Cham: Springer, 2020.
+[GL12]      Stéphane Gaussent and Peter Littelmann. One-skeleton galleries, the path model, and a
+            generalization of Macdonald’s formula for Hall-Littlewood polynomials. Int. Math. Res.
+            Not., 2012(12):2649–2707, 2012.
+[Hum92]     James E. Humphreys. Reflection groups and Coxeter groups, volume 29 of Camb. Stud.
+            Adv. Math. Cambridge: Cambridge University Press, 1992.
+[Klo13]     Inka Klostermann. Generalization of the Macdonald formula for Hall-Littlewood polyno-
+            mials. Adv. Math., 248:1366–1403, 2013.
+[Mac95]     I. G. Macdonald. Symmetric functions and Hall polynomials. Oxford Mathematical Mono-
+            graphs. The Clarendon Press, Oxford University Press, New York, second edition, 1995.
+            With contributions by A. Zelevinsky, Oxford Science Publications.
+[Mac03]     I. G. Macdonald. Affine Hecke algebras and orthogonal polynomials, volume 157 of
+            Cambridge Tracts in Mathematics. Cambridge University Press, Cambridge, 2003.
+[NR03]      Kendra Nelsen and Arun Ram. Kostka-Foulkes polynomials and Macdonald spherical
+            functions. In Surveys in combinatorics, 2003 (Bangor), volume 307 of London Math. Soc.
+            Lecture Note Ser., pages 325–370. Cambridge Univ. Press, Cambridge, 2003.
+[Ram06]     Arun Ram. Alcove walks, Hecke algebras, spherical functions, crystals and column strict
+            tableaux. Pure Appl. Math. Q., 2(4):963–1013, 2006.
+[RY11]      Arun Ram and Martha Yip. A combinatorial formula for Macdonald polynomials. Adv.
+            Math., 226(1):309–331, 2011.
+[Sch06]     Christoph Schwer. Galleries, Hall-Littlewood polynomials, and structure constants of the
+            spherical Hecke algebra. Int. Math. Res. Not., 2006(21):31, 2006. Id/No 75395.
+   Email address: matharitra@gmail.com
+

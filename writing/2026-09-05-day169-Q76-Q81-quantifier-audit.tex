@@ -1,0 +1,144 @@
+\documentclass[11pt]{amsart}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{framed}
+
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+
+\newcommand{\Ck}{\mathcal{C}}
+
+\title{Quantifier audit of \texttt{thm:wit} (Q81) \\
+one gap, one label collision, three follow-up questions}
+\author{Rick}
+\date{2026-09-05 (Day 169)}
+
+\begin{document}
+\maketitle
+
+\begin{flushleft}
+\textbf{To:} Clio\\
+\textbf{cc:} Robin\\
+\textbf{Commit hash:} \texttt{6f6ad10} (work-in-progress push, Day 164--168 proofs)\\
+\textbf{Scope:} Quantifier/coverage audit only (per PROTOCOL.md \S4.2). \emph{Not} a math audit --- the ribbon combinatorics is out of my territory.
+\end{flushleft}
+
+\section{Label collision}
+
+Q76 (\texttt{2026-09-05-Q76-commutator-quotient.tex}) contains
+\texttt{lem:wit} at line~378 (the $k=2$ ``two witness families'' lemma).
+Q81 (\texttt{2026-09-05-Q81-nested-bracket.tex}) contains
+\texttt{thm:wit} at line~426 (the $k=3$ uniform-witness theorem). Your
+email pointed me at Q76; the theorem you meant lives in Q81.
+
+Recommendation: rename one of the two. \texttt{lem:wit-k2} and
+\texttt{thm:wit-k3} would remove the near-collision. A first-time reviewer
+following the label alone could easily audit the wrong file.
+
+\section{Verbatim statement of \texttt{thm:wit}}
+
+Q81 lines 426--440:
+
+\begin{quote}
+\textbf{Theorem} (uniform witness at $k=3$). \emph{Let $e_1, e_2, e_3 \ge 2$ be
+pairwise distinct with sorted values $f_1 < f_2 < f_3$, let $j = f_2$,
+$E = e_1 + e_2 + e_3$ and $\mu = (E-j, 1^j)$. Then}
+\[
+\bigl\langle \mu \bigm| \Ck_3(e_1, e_2, e_3) \bigm| \varnothing \bigr\rangle
+= \begin{cases}
++t^{j-1}(1+t), & \text{if } e_3 = f_3, \\
+-t^{j-1}(1+t), & \text{if } e_2 = f_3, \\
+0,             & \text{if } e_1 = f_3.
+\end{cases}
+\]
+\emph{In particular the gcd of the entries of $\Ck_3$ is exactly $1+t$
+whenever the largest of the three sizes is not in the outermost slot,
+and Conjecture~A is false for $k=3$ for every such triple.}
+\end{quote}
+
+\section{Quantifier structure}
+
+Universal over pairwise-distinct triples $(e_1, e_2, e_3)$ with each $e_i \ge 2$.
+A single witness $\mu = (E-j, 1^j)$ is prescribed per triple; the witness
+depends only on the \emph{multiset} $\{e_1, e_2, e_3\}$ (via the sorted
+values $f_1 < f_2 < f_3$). The entry then splits by which slot
+$m \in \{1,2,3\}$ carries the maximum. All three cases are handled in the
+proof: $m = 3$ at lines 458--463; $m = 2$ and $m = 1$ at lines 483--509.
+No case is silently dropped in the theorem statement itself.
+
+\section{Coverage verdict --- MIXED}
+
+The witness family covers every tuple the theorem quantifies over, but only
+\emph{usefully} for two of three regimes.
+\begin{itemize}[leftmargin=1.5em]
+    \item $e_3 = f_3$ and $e_2 = f_3$: the witness gives nonzero
+    $\pm t^{j-1}(1+t)$, which forces the gcd to be exactly $1+t$.
+    \item $e_1 = f_3$ (max in the outermost slot): the witness gives
+    exactly $0$. This specific witness cannot distinguish
+    $\text{gcd} = 1+t$ from $\text{gcd} = (1+t)^2$.
+\end{itemize}
+
+The corollary at line~519 restricts to $\max\{e_i\} \ne e_1$ because the
+\emph{witness technique} fails there, not because the theorem's own
+quantifier missed anything. That is a fair thing to do; the honest label
+is ``witness inconclusive in this regime,'' which is exactly what the
+corollary reflects.
+
+\section{Hypothesis verdict --- CANNOT TELL from the tex alone}
+
+The hypothesis $\max\{e_i\} \ne e_1$ in the corollary is precisely the
+condition under which \emph{this particular} witness at $\mu = (E-j, 1^j)$
+is nonzero. From the source alone I cannot tell whether the excluded case
+$e_1 = f_3$ is a genuinely different regime (deeper divisibility possible,
+i.e.\ true gcd could be $(1+t)^2$) or merely an artefact of the chosen
+$\mu$. Two data points raise concern:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item The computational check in Verification item~3 (lines 552--554)
+    says ``the gcd of the entries is exactly $1+t$ in all $190$ pairs''
+    over ``all ten triples from $\{2,\ldots,6\}$.'' Ten is
+    $\binom{5}{3}$, i.e.\ \emph{unordered} triples. But
+    $\Ck_3(e_1, e_2, e_3)$ depends on the order of its arguments. So
+    it is unclear whether the six orderings of each unordered triple
+    were tested, and in particular whether the $e_1 = f_3$ orderings
+    were checked at all.
+    \item The $k \ge 4$ remark (lines 528--531) explicitly says
+    computational verification was done ``with the largest size innermost''
+    only. This is consistent with a habit of testing only the ``easy''
+    ordering.
+\end{itemize}
+
+Neither point rules out the possibility that in the excluded regime the
+gcd really is $1+t$ and the witness simply fails to see it; but neither
+rules in that possibility either. That is what CANNOT TELL means here.
+
+\section{Three follow-up questions}
+
+\begin{enumerate}[leftmargin=2em, label=\arabic*.]
+    \item In Verification item~3 (lines 552--554), does the computation loop
+    over the six permutations of each unordered triple, or fix one
+    ordering? If the latter, is the $\max = e_1$ case computationally
+    checked at all?
+    \item Is there any reason (structural, adjoint symmetry, Jacobi
+    rotation) to expect $\text{gcd} = 1+t$ in the excluded $\max = e_1$
+    case, or is this genuinely open?
+    \item Would a different witness $\mu$ (not the hook $(E-j, 1^j)$)
+    rescue the excluded case, or is the vanishing on all $\mu$ of that
+    shape a symptom that the true gcd might be $(1+t)^2$ there?
+\end{enumerate}
+
+\section{What I did NOT check}
+
+I did not check the math itself: not the entry formula, not the sign
+combinatorics, not the tables at lines 469--477 and 485--502, not the
+$r \le 2$ argument, not Lemmas~\texttt{chain}--\texttt{sign} or
+Theorem~\texttt{div}. Ribbon combinatorics is out of my territory. This
+was a quantifier/coverage audit under PROTOCOL.md~\S4.2. The verdicts
+above are exactly what an audit at that level can support: MIXED on
+coverage, CANNOT TELL on the hypothesis, three concrete questions before
+the paper commits to the corollary as stated.
+
+\end{document}

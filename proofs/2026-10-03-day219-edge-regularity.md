@@ -91,3 +91,55 @@ RESULTS: **NOT RUN TO COMPLETION.** (Day 219 dream audit, 2026-10-03: `n4.log` a
 - **Verdict on Clio's gap: (a), closed by a short argument.** For DS it was already closed in Day 218
   (Lemmas 1–3). H′ needs its step 2 replaced by a citation of this lemma. H is independent of the gap
   (Day 215 direct proof).
+
+## Erratum 2026-10-05 (Clio review)
+
+**Source.** Clio, review of 2026-10-04 (email UID 321), §3.1:
+`peers/clio/proofs/2026-10-04-clio-review-block-valuation-and-edge-regularity.pdf`.
+The text above is left as it was. This section corrects it.
+
+**The defect.** The t = 0 half of step (4) is wrong. Step (3) gives
+b(□) = (1 − q^a t^{l+1}) / (1 − q^{a+1} t^l). At t = 0 the numerator is 1, because l + 1 ≥ 1. The
+surviving factor is in the denominator, so the true value is
+
+  b(□)|_{t=0} = (1 − q^{a+1})^{−1} if l = 0, and 1 if l > 0.
+
+Step (4) said 1 − q^{a+1}, which is the reciprocal. The q = 0 half of step (4) is correct: at q = 0
+the denominator is 1, and b(□) = 1 − t^{l+1} if a = 0, and 1 if a > 0.
+Smallest witness: λ = (1), a = l = 0, b = (1 − t)/(1 − q). At t = 0 this is 1/(1 − q), not 1 − q.
+(Clio's witness is the box (1,2) of λ = (2,1). It is the same case.)
+
+**Check** (`scripts/day222/er_step4_check.py`, log `er_step4_check.log`). This checks every box of
+every partition with n ≤ 8, 416 boxes in all.
+- Old t = 0 claim: fails on 217/416 boxes. These are exactly the boxes with l = 0.
+- Corrected t = 0 value: 0 failures.
+- q = 0 value: 0 failures.
+- Unit test below: 0 failures.
+
+**Corrected step (4).** Write b(□) = N/D with N = 1 − q^a t^{l+1} and D = 1 − q^{a+1} t^l. Each of
+N and D is nonzero on both edges:
+
+- **At q = 0.** N becomes 1 − t^{l+1} (if a = 0) or 1 (if a > 0). D becomes 1. Both are nonzero in ℚ(t).
+- **At t = 0.** N becomes 1. D becomes 1 − q^{a+1} (if l = 0) or 1 (if l > 0). Both are nonzero in ℚ(q).
+
+So N and D are units in ℛ_0 = ℚ(τ)[s]_{(s)} and in ℛ_∞ = ℚ(s)[τ]_{(τ)}, and so is b(□). Hence each
+ratio b_μ(□)/b_λ(□) is a unit in ℛ_0 ∩ ℛ_∞, and so is each product ψ_T. Step (1) writes u_{νκ} as a
+finite sum of such ψ_T, so u_{νκ} ∈ ℛ_0 ∩ ℛ_∞. Steps (5)–(8) are unchanged.
+
+**What changes and what does not.** The conclusion (R) still holds and Lemma ER is still **proved**.
+Only the reason given in step (4) was wrong. Clio points out that the two edges are regular for
+different reasons. At q = 0 the denominator goes to 1. At t = 0 the denominator survives as
+1 − q^{a+1}, and it is a unit only because q = s is generic in ℛ_∞.
+
+Clio also observes (§3.2, n = 3, 4) that all denominators of A, B and the P-coefficients have the
+form s^a τ^b − 1 with a, b ≥ 1. Each such factor equals −1 on both edges. This is a sharper
+description of the pole locus, but it is computed only, and it is not used above.
+
+**Correction to §3 / §4 (computer check).** "Computer check: NONE" is out of date.
+`scripts/day219/regularity_check.py 4 fast` was rerun on 2026-10-05: BAD 0 at both edges for n = 1..4,
+and the negative control fires (R0 failures 2, 5, 14 for n = 2, 3, 4). The log is
+`scripts/day222/regularity_fast_n4_rerun.log`. Caveat: the `fast` mode fixes the other parameter
+(τ = 3/7 for the s-edge check, s = 2/5 for the τ-edge check), so this is a specialised check, not a
+symbolic one. Clio's re-implementation reaches n ≤ 5, but it uses the same Gram–Schmidt method, so it
+is not an independent instrument. Neither script tests step (4) directly (`arms_legs` is never called
+in `regularity_check.py`); `er_step4_check.py` does.

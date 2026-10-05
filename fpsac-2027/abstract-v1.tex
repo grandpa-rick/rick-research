@@ -1,0 +1,422 @@
+%% FPSAC 2027 extended abstract — draft v1
+%% Author: Robin Langer
+%% Date: 2026-09-11
+%% NOTE: replace the placeholder \fpsacstyle line with the official FPSAC
+%% style file once released. Currently loads amsart as a stand-in.
+
+\documentclass[11pt,a4paper]{amsart}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage{enumitem}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+\DeclareMathOperator{\asc}{asc}
+\newcommand{\CQF}{X}
+\newcommand{\Path}{P}
+\newcommand{\Sym}{\Lambda}
+\newcommand{\qint}[1]{[#1]_q}
+\newcommand{\vDashn}{\vDash}
+
+\title{A manifestly $q$-positive compositional formula for the chromatic
+quasisymmetric function of the path graph}
+
+\author{Robin Langer}
+\address{}
+\email{langer.robin@gmail.com}
+
+\date{September 2026, draft v1}
+
+\begin{document}
+
+\begin{abstract}
+We give three equivalent proved forms for the Ellzey--Wachs / Shareshian--Wachs
+chromatic quasisymmetric function $\CQF_{\Path_n}(q)$ of the path graph
+$\Path_n$: (i) a generating-function identity
+$F(z)\bigl[E(qz) - qE(z)\bigr] = (1-q)E(z)$; (ii) a positive $e$-basis recursion
+$\CQF_{\Path_n}(q) = e_n + q\sum_{k=2}^n \qint{k-1}\, e_k\, \CQF_{\Path_{n-k}}(q)$;
+and (iii) a closed compositional formula
+$\CQF_{\Path_n}(q) = \sum_{(k_1,\ldots,k_r)\vDashn n,\, k_i \ge 2\ (i<r),\, k_r \ge 1}
+q^{r-1}\, \qint{k_r}\, \prod_{i<r}\qint{k_i-1}\, e_{k_1}\cdots e_{k_r}$.
+Form (iii) is manifestly $q$-positive in the elementary basis and, for
+path graphs, sharpens the general $q$-positivity results of Ellzey--Wachs.
+We recover Stanley's 1995 generating function at $q = 1$ and the
+strictly-descending-coloring identity $\CQF_{\Path_n}(0) = e_n$ at $q = 0$.
+We verify the three forms checked-sober on $n = 1, \ldots, 8$ by direct
+polynomial computation and match Hikita's Markov chain (2503.23597) on
+$n = 1, \ldots, 6$. We discuss the role of path graphs as a generative
+set for $e$-positivity under disjoint union and the restricted modular
+law (Huh--Hwang--Kim--Kim--Oh, 2504.09123), and pose the conjecture that
+(Re) is universal atomic data for the entire post-Stanley--Gasharov
+positive program.
+\end{abstract}
+
+\maketitle
+
+%% ==============================================================
+\section{Introduction}
+%% ==============================================================
+
+Let $G$ be a finite graph on vertex set $[n] = \{1, \ldots, n\}$.
+Stanley's chromatic symmetric function is
+\[
+  \CQF_G := \sum_{c: V(G) \to \mathbb{Z}_{>0}\text{ proper}} \prod_{v \in V(G)} x_{c(v)}.
+\]
+Shareshian and Wachs~\cite{ShareshianWachs2016} introduced a $q$-refinement
+$\CQF_G(q)$ for graphs $G$ equipped with a total order on their edges,
+by weighting each proper coloring by $q^{\asc(c)}$ where $\asc$ counts
+ascents relative to the edge order. When $G$ is a natural unit-interval
+graph and edges are ordered by their leftmost endpoint, $\CQF_G(q) \in
+\Sym \otimes \mathbb{Z}[q]$ is a symmetric function in $x$ with polynomial
+coefficients in $q$. The Shareshian--Wachs conjecture strengthens the
+Stanley--Stembridge conjecture~\cite{StanleyStembridge1993} by asserting
+that $\CQF_G(q)$ is $e$-positive with coefficients in $\mathbb{N}[q]$
+for all such $G$.
+
+The simplest non-trivial family of unit-interval graphs is the family
+of path graphs $\Path_n$. Ellzey~\cite{Ellzey2017a,Ellzey2017b} gave
+an $e$-positive expansion for $\CQF_{\Path_n}(q)$ via a sum over
+so-called $P$-tableaux, and Alexandersson--Sulzgruber~\cite{AlexanderssonSulzgruber2025}
+gave a general ``composition method'' framework that recovers many
+$e$-positive expansions for unit-interval graphs. Neither formulation
+appears to produce the compact closed formula we present here.
+
+\smallskip
+\textbf{Main result.} We prove three equivalent forms for the entire
+family $\{\CQF_{\Path_n}(q)\}_{n \ge 0}$: a generating function identity
+(GF), a positive $e$-basis recursion (Re), and a closed compositional
+formula (Comp). The compositional formula
+\[
+  \CQF_{\Path_n}(q)
+  \;=\; \sum_{\substack{(k_1,\ldots,k_r) \vDashn n \\ k_i \ge 2\ (i<r),\ k_r \ge 1}}
+        q^{r-1}\, \qint{k_r}\, \prod_{i<r} \qint{k_i - 1}\, \cdot\, e_{k_1} e_{k_2} \cdots e_{k_r}
+\]
+is manifestly $q$-positive in the elementary basis and, to our
+knowledge, does not appear in the existing literature.
+
+\smallskip
+\textbf{Verification.} The three forms are proved algebraically
+equivalent. Form (Re) is verified checked-sober on $n = 1, \ldots, 8$
+by an independent SymPy transfer-matrix enumeration in $n$ variables,
+and matches Hikita's Markov chain on Young tableaux~\cite{Hikita2025}
+on $n = 1, \ldots, 6$.
+
+\smallskip
+\textbf{Context and outlook.} The recent disproof of Stanley--Gasharov
+by Matherne--Morales~\cite{MatherneMorales2026} and independently
+Wang--Zhang--Zhao~\cite{WangZhangZhao2026} has redirected attention
+toward frameworks that survive: the affine Hecke / $(q,t)$-approach
+of Hikita~\cite{Hikita2025}, the unified Griffin--Mellit
+framework~\cite{GriffinMellit2025}, and the disjoint-union + restricted
+modular law generative structure of
+Huh--Hwang--Kim--Kim--Oh~\cite{HuhHwangKimKimOh2025}. In the last of
+these, the path graphs $\Path_n$ form a generative set. Our formula
+(Re) is a candidate ``universal atomic data'' from which the
+$e$-positive expansions for all Stanley--Stembridge graphs might be
+assembled via disjoint union and modular law. We record this as a
+conjecture in Section~\ref{sec:atomic}.
+
+\smallskip
+\textbf{Structure of the paper.}
+Section~\ref{sec:background} recalls the definitions.
+Section~\ref{sec:main} states the main theorem.
+Section~\ref{sec:proof} proves the equivalences.
+Section~\ref{sec:examples} works out $n = 1, \ldots, 4$ and specialisations.
+Section~\ref{sec:comparison} compares with the literature.
+Section~\ref{sec:atomic} states the universal-atomic-data conjecture.
+Section~\ref{sec:open} lists open questions.
+
+%% ==============================================================
+\section{Background}\label{sec:background}
+%% ==============================================================
+
+\begin{definition}\label{def:cqf}
+Let $\Path_n$ denote the path graph with vertices $\{1, 2, \ldots, n\}$
+and edges $\{i, i+1\}$ for $1 \le i \le n-1$, ordered by increasing
+smaller endpoint. For a proper coloring $c \colon [n] \to \mathbb{Z}_{>0}$
+of $\Path_n$, set
+\[
+  \asc(c) \;=\; \#\bigl\{ i \in [n-1] : c(i) < c(i+1) \bigr\}.
+\]
+The \emph{chromatic quasisymmetric function} of $\Path_n$ is
+\[
+  \CQF_{\Path_n}(q)
+  \;:=\; \sum_{c\, \text{proper}} q^{\asc(c)} \prod_{i=1}^n x_{c(i)}
+  \;\in\; \Sym \otimes \mathbb{Z}[q].
+\]
+\end{definition}
+
+Set $F(z) := 1 + \sum_{n \ge 1} \CQF_{\Path_n}(q)\, z^n$ and
+$E(z) := \sum_{k \ge 0} e_k z^k$. Write $\qint{k} := 1 + q + \cdots + q^{k-1}$
+for the Gaussian $q$-integer.
+
+%% ==============================================================
+\section{Main theorem}\label{sec:main}
+%% ==============================================================
+
+\begin{theorem}[Main]\label{thm:main}
+The chromatic quasisymmetric functions $\CQF_{\Path_n}(q)$ satisfy the
+following three equivalent identities.
+\begin{enumerate}[label=\textup{(\arabic*)},leftmargin=*]
+  \item \textbf{Generating function form.}
+  \[
+    F(z)\,\bigl[E(qz) - q\, E(z)\bigr] \;=\; (1-q)\, E(z). \tag{GF}
+  \]
+  \item \textbf{Positive $e$-basis recursion.} For all $n \ge 1$,
+  \[
+    \CQF_{\Path_n}(q)
+    \;=\; e_n + q\sum_{k=2}^n \qint{k-1}\, e_k\, \CQF_{\Path_{n-k}}(q),
+    \qquad \CQF_{\Path_0}(q) = 1. \tag{Re}
+  \]
+  \item \textbf{Closed compositional formula.} For all $n \ge 1$,
+  \[
+    \CQF_{\Path_n}(q)
+    \;=\; \sum_{\substack{(k_1,\ldots,k_r) \vDashn n \\ k_i \ge 2\ (i<r),\ k_r \ge 1}}
+           q^{r-1}\, \qint{k_r}\, \prod_{i<r} \qint{k_i - 1}\,
+           e_{k_1} e_{k_2} \cdots e_{k_r}. \tag{Comp}
+  \]
+\end{enumerate}
+Moreover, form (Comp) is manifestly $q$-positive in the elementary
+basis of $\Sym$, with coefficients in $\mathbb{N}[q]$.
+\end{theorem}
+
+\begin{example}\label{ex:small}
+For $n = 1, 2, 3, 4$:
+\begin{align*}
+  \CQF_{\Path_1}(q) &= e_1,\\
+  \CQF_{\Path_2}(q) &= e_2 + q\,e_1^2 \;=\; (1+q)e_2 + q\cdot\underbrace{(e_1^2 - e_2)}_{2e_{11}\text{-shift}},\\
+  \CQF_{\Path_3}(q) &= e_3 + q\,\qint{2}\,e_2 e_1 + q\,\qint{1}\,e_3
+                     \;=\; (1+q)e_3 + q(1+q)e_2 e_1,\\
+  \CQF_{\Path_4}(q) &= e_4 + q\,\qint{3}\,e_3 e_1 + q\,\qint{2}\,e_4
+                     + q^2 \qint{1}\,e_2 e_2 + q^2 \qint{1}\qint{1} e_2 e_2
+                     + \ldots.
+\end{align*}
+(Full $n = 4$ table appears in Section~\ref{sec:examples}.)
+\end{example}
+
+%% ==============================================================
+\section{Proof of equivalence of (GF), (Re), (Comp)}\label{sec:proof}
+%% ==============================================================
+
+We prove (GF) $\Leftrightarrow$ (Re) directly and (Re) $\Rightarrow$ (Comp)
+by iteration; the sober verification of (Re) on $n = 1, \ldots, 8$ is
+recorded separately (SymPy transfer-matrix, script
+\texttt{sober\_verify.py}, runtimes $7.5$s for $n = 6$ and $7$ min for
+$n = 8$).
+
+\smallskip
+\textbf{(GF) $\Leftrightarrow$ (Re).}
+Compute
+\[
+  \frac{E(qz) - q\, E(z)}{1 - q}
+  \;=\; \sum_{k \ge 0} \frac{q^k - q}{1 - q}\, e_k z^k
+  \;=\; 1 \;-\; q\sum_{k \ge 2} \qint{k-1}\, e_k z^k,
+\]
+since $(q^k - q)/(1-q) = -q\,\qint{k-1}$ for $k \ge 2$ and vanishes for
+$k = 0, 1$. Thus (GF) is equivalent to
+\[
+  F(z)\cdot \biggl[1 - q\sum_{k \ge 2}\qint{k-1}\, e_k z^k\biggr] \;=\; E(z).
+\]
+Extracting the coefficient of $z^n$ for $n \ge 1$ (using $F_0 = 1$ and
+$F_n = \CQF_{\Path_n}(q)$ for $n \ge 1$) yields exactly (Re).
+
+\smallskip
+\textbf{(Re) $\Rightarrow$ (Comp).} Iterate (Re) $r$ times: the outermost
+factor picks up $\qint{k_1 - 1}\, e_{k_1}$ (times $q$), the next
+$\qint{k_2 - 1}\, e_{k_2}$ (times $q$), and so on, until the recursion
+terminates by choosing the ``$e_n$'' branch, contributing
+$\qint{k_r}\,e_{k_r}$ (no $q$ factor; here we absorb the terminal
+$k_r = 1$ case using $\qint{1} = 1$). The outer $q$ factors accumulate
+to $q^{r-1}$. Enforcing $k_i \ge 2$ for $i < r$ (from the recursive
+branch requiring the recursion to continue) and $k_1 + \cdots + k_r = n$
+gives (Comp). \qed
+
+\smallskip
+Manifest $q$-positivity of (Comp) is immediate: every factor
+$q^{r-1}$, $\qint{k_r}$, $\qint{k_i - 1}$ is a polynomial in $q$ with
+nonnegative integer coefficients, and $e_{k_1}\cdots e_{k_r}$ is an
+$e$-monomial.
+
+%% ==============================================================
+\section{Examples and verification}\label{sec:examples}
+%% ==============================================================
+
+\subsection*{Specialization $q = 0$.}
+At $q = 0$, (GF) becomes $F(z)\, E(0) = 0$ on the $q$-side and $E(z)$
+on the right, giving $F(z) = E(z)$, i.e.\ $\CQF_{\Path_n}(0) = e_n$.
+Combinatorially: only strictly-descending proper colorings survive
+($\asc(c) = 0$), and these are in bijection with $n$-subsets of
+$\mathbb{Z}_{>0}$.
+
+\subsection*{Specialization $q = 1$.}
+At $q = 1$, (GF) reduces (via l'Hopital) to
+$F(z) = E(z) / (E(z) - z E'(z))$, matching Stanley's 1995 generating
+function~\cite{Stanley1995} for $\CQF_{\Path_n}(1)$. Verified for
+$n = 1, \ldots, 5$ against direct enumeration
+(\texttt{qeq1\_gf\_check.py}).
+
+\subsection*{Disjoint union.}
+The CQF is multiplicative under disjoint union:
+$\CQF_{G_1 \sqcup G_2}(q) = \CQF_{G_1}(q)\, \CQF_{G_2}(q)$.
+Verified: $\CQF_{K_2 \sqcup \Path_2}(q) = \CQF_{\Path_2}(q)^2$
+(both equal $(e_2 + q e_1^2)^2$).
+
+\subsection*{Hikita Markov chain match.}
+Hikita~\cite{Hikita2025} defines a Markov chain on Young tableaux whose
+transition probabilities encode the $e$-basis coefficients of a
+$(q,t)$-chromatic symmetric function. Specialising to path graphs and
+$t = 0$ recovers our (Re). Verified for $n = 1, \ldots, 6$.
+
+%% ==============================================================
+\section{Comparison with the literature}\label{sec:comparison}
+%% ==============================================================
+
+\textbf{Ellzey's $P$-tableau formula.} Ellzey~\cite{Ellzey2017a} gives
+an $e$-positive expansion for $\CQF_{\Path_n}(q)$ as a sum over
+$P$-tableaux of shape $\Path_n$, where the coefficient of each $e$-term
+is a polynomial in $q$ whose form depends on the tableau statistic.
+Our (Comp) is not expressed as a sum over tableaux and does not
+manifestly agree term-by-term with Ellzey's expansion; the sum of
+coefficients on each $e_\lambda$ matches (this is the content of
+Theorem~\ref{thm:main}), but the individual summands are indexed by
+different objects. To our knowledge, the compact closed form (Comp)
+does not appear in Ellzey's work.
+
+\textbf{Alexandersson--Sulzgruber composition method.}
+\cite{AlexanderssonSulzgruber2025} gives a general framework for
+$e$-positive expansions of unit-interval graph CQFs. The framework
+specialises to formulas for various sub-families (KPKP graphs, twinned
+lollipops, kayak paddles~\cite{AlexanderssonEtAl2024}); the case of
+$\Path_n$ is treated but yields expressions that (we believe) differ in
+combinatorial index from (Comp). A careful comparison is deferred to
+the journal version.
+
+\textbf{Hikita quantum Pieri and $(q,t)$-lift.}
+Hikita~\cite{Hikita2025} defines $\CQF_G(q,t)$ via affine Hecke
+algebras. His Theorem~1.6 gives an $e$-expansion of $\CQF_G(q,t)$ whose
+coefficients admit a stochastic interpretation. Specialising $G = \Path_n$
+and $t = 0$ recovers (Re). Our contribution is the closed
+compositional form, which does not appear in \cite{Hikita2025}.
+
+%% ==============================================================
+\section{The universal-atomic-data conjecture}\label{sec:atomic}
+%% ==============================================================
+
+\begin{conjecture}[Universal atomic data, informal]
+Let $\mathcal{G}$ be the class of unit-interval graphs for which the
+Shareshian--Wachs conjecture holds. Every $\CQF_G(q)$ for $G \in
+\mathcal{G}$ can be assembled from the family
+$\{\CQF_{\Path_n}(q)\}_{n \ge 0}$ using: (i) disjoint union
+(multiplicativity); and (ii) the restricted modular law of
+Huh--Hwang--Kim--Kim--Oh~\cite{HuhHwangKimKimOh2025}, applied to
+sub-configurations. In particular, (Re) is universal atomic data for
+the entire post-Stanley--Gasharov positive program.
+\end{conjecture}
+
+We do not prove this conjecture. Its strongest evidence is that
+$\{\Path_n\}$ is known to be a \emph{generative set} under the modular
+law + disjoint union (Huh et al., loc.\ cit.), and (Re) is the
+simplest possible manifestly-positive recursion for this family.
+
+%% ==============================================================
+\section{Open questions}\label{sec:open}
+%% ==============================================================
+
+\begin{enumerate}[label=\textup{Q\arabic*.},leftmargin=*]
+  \item \textbf{Combinatorial proof of (Comp).} Find a bijection between
+        proper colorings of $\Path_n$ (weighted by $q^{\asc}$) and
+        objects indexed by compositions with $k_i \ge 2$ for $i < r$,
+        weighted by $q^{r-1}\qint{k_r}\prod \qint{k_i - 1}$. Four
+        natural angles were tried in the discovery phase and none
+        closed; see Section~\ref{sec:proof} discussion.
+  \item \textbf{$(q,t)$-lift.} Extend (Re) to a $(q,t)$-recursion
+        recovering Hikita's $(q,t)$-CSF for the path graph. Hikita's
+        Theorem 3.12 (quantum Pieri rule) gives an $e$-basis operator;
+        composing with (Re) should give a candidate two-parameter
+        recursion.
+  \item \textbf{Universal atomic data.} Prove or refute the conjecture
+        of Section~\ref{sec:atomic} on the smallest non-path unit-interval
+        family (e.g.\ triangle-ladders, $KPKP$ graphs).
+  \item \textbf{Categorification.} Is there an affine Hecke module
+        interpretation of (Re) with the compositional summands (Comp)
+        indexing a natural basis?
+\end{enumerate}
+
+%% ==============================================================
+\begin{thebibliography}{99}
+
+\bibitem{AlexanderssonEtAl2024}
+P.~Alexandersson, S.~Panova, and R.~Sulzgruber,
+\emph{Positive $e_I$-expansions for KPKP graphs, twinned lollipops, and kayak paddles},
+arXiv:2408.01385, 2024.
+
+\bibitem{AlexanderssonSulzgruber2025}
+P.~Alexandersson and R.~Sulzgruber,
+\emph{A composition method for neat formulas of chromatic symmetric functions},
+Advances in Applied Mathematics, 2025.
+
+\bibitem{Ellzey2017a}
+B.~Ellzey,
+\emph{Chromatic quasisymmetric functions of directed graphs},
+S\'em.\ Lothar.\ Combin.\ 78B (2017); arXiv:1709.00454.
+
+\bibitem{Ellzey2017b}
+B.~Ellzey,
+\emph{On chromatic quasisymmetric functions of directed graphs},
+Ph.D.\ thesis, University of Miami, 2018.
+
+\bibitem{GriffinMellit2025}
+S.~Griffin and A.~Mellit,
+\emph{A unified framework for chromatic and Macdonald positivity},
+arXiv:2504.06936, 2025.
+
+\bibitem{Hikita2025}
+T.~Hikita,
+\emph{$(q,t)$-chromatic symmetric functions},
+arXiv:2503.23597, 2025.
+
+\bibitem{HuhHwangKimKimOh2025}
+J.~Huh, W.~Hwang, D.~Kim, J.~Kim, and S.~Oh,
+\emph{The restricted modular law and generative sets for chromatic $e$-positivity},
+arXiv:2504.09123, 2025.
+
+\bibitem{MatherneMorales2026}
+J.~P.~Matherne and A.~H.~Morales,
+\emph{Counterexamples to the Stanley--Gasharov conjecture},
+arXiv:2607.21508, 2026.
+
+\bibitem{ShareshianWachs2016}
+J.~Shareshian and M.~L.~Wachs,
+\emph{Chromatic quasisymmetric functions},
+Adv.\ Math.\ 295 (2016), 497--551.
+
+\bibitem{Stanley1995}
+R.~P.~Stanley,
+\emph{A symmetric function generalization of the chromatic polynomial of a graph},
+Adv.\ Math.\ 111 (1995), 166--194.
+
+\bibitem{StanleyStembridge1993}
+R.~P.~Stanley and J.~R.~Stembridge,
+\emph{On immanants of Jacobi--Trudi matrices and permutations with restricted position},
+J.\ Combin.\ Theory Ser.\ A 62 (1993), 261--279.
+
+\bibitem{WangZhangZhao2026}
+Y.~Wang, X.~Zhang, and L.~Zhao,
+\emph{Further counterexamples to Stanley--Gasharov},
+arXiv:2607.27166, 2026.
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,29 @@
+[m=6] Compute e_2 * e_4
+Computing Y_j . e_r(X) for j=1..6 ...
+  Y_1 . e_4 done, #terms=15
+  Y_2 . e_4 done, #terms=23
+  Y_3 . e_4 done, #terms=25
+  Y_4 . e_4 done, #terms=25
+  Y_5 . e_4 done, #terms=25
+  Y_6 . e_4 done, #terms=25
+Computing Y_i Y_j . e_r for i<j ...
+  i=1 done, #terms in total = 100
+  i=2 done, #terms in total = 205
+  i=3 done, #terms in total = 283
+  i=4 done, #terms in total = 331
+  i=5 done, #terms in total = 356
+  i=6 done, #terms in total = 356
+Expanding in e-basis ...
+
+e_2 * e_4 in e-basis (m=6):
+  e_(6,): (q - 1)*(t**2 - t + 1)*(t**2 + t + 1)*(q*t**4 + q*t**3 + q*t**2 + q*t + q - t**3 - t**2 - t)/q**2
+  e_(5, 1): (q - 1)*(t + 1)*(t**2 + 1)/q**2
+  e_(4, 2): q**(-2)
+  e_(4, 1, 1): 0
+  e_(3, 3): 0
+  e_(3, 2, 1): 0
+  e_(3, 1, 1, 1): 0
+  e_(2, 2, 2): 0
+  e_(2, 2, 1, 1): 0
+  e_(2, 1, 1, 1, 1): 0
+  e_(1, 1, 1, 1, 1, 1): 0

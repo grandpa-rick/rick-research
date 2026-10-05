@@ -1,0 +1,10 @@
+m=1: 5 tests, all pass so far = True
+m=2: 9 tests, all pass so far = True
+m=3: 13 tests, all pass so far = True
+m=4: 17 tests, all pass so far = True
+m=5: 21 tests, all pass so far = True
+wrong orientation differs at m=2 (expected True): True
+partial-fraction identity m=2: True
+partial-fraction identity m=3: True
+partial-fraction identity m=4: True
+partial-fraction identity m=5: True

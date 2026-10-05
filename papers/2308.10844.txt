@@ -1,0 +1,2350 @@
+                                                         AFFINE HECKE ALGEBRAS AND SYMMETRIC
+                                                               QUASI-POLYNOMIAL DUALITY
+
+                                                                                VIDYA VENKATESWARAN
+
+
+                                                  Abstract. In a recent paper [26], we introduced quasi-polynomial generalizations of
+                                                  Macdonald polynomials for arbitrary root systems via a new class of representations of
+                                                  the double affine Hecke algebra. These objects depend on a deformation parameter q,
+arXiv:2308.10844v3 [math.RT] 31 Oct 2025
+
+
+
+
+                                                  Hecke parameters, and an additional torus parameter. In this paper, we study antisym-
+                                                  metric and symmetric quasi-polynomial analogs of Macdonald polynomials in the q → ∞
+                                                  limit. We provide explicit decomposition formulas for these objects in terms of classi-
+                                                  cal Demazure-Lusztig operators and partial symmetrizers, and relate them to Macdonald
+                                                  polynomials with prescribed symmetry in the same limit. We also provide a complete char-
+                                                  acterization of (anti-)symmetric quasi-polynomials in terms of partially (anti-)symmetric
+                                                  polynomials. As an application, we obtain formulas for metaplectic spherical Whittaker
+                                                  functions associated to arbitrary root systems. For GLr , this recovers some recent results
+                                                  of Brubaker, Buciumas, Bump, and Gustafsson, and proves a precise statement of their
+                                                  conjecture about a “parahoric-metaplectic” duality.
+
+
+
+
+                                                                                    1. Introduction
+                                              In a recent paper [8], Brubaker, Buciumas, Bump and Gustafsson prove a striking new
+                                           duality result about metaplectic spherical Whittaker functions for GLr . These objects,
+                                           which can be defined for arbitrary type, are matrix coefficients of representations of n-
+                                           fold covers of p-adic groups, as well as “p-parts” of Weyl group multiple Dirichlet series,
+                                           and have been the subject of much investigation over the last two decades (see [9] for
+                                           an overview). Much recent work has centered around finding combinatorial formulas for
+                                           metaplectic Whittaker functions, as well as interpreting these objects using representations
+                                           of Weyl groups and Hecke algebras (see e.g., [14, 15, 16, 23, 25, 7, 8]). Of particular
+                                           interest are connections to the theory of Macdonald polynomials (see [11, 10, 12, 18, 21]
+                                           for background on Macdonald polynomials). In the non-metaplectic case (i.e., the special
+                                           case n = 1), Whittaker functions can be understood in terms of the well-known polynomial
+                                           representation of Hecke algebras as well as degenerations of Macdonald polynomials and
+                                           related objects, see Table 2 of [6].
+                                              One recent approach to studying metaplectic Whittaker functions has been through the
+                                           study of classes of solvable lattice models that have these functions as their partition func-
+                                           tions [6, 7, 8]. Using this approach, these authors discovered a key exchangeability feature
+                                           of their lattice models, which then enabled them to provide formulas for certain classes
+                                           of GLr metaplectic spherical Whittaker functions in terms of non-metaplectic Whittaker
+                                           functions; they call this parallel “duality”. This surprising discovery was the motivation
+                                           for the present work, in which we generalize these results in several directions.
+                                              More precisely, fix a metaplectic parameter n ∈ Z≥1 and rank r − 1 ∈ Z≥1 . Let F be
+                                           a local non-archimedean field with uniformizer ϖ. Let P = Zr and P + = {(λ1 , . . . , λr ) :
+                                           λi ≥ λi+1 for all i} ⊆ P denote the set of GL-weights and partitions, respectively. Let
+                                           ϖλ , for λ = (λ1 , . . . , λr ) ∈ P , denote the diagonal element in G = GLr (F) with entries
+                                           ϖλ1 , . . . , ϖλr . Let y = (y1 , . . . , yr ) ∈ (C× )r and g ∈ G.
+                                                                                              1
+2                                     VIDYA VENKATESWARAN
+
+
+   There is a metaplectic spherical Whittaker function, denoted W    fm = W    fm (y; g; v), that
+has been the subject of much study and applications (see e.g., [13, 14, 15, 16, 23, 24, 6, 7, 8],
+and references therein). It is a polynomial in y, depends on a parameter v and is determined
+by its values on the arguments g = ϖρGL −µ , where ρGL = (r − 1, r − 2, . . . , 0) and µ − ρGL ∈
+P + . In [8], the authors introduced the idea of studying certain components ϕeoθ of W fm , with
+              r
+θ ∈ (Z/nZ) ; these satisfy
+                                                 X
+(1.1)                                 fm =
+                                      W                ϕeoθ .
+                                                  θ∈(Z/nZ)r
+
+In Theorems D and E of [8], formulas for ϕeoθ (y; ϖρ−µ ; v) are provided in terms of non-
+metaplectic Whittaker functions, when the indexing element θ ∈ (Z/nZ)r has either all
+parts distinct, or all parts equal. They also express ϕeoθ (y; ϖρ−µ ; v) in these two cases
+using (non-metaplectic) Hecke operators Tw,v . In the introduction and Remark 4.11 of the
+same paper, the authors conjecture that, for arbitrary θ, ϕeoθ should be related to (non-
+metaplectic) parahoric Whittaker functions.
+   One of our main results is the following theorem, which proves a precise statement of
+their conjecture:
+Theorem 1.1. Set v = q 2 and W = Sr . Let θ ∈ (Z/nZ)r and µ − ρGL ∈ P + . Then
+yρGL −⌊θ⌋n ϕ̃oθ (y; ϖρGL −µ ) is a polynomial in yn , and it vanishes unless µ mod n is a permu-
+tation of θ, and in this case
+               ρGL −⌊θ⌋n                                        X
+         w0 y        n    ϕ̃oθ (y1/n ; ϖρGL −µ ; v) = C · Tw,v1/2   Tu,v1/2 Tw−1
+                                                                               ′ ,v 1/2 y
+                                                                                          λ+ρGL
+
+                                                                     u∈Wc
+                                                       ′      ρGL    Jc        −λ ′ −1
+                                                  =C ·y             ψw c (y; ϖ   w ; v ),
+with λ = ⌊ nµ ⌋−ρGL . Here w, w′ ∈ W and c is a decreasing r-tuple of elements in {1, . . . , n};
+these are determined uniquely by −µ = w′ c mod n and −w0 θ = wc mod n with w′ , w0 w ∈
+W c . Also Jc = {1 ≤ j ≤ r − 1 : cj = cj+1 }. Finally the coefficients are given by
+                                              ′
+                      (−1)l(w0 ) v l(w)/2−l(w )/2+l(w0 )/2+l(w0 (Wc )) hm,c
+                                                                        v (w0 w)
+                   C=                            m,c    ′
+                                               hv (w )
+                             ′
+                  C ′ = v l(w )−l(wc ) C.
+
+   Here, ϕ̃oθ := w∈W ϕρGL −⌊θ⌋n ,w , where ⌊θ⌋n denotes taking the least nonnegative integer
+                P
+residue modulo n elementwise, and ϕρGL −⌊θ⌋n ,w are metaplectic Iwahori-Whittaker func-
+tions as defined in Section 4.1 of [7]. The Hecke operators Tw,v are as in Definition 2.34,
+ψwJ are (non-metaplectic) parahoric Whittaker functions as introduced and studied in [6],
+   c
+
+and the coefficients hm,c
+                       v (w) are given explicitly in Definition 3.24 and 3.28. Moreover,
+Wc = ⟨sj : j ∈ Jc ⟩ is the parabolic stabilizer subgroup of c inside W , W c is the set of
+minimal length representatives of W/Wc and w = wc wc with wc ∈ W c , wc ∈ Wc . The
+element w0 ∈ W is the longest word. The proof of Theorem 1.1 can be found in Section 6.
+   We are also able to prove results analogous to Theorem 1.1 for arbitrary root system
+types and special choices of θ (see Theorem 6.4) as well as for symmetric variants of
+metaplectic Whittaker functions (see Theorem 6.1). Using (1.1), a byproduct of our results
+is a new formula for the metaplectic spherical Whittaker function W   fm (z; ϖρ−µ ) for all µ
+for GLr and special values of µ for other types. Our proofs are purely representation-
+theoretic, and, in particular, do not employ lattice models. In [1], Amol Aggarwal outlined
+an argument which matches (components of) metaplectic spherical Whittaker functions to
+           AFFINE HECKE ALGEBRAS AND SYMMETRIC QUASI-POLYNOMIAL DUALITY                            3
+
+
+non-metaplectic parahoric Whittaker functions in the GLr case, through a comparison of
+the lattice models in [2] and [8], along with the key “color-merging” result Theorem 5.2.2
+of [2]. This provides another approach to establishing Theorem 1.1, and it is an interesting
+open question whether this technique can be extended to other types.
+   We also establish results for the q → ∞ limits of the quasi-polynomial generalizations
+of (anti-)symmetric Macdonald polynomials introduced in [26] (see also [25] and [27]).
+For simplicity, we will briefly describe our results in the GLr context; note however that
+the rest of the paper will deal with arbitrary root systems. Fix E = Rr , Weyl group
+W = Sr generated by simple reflections si for 1 ≤ i ≤ r − 1, and lattice Λ = Zr . Let
+CΛ0 = {(y1 , . . . , yr ) ∈ E : 0 ≤ yi − yi+1 ≤ 1 for 1 ≤ i ≤ r − 1 and y1 − yr < 1}. Also, for
+c ∈ CΛ0 , let Oec = {µ + wc : µ ∈ Λ, w ∈ W } denote the affine Weyl group orbit and F[O       ec ]
+the corresponding group algebra for a fixed field F; the elements of F[O   ec ] are called quasi-
+polynomials. Let HΛ denote the Λ-extended affine Hecke algebra with Hecke parameter t
+                         e
+(see Definition 2.11).
+Theorem 1.2 ([26]). There is a quasi-polynomial representation π qp of H      eΛ on F[O   ec ] given
+by the following explicit formulas:
+                                                                           −⌊yj −yj+1 ⌋
+                                                                        xj
+                                                                                          −1
+                    (                     )
+                     1, yj − yj+1 ∈ R \ Z                              xj+1
+     π qp (Tj )xy =                         · xsj y + (t − t−1 )xy ·          xj
+                     t, yj − yj+1 ∈ Z                                        xj+1 − 1
+
+        ec , 1 ≤ j ≤ r − 1, and π qp (xλ )xy = xλ+y for λ ∈ Λ and y ∈ O
+for y ∈ O                                                             ec .
+
+Crucially, for c = 0, the formulas above recover the (classical) polynomial representation π
+of HeΛ on F[Λ] and in this case π(Ti ) are the Demazure-Lusztig operators.
+   In fact, as shown in [26], given a torus character τ : Λ → F satisfying certain compatibil-
+ity conditions with respect to c, the representation π qp can be extended to a representation
+of the double affine Hecke algebra H. This representation has a number of interesting
+properties, for example, a construction as a Y -induced cyclic module, a degeneration to
+Cherednik’s basic representation when c = 0, and a connection to the theory of metaplectic
+Whittaker functions.
+   There are several interesting families of quasi-polynomials in F[O    ec ] that can be de-
+                                   qp
+scribed via the representation π ; we briefly describe some of the relevant results from
+[26]. For every c ∈ CΛ0 , there is a family of quasi-polynomials Ey = Ey (q; t; τ ) ∈ F[O ec ],
+indexed by y ∈ O  ec , and depending on a deformation parameter q, Hecke parameters t, and
+an additional torus parameter τ , that are simultaneous eigenfunctions of π qp (Y λ ). Here
+{Y λ }λ∈Λ ⊂ H are a certain family of commuting elements. Moreover, the quasi-polynomials
+Eλ for λ ∈ Λ (i.e., c = 0) coincide with nonsymmetric Macdonald polynomials. Another
+connection is to metaplectic Whittaker functions: for c ∈ CΛ0 and for τ satisfying certain
+regularity conditions, the q → ∞ limiting case of these polynomials, denoted E y , can be
+identified with metaplectic Iwahori-Whittaker functions after a reparametrization which
+introduces Gauss sums. One can also consider (anti-)symmetric variants Ey± by applying
+the Hecke algebra (anti-)symmetrizer π qp (1± ) to Ey , for y ∈ O   ec . The symmetric vari-
+ants coincide with symmetric Macdonald polynomials for c = 0 and y ∈ Λ. Moreover,
+for τ satisfying certain regularity conditions, if one specializes the Hecke parameters in
+an appropriate way, the anti-symmetric variants for arbitrary c in the limit q → ∞ are
+metaplectic spherical Whittaker functions (up to an explicit reparametrization). In this
+paper, we provide explicit formulas for the family of quasi-polynomials p±           qp ± y
+                                                                              y := π (1 )x ,
+4                                      VIDYA VENKATESWARAN
+
+                                                                                                    ±
+where c ∈ CΛ0 and y ∈ O
+                      ec . For y anti-dominant, these quasi-polynomials are equal to E
+                                                                                       y
+                                                  ±
+and for y dominant, they are related to E −y (q; t−1 ; τ ), see Section 3.2.
+   The starting point of this paper is the observation that, for any quasi-polynomial f ∈
+F[Oec ], there is a unique decomposition
+                                         X
+(1.2)                               f=        γw (f )xwc ,
+                                          w∈W c
+where Wc   is the stabilizer subgroup of c, W c is the set of minimal length representatives of
+W/Wc and γw : F[O   ec ] → F[Λ] for w ∈ W c are coefficient functions (see Section 3.1 for more
+details). Note that γw (f ) are polynomials in F[Λ] and computing f can be boiled down to
+determining these coefficients. In this paper, we explicitly compute these coefficients for
+certain families of quasi-polynomials. We prove the following theorem in Section 5:
+Theorem 1.3. Let c ∈ CΛ0 , y ∈ O      ec and write (uniquely) y = µ + ŵc, where µ ∈ Λ and
+      c                    c
+ŵ ∈ W . Then for w ∈ W we have
+                                                            
+                 +      l(w0 )            −1        +
+            γw (py ) = t       · w0 π T(w0 w)−1 1Jc Tŵ−1 xµ
+                                                                                   
+                                                                              − −1
+            γw (p−
+                 y ) = (−1)   l(ŵ)+l(w) 2l(w0 (Wc ))−l(w0 )
+                                        t                    · ιw 0 π   T    1  T
+                                                                         w0 w Jc ŵ   ιxµ ,
+
+where Jc = {1 ≤ j ≤ r − 1 : cj = cj+1 } and w0 (Wc ) is the longest word in Wc . Moreover,
+if y is dominant, we have
+                  +                                    −1          Jc ,+
+           γw (ιE −y (q; t−1 ; τ )) = t−l(w0 ) · w0 π(T(w 0 w)
+                                                              −1 )pŵ −1 µ
+
+                  −                                                                       Jc ,−
+           γw (ιE −y (q; t−1 ; τ )) = (−1)l(ŵ)+l(w) t2l(w0 (Wc ))+l(w0 ) · ιw0 π(Tw0 w )pŵ −1 µ
+
+
+The RHS is expressed in terms of the polynomial representation π of the Hecke algebra and
+partial symmetrizers 1±  Jc with respect to the stabilizer subgroup Wc (see Definition 2.30).
+Also, ι : F[Λ] → F[Λ] is given by ι(xλ ) = x−λ and extending linearly. In the second state-
+                           J,±       J,±
+ment, the polynomials pŵ    −1 µ = pŵ −1 µ (t) are the q → ∞ limits of Macdonald polynomials
+
+with prescribed symmetry, as introduced in [3] and studied further in [22, 5]. In [6], the
+q → ∞ limits pJ,−
+                µ   have been related to parahoric Whittaker functions, which is consistent
+                                    −
+with the relationship between E y and metaplectic spherical Whittaker functions [26, The-
+                                                         J,±
+orem 10.5(2)], and our Theorem 1.1. Note that pŵ          −1 µ interpolates between nonsymmetric
+
+Macdonald polynomials (J = ∅) and (anti-)symmetric Macdonald polynomials (J = [1, r])
+as one varies J. See Section 3.3 for a generalization to arbitrary types. Following [8] in
+the Iwahori-metaplectic context, we refer to the surprising connection between these quasi-
+polynomials and classical Macdonald polynomials in the q → ∞ limit, as illustrated in
+Theorem 1.3, as duality. Note that this duality does not appear to extend directly to the
+q-level, see Example 7.7.
+   Note that the quasi-polynomial representation and associated quasi-polynomials are con-
+structed in [26] for c in the larger set C + = {(y1 , . . . , yr ) ∈ E : 0 ≤ yi − yi+1 ≤ 1 for 1 ≤
+i ≤ r − 1 and y1 − yr ≤ 1}. The techniques in this paper require c ∈ CΛ0 , the key issue
+being that we need the decomposition (1.2). We are thus only able to obtain results for
+y ∈ EΛ0 , the union of Oec for c ∈ C 0 . For GLr this does not in fact impose a restriction as
+                                      Λ
+E = EΛ0 . For other types we suspect that our techniques can be extended to handle the
+case c ∈ C + using parabolic subgroups of the affine Weyl group W         f and associated partial
+symmetrizers in HΛ , but this is beyond the scope of the current paper.
+                  e
+          AFFINE HECKE ALGEBRAS AND SYMMETRIC QUASI-POLYNOMIAL DUALITY                     5
+
+
+   The results of this paper rely on computing PBW-type expansions of certain elements
+in the Hecke algebra (see Theorem 4.6 and Corollaries 4.8, 4.7). We then use the quasi-
+polynomial and metaplectic representations (resp.) of Hecke algebras to obtain decomposi-
+tion formulas for the classes of quasi-polynomials described above, as well as for metaplectic
+spherical Whittaker functions (resp.) (see Theorem 5.1 and 5.3, as well Theorem 5.5 for
+quasi-polynomials, and Theorem 6.4 for metaplectic Whittaker functions in arbitrary type).
+Specializing to the GLr case, we recover results of [8], as well as establish the authors’
+“parahoric-metaplectic” duality conjecture by proving Theorem 1.1. Finally, in Section
+7 we use the methods of this paper to show that (anti-)symmetric quasi-polynomials, as
+defined in Section 6.6 of [26], are in bijection with partially (anti-)symmetric polynomials
+(Corollary 7.5).
+   Acknowledgements: The author would like to thank A. Aggarwal, A. Borodin, B. Brubaker,
+P. Etingof, H. Gustafsson, S. Sahi, and J.V. Stokman for many useful discussions about
+this work.
+
+                                    2. Hecke algebras
+2.1. Root systems and Weyl groups. We set up some preliminaries that will be used
+throughout the paper (see e.g., [20, 19] for more background on these topics).
+   Let E be an Euclidean space with scalar product ⟨·, ·⟩ and corresponding norm ∥ · ∥.
+Let E ∗ be its linear dual. We turn E ∗ into an Euclidean space by transporting the scalar
+                                                    ∼
+product of E through the linear isomorphism E −→ E ∗ , y 7→ ⟨y, ·⟩. The resulting scalar
+product and norm on E ∗ are denoted by ⟨·, ·⟩ and ∥ · ∥ again.
+   Let Φ ⊂ E ∗ be a reduced irreducible root system in spanR {α | α ∈ Φ}. We normalize
+Φ in such a way that long roots have squared length equal to 2/m2 for some m ∈ Z>0 .
+Set Eco := ∩α∈Φ Ker(α), and write E ′ ⊆ E for the orthogonal complement of Eco in E, so
+that E = E ′ ⊕ Eco (orthogonal direct sum). Write prE ′ and prEco for the corresponding
+projections onto E ′ and Eco , respectively.
+   For α ∈ Φ write sα ∈ GL(E ∗ ) for the reflection
+                              sα (ξ) := ξ − ξ(α∨ )α      (ξ ∈ E ∗ ),
+where α∨ ∈ E is the unique vector such that
+                                    ⟨y, α∨ ⟩ = 2α(y)/∥α∥2
+for all y ∈ E. The finite Weyl group W of Φ is the subgroup of GL(E ∗ ) generated by sα
+(α ∈ Φ). It is a Coxeter group, with Coxeter generators the simple reflections si := sαi
+(1 ≤ i ≤ r). The root system Φ ⊂ E ∗ is W -invariant. We write w0 ∈ W for the longest
+Weyl group element, and φ ∈ Φ+ for the highest root. Note that E ′ is W -invariant, and
+W acts trivially on Eco .
+    Write Φ∨ = {α∨ }α∈Φ ⊂ E for the associated coroot system. Note that Φ∨ ⊂ E ′ , and
+E = spanR {α∨ | α ∈ Φ}. The coroot lattice and co-weight lattice of Φ are
+  ′
+
+                   Q∨ := ZΦ∨ ,       P ∨ := {λ ∈ E ′ | α(λ) ∈ Z        ∀ α ∈ Φ}.
+They are full sub-lattices of E ′ , and Q∨ ⊆ P ∨ .
+  Consider the action of W on E with sα (α ∈ Φ) acting as the orthogonal reflection in
+the hyperplane α−1 (0),
+                          sα (y) := y − α(y)α∨   (y ∈ E).
+                    −1                   ∗
+Then (wξ)(y) = ξ(w y) for v ∈ W , ξ ∈ E and y ∈ E, hence
+                           w(α∨ ) = (wα)∨            (w ∈ W, α ∈ Φ).
+6                                      VIDYA VENKATESWARAN
+
+
+In particular, Φ∨ ⊂ E is W -invariant, and hence so are the lattices Q∨ and P ∨ .
+   Fix a set ∆ := {α1 , . . . , αr } of simple roots and write Φ = Φ+ ∪ Φ− for the resulting
+natural division of the root system in positive and negative roots. Let ∆∨ := {α1∨ , . . . , αr∨ }
+be the associated set of simple coroots          ∨       ∨,±
+                                  ∨
+                                        Lr for Φ∨ and Φ ∨ the ′associated sets of positive and
+negative coroots. We have P = i=1 Zϖi with ϖi ∈ E (1 ≤ i ≤ r) the fundamental
+weights with respect to ∆, characterized by αi (ϖj∨ ) = δi,j (1 ≤ i, j ≤ r). Set P ∨,± :=
+± ri=1 Z≥0 ϖi∨ for the cones of dominant and anti-dominant co-weights in P ∨ , respectively.
+  P
+
+Definition 2.1. Denote by L the set of finitely generated abelian subgroups Λ ⊂ E satis-
+fying
+(2.1)                           Q∨ ⊆ Λ       &       α(Λ) ⊆ Z   ∀ α ∈ Φ.
+    Note that if Λ ∈ L then Λ ∩ E ′ , prE ′ (Λ) ∈ L and
+                                   Q∨ ⊆ Λ ∩ E ′ ⊆ prE ′ (Λ) ⊆ P ∨ .
+    A key example is the following:
+Example 2.2. GLr : Let E = Rr and set αi∨ = ei+1 − ei for 1 ≤ i ≤ r − 1, where {ei }1≤i≤r
+are the canonical basis vectors (note the rank is r − 1). Set Λ = Zr ⊂ E, then Λ ∈ L and
+we have
+                   E ′ = {(v1 , . . . , vr ) ∈ Rr : v1 + · · · + vr = 0}
+                  Q∨ = Λ ∩ E ′
+                  P ∨ = {(v1 , . . . , vr ) ∈ E ′ : vi+1 − vi ∈ Z for 1 ≤ i ≤ r − 1}
+                  Eco = {(c, c, . . . , c) ∈ Rr }.
+
+  For Λ ∈ L, the Λ-extended affine Weyl group is the semi-direct product group W       fΛ :=
+                      ∨
+W ⋉ Λ. When Λ = Q this is the (non-extended) affine Weyl group W      f=W  fQ∨ . We extend
+the W -action on E to a faithful W fΛ -action on E by affine linear transformations, with
+λ ∈ Λ acting by
+                               τ (λ)y := y + λ      (y ∈ E).
+We will regularly identify W
+                           fΛ with its realization as a subgroup of the group of affine linear
+automorphisms of E.
+  The action of Wf on E preserves
+
+(2.2)                        E a,reg := {y ∈ E | α(y) ∈
+                                                      /Z          ∀α ∈ Φ}.
+The connected components of E a,reg are called alcoves. The resulting W
+                                                                      f -action on the set
+of alcoves is simply transitive. The alcove
+(2.3)              C + : = {y ∈ E | 0 < α(y) < 1           ∀ α ∈ Φ+ }
+(2.4)                     = {y ∈ E | 0 < αi (y) for 1 ≤ i ≤ r and φ(y) < 1}
+is the fundamental alcove in E. We define
+(2.5)                                       fΛ : w(C + ) ⊂ C + }.
+                                 ΩΛ := {w ∈ W
+Note that ΩΛ = {1} for Λ = Q∨ .
+  For y ∈ E we write
+(2.6)                        O     f y = {λ + wy : λ ∈ Q∨ , w ∈ W }
+                             ey := W
+           AFFINE HECKE ALGEBRAS AND SYMMETRIC QUASI-POLYNOMIAL DUALITY                     7
+
+
+for the W
+        f -orbit of y in E. We thus have
+                                     G                        G
+(2.7)                      E a,reg =    Oec ,           E=           O
+                                                                     ec
+                                        c∈C +                c∈C +
+
+(these are disjoint unions).
+   Likewise, for y ∈ E and Λ ∈ L we define
+                          O       fΛ,y = {λ + wy : λ ∈ Λ, w ∈ W }.
+                          eΛ,y := W
+
+Note that O
+          ey = OeQ∨ ,y ⊆ O
+                         eΛ,y . Note that W
+                                          fΛ,y contains the finite Weyl group stabilizer of
+y,
+                                Wy = {w ∈ W | w(y) = y}.
+                                                                    fΛ,c = Wc for c ∈ C + .
+   Throughout this paper, we will be interested in situations where W
+We use the following notation.
+Definition 2.3. For Λ ∈ L, we define
+(2.8)                              CΛ0 := {c ∈ C + : W
+                                                     fΛ,c = Wc }.
+
+  Note that φ(c) < 1 is a necessary condition for c ∈ CΛ0 , since otherwise s0 := τ (φ)sφ ∈
+fQ∨ ,c \ Wc . The following Lemma provides a complete characterization.
+W
+
+Lemma 2.4. Let c ∈ C + . Then c ∈ CΛ0 if and only if φ(c) < 1 and
+                               ΩΛ,c := {ω ∈ ΩΛ : ω(c) = c} = {1}.
+
+Proof. It is well-known that W
+                             fQ∨ ,c is parabolic, and is equal to Wc if and only if φ(c) < 1.
+The result for general Λ then follows from WfΛ,c = ΩΛ,c ⋊ W fQ∨ ,c                         □
+  Note that φ(c) < 1 is thus a necessary and sufficient condition for Λ = Q∨ (as ΩQ∨ = {1})
+                                                     +
+and in the GLr setting (as ΩΛ,c = {1} for all c ∈ C , see [26, Lemma 7.31]).
+  For c ∈ CΛ0 , we define
+(2.9)     W c := {w ∈ W : w is a minimal length coset representative of W/Wc }.
+It follows from the definitions that F[O
+                                       eΛ,c ] is a free F[Λ]-module, with basis given by
+   wc          c
+{x : w ∈ W }. Note this is not the case when c ∈        / CΛ0 , which is why we need this
+technical condition throughout the paper.
+
+2.2. Length function and parabolic subgroups. We recall some properties of the
+length function
+                                       Π(w) := Φ+ ∩ w−1 Φ−
+                                   
+(2.10)            ℓ(w) := Card Π(w) ,
+that we will frequently use.
+Lemma 2.5. Let 1 ≤ j ≤ r and w ∈ W .
+  (1) |ℓ(sj w) − ℓ(w)| = 1.
+  (2) We have
+                         ℓ(sj w) = ℓ(w) + 1        ⇔    w−1 αj ∈ Φ+ ,
+        and then Π(sj w) = {w−1 αj } ∪ Π(w) (disjoint union).
+Proof. See, e.g., [21, (2.2.8)].                                                           □
+8                                    VIDYA VENKATESWARAN
+
+
+   The length ℓ(w) of w ∈ W is the smallest nonnegative integer ℓ for which there exists an
+expression w = sj1 · · · sjℓ of w as product of ℓ simple reflections (1 ≤ ji ≤ r). Such shortest
+length expressions are called reduced expressions. If w = sj1 · · · sjℓ is a reduced expression
+then
+(2.11)     Π(w) = {b1 , . . . , bℓ } with bm := sjℓ · · · sjm+1 (αjm ) (1 ≤ m < ℓ),   bℓ := αjℓ .
+ Fix a subset J ⊆ [1, r]. The associated parabolic subgroup WJ ⊆ W is the subgroup of
+W generated by sj (j ∈ J). Write W J for the set of elements w ∈ W such that
+                             ℓ(ww′ ) = ℓ(w) + ℓ(w′ )       ∀ w′ ∈ WJ .
+Write ΦJ := Φ ∩ spanZ {αj }j∈J and Φ±     ±
+                                    J := Φ ∩ ΦJ , then
+(2.12)                           W J = {w ∈ W | wΦ+    +
+                                                  J ⊆ Φ }.
+Lemma 2.6. Fix a subset J ⊆ [1, r].
+  (1) W J is a complete set of representatives of W/WJ (the elements in W J are called
+      the minimal coset representatives of W/WJ ).
+  (2) Let w ∈ W J and 1 ≤ j ≤ r. Then
+                                sj w ̸∈ W J ⇔ sj wWJ = wWJ ,
+         and then sj w = wsj ′ for some j ′ ∈ J (in particular, ℓ(sj w) = ℓ(w) + 1).
+Proof. (1) See, e.g., [5].
+(2) This follows from [17, Lem. 3.1 & Lem. 3.2].                                                    □
+    The stabilizer subgroup Wc of c ∈ C + is parabolic,
+                                            Wc = WJc
+with Jc ⊆ [1, r] given by
+(2.13)                             Jc := {j ∈ [1, r] | sj c = c}.
+Definition 2.7. Let w ∈ W and c ∈ C + . We will write wc , wc (resp.) for the (unique)
+elements of W c , Wc (resp.) such that w = wc wc .
+Lemma 2.8. Let w ∈ W and c ∈ C + . Then
+                                    (w0 ww0 )−w0 c = w0 wc w0
+                                    (w0 ww0 )−w0 c = w0 wc w0 .
+Proof. Follows easily from the definitions.                                                         □
+2.3. Affine Hecke algebras. In this section, we recall basics about Hecke algebras, the
+polynomial representation, and related operators. We also introduce coefficient functions
+that will be central to this paper, and establish some auxiliary results.
+   We start by recalling the standard divided-difference operator which appears in the
+commutation relation defining the Hecke algebra.
+Definition 2.9. For Λ ∈ L, let ∇j : F[Λ] → F[Λ] for 1 ≤ j ≤ r be defined by
+                                            sj f − f
+                                   ∇j (f ) = α∨
+                                            x j −1
+for f ∈ F[Λ].
+                                                                                                Q
+Definition 2.10. Fix a W -invariant map t : α 7→ tα ∈ F and set tj := tαj , t(w) :=                 tji
+when w = sj1 · · · sjl ∈ W .
+           AFFINE HECKE ALGEBRAS AND SYMMETRIC QUASI-POLYNOMIAL DUALITY                        9
+
+
+Definition 2.11. For Λ ∈ L, the Λ-extended affine Hecke algebra H      eΛ is the unital associa-
+                                                 λ
+tive F-algebra generated by T1 , . . . , Tr and x for λ ∈ Λ, subject to the following relations
+    (1) The braid relations
+(2.14)           Tj Tj ′ Tj · · · = Tj ′ Tj Tj ′ . . . (with mjj ′ factors on each side)
+       for 1 ≤ j ̸= j ′ ≤ r, where mjj ′ is the order of sj sj ′ in W ,
+   (2) The quadratic relations
+(2.15)                                (Tj − tj )(Tj + t−1
+                                                       j )=0
+       for 1 ≤ j ≤ r,
+   (3) xλ xµ = xλ+µ for λ, µ ∈ Λ and x0 = 1,
+   (4) The commutation relations
+(2.16)                         Tj xλ − xsj λ Tj = (tj − t−1      λ
+                                                         j )∇i (x )
+         for 1 ≤ j ≤ r and λ ∈ Λ.
+                      e × with inverse
+  Note also that Tj ∈ H Λ
+(2.17)                                 Tj−1 = Tj − tj + t−1
+                                                         j ,
+which follows from the quadratic relation.
+Remark 2.12. Recall from [25, 26] that for a metaplectic parameter m ∈ Z≥1 , one may
+                                     eΛm . It is the Λm -extended affine Hecke algebra
+define the metaplectic Hecke algebra H
+associated to Φ and has generators T1 , . . . , Tr and xλ for λ ∈ Λm . This will be discussed
+                m
+
+further in Section 3.4.
+  For w ∈ W with reduced expression w = sj1 · · · sjℓ (1 ≤ ji ≤ ℓ) we write
+                                      Tw := Tj1 · · · Tjℓ ∈ H
+                                                            eΛ ,
+which is independent of the choice of reduced expression, due to the braid relations (2.14).
+  It follows from the quadratic relation that we then have
+(2.18)                      Ti Tw = Tsi w + δl(si w)<l(w) (ti − t−1
+                                                                 i )Tw .
+If u, v ∈ W with l(uv) = l(u) + l(v), then we have
+                                        Tuv = Tu Tv
+(2.19)                                −1       −1 −1
+                                    T(uv)−1 = Tu−1 Tv −1 .
+
+
+  From (2.16), we have
+                                                       s f − f 
+                                                         j
+(2.20)                      Tj f = sj f Tj + (tj − t−1
+                                                    j )    ∨
+                                                        x αj − 1
+for 1 ≤ j ≤ r and f ∈ F[Λ]. Similarly, we also have
+                                                               s f −f 
+                                                                  j
+                  Tj−1 f = sj f Tj − (tj − t−1             −1
+                                                 
+(2.21)                                       j ) + (tj − tj )          ∨ .
+                                                                1 − x−αj
+   Let w0 ∈ W be the longest Weyl group element. We will need the following results about
+w0 .
+Lemma 2.13. For any w ∈ W , we have
+                                         Tww0 = Tw−1
+                                                   −1 Tw0
+
+                                         Tw0 w = Tw0 Tw−1
+                                                        −1 .
+10                                        VIDYA VENKATESWARAN
+
+
+Proof. Note that l(ww0 ) = l(w0 w) = l(w0 ) − l(w). Then the first equation follows from
+Eq. (2.19) with u = w−1 , v = ww0 , the second with u = w0 w and v = w−1 .             □
+Lemma 2.14. Let w ∈ W c and u ∈ Wc . Then l(wu) = l(w) + l(u).
+Lemma 2.15. Let w ∈ W c and u ∈ Wc . We have
+                                         −1           −1
+                                        T(w0 wu)
+                                                −1 = Tw0 Tw Tu
+
+
+                                             Tw0 wu = Tw0 Tw−1   −1
+                                                             −1 Tu−1 .
+
+Proof. Follows from Lemma 2.13 and Lemma 2.14.                                                     □
+Definition 2.16. Let ι : F[E] → F[E] defined by ι(xµ ) = x−µ and extending linearly. Note
+that ι preserves F[Λ].
+     One can easily verify the following identities:
+Proposition 2.17. Let 1 ≤ i ≤ r. Then
+   (1) w02 = 1
+   (2) ιw = wι for w ∈ W
+   (3) w0 αi∨ = −αw∨
+                     0 (i)
+   (4) si w0 = w0 sw0 (i) .
+Lemma 2.18. Let f ∈ F[Λ], 1 ≤ i, j ≤ r, and w0 (i) = j. We have
+                                           w0 si ∇i f = −∇j (w0 f ).
+Proof. We compute
+                                                  w0 f − s j w0 f
+                                 w0 s i ∇ i f =         ∨           = −∇j (w0 f )
+                                                     x αj − 1
+using Proposition 2.17.                                                                            □
+Theorem 2.19. For Λ ∈ L, the polynomial representation π of H
+                                                            eΛ on F[Λ] is given by
+the following formulas:
+                                  π(Tj )xλ = tj xsj λ + (tj − t−1      λ
+                                                               j )∇j (x )
+
+for λ ∈ Λ, 1 ≤ j ≤ r, and π(xµ )xλ = xλ+µ for µ ∈ Λ.
+Remark 2.20. The operators π(Tj ) for 1 ≤ j ≤ r are called Demazure-Lusztig operators.
+Definition 2.21. We write πv for the representation π : H    eΛ → End(F[Λ]) of Theorem
+2.19 with all Hecke parameters ti = v 1/2 for all 1 ≤ i ≤ r.
+   Using (2.21) and Theorem 2.19, we have the following formula for π(Tj−1 )f , with f ∈ F[Λ]
+and 1 ≤ j ≤ r:
+                                                             s f −f 
+                                                               j
+(2.22)                 π(Tj−1 )f = t−1
+                                    j  sj f + (t j − t −1
+                                                       j  )         ∨ .
+                                                             1 − x−αj
+Lemma 2.22. For 1 ≤ i ≤ r, we have
+                                             si ∇i = ∇i + si − 1.
+Proof. Let 1 ≤ i ≤ r and f ∈ F[Λ]. We compute directly using Definition 2.9
+                      ∨                                     ∨                ∨
+                    xαi (si f − f )   (si f − f ) + (xαi − 1)si f − (xαi − 1)f
+     si ∇i (f ) =        ∨          =                     ∨                    = (∇i + si − 1)f.   □
+                      x αi − 1                         x αi − 1
+          AFFINE HECKE ALGEBRAS AND SYMMETRIC QUASI-POLYNOMIAL DUALITY                                           11
+
+
+Lemma 2.23. Let 1 ≤ i ≤ r. We have
+                       π(Ti±1 )ιw0 = ιw0 π(Tw±1
+                                              0 (i)
+                                                    )
+                           π(Ti )w0 = w0 −π(Tw−1                  −1
+                                                                               
+                                               0 (i) ) + (t i + t i  )s w0 (i)   .
+Proof. Let λ ∈ Λ and 1 ≤ i ≤ r.
+  Consider the first statement. We have
+            π(Ti )ιw0 (xλ ) = π(Ti )x−w0 λ = ti x−si w0 λ + (ti − t−1
+                                                                   i )∇i (x
+                                                                            −w0 (λ)
+                                                                                    )
+          π(Ti−1 )ιw0 (xλ ) = (π(Ti ) − (ti − t−1
+                                               i ))x
+                                                     −w0 λ
+
+                            = ti x−si w0 λ + (ti − t−1
+                                                    i )∇i (x
+                                                            −w0 (λ)
+                                                                    ) − (ti − t−1
+                                                                               i )x
+                                                                                   −w0 λ
+                                                                                         .
+Using Proposition 2.17 and Definition 2.9 gives the first assertion. The argument for the
+second statement is similar.                                                           □
+  We write π(Tei ) for the operators with Hecke parameters ti replaced by t−1
+                                                                           i . We record
+the following relation.
+Proposition 2.24. Let 1 ≤ i ≤ r. Then, as operators on F[Λ], we have
+                                                 −1
+                                         π(Tei        ) = ιπ(Ti )ι.
+Proof. Follows from (2.22).                                                                                      □
+  Let h ∈ H eΛ be an arbitrary element. By the PBW Theorem for affine Hecke algebras,
+there is a unique decomposition          X
+                                    h=       fw Tw ,
+                                                  w∈W
+
+for fw ∈ F[Λ]. In other words, H
+                               eΛ is a free F[Λ]-module, with basis given by {Tw : w ∈ W }.
+
+Definition 2.25. Define the collection of F[Λ]-linear maps γw : H
+                                                                eΛ → F[Λ] for w ∈ W by
+                                      X
+                                 γw (     fw′ Tw′ ) = fw ,
+                                           w′ ∈W
+
+where fw′ ∈ F[Λ] for w′ ∈ W .
+  In Section 4, we will compute the coefficients γw (h) for specific elements h ∈ H
+                                                                                  eΛ and
+arbitrary w ∈ W . The following lemmas will be useful.
+Lemma 2.26. Let 1 ≤ i ≤ r, h ∈ H
+                               eΛ and w ∈ W . Then
+        γw (Ti h) = (ti − t−1                                                   −1
+                           i )∇i (γw (h)) + si γsi w (h) + δl(si w)<l(w) (ti − ti )si γw (h).
+
+Proof. Setting fŵ = γŵ (h) ∈ F[Λ], and using (2.20) and (2.18), we have
+                 X
+       Ti h = Ti     fŵ Tŵ
+                ŵ∈W
+              X                                                        X
+                     si fŵ Tsi ŵ + (ti − t−1                                        (ti − t−1
+                                                           
+          =                                 i )∇i (fŵ )Tŵ +                                i )(si fŵ )Tŵ .
+              ŵ∈W                                                ŵ:l(si ŵ)<l(ŵ)
+
+Taking the coefficient on Tw gives the desired result.                                                           □
+Lemma 2.27. Let f ∈ F[Λ] and w ∈ W . Then if l(w′ ) ≤ l(w), we have
+                                     γw (Tw±1
+                                            ′ f ) = δ{w=w ′ } wf.
+12                                           VIDYA VENKATESWARAN
+
+
+Proof. We will prove the statement by induction on l(w′ ). The base case l(w′ ) = 0 follows
+directly. Now assume the statement holds for l(w′ ) = j, w′ ∈ W , and suppose l(si w′ ) >
+l(w′ ) for some 1 ≤ i ≤ r. Suppose w ∈ W with l(w) ≥ l(si w′ ). By Lemma 2.26, we have
+
+     γw (Tsi w′ f ) = γw (Ti Tw′ f )
+                   = (ti − t−1                                                             −1
+                            i )∇i (γw (Tw′ f )) + si γsi w (Tw′ f ) + δl(si w)<l(w) (ti − ti )si γw (Tw′ f ).
+
+Applying the induction hypothesis, noting that l(w) > l(w′ ), l(si w) ≥ l(w′ ), we obtain
+γw (Tsi w′ f ) = δ{w=si w′ } si w′ f as desired. Likewise, applying Lemma 2.26 to
+                  −1                    −1 −1
+             γw (T(s   ′ −1 f ) = γw (Ti
+                     iw )
+                                          Tw′ −1 f ) = γw (Ti Tw−1                 −1      −1
+                                                                 ′ −1 f ) − (ti − ti )γw (Tw ′ −1 f ),
+
+
+             −1                                     ′ −1 f . The result now follows from induction.
+we find γw (T(s   ′ −1 f ) = δ{w=(si w ′ )−1 } (si w )
+                iw )
+                                                                                                                □
+
+2.4. Partial (anti-)symmetrizers. In this section, we recall the definition of partial
+(anti-)symmetrizers in HeΛ , as well as some of their main properties. We will use these in
+Section 3.3 to define partially (anti-)symmetric Macdonald polynomials.
+Definition 2.28. Let 1+ and 1− denote the symmetrizer and antisymmetrizer, respec-
+tively, in H
+           eΛ :
+                                X
+(2.23)                     1+ =     t(w)Tw
+                                                w∈W
+                                                X
+                                            −
+(2.24)                                    1 =          (−1)l(w) t(w)−1 Tw .
+                                                w∈W
+
+   There are the following alternate expressions for 1± :
+                                        X
+(2.25)                     1+ = t(w0 )2      t(w)−1 Tw−1
+                                                       −1
+                                                   w∈W
+                                                       X
+(2.26)                                 1− = t(w0 )−2         (−1)l(w) t(w)Tw−1
+                                                                             −1 .
+                                                       w∈W
+
+     Let 1 ≤ i ≤ r. We have the following identities in H
+                                                        eΛ :
+
+(2.27)                                          Ti 1± = ±t±1
+                                                          i 1
+                                                              ±
+
+
+
+(2.28)                                          1± Ti = ±t±1
+                                                          i 1
+                                                              ±
+
+
+(see [12]).
+Lemma 2.29. Let w ∈ W and f ∈ F[Λ]. Then
+      (1) w(π(1+ )f ) = π(1+ )f
+      (2) π(1− )wf = (−1)l(w) π(1− )f .
+Proof. Follows from
+                                sj = t−1               −2
+                                      j π(Tj ) − (1 − tj )∇j ∈ End(F[Λ])
+
+along with (2.27) and (2.28).                                                                                   □
+          AFFINE HECKE ALGEBRAS AND SYMMETRIC QUASI-POLYNOMIAL DUALITY                    13
+
+
+Definition 2.30. Let J ⊆ [1, r] with associated parabolic subgroup WJ . Define the J-partial
+symmetrizer and antisymmetrizer, respectively
+                                         X
+                         1+       +
+                           J = 1WJ =          t(w)Tw
+                                           w∈WJ
+                                              X
+                            1−    −
+                             J = 1WJ =            (−1)l(w) t(w)−1 Tw .
+                                           w∈WJ
+
+in H
+   eΛ .
+
+Remark 2.31. When J = [1, r], we have 1±    ±                         ±
+                                       J = 1 and when J = ∅, we have 1J = 1.
+
+Definition 2.32. Let J ⊆ [1, r]. We say f ∈ F[Λ] is J-partially (anti-)symmetric, respec-
+tively, if π(Tj )f = tj f (resp. π(Tj )f = −t−1
+                                             j f ) for j ∈ J.
+
+  Let w0 (WJ ) denote the longest word in WJ . Analogous to (2.25), we have
+Proposition 2.33. We have
+                                                 X
+                         1+
+                          J = t(w0 (WJ ))
+                                         2
+                                                      t(u)−1 Tu−1
+                                                                −1
+                                              u∈WJ
+                                                  X
+                         1−
+                          J = t(w0 (WJ ))
+                                         −2
+                                                        t(u)(−1)l(u) Tu−1
+                                                                        −1 .
+                                                 u∈WJ
+
+2.5. Demazure-Whittaker operators. In later sections, we will connect our results to
+recent work on metaplectic Whittaker functions, so we will need some related operators.
+We recall the following two definitions from [8] and [6].
+Definition 2.34 ([6, 8][Equations (30), (31) and Equation (4.3) resp.). Let q ∈ C. For
+1 ≤ i ≤ r, define the Demazure-Whittaker operators Ti,q acting on C[Λ] by
+                                          ∨
+                                       xαi − q −2        q −2 − 1
+                         Ti,q · f =            ∨  si f +        ∨ f,
+                                        1 − x αi         1 − x αi
+where f ∈ C[Λ]. For w = si1 · · · sir ∈ W a reduced expression, write
+                              Tw,q = Ti1 ,q · · · Tir ,q ∈ End(C[Λ]).
+  The (non-metaplectic) operators Tw,q will be used in Section 6 to provide formulas for
+metaplectic Whittaker functions.
+  We have the following two relations between πq2 (Tw ), πq2 (1− ), and Tw,q .
+Proposition 2.35. Let 1 ≤ i ≤ r and f ∈ C[Λ]. We have −q −1 πq2 (Ti )f = Ti,q f , so for
+w ∈ W,
+                            (−q)−l(w) πq2 (Tw )f = Tw,q f.
+Proof. Let 1 ≤ i ≤ r and λ ∈ Λ. By direct computation, we have
+                                                  ∨
+                                               x αi − 1              x si λ − x λ
+                  −q −1 πq2 (Ti )xλ = −xsi λ ·     ∨    + (q −2
+                                                                − 1)      ∨
+                                               x αi − 1               x αi − 1
+                                                 ∨
+                                     q −2 − xαi si λ q −2 − 1 λ
+                                   = α∨            x − α∨         x
+                                       x i −1            x i −1
+                                   = Ti,q xλ .
+See also Proposition 9.1 of [6].                                                          □
+14                                    VIDYA VENKATESWARAN
+
+
+Proposition 2.36. We have               X
+                                              Tw,q = πq2 (1− ).
+                                        w∈W
+
+Proof. Follows from Proposition 2.35 and Definition 2.28.                                   □
+
+                      3. Representations and (quasi-)polynomials
+3.1. Quasi-polynomial representations. In this section, we recall results from [26] that
+will be used throughout the rest of the paper. We also define coefficient functions of quasi-
+polynomials, and connect to them to coefficient functions of Hecke algebra elements (see
+Corollary 3.8).
+   Assume Λ ∈ L and, unless otherwise specified, c ∈ CΛ0 . So F[O     eΛ,c ] ⊆ F[E] is a free
+                           wc
+F[Λ]-module with basis x for w ∈ W .    c
+
+   Let f ∈ F[OeΛ,c ] ⊆ F[E]. We have the decomposition
+                                          X
+(3.1)                                f=        pw · xwc ,
+                                                  w∈W c
+
+where pw ∈ F[Λ].
+                                                            qp
+Definition 3.1. Let w ∈ W c . Define coefficient functions γw  : F[O
+                                                                   eΛ,c ] → F[Λ] by
+                                                  ′
+                                    X
+                               qp
+                                         pw′ · xw c = pw ,
+                                                    
+                              γw
+                                         w′ ∈W c
+
+where pw′ ∈ F[Λ] for w′ ∈ W c .
+   Recall the truncated divided-difference operator from [26], which plays an important
+role in the quasi-polynomial representation.
+Definition 3.2. Let ∇qp
+                     j : F[E] → F[E] for 1 ≤ j ≤ r be defined by
+                                                              ∨
+                                                   xy−⌊αj (y)⌋αj − xy
+                                  ∇qp  y
+                                   j (x ) =               ∨             ,
+                                              x αj − 1
+where y ∈ E (and extend by linearity to F[E]).
+     Note that since ⌊αj (y)⟩⌋ ∈ Z,
+                                                    ∨
+                                      x−⌊αj (y)⌋αj − 1
+                                             α∨
+                                                          ∈ F[Q∨ ].
+                                         x    j   −1
+Also note that ∇qp                          qp                                         +
+                j |F[P ∨ ] = ∇j , and that ∇j preserves the subspace F[OΛ,c ] for c ∈ C .
+                                                                       e
+   For 1 ≤ j ≤ r, let χj : R → {1, tj } be defined by
+                                            (
+                                              1, x ∈ R \ Z
+(3.2)                            χj (x) =
+                                              tj , x ∈ Z
+for x ∈ R.
+Theorem 3.3 ([26]). The quasi-polynomial representation π qp of H
+                                                                eΛ on F[E] is given by
+the following formulas:
+                                                                       qp y
+                       π qp (Tj )xy = χj (αj (y)) · xsj y + (tj − t−1
+                                                                   j )∇j (x )
+
+for y ∈ E, 1 ≤ j ≤ r, and π qp (xλ )xy = xλ+y for λ ∈ Λ and y ∈ E.
+          AFFINE HECKE ALGEBRAS AND SYMMETRIC QUASI-POLYNOMIAL DUALITY                      15
+
+
+Remark 3.4.
+                                      eΛ,c ], for c ∈ C + , is an invariant subspace of π qp .
+   (1) One can directly verify that F[O
+   (2) Let h ∈ HeΛ and f ∈ F[Λ]. Then, comparing the formulas of Theorem 2.19 and
+       Theorem 3.3, we have π qp (h)f = π(h)f .
+   (3) The specialization of Theorem 3.3 to the GLr context gives Theorem 1.2.
+  We write π qp (Tei ) for the operators with Hecke parameters ti replaced by t−1
+                                                                               i . We record
+the following relation, which extends Proposition 2.24.
+Proposition 3.5. Let 1 ≤ i ≤ r. Then, as operators on F[Λ], we have
+                                                −1
+                                    π qp (Tei        ) = ιπ(Ti )ι.
+Proof. Follows from Theorem 3.3 and (2.17).                                                 □
+  For c ∈ CΛ0 we define root-system statistics
+                                                        Y
+(3.3)                                hc (w) =                  tα .
+                                                      α∈Π(w)
+                                                      α(c)=0
+
+These match the statistics kw (c) defined in [26, (4.11)].
+Proposition 3.6. We have the following:
+   (1) If w ∈ W and l(si w) > l(w) then
+                                                     δα (wc)=0 c
+                                 hc (si w) = ti i              h (w).
+   (2) If φ(c) < 1, v ∈ W c and u ∈ Wc , then we have
+                                     c
+                                        h (vu) = t(u).
+Proof. These are special cases of [26, Lemma 5.6(1)], and can also be proven directly with
+standard root system manipulations.                                                     □
+Theorem 3.7. Let µ ∈ Λ, w ∈ W and c ∈ CΛ0 . Then we have
+                                π qp (xµ Tw )xc = hc (w)xµ+wc .
+In particular, if w ∈ W c then we have
+                                   π qp (xµ Tw )xc = xµ+wc .
+                                                                                      +
+Proof. The first statement is [26, Corollary 5.10(2)] (which holds for all c ∈ C with
+slightly more complicated root-system statistics if φ(c) = 1). It can also be shown directly
+by induction on l(w), using the explicit formulas in Theorem 3.3 together with Proposition
+3.6(1). The second statement follows from the first and 3.6(2).                           □
+Corollary 3.8. Let c ∈ CΛ0 . For h ∈ H
+                                     eΛ and w ∈ W c , we have
+                                   X                     X
+               γwqp qp
+                   (π (h)xc ) =        hc (w′ )γw′ (h) =   t(u)γwu (h).
+                                   w′ ∈W                              u∈Wc
+                                   w′ c=wc
+                    P
+Proof. Write h =     w∈W γw (h)Tw . Then by Theorem 3.7,
+                                                X
+                              π qp (h)xc =             γw (h)hc (w)xwc .
+                                          w∈W
+        qp
+Taking γw of both sides gives the first equality; reparametrizing and using Proposition 3.6
+gives the second.                                                                           □
+16                                   VIDYA VENKATESWARAN
+
+
+3.2. Quasi-polynomial generalizations of Macdonald polynomials in the q → ∞
+                  +
+limit. Let c ∈ C ⊂ E. In [26], we defined a family of quasi-polynomials Ey = Ey (q; t; τ ) ∈
+F[Oec ], indexed by y ∈ O
+                        ec , depending on parameters q, t = {ti } and an additional torus
+parameter τ ∈ Hom(Q, F× ) satisfying certain conditions. We also defined
+                                     Ey± = π qp (1± )Ey ∈ [O
+                                                           ec ]
+
+for y ∈ Oec (see Definitions 6.32, 6.39 of [26]). For y ∈ Λ (i.e., c = 0), Ey , E ± (resp.) are
+                                                                                 y
+nonsymmetric and (anti-)symmetric Macdonald polynomials (see Remark 6.33 of [26]).
+   In [26], we obtained several results for these quasi-polynomials in the q → ∞ limit
+(under some regularity conditions on τ that we implicitly assume here); we use the notation
+                        ±     ±
+E y = E y (q; t; τ ), E y = E y (q; t; τ ) for these objects.
+
+Theorem 3.9 (Theorem 6.49 of [26]). Let y ∈ O  ec with y = gy−1 y− , where g −1 ∈ W is
+                                                                            y
+minimal length and y− is anti-dominant. Then we have
+                                   E y = d(y; t) · π qp (Tg−1
+                                                           y
+                                                              )xy− .
+                       ec anti-dominant, E y = xy and E ± = π qp (1± )xy .
+In particular, for y ∈ O                                y
+
+  The coefficient d(y; t) is computed in [26].
+                   e± ) (resp.) denote t(w), π qp (1± ) (resp.) defined with respect to t−1 -
+  Let t̃(w), π qp (1                                                                     i
+parameters.
+Corollary 3.10. Let y ∈ O
+                        ec be dominant. Then
+                                                              ±
+                              π qp (1± )xy = t̃(w0 )∓2 ιE −y (q; t−1 ; τ )
+Proof. Using Proposition 3.5 and Theorem 3.9, we compute
+                                                                             ±
+               ιπ qp (1± )ιx−y = t̃(w0 )∓2 π qp (1̃± )x−y = t̃(w0 )∓2 E −y (q; t−1 ; τ ).
+Taking ι of both sides gives the result.                                                      □
+3.3. Partially (anti-)symmetric Macdonald polynomials in the q → ∞ limit. We
+now discuss some families of polynomials that appear in the results of this paper.
+Proposition 3.11. Let µ ∈ Λ dominant and ŵ ∈ W . We have the following identities in
+F[Λ]:
+           π(Tŵ−1 )xµ = d(−ŵ−1 µ; t−1 )−1 · ιE ŵ−1 (−µ) (q; t−1 ; τ )
+        π(1±         µ              ∓2    −1   −1 −1
+           J Tŵ−1 )x = t̃(w0 (WJ )) d(−ŵ µ; t )
+                                                          e± )E ŵ−1 (−µ) (q; t−1 ; τ )
+                                                     · ιπ(1 J
+               e± ) (resp.) denote t(µ), π(1± ) (resp.) defined with respect to t−1 -parameters.
+where t̃(µ), π(1 J                          J                                    i
+
+Proof. The first equality follows from Proposition 2.24 and Theorem 3.9.
+  For the 1+
+           J equality, we compute using Proposition 2.33 and Definition 2.30,
+                                                 X
+                        ιπ(1+J )ι = t(w0 (WJ ))
+                                               2
+                                                   t(u)−1 ιπ(Tu−1
+                                                                −1 )ι
+                                                       u∈WJ
+                                                       X
+                                                   2
+                                   = t(w0 (WJ ))              t̃(u)π(Teu )
+                                                       u∈WJ
+                                                   −2     e+ ).
+                                   = t̃(w0 (WJ ))       π(1 J
+
+The 1−
+     J case is analogous.                                                                     □
+          AFFINE HECKE ALGEBRAS AND SYMMETRIC QUASI-POLYNOMIAL DUALITY                       17
+
+
+  We use the partial symmetrizer to define J-partially (anti-)symmetric Macdonald poly-
+nomials. The following lemma is essential in indexing these objects.
+Lemma 3.12. Let J ⊆ [1, r] and λ ∈ Λ. The following are equivalent:
+  (1) αj (λ) ≥ 0 for all j ∈ J.
+  (2) There are (necessarily unique) µ ∈ Λ+ , ŵ−1 ∈ W Jµ such that λ = ŵ−1 µ and
+      ŵ ∈ W J .
+  (3) There are µ ∈ Λ+ and ŵ ∈ W J such that λ = ŵ−1 µ and µ + ŵc ∈ E + where
+      c ∈ C + , φ(c) < 1, and Jc = J (this condition does not depend on choice of c).
+Proof. (1) ⇒ (2): There are unique µ ∈ Λ+ , ŵ−1 ∈ W Jµ such that λ = ŵ−1 µ. Suppose
+for contradiction that ŵ ̸∈ W J . Then ∃α ∈ Φ+                       −
+                                              J such that β = ŵα ∈ Φ . By (1), we have
+            −1                              +           −
+α(λ) = α(ŵ µ) = β(µ) ≥ 0. Since µ ∈ Λ and β ∈ Φ , we must have β(µ) = 0, which
+implies β ∈ Φ−                −1          +
+              Jµ . But then ŵ β = α ∈ Φ contradicts ŵ
+                                                         −1 ∈ W Jµ .
+
+   (2) ⇒ (3): Suppose µ ∈ Λ+ , ŵ−1 ∈ W Jµ , ŵ ∈ W J and c ∈ C + with φ(c) < 1
+and Jc = J. We need to show µ + ŵc ∈ E + . Suppose not, then ∃α ∈ Φ+ such that
+α(µ + ŵc) = α(µ) + (ŵ−1 α)(c) < 0. Since φ(c) < 1, this implies |(ŵ−1 α)(c)| < 1. So
+α(µ) = 0 since we can’t have α(µ) ≥ 1. So ŵ−1 α ∈ Φ− \ Φ−                   +
+                                                              J and α ∈ ΦJµ . But this
+contradicts ŵ−1 ∈ W Jµ .
+   (3) ⇒ (1): Suppose λ = ŵ−1 µ, where ŵ ∈ W J , µ ∈ Λ+ and µ + ŵc ∈ E + . Let α ∈ Φ+
+                                                                                       J
+then α(λ) = α(ŵ−1 µ) = (ŵα)(µ) ≥ 0 since ŵα ∈ Φ+ (as ŵ ∈ W J ) and µ ∈ Λ+ .        □
+Definition 3.13. If λ ∈ Λ satisfies the conditions of Lemma 3.12, we say it is J-dominant.
+Remark 3.14. The definition above coincides with [3] for GLr , which uses condition (1) of
+Lemma 3.12.
+Definition 3.15. Let J ⊆ [1, r] and let λ ∈ Λ be J-dominant with λ = ŵ−1 µ where µ ∈ Λ+
+and ŵ−1 ∈ W Jµ . We define the polynomials
+         pJ,+         +
+          λ (t) := π(1J Tŵ−1 )x
+                                 µ
+
+                                                          e+ )E ŵ−1 (−µ) (q; t−1 ) ∈ F[Λ]
+                 = t̃(w0 (WJ ))−2 d(−ŵ−1 µ; t−1 )−1 · ιπ(1 J
+         pJ,−         − −1     µ     −
+          λ (t) := π(1J Tŵ )ιx = π(1J )E ŵ(−µ) (q; t) ∈ F[Λ].
+
+Remark 3.16. In the GLr -setting, up to a normalization factor, the polynomials pJ,±λ   were
+introduced by Baker, Dunkl, and Forrester [3] at the q-level, using E instead of E in
+the definition above (up to applying ι and inverting t-parameters). In fact, they consider
+polynomials that are symmetric and antisymmetric with respect to two prescribed sets of
+variables, but this will not be needed here. These objects were investigated further by
+Marshall [22] and Baratta [4]. More recently, in the GLr -setting the polynomials pJ,−µ , for
+µ ∈ Λ+ (i.e., ŵ = 1), were related to p-adic parahoric Whittaker functions, see Proposition
+9.5 of [6]. In another recent work [2], the partially anti-symmetric polynomials pJ,−
+                                                                                    λ   were
+obtained as partition functions for certain vertex models studied in that paper.
+3.4. Metaplectic representations. In this section, we recall results from [25] on meta-
+plectic representations that will be used throughout the rest of the paper. We also define
+coefficient functions of metaplectic polynomials, and connect them to coefficient functions
+of Hecke algebra elements (see Corollary 3.27).
+   Fix a metaplectic parameter n ∈ Z≥1 and lattice Λ ∈ L. Let Q : Λ → Q be a non-
+zero W -invariant quadratic form that restricts to an integer-valued quadratic form on Q∨ .
+18                                  VIDYA VENKATESWARAN
+
+
+Write B : Λ × Λ → Q for the W -invariant symmetric bilinear pairing
+                     B(λ, µ) := Q(λ + µ) − Q(λ) − Q(µ)          (λ, µ ∈ Λ).
+Then
+(3.4)                     B(λ, α∨ ) = Q(α∨ )α(λ)      (λ ∈ Λ, α ∈ Φ)
+and
+                                    n          lcm(n, Q(α∨ ))
+(3.5)               m(α) :=                  =                       (α ∈ Φ)
+                              gcd(n, Q(α∨ ))      Q(α∨ )
+defines a W -invariant Z>0 -valued function on Φ. The associated metaplectic root system
+is defined by
+                             Φm := {αm | α ∈ Φ} with αm := m(α)−1 α.
+Then Φm = m · Φ ≃ Φ if m is constant, and Φm ≃ Φ∨ otherwise (see [25]). In particular,
+the Weyl group of Φm is still W . The fixed basis {α1 , . . . , αr } of Φ determines a basis
+{α1m , . . . , αrm } of Φm . Note that Φm∨ = {αm∨ }α∈Φ , with αm∨ = m(α)α∨ . Write
+                                     Qm∨ := ZΦm∨ ⊆ Q∨
+for the coroot lattice of Φm . Let Λ ∈ L (note that L is defined with respect to Φ, not Φm )
+and
+                              Λm = {λ ∈ Λ : m(α)|α(λ) for all α ∈ Φ}.
+Then H     eΛm is the Λm -extended affine Hecke algebra associated to Φm . It has generators
+T1 , . . . , Tr and xλ for λ ∈ Λm .
+   The alcove
+(3.6)             C m+ := {y ∈ E | 0 < α(y) < m(α)     ∀ α ∈ Φ+ }
+(3.7)                  = {y ∈ E | 0 < αi (y) for 1 ≤ i ≤ r and φ(y) < m(φ)}
+is the metaplectic fundamental alcove in E.
+   In analogy with Definition 2.3, we have the following.
+Definition 3.17. For Λ ∈ L, we define
+                            CΛ0 m = {c ∈ C m+ ∩ Λ : W
+                                                    fΛm ,c = Wc }.
+
+   For m, x ∈ Z≥1 let rm (x) = (x mod m) ∈ {0, 1, . . . , m − 1} be the remainder function.
+   We define the metaplectic divided difference ∇m       i : F[Λ] → F[Λ], 1 ≤ i ≤ r, by
+                                       1 − x(rm(αi ) (αi (λ))−αi (λ))α∨i 
+                        ∇mi (x λ
+                                 ) :=                   m(α    )α∨          xλ
+                                                  1−x        i   i
+
+for λ ∈ Λ. Note that, by a geometric series expansion,
+                            1 − x(rm(αi ) (αi (λ))−αi (λ))α∨i 
+                                                    ∨              ∈ F[Λm ].
+                                     1 − xm(αi )αi
+Definition 3.18 (Representation parameters). Let gj (α) ∈ F× for j ∈ Z and α ∈ Φ be
+parameters satisfying the following conditions:
+   (1) gj (α) = −1 if j ∈ nZ,
+   (2) gj+n (wα) = gn (α)      (∀w ∈ W ),
+   (3) gj (α)gn−j (α) = t−2
+                         α  if j ∈ Z \ nZ.
+     We recall the metaplectic representation of H
+                                                 eΛm from [25] (see also [16]).
+           AFFINE HECKE ALGEBRAS AND SYMMETRIC QUASI-POLYNOMIAL DUALITY                         19
+
+
+Theorem 3.19. The formulas
+                        π m (Ti )xλ := −ti g−B(λ,α∨i ) (αi ) − (ti − t−1  m λ
+                                                                      i )∇i (x )
+(3.8)
+                      π m (X µ )xλ := xλ+ν
+for λ ∈ Λ, i = 1, . . . , r and µ ∈ Λ turn F[Λ] into a left H
+                                                            eΛm -module.
+Remark 3.20.
+   (1) Note that F[OeΛm ,c ], for c ∈ C m+ ∩ Λ, is an invariant subspace of π m .
+   (2) In the non-metaplectic case, n = 1, the representation π m reduces to the polynomial
+       representation π of Theorem 2.19.
+   (3) The metaplectic representation π m can be identified with the quasi-polynomial
+       representation π qp of H e Λm restricted to F[Λ] ⊂ F[E], see [26, Section 9].
+  We have the following crucial relation between π m restricted to the subspace F[Λm ] and
+the polynomial representation π of Theorem 2.19, in the case where m(α) is constant.
+Proposition 3.21. Suppose m(α) is constant, m(α) = m for all α ∈ Φ. Let dm : F[Λ] →
+F[Λm ] be the linear extension xλ → xmλ for λ ∈ Λ. Then for w ∈ W we have
+                                       π m (Tw ) ◦ dm = dm ◦ π(Tw ).
+Proof. Follows from the formulas in Theorem 3.19 and Theorem 2.19.                              □
+  We now define γ-coefficient functions analogous to Definition 3.1 in the quasi-polynomial
+context.
+Definition 3.22. Let c ∈ CΛ0 m and w ∈ W c . Define coefficient functions γw,c
+                                                                           m = γm :
+                                                                                w
+  e m
+               m
+F[OΛ ,c ] → F[Λ ] by
+                                              ′ 
+                                  X
+                               m
+                              γw      pw′ · xw c = pw ,
+                                            w′ ∈W c
+where pw          m       ′   c
+           ′ ∈ F[Λ ] for w ∈ W .
+
+
+Lemma 3.23. Let c ∈ CΛ0 m , w ∈ W c , and f ∈ F[O
+                                                eΛm ,c ]. We have
+                                    m           m
+                                  ιγw,c (f ) = γ(ww0)
+                                                     −w0 c ,−w c (ιf ).
+                                                              0
+
+                                         w′ c , so ιγ m (f ) = ιp . On the other hand
+                    P
+Proof. Write f =       w′ ∈W c pw′ · x               w,c         w
+                                                  ′                              ′
+                             X                             X
+                     ιf =             (ιpw′ ) · x−w c =             (ιpw′ ) · xw w0 (−w0 c) .
+                            w′ ∈W c                       w′ ∈W c
+
+Note that −w0 c ∈ CΛ0 m , so ιγw,c
+                               m (f ) = γ m
+                                         (ww0 )−w0 c ,−w0 c
+                                                            (ιf ).                              □
+
+Definition 3.24. For w ∈ W and c ∈ CΛ0 m , we define root system statistics hm,c (w) by
+                                              Y
+                     hm,c (w) = (−1)l(w) t(w)      g−B(c,α∨ ) (α).
+                                                           α∈Π(w)
+
+  These statistics are related to those defined in the quasi-polynomial context (3.3) via
+the identifications in [26, Section 9].
+Proposition 3.25. Let c ∈ CΛ0 m , then the root system statistics hm,c (w) satisfy the fol-
+lowing properties:
+    (1) If w ∈ W and l(si w) > w then
+                               hm,c (si w) = −ti g−B(wc,α∨i ) (αi )hc (w)
+20                                     VIDYA VENKATESWARAN
+
+
+     (2) If v ∈ W c and u ∈ Wc , then we have
+                                      hm,c (vu) = hm,c (v)t(u).
+Proof. These follow from standard root-system manipulations.                                □
+Theorem 3.26. Let c ∈ CΛ0 m , µ ∈ Λm , and w ∈ W . Then
+                                   π m (xµ Tw )xc = hm,c (w)xµ+wc .
+Proof. This follows from Theorem 3.7 and the identifications in [26, Section 9]. It can also
+be proved directly using induction on l(w) as follows. The result is trivial for w = 1, now
+suppose that w ∈ W and l(si w) > l(w) for some 1 ≤ i ≤ r. Then we have 0 ≤ αi (wc) <
+m(α) (the latter uses c ∈ CΛ0 m ). It then follows from the formulas in Theorem 3.19 and
+the induction hypothesis that
+               π m (Tsi w )xc = hm,c (w)π m (Ti )xwc = −ti g−B(wc,α∨i ) hm,c (w)xsi wc ,
+and the result then follows from Proposition 3.25(1).                                       □
+Corollary 3.27. Let c ∈ CΛ0 m . Let w ∈ W c and h ∈ HeΛm , then we have
+                                                   X
+                       m
+(3.9)                 γw,c (π m (h)xc ) = hm,c (w)   t(u)γwu (h).
+                                                         u∈Wc
+
+3.5. Whittaker functions. We briefly recall the connection between the representations
+discussed so far and (metaplectic) Whittaker functions.
+   We recall the connection between the representation π m , the metaplectic Demazure-
+Lusztig operators, and metaplectic Whittaker functions of [16], we will follow [25, 26].
+Definition 3.28. We will write πvm for the metaplectic representation π m with all Hecke
+parameters ti := v 1/2 and equal representation parameters, gj := gj (α) for all α ∈ Φ, j ∈ Z.
+In [25, 26], this is referred to as the “equal Hecke and parameter case”. We will also write
+hm,c
+ v   to denote the statistics in Definition 3.24 under this particular specialization. We will
+suppress the dependence on v when it is clear from context.
+Remark 3.29. In the non-metaplectic case, n = 1, the representation πvm reduces to the
+polynomial representation πv of Definition 2.21.
+Definition 3.30. [16, 25] Define the metaplectic operators Ti,v  m ∈ End(F[Λ]) as in (4.5) of
+
+[25] by
+                                m
+                              Ti,v  = −v 1/2 yρ πvm (Ti−1 )y−ρ ,
+for 1 ≤ i ≤ r, where we have set x = y to match the notation in the rest of this paper for
+Whittaker functions. For w = si1 · · · sir ∈ W a reduced expression, we write
+                                  m
+                                 Tw,v = Tim
+                                          1 ,v
+                                               · · · Tim
+                                                       r ,v
+                                                            ∈ End(F[Λ]).
+For λ ∈ Λ+ and w ∈ W , define the polynomials
+                m
+              Iew,λ            m
+                    (y; v) := Tw,v (yw0 λ ) = (−v 1/2 )l(w) yρ πvm (Tw−1 −1 )y
+                                                                               −ρ+w0 λ
+                              X
+               fm (y; v) :=
+               W λ
+                                     m
+                                    Tw,v (yw0 λ ) = v l(w0 ) yρ πvm (1− )y−ρ+w0 λ .
+                                 w∈W
+We also define the closely-related function
+                                                   X
+                                   Wm
+                                   f
+                                    λ (y; v) :=
+                                                           m
+                                                         ιTw,v ι(yλ ),
+                                                   w∈W
+          AFFINE HECKE ALGEBRAS AND SYMMETRIC QUASI-POLYNOMIAL DUALITY                           21
+
+
+        Wm
+so that f         fm
+         λ (y) = ιW−w0 λ (y). There is also the following relation:
+                            fm (y) = v l(w0 ) y−ρ ιw0 ιπ m (1− )y−ρ+w0 λ
+                         w0 Wλ
+
+                                      = v l(w0 ) y−ρ ιπ m (1− )y−ρ−λ
+                                         fm (y)
+                                      = ιW−w0 λ
+
+                                       Wm
+                                      =fλ (y).
+
+Remark 3.31. The operators Twm are the metaplectic Demazure-Lusztig operators intro-
+                                                     fm (y) (resp. Iem (y)) are the metaplectic
+duced in [16]. It is shown in [16] (resp. [23]) that Wλ              w,λ
+spherical (resp. Iwahori) Whittaker functions. These objects have also been investigated
+in many other recent papers, see e.g., [6, 7, 8, 24].
+   Using Definition 3.30, Remark 3.20, and Proposition 2.36, there is the following formula
+for the non-metaplectic spherical Whittaker functions in terms of the Demazure-Whittaker
+operators (recall Definition 2.34):
+                                                                           X
+(3.10)    W         f1 (y; v) = v l(w0 ) yρ πv (1− )y−ρ+w0 λ = v l(w0 ) yρ
+          fλ (y) := W                                                        Tw,v1/2 y−ρ+w0 λ ,
+                       λ
+                                                                            w∈W
+
+for λ ∈ Λ+ . Note that, in GL   r+1 , (3.10) may be rewritten using ρGL = (r − 1, r − 2, . . . , 0)
+                                                  X
+(3.11)                   fλ (y) = v l(w0 ) yρGL
+                         W                              Tw,v1/2 y−ρGL +w0 λ ,
+                                                  w∈W
+since ρ − ρGL is constant.
+Remark 3.32. Suppose λ ∈ Λm . Then using the fact that πvm restricts to the polynomial
+representation on the subspace F[Λm ] [26], we have
+                                  m
+                                yρ −ρ W
+                                      fm (y) = W
+                                       λ−ρ
+                                               fλ−ρm ,Φm (y).
+
+In the case when m(α) = m for all α, we have W               fλ/m−ρ,Φ (ym ).
+                                             fλ−ρm ,Φm (y) = W
+
+   Recall the (component) metaplectic Whittaker functions ϕ̃oθ introduced in [7]. These
+depend on a choice of coset representatives for Λ/Λm , which we take to be {ρ − wc : c ∈
+e 0 m , w ∈ W c }, where we have fixed a choice of representatives C
+C                                                                  e 0 m for C 0 m /ΩΛm . Note
+  Λ                                                                  Λ        Λ
+e 0 m∨ = C 0 m∨ . In the GLr setting we take the representatives to be
+C Q         Q
+
+(3.12)               e 0 m := {(c1 , . . . , cr ) : m > c1 ≥ c2 ≥ · · · ≥ cr ≥ 0},
+                     C Λ
+in which case our representatives agree with [7, (4.1)]. For other types these may be an
+incomplete set of representatives, we can extend arbitrarily as all of our computations and
+                                               e 0 m . For θ ∈ W C
+                                  fΛm -span of C
+results will be restricted to the W                              e 0 m , we set ϕ̃o = ϕ̃o .
+                                                 Λ                 Λ              θ     ρ−θ
+                                                   m
+   We relate these objects to the coefficients γw of Definition 3.22. This will be used
+in Section 6 where we translate our results on antisymmetric quasi-polynomials to the
+metaplectic setting.
+Proposition 3.33. Let µ − ρ ∈ Λ+ with decomposition w0 µ = η + ŵc for some η ∈ Λm ,
+ŵ ∈ W c , c ∈ C
+               e 0 m and let θ ∈ W · C      e 0 m . Also let ρ′ ∈ Λ such that ρ − ρ′ ∈ Eco . Then
+                 Λ                            Λ
+                      ρ′ −θ o        ρ′ −µ
+                                           ; v) = v l(w0 ) ιγw
+                                                             m
+                                                                             πvm (1− )y−µ ,
+                                                                                         
+                    y      ϕ̃θ (y; ϖ                              c
+                                                              0 w̃ w0 ,−w0 c
+
+if w0 θ = w̃c for some w̃ ∈ W with w0 w̃ ∈ W c . Otherwise it is equal to zero. In particular,
+it is always a polynomial in F[Λm ].
+22                                       VIDYA VENKATESWARAN
+
+
+Proof. We have
+                                         ′
+                                                        h X                    ′
+                                                                                   iρ′ −θ
+(3.13)                         ϕ̃oθ (y; ϖρ −µ ; v) =                m
+                                                                  ιTw,v ιyµ−ρ
+                                                            w∈W
+
+where f (y)γ ∈ y−γ F[Λm ] are the component functions defined in [7]. Note that the oper-
+ators Ti are used there (see (3.49) of [7]), but it is an easy check that Ti = ιTim ι.
+  Since
+                             m
+                           ιTw,v ι = (−1)l(w) v l(w)/2 ιxρ πvm (Tw−1
+                                                                   −1 )x
+                                                                        −ρ
+                                                                           ι,
+using (2.25), we have
+                                               ′                                       ′
+                         X
+                                   m
+                                 ιTw,v ιyµ−ρ = v l(w0 ) ιyρ πvm (1− )y−µ+ρ −ρ .
+                         w∈W
+
+Since ρ − ρ′ ∈ Eco , we may replace ρ in the expression above by ρ′ . So the expression above
+is equal to
+                                                        ′
+(3.14)                                   v l(w0 ) y−ρ ιπvm (1− )y−µ .
+
+  We have −µ = −w0 η − w̃w0 c, where w0 ŵ = w̃w0 . Now −w0 c ∈ C          e 0 m , so πvm (1− )y−µ ∈
+                                                                            Λ
+  eΛm ,−w c ]. Thus ιπ m (1− )y−µ ∈ F[O
+F[O                                         eΛm ,c ]. So for (3.13) to be non-vanishing we must
+          0             v
+have θ = w′ c for some w′ ∈ W c . If this condition is satisfied, then it follows from the
+definitions that (3.13) is equal to
+                                           ′
+                               v l(w0 ) y−ρ +θ γw
+                                                m        m − −µ
+                                                                  
+                                                  ′ ,c ιπv (1 )y    .
+The result then follows from Lemma 3.23 and Lemma 2.8.                                 □
+                                                                              fm . From
+  As discussed in [8], θ ϕ̃oθ is the metaplectic spherical Whittaker function W
+                        P
+the previous proposition, we obtain the following relationship between these objects and
+the coefficient functions γ m of antisymmetric polynomials πvm (1− )y−µ .
+Corollary 3.34. Let µ − ρ ∈ Λ+ with decomposition w0 µ = η + ŵc for some η ∈ Λm ,
+               e 0 m . Also let ρ′ ∈ Λ such that ρ − ρ′ ∈ Eco . Then
+ŵ ∈ W c , c ∈ CΛ
+                  ′               ′
+         X                                            X
+               yρ ϕ̃ow0 w̃c (y; ϖρ −µ ; v) = v l(w0 )   yw0 w̃c ιγw
+                                                                  m                m − −µ
+                                                                                           
+                                                                     w̃ c w ,−w c πv (1 )y
+                                                                   0       0   0
+      w0 w̃∈W c                                             w0 w̃∈W c
+                                                   ρ′
+                                                    fm ′ (y; v)
+                                             = y w0 Wµ−ρ
+                                                    ′
+                                             = yρ f
+                                                  Wm
+                                                   µ−ρ′ (y; v).
+
+Proof. The first equality follows from Proposition 3.33, by summing both sides over W c
+and multiplying by the appropriate monomial. The second and third equalities follows
+from Lemma 3.23, as well as
+                   X
+                          yw0 w̃c γw
+                                   m
+                                           ιπvm (1− )y−µ = w0 ιw0 πvm (1− )y−µ
+                                                        
+                                    0 w̃,c
+                   w0 w̃∈W c
+                                                                        = w0 πvm (1− )yw0 µ
+
+and lastly Definition 3.30. See also Section 2.2 of [8] for the very last statement (noting
+that their sum is over all θ instead of the restricted sum above).                        □
+          AFFINE HECKE ALGEBRAS AND SYMMETRIC QUASI-POLYNOMIAL DUALITY                        23
+
+
+Remark 3.35. Consider the special case of Corollary 3.34 when c ∈ Eco . In this case, we
+obtain a non-metaplectic spherical Whittaker function. Indeed, we have µ ∈ Λm , Wc = W
+and W c = 1. Using Remark 3.32, we have
+                                fm (y) = w0 y−ρm W
+     yρ ϕ̃o (y; ϖρ−µ ) = w0 y−ρ W                fµ−ρm ,Φm (y) = yρm W
+                                                                     fµ−ρm ,Φm (y).
+         c                         µ−ρ
+We also have
+                                      m
+             w0 yρ ϕ̃oc (y; ϖρ−µ ) = y−ρ Wfµ−ρm ,Φm (y) = y−ρm w0 f
+                                                                  Wµ−ρm ,Φm (y).
+For GLr this is Theorem E of [8], see also the second case of Remark 6.5.
+   By Corollary 3.34, to compute W fm ′ , it is sufficient to compute ϕ̃o                     c
+                                     µ−ρ                                 w0 w̃c for all w̃ ∈ W ;
+such formulas will be provided in Section 6. Our formulas are in terms of (nonmetaplectic)
+parahoric Whittaker functions, defined and studied in Section 4 of [6]. We briefly recall
+the relevant background here. Let J ⊆ [1, r] with associated parabolic subgroup WJ . Let
+w ∈ W J . Then the parahoric Whittaker function ψw     J is defined as in equation (18) of [6]
+
+as a sum of Iwahori-Whittaker functions over the subgroup WJ .
+   We will need the following result from [6], which gives a formula for ψw   J in terms of the
+
+action of the Demazure-Whittaker operators Ti (recall Definition 2.34).
+Theorem 3.36. Let J ⊆ [1, r] and w ∈ W J . Let w′ ∈ W and λ + ρ ∈ Λ+ . Then
+                                       ′
+                                                X
+            ψwJ
+                (y; ϖ−λ w′ ; v) = v l(w ) · y−ρ   Twu,v−1/2 Tw−1
+                                                               ′ ,v −1/2 y
+                                                                           λ+ρ
+                                                                               .
+                                                  u∈WJ
+
+Proof. Follows from [6] equation (18) and [6] Corollary 3.9, using the relation (29) of [6] to
+translate between their operators Ti and Ti , and the fact that Twu = Tw Tu for u ∈ WJ . □
+
+                   4. Matrix coefficients of (anti-)symmetrizers
+   Let h ∈ H eΛ . In this section we calculate the matrix coefficients γw (1± h) for left mul-
+tiplication by the (anti-) symmetrizer (recall Definitions 2.25, 2.28). Our formulas are in
+terms of the polynomial representation π.
+Definition 4.1. Define the F-linear operators A±
+                                               w,ŵ : F[Λ] → F[Λ] for w, ŵ ∈ W by
+
+                                    A±                 ±
+                                     w,ŵ (f ) := γw (1 f Tŵ )
+for f ∈ F[Λ].
+  For any h ∈ H     eΛ and w ∈ W , in order to determine γw (1± h), it suffices to compute
+ ±
+Aw,ŵ (γŵ (h)) for all ŵ ∈ W . Indeed, by linearity, we have
+                         X             X                        X
+(4.1)   γw (1± h) = γw 1±   γŵ (h)Tŵ =   γw (1± γŵ (h)Tŵ )) =   A±
+                                                                     w,ŵ (γŵ (h)).
+                            ŵ∈W                ŵ∈W                     ŵ∈W
+  It will be convenient to work with the following reparameterizations of the A-operators.
+                                               ±
+Definition 4.2. Define the F-linear operators Bw, ŵ : F[Λ] → F[Λ] for w, ŵ ∈ W by
+                                      +           +
+                                     Bw, ŵ = w0 Aw0 w,ŵ
+                                      −            −
+                                     Bw, ŵ = ιw0 Aw0 w,ŵ ι.
+
+Lemma 4.3. We have
+                                    ±
+                                   B1,1 = (±1)l(w0 ) t(w0 )±1 .
+24                                          VIDYA VENKATESWARAN
+
+
+Proof. Let f ∈ F[Λ]. Then we have
+                                                X
+         A±                  ±
+                                                     (±1)l(w) t(w)±1 Tw f = (±1)l(w0 ) t(w0 )±1 w0 f,
+                                                                         
+          w0 ,1 (f ) = γw0 (1 f ) = γw0
+                                               w∈W
+where we have applied Lemma 2.27. The result then follows from Definition 4.2.                                        □
+Lemma 4.4. Let w, ŵ ∈ W and 1 ≤ i ≤ r. If l(si w) > l(w) then we have
+                                             Bs+i w,ŵ = π(Ti−1 )Bw,
+                                                                  +
+                                                                     ŵ
+                                             Bs−i w,ŵ = −π(Ti )Bw,
+                                                                 −
+                                                                    ŵ .
+
+Proof. Let j = w0 (i), and note that l(sj w0 w) = l(wsi w) < l(w0 w). Let f ∈ F[Λ].
+  By (2.27), we have
+                   γw0 w (Tj 1± f Tŵ ) = (±ti )±1 γw0 w (1± f Tŵ ) = (±ti )±1 A±
+                                                                                 w0 w,ŵ (f )
+On the other hand, by Lemma 2.26, the LHS is equal to
+     (ti − t−1            ±                        ±                 −1            ±
+            i )∇j γw0 w (1 f Tŵ ) + sj γsj w0 w (1 f Tŵ ) + (ti − ti )sj γw0 w (1 f Tŵ )
+                            = (ti − t−1     ±                  ±                        −1     ±
+                                     i )∇j Aw0 w,ŵ (f ) + sj Aw0 si w,ŵ (f ) + (ti − ti )sj Aw0 w,ŵ (f ).
+Setting these equal, multiplying both sides by sj and rearranging terms, we obtain
+     A±                       ±1   ±                     −1        ±                     −1  ±
+      w0 si w,ŵ (f ) = (±ti ) sj Aw0 w,ŵ (f ) − (ti − ti )sj ∇j Aw0 w,ŵ (f ) − (ti − ti )Aw0 w,ŵ (f )
+                    = (±ti )∓1 sj A±                     −1     ±
+                                   w0 w,ŵ (f ) − (ti − ti )∇j Aw0 w,ŵ (f ),
+where we have applied Lemma 2.22. We can rewrite these as follows:
+                                                                         −1
+                     A+                                                         +
+                      w0 si w,ŵ (f ) = −π(Tj )Aw0 si w,ŵ (f ) + (ti + ti )sj Aw0 w,ŵ (f )
+                     A−
+                      w0 si w,ŵ (f ) = −π(Tj )Aw0 si w,ŵ (f ).
+The results now follow from Definition 4.2 and Lemma 2.23.                                                            □
+Lemma 4.5. Let w, ŵ ∈ W and 1 ≤ i ≤ r. If l(si ŵ) > l(ŵ), we have
+                                             +          +
+                                            Bw,si ŵ
+                                                     = Bw, ŵ π(Ti )
+                                             −           −         −1
+                                            Bw,si ŵ
+                                                     = −Bw, ŵ π(Ti ).
+
+Proof. Let f ∈ F[Λ]. By (2.28), we have
+                       γw (1± Ti f Tŵ ) = (±ti )±1 γw (1± f Tŵ ) = (±ti )±1 A±
+                                                                               w,ŵ (f ).
+On the other hand, by (2.20) and (2.18), the LHS is equal to
+        γw 1± (si f Tsi ŵ + (ti − t−1               ±                        −1  ±
+                                                 
+                                    i )∇i f Tŵ ) = Aw,si ŵ (si f ) + (ti − ti )Aw,ŵ (∇i f )
+
+  Consider first the A+ case. Setting the two expressions equal and putting f := si g, we
+obtain
+                                                                                           
+                                                                           −1
+                         A+w,si ŵ (g) = A  +
+                                            w,ŵ   t i s i g −   (t i − t  i  )∇  i (s i g)    .
+
+Using ∇i si g = −∇i g, along with Theorem 2.19, the RHS is equal to A+
+                                                                                                                      
+                                                                                                          w,ŵ π(Ti )g as
+desired.
+  Now consider the A− case. Setting the two expressions equal and putting f := si w0 g
+we obtain
+                                                                                                     
+                A−w,si ŵ (w0 g)   = A −
+                                       w,ŵ   −  t −1
+                                                   i    s  i w 0 g −  (t i  − t −1
+                                                                                i   )∇   i (s i w 0 g)  .
+           AFFINE HECKE ALGEBRAS AND SYMMETRIC QUASI-POLYNOMIAL DUALITY                             25
+
+
+Let 1 ≤ j ≤ r be such that w0 (j) = i. The RHS above is equal to
+                                                                        
+                       A−w,ŵ   − t −1
+                                    i  w  s
+                                         0 j g − (t i − t −1
+                                                          i  )∇i (w s
+                                                                   0 j g)  .
+By Lemma 2.18, this is equal to
+                                                                      
+                     A−w,ŵ   − t −1
+                                  i  w  s
+                                       0 j g + (t i − t −1
+                                                        i  )w s ∇ (s
+                                                             0 j j j g)  .
+
+By (2.22) and using ∇j sj g = −∇j g, the RHS is equal to −A−           −1
+                                                           w,ŵ (w0 π(Tw0 (i) )(g)).                □
+
+   The following result, which is the main theorem of this section, expresses A±
+                                                                               w,ŵ in terms
+of the operators π(Tu ) of Theorem 2.19 (for w, ŵ, u ∈ W ).
+Theorem 4.6. Let w, ŵ ∈ W . We have
+                                               −1
+                           A+
+                            w,ŵ = t(w0 )w0 π(T(w0 w)−1 Tŵ−1 )
+
+                           A−            −1
+                            w,ŵ = t(w0 ) (−1)
+                                              l(w)+l(ŵ)
+                                                         ιw0 π(Tw0 w Tŵ−1 )ι.
+Proof. Applying Lemmas 4.3, 4.4, 4.5, we have
+                         +                −1
+                        Bw, ŵ = t(w0 )π(Tw−1 Tŵ−1 )
+(4.2)                    −
+                        Bw, ŵ = (−1)
+                                     l(w0 )
+                                            t(w0 )−1 (−1)l(w)+l(ŵ) π(Tw Tŵ−1 ).
+The result then follows from Definition 4.2.                                                        □
+   Restating Theorem 4.6 in terms of the γ-coefficient functions yields the following corol-
+lary.
+Corollary 4.7. Let w, ŵ ∈ W and f ∈ F[Λ]. We have
+                                              −1
+                 γw (1+ f Tŵ ) = t(w0 )w0 π(T(w0 w)
+                                                    −1 )π(Tŵ −1 )f
+
+
+                 γw (1− f Tŵ ) = t(w0 )−1 (−1)l(w) w0 ιπ(Tw0 w )(−1)l(ŵ) π(Tŵ−1 )ιf.
+ Using (4.1) and Theorem 4.6, we obtain the following decompositions for 1± h for h ∈ H
+                                                                                      eΛ .
+Corollary 4.8. Let h ∈ HeΛ . We have
+                 X             X                              
+                                       −1
+         1+ h =      t(w0 )w0      π(T(w 0 w)
+                                             −1 Tŵ −1 )γŵ (h)  Tw
+                     w∈W              ŵ∈W
+                     X                               X                                     
+            1− h =         t(w0 )−1 (−1)l(w) w0 ι          (−1)l(ŵ) π(Tw0 w Tŵ−1 )ιγŵ (h) Tw .
+                     w∈W                            ŵ∈W
+
+Remark 4.9. Suppose h ∈ F[Λ]W ⊆ H eΛ . In this case, γ1 (h) = h and γŵ (h) = 0 for ŵ ̸= 1.
+So, by Corollary 4.8,
+                                   X
+                                                       −1
+                            1+ h =
+                                                                  
+                                         t(w0 )w0 π(T(w  0 w)
+                                                             −1 )h  Tw
+                                             w∈W
+                                   X
+                           −
+                                         t(w0 )−1 (−1)l(w) w0 ι π(Tw0 w )ιh Tw .
+                                                                           
+                        1 h=
+                                   w∈W
+Using π(Tw )h = t(w)h for all w ∈ W and Lemma 2.23, we have
+                                        X
+                                 1+ h =    t(w0 )t(w0 w)−1 hTw
+                                                 w∈W
+                                         X
+                               −
+                               1 h=          t(w0 )−1 (−1)l(w) t(ww0 )hTw .
+                                      w∈W
+26                                      VIDYA VENKATESWARAN
+
+
+Finally, using t(w0 w) = t(ww0 ) = t(w0 )t(w)−1 , we recover the well-known fact that h
+commutes with 1± .
+
+                    5. (Anti-)symmetric quasi-polynomial duality
+   We will now use the results of Section 4 to give explicit formulas for certain classes
+of quasi-polynomials. Following Section 3.1, assume Λ ∈ L and c ∈ CΛ0 . Let ŵ, w ∈
+W c and f ∈ F[Λ] so 1± f Tŵ ∈ H   eΛ . In this section, we provide explicit decomposition
+formulas for the quasi-polynomials    π qp (1± f Tŵ )xc , by computing the coefficient functions
+  qp  qp  ±      c
+                   
+γw π (1 f Tŵ )x (recall Definition 3.1). By Corollary 3.8, we have
+                                                   X
+                        qp
+                           π qp (1± f Tŵ )xc =           t(u)γwu (1± f Tŵ ).
+                                             
+(5.1)                  γw
+                                                     u∈Wc
+
+We will use the results of Section 4 to compute the RHS of (5.1), handling the 1+ and 1−
+cases separately.
+  Note that, by Theorem 3.7 and Proposition 3.6, in the particular case above when
+f = xµ , for µ ∈ Λ, we have
+(5.2)                     π qp (1± xµ Tŵ )xc = π qp (1± )xµ+ŵc =: p±
+                                                                     µ+ŵc
+As discussed in the introduction and in Section 3.2, these objects are the q → ∞ limit of
+quasi-polynomial generalizations of (anti-)symmetric Macdonald polynomials.
+Theorem 5.1. Let ŵ, w ∈ W c and f ∈ F[Λ]. We have
+                                                                      
+                qp                                   −1        +
+                    π qp (1+ f Tŵ )xc = t(w0 )w0 π T(w
+                                      
+               γw                                      0 w)
+                                                             1   T
+                                                           −1 Wc ŵ −1   f.
+
+Proof. By Corollary 4.7, the RHS of (5.1) is equal to
+                           X
+                                               −1
+                               t(u)t(w0 )w0 π(T(w 0 wu)
+                                                       −1 Tŵ −1 )f.
+                                u∈Wc
+Using Lemma 2.15, this is equal to
+                                     −1
+                                                  X
+                         t(w0 )w0 π T(w w)−1
+                                                         t(u)π(Tu )π(Tŵ−1 )f.
+                                           0
+                                                  u∈Wc
+
+Using Lemma 2.13 and rewriting in terms of the partial symmetrizer 1+
+                                                                    Wc gives the result.
+                                                                                      □
+Corollary 5.2. Let w ∈ W c and h ∈ H  eΛ . We have
+                                                    X             X              
+      qp                             −1         +
+         π qp (1+ h)xc = t(w0 )w0 π T(w
+                      
+     γw                                0 w)
+                                           −1 1 W c
+                                                        π(Tŵ −1 )     t(u)γŵu (h)   .
+                                                            ŵ∈W c                u∈Wc
+Consequently,
+                                X                       X             X             
+                                           −1        +
+     π qp (1+ h)xc = t(w0 )w0           π T(w0 w)
+                                                 −1 1Wc     π(Tŵ −1 )     t(u)γŵu (h)  xwc .
+                                w∈W c                     ŵ∈W c                u∈Wc
+
+Proof. We have                   X                   X X
+                          h=            γw (h)Tw =                   γvu (h)Tv Tu .
+                                 w∈W                 v∈W c u∈W   c
+
+Using Theorem 3.7 and Proposition 3.6, we have
+                                        X  X             
+                 π qp (1+ h)xc = π qp 1+       t(u)γvu (h) Tv xc .
+                                                v∈W c    u∈Wc
+          AFFINE HECKE ALGEBRAS AND SYMMETRIC QUASI-POLYNOMIAL DUALITY                              27
+
+
+The result now follows by linearity from Theorem 5.1.
+                                                                                                    □
+Theorem 5.3. Let ŵ, w ∈ W c and f ∈ F[Λ]. We have
+                                                                                      
+      qp
+         π qp (1− f Tŵ )xc = t(w0 )−1 t(w0 (Wc ))2 (−1)l(ŵ)+l(w) ιw0 π Tw0 w 1−   −1
+                           
+     γw                                                                           T
+                                                                                Wc ŵ    ιf.
+
+Proof. By Corollary 4.7, the RHS of (5.1) is equal to
+                    X
+                         t(u)t(w0 )−1 (−1)l(wu)+l(ŵ) ιw0 π(Tw0 wu Tŵ−1 )ιf.
+                      u∈Wc
+
+Using Lemma 2.15 and Lemma 2.14, this is equal to
+                                              X                    −1 
+           t(w0 )−1 (−1)l(ŵ)+l(w) ιw0 π Tw0 w   t(u)(−1)l(u) Tu−1
+                                                                 −1 Tŵ   ιf.
+                                                      u∈Wc
+
+Since the summand inside the parantheses is equal to t(w0 (Wc ))2 1−
+                                                                   Wc by Proposition 2.33,
+we obtain the result.                                                                   □
+
+  Analogous to Corollary 5.2, we have the following result.
+Corollary 5.4. Let w ∈ W c and h ∈ H    eΛ . We have
+  qp
+     π qp (1− h)xc = t(w0 )−1 t(w0 (Wc ))2 ·
+                  
+ γw
+                               X                                       X              
+                            ·       (−1)l(ŵ)+l(w) ιw0 π Tw0 w 1− T −1
+                                                                Wc ŵ   ι   t(u)γŵu (h)   .
+                                  ŵ∈W c                                            u∈Wc
+
+Consequently,
+
+  π qp (1− h)xc = t(w0 )−1 t(w0 (Wc ))2 ·
+                X                            X                      X              
+              ·     (−1)l(w) ιw0 π Tw0 w 1−
+                                          Wc     (−1)l(ŵ)
+                                                           π(T −1
+                                                              ŵ  )ι     t(u)γŵu (h)   xwc .
+              w∈W c                                ŵ∈W c                       u∈Wc
+
+  From (5.2) and Theorems 5.1 and 5.3, as well as Corollary 3.10 and Definition 3.15, we
+obtain the following result.
+Corollary 5.5. Let c ∈ CΛ0 , y ∈ O  ec and write (uniquely) y = µ + ŵc, where µ ∈ Λ and
+ŵ ∈ W . Then we have the following formulas for the quasi-polynomials p±
+      c
+                                                                          y:
+                         "                                #
+                     X                               
+                                     −1       +
+         p+
+          y = t(w0 )       w 0 π   T        1   T
+                                    (w0 w)−1 Wc ŵ
+                                                   −1   xµ xwc
+                        w∈W c
+                                                 "                         #
+                (−1)l(ŵ) t(w (W ))2 X                               
+                             0  c
+           p−
+            y =                          (−1)l(w) ιw0 π Tw0 w 1−   −1
+                                                               Wc Tŵ   ιxµ xwc .
+                        t(w0 )         c   w∈W
+
+Moreover, if y is dominant, we have
+                 +                                    −1         Jc ,+
+          γw (ιE −y (q; t−1 ; τ )) = t(w0 )−1 · w0 π(T(w0 w)
+                                                            −1 )pŵ −1 µ
+
+                 −                                                                      Jc ,−
+          γw (ιE −y (q; t−1 ; τ )) = (−1)l(ŵ)+l(w) t(w0 (Wc ))2 t(w0 ) · ιw0 π(Tw0 w )pŵ −1 µ .
+
+
+Remark 5.6. The specialization of Corollary 5.5 to the GLr context gives Theorem 1.3.
+28                                        VIDYA VENKATESWARAN
+
+
+Remark 5.7. Let w0c ∈ W c and w0c ∈ Wc as in Definition 2.7. Then, since w0 w0 c = w0 −1
+                                                                                      c ,
+by Theorem 5.5 we have the following expression for the γw0c -coefficient of p±
+                                                                              µ+ŵc :
+                                        t(w0 )
+                    γw0c (p+
+                           µ+ŵc ) =           w0 π(1+
+                                                     Wc Tŵ−1 )x
+                                                                µ
+                                       t(w0c )
+                                       (−1)l(ŵ)+l(w0 ) t(w0 (Wc ))2
+                    γw0c (p−
+                           µ+ŵc ) =                                 ιw0 π(1−   −1 −µ
+                                                                            Wc Tŵ )x
+                                              t(w0c )t(w0 )
+and the relation between the w and w0c -coefficients is given by
+                                             −1
+                 γw (p+                                         +
+                      µ+ŵc ) = t(w0c )w0 π(T(w0 w)−1 )w0 γw0 (pµ+ŵc )
+                                                            c
+
+
+                 γw (p−
+                      µ+ŵc ) = (−1)
+                                     l(w0 )+l(w)
+                                                 t(w0c )ιw0 π(Tw0 w )ιw0 γw0c (p−
+                                                                                µ+ŵc )
+
+for w ∈ W c .
+Remark 5.8. Special cases of Theorem 5.5.
+   (1) Suppose Wc = W , so W c = {1} and c = 0, ŵ = 1. We obtain
+         p+             + µ      + µ
+          µ+ŵc = w0 π(1 )x = π(1 )x
+                    (−1)l(ŵ) t(w0 (Wc ))2                 (−1)l(ŵ) t(w0 (Wc ))2
+         p−
+          µ+ŵc =                          ιw0 π(1− )x−µ =                        π(1− )xw0 µ
+                            t(w0 )                                 t(w0 )
+      (2) Suppose Wc = {1}, so W c = W . We obtain
+                                  "                         #
+                               X                       
+                +                         −1
+               pµ+ŵc = t(w0 )      w0 π T(w0 w)−1 Tŵ−1 x xwc
+                                                          µ
+
+                                  w∈W
+                                                           "                      #
+                                              X                            
+                p−
+                 µ+ŵc = (−1)
+                             l(ŵ)
+                                   t(w0 )          (−1)l(w) ιw0 π Tw0 w Tŵ−1 ιxµ xwc .
+                                             w∈W
+
+
+                              6. Parahoric-Metaplectic duality
+   We will now use the results of Section 4 to give explicit formulas for certain classes of
+metaplectic polynomials. Assume the setup and notation of Section 3.4, and that Λ ∈ L
+and c ∈ CΛ0 m . Let ŵ, w ∈ W c and f ∈ F[Λm ]. We will provide explicit decomposi-
+tion formulas for the metaplectic  polynomials πvm (1± f Tŵ )xc , by computing the coefficient
+            m   m   ±       c
+                              
+functions γw πv (1 f Tŵ )x (recall Definition 3.22).
+   Recall the statistics hm,c
+                          v    from Definition 3.24 (under the equal Hecke and representa-
+tion parameter specialization). Note that, by Theorem 3.26 and Proposition 3.25, in the
+particular case when f = xµ , for µ ∈ Λm , we have
+                              πvm (1± xµ Tŵ )xc = hm,c    m ± µ+ŵc
+                                                    v (ŵ)πv (1 )x   .
+     By Corollary 3.27, we have
+                                                     X
+                      m
+                        πvm (1± f Tŵ )xc = hm,c       v l(u)/2 γwu (1± f Tŵ ).
+                                         
+(6.1)                γw                      v   (w)
+                                                          u∈Wc
+
+We will use the results of Section 4 to compute the RHS of (6.1), handling the 1+ and 1−
+cases separately. Note that the arguments are analogous to Section 5, the only difference
+being that in this section we use the results of Section 4 for the metaplectic Hecke algebra
+HeΛm .
+           AFFINE HECKE ALGEBRAS AND SYMMETRIC QUASI-POLYNOMIAL DUALITY                                  29
+
+
+  For ease of notation, we first define the following coefficients. Let ŵ, w ∈ W and let
+                         F1c+ (w) = hm,c
+                                     v (w)v
+                                            l(w0 )/2
+
+                                            −l(w0 )/2+l(w0 (Wc ))
+                         F1c− (w) = hm,c
+                                     v (w)v                       (−1)l(w) .
+Theorem 6.1. Let ŵ, w ∈ W c and f ∈ F[Λm ]. We have
+                                                                          
+              m                                        −1         +
+                πvm (1+ f Tŵ )xc = F1c+ (w) · w0 πvm T(w
+                                 
+            γw                                           0 w)
+                                                             −1 1 Wc Tŵ −1 f.
+
+
+Proof. By Theorem 4.7, the RHS of (6.1) is equal to
+                           X
+                                                         −1
+                 hm,c
+                   v (w)      v l(u)/2+l(w0 )/2 w0 πvm (T(w0 wu)
+                                                                −1 Tŵ −1 )f.
+                                u∈Wc
+
+Using Lemma 2.15, this is equal to
+                                   −1
+                                               X
+                    F1+ (w)w0 πvm T(w w)−1
+                                                       v l(u)/2 πvm (Tu )πvm (Tŵ−1 )f.
+                                        0
+                                                u∈Wc
+
+Using Lemma 2.13 and rewriting in terms of the partial symmetrizer 1+
+                                                                    Wc gives the result.
+                                                                                      □
+Theorem 6.2. Let ŵ, w ∈ W c and f ∈ F[Λm ]. We have
+                                                                            
+           m
+              πvm (1− f Tŵ )xc = (−1)l(ŵ) F1c− (w) · ιw0 πvm Tw0 w 1−   −1
+                               
+          γw                                                            T
+                                                                      Wc ŵ    ιf.
+
+Proof. By Theorem 4.7, the RHS of (6.1) is equal to
+                     X
+             hm,c
+              v (w)       v l(u)/2−l(w0 )/2 (−1)l(wu)+l(ŵ) ιw0 πvm (Tw0 wu Tŵ−1 )ιf.
+                         u∈Wc
+
+Using Lemma 2.15 and Lemma 2.14, this is equal to
+                                                      X                     −1 
+        hm,c
+         v (w)v
+                −l(w0 )/2
+                          (−1)l(ŵ)+l(w) ιw0 πvm Tw0 w   (−v 1/2 )l(u) Tu−1
+                                                                          −1 Tŵ   ιf.
+                                                             u∈Wc
+
+Since the summand inside the parantheses is equal to v l(w0 (Wc )) 1−
+                                                                    Wc by Proposition 2.33,
+we obtain the result.                                                                    □
+Corollary 6.3. Let µ ∈ Λ with decomposition w0 µ = η + ŵc for some η ∈ Λm , ŵ ∈ W c ,
+and c ∈ CΛ0 m . Let w̃ ∈ W . Then
+       m
+                       πvm (1− )x−µ
+                                    
+  w0 ιγw    c
+        0 w̃ w0 ,−w0 c
+
+                                (−1)l(w0 ŵw0 ) F1−w
+                                                   −
+                                                      0c
+                                                         (w0 w̃c w0 ) m           −     −1
+                                                                                               
+                                                                                                 w0 η
+                             =                                       · π v Tw̃ w0 W−w c w0 ŵw0 x
+                                                                              c  1     T              .
+                                      hm,−w
+                                       v
+                                              0c
+                                                 (w  0 ŵw 0 )                       0
+
+
+Proof. First, note that we have the decomposition −µ = −w0 η+w0 ŵw0 (−w0 c) and −w0 ν ∈
+Λm , −w0 c ∈ CΛ0 m . Also note that w0 w̃c w0 ∈ W −w0 c by Lemma 2.8.
+  By Theorem 3.26, we have
+                                                              1
+ πvm (1− )x−µ = πvm (1− x−w0 η )xw0 ŵw0 (−w0 c) =    m,−w0 c            πvm (1− x−w0 η Tw0 ŵw0 )x−w0 c .
+                                                     hv       (w0 ŵw0 )
+            m
+Taking the γw               -coefficient of both sides, applying w0 ι to the result, and using
+                 c
+             0 w̃ w0 ,−w0 c
+Theorem 6.2 gives the result.                                                                □
+30                                         VIDYA VENKATESWARAN
+
+
+  Recall Ce 0 m is a fixed choice of representatives for C 0 m /ΩΛm . For θ ∈ W · C   e 0 m and
+           Λ                                                 Λ                         Λ
+                                                    ′
+µ ∈ Λ++ , recall the Whittaker functions ϕ̃oθ (y; ϖρ −µ ; v) as defined in [8] and discussed in
+Section 3.5. We now use the results of this section to obtain formulas for ϕ̃oθ in arbitrary
+types.
+Theorem 6.4. Set v = q 2 . Let µ − ρ ∈ Λ+ with decomposition w0 µ = η + ŵc for some
+η ∈ Λm , ŵ ∈ W c , c ∈ C                       e 0 m . Also let ρ′ be a fixed element in Λ such
+                          e 0 m and let θ ∈ W · C
+                            Λ                     Λ
+                                         ′            ′
+that ρ − ρ′ is constant. Then w0 (yρ −θ ϕ̃oθ (y; ϖρ −µ ; v)) is a polynomial in F[Λm ], and it
+vanishes unless w0 θ = wc e for some w0 w  e ∈ W c , and in this case,
+      ′              ′
+                              
+  w0 yρ −θ ϕ̃oθ (y; ϖρ −µ ; v)
+                            v l(w0 ) (−1)l(w0 ŵw0 ) F1−w
+                                                        −
+                                                          0c
+                                                             (w0 w̃c w0 )                              
+                        =                                                   · πvm Tw̃c w0 1−      −1
+                                                                                           W−w c w0 ŵw0 y
+                                                                                                T          w0 η
+                                                                                                                .
+                             hm,−w
+                              v
+                                   0c
+                                      (w0 ŵw0 )                                               0
+
+
+Proof. Follows from Proposition 3.33 and Corollary 6.3.                                                             □
+   We now specialize the previous theorem to GLr to prove Theorem 1.1. In particular,
+set m = n and take Ce 0 m as in (3.12).
+                     Λ
+Proof of Theorem 1.1. We obtain the result from Theorem 6.4 in the GLr case as follows.
+First, for yρGL −⌊θ⌋n ϕ̃oθ (y; ϖρGL −µ ; v) to be nonzero, we must have ⌊θ⌋n = w0 wc       e for some
+   e ∈ W c , where µ = w0 η +w0 ŵc (for some η ∈ Λm , c ∈ C
+w0 w                                                             e 0 m , ŵ ∈ W c ). This is equivalent
+                                                                   Λ
+to requiring that µ mod n is a permutation of θ.
+   For the second part, note that −θ = nr − w0 wc        e mod n = w0 w      ec w0 (nr − w0 c) mod n,
+where we have used Lemma 2.8. Set w := w             c                 r
+                                                   e w0 and c := n − w0 c, and note that since
+       0
+c ∈ CΛm , c is a decreasing r-tuple of elements in {1, . . . , n}. So we have −w0 θ = wc mod n.
+     e
+Similarly, we have −µ = nr − (w0 ŵw0 )w0 c mod n, since −w0 η ∈ Λm . Set w′ := w0 ŵw0 , so
+that −µ = nr − w′ w0 c mod n = w′ (nr − w0 c) mod n = w′ c mod n. Finally, by Lemma
+2.8, w′ , w0 w ∈ W c .
+   We use Proposition 3.21, Remark 3.29, Proposition 2.35 and Proposition 2.36 to relate
+the operators πvm (Tw ) to the operators Tw,v1/2 on the subspace F[Λ], noting that w0 η ∈ Λm .
+In particular, this gives the rescaling of variables y → y1/n in the LHS, and w0 η → wn0 η =
+λ + ρGL in the RHS.
+   Note also that Wc = W−w0 c , and w0 η = n⌊ nµ ⌋ = n(λ + ρGL ). Finally expressing the
+coefficient in terms of the data c, w, w′ and simplifying gives the first equality.
+   For the second equality, note first that Tw,v = Twc ,v Twc ,v . Moreover, we have
+                                       X                        X
+                                Twc ,v      Tu,v = v −2l(wc ) ·    Tu,v ,
+                                          u∈Wc                        u∈Wc
+by Propositions 2.35, 2.36 and (2.27). Using the fact that Twc ,v Tu,v = Twc u,v for u ∈ Wc ,
+the desired expression is equal to
+                                      X
+                         Cv −l(wc ) ·   Twc u,v1/2 Tw−1
+                                                      ′ ,v 1/2 y
+                                                                 n(λ+ρGL )
+                                                                           .
+                                             u∈Wc
+The result now follows from Theorem 3.36.                                                                           □
+Remark 6.5. The special cases where θ has all distinct parts or all equal parts (resp.)
+recovers [8] Theorem D and E (resp.).1
+     1Note there is a typo in [8] eq. (4.12) which gives a formula for C in the distinct parts case: w and w ′
+should be interchanged.
+           AFFINE HECKE ALGEBRAS AND SYMMETRIC QUASI-POLYNOMIAL DUALITY                               31
+
+
+   Indeed, first suppose that θ has all distinct parts. Then Wc = 1 and W c = W , so there
+is no summation in the first equality and wc = w, wc = 1. Moreover, ψw     ∅ (z; ϖ −λ w ′ ) =
+
+ϕw (z; ϖ−λ w′ ), which is a non-metaplectic Iwahori Whittaker function, where z := yn . In
+this case, one computes
+                                                      ′
+                                (−1)l(w0 ) v l(w)/2+l(w )/2+l(w0 )/2 hm,c
+                                                                      v (w0 w)
+                         C′ =                                                  .
+                                                   hm,c
+                                                     v   (w ′)
+
+  Now suppose θ has all equal parts. Then Wc = W and W c = 1. So w = w0 , wc = 1,
+wc = w0 and w′ = 1. In this case, we obtain a non-metaplectic spherical Whittaker
+function. Indeed, by Propositions 2.35 and 2.36 and Lemma 2.29, we have
+                                   X
+  (−1)l(w0 ) v 2l(w0 ) · Tw0 ,v1/2   Tu,v1/2 zλ+ρGL = v 2l(w0 ) (−v 1/2 )−l(w0 ) πv (Tw0 1− )zw0 (λ+ρGL )
+                                u∈W
+                                                                 X
+                                                    = v l(w0 )         Tw,v1/2 zw0 (λ+ρGL ) .
+                                                                 w∈W
+
+By (3.11), this is equal to zw0 ρGL W
+                                    fλ (z; v), as desired.
+
+Remark 6.6. In Remark 4.12 of [8], a more general duality conjecture is discussed, involv-
+ing metaplectic parahoric Whittaker functions instead of metaplectic spherical Whittaker
+functions. It would be interesting to see if this problem is amenable to the techniques
+developed in this paper.
+
+                          7. (Anti-)symmetric quasi-polynomials
+   In [26], we defined a subspace of (anti-)symmetric quasi-polynomials in terms of the
+quasi-polynomial representation π qp . In this section, we show that (anti-)symmetric quasi-
+polynomials can be identified with partially (anti)-symmetric polynomials. Analogous re-
+sults hold in the metaplectic context, but are omitted for brevity.
+   We first recall the definition of (anti-)symmetric quasi-polynomials. We use ϵ-notation
+to treat these cases uniformly, with ϵ = 1 for the symmetric case and ϵ = −1 for the
+anti-symmetric case.
+Definition 7.1. The quasi-polynomial f ∈ F[E] is ϵ-symmetric if and only if π qp (Ti )f =
+ϵtϵi f for all 1 ≤ i ≤ r.
+  In the symmetric case, that is ϵ = 1, this is equivalent to σ qp (si )f = f for all 1 ≤ i ≤ r.
+The resulting quasi-polynomials are symmetric with respect to a generalized Weyl group
+action, denoted σ qp , which is related to an action of Chinta and Gunnells in the metaplectic
+context (see [14, 15]).
+Proposition 7.2. The quasi-polynomial f ∈ F[E] is ϵ-symmetric if and only if f =
+π qp (1± )g for some g ∈ F[O
+                           eΛ,c ].
+
+Proof. If f ∈ F[E] is ϵ-symmetric, using Definition 2.28, we have π qp (1± )f ∝ f . The other
+direction follows from (2.27).                                                             □
+   Recall from Section 2.4 the definition of J-partially ϵ-symmetric elements in F[Λ] (Def-
+inition 2.32). We will show that ϵ-symmetric quasi-polynomials in F[O   ec ] are in bijection
+with Jc -partially ϵ-symmetric polynomials in F[Λ].
+   As in Section 3.1, we assume Λ ∈ L and c ∈ CΛ0 . So, F[O    eΛ,c ] ⊆ F[E] is a free F[Λ]-
+                      wc           c         c     c
+module with basis x for w ∈ W . Let w0 ∈ W and w0c ∈ Wc be as in Definition 2.7.
+32                                             VIDYA VENKATESWARAN
+
+
+Consider the π qp -invariant subspace F[O
+                                        eΛ,c ] ⊆ F[E]. Recall that for f ∈ F[O
+                                                                             eΛ,c ], we have
+the decomposition                        X
+                                                qp
+                                    f=         γw  (f )xwc ,
+                                                      w∈W c
+       qp                                                                qp
+where γw  (f )   ∈ F[Λ]. We give a characterization of the coefficients γw  (f ) when f is
+ϵ-symmetric.
+Theorem 7.3. Suppose f ∈ F[O          eΛ,c ]. Then f is ϵ-symmetric if and only if both of the
+following conditions hold:
+    (1)
+                          qp
+                   (
+                     w0 γ w c (f ) is Jc -partially symmetric,      ϵ=1
+                                  0
+                              qp
+                         ιw0 γw c (f ) is Jc -partially anti-symmetric,              ϵ = −1
+                                      0
+
+     (2)
+                                          −1            qp
+                            (
+                                                                          c
+                             t(w0c )w0 π(T(w    −1 )w0 γw c (f ) for w ∈ W ,             ϵ=1
+                qp                          0 w)
+               γw  (f ) =                                         0
+                                                                      qp
+                             t(w0c )(−1)l(w0 )+l(w) ιw0 π(Tw0 w )ιw0 γw c (f ),          ϵ = −1.
+                                                                                 0
+
+
+Proof. Let f ∈ F[O  eΛ,c ]. By Proposition 7.2, f is (anti-)symmetric if and only if f =
+π qp (1± )g for some g ∈ F[O  eΛ,c ]. Moreover, by Theorem 3.7, any g ∈ F[O   eΛ,c ] can be
+expressed as g = π qp (h)xc for some h ∈ HeΛ .
+                             qp  ±    c
+   Suppose first that f = π (1 h)x for some h ∈ H   eΛ . By Corollary 5.2, we have
+       qp
+(7.1) γw  (f ) = γw (π qp (1+ h)xc )
+                                                                     X            X             
+                                                        −1        +
+                                          = t(w0 )w0 π T(w0 w)
+                                                              −1 1Wc     π(Tŵ −1 )    t(u)γŵu (h)
+                                                                        ŵ∈W c            u∈Wc
+
+for w ∈ W c if ϵ = 1, and by Corollary 5.4, we have
+       qp
+(7.2) γw  (f ) = γw (π qp (1− h)xc ) = t(w0 )−1 t(w0 (Wc ))2 ·
+                                  X                                       X             
+                                ·      (−1)l(ŵ)+l(w) ιw0 π Tw0 w 1− T −1
+                                                                   Wc ŵ   ι   t(u)γŵu (h)
+                                           ŵ∈W c                                         u∈Wc
+
+for w ∈ W c if ϵ = −1. Setting w = w0c and noting that
+                      −1        +    −1 +            −1 +
+                     T(w  c −1 1W = Tw0c 1W = t(w0c )
+                        0w )      c        c
+                                                       1Wc
+                              0
+
+                            Tw0 w0c 1−             −
+                                     Wc = Tw0c −1 1Wc = (−1)
+                                                            l(w0c )
+                                                                    t(w0c )−1 1−
+                                                                               Wc
+                                                           qp          qp
+gives condition (1), and the second follows by relating γw    (f ) to γw c (f ) using (7.1) and
+                                                                        0
+(7.2).
+                  qp              +
+   Now suppose γw  c (f ) = w0 π(1W )g for some g ∈ F[Λ], and
+                     0              c
+
+                                   qp                     −1           +
+                                  γw  (f ) = t(w0c )w0 π(T(w0 w)
+                                                                −1 )π(1Wc )g
+
+
+for w ∈ W c . Then
+                                          X
+                            f=                γw (f )xwc
+                                      w∈W c
+                                          X h                                   i
+                                                             −1           +
+                              =                 t(w0c )w0 π(T(w0 w)
+                                                                   −1 )π(1Wc )g  xwc .
+                                      w∈W c
+          AFFINE HECKE ALGEBRAS AND SYMMETRIC QUASI-POLYNOMIAL DUALITY                         33
+
+
+By Corollary 5.2 part (2) (with the special case where h := g ∈ F[Λ]), this is equal to
+                                        t(w )g 
+                                               0c
+                                   π qp 1+         xc ,
+                                            t(w0 )
+so f is a symmetric quasi-polynomial.
+                                                                  qp               −
+   The argument in the anti-symmetric case is similar. Suppose γw  c (f ) = ιw0 π(1W )g for
+                                                                                     c
+                                                                   0
+some g ∈ F[Λ], and
+                        γw (f ) = t(w0c )(−1)l(w0 )+l(w) ιw0 π(Tw0 w )π(1−
+                                                                         Wc )g
+for w ∈ W c . Then
+                         X
+                    f=           γw (f )xwc
+                         w∈W c
+                        X h                                            i
+                                      l(w0 )+l(w)                 −
+                      =    t(w0c )(−1)            ιw0 π(Tw0 w )π(1Wc )g xwc .
+                         w∈W c
+By Corollary 5.4 part (2) (with the special case where h := ιg ∈ F[Λ]), this is equal to
+                                 (−1)l(w0 ) t(w )t(w )ιg 
+                                                0     0c
+                            π qp 1−                         xc ,
+                                         t(w0 (Wc ))2
+so f is an anti-symmetric quasi-polynomial.                                              □
+Remark 7.4. Special cases of Theorem 7.3.
+   (1) Suppose Jc = [1, r], so Jc -partially symmetric polynomials are just (fully) symmet-
+       ric polynomials. Also c = 0, Wc = W , W c = {1} and O     ec = Λ. So, in this case,
+       symmetric quasi-polynomials are just the usual symmetric polynomials.
+   (2) Suppose Jc = ∅, so every polynomial in F[Λ] is Jc -partially symmetric. Also Wc =
+       {1} and W c = W . So, in this case, symmetric quasi-polynomials are of the form
+                                   X h                i
+                                        w0 π(Tw−1
+                                                −1 )p  xw0 wc ,
+                                      w∈W
+        where p ∈ F[Λ].
+  Let F[O eΛ,c ]ϵ−sym = π qp (1± )F[O
+                                    eΛ,c ] denote the space of ϵ-symmetric quasi-polynomials,
+             ϵ,J
+and let F[Λ] c    −sym denote the space of Jc -partially ϵ-symmetric polynomials. We have
+the following restatement of Theorem 7.3.
+                                             eΛ,c ]ϵ−sym → F[Λ]ϵ,J−sym defined by
+Corollary 7.5. There is a bijection ϕc,ϵ : F[O
+                                                qp
+                                           (
+                                    t(w0c ) w0 γw0c (f ), ϵ = 1
+                        ϕc,ϵ (f ) =               qp
+                                     t(w0 ) ιw0 γw  c (f ), ϵ = −1
+                                                          0
+
+for f ∈ F[O
+          eΛ,c   ]ϵ−sym . Its inverse is given by
+                              P      h                     i
+                                               −1
+                              
+                                w∈W c  w 0 π(T (w0 w) −1 )p   xwc ,                  ϵ=1
+           ϕ−1
+            c,ϵ (p) = t(w 0 )         h                                     i
+                              P       (−1)  l(w0 )+l(w) ιw π(T          )p  xwc ,   ϵ = −1.
+                                w∈W c                        0      w0 w
+
+for p ∈ F[Λ]ϵ,J−sym .
+  The results of this paper show that in the q → ∞ limit, we have the following duality
+between symmetric quasi-polynomial generalizations of Macdonald polynomials of [26] and
+the Macdonald polynomials with prescribed partial symmetry of Definition 3.15.
+34                                     VIDYA VENKATESWARAN
+
+
+Theorem 7.6. Let Λ ∈ L, c ∈ CΛ0 , µ ∈ Λ+ and ŵ in W c . Then we have
+                                                          Jc ,±
+                                        ϕc,± (p±
+                                               µ+ŵc ) = pŵ−1 µ .
+
+Proof. Follows from Definition 3.15 and Theorem 5.5.                                                   □
+   One might hope that this duality might extend directly to q-level as well, however this
+is not the case.
+Example 7.7. In the GL2 setting, take c = (1/2, 0) (so Jc = ∅), µ = (0, 0), ŵ = 1. So we
+have y = µ + ŵc = c and ŵ−1 µ = 0. Using the formulas in [26, Section 7.6] we have
+                                     +              −1               t−2 − 1
+                             ϕc,+ (ιE−(µ+ ŵc) (q; t ; τ )) = 1 +       ∨
+                                                                     τ α1 − 1
+On the other hand, we have
+                                 ιEŵ∅,+
+                                       −1 µ (q; t
+                                                 −1
+                                                    ) = ιE0 (q; t−1 ) = 1.
+                                                                                                       ∨
+Note that these do match in the q → ∞ limit (under the regularity assumption limq→∞ τ −α1 =
+0), agreeing with Theorem 7.6.
+                                                                    +              −1
+Remark 7.8. It is an interesting open question to determine ϕc,+ (ιE−(µ+ ŵc) (q; t ; τ )), i.e.,
+which J-partially symmetric polynomials correspond to the symmetric quasi-polynomial
+generalizations of Macdonald polynomials introduced in [26].
+
+                                             References
+ [1] A. Aggarwal, Personal communication, 2023.
+ [2] A. Aggarwal, A. Borodin, M. Wheeler, Colored Fermionic Vertex Models and Symmetric Functions,
+     Commun. Am. Math. Soc. 3 (2023), 400–630.
+ [3] T.H. Baker, C.F. Dunkl, P.J. Forrester, Polynomial eigenfunctions of the Calogero-Sutherland-Moser
+     models with exchange terms, CRM Ser. Math. Phys. (2000), 37–51.
+ [4] W. Baratta, Some properties of Macdonald polynomials with prescribed symmetry, Kyushu J. Math.
+     2010, 64(2), 323–343.
+ [5] N. Bourbaki, Lie Groups and Lie Algebras. Chapters 4-6, Springer, 2002.
+ [6] B. Brubaker, V. Buciumas, D. Bump, H. Gustafsson, Colored vertex models and Iwahori Whittaker
+     functions, Selecta Math. (N.S.) 30 (2024), no. 4, Paper No. 78, 58 pp.
+ [7] B. Brubaker, V. Buciumas, D. Bump, H. Gustafsson, Metaplectic Iwahori Whittaker functions and
+     supersymmetric lattice models, arXiv:2012.15778v2.
+ [8] B. Brubaker, V. Buciumas, D. Bump, H. Gustafsson, Iwahori-metaplectic duality, J. Lond. Math. Soc.
+     (2) 109 (2024), no. 6, Paper No. e12896, 54 pp.
+ [9] D. Bump, Introduction: Multiple Dirichlet Series, Multiple Dirichlet series, L-functions and automor-
+     phic forms, 1–36, Progr. Math., 300, Birkhauser/Springer, New York, 2012.
+[10] I. Cherednik, Nonsymmetric Macdonald polynomials, Int. Math. Res. Not. IMRN 1995, no. 10, 483–
+     515.
+[11] I. Cherednik, Double affine Hecke algebras and Macdonald’s conjectures, Ann. Math. 141 (1997), 191–
+     216.
+[12] I. Cherednik, Double affine Hecke algebras, London Math. Soc. Lecture Note Series 319, Cambridge
+     Univ. Press.
+[13] G. Chinta, O. Offen, A metaplectic Casselman-Shalika formula for GLr , Amer. J. Math. 135 (2013),
+     403–441.
+[14] G. Chinta, P.E. Gunnells, Weyl group multiple Dirichlet series constructed from quadratic characters,
+     Invent. Math. 167 (2007), no. 2, 327-353.
+[15] G. Chinta, P.E. Gunnells, Constructing Weyl group multiple Dirichlet series, J. Amer. Math. Soc. 23
+     (2010), 189–215.
+[16] G. Chinta, P.E. Gunnells, A. Puskas, Metaplectic Demazure operators and Whittaker functions, Indiana
+     Univ. Math. J. 66 No. 3 (2017), 1045–1064.
+           AFFINE HECKE ALGEBRAS AND SYMMETRIC QUASI-POLYNOMIAL DUALITY                               35
+
+
+[17] V. Deodhar, Some characterizations of Bruhat ordering on a Coxeter group and determination of the
+     relative Möbius function, Invent. Math. 39 (1977), 187–198.
+[18] M. Haiman, Cherednik algebras, Macdonald polynomials and combinatorics. International Congress of
+     Mathematicians. Vol. III, 843–872, Eur. Math. Soc., Zürich, 2006.
+[19] J.E. Humphreys, Reflection groups and Coxeter groups, Cambridge Studies in Advanced Mathematics
+     29, Cambridge University Press.
+[20] G. Lusztig, Affine Hecke algebras and their graded version, J. Amer. Math. Soc. 2 (1989), 599–635.
+[21] I.G. Macdonald, Affine Hecke algebras and orthogonal polynomials, Cambridge Tracts in Math. 157,
+     Cambridge University Press 2003.
+[22] D. Marshall, Macdonald polynomials, Masters Thesis, University of Melbourne, 1999.
+[23] M.M. Patnaik, A. Puskas, On Iwahori-Whittaker functions for metaplectic groups, Adv. Math. 313
+     (2017), 875–914.
+[24] M.M. Patnaik, A. Puskas, Metaplectic covers of Kac-Moody groups and Whittaker functions, Duke
+     Math. J. 168 (2019), 553–653.
+[25] S. Sahi, J.V. Stokman, V. Venkateswaran, Metaplectic representations of Hecke algebras, Weyl group
+     actions, and associated polynomials, Selecta Math. (N.S.) 27 (2021), Paper No. 47.
+[26] S. Sahi, J.V. Stokman, V. Venkateswaran, Quasi-polynomial representations of double affine Hecke
+     algebras, Forum Math. Sigma 13 (2025), e73, 131 pages.
+[27] J. Saied, A combinatorial formula for Sahi, Stokman, and Venkateswaran’s generalization of Macdonald
+     polynomials, Adv. Math. 404 (2022).
+
+  V. Venkateswaran, Center for Communications Research, 805 Bunn Dr, Princeton, NJ
+08540, USA.
+  Email address: vidyavenkat52@gmail.com
+

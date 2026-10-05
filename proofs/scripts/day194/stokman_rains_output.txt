@@ -1,0 +1,112 @@
+Day 194 PROVE: Stokman-Rains Lemma 10 lift to Hikita level-1 AHA?
+Testing:  Y_{m-1} Y_m  ==  t^{-1} (Pi T_1 T_2 ... T_{m-2})^2
+on the polynomial rep Q(q,t)[X_1, ..., X_m], for m in {3, 4}.
+
+
+========================================================================
+Testing at m = 3
+========================================================================
+  [m=3] f = 1: FAIL   (0.12s)
+    difference (factored): X3*(-X1 + X2*t)
+    difference (expanded, maybe truncated): -X1*X3 + X2*X3*t
+  [m=3] f = X1: FAIL   (0.03s)
+    difference (factored): X1*X3*(-X1 + X2*q*t**4)/(q*t)
+    difference (expanded, maybe truncated): -X1**2*X3/(q*t) + X1*X2*X3*t**3
+  [m=3] f = X2: FAIL   (0.07s)
+    difference (factored): -X3*(X1**2*t - X1**2 + X1*X2*q*t**2 + X1*X2*t**3 - X1*X2*t**2 - X2**2*t**2)/(q*t)
+    difference (expanded, maybe truncated): -X1**2*X3/q + X1**2*X3/(q*t) - X1*X2*X3*t - X1*X2*X3*t**2/q + X1*X2*X3*t/q + X2**2*X3*t/q
+  [m=3] f = X3: FAIL   (0.08s)
+    difference (factored): -X3*(X1*X2*t**3 - X1*X2*t**2 - X1*X2*t + X1*X2 + X1*X3 - X2*X3*t)/q
+    difference (expanded, maybe truncated): -X1*X2*X3*t**3/q + X1*X2*X3*t**2/q + X1*X2*X3*t/q - X1*X2*X3/q - X1*X3**2/q + X2*X3**2*t/q
+  [m=3] f = X1^2: FAIL   (0.11s)
+    difference (factored): X1*X3*(-X1**2 + X1*X2*q**2*t**4 + X1*X2*q*t**2 - X1*X2*q*t + X2**2*q**2*t**4 - X2**2*q**2*t**3 + X2*X3*q**2*t**4 - X2*X3*q**2*t**3)/(q**2*t)
+    difference (expanded, maybe truncated): -X1**3*X3/(q**2*t) + X1**2*X2*X3*t**3 + X1**2*X2*X3*t/q - X1**2*X2*X3/q + X1*X2**2*X3*t**3 - X1*X2**2*X3*t**2 + X1*X2*X3**2*t**3 - X1*X2*X3**2*t**2
+  [m=3] f = X1*X2: FAIL   (0.02s)
+    difference (factored): X1*X2*X3*t*(-X1 + X2*t)/q
+    difference (expanded, maybe truncated): -X1**2*X2*X3*t/q + X1*X2**2*X3*t**2/q
+  [m=3] f = X2*X3: FAIL   (0.13s)
+    difference (factored): -X3*(-X1**2*X2*t**2 + 2*X1**2*X2*t - X1**2*X2 + X1**2*X3*t - X1**2*X3 + X1*X2**2*t**3 - X1*X2**2*t**2 + X1*X2*X3*q*t + X1*X2*X3*t**3 - X1*X2*X3*t**2 - X2**2*X3*t**2)/(q**2*t)
+    difference (expanded, maybe truncated): X1**2*X2*X3*t/q**2 - 2*X1**2*X2*X3/q**2 + X1**2*X2*X3/(q**2*t) - X1**2*X3**2/q**2 + X1**2*X3**2/(q**2*t) - X1*X2**2*X3*t**2/q**2 + X1*X2**2*X3*t/q**2 - X1*X2*X3**2/q - X1*X2*X3**2*t**2/q**2 + X1*X2*X3**2*t/q**2 + X2**2*X3**2*t/q**2
+  [m=3] f = X1*X2*X3: FAIL   (0.04s)
+    difference (factored): X1*X2*X3**2*(-X1 + X2*t)/q**2
+    difference (expanded, maybe truncated): -X1**2*X2*X3**2/q**2 + X1*X2**2*X3**2*t/q**2
+  [m=3] f = X1^3: FAIL   (0.29s)
+    difference (factored): X1*X3*(-X1**3 + X1**2*X2*q**3*t**4 + X1**2*X2*q*t**2 - X1**2*X2*q*t + X1*X2**2*q**3*t**4 - X1*X2**2*q**3*t**3 + X1*X2**2*q**2*t**2 - X1*X2**2*q**2*t + X1*X2*X3*q**3*t**4 - X1*X2*X3*q**3*t**3 + X1*X2*X3*q**2*t**2 - 2*X1*X2*X3*q**2*t + X1*X2*X3*q**2 + X2**3*q**3*t**4 - X2**3*q**3*t**3 + X2**2*X3*q**3*t**4 - 2*X2**2*X3*q**3*t**3 + X2**2*X3*q**3*t**2 + X2*X3**2*q**3*t**4 - X2*X3**2*q**3*t**3)/(q**3*t)
+    difference (expanded, maybe truncated): -X1**4*X3/(q**3*t) + X1**3*X2*X3*t**3 + X1**3*X2*X3*t/q**2 - X1**3*X2*X3/q**2 + X1**2*X2**2*X3*t**3 - X1**2*X2**2*X3*t**2 + X1**2*X2**2*X3*t/q - X1**2*X2**2*X3/q + X1**2*X2*X3**2*t**3 - X1**2*X2*X3**2*t**2 + X1**2*X2*X3**2*t/q - 2*X1**2*X2*X3**2/q + X1**2*X2*X3**2/(q*t) + X1*X2**3*X3*t**3 - X1*X2**3*X3*t**2 + X1*X2**2*X3**2*t**3 - 2*X1*X2**2*X3**2*t**2 + X1*X2**2*X3**2*t + X1*X2*X3**3*t**3 - X1*X2*X3**3*t**2
+  [m=3] f = e_2(X): FAIL   (0.15s)
+    difference (factored): X3*(-X1**2*X2*q*t + X1**2*X2*t - X1**2*X2 - X1**2*X3 + X1*X2**2*q*t**2 - X1*X2**2*t**2 + X1*X2**2*t + X1*X2*X3*q*t**2 - X1*X2*X3*q - X1*X2*X3*t**2 + X1*X2*X3*t + X2**2*X3*t)/q**2
+    difference (expanded, maybe truncated): -X1**2*X2*X3*t/q + X1**2*X2*X3*t/q**2 - X1**2*X2*X3/q**2 - X1**2*X3**2/q**2 + X1*X2**2*X3*t**2/q - X1*X2**2*X3*t**2/q**2 + X1*X2**2*X3*t/q**2 + X1*X2*X3**2*t**2/q - X1*X2*X3**2/q - X1*X2*X3**2*t**2/q**2 + X1*X2*X3**2*t/q**2 + X2**2*X3**2*t/q**2
+  [m=3] f = e_3(X): FAIL   (0.03s)
+    difference (factored): X1*X2*X3**2*(-X1 + X2*t)/q**2
+    difference (expanded, maybe truncated): -X1**2*X2*X3**2/q**2 + X1*X2**2*X3**2*t/q**2
+
+========================================================================
+Testing at m = 4
+========================================================================
+  [m=4] f = 1: FAIL   (0.02s)
+    difference (factored): -X3*t*(X1*t - X4)
+    difference (expanded, maybe truncated): -X1*X3*t**2 + X3*X4*t
+  [m=4] f = X1: FAIL   (0.05s)
+    difference (factored): X1*X3*(-X2*t**2 + X4*t**3 - X4*t + X4)
+    difference (expanded, maybe truncated): -X1*X2*X3*t**2 + X1*X3*X4*t**3 - X1*X3*X4*t + X1*X3*X4
+  [m=4] f = X2: FAIL   (0.04s)
+    difference (factored): X3*t*(-X1**2 + X2*X4*q*t**2)/q
+    difference (expanded, maybe truncated): -X1**2*X3*t/q + X2*X3*X4*t**3
+  [m=4] f = X3: FAIL   (0.13s)
+    difference (factored): -X3*(X1**2*t**2 - X1**2*t + X1*X2*q*t**3 - X1*X2*q*t**2 + X1*X4*q*t**2 - X1*X4*q*t + X1*X4*q + X1*X4*t**2 - X1*X4*t + X2*X4*t**2 - X2*X4*t - X3*X4*t)/q
+    difference (expanded, maybe truncated): -X1**2*X3*t**2/q + X1**2*X3*t/q - X1*X2*X3*t**3 + X1*X2*X3*t**2 - X1*X3*X4*t**2 + X1*X3*X4*t - X1*X3*X4 - X1*X3*X4*t**2/q + X1*X3*X4*t/q - X2*X3*X4*t**2/q + X2*X3*X4*t/q + X3**2*X4*t/q
+  [m=4] f = X4: FAIL   (0.12s)
+    difference (factored): X3*t*(X1*X2*t**2 - X1*X2*t - X1*X3*t - X1*X4*t**2 + X1*X4*t - X2*X4*t**2 + X2*X4*t + X4**2)/q
+    difference (expanded, maybe truncated): X1*X2*X3*t**3/q - X1*X2*X3*t**2/q - X1*X3**2*t**2/q - X1*X3*X4*t**3/q + X1*X3*X4*t**2/q - X2*X3*X4*t**3/q + X2*X3*X4*t**2/q + X3*X4**2*t/q
+  [m=4] f = X1^2: FAIL   (0.18s)
+    difference (factored): -X1*X3*(-X1*X4*t**3 + X2**2*t**2 + X2*X3*t**2 - X2*X3*t + X2*X4*t**5 - X2*X4*t**4 - 2*X2*X4*t**3 + 3*X2*X4*t**2 - X2*X4*t - X3*X4*t**3 + X3*X4*t**2 - X4**2*t**3 + X4**2*t**2 + X4**2*t - X4**2)
+    difference (expanded, maybe truncated): X1**2*X3*X4*t**3 - X1*X2**2*X3*t**2 - X1*X2*X3**2*t**2 + X1*X2*X3**2*t - X1*X2*X3*X4*t**5 + X1*X2*X3*X4*t**4 + 2*X1*X2*X3*X4*t**3 - 3*X1*X2*X3*X4*t**2 + X1*X2*X3*X4*t + X1*X3**2*X4*t**3 - X1*X3**2*X4*t**2 + X1*X3*X4**2*t**3 - X1*X3*X4**2*t**2 - X1*X3*X4**2*t + X1*X3*X4**2
+  [m=4] f = X1*X2: FAIL   (0.06s)
+    difference (factored): X1*X3*(-X1*X2*t**2 - X1*X4*t + X1*X4 + X2*X4*q*t**6)/(q*t)
+    difference (expanded, maybe truncated): -X1**2*X2*X3*t/q - X1**2*X3*X4/q + X1**2*X3*X4/(q*t) + X1*X2*X3*X4*t**5
+  [m=4] f = X2*X3: FAIL   (0.10s)
+    difference (factored): -X3*(X1**2*X2*t**3 - X1**2*X2*t**2 + X1**2*X4*t**2 - X1**2*X4*t + X1**2*X4 + X1*X2*X4*t**4 - X1*X2*X4*t**3 - X2*X3*X4*t**2)/q
+    difference (expanded, maybe truncated): -X1**2*X2*X3*t**3/q + X1**2*X2*X3*t**2/q - X1**2*X3*X4*t**2/q + X1**2*X3*X4*t/q - X1**2*X3*X4/q - X1*X2*X3*X4*t**4/q + X1*X2*X3*X4*t**3/q + X2*X3**2*X4*t**2/q
+  [m=4] f = X1*X2*X3: FAIL   (0.03s)
+    difference (factored): -X1*X2*X3*X4*t**3*(X1 - X3)/q
+    difference (expanded, maybe truncated): -X1**2*X2*X3*X4*t**3/q + X1*X2*X3**2*X4*t**3/q
+  [m=4] f = X1^3: FAIL   (0.50s)
+    difference (factored): -X1*X3*(-X1**2*X4*t**3 + X1*X2*X4*t**5 - X1*X2*X4*t**4 - X1*X2*X4*t**3 + X1*X2*X4*t**2 - X1*X3*X4*t**3 + X1*X3*X4*t**2 - X1*X4**2*t**3 + X1*X4**2*t**2 + X2**3*t**2 + X2**2*X3*t**2 - X2**2*X3*t + X2**2*X4*t**5 - X2**2*X4*t**4 - 2*X2**2*X4*t**3 + 3*X2**2*X4*t**2 - X2**2*X4*t + X2*X3**2*t**2 - X2*X3**2*t + X2*X3*X4*t**5 - X2*X3*X4*t**4 - 3*X2*X3*X4*t**3 + 6*X2*X3*X4*t**2 - 4*X2*X3*X4*t + X2*X3*X4 + X2*X4**2*t**5 - X2*X4**2*t**4 - 3*X2*X4**2*t**3 + 5*X2*X4**2*t**2 - 2*X2*X4**2*t - X3**2*X4*t**3 + X3**2*X4*t**2 - X3*X4**2*t**3 + 2*X3*X4**2*t**2 - X3*X4**2*t - X4**3*t**3 + X4**3*t**2 + X4**3*t - X4**3)
+    difference (expanded, maybe truncated): X1**3*X3*X4*t**3 - X1**2*X2*X3*X4*t**5 + X1**2*X2*X3*X4*t**4 + X1**2*X2*X3*X4*t**3 - X1**2*X2*X3*X4*t**2 + X1**2*X3**2*X4*t**3 - X1**2*X3**2*X4*t**2 + X1**2*X3*X4**2*t**3 - X1**2*X3*X4**2*t**2 - X1*X2**3*X3*t**2 - X1*X2**2*X3**2*t**2 + X1*X2**2*X3**2*t - X1*X2**2*X3*X4*t**5 + X1*X2**2*X3*X4*t**4 + 2*X1*X2**2*X3*X4*t**3 - 3*X1*X2**2*X3*X4*t**2 + X1*X2**2*X3*X4*t - X1*X2*X3**3*t**2 + X1*X2*X3**3*t - X1*X2*X3**2*X4*t**5 + X1*X2*X3**2*X4*t**4 + 3*X1*X2*X3**2*X4*t**3 - 6*X1*X2*X3**2*X4*t**2 + 4*X1*X2 ... [truncated]
+  [m=4] f = e_2(X): FAIL   (0.40s)
+    difference (factored): X3*t*(-X1**2*X2*q*t**2 + X1**2*X2*t**2 - X1**2*X2*t - X1**2*X3*t - X1**2*X4*q*t - X1*X2*X3*q*t + X1*X2*X4*q**2*t**4 - X1*X2*X4*q**2*t**2 - X1*X2*X4*q*t**4 - X1*X2*X4*q*t**3 + 2*X1*X2*X4*q*t**2 + X1*X2*X4*t**3 - X1*X2*X4*t**2 - X1*X2*X4*t + X1*X2*X4 - X1*X3*X4*t + X1*X3*X4 + X1*X4**2*q*t - X1*X4**2*t + X1*X4**2 + X2*X3*X4*q*t - X2*X3*X4*t + X2*X3*X4 + X2*X4**2*q*t - X2*X4**2*t + X2*X4**2 + X3*X4**2)/q**2
+    difference (expanded, maybe truncated): -X1**2*X2*X3*t**3/q + X1**2*X2*X3*t**3/q**2 - X1**2*X2*X3*t**2/q**2 - X1**2*X3**2*t**2/q**2 - X1**2*X3*X4*t**2/q - X1*X2*X3**2*t**2/q + X1*X2*X3*X4*t**5 - X1*X2*X3*X4*t**3 - X1*X2*X3*X4*t**5/q - X1*X2*X3*X4*t**4/q + 2*X1*X2*X3*X4*t**3/q + X1*X2*X3*X4*t**4/q**2 - X1*X2*X3*X4*t**3/q**2 - X1*X2*X3*X4*t**2/q**2 + X1*X2*X3*X4*t/q**2 - X1*X3**2*X4*t**2/q**2 + X1*X3**2*X4*t/q**2 + X1*X3*X4**2*t**2/q - X1*X3*X4**2*t**2/q**2 + X1*X3*X4**2*t/q**2 + X2*X3**2*X4*t**2/q - X2*X3**2*X4*t**2/q**2 + X2*X3**2*X4* ... [truncated]
+  [m=4] f = e_3(X): FAIL   (0.25s)
+    difference (factored): -X3*t*(X1**2*X2*X3*t + X1**2*X2*X4*q*t**2 - X1**2*X2*X4*t**2 + X1**2*X2*X4*t + X1**2*X3*X4*t - X1*X2*X3*X4*q*t**2 + X1*X2*X3*X4*q*t + X1*X2*X3*X4*t**2 - X1*X2*X3*X4 - X1*X2*X4**2*q*t**2 + X1*X2*X4**2*t**2 - X1*X2*X4**2 - X1*X3*X4**2 - X2*X3*X4**2)/q**2
+    difference (expanded, maybe truncated): -X1**2*X2*X3**2*t**2/q**2 - X1**2*X2*X3*X4*t**3/q + X1**2*X2*X3*X4*t**3/q**2 - X1**2*X2*X3*X4*t**2/q**2 - X1**2*X3**2*X4*t**2/q**2 + X1*X2*X3**2*X4*t**3/q - X1*X2*X3**2*X4*t**2/q - X1*X2*X3**2*X4*t**3/q**2 + X1*X2*X3**2*X4*t/q**2 + X1*X2*X3*X4**2*t**3/q - X1*X2*X3*X4**2*t**3/q**2 + X1*X2*X3*X4**2*t/q**2 + X1*X3**2*X4**2*t/q**2 + X2*X3**2*X4**2*t/q**2
+
+========================================================================
+SUMMARY
+========================================================================
+  m=3: 0 PASS, 11 FAIL out of 11
+    FAIL: f=1, diff factored = X3*(-X1 + X2*t)
+    FAIL: f=X1, diff factored = X1*X3*(-X1 + X2*q*t**4)/(q*t)
+    FAIL: f=X2, diff factored = -X3*(X1**2*t - X1**2 + X1*X2*q*t**2 + X1*X2*t**3 - X1*X2*t**2 - X2**2*t**2)/(q*t)
+    FAIL: f=X3, diff factored = -X3*(X1*X2*t**3 - X1*X2*t**2 - X1*X2*t + X1*X2 + X1*X3 - X2*X3*t)/q
+    FAIL: f=X1^2, diff factored = X1*X3*(-X1**2 + X1*X2*q**2*t**4 + X1*X2*q*t**2 - X1*X2*q*t + X2**2*q**2*t**4 - X2**2*q**2*t**3 + X2*X3*q**2*t**4 - X2*X3*q**2*t**3)/(q**2*t)
+    FAIL: f=X1*X2, diff factored = X1*X2*X3*t*(-X1 + X2*t)/q
+    FAIL: f=X2*X3, diff factored = -X3*(-X1**2*X2*t**2 + 2*X1**2*X2*t - X1**2*X2 + X1**2*X3*t - X1**2*X3 + X1*X2**2*t**3 - X1*X2**2*t**2 + X1*X2*X3*q*t + X1*X2*X3*t**3 - X1*X2*X3*t**2 - X2**2*X3*t**2)/(q**2*t)
+    FAIL: f=X1*X2*X3, diff factored = X1*X2*X3**2*(-X1 + X2*t)/q**2
+    FAIL: f=X1^3, diff factored = X1*X3*(-X1**3 + X1**2*X2*q**3*t**4 + X1**2*X2*q*t**2 - X1**2*X2*q*t + X1*X2**2*q**3*t**4 - X1*X2**2*q**3*t**3 + X1*X2**2*q**2*t**2 - X1*X2**2*q**2*t + X1*X2*X3*q**3*t**4 - X1*X2*X3*q**3*t**3 + X1*X2*X3*q**2*t**2 - 2*X1*X2*X3*q**2*t + X1*X2*X3*q**2 + X2**3*q**3*t**4 - X2**3*q**3*t**3 + X2**2*X3*q**3*t**4 - 2*X2**2*X3*q**3*t**3 + X2**2*X3*q**3*t**2 + X2*X3**2*q**3*t**4 - X2*X3**2*q**3*t**3)/(q**3*t)
+    FAIL: f=e_2(X), diff factored = X3*(-X1**2*X2*q*t + X1**2*X2*t - X1**2*X2 - X1**2*X3 + X1*X2**2*q*t**2 - X1*X2**2*t**2 + X1*X2**2*t + X1*X2*X3*q*t**2 - X1*X2*X3*q - X1*X2*X3*t**2 + X1*X2*X3*t + X2**2*X3*t)/q**2
+    FAIL: f=e_3(X), diff factored = X1*X2*X3**2*(-X1 + X2*t)/q**2
+  m=4: 0 PASS, 12 FAIL out of 12
+    FAIL: f=1, diff factored = -X3*t*(X1*t - X4)
+    FAIL: f=X1, diff factored = X1*X3*(-X2*t**2 + X4*t**3 - X4*t + X4)
+    FAIL: f=X2, diff factored = X3*t*(-X1**2 + X2*X4*q*t**2)/q
+    FAIL: f=X3, diff factored = -X3*(X1**2*t**2 - X1**2*t + X1*X2*q*t**3 - X1*X2*q*t**2 + X1*X4*q*t**2 - X1*X4*q*t + X1*X4*q + X1*X4*t**2 - X1*X4*t + X2*X4*t**2 - X2*X4*t - X3*X4*t)/q
+    FAIL: f=X4, diff factored = X3*t*(X1*X2*t**2 - X1*X2*t - X1*X3*t - X1*X4*t**2 + X1*X4*t - X2*X4*t**2 + X2*X4*t + X4**2)/q
+    FAIL: f=X1^2, diff factored = -X1*X3*(-X1*X4*t**3 + X2**2*t**2 + X2*X3*t**2 - X2*X3*t + X2*X4*t**5 - X2*X4*t**4 - 2*X2*X4*t**3 + 3*X2*X4*t**2 - X2*X4*t - X3*X4*t**3 + X3*X4*t**2 - X4**2*t**3 + X4**2*t**2 + X4**2*t - X4**2)
+    FAIL: f=X1*X2, diff factored = X1*X3*(-X1*X2*t**2 - X1*X4*t + X1*X4 + X2*X4*q*t**6)/(q*t)
+    FAIL: f=X2*X3, diff factored = -X3*(X1**2*X2*t**3 - X1**2*X2*t**2 + X1**2*X4*t**2 - X1**2*X4*t + X1**2*X4 + X1*X2*X4*t**4 - X1*X2*X4*t**3 - X2*X3*X4*t**2)/q
+    FAIL: f=X1*X2*X3, diff factored = -X1*X2*X3*X4*t**3*(X1 - X3)/q
+    FAIL: f=X1^3, diff factored = -X1*X3*(-X1**2*X4*t**3 + X1*X2*X4*t**5 - X1*X2*X4*t**4 - X1*X2*X4*t**3 + X1*X2*X4*t**2 - X1*X3*X4*t**3 + X1*X3*X4*t**2 - X1*X4**2*t**3 + X1*X4**2*t**2 + X2**3*t**2 + X2**2*X3*t**2 - X2**2*X3*t + X2**2*X4*t**5 - X2**2*X4*t**4 - 2*X2**2*X4*t**3 + 3*X2**2*X4*t**2 - X2**2*X4*t + X2*X3**2*t**2 - X2*X3**2*t + X2*X3*X4*t**5 - X2*X3*X4*t**4 - 3*X2*X3*X4*t**3 + 6*X2*X3*X4*t**2 - 4*X2*X3*X4*t + X2*X3*X4 + X2*X4**2*t**5 - X2*X4**2*t**4 - 3*X2*X4**2*t**3 + 5*X2*X4**2*t**2 - 2*X2*X4**2*t - X3**2*X4*t**3 + X3**2*X4*t**2 - X3*X4**2*t**3 + 2*X3*X4**2*t**2 - X3*X4**2*t - X4**3*t**3 + X4**3*t**2 + X4**3*t - X4**3)
+    FAIL: f=e_2(X), diff factored = X3*t*(-X1**2*X2*q*t**2 + X1**2*X2*t**2 - X1**2*X2*t - X1**2*X3*t - X1**2*X4*q*t - X1*X2*X3*q*t + X1*X2*X4*q**2*t**4 - X1*X2*X4*q**2*t**2 - X1*X2*X4*q*t**4 - X1*X2*X4*q*t**3 + 2*X1*X2*X4*q*t**2 + X1*X2*X4*t**3 - X1*X2*X4*t**2 - X1*X2*X4*t + X1*X2*X4 - X1*X3*X4*t + X1*X3*X4 + X1*X4**2*q*t - X1*X4**2*t + X1*X4**2 + X2*X3*X4*q*t - X2*X3*X4*t + X2*X3*X4 + X2*X4**2*q*t - X2*X4**2*t + X2*X4**2 + X3*X4**2)/q**2
+    FAIL: f=e_3(X), diff factored = -X3*t*(X1**2*X2*X3*t + X1**2*X2*X4*q*t**2 - X1**2*X2*X4*t**2 + X1**2*X2*X4*t + X1**2*X3*X4*t - X1*X2*X3*X4*q*t**2 + X1*X2*X3*X4*q*t + X1*X2*X3*X4*t**2 - X1*X2*X3*X4 - X1*X2*X4**2*q*t**2 + X1*X2*X4**2*t**2 - X1*X2*X4**2 - X1*X3*X4**2 - X2*X3*X4**2)/q**2
+
+Wallclock time: 3.60s

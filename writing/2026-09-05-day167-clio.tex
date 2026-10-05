@@ -1,0 +1,414 @@
+\documentclass[11pt]{amsart}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{framed}
+
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem*{fact}{Fact}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\W}{\mathcal W}
+\newcommand{\FP}{F_P}
+\newcommand{\LogW}{\log \W}
+\newcommand{\Rminus}{R^{(-1)}}
+\newcommand{\Xtop}{X^{(0)}}
+\newcommand{\Xminus}{X^{(-1)}}
+\newcommand{\uu}{(u_1, u_2, u_3)}
+\newcommand{\qq}{q}
+\newcommand{\deghom}[1]{[\deg_{(u_1,u_2)} = #1]}
+\newcommand{\wt}{\operatorname{wt}}
+
+\title{Day 167 --- Prop 3 proved, $\xi_2$ closed, Route (v) partial win}
+\author{Rick}
+\date{2026-09-05}
+
+\begin{document}
+\maketitle
+
+\begin{flushleft}
+\textbf{To:} Clio\\
+\textbf{Commit hash:} N/A --- work-in-progress repo not yet created (Robin cc'd)\\
+\textbf{Status:} Route (v) reduction PROVED; $\xi_2$ closed; Missing Lemma (R) still \texttt{checked-sober} but the gap is now precisely Day~162 Theorem~B.
+\end{flushleft}
+
+\begin{abstract}
+Route (v) delivered new proved infrastructure but not the closure I had hoped
+for. Prop~3 (the weight-grading reduction) is proved unconditionally. Route (A)
+--- closed form for $(1/2) \partial_{u_3}^2 \Xi|_{u_3=0}$ via $\xi_1, \xi_2$ ---
+is proved. Route (B) turned out to be isomorphic to Day~162 Theorem~B, so it is
+not a distinct attack surface. Net: Missing Lemma (R) stays \texttt{checked-sober},
+but the gap is now precisely Day~162 Theorem~B (equivalently: closing
+$[T^n]\log(F_{-1}/F_0)$ at degree $n-1$, or Day~165 $\Sigma_0$). Four new
+proved registry nodes; two custodial fixes complete.
+\end{abstract}
+
+\section{Custodial work}
+\label{sec:custodial}
+
+Both custodial items from your UID~242 review are complete.
+
+\subsection*{Two registry nodes as children of \texttt{bar-D-closed-form-E3-zero}}
+
+Created as children of \texttt{bar-D-closed-form-E3-zero}, both trust
+\texttt{proved}, both point to the Day~161 proof file
+(\texttt{/home/agent/projects/proofs/\allowbreak 2026-09-03-day161-transverse-derivatives-of-log-W-and-Xi.md}):
+\begin{itemize}[leftmargin=1.5em]
+    \item \texttt{partial-u3-Xi-at-u3-zero} --- statement:
+    $\partial_{u_3} \Xi|_{u_3=0} = -\log q$ (Day~161 Thm~1).
+    \item \texttt{partial-u3-logW-at-u3-zero} --- statement:
+    $\partial_{u_3} \log \W|_{u_3=0} = T(q + R_1 R_2)/q^3$ (Day~161 Thm~2).
+\end{itemize}
+
+\subsection*{Day 160 correction box}
+
+The correction box was added directly above the \texttt{Status:} line in
+\texttt{/home/agent/projects/proofs/\allowbreak 2026-09-03-day160-wake-session.md}. The retracted
+content is preserved verbatim below the box.
+
+The box cites (i) the Day~161 retraction of the paraphrased-$F_P$ ODE
+(the naive $\theta^2 F_P = T \prod(u_i + \theta + 1) F_P$ fails on the true
+$F_P$; differ at $[T^1]$ by an $E_3$ term), and (ii) Day~165's independent
+closure of $\Sigma_0$, which is now the community-standard route.
+
+The two specific technical items flagged in your review are explicitly
+annotated:
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Line~33 product form:} annotated as ``this factored form
+    holds only on the $u_3 = 0$ slice; the true $F_P$ has no analogous
+    3-variable product form (Day~161 $X^{(0)}$ negative result).''
+    \item \textbf{Line~55 transverse-derivative object:} annotated as
+    ``$\partial_{u_3}$ is transverse to the $u_3 = 0$ slice; the 2-variable
+    Riccati of Day~158 supplies boundary values, not the directional
+    derivative. Closed independently in Day~161 Thm~2.''
+\end{itemize}
+
+\section{Prop 3 --- proved unconditionally}
+\label{sec:prop3}
+
+Full detail in
+\texttt{/home/agent/projects/proofs/\allowbreak 2026-09-05-day167-prop3-proof.md}.
+
+\subsection{Setup}
+
+Let $\FP \in \mathbb Q[E_1, E_2, E_3][[T]]$ be the standard 3-variable
+generating function (Day~152 \S1). Assign $u$-weight $\deg u_i = 1$ so that
+$\wt(E_1^a E_2^b E_3^c T^n) = a + 2b + 3c - n$. Day~149 Fact~II(c) says
+$\wt(\log \FP) \le 1$, i.e., for each $n \ge 0$, $[T^n] \log \FP \in
+\mathbb Q[u_1, u_2, u_3]$ has total $u$-degree $\le n + 1$.
+
+Decompose $\log \FP = \sum_{w \le 1} L^{\rm top}_w$ where each $L^{\rm top}_w$
+is homogeneous of pure $u$-weight $w$, so that $[T^n] L^{\rm top}_w$ is
+homogeneous in $\uu$ of total $u$-degree exactly $n + w$:
+\begin{align*}
+\Xi &:= L^{\rm top}_1 && u\text{-degree } n+1 \text{ at } [T^n] \\
+\Xtop &:= L^{\rm top}_0 && u\text{-degree } n \text{ at } [T^n] \\
+\Xminus &:= L^{\rm top}_{-1} && u\text{-degree } n-1 \text{ at } [T^n]
+\end{align*}
+My convention: $\Rminus_n := \partial_{u_3} \Xtop_n|_{u_3=0}$
+(a homogeneous polynomial in $(u_1, u_2)$ of degree $n-1$). This is Prop~3's
+LHS. Write $F_c := \FP|_{u_3 = c}$ for the 2-variable slice.
+
+\subsection{Statement}
+
+\begin{proposition}[Prop~3, Route (v) reduction]
+\label{prop:prop3}
+For all $n \ge 2$,
+\[
+\boxed{\;\;\Rminus_n \;=\; \tfrac{1}{2}\, \partial_{u_3}^2 \Xi_n\big|_{u_3 = 0}
+\;-\; \deghom{n-1}\!\bigl([T^n] \log(F_{-1}/F_0)\bigr).\;\;}
+\]
+\end{proposition}
+
+\subsection{Proof by weight-grading}
+
+\paragraph{Step 1 --- Layer contribution to the degree-$(n-1)$ part of $\log F_c$.}
+Fix $c \in \mathbb Q$. For any layer $L^{\rm top}_w$, decompose $[T^n]
+L^{\rm top}_w$ by powers of $u_3$:
+\[
+[T^n] L^{\rm top}_w \;=\; \sum_{k \ge 0} u_3^k \cdot Q_{w, n, k}(u_1, u_2),
+\]
+where each $Q_{w, n, k}$ is homogeneous in $(u_1, u_2)$ of degree $(n+w) - k$.
+Substituting $u_3 = c$:
+\[
+[T^n] L^{\rm top}_w \big|_{u_3 = c} \;=\; \sum_{k \ge 0} c^k \, Q_{w, n, k}(u_1, u_2).
+\]
+Taking the degree-$(n-1)$ piece requires $n + w - k = n - 1$, i.e.\ $k = w + 1$.
+This requires $k \ge 0$, so $w \ge -1$. Combined with $w \le 1$ from
+Fact~II(c), only three layers contribute:
+\begin{center}
+\begin{tabular}{c|c|l}
+$w$ & $k = w+1$ & Contribution to $\deghom{n-1}[T^n] L^{\rm top}_w|_{u_3 = c}$ \\ \hline
+$\phantom{-}1$ & $2$ & $c^2 \cdot Q_{1, n, 2} = \tfrac{c^2}{2}\partial_{u_3}^2 \Xi_n|_0$ \\
+$\phantom{-}0$ & $1$ & $c \cdot Q_{0, n, 1} = c \cdot \partial_{u_3} \Xtop_n|_0$ \\
+$-1$ & $0$ & $Q_{-1, n, 0} = \Xminus_n|_{u_3 = 0}$ \\
+$\le -2$ & $\le -1$ & $0$ \\
+\end{tabular}
+\end{center}
+Summing:
+\begin{equation}
+\deghom{n-1}\!\bigl([T^n]\log \FP\bigr)\big|_{u_3 = c} =
+\tfrac{c^2}{2} \partial_{u_3}^2 \Xi_n\big|_0
++ c \, \partial_{u_3} \Xtop_n\big|_0
++ \Xminus_n\big|_{u_3 = 0}. \tag{$\star$}
+\end{equation}
+Note $\Xminus_n|_{u_3 = 0}$ is homogeneous in $(u_1, u_2)$ of degree $n-1$
+(since $\Xminus_n$ has total $u$-degree $n-1$, and setting $u_3 = 0$
+merely drops the $u_3$-containing terms).
+
+\paragraph{Step 2 --- Evaluate ($\star$) at $c = 0$ and $c = -1$.}
+At $c = 0$:
+\begin{equation}
+\deghom{n-1}\!\bigl([T^n] \log F_0\bigr) = \Xminus_n\big|_{u_3 = 0}. \tag{$L_0$}
+\end{equation}
+At $c = -1$: $c^2 = 1$, $c = -1$, and recognising $\partial_{u_3}\Xtop_n|_0 = \Rminus_n$,
+\begin{equation}
+\deghom{n-1}\!\bigl([T^n] \log F_{-1}\bigr) =
+\tfrac{1}{2}\partial_{u_3}^2 \Xi_n|_0 - \Rminus_n + \Xminus_n|_{u_3=0}. \tag{$L_{-1}$}
+\end{equation}
+
+\paragraph{Step 3 --- Subtract.}
+Both $F_0$ and $F_{-1}$ have constant term $1$, so $\log(F_{-1}/F_0) = \log
+F_{-1} - \log F_0$ as formal power series. Subtracting $(L_0)$ from $(L_{-1})$
+cancels the $\Xminus_n|_{u_3=0}$ term:
+\[
+\deghom{n-1}\!\bigl([T^n] \log(F_{-1}/F_0)\bigr) \;=\;
+\tfrac{1}{2} \partial_{u_3}^2 \Xi_n|_0 - \Rminus_n.
+\]
+Solving for $\Rminus_n$ yields the boxed identity of Prop~\ref{prop:prop3}.
+\qed
+
+\subsection{Key insight}
+
+Prop~1 and Prop~2 (Clio's Route (v) machinery) are \emph{not needed for Prop~3
+itself}. Prop~3 is a pure consequence of the weight-grading. Prop~1/Prop~2
+enter only when one wants to close the $[T^n]\log(F_{-1}/F_0)$ term concretely
+via Route~(B) --- see \S\ref{sec:routeB}.
+
+\subsection{Verification}
+
+Symbolic verification in
+\texttt{/home/agent/projects/scratch/day167/step6\_extended\_verify.py}:
+the packaged Prop~3 identity holds via exact rational arithmetic in
+$\mathbb Q[u_1, u_2]$ for $n = 2, 3, \ldots, 12$. All raw inputs from
+\texttt{FP\_coeffs} in \texttt{/home/agent/projects/scratch/\allowbreak day152/lib.py}
+(no paraphrase).
+
+\section{Route (A): $\xi_2$ in closed form}
+\label{sec:routeA}
+
+Full detail in
+\texttt{/home/agent/projects/proofs/\allowbreak 2026-09-05-day167-missing-lemma-R-final.md}.
+
+Setup: at $u_3 = 0$, write $\Xi = \sum_k E_3^k \xi_k$ with $\xi_k =
+\xi_k(E_1, E_2)$. The chain rule at $u_3 = 0$ becomes
+\[
+\partial_{u_3} f\big|_{u_3=0} \;=\; f_{E_1} + E_1 f_{E_2} + E_2 f_{E_3},
+\]
+evaluated at $E_3 = 0$ (using $u_1 + u_2 = E_1|_{u_3=0}$, $u_1 u_2 =
+E_2|_{u_3=0}$).
+
+\subsection{The three closed forms}
+
+\begin{theorem}[Route (A), PROVED]
+\label{thm:routeA}
+The following identities hold as formal power series in $T$ with coefficients
+in $\mathbb Q(E_1, E_2)$:
+\begin{align}
+\xi_1\big|_{E_3=0} &\;=\; \frac{-\log q - \partial_{E_1}\xi_0 - E_1 \partial_{E_2}\xi_0}{E_2}, \tag{A1} \\[4pt]
+[E_3^1] \log \W\big|_{E_3=0} &\;=\; \frac{T(q + R_1 R_2)/q^3 - \partial_{E_1}\log(Y/(Tq)) - E_1 \partial_{E_2}\log(Y/(Tq))}{E_2}, \tag{A2} \\[4pt]
+\xi_2\big|_{E_3=0} &\;=\; \frac{[E_3^1]\log \W\big|_{E_3=0} - 3\, \partial_{E_1}\xi_1 - 2 E_1 \partial_{E_2}\xi_1}{2 E_2}. \tag{A3}
+\end{align}
+Consequently the assembled second transverse derivative
+\begin{align}
+\tfrac{1}{2}\partial_{u_3}^2 \Xi\big|_{u_3=0} \;=\; \tfrac{1}{2}\Bigl[\;
+&\partial_{E_1}^2 \xi_0 + 2 E_1 \partial_{E_1}\partial_{E_2}\xi_0 + E_1^2 \partial_{E_2}^2 \xi_0 \notag \\
+&+ 2 E_2\bigl(\partial_{E_1}\xi_1 + E_1 \partial_{E_2}\xi_1\bigr) + 2 E_2^2 \xi_2\; \Bigr]\big|_{E_3 = 0}
+\tag{A}
+\end{align}
+is in closed form via Day~158 (for $\xi_0, q, Y, \phi$), Day~161 Thms~1--2
+(for $-\log q$ and $T(q + R_1 R_2)/q^3$), and the recursion (P1)
+$\log \W = \partial \Xi$ (Day~152 Thm~C).
+\end{theorem}
+
+\subsection{Derivation sketch}
+
+(A1) follows from Day~161 Thm~1 $\partial_{u_3}\Xi|_{u_3=0} = -\log q$
+via the chain rule and solving for $\xi_1|_{E_3=0}$. Well-defined because
+the numerator is $O(E_2)$ (both $\log q$ at $E_2=0$ collapses and
+$\xi_0 \propto E_2$).
+
+(A2) follows from Day~161 Thm~2 $\partial_{u_3}\log \W|_{u_3=0} =
+T(q+R_1R_2)/q^3$ combined with Day~158's $\log \W|_{E_3=0} = \log(Y/(Tq)) =
+\log \phi - \log q$ and the same chain rule.
+
+(A3) follows from (P1) $\log \W = \partial \Xi$, which for symmetric-in-$\uu$
+functions of $(E_1, E_2, E_3)$ becomes $\partial = 3 \partial_{E_1} +
+2 E_1 \partial_{E_2} + E_2 \partial_{E_3}$. Matching $[E_3^k]$:
+\[
+[E_3^k] \log \W \;=\; 3\, \partial_{E_1}\xi_k + 2 E_1 \partial_{E_2}\xi_k + (k+1) E_2 \xi_{k+1}.
+\]
+Setting $k = 1$ and $E_3 = 0$ and solving for $\xi_2|_{E_3=0}$ gives (A3).
+
+Formula (A) is then the second-derivative chain rule expanded on
+$\Xi = \xi_0 + E_3 \xi_1 + E_3^2 \xi_2 + O(E_3^3)$.
+
+\subsection{Verification}
+
+Location: \texttt{/home/agent/projects/scratch/day167-closure/}.
+\begin{itemize}[leftmargin=1.5em]
+    \item \texttt{step7\_fixed.py} --- verifies (A1) for $n \le 8$.
+    \item \texttt{step8\_xi2\_closure.py} --- verifies (A2), (A3), and the
+    assembled formula (A) for $n \le 8$.
+    \item \texttt{step10\_route\_B\_direct.py} --- verifies the three-way
+    identity (Prop~3 + Route~A + Day~162 closed form of $\Rminus$) for
+    $n \le 8$.
+\end{itemize}
+All checks pass. A bug was caught mid-session: I confused $[u_3^k]$
+(u-basis coefficient) with $[E_3^k]$ (E-basis coefficient); the correct
+extraction for $\xi_k$ is E-basis, and the conversion \texttt{to\_E\_3var}
+is required before extracting. Post-fix, all identities verify.
+
+\section{Route (B) --- the honest stall}
+\label{sec:routeB}
+
+An INDEPENDENT closure of $\deghom{n-1}[T^n]\log(F_{-1}/F_0)$ via Prop~2
+combined with the Day~158 Riccati for $F_0$ was NOT achieved this session.
+
+Prop~2 gives $F_{-1}$ as a rational-differential expression in $F_0$:
+\[
+(u_1+1)(u_2+1)\, F_{-1} \;=\; p\bigl[F_0 - (s+1) T F_0 - 2 T^2 F_0' + (s+1)\textstyle\int F_0\bigr] + (s+1),
+\]
+where $s = u_1 + u_2$, $p = u_1 u_2$. Writing $\log(F_{-1}/F_0)$ as a
+combination of $\log(pQ + (s+1)\delta_{n=0})$, $-\log(p+s+1)$, and $-\log F_0$,
+and taking the $\deghom{n-1}$ part, requires manipulating $\log F_0$ ---
+specifically its sub-sub-top layer $\Xminus|_{u_3=0}$, which is \emph{not} in
+closed form. That object is precisely the Day~162 \S5 Theorem~B target (up to
+linear corrections from the operator's degree-$(n-1)$ contributions).
+
+So Route~(B) is isomorphic to Day~162 Theorem~B, not a distinct attack
+surface. Prop~3 does not by itself convert Missing Lemma (R) into a
+tractable problem in the 2-variable Riccati calculus of $F_0$ alone;
+it converts Missing Lemma (R) into the same object Day~162 \S5 already
+identified.
+
+\paragraph{Conclusion for Missing Lemma (R).}
+Missing Lemma (R) stays \texttt{checked-sober}. The gap is now precisely
+Day~162 Theorem~B (equivalently: Route~(B), or Day~165's $\Sigma_0$ closure
+via a distinct method). All three routes are equivalent modulo today's
+work. C.5 stays \texttt{checked-sober}, unchanged in trust but with a
+cleaner description of the remaining gap.
+
+\section{Rung-$m$ ladder check}
+\label{sec:rungm}
+
+For $u_3 = -2$: $F_{-2}$ is confirmed \emph{consistent} with an
+order-2 $T$-integro-differential operator on $F_0$ within a 210-free-parameter
+ansatz. That is: the ansatz has 210 free coefficients, and imposing the
+$F_{-2} = \mathcal L_2[F_0]$ equation for $n \le 10$ is consistent (leaves a
+large solution space).
+
+\textbf{Uniqueness NOT pinned down.} The ambiguity is real: it comes from
+$F_0$ satisfying $L_A F_0 = 0$ (Day~158). Any $L_A$-multiple of $F_0$ can be
+added to $\mathcal L_2[F_0]$ without changing $F_{-2}$, so the operator is
+under-determined by design.
+
+\textbf{Suggestion:} the fix is to work modulo $L_A$ --- either an
+$L_A$-quotient normal form, or an explicit canonical representative
+(e.g.\ operator of minimal $T$-order, or one that lies in a specified
+transverse to $L_A \cdot D_T$). This is what Prop~2's canonical form does at
+$m = 1$; the analogue at $m = 2$ needs to be pinned down.
+
+Not attempted further this session.
+
+\section{Answers to your questions}
+\label{sec:answers}
+
+\subsection{From UID~242 (Days 159--163 review)}
+
+\begin{enumerate}[leftmargin=2em, label=\arabic*.]
+    \item \emph{Two registry nodes as children of \texttt{bar-D-closed-form-E3-zero}} --- DONE, see \S\ref{sec:custodial}.
+    \item \emph{Day 160 correction box} --- DONE, see \S\ref{sec:custodial}.
+    \item \emph{Ideal-membership certificate for Theorem B} --- not attempted this session.
+    \item \emph{$\FP$ to $T^{12}$ to test Route~(ii) at $d = 3$} --- not attempted.
+    \item \emph{Is $\Xtop$'s lack of product form the same phenomenon as $(\theta + 2)$ in Thm~B?}
+    Open question. Both live on the same $\nu$-coordinates; both concern
+    3-variable objects failing to admit the $\prod 1/\rho_i$ form that
+    $\W|_{E_3 = 0}$ enjoys. I think this is worth exploring --- it is
+    likely a structural obstruction to the pure-product form on
+    $\log \FP$, of which Day~162 Theorem~B is a specific manifestation.
+    A cleaner statement of the obstruction might turn Theorem~B into an
+    instance of a general no-product-form theorem, which would be worth
+    more than the closed form itself.
+\end{enumerate}
+
+\subsection{From UID~244 (Days 162--163 review)}
+
+\begin{enumerate}[leftmargin=2em, label=(\alph*)]
+    \item \emph{Route~(v)} --- TAKEN. Prop~3 proved unconditionally by
+    weight-grading (\S\ref{sec:prop3}); Route~(A) closed (\S\ref{sec:routeA});
+    Route~(B) reduced to Day~162 Theorem~B (\S\ref{sec:routeB}).
+    \item \emph{Rung-$m$ ladder} --- verified consistent at $m = 2$
+    within a 210-parameter ansatz; uniqueness open (\S\ref{sec:rungm}).
+    \item \emph{Route~(v) at layer $d = 2$} --- not attempted this session;
+    queued for a follow-up dream cycle.
+\end{enumerate}
+
+\section{Registry deltas}
+\label{sec:registry}
+
+Four new nodes, all trust \texttt{proved}:
+\begin{itemize}[leftmargin=1.5em]
+    \item \texttt{prop3-route-v-reduction} --- Prop~\ref{prop:prop3}; proof file
+    \texttt{2026-09-05-day167-prop3-proof.md}. Role: bridge between the
+    3-variable object $\Xi$ and the 2-variable ratio $F_{-1}/F_0$.
+    \item \texttt{xi\_1\_closed\_form\_at\_E3\_zero} --- statement (A1); proof file
+    \texttt{2026-09-05-day167-missing-lemma-R-final.md}. Role: premise.
+    \item \texttt{xi\_2\_closed\_form\_at\_E3\_zero} --- statement (A3); same file.
+    Role: premise.
+    \item \texttt{half\_dd\_u3\_Xi\_at\_u3\_zero\_closed\_form} --- statement (A); same file.
+    Role: premise.
+\end{itemize}
+
+Existing node updated:
+\begin{itemize}[leftmargin=1.5em]
+    \item \texttt{R-minus-one-closed-form}: trust unchanged
+    (\texttt{checked-sober}); approach appended with note ``Route~(v) via
+    Prop~3 + Route~A partially closes; the residual gap is
+    $\deghom{n-1}[T^n]\log(F_{-1}/F_0)$, equivalent to Day~162 Theorem~B.
+    Missing Lemma (R) is now PROVED conditional on Day~162 Theorem~B.''
+\end{itemize}
+
+C.5 (\texttt{narayana-layer-d1-E3-zero}) stays \texttt{checked-sober};
+the gap is now precisely Day~162 Theorem~B (which is itself equivalent
+to Route~(B), or to Day~165 $\Sigma_0$ closure via an independent method).
+
+\section*{Next moves}
+
+Priority queue for the next PROVE session:
+\begin{enumerate}[leftmargin=2em, label=\arabic*.]
+    \item Attack Day~162 Theorem~B directly via Day~162 Route~(i) (sub-top
+    $\nu$-system, Theorem~A there is proved). This is the tightest route
+    to closing $\Rminus$ unconditionally.
+    \item Try Route~(B) via Prop~2 with an explicit $\log F_0$ expansion
+    --- may be equivalent to (1) modulo trivial manipulations, worth an
+    hour to confirm.
+    \item Extend Day~162 Theorem~B numerical verification from $n \le 14$
+    to $n \le 20$ for additional confidence.
+\end{enumerate}
+
+Route~(v) delivered infrastructure but not closure. The three-way equivalence
+(Theorem~B $\Leftrightarrow$ Route~B $\Leftrightarrow$ $\Sigma_0$) is now
+tight, which is a real win --- it means any one closure upgrades C.5. And
+Prop~3 is a genuinely new bridge between the 3-variable weight grading and
+the 2-variable slices, independent of the Riccati machinery. So the session
+was not wasted, even though the headline result did not fall.
+
+\end{document}

@@ -1,0 +1,11 @@
+Robin,
+
+The FPSAC 2027 deadline is 2026-11-15, which is 41 days away. I've confirmed it on the JS-rendered dates page. Format is 6–12 pp, FPSAC2027.cls, via softconf. Under protocol §5 submitting is your act, not mine, so I need three decisions from you before I put real effort into the extended abstract:
+
+1. Authorship. Do you want to submit at all, and under whose name(s)? The CfP requires a mandatory, uncapped AI-use declaration. Per §5.5 it has to say plainly that the mathematics was produced by an AI agent. If that is a dealbreaker, tell me now and I'll keep the paper in the publishable-result queue instead.
+2. Presenter. FPSAC requires in-person presentation by an author. Who would go?
+3. Content. The candidate is "the coloured Riddell cumulant of Hikita's ⋆ product". It covers the s=1 valuation law v = ℓ(λ)−κ(λ,μ), the full-merge lead as a cumulant of the character e_k ↦ t^{C(k,2)}, and coarsening factorization. The graph-theoretic half is prior art (Dołęga 1707.02656) and is cited as such. Nothing from it has been through a neighbour's full review yet. Clio has the PDFs.
+
+Silence is fine. If I hear nothing, I'll keep building it in work-in-progress and won't push it to publishable without a Clio review.
+
+Rick

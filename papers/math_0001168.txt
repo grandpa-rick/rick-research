@@ -1,0 +1,862 @@
+                                                   HALL-LITTLEWOOD VERTEX OPERATORS AND
+                                                      GENERALIZED KOSTKA POLYNOMIALS
+arXiv:math/0001168v1 [math.QA] 28 Jan 2000
+
+
+
+
+                                                              MARK SHIMOZONO AND MIKE ZABROCKI
+
+
+
+
+                                                                          1. Introduction
+                                                Kostka-Folkes polynomials may be considered as coefficients of the formal
+                                             power series representing the character of certain graded GL(n)-modules.
+                                             These GL(n)-modules are defined by twisting the coordinate ring of the
+                                             nullcone by a suitable line bundle [1] and the definition may be generalized
+                                             by twisting the coordinate ring of any nilpotent conjugacy closure in gl(n)
+                                             by a suitable vector bundle [13]. The resulting polynomials have been called
+                                             generalized Kostka polynomials.
+                                                Jing defined a vertex operator that generates the Hall-Littlewood sym-
+                                             metric function Q[X; q] [6], thereby giving an elegant symmetric function re-
+                                             cursion for the Kostka-Foulkes polynomials. Garsia used a variant of Jing’s
+                                             vertex operator to derive various new formulas for the Kostka-Foulkes poly-
+                                             nomials.
+                                                Our point of departure was the observation that the Hall-Littlewood ver-
+                                             tex operators can be used to obtain formulas for generalized Kostka poly-
+                                             nomials. Our treatment uses Garsia’s plethystic type formulas.
+                                                One striking fact is that the Z[q, q −1 ]-linear span of n-fold compositions
+                                             of components of the Hall-Littlewood vertex operators, is isomorphic to
+                                             KG×C∗ (N ), the GL(n) × C∗ -equivariant K-theory of the nullcone. Under
+                                             this isomorphism, an n-fold composite operator is sent to the class of the
+                                             Euler characteristic of a twisted module. This fact has a generalization for
+                                             all the nilpotent conjugacy class closures in gl(n).
+                                                These Grothendieck groups were studied in [7]. We derive many explicit
+                                             relations among the vertex operators, most of which can be in interpreted as
+                                             relations in the Grothendieck groups which arise from certain Koszul com-
+                                             plexes. This allows for more explicit proofs of some basis theorems for these
+                                             Grothendieck groups that were proved in [7] using geometric arguments.
+                                                There is a particularly well-behaved subfamily of the generalized Kostka
+                                             polynomials, namely, those that are indexed by a sequence of rectangular
+                                             partitions. For this subfamily almost all of the formulas for Kostka-Foulkes
+                                             polynomials have generalizations. There are combinatorial formulas involv-
+                                             ing Littlewood-Richardson tableaux [11] [10], rigged configurations [8], and
+                                             inhomogeneous paths with energy function [12] [10].
+
+
+                                                                                    1
+     2. Hopf algebra of symmetric functions and plethysm
+   This section contains standard background material on symmetric func-
+tions which can be found in [9]. The possible exception to this is the defini-
+tion of the plethystic notation used here.
+   Let Λ = ΛF be the algebra of symmetric functions over a field F of char-
+acteristic zero. Λ may be defined as the polynomial algebra F[p1 , p2 , . . . ]
+where the pk are commuting algebraically independent variables. Let P be
+                                                                    P
+the set of partitions. For λ = (λ1 , . . . , λk ) ∈ P, write |λ| = ki=1 λi and
+let pλ = pλ1 . . . pλk denote the power symmetric function.
+                                                      L          Declaring pk to
+have degree k, Λ is endowed with a grading Λ = n≥0 Λn where Λn is the
+homogeneous component of degree n. Λn has F-basis {pλ | λ ∈ P, |λ| = n}.
+   Λ may be realized by symmetric series. Let X = (x1 , x2 , . . . ) be a count-
+able set of commuting indeterminates. Denote by F[[X]] the F-algebra of
+formal power series in the xi where each xi has degree 1, and Fb [[X]] ⊂ F[[X]]
+the subalgebra consisting of series whose monomials are of bounded degree.
+Let ΛX ⊂ Fb [[X]] denote the F-subalgebra consisting of the series that are
+symmetric in the variables xi . By the universal mapping property of a
+polynomial algebra, there is a F-algebra homomorphism Λ → ΛX given by
+pk 7→ xk1 + xk2 + · · · . This map is in fact a graded F-algebra isomorphism.
+   There is a scalar product on Λ for which the power symmetric functions
+are an orthogonal basis:
+                                  h pλ , pµ i = δλµ zλ
+                                                 Q
+where δλµ is the Kronecker delta, zλ = i ni (λ)! ini (λ) , and ni (λ) is the
+number of parts of size i in the partition λ.
+   We now define notation for plethystic substitution.
+   Let q ∈ F be a distinguished element that is transcendental over Q. Fix an
+element E ∈ Fb [[X]]. Define pk [E] ∈ Fb [[X]] to be the series obtained from
+E by replacing q by q k and xi by xki for all i ≥ 1. By the universal mapping
+property of a polynomial algebra, there is a unique F-algebra homomorphism
+Λ → Fb [[X]] such that pk 7→ pk [E]. The image of P ∈ Λ under this map is
+denoted P [E].
+   Switching viewpoints and considering pk [E] for various E, we see di-
+rectly from the definitions that E 7→ pk [E] is a Q-algebra homomorphism
+Fb [[X]] → Fb [[X]] and ΛX → ΛX given by pk [E ± E ′ ] = pk [E] ± pk [E ′ ]
+and pk [EE ′ ] = pk [E]pk [E ′ ] for all E, E ′ ∈ Fb [[X]]. It is not an F-algebra
+homomorphism since it changes the scalar q to q k .
+   By abuse of notation the variable X will also be used to represent the
+formal sum x1 + x2 + x3 + · · · . By definition
+            pk [X] = pk [x1 + x2 + x3 + · · · ] = xk1 + xk2 + xk3 + · · · .
+
+Example 1. e2 = p21 /2 − p2 /2 ∈ Λ. For the expression E = x1 + x2 we have
+              e2 [x1 + x2 ] = (x1 + x2 )2 /2 − (x21 + x22 )/2 = x1 x2
+                                          2
+        1              1        1            1        1
+If E = 1−q  then p1 [ 1−q ] = 1−q  and p2 [ 1−q  ] = 1−q 2 , so that
+
+                     
+                 1              1              1                  q
+           e2            =          2
+                                      −            2
+                                                      =
+                1−q         2(1 − q)    2(1 − q )        (1 − q)(1 − q 2 )
+   Recall that each E ∈ Fb [[X]] defines an F-algebra homomorphism Λ →
+Fb [[X]] such that P 7→ P [E].
+   1. If E = X then P 7→ P [X] yields the above isomorphism Λ ∼      = ΛX .
+   2. If E = 0 then the F-algebra homomorphism ǫ : Λ → F given by
+      P 7→ P [0] is the counit for Λ; it selects the constant term.
+   3. If E = x1 + x2 + · · · + xm then P 7→ P [x1 + x2 + · · · + xm ] is the
+      F-algebra epimorphism Λ → F[x1 , . . . , xm ]Sm onto the F-algebra of
+      symmetric polynomials in x1 through xm where Sm is the symmetric
+      group on m letters.
+   4. If E = X/(q−1) then the map P [X] 7→ P [X/(q−1)] is an F-algebra iso-
+      morphism Λ → Λ with inverse map P [X] 7→ P [X(q − 1)]. In particular
+      if {fλ } is a basis of Λ then so are {fλ [X(q − 1)]} and {fλ [X/(q − 1)]}.
+   We now discuss the Hopf algebra structure on Λ. Let Y = y1 + y2 + · · ·
+where the yi are another countable set of commuting indeterminates. Let
+ΛX;Y denote the F-subalgebra of Fb [[X, Y ]] consisting of the series that are
+symmetric in both the xi and the yj . Then there is an isomorphism Λ⊗F Λ →
+ΛX;Y given by f ⊗ g 7→ f [X]g[Y ] for f, g ∈ Λ. Letting E = X + Y , the map
+P 7→ P [X + Y ] defines an F-algebra homomorphism ∆ : Λ → Λ ⊗ Λ. ∆ is
+the comultiplication map for Λ. The maps ∆ and ǫ give Λ the structure of
+a coassociative cocommutative Hopf algebra.
+   There is a scalar product on Λ ⊗ Λ defined by
+             h f1 [X]g1 [Y ] , f2 [X]g2 [Y ] iΛX ⊗ΛY = h f1 , f2 ih g1 , g2 i
+for all fi , gi ∈ Λ for i = 1, 2 and this relation is then extended by linearity.
+With respect to this scalar product on Λ ⊗ Λ, the map ∆ is adjoint to the
+multiplication map Λ ⊗ Λ → Λ given by f ⊗ g 7→ f g. That is,
+(1)                     h f , gh i = h f [X + Y ] , g[X]h[Y ] i
+for all f, g, h ∈ Λ.
+   To deal with the Cauchy kernel it is necessary to work in a completion of
+Λ. Let Λb = F[[p1 , p2 , . . . ]], the F-algebra of formal power series in the pi . The
+symmetric realization Λ      b X of Λ  b is given by the F-subalgebra of symmetric
+series in F[[X]]. Given any element E ∈ Fb [[X]] with no constant term and
+     b the plethysm P [E] ∈ F[[X]] may be defined by substitution as before.
+P ∈ Λ,
+   Define the Cauchy kernel Ω ∈ Λ         b by
+                                                       
+                                               X
+                                    Ω = exp      pr /r  .
+                                            r≥1
+                                            3
+The following formulas are consequences of the definitions:
+                             Y      1      X
+                    Ω[zX] =              =     z k hk [X]
+                                 1 − zxi
+                              i            k≥0
+                             Y             X
+                  Ω[−zX] =      1 − zxi =     (−z)k ek [X]
+                                    i              k≥0
+                   Ω[X + Y ] = Ω[X]Ω[Y ]
+                   Ω[X − Y ] = Ω[X]Ω[−Y ] = Ω[X]/Ω[Y ]
+                               X
+                     Ω[XY ] =     sλ [X]sλ [Y ]
+                                  λ∈P
+where hk , ek , and sλ are the homogeneous, elementary, and Schur symmetric
+functions respectively.
+   Two bases {a Pλ } and {bλ } of Λ are dual with respect to the scalar product
+if and only if λ∈P aλ [X]bλ [Y ] = Ω[XY ].
+   For f ∈ Λ, let f ⊥ be the linear operator on Λ that is adjoint to multipli-
+cation by f with respect to the scalar product:
+(2)                           h f ⊥ (g) , h i = h g , f h i
+for all g, h ∈ Λ. This operator is usually referred to as “f-perp” or “skewing
+by f.”
+   The skewing operators and the map ∆ (or equivalently the plethystic map
+P 7→ P [X + Y ]) can be expressed in terms of each other. For any f, g, h ∈ Λ,
+(3)                  h f ⊥ (g) , h i = h g[X + Y ] , f [Y ]h[X] i
+using (2), (1), and the commutativity of multiplication in Λ. Let {aλ } and
+{bλ } be dual bases of Λ. Then for every P ∈ Λ,
+                                   X
+(4)                   P [X + Y ] =   (b⊥
+                                       λ (P ))[X]aλ [Y ].
+                                        λ
+
+                      3. Definition of the operator
+   Using plethystic substitution we define a family of linear operators on
+symmetric functions. Define the formal Laurent series H(Z k ) in an ordered
+set of variables Z k = (z1 , z2 , . . . , zk ) with coefficients given by operators on
+Λ, which acts on P ∈ Λ by
+(5)             H(Z k )P [X] = P [X − (1 − q)Z ∗ ]Ω[ZX]R(Z k )
+              P               P                      Q
+where Z ∗ = ki=1 zi−1 , Z = ki=1 zi and R(Z k ) = 1≤i<j≤k 1 − zj /zi . For
+v ∈ Zk , define the operator Hvq by
+(6)                        Hvq P [X] = H(Z k )P [X]            .
+                                                          zv
+
+Remark 2.    1. If k = 1 this is Garsia’s [2] [3] version of Jing’s Hall-
+   Littlewood vertex operator [6].
+                                            4
+  2. At q = 0 this formula reduces to plethystic notation for a repeated
+     application of the Schur function vertex operator that is due to Bern-
+                                                0 H0                 0        0
+     stein [9, p.96, # 29 (d)], [3]. So H(v        1)   (v2 ) · · · H(vk ) = Hv for any
+     v ∈ Zk . If v is a partition λ = (λ1 , . . . , λk ) with at most k parts then
+     Hλ0 1 = sλ [X].
+  3. When q = 1 and λ is a partition, this formula reduces to multiplication
+     by the Schur function sλ : Ω[ZX]R(Z k ) λ = sλ [X].
+                                                         z
+  4. Hλq 1 = sλ for any partition λ = (λ1 , . . . , λk ) with at most k parts. If
+     vk < 0 then Hvq 1 = 0.
+  This operator possesses the same shifted skew symmetry in its subscript
+that Schur functions have. Let Zk≥ denote the set of dominant integral
+weights in Zk , that is, the weakly decreasing sequences in Zk . Let P k ⊂ Zk≥
+be the set of partitions of length at most k, which are always regarded as
+having k parts, some of which may be zero.
+Proposition 3. Let v ∈ Zk . Then
+                                q
+                        Hvq = −H(v1 ,v2 ... ,vi+1 −1,vi +1,...,vk )
+                                                                    .
+
+In particular if vi+1 = vi + 1 then Hvq = 0.
+Proof. Let si Z k be the sequence Z k with zi and zi+1 exchanged. Then
+H(si Z k ) = 1−z i /zi+1    k       zi     k
+              1−zi+1 /zi H(Z ) = − zi+1 H(Z ). The result follows by taking
+                      v
+the coefficient of z on both sides of this equation. If vi+1 = vi + 1 then
+Hvq = −Hvq and hence must be zero.
+  The following corollary shows that for every v ∈ Zk , Hvq is either zero or
+up to sign equal to Hνq for some ν ∈ Zk≥ .
+
+Corollary 4. Let v ∈ Zk , σ ∈ Sk , and ρ = ρ(k) = (k − 1, k − 2, . . . , 0).
+Then
+                                           q
+(7)                          Hvq = sign(σ)Hσ(v+ρ)−ρ .
+
+In particular, if v + ρ has two equal parts then Hvq = 0. Otherwise there is a
+unique σ ∈ Sk such that σ(v + ρ) is strictly decreasing, so that σ(v + ρ) − ρ ∈
+Zk≥ .
+
+            4. Another formula for the vertex operator
+   We derive another formula for the operator Hνq , which will be used to
+prove a strong linear independence property of the operators. To do this, it
+is convenient to introduce some notation for the irreducible rational charac-
+ters of GL(k). The polynomial representation ring of GL(k) is isomorphic to
+the F-algebra F[z1 , z2 , . . . , zk ]Sk of symmetric polynomials in the variables zi .
+The rational representation ring R(GL(k)) is isomorphic to the F-algebra of
+symmetric Laurent polynomials in the variables z1 , z2 , . . . , zk or equivalently
+                                             5
+the localization F[z1 , . . . , zk ]Sk [det[Z]−1 ] of the algebra of symmetric poly-
+nomials obtained by inverting the character det[Z] = z1 z2 · · · zk of the deter-
+minant module. R(GL(k)) has a distinguished basis {sλ [Z] | λ ∈ Zk≥ } where
+sλ [Z] is the character of the irreducible finite-dimensional GL(n)-module V λ
+of highest weight λ. Explicitly, if m is an integer such that m ≥ −λk then
+sλ [Z] = det[Z]−m sλ+(mk ) [Z] where mk = (m, m, . . . , m) ∈ Zk , λ + (mk ) is
+the vector sum in Zk (which is a partition) and sλ+(mk ) [Z] is the Schur poly-
+nomial. For v ∈ Zk , define its dual weight v ∗ = (−vk , −vk−1 , . . . , −v1 ). If
+λ ∈ Zk≥ then so is λ∗ ; it satisfies (V λ )∗ ∼
+                                                     ∗
+                                               = V λ where V ∗ is the contragredient
+dual of V .
+   Denote by cλµν the tensor product multiplicities:
+                                                  X
+                           sµ [Z]sν [Z] =             cλµν sλ [Z]
+                                              λ∈Zk≥
+
+
+for λ, µ, ν ∈ Zk≥ . It is well-known that
+                                          ∗
+(8)                    cλµν = dim(V λ ⊗ V µ ⊗ V ν )GL(n)
+
+where V G denotes the submodule of V fixed by G. Moreover for any finite-
+dimensional G-module,
+
+(9)                          dim((V ∗ )G ) = dim(V G ).
+
+  Let
+
+(10)                H(Z)P [X] = P [X − (1 − q)Z ∗ ]Ω[ZX].
+
+Then by (5) and (6),
+                                          X
+(11)                         H(Z) =               sν [Z]Hνq .
+                                          ν∈Zk≥
+
+
+
+Proposition 5. For ν ∈ Zk≥ ,
+                              X
+(12)                 Hνq =             cλµν sλ [X]sµ [X(q − 1)]⊥ .
+                             λ,µ∈P k
+
+Proof. Let Y be another set of variables and let H(Z) act on the X variables.
+We have
+         H(Z)Ω[XY ] = Ω[XY ]Ω[(q − 1)Z ∗ Y ]Ω[XZ]
+                             X X
+                    = Ω[XY ]             sν [Z]cνµ∗ λ sµ [(q − 1)Y ]sλ [X].
+                                   ν∈Zk≥ λ,µ∈P k
+
+                                              6
+The tensor product multiplicity can be rewritten using (8) and (9) so that
+cνµ∗ λ = cλµν . Clearly we have for fixed γ ∈ P k and ν ∈ Zk≥
+
+        Hνq sγ [X] = H(Z)Ω[XY ]
+                                sν [Z]sγ [Y ]
+                      X      D                                     E
+                   =      cµν sµ [(q − 1)Y ]⊥ sγ [Y ], Ω[XY ]sλ [X]
+                           λ
+                                                                       Y
+                      λ,µ∈P k
+                       X
+                  =             cλµν sλ [X]sµ [(q − 1)X]⊥ sγ [X]
+                      λ,µ∈P k
+
+  It is seen that (12) holds on the Schur basis and hence on Λ.
+
+                          5. Linear independence
+  The full strength of the following result is required later, when we work
+with operators on Λ that are infinite linear combinations of the Hνq .
+Proposition 6. Let {cν ∈ F | ν ∈ Zk≥ , |ν| = d} be an arbitrary collection
+                               P                  q
+of scalars. Then the map F =     ν∈Zk≥ ,|ν|=d cν Hν is a well-defined linear
+operator on Λ. Moreover this operator is 0 if and only if cν = 0 for all
+ν ∈ Zk≥ with |ν| = d.
+Proof. Any infinite linear combination of operators of the form sλ [X]sµ [X(q−
+1)]⊥ with |λ| = |µ|+d is well-defined because its action on any given element
+of the basis {sλ [X/(qP− 1)]} has only finitely many nonzero summands.
+   The operator F = ν∈Zk ,|ν|=d cν Hνq is well-defined because for fixed par-
+                                ≥
+titions λ and µ, sλ [X]sµ [X(q − 1)]⊥ appears in the formula given in Propo-
+sition 5 for only finitely many Hνq , namely for those such that cλµν 6= 0.
+   For γ ∈ Zk≥ , set α(γ) ∈ P k to be the partition with α(γ)i = max(γi , 0)
+and β(γ) ∈ P k be the partition defined by β(γ)i = −min(γk+1−i , 0).
+   By Proposition 5, for τ ∈ P k ,
+                               X
+(13) Hγq (sτ [X/(q − 1)]) =          cλµγ sλ [X]sµ [X(q − 1)]⊥ (sτ [X/(q − 1)]).
+                                 λ,µ∈P k
+
+The Littlewood Richardson rule implies that the coefficient cλµγ = 0 unless
+µ ⊇ β(γ). Since {sµ [X(q − 1)]} and {sτ [X/(q − 1)]} are dual bases, we
+calculate that Hγq (sτ [X/(q − 1)]) = 0 if |τ | ≤ |β(γ)| and τ 6= β(γ), and
+Hγq (sβ(γ) [X/(q − 1)]) = sα(γ) [X].
+   It follows now that F = 0 if and only if cγ = 0 for all γ. For if all of the
+coefficients are not zero, then γ is chosen such that cγ is non-zero and |β(γ)|
+is a minimum. We see then that
+                                           X
+(14)             F (sβ(γ) [X/(q − 1)]) =         cν sα(ν) [X] 6= 0
+                                            β(ν)=β(γ)
+
+
+                                            7
+       6. Connection with generalized Kostka polynomials
+   Next it is shown that the operators Hνq have the same relation to the gen-
+eralized Kostka polynomials of [13] that the components of Garsia’s modified
+Hall-Littlewood vertex operator has to the Kostka-Foulkes polynomials.
+   Let us recall the definition of the generalized Kostka polynomials. Let
+η = (η1 , η2 , . . . , ηt ) be a sequence of positive integers summing to n. Let
+           Rootsη = {(i, j) | 1 ≤ i ≤ η1 + · · · + ηk < j ≤ n for some k }
+be the set of strictly upper block triangular positions in an n × n matrix
+with diagonal block sizes given by η. Let Z be the sequence of variables z1
+through zn . Define the formal power series Bη [Z; q] by
+                                               Y           1
+                              Bη [Z; q] =                          .
+                                                       1 − qzi /zj
+                                          (i,j)∈Rootsη
+                                              P
+Let J be the antisymmetrizer J = σ∈Sn sign(σ)σ. Define the linear oper-
+ator π : F[z1± , . . . , zn± ] → R(GL(n)) given by π(f ) = J(z ρ )−1 J(z ρ f ).
+  Let γ ∈ Zn . Define the generating series
+                           Hη,γ [Z; q] = π (z γ Bη [Z; q]) .
+Since {sλ [Z] | λ ∈ Zn≥ } is a basis of R(GL(n)), define Kλγη (q) ∈ Z[[q]] by
+                                       X
+                         Hη,γ [Z; q] =     sλ [Z]Kλγη (q).
+                                         λ∈Zn
+                                            ≥
+
+It is shown in [13] that Kλγη (q) ∈ Z[q].
+   By developing the product of geometric series in Bη [Z; q] and using the
+shifted skew symmetry of the index for irreducible characters
+                           sv [Z] = sign(σ)sσ(v+ρ)−ρ [Z]
+for v ∈ Zn and σ ∈ Sn , one obtains the following expression [13]:
+                          X                   X
+(15)          Kλγη (q) =      sign(σ)                    q |m|
+                              σ∈Sn                   m:Rootsη →N
+                                                 wt(m)=σ(λ+ρ)−(γ+ρ)
+                                                                    P
+where ǫ1 through ǫn is the standard basis of Zn , |m| = (i,j)∈Rootsη m(i, j),
+                P
+and wt(m) = (i,j)∈Rootsη m(i, j)(ǫi − ǫj ).
+  Given η and γ, write γ = (γ (1) , γ (2) , . . . , γ (t) ) with γ (i) ∈ Zηi and assume
+that γ (i) ∈ Zη≥i .
+Proposition 7.
+                                                   X
+(16)                Hγq(1) Hγq(2) · · · Hγq(t) =          Kλ,γ,η (q)Hλq .
+                                                   λ∈Zn
+                                                      ≥
+
+Proof. Let Z n be the entire set of n variables z1 through zn . Break this
+set into t collections of successive variables such that the i-th collection
+Z (i) has size ηi for 1 ≤ i ≤ t. We have the relation H(U k )H(V ℓ ) =
+                                             8
+Ω[qU ∗ V ]H(U k , V ℓ ), which is verified by showing it holds when evaluated
+on an arbitrary P ∈ Λ:
+        H(U k )H(V ℓ )P [X] = P [X − (1 − q)(U ∗ + V ∗ )]Ω[U X]
+                                    Ω[V (X − (1 − q)U ∗ )]R(U k )R(V ℓ )
+                                 = P [X − (1 − q)(U ∗ + V ∗ )]Ω[(U + V )X]
+                                    Ω[qU ∗ V ]R(U k , V ℓ )
+It follows that
+                                                                 Y
+(17)       H(Z (1) )H(Z (2) ) · · · H(Z (t) ) = H(Z n )                  Ω[q(Z (i) )∗ Z (j) ]
+                                                               1≤i<j≤t
+
+Observe that Hγq(1) Hγq(2) · · · Hγq(t) is the coefficient of z γ on the left hand side
+                                                                    P           q
+of (17). The coefficient of z γ on the right hand side is m q |m| Hγ+wt(m)
+where m runs over the functions m : Rootsη → N. By Proposition 6 the
+operators Hλq are independent for λ ∈ Zn≥ . Hence we may take the coefficient
+of Hλq on both sides. Using Corollary 4 the right hand side becomes precisely
+the the expression (15) of Kλγη (q).
+  If γ is such that γ (i) ∈ P ηi , define the symmetric function
+(18)               H(γ (1) ,...,γ (t) ) [X; q] = Hγq(1) Hγq(2) · · · Hγq(t) 1.
+Then
+                                                    X
+(19)                H(γ (1) ,...,γ (t) ) [X; q] =           Kλγη (q)sλ [X]
+                                                    λ∈P n
+
+which is a finite sum, unlike the expansion (16) which is an infinite sum. At
+q = 1 this is the expansion of the product of Schur functions sγ (1) · · · sγ (t) in
+the Schur basis.
+   We have shown that the coefficients of the expansions of Hη,γ [Z; q] in
+terms of irreducible characters, and Hγq(1) . . . Hγq(t) in terms of the Hλq for
+λ ∈ Zn≥ , are the same. Consequently, at least on the level of characters, the
+questions of [7] regarding a certain Grothendieck ring of graded modules,
+can be translated into questions regarding the span of the above operators.
+
+   7. Spaces of vertex operators and commutation relations
+   By manipulating the order of the variables we may derive several sorts of
+explicit commutation relations. These are applied to prove basis theorems
+for spaces of our operators. Let G(k, n) denote the Z[q]-span of operators of
+the form Hµq Hνq where µ ∈ Zk and ν ∈ Zn , and G≥ (k, n) the Z[q]-span of such
+                                                                       k+n
+operators with the concatenated weight dominant, that is, (µ, ν) ∈ Z≥       .
+   The following are vertex operator analogues of results proven in [7] for
+Grothendieck groups. Our proofs have the advantage of being explicit and
+working over Z[q] instead of Z[q, q −1 ]. Moreover our relations among vertex
+operators can be lifted to relations in the Grothendieck groups.
+                                               9
+Theorem 8. G(k, n) = G≥ (k, n).
+
+Theorem 9. If k > n then G(k, n) ⊂ G(k − 1, n + 1) and G(n, k) ⊂ G(n +
+1, k − 1).
+
+Theorem 10. G(k, n) = G(n, k).
+   Consider the following generating function equation that follows easily
+from manipulating the operators on an arbitrary symmetric function.
+
+(20)
+H(U k , V ℓ )H(W m Z n )Ω[−q(U ∗ W + V ∗ W + V ∗ Z)]
+                                                                                      m
+                                                                                      Y           ℓ
+                                                                                                  Y
+   = H(U k , W m )H(V ℓ , Z n )Ω[−q(U ∗ V + W ∗ V + W ∗ Z)](−1)ℓm                           wiℓ         vi−m
+                                                                                      i=1         i=1
+
+   Setting ℓ = m = 1 in this formula gives enough relations to prove Theorem
+8. For brevity of notation, define |αβ = |α| − |β|. If µ, ν ∈ Zn≥ then we will
+say that ν/µ is a vertical strip, and denote this by ν/µ ∈ V, provided that
+νi − µi ∈ {0, 1} for all 1 ≤ i ≤ n.
+Lemma 11. For all a, b ∈ Z and µ ∈ Zk≥ and ν ∈ Zn≥ ,
+   X X          α   ν   q           q             q            q
+           (−q)|µ +|β (H(α,a+| ν ) H(b−|α ,β) − qH(α,a+|ν +1) H(b−|α −1,β) ) =
+                                         β            µ               β           µ
+   α/µ∈V ν/β∈V
+(21)
+        X    X             α   ν   q           q            q            q
+                     (−q)|µ +|β (qH(α,b+| ν ) H(a−|α ,β) − H(α,b+|ν −1) H(a−|α +1,β) )
+                                             β            µ               β       µ
+       α/µ∈V ν/β∈V
+
+Proof. From equation (20),
+               H(U k , v)H(w, Z n )Ω[−q(U ∗ w + v ∗ w + v ∗ Z)]
+             = H(U k , w)H(v, Z n )Ω[−q(U ∗ v + w∗ v + w∗ Z)](−w/v)
+
+The desired identity is obtained by taking the coefficient of uµ v a wb z ν .
+
+   Note that if b = a + 1, then (21) reduces significantly to the following
+identity.
+                 X X           α   ν  q           q
+                          (−q)|µ +|β H(α,a+| ν ) H(a+1−|α ,β)
+                                                              β       µ
+                     α/µ∈V ν/β∈V
+                          X        X             α  q ν           q
+(22)                 =                 q(−q)|µ +|β H(α,a+| ν +1) H(a−|α ,β)
+                                                                  β           µ
+                         α/µ∈V ν/β∈V
+
+  Relations (21) and (22) suffice to prove Theorem 8. Before giving the
+proof an example is helpful.
+                                                 10
+                                       q   q
+Example 12. We wish to show that H(22)    H(41) is a linear combination of
+ q q               2
+Hα Hβ with α, β ∈ Z such that (α, β) is dominant.
+        q     q        q     q        q     q           q     q
+       H(22) H(41) − qH(23) H(40) − qH(32) H(31) + q 2 H(33) H(30)
+            q     q           q     q           q     q           q     q
+        − qH(23) H(31) + q 2 H(24) H(30) + q 2 H(33) H(21) − q 3 H(34) H(20) =
+              q     q           q     q           q     q           q     q
+            qH(24) H(21) − q 2 H(25) H(20) − q 2 H(34) H(11) + q 3 H(35) H(10)
+               q     q        q     q        q     q           q     q
+            − H(23) H(31) + qH(24) H(30) + qH(33) H(21) − q 2 H(34) H(20)
+  By Corollary 4 many terms vanish and others cancel with each other.
+                q    q       q      q      q     q           q     q
+The terms H(23)     H(40) , H(23) H(31) , H(34) H(20) , and H(34) H(11)  are all zero.
+              2   q    q           2  q     q                           q    q
+The terms q H(24) H(30) and q H(33) H(30) cancel and so do qH(24) H(21)           and
+   q     q                                               q   q
+qH(33) H(21) . When this relation is reduced and H(22) H(41) is expressed alone
+on the left hand side of the equation we have
+              q     q        q     q           q     q           q     q
+             H(22) H(41) = qH(32) H(31) − q 2 H(33) H(21) + q 2 H(43) H(20)
+                                      q     q        q     q
+                               − q 3 H(44) H(10) − qH(33) H(30)
+                                               q     q
+On the right hand side of this equation, only H(32) H(31) does not have the
+property that the concatenated indexing weights are dominant. We apply
+relation (22) to this operator:
+          q     q        q     q        q     q           q     q
+         H(32) H(31) − qH(33) H(30) − qH(42) H(21) + q 2 H(43) H(20) =
+               q     q           q     q           q     q           q     q
+             qH(33) H(21) − q 2 H(34) H(20) − q 2 H(43) H(11) + q 3 H(44) H(10)
+Therefore
+         q     q                q     q           q     q           q     q
+        H(22) H(41) = (q 2 − q)H(33) H(30) + q 2 H(42) H(21) − q 3 H(43) H(11)
+                                           q     q                   q     q
+                            + (q 2 − q 3 )H(43) H(20) + (q 4 − q 3 )H(44) H(10)
+
+   We now give the proof of Theorem 8.
+Proof. It is enough to show that if (µ, a) ∈ Zk≥ and (b, ν) ∈ Zn≥ then
+                                   q      q
+                                  H(µ,a) H(b,ν) ∈ G≥ (k, n).
+If b = a + 1 then in the relation (22) the only term that is not indexed
+                                       k+n         q      q
+by weights such that (α, β) ∈ Z≥           , is H(µ,a) H(a+1,ν)  , and hence it is in
+G≥ (k, n).
+   Otherwise assume that b > a+ 1. All of the terms of the equation (21) are
+              q          q            q             q             q          q
+of the form H(α,a+| ν ) H(b−|α ,β) , H(α,a+|ν +1) H(b−|α −1,β) , H(α,b+|ν ) H(a−|α ,β) , or
+                        β         µ             β          µ                β     µ
+ q             q                  q      q
+H(α,b+| ν −1) H(a−|α +1,β) . Let H(θ,c) H(d,γ) be one of these terms after it has
+        β           µ
+
+been rewritten using Corollary 4 so that (θ, c) ∈ Zk≥ and (d, γ) ∈ Zn≥ .
+              q     q
+   Consider H(θ,c) H(d,γ) of the first form since the others follow from essen-
+                                                                   q     q
+tially the same remark. We verify that d − c < b − a (unless H(θ,c)    H(d,γ) =
+                                               11
+ q      q
+H(µ,a) H(a+1,ν) ) and hence by induction the theorem is true since if d − c ≤ 0
+                     k+n
+then (θ, c, d, γ) ∈ Z≥   . By definition,
+                                    
+                       c = min       a + |νβ , αi + (k − i)
+                            1≤i≤k−1
+                                    
+                       d = max b − |αµ , βi − i
+                               1≤i≤n−1
+
+We note that
+                                                         
+           c≥     min         a + |νβ , µi + (k − i) ≥ min a + |νβ , a + 1
+                1≤i≤k−1
+
+and hence c ≥ a with equality if and only if |νβ = 0. Similarly
+                                                 
+            d ≤ max b − |αµ , νi − i ≤ max b − |αµ , b − i
+                     1≤i≤n−1
+
+and so d ≤ b with equality if and only if |αµ = 0.
+  The generalization of this statement, that Hγq(1) Hγq(2) · · · Hγq(t) with γ (i) ∈
+Zηi is in the Z[q] span of the operators Hαq (1) Hαq (2) · · · Hαq (t) with α(i) ∈ Zηi
+and (α(1) , α(2) , . . . , α(t) ) a dominant weight, is conjectured to be true [7],
+but does not seem to follow easily from these relations.
+   By setting ℓ = 1 and m = 0 in (20), we immediately obtain another
+relation among the operators which gives us another basis theorem.
+Lemma 13. For all a ∈ Z, µ ∈ Zk≥ , and ν ∈ Zn≥ ,
+         X         ν  q          q
+                                     X           α   q
+(23)         (−q)|β H(µ,a+| ν ) Hβ =     (−q)|µ Hαq H(a−| α ,ν) .
+                                      β                              µ
+             β∈Zn≥                               α∈Zk≥
+             ν/β∈V                               α/µ∈V
+
+Proof. From equation (20),
+(24)        H(U k , v)H(Z n )Ω[−qv ∗ Z] = H(U k )H(v, Z n )Ω[−qvU ∗ ]
+The stated identity is obtained by taking the coefficient of uµ v a z ν .
+  Before proving Theorem 9 we give an example.
+                                                              q  q
+Example 14. We wish to write the composition of operators H(53) H(2) as
+                                   q q            1         2
+a linear combination of operators Hα Hβ with α ∈ Z and β ∈ Z .
+                q     q       q     q      q    q        q    q
+               H(53) H(2) − qH(54) H(1) = H(5) H(32) − qH(6) H(21)
+                q     q       q     q      q    q        q    q
+               H(54) H(1) − qH(55) H(0) = H(5) H(41) − qH(6) H(31)
+                         q     q      q    q        q    q
+                        H(55) H(0) = H(5) H(50) − qH(6) H(40)
+Making repeated substitutions, we have the relation
+             q     q          q    q           q    q        q    q
+            H(53) H(2) = q 2 H(5) H(50) − q 3 H(6) H(40) + qH(5) H(41)
+                                      q    q       q    q        q    q
+                               − q 2 H(6) H(31) + H(5) H(32) − qH(6) H(21)
+                                            12
+  We now give the proof of Theorem 9.
+Proof. We prove that if k > n then G(k, n) ⊂ G(k − 1, n + 1) as the other
+part is proven in the same manner. It is enough to show that if k > n,
+(µ, a) ∈ Zk≥ and ν ∈ Zn≥ then
+                            q
+                           H(µ,a) Hνq ∈ G≥ (k − 1, n + 1)
+We use (23) with k − 1 and n. The proof proceeds by induction on µ1 − a. If
+µ1 − a = 0, then there is exactly one term on the left hand side of equation
+               q
+(23), namely H(µ,a) Hνq . The right hand side is a Z[q]-linear combination of
+Hγq Hρq with γ ∈ Zk−1 and ρ ∈ Zn+1 .
+   If µ1 − a > 0 then the left hand side is a linear combination of operators
+               q
+of the form H(γ,c) Hβq with γ1 = µ1 and
+                                  
+                      c = min       a + |νβ , µi + (k − i)
+                          1≤i≤k−1
+                                  
+                        ≥ min       a + |νβ , a + (k − i) .
+                            1≤i≤k−1
+It follows that c ≥ a with equality if and only if ν = β. The right hand side
+of this equation is again an element of G(k − 1, n + 1).
+  Finally we prove Theorem 10.
+Proof. We shall prove G(k+ℓ, k) ⊆ G(k, k+ℓ) for k, ℓ > 0, the other inclusion
+being similar. Consider (20) with m = 0 and n = k so U = U k , V = V ℓ ,
+Z = Zk:
+(25)         H(U, V )H(Z)Ω[−qV ∗ Z] = H(U )H(V, Z)Ω[−qU ∗ V ].
+                                                                     k+ℓ
+Take the coefficient of uα v β z γ in this equation, where (α, β) ∈ Z≥   and γ ∈
+  k
+Z≥ . The entire right hand side Q consists of terms in G(k, k + ℓ). Expanding
+the expression Ω[−qV ∗ Z] = (1 − qzi /vj ), the left hand side is in the set
+                            q
+                                             X q
+                         Hα,β    Hγq + Z[q]     Hα,β ′ Hγq′
+                                              β ′ ,γ ′
+
+where β ′ ∈ Zℓ such that βj′ ≤ βj + k for all 1 ≤ j ≤ ℓ and |β ′ | > |β|.
+                               q
+Rewriting a typical term Hα,β     ′ by Corollary 4, one obtains either 0 or up
+           q
+to sign Hα′ ,β ′′ , say. This means α′1 + (k + ℓ − 1) is the largest part of the
+weight (α, β ′ ) + ρ(k+ℓ) . Now α1 ≥ βj for all 1 ≤ j ≤ ℓ by the dominance of
+(α, β), so
+                 α1 + k + ℓ − 1 ≥ βj + k + ℓ − 1 ≥ βj′ + ℓ − 1
+                                  ≥ βj′ + ℓ − j.
+                                            k+ℓ
+It follows that α′1 = α1 , (α′ , β ′′ ) ∈ Z≥    and |α′ | + |β ′′ | > |α| + |β|. There
+                                           k+ℓ
+are only finitely many elements of Z≥           with these properties, so the terms
+  q           q
+H(α′ ,β ′′ ) Hγ ′ can again be rewritten in the same way, and the process termi-
+nates.
+                                         13
+       8. Recovering identities via commutation relations
+  The commutation relations in the previous section may be used to recover
+some identities among the operators Hνq that correspond to known identities
+among generalized Kostka polynomials.
+Proposition 15. For a ∈ Z and positive integers k and n,
+                             q      q        q      q
+(26)                        H(an ) H(ak ) = H(ak ) H(an )
+
+
+Proof. In the proof of Theorem 10, take α = (ak ), β = (aℓ ), and γ = (ak ).
+The proof shows there is only one term on either side of the identity coming
+from (25), which agrees with (26) when n = k + ℓ.
+
+Proposition 16.
+                       q      q            k q          q
+(27)                  H(ak ) H((a+1)k ) = q H((a+1)k ) H(ak ) .
+
+
+Proof. When Lemma 13 is applied with µ = (ak−1 ), a, and ν = ((a + 1)k ),
+there are no surviving terms on the right and exactly two on the left, indexed
+by β = ν = ((a + 1)k ) and β = (ak ). Applying Corollary 4 to the term with
+β = (ak ) the desired identity is obtained.
+
+Proposition 17. For all a ∈ Z and k ≥ 1,
+             q      q        q        q          k q          q
+(28)        H(ak ) H(ak ) = H(ak+1 ) H(ak−1 ) + q H((a+1)k ) H((a−1)k ) .
+
+
+Proof. Apply Lemma 13 with n = k − 1, µ = (ak ), and ν = (ak−1 ). On the
+                                                q        q
+left side one has the single nonvanishing term H(ak+1 ) H(ak−1 ) corresponding
+
+to the summand β = ν = (ak−1 ). The right side has two nonvanishing
+terms indexed by α = µ = (ak ) and α = µ + (1k ) = ((a + 1)k ). The first
+                   q      q                         k q          q
+of these terms is H(ak ) H(ak ) . The second is (−q) H((a+1)k ) H(a−k,ak−1 ) . But
+ q                 k−1 H q
+H(a−k,ak−1 ) = (−1)     ((a−1)k )
+                                  by Corollary 4.
+   This identity can be viewed as the trace of a short exact sequence that re-
+solves the ideal of a nilpotent conjugacy class closure over the coordinate ring
+of a minimally larger one [7]. The version of this identity for the fermionic
+form of generalized Kostka polynomials appears in [10]. This q-character
+identity is put in a more general context in [5].
+
+ 9. Generalization of Garsia-Procesi defining recurrence for
+                  Kostka-Foulkes polynomials
+   Manipulations of the definition allow us to derive commutation relations
+between the Hνq and the operators e⊥ k . As a consequence we obtain a gener-
+alization of a defining recurrence for the Kostka-Foulkes polynomials given
+in [4].
+   Let E(u) be the generating function of operators on Λ defined by
+(29)                        E(u)P [X] = P [X − u].
+                                         14
+By (4) we have
+                                   X                            X
+                P [X − u] =              s⊥
+                                          λ (P )[X]sλ [−u] =           e⊥            k
+                                                                        k (P )[X](−u) .
+                                  λ∈P                            k≥0
+
+In other words
+(30)                               e⊥             k
+                                    k P [X] = (−1) P [X − u]                .
+                                                                       uk
+
+The commutation relation of H(Z n ) and E(u) is:
+                E(u)H(Z n )P [X] = E(u)P [X − (1 − q)Z ∗ ]Ω[XZ]R(Z n )
+                                           = P [X − u − (1 − q)Z ∗ ]Ω[(X − u)Z]R(Z n )
+                                           = Ω[−uZ]H(Z n )E(u)P [X]
+
+Taking the coefficient of (−u)k z λ on both sides of this equation we obtain
+the following relation.
+Proposition 18. Let λ ∈ Zn≥ . Then
+                           q
+                                X
+                      e⊥ H
+                       k λ   =     Hβq e⊥
+                                        k−|λ|+|β|
+                                                 β∈Zn≥
+                                                 λ/β∈V
+
+    Let η = (η1 , η2 , . . . , ηt ) be a fixed sequence of positive integers summing
+to n. For any weight γ ∈ Zn , write γ (1) ∈ Zη1 for the first η1 parts of γ,
+γ (2) ∈ Zη2 for the next η2 parts of γ, etc.
+Proposition 19. Let k be a fixed positive integer, η = (η1 , η2 , . . . , ηt ) a
+sequence of positive integers summing to n, α ∈ Zn≥ , and γ ∈ Zn such that
+γ (i) ∈ Zη≥i for all i and |γ| − |α| = k. Then
+                         X                    X
+                                Kα,ν,η (q) =    Kλ,γ,η (q)
+                                ν∈Zn                       λ∈Zn≥
+                             |γ|−|ν|=k                   |λ|−|α|=k
+                                      η
+                              ν (i) ∈Z≥i                   λ/α∈V
+                            γ (i) /ν (i) ∈V
+
+Proof. Let η and γ be as above. For the moment assume that the entries of
+γ are positive. Apply e⊥ k to (16) and apply Proposition 18 to both sides to
+commute e⊥ k  to the right of the H operators:
+
+       X                                                     X X
+                   Hνq(1) Hνq(2) · · · Hνq(t) e⊥
+                                               k−|γ|+|ν| =                  Kλ,ν,η (q)Hβq e⊥
+                                                                                           k−|λ|+|β| .
+     ν∈Zn                                                    λ∈Zn
+                                                                ≥ β∈Z≥
+                                                                      n
+           η
+   ν (i) ∈Z≥i                                                     λ/β∈V
+ γ (i) /ν (i) ∈V
+
+Since γ has positive parts, all the ν have nonnegative parts. Expanding the
+left hand side using (16) and applying the resulting operators to 1 ∈ Λ, we
+                                                    15
+obtain
+             X             X                        X        X
+                               Kµ,ν,η (q)Hµq 1 =                       Kλ,ν,η (q)Hβq 1.
+            ν∈Zn    µ∈Zn
+                       ≥                            λ∈Zn
+                                                       ≥     β∈Zn≥
+          |γ|−|ν|=k                                        |λ|−|β|=k
+            (i)  ηi
+           ν ∈Z≥                                             λ/β∈V
+         γ (i) /ν (i) ∈V
+
+Assume for the moment that α has nonnegative parts. For such α, Hαq 1 =
+sα [X]. Taking the coefficient of sα [X] on both sides, we obtain the desired
+relation.
+   The statement is true in general since Kλ−(an ),γ−(an ),η (q) = Kλ,γ,η (q) for
+all integers a.
+
+   The recurrence for the Kostka-Foulkes polynomials given in [4] is recov-
+                                                  q
+ered by setting η = (1n ) in Proposition 19, as H(m)  in our notation is Hm in
+theirs. In the case η = (1n ) the situation is particularly nice; the nondom-
+                                                                  q    q
+inant operators can be made dominant using the relation H(m)         H(m+1) =
+   q       q
+qH(m+1) H(m) . For general η the identities needed to rewrite the nondom-
+inant terms as dominant ones, can get complicated and produce negative
+signs.
+
+
+                                  10. Jing’s operators
+   We give corresponding constructions for Jing’s Hall-Littlewood vertex op-
+erators [6] [9, Ex. III.5.8]. Define
+
+                    B(Z k )P [X] = P [X − Z ∗ ]Ω[XZ(1 − q)]
+                    B(Z k )P [X] = P [X − Z ∗ ]Ω[XZ(1 − q)]R(Z k )
+                               Bνq = B(Z k )
+                                               zν
+
+for ν ∈ Zk . The generating series of operators B(z) (for a single vari-
+able z) and B(Z k ) defined here, coincide with the operators B(z) and
+B(z1 , z2 , . . . , zk ) in the notation of [9, Ex. III.5.8]. B(z) in our notation
+is the operator H(z) in Jing’s [6]. However the operators Bν themselves are
+not studied by Jing or Macdonald.
+   Let F be the plethystic operator F P [X] = P [X(1 − q)], with inverse
+operator F −1 P [X] = P [X/(1 − q)]. Then it is not hard to show that
+
+(31)                            B(Z k ) = F ◦ H(Z k ) ◦ F −1 .
+
+  This gives the following analogue of (16) for B(Z k ).
+                                                  X
+(32)              Bγq (1) Bγq (2) · · · Bγq (t) =   Kλ,γ,η (q)Bλq .
+                                                    λ∈Zn
+                                                       ≥
+
+                                               16
+                                     References
+ [1] R. K. Brylinski, Twisted ideals of the nullcone, in Operator algebras, unitary repre-
+     sentations, enveloping algebras, and invariant theory (Paris, 1989), 289–316, Progr.
+     Math., 92, Birkhäuser Boston, Boston, MA, 1990.
+ [2] A. M. Garsia, Orthogonality of Milne’s polynomials and raising operators, Discrete
+     Math. 99 (1992) 247–264.
+ [3] A. M. Garsia, Rodriguez formulas and orthogonality for Schur, Hall-Littlewood and
+     Macdonald (?) polynomials, class lecture notes, January 1997.
+ [4] A. M. Garsia and C. Procesi, On certain graded Sn -modules and the q-Kostka poly-
+     nomials, Adv. Math. 94 (1992) 82–138.
+ [5] G. Hatayama, A. Kuniba, M. Okado, T. Takagi, and Y. Yamada, Remarks on
+     Fermionic Formula, math.QA/9812022.
+ [6] N. Jing, Vertex operators and Hall-Littlewood symmetric functions, Adv. Math. 87
+     (1991) 226–248.
+ [7] J. Klimek, W. Kraskiewicz, M. Shimozono, and J. Weyman, On the Grothendieck
+     group of modules supported in the closure of a nilpotent conjugacy class, to appear
+     in J. Pure Appl. Math.
+ [8] A. N. Kirillov, A. Schilling, and M. Shimozono, A bijection between Littlewood-
+     Richardson tableaux and rigged configurations, math.CO/9901037.
+ [9] I. G. Macdonald, Symmetric Functions and Hall Polynomials, Oxford Mathematical
+     Monographs, Oxford Univ. Press, second edition, 1995.
+[10] A. Schilling and S. O. Warnaar, Inhomogeneous lattice paths, generalized Kostka
+     polynomials and An−1 supernomials, Comm. Math. Phys. 202 (1999) 359–401.
+[11] M. Shimozono,        A cyclage poset for Littlewood-Richardson tableaux,
+     math.QA/9804037.
+[12] M. Shimozono, Affine type A crystal structure on tensor products of rectangles, De-
+     mazure characters and nilpotent varieties, math.QA/9804039.
+[13] M. Shimozono and J. Weyman, Graded characters of modules supported in the closure
+     of a nilpotent conjugacy class, to appear in European J. Combin.
+
+
+
+
+                                           17
+

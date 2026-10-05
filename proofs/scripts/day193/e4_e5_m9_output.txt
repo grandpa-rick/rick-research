@@ -1,0 +1,71 @@
+================================================================================
+Day 193 meta-conjecture test: e_4 ⋆ e_5 at m=9
+================================================================================
+[m=9] Computing e_4(Y) . e_5(X) ...
+  Y_1.e_5 done. #terms = 126
+  Y_2.e_5 done. #terms = 196
+  Y_3.e_5 done. #terms = 226
+  Y_4.e_5 done. #terms = 236
+  Y_5.e_5 done. #terms = 238
+  Y_6.e_5 done. #terms = 238
+  Y_7.e_5 done. #terms = 238
+  Y_8.e_5 done. #terms = 238
+  Y_9.e_5 done. #terms = 238
+  Y_k Y_1 pairs done.
+  Y_k Y_2 pairs done.
+  Y_k Y_3 pairs done.
+  Y_k Y_4 pairs done.
+  Y_k Y_5 pairs done.
+  Y_k Y_6 pairs done.
+  Y_k Y_7 pairs done.
+  Y_k Y_8 pairs done.
+  Y_k Y_9 pairs done.
+  Y_j Y_k Y_1 triples done.
+  Y_j Y_k Y_2 triples done.
+  Y_j Y_k Y_3 triples done.
+  Y_j Y_k Y_4 triples done.
+  Y_j Y_k Y_5 triples done.
+  Y_j Y_k Y_6 triples done.
+  Y_j Y_k Y_7 triples done.
+  Y_j Y_k Y_8 triples done.
+  Y_j Y_k Y_9 triples done.
+  quadruple 5/126; running #terms = 975
+  quadruple 10/126; running #terms = 2116
+  quadruple 15/126; running #terms = 3476
+  quadruple 20/126; running #terms = 4453
+  quadruple 25/126; running #terms = 5928
+  quadruple 30/126; running #terms = 7151
+  quadruple 35/126; running #terms = 8581
+  quadruple 40/126; running #terms = 9360
+  quadruple 45/126; running #terms = 10630
+  quadruple 50/126; running #terms = 11777
+  quadruple 55/126; running #terms = 13289
+  quadruple 60/126; running #terms = 14243
+  quadruple 65/126; running #terms = 15726
+  quadruple 70/126; running #terms = 17015
+  quadruple 75/126; running #terms = 17717
+  quadruple 80/126; running #terms = 18735
+  quadruple 85/126; running #terms = 19688
+  quadruple 90/126; running #terms = 20939
+  quadruple 95/126; running #terms = 21813
+  quadruple 100/126; running #terms = 23097
+  quadruple 105/126; running #terms = 24413
+  quadruple 110/126; running #terms = 25201
+  quadruple 115/126; running #terms = 26340
+  quadruple 120/126; running #terms = 27706
+  quadruple 125/126; running #terms = 29031
+[m=9] e_4 ⋆ e_5 computed. Expanding in e_lambda-basis of deg 9...
+
+Wallclock: 4993.6s
+
+--- e_4 ⋆ e_5 at m=9 ---
+  e_(9,) = (q - 1)*(t**2 + t + 1)*(t**6 + t**3 + 1)*(q**3*t**12 + q**3*t**10 + q**3*t**9 + 2*q**3*t**8 + q**3*t**7 + 2*q**3*t**6 + q**3*t**5 + 2*q**3*t**4 + q**3*t**3 + q**3*t**2 + q**3 - q**2*t**11 - q**2*t**10 - 2*q**2*t**9 - 2*q**2*t**8 - 3*q**2*t**7 - 3*q**2*t**6 - 3*q**2*t**5 - 2*q**2*t**4 - 2*q**2*t**3 - q**2*t**2 - q**2*t + q*t**9 + q*t**8 + 2*q*t**7 + q*t**6 + 2*q*t**5 + q*t**4 + q*t**3 - t**6)/q**4
+  e_(8, 1) = (q - 1)*(t**6 + t**5 + t**4 + t**3 + t**2 + t + 1)*(q**2*t**6 + q**2*t**4 + q**2*t**3 + q**2*t**2 + q**2 - q*t**5 - q*t**4 - q*t**3 - q*t**2 - q*t + t**3)/q**4
+  e_(7, 2) = (q - 1)*(q*t**2 + q - t)*(t**4 + t**3 + t**2 + t + 1)/q**4
+  e_(6, 3) = (q - 1)*(t**2 + t + 1)/q**4
+  e_(5, 4) = q**(-4)
+
+  #nonzero = 5, predicted min(4,5)+1 = 5
+
+--- Sanity check: at q=1 ---
+  e_(5, 4) at q=1 = 1

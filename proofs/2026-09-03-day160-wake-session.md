@@ -1,5 +1,20 @@
 # Day 160 wake — modular-law shortcut FAILS the applicability test; a Rule-11 extension emerges
 
+> **CORRECTION (added retroactively; cites Day 161 and Day 165).**
+>
+> **The Rule 11 extension for $F_P$ as originally posed in this file is FALSE on the true `FP_coeffs`.** The retracted content below (in particular the product form near line 33, the operator ODE $\theta^2 F_P = T\prod(u_i+\theta+1)F_P$ near line 42, and the $F_1 = \sum (T^k/k!) H_k A_k(u_1) A_k(u_2)$ transverse-derivative object near line 55) is preserved verbatim below for intellectual-history / lineage purposes only. **Do not build on it.**
+>
+> - **Retraction session:** Day 161 (`proofs/2026-09-03-day161-transverse-derivatives-of-log-W-and-Xi.md`; see `memory/topics/project_day160_wake_rule11_extension.md` and `memory/topics/project_day161_transverse_derivatives.md`).
+> - **Retraction reason:** the ODE $\theta^2 F_P = T\prod(u_i+\theta+1)F_P$ was derived from the *paraphrased* $F_P = \sum (T^k/(k!)^2)\prod_i A_k(u_i)$ (matching Day 158's $u_3=0$ slice), but Rick's *true* $F_P$ (from `scratch/day152/lib.py`, the `FP_coeffs` library object) is not that series: it differs already at $[T^1]$ (the true $[T^1]F_P = 1+E_1+E_2$, not $1+E_1+E_2+E_3$). Consequently the alleged $F_1 = \sum (T^k/k!) H_k A_k(u_1) A_k(u_2)$ is NOT $\partial_{u_3} F_P|_{u_3=0}$, and the alleged inhomogeneous 3rd-order ODE $L(0) F_1 = T F_0'$ FAILS on the true $F_1$ from $[T^1]$ onward (verified in `scratch/day161/step0e_test_ODE_true_F1.py`).
+> - **Line ~33 (product form claimed "verified numerically"):** the product form for $F_P$ as written matches the true FP_coeffs only at the $u_3=0$ slice. It does NOT hold globally in three variables; the mismatch appears at $O(E_3)$. The "verified numerically" phrasing is retracted.
+> - **Line ~55 (transverse-derivative object $F_1 = \sum (T^k/k!) H_k A_k(u_1) A_k(u_2)$):** this object is REPLACED by Day 161 Theorem 2, the correct closed form for the true transverse derivative of $\log \mathcal W$ at $u_3=0$:
+>   $$\partial_{u_3}\log\mathcal W\big|_{u_3=0} \;=\; \frac{T\,(q+R_1R_2)}{q^3},\qquad q^2 = (1-E_1T)^2 - 4E_2T^2, \quad R_1R_2 = 1 - T^2(E_1^2 - 4E_2).$$
+>   This is proved via the Day 152 $\nu$-system, self-contained, with no reliance on the retracted Day 160 ODE. Day 161 Theorem 1 is the companion $\partial_{u_3}\Xi|_{u_3=0} = -\log q$.
+> - **Line ~83 (Rule 11 scorecard):** the "5–0" record claimed on this line is a Day 160 self-report; it counts an unfolding derived from a paraphrased object, not from the true `FP_coeffs`. Post-Day 161 scorecard is unchanged in spirit (Rule 11 remains the correct opening move) but this particular firing does not count.
+> - **Day 165 (`proofs/2026-09-04-day165-sigma-0-closed-form.md`) closes $\Sigma_0$** to `checked-sober` and, together with Day 161 Theorems 1 & 2, collapses the Missing Lemma (R) to a single equivalence class $\{\Sigma_0, R^{(-1)}, \text{Theorem B}\}$; see auto-memory `project_day165_sigma0_algebraic_win.md`.
+>
+> The retracted content is left in place below with no in-line edits so the reasoning trail is intact.
+
 **Date:** 2026-09-03 (Day 160). **Status:** No new proved result; two structural findings, one seeded next-step.
 
 ## Summary

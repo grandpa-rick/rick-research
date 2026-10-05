@@ -1,0 +1,2346 @@
+                                                    THE STABLE LIMIT DAHA: THE STRUCTURE OF THE STANDARD
+                                                                       REPRESENTATION
+
+
+                                                                                     BOGDAN ION AND DONGYU WU
+
+                                                              Dedicated to the memory of Ian G. Macdonald, in tribute to his vision and insight
+arXiv:2504.03113v2 [math.RT] 27 Jun 2025
+
+
+
+
+                                                   Abstract. We prove a number of results about the structure of the standard representation of the sta-
+                                                   ble limit DAHA. More precisely, we address the triangularity, spectrum, and eigenfunctions of the limit
+                                                   Cherednik operators, and construct several PBW-type bases for the stable limit DAHA. We establish a
+                                                   remarkable triangularity property concerning the contribution of certain special elements of the PBW basis
+                                                   of a finite rank DAHA of high enough rank to the PBW expansion of a PBW basis element of the stable
+                                                   limit DAHA. The triangularity property implies the faithfulness of the standard representation. This shows
+                                                   that the algebraic structure defined by the limit operators associated to elements of the finite rank DAHAs
+                                                   is precisely the stable limit DAHA.
+
+
+
+
+                                                                                             1. Introduction
+
+                                                The stable limit DAHA is an algebra that emerged in [7] from the investigation of the algebraic structure
+                                           that can be associated to double affine Hecke algebra (DAHA) of type GLk as the rank goes to infinity.
+                                           In the earlier construction of the stable limit spherical DAHA [13], the limit object is the inverse limit of
+                                           the finite rank spherical DAHAs. As the full DAHAs do not form an inverse system, our approach was to
+                                           study of the limiting behavior of individual elements (e.g. the standard generators) in the inverse system of
+                                           polynomial standard representations of the finite rank DAHAs and describe the algebraic structure defined
+                                           by the limit operators.
+                                                The standard Laurent polynomial representation Pk of Hk (the DAHA of type GLk ) gives rise to two
+                                                                                        −
+                                           such polynomial inverse systems, P+  k and Pk , that are the so-called standard representations of correspond-
+                                           ing subalgebras of Hk , denoted by Hk+ and Hk− . The critical analysis in both situations is that of the
+                                                                                            (k)
+                                           limiting behavior of the Cherednik operators Yi (for Hk+ ) and their inverses (for Hk− ). While the limiting
+                                                                                                                  (k)
+                                           behavior of the action of (the inverse of) a Cherednik operators Yi on P−        k is compatible with the inverse
+                                           limit structure and leads to an inverse limit operator [9], the action on Pk is no longer compatible and the
+                                                                                                                          +
+
+                                           description of its limiting behavior requires a weaker concept of limit (that combines the concept of inverse
+                                           limit with the t-adic topology on P+ k ) . We refer to [7, §6] or §2.10 for the precise definition. The resulting
+                                           limit operators act on certain spaces of almost symmetric functions P±     as in infinitely many variables, called
+                                           the almost symmetric modules. It was observed in [7] that the limit operators corresponding to the DAHA
+                                           standard generators define a representation of an algebra H+ , defined by generators and relations (the stable
+
+
+
+                                             Date: Jun. 27, 2025.
+                                             2010 Mathematics Subject Classification. 20C08, 05E05.
+                                                                                                       1
+2                                        BOGDAN ION AND DONGYU WU
+
+
+limit DAHA); the two representations were called standard representations. It is important to remark that
+the algebra H+ is defined over the field of rational functions in one parameters t, while the definition of the
+standard representations requires a second parameter q.
+     One result that is needed to fully describe the two algebraic structures defined by the limit standard
+generators is the description of the kernel of the standard representations. It was predicted (see [7, pg.
+413]) that the standard representations are faithful, and therefore the limit algebraic structures are precisely
+described by the stable limit DAHA. Both representations play roles in the study of a number of important
+phenomena: the representation on P−    as is related to Macdonald theory in the stable limit (see, e.g. [9,
+Conjecture 11.2]) and the equivariant K-theory of certain smooth strata in the parabolic flag Hilbert schemes
+of points in A2 [2], and the representation on P+as is related to the double Dyck path algebra [7, §7] and the
+(rational) Shuffle Theorem [3, 11].
+     In this paper we address a number of finer structural questions regarding the P+as standard representation
+of H , henceforth referred to as the standard representation. The analysis of the Pas standard representation
+     +                                                                               −
+
+is more simple and we refer to [7, 9] for a more extensive discussion. Our first result is the existence of the
+                             (k)
+limit Cherednik operators Yi ∈ Hk+ . Previously [7, Proposition 6.25], the limit operator Yi was defined as
+                                                                     (k)                                    (k)
+the limit of the sequence of the deformed Cherednik operators Yei which are certain truncations of Yi .
+This led to certain surprising properties of the limit operators; for example, the limit operators were proved
+to commute despite the fact that the deformed Cherednik operators were no longer commuting. We prove
+the following (Theorem 4.15).
+                                                     (k)
+Theorem A. For any i ≥ 1 we have Yi = limk Yi              .
+                                                                            (k)     (k)
+     This is proved by showing that the discrepancy between the operators Yi and Yei converges to 0. The
+result has some immediate consequences, aside from the more conceptual explanation of the commutativity
+of the limit Cherednik operators. It shows that any fixed linear combination of words in the standard
+generators of the DAHA defines a limit operator, and therefore we can talk about the limit structure
+defined by limit operators associated to all elements of the finite rank DAHAs, and this coincides with the
+algebra generated by the limit operators associated to the standard generators of the finite rank DAHAs.
+     On the set Λas consisting of pairs λ|µ with λ a strict composition (i.e. its last part is strictly positive)
+and µ a partition, we introduce a partial order ⪯ which is related to the unique partial order on the inductive
+limit of Zk≥0 that is compatible with the (affine parabolic) Bruhat order on each Zk≥0 (see §3.5). Each λ|µ has
+an associated almost symmetric monomial mλ|µ ∈ P+      as . Our second main result is the following triangularity
+of the limit Cherednik operators (Theorem 5.6).
+
+Theorem B. Let λ|µ ∈ Λas and i ≥ 1. Then,
+                                                                        X
+                              Yi mλ|µ ∈ δ i (λ)qλi tuλµ (i) mλ|µ +                 Kmλ′ |µ′ .
+                                                                     λ′ |µ′ ≺λ|µ
+
+
+     The constants that appear in the statement as coefficients of the main term form the common spectrum
+of the limit Cherednik operators; we refer to §5.2 for their precise definition. This immediately raises the
+problem of describing the common eigenfunctions of the operators Yi , i ≥ 1. We show that some eigen-
+functions arise from the limit of the eigenfunctions of finite rank Cherednik operators: the non-symmetric
+Macdonald polynomials Eλ (q, t) (Theorem 6.3 and Corollary 6.5).
+              THE STABLE LIMIT DAHA: THE STRUCTURE OF THE STANDARD REPRESENTATION                           3
+
+
+Theorem C. Let λ ∈ Λk and i ≥ 1. The sequence (Eλ0n )n≥0 is convergent and
+
+                         Eλ := lim Eλ0n ∈ P(k)+     and   Yi Eλ = δ i (λ)qλi tuλ (i) Eλ .
+                                 n
+
+
+     We call the elements Eλ , for λ ∈ Λ, limit (non-symmetric) Macdonald functions. This result was
+also obtained independently in [1] through an analysis of the combinatorial formula [4] for finite rank non-
+symmetric Macdonald polynomials. Our arguments are based on Theorem B and the analysis of the action
+of the DAHA intertwining operators. The limit Macdonald functions do not span P+     as (the common spectrum
+of the operators Yi is not simple). A full eigenbasis was described in [1] (and is recalled in §6.5).
+     In §7 we introduce a distinguished set of words S in the generators of H+ and prove (Theorem 7.10)
+that it is a basis of H+ . We call S the PBW basis of H+ . The result follows from a careful analysis of the
+relations satisfied by the generators of H+ and the structure of the stable limit DAHA at t = 1.
+     Theorem A has the following consequence relavant to the faithfulness of the standard representation.
+The standard generators of H+ are denoted by Xi , Yi , T j , i ≥ 1. The subalgebra of H+ generated by
+the generators Xi , Yi , i ≤ k and T j , j ≤ k − 1 is denoted by H(k)+ . There is a canonical morphism
+φk : H(k)+ → Hk+ . We have the following (Theorem 4.16).
+
+Theorem D. Let H ∈ H(r)+ and let H : P+       as → Pas be the operator given by the action of H. Then, H = 0
+                                                    +
+
+if and only if φk (H) = 0, for all k ≥ r large enough.
+
+     We establish the faithfulness of the standard representation using a strategy based on Theorem D. We
+note that some standard possible arguments for addressing this problem fail. For example, the corresponding
+representation of stable limit DAHA at t = 1 is not faithful. Also, an argument based on the analysis of the
+stable limit DAHA action on limit non-symmetric Macdonald polynomials (using the PBW basis and Pieri
+formulas) also fails because under the action of certain linear combinations of PBW basis elements on a
+fixed limit non-symmetric Macdonald polynomial the expected dominant term in the resulting expression can
+and will appear with coefficient zero. Our approach, outlined in §8, is based on a remarkable triangularity
+property (Theorem 8.17) concerning the occurrence of certain special elements of the PBW basis of Hk+
+in the PBW expansion of φk (H) for H a PBW basis element of H+ . Theorem 8.17 is first proved for a
+certain class of elements H (Proposition 8.14, Corollary 8.15) that serve as the basis of the main argument.
+The triangularity property (Theorem 8.17) implies the faithfulness of the standard representation (Theorem
+8.18).
+
+Theorem E. The standard representation of H+ is faithful.
+
+     This allows us to complete the project initiated in [7] of describing the algebraic structure defined by
+the limit operators associated to elements of the finite rank DAHAs (Theorem 8.19).
+
+Theorem F. The algebra generated by the action of the limit operators Xi , Yi , Ti , i ≥ 1, on P+
+                                                                                                as is
+isomorphic to H .
+               +
+
+
+
+    It is important to note that Theorem D is trivially true for the standard representation on P−
+                                                                                                 as (because
+H is the inverse limit of the sequence φk (H)). Therefore, Theorems E and F apply to both standard
+representations, P+
+                  as and Pas , of the stable limit DAHA.
+                           −
+4                                          BOGDAN ION AND DONGYU WU
+
+
+Acknowledgements. The work of BI was partially supported by the Simons Foundation grant 420882. The
+results on the triangularity and spectrum of the limit Cherednik operators and the PBW basis of the stable
+limit DAHA were obtained in 2021-22 and were reported by the first author in his talks at the AMS Spring
+Eastern Sectional Meeting, Special Session on Macdonald Theory and Beyond: Combinatorics, Geometry,
+and Integrable Systems in March 2022, and at the Workshop of symmetric spaces, their generalizations, and
+special functions at the University of Ottawa in August 2022.
+
+
+                                                    2. Notation
+
+2.1. We denote by X an infinite alphabet x1 , x2 , . . . and by Sym[X] the ring of symmetric functions in X.
+The field or ring of coefficients K ⊇ Q will depend on the context. For any k ≥ 1, we denote by Xk the
+finite alphabet x1 , x2 , . . . , xk and by Xk the infinite alphabet xk+1 , xk+2 , . . . . Sym[Xk ] will denote the ring
+of symmetric functions in Xk . Furthermore, for any 1 ≤ k ≤ m, we denote by X[k,m] the finite alphabet
+xk , . . . , xm . As usual, we denote by hn [X] (or hn [Xk ], or hn [Xk ], or hn [X[k,m] ]) the n-th complete symmetric
+functions (or polynomials) in the indicated alphabet, by pn [X] (or pn [Xk ], or pn [Xk ], or pn [X[k,m] ]) the n-th
+power sum symmetric functions (or polynomials). The symmetric function p1 [X] = h1 [X] is also denoted
+by X = x1 + x2 + · · · . For a partition λ, mλ [X] (or mλ [Xk ], or mλ [Xk ], denotes the monomial symmetric
+function (or polynomial) in the indicated alphabet.  Y         For λ a finite sequence of non-negative numbers (a
+                                     λ                    λi
+composition), we denote by x the monomial                xi .
+                                                   i≥1
+
+
+2.2. The symmetric monomials in the alphabet Xk , k ≥ 1, can be explicitly expressed in terms of the
+symmetric monomials in the alphabet Xk−1 using the formula
+                                                                     
+                               X
+                                      |S|             |S|                |λ |
+(2.1)               mλ [Xk ] =   (−1)                                   x S mλbS [Xk−1 ].
+                                           m1 (λS ); . . . ; mλ1 (λS ) k
+                                      S
+
+The notation in this formula is as follows. If λ is the partition λ1 ≥ λ2 ≥ · · · ≥ λn > 0, the sum runs over
+subsets S of [n] := {1, 2, . . . , n}, λS is the partition obtained from λ by keeping only the parts indexed by
+                             P
+the elements of S, |λS | = i∈S λi , and λ     bS is the partition obtained from λ by removing the parts indexed
+by the elements of S. Further, mi (λS ) denotes the multiplicity of i in λS and the coefficient that appears
+in the formula is the usual multinomial coefficient.
+
+2.3. Any action of the monoid (Z>0 , ·) on the ring K extends to a canonical action by Q-algebra morphisms
+on Sym[X]. The morphism corresponding to the action of n ∈ Z>0 is denoted by pn and is defined by
+
+                                           pn · pk [X] = pnk [X],    k ≥ 1.
+
+In our context K = Q(t, q) will be the field of fractions generated by two parameters t, q, the action of
+(Z>0 , ·) on K is Q-linear, and pn acts on parameters by raising them to the n-th power: pn ·t = tn , pn ·q = qn .
+
+2.4. Let R be a ring with an action of (Z>0 , ·) by ring morphisms. Any ring morphism φ : Sym[X] → R
+that is compatible with the action of (Z>0 , ·) is uniquely determined by the image of p1 [X] = X. The
+image of F [X] ∈ Sym[X] through φ is usually denoted by F [φ(X)] and called the plethystic evaluation (or
+substitution) of F at φ(X).
+                THE STABLE LIMIT DAHA: THE STRUCTURE OF THE STANDARD REPRESENTATION                                 5
+
+
+       The plethystic exponential Exp is defined as
+                                                ∞                     ∞
+                                                                                 !
+                                                X                     X pn [X]
+                                     Exp[X] =         hn [X] = exp                   .
+                                                n=0                   n=1
+                                                                            n
+
+2.5. We will use some symmetric polynomials that are related to the complete homogeneous symmetric
+functions via plethystic substitution. More precisely, let hn [Xk ] be the symmetric polynomial obtained from
+the symmetric function hn [(1−t)X] by specializing to 0 the elements of the alphabet Xk . The corresponding
+notation applies to hn [(t − 1)X] and other plethystic substitutions.
+
+
+2.6. For any k ≥ 1, let Pk = K[x±1           ±1
+                                1 , . . . , xk ] be the ring of Laurent polynomials in the variables x1 , . . . , xk .
+The symmetric group Sk acts on Pk by permuting the variables. We denote by si the simple transposition
+that interchanges xi and xi+1 and is fixing all the other variables. The polynomial subring
+
+                                                P+
+                                                 k = K[x1 , . . . , xk ]
+
+is stable under the action of Sk .
+
+
+2.7. Let πk : P+  k → Pk−1 be the evaluation morphism that maps xk to 0. The rings Pk , k ≥ 1 form a
+                         +                                                                    +
+
+graded inverse system. We will use the notation P+     ∞ for the graded inverse limit ring lim Pk . The graded
+                                                                                                +
+                                                                                           ←−
+inverse limit ring is sometimes referred to in the literature as the ring of formal polynomials in the variables
+xi , i ≥ 1. We denote by Πk : lim P+k → Pk the canonical morphism.
+                                           +
+                                ←−
+
+     If hk ∈ Pk , k ≥ 1, is a sequence compatible with the inverse system, we use lim
+               +
+                                                                                   ←−
+                                                                                      hk ∈ P+
+                                                                                            ∞ to denote the
+                                                                                    k
+inverse limit of (hk )k≥1 . For any n ≥ 1, a sequence of operators Ak : P+
+                                                                         k → Pk , k ≥ n, compatible with the
+                                                                               +
+
+inverse system induces a (limit) operator A = lim←−
+                                                     : P+
+                                                        ∞ → P∞ . For example, the sequence Ak = sn , k ≥ n,
+                                                               +
+
+                                                  k
+given by the action of the simple transposition sn , induces a limit operator sn acting on P+
+                                                                                            ∞ . In turn, this
+leads to an action of the infinite symmetric group S∞ (the inductive limit of Sk , k ≥ 1) on P+∞.
+
+
+
+2.8.    For any k ≥ 0, denote
+
+                                  P(k)+ = {F ∈ P+
+                                                ∞ | si F = F, for all i > k}.
+
+From the definition it is clear that P(k)+ ⊂ P(k + 1)+ . Also, P(0)+ is the ring of symmetric functions
+Sym[X], and, more generally, for any k ≤ 1, the multiplication map
+
+                                             P+            ∼
+                                              k ⊗ Sym[Xk ] = P(k)
+                                                                 +
+
+
+is an algebra isomorphism.
+
+
+2.9.    The graded subring P+
+                            as ⊂ P∞ is defined as the inductive limit of the spaces P(k) :
+                                  +                                                     +
+
+                                                    [
+                                             P+as =     P(k)+ .
+                                                          k≥0
+
+More concretely, an element of P+as must be fixed by all simple transpositions with the possible exception of
+finitely many. We refer to Pas as the almost symmetric module.
+                            +
+6                                        BOGDAN ION AND DONGYU WU
+
+
+2.10. We recall the concept of limit defined in [7, Definition 6.18]; we emphasize that this concept of limit
+depends intrinsically on the structure of the subspace P+as ⊂ P∞ .
+                                                                +
+
+
+     Let R(t, q) = A(t, q)/B(t, q) ∈ K, with A(t, q), B(t, q) ∈ Q[t, q]. The order of vanishing at t = 0 for
+R(t, q), denoted by
+                                               ord R(t, q),
+is the difference between the order of vanishing at t = 0 for A(t, q) and B(t, q).
+   We say that the sequence (an )n≥1 ⊂ K converges to 0 if the sequence (ord an )n≥1 ⊂ Z converges to
++∞. We say that the sequence (an )n≥1 ⊂ K converges to a if (an − a)n≥1 converges to 0. We write,
+
+                                                     lim an = a.
+                                                    n→∞
+
+Definition 2.1. Let (fk )k≥1 be a sequence with fk ∈ P+    k . We say that the sequence is convergent if there
+exists N ≥ 1 and sequences (hk )k≥1 , (gi,k )k≥1 , i ≤ N , hk , gi,k ∈ P+k , and (ai,k )k≤1 , i ≤ N , ai,k ∈ K such
+that
+                                             PN
+    (a) For any k ≥ 1, we have fk = hk + i=1 ai,k gi,k ;
+    (b) For any i ≤ N , k ≥ 2, πk (gi,k ) = gi,k−1 and πk (hk ) = hk−1 . We denote by
+
+                                         gi = lim
+                                               ←−
+                                                  gi,k    and h = lim
+                                                                   ←−
+                                                                      hk
+                                               k                        k
+
+        the sequence (gi,k )k≥1 and, respectively, (hk )k≥1 as elements of P+
+                                                                            ∞ . We require that gi ∈ Pas .
+                                                                                                      +
+
+    (c) For any i ≤ N the sequence (ai,k )k≥1 is convergent. We denote ai = lim (ai,k ).
+                                                                                  k→∞
+
+If the sequence (fk )k≥1 is convergent we define its limit as
+                                                            N
+                                                            X
+                                         lim(fk ) := h +          ai gi ∈ P+
+                                                                           ∞.
+                                          k
+                                                            i=1
+
+Example 2.2. The sequence
+                                          fk = (1 + t + ... + tk )ei [Xk ],
+has the limit
+                                                           1
+                                              lim fk =        ei [X].
+                                                k         1−t
+The sequence
+                                                    gk = tk ei [Xk ]
+has limit 0.
+
+    By [7, Proposition 6.20], the limit of a sequence does not depend on the choice of the auxiliary sequences
+in Definition 2.1.
+
+2.11. The concept of limit defined in §2.10 allows us to define the corresponding concept of limit of oper-
+ators. Assume that Ak : P+
+                         k → Pk , k ≥ 1, is a sequence of operators with the following property
+                                +
+
+
+(C): For any f ∈ P+
+                  as , the sequence (Ak Πk f )k≥1 converges to an element of Pas .
+                                                                              +
+
+
+Let A be the operator
+                                       A : P+
+                                            as → Pas ,
+                                                  +
+                                                            f 7→ lim Ak Πk f.
+                                                                    k
+              THE STABLE LIMIT DAHA: THE STRUCTURE OF THE STANDARD REPRESENTATION                             7
+
+
+We refer to A as the limit operator of the sequence (Ak )k≥1 and use the notation A = lim Ak . It is clear
+                                                                                             k
+from the definition that the inverse limit of a sequence of operators is a particular case of such a limit. In
+such a case, we may use the notation lim
+                                       ←−
+                                           Ak to emphasize this fact.
+                                        k
+    For the following result we refer to [7, Proposition 6.21, Corollary 6.22].
+
+Proposition 2.3. Let Ak , Bk : P+k → Pk be two sequences of operators satisfying the property (C), and let
+                                       +
+
+A, B denote the corresponding limit operators. Then,
+
+    (i) For (fk )k≥1 , fk ∈ P+
+                             k any convergent sequence such that f = limk fk ∈ Pas , we have
+                                                                                +
+
+
+                                               Af = lim Ak fk
+                                                       k
+
+   (ii) The operator AB is the limit of the sequence of operators (Ak Bk )k≥1 .
+
+    The second part of the statement can be interpreted as a property of continuity for the operator A.
+
+                                            3. The Bruhat order
+
+3.1. Let ⟨·, ·⟩ denote the standard Euclidean scalar product on Rk , and let {εi }1≤i≤k denote the standard
+basis. The symmetric group Sk is the Weyl group of the root system Φ = {εi − εj | 1 ≤ i ̸= j ≤ k} of type
+Ak−1 , with the simple transpositions si , 1 ≤ i ≤ k − 1, corresponding to reflections associated to the simple
+roots αi = εi − εi+1 , 1 ≤ i ≤ k − 1. The affine symmetric group Sek is the Weyl group of the affine root
+system Φ e = {nδ + εi − εj | 1 ≤ i ̸= j ≤ k, n ∈ Z} ∪ Zδ of type A(1) . We fix the basis αi , 0 ≤ i ≤ k − 1,
+                                                                      k−1
+with α0 = δ − ε1 + εk , and we regard Sk as a parabolic subgroup of Sek . The corresponding sets of positive
+roots are denoted by Φ+ and Φ   e + . We consider δ as the constant function 1 on Rk , and use the notation
+⟨δ, x⟩ = 1, for any x ∈ Rk . The generator s0 that corresponds to the simple root α0 acts on Rk as the affine
+reflection
+                                        s0 (x) = x − ⟨x, α0 ⟩(−ε1 + εk ).
+A reduced decomposition of w ∈ Sek is an expression of minimal length as a product of simple reflections.
+
+3.2. The lattice Zk ⊂ Rk is stable under the action of Sek ; its elements will be called weights. The dominant
+Weyl chamber is C = {x ∈ Rk |⟨x, αi ⟩ ≥ 0, 0 ≤ i ≤ k − 1}; the elements of Zk ∩ C, and Zk ∩ (−C) are
+called dominant, and respectively, anti-dominant weights. The Sek -orbit of 0, denoted by Qk is called the
+root lattice, as it is precisely the sub-lattice of Zk generated by Φ.
+     The fundamental alcove is defined as Ce = {x ∈ Rk |⟨x, αi ⟩ ≥ 0, 0 ≤ i ≤ k − 1}; the elements of Zk ∩ Ce
+are called minuscule weights. For λ ∈ Zk , the unique dominant, and anti-dominant elements in its Sk -orbit
+are denoted by λ+ , and respectively λ− . The unique minuscule element in the Sek -orbit of λ is denoted by
+λ̃. We denote by ẘλ ∈ Sk the unique minimal length element such that ẘλ (λ− ) = λ, and by wλ ∈ Sek , the
+unique minimal length element such that wλ (λ̃) = λ.
+
+3.3. The Bruhat order is a partial order on any Coxeter group, in particular on Sek . For its basic properties
+see [6, Chapter 5]. We can use the Bruhat order on Sek to define a partial order on Zk , which we will also
+call Bruhat order: if λ, µ ∈ Zk then, by definition, λ ≤ µ if and only if λ and µ are in the same Sek -orbit,
+and wλ ≤ wµ . If λ < µ and there are no other weights between λ and µ, we write λ <· µ. If λ <· µ, then the
+8                                         BOGDAN ION AND DONGYU WU
+
+
+                                                                     e + (see, e.g. [6, Proposition 5.11]); if,
+definition of the Bruhat order implies that µ = sα (λ), for some α ∈ Φ
+                                                         +
+moreover, λ and µ are in the same Sk -orbit, then α ∈ Φ .
+
+Definition 3.1. Let λ, µ, ν ∈ Zk such that λ − µ and λ − ν ∈ Qk . We say that ν is a convex combination of
+λ and µ if ν = (1 − τ )λ + τ µ with 0 ≤ τ ≤ 1. The notion of convex combination of a finite set of weights is
+defined in the corresponding fashion.
+
+     For the first two properties below we refer to [9, (3.7), (3.9)]; the third property is a direct consequence
+of the second; the fourth was proved in [12, Lemma 5.5] for a particular affine Weyl group, but the proof
+provided there works in general.
+
+Lemma 3.2. Let λ, µ ∈ Zk and α ∈ Φ
+                                 e + . Then,
+
+     (i) λ < sα (λ) if and only if ⟨α, λ⟩ > 0;
+    (ii) Let 0 ≤ i ≤ k − 1 such that ⟨αi , µ⟩ ≤ 0. Then,
+
+                λ≤µ      if and only if    min{λ, si (λ)} ≤ si (µ)     if and only if    si (λ) ≤ µ;
+
+    (iii) Let 0 ≤ i ≤ k − 1 and λ ≤ µ. Then,
+
+                              either   si (λ) ≤ µ,   or   si (λ) ≤ si (µ)   (or both);
+
+    (iv) For any 0 ≤ i ≤ k − 1 such that ⟨αi , λ⟩ < 0, and ν ∈ Zk such that ν is a proper convex combination
+         of λ and si (λ), we have ν < si (λ) < λ.
+
+Corollary 3.3. Let λ, µ ∈ Zk such that λ ≤ µ and λ, µ are in the same Sk -orbit. Then, λk ≤ µk .
+
+Proof. It is enough to assume that λ <· µ. In this case, we must have µ = sα (λ) with ⟨α, λ⟩ > 0, for some
+α = εi − εj , i < j. If j < k, then λk = µk . If j = k, then µk = λi > λk .                              □
+
+3.4. Let Λk = Zk≥0 ⊂ Zk , k ≥ 1, and let Λ0 = ∅. The (Λk )k≥0 form a direct system, with structure maps
+Λk → Λk+1 given by extension by 0 (i.e. adding 0 as the last coordinate). Let Λ be the inductive limit of
+the direct system (Λk )k≥0 . We make use of the following notation, consistent with the notation in §2.2: if
+λ ∈ Λk and S ⊆ [k], then λbS ∈ Λk−|S| is obtained from λ by removing λi for all i ∈ S.
+
+     We have the following results, for which we refer to [9, Lemma 7.3, Lemma 9.4, Corollary 9.5].
+
+Proposition 3.4. Let λ, µ ∈ Zk .
+
+     (i) If λ ≤ µ and µ ∈ Λk , then λ ∈ Λk ;
+    (ii) If λi = µi , for all i ∈ S ⊆ [k], then λ ≤ µ if and only if λ
+                                                                     bS ≤ µ
+                                                                          bS (with respect to the Sek−|S| -Bruhat
+         order).
+
+In particular, there is a unique order relation ≤ on Λ whose restriction to Λk is the Sek -Bruhat order.
+
+3.5. A composition λ is a finite sequence (including the empty sequence) of non-negative numbers; its
+length ℓ(λ) is defined as the number of terms in the sequence; its weight |λ| is defined as the total sum of
+its terms. We say that λ is a strict composition, if its last term λℓ(λ) is non-zero. We consider the empty
+sequence to be a strict composition. A partition is a finite decreasing sequence of positive numbers; in
+particular, a partition is a strict composition. We regard all partitions and compositions as elements of Λ.
+               THE STABLE LIMIT DAHA: THE STRUCTURE OF THE STANDARD REPRESENTATION                             9
+
+
+If λ is a composition, we consider it as an element of Zℓ(λ) ; in particular, λ+ is the unique dominant element
+in the Sℓ(λ) -orbit of λ.
+
+Notation 3.5. Let λ be a strict composition, and let µ be a partition. The ordered pair (λ, µ) will be denoted
+by λ|µ. We denote by Λas the set of elements of the form λ|µ. For λ, µ ∈ Λ, their concatenation is denoted
+by λµ. We adopt the corresponding notation for the concatenation of any finite set of elements of Λ. In
+Definition 3.6, 0n denotes a sequence of zeroes of length n.
+
+Definition 3.6. The partial order relation ⪯ on Λas is defined as follows
+
+                               λ|µ ⪯ η|ν, if ℓ(λ) ≤ ℓ(η) and λ0ℓ(η)−ℓ(λ) µ ≤ ην.
+
+     The relation defined above is indeed an order relation. Indeed, if λ|µ ⪯ η|ν and η|ν ⪯ λ|µ, then
+ℓ(λ) = ℓ(η), and λµ ≤ ην and ην ≤ λµ. Since ≤ is an order relation, we have λµ = ην, and therefore
+λ|µ = η|ν.
+
+
+3.6.   We will need the following technical result.
+
+Lemma 3.7. Let λ, η, µ, ν be compositions.
+
+    (i) If ℓ(λ) = ℓ(η) and λµ ≤ ην, then λµ+ ≤ ην+ .
+   (ii) If λ, η are strict compositions, ℓ(λ) ≤ ℓ(η), and λ0ℓ(η)−ℓ(λ) µ ≤ ην, then λ|µ+ ⪯ η|ν+ .
+
+Proof. Because ℓ(λ0ℓ(η)−ℓ(λ) ) = ℓ(η), the second claim is a consequence of the first. To prove the first claim,
+note that Lemma 3.2 i) implies that λµ+ ≤ λµ, so we may assume that µ = µ+ . We prove this claim
+by induction on the length of the interval [ν+ , ν] in the Bruhat order. If this length is 0, then ν+ = ν, in
+which case the conclusion is precisely the hypothesis. Otherwise, let αi be a finite simple root such that
+⟨αi , ν⟩ < 0. Then, Lemma 3.2 implies that si (ν) < ν and λµ+ = min{λµ+ , λsi (µ+ )} ≤ ηsi (ν). Applying
+the induction hypothesis to si (ν) finishes the proof.                                                        □
+
+3.7. For λ|µ ∈ Λas , we denote mλ|µ = xλ mµ [Xℓ(λ) ]. Let Mas = mλ|µ λ|µ ∈ Λas ; its elements will be
+                                                                 
+
+called almost symmetric monomials. Also, for k ≥ 0, denote Mas (k) = mλ|µ ∈ Mas ℓ(λ) ≤ k .
+                                                                    
+
+
+Proposition 3.8. The set Mas is a basis for P+
+                                             as . In consequence, Mas (k) is a basis of P(k) .
+                                                                                            +
+
+
+
+Proof. To show that Mas spans Pas it is enough to argue that the span of Mas contains any element of the
+form xλ mµ [Xn ] with λ a strict composition, µ a partition, and n ≥ ℓ(λ). We prove this by induction on
+n − ℓ(λ) ≥ 0. If n = ℓ(λ), then xλ mµ [Xn ] = mλ|µ ∈ Mas . If n − ℓ(λ) > 0, the formula (2.1) can be used
+to express xλ mµ [Xn ] as a sum of elements that satisfy the induction hypothesis. Therefore, xλ mµ [Xn ] is
+in the span of Mas .
+    To show that Mas is linearly independent, assume that there is a non-empty finite subset S ⊂ Λas , and
+non-zero elements cλ|µ ∈ K, for λ|µ ∈ S, such that
+                                            X
+                                                 cλ|µ mλ|µ = 0.
+                                             λ|µ∈S
+10                                       BOGDAN ION AND DONGYU WU
+
+
+Let λ|µ ∈ S such that ℓ(λ) is minimal, and N such that ℓ(λ) + N > ℓ(η), for any η|ν ∈ S. The monomial
+                                                 Y µ
+                                            xλ ·     i
+                                                   xi+ℓ(λ)+N
+                                                       i≥1
+
+appears in the monomial expansion of mλ|µ and cannot appear in the monomial expansion of any other
+mη|ν , for η|ν ∈ S. This contradicts the fact that cλ|µ ̸= 0.                                   □
+
+       We refer to Mas as the monomial basis of P+
+                                                 as .
+
+
+
+                                        4. The stable limit DAHA
+
+4.1.     Let H+ be the + stable limit DAHA, defined as follows.
+
+Definition 4.1. Let H+ be the K-algebra generated by the elements T i ,Xi , and Yi , i ≥ 1, satisfying the
+following relations
+                                           TiTj = Tj Ti,        |i − j| > 1,
+(4.1a)
+                                       T i T i+1 T i = T i+1 T i T i+1 ,     i ≥ 1,
+
+(4.1b)                                   (T i − 1)(T i + t) = 0,           i ≥ 1,
+
+                                          tT −1     −1
+                                             i Xi T i  = Xi+1 ,            i≥1
+(4.1c)                                    T i Xj = X j T i ,    j ̸= i, i + 1,
+                                            X i X j = Xj Xi ,      i, j ≥ 1,
+
+                                           t−1 T i Yi T i = Yi+1 ,     i≥1
+(4.1d)                                    T i Yj = Yj T i ,     j ̸= i, i + 1,
+                                             Yi Yj = Yj Yi ,      i, j ≥ 1,
+
+(4.1e)                                         Y 1 T 1 X1 = X2 Y 1 T 1 .
+
+Remark 4.2. We emphasize that the defining relations of H+ do not depend on the parameter q. Therefore,
+H+ is defined over Q(t). The parameter q is included in the field of definition because its role in the
+definition of the standard representation (see §4.4).
+
+Definition 4.3. For any k ≥ 2, denote by H(k)+ the subalgebra of H+ generated by T i , 1 ≤ i ≤ k − 1, and
+Xi , Yi , 1 ≤ i ≤ k.
+
+Notation 4.4. The subalgebra of H+ generated by T i , 1 ≤ i ≤ k − 1 is the finite Hecke algebra associated to
+the permutation group Sk . It has a standard basis {T w }w∈Sk , where, as usual, we denote T w = T iℓ · · · T i1
+if w = siℓ · · · si1 is a reduced expression of w ∈ Sk in terms of simple transpositions. A reduced expression
+of w is not unique, but the number of factors that appear in a reduced expression, denoted ℓ(w), is unique
+and is called the length of the permutation w. The length function and the concept of reduced expression
+are compatible with the direct system of symmetric groups and therefore, the subalgebra of H+ generated
+by T i , 1 ≤ i, has a standard basis {T w }w∈S∞ .
+                THE STABLE LIMIT DAHA: THE STRUCTURE OF THE STANDARD REPRESENTATION                                             11
+
+                                                                                         Y                      Y
+Notation 4.5. As in §2.1, for λ a composition we denote by Xλ =                                Xλi i and Yλ =         Yλi i .
+                                                                                         i≥1                    i≥1
+
+
+4.2.    The double affine Hecke algebra Hk , k ≥ 1, of type GLk can be presented as follows.
+
+Definition 4.6. The algebra Hk , k ≥ 1, is the K-algebra generated by the elements Ti , 1 ≤ i ≤ k − 1, and
+Xi±1 , Yi±1 , 1 ≤ i ≤ k, satisfying all the relations in Definition 4.1 and
+
+(4.2)                                              Y1 X1 . . . Xk = qX1 . . . Xk Y1 .
+
+We denote by Hk+ the subalgebra of Hk generated by Ti , 1 ≤ i ≤ k − 1, and Xi , Yi , 1 ≤ i ≤ k.
+                                        Y                  Y
+Notation 4.7. For λ ∈ Λk we denote Xλ =    Xiλi and Yλ =       Yiλi .
+                                                        i≥1                        i≥1
+
+Remark 4.8. There exists a canonical morphism φk : H(k)+ → Hk+ that sends each generator T i , Xi , Yi to
+                             (k)   (k)  (k)
+the corresponding generator Ti , Xi , Yi of Hk+ . An important relation that holds in Hk+ is
+                                         (k)    (k)                  (k)   (k)
+(4.3)                                  Y1 X1          = qt−k−1 X1 Y1 T1 · · · Tk−1
+                                                                               2
+                                                                                   · · · T1 .
+
+Therefore, the element Y1 X1 − qt−k−1 X1 Y1 T 1 · · · T 2k−1 · · · T 1 lies in the kernel of φk .
+                         −1
+Remark 4.9. Let ωk = tk Tk−1 · · · T1−1 Y1−1 ∈ Hk . For 1 ≤ i ≤ k, we have
+
+                                           Yi = tk+1−i Ti−1 . . . T1 ωk−1 Tk−1
+                                                                           −1
+                                                                               . . . Ti−1 .
+
+In rank k = 1, the operator Y1 is simply the multiplication operator by t. The element ωk can be used to
+give an equivalent presentation of Hk . More precisely, Hk , k ≥ 2, is the Q(t, q)-algebra generated by the
+elements Ti , 1 ≤ i ≤ k − 1, Xi±1 , 1 ≤ i ≤ k, and ωk±1 , satisfying the relations (4.1a), (4.1b), (4.1c), and
+
+(4.4)                             ωk Ti ωk−1 = Ti−1 ,         2 ≤ i ≤ k − 1,        ωk2 T1 ωk−2 = Tk−1 ,
+
+(4.5)                          ωk Xi+1 ωk−1 = Xi ,         1 ≤ i ≤ k − 1,           ωk X1 ωk−1 = q−1 Xk .
+
+The algebra Hk+ the subalgebra of Hk generated by Ti , 1 ≤ i ≤ k − 1, Xi , 1 ≤ i ≤ k, and ωk−1 .
+
+Remark 4.10. The definition of the action of Ti shows that, for any λ ∈ Zk , the coefficients of the monomials
+expansion of Ti xλ and tTi−1 xλ are polynomials in t. Therefore, the coefficients of the monomial expansion
+of t−1 Yi xλ are polynomial in t.
+
+4.3.    The representation below is called the standard representation of Hk .
+
+Proposition 4.11. The following formulas define a faithful representation of Hk on Pk :
+                                                                                1 − si
+              Ti f (x1 , . . . , xk ) = si f (x1 , . . . , xk ) + (1 − t)xi             f (x1 , . . . , xk ), 1 ≤ i ≤ k − 1,
+                                                                              xi − xi+1
+(4.6)        Xi f (x1 , . . . , xk ) = xi f (x1 , . . . , xk ), 1 ≤ i ≤ k,
+             ωk f (x1 , . . . , xk ) = f (q−1 xk , x1 , . . . , xk−1 ).
+
+The subspace P+
+              k is stable under the action of Hk . The corresponding representation of Hk on Pk is
+                                               +                                        +     +
+
+faithful.
+12                                              BOGDAN ION AND DONGYU WU
+
+
+Convention 4.12. Since the standard representations of Hk and Hk+ are faithful, our notation will not
+distinguish between an element of the algebra and the corresponding operator acting in the standard repre-
+sentation. There will be elements denoted by the same symbol that belong to several (often infinitely many)
+algebras. Our notation will not keep track of this information as long as it is implicit from the context.
+                                                          (k)  (k)  (k)
+When necessary, we will add the superscript (k) (e.g. Ti , Xi , Yi ∈ Hk ) to make such information
+explicit.
+
+
+4.4. The standard representation of H+ is a representation on P+     as , constructed in [7]. The action of each
+generator arises as described in §2.11 from an associated sequence of operators. More precisely, the action
+                                                                                           (k)
+of T i arises as the (inverse) limit of the sequence of the Demazure-Lusztig operators Ti : P+  k → Pk , k ≥ i,
+                                                                                                       +
+
+
+                     (k)                                                               1 − si
+(4.7)              Ti f (x1 , . . . , xk ) = si f (x1 , . . . , xk ) + (1 − t)xi               f (x1 , . . . , xk ).
+                                                                                     xi − xi+1
+                                                                                                                       (k)
+The action of Xi arises as the (inverse) limit of the sequence of the multiplication operators Xi                            : P+
+                                                                                                                                k → Pk ,
+                                                                                                                                     +
+
+k ≥ i,
+                                               (k)
+(4.8)                                     Xi f (x1 , . . . , xk ) = xi f (x1 , . . . , xk ).
+
+The description of the action of Yi , as defined in [7], is more complicated. To specify the associated sequence
+of operators, we need the auxiliary maps ϖk : P+    k → Pk ,
+                                                            +
+
+
+(4.9)                                  ϖk f (x1 , . . . , xk ) = pr1 f (x2 , . . . , xk , qx1 ).
+
+Above, pr1 : P+
+              k → Pk , is the K-linear map which acts as identity on monomials divisible by x1 and as the
+                      +
+
+zero map on monomials not divisible by x1 . In other words, pr1 is the projection onto the subspace x1 P+        k.
+                                                                                                       (k)
+Therefore, ϖk = pr1 ωk−1 . The action of Yi arises as the limit of the sequence of operators Yei : P+      k → P +
+                                                                                                                 k,
+k ≥ i,
+                  (k)                         −1
+                                                                                                  (k)
+(4.10)         Yei = tk+1−i Ti−1 . . . T1 ϖk Tk−1 . . . Ti−1 = Ti−1 . . . T1 pr1 T1−1 . . . Ti−1
+                                                                                             −1
+                                                                                                  Yi .
+
+     To distinguish between the elements T i , Xi , Yi ∈ H+ and their action on P+
+                                                                                 as , we denote
+                                 (k)                 (k)                (k)             (k)                    (k)
+                    Ti = lim Ti        = lim
+                                          ←−
+                                             Ti ,          Xi = lim Xi        = lim
+                                                                                 ←−
+                                                                                    Xi ,           Yi = lim Yei .
+                           k                                      k                                      k
+                                           k                                     k
+
+However, since the operators Ti and Xi act on elements of P+
+                                                           as as specified in (4.7) and (4.8), we will routinely
+use Ti and Xi to refer to them.
+
+
+
+
+                                                                                 (k)           (k)
+4.5. As it turns out, the difference between the operators Yei and Yi is rather minimal and in fact
+             (k)                                                        (k)      (k)
+Yi = limk Yi . For example, the difference between the action of Y1 and Ye1 on the monomial xλ is
+                          k λ                       k λ
+either 0 (if λ1 > 0) or t x (if λ1 = 0) and limk t x = 0. Before explaining the details and stating the
+precise relationship in the general case we need the following technical result.
+
+
+Lemma 4.13. Let λ, µ ∈ Λk and 1 ≤ i < k, such that xµ appears in the monomial expansion of Ti−1 xλ .
+Then, µi+1 = 0 if and only if µ = si (λ) and λi = 0.
+               THE STABLE LIMIT DAHA: THE STRUCTURE OF THE STANDARD REPRESENTATION                                          13
+
+
+Proof. We will make use of the following facts about the action of Ti−1 , which follow from the explicit
+formulas for the action of Ti−1 and Lemma 3.2 iv)
+                                                           X
+                        Ti−1 xλ ∈ xsi (λ) + (1 − t−1 )xλ +   Kxν , if ⟨λ, αi ⟩ < 0,
+                                                                  ν<si (λ)
+                                                             X
+                                 Ti−1 xλ ∈ t−1 xsi (λ) +          Kxν ,         if ⟨λ, αi ⟩ > 0.
+                                                            ν<λ
+The weights ν that appear in the above sums are proper convex combinations of λ and si (λ) and therefore
+their i and i + 1 components are positive. If xµ appears in one of the expressions above and µi+1 = 0,
+then µ is either λ or si (λ). If µ = λ ̸= si (λ), then ⟨λ, αi ⟩ < 0, which contradicts µi+1 = 0. Therefore,
+µ = si (λ). It is also useful to remark that if µi+1 = 0 and xµ appears in the monomial expansion of Ti−1 xλ
+with coefficient 1.                                                                                        □
+
+Proposition 4.14. Let λ ∈ Λk . Then,
+                                                
+                                                0,                                       if   λi > 0,
+                                (k)   (k)
+                             (Yi − Yei )xλ =
+                                                tk+1−i Ti−1 · · · T1 ω −1 xλ ,           if   λi = 0.
+                                                                                i
+
+                                                                                                         (i)
+In the case i = 1, ω1 is the identity operator. For i ≥ 2, tk+1−i Ti−1 · · · T1 ωi−1 = tk−i Yi .
+
+
+Proof. The conclusion is equivalent to the following claim. Let xµ that appears in the monomial expansion
+    −1
+of Tk−1 · · · Ti−1 xλ . Then, µk = 0 if and only if µ = sk−1 · · · si (λ) and λi = 0. The claim follows by induction
+on k ≥ i + 1. Both the initial verification and the induction step follow from Lemma 4.13.                         □
+                                                                          (k)
+Theorem 4.15. For any 1 ≤ i and f ∈ P+
+                                     as , the sequence Yi                       Πk f , i ≤ k, converges to an element of P+
+                                                                                                                          as ,
+and
+                                                      (k)
+                                           Yi = lim Yi .
+                                                              k
+
+
+                                         (k)    (k)
+Proof. It is enough to show that limk (Yi − Yei )Πk mλ|µ = 0, for any λ|µ ∈ Λas . If i ≤ ℓ(λ) and k large
+                 (k)     (k)                             (i)
+enough, then (Y  i   − Ye )Πk mλ|µ is either 0 or tk−i (Y xλ )mµ [X[ℓ(λ),k] ]. By Remark 4.10,
+                         i                                        i
+                                                   (i)
+                                       lim tk−i (Yi xλ )mµ [X[ℓ(λ),k] ] = 0.
+                                         k
+
+If i > ℓ(λ),                                   X
+                                 Πk mλ|µ =              xλ mµS [X[ℓ(λ),i] ]mµbS [X[i+1,k] ].
+                                             S⊆[ℓ(µ)]
+              (k)   (k)                                                    (i)
+Therefore, (Yi − Yei )Πk mλ|µ is a finite sum of terms of the form tk−i (Yi xν )mη [X[i+1,k] ] with (ν, η) in
+a fixed finite set. Again, by Remark 4.10, the limit of such a sequence equals 0.                                           □
+
+
+    The commutativity of the operators Yi , i ≥ 1, proved in [7, Theorem 6.34], is an immediate consequence
+of Theorem 4.15 and Proposition 2.3.
+
+
+4.6. While the more general concept of limit defined in §2.11 is necessary to define the operators Yi ,
+                            (k) (k)
+the sequence of operators Yi Xi is compatible with the inverse system [7, Proposition 6.2] and, as a
+14                                                     BOGDAN ION AND DONGYU WU
+
+
+consequence of Theorem 4.15 and Proposition 2.3, we have
+                                        (k)     (k)            (k)    (k)            (k)          (k)
+(4.12)                       lim
+                              ←−
+                                 Yi           Xi      = lim Yi       Xi     = lim Yi       · lim
+                                                                                              ←−
+                                                                                                 Xi     = Yi Xi .
+                                                          k                      k
+                                 k                                                           k
+                                                                                                                            (k)
+In other words, the operator Yi : xi P+
+                                      as → Pas is simply the restriction to xi Pas of the inverse limit lim
+                                            +                                   +
+                                                                                                         ←−
+                                                                                                            Yi
+                                                                                                                        k
+                                         (k)
+of the sequence of operators Yi                : xi P +
+                                                      k → xi Pk .
+                                                              +
+
+
+Theorem 4.16. Let H ∈ H(r)+ and let H : P+      as → Pas be the operator given by the action of H. Then,
+                                                      +
+
+H = 0 if and only if φk (H) = 0, for all k ≥ r.
+
+Proof. For any k ≥ r, let Hk = φk (H) ∈ Hk+ , where φk : H(k)+ → Hk+ is the morphism defined in Remark
+4.8. By Theorem 4.15, H = limk Hk .
+     Assume that H = 0. We claim that Hk = 0 for all k ≥ r. Indeed, as explained in §4.6, on x1 · · · xk P+as ,
+                                                                                                     (k)
+the action on any Yi , 1 ≤ i ≤ k, is the inverse limit of the actions of the sequence of operators Yi , k ≥ r.
+In consequence, for any λ ∈ Λk ,
+
+                                         0 = H · (x1 · · · xk )xλ = lim
+                                                                     ←−
+                                                                        Hk · (x1 · · · xk )xλ .
+                                                                             k
+
+The action of Hk+ on (x1 · · · xk )P+
+                                    k is faithful and therefore Hk = 0.                                                     □
+
+    Theorem 4.16 is the starting point in §8 of our proof of the faithfulness of the standard representation
+of H+ .
+
+                                                              5. Triangularity
+
+5.1.     A direct consequence of [7, Lemma 6.28] is the following.
+
+Proposition 5.1. The space P(k)+ is stable under the action of H+ (k) ⊂ H+ .
+
+       The following result [7, Proposition 6.32] gives a more explicit formula for the action of Y1 .
+
+Proposition 5.2. Let n ≥ 0, f (x1 , . . . , xk−1 ) ∈ P+
+                                                      k−1 , and G[Xk−1 ] ∈ Sym[Xk−1 ]. We regard
+
+                                                      F = f (x1 , . . . , xk−1 )xnk G[Xk−1 ]
+
+as an element of P(k)+ . Then,
+                                      tk
+           Y1 T1 · · · Tk−1 F =          f (x2 , . . . , xk )G[Xk + qx1 ](hn [(1 − t)(Xk + qx1 )] − hn [(1 − t)Xk ]).
+                                     1−t
+Corollary 5.3. Let i ≥ k. Then, the restriction of Yi to P(k − 1)+ is the zero map.
+
+                           (k)
+5.2. The operators Yi : P+   k → Pk are upper triangular with respect to the basis {x | λ ∈ Λk } ordered
+                                    +                                                  λ
+
+by the Sek -Bruhat order (see, e.g. [9, Lemma 6.1]). Before stating the result, we introduce the following
+notation. For λ ∈ Λk and i ≤ k, let
+
+(5.1)                            uλ (i) = {1 ≤ j ≤ i | λj > λi } + {i ≤ j ≤ k | λj ≥ λi } .
+               THE STABLE LIMIT DAHA: THE STRUCTURE OF THE STANDARD REPRESENTATION                                     15
+
+
+Proposition 5.4. Let λ ∈ Λk and 1 ≤ i ≤ k. Then,
+                                           (k) λ
+                                                                       X
+                                         Yi   x ∈ qλi tuλ (i) xλ +           Kxµ .
+                                                                       µ<λ
+
+
+     Recall that, by Proposition 3.4(i), in the above sum we must have µ ∈ Λk .
+
+
+                                           (k)
+5.3. We will show that the operators Yei       : P+
+                                                  k → Pk are upper triangular with respect to the basis
+                                                         +
+
+{xλ | λ ∈ Λk } ordered by the Sek -Bruhat order. For any λ ∈ Λ and i ≥ 1, we define δ i (λ) to be 0 if λi = 0,
+or i > ℓ(λ), and to be 1, if λi > 0.
+
+Proposition 5.5. Let λ ∈ Λk and 1 ≤ i ≤ k. Then,
+                                          (k)
+                                                                          X
+                                       Yei xλ ∈ δ i (λ)qλi tuλ (i) xλ +         Kxµ .
+                                                                          µ<λ
+
+
+
+                                                                (k)       (k)
+Proof. We will make use of Proposition 4.14. If λi > 0, then Yei xλ = Yi xλ , and our claim is precisely
+Proposition 5.4. If λi = 0, then define ν ∈ Λi , η ∈ Λk , νj = λj , ηj = 0 for 1 ≤ j ≤ i, and ηj = λj for
+i < j ≤ k. Proposition 4.14 can be restated as
+                                          (k)     (k)                (i)
+                                       Yei xλ = Yi xλ − tk−i xη · (Yi xν ).
+
+Now, Proposition 5.4 and Proposition 3.4(i) imply the desired statement.                                               □
+
+
+5.4. As a consequence of Proposition 5.1, Corollary 5.3, Proposition 3.8, and Proposition 5.5, we establish
+the upper triangularity of the operators Yi with respect to the ordered basis (Mas , ⪯).
+
+Theorem 5.6. Let i ≥ 1. Let λ|µ ∈ Λas and i ≥ 1. Then,
+                                                                          X
+                                Yi mλ|µ ∈ δ i (λ)qλi tuλµ (i) mλ|µ +                 Kmλ′ |µ′ .
+                                                                       λ′ |µ′ ≺λ|µ
+
+
+
+Proof. Let λ|µ ∈ Λas . If i > k := ℓ(λ), then by Corollary 5.3, we have Yi mλ|µ = 0 and our claim holds.
+For the remainder of the proof we assume that i ≤ k. Then, Yi ∈ H(k)+ and mλ|µ ∈ P(k)+ . In this case,
+Yi mλ|µ ∈ P(k)+ , by Proposition 5.1 and Proposition 3.8. Let λ′ |µ′ such that mλ′ |µ′ appears in Yi mλ|µ with
+non-zero coefficient. In particular, we have ℓ(λ′ ) ≤ k.
+                                                                                                   ′ k−ℓ(λ ) ′     ′
+                       (n)
+    Since Yi = limn Yei , any monomial that appears in Yi mλ|µ , in particular the monomial xλ 0            µ
+                                                                                                               ,
+                 (n)                                                                          ′
+                                                                                       ′ k−ℓ(λ ) ′
+must appear in Y Πn mλ|µ , for any n sufficiently large. Proposition 5.5 implies that λ 0
+               e
+                   i                                                                            µ ≤ λγ and
+from Lemma 3.7 ii) we obtain λ′ |µ′ ⪯ λ|µ.
+     For n sufficiently large, the largest monomial that appears in Πn mλ|µ is xλν , where ν is the increasing
+                                                                          (n)
+re-ordering of µ0n−ℓ(λ) . By Proposition 5.5, the coefficient of xλν in Ye xλν is δ i (λ)qλi tuλν (i) . From i ≤ k
+                                                                                     i
+and the definition of uλν (i) it is clear that δ i (λ)qλi tuλν (i) = δ i (λ)qλi tuλµ (i) . Therefore, the coefficient of
+mλ|µ in Yi mλ|µ is δ i (λ)qλi tuλµ (i) .                                                                              □
+16                                           BOGDAN ION AND DONGYU WU
+
+
+                                         6. Limit Macdonald functions
+                                                                                        (k)
+6.1. The common eigenbasis for the family of commuting operators Yi , 1 ≤ i ≤ k, are the non-symmetric
+Macdonald polynomials Eλ (q, t) ∈ P+                              λ         µ
+                                                                     P
+                                   k , λ ∈ Λk . Each Eλ (q, t) ∈ x +  µ<λ Kx , and
+                                             (k)
+(6.1)                                      Yi      Eλ (q, t) = qλi tuλ (i) Eλ (q, t).
+
+For details see, for example, [8] or, closer to our notation and conventions, [9, Corollary 6.2 and Corollary
+7.5]. We will often omit the parameters q, t from the notation. As we explain in what follows, Theorem 5.6
+can be used to describe the spectrum of the family of commuting operators Yi , i ≥ 1.
+
+
+6.2.                             ek : Pk → Pk , defined as
+        As in [7], let us denote ω
+
+                               ek f (x1 , . . . , xk ) = t1−k Tk−1 . . . T1 x−1
+                               ω                                             1 f (x1 , . . . , xk ).
+
+We record the following identities between operators from P+
+                                                           k to Pk−1 , that can be found in [7, §6.2 and
+                                                                 +
+
+(6.2)]
+
+
+                                                        πk Ti = Ti πk ,     1 ≤ i ≤ k − 2,
+                                        −1
+                                    πk Tk−1 . . . T1−1 ω
+                                                       ek−1 = 0,
+(6.2)
+                                                   ek−1 Tk−1 = ω
+                                                πk ω             −1
+                                                               ek−1 πk ,
+                                                πk ωk−1 Tk−1 = ωk−1
+                                                                −1
+                                                                    πk .
+
+6.3. The non-symmetric Macdonald polynomials satisfy certain recursions that are very useful for analyzing
+their properties. We record these recursions, adapted to our notation and conventions, as established in
+[8, Lemma 4.3, Corollary 4.4].
+     Let λ ∈ Λk , and 1 ≤ i ≤ k − 1. If, λi = λi+1 then Ti Eλ = Eλ . If λi > λi+1 then,
+                                                                        !
+                                                 qλi+1 tui+1 (λ)
+(6.3)                        Ti + (1 − t)                                 Eλ = Esi (λ) .
+                                          qλi tui (λ) − qλi+1 tui+1 (λ)
+
+       For any λ ∈ Λk , we denote γk (λ) = (λk + 1, λ1 , . . . , λk−1 ). With this notation, we have
+
+(6.4)                                              x1 ωk−1 Eλ = qλk Eγk (λ) .
+
+For the last recursion, we use p(λ) to denote the number of strictly positive parts of λ, and a = a(λ) to
+denote the integer 1 ≤ a ≤ k such that λa ̸= 0, and λa+1 = · · · = λk = 0. With this notation, remark that
+ua+1 (λ) = p(λ) + k − a(λ). Denote λ∗ = (λa + 1, λ1 , . . . , λa−1 , 0, . . . , 0). Then, we have
+                                                                  !                                  !
+                −1                    t1+p(λ) k−a −1           −1                λa       t1+p(λ)
+(6.5)       x1 ωk    Tk−1 · · · Ta −             t Tk−1 · · · Ta     Eλ = q          1−                Eλ∗ .
+                                     qλa tua (λ)                                         qλa tua (λ)
+
+6.4.    For fixed λ ∈ Λk , we investigate the limit of the sequence (Eλ0n )n≥0 . We first need the following.
+
+Lemma 6.1. Let λ ∈ Λk such that a(λ) = p(λ). Then, Eλ is divisible by x1 · · · xa and
+                                                       −1
+                                                   πk Tk−1 · · · Ta−1 Eλ = 0.
+               THE STABLE LIMIT DAHA: THE STRUCTURE OF THE STANDARD REPRESENTATION                                  17
+
+
+Proof. For λ = 1a 0k−a we have Eλ = x1 · · · xa . The general case for the divisibility claim follows by
+induction on the Bruhat order from the application of (6.3) and (6.5). For the remaining claim, write
+                               −1                      −1
+                           πk Tk−1 · · · Ta−1 Eλ = πk Tk−1 . . . T1−1 ω
+                                                                      ek−1 (e
+                                                                            ωk T1 · · · Ta−1 Eλ ).
+                                                                                             −1
+                                       ek T1 · · · Ta−1 Eλ ∈ P+
+Since Eλ is divisible by x1 · · · xa , ω                                                                −1
+                                                              k , and (6.2) implies that πk Tk−1 · · · Ta Eλ = 0.   □
+
+Proposition 6.2. Let λ ∈ Λk such that a(λ) = p(λ). The sequence (Eλ0n )n≥0 is an inverse sequence and
+
+                                               Eλ := lim
+                                                      ←−
+                                                         Eλ0n ∈ P(k)+ .
+                                                        n
+
+Proof. Let λ as in the hypothesis, let n ≥ 1 and N = n + k. For 1 ≤ i ≤ a − 1 such that λi > λi+1 , the
+application of πn+k to (6.3) for λ0n gives
+                                                                                !
+                                                        qλi+1 tuλ (i+1)
+                      πN Esi (λ)0n = Ti + (1 − t)                                 πN Eλ0n .
+                                                  qλi tuλ (i) − qλi+1 tuλ (i+1)
+Furthermore, for any λ as in the hypothesis, the application of πN to (6.5) for λ0n gives
+                                                             !                                !
+       −1                     t1+p(λ) N −1−a −1           −1              λa       t1+p(λ)
+   x1 ωN −1 TN −2 · · · Ta −             t   TN −2 · · · Ta    πN Eλ0n = q   1−                 πN Eλ∗ 0n +
+                             qλa tuλ (a)                                          qλa tuλ (a)
+
+                                         t1+p(λ) N −1−a
+                               +(t − 1)             t    πN TN−1−1 · · · Ta+1
+                                                                          −1
+                                                                              E1λ0n−1 .
+                                        qλa tuλ (a)
+However, the last term vanishes by Lemma 6.1. The same system of recursions is satisfied by Eλ0n−1 . Since
+E1a 0N = E1a 0N −1 = x1 · · · xa , we obtain that πN Eλ0n = Eλ0n−1 for any λ that satisfies the conditions in
+the hypothesis. The fact that Eλ ∈ P+   as follows from Tj Eλ0n = Eλ0n for all k + 1 ≤ j ≤ n − 1.          □
+
+Theorem 6.3. Let λ ∈ Λk . The sequence (Eλ0n )n≥0 is convergent and
+
+                                               Eλ := lim Eλ0n ∈ P(k)+ .
+                                                        n
+
+We call the elements Eλ , for λ ∈ Λ, limit (non-symmetric) Macdonald functions.
+                                                 X
+Proof. We proceed by induction on m(λ) :=           (a(λ) − i). If m(λ) = 0, then a(λ) = p(λ), and by
+                                                       i<a(λ)
+                                                        λi =0
+Proposition 6.2, we have
+                                                 lim Eλ0n = lim
+                                                             ←−
+                                                                Eλ0n .
+                                                   n             n
+Assume that m(λ) > 0 and let 1 ≤ i ≤ a such that λi+1 > λi = 0, and let µ = si (λ). It is clear that
+m(µ) = m(λ) − 1 and, by the induction hypothesis, the limit of (Eµ0n )n≥0 exists. Then,
+                                                                  !
+                                              tuµ (i+1)+n
+                           Ti + (1 − t)                             Eµ0n = Eλ0n .
+                                        qµi tuµ (i) − tuµ (i+1)+n
+Above, we have used the fact that uµ0n (i + 1) = uµ (i + 1) + n. Therefore, the limit of (Eλ0n )n≥0 exists. □
+
+     An independent proof of Theorem 6.3 was obtained in [1, Corollary 25]; this proof makes use of the
+explicit combinatorial formula for the finite rank non-symmetric Macdonald polynomials obtained in [4].
+The proof of Theorem 6.3 has the following immediate consequences, which were also obtained, with different
+arguments, in [1, Corollary 30 and Theorem 29].
+18                                        BOGDAN ION AND DONGYU WU
+
+
+Corollary 6.4. Let λ ∈ Λk , and 1 ≤ i ≤ k − 1 such that λi > λi+1 . Then,
+                                                               !
+                                       qλi+1 tuλ (i+1)
+                    Ti + (1 − t)                                 Eλ = Esi (λ) , if λi+1 > 0
+(6.6)                            qλi tuλ (i) − qλi+1 tuλ (i+1)
+                                            Ti Eλ = Esi (λ) ,      if λi+1 = 0.
+
+Corollary 6.5.
+                                              Yi Eλ = δ i (λ)qλi tuλ (i) Eλ .
+
+Proof. Straightforward from Proposition 2.3, Theorem 4.15, Theorem 6.3, and (6.1).                           □
+
+6.5. The limit non-symmetric Macdonald function are linearly independent, but they do not span P+      as . The
+list of eigenvalues is complete, but the eigenvalues are not generally simple, so the family of operators Yi
+has more joint eigenfunctions. For example, the Hecke algebra symmetrization operators P(k)+ → P(k ′ )+ ,
+for k > k ′ ≥ 0, send eigenfunctions to eigenfunctions. This is because an operator Yi either commutes with
+the symmetrization operator (if i ≤ k ′ ), or acts trivially on any element in P(k ′ )+ (if i > k ′ ).
+     In [1] it was shown that the symmetrization procedure can be used to construct a joint eigenbasis for
+the operators Yi , starting from the limit non-symmetric Macdonald functions. To state this more precisely,
+                                                (n)
+we need some notation. For 0 ≤ k < n, let ϵk : P+    n → Pn denote the (normalized) tail-symmetrization
+                                                           +
+
+operator in the finite Hecke algebra of the symmetric group Sn
+                                                   n−k
+                                      (n)        t( 2 )            X
+(6.7)                                ϵk     =                             t−ℓ(w) Tw .
+                                                (n − k)t !
+                                                             w∈S1k ,n−k
+
+Above, for any a ≥ 1, at = (1 − ta )/(1 − t) is the corresponding t-integer, and S1k ,n−k is the (parabolic)
+subgroup of Sn generated by sj , k < j < n. For µ a partition, denote by mi (µ) the multiplicity of i in µ
+and let                                             Y
+                                          vµ (t) :=    (mi (µ))t !
+                                                             i≥1
+For the following result we refer to [1, Corollary 38, Corollary 47, and Theorem 49].
+
+Theorem 6.6. A common eigenbasis of the family of commuting operators Yi , i ≥ 1, consists of E
+                                                                                              eλ|µ (q, t),
+λ|µ ∈ Λas , where
+                                             1              (n)
+                      E
+                      eλ|µ (q, t) :=                   lim ϵ E n−ℓ(λ)−ℓ(µ) (q, t) ∈ P+
+                                                                                     as .
+                                     (1 − t)ℓ(µ) vµ (t) n ℓ(λ) λµ0
+The coefficient of mλ|µ in E
+                           eλ|µ (q, t) equals 1 and
+
+                                    Yi E
+                                       eλ|µ (q, t) = δ i (λ)qλi tuλµ (i) E
+                                                                         eλ|µ (q, t).
+
+     Combining this with Theorem 5.6 we obtain the following.
+
+Corollary 6.7. For any λ|µ ∈ Λas , we have E
+                                           eλ|µ (q, t) ∈ mλ|µ + P ′ ′
+                                                                 λ |µ ≺λ|µ Kmλ′ |µ′ .
+
+
+                                                7. The PBW basis
+
+7.1. For our discussion of the PBW basis of H+ , and especially for our analysis in §8, it will be useful
+to switch from this point forward to an equivalent normalization of the presentation of H+ . Specifically,
+              THE STABLE LIMIT DAHA: THE STRUCTURE OF THE STANDARD REPRESENTATION                           19
+
+
+we enlarge the field K to the field of fractions generated by t1/2 and q, and we use the elements t−1/2 T i
+instead of T i as generators. As we record below, the defining relations with respect to these generators do
+not involve t1/2 , but rather the element h = t−1/2 − t1/2 . Therefore, we can use K′ = Q(h, q) as the base
+field.
+
+Convention 7.1. In this section, in order to avoid heavier notation, we will use T i to refer to the element
+t−1/2 T i . The same normalization and notational convention will apply to the corresponding elements Ti of
+Hk and Hk+ .
+
+    With this convention, Definition 4.1 reads as follows.
+
+Definition 7.2. The + stable limit DAHA H+ is the K′ -algebra generated by the elements T i ,Xi , and Yi ,
+i ≥ 1, satisfying the following relations
+                                         TiTj = Tj Ti,        |i − j| > 1,
+(7.1a)
+                                     T i T i+1 T i = T i+1 T i T i+1 ,    i ≥ 1,
+
+(7.1b)                                      T i − T −1
+                                                    i  = h,        i ≥ 1,
+
+                                         T −1     −1
+                                           i Xi T i  = Xi+1 ,            i≥1
+(7.1c)                                   T i Xj = Xj T i ,    j ̸= i, i + 1,
+                                          Xi Xj = Xj Xi ,         i, j ≥ 1,
+
+                                            T i Yi T i = Yi+1 ,     i≥1
+(7.1d)                                   T i Yj = Yj T i ,    j ̸= i, i + 1,
+                                           Y i Yj = Yj Yi ,       i, j ≥ 1,
+
+(7.1e)                                       Y 1 T 1 X1 = X2 Y 1 T 1 .
+
+    For later use we record the following relations, that follow by induction using the defining relations of
+H+ , with (7.1e) as the base case. For 1 ≤ a < b we have,
+                               Xb Ya = Ya Xb + hT −1          −1        −1
+                                                  b−1 · · · T a · · · T b−1 Yb Xb
+
+                                      = Ya Xb + hYa Xa T −1          −1        −1
+                                                         b−1 · · · T a · · · T b−1 ,
+(7.2)
+                               Yb Xa = Xa Yb − hT b−1 · · · T a · · · T b−1 Xb Yb
+                                      = Xa Yb − hXa Ya T b−1 · · · T a · · · T b−1 .
+
+Remark 7.3. As before, the defining relations of H+ do not depend on the parameter q. Therefore, in this
+normalization, H+ is defined over Q[h].
+
+7.2. A (possibly empty) product of the generators of H+ will be called word. We will use the following
+notion of degree for words.
+
+Definition 7.4. For any i ≥ 1, the generators T i have degree 0, and the generators Xi , Yi have degree 1. The
+degree deg(w) of a word w is the sum of the degrees of the letters. With respect to this notion of degree,
+20                                          BOGDAN ION AND DONGYU WU
+
+
+the defining relations of H+ are homogeneous. For any D ≥ 0, we denote by D H+ , D H(k)+ the K′ -span of
+the words of degree D in H+ , and respectively, H(k)+ .
+
+Remark 7.5. Similarly, we can also consider the degree separately in the generators Xi and Yi , which we
+denote by degX and degY . The defining relations of H+ are homogeneous with respect to either notion of
+degree. For a word w, we have deg(w) = degX (w) + degY (w).
+
+Definition 7.6. For any i ≥ 1, let Wi denote the semigroup of finite (possibly trivial) words in the alphabet
+{Xi , Yi } (the free semigroup generated by Xi , Yi ). We consider the following set of elements of H+ , which
+we will call standard words
+                                           (                                             )
+                          [
+(7.3)                 S=     S(k), S(k) = u1 u2 · · · uk T w w ∈ Sk , ui ∈ Wi , 1 ≤ i ≤ k .
+                           k≥1
+
+Furthermore, for any D ≥ 0 we consider
+                                                   (                           )
+(7.4)                                   D S(k) =       w ∈ S(k)   deg(w) = D       .
+
+
+    In Theorem 7.10 we show that S is a basis of H+ . In preparation for this result, we first show that S
+spans H+ .
+
+Proposition 7.7. For any k ≥ 1, D ≥ 0, the set D S(k) spans D H(k)+ as a K′ -vector space.
+
+Proof. We fix k ≥ 1 and will show, by induction on D ≥ 0, that word in D H(k)+ is a linear combination of
+standard words in D S(k). The case of words of degree zero is obvious. For the induction step we will use
+the relations (7.2).
+     Let u be a word in D H(k)+ with D > 0. It is enough to assume that u is of the form vT w , for some
+w ∈ Sk and v a word in Xi , Yi , 1 ≤ i ≤ k. Indeed, any word in H(k)+ can be written as a linear combination
+of words of this form by using the relations (7.1c), (7.1d), and (7.1b). Furthermore, it is enough to argue
+that v can be written as a linear combination of standard words in S(k)D .
+      Let b ≤ k be the smallest positive integer such that v contains a letter from {Xb , Yb } (so that v ∈
+D H(b)  +
+          ) and consider the left-most occurrence of such a letter in v. To fix the discussion, let us assume
+that this left-most occurrence is the letter Xb . The occurrence might be at the beginning of v, but if not,
+by repeated use of (7.2), v can be written as a linear combination of words, still in D H(b)+ , for which the
+first letter is Xb . Any word that appears in the linear combination is of the form Xb v′ with v′ a word in
+D−1 H(b) . By the induction hypothesis, v is a linear combination of standard words in D−1 S(b). We have
+           +                                ′
+
+Xb · D−1 S(b) ⊆ D S(b). Therefore, Xb v , and ultimately v, is a linear combination of words in D S(b). Since
+                                        ′
+
+b ≤ k, we have D S(b) ⊆ D S(k), and this completes the argument.                                            □
+
+     Variants of the argument in Proposition 7.7 gives the following.
+
+Proposition 7.8. For any k ≥ 1, D ≥ 0, each of the following sets span D H(k)+ as a K′ -vector space
+      (                                                            )
+     (i)   w = uk · · · u2 u1 T w   w ∈ Sk , ui ∈ Wi , 1 ≤ i ≤ k, deg(w) = D ,
+                  THE STABLE LIMIT DAHA: THE STRUCTURE OF THE STANDARD REPRESENTATION                          21
+
+           (                                                                           )
+   (ii)     w = T w u1 u2 · · · uk    w ∈ Sk , ui ∈ Wi , 1 ≤ i ≤ k, deg(w) = D ,
+           (                                                                  )
+   (iii)     w = T w uk · · · u2 u1   w ∈ Sk , ui ∈ Wi , 1 ≤ i ≤ k, deg(w) = D .
+
+
+Proof. We only indicate the modifications of the proof of Proposition 7.7 that are needed for the proof of
+each case. For part (i), work with b ≤ k the largest positive integer such that v contains a letter from
+{Xb , Yb } and its left-most occurrence. For part (ii), work with b ≤ k the largest positive integer such that
+v contains a letter from {Xb , Yb } and its right-most occurrence. For part (ii), work with b ≤ k the smallest
+positive integer such that v contains a letter from {Xb , Yb } and its right-most occurrence.               □
+
+7.3.     In order to show that S is a linearly independent set, it is useful to consider the h = 0 limit of H+ .
+
+Definition 7.9. The + stable limit DAHA at h = 0, denoted by ev0 (H+ ), is the Q(q)-algebra generated by
+the elements ti ,xi , and yi , i ≥ 1, satisfying the following relations
+                                                 ti tj = tj ti ,    |i − j| > 1,
+(7.5a)
+                                              ti ti+1 ti = ti+1 ti ti+1 ,     i ≥ 1,
+
+(7.5b)                                               ti = t−1
+                                                           i ,       i ≥ 1,
+
+                                                   ti xi ti = xi+1 ,     i≥1
+(7.5c)                                          ti xj = xj ti ,     j ̸= i, i + 1,
+                                                  xi xj = xj xi ,      i, j ≥ 1,
+
+                                                   ti yi ti = yi+1 ,     i≥1
+(7.5d)                                          ti yj = yj ti ,     j ̸= i, i + 1,
+                                                  yi yj = yj yi ,      i, j ≥ 1,
+
+(7.5e)                                               y1 t1 x1 = x2 y1 t1 .
+
+    Of course, the defining relations of ev0 (H+ ) do not depend on q and the algebra is in fact defined over
+Q. It is clear from Definition 7.9 and Definition 4.1 that ev0 (H+ ) is isomorphic to H+ ⊗Q(q)[h] Q(q) with
+Q(q)[h] acting on Q(q) by evaluation at h = 0.
+     As a consequence of (7.5c) and (7.5e) we obtain y1 x2 = x2 y1 . By further employing the relations
+(7.5c) and (7.5d) we obtain that, for any a ̸= b, we have
+
+(7.6)                                                   yb xa = xa yb .
+
+7.4. The structure of ev0 (H+ ) is relatively simple. It is the semidirect product of the group algebra of
+the infinite symmetric group S∞ acting by permutation on the direct product of the semigroups Wi , i ≥ 1,
+where Wi is the free semigroup generated by xi , yi . Therefore, it is clear that the set
+                                            (                                             )
+                        [
+(7.7)             S0 =     S0 (k), S0 (k) = u1 u2 · · · uk w w ∈ Sk , ui ∈ Wi , 1 ≤ i ≤ k .
+                             k≥1
+22                                         BOGDAN ION AND DONGYU WU
+
+
+is a basis for ev0 (H+ ).
+
+Theorem 7.10. The set S is a basis of H+ . We call S the PBW basis of H+ .
+
+Proof. The fact that S spans H+ follows from Proposition 7.7. To show that S is a linearly independent
+set, consider a non-trivial linear relation among its elements. The coefficients in the linear relation are in
+Q(q, h), but after clearing all denominators we can assume that they are in Q[q, h], not all of them divisible
+by h. In ev0 (H+ ), or equivalently in H+ ⊗Q(q)[h] Q(q), this linear relation becomes a non-trivial linear
+relation between elements of S0 , which contradicts the fact that S0 is a basis of ev0 (H+ ).               □
+
+Corollary 7.11. Any of the sets specified in Proposition 7.8 is a basis of D H(k)+ .
+
+                            8. The faithfulness of the standard representation
+
+8.1. One of the most important outstanding questions about the structure of the standard representation
+of H+ is its expected faithfulness [7, pg. 413]. In this section we establish this faithfulness based on the
+detailed description of certain special elements that appear in the PBW expansion of φk (H) for H ∈ S(r)
+and k >> r. By Theorem 4.16, the action of an element H ∈ H(r)+ in the standard representation is
+identically zero if and only if φk (H) = 0 for all k ≥ r. We describe some special set of elements in the PBW
+basis of Hk+ and prove a precise triangularity result about their occurrence in the PBW expansion of φk (H)
+for H ∈ S(r). We then explain how the triangularity implies the desired faithfulness.
+
+8.2. Recall that Convention 7.1 applies also to the generators of Hk+ . The presentation in Definition 4.6
+remains unchanged except that the reference is now to the relations in Definition 7.2. We adopt for Hk+ the
+notion of degree specified in Definition 7.4. With respect to this notion of degree, the defining relations of
+Hk+ are homogeneous. For any D ≥ 0, we denote by D Hk+ the K′ -span of the words of degree D in Hk+ .
+
+Remark 8.1. Recall from Remark 4.8 that there exists a canonical morphism φk : H(k)+ → Hk+ that sends
+                                                             (k)   (k)  (k)
+each generator T i , Xi , Yi to the corresponding generator Ti , Xi , Yi of Hk+ . The kernel of φk contains
+strictly the ideal generated by the relation (4.2). For example, for k = 2, the kernel contains the relation
+
+                                               Y1 X1 = qX1 Y1 T12 ,
+
+which is not contained in the ideal generated by the relation Y1 X1 X2 = qX1 X2 Y1 (because it is of lower
+degree). However, after localization at Xi , Yi , 1 ≤ i ≤ k, the kernel of φk is precisely the ideal generated
+by (4.2). It would be interesting to investigate whether the kernel is precisely the ideal generated by the
+degree 2 relation
+                                                                            k−1
+                                                                                                              !
+                                                                            X
+                                           2
+(8.1)      Y1 X1 = qX1 Y1 · T1 · · · Tk−2 Tk−1 Tk−2 · · · T1 = qX1 Y1 1 + h     T1 · · · Ti−1 Ti Ti−1 · · · T1 .
+                                                                           i=1
+
+
+     The relations (7.2) hold also for the corresponding elements of Hk+ . However, in Hk+ there are also
+relations that correspond to the a = b case, which follow from the (8.1) relation by conjugation with
+Ta−1 · · · T1 . More precisely, for any 1 ≤ a ≤ k, the following relation holds in Hk+
+                                       a−1
+                                                                            !     k−1
+                                                                                                          !
+                                       X                                          X
+(8.2)           Ya Xa = q Xa Ya + h        Xi Yi · Ta−1 · · · Ti · · · Ta−1   1+h     Ta · · · Tp · · · Ta .
+                                     i=1                                    p=a
+                 THE STABLE LIMIT DAHA: THE STRUCTURE OF THE STANDARD REPRESENTATION                                 23
+
+
+8.3. We introduce the following notation that will be used in subsequent computations. For positive
+integers a < b we denote
+                                                                                                  b
+                                                                                                  X
+(8.3)              T(a,b) = Ta · · · Tb−1 · · · Ta = Tb−1 · · · Ta · · · Tb−1 ,   and Ta⌣b =              T(a,i) .
+                                                                                                  i=a+1
+
+We emphasize that T(a,a+1) = Ta and, in general, T(a,b) is the standard basis element of Hk+ indexed by the
+transposition (a, b). With this notation, (8.2) reads
+                                  a−1
+                                                    !
+                                  X                                                              
+(8.4)      Ya Xa = q Xa Ya + h        Xi Yi · T(i,a) 1 + hTa⌣k = q 1 + hT1⌣a · Xa Ya · 1 + hTa⌣k .
+                                        i=1
+
+8.4.    The algebra Hk+ has a PBW basis that we will now describe.
+
+Definition 8.2. The following set of elements of Hk+ will be called rank k standard DAHA words
+                                          (                              )
+(8.5)                                  SD(k) =        Xµ Yν Tw     µ, ν ∈ Λk , w ∈ Sk         .
+
+Furthermore, for any D ≥ 0 we consider
+                                                       (                              )
+(8.6)                                    D SD(k) =       u ∈ SD(k)       deg(u) = D       .
+
+
+       The PBW Theorem in this context is the following (see, e.g. [5, Corollary 5.8]).
+
+Theorem 8.3. The set D SD(k) is a basis of D Hk+ as a K′ -vector space.
+
+     Theorem 8.17, the main technical result of this section, establishes a triangularity property among
+certain terms that may appear in the PBW expansion of an element of the form φk (w), for w ∈ S(r), k ≥ r.
+
+8.5. Before we proceed, we record some basic facts about the number of factors required to write a per-
+mutation as a product of transpositions.
+
+Notation 8.4. For w ∈ Sk , we denote by κ(w) the minimal number of factors required to write w as a
+product of (not necessarily simple) transpositions, and by κ(w) the number of cycles (including the trivial
+one-element cycles) in the cycle decomposition of w. Note that κ(w) does not depend on the rank of the
+ambient permutation group.
+
+       For the following results we refer to [10].
+
+Proposition 8.5. Let w ∈ Sk . Then,
+
+    (i) κ(w) = k − κ(w);
+   (ii) If the transposition (i, j) is a factor in a minimal expression of w as a product of transpositions,
+        then i and j are part of the same cycle in the cycle decomposition of w.
+
+8.6. If u ∈ Hk+ is a word in the generators of Hk+ , it follows from the relations between the generators of
+Hk+ that its expansion in the PBW basis has coefficients in Q[h, q].
+24                                            BOGDAN ION AND DONGYU WU
+
+
+Definition 8.6. Let K ∈ Hk+ be a word in the generators of Hk+ , and let u ∈ SD(k). The order of vanishing
+at h = 0 of the coefficient of u in the PBW expansion of K is called the order of u (in the PBW expansion
+of K). If the coefficient of u is 0, the order of u is ∞. We denote the order of u in the PBW expansion of K
+by ordK (u).
+Definition 8.7. Let w1 , w2 ∈ Sk . We say that w2 is a κ-factor of w1 if there exist σ, τ ∈ Sk such that
+
+                                 w1 = σw2 τ        and κ(w1 ) = κ(σ) + κ(w2 ) + κ(τ ).
+Lemma 8.8. Let w1 , w2 , w ∈ Sk . Then, for any choice of signs ς1 , ς2 ∈ {±1},
+
+                                        κ(w1ς1 w2ς2 ) + ordTwς1 Twς2 (Tw ) ≥ κ(w).
+                                                              1   2
+
+
+If the equality holds, then w1ς1 w2ς2 is a κ-factor of w.
+
+Proof. We first present the argument for the case of ς1 = ς2 = 1, which will be used in the proof of the
+remaining cases. The terms that appear in the PBW expansion of Tw1 Tw2 are integer linear combinations
+of the form hay Tw1 y with y ≤ w2 . The element y is obtained from a fixed reduced expression of w2 by
+removing ay factors; the element y can appear several times in this fashion, by removing different factors,
+for different values ay . Any such y can be alternatively written in the form w2 zy , with zy the product of ay
+(not necessarily simple) transpositions. Let hay Tw1 y such that w = w1 y and ay = ordTw1 Tw2 Tw . We write
+y = w2 zy as described above, in this paragraph. Then,
+
+                      κ(w1 w2 ) + ordTw1 Tw2 (Tw ) = κ(w1 w2 ) + ay ≥ κ(w1 w2 ) + κ(zy ) ≥ κ(w).
+
+If the equality holds, then κ(w) = κ(w1 w2 )+κ(zy ), which means that w1 w2 is a left κ-factor of w. Moreover,
+we also have κ(zy ) = ay .
+     We give a proof of our claim for the case of ς1 = ς2 = −1, the argument for other cases being similar and
+easier. First, remark that the terms that appear in the PBW expansion of Tw−1     1
+                                                                                    are of the form ±hay1 Ty1
+with y1 ≤ w1−1 being obtained from a fixed reduced expression of w1−1 by removing ay1 factors; the element
+y1 can appear several times in this fashion, by removing different factors, for different values ay1 . Any
+such y1 can be alternatively written in the form z1 w1−1 , with z1 the product of ay1 (not necessarily simple)
+transpositions. Similarly, the terms that appear in the PBW expansion of Tw−1    2
+                                                                                    are of the form ±hay2 Ty2
+with y2 ≤ w2−1 , and y2 = w2−1 z2 , and z2 the product of ay2 transpositions. The if the element Tw appears
+in the PBW expansion of Tw−1  1
+                                Tw−1
+                                   2
+                                     then it must appear in the PBW expansion of at least one of the terms
+of the form Ty1 Ty2 . We focus on the term Ty1 Ty2 for which
+
+                                    ordTw−1 Tw−1 (Tw ) = ay1 + ay2 + ordTy1 Ty2 (Tw ).
+                                          1    2
+
+We know that ordTy1 Ty2 (Tw ) ≥ κ(w) − κ(y1 y2 ) with equality holding only if y1 y2 is a κ-factor of w. We
+have y1 y2 = z1 w1−1 w2−1 z2 , which implies that
+
+                        κ(y1 y2 ) ≤ κ(w1−1 w2−1 ) + κ(z1 ) + κ(z2 ) ≤ κ(w1−1 w2−1 ) + ay1 + ay2 .
+
+Therefore, ordTw−1 Tw−1 (Tw ) ≥ κ(w) + ay1 + ay2 − κ(y1 y2 ) ≥ κ(w) − κ(w1−1 w2−1 ), which is precisely our claim.
+                  1     2
+If equality holds, then y1 y2 is a κ-factor of w and κ(y1 y2 ) = κ(w1−1 w2−1 ) + κ(z1 ) + κ(z2 ), which means that
+w1−1 w2−1 is a κ-factor of y1 y2 . In conclusion, w1−1 w2−1 is a κ-factor of w.                                 □
+
+8.7.   The following is a key technical result.
+               THE STABLE LIMIT DAHA: THE STRUCTURE OF THE STANDARD REPRESENTATION                                                      25
+
+
+Proposition 8.9. Let k ≥ r, w = u1 u2 · · · ur ∈ S(r), uj ∈ Wj , 1 ≤ j ≤ r, and Xµ Yν Tw , µ, ν ∈ Λk , w ∈ Sk .
+Then,
+                                     ordφk (w) (Xµ Yν Tw ) ≥ κ(w).
+
+
+Proof. Lets us first collect the relations inside Hk+ that will be used in the argument below. The commutation
+relations that are part of (7.1a), (7.1c), (7.1d) will be used without further reference. For the first part of
+the argument, the non-trivial braid relations in (7.1a) and the quadratic relations (7.1b) will not be used.
+The remaining relations from (7.1c), (7.1d), which contain terms of higher order with respect to h, will be
+used precisely in the following form
+
+(8.7a)                   Ti Xi = Xi+1 Ti + hXi ,                   Ti−1 Xi = Xi+1 Ti−1 + hXi+1 ,                       i ≥ 1,
+
+(8.7b)                   Ti Xi+1 = Xi Ti − hXi ,                   Ti−1 Xi+1 = Xi Ti−1 − hXi+1 ,                       i ≥ 1,
+
+(8.7c)                      Ti Yi = Yi+1 Ti − hYi+1 ,                Ti−1 Yi = Yi+1 Ti−1 − hYi ,                   i ≥ 1,
+
+(8.7d)                      Ti Yi+1 = Yi Ti + hYi+1 ,                Ti−1 Yi+1 = Yi Ti−1 + hYi ,                   i ≥ 1.
+
+These relations are particular cases of a more general type of relations, which we record below. We make
+use of the following notation. For a ≤ i ≤ b − 1, let
+                |T X
+                 i i                                                           T X |
+                                                                                i i
+              T(a,b) = Ta · · · Tb−1 · · · Ti Xi Ti−1 · · · Ta ,             T(a,b) = Ta · · · Ti Xi Ti+1 · · · Tb−1 · · · Ta ,
+(8.8)
+              |T X
+               i i+1                                                                T X
+                                                                                  i i+1       |
+            T(a,b)   = Ta · · · Tb−1 · · · Ti Xi+1 Ti−1 · · · Ta ,             T(a,b)   = Ta · · · Ti Xi+1 Ti+1 · · · Tb−1 · · · Ta .
+                                              i i      i i |T Y i i+1 T Y |      |T Y
+                                                                               i i+1                    T Y        |
+We adopt the corresponding notation for T(a,b)    , T(a,b) , T(a,b)   , and T(a,b)   , as well as for the analogous
+                   −1
+elements based on T(a,b) . The following relations can be directly verified by applying the relations (8.7)
+                                |T X
+                                 i i      i+1|T          Xi+1          |T X
+                                                                       i i
+(8.9a)                        T(a,b) = T(a,b)                    + hT(a,i+1) T(i+1,b) ,            a ≤ i < b − 1,
+
+                                                     |T
+                                                     b−1     Xb−1
+(8.9b)                                            T(a,b)             = Xb T(a,b) + hXa ,
+
+                               T X |
+                                i i                              i−1 i           T      X |
+(8.9c)                       T(a,b) = Xi+1 T(a,b) + hT(i+1,b) T(a,i+1) ,                           a ≤ i < b − 1,
+
+                                 |T X
+                                  i i+1      i i     T X |
+                                                       i i            |T X
+(8.9d)                         T(a,b)   = T(a,b) − hT(a,i+1) T(i+1,b) ,                           a ≤ i < b − 1,
+
+                                                     |T
+                                                    b−1      Xb        Tb−2   Xb−1 |
+(8.9e)                                           T(a,b)            = T(a,b)            − hXa ,
+
+                               T X
+                                i i+1   |  i−1   T        Xi |                   T
+                                                                                i−1 i   X |
+(8.9f)                       T(a,b)   = T(a,b)                   − hT(i+1,b) T(a,i+1) ,            a ≤ i < b − 1,
+
+
+                               |T Y
+                                i i         |T
+                                         i+1 i+1     Y          i+1 i+1        |T      Y
+(8.10a)                      T(a,b) = T(a,b)     − hT(a,i+1) T(i+1,b)   ,                          a ≤ i < b − 1,
+
+                                                                                                  b−1
+                                       |T   Y
+                                                                                                  X
+(8.10b)                                  b−1 b−1
+                                      T(a,b)     = Yb T(a,b) − hYb − h2 Yb                              T(a,j) ,
+                                                                                              j=a+1
+26                                               BOGDAN ION AND DONGYU WU
+
+                            T Y |
+                             i i
+(8.10c)                   T(a,b) = Yi+1 T(a,b) − hYi+1 T(i+1,b) T(a,i+1) ,              a ≤ i < b − 1,
+
+                              |T Y
+                               i i+1      i i    T Y |       i+1 i+1     |T   Y
+(8.10d)                     T(a,b)   = T(a,b) + hT(a,i+1) T(i+1,b)   ,                a ≤ i < b − 1,
+
+                                                                                      b−1
+                                     |T     Y        T   Y       |
+                                                                                      X
+(8.10e)                             b−1 b
+                                 T(a,b)        b−2 b−1
+                                          = T(a,b)     + hYb + h2 Yb                        T(a,j) ,
+                                                                                   j=a+1
+
+                           T Y
+                             i i+1   |  i−1 iT     Y |
+(8.10f)                   T(a,b)   = T(a,b)   + hYi+1 T(i+1,b) T(a,i+1) ,               a ≤ i < b − 1.
+                                     −1
+The analogous relations involving T(a,b) can be obtained from (8.9) and (8.10) by applying the Q-linear
+                                   −1
+involution of H+ that sends Ti to Ti , swaps Xi and Yi , and acts on K′ by mapping h to −h and q to q−1 .
+     The relations (8.9) and (8.10) can be used inductively to express an element of the form T(a,b) Xc as
+                                                    Q
+a linear combination of elements of the form Xd j T(ej ,fj ) with coefficients that are integral polynomials
+                                             −1
+in h. Similarly, an element of the form T(a,b)   Xc can be expressed as a linear combination of elements of
+             Q −1
+the form Xd j T(ej ,fj ) with coefficients that are integral polynomials in h. Analogous statements hold for
+                                    −1
+elements of the form T(a,b) Yc and T(a,b) Yc .
+     We will also use the relations (7.2) and (8.4), we which record here in the form that they will be used
+
+(8.11a)                                  Yb Xa = Xa Yb − hXa Ya T(a,b) ,          1 ≤ a < b,
+
+                                                                  −1
+(8.11b)                                   Ya Xb = Xb Ya − hYa Xa T(a,b) , 1 ≤ a < b,
+
+                                           k
+                                           X                     a−1
+                                                                 X                          a−1
+                                                                                            X     k
+                                                                                                  X
+(8.11c) Ya Xa = qXa Ya +qhXa Ya                   T(a,j) +qh           Xi Yi ·T(i,a) +qh2               Xi Yi ·T(i,a) T(a,j) ,   a ≥ 1.
+                                          j=a+1                  i=1                        i=1 j=a+1
+
+     Based on these observations, before analyzing the PBW expansion of φk (w), we first consider an
+intermediate expansion of φk (w) as a linear combination (with coefficients that are integral polynomials in
+                                Q ±
+h) of terms of the form Xµ Yν j T(e   j ,fj )
+                                              with µ, ν ∈ Λk , and (ej , fj ) ∈ Sk transpositions. As explained
+above, such an expansion can be obtained by the application of the relations (8.9), (8.10), and (8.11). The
+                                                         Q ±
+order of vanishing at h = 0 of the coefficient of Xµ Yν j T(e   j ,fj )
+                                                                         in such an expansion will be denoted by
+                                                           Y
+                                                                ±
+                                          ordφk (w) (Xµ Yν    T(e  j ,fj )
+                                                                           ).
+                                                                         j
+
+                                                                                         Q ±
+     By inspecting the relations (8.9), (8.10), and (8.11) we see that ordφk (w) (Xµ Yν j T(e j ,fj )
+                                                                                                      ) is at least
+                                                                       Q
+the number of factors in the product which, in turn, is at least κ( j (ej , fj )). Therefore,
+                                                 Y                    Y
+                                                     ±
+                                ordφk (w) (Xµ Yν    T(e j ,fj )
+                                                                ) ≥ κ( (ej , fj )).
+                                                             j                    j
+
+    To obtain the full PBW expansion of φk (w), we apply the non-trivial braid relations in (7.1a) and the
+                                         Q ±
+quadratic relations (7.1b) to each factor j T(e j ,fj )
+                                                        to write them as a linear combination with coefficients
+               THE STABLE LIMIT DAHA: THE STRUCTURE OF THE STANDARD REPRESENTATION                                   27
+
+
+integral polynomials in h of terms of the form Tw , w ∈ Sk . From Lemma 8.8 we have
+                                   Y
+(8.12)                           κ( (ej , fj )) + ordQ T ±    (Tw ) ≥ κ(w).
+                                                                  j   (ej ,fj )
+                                          j
+
+Therefore,
+                                               ordφk (w) (Xµ Yν Tw ) ≥ κ(w),
+which is precisely our claim.                                                                                        □
+
+8.8. In preparation for Proposition 8.14, we establish some lower bounds for the order of certain elements
+in the PBW expansion of elements of the form Tw Yλ Xη .
+
+Lemma 8.10. Let σ ′ ∈ SN −1 ⊂ SN and τ ′ = (1, N, N − 1, . . . , 2) ∈ SN . Then, ℓ(σ ′ τ ′ ) = ℓ(σ ′ ) + ℓ(τ ′ ).
+
+Proof. We proceed by induction on ℓ(σ ′ ) ≥ 0. Let σ ′ ∈ SN −1 such that ℓ(σ ′ τ ′ ) = ℓ(σ ′ ) + ℓ(τ ′ ). Let
+1 ≤ i ≤ N − 2 such that ℓ(si σ ′ ) = ℓ(σ ′ ) + 1. The last condition is equivalent to σ ′−1 (αi ) ∈ Φ+
+                                                                                                     N −1 (see, e.g.
+                        ′−1    +             +     ′−1 ′−1         +
+[6, Theorem 5.4]). But τ (ΦN −1 ) ⊂ ΦN , so τ σ (αi ) ∈ ΦN . This implies that
+
+                          ℓ(si σ ′ τ ′ ) = ℓ(σ ′ τ ′ ) + 1 = ℓ(σ ′ ) + ℓ(τ ′ ) + 1 = ℓ(si σ ′ ) + ℓ(τ ′ ),
+
+which completes the argument.                                                                                        □
+
+     Let ℓ ≥ 1, s ≥ 0, and N > ℓ + s. Consider a subset
+
+                           {d1 , d2 , · · · , dℓ } ⊂ {N, N − 1, N − 2, . . . , N − (ℓ + s − 1)}
+
+with dℓ = N . Denote {e1 , e2 , . . . , es } the complement. We are not assuming that the elements d1 , d2 , · · · , dℓ
+or e1 , e2 , . . . , es are listed in any particular order (e.g. increasing, decreasing).
+
+Corollary 8.11. Let σ be the cycle (1, N, dℓ−1 , . . . , d1 ) ∈ SN and τ be the cycle (1, N, N − 1, . . . , N − (ℓ +
+s − 1)) ∈ SN . The element σ has a reduced expression of the type ρsN −1 · · · s1 with ρ ∈ SN −1 .
+
+Proposition 8.12. Let w, v ∈ SN , λ, η, ν, µ ∈ ΛN , and s ≥ 1. If λ has s more distinct parts than µ, then
+the order of Xν Yµ Tv in the PBW expansion of Tw Yλ Xη is at least s. If the order is exactly s, and η = ν = 0,
+then v is obtained from any reduced expression of w by omitting exactly s factors.
+
+Proof. The claim follows by induction of ℓ(w) by using the relations (7.2), (8.4), and
+                                                                            Yν − Ysi (ν)
+                                         Ti Yν − Ysi (ν) Ti = hYi+1                      ,
+                                                                             Yi+1 − Yi
+and the fact that ν and si (ν) have the same number of distinct parts.                                               □
+
+Proposition 8.13. With the notation above, for any z ≥ s ≥ 0, the order of the element
+
+                                               Ye1 Ye2 · · · Yes YNz−s Tτ ∈ HN
+                                                                             +
+
+
+in the PBW expansion of Tσ Y1z ∈ HN  +
+                                       is at least s + 1, unless s = 0 and σ = τ . The same is true if we
+consider these elements as elements of Hk+ , for any k ≥ N .
+
+Proof. By Proposition 8.12, the order of Ye1 Ye2 · · · Yes YNz−s Tτ in the PBW expansion of Tσ Y1z is at least
+s. By Corollary 8.11, σ has a reduced expression of the type ρsN −1 · · · s1 with ρ ∈ SN −1 . If the order is
+28                                          BOGDAN ION AND DONGYU WU
+
+
+precisely s, then τ must be obtained from this reduced expression for σ by omitting exactly s factors. The
+only element Yµ Tv in the PBW expansion of Tσ Y1z for which v is obtained from the reduced expression of σ
+by omitting only factors in ρ is YNz Tσ . Therefore, if s > 0, then τ is obtained from the reduced expression of
+σ by omitting at least one factor from outside ρ. Let us denote by si the rightmost factor removed. Then,
+τ (1) = σ(i) ≤ N − 1, which contradicts τ (1) = N . Therefore, unless s = 0 and σ = τ , the relevant order is
+at least s + 1.                                                                                               □
+
+8.9. For a word u = u(X, Y ) in a two-letter alphabet {X, Y } we denote by degX u and degY u the number
+of occurrences in u of the letter X and, respectively, Y . We also denote by g(u) = (gi )0≤i≤degY u the non-
+negative integer sequence, which we call the gap sequence, that counts the number of X letters between
+consecutive Y letters, scanning u from right to left. For example, if u = X 2 Y X 3 Y 2 XY X 4 we have
+
+                             degY u = 4 and g0 = 4, g1 = 1, g2 = 0, g3 = 3, g4 = 2.
+
+There is a bijective correspondence between words and gap sequences.
+     A finite non-negative integer sequence a = (ai )0≤i≤m is a composition. Recall the notation in §3.5 for
+its weight |a| and length ℓ(a). If a = (ai )0≤i≤m and b = (bi )0≤i≤m are compositions of the same length, we
+say that a is smaller than, or equal to, b in dominance order (denoted a ≤+ b) if
+
+(8.13)                           a0 + · · · + ai ≤ b0 + · · · + bi ,   for all 0 ≤ i ≤ m.
+
+We extend this partial order relation to all compositions (by extending the shorter sequence with zeros).
+The dominance order on gap sequences induces a partial order on words in {X, Y }. The set of such words
+thus becomes an ordered semigroup (with respect to concatenation). In this context, the order relation is
+the semigroup order induced by the cover relation XY < Y X.
+
+8.10. Let N ≥ 1, and let m be a monomial in an ordered set of variables X0 , · · · , XN . The sequence of
+exponents e(m) = (ei )0≤i≤N in m is recorded in the decreasing order of the variables, that is, ei is the
+exponent of XN −i . The dominance order on exponent sequences induces a partial order on monomials. The
+set of monomials becomes an ordered semigroup (with respect to multiplication). In this context, the order
+relation is the semigroup order induced by the cover relations X0 < X1 < · · · < XN .
+
+8.11. We now introduce some special elements of SD(k). We start with some notation. Fix j ≥ 1 and
+k > N ≥ m + j. We denote by cj (N, m) ∈ Sk the (m + 1)-cycle
+
+(8.14)        (j, N, N − 1, . . . , N − m + 1) = (j, N − m + 1)(j, N − m + 2) · · · (j, N − 1)(j, N ).
+
+Of course, κ(cj (N, m)) = m.
+     Let a = (ai )0≤i≤m be a composition. We denote z = z(a) = min{i | ai ̸= 0} ∪ {m}. To the 5-tuple
+(a, k, j, m, N ) as specified above we associate the following elements of Hk+ . To keep the notation reasonably
+simple, we only emphasize the dependence on a, but we will indicate the other parameters when possible
+confusion might arise. If z = m, we denote Ma (X) = Xjam and Ma (Y, T ) = Yjm ; for z < m let
+                             a                   a
+                                                az −1
+(8.15)   Ma (X) = Xjam +1 XNm−1            z+1
+                            −m+z+1 · · · XN −1 XN     ,           Ma (Y, T ) = Yj YN −m+z+1 · · · YN −1 YNz Tcj (N,m−z) .
+
+We emphasize that, since N ≤ k, we can (and will) regard Ma (X)Ma (Y, T ) both as an element of SD(N )
+and SD(k). The initial data a, j, m, N (but not k) can be recovered from Ma (X) and Ma (Y, T ).
+               THE STABLE LIMIT DAHA: THE STRUCTURE OF THE STANDARD REPRESENTATION                                 29
+
+
+8.12. We will next prove a crucial result that analyzes in detail the minimal order occurrence for elements
+of the form Ma (X)Ma (Y, T ) in the PBW expansion of a fixed word in {X1 , Y1 }. The proof is technical
+and it may be helpful to give a brief outline of the proof strategy. The main estimate for the order of such
+a term follows from Proposition 8.9. In order to understand when the minimal possible order is attained,
+we examine the terms that result from the application of the relation (8.4) in the process of migrating the
+rightmost X1 all the way to the left. As it turns out, some of these terms also occur in the PBW expansion
+of a smaller word in {X1 , Y1 } (with respect to the partial order defined in §8.9) and such terms can be
+analyzed inductively. The remaining terms are then analyzed separately, with the help of Proposition 8.12
+and Proposition 8.13.
+
+Proposition 8.14. Let u ∈ Hk+ be a word in {X1 , Y1 }. Denote m = degY1 , let g = g(u) = (gi )0≤i≤m be its
+gap sequence and let z = z(g(u)). Let a = (ai )0≤i≤m be a composition with |a| = degX1 u, and let ζ = z(a).
+We fix k > N > m. The elements Ma (X)Ma (Y, T ) under consideration are associated to (a, k, 1, m, N ).
+Then,
+
+    (i) ordu (Ma (X)Ma (Y, T )) ≥ m − ζ.
+
+Furthermore, if ordu (Ma (X)Ma (Y, T )) = m − ζ, then
+
+   (ii) ζ ≥ z;
+  (iii) If ζ = z, then Ma (X) ≤ Mg (X) and a ≤+ g.
+
+The term of h-degree m − z in the coefficient of Mg (X)Mg (Y, T ) in the PBW expansion of u is qm−z hm−z .
+
+Proof. Since
+                                      a                 a      a −1
+         Ma (X)Ma (Y, T ) = X1am +1 XNm−1            ζ+1
+                                      −m+ζ+1 · · · XN −1 XN
+                                                           ζ
+                                                                      Y1 YN −m+ζ+1 · · · YN −1 YNζ Tc1 (N,m−ζ) ,
+
+and κ(c1 (m − ζ)) = m − ζ, part (i) follows from Proposition 8.9. For the remaining parts, we assume that
+ordu (Ma (X)Ma (Y, T )) = m − ζ and we proceed by induction on the partial order on words in {X1 , Y1 } of
+fixed degX1 u and degY1 u < k. The minimal word, which occurs for z = m, is already in SD(k) and the
+required properties are trivially satisfied.
+    Assume now that z < m. We start by laying out some terminology. The word u as encoded by the gap
+sequence g is
+                                               g               g
+(8.16)                        u = X1gm Y1 X1 m−1 Y1 · · · Y1 X1 z+1 Y1 X1gz Y1z ∈ Hk+ .
+
+A Y-block is a maximal (non-trivial) sequence of consecutive Y1 in the expression of u. Similarly, a X-block
+is a maximal (non-trivial) sequence of consecutive X1 in the expression of u.
+     We apply the relations (8.4) m − z-times, in the process of migrating the rightmost X1 all the way to
+the left. We call the resulting expression
+                                                                   g
+             u = qm−z X1gm +1 Y1 1 + hT1⌣k−1 · · · Y1 1 + hT1⌣k−1 X1 z+1 Y1 1 + hT1⌣k−1 X1gz −1 Y1z
+                                                                                        
+(8.17)
+
+the first layer straightening of the word u.
+    We classify the terms that appear after distributing the sums in the first layer straightening as follows.
+The lower terms are those that are obtained from picking the constant term (i.e. 1) from (at least) one
+parenthesis immediately following the rightmost Y1 in a Y-block. These terms acquire an h coefficient of
+30                                         BOGDAN ION AND DONGYU WU
+
+
+degree strictly less than m − z and also appear in the first layer straightening of some word u′ in {X1 , Y1 }
+such that u′ < u, which justifies our choice of terminology. In such a case, we denote by g ′ = g(u′ ) its gap
+sequence and z ′ = z(u′ ). Of course, z ′ ≥ z. The main terms are the terms obtained by picking an h term
+from each parenthesis. These terms acquire an h coefficient of degree exactly m − z. Finally, the remaining
+terms are called mixed terms. A mixed term appears with coefficient qm−z hm−z−b , where b is the number
+of times that a constant term is picked. However, from Proposition 8.12 and the fact that the Y -monomial
+in Ma (Y, T ) has exactly m − z + 1 distinct parts it follows that the terms of type Ma (X)Ma (Y, T ) in the
+PBW expansion of a mixed term must have order at least m − z.
+     The rest of the argument is a function of the relative order of z and ζ.
+     Case ζ > z. In this case, part (ii) is satisfied, and the hypothesis in part (iii) is not satisfied, so there
+is nothing to check.
+   Case ζ = z. Part (ii) is satisfied. If Ma (X)Ma (Y, T ) arises from a lower term, then it appears in the
+PBW expansion of some (or several) word u′ < u. By part (i),
+
+(8.18)                                   ordu′ (Ma (X)Ma (Y, T )) ≥ m − ζ.
+
+If ordu′ (Ma (X)Ma (Y, T )) = m − ζ, the induction hypothesis gives z = ζ ≥ z ′ ≥ z, so z = z ′ = ζ. Since
+u′ < u and z ′ = z we obtain that g ′ <+ g and Mg′ (X) < Mg (X). The induction hypothesis also gives
+Ma (X) ≤ Mg′ (X) < Mg (X) and a ≤+ g ′ <+ g, confirming part (iii).
+     If Ma (X)Ma (Y, T ) does not appear in the PBW expansion of some word u′ < u, then it can only appear
+in the PBW expansion of a main term, or a mixed term.
+     Assume that Ma (X)Ma (Y, T ) appears in the PBW expansion of a main term, a word of the form
+                                                                        a
+(8.19)          qm−z hm−z X1am +1 Y1 · T1⌣r1 · · · Y1 · T1⌣rm−z−1 · X1 z+1 Y1 · T1⌣rm−z · X1az −1 Y1z ,
+
+for some 1 ≤ r1 , . . . , rm−z ≤ k−1. We denote di = ri +1 for 1 ≤ i ≤ m−z. If ordu (Ma (X)Ma (Y, T )) = m−z,
+then Ma (X)Ma (Y, T ) is precisely the unique term of h-degree zero in the PBW expansion of
+                                                                   a
+(8.20)                X1am +1 Y1 · T1⌣r1 · · · Y1 · T1⌣rm−z−1 · X1 z+1 Y1 · T1⌣rm−z · X1az −1 Y1z ,
+
+which is of the form m(X)m′ (Y )Tσ for some monomials m(X) and m′ (Y ) and σ = (1, d1 ) · · · (1, dm−z ). In
+particular, we must have σ = c1 (N, m − z), which implies that di = N − m + z + i for all 1 ≤ m − z, and
+consequently m(X) = Mg (X) and m′ (X) = Y1 YN −m+z+1 · · · YN −1 YNz . Therefore, in this case, a = g and
+the term of h-degree m − z in the coefficient of Mg (X)Mg (Y, T ) in the PBW expansion of u is qm−z hm−z .
+Therefore, part (iii) is verified. As will become clear from the analysis of the remaining cases, this is the
+only occurrence of Mg (X)Mg (Y, T ) in the PBW expansion of u, proving the last claim in the statement.
+     Assume now that ordu (Ma (X)Ma (Y, T )) = m − z and Ma (X)Ma (Y, T ) appears in the PBW expansion
+of a mixed term, a word of the form
+                                                               a
+(8.21)                qm−z hm−z−b X1am +1 Y1 · T1⌣r1 · · · X1 z+1 Y1 · T1⌣rm−z−b · X1az −1 Y1z ,
+
+for some positive b with b + 1 at least equal to the number of Y-blocks in u (there is a T1⌣r factor at the
+end of each Y-block, with the exception of the right-most one), and 1 ≤ r1 , . . . , rm−z−b ≤ k − 1. Then,
+               THE STABLE LIMIT DAHA: THE STRUCTURE OF THE STANDARD REPRESENTATION                              31
+
+
+Ma (X)Ma (Y, T ) is a term of order b in the PBW expansion of
+                                                          a
+(8.22)                       X1am +1 Y1 · T1⌣r1 · · · X1 z+1 Y1 · T1⌣rm−z−b · X1az −1 Y1z .
+
+     Since, by Proposition 8.12, terms of the form Yµ Tv with all 0 ≤ µj ≤ 1 in the PBW expansion of some
+Tw Y1c have order at least c − 1, it follows that, in order to select a term of order b in the PBW expansion
+of the element in (8.22), we must pick the term of order zero from relations of the type (4.1c) and a term
+of order c − 1 from the PBW expansion of factors of the form T1⌣r Y1c . The latter are of the form Yµ Tv
+with v obtained from the reduced expression of (1, r + 1) = sr · · · s1 · · · sr by omitting exactly c − 1 factors
+(necessarily from the first half of the product). If the factors corresponding to j1 < · · · < jc−1 are omitted,
+then
+
+(8.23)                   v = (1, j1 , j2 , . . . , jc−1 , r + 1) = (1, r + 1)(1, jc−1 ) · · · (1, j1 ).
+
+Therefore, if the term m(X)m′ (Y )Tσ , for monomials m(X) and m′ (Y ), is a term of order b in the PBW
+expansion of the element in (8.22) that appears as described above, then σ is a product of exactly m − z
+distinct transpositions of the form (1, j) which appear in segments as specified in (8.23). Therefore σ is a
+cycle with the property that there are j ̸= 1 for which we have σ 2 (j) > σ(j). In conclusion, σ ̸= c1 (N, m−z)
+and Ma (X)Ma (Y, T ) such that ordu (Ma (X)Ma (Y, T )) = m − z cannot appear in the PBW expansion of a
+mixed term.
+    Case ζ < z. Denote s = z − ζ > 0. The element Ma (X)Ma (Y, T ) does not appear in the PBW
+expansion of some word u′ < u because the induction hypothesis would imply that ζ ≥ z ′ ≥ z > ζ, a
+contradiction. Therefore, Ma (X)Ma (Y, T ) can only appear in the PBW expansion of a main term, or a
+mixed term.
+     We examine how such a term can appear, in stages. We will consider the terms in the PBW expansion
+of a word of the form
+                                                                        a
+(8.24a)           v = X1am +1 Y1 · T1⌣r1 · · · Y1 · T1⌣rm−z−1 · X1 z+1 Y1 · T1⌣rm−z · X1az −1 ,           or
+
+                                                               a
+(8.24b)                     v = X1am +1 Y1 · T1⌣r1 · · · X1 z+1 Y1 · T1⌣rm−z−b · X1az −1 ,
+
+with vY1z a main term, or respectively a mixed term in the first layer straightening of u. Such terms are of
+the form m(X)m′ (Y )Tσ for some monomials m(X) and m′ (Y ) and σ ∈ SN . Furthermore, a term in PBW
+expansion of Tσ Y1z is of the form m′′ (Y )Tv for some monomial m′′ (Y ) and v ∈ SN . Any term in the PBW
+expansion of a main term, or a mixed term, arises in this manner and is of the form m(X)m′ (Y )m′′ (Y )Tv .
+Hence,
+                                  Ma (X)Ma (Y, T ) = m(X)m′ (Y )m′′ (Y )Tv ,
+with m(X), m′ (Y ), m′′ (Y ), σ, and v as described above. If we denote by m − z + ς1 , with ς1 ≥ 0, the
+order of m(X)m′ (Y )Tσ in the PBW expansion of the relevant main, or mixed, term and by ς2 the order of
+m′′ (Y )Tv in the PBW expansion of Tσ Y1z , we have
+
+(8.25)                              ordu (Ma (X)Ma (Y, T )) = m − z + ς1 + ς2 .
+32                                           BOGDAN ION AND DONGYU WU
+
+
+Furthermore, m(X) = Ma (X), v = c1 (N, m − ζ), and m′ (Y )m′′ (Y ) = Y1 YN −m+ζ+1 · · · YN −1 YNζ . Note that
+Y1 already appears in m′ (Y ). So, m′ (Y ) and m′′ (Y ) are of the form
+
+                       m′ (Y ) = Y1 Yf1 Yf2 · · · Yfm−z−b−1 YNb ,   m′′ (Y ) = Ye1 Ye2 · · · Yec YNz−c ,
+
+with z − c + b = ζ and {f1 , f2 , . . . , fm−z−b−1 } ∪ {e1 , e2 , . . . , ec } = {N − 1, . . . , N − m + ζ + 1}. Proposition
+8.12 implies that ς2 ≥ c. Therefore,
+
+                     m − z + ς1 + ς2 ≥ m − (ζ + c − b) + ς1 + c = m − ζ + b + ς1 ≥ m − ζ.
+
+SInce ordu (Ma (X)Ma (Y, T )) = m − ζ, we must have b = ς1 = 0, ς2 = c, and ζ = z − c. This implies that
+ς2 = c = s.
+    If Ma (X)Ma (Y, T ) arises from a main term (such as the one in (8.24a)), then m(X)m′ (Y )Tw is the
+unique term of order zero in the PBW expansion of the element in (8.24a), which implies, with the notation
+di = ri + 1 for 1 ≤ i ≤ m − z, that
+
+(8.26)                      m′ (Y ) = Y1 Yd1 Yd2 · · · Ydm−z−1 ,    σ = (1, d1 ) · · · (1, dm−z ).
+
+Furthermore, since d1 , d2 , . . . , dm−z−b−1 ≤ N − 1 and s > 0, we must have dm−z = N . Also,
+
+                                 m′′ (Y )Tc1 (N,m−z) = Ye1 Ye2 · · · Yec YNz−c Tc1 (N,m−z)
+
+has order s in the PBW expansion of Tσ Y1z . Proposition 8.13, for ℓ = m − z, assures that there are no
+such elements of order s in the PBW expansion of Tσ Y1z . In this case, we conclude that, if ζ > z, and
+Ma (X)Ma (Y, T ) arises from a main term, then ordu (Ma (X)Ma (Y, T )) > m − ζ, which contradicts our
+hypothesis ordu (Ma (X)Ma (Y, T )) = m − ζ.
+     If Ma (X)Ma (Y, T ) arises from a mixed term (such as the one in (8.24b)), then m(X)m′ (Y )Tw is a term
+of order b in the PBW expansion of the element in (8.24b). As it follows from the treatment of the mixed
+terms in Case ζ = z, m′ (Y ) is of the form specified in (8.26), for some d1 , . . . , dm−z . The remaining part of
+the argument replicates the treatment of the main terms above.                                                   □
+
+      The proof of Proposition 8.14 applies to establish the following result.
+
+Corollary 8.15. Let 1 ≤ j < k and let u ∈ Hk+ be a word in {Xj , Yj }. Denote m = degYj , let g = g(u) =
+(gi )0≤i≤m be its gap sequence, and let z = z(g(u)). Let a = (ai )0≤i≤m be a composition with |a| = degXj u,
+and let ζ = z(a). We fix k > N ≥ m + j. The elements Ma (X)Ma (Y, T ) under consideration are associated
+to (a, k, j, m, N ). Then,
+
+      (i) ordu (Ma (X)Ma (Y, T )) ≥ m − ζ.
+
+Furthermore, if ordu (Ma (X)Ma (Y, T )) = m − ζ, then
+
+      (ii) ζ ≥ z;
+     (iii) If ζ = z, then Ma (X) ≤ Mg (X) and a ≤+ g.
+
+The term of h-degree m − z in the coefficient of Mg (X)Mg (Y, T ) in the PBW expansion of u is qm−z hm−z .
+
+Proof. The argument entirely follows the one for Proposition 8.14, with one caveat. For the first layer
+straightening of u, we use (8.4) m − z-times, in the process of migrating the rightmost Xj all the way to the
+              THE STABLE LIMIT DAHA: THE STRUCTURE OF THE STANDARD REPRESENTATION                                  33
+
+                                                                              Pj−1                            
+left. At each step, instead of a X1 Y1 common factor we obtain a Xj Yj + h i=1 Xi Yi · Ti⌣j−1 common
+factor. We get a linear combination of terms, each containing either Xj , or Xi with i < j; for each term we
+continue its migration towards the left with the Xj , or Xi , depending on the situation. In the latter case,
+we have to use the relations (7.2) between Xi and Yj . When the process of migration is completed with
+such a term, we will end up with a copy of Xi all the way to the left. Since the smallest index that appears
+in Ma (X)Ma (Y, T ) is j, such terms are not of interest from the point of view of our statement. Therefore,
+it is enough to focus on the terms that appear in the PBW expansion of
+                                                                    g
+             u = qm−z Xjgm +1 Yj 1 + hTj ⌣k−1 · · · Yj 1 + hTj ⌣k−1 Xj z+1 Yj 1 + hTj ⌣k−1 Xjgz −1 Yjz ,
+                                                                                          
+(8.27)
+
+which we call the first layer straightening of u in this case. From this point, the argument proceeds as in
+the proof of Proposition 8.14.                                                                           □
+
+8.13. Let a = (aj )1≤j≤r be a finite sequence of compositions, aj = (aji )0≤i≤mj . We define its length to be
+the composition ℓ(a) = (ℓ(aj ))1≤j≤r = (mj + 1)1≤j≤r . Accordingly, |ℓ(a)| = m1 + · · · + mr + r. As usual,
+denote zj = z(aj ). The compositions m(a) = (mj )1≤j≤r and z(a) = (zj )1≤j≤r will play an important role
+in what follows.
+    If k ≥ ℓ(a), let Nj = k − mr − · · · − mj+1 , for 1 ≤ j ≤ r. Remark that Nj − mj = Nj−1 ≥ r, for all
+1 ≤ j ≤ r. In particular, the cycles cj (Nj , mj − zj ) are disjoint. We denote by c(k, a) their product.
+
+Remark 8.16. For 1 ≤ i < j ≤ r we have c(k, a)(i) < c(k, a)(j). Therefore, for any σ ∈ Sr , we have
+ℓ(c(k, a)σ) = ℓ(c(k, a)) + ℓ(σ), which means that c(k, a) is the minimal length representative in its left
+Sr -coset. It can be directly verified that κ(c(k, a)σ) = κ(c(k, a)) + κ(σ).
+
+    We consider the element
+                                             Ma (X)Ma (Y, T ) ∈ SD(k)
+defined by setting
+                                                                                               
+                        r                                  r
+                                                                                             z
+                        Y                                  Y
+             Ma (X) =         Maj (X) and Ma (Y, T ) =        Yj YNj+1 +zj +1 · · · YNj −1 YNjj  Tc(k,a) ,
+                        j=1                              j=1
+
+with each Maj (X)Maj (Y, T ) associated to the data (aj , k, j, mj , Nj ). Remark that Ma (Y, T ) is obtained
+from the product of Maj (Y, T ) with the factors appropriately sorted. Moreover, Ma (Y, T ) only depends on
+k, m(a), and z(a).
+
+
+8.14. For m and z two compositions of equal length ℓ(m) = ℓ(z) = r and such that z ≤ m component-wise,
+and k ≥ |m| + ℓ(m), let
+                                 (                                       )
+(8.28a)               SD(k,
+                       f    m) = Ma (X)Ma (Y, T ) ∈ SD(k) m(a) = m           and
+
+                                         (                                                )
+(8.28b)                 SD(k,
+                        f     m, z) =     Ma (X)Ma (Y, T ) ∈ SD(k, m) z(a) = z .
+
+It is important to remark that for all the elements of SD(k,
+                                                       f     m, z) the Ma (Y, T ) component is the same.
+34                                          BOGDAN ION AND DONGYU WU
+
+
+8.15. To w = u1 u2 · · · ur T w ∈ S(r), w ∈ Sr , uj ∈ Wj , 1 ≤ j ≤ r we associate the gap data and the
+corresponding invariants
+
+                             g = g(w) = (g(uj ))1≤j≤r , m(w) = m(g), z(w) = z(g).
+
+As above, for k ≥ ℓ(g), we consider the element
+
+                                              Mg (X)Mg (Y, T ) ∈ SD(k).
+
+If all uj are trivial with the exception of ui , and g = g(ui ), then Mg (X)Mg (Y, T ) = Mg (X)Mg (Y, T ).
+      Proposition 8.14 and Corollary 8.15 are particular cases of the following general result.
+
+Theorem 8.17. Let w = u1 u2 · · · ur T w ∈ S(r), w ∈ Sr , uj ∈ Wj , 1 ≤ j ≤ r, and k ≥ |ℓ(g(w))|. Let
+Ma (X)Ma (Y, T ) ∈ SD(k,
+                   f     m(w)) and wa ∈ Sr . Then,
+
+      (i) The element Ma (X)Ma (Y, T )Twa has order at least |m(w) − z(a)| in the PBW expansion of φk (w);
+
+If the order of Ma (X)Ma (Y, T )Twa in the PBW expansion of φk (w) is exactly |m(w) − z(a)|, then
+
+      (ii) wa = w;
+     (iii) z(a) ≥ z(w) component-wise;
+     (iv) If z(a) = z(w), then g(a) ≤+ g(w) component-wise.
+
+The term of h-degree |m(w)−z(w)| in the coefficient of Mg (X)Mg (Y, T )Tw in the PBW expansion of φk (w)
+is
+                                       q|m(w)−z(w)| h|m(w)−z(w)| .
+
+
+Proof. For part (i), let                                                                  
+                                                    r
+                                                                                       z
+                                                    Y
+                                 Γa = Ma (X)            Yj YNj+1 +zj +1 · · · YNj −1 YNjj  .
+                                                   j=1
+
+With this notation, and based on Remark 8.16, Ma (X)Ma (Y, T )Twa = Γa Tc(k,a)wa . We first consider terms
+of the form Γa Tσ , σ ∈ Sk , in the the PBW expansion of φk (u1 u2 · · · ur ). We have
+
+(8.29)            ordφk (w) (Γa Tc(k,a)wa ) ≥ min {ordφk (u1 u2 ···ur ) (Γa Tσ ) + ordTσ Tw (Tc(k,a)wa )}.
+                                              σ∈Sk
+
+Since w, wa ∈ Sr , if ordTσ Tw (Tc(k,a)wa ) < ∞, then c(k, a) is the minimal length representative of σ in its
+left Sr -coset. Therefore, we can restrict the computation of the minimum in (8.29) to σ ∈ c(k, a)Sr . Let
+σ = c(k, a)σ ′ , with σ ′ ∈ Sr . From Proposition 8.9 and Remark 8.16, we obtain
+
+(8.30)                         ordφk (u1 u2 ···ur ) (Γa Tσ ) ≥ κ(σ) = κ(c(k, a)) + κ(σ ′ ).
+
+Combining (8.29) and (8.30), we obtain
+
+                               ordφk (w) (Γa Tc(k,a)wa ) ≥ κ(c(k, a)) = |m(w) − z(a)|.
+
+This proves part (i).
+      Assume now that ordφk (w) (Γa Tc(k,a)wa ) = |m(w) − z(a)|. Then, κ(σ ′ ) = 0 in (8.30), which means that
+
+                         σ = c(k, a),     Γa Tσ Tw = Ma (X)Ma (Y, T )Tw ,           and wa = w.
+                THE STABLE LIMIT DAHA: THE STRUCTURE OF THE STANDARD REPRESENTATION                                                   35
+
+
+    For part (iii) and (iv) we can assume that w = wa = 1. As in the proof of Proposition 8.9, we first
+consider an intermediate expansion of φk (w) as a linear combination (with coefficients that are integral
+                                             Q ±
+polynomials in h) of terms of the form Γa s T(e    s ,fs )
+                                                           with µ, ν ∈ Λk , and (es , fs ) ∈ Sk transpositions; the
+                                                      Q ±
+order of vanishing at h = 0 of the coefficient of Γa s T(es ,fs ) in such an expansion is denoted by
+                                                           Y
+                                                               ±
+                                           ordφk (w) (Γa      T(e s ,fs )
+                                                                          ).
+                                                                               s
+                            Q       ±
+Recall that ordφk (w) (Γa        s T(es ,fs ) ) is at least the number of factors in the product which, in turn, is at
+        Q
+least κ( s (es , fs )). Therefore,
+                                                                  Y                     Y
+                                                                       ±
+(8.31)                                       ordφk (w) (Γa            T(e s ,fs )
+                                                                                  ) ≥ κ( (es , fs )).
+                                                                  s                       s
+                                                                                                                           Q  ±
+     To obtain the full PBW expansion of φk (w), we consider the PBW expansion of the factors                              s T(es ,fs ) .
+From Lemma 8.8 we have
+                              Y
+(8.32)                     κ( (es , fs )) + ordQ T ±    (Tc(k,a) ) ≥ κ(c(k, a)),
+                                                                      s   (es ,fs )
+                                         s
+
+      from which we obtain
+
+(8.33)                                            ordφk (w) (Γa Tc(k,a) ) ≥ κ(c(k, a)).
+                                                                                                 Q
+In order to have equality in (8.33), we must have equality in both (8.31) and (8.32) for some s (es , fs ). We
+              Q ±
+fix a term Γa s T(es ,fs ) for which we have equality in both (8.31) and (8.32).
+                                                         Q
+     By Lemma 8.8, if we have equality in (8.32), then s (es , fs ) is a κ-factor of c(k, a), which implies that
+                                                                  Y
+(8.34)                            |m(w) − z(a)| = κ(c(k, a)) ≥ κ( (es , fs )).
+                                                                                              s
+                                                 Q
+If we have equality in (8.31) then κ( s (es , fs )) is precisely the number of factors in the product, which, in
+                            Q
+particular, means that s (es , fs ) is a minimal product of transpositions. By Proposition 8.5, in a minimal
+expression of c(k, a) as a product of transpositions (u, v), the numbers u and v are part of the same cycle in
+the cycle decomposition of c(k, a). To streamline the exposition, we use ∼ to denote the equivalence relation
+                                                                                      Q
+on [k] := {1, 2, . . . , k} whose equivalence classes are the orbits of c(k, a). Since s (es , fs ) is a κ-factor of
+c(k, a), we have es ∼ fs for each pair that appears in the product. This leads to strong restrictions, which
+                                                                                                        Q ±
+we specify below, on the terms from the relations (8.9), (8.10), and (8.11) that can produce Γa s T(e          s ,fs )
+                                                                                                                       .
+     To obtain the intermediate expansion of φk (w), we proceed as follows. We first obtain the intermediate
+                                                                           Q ±                         Q
+expansions of each φk (uj ), 1 ≤ j ≤ r, and fix some terms Xµj Yνj u T(e          j,u ,fj,u )
+                                                                                              such that u (ej,u , fj,u ) is
+a minimal product of transpositions,
+                                                  Y                       Y
+                                                     ±
+(8.35)                       ordφk (uj ) (Xµj Yνj   T(e j,u ,fj,u )
+                                                                    ) = κ( (ej,u , fj,u )),
+                                                                  u                           u
+
+and
+                                                              Y                     Y              r
+                                                                                                   X   Y
+                                                                   ±
+(8.36)        ordQr              Q      ±               (Γa       T(e         ) = κ(  (e  ,
+                                                                                         s sf )) −   κ( (ej,u , fj,u )).
+                   j=1 Xµj Yνj       u T(ej,u ,fj,u )                 s ,fs )
+                                                              s                       s                 j=1   u
+36                                                 BOGDAN ION AND DONGYU WU
+
+
+     We note that the following terms on the right-hand side of some of the relations (8.9), (8.10), and (8.11)
+                     Q ±                      Q ±
+lead to terms Xµj Yνj u T(e j,u ,fj,u )
+                                        and Γa s T(e s ,fs )
+                                                             that violate (8.35) or (8.36): the second term in (8.9b)
+and (8.9e), the second and third term in (8.10b) and (8.10e), and the third and fourth term in (8.11c). We
+ignore such terms in our ongoing analysis, and we refer to elements that arise from the expansion that
+involve the remaining terms as acceptable terms.
+                                                                                                                       ±
+     The inspection of the relations (8.9) shows that the acceptable terms in the PBW expansion of T(u,v)                    Xi
+                 ±                                                     Q ±                   Q
+are either Xi T(u,v) (as the term of order 0), or of the form Xc t T(ut ,vt ) , with t (ut , vt ) the minimal
+product of transpositions of a cycle that contains u, v, i and c (which means that {u, v, i, c} ⊆ ∪t {ut , vt }).
+                                        ±                                                                   ±
+The corresponding statement for T(u,v)      Yi is also true. In particular, any of the factors T(e            j,u ,fj,u )
+                                                                                                                          that
+                   Q ±                                           Q ±                                             Q ±
+appear in Xµj Yνj u T(ej,u ,fj,u ) will eventually contribute to s T(es ,fs ) a sub-factor of the form t T(u              t ,vt )
+      Q
+with t (ut , vt ) the minimal product of transpositions of a cycle that contains ej,u and fj,u . Therefore,
+ej,u ∼ fj,u . Keeping in mind that factors of the form T(e,f ) initially appear in the straightening process for
+φk (uj ) by the application of the relations (8.11c), we obtain that j ∼ ej,u ∼ fj,u for all j, u. Together with
+the relations (8.11), it also implies that all the indices d such that Xd appears in Xµj are in ∪u {ej,u , fj,u }
+and thus satisfy d ∼ j, and similarly for Yνj .
+                                                                        Q ±
+     Because for 1 ≤ u ̸= v ≤ r we have u ̸∼ v, we conclude that Γa s T(e      s ,fs )
+                                                                                       is precisely the term of order
+                                                                         r
+                                                                                                            !
+                                                                       Y                 Y
+                                                                                              ±
+zero in the intermediate PBW expansion of the ordered product                 Xµj Yνj       T(e j,u ,fj,u )
+                                                                                                             . Therefore,
+                                                                                          j=1            u
+with the notation
+                                                                                      z
+                                 Γaj = Maj (X)Yj YNj+1 +zj +1 · · · YNj −1 YNjj ,               1 ≤ j ≤ r,
+the following equalities hold
+
+(8.37a)                                                Xµj Yνj = Γaj ,        1 ≤ j ≤ r,
+
+                     YY                            Y                     Y              r
+                                                                                        X   Y
+                                ±                       ±
+(8.37b)                        T(e j,u ,fj,u )
+                                               =       T(e s ,fs )
+                                                                   ,   κ( (es , fs )) =   κ( (ej,u , fj,u )).
+                       j   u                       s                      s                j=1      u
+
+From (8.37a), we obtain that all the integers that appear as indices in the monomial Γaj are among
+                                                                     Q
+∪u {ej,u , fj,u }. Therefore, the number of factors in the product u (ej,u , fj,u ) is at least mj − zj , and
+           Q
+because u (ej,u , fj,u ) is a minimal product of transpositions, we have
+                                     Y
+(8.38)                             κ( (ej,u , fj,u )) ≥ mj − zj , 1 ≤ j ≤ r.
+                                               u
+
+From (8.37b) we obtain
+                                                     Y
+(8.39)                                             κ( (es , fs )) ≥ |m(w) − z(a)|.
+                                                        s
+                                                            Q                                        Q
+The inequalities (8.34) and (8.39) imply that κ( s (es , fs )) = κ(c(k, a)). Because s (es , fs ) is a κ-
+                                   Q                                             Q
+factor of c(k, a), we have s (es , fs ) = c(k, a). Furthermore, κ( u (ej,u , fj,u )) = mj − zj and since
+Q Q                      Q
+  j   u (ej,u , fj,u ) =   s (es , fs )) = c(k, a) and {j, Nj+1 + zj + 1, . . . Nj − 1, Nj } ⊆ ∪u {ej,u , fj,u }, 1 ≤ j ≤ r,
+                   Q
+we obtain that u (ej,u , fj,u ) = cj (Nj , mj − zj ).
+                THE STABLE LIMIT DAHA: THE STRUCTURE OF THE STANDARD REPRESENTATION                           37
+
+
+      To conclude, we obtain that for all 1 ≤ j ≤ r, the element Maj (X)Maj (Y, T ) associated to the data
+(aj , k, j, mj , Nj ) satisfies
+                                ordXµ Yν Q T ±       Maj (X)Maj (Y, T )) = 0.
+                                      j   j   u   (ej,u ,fj,u )
+
+From (8.35) we obtain ordφk (uj ) (Maj (X)Maj (Y, T )) = mj − zj . Corollary 8.15 now implies parts (iii), (iv),
+and the last claim in the statement of Theorem 8.17.                                                          □
+
+
+8.16.    We are now ready to present a proof of the faithfulness of the standard representation.
+
+Theorem 8.18. The standard representation of H+ is faithful.
+
+
+Proof. Assume that H ∈ H(r)+ acts by zero on P+   as . We show that H = 0. By Theorem 4.16, we have
+φk (H) = 0 for all k ≥ r. For a contradiction, assume that H is non-zero and consider the (non-trivial)
+expansion of H with respect to the PBW basis of H+ (r)
+                                               X
+(8.40)                              H=                    cw (q, h)w.
+                                              w=u1 u2 ···ur T w ∈S(r)
+
+By clearing denominators, we can assume that all cw (q, h) ∈ Q[q, h] are relatively prime. In analogy with
+the corresponding notation in §2.10, the order of vanishing at h = 0 for a polynomial cw (q, h) is denoted
+by ord cw . The subset Θ consisting of elements w ∈ S(r) such that ord cw = 0 is non-empty.
+    Because the maps φk are homogeneous, it is enough to assume that H is homogeneous with respect to
+degX and degY . In fact, by examining φk (H) modulo h we see that it is enough to assume that for each
+1 ≤ i ≤ r, the ui components of the words w that appear in the sum (8.40) have all the same degX and the
+same degY . In particular, all the words w that appear in (8.40) have the same m(w) and the same ℓ(g(w)),
+which we denote by m(H) and, respectively, ℓ(H).
+    Let
+                                      Θmin = {w ∈ Θ | |z(w)| minimal},
+and denote by ϑ the common value |m(H) − z(w)| for w ∈ Θmin . Let wmax ∈ Θmin be a maximal element in
+Θmin with respect to the product order on the gap data g(w). We denote wmax = umax
+                                                                                1  umax
+                                                                                    2   · · · umax
+                                                                                               r   T wmax
+and gmax = g(wmax ).
+    Let k >> ℓ(H). Since φk (H) = 0, the coefficient of hϑ in φk (H) must vanish. We argue that
+
+(8.41)                            ordφk (H) Mgmax (X)Mgmax (Y, T )Twmax = ϑ,
+
+which is a contradiction. Indeed, ordφk (wmax ) Mgmax (X)Mgmax (Y, T )Twmax = |m(H) − z(wmax )| = ϑ, and
+since wmax ∈ Θ, we have ordφk (cwmax wmax ) Mgmax (X)Mgmax (Y, T )Twmax = ϑ.
+     Assume that Mgmax (X)Mgmax (Y, T )Twmax also appears in the coefficient of hϑ in the PBW expansion
+of some φk (cw′ w′ ). Then,
+
+                             ordφk (w′ ) Mgmax (X)Mgmax (Y, T )Twmax ≤ ϑ − ord cw′ .
+
+By Theorem 8.17(i), ordφk (w′ ) Mgmax (X)Mgmax (Y, T )Twmax ≥ ϑ. Therefore, we must have ord cw′ = 0 (i.e.
+w′ ∈ Θ) and ordφk (w′ ) Mgmax (X)Mgmax (Y, T )Twmax = ϑ = |m(H) − z(wmax )|. By Theorem 8.17(ii) this
+implies w′ = wmax . By Theorem 8.17(iii), we have |z(wmax )| ≥ |z(w′ )|, but since |z(wmax )| is minimal we
+38                                      BOGDAN ION AND DONGYU WU
+
+
+also have w′ ∈ Θmin and |z(wmax )| = |z(w′ )|. Theorem 8.17(iv) now implies that g(wmax ) ≤+ g(w′ ) for the
+product partial order. But wmax is a maximal element in Θmin , which implies that g(w′ ) = g(wmax ).
+    To summarize, Mgmax (X)Mgmax (Y, T )Twmax only appears in the coefficient of hϑ in the PBW expansion
+of φk (cwmax wmax ) and therefore (8.41) holds, contradicting the fact that φk (H) = 0. Therefore H = 0. □
+
+
+Theorem 8.19. The algebra generated by the action of the limit operators Xi , Yi , Ti , i ≥ 1, on P+
+                                                                                                   as is
+isomorphic to H+ .
+
+
+
+Proof. The action of the limit operators Xi , Yi , Ti , i ≥ 1, on P+
+                                                                   as defines the standard representation of H .
+                                                                                                              +
+
+Therefore, the algebra generated by the limit operators is the quotient of H+ by the kernel of the standard
+representation. By Theorem 8.18, the standard representation is faithful, which implies our claim.            □
+
+
+
+
+                                                 References
+
+ [1] M. J. Bechtloff Weising, Stable-limit non-symmetric Macdonald functions. Algebr. Comb. 7 (2024), no.
+     6, 1845–1878.
+ [2] E. Carlsson, E. Gorsky, and A. Mellit, The Aq,t algebra and parabolic flag Hilbert schemes. Math. Ann.
+     376 (2020), no. 3-4, 1303–1336.
+ [3] E. Carlsson and A. Mellit, A proof of the shuffle conjecture. J. Amer. Math. Soc. 31 (2018), no. 3,
+     661–697.
+ [4] J. Haglund, M. Haiman, and N. Loehr, A combinatorial formula for nonsymmetric Macdonald polyno-
+     mials. Amer. J. Math. 130 (2008), no. 2, 359–383.
+ [5] M. Haiman, Cherednik algebras, Macdonald polynomials and combinatorics. In: International Congress
+     of Mathematicians. Vol. III, 843–872, Eur. Math. Soc., Zürich, 2006.
+ [6] J. E. Humphreys, Reflection groups and Coxeter groups. Cambridge Studies in Advanced Mathematics,
+     vol. 29, Cambridge University Press, Cambridge, 1990.
+ [7] B. Ion and D. Wu, The stable limit DAHA and the double Dyck path algebra. J. Inst. Math. Jussieu
+     23 (2024), no. 1, 379–424.
+ [8] F. Knop, Integrality of two variable Kostka functions. J. Reine Angew. Math. 482 (1997), 177–189.
+ [9]         , Composition Kostka functions. In: Algebraic groups and homogeneous spaces, 321–352. Tata
+     Inst. Fund. Res. Stud. Math., vol. 19, Tata Inst. Fund. Res., Mumbai, 2007.
+[10] G. Mackiw, Permutations as products of transpositions. Amer. Math. Monthly 102 (1995), no. 5, 438–
+     440.
+[11] A. Mellit, Toric braids and (m, n)-parking functions. Duke Math. J. 170 (2021), no. 18, 4123–4169.
+[12] S. Sahi, Some properties of Koornwinder polynomials. In: q-series from a contemporary perspective,
+     395–411. Contemp. Math., vol. 254, Amer. Math. Soc., Providence, RI, 2000.
+[13] O. Schiffmann and E. Vasserot, The elliptic Hall algebra and the K-theory of the Hilbert scheme of A2 .
+     Duke Math. J. 162 (2013), no. 2, 279–366.
+          THE STABLE LIMIT DAHA: THE STRUCTURE OF THE STANDARD REPRESENTATION   39
+
+
+Department of Mathematics, University of Pittsburgh, Pittsburgh, PA 15260
+
+Email address: bion@pitt.edu
+
+
+Beijing Institute of Mathematical Sciences And Applications, Beijing 101408
+Email address: dow16@pitt.edu, wudongyu@bimsa.cn
+

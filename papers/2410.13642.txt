@@ -1,0 +1,1326 @@
+                                           STABLE-LIMIT PARTIALLY SYMMETRIC MACDONALD FUNCTIONS
+                                                     AND PARABOLIC FLAG HILBERT SCHEMES
+
+                                                                   DANIEL ORR AND MILO BECHTLOFF WEISING
+arXiv:2410.13642v1 [math.CO] 17 Oct 2024
+
+
+
+
+                                                Abstract. The modified Macdonald functions H          e µ are fundamental objects in modern
+                                                algebraic combinatorics. Haiman showed that there is a correspondence between the (C∗ )2 -
+                                                fixed points Iµ of the Hilbert schemes Hilbn (C2 ) and the functions H    e µ realizing a derived
+                                                equivalence between (C∗ )2 -equivariant coherent sheaves on Hilbn (C2 ) and (Sn × (C∗ )2 )-
+                                                equivariant coherent sheaves on (C2 )n . Carlsson–Gorsky–Mellit introduced a larger family
+                                                of smooth projective varieties PFHn,n−k called the parabolic flag Hilbert schemes. They
+                                                showed that an algebra Bq,t , directly related to the double Dyck path algebra Aq,t employed
+                                                in Carlsson–Mellit’s proof of the Shuffle Theorem, acts naturally on the (C∗ )2 -equivariant
+                                                K-theory U• of these spaces and, moreover, there is a Bq,t -isomorphism Φ : U• → V• where
+                                                V• is the polynomial representation. The isomorphism Φ : U• → V• is known to extend
+                                                Haiman’s correspondence. In this paper, we explicitly compute the images Φ(Hµ,w ) of the
+                                                normalized (C∗ )2 -fixed point classes Hµ,w of the spaces PFHn,n−k and show they agree with
+                                                the modified partially symmetric Macdonald polynomials H      e (λ|γ) introduced by Goodberry-
+                                                Orr, confirming their prior conjecture. We use this result to give an explicit formula for the
+                                                action of the involution N on V• .
+
+
+
+
+                                                                                         Contents
+                                           1. Introduction                                                                                           2
+                                           1.1. Acknowledgements                                                                                     2
+                                           2. Definitions and Conventions                                                                            2
+                                           2.1. Basic notation                                                                                       2
+                                           2.2. Demazure-Lusztig operators                                                                           3
+                                           2.3. Diagrams                                                                                             4
+                                           2.4. Macdonald polynomials                                                                                4
+                                           2.5. Limit Cherednik operators                                                                            5
+                                           2.6. The algebra Bt,q and its geometric representation                                                    6
+                                           2.7. Polynomial representation                                                                            7
+                                           3. Conjecture and Proof Strategy                                                                          7
+                                           4. Aligning Conventions                                                                                   8
+                                           5. Aligning Spectra                                                                                      11
+                                           5.1. z-Action                                                                                            11
+                                           5.2. ∆ Operators and Simple Spectrum                                                                     16
+                                           6. Aligning d− and Main Theorem                                                                          18
+                                           7. Some consequences                                                                                     21
+                                           7.1. The N involution                                                                                    21
+                                           7.2. Pieri formulas                                                                                      22
+                                           References                                                                                               22
+                                           Date: October 18, 2024.
+                                                                                               1
+2                         DANIEL ORR AND MILO BECHTLOFF WEISING
+
+                                       1. Introduction
+  In [GO23], the first named author and Goodberry formulated a conjecture describing the
+images of fixed-point classes under an isomorphism
+                     MM                         Φ
+                                                  M
+                             KT (PFHn,n−k )loc −→   Λ ⊗ K[y1 , . . . , yk ]          (1)
+                      k≥0 n≥k                          k≥0
+
+arising from the work of Carlsson, Gorsky and Mellit [CGM20]. Here, PFHn,n−k is the para-
+bolic flag Hilbert scheme of [CGM20], which is acted upon naturally by a torus T = (C× )2 ,
+and KT (PFHn,n−k )loc denotes its localized torus-equivariant K-theory. The isomorphism (1)
+is one of Bt,q -representations, where Bt,q is a cousin of the Carlsson–Mellit algebra At,q in-
+troduced in [CM18]. On the other side of the isomorphism Φ, Λ is the algebra of symmetric
+functions
+       L over the field K = Q(q, t) = Frac(KT (pt)) in variables x1 , x2 , . . . , and the total
+space k≥0 Λ ⊗ K[y1 , . . . , yk ] affords the polynomial representation of Bt,q .
+   We recall that Φ respects the index k on both sides and that for k = 0 one obtains an
+isomorphism
+                                       M                   Φ0
+                                           KT (Hilbn )loc −→  Λ                              (2)
+                                     n≥0
+
+where Hilbn is the Hilbert scheme of n points in the plane. It is shown in [CGM20] that Φ0
+agrees up to some explicit scalars with Haiman’s geometric realization of modified Macdonald
+symmetric functions. The conjecture of [GO23] extends this realization to the realm of
+partially-symmetric Macdonald functions.
+   The goal of the present paper is to prove the conjecture of [GO23]. Further notations and
+the precise statement of the conjecture will be recalled along the way. In a few instances we
+will reprove known results of Ion–Wu (in the context of Bt,q rather than At,q ) and we will
+make clear when we do so. The work of Ion–Wu [IW22], according to our conventions, deals
+with the At,q action on a larger space W• (which we will not detail here) containing V• as a
+submodule and relates this action to that of their stable-limit double affine Hecke algebra.
+When passing from At,q to Bt,q and W• to V• there are some subtleties and we reprove some
+of these known results in order to make these subtleties clear.
+1.1. Acknowledgements. We would like to thank Nicolle González, Ben Goodberry, Eu-
+gene Gorsky, Mark Shimozono, and Monica Vazirani for helpful conversations and related
+collaborations. D.O. was supported by the Simons Foundation.
+
+                             2. Definitions and Conventions
+2.1. Basic notation. We work over the field K = Q(q, t).
+   For n ∈ Z≥0 , we write Zn≥0 = (Z≥0 )n . Elements of Zn≥0 are called compositions. For
+ν ∈ Zn≥0 , let |ν| = ν1 + · · · + νn .
+                                       P For λ = (λ1 , λ2 , . . . ) ∈ Y, let ℓ(λ) be its length,
+   Let Y be the set of integer partitions.
+|λ| = λ1 + λ2 + · · · its size, n(λ) = i≥1 (i − 1)λi , and mi (λ) the number of parts λj of λ
+equal to i, for all i ≥ 1. Let Ym be the set of partitions with length at most m. We identify
+Ym with a subset of Zm                                         m
+                         ≥0 in the natural way. For any ν ∈ Z≥0 , we let sort(ν) ∈ Ym be the
+weakly decreasing rearrangement of ν.
+   Let Sn be the symmetric group of permutations of the set {1, . . . , n} and let s1 , . . . , sn−1
+denote the simple transpositions si = (i, i + 1).
+                STABLE-LIMIT PARTIALLY SYMMETRIC MACDONALD FUNCTIONS                         3
+
+  The length ℓ(w) of a permutation w ∈ Sn is the minimal number of si occurring in an
+expression w = si1 · · · sir , and when r = ℓ(w) such an expression is called reduced. We
+            (n)
+will write w0 for the longest element of Sn and when context is clear we will simply write
+        (n)
+w0 = w0 .
+  For λ ∈ Yn , we define                     X
+                                    (n)
+                                   Sλ (t) :=      tℓ(w) ∈ K
+                                                   w∈(Sn )λ
+                                                                                    (ℓ(λ))
+where (Sn )λ is the stabilizer of λ in Sn . For λ ∈ Y, we set Sλ (t) = Sλ (t). In terms
+                              Q         i                   Q                     (n)
+of the Qt-factorials [m]t ! := 1≤i≤m 1−t
+                                     1−t
+                                          , we have Sλ (t) = i≥1 [mi (λ)]t ! and Sλ (t) = [n −
+ℓ(λ)]t ! i≥1 [mi (λ)]t !.
+   Let 1 be the indicator function given by 1(True) = 1 and 1(False) = 0.
+2.2. Demazure-Lusztig operators. Due to the differing conventions for the Demazure-
+Lusztig operators appearing across the literature, we will need to consider two versions of
+these operators Ti , Ti .
+Definition 2.1. For 1 ≤ i ≤ n − 1, define the Demazure-Lusztig operators
+                              Ti , Ti : K[x1 , . . . , xn ] → K[x1 , . . . , xn ]
+by
+                                     (t − 1)xi+1 f + (xi+1 − txi )si (f )
+                             Ti f :=
+                                                  xi+1 − xi
+                                     (t − 1)xi f + (xi+1 − txi )si (f )
+                             Ti f :=                                    .
+                                                 xi+1 − xi
+  The operators Ti satisfy the relations:
+    (1) (Ti − t)(Ti + 1) = 0
+    (2) Ti Tj = Tj Ti if |i − j| > 1
+    (3) Ti Ti+1 Ti = Ti+1 Ti Ti+1 .
+  The operators Ti satisfy the same relations as the Ti except for the quadratic relation. In
+this case we have (Ti − 1)(Ti + t) = 0.
+Remark 2.2. We may directly relate the operators Ti and Ti by the following:
+                                                Ti = tT−1
+                                                       i .
+
+   Whenever w = si1 · · · sir is a reduced expression, we (unambiguously) define Tw :=
+Ti1 · · · Tir and Tw := Ti1 · · · Tir .
+Definition 2.3. For 0 ≤ m ≤ n, we define the partial symmetrizers
+                                           X
+                                   Pm+ :=      Tw
+                                                      w∈Sm
+
+and
+                                            1        X
+                                                                  t( 2 )−ℓ(w) Tw
+                               (n)                                  m
+                              ǫn−m :=
+                                          [m]t ! w∈S
+                                                      (1n−m ,m)
+
+where Sm = hs1 , . . . , sm−1 i ⊂ Sn and S(1n−m ,m) = hsn−m+1 , . . . , sn−1 i ⊂ Sn .
+4                           DANIEL ORR AND MILO BECHTLOFF WEISING
+
+2.3. Diagrams. The diagram of a composition ν ∈ Zn≥0 is the subset dg(ν) ⊂ Z2 given by
+                               dg(ν) = {(i, j) | 1 ≤ i ≤ n, 1 ≤ j ≤ νi }.
+Elements of dg(ν) are called boxes of ν. We identify a composition with its diagram and
+write (i, j) ∈ ν to mean (i, j) ∈ dg(ν).
+  For  = (i, j) ∈ ν, we will use the leg and arm functions
+             ℓν () = νi − j,
+             aν () = #{1 ≤ r < i | j ≤ νr ≤ νi } + #{i < r ≤ n | j − 1 ≤ νr < νi }
+             ãν () = #{1 ≤ r < i | j ≤ νr ≤ νi } + #{i < r ≤ n | j ≤ νr < νi }.
+
+Definition 2.4 ([Goo23], [Lap22]). For λ ∈ Ym and γ ∈ Zk≥0 , define
+                            Y                            Y
+            j(λ|γ) (q, t) =   (1 − q ℓν () tãν ()+1 )   (1 − q ℓν ()+1 taν ()+1 ) ∈ K
+                              ∈λ−                            ∈γ
+
+where ν = (λ− , γ) and λ− is the weakly increasing rearrangement of λ. We view dg(λ− ) and
+dg(γ) as subsets of dg(ν) in the natural way.
+Example 2.5. Let λ = (2, 1) and γ = (1, 0). Then ν = (1, 2, 1, 0) and dg(ν) is
+
+
+
+
+where the dashed segment indicates a part of size 0. The values of aν () or ãν ()—depending
+on whether  ∈ λ− or  ∈ γ—are as follows:
+                                                   0
+                                                 0 2 2
+Using Definition 2.4, we have
+                     j(2,1|1,0) (q, t) = (1 − q 0 t1 )(1 − q 1 t3 )(1 − q 0 t1 )(1 − q 1 t3 ).
+2.4. Macdonald polynomials. We review here the relevant conventions and constructions
+regarding Macdonald polynomials we will use in this paper.
+Definition 2.6.    (1) For ν ∈ Zn≥0 , denote by Eν = Eν (x1 , . . . , xn ; q, t) ∈ K[x1 , . . . , xn ]
+       the nonsymmetric Macdonald polynomial of type GLn as defined in [HHL08].
+  (2) For λ ∈ Ym and γ ∈ Zk≥0 , let P(λ|γ) ∈ K[x1 , . . . , xn ]Sm be the partially symmetric
+       Macdonald polynomial as defined in [Goo23]:
+                                                         Pm+ E(λ|γ)
+                                            P(λ|γ) :=       (m)
+                                                                      .
+                                                          Sλ (t)
+        where (λ|γ) = (λ, γ) ∈ Zn≥0 and n = m + k. Further, let J(λ|γ) be the integral form
+        partially symmetric Macdonald polynomial as defined in [Goo23]:
+                                            J(λ|γ) := j(λ|γ) P(λ|γ)
+        where j(λ|γ) is the scalar of Definition 2.4.
+                 STABLE-LIMIT PARTIALLY SYMMETRIC MACDONALD FUNCTIONS                                             5
+
+  Let Λ be the ring of symmetric functions over K in the variables x1 , x2 , . . . . For n = m + k,
+we make the identification
+                          K[x1 , . . . , xn ]Sm ∼
+                                                = K[x1 , . . . , xm ]Sm ⊗ K[y1 , . . . , yk ]
+where xi 7→ xi for 1 ≤ i ≤ m and xm+i 7→ yi for 1 ≤ i ≤ k. Taking the graded inverse limit
+as m → ∞, we arrive at
+                                 Vk := Λ ⊗ K[y1 , . . . , yk ].
+We write elements of Vk as f (X|y), where X =Lx1 + x2 + · · · in plethystic notation and
+y = (y1 , . . . , yk ). We will sometimes write V• := k≥0 Vk .
+
+Definition 2.7. For λ ∈ Y and γ ∈ Zk≥0 , define
+                        P(λ|γ) (X|y) := lim P(λ|γ) (x1 , . . . , xm , y1, . . . , yk ) ∈ Vk
+                                              m→∞
+
+and similarly
+                       J(λ|γ) (X|y) := lim J(λ|γ) (x1 , . . . , xm , y1 , . . . , yk ) ∈ Vk .
+                                              m→∞
+
+   Here limm→∞ denotes the classical stable-limit (as opposed to a more subtle notion of
+limit discussed below). This definition is from [GO23], but it is based on the the following
+stability result proved in [Goo22] and [Lap22]:
+                 P(λ,0|γ) (x1 , . . . , xm , 0, y1, . . . , yk ) = P(λ|γ) (x1 , . . . , xm , y1 , . . . , yk ).
+
+2.5. Limit Cherednik operators. We will need to discuss a related construction of Ion–
+Wu [IW22] and a few results from [BW23]. We will see later in Corollary 4.4 precisely how
+these two constructions are related.
+Definition 2.8 ([IW22]). Define the space of almost symmetric functions
+                                  +
+                                 Pas := lim K[x1 , . . . , xk ] ⊗ Λ(xk+1 + . . .)
+                                              →
+
+where Λ(xk+1 +· · · ) is the K-algebra of symmetric functions in the variables xk+1 , . . . . Define
+                               +
+operators Yi for i ≥ 1 on Pas     as
+                                                         f tm ρY (m)
+                                                  Y1 := lim     1
+                                                             m
+
+       f denotes the t-adic stable-limit as defined Ion–Wu [IW22] and
+where lim
+       m
+
+                                                  Yi+1 := t−1 Ti Yi Ti
+for i ≥ 1, where
+           (m)     −1 −1
+   (1) Y1 := ωm       Tm−1 · · · T−1          −1 a1       am     a1       am−1
+                                  1 , where ωm (x1 · · · xm ) = x2 · · · xm    (qx1 )am
+   (2) ρ(x1 · · · xm ) = 1(a1 > 0)x1 · · · xm .
+          a1       am                  a1    am
+
+
+  The t-adic stable-limit of Ion–Wu [IW22] is a more general (weaker) notion of convergence
+than the classical stable-limit. The distinction between these two definitions will not be
+important for any of the arguments in this paper.
+Theorem 2.9 ([IW22]). The operators Yi for i ≥ 1 are well-defined and mutually commute.
+6                             DANIEL ORR AND MILO BECHTLOFF WEISING
+
+                                                +
+  The action of the operators Yi on Pas            are simultaneously diagonalizable with a basis
+generalizing the finite-rank nonsymmetric Macdonald polynomials. We say a composition
+µ = (µ1 , . . . , µk ) is reduced if µk 6= 0 and we call ℓ(µ) = k the length of µ. Given two vectors
+v ∈ Zn , w ∈ Zm we define v ∗ w ∈ Zn+m as the concatenation of v and w. If λ ∈ Y, we regard
+                            ℓ(λ)
+λ as an element of Z≥0 when using this notation.
+Definition 2.10 ([BW23]). For a reduced composition µ and a partition λ define the stable-
+limit nonsymmetric Macdonald function E       e(µ|λ) ∈ P + as
+                                                        as
+
+                                                 f ǫ(n) (Eµ∗λ∗0n−(ℓ(µ)+ℓ(λ)) (x1 , . . . , xn ; q −1 , t)).
+             e(µ|λ) (x1 , x2 , . . . ; q, t) := lim
+             E
+                                                n   ℓ(µ)
+
+    We will be using the following result later in this paper.
+                           e(µ|λ) are a Y -weight basis for P + . Further, we have that
+Theorem 2.11 ([BW23]). The E                                 as
+
+                                               e(µ|λ) ) = α
+                                          Y i (E                    e(µ|λ)
+                                                          e(µ|λ) (i)E
+where α
+      e(µ|λ) (i) is given explicitly by
+                                   (
+                                       q µi tℓ(µ)+ℓ(λ)+1−βµ∗λ (i)   if i ≤ ℓ(µ) and µi 6= 0
+                    α
+                    e(µ|λ) (i) =
+                                       0                            otherwise
+and
+               βν (i) := #{j : 1 ≤ j ≤ i, νj ≤ νi } + #{j : i < j ≤ ℓ(ν), νi > νj }.
+2.6. The algebra Bt,q and its geometric representation. Let At,q be the Carlsson-
+Mellit algebra, which is a Q(q, t)-algebra generated by orthogonal idempotents e0 , e1 , . . .
+and elements
+                         d− , d+ , d∗+ , T1 , T2 , . . . , y1 , y2 , . . . , z1 , z2 , . . .
+satisfying certain relations (see [CGM20], noting that we swap the roles q and t). Let
+Bt,q ⊂ At,q be the subalgebra generated by all generators of At,q except d∗+ .
+  For n ∈ Z≥0 and 0 ≤ k ≤ n, the parabolic flag Hilbert scheme PFHn,n−k is a smooth
+variety parametrizing flags of ideals
+                                     In ⊂ In−1 ⊂ · · · ⊂ In−k ⊂ C[x, y]
+such that dim C[x, y]/Is = s for all s and yIn−k ⊂ In . The space PFHn,n−k carries a natural
+action of T = (C× )2 with isolated fixed points given by chains as above in which each Is is a
+monomial ideal. These are naturally indexed as Iµ,w by pairs (µ, w), where µ is an integer
+partition of size n and w = (w1 , . . . , wk ) is a list T-weights corresponding to a horizontal
+strip of size k in µ such that the removal of boxes corresponding to w1 , . . . , wk in this order
+always leaves a partition. We refer to [CGM20] for more details, and to [GO23] for our
+specific conventions.
+   We identify Z[q ±1 , t±1 ] with KT (pt) (the representation ring of T), and K with its field of
+fractions. The localized equivariant K-groups KT (PFHn,n−k )loc are a finite-dimensional K-
+vector spaces, with bases given by the classes [Iµ,w ] of skyscraper sheaves
+                                                                          L over the fixed points
+Iµ,w described above (and depending on n and k). We will write Uk := n≥k KT (PFHn,n−k )loc
+for k ≥ 0. The spaces U• = (Uk )k≥0 affords the geometric representation of At,q [CGM20].
+                   STABLE-LIMIT PARTIALLY SYMMETRIC MACDONALD FUNCTIONS                                7
+
+The restriction of this action to Bt,q is given on the fixed-point bases as follows:
+                           d− · [Iµ,wx ] = [Iµ,w ]                                                   (3)
+                                            (t − 1)wi+1           wi − twi+1
+                            Ti · [Iµ,w ] =              [Iµ,w ] +            [Iµ,si (w) ]            (4)
+                                             wi − wi+1            wi − wi+1
+                             zi · [Iµ,w ] = wi [Iµ,w ]                                               (5)
+where Iµ,w ∈ PFHn,n−k , Ti has 1 ≤ i < k and zi has 1 ≤ i ≤ k. Further,
+                                                     X                k
+                                                                      Y
+                                                 k                      x − qwi
+                               d+ · [Iµ,w ] = −t              xdν,µ                    [Iν,xw ]      (6)
+                                                                      i=1
+                                                                            x − qtwi
+                                                     (ν,xw)
+
+where the summation runs over all indices (ν, xw) of T-fixed points in PFHn+1,n−k such that
+ν/µ is a single box skew shape, and dν,µ is a Macdonald-Pieri coefficient (see [CGM20]). We
+note that the yi are expressed in terms of d+ , d− and the Ti . In this paper, we will only need
+the formulas (3), (4), and (5).
+2.7. Polynomial representation. The spaces V• = (Vk )k≥0 afford the polynomial repre-
+sentation of Bt,q [CGM20]. On Vk = Λ ⊗ K[y1 , . . . , yk ], T1 , . . . , Tk−1 are the Demazure-
+Lusztig operators of Definition 2.1 in the variables y1 , . . . , yk , and y1 , . . . , yk are the corre-
+sponding multiplication operators by these variables. The operators d− : Vk+1 → Vk and
+d+ : Vk → Vk+1 are given by
+                                                               −1
+                              d− · f = −f (X − (t − 1)yk+1)Ω(−yk+1 X)                      −1
+                                                                                          yk+1
+
+                       d+ · F = T1 · · · Tk · f (X + (t − 1)yk+1),
+                                          P                        P
+where A(y)|ys = As for a formal series s∈Z As y s , and Ω(−yX) = i≥0 (−y)i ei (X) with ei
+denoting elementary symmetric functions.
+   We recall the necessary further details of this action and related results of [IW22] as
+they are needed below. Furthermore, as shown in [CGM20], there is a unique Bt,q -module
+                     ∼
+isomorphism Φ• : U• → V• such that Φ0 ([I∅,∅ ]) = 1 ∈ V0 .
+
+                                3. Conjecture and Proof Strategy
+  Here we review the main conjecture from [GO23] and outline the proof of its verification
+(Theorem 6.12) in this paper. For F (X|y; q, t) ∈ Vk we write F (X|y)∗ := F (X|y; q, t−1).
+Definition 3.1 (Goodbery-Orr [GO23]). For λ ∈ Y and γ ∈ Zk≥0 define the modified
+partially symmetric Macdonald function
+                                                                             ∗
+        e               n(sort(λ,γ))+|(λ|γ)|
+                                                   (k)
+                                               −ℓ(w0 ) (k)                X
+       H(λ|γ) (X|y) := t                      t        w0 Tw(k) J(λ|γ) −1    y     ∈ Vk
+                                                            0           t −1
+         (k)
+where w0       and Tw(k) are acting on the variables y1 , . . . , yk .
+                       0
+
+  As in [CGM20], for a T-fixed point Iµ,w let
+                                                                  ′
+                                        Hµ,w := (−1)|µ| tn(µ ) q n(µ) [Iµ,w ].
+We write φ for the bijection φ(µ, w) = (λ, γ) between the indexing sets of the T-fixed points
+Iµ,w of the PFHn,n−k and pairs (λ|γ) with λ ∈ Y and γ ∈ Zk≥0 defined in [CGM20] and
+detailed in [GO23]. In particular, if φ(µ, w) = (λ, γ), then µ = sort(γ1 + 1, . . . , γk + 1, λ).
+8                                 DANIEL ORR AND MILO BECHTLOFF WEISING
+
+Conjecture 3.2 ([GO23]). The Bt,q -module isomorphism Φ• : U• → V• maps each normal-
+                               e (λ|γ) (X|y) for φ(µ, w) = (λ|γ).
+ized fixed point class Hµ,w to H
+    In this paper, we confirm this conjecture:
+                                                                  e (λ|γ) .
+Main Theorem (Theorem 6.12). Whenever φ(µ, w) = (λ|γ), Φ(Hµ,w ) = H
+    The strategy for our proof of Theorem 6.12 proceeds as follows:
+      • First, in Proposition 4.2 we bridge the two perspectives on partially symmetrized
+        Macdonald polynomials showing that every partially symmetric Macdonald function
+        P(λ|γ) of Goodberry [Goo23] and Lapointe [Lap22] may be obtained via a transfor-
+        mation from a corresponding stable-limit nonsymmetric Macdonald function E                e(µ|ν) .
+        Then, using a remarkable identity (4.5) of Concha-Lapointe [CL23], we show in
+        Proposition 4.7 that applying Ion–Wu’s isomorphism Ξ to each E         e(γ +1,...,γ +1|λ) yields
+                                                                                  1         k
+
+        exactly H  e (λ|γ) up to explicit non-zero scalars.
+      • Next, in Theorem 5.4 we use the spectral theory of the limit Cherednik operators
+        Yi and an operator ∆p1 to verify that each Φ(Hµ,w ) must agree with H            e (λ|γ) up to a
+        non-zero scalar βµ,w . In particular, we use the fundamental fact that the polynomial
+        representation of Bext t,q has simple joint ∆p1 , zi spectrum [GGS23] and the correspond-
+        ing statement about the stable-limit DAHA polynomial representation [BW23].
+      • In order to show that these scalars βµ,w = 1, we verify in Lemma 6.6 that the action
+        of d− on both the geometric side, Hµ,w , and the algebraic side, H      e (λ|γ) , agree. From
+        here in Proposition 6.11 we use as a base case for an induction argument the fact that,
+        due to Carlsson–Gorsky–Mellit [CGM20], Φ(Hµ,∅ ) = H          e µ . This argument explicitly
+        requires the exact normalization of H      e (λ|γ) from [GO23] and the fact from [GO23]
+        that the action of the Demazure-Lusztig operators Ti on both the Hµ,w and the
+        He (λ|γ) align up to the bijection φ(µ, w) = (λ|γ). This directly implies Theorem 6.12
+        verifying Conjecture 3.2.
+Example 3.3. We have φ((2, 1), (q)) = (1|1) and
+                                 e (1|1) = (t2 − q)e1 y1 + h2 + te2 ∈ Λ ⊗ K[y1 ].
+                                 H
+where ei , hi are the elementary and complete symmetric functions. One may directly compute
+that
+                              e (1|1) = s3 + (q + t)s(2,1) + qts(1,1,1) = H
+                         d− · H                                           e (2,1)
+                                     e (2,1) is the modified Macdonald function.
+where sλ are the Schur functions and H
+
+                                            4. Aligning Conventions
+  In this section, we will align the conventions between the partially symmetric Macdonald
+functions of [Goo23] and the stable-limit nonsymmetric Macdonald polynomials of [BW23].
+Lemma 4.1. For any λ ∈ (Z≥0 )m and γ ∈ (Z≥0 )k , we have
+       E(γ1 +1,...,γk +1,λ1 ,...,λm ) (x1 , . . . , xk , xk+1 , . . . xk+m )
+                      = q γ1 +···+γk x1 · · · xk E(λ1 ,...,λm ,γ1 ,...,γk ) (xk+1 , . . . , xk+m , q −1 x1 , . . . , q −1 xk ).
+                       STABLE-LIMIT PARTIALLY SYMMETRIC MACDONALD FUNCTIONS                                                     9
+
+Proof. Repeatedly apply the Knop-Sahi relation (in the conventions of [HHL08])
+                            E(µn +1,µ1 ,...,µn−1 ) (x1 , . . . , xn ) = q µn x1 Eµ (x2 , . . . , xn , q −1 x1 )
+which holds for any µ ∈ (Z≥0 )n .                                                                                               
+Proposition 4.2. For any λ ∈ Y and γ ∈ (Z≥0 )k ,
+                     i (λ)
+                  Y mY
+                                            e(γ1 +1,...,γ +1|λ) (qx1 , . . . , qxk , xk+1 , xk+2 , . . . ; q −1 , t)
+                                (1 − tj )−1 E            k
+                   i    j=1
+
+                                    = q γ1 +···+γk x1 · · · xk P(λ|γ) (xk+1 + · · · |x1 , . . . , xk ).
+Proof. Choose any m such that λ ∈ Ym . Starting from Lemma 4.1, we apply the normalized
+                     +
+                   P[k+1,...,k+m]
+symmetrizer             (m)           to both sides and then take the limit as m → ∞.
+                       Sλ     (t)
+   On the left-hand side, we obtain
+       +
+     P[k+1,...,k+m]
+           (m)
+                       E(γ1 +1,...,γk +1,λ1 ,...,λm ) (x1 , . . . , xk , xk+1 , . . . xk+m )
+        Sλ (t)
+                               [m]t !        (m+k)
+                   =                        ǫk     (E(γ1 +1,...,γk +1,λ1 ,...,λm ) (x1 , . . . , xk , xk+1 , . . . xk+m )),
+                        Sλ (t)[m − ℓ(λ)]t !
+which limits to
+               1      e(γ +1,...,γ +1|λ) (x1 , . . . , xk , xk+1 , xk+2 , . . . ; q −1 , t)
+                      E
+        (1 − t) Sλ (t) 1
+               ℓ(λ)               k
+
+
+                                  i (λ)
+                               Y mY
+                         =                             e(γ +1...,γ +1|λ) (x1 , . . . , xk , xk+1 , xk+2 , . . . ; q −1 , t).
+                                           (1 − tj )−1 E  1       k
+                               i≥1 j=1
+
+   On the other hand,
+        +
+      P[k+1,...,k+m]
+          (m)
+                     (q γ1 +...+γk x1 · · · xk E(λ1 ,...,λm ,γ1 ,...,γk ) (xk+1 , . . . , xk+m , q −1 x1 , . . . , q −1 xk ))
+        Sλ (t)
+                  = q γ1 +...+γk x1 · · · xk P(λ|γ) (xk+1 , . . . , xk+m |q −1 x1 , . . . , q −1 xk ),
+which limits to q γ1 +...+γk x1 · · · xk P(λ|γ) (xk+1 + . . . |q −1x1 , . . . , q −1 xk ).
+  By substituting xi 7→ qxi for 1 ≤ i ≤ k, we obtain the result.                                                                
+Definition 4.3. For k ≥ 0, let Xk := xk+1 + xk+2 + . . . . Define the map
+                                            Ξk : K[x1 , . . . , xk ]+ ⊗ Λ[Xk ] −→ Vk ,
+where K[x1 , . . . , xk ]+ = x1 · · · xk K[x1 , . . . , xk ], by the formula
+                                                                                 
+                                a1 +1       ak +1                 a1    ak     X
+                           Ξk (x1 · · · xk F [Xk ]) = y1 · · · yk F                 .
+                                                                              t−1
+Corollary 4.4. For any λ ∈ Y and γ ∈ (Z≥0 )k , we have
+                                                                                                            
+            X                     j(λ|γ) q −(γ1 +···+γk )            e(γ +1,...γ +1|λ) (x1 , . . . ; q −1 , t)
+  J(λ|γ)       y1 , . . . , yk = Q Qmi (λ)                  sh ◦ Ξk E   1
+           t−1                    i≥1     j=1 (1 − t )
+                                                          j                     k
+
+
+
+where sh : Vk → Vk is the map
+                                                        
+                                            sh f (X | y) = f (X | qy1 , . . . , qyk ).
+10                               DANIEL ORR AND MILO BECHTLOFF WEISING
+
+Proof. We compute using Proposition 4.2 and the definition of Ξk that
+                        
+                  X
+        J(λ|γ)         y
+                 t−1
+                                                            
+         = Ξk x1 · · · xk J(λ|γ) xk+1 + · · · x1 , . . . , xk
+                                                                   
+         = Ξk j(λ|γ) x1 · · · xk P(λ|γ) xk+1 + · · · x1 , . . . , xk
+                                                                                                                    !
+                       j(λ|γ) q −(γ1 +···+γk ) e
+            = Ξk Q Qmi (λ)                       E(γ1 +1,...,γk +1|λ) (qx1 , . . . , qxk , xk+1 , . . . ; q −1 , t)
+                               j=1 (1 − t )
+                                              j
+                       i≥1
+
+                j(λ|γ) q −(γ1 +···+γk )                                                                           
+            = Q Qmi (λ)                   Ξk E   e(γ +1,...,γ +1|λ) (qx1 , . . . , qxk , xk+1 , . . . ; q −1 , t)
+                                                    1         k
+                        j=1 (1 − t )
+                                        j
+                i≥1
+
+                j(λ|γ) q −(γ1 +···+γk )                                                         
+            = Q Qmi (λ)                   sh ◦ Ξk E    e(γ +1,...,γ +1|λ) (x1 , . . . ; q −1, t) .                      
+                                                           1        k
+                        j=1 (1 − t )
+                                        j
+                i≥1
+
+     The following identity of Concha–Lapointe is crucial in connecting [GO23] with [BW23].
+Theorem 4.5 ([CL23]). For any partition λ and γ ∈ (Z≥0 )k , we have
+                                                       (k)
+                                                             (k)
+           sh P(λ|γ) (X | y)† = q γ1 +···+γk tinv(γ)−ℓ(w0 ) w0 Tw(k) P(λ|γ) (X | y)
+                                                                                       0
+
+where † is the involution on coefficients sending q and t to their inverses, and
+                                            inv(γ) = |{i < j : γi > γj }|.
+Example 4.6. For (λ|γ) = (∅|1, 0), we have
+                                                         1−t
+                                                P(∅|1,0) =      e1 (X) + y1
+                                                        1 − qt2
+                                                         1 − t−1
+                                     sh (P(∅|1,0) )† =               e1 (X) + qy1
+                                                        1 − q −1 t−2
+                                                          t−1 1 − t
+                                                      = −1 −2            e1 (X) + qy1
+                                                        q t 1 − qt2
+                                                            1−t
+                                                      = qt         e1 (X) + qy1
+                                                           1 − qt2
+                                     (2)                    1−t
+                           q 1 t1−1 w0 Tw(2) P(∅|1,0) = qt         e1 (X) + qy1 .
+                                         0                 1 − qt2
+     Now we complete our match between [GO23] and [BW23].
+Proposition 4.7. For any λ ∈ Y and γ ∈ (Z≥0 )k , we have
+                               Q Qmi (λ)                                                          ∗
+                                                (1 − tj )      (k)               X
+      e(γ +1,...,γ +1|λ) ) =
+ Ξk ( E
+                                  i≥1     j=1
+                                                              w0 Tw(k) J(λ|γ) −1    y1 , . . . , yk     .
+         1                                              (k)
+                  k
+                             j(λ|γ) (q, t−1 )tinv(γ)−ℓ(w0 )        0           t −1
+                                                                                                        (7)
+Proof. Using the definition of J(λ|γ) , we can write Corollary 4.4 as
+                                            Q Qmi (λ) (1 − tj )        
+                                                                            X
+                                                                                                  
+ Ξk E e(γ +1,...γ +1|λ) (x1 , . . . ; q , t) =
+                                       −1      i≥1   j=1
+                                                                  P(λ|γ)        −1             −1
+                                                                               q y1 , . . . , q yk .
+         1       k
+                                                 q −(γ1 +···+γk )          t−1
+                 STABLE-LIMIT PARTIALLY SYMMETRIC MACDONALD FUNCTIONS                                 11
+
+By sending q 7→ q −1 we find
+                              Q Qmi (λ) (1 − tj )          
+                                                                X
+                                                                                             
+       Ξk E e(γ1 +1,...γ +1|λ) =  i≥1    j=1
+                                                      P(λ|γ)                             −1
+                                                                    qy1 , . . . , qyk ; q , t
+                        k
+                                      q γ1 +···+γk             t−1
+                                 Q Qmi (λ)         j                             † !∗
+                                  i≥1    j=1 (1 − t )                X
+                               =                      sh P(λ|γ) −1             y         .
+                                      q γ1 +···+γk                 t −1
+Finally, the Concha–Lapointe identity of Theorem 4.5 gives
+                      Q Qmi (λ) (1 − tj )                                 (k)
+                                                                                                
+                                                                                                    X
+                                                                                                         ∗
+     e                      i≥1      j=1                γ1 +···+γk inv(γ)−ℓ(w0 ) (k)
+Ξk E(γ1 +1,...γk +1|λ) =                              q            t             w0 Tw(k) P(λ|γ) −1    y
+                                 q γ1 +···+γk                                          0          t −1
+                         Q Qmi (λ)                j                                 ∗
+                            i≥1      j=1 (1 − t )        (k)                   X
+                       =            (k)
+                                                      w0 Tw(k) P(λ|γ) −1            y
+                              tℓ(w0 )−inv(γ)                    0           t −1
+                           Q Qmi (λ)                j                                    ∗
+                               i≥1      j=1 (1 − t )           (k)                 X
+                       =                      (k)
+                                                             w0 Tw(k) J(λ|γ) −1          y      .        
+                         j(λ|γ) (q, t−1 )tℓ(w0 )−inv(γ)              0           t −1
+
+                                      5. Aligning Spectra
+5.1. z-Action. We recall the definition of the z operators on the V• space.
+Definition 5.1 (Carlsson–Gorsky–Mellit [CGM20]). Define the operators z1 , . . . , zk : Vk →
+Vk by
+                                                                   1
+                                 T−1             −1
+                                    1 · · · Tk−1 zk F := −1            [d∗ , d− ]
+                                                               t −1 +
+and for 1 ≤ i ≤ k − 1
+                                                zi := tT−1
+                                                        i zi+1 Ti
+                                                                    −1
+
+where
+                                              (t − 1)yi         yi+1 − tyi
+                                Ti F :=                 F+                    si (F )
+                                              yi+1 − yi          yi+1 − yi
+                                                          1
+and d∗+ is the operator on the larger spaces y1 ···y         k
+                                                                Vk → y1 ···y1 k+1 Vk+1 given by
+                                                
+           ∗       1                                    −q −1 t−1
+          d+               F (X|y1 , . . . , yk ) :=                 F (X + q(t − 1)y1 |y2, . . . , yk ).
+               y1 · · · yk                             y1 · · · yk+1
+  Note that even though the operator d∗+ does not map Vk → Vk+1, the commutator [d∗+ , d− ]
+does give a well defined map Vk → Vk . Therefore, the operators z1 , . . . , zk are well defined
+as well. We have corrected a minor sign error from [CGM20] in the below formula.
+Proposition 5.2 ([CGM20]). For any F = F (X | y1 , . . . , yk ) ∈ Vk ,
+    T−1       −1                                                                −1      −1
+     1 · · · Tk−1 zk F = F (X + (t − 1)qy1 − (t − 1)u | y2 , . . . , yk , u) Ω(u qy1 − u X)|u0
+
+where Ω is the plethystic exponential
+                                                    X
+                                         Ω(X) :=          hn (X)
+                                                    n≥0
+
+and |ui is the operator of taking the coefficient of ui .
+  We require the following technical lemma.
+12                              DANIEL ORR AND MILO BECHTLOFF WEISING
+
+Lemma 5.3.
+
+                          Tm−1 · · · Tk (xbk ) = hb (xm + (1 − t)(xk + . . . + xm−1 ))
+
+Proof. Base cases: If m = 0 then
+
+                                                    xbk = hb (xk ).
+
+If m = 1 then using the fact that hj (−xk ) = (−1)j ej (xk ) = 0 for all j ≥ 2 we see that
+
+Tk (xbk ) = xbk+1 + (1 − t)(xbk + xb−1                  b−1
+                                   k xk+1 + . . . + xk xk+1 )
+
+         = (xbk + xkb−1 xk+1 + . . . + xk xb−1    b             b−1
+                                           k+1 + xk+1 ) − txk (xk   + xb−2                  b−2    b−1
+                                                                       k xk+1 + . . . + xk xk+1 + xk+1 )
+         = hb (xk + xk+1 ) + hb−1 (xk + xk+1 )h1 (−txk )
+             b
+             X
+         =         hi (xk + xk+1 )hb−i (−txk )
+             i=0
+         = hb (xk + xk+1 − txk )
+         = hb (xk+1 + (1 − t)xk ).
+
+     Now by induction we see:
+
+
+         Tm+1 (Tm · · · Tk (xbk )) = Tm+1 (hb [xm+1 + (1 − t)(xk + . . . + xm )])
+                                                   b
+                                                                                                !
+                                                   X
+                                     = Tm+1              xim+1 hb−i [(1 − t)(xk + . . . xm )]
+                                                   i=0
+                                         b
+                                         X
+                                     =         hi [xm+2 + (1 − t)xm+1 ]hb−i [(1 − t)(xk + . . . + xm )]
+                                         i=0
+                                     = hb [xm+2 + (1 − t)xm+1 + (1 − t)(xk + . . . + xm )]
+                                     = hb [xm+2 + (1 − t)(xk + . . . + xm+1 )].                           
+
+  The following result is implicit in [IW22] but we include its proof for the sake of complete-
+                   f m denotes the t-adic stable-limit as defined Ion–Wu [IW22].
+ness. Recall that lim
+
+Proposition 5.4 ([IW22]). For all k ≥ 0 and F (Xk |x1 , . . . , xk ) ∈ K[x1 , . . . , xk ] ⊗ Λ(Xk ),
+
+             Y1 T1 · · · Tk−1(x1 · · · xk F (Xk |x1 , . . . , xk ))
+              = qtk x1 · · · xk F (Xk + qx1 − u|x2 , . . . , xk , u)Ω(u−1(qx1 + (1 − t)Xk ))|u0 .
+
+
+Proof. In what follows we let W = w1 + w2 + . . . be another set of free variables. The
+idea in the following calculation is to evaluate the action of Y1 T1 · · · Tk−1 on a sufficiently
+general element x1a1 +1 · · · xakk +1 Ω(W Xk ) of Vk and therefore conclude the result. By direct
+                   STABLE-LIMIT PARTIALLY SYMMETRIC MACDONALD FUNCTIONS                             13
+
+computation using the above lemma 5.3:
+
+Y1 T1 · · · Tk−1(xa11 +1 · · · xakk +1 Ω(W Xk ))
+   f m tm ρω −1 T−1 · · · T−1 (xa1 +1 · · · xak +1 Ω(W (xk+1 + . . . + xm )))
+= lim       m    m−1       k    1            k
+   f m tm ρ(qtk−m X1 )ω −1T−1 · · · T−1 (xa1 +1 · · · xak Ω(W (xk+1 + . . . + xm )))
+= lim                  m   m−1       k    1            k
+   f m tm (qtk−m X1 )ω −1 Tm−1 · · · Tk (xa1 +1 · · · xak Ω(W (xk+1 + . . . + xm )))
+= lim                 m                   1            k
+                                              +1
+   f m qtk X1 ω −1 xa1 +1 · · · x k−1 Tm−1 · · · Tk (xak Ω(W (xk+1 + . . . + xm )))
+                                     a
+= lim          m 1               k−1                  k
+                                         +1
+   f m qtk X1 X a1 +1 · · · X k−1 ω −1 Tm−1 · · · Tk (xak Ω(W (xk+1 + . . . + xm )))
+                                 a
+= lim          2             k     m                   k
+                                         +1
+   f m qtk X1 X a1 +1 · · · X k−1 ω −1 Ω(W (Xk + . . . + Xm ))Tm−1 · · · Tk (xak Ω(−xk W ))
+                                 a
+= lim          2             k     m                                          k
+                                         +1
+   f m qtk X1 X a1 +1 · · · X k−1 Ω(W (qX1 + Xk+1 + . . . + Xm ))ω −1Tm−1 · · · Tk (xak Ω(−xk W ))
+                                 a
+= lim          2             k                                    m                  k
+                                         +1
+   f m qtk X1 X a1 +1 · · · X k−1 Ω(W (qX1 + Xk+1 + . . . + Xm ))
+                                 a
+= lim          2             k
+                                                    !
+        X
+× ωm−1
+            (Tm−1 · · · Tk )(xakk +ℓ )(−1)ℓ eℓ (W )
+           ℓ≥0
+                                         +1
+   f m qtk X1 X a1 +1 · · · X k−1 Ω(W (qX1 + Xk+1 + . . . + Xm ))
+                                 a
+= lim          2             k
+                                                                   !
+        X
+    −1
+× ωm        hak +ℓ (xm + (1 − t)(xk + . . . + xm−1 ))(−1)ℓ eℓ (W )
+           ℓ≥0
+                                         +1
+   f m qtk X1 X a1 +1 · · · X k−1 Ω(W (qX1 + Xk+1 + . . . + Xm ))
+                                 a
+= lim           2            k
+  X
+×     hak +ℓ (qx1 + (1 − t)(xk+1 + . . . + xm ))(−1)ℓ eℓ (W )
+    ℓ≥0
+                       a    +1
+= qtk x1 xa21 +1 · · · xkk−1 uak Ω(W (qx1 + Xk ))Ω(u−1 (qx1 + (1 − t)Xk ))Ω(−uW )|u0
+                            a
+= qtk x1 · · · xk xa21 · · · xkk−1 uak Ω(W (Xk + qx1 − u))Ω(u−1 (qx1 + (1 − t)Xk ))|u0 .
+
+This implies the result.                                                                            
+
+  The following is a special case of a result of Ion–Wu [IW22].
+
+Corollary 5.5 ([IW22]). For all k ≥ 0 and 1 ≤ i ≤ k
+
+                                                   Ξk Yi = qtzi Ξk .
+
+Proof. On one hand:
+
+            Ξk Y1 T1 · · · Tk−1(x1 · · · xk F (Xk |x1 , . . . , xk ))
+             = Ξ• qtk x1 · · · xk F (Xk + qx1 − u|x2 , . . . , xk , u)Ω(u−1(qx1 + (1 − t)Xk ))|u0
+                                                           
+                          X
+                 k
+             = qt F             + qy1 − u|y2, . . . , yk , u Ω(u−1 (qy1 − X))|u0 .
+                       t−1
+14                             DANIEL ORR AND MILO BECHTLOFF WEISING
+
+On the other hand:
+             T−1       −1
+              1 · · · Tk−1 zk Ξk (x1 · · · xk F (Xk |x1 , . . . , xk ))
+                                                              
+                 −1        −1             X
+             = T1 · · · Tk−1zk F               y1 , . . . , yk
+                                       t−1
+                                                                             
+                      X + (t − 1)qy1 − (t − 1)u
+             =F                                            y2 , . . . , yk , u Ω(u−1 qy1 − u−1X)|u0
+                                  t−1
+                                                            
+                       X
+             =F             + qy1 − u y2 , . . . , yk , u Ω(u−1 (qy1 − X))|u0 .
+                      t−1
+
+Therefore,
+                          Ξk Y1 T1 · · · Tk−1 = qtk T−1       −1
+                                                     1 · · · Tk−1 zk Ξk .
+But using the affine Hecke algebras relations
+                                    qtk T−1       −1
+                                         1 · · · Tk−1 zk = qtz1 T1 · · · Tk−1 .
+
+Therefore, since
+                                                    Ξk T i = T i Ξk
+for all 1 ≤ i ≤ k − 1 we find that
+                                                  Ξ• Y1 = qtz1 Ξ•
+which implies
+                                                   Ξ• Yj = qtzj Ξ•
+for all 1 ≤ j ≤ k.                                                                                             
+   We may explicitly compute the action of the zi operators on both sides of 7 from Propo-
+sition 4.7.
+Corollary 5.6. For all λ ∈ Y, γ ∈ Zk≥0 , and 1 ≤ i ≤ k,
+                                             ∗
+               (k)                  X
+         zi w0 Tw(k) J(λ|γ) −1               y
+                    0            t −1
+                                                                                   ∗
+             γi #(j<i|γj >γi )+#(i<j|γi ≤γj )+#(j|γi <λj )    (k)               X
+          =q t                                               w0 Tw(k) J(λ|γ) −1    y     .
+                                                                  0           t −1
+Proof. From Proposition 4.7 we know that
+                                                                                ∗
+                                                       (k)
+                        e(γ +1,...,γ +1|λ) ) = c(λ|γ) w0 T (k) J(λ|γ)     X
+                   Ξk ( E  1
+                                                                                y
+                                    k                      w0           t−1 − 1
+where
+                                                                            i (λ)
+                                                             (k)         Y mY
+                                                 −1 −1 ℓ(w0 )−inv(γ)
+                         c(λ|γ) = j(λ|γ) (q, t ) t                                   (1 − tj ).
+                                                                           i   j=1
+                                  e(γ +1,...,γ +1|λ) is a Y1 , . . . , Yk eigenvector with
+From [BW23, Cor. 38] we know that E  1        k
+
+                   e(γ1 +1,...,γ +1|λ) ) = q γi +1 tℓ(γ)+ℓ(λ)+1−β(γ1 +1,...,γk +1,λ) (i) E
+              Y i (E                                                                     e(γ1 +1,...,γ +1|λ)
+                                k                                                                     k
+
+where for any composition α
+                             βα (i) = #(j ≤ i|αj ≤ αi ) + #(i < j|αi > αj ).
+                 STABLE-LIMIT PARTIALLY SYMMETRIC MACDONALD FUNCTIONS                                  15
+
+Therefore,
+                                                         ∗
+                          (k)                    X
+              qtzi       w0 Tw(k) J(λ|γ)        −1
+                                                    y
+                                 0             t −1
+               = qtzi c−1        e
+                       (λ|γ) Ξk (E(γ1 ,...,γk |λ) )
+
+               = c−1             e
+                  (λ|γ) qtzi Ξk (E(γ1 ,...,γk |λ) )
+
+               = c−1           e
+                  (λ|γ) Ξk Yi (E(γ1 ,...,γk |λ) )
+                              γi +1 ℓ(γ)+ℓ(λ)+1−β(γ1 +1,...,γk +1,λ) (i) e
+               = c−1
+                  (λ|γ) Ξk (q      t                                    E(γ1 ,...,γk |λ) )
+               = q γi +1 tℓ(γ)+ℓ(λ)+1−β(γ1 +1,...,γk +1,λ) (i) c−1        e
+                                                                (λ|γ) Ξk (E(γ1 ,...,γk |λ) )
+                                                                                               ∗
+                   γi +1 ℓ(γ)+ℓ(λ)+1−β(γ1 +1,...,γk +1,λ) (i)       (k)                      X
+               =q        t                                        w0 Tw(k) J(λ|γ) −1           y
+                                                                          0               t −1
+and by dividing both sides by qt
+                                                     ∗
+                    (k)                    X
+              zi w0 Tw(k) J(λ|γ) −1                  y
+                          0           t −1
+                                                                                ∗
+                  γi ℓ(γ)+ℓ(λ)−β(γ1 +1,...,γk +1,λ) (i)    (k)               X
+               =q t                                       w0 Tw(k) J(λ|γ) −1    y     .
+                                                               0           t −1
+Lastly, by a simple calculation we find that
+    ℓ(γ) + ℓ(λ) − β(γ1 +1,...,γk +1,λ) (i) = #(j < i|γj > γi ) + #(i < j|γi ≤ γj ) + #(j|γi < λj )
+finishing the proof.                                                                                   
+                                                                                 e (λ|γ) (X|y)
+   Recall the definition of the modified partially symmetric Macdonald functions H
+in Definition 3.1.
+             e (λ|γ) is a z1 , . . . , zk weight vector with
+Theorem 5.7. H
+                             e (λ|γ) = q γi t#(j|λj ≥γi +1)+#(j>i|γj =γi )+#(j|γj >γi ) H
+                          zi H                                                          e (λ|γ) .
+             e (λ|γ) is a scalar multiple of
+Proof. Since H
+                                                         ∗
+                                    (k)               X
+                                   w0 Tw(k) J(λ|γ) −1    y
+                                         0          t −1
+                                e (λ|γ) is a z1 , . . . , zk weight vector with
+we know from Corollary 5.6 that H
+                             e (λ|γ) = q γi t#(j<i|γj >γi )+#(i<j|γi ≤γj )+#(j|γi <λj ) H
+                          zi H                                                          e (λ|γ) .
+It is easy to verify that
+                            #(j < i|γj > γi ) + #(i < j|γi ≤ γj ) + #(j|γi < λj )
+                         = #(j|λj ≥ γi + 1) + #(j > i|γj = γi ) + #(j|γj > γi )
+completing the proof.                                                                                  
+  We conclude this section with the following:
+                                         e (λ|γ) ∈ Vk has the same z1 , . . . , zk weight as
+Corollary 5.8. Whenever φ(µ, w) = (λ|γ), H
+Hµ,w ∈ Uk .
+16                         DANIEL ORR AND MILO BECHTLOFF WEISING
+
+5.2. ∆ Operators and Simple Spectrum. González–Gorsky–Simental introduced the
+following extension Bext
+                     q,t of the algebra Bq,t . Recall that we have swapped the roles of q, t
+compared to [GGS23] and [CGM20].
+Definition 5.9 (González–Gorsky–Simental [GGS23]). The algebra Bext  t,q is generated by Bt,q
+along with loops at each vertex k ≥ 0 labelled by ∆pm for all m ≥ 1 such that
+     • [∆pm , ∆pℓ ] = 0
+     • [∆pm , Ti ] = [∆pm , zi ] = [∆pm , d− ] = 0
+     • [∆pm , d+ ] = zm
+                      1 d+ .
+
+     The next result is a fundamental fact regarding the polynomial representation of Bt,q .
+Lemma 5.10 ([GGS23]). The Bt,q polynomial representation V• is generated by 1 ∈ V0 .
+  Using Lemma 5.10, González–Gorsky–Simental show that we may uniquely define an
+extended action of Bext
+                    t,q on V• agreeing with the previous action of Bt,q .
+
+Proposition 5.11 ([GGS23]). We can uniquely define operators ∆pm for all m ≥ 1 on the
+polynomial representation V• by setting ∆pm (1) = 0 and extending via Lemma 5.10 using the
+relations in Definition 5.9.
+  Proposition 5.11 endows the space V• with the structure of a Bext
+                                                                t,q -module. These operators
+correspond via the Bt,q isomorphism Φ−1 : V• → U• to the operators given by
+                                   ∆pm Hµ,w = Bµ (tm , q m )Hµ,w                               (8)
+                    P
+where Bµ (t, q) := (i,j)∈µ ti q j is the diagram sum of µ. We could have equivalently defined
+operators ∆em for all m ≥ 1 since both {pm }m≥1 and {em }m≥1 generate Λq,t algebraically.
+The operators ∆em correspond to the geometric operators on the localized K-theory of each
+PFHn,n−k by the m-th exterior power Λm V of the tautological bundle V whose fibers are
+V −1 ([I (n) ⊂ . . . ⊂ I (n−k) ]) = C[x, y]/I (n) . This means that
+                                  ∆em Hµ,w = em (Bµ (t, q))Hµ,w .
+  We will now look at the corresponding family of ∆-operators on the space of almost
+                     +
+symmetric functions Pas .
+                                                                             (n)
+Definition 5.12 ([BW23]). For any F ∈ Λ and n ≥ 1 define the operator ΨF on K[x1 , . . . , xn ]
+as
+                                    (n)             (n)
+                                  ΨF := F (tn Y1 , . . . , tn Yn(n) ).
+     For ν ∈ Y we denote
+                                                    ∞
+                                                    X
+                                     κν (q, t) :=         q νi ti ∈ K.
+                                                    i=1
+
+                                                                      f n along with detailed
+ The next result follows by using the properties of the Ion–Wu limit lim
+DAHA computations.
+                                                                            (n)
+Theorem 5.13 ([BW24]). For any F ∈ Λ the sequence of operators ΨF converges to an
+                   +
+operator F (∆) on Pas .
+                                                                  +
+     Here we recall many of the properties of the ∆-operators on Pas .
+                 STABLE-LIMIT PARTIALLY SYMMETRIC MACDONALD FUNCTIONS                                   17
+
+Theorem 5.14 ([BW24]). The following properties hold:
+    • F (∆)(Ee(µ|λ) ) = F (κsort(µ∗λ) (q, t))E
+                                             e(µ|λ)
+    • [F (∆), Yi ] = 0
+    • [F (∆), Ti ] = 0
+    • [F (∆), G(∆)] = 0
+      eF (∆) = F (∆ + (q −1 − 1)Y1 )e
+    • π                                   π
+                                                +
+    • The joint Y -p1 (∆) spectrum on Pas          is simple.
+  It will be convenient to renormalize these ∆-operators in order to align their action with
+their geometric analogues.
+                                                                +
+Definition 5.15 ([BW24]). For m ≥ 1 define the operator ∆pm on Pas as
+                                                          
+                                 1                     1
+                      ∆pm := m         t−m pm (∆) −          .
+                              q −1                  1 − tm
+  Importantly, the operators F (∆), and therefore ∆pm , restrict to operators on each subspace
+                                                                                  e(µ|λ) basis.
+K[x1 , . . . , xk ]+ ⊗ Λ(Xk ). Furthermore, these operators act diagonally on the E
+Lemma 5.16 ([BW24]).
+                                                                             !
+                                        X  q m sort(µ∗λ)i − 1 
+                           e(µ|λ) =
+                       ∆pm E                                       tm(i−1)       e(µ|λ)
+                                                                                 E                     (9)
+                                        i≥1
+                                                   qm − 1
+  The operators ∆pm on each subspace K[x1 , . . . , xk ]+ ⊗ Λ(Xk ) ⊂ Pas
+                                                                      +
+                                                                         exactly intertwine the
+corresponding operators on each Vk .
+Theorem 5.17 ([BW24]). For all k ≥ 0
+                                           Ξk ∆pm = ∆pm Ξk .
+  From here we immediately see the following result:
+Corollary 5.18 ([BW23],[BW24]). For all k ≥ 0 the Y1 , . . . , Yk , ∆p1 spectrum on K[x1 , . . . , xk ]+ ⊗
+Λ(Xk ) is simple. Furthermore, for all m ≥ 1
+                           ∆pm E e(µ|λ) = Bsort(µ∗λ) (tm , q m )E
+                                                                e(µ|λ) .
+  From (8) and (9) along with Corollary 5.19, we conclude the following result.
+Theorem 5.19. Whenever φ(µ, w) = (λ|γ), H   e (λ|γ) ∈ Vk has the same z1 , . . . , zk , ∆p1 weight
+as Hµ,w ∈ Uk .
+                                                         e (λ|γ) agree whenever φ(µ, w) = (λ|γ)
+   The fact that the joint ∆p1 , zi -weights of Hµ,w and H
+is sufficient to characterize the images Φ(Hµ,w ) up to nonzero scalars.
+Corollary 5.20. There exist scalars βµ,w 6= 0 such that whenever φ(µ, w) = (λ|γ),
+                                 Φ(Hµ,w ) = βµ,w He (λ|γ) .
+Proof. The map Φ is a Bext    t,q -module isomorphism. Therefore, we know that the images
+Φ(Hµ,w ), which must be nonzero, are joint ∆p1 , zi -weight vectors. From Theorem 5.19, we
+know that whenever φ(µ, w) = (λ|γ), H      e (λ|γ) has the same z1 , . . . , zk , ∆p1 -weight. Since the
+joint ∆p1 , zi -weight spaces of U• and V• are simple, it must be that Φ(Hµ,w ) = βµ,w H        e (λ|γ) for
+some βµ,w 6= 0 whenever φ(µ, w) = (λ|γ).
+                                                                                                         
+18                           DANIEL ORR AND MILO BECHTLOFF WEISING
+
+                              6. Aligning d− and Main Theorem
+  In this section, we will show that each of the coefficients βµ,w = 1 and in doing so prove
+our main result, Theorem 6.12. We will do so by an inductive argument which will require
+the following base case:
+
+Lemma 6.1. For all µ ∈ Y,
+                                                    βµ,∅ = 1.
+
+                                       e (µ|∅) = H
+Proof. From Definition 3.1 we see that H         e µ . The map Φ was shown by Carlsson–
+Gorsky–Mellit [CGM20] to satisfy
+
+                                                             eµ.
+                                         Φ(Hµ,∅ ) = Φ(Hµ ) = H
+
+                      e (µ|∅) so βµ,∅ = 1.
+Therefore, Φ(Hµ,∅ ) = H                                                                                 
+
+   We will also require the following observation which says that forgetting a box label in
+the Carlsson–Gorsky–Mellit combinatorial model has a simple description on the other side
+of the bijection φ.
+
+Lemma 6.2. Suppose γk + 1 ≥ λ1 and that φ(µ, wx) = (λ|γ). Then
+
+                                  φ(µ, w) = (γk + 1, λ|γ1 , . . . , γk−1).
+
+Proof. This is clear from the explicit description of φ in [GO23].                                      
+
+     We will now focus on the special case of (λ|γ) with γk + 1 ≥ λ1 in order to show
+
+                                         e (λ|γ) = H
+                                      d− H         e (γ +1,λ|γ ,...,γ ) .                             (10)
+                                                       k      1      k−1
+
+
+
+We will then argue using intertwiner operators that βµ,w = 1 for all (µ, w). If φ(µ, w) = (λ|γ)
+we will write β(λ|γ) := βµ,w . Recall the definition of the Ion–Wu analogues of the d− maps.
+
+Definition 6.3 ([IW22]).
+
+                                                     a
+            ∂− (xa11 · · · xakk F (Xk )) := xa11 · · · xk−1 z F (Xk−1 − z)Ω((1 − t)z −1 Xk−1 )
+                                                         k−1 ak
+
+                                                                                                 z0
+
+                                             e(µ|λ) basis of P + .
+     The operators ∂− interact well with the E                as
+
+Proposition 6.4 ([BW23]). If µk ≥ λ1 then
+
+                                 e(µ1 ,...,µ |λ1 ,...,λ ) = E
+                              ∂− E                          e(µ1 ,...,µ |µ ,λ1 ,...,λ )
+                                            k          ℓ               k−1 k         ℓ
+
+
+   The two versions of d− agree via the map Ξ up to a sign. A version of this result appears
+in the work of Ion–Wu [IW22].
+
+Lemma 6.5. Ξk ∂− = −d− Ξk
+                 STABLE-LIMIT PARTIALLY SYMMETRIC MACDONALD FUNCTIONS                                       19
+
+Proof.
+                Ξk ∂− (x1a1 +1 · · · xakk +1 F (Xk ))
+                                                                                          
+                                         ak−1 +1 ak +1
+                = Ξk x1a1 +1 · · · xk−1          z     F (Xk−1 − z)Ω((1 − t)z −1 Xk−1 )
+                                                                                        z0
+                                                           
+                              ak−1 ak +1           X
+                = y1a1 · · · yk−1   z       F           − z Ω(−z −1 X)
+                                                  t−1                    z0
+                                                             
+                              ak−1 ak          X − (t − 1)z
+                = y1a1 · · · yk−1   z F                         Ω(−z −1 X)
+                                                    t−1                     z −1
+                                                          
+                                         ak−1 ak        X
+                = −d− y1a1 · · · yk−1         yk F
+                                                      t−1
+                                 a1 +1        ak +1
+                                                          
+                = −d− Ξk x1 · · · xk F (Xk ) .                                                              
+
+
+  By combining Definition 3.1 and Proposition 4.7, at this point we know that
+                       e (λ|γ) (X|y) = g(λ|γ) (q, t)Ξk (E
+                       H                                e(γ +1,...,γ +1|λ) )                              (11)
+                                                                        1       k
+
+where
+                                                                                  i (λ)
+                                                                               Y mY
+                                          −1
+               g(λ|γ) (q, t) := j(λ|γ) (q, t )tinv(γ)+n(sort(λ,γ))+|(λ|γ)|
+                                                                                          (1 − tj )−1 .
+                                                                               i≥1 j=1
+
+Lemma 6.6. Suppose γk + 1 ≥ λ1 and set γ ′ := (γ1 , . . . , γk−1). Then
+
+                          e (λ|γ) (X|y) = −          g(λ|γ) (q, t) e
+                       d− H                                              H(γk +1,λ|γ ′ ) (X|y).           (12)
+                                                  g(γk +1,λ|γ ′ ) (q, t)
+Proof. This is immediate from Proposition 6.4, Lemma 6.5, and (11).                                         
+  Recall the definition of j(λ|γ) (q, t) from Definition 2.4.
+Lemma 6.7. Whenever γk + 1 ≥ λ1 ,
+                       j(λ|γ1 ,...,γk ) (q, t)
+                                                   = (1 − tmγk +1 (λ)+1 )−1 .
+                   j(γk +1,λ|γ1 ,...,γk−1 ) (q, t)
+Proof. Let ν = (λ− , γ) and ν ′ = (λ− , γk + 1, γ1, . . . , γk−1). Each box contributes the same
+factor 1 − q a tb in both diagrams, except for the new box which has ℓν ′ () = 0 and e   aν ′ () =
+mγk +1 (λ) and contributes the factor (1 − q 0 tmγk +1 (λ)+1 ). The equality of the other factors is
+immediate for all boxes except those below the new box in ν ′ . If  = (i, j) is such a box,
+one has aν () = e   aν ′ (), since j ≤ γr ≤ γk is equivalent to j ≤ γr < γk + 1, and clearly
+ℓν ′ () = ℓν ()+1; this results in the same factor since these boxes were in the nonsymmetric
+part of ν and are now in the symmetric part of ν ′ .                                               
+  Using a combinatorial argument, we can simply (12) from Lemma 6.6.
+Proposition 6.8. Whenever γk + 1 ≥ λ1 ,
+                                     g(λ|γ) (q, t)
+                            −                                 = 1.
+                              g(γk +1,λ|γ1 ,...,γk−1 ) (q, t)
+Proof. Let γ ′ = (γ1 , . . . , γk−1). The following hold:
+20                                   DANIEL ORR AND MILO BECHTLOFF WEISING
+
+         • inv(γ ′ ) = inv(γ) − #{1 ≤ i ≤ k − 1|γi > γk }
+         • |(γk + 1, λ|γ ′)| = |(λ|γ)| + 1
+         • n(sort(γk + 1, λ, γ ′ )) = n(sort(λ|γ)) + #{λi = γk + 1} + #{1 ≤ i ≤ k − 1|γi > γk }.
+Therefore,
+           tinv(γ)+n(sort(λ,γ))+|(λ|γ)|                             tinv(γ)+n(sort(λ,γ))+|(λ|γ)|
+     inv(γ ′ )+n(sort(γk +1,λ,γ ′ ))+|(γk +1,λ|γ ′ )|
+                                                        =                                                 = t−(mγk +1 (λ)+1) .
+     t                                                      tinv(γ)+n(sort(λ,γ))+|(λ|γ)|+#{λi =γk +1}+1
+Further, it is clear that
+             Q Qmi (λ)             j −1
+                      j=1 (1 − t )
+                     i≥1
+               Q Qmi (γk +1,λ)             = (1 − tmγk +1 (γk +1,λ) )−1 = (1 − tmγk +1 (λ)+1 )−1 .
+                               (1 − t )
+                                     j  −1
+                i≥1 j=1
+
+Lastly, using Lemma 6.7, everything cancels exactly to give
+                                  g(λ|γ) (q, t)                            1 − tmγk +1 (λ)+1
+                           −                          = −t−(mγk +1 (λ)+1)                      = 1.                              
+                               g(γk +1,λ|γ ′ ) (q, t)                     1 − t−(mγk +1 (λ)+1)
+Example 6.9.
+                j(2,1|0,2)      (1 − t)(1 − qt2 )(1 − t)(1 − q 2 t3 )(1 − qt2 )
+                           =               2               2 3           2
+                                                                                = (1 − t)−1
+                j(3,2,1|0)   (1 − t)(1 − qt )(1 − t)(1 − q t )(1 − qt )(1 − t)
+
+                                        g(2,1|0,2)     t9 (1 − t)−2
+                                    −              = − 10           × (1 − t−1 )−1 = 1
+                                        g(3,2,1|0)    t (1 − t)−3
+  At this point, Lemma 6.6 and Proposition 6.8 establish (10) when γk + 1 ≥ λ1 . Next we
+turn our attention to the scalars βµ,w of Corollary 5.20.
+Lemma 6.10. If β(λ|γ) = 1, then β(λ|si (γ)) = 1 for any 1 ≤ i < k.
+Proof. If γi = γi+1 , then the statement is trivial. Suppose that γi > γi+1 , β(λ|γ) = 1 and
+let φ(µ, w) = (λ|γ). Note that φ(µ, si (w)) = (λ|si (γ)). As was argued in [GO23], under the
+assumption γi > γi+1 ,
+
+                        e (λ|γ) =      q −(ℓ(u)+1) ta(u)+1 − 1 e                 t−1        e (λ|γ)
+                     Ti H                 −(ℓ(u)+1)
+                                                              H(λ|si (γ)) + ℓ(u)+1 −a(u)    H
+                                        q           ta(u) −1               q      t      −1
+and
+                                                  (t − 1)wi+1        wi − twi+1
+                                  Ti Hµ,w =                   Hµ,w +            Hµ,si (w)
+                                                   wi − wi+1         wi − wi+1
+where u = (n − k + i, γi+1 + 1) ∈ dg(λ− |γ) and n − k = |(λ|γ)|. Further,
+                                                         wi
+                                                             = q ℓ(u)+1 t−a(u)
+                                                        wi+1
+so that
+                                   e (λ|γ) =     (t − 1)wi+1 e       wi − twi+1 e
+                                Ti H                        H(λ|γ) +           H(λ|si (γ)) .
+                                                  wi − wi+1          wi − wi+1
+                  STABLE-LIMIT PARTIALLY SYMMETRIC MACDONALD FUNCTIONS                                    21
+
+Since the map Φ is Ti -equivariant we know that
+                       Φ(Ti Hµ,w ) = Ti Φ(Hµ,w )
+                                        e (λ|γ)
+                                   = Ti H
+                                         (t − 1)wi+1 e       wi − twi+1 e
+                                    =               H(λ|γ) +           H(λ|si (γ))
+                                          wi − wi+1          wi − wi+1
+
+and
+                                                                               
+                                       (t − 1)wi+1         wi − twi+1
+                     Φ(Ti Hµ,w ) = Φ               Hµ,w +             Hµ,si (w)
+                                        wi − wi+1          wi − wi+1
+                                   (t − 1)wi+1 e        wi − twi+1
+                                 =             H(λ|γ) +            Φ(Hµ,si (w) ).
+                                    wi − wi+1           wi − wi+1
+
+
+Since wwii−tw i+1
+          −wi+1
+                  6= 0 it follows that
+                                                          e (λ|s (γ)) .
+                                          Φ(Hµ,si (w) ) = H     i
+
+Thus βµ,si (w) = 1.
+  If γi < γi+1 , then using the quadratic relation (Ti − 1)(Ti + t) = 0 we may make a nearly
+identical argument to the above to show that β(λ|si (γ)) = 1.                             
+Proposition 6.11. For all (µ, w),
+                                                    βµ,w = 1.
+Proof. Consider any (ν|γ) = (ν1 , . . . , νℓ |γ1 , . . . , γk ) and set λ := sort(ν, γ1 + 1, . . . , γk + 1).
+Using Proposition 6.8 and Lemma 6.6 we know by induction that
+                                             β(∅|λ1 −1,...,λℓ+k −1) = 1.
+By repeatedly applying Lemma 6.10 we may swap entries to show
+                                         β(∅|γ1 ,...,γk ,ν1 −1,...,νℓ −1) = 1.
+Lastly, we inductively use Lemma 6.6 again to see that β(ν1 ,...,νℓ |γ1 ,...,γk ) = 1.                    
+  We immediately conclude the following:
+Theorem 6.12. Whenever φ(µ, w) = (λ|γ),
+                                                          e (λ|γ) .
+                                               Φ(Hµ,w ) = H
+
+                                         7. Some consequences
+7.1. The N involution. Define ω : Λ → Λ by ω(F (X; q, t)) := F (−X; q −1, t−1 ). Recall
+that the operator ∇ : Λ → Λ, introduced by [Ber+99] and central to the Shuffle Theorem
+[CM18], is given on the modified Macdonald basis by
+                                            e µ ) := q n(µ) tn(µ ) H
+                                          ∇(H                      eµ.
+                                                                     ′
+
+
+
+Carlsson–Gorsky–Mellit in [CGM20] showed that there exists a q, t-antilinear operator N :
+V• → V• satisfying the following properties:
+   (1) N maps each Vk to Vk
+22                        DANIEL ORR AND MILO BECHTLOFF WEISING
+
+   (2) N 2 = 1
+   (3) N |V0 = ∇ ◦ ω
+   (4) N d− N = d−
+   (5) N Ti N = T−1
+                  i
+   (6) N d+ N = t−k z1 d+ .
+  The corresponding geometric map N ′ := Φ−1 ◦ N ◦ Φ : U• → U• is given by N ′ =
+L ◦ SD ◦ L −1 where
+   (1) L := det V is the determinant of the canonical bundle V
+   (2) SD is Serre-duality.
+Explicitly,                                  
+                            X                     X
+                    N′       aµ,w (q, t)Hµ,w  =   aµ,w (q −1 , t−1 )Hµ,w .
+                           (µ,w)                   (µ,w)
+     Using Theorem 6.12, we may describe the action of N on all of V• directly.
+Corollary 7.1. The involution N : V• → V• fixes each H     e (λ|γ) . In particular, it is given on
+arbitrary elements by
+                                              
+                        X                          X
+                   N                  e (λ|γ)  =
+                          a(λ|γ) (q, t)H                                 e (λ|γ) .
+                                                     a(λ|γ) (q −1 , t−1 )H                    (13)
+                         (λ|γ)                     (λ|γ)
+
+  A priori, we would already have known the above statement if we had defined H    e (λ|γ) =
+Φ(Hµ,w ) whenever φ(µ, w) = (λ|γ). Therefore, the content of Corollary 7.1 is that we have
+an explicit formula (4.7) for the modified partially symmetric Macdonald functions H   e (λ|γ)
+and thus (13) gives an explicit expression for the action of N .
+7.2. Pieri formulas. Via matrix coefficient calculations of [CGM20, Sec. 5], our Theo-
+rem 6.12 enables one to recover the Pieri formula for multiplication by e1 (X) on partially-
+symmetric Macdonald polynomials which was proved in [Goo23] and connected to [CGM20]
+in [GO23]. One can also now obtain additional Pieri-type formulas for multiplication by
+y1 , . . . , yk in this way.
+                                         References
+[Ber+99] F. Bergeron, A. M. Garsia, M. Haiman, and G. Tesler. “Identities and positiv-
+         ity conjectures for some remarkable operators in the theory of symmetric func-
+         tions”. In: vol. 6. 3. Dedicated to Richard A. Askey on the occasion of his 65th
+         birthday, Part III. 1999, pp. 363–420. doi: 10.4310/MAA.1999.v6.n3.a7. url:
+         https://doi.org/10.4310/MAA.1999.v6.n3.a7.
+[BW23]   Milo Bechtloff Weising. Stable-Limit Non-symmetric Macdonald Functions. 2023.
+         arXiv: 2307.05864 [math.RT]. url: https://arxiv.org/abs/2307.05864.
+[BW24]   Milo Bechtloff Weising. Delta Operators on Almost Symmetric Functions. 2024.
+         arXiv: 2405.09846 [math.RT]. url: https://arxiv.org/abs/2405.09846.
+[CGM20] Erik Carlsson, Eugene Gorsky, and Anton Mellit. “The Aq,t algebra and parabolic
+         flag Hilbert schemes”. In: Math. Ann. 376.3-4 (2020), pp. 1303–1336. issn: 0025-
+         5831. doi: 10.1007/s00208-019-01898-1. url: https://doi.org/10.1007/s00208-019-0189
+                                     REFERENCES                                      23
+
+[CL23]    Manuel Concha and Luc Lapointe. The m-symmetric Macdonald polynomials.
+          2023. arXiv: 2311.12625 [math.CO]. url: https://arxiv.org/abs/2311.12625.
+[CM18]    Erik Carlsson and Anton Mellit. “A proof of the shuffle conjecture”. In: J. Amer.
+          Math. Soc. 31.3 (2018), pp. 661–697. issn: 0894-0347. doi: 10.1090/jams/893.
+          url: https://doi.org/10.1090/jams/893.
+[GGS23]   Nicolle González, Eugene Gorsky, and José Simental. Calibrated representations
+          of the double Dyck path algebra. 2023. arXiv: 2311.17653 [math.RT].
+[GO23]    Ben Goodberry and Daniel Orr. A Geometric Realization of Partially-Symmetric
+          Macdonald Polynomials. 2023. arXiv: 2312.11657 [math.CO]. url: https://arxiv.org/abs/23
+[Goo22]   Ben Goodberry. “Partially-Symmetric Macdonald Polynomials”. PhD thesis. Vir-
+          ginia Polytechnic Institute and State University, 2022.
+[Goo23]   Ben Goodberry. Type A Partially-Symmetric Macdonald Polynomials. 2023. arXiv:
+          2311.12216 [math.CO]. url: https://arxiv.org/abs/2311.12216.
+[HHL08]   J. Haglund, M. Haiman, and N. Loehr. “A combinatorial formula for nonsymmet-
+          ric Macdonald polynomials”. In: Amer. J. Math. 130.2 (2008), pp. 359–383. issn:
+          0002-9327. doi: 10.1353/ajm.2008.0015. url: https://doi.org/10.1353/ajm.2008.0015.
+[IW22]    Bogdan Ion and Dongyu Wu. “THE STABLE LIMIT DAHA AND THE DOU-
+          BLE DYCK PATH ALGEBRA”. In: Journal of the Institute of Mathematics of
+          Jussieu (2022), 1–46. doi: 10.1017/S1474748022000445.
+[Lap22]   Luc Lapointe. m-Symmetric functions, non-symmetric Macdonald polynomials
+          and positivity conjectures. 2022. arXiv: 2206.05177 [math.CO].
+  Department of Mathematics (0123), 460 McBryde Hall, Virginia Tech, 225 Stanger Street,
+Blacksburg, VA 24061-1026
+  Email address: dorr@vt.edu
+
+  Department of Mathematics (0123), 460 McBryde Hall, Virginia Tech, 225 Stanger Street,
+Blacksburg, VA 24061-1026
+  Email address: milojbw@vt.edu
+

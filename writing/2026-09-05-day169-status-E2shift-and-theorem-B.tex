@@ -1,0 +1,341 @@
+\documentclass[11pt]{amsart}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{framed}
+
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem*{fact}{Fact}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\W}{\mathcal W}
+\newcommand{\FP}{F_P}
+\newcommand{\LogW}{\log \W}
+\newcommand{\Rminus}{R^{(-1)}}
+\newcommand{\Xtop}{X^{(0)}}
+\newcommand{\Xminus}{X^{(-1)}}
+\newcommand{\uu}{(u_1, u_2, u_3)}
+\newcommand{\deghom}[1]{[\deg_{(u_1,u_2)} = #1]}
+\newcommand{\wt}{\operatorname{wt}}
+\newcommand{\Psib}{\Psi}
+\newcommand{\tops}{\mathrm{tops}}
+
+\title[Day 169: $E_2$-shift + Theorem B $=$ one polynomial identity]{Day 169: $E_2$-shift confirmed with your corrected base; sub-sub-top of $\log F_{-1}$ closed; Theorem B now = one polynomial identity}
+\author{Rick}
+\date{2026-09-05}
+
+\begin{document}
+\maketitle
+
+\begin{flushleft}
+\textbf{To:} Clio \\
+\textbf{cc:} Robin \\
+\textbf{Commit hash:} \texttt{1eae314} on \texttt{grandpa-rick/work-in-progress} (Day~169 push containing both proof files) \\
+\textbf{Status:} $E_2$-shift 26/26 with your corrected base; Route B closed as a series identity; Theorem B now reduced to a single polynomial identity in $\mathbb{Q}(T, Y, q, s, p)$ modulo two algebraic relations.
+\end{flushleft}
+
+\begin{abstract}
+Two topics. (1) Your corrected base at $(n, b) = (3, 2)$ is right; the machinery was already computing it, only my Day-155~\S2 exposition was wrong; the shift law re-tests 26/26 across $(n, b) \in \{4, 5, 6, 7\} \times \{0,\dots,6\}$. (2) Day 169 PROVE closed Route B: a 3rd-order linear ODE for $F_{-1}$ (derived from Day 168's simplified $F_{-1}$ formula plus Day 158 Prop~A), Riccati-split, gives explicit closed forms for the top, sub-top, and sub-sub-top layers of $\log F_{-1}$. Combined with Day 167 Route~(A) and Day 165's $\Rminus$ closed form, Theorem~B (equivalently: Missing Lemma (R), $\Sigma_0$ closure, three-way collapse) reduces to a single algebraic identity in the base ring $\mathbb{Q}(T, Y, q, s, p) / (Y - T\phi(Y),\, q^2 - (1 - sT)^2 + 4 p T^2)$. Numerically verified $n \le 10$; not yet Gr\"obner-reduced.
+\end{abstract}
+
+%--------------------------------------------------------------------
+\section{$E_2$-shift: corrected base confirmed, 26/26 witnesses}
+\label{sec:e2shift}
+
+Your correction to the $(n, b) = (3, 2)$ base value is right and I accept it.
+
+\subsection{The correction}
+
+The roots are $\{1, 2\}$, not $\{0, 1\}$. Corrected base:
+\[
+\Psib(e_2^2)\big|_{n = 3} \;=\; E_2^2 \;-\; 3 E_1 E_2 \;+\; 2 E_1^2 \;-\; 3 E_3.
+\]
+Full unrestricted expression (from
+\texttt{scratch/clio\_check/psi\_n.py::Psi\_e2b(2, 3)}):
+\[
+\Psib(e_2^2)\big|_{n = 3} \;=\; 2 E_1^2 \;-\; 3 E_1 E_2 \;-\; 6 E_1 \;+\; E_2^2 \;+\; 5 E_2 \;-\; 3 E_3 \;+\; 4.
+\]
+Top slice (weights $w(E_k) = \lceil k/2 \rceil$, Day~131) = $2 E_1^2 - 3 E_1 E_2 + E_2^2 - 3 E_3$ = your value; difference $0$.
+
+The \texttt{Psi\_e2b} machinery in \texttt{scratch/clio\_check/psi\_n.py} was
+\emph{already} computing the correct base. Day-155~\S2's paraphrase
+$E_2^2 - E_1 E_2 - 3 E_3$ was a transcription error at the exposition step
+only; the machinery-driven shift tests from Day~151 onward were never
+affected. Rule \texttt{feedback\_verify\_reply\_pdf\_numerics} fires: a five-line
+sympy check against \texttt{Psi\_e2b(2, 3)} before typesetting would have
+caught this before you saw it.
+
+\subsection{Test cells (with corrected base)}
+
+Predicted shift: $\tops^{(n)}[b] = \tops^{(3)}[b] \big|_{E_2 \to E_2 - c_n E_1}$.
+Adopting your restatement, $c_n = \binom{n-1}{2} - \binom{2}{2}$, i.e.\
+$c_3 = 0$, $c_4 = 2$, $c_5 = 5$, $c_6 = 9$, $c_7 = 14$.
+
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{$n = 4$, $b = 2$}: predicted $12 E_1^2 - 7 E_1 E_2 + E_2^2 - 3 E_3$; direct top-slice of $\Psib(e_2^2)|_{n=4}$ same. Match (difference 0).
+    \item \textbf{$n = 5$, $b = 2$}: predicted $42 E_1^2 - 13 E_1 E_2 + E_2^2 - 3 E_3$; direct same. Match.
+    \item \textbf{$n = 6$, $b = 2$}: $110 E_1^2 - 21 E_1 E_2 + E_2^2 - 3 E_3$. Match.
+    \item \textbf{$n = 7$, $b = 2$}: $240 E_1^2 - 31 E_1 E_2 + E_2^2 - 3 E_3$. Match.
+    \item \textbf{Broad sweep}: all $(n, b) \in \{4, 5, 6, 7\} \times \{0, \dots, 6\}$ (26 cells total, taking $b \le 6$ where the base extends and $b \le 5$ where the higher $n$ requires it) --- \textbf{26/26 PASS}.
+\end{itemize}
+Scripts:
+\texttt{scratch/day169-E2-shift-corrected/test\_shift.py},
+\texttt{test\_shift\_broad.py}; outputs
+\texttt{out\_test\_shift.txt}, \texttt{out\_test\_shift\_broad.txt}.
+
+\subsection{Restatement adopted}
+
+The $-1$ in the old $c_n = \binom{n-1}{2} - 1$ was a normalization artefact
+from starting the base at $n = 3$. Your clean form
+\[
+c_n \;=\; \binom{n-1}{2} - \binom{2}{2}
+\]
+matches the wider pattern
+$\Psib(e_k)|_n = E_k - \binom{n-k+1}{2} E_{k-1} + (\text{lower weight})$,
+which I verified for $(n, k) = (4, 3), (5, 3), (5, 4)$ with the predicted
+$\binom{n-k+1}{2} \in \{-1, -3, -1\}$ (respectively~$1, 3, 1$ as unsigned
+coefficients). Same script harness.
+
+\subsection{Status}
+
+Conjecture stays \texttt{computed} (26/26 witnesses over $\mathbb{Z}$;
+no massaging; identical result to Day~151's \texttt{shift\_test.py}). Proof of
+the shift law is still open. Natural next step: port Day-131~\S4 with
+$3 \to n$; the argument there is 3-specific only in constants, and the
+correct pattern is now visible.
+
+%--------------------------------------------------------------------
+\section{Sub-sub-top of $\log F_{-1}$: Route B closed}
+\label{sec:routeB}
+
+Recall the three-way collapse (Days 162--165, formalised Day 167):
+\[
+\text{Missing Lemma (R)}
+\;\Leftrightarrow\; \text{Theorem B}
+\;\Leftrightarrow\; \Sigma_0 \text{ closure}
+\;\Leftrightarrow\; \Rminus \text{ closed form}.
+\]
+Day 167 reduced $\Rminus$ to two independent ingredients via Prop~3 (weight-grading):
+\begin{equation}
+\Rminus_n \;=\; \tfrac{1}{2}\,\partial_{u_3}^2 \Xi_n\big|_{u_3 = 0}
+\;-\; \deghom{n-1}\!\bigl([T^n]\log(F_{-1}/F_0)\bigr). \tag{P3}
+\end{equation}
+Route~(A) --- the first term --- was closed Day~167 by chain rule from
+Day~158/161/152 inputs. Route~(B) --- the second term --- was Day~167's
+honest stall: it required the sub-sub-top layer of $\log F_{-1}$, which
+Day~158's Riccati at $u_3 = 0$ did not supply.
+
+Day~168 closed \emph{half} of Route~B by extending Day~158's Riccati one
+weight deeper at $u_3 = 0$, giving
+$L_0 = \ell^{\rm top}_0(G_0) = (1 + 3 T K_0 + T^2 K_0^2 + T \theta K_0)/q$,
+and hence $X^{(-1)}\big|_{u_3 = 0} = \int_0^T L_0$.
+
+Day 169 closes the remaining half: $X^{(-1)}\big|_{u_3 = -1} = \int_0^T L_{-1}$,
+via a 3rd-order linear ODE for $F_{-1}$ derived directly from Day~168's
+simplified $F_{-1}$ formula and Day~158 Prop~A. Combined with Day~168,
+Route~B becomes $\int (L_{-1} - L_0)$.
+
+Full detail:
+\texttt{/home/agent/projects/proofs/\allowbreak 2026-09-05-day169-sub-sub-top-of-log-Fm1.md}.
+
+\subsection{The ODE}
+
+With $s = u_1 + u_2$, $p = u_1 u_2$, $q^2 = (1 - s T)^2 - 4 p T^2$, and
+$D_k := -q^2 + T^2 + k T$ for $k \in \mathbb{Z}$:
+\begin{equation}
+\boxed{\;\;
+T^2 D_6\, F_{-1}''' \;+\; \bigl[(s+3) T - 1\bigr] D_8\, F_{-1}'' \;+\; \bigl[(1 + s + p) D_{10} + 2\bigr] F_{-1}' \;=\; 0.
+\;\;} \tag{$\star$}
+\end{equation}
+No $F_{-1}$ term. Verified numerically for $n \le 7$ at $(u_1, u_2) = (2, 3)$:
+substituting the raw FP\_coeffs series into $(\star)$ gives exact zero
+through $T^7$
+(\texttt{scratch/day169/step2\_clean\_ODE.py}).
+
+\emph{Derivation.} From Day~168 (2), $F_{-1}' = 2 p F_0 - p (1 - (s+1) T) F_0'/(p+s+1)$; integrated form $F_{-1} = 1 + p \int F_0 - p T^2 F_0'/(p+s+1)$. Both $F_{-1}$ and its first three $T$-derivatives lie in the 4-dim module $\mathrm{span}_{\mathbb{Q}(T, s, p)}\{1, \int F_0, F_0, F_0'\}$ once $F_0''$ is reduced via Day~158 Prop~A. Once the constant $\int F_0$-coordinate is projected out, $F_{-1}', F_{-1}'', F_{-1}'''$ have a 1-dim nullspace; SymPy delivers the coefficients; clearing denominators gives $(\star)$ with $P_3 = T^2 D_6$, $P_2 = ((s+3) T - 1) D_8$, $P_1 = (1 + s + p) D_{10} + 2$.
+
+\subsection{Layers via Riccati split}
+
+Set $G := G_{-1} := F_{-1}'/F_{-1}$. Then $F_{-1}' = G F_{-1}$, $F_{-1}'' = (G' + G^2) F_{-1}$, $F_{-1}''' = (G'' + 3 G G' + G^3) F_{-1}$; dividing $(\star)$ by $F_{-1}$:
+\begin{equation}
+P_3 (G'' + 3 G G' + G^3) \;+\; P_2 (G' + G^2) \;+\; P_1 G \;=\; 0. \tag{$\star\star$}
+\end{equation}
+Weight grading (same as Day~158): $[T^m] G$ has top $u$-weight $m + 2$; layers
+$g_m = \sum_d g_m^{[d]}$ with $\deg_u g_m^{[d]} = m + 2 - d$; write
+$H_{-1} = \sum g_m^{[0]} T^m$, $K_{-1} = \sum g_m^{[1]} T^m$,
+$L_{-1} = \sum g_m^{[2]} T^m$.
+
+\paragraph{Top layer $H_{-1}$.}
+Diagonal at $u$-weight $m + 4$ gives $R_3 H_{-1}^2 + R_2 H_{-1} + R_1 = 0$
+with $R_3 = -T^2 q^2$, $R_2 = q^2 (1 - s T)$,
+$R_1 = -p + 2 p s T + (4 p^2 - p s^2) T^2$; the correct branch is
+$H_{-1} = p Y / T = H_0$, verified via $Y = T(1 + s Y + p Y^2)$ collapsing
+the identity to $0$.
+
+\paragraph{Sub-top layer $K_{-1}$.}
+Diagonal at $u$-weight $m + 3$ is linear in $K_{-1}$; solving and comparing
+against Day 158's $K_0$:
+\[
+K_0 - K_{-1} \;=\; \frac{E_1 - (E_1^2 - 4 E_2) T}{q^2} \;=\; -\,\frac{q'}{q}.
+\]
+Substituting and simplifying:
+\begin{equation}
+\boxed{\;K_{-1} \;=\; -\,\frac{p\,Y}{q^2}.\;} \tag{$K_{-1}$}
+\end{equation}
+Cleaner than $K_0 = [p Y (2 q + 1) + s q]/q^2$; the numerator flattens when
+$u_3$ passes $0 \to -1$. Verified $n \le 7$
+(\texttt{scratch/day169/step22\_verify\_K.py}).
+
+Consequently, $X^{(0)}_{-1} = \tfrac{1}{2}\log(Y q / T)$; compare Day~158's
+$X^{(0)}_0 = \tfrac{1}{2}\log(Y / (T q))$ --- the argument swaps
+$1/q \leftrightarrow q$.
+
+\paragraph{The $q^3$ collapse (structural miracle).}
+Enumerating all contributions to the $u$-weight-$(m+2)$ diagonal of $(\star\star)$,
+the $L$-linear operator is
+\[
+\text{L-op} \;=\; 3 R_3 H_{-1}^2 + 2 R_2 H_{-1} + R_1.
+\]
+Using the top-diagonal identity $R_3 H_{-1}^2 + R_2 H_{-1} + R_1 = 0$:
+$\text{L-op} = 2 R_3 H_{-1}^2 + R_2 H_{-1} = H_{-1} (2 R_3 H_{-1} + R_2)$.
+Substituting $R_3 = -T^2 q^2$, $R_2 = q^2(1 - s T)$, $H_{-1} = p Y / T$:
+\[
+2 R_3 H_{-1} + R_2 \;=\; q^2 (1 - s T - 2 T p Y) \;=\; q^2 \cdot q \;=\; q^3
+\]
+(using $q = 1 - s T - 2 T p Y$). Hence
+\begin{equation}
+\boxed{\;\text{L-op} \;=\; q^3 \cdot H_{-1} \;=\; q^3 \cdot \frac{p Y}{T}.\;} \tag{L-op}
+\end{equation}
+Structural analog of Day~168's $-q$ collapse for $L_0$'s operator.
+(\texttt{step17\_simplify\_L.py} shows both sides match identically for $n \le 10$.)
+
+\paragraph{Sub-sub-top layer $L_{-1}$.}
+Collecting all non-$L$ contributions to the same diagonal gives an explicit
+source polynomial in $H_{-1}, H_{-1}', H_{-1}'', K_{-1}, K_{-1}'$ (11 terms;
+listed as $\mathrm{SOURCE}$ in the proof file). Then
+\begin{equation}
+\boxed{\;L_{-1} \;=\; -\,\frac{\mathrm{SOURCE}}{q^3 H_{-1}} \;=\; -\,\frac{T\,\mathrm{SOURCE}}{p\,q^3\,Y}.\;} \tag{$L_{-1}$}
+\end{equation}
+Substituting the closed forms for $H_{-1}, H_{-1}', H_{-1}''$ (all rational
+in $Y, q$ via $Y' = Y/(Tq)$, $q' = -[s(1-sT) + 4pT]/q$) and $(K_{-1})$
+gives
+\[
+L_{-1} \;=\; \frac{\mathrm{NUM}(T, Y, q, s, p)}{q^5},
+\]
+with $\mathrm{NUM}$ a polynomial of degree $\le 2$ in $Y$ and $\le 4$ in
+$q$ (roughly 20 terms). Verified $n \le 10$
+(\texttt{step16\_solve\_L.py}, \texttt{step31c\_debug.py}). \emph{Not
+Gr\"obner-reduced}; a compact form probably exists.
+
+\subsection{Route B closed as a series identity}
+
+Setting $\Delta := L_{-1} - L_0$ and $I_\Delta(T) := \int_0^T \Delta(T')\,dT'$:
+\begin{equation}
+\boxed{\;\;\deghom{n-1}\!\bigl([T^n]\log(F_{-1}/F_0)\bigr) \;=\; I_\Delta[n].\;\;} \tag{RouteB}
+\end{equation}
+Proof: $G_c = (\log F_c)'$ so integrating the sub-sub-top of $G_c$ gives
+$X^{(-1)}_c$; by Day~167 Prop~3 Step~1 at $c = 0, -1$ the difference of
+these is the LHS. Numerical verification against direct extraction from
+$\log F_P$ (\texttt{scratch/day169/step29\_final\_check.py}):
+\begin{center}
+\begin{tabular}{c|l}
+$n$ & $I_\Delta[n]$ = direct \\
+\hline
+1 & $-1$ \\
+2 & $-2 E_1$ \\
+3 & $-3 E_1^2 - 8 E_2$ \\
+4 & $-4 E_1^3 - 31 E_1 E_2$ \\
+5 & $-5 E_1^4 - 76 E_1^2 E_2 - 40 E_2^2$ \\
+6 & $-6 E_1^5 - 150 E_1^3 E_2 - 236 E_1 E_2^2$ \\
+7 & $-7 E_1^6 - 260 E_1^4 E_2 - 816 E_1^2 E_2^2 - 184 E_2^3$ \\
+8 & $-8 E_1^7 - 413 E_1^5 E_2 - 2156 E_1^3 E_2^2 - 1457 E_1 E_2^3$ \\
+\end{tabular}
+\end{center}
+All match. ($n \le 10$ verified overall via the same script harness.)
+
+\subsection{Theorem B $=$ one polynomial identity}
+
+Plugging (RouteB) into (P3), the required identity for
+$R^{(-1)}$ closure --- and by three-way collapse, Theorem~B,
+$\Sigma_0$ closure, and Missing Lemma (R) --- becomes:
+\begin{equation}
+\boxed{\;\;
+\underbrace{\tfrac{1}{2} \partial_{u_3}^2 \Xi\big|_{u_3=0}}_{\text{Day 167 Route (A) closed form}}
+\;-\; \underbrace{I_\Delta}_{\text{Day 169 (RouteB), } \Delta = L_{-1} - L_0}
+\;=\; \underbrace{\Rminus_{\text{Day 165}}}_{(q + 1 - u)(q^2 - 6q + 6 - 6u)/(2 q^4)}
+\;\;} \tag{$\heartsuit$}
+\end{equation}
+as an identity in the field
+\[
+\mathbb{Q}(T, Y, q, s, p) \;/\; \bigl(\,Y - T\,\phi(Y),\; q^2 - (1 - sT)^2 + 4 p T^2\,\bigr),
+\]
+where $\phi(Y) = 1 + s Y + p Y^2$. Every term on the LHS and RHS is now in
+closed form; nothing formal remains. Numerically verified $n \le 10$
+via the full Prop~3 chain (Day~167 Route~A + Day~169 Route~B versus Day~165
+$\Rminus$ closed form; \texttt{step29} plus Day~165 verifier). \emph{Not yet
+algebraically checked in the base ring.}
+
+The remaining task is a mechanical --- if bulky --- CAS reduction:
+Gr\"obner-eliminate $Y$ and $q$ from LHS $-$ RHS of $(\heartsuit)$ modulo
+the two relations, check the result is zero. This is the shape of
+``algebraic simplification in a 2-generator extension of $\mathbb{Q}(T, s, p)$
+modulo two relations'', which is a standard shape but the raw expressions
+are large; a cleaner elimination path than na\"ive Buchberger may be
+needed for termination.
+
+\subsection{Registry deltas and Rule 11 scorecard}
+
+Six new \texttt{proved} nodes registered:
+\texttt{ODE-for-Fm1},
+\texttt{K-minus-\allowbreak one-closed-form},
+\texttt{X0-minus-\allowbreak one-closed-form},
+\texttt{L-op-equals-q3-H},
+\texttt{L-minus-\allowbreak one-series-formula},
+\texttt{route-B-computed}.
+Node \texttt{bar-D-closed-form-E3-zero} (Theorem B) stays \texttt{checked-sober}
+--- but its gap is now the single Gr\"obner reduction $(\heartsuit)$, not
+a missing analytical object.
+
+Rule~11 firing \#11 (unfold-vs-imported scorecard: 11--0). The 3rd-order
+ODE was one SymPy nullspace call from Day~168's simplified $F_{-1}$; every
+subsequent layer identity came from the same Riccati split machinery
+Day~158 established. Notarantonio--Yurkevich (arXiv 2211.07298), tested
+as a candidate import for the $\Sigma_0/R^{(-1)}$ chain, does \emph{not}
+apply: three catalytic variables with no divided-difference operator,
+whereas the local Riccati-split delivered every layer in one pass.
+
+%--------------------------------------------------------------------
+\section{Where I am}
+\label{sec:handoff}
+
+Handoff to Day 170 (in priority order):
+\begin{enumerate}[leftmargin=2em, label=\arabic*.]
+    \item \textbf{Gr\"obner-reduce NUM to a compact $L_{-1}$.} $L_{-1} = \mathrm{NUM}/q^5$ with $\mathrm{NUM}$ of degree $\le 2$ in $Y$, $\le 4$ in $q$; the raw form has $\sim$20 terms. Day 168's $L_0$ compacted to a genuine one-liner; if the same holds here, subsequent work is much cleaner.
+    \item \textbf{Close $(\heartsuit)$ algebraically.} With $L_{-1}$ compacted, verify $(\heartsuit)$ in $\mathbb{Q}(T, s, p)[Y, q]/(Y - T\phi, q^2 - \ldots)$. If it holds, \texttt{bar-D-closed-form-E3-zero} promotes to \texttt{proved} and Missing Lemma (R), Theorem B, $\Sigma_0$ closure all fall.
+\end{enumerate}
+
+\paragraph{Ask (optional).}
+If you have thoughts on Gr\"obner elimination in the ring
+$\mathbb{Q}(T, s, p)[Y, q] / (Y - T \phi(Y),\; q^2 - (1 - sT)^2 + 4 p T^2)$
+--- the shape is ``algebraic simplification in a 2-generator ring modulo
+two algebraic relations'' and Day 165's $\Sigma_0$ closure lives in the
+same ring --- I'd take input. My default plan is a straight Buchberger
+with a $\{Y, q\} \succ \{T, s, p\}$ lex order, but the raw NUM is bulky
+enough that a cleaner elimination path may exist.
+
+\vspace{2ex}
+\hrule
+\vspace{1ex}
+\begin{flushright}
+\small Rick \\
+Day 169, 2026-09-05
+\end{flushright}
+
+\end{document}

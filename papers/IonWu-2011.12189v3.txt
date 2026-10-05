@@ -1,0 +1,2706 @@
+                                                               THE STABLE LIMIT DAHA AND THE DOUBLE DYCK PATH ALGEBRA
+
+                                                                                           BOGDAN ION AND DONGYU WU
+arXiv:2011.12189v3 [math.QA] 15 Sep 2022
+
+
+
+
+                                                   Abstract. We study the compatibility of the action of the DAHA of type GL with two inverse systems of polynomial
+                                                   rings obtained from the standard Laurent polynomial representations. In both cases, the crucial analysis is that of
+                                                   the compatibility of the action of the Cherednik operators. Each case leads to a representation of a limit structure
+                                                   (the +/- stable limit DAHA) on a space of almost symmetric polynomials in inﬁnitely many variables (the standard
+                                                   representation). As an application, we show that the deﬁning representation of the double Dyck path algebra arises
+                                                   from the standard representation of the +stable limit DAHA.
+
+
+
+
+                                                                                                 1. Introduction
+
+                                                There are subtle phenomena in Macdonald theory (the positivity of the composition Kostka functions
+                                           [Kno07, Conjecture 11.2]) that arise in the so-called stable limit, that is, they describe properties of objects
+                                           that are associated to certain limits of polynomial functions when the number of variables approaches in-
+                                           ﬁnity. The object that provides the appropriate ﬁnite rank algebraic context in this case is the double aﬃne
+                                           Hecke algebra (DAHA) of type GLk . However, the only stable limit structure that was investigated more
+                                           systematically is the stable limit of the spherical DAHA of type GLk , which is intimately related to several
+                                           interconnected geometric contexts: the spherical subalgebra of the Hall algebra of the category of coherent
+                                           sheaves on an elliptic curve [BS12, SV11], the convolution algebra in the equivariant K-theory of the Hilbert
+                                           scheme of A2 [SV13], the Feigin-Odesskii [FO98] shuﬄe algebra [FT11, SV13, Neg14].
+                                                In the case of the spherical DAHA, the stable limit structure arises as an inverse limit of the corresponding
+                                           ﬁnite rank structure. The DAHA Hk of type GLk do not form an inverse system and a conceivable residual
+                                           limit structure will not capture some relations that hold in particular ﬁnite ranks. The basic idea towards
+                                           understanding the residual limit structure is to undertake a study of the limiting behavior of individual
+                                           elements (e.g. for a speciﬁc set of generators) in an inverse system of representations and understand the
+                                           algebraic structure deﬁned by the limit operators.
+                                               We pursue here this idea, as follows. Let Pk = Q(t, q)[x±1             ±1
+                                                                                                         1 , . . . , xk ] be the standard Laurent polynomial
+                                           representation of Hk ; Pk is a faithful representation of Hk . Let
+
+                                                                      P+
+                                                                       k = Q(t, q)[x1 , . . . , xk ] and        P−            −1           −1
+                                                                                                                 k = Q(t, q)[x1 , . . . , xk ],
+
+                                           each being a faithful representation of a corresponding subalgebra of Hk denoted by Hk+ and, respectively,
+                                           Hk− . Both (P+             −
+                                                        k )k≥2 and (Pk )k≥2 form graded inverse systems, with structure maps that specialize the last
+
+
+
+
+                                             Date: April 26, 2022.
+                                             2010 Mathematics Subject Classification. 20C08, 05E05.
+                                             Key words and phrases. double aﬃne Hecke algebra, double Dyck path algebra.
+                                                                                                            1
+2                                           BOGDAN ION AND DONGYU WU
+
+
+variable to 0. The corresponding graded inverse limits are denoted by P±   ∞ ; they are sometimes referred to as
+the rings of formal polynomials in the variables x±
+                                                  i , i ≥ 1. For us, an important   role is played by the graded
+           ±      ±
+subrings Pas ⊂ P∞ consisting of elements ﬁxed by all simple transpositions of the variables, with the possible
+exception of ﬁnitely many. Following Knop [Kno07], we refer to P±    as as the almost symmetric modules and to
+its elements as almost symmetric functions.
+     The action of the generators of Hk± that act as Demazure-Lusztig operators or multiplications operators
+is immediately seen to be compatible with the inverse system; each operator will consequently induce a limit
+operator acting on the corresponding graded inverse limit P±  ∞ . Therefore, in both cases, the crucial analysis
+is that of the action of the Cherednik operators and of their compatibility with the inverse system.
+     The compatibility of the action of the Cherednik operators in Hk− with the inverse system P−k was es-
+tablished in [Kno07]; the corresponding operators act on P∞ . Knop has also pointed out that Pas ⊂ P−
+                                                           −                                    −
+                                                                                                      ∞ is
+stable under the action of the limit Cherednik operators and provides the natural context for the theory of
+nonsymmetric Macdonald functions (the stable limits of nonsymmetric Madonald polynomials).
+     On the other hand, the analysis of the Hk+ stable limit action requires a more sophisticated approach. The
+action of the Cherednik operators in Hk+ is no longer compatible with the inverse system P+      k and requires
+a careful investigation of their action in order to understand the obstructions to such a compatibility and
+what particular features might have a chance to manifest in the stable limit. We brieﬂy discuss the main new
+developments here, postponing a more technical discussion for the later sections.
+     The failure of the compatibility of the action of the Cherednik operators in Hk+ with the inverse system
+P+k can be witnessed at the level of their spectrum and allows for a precise identiﬁcation of the obstruction.
+As it turns out, the Cherednik operator Yi is compatible with the inverse system xi P+k , inducing an action of
+                           +
+the limit operator on xi P∞ . While this might be satisfactory from the point of view of a single Cherednik
+operator, it does not lead to a non-zero common domain for all Cherednik operators Yi , i ≥ 1. It is therefore
+necessary to adjust the action of Yi on a complement of xi P+ k . We address this ﬁrst diﬃculty uniformly, by
+                                                     e +
+introducing a new ﬁnite rank algebraic structure Hk , which we call the deformed DAHA, and its standard
+representation on P+ . The actions of the Cherednik operator Yi and the deformed Cherednik operator Yei
+                     k
+coincide on xi P+
+                k.
+
+      Nevertheless, H e + is a more complicated structure, and, most notably, the deformed Cherednik operators
+                        k
+no longer commute. Their action is still not compatible with the inverse system, but they satisfy instead a
+more subtle compatibility. To express this compatibility we formulate a concept of limit that takes into
+consideration not only the inverse system, but also the t-adic topology. This allows us to deﬁne limit operators
+Yei acting, not on P+                 +
+                     ∞ , but only on Pas , attesting again to the canonical nature of the almost symmetric module.
+On xi P+                                       e
+         as the action of the limit operator Yi coincides with the action of the limit Cherednik operator Yi . This
+analysis occupies most of §6, culminating with the proof of Proposition 6.29.
+     We relate the action of the limit operators on P+                                                 +
+                                                      as to the following algebraic structure. Let H be the
+Q(t, q)-algebra generated by the elements Ti ,Xi , and Yi , i ≥ 1, satisfying the following relations:
+                                           Ti Tj = Tj Ti ,   |i − j| > 1,
+(1.1a)
+                                        Ti Ti+1 Ti = Ti+1 Ti Ti+1 ,    i ≥ 1,
+
+(1.1b)                                    (Ti − 1)(Ti + t) = 0,       i ≥ 1,
+                                THE STABLE LIMIT DAHA AND THE DOUBLE DYCK PATH ALGEBRA                                 3
+
+
+                                            tTi−1 Xi Ti−1 = Xi+1 ,       i≥1
+(1.1c)                                      T i Xj = Xj T i ,    j 6= i, i + 1,
+                                             Xi Xj = Xj Xi ,        i, j ≥ 1,
+
+                                             t−1 Ti Yi Ti = Yi+1 ,      i≥1
+(1.1d)                                       Ti Yj = Yj Ti ,     j 6= i, i + 1,
+                                               Yi Yj = Yj Yi ,     i, j ≥ 1,
+
+(1.1e)                                           Y1 T1 X1 = X2 Y1 T1 .
+
+We call H+ the + stable limit DAHA. There is a corresponding − stable limit DAHA H− and a canonical Q(t, q)-
+algebra anti-isomorphism between H+ and H− . As a result, we use the terminology stable limit DAHA to
+refer to either of them, depending on the context. Both algebras are closely related to the inductive limit of
+the group algebras of the braid groups Bk , of k distinct points on the punctured torus. We refer to §4.2 for
+the precise relationship.
+    The action of the limit operators on P−                                                   −
+                                          as can be easily seen to deﬁne a representation of H . Our ﬁrst
+main result is the following (Theorem 6.34).
+
+Theorem A. The action of the limit operators on P+                               +
+                                                 as defines a representation of H .
+
+
+     We call the representation of H± on P±   as the standard representation of the stable limit DAHA. The main
+diﬃculty in establishing this result is the proof of the commutativity of the limit Yei operators. On this account,
+the commutativity of the Cherednik operators that was lost by deforming their action on P+             k is restored in
+the limit. The action of the operators Ti , Xi , and Yi ∈ H+ on P+ as is denoted  by  T i , X i , and Yi , respectively.
+
+     One aspect that underscores the special nature of the positivity phenomenon in Macdonald theory is the
+fact that the work around the former Macdonald positivity conjecture (ﬁrst proved by Haiman [Hai01] in the
+equivalent formulation of the n! conjecture) and the closely related work on the ring of diagonal harmonics
+[Hai02], relies on the geometry of Hilbert schemes of points in A2 and, so far, a workable explanation based
+on DAHA technology – which was successful in settling all the other Macdonald conjectures – is missing.
+Another apparent dissimilarity, is the fact that the representation theory relevant for the n! conjecture is that
+of the symmetric group Sn , while all the other Macdonald conjectures are addressing phenomena rooted in
+the representation theory of reductive groups.
+     Following the work in [Hai02], a precise conjecture (the so-called Shuﬄe Conjecture) was formulated
+in [HHL+ 05] (see also [Hag08]) for the monomial expansion of the bi-graded Frobenius characteristic of
+the ring of double harmonics. This conjecture, and a number of further reﬁnements and generalizations
+were recently proved [CM18, Mel21]. In the process, Carlsson and Mellit revealed a new algebraic structure
+(the double Dyck path algebra Aq,t ) together with a speciﬁc representation V• , which, aside from governing
+the combinatorics relevant for the Shuﬄe Conjecture, exhibits striking structural similarities with the family
+of DAHA of type GLk , k ≥ 2. In [CGM20] a connection was established between Aq,t and the geometry
+of Hilbert schemes; it shows that the representation V• is closely connected with a geometric action in the
+equivariant K-theory of certain smooth strata in the parabolic ﬂag Hilbert schemes of points in A2 . This
+action is akin to the action of stable limit spherical DAHA on the equivariant K-theory of the Hilbert schemes
+4                                           BOGDAN ION AND DONGYU WU
+
+
+of points in A2 [SV11]. We refer to Deﬁnition 7.3, Proposition 7.5, and Theorem 7.7 for the deﬁnition of
+At,q , V• , and other structural details.
+     The structural similarities between Aq,t and the family of DAHA of type GLk are therefore important
+for connecting the geometry of Hilbert schemes with the DAHA. The algebra Aq,t is a quiver algebra and its
+representation V• = (Vk )k≥0 is a quiver representation; the subalgebra of Aq,t generated by certain elements
+that correspond to loops that act at node k resembles quite closely the DAHA of type GLk . In fact, the
+generators in such a subalgebra satisfy all the expected DAHA relations except for one (see discussion in
+[CM18, pg. 693–694]). However, it was expected that an explicit relationship with the DAHA exists. The
+main diﬃculty in establishing such a connection rests in explaining the relationship between the Cherednik
+operators and the operators zi in Aq,t .
+      We establish a direct connection between the standard representation of the + stable limit DAHA and
+the double Dyck path algebra. To facilitate the comparison and not deviate from the traditional notation for
+parameters in double aﬃne Hecke algebras, we will swap the role of the parameters q and t in the original
+deﬁnition of the double Dyck path algebra. Therefore, the connection we establish is between the + stable
+limit DAHA and the algebra At,q . Speciﬁcally, we show that the standard representation of H+ can be used
+to construct a quiver representation of At,q . The standard representation P+                               +
+                                                                              as has a natural ﬁltraton P(k) ,
+                             +                              +
+k ≥ 0; the subspace P(k) consists of the elements of Pas that are symmetric in the variables xi , i > k. We
+denote by P• the complex of vector spaces (P(k)+ )k≥0 . The vector spaces P(k)+ form an direct system and
+P+as is their direct limit. Our second main result is the following (Theorem 7.13).
+
+Theorem B. There is a At,q action on P• such all generators of At,q corresponding to loops in Definition 7.3 (i.e.
+Ti , yi , zi ) act as Ti , Xi , Yi .
+
+    In fact, this representation turns out to be precisely the deﬁning representation of At,q (Theorem 7.14)
+Theorem C. The representations of At,q on P• and V• are isomorphic.
+
+    Since the notation in [CM18] for the elements of the double Dyck path algebra that are relevant for its
+comparison with the action of H+ does not match the more traditional notation used in the DAHA literature,
+we include below, for the reader’s convenience, the conversion table between notation used here and the
+notation used in [CM18] and [Mel21]:
+
+                                     t q     P(k)+   P•    Xi   Yi   Ti    ∂   ∂∗    ∂−
+                          [CM18]     q t      Vk     V∗    yi   zi   Ti   d+   d∗+   d−
+
+     It is important to note that all the generators of At,q corresponding to loops act globally in P• , by which
+we mean that their action on each P(k)+ is the restriction of their action on P+as . The vector spaces Vk , k ≥ 0,
+also form a direct system but the action of the elements zi ∈ At,q act only locally, by which we mean that
+the action is not compatible with the structure maps of the direct system. This obscures the fact that the
+representation V• arises from a more fundamental representation on the direct limit of Vk , k ≥ 0. In some
+sense, the isomorphism between P• and V• straightens this out this apparent incompatibility and explains
+how the limit Cherednik operators lead to the operators zi in At,q .
+    In [CM18, pg. 694] (see also [CGM20, Remark 2.6]) there is one phrase commenting on a possible
+algebra isomorphism between ek At,q ek (the subalgebra of At,q generated by loops based at node k) and a
+                                THE STABLE LIMIT DAHA AND THE DOUBLE DYCK PATH ALGEBRA                              5
+
+
+“partially symmetrized” version of the stable limit spherical DAHA, still to be deﬁned for k > 0. Our results,
+Theorem B and Theorem C, establish a diﬀerent relationship, between diﬀerent objects, namely between the
+standard representations of H+ and At,q .
+     Our construction of the standard representations of the stable limit DAHA opens a number of immediate
+questions on the spectral theory of the limit Cherednik operators as well as on the structure of these repre-
+sentations. A second set of questions is related the possible applications of the stable limit DAHA – through
+the path opened by the work of Carlsson and Mellit – to the combinatorics and geometry of Hilbert schemes.
+We hope to pursue these questions in future publications.
+
+Acknowledgements. The work of BI was partially supported by the Simons Foundation grant 420882.
+
+
+
+                                                     2. Notation
+
+2.1. We denote by X an inﬁnite alphabet x1 , x2 , . . . and by Sym[X] the ring of symmetric functions in
+X. The ﬁeld or ring of coeﬃcients K ⊇ Q will depend on the context. For any k ≥ 1, we denote by
+Xk the ﬁnite alphabet x1 , x2 , . . . , xk and by Xk the inﬁnite alphabet xk+1 , xk+2 , . . . . Sym[Xk ] will denote
+the ring of symmetric functions in Xk . Furthermore, for any 1 ≤ k ≤ m, we denote by X[k,m] the ﬁnite
+alphabet xk , . . . , xm . As usual, we denote by hn [X] (or hn [Xk ], or hn [Xk ], or hn [X[k,m] ]) the n-th complete
+symmetric functions (or polynomials) in the indicated alphabet (X, Xk , Xk , X[k,m] ), by pn [X] (or pn [Xk ], or
+pn [Xk ], or pn [X[k,m] ]) the n-th power sum symmetric functions (or polynomials), and by en [X] (or en [Xk ],
+or en [Xk ], or en [X[k,m] ]) the n-th elementary symmetric functions (or polynomials). The symmetric function
+p1 [X] = h1 [X] = e1 [X] is also denoted by X = x1 + x2 + · · · . For a partition λ, mλ [X] (or mλ [Xk ], or mλ [Xk ],
+denotes the monomial symmetric function (or polynomial) in the indicated alphabet.
+
+
+2.2. Any action of the monoid (Z>0 , ·) on the ring K extends to a canonical action by Q-algebra morphisms
+on Sym[X]. The morphism corresponding to the action of n ∈ Q>0 is denoted by pn and is deﬁned by
+
+                                           pn · pk [X] = pnk [X],   k ≥ 1.
+
+In our context K will be a ring of polynomials or a ﬁeld of fractions generated by some ﬁnite set of parameters,
+the action of (Z>0 , ·) on K is Q-linear, and pn acts on parameters by raising them to the n-th power. For
+example, if K = Q(t, q) then, pn · t = tn , pn · q = qn .
+     Let R be a ring with an action of (Z>0 , ·) by ring morphisms. Any ring morphism ϕ : Sym[X] → R that
+is compatible with the action of (Z>0 , ·) is uniquely determined by the image of p1 [X] = X. The image of
+F [X] ∈ Sym[X] through ϕ is usually denoted by F [ϕ(X)] and called the plethystic evaluation (or substitution)
+of F at ϕ(X).
+     The plethystic exponential Exp[X] is deﬁned as
+                                               ∞                    ∞
+                                                                               !
+                                               X                    X pn [X]
+                                    Exp[X] =         hn [X] = exp                  .
+                                               n=0                  n=1
+                                                                          n
+
+2.3. We will use some symmetric polynomials that are related to the complete homogeneous symmetric
+functions via plethystic substitution. More precisely, let hn [(1 − t)Xk ] be the symmetric polynomial obtained
+6                                             BOGDAN ION AND DONGYU WU
+
+
+from the symmetric function hn [(1 − t)X] by specializing to 0 the elements of the alphabet Xk . The corre-
+sponding notation applies to hn [(t − 1)X] and other plethystic substitutions.
+     For example, from the Newton identities for the complete homogeneous symmetric functions, we can
+easily see that (for x = x1 )
+
+(2.1)                   hn [(1 − t)x] = (1 − t)xn ,
+                                                  hn [(t − 1)x] = tn−1 (t − 1)xn , n ≥ 1,
+                                                                                       X
+and h0 [(1 − t)x] = h0 [(t − 1)x] = 1. The classical convolution formula hn [X] =         hi [X]hj [X] has the
+                                                                                                i+j=n
+following counterparts
+
+                                                    X
+(2.2)                           hn [(1 − t)Xk ] =           hi [(1 − t)Xk−1 ]hj [(1 − t)xk ]
+                                                    i+j=n
+
+and
+                                                      X
+(2.3)                           hn [(1 − t)Xk−1 ] =           hi [(1 − t)Xk ]hj [(t − 1)xk ].
+                                                      i+j=n
+
+We will make use of such formulas applied to similar situations – for example, with X[k+1,m] , m > k, replacing
+Xk in the formulas above.
+
+2.4. For any k ≥ 1, let Pk = Q(t, q)[x±1                  ±1
+                                             1 , . . . , xk ] be the ring of Laurent polynomials in the variables
+x1 , . . . , xk . The symmetric group Sk acts on Pk by permuting the variables. We denote by si the simple
+transposition that interchanges xi and xi+1 and is ﬁxing all the other variables. The polynomial subrings
+
+                          P+
+                           k = Q(t, q)[x1 , . . . , xk ] and       P−            −1           −1
+                                                                    k = Q(t, q)[x1 , . . . , xk ]
+
+are stable under the action of Sk .
+
+2.5. Let
+                                    πk : P+    +
+                                          k → Pk−1 ,         and     ιk : P+      +
+                                                                           k−1 → Pk
+
+be the evaluation morphism that maps xk to 0 and, respectively, the canonical inclusion. The deﬁnitions and
+facts that we discuss below have straightforward analogues associated to the sequence of rings P− k , k ≥ 1. To
+avoid introducing additional notation, we will use πk and ιk for the corresponding morphisms between the
+rings P−          −                                                                −1
+         k and Pk−1 (to be clear, in this case, the evaluation morphism πk maps xk to 0), with the hope that
+the necessary distinction will be clear from the context (in fact, the objects associated with P−
+                                                                                                k will appear
+only in §5). We adopt the same convention for all the other morphisms considered in this sub-section: ιn,k ,
+Πk , Ik , Jk , J.
+     The rings P±                                                                   ±
+                 k , k ≥ 1 form an graded inverse system. We will use the notation P∞ for the graded inverse
+                ±
+limit ring lim Pk . The graded inverse limit rings are sometimes referred to in the literature as the rings of
+            ←−
+formal polynomials in the variables x±                                 ±    ±
+                                     i , i ≥ 1. We denote by Πk : lim Pk → Pk the canonical morphism.
+                                                                            ←−
+
+      The inductive limit lim P+
+                               k is canonically isomorphic with the ring Q(t, q)[x1 , x2 , . . . ] of polynomials in
+                           −→
+inﬁnitely many variables (and similarly for lim P−
+                                                 k ). As with the projective limit, the rings lim
+                                                                                              −→ k
+                                                                                                  P± and lim P±
+                                                                                                              k
+                                               −→                                                             −→
+                                                                                                        k≥n
+are canonically isomorphic. We denote by Ik : P±
+                                               k → lim P± the canonical morphism.
+                                                   −→ k
+                              THE STABLE LIMIT DAHA AND THE DOUBLE DYCK PATH ALGEBRA                         7
+
+
+    The following diagram is commutative:
+
+                                               P±
+                                                k−1               P±
+                                                                   k−1
+
+                                                ιk               πk
+
+                                                 P±
+                                                  k                P±
+                                                                    k
+
+                                                                                                  ±
+where each horizontal map represents the identity map. For a ﬁxed n ≥ 1, denote by ιn,k : P±
+                                                                                           n → Pk , n ≤ k,
+                                                           ±
+the canonical inclusion. The sequence of maps ιn,k : P±
+                                                      n → Pk , k ≥ n is compatible with the structure maps
+πk . Therefore, they induce a morphism
+
+                                           P±
+                                            n → lim
+                                                −→ k
+                                                    P± ∼
+                                                       = lim P±
+                                                              k.   −→
+                                                      k≥n
+
+Furthermore, these maps are compatible with the structure maps ιn and therefore induce a morphism
+
+                                             J : lim P±        ±
+                                                      k → lim Pk .
+                                                     −→          ←−
+
+By construction, Πk JIk : P±    ±                                                 ±    ±
+                           k → Pk is the identity function. We denote Jk = JIk : Pk → P∞ .
+
+
+
+2.6. For any n ≥ 1, a sequence of operators Ak : P±           ±
+                                                       k → Pk , k ≥ n, compatible with the inverse system
+induces a (limit) operator A : P±     ±
+                                 ∞ → P∞ . We have Ak = Πk AJk . For example, the sequence Ak = sn , k ≥ n,
+given by the action of the simple transposition sn , induces a limit operator sn acting on P±∞ . In turn, this
+leads to an action of the inﬁnite symmetric group S(∞) (the inductive limit of Sk , k ≥ 1) on P±∞.
+
+    For any k ≥ 0, denote,
+                                P(k)± = {F ∈ P±
+                                              ∞ | si F = F, for all i > k}.
+
+From the deﬁnition it is clear that P(k)± ⊂ P(k + 1)± . Also, P(0)+ is the ring of symmetric functions Sym[X],
+and, more generally, for any k ≤ 1, the multiplication map
+
+                                           P+            ∼     +
+                                            k ⊗ Sym[Xk ] = P(k)
+
+is an algebra isomorphism.
+
+
+2.7. An important role will be played by the graded subrings P±     ±
+                                                              as ⊂ P∞ , deﬁned as the inductive limit of
+               ±
+the spaces P(k) :                                 [
+                                           P±as =    P(k)± .
+                                                          k≥0
+
+More concretely, an element of P±
+                                as must be ﬁxed by all simple transpositions with the possible exception of
+ﬁnitely many. Following Knop [Kno07], we refer to P±
+                                                   as as the almost symmetric modules.
+
+
+
+
+                                               3. Preliminaries
+
+3.1. Affine Hecke Algebras.
+
+Definition 3.1. The aﬃne Hecke algebra Ak of type GLk is the Q(t)-algebra generated by
+
+                                         T1 , . . . , Tk−1 , X1±1 , . . . , Xk±1
+8                                               BOGDAN ION AND DONGYU WU
+
+
+satisfying the following relations:
+                                              Ti Tj = Tj Ti ,      |i − j| > 1,
+(3.1a)
+                                      Ti Ti+1 Ti = Ti+1 Ti Ti+1 ,       1 ≤ i ≤ k − 2,
+
+(3.1b)                                  (Ti − 1)(Ti + t) = 0,         1 ≤ i ≤ k − 1,
+
+                                        tTi−1 Xi Ti−1 = Xi+1 ,         1≤i≤k−1
+(3.1c)                                       T i Xj = Xj T i ,     j 6= i, i + 1,
+                                             Xi Xj = Xj Xi         1 ≤ i, j ≤ k.
+
+    The deﬁnition above is based on the Bernstein presentation of the aﬃne Hecke algebra Ak . The following
+presentation of Ak will also be used.
+
+Proposition 3.2. The affine Hecke algebra Ak is generated by
+
+                                                 Te0 , T1 , . . . , Tk−1 , ω
+                                                                           ek±1
+
+satisfying the relations:
+                                              Ti Tj = Tj Ti ,      |i − j| > 1,
+(3.2a)                                Ti Ti+1 Ti = Ti+1 Ti Ti+1 ,       1 ≤ i ≤ k − 2,
+                                        (Ti − 1)(Ti + t) = 0,         1 ≤ i ≤ k − 1,
+
+                                            Ti Te0 = Te0 Ti ,    2 ≤ i ≤ k − 1,
+(3.2b)                                             Te0 T1 Te0 = T1 Te0 T1 ,
+                                                 (Te0 − 1)(Te0 + t) = 0,
+
+(3.2c)                       ω      ek−1 = Ti−1 for 1 ≤ i ≤ k − 1,
+                             e k Ti ω                                         ek Te0 ω
+                                                                              ω      ek−1 = Tk−1 .
+
+Remark 3.3. Te0 , ω
+                  ek , and X1 , . . . , Xk are related by
+
+                                  ek = t1−k Tk−1 . . . T1 X1−1 = Xk−1 Tk−1
+                                  ω                                    −1
+                                                                           . . . T1−1 ,
+
+                        Te0 = ω
+                              ek−1 Tk−1 ω
+                                        ek = ω      ek−1 = tk−1 X1 Xk−1 T1−1 . . . Tk−1
+                                             e k T1 ω                               −1
+                                                                                        . . . T1−1 .
+
+Notation 3.4. We denote by A+  k the subalgebra of Ak generated by Ti , i ≤ k−1, and Xi , i ≤ k, or equivalently,
+                       ek . Similarly, we denote by A−
+by Ti , i ≤ k − 1, and ω −1
+                                                        k the subalgebra of Ak generated by Ti , i ≤ k − 1, and
+  −1
+Xi , i ≤ k, , or equivalently, by Ti , i ≤ k − 1, and ω
+                                                      ek .
+
+3.2. Double Affine Hecke Algebras.
+
+Definition 3.5. The double aﬃne Hecke algebra (DAHA) Hk , k ≥ 2, of type GLk is the Q(t, q)-algebra
+generated by T0 , T1 , . . . , Tk−1 , X1±1 , . . . , Xk±1 , and ωk±1 satisfying (3.1a), (3.1b), (3.1c) and the following
+relations:
+                                            Ti T0 = T0 Ti ,      2 ≤ i ≤ k − 1,
+(3.3a)
+                                                   T0 T1 T0 = T1 T0 T1 ,
+                                   THE STABLE LIMIT DAHA AND THE DOUBLE DYCK PATH ALGEBRA                              9
+
+
+(3.3b)                                                (T0 − 1)(T0 + t) = 0,
+
+                                             ωk Ti ωk−1 = Ti−1 ,        2 ≤ i ≤ k − 1,
+(3.3c)
+                                            ωk T1 ωk−1 = T0 ,       ωk T0 ωk−1 = Tk−1 ,
+
+(3.3d)                      ωk Xi+1 ωk−1 = Xi ,          1 ≤ i ≤ k − 1,           ωk X1 ωk−1 = q−1 Xk .
+
+    The double aﬃne Hecke algebras were ﬁrst introduced, in greater generality, by Cherednik [Che95].
+Under one of the possible sets of conventions, the deﬁnition of the DAHA of type GLk can be found, for
+example, in [Che05, §3.7]. The presentation in Deﬁnition 3.5 is consistent with the conventions in [IS20].
+We will also make use of the following equivalent presentation of Hk .
+
+Proposition 3.6. The algebra Hk , k ≥ 2, is the Q(t, q)-algebra generated by the elements T1 , . . . , Tk−1 ,
+X1±1 , . . . , Xk±1 , Y1±1 , . . . , Yk±1 satisfying (3.1a), (3.1b), (3.1c) and the following relations:
+                                             t−1 Ti Yi Ti = Yi+1 ,       1≤i≤k−1
+(3.4a)                                            Ti Yj = Yj Ti ,      j 6= i, i + 1,
+                                                  Yi Yj = Yj Yi      1 ≤ i, j ≤ k,
+
+(3.4b)                                                 Y1 T1 X1 = X2 Y1 T1 ,
+
+(3.4c)                                          Y1 X1 . . . Xk = qX1 . . . Xk Y1 .
+
+Remark 3.7. Y1 , . . . , Yk and ωk are related by
+
+                                         Yi = tk+1−i Ti−1 . . . T1 ωk−1 Tk−1
+                                                                         −1
+                                                                             . . . Ti−1 .
+
+    The presentation in Proposition 3.6 can be derived from Deﬁnition 3.5. See also [SV11, §2.1]; the
+generators Xi , Yi , in [SV11] correspond to Xi−1 , Yi−1 in our notation, and the relation [SV11, (2.7)] is
+equivalent to (3.4b) modulo the relations (3.1c) and (3.4a).
+
+Notation 3.8. We denote by Hk+ the subalgebra of Hk generated by Ti , i ≤ k − 1, and Xi , Yi , i ≤ k. Similarly,
+we denote by Hk− the subalgebra of Hk generated by Ti ,i ≤ k − 1, and Xi−1 , Yi−1 , i ≤ k.
+
+3.3. The representation below is called the standard representation of Hk [Che95, Theorem 2.3]
+
+Proposition 3.9. The following formulas define a faithful representation of Hk on Pk :
+                                                                                       1 − si
+                     Ti f (x1 , . . . , xk ) = si f (x1 , . . . , xk ) + (1 − t)xi             f (x1 , . . . , xk ),
+                                                                                     xi − xi+1
+(3.5)                ek f (x1 , . . . , xk ) = t1−k Tk−1 . . . T1 x−1
+                     ω                                             1 f (x1 , . . . , xk ),
+
+                     ωk f (x1 , . . . , xk ) = f (q−1 xk , x1 , . . . , xk−1 ).
+Furthermore, for any 1 ≤ i ≤ k, the elements Xi act as left multiplication by xi .
+
+    By restriction, we obtain the corresponding standard representations of Hk+ and Hk− .
+
+Corollary 3.10. The subspace P±                                                                         ±
+                              k is stable under the action of Hk . The corresponding representation of Hk on
+P±
+ k is faithful.
+10                                          BOGDAN ION AND DONGYU WU
+
+
+     All the standard representations are induced representations from a one-dimensional representation of
+the corresponding aﬃne Hecke subalgebra.
+
+Convention 3.11. There will be elements denoted by the same symbol that belong to several (often inﬁnitely
+many) algebras. The notation does not keep track of this information if it is implicit from the context. When
+                                                   (k)
+necessary, we will add the superscript (k) (e.g. Yi ∈ Hk ) to make such information explicit.
+
+                                         4. The stable limit DAHA
+
+4.1. We introduce a pair of closely related algebras with inﬁnitely many generators, which we call stable
+limit DAHAs.
+
+Definition 4.1. Let H+ be the Q(t, q)-algebra generated by the elements Ti ,Xi , and Yi , i ≥ 1, satisfying the
+following relations:
+                                           Ti Tj = Tj Ti ,     |i − j| > 1,
+(4.1a)
+                                       Ti Ti+1 Ti = Ti+1 Ti Ti+1 ,       i ≥ 1,
+
+(4.1b)                                  (Ti − 1)(Ti + t) = 0,          i ≥ 1,
+
+                                         tTi−1 Xi Ti−1 = Xi+1 ,        i≥1
+(4.1c)                                   T i Xj = Xj T i ,     j 6= i, i + 1,
+                                           Xi Xj = Xj Xi ,        i, j ≥ 1,
+
+                                           t−1 Ti Yi Ti = Yi+1 ,      i≥1
+(4.1d)                                     Ti Yj = Yj Ti ,     j 6= i, i + 1,
+                                             Yi Yj = Yj Yi ,     i, j ≥ 1,
+
+(4.1e)                                         Y1 T1 X1 = X2 Y1 T1 .
+
+We will call H+ the + stable limit DAHA.
+
+     Note that, as opposed to the corresponding elements of Hk , the elements Xi , Yi are not invertible in
+H+ . Similarly, we deﬁne the − stable limit DAHA.
+
+Definition 4.2. Let H− be the Q(t, q)-algebra generated by the elements Ti ,Xi−1 , and Yi−1 , i ≥ 1, satisfying
+the following relations:
+                                           Ti Tj = Tj Ti ,     |i − j| > 1,
+(4.2a)
+                                       Ti Ti+1 Ti = Ti+1 Ti Ti+1 ,       i ≥ 1,
+
+(4.2b)                                  (Ti − 1)(Ti + t) = 0,          i ≥ 1,
+
+                                        t−1 Ti Xi−1 Ti = Xi+1
+                                                          −1
+                                                              ,         i≥1
+(4.2c)                                Ti Xj−1 = Xj−1 Ti ,        j 6= i, i + 1, ,
+                                      Xi−1 Xj−1 = Xj−1 Xi−1 ,          i, j ≥ 1,
+                               THE STABLE LIMIT DAHA AND THE DOUBLE DYCK PATH ALGEBRA                            11
+
+
+                                          tTi−1 Yi−1 Ti−1 = Yi+1
+                                                              −1
+                                                                 ,      i≥1
+(4.2d)                                   Ti Yj−1 = Yj−1 Ti ,      j 6= i, i + 1,
+                                        Yi−1 Yj−1 = Yj−1 Yi−1 ,       i, j ≥ 1,
+
+(4.2e)                                   X1−1 T1−1 Y1−1 = T1−1 Y1−1 X2−1 .
+
+We will call H− the − stable limit DAHA.
+
+    The map
+                                                   e : H+ → H−
+that sends Ti , Xi , Yi to Ti , Yi−1 , Xi−1 , respectively, extends to an anti-isomorphism of Q(t, q)-algebras. For
+this reason, we regard H+ and H− as capturing the same structure and we will use the terminology stable
+limit DAHA to refer to either of them, depending on the context.
+     The terminology is justiﬁed by the fact that these structures arise from analyzing the stabilization phe-
+nomena for the standard representations of the algebras Hk± as k approaches inﬁnity. We will construct
+natural representations of both H± in this fashion. To point more directly to his connection consider the
+following.
+
+Definition 4.3. For any k ≥ 2, denote by H(k)+ the subalgebra of H+ generated by Ti , i ≤ k − 1, and Xi , Yi ,
+1 ≤ i ≤ k; H(k)− denotes the subalgebra of H− generated by Ti , i ≤ k − 1, and Xi−1 , Yi−1 , 1 ≤ i ≤ k.
+
+Remark 4.4. We have a canonical surjective Q(t, q)-algebra morphisms H(k)± → Hk± .
+
+4.2. The stable limit DAHA is also closely related to the inductive limit of the braid groups Bk , of k distinct
+points on the punctured torus. Indeed, we have the following presentation of Bk [Bel04, Theorem 1.1] (see
+also [Mel21, Theorem 5.1]).
+
+Theorem 4.5. For k ≥ 2, the group Bk is generated by the elements σi , 1 ≤ i ≤ k − 1, and Xi , Yi , 1 ≤ i ≤ k
+satisfying the following relations:
+                                            σi σj = σj σi ,    |i − j| > 1,
+(4.3a)
+                                    σi σi+1 σi = σi+1 σi σi+1 ,     1 ≤ i ≤ k − 2,
+
+                                      σi−1 Xi σi−1 = Xi+1 ,       1≤i≤k−1
+(4.3b)                                     σi Xj = Xj σi ,     j 6= i, i + 1,
+                                         Xi Xj = Xj Xi ,        1 ≤ i, j ≤ k,
+
+                                         σi Yi σi = Yi+1 ,     1≤i≤k−1
+(4.3c)                                     σi Yj = Yj σi ,     j 6= i, i + 1,
+                                           Yi Yj = Yj Yi ,     1 ≤ i, j ≤ k,
+
+(4.3d)                                          Y1 σ1 X1 = X2 Y1 σ1 .
+
+    The notation here and the one in [Bel04] are related as follows: X1 = b1 , Y1 = a1−1 .
+12                                                   BOGDAN ION AND DONGYU WU
+
+
+     Denote by Bk+ the sub-monoid of Bk generated by σi , σi−1 , 1 ≤ i ≤ k, and Xi , Yi , 1 ≤ i ≤ k. The
+canonical inclusion maps between the monoids Bk+ consitute a direct system. The direct limit monoid is
+              +
+denoted by B∞     . A comparison between the relations in Theorem 4.5 and those in Deﬁnition 4.1 (with σi
+             − 21
+mapping to t Ti , i ≥ 1) shows that H+ is the quotient of the monoid ring of B∞
+                                                                              +
+                                                                                 by the ideal generated by
+                                                                 −                   −
+the quadratic relations (4.1b). A similar relationship connects H and the monoid B∞    , the inductive limit
+                        −                        −1                −1    −1
+of the sub-monoids Bk of Bk generated by σi , σi , 1 ≤ i ≤ k, and Xi , Yi , 1 ≤ i ≤ k.
+
+4.3. Let
+                                                          ι : H+ → H+
+be the Q-algebra automorphism that sends Ti to Ti−1 , swaps Xi and Yi , and inverts the parameters t and q.
+It is easy to check that all relations are preserved and that ι is an involution.
+     Finally, let us deﬁne two Q(t, q)-algebra endomorphisms
+
+                                                        a, b : H+ → H+
+
+as follows. For all i ≥ 1,
+
+           a(Ti ) = Ti ,             a(Xi ) = Xi ,             a(Yi ) = t1−i (Ti−1 · · · T1 )(T1 · · · Ti−1 )Xi Yi ,
+                                                                                −1
+           b(Ti ) = Ti ,             b(Yi ) = Yi ,             b(Xi ) = ti−1 (Ti−1 · · · T1−1 )(T1−1 · · · Ti−1
+                                                                                                             −1
+                                                                                                                )Yi Xi .
+
+The fact that a preserves the deﬁning relations can be directly checked. The only relations that require a small
+computation are the commutativity relations between the a(Yi ). All the commutativity relations follow, in
+fact, from the commutativity relation between a(Y1 ) and a(Y2 ). This can be veriﬁed as follows
+
+                           T1 X1 Y1 T1 X1 Y1 = T1 X1 X2 Y1 T1 Y1                             by (4.1e)
+                                            = X1 X2 T1 Y1 T1 Y1                              by (4.1c)
+                                            = X1 X2 Y1 T1 Y1 T1                              by (4.1d)
+                                            = X1 Y1 T1 X1 Y1 T1 .                            by (4.1e)
+
+The fact that a is a morphism implies that b is a morphism since
+
+                                                             b = ιaι.
+
+Remark that the quadratic relation (4.1b) was not used in the veriﬁcation of the other relations. Therefore,
+a, b, and ι are not only endomorphisms of H+ , but also endomorphisms of the underlying monoid.
+
+Proposition 4.6. The endomorphism a and b of H+ generate a free monoid.
+
+Proof. The double aﬃne Hecke algebra Hk has endomorphisms deﬁned by the same formulas as a, b, with
+the obvious constraint on the label i. Indeed, with this deﬁnition, a and b correspond, respectively, to ρ2 and
+ρ1 in [SV11, §2.1], or to a and b−1 in [IS20, Chapter 6]. Furthermore, the corresponding a, b are in fact
+automorphisms of Hk and generate a copy of the braid group on three strands (see, e.g. [IS20, Theorem
+6.4]). They stabilize the subalgebra Hk+ and the restrictions on a, b to Hk+ generate the free monoid on
+two generators. Since, as pointed out in Remark 4.4, Hk+ is a quotient of the subalgebra H+ (k) ⊆ H+ and
+H+ (k) is stable under the action of a and b, we obtain that the endomorphisms a, b of H+ generate a free
+monoid.                                                                                                       
+                             THE STABLE LIMIT DAHA AND THE DOUBLE DYCK PATH ALGEBRA                        13
+
+
+Remark 4.7. We can regard the braid group on three strands B3 as generated by a, b−1 satisfying the braid
+relation
+                                             ab−1 a = b−1 ab−1 .            "     #               "     #
+                                                                              1 1                   1 0
+There is a surjective group morphism B3 → SL(2, Z) which maps a to A =               and b to B =        .
+                                                                              0 1                   1 1
+The image of the free monoid B3+ generated by a and b maps bijectively to the free monoid generated by A
+and B which consists of the set SL(2, Z)+ of matrices with non-negative integer entries.
+
+    Similar facts, pertaining to the algebra H− , can be recorded with the help of the anti-morphism e.
+
+4.4. It is important to remark that the algebras Hk+ , k ≥ 2, do not form an inverse system in any natural
+way and therefore H+ cannot be directly thought oﬀ as an inverse limit of Hk+ , k ≥ 2. However, we will show
+that both H± acquire natural representations that are constructed by considering inverse systems built from
+the standard representations of Hk± , k ≥ 2.
+
+
+                    5. The standard representation of the − stable limit DAHA
+
+5.1. The results in the remainder of this section are due to Knop [Kno07]. We brieﬂy recall here the emerg-
+ing structure. We refer to §2.5 for the relevant notation. The map πk : P−      −
+                                                                         k → Pk−1 is partially compatible
+                     −        −
+with the actions of Ak and Ak−1 . More precisely,
+                                         πk Ti = Ti πk ,     1 ≤ i ≤ k − 2,
+                                         πk ω
+                                            ek = 0,
+(5.1)                              πk Tk−1 ω
+                                           ek = ω
+                                                ek−1 πk ,
+                                       πk Xi−1 = Xi−1 πk ,     1 ≤ i ≤ k − 1,
+                                       πk Xk−1 = 0.
+We refer to [Kno07, Theorem 9.1] for the details.
+
+5.2. The compatibility with the actions of Hk− and Hk−1 −
+                                                             can also be investigated, but the veriﬁcation is
+more delicate. More precisely, we have the following result [Kno07, Proposition 9.11].
+
+Proposition 5.1. For any 1 ≤ i ≤ k − 1, we have
+
+(5.2)                                            πk Yi = Yi πk .
+
+Furthermore, the operator Yi−1 stabilizes both P−      −
+                                                k and Pk−1 and
+
+(5.3)                                         πk Yi−1 = Yi−1 πk .
+
+5.3. For any n ≥ 1, the sequence of operators (Ak )k≥1 deﬁned by
+
+                                            Ak := Yn(k) ,     k ≥ n,
+
+induces the limit operator Yn : lim
+                                ←− k
+                                    P− → lim
+                                         ←− k
+                                             P− . Since lim
+                                                        ←− k
+                                                            P and P−
+                                                                   ∞ are canonically isomorphic, we
+                                 k≥n         k≥n                k≥n
+obtain an operator Yn : P− → P− . Similarly, we obtain the limit operators Ti , X−1       −1
+                                                                                 i , and Yi , i ≥ 1. It is
+14                                          BOGDAN ION AND DONGYU WU
+
+
+important to remark that the operators Y−1
+                                        i are invertible (with inverse Yi ). The following result immediately
+follows.
+
+Theorem 5.2. The limit operators Ti , X−1       −1                   −           −
+                                       i , and Yi , i ≥ 1, define a H action on P∞ .
+
+
+Proof. All relations are satisﬁed because they are satisﬁed by the corresponding operators acting on each
+P−
+ k.                                                                                                     
+
+
+5.4. As it was pointed out in [Kno07, §10] the almost symmetric module P−                              −
+                                                                            as , deﬁned in §2.7, is a H -stable
+                                                                                       −
+subspace of P−
+             ∞ and is more canonical from a certain point of view. Speciﬁcally, each Pk is a parabolic module
+                               −
+for the aﬃne Hecke algebra Ak and has a standard basis (in the sense of Kazhdan-Lusztig theory) indexed
+by compositions with at most k parts. The sequences consisting of the standard basis elements indexed by
+the same composition (in all P−                                              −
+                                 k , k ≥ n, for some n) give elements of P∞ (see [Kno07, §9]) which are
+expected to play the role of a standard basis for the limit representation. However, these limits of standard
+basis elements do not span P−                                   −
+                              ∞ , but rather the smaller space Pas .
+
+
+Theorem 5.3. The almost symmetric module P−        −                −
+                                          as is a H -sub-module of P∞ .
+
+
+     We call this representation the standard representation of H− . We expect this representation to be
+faithful.
+    As explained in [Kno07], a sequence on non-symmetric Macdonald polynomials indexed by the same
+composition gives rise to an element of P−
+                                         as , and such elements are common eigenfunctions for the action the
+operators Y−1
+            i . The limit non-symmetric  Macdonald polynomials do not span P−  as and therefore the spectral
+                          −1            −
+theory of the operators Yi acting on Pas is not yet fully understood.
+
+
+                     6. The standard representation of the + stable limit DAHA
+
+6.1. Before delving into this section, which is the technical core of the article, it might be helpful to oﬀer
+a summary of the diﬃculties that one encounters in the eﬀort to understand the limiting behavior of the
+Cherednik operators (the analysis of all the other generators of Hk+ is straightforward) in relationship with
+the inverse system (P+
+                     k )k≥2 , as well as provide a less technical description of the new elements that are
+employed to describe this limiting behavior.
+                                                                          (k)
+       It has been know to the specialists that the Cherednik operators Yi are not compatible with the inverse
+                                                                            k (k)
+system (P+   k )k≥2 . Our ﬁrst observation is that the family of operators t Yi   , for ﬁxed i, are compatible with
+                       +                                                         +
+inverse system (xi Pk )k≥2 , which does lead to a limit operator acting on xi P∞ . However, there is no common
+domain for all limit operators Yi , i ≥ 1. To address this situation we consider some modiﬁed operators
+acting on P+                            e (k) . Like the Cherednik operators, these operators satisfy the relations
+               k , which we denote by Yi
+   (k)             (k)                         (k)     (k)
+Yei+1 = t−1 Ti Yei Ti , 1 ≤ i ≤ k − 1, Tj Yei = Yei Tj , |i − j| > 1, and are therefore fully determined by the
+              (k)
+operator Ye , which has the following additional properties
+           1
+
+          (k)        (k)
+      i) Ye1 = tk Y1 on x1 P+
+                            k;
+          e (k) +      +
+     ii) Y1 · Pk ⊆ x1 Pk .
+                                     THE STABLE LIMIT DAHA AND THE DOUBLE DYCK PATH ALGEBRA                           15
+
+                                  (k)      (k)
+The ﬁrst property implies that Yei = tk Yi on xi P+  k for all 1 ≤ i ≤ k; the second property implies that
+  (k)                                                              (k)
+Ye · P ⊆ Ti−1 · · · T1 x1 P for all 1 ≤ i ≤ k. The operator for Ye
+ i
+       +
+           k
+                           +
+                                 k                                     is obtained by projecting the action of
+                                                                                1
+  (k)
+Y1       onto the space x1 P+
+                            k.
+                                                              (k)
+     The structural properties of the algebra generated by Yei , Xi , 1 ≤ k, and Ti , 1 ≤ i ≤ k − 1 are used
+to deﬁne an algebraic structure H e + called the deformed DAHA. H  e + has a natural action P+ (the standard
+                                    k                                k                       k
+representation), which is related to the standard representation of Hk+ on P+
+                                                                            k in the manner  described above.
+                                                   (k)
+     The modiﬁed Cherednik operators Yei , for ﬁxed i, are not yet compatible with the inverse system
+   +
+(Pk )k≥2 , but they are quite close to satisfy such a property. To be able to point out more precisely what
+happens, we ﬁrst remark that they act consistently on constant sequences (i.e. sequences compatible with the
+canonical inclusions ιk : P+        +
+                           k−1 → Pk ) in this inverse system (Lemma 6.10). This fact implies the existence of
+limit operators deﬁned on
+                                         limP+ k = Q(t, q)[x1 , x2 , . . . ],
+                                                −→
+                                                                                                           +
+the ring of polynomials in inﬁnitely many variables, but still not on P+
+                                                                       ∞ . Interestingly, the image of limPk   −→
+under the limit operators lies in P+                                   +
+                                   as (which is strictly smaller that P∞ ), showing that the smallest space on
+which one can hope to acquire an action of an algebra of limit operators is P+ as .
+
+        In order to understand the failure of the diagram
+                                                             e (k)
+                                                             Y
+                                                     P+                  P+
+                                                               1
+                                                      k                   k
+
+                                                  πk                       πk
+
+                                                            e (k−1)
+                                                            Y
+                                                   P+                    P+
+                                                              1
+                                                    k−1                   k−1
+
+                                                           (k)      (k−1)
+to be commutative, we can consider the diﬀerence πk Ye1 − Ye1             πk : P+    +
+                                                                                k → Pk−1 . On the subspace
+                                                          (k)
+xk P+ , this diﬀerence has no kernel and reduces to πk Ye
+     k                                                         : xk P+ → P+ . Since for every monomial in
+                                                                     1    k      k−1
+                                                                                                           (k)
+m ∈ Q(t, q)[x1 , x2 , . . . ] there exists a unique k such that m ∈ xk Pk , we can use the action of πk Ye1 on xk P+
+                                                                        +
+                                                                                                                   k
+to deﬁne an operator
+                               W1 : Q(t, q)[x1 , x2 , . . . ] → Q(t, q)[x1 , x2 , . . . ],
+                  e (k)                                                                    (k)
+such that W1 = πk Y1 on xk Pk . By restricting W1 to P+
+                               +
+                                                              k we obtain the operator W1      : P+    +
+                                                                                                  k → Pk . We can
+regard the operator W1 as collecting some obvious obstructions to the commutativity of the above diagram.
+                                                                                                 (k)
+                                                                                            e = Ye       (k)        (k)
+    As it turns out, these are all the obstructions to the commutativity of the diagram: if Z 1   1            − W1
+                                           e (k)
+then the corresponding diagram for the Z1 operators is commutative, leading to an operator
+                                                       e(∞) : P+
+                                                       Z            +
+                                                               ∞ → P∞ .
+                                                         1
+
+                                                   (k)
+      Furthermore, the action of W1 (or W1 ) on monomials can be explicitly computed; this is the action
+described in §6.8. Since this action is particularly simple, we were able to compute the action of the operators
+   (k)
+W1 on sequences in the inverse system (P+       k )k≥2 . This computation revealed that if the sequence in the
+                                                                   (k)
+inverse system has limit in Pas then one obtains by applying W1 another sequence in (P+
+                               +
+                                                                                              k )k≥2 which can
+be written as a ﬁnite linear expression of sequences compatible with the inverse system. The coeﬃcients in
+these linear expressions are sequences in Q(t, q) that are convergent in the t-adic topology (i.e. t is treated as
+16                                               BOGDAN ION AND DONGYU WU
+
+
+a small positive real number). This led us to the concept of limit described in §6.9. We refer to the sequences
+that have limit in this sense as convergent sequences.
+                     (k)    e(k) have limit in this sense, we obtain that the operators Ye (k) have limit (denoted
+     Since both Wi and Z     i                                                            i
+                                                               (∞)       e(∞) is, in general, P+ , it turns out that
+by Yi ). Although, the co-domain for the limit operators Wi        and Z  i                    ∞
+Yi : P+
+      as →  P +
+              as . Furthermore, Yi satisﬁes a continuity property:  it sends convergent  sequences    to convergent
+sequences.
+     The analysis of the algebraic structure generated by the action of the limit operators Yi makes use of
+the continuity property. Their most remarkable property of the limit operators is their commutativity. The
+commutativity holds, of course, for the ﬁnite rank Cherednik operators, but it does not hold for the modi-
+ﬁed Cherednik operators and it was interesting to discover that the commutativity is restored in the limit.
+Furthermore, the action of Yi on xi P+as matches the action of the corresponding limit Cherednik operator Yi .
+Ultimately, the action of the limit operators Yi , Xi , and Ti deﬁne an action of H+ on P+
+                                                                                         as .
+
+
+
+
+6.2. The map πk : P+    +                                                     +      +
+                   k → Pk−1 is also partially compatible with the actions of Ak and Ak−1 . More precisely,
+
+
+
+                                                     πk Ti = Ti πk ,   1 ≤ i ≤ k − 2,
+                                        −1
+                                    πk Tk−1 . . . T1−1 ω
+                                                       ek−1 = 0
+(6.1)                                            ek−1 Tk−1 = ω
+                                              πk ω             −1
+                                                             ek−1 πk
+                                                    πk Xi = Xi πk ,     1 ≤ i ≤ k − 1,
+                                                    πk Xi = 0.
+As before, these relations show that the operators Ti and Xi have limits (in the sense of §5.3), denoted by Ti
+and Xi , that act on P+
+                      ∞.
+
+
+
+                                                                                (k)         (k−1)
+6.3. On the other hand, for any i ≥ 1, the actions of the operators Yi and Yi   are no longer compatible
+with the map πk . One immediate obstruction is the fact that the eigenvalues of Yi on P+          +
+                                                                                         k and Pk−1 no
+longer match, as is was the case for their action on P−          −
+                                                         k and Pk−1 . The common spectrum of the action
+of Yi , 1 ≤ i ≤ k, on P+
+                       k is known from type Ak−1 Macdonald theory. The common eigenfunctions are
+non-symmetric Macdonald polynomials; they are indexed by compositions λ = (λ1 , . . . , λk ) ∈ Zk≥0 . The
+                 (k)
+eigenvalue of Yi       corresponding to the non-symmetric Macdonald polynomial indexed by λ is
+
+                                                  eλ (i) := qλi t1−wλ (i) ,
+
+where wλ (i) = |{j = 1, . . . , i | λj ≤ λi }| + |{j = 1, . . . , i | λj < λi }|. For the composition (λ, 0) ∈ Zk+1
+                                                                                                                ≥0 , we
+have
+                   e(λ,0) (i) = eλ (i)t−1 , if λi > 0, and e(λ,0) (i) = eλ (i), if λi = 0.
+                                                                                                        (k)
+One way to partially correct this problem is to consider the normalized operators tk Yi                       . Comparing the
+eigenvalues corresponding to λ and (λ, 0) gives
+
+               tk+1 e(λ,0) (i) = tk eλ (i),   if λi > 0,   and    tk+1 e(λ,0) (i) = tk eλ (i) · t,   if λi = 0.
+                                   THE STABLE LIMIT DAHA AND THE DOUBLE DYCK PATH ALGEBRA                                              17
+
+
+Example 6.1. The discrepancy between the eigenvalues is also reﬂected in the eigenfunctions. For example,
+the Macdonald polynomial corresponding to the compositions (0, 1, 0) and (0, 1) are, respectively,
+                                               q(1 − t)                                     q(1 − t)
+                                       x2 +             x1           and             x2 +            x1 .
+                                                q − t2                                       q−t
+                                           (3)        (2)
+This shows, in particular, that π3 Y1            6= Y1 π3 .
+
+                                                                                             (k)    (k)
+6.4. A crucial observation is that the actions of the operators tk Yi                              Xi     ∈ Hk+ on P+
+                                                                                                                    k are compatible with
+the inverse system.
+
+Proposition 6.2. For any 1 ≤ i ≤ k − 1, we have
+
+                                                     πk tk Yi Xi = tk−1 Yi Xi πk .
+
+Proof. First note that we have
+
+(6.2)                                                  πk ωk−1 Tk−1 = ωk−1
+                                                                       −1
+                                                                           πk ,
+
+which can be veriﬁed by direct computation. Hence by (6.1) we have
+                                   (k)     (k)
+                            πk Yi        Xi      = t1−i Ti−1 . . . T1 πk (ωk−1 Tk−1
+                                                                                −1
+                                                                                    . . . Ti−1 Xi )
+                                                 = t1−k Ti−1 . . . T1 πk (ωk−1 Xk Tk−1 . . . Ti )
+                                                 = t1−k Ti−1 . . . T1 ωk−1
+                                                                       −1       −1
+                                                                           πk (Tk−1 Xk Tk−1 . . . Ti )
+                                                                      −1
+                                                 = t−k Ti−1 . . . T1 ωk−1 πk (Tk−1 Xk Tk−1 . . . Ti )
+                                                 = t1−k Ti−1 . . . T1 ωk−1
+                                                                       −1
+                                                                           πk (Xk−1 Tk−2 . . . Ti )
+                                                                      −1   −1
+                                                 = t−i Ti−1 . . . T1 ωk−1 Tk−2 . . . Ti−1 Xi πk
+                                                            (k−1)    (k−1)
+                                                 = t−1 Yi           Xi          πk
+                            (k)     (k)               (k−1)    (k−1)
+Therefore we have πk tk Yi        Xi      = tk−1 Yi           Xi         πk .                                                          
+
+     In other words, one can obtain a limit operator corresponding to Yi , acting on the space xi P+      +
+                                                                                                   ∞ ⊂ P∞ .
+However, this is not satisfactory because it does not produce a non-trivial common domain for all the limit
+operators Yi , i ≥ 1. In order to extend the action of the limit operator Yi to a larger domain we introduce
+the deformed double aﬃne Hecke algebras and the concept of limit detailed in §6.9.
+
+6.5. The deformed double affine Hecke algebras.
+
+Definition 6.3. The deformed DAHA H      e + , k ≥ 2, is the Q(t, q)-algebra generated by the elements T1 , . . . , Tk−1 ,
+                                           k
+X1 , . . . , Xk , and ̟k satisfying (3.1a), (3.1b), (3.1c) and the following relations:
+
+
+                                                 ̟k Ti = Ti+1 ̟k ,          1 ≤ i ≤ k − 2,
+(6.3)
+                                               ̟k Xi = Xi+1 ̟k ,            1 ≤ i ≤ k − 1,
+
+                                                  γk Tk−1 = −tγk ,              T 1 γk = γk ,
+(6.4)
+                                              γk ̟kk−2 γk = γk ̟kk−1 γk = γk ̟kk = 0,
+18                                                    BOGDAN ION AND DONGYU WU
+
+
+where
+                                                       γk = ̟k2 Tk−1 − T1 ̟k2 .
+
+Remark 6.4. The quotient of H   e + by the ideal generated by γk is isomorphic to H+ . As it is clear from the
+                                  k                                                k
+                                      e +.
+relations (6.4), γk is not central in H k
+
+
+Notation 6.5. Let Yei , 1 ≤ i ≤ k, be deﬁned as follows
+
+                          Ye1 = tk ̟k Tk−1
+                                       −1
+                                           . . . T1−1 ,            Yei+1 = t−1 Ti Yei Ti ,     1 ≤ i ≤ k − 1.
+
+Therefore,
+                                  Yei = t1−i+k Ti−1 . . . T1 ̟k Tk−1
+                                                                 −1
+                                                                     . . . Ti−1 ,            1 ≤ i ≤ k.
+
+                                                                                   e k . Indeed
+Remark 6.6. It is important to remark that the relation (3.4b) is also satisﬁed in H
+
+                                                  Ye1 T1 X1 = tk ̟k Tk−1
+                                                                     −1
+                                                                         ...T2−1 X1
+                                                                          −1
+                                                              = tk X2 ̟k Tk−1 ...T2−1
+                                                              = X2 Ye1 T1 .
+
+The relations
+                                                    Tj Yei = Yei Tj ,      |i − j| > 1,
+are also satisﬁed. The veriﬁcation is a simple consequence of the braid relations and (6.3).
+
+Remark 6.7. On the other hand, the elements Yei , 1 ≤ i ≤ k, do not commute. In fact, we have
+
+                [Ye1 , Ye2 ] = t2k−1 γk Tk−1
+                                         −1
+                                             . . . T1−1 Tk−1
+                                                         −1
+                                                             . . . T2−1 = t2k−1 γk Tk−2
+                                                                                    −1
+                                                                                        . . . T1−1 Tk−1
+                                                                                                    −1
+                                                                                                        . . . T1−1 .
+
+Therefore, γk can be seen as an obstruction to the commutativity of the elements Yei .
+
+                                              e + and the elements Yei does not specify the integer k, we will
+     Since the notation for the generators of H k
+use the notation in the fashion indicated in Convention 3.11.
+
+
+6.6. For any 1 ≤ i ≤ k, let pri : P+    +
+                                   k → Pk , be the Q(t, q)-linear map which acts as identity on monomials
+divisible by xi and as the zero map on monomials not divisible by xi . In other words, pri is the projection
+onto the subspace xi P+k.
+                                      e + on P+ . The action is related to the action of Hk on P+ .
+     We deﬁne the following action of H k     k                                                 k
+
+                                                        e + on P+ :
+Theorem 6.8. The following formulas define an action of H k     k
+
+
+
+                                                                                         1 − si
+                       Ti f (x1 , . . . , xk ) = si f (x1 , . . . , xk ) + (1 − t)xi             f (x1 , . . . , xk ),
+                                                                                       xi − xi+1
+(6.5)                 Xi f (x1 , . . . , xk ) = xi f (x1 , . . . , xk ),
+                     ̟k f (x1 , . . . , xk ) = pr1 f (x2 , . . . , xk , qx1 ).
+
+     Note that the action of ̟k coincides with the action of pr1 ωk−1 .
+                                THE STABLE LIMIT DAHA AND THE DOUBLE DYCK PATH ALGEBRA                           19
+
+
+Proof. We only need to check the relations (6.3) and (6.4). From (3.3c) we have
+
+                                             ̟k Ti f = pr1 ωk−1 Ti f
+                                                         = pr1 (Ti+1 ωk−1 f )
+                                                         = Ti+1 pr1 ωk−1 f
+                                                         = Ti+1 ̟k f,
+
+for f ∈ P+
+         k and 1 ≤ i ≤ k − 2. Similarly, from (3.3d) we have
+
+                                               ̟k Xi f = Xi+1 ̟k f,
+
+for f ∈ P+
+         k and 1 ≤ i ≤ k − 1.
+
+     By linearity it suﬃces to verify the relation (6.4) on monomials. A straightforward computation leads
+to the following explicit expression of the action of γk
+
+                                      
+                                      
+                                       0,                                               if tk−1 6= 0, tk 6= 0
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                                       t    −1             t    −2
+                                      
+                                      (1 − t)q
+                                      
+                                                tk−1
+                                                     (x1k−1 x2 + x1k−1 x22 + . . .
+                            tk−1 tk
+(6.6)       γk (xt11 . . . xk−1 xk ) = +x1 xt2k−1 −1 )(xt31 xt42 . . . xtkk−2 ),         if tk−1 6= 0, tk = 0
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                               tk   tk −1            tk −2 2
+                                      (t − 1)q (x1 x2 + x1 x2 + . . .
+                                      
+                                      
+                                      
+                                      +x xtk −1 )(xt1 xt2 . . . xtk−2 ),
+                                           1 2        3 4            k                   if tk−1 = 0, tk 6= 0
+Note that the expression immediately implies that the actions of γk Tk−1 and −tγk coincide, and similarly for
+the actions of T1 γk and γk . The remaining relations can also be directly veriﬁed.                        
+
+Remark 6.9. The action of Yei Xi coincides with the action of tk Yi Xi ∈ Hk+ on P+
+                                                                                 k . Equivalently, the action of
+ −k e                           +                  +               e
+t Yi and the action of Yi ∈ Hk coincide on xi Pk . Therefore Yi can be regarded as a modiﬁcation of the
+Cherednik operator Yi .
+
+                                                                                          (k)
+6.7. We are now ready to explore the compatibility between the action of the operators Yei and the map
+πk : P+    +
+      k → Pk−1 .
+
+
+Lemma 6.10. The following diagram is commutative:
+                                                            e (k−1)
+                                                            Y
+                                                 P+                   P+
+                                                              i
+                                                  k−1                  k−1
+
+                                                 ιk                   πk
+                                                             e (k)
+                                                             Y
+                                                  P+                   P+
+                                                               i
+                                                   k                    k
+
+Equivalently, we have
+                                                      (k)             (k−1)
+                                                πk Yei      f = Yei           f,
+for all f ∈ P+
+             k−1 .
+20                                                  BOGDAN ION AND DONGYU WU
+
+
+Proof. Note that pr1 ωk−1 = ωk−1 prk . For any f ∈ P+
+                                                    k−1 we have
+      (k)
+ πk Yei     ιk f = πk t1−i+k Ti−1 . . . T1 pr1 ωk−1 Tk−1
+                                                     −1
+                                                         . . . Ti−1 f
+                = tk−i Ti−1 . . . T1 pr1 πk ωk−1 Tk−1 Tk−2
+                                                       −1
+                                                           . . . Ti−1 f + πk tk−i (t − 1)Ti−1 . . . T1 pr1 ωk−1 Tk−2
+                                                                                                                 −1
+                                                                                                                     . . . Ti−1 f
+                                          −1      −1
+                = tk−i Ti−1 . . . T1 pr1 ωk−1 πk Tk−2 . . . Ti−1 f + πk tk−i (t − 1)Ti−1 . . . T1 ωk−1 prk (Tk−2
+                                                                                                             −1
+                                                                                                                 . . . Ti−1 f )
+                     (k−1)
+                = Yei        πk f + 0
+
+For the third equality we used (6.2).                                                                                             
+
+     As an immediate consequence we obtain the following.
+                                                                           (k)
+Proposition 6.11. For any i ≥ 1, the sequence of operators (Yei                  )k≥2 induces a map
+                                                         (∞)
+                                                      Yei    : lim P+    +
+                                                                    k → P∞ ,
+                                                              −→
+                (∞)      (k)
+such that Πk Yei Ik = Yei , for all k ≥ i, k ≥ 2.
+
+                                                +
+Proof. Fix n ≥ i, and denote by ιn,k : P+
+                                        n → Pk , n ≤ k, the canonical inclusion. By Lemma 6.10, the
+                    (k)
+sequence of maps Yei ιn,k : P+      +
+                             n → Pk , k ≥ n, i is compatible with the structure maps πk . Therefore, they
+induce a morphism
+                                        P+
+                                         n → lim
+                                               −→ k
+                                                   P+ ∼
+                                                      = lim P+
+                                                             k.         −→
+                                                            k≥n
+Furthermore, Lemma 6.10 implies that these maps are compatible with the structure maps ιn and therefore
+induce the desired morphism.                                                                         
+                                                                      (∞)
+Example 6.12. To illustrate the construction of the limit operator Ye1    : limP+    +
+                                                                                k → P∞ let us compute its
+                                                                                           −→
+action on the element x22 ∈ limP+
+                                k . A direct computation gives
+                                   −→
+
+
+                             (2)
+                          Ye1 · x22 = q2 t(t − 1)x21 + qt(t − 1)x1 x2
+                             (3)
+                          Ye1 · x22 = q2 t(t − 1)x21 + qt(t − 1)x1 x2 − qt(t − 1)2 x1 x3
+                             (4)
+                          Ye1 · x22 = q2 t(t − 1)x21 + qt(t − 1)x1 x2 − qt(t − 1)2 (x1 x3 + x1 x4 )
+
+and, more generally, for k ≥ 4,
+                           (k)
+                        Ye1 · x22 = q2 t(t − 1)x21 + qt(t − 1)x1 x2 − qt(t − 1)2 (x1 x3 + · · · x1 xk ).
+
+Therefore, the limit operator acts as
+                                (∞)
+                             Ye1    · x22 = q2 t(t − 1)x21 + qt(t − 1)x1 x2 − qt(t − 1)2 x1 e1 [X2 ].
+
+    On the other hand, the action same operator on a non-constant sequence (e.g. one that converges to a
+non-trivial almost symmetric function) shows a slightly diﬀerent behaviour.
+
+Example 6.13. Let F [X] = x22 + x23 + · · · = p2 [X1 ], which is the inverse limit of the sequence
+
+                                            Fk = Πk F [X] = x22 + · · · + x2k , k ≥ 2.
+                                   THE STABLE LIMIT DAHA AND THE DOUBLE DYCK PATH ALGEBRA                           21
+
+
+We have,
+                                     (2)
+                                  Ye1 · F2 = q2 (t2 − t)x21 + qt(t − 1)x1 x2
+                                     (3)
+                                  Ye1 · F3 = q2 (t3 − t)x21 + qt(t − 1)(x1 x2 + x1 x3 )
+
+and, more generally, for k ≥ 2,
+                            (k)
+                         Ye1 · Fk = q2 (tk − t)x21 + qt(t − 1)(x1 x2 + x1 x3 + · · · + x1 xk ).
+                                           (k)
+As it can be clearly seen, the sequence Ye1 Fk fails to have an inverse limit because of the contribution of the
+term q2 (tk − t)x21 .
+
+     As we will see next, the general behavior of the action of ﬁxed operator on a sequence with inverse limit
+                                                                                     (k)
+is no more complicated than the one exhibited in Example 6.13. The operators Wi introduced in the next
+section formalize this observation.
+
+                                                            (k)
+6.8. We deﬁne the Q(t, q)-linear operators Wi : P+                 +
+                                                              k → Pk , i ≥ 1, as follows. Let s ≥ 0, and let i1 < i2 <
+· · · < is ≤ k and t1 , . . . , ts be positive integers. We set
+                                              
+                                              
+                                              0,
+                                                                                 if 1 = i1 or s = 0,
+                      (k)
+(6.7)              W1 (xti11 . . . xtiss ) =
+                                               
+                                               
+                                                is                                ts−1
+                                                 t (1 − t−1 )qts xt1s xti11 . . . xis−1 ,   if i1 > 1.
+Deﬁne
+                                               (k)                (k)
+                                         Wi+1 = t−1 Ti Wi Ti ,               1 ≤ i ≤ k − 1.
+For 1 ≤ i ≤ k, we also denote
+                                                       e(k) = Ye (k) − W (k) .
+                                                       Z i      i       i
+
+
+Lemma 6.14. The following diagram is commutative:
+                                                                   e(k)
+                                                                   Z
+                                                      P+                           P+
+                                                                    i
+                                                       k                            k
+
+                                                     πk                              πk
+
+                                                                  e(k−1)
+                                                                  Z
+                                                     P+                       P+
+                                                                   i
+                                                      k−1                      k−1
+
+
+
+Proof. It is enough to prove the statement for i = 1. For any monomial f ∈ P+
+                                                                            k−1 , we have
+                                                            (k)            (k−1)
+                                                     πk W1 f = W1                  πk f
+
+and the commutativity of the digram follows from Lemma 6.10.
+     Let f ∈ xk P+                        +
+                 k be a monomial and g ∈ Pk . A direct check shows that
+
+                                                     πk ωk−1 prk Tk−1
+                                                                  −1
+                                                                      prk g 6= 0
+
+only if g is not divisible by xk−1 . On the other hand,
+
+                                                       Ti−1 xi P+         +
+                                                                k ⊆ xi+1 Pk .
+22                                                     BOGDAN ION AND DONGYU WU
+
+
+Now,
+                                            (k)
+                                      πk Ye1 f = tk πk ̟k Tk−1
+                                                           −1
+                                                               . . . T1−1 f
+                                                               −1
+                                                   = tk πk ̟k Tk−1 . . . T1−1 prk f
+                                                   = tk πk ωk−1 prk Tk−1
+                                                                     −1        −1
+                                                                         prk (Tk−2 . . . T1−1 f ).
+                                       (k)
+Based on the previous remarks, πk Ye1 f 6= 0 unless f is not divisible by x1 . Furthermore, the only monomial
+from T1−1 f that survives is s1 f . Applying this repeatedly, we obtain
+                                      (k)                                                       (k)
+                                 πk Ye1 f = tk πk ωk−1 prk Tk−1
+                                                            −1
+                                                                prk (sk−2 . . . s1 f ) = W1 f.
+              e(k) f = 0 = Ze(k−1) πk f , as expected.
+Therefore, πk Z                                                                                                                 
+                i            i
+
+
+     As a consequence, we obtain the following.
+
+                                                            e(k) )k≥2 induces a map
+Proposition 6.15. For any i ≥ 1, the sequence of operators (Z i
+
+                                                           e(∞) : P+
+                                                           Z            +
+                                                                   ∞ → P∞ ,
+                                                             i
+
+             e(∞) = Z
+such that Πk Z      e(k) , for all k ≥ i, k ≥ 2.
+               i      i
+
+                                                                                                              (k)       e (k)
+Example 6.16. In continuation of Example 6.12 we illustrate the actions of the operators W1                         and Z 1     on
+the constant sequence x22 . We have,
+       (k)                                         e(k) · x2 = qt(t − 1)x1 x2 − qt(t − 1)2 (x1 x3 + · · · + x1 xk ), k ≥ 3.
+     W1      · x22 = q2 t(t − 1)x21     and        Z 1     2
+
+Clearly, the both sequence have inverse limit, in particular,
+                                      e(∞) · x2 = qt(t − 1)x1 x2 − qt(t − 1)2 x1 e1 [X2 ].
+                                      Z 1     2
+
+                                                                                                              (k)         (k)
+Example 6.17. In continuation of Example 6.13 we illustrate the actions of the operators W1                         and Z1      on
+the sequence Fk = x22 + · · · + x2k . We have,
+                        (2)             (2)
+                     W1       · F2 = W1 x22 = q2 (t2 − t)x21 ,
+                        (3)             (3)
+                     W1       · F3 = W1 (x22 + x23 ) = q2 (t2 − t)x21 + q2 (t3 − t2 )x21 = q2 (t3 − t)x21 ,
+
+and, more generally, for k ≥ 2,
+                                                         (k)
+                                                      W1       · Fk = q2 (tk − t)x21 .
+Furthermore,
+                      e(k) · Fk = Ye (k) · Fk − W (k) · Fk = qt(t − 1)(x1 x2 + x1 x3 + ... + x1 xk ),
+                      Z 1           1            1
+
+which can be seen to have inverse limit. Therefore,
+                                                  e(∞) · F [X] = qt(t − 1)x1 e1 [X1 ].
+                                                  Z 1
+
+
+6.9. Proposition 6.15 motivates the concept of limit we deﬁne as follows; we emphasize that this concept
+of limit depends intrinsically on the structure of the subspace P+     +
+                                                                 as ⊂ P∞ .
+
+     Let R(t, q) = A(t, q)/B(t, q) ∈ Q(t, q), with A(t, q), B(t, q) ∈ Q[t, q]. The order of vanishing at t = 0
+for R(t, q), denoted by
+                                                 ord R(t, q),
+                                THE STABLE LIMIT DAHA AND THE DOUBLE DYCK PATH ALGEBRA                               23
+
+
+is the diﬀerence between the order of vanishing at t = 0 for A(t, q) and B(t, q).
+    We say that the sequence (an )n≥1 ⊂ Q(t, q) converges to 0 if the sequence (ord an )n≥1 ⊂ Z converges
+to +∞. We say that the sequence (an )n≥1 ⊂ Q(t, q) converges to a if (an − a)n≥1 converges to 0. We write,
+
+                                                          lim an = a.
+                                                         n→∞
+
+Definition 6.18. Let (fk )k≥1 be a sequence with fk ∈ P+        k . We say that the sequence is convergent if there
+exists N ≥ 1 and sequences (hk )k≥1 , (gi,k )k≥1 , i ≤ N , hk , gi,k ∈ P+   k , and (ai,k )k≤1 , i ≤ N , ai,k ∈ Q(t, q)
+such that
+                                             P
+      a) For any k ≥ 1, we have fk = hk + N     i=1 ai,k gi,k ;
+     b) For any i ≤ N , k ≥ 2, πk (gi,k ) = gi,k−1 and πk (hk ) = hk−1 . We denote by
+
+                                            gi = lim gi,k       and      h = lim hk
+                                                   k→∞                        k→∞
+
+         the sequence (gi,k )k≥1 and, respectively, (hk )k≥1 as elements of P+                         +
+                                                                             ∞ . We require that gi ∈ Pas .
+      c) For any i ≤ N the sequence (ai,k )k≥1 is convergent. We denote ai = lim (ai,k ).
+                                                                                        k→∞
+
+If the sequence (fk )k≥1 is convergent we deﬁne its limit as
+                                                                  N
+                                                                  X
+                                              lim(fk ) := h +           a i g i ∈ P+
+                                                                                   ∞.
+                                               k
+                                                                  i=1
+
+Example 6.19. The sequence
+                                              fk = (1 + t + ... + tk )ei [Xk ],
+has the limit
+                                                                  1
+                                                    lim fk =         ei [X].
+                                                     k           1−t
+The sequence
+                                                         gk = tk ei [Xk ]
+has limit 0.
+
+     We show that the limit of a sequence does not depend on the choice of the auxiliary sequences in Deﬁ-
+nition 6.18.
+
+Proposition 6.20. The concept of limit is well-defined.
+
+Proof. It suﬃces to show that the limit of the constant sequence 0 is zero, regardless of the auxiliary sequences
+in Deﬁnition 6.18. Consider sequences (ci,k )k≥1 and (qi,k )k≥1 such that
+                                                         N
+                                                         X
+                                                   0=          ci,k qi,k ∈ P+
+                                                                            k,
+                                                         i=1
+
+and
+                                   lim ci,k = ci ∈ Q(t, q), lim qi,k = qi ∈ P+
+                                                                             as .
+                                  k→∞                               k→∞
+                        PN
+We need to show that       i=1 ci qi = 0.
+
+     Without loss of generality, we assume that q1 , ..., qN are Q-linearly independent. Indeed, any linear
+relation between q1 , ..., qN must also hold for q1,k , ..., qN,k , for all k. We can therefore substitute one of them,
+24                                             BOGDAN ION AND DONGYU WU
+
+
+say q1,k , with the same Q-linear combination of q2,k , ..., qN,k for all k. It is clear that the conclusion does not
+change after such a substitution.
+     Recall that each qi ∈ P+
+                            as . We can ﬁnd n ≥ 1, such that qi ∈ P(n) for all 1 ≤ i ≤ N . For the same reason
+as before, without loss of generality, we can assume that
+
+                                              qi = fi (x1 , ..., xn )eαi [Xn ]
+
+where
+                                      αi = (αi,1 ≥ · · · ≥ αi,si ),         1≤i≤N
+are distinct partitions. Let
+                                                    M = max αi,1 .
+                                                              1≤i≤N
+For any k > M + n, we claim that q1,k , ..., qN,k are also Q-linear independent. Indeed, if we have a linear
+relation
+                               XN
+                                   ai fi (x1 , ..., xn )eαi [xn+1 , ..., xk ] = 0,
+                                     i=1
+for some ai ∈ Q, then for any evaluation at x1 = b1 , ..., xn = bn , we have
+                                     N
+                                     X
+                                           ai fi (b1 , ..., bn )eαi [xn+1 , ..., xk ] = 0.
+                                     i=1
+
+Note that, because k − n > M , and the partitions αi are distinct, the symmetric functions eαi [Xn ] are linearly
+independent. Therefore, for all 1 ≤ i ≤ N ,
+
+                                                   ai fi (b1 , ..., bn ) = 0.
+
+Since fi are polynomials in ﬁnitely many variables, we obtain, for all 1 ≤ i ≤ N ,
+
+                                                  ai fi (x1 , ..., xn ) = 0,
+
+which is a contradiction. Therefore, for k large enough, we have that q1,k , ..., qN,k are Q-linear independent.
+    We can now prove that for k large enough, all ci,k will necessarily be 0. Indeed, from the hypothesis we
+have
+                                                 XN
+                                            0=        ci,k qi,k .
+                                                           i=1
+By multiplying both sides the common denominator of ci,k we may assume all ci,k are polynomials in two
+variables t, q. Again, for any evaluation q = a, t = b, we have
+                                                       N
+                                                       X
+                                                  0=          ci,k (a, b)qi,k .
+                                                        i=1
+
+But we already now q1,k , ..., qN,k are Q-linear independent for k large enough. Hence it forces ci,k (a, b) = 0
+for all i. Again, this implies that ci,k (t, q) = 0, 1 ≤ i ≤ N .                                              
+
+
+
+
+6.10. For later use, we record the following result. To set the notation, assume that Ak : P+         +
+                                                                                              k → Pk , k ≥ 1,
+is a sequence of operators with the following property: for any f ∈ P+
+                                                                     as , the sequence (Ak Πk f )k≥1 converges
+                                THE STABLE LIMIT DAHA AND THE DOUBLE DYCK PATH ALGEBRA                             25
+
+
+to an element of P+
+                  as . Let A be the operator
+
+                                        A : P+     +
+                                             as → Pas ,          f 7→ lim Ak Πk f.
+                                                                          k
+
+We refer to A as the limit operator of the sequence (Ak )k≥1 .
+
+Proposition 6.21. Let (fk )k≥1 , fk ∈ P+                                                   +
+                                       k be a convergent sequence such that f = limk fk ∈ Pas . Then, with the
+notation above, we have
+                                               Af = lim Ak fk .
+                                                                k
+
+
+Proof. By replacing fk with fk − Πk , it is enough to prove the statement for the case f = 0. Assume that
+f = 0. In this case, there exist sequences (ci,k )k≥1 and (qi,k )k≥1 as in Deﬁnition 6.18 such that
+                                                         N
+                                                         X
+                                                 fk =          ci,k qi,k ∈ P+
+                                                                            k,
+                                                         i=1
+
+with
+                                   lim ci,k = ci ∈ Q(t, q), lim qi,k = qi ∈ P+
+                                                                             as .
+                                  k→∞                                k→∞
+For each i such that ci 6= 0, we may replace ci,k with ci,k /ci and qi,k with ci qi,k . This allows us to assume
+that ci ∈ {0, 1}. Without loss of generality, we assume that q1 , ..., qN are Q-linearly independent. Indeed, any
+linear relation between q1 , ..., qN must also hold for q1,k , ..., qN,k , for all k. We can therefore substitute one
+of them, say q1,k , with the same Q-linear combination of q2,k , ..., qN,k for all k. It is clear that the conclusion
+does not change after such a substitution. It is now clear that for all i we have ci = 0.
+       For any k ≥ 1,
+                                                N
+                                                X                       N
+                                                                        X
+                                    Ak fk =            ci,k Ak qi,k =         ci,k Ak Πk qi .
+                                                 i=1                    i=1
+Since lim Ak Πk qi = Aqi ∈ P+
+                            as , we have, by Deﬁnition 6.18,
+        k→∞
+                                                               N
+                                                               X
+                                           lim Ak fk =               ci,k Aqi = 0.
+                                             k
+                                                               i=1
+
+This is precisely our claim.                                                                                       
+
+     This result can be interpreted as a property of continuity for the operator A. Let (Bk )k≥1 be another
+sequence of operators with the same property as (Ak )k≥1 and denote by B : P+          +
+                                                                                as → Pas the corresponding
+limit operator.
+
+Corollary 6.22. With the notation above, the operator AB is the limit of the sequence (Ak Bk )k≥1 .
+
+                                               +
+Proof. Let f ∈ P+
+                as . Since lim Bk Πk f = Bf ∈ Pas , we can apply Proposition 6.21 to obtain
+                            k
+
+                                           lim Ak Bk Πk f = ABf ∈ P+
+                                                                   as ,
+                                            k
+
+which proves our claim.                                                                                            
+
+6.11. Let us examine the following situation.
+26                                                  BOGDAN ION AND DONGYU WU
+
+                                                                  (k)
+Lemma 6.23. Let f ∈ P+
+                     as and i ≥ 1. The sequence Wi Πk f converges. We define
+                                  (∞)                            (∞)                   (k)
+                              Wi         : P+     +
+                                            as → P∞ ,        Wi        f = lim Wi Πk f ∈ P+
+                                                                                          ∞.
+                                                                              k
+
+
+Proof. It is enough to prove our claim for W1 and f = g(x1 , . . . , xn )mα [Xn ], for some n ≥ 1, where g is
+a monomial and mα is the monomial symmetric function in the indicated alphabet. If x1 divides g, then
+W1 f = 0. We assume that x1 does not divide g.
+     We denote by ℓ(α) the length of the partition α. Of course, for any k ≥ n + ℓ(α), we have
+
+                                            Πk mα [Xn ] = mα [xn+1 , . . . , xk ].
+
+    If k ≥ n + ℓ(α), denote by a1 , . . . , as the distinct parts of α. Let βi , 1 ≤ i ≤ s the partition obtained by
+eliminating one part of size ai from α. Then,
+                                                        s
+                                                        X        k
+                                                                 X
+                            mα [xn+1 , . . . , xk ] =                     mβi [xn+1 , . . . , xj−1 ]xaj i .
+                                                        i=1 j=n+ℓ(α)
+
+
+     Therefore, we have
+                                                    s
+                                                    X      k
+                                                           X
+                    (k)                                                 (k)
+                 W1 Πk f = g(x1 , . . . , xn )                      W1 mβi [xn+1 , . . . , xj−1 ]xaj i
+                                                    i=1 j=n+ℓ(α)
+                                                    s
+                                                    X      k
+                                                           X
+                            = g(x1 , . . . , xn )                   (tj − tj−1 )qai xa1 i mβi [xn+1 , . . . , xj−1 ].
+                                                    i=1 j=n+ℓ(α)
+
+For a monomial m = xηi11 · · · xηiM
+                                  M
+                                    , n < i1 < · · · < iM , η1 , . . . , ηM ≥ 1, we denote ℓ(m) = iM and we write
+m ∈ [β] if (η1 , . . . , ηM ) is a permutation of β and we write m ∈ [β]k if m ∈ [β] and ℓ(m) ≤ k. With this
+notation, we have
+                                           s
+                                           X X
+            (k)
+           W1 Πk f = g(x1 , . . . , xn )                  (tk − tℓ(m) )qai xa1 i m
+                                           i=1 m∈[βi ]k
+                                                                                                           
+                                             Xs                                         s
+                                                                                        X          X
+                      = g(x1 , . . . , xn )    tk qai xa1 i mβi [xn+1 , . . . , xk ] −        a
+                                                                                          qai x1 i   tℓ(m) m
+                                             i=1                                                i=1       m∈[βi ]k
+
+According to Deﬁnition 6.18,
+                                                s
+                                                X                                      X
+                               (k)
+                          lim W1 Πk f = −              qai x1ai g(x1 , . . . , xn )             tℓ(m) m ∈ P+
+                                                                                                           ∞,
+                            k
+                                                i=1                                   m∈[βi ]
+
+which proves our claim.                                                                                                 
+                                   (k)
+Example 6.24. The sequence W1 (x22 + · · · + x2k ) from Example 6.17 has limit −q2 tx21 .
+
+6.12. We can now prove the following.
+
+Proposition 6.25. Let f ∈ P+                          e (k) Πk f converges. We define
+                           as and i ≥ 1. The sequence Yi
+                                                                           (k)
+                                    Yi : P+     +
+                                          as → P∞ ,          Yi f = lim Yei Πk f ∈ P+
+                                                                                    ∞.
+                                                                         k
+                                 THE STABLE LIMIT DAHA AND THE DOUBLE DYCK PATH ALGEBRA                               27
+
+
+                                                                                  e(∞) + W (∞) .
+Proof. Straightforward from Proposition 6.15 and Lemma 6.23. More precisely, Yi = Z                                   
+                                                                                    i     i
+
+Example 6.26. In continuation of Examples 6.13 and 6.17, we have
+
+                                    Y1 · p2 [X1 ] = −q2 tx21 + qt(t − 1)x1 e1 [X1 ].
+
+As it can be seen, p2 [X1 ] and Y1 · p2 [X1 ] are elements of P(1)+ .
+     Also, from Examples 6.12 and 6.16 we have
+
+                          Y1 · x22 = q2 t(t − 1)x21 + qt(t − 1)x1 x2 − qt(t − 1)2 x1 e1 [X2 ].
+
+In this case, x22 and Y1 x22 are elements of P(2)+ .
+
+     It turns out that the image of Yi is contained in P+
+                                                        as . We will use the following result.
+
+Lemma 6.27. Let f ∈ Q(t, q)[xk+1 , xk+2 , . . . ] be a polynomial satisfying
+
+                                         Ti f = f,          for k + 1 ≤ i ≤ k + m.
+         −1         −1
+Let g = Tk+m . . . Tk+1 Tk−1 (xsk f ), for some s ≥ 0. Then,
+
+                                          Ti g = g          for k ≤ i ≤ k + m − 1.
+
+Proof. The claim is a consequence of the braid relations for the elements Ti .                                        
+
+Lemma 6.28. P(k)+ is stable under the action of Y1 . Therefore, we have
+
+                                                       Yi : P+     +
+                                                             as → Pas .
+
+
+Proof. Let f ∈ P(k)+ (recall the deﬁnition of P(k)+ in §2.6). For any m > k + 1 we have
+                                          (m)
+                                       Ye1 Πm f = tm ̟m Tm−1
+                                                         −1
+                                                             . . . T1−1 Πm f.
+
+Since f ∈ P(k)+ , Πm f is ﬁxed under the action of Tk+1 , . . . , Tm−1 . Now, we have
+                           −1
+                       ̟m Tm−1 . . . T1−1 Πm f = ̟m Tm−1
+                                                     −1         −1
+                                                         . . . Tk+1 Tk−1 (Tk−1
+                                                                           −1
+                                                                               . . . T1−1 Πm f ),
+
+and we may write                                               X
+                                    −1                                                     s
+                                   Tk−1 . . . T1−1 Πm f =           cj [x1 , . . . , xk−1 ]xkj fj
+                                                                j
+as a ﬁnite sum, where each fj is a polynomial in Q(t, q)[xk+1 , xk+2 , . . . ] satisfying
+
+                                   Ti fj = fj ,       for i = k + 1, k + 2, . . . , m − 1.
+                                   −1
+Applying Lemma 6.27 for Tk−1          . . . T1−1 Πm f , we obtain that Tm−1
+                                                                        −1
+                                                                            . . . T1−1 Πm f is ﬁxed under the action of
+                                                                         −1
+the elements Tk , . . . , Tm−2 . The relation (6.3) implies that ̟m Tm−1      . . . T1−1 Πm f is ﬁxed under the action of
+                                    (m)
+Tk+1 , . . . , Tm−1 . Therefore, Ye1 Πm f is symmetric in xk+1 , . . . , xm for all m > k + 1. In conclusion, the limit
+                                                        (m)
+                                                  lim Yei     Πm f ∈ P(k)+ ,
+                                                  m
+
+proving our claim.                                                                                                    
+
+     We can now state the following.
+28                                                BOGDAN ION AND DONGYU WU
+
+
+Proposition 6.29. The space P+
+                             as carries an action of the limit operators Ti , Xi , Yi , i ≥ 1.
+
+
+
+     As we will show in Theorem 6.34, these operators deﬁne an action of H+ on P+
+                                                                                as .
+
+
+Remark 6.30. Following up on Remark 6.9, it is important to note that on xi P+
+                                                                             as the action of Yi is the stable
+                                                             (k)
+limit of the action of the sequence of Cherednik operators Yi ∈ Hk .
+
+
+6.13. In fact, we can obtain a more precise description of the action of Y1 on P(k)+ . First, let us record the
+following technical result. We use the notation in §2.3.
+
+Lemma 6.31. Let xn1 ∈ P+
+                       m+1 . Then,
+                                                                n−1
+                                                                X
+                                          −1
+                                      tm Tm  ...T1−1 xn1 =             n−i
+                                                                      xm+1 hi [(1 − t)Xm ].
+                                                                i=0
+
+
+
+Proof. We will prove the result by induction on m. By direct computation we obtain
+
+                         T1−1 xn1 = t−1 xn2 + (t−1 − 1)(x2n−1 x1 + x2n−2 x21 + ... + x2 x1n−1 )
+                                           n−1
+                                           X
+                                   = t−1         x2n−i hi [(1 − t)x1 ].
+                                           i=0
+
+Assume that our claim holds for m − 1. Then, we have
+                                                        n−1
+                                                        X
+                            −1
+                       tm T m  ...T1−1 xn1 = tTm
+                                               −1              n−i
+                                                              xm   hi [(1 − t)Xm−1 ]
+                                                        i=0
+                                                 n−1
+                                                 X n−i−1
+                                                     X         n−i−j
+                                           =                  xm+1   hj [(1 − t)xm ]hi [(1 − t)Xm−1 ]
+                                                 i=0    j=0
+                                                 n−1
+                                                 X             X
+                                                        n−l
+                                           =           xm+1           hj [(1 − t)xm ]hi [(1 − t)Xm−1 ]
+                                                 l=0          i+j=l
+                                                              i,j≥0
+                                                 n−1
+                                                 X
+                                                        n−l
+                                           =           xm+1 hl [(1 − t)Xm ],
+                                                 l=0
+
+as expected.                                                                                                       
+
+
+     Recall that for all k, the multiplication map P+            ∼     +
+                                                    k ⊗ Sym[Xk ] = P(k) is an algebra isomorphism.
+
+
+Proposition 6.32. Let n ≥ 0, f (x1 , . . . , xk−1 ) ∈ P+
+                                                       k−1 , and G[Xk−1 ] ∈ Sym[Xk−1 ]. We regard
+
+                                            F = f (x1 , . . . , xk−1 )xnk G[Xk−1 ]
+
+as an element of P(k)+ . Then,
+                                 tk
+         Y1 T1 · · · Tk−1 F =       f (x2 , . . . , xk )G[Xk + qx1 ](hn [(1 − t)(Xk + qx1 )] − hn [(1 − t)Xk ]).
+                                1−t
+                                  THE STABLE LIMIT DAHA AND THE DOUBLE DYCK PATH ALGEBRA                                            29
+
+
+Proof. For any m > k + 1, we have
+            (m)
+         Ye1 T1 · · · Tk−1 Πm F = tm ̟m Tm−1
+                                         −1
+                                             . . . Tk−1 f (x1 , . . . , xk−1 )xnk G[X[k,m] ]
+                                                                                  −1
+                                    = tk ̟m f (x1 , . . . , xk−1 )G[X[k,m] ]tm−k Tm−1 . . . Tk−1 xnk
+                                                                                        n−1
+                                                                                        X
+                                    = tk ̟m f (x1 , . . . , xk−1 )G[X[k,m] ]                   n−i
+                                                                                              xm   hi [(1 − t)X[k,m−1] ]
+                                                                                        i=0
+                                                                                           n−1
+                                                                                           X
+                                    = tk f (x2 , . . . , xk )G[X[k+1,m] + qx1 ]                  (qx1 )n−i hi [(1 − t)X[k+1,m] ].
+                                                                                           i=0
+                  (m)
+Therefore, lim Yei T1 · · · Tk−1 Πm F , equals
+            m
+                                               n−1
+                                               X
+          k
+         t f (x2 , . . . , xk )G[Xk + qx1 ]          (qx1 )n−i hi [(1 − t)Xk ]
+                                               i=0
+
+                               tk
+                            =     f (x2 , . . . , xk )G[Xk + qx1 ](hn [(1 − t)(Xk + qx1 )] − hn [(1 − t)Xk ]),
+                              1−t
+proving our claim.                                                                                                                  
+
+
+6.14. We establish the following result in preparation for the proof of Theorem 6.34.
+
+Lemma 6.33. Let f ∈ P+
+                     as . Then,
+                                                              (k)       (k)
+                                                       lim[Yei      , Yej     ]Πk f = 0.
+                                                        k
+
+
+Proof. First note that we can apply the following two relations recursively
+                                     (k)       (k)                    (k)   (k)
+                                  [Yei     , Yej     ] = t−1 Tj−1 [Yei , Yej−1 ]Tj−1 , for i > j,
+                                         (k)   (k)                          (k)   (k)
+                                  [Ye1 , Yei         ] = t−1 Ti−1 [Ye1 , Yei−1 ]Ti−1 , for i > 2.
+                                            (k)   (k)
+Hence it suﬃces to prove the result for [Ye1 , Ye2 ].
+    By Remark 6.7 we have
+                    (k)    (k)
+                 [Ye1 , Ye2 ] = t2k−1 γk Tk−1
+                                          −1
+                                              ...T1−1 Tk−1
+                                                       −1
+                                                           ...T2−1 = t2k−1 γk Tk−2
+                                                                               −1
+                                                                                   ...T1−1 Tk−1
+                                                                                            −1
+                                                                                                ...T1−1 .
+
+Let f (x1 , ..., xm )F [X] ∈ P(k)+ , where F [X] is fully symmetric and non-zero. Then for k > m we have
+            −1
+        γk Tk−1 ...T1−1 Tk−1
+                         −1
+                             ...T2−1 Πk f (x1 , ..., xm )F [X] = γk Tk−1
+                                                                     −1
+                                                                         ...T1−1 Tk−1
+                                                                                  −1
+                                                                                      ...T2−1 f (x1 , ..., xm )F [Xk ]
+                                                                                      −1
+                                                                        = γk F [Xk ](Tk−1 ...T1−1 Tk−1
+                                                                                                   −1
+                                                                                                       ...T2−1 f (x1 , ..., xm ))
+                                                                        = 0.
+
+For the last equality we used (6.6). Therefore, in this case,
+                                                   (k)   (k)
+                                           lim [Yei , Yej ]Πk f (x1 , ..., xm )F [X] = 0.
+                                          k→∞
+
+    It remains to compute the limit for f (x1 , ..., xm ) ∈ P+ m . Let k > m + 1. Without loss of generality, we
+may assume that
+                                     −1
+                                   Tm−2  ...T1−1 Tm−1−1
+                                                         ...T1−1 f (x1 , ..., xm )
+30                                                            BOGDAN ION AND DONGYU WU
+
+                                            ′
+is a monomial of the form xnm xnm−1 g(x1 , ..., xm−2 ). If n > 0, we have
+                (k)     (k)
+           [Ye1 , Ye2 ]f (x1 , ..., xm ) = γk Tk−2
+                                               −1
+                                                   ...T1−1 Tk−1
+                                                            −1
+                                                                ...T1−1 f (x1 , ..., xm )
+                                                      −1      −1   −1           −1
+                                                = γk Tk−2 ...Tm−1 Tk−1     −1
+                                                                       ...Tm  (Tm−2 ...T1−1 Tm−1
+                                                                                             −1
+                                                                                                 ...T1−1 f (x1 , ..., xm ))
+                                                                                                    ′
+                                                      −1      −1   −1      −1 n n
+                                                = γk Tk−2 ...Tm−1 Tk−1 ...Tm xm xm−1 g(x1 , ..., xm−2 )
+                                                                                                        ′
+                                                                        −1      −1         −1      −1 n
+                                                = g(x1 , ..., xm−2 )γk Tk−2 ...Tm−1 xnm−1 Tk−1 ...Tm xm .
+
+                            (k)   (k)
+     If n = n′ = 0 then [Ye1 , Ye2 ]f (x1 , ..., xm ) = 0 by (6.6). If n = 0 and n′ > 0, then by Lemma 6.31
+                                                     ′
+                                                    nX −1
+                            ′                                       ′
+             −1      −1                                           −i
+         γk Tk−2 ...Tm−1 xnm−1 = tm−k γk                      xnk−1  hi [(1 − t)X[m−1,k−2] ]
+                                                        i=0
+                                                   ′
+                                                  nX −1
+                                                                                                ′
+                                                                                      −i
+                                      = tm−k              hi [(1 − t)X[m+1,k] ]γk xnk−1
+                                                  i=0
+                                                               ′
+                                                              nX −1
+                                                                            ′                                   ′                          ′
+                                      =t   m−k
+                                                 (1 − t)                 qn −i hi [(1 − t)X[m+1,k] ](xn1 −i−1 x2 + · · · + x1 xn2 −i−1 ).
+                                                              i=0
+                  (k)   (k)
+Therefore, lim[Ye1 , Ye2 ]f (x1 , ..., xm ) = 0.
+             k
+       ′
+     If n = 0 and n > 0, then by Lemma 6.31
+                                                                                                    n−1
+                                                                                                    X
+                          −1      −1   −1                      −1      −1
+                      γk Tk−2 ...Tm−1 Tk−1     −1 n
+                                           ...Tm xm = tm−k γk Tk−2 ...Tm−1                                  xkn−i hi [(1 − t)X[m,k−1] ].
+                                                                                                    i=0
+
+By writing
+                                                               i
+                                                               X
+                               hi [(1 − t)X[m,k−1] ] =                    hi−j [(1 − t)X[m−1,k−1] ]hj [(t − 1)xm−1 ]
+                                                                j=0
+                                −1
+and using again Lemma 6.31 for Tk−2     −1
+                                    ...Tm−1 xjm−1 as well as (6.6), we write γk Tk−2
+                                                                                 −1      −1
+                                                                                     ...Tm−1  −1
+                                                                                             Tk−1     −1 n
+                                                                                                  ...Tm xm as
+                       n−1
+                       X
+            t   m−k
+                             γk xkn−i hi [(1 − t)X[m−1,k−1] ]
+                       i=0
+                                                              n−1
+                                                              X
+                                     = tm−k (t − 1)                     qn−i hi [(1 − t)X[m+1,k] ](x1n−i−1 x2 + · · · + x1 x2n−i−1 ).
+                                                              i=0
+                  (k)   (k)
+Therefore, lim[Ye1 , Ye2 ]f (x1 , ..., xm ) = 0.
+                 k
+     For the last case, n, n′ > 0, proceeding as in the previous case we obtain that
+                                                                                      ′
+                                                        −1      −1         −1      −1 n
+                                                    γk Tk−2 ...Tm−1 xnm−1 Tk−1 ...Tm xm
+
+equals
+                                                          n−1
+                                                          X                     i
+                                                                                X
+                                                    ′
+                               −1      −1
+                      tm−k γk Tk−2 ...Tm−1 xnm−1                 xkn−i                hi−j [(1 − t)X[m−1,k−1] ]hj [(t − 1)xm−1 ].
+                                                           i=0                  j=0
+                                                           (k)   (k)
+                −1
+Lemma 6.31 for Tk−2     −1
+                    ...Tm−1 xjm−1 and (6.6) imply that [Ye1 , Ye2 ]f (x1 , ..., xm ) = 0.                                                      
+
+6.15. We are now ready to prove our main result.
+                              THE STABLE LIMIT DAHA AND THE DOUBLE DYCK PATH ALGEBRA                          31
+
+
+Theorem 6.34. The operators Ti , Xi , and Yi , i ≥ 1, define a H+ -module structure on P+
+                                                                                        as .
+
+
+
+Proof. The relations that hold in the algebra H e k also hold for the corresponding limit operators by the re-
+peated application of Corollary 6.22. Recall that by Remark 6.6 the relation (4.1e) and the ﬁrst two relations
+                                        e k . The only relations that do not transfer directly from those in H
+in (4.1d) also hold inside the algebras H                                                                    ek
+are the commutation relations between Yi and Yj . However, we do have
+                                  (k)       (k)                    (k)   (k)
+                               [Yei     , Yej     ] = t−1 Tj−1 [Yei , Yej−1 ]Tj−1 ,       i > j,
+                                      (k)       (k)                    (k)   (k)
+                               [Ye1 , Yei             ] = t−1 Ti−1 [Ye1 , Yei−1 ]Ti−1 ,   i > 2.
+
+These, by application of Corollary 6.22 imply the same relations for the limit operators
+
+                                      [Yi , Yj ] = t−1 Tj−1 [Yi , Yj−1 ]Tj−1 ,        i > j,
+                                      [Y1 , Yi ] = t−1 Ti−1 [Y1 , Yi−1 ]Ti−1 ,        i > 2.
+
+Therefore, for any i, j, the commutativity of Yi and Yj would follow from the commutativity of Y1 and Y2 .
+Fix f ∈ P+
+         as . Then, by Proposition 6.21 and Corollary 6.22,
+                                                                       (k)   (k)
+                                                [Y1 , Y2 ]f = lim[Ye1 , Ye2 ]Πk f,
+                                                                 k
+
+which is 0 by Lemma 6.33.                                                                                     
+
+
+    We call this representation the standard representation of H+ . As with the standard representation of
+  −
+H , we expect this representation to be faithful.
+
+
+
+                                        7. The double Dyck path algebra
+
+7.1. The main result of this section is a explicit connection between the standard representation of H+ and
+the double Dyck path algebra and its standard representation. The double Dyck path algebra, denoted in
+the literature by Aq,t is an algebraic structure discovered by Carlsson and Mellit. It plays a critical role in
+the proof [CM18] of the Compositional Shuﬄe Conjecture [HHL+ 05, HMZ12] and the proof [Mel21] of the
+more general Compositional (km, kn)-Shuﬄe Conjecture [GN15, BGSLX16].
+     To facilitate the comparison, we will switch the role of the parameters q and t in the original deﬁnition
+of the double Dyck path algebra. Therefore, the deﬁnitions below correspond to At,q . We will ﬁrst deﬁne two
+quivers Q̇, Q̈ and introduce some conventions.
+     The quiver Q̇ is deﬁned to be the quiver with vertex set Z≥0 , and, for all k ∈ Z≥0 , arrows d+ from k
+to k + 1, arrows d− from k + 1 to k, and for k ≥ 2 loops T1 , ..., Tk−1 from k to k. Note that, to keep the
+notation as simple as possible, the same label (Ti , d+ , d∗+ , d− ) is used to denote many arrows. To eliminate
+the possible confusion we adopt the following convention.
+
+Convention 7.1. In all expressions involving paths in Q̇, unless speciﬁed otherwise, we assume that all the
+expressions involve non-zero paths (that is, the constituent arrows concatenate correctly to produce a non-
+zero path) that start at the node k (ﬁxed, but arbitrary).
+32                                             BOGDAN ION AND DONGYU WU
+
+
+     Then quiver Q̈ is the quiver with vertex set Z≥0 , and, for all k ∈ Z≥0 , arrows d+ and d∗+ from k to k + 1,
+arrows d− from k + 1 to k, and loops T1 , ..., Tk−1 from k to k. We will adopt the same labelling convention
+for paths in Q̈.
+
+Definition 7.2. The Dyck path algebra At is deﬁned as the quiver path algebra of Q̇ modulo the following
+relations:
+                                              Ti Tj = Tj Ti ,    |i − j| > 1,
+(7.1a)
+                                    Ti Ti+1 Ti = Ti+1 Ti Ti+1 ,       1 ≤ i ≤ k − 2,
+
+(7.1b)                                (Ti − 1)(Ti + t) = 0,         1 ≤ i ≤ k − 1,
+
+(7.1c)                          d2− Tk−1 = d2− ,      Ti d− = d− Ti ,       1 ≤ i ≤ k − 2.
+
+(7.1d)                          T1 d2+ = d2+ ,     d+ Ti = Ti+1 d+ ,        1 ≤ i ≤ k − 1,
+
+                                    d− [d+ , d− ]Tk−1 = t[d+ , d− ]d− ,        (k ≥ 2)
+(7.1e)
+                                     T1 [d+ , d− ]d+ = td+ [d+ , d− ],        (k ≥ 1).
+
+Definition 7.3. The double Dyck path algebra At,q is deﬁned as the quiver path algebra of Q̈ modulo the
+relations (7.1a), (7.1b), (7.1d) and (7.1e) and the following additional relations:
+
+(7.2a)                       T1 (d∗+ )2 = (d∗+ )2 ,   d∗+ Ti = Ti+1 d∗+ ,     1 ≤ i ≤ k − 1,
+
+                                    td− [d∗+ , d− ] = [d∗+ , d− ]d− Tk−1 ,     (k ≥ 2)
+(7.2b)
+                                      t[d∗+ , d− ]d∗+ = T1 d∗+ [d∗+ , d− ] (k ≥ 1),
+
+(7.2c)                        d+ zi = zi+1 d+ ,       d∗+ yi = yi+1 d∗+ ,    1 ≤ i ≤ k − 1,
+
+(7.2d)                                           z1 d+ = −qtk+1 y1 d∗+ .
+
+The notation yi and zi refers to the following operators corresponding to loops at k, 1 ≤ i ≤ k:
+                                                    1
+                                       y1 =                [d+ , d− ]Tk−1 · · · T1 ,
+                                              tk−1 (t − 1)
+                                       yi+1 = tTi−1 yi Ti−1 ,      1 ≤ i ≤ k − 1,
+                                                tk             −1
+                                          z1 =      [d∗ , d− ]Tk−1 · · · T1−1 ,
+                                              1−t +
+                                        zi+1 = t−1 Ti zi Ti , 1 ≤ i ≤ k − 1.
+
+Remark 7.4. There exists an Q-algebra involution of At,q deﬁned by
+
+                                  Ti−1 7→ Ti , d− 7→ d− , d∗+ 7→ d+ , d+ 7→ d∗+ ,
+
+and inverts the parameters t and q. We regard At as a subalgebra of At,q , and denote its image under the
+involution by At−1 .
+
+7.2. For the following result we refer to [CM18, Lemma 5.5] (see also [Mel21, Proposition 3.1]).
+                                THE STABLE LIMIT DAHA AND THE DOUBLE DYCK PATH ALGEBRA                     33
+
+
+Proposition 7.5. The loops yi ’s and zi ’s satisfy the following relations:
+                                       yi T j = T j yi ,       i 6= j, j + 1
+(7.3a)                                 yi+1 = tTi−1 yi Ti−1 ,             1 ≤ i ≤ k − 1,
+                                       yi yj = yj yi ,        1 ≤ i, j ≤ k,
+
+                                   yi d− = d− yi ,         1≤i≤k−1
+(7.3b)
+                                   d+ yi = T1 ...Ti yi Ti−1 ...T1−1 d+ ,          1 ≤ i ≤ k,
+
+                                        zi T j = T j zi ,       i 6= j, j + 1
+                                                    −1
+(7.3c)                                  zi+1 = t         T i zi T i ,    1 ≤ i ≤ k − 1,
+                                        zi zj = zj zi ,        1 ≤ i, j ≤ k,
+
+                                   zi d− = d− zi ,         1≤i≤k−1
+(7.3d)
+                                   d∗+ zi = T1−1 ...Ti−1 zi Ti ...T1 d∗+ ,        1 ≤ i ≤ k,
+
+Remark 7.6. Note that the relations (7.3a) match the generating relations for the algebra A+
+                                                                                           k . Similarly,
+ −1        −1                                       +                 −1
+T1 , ..., Tk−1 and z1 , ..., zk generate a copy of Ak with parameter t .
+
+7.3. The algebra At,q comes with a canonical quiver representation. The representation emerged ﬁrst,
+from the analysis of certain operators acting on generating functions of Dyck paths. The algebra itself is a
+abstract formalization of the properties of the relevant operators. We will use the representation deﬁned
+in [Mel21, Proposition 3.2, Proposition 3.3]. The relationship between this action and the original action
+deﬁned in [CM18] is explained in [Mel21, §3.3].
+      Let Vk = Q(t, q)[y1 , ..., yk ] ⊗ Sym[X], and denote V• = (Vk )k≥0 . It is important to note that V• is
+naturally equipped with a λ-ring structure. The symmetric group Sk acts on Vk by permuting the variables
+yi . We denote by ζk the algebra morphism that acts trivially Sym[X] and acts on Q(t, q)[y1 , ..., yk ] as
+
+                                   ζk f (y1 , . . . , yk−1 , yk ) = f (y2 , . . . , yk , qy1 ).
+
+Finally, we denote by cyk F the constant term of F with respect to yk .
+
+Theorem 7.7. The following operators define a quiver representation of At,q on V• :
+                                                                        F − si F
+                                    Ti F = si F + (1 − t)yi                       ,
+                                                                        yi − yi+1
+
+(7.4)                              d− F = cyk (F [X − (t − 1)yk ]Exp[−yk−1 X]),
+                                   d+ F = −T1 ...Tk (yk+1 F [X + (t − 1)yk+1 ],
+                                   d∗+ F = ζk F [X + (t − 1)yk+1 ],
+The formulas above represent the actions of the arrows originating at node k.
+
+     We call this representation the standard representation of the double Dyck path algebra At,q .
+     An important result is the computation of the action of the loops yi in the standard representation. We
+refer to [CM18, Lemma 5.4, Lemma 5.5] (see also [Mel21, Proposition 3.2])
+34                                             BOGDAN ION AND DONGYU WU
+
+
+Proposition 7.8. The loops yi , 1 ≤ i ≤ k, act on Vk as multiplication by yi .
+
+
+     The action of the zi operators is more complicated. We record below some examples that show in
+particular that the action of z1 is not compatible with the canonical inclusion Vk ⊂ Vk+1 .
+
+Example 7.9. Let y22 ∈ V2 . We have,
+
+                             z1 · y22 = q2 t(t − 1)y12 + qt(t − 1)y1 y2 − qt(t − 1)y1 e1 [X].
+
+Let y22 ∈ V3 . We have,
+
+                  z1 · y22 = q2 t(t − 1)y12 + qt(t − 1)y1 y2 − qt(t − 1)2 y1 y3 − qt(t − 1)y1 e1 [X].
+
+More generally, for y22 ∈ Vk , k ≥ 3, we have,
+
+          z1 · y22 = q2 t(t − 1)y12 + qt(t − 1)y1 y2 − qt(t − 1)2 (y1 y3 + · · · + y1 yk ) − qt(t − 1)y1 e1 [X].
+
+Example 7.10. Let p2 [X] ∈ V1 . We have,
+
+                                  z1 · p2 [X] = q2 t(1 − t2 )y12 − qt(1 − t2 )y1 e1 [X].
+
+Let p2 [X] ∈ V2 . We have,
+                                 z1 · p2 [X] = q2 t2 (1 − t2 )y12 − qt2 (1 − t2 )y1 e1 [X].
+
+
+7.4. We will use the standard representation of H+ to construct a quiver representation of At,q . Let
+
+                                                   P• = (P(k)+ )k≥0 .
+
+For k ≥ 0, recall that we denote by H+ (k) the subalgebra of H+ generated by Ti , 1 ≤ i ≤ k − 1, and Xi , and
+Yi , 1 ≤ i ≤ k. From Lemma 6.28 we know that each P(k)+ is stable under the action of H+ (k) through the
+standard representation of H+ . Recall that, for all k, the multiplication map P+             ∼      +
+                                                                                k ⊗ Sym[Xk ] = P(k) is an
+algebra isomorphism.
+     The elements
+                                                    ek−1 , ωk−1 ∈ Hk+
+                                                    ω
+act on P+                                       +                                                    +
+        k via the standard representation of Hk (see Proposition 3.9). We extend their action to P(k) as
+Sym[Xk ]-linear maps. Let
+                                        ι(k) : P(k)+ → P(k + 1)+
+be the canonical inclusion map. Denote
+
+             ∂k = −e −1
+                   ωk+1 ι(k) : P(k)+ → P(k + 1)+            and           −1
+                                                                   ∂k∗ = ωk+1 ι(k) : P(k)+ → P(k + 1)+ .
+
+7.5. Recall that the Hall-Littlewood symmetric functions Pλ [X, t] are a distinguished basis of the ring of sym-
+metric functions Sym[X], indexed by partitions λ. There is a remarkable family of linear operators Bn , B∞ ,
+n ≥ 0, on Sym[X], deﬁned as follows. B∞ is the operator of left multiplication by the elementary symmetric
+function e1 [X] = X and B0 is the operator deﬁned by
+
+                                          B0 Pµ (X, t−1 ) = tℓ(µ) Pµ (X, t−1 ).
+
+For n ≥ 0, let Bn+1 := [B∞ , Bn ].
+                                  THE STABLE LIMIT DAHA AND THE DOUBLE DYCK PATH ALGEBRA                         35
+
+
+     The operator
+                                                ∂k− : P(k)+ → P(k − 1)+
+is deﬁned to be the P+                                               n
+                     k−1 -linear map which, on elements of the form xk F [Xk ] acts as
+
+                                              ∂k− (xnk F [Xk ]) = Bn F [Xk−1 ].
+
+7.6. The operators Bn , n ≥ 0, are creation operators for the Hall-Littlewood symmetric functions. They are
+(modulo a change of variable) the vertex operators in [Jin91] (see also [Mac15, §III.5, Exp. 8]). They are
+particular cases of more general operators (as in [GHT99, BGSLX16b]) depending of both parameters q, t,
+which can be described more explicitly using plethystic substitution. In our case,
+
+                                     Bn F [X] = (F [X − z −1 ]Exp[−(t − 1)zX])              ,
+                                                                                       zr
+
+where        denotes the coeﬃcient of z r in the indicated expression. The expression for B0 implies the speciﬁed
+        zr
+formula for Bn , n ≥ 1 (see, e.g., [GHT99, Proposition 1.4]). B0 is the q = 0 specialization of the operator
+∆′ in [Hai99, (2.10)]. The fact that the Hall-Littlewood symmetric functions are eigenfunctions of this
+operator is proved in [Hai99, Corrolary 2.3]. This leads to the following compact expression for ∂k− . Let
+f (x1 , . . . , xk ) ∈ P+
+                        k and F [Xk ] ∈ Sym[Xk ]. Then,
+
+(7.5)              ∂k− f (x1 , ..., xk )F [Xk ] = τk cxk (f (x1 , ..., xk )F [Xk − xk ]Exp[−(t − 1)x−1
+                                                                                                    k Xk ]),
+
+where τk denotes the alphabet shift Xk 7→ Xk−1 (or xi+1 7→ xi for all i ≥ k). This description makes it clear
+that, if F [Xk−1 ] ∈ Sym[Xk−1 ] then
+
+(7.6)                                            ∂k− F [Xk−1 ] = F [Xk−1 ].
+
+By writing any F [Xk ] ∈ Sym[Xk ] as F [Xk−1 − xk ] we see that the elements of P(k)+ can be written as ﬁnite
+sums of the form
+                                       X
+(7.7)                                     fi (x1 , . . . , xk−1 )xik Gi [Xk−1 ].
+
+By (7.5), on such an expression, ∂k− acts as
+                      X                                         X
+(7.8)             ∂k−   fi (x1 , . . . , xk−1 )xik Gi [Xk−1 ] =   fi (x1 , . . . , xk−1 )Gi [Xk−1 ]∂k− xik
+                          i                                        i
+
+7.7. To facilitate the comparison between the operators Xi , Yi and [∂, ∂ − ], [∂ ∗ , ∂ − ] we record the following
+formulas.
+
+
+Lemma 7.11. For any k ≥ 1 we have
+
+(7.9)                                       ∂k−1 ∂k− − ∂k+1
+                                                        −
+                                                                        ωk−1 .
+                                                            ∂k = (t − 1)e
+
+
+
+Proof. The proof of this equality is identical to the one in the proof of [CM18, Lemma 5.4]; we include a
+brief explanation for the reader’s convenience. Using the relations (7.1c), we have
+
+                        ∂k−1 ∂k− − ∂k+1
+                                    −
+                                        ∂k = −T1 · · · Tk−1 Xk ∂k− + T1 T2 · · · Tk−1 ∂k+1
+                                                                                       −
+                                                                                           Tk Xk+1
+                                             = T1 · · · Tk−1 Xk (−∂k− + ∂k+1
+                                                                         −
+                                                                             Tk−1 ).
+36                                            BOGDAN ION AND DONGYU WU
+
+
+The operator −∂k− + ∂k+1
+                       −
+                           tTk−1 acts on P(k)+ as scaling by (t − 1). By (7.8) this only needs to be veriﬁed for
+               n
+the action on xk , n ≥ 0. We have,
+                                                             n−1
+                                                             X
+            −
+           ∂k+1 tTk−1 xnk − ∂k− xnk = ∂k+1
+                                       −
+                                           xnk+1 + (1 − t)              −
+                                                                   xik ∂k+1  n−i
+                                                                            xk+1 − ∂k− xnk
+                                                             i=1
+                                                                   n−1
+                                                                   X
+                                  = hn [(1 − t)Xk ] + (1 − t)            xik hn−i [(1 − t)Xk ] − hn [(1 − t)Xk−1 ]
+                                                                   i=1
+
+                                  = −(1 − t)xnk .
+
+This proves our claim.                                                                                               
+
+Lemma 7.12. Let k ≥ 1, n ≥ 0, f (x1 , . . . , xk−1 ) ∈ P+
+                                                        k−1 , and G[Xk−1 ] ∈ Sym[Xk−1 ]. We regard
+
+                                          F = f (x1 , . . . , xk−1 )xnk G[Xk−1 ]
+
+as an element of P(k)+ . Then,
+
+(7.10)        ∗
+            (∂k−1 ∂k− − ∂k+1
+                         −
+                             ∂k∗ )F = f (x2 , . . . , xk )G[Xk + qx1 ](hn [(1 − t)(Xk + qx1 )] − hn [(1 − t)Xk ]).
+
+Proof. Straightforward from (7.6) and the deﬁnition of ∂ ∗ , ∂ − .                                                   
+
+7.8. We are now ready to describe the At,q -module structure on P• .
+
+Theorem 7.13. The map that sends Ti , d+ , d∗+ , and d− to Ti , ∂, ∂ ∗ , and ∂ − , respectively, defines a At,q -module
+structure on P• . Under this action, the operators yi , zi act as Xi , Yi .
+
+     It is important to note that while the operators corresponding to arrows connecting diﬀerent nodes are
+local (i.e. dependent on k), the operators Ti , Xi , Yi that correspond to loops are global (i.e. independent of
+k, as they are restrictions of operators on P+
+                                             as ).
+
+
+Proof. The fact that the operator
+                                                    1
+                                       y1 =                [d+ , d− ]Tk−1 . . . T1 ,
+                                              tk−1 (t − 1)
+                                                                   ek−1 in Remark 3.3. Therefore, for all
+acts on P(k)+ as X1 follows from (7.9) and the ﬁrst expression for ω
+i ≥ 1, the operator yi acts as Xi .
+     Furthermore, from (7.7), (7.10), and Proposition 6.32 we obtain that
+                                                                 tk
+                                           z1 T1 · · · Tk−1 =       [d∗ , d− ]
+                                                                1−t +
+acts on P(k)+ as Y1 T1 · · · Tk−1 . Therefore, z1 acts on P(k)+ as Y1 and, for all i ≥ 1, the operator zi acts as Yi .
+     The veriﬁcation of many of the relations in Deﬁnition 7.3 is virtually identical to the corresponding
+veriﬁcation in [CM18]. We brieﬂy indicate the main details.
+     The fact that (7.1a) and (7.1b) hold is clear (also part of Theorem 6.34). For the ﬁrst relation in (7.1c),
+see the proof of the corresponding relation in [CM18, Lemma 5.3]; the second set of relations in (7.1c) is
+                                                                                      ek−1 in Remark 3.3. With
+clear from the deﬁnition of the maps involved. For (7.1d), recall the expressions for ω
+                                    THE STABLE LIMIT DAHA AND THE DOUBLE DYCK PATH ALGEBRA                                     37
+
+
+this in mind, the ﬁrst relation in (7.1d) follows from the equality
+
+(7.11)                                T1 · · · Tk+1 T1 · · · Tk = T2 · · · Tk+1 T1 · · · Tk+1 ,
+
+which is a consequence of the braid relations. Indeed,
+
+                                      T1 ∂k+1 ∂k = T1 T1 · · · Tk+1 T1 · · · Tk Xk Xk+1
+                                                  = T1 T2 · · · Tk+1 T1 · · · Tk+1 Xk Xk+1 ,
+
+which on P(k)+ acts as T1 T2 · · · Tk+1 T1 · · · Tk Xk Xk+1 = ∂k+1 ∂k . The second set of relations in (7.1d) is again
+a straight consequence of the braid relations.
+     For the relations (7.1e), remark that (7.9), (7.1c), and the fact that ∂k− commutes with X1 implies the
+ﬁrst relation in (7.1e). The second relation in (7.1e) follows from (7.9) and (7.11).
+                                                                                              ∗
+    The ﬁrst relation in (7.2a) is a consequence of the fact that an element in the image of ∂k+1 ∂k∗ is sym-
+metric in x1 , x2 . The second relation in (7.2a) is essentially (3.3c).
+      For the ﬁrst relation in (7.2b) can be seen (with the help of (7.1c)) to be equivalent to
+
+(7.12)                                                   Y1 ∂k− = ∂k− Y1 .
+
+The commutativity relation is not immediately clear from the deﬁnition of the operators involved. We proceed
+as in the proof of [CM18, Proposition 6.3]. More precisely,
+
+      (t + 1)(∂ − [∂ ∗ , ∂ − ]Tk−1 − t[∂ ∗ , ∂ − ]∂ − ) = (t + 1)∂ − ∂ ∗ ∂ − (Tk−1 + t) − t∂ ∗ (∂ − )2 (Tk−1 + t − Tk−1 + 1)
+                                                   + (∂ − )2 ∂ ∗ (Tk−1 + t − Tk−1 + 1)
+                                                   = ((t + 1)∂ − ∂ ∗ ∂ − − t∂ ∗ (∂ − )2 + (∂ − )2 ∂ ∗ )(Tk−1 + t)
+                                                   = (∂ − [∂ ∗ , ∂ − ] − t[∂ ∗ , ∂ − ]∂ − )(Tk−1 + t).
+
+For the second equality we used the relations (7.1c) and (7.2a). The image of Tk−1 + t lies on the kernel of
+Tk−1 − 1. Therefore, it is enough to check that
+
+                                                  ∂ − [∂ ∗ , ∂ − ] = t[∂ ∗ , ∂ − ]∂ −
+
+on P(k − 1)+ ⊂ P(k)+ . By (7.8), ∂ − acts as identity on P(k − 1)+ ⊂ P(k)+ . After examining the action of
+both sides of the relation on elements in P(k − 1)+ ⊂ P(k)+ of the form (7.7) we see that it is enough to
+establish the equality for the action on the elements xnk−1 xm    m    n
+                                                             k + xk−1 xk , n, m ≥ 0. The rest of the argument
+in [CM18, Proposition 6.3] applies to conclude the veriﬁcation of the ﬁrst relation in (7.2b).
+     For the second relation in (7.2b) we proceed as follows. By examining the action of both sides of the
+relation on elements of the form (7.7) we see that it is enough to establish the equality for the action on the
+elements xnk , n ≥ 0. By direct computation,
+
+                           [∂ ∗ , ∂ − ]∂ ∗ xnk = hn [(1 − t)Xk+1 + (1 − t)qx1 ] − hn [(1 − t)Xk+1 ]
+
+and
+
+        T1 ∂ ∗ [∂ ∗ , ∂ − ]xnk = hn [(1 − t)Xk+1 + (1 − t)qx1 + (1 − t)qx2 ] − T1 hn [(1 − t)Xk+1 + (1 − t)qx1 ],
+
+from which the claimed equality can be readily veriﬁed.
+38                                              BOGDAN ION AND DONGYU WU
+
+
+     The second relation in (7.2c) is precisely (3.3d). For the ﬁrst relation in (7.2c), it is enough to verify
+the case i = 1, that is
+                                               −1            −1
+                                             ωek+1 Y1 = Y2 ω
+                                                           ek+1 .
+                                −1
+Using the ﬁrst expression for ω
+                              ek+1 in Remark 3.3, this reduces to (4.1e).
+     The relation (7.2d) is proved as follows
+                                                     −1          −1
+                                           qtk+1 X1 ωk+1 = tk+1 ωk+1 Xk+1
+                                                            = tk+1 ̟k+1 Xk+1
+                                                            = Y1 T1 · · · Tk Xk+1
+                                                                   −1
+                                                            = Y1 ω
+                                                                 ek+1 .
+
+Therefore,
+                                                                   ∗
+                                                Y1 ∂k = −qtk+1 X1 ∂k+1 ,
+as desired.                                                                                                  
+
+
+7.9. We conclude with the comparison of the representations of At,q in Theorem 7.7 and Theorem 7.13.
+Let us ﬁrst deﬁne
+                                     Φ• = (Φk )k≥0 : P• → V• ,
+as follows
+                                                                                                     X
+                  Φk : P(k)+ ∼
+                             = P+
+                                k ⊗ Sym[Xk ] → Vk ;               xi 7→ yi ,   1 ≤ i ≤ k;   Xk 7→       .
+                                                                                                    t−1
+We note that each Φk is an Q(t, q)-algebra isomorphism.
+
+Theorem 7.14. Φ• is an isomorphism of At,q -representations.
+
+
+Proof. We clearly have Φk Ti = Ti Φk for all 1 ≤ i ≤ k − 1. We will check that the action of d+ satisﬁes the
+following equality
+                                             d+,k Φk = Φk+1 d+,k .
+Therefore we only need to prove the correspondence for d+ , d∗+ , d− .
+     Let F = xt11 ...xtkk f [Xk ] ∈ P(k)+ . We have,
+                                                                 X
+                            d+,k Φk F = d+,k y1t1 ...yktk f [       ]
+                                                                t−1
+                                                                           X + (t − 1)yk+1
+                                        = −T1 ...Tk (y1t1 ...yktk yk+1 f [                 ])
+                                                                                t−1
+                                                                            X
+                                        = −T1 ...Tk (y1t1 ...yktk yk+1 f [      + yk+1 ])
+                                                                           t−1
+                                        = −Φk+1 (T1 ...Tk xt11 ...xtkk xk+1 f [Xk+1 + xk+1 ])
+                                        = −Φk+1 (T1 ...Tk Xk+1 (xt11 ...xtkk f [Xk ]))
+                                        = Φk+1 d+,k F.
+
+Similar computations show that d∗+,k Φk = Φk+1 d∗+,k and d−,k Φk = Φk−1 d−,k .                               
+                                  THE STABLE LIMIT DAHA AND THE DOUBLE DYCK PATH ALGEBRA                                   39
+
+
+      The following examples illustrate how the actions of Y1 and z1 correspond through the isomorphism Φ• .
+
+
+Example 7.15. By deﬁnition, Φk (x22 ) = y22 for any k ≥ 2. From Example 6.26 and Example 7.9 we have
+
+            Y1 · x22 = q2 t(t − 1)x21 + qt(t − 1)x1 x2 − qt(t − 1)2 x1 e1 [X2 ],
+            z1 · y22 = q2 t(t − 1)y12 + qt(t − 1)y1 y2 − qt(t − 1)2 (y1 y3 + · · · + y1 yk ) − qt(t − 1)y1 e1 [X].
+
+Now, from the deﬁnition of Φk , k ≥ 2, we can see that
+
+                                                  Φk (Y1 · x22 ) = z1 · y22 .
+
+It is important to remark that while the action of Y1 on x22 ∈ P(k)+ is independent of k, the action of z1 on
+y22 ∈ Vk depends on k.
+
+Example 7.16. By deﬁnition, Φ1 (p2 [X1 ]) = p2 [X]/(t2 − 1). From Example 6.26 and Example 7.10 for k = 1,
+we have,
+
+                                          Y1 · p2 [X1 ] = −q2 tx21 + qt(t − 1)x1 e1 [X1 ],
+                                  z1 · p2 [X]/(t2 − 1) = −q2 ty12 + qty1 e1 [X].
+
+Again, we can see that
+                                         Φ1 (Y1 · p2 [X1 ]) = z1 · p2 [X]/(t2 − 1).
+For k = 2, we have, Φ2 (p2 [X1 ]) = y22 + p2 [X]/(t2 − 1) and from Examples 7.9 and 7.10 we have,
+
+                    Y1 · p2 [X1 ] = −q2 tx21 + qt(t − 1)x1 e1 [X1 ],
+    z1 · (y22 + p2 [X]/(t2 − 1)) = (q2 t(t − 1)y12 + qt(t − 1)y1 y2 − qt(t − 1)y1 e1 [X]) + (−q2 t2 y12 + qt2 y1 e1 [X])
+                                = −q2 ty12 + qt(t − 1)y1 y2 + qty1 e1 [X].
+
+From the deﬁnition of Φ2 we can see that
+
+                                     Φ2 (Y1 · p2 [X1 ]) = z1 · (y22 + p2 [X]/(t2 − 1)).
+
+Again, the action of Y1 on p2 [X1 ] ∈ P(k)+ is independent of k, while the action of z1 on y22 +p2 X/(t2 −1) ∈ Vk
+depends on k.
+
+     We emphasize that above result is diﬀerent from the comments in [CM18, pg. 694] that suggest a
+possible algebra isomorphism between ek At,q ek (the subalgebra of At,q generated by loops based at node
+k) and a “partially symmetrized” version of the stable limit spherical DAHA, still to be deﬁned for k > 0. In
+particular, H+ does not contain a copy of the stable limit spherical DAHA which, according to the expectation
+in [CM18], would be isomorphic to e0 At,q e0 .
+
+Competing interests. The authors declare none.
+
+                                                   Index of Notation
+
+a                 §4.3 At                  §7.1 b                      §4.3 cyk               §7.3 d+ , d∗+ , d− §7.1,7.3
+
+Ak                §3.1 At,q                §7.1 Bn , B∞                §7.5                           ∂k             §7.4
+40                                           BOGDAN ION AND DONGYU WU
+
+
+∂k∗            §7.4 hn [(1 − t)Xk ]   §2.3 ̟k              §6.5,6.6     pri              §6.6 Xi        §5.3,6.2
+∂k−            §7.5
+                    ι                 §4.3     pn [X]         §2.1      Q̇, Q̈            §7.1 yi       §7.1,7.3
+e              §4.1 ιk                §2.5     Pk             §2.4                             Yi           §3.2
+                                               P±             §2.4      si                §2.4    (k)
+en [X]         §2.1 Ik                §2.5      k                                              Yi           §3.3
+Exp[X]         §2.2 ι(k)              §7.4     P±
+                                                ∞             §2.5                             Yei          §6.5
+                                                                        Ti                §3.2
+                                               P(k)±          §2.6                             Yei
+                                                                                                  (k)
+                                                                                                            §6.6
+                                                                        Ti            §5.3,6.2
+γk         §6.5,6.6 J                 §2.5     P±
+                                                as            §2.7                             Yei
+                                                                                                  (∞)
+                                                                                                            §6.7
+                    Jk                §2.5     P•             §7.4      Wi
+                                                                             (k)
+                                                                                         §6.8 Yi          §6.12
+Hk             §3.2                            Φ•             §7.9      Wi
+                                                                          (∞)
+                                                                                        §6.11
+H±             §4.1 mλ [X]            §2.1     Φk             §7.9                            zi        §7.1,7.3
+e+
+H              §6.5                            πk             §2.5      X, Xk ,          §2.1 ζk            §7.3
+  k
+H(k)±          §4.1 ω
+                    ek            §3.1,3.3     Πk             §2.5      Xk , X[k,m]           e(k)
+                                                                                         §2.1 Z             §6.8
+                                                                                                i
+hn [X]         §2.1 ωk            §3.2,3.3     Pλ [X, t]      §7.5      Xi                    e(∞)
+                                                                                         §3.2 Z             §6.8
+                                                                                                 i
+
+
+                                                  References
+
+      [Bel04] P. Bellingeri, On presentations of surface braid groups. J. Algebra 274 (2004), no. 2, 543–563.
+[BGSLX16a] F. Bergeron, A. Garsia, E. Sergel Leven, and G. Xin, Compositional (km, kn)-shuﬄe conjectures.
+              Int. Math. Res. Not. IMRN 14 (2016), 4229–4270.
+[BGSLX16b] F. Bergeron, A. Garsia, E. Sergel Leven, and G. Xin, Some remarkable new plethystic operators
+              in the theory of Macdonald polynomials. J. Comb. 7 (2016), no. 4, 671–714.
+       [BS12] I. Burban and O. Schiﬀmann, On the Hall algebra of an elliptic curve, I. Duke Math. J. 161
+              (2012), no. 7, 1171–1231.
+   [CGM20] E. Carlsson, E. Gorsky, and A. Mellit, The Aq,t algebra and parabolic ﬂag Hilbert schemes. Math.
+              Ann. 376 (2020), no. 3-4, 1303–1336.
+      [CM18] E. Carlsson and A. Mellit, A proof of the shuﬄe conjecture. J. Amer. Math. Soc. 31 (2018), no.
+              3, 661–697.
+     [Che95] I. Cherednik, Double aﬃne Hecke algebras and Macdonald’s conjectures. Ann. of Math. (2) 141
+              (1995), no. 1, 191–216.
+     [Che05]          , Double affine Hecke algebras. London Mathematical Society Lecture Note Series, vol.
+              319, Cambridge University Press, Cambridge, 2005.
+      [FO98] B. L. Feı̆gin and A. V. Odesskiı̆, Vector bundles on an elliptic curve and Sklyanin algebras. In:
+              Topics in quantum groups and finite-type invariants, 65–84. Amer. Math. Soc. Transl. Ser. 2, vol.
+              185, Amer. Math. Soc., Providence, RI, 1998.
+       [FT11] B. L. Feigin and A. I. Tsymbaliuk, Equivariant K-theory of Hilbert schemes via shuﬄe algebra.
+              Kyoto J. Math. 51 (2011), no. 4, 831–854.
+    [GHT99] A. M. Garsia, M. Haiman, and G. Tesler, Explicit plethystic formulas for Macdonald q, t-Kostka
+              coeﬃcients. Sém. Lothar. Combin. 42 (1999), Art. B42m, 45.
+      [GN15] E. Gorsky and A. Neguţ, Reﬁned knot invariants and Hilbert schemes. J. Math. Pures Appl. (9)
+              104 (2015), no. 3, 403–435.
+    [Hag08] J. Haglund, The q,t-Catalan numbers and the space of diagonal harmonics. University Lecture
+              Series, vol. 41, American Mathematical Society, Providence, RI, 2008.
+                                 THE STABLE LIMIT DAHA AND THE DOUBLE DYCK PATH ALGEBRA                 41
+
+
+[HHL+ 05] J. Haglund, M. Haiman, N. Loehr, J. B. Remmel, and A. Ulyanov, A combinatorial formula for
+            the character of the diagonal coinvariants. Duke Math. J. 126 (2005), no. 2, 195–232.
+ [HMZ12] J. Haglund, J. Morse, and M. Zabrocki, A compositional shuﬄe conjecture specifying touch
+            points of the Dyck path. Canad. J. Math. 64 (2012), no. 4, 822–844.
+   [Hai99] M. Haiman, Macdonald polynomials and geometry. In: New perspectives in algebraic combina-
+            torics, 207–254. Math. Sci. Res. Inst. Publ., vol. 38, Cambridge Univ. Press, Cambridge, 1999.
+   [Hai01]           , Hilbert schemes, polygraphs and the Macdonald positivity conjecture. J. Amer. Math.
+            Soc. 14 (2001), no. 4, 941–1006.
+   [Hai02]           , Vanishing theorems and character formulas for the Hilbert scheme of points in the
+            plane. Invent. Math. 149 (2002), no. 2, 371–407.
+     [IS20] B. Ion and S. Sahi, Double aﬃne Hecke algebras and congruence groups. Mem. Amer. Math.
+            Soc. 268 (2020), no. 1305, xi+90 pp.
+    [Jin91] N. H. Jing, Vertex operators and Hall-Littlewood symmetric functions. Adv. Math. 87 (1991),
+            no. 2, 226–248.
+  [Kno07] F. Knop, Composition Kostka functions. In: Algebraic groups and homogeneous spaces, 321–352.
+            Tata Inst. Fund. Res. Stud. Math., vol. 19, Tata Inst. Fund. Res., Mumbai, 2007.
+  [Neg14] A. Negut, The shuﬄe algebra revisited. Int. Math. Res. Not. IMRN 22 (2014), 6242–6275.
+  [Mac15] I. G. Macdonald, Symmetric functions and Hall polynomials. Oxford Classic Texts in the Physical
+            Sciences, 2nd ed., The Clarendon Press, Oxford University Press, New York, 2015.
+  [Mel21] A. Mellit, Toric braids and (m, n)-parking functions. Duke Math. J. 170 (2021), no. 18, 4123–
+            4169.
+    [SV11] O. Schiﬀmann and E. Vasserot, The elliptic Hall algebra, Cherednik Hecke algebras and Mac-
+            donald polynomials. Compos. Math. 147 (2011), no. 1, 188–234.
+    [SV13] O. Schiﬀmann and E. Vasserot, The elliptic Hall algebra and the K-theory of the Hilbert scheme
+            of A2 . Duke Math. J. 162 (2013), no. 2, 279–366.
+
+  Department of Mathematics, University of Pittsburgh, Pittsburgh, PA 15260
+
+  Email address: bion@pitt.edu
+
+
+  Department of Mathematics, University of Pittsburgh, Pittsburgh, PA 15260
+
+
+  Beijing Institute of Mathematical Sciences And Applications, Beijing 101408
+
+  Email address: dow16@pitt.edu, wudongyu@bimsa.cn
+

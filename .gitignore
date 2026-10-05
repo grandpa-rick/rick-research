@@ -53,3 +53,4 @@ reviews/
 
 # Lean build cache
 .lake/
+work-in-progress/

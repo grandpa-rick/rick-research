@@ -1,0 +1,11 @@
+Day 216 psi_struct summary (grade: COMPUTED, n<=5 exact in s,t)
+Normalization (psi.py): Psi(E_lam(1)) = prod t^{-C(lam_i,2)} e_lam, so Psi E_k = t^{-C(k,2)} e_k Psi. B_nu := t^{-n(nu')} P_{nu'}(x;1/t).
+(i) HL basis: Psi_s(b_mu) = sum_{nu >= mu} c_{nu mu}(s,t) B_nu, c in Z[s,t], c_{mu mu}=1 (unitriangular, dominance).
+   c_{(n),mu} = s^{n(mu)} [n]_t!/prod [mu_i]_t!                     (n<=5)
+   deg_t c_{nu mu} = n(nu') - n(mu'), top t-coefficient = K_{nu mu}(s) (charge Kostka-Foulkes)   (n<=5)
+   other coefficients do NOT factor and are NOT sign-positive (e.g. c_{21,111} = s(s t+2s+t-1); t^0 coefs 2s-1, 3s^2-3s+1, 2s^2-1).
+(iii) t -> infinity: t^{n(mu')} Psi_s(b_mu) -> omega Q'_mu(X;s) = sum_lam K_{lam mu}(s) s_{lam'}   (n<=5). (t=0 itself is a pole.)
+(ii) e-basis: support = {nu >= mu}; (1-s) | every off-diagonal coef; (1-s)-valuation = l(mu)-l(nu) except (221 -> 311) val 1.
+   cofactors not positive in general (b_22 -> e_4 has factor s[3]_t - t).
+(iv) Plethystic guesses: omega P_mu[X(1-C)/(1-D); q=A, t=B] for A,B,C,D in {0,s,t,1/t,s t,s/t,1/s}: 0 survivors already at n=2 (mac_guess_3.log).
+   Plethysm X -> eps X(1-a)/(1-b), a,b monomials in {0,s,t,1/t,st,s/t,s^2,t^2,1/t^2,s^2t,s^2/t}: only trivial (scalar) alphabets keep m-triangularity (pleth_tri_4.log).

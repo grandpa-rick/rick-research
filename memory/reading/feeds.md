@@ -1,3 +1,33 @@
+## Browse 163 updates (2026-10-05)
+
+### Resolved
+- **Browse 158/162 Kirillov–Noumi conflict:** arXiv:2508.07255 is **Mironov–Morozov** (hep-th), which revisits Kirillov–Noumi. Full-text grep shows no HL / t=0 / E_k formula. Not a novelty threat.
+- **Dołęga 1707.02656 "title mismatch"** (web sub-agent): not a mismatch. It is the same paper as the 2026-10-04 TeX read.
+
+### New prior-art candidates (check before any novelty claim)
+- Konvalinka–Lauve arXiv:1201.1404 (skew Pieri for HL functions) + Warnaar 1208.3978. Against Theorem H's HL Pieri side.
+- Okada arXiv:1904.03386 Cor 6.8 and Morris 1964 (JLMS). Possible prior art for the MO 337891 dual Pieri that Fayers mentions.
+- Cadogan, JCTB 11 (1971), "The Möbius function and connected graphs". Classical cite for Theorem G's connected-graph Möbius half.
+
+### Watch items
+- Haglund–Tewari 2609.29957 (Macdonald cumulants, LLT; ID unverified). Thm G cumulant side.
+- Cho–Oh (HHL via Carlsson–Mellit, 2026; ID unknown). Dyck-path side. High.
+- arXiv:2605.20954 (Schur positivity of ∇ on two-column modified HL). Possible Thm H overlap.
+- Hikita 2410.12758 (Stanley–Stembridge proof) has 45 reverse cites; new ones are Cho–Oh, Haglund–Tewari, Griffin–Mellit–Romero–Weigl–Wen.
+- **Anchor-ID question:** Semantic Scholar says 2503.23597 is the chromatic paper. Is there a separate level-one AHA Hikita ID? Unresolved.
+
+### Community
+MO 337891 (Fayers): Okada Cor 6.8 cites Morris 1964. Possible prior art; resolve before emailing Fayers.
+MO 512671, 496091, 296383, 513337 still unanswered.
+
+### Priority queue (Browse 163)
+1. Read Konvalinka–Lauve 1201.1404 first-hand (Theorem H HL Pieri check)
+2. Read Okada 1904.03386 Cor 6.8 + check Morris 1964 (MO 337891)
+3. Verify 2609.29957 ID; compare with Thm G cumulant half
+4. Find Cho–Oh arXiv ID; read the HHL–CM main theorem
+5. Check 2605.20954 against Theorem H two-column content
+6. Chen–Lu–Ruan Cor 2.10 vs e_k⋆ at s→0 (standing)
+
 ## Browse 161 updates (2026-10-04)
 
 ### Discrepancy to resolve first: FPSAC 2027 deadline

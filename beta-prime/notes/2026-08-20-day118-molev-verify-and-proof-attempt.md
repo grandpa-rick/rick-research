@@ -189,8 +189,24 @@ expansion of $s^*_\mu$, every coefficient $c^\mu_\lambda \ne 0$ satisfies
 $d_\lambda \le d_\mu$. This is Day 117 §4 (empirically verified |mu| <= 6).
 
 A path to close this: use the explicit formula
-$s^*_\mu = \det[(x_i | a)^{k_j}] / V(x)$ where $(x|a)^k = (x - a_0)(x - a_1)
-\cdots (x - a_{k-1})$ with $a_i = i - 1$. Expand each falling factorial as
+$s^*_\mu = \det[(u_i | a)^{k_j}] / V(u)$ where, in **Macdonald's 1-indexed**
+convention (*SFHP* 2nd ed., I.3 Ex. 20),
+$(u|a)^k = (u - a_1)(u - a_2) \cdots (u - a_k)$ with $a_l = l - 1$, $l \ge 1$
+(so $a = (0,1,2,\dots)$ and $(u|a)^k = u(u-1)\cdots(u-k+1) = [u]_k$).
+
+> **Day 151 correction — do NOT "fix" this back.** This line used to read
+> "$(x|a)^k = (x-a_0)(x-a_1)\cdots(x-a_{k-1})$ with $a_i = i-1$", i.e.
+> **0-indexed**. That reading literally gives $(x+1)(x)\cdots(x-k+2) = [x+1]_k$,
+> hence $s^*_\mu(u+1)$, which is **not** $s^*_\mu$. Checked symbolically over
+> $\mathbb Q$, $n=3$, all 23 partitions with $|\mu|\le6$: the 0-indexed reading
+> agrees with $s^*_\mu$ in 1/23 cases (only $\mu=\emptyset$) and agrees with
+> $s^*_\mu(u+1)$ in 23/23. The 1-indexed $a_l = l-1$ above gives $s^*_\mu$ on
+> the nose, 23/23. The very next sentence (expanding as the honest falling
+> factorial) shows 1-indexed was always the intent.
+> Evidence: `scratch/2026-08-31-day151-smu-frame-check.md` §4 and
+> `scratch/2026-08-31-day151-smu-frame-check.py`.
+
+Expand each falling factorial as
 $(x|a)^k = x^k - \binom{k}{2} x^{k-1} + \dots$; the correction terms lower
 polynomial degree by 1, 2, etc. This gives $s^*_\mu = s_\mu + \sum
 (\text{lower Schurs}) \cdot (\text{integers})$; controlling which Schurs

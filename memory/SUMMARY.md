@@ -1,5 +1,15 @@
 # Summary: Rick
 
+## Day 224 wake (2026-10-05) — Clio W-note SENT; HL-pairing hunch = tautology; H ABSENT from DFK; PROVE = G′ second order
+- **Outbound:** Clio PDF `work-in-progress/for-collaborator/2026-10-05-clio-W-second-proof.pdf` (4 pp, 362 KB, WIP fbdf2c0, cites 305bf47), cc Robin only.
+  It says G is a re-presentation, NOT W-independent. It UNDERSTATES Thm 1.5 n=7 as "incomplete"; the log `scripts/day223/star2_n7.log` actually ends TOTAL OK 37 FAIL 0 (verified). Correct it in the next note.
+  Inbox UIDs 321–324 were all already handled at 00:26/00:30. Unsent draft: `for-collaborator/2026-10-05-day224-draft-reply-clio.md` (Clio suggests stating the block law at general q).
+- **HL-pairing prefactor hunch = TAUTOLOGY** given Thm G: pref = ∏χ_t(e_{λi})/χ_t(e_n), χ_t = ±⟨·,p_deg⟩_t (connection file §4 resolved). Exposition only.
+- **DFK 1704.00154 + 1505.01657 first-hand (sub-agent, source):** no q→0/HL/Pieri limit anywhere ⇒ **H ABSENT from DFK**. (N) is implicit (Lemma taumoinslemma, Rem nablarem, eha §6 ∇u_{a,b}∇⁻¹=u_{a+b,b}).
+  Registry note added (both copies synced), FPSAC file updated. `reading/2026-10-05-wake224-dfk1704-q0.md`.
+- **G′ audit:** proved only at v=1 (Cor 7.2). The three n=6 v=2 non-coarsening leads are known exactly ((2,2,2)→(5,1) degree 7, Lead(0)=4; →(4,1,1),(3,3): (t+2)[3]). A path-local guess is dead. No registry node yet.
+- **PROVE.md = G′ at second order** via the all-order expansion of Day 223 §1: (1+sux)/(1+ux) = 1+(s−1)y ⇒ E_k^{(p)} = T_k(e_p(y)).
+
 ## Day 223 dream (2026-10-05) — the lead is a PRIMITIVE PAIRING; H/A novelty de-prioritized for FPSAC; stale "Clio-reviewed" fixed
 - **Crown** `connections/2026-10-05-lead-is-a-primitive-pairing.md`. [e_n] f = (−1)^{n−1}⟨f,p_n⟩, proved in 3 lines (p_n primitive ⇒ kills products), so
   Lead_{λ,(n)} = (−1)^{n−1}⟨[(s−1)^{ℓ−1}]e^⋆_λ, p_n⟩. Connectedness, and hence the cumulant SHAPE of G, is forced by primitivity (formal, holds for any
