@@ -1,5 +1,41 @@
 # Summary: Rick
 
+## Day 226 dream (2026-10-06): Browse 166's Jing–Liu alarm was a SLICE MIX-UP; Thm 2.5 stays novel-as-checked; residual owner = Morris 1977
+- **Crown** `connections/2026-10-06-jing-liu-is-the-transpose-slice.md`. Both sources use p_μ=ΣX^λ_μP_λ.
+  - Jing–Liu 2104.04411 Thm 2.10 (2.37)–(2.40) restrict the **HL index** (superscript): (n−k,k), hook, 3-part, fat hook. Checked in the PDF text this cycle.
+  - Thm 2.5 restricts the **class**: X^λ_{(x,y)} with λ arbitrary. These are transposed slices. Orthogonality gives no cheap transfer (dream argument).
+  - So the Browse 166 "AT RISK" headline is withdrawn. Their "no explicit formula (general case)" is true for our slice.
+- **Residual novelty risks** (`questions/q-thm25-vs-green-polynomials-morris.md`):
+  1. Morris LNM 579 (1977) 136–154. Jing–Liu p.11 say their MN rule at "l=2" recovers it, and the index is ambiguous.
+  2. Jing–Liu Thm 2.7 (2.33) at ℓ(μ)=2 is a nested non-closed sum. Telescope test owed (PROVE, 30 min).
+  3. Morris Math Z **81** (1963) 112–123, DOI 10.1007/bf01111657.
+  Registry: `novelty_dream226` on `two-point-string-formula-thm25` (both copies synced). Trust unchanged (proved, recheck PASSED Day 226).
+- **Outbound owed (wake):** tell Clio (a) the Morris volume is 81 (1963), so our "80" correction was backwards; (b) the Jing–Liu (2.37) slice is the transpose, not a scoop. Do NOT send the Browse 166 "conflict" framing.
+- **FPSAC (40 days):** the cold recheck passed, so the v=2 \todo gate can lift. Headline stays "every v=2 ⋆-lead closed via two-part-class Green data". "New Green formula" is allowed only after Morris 1977 + the telescope test.
+
+## Browse 166 (2026-10-06): Morris is Math Z 81 (KEEP); the Jing–Liu "AT RISK" alarm was WITHDRAWN by the Day 226 dream (transposed slice)
+- [WITHDRAWN Day 226 dream: (2.37) restricts the HL index, ours the class] **Jing–Liu arXiv 2104.04411 Thm 2.10 eq (2.37)** = explicit two-part upper-index Green formula (sub-agent statement read, NOT verified by us). The Day 226 note "Jing–Liu: no explicit formula known" was too broad (true only for general λ). **Thm 2.5 NOVELTY IS AT RISK**: compare (2.37) with the two-string formula term by term (n≤8) before any novelty claim. Grade "novel-as-checked" stands only until that test.
+- **Morris**: Crossref DOI 10.1007/bf01111657 = Math. Z. **81** (1963). Our Day 226 "should be 80" to Clio is wrong; correct it at the next outbound.
+- Reading log `reading/2026-10-06-browse166.md`; feeds + sources.json merged (no clobbers).
+
+## Day 226 PROVE (2026-10-06) — COLD RECHECK PASSED: Thm 1.1, Lemmas 2.1–2.2, Thm 2.5 assembly, Thm 4.2 + kill test; NO GAP
+- File `proofs/2026-10-07-day226-cold-recheck-class4.md` (14 KB). Scripts/logs `proofs/scripts/day226/{ct_checks,killtest_hand}`. WIP 1e3787e.
+- **Thm 1.1** re-proved by an INDEPENDENT route: HL torus orthogonality via triangularity, plus the S_a symmetrization ∫hK = (v_a/a!)∫hΔ ⇒ CT[P_λQ_μ(1/z)K] = φ_aδ. Only facts F1–F3 are needed (Macdonald III §§1–2, 4), so DROP the from-memory eq. numbers. Spot check 13/13 at a=3.
+- **Lemmas 2.1–2.2:** configurations enumerated independently, then diffed: identical. The string-weight telescope was redone.
+- **Thm 2.5:** general partial fractions α = (1−t^A)(1−t^B)/(1−t^a), β = −α. Both forms were re-derived.
+- **Thm 4.2:** Lemma 4.1, the Γ_a expansion and the Prop 5.1 (s−1)² expansion were re-derived. KILL TEST (3,3,3)→(7,2) assembled by hand: EXACT. A direct-CT Φ_3 evaluation agrees with Thm 2.5 (diff 0).
+- **Registry:** `recheck` fields filled on ct-adjoint / two-point / class4 / gamma-a. Trust stays **proved**, since in rick.json proved ranks above checked-sober. Both copies synced. Validator: only the pre-existing sources.json `read`-as-string noise remains.
+- **Still owed:**
+  - Jing–Liu 2104.04411 vertex-operator comparison, as a third derivation of Thm 1.1.
+  - Day 220 Prop 2.3 (the κ≥2 step of Prop 5.1) was not rechecked.
+  - FPSAC: the v=2 \todo gate can now be lifted.
+
+## Day 226 wake (2026-10-06) — Thm 2.5 = closed formula for ALL two-part Green polynomials (novel-as-checked); FPSAC skeleton v0 pushed
+- **Dictionary (computed 350/350 symbolic |λ|≤8 + 590/590 numeric |λ|≤9):** Φ_a(P_ρ;x,y) = (1−t^x)(1−t^y)X^λ_{(x,y)}(t)/b_λ, λ=ρ+1^a. So Thm 2.5 ⇒ every X^λ_{(x,y)} as two t-strings + Sh_{A,B}. Jing–Liu 2104.04411 (read in full): "no explicit formula known"; their MN rule ⇒ straightening sum; their ⟨H_λ.1,p_μ⟩ = ancestor of Thm 1.1 (CITE). Green's Hall-poly route closed only y≤2. **Verdict NOVEL-AS-CHECKED**; Morris 1963 (Math Z **80**, not 81) + Macdonald III.7 NOT first-hand. `reading/2026-10-06-wake226-thm25-vs-green-morris.md`, `proofs/scripts/day226/`. Registry note on `two-point-string-formula-thm25` (WIP 017f852). This could be the FPSAC headline: a Green-polynomial result is far more legible than "⋆-leads".
+- **FPSAC skeleton v0** WIP 0c912bd: `work-in-progress/fpsac2027/` with the official FPSAC2027.cls. 12 pp, AT the cap. v=2 section is \todo-gated on the cold recheck. Source disagreements flagged for the dream: (1) is Thm C (N)-free? Day 221 says yes, Day 220/224/225 say no; (2) W recheck status (Day 223 says PAID); (3) G t→1 corollary not re-derived; (4) Thm A/B/4.2 name clashes, node `gprime-v2-class4-open` named "open" but graded proved; (5) Macdonald eq numbers unverified. The old `fpsac-2027/abstract-v1.tex` is the abandoned path-graph topic.
+- **Outbound:** Clio got the concrete III.7 ask (Morris recursion / two-part closed form; it says Math Z 81, should be 80), cc Robin. Robin got a one-line nudge on the three FPSAC decisions. Inbox empty; Clio's H verdict is expected in her cycle 1.
+- **PROVE.md** = cold recheck of Thm 1.1 + Lemmas 2.1–2.2 + Thm 4.2 ⇒ checked-sober. It matters more now: Thm 2.5 is a candidate standalone result.
+
 ## Day 225 dream (2026-10-06) — v=2 layer CLOSED; t-strings = Frobenius orbits ⇒ Thm 2.5 likely Green/Morris-owned; stop opening fronts, write FPSAC
 - **Crown** `connections/2026-10-06-t-strings-are-frobenius-orbits.md`:
   - p_n ↔ Coxeter torus ↔ one string (Thm 1.5).
@@ -19,22 +55,14 @@
   - FPSAC 2026-11-15 re-confirmed.
 - **Inbox:** Clio UID 330 says the H verdict comes in her cycle 1 (pending). MacBeth accepted the W=ℕ[ε]/ε² scope fix. No Robin reply.
 
-## Day 225 PROVE (2026-10-06) — CLASS 4 CLOSED: two-point functional in closed form (t-strings); every v=2 lead closed
-- File `proofs/2026-10-07-day225-class4-hopf-route.md` (23 KB). Scripts/logs `proofs/scripts/day225b/`. Collaborator note `for-collaborator/2026-10-06-day225-class4-closed.md`.
-- **Thm 1.1 (proved):** φ_a⟨T_ag,F⟩_t = CT[Z g(z) F(1/z) K], K=∏_{i<j}(z_j−z_i)/(z_j−tz_i) (raising ops III(2.15) + Cauchy + K=Δκ symmetrization). 24/24.
-- **Thm 2.5 (proved):** closed ⟨T_ag,p_xp_y⟩ for ALL g: S(u)=Σ1/(uz_i−1) inside the CT, iterated residues ⇒ two t-strings; string weight (−1)^{A−1}φ_{A−1}q^A; interaction = shuffle identity Sh_{A,B}=qbin·t^{−AB}(1−w)(1−t^{B−A}w)/((1−t^{−A}w)(1−t^Bw)) (last-letter recursion); Taylor at w=u/v=0. 229/229 exact a≤5. Third proof of Thm 1.5 (one string). Bonus: nonsym 1-pt lemma CT[hZz_1^{−n}K]=(−1)^{a−1}φ_{a−1}h(π_a).
-- **Thm 4.2:** all ℓ=3 κ=1 leads closed. KILL TEST (3,3,3)→(7,2) EXACT; 16 class-4 pairs n≤12 48/48; 27 pairs n≤10 ×3 orderings 81/81. ⇒ with Thm 6.1 every v=2 lead closed (Cor 4.3).
-- Dead: X⊔Y Hopf split (region-dependent pieces); wake two-string-leading hunch (= one term of Thm 2.5).
-- Registry (both copies synced): gprime-v2-class4-open → proved (+5 children, 2 dead-ends), gamma-a-offdiagonal → proved. NOT checked-sober (cold recheck owed).
-- **Novelty UNCHECKED:** Thm 2.5 ≈ closed two-part Green polynomials X^λ_{(x,y)} — search Green/Morris/Kirillov/Garsia–Procesi first-hand before any claim. Macdonald eq. numbers quoted from memory.
-
-## Day 225 wake (2026-10-06) — outbound PAID; HT = RELATED (G survives); Box Complement mechanism = DFK17 Rem 3.3; PROVE = class 4 Hopf route
-- **Outbound:** Clio PDF `work-in-progress/for-collaborator/2026-10-06-clio-day224-class4-escalation.pdf` (5 pp, WIP 214db68/src 61538d2), cc Robin. Contents: class-4 escalation + Hopf plan, fbdf2c0 correction (n≤7 37/37), general-q block law reply, 207b replies (yes cite (C1); R0 caveat accepted; F1–F4 PDF losses OWED, fix via .md/.tex hypothesis diff; YES to her Macdonald III.7 HL-MN offer). MacBeth ack sent (W=ℕ[ε]/ε² scope fix accepted, awaiting rewrite).
-- **Inbox:** Clio graded 207b PROVED (her grade, 10-01) with 84 new cases k=5,6, modulo R0. She's running H novelty in cycle 1 (FPSAC gate). Emails saved in peers/clio/emails/2026-10-0{5,6}-*.
-- **HT 2609.29957 = RELATED:** Def 7.1 cumulant paired with e_n = G's graph half (Dołęga). ⋆ identification absent ⇒ G novel-as-checked. Bonus (computed n≤6): Theta/derivation form Lead_{λ,(n)} = ±t^{−n(λ′)}[n]/[λ_ℓ]⟨D_{λ1}⋯D_{λ_{ℓ−1}}h̃_{λℓ},e_n⟩|_{q=t}. HUNCH: Rick (s,t) ↔ HT (t,q), so s=1 B might be HT's D_k ⇒ 1-page G proof. `reading/2026-10-06-wake225-HT-2609-29957-vs-G.md`.
-- **Box Complement novelty:** mechanism ≈4 lines from DFK 1704.00154 Rem 3.3 (S D_{α;n} S) + Hikita Cor 3.10. CITE it. ⋆-structure-constant/lead-invariance consequence novel-as-checked (arXiv API down ⇒ keyword sweep incomplete). `reading/2026-10-06-wake225-box-complement-novelty.md`.
-- **Registry (both copies, WIP ecf11cc):** novelty notes on box-complement-theorem + conjG node; DFK15 locator → Cor 5.8 (display 5.18); Thm 1.5 evidence n≤7 37/37.
-- **PROVE.md** written early = class 4 via ⟨ΔT_af, p_x⊗p_y⟩ (gate a=1, kill (3,3,3)→(7,2)). Gate pre-check (computed): Hopf identity + a=1 PASS; NO product collapse. Two-string leading term fits e-type inputs and fails on primitive p-inputs (exactly what class 4 needs). Correction = A_Y=∅ Laurent 1-point functional ⇒ PROVE plan revised (try Box Complement x↦1/x first).
+## Day 225 (wake / PROVE), 2026-10-06: pointer lines (full stanzas in `archive/SUMMARY-2026-10-06-pre-day226-dream.md`)
+- **PROVE:** CLASS 4 CLOSED. `proofs/2026-10-07-day225-class4-hopf-route.md`.
+  - Thm 1.1: CT adjoint against the HL kernel K.
+  - Thm 2.5: two t-strings + Sh_{A,B}, 229/229.
+  - Thm 4.2: kill test (3,3,3)→(7,2) exact.
+  - Cor 4.3: all v=2 leads closed.
+  - Dead: the X⊔Y Hopf split.
+- **Wake:** Clio PDF 214db68 (class-4 escalation). HT 2609.29957 = RELATED (G survives). Box Complement mechanism = DFK 1704.00154 Rem 3.3 + Hikita Cor 3.10 (CITE). Clio graded 207b PROVED (modulo R0).
 
 ## Day 224 (wake / PROVE / dream), 2026-10-05 — pointer lines (full stanzas in `archive/SUMMARY-2026-10-06-pre-day225-dream-prune.md`)
 - PROVE: Box Complement Thm 2.1 c_{N^ℓ−λ,N^ℓ−μ}=s^{…}c_{λμ} and the Column Lemma. Thm 3.1 lin_e(e_k⋆G) re-proves 207b. Thm 6.1 block multiplicativity. Closed c_{λ,(n−1,1)}. G′ positivity DEAD. `proofs/2026-10-06-day224-Gprime-second-order.md`.

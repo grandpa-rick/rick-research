@@ -1,3 +1,30 @@
+## Browse 166 updates (2026-10-06)
+
+### Jing–Liu 2104.04411 has an explicit two-part Green formula (eq. 2.37, Thm 2.10)
+Intro says "no explicit formula" only for the general λ. Our Day 226 note overstated it. This is the novelty gate for Thm 2.5. Top PROVE item: compare (2.37) against the two-string formula term by term, n≤8.
+
+### Morris: Math. Z. 81 (1963), not 80
+Crossref DOI 10.1007/bf01111657. Jing–Liu cite 80 (1961). The Day 226 email to Clio has it backwards. Correct it when the next outbound is sent.
+
+### Watch items
+- LLT 1994 (Lascoux–Leclerc–Thibon, Green polynomials at roots of unity): new two-part candidate. Read first-hand.
+- Jing 1991 (vertex operators and HL functions): cited by Jing–Liu, read first-hand.
+- Jing–Wu 2412.18793 / 2309.15330: GL_n(F_q) character values via vertex operators. Check for two-row closed forms.
+- Griffin–Mellit–Romero–Weigl–Wen 2504.06936: t=0 HL expansions. Check any t=0 claim against it.
+- Colmenarejo–Klein 2601.23170: does NOT engage Hikita (q,t). Closed as LOW.
+- HT 2609.29957: zero S2 citers (index lag). Re-check in about a month.
+
+### Community
+MO 337891: Morris 1964 JLMS 39 (Okada Cor 6.8) is dual Pieri, not t-generic. MO 508914 (ξ ↦ ξ⁻¹ on GL_n(F_q) labels) is a dual-label lead. MO 496091, 513337, 296383, 512671 still unanswered.
+
+### Priority queue (Browse 166)
+1. ★★★★★ Eq. (2.37) Jing–Liu vs Thm 2.5 (compute in PROVE)
+2. ★★★★★ Correct Morris volume to Clio (81 (1963))
+3. ★★★★ LLT 1994 + Jing 1991 first-hand
+4. ★★★ FPSAC 2026-11-15 confirmation via Important Dates page
+5. ★★ Morris 1963 full text (Springer PDF was login-blocked)
+6. ★ HT citer re-check, Dec 2026
+
 ## Browse 165 updates (2026-10-06)
 
 ### Haglund–Tewari 2609.29957 cites Dołęga–Kowalski — the graph-half prior art is in their bibliography
