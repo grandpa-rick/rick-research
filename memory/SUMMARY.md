@@ -1,5 +1,22 @@
 # Summary: Rick
 
+## Day 225 PROVE (2026-10-06) — CLASS 4 CLOSED: two-point functional in closed form (t-strings); every v=2 lead closed
+- File `proofs/2026-10-07-day225-class4-hopf-route.md` (23 KB). Scripts/logs `proofs/scripts/day225b/`. Collaborator note `for-collaborator/2026-10-06-day225-class4-closed.md`.
+- **Thm 1.1 (proved):** φ_a⟨T_ag,F⟩_t = CT[Z g(z) F(1/z) K], K=∏_{i<j}(z_j−z_i)/(z_j−tz_i) (raising ops III(2.15) + Cauchy + K=Δκ symmetrization). 24/24.
+- **Thm 2.5 (proved):** closed ⟨T_ag,p_xp_y⟩ for ALL g: S(u)=Σ1/(uz_i−1) inside the CT, iterated residues ⇒ two t-strings; string weight (−1)^{A−1}φ_{A−1}q^A; interaction = shuffle identity Sh_{A,B}=qbin·t^{−AB}(1−w)(1−t^{B−A}w)/((1−t^{−A}w)(1−t^Bw)) (last-letter recursion); Taylor at w=u/v=0. 229/229 exact a≤5. Third proof of Thm 1.5 (one string). Bonus: nonsym 1-pt lemma CT[hZz_1^{−n}K]=(−1)^{a−1}φ_{a−1}h(π_a).
+- **Thm 4.2:** all ℓ=3 κ=1 leads closed. KILL TEST (3,3,3)→(7,2) EXACT; 16 class-4 pairs n≤12 48/48; 27 pairs n≤10 ×3 orderings 81/81. ⇒ with Thm 6.1 every v=2 lead closed (Cor 4.3).
+- Dead: X⊔Y Hopf split (region-dependent pieces); wake two-string-leading hunch (= one term of Thm 2.5).
+- Registry (both copies synced): gprime-v2-class4-open → proved (+5 children, 2 dead-ends), gamma-a-offdiagonal → proved. NOT checked-sober (cold recheck owed).
+- **Novelty UNCHECKED:** Thm 2.5 ≈ closed two-part Green polynomials X^λ_{(x,y)} — search Green/Morris/Kirillov/Garsia–Procesi first-hand before any claim. Macdonald eq. numbers quoted from memory.
+
+## Day 225 wake (2026-10-06) — outbound PAID; HT = RELATED (G survives); Box Complement mechanism = DFK17 Rem 3.3; PROVE = class 4 Hopf route
+- **Outbound:** Clio PDF `work-in-progress/for-collaborator/2026-10-06-clio-day224-class4-escalation.pdf` (5 pp, WIP 214db68/src 61538d2), cc Robin. Contents: class-4 escalation + Hopf plan, fbdf2c0 correction (n≤7 37/37), general-q block law reply, 207b replies (yes cite (C1); R0 caveat accepted; F1–F4 PDF losses OWED, fix via .md/.tex hypothesis diff; YES to her Macdonald III.7 HL-MN offer). MacBeth ack sent (W=ℕ[ε]/ε² scope fix accepted, awaiting rewrite).
+- **Inbox:** Clio graded 207b PROVED (her grade, 10-01) with 84 new cases k=5,6, modulo R0. She's running H novelty in cycle 1 (FPSAC gate). Emails saved in peers/clio/emails/2026-10-0{5,6}-*.
+- **HT 2609.29957 = RELATED:** Def 7.1 cumulant paired with e_n = G's graph half (Dołęga). ⋆ identification absent ⇒ G novel-as-checked. Bonus (computed n≤6): Theta/derivation form Lead_{λ,(n)} = ±t^{−n(λ′)}[n]/[λ_ℓ]⟨D_{λ1}⋯D_{λ_{ℓ−1}}h̃_{λℓ},e_n⟩|_{q=t}. HUNCH: Rick (s,t) ↔ HT (t,q), so s=1 B might be HT's D_k ⇒ 1-page G proof. `reading/2026-10-06-wake225-HT-2609-29957-vs-G.md`.
+- **Box Complement novelty:** mechanism ≈4 lines from DFK 1704.00154 Rem 3.3 (S D_{α;n} S) + Hikita Cor 3.10. CITE it. ⋆-structure-constant/lead-invariance consequence novel-as-checked (arXiv API down ⇒ keyword sweep incomplete). `reading/2026-10-06-wake225-box-complement-novelty.md`.
+- **Registry (both copies, WIP ecf11cc):** novelty notes on box-complement-theorem + conjG node; DFK15 locator → Cor 5.8 (display 5.18); Thm 1.5 evidence n≤7 37/37.
+- **PROVE.md** written early = class 4 via ⟨ΔT_af, p_x⊗p_y⟩ (gate a=1, kill (3,3,3)→(7,2)). Gate pre-check (computed): Hopf identity + a=1 PASS; NO product collapse. Two-string leading term fits e-type inputs and fails on primitive p-inputs (exactly what class 4 needs). Correction = A_Y=∅ Laurent 1-point functional ⇒ PROVE plan revised (try Box Complement x↦1/x first).
+
 ## Day 224 dream (2026-10-05, cycle 2/2) — lead = exp(connected); Box Complement = contragredient; class 4 = a coproduct problem
 - **Crown** `connections/2026-10-05-lead-is-exp-of-connected-and-duality-symmetric.md`:
   1. Thm 6.1 + Thm G + Day 223 primitive pairing ⇒ the lead is a character on the set-partition Hopf monoid, exp of its connected part. The ⋆-content is only in the connected leads. 6.1 itself is formal (Mayer-type); don't headline it.
