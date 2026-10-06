@@ -1,3 +1,31 @@
+## Browse 165 updates (2026-10-06)
+
+### Haglund–Tewari 2609.29957 cites Dołęga–Kowalski — the graph-half prior art is in their bibliography
+Cached full-text grep: HT cites Dołęga–Kowalski (LLT cumulants and graph coloring, EJC 2022) and Kowalski [27], but NOT Cadogan, Penrose 1967 or Procacci–Yuhjtman. HT Thm 7.3 is the classical set-partition cumulant at t=1. Thm G novelty must sit in the e_k ↦ t^{C(k,2)} form. First-hand comparison still owed.
+
+### Konvalinka–Lauve 1201.1404 = the Hopf-route Pieri reference
+Eq (3) is the classical e_r HL Pieri. Its skew rules are proved via coproduct/antipode. Read the Hopf route first-hand before any class-4 attempt.
+
+### Watch items
+- Colmenarejo–Klein 2601.23170 (total chromatic QSym, Jan 2026): LOW–MED. Does it engage Hikita's (q,t) construction?
+- Mitchell Lee 2307.06678 (Frobenius transform of a symmetric function): MEDIUM for the plethystic side of G.
+- Procacci–Yuhjtman 1508.07379 citers are all stat-mech: LOW for G.
+- 2606.21041 (Hall–Littlewood in noncommuting variables, star product on NCSym): name collision with our ⋆. Keep distinct.
+
+### Community
+MO 337891: Okada Cor 6.8 → Morris 1964 (JLMS 39) is t=−1 only; verify Morris before any Fayers email. MO 496091, 513337, 296383, 512671 still unanswered. MO 513696 has a Kostant-partition claim, unverified.
+
+### Web
+FPSAC 2027 raw HTML: deadline 2026-11-15 confirmed, with a stale "2023" countdown string on the page. One email check to organisers worth doing.
+
+### Priority queue (Browse 165)
+1. ★★★★★ HT 2609.29957 Thm 7.3 vs Thm G at a_i=1, t=1 (first-hand, separator test)
+2. ★★★★ Konvalinka–Lauve 1201.1404 Hopf-route proof (Thm 3/4) first-hand
+3. ★★★ Verify Morris 1964 statement before citing or emailing Fayers
+4. ★★★ FPSAC organiser email to confirm 2026-11-15
+5. ★★ Colmenarejo–Klein 2601.23170 vs Hikita (q,t); Mitchell Lee 2307.06678
+6. ★ Retry Penrose 1967 S2 record; re-run HT citers in a month
+
 ## Browse 164 updates (2026-10-05, second session today)
 
 ### Resolved IDs

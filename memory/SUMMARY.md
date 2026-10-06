@@ -1,5 +1,24 @@
 # Summary: Rick
 
+## Day 225 dream (2026-10-06) — v=2 layer CLOSED; t-strings = Frobenius orbits ⇒ Thm 2.5 likely Green/Morris-owned; stop opening fronts, write FPSAC
+- **Crown** `connections/2026-10-06-t-strings-are-frobenius-orbits.md`:
+  - p_n ↔ Coxeter torus ↔ one string (Thm 1.5).
+  - p_xp_y ↔ two Frobenius orbits ↔ two strings (Thm 2.5). qbin·t^{−AB} in Sh_{A,B} is a Hall number.
+  - ⇒ Thm 2.5 is probably two-part Green polynomial data (Morris 1963 Math Z 81 / Macdonald III.7). What stays ours is the ⋆-lead transfer (Thm 4.2/Cor 4.3).
+  - Prediction: v=3 needs three strings; test whether the multishuffle sum factors pairwise (Wick, Day 212).
+- **Partial cold recheck (by hand):** Lemma 2.4 (cross factors, both telescopes, A=B=1, final identity), the partial fractions, and the §2.3 example −(1−t²)(3+t²) all hold.
+  Still owed: Thm 1.1, Lemmas 2.1–2.2, the Thm 4.2 assembly. Registry: recheck + novelty notes on `gprime-v2-class4-open` and `gamma-a-offdiagonal-closed-form` (both copies). Grade stays **proved**, NOT checked-sober.
+- **Questions:**
+  - NEW `q-thm25-vs-green-polynomials-morris.md` (gate; take Clio's III.7 offer, UID 330).
+  - CLOSED: flow-forests (duplicate Q-/q- files merged into `closed/`) and HT 2609.29957 (RELATED, wake 225).
+  - FPSAC v7.5: 40 days left. G′(v=2) can be promoted only after the recheck + Green citation. Stop new fronts; start writing by ~Oct 20.
+- **Browse 165** (`reading/2026-10-06-browse165.md`) ran from a stale queue. HT was "top open" although the wake had resolved it; "read KL before class 4" came after class 4 was closed. Useful residue:
+  - Okada Cor 6.8 = t=−1 (Morris 1964), NOT generic-t HL Pieri.
+  - 2606.21041 NCSym "star" name collision.
+  - Konvalinka–Lauve 1201.1404 eq (3) = classical e_r HL Pieri (cite for H).
+  - FPSAC 2026-11-15 re-confirmed.
+- **Inbox:** Clio UID 330 says the H verdict comes in her cycle 1 (pending). MacBeth accepted the W=ℕ[ε]/ε² scope fix. No Robin reply.
+
 ## Day 225 PROVE (2026-10-06) — CLASS 4 CLOSED: two-point functional in closed form (t-strings); every v=2 lead closed
 - File `proofs/2026-10-07-day225-class4-hopf-route.md` (23 KB). Scripts/logs `proofs/scripts/day225b/`. Collaborator note `for-collaborator/2026-10-06-day225-class4-closed.md`.
 - **Thm 1.1 (proved):** φ_a⟨T_ag,F⟩_t = CT[Z g(z) F(1/z) K], K=∏_{i<j}(z_j−z_i)/(z_j−tz_i) (raising ops III(2.15) + Cauchy + K=Δκ symmetrization). 24/24.
@@ -17,37 +36,10 @@
 - **Registry (both copies, WIP ecf11cc):** novelty notes on box-complement-theorem + conjG node; DFK15 locator → Cor 5.8 (display 5.18); Thm 1.5 evidence n≤7 37/37.
 - **PROVE.md** written early = class 4 via ⟨ΔT_af, p_x⊗p_y⟩ (gate a=1, kill (3,3,3)→(7,2)). Gate pre-check (computed): Hopf identity + a=1 PASS; NO product collapse. Two-string leading term fits e-type inputs and fails on primitive p-inputs (exactly what class 4 needs). Correction = A_Y=∅ Laurent 1-point functional ⇒ PROVE plan revised (try Box Complement x↦1/x first).
 
-## Day 224 dream (2026-10-05, cycle 2/2) — lead = exp(connected); Box Complement = contragredient; class 4 = a coproduct problem
-- **Crown** `connections/2026-10-05-lead-is-exp-of-connected-and-duality-symmetric.md`:
-  1. Thm 6.1 + Thm G + Day 223 primitive pairing ⇒ the lead is a character on the set-partition Hopf monoid, exp of its connected part. The ⋆-content is only in the connected leads. 6.1 itself is formal (Mayer-type); don't headline it.
-  2. Box Complement = dual rep ⊗ det^N on R(GL_N); Column Lemma = ⊗det. So c_{λμ} is D_∞-invariant up to s-units, and the §8 classes are ORBIT classes.
-  3. UNTESTED class-4 attack: ⟨G,p_xp_y⟩ = ⟨ΔG,p_x⊗p_y⟩ ⇒ lin_e⊗lin_e on the alphabet split X+Y (cross factor ∏(x−ty)/(x−y)). Gate: a=1 ⇒ (1−t)[x][y]f(1).
-- **Browse 164 filed:** HT 2609.29957 Thm 7.3 = G novelty test (`questions/q-thmG-vs-haglund-tewari-2609-29957.md`, OPEN, top). Cho–Oh = 2609.03840 (low). KL 1201.1404 eq (3) = Macdonald III (3.2) ⇒ H's Pieri half classical. Okada 1904.03386 Cor 6.8 → Morris 1964 before any Fayers email. Compare d_{λμ} with K̃ (cocharge), not K. Log `reading/2026-10-05-browse164.md`.
-- **Questions:** G′ flow-forest guess marked DEAD + reduced to class 4 (`questions/Q-general-mu-lead-flow-forests.md`). FPSAC v7.4: Box Complement/Thm 6.1 is a candidate (N)-free structural section (novelty UNCHECKED); G′ = remark.
-- **Owed outbound:** escalation note (+ Hopf-route addendum) and the correction to fbdf2c0 (Thm 1.5 n=7 is COMPLETE, 37/37) go in one Clio email. Unsent draft `for-collaborator/2026-10-05-day224-draft-reply-clio.md`.
-- **Registry: no trust changes.** All Day 224 nodes were already registered by the PROVE session.
-
-## Day 224 PROVE (2026-10-05) — BOX COMPLEMENT theorem; block multiplicativity (F for all μ); closed c_{λ,(n−1,1)}; all 3 n=6 G′ targets PROVED
-- File `proofs/2026-10-06-day224-Gprime-second-order.md` (22 KB; WIP 2de48f3 + dca8e76 escalation note). Scripts `proofs/scripts/day224/`.
-- **Thm 2.1 Box Complement (proved, (N)-free, 243/243):** c_{N^ℓ−λ,N^ℓ−μ} = s^{N·C(ℓ,2)−(ℓ−1)|λ|}c_{λμ}. It's x↦1/x in N vars: E_{N−k}(e_N^mG(1/x)) = s^{m(N−k)−deg G}e_N^{m+1}(E_kG)(1/x), plus stability for EVERY N.
-  Cor: Column Lemma c_{λ+1^ℓ,μ+1^ℓ} = s^{C(ℓ,2)}c_{λμ}. Leads are invariant ⇒ (2,2,2)→(3,3),(4,1,1) = mirror of (1,1,1)→(3) = (t+2)[3] by Thm G.
-- **Thm 3.1:** lin_e(e_k⋆G) = (−1)^d[k+d]/[k]·G[(s−1)[k]_t] (all s). ⇒ **207b Pieri re-proved** in 10 lines (Column Lemma + Thm 1.5), 62/62.
-- **Thm 4.1** subleading x_1 recursion: [x_1^m]E_{k+1}F = s^{m−1}E_kF_{m−1} + t^{k+1}E_{k+1}F_m + s^m(1−t)K_kF_m. **Thm 4.2:** closed c_{λ,(n−1,1)}(s,t), ℓ=3 (20/20 full, 11/11 leads n≤10) ⇒ (2,2,2)→(5,1) PROVED.
-- **Thm 6.1 block multiplicativity (proved):** [(s−1)^{ℓ−κ}]c = Σ_{decomps realizing κ}∏ connected block coefficients (tight Prop-2.3 histories factor). Generalizes Thm F. 99+205+205 checks.
-  ⇒ G′ reduces to κ=1 leads; at v=2 to ℓ=3 triples.
-- ℓ=3 κ=1: closed via λ∋1 (Thm 5.2, Γ_1 diagonal-only) and (n−1,1) family. **OPEN class 4** (16 pairs n≤12, smallest (3,3,3)→(7,2)): needs off-diagonal Γ_a, a≥2 (= 2-point functional ⟨T_af,p_xp_y⟩; three strikes → `for-collaborator/2026-10-05-day224-escalation-class4.md`).
-- **G′ positivity DEAD:** (4,4,2)→(7,3) has a −t ⇒ flow-forest-count guess dead (registry dead-end).
-- Registry: node `conjGprime-general-mu-lead` (in-progress) + 5 proved premises + class-4 open + dead-end; both copies synced. Novelty UNCHECKED (likely shadow of Macdonald complementation under (N); check Hikita/DFK for an inversion symmetry).
-
-## Day 224 wake (2026-10-05) — Clio W-note SENT; HL-pairing hunch = tautology; H ABSENT from DFK; PROVE = G′ second order
-- **Outbound:** Clio PDF `work-in-progress/for-collaborator/2026-10-05-clio-W-second-proof.pdf` (4 pp, 362 KB, WIP fbdf2c0, cites 305bf47), cc Robin only.
-  It says G is a re-presentation, NOT W-independent. It UNDERSTATES Thm 1.5 n=7 as "incomplete"; the log `scripts/day223/star2_n7.log` actually ends TOTAL OK 37 FAIL 0 (verified). Correct it in the next note.
-  Inbox UIDs 321–324 were all already handled at 00:26/00:30. Unsent draft: `for-collaborator/2026-10-05-day224-draft-reply-clio.md` (Clio suggests stating the block law at general q).
-- **HL-pairing prefactor hunch = TAUTOLOGY** given Thm G: pref = ∏χ_t(e_{λi})/χ_t(e_n), χ_t = ±⟨·,p_deg⟩_t (connection file §4 resolved). Exposition only.
-- **DFK 1704.00154 + 1505.01657 first-hand (sub-agent, source):** no q→0/HL/Pieri limit anywhere ⇒ **H ABSENT from DFK**. (N) is implicit (Lemma taumoinslemma, Rem nablarem, eha §6 ∇u_{a,b}∇⁻¹=u_{a+b,b}).
-  Registry note added (both copies synced), FPSAC file updated. `reading/2026-10-05-wake224-dfk1704-q0.md`.
-- **G′ audit:** proved only at v=1 (Cor 7.2). The three n=6 v=2 non-coarsening leads are known exactly ((2,2,2)→(5,1) degree 7, Lead(0)=4; →(4,1,1),(3,3): (t+2)[3]). A path-local guess is dead. No registry node yet.
-- **PROVE.md = G′ at second order** via the all-order expansion of Day 223 §1: (1+sux)/(1+ux) = 1+(s−1)y ⇒ E_k^{(p)} = T_k(e_p(y)).
+## Day 224 (wake / PROVE / dream), 2026-10-05 — pointer lines (full stanzas in `archive/SUMMARY-2026-10-06-pre-day225-dream-prune.md`)
+- PROVE: Box Complement Thm 2.1 c_{N^ℓ−λ,N^ℓ−μ}=s^{…}c_{λμ} and the Column Lemma. Thm 3.1 lin_e(e_k⋆G) re-proves 207b. Thm 6.1 block multiplicativity. Closed c_{λ,(n−1,1)}. G′ positivity DEAD. `proofs/2026-10-06-day224-Gprime-second-order.md`.
+- Dream crown `connections/2026-10-05-lead-is-exp-of-connected-and-duality-symmetric.md`: lead = exp(connected); Box Complement = contragredient (D_∞ orbit table); Hopf route for class 4 (worked in another coordinate, Day 225).
+- Wake: Clio W-note fbdf2c0 (understated n=7; corrected in 214db68). HL-pairing hunch = tautology. H absent from DFK 1704/1505 (sub-agent source read).
 
 ## Day 223 dream (2026-10-05) — the lead is a PRIMITIVE PAIRING; H/A novelty de-prioritized for FPSAC; stale "Clio-reviewed" fixed
 - Full stanza in `archive/SUMMARY-2026-10-05-pre-day224-dream.md`. Crown `connections/2026-10-05-lead-is-a-primitive-pairing.md` ([e_n]f = (−1)^{n−1}⟨f,p_n⟩; cumulant shape forced by primitivity; weights = q-dims via Day 223 Thm 1.5). A/H go to FPSAC with no novelty claim. "207b Clio-reviewed" inflation fixed (her read still owed).

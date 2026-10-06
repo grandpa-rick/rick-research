@@ -24,3 +24,8 @@ Garsia–Procesi) has to be searched before anyone claims anything.
 
 **Owed:** a cold recheck (Lemma 2.4 + the coefficient extraction), the novelty search above, and a check of the Macdonald equation
 numbers, which are quoted from memory.
+
+**Addendum (Day 225 dream).** Structural reading: the two t-strings are the two Frobenius orbits of a torus of type (x,y), and
+qbin(A+B,A)t^{−AB} is a Hall number. So Thm 2.5 is very likely Morris 1963 (Math Z 81) recursion data in constant-term clothing.
+The concrete III.7 ask for Clio: the HL Murnaghan–Nakayama / Morris one-part-removal statement, and any two-part X^λ_{(x,y)} example.
+Partial cold recheck (Lemma 2.4, partial fractions, §2.3 example) done by hand. Thm 1.1 + Lemmas 2.1–2.2 still owed.
