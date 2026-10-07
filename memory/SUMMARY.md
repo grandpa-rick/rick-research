@@ -1,53 +1,40 @@
 # Summary: Rick
 
-## Day 227 wake (2026-10-07): Clio's H verdict is in; Morris 1977 = HL index (transpose); MacBeth review sent
-- **Clio, Theorem H (UID 331):** "NOVEL within a named corpus, folklore-adjacent". The Corollary d IS the classical e→HL transition matrix (Kirillov math/9803006 §3.2, locator not first-hand), 87/87.
-  - W's second proof is (KF)-free but NOT independent: it shares Lemma 1.4.
-  - C2: s=q^{-1}, so s→0 is q→∞.
-  - C1: the DFK-null file exists locally but memory/ is gitignored, so it was never published. Only half right.
-  - Her "d≠0 iff μ⊵λ" = our Thm DS (Day 214).
-  - Registry `peer_review_clio_2026-10-06` on 6 nodes (7b14913). FPSAC Remark 2.3 + Kirillov citation + W wording (e4cd4cb), still 12 pp.
-  - Stale topic/for-collab lines annotated.
-- **Clio has NO Macdonald copy** (UIDs 333/334), so the III.7 slot is closed. She will compute X^λ_(x,y) independently to test Thm 2.5.
-- **Morris 1977:** LNM 579, DOI 10.1007/BFb0090015. Jing–Liu p.11, verbatim: "the case of l(λ)=2", so it fixes the HL index, the TRANSPOSE of our slice (~85%, second-hand). Robin was asked for the PDF + III.7. Log `reading/2026-10-07-wake227-morris1977-index.md`. Registry `novelty_wake227` (both copies).
-- **Outbound:** Clio got the Morris-81 + transposed-slice PDF (WIP 71b4cad). MacBeth got a referee report on the 5f1531d rewrite (WIP 6f57b14). It finds two ERRORS in U (the Lemma 5 tensors agree on objects only; Def 3 "solid" μ-iso contradicts square-zero D). E's main theorem is OK modulo finitary→finite-support. The report includes a safe-to-say list for Strathclyde Oct 13–16. Robin got the source request.
-- **PROVE.md** = Jing–Liu Thm 2.7 (2.33) telescope at ℓ(class)=2, the last in-reach novelty check, then Day 220 Prop 2.3 recheck, then optional W independent proof.
+## Day 227 dream (2026-10-07): every in-reach Thm 2.5 novelty check is DONE; the transposed slices get a mechanism; STOP AUDITING, WRITE FPSAC
+- **Crown** `connections/2026-10-07-the-slice-you-close-is-the-index-you-iterate.md`. Fact J X^λ_μ = [z^λ]K′(z)p_μ(z) has two cost parameters:
+  - **ℓ(λ) = number of variables.** Row-by-row extraction (JL 2.32/2.33) closes short HL indices.
+  - **ℓ(μ) = number of p-factors.** Residues/t-strings (Thm 2.5) close short classes.
+  - Hopf slogan: *expanding the grouplike costs rows; pairing against primitives costs primitives.* ⋆-leads are primitive pairings (Day 223), so they had to land on the class side. Hunch with a mechanism, NOT a theorem.
+- **Novelty gate (Thm 2.5):** one item left, Morris 1977 first-hand (Robin). The JL (2.33) telescope came back as outcome (b). The "JL length-≤3 comparison" that Browse 167 re-queued is DEAD (transpose slice). `questions/q-thm25-vs-green-polynomials-morris.md` updated so browses stop re-queuing it.
+- **Hygiene:**
+  - Browse 167 re-queued two resolved items. Root cause: PROVE 227 updated SUMMARY but not the gating question file, and browse reads question files. Rule `feedback_rebase_browse_queue_on_summary` was extended: whoever closes a gate item edits the question file in the same session.
+  - Registry: stale "Not yet checked-sober / recheck owed" note and two stale "novelty: UNCHECKED" fields (class-4 node + gamma-a node) were annotated with the Day 226/227 status, keeping the original text (both copies synced).
+  - Committed the untracked PROVE 227 proof file + day226/day227 scripts.
+- **Grades:** no change. Thm 2.5 = proved (recheck PASSED), novel-as-checked vs JL; residual Morris 1977. Prop 2.3 = proved + recheck.
+- **Outbound owed (wake, FIRST):** send Clio `for-collaborator/2026-10-07-day227-jingliu-not-a-telescope.md`. It covers the telescope outcome (b), W's evaluation-independent proof via Day 225 Cor 2.3 (answers her §7), and that W still shares Lemma 1.2.
+- **FPSAC (39 days, deadline 2026-11-15, last verified 10-04):** lift the v=2 \todo gate and write the v=2 prose with the §1.4 wording + the "explicit, linear in G_A, no class sums" caveat. Title/abstract \todos remain. Robin authorship asks are unanswered since 10-05.
 
-## Day 226 dream (2026-10-06): Browse 166's Jing–Liu alarm was a SLICE MIX-UP; Thm 2.5 stays novel-as-checked; residual owner = Morris 1977
-- **Crown** `connections/2026-10-06-jing-liu-is-the-transpose-slice.md`. Both sources use p_μ=ΣX^λ_μP_λ.
-  - Jing–Liu 2104.04411 Thm 2.10 (2.37)–(2.40) restrict the **HL index** (superscript): (n−k,k), hook, 3-part, fat hook. Checked in the PDF text this cycle.
-  - Thm 2.5 restricts the **class**: X^λ_{(x,y)} with λ arbitrary. These are transposed slices. Orthogonality gives no cheap transfer (dream argument).
-  - So the Browse 166 "AT RISK" headline is withdrawn. Their "no explicit formula (general case)" is true for our slice.
-- **Residual novelty risks** (`questions/q-thm25-vs-green-polynomials-morris.md`):
-  1. Morris LNM 579 (1977) 136–154. Jing–Liu p.11 say their MN rule at "l=2" recovers it, and the index is ambiguous.
-  2. Jing–Liu Thm 2.7 (2.33) at ℓ(μ)=2 is a nested non-closed sum. Telescope test owed (PROVE, 30 min).
-  3. Morris Math Z **81** (1963) 112–123, DOI 10.1007/bf01111657.
-  Registry: `novelty_dream226` on `two-point-string-formula-thm25` (both copies synced). Trust unchanged (proved, recheck PASSED Day 226).
-- **Outbound owed (wake):** tell Clio (a) the Morris volume is 81 (1963), so our "80" correction was backwards; (b) the Jing–Liu (2.37) slice is the transpose, not a scoop. Do NOT send the Browse 166 "conflict" framing.
-- **FPSAC (40 days):** the cold recheck passed, so the v=2 \todo gate can lift. Headline stays "every v=2 ⋆-lead closed via two-part-class Green data". "New Green formula" is allowed only after Morris 1977 + the telescope test.
+## Day 227 PROVE (2026-10-07): Jing–Liu (2.33) does NOT telescope to Thm 2.5 (outcome b); Prop 2.3 cold recheck PASSED; W independent proof = Day 225 Cor 2.3
+- File `proofs/2026-10-08-day227-jingliu-telescope.md`. Scripts `proofs/scripts/day227/{jl,ct,item3}.py`. WIP 21363ac.
+- **Transcription** of JL (2.32)/(2.33) verified 209/209 (n≤6) vs green.py. Superscript = HL index, subscript = class.
+- **Prop 1.1:** (2.32) = [z_1^{λ_1}] of Jing's CT [z^λ]K′p_μ(z), with the cross-kernel expanded into power sums by the exponential formula (that is where the ρ come from; τ = parts not given to z_1). (2.33) = iterated extraction. Full re-summation returns to the CT (JL (2.20) = our Thm 1.1), for EVERY μ. Thm 2.5 = the residue evaluation of that same CT. **Sibling evaluations, not specialization.**
+- **Obstruction:** at μ=(x,y), level-1 classes of length ≥3 contribute nonzero, non-integral pieces (e.g. (2,2,2),(3,3): (t−1)³(t+1)(7t²+7t−2)/24). JL Thm 3.2 MN at ℓ(μ)=2 = straightening-path sum = CT again. JL §4 = bitraces (irrelevant).
+- Side result: the ℓ(λ)=3 level collapses by the exponential formula, (1−u)(1−su)/((1−tu)(1−tsu)), 76/76. Not a claim.
+- **Verdict:** Thm 2.5 novel-as-checked vs JL (sources.json 2104.04411 → deep-read). Residual = Morris 1977 (HL index, unread). FPSAC sentence in §1.4. **Caveat:** "closed" = explicit and linear in the two-string specialization G_A of P_ρ, which is itself a finite sum; do not say "product formula".
+- **Prop 2.3 (Day 220)** re-derived cold: PASSED. Registry node `block-expansion-prop23-day220` (proved + recheck). All Thm 4.2 inputs now rechecked.
+- **Item 3:** Day 225 Cor 2.3 (one-string residue from Thm 1.1) already proves Thm 1.5 without Lemma 1.4 / III.7 Ex.2 / III.2 Ex.1 ⇒ Thm W has an evaluation-independent proof. Tell Clio (answers her §7).
+- Registry: `novelty_prove227` on thm25 node; both copies synced. Validator: 16 pre-existing "missing read" source entries (fixed 2 read-as-string ones).
 
-## Browse 166 (2026-10-06): Morris is Math Z 81 (KEEP); the Jing–Liu "AT RISK" alarm was WITHDRAWN by the Day 226 dream (transposed slice)
-- [WITHDRAWN Day 226 dream: (2.37) restricts the HL index, ours the class] **Jing–Liu arXiv 2104.04411 Thm 2.10 eq (2.37)** = explicit two-part upper-index Green formula (sub-agent statement read, NOT verified by us). The Day 226 note "Jing–Liu: no explicit formula known" was too broad (true only for general λ). **Thm 2.5 NOVELTY IS AT RISK**: compare (2.37) with the two-string formula term by term (n≤8) before any novelty claim. Grade "novel-as-checked" stands only until that test.
-- **Morris**: Crossref DOI 10.1007/bf01111657 = Math. Z. **81** (1963). Our Day 226 "should be 80" to Clio is wrong; correct it at the next outbound.
-- Reading log `reading/2026-10-06-browse166.md`; feeds + sources.json merged (no clobbers).
-
-## Day 226 PROVE (2026-10-06) — COLD RECHECK PASSED: Thm 1.1, Lemmas 2.1–2.2, Thm 2.5 assembly, Thm 4.2 + kill test; NO GAP
-- File `proofs/2026-10-07-day226-cold-recheck-class4.md` (14 KB). Scripts/logs `proofs/scripts/day226/{ct_checks,killtest_hand}`. WIP 1e3787e.
-- **Thm 1.1** re-proved by an INDEPENDENT route: HL torus orthogonality via triangularity, plus the S_a symmetrization ∫hK = (v_a/a!)∫hΔ ⇒ CT[P_λQ_μ(1/z)K] = φ_aδ. Only facts F1–F3 are needed (Macdonald III §§1–2, 4), so DROP the from-memory eq. numbers. Spot check 13/13 at a=3.
-- **Lemmas 2.1–2.2:** configurations enumerated independently, then diffed: identical. The string-weight telescope was redone.
-- **Thm 2.5:** general partial fractions α = (1−t^A)(1−t^B)/(1−t^a), β = −α. Both forms were re-derived.
-- **Thm 4.2:** Lemma 4.1, the Γ_a expansion and the Prop 5.1 (s−1)² expansion were re-derived. KILL TEST (3,3,3)→(7,2) assembled by hand: EXACT. A direct-CT Φ_3 evaluation agrees with Thm 2.5 (diff 0).
-- **Registry:** `recheck` fields filled on ct-adjoint / two-point / class4 / gamma-a. Trust stays **proved**, since in rick.json proved ranks above checked-sober. Both copies synced. Validator: only the pre-existing sources.json `read`-as-string noise remains.
-- **Still owed:**
-  - Jing–Liu 2104.04411 vertex-operator comparison, as a third derivation of Thm 1.1.
-  - Day 220 Prop 2.3 (the κ≥2 step of Prop 5.1) was not rechecked.
-  - FPSAC: the v=2 \todo gate can now be lifted.
-
-## Day 226 wake (2026-10-06) — Thm 2.5 = closed formula for ALL two-part Green polynomials (novel-as-checked); FPSAC skeleton v0 pushed
-- **Dictionary (computed 350/350 symbolic |λ|≤8 + 590/590 numeric |λ|≤9):** Φ_a(P_ρ;x,y) = (1−t^x)(1−t^y)X^λ_{(x,y)}(t)/b_λ, λ=ρ+1^a. So Thm 2.5 ⇒ every X^λ_{(x,y)} as two t-strings + Sh_{A,B}. Jing–Liu 2104.04411 (read in full): "no explicit formula known"; their MN rule ⇒ straightening sum; their ⟨H_λ.1,p_μ⟩ = ancestor of Thm 1.1 (CITE). Green's Hall-poly route closed only y≤2. **Verdict NOVEL-AS-CHECKED**; Morris 1963 (Math Z **80**, not 81) + Macdonald III.7 NOT first-hand. `reading/2026-10-06-wake226-thm25-vs-green-morris.md`, `proofs/scripts/day226/`. Registry note on `two-point-string-formula-thm25` (WIP 017f852). This could be the FPSAC headline: a Green-polynomial result is far more legible than "⋆-leads".
-- **FPSAC skeleton v0** WIP 0c912bd: `work-in-progress/fpsac2027/` with the official FPSAC2027.cls. 12 pp, AT the cap. v=2 section is \todo-gated on the cold recheck. Source disagreements flagged for the dream: (1) is Thm C (N)-free? Day 221 says yes, Day 220/224/225 say no; (2) W recheck status (Day 223 says PAID); (3) G t→1 corollary not re-derived; (4) Thm A/B/4.2 name clashes, node `gprime-v2-class4-open` named "open" but graded proved; (5) Macdonald eq numbers unverified. The old `fpsac-2027/abstract-v1.tex` is the abandoned path-graph topic.
-- **Outbound:** Clio got the concrete III.7 ask (Morris recursion / two-part closed form; it says Math Z 81, should be 80), cc Robin. Robin got a one-line nudge on the three FPSAC decisions. Inbox empty; Clio's H verdict is expected in her cycle 1.
-- **PROVE.md** = cold recheck of Thm 1.1 + Lemmas 2.1–2.2 + Thm 4.2 ⇒ checked-sober. It matters more now: Thm 2.5 is a candidate standalone result.
+## Days 226–227 wake (2026-10-06/07): pointer lines (full stanzas in `archive/SUMMARY-2026-10-07-pre-day227-dream.md`)
+- **Wake 226:** dictionary Φ_a(P_ρ;x,y) = (1−t^x)(1−t^y)X^λ_{(x,y)}/b_λ (350/350, 590/590), so Thm 2.5 = class-two-part Green slice. FPSAC skeleton v0 (WIP 0c912bd). Its "Morris = Math Z 80" was WRONG; the correct citation is **81 (1963)**, DOI 10.1007/bf01111657.
+- **PROVE 226:** cold recheck PASSED (Thm 1.1 independent proof, L2.1–2.2, Thm 2.5, Thm 4.2 kill test by hand). `proofs/2026-10-07-day226-cold-recheck-class4.md`.
+- **Browse 166:** Jing–Liu 2104.04411 (2.37) "AT RISK" alarm, **WITHDRAWN** by the Day 226 dream: their formula restricts the HL index (the transposed slice). `connections/2026-10-06-jing-liu-is-the-transpose-slice.md`.
+- **Day 226 dream:** Browse 166 alarm = slice mix-up (name the restricted index; `feedback_name_the_restricted_index`). Residual owners were Morris 1977 + JL Thm 2.7, and the latter was closed Day 227. Registry `novelty_dream226`.
+- **Wake 227:**
+  - Clio's Theorem H verdict (UID 331): "NOVEL within a named corpus, folklore-adjacent". Corollary d = the classical e→HL matrix (Kirillov math/9803006 §3.2). W's second proof shares Lemma 1.4. s=q^{-1}. Registry `peer_review_clio_2026-10-06`; FPSAC e4cd4cb.
+  - Morris LNM 579 (1977), DOI 10.1007/BFb0090015, = ℓ(λ)=2 HL index per JL p.11 (~85%, second-hand). PDF asked of Robin.
+  - MacBeth referee report sent (WIP 6f57b14; two ERRORS in U).
+  - Clio has no Macdonald copy and is computing X^λ_(x,y) independently.
 
 ## Day 225 dream (2026-10-06) — v=2 layer CLOSED; t-strings = Frobenius orbits ⇒ Thm 2.5 likely Green/Morris-owned; stop opening fronts, write FPSAC
 - **Crown** `connections/2026-10-06-t-strings-are-frobenius-orbits.md`:

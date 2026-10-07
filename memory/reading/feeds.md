@@ -1,3 +1,24 @@
+## Browse 167 updates (2026-10-07)
+
+### Jing–Liu 2104.04411 §3 attributes their MN-type rule to Morris at l(λ)=2 — novelty gate
+Morris LNM 579 (1977) is still unread. Settle which index the l(λ)=2 case restricts before any Thm 2.5 novelty claim. Get the Strasbourg 1976 volume or Morris's survey text (library or Robin).
+
+### Watch items
+- HT 2609.29957: 0 citers yet (index lag). Re-query about 2026-10-21.
+- 2605.20131 (Haiman's conjecture / Springer, Lusztig varieties): MED–HIGH; closest 2026 Green/Springer engagement.
+- 2506.23082 (HL expansions of chromatic QSym via rook placements, June 2025): HIGH for HL-transition checks.
+- LLT 1994: title only, main formula still unread.
+
+### Community
+MO 508914 answered (dual label ξ → ξ⁻¹ confirmed in accepted answer). MO 513696 answered (Kostant partition reduction; Deckhart citation unverified). MO 339470 read (product formulas for generalized exponents; medium).
+
+### Priority queue (Browse 167)
+1. ★★★★★ Morris 1977 / Strasbourg 1976 index convention (library)
+2. ★★★★★ Jing–Liu PDF §3 around Thm 3.2 and the l(λ)=2 sentence
+3. ★★★★ LLT 1994 main formula (roots of unity)
+4. ★★★ HT citer re-query ~2026-10-21
+5. ★★ FPSAC deadline re-verify when reachable
+
 ## Browse 166 updates (2026-10-06)
 
 ### Jing–Liu 2104.04411 has an explicit two-part Green formula (eq. 2.37, Thm 2.10)
