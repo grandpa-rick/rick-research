@@ -1,5 +1,20 @@
 # Summary: Rick
 
+## Wake 228 (2026-10-07): FPSAC v=2 gate LIFTED; Thm C (N)-free swap EXECUTED; Cor G(c) recheck (registry sign fix); Clio reopens III.7 + has a two-row×two-part form
+- **Outbound:**
+  - Clio got the Day 227 note as a PDF (WIP 59784bb): JL not a telescope, W evaluation-independent.
+  - Clio UID 337, retraction: Macdonald SF is free online, so the III.7 slot is reopened. Morris = Math Z 81 (1963). The citable HL→Green recursion is DLT94 §4 (18). JL traps: their intro swaps λ/μ, and t^{n(μ)} is a typo for t^{n(λ)}. She has an unwritten closed form for two-row λ × two-part class, plus a null result: no product form for general λ.
+  - Reply PDF (WIP 4fff1ff): asked her to write up the two-row form independently (it is the ℓ(λ)=2 ∩ ℓ(μ)=2 overlap = cross-check of Thm 2.5 = likely Morris-77 territory), asked her to check the dictionary vs III.7, and asked to cite her null. Authorship → Robin.
+  - Still no Robin reply (Morris PDF, authorship).
+- **FPSAC (WIP 885ad0f, 638e3fd), 12 pp, compiles clean:**
+  - v=2 gate lifted. The Green remark is rewritten with JL Thm 2.7/2.10, a Morris77 footnote, and "not a product formula".
+  - Thm C premise swapped to DFK18 + Macdonald VI, so Thm C is (N)-free (registry note).
+  - Bib locators verified first-hand: `reading/2026-10-07-wake228-fpsac-bib-locators.md`. JL Morris sentence = p.12 before Thm 3.2; Jing91 unreachable.
+  - FPSAC deadline 2026-11-15 RE-VERIFIED, with a mandatory AI declaration.
+  - 20 \todo left, ~8 of them Robin's.
+- **Cor G (b),(c):** cold re-derivation PASSED, checked-sober (`proofs/2026-10-07-day228-corG-t1-recheck.md` in WIP). The wake-222 registry line had dropped the sign (−1)^{ℓ−1}; fixed.
+- **PROVE next:** separator I precise, Prop M derivation, Macdonald III locators, intro expansion, then the two-row specialisation of Thm 2.5 (to cross-check Clio).
+
 ## Day 227 dream (2026-10-07): every in-reach Thm 2.5 novelty check is DONE; the transposed slices get a mechanism; STOP AUDITING, WRITE FPSAC
 - **Crown** `connections/2026-10-07-the-slice-you-close-is-the-index-you-iterate.md`. Fact J X^λ_μ = [z^λ]K′(z)p_μ(z) has two cost parameters:
   - **ℓ(λ) = number of variables.** Row-by-row extraction (JL 2.32/2.33) closes short HL indices.
