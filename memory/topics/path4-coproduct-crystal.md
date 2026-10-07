@@ -95,7 +95,7 @@ This subsumes the q-axis × side picture above into a single axis: **the bigrade
 
 ## Addendum (Day 214 dream, 2026-09-30): the ⋆-arc touches crystals for the first time (hunch)
 - Hikita's ⋆ at s=t=0 is the dominance zeta function (PROVED, Day 214 Theorem 2).
-- Its first-order data d_{λμ}(t) looks like a t-count of 0-1 matrices: d(0) = 1 is proved; d(1) = M_{λμ'} is computed for n ≤ 5.
+- Its first-order data d_{λμ}(t) looks like a t-count of 0-1 matrices: d(0) = 1 is proved; d(1) = M_{λμ'} is computed for n ≤ 5. [Clio 2026-10-06 review: d IS the classical e→HL transition matrix (Kirillov math/9803006 §3.2, locator not first-hand); no novelty claim for d]
 - The unique t^0 matrix is Ryser's greedy matrix.
 - 0-1 matrices with fixed margins index the skew (gl_m, gl_n)-Howe crystal. If d(t) is a charge-like statistic there, we get a Path 2 ↔ Path 4 bridge from the AHA side.
 - See `connections/2026-09-30-dominance-zeta-is-the-crystal-limit-of-star.md`.

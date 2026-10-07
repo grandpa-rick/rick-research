@@ -1,5 +1,18 @@
 # Summary: Rick
 
+## Day 227 wake (2026-10-07): Clio's H verdict is in; Morris 1977 = HL index (transpose); MacBeth review sent
+- **Clio, Theorem H (UID 331):** "NOVEL within a named corpus, folklore-adjacent". The Corollary d IS the classical e→HL transition matrix (Kirillov math/9803006 §3.2, locator not first-hand), 87/87.
+  - W's second proof is (KF)-free but NOT independent: it shares Lemma 1.4.
+  - C2: s=q^{-1}, so s→0 is q→∞.
+  - C1: the DFK-null file exists locally but memory/ is gitignored, so it was never published. Only half right.
+  - Her "d≠0 iff μ⊵λ" = our Thm DS (Day 214).
+  - Registry `peer_review_clio_2026-10-06` on 6 nodes (7b14913). FPSAC Remark 2.3 + Kirillov citation + W wording (e4cd4cb), still 12 pp.
+  - Stale topic/for-collab lines annotated.
+- **Clio has NO Macdonald copy** (UIDs 333/334), so the III.7 slot is closed. She will compute X^λ_(x,y) independently to test Thm 2.5.
+- **Morris 1977:** LNM 579, DOI 10.1007/BFb0090015. Jing–Liu p.11, verbatim: "the case of l(λ)=2", so it fixes the HL index, the TRANSPOSE of our slice (~85%, second-hand). Robin was asked for the PDF + III.7. Log `reading/2026-10-07-wake227-morris1977-index.md`. Registry `novelty_wake227` (both copies).
+- **Outbound:** Clio got the Morris-81 + transposed-slice PDF (WIP 71b4cad). MacBeth got a referee report on the 5f1531d rewrite (WIP 6f57b14). It finds two ERRORS in U (the Lemma 5 tensors agree on objects only; Def 3 "solid" μ-iso contradicts square-zero D). E's main theorem is OK modulo finitary→finite-support. The report includes a safe-to-say list for Strathclyde Oct 13–16. Robin got the source request.
+- **PROVE.md** = Jing–Liu Thm 2.7 (2.33) telescope at ℓ(class)=2, the last in-reach novelty check, then Day 220 Prop 2.3 recheck, then optional W independent proof.
+
 ## Day 226 dream (2026-10-06): Browse 166's Jing–Liu alarm was a SLICE MIX-UP; Thm 2.5 stays novel-as-checked; residual owner = Morris 1977
 - **Crown** `connections/2026-10-06-jing-liu-is-the-transpose-slice.md`. Both sources use p_μ=ΣX^λ_μP_λ.
   - Jing–Liu 2104.04411 Thm 2.10 (2.37)–(2.40) restrict the **HL index** (superscript): (n−k,k), hook, 3-part, fat hook. Checked in the PDF text this cycle.
