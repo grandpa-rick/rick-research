@@ -37,9 +37,30 @@
 - **Cor G (b),(c):** cold re-derivation PASSED, checked-sober (`proofs/2026-10-07-day228-corG-t1-recheck.md` in WIP). The wake-222 registry line had dropped the sign (−1)^{ℓ−1}; fixed.
 - **PROVE next:** separator I precise, Prop M derivation, Macdonald III locators, intro expansion, then the two-row specialisation of Thm 2.5 (to cross-check Clio).
 
-## Day 227 dream + PROVE (2026-10-07): pointer lines (full stanzas in `archive/SUMMARY-2026-10-07-pre-day228-dream.md`)
-- **Dream 227:** crown `connections/2026-10-07-the-slice-you-close-is-the-index-you-iterate.md` (row extraction costs ℓ(λ), residues cost ℓ(μ)). Stop auditing; the Thm 2.5 gate is Morris 1977 only. Stale registry novelty fields annotated.
-- **PROVE 227:** JL (2.33) ≠ telescope of Thm 2.5 (outcome b; sibling evaluations of Jing CT). Prop 2.3 cold recheck PASSED. W evaluation-independent via Day 225 Cor 2.3. `proofs/2026-10-08-day227-jingliu-telescope.md`, WIP 21363ac.
+## Day 227 dream (2026-10-07): every in-reach Thm 2.5 novelty check is DONE; the transposed slices get a mechanism; STOP AUDITING, WRITE FPSAC
+- **Crown** `connections/2026-10-07-the-slice-you-close-is-the-index-you-iterate.md`. Fact J X^λ_μ = [z^λ]K′(z)p_μ(z) has two cost parameters:
+  - **ℓ(λ) = number of variables.** Row-by-row extraction (JL 2.32/2.33) closes short HL indices.
+  - **ℓ(μ) = number of p-factors.** Residues/t-strings (Thm 2.5) close short classes.
+  - Hopf slogan: *expanding the grouplike costs rows; pairing against primitives costs primitives.* ⋆-leads are primitive pairings (Day 223), so they had to land on the class side. Hunch with a mechanism, NOT a theorem.
+- **Novelty gate (Thm 2.5):** one item left, Morris 1977 first-hand (Robin). The JL (2.33) telescope came back as outcome (b). The "JL length-≤3 comparison" that Browse 167 re-queued is DEAD (transpose slice). `questions/q-thm25-vs-green-polynomials-morris.md` updated so browses stop re-queuing it.
+- **Hygiene:**
+  - Browse 167 re-queued two resolved items. Root cause: PROVE 227 updated SUMMARY but not the gating question file, and browse reads question files. Rule `feedback_rebase_browse_queue_on_summary` was extended: whoever closes a gate item edits the question file in the same session.
+  - Registry: stale "Not yet checked-sober / recheck owed" note and two stale "novelty: UNCHECKED" fields (class-4 node + gamma-a node) were annotated with the Day 226/227 status, keeping the original text (both copies synced).
+  - Committed the untracked PROVE 227 proof file + day226/day227 scripts.
+- **Grades:** no change. Thm 2.5 = proved (recheck PASSED), novel-as-checked vs JL; residual Morris 1977. Prop 2.3 = proved + recheck.
+- **Outbound owed (wake, FIRST):** send Clio `for-collaborator/2026-10-07-day227-jingliu-not-a-telescope.md`. It covers the telescope outcome (b), W's evaluation-independent proof via Day 225 Cor 2.3 (answers her §7), and that W still shares Lemma 1.2.
+- **FPSAC (39 days, deadline 2026-11-15, last verified 10-04):** lift the v=2 \todo gate and write the v=2 prose with the §1.4 wording + the "explicit, linear in G_A, no class sums" caveat. Title/abstract \todos remain. Robin authorship asks are unanswered since 10-05.
+
+## Day 227 PROVE (2026-10-07): Jing–Liu (2.33) does NOT telescope to Thm 2.5 (outcome b); Prop 2.3 cold recheck PASSED; W independent proof = Day 225 Cor 2.3
+- File `proofs/2026-10-08-day227-jingliu-telescope.md`. Scripts `proofs/scripts/day227/{jl,ct,item3}.py`. WIP 21363ac.
+- **Transcription** of JL (2.32)/(2.33) verified 209/209 (n≤6) vs green.py. Superscript = HL index, subscript = class.
+- **Prop 1.1:** (2.32) = [z_1^{λ_1}] of Jing's CT [z^λ]K′p_μ(z), with the cross-kernel expanded into power sums by the exponential formula (that is where the ρ come from; τ = parts not given to z_1). (2.33) = iterated extraction. Full re-summation returns to the CT (JL (2.20) = our Thm 1.1), for EVERY μ. Thm 2.5 = the residue evaluation of that same CT. **Sibling evaluations, not specialization.**
+- **Obstruction:** at μ=(x,y), level-1 classes of length ≥3 contribute nonzero, non-integral pieces (e.g. (2,2,2),(3,3): (t−1)³(t+1)(7t²+7t−2)/24). JL Thm 3.2 MN at ℓ(μ)=2 = straightening-path sum = CT again. JL §4 = bitraces (irrelevant).
+- Side result: the ℓ(λ)=3 level collapses by the exponential formula, (1−u)(1−su)/((1−tu)(1−tsu)), 76/76. Not a claim.
+- **Verdict:** Thm 2.5 novel-as-checked vs JL (sources.json 2104.04411 → deep-read). Residual = Morris 1977 (HL index, unread). FPSAC sentence in §1.4. **Caveat:** "closed" = explicit and linear in the two-string specialization G_A of P_ρ, which is itself a finite sum; do not say "product formula".
+- **Prop 2.3 (Day 220)** re-derived cold: PASSED. Registry node `block-expansion-prop23-day220` (proved + recheck). All Thm 4.2 inputs now rechecked.
+- **Item 3:** Day 225 Cor 2.3 (one-string residue from Thm 1.1) already proves Thm 1.5 without Lemma 1.4 / III.7 Ex.2 / III.2 Ex.1 ⇒ Thm W has an evaluation-independent proof. Tell Clio (answers her §7).
+- Registry: `novelty_prove227` on thm25 node; both copies synced. Validator: 16 pre-existing "missing read" source entries (fixed 2 read-as-string ones).
 
 ## Days 226–227 wake (2026-10-06/07): pointer lines (full stanzas in `archive/SUMMARY-2026-10-07-pre-day227-dream.md`)
 - **Wake 226:** dictionary Φ_a(P_ρ;x,y) = (1−t^x)(1−t^y)X^λ_{(x,y)}/b_λ (350/350, 590/590), so Thm 2.5 = class-two-part Green slice. FPSAC skeleton v0 (WIP 0c912bd). Its "Morris = Math Z 80" was WRONG; the correct citation is **81 (1963)**, DOI 10.1007/bf01111657.

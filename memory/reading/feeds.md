@@ -1,3 +1,39 @@
+## Browse 168 updates (2026-10-07, second browse today)
+
+### D. Kim, "On total Springer representations for classical types," arXiv:1706.09329 (2017) — new standing lead for the Springer/Deligne-Lusztig mechanism hunch
+Links Kostka–Foulkes/Green polynomials to total Springer representations. Surfaced repeatedly via the arXiv and citation-trail agents (not read first-hand). This is the best next read if the Day 227 dream's "row-extraction vs residue-collapse" hunch (`connections/2026-10-07-the-slice-you-close-is-the-index-you-iterate.md`) gets pursued — likely easier to access than the paywalled Morris 1977.
+
+### Lusztig 1981 + Hotta–Springer 1977 — same-vintage alternative to Morris 1977, possibly not paywalled the same way
+Both sit one citation-hop from Jing–Liu 2104.04411 (confirmed via Semantic Scholar references). Lusztig, "Green polynomials and singularities of unipotent classes" (1981, 317 cites); Hotta–Springer, "A specialization theorem ... Green polynomials of unitary groups" (1977, 137 cites). Either might contain the depth-zero two-part Green-polynomial mechanism and could moot the Morris 1977 novelty-gate blocker if accessible. Not yet checked for access.
+
+### Chen–Lu–Ruan, "Double Hall-Littlewood symmetric functions," arXiv:2601.13497 (Jan 2026) — closest methodological cousin to ⋆-Pieri found this session
+Two-alphabet bipartition-indexed HL-type functions with horizontal/vertical Pieri rules via raising/lowering operators. Not prior art for Thm 2.5 or e_k⋆e_r (different object), but surfaced independently by two agents (arXiv + web via symmetricfunctions.com) — worth a careful §2–3 read if a bipartition generalization of ⋆ is ever considered. Not urgent.
+
+### Patimo, "charges via affine Grassmannian" (2025) — possible conceptual explanation for class-vs-partition coefficient asymmetry
+Found via the symmetricfunctions.com Kostka–Foulkes page citation list. A charge statistic in an affine/Frobenius-orbit setting — chimes with the Day 225 dream's "t-strings = Frobenius orbits" connection. Not read; flagged for a future session.
+
+### Jing–Liu 2104.04411 citation cluster confirmed self-contained
+All 9 reverse citations are by Jing or a direct collaborator (Liu, Wu, Jiang, Cao) — no third-party uptake. The classical Green-polynomial/Deligne–Lusztig lineage (Morris, Lusztig, Hotta–Springer) and the Macdonald/Theta-operator/shuffle-conjecture lineage (Dołęga, D'Adderio, Haglund–Tewari) remain almost entirely disjoint citation communities — neither cites the other. Scoop risk is more likely from inside one cluster re-deriving the other than from a new cross-citing paper.
+
+### Housekeeping resolved
+- FPSAC 2027 deadline reconfirmed 2026-11-15 (raw HTML). AI declaration is a **two-part** requirement: in-document section (uncapped, excluded from page limit) + separate mandatory submission-form field. Build both into the draft.
+- Kirillov math/9803006 §3.2 / Theorem 3.4 confirmed via ar5iv HTML — exactly the e→HL transition matrix Rick cites for Corollary d. Safe to cite directly, locator closed.
+- Morris 1977 (LNM 579, pp.136–154): bibliographic identity reconfirmed, still Springer-paywalled, no open mirror found (10-min cap respected).
+
+### Watch items
+- MO 500406 ("Unipotent almost characters," 2026-07-14, score 5, 0 answers): directly in the Green-function neighbourhood (R_w(1) on unipotents = Green function Q_w). Unanswered; periodic recheck.
+- MO 491404 ("Hall-Littlewood polynomials as point counting," 2025-04-21, 0 answers): geometric/point-counting angle, references Kostka–Foulkes/intersection cohomology.
+- Haglund–Tewari 2609.29957: confirmed still 0 citers (two independent S2 calls) — no change, hold the 2026-10-21 recheck plan.
+- All 6 standing MO watch threads (296383, 337891, 512671, 513337, 513696, 508914) checked: no new mathematical content.
+
+### Priority queue (Browse 168)
+1. ★★★★ D. Kim 1706.09329 first-hand read (Springer/DL mechanism hunch)
+2. ★★★ Check access to Lusztig 1981 / Hotta–Springer 1977 as Morris-1977 alternatives
+3. ★★ Chen–Lu–Ruan 2601.13497 §2–3, if ⋆ generalizes to two alphabets
+4. ★★ Patimo affine-Grassmannian charge paper, vs Day 225 Frobenius-orbit connection
+5. ★ MO 500406, MO 491404 periodic recheck
+6. Standing: Haglund–Tewari citer re-check ~2026-10-21
+
 ## Browse 167 updates (2026-10-07)
 
 ### Jing–Liu 2104.04411 §3 attributes their MN-type rule to Morris at l(λ)=2 — novelty gate
