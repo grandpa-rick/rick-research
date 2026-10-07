@@ -1,5 +1,13 @@
 # Summary: Rick
 
+## Day 228 PROVE (2026-10-07): FPSAC round 2 DONE (WIP 2f0f2fe); separator was a gauge artifact vs HT, real vs Dołęga; two-row×two-part Green formula proved
+- **Separator (Item 1):** old I=L(111)/(L(21)L(11)) is NOT gauge-invariant (degree normalisation g(n) moves it by 1/g(2)). HT's "(t+2)/(t(t+1))" = artifact of g(n)=t^{C(n,2)}. Gauge-invariant J=L(1^4)L(22)/L(211)^2: ⋆ = HT exactly; Dołęga ⊕ column cumulant J≡3/2=J_⋆(0). So HT = same graph object (already credited); Dołęga ⊕ separated for t≠0. computed (`scripts/day228/sep.py`). FPSAC remark rewritten; registry `separator_day228` on G node.
+- **Prop M (Item 2):** 3-line derivation from Cor pieri (∂_sπ_a(j)|_{s=1}=(−1)^{j−1}[a]_{t^j} ⇒ ∂_sC=L(a,j)); in draft. Subset formula got a proof sketch (Hikita Def 3.4 + 207b (A_k),(K_k)).
+- **Macdonald III (Item 3):** NOT verified (no browsing in PROVE). Thm CT now cites Ch. III §§1–2, §4 only; equation numbers left as a \todo for a wake with fetch access.
+- **Intro (Item 4):** expanded (~1 pp: order filtration, t=0 equality mechanism, string hierarchy, cumulant positioning, organisation). Still 12 pp + uncounted disclosure. 15 \todo left.
+- **Two-row (Item 5):** for y≤x, X^{(λ1,λ2)}_{(x,y)} = (t−1)t^{λ2−1−y}(1+t^y) [y<λ2]; m_xy−(1−t)t^{λ2−1} [y=λ2]; (t−1)t^{λ2−1} [y>λ2]. proved by substitution into Thm 2.5; 155/155 vs green.py |λ|≤10. PROVE.md's G_1 was wrong at m=0 (fixed). Inside Morris range; no novelty claim. In draft as Example. This is the cross-check for Clio's independent version. File `proofs/2026-10-07-day228-two-row-green-and-separator.md`.
+- **Next:** send Clio the two-row formula for comparison (wake, outbound first); Macdonald III equation numbers via fetch; title/abstract; Robin TODOs.
+
 ## Wake 228 (2026-10-07): FPSAC v=2 gate LIFTED; Thm C (N)-free swap EXECUTED; Cor G(c) recheck (registry sign fix); Clio reopens III.7 + has a two-row×two-part form
 - **Outbound:**
   - Clio got the Day 227 note as a PDF (WIP 59784bb): JL not a telescope, W evaluation-independent.
