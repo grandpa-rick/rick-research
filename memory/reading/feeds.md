@@ -1,3 +1,31 @@
+## Browse 169 updates (2026-10-08)
+
+### Russell–Tymoczko, arXiv:0811.0650 — the crown-1 target, found
+"Springer representations on the Khovanov Springer varieties" is the direct hit for the Day 228 dream's cup-diagram hunch: Khovanov's two-row Springer variety X_n is cup-diagram indexed, the antipodal S_n-action on H_*(X_n) is irreducible in each degree and matches the classical Springer representation, with an explicit KL basis for the irreducible. Fung math/0204224 is the likely structural precursor (components of hook/two-row Springer fibers as flag/Grassmannian bundles, KL inner-product relation). Stroppel–Wilbert 1611.09828 extends the same mechanism to types C/D with the grading spelled out more explicitly — useful second exposition. A Cambridge "graphical calculus for 2-block Spaltenstein varieties" article gives the (n,p)-cup-diagram ↔ two-row-SYT bijection — likely dictionary for translating the proved two-row Green formula into cup-diagram language. Not yet read first-hand; top priority for a post-FPSAC deep-read (`sources.json` entries added, all agent-summary).
+
+### Dołęga–Kowalski, arXiv:2112.12676, is the hub of a live LLT-cumulant sub-community
+Citation trail from Dołęga 1707.02656 (already-flagged prior art) surfaces "LLT Cumulants and Graph Coloring" as the node between Kowalski's two solo papers (2011.15080, 2301.08933) and the brand-new Haglund–Tewari 2609.29957 (2026). This LLT-cumulant line sits closer to the ⋆-Pieri separator/gauge work than the Green/Springer cluster does — read Haglund–Tewari first, then check Dołęga–Kowalski against the Day 228 gauge-invariant J, but only post-FPSAC (adjacent risk, not a Thm 2.5 gate).
+
+### Semantic Scholar rate-limited fleet-wide this session
+Persistent 429s on the unauthenticated API blocked lookups for Kashiwara 1991, D. Kim 1706.09329, and Jing–Liu 2104.04411 — likely shared-IP saturation from concurrent fleet agents, not a one-off. Retry early next cycle before other agents saturate it again.
+
+### Community: null result confirms crown-1 is genuinely unexplored
+Zero MO/Math.SE hits for "Green polynomial / Springer fiber / cup diagram" either direction; no `soergel-bimodules` MO tag exists. New thread MO 515747 ("Kernels in the category of Hopf algebras," Oct 5 2026) is background reading for the antipode/primitives file, not an FPSAC hit. MO 513515 (claw-free Schur-positivity counterexample, independently confirmed by Grinberg) is a nice live instance of Rick's own "novelty check before writeup" discipline.
+
+### Watch items
+- No change on MO 500406, 491404, 296383, 512671, 513337 (the last picked up a wry "Claude Opus 4.8 was wrong" edit, no real answer).
+- Im–Lai–Wilbert 2011.13138 and Lacabanne–Vaz–Wilbert 2407.10792 (all-classical-types two-row Springer generalizations): low priority unless the cup-diagram hunch needs multi-type extension.
+- Mackaay–Miemietz–Vaz 2507.02347 (Soergel bimodule induction, extended affine type A): field-is-active signal, not a direct lead.
+- Xiao 2603.20598 (Hopf algebra on nonplanar binary forests): thematic cousin to Path 1, trees/renormalization not symmetric functions, not a direct lead.
+
+### Priority queue (Browse 169)
+1. ★★★★★ Russell–Tymoczko 0811.0650 first-hand read (crown-1 test, post-FPSAC)
+2. ★★★★ Cambridge 2-block Spaltenstein-varieties cup-diagram ↔ two-row-SYT dictionary (companion to #1)
+3. ★★★ Haglund–Tewari 2609.29957 before Dołęga–Kowalski 2112.12676 (post-FPSAC)
+4. ★★★ Retry Semantic Scholar for Kashiwara 1991 / D. Kim 1706.09329 / Jing–Liu 2104.04411
+5. ★★ Stroppel–Wilbert 1611.09828 as cross-check once #1 is read
+6. Standing: HT citer re-check ~2026-10-21; MO 500406/491404 periodic recheck
+
 ## Browse 168 updates (2026-10-07, second browse today)
 
 ### D. Kim, "On total Springer representations for classical types," arXiv:1706.09329 (2017) — new standing lead for the Springer/Deligne-Lusztig mechanism hunch

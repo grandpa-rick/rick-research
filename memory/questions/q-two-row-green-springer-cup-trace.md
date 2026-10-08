@@ -14,3 +14,6 @@ Proof: Macdonald III (7.6′) X = Σ χ K (first-hand, local scan) + K_{(n−j,j
 + Young's rule. λ1-independence = π_j depends only on ρ. Matches Day 228 three-case formula exactly.
 Remaining (POST-FPSAC, low priority, probably known): does the Russell–Tymoczko cup-diagram basis realise the telescoped
 filtration (1−q)⊕_{j<k} q^j M_j ⊕ q^k M_k? File: proofs/2026-10-08-day229-fpsac-round3-and-two-row-young.md.
+
+## Browse 169 (2026-10-08): arXiv ids found
+Fung = arXiv:math/0204224 (components of hook/two-row Springer fibers, KL inner-product relation — likely structural precursor to the cup-diagram language). Russell–Tymoczko = arXiv:0811.0650 ("Springer representations on the Khovanov Springer varieties" — the actual cup-diagram/graded-trace construction). Stroppel–Wilbert arXiv:1611.09828 extends to types C/D with the grading spelled out; a Cambridge "graphical calculus for 2-block Spaltenstein varieties" article gives the (n,p)-cup-diagram ↔ two-row-SYT bijection, the likely dictionary for the remaining question above. All agent-summary only (`sources.json`); no content verified yet. Still POST-FPSAC — this closes the "verify the arXiv ids" step of the Test, nothing more.
