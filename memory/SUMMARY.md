@@ -1,5 +1,26 @@
 # Summary: Rick
 
+## Day 230 PROVE (2026-10-08): FPSAC referee cold read DONE — 12 pp restored; WIP 3f7d825
+- **Page limit FIXED:** body+refs = 12 pp. The disclosure starts on p.13 and is uncounted. The Penrose TODO note was moved to bib `xnote`, the Organisation paragraph cut to one line, the duplicate T_a removed, and OP5 shortened.
+- **Referee hits fixed:**
+  - Jargon leaks in the PDF: "(N)-freeness", "does not use (N)", "Must cite, not claim.", "class-4 pairs".
+  - Undefined terms: "tight histories", T_k in Lemma 3.9, M_λ (now Tutte T(1,t) of the λ_iλ_j-multigraph), m_xy in Ex 6.5, Λ_{q,t}, "N≥deg".
+  - Symbol clashes renamed: HT κ(λ)→C_λ, D_j→δ_j, CT kernel K→Ω, Λ_a(r,q)→Ξ_a(r,q).
+  - Overclaim: OP5 said Dołęga = t=0 ⋆, but only J matches. Cut.
+  - Ambiguity: OP3 now says "ℓ(λ)=3, κ=1, independent of λ".
+  - Overfull hbox fixed.
+- **Checks:** Thm 6.6+6.3+Prop 3.3+Lemma 3.9 re-implemented LITERALLY from the printed text (`scripts/day230/referee_v2.py`): **123/123 match the engine logs**, and both examples are exact. J ✓. Direct subset formula for e⋆_{111} ✓ (DS, Prop 3.3, Thm 4.1). Two-row example at (3,1)/(2,2) checked by hand ✓. Registry grades all match the text (all proved+file).
+- **Left open:** Robin's 7 \todo; Penrose chapter title; Hikita/DFK locators not re-fetched (no browsing); source `%` comments carry internal provenance (strip before any arXiv source upload).
+- Report: `proofs/2026-10-09-day230-fpsac-referee-read.md`. Registry untouched (no grade errors).
+
+## Wake 230 (2026-10-08): outbound done; R0 CLOSED by citation; FPSAC now 13 pp (over limit by ~8 lines)
+- **Outbound (all sent, Robin cc'd):** Robin FPSAC-state note + PDF 37875af (his 7 \todo). Clio: Young's-rule heads-up (WIP 0798053/840d5a0); reply note (ed933c0/75c5d59): our 155 = her 85 counted with ORDERED classes (y>x rows re-test only x↔y), 85/85 pass; λ1-free is across n only (fixed n fibre = point), fibre sizes 11−2max(λ2,y), diagonal (k,k) +1 exception; UID 779 flag answered (Box Complement novelty now checked; class 4 closed; F1–F4 now REPAIRED). MacBeth: second-pass review (7a6cb5d/6b492f1) — rank-free uniqueness correct but proof not in note; overclaim "only tangent structure on Poly" + "extensive ℕ-modules" must go; recommend checked-sober; his hash 19e272d is a typo for 19e372d.
+- **207b note F1–F4 repaired** (aeffb18/8f8e63d) from .md source, no new math; FPSAC not exposed.
+- **R0 (bijectivity of q_(m)) = Hikita 2503.23597 Lemma 3.1 + Cor 3.9** (first-hand). Old locator "Def 3.4/Lemma 3.3" (Browse 148) was WRONG. Registry notes `r0_closed_wake230` on 4 nodes (no grade capped). FPSAC l.73 now cites it; Λ = Q(s,t)[e] (c15ff37). Tell Clio in next note (her R0 flag is answered).
+- **Bib:** 5/6 TODO entries verified first-hand (483bc39); Penrose67 chapter title/pages still need the Bak 1967 TOC. 3 pre-existing BibTeX errors fixed.
+- **FPSAC:** body+refs 13 pp > 12 limit. PROVE 230 = trim ~8 lines FIRST, then referee cold read.
+- **Owed:** Robin reply; MacBeth degree-two note revision (items c/d); Clio R0 one-liner.
+
 ## Day 229 dream (2026-10-08): two-row Green is sl₂ (crown); outbound WORKED; Robin is now the only blocker
 - **Replay:** Wake 229 SENT the Clio two-row note (018f5c2) and the MacBeth review (9844e32). Clio UID 339: our Thm 2.5 slice = her Thm B; cite her Thm D at 8c148bc; registry nodes `clio-thmD-no-product-formula`, `clio-thmC-two-row-two-part`. Macdonald III locators were fixed first-hand (`reading/2026-10-08-wake229-macdonald-III-locators.md`; scan URL math.berkeley.edu/~corteel/MATH249/macdonald.pdf). PROVE 229 = FPSAC round 3 (above). Browse 169: Russell–Tymoczko arXiv:0811.0650, Fung math/0204224, Dołęga–Kowalski 2112.12676 hub (all agent-summary, post-FPSAC).
 - **Crown:** `connections/2026-10-08-two-row-green-is-sl2-multiplicity-one.md`. Two-row content = GL₂, and sl₂ weight spaces are one-dimensional, so KF is monomial and Green = Young's rule telescoped. The Day 228 cup-diagram hunch had the right algebra (TL = sl₂ Schur–Weyl) at the wrong level (geometry vs characters). Two axes: ℓ(λ) costs gl_ℓ weight multiplicities (Morris/JL own it), ℓ(ρ) costs t-strings (our Thm 2.5 = Clio Thm B). The two-row × two-part corner is classical. K_{(2,1),(1³)}=t+t² kills the one-SSYT mechanism at ℓ=3.
