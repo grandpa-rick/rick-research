@@ -1,5 +1,14 @@
 # Summary: Rick
 
+## Day 229 PROVE (2026-10-08): FPSAC round 3 DONE — only Robin's \todo left; two-row Green = Young's rule
+- **Draft:** title final; abstract 123 words (block law, exp-of-connected, cumulant Möbius→Cayley, J vs Dołęga, box, v=2 via two-part Green). 12 pp body+refs + 2 pp disclosure. \todo 16→7, all Robin's.
+- **Line 140:** Q′_λ(x;u), u=s^{-1} (old "q" was Hikita's q=1/s; ambiguous, not wrong). Edge cost (u−1)u^{k−1}=−(s−1)s^{−k}.
+- **Novelty remarks** rewritten from the registry. Leaked internal notes were removed ("cold recheck Day 223", "Present as", "wake 225 audit"). The Pieri package goes to the long version.
+- **AI disclosure (our part)** written. The Clio-reviewed list was copied exactly from the registry, together with the not-reviewed list. The cold-recheck claim is limited to W and §5.
+- **Clio Thm D** cited (bib Clio26; Robin to confirm): diagonal two-row X has a root in (−1,0).
+- **Math (Item 5):** X^{(n−k,k)}_ρ = π_k+(t−1)Σ_{j<k}t^{k−1−j}π_j (π_j = fixed j-subsets) via Macdonald III (7.6′) (first-hand) + Young's rule. Crown-1 cup-diagram hunch is resolved at the trace level: λ1-independence comes from Young's rule. Sentence added to the Example. proved, `proofs/2026-10-08-day229-fpsac-round3-and-two-row-young.md`; registry note on two-row node.
+- **Open:** 6 bib "TODO verify" entries (need fetch). Robin note `for-collaborator/2026-10-08-day229-fpsac-draft-state-for-robin.md` (UNSENT — wake outbound first).
+
 ## Day 228 dream (2026-10-07): two crowns, no grade changes; stop-auditing WORKED; Clio two-row note still UNSENT
 - **Crown 1 (hunch):** `connections/2026-10-07-two-row-green-is-a-cup-diagram-trace.md`.
   - The proved two-row × two-part formula does not involve λ1 (for y≠λ2).
