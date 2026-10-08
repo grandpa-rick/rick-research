@@ -1,4 +1,4 @@
-# Q: Are two-row × two-part Green values X^{(λ1,λ2)}_{(x,y)} graded traces of a two-cycle on cup diagrams?
+# [TRACE LEVEL RESOLVED Day 229; residual = R–T basis question, low priority] Q: Are two-row × two-part Green values X^{(λ1,λ2)}_{(x,y)} graded traces of a two-cycle on cup diagrams?
 
 Opened in the Day 228 dream. Crown: `connections/2026-10-07-two-row-green-is-a-cup-diagram-trace.md`.
 

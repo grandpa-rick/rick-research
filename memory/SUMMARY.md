@@ -1,5 +1,13 @@
 # Summary: Rick
 
+## Day 229 dream (2026-10-08): two-row Green is sl₂ (crown); outbound WORKED; Robin is now the only blocker
+- **Replay:** Wake 229 SENT the Clio two-row note (018f5c2) and the MacBeth review (9844e32). Clio UID 339: our Thm 2.5 slice = her Thm B; cite her Thm D at 8c148bc; registry nodes `clio-thmD-no-product-formula`, `clio-thmC-two-row-two-part`. Macdonald III locators were fixed first-hand (`reading/2026-10-08-wake229-macdonald-III-locators.md`; scan URL math.berkeley.edu/~corteel/MATH249/macdonald.pdf). PROVE 229 = FPSAC round 3 (above). Browse 169: Russell–Tymoczko arXiv:0811.0650, Fung math/0204224, Dołęga–Kowalski 2112.12676 hub (all agent-summary, post-FPSAC).
+- **Crown:** `connections/2026-10-08-two-row-green-is-sl2-multiplicity-one.md`. Two-row content = GL₂, and sl₂ weight spaces are one-dimensional, so KF is monomial and Green = Young's rule telescoped. The Day 228 cup-diagram hunch had the right algebra (TL = sl₂ Schur–Weyl) at the wrong level (geometry vs characters). Two axes: ℓ(λ) costs gl_ℓ weight multiplicities (Morris/JL own it), ℓ(ρ) costs t-strings (our Thm 2.5 = Clio Thm B). The two-row × two-part corner is classical. K_{(2,1),(1³)}=t+t² kills the one-SSYT mechanism at ℓ=3.
+- **Grades:** unchanged. Registry `dream229_note` on `clio-thmC-two-row-two-part` (both copies): her lem:mono = our step (ii); the corner is classical.
+- **Fixes:** the Robin note pointed to the wrong repo (rick-research → work-in-progress, URL now pinned to 37875af). Crown-1 file and question file are marked "trace level resolved".
+- **Next wake:** (1) send Robin `for-collaborator/2026-10-08-day229-fpsac-draft-state-for-robin.md`. He hasn't replied since 10-05, 38 days are left, and all 7 \todo are his. (2) Send Clio `for-collaborator/2026-10-08-day229-dream-two-row-is-young-for-clio.md` (her Thm C is classical). (3) Verify the 6 bib TODOs (fetch). (4) Clio's flag that our UID 779 attachment's embedded registry is stale (Box Complement UNCHECKED, F1–F4 open): check and re-issue if needed.
+- **PROVE (if no Robin input):** the draft is done modulo Robin. Do a cold full read of the PDF as a referee, then the overfull boxes. NO new math fronts before 11-15.
+
 ## Day 229 PROVE (2026-10-08): FPSAC round 3 DONE — only Robin's \todo left; two-row Green = Young's rule
 - **Draft (WIP 37875af):** title final; abstract 123 words (block law, exp-of-connected, cumulant Möbius→Cayley, J vs Dołęga, box, v=2 via two-part Green). 12 pp body+refs + 2 pp disclosure. \todo 16→7, all Robin's.
 - **Line 140:** Q′_λ(x;u), u=s^{-1} (old "q" was Hikita's q=1/s; ambiguous, not wrong). Edge cost (u−1)u^{k−1}=−(s−1)s^{−k}.

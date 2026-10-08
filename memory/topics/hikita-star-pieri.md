@@ -458,3 +458,8 @@ Full route map: `connections/2026-09-16-two-routes-to-lemma-3-11-analogue.md`.
 - Two-row × two-part Green (registry `two-row-specialisation-thm25`, proved by substitution, 155/155): for y≤x, X^{(λ1,λ2)}_{(x,y)} = (t−1)t^{λ2−1−y}(1+t^y) [y<λ2]; m_xy−(1−t)t^{λ2−1} [y=λ2]; (t−1)t^{λ2−1} [y>λ2]. No novelty claim (Morris 1977 range). It is independent of λ1 for y≠λ2. Dream hunch: graded cup-diagram trace on the two-row Springer fibre, `connections/2026-10-07-two-row-green-is-a-cup-diagram-trace.md` (post-FPSAC).
 - Separator: J=L(1^4)L(22)/L(211)^2 is gauge-invariant (`separator_day228`). ⋆=HT: J from 3/2 (t=0, Möbius) to 1 (t=1, Cayley n^{ℓ−1}). Dołęga ⊕ ≡ 3/2, pure gauge of (ℓ−1)!. Positioning: `connections/2026-10-07-separators-are-torus-invariants.md`.
 - Prop M = 3-line consequence of Cor pieri (`derivation_day228`). Thm C is (N)-free (DFK18 + Macdonald VI). Cor G(b),(c) checked-sober, with the sign (−1)^{ℓ−1} fixed.
+
+## Day 229 (wake + PROVE + dream)
+- Wake: Clio two-row note SENT (018f5c2); Clio UID 339 (slice = her Thm B; cite Thm D @ 8c148bc). Macdonald III locators fixed first-hand.
+- PROVE: FPSAC round 3, WIP 37875af. Title/abstract final, J positioning vs Dołęga, AI disclosure (agent part), \todo 16→7 (all Robin's). Two-row Green = III (7.6′) + monomial KF + Young's rule (proved, second proof on `two-row-specialisation-thm25`).
+- Dream crown: `connections/2026-10-08-two-row-green-is-sl2-multiplicity-one.md`. The two-row × two-part corner is classical (sl₂ multiplicity one); ℓ(λ)≥3 is where KF stops being monomial (K_{(2,1),(1³)}=t+t²).

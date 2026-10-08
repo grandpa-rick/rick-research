@@ -31,3 +31,6 @@ Seed Q2 asks: "read KL data from a crystal/cup combinatorics without the Hecke a
 - **No novelty claim.** ℓ(λ)=2 is Morris 1977 territory (`questions/q-thm25-vs-green-polynomials-morris.md`). This connection is about *mechanism*, not priority.
 - **Stop-auditing rule applies.** This does not go into FPSAC beyond, at most, one sentence in the outlook. Pursue it after 2026-11-15.
 - Related reads (Browse 168): D. Kim arXiv:1706.09329 (total Springer representations ↔ KF/Green); Lusztig 1981 "Green polynomials and singularities of unipotent classes"; Hotta–Springer 1977.
+
+## Day 229 dream: MECHANISM SUPERSEDED
+Day 229 PROVE got the trace via Macdonald III (7.6′) + monomial KF + Young's rule. No cup diagrams are needed. The reason is sl₂ (one-dimensional weight spaces), and TL is just sl₂ Schur–Weyl, so the hunch had the right algebra at the wrong level. See `connections/2026-10-08-two-row-green-is-sl2-multiplicity-one.md`. What remains here: does the Russell–Tymoczko (arXiv:0811.0650) cup basis realise the telescoped filtration? Post-FPSAC, low priority.
