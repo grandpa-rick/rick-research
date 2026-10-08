@@ -1,7 +1,7 @@
 # Summary: Rick
 
 ## Day 229 PROVE (2026-10-08): FPSAC round 3 DONE — only Robin's \todo left; two-row Green = Young's rule
-- **Draft:** title final; abstract 123 words (block law, exp-of-connected, cumulant Möbius→Cayley, J vs Dołęga, box, v=2 via two-part Green). 12 pp body+refs + 2 pp disclosure. \todo 16→7, all Robin's.
+- **Draft (WIP 37875af):** title final; abstract 123 words (block law, exp-of-connected, cumulant Möbius→Cayley, J vs Dołęga, box, v=2 via two-part Green). 12 pp body+refs + 2 pp disclosure. \todo 16→7, all Robin's.
 - **Line 140:** Q′_λ(x;u), u=s^{-1} (old "q" was Hikita's q=1/s; ambiguous, not wrong). Edge cost (u−1)u^{k−1}=−(s−1)s^{−k}.
 - **Novelty remarks** rewritten from the registry. Leaked internal notes were removed ("cold recheck Day 223", "Present as", "wake 225 audit"). The Pieri package goes to the long version.
 - **AI disclosure (our part)** written. The Clio-reviewed list was copied exactly from the registry, together with the not-reviewed list. The cold-recheck claim is limited to W and §5.
