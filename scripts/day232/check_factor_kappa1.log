@@ -1,0 +1,1 @@
+factor kappa=1 claim, n<=8: 7421 (pi,tuple) terms, all kappa(lam^C,nu^C)=1: True
