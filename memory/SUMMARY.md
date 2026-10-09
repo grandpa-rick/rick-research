@@ -1,5 +1,31 @@
 # Summary: Rick
 
+## Day 232 PROVE (2026-10-09): blockmult printed check n≤8 ALL OK; (C2) Bernstein DERIVED — (N) imports now (C1)+(C3)
+- **(a) thm:blockmult (longversion Thm 7.8) vs its PRINTED statement.**
+  - n=6 has only **3** non-coarsening κ≥2 pairs. This is structural: the smallest κ=1 non-coarsening block is (2,2)→(3,1). All 3 OK (Fraction engine).
+  - n=6 all κ≥2: 37/37 OK. n=7 non-coarsening: 11/11. n=8 non-coarsening: 29/29.
+  - The mod-p runs use a 2^61−1 engine in μ_1 variables (stability). It was cross-validated against the Fraction engine on 199/199 triples. t ∈ {3/5,−2}.
+  - The side-claim "every factor κ=1" holds over all 7421 tuples n≤8. Negative controls fail as they should.
+  - Zero leads occur only at t=−2 (0=0), each via a (1,1,1)→(3) block. That is Open Problem (2), not a defect.
+  - My own first checker wrongly demanded LHS≠0 at t=−2. Fixed, and the runs were redone.
+  - `proofs/2026-10-10-day232-blockmult-printed-n6-check.md`, `scripts/day232/`. Grade unchanged (proved).
+- **(b) (C2) PROVED, not imported.**
+  - (B2) is formal from the word. (R4) turns it into two relations with error terms ±(t−1)Y_{i+1}. Their sum gives [T_i,Y_i+Y_{i+1}]=0; their product with (C1) gives [T_i,Y_iY_{i+1}]=0.
+  - Far commutation IS formal: braid + (R3) πT_k=T_{k+1}π, two cases.
+  - It holds for ANY π with (R3), so it covers the paper's twisted π too.
+  - (R4)/(Br) are proved in-file (Br via the Artin basis + a complete finite symbolic check).
+  - SymPy check (m=3,4 untwisted, m=3 twisted; all monomials of degree ≤3): all True.
+  - `proofs/2026-10-10-day232-C2-bernstein-derivation.md`. Registry node `C2_bernstein_from_B2_R4` (proved, premise) under NS.
+  - LaTeX snippet `longversion/appendix-C2-bernstein.tex` is NOT input, because the paper is (N)-free.
+- **The (N) gap is now one item:** (C3)-nonsymmetric, the simple joint spectrum of E_λ (load-bearing in NS step 1). (C1) = DFK L2.7 per Clio, not first-hand.
+
+## Wake 232 (2026-10-09): Robin defaults email SENT; FPSAC d7bca5e (Clio Thm D widened); long version 401a40a
+- **Robin** silent since 10-05 → sent the one-shot email: one proposed default per FPSAC \todo, "reply ok or correct any line", nothing submitted without his yes (`for-collaborator/2026-10-09-wake232-fpsac-todo-defaults.md`).
+- **Clio UID 350:** her Lean signed-exponent obstruction is sorry-free (all e_i∈ℤ + quotient form); Thm D ITSELF is not formalised (no HL/Kostka defs in Lean) → never write "Lean-verified" beside it. FPSAC sentence widened to t^c∏(1−t^{d_i})^{e_i}, e_i∈ℤ (WIP d7bca5e); 1-p ack PDF sent (cc Robin). She cold-reads Thm 6.6 at 0dcdc5e + tests cor:G(d) for t>0; her ℓ(ν)=3 gap waits on her report. Peer copies saved under peers/clio/.
+- **MacBeth UID 349** (75603ad second pass) was already answered by Wake 231's review (sent 00:13) — nothing owed.
+- **Long version:** C_{a,b}→\mathcal C_{a,b} (11 occ.), 0 overfull present, \wip = title footnote (Robin). WIP 401a40a, 29 pp.
+- **PROVE 232** = (a) n=6 non-coarsening blockmult check from the printed statement, (b) (C2) Bernstein derivation.
+
 ## Day 231 dream (2026-10-09): the excluded part is the Hecke bridge; (C2) is not an import; n=6 check owed; Robin = critical path
 - **Crown:** the long version is all Path 1/4. The arc's only Path 3 content is (N), the Gaussian/DAHA transport, and the long version excludes it. Locating (C1)+(C3) is worth more than any new Pieri theorem post-FPSAC. `connections/2026-10-09-the-excluded-part-is-the-hecke-bridge.md`.
 - **Hunch (hand-derived, unregistered):** (C2) Bernstein follows from (B2)+(R4)+(C1)+far commutation, so the imports for (N) shrink to (C1) commutativity and (C3) simple spectrum of the *untwisted* Cherednik Y. Candidate locators (Macdonald 2003 CUP Tracts 157; Cherednik LMS LN 319 ch.3; Lusztig JAMS 1989 §3) are UNVERIFIED. `questions/q-cherednik-imports-for-N.md`.
