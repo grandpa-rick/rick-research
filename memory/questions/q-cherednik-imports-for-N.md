@@ -26,3 +26,8 @@
 ## Kill/close criterion
 - Closed (good) if (C1)+(C3) each get an exact theorem number read first-hand, with conventions matched. Then (N) goes into the long version as a full section.
 - Closed (bad) if some step needs a fact about the twisted rep that no source states. Then (N) stays a remark and this note records why.
+
+## Day 232 dream (2026-10-09): hunch that (C3) and (C1) also reduce. See `connections/2026-10-09-N-imports-are-a-presentation-check.md`
+- (C3): at generic s the s-exponents of y_i(λ)=s^{λ_i}t^{b_i(λ)} recover λ, so simple spectrum is free given **triangularity** of Y_i on monomials. Triangularity is an in-house operator computation.
+- (C1): if our T_i, π satisfy the extended affine Hecke relations (remaining check: π²T_{m−1}=T_1π² or the located form), commutativity is Bernstein's theorem in the ABSTRACT algebra and transfers to any representation.
+- So the target import list is **one abstract theorem** (Bernstein lattice commutativity, locator UNVERIFIED) + two checks. Hunch grade, not registered.

@@ -1,5 +1,29 @@
 # Summary: Rick
 
+## Day 232 dream (2026-10-09): Browse 172's bar-op "explanation" corrected; (N) imports may be one abstract theorem; no grade changes
+- **Status board:**
+  - FPSAC at d7bca5e. Deadline 2026-11-15 (37 days).
+  - Robin got the defaults email in Wake 232 and has not replied (silent since 10-05). Nothing gets submitted without his explicit yes.
+  - Clio is cold-reading Thm 6.6 at 0dcdc5e.
+  - Long version: 29 pp at 401a40a, plus snippet 412adbf.
+- **Correction:** Browse 172 said DLMF arXiv:2609.23866 (a DAHA bar op, involutive only at q=1) "may explain the Day 217 ι death". **Wrong as stated.** ι=Ψ∘β is involutive at all (s,t). What died on Day 218 was *positivity*.
+  - The real residue: s=1 (⇔ q=1, since s=q^{-1}) is β-stable and was **never probed** (Day 218 probed only t=s^a).
+  - Kill test filed in the `connections/2026-10-02-reflection-R-is-a-bar-involution.md` Day 232 addendum. Registry note added to `iota-bar-involution-canonical-basis-of-star` (stays dead-end). WIP registry copy synced.
+- **Crown (hunch, unregistered):** `connections/2026-10-09-N-imports-are-a-presentation-check.md`.
+  - (C3) simple spectrum is free at generic s once Y_i is triangular on monomials (the s-exponents of y_i(λ) recover λ).
+  - (C1) is Bernstein's lattice commutativity in the ABSTRACT extended affine Hecke algebra, once our T_i, π satisfy its relations. The remaining check is π²T_{m−1}=T_1π² or the located form.
+  - Target: (N)'s imports = 1 abstract theorem (locator UNVERIFIED) + 2 checks. Post-FPSAC.
+- Journal `dream-journal/2026-10-09-day232-dream.md`. No PERSONALITY edit.
+
+## Browse 172 (2026-10-09): Haiman = FPSAC 2027 invited speaker (watch); DAHA bar op 2609.23866; Dołęga citer cluster corrected
+- New (abstract-only, in sources.json):
+  - Fischer–Gangl–Gutiérrez–Kumari 2610.08500: types B/C/BC HL character expansions ⇒ Warnaar JT identities. Low overlap.
+  - DLMF 2609.23866: see the dream correction above.
+  - Mazorchuk–Srivastava 2609.10152: hybrid KL bases.
+- FPSAC 2027 Galway, July 5–9. **Mark Haiman is an invited speaker** (scoop watch only).
+- Dołęga 1707.02656 citers = the Dołęga–Kowalski–Gerber–Torres cluster, not Jing's group (earlier logs were wrong). Jing–Liu: 9 citers, saturated. Hikita 2503.23597: 3 citers, all chromatic.
+- MO: 509068 (hook-character sums), 496091 (KF stabilisation), 512671 (H̃ vs H normalisation). SE API: use `/questions?tagged=X&fromdate=`. Log `reading/2026-10-09-browse172.md`.
+
 ## Day 232 PROVE (2026-10-09): blockmult printed check n≤8 ALL OK; (C2) Bernstein DERIVED — (N) imports now (C1)+(C3)
 - **(a) thm:blockmult (longversion Thm 7.8) vs its PRINTED statement.**
   - n=6 has only **3** non-coarsening κ≥2 pairs. This is structural: the smallest κ=1 non-coarsening block is (2,2)→(3,1). All 3 OK (Fraction engine).
@@ -26,54 +50,13 @@
 - **Long version:** C_{a,b}→\mathcal C_{a,b} (11 occ.), 0 overfull present, \wip = title footnote (Robin). WIP 401a40a, 29 pp.
 - **PROVE 232** = (a) n=6 non-coarsening blockmult check from the printed statement, (b) (C2) Bernstein derivation.
 
-## Day 231 dream (2026-10-09): the excluded part is the Hecke bridge; (C2) is not an import; n=6 check owed; Robin = critical path
-- **Crown:** the long version is all Path 1/4. The arc's only Path 3 content is (N), the Gaussian/DAHA transport, and the long version excludes it. Locating (C1)+(C3) is worth more than any new Pieri theorem post-FPSAC. `connections/2026-10-09-the-excluded-part-is-the-hecke-bridge.md`.
-- **Hunch (hand-derived, unregistered):** (C2) Bernstein follows from (B2)+(R4)+(C1)+far commutation, so the imports for (N) shrink to (C1) commutativity and (C3) simple spectrum of the *untwisted* Cherednik Y. Candidate locators (Macdonald 2003 CUP Tracts 157; Cherednik LMS LN 319 ch.3; Lusztig JAMS 1989 §3) are UNVERIFIED. `questions/q-cherednik-imports-for-N.md`.
-- **Ledger fix:** `scripts/day231/check_leads_printed_n6.log` is EMPTY (run killed). INVENTORY and the Robin note are now annotated. n≤5 barely tests the non-coarsening case of thm:blockmult (Thm 7.8): grade stays proved, check coverage is thin, n=6 rerun owed.
-- **Robin:** silent since 10-05. Next wake: one short email with a proposed default per FPSAC \todo ("reply ok or correct"). Nothing is submitted without his explicit yes.
-- Writing compressed the math (one Pieri proof, q-binomial Lemma B, lead from W): feedback memory. No grade changes. No PERSONALITY edit. Journal `dream-journal/2026-10-09-day231-dream.md`.
 
-## Browse 171 (2026-10-09): FPSAC 11-15 re-confirmed (curl); scoop risk CLEAR; Foissy 2610.06256 new
-- Jing–Liu 2104.04411: 9 citers, all from Jing's group. Dołęga 1707.02656: the same 6. Haglund–Tewari 2609.29957 re-read: no two-row/Green/Hikita content.
-- New: Foissy 2610.06256 (combinatorial twisted bialgebras; "Exch" is terminal for characters; cancellation-free antipodes). Path 1 / seed Q1, unread past the abstract.
-- Stale rediscoveries (already in sources.json): Aval–Melgar 2609.03959, Murata 2607.01026, Goertzen–Williamson 2604.18894, Grinberg–Vassilieva 2406.01166. Process memories exist (curl; dedup).
-- Log `reading/2026-10-09.md`. S2 citer counts 429'd, still owed.
-
-## Day 231 PROVE (2026-10-09): arXiv LONG VERSION written — 29 pp, every section in full; WIP 56f0201
-- `work-in-progress/longversion/longversion.tex` (amsart). Every section is a full proof, restated from the proof files and re-derived by hand while restating:
-  - §2 subset formula: KL, A_k, K_k, E_k(1)=e_k via Mac III (2.8), stability.
-  - §3 **Pieri package**: the ℓ-column theorem. Its ℓ=1 case IS e_k⋆e_r, so the paper has ONE proof where the notes had two (207b's (★) is subsumed by (Z)). Also t=0 truncated geometric, two columns, support ≤ ℓ+1 factors.
-  - §4 DS + exact s-valuation. Lemma B's level-set sum is now the t=0 q-binomial (Mac III (1.4)).
-  - §5 Theorem H + d-matrix.
-  - §6 biderivation/M/block law (t=0 edge CITED DFK+Macdonald)/coarsenings/W via lin T_k. Lead(0)≠0 now comes from W at t=0, not roots of unity.
-  - §7 G/F/block multiplicativity (Cor G(c) via the Prüfer vertex-weighted Cayley formula).
-  - §8 Box Complement + Column Lemma + plethystic lin + 2nd Pieri proof.
-  - §9 CT formula, two-point formula, shuffle identity, all v=2 leads.
-- **Excluded on purpose:** (N) and the square edges, DS-from-(N), Lemma ER, t=1/s. They rest on unlocated Cherednik facts; rem:edges says so and uses none of it.
-- **"PDF is the claim":** each section's printed statements were re-implemented from the PDF against an independent exact-rational subset-formula engine (`scripts/day231/check_*_printed.log`, ALL True; a negative control fails as it should). INVENTORY §5 has the label→registry map + coverage.
-- Registry: `longversion_reread` note on 37 nodes (DS/EK/TC; grades unchanged). TC: two interpretive side-nodes got role=attempt (real validator violation fixed). The remaining validator output is pre-existing "sources missing 'read'".
-- Left: 1 \wip (Robin's title footnote); 2 overfull lines; notation clashes Γ_k/Γ_a, C_I/C_{a,b}, κ_c/κ(λ,μ). Robin note: `for-collaborator/2026-10-09-day231-longversion-draft.md` (digest, not separate email).
-
-## Wake 231 (2026-10-09): outbound done; FPSAC 0dcdc5e (Jing–Liu credit, Cor G(d) proved); two MacBeth reviews sent; long-version INVENTORY built
-- **Outbound:** Robin got the Day 230 note (3f7d825 URL + PDF + \todo list; he has been silent since 10-05). The 0dcdc5e delta goes in the next digest. Clio got a 2 pp PDF (6428da4): Jing–Liu credited, Thm D scoped, R0 = Hikita L3.1/Cor3.9, and yes to her Thm 6.6 review slot at 0dcdc5e. MacBeth got two re-reviews, cc Robin:
-  - Uniqueness 75603ad: **proved**, minor wording (unscoped "only nontrivial" ×3, vacuous footnote 1, "solid"/ℓ_M, recipient missing). WIP f7fcc1a/bb7646e.
-  - Nerve 242c7ea: Thms 3/5/7/9/11 checked-sober. **N2:** a nonzero H² class ≠ an associativity obstruction (cocycle ⇒ associative; Z/2 with twist xy = Z/4). N1: U(p) is coarser than the 1-truncated nerve. N3: "nerve level" is used in two senses. WIP f35a37f/5e994e7.
-- **Clio UID 344/345/348:** two-row Green X^{(n−k,k)} = **Jing–Liu 2104.04411 §2** (v2 p.8, display after (2.32); π_j=D^{(j)}). Her third engine: 155 rows / 410 pairs, 0 mismatches. Ours = the Young's-rule proof only. Morris = the ℓ(λ)=2 case of JL Thm 3.2. Clio Thm D is Lean-verified only for the numerator shape t^c∏(1−t^{d_i}).
-- **FPSAC 0dcdc5e:**
-  - Two-row credited to Jing–Liu; Thm D scoped.
-  - **Cor G(d) sign is now PROVED.** It follows from Thm W's sign consequence + thm:coarse (each merge gives (−1)^p, Σp=m); registry corGd_grade_20261009. The old "computed" was stale.
-  - Locator audit (`reading/2026-10-09-wake231-locators-fpsac.md`): all arXiv locators OK. Fixed: Morris rewording, HT κ notation, DFK19 §8.3, Penrose pp.101–109, "AI declaration" (site wording; FPSAC 11-15 deadline re-confirmed from page source; 6–12 pp incl. refs, excluding the declaration).
-  - 6 \todo left, all Robin's (the "7" counted a \newcommand).
-- **Long version:** `work-in-progress/longversion/INVENTORY.md` (A–G). Flags are in state/PROVE.md: two different "Thm B"s, a thin Cor G recheck file, the DS-from-(N) n=5 placeholder, the Cherednik refs for (N).
-- **PROVE 231 = long version** (skeleton + Pieri package section).
-
-## Day 230 dream (2026-10-08): no grade changes; the PDF is the claim; the s=0 end is a lattice limit; next PROVE = arXiv long version
-- **Replay:** all outbound went out in Wake 230. PROVE 230 restored 12 pp (WIP 3f7d825), and Thm 6.6 re-coded from the printed text matched 123/123. Browse 170: HT 2609.29957 = status of Dołęga's conjecture; Berg–Bergeron–Saliola 2012 (NSym lift of HL) = seed-Q1 lead; R–T 0811.0650 open-access; MO 515747 (Hopf equalizer = three-fold Sweedler).
-- **Addendum (hunch, unregistered):** q|_Λ is triangular with diagonal s^{n(λ)} (from Thm DS), so q dies at s=0 but ⋆ → HL survives. The s=0 end is a Kashiwara-style lattice limit, and DS's n(μ) is the lattice exponent. Second seed-Q4 instance after Krob–Thibon. Test post-FPSAC: det q and the rescaled matrix vs HL Pieri. `connections/2026-10-01-star-interpolates-product-and-HL-product.md` §Day 230.
-- **Refused:** Browse 170's pre-submission HT "two-row" read. Wrong index: HT's is the cumulant shape, ours is the Green character index. Its "R–T = crown-1 test" was stale (resolved Day 229). Annotated `questions/q-two-row-green-springer-cup-trace.md`.
-- **Plan change:** "no new math before 11-15" stays, but PROVE slots now go to the **arXiv long version** (does not exist yet). It holds proved results only: FPSAC + Pieri package + H/A square + (N). Strip `%` provenance. This stops 38 days of re-reads.
-- **Next wake, outbound first:** send Robin `for-collaborator/2026-10-08-day230-fpsac-referee-read.md` (URL 3f7d825 supersedes 37875af; 7 \todo; he has been silent since 10-05). Then fetch the Hikita/DFK locators, the FPSAC dates page and the Penrose67 TOC.
-- Journal: `dream-journal/2026-10-08-day230-dream.md`. PERSONALITY: one line added ("the PDF is the claim").
+## Day 231 + Day 230 dream (2026-10-08/09): pointer lines (full stanzas in `archive/SUMMARY-2026-10-09-pre-day232-dream.md`)
+- **Day 231 dream:** crown `connections/2026-10-09-the-excluded-part-is-the-hecke-bridge.md`. (N) is the only Path 3 content, and the long version excludes it. The (C2) hunch was proved in PROVE 232. The n=6 empty log has been redone (PROVE 232).
+- **Browse 171:** FPSAC 11-15 re-confirmed via curl. Scoop risk CLEAR. Foissy 2610.06256 (combinatorial twisted bialgebras, Exch terminal) is unread.
+- **Day 231 PROVE:** long version `work-in-progress/longversion/longversion.tex` written in full (WIP 56f0201). The ℓ-column proof subsumes 207b. (N)/square edges are excluded on purpose. Printed-statement checks `scripts/day231/check_*_printed.log` ALL True.
+- **Wake 231:** two-row Green = Jing–Liu 2104.04411 §2 (credited). Cor G(d) sign proved (registry corGd_grade_20261009). MacBeth reviews sent (75603ad, 242c7ea). FPSAC 0dcdc5e.
+- **Day 230 dream:** the s=0 end is a lattice limit (hunch). The PDF is the claim. HT "two-row" read refused (wrong index).
 
 ## Days 229–230 (wake / PROVE / dream), 2026-10-08: pointer lines (full stanzas in `archive/SUMMARY-2026-10-09-pre-day231-dream.md`)
 - Day 230 PROVE: FPSAC referee cold read. 12 pp restored, jargon/undefined symbols fixed, OP5 overclaim cut, Thm 6.6 from the printed text 123/123 (WIP 3f7d825). `proofs/2026-10-09-day230-fpsac-referee-read.md`.

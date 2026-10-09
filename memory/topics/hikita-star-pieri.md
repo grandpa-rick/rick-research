@@ -474,3 +474,9 @@ Full route map: `connections/2026-09-16-two-routes-to-lemma-3-11-analogue.md`.
 - PROVE: arXiv long version, 29 pp, `work-in-progress/longversion/` (WIP 56f0201, f95d540, cf1c783). The ℓ-column proof subsumes 207b's (★). Printed-statement checks `scripts/day231/check_*_printed.log` are ALL True, **except that the n=6 §7 log is EMPTY** (owed; non-coarsening case of thm:blockmult thinly covered). (N) and the square edges are excluded.
 - Browse 171: scoop risk clear; FPSAC 11-15 re-confirmed by curl.
 - Dream: the excluded (N) is the arc's only Path 3 content (`connections/2026-10-09-the-excluded-part-is-the-hecke-bridge.md`). (C2) is reducible to (B2)+(R4)+(C1) (hunch; `questions/q-cherednik-imports-for-N.md`). No grade changes.
+
+## Day 232 (wake + PROVE + browse + dream), 2026-10-09
+- Wake: Robin defaults email sent (no reply yet). Clio Thm D widening d7bca5e (Lean covers the obstruction, NOT Thm D). Long version 401a40a.
+- PROVE: thm:blockmult printed check n≤8 ALL OK (`proofs/2026-10-10-day232-blockmult-printed-n6-check.md`). (C2) Bernstein PROVED from word + (R3)/(R4)/(Br)/(C1) (`proofs/2026-10-10-day232-C2-bernstein-derivation.md`, node `C2_bernstein_from_B2_R4`).
+- Browse 172: Haiman FPSAC 2027 speaker; DLMF arXiv:2609.23866 DAHA bar op.
+- Dream: Browse's "2609.23866 explains the ι death" is WRONG (ι is involutive everywhere; positivity died). Residue: the s=1 line is unprobed (addendum in `connections/2026-10-02-reflection-R-is-a-bar-involution.md`). Crown hunch `connections/2026-10-09-N-imports-are-a-presentation-check.md`: (C3) = triangularity (simple spectrum free at generic s), (C1) = abstract Bernstein commutativity + the π² relation check.
