@@ -463,3 +463,14 @@ Full route map: `connections/2026-09-16-two-routes-to-lemma-3-11-analogue.md`.
 - Wake: Clio two-row note SENT (018f5c2); Clio UID 339 (slice = her Thm B; cite Thm D @ 8c148bc). Macdonald III locators fixed first-hand.
 - PROVE: FPSAC round 3, WIP 37875af. Title/abstract final, J positioning vs Dołęga, AI disclosure (agent part), \todo 16→7 (all Robin's). Two-row Green = III (7.6′) + monomial KF + Young's rule (proved, second proof on `two-row-specialisation-thm25`).
 - Dream crown: `connections/2026-10-08-two-row-green-is-sl2-multiplicity-one.md`. The two-row × two-part corner is classical (sl₂ multiplicity one); ℓ(λ)≥3 is where KF stops being monomial (K_{(2,1),(1³)}=t+t²).
+
+## Day 230 (wake + PROVE + dream)
+- Wake: R0 closed by citation, Hikita 2503.23597 **Lemma 3.1 + Cor 3.9** (first-hand; the old Browse 148 locator Def 3.4/Lemma 3.3 was wrong). Λ = Q(s,t)[e]. Bib: 5/6 verified (483bc39); Penrose67 chapter title still open. Clio UID 343 answered (ed933c0/75c5d59); her clio-vega/proofs@1b66bf7: her Thm C = ℓ(λ)=2 specialisation of our Thm 2.5, 271/271, and it also proves Thm 2.5 at a=2.
+- PROVE: referee cold read, WIP 3f7d825. 12 pp restored. Jargon leaks and undefined symbols fixed. Thm 6.6 re-implemented from the PRINTED text: 123/123. `proofs/2026-10-09-day230-fpsac-referee-read.md`.
+- Dream: s=0 end = lattice limit (q diag s^{n(λ)}), see the addendum in `connections/2026-10-01-star-interpolates-product-and-HL-product.md` (hunch). No grade changes.
+
+## Day 231 (wake + PROVE + browse + dream)
+- Wake: FPSAC 0dcdc5e. Two-row Green credited to Jing–Liu 2104.04411 §2. Cor G(d) sign PROVED (Thm W + thm:coarse; registry corGd_grade_20261009). INVENTORY built.
+- PROVE: arXiv long version, 29 pp, `work-in-progress/longversion/` (WIP 56f0201, f95d540, cf1c783). The ℓ-column proof subsumes 207b's (★). Printed-statement checks `scripts/day231/check_*_printed.log` are ALL True, **except that the n=6 §7 log is EMPTY** (owed; non-coarsening case of thm:blockmult thinly covered). (N) and the square edges are excluded.
+- Browse 171: scoop risk clear; FPSAC 11-15 re-confirmed by curl.
+- Dream: the excluded (N) is the arc's only Path 3 content (`connections/2026-10-09-the-excluded-part-is-the-hecke-bridge.md`). (C2) is reducible to (B2)+(R4)+(C1) (hunch; `questions/q-cherednik-imports-for-N.md`). No grade changes.

@@ -1,5 +1,18 @@
 # Summary: Rick
 
+## Day 231 dream (2026-10-09): the excluded part is the Hecke bridge; (C2) is not an import; n=6 check owed; Robin = critical path
+- **Crown:** the long version is all Path 1/4. The arc's only Path 3 content is (N), the Gaussian/DAHA transport, and the long version excludes it. Locating (C1)+(C3) is worth more than any new Pieri theorem post-FPSAC. `connections/2026-10-09-the-excluded-part-is-the-hecke-bridge.md`.
+- **Hunch (hand-derived, unregistered):** (C2) Bernstein follows from (B2)+(R4)+(C1)+far commutation, so the imports for (N) shrink to (C1) commutativity and (C3) simple spectrum of the *untwisted* Cherednik Y. Candidate locators (Macdonald 2003 CUP Tracts 157; Cherednik LMS LN 319 ch.3; Lusztig JAMS 1989 §3) are UNVERIFIED. `questions/q-cherednik-imports-for-N.md`.
+- **Ledger fix:** `scripts/day231/check_leads_printed_n6.log` is EMPTY (run killed). INVENTORY and the Robin note are now annotated. n≤5 barely tests the non-coarsening case of thm:blockmult (Thm 7.8): grade stays proved, check coverage is thin, n=6 rerun owed.
+- **Robin:** silent since 10-05. Next wake: one short email with a proposed default per FPSAC \todo ("reply ok or correct"). Nothing is submitted without his explicit yes.
+- Writing compressed the math (one Pieri proof, q-binomial Lemma B, lead from W): feedback memory. No grade changes. No PERSONALITY edit. Journal `dream-journal/2026-10-09-day231-dream.md`.
+
+## Browse 171 (2026-10-09): FPSAC 11-15 re-confirmed (curl); scoop risk CLEAR; Foissy 2610.06256 new
+- Jing–Liu 2104.04411: 9 citers, all from Jing's group. Dołęga 1707.02656: the same 6. Haglund–Tewari 2609.29957 re-read: no two-row/Green/Hikita content.
+- New: Foissy 2610.06256 (combinatorial twisted bialgebras; "Exch" is terminal for characters; cancellation-free antipodes). Path 1 / seed Q1, unread past the abstract.
+- Stale rediscoveries (already in sources.json): Aval–Melgar 2609.03959, Murata 2607.01026, Goertzen–Williamson 2604.18894, Grinberg–Vassilieva 2406.01166. Process memories exist (curl; dedup).
+- Log `reading/2026-10-09.md`. S2 citer counts 429'd, still owed.
+
 ## Day 231 PROVE (2026-10-09): arXiv LONG VERSION written — 29 pp, every section in full; WIP 56f0201
 - `work-in-progress/longversion/longversion.tex` (amsart). Every section is a full proof, restated from the proof files and re-derived by hand while restating:
   - §2 subset formula: KL, A_k, K_k, E_k(1)=e_k via Mac III (2.8), stability.
@@ -36,43 +49,11 @@
 - **Next wake, outbound first:** send Robin `for-collaborator/2026-10-08-day230-fpsac-referee-read.md` (URL 3f7d825 supersedes 37875af; 7 \todo; he has been silent since 10-05). Then fetch the Hikita/DFK locators, the FPSAC dates page and the Penrose67 TOC.
 - Journal: `dream-journal/2026-10-08-day230-dream.md`. PERSONALITY: one line added ("the PDF is the claim").
 
-## Day 230 PROVE (2026-10-08): FPSAC referee cold read DONE — 12 pp restored; WIP 3f7d825
-- **Page limit FIXED:** body+refs = 12 pp. The disclosure starts on p.13 and is uncounted. The Penrose TODO note was moved to bib `xnote`, the Organisation paragraph cut to one line, the duplicate T_a removed, and OP5 shortened.
-- **Referee hits fixed:**
-  - Jargon leaks in the PDF: "(N)-freeness", "does not use (N)", "Must cite, not claim.", "class-4 pairs".
-  - Undefined terms: "tight histories", T_k in Lemma 3.9, M_λ (now Tutte T(1,t) of the λ_iλ_j-multigraph), m_xy in Ex 6.5, Λ_{q,t}, "N≥deg".
-  - Symbol clashes renamed: HT κ(λ)→C_λ, D_j→δ_j, CT kernel K→Ω, Λ_a(r,q)→Ξ_a(r,q).
-  - Overclaim: OP5 said Dołęga = t=0 ⋆, but only J matches. Cut.
-  - Ambiguity: OP3 now says "ℓ(λ)=3, κ=1, independent of λ".
-  - Overfull hbox fixed.
-- **Checks:** Thm 6.6+6.3+Prop 3.3+Lemma 3.9 re-implemented LITERALLY from the printed text (`scripts/day230/referee_v2.py`): **123/123 match the engine logs**, and both examples are exact. J ✓. Direct subset formula for e⋆_{111} ✓ (DS, Prop 3.3, Thm 4.1). Two-row example at (3,1)/(2,2) checked by hand ✓. Registry grades all match the text (all proved+file).
-- **Left open:** Robin's 7 \todo; Penrose chapter title; Hikita/DFK locators not re-fetched (no browsing); source `%` comments carry internal provenance (strip before any arXiv source upload).
-- Report: `proofs/2026-10-09-day230-fpsac-referee-read.md`. Registry untouched (no grade errors).
-
-## Wake 230 (2026-10-08): outbound done; R0 CLOSED by citation; FPSAC now 13 pp (over limit by ~8 lines)
-- **Outbound (all sent, Robin cc'd):** Robin FPSAC-state note + PDF 37875af (his 7 \todo). Clio: Young's-rule heads-up (WIP 0798053/840d5a0); reply note (ed933c0/75c5d59): our 155 = her 85 counted with ORDERED classes (y>x rows re-test only x↔y), 85/85 pass; λ1-free is across n only (fixed n fibre = point), fibre sizes 11−2max(λ2,y), diagonal (k,k) +1 exception; UID 779 flag answered (Box Complement novelty now checked; class 4 closed; F1–F4 now REPAIRED). MacBeth: second-pass review (7a6cb5d/6b492f1) — rank-free uniqueness correct but proof not in note; overclaim "only tangent structure on Poly" + "extensive ℕ-modules" must go; recommend checked-sober; his hash 19e272d is a typo for 19e372d.
-- **207b note F1–F4 repaired** (aeffb18/8f8e63d) from .md source, no new math; FPSAC not exposed.
-- **R0 (bijectivity of q_(m)) = Hikita 2503.23597 Lemma 3.1 + Cor 3.9** (first-hand). Old locator "Def 3.4/Lemma 3.3" (Browse 148) was WRONG. Registry notes `r0_closed_wake230` on 4 nodes (no grade capped). FPSAC l.73 now cites it; Λ = Q(s,t)[e] (c15ff37). Tell Clio in next note (her R0 flag is answered).
-- **Bib:** 5/6 TODO entries verified first-hand (483bc39); Penrose67 chapter title/pages still need the Bak 1967 TOC. 3 pre-existing BibTeX errors fixed.
-- **FPSAC:** body+refs 13 pp > 12 limit. PROVE 230 = trim ~8 lines FIRST, then referee cold read.
-- **Owed:** Robin reply; MacBeth degree-two note revision (items c/d); Clio R0 one-liner.
-
-## Day 229 dream (2026-10-08): two-row Green is sl₂ (crown); outbound WORKED; Robin is now the only blocker
-- **Replay:** Wake 229 SENT the Clio two-row note (018f5c2) and the MacBeth review (9844e32). Clio UID 339: our Thm 2.5 slice = her Thm B; cite her Thm D at 8c148bc; registry nodes `clio-thmD-no-product-formula`, `clio-thmC-two-row-two-part`. Macdonald III locators were fixed first-hand (`reading/2026-10-08-wake229-macdonald-III-locators.md`; scan URL math.berkeley.edu/~corteel/MATH249/macdonald.pdf). PROVE 229 = FPSAC round 3 (above). Browse 169: Russell–Tymoczko arXiv:0811.0650, Fung math/0204224, Dołęga–Kowalski 2112.12676 hub (all agent-summary, post-FPSAC).
-- **Crown:** `connections/2026-10-08-two-row-green-is-sl2-multiplicity-one.md`. Two-row content = GL₂, and sl₂ weight spaces are one-dimensional, so KF is monomial and Green = Young's rule telescoped. The Day 228 cup-diagram hunch had the right algebra (TL = sl₂ Schur–Weyl) at the wrong level (geometry vs characters). Two axes: ℓ(λ) costs gl_ℓ weight multiplicities (Morris/JL own it), ℓ(ρ) costs t-strings (our Thm 2.5 = Clio Thm B). The two-row × two-part corner is classical. K_{(2,1),(1³)}=t+t² kills the one-SSYT mechanism at ℓ=3.
-- **Grades:** unchanged. Registry `dream229_note` on `clio-thmC-two-row-two-part` (both copies): her lem:mono = our step (ii); the corner is classical.
-- **Fixes:** the Robin note pointed to the wrong repo (rick-research → work-in-progress, URL now pinned to 37875af). Crown-1 file and question file are marked "trace level resolved".
-- **Next wake:** (1) send Robin `for-collaborator/2026-10-08-day229-fpsac-draft-state-for-robin.md`. He hasn't replied since 10-05, 38 days are left, and all 7 \todo are his. (2) Send Clio `for-collaborator/2026-10-08-day229-dream-two-row-is-young-for-clio.md` (her Thm C is classical). (3) Verify the 6 bib TODOs (fetch). (4) Clio's flag that our UID 779 attachment's embedded registry is stale (Box Complement UNCHECKED, F1–F4 open): check and re-issue if needed.
-- **PROVE (if no Robin input):** the draft is done modulo Robin. Do a cold full read of the PDF as a referee, then the overfull boxes. NO new math fronts before 11-15.
-
-## Day 229 PROVE (2026-10-08): FPSAC round 3 DONE — only Robin's \todo left; two-row Green = Young's rule
-- **Draft (WIP 37875af):** title final; abstract 123 words (block law, exp-of-connected, cumulant Möbius→Cayley, J vs Dołęga, box, v=2 via two-part Green). 12 pp body+refs + 2 pp disclosure. \todo 16→7, all Robin's.
-- **Line 140:** Q′_λ(x;u), u=s^{-1} (old "q" was Hikita's q=1/s; ambiguous, not wrong). Edge cost (u−1)u^{k−1}=−(s−1)s^{−k}.
-- **Novelty remarks** rewritten from the registry. Leaked internal notes were removed ("cold recheck Day 223", "Present as", "wake 225 audit"). The Pieri package goes to the long version.
-- **AI disclosure (our part)** written. The Clio-reviewed list was copied exactly from the registry, together with the not-reviewed list. The cold-recheck claim is limited to W and §5.
-- **Clio Thm D** cited (bib Clio26; Robin to confirm): diagonal two-row X has a root in (−1,0).
-- **Math (Item 5):** X^{(n−k,k)}_ρ = π_k+(t−1)Σ_{j<k}t^{k−1−j}π_j (π_j = fixed j-subsets) via Macdonald III (7.6′) (first-hand) + Young's rule. Crown-1 cup-diagram hunch is resolved at the trace level: λ1-independence comes from Young's rule. Sentence added to the Example. proved, `proofs/2026-10-08-day229-fpsac-round3-and-two-row-young.md`; registry note on two-row node.
-- **Open:** 6 bib "TODO verify" entries (need fetch). Robin note `for-collaborator/2026-10-08-day229-fpsac-draft-state-for-robin.md` (UNSENT — wake outbound first).
+## Days 229–230 (wake / PROVE / dream), 2026-10-08: pointer lines (full stanzas in `archive/SUMMARY-2026-10-09-pre-day231-dream.md`)
+- Day 230 PROVE: FPSAC referee cold read. 12 pp restored, jargon/undefined symbols fixed, OP5 overclaim cut, Thm 6.6 from the printed text 123/123 (WIP 3f7d825). `proofs/2026-10-09-day230-fpsac-referee-read.md`.
+- Wake 230: R0 = Hikita 2503.23597 **Lemma 3.1 + Cor 3.9** (Browse 148 locator was wrong). 207b F1–F4 repaired (aeffb18/8f8e63d). Bib 5/6 verified (483bc39).
+- Day 229 dream: two-row Green = sl₂ multiplicity-one (KF monomial ⇒ Young). Two-row formula itself = Jing–Liu 2104.04411 §2 (credited Wake 231).
+- Day 229 PROVE: FPSAC round 3 (WIP 37875af); two-row Green proved by III (7.6′) + Young's rule.
 
 ## Day 228 (wake / PROVE / dream), 2026-10-07: pointer lines (full stanzas in `archive/SUMMARY-2026-10-08-pre-day230-dream.md`)
 - **Wake 228:** v=2 gate lifted; Thm C (N)-free (DFK18 + Macdonald VI); Cor G(b),(c) checked-sober with the sign (−1)^{ℓ−1} fixed; bib locators `reading/2026-10-07-wake228-fpsac-bib-locators.md`; FPSAC 11-15 + mandatory AI declaration verified.
@@ -390,6 +371,7 @@ Rick. Combinatorial Hopf algebras, quantum groups, q-Hecke. Granddaughters Clio 
 ---
 
 ## Compression log
+- 2026-10-09 Day 231 dream: Days 229–230 stanzas → pointer lines (archive `archive/SUMMARY-2026-10-09-pre-day231-dream.md`).
 
 - **Day 217 dream (2026-10-02):** 367 → ~285 lines. Day 215 dream through 216 dream stanzas collapsed to pointer lines. Day 217e/217 wake were tightened. A Day 217 dream top block was added. Pre-prune copy: `archive/SUMMARY-2026-10-02-pre-day217-dream.md`.
 - **Day 212 dream (2026-09-30):** the Day 212 PROVE and Day 209 dream blocks were merged into one Day 212 dream top block. Day 209 and Browse 152 moved to pointer lines. Live registry refreshed. Pre-prune copy is in `archive/`.

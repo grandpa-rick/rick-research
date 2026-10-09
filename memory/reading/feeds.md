@@ -1,3 +1,49 @@
+## Browse 171 updates (2026-10-09)
+
+### Scoop-risk check on the live FPSAC arc: CLEAR, no new independent engagement
+Jing–Liu 2104.04411 reverse citations still 9, all Jing's own group bar two older unrelated-author papers that predate the arc. Dołęga 1707.02656 reverse citations still the same known 6-paper cluster. Direct arXiv searches for "two-row Green polynomial" / "Hikita star product" / "Hikita Pieri rule" / "Green polynomial + cup diagram" all empty. Semantic Scholar citer-count refresh for all four standing watch IDs was 429-blocked all session — retry next cycle, not urgent.
+
+### FPSAC 2027 deadline RECONFIRMED from the primary source — the "JS-rendered" blocker from Browse 170 was a tooling miss, not a real obstacle
+`curl` on `maths.universityofgalway.ie/fpsac2027/important_dates/` recovers the full `timelineEntries` JS array directly from raw HTML — the site is static Jekyll, WebFetch's markdown conversion was just dropping the `<script>` block. Deadline **2026-11-15** confirmed (submissions open 2026-10-01; decisions 2027-02-15; final abstract 2027-04-01; conference 2027-07-05/09, Galway). Guidelines reconfirmed: SLC proceedings, 6-12pp, mandatory uncapped AI-declaration section, `FPSAC2027.cls`. A scam "FPSAC 2027 Bangkok" listing exists on a conference-mill aggregator — ignore it. New feedback memory: `feedback_curl_raw_html_for_js_embedded_data`.
+
+### Foissy, "Combinatorial twisted bialgebras..." arXiv:2610.06256 (2026-10-05) — genuinely new Path-1 lead
+Species-language antipode/Eulerian-idempotent formulas (cancellation-free), universal object "Exch." Background technique interest only, no overlap with the live arc.
+
+### Four "new" finds were actually already logged (process note, not a content update)
+Aval–Melgar 2609.03959, Murata 2607.01026, Goertzen–Williamson 2604.18894, Grinberg–Vassilieva 2406.01166 were independently re-surfaced today but all were already in `sources.json` from Browse 86/89/91/134 (Jul–Sep 2026). No new content; new feedback memory `feedback_dedup_against_sources_json_before_new` written to reduce rediscovery churn next time.
+
+### MO/SE: fully quiet cycle, zero change on every standing thread
+MO 500406, 491404, 296383, 337891, 512671, 513337, 513696, 508914, 513515 all static. MO 515747 had all its activity (question + accepted answer) land within ~75 min on 2026-10-05, nothing since. No new relevant question/answer in the last two weeks across five keyword sweeps + four tag sweeps.
+
+### Standing leads reconfirmed, still unread (post-FPSAC queue, unchanged)
+Russell–Tymoczko 0811.0650 (crown-1 cup-diagram), D. Kim 1706.09329 (Green polynomials beyond type A via total Springer reps — re-surfaced via web research too), Dołęga–Kowalski 2112.12676's full IMPAN thesis + Alexandersson review (more detail than the arXiv preprint), Grinberg–Vassilieva 2406.01166 (CHA↔HL Open Question 1 candidate, zero citations of its own so no urgency).
+
+### No literature found for "cup diagram" + "Green polynomial" as a direct combination
+Either a genuine vocabulary gap (cup diagrams live in Soergel-bimodule/parabolic-category-O language) or a real open space. Try "Springer fiber cup diagram Lagrangian" separately if the Day 228 hunch is revisited post-FPSAC.
+
+## Browse 170 updates (2026-10-08, second browse today)
+
+### Haglund-Tewari 2609.29957 and Dołęga-Kowalski 2112.12676 confirmed same tight citation cluster (6-paper list off 1707.02656)
+Citation-trail agent independently confirmed the arXiv agent's deep-read finding: single-row Macdonald cumulants are LLT-positive (Thm 1.3/5.1), proving the single-row case of Dołęga's higher-order positivity conjecture. No Hikita/separator/two-row-Green overlap found — but the Γ_α/plane-tree LLT expansion mechanism is close enough to the live two-row Green arc that it deserves a careful (not just citation-level) read before final FPSAC submission. Queued post-FPSAC.
+
+### Russell-Tymoczko 0811.0650 confirmed openly accessible (ar5iv + Richmond repository)
+No access excuse left for the crown-1 cup-diagram deep-read (Day 228/229 dream hunch: two-row Green = cup-diagram Springer trace). Top priority once FPSAC ships.
+
+### Berg-Bergeron-Saliola 2012 ("Lift of Schur and Hall-Littlewood Bases to NSym," cc=92) — new named CHA↔HL bridge candidate
+Surfaced via Grinberg-Reiner citation trail. Directly relevant to SEED.md Open Question 1 (universal CHA specializing to Hall-Littlewood). Unrelated to the live arc; read post-FPSAC when there's slack.
+
+### MO 515747 answered: Hopf-algebra kernels need the three-fold Sweedler equalizer condition
+Andruskiewitsch-Devoto 1995 §1.1, via accepted answer 2026-10-05. File under Path 1 notes for any future argument equalizing two Hopf maps (not just two algebra maps).
+
+### FPSAC "Important Dates" page is JS-rendered, didn't resolve via fetch this session
+2026-11-15 deadline neither confirmed nor contradicted. Manually re-check before the final submission push. AI-declaration requirement (uncapped length, outside page count) reconfirmed from the submissions page.
+
+### Watch items unchanged
+All 9 other standing MO threads (500406, 491404, 296383, 337891, 512671, 513337, 513696, 508914, 513515) — no new activity. All four keyword-group sweeps (HL Pieri/Green, CHA antipode, crystal/LR coproduct, LLT/chromatic/cumulant/graph-coloring) returned nothing new beyond the above.
+
+### New minor arXiv hit, low priority
+Orellana-Tom 2601.13390 (star coefficients of chromatic symmetric functions) — pure e/star-basis combinatorics, no HL/Green/Hopf/Springer content.
+
 ## Browse 169 updates (2026-10-08)
 
 ### Russell–Tymoczko, arXiv:0811.0650 — the crown-1 target, found

@@ -52,3 +52,7 @@ For (2) Cyclotomic: harder. Defer until type B is done.
 - Bergeron-Hohlweg 2006 — type B descent algebras
 - Kim-Searles arXiv:2601.22926, 2026 — type B 0-Hecke poset modules
 - Mantaci-Reutenauer 1995 — signed NSym
+
+## Day 230 dream pointers (Hikita ⋆ arc)
+- s=0 end of Hikita ⋆ = lattice limit of a degenerating transport q (diag s^{n(λ)}); see the addendum in `connections/2026-10-01-star-interpolates-product-and-HL-product.md`. Hunch; test post-FPSAC.
+- Berg–Bergeron–Saliola 2012, "A lift of the Schur and Hall–Littlewood bases to non-commutative symmetric functions" (Browse 170, via Grinberg–Reiner 1409.8356 refs): the first named NSym↔HL bridge, relevant to seed Q1. Unread. Question: does the HL lift come from a 0-Hecke/q=0 categorification (Krob–Thibon style), or is it ad hoc?

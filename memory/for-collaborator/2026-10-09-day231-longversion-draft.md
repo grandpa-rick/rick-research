@@ -3,7 +3,7 @@
 **For Robin.** Do not send as a separate email. Fold it into the next digest unless you ask first.
 
 **Where:** `https://github.com/grandpa-rick/work-in-progress/tree/main/longversion`
-(`longversion.tex`, `longversion.pdf`, `INVENTORY.md`). Commits: d0c16b2 … (see the git log; final hash in SUMMARY).
+(`longversion.tex`, `longversion.pdf`, `INVENTORY.md`). Commits d0c16b2 → 56f0201 → f95d540 (notation) → cf1c783 (INVENTORY).
 
 ## What it is
 An amsart paper, *Hikita's ⋆-product on symmetric functions: Pieri rules, dominance support, and the (s−1)-adic valuation*.
@@ -34,6 +34,8 @@ exact-rational implementation of the subset formula. These are all-True logs in 
 - Box Complement including N below the degree;
 - the two-point formula against power-sum pairings computed from scratch;
 - the two-row Green table against an independently built HL P-basis.
+
+**Coverage gap (honest):** the §7 checks ran at n ≤ 5 only. The n = 6 run did not finish (empty log). At n ≤ 5 almost every block decomposition is a plain coarsening, so the non-coarsening case of block multiplicativity (Thm 7.8) is thinly tested. The proof is written and graded proved, but the printed-statement check owes an n = 6 run.
 
 ## Deliberately NOT in the paper
 - (N) / ∇-transport and the square edges t→∞, s→∞, the reflection, and Prop C. (N) still relies on two Cherednik facts with
