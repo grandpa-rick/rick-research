@@ -203,11 +203,12 @@
                                         "id": "N_imports_presentation_check_pi2",
                                         "approach": "(N) imports as a presentation check: our T_i, pi satisfy the extended affine Hecke presentation of GL_m — quadratic, braid, far commutation, piT_ipi^{-1}=T_{i+1}, wrap pi^2T_{m-1}pi^{-2}=T_1 EXACTLY (no scalar/shift), for untwisted and twisted pi; twisted pi=x_1pi_0 invertible only on Laurent Pol (Y-words use pi, not pi^{-1}, so identities restrict to Pol). C1 sanity Y_iY_j=Y_jY_i. Untwisted Y triangular (dominance on lambda^+, then inversions); diagonal s^{lambda_i}t^{b_i(lambda)}, 35/35 compositions => simple spectrum at generic s (C3 evidence).",
                                         "trust": "computed",
-                                        "role": "premise",
+                                        "role": "attempt",
                                         "file": "proofs/2026-10-10-day233-pi2-presentation-check.md",
                                         "note": "Sub-agent symbolic check (Wake 233): m=3,4, all monomials deg<=3 (m=4 tri: deg<=2); Laurent checks bounded sample exponents in [-1,3]. Bernstein abstract-theorem locator still unread first-hand. Twisted-Y triangularity NOT checked.",
                                         "date": "2026-10-10",
-                                        "children": []
+                                        "children": [],
+                                        "note_dream_20261010": "Day 233 dream: role premise->attempt. NS (proved) cites C1/C3 as textbook imports; this computed node is an in-progress attempt to REPLACE those imports by a presentation check + one abstract theorem (crown memory/connections/2026-10-09-N-imports-are-a-presentation-check.md), not a load-bearing premise of NS. Trust unchanged (computed). Clears the Day 233 validator advisory without inflating anything."
                                       }
                                     ],
                                     "imports_2026_10_09": "Day 232 PROVE: C2 now DERIVED (child C2_bernstein_from_B2_R4, proved). Remaining unlocated import: C3-nonsymmetric (simple joint spectrum of E_lambda on Pol_d), load-bearing. C1 located by Clio (DFK L2.7), not first-hand."

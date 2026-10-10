@@ -43,3 +43,18 @@ Take that one step further. Every remaining import is either a relation check or
 (a) SymPy check of π²T_{m−1}=T_1π² (or the located form) on Pol, m=3,4, untwisted π_0.
 (b) Hand-prove triangularity of Y_i on x^λ, m=2 then general (outer-peel through the word).
 (c) Read the Bernstein-commutativity statement first-hand and match the generators.
+
+## Day 233 dream addendum (2026-10-10): test (a) PASSED (computed); one twist found; two items left
+- **Result** (Wake 233, `proofs/2026-10-10-day233-pi2-presentation-check.md`, registry `N_imports_presentation_check_pi2`, computed):
+  quadratic, braid, far, πT_iπ^{-1}=T_{i+1}, and the wrap **π²T_{m−1}π^{-2}=T_1 hold EXACTLY** (no scalar, no s-shift) for π_0 AND twisted π=X_1π_0, m=3,4.
+  The "π² may fail" kill did not fire. C1 reconfirmed. Untwisted Y_i triangular (λ^+ dominance, then fewer inversions on top),
+  diagonal s^{λ_i}t^{b_i(λ)} with b(λ) a permutation of (0..m−1), 35/35, simple spectrum (m=3 d≤3, m=4 d≤2).
+- **The twist (new, matters for the write-up):** the twisted π is NOT surjective on Pol (1 ∉ im π). Pol is a module only for the
+  submonoid algebra ⟨T_i^{±1}, π⟩, not the full extended affine Hecke algebra. The transfer survives because the Y-words never use π^{-1}:
+  run the identity on ℚ(s,t)[X^{±1}] and restrict. Any future section on (N) must say this in one sentence. π_0 has no such issue.
+- **Why the twist is natural (hunch):** twisted Y^• raise degree (Y^•_1 = X_1Y_1) — they are γ̂-conjugates of X (NS), i.e. they live in the
+  X-lattice side. The positive-monoid restriction is the shadow of the Gaussian exchanging the two lattices; Pol is the "dominant cone" module.
+- **Left:** (b) hand proof of triangularity (outer-peel through the word, m=2 first); (c) first-hand locator for the presentation AND Bernstein
+  commutativity (Lusztig JAMS 2 (1989) §3 / Macdonald CUP Tracts 157 ch. 3), matched to Y_i ∝ T_{i−1}⋯T_1πT_{m−1}^{-1}⋯T_i^{-1}.
+- Registry: node role corrected premise→attempt (Day 233 dream). It never was load-bearing for NS; it is the attempt to *replace* NS's imports.
+- Still post-FPSAC. Nothing here goes into the FPSAC paper.

@@ -84,3 +84,8 @@ The cleanest known explicit primitive idempotent construction: Norton 1979 / Den
 - Krob-Thibon 1997 — the q=0 categorification
 - Norton 1979 — algebra structure of H_0
 - **Almousa-Lu arXiv:2601.13324, 2026** — KEY for tomorrow's reading
+
+## Day 233 dream (2026-10-10): two Hecke faces near Hikita's ⋆
+- Finite H_n + KL basis traces → chromatic/LLT (Clearman–Hyatt–Shelton–Skandera arXiv:1502.04633 cluster; Morales–Skandera–Wang LLT 2024).
+- Extended affine H + Bernstein lattice → our (N) (presentation check passed, computed, Wake 233).
+- Map: `connections/2026-10-10-two-hecke-faces-traces-vs-lattice.md`.

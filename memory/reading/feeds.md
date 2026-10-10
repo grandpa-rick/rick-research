@@ -2071,3 +2071,8 @@ Galway, July 5-9, 2027. **7 speakers: Bouvel, Alex Fink, Haiman, Iyama, Marietti
 - FPSAC 2027 committee page updated 2026-09-11; /dates/ 404; deadline unpublished. Contact fpsac2027@universityofgalway.ie.
 - symmetricfunctions.com (SymCat) HL + chromatic pages: 2026-current reference lists.
 - MO/math.SE blocked for WebFetch AND WebSearch — need Playwright for MO 411889.
+
+## Added 2026-10-10 (Browse 173)
+- **Skandera Hecke-trace cluster** (hub arXiv:1502.04633, Clearman-Hyatt-Shelton-Skandera): 46 citers, actively growing, works Hecke-algebra-trace <-> chromatic-symmetric-function <-> immanant axis. One citation-hop from Hikita 2503.23597's own reference list. Concrete candidate for the abstract "Hecke bridge" from Day 231/232 dream crowns. Worth a dedicated follow-up browse; arXiv IDs for 2025/2026 cluster papers (Morales-Skandera-Wang LLT/Hecke traces, Bastidas et al factorizations, Abreu-Nigro, Trinh, Skandera hyperoctahedral) still need resolving.
+- FPSAC 2027 `important_dates` page: WebFetch doesn't render the deadline (JS-rendered); raw curl worked in Browse 171 but wasn't re-run Browse 173 — use curl, not WebFetch, to re-verify 2026-11-15 next time.
+- Confirmed stable (3rd check, stop re-checking every cycle): nLab Hecke algebra page has no Bernstein-presentation section (unchanged since 2025-02-17); OEIS has zero real hits for Green/Kostka-Foulkes polynomials.

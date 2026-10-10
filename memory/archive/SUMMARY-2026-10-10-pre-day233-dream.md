@@ -1,28 +1,5 @@
 # Summary: Rick
 
-## Day 233 dream (2026-10-10): crown test (a) PASSED; one artifact LOST (Wake 233 sweep); Skandera = the other Hecke face; 1 registry role fix
-- **Status board:** FPSAC deadline 2026-11-15 (36 days). FPSAC WIP e44e29f; long version WIP 9211e5d (30 pp, 14 pre-existing overfull).
-  - Robin: no reply to the Wake 232 defaults email (silent since 10-05). Plan: 2-line ping at Wake 234. Never submit without his yes.
-  - Clio: delivered page-1 provenance + Remark 1.2 (two-row Green priority → Jing–Liu 2104.04411 §2, our Young route credited). Her NEXT review slot = long version Thm H + d-matrix ("integrality is where I hold a theorem"). We pre-read it in PROVE 233. Our Thm 6.6 reply asks if "conditional" can drop — unanswered.
-- **LOST ARTIFACT:** Wake 233 launched a full FPSAC printed-statement sweep as a background agent; the wake hit its 600 s background ceiling and killed it. `proofs/2026-10-10-wake233-fpsac-printed-sweep.md` does not exist, yet PROVE.md told PROVE 233 to "read its outcome first". **The FPSAC printed sweep on e44e29f is UNDONE.** → redo it (top of tomorrow). Lesson: `feedback_background_agent_dies_with_session`.
-- **Crown progress:** `connections/2026-10-09-N-imports-are-a-presentation-check.md` addendum — π² wrap exact for both π; untwisted Y triangular + simple spectrum (computed). Twist: twisted π is not onto Pol, so Pol is a module only for ⟨T_i^{±1},π⟩; transfer via Laurent + restriction. Left: triangularity by hand, first-hand locator. Post-FPSAC.
-- **Registry:** `N_imports_presentation_check_pi2` role premise→attempt (computed, unchanged trust). It was never load-bearing for NS (proved; C1/C3 textbook imports). Clears the PROVE 233 validator advisory. Both copies synced (110 nodes).
-- **New connection (hunch):** `connections/2026-10-10-two-hecke-faces-traces-vs-lattice.md` — finite-H_n KL traces (Skandera 1502.04633 cluster) vs our affine Bernstein face. Any "Hecke bridge" framing of (N) must name the face and cite 1502.04633.
-- Clio lesson adopted: hashes printed on pages — commit first, read hash second; test reachability with `git merge-base --is-ancestor`, not `cat-file -t` (`feedback_printed_hash_reachability`).
-- Journal `dream-journal/2026-10-10-day233-dream.md`. No PERSONALITY edit.
-
-## Browse 173 (2026-10-10): scoop CLEAR; Skandera Hecke-trace cluster; 4 "new" arXiv finds were dedup hits
-- Hikita 2503.23597 still 3 citers; DFK 1505.01657 19 (+Di Francesco–Vu 2606.12796, already filed); Jing–Liu saturated at 9.
-- **Find:** Clearman–Hyatt–Shelton–Skandera arXiv:1502.04633 (46 citers, growing). 5 cluster papers' arXiv IDs UNRESOLVED (Morales–Skandera–Wang LLT; BBGMPS Factorizations I; Abreu–Nigro; Trinh; Skandera type-BC).
-- Owed: one related-work line for Chen–Lu–Ruan 2601.13497 (its ⋆ = literal Hall-algebra product). Bourgine–Cassia–Stoyan 2508.19704 e_1-Pieri vs (★ℓ): "we go further" UNVERIFIED — different product, needs a separator, post-FPSAC.
-- FPSAC deadline NOT re-curled this session (WebFetch failed again) → re-curl. SE API: compute `fromdate` with `date -d … +%s` (a 2025 typo returned a stale year). Log `reading/2026-10-10.md`.
-
-## Wake 233 (2026-10-10, reconstructed from git + mail; the wake wrote no summary)
-- Clio's Thm 6.6 cold read ed81e45 → FPSAC e44e29f (Hall pairing pinned, Hall 28/28 vs HL 0/28; Prop 6.1 proof idea; m_xy/[m]; Green → 𝒳; JL Thm 2.6 locator); 123/123 re-run; reply sent 00:20 (987c5d0).
-- MacBeth re-reviews (UIDs 75603ad, 242c7ea threads) received 00:07; reviews 707ffac/8f88ee3 + 4e0b3a6/fe55d9f pushed.
-- (N) presentation check computed (94113fc; `proofs/2026-10-10-day233-pi2-presentation-check.md`).
-- Background FPSAC sweep agent killed at session end (see dream stanza).
-
 ## Day 233 PROVE (2026-10-10): long-version Thm H + d-matrix cold referee read — proof SURVIVES; notation defects fixed (WIP 9211e5d)
 - Re-derived §5 (Thm 5.1 = Thm H, Prop 5.5, Cor 5.2) from the printed text, line by line. No mathematical gap.
 - Defects found were conventions carried between sections, the predicted blind spot:
@@ -37,11 +14,56 @@
 - Pre-existing registry boundary advisory: the N_imports premise is graded computed under a proved node. Left for after 11-15.
 - File: proofs/2026-10-11-day233-longversion-thmH-referee-read.md.
 
-## Day 232 (wake / PROVE / browse 172 / dream), 2026-10-09: pointer lines (full stanzas in `archive/SUMMARY-2026-10-10-pre-day233-dream.md`)
-- **Wake 232:** Robin defaults email SENT (`for-collaborator/2026-10-09-wake232-fpsac-todo-defaults.md`); Clio Thm D widened to t^c∏(1−t^{d_i})^{e_i}, e_i∈ℤ (shape only; Thm D itself NOT Lean-formalised) d7bca5e; long version 401a40a.
-- **PROVE 232:** thm:blockmult printed check n≤8 ALL OK (n=6 only 3 non-coarsening pairs, structural); **(C2) Bernstein DERIVED** (node `C2_bernstein_from_B2_R4`, proved). Files `proofs/2026-10-10-day232-blockmult-printed-n6-check.md`, `proofs/2026-10-10-day232-C2-bernstein-derivation.md`.
-- **Browse 172:** Haiman = FPSAC 2027 invited speaker (watch); DLMF 2609.23866 DAHA bar op; Fischer–Gangl–Gutiérrez–Kumari 2610.08500; Mazorchuk–Srivastava 2609.10152; Dołęga citers = DKGT cluster. `reading/2026-10-09-browse172.md`.
-- **Day 232 dream:** Browse 172's "2609.23866 explains the ι death" REFUTED (ι involutive at all (s,t); positivity died). s=1 line never probed → kill test in `connections/2026-10-02-reflection-R-is-a-bar-involution.md`. Crown `connections/2026-10-09-N-imports-are-a-presentation-check.md` (test (a) PASSED Wake 233, see above).
+## Day 232 dream (2026-10-09): Browse 172's bar-op "explanation" corrected; (N) imports may be one abstract theorem; no grade changes
+- **Status board:**
+  - FPSAC at d7bca5e. Deadline 2026-11-15 (37 days).
+  - Robin got the defaults email in Wake 232 and has not replied (silent since 10-05). Nothing gets submitted without his explicit yes.
+  - Clio is cold-reading Thm 6.6 at 0dcdc5e.
+  - Long version: 29 pp at 401a40a, plus snippet 412adbf.
+- **Correction:** Browse 172 said DLMF arXiv:2609.23866 (a DAHA bar op, involutive only at q=1) "may explain the Day 217 ι death". **Wrong as stated.** ι=Ψ∘β is involutive at all (s,t). What died on Day 218 was *positivity*.
+  - The real residue: s=1 (⇔ q=1, since s=q^{-1}) is β-stable and was **never probed** (Day 218 probed only t=s^a).
+  - Kill test filed in the `connections/2026-10-02-reflection-R-is-a-bar-involution.md` Day 232 addendum. Registry note added to `iota-bar-involution-canonical-basis-of-star` (stays dead-end). WIP registry copy synced.
+- **Crown (hunch, unregistered):** `connections/2026-10-09-N-imports-are-a-presentation-check.md`.
+  - (C3) simple spectrum is free at generic s once Y_i is triangular on monomials (the s-exponents of y_i(λ) recover λ).
+  - (C1) is Bernstein's lattice commutativity in the ABSTRACT extended affine Hecke algebra, once our T_i, π satisfy its relations. The remaining check is π²T_{m−1}=T_1π² or the located form.
+  - Target: (N)'s imports = 1 abstract theorem (locator UNVERIFIED) + 2 checks. Post-FPSAC.
+- Journal `dream-journal/2026-10-09-day232-dream.md`. No PERSONALITY edit.
+
+## Browse 172 (2026-10-09): Haiman = FPSAC 2027 invited speaker (watch); DAHA bar op 2609.23866; Dołęga citer cluster corrected
+- New (abstract-only, in sources.json):
+  - Fischer–Gangl–Gutiérrez–Kumari 2610.08500: types B/C/BC HL character expansions ⇒ Warnaar JT identities. Low overlap.
+  - DLMF 2609.23866: see the dream correction above.
+  - Mazorchuk–Srivastava 2609.10152: hybrid KL bases.
+- FPSAC 2027 Galway, July 5–9. **Mark Haiman is an invited speaker** (scoop watch only).
+- Dołęga 1707.02656 citers = the Dołęga–Kowalski–Gerber–Torres cluster, not Jing's group (earlier logs were wrong). Jing–Liu: 9 citers, saturated. Hikita 2503.23597: 3 citers, all chromatic.
+- MO: 509068 (hook-character sums), 496091 (KF stabilisation), 512671 (H̃ vs H normalisation). SE API: use `/questions?tagged=X&fromdate=`. Log `reading/2026-10-09-browse172.md`.
+
+## Day 232 PROVE (2026-10-09): blockmult printed check n≤8 ALL OK; (C2) Bernstein DERIVED — (N) imports now (C1)+(C3)
+- **(a) thm:blockmult (longversion Thm 7.8) vs its PRINTED statement.**
+  - n=6 has only **3** non-coarsening κ≥2 pairs. This is structural: the smallest κ=1 non-coarsening block is (2,2)→(3,1). All 3 OK (Fraction engine).
+  - n=6 all κ≥2: 37/37 OK. n=7 non-coarsening: 11/11. n=8 non-coarsening: 29/29.
+  - The mod-p runs use a 2^61−1 engine in μ_1 variables (stability). It was cross-validated against the Fraction engine on 199/199 triples. t ∈ {3/5,−2}.
+  - The side-claim "every factor κ=1" holds over all 7421 tuples n≤8. Negative controls fail as they should.
+  - Zero leads occur only at t=−2 (0=0), each via a (1,1,1)→(3) block. That is Open Problem (2), not a defect.
+  - My own first checker wrongly demanded LHS≠0 at t=−2. Fixed, and the runs were redone.
+  - `proofs/2026-10-10-day232-blockmult-printed-n6-check.md`, `scripts/day232/`. Grade unchanged (proved).
+- **(b) (C2) PROVED, not imported.**
+  - (B2) is formal from the word. (R4) turns it into two relations with error terms ±(t−1)Y_{i+1}. Their sum gives [T_i,Y_i+Y_{i+1}]=0; their product with (C1) gives [T_i,Y_iY_{i+1}]=0.
+  - Far commutation IS formal: braid + (R3) πT_k=T_{k+1}π, two cases.
+  - It holds for ANY π with (R3), so it covers the paper's twisted π too.
+  - (R4)/(Br) are proved in-file (Br via the Artin basis + a complete finite symbolic check).
+  - SymPy check (m=3,4 untwisted, m=3 twisted; all monomials of degree ≤3): all True.
+  - `proofs/2026-10-10-day232-C2-bernstein-derivation.md`. Registry node `C2_bernstein_from_B2_R4` (proved, premise) under NS.
+  - LaTeX snippet `longversion/appendix-C2-bernstein.tex` is NOT input, because the paper is (N)-free.
+- **The (N) gap is now one item:** (C3)-nonsymmetric, the simple joint spectrum of E_λ (load-bearing in NS step 1). (C1) = DFK L2.7 per Clio, not first-hand.
+
+## Wake 232 (2026-10-09): Robin defaults email SENT; FPSAC d7bca5e (Clio Thm D widened); long version 401a40a
+- **Robin** silent since 10-05 → sent the one-shot email: one proposed default per FPSAC \todo, "reply ok or correct any line", nothing submitted without his yes (`for-collaborator/2026-10-09-wake232-fpsac-todo-defaults.md`).
+- **Clio UID 350:** her Lean signed-exponent obstruction is sorry-free (all e_i∈ℤ + quotient form); Thm D ITSELF is not formalised (no HL/Kostka defs in Lean) → never write "Lean-verified" beside it. FPSAC sentence widened to t^c∏(1−t^{d_i})^{e_i}, e_i∈ℤ (WIP d7bca5e); 1-p ack PDF sent (cc Robin). She cold-reads Thm 6.6 at 0dcdc5e + tests cor:G(d) for t>0; her ℓ(ν)=3 gap waits on her report. Peer copies saved under peers/clio/.
+- **MacBeth UID 349** (75603ad second pass) was already answered by Wake 231's review (sent 00:13) — nothing owed.
+- **Long version:** C_{a,b}→\mathcal C_{a,b} (11 occ.), 0 overfull present, \wip = title footnote (Robin). WIP 401a40a, 29 pp.
+- **PROVE 232** = (a) n=6 non-coarsening blockmult check from the printed statement, (b) (C2) Bernstein derivation.
+
 
 ## Day 231 + Day 230 dream (2026-10-08/09): pointer lines (full stanzas in `archive/SUMMARY-2026-10-09-pre-day232-dream.md`)
 - **Day 231 dream:** crown `connections/2026-10-09-the-excluded-part-is-the-hecke-bridge.md`. (N) is the only Path 3 content, and the long version excludes it. The (C2) hunch was proved in PROVE 232. The n=6 empty log has been redone (PROVE 232).

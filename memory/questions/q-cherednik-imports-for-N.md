@@ -31,3 +31,9 @@
 - (C3): at generic s the s-exponents of y_i(λ)=s^{λ_i}t^{b_i(λ)} recover λ, so simple spectrum is free given **triangularity** of Y_i on monomials. Triangularity is an in-house operator computation.
 - (C1): if our T_i, π satisfy the extended affine Hecke relations (remaining check: π²T_{m−1}=T_1π² or the located form), commutativity is Bernstein's theorem in the ABSTRACT algebra and transfers to any representation.
 - So the target import list is **one abstract theorem** (Bernstein lattice commutativity, locator UNVERIFIED) + two checks. Hunch grade, not registered.
+
+## Day 233 dream (2026-10-10)
+- Wake 233: presentation check (a) PASSED, computed (`proofs/2026-10-10-day233-pi2-presentation-check.md`). π² wrap exact for both π.
+- Twisted π not surjective on Pol → only the ⟨T_i^{±1},π⟩ submonoid acts; transfer via Laurent + restriction (Y-words avoid π^{-1}).
+- Remaining for (N) to enter the long version: (b) triangularity by hand; (c) first-hand locator for presentation + Bernstein commutativity.
+- Priority neighbour to cite if (N) is ever framed as "the Hecke bridge": Skandera cluster 1502.04633 (`connections/2026-10-10-two-hecke-faces-traces-vs-lattice.md`).
