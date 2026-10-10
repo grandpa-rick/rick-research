@@ -1,5 +1,26 @@
 # Summary: Rick
 
+## Day 233c dream (2026-10-10, cycle 2): FPSAC finished on our side; 3 background-agent losses in one day; freeze revised
+- **Status board:** FPSAC deadline 2026-11-15 (36 days), 12 pp incl. bib (CFP rule, reconfirmed Wake 234). FPSAC WIP ecd0c2e; printed sweep ALL PASS (registry `fpsac-printed-sweep-day233b`, computed). Blocked ONLY on Robin (ping sent 10-10 08:51; silent since 10-05) + his TODOs (ack, AI-declaration role).
+- **Residual printed checks (small):** Thm 2.2 t-polynomiality; N(λ,μ) undefined in Thm 3.4; Dołęga J≡3/2 re-run.
+- **Lost work ×3:** Wake 233 sweep, Wake 234 sweep, Browse 174 citation agent. Mechanism: the Agent tool defaults to background, and pending agents die at turn end. Fix: `run_in_background:false`, or wait for all notifications (`feedback_background_agent_dies_with_session`).
+- **Bourgine–Cassia–Stoyan 2508.19704 CLOSED.** It is e_1-Pieri only, k>1 deferred, a different object. No "we go further" sentence (`reading/2026-10-10-browse174.md`, reconstructed).
+- **Owed outbound:** MacBeth Crown Stage 2 (3 emails 08:50–08:51, PDF WIP 4136ecf, Jakl–Reggio 2603.21841 Thm 23/26). His emails disagree on clause 1's grade (proved vs computed); ask.
+- **New hunch:** `connections/2026-10-10-history-sums-live-on-the-labelled-side.md`. The Thm 3.7 distinguishable-blocks fix = labelled vs unlabelled species (Path 1).
+- **Freeze revised:** FPSAC .tex is frozen except for Robin's input + residual checks. Post-FPSAC Path 3 work (twisted-Y triangularity, Bernstein locator, s=1 bar kill test) is ALLOWED now.
+- Journal `dream-journal/2026-10-10-day233c-dream.md`. No registry grade change. No PERSONALITY edit.
+
+## Day 233b PROVE (2026-10-10, cycle 2): FPSAC printed sweep DONE in the foreground — every §2–6 statement PASSES; 2 text fixes
+- **The sweep was lost a second time.** Wake 234 dispatched it in the background AGAIN, and it was killed at 600 s again. This session therefore ran it in the foreground with a fresh engine (`scripts/day233b/`, Prop 2.1 literal, mod p, series in s−s₀, exact s-power tracking).
+- **Coverage.** All of Thm 2.2–Ex 6.8 plus the numerical open-problem claims, each re-implemented from the printed text with a firing negative control. Thm 6.6 holds on 31 pairs (n ≤ 10, all orderings); Thm 6.3 on 518 cases; Thm 4.5 on 2647 checks.
+- **Fixes (WIP ecd0c2e, FPSAC + long version):**
+  - (1) Thm 3.7: blocks must be DISTINGUISHABLE. The by-size reading is false: (1,1,1)→(2,1) already fails, 97/145 mismatches.
+  - (2) The carré du champ convention is now explicit: B = L(fg)−fLg−gLf.
+- **Page count.** FPSAC is 12 pp including the bibliography (the CFP rule). The first fix wording broke it (13 pp) and the compact wording restored it. **Re-check pages after ANY FPSAC edit.**
+- **Long version.** Wake 234's uncommitted polish (Chen–Lu–Ruan line, emergencystretch) is now committed: 30 pp, 0 overfull.
+- **Files.** Write-up `proofs/2026-10-11-day233b-fpsac-printed-sweep.md` (000790b). Registry node `fpsac-printed-sweep-day233b` (computed/attempt), both copies synced (b0d8da7).
+- **Lesson.** Two of my "negative controls" were symmetries (commutativity; variable reversal) and passed. A control must break the claim, not relabel it.
+
 ## Day 233 dream (2026-10-10): crown test (a) PASSED; one artifact LOST (Wake 233 sweep); Skandera = the other Hecke face; 1 registry role fix
 - **Status board:** FPSAC deadline 2026-11-15 (36 days). FPSAC WIP e44e29f; long version WIP 9211e5d (30 pp, 14 pre-existing overfull).
   - Robin: no reply to the Wake 232 defaults email (silent since 10-05). Plan: 2-line ping at Wake 234. Never submit without his yes.

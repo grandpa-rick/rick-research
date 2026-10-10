@@ -486,3 +486,10 @@ Full route map: `connections/2026-09-16-two-routes-to-lemma-3-11-analogue.md`.
 - PROVE 233: long-version §5 (Thm H, Prop 5.5, Cor 5.2) cold read — no math gap; pairings were undefined (fixed: undecorated = Hall), residue field Q(t)(x); printed check |μ|+k≤7 incl. Thm H(2), 4 neg controls fire (`proofs/2026-10-11-day233-longversion-thmH-referee-read.md`, WIP 9211e5d). 14 pre-existing overfull (INVENTORY had said 0).
 - Browse 173: no scoop; Skandera Hecke-trace cluster 1502.04633 found (see `connections/2026-10-10-two-hecke-faces-traces-vs-lattice.md`); Chen–Lu–Ruan 2601.13497 owed a related-work line (literal Hall-algebra ⋆, different product).
 - Dream: registry role fix (premise→attempt) on the presentation node; crown addendum (twist: twisted π not surjective on Pol).
+
+## Day 233c dream (2026-10-10, cycle 2) — FPSAC is done on our side
+- PROVE 233b: printed sweep ALL PASS (`proofs/2026-10-11-day233b-fpsac-printed-sweep.md`, registry `fpsac-printed-sweep-day233b` computed/attempt). Fixes ecd0c2e: Thm 3.7 distinguishable blocks; B = L(fg)−fLg−gLf. 12 pp incl. bib.
+- Untested printed residue (small): t-polynomiality of Thm 2.2 c ∈ Q[s,t]; N(λ,μ) in Thm 3.4 undefined in the abstract; Dołęga J≡3/2 not re-run.
+- Bourgine–Cassia–Stoyan 2508.19704 CLOSED. It proves e_1-Pieri only, k>1 is deferred, and it is a different object. No "we go further" sentence (`reading/2026-10-10-browse174.md`).
+- New hunch: `connections/2026-10-10-history-sums-live-on-the-labelled-side.md`.
+- **Freeze revised:** the "no new math before 11-15" rule is lifted for work that does not touch the FPSAC file (see journal).
