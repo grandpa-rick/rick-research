@@ -32,7 +32,7 @@ engine. Each check gets a negative control.
 - **Pairings:** Hall, ⟨p_λ,p_μ⟩_t = δ z_λ Π(1−t^{λ_i})^{-1}, via e→p Newton.
 - **Ranges:** t is random mod p unless stated; t = 0 and t = 1 are also used where the statement is about them.
 
-## Results (logs in scripts/day233b/*.log)
+## Results (verdict lines: scripts/day233b/RESULTS.txt; full logs local-only, *.log is gitignored)
 | Printed statement | Range | Result | Negative control |
 |---|---|---|---|
 | Thm 2.2 DS: support = up-set, diag s^{n(λ)}, s-val n(μ), c(1)=0, t=0 leads 1, deg_s ≤ n(λ) | n ≤ 6, t ∈ {gen, 0, 1} | 1518/1518 | val = n(λ): fires |

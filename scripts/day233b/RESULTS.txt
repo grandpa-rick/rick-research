@@ -1,0 +1,70 @@
+### c0
+### s1_n6
+[PASS] Thm2.2 DS (support=up-set, diag s^n(lam), s-val n(mu), c(1)=0, t=0 leads 1): 1518 ok, 0 bad 
+[FAIL] Thm2.2 NEG control: claim s-val = n(lam) for mu!=lam (should FAIL often): 0 ok, 176 bad ['neg', 'neg', 'neg', 'neg', 'neg', 'neg', 'neg', 'neg'] (expected FAIL)
+[PASS] Rem2.3 d(t)=t^{n(mu')-n(lam')} M(e,P)_{lam,mu'}(1/t); d(1)=#01-matrices: 176 ok, 0 bad 
+[FAIL] Rem2.3 NEG: drop the t-power prefactor: 0 ok, 88 bad ['', '', '', '', '', '', '', ''] (expected FAIL)
+### s1b_n7
+[PASS] Prop3.3 M_kr = B(e_k,e_r) closed form, symmetric (k+r<=9): 331 ok, 0 bad 
+[FAIL] Prop3.3 NEG: L(a,b) with a,b swapped to L(j, k-r+j) -- (should FAIL): 0 ok, 20 bad ['', '', '', '', '', '', '', ''] (expected FAIL)
+[PASS] Prop3.3 consequence [(s-1)]e*_lam = sum_{i<j} M e_rest: 42 ok, 0 bad 
+[PASS] Thm3.2 D_k derivation & B(f,g)=sum M_kl df/de_k dg/de_l: 60 ok, 0 bad 
+[PASS] Thm3.4 val>=l-kappa all (lam,mu); = for mu>lam generic t and t=0; t=0 lead sign (-1)^(l-k), |.|>=1: 1361 ok, 0 bad  skipped: [(1, 1, 1, 1, 1, 1, 1)]
+[FAIL] Thm3.4 NEG: predict val = l-kappa+1 (should FAIL): 0 ok, 350 bad ['', '', '', '', '', '', '', ''] (expected FAIL)
+### s1c
+[PASS] Thm3.2 D_k derivation & B(f,g)=sum M_kl df/de_k dg/de_l: 60 ok, 0 bad 
+### s2_n7
+[PASS] Thm3.8 W_k(J) = lin [..[E_k^(p),e_j1],..](1) = (-1)^p [n]/[k] prod [k]_{t^j}: 107 ok, 0 bad 
+[PASS] Thm3.7 coarsening: val=m, Lead = sum tight histories prod W; Lead(0)=(-1)^m #H: 730 ok, 0 bad  skipped [(1, 1, 1, 1, 1, 1, 1)]
+[PASS] Thm3.7 NEG: process lam_1..lam_l (wrong order) (should FAIL somewhere): 146 ok, 0 bad  (expected FAIL)
+[PASS] Lemma3.9 lin T_k f = (-1)^d [n]/[k] f(1,t,..,t^{k-1}) (f=p_rho,e_rho,P_rho): 110 ok, 0 bad 
+[FAIL] Lemma3.9 NEG: drop (-1)^d: 68 ok, 42 bad ['', '', '', '', '', '', '', ''] (expected FAIL)
+[PASS] Thm4.1 Lead_{lam,(n)} = (1-t^n)/prod(1-t^li) K_lam  & K = joint cumulant of t^{e2}: 108 ok, 0 bad 
+[FAIL] Thm4.1 NEG: K over all graphs (not only connected): 0 ok, 36 bad ['', '', '', '', '', '', '', ''] (expected FAIL)
+[PASS] Cor4.2 (a) 1^n: (-1)^{n-1}[n] I_n  (b) t=0 (-1)^{l-1}(l-1)!  (c) t->1 (-1)^{l-1} n^{l-1}  (d) sign: 157 ok, 0 bad 
+[PASS] Rem4.3 separator J printed formula, J(0)=3/2, J(1)=1
+[PASS] Rem4.3 HT-gauge J (t^n(l') (t-1)^(1-l) K) equals J_star
+[exited with code 0]
+### s2b
+[FAIL] Thm3.7 NEG: weights without (-1)^p (should FAIL for odd m): 58 ok, 87 bad ['', '', '', '', '', '', '', ''] (expected FAIL)
+[PASS] Thm4.4 Lead = sum over set partitions with block sums = mu of prod connected leads: 146 ok, 0 bad 
+[FAIL] Thm4.4 NEG: count each distinct block-multiset once (dedupe) (should FAIL where equal parts): 58 ok, 88 bad ['', '', '', '', '', '', '', ''] (expected FAIL)
+[PASS] Thm4.5 [(s-1)^m]c = sum_{pi,kappa blocks} sum_{(nu^C)} prod [(s-1)^{|C|-1}]c_{lam_C,nu^C}; factors kappa=1: 2647 ok, 0 bad 
+[FAIL] Thm4.5 NEG: sum over position-assignments of mu (overcount) (should FAIL): 131 ok, 86 bad ['', '', '', '', '', '', '', ''] (expected FAIL)
+### s2c
+[FAIL] Thm3.7 unlabeled-blocks reading (expected FAIL => labeled reading is the true one): 48 ok, 97 bad ['(1, 1, 1)(2, 1)', '(2, 1, 1)(3, 1)', '(1, 1, 1, 1)(4,)', '(1, 1, 1, 1)(3, 1)', '(1, 1, 1, 1)(2, 2)', '(1, 1, 1, 1)(2, 1, 1)', '(3, 1, 1)(4, 1)', '(2, 1, 1, 1)(5,)']
+### s3_n6
+[PASS] Thm5.1 c_{N^l-lam,N^l-mu} = s^{N C(l,2)-(l-1)|lam|} c_{lam,mu}: 230 ok, 0 bad 
+[FAIL] Thm5.1 NEG: exponent N C(l,2)-l|lam|: 0 ok, 154 bad ['', '', '', '', '', '', '', ''] (expected FAIL)
+[PASS] Cor5.2 c_{lam+1^l,mu+1^l} = s^{C(l,2)} c_{lam,mu} (l>=l(lam)); examples: 105 ok, 0 bad 
+[PASS] Thm5.1 proof inversion lemma (N<=4): 96 ok, 0 bad 
+[PASS] Thm5.4 lin(e_k*G) = (-1)^d [k+d]/[k] G[(s-1)[k]_t]  (G=e_mu, p_mu, d<=5): 130 ok, 0 bad 
+[FAIL] Thm5.4 NEG: p_r -> (s-1)^r [k]_{t^r}: 38 ok, 92 bad ['', '', '', '', '', '', '', ''] (expected FAIL)
+[PASS] Cor5.5 e_k*e_r = sum_y s^y C_{k-y,r-y} e_{k+r-y} e_y (k,r<=5): 40 ok, 0 bad 
+### s4_n8
+[PASS] T_a g stable in N (n vs n+1 variables): 3 ok, 0 bad 
+[PASS] Thm6.6 proof identity <G,p_xp_y> = (-1)^n (m_xy[e_xe_y]G + lin G): 16 ok, 0 bad 
+[PASS] Thm6.2 phi_a <T_a g,F>_t = CT[Z g(z) F(1/z) Omega], Omega expanded in z_i/z_j (i<j): 293 ok, 0 bad 
+[PASS] Thm6.2 NEG: expand Omega in z_j/z_i instead: 293 ok, 0 bad  (expected FAIL for a>=2)
+[PASS] Thm6.3 two-point formula vs <T_a g, p_x p_y> (Hall), g=p,e,P: 518 ok, 0 bad 
+[FAIL] Thm6.3 NEG: use <.,.>_t instead of Hall pairing: 0 ok, 518 bad ['', '', '', '', '', '', '', ''] (expected FAIL)
+[PASS] Rem Green: Phi_a(P_rho;x,y) = (1-t^x)(1-t^y) X^lam_(x,y)/b_lam, lam=rho+1^a: 94 ok, 0 bad 
+[PASS] Ex6.4: G_1(w) formula; two-row X piecewise (|lam|<=10); JL Thm 2.6 all classes (n<=9); diagonal values: 504 ok, 0 bad 
+[PASS] Gamma_a two forms equal; Prop6.1 [(s-1)^2]c = [e_mu](Gamma_a(e_b,e_c)+D_aD_b(e_c)) all orderings, kappa=1: 148 ok, 0 bad 
+[PASS] Thm6.6 Xi_a(r,q) printed = lin T_a(p_r p_q): 27 ok, 0 bad 
+[PASS] Thm6.6 printed closed l=3,kappa=1 lead vs engine, all orderings: 26 ok, 0 bad  (9 pairs)
+[FAIL] Thm6.6 NEG: drop the 1/m_xy: 0 ok, 4 bad ['', '', '', ''] (expected FAIL)
+[PASS] Ex6.8 (3,3,3)->(7,2) and (4,4,2)->(7,3) printed leads; kappa=1: 10 ok, 0 bad 
+[PASS] Open2: t=-2, n=6: exactly 7 pairs with val > l-kappa; Lead_{111,3}=[3](2+t): 1 ok, 0 bad 
+[PASS] Open3: l=3, mu=(n-1,1), kappa=1: Lead(1) = 2n^2-6n+3: 4 ok, 0 bad 
+### s4b
+[PASS] Thm6.2 phi_a <T_a g,F>_t = CT[Z g(z) F(1/z) Omega], Omega expanded in z_i/z_j (i<j): 293 ok, 0 bad 
+[FAIL] Thm6.2 NEG: expand Omega in z_j/z_i instead: 44 ok, 249 bad ['a=2 p() F=p(2,)', 'a=2 p() F=p(1, 1)', 'a=2 p(1,) F=p(3,)', 'a=2 p(1,) F=p(2, 1)', 'a=2 p(1,) F=p(1, 1, 1)', 'a=2 e(1,) F=p(3,)', 'a=2 e(1,) F=p(2, 1)', 'a=2 e(1,) F=p(1, 1, 1)'] (expected FAIL for a>=2)
+### s4c_n10
+[PASS] Thm6.6 Xi_a(r,q) printed = lin T_a(p_r p_q): 27 ok, 0 bad 
+[PASS] Thm6.6 printed closed l=3,kappa=1 lead vs engine, all orderings: 107 ok, 0 bad  (31 pairs)
+[FAIL] Thm6.6 NEG: drop the 1/m_xy: 0 ok, 10 bad ['', '', '', '', '', '', '', ''] (expected FAIL)
+C0a E_k(1)=e_k N<=7: True
+C0b commutativity + shortcut, n<=6: True 62
+C0c Hikita e1*er: True
+C0c neg control fires: True
