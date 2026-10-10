@@ -1,0 +1,25 @@
+NMAX=7, t in [438861224, 178783379]: 75 (k,mu) cases per t
+Thm H(1) [b-coords in Q[s,t], i.e. s^{n(nu)-n(mu)} | c]: True
+Thm H(3) [printed vertical-strip matrix]: True
+Thm H(2) [phi∘L_k = t^{-C(k,2)} e_k·phi, P by Gram-Schmidt]: True
+NEG CONTROL NC1 (inv with v>w) detected a difference: True
+NEG CONTROL NC2 (phi with P(x;t)) detected a difference: True
+NEG CONTROL NC4 (s-scaling on complement) detected a difference: True
+n=1 done
+n=2 done
+n=3 done
+remark: d_{(1^4),(2,1,1)} = {1: 3, 0: 1}
+n=4 done
+n=5 done
+n=6 done
+n=7 done
+Kostka-Foulkes engine sanity (K(0)=delta, K(1)=Kostka, coeffs>=0): True
+Cor dmatrix first formula (pointwise, 2 random t): True
+Cor dmatrix second formula (cocharge KF, pointwise): True
+Cor dmatrix d in N[t]: True
+Cor dmatrix d(1) = #0-1 matrices rows lam cols mu': True
+NEG CONTROL NC3 (K in place of cocharge K~) detected a difference: True
+
+real	0m16.907s
+user	0m16.870s
+sys	0m0.034s
