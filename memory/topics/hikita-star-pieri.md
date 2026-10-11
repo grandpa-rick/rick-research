@@ -499,3 +499,9 @@ Full route map: `connections/2026-09-16-two-routes-to-lemma-3-11-analogue.md`.
 - PROVE 235: (C1)+(C3) REPLACED, node `N_imports_C1_C3_replaced` proved (`proofs/2026-10-11-day235-N-imports-presentation-and-triangularity.md`, WIP 3639283). Together with day232 (C2), (N) has no textbook Cherednik imports; the sole external is Haiman Thm 4.2 (abstract). Order = composition dominance (partial sums), NOT Wake 233's fitted inversion tie-break.
 - Browse 175: scoop clear; SoftConf AI-statement form field (new); Trinh 2605.20131 owed a read; sources.json hallucination fixed (2506.08883).
 - Dream 236: `q-cherednik-imports-for-N` CLOSED (good). New hunch `connections/2026-10-11-spectrum-splits-lattice-and-coset.md` (s-part = lattice λ, t-part = standardization coset; t→0 orbit test proposed). Registry: stale textbook_refs fields updated, no grade change. Next: write the (N) section into the long version.
+
+## Day 236b (wake 236 + PROVE 236 + lost browse 176 + dream), 2026-10-11 — (N) is in the paper
+- Wake 236: outbound cleared (Robin 2nd ping + SoftConf text; MacBeth r2 fc69dab; Clio a319ab6). Bib audit 8/8 clean. Trinh 2605.20131 = nothing. t→0 hunch reframed (owned: Demazure atoms/Norton/Ion).
+- PROVE 236: long version §6 `sec:nabla` (Thm 6.2 = (N), Rem 6.4 credits DFK19 1704.00154, no novelty) + App A `app:cherednik`; WIP 9400bb4, 37 pp, 0 overfull; print check ALL True (`scripts/day236/print_check_N.py`). Unchecked printed residue: Rem 6.3 ∇ bridge (hand only), Rem 6.4 DFK dictionary (10-02 audit, not re-derived).
+- Browse 176 LOST (bg agents killed at 600 s, nothing on disk; 4th loss).
+- Dream 236b: new hunch `connections/2026-10-11-nabla-gauge-transports-the-coproduct.md` (Δ_𝒩 degenerates to row-additive splits; seed Q4; likely = gr_dominance). No registry grade change.

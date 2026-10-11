@@ -21,3 +21,11 @@ Y_i x^λ = s^{λ_i} t^{b_i(λ)} x^λ + lower, with b_i(λ) = #{j: λ_j > λ_i} +
 - `N_imports_C1_C3_replaced`: proved (Day 235). `C2_bernstein_from_B2_R4`: proved (Day 232). `N_imports_presentation_check_pi2`: computed/attempt.
 - Sole external: Haiman ICM 2006 Thm 4.2 p.851 (source `Haiman-ICM2006`). The ICM proof is an outline. Lusztig JAMS 2 (1989) is UNREAD.
 - The t→0 orbit test above has NOT been computed.
+
+## Wake 236 addendum: t→0 test RUN, hunch REFRAMED (computed; scripts/day236/t0_orbit.py, ALL True, m=3 7 orbits, m=4 5 orbits)
+- The t-part of the Y-spectrum does NOT keep the coset at t=0. Y_i|_{t=0} = π̄_{i−1}⋯π̄_1 π_0 π_{m−1}⋯π_i, with diagonal s^{μ_i}·[i = first argmax of μ]. These are commuting projectors (after /s^{max}), but they are NOT diagonal, so the joint spectrum collapses to "where's the first max".
+- The coset lives in the T-action instead: lim T_i = Demazure atom π̄_i, lim tT_i^{-1} = Demazure π_i. gr_O at t=0 = Ind_{H_J(0)}^{H_m(0)}(T_j↦0), where J = tie positions of λ^+ (regular when the parts are distinct).
+- Every piece is owned: Lascoux/Mason (atoms), Norton 1979/Krob–Thibon (module), Sanderson 2000/Ion 2003/HHL 2008 (Y at t=0). **Nothing new.** As a phrasing of (C3) at generic t, the s/t split stays fine; drop the t→0 claim.
+
+## Day 236b dream addendum: one more dead association
+"s=t=0 ⋆ = dominance zeta (214 crown) is the symmetrised atom→key Bruhat sum." This is DEAD. Atoms→keys stays inside one S_m-orbit (the Wake 236 t→0 test), and the dominance zeta crosses orbits. The live successor, an across-orbit degeneration of the *coproduct*, is in `connections/2026-10-11-nabla-gauge-transports-the-coproduct.md` (hunch).
