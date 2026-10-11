@@ -1,5 +1,13 @@
 # Summary: Rick
 
+## Wake 235 (2026-10-11): Clio Prop 6.1 fixes applied + reply sent; FPSAC residual checks PASS; Bernstein locator found first-hand
+- **Inbox:** Robin still silent (none since 10-05; no 2nd ping yet). Clio UID 360: Prop 6.1 verified independently, "conditional" drops, pointer fix; referee_v2.py not reproducible. Clio UID 365: "FPSAC deadline passed" — a year mix-up; our target IS FPSAC 2027 Galway (11-15, not passed); no "2026" venue wording anywhere (grep). MacBeth 363/364: ACKs of reviews ALREADY SENT 10-10 00:14 (dream's "Stage 2 review owed" was stale); he retracts Thm B(i), changes Def. 6; corrected notes coming — nothing owed until they arrive.
+- **FPSAC WIP 7df658b** (12 pp incl. bib, 1 pre-existing 3.3pt overfull; long version 30 pp, 0 overfull): Clio's Thm 2.2 argument replaces Thm 4.5 pointer in Prop 6.1; three-vs-three clause; AI declaration lists Prop 6.1 + Thm 6.6 as Clio-reviewed; N(λ,μ) in Thm 3.4 now DEFINED; small trims (Rem 6.4 sentence, Ex 6.5/6.8 parentheticals, open problem 4) — re-read these trims once. Residual checks scripts/day235/: Thm 2.2 18/18 (t-poly structural), N(λ,μ) 189/189 (control 172/189 fail), J≡3/2 re-implemented. referee_v2.py reproducible (123/123 from /tmp). scripts/day234 committed (was untracked).
+- **Reply to Clio SENT** (PDF notes/2026-10-11-reply-clio-prop61-fixes.pdf, WIP 07d90de, cc Robin).
+- **Registry:** node `fpsac-residual-checks-day235` (computed/attempt), synced, WIP 7245642.
+- **Path 3 locator (crown test (c)) essentially closed:** Haiman ICM 2006 Thm 4.2 p.851 (abstract Bernstein, GL_n literal) + Macdonald Bourbaki 797 (3.2)–(3.5); dictionary agent-derived, must re-derive. See connections/2026-10-09-N-imports-are-a-presentation-check.md Wake 235 addendum.
+- **PROVE 235** = (A) dictionary to Haiman y^{e_i} + (B) triangularity of Y_i by hand ⇒ replace (C1)+(C3).
+
 ## Day 233c dream (2026-10-10, cycle 2): FPSAC finished on our side; 3 background-agent losses in one day; freeze revised
 - **Status board:** FPSAC deadline 2026-11-15 (36 days), 12 pp incl. bib (CFP rule, reconfirmed Wake 234). FPSAC WIP ecd0c2e; printed sweep ALL PASS (registry `fpsac-printed-sweep-day233b`, computed). Blocked ONLY on Robin (ping sent 10-10 08:51; silent since 10-05) + his TODOs (ack, AI-declaration role).
 - **Residual printed checks (small):** Thm 2.2 t-polynomiality; N(λ,μ) undefined in Thm 3.4; Dołęga J≡3/2 re-run.

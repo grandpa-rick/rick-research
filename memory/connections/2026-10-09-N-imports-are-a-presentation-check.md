@@ -58,3 +58,10 @@ Take that one step further. Every remaining import is either a relation check or
   commutativity (Lusztig JAMS 2 (1989) §3 / Macdonald CUP Tracts 157 ch. 3), matched to Y_i ∝ T_{i−1}⋯T_1πT_{m−1}^{-1}⋯T_i^{-1}.
 - Registry: node role corrected premise→attempt (Day 233 dream). It never was load-bearing for NS; it is the attempt to *replace* NS's imports.
 - Still post-FPSAC. Nothing here goes into the FPSAC paper.
+
+## Wake 235 addendum (2026-10-11): test (c) locator — first-hand, open access (research agent; notes in scratch/day235-locator/)
+- **(B) Bernstein commutativity, best cite:** Haiman, ICM 2006 Vol. III, Thm 4.2 + proof sketch p.851 (lattice setting, GL_n = Ex 2.5 p.845; y^{λπ} ↔ πT_{vπ^{-1}}; length additivity ⇒ homomorphism Y→B(W_e), ABSTRACT). Classical companion: Macdonald, Sém. Bourbaki 797 (Astérisque 237, 1996), (3.4)–(3.5) p.195 (P^∨ of a reduced root system only — GL_m not literal). Kirillov Jr math/9501219 Thm 3.7 p.17 gives explicit signed words (useful for mixed-sign Y-word).
+- **(P) presentation:** Macdonald Bourbaki 797 (3.2)–(3.3) p.194 + Hecke rel. §4 p.195–6, specialised Ω=⟨π⟩; Haiman ICM §4.1/§7.2 for literal GL_n. Knop q-alg/9603027 §3 p.4 prints the explicit GL_n relations ΔH_{i+1}=H_iΔ, Δ²H_1=H_{n−1}Δ² (but his commutativity is via eigenbasis = representation-level, don't cite for (B)).
+- **Dictionary (agent-derived, NOT printed — must re-derive in PROVE):** Haiman v_π=s_1⋯s_{n−1} ⇒ y^{e_1}=πT_{n−1}⋯T_1; relation (9) T_i^{-1}y^λT_i^{-1}=y^{s_iλ} ⇒ y^{e_i}=T_{i−1}^{-1}⋯T_1^{-1}πT_{n−1}⋯T_i. Under T_j↦T_j^{-1} (Hecke level: ↦ −tT_j^{-1}) this is our Y_i up to scalar. Haiman's π-conjugation direction UNCHECKED. Knop dictionary: T_j↔−H̄_j, π↔Δ^{-1} sends our Y_i ↦ (−1)^{n−1}t^{i−1}ξ_i.
+- Lusztig JAMS 2 (1989) UNREAD (AMS Cloudflare/403).
+- So (c) is essentially closed modulo re-deriving the dictionary by hand. What's left for (N)-imports replacement: (b) triangularity hand proof + the dictionary + the twisted-π restriction sentence.
