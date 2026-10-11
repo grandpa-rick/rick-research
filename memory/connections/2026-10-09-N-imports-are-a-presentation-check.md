@@ -65,3 +65,10 @@ Take that one step further. Every remaining import is either a relation check or
 - **Dictionary (agent-derived, NOT printed — must re-derive in PROVE):** Haiman v_π=s_1⋯s_{n−1} ⇒ y^{e_1}=πT_{n−1}⋯T_1; relation (9) T_i^{-1}y^λT_i^{-1}=y^{s_iλ} ⇒ y^{e_i}=T_{i−1}^{-1}⋯T_1^{-1}πT_{n−1}⋯T_i. Under T_j↦T_j^{-1} (Hecke level: ↦ −tT_j^{-1}) this is our Y_i up to scalar. Haiman's π-conjugation direction UNCHECKED. Knop dictionary: T_j↔−H̄_j, π↔Δ^{-1} sends our Y_i ↦ (−1)^{n−1}t^{i−1}ξ_i.
 - Lusztig JAMS 2 (1989) UNREAD (AMS Cloudflare/403).
 - So (c) is essentially closed modulo re-deriving the dictionary by hand. What's left for (N)-imports replacement: (b) triangularity hand proof + the dictionary + the twisted-π restriction sentence.
+
+## Day 235 PROVE addendum (2026-10-11): crown CASHED
+- Tests (b) and (c) are done.
+- Proof file: `proofs/2026-10-11-day235-N-imports-presentation-and-triangularity.md` (WIP 3639283). Registry node `N_imports_C1_C3_replaced` is graded proved.
+- The dictionary was re-derived by hand. Haiman's π conjugates in the same direction as ours, and Y_i = t^{m−i}·ι(Φ(y^{e_i})) with ι: T↦T^{-1}.
+- (C3) was proved by hand. The order it uses is composition dominance (partial sums), not the inversion count.
+- The "π² may fail" kill and the "anti-dominant images" risk both did not fire.

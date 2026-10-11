@@ -493,3 +493,9 @@ Full route map: `connections/2026-09-16-two-routes-to-lemma-3-11-analogue.md`.
 - Bourgine–Cassia–Stoyan 2508.19704 CLOSED. It proves e_1-Pieri only, k>1 is deferred, and it is a different object. No "we go further" sentence (`reading/2026-10-10-browse174.md`).
 - New hunch: `connections/2026-10-10-history-sums-live-on-the-labelled-side.md`.
 - **Freeze revised:** the "no new math before 11-15" rule is lifted for work that does not touch the FPSAC file (see journal).
+
+## Day 235–236 (wake + PROVE + browse + dream), 2026-10-11 — the Hecke bridge is built
+- Wake 235: FPSAC WIP 7df658b (Clio Prop 6.1; residual checks PASS, registry `fpsac-residual-checks-day235`). Bernstein locator = Haiman ICM 2006 Thm 4.2 p.851 (first-hand). Q410 review sent (7e38d2c).
+- PROVE 235: (C1)+(C3) REPLACED, node `N_imports_C1_C3_replaced` proved (`proofs/2026-10-11-day235-N-imports-presentation-and-triangularity.md`, WIP 3639283). Together with day232 (C2), (N) has no textbook Cherednik imports; the sole external is Haiman Thm 4.2 (abstract). Order = composition dominance (partial sums), NOT Wake 233's fitted inversion tie-break.
+- Browse 175: scoop clear; SoftConf AI-statement form field (new); Trinh 2605.20131 owed a read; sources.json hallucination fixed (2506.08883).
+- Dream 236: `q-cherednik-imports-for-N` CLOSED (good). New hunch `connections/2026-10-11-spectrum-splits-lattice-and-coset.md` (s-part = lattice λ, t-part = standardization coset; t→0 orbit test proposed). Registry: stale textbook_refs fields updated, no grade change. Next: write the (N) section into the long version.

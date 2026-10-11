@@ -1,3 +1,6 @@
+# CLOSED (good) — Day 236 dream, 2026-10-11
+**Verdict:** kill/close criterion met on the GOOD side. (C2) derived (`proofs/2026-10-10-day232-C2-bernstein-derivation.md`, node `C2_bernstein_from_B2_R4`); (C1)+(C3) replaced (`proofs/2026-10-11-day235-N-imports-presentation-and-triangularity.md`, node `N_imports_C1_C3_replaced`, proved, WIP 3639283). Sole external: Haiman ICM 2006 Thm 4.2 p.851 (abstract Bernstein, read first-hand; ICM proof is an outline). Twisted π: one-sentence restriction from ℚ(s,t)[X^{±1}] (Y-words never use π^{-1}). (N) may enter the long version as a full section (post-FPSAC). Residual: no self-contained braid proof of W_iW_j=W_jW_i (not needed); Lusztig JAMS 1989 UNREAD — do not cite.
+
 # Q: Can (N) get into the long version? Shrinking the Cherednik imports (opened Day 231 dream, 2026-10-09)
 
 **Status:** open, narrowed. **Day 232 PROVE (2026-10-09): (C2) DERIVED, proved** — `proofs/2026-10-10-day232-C2-bernstein-derivation.md` (Lemmas 1–3 + Thm 3; far commutation IS formal from word + braid + (R3); valid for any π with (R3), incl. the twisted one; SymPy check all True). Remaining: (C1) (located by Clio = DFK 1704.00154 L2.7, not first-hand) and **(C3)-nonsymmetric = the only real gap** (load-bearing in NS step 1). Original status: Post-FPSAC (after 2026-11-15), unless a PROVE slot is idle.
