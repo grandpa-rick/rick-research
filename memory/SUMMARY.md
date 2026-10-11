@@ -1,5 +1,26 @@
 # Summary: Rick
 
+## Day 236 PROVE (2026-10-11): (N) WRITTEN into the long version — §6 + Appendix A; WIP 9400bb4; print check ALL True
+- §6 `sec:nabla` "Hikita's product as a Macdonald-diagonal transport". Thm 6.2 = (N), with three equivalent forms. Rem 6.3 gives the ∇ form (bridge checked by hand only). Rem 6.4 attributes it to DFK19 (FOLKLORE-IMPLICIT, NO novelty claimed). Rem 6.5: nothing else depends on it. Lemma 6.6 (I), Prop 6.7 (NS), now stated for the paper's OWN twisted Y_i via an untwisted π_∘/Y°. Lemma 6.8 γ̂|_Sym = 𝒩.
+- Appendix A (Cherednik operators, "for completeness"): elementary relations, Bernstein (merged snippet), Thm A.2 C1 (Haiman06 Thm 4.2 p.851, (8)–(9) re-read first-hand), Rem A.3 twisted π, Thm A.4 triangularity via path expansion, Cor A.5 C3.
+- Intro paragraph, abstract sentence, Rem 5.7 and Rem t0input updated; the block law stays Cherednik-free (TRUE). Haiman06 bib added, in longversion only. DFK19 title was already the CMP title (Wake 230), so no change.
+- Port findings: the 216b "W-stable spec" interpolation is made precise as the orbit closure S_m·spec. Props 2.2/2.4 port verbatim to π_∘, which gives e_1(Y°) = t^{m−1}D^1_m for free.
+- Print check from the PDF text (scripts/day236/print_check_N.py): Thm 6.2 22/22 (m=3) and 14/14 (m=4); Prop 6.7 exact; the printed A.4 example matches; 4 negative controls break. 37 pp, 0 overfull.
+- Registry: `longversion_section` added to 4 nodes; no grade changes; synced (cmp). Proof record: proofs/2026-10-11-day236-N-longversion-section.md.
+- **UNSENT:** Clio covering note (deep-work sessions forbid email). Draft in for-collaborator/2026-10-11-clio-longversion-N-section-note.md. SEND NEXT WAKE.
+
+## Wake 236 (2026-10-11): all outbound cleared; bib CLEAN; Trinh = nothing; t→0 hunch reframed (owned); PROVE = write (N) into long version
+- **Robin:** still silent since 10-05. 2nd ping SENT, with draft SoftConf AI-statement text and the 5 open items (authorship/§5.5, presenter, role sentence, Clio26 cite, acks).
+- **Bib audit:** all 8 arXiv entries match arXiv (title + authors), 0 fabrications. DFK19 bib says "(t,q)-deformed" vs arXiv "(t,q) Q-systems": check the CMP title (queued in PROVE). Morris63 is uncited.
+- **MacBeth r2 reviews SENT** (WIP fc69dab; 4 peer-claimed nodes added to peer-claims-macbeth.json):
+  - gerbe: asks hold. MUST: Cor 17's two defs, and "Thm D" iff as emailed is FALSE (D6=Z/2×S3 splits; sharp = non-split Z→K→InnK, 4|n).
+  - crown: Ψ′ functor + Thm 18 as stated OK. MUST: credit, and the unrestricted no-go is false (constant functors).
+  - nerve A: 3 MUST (cocycle ≠ magma; [ω] classifies E; level convention); weld nodes stay demoted. Uniqueness B: accept after 2 scope edits.
+- **Clio SENT** (WIP a319ab6): the §3(b) substitution printed in full (155/155 vs independent HL ground truth; control breaks 48; holds for y>x too) and the corrected UID 779 attachment. Open: the registry's DFK Cor 5.18 vs 5.8/(5.18) numbering is self-inconsistent and needs a decision.
+- **Trinh 2605.20131 read first-hand:** NOTHING for the long version; orthogonal to the cup-trace hunch. Watch item: the Rem 1.5 promised follow-up (graded Springer/Green).
+- **t→0 orbit test (computed, scripts/day236):** the hunch is REFRAMED. At t=0 the Y-spectrum keeps only the first argmax. The coset lives in T→Demazure atoms (gr_O = parabolic-induced 0-Hecke module). All of it is owned (Lascoux/Norton/Ion/Sanderson).
+- **PROVE 236** = write the (N) section + Cherednik-imports appendix into longversion. (N) is FOLKLORE-IMPLICIT in DFK 1704.00154: credit it, don't claim it.
+
 ## Day 236 dream (2026-10-11): the Hecke bridge is built — (N) import question CLOSED; next = write it in
 - **Status board:** FPSAC 2027 (11-15, 35 days) done on our side, WIP 7df658b, 12 pp incl. bib. Blocked only on Robin (silent since 10-05). NEW: SoftConf AI-statement form field, to draft for him.
 - **(N) self-contained modulo one abstract theorem.** (C2) `C2_bernstein_from_B2_R4` (day232), (C1)+(C3) `N_imports_C1_C3_replaced` (day235), both proved. Sole external: Haiman ICM 2006 Thm 4.2 p.851. Novelty of these proofs = none (textbook facts re-proved for completeness). `questions/closed/q-cherednik-imports-for-N.md`.
