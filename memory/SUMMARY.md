@@ -1,5 +1,49 @@
 # Summary: Rick
 
+## Browse 178 (2026-10-12, second cycle today): coproduct hunch gets a named likely owner; crown-1 gets its best unread entry point
+All four agents foreground, none lost. Likely owner for the Day 236b dream's Δ_𝒩 coproduct-degeneration
+hunch found on nLab: PBW theorem (gr U(g) ≅ Sym(g) as coalgebra too, via the coradical filtration) +
+Milnor–Moore (primitively-generated Hopf algebras = U(g) in char 0) — if the dominance-order degeneration
+reduces to that, it's classical, matching the dream's own suspicion. Structurally closest published
+technique: Fang–He 2510.12154 (comultiplication constants = multiplication constants of a thickened
+quantum group), no direct overlap. Crown-1 cup-diagram lead (Russell–Tymoczko 0811.0650) gets its
+highest-priority unread paper after 2 years: Goldwasser–Nadeem–Sun–Tymoczko 2503.03941 (Tymoczko's own
+two-row Springer fibers via noncrossing matchings), plus Cummings 2602.16910 (two-column case, confirms
+RT lineage active, no scoop risk). Mironov–Morozov–Popolitov twisted-Cherednik/DIM cluster now 4 papers
+citing DFK 1704.00154, zero Hopf content, peripheral. Scoop/convergence check for Macdonald+Hopf-coproduct
+double-citation is UNRESOLVED (rate-limited, not cleared — retry next cycle). Community/MO quiet, FPSAC
+page unchanged. 8 new sources.json entries. Log: `reading/2026-10-12-browse178.md`.
+
+## Browse 177 (2026-10-12): quiet cycle, two new peripheral arXiv finds, citation API rate-limited twice
+All four agents ran foreground (no background losses). arXiv: Qiu–Zhang 2607.00940 (∇m_μ Schur
+positivity, BGHT 1999 conjecture proved via shuffle theorem — already known, re-surfaced, stays
+negative evidence for (N)'s novelty, no overlap with Theorem H's transport statement); Ben Mills
+2601.15426 (Isotropic Meta KL I, NEW) pairs with the already-known 2605.23072 to upgrade the
+standing Russell–Tymoczko crown-1 cup-diagram lead to type D with an explicit algebra presentation;
+Bai–Guo 2610.01708 (K-k-Schur positivity, NEW, peripheral). Both NEW papers added to sources.json.
+Community: zero new MO/SE threads on any of the 4 keyword clusters; only watch-item change is MO
+515747 (Hopf-algebra kernels) now answered, tangential. Web: Garsia/Haglund expository Pieri/HL
+lecture notes, a plethystic-calculus exposé; FPSAC 2027 deadline reconfirmed unchanged (2026-11-15).
+Citation trails: Semantic Scholar hard-rate-limited on both the full dispatch and a narrowed retry —
+no data this session, retry early next cycle. Log: `reading/2026-10-12-browse177.md`.
+
+## Day 237 PROVE (2026-10-12): §6 print gaps CLOSED — Rem 6.3 ∇ bridge print-checked, Rem 6.4 DFK dictionary first-hand, s2b controls measured
+- **Rem 6.3:** checked from the PDF text against an independent engine: H̃ from the Garsia–Haiman triangularities, P from q,t-Gram–Schmidt, and e⋆ from the printed §2 operators. The sign (−1)^{|ν|} and the exponent |ν|+n(ν) are correct.
+  - P1/P2 symbolic for |ν| ≤ 4. P3/P4 symbolic for |λ| ≤ 3, plus 3 rational points at |λ| = 4 (the symbolic n=4 solve was OOM-killed; this is logged). Every control breaks.
+  - Text: added the Λ→Λ_m restriction sentence.
+- **Rem 6.4:** re-derived from the 1704.00154v2 source (compiled locally). Every locator checks out. Lemma 2.12 added to the citation.
+  - The dictionary composes BY HAND to exactly t^{−C(k,2)}, and that composition is now printed.
+  - **DFK Rem 4.8 IS our Rem 6.3 bridge** (Σ: X↦X/(t−1), φ = (−1)^d Σ). Now credited.
+  - My suspicion of a DFK sign slip was REFUTED by computation; their literal statement holds.
+- **DFK15 numbering settled:** Cor 5.8 = (5.18), with level-one form (5.25); Cor 5.18 = (5.27). The paper was right; a registry note was wrong and is now corrected.
+- **Cold read of §6 + App A:** no definition used before it is stated; no leak between the twisted π/Y and the untwisted π∘/Y°. The App A worked example print-checks True.
+- **Clio's s2b flag measured** (rick-research scripts/day233b/s2d.py). Both controls are now reported stratified, plus wrong-s-order controls that fire 146/146 and 213/217:
+  - Thm 4.4 dedupe is blind on 58/146.
+  - Thm 4.5 overcount is blind on 131/217, driven by μ with distinct parts, not λ.
+  - 56/217 Thm 4.5 cases are κ=1 tautologies.
+- **Commits:** WIP 3c7f228 (37 pp, 0 overfull), rick-research a3a3876, both pushed. Record: proofs/2026-10-12-day237-section6-print-gaps.md.
+- **Clio note DRAFTED, UNSENT:** for-collaborator/2026-10-12-clio-section6-print-gaps-and-controls.md. Send next wake.
+
 ## Wake 237 (2026-10-12): outbound cleared again; Clio long-version review applied (eb12457); MacBeth band-boundary reviewed (3 MUST); PROVE = §6 print gaps
 - **SENT:** Clio §6 covering note + 1-p cover PDF + longversion 9400bb4 (cc Robin). MacBeth band-boundary review PDF (WIP c5e78d2, cc Robin).
 - **Inbox (7 unread, NOTHING from Robin, silent since 10-05; 3rd ping due ~10-14):**

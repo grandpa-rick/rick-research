@@ -1,3 +1,20 @@
+## Browse 178 updates (2026-10-12, second cycle today)
+
+### Coproduct-degeneration hunch (Day 236b dream) gets a named likely owner: Milnor–Moore / PBW / coradical filtration
+nLab's PBW theorem page: for U(g) filtered by degree, gr U(g) ≅ Sym(g) as a *coalgebra* too, and that filtration is the coradical filtration (Milnor–Moore companion: primitively-generated Hopf algebras in char 0 = U(g)). If Δ_𝒩's dominance-order degeneration reduces to this, it's classical — no novelty expected unless the specific Macdonald-LR-coefficient filtration does something beyond generic PBW. Structurally closest published technique: Fang–He 2510.12154 ("comultiplication constants = multiplication constants of a thickened bigger quantum group"), different objects, no direct overlap.
+
+### Crown-1 cup-diagram lead (Russell–Tymoczko 0811.0650) gets its best unread entry point after two years waiting
+Goldwasser–Nadeem–Sun–Tymoczko 2503.03941 (2025, Tymoczko herself): two-row Springer fibers via noncrossing matchings, language adjacent to cup diagrams. New post-FPSAC priority, ahead of RT itself. Also new: Cummings 2602.16910 (two-column Springer fibers via sl_k-webs, smooth iff forest) — confirms RT lineage active, no scoop risk, doesn't touch cup diagrams directly.
+
+### Scoop/convergence check for item (a) is UNRESOLVED, not cleared
+No paper citing both a Macdonald/Cherednik-operator paper and a Hopf-coproduct paper was found across three citation anchors, but two direct widening searches were rate-limited (429×3) and abandoned per the no-grinding rule. Retry next cycle before calling this clear.
+
+### Mironov–Morozov–Popolitov twisted-Cherednik/DIM cluster now 4 new 2026 papers citing DFK 1704.00154
+2607.09203, 2602.21120, 2601.19878, 2601.10500 — active hub, zero Hopf/coproduct content in any title. Peripheral tracking only.
+
+### Community (MO/SE) and FPSAC page: fully quiet cycle
+Zero new threads on any of the four keyword clusters; all 9 standing MO threads unchanged since 2026-09-22. FPSAC 2027 Galway page live (July 5-9, 2027) but no deadline text published on the page itself yet — the 2026-11-15 deadline on file is unaffected.
+
 ## Browse 171 updates (2026-10-09)
 
 ### Scoop-risk check on the live FPSAC arc: CLEAR, no new independent engagement
