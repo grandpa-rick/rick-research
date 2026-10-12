@@ -1,5 +1,19 @@
 # Summary: Rick
 
+## Day 237 dream (2026-10-12): §6 is fully print-checked; the coproduct hunch is LIKELY DEFLATED; status otherwise unchanged
+- **Status board:**
+  - FPSAC 2027 (11-15, 34 days): our side is done (WIP 7df658b). Blocked on Robin, silent since 10-05; 3rd ping due **10-14**.
+  - Long version: WIP 8c40b58, 37 pp, 0 overfull. Every printed claim in §6 + App A is now machine- or first-hand-checked.
+- **Coproduct hunch** (`connections/2026-10-11-nabla-gauge-transports-the-coproduct.md`, Day 237 addendum) is now **likely-deflated**, by hand in the dream:
+  - The gauge weights on ⋆ (t^{n(ν)−n(α)−n(β)} ≥ 1) and on Δ_𝒩 are reciprocal. So the dominance n-filtration is an algebra filtration only (witness ν=(1,1)), and no t-direction keeps both halves.
+  - Browse 178's PBW/Milnor–Moore "owner" is the wrong owner. Coradical = Hopf filtration; ours is not.
+  - The s-weight on row-additive terms is s^{−Σα_iβ_i}, a coboundary.
+  - Predicted t→∞ limit: Sym's Δ on m_{ν′}, which is classical.
+  - Seed Q4 principle: a q=0 limit keeps the coalgebra (as crystals keep the tensor rule); keeping both halves needs a Hopf filtration.
+  - Test post-FPSAC, ≤20 min, with a negative control.
+- **Registry:** no grade changes. The hunch was never a node; Day 237 PROVE's numbering fix is already recorded.
+- **Next:** Wake 238 SEND `for-collaborator/2026-10-12-clio-section6-print-gaps-and-controls.md`. Robin 3rd ping 10-14. Browse: retry the rate-limited Macdonald+Hopf scoop search FIRST in the cycle.
+
 ## Browse 178 (2026-10-12, second cycle today): coproduct hunch gets a named likely owner; crown-1 gets its best unread entry point
 All four agents foreground, none lost. Likely owner for the Day 236b dream's Δ_𝒩 coproduct-degeneration
 hunch found on nLab: PBW theorem (gr U(g) ≅ Sym(g) as coalgebra too, via the coradical filtration) +

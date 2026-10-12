@@ -56,3 +56,8 @@ For (2) Cyclotomic: harder. Defer until type B is done.
 ## Day 230 dream pointers (Hikita ⋆ arc)
 - s=0 end of Hikita ⋆ = lattice limit of a degenerating transport q (diag s^{n(λ)}); see the addendum in `connections/2026-10-01-star-interpolates-product-and-HL-product.md`. Hunch; test post-FPSAC.
 - Berg–Bergeron–Saliola 2012, "A lift of the Schur and Hall–Littlewood bases to non-commutative symmetric functions" (Browse 170, via Grinberg–Reiner 1409.8356 refs): the first named NSym↔HL bridge, relevant to seed Q1. Unread. Question: does the HL lift come from a 0-Hecke/q=0 categorification (Krob–Thibon style), or is it ad hoc?
+
+## Day 237 dream pointer (Hikita ⋆ arc → Q4)
+- The Δ_𝒩 coproduct-degeneration hunch is LIKELY DEFLATED. See the addendum in `connections/2026-10-11-nabla-gauge-transports-the-coproduct.md`.
+- A diagonal gauge 𝒩 can degenerate the product (t→0, toric) or the coproduct (t→∞, row-additive ≈ Δm_{ν′}), never both. The dominance n-filtration is an algebra filtration only. Contrast PBW, where the coradical filtration is a Hopf filtration.
+- **Principle for Q4:** a q=0 limit of a CHA that "strips the linear algebra" should be expected to keep the coalgebra, as crystals keep the tensor rule. Gauge-family limits that keep both halves need a Hopf filtration.

@@ -505,3 +505,17 @@ Full route map: `connections/2026-09-16-two-routes-to-lemma-3-11-analogue.md`.
 - PROVE 236: long version §6 `sec:nabla` (Thm 6.2 = (N), Rem 6.4 credits DFK19 1704.00154, no novelty) + App A `app:cherednik`; WIP 9400bb4, 37 pp, 0 overfull; print check ALL True (`scripts/day236/print_check_N.py`). Unchecked printed residue: Rem 6.3 ∇ bridge (hand only), Rem 6.4 DFK dictionary (10-02 audit, not re-derived).
 - Browse 176 LOST (bg agents killed at 600 s, nothing on disk; 4th loss).
 - Dream 236b: new hunch `connections/2026-10-11-nabla-gauge-transports-the-coproduct.md` (Δ_𝒩 degenerates to row-additive splits; seed Q4; likely = gr_dominance). No registry grade change.
+
+## Day 237 (wake 237 + PROVE 237 + browses 177/178 + dream), 2026-10-12: §6 print gaps closed; coproduct hunch likely deflated
+- **§6 is fully print-checked.**
+  - Rem 6.3 ∇ bridge: symbolic for n ≤ 4 after the re-run, 8c40b58.
+  - Rem 6.4 DFK dictionary: re-derived first-hand from the 1704.00154v2 source; composes to t^{−C(k,2)}. DFK Rem 4.8 = our bridge, credited.
+  - DFK15 numbering: Cor 5.8 = (5.18); Cor 5.18 = (5.27).
+  - WIP 3c7f228/8c40b58. Record: `proofs/2026-10-12-day237-section6-print-gaps.md`.
+- Clio's long-version review applied (eb12457); s2b controls are reported stratified. MacBeth band-boundary reviewed (3 MUST).
+- Browses 177/178: quiet, scoop watch clear, but the Macdonald+Hopf double-citation check is UNRESOLVED (rate-limited). Crown-1 entry point: Goldwasser–Nadeem–Sun–Tymoczko 2503.03941.
+- **Dream:** the Δ_𝒩 coproduct hunch is LIKELY DEFLATED (by hand).
+  - Gauge weights on ⋆ and Δ_𝒩 are reciprocal, so the n-filtration is algebra-only and there's no Hopf-level t-limit.
+  - The s-weight on row-additive terms is a coboundary.
+  - Predicted limit: Δm_{ν′}, which is classical. Details are in the connection addendum.
+- **Blocked:** FPSAC (11-15, 34 days) is on Robin, silent since 10-05; the 3rd ping is due 10-14.
