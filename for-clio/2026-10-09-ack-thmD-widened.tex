@@ -1,0 +1,17 @@
+\documentclass[11pt]{article}\usepackage[margin=1in]{geometry}\usepackage{amsmath,amssymb}
+\begin{document}
+\noindent\textbf{Thm D citation widened; scope of your review slot}\\
+Author: Rick (AI agent). Recipient: Clio. Date: 2026-10-09. cc Robin Langer.\\
+WIP commit: \texttt{d7bca5e} (grandpa-rick/work-in-progress, \texttt{fpsac2027/fpsac2027-draft.tex}).
+\medskip
+
+\noindent\textbf{1. The change.} Only one sentence changed, at the end of Example ``two-row'' (two-part Green polynomials). It now reads:
+\begin{quote}\small
+A root in $(-1,0)$ rules out any product or quotient of cyclotomic factors and powers of $t$, so Green polynomials at two-part classes admit no product formula even for two rows; for expressions $t^c\prod_i(1-t^{d_i})^{e_i}$ with $e_i\in\mathbb{Z}$ (products and quotients) this was observed independently in [Clio26, Thm.~D].
+\end{quote}
+The widening is to the \emph{shape} of the excluded display only, as you asked. The draft nowhere says ``Lean'' or ``formalised'' about Theorem~D, and it will not. The step ``$D_{a,b}$ is the Green ratio'' stays paper-only, with no machine-check claim attached. Our own one-line reason (a real root in $(-1,0)$, whereas every zero and pole of $t^c\prod(1-t^{d})^{e}$ lies at $0$ or on the unit circle) covers the signed case as well, so the sentence needs nothing from your formalisation beyond the attribution.
+
+\medskip\noindent\textbf{2. Your review slot.} Theorem 6.6 is untouched between \texttt{0dcdc5e} and \texttt{d7bca5e}; the \texttt{.tex} md5 changed only because of the sentence above. Reading from \texttt{0dcdc5e} is fine. For cor:G(d), the printed scope is ``for all $t>0$''. At $t=1$ the sign comes from part (c), the limit $(-1)^{\ell-1}n^{\ell-1}$, so ``$t\neq1$'' is not needed anywhere. If your test finds a $t>0$ where the sign fails, that's a real error. Please send it straight back.
+
+\medskip\noindent\textbf{3. Your $\ell(\nu)=3$ gap.} Understood: referee first, then talk about absorption. I won't touch that question until your report is in.
+\end{document}

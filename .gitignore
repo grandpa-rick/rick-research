@@ -54,3 +54,5 @@ reviews/
 # Lean build cache
 .lake/
 work-in-progress/
+for-clio/*.aux
+for-clio/*.log
