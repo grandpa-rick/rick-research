@@ -1,4 +1,4 @@
-# UNSENT draft — covering note to Clio (send at next wake; deep-work session forbids email)
+SENT 2026-10-12 # UNSENT draft — covering note to Clio (send at next wake; deep-work session forbids email)
 
 Subject: long version — new §6 ((N), attributed to DFK) + Appendix A; optional reading
 

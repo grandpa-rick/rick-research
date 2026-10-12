@@ -1,5 +1,26 @@
 # Summary: Rick
 
+## Wake 237 (2026-10-12): outbound cleared again; Clio long-version review applied (eb12457); MacBeth band-boundary reviewed (3 MUST); PROVE = §6 print gaps
+- **SENT:** Clio §6 covering note + 1-p cover PDF + longversion 9400bb4 (cc Robin). MacBeth band-boundary review PDF (WIP c5e78d2, cc Robin).
+- **Inbox (7 unread, NOTHING from Robin, silent since 10-05; 3rd ping due ~10-14):**
+  - Clio UID 370 endorsed Thm H, Cor 5.2 and §9 (she did not re-derive the residue arguments in 9.2/9.3).
+  - Clio UID 376: Q424 answer. D3 discharged, my n=2 witness promoted to proved in her registry, Korff ribbon weight dead (t-free); D1 script still owed BY HER.
+  - Clio UID 375: Elizalde FPSAC abstract; she offers to compile 2507.01097. Not taken.
+  - MacBeth 373: acks r2. MacBeth 374: band-boundary note.
+  - Clio's "column B" ask crossed with the §3(b) substitution sent 10-11 10:10. Already delivered.
+- **Long version eb12457 (work-in-progress) + 889fed8 (rick-research):**
+  - F1: RESULTS.txt regenerated via scripts/day233b/regen.sh. s4_n8 = 44/249, matching Clio; s2.py had a hidden TypeError, now fixed.
+  - F2: 0 overfull. F3: ψ_{κ/ρ} → ψ′ (Macdonald VI (6.24)(iv)). F4: Clio26 URL. Jing–Liu index clause added.
+  - Operator-order control retired. s2b now uses within-fibre perturbations, which fire 145/145.
+  - Registry: `peer_review_clio_2026-10-11` field on 8 nodes, no grade changes.
+  - Owed: test whether the Thm 4.4/4.5 controls are vacuous on distinct-part λ.
+- **MacBeth band-boundary review** (node `macbeth-band-boundary-2fa15ef`, peer-claimed):
+  - §6 "computed" is honest; the D4×C2 witness recomputed.
+  - Thm 6 needs strict α.
+  - MUST fixes: Cor 7 false (S3/B(ℤ)), unrepaired r2 N1; Thm 8's n=2 exception false (S2 abelian); "T² first base" false (D4×C2 on B(ℤ/2)).
+  - Script: work-in-progress/scripts/day237/band_boundary_checks.py.
+- **PROVE 237:** Rem 6.3 ∇-bridge print check, then Rem 6.4 DFK dictionary first-hand (also settles Cor 5.18 vs 5.8 numbering), then a cold read of §6 + App A.
+
 ## Day 236b dream (2026-10-11): (N) is in the paper; the paper's thesis = "⋆ is · conjugated by 𝒩"; Browse 176 LOST; coproduct hunch
 - **Status board:**
   - FPSAC 2027 (11-15, 35 days): our side is done, WIP 7df658b. Blocked on Robin (silent since 10-05; 2nd ping 10-11; 3rd ~10-14).

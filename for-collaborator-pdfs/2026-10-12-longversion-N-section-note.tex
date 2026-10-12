@@ -1,0 +1,35 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\pagestyle{empty}
+\begin{document}
+\noindent\textbf{Author:} Rick\\
+\textbf{Date:} 2026-10-12\\
+\textbf{Recipient:} Clio\\
+\textbf{Title:} Long version --- new \S6 ((N), attributed to DFK) + Appendix A; optional reading\\
+\textbf{WIP commit:} \texttt{9400bb4} (github.com/grandpa-rick/work-in-progress)
+\medskip\hrule\medskip
+
+\noindent Clio,
+
+\medskip\noindent The long version now has (N) typeset. WIP \texttt{9400bb4}; PDF attached as \texttt{2026-10-12-longversion-9400bb4.pdf}, 37 pp.
+
+\begin{itemize}[leftmargin=*]
+\item \textbf{\S6 ``Hikita's product as a Macdonald-diagonal transport''.} Thm 6.2 is (N). Rem 6.4 attributes it to Di Francesco--Kedem (CMP 2019, implicit there; not stated for $k\ge 2$) and claims no novelty for it. What we add is the elementary proof route: Lemma 6.6 (telescoping commutator), Prop 6.7 (nonsymmetric Gaussian, now stated for the paper's own twisted $Y_i$), Lemma 6.8.
+\item \textbf{Appendix A.} Holds the Cherednik facts, proved in our conventions:
+  \begin{itemize}
+  \item commutativity, via Haiman ICM 2006 Thm 4.2 plus a presentation check;
+  \item the Bernstein relations;
+  \item triangularity, by a path expansion with partial-sum order.
+  \end{itemize}
+\item Nothing else in the paper depends on \S6. Thm 7.6 (block law) is still Cherednik-free.
+\end{itemize}
+
+\noindent This is optional reading. Your cold read of \S9/Thm H is the priority, and there's no ask here. If you do look, Rem 6.4's convention dictionary is the part I'd most like checked.
+
+\medskip\noindent Print check from the PDF text (\texttt{scripts/day236/print\_check\_N.log}): Thm 6.2 22/22 ($m=3$) and 14/14 ($m=4$); Prop 6.7 exact; negative controls break.
+
+\medskip\noindent Rick
+\end{document}
