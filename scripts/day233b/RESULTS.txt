@@ -76,3 +76,16 @@ C0c neg control fires: True
 [PASS] Thm6.6 Xi_a(r,q) printed = lin T_a(p_r p_q): 27 ok, 0 bad 
 [PASS] Thm6.6 printed closed l=3,kappa=1 lead vs engine, all orderings: 107 ok, 0 bad  (31 pairs)
 [FAIL] Thm6.6 NEG: drop the 1/m_xy: 0 ok, 10 bad ['', '', '', '', '', '', '', ''] (expected FAIL)
+### s2d   [python3 s2d.py 7; md5 ac2c8d86b060; EXIT 0]  (appended 2026-10-12 Day 237 from a single run; full regen.sh not rerun)
+[PASS] Thm4.4 (s2d rerun) Lead = sum_pi prod connected leads: 146 ok, 0 bad 
+[FAIL] Thm4.4 NEG dedupe [can differ]: 0 ok, 88 bad ['(1, 1, 1)(2, 1)', '(2, 1, 1)(3, 1)', '(1, 1, 1, 1)(3, 1)', '(1, 1, 1, 1)(2, 2)', '(1, 1, 1, 1)(2, 1, 1)', '(3, 1, 1)(4, 1)', '(2, 2, 1)(3, 2)', '(2, 1, 1, 1)(4, 1)'] (expected FAIL)
+[PASS] Thm4.4 NEG dedupe [structurally blind: no two set partitions share a block multiset]: 58 ok, 0 bad  (blind: PASS forced)
+[FAIL] Thm4.4 NEG wrong order: block factor [(s-1)^{|B|}] instead of [(s-1)^{|B|-1}]: 0 ok, 146 bad ['(1, 1)(2,)', '(2, 1)(3,)', '(1, 1, 1)(3,)', '(1, 1, 1)(2, 1)', '(3, 1)(4,)', '(2, 2)(4,)', '(2, 1, 1)(4,)', '(2, 1, 1)(3, 1)'] (expected FAIL)
+C0 Thm4.4 blind stratum: 58 cases, of which lam has distinct parts: 17; lam with a repeated part: 41
+C0 Thm4.5 cases with kappa=1 (single block: identity is a tautology, factor = lhs): 56 of 217
+C0 Thm4.5 wrong-order coincidences (control passes): [((2, 2), (3, 1), 322965389), ((3, 2), (4, 1), 749081804), ((4, 2), (5, 1), 329163022), ((5, 2), (6, 1), 914833229)]
+[PASS] Thm4.5 (s2d rerun) block multiplicativity: 217 ok, 0 bad 
+[FAIL] Thm4.5 NEG overcount [can differ]: 0 ok, 86 bad ['(1, 1)(1, 1)', '(1, 1, 1)(1, 1, 1)', '(2, 2)(2, 2)', '(2, 1, 1)(2, 2)', '(2, 1, 1)(2, 1, 1)', '(1, 1, 1, 1)(2, 2)', '(1, 1, 1, 1)(2, 1, 1)', '(1, 1, 1, 1)(1, 1, 1, 1)'] (expected FAIL)
+[PASS] Thm4.5 NEG overcount [structurally blind: every multiplicity is 1]: 131 ok, 0 bad  (blind: PASS forced)
+[FAIL] Thm4.5 NEG wrong order: factor [(s-1)^{|C|}] instead of [(s-1)^{|C|-1}]: 4 ok, 213 bad ['(2,)(2,)', '(1, 1)(2,)', '(1, 1)(1, 1)', '(3,)(3,)', '(2, 1)(3,)', '(2, 1)(2, 1)', '(1, 1, 1)(3,)', '(1, 1, 1)(2, 1)'] (expected FAIL)
+C0 Thm4.5 blind stratum: 131 cases; mu distinct parts: 128; lam distinct parts: 38
