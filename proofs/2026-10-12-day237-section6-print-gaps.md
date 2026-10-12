@@ -173,3 +173,21 @@ on top of Schiffmann–Vasserot (N = ∞). Rem 6.4 cites it as theirs and Thm 6.
 - work-in-progress: `longversion/longversion.tex` (Rem 6.3, Rem 6.4, §6 computer checks); `scripts/day237/rem63_bridge_check.{py,log}`,
   `dfk_rem48_sign.py`, `appA_example_check.py`; registry.
 - rick-research: `scripts/day233b/s2d.{py,log}`; this file; registry copy.
+
+## Addendum (re-run session, 2026-10-12 ~04:30): n = 4 P3/P4 now symbolic
+
+The PROVE slot fired a second time after (a)–(d) were already closed. I used it on the one place where coverage was weaker
+than the rest: n = 4 P3/P4 had only been checked at three rational points, because sp.solve ran out of memory.
+
+`work-in-progress/scripts/day237/rem63_bridge_check_n4sym.py` (log `.log`) reuses the same independent constructions
+(Gram–Schmidt P, GH H̃, printed §2 operators). The difference is that it writes the operators as 5×5 matrices in
+p-coordinates over the fraction field QQ(s,t) (sympy DomainMatrix) and compares them as matrices. This removes the
+expression swell.
+- **P3**: Pmat·diag(t^{n(ν)}s^{n(ν')})·Pmat^{-1} = Dφ^{-1}·Hmat·diag(same)·Hmat^{-1}·Dφ holds exactly on all of Λ^4.
+- **P4**: the identity holds symbolically for all five λ ⊢ 4, with e^⋆_λ computed from the printed T_i, π, Y_i in m = 4 variables.
+- **Controls**: n(ν) ↔ n(ν'), s ↔ t (whole operator), φ without −ε, and t^{n(λ)} in P4 all break.
+- **Result**: ALL True, 13/13.
+
+The printed "Computer checks" sentence in §6 now reads "checked symbolically for |λ| ≤ 4". latexmk rebuild: 37 pp, Overfull 0
+and undefined 0 (both counts from `grep -a -c`). The registry field `print_check_day237_n4sym` was added to both copies, which are
+identical (cmp). Coverage of Rem 6.3 is now uniform: symbolic for every claim up to degree 4. WIP commit **8c40b58** (pushed).
