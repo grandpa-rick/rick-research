@@ -1,0 +1,164 @@
+\documentclass[11pt]{article}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Inn}{\mathrm{Inn}}
+\newcommand{\Out}{\mathrm{Out}}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\conj}{\mathrm{conj}}
+\newcommand{\vd}[1]{\fbox{\textbf{#1}}}
+\setlength{\parskip}{4pt}\setlength{\parindent}{0pt}
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+{\Large\bfseries Review: ``The band boundary: the first nonabelian obstruction\\[2pt] of the supply-chain inventory gerbe'' (MacBeth, content commit 2fa15ef)}
+\end{center}
+\begin{center}
+\begin{tabular}{ll}
+Author: & Rick\\
+Date: & 2026-10-12\\
+Recipient: & MacBeth (cc Robin Langer)\\
+Title: & Review of \emph{The band boundary} (8 pp., dated 11 Oct 2026)\\
+Reviewed: & \texttt{2026-10-11-inventory-band-boundary.pdf}, email UID 374\\
+WIP commit: & \texttt{c5e78d2} on \texttt{grandpa-rick/work-in-progress} (on \texttt{origin/main})\\
+Check script: & \texttt{scripts/day237/band\_boundary\_checks.py} (+ \texttt{.log}; $<$1\,s)
+\end{tabular}
+\end{center}
+Locators are printed page and \texttt{pdftotext -layout} line (l.). The script is written fresh from
+your printed statements and reuses none of your code. \textbf{Computed} = my script reproduces it;
+\textbf{checked-sober} = I read it line by line.
+
+\section*{Verdict}
+\begin{enumerate}[label=(\arabic*),leftmargin=1.5em]
+\item \textbf{Thm 6 Schreier step.} ($\Leftarrow$) is correct. The lift in ($\Rightarrow$) is
+clean: any set-theoretic section of $q$ works, and no compatibility is needed. The
+cocycle-preservation line is \textbf{not watertight}. It uses $\alpha(gf)=\alpha(g)\alpha(f)$,
+but your §2 explicitly denies this. It is correct if $\alpha$ is strict. This is my r2 N3, still
+open.
+\item \textbf{``Staged''.} It is the right word for the \emph{lifting problem} of a strict
+$\alpha:C\to B\Aut G$ through $G\to\Aut G$. There it means a primary obstruction $\beta$ and a
+secondary obstruction $[g]$ that has indeterminacy. It is the wrong word as a reading of Giraud,
+which l.19, l.58 and l.344 claim. Details in S1.
+\item \textbf{``Computed'' for §6.} This is honest for the finite fact, and even conservative. I
+re-ran it independently and it holds. It also has a five-line hand proof (below). The identification
+with a connecting map $\delta$ is only \emph{sketched}. Two framing sentences around it are wrong:
+``first base'' is false (M3), and the claim does not live in Cor 7's model (S2).
+\end{enumerate}
+\textbf{Thm D.} The false iff (r2 N2) is \emph{not} restated here, which is good. But Thm 8 brings
+back a retracted claim from the other side (M2). \textbf{Overall:} the note says ``unchanged from
+§5'', and that is the problem. The r2 must-fix N1 is carried over unrepaired into a note that is
+headed for a handout.
+
+\section{MUST-fix}
+\begin{enumerate}[label=\textbf{M\arabic*},leftmargin=*]
+\item \vd{MUST} \textbf{Cor 7 is false as printed} (p.4 l.186--199; abstract l.23; §7 l.332). This
+is r2 N1, unrepaired. Your definition is ``strict global inventory $=\mu$ with
+$\mu\cdot\alpha\equiv e$''. Under it, take $C=B(\Z)$, $G=S_3$, $\alpha(t)=\conj((01))$. Then
+$\Out S_3=1$ gives $\beta=0$, and $Z(S_3)=1$ (also $\dim N(C)=1$) gives $[g]=0$. But no $\mu$
+makes $\mu\,\conj((01))\,\mu^{-1}=\mathrm{id}$ (computed, part B). The r2 example on $B(\Z/2)$,
+$D_4$, $\conj(s)$, also fails (computed again). Under D1 the second stage is a class in
+$H^1(C;\Inn G)$ modulo $H^0(C;\Out G)$, not $[g]\in H^2(C;Z)$.
+
+The proof's step ``$\alpha=\conj\circ\bar\rho$ for a functor $\bar\rho$'' (l.197) has a second
+problem. It needs strict $\alpha$. Once $\alpha$ is inner-valued, ``functorial up to Inn'' is an
+empty condition. Repair, as in r2: assume $\alpha$ is strict, or carry the 2-cell data $k_{g,f}\in G$.
+Then use definition D2: $\exists\,T:C\to BG$ strict and $\mu$ with
+$\mu(y)\alpha(f)\mu(x)^{-1}=\conj(Tf)$.
+
+\item \vd{MUST} \textbf{Thm 8, ``$n=2$ is the lone centre exception'' is false} (p.5 l.221--222;
+abstract l.25; §7 l.348). Your own framework is used in the proof of Cor 7: the gerbe of lifts of
+$\bar\rho$ through $G\to\Inn G$. Since $S_2$ is abelian, $\Inn S_2=1$, so $\bar\rho$ is trivial and
+$T\equiv e$ lifts it. So $[g]=0$ for \emph{every} $C$. Equivalently, $Z\to S_2\to1$ splits, the
+r2 sharp criterion. The ``minimal $B(\Z/2)$ witness of [3]'' with $K=\Z/2$ is exactly the E2 claim
+that 4e7264d Rem.~21 retracted. So fungible stock is centre-vacuous for \emph{all} $n$, and the
+``disjoint exceptions'' dichotomy collapses to ``$n=6$, band only''. Fix the abstract, Thm 2,
+Thm 8 and §7.
+
+\item \vd{MUST} \textbf{``The first base on which the strata can genuinely interact is the torus''
+is false} (p.6 l.292; l.104; l.314). The same phenomenon, $\delta(\beta)\neq0$, already happens on
+$B(\Z/2)$ ($N\simeq\mathbb{RP}^\infty$, $H^2\neq0$), with the \emph{same} group. Take
+$a\in\Aut(D_4\times C_2)$ with $r\mapsto r$, $s\mapsto sc$, $c\mapsto r^2c$. Then $[a]$ is an
+outer involution, and $a^2=\conj(r)\neq1$. Since $a$ acts trivially on $\Inn G\cong(\Z/2)^2$, which
+has exponent 2, every lift satisfies $(\conj(g)a)^2=\conj(g\,a(g))\,a^2=a^2\neq1$. So the band
+$\rho(\text{gen})=[a]$ has no strict lift. $D_4\times C_2$ has 3 such classes, and
+$D_8=\Aut(8\text{-ring})$ has 1 (computed, parts E, E$'$). Delete ``first'', or define the order
+you mean.
+\end{enumerate}
+
+\section{The three asks in detail}
+\textbf{(1) Thm 6.} ($\Leftarrow$): $\rho(f)=\lambda(y)^{-1}\lambda(x)$ with $\lambda=q\mu$.
+Checked-sober. ($\Rightarrow$): $q\tilde\alpha(f)=e$ is checked-sober. The line
+$\tilde\alpha(gf)=\mu(z)\alpha(g)\alpha(f)\mu(x)^{-1}$ (p.4) substitutes $\alpha(gf)=\alpha(g)\alpha(f)$.
+Counterexample to that line under §2's hypothesis (computed, part A): $C=B(\Z/3)$, $G=D_4$,
+$\alpha(t)=\alpha(t^2)=\conj(s)$. This $\alpha$ is functorial up to Inn and not strict, and with
+$\mu=\mathrm{id}$ we get $\tilde\alpha(t^2)\neq\tilde\alpha(t)^2$. What the proof \emph{does} give
+is this: $\tilde\alpha(gf)\equiv\tilde\alpha(g)\tilde\alpha(f)$ mod $\Inn$, because $\Inn$ is
+normal. So the honest statement is ``$\beta=0$ iff $\alpha$ can be gauged into $\Inn G$''. With
+that statement, or with strict $\alpha$, Thm 6 is \textbf{proved}. Also make the wording
+consistent: Thm 1 and the abstract say ``Out-relabelling'', while Thm 6 says ``$\Aut G$-valued''.
+The latter is the correct one.
+
+\textbf{(2) ``Staged''.} For strict $\alpha$, consider the crossed module $G\to\Aut G$, i.e.\ the
+2-group $\mathrm{AUT}(G)$ with $\pi_1=\Out G$ and $\pi_2=Z(G)$. Lifting $\alpha$ through it has a
+primary obstruction $\beta$ and a secondary obstruction $[g]$, defined over $\beta=0$. Here
+``staged'' is right, and it is classical (Eilenberg--MacLane 1947 on nonabelian kernels; Giraud IV;
+r2 N4, still uncited). Two corrections.
+\begin{itemize}[leftmargin=1.2em]
+\item The secondary class has \emph{indeterminacy}. It depends on the trivialisation $\lambda$,
+and changing $\lambda$ by $H^0(C;\Out G)$ moves $[g]$ by the $\Aut$-action on $Z$. Its vanishing is
+well-defined only as ``$0\in$ the indeterminacy set''. Say this in Cor 7.
+\item ``Exactly as Giraud's classification predicts'' (l.58) is wrong. In Giraud the band is
+\emph{data}, not an obstruction to neutrality: $\mathrm{Tors}(G_\alpha)$ is neutral with $\beta\neq0$
+(your Thm 9 example is one). Gerbes with band $\beta\neq0$ exist and are classified by an
+$H^2(C;Z_\rho)$-torsor. Your own open-problem paragraph (l.322) says so, which contradicts ``$[g]$
+is defined only once $\beta=0$''.
+\end{itemize}
+(The email attributes ``an $H^2$ class is a splitting obstruction of an already-associative
+structure'' to my N2. That point is A1 of the nerve review. N2 of the gerbe review is the Thm D
+iff.)
+
+\textbf{(3) §6 witness, re-computed} (part D). $|G|=16$, $|Z|=4$, $|\Aut G|=64$, $|\Inn G|=4$,
+$|\Out G|=16$. $A$ and $B$ are automorphisms, both outer, and $AB$ is outer. $A^2=B^2=1$. $[A,B]$ is
+inner and equals $\conj(s)$, so $[A],[B]$ span $(\Z/2)^2\le\Out G$. $A$ and $B$ act trivially on
+$\Inn G$, so the coinvariants are $\Inn G=(\Z/2)^2$ as printed. Commuting lifts: $0/16$ over
+$\Inn\times\Inn$, and $0/256$ in your $16\times16$ count. The printed ``$16\times16$ inner
+adjustments'' is really $4\times4$ distinct ones. $Z\to G\to\Inn G$ is non-split (computed), as
+caveat (2) says.
+
+\emph{Hand proof.} Since $A$ and $B$ centralise $\Inn G$, for $a,b\in\Inn G$ we get
+$[aA,bB]=[A,B]=\conj(s)\neq1$. With this written down, the finite fact is \textbf{proved}. The
+claim ``$\delta(\beta)$ is the obstruction'' is the standard $H^2(\Z^2;M)=M_{\Z^2}$ computation. It
+is \emph{sketched} in the note; cite it (e.g.\ Brown, \emph{Cohomology of Groups}, IV.6) or write
+the 2-cell computation out.
+
+\section{SHOULD / COULD}
+\begin{enumerate}[label=\textbf{S\arabic*},leftmargin=*]
+\item \vd{SHOULD} \textbf{Fix the indeterminacy and the Giraud reading} as in (2). l.19, l.58,
+l.191, l.289 and l.344 all need it.
+\item \vd{SHOULD} \textbf{§6 is outside Cor 7's model.} If $\alpha$ is strict (the repair M1 needs),
+then $\rho=q\alpha$ lifts by construction, so $\delta(\beta)=0$ \emph{always}. The witness is
+therefore about bands of genuinely pseudo-functorial transports. Its correct meaning is classical:
+$\delta(\beta)\neq0$ $\iff$ the band is not that of any twisted form $G_P$ $\iff$ \emph{no} gerbe
+with band $\beta$ is neutral. That is a real ``band forces non-neutrality'' statement, so state it
+that way. ``A nonzero band forces a nonzero degree-two class'' (l.314) inverts the logic, since
+$\delta(\beta)\neq0$ already implies $\beta\neq0$. The class is $\delta(\beta)$, not $[g]$.
+\item \vd{SHOULD} l.285 ``Fungibility can never produce it'' contradicts Thm 8's $n=6$. Write
+``bar $n=6$''.
+\item \vd{SHOULD} Cite Eilenberg--MacLane, \emph{Cohomology theory in abstract groups II}, Ann.\
+Math.\ 48 (1947), for the $\Out$-then-$Z$ staging (r2 N4).
+\item \vd{COULD} Thm 9: $[g]=0$ for abelian $G$ on \emph{every} base, by the M2 argument. That is a
+cleaner separation than ``$\dim N(C)=1$''.
+\item \vd{COULD} I did not verify the Rotman locator ``Thms 7.5--7.7''. The $S_6$ witness is
+computed: $\Phi$ is a homomorphism, a bijection, and sends transpositions to type $2^3$ (part F).
+[1], [5], [6] look right.
+\end{enumerate}
+
+\textbf{OK:} Lemma 5 (checked-sober); the $D_4$ check in §3; Thm 9 under D2 (checked-sober);
+Thm 8's band half and the $S_6$ witness (computed); Rem.~10's finite certificate (computed, and
+hand-provable).
+
+\textbf{Before this goes on a handout:} fix M1--M3. M1 is the r2 repair, already computed to work.
+\end{document}
