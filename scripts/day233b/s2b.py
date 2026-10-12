@@ -30,15 +30,30 @@ def histories(lam, tt, Wf=None):
     rec(len(lam) - 1, [], 1, 0); return out
 
 def W_nosign(k,J,tt): return W_closed(k,J,tt)*(-1)**len(J)%p
-R = Res("Thm3.7 NEG: weights without (-1)^p (should FAIL for odd m)")
+# Rank note (Clio review 10-11 s2.2): every history ending at mu has sum|J| = l(lam)-l(mu) = m, so
+# W -> (-1)^{|J|} W rescales the whole fibre by (-1)^m: the sign control is BLIND on even m by
+# construction and tests only m mod 2.  It is therefore reported stratified by parity, and two
+# perturbations that vary WITHIN a fibre (Clio's suggestion) are added:
+#   W -> W*(k+1)        (depends on the processed part k)
+#   W -> W*(max J + 1)  (depends on the largest merged block)
+# A history's product of these factors is not determined by (lam, mu), so they can fire at any m.
+def W_fk(k,J,tt): return W_closed(k,J,tt)*(k+1)%p
+def W_gmaxJ(k,J,tt): return W_closed(k,J,tt)*(max(J)+1)%p
+ctrls = [("weights without (-1)^p", W_nosign), ("W*f(k), f(k)=k+1", W_fk), ("W*g(max J), g(j)=j+1", W_gmaxJ)]
+Rs = {(nm, par): Res(f"Thm3.7 NEG: {nm} [m {'even' if par == 0 else 'odd'}]") for nm, _ in ctrls for par in (0, 1)}
 for n in range(3, 8):
     for lam in partitions(n):
         if cost(lam) > 4e4: continue
-        H = histories(lam, t0, W_nosign)
+        Hs = {nm: histories(lam, t0, Wf) for nm, Wf in ctrls}
         for mu in partitions(n):
             if mu == lam or kappa(lam, mu) != len(mu): continue
-            m = len(lam)-len(mu); R.chk(es(lam,t0,m+1)[mu][m] == H.get(mu,(0,0))[0], "")
-print(R, "(expected FAIL)")
+            m = len(lam)-len(mu); lead = es(lam,t0,m+1)[mu][m]
+            for nm, _ in ctrls:
+                Rs[(nm, m % 2)].chk(lead == Hs[nm].get(mu,(0,0))[0], f"{lam}{mu}")
+for nm, _ in ctrls:
+    for par in (0, 1):
+        exp = "(blind by construction: fibre-constant +1)" if (nm == ctrls[0][0] and par == 0) else "(expected FAIL)"
+        print(Rs[(nm, par)], exp)
 # ---------- Thm 4.4 coarsening factor ----------
 R = Res("Thm4.4 Lead = sum over set partitions with block sums = mu of prod connected leads")
 Rneg = Res("Thm4.4 NEG: count each distinct block-multiset once (dedupe) (should FAIL where equal parts)")

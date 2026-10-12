@@ -62,14 +62,16 @@ def histories(lam, tt):
             rec(i - 1, nb, w * W_closed(k, J, tt) % p, m + len(J))
     rec(len(lam) - 1, [], 1, 0); return out
 R = Res("Thm3.7 coarsening: val=m, Lead = sum tight histories prod W; Lead(0)=(-1)^m #H")
-Rneg = Res("Thm3.7 NEG: process lam_1..lam_l (wrong order) (should FAIL somewhere)")
+# RETIRED 2026-10-12 (Clio review 10-11 s1.4): the operator-order control "process lam_1..lam_l"
+# had rank 0 -- by commutativity of * (c0.py C0b) every ordering of the parts gives the same
+# history sum, so it could never fire.  Replacement controls with nonzero rank live in s2b.py.
 sk = []
 for n in range(2, NMAX + 1):
     for lam in partitions(n):
         if cost(lam) > 4e4: sk.append(lam); continue
         l = len(lam)
         for tt in (t0, 0):
-            H = histories(lam, tt); Hrev = None
+            H = histories(lam, tt)
             for mu in partitions(n):
                 if mu == lam or kappa(lam, mu) != len(mu): continue
                 m = l - len(mu); c = es(lam, tt, m + 2)[mu]
@@ -77,10 +79,7 @@ for n in range(2, NMAX + 1):
                 s_, cnt = H.get(mu, (0, 0))
                 R.chk(c[m] == s_, f"Lead {lam}{mu} t={tt}")
                 if tt == 0: R.chk(sym(c[m]) == (-1) ** m * cnt and cnt > 0, f"#H {lam}{mu}")
-                if tt == t0:
-                    if Hrev is None: Hrev = histories(tuple(reversed(lam)), tt)
-                    Rneg.chk(c[m] == Hrev.get(mu, (0, 0))[0], "")
-print(R, "skipped", sk); print(Rneg, "(expected FAIL)")
+print(R, "skipped", sk)
 # ---------- Lemma 3.9 ----------
 R = Res("Lemma3.9 lin T_k f = (-1)^d [n]/[k] f(1,t,..,t^{k-1}) (f=p_rho,e_rho,P_rho)")
 Rneg = Res("Lemma3.9 NEG: drop (-1)^d")
@@ -192,7 +191,7 @@ for n in range(2, NMAX + 1):
                     if len(B) > 1:
                         lb = srt(tuple(lam[i] for i in B)); v = v * Lead(lb, (sum(lb),), t0) % p
                 tot = (tot + v) % p
-                seen[srt(tuple(srt(tuple(lam[i] for i in B)) for B in pi))] = v
+                seen[tuple(sorted(tuple(sorted((lam[i] for i in B),reverse=True)) for B in pi))] = v  # 2026-10-12: was srt() on tuples -> TypeError (pre-existing crash; same fix as s2b.py)
             R.chk(Lead(lam, mu, t0) == tot, f"{lam}{mu}")
             Rneg.chk(Lead(lam, mu, t0) == sum(seen.values()) % p, "")
 print(R); print(Rneg, "(expected FAIL)")
