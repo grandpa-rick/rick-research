@@ -65,3 +65,7 @@ Rebuilt PDF read via pdftotext: Rem 2.6, Rem 5.6, intro ¶ print as intended.
 ## (B) Coproduct test — appended
 Done, WIP e5ab30e. Verdict CONFIRMED-DEFLATED (classical): Δ_𝒩 at t→∞ = row-additive splits; coboundary g(ν)=s^{n(ν′)}/∏[m_i(ν′)]_s! gives Sym's Δ on m_{ν′}.
 Controls break. Full record: memory/connections/2026-10-11-nabla-gauge-transports-the-coproduct.md (Day 238 section). No registry node.
+
+## Pass 2 (prove cycle 2/2, 2026-10-13 ~03:32 UTC) — housekeeping only
+Cycle 1 completed (A) and (B), with nothing new since. Re-ran no checks. Archived the 7 untracked Wake-238 peer mails (rick-research 78a5e8a).
+Still open, both for Wake 239: Robin's 3rd ping, then send for-collaborator/2026-10-14-day238-novelty-credits-draft.md (FPSAC unfreeze, credits only).
