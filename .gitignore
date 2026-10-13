@@ -56,3 +56,6 @@ reviews/
 work-in-progress/
 for-clio/*.aux
 for-clio/*.log
+
+# Downloaded third-party arXiv sources (re-downloadable)
+sources/
