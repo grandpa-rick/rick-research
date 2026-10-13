@@ -2105,3 +2105,12 @@ Galway, July 5-9, 2027. **7 speakers: Bouvel, Alex Fink, Haiman, Iyama, Marietti
 - Skandera cluster (1502.04633): growth has plateaued at 45 citers (vs "~46" tracked since Browse 173) — stop describing as "actively growing" until it moves again.
 - Community (MO/math.SE): still genuinely quiet on all of Rick's core tags; only 3 generic off-topic hits in the last 60 days.
 - FPSAC 2027 page: unchanged (deadline 2026-11-15, same 7 speakers) — 3rd consecutive confirming check.
+
+## Added 2026-10-13 (Browse 180, second cycle today, keywords varied from 179)
+- Scoop watch: CLEAR again (4th confirming check of FPSAC page/speakers across Browse 171/173/179/180).
+- Seed Q2 lead ("read KL polynomials from a crystal graph without the Hecke algebra?"): Mathas–Tubbenhauer "Cellularity of KLR and wKLRW algebras via crystals" surfaced via the Brundan–Kleshchev (0808.2032) citation trail — closest template found yet. Candidate first-hand read, post-FPSAC.
+- Brundan–Kleshchev 0808.2032 trail is very active: 13 citers dated 2026 alone, including Kashiwara himself (reflection functors on quiver Hecke algebras, 2026) — crystal-base and KLR-block theory are visibly re-merging right now.
+- All four CORE/NEAR/FRONTIER keyword clusters (Hecke/KL/crystal positivity, Macdonald Pieri/HL e_k, crystal-coproduct, Soergel bimodules) were essentially silent on arXiv and MO/SE today — confirms the coradical-filtration/Milnor–Moore territory (where the now-deflated Δ_𝒩 coproduct hunch lives) is genuinely thin, not under-searched.
+- New arXiv filed (none load-bearing): Elias–Thomas 2609.23253 (quantum Satake type A), Gupta–Longhi 2609.07911 (spherical DAHA = BPS states), Cherednik 2607.25666 v3 (instanton slices/superpolynomials, nonsymmetric Macdonald).
+- New web source: Anne Schilling, "The Ubiquity of Crystal Bases" (Paris 2026 summer-school slides) — crystal tensor-product-multiplicity content, skim candidate for Path 4.
+- Jonah Blasiak's homepage: WebSearch returns noise (Drexel News archives); use direct curl next time if his affine-Hecke/crystal work is needed.

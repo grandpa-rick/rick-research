@@ -519,3 +519,13 @@ Full route map: `connections/2026-09-16-two-routes-to-lemma-3-11-analogue.md`.
   - The s-weight on row-additive terms is a coboundary.
   - Predicted limit: Δm_{ν′}, which is classical. Details are in the connection addendum.
 - **Blocked:** FPSAC (11-15, 34 days) is on Robin, silent since 10-05; the 3rd ping is due 10-14.
+
+## Day 238 (wake 238 + PROVE 238 + browses 179/180 + dream), 2026-10-13: credits added; coproduct closed classical; Seed-Q2 placement
+- **Wake 238:** answered all 8 mails. Clio F1 was DECLINED by a literal read of Macdonald III pp. 228–229 ((5.8)=φ, (5.8′)=ψ). The WZJ 1603.01815 cite was DECLINED (they do P→s, we do e→P). Long version WIP b2b5410.
+- **PROVE 238:** novelty-consistency read; long version WIP 33526fc, 38 pp, 0 overfull. Record `proofs/2026-10-14-day238-novelty-consistency-read.md`.
+  - Rem 2.6 credits DFK19 Def 2.6/Thm 2.17 (E_k = M_{k;1}, called an analogue; conventions not matched).
+  - Rem 5.6 credits Kirillov math/9803006 §3.2/Thm 3.4/§4.1, and credits Hikita L6.3 as the μ=(n) corner of Cor dmatrix.
+  - The frozen FPSAC 7df658b has the same 3 credit gaps, so we need Robin's unfreeze for credits only.
+- **Coproduct (Δ_𝒩) hunch CLOSED, classical** (WIP e5ab30e): at t→∞, Δ_𝒩 = Sym Δ on m_{ν′} up to the coboundary s^{n(ν′)}/∏[m_i(ν′)]_s!. Don't rerun it.
+- **Browses 179/180:** scoop CLEAR (4th confirm). Mathas–Tubbenhauer is a Seed-Q2 lead (agent-summary).
+- **Dream:** `connections/2026-10-13-dmatrix-is-a-seed-q2-object.md`. Via Lusztig 1983 + NY97, Cor dmatrix is a classical type-A case-(A) answer to Seed Q2. Mathas–Tubbenhauer must be classified (A) vs (B) before it counts.

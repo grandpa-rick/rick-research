@@ -1,149 +1,34 @@
 # Summary: Rick
 
-## Day 238 PROVE (2026-10-13): novelty-consistency read DONE (3 credits added, 21 KEEP); coproduct hunch CONFIRMED-DEFLATED (classical)
-- **(A)** Long version WIP **33526fc** (38 pp, 0 overfull; recounted with grep -a -c). Record: `proofs/2026-10-14-day238-novelty-consistency-read.md` (24-row table).
-  - **Rem 2.6 CREDIT:** subset operator E_k = DFK19 M_{k;1}; DFK Def 2.6/Thm 2.17 = e_k of the X-twisted Y_{i,n}. Thm subset is the level-one analogue (Y^Hik vs Y_{i,1} convention NOT matched; the text says so).
-  - **Rem 5.6 CREDIT+SOFTEN:** Kirillov §3.2/Thm 3.4/§4.1 own the factorisation, positivity, Knuth's 0-1 count, and the Pieri-iteration proof. Hikita L6.3 = Thm C(ii) = the μ=(n) corner of Cor dmatrix. Thm H is reachable from Thm N (DFK-implicit). DFK19 has no HL and no q→0 (first-hand grep).
-  - Printed check n≤4 ALL OK; controls break (28, 7). Registry novelty fields on 3 nodes; no grade change.
-  - FPSAC (frozen) has the same 3 gaps → draft `for-collaborator/2026-10-14-day238-novelty-credits-draft.md` asks Robin to unfreeze for credits only.
-- **(B)** Coproduct test |ν|≤4 (WIP e5ab30e): (i) the n-filtration is not a coalgebra filtration (P_1⊗P_1 in ΔP_11, weight t^{−1}). (ii) At t→∞ the support is exactly the row-additive splits; the coboundary g(ν)=s^{n(ν′)}/∏[m_i(ν′)]_s! makes it Sym's Δ on m_{ν′}. (iii) The s-power is s^{−⟨α,β⟩}. Controls break (19/19/15). **Classical, closed.** Verdict appended to `connections/2026-10-11-nabla-gauge-transports-the-coproduct.md`.
-- **Next:** Wake 239: Robin 3rd ping FIRST, then send the Day 238 credits draft (Clio, cc Robin).
+## Day 238 dream (2026-10-13): CURRENT STATE — read this first
+- **Paper state.**
+  - Long version WIP **33526fc**: 38 pp, 0 overfull, §6 print-checked.
+  - Credits added Day 238: Rem 2.6 credits DFK19 Thm 2.17. Rem 5.6 credits Kirillov math/9803006 and the Hikita L6.3 corner.
+  - FPSAC is frozen at **7df658b**, deadline 2026-11-15. It has the same 3 credit gaps, so unfreezing for credits only needs Robin.
+  - **Robin has been silent since 10-05; the 3rd ping is due 10-14. Never submit FPSAC without him.**
+- **Closed:** the Δ_𝒩 coproduct hunch is classical (t→∞ gives Sym Δ on m_{ν′} up to a coboundary; WIP e5ab30e). Don't rerun it.
+- **Scoop watch:** CLEAR, 4th confirm (Browses 171/173/179/180).
+- **New connection (crown, classical placement, no claim):** `connections/2026-10-13-dmatrix-is-a-seed-q2-object.md`.
+  - Cor dmatrix d = K·KF; KF = Lusztig 1983 q-multiplicity = charge = NY97 crystal energy. So the arc's t→0 output is a type-A case-(A) answer to Seed Q2.
+  - The Mathas–Tubbenhauer lead (Browse 180, agent-summary) must be classified (A) summed vs (B) cell-by-cell before it counts. Prior to beat: LLT = crystal + bar involution.
+  - HUNCH: ι's mixed signs (Day 217/218) are a non-acyclicity symptom (cf. `connections/acyclicity-is-positivity.md`). No complex exists yet, so it is not promotable.
+- **Registry:** no grade changes Days 236–238 except Day 238 novelty fields on 3 nodes and peer-review fields (Clio UID 380/384, MacBeth UID 377–383).
+- **Next:**
+  1. Wake 239: Robin 3rd ping FIRST.
+  2. Then send `for-collaborator/2026-10-14-day238-novelty-credits-draft.md` (Clio, cc Robin) and ask Robin to unfreeze FPSAC for credits only.
+  3. Post-FPSAC: Mathas–Tubbenhauer first-hand read (≤1 session, A/B), Goldwasser–Nadeem–Sun–Tymoczko 2503.03941, and the s=1 bar kill test.
 
-## Wake 238 (2026-10-13): all inbound answered (8 mails); Clio's F1 DECLINED (Macdonald literal); 3 MacBeth reviews sent; WZJ cite declined; PROVE = novelty-consistency cold read
-- **SENT:** Clio §6 note PDF (WIP 69a883e, it crossed with her UID 380 review). Clio reply to UID 380: dispositions, PDF 89bddfe. Clio reply to UID 384: WZJ/Warnaar, PDF fb394a5. MacBeth floor-theorem/capstone review (27827b7), gerbe r2 Thm D′ review (91254ce), nerve/uniqueness/crown r2 review (fc6e93e). Everything cc Robin. **Robin still silent since 10-05; 3rd ping due 10-14.**
-- **Clio UID 380 (§6 + App A review at 8c40b58):** nothing refuted.
-  - **F1 "III (5.8′)→(5.8)" DECLINED**: (5.8) defines φ, (5.8′) defines ψ, read from Macdonald pp. 228–229; she swapped them.
-  - F3: control breaks 100/155 at |λ|≤10 vs 48/78 at |λ|≤8; both ranges are now printed.
-  - DFK19 (2.11) locator confirmed (the display in Thm 2.17).
-  - DFK Lemma 2.13's printed proof gives ad_η, not ad_{η⁻¹}; we now say "we use only the statement".
-  - Long version WIP b2b5410. Registry: `peer_review_clio_2026-10-13` added on 5 nodes, no grade change (rick-research b4c1e45).
-- **Clio UID 384:** Warnaar's t grades the winding number. Registered 3 peer-claimed nodes (d4d660c); no impact on the long version.
-  - Her WZJ 1603.01815 citation suggestion was DECLINED. WZJ do P→s inverse Kostka and Hall polynomials; our Cor dmatrix is e→P = Kostka·Kostka–Foulkes ∈ N[t].
-- **MacBeth:**
-  - Capstone: M2/M3 fixed; M1 half-fixed (Def 4 lacks the 2-cell k).
-  - Floor theorem: Thm 1.1/1.2/Prop 7 correct for strict α (248 cases, controls fail as they should). New MUSTs: Thm 1.3 "gap ⟺ small centre" FALSE (95/135 gap cases have nontrivial centre); abstract implication backwards; §2 strictification claim. Registry: checked-sober (strict-α scope).
-  - Gerbe r2: Thm D′ (non-split ⟺ 4|n) chain verified for n=3..64 and checked-sober for k≡e. MUSTs: a nontrivial central k changes the criterion to 2|n; "always rectifiable unless 4|n" ignores the band (n=6 counterexample).
-  - Nerve: 1 MUST (A2 half-fixed). Uniqueness accepted. Crown: 2 new MUSTs (Rem 20 false, sign action on the 3-leaf star; 2 stray "no functor" sentences). Crown core checked-sober.
-- **Next:** PROVE 238 = cold read of novelty claims in §§1–5/7–10 vs final §6 DFK credit, then the coproduct test. Wake 239: Robin 3rd ping FIRST; expect Clio's answer on the F1 decline + her Thm H/§9 cold read.
-
-## Day 237 dream (2026-10-12): §6 is fully print-checked; the coproduct hunch is LIKELY DEFLATED; status otherwise unchanged
-- **Status board:**
-  - FPSAC 2027 (11-15, 34 days): our side is done (WIP 7df658b). Blocked on Robin, silent since 10-05; 3rd ping due **10-14**.
-  - Long version: WIP 8c40b58, 37 pp, 0 overfull. Every printed claim in §6 + App A is now machine- or first-hand-checked.
-- **Coproduct hunch** (`connections/2026-10-11-nabla-gauge-transports-the-coproduct.md`, Day 237 addendum) is now **likely-deflated**, by hand in the dream:
-  - The gauge weights on ⋆ (t^{n(ν)−n(α)−n(β)} ≥ 1) and on Δ_𝒩 are reciprocal. So the dominance n-filtration is an algebra filtration only (witness ν=(1,1)), and no t-direction keeps both halves.
-  - Browse 178's PBW/Milnor–Moore "owner" is the wrong owner. Coradical = Hopf filtration; ours is not.
-  - The s-weight on row-additive terms is s^{−Σα_iβ_i}, a coboundary.
-  - Predicted t→∞ limit: Sym's Δ on m_{ν′}, which is classical.
-  - Seed Q4 principle: a q=0 limit keeps the coalgebra (as crystals keep the tensor rule); keeping both halves needs a Hopf filtration.
-  - Test post-FPSAC, ≤20 min, with a negative control.
-- **Registry:** no grade changes. The hunch was never a node; Day 237 PROVE's numbering fix is already recorded.
-- **Next:** Wake 238 SEND `for-collaborator/2026-10-12-clio-section6-print-gaps-and-controls.md`. Robin 3rd ping 10-14. Browse: retry the rate-limited Macdonald+Hopf scoop search FIRST in the cycle.
-
-## Browse 178 (2026-10-12, second cycle today): coproduct hunch gets a named likely owner; crown-1 gets its best unread entry point
-All four agents foreground, none lost. Likely owner for the Day 236b dream's Δ_𝒩 coproduct-degeneration
-hunch found on nLab: PBW theorem (gr U(g) ≅ Sym(g) as coalgebra too, via the coradical filtration) +
-Milnor–Moore (primitively-generated Hopf algebras = U(g) in char 0) — if the dominance-order degeneration
-reduces to that, it's classical, matching the dream's own suspicion. Structurally closest published
-technique: Fang–He 2510.12154 (comultiplication constants = multiplication constants of a thickened
-quantum group), no direct overlap. Crown-1 cup-diagram lead (Russell–Tymoczko 0811.0650) gets its
-highest-priority unread paper after 2 years: Goldwasser–Nadeem–Sun–Tymoczko 2503.03941 (Tymoczko's own
-two-row Springer fibers via noncrossing matchings), plus Cummings 2602.16910 (two-column case, confirms
-RT lineage active, no scoop risk). Mironov–Morozov–Popolitov twisted-Cherednik/DIM cluster now 4 papers
-citing DFK 1704.00154, zero Hopf content, peripheral. Scoop/convergence check for Macdonald+Hopf-coproduct
-double-citation is UNRESOLVED (rate-limited, not cleared — retry next cycle). Community/MO quiet, FPSAC
-page unchanged. 8 new sources.json entries. Log: `reading/2026-10-12-browse178.md`.
-
-## Browse 177 (2026-10-12): quiet cycle, two new peripheral arXiv finds, citation API rate-limited twice
-All four agents ran foreground (no background losses). arXiv: Qiu–Zhang 2607.00940 (∇m_μ Schur
-positivity, BGHT 1999 conjecture proved via shuffle theorem — already known, re-surfaced, stays
-negative evidence for (N)'s novelty, no overlap with Theorem H's transport statement); Ben Mills
-2601.15426 (Isotropic Meta KL I, NEW) pairs with the already-known 2605.23072 to upgrade the
-standing Russell–Tymoczko crown-1 cup-diagram lead to type D with an explicit algebra presentation;
-Bai–Guo 2610.01708 (K-k-Schur positivity, NEW, peripheral). Both NEW papers added to sources.json.
-Community: zero new MO/SE threads on any of the 4 keyword clusters; only watch-item change is MO
-515747 (Hopf-algebra kernels) now answered, tangential. Web: Garsia/Haglund expository Pieri/HL
-lecture notes, a plethystic-calculus exposé; FPSAC 2027 deadline reconfirmed unchanged (2026-11-15).
-Citation trails: Semantic Scholar hard-rate-limited on both the full dispatch and a narrowed retry —
-no data this session, retry early next cycle. Log: `reading/2026-10-12-browse177.md`.
-
-## Day 237 PROVE (2026-10-12): §6 print gaps CLOSED — Rem 6.3 ∇ bridge print-checked, Rem 6.4 DFK dictionary first-hand, s2b controls measured
-- **Rem 6.3:** checked from the PDF text against an independent engine: H̃ from the Garsia–Haiman triangularities, P from q,t-Gram–Schmidt, and e⋆ from the printed §2 operators. The sign (−1)^{|ν|} and the exponent |ν|+n(ν) are correct.
-  - P1/P2 symbolic for |ν| ≤ 4. P3/P4 symbolic for |λ| ≤ 3, plus 3 rational points at |λ| = 4 (the symbolic n=4 solve was OOM-killed; this is logged). Every control breaks.
-  - Text: added the Λ→Λ_m restriction sentence.
-- **Rem 6.4:** re-derived from the 1704.00154v2 source (compiled locally). Every locator checks out. Lemma 2.12 added to the citation.
-  - The dictionary composes BY HAND to exactly t^{−C(k,2)}, and that composition is now printed.
-  - **DFK Rem 4.8 IS our Rem 6.3 bridge** (Σ: X↦X/(t−1), φ = (−1)^d Σ). Now credited.
-  - My suspicion of a DFK sign slip was REFUTED by computation; their literal statement holds.
-- **DFK15 numbering settled:** Cor 5.8 = (5.18), with level-one form (5.25); Cor 5.18 = (5.27). The paper was right; a registry note was wrong and is now corrected.
-- **Cold read of §6 + App A:** no definition used before it is stated; no leak between the twisted π/Y and the untwisted π∘/Y°. The App A worked example print-checks True.
-- **Clio's s2b flag measured** (rick-research scripts/day233b/s2d.py). Both controls are now reported stratified, plus wrong-s-order controls that fire 146/146 and 213/217:
-  - Thm 4.4 dedupe is blind on 58/146.
-  - Thm 4.5 overcount is blind on 131/217, driven by μ with distinct parts, not λ.
-  - 56/217 Thm 4.5 cases are κ=1 tautologies.
-- **Commits:** WIP 3c7f228 (37 pp, 0 overfull), rick-research a3a3876, both pushed. Record: proofs/2026-10-12-day237-section6-print-gaps.md.
-- **Clio note DRAFTED, UNSENT:** for-collaborator/2026-10-12-clio-section6-print-gaps-and-controls.md. Send next wake.
-
-## Wake 237 (2026-10-12): outbound cleared again; Clio long-version review applied (eb12457); MacBeth band-boundary reviewed (3 MUST); PROVE = §6 print gaps
-- **SENT:** Clio §6 covering note + 1-p cover PDF + longversion 9400bb4 (cc Robin). MacBeth band-boundary review PDF (WIP c5e78d2, cc Robin).
-- **Inbox (7 unread, NOTHING from Robin, silent since 10-05; 3rd ping due ~10-14):**
-  - Clio UID 370 endorsed Thm H, Cor 5.2 and §9 (she did not re-derive the residue arguments in 9.2/9.3).
-  - Clio UID 376: Q424 answer. D3 discharged, my n=2 witness promoted to proved in her registry, Korff ribbon weight dead (t-free); D1 script still owed BY HER.
-  - Clio UID 375: Elizalde FPSAC abstract; she offers to compile 2507.01097. Not taken.
-  - MacBeth 373: acks r2. MacBeth 374: band-boundary note.
-  - Clio's "column B" ask crossed with the §3(b) substitution sent 10-11 10:10. Already delivered.
-- **Long version eb12457 (work-in-progress) + 889fed8 (rick-research):**
-  - F1: RESULTS.txt regenerated via scripts/day233b/regen.sh. s4_n8 = 44/249, matching Clio; s2.py had a hidden TypeError, now fixed.
-  - F2: 0 overfull. F3: ψ_{κ/ρ} → ψ′ (Macdonald VI (6.24)(iv)). F4: Clio26 URL. Jing–Liu index clause added.
-  - Operator-order control retired. s2b now uses within-fibre perturbations, which fire 145/145.
-  - Registry: `peer_review_clio_2026-10-11` field on 8 nodes, no grade changes.
-  - Owed: test whether the Thm 4.4/4.5 controls are vacuous on distinct-part λ.
-- **MacBeth band-boundary review** (node `macbeth-band-boundary-2fa15ef`, peer-claimed):
-  - §6 "computed" is honest; the D4×C2 witness recomputed.
-  - Thm 6 needs strict α.
-  - MUST fixes: Cor 7 false (S3/B(ℤ)), unrepaired r2 N1; Thm 8's n=2 exception false (S2 abelian); "T² first base" false (D4×C2 on B(ℤ/2)).
-  - Script: work-in-progress/scripts/day237/band_boundary_checks.py.
-- **PROVE 237:** Rem 6.3 ∇-bridge print check, then Rem 6.4 DFK dictionary first-hand (also settles Cor 5.18 vs 5.8 numbering), then a cold read of §6 + App A.
-
-## Day 236b dream (2026-10-11): (N) is in the paper; the paper's thesis = "⋆ is · conjugated by 𝒩"; Browse 176 LOST; coproduct hunch
-- **Status board:**
-  - FPSAC 2027 (11-15, 35 days): our side is done, WIP 7df658b. Blocked on Robin (silent since 10-05; 2nd ping 10-11; 3rd ~10-14).
-  - Long version: 37 pp, WIP 9400bb4, now with §6 (N) + App A. It's three-path: Path 1 (⋆) via Path 3 (𝒩/Y-spectrum).
-- **Unchecked printed residue in §6 (next PROVE):** Rem 6.3 ∇ bridge (hand only); Rem 6.4 DFK dictionary (not re-derived from the printed text).
-- **Browse 176 LOST:** bg agents killed at 600 s, zero files written, 4th loss in 2 days. Low cost (Trinh had been read in Wake 236). Fix: `run_in_background:false` on every browse agent.
-- **New hunch** `connections/2026-10-11-nabla-gauge-transports-the-coproduct.md`: Δ_𝒩 = (𝒩⊗𝒩)Δ𝒩^{-1}. The t-weight t^{n(α)+n(β)−n(ν)} ≤ 1, with equality iff ν = α+β, so the limit keeps only row-additive splits (seed Q4). Likely deflation: gr_dominance Sym (classical). s-sign unchecked.
-- **Dead:** "dominance zeta = symmetrised atom→key sum" (within-orbit vs across-orbit).
-- **Process leak:** PROVE.md keeps scheduling emails PROVE can't send (Days 228/229/230/236). From now on, drafts only; the wake sends.
-- **Registry:** no grade changes.
-- **Next:** Wake 237 SEND the Clio §6 note (`for-collaborator/2026-10-11-clio-longversion-N-section-note.md`). PROVE 237 = the two §6 print-check gaps, then a cold read of §6 + App A. Browse 177 = foreground agents.
-
-## Day 236 PROVE (2026-10-11): (N) WRITTEN into the long version — §6 + Appendix A; WIP 9400bb4; print check ALL True
-- §6 `sec:nabla` "Hikita's product as a Macdonald-diagonal transport". Thm 6.2 = (N), with three equivalent forms. Rem 6.3 gives the ∇ form (bridge checked by hand only). Rem 6.4 attributes it to DFK19 (FOLKLORE-IMPLICIT, NO novelty claimed). Rem 6.5: nothing else depends on it. Lemma 6.6 (I), Prop 6.7 (NS), now stated for the paper's OWN twisted Y_i via an untwisted π_∘/Y°. Lemma 6.8 γ̂|_Sym = 𝒩.
-- Appendix A (Cherednik operators, "for completeness"): elementary relations, Bernstein (merged snippet), Thm A.2 C1 (Haiman06 Thm 4.2 p.851, (8)–(9) re-read first-hand), Rem A.3 twisted π, Thm A.4 triangularity via path expansion, Cor A.5 C3.
-- Intro paragraph, abstract sentence, Rem 5.7 and Rem t0input updated; the block law stays Cherednik-free (TRUE). Haiman06 bib added, in longversion only. DFK19 title was already the CMP title (Wake 230), so no change.
-- Port findings: the 216b "W-stable spec" interpolation is made precise as the orbit closure S_m·spec. Props 2.2/2.4 port verbatim to π_∘, which gives e_1(Y°) = t^{m−1}D^1_m for free.
-- Print check from the PDF text (scripts/day236/print_check_N.py): Thm 6.2 22/22 (m=3) and 14/14 (m=4); Prop 6.7 exact; the printed A.4 example matches; 4 negative controls break. 37 pp, 0 overfull.
-- Registry: `longversion_section` added to 4 nodes; no grade changes; synced (cmp). Proof record: proofs/2026-10-11-day236-N-longversion-section.md.
-- **UNSENT:** Clio covering note (deep-work sessions forbid email). Draft in for-collaborator/2026-10-11-clio-longversion-N-section-note.md. SEND NEXT WAKE.
-
-## Wake 236 (2026-10-11): all outbound cleared; bib CLEAN; Trinh = nothing; t→0 hunch reframed (owned); PROVE = write (N) into long version
-- **Robin:** still silent since 10-05. 2nd ping SENT, with draft SoftConf AI-statement text and the 5 open items (authorship/§5.5, presenter, role sentence, Clio26 cite, acks).
-- **Bib audit:** all 8 arXiv entries match arXiv (title + authors), 0 fabrications. DFK19 bib says "(t,q)-deformed" vs arXiv "(t,q) Q-systems": check the CMP title (queued in PROVE). Morris63 is uncited.
-- **MacBeth r2 reviews SENT** (WIP fc69dab; 4 peer-claimed nodes added to peer-claims-macbeth.json):
-  - gerbe: asks hold. MUST: Cor 17's two defs, and "Thm D" iff as emailed is FALSE (D6=Z/2×S3 splits; sharp = non-split Z→K→InnK, 4|n).
-  - crown: Ψ′ functor + Thm 18 as stated OK. MUST: credit, and the unrestricted no-go is false (constant functors).
-  - nerve A: 3 MUST (cocycle ≠ magma; [ω] classifies E; level convention); weld nodes stay demoted. Uniqueness B: accept after 2 scope edits.
-- **Clio SENT** (WIP a319ab6): the §3(b) substitution printed in full (155/155 vs independent HL ground truth; control breaks 48; holds for y>x too) and the corrected UID 779 attachment. Open: the registry's DFK Cor 5.18 vs 5.8/(5.18) numbering is self-inconsistent and needs a decision.
-- **Trinh 2605.20131 read first-hand:** NOTHING for the long version; orthogonal to the cup-trace hunch. Watch item: the Rem 1.5 promised follow-up (graded Springer/Green).
-- **t→0 orbit test (computed, scripts/day236):** the hunch is REFRAMED. At t=0 the Y-spectrum keeps only the first argmax. The coset lives in T→Demazure atoms (gr_O = parabolic-induced 0-Hecke module). All of it is owned (Lascoux/Norton/Ion/Sanderson).
-- **PROVE 236** = write the (N) section + Cherednik-imports appendix into longversion. (N) is FOLKLORE-IMPLICIT in DFK 1704.00154: credit it, don't claim it.
-
-## Day 236 dream (2026-10-11): the Hecke bridge is built — (N) import question CLOSED; next = write it in
-- **Status board:** FPSAC 2027 (11-15, 35 days) done on our side, WIP 7df658b, 12 pp incl. bib. Blocked only on Robin (silent since 10-05). NEW: SoftConf AI-statement form field, to draft for him.
-- **(N) self-contained modulo one abstract theorem.** (C2) `C2_bernstein_from_B2_R4` (day232), (C1)+(C3) `N_imports_C1_C3_replaced` (day235), both proved. Sole external: Haiman ICM 2006 Thm 4.2 p.851. Novelty of these proofs = none (textbook facts re-proved for completeness). `questions/closed/q-cherednik-imports-for-N.md`.
-- **New hunch** `connections/2026-10-11-spectrum-splits-lattice-and-coset.md`: in the Y-eigenvalue s^{λ_i}t^{b_i}, the s-part = λ (lattice) and the t-part = standardization (finite coset), i.e. the Bernstein decomposition in one number. t→0 orbit vs 0-Hecke test proposed (seed Q4), NOT computed.
-- **Integrity:** sources.json had a fabricated title (2506.08883). Bounded fix: curl-diff every arXiv title in the FPSAC and long-version .bib (Wake 236). Registry: stale `textbook_refs` on the NS/(N) nodes updated, no grade change.
-- **Next:** Wake 236 = outbound + bib audit. PROVE 236 = WRITE the (N) section into `work-in-progress/longversion/`. Browse 176 = Trinh 2605.20131 first-hand (deferred twice).
+## Days 236–238 (wake / PROVE / browses 175–180 / dreams), 2026-10-11..13: pointer lines (full stanzas in `archive/SUMMARY-2026-10-13-pre-day238-dream-prune.md`)
+- **Browse 179/180 (10-13):** scoop CLEAR. New filings: Carré–Goncalves–Luque 2601.12881, Kim–Oh 2602.06338, Elias–Thomas 2609.23253, Gupta–Longhi 2609.07911, Cherednik 2607.25666 v3. The Mathas–Tubbenhauer lead came via the Brundan–Kleshchev 0808.2032 citers. Logs `reading/2026-10-13-browse179.md`, `reading/2026-10-13-browse180.md`.
+- **PROVE 238 (10-13):** novelty-consistency read (24-row table, `proofs/2026-10-14-day238-novelty-consistency-read.md`); coproduct test |ν|≤4, controls break.
+- **Wake 238 (10-13):**
+  - Answered 8 mails. Clio F1 DECLINED by the literal Macdonald III pp. 228–229 ((5.8)=φ, (5.8′)=ψ). WZJ 1603.01815 DECLINED (P→s vs our e→P).
+  - Sent MacBeth reviews: floor Thm 1.3 false, gerbe D′ only for k≡e, crown Rem 20 false. WIP b2b5410.
+- **Day 237 (10-12):**
+  - §6 print gaps closed: Rem 6.3 ∇ bridge and Rem 6.4 DFK dictionary (t^{−C(k,2)}), first-hand. DFK Rem 4.8 = our bridge.
+  - The "DFK sign slip" was my misreading.
+  - Clio review F1–F4 applied (eb12457).
+- **Day 236 (10-11):** (N) written as long-version §6 (DFK-attributed, no novelty) + App A Cherednik (WIP 9400bb4). Browse 176 LOST (bg agent). Bib clean; Trinh 2605.20131 = nothing.
 
 ## Day 235 (wake / PROVE) + Browse 175, 2026-10-11: pointer lines (full stanzas in `archive/SUMMARY-2026-10-11-pre-day236b-dream-prune.md`)
 - Wake 235: Clio Prop 6.1 fixes in FPSAC WIP 7df658b. Residual checks PASS (node `fpsac-residual-checks-day235`). Bernstein locator = Haiman ICM 2006 Thm 4.2 p.851. Clio Q410 review sent (7e38d2c).

@@ -136,3 +136,9 @@ A *clean* combinatorial 2-step complex matching Almousa–Lu's level (cochain co
 - Lapid + Mínguez on KL polynomials and crystals (newer).
 - Brauner–Corteel–Daugherty–Schilling (arXiv:2503.14782, 2025) — crystal skeleton axioms.
 - Barkley–Gaetz + Esposito–Marietti (arXiv:2404.12834, 2024) — hypercube decompositions, KL invariance.
+
+---
+## Day 238 dream pointer (2026-10-13)
+- The Hikita arc's Cor dmatrix (d = Kostka·Kostka–Foulkes, credited to Kirillov math/9803006) is a type-A case-(A) instance of this question, via Lusztig 1983 and NY97.
+- Mathas–Tubbenhauer "Cellularity of KLR and wKLRW algebras via crystals" (Browse 180, agent-summary only, arXiv ID not yet recorded) is the next lead. Classify it (A) summed vs (B) cell-by-cell **before** citing it as progress. Prior to beat: LLT needs crystal + bar involution.
+- See `connections/2026-10-13-dmatrix-is-a-seed-q2-object.md`.
