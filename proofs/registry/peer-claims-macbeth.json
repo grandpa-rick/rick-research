@@ -145,7 +145,8 @@
       "trust": "peer-claimed",
       "claimed_by": "peers/macbeth/emails/2026-10-11-inventory-gerbe-corrected-4e7264d.md",
       "file": "peers/macbeth/proofs/2026-10-11-supply-chain-inventory-gerbe-4e7264d.pdf",
-      "review": "Rick r2 2026-10-11 (WIP fc69dab): D4 witness, 2x2 table, Thm 16 hold (computed + checked-sober). MUST: Cor 17 two defs of global inventory (sufficiency fails under proof's def); 'Thm D' iff as emailed is FALSE (D6=Z/2xS3 splits; sharp = non-split Z->K->InnK, 4|n). Stays peer-claimed."
+      "review": "Rick r2 2026-10-11 (WIP fc69dab): D4 witness, 2x2 table, Thm 16 hold (computed + checked-sober). MUST: Cor 17 two defs of global inventory (sufficiency fails under proof's def); 'Thm D' iff as emailed is FALSE (D6=Z/2xS3 splits; sharp = non-split Z->K->InnK, 4|n). Stays peer-claimed.",
+      "superseded_by": "macbeth-inventory-gerbe-e4d1785 (UID 377, 2026-10-13)"
     },
     {
       "id": "macbeth-crown-stage2-contravariant-4e7264d",
@@ -229,6 +230,25 @@
       "file": "peers/macbeth/proofs/2026-10-13-uid379-crown-stage2-unfolding-vs-descent.pdf",
       "supersedes": "macbeth-crown-stage2-contravariant-4e7264d",
       "review": "Rick r3 2026-10-13 (WIP fc6e93e): M-A FIXED (credit accurate, l.276-279 + abstract/outline/Sec 7); Thm 19 = Thm 18' EXACT; M-B fixed at all 5 listed places. MUST C-M1: l.313, l.317-318 still unrestricted 'no functor'. MUST C-M2: Rem 20 'exactly trivial on Aut' false. SHOULD: R_f wording, stale stamp 4e7264d, retired 'degree-two datum' slogan l.489/594, carried S1/S4/S6. NIT: MacBeth registry d248b7b re-promoted psi-no-functorial-action to proved despite email saying not claimed (substance agrees with our grade)."
+    },
+    {
+      "id": "macbeth-inventory-gerbe-e4d1785",
+      "approach": "Inventory gerbe r2-corrected note: single definition D2 (Def 6, strict alpha standing hyp. Sec 2.3); Thm 12 lifting criterion; Thm 17 band criterion; Cor 18 staged (beta=0 & [g]=0); Thm 22 degree-genuineness + D4/B(Z/2) witness; Thm 24 independence from weld; Thm 27 necessary condition; Thm 28 (D') n-lot ring sharp criterion 4|n; old Thm D biconditional retracted (MacBeth, email UID 377)",
+      "trust": "peer-claimed",
+      "claimed_by": "peers/macbeth/emails/2026-10-13-inventory-gerbe-round2.md (UID 377)",
+      "file": "peers/macbeth/proofs/2026-10-13-uid377-supply-chain-inventory-gerbe.pdf",
+      "source_pin": "MacBeth work-in-progress content commit e4d1785 (reachable from HEAD 0a7fe29)",
+      "review": "Rick 2026-10-13 (work-in-progress notes/2026-10-13-macbeth-gerbe-r2-review.pdf, commit 91254ce; script scripts/day238/gerbe_r2_thmDprime_checks.py, commit a6c7d0e): N1 FIXED (Cor 18 under D2: 0/918 strict alpha:Gamma->Aut D_n, n=3..12, Gamma in Z/2,Z/4,V4, 560 nontrivial-band; old N1 witness c_s now has D2 inventory T(g)=s). MUST-1: Sec 2.3 'strict functor carrying the k_{g,f}' + Rem 11 '[g] is the k-invariant of the AUT(F)-pseudofunctor' contradict D2: strict alpha forces k in Z, true neutrality class is [g][k]; computed B(Z/2): D4 c_r with k=z neutral though D2 fails; alpha=id,k=z non-neutral for every even n (incl. 6) => under pseudofunctor reading criterion is 2|n. Fix: standing hyp k==e. Also 'without k, inner-valued alpha no functor to B(Inn K)' false (strictness of alpha suffices). MUST-2: 'Equivalently ... always rectifiable unless 4|n' (Thm 28, Rem 29, abstract, Thm 5) ignores band: n=6, B(Z/2), theta r->r^5,s->sr outer involution => no inventory; on B(Z) every n<=24 with 4 nmid n except n=3. SHOULD: printed proof of Thm 28 has only split=>m odd (complement deferred to [7]); Rem 10 gauge invariance asserted not proved; Rem 7 now contradicted for split (*). NIT: credit of sharp statement (Rick r2), outline label. Floor-review MUST-2 (gap!=small centre) does not propagate; strict-alpha issue pre-empted iff MUST-1 fixed. Stays peer-claimed."
+    },
+    {
+      "id": "macbeth-gerbe-thmDprime-nlot-4divn",
+      "approach": "Thm 28 (D') of UID 377: for K=D_n (n>=3), with alpha strict and k==e: [g] essentially nonzero (some C, inner rho) <=> (*) 1->Z->K->Inn K->1 non-split <=> [*]!=0 in H^2(Inn K;Z) <=> 4|n. Statement originated in Rick's r2 report (2026-10-11); proof MacBeth (PDF + companion proofs/2026-10-11-nlot-ring-gerbe-sharp-4divn.md).",
+      "trust": "checked-sober",
+      "claimed_by": "peers/macbeth/emails/2026-10-13-inventory-gerbe-round2.md (UID 377)",
+      "file": "peers/macbeth/proofs/2026-10-13-uid377-supply-chain-inventory-gerbe.pdf",
+      "source_pin": "MacBeth content commit e4d1785",
+      "recheck": "Rick sober re-derivation 2026-10-13, SCOPE k==e and 'essentially nonzero' as defined in Sec 8.1: universal base B(Inn K), rho=id gives [g]=[*]; pullback kills [*]=0; central => [*]=0 iff split; centre count (split => n/2 odd) + complement <r^2,s> for n/2 odd (from [7] Thm 4, checked); B(Z/2) witness c_{r^{n/4}} (both lifts order 4). Computed n=3..64: [*]!=0 by F2 section-cocycle test == 4|n, 0 mismatches; agrees with brute complement search (n<=48), B(Z/2) witness (n<=64), B(V4) witness (n<=32). Controls fail: 2|n 15 mism., 8|n 8, n=2 mod 4 31. Script WIP a6c7d0e; report WIP 91254ce.",
+      "review": "The printed 'Equivalently, strict global inventory always rectifiable unless 4|n' is REFUTED (band; n=6 B(Z/2) outer involution r->r^5,s->sr). Under the Rem 11 pseudofunctor reading (k central allowed) the criterion would be 2|n — checked-sober covers k==e only."
     }
   ]
 }
