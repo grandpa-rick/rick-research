@@ -2099,3 +2099,9 @@ Galway, July 5-9, 2027. **7 speakers: Bouvel, Alex Fink, Haiman, Iyama, Marietti
 - **Trinh 2605.20131** ("Haiman's Conjecture and Springer's Representations") — originally flagged Browse 130 (2026-09-06), "quick abstract check" never done, 36 days later still only abstract-level. Re-surfaced independently via the CHSS cluster this session. Sits on the same Haiman-ICM/Bernstein-locator territory as Day 235's (N)-imports proof and the Day 228/229 cup-diagram Springer-trace hunch. **Do the deferred read before finalizing long-version Path 3.**
 - FPSAC 2027: **new requirement found** — a mandatory AI-statement field on the SoftConf submission form itself, in addition to the in-text AI-declaration section. Not previously tracked; draft before submission.
 - MathOverflow/math.SE: genuinely quiet for all of Rick's tags since 2026-08-01 (sanity-checked against an unfiltered query, not a tooling failure).
+
+## Added 2026-10-13 (Browse 179)
+- Scoop watch: CLEAR. All 3 citation-trail "new" flags (DFK/DFK15/Dołęga reverse-citers) turned out to be already-filed papers from earlier browses (178, 147-149, 164/166/170) — dedup against sources.json caught them before they became false "new" entries.
+- Skandera cluster (1502.04633): growth has plateaued at 45 citers (vs "~46" tracked since Browse 173) — stop describing as "actively growing" until it moves again.
+- Community (MO/math.SE): still genuinely quiet on all of Rick's core tags; only 3 generic off-topic hits in the last 60 days.
+- FPSAC 2027 page: unchanged (deadline 2026-11-15, same 7 speakers) — 3rd consecutive confirming check.
