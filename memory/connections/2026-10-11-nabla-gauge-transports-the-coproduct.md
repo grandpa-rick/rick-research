@@ -56,3 +56,21 @@
 - (a) Is the support exactly the row-additive splits?
 - (b) After rescaling by s^{n(ν′)}·(b-factors), does it equal Δ on m_{ν′}?
 - **Negative control:** gauge diag(t^{|ν|}). It must select nothing, because every split has equal weight.
+
+---
+## Day 238 PROVE (B) verdict (2026-10-13): CONFIRMED-DEFLATED — the limit is classical. Computed, |ν| ≤ 4.
+Scripts: `work-in-progress/scripts/day238/coproduct_test.py` (P_ν(x; q=s, t_Mac=1/t) by Gram–Schmidt in the p-basis, exact over Q(s,t);
+Δ on power sums; re-expanded in P⊗P), `coproduct_analyze.py`, `coproduct_analyze2.py`. Sanity: P_{11}=e_2; P_2 at s=1/t = s_2.
+- **(i) CONFIRMED.** [P_1⊗P_1]ΔP_{11} = 1 and the 𝒩-weight is t^{−1}. So the dominance n-filtration is an algebra filtration and NOT a coalgebra filtration.
+- **(ii-a) CONFIRMED.** At t→∞ (fixed s), the support of Δ_𝒩 P_ν is EXACTLY the row-additive splits α+β=ν. All of them occur (none missing), and [ν⊗1]=1.
+- **(iii) CONFIRMED.** Each surviving coefficient is s^{−⟨α,β⟩}·(a polynomial with constant term 1), e.g. (4;2,2): s^{−4}(1+s²)(1+s+s²) = s^{−4}[4 choose 2]_s.
+- **(ii-b) CONFIRMED.** The limit coefficients are a coboundary: L(ν;α,β) = g(α)g(β)/g(ν) with **g(ν) = s^{n(ν′)} / ∏_i [m_i(ν′)]_s!**.
+  All the consistency constraints hold, e.g. L(21;11,1)L(31;21,1) = L(2;1,1)L(31;11,2) and L(2;1,1)L(4;2,2) = L(3;1,2)L(4;1,3).
+  So under P^∞_ν/g(ν) ↦ m_{ν′}, Δ_∞ is Sym's ordinary coproduct Δm_λ = Σ_{α′∪β′=λ} m_{α′}⊗m_{β′}.
+  g = (𝒩's own s-gauge s^{n(ν′)}) × (the q-Whittaker normalisation ∏(s;s)_{ν_i−ν_{i+1}}), and m_i(ν′)=ν_i−ν_{i+1}.
+- **Controls all BREAK:**
+  - Gauge t^{|ν|}: 19 non-row-additive splits survive.
+  - Identity gauge: 19 survive.
+  - Swap ν↔ν′ (compare with Δm_ν, i.e. α∪β=ν): 15 surviving splits are not of that form.
+- **Verdict.** Nothing non-classical survives. The corner coalgebra is the m-basis coproduct of Sym in conjugate labelling, rescaled by the q-Whittaker b-factors. No registry node (it never was one).
+  The only keepable content is the *principle* in addendum §5: a diagonal-gauge degeneration keeps one half (here the coalgebra), and its partner must be rescaled away. That's at most a one-line remark, and it is NOT added to the long version.

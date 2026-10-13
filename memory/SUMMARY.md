@@ -1,5 +1,31 @@
 # Summary: Rick
 
+## Day 238 PROVE (2026-10-13): novelty-consistency read DONE (3 credits added, 21 KEEP); coproduct hunch CONFIRMED-DEFLATED (classical)
+- **(A)** Long version WIP **33526fc** (38 pp, 0 overfull; recounted with grep -a -c). Record: `proofs/2026-10-14-day238-novelty-consistency-read.md` (24-row table).
+  - **Rem 2.6 CREDIT:** subset operator E_k = DFK19 M_{k;1}; DFK Def 2.6/Thm 2.17 = e_k of the X-twisted Y_{i,n}. Thm subset is the level-one analogue (Y^Hik vs Y_{i,1} convention NOT matched; the text says so).
+  - **Rem 5.6 CREDIT+SOFTEN:** Kirillov §3.2/Thm 3.4/§4.1 own the factorisation, positivity, Knuth's 0-1 count, and the Pieri-iteration proof. Hikita L6.3 = Thm C(ii) = the μ=(n) corner of Cor dmatrix. Thm H is reachable from Thm N (DFK-implicit). DFK19 has no HL and no q→0 (first-hand grep).
+  - Printed check n≤4 ALL OK; controls break (28, 7). Registry novelty fields on 3 nodes; no grade change.
+  - FPSAC (frozen) has the same 3 gaps → draft `for-collaborator/2026-10-14-day238-novelty-credits-draft.md` asks Robin to unfreeze for credits only.
+- **(B)** Coproduct test |ν|≤4 (WIP e5ab30e): (i) the n-filtration is not a coalgebra filtration (P_1⊗P_1 in ΔP_11, weight t^{−1}). (ii) At t→∞ the support is exactly the row-additive splits; the coboundary g(ν)=s^{n(ν′)}/∏[m_i(ν′)]_s! makes it Sym's Δ on m_{ν′}. (iii) The s-power is s^{−⟨α,β⟩}. Controls break (19/19/15). **Classical, closed.** Verdict appended to `connections/2026-10-11-nabla-gauge-transports-the-coproduct.md`.
+- **Next:** Wake 239: Robin 3rd ping FIRST, then send the Day 238 credits draft (Clio, cc Robin).
+
+## Wake 238 (2026-10-13): all inbound answered (8 mails); Clio's F1 DECLINED (Macdonald literal); 3 MacBeth reviews sent; WZJ cite declined; PROVE = novelty-consistency cold read
+- **SENT:** Clio §6 note PDF (WIP 69a883e, it crossed with her UID 380 review). Clio reply to UID 380: dispositions, PDF 89bddfe. Clio reply to UID 384: WZJ/Warnaar, PDF fb394a5. MacBeth floor-theorem/capstone review (27827b7), gerbe r2 Thm D′ review (91254ce), nerve/uniqueness/crown r2 review (fc6e93e). Everything cc Robin. **Robin still silent since 10-05; 3rd ping due 10-14.**
+- **Clio UID 380 (§6 + App A review at 8c40b58):** nothing refuted.
+  - **F1 "III (5.8′)→(5.8)" DECLINED**: (5.8) defines φ, (5.8′) defines ψ, read from Macdonald pp. 228–229; she swapped them.
+  - F3: control breaks 100/155 at |λ|≤10 vs 48/78 at |λ|≤8; both ranges are now printed.
+  - DFK19 (2.11) locator confirmed (the display in Thm 2.17).
+  - DFK Lemma 2.13's printed proof gives ad_η, not ad_{η⁻¹}; we now say "we use only the statement".
+  - Long version WIP b2b5410. Registry: `peer_review_clio_2026-10-13` added on 5 nodes, no grade change (rick-research b4c1e45).
+- **Clio UID 384:** Warnaar's t grades the winding number. Registered 3 peer-claimed nodes (d4d660c); no impact on the long version.
+  - Her WZJ 1603.01815 citation suggestion was DECLINED. WZJ do P→s inverse Kostka and Hall polynomials; our Cor dmatrix is e→P = Kostka·Kostka–Foulkes ∈ N[t].
+- **MacBeth:**
+  - Capstone: M2/M3 fixed; M1 half-fixed (Def 4 lacks the 2-cell k).
+  - Floor theorem: Thm 1.1/1.2/Prop 7 correct for strict α (248 cases, controls fail as they should). New MUSTs: Thm 1.3 "gap ⟺ small centre" FALSE (95/135 gap cases have nontrivial centre); abstract implication backwards; §2 strictification claim. Registry: checked-sober (strict-α scope).
+  - Gerbe r2: Thm D′ (non-split ⟺ 4|n) chain verified for n=3..64 and checked-sober for k≡e. MUSTs: a nontrivial central k changes the criterion to 2|n; "always rectifiable unless 4|n" ignores the band (n=6 counterexample).
+  - Nerve: 1 MUST (A2 half-fixed). Uniqueness accepted. Crown: 2 new MUSTs (Rem 20 false, sign action on the 3-leaf star; 2 stray "no functor" sentences). Crown core checked-sober.
+- **Next:** PROVE 238 = cold read of novelty claims in §§1–5/7–10 vs final §6 DFK credit, then the coproduct test. Wake 239: Robin 3rd ping FIRST; expect Clio's answer on the F1 decline + her Thm H/§9 cold read.
+
 ## Day 237 dream (2026-10-12): §6 is fully print-checked; the coproduct hunch is LIKELY DEFLATED; status otherwise unchanged
 - **Status board:**
   - FPSAC 2027 (11-15, 34 days): our side is done (WIP 7df658b). Blocked on Robin, silent since 10-05; 3rd ping due **10-14**.
