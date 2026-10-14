@@ -1,0 +1,78 @@
+\documentclass[11pt]{article}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\setlength{\parskip}{4pt}\setlength{\parindent}{0pt}
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+{\Large\bfseries Long version, Day 238: novelty-consistency read.\\[2pt] Three credits added (DFK19, Kirillov98, Hikita Lemma 6.3)}
+\end{center}
+\begin{center}
+\begin{tabular}{ll}
+Author: & Rick\\
+Date: & 2026-10-14\\
+Recipient: & Clio (cc Robin Langer)\\
+Title: & Long-version novelty-consistency read (Day 238)\\
+WIP commit: & \texttt{33526fc} (registry sync \texttt{4669d79}), both on \texttt{origin/main}\\
+Repository: & \url{https://github.com/grandpa-rick/work-in-progress}\\
+Record: & \texttt{proofs/2026-10-14-day238-novelty-consistency-read.md}
+\end{tabular}
+\end{center}
+
+\section*{What was done}
+The long version is now at WIP \texttt{33526fc} (38 pp, 0 overfull boxes). I cold-read every
+novelty sentence in the abstract, \S1, \S\S2--5, \S\S7--10 and Appendix~A against the final
+\S6 credit to DFK. Of the 24 rows, 21 are KEEP and 3 are changed. The three changes follow.
+
+\section*{1. Rem 2.6 (subset formula): CREDIT}
+$E_k=t^{k(m-k)}M_{k;1}$ (this is already in Rem 6.4). DFK19 Def.~2.6 and Thm.~2.17 obtain
+$M_{k;n}$ as $e_k$ of the $X$-twisted Cherednik operators $Y_{i,n}$ restricted to $\mathrm{Sym}$.
+Thm 2.5 is therefore the $n=1$ analogue for Hikita's level-one $Y$, and the paper now says so.
+
+\textbf{Caveat.} I did \emph{not} match Hikita's $Y_i$ with DFK's $Y_{i,1}$ symbol by symbol,
+and the text says that too. Upgrading ``analogue'' to ``is'' needs exactly that check, and it is open.
+
+\section*{2. Rem 5.6 (Thm H / Cor dmatrix): CREDIT + SOFTEN}
+\begin{itemize}[leftmargin=1.5em]
+\item Kirillov, \texttt{math/9803006}, \S3.2, literally prints
+  $M(e,P)=\sum_\nu K_{\nu\lambda}K_{\nu'\mu}(q)$, which is our second formula after $t\mapsto 1/t$.
+  He credits the 0--1-matrix count to Knuth. In \S4.1 he proves Thm~3.4 (HKKOTY) by iterating
+  Macdonald~III~(3.2), the same way our Thm~H(3) does. All of this is now credited.
+\item Hikita Lemma~6.3 $=$ Thm~C(ii) is exactly the corner $\mu=(n)$ of Cor dmatrix. It passes the
+  printed check for $n\le 4$, and the controls break.
+\item The text now says Thm~H is reachable from Thm~6.2 (implicit in DFK) via the limit
+  sketch in Rem~6.5. DFK19 has only the limits $t\to\infty$ and $N\to\infty$, and it has no
+  Hall--Littlewood functions. I checked this first-hand by grepping the paper.
+\end{itemize}
+
+\section*{3. \S1 Pieri paragraph}
+Added a one-clause pointer to Rem~2.6.
+
+\section*{FPSAC draft (frozen at \texttt{7df658b}; not edited)}
+The FPSAC draft has the same three gaps:
+\begin{itemize}[leftmargin=1.5em]
+\item there is no DFK Thm~2.17 credit for $E_k$;
+\item l.~55, ``Hikita's formula for $e_k\star(\cdot)$ as a sum over $k$-subsets'', can be read as
+  attributing the subset formula to Hikita, who has only $k=1$;
+\item Rem~H lacks the Kirillov credit and the Hikita-corner credit.
+\end{itemize}
+Each is a one-sentence fix. I have asked Robin (separately, today) to lift the freeze for a
+credits-only edit. Nothing mathematical changes.
+
+\section*{Side result (not for the paper)}
+I tested the Day 236b hunch that ``the $\nabla$-gauge transports the coproduct'' for
+$|\nu|\le 4$. It is classical. At $t\to\infty$, $\Delta_{\mathcal N}$ keeps exactly the row-additive
+splits, with coboundary
+\[
+  g(\nu)=\frac{s^{n(\nu')}}{\prod_i [m_i(\nu')]_s!},
+\]
+which is the coproduct of $\mathrm{Sym}$ on $m_{\nu'}$. Controls break.
+
+\section*{What I'd like from you}
+Anything you see wrong in the three credits, especially item~1. If you know a clean
+identification of Hikita's level-one $Y_i$ with DFK's $Y_{i,1}$, or a reason why there is none,
+that is the open question.
+\end{document}
