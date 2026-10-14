@@ -55,3 +55,15 @@ Medium. The involution is free; whether the basis is interesting is a coin flip.
 - **Day 218 probed only the curves t=s^a (a=1,2). The line s=1, t free, was NEVER probed.** Hunch (unregistered): if a positive canonical basis of ⋆ exists anywhere, the geometric-bar heuristic says to look at s=1.
 - **Kill test (post-FPSAC, ≤30 min, reuse `scripts/day218/iota_probe.py`):** at s=1, t=v², n≤5, compute the Lusztig basis C_μ for ι|_{s=1} and the signs of e_k⋆C_μ. Mixed signs inside a coefficient ⇒ dead for good (log it here). Positive ⇒ read 2609.23866 §DAHA-specialisation first-hand before anything else.
 - Before that probe: check that ⋆|_{s=1} is not trivially conjugate to the ordinary product (if it is, positivity would be vacuous, i.e. Schur positivity in disguise). Day 220 Thm 1 says ∂_s⋆|_{s=1} is a nonzero biderivation, but ⋆|_{s=1} itself needs one line.
+
+## Day 239 PROVE verdict (2026-10-14): the s = 1 kill test is VACUOUS. No surviving locus.
+- The preflight answered everything. **⋆|_{s=1} is the ordinary product**: F(X_{A^c}, sX_A) → F at s = 1, so E_k F = E_k(1)·F = e_k F
+  (this is Day 220 (0.1), p = 0, "E_k^{(0)} = mult by e_k", already on file). So e^⋆_μ|_{s=1} = e_μ, Ψ|_{s=1} = diag(t^{-n(μ')}),
+  and ι|_{s=1} is t ↦ 1/t composed with a diagonal grading.
+- Lusztig basis C_μ = v^{-n(μ')} e_μ (both lattices). C_λ⋆C_μ = C_{λ∪μ}, e_k⋆C_μ = v^{binom(k,2)} C_{μ∪k}. That is positive and empty.
+  Both negative controls (naive bar; standard basis) are positive too, so the test measures nothing.
+- Proof + checks: `proofs/2026-10-14-day239-s1-bar-kill-test-vacuous.md` (Prop S1). Registry child `iota-s1-line-collapse-vacuous`
+  (proved, role attempt). Parent stays dead-end.
+- Moral: the "geometric bar is involutive at q = 1" heuristic pointed at exactly the point where ⋆ degenerates to classical
+  multiplication. (Consistent with P(x;1,t) = e_{λ'}, heuristic only; 2609.23866 not read.) All non-trivial ι lives in (s−1)-order ≥ 1.
+  Lesson: before scheduling a kill test on a special line, Taylor-expand the operator there from your own notes.

@@ -18,6 +18,12 @@
   2. Then send `for-collaborator/2026-10-14-day238-novelty-credits-draft.md` (Clio, cc Robin) and ask Robin to unfreeze FPSAC for credits only.
   3. Post-FPSAC: Mathas–Tubbenhauer first-hand read (≤1 session, A/B), Goldwasser–Nadeem–Sun–Tymoczko 2503.03941, and the s=1 bar kill test.
 
+## Day 239 PROVE (2026-10-14): s=1 bar kill test is VACUOUS (no email, no browse)
+- **Prop S1 (proved, all n):** ⋆|_{s=1} = ordinary product (E_k|_{s=1}F = E_k(1)F = e_kF; this is Day 220 (0.1) p=0, already on file). Ψ|_{s=1} = diag t^{-n(μ')}, ι|_{s=1} diagonal, Lusztig C_μ = v^{-n(μ')}e_μ, C_λ⋆C_μ = C_{λ∪μ}. Positive but empty; both negative controls also positive ⇒ the test measures nothing.
+- ι-canonical-basis route: s=1 is the degenerate classical point, NOT a surviving locus. Parent node stays dead-end; child `iota-s1-line-collapse-vacuous` (proved). File `proofs/2026-10-14-day239-s1-bar-kill-test-vacuous.md`; scripts `scripts/day218/s1_{pre,psi,identity}.py`.
+- Mathas–Tubbenhauer A/B classification (PROVE.md fallback) NOT done: not in sources.json, no local copy, browsing banned in deep work → next browse/wake: get the arXiv ID + verify the title first.
+- Lesson: Taylor-expand the operator at a special line from your own notes before you schedule a kill test there.
+
 ## Wake 239 (2026-10-14): pointer block
 - Robin 3rd FPSAC ping SENT (go/no-go + credits-only unfreeze of 7df658b). Robin's last mail in archive: 08-29. Credits PDF sent to Clio cc Robin (WIP 33526fc).
 - Clio Q442 (c(0)=A^∞, unwrapped count) read sober → node `clio-c-at-zero-is-unwrapped-count` **checked-sober** (34/34, controls break; HKKO Thm 3.3 not read literally).
