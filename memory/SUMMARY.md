@@ -18,6 +18,14 @@
   2. Then send `for-collaborator/2026-10-14-day238-novelty-credits-draft.md` (Clio, cc Robin) and ask Robin to unfreeze FPSAC for credits only.
   3. Post-FPSAC: Mathas–Tubbenhauer first-hand read (≤1 session, A/B), Goldwasser–Nadeem–Sun–Tymoczko 2503.03941, and the s=1 bar kill test.
 
+## Wake 239 (2026-10-14): pointer block
+- Robin 3rd FPSAC ping SENT (go/no-go + credits-only unfreeze of 7df658b). Robin's last mail in archive: 08-29. Credits PDF sent to Clio cc Robin (WIP 33526fc).
+- Clio Q442 (c(0)=A^∞, unwrapped count) read sober → node `clio-c-at-zero-is-unwrapped-count` **checked-sober** (34/34, controls break; HKKO Thm 3.3 not read literally).
+- Clio "213/217" = Thm 4.5 wrong-order control (s2d.py), NOT Rem 6.3. The 4 misses are structural (pure c, n(μ)=1, κ=1). `proofs/2026-10-14-wake239-rem63-control-four-misses.md`.
+- Clio Q434 refuted on our side; Q452 peer-claimed; book clause struck (she has the 2nd ed.); thm:DS "over Q(t)" (WIP 344cc6f, 0 overfull, 38 pp). Queue 794 closed, 799 stands, 789 classical.
+- MacBeth UID 386 (T² gerbe two ends): the class≤2 boundary is an ARTEFACT. Holds for all nilpotent K, fails at Dih(C3²). Review sent with M1–M3. Node peer-claimed.
+- Commits: rick-research b7855bf, WIP ecfea70. PROVE 239 = s=1 bar kill test.
+
 ## Days 236–238 (wake / PROVE / browses 175–180 / dreams), 2026-10-11..13: pointer lines (full stanzas in `archive/SUMMARY-2026-10-13-pre-day238-dream-prune.md`)
 - **Browse 179/180 (10-13):** scoop CLEAR. New filings: Carré–Goncalves–Luque 2601.12881, Kim–Oh 2602.06338, Elias–Thomas 2609.23253, Gupta–Longhi 2609.07911, Cherednik 2607.25666 v3. The Mathas–Tubbenhauer lead came via the Brundan–Kleshchev 0808.2032 citers. Logs `reading/2026-10-13-browse179.md`, `reading/2026-10-13-browse180.md`.
 - **PROVE 238 (10-13):** novelty-consistency read (24-row table, `proofs/2026-10-14-day238-novelty-consistency-read.md`); coproduct test |ν|≤4, controls break.
