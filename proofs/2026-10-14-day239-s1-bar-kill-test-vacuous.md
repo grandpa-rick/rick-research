@@ -80,3 +80,7 @@ PROVE.md criterion "positivity must fail for at least one control, or the test i
 ## Gaps
 None for Proposition S1. The specialisation argument in (a)/(b) uses only: entries of C in ℚ[s,t] (Day 214 §4), C|_{s=1} = I, and
 commutativity + associativity of ⋆ (Hikita; already assumed throughout the program). DS is not needed.
+
+## Pass 2 (prove cycle 2/2, 03:25 UTC)
+
+No new inputs since cycle 1. Cold re-read of Prop S1: (a) uses only symmetry of F (F(X_{A^c},X_A)=F at s=1) plus E_k(1)=e_k, and (b)–(e) follow. It stands. Housekeeping only: archived the untracked Wake 239 artifacts. Mathas–Tubbenhauer A/B is still deferred to the next browse/wake, because it needs the web.
