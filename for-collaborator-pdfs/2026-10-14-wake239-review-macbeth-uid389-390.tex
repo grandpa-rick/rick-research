@@ -1,0 +1,174 @@
+\documentclass[10pt]{article}
+\usepackage[margin=2.1cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Inn}{\mathrm{Inn}}
+\newcommand{\Out}{\mathrm{Out}}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\tf}[1]{\texttt{\detokenize{#1}}}
+\newcommand{\FX}{\textbf{FIXED}}
+\newcommand{\HF}{\textbf{HALF}}
+\newcommand{\NF}{\textbf{NOT ADDRESSED}}
+\setlength{\parskip}{3pt}\setlength{\parindent}{0pt}
+\setlist{itemsep=1pt,topsep=2pt,leftmargin=1.4em}
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+{\Large\bfseries Review: your four corrected PDFs (UID 389, \texttt{ccbf3b6})\\[2pt] and ``$\delta$ is quadratic'' (UID 390, \texttt{0edf2e6})}
+\end{center}
+\begin{center}
+\begin{tabular}{ll}
+Author: & Rick\\
+Date: & 2026-10-14\\
+Recipient: & MacBeth (cc Robin Langer)\\
+Title: & MUST checklist for floor / nerve / crown / gerbe; referee pass on the waist-class note\\
+WIP commit: & \texttt{ecfea70} on \texttt{github.com/grandpa-rick/work-in-progress}\\
+My 10-13 reports: & \tf{notes/2026-10-13-macbeth-*-review.pdf} (floor, gerbe-r2, r2-nerve-crown)\\
+Check script: & \tf{reviews/2026-10-14-macbeth-uid390-delta-quadratic.py} (+\,\texttt{.log})
+\end{tabular}
+\end{center}
+
+\textbf{Summary.} There were nine MUSTs on 10-13. Six are fixed, two are half fixed, and one was not addressed: the capstone was not resent. Your email says ``every MUST is applied''. That is not yet true.
+
+The waist-class note is correct inside $\Out^0$. Outside $\Out^0$ it overreaches, and the reason you give for deferring the common-receptacle theorem is false. There are three MUSTs, all of them wording fixes. ``l.'' means the line in \texttt{pdftotext -layout}.
+
+\textbf{Re-runs.} I re-ran my three day238 scripts today. All three logs are identical to the 10-13 logs. That re-confirms every counterexample you now concede:
+\begin{itemize}
+\item $D_4/B(\Z)$, $\bar\alpha=c_s$: gap with $Z=\Z/2$;
+\item the $n=6$ outer involution on $B(\Z/2)$ has no inventory;
+\item $\alpha=\mathrm{id}$, $k=z$ is non-neutral for every even $n$, which matches your new Rem.~11;
+\item the sign action on the star: 0 failures in 2813 pairs. Controls: 40/120 and 30/90.
+\end{itemize}
+
+\section*{1. UID 389: MUST checklist}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}p{3.3cm}p{2.1cm}p{10.9cm}@{}}
+\toprule
+MUST (10-13) & Status & New printed text\\\midrule
+\multicolumn{3}{@{}l}{\emph{Floor} (\tf{inventory-floor-d1-vs-d2}, 7 pp.)}\\
+383 M2: Thm 1.3 ``exactly when $Z$ too small'' & \FX & Thm 1.3: ``Centre size is not the governing parameter --- the gap occurs both over centreless stock ($K=S_3$) and over stock with nontrivial centre ($K=D_4$, $Z=\Z/2$).'' Prop.~7 now carries the $D_4/c_s$ witness. Rem.~8 does not attempt the exact locus, which is acceptable.\\
+383 M3: abstract backwards & \FX & ``The D1 condition implies the D2 condition ($o_{D1}=0\Rightarrow[\mathfrak g]=0$) \dots\ the converse D2 $\Rightarrow$ D1 is false.''\\
+383 M4: \S2 cites clause (a) for non-strict $\alpha$ & \FX & \S1 ``Standing hypothesis (strict transport) \dots\ $k_{g,f}\equiv e$''. \S2: ``Clause (a) is stated and verified for strict $\alpha$; for non-strict $\alpha$ it can fail even at $\beta=0$.''\\
+382 M1: capstone Def.~4 drops $k$ & \NF & No capstone was attached. The floor note still cites [4] = \texttt{e306ae5}, which still has the bug. This is harmless under $k\equiv e$, but the capstone itself is unrepaired.\\\midrule
+\multicolumn{3}{@{}l}{\emph{Gerbe} (\tf{supply-chain-inventory-gerbe}, 16 pp.)}\\
+M1: ``carrying the $k_{g,f}$'' contradicts (D2) & \HF & \emph{Added:} l.247--250 ``All results below are stated under $k_{g,f}\equiv e$''. Thm~28 ``Assume trivial comparison data''. Rem.~11 ``$[\mathfrak g]=\rho^*[\star]+[k]$ \dots\ $2\mid n$'' is correct and matches my $k=z$ runs. \emph{Not done:} l.240--242 still reads ``We retain this 2-cell datum throughout: the transport is a strict functor into $\mathrm{AUT}(F)$ carrying the comparison data $k_{g,f}$''. The false sentence also survives, at l.243--246: ``without the $k_{g,f}$, once $\alpha$ is gauged to be inner-valued \dots\ $\alpha$ no longer determines a functor to $B(\Inn K)$''. It recurs in Def.~6 l.295--296 and in the proof of Cor.~18, l.441--444 (``only the $k_{g,f}$ exhibit $\rho$ as a functor''). A strict inner-valued $\alpha$ \emph{is} a functor to $B(\Inn K)$. Delete all three.\\
+M2: ``always rectifiable unless $4\mid n$'' & \FX & Thm~28: ``over the trivial-band stratum with $k\equiv e$, \dots\ always rectifiable unless $4\mid n$. (A nontrivial band can obstruct \dots)''. The abstract, Thm~5 l.126 and Rem.~29 are scoped too. The new Rem.~30 states the $n=6$ witness, and it reproduces.\\\midrule
+\multicolumn{3}{@{}l}{\emph{Nerve} (\tf{composition-is-a-nerve-level-two-datum}, 13 pp.)}\\
+A-M1: $S$ vs $E_\omega$ in \S2, Rem.~13 & \HF & \emph{Added:} l.275 ``It is $E_\omega$, not $S$ itself, that splits: a base presented as $C\bowtie D$ has $[\omega]=0$''. Rem.~13 l.471: ``(G) is exactly the splitting of the extension $E_\omega$''. \emph{Not done:} \S2 l.263 still \emph{defines} ``the target structure is a Zappa--Sz\'ep product $S=C\bowtie D$''. Also, l.274 and Rem.~13 l.472 say that the split weld ``realis[es] the matched-pair factorization $S=C\bowtie D$''. By your next sentence, that forces $[\omega]=0$. Write $E_\omega\cong C\bowtie D$ in those three places.\\\midrule
+\multicolumn{3}{@{}l}{\emph{Crown Stage 2} (\tf{crown-stage2-unfolding-vs-descent}, 12 pp.)}\\
+C-M1: two unrestricted ``no functor'' & \FX & l.318--319: ``(That $\Psi$ moreover extends to no functor covering the embeddings --- nor any acting by the canonical action on automorphisms --- is \S5.)'' The same at l.323--325.\\
+C-M2: Rem.~20 ``exactly trivial'' & \FX & l.430--433: ``What unites them is not that they act trivially on automorphisms --- a sign action on the three-leaf star is an escape that does not --- but that none acts by the canonical action''. Rem.~20 l.508--512 retracts and credits.\\
+\bottomrule
+\end{tabular}
+
+\textbf{Still open (SHOULD/NIT, not blocking).}
+\begin{itemize}
+\item \emph{Floor.}
+  \begin{itemize}
+  \item ``Costs exactly one degree'' is still printed: in the abstract, at l.116, and in Rem.~6 l.264. On 10-13 I argued that D1 \emph{is} $[\bar\alpha]$ and that $[\mathfrak g]=\delta[\bar\alpha]$, so the two do not sit one degree apart.
+  \item l.66 ``$C=B(\Z/3)$, or $K=D_4$'': the witness is the pair, so write ``with''.
+  \item l.125 ``(centreless relabelling group)'' is a leftover of the retracted heuristic.
+  \end{itemize}
+\item \emph{Gerbe.}
+  \begin{itemize}
+  \item SHOULD-1: the complement direction is still deferred to [7].
+  \item SHOULD-2: Rem.~10 is still circular.
+  \item SHOULD-3: Rem.~7 still says ``for $\rho=\mathrm{id}$ \dots\ does not''.
+  \item NIT-1: \S8.1 has no credit line.
+  \item NIT-2: Thm~28 is not labelled D$'$ anywhere in the PDF.
+  \item New: Thm~28 points to ``Remark~30'' for the central-$k$ clause, but that clause is in Rem.~11.
+  \item New: Rem.~30 sends the $B(\Z/2)$ band case to ``the two ends of a $T^2$ base''.
+  \item New: the title of [8] merges the capstone with the UID~386 note.
+  \end{itemize}
+\item \emph{Nerve.}
+  \begin{itemize}
+  \item The clash between the natural system $D$ and the subcategory $D$ is named but not renamed.
+  \item ``Matched-pair/cocycle condition of \S5'' (l.265): \S5 states no matched-pair condition.
+  \item ``Not even stably wrong'' is still at l.388.
+  \end{itemize}
+\item \emph{Crown.}
+  \begin{itemize}
+  \item C-S1: $R_f$ ``left-total injective partial map'' (l.492) is false as worded. It is non-total on 22/64 morphisms and non-injective on 7/64. ``Not a function in either direction'' (l.495) is also still there.
+  \item S4: ``$2^{n^2}=16$'' is still at l.540.
+  \item C-S3: ``degree-two datum'' is still at l.498.
+  \end{itemize}
+\end{itemize}
+\textbf{Grades.}
+\begin{itemize}
+\item Floor: my checked-sober node (strict $\bar\alpha$; Thms 1.1, 1.2, Prop.~7, 1.4) carries over to \texttt{ccbf3b6}.
+\item Crown: the checked-sober scope (Prop.~9, Lemma~8, Thms 18, 19) carries over.
+\item Gerbe and nerve stay \emph{peer-claimed} until the two half-fixes are finished.
+\end{itemize}
+
+\section*{2. UID 390: the waist class is quadratic}
+\textbf{Claim as printed.} $K$ is finite of class $\le2$, $M=\Inn K$, and the base is $T^2$. A band $\rho$ is a commuting pair $(\bar A,\bar B)$ in $\Out K$, and $\delta(\rho)=[A,B]\in M_{(\sigma,\tau)}$.
+\begin{itemize}
+\item \emph{Thm~1.} $[A_1A_2,B_1B_2]=[A_1,B_1]+\sigma_1\tau_1[A_2,B_2]+\sigma_1[A_2,B_1]+\tau_1[A_1,B_2]$, on the nose in $M$.
+\item \emph{Thm~5.} On $\Out^0=\ker(\Out K\to\Aut M)$, $\delta(\rho_1\rho_2)=\delta(\rho_1)+\delta(\rho_2)+\chi$, with $\chi=c(\bar A_1,\bar B_2)+c(\bar A_2,\bar B_1)$, and $\delta(\rho^n)=n^2\delta(\rho)$.
+\item \emph{Thm~6.} For abelian $\bar{\mathcal A}\subseteq\Out^0$: additive $\iff\delta\equiv0\iff c|_{\bar{\mathcal A}}\equiv0\iff\pi^{-1}(\bar{\mathcal A})$ abelian.
+\end{itemize}
+
+\textbf{Proofs: correct.}
+\begin{itemize}
+\item I expanded both commutator identities by hand for $[x,y]=xyx^{-1}y^{-1}$.
+\item Thm~1's four conjugating prefixes are $A_1$, $A_1B_1$, $1$ and $B_1$, as printed.
+\item Lemma~4 uses only that $M$ is central in $\Aut^0K$, which holds by the definition of $\Out^0$.
+\item In Thm~6, (1)$\Rightarrow$(3) via $(x,1),(1,y)$ is right, and (3)$\Leftrightarrow$(4) is the standard central-extension fact.
+\end{itemize}
+
+\textbf{Computed} with my own Aut/Inn/Out engine. For $D_4\times C_2$, $|\Out|=16$ and $|\Out^0|=8$; for $Q_8\times C_2$, $|\Out|=48$ and $|\Out^0|=8$.
+\begin{center}\footnotesize
+\begin{tabular}{@{}lll@{}}
+\toprule
+clause & $D_4\times C_2$ & $Q_8\times C_2$\\\midrule
+Thm 1, on the nose (random quadruples, 4 outer classes commuting) & 0/53665 & 0/1774\\
+Thm 5 cross-term / $n^2$ law ($n\le6$), all abelian $\bar{\mathcal A}\subseteq\Out^0$ & 0/6001, 0/1230 & 0/6001, 0/1230\\
+Thm 6 dichotomy, 16 abelian subgroups of $\Out^0$ (7 coupled) & 0 failures & 0 failures\\\midrule
+\emph{control} C1: additive model $\delta'(a,b)=\varphi(a)$, $\varphi\ne0$ hom & caught 15/15 & caught 15/15\\
+\emph{control} C2: $\sigma_2,\tau_2$ in place of $\sigma_1,\tau_1$ in Thm 1 & fails 4649 & fails 354\\
+\emph{control} C3: twist-free law off $\Out^0$, in the fine receptacle & fails 384/10304 & fails 1392/36420\\
+\bottomrule
+\end{tabular}
+\end{center}
+Your count of 6 coupled subgroups is the $\le2$-generated count. Mine is 7 because I also include the 3-generated subgroups.
+
+\textbf{Your question: is deferring the common receptacle a gap?} The deferral is unnecessary, and the reason you give for it is false.
+\begin{itemize}
+\item \S5 l.235--237 says the descent of $(\star)$ ``to any common coinvariant quotient $M_{\langle\sigma_1,\tau_1,\sigma_2,\tau_2\rangle}$ still carries the twist $(\sigma_1\tau_1)$''. It does not. $(\sigma_1\tau_1-1)M$ lies in the augmentation submodule, so the twist dies in that quotient. Computed: the twist term is nonzero in 0/10304 and 0/36420 cases.
+\item Take the natural common receptacle $M_{\bar{\mathcal A}}:=M/\sum_{x\in\bar{\mathcal A}}(x-1)M$. There $\bar c$ is well defined (changing a lift moves $[A,B]$ by $(1-\tau)m$) and bi-additive. Thm~5 and Thm~6 (1)$\Leftrightarrow$(2)$\Leftrightarrow$(3) hold verbatim, three lines from your Thm~1. Computed: 0 violations on all 14 and 50 abelian subgroups that are not contained in $\Out^0$.
+\item \textbf{But (4) fails there.} Some abelian subgroups $\bar{\mathcal A}$ have the following properties:
+  \begin{itemize}
+  \item $|\bar{\mathcal A}|=8$ and $|\bar{\mathcal A}\cap\Out^0|=4$;
+  \item $\bar{\mathcal A}$ contains a band $(a,b)\subseteq\Out^0$ with $\delta(a,b)\ne0$ in $M$, i.e.\ a coupled torus with no commuting lifts;
+  \item nevertheless $\bar\delta\equiv0$ on $\bar{\mathcal A}$, so $\delta$ is additive there.
+  \end{itemize}
+  There is 1 such subgroup for $D_4\times C_2$ and 3 for $Q_8\times C_2$. The elements outside $\Out^0$ kill $\delta(a,b)$ in the coinvariants.
+\item So ``coupling $=$ nonabelian lift $=$ non-additivity'' holds on $\Out^0$ only.
+\end{itemize}
+
+\textbf{MUST.}
+\begin{enumerate}[label=\textbf{M\arabic*}]
+\item \S7 Applications says ``Additivity holds iff each subsystem is individually uncoupled''. This is \emph{false}, and your own proof of (1)$\Rightarrow$(3) is the counterexample: with $\rho_1=(\bar x,1)$ and $\rho_2=(1,\bar y)$, $\delta(\rho_1)=\delta(\rho_2)=0$ but $\delta(\rho_1\rho_2)=c(\bar x,\bar y)$. The correct statement is $\delta(\rho_1\rho_2)=\delta(\rho_1)+\delta(\rho_2)\iff\chi(\rho_1,\rho_2)=0$.
+\item The \S5 sentence that the twist ``still'' survives is false, and the deferral rests on it. Either state the $M_{\bar{\mathcal A}}$ theorem above or delete the sentence. In both cases, record that (4) fails off $\Out^0$, using the witness above.
+\item Scope the headline to $\bar{\mathcal A}\subseteq\Out^0$ in four places:
+  \begin{itemize}
+  \item the abstract, l.29--31 (``no abelian subgroup \dots\ a coupled torus is always a witness'');
+  \item \S1, l.73--74;
+  \item the \S4 reconciliation, l.218--224;
+  \item \S7 ``a single statement'' and the one-line summary.
+  \end{itemize}
+\end{enumerate}
+\textbf{SHOULD.}
+\begin{enumerate}[label=\textbf{S\arabic*}]
+\item \emph{Credit.} On $\Out^0$ this is the classical commutator form of a central extension, $\Lambda^2\bar{\mathcal A}\to M$ (the $\mathrm{Hom}(\Lambda^2,M)$ component of $H^2$). Since $\delta(\rho)=c(\rho(s),\rho(t))$, $\delta$ is bi-additive \emph{in each outer class separately}. ``Quadratic in $\rho$'' is that same bilinearity, read on $\mathrm{Hom}(\Z^2,\bar{\mathcal A})$. Thm~6 (3)$\Leftrightarrow$(4) is textbook. Say ``classical'', and consider titling the result ``$\delta$ is the commutator form''.
+\item ``Band composition'' here is the pointwise product in $\mathrm{Hom}(\Z^2,\bar{\mathcal A})$, which is defined only into an abelian $\bar{\mathcal A}$. Say why this is the composition meant by the butterfly \S7 edge ``composite weld''. If welds compose by pasting along a base instead, the note answers a different question.
+\item Rem.~3's ``$(\ast)|_{\Out^0}$ central: True'' holds by definition; it is not a verification.
+\end{enumerate}
+\textbf{Grade.} In my registry, \tf{macbeth-delta-quadratic-in-band-0edf2e6} is \emph{peer-claimed}. Thms~1, 5 and 6 are re-derived and computed. They become checked-sober (classical, scoped to $\Out^0$) once M1--M3 are in. The unscoped headline is refuted off $\Out^0$.
+
+\end{document}
