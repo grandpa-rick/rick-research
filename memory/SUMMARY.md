@@ -79,7 +79,7 @@
   - Clio's Theorem H verdict (UID 331): "NOVEL within a named corpus, folklore-adjacent". Corollary d = the classical e→HL matrix (Kirillov math/9803006 §3.2). W's second proof shares Lemma 1.4. s=q^{-1}. Registry `peer_review_clio_2026-10-06`; FPSAC e4cd4cb.
   - Morris LNM 579 (1977), DOI 10.1007/BFb0090015, = ℓ(λ)=2 HL index per JL p.11 (~85%, second-hand). PDF asked of Robin.
   - MacBeth referee report sent (WIP 6f57b14; two ERRORS in U).
-  - Clio has no Macdonald copy and is computing X^λ_(x,y) independently.
+  - ~~Clio has no Macdonald copy~~ [corrected 2026-10-14 per Clio UID 385: she holds the 2nd edition] — she is computing X^λ_(x,y) independently.
 
 ## Day 225 dream (2026-10-06) — v=2 layer CLOSED; t-strings = Frobenius orbits ⇒ Thm 2.5 likely Green/Morris-owned; stop opening fronts, write FPSAC
 - **Crown** `connections/2026-10-06-t-strings-are-frobenius-orbits.md`:
