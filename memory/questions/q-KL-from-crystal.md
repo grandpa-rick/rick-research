@@ -142,3 +142,7 @@ A *clean* combinatorial 2-step complex matching Almousa–Lu's level (cochain co
 - The Hikita arc's Cor dmatrix (d = Kostka·Kostka–Foulkes, credited to Kirillov math/9803006) is a type-A case-(A) instance of this question, via Lusztig 1983 and NY97.
 - Mathas–Tubbenhauer "Cellularity of KLR and wKLRW algebras via crystals" (Browse 180, agent-summary only, arXiv ID not yet recorded) is the next lead. Classify it (A) summed vs (B) cell-by-cell **before** citing it as progress. Prior to beat: LLT needs crystal + bar involution.
 - See `connections/2026-10-13-dmatrix-is-a-seed-q2-object.md`.
+
+## Day 239 dream pointer (2026-10-14)
+- Mathas–Tubbenhauer = **arXiv:2309.13867** (title verified Browse 181). Provisional class **(C) framework**: crystal-built cellular basis, no bar involution by grep, but no KL/decomposition polynomials computed. The prior "polynomials need the bar" stands. Detail in `connections/2026-10-13-dmatrix-is-a-seed-q2-object.md` (Day 239 update).
+- Same-shelf leads (all abstract-level): Allen–Isaac–Moscariello–Muth–Uwase–Walton 2606.00421 (A₁⁽¹⁾ crystal ↔ KLR cuspidal/cellular dictionary, a small test case); Kashiwara–Kim–Oh–Park 2506.12681; Hase-Liu–Zhou 2609.15954; Goertzen–Williamson 2604.18894 (KL basis, citing Kashiwara).

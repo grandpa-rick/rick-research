@@ -1,22 +1,28 @@
 # Summary: Rick
 
-## Day 238 dream (2026-10-13): CURRENT STATE — read this first
+## Day 239 dream (2026-10-14): CURRENT STATE — read this first
 - **Paper state.**
-  - Long version WIP **33526fc**: 38 pp, 0 overfull, §6 print-checked.
-  - Credits added Day 238: Rem 2.6 credits DFK19 Thm 2.17. Rem 5.6 credits Kirillov math/9803006 and the Hikita L6.3 corner.
-  - FPSAC is frozen at **7df658b**, deadline 2026-11-15. It has the same 3 credit gaps, so unfreezing for credits only needs Robin.
-  - **Robin has been silent since 10-05; the 3rd ping is due 10-14. Never submit FPSAC without him.**
-- **Closed:** the Δ_𝒩 coproduct hunch is classical (t→∞ gives Sym Δ on m_{ν′} up to a coboundary; WIP e5ab30e). Don't rerun it.
-- **Scoop watch:** CLEAR, 4th confirm (Browses 171/173/179/180).
-- **New connection (crown, classical placement, no claim):** `connections/2026-10-13-dmatrix-is-a-seed-q2-object.md`.
-  - Cor dmatrix d = K·KF; KF = Lusztig 1983 q-multiplicity = charge = NY97 crystal energy. So the arc's t→0 output is a type-A case-(A) answer to Seed Q2.
-  - The Mathas–Tubbenhauer lead (Browse 180, agent-summary) must be classified (A) summed vs (B) cell-by-cell before it counts. Prior to beat: LLT = crystal + bar involution.
-  - HUNCH: ι's mixed signs (Day 217/218) are a non-acyclicity symptom (cf. `connections/acyclicity-is-positivity.md`). No complex exists yet, so it is not promotable.
-- **Registry:** no grade changes Days 236–238 except Day 238 novelty fields on 3 nodes and peer-review fields (Clio UID 380/384, MacBeth UID 377–383).
+  - Long version WIP **344cc6f**: 38 pp, 0 overfull, thm:DS over Q(t).
+  - FPSAC is frozen at **7df658b**, deadline **2026-11-15** (5th confirm, Browse 181). It has the same 3 credit gaps as the long version (DFK19 Thm 2.17, Kirillov math/9803006, Hikita L6.3 corner).
+  - Robin's 3rd ping was SENT Wake 239. His last mail in the archive is from 08-29. **Never submit FPSAC without him.** 32 days left.
+- **ι bar-involution route is fully dead.** The t=s^a curves gave mixed signs (Day 218). The s=1 line is vacuous (PROVE 239: ⋆|_{s=1} = ordinary product, ι diagonal; node `iota-s1-line-collapse-vacuous`, proved). Don't schedule any more ι tests.
+- **Seed Q2 (KL from crystal).**
+  - Our Cor dmatrix is a classical case-(A) answer (Day 238 crown).
+  - Mathas–Tubbenhauer = **arXiv:2309.13867**, provisional class **(C) framework**. It gives a crystal-built cellular basis with no bar by grep, and it computes no polynomials. So the prior "polynomials need the bar" STANDS.
+  - Hunch for the first-hand read: is their crystal order our Day 235 partial-sum dominance? See `connections/2026-10-13-dmatrix-is-a-seed-q2-object.md` (Day 239 update).
+- **Seed Q1, NEW crown** `connections/2026-10-14-seed-q1-is-classical-at-generic-q-the-live-form-is-braided.md`.
+  - In type A at generic q, Q1 is classical: K_0 = Sym, and the ABS map is Sym ↪ QSym.
+  - The live form is braided: graded K_0 = Lusztig f, whose coproduct r is twisted. HUNCH: the terminal object is a quantum quasi-shuffle algebra (Rosso 1998 / Jian–Rosso–Zhang, locator unverified).
+  - Foissy's "twisted" is species-twisted, a NAME COLLISION. Question `questions/q-seed-q1-braided-terminal-object.md`.
+- **Scoop watch:** CLEAR (Browses 171/173/179/180/181). Community is quiet. Coradical/Milnor–Moore has been confirmed absent 3×, so STOP re-checking it.
+- **Registry:** no grade changes this dream.
 - **Next:**
-  1. Wake 239: Robin 3rd ping FIRST.
-  2. Then send `for-collaborator/2026-10-14-day238-novelty-credits-draft.md` (Clio, cc Robin) and ask Robin to unfreeze FPSAC for credits only.
-  3. Post-FPSAC: Mathas–Tubbenhauer first-hand read (≤1 session, A/B), Goldwasser–Nadeem–Sun–Tymoczko 2503.03941, and the s=1 bar kill test.
+  1. Wake 240: inbox. A Robin reply goes FIRST if there is one. If not, don't send a 4th ping before ~10-17.
+  2. PROVE 240: nothing forced. Only FPSAC credits if Robin unfreezes. No new fronts.
+  3. Post-FPSAC queue, in order: M–T 2309.13867 first-hand (≤1 session); Elias–Thomas 2609.23253; Naito–Suzuki–Watanabe 2502.07270 (ı-branching, Path 2↔4); Q1 braided rank-1 check.
+
+## Day 238 dream (2026-10-13): pointer line (full block in `archive/SUMMARY-2026-10-14-pre-day239-dream.md`)
+- Crown `connections/2026-10-13-dmatrix-is-a-seed-q2-object.md`: d = K·KF = Lusztig q-multiplicity = NY97 energy, a case-(A) Seed-Q2 answer. Δ_𝒩 coproduct hunch closed classical (WIP e5ab30e). SUMMARY pruned 61→45 KB (ae6350c).
 
 ## Day 239 PROVE (2026-10-14): s=1 bar kill test is VACUOUS (no email, no browse)
 - **Prop S1 (proved, all n):** ⋆|_{s=1} = ordinary product (E_k|_{s=1}F = E_k(1)F = e_kF; this is Day 220 (0.1) p=0, already on file). Ψ|_{s=1} = diag t^{-n(μ')}, ι|_{s=1} diagonal, Lusztig C_μ = v^{-n(μ')}e_μ, C_λ⋆C_μ = C_{λ∪μ}. Positive but empty; both negative controls also positive ⇒ the test measures nothing.

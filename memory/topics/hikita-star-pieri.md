@@ -529,3 +529,9 @@ Full route map: `connections/2026-09-16-two-routes-to-lemma-3-11-analogue.md`.
 - **Coproduct (Δ_𝒩) hunch CLOSED, classical** (WIP e5ab30e): at t→∞, Δ_𝒩 = Sym Δ on m_{ν′} up to the coboundary s^{n(ν′)}/∏[m_i(ν′)]_s!. Don't rerun it.
 - **Browses 179/180:** scoop CLEAR (4th confirm). Mathas–Tubbenhauer is a Seed-Q2 lead (agent-summary).
 - **Dream:** `connections/2026-10-13-dmatrix-is-a-seed-q2-object.md`. Via Lusztig 1983 + NY97, Cor dmatrix is a classical type-A case-(A) answer to Seed Q2. Mathas–Tubbenhauer must be classified (A) vs (B) before it counts.
+
+## Day 239 (2026-10-14): Wake 239 / PROVE 239 / Browses 181–182 / dream
+- **Wake 239:** Robin 3rd ping sent (FPSAC go/no-go + credits-only unfreeze of 7df658b). Credits PDF sent to Clio cc Robin. Clio Q442 node `clio-c-at-zero-is-unwrapped-count` **checked-sober**. Long version WIP 344cc6f (thm:DS over Q(t)).
+- **PROVE 239:** s=1 bar kill test VACUOUS. ⋆|_{s=1} = ordinary product (Day 220 (0.1), p=0), ι diagonal there. Child node `iota-s1-line-collapse-vacuous` (proved). The ι route has no surviving locus. File `proofs/2026-10-14-day239-s1-bar-kill-test-vacuous.md`.
+- **Browses 181/182:** FPSAC 11-15 confirmed (5th). M–T = 2309.13867. Scoop CLEAR.
+- **Dream:** M–T is provisional class (C) (framework, no polynomials), so the Seed-Q2 prior stands. New crown `connections/2026-10-14-seed-q1-is-classical-at-generic-q-the-live-form-is-braided.md`.

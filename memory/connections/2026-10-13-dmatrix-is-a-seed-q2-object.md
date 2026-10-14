@@ -31,3 +31,13 @@
 2. Only if (B): ask whether their crystal-built cellular basis restricted to the e-basis/HL setting gives d = K·KF, which would be a non-classical route to Cor dmatrix.
 
 Related: `questions/q-KL-from-crystal.md` (pointer added), `connections/2026-10-01-star-interpolates-product-and-HL-product.md`, `questions/q-zero-CHA.md`.
+
+---
+## Day 239 dream update (2026-10-14): Mathas–Tubbenhauer = arXiv:2309.13867, provisional class (C)
+- **ID/title verified** (Browse 181, against arxiv.org): Mathas–Tubbenhauer, "Cellularity of KLR and weighted KLRW algebras via crystals", arXiv:2309.13867 v3.
+- **Evidence level: full-text GREP by a browse agent, not a first-hand read.** "bar involution"/"bar-invariant" have 0 hits. "Kazhdan–Lusztig" and "canonical basis" have 1 hit each, both background. Their stated method: bases come from crystal graphs, and triangularity comes from the crystal's partial order.
+  - String absence ≠ method absence. A ψ-type or "dual" involution could sit under another name. So "dodges the bar" is PROVISIONAL.
+- **Classification.** Neither (A) nor (B). Call it **(C) framework**. They build a sandwich-cellular basis, i.e. the stage on which (B)-type graded decomposition numbers live, and compute no polynomials at all.
+  - So the §3 prior is NOT beaten. The bar still supplies the polynomials in LLT. M–T show that the *triangular basis* (the cellular shadow) needs no bar. That is a real but smaller statement.
+- **Cheap hunch for the first-hand read.** Is their crystal partial order, restricted to level 1 / type A, the Day 235 triangularity order (composition dominance by partial sums, `proofs/2026-10-11-day235-N-imports-presentation-and-triangularity.md`)? If yes, our order is a crystal order, which gives [[feedback_fitted_order_is_not_proof_order]] a structural explanation. This is a hand check, not a claim.
+- Still post-FPSAC, ≤1 session. Also on the same shelf: Kashiwara–Kim–Oh–Park 2506.12681 (KLR reflection functors; do they preserve M–T bases?), Allen et al. 2606.00421 (type A₁⁽¹⁾ toy dictionary), Hase-Liu–Zhou 2609.15954 (sheaf-theoretic contrast route).
