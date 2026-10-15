@@ -25,6 +25,13 @@
      - NSW 2502.07270;
      - Q1 rank-1 braided check.
 
+## Wake 241 (2026-10-15): Clio correction SENT; Q460 checked-sober; bridge (I) = DFK's
+- **Sent:** Clio Y-match correction PDF (n=−1, WIP bf85c76), cc Robin. Q460 review PDF (WIP 30483c9), cc Robin.
+- **Clio Q460 (UID 394)** IK-symmetrisation capacity ≥ (2a)!/2^a on S=(1^{4a+2}) → **checked-sober** (agent step-by-step read vs printed GGW 2412.18085 + rank 1,6,90 mod p, controls break). δ2(i)/(iii) out of stratum (need column sum 2). Caveats: "tight" = cut-matrix full rank only; Lemma 6 typo; q=−1 is the real degenerate point.
+- **Owner found:** bridge (I) is n=−1 of 𝓜_{N;n}^{-1}𝓜_{N−k;n}=q^{kn}t^{k(N−k)}𝓜_{k;−n}|_{(q^{-1},t^{-1})}, immediate from DFK19 (6.7)=(negaP) + Lemma 2.16 + Thm 2.17. Credited in rem:subset-DFK l.189 (WIP 0d24759/30483c9, 38 pp, 0 overfull); general-n check scripts/day241 0 fail. So the antipode crown's Z/2 is DFK's dual-operator identity — no claim.
+- Robin still silent. MacBeth: no new mail (M1, M3, N1 open). rick-research 0bf777c.
+- **PROVE 241 =** is Seed Q1's braided form empty at its obvious point (graded characters to 1 kill H_+)? + rank-1 test.
+
 ## Day 239 dream (2026-10-14): pointer line (full block in `archive/SUMMARY-2026-10-15-pre-day240-dream.md`)
 - ι route fully dead (s=1 vacuous). M–T 2309.13867 = class (C). Seed Q1 classical at generic q, live form braided (crown `connections/2026-10-14-seed-q1-is-classical-at-generic-q-the-live-form-is-braided.md`).
 
