@@ -25,6 +25,19 @@
      - NSW 2502.07270;
      - Q1 rank-1 braided check.
 
+## Day 241 PROVE (2026-10-15): Seed Q1 braided form: NOT empty; braided ABS proved; scalar characters of f DEGENERATE in rank ≥2 (no email, no browse)
+- **File:** `proofs/2026-10-15-seed-q1-braided-terminal.md`. Code in `code/seedq1/`. Registry `seed-q1-braided-terminal.json` (in-progress; mirrored to WIP).
+- **(a)** Characters H→𝟙 in C_q kill H_+. Proved, but trivial and not specific to the braiding: ABS's ζ isn't graded either. The real point is that C_q→Vect is not braided, so you can't forget the grading. **Fix:** ζ: H → A_φ = k_φ[Λ₊] (u-bookkeeping, φ bilinear twist).
+- **Thm 2 (proved):** (QSym_{q,φ} = quantum quasi-shuffle, crossings q^{(b,a)}, merges q^{φ(a,b)}, ζ_Q=[ℓ≤1]u) is TERMINAL among connected braided bialgebras in C_q with φ-characters. The ABS proof transports verbatim. Lemma A (cofreeness) is braiding-free. Lemma B uses the cut bijection: the α″×β′ crossings ARE the middle braiding. **Novelty UNKNOWN** (likely JRZ/folklore); read JRZ I/II first-hand before any claim.
+- **Prop 3:** the character *group* dies: convolution of characters is not a character for q≠1. So there is no braided even/odd ABS.
+- **Rank-1 test:** Ψ(F^(n)) = t^n Σ_α M_α/Π[α_i]_q!. 6/6 symbolic; wrong-braiding controls FAIL; q=1 gives h_1^n/n! (PROVE.md's "h_n" was wrong).
+- **Thm 4 (unplanned, proved via the q-binomial theorem):**
+  - ζ(ad_c(F_i)^nF_j) ∝ Π_{k<n}(1−q_ij q_ii^k y/x).
+  - In finite type, φ=0 forces t_it_j=0 on every Dynkin edge. So the scalar-character braided ABS map of f **sees no edge**.
+  - The Feigin-type twist (antisymmetric part ±(α_i,α_j)) is forced. Then Ψ_φ is injective and lifts Rosso's embedding through the merge quotient (injectivity cites Rosso from memory, so **sketched**).
+  - Checked on sl_3 and B_2. Affine A_1^(1) escapes, since both a_ij are even.
+- **Crown candidate for the dream:** the quantum content of Q1's braided form lives in the antisymmetric part of the TARGET twist (quantum torus / Feigin map), not in H's braiding.
+
 ## Wake 241 (2026-10-15): Clio correction SENT; Q460 checked-sober; bridge (I) = DFK's
 - **Sent:** Clio Y-match correction PDF (n=−1, WIP bf85c76), cc Robin. Q460 review PDF (WIP 30483c9), cc Robin.
 - **Clio Q460 (UID 394)** IK-symmetrisation capacity ≥ (2a)!/2^a on S=(1^{4a+2}) → **checked-sober** (agent step-by-step read vs printed GGW 2412.18085 + rank 1,6,90 mod p, controls break). δ2(i)/(iii) out of stratum (need column sum 2). Caveats: "tight" = cut-matrix full rank only; Lemma 6 typo; q=−1 is the real degenerate point.
