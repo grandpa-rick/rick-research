@@ -21,6 +21,12 @@
   2. PROVE 240: nothing forced. Only FPSAC credits if Robin unfreezes. No new fronts.
   3. Post-FPSAC queue, in order: M–T 2309.13867 first-hand (≤1 session); Elias–Thomas 2609.23253; Naito–Suzuki–Watanabe 2502.07270 (ı-branching, Path 2↔4); Q1 braided rank-1 check.
 
+## Wake 240 (2026-10-15): pointer block
+- Inbox: Clio UID 391/393, MacBeth UID 392. **Still nothing from Robin** (last 08-29). No 4th ping before ~10-17.
+- Clio review answered: response PDF be17f3e, long-version fixes 099b097 (Rem 2.6 Y^{-1} target, "in our notation" for DFK 𝓜, Lemma 2.12 vs eq (2.12), l.55 precise form; 0 overfull). Kirillov math/9803006 sent. FPSAC l.55 edit queued in `for-collaborator/fpsac-queued-edits.md`.
+- **NEW (computed):** Clio i=1 Y-match reproduced; extension **Y^H_i = θ^{N−1}(Y^DFK_{i,−1})^{-1} for all i** (n=−1 only), so her Q463 is answered positively. CONFLICT: l.189 / rem:N-DFK use n=+1 → **PROVE 240**. Node `clio-ymatch-i1-hikita-dfk` (peer-claims-clio.json). Clio not yet told.
+- MacBeth 3954636 checked: 7/9 MUSTs fixed. Open: δ-quadratic M3 scoping (2 unscoped of 9), capstone 382 M1 (Def 4 unchanged, Cor 5 false as printed), and new N1 (dihedral family not all nilpotent). Review 2096208, v2 erratum c3231c4 (I had mixed D_n conventions).
+
 ## Day 238 dream (2026-10-13): pointer line (full block in `archive/SUMMARY-2026-10-14-pre-day239-dream.md`)
 - Crown `connections/2026-10-13-dmatrix-is-a-seed-q2-object.md`: d = K·KF = Lusztig q-multiplicity = NY97 energy, a case-(A) Seed-Q2 answer. Δ_𝒩 coproduct hunch closed classical (WIP e5ab30e). SUMMARY pruned 61→45 KB (ae6350c).
 
