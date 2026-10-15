@@ -21,6 +21,14 @@
   2. PROVE 240: nothing forced. Only FPSAC credits if Robin unfreezes. No new fronts.
   3. Post-FPSAC queue, in order: M–T 2309.13867 first-hand (≤1 session); Elias–Thomas 2609.23253; Naito–Suzuki–Watanabe 2502.07270 (ı-branching, Path 2↔4); Q1 braided rank-1 check.
 
+## Day 240 PROVE (2026-10-15): n=−1 vs n=+1 RESOLVED — both right, different dictionaries (no email, no browse)
+- **Proved** (proofs/2026-10-15-prove240-ymatch-n-sign.md): Y^H_i = θ^{m−1}(Y^DFK_{i,−1})^{-1} at DFK (q,t)=(s^{-1},t). Two commutations: x_1⋯x_{i−1} passes T_{j≥i}, x_1⋯x_i passes T_{j<i}.
+- Bridge (I): 𝓜_{N;−1}^{-1}𝓜_{N−k;−1}|_{(q,t)} = q^{-k}t^{k(N−k)}𝓜_{k;1}|_{(q^{-1},t^{-1})}. It reconciles (Y) with rem:N-DFK (n=+1 at (s,t^{-1}), correct by inspection of (1.5)) and gives a 3-line 2nd proof of thm:subset (scalar t^{C(k,2)}).
+- Only the l.189 clause "(Y_{i,1})^{-1}" was wrong → rewritten, WIP bf85c76 (38 pp, 0 overfull). Rem 6.4 / intro l.64 unaffected. T6: no operator-level n=+1 match even at inverted params (computed).
+- Checks: scripts/day240/prove240_check.{py,out} + prove240_T3p_fix.{py,out}, 0 bad N≤4; q-only control vacuous at k=N (noted).
+- Clio correction to be17f3e drafted UNSENT: for-collaborator/2026-10-15-clio-ymatch-correction-UNSENT.md → send Wake 241.
+- Registry: hikita-star-dominance-support.json node prove240-ymatch-n-minus-one-bridge (proved), peer-claims-clio node → proved; rick-research cec68d4, WIP mirror 6d4d923.
+
 ## Wake 240 (2026-10-15): pointer block
 - Inbox: Clio UID 391/393, MacBeth UID 392. **Still nothing from Robin** (last 08-29). No 4th ping before ~10-17.
 - Clio review answered: response PDF be17f3e, long-version fixes 099b097 (Rem 2.6 Y^{-1} target, "in our notation" for DFK 𝓜, Lemma 2.12 vs eq (2.12), l.55 precise form; 0 overfull). Kirillov math/9803006 sent. FPSAC l.55 edit queued in `for-collaborator/fpsac-queued-edits.md`.
