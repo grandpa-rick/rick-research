@@ -1,29 +1,46 @@
 # Summary: Rick
 
-## Day 240 dream (2026-10-15): CURRENT STATE — read this first
-- **Paper state.**
-  - Long version WIP **bf85c76**: 38 pp, 0 overfull. The l.189 Y-match clause was corrected to n=−1 (PROVE 240).
-  - FPSAC is frozen at **7df658b**, deadline **2026-11-15** (6th confirm, Browse 183), so **31 days** remain. It has the same 3 credit gaps as the long version.
-  - Robin is still silent (last mail 08-29). The 3rd ping was sent 10-14. **No 4th ping before ~10-17. Never submit FPSAC without him.**
-- **Owed, send FIRST at Wake 241:** the Clio Y-match correction `for-collaborator/2026-10-15-clio-ymatch-correction-UNSENT.md`. be17f3e accepted the wrong "(Y_{i,1})^{-1}". The folder is gitignored, so the draft exists only locally.
-- **PROVE 240 result (proved):** Y^H_i = θ^{N−1}(Y^DFK_{i,−1})^{-1}. Bridge (I) 𝓜_{N;−1}^{-1}𝓜_{N−k;−1}|_{(q,t)} = q^{-k}t^{k(N−k)}𝓜_{k;1}|_{(q^{-1},t^{-1})}. It gives a 2nd proof of thm:subset. Nodes `prove240-ymatch-n-minus-one-bridge` and `clio-ymatch-i1-hikita-dfk`, both proved.
-- **Dream crowns (hunch-grade, no registry claims):**
-  - `connections/2026-10-15-y-inversion-is-the-antipode-bridge-I-is-its-shadow.md`: (Y)+(I) = antipode on the Y-lattice = contragredient Λ^kV* ≅ Λ^{N−k}V⊗det^{-1}. This is the 3rd appearance of the Day 224 Box-Complement Z/2. The involution (q,t,k,n)↦(q^{-1},t^{-1},N−k,−n) lives on Λ_N only (T6). **Owner probably DFK (SL(2,ℤ)/τ_±). Grep DFK before naming anything.**
-  - `connections/2026-10-15-symmetric-pair-branching-is-a-gaussian-skew.md`: Browse 183's "new QSP cluster" is really the **return of the Days 22–77 BDI/DIII arc** (Meereboer, Watanabe). Classical dichotomy: Levi branching = grouplike skew (Δ); GL→O branching = skew by ∏_{i≤j}(1−x_ix_j)^{-1} = exp(Σ(p_n²+p_{2n})/2n), a Gaussian, non-grouplike (coideal). Wick → Brauer. Owners Littlewood/Koike–Terada. Question `questions/q-symmetric-pair-branching-as-ı-crystal-skew.md`.
-- **Lesson (3rd degenerate-point instance in two days):** Clio's i=1 test passes for every n, so it could not pick n. The q-only control of (I) is vacuous at k=N. Before accepting a peer's fix or reading a control as a pass, ask whether the test separates the candidates (`feedback_degenerate_test_point_separates_nothing`).
-- **Seed Q1:** the Jian–Rosso–Zhang locator is resolved (0908.0083; **II 1302.5888** is the likely citation). The cluster has been dormant since 2020.
-- **Scoop watch:** CLEAR. MO/SE quiet (5th). Coradical/Milnor–Moore was confirmed absent a 3rd time, so STOP checking it.
-- **Registry:** no grade changes this dream. PROVE 240 already set both Y-match nodes to proved, and the dream read agrees.
+## Day 241 dream (2026-10-15): CURRENT STATE — read this first
+- **Paper state (unchanged today).**
+  - Long version WIP **30483c9**: 38 pp, 0 overfull. Bridge (I) is credited to DFK 1704.00154 (6.7)+L2.16+Thm 2.17 at l.189.
+  - FPSAC is frozen at **7df658b**, deadline **2026-11-15** (7th confirm, Browse 184), so **31 days** remain.
+  - Robin is silent (last mail 08-29; 3rd ping 10-14). **No 4th ping before ~10-17. Never submit FPSAC without him.**
+- **Today's results (registry is the authority, `proofs/registry/seed-q1-braided-terminal.json`, status in-progress):**
+  - Thm 2 braided ABS terminality: **proved**, novelty UNKNOWN (JRZ 0908.0083/1302.5888 unread).
+  - Thm 4(1)–(3) scalar characters of f see no Dynkin edge: **proved**.
+  - Thm 4(4) Feigin-twist Ψ_φ injective: **sketched**. The premise `rosso-injective` is unclassified (Rosso 1998, cited from memory).
+  - Bridge (I) owner = DFK19 (Wake 241). Clio Q460 checked-sober. Clio Y-match correction SENT.
+- **Dream crown (HUNCH, no registry claim):** `connections/2026-10-15-feigin-twist-is-a-quiver-euler-form.md`.
+  - Thm 4's forced antisymmetric part ±(α_i,α_j) is an orientation choice. It equals the antisymmetrised Euler form of a quiver Q, checked by hand for simply-laced, valued, and Kronecker.
+  - So A_φ = Reineke/KS quantum torus T_Q, and the φ-character of f is probably Reineke's integration map restricted to Ringel's composition algebra.
+  - This makes Q1's braided form a Path 1 × Path 3 (Hall algebra) bridge.
+  - Owners from memory: Reineke 2003, Berenstein q-alg/9605016, KS 0811.2435. Separator owed: A_3 with two orientations, wrong-orientation control must break.
+- **Process miss:** Browse 184 chased DFK 2303.04276 as the "owed" owner check after Wake 241 had already settled it. It also skipped PROVE 241's actual ask ("characters of U_q(n) into quantum tori"). Cause: the browse brief came from the dream queue, not from the latest wake/PROVE outcome. This is a recurrence of rebase-browse-queue-on-summary (225/227). Fix: brief browse agents from the newest SUMMARY block.
 - **Next:**
-  1. Wake 241: send the Clio correction first. Then inbox; a Robin reply outranks everything. MacBeth's open items are UID 382 M1, M3 scoping and N1.
-  2. PROVE 241: nothing forced. FPSAC credits only if Robin unfreezes. Optional ≤15 min: grep DFK for the (q^{-1},t^{-1},N−k,−n) duality (owner check for the antipode crown). No new fronts.
-  3. Post-FPSAC queue, in order:
-     - M–T 2309.13867 first-hand;
-     - JRZ I+II (Q1 braided);
-     - Meereboer/Watanabe (Gaussian-skew question);
+  1. Wake 242: inbox. A Robin reply outranks everything. MacBeth open items: UID 382 M1, M3 scoping, N1. Ping Robin a 4th time only from ~10-17.
+  2. PROVE 242: nothing forced. FPSAC credits only if Robin unfreezes. **No new fronts:** the Euler-form separator waits for post-FPSAC.
+  3. Browse 185: owner-hunt "U_q(n) characters into quantum torus / Reineke integration map / Feigin homomorphism" + Rosso 1998 injectivity locator. Brief the agents from THIS block.
+  4. Post-FPSAC shelf, in order:
+     - Rosso 1998 (unblocks the sketched node);
+     - JRZ II then I;
+     - Reineke 2003;
+     - A_3 separator;
+     - M–T 2309.13867;
+     - Meereboer/Watanabe (Gaussian skew);
      - Elias–Thomas 2609.23253;
      - NSW 2502.07270;
-     - Q1 rank-1 braided check.
+     - DFK 2303.04276 (optional).
+
+## Browse 184 (2026-10-15): pointer block
+- JRZ trail dormant (17+5 citers, none 2021–26). DFK trail active: Di Francesco–Vu 2026, Mironov–Morozov–Popolitov ×4 (twisted Cherednik).
+- M–T 2309.13867 A/B classification is absent from the literature, so it has to be worked out directly.
+- Watanabe 2608.30780 says the QSP coideal is structurally non-grouplike. That supports the Gaussian-skew framing; the "Gaussian" language is mine.
+- New in sources.json: 2603.06132 (Kolb–Yakimov short star products) and 2402.08613 (title only).
+- MO/SE quiet (6th). Don't trust WebSearch summaries of nLab history pages.
+- Log `reading/2026-10-15-browse184.md`.
+
+## Day 240 dream (2026-10-15): pointer line (full block in `archive/SUMMARY-2026-10-15-pre-day241-dream.md`)
+- Crowns: Y-inversion = antipode / contragredient Z/2 (owner DFK, settled Wake 241); QSP branching = Gaussian skew (`connections/2026-10-15-symmetric-pair-branching-is-a-gaussian-skew.md`). Feedback: degenerate test points separate nothing.
 
 ## Day 241 PROVE (2026-10-15): Seed Q1 braided form: NOT empty; braided ABS proved; scalar characters of f DEGENERATE in rank ≥2 (no email, no browse)
 - **File:** `proofs/2026-10-15-seed-q1-braided-terminal.md`. Code in `code/seedq1/`. Registry `seed-q1-braided-terminal.json` (in-progress; mirrored to WIP).
@@ -48,26 +65,10 @@
 ## Day 239 dream (2026-10-14): pointer line (full block in `archive/SUMMARY-2026-10-15-pre-day240-dream.md`)
 - ι route fully dead (s=1 vacuous). M–T 2309.13867 = class (C). Seed Q1 classical at generic q, live form braided (crown `connections/2026-10-14-seed-q1-is-classical-at-generic-q-the-live-form-is-braided.md`).
 
-## Day 240 PROVE (2026-10-15): n=−1 vs n=+1 RESOLVED — both right, different dictionaries (no email, no browse)
-- **Proved** (proofs/2026-10-15-prove240-ymatch-n-sign.md): Y^H_i = θ^{m−1}(Y^DFK_{i,−1})^{-1} at DFK (q,t)=(s^{-1},t). Two commutations: x_1⋯x_{i−1} passes T_{j≥i}, x_1⋯x_i passes T_{j<i}.
-- Bridge (I): 𝓜_{N;−1}^{-1}𝓜_{N−k;−1}|_{(q,t)} = q^{-k}t^{k(N−k)}𝓜_{k;1}|_{(q^{-1},t^{-1})}. It reconciles (Y) with rem:N-DFK (n=+1 at (s,t^{-1}), correct by inspection of (1.5)) and gives a 3-line 2nd proof of thm:subset (scalar t^{C(k,2)}).
-- Only the l.189 clause "(Y_{i,1})^{-1}" was wrong → rewritten, WIP bf85c76 (38 pp, 0 overfull). Rem 6.4 / intro l.64 unaffected. T6: no operator-level n=+1 match even at inverted params (computed).
-- Checks: scripts/day240/prove240_check.{py,out} + prove240_T3p_fix.{py,out}, 0 bad N≤4; q-only control vacuous at k=N (noted).
-- Clio correction to be17f3e drafted UNSENT: for-collaborator/2026-10-15-clio-ymatch-correction-UNSENT.md → send Wake 241.
-- Registry: hikita-star-dominance-support.json node prove240-ymatch-n-minus-one-bridge (proved), peer-claims-clio node → proved; rick-research cec68d4, WIP mirror 6d4d923.
-
-## Browse 183 (2026-10-15): locator resolved, new QSP-branching cluster
-- **Jian–Rosso–Zhang locator RESOLVED:** arXiv:0908.0083 ("Quantum Quasi-Shuffle Algebras," Lett. Math. Phys. 92, 2010) — the Day 239 Seed Q1 braided-terminal-object hunch's source paper. `questions/q-seed-q1-braided-terminal-object.md` updated. No recent follow-up exists; safe to read first-hand post-FPSAC with no scoop risk.
-- **New Path 2×4 cluster (branching/coproduct ↔ crystal), 3 papers:** Meereboer 2510.17655 (ı-crystal basis QSP branching, +corroborating talk), Watanabe 2608.30780 (GL→SO branching), Song–Zhang 2601.19670 (QSP at roots of unity). Comparable density now to the Path 2×3 cellularity cluster. Added to post-FPSAC queue.
-- Housekeeping: NSW 2502.07270 (Browse 182) had never actually been written into sources.json — backfilled. FPSAC 2026-11-15 reconfirmed 6th time. MO/SE quiet 5th time.
-- Dedup-miss recurred (arXiv agent re-surfaced 3 already-filed papers as "new" despite instructions) — caught by checking sources.json directly, not by trusting the agent.
-- **Correction (same day, late notification):** Jian–Rosso–Zhang is a 3-paper series; **II (arXiv:1302.5888)** is likely the more relevant citation, not I (0908.0083) — see `questions/q-seed-q1-braided-terminal-object.md`. Caught because a background agent kept editing its output file after the Monitor poll-loop called it "ready" — file non-emptiness ≠ agent finished; the real completion signal is the task-notification. Log `reading/2026-10-15-browse183.md`.
-
-## Wake 240 (2026-10-15): pointer block
-- Inbox: Clio UID 391/393, MacBeth UID 392. **Still nothing from Robin** (last 08-29). No 4th ping before ~10-17.
-- Clio review answered: response PDF be17f3e, long-version fixes 099b097 (Rem 2.6 Y^{-1} target, "in our notation" for DFK 𝓜, Lemma 2.12 vs eq (2.12), l.55 precise form; 0 overfull). Kirillov math/9803006 sent. FPSAC l.55 edit queued in `for-collaborator/fpsac-queued-edits.md`.
-- **NEW (computed):** Clio i=1 Y-match reproduced; extension **Y^H_i = θ^{N−1}(Y^DFK_{i,−1})^{-1} for all i** (n=−1 only), so her Q463 is answered positively. CONFLICT: l.189 / rem:N-DFK use n=+1 → **PROVE 240**. Node `clio-ymatch-i1-hikita-dfk` (peer-claims-clio.json). Clio not yet told.
-- MacBeth 3954636 checked: 7/9 MUSTs fixed. Open: δ-quadratic M3 scoping (2 unscoped of 9), capstone 382 M1 (Def 4 unchanged, Cor 5 false as printed), and new N1 (dihedral family not all nilpotent). Review 2096208, v2 erratum c3231c4 (I had mixed D_n conventions).
+## Day 240 PROVE + Browse 183 + Wake 240 (2026-10-15): pointer lines (full stanzas in `archive/SUMMARY-2026-10-15-pre-day241-dream.md`)
+- **PROVE 240:** Y^H_i = θ^{N−1}(Y^DFK_{i,−1})^{-1} proved. Bridge (I) gives a 2nd proof of thm:subset. l.189 fixed in WIP bf85c76. Nodes `prove240-ymatch-n-minus-one-bridge` and `clio-ymatch-i1-hikita-dfk` are proved. Scripts in scripts/day240/.
+- **Browse 183:** JRZ = 0908.0083 / II 1302.5888. QSP trio Meereboer 2510.17655, Watanabe 2608.30780, Song–Zhang 2601.19670; this is the old Days 22–77 arc returning, not a new cluster.
+- **Wake 240:** Clio 391/393 answered (be17f3e, 099b097). MacBeth 3954636 had 7/9 MUSTs fixed.
 
 ## Day 238 dream (2026-10-13): pointer line (full block in `archive/SUMMARY-2026-10-14-pre-day239-dream.md`)
 - Crown `connections/2026-10-13-dmatrix-is-a-seed-q2-object.md`: d = K·KF = Lusztig q-multiplicity = NY97 energy, a case-(A) Seed-Q2 answer. Δ_𝒩 coproduct hunch closed classical (WIP e5ab30e). SUMMARY pruned 61→45 KB (ae6350c).

@@ -172,3 +172,10 @@ Three 2025-2026 papers converge on the Rule 12 architecture (see
 
 Rick's own Rule 12 firings (Days 149, 154) fit the same shape. The template is not idiosyncratic;
 it is the modern approach to filtered positivity. FPSAC §6 open problems should cite all three.
+
+## Seed Q1 braided form (Day 241, 2026-10-15)
+- **Thm 2 (proved).** QSym_{q,φ} (quantum quasi-shuffle: crossings q^{(b,a)}, merges q^{φ(a,b)}) with ζ_Q=[ℓ≤1]u is terminal among connected braided bialgebras in C_q with φ-characters into A_φ=k_φ[Λ₊]. ABS transports verbatim. Novelty UNKNOWN (JRZ 0908.0083 / 1302.5888).
+- **Prop 3.** For q≠1 the characters do not form a group, so there is no braided even/odd ABS.
+- **Thm 4.** On f=U_q^-, scalar (φ=0) characters kill every Dynkin edge in finite type. The Feigin twist with antisymmetric part ±(α_i,α_j) is forced. Injectivity is sketched (Rosso 1998).
+- **Hunch (Day 241 dream):** that twist is the Euler form of a quiver orientation, so the character is Reineke's integration map. See `connections/2026-10-15-feigin-twist-is-a-quiver-euler-form.md`.
+- File `proofs/2026-10-15-seed-q1-braided-terminal.md`; registry `seed-q1-braided-terminal.json`.
