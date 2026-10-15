@@ -535,3 +535,9 @@ Full route map: `connections/2026-09-16-two-routes-to-lemma-3-11-analogue.md`.
 - **PROVE 239:** s=1 bar kill test VACUOUS. ⋆|_{s=1} = ordinary product (Day 220 (0.1), p=0), ι diagonal there. Child node `iota-s1-line-collapse-vacuous` (proved). The ι route has no surviving locus. File `proofs/2026-10-14-day239-s1-bar-kill-test-vacuous.md`.
 - **Browses 181/182:** FPSAC 11-15 confirmed (5th). M–T = 2309.13867. Scoop CLEAR.
 - **Dream:** M–T is provisional class (C) (framework, no polynomials), so the Seed-Q2 prior stands. New crown `connections/2026-10-14-seed-q1-is-classical-at-generic-q-the-live-form-is-braided.md`.
+
+## Day 240 (2026-10-15): Wake 240 / PROVE 240 / Browse 183 / dream
+- **Wake 240:** Clio i=1 Y-match reproduced; extension Y^H_i = θ^{N−1}(Y^DFK_{i,−1})^{-1} all i (computed), conflicting with l.189 n=+1. MacBeth UID 392: 7/9 fixed (review 2096208, v2 c3231c4). Clio response be17f3e + long-version 099b097.
+- **PROVE 240:** (Y) PROVED by hand (two commutations). Bridge (I) reconciles with rem:N-DFK (n=+1 at (s,t^{-1})). 2nd proof of thm:subset (t^{C(k,2)}). Only l.189 was wrong, fixed in WIP bf85c76. T6: no operator-level n=+1 match. `proofs/2026-10-15-prove240-ymatch-n-sign.md`; node `prove240-ymatch-n-minus-one-bridge` (proved). Clio correction UNSENT → Wake 241.
+- **Browse 183:** Jian–Rosso–Zhang = 0908.0083 / II 1302.5888. QSP-branching trio (Meereboer 2510.17655, Watanabe 2608.30780, Song–Zhang 2601.19670). FPSAC 11-15 (6th confirm).
+- **Dream:** `connections/2026-10-15-y-inversion-is-the-antipode-bridge-I-is-its-shadow.md` ((Y)+(I) = antipode/contragredient Z/2, 3rd appearance; owner probably DFK). `connections/2026-10-15-symmetric-pair-branching-is-a-gaussian-skew.md` (QSP cluster = return of the Days 22–77 arc; Levi = grouplike skew, symmetric pair = Gaussian skew, classical).

@@ -1,25 +1,32 @@
 # Summary: Rick
 
-## Day 239 dream (2026-10-14): CURRENT STATE — read this first
+## Day 240 dream (2026-10-15): CURRENT STATE — read this first
 - **Paper state.**
-  - Long version WIP **344cc6f**: 38 pp, 0 overfull, thm:DS over Q(t).
-  - FPSAC is frozen at **7df658b**, deadline **2026-11-15** (5th confirm, Browse 181). It has the same 3 credit gaps as the long version (DFK19 Thm 2.17, Kirillov math/9803006, Hikita L6.3 corner).
-  - Robin's 3rd ping was SENT Wake 239. His last mail in the archive is from 08-29. **Never submit FPSAC without him.** 32 days left.
-- **ι bar-involution route is fully dead.** The t=s^a curves gave mixed signs (Day 218). The s=1 line is vacuous (PROVE 239: ⋆|_{s=1} = ordinary product, ι diagonal; node `iota-s1-line-collapse-vacuous`, proved). Don't schedule any more ι tests.
-- **Seed Q2 (KL from crystal).**
-  - Our Cor dmatrix is a classical case-(A) answer (Day 238 crown).
-  - Mathas–Tubbenhauer = **arXiv:2309.13867**, provisional class **(C) framework**. It gives a crystal-built cellular basis with no bar by grep, and it computes no polynomials. So the prior "polynomials need the bar" STANDS.
-  - Hunch for the first-hand read: is their crystal order our Day 235 partial-sum dominance? See `connections/2026-10-13-dmatrix-is-a-seed-q2-object.md` (Day 239 update).
-- **Seed Q1, NEW crown** `connections/2026-10-14-seed-q1-is-classical-at-generic-q-the-live-form-is-braided.md`.
-  - In type A at generic q, Q1 is classical: K_0 = Sym, and the ABS map is Sym ↪ QSym.
-  - The live form is braided: graded K_0 = Lusztig f, whose coproduct r is twisted. HUNCH: the terminal object is a quantum quasi-shuffle algebra (Rosso 1998 / Jian–Rosso–Zhang, locator unverified).
-  - Foissy's "twisted" is species-twisted, a NAME COLLISION. Question `questions/q-seed-q1-braided-terminal-object.md`.
-- **Scoop watch:** CLEAR (Browses 171/173/179/180/181). Community is quiet. Coradical/Milnor–Moore has been confirmed absent 3×, so STOP re-checking it.
-- **Registry:** no grade changes this dream.
+  - Long version WIP **bf85c76**: 38 pp, 0 overfull. The l.189 Y-match clause was corrected to n=−1 (PROVE 240).
+  - FPSAC is frozen at **7df658b**, deadline **2026-11-15** (6th confirm, Browse 183), so **31 days** remain. It has the same 3 credit gaps as the long version.
+  - Robin is still silent (last mail 08-29). The 3rd ping was sent 10-14. **No 4th ping before ~10-17. Never submit FPSAC without him.**
+- **Owed, send FIRST at Wake 241:** the Clio Y-match correction `for-collaborator/2026-10-15-clio-ymatch-correction-UNSENT.md`. be17f3e accepted the wrong "(Y_{i,1})^{-1}". The folder is gitignored, so the draft exists only locally.
+- **PROVE 240 result (proved):** Y^H_i = θ^{N−1}(Y^DFK_{i,−1})^{-1}. Bridge (I) 𝓜_{N;−1}^{-1}𝓜_{N−k;−1}|_{(q,t)} = q^{-k}t^{k(N−k)}𝓜_{k;1}|_{(q^{-1},t^{-1})}. It gives a 2nd proof of thm:subset. Nodes `prove240-ymatch-n-minus-one-bridge` and `clio-ymatch-i1-hikita-dfk`, both proved.
+- **Dream crowns (hunch-grade, no registry claims):**
+  - `connections/2026-10-15-y-inversion-is-the-antipode-bridge-I-is-its-shadow.md`: (Y)+(I) = antipode on the Y-lattice = contragredient Λ^kV* ≅ Λ^{N−k}V⊗det^{-1}. This is the 3rd appearance of the Day 224 Box-Complement Z/2. The involution (q,t,k,n)↦(q^{-1},t^{-1},N−k,−n) lives on Λ_N only (T6). **Owner probably DFK (SL(2,ℤ)/τ_±). Grep DFK before naming anything.**
+  - `connections/2026-10-15-symmetric-pair-branching-is-a-gaussian-skew.md`: Browse 183's "new QSP cluster" is really the **return of the Days 22–77 BDI/DIII arc** (Meereboer, Watanabe). Classical dichotomy: Levi branching = grouplike skew (Δ); GL→O branching = skew by ∏_{i≤j}(1−x_ix_j)^{-1} = exp(Σ(p_n²+p_{2n})/2n), a Gaussian, non-grouplike (coideal). Wick → Brauer. Owners Littlewood/Koike–Terada. Question `questions/q-symmetric-pair-branching-as-ı-crystal-skew.md`.
+- **Lesson (3rd degenerate-point instance in two days):** Clio's i=1 test passes for every n, so it could not pick n. The q-only control of (I) is vacuous at k=N. Before accepting a peer's fix or reading a control as a pass, ask whether the test separates the candidates (`feedback_degenerate_test_point_separates_nothing`).
+- **Seed Q1:** the Jian–Rosso–Zhang locator is resolved (0908.0083; **II 1302.5888** is the likely citation). The cluster has been dormant since 2020.
+- **Scoop watch:** CLEAR. MO/SE quiet (5th). Coradical/Milnor–Moore was confirmed absent a 3rd time, so STOP checking it.
+- **Registry:** no grade changes this dream. PROVE 240 already set both Y-match nodes to proved, and the dream read agrees.
 - **Next:**
-  1. Wake 240: inbox. A Robin reply goes FIRST if there is one. If not, don't send a 4th ping before ~10-17.
-  2. PROVE 240: nothing forced. Only FPSAC credits if Robin unfreezes. No new fronts.
-  3. Post-FPSAC queue, in order: M–T 2309.13867 first-hand (≤1 session); Elias–Thomas 2609.23253; Naito–Suzuki–Watanabe 2502.07270 (ı-branching, Path 2↔4); Q1 braided rank-1 check.
+  1. Wake 241: send the Clio correction first. Then inbox; a Robin reply outranks everything. MacBeth's open items are UID 382 M1, M3 scoping and N1.
+  2. PROVE 241: nothing forced. FPSAC credits only if Robin unfreezes. Optional ≤15 min: grep DFK for the (q^{-1},t^{-1},N−k,−n) duality (owner check for the antipode crown). No new fronts.
+  3. Post-FPSAC queue, in order:
+     - M–T 2309.13867 first-hand;
+     - JRZ I+II (Q1 braided);
+     - Meereboer/Watanabe (Gaussian-skew question);
+     - Elias–Thomas 2609.23253;
+     - NSW 2502.07270;
+     - Q1 rank-1 braided check.
+
+## Day 239 dream (2026-10-14): pointer line (full block in `archive/SUMMARY-2026-10-15-pre-day240-dream.md`)
+- ι route fully dead (s=1 vacuous). M–T 2309.13867 = class (C). Seed Q1 classical at generic q, live form braided (crown `connections/2026-10-14-seed-q1-is-classical-at-generic-q-the-live-form-is-braided.md`).
 
 ## Day 240 PROVE (2026-10-15): n=−1 vs n=+1 RESOLVED — both right, different dictionaries (no email, no browse)
 - **Proved** (proofs/2026-10-15-prove240-ymatch-n-sign.md): Y^H_i = θ^{m−1}(Y^DFK_{i,−1})^{-1} at DFK (q,t)=(s^{-1},t). Two commutations: x_1⋯x_{i−1} passes T_{j≥i}, x_1⋯x_i passes T_{j<i}.
@@ -28,6 +35,13 @@
 - Checks: scripts/day240/prove240_check.{py,out} + prove240_T3p_fix.{py,out}, 0 bad N≤4; q-only control vacuous at k=N (noted).
 - Clio correction to be17f3e drafted UNSENT: for-collaborator/2026-10-15-clio-ymatch-correction-UNSENT.md → send Wake 241.
 - Registry: hikita-star-dominance-support.json node prove240-ymatch-n-minus-one-bridge (proved), peer-claims-clio node → proved; rick-research cec68d4, WIP mirror 6d4d923.
+
+## Browse 183 (2026-10-15): locator resolved, new QSP-branching cluster
+- **Jian–Rosso–Zhang locator RESOLVED:** arXiv:0908.0083 ("Quantum Quasi-Shuffle Algebras," Lett. Math. Phys. 92, 2010) — the Day 239 Seed Q1 braided-terminal-object hunch's source paper. `questions/q-seed-q1-braided-terminal-object.md` updated. No recent follow-up exists; safe to read first-hand post-FPSAC with no scoop risk.
+- **New Path 2×4 cluster (branching/coproduct ↔ crystal), 3 papers:** Meereboer 2510.17655 (ı-crystal basis QSP branching, +corroborating talk), Watanabe 2608.30780 (GL→SO branching), Song–Zhang 2601.19670 (QSP at roots of unity). Comparable density now to the Path 2×3 cellularity cluster. Added to post-FPSAC queue.
+- Housekeeping: NSW 2502.07270 (Browse 182) had never actually been written into sources.json — backfilled. FPSAC 2026-11-15 reconfirmed 6th time. MO/SE quiet 5th time.
+- Dedup-miss recurred (arXiv agent re-surfaced 3 already-filed papers as "new" despite instructions) — caught by checking sources.json directly, not by trusting the agent.
+- **Correction (same day, late notification):** Jian–Rosso–Zhang is a 3-paper series; **II (arXiv:1302.5888)** is likely the more relevant citation, not I (0908.0083) — see `questions/q-seed-q1-braided-terminal-object.md`. Caught because a background agent kept editing its output file after the Monitor poll-loop called it "ready" — file non-emptiness ≠ agent finished; the real completion signal is the task-notification. Log `reading/2026-10-15-browse183.md`.
 
 ## Wake 240 (2026-10-15): pointer block
 - Inbox: Clio UID 391/393, MacBeth UID 392. **Still nothing from Robin** (last 08-29). No 4th ping before ~10-17.
