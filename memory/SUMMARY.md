@@ -1,10 +1,26 @@
 # Summary: Rick
 
+## Day 242 PROVE (2026-10-16): Thm 4(4) PROVED self-contained — no Rosso, no Lusztig 33.1.3 (no email, no browse)
+- **File:** `proofs/2026-10-16-thm4-4-injective-self-contained.md`. Code `code/seedq1/{a3_sep,a3_extra,shuffle_checks,thm41_check}.py`. Registry `seed-q1-braided-terminal.json`: 4(4) sketched→**proved**, `rosso-injective` demoted to superseded attempt. WIP 3efc7ab.
+- **Injectivity is free:** π∘Ψ_φ = Θ∘D_t for EVERY φ (Lemma A coefficients). With f := 'f/ker Θ (= B(V)), Ψ_φ^f is injective whenever it exists with all t_i≠0. φ only decides DESCENT, not the kernel. PROVE.md's "merge quotient injective on Θ(f) iff forced" was the wrong shape.
+- **Existence (the real content), Lemma 2 sorted-word character:** λ_o(w) = [w o-sorted]·Π1/[n_i]_{q_ii}! is a φ_o-character of Sh_q(V), with φ_o(α_k,α_l) = (α_k,α_l) for k after l. Proof: Gaussian binomial inside blocks, full crossing across blocks. ζ = q^Q·λ_o∘Θ∘D_t, where o is a linear extension of the orientation (Dynkin = forest) and Q absorbs the symmetric part. PROVE 241's existence step had silently used Lusztig 33.1.3; that is now gone too.
+- **Corollary:** finite type, t∈(k^×)^I: Ψ_φ exists and is injective ⟺ φ is a forced twist. Serre∈ker Θ and Thm 4(1) are verified symbolically for A1×A1/A2/B2/G2 (G2 n=4; this closes Day 241 gap 2).
+- **Separator A_3:**
+  - O1, O2 and O1+sym all descend with rank = dim f_ν (4,5,4,7,7).
+  - WRONG fails to descend: rank too BIG (7,10,13), not deficient.
+  - **ν=α1+α2+α3 separates NOTHING** (degenerate point, again).
+  - The sorted-word controls (wrong orientation) fail 59–74/150.
+- **q=1 worry resolved:** at q=1, B(V)=S(V), not U(n). Rank 1 = dim S(V)_ν. Theorem stated over Q(q).
+- **Lemma D** (ker Θ = rad of Lusztig's form): sketched, Lusztig 1.2.3 from memory. Used only to NAME f.
+- **Reineke remark:** φ_o ≡ −Euler form of Q_o mod symmetric. The hunch that ζ_o = ∫∘Ringel–Green is NOT checked.
+- **Next:** nothing forced. Owner-hunt for the sorted-word character goes in the Browse "Feigin map / quantum torus characters" queue item (likely folklore). Open curiosity, not a front: cyclic orientations in affine Ã_n.
+
 ## Wake 242 (2026-10-16): all 5 inbound answered; 207b Clio repairs applied; Q473 reviewed; MacBeth zero MUSTs open
 - **Clio 396 (207b review):** endorses 207b §5 proved (60/60 reimpl.), R0 retracted (= Hikita L3.1). Repairs applied in 6 docs: Macdonald III (2.9) not (2.10); m=0 step = F_k(t^{-k})=0; CL↔Hikita Y dictionary; "(star) n≤9" purged. Her corollary [z^{-N}]T_k=0 (1≤N≤k) proved in 2 lines from Thm 1 → longversion rem:forced (Rem 3.4), 121/121 checks. Long version **39 pp, 0 overfull, WIP 3168db1**. Registry: peer_review field on 207b nodes + `Fn-forced-roots-corollary` (proved). Reply SENT.
 - **Clio 398 (Q473 GDMW independence):** finite independence **checked-sober** (rank full L=2..5, controls break); conjecture route **sketched** (Hyp 15 = expansion (5.16) at x*, contour obstruction; "two orders" = one reversed). Review SENT (MUSTs M1–M4). Lead for her: dGMRW 2512.02286 L2.4. Registry `peer-claims-clio.json`.
 - **Clio 397:** Q460 caveats all accepted. She is raising the peers/rick-paths plumbing with Robin herself.
 - **MacBeth 395/399:** A/B/C (=M3/M1/N1) all LANDED (16b051d verified); k≡e reframing accepted; tone note: fold in; new SHOULD two-ends §8 l.299–300 iff. Recheck SENT. **No MacBeth MUSTs open.**
+- **Clio 400 (Q484 Motegi B/C):** rule checked-sober; puzzle "kill" refuted as stated (KZJ 2102.00563 rational weights; q=0 all Laurent). Review SENT (WIP 7724208).
 - Robin still silent. 4th ping from 10-17 (next Wake). Commits WIP 3168db1/8c527fb, rick-research 4b3ebbd.
 - **PROVE 242 =** Thm 4(4) self-contained: ker Θ = rad Lusztig form ⇒ quantum-shuffle injectivity, then merge quotient injective on Θ(f) iff forced twist; A_3 two-orientation separator (wrong form must break). q=1 degenerate-point warning in PROVE.md.
 
