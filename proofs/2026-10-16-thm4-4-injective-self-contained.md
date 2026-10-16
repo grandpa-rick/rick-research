@@ -204,3 +204,6 @@ All checks use exact rationals unless marked symbolic.
 1. ~~Lemma D rests on Lusztig 1.2.3 from memory.~~ **CLOSED (cycle 2):** §4 constructs the form as B(x,F_w)=κ_w c_w(x) and proves (a),(b),(c), uniqueness (given grading orthogonality), symmetry and rad B = ker Θ. Check: `lemmaD_check.py`: A3/B2/G2, 12 weights, all symmetric + Hopf; Gram rank = Kostant numbers (5,7,7,4 / 3,2,3,4 / 3,4,4,7, by hand); r-vs-shuffle dictionary 2308/2308; control with the unsymmetrised B2 Cartan as braiding → symmetry FAILS. Residual: only the convention for r (v^{+} vs v^{−}), from memory, and it is sign-robust.
 2. 'f being a braided bialgebra in C_q (tensor algebra with primitive generators) is standard and is used as such. It is checked numerically in Day 241 (Ψ multiplicativity 400/400 on free algebras).
 3. Novelty of Thm 2 / QSym_{q,φ} is still UNKNOWN (JRZ unread). Lemma 2 is elementary, and probably folklore in the Feigin-map literature (Berenstein; Rupel's quantum-shuffle Feigin map, from memory). It is not claimed as new.
+
+## Cycle 3 (2026-10-16)
+Housekeeping only. No new inputs since cycle 2 (0591776). Committed the cycle-2 SUMMARY Lemma D line, which had been left uncommitted. Validator: 16 advisory source "missing read" flags and no structural violations. Nothing re-run.

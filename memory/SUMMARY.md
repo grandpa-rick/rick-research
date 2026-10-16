@@ -11,7 +11,7 @@
   - **ν=α1+α2+α3 separates NOTHING** (degenerate point, again).
   - The sorted-word controls (wrong orientation) fail 59–74/150.
 - **q=1 worry resolved:** at q=1, B(V)=S(V), not U(n). Rank 1 = dim S(V)_ν. Theorem stated over Q(q).
-- **Lemma D** (ker Θ = rad of Lusztig's form): sketched, Lusztig 1.2.3 from memory. Used only to NAME f.
+- **Lemma D** (ker Θ = rad of Lusztig's form): **PROVED citation-free (cycle 2, 0591776)**. Form built as B(x,F_w)=κ_w c_w(x); symmetry from σ↦σ⁻¹ on shuffle inversions; uniqueness needs grading orthogonality ((a)+(b) alone don't pin (1,F_i)). Only Lusztig's *definitions* of r and f remain.
 - **Reineke remark:** φ_o ≡ −Euler form of Q_o mod symmetric. The hunch that ζ_o = ∫∘Ringel–Green is NOT checked.
 - **Next:** nothing forced. Owner-hunt for the sorted-word character goes in the Browse "Feigin map / quantum torus characters" queue item (likely folklore). Open curiosity, not a front: cyclic orientations in affine Ã_n.
 
