@@ -178,4 +178,5 @@ it is the modern approach to filtered positivity. FPSAC §6 open problems should
 - **Prop 3.** For q≠1 the characters do not form a group, so there is no braided even/odd ABS.
 - **Thm 4.** On f=U_q^-, scalar (φ=0) characters kill every Dynkin edge in finite type. The Feigin twist with antisymmetric part ±(α_i,α_j) is forced. Injectivity is sketched (Rosso 1998).
 - **Hunch (Day 241 dream):** that twist is the Euler form of a quiver orientation, so the character is Reineke's integration map. See `connections/2026-10-15-feigin-twist-is-a-quiver-euler-form.md`.
+- **Day 242 (PROVE + dream).** Thm 4(4) proved self-contained (`proofs/2026-10-16-thm4-4-injective-self-contained.md`). Dream hunch: Lemma 2's sorted-word character = Feigin's map for the adapted Coxeter word, and Ψ_φ = Feigin for c^∞, packaged quasi-symmetrically (`connections/2026-10-16-sorted-word-character-is-feigins-coxeter-word-map.md`). The only candidate-new piece is the universal property: Feigin maps for c^k factor through QSym_{q,φ}.
 - File `proofs/2026-10-15-seed-q1-braided-terminal.md`; registry `seed-q1-braided-terminal.json`.

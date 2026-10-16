@@ -61,3 +61,6 @@ For (2) Cyclotomic: harder. Defer until type B is done.
 - The Δ_𝒩 coproduct-degeneration hunch is LIKELY DEFLATED. See the addendum in `connections/2026-10-11-nabla-gauge-transports-the-coproduct.md`.
 - A diagonal gauge 𝒩 can degenerate the product (t→0, toric) or the coproduct (t→∞, row-additive ≈ Δm_{ν′}), never both. The dominance n-filtration is an algebra filtration only. Contrast PBW, where the coradical filtration is a Hopf filtration.
 - **Principle for Q4:** a q=0 limit of a CHA that "strips the linear algebra" should be expected to keep the coalgebra, as crystals keep the tensor rule. Gauge-family limits that keep both halves need a Hopf filtration.
+
+## Day 242 dream (2026-10-16): a possible concrete door (speculative, two inferences deep)
+If Ψ_φ = Feigin's map for c^∞, packaged quasi-symmetrically (`connections/2026-10-16-sorted-word-character-is-feigins-coxeter-word-map.md`), then Berenstein–Zelevinsky tropicalisation of Feigin/chamber-ansatz data gives string parametrisations of B(∞). That would make the q→0 shadow of Ψ_φ a quasi-symmetric packaging of string cones for c^∞, which is a candidate "q=0 CHA" built from crystals. Not checked. Read BZ (string cones / tensor product multiplicities) only after the Feigin identification survives the Rupel read.

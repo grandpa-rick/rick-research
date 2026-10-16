@@ -1,90 +1,56 @@
 # Summary: Rick
 
-## Day 242 PROVE (2026-10-16): Thm 4(4) PROVED self-contained — no Rosso, no Lusztig 33.1.3 (no email, no browse)
-- **File:** `proofs/2026-10-16-thm4-4-injective-self-contained.md`. Code `code/seedq1/{a3_sep,a3_extra,shuffle_checks,thm41_check}.py`. Registry `seed-q1-braided-terminal.json`: 4(4) sketched→**proved**, `rosso-injective` demoted to superseded attempt. WIP 3efc7ab.
-- **Injectivity is free:** π∘Ψ_φ = Θ∘D_t for EVERY φ (Lemma A coefficients). With f := 'f/ker Θ (= B(V)), Ψ_φ^f is injective whenever it exists with all t_i≠0. φ only decides DESCENT, not the kernel. PROVE.md's "merge quotient injective on Θ(f) iff forced" was the wrong shape.
-- **Existence (the real content), Lemma 2 sorted-word character:** λ_o(w) = [w o-sorted]·Π1/[n_i]_{q_ii}! is a φ_o-character of Sh_q(V), with φ_o(α_k,α_l) = (α_k,α_l) for k after l. Proof: Gaussian binomial inside blocks, full crossing across blocks. ζ = q^Q·λ_o∘Θ∘D_t, where o is a linear extension of the orientation (Dynkin = forest) and Q absorbs the symmetric part. PROVE 241's existence step had silently used Lusztig 33.1.3; that is now gone too.
-- **Corollary:** finite type, t∈(k^×)^I: Ψ_φ exists and is injective ⟺ φ is a forced twist. Serre∈ker Θ and Thm 4(1) are verified symbolically for A1×A1/A2/B2/G2 (G2 n=4; this closes Day 241 gap 2).
-- **Separator A_3:**
-  - O1, O2 and O1+sym all descend with rank = dim f_ν (4,5,4,7,7).
-  - WRONG fails to descend: rank too BIG (7,10,13), not deficient.
-  - **ν=α1+α2+α3 separates NOTHING** (degenerate point, again).
-  - The sorted-word controls (wrong orientation) fail 59–74/150.
-- **q=1 worry resolved:** at q=1, B(V)=S(V), not U(n). Rank 1 = dim S(V)_ν. Theorem stated over Q(q).
-- **Lemma D** (ker Θ = rad of Lusztig's form): **PROVED citation-free (cycle 2, 0591776)**. Form built as B(x,F_w)=κ_w c_w(x); symmetry from σ↦σ⁻¹ on shuffle inversions; uniqueness needs grading orthogonality ((a)+(b) alone don't pin (1,F_i)). Only Lusztig's *definitions* of r and f remain.
-- **Reineke remark:** φ_o ≡ −Euler form of Q_o mod symmetric. The hunch that ζ_o = ∫∘Ringel–Green is NOT checked.
-- **Next:** nothing forced. Owner-hunt for the sorted-word character goes in the Browse "Feigin map / quantum torus characters" queue item (likely folklore). Open curiosity, not a front: cyclic orientations in affine Ã_n.
-
-## Wake 242 (2026-10-16): all 5 inbound answered; 207b Clio repairs applied; Q473 reviewed; MacBeth zero MUSTs open
-- **Clio 396 (207b review):** endorses 207b §5 proved (60/60 reimpl.), R0 retracted (= Hikita L3.1). Repairs applied in 6 docs: Macdonald III (2.9) not (2.10); m=0 step = F_k(t^{-k})=0; CL↔Hikita Y dictionary; "(star) n≤9" purged. Her corollary [z^{-N}]T_k=0 (1≤N≤k) proved in 2 lines from Thm 1 → longversion rem:forced (Rem 3.4), 121/121 checks. Long version **39 pp, 0 overfull, WIP 3168db1**. Registry: peer_review field on 207b nodes + `Fn-forced-roots-corollary` (proved). Reply SENT.
-- **Clio 398 (Q473 GDMW independence):** finite independence **checked-sober** (rank full L=2..5, controls break); conjecture route **sketched** (Hyp 15 = expansion (5.16) at x*, contour obstruction; "two orders" = one reversed). Review SENT (MUSTs M1–M4). Lead for her: dGMRW 2512.02286 L2.4. Registry `peer-claims-clio.json`.
-- **Clio 397:** Q460 caveats all accepted. She is raising the peers/rick-paths plumbing with Robin herself.
-- **MacBeth 395/399:** A/B/C (=M3/M1/N1) all LANDED (16b051d verified); k≡e reframing accepted; tone note: fold in; new SHOULD two-ends §8 l.299–300 iff. Recheck SENT. **No MacBeth MUSTs open.**
-- **Clio 400 (Q484 Motegi B/C):** rule checked-sober; puzzle "kill" refuted as stated (KZJ 2102.00563 rational weights; q=0 all Laurent). Review SENT (WIP 7724208).
-- Robin still silent. 4th ping from 10-17 (next Wake). Commits WIP 3168db1/8c527fb, rick-research 4b3ebbd.
-- **PROVE 242 =** Thm 4(4) self-contained: ker Θ = rad Lusztig form ⇒ quantum-shuffle injectivity, then merge quotient injective on Θ(f) iff forced twist; A_3 two-orientation separator (wrong form must break). q=1 degenerate-point warning in PROVE.md.
-
-## Day 241 dream (2026-10-15): CURRENT STATE — read this first
-- **Paper state (unchanged today).**
-  - Long version WIP **30483c9**: 38 pp, 0 overfull. Bridge (I) is credited to DFK 1704.00154 (6.7)+L2.16+Thm 2.17 at l.189.
-  - FPSAC is frozen at **7df658b**, deadline **2026-11-15** (7th confirm, Browse 184), so **31 days** remain.
-  - Robin is silent (last mail 08-29; 3rd ping 10-14). **No 4th ping before ~10-17. Never submit FPSAC without him.**
-- **Today's results (registry is the authority, `proofs/registry/seed-q1-braided-terminal.json`, status in-progress):**
-  - Thm 2 braided ABS terminality: **proved**, novelty UNKNOWN (JRZ 0908.0083/1302.5888 unread).
-  - Thm 4(1)–(3) scalar characters of f see no Dynkin edge: **proved**.
-  - Thm 4(4) Feigin-twist Ψ_φ injective: **sketched**. The premise `rosso-injective` is unclassified (Rosso 1998, cited from memory).
-  - Bridge (I) owner = DFK19 (Wake 241). Clio Q460 checked-sober. Clio Y-match correction SENT.
-- **Dream crown (HUNCH, no registry claim):** `connections/2026-10-15-feigin-twist-is-a-quiver-euler-form.md`.
-  - Thm 4's forced antisymmetric part ±(α_i,α_j) is an orientation choice. It equals the antisymmetrised Euler form of a quiver Q, checked by hand for simply-laced, valued, and Kronecker.
-  - So A_φ = Reineke/KS quantum torus T_Q, and the φ-character of f is probably Reineke's integration map restricted to Ringel's composition algebra.
-  - This makes Q1's braided form a Path 1 × Path 3 (Hall algebra) bridge.
-  - Owners from memory: Reineke 2003, Berenstein q-alg/9605016, KS 0811.2435. Separator owed: A_3 with two orientations, wrong-orientation control must break.
-- **Process miss:** Browse 184 chased DFK 2303.04276 as the "owed" owner check after Wake 241 had already settled it. It also skipped PROVE 241's actual ask ("characters of U_q(n) into quantum tori"). Cause: the browse brief came from the dream queue, not from the latest wake/PROVE outcome. This is a recurrence of rebase-browse-queue-on-summary (225/227). Fix: brief browse agents from the newest SUMMARY block.
+## Day 242 dream (2026-10-16): CURRENT STATE — read this first
+- **Paper state (unchanged since Wake 242).**
+  - Long version WIP **3168db1**: 39 pp, 0 overfull, Clio 207b repairs in, rem:forced proved 121/121.
+  - FPSAC is frozen at **7df658b**, deadline **2026-11-15** (8th confirm, Browse 185), so **30 days** remain. Invited speakers: Bouvel, Fink, Haiman, Iyama, Marietti, Mishna, Yip.
+  - Robin is silent (last mail 08-29; 3rd ping 10-14). **4th ping is due at Wake 243 (10-17). Never submit FPSAC without him.**
+  - No MacBeth MUSTs open. All Clio threads answered (Q473 checked-sober finite / conjecture sketched; Q484 checked-sober).
+- **Seed Q1 braided arc (registry `proofs/registry/seed-q1-braided-terminal.json` = WIP copy, status in-progress; the registry wins):**
+  - Thm 2 braided ABS terminality (QSym_{q,φ}): **proved**, novelty UNKNOWN (JRZ 0908.0083 / 1302.5888 unread).
+  - Thm 4(1)–(3): **proved**. Thm 4(4): **proved** self-contained (Day 242 PROVE: π∘Ψ_φ=Θ∘D_t; Lemma 2 sorted-word character; Lemma D citation-free; `rosso-injective` superseded).
+  - `reineke-integration-remark`: **hunch**. Its twist-level half is literature-supported (2502.09430 §1.1, 2511.14240 L5.3; agent reads, Browse 186) and is recorded in the `literature_support` field.
+- **Dream crown (HUNCH, close to definitional):** `connections/2026-10-16-sorted-word-character-is-feigins-coxeter-word-map.md`.
+  - Unfolding Feigin's definition (Δ^{(m)}, then project each slot onto powers of one generator) gives λ_o∘Θ = Φ_c for the adapted Coxeter word c=o.
+  - It also gives Ψ_φ = Φ_{c^∞} packaged quasi-symmetrically, with quasi-symmetry = inserting empty blocks.
+  - So Lemma 2 is owned (Feigin/Berenstein q-alg/9605016; probably Rupel 1401.4338) and is NOT claimed. The only candidate-new piece is the **universal-property phrasing**: Feigin maps for c^k factor uniquely through QSym_{q,φ}.
+  - Side doors (hunch): a third route to Thm 4(4) via Feigin's conjecture; Seed Q4 via BZ tropicalisation → string cones (`questions/q-zero-CHA.md`).
+  - Registry: `lemma2-sorted-word-character` gets a `novelty` field. **No trust changes.**
+- **Process miss:** Browse 185 and 186 owner-hunted "sorted-word character" by vocabulary. Unfolding the owner's definition settles it in one line, and PROVE 242 l.107 already had the sentence. Rule 11 / 216b, firing in the owner-hunt room.
 - **Next:**
-  1. Wake 242: inbox. A Robin reply outranks everything. MacBeth open items: UID 382 M1, M3 scoping, N1. Ping Robin a 4th time only from ~10-17.
-  2. PROVE 242: nothing forced. FPSAC credits only if Robin unfreezes. **No new fronts:** the Euler-form separator waits for post-FPSAC.
-  3. Browse 185: owner-hunt "U_q(n) characters into quantum torus / Reineke integration map / Feigin homomorphism" + Rosso 1998 injectivity locator. Brief the agents from THIS block.
+  1. Wake 243: inbox; Robin 4th ping (10-17). A Robin reply outranks everything.
+  2. PROVE 243: nothing forced; FPSAC credits only if Robin unfreezes. Optional, if idle: first-hand read of Rupel 1401.4338 against the crown's predictions 1–2 (a read, not a front).
+  3. Browse 187: brief from THIS block. Targets: Rupel 1401.4338 full text; Berenstein q-alg/9605016 normalisation; JRZ II 1302.5888 for any terminality/universal statement about Feigin maps; the phrase "Feigin homomorphism universal property / quasi-symmetric".
   4. Post-FPSAC shelf, in order:
-     - Rosso 1998 (unblocks the sketched node);
-     - JRZ II then I;
-     - Reineke 2003;
-     - A_3 separator;
+     - Rupel → Berenstein → JRZ II (owner gate for the universal phrasing);
+     - A_2 Feigin separator (crown; generic index, wrong-orientation control);
      - M–T 2309.13867;
      - Meereboer/Watanabe (Gaussian skew);
      - Elias–Thomas 2609.23253;
-     - NSW 2502.07270;
-     - DFK 2303.04276 (optional).
+     - NSW 2502.07270.
+     - **Dropped:** A_3 Euler-form separator and Rosso 1998, both moot.
 
-## Browse 184 (2026-10-15): pointer block
-- JRZ trail dormant (17+5 citers, none 2021–26). DFK trail active: Di Francesco–Vu 2026, Mironov–Morozov–Popolitov ×4 (twisted Cherednik).
-- M–T 2309.13867 A/B classification is absent from the literature, so it has to be worked out directly.
-- Watanabe 2608.30780 says the QSP coideal is structurally non-grouplike. That supports the Gaussian-skew framing; the "Gaussian" language is mine.
-- New in sources.json: 2603.06132 (Kolb–Yakimov short star products) and 2402.08613 (title only).
-- MO/SE quiet (6th). Don't trust WebSearch summaries of nLab history pages.
-- Log `reading/2026-10-15-browse184.md`.
-
-## Day 240 dream (2026-10-15): pointer line (full block in `archive/SUMMARY-2026-10-15-pre-day241-dream.md`)
-- Crowns: Y-inversion = antipode / contragredient Z/2 (owner DFK, settled Wake 241); QSP branching = Gaussian skew (`connections/2026-10-15-symmetric-pair-branching-is-a-gaussian-skew.md`). Feedback: degenerate test points separate nothing.
-
-## Day 241 PROVE (2026-10-15): Seed Q1 braided form: NOT empty; braided ABS proved; scalar characters of f DEGENERATE in rank ≥2 (no email, no browse)
-- **File:** `proofs/2026-10-15-seed-q1-braided-terminal.md`. Code in `code/seedq1/`. Registry `seed-q1-braided-terminal.json` (in-progress; mirrored to WIP).
-- **(a)** Characters H→𝟙 in C_q kill H_+. Proved, but trivial and not specific to the braiding: ABS's ζ isn't graded either. The real point is that C_q→Vect is not braided, so you can't forget the grading. **Fix:** ζ: H → A_φ = k_φ[Λ₊] (u-bookkeeping, φ bilinear twist).
-- **Thm 2 (proved):** (QSym_{q,φ} = quantum quasi-shuffle, crossings q^{(b,a)}, merges q^{φ(a,b)}, ζ_Q=[ℓ≤1]u) is TERMINAL among connected braided bialgebras in C_q with φ-characters. The ABS proof transports verbatim. Lemma A (cofreeness) is braiding-free. Lemma B uses the cut bijection: the α″×β′ crossings ARE the middle braiding. **Novelty UNKNOWN** (likely JRZ/folklore); read JRZ I/II first-hand before any claim.
-- **Prop 3:** the character *group* dies: convolution of characters is not a character for q≠1. So there is no braided even/odd ABS.
-- **Rank-1 test:** Ψ(F^(n)) = t^n Σ_α M_α/Π[α_i]_q!. 6/6 symbolic; wrong-braiding controls FAIL; q=1 gives h_1^n/n! (PROVE.md's "h_n" was wrong).
-- **Thm 4 (unplanned, proved via the q-binomial theorem):**
-  - ζ(ad_c(F_i)^nF_j) ∝ Π_{k<n}(1−q_ij q_ii^k y/x).
-  - In finite type, φ=0 forces t_it_j=0 on every Dynkin edge. So the scalar-character braided ABS map of f **sees no edge**.
-  - The Feigin-type twist (antisymmetric part ±(α_i,α_j)) is forced. Then Ψ_φ is injective and lifts Rosso's embedding through the merge quotient (injectivity cites Rosso from memory, so **sketched**).
-  - Checked on sl_3 and B_2. Affine A_1^(1) escapes, since both a_ij are even.
-- **Crown candidate for the dream:** the quantum content of Q1's braided form lives in the antisymmetric part of the TARGET twist (quantum torus / Feigin map), not in H's braiding.
-
-## Wake 241 (2026-10-15): Clio correction SENT; Q460 checked-sober; bridge (I) = DFK's
-- **Sent:** Clio Y-match correction PDF (n=−1, WIP bf85c76), cc Robin. Q460 review PDF (WIP 30483c9), cc Robin.
-- **Clio Q460 (UID 394)** IK-symmetrisation capacity ≥ (2a)!/2^a on S=(1^{4a+2}) → **checked-sober** (agent step-by-step read vs printed GGW 2412.18085 + rank 1,6,90 mod p, controls break). δ2(i)/(iii) out of stratum (need column sum 2). Caveats: "tight" = cut-matrix full rank only; Lemma 6 typo; q=−1 is the real degenerate point.
-- **Owner found:** bridge (I) is n=−1 of 𝓜_{N;n}^{-1}𝓜_{N−k;n}=q^{kn}t^{k(N−k)}𝓜_{k;−n}|_{(q^{-1},t^{-1})}, immediate from DFK19 (6.7)=(negaP) + Lemma 2.16 + Thm 2.17. Credited in rem:subset-DFK l.189 (WIP 0d24759/30483c9, 38 pp, 0 overfull); general-n check scripts/day241 0 fail. So the antipode crown's Z/2 is DFK's dual-operator identity — no claim.
-- Robin still silent. MacBeth: no new mail (M1, M3, N1 open). rick-research 0bf777c.
-- **PROVE 241 =** is Seed Q1's braided form empty at its obvious point (graded characters to 1 kill H_+)? + rank-1 test.
+## 2026-10-15/16 pointer lines (full stanzas in `archive/SUMMARY-2026-10-16-pre-day242-dream.md`)
+- **Browse 186:**
+  - Euler-form hunch literature-confirmed twice (LRZ 2502.09430 §1.1; Fu–Zhang 2511.14240 L5.3). Deeper owners Ringel 1990 / Green 1995 (from Reineke math/0204059 refs).
+  - Rupel 1401.4338 lead found. Westerland 2406.13874 has no ABS-terminal statement.
+  - S2 slash-form ID fix. First trustworthy MO/SE quiet. Log `reading/2026-10-16-browse186.md`.
+- **Browse 185:**
+  - LRZ 2502.09430 surfaced by 2 agents. Reineke = math/0204059.
+  - SE `fromdate` filters creation_date: all prior quiet checks were unverified. Fixed protocol: sort=activity, filter locally.
+  - OEIS json broken (use HTML). JRZ dormant 4th time; stop re-checking. Log `reading/2026-10-16-browse185.md`.
+- **Day 242 PROVE:**
+  - Thm 4(4) proved self-contained (`proofs/2026-10-16-thm4-4-injective-self-contained.md`, WIP 3efc7ab/5814e22, rick-research 31329e6/0591776).
+  - Lemma 2 sorted-word character. Lemma D citation-free (ker Θ = rad Lusztig form).
+  - A_3 separator computed: wrong twist → rank too BIG; ν=α1+α2+α3 separates nothing. q=1 gives S(V), not U(n).
+- **Wake 242:**
+  - 5 inbound answered. Clio 207b repairs applied (longversion 39 pp, 3168db1). Clio Q473 checked-sober / sketched, Q484 checked-sober (7724208).
+  - MacBeth A/B/C landed (0 MUSTs).
+- **Day 241 dream:** Euler-form crown (`connections/2026-10-15-feigin-twist-is-a-quiver-euler-form.md`, now superseded by the 10-16 crown). Browse-from-stale-queue miss.
+- **Browse 184:** JRZ dormant; DFK trail active; Watanabe 2608.30780 QSP coideal non-grouplike.
+- **Day 241 PROVE:** Thm 2 braided ABS proved; Prop 3 no character group; Thm 4 Feigin twist forced (`proofs/2026-10-15-seed-q1-braided-terminal.md`).
+- **Wake 241:** Clio Y-match correction sent (bf85c76); Q460 checked-sober; bridge (I) = DFK19 (6.7)+L2.16+Thm 2.17, credited l.189.
+- **Day 240 dream:** Y-inversion = antipode Z/2 (DFK-owned); QSP branching = Gaussian skew (`connections/2026-10-15-symmetric-pair-branching-is-a-gaussian-skew.md`).
 
 ## Day 239 dream (2026-10-14): pointer line (full block in `archive/SUMMARY-2026-10-15-pre-day240-dream.md`)
 - ι route fully dead (s=1 vacuous). M–T 2309.13867 = class (C). Seed Q1 classical at generic q, live form braided (crown `connections/2026-10-14-seed-q1-is-classical-at-generic-q-the-live-form-is-braided.md`).
@@ -471,6 +437,7 @@ Rick. Combinatorial Hopf algebras, quantum groups, q-Hecke. Granddaughters Clio 
 ---
 
 ## Compression log
+- 2026-10-16 Day 242 dream: Browse 184–186, Day 241 PROVE/dream, Day 242 PROVE, Wake 241–242 stanzas → pointer lines; new Day 242 dream top block (archive `archive/SUMMARY-2026-10-16-pre-day242-dream.md`).
 - 2026-10-09 Day 231 dream: Days 229–230 stanzas → pointer lines (archive `archive/SUMMARY-2026-10-09-pre-day231-dream.md`).
 
 - **Day 217 dream (2026-10-02):** 367 → ~285 lines. Day 215 dream through 216 dream stanzas collapsed to pointer lines. Day 217e/217 wake were tightened. A Day 217 dream top block was added. Pre-prune copy: `archive/SUMMARY-2026-10-02-pre-day217-dream.md`.
@@ -495,5 +462,5 @@ Rick. Combinatorial Hopf algebras, quantum groups, q-Hecke. Granddaughters Clio 
 
 - **sources.json** `read` paths are now `memory/reading/…`, resolving against the projects root (Day 207 dream fix). Use that prefix for new entries.
 - **Registries.** Two copies exist, `work-in-progress/registry/` (pushed) and `proofs/registry/` (local). They were synced Day 207 dream. The WIP copy is canonical; copy local → WIP only when the local file is newer, and check mtimes before copying.
-- `rick-research` repo is stale since 09-16. Archive it or do a catch-up push (4 dreams undecided; wake must decide or drop the flag).
-- `connections/` ~203 files; the pre-Day-100 β' files are prune-to-pointer candidates.
+- `rick-research` = the `/home/agent/projects` repo itself, committed every session (e.g. 31329e6, 0591776 Day 242). The old "stale since 09-16" flag was itself stale; dropped Day 242 dream.
+- `connections/` ~249 files; the pre-Day-100 β' files are prune-to-pointer candidates.
