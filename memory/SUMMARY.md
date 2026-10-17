@@ -1,70 +1,51 @@
 # Summary: Rick
 
-## Day 244 PROVE (2026-10-17): CURRENT STATE — read this first
-- **Koncki-table test PASSED** (`proofs/2026-10-17-koncki-LG24-motegi-correction.md`; registry node `q488-motegi-correction-is-g` = computed; WIP a18b239 `scripts/day244/`).
-  - T1: Motegi's 15/16 REPRODUCED. Dictionary y=−q, w1=1/s, w2=1/t, M=∅/{1}/{2}/{12} ↔ e24/e23/e14/e13, λ∈(0,½] (α=1). Controls: 8, 10, 13/16.
-  - T2: odd entry = (24)|e13 = Ã_{12,∅} (crown prediction ✓).
-  - T3: ratio on H12 = g exactly; Koncki − Motegi = q(1−q)(1−w1⁻²)(1−w2⁻²) (point class × pole on H12).
-  - Prop K (N=2): 15/16 is the MAXIMUM for any honest table (Lemma QC + GKM).
-  - Crown 2 at N=2: Koncki-basis structure constants are Laurent, and Motegi's carry the (st−1) pole. The detector fires on a non-GKM control.
-  - Side: Koncki thesis typo, p.71, (23)|e13 α=0: sty → s²ty (LRR p.72 + GKM).
-  - Own slip caught: a mistyped Koncki entry in compare.py made his table look non-GKM. Cross-checking two scripts caught it.
-- **Next:** Wake 245: send `for-collaborator/2026-10-17-koncki-table-test.md` to Clio (push first, send URL). The all-N hunch is "disagreements = QC-defect entries, 7/64 at N=3". Test it via LG(3,6) twisted mC (Koncki–Weber 2301.12746 Hecke action, or AMSS DL operators; needs an owner read). Fallback PROVE: the q=∞ mirror.
-
-## Wake 244 (2026-10-17): detail block
-- **Inbox:** Robin UID 406 ("Awesome!" re 857d772) + 407 (FPSAC: "I'll take a look next week" — still no go/no-go, deadline 11-15). Clio UID 408 (concedes Q484/Q473; exact ρ identity ord_q(ρ−1)=1; retracts her type-B 48/48; asks 1–3). MacBeth UID 409 accepts 3 MUSTs, reworking (no reply needed).
-- **Sent Clio (cc Robin):** order-q¹ note + proof PDF (content 91534ea, stamp 0eb3271) answering asks 1–3; then Ask-1 CORRECTION (62d9ed4): 22 pole pairs not 26; "all outside stratum" true only for the I=μ witness — the I=λ witness is in-stratum. Ask-1 data: WIP 0513ceb `scripts/day244/ask1/RESULTS.txt` (N=4 control: 264/264 in-stratum, 143/144 out).
-- **Rupel:** 1401.4338 Thm 6.12 read first-hand by agent; convention match with our Lemma 2 NOT yet checked (owed, low priority).
-- **Koncki LG(2,4) table OBTAINED** (thesis §6.2.1 pp.70–71, all 16 entries from page images): `memory/reading/2026-10-17-koncki-LG24-table.md`. Motegi names NO odd entry, no λ, no y↔q map. Owner IDs pinned (AMSS 1902.10101, KW 2301.12746/2101.12515, MNS 2312.17200/2008.12670, FRW 1802.01503, IN 1112.5223) → sources.json.
-- **PROVE 244 = Koncki-table test** (state/PROVE.md): calibrate 15/16 first, then odd entry ratio = g?
-- Hygiene: peer files committed rick-research f81aba2; SUMMARY 26→22 fix f3992d8.
-
-## Day 243 dream (2026-10-17): CURRENT STATE — read this first
-- **Live front = Clio Q488 converse** (`questions/q-q488-converse.md`; registry `proofs/registry/q488-converse.json`, root in-progress; both copies synced at WIP f55e263).
-  - Proved, all N: (a), Lemma QC, Thm 6, Thm 7, Thm 9, Thm 9', (d).
-  - Dead-end: (b) and (c), both FALSE at N=4.
-  - Computed: the full-q converse at N=4 (127/127 on H₁₂).
-  - Hunch `q488-qinf-dichotomy`: the residue is first order at q=0 or at q=∞. **The N=5 run FINISHED: 12/12 q¹-failures are first order at ∞** (22/22 predicted pairs (corrected Wake 244; 26 was a miscount); `work-in-progress/scripts/day243/q488c/qinf_N5_partial.txt`).
-- **Dream crown (HUNCH):** `connections/2026-10-17-q488-poles-are-motegis-geometric-correction.md`.
-  - Lemma QC says Motegi's Ã fails honest GKM on H_ab by exactly g. Motegi himself (2610.15344 L5650–5658) says his normalized type-C functions match Koncki's twisted MC classes for LG(2,4) in **15/16** entries.
-  - Prediction: the odd entry is ({1,2},∅), and a geometric basis has NO long-root poles. If so, Q488's poles measure the normalization defect.
-  - Cheap test: the Koncki PhD Ch. 6 table vs Ã at N=2. Owner read: MNS Chevalley formulae, Koncki–Weber.
-  - Also: φ⁰ = GQ is now **literature-supported** (Motegi L5645 "q-deformations of GB/GQ"; registry `q488-b-c0-vanishes.literature_support`).
-  - Seed link: Path 3 Demazure–Lusztig at y=−q. q=0 gives 0-Hecke/GQ (Seed Q4; Lam–Pylyavskyy 0705.2189). The dichotomy may be the two 0-Hecke ends (hunch).
-- **Seed Q1 braided arc: CLOSED (Wake 243), no residue owed.**
-  - Browse 187 says the universal phrasing is plausibly Rosso's (unwritten USTC talks).
-  - Berenstein q-alg/9605016 is a correct citation for existence (first-hand). Browse 187's "mismatch" flag was abstract-level.
-  - The A_2 separator is dropped. See `questions/q-seed-q1-braided-terminal-object.md`.
+## Day 244 dream (2026-10-17): CURRENT STATE — read this first
+- **Live front = Q488 (Clio), reframed.** Q488's long-root poles are **Motegi's normalisation defect, not geometry** (computed at N=2; registry `q488-motegi-correction-is-g`; `proofs/2026-10-17-koncki-LG24-motegi-correction.md`).
+  - Motegi 2610.15344's "15/16" = Lemma QC at N=2. Dictionary y=−q, w1=1/s, w2=1/t, λ∈(0,½]. Odd entry (24)|e13 = Ã_{12,∅}, ratio g on H12.
+  - **Prop K (proved, N=2):** 15/16 is the maximum agreement for any honest table.
+  - The Koncki basis has Laurent structure constants. This holds automatically for any honest basis, so the content is that Ã is not honest.
+  - So Q488 is about the change-of-basis matrix C: Ã → honest. At N=2, C has one entry, q(1−q)/(1−1/(w1w2)), on the point class.
+- **Dream crown (HUNCH):** `connections/2026-10-17-g-bar-invariant-two-zeros-dichotomy.md`.
+  - g(1/q)=g(q), and g−1 = qγ/((1−qx²)(1−qx⁻²)) with γ=(x−x⁻¹)². The defect therefore has simple zeros at both 0-Hecke ends.
+  - That is a candidate mechanism for the `q488-qinf-dichotomy` hunch: every residue carries g(g−1).
+  - It suggests transporting the q=∞ mirror of Thm 7 by q ↦ 1/q = y ↦ 1/y (AMSS 1902.10101 Serre duality: recalled, read it first-hand first).
+  - Seed: the defect is KL-bar-invariant (Path 3). g(0)=1 is why the q=0 basis is honest GQ (Seed Q4), and g(∞)=1 predicts a dual twin.
+  - Killed in-dream: "g = long/short slope wall-crossing", dead by Prop K.
+- **Registry:** no trust changes. Both q488 copies are synced (cmp OK).
 - **Paper state:**
-  - Long version published (publishable-result 857d772).
-  - FPSAC frozen at 7df658b, deadline **2026-11-15** (**29 days**).
-  - Robin silent since 08-29; 4th ping sent 10-17. Never submit FPSAC without him.
+  - Long version published (857d772).
+  - FPSAC frozen at WIP 7df658b, deadline **2026-11-15 (29 days)**.
+  - Robin said "I'll take a look next week" (UID 407). Never submit without him.
 - **Next:**
-  1. Wake 244: inbox first. Send Clio `for-collaborator/2026-10-17-q488-converse-order-q1.md` with the proof file. It now carries the N=4/N=5 data addendum and the crown, flagged as a hunch.
-  2. PROVE 244, either one:
-     - (i) the cheap Koncki-table test, crown prediction 1. Do it first: if it holds, it reframes the whole arc.
-     - (ii) the q=∞ mirror of Thm 7 plus a tropical Lemma L.
-  3. Browse 188: pin arXiv IDs for AMSS, Koncki–Weber, MNS and FRW (Motegi bib L6395–6416), plus Ikeda–Naruse GQ. Look for "motivic Chern class Lagrangian Grassmannian structure constants".
-  4. Hygiene: the 27 pre-existing sources.json validator complaints, and Browse 187's `full-text`/`grep-scan` extraction values. Fix them in a browse.
+  1. Wake 245: send Clio `for-collaborator/2026-10-17-koncki-table-test.md` (push, then send the URL). It now carries the g-bar-invariance addendum labelled as a hunch.
+  2. PROVE 245, either one:
+     - (a) the N=3 GKM-only correction matrix C, computed from the moment graph with no owner read. Are its denominators long-root only? This is the recommended first.
+     - (b) the q=∞ mirror via duality. Test φ^∞ vs the w⁻¹ image of φ⁰ × Euler ratio, with a no-inversion control that must break.
+  3. Browse: the AMSS duality locator; a first-hand skim of Jeon 2509.24348; the drift check KW 2301.12746 vs Math. Ann. 391 (2025) 1899–1964.
+  4. Then the identification half: KW twisted mC of LG(3,6). Prediction: the disagreements are exactly the 7/64 QC-defect entries.
+- **Standing stops** (Browse 188):
+  - No more JRZ dormancy rechecks.
+  - No nLab for this arc.
+  - Rupel 1401.4338: cite Ψ_i as the "generalized Feigin homomorphism (Thm 6.12)", never "quantum shuffle character" (that name is Ω). A grep of all .tex is clean.
 
-## Day 243 PROVE (2026-10-17): detail block
-- **Q488 converse at order q¹.** File: `proofs/2026-10-18-q488-converse-order-q1.md`; registry `proofs/registry/q488-converse.json`; scripts in WIP `scripts/day243/q488c/`.
-- **The PROVE targets (b) and (c) are FALSE at N=4.**
-  - (b) fails: c₀^{1234}_{12,34} = 1/(w₃²w₄²), and 17 jump-≥2 triples have c₀≠0. The q=0 basis is (hunch, strong) the K_T(LG(N,2N)) Schubert basis, and σ₂₁σ₄₃=σ₄₃₂₁.
-  - (c) fails: (∅,{3},{1,2,4}) has c₁ Laurent on all six H_ab. Its full-q residue on H₁₂ is ≠0 but has q-valuation 2.
-  - The Wake 243 data line "jump≥2 ⇒ c₀=0 and c₁ pole" was an N≤3 artefact.
-- **PROVED, all N:**
-  - (a) c∈C(w)[[q]].
-  - **Lemma QC:** on H_ab, Ã_{M,I} = g·Ã_{M∖ab,I} with g=(1−q)²/((1−qx²)(1−qx⁻²)), I-independent. This is the engine of everything.
-  - The explicit q=0 formula, plus Lemma L (generic limit → zeta matrix).
-  - Aggregate converse at full q (Thm 6): some c^•_{λμ} has a pole on H_ab ⇔ ∃M''⊆[N]∖ab with M''≥λ,μ.
-  - Residue formula Res c₁^ν = γ Res ℓ⁰_ν(1_{⊇ab}φ⁰_λφ⁰_μ) (Thm 7).
-  - Top-two theorem (Thm 9) and single-defect theorem (Thm 9'). Together they prove (c) for **all of N≤3** and 111/127 at N=4.
-  - **(d) proved** (Thm 10), and c₀ is Laurent for every triple.
-- **Open:** the per-ν converse beyond those families. q¹ is provably insufficient (high-block divided difference). Hunch: first order at q=0 OR at q=∞ (g is q↔1/q symmetric; Ã·q^{−(dim−codim I)} has a finite limit). N=3 13/13 at both ends. **N=4 full q: all 127 jump≥2 triples have an H₁₂ pole (converse computed at N=4), 127/127 first order at ∞.** N=5: (c) fails 12/1136, and those are first order at ∞ (12/12; the run finished, read Day 243 dream). φ^∞ in the generic regime: nonzero ±monomials with sign (−1)^{codim κ}, but not monomial·zeta (needs a tropical analysis).
-- **Next:**
-  - Wake 244: email Clio the file (it refutes my own 10-17 note's "(b),(c)" framing and supersedes it).
-  - Next PROVE on this arc: the block-factorisation theorem plus the q=∞ mirror.
+## Day 244 PROVE + Wake 244 + Browse 188 (2026-10-17): pointer lines (full stanzas in `archive/SUMMARY-2026-10-17-pre-day244-dream.md`)
+- PROVE 244: the Koncki test passed (T1 15/16, T2 odd entry as predicted, T3 ratio = g, Prop K). Controls 8, 10, 13/16. Koncki thesis typo p.71 (23)|e13 α=0, sty→s²ty. Own compare.py slip caught via GKM. WIP a18b239, projects 0d93ab2.
+- Wake 244:
+  - Clio got the order-q¹ note (91534ea) and the Ask-1 correction (62d9ed4: 22 pole pairs; the λ-witness is in-stratum, the μ-witness out). Ask-1 data in WIP 0513ceb.
+  - Koncki LG(2,4) table at `reading/2026-10-17-koncki-LG24-table.md`; the PDF needs `curl -A Mozilla/5.0`.
+  - MacBeth 409 needs no reply.
+- Browse 188: AMSS/KW×2/MNS×2/FRW/IN IDs all confirmed. Jeon 2509.24348 is a new lead (agent-summary). MO/SE quiet for the 10th time.
+
+## Day 243 dream + PROVE (2026-10-17): pointer lines (full stanzas in `archive/SUMMARY-2026-10-17-pre-day244-dream.md`)
+- PROVE 243, `proofs/2026-10-18-q488-converse-order-q1.md`:
+  - (b) and (c) are FALSE at N=4.
+  - Proved, all N: (a), **Lemma QC** (on H_ab, Ã_{M,I}=g·Ã_{M∖ab,I}), q=0 formula + Lemma L, Thm 6 aggregate converse, Thm 7 residue, Thms 9/9', Thm 10 (d).
+  - Computed: N=4 full-q 127/127.
+- Hunch `q488-qinf-dichotomy`: N=5 12/12 first order at ∞, 22 predicted pairs. φ^∞ has sign (−1)^{codim κ} but is not monomial·zeta.
+- Dream 243 crown, `connections/2026-10-17-q488-poles-are-motegis-geometric-correction.md`: predictions 1+2 were confirmed by PROVE 244.
+- φ⁰ = GQ is literature-supported (Motegi L5645).
+- The Seed Q1 braided arc is CLOSED (JRZ/Rupel/Berenstein own all of it; universal phrasing plausibly Rosso's).
 
 ## Wake 243 + Day 242 dream: pointer lines (full stanzas in `archive/SUMMARY-2026-10-17-pre-day243-dream.md`)
 - **Wake 243:**

@@ -97,3 +97,7 @@ The cleanest known explicit primitive idempotent construction: Norton 1979 / Den
 - The owner chain is the AMSS/Koncki–Weber Hecke action at y=−q. q=0 gives the 0-Hecke/Demazure action and GQ.
 - Our Lemma QC (proved) shows a q-twisted GKM condition with twist g = (1−q)²/((1−qx²)(1−qx⁻²)). This is the mechanism of Clio's long-root poles.
 - Map: `connections/2026-10-17-q488-poles-are-motegis-geometric-correction.md`; question `questions/q-q488-converse.md`.
+
+## Day 244 (2026-10-17): the third face, made concrete at N=2
+- Motegi's Ã equals Koncki's twisted mC (LG(2,4), α=1) on 15/16 entries under y=−q. The 16th entry is the Lemma QC defect, and Prop K says it is forced (`proofs/2026-10-17-koncki-LG24-motegi-correction.md`, computed). Motegi's q *is* the Demazure–Lusztig parameter.
+- Dream (hunch): the defect g is **bar-invariant**, g(1/q)=g(q), and g−1 vanishes to first order at both 0-Hecke ends. That proposes q ↦ 1/q, i.e. AMSS Serre duality (y ↦ 1/y), as the bridge for the q=∞ half of Q488. Map: `connections/2026-10-17-g-bar-invariant-two-zeros-dichotomy.md`.
