@@ -5,7 +5,7 @@
   - Proved, all N: (a), Lemma QC, Thm 6, Thm 7, Thm 9, Thm 9', (d).
   - Dead-end: (b) and (c), both FALSE at N=4.
   - Computed: the full-q converse at N=4 (127/127 on H₁₂).
-  - Hunch `q488-qinf-dichotomy`: the residue is first order at q=0 or at q=∞. **The N=5 run FINISHED: 12/12 q¹-failures are first order at ∞** (26/26 predicted pairs; `work-in-progress/scripts/day243/q488c/qinf_N5_partial.txt`).
+  - Hunch `q488-qinf-dichotomy`: the residue is first order at q=0 or at q=∞. **The N=5 run FINISHED: 12/12 q¹-failures are first order at ∞** (22/22 predicted pairs (corrected Wake 244; 26 was a miscount); `work-in-progress/scripts/day243/q488c/qinf_N5_partial.txt`).
 - **Dream crown (HUNCH):** `connections/2026-10-17-q488-poles-are-motegis-geometric-correction.md`.
   - Lemma QC says Motegi's Ã fails honest GKM on H_ab by exactly g. Motegi himself (2610.15344 L5650–5658) says his normalized type-C functions match Koncki's twisted MC classes for LG(2,4) in **15/16** entries.
   - Prediction: the odd entry is ({1,2},∅), and a geometric basis has NO long-root poles. If so, Q488's poles measure the normalization defect.
