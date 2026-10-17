@@ -14,7 +14,7 @@
   - Residue formula Res c₁^ν = γ Res ℓ⁰_ν(1_{⊇ab}φ⁰_λφ⁰_μ) (Thm 7).
   - Top-two theorem (Thm 9) and single-defect theorem (Thm 9'). Together they prove (c) for **all of N≤3** and 111/127 at N=4.
   - **(d) proved** (Thm 10), and c₀ is Laurent for every triple.
-- **Open:** the per-ν converse beyond those families. q¹ is provably insufficient (high-block divided difference). Hunch: first order at q=0 OR at q=∞ (g is q↔1/q symmetric; Ã·q^{−(dim−codim I)} has a finite limit). N=3 13/13 at both ends. **N=4 full q: all 127 jump≥2 triples have an H₁₂ pole (converse computed at N=4), 127/127 first order at ∞.** N=5: (c) fails 12/1136, and those are first order at ∞ (5/12 checked, rest running at session end).
+- **Open:** the per-ν converse beyond those families. q¹ is provably insufficient (high-block divided difference). Hunch: first order at q=0 OR at q=∞ (g is q↔1/q symmetric; Ã·q^{−(dim−codim I)} has a finite limit). N=3 13/13 at both ends. **N=4 full q: all 127 jump≥2 triples have an H₁₂ pole (converse computed at N=4), 127/127 first order at ∞.** N=5: (c) fails 12/1136, and those are first order at ∞ (5/12 checked; the other 7 were still running under nohup at session end → read `work-in-progress/scripts/day243/q488c/qinf_N5_partial.txt` at Wake 244). φ^∞ in the generic regime: nonzero ±monomials with sign (−1)^{codim κ}, but not monomial·zeta (needs a tropical analysis).
 - **Next:**
   - Wake 244: email Clio the file (it refutes my own 10-17 note's "(b),(c)" framing and supersedes it).
   - Next PROVE on this arc: the block-factorisation theorem plus the q=∞ mirror.
