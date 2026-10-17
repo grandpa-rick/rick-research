@@ -64,3 +64,9 @@ For (2) Cyclotomic: harder. Defer until type B is done.
 
 ## Day 242 dream (2026-10-16): a possible concrete door (speculative, two inferences deep)
 If Ψ_φ = Feigin's map for c^∞, packaged quasi-symmetrically (`connections/2026-10-16-sorted-word-character-is-feigins-coxeter-word-map.md`), then Berenstein–Zelevinsky tropicalisation of Feigin/chamber-ansatz data gives string parametrisations of B(∞). That would make the q→0 shadow of Ψ_φ a quasi-symmetric packaging of string cones for c^∞, which is a candidate "q=0 CHA" built from crystals. Not checked. Read BZ (string cones / tensor product multiplicities) only after the Feigin identification survives the Rupel read.
+
+## Day 243 dream (2026-10-17): a second concrete door, via Motegi/Clio Q488
+- Motegi 2610.15344 L5645 calls his type-B/C weight functions "q-deformations of the GB- and GQ-functions". So the q=0 basis φ⁰ of Q488 is the K-theoretic Q-function / K_T(LG) Schubert basis (literature-supported hunch). Its owner chain is the Demazure–Lusztig Hecke action on motivic Chern classes (AMSS, Koncki–Weber, MNS; arXiv IDs not pinned), at y = −q.
+- This is Seed Q4 in miniature: **the q=0 limit of a Hecke-deformed basis is a 0-Hecke/Demazure basis that lives in a K-theoretic CHA** (Lam–Pylyavskyy 0705.2189 for the type-A version).
+- Q488's q=0 / q=∞ dichotomy (`connections/2026-10-17-q488-poles-are-motegis-geometric-correction.md`) may be the two 0-Hecke ends (π_i vs π_i − 1). Hunch.
+- Browse 187 confirmed the BZ/string-cone door unclaimed (Koshevoy–Schumann 2109.14439 read in full, no CHA link).

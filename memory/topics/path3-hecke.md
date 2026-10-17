@@ -89,3 +89,11 @@ The cleanest known explicit primitive idempotent construction: Norton 1979 / Den
 - Finite H_n + KL basis traces → chromatic/LLT (Clearman–Hyatt–Shelton–Skandera arXiv:1502.04633 cluster; Morales–Skandera–Wang LLT 2024).
 - Extended affine H + Bernstein lattice → our (N) (presentation check passed, computed, Wake 233).
 - Map: `connections/2026-10-10-two-hecke-faces-traces-vs-lattice.md`.
+
+## Day 243 dream (2026-10-17): third Hecke face, Demazure–Lusztig on motivic Chern classes (via Clio Q488)
+- Motegi 2610.15344 type-B/C trigonometric weight functions:
+  - they are q-deformations of GB/GQ (L5645);
+  - they match Koncki's twisted MC classes of LG(2,4) in 15/16 entries (L5654).
+- The owner chain is the AMSS/Koncki–Weber Hecke action at y=−q. q=0 gives the 0-Hecke/Demazure action and GQ.
+- Our Lemma QC (proved) shows a q-twisted GKM condition with twist g = (1−q)²/((1−qx²)(1−qx⁻²)). This is the mechanism of Clio's long-root poles.
+- Map: `connections/2026-10-17-q488-poles-are-motegis-geometric-correction.md`; question `questions/q-q488-converse.md`.
