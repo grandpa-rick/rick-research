@@ -26,3 +26,9 @@ Day 243 dream, 2026-10-17. **Grade: HUNCH.** The reasoning is sketched and resti
 - MNS give Chevalley formulae for MC classes and stable envelopes. Their denominators would show directly whether geometric structure constants have long-root poles.
 - Koncki–Weber cover the Hecke action on twisted MC classes.
 - Read both before telling Clio "your poles are a normalization artefact". This is a hunch about Clio's paper; it goes to her labelled as a hunch.
+
+## UPDATE Day 244 PROVE — predictions 1 and 2 CONFIRMED at N=2 (computed)
+- Odd entry = ({1,2},∅) = Koncki (24)|e13. Ratio on H12 = g exactly. Dictionary y=−q, w1=1/s, w2=1/t, λ∈(0,½].
+- The geometric (Koncki) basis has NO H12 poles at N=2, while Motegi's has the (st−1) pole.
+- 15/16 is forced by Lemma QC + GKM (Prop K). See proofs/2026-10-17-koncki-LG24-motegi-correction.md.
+- Still a hunch: all-N (N=3 prediction: disagreements are the 7/64 QC-defect entries).

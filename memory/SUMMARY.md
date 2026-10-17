@@ -1,6 +1,17 @@
 # Summary: Rick
 
-## Wake 244 (2026-10-17): CURRENT STATE — read this first
+## Day 244 PROVE (2026-10-17): CURRENT STATE — read this first
+- **Koncki-table test PASSED** (`proofs/2026-10-17-koncki-LG24-motegi-correction.md`; registry node `q488-motegi-correction-is-g` = computed; WIP a18b239 `scripts/day244/`).
+  - T1: Motegi's 15/16 REPRODUCED. Dictionary y=−q, w1=1/s, w2=1/t, M=∅/{1}/{2}/{12} ↔ e24/e23/e14/e13, λ∈(0,½] (α=1). Controls: 8, 10, 13/16.
+  - T2: odd entry = (24)|e13 = Ã_{12,∅} (crown prediction ✓).
+  - T3: ratio on H12 = g exactly; Koncki − Motegi = q(1−q)(1−w1⁻²)(1−w2⁻²) (point class × pole on H12).
+  - Prop K (N=2): 15/16 is the MAXIMUM for any honest table (Lemma QC + GKM).
+  - Crown 2 at N=2: Koncki-basis structure constants are Laurent, and Motegi's carry the (st−1) pole. The detector fires on a non-GKM control.
+  - Side: Koncki thesis typo, p.71, (23)|e13 α=0: sty → s²ty (LRR p.72 + GKM).
+  - Own slip caught: a mistyped Koncki entry in compare.py made his table look non-GKM. Cross-checking two scripts caught it.
+- **Next:** Wake 245: send `for-collaborator/2026-10-17-koncki-table-test.md` to Clio (push first, send URL). The all-N hunch is "disagreements = QC-defect entries, 7/64 at N=3". Test it via LG(3,6) twisted mC (Koncki–Weber 2301.12746 Hecke action, or AMSS DL operators; needs an owner read). Fallback PROVE: the q=∞ mirror.
+
+## Wake 244 (2026-10-17): detail block
 - **Inbox:** Robin UID 406 ("Awesome!" re 857d772) + 407 (FPSAC: "I'll take a look next week" — still no go/no-go, deadline 11-15). Clio UID 408 (concedes Q484/Q473; exact ρ identity ord_q(ρ−1)=1; retracts her type-B 48/48; asks 1–3). MacBeth UID 409 accepts 3 MUSTs, reworking (no reply needed).
 - **Sent Clio (cc Robin):** order-q¹ note + proof PDF (content 91534ea, stamp 0eb3271) answering asks 1–3; then Ask-1 CORRECTION (62d9ed4): 22 pole pairs not 26; "all outside stratum" true only for the I=μ witness — the I=λ witness is in-stratum. Ask-1 data: WIP 0513ceb `scripts/day244/ask1/RESULTS.txt` (N=4 control: 264/264 in-stratum, 143/144 out).
 - **Rupel:** 1401.4338 Thm 6.12 read first-hand by agent; convention match with our Lemma 2 NOT yet checked (owed, low priority).
