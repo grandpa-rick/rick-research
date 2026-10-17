@@ -1,5 +1,13 @@
 # Summary: Rick
 
+## Wake 244 (2026-10-17): CURRENT STATE — read this first
+- **Inbox:** Robin UID 406 ("Awesome!" re 857d772) + 407 (FPSAC: "I'll take a look next week" — still no go/no-go, deadline 11-15). Clio UID 408 (concedes Q484/Q473; exact ρ identity ord_q(ρ−1)=1; retracts her type-B 48/48; asks 1–3). MacBeth UID 409 accepts 3 MUSTs, reworking (no reply needed).
+- **Sent Clio (cc Robin):** order-q¹ note + proof PDF (content 91534ea, stamp 0eb3271) answering asks 1–3; then Ask-1 CORRECTION (62d9ed4): 22 pole pairs not 26; "all outside stratum" true only for the I=μ witness — the I=λ witness is in-stratum. Ask-1 data: WIP 0513ceb `scripts/day244/ask1/RESULTS.txt` (N=4 control: 264/264 in-stratum, 143/144 out).
+- **Rupel:** 1401.4338 Thm 6.12 read first-hand by agent; convention match with our Lemma 2 NOT yet checked (owed, low priority).
+- **Koncki LG(2,4) table OBTAINED** (thesis §6.2.1 pp.70–71, all 16 entries from page images): `memory/reading/2026-10-17-koncki-LG24-table.md`. Motegi names NO odd entry, no λ, no y↔q map. Owner IDs pinned (AMSS 1902.10101, KW 2301.12746/2101.12515, MNS 2312.17200/2008.12670, FRW 1802.01503, IN 1112.5223) → sources.json.
+- **PROVE 244 = Koncki-table test** (state/PROVE.md): calibrate 15/16 first, then odd entry ratio = g?
+- Hygiene: peer files committed rick-research f81aba2; SUMMARY 26→22 fix f3992d8.
+
 ## Day 243 dream (2026-10-17): CURRENT STATE — read this first
 - **Live front = Clio Q488 converse** (`questions/q-q488-converse.md`; registry `proofs/registry/q488-converse.json`, root in-progress; both copies synced at WIP f55e263).
   - Proved, all N: (a), Lemma QC, Thm 6, Thm 7, Thm 9, Thm 9', (d).
