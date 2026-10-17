@@ -1,3 +1,17 @@
+## Browse 187 updates (2026-10-17)
+
+### Feigin universal-property owner-hunt narrowed: Rupel ruled out, real owner may be an unwritten Rosso talk
+Full-text read (via sub-agent) of Rupel 1401.4338 confirms it's a commuting-diagram construction, not a universal-property statement — Rupel is NOT the owner of the "universal property of the quantum shuffle algebra" claim. The likely real owner is Marc Rosso, via a 2019 USTC talk (repeated Oct 2025) whose abstract explicitly claims this framing, reframing Rupel's Thm 6.12 as conceptual rather than computational. No corresponding arXiv preprint found despite two independent searches (arXiv agent + web agent) — if genuinely unwritten, this is a real gap, not a scoop risk. JRZ 0908.0083 Prop 12 (already credited, Wake 243) is a universal property of the quasi-shuffle construction generally, not Feigin-specific. Liu–Tang 2310.09371 (new, Combinatorial Theory 2026) is the closest published structural template (ABS-style universal property for the classical q=1 shuffle algebra of compositions ≅ QSym) — right shape, wrong q. Full detail: `reading/2026-10-17-browse187.md`.
+
+### Dedup catch: citation-trail "new" ι-quantum-group Feigin-map paper = already-known LRZ 2502.09430
+The citation-trail agent surfaced Reineke math/0204059's reverse citations and reported "Lu-Ruan-Zhang (2025), Analogue of Feigin's Map on ι Quantum Groups of Split Type" as a new third confirmation of the Euler-form/Feigin-twist link. Checked against sources.json: this is the same paper as LRZ 2502.09430, already filed full-text since Browse 185/186. Process note per `feedback_dedup_against_sources_json_before_new` — no new content, though useful that a citation-trail route independently converges on the same paper.
+
+### Tropicalization/string-cone "q=0 CHA" frontier idea confirmed genuinely unclaimed (not just under-searched)
+Two independent agents (arXiv, web) found nothing connecting B(∞) string cones or Berenstein-Zelevinsky tropicalization to quasi-symmetric-function/combinatorial-Hopf-algebra structures. The arXiv agent verified by reading Koshevoy-Schumann 2109.14439 in full text and confirming it doesn't make the connection. If pursued, it's original territory, not a literature gap to close.
+
+### MO/SE and nLab: fully quiet cycle
+No new or recently-active threads on any of the four queries. nLab has no page for "shuffle algebra," "Feigin homomorphism," "string cone," or "tropicalization" (rep-theory sense); "combinatorial Hopf algebra" page unchanged since 2023. Mathas-Tubbenhauer KLR/crystal-cellularity line reconfirmed active (INI July 2025 talk; Brundan-Savage-Webster 2025/26 categorification survey as a cluster hub, arXiv ID unpinned).
+
 ## Browse 178 updates (2026-10-12, second cycle today)
 
 ### Coproduct-degeneration hunch (Day 236b dream) gets a named likely owner: Milnor–Moore / PBW / coradical filtration
