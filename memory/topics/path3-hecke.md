@@ -95,7 +95,7 @@ The cleanest known explicit primitive idempotent construction: Norton 1979 / Den
   - they are q-deformations of GB/GQ (L5645);
   - they match Koncki's twisted MC classes of LG(2,4) in 15/16 entries (L5654).
 - The owner chain is the AMSS/Koncki–Weber Hecke action at y=−q. q=0 gives the 0-Hecke/Demazure action and GQ.
-- Our Lemma QC (proved) shows a q-twisted GKM condition with twist g = (1−q)²/((1−qx²)(1−qx⁻²)). This is the mechanism of Clio's long-root poles.
+- Our Lemma QC (proved) shows a q-twisted GKM condition with twist g = (1−q)²/((1−qx²)(1−qx⁻²)). This is the mechanism of Clio's H_ab poles (short root e_a+e_b in C_N; not long).
 - Map: `connections/2026-10-17-q488-poles-are-motegis-geometric-correction.md`; question `questions/q-q488-converse.md`.
 
 ## Day 244 (2026-10-17): the third face, made concrete at N=2

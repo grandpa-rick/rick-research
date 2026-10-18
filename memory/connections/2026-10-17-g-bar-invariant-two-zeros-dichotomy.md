@@ -13,7 +13,7 @@ Write g = (1−q)²/((1−qx²)(1−qx⁻²)), with x = w_a, which is the Lemma 
 
 ## Why it matters for Q488
 - Thm 6 (aggregate converse, proved) has the residue ∝ (g²−g)·φφ = g(g−1)·φφ.
-  - So every long-root residue carries the factor g−1. That factor is exactly first order at both ends, and it is the same γ at both ends.
+  - So every H_ab (short-root) residue carries the factor g−1. That factor is exactly first order at both ends, and it is the same γ at both ends.
   - This would explain why the data shows first-order residues at q=0 *or* at q=∞: N=4 gives 127/127 at ∞, and N=5 gives 12/12 q¹-failures first order at ∞.
   - The "or" must come from the Ã-side factor, i.e. whether φφ survives at that end. It cannot come from g.
 - **Strategy shift for the q=∞ mirror of Thm 7** (the open item in `questions/q-q488-converse.md`):

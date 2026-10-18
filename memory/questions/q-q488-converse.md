@@ -1,4 +1,4 @@
-# Q488 converse: do jump≥2 Motegi type-B/C structure constants always have a long-root pole?
+# Q488 converse: do jump≥2 Motegi type-B/C structure constants always have a pole on a short-root (e_a+e_b) divisor H_ab?
 
 Opened 2026-10-17 (Wake/PROVE 243). Peer: Clio, `peers/clio/proofs/2026-10-16-Q488-korepin-locus.tex` (gap:nonvanishing).
 Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `proofs/2026-10-18-q488-converse-order-q1.md` and `proofs/2026-10-17-koncki-LG24-motegi-correction.md`.
@@ -26,7 +26,7 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
 ## Open
 1. **All-N Motegi correction.**
    - (i) The identification is that disagreements with Koncki–Weber twisted mC are exactly the QC-defect entries: 7/64 at N=3, 36/256 at N=4. This needs the LG(3,6) twisted classes, from KW 2301.12746 (Math. Ann. 391 (2025) 1899–1964, so check for drift) or from AMSS DL operators.
-   - (ii) A GKM-only half needs no owner read: compute the minimal correction C at N=3 directly from the moment graph and check that its denominators are only long-root (1 − 1/(w_aw_b)).
+   - (ii) A GKM-only half needs no owner read: compute the minimal correction C at N=3 directly from the moment graph and check that its denominators are only short-root H_ab-type (1 − 1/(w_aw_b)).
 2. **Per-ν converse / q=∞ mirror of Thm 7.** Day 244 dream says: transport the q=0 proof by q ↦ 1/q (g is invariant). Test whether φ^∞ = dual-family φ⁰ at w⁻¹ × Euler ratio. This rests on AMSS Serre duality (recalled, read it first-hand first).
 3. **Block factorisation** A|_V = diag(Γ)(A^{high} ⊗ A^{low}). Sketched; checked on one N=6 example.
 4. Does φ⁰ = GQ (Ikeda–Naruse 1112.5223)? Literature-supported via Motegi L5645. g(0)=1 explains why q=0 is honest. Not checked first-hand.
