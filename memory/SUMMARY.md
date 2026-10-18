@@ -1,5 +1,38 @@
 # Summary: Rick
 
+## Day 246 PROVE (2026-10-18): CURRENT STATE — read this first
+- **(D∞) PROVED, all N. With it, Clio's converse (Q488 Gap 2) is PROVED on the H-divisors, all N, generic q.** Both modulo ONE cited theorem: Motegi's all-cardinality biorthogonality (2610.15344, L4365–4411, read first-hand today).
+  - File `proofs/2026-10-18-q488-d-infinity.md`. Scripts `work-in-progress/scripts/prove246/`.
+- **Sharp statement:** c^ν_{λμ} has a pole on H_ab ⟺ E := {M'' ⊆ [N]∖ab : M''∪ab ≤ ν, M'' ≥ λ, μ} ≠ ∅.
+  - Every jump≥2 triple has such a pole, e.g. with a<b the two smallest elements of ν.
+  - PROVE.md's wording "pairs Thm 6 allows" was WRONG: Thm 6 is the aggregate over ν. The old "762/762" tally mixed allowed cases (408, all nonzero) with non-allowed ones (354, all zero).
+- **Three engines:**
+  1. **Closed form:** φ^∞_I(M) = τ(I)·Π_M w^{−2N}·F_I(M), where F is the q=0 sum (2.1) with head weights Π_j x_j^{κ_j−2j} and prefactor Π w^{2r}.
+  2. **Exact dual from Motegi's biorthogonality:** ℓ^∞_ν(e_L) = φ⁰_{ν^c}(L^c)/(φ^∞_L(L)φ⁰_{L^c}(L^c)). The q=∞ dual is the q=0 basis at complements, and vice versa.
+  3. **Theorem W:** the weighted residue with weight w^c is nonzero for every c ≤ −2. The q=∞ problem is c = −2N.
+- **Proof of W:** peel the top variable. Forced head ⇒ exact; w_n→0 dominance; stuck ⇒ w_n→∞ and ν→ν̃ with E unchanged; n=b gives A→B, n=a gives B→C with c↦c−2. The base value is 1. No positivity needed.
+- **Control (passed):** the q=0 problem sits at weight c=0. There the F-system vanishes exactly on the separator (∅,{3},{1,2,4}) H12, which is case A2 with an order tie.
+- **Registry** (both copies synced): `q488-qinf-D-infinity`, `q488-qinf-residue-formula` (P2a) and `q488-qinf-dichotomy` are now proved. New proved nodes: `q488-phi-inf-closed-form`, `q488-phi-inf-dual-biorthogonality`, `q488-weighted-theorem-W`, `q488-converse-all-N`.
+- **Not covered:** the S/A divisors at full q (Clio thm:main, Gap q).
+- **Next:**
+  1. Wake 247: send Clio the note `for-collaborator/2026-10-18-d-infinity-clio.md` (cc Robin). Push first, then send the URL.
+  2. A cold re-read of Theorem W, cases A2 and A3, for checked-sober-style insurance on the induction.
+  3. The q=0 mirror (wt0 F-system: nonzero for c ≥ 2?) is now cheap and would explain the window {0,2,4} ↔ {−4,−2,0}.
+
+## Wake 246 (2026-10-18): CURRENT STATE — read this first
+- **Sent:** Clio got the Theorem Ψ PDF (WIP source 0ba106c, PDF f74cb81, `reviews/2026-10-18-theorem-psi.pdf`), cc Robin, with her ψ credited first.
+- **Inbound:**
+  - Clio UID 413: (i) my refresh token expires ~12:30 UTC today; I emailed Robin a §6 report at 10:07. (ii) She confirms the short-root fix; her own c2-coboundary PDF/paper has the error ×35 and a corrected PDF is coming. (iii) "Yes" to my reframe question; details are in that PDF too.
+  - MacBeth: no new mail. UID 412 was already answered in Wake 245.
+- **ψ owner (read first-hand, Motegi .tex):** ψ = the j=k diagonal factor that E^B (Def 2.13) has and E^C (Def 2.8) omits. Not a K-matrix factor; the hunch is killed. Registry: `q488-psi-is-motegi-EC-diagonal-completion` (sketched). Notes in `reading/2026-10-18-wake246-psi-owner.md`.
+- **q=∞ mirror:**
+  - The transport of Theorem Ψ is a TAUTOLOGY: its controls separate nothing (sketched).
+  - φ^∞ is NOT a Weyl×monomial image of φ⁰ (computed). φ^∞ = G(φ⁰∘inv)T, and T is positive and non-monomial.
+  - P2a, the ∞-version of Thm 7: computed, 39/39.
+  - New target **(D∞)**: every allowed first-order q=∞ residue is nonzero. It holds in 762/762 cases at N=4 and FAILS at q=0 on (∅,{3},{1,2,4}) H12. Computed; WIP 3c264a0 scripts/wake246.
+- **PROVE 246 = (D∞).** Registry WIP 6a875fd.
+- Day 245 dream stanza below is still valid for everything else.
+
 ## Day 245 dream (2026-10-18): CURRENT STATE — read this first
 - **Q488's H_ab half is DONE.**
   - **Theorem Ψ (proved, all N):** Clio's vertex gauge Â = Ã·∏ψ(w_m), ψ(v)=(1−qv²)/(1−q), is an honest GKM class on LG(N,2N). Registry `q488-theorem-psi-honest-gkm`; file `proofs/2026-10-18-theorem-psi-honest-gkm.md`; rick-research 0902dca, WIP 52a5d04.
