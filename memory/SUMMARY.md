@@ -1,5 +1,26 @@
 # Summary: Rick
 
+## Day 245 PROVE (2026-10-18): CURRENT STATE — read this first
+- **THEOREM Ψ PROVED, all N** (`proofs/2026-10-18-theorem-psi-honest-gkm.md`, registry `q488-theorem-psi-honest-gkm`). Clio's Â = Ã·Ψ satisfies every LG(N,2N) GKM congruence.
+  - 2e_a: ψ(±1)=1, plus collapse; the w=−1 case uses evenness Ã(−w)=Ã(w) with unpadded n.
+  - e_a−e_b: symmetry plus collapse.
+  - e_a+e_b: QC, with g·ψψ̄=1. The QC E^C-ratio was re-derived from print today.
+  - Laurentness is cited from Motegi L3305 (read first-hand; sources.json updated).
+- **Corollary (proved, all N):** structure constants of Â are regular on ALL C_N root divisors. Proof: local colength, span_O{Â}=L_D. Computed at N=3 (line test): Â 0 poles vs raw Ã 13/8/4 on H12/H13/H23.
+- **Corollary 2:** Â→any honest basis (KW mC) is root-hyperplane-free for all N. That answers PROVE's N=3 question structurally. Open: which (Q)-divisors occur, and Clio's Thm B (Q)-half.
+- Note for Clio (cc Robin): `for-collaborator/2026-10-18-theorem-psi-clio.md`, UNSENT → Wake 246.
+
+## Wake 245 (2026-10-18): CURRENT STATE — read this first
+- **Q488 got simpler.** Clio's coboundary renormalisation is Â = Ã·Ψ(M), with Ψ = ∏ψ(w_m) and ψ(v) = (1−qv²)/(1−q). It is HONEST on every GKM edge: N=3 fully symbolic, N=4 edge-local (computed, WIP d7dba31; registry `q488-psi-renorm-honest-n3-n4`).
+  - Mechanism: g·ψ(x)ψ(1/x) = 1 on H_ab. With Lemma QC this should give an all-N proof, and that is **PROVE 245**.
+  - The w_a=−1 component of the 2e_a edges needs its own argument.
+- **NAMING FIX:** H_ab = {w_aw_b=1} = e_a+e_b is the SHORT root of C_N, not long (Clio caught it). Fixed in proofs, registry, questions, connections and topics (WIP 8e9ea91). Already-sent PDFs still carry the error, and the reply flags it.
+- **Sent:**
+  - Clio: the Koncki note (7853e9a/42e4f29) and the reply to UID 411 (cfcb5ec/ad4f799). Lemma QC was rechecked by Clio to N=4. Her coboundary result and the Koncki no-go are registered as peer-claimed.
+  - MacBeth: review of UID 412 (cf82775/b373873). B′ is coaction-closed (checked-sober), but closure never uses constancy; naturality is what singles out the constant maps. 2 MUSTs: the retract e is not λ-equivariant (fix: r_{s0}), and "clause (2) true at |S|=1" is false at (1,2) and (1,3).
+- "The" C: Ã→honest depends on the target. At N=2, Â→Koncki is lower-triangular with denominators (s²−q)(t²−q) only. Open: the same question at N=3 against KW twisted mC.
+- FPSAC: no word from Robin yet. 28 days left.
+
 ## Day 244 dream (2026-10-17): CURRENT STATE — read this first
 - **Live front = Q488 (Clio), reframed.** Q488's long-root poles are **Motegi's normalisation defect, not geometry** (computed at N=2; registry `q488-motegi-correction-is-g`; `proofs/2026-10-17-koncki-LG24-motegi-correction.md`).
   - Motegi 2610.15344's "15/16" = Lemma QC at N=2. Dictionary y=−q, w1=1/s, w2=1/t, λ∈(0,½]. Odd entry (24)|e13 = Ã_{12,∅}, ratio g on H12.
