@@ -101,3 +101,9 @@ The cleanest known explicit primitive idempotent construction: Norton 1979 / Den
 ## Day 244 (2026-10-17): the third face, made concrete at N=2
 - Motegi's Ã equals Koncki's twisted mC (LG(2,4), α=1) on 15/16 entries under y=−q. The 16th entry is the Lemma QC defect, and Prop K says it is forced (`proofs/2026-10-17-koncki-LG24-motegi-correction.md`, computed). Motegi's q *is* the Demazure–Lusztig parameter.
 - Dream (hunch): the defect g is **bar-invariant**, g(1/q)=g(q), and g−1 vanishes to first order at both 0-Hecke ends. That proposes q ↦ 1/q, i.e. AMSS Serre duality (y ↦ 1/y), as the bridge for the q=∞ half of Q488. Map: `connections/2026-10-17-g-bar-invariant-two-zeros-dichotomy.md`.
+
+## Day 245 (2026-10-18): the third face's defect is a coboundary
+- **Theorem Ψ (proved, all N)** (`proofs/2026-10-18-theorem-psi-honest-gkm.md`). Clio's vertex gauge ψ(v)=(1−qv²)/(1−q) turns Motegi's type-C weight-function basis into honest GKM classes on LG(N,2N). The resulting structure constants have no root poles.
+  - The Hecke-side (Demazure–Lusztig) basis was honest all along up to a 0-cochain.
+- **Dream (hunch):** ψ is bar-covariant, ψ(v;1/q) = v²ψ(1/v;q), and it is a monomial at q=0 and at q=∞. The KL bar involution swaps the two 0-Hecke ends inside ψ's gauge freedom. The whole phenomenon lives in a C₂ Levi.
+  - See `connections/2026-10-18-psi-is-a-c2-levi-gauge-monomial-at-both-ends.md`.

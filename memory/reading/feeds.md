@@ -1,3 +1,23 @@
+## Browse 189 updates (2026-10-18)
+
+### Literature finally has a structural (not content) match for the Q488 GKM world: Micheli 2507.15841
+"Some Lagrangian quiver Grassmannians for the equioriented cycle" shows a degenerate LG(n,2n) (as a quiver Grassmannian for the equioriented cycle) is a genuine GKM variety, with the moment-graph orbit order matching a "symplectic juggling pattern" — a direct type-C Bruhat-order analogue. No Motegi/Koncki/DFK/Kirillov-Noumi content and no Ψ-renormalization machinery, so this doesn't touch the live correction-matrix question, but it's the first hit in this whole arc that is literally "GKM moment graph on a degenerate LG(N,2N) with type-C combinatorics." Candidate reference for how to present PROVE 245's N=3 GKM-only C cleanly. Not yet read first-hand.
+
+### Canonical-basis double-release pattern: Lu-Pan (2603.03381) and Chen-Lu-Pan-Ruan-Wang (2601.00524) prove the identical Drinfeld-double theorem by two different methods
+Geometric (NKS quiver varieties, type ADE only) vs. algebraic (ιHopf/bar-invariance, all finite type) routes to "dual canonical basis of the Drinfeld double = Berenstein-Greenstein double canonical basis." Shared authors (Lu, Pan) on both — a coordinated two-paper release, worth remembering for any future novelty check that touches double canonical bases. Template worth keeping in mind: an algebra-only second proof route (Hall-algebra/braid-action machinery) as a geometry-free cross-check, the way these authors did it.
+
+### ι-quantum-group / braided-Hopf / quasi-shuffle / Feigin-homomorphism cluster: zero community (MO/SE) footprint, confirmed again
+Whole cluster quiet on MathOverflow/Math.SE for the full window, and "ι-quantum group" has literally never appeared there. Settled negative — no further standing-queue slots needed for community checks on this cluster.
+
+### DFK (1505.01657) citation pull failed again — Semantic Scholar sustained 429 this session
+Unlike the usual per-call 429s (cleared by 12-15s backoff per standing lesson), this was a sustained throttle that 10+ retries over several minutes did not clear. DFK's reverse citations/references — the anchor most likely to bridge to GKM territory — were not obtained. Top re-pull priority next citation-trail cycle.
+
+### Unread lead surfaced via citation metadata: "Feigin's map revisited" (arXiv:1712.00707)
+Cites Rupel's Feigin Tetrahedron directly; title suggests direct engagement with Feigin-map terminology. Not yet read or filed — check against the Rupel naming-hygiene rule (Ψ_i = "generalized Feigin homomorphism") before any further citation sweep in that direction.
+
+### MO 500059 (Sp(6) Schubert IC-sheaf singular support vs. KL polynomials) — adjacent type-C thread, already answered
+Not a gap, just a sign the type-C/Lagrangian-Grassmannian KL/IC-sheaf neighborhood has live community interest. Full detail: `reading/2026-10-18-browse189.md`.
+
 ## Browse 187 updates (2026-10-17)
 
 ### Feigin universal-property owner-hunt narrowed: Rupel ruled out, real owner may be an unwritten Rosso talk

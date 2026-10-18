@@ -1,54 +1,44 @@
 # Summary: Rick
 
-## Day 245 PROVE (2026-10-18): CURRENT STATE — read this first
-- **THEOREM Ψ PROVED, all N** (`proofs/2026-10-18-theorem-psi-honest-gkm.md`, registry `q488-theorem-psi-honest-gkm`). Clio's Â = Ã·Ψ satisfies every LG(N,2N) GKM congruence.
-  - 2e_a: ψ(±1)=1, plus collapse; the w=−1 case uses evenness Ã(−w)=Ã(w) with unpadded n.
-  - e_a−e_b: symmetry plus collapse.
-  - e_a+e_b: QC, with g·ψψ̄=1. The QC E^C-ratio was re-derived from print today.
-  - Laurentness is cited from Motegi L3305 (read first-hand; sources.json updated).
-- **Corollary (proved, all N):** structure constants of Â are regular on ALL C_N root divisors. Proof: local colength, span_O{Â}=L_D. Computed at N=3 (line test): Â 0 poles vs raw Ã 13/8/4 on H12/H13/H23.
-- **Corollary 2:** Â→any honest basis (KW mC) is root-hyperplane-free for all N. That answers PROVE's N=3 question structurally. Open: which (Q)-divisors occur, and Clio's Thm B (Q)-half.
-- Note for Clio (cc Robin): `for-collaborator/2026-10-18-theorem-psi-clio.md`, UNSENT → Wake 246.
-
-## Wake 245 (2026-10-18): CURRENT STATE — read this first
-- **Q488 got simpler.** Clio's coboundary renormalisation is Â = Ã·Ψ(M), with Ψ = ∏ψ(w_m) and ψ(v) = (1−qv²)/(1−q). It is HONEST on every GKM edge: N=3 fully symbolic, N=4 edge-local (computed, WIP d7dba31; registry `q488-psi-renorm-honest-n3-n4`).
-  - Mechanism: g·ψ(x)ψ(1/x) = 1 on H_ab. With Lemma QC this should give an all-N proof, and that is **PROVE 245**.
-  - The w_a=−1 component of the 2e_a edges needs its own argument.
-- **NAMING FIX:** H_ab = {w_aw_b=1} = e_a+e_b is the SHORT root of C_N, not long (Clio caught it). Fixed in proofs, registry, questions, connections and topics (WIP 8e9ea91). Already-sent PDFs still carry the error, and the reply flags it.
-- **Sent:**
-  - Clio: the Koncki note (7853e9a/42e4f29) and the reply to UID 411 (cfcb5ec/ad4f799). Lemma QC was rechecked by Clio to N=4. Her coboundary result and the Koncki no-go are registered as peer-claimed.
-  - MacBeth: review of UID 412 (cf82775/b373873). B′ is coaction-closed (checked-sober), but closure never uses constancy; naturality is what singles out the constant maps. 2 MUSTs: the retract e is not λ-equivariant (fix: r_{s0}), and "clause (2) true at |S|=1" is false at (1,2) and (1,3).
-- "The" C: Ã→honest depends on the target. At N=2, Â→Koncki is lower-triangular with denominators (s²−q)(t²−q) only. Open: the same question at N=3 against KW twisted mC.
-- FPSAC: no word from Robin yet. 28 days left.
-
-## Day 244 dream (2026-10-17): CURRENT STATE — read this first
-- **Live front = Q488 (Clio), reframed.** Q488's long-root poles are **Motegi's normalisation defect, not geometry** (computed at N=2; registry `q488-motegi-correction-is-g`; `proofs/2026-10-17-koncki-LG24-motegi-correction.md`).
-  - Motegi 2610.15344's "15/16" = Lemma QC at N=2. Dictionary y=−q, w1=1/s, w2=1/t, λ∈(0,½]. Odd entry (24)|e13 = Ã_{12,∅}, ratio g on H12.
-  - **Prop K (proved, N=2):** 15/16 is the maximum agreement for any honest table.
-  - The Koncki basis has Laurent structure constants. This holds automatically for any honest basis, so the content is that Ã is not honest.
-  - So Q488 is about the change-of-basis matrix C: Ã → honest. At N=2, C has one entry, q(1−q)/(1−1/(w1w2)), on the point class.
-- **Dream crown (HUNCH):** `connections/2026-10-17-g-bar-invariant-two-zeros-dichotomy.md`.
-  - g(1/q)=g(q), and g−1 = qγ/((1−qx²)(1−qx⁻²)) with γ=(x−x⁻¹)². The defect therefore has simple zeros at both 0-Hecke ends.
-  - That is a candidate mechanism for the `q488-qinf-dichotomy` hunch: every residue carries g(g−1).
-  - It suggests transporting the q=∞ mirror of Thm 7 by q ↦ 1/q = y ↦ 1/y (AMSS 1902.10101 Serre duality: recalled, read it first-hand first).
-  - Seed: the defect is KL-bar-invariant (Path 3). g(0)=1 is why the q=0 basis is honest GQ (Seed Q4), and g(∞)=1 predicts a dual twin.
-  - Killed in-dream: "g = long/short slope wall-crossing", dead by Prop K.
-- **Registry:** no trust changes. Both q488 copies are synced (cmp OK).
-- **Paper state:**
-  - Long version published (857d772).
-  - FPSAC frozen at WIP 7df658b, deadline **2026-11-15 (29 days)**.
-  - Robin said "I'll take a look next week" (UID 407). Never submit without him.
+## Day 245 dream (2026-10-18): CURRENT STATE — read this first
+- **Q488's H_ab half is DONE.**
+  - **Theorem Ψ (proved, all N):** Clio's vertex gauge Â = Ã·∏ψ(w_m), ψ(v)=(1−qv²)/(1−q), is an honest GKM class on LG(N,2N). Registry `q488-theorem-psi-honest-gkm`; file `proofs/2026-10-18-theorem-psi-honest-gkm.md`; rick-research 0902dca, WIP 52a5d04.
+  - **Corollaries (proved, all N):** Â structure constants are regular on every C_N root divisor, and Â→any honest basis is root-free. Registry `q488-psi-corollary-no-root-poles`; the colength argument is standard GKM, credit it as such.
+  - So the poles were a normalisation artefact. Ψ is a 0-cochain, not a global class, with ρ=g=δ(1/ψ).
+  - The renormalisation is Clio's (UID 411); credit her first.
+- **Dream crown** (identities checked by hand, framing HUNCH): `connections/2026-10-18-psi-is-a-c2-levi-gauge-monomial-at-both-ends.md`.
+  - ψ(v;1/q)=v²ψ(1/v;q), and ψ goes 1 → v² from q=0 to q=∞. So the gauge is a monomial at both 0-Hecke ends, and bar swaps the ends inside the χ=w² gauge freedom.
+  - q=∞ mirror = Theorem Ψ transported by q↦1/q AND w↦w⁻¹.
+  - Q488 lives in a C₂ Levi: long roots 2e_a, −2e_b collide on the short wall.
+  - Killed: Ψ = a global class. Revived: Â = twisted mC at another slope (the Day 244 kill was about Ã only).
+- **N=2 caveat closed by hand:** the Â→Koncki denominators (s²−q)(t²−q) are exactly the Ψ-divisors {1−qw_i²}. **Prediction N=3:** Â→KW denominators ⊆ {1−qw_i²}.
+- **Still open** (`questions/q-q488-converse.md`):
+  - the (Q)-divisor half of Clio Thm B;
+  - what Â is geometrically;
+  - the owner of ψ (Motegi K-matrix scalar? read first-hand);
+  - `q488-qinf-dichotomy` (hunch).
+- **Registry:** no trust changes. Both copies cmp-synced.
 - **Next:**
-  1. Wake 245: send Clio `for-collaborator/2026-10-17-koncki-table-test.md` (push, then send the URL). It now carries the g-bar-invariance addendum labelled as a hunch.
-  2. PROVE 245, either one:
-     - (a) the N=3 GKM-only correction matrix C, computed from the moment graph with no owner read. Are its denominators long-root only? This is the recommended first.
-     - (b) the q=∞ mirror via duality. Test φ^∞ vs the w⁻¹ image of φ⁰ × Euler ratio, with a no-inversion control that must break.
-  3. Browse: the AMSS duality locator; a first-hand skim of Jeon 2509.24348; the drift check KW 2301.12746 vs Math. Ann. 391 (2025) 1899–1964.
-  4. Then the identification half: KW twisted mC of LG(3,6). Prediction: the disagreements are exactly the 7/64 QC-defect entries.
-- **Standing stops** (Browse 188):
-  - No more JRZ dormancy rechecks.
-  - No nLab for this arc.
-  - Rupel 1401.4338: cite Ψ_i as the "generalized Feigin homomorphism (Thm 6.12)", never "quantum shuffle character" (that name is Ω). A grep of all .tex is clean.
+  1. Wake 246: send Clio `for-collaborator/2026-10-18-theorem-psi-clio.md` (cc Robin). Push first, then send the URL.
+  2. PROVE 246: the q=∞ mirror via bar/w⁻¹ transport, with a no-inversion control. Alternative: the N=3 Â→KW denominator test.
+  3. Browse: re-pull DFK 1505.01657 citers; Motegi K-matrix normalisation; Micheli 2507.15841; 1712.00707.
+- **Paper state:** long version published (857d772). FPSAC frozen at WIP 7df658b, deadline **2026-11-15 (28 days)**. Robin said "next week" on 10-17. Never submit without him.
+- **Standing stops:** no JRZ dormancy rechecks; no nLab; no ι-quantum-group MO/SE checks (zero footprint, Browse 189). Rupel Ψ_i = "generalized Feigin homomorphism (Thm 6.12)", never "quantum shuffle character".
+
+## Day 245 PROVE + Wake 245 + Browse 189 + Day 244 dream (2026-10-17/18): pointer lines (full stanzas in `archive/SUMMARY-2026-10-18-pre-day245-dream.md`)
+- PROVE 245: Theorem Ψ (above). The w=−1 component uses evenness Ã(−w)=Ã(w) with unpadded n. Laurentness is cited from Motegi L3305 (read first-hand). N=3 line test: Â 0 poles; raw Ã 13/8/4 on H12/H13/H23. ψ is NOT unique (ψ·x^{2k}).
+- Wake 245:
+  - Ψ-renorm honest at N=3 (symbolic) and N=4 (edge-local) (`q488-psi-renorm-honest-n3-n4`, computed).
+  - Short-root naming fix (8e9ea91). Already-sent PDFs still say "long".
+  - Sent: Clio Koncki note + UID 411 reply; MacBeth 412 review (2 MUST: retract e not λ-equivariant; clause (2) false at (1,2), (1,3)).
+- Browse 189:
+  - Micheli 2507.15841, degenerate LG(n,2n) GKM, type-C juggling order (agent-summary).
+  - Lu–Pan 2603.03381 / CLPRW 2601.00524: two routes, same theorem.
+  - MO 500059.
+  - DFK pull 429'd.
+  - MO tag fixes: canonical-bases, crystals, kazhdan-lusztig.
+  - Log `reading/2026-10-18-browse189.md`.
+- Day 244 dream: g bar-invariant, with g−1 zeros at both ends (`connections/2026-10-17-g-bar-invariant-two-zeros-dichotomy.md`). Q488 reframed as change-of-basis; that is now superseded by the vertex gauge.
 
 ## Day 244 PROVE + Wake 244 + Browse 188 (2026-10-17): pointer lines (full stanzas in `archive/SUMMARY-2026-10-17-pre-day244-dream.md`)
 - PROVE 244: the Koncki test passed (T1 15/16, T2 odd entry as predicted, T3 ratio = g, Prop K). Controls 8, 10, 13/16. Koncki thesis typo p.71 (23)|e13 α=0, sty→s²ty. Own compare.py slip caught via GKM. WIP a18b239, projects 0d93ab2.
@@ -109,20 +99,14 @@
 ## Day 238 dream (2026-10-13): pointer line (full block in `archive/SUMMARY-2026-10-14-pre-day239-dream.md`)
 - Crown `connections/2026-10-13-dmatrix-is-a-seed-q2-object.md`: d = K·KF = Lusztig q-multiplicity = NY97 energy, a case-(A) Seed-Q2 answer. Δ_𝒩 coproduct hunch closed classical (WIP e5ab30e). SUMMARY pruned 61→45 KB (ae6350c).
 
-## Day 239 PROVE (2026-10-14): s=1 bar kill test is VACUOUS (no email, no browse)
-- **Prop S1 (proved, all n):** ⋆|_{s=1} = ordinary product (E_k|_{s=1}F = E_k(1)F = e_kF; this is Day 220 (0.1) p=0, already on file). Ψ|_{s=1} = diag t^{-n(μ')}, ι|_{s=1} diagonal, Lusztig C_μ = v^{-n(μ')}e_μ, C_λ⋆C_μ = C_{λ∪μ}. Positive but empty; both negative controls also positive ⇒ the test measures nothing.
-- ι-canonical-basis route: s=1 is the degenerate classical point, NOT a surviving locus. Parent node stays dead-end; child `iota-s1-line-collapse-vacuous` (proved). File `proofs/2026-10-14-day239-s1-bar-kill-test-vacuous.md`; scripts `scripts/day218/s1_{pre,psi,identity}.py`.
-- Mathas–Tubbenhauer A/B classification (PROVE.md fallback) NOT done: not in sources.json, no local copy, browsing banned in deep work → next browse/wake: get the arXiv ID + verify the title first.
-- Lesson: Taylor-expand the operator at a special line from your own notes before you schedule a kill test there.
-
-## Wake 239 (2026-10-14): pointer block
-- Robin 3rd FPSAC ping SENT (go/no-go + credits-only unfreeze of 7df658b). Robin's last mail in archive: 08-29. Credits PDF sent to Clio cc Robin (WIP 33526fc).
-- Clio Q442 (c(0)=A^∞, unwrapped count) read sober → node `clio-c-at-zero-is-unwrapped-count` **checked-sober** (34/34, controls break; HKKO Thm 3.3 not read literally).
-- Clio "213/217" = Thm 4.5 wrong-order control (s2d.py), NOT Rem 6.3. The 4 misses are structural (pure c, n(μ)=1, κ=1). `proofs/2026-10-14-wake239-rem63-control-four-misses.md`.
-- Clio Q434 refuted on our side; Q452 peer-claimed; book clause struck (she has the 2nd ed.); thm:DS "over Q(t)" (WIP 344cc6f, 0 overfull, 38 pp). Queue 794 closed, 799 stands, 789 classical.
-- MacBeth UID 386 (T² gerbe two ends): the class≤2 boundary is an ARTEFACT. Holds for all nilpotent K, fails at Dih(C3²). Review sent with M1–M3. Node peer-claimed.
-- MacBeth UID 389: 6/9 MUSTs fixed, 2 half (gerbe §2.3 sentence, nerve S=C⋈D), capstone 382 M1 unaddressed. UID 390 δ quadratic on Out⁰: correct but classical commutator form; M1–M3 sent.
-- Commits: rick-research b7855bf/f08cc99+, WIP ecfea70. PROVE 239 = s=1 bar kill test.
+## Day 239 PROVE + Wake 239 (2026-10-14): pointer lines (full blocks in `archive/SUMMARY-2026-10-18-pre-day245-dream.md`)
+- PROVE 239: Prop S1. ⋆|_{s=1} is the ordinary product, so the ι kill test is vacuous (`proofs/2026-10-14-day239-s1-bar-kill-test-vacuous.md`, node `iota-s1-line-collapse-vacuous`).
+- Wake 239:
+  - Robin FPSAC ping #3.
+  - Clio Q442 `clio-c-at-zero-is-unwrapped-count` checked-sober (34/34).
+  - "213/217" = Thm 4.5 control (`proofs/2026-10-14-wake239-rem63-control-four-misses.md`).
+  - MacBeth 386 class≤2 boundary is an artefact.
+  - WIP ecfea70.
 
 ## Days 236–238 (wake / PROVE / browses 175–180 / dreams), 2026-10-11..13: pointer lines (full stanzas in `archive/SUMMARY-2026-10-13-pre-day238-dream-prune.md`)
 - **Browse 179/180 (10-13):** scoop CLEAR. New filings: Carré–Goncalves–Luque 2601.12881, Kim–Oh 2602.06338, Elias–Thomas 2609.23253, Gupta–Longhi 2609.07911, Cherednik 2607.25666 v3. The Mathas–Tubbenhauer lead came via the Brundan–Kleshchev 0808.2032 citers. Logs `reading/2026-10-13-browse179.md`, `reading/2026-10-13-browse180.md`.

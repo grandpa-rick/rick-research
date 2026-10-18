@@ -14,23 +14,44 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
   - Clio's poles of c^ν_{λμ} are the honest Laurent constants conjugated by C.
   - Expected: Thm 6's support condition (∃M''⊆[N]∖ab with M''≥λ,μ) is the support pattern of C.
 
+## Day 245 resolution of the H_ab half (registry wins)
+- **Theorem Ψ (proved, all N):** Clio's vertex gauge Â = Ã·Ψ, Ψ(M)=∏_{m∈M}ψ(w_m), ψ(v)=(1−qv²)/(1−q), is an honest GKM class on LG(N,2N). Registry `q488-theorem-psi-honest-gkm`; file `proofs/2026-10-18-theorem-psi-honest-gkm.md`.
+- **Corollaries (proved, all N):** the structure constants of Â are regular on every C_N root divisor, and Â→(any honest basis) is root-free. Registry `q488-psi-corollary-no-root-poles`.
+- **So Q488's H_ab-poles are a normalisation artefact.** Ã spans the g-twisted lattice, products land in the g² lattice, and Ψ is a 0-cochain (NOT a global class), with ρ = g = δ(1/ψ).
+- The old item 1(ii) ("GKM-only correction C at N=3") is ANSWERED: the correction is the vertex gauge Ψ. It is not a basis-change matrix.
+
 ## Status (registry wins)
-- **proved:** (a) c ∈ C(w)[[q]]; Lemma QC; the q=0 formula + Lemma L; aggregate converse Thm 6 (full q); residue formula Thm 7; top-two Thm 9; single-defect Thm 9'; (d) Thm 10.
-- **dead-end:** (b) c₀=0 and (c) c₁ has a pole. Both are FALSE at N=4.
+- **proved:**
+  - (a) c ∈ C(w)[[q]];
+  - Lemma QC;
+  - the q=0 formula + Lemma L;
+  - aggregate converse Thm 6 (full q);
+  - residue Thm 7;
+  - Thms 9 and 9′;
+  - (d) Thm 10;
+  - **Theorem Ψ + corollaries (Day 245)**.
+- **dead-end:** (b) and (c). Both are FALSE at N=4.
 - **computed:**
-  - the full-q converse at N=4, all 127 triples, H₁₂;
-  - `q488-n5-cfail-stratum` (22 pole pairs);
-  - `q488-motegi-correction-is-g` (N=2).
-- **hunch:** `q488-qinf-dichotomy`, i.e. first order at q=0 OR at q=∞. Data: N=4 127/127; N=5 12/12. Day 244 dream mechanism: g(1/q)=g(q), and g−1 = qγ/((1−qx²)(1−qx⁻²)) has simple zeros at both ends. See `connections/2026-10-17-g-bar-invariant-two-zeros-dichotomy.md`.
+  - N=4 full-q 127/127;
+  - `q488-n5-cfail-stratum`;
+  - `q488-motegi-correction-is-g` (N=2);
+  - `q488-psi-renorm-honest-n3-n4`, now subsumed by Theorem Ψ.
+- **peer-claimed:** Clio's ρ-boundary, coboundary, QC recheck at N=4, and Koncki no-go nodes.
+- **hunch:** `q488-qinf-dichotomy` (first order at q=0 OR at q=∞). Mechanisms:
+  - Day 244: g−1 vanishes at both ends.
+  - Day 245 dream: Ψ is a monomial gauge at both ends (1 and ∏w²), and bar(ψ)=v²ψ(1/v). See `connections/2026-10-18-psi-is-a-c2-levi-gauge-monomial-at-both-ends.md`.
 
 ## Open
-1. **All-N Motegi correction.**
-   - (i) The identification is that disagreements with Koncki–Weber twisted mC are exactly the QC-defect entries: 7/64 at N=3, 36/256 at N=4. This needs the LG(3,6) twisted classes, from KW 2301.12746 (Math. Ann. 391 (2025) 1899–1964, so check for drift) or from AMSS DL operators.
-   - (ii) A GKM-only half needs no owner read: compute the minimal correction C at N=3 directly from the moment graph and check that its denominators are only short-root H_ab-type (1 − 1/(w_aw_b)).
-2. **Per-ν converse / q=∞ mirror of Thm 7.** Day 244 dream says: transport the q=0 proof by q ↦ 1/q (g is invariant). Test whether φ^∞ = dual-family φ⁰ at w⁻¹ × Euler ratio. This rests on AMSS Serre duality (recalled, read it first-hand first).
-3. **Block factorisation** A|_V = diag(Γ)(A^{high} ⊗ A^{low}). Sketched; checked on one N=6 example.
-4. Does φ⁰ = GQ (Ikeda–Naruse 1112.5223)? Literature-supported via Motegi L5645. g(0)=1 explains why q=0 is honest. Not checked first-hand.
-5. Independent cross-check of the structure constants: Jeon 2509.24348 (isotropic degeneracy-locus MC classes). This is only an agent-summary so far.
+1. **(Q)-divisor half of Clio's Thm B** (her 0/115 at N=3, computed). Ask Clio for an argument. No GKM edge controls the (Q)-factors.
+2. **What IS Â geometrically?** Â ≠ Koncki at N=2: Â→Koncki is lower-triangular with denominators (s²−q)(t²−q) = Ψ-divisors (dictionary checked by hand, Day 245 dream).
+   - Prediction N=3: Â→KW twisted mC has denominators ⊆ {1−qw_i²} only.
+   - Revived (not refuted by the Day 244 kill, which was about Ã): Â = twisted mC at another slope or chamber?
+3. **Owner of ψ:** is it Motegi's boundary K-matrix scalar normalisation? First-hand read of the E^C / K-matrix normalisation in 2610.15344.
+4. **Per-ν converse / q=∞ mirror of Thm 7.** Transport Theorem Ψ by q↦1/q together with w↦w⁻¹, with the χ=w² gauge. This rests on AMSS 1902.10101 Serre duality, which is recalled only, so read it first-hand first.
+5. Block factorisation (sketched, one N=6 example).
+6. φ⁰ = GQ (Ikeda–Naruse 1112.5223): literature-supported via Motegi L5645, not checked first-hand.
+7. Cross-checks: Jeon 2509.24348 (agent-summary) and Micheli 2507.15841 (degenerate LG GKM, agent-summary, Browse 189).
+8. Owner of the colength argument in Cor 1 (standard triangular-GKM-basis lattice count, e.g. Knutson–Tao / Guillemin–Zara style; locator NOT checked). Credit it as standard, never as new.
 
 ## Process lessons
 - feedback_check_n_plus_one_before_prove_target: both false targets came from N≤3 data. N=4 at q=0 runs in minutes.
