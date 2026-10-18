@@ -1,62 +1,43 @@
 # Summary: Rick
 
-## Day 246 PROVE (2026-10-18): CURRENT STATE — read this first
-- **(D∞) PROVED, all N. With it, Clio's converse (Q488 Gap 2) is PROVED on the H-divisors, all N, generic q.** Both modulo ONE cited theorem: Motegi's all-cardinality biorthogonality (2610.15344, L4365–4411, read first-hand today).
-  - File `proofs/2026-10-18-q488-d-infinity.md`. Scripts `work-in-progress/scripts/prove246/`.
-- **Sharp statement:** c^ν_{λμ} has a pole on H_ab ⟺ E := {M'' ⊆ [N]∖ab : M''∪ab ≤ ν, M'' ≥ λ, μ} ≠ ∅.
-  - Every jump≥2 triple has such a pole, e.g. with a<b the two smallest elements of ν.
-  - PROVE.md's wording "pairs Thm 6 allows" was WRONG: Thm 6 is the aggregate over ν. The old "762/762" tally mixed allowed cases (408, all nonzero) with non-allowed ones (354, all zero).
-- **Three engines:**
-  1. **Closed form:** φ^∞_I(M) = τ(I)·Π_M w^{−2N}·F_I(M), where F is the q=0 sum (2.1) with head weights Π_j x_j^{κ_j−2j} and prefactor Π w^{2r}.
-  2. **Exact dual from Motegi's biorthogonality:** ℓ^∞_ν(e_L) = φ⁰_{ν^c}(L^c)/(φ^∞_L(L)φ⁰_{L^c}(L^c)). The q=∞ dual is the q=0 basis at complements, and vice versa.
-  3. **Theorem W:** the weighted residue with weight w^c is nonzero for every c ≤ −2. The q=∞ problem is c = −2N.
-- **Proof of W:** peel the top variable. Forced head ⇒ exact; w_n→0 dominance; stuck ⇒ w_n→∞ and ν→ν̃ with E unchanged; n=b gives A→B, n=a gives B→C with c↦c−2. The base value is 1. No positivity needed.
-- **Control (passed):** the q=0 problem sits at weight c=0. There the F-system vanishes exactly on the separator (∅,{3},{1,2,4}) H12, which is case A2 with an order tie.
-- **Registry** (both copies synced): `q488-qinf-D-infinity`, `q488-qinf-residue-formula` (P2a) and `q488-qinf-dichotomy` are now proved. New proved nodes: `q488-phi-inf-closed-form`, `q488-phi-inf-dual-biorthogonality`, `q488-weighted-theorem-W`, `q488-converse-all-N`.
-- **Not covered:** the S/A divisors at full q (Clio thm:main, Gap q).
-- **Next:**
-  1. Wake 247: send Clio the note `for-collaborator/2026-10-18-d-infinity-clio.md` (cc Robin). Push first, then send the URL.
-  2. A cold re-read of Theorem W, cases A2 and A3, for checked-sober-style insurance on the induction.
-  3. The q=0 mirror (wt0 F-system: nonzero for c ≥ 2?) is now cheap and would explain the window {0,2,4} ↔ {−4,−2,0}.
-
-## Wake 246 (2026-10-18): CURRENT STATE — read this first
-- **Sent:** Clio got the Theorem Ψ PDF (WIP source 0ba106c, PDF f74cb81, `reviews/2026-10-18-theorem-psi.pdf`), cc Robin, with her ψ credited first.
-- **Inbound:**
-  - Clio UID 413: (i) my refresh token expires ~12:30 UTC today; I emailed Robin a §6 report at 10:07. (ii) She confirms the short-root fix; her own c2-coboundary PDF/paper has the error ×35 and a corrected PDF is coming. (iii) "Yes" to my reframe question; details are in that PDF too.
-  - MacBeth: no new mail. UID 412 was already answered in Wake 245.
-- **ψ owner (read first-hand, Motegi .tex):** ψ = the j=k diagonal factor that E^B (Def 2.13) has and E^C (Def 2.8) omits. Not a K-matrix factor; the hunch is killed. Registry: `q488-psi-is-motegi-EC-diagonal-completion` (sketched). Notes in `reading/2026-10-18-wake246-psi-owner.md`.
-- **q=∞ mirror:**
-  - The transport of Theorem Ψ is a TAUTOLOGY: its controls separate nothing (sketched).
-  - φ^∞ is NOT a Weyl×monomial image of φ⁰ (computed). φ^∞ = G(φ⁰∘inv)T, and T is positive and non-monomial.
-  - P2a, the ∞-version of Thm 7: computed, 39/39.
-  - New target **(D∞)**: every allowed first-order q=∞ residue is nonzero. It holds in 762/762 cases at N=4 and FAILS at q=0 on (∅,{3},{1,2,4}) H12. Computed; WIP 3c264a0 scripts/wake246.
-- **PROVE 246 = (D∞).** Registry WIP 6a875fd.
-- Day 245 dream stanza below is still valid for everything else.
-
-## Day 245 dream (2026-10-18): CURRENT STATE — read this first
-- **Q488's H_ab half is DONE.**
-  - **Theorem Ψ (proved, all N):** Clio's vertex gauge Â = Ã·∏ψ(w_m), ψ(v)=(1−qv²)/(1−q), is an honest GKM class on LG(N,2N). Registry `q488-theorem-psi-honest-gkm`; file `proofs/2026-10-18-theorem-psi-honest-gkm.md`; rick-research 0902dca, WIP 52a5d04.
-  - **Corollaries (proved, all N):** Â structure constants are regular on every C_N root divisor, and Â→any honest basis is root-free. Registry `q488-psi-corollary-no-root-poles`; the colength argument is standard GKM, credit it as such.
-  - So the poles were a normalisation artefact. Ψ is a 0-cochain, not a global class, with ρ=g=δ(1/ψ).
-  - The renormalisation is Clio's (UID 411); credit her first.
-- **Dream crown** (identities checked by hand, framing HUNCH): `connections/2026-10-18-psi-is-a-c2-levi-gauge-monomial-at-both-ends.md`.
-  - ψ(v;1/q)=v²ψ(1/v;q), and ψ goes 1 → v² from q=0 to q=∞. So the gauge is a monomial at both 0-Hecke ends, and bar swaps the ends inside the χ=w² gauge freedom.
-  - q=∞ mirror = Theorem Ψ transported by q↦1/q AND w↦w⁻¹.
-  - Q488 lives in a C₂ Levi: long roots 2e_a, −2e_b collide on the short wall.
-  - Killed: Ψ = a global class. Revived: Â = twisted mC at another slope (the Day 244 kill was about Ã only).
-- **N=2 caveat closed by hand:** the Â→Koncki denominators (s²−q)(t²−q) are exactly the Ψ-divisors {1−qw_i²}. **Prediction N=3:** Â→KW denominators ⊆ {1−qw_i²}.
+## Day 246 dream (2026-10-18): CURRENT STATE — read this first
+- **Q488 converse on the H-divisors is CLOSED.**
+  - **(D∞) proved, all N.** Clio's converse is proved on H_ab, all N, generic q: c^ν_{λμ} has a pole on H_ab ⟺ E(λ,μ,ν;ab) := {M''⊆[N]∖ab : M''∪ab ≤ ν, M'' ≥ λ,μ} ≠ ∅.
+  - Both rest on ONE cited theorem: Motegi 2610.15344 all-cardinality biorthogonality (L4365–4411, read first-hand).
+  - File `proofs/2026-10-18-q488-d-infinity.md`; registry `q488-qinf-D-infinity`, `q488-converse-all-N`, `q488-phi-inf-closed-form`, `q488-phi-inf-dual-biorthogonality`, `q488-weighted-theorem-W`, and `q488-qinf-residue-formula` / `q488-qinf-dichotomy`, all **proved**. The root `q488-converse-order-q1` is still in-progress (S/A divisors open).
+  - Pushed: rick-research 0abdcb4, WIP bf762fe.
+- **Engines** (detail in the proof file):
+  1. closed form φ^∞ = τ·Πw^{−2N}·F;
+  2. dual (D): ℓ^∞_ν(e_L) = φ⁰_{ν^c}(L^c)/(φ^∞_L(L)φ⁰_{L^c}(L^c));
+  3. Theorem W: the weighted residue is ≠ 0 for every c ≤ −2 (peel the top variable). q=∞ is c=−2N; q=0 is c=0.
+- **Dream crown (hunch, framing):** `connections/2026-10-18-q0-qinf-are-w0-bar-duals-and-only-one-end-is-clean.md`.
+  - I ↦ I^c is w₀=−1 ∈ W(C_N), so biorthogonality = "inverse is the w₀∘bar image". That is the shape of KL79 inversion and of opposite-chamber stable-envelope duality (RTV U↦U^⊥ is Motegi's own proof route).
+  - Bar swaps the 0-Hecke ends, but not their genericity: q=0 sits on the edge of the zero window ({0,2,4} at N=4) and q=∞ is far outside it.
+  - Seed Q4 moral: the crystal end isn't privileged; compute at the end that is off the wall.
+- **Cheap predictions** (untested): c=−1 clean; window = even c ∈ [0,2N−4] (N=3 {0,2}, N=5 {0,…,6}).
 - **Still open** (`questions/q-q488-converse.md`):
+  - S/A divisors at full q (Clio thm:main, Gap q);
   - the (Q)-divisor half of Clio Thm B;
   - what Â is geometrically;
-  - the owner of ψ (Motegi K-matrix scalar? read first-hand);
-  - `q488-qinf-dichotomy` (hunch).
-- **Registry:** no trust changes. Both copies cmp-synced.
+  - the weight window;
+  - insurance: a cold re-read of Theorem W A2/A3, and checking Motegi's RTV step.
+- **Hygiene fixes tonight:** DFK "2026 hub" = citers of **1704.00154** (Browse 184), not 2303.04276 as Browse 190 guessed; 1505.01657 is dormant. Correction is in feeds.md.
+- **Registry:** no trust changes tonight (PROVE 246 already graded and synced).
 - **Next:**
-  1. Wake 246: send Clio `for-collaborator/2026-10-18-theorem-psi-clio.md` (cc Robin). Push first, then send the URL.
-  2. PROVE 246: the q=∞ mirror via bar/w⁻¹ transport, with a no-inversion control. Alternative: the N=3 Â→KW denominator test.
-  3. Browse: re-pull DFK 1505.01657 citers; Motegi K-matrix normalisation; Micheli 2507.15841; 1712.00707.
-- **Paper state:** long version published (857d772). FPSAC frozen at WIP 7df658b, deadline **2026-11-15 (28 days)**. Robin said "next week" on 10-17. Never submit without him.
-- **Standing stops:** no JRZ dormancy rechecks; no nLab; no ι-quantum-group MO/SE checks (zero footprint, Browse 189). Rupel Ψ_i = "generalized Feigin homomorphism (Thm 6.12)", never "quantum shuffle character".
+  1. **Wake 247:** push the proof file and send Clio `for-collaborator/2026-10-18-d-infinity-clio.md` + dream addendum (cc Robin) with the full URL.
+  2. **PROVE 247** (pick one): (a) Theorem W cold re-read (A2/A3) + c=−1 / window census N=3,5, which is cheap; or (b) the S/A divisors at full q. Recommend (a) first, then hand (b) to Clio as the remaining half.
+  3. **FPSAC:** deadline 2026-11-15 (**28 days**), frozen at WIP 7df658b. Robin said "next week" on 10-17; ping 10-24 if silent. Never submit without him.
+- **Standing stops:** no JRZ dormancy rechecks; no nLab; no ι-quantum-group MO/SE checks. Rupel Ψ_i = "generalized Feigin homomorphism (Thm 6.12)" (1712.00707 confirmed it doesn't use that name, Browse 190).
+
+## Day 246 PROVE + Wake 246 + Browse 190 + Day 245 dream (2026-10-18): pointer lines (full stanzas in `archive/SUMMARY-2026-10-18-pre-day246-dream.md`)
+- PROVE 246: as above. The PROVE.md wording "pairs Thm 6 allows" was wrong (Thm 6 is an aggregate over ν); "762/762" = 408 allowed nonzero + 354 non-allowed zero. Control: the q=0 F-system vanishes exactly on the separator (∅,{3},{1,2,4}) H12.
+- Wake 246:
+  - Sent Clio the Theorem Ψ PDF (0ba106c/f74cb81).
+  - ψ = the E^B j=k diagonal factor missing from E^C (`q488-psi-is-motegi-EC-diagonal-completion`, sketched; `reading/2026-10-18-wake246-psi-owner.md`). The K-matrix hunch is killed.
+  - The bar/w⁻¹ transport is a tautology (`q488-mirror-transport-formal`, sketched).
+  - φ^∞ is not a Weyl image (computed). WIP 3c264a0, 6a875fd.
+- Browse 190 (`reading/2026-10-18-browse190.md`): Berry 2601.04008 (√q-free affine q-Schur cellular), Martin–Senécal–Spencer 2601.17445 (TL cell modules, mixed char), Mackaay–Miemietz–Vaz 2604.20604, Nakaoka 2501.11559 (all agent-summary). DFK 1505.01657 is dormant. MO quiet.
+- Day 245 dream: Theorem Ψ (Clio's ψ gauge, proved all N); crown `connections/2026-10-18-psi-is-a-c2-levi-gauge-monomial-at-both-ends.md`; Q488 lives in a C₂ Levi.
 
 ## Day 245 PROVE + Wake 245 + Browse 189 + Day 244 dream (2026-10-17/18): pointer lines (full stanzas in `archive/SUMMARY-2026-10-18-pre-day245-dream.md`)
 - PROVE 245: Theorem Ψ (above). The w=−1 component uses evenness Ã(−w)=Ã(w) with unpadded n. Laurentness is cited from Motegi L3305 (read first-hand). N=3 line test: Â 0 poles; raw Ã 13/8/4 on H12/H13/H23. ψ is NOT unique (ψ·x^{2k}).

@@ -20,7 +20,19 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
 - **So Q488's H_ab-poles are a normalisation artefact.** Ã spans the g-twisted lattice, products land in the g² lattice, and Ψ is a 0-cochain (NOT a global class), with ρ = g = δ(1/ψ).
 - The old item 1(ii) ("GKM-only correction C at N=3") is ANSWERED: the correction is the vertex gauge Ψ. It is not a basis-change matrix.
 
+## Day 246 resolution of the converse on H-divisors (registry wins)
+- **(D∞) PROVED, all N** (`q488-qinf-D-infinity`). **Clio's converse PROVED on the H-divisors, all N, generic q**
+  (`q488-converse-all-N`): c^ν_{λμ} has a pole on H_ab ⟺ E(λ,μ,ν;ab) := {M'' ⊆ [N]∖ab : M''∪ab ≤ ν, M'' ≥ λ,μ} ≠ ∅.
+  Both are modulo ONE cited theorem, Motegi 2610.15344 all-cardinality biorthogonality (L4365–4411).
+  File `proofs/2026-10-18-q488-d-infinity.md`.
+- New proved nodes: `q488-phi-inf-closed-form`, `q488-phi-inf-dual-biorthogonality`, `q488-weighted-theorem-W`.
+  `q488-qinf-residue-formula` and `q488-qinf-dichotomy` were upgraded to proved.
+- Correction: Thm 6 is an aggregate over ν. The per-ν condition is E ≠ ∅.
+- Dream 246 (hunch): `connections/2026-10-18-q0-qinf-are-w0-bar-duals-and-only-one-end-is-clean.md`.
+
 ## Status (registry wins)
+- **(Day 246 additions, proved, all N mod Motegi):** D∞, converse-all-N, φ^∞ closed form, dual (D), Theorem W,
+  ∞-Thm 7, dichotomy. The list below predates Day 246; the dichotomy "hunch" entry is now superseded.
 - **proved:**
   - (a) c ∈ C(w)[[q]];
   - Lemma QC;
@@ -46,8 +58,10 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
 2. **What IS Â geometrically?** Â ≠ Koncki at N=2: Â→Koncki is lower-triangular with denominators (s²−q)(t²−q) = Ψ-divisors (dictionary checked by hand, Day 245 dream).
    - Prediction N=3: Â→KW twisted mC has denominators ⊆ {1−qw_i²} only.
    - Revived (not refuted by the Day 244 kill, which was about Ã): Â = twisted mC at another slope or chamber?
-3. **Owner of ψ:** is it Motegi's boundary K-matrix scalar normalisation? First-hand read of the E^C / K-matrix normalisation in 2610.15344.
-4. **Per-ν converse / q=∞ mirror of Thm 7.** Transport Theorem Ψ by q↦1/q together with w↦w⁻¹, with the χ=w² gauge. This rests on AMSS 1902.10101 Serre duality, which is recalled only, so read it first-hand first.
+3. ~~Owner of ψ~~ ANSWERED Wake 246 (sketched): ψ is the j=k diagonal factor that E^B (Def 2.13) has and E^C (Def 2.8) omits. It is not a K-matrix factor. Node `q488-psi-is-motegi-EC-diagonal-completion`.
+4. ~~Per-ν converse / q=∞ mirror~~ ANSWERED Day 246 (D∞, above). The transport route was a tautology (`q488-mirror-transport-formal`, sketched); the working route was Motegi biorthogonality.
+4a. **NEW: the weight window.** Is Theorem W sharp? Is c=−1 clean? Is the zero window even c ∈ [0, 2N−4]? See the predictions in the Day 246 dream connection. A q=0 mirror theorem (wt0 nonzero for c ≥ 2?) would explain the window {0,2,4} ↔ {−4,−2,0}.
+4b. **NEW: insurance.** Do a cold re-read of Theorem W cases A2/A3 (the induction's asymptotic steps). Re-derive Motegi biorthogonality, or at least check the RTV U↦U^⊥ step, to remove the one citation (gap 1).
 5. Block factorisation (sketched, one N=6 example).
 6. φ⁰ = GQ (Ikeda–Naruse 1112.5223): literature-supported via Motegi L5645, not checked first-hand.
 7. Cross-checks: Jeon 2509.24348 (agent-summary) and Micheli 2507.15841 (degenerate LG GKM, agent-summary, Browse 189).

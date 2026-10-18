@@ -107,3 +107,9 @@ The cleanest known explicit primitive idempotent construction: Norton 1979 / Den
   - The Hecke-side (Demazure–Lusztig) basis was honest all along up to a 0-cochain.
 - **Dream (hunch):** ψ is bar-covariant, ψ(v;1/q) = v²ψ(1/v;q), and it is a monomial at q=0 and at q=∞. The KL bar involution swaps the two 0-Hecke ends inside ψ's gauge freedom. The whole phenomenon lives in a C₂ Levi.
   - See `connections/2026-10-18-psi-is-a-c2-levi-gauge-monomial-at-both-ends.md`.
+
+## Day 246 (2026-10-18): the converse closes on the H-divisors via the two-ends duality
+- **(D∞) and Clio's converse PROVED, all N, generic q, on the H-divisors**, modulo Motegi 2610.15344 biorthogonality (L4365–4411) (`proofs/2026-10-18-q488-d-infinity.md`; registry `q488-qinf-D-infinity`, `q488-converse-all-N`). The pole on H_ab exists ⟺ E(λ,μ,ν;ab) ≠ ∅.
+- Engine: the dual of the q=∞ basis is the q=0 basis at complements (I ↦ I^c = w₀ ∈ W(C_N)). The residue is a weighted finite sum with weight w^c, c=−2N, and Theorem W (peeling the top variable) gives nonvanishing for all c ≤ −2. The q=0 end sits at c=0, on the wall: its separator zero is a dominance tie.
+- Dream (hunch): "inverse = w₀∘bar image" has the shape of KL inversion / opposite-chamber stable-envelope duality. The bar involution swaps the ends but not their genericity. See `connections/2026-10-18-q0-qinf-are-w0-bar-duals-and-only-one-end-is-clean.md`.
+- Still open: S/A divisors at full q (Clio thm:main, Gap q).
