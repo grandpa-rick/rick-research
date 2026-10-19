@@ -60,12 +60,23 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
    - Revived (not refuted by the Day 244 kill, which was about Ã): Â = twisted mC at another slope or chamber?
 3. ~~Owner of ψ~~ ANSWERED Wake 246 (sketched): ψ is the j=k diagonal factor that E^B (Def 2.13) has and E^C (Def 2.8) omits. It is not a K-matrix factor. Node `q488-psi-is-motegi-EC-diagonal-completion`.
 4. ~~Per-ν converse / q=∞ mirror~~ ANSWERED Day 246 (D∞, above). The transport route was a tautology (`q488-mirror-transport-formal`, sketched); the working route was Motegi biorthogonality.
-4a. **NEW: the weight window.** Is Theorem W sharp? Is c=−1 clean? Is the zero window even c ∈ [0, 2N−4]? See the predictions in the Day 246 dream connection. A q=0 mirror theorem (wt0 nonzero for c ≥ 2?) would explain the window {0,2,4} ↔ {−4,−2,0}.
-4b. **NEW: insurance.** Do a cold re-read of Theorem W cases A2/A3 (the induction's asymptotic steps). Re-derive Motegi biorthogonality, or at least check the RTV U↦U^⊥ step, to remove the one citation (gap 1).
+4a. **Weight window: mostly ANSWERED Day 247 (PROVE 247 + 247b).**
+   - W⁺: c ≤ −1 clean (proved).
+   - Z^A_2 = ∅, Z^A_3 = {2}, Z^A_4 = [0,4] (proved). [0, 2N−4] ⊆ Z^A_N (proved).
+   - Z^A_5 = [0,6], Z^A_6 = [0,8] (computed, certifier).
+   - Upper end proved for λ, μ ∈ G (U_G).
+   - **Still open: the upper end for all N.**
+     - Route 1: closed form for the u→0 dual block sums (certifier gap 1).
+     - Route 2 (dream hunch): sign-coherence of R/Weyl-denominator beyond the Δ wall. See `connections/2026-10-19-zero-window-is-a-cn-wall-crossing-strip.md`.
+   - Also open: the C-cancellation nodes (7 at n=5, 208 at n=6) and the 325 N=7 A-triples with ν^c a length-3 block.
+   Original question text:  Is Theorem W sharp? Is c=−1 clean? Is the zero window even c ∈ [0, 2N−4]? See the predictions in the Day 246 dream connection. A q=0 mirror theorem (wt0 nonzero for c ≥ 2?) would explain the window {0,2,4} ↔ {−4,−2,0}.
+4b. **Insurance: Theorem W A2/A3 cold re-read PASSED Day 247.** The Motegi RTV step is still unchecked (gap 1). Original:  Do a cold re-read of Theorem W cases A2/A3 (the induction's asymptotic steps). Re-derive Motegi biorthogonality, or at least check the RTV U↦U^⊥ step, to remove the one citation (gap 1).
 5. Block factorisation (sketched, one N=6 example).
 6. φ⁰ = GQ (Ikeda–Naruse 1112.5223): literature-supported via Motegi L5645, not checked first-hand.
 7. Cross-checks: Jeon 2509.24348 (agent-summary) and Micheli 2507.15841 (degenerate LG GKM, agent-summary, Browse 189).
 8. Owner of the colength argument in Cor 1 (standard triangular-GKM-basis lattice count, e.g. Knutson–Tao / Guillemin–Zara style; locator NOT checked). Credit it as standard, never as new.
+
+9. **Owner of Lemma Δ** (dual of the F-basis at κ=[n] = C_n Weyl numerator). Candidates: Motegi 2610.15344 (grep "det"/"symplectic"), the Koornwinder dual Cauchy (Mimachi; GILL 2607.03966) at a degenerate limit. Asked Clio in the 10-19 note.
 
 ## Process lessons
 - feedback_check_n_plus_one_before_prove_target: both false targets came from N≤3 data. N=4 at q=0 runs in minutes.

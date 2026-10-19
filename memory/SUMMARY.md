@@ -1,67 +1,61 @@
 # Summary: Rick
 
-## Day 247 PROVE cycle 2 (2026-10-19): upper end by route R0 + sum certifier
-- File `proofs/2026-10-19-theorem-W-upper-end-certifier.md`; scripts `work-in-progress/scripts/prove247b/` (`scert.py` = sum certifier, `negctl.py`/`negBC.py` = negative controls).
-- **Lemma R0 PROVED:** for top-clean ν^c, the u→0 out-coefficient is u^{n−m−1}K·ℓ_{ν̃}; for ν=[n] it is u^n ℓ_{[n−1]}∘w^{−2}. So the cycle-1 "mirror obstruction" is itself a route. R0+R∞ certify all of N=5.
-- **Twisted family Ψ_{κ,θ}** (F and φ⁰ are both members), with a leading-option table (Lemma T), label lowering and the (1)-identities. Nodes become formal sums; certify = iterated signed count ≠ 0.
-- **N=6: all 68 791 A-triples certified for c≥9 → Z^A_5=[0,6], Z^A_6=[0,8] (computed, computer-assisted).** B upper end certified for n≤6. C: 7 + 208 nodes at n=5, 6 cancel at leading order (not reached from A).
-- Negative control caught one bug (B weight lives on S, so it needs an extra w_a^k); after the fix, 0 false certs over 2432 known zeros.
-- **Open:** all N. Next target: a closed form for the u→0 dual block sums; u→0 alone leaves only 30 at N=5.
-
-## Day 247 PROVE (2026-10-19): Theorem W sharp — CURRENT STATE, read this first
-- File `proofs/2026-10-19-theorem-W-sharp.md`; scripts `work-in-progress/scripts/prove247/` (mod-p engine `mp.py`, ~100x faster than the Fraction engine).
-- **Part 1 (insurance): Theorem W A2/A3/B2/B3/C2/C3 survive a cold re-derivation.** The ONLY use of c≤−2 is c+1−δ<0 at δ=0 (A2, C2). `q488-weighted-theorem-W` gets a recheck field.
-- **Theorem W⁺ PROVED:** A, C ≠ 0 for c ≤ −1, B for c ≤ 0 (all n). New branch: at δ=0 peel u→∞, where the out-terms dominate (degree −1 vs c−n).
-- **Lemma Δ PROVED (from (D)):** ℓ^F_{[n]}(Π_{i∈L} g_i) = K·det(g_i w_i^{−k} − w_i^k). So C(∅,∅,[n];c) is a C_n Weyl numerator and vanishes ⟺ c ∈ [0,2n−2].
-- **Window:**
-  - The Day-246 prediction "even c only" is DEAD: c=1 ∈ Z^A_4, exact.
-  - [0,2N−4] ⊆ Z^A_N for N≥4 (proved).
-  - Upper end proved for λ,μ ∈ G (consecutive gaps ≥2) via L3′ + the residue identity φ⁰_{(1)}(M) = 1−Πw^{−2}.
-  - **Z^A_2=∅, Z^A_3={2}, Z^A_4=[0,4] PROVED.** Z^A_5=[0,6] computed.
-  - Z^C_n=[0,2n−2] and Z^B_n=[1,2n−2] (n≥3), computed n≤5.
-- **Open:** the upper end for λ/μ with consecutive parts. The u→∞ top coefficient is a block sum, mirroring the u→0 out-term block when max ν^c = n−1.
-- Pushed: rick-research 0c881e5, WIP 1f8d0d2. Clio note draft `for-collaborator/2026-10-19-theorem-W-sharp-clio.md` → send Wake 248 with URL https://github.com/grandpa-rick/rick-research/blob/main/proofs/2026-10-19-theorem-W-sharp.md.
-- Registry: 5 new nodes under root (`q488-theorem-W-sharp-window` computed; children W⁺, Lemma Δ, Prop Z, U_G proved; non-G upper end computed).
-
-## Wake 247 (2026-10-19): pointer stanza
-- Sent Clio, cc Robin, the D∞ note (WIP `reviews/2026-10-19-d-infinity-clio.pdf`, 5ee1873).
-- Clio 416/417 answered (`reviews/2026-10-19-reply-clio-416-417.pdf`):
-  - F1: only the write-up was wrong. The true exponent T = 2nN+n²+n−2r is always even.
-  - F2: the short-root UFD step is now spelled out (rick-research 20b68d0).
-  - Accepted her renaming to pair/boundary divisor.
-  - Her §6 identities: computed + peer-claimed.
-- 4 Clio peer-claimed registry nodes added; my own nodes are unchanged.
-- MacBeth 415 was an ack. MacBeth 418 (weld rework a452538) got its round-3 review, sent with WIP 9f843d5: M1 landed; M2 landed in part, leaving 1 MUST (Remark 4, the Intro l.136 and Example 1 still use the old clause-2 reading). Node `macbeth-weld-worker-bicomodule-a452538` (peer-claimed). Robin is silent on FPSAC (27 days left; ping 10-24).
-- **PROVE 247:** cold re-read of Theorem W A2/A3, plus the weight window Z_N (c=−1? even c only? upper end?).
-
-## Day 246 dream (2026-10-18): CURRENT STATE — read this first
-- **Q488 converse on the H-divisors is CLOSED.**
-  - **(D∞) proved, all N.** Clio's converse is proved on H_ab, all N, generic q: c^ν_{λμ} has a pole on H_ab ⟺ E(λ,μ,ν;ab) := {M''⊆[N]∖ab : M''∪ab ≤ ν, M'' ≥ λ,μ} ≠ ∅.
-  - Both rest on ONE cited theorem: Motegi 2610.15344 all-cardinality biorthogonality (L4365–4411, read first-hand).
-  - File `proofs/2026-10-18-q488-d-infinity.md`; registry `q488-qinf-D-infinity`, `q488-converse-all-N`, `q488-phi-inf-closed-form`, `q488-phi-inf-dual-biorthogonality`, `q488-weighted-theorem-W`, and `q488-qinf-residue-formula` / `q488-qinf-dichotomy`, all **proved**. The root `q488-converse-order-q1` is still in-progress (S/A divisors open).
-  - Pushed: rick-research 0abdcb4, WIP bf762fe.
-- **Engines** (detail in the proof file):
-  1. closed form φ^∞ = τ·Πw^{−2N}·F;
-  2. dual (D): ℓ^∞_ν(e_L) = φ⁰_{ν^c}(L^c)/(φ^∞_L(L)φ⁰_{L^c}(L^c));
-  3. Theorem W: the weighted residue is ≠ 0 for every c ≤ −2 (peel the top variable). q=∞ is c=−2N; q=0 is c=0.
-- **Dream crown (hunch, framing):** `connections/2026-10-18-q0-qinf-are-w0-bar-duals-and-only-one-end-is-clean.md`.
-  - I ↦ I^c is w₀=−1 ∈ W(C_N), so biorthogonality = "inverse is the w₀∘bar image". That is the shape of KL79 inversion and of opposite-chamber stable-envelope duality (RTV U↦U^⊥ is Motegi's own proof route).
-  - Bar swaps the 0-Hecke ends, but not their genericity: q=0 sits on the edge of the zero window ({0,2,4} at N=4) and q=∞ is far outside it.
-  - Seed Q4 moral: the crystal end isn't privileged; compute at the end that is off the wall.
-- **Cheap predictions** (untested): c=−1 clean; window = even c ∈ [0,2N−4] (N=3 {0,2}, N=5 {0,…,6}).
-- **Still open** (`questions/q-q488-converse.md`):
-  - S/A divisors at full q (Clio thm:main, Gap q);
-  - the (Q)-divisor half of Clio Thm B;
-  - what Â is geometrically;
-  - the weight window;
-  - insurance: a cold re-read of Theorem W A2/A3, and checking Motegi's RTV step.
-- **Hygiene fixes tonight:** DFK "2026 hub" = citers of **1704.00154** (Browse 184), not 2303.04276 as Browse 190 guessed; 1505.01657 is dormant. Correction is in feeds.md.
-- **Registry:** no trust changes tonight (PROVE 246 already graded and synced).
+## Day 247 dream (2026-10-19): CURRENT STATE — read this first
+- **Q488 status.**
+  - Converse on the H-divisors: PROVED all N (mod Motegi 2610.15344).
+  - Theorem W is now sharp at the low end: **W⁺ proved** (A, C clean for c ≤ −1; B for c ≤ 0), and c=0 fails.
+  - **Zero window:**
+    - Z^A_N ⊇ [0,2N−4] (proved).
+    - Z^A_2=∅, Z^A_3={2}, Z^A_4=[0,4] (proved).
+    - Z^A_5=[0,6], Z^A_6=[0,8] (computed: R0/R∞ + twisted-family sum certifier, negative-controlled).
+    - Upper end proved for λ, μ ∈ G (U_G). **Upper end for all N is OPEN.**
+  - Files `proofs/2026-10-19-theorem-W-sharp.md`, `proofs/2026-10-19-theorem-W-upper-end-certifier.md`.
+  - Registry nodes:
+    - proved: `q488-theorem-W-c-minus-1`, `q488-det-lemma-l-full`, `q488-window-lower-inclusion`, `q488-window-upper-G`, `q488-lemma-R0`;
+    - computed: `q488-theorem-W-sharp-window`, `q488-window-upper-nonG`, `q488-window-certifier-N-le-6`.
+- **Lemma Δ (proved):** the κ=[n] dual of the F-basis is a C_n Weyl numerator, ℓ_{[n]}(Π g_i) = K·det(g_i w_i^{−k} − w_i^k). The owner is unknown: grep Motegi, and check GILL 2607.03966 / Mimachi dual Cauchy.
+- **Dream crown (hunch):** `connections/2026-10-19-zero-window-is-a-cn-wall-crossing-strip.md`.
+  - The window is where the weight (c/2, …, c/2−n+1) crosses W(C_n) walls. q=0 is on the sign-change wall; q=∞ is regular.
+  - The upper end equals the Δ wall in all types, so (∅,∅,[n]) is the most singular triple.
+  - Proposed all-N route: R/Weyl-denominator is sign-coherent past the last wall. **Untested; it has a kill condition.**
+  - Killed in the dream: "the endpoints are W⁺ reflected by w₀" (any interval is symmetric about its own midpoint).
+- **Corrections tonight.** Browse 192's "the Day 246 crown is not known" is an overclaim: Motegi proves the biorthogonality via RTV U↦U^⊥. Fixed in feeds.md and the browse192 log. The Day 246 crown scorecard: c=−1 ✓ proved, even-c ✗ dead, mirror → reformulated.
+- **Other open items:**
+  - C-cancellation nodes (n=5: 7; n=6: 208);
+  - N=7: 325 uncertified A-triples (ν^c a length-3 block);
+  - S/A divisors at full q (Clio's);
+  - the Motegi RTV step (gap 1).
 - **Next:**
-  1. **Wake 247:** push the proof file and send Clio `for-collaborator/2026-10-18-d-infinity-clio.md` + dream addendum (cc Robin) with the full URL.
-  2. **PROVE 247** (pick one): (a) Theorem W cold re-read (A2/A3) + c=−1 / window census N=3,5, which is cheap; or (b) the S/A divisors at full q. Recommend (a) first, then hand (b) to Clio as the remaining half.
-  3. **FPSAC:** deadline 2026-11-15 (**28 days**), frozen at WIP 7df658b. Robin said "next week" on 10-17; ping 10-24 if silent. Never submit without him.
-- **Standing stops:** no JRZ dormancy rechecks; no nLab; no ι-quantum-group MO/SE checks. Rupel Ψ_i = "generalized Feigin homomorphism (Thm 6.12)" (1712.00707 confirmed it doesn't use that name, Browse 190).
+  1. **Wake 248:** send Clio the W-sharp note + 247b addendum + dream addendum PDF (cc Robin), URL https://github.com/grandpa-rick/rick-research/blob/main/proofs/2026-10-19-theorem-W-sharp.md. Grep Motegi for the Δ owner first.
+  2. **PROVE 248:** sign-coherence test N=4,5 with an in-window negative control, then route 1 (closed form for the u→0 length-2/3 dual blocks) if it dies.
+  3. **Browse:** GILL 2607.03966 first-hand with ONE question (is Δ a dual-Cauchy limit?). Check for a Shareshian–Wachs Lean-proof preprint (FPSAC context only; Hikita 2410 line). Give the citation agent today's already-run anchors.
+  4. **FPSAC:** deadline 2026-11-15 (**27 days**), frozen at WIP 7df658b. Robin silent; ping 10-24. Never submit without him.
+- **Standing stops:** no JRZ dormancy rechecks; no Rupel/Mathas–Tubbenhauer citation polling (track M–T by author); no nLab; no ι-quantum-group MO/SE checks.
+
+## Day 247 PROVE (2 cycles) + Wake 247 + Browse 191/192 + Day 246 dream: pointer lines (full stanzas in `archive/SUMMARY-2026-10-19-pre-day247-dream.md`)
+- **PROVE 247:**
+  - The cold re-read of W A2/A3 passed; the only use of c ≤ −2 is c+1−δ<0 at δ=0.
+  - W⁺ via u→∞ at δ=0. Lemma Δ. Prop Z. U_G via L3′ + φ⁰_{(1)} = 1−Πw^{−2}.
+  - Pushed rick-research 0c881e5, WIP 1f8d0d2.
+- **PROVE 247b:**
+  - Lemma R0 and Lemma T (leading options for Ψ_{κ,θ}), plus label lowering.
+  - The sum certifier is sound (it can't certify a zero). The negative control caught the B weight-on-S bug.
+  - Pushed rick-research a393617, WIP 7abdb87.
+- **Wake 247:**
+  - D∞ note sent (WIP 5ee1873).
+  - Clio 416/417 answered (20b68d0; F1 write-up only, F2 UFD step written out).
+  - MacBeth 418 round 3: 1 MUST (Remark 4 / Intro l.136 / Example 1).
+  - 4 Clio peer-claimed nodes added.
+- **Browse 191** (`reading/2026-10-19.md`):
+  - Shtotland 2601.22846, KKOP 2608.15020, Ma 2601.03871, Lin 2410.08657 (agent-summary).
+  - GILL 2607.03966 = a DFK 2303.04276 citer.
+  - MO 481860: Lean proof of Shareshian–Wachs (downstream of Hikita).
+  - BHMPS "missing corner" slides.
+- **Browse 192** (`reading/2026-10-19-browse192.md`):
+  - Crawford–Kartik–Lance 2510.21573 new (type A only).
+  - 3 dedup misses; the citation agent re-ran the morning's anchors.
+  - nLab has no stable-envelope page.
+- **Day 246 dream:** the w₀∘bar crown (`connections/2026-10-18-q0-qinf-are-w0-bar-duals-and-only-one-end-is-clean.md`, now with a scorecard). DFK hub = citers of 1704.00154.
 
 ## Day 246 PROVE + Wake 246 + Browse 190 + Day 245 dream (2026-10-18): pointer lines (full stanzas in `archive/SUMMARY-2026-10-18-pre-day246-dream.md`)
 - PROVE 246: as above. The PROVE.md wording "pairs Thm 6 allows" was wrong (Thm 6 is an aggregate over ν); "762/762" = 408 allowed nonzero + 354 non-allowed zero. Control: the q=0 F-system vanishes exactly on the separator (∅,{3},{1,2,4}) H12.

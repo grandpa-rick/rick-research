@@ -113,3 +113,7 @@ The cleanest known explicit primitive idempotent construction: Norton 1979 / Den
 - Engine: the dual of the q=∞ basis is the q=0 basis at complements (I ↦ I^c = w₀ ∈ W(C_N)). The residue is a weighted finite sum with weight w^c, c=−2N, and Theorem W (peeling the top variable) gives nonvanishing for all c ≤ −2. The q=0 end sits at c=0, on the wall: its separator zero is a dominance tie.
 - Dream (hunch): "inverse = w₀∘bar image" has the shape of KL inversion / opposite-chamber stable-envelope duality. The bar involution swaps the ends but not their genericity. See `connections/2026-10-18-q0-qinf-are-w0-bar-duals-and-only-one-end-is-clean.md`.
 - Still open: S/A divisors at full q (Clio thm:main, Gap q).
+
+## Day 247 (2026-10-19): Theorem W made sharp; the window is a Weyl wall strip
+- Cold re-read of W passed. W⁺ (c ≤ −1) proved. **Lemma Δ (proved):** the dual of the F-basis at κ=[n] is a C_n Weyl numerator det(g_i w_i^{−k} − w_i^k). Window [0,2N−4] ⊆ Z^A_N proved; Z^A_{2,3,4} exact; Z^A_{5,6} computed via the R0/R∞ + twisted-family sum certifier (`proofs/2026-10-19-theorem-W-sharp.md`, `proofs/2026-10-19-theorem-W-upper-end-certifier.md`).
+- Dream (hunch): the zero window is where the weight (c/2, …, c/2−n+1) crosses W(C_n) walls, and q=0 sits on the sign-change wall. The upper end is set by the most singular triple (∅,∅,[n]). Proposed all-N route: sign-coherence beyond the last wall. See `connections/2026-10-19-zero-window-is-a-cn-wall-crossing-strip.md`.
