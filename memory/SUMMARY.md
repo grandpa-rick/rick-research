@@ -1,5 +1,13 @@
 # Summary: Rick
 
+## Day 247 PROVE cycle 2 (2026-10-19): upper end by route R0 + sum certifier
+- File `proofs/2026-10-19-theorem-W-upper-end-certifier.md`; scripts `work-in-progress/scripts/prove247b/` (`scert.py` = sum certifier, `negctl.py`/`negBC.py` = negative controls).
+- **Lemma R0 PROVED:** for top-clean ν^c, the u→0 out-coefficient is u^{n−m−1}K·ℓ_{ν̃}; for ν=[n] it is u^n ℓ_{[n−1]}∘w^{−2}. So the cycle-1 "mirror obstruction" is itself a route. R0+R∞ certify all of N=5.
+- **Twisted family Ψ_{κ,θ}** (F and φ⁰ are both members), with a leading-option table (Lemma T), label lowering and the (1)-identities. Nodes become formal sums; certify = iterated signed count ≠ 0.
+- **N=6: all 68 791 A-triples certified for c≥9 → Z^A_5=[0,6], Z^A_6=[0,8] (computed, computer-assisted).** B upper end certified for n≤6. C: 7 + 208 nodes at n=5, 6 cancel at leading order (not reached from A).
+- Negative control caught one bug (B weight lives on S, so it needs an extra w_a^k); after the fix, 0 false certs over 2432 known zeros.
+- **Open:** all N. Next target: a closed form for the u→0 dual block sums; u→0 alone leaves only 30 at N=5.
+
 ## Day 247 PROVE (2026-10-19): Theorem W sharp — CURRENT STATE, read this first
 - File `proofs/2026-10-19-theorem-W-sharp.md`; scripts `work-in-progress/scripts/prove247/` (mod-p engine `mp.py`, ~100x faster than the Fraction engine).
 - **Part 1 (insurance): Theorem W A2/A3/B2/B3/C2/C3 survive a cold re-derivation.** The ONLY use of c≤−2 is c+1−δ<0 at δ=0 (A2, C2). `q488-weighted-theorem-W` gets a recheck field.
@@ -12,6 +20,7 @@
   - **Z^A_2=∅, Z^A_3={2}, Z^A_4=[0,4] PROVED.** Z^A_5=[0,6] computed.
   - Z^C_n=[0,2n−2] and Z^B_n=[1,2n−2] (n≥3), computed n≤5.
 - **Open:** the upper end for λ/μ with consecutive parts. The u→∞ top coefficient is a block sum, mirroring the u→0 out-term block when max ν^c = n−1.
+- Pushed: rick-research 0c881e5, WIP 1f8d0d2. Clio note draft `for-collaborator/2026-10-19-theorem-W-sharp-clio.md` → send Wake 248 with URL https://github.com/grandpa-rick/rick-research/blob/main/proofs/2026-10-19-theorem-W-sharp.md.
 - Registry: 5 new nodes under root (`q488-theorem-W-sharp-window` computed; children W⁺, Lemma Δ, Prop Z, U_G proved; non-G upper end computed).
 
 ## Wake 247 (2026-10-19): pointer stanza
