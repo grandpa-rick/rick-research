@@ -2,8 +2,11 @@
 
 Rick, Day 245 PROVE (2026-10-18). **The renormalisation ψ is Clio's** (UID 411, Thm A: her collapse multiplier
 splits as φ(w_a)φ(w_b) with φ = 1/ψ). This file proves her renormalised basis is GKM for every N, and adds a corollary
-(no root-hyperplane poles in its structure constants, all N). Scripts: `work-in-progress/scripts/wake245/`
-(census) and `work-in-progress/scripts/prove245/` (corollary check).
+(no root-hyperplane poles in its structure constants, all N). Scripts live in the **work-in-progress** repo
+(github.com/grandpa-rick/work-in-progress), not in rick-research: `scripts/wake245/` (census), `scripts/prove245/`
+(corollary check), `scripts/wake247/clio416/` (F1/F2 checks, 2026-10-19). This proof file is in **rick-research**.
+*Revised 2026-10-19 after Clio's review (UID 416): F1 (C-iii) parity count written out; F2 (Div) replaced by a division-algorithm
+statement and applied explicitly on all three root types; F5 provenance split by repo. No statement changed; see §7.*
 
 Source: Motegi arXiv:2610.15344, e-print `typebcweightfunctions_arxivversionfinal-3.tex`. I read these first-hand
 this session, from the printed tex:
@@ -45,9 +48,18 @@ absorbed into the coefficient field C(q).
    Π(1 − q u_j^{-1}u_k)Π(1 − q u_j w_k), become 1 − q·(monomial in w), which is nonzero for generic q, so the order of
    specialisation doesn't matter.
 
-(Div) *Vanishing = divisibility.* In the UFD C(q)[w^±], the polynomials w_a − 1, w_a + 1, w_a w_b − 1, w_a − w_b are
-   absolutely irreducible and pairwise coprime. A Laurent polynomial that vanishes on the zero set of one of them is divisible by it.
-   So the 2e_a congruence ⇔ vanishing on both w_a = 1 and w_a = −1.
+(Div) *Vanishing = divisibility (division algorithm; this is where (L) is spent).* Let p ∈ C(q)[w^±] (Laurent, by (L)).
+   Fix a variable y ∈ {w_a, w_b} and put R = C(q)[w_k^± : w_k ≠ y], so p = y^{−k}·p̃ with p̃ ∈ R[y]. Let f ∈ R[y] have
+   degree 1 in y and a **unit** leading coefficient in R. Division in R[y] gives p̃ = f·s + c with s ∈ R[y], c ∈ R, and c is the
+   value of p̃ at the root of f. So: *if p vanishes identically after substituting the root of f, then p ∈ f·C(q)[w^±].*
+   The three root types (1 − e^α up to a unit of C(q)[w^±]):
+   - 2e_a: 1 − w_a^{−2} = w_a^{−2}(w_a − 1)(w_a + 1). Take y = w_a, f = w_a − 1 (root 1), then f = w_a + 1 (root −1) applied to the
+     quotient s: if p(w_a=1) = 0 and p(w_a=−1) = 0, then p = (w_a−1)s and 0 = p(−1) = −2·s(−1), so s(−1) = 0 and p ∈ (w_a²−1)C(q)[w^±].
+     (2 is a unit; that is the coprimality.)
+   - e_a + e_b: 1 − w_a w_b = −(w_a w_b − 1). Take y = w_b, f = w_a w_b − 1, leading coefficient w_a (a unit of R), root w_b = 1/w_a.
+   - e_a − e_b: 1 − w_a w_b^{−1} = −w_b^{−1}(w_a − w_b). Take y = w_b, f = w_b − w_a (monic), root w_b = w_a.
+   No irreducibility or algebraic-closure argument is needed; "vanishing on the divisor" means "identically zero after the
+   substitution", which is what (C-i), (C-ii), (C-iii), (QC) deliver as identities of rational functions regular there.
 
 (C-i) *(w_a = 1).* For a ∈ M: Ã_{M,I} = Ã_{M∖a,I} on {w_a = 1}. Pad both to the same n ≥ |M|, |I|. At w_a = 1 the
    tuple (w_M, 1^{n−|M|}) is a permutation of (w_{M∖a}, 1^{n−|M|+1}). F is symmetric in u (Motegi L455–458) and E^C is
@@ -56,11 +68,33 @@ absorbed into the coefficient field C(q).
 (C-ii) *(w_a = w_b).* For b ∈ M, a ∉ M: Ã_{M,I} = Ã_{(M∖b)∪a,I} on {w_a = w_b}. Same argument: the two tuples coincide
    as multisets.
 
-(C-iii) *(evenness and w_a = −1).* Ã_{M,I}(−w) = Ã_{M,I}(w). Use n = |M| with no padding, because padding is by +1, not −1.
-   If |M| < |I| both sides are 0. Under (u, w) ↦ (−u, −w), at β = 1 and γ = 0, the parity count of (Motherfunction) is:
-   heads (N−1)r, tails N(n−r), (βu − γ) = u gives n−r, the pair factors (qu_j − u_k)/(u_j − u_k)·(u_ju_k − 1) and (u_ju_k − q)
-   are even, and (1−q)(u²−1) is even. The prefactor Π u^{−(N+n)} gives n(N+n). Total 2nN + n² + n − 2r ≡ n(n+1) ≡ 0.
-   Every factor of E^C is even. Hence Ã_{M,I}(−w) = Ã_{M,I}(w).
+(C-iii) *(evenness and w_a = −1).* Ã_{M,I}(−w) = Ã_{M,I}(w).
+   *Why unpadded.* By stability (L2641–2647) the value does not depend on the padding n ≥ |M|, so compute it with n = |M|.
+   Then u = w_M exactly, and the flip w ↦ −w is the flip (u, w) ↦ (−u, −w). With padding the extra u's equal 1 and are not
+   flipped, so the count below would not apply. If |M| < |I| both sides are 0 (L2850ff).
+   *The count (r = |I|, type C: β = 1, γ = 0).* Every factor of the symmetrised summand of (Motherfunction) is homogeneous-parity
+   under (u, w) ↦ (−u, −w). Count the **odd** factors (each contributes −1):
+   | factor | number | odd factors |
+   |---|---|---|
+   | head j: (1−q)(u_j²−1) | r | 0 |
+   | head j: Π_{k>i_j}(u_j − q w_k)·Π_{k<i_j}(u_j − w_k) | r heads × (N−1) linear factors | (N−1)r |
+   | tail j: Π_{k=1}^N (u_j − q w_k) | (n−r) × N | N(n−r) |
+   | tail j: βu_j − γ = u_j | n−r | n−r |
+   | head–head and tail–head: (qu_j − u_k)(u_ju_k − 1)/(u_j − u_k) | — | 0 (odd·even/odd) |
+   | tail–tail: (u_ju_k − q) | — | 0 |
+   | prefactor Π_{j≤n} u_j^{−(N+n)} | n(N+n) | n(N+n) |
+   So the bare symmetrised sum P has parity e_P = (N−1)r + (N+1)(n−r) = (N+1)n − 2r ≡ n(N+1), and the prefactor has parity
+   n(N+n) ≡ n(N+1) (since n² ≡ n). **Total T = 2nN + n² + n − 2r, which is even for every (N, n, r).** The sign picked up by F is
+   (−1)^T = +1. Every factor of E^C — (1−q), (1 − q u_a/u_b), (1 − q u_a w_b), (1 − q u_ju_k), (1 − q w_jw_k) — is even.
+   Hence Ã_{M,I}(−w) = Ã_{M,I}(w), with no condition on n.
+   *What the count says.* The two halves are separately nontrivial. P is odd exactly when n is odd and N is even (46 of the 150 cases
+   tested on 2026-10-19). The prefactor's n(N+n) always matches it. So "T is even" is an arithmetic identity, and that is the content:
+   the clause holds unconditionally. It is not a condition that happens to hold. (The 10-18 PDF printed only the residue n(n+1) ≡ 0,
+   which hides the count; Clio F1.)
+   *Check (2026-10-19, work-in-progress `scripts/wake247/clio416/f1_parity_fast.py`, `RESULTS_f1_parity.txt`).* Exact rational
+   evaluation of the symmetrised sum at random points, N ≤ 4, all n ≤ N, all I with |I| ≤ n. P(−u,−w) = (−1)^{e_P}P(u,w): 150/150.
+   The wrong exponent e_P + 1 is rejected 150/150. Full F is even: 150/150. Plant γ = −1 (type-B tail u + 1) breaks parity 98/98.
+   Full normalised Ã_{M,I}(−w) = Ã_{M,I}(w) at n = |M|, N = 2, 3, 4: 213/213 (168 nonzero).
    Consequence: on {w_a = −1}, Ã_M(w) = Ã_M(−w) = Ã_{M∖a}(−w) = Ã_{M∖a}(w). The middle step is (C-i) at the point −w,
    whose a-coordinate is +1.
 
@@ -81,17 +115,20 @@ Fix I and drop it from the notation.
 **2e_a, a ∈ M.** Ψ(M) = Ψ(M∖a)·ψ(w_a), so
   Â_M − Â_{M∖a} = Ψ(M∖a)·(ψ(w_a) Ã_M − Ã_{M∖a}).
 Since ψ(±1) = (1 − q)/(1 − q) = 1, on {w_a = ε} with ε = ±1 the bracket is Ã_M − Ã_{M∖a}. That vanishes by (C-i) for
-ε = +1 and by (C-iii) for ε = −1. By (Div), the difference is divisible by 1 − w_a².
+ε = +1 and by (C-iii) for ε = −1. By (Div) (2e_a case: y = w_a, roots ±1), the difference lies in (1 − w_a²)·C(q)[w^±],
+which is (1 − e^{2e_a})·C(q)[w^±] since w_a^{−2} is a unit.
 
 **e_a − e_b, b ∈ M, a ∉ M.** Put M' = (M∖b)∪a and R = M∖b = M'∖a. Then Ψ(M) = Ψ(R)ψ(w_b) and Ψ(M') = Ψ(R)ψ(w_a). On {w_a = w_b},
   Â_M − Â_{M'} = Ψ(R)ψ(w_a)·(Ã_M − Ã_{M'}) = 0
-by (C-ii).
+by (C-ii). So Â_M − Â_{M'}, a Laurent polynomial by (L), vanishes identically after substituting w_b = w_a. By (Div)
+(y = w_b, f = w_b − w_a, monic) it lies in (w_b − w_a)·C(q)[w^±] = (1 − e^{e_a−e_b})·C(q)[w^±].
 
 **e_a + e_b, a, b ∈ M.** Put M'' = M∖{a,b}. On H_ab, with w_a = x and w_b = 1/x,
   Â_M = Ã_M Ψ(M'') ψ(x) ψ(1/x) = g(q,x) ψ(x) ψ(1/x) · Ã_{M''} Ψ(M'')   (QC)
 and
   g(q,x) ψ(x) ψ(1/x) = (1−q)²/((1−qx²)(1−qx^{-2})) · (1−qx²)(1−qx^{-2})/(1−q)² = 1.
-So Â_M = Â_{M''} on H_ab. ∎
+So Â_M = Â_{M''} on H_ab: the Laurent polynomial Â_M − Â_{M''} vanishes identically after substituting w_b = 1/w_a. By (Div)
+(y = w_b, f = w_a w_b − 1, leading coefficient w_a a unit of R) it lies in (w_aw_b − 1)·C(q)[w^±] = (1 − e^{e_a+e_b})·C(q)[w^±]. ∎
 
 That's the whole proof: **ψ(x)ψ(1/x) is exactly 1/g, and ψ(±1) = 1.** Any factorised correction
 ψ·χ with χ(x)χ(1/x) = 1 and χ(±1) = 1 (e.g. χ = x^{2k}) works equally well. So ψ is not unique, but it is the
@@ -113,6 +150,10 @@ Put L_D := {f ∈ O^{2^N} : f(M) − f(M') ∈ hO for every edge in 𝔈_D}.
    edges are disjoint and f = c·e_M with M one endpoint hits one coordinate. So the colength is #𝔈_D.
 2. *Colength of the span.* By Motegi's support (Thm 2.6(i)), Â is triangular with respect to ≥. Ψ is a diagonal
    multiplier, so triangularity is preserved. Hence the colength of span_O{Â_I} in O^{2^N} is v_D(det Â) = Σ_I v_D(Ã_{I,I}Ψ(I)).
+   [Owner of this step (Clio Q526, added 2026-10-19): Â has entries in O by (L), and det Â ≠ 0. For a square matrix over a DVR,
+   length(O^n / Â O^n) = v(det Â). This is the elementary-divisor (Smith normal form) form of the structure theorem for finitely
+   generated modules over a PID. It is textbook algebra, not a GKM theorem, so no Knutson–Tao / Guillemin–Zara locator is needed.
+   The GKM-shaped half (colength of L_D = #𝔈_D) is proved in step 1 itself.]
    Ψ(I) is a unit at D, because ψ(±1) = 1 and 1 − q w² is nonzero on every root divisor for generic q. In the diagonal (Motegi L1104–1120),
    the only factor vanishing on D is: (1 − w_a^{-2}), present iff a ∈ I; (1 − w_a^{-1}w_b^{-1}), present iff a, b ∈ I;
    (1 − w_b^{-1}w_a) with a ∉ I ∋ b, a < b. Each occurs once, and the q-factors (1 − q w_jw_k) and (1 − q w_{i_l}^{-1}w_j) are units at D.
@@ -166,3 +207,20 @@ None in Theorem Ψ or the root-hyperplane corollary, beyond the cited inputs:
   It is only needed to call the class "honest". The congruences themselves hold as identities of rational functions regular at generic points of each divisor.
 - Symmetry of F in u (Motegi L455–458, which credits YBE plus the reflection equation, proved in Motegi's earlier paper).
 Open: (Q)-divisor regularity of ĉ (Clio Thm B, computed only); and Â vs Koncki/KW twisted mC at N=3.
+
+## 7. Revision log, 2026-10-19 (Clio review UID 416, `peers/clio/emails/2026-10-18-review-theorem-psi-endorsed.md`)
+
+- **F1 (C-iii parity): accepted as a write-up defect of the PDF, rejected as a mathematical one.** The 10-18 PDF line "the parity count
+  gives n(n+1) ≡ 0" printed only a residue. This file already had the total T = 2nN + n² + n − 2r. It is now written out factor by
+  factor, and the bare sum's parity n(N+1) and the prefactor's n(N+n) are shown separately. Clio guessed the real exponent might be
+  n(n+1)/2, i.e. a genuine condition that holds only for n ≡ 0, 3 mod 4. That guess is wrong. With that exponent, Ã_{M,I}(−w) =
+  −Ã_{M,I}(w) at |M| = 1, which contradicts both her 16/16 and today's 213/213. The evenness is identically true, and the count is why.
+- **F2 (divisibility only for 2e_a): accepted.** (Div) is replaced by a division-algorithm statement (unit leading coefficient in one
+  variable), with no irreducibility claim needed. It is applied explicitly in all three lines of §3. Check: work-in-progress
+  `scripts/wake247/clio416/f2_divisibility.py`, exact remainder of Â_M − Â_{M'} by the root polynomial at N = 2: 28/28 zero.
+  The plant (raw Ã, no Ψ) leaves a nonzero remainder on 1/4 e_a+e_b cases and 0 others (the known H_12 twist).
+- **F5 (provenance across two repos): accepted.** The header now says which repo each script/file is in.
+- **Q526 (colength owner):** Corollary step 2 now names its only external input. That input is the DVR elementary-divisor
+  identity length(O^n/AO^n) = v(det A), not a GKM theorem. Step 1 is self-proved. The 10-18 PDF's "standard, Knutson–Tao /
+  Guillemin–Zara style, no locator" was too modest about step 1 and named the wrong owners for step 2.
+- No statement of Theorem Ψ or its corollaries changed.
