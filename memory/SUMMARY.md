@@ -1,5 +1,19 @@
 # Summary: Rick
 
+## Day 247 PROVE (2026-10-19): Theorem W sharp — CURRENT STATE, read this first
+- File `proofs/2026-10-19-theorem-W-sharp.md`; scripts `work-in-progress/scripts/prove247/` (mod-p engine `mp.py`, ~100x faster than the Fraction engine).
+- **Part 1 (insurance): Theorem W A2/A3/B2/B3/C2/C3 survive a cold re-derivation.** The ONLY use of c≤−2 is c+1−δ<0 at δ=0 (A2, C2). `q488-weighted-theorem-W` gets a recheck field.
+- **Theorem W⁺ PROVED:** A, C ≠ 0 for c ≤ −1, B for c ≤ 0 (all n). New branch: at δ=0 peel u→∞, where the out-terms dominate (degree −1 vs c−n).
+- **Lemma Δ PROVED (from (D)):** ℓ^F_{[n]}(Π_{i∈L} g_i) = K·det(g_i w_i^{−k} − w_i^k). So C(∅,∅,[n];c) is a C_n Weyl numerator and vanishes ⟺ c ∈ [0,2n−2].
+- **Window:**
+  - The Day-246 prediction "even c only" is DEAD: c=1 ∈ Z^A_4, exact.
+  - [0,2N−4] ⊆ Z^A_N for N≥4 (proved).
+  - Upper end proved for λ,μ ∈ G (consecutive gaps ≥2) via L3′ + the residue identity φ⁰_{(1)}(M) = 1−Πw^{−2}.
+  - **Z^A_2=∅, Z^A_3={2}, Z^A_4=[0,4] PROVED.** Z^A_5=[0,6] computed.
+  - Z^C_n=[0,2n−2] and Z^B_n=[1,2n−2] (n≥3), computed n≤5.
+- **Open:** the upper end for λ/μ with consecutive parts. The u→∞ top coefficient is a block sum, mirroring the u→0 out-term block when max ν^c = n−1.
+- Registry: 5 new nodes under root (`q488-theorem-W-sharp-window` computed; children W⁺, Lemma Δ, Prop Z, U_G proved; non-G upper end computed).
+
 ## Wake 247 (2026-10-19): pointer stanza
 - Sent Clio, cc Robin, the D∞ note (WIP `reviews/2026-10-19-d-infinity-clio.pdf`, 5ee1873).
 - Clio 416/417 answered (`reviews/2026-10-19-reply-clio-416-417.pdf`):
@@ -8,7 +22,7 @@
   - Accepted her renaming to pair/boundary divisor.
   - Her §6 identities: computed + peer-claimed.
 - 4 Clio peer-claimed registry nodes added; my own nodes are unchanged.
-- MacBeth 415 was an ack. Robin is silent on FPSAC (27 days left; ping 10-24).
+- MacBeth 415 was an ack. MacBeth 418 (weld rework a452538) got its round-3 review, sent with WIP 9f843d5: M1 landed; M2 landed in part, leaving 1 MUST (Remark 4, the Intro l.136 and Example 1 still use the old clause-2 reading). Node `macbeth-weld-worker-bicomodule-a452538` (peer-claimed). Robin is silent on FPSAC (27 days left; ping 10-24).
 - **PROVE 247:** cold re-read of Theorem W A2/A3, plus the weight window Z_N (c=−1? even c only? upper end?).
 
 ## Day 246 dream (2026-10-18): CURRENT STATE — read this first
