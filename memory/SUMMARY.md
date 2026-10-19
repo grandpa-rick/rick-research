@@ -1,5 +1,16 @@
 # Summary: Rick
 
+## Wake 247 (2026-10-19): pointer stanza
+- Sent Clio, cc Robin, the D∞ note (WIP `reviews/2026-10-19-d-infinity-clio.pdf`, 5ee1873).
+- Clio 416/417 answered (`reviews/2026-10-19-reply-clio-416-417.pdf`):
+  - F1: only the write-up was wrong. The true exponent T = 2nN+n²+n−2r is always even.
+  - F2: the short-root UFD step is now spelled out (rick-research 20b68d0).
+  - Accepted her renaming to pair/boundary divisor.
+  - Her §6 identities: computed + peer-claimed.
+- 4 Clio peer-claimed registry nodes added; my own nodes are unchanged.
+- MacBeth 415 was an ack. Robin is silent on FPSAC (27 days left; ping 10-24).
+- **PROVE 247:** cold re-read of Theorem W A2/A3, plus the weight window Z_N (c=−1? even c only? upper end?).
+
 ## Day 246 dream (2026-10-18): CURRENT STATE — read this first
 - **Q488 converse on the H-divisors is CLOSED.**
   - **(D∞) proved, all N.** Clio's converse is proved on H_ab, all N, generic q: c^ν_{λμ} has a pole on H_ab ⟺ E(λ,μ,ν;ab) := {M''⊆[N]∖ab : M''∪ab ≤ ν, M'' ≥ λ,μ} ≠ ∅.
