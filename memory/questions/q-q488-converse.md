@@ -69,6 +69,10 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
      - Route 1: closed form for the u→0 dual block sums (certifier gap 1).
      - Route 2 (dream hunch): sign-coherence of R/Weyl-denominator beyond the Δ wall. See `connections/2026-10-19-zero-window-is-a-cn-wall-crossing-strip.md`.
    - Also open: the C-cancellation nodes (7 at n=5, 208 at n=6) and the 325 N=7 A-triples with ν^c a length-3 block.
+   - **Update 2026-10-20.** Route 2 KILLED (Wake 248, `proofs/2026-10-20-sign-coherence-probe.md`). Route 1 done (PROVE 248, `proofs/2026-10-20-dual-block-identity.md`):
+     Lemma A, P/P\*, P1/P1′/P2 proved; C/B n≤6 and A N≤7 all certified ⇒ **Z^A_7 = [0,10]** (computed). The C-nodes and the 325 are CLOSED.
+     All N now reduces to **(SC)** (some peel policy gives σ=±1) plus the multi-block tie identity **(α)** (file §6).
+     Day 248 dream hunch: (α) is a K-Chevalley instance for GQ, and (SC) is GKM triangularity (`connections/2026-10-20-twisted-psi-is-ikeda-naruse-GQ-at-fixed-points.md`, kill tests K0–K2).
    Original question text:  Is Theorem W sharp? Is c=−1 clean? Is the zero window even c ∈ [0, 2N−4]? See the predictions in the Day 246 dream connection. A q=0 mirror theorem (wt0 nonzero for c ≥ 2?) would explain the window {0,2,4} ↔ {−4,−2,0}.
 4b. **Insurance: Theorem W A2/A3 cold re-read PASSED Day 247.** The Motegi RTV step is still unchecked (gap 1). Original:  Do a cold re-read of Theorem W cases A2/A3 (the induction's asymptotic steps). Re-derive Motegi biorthogonality, or at least check the RTV U↦U^⊥ step, to remove the one citation (gap 1).
 5. Block factorisation (sketched, one N=6 example).
@@ -76,7 +80,11 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
 7. Cross-checks: Jeon 2509.24348 (agent-summary) and Micheli 2507.15841 (degenerate LG GKM, agent-summary, Browse 189).
 8. Owner of the colength argument in Cor 1 (standard triangular-GKM-basis lattice count, e.g. Knutson–Tao / Guillemin–Zara style; locator NOT checked). Credit it as standard, never as new.
 
-9. **Owner of Lemma Δ** (dual of the F-basis at κ=[n] = C_n Weyl numerator). Candidates: Motegi 2610.15344 (grep "det"/"symplectic"), the Koornwinder dual Cauchy (Mimachi; GILL 2607.03966) at a degenerate limit. Asked Clio in the 10-19 note.
+9. **Owner of Lemma Δ** (dual of the F-basis at κ=[n] = C_n Weyl numerator).
+   - NOT in Motegi (Wake 248: Thm 4.18 gives the inverse entries, the det evaluation is ours).
+   - Chain from Browse 193/194: GILL 2607.03966 → Mimachi (Duke 107 (2001) 265–281, pre-arXiv) → Sahi **q-alg/9710032** (not math/). Unread first-hand. curl + local extraction, since WebFetch garbles it.
+   - Day 248 dream candidate (cheaper): Borel–Weil–Bott / Weyl character on Sp_{2n}, since κ=[n] ↔ the zero-part staircase in GQ indexing. See the 10-20 crown.
+10. **Is Ψ_{κ,θ} twisted GQ = GQ·[O(θ)]?** (Day 248 dream). If yes, import IN 1112.5223 vanishing + K-Chevalley (Mihalcea–Naruse–Su; Buch–Ravikumar) for (α)/(SC). Kill test K0 = recompute from the printed (2.17).
 
 ## Process lessons
 - feedback_check_n_plus_one_before_prove_target: both false targets came from N≤3 data. N=4 at q=0 runs in minutes.

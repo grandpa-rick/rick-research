@@ -117,3 +117,10 @@ The cleanest known explicit primitive idempotent construction: Norton 1979 / Den
 ## Day 247 (2026-10-19): Theorem W made sharp; the window is a Weyl wall strip
 - Cold re-read of W passed. W⁺ (c ≤ −1) proved. **Lemma Δ (proved):** the dual of the F-basis at κ=[n] is a C_n Weyl numerator det(g_i w_i^{−k} − w_i^k). Window [0,2N−4] ⊆ Z^A_N proved; Z^A_{2,3,4} exact; Z^A_{5,6} computed via the R0/R∞ + twisted-family sum certifier (`proofs/2026-10-19-theorem-W-sharp.md`, `proofs/2026-10-19-theorem-W-upper-end-certifier.md`).
 - Dream (hunch): the zero window is where the weight (c/2, …, c/2−n+1) crosses W(C_n) walls, and q=0 sits on the sign-change wall. The upper end is set by the most singular triple (∅,∅,[n]). Proposed all-N route: sign-coherence beyond the last wall. See `connections/2026-10-19-zero-window-is-a-cn-wall-crossing-strip.md`.
+
+## Day 248 (2026-10-20): the certifier was doing K-theoretic Schubert calculus of LG by hand
+- PROVE 248 (`proofs/2026-10-20-dual-block-identity.md`): Lemma A (twisted Ψ = Σ_H S₀(H)·alternant/V), the block collapse P/P\*, ties P1/P1′/P2 (all proved). Z^A_7 = [0,10] (computed). All N ⇒ (SC) + (α).
+- Wake 248: the sign-coherence route was killed (computed).
+- Dream 248 (hunch): unfolded against Motegi Def 2.3 (= Ikeda–Naruse 1112.5223 (2.17)) with X=1/x, B=w, the T⁰ summand IS the GQ summand, so Ψ_{κ,0}(M) = GQ_{κ−1} at the fixed point M.
+  Twists ≈ line-bundle characters, so (α) is plausibly K-Chevalley and (SC) is GKM triangularity.
+  Map: `connections/2026-10-20-twisted-psi-is-ikeda-naruse-GQ-at-fixed-points.md`.

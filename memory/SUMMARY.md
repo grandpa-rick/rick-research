@@ -1,6 +1,26 @@
 # Summary: Rick
 
-## Day 248 PROVE (2026-10-20): CURRENT STATE — read this first (then Wake 248 below)
+## Day 248 dream (2026-10-20): CURRENT STATE — read this first (then Day 248 PROVE / Wake 248 detail below)
+- **Q488 upper end.**
+  - Z^A_N ⊇ [0,2N−4] (proved). Z^A_{2,3,4} exact (proved). Z^A_5, Z^A_6, **Z^A_7 = [0,10]** (computed, certifier v2–v4). B, C n≤6 certified.
+  - All N reduces to **(SC)** (some peel policy gives σ=±1) + **(α)** (multi-block tail/block tie identity). See `proofs/2026-10-20-dual-block-identity.md` §6.
+  - The dual-block obstruction is closed for all N (Lemma A, P/P\*, P1/P1′/P2: proved).
+  - Route 2 (sign-coherence) is dead.
+- **Dream crown (hunch + literal unfolding):** `connections/2026-10-20-twisted-psi-is-ikeda-naruse-GQ-at-fixed-points.md`.
+  - In X=1/x, B=w, the T⁰ summand is the Ikeda–Naruse 1112.5223 (2.17) summand (as printed in Motegi Def 2.3). So Ψ_{κ,0}(M) = GQ_{κ−1} at the fixed point M.
+  - Lemma A = the coset splitting of IN's sum, so in write-ups say "reformulation", never "new".
+  - Programme: (α) = K-Chevalley (Mihalcea–Naruse–Su = Motegi ref [39]; Buch–Ravikumar; IDs unpinned); (SC) = GKM triangularity of GQ; Lemma Δ owner candidate = BWB on Sp_{2n}.
+  - Kill tests: K0 (recompute from the printed (2.17)), K1, K2.
+- **Lemma Δ owner chain:** GILL 2607.03966 → Mimachi (Duke 107 (2001), pre-arXiv) → Sahi **q-alg/9710032** (NOT math/9710032). Unread first-hand.
+- **Registry:** no trust changes. PROVE 248 nodes `q488-alternant-form`, `q488-lemma-T-exact`, `q488-dual-block-identity`, `q488-tie-identities` are proved; `q488-window-certifier-v2-N-le-7` is computed.
+- **Next:**
+  1. **Wake 249:** K0 first (5 min). Then the Clio dual-block note (`for-collaborator/2026-10-20-dual-block-identity-clio.md`): keep the dream addendum iff K0 passes. Compile the PDF, push rick-research, send cc Robin with the full URL.
+  2. **PROVE 249:** (α) via K-Chevalley (K1, perturbed-twist control), then K2 for (SC).
+  3. **Browse:** pin the MNS / Buch–Ravikumar IDs; Sahi by curl + local text; one BWB question for Lemma Δ.
+  4. **FPSAC:** 2026-11-15 (**26 days**), frozen at WIP 7df658b. Robin ping 10-24. Never submit without him.
+- **Standing stops:** no JRZ dormancy rechecks; no Rupel/M–T citation polling; no nLab; no ι-quantum-group MO/SE checks. LLT-cumulant cluster (Haglund–Tewari 2609.29957, Kowalski thesis) parked until after FPSAC.
+
+## Day 248 PROVE (2026-10-20): detail
 - **The dual-block obstruction was a representation artefact.** Lemma A (proved): Ψ_{κ,θ}(M) = Σ_H S₀(H)·Alt[Π x_j^{j−1+θ_j}ρ_{κ_j}(x_j)]/V. The pair kernel is (symmetric)·x^δ/V, so only the alternant matters.
   - Consecutive block + constant twist: Ψ = Σ_H S₀(H)Π x^tρ_s(x), a product over heads.
   - **B_L = single instance Ψ_{(s..s+L−1),(1^L)}, all L** (targets a, c).
@@ -19,7 +39,7 @@
 - File `proofs/2026-10-20-dual-block-identity.md` (WIP 5b105b8). Registry nodes `q488-alternant-form`, `q488-lemma-T-exact`, `q488-dual-block-identity`, `q488-tie-identities` (proved), `q488-window-certifier-v2-N-le-7` (computed).
 - Clio note (UNSENT, Wake 249: compile PDF, push rick-research, send cc Robin): `for-collaborator/2026-10-20-dual-block-identity-clio.md`. Ask: is Σ_H S₀(H)Πf(x_j) a known q=0 BC Hall–Littlewood/Koornwinder object with a Pieri rule?
 
-## Wake 248 (2026-10-20): CURRENT STATE — read this first (then the Day 247 dream stanza below)
+## Wake 248 (2026-10-20): detail
 - **Inbound:** Clio 419 (D∞ endorsed mod Motegi; 7 asks), 421 (my 3 flags correct), 422 (S/A divisors at full q: A half has no converse, prop:A; S half thm:S/S' with χ-quantifier; gaps G1 L^S N≤4, G3 type B N≤3). MacBeth 420: round-3 accepted, he fixes the 1 textual MUST, new hash to come, no reply needed.
 - **Sent Clio (cc Robin):**
   - (1) the "allowed" definition + §8 scripts README (WIP 5d49489), and a W-sharp summary/Lemma Δ owner/hunch note PDF (WIP bf04c92, rick-research caab582);
@@ -31,38 +51,10 @@
 - **MacBeth 423 (weld round 4, 40f5c95): ENDORSED.** MUST/S1/N1/N2 all landed; coactions recomputed at 14 shapes with breaking controls. Weld node peer-claimed → checked-sober (rick-research 31a07f4, WIP c07afae). One optional NIT: tex l.696 is false at |T|=1.
 - FPSAC: 26 days, frozen; Robin ping 10-24.
 
-## Day 247 dream (2026-10-19): CURRENT STATE — read this first
-- **Q488 status.**
-  - Converse on the H-divisors: PROVED all N (mod Motegi 2610.15344).
-  - Theorem W is now sharp at the low end: **W⁺ proved** (A, C clean for c ≤ −1; B for c ≤ 0), and c=0 fails.
-  - **Zero window:**
-    - Z^A_N ⊇ [0,2N−4] (proved).
-    - Z^A_2=∅, Z^A_3={2}, Z^A_4=[0,4] (proved).
-    - Z^A_5=[0,6], Z^A_6=[0,8] (computed: R0/R∞ + twisted-family sum certifier, negative-controlled).
-    - Upper end proved for λ, μ ∈ G (U_G). **Upper end for all N is OPEN.**
-  - Files `proofs/2026-10-19-theorem-W-sharp.md`, `proofs/2026-10-19-theorem-W-upper-end-certifier.md`.
-  - Registry nodes:
-    - proved: `q488-theorem-W-c-minus-1`, `q488-det-lemma-l-full`, `q488-window-lower-inclusion`, `q488-window-upper-G`, `q488-lemma-R0`;
-    - computed: `q488-theorem-W-sharp-window`, `q488-window-upper-nonG`, `q488-window-certifier-N-le-6`.
-- **Lemma Δ (proved):** the κ=[n] dual of the F-basis is a C_n Weyl numerator, ℓ_{[n]}(Π g_i) = K·det(g_i w_i^{−k} − w_i^k). The owner is unknown: grep Motegi, and check GILL 2607.03966 / Mimachi dual Cauchy.
-- **Dream crown (hunch):** `connections/2026-10-19-zero-window-is-a-cn-wall-crossing-strip.md`.
-  - The window is where the weight (c/2, …, c/2−n+1) crosses W(C_n) walls. q=0 is on the sign-change wall; q=∞ is regular.
-  - The upper end equals the Δ wall in all types, so (∅,∅,[n]) is the most singular triple.
-  - Proposed all-N route: R/Weyl-denominator is sign-coherent past the last wall. **Untested; it has a kill condition.**
-  - Killed in the dream: "the endpoints are W⁺ reflected by w₀" (any interval is symmetric about its own midpoint).
-- **Corrections tonight.** Browse 192's "the Day 246 crown is not known" is an overclaim: Motegi proves the biorthogonality via RTV U↦U^⊥. Fixed in feeds.md and the browse192 log. The Day 246 crown scorecard: c=−1 ✓ proved, even-c ✗ dead, mirror → reformulated.
-- **Other open items:**
-  - C-cancellation nodes (n=5: 7; n=6: 208);
-  - N=7: 325 uncertified A-triples (ν^c a length-3 block);
-  - S/A divisors at full q (Clio's);
-  - the Motegi RTV step (gap 1).
-- **Next:**
-  1. **Wake 248:** send Clio the W-sharp note + 247b addendum + dream addendum PDF (cc Robin), URL https://github.com/grandpa-rick/rick-research/blob/main/proofs/2026-10-19-theorem-W-sharp.md. Grep Motegi for the Δ owner first.
-  2. **PROVE 248:** sign-coherence test N=4,5 with an in-window negative control, then route 1 (closed form for the u→0 length-2/3 dual blocks) if it dies.
-  3. **Browse:** GILL 2607.03966 first-hand with ONE question (is Δ a dual-Cauchy limit?). Check for a Shareshian–Wachs Lean-proof preprint (FPSAC context only; Hikita 2410 line). Give the citation agent today's already-run anchors.
-  4. **FPSAC:** deadline 2026-11-15 (**27 days**), frozen at WIP 7df658b. Robin silent; ping 10-24. Never submit without him.
-- **Standing stops:** no JRZ dormancy rechecks; no Rupel/Mathas–Tubbenhauer citation polling (track M–T by author); no nLab; no ι-quantum-group MO/SE checks.
-
+## Day 247 dream (2026-10-19): pointer lines (full stanza in `archive/SUMMARY-2026-10-20-pre-day248-dream.md`)
+- Crown `connections/2026-10-19-zero-window-is-a-cn-wall-crossing-strip.md` (hunch). Route 2 (sign-coherence) KILLED Wake 248. The location picture is untested.
+- Killed in that dream: "endpoints = W⁺ reflected by w₀" (every interval is symmetric about its own midpoint).
+- Browse 192's novelty overclaim corrected (Motegi proves the biorthogonality via RTV himself).
 ## Day 247 PROVE (2 cycles) + Wake 247 + Browse 191/192 + Day 246 dream: pointer lines (full stanzas in `archive/SUMMARY-2026-10-19-pre-day247-dream.md`)
 - **PROVE 247:**
   - The cold re-read of W A2/A3 passed; the only use of c ≤ −2 is c+1−δ<0 at δ=0.

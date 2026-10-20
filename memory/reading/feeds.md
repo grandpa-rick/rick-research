@@ -1,3 +1,36 @@
+## Browse 193 updates (2026-10-20)
+
+## Browse 194 updates (2026-10-20, second cycle today)
+
+### Lemma Δ owner-hunt corrected + narrowed: Sahi's correct ID is q-alg/9710032 (not math/9710032); three Browse-193 "leads" were dedup misses
+**ID fix:** Sahi's duality paper is **`arXiv:q-alg/9710032`** — the `math/` prefix 404s outright (old-style arXiv IDs need the real subject-class prefix). Fixed in `sources.json` (key renamed). **Dedup misses resolved without further API calls** (plain title-grep against `sources.json` settled all three in seconds): Di Francesco–Kedem "Duality and Macdonald difference operators" = already-filed `2303.04276`; McSwiggen–Sahi "Opdam-Cherednik kernel..." = already-filed `2606.15185`; the "4 new MMP-titled papers" from DFK 1704.00154's citers ARE the 4 already-known MMP-cluster IDs (2607.09203, 2602.21120, 2601.19878, 2601.10500), just title-matched instead of ID-matched. Chain stands at three links, none read first-hand yet: GILL (2607.03966) → Mimachi (Duke 2001, pre-arXiv, now filed as `mimachi-2001-duke`) → Sahi `q-alg/9710032`. Next step is an actual equation-number read, not more citation-chasing — WebFetch garbles the Sahi PDF twice now, try direct curl + local extraction, or the EMIS mirror.
+
+### LLT-cumulant thread gets its clean 2026 anchor paper, independently reconfirmed: Haglund–Tewari 2609.29957
+Theta operators at t=1 → single-row Macdonald cumulants are LLT-positive (vertical-strip LLT sums over plane trees), generalizing Kowalski's melting-lollipops spanning-tree result to the Theta-operator setting. Already filed (Browse 175); this session's independent arXiv+web agents both converged on it as *the* live follow-up to Dołęga–Kowalski, with Tewari's Oct 1 Waterloo talk as corroboration. Kowalski's actual IMPAN thesis PDF remains unobtainable online (directory 404s on every filename guess) — Alexandersson's referee report is the best available substitute, and names three open threads (chromatic-symmetric-function analogue, Tutte/Lorentzian-matroid link, Hall–Littlewood-flavored Schur expansion) worth remembering if this cluster goes live.
+
+### MO/SE: fully quiet again, two reusable tooling notes
+Confirmed quiet across all four theme clusters, independently of Browse 193's identical finding. New for the standing-tooling notes: MO's `crystals` tag is a false-positive cluster (crystalline cohomology, not Kashiwara/Lusztig crystal bases) — skip it; the `macdonald-polynomials` tag has zero questions on MO — use plain keyword search instead.
+
+### Two new unconfirmed-ID leads, Path 1 adjacent
+Grantcharov, "Deformation theory of the DAHA of type (C_n^∨,C_n)" (2026, BC_n-flavored, low priority) and Aliniaeifard–van Willigenburg, "A universal framework for Hopf algebras in combinatorics" (2026, on-genre for Seed Path 1). Both filed in `sources.json` without confirmed arXiv IDs — resolve before relying on them.
+
+## Browse 193 updates (2026-10-20)
+
+### Lemma Δ owner-hunt: converges on Mimachi (Duke 2001, pre-arXiv) via GILL's own citation, with Sahi q-alg/9710032 as the accessible arXiv route (ID corrected Browse 194 — see above)
+GILL 2607.03966's abstract explicitly attributes its dual-Cauchy formula for Koornwinder polynomials to **Mimachi** ("A duality of Macdonald–Koornwinder polynomials...", Duke Math. J. 107 (2001), 265–281) — so GILL is a *consumer*, not the owner, of the BC_n duality Rick's Lemma Δ (κ=[n] dual of the F-basis = C_n Weyl numerator, `det(g_i w_i^{-k} - w_i^k)` shape) might match. Mimachi's paper predates arXiv entirely, which explains every past citation-API failure in this corner. Secondary sources (Rains) suggest Sahi's duality paper restates the same duality and IS on arXiv — top candidate for a first-hand read next cycle. Not yet verified against an equation number on either paper.
+
+### Semantic Scholar sustained 429 again, batch + forward-search endpoints hit hardest
+Single-paper reverse-citation pulls (DFK 1505.01657, DFK 1704.00154, Motegi 2610.15344) succeeded this session with normal 15-20s backoff. But the batch arXiv-ID lookup and both forward searches (Koornwinder/GKM; C_n Weyl determinant/dual-Cauchy) failed on *every* attempt across two full retry rounds (~10 min, 15s→60s backoff) and were abandoned per the no-grinding rule. Pattern: throttling seems to compound specifically on batch/search-type calls stacked in the same window, not single-paper GETs. Next cycle: run the stuck 3 calls FIRST, before any other S2 traffic.
+
+### MMP (Mironov-Morozov-Popolitov) twisted-Cherednik/DIM cluster gains a confirmed new member, one unconfirmed wave
+**2609.01517** ("Non-symmetric triads and Baker-Akhiezer functions," Sept 2026) confirmed new — extends the triad structure to non-symmetric Macdonald polynomials, (N!)² triads, N=2 worked out. No Hopf/coproduct content. Separately, DFK 1704.00154's citer list surfaced 4 more MMP-titled 2026 papers ("Cherednik system: eigenfunctions at generic eigenvalues," "Generating twisted Cherednik eigenfunctions," "Symmetric polynomials: DIM integrable systems versus twisted Cherednik systems," "Twisted Cherednik spectrum as a q,t-deformation") whose arXiv IDs could NOT be cross-checked against the known list (429-blocked) — unconfirmed as genuinely new vs. already-filed, flagged for next cycle. (2512.24811 was *not* new, despite being flagged as such mid-session — it's been on file since Browse 154; corrected here, not a real dedup miss worth a feedback memory, just noted.)
+
+### LLT-cumulant cluster (Haglund-Tewari / Dołęga-Kowalski) actively on the seminar circuit this month, still correctly parked post-FPSAC
+Two live October 2026 talks found: Tewari at Waterloo (Oct 1, Theta-operators/LLT-positivity, companion to 2609.29957) and Dołęga at KTH (cumulant-positivity survey). New substantive expository find: **Maciej Kowalski's PhD thesis (IMPAN)**, full write-up including a "melting lollipops" LLT-cumulant positivity result (positive sum over spanning trees) answering an open question from Dołęga-Kowalski 2112.12676. No action needed before FPSAC ships — correctly queued, not escalated.
+
+### MO/SE/nLab: fully quiet cycle on all four theme clusters
+Zero new threads on Koornwinder/BC-Macdonald, stable-envelope/GKM/Lagrangian-Grassmannian-C, quasi-shuffle/Feigin/ι-quantum-group (re-confirmed settled-negative), or quantum-toroidal/DIM/Macdonald-process. No nLab page exists for any of: stable envelope, Koornwinder polynomial, quantum toroidal algebra (the last has literally zero mentions anywhere on nLab, not even in passing). FPSAC 2027 deadline reconfirmed unchanged at 2026-11-15 via raw curl (two cosmetic dead-template artifacts noted, not real changes).
+
 ## Browse 189 updates (2026-10-18)
 
 ### Literature finally has a structural (not content) match for the Q488 GKM world: Micheli 2507.15841
