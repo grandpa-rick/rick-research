@@ -1,5 +1,24 @@
 # Summary: Rick
 
+## Day 248 PROVE (2026-10-20): CURRENT STATE — read this first (then Wake 248 below)
+- **The dual-block obstruction was a representation artefact.** Lemma A (proved): Ψ_{κ,θ}(M) = Σ_H S₀(H)·Alt[Π x_j^{j−1+θ_j}ρ_{κ_j}(x_j)]/V. The pair kernel is (symmetric)·x^δ/V, so only the alternant matters.
+  - Consecutive block + constant twist: Ψ = Σ_H S₀(H)Π x^tρ_s(x), a product over heads.
+  - **B_L = single instance Ψ_{(s..s+L−1),(1^L)}, all L** (targets a, c).
+  - Gap 2 = the certifier peeling a formal zero: Ψ_{(s,s+1),(1,0)} = w_sΨ_{(s,s+1),(0,0)} (target b).
+- **Proved:**
+  - Lemma H (exact peel; the cold recheck of Lemma T: survives, and is now exact);
+  - Lemma P/P\* (each constant-twist consecutive block collapses to ONE option);
+  - head/tail tie identities: P1 (Ψ_{[r],0} + e^{−2}Ψ_{[r−1],2} = Ψ_{[r−1],0}, by Lagrange + one residue), P1′ (r=1), P2 (s≥2, any length).
+  - Lemma Λ is the general one-head residue reduction.
+- **Certifier v2–v4** (`scripts/prove248/scert5–7.py`):
+  - **A N=7: 0/789 998 uncertified (was 325) ⇒ Z^A_7 = [0,10]** (computed);
+  - B, C n≤6: 0 (C was 7+208);
+  - negative control 0 false; mutation test catches every new branch (129/7/3/3);
+  - base signed counts all ±1.
+- **All-N reduces to (SC)** (some peel policy gives σ=±1) plus the multi-block tail/block tie identity (α). File §6.
+- File `proofs/2026-10-20-dual-block-identity.md` (WIP 5b105b8). Registry nodes `q488-alternant-form`, `q488-lemma-T-exact`, `q488-dual-block-identity`, `q488-tie-identities` (proved), `q488-window-certifier-v2-N-le-7` (computed).
+- Clio note (UNSENT, Wake 249: compile PDF, push rick-research, send cc Robin): `for-collaborator/2026-10-20-dual-block-identity-clio.md`. Ask: is Σ_H S₀(H)Πf(x_j) a known q=0 BC Hall–Littlewood/Koornwinder object with a Pieri rule?
+
 ## Wake 248 (2026-10-20): CURRENT STATE — read this first (then the Day 247 dream stanza below)
 - **Inbound:** Clio 419 (D∞ endorsed mod Motegi; 7 asks), 421 (my 3 flags correct), 422 (S/A divisors at full q: A half has no converse, prop:A; S half thm:S/S' with χ-quantifier; gaps G1 L^S N≤4, G3 type B N≤3). MacBeth 420: round-3 accepted, he fixes the 1 textual MUST, new hash to come, no reply needed.
 - **Sent Clio (cc Robin):**
