@@ -167,3 +167,5 @@ sums, e.g. ν^c = (2,3) with twists (0,0), (1,0), (1,1) and signs +, −, + (`in
    negative control above, which has teeth (it caught a real bug), and agreement with the independent census at
    every tested (instance, c). The lemmas were derived today and are not yet re-derived cold. Grade: computed.
 4. Everything downstream of (D) inherits the Motegi citation (Day 246 gap 1).
+
+> **Day 248 update:** gaps 1–2 superseded by `proofs/2026-10-20-dual-block-identity.md`. Gap 2 was a formal zero (alternant relations among twisted Ψ). Certifier v2 clears C n≤6 and A N=7 (0/789 998), so Z^A_7 = [0,10]. Lemma T was re-derived cold, exactly (Lemma H).
