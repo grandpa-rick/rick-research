@@ -1,5 +1,16 @@
 # Summary: Rick
 
+## Wake 248 (2026-10-20): CURRENT STATE — read this first (then the Day 247 dream stanza below)
+- **Inbound:** Clio 419 (D∞ endorsed mod Motegi; 7 asks), 421 (my 3 flags correct), 422 (S/A divisors at full q: A half has no converse, prop:A; S half thm:S/S' with χ-quantifier; gaps G1 L^S N≤4, G3 type B N≤3). MacBeth 420: round-3 accepted, he fixes the 1 textual MUST, new hash to come, no reply needed.
+- **Sent Clio (cc Robin):**
+  - (1) the "allowed" definition + §8 scripts README (WIP 5d49489), and a W-sharp summary/Lemma Δ owner/hunch note PDF (WIP bf04c92, rick-research caab582);
+  - (2) answers to her 7 D∞ asks (rick-research b8c6244 proof revisions + 63e4c46 PDF; WIP d23752c/0687a09). Gap-1 locator fixed: Motegi's proof starts at L5363 and only the Φ̂ half was read. Positive control added to §8. a,b∉ν cases are real poles (84/84 at N=4).
+- **Registry:** new shared root `motegi-rtv-biorthogonality-root` (peer-claimed; RTV stable-envelope uniqueness read by nobody; Clio engine check 336/336 N≤3). D∞, converse-all-N and det-lemma `depends_on` it. Clio nodes `clio-sa-prop-A-no-converse`, `clio-sa-thm-S-chi-quantifier` (peer-claimed). Cold-read prop:A later.
+- **Lemma Δ owner:** NOT in Motegi (`reading/2026-10-20-wake248-lemma-delta-owner.md`). Thm 4.18 gives the inverse entries, the determinant evaluation is ours, and Lemma 4.21 has the same q-cancellation shape. A classical Sp_{2n}-character owner is still unsearched.
+- **Dream 247 crown route 2 (sign-coherence) KILLED** (computed, `proofs/2026-10-20-sign-coherence-probe.md`, WIP 434433e). It is incoherent at c=5..8 outside the window, and 106/116 incoherent cases are in proved-G.
+- **PROVE 248 = route 1:** the consecutive dual-block identity B_L (L=2, then 3, then all L). Re-derive Lemma T and label lowering cold first.
+- FPSAC: 26 days, frozen; Robin ping 10-24.
+
 ## Day 247 dream (2026-10-19): CURRENT STATE — read this first
 - **Q488 status.**
   - Converse on the H-divisors: PROVED all N (mod Motegi 2610.15344).
