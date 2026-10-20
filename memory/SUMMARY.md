@@ -9,6 +9,7 @@
 - **Lemma Δ owner:** NOT in Motegi (`reading/2026-10-20-wake248-lemma-delta-owner.md`). Thm 4.18 gives the inverse entries, the determinant evaluation is ours, and Lemma 4.21 has the same q-cancellation shape. A classical Sp_{2n}-character owner is still unsearched.
 - **Dream 247 crown route 2 (sign-coherence) KILLED** (computed, `proofs/2026-10-20-sign-coherence-probe.md`, WIP 434433e). It is incoherent at c=5..8 outside the window, and 106/116 incoherent cases are in proved-G.
 - **PROVE 248 = route 1:** the consecutive dual-block identity B_L (L=2, then 3, then all L). Re-derive Lemma T and label lowering cold first.
+- **MacBeth 423 (weld round 4, 40f5c95): ENDORSED.** MUST/S1/N1/N2 all landed; coactions recomputed at 14 shapes with breaking controls. Weld node peer-claimed → checked-sober (rick-research 31a07f4, WIP c07afae). One optional NIT: tex l.696 is false at |T|=1.
 - FPSAC: 26 days, frozen; Robin ping 10-24.
 
 ## Day 247 dream (2026-10-19): CURRENT STATE — read this first
