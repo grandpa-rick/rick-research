@@ -402,6 +402,40 @@ the half-integer c/2. One D̄_n-step on e^{λ_c} gives a polynomial in c/2 with 
 (continuous analogue: an integral ∫₀^{c/2}). If the remaining integral atom steps preserve positivity of the string density,
 (OC) follows. This is untested.
 
+### 5.1 The refined conjecture HP⁰⁺ (both parities at once)
+
+**Observation (computed, exact).** For every non-constant centre polynomial in the stored exact data, P(U + t) ∈ ℚ[t] has
+**one-signed coefficients, zeros allowed**. This is the Taylor expansion at the window edge U itself, not at U+1.
+
+| data | non-constant instances |
+|---|---|
+| C n=3 | 46 |
+| C n=4 | 297 |
+| C n=5 sample | 59 |
+| A N=4 | 62 |
+| A N=5 | 902 |
+
+Total 1366/1366, the edge witnesses with P(U) = 0 included (`HP0+` test). Since P ≢ 0, this gives P(c) ≠ 0 for **every real
+c > U**, so odd and even c at once.
+
+**Conjecture HP⁰⁺.** P(U + t) ∈ ±ℝ_{≥0}[t] for every allowed instance.
+
+**Reformulation for λ = μ = ∅.** By Cor. D1, P^κ(U + 2s) = χ(X_κ, ω_{X_κ}(n + s)) = χ(X_κ, ω_X ⊗ ω_{LG}^{−1}(s − 1)). Pull back to
+G/B as in Theorem E: π^\*(ω_X ⊗ ω_{LG}^{−1}) = O_Y(−∂Y) ⊗ L_ρ, so
+  P^κ(U + 2s) = χ(Y, O_Y(−∂Y) ⊗ L_{ρ−ω_n+sω_n}) = dim A_v(ρ − ω_n + sω_n)  (integers s ≥ 0, v = w_κw_{0,P}).
+Here A_v is the opposite-Demazure atom; higher cohomology vanishes since ρ − ω_n = (n−1, …, 1, 0) is dominant. So HP⁰⁺ for
+this family is an **Ehrhart-positivity statement**: the atom dimension along the ray ρ − ω_n + sω_n is a polynomial in s with
+nonnegative coefficients. The half-integers s are exactly odd c.
+
+Sanity checks:
+- κ = [n] (Y = G/B): it is the Weyl product Π_β(⟨ρ−ω,β^∨⟩ + s⟨ω,β^∨⟩)/⟨ρ,β^∨⟩, and every factor has nonnegative coefficients
+  in s. ✓
+- At s = 0 the atom is nonzero iff v is minimal in vW_{ρ−ω} = {v, vs_n}. That reproduces the edge witnesses (v = w_0 for κ = [n]).
+
+Ehrhart coefficients of general lattice polytopes can be negative, so this is a genuine positivity question. The natural
+tools are string or Gelfand–Tsetlin-type polytopes for Demazure atoms, with Minkowski additivity in the weight. Not attempted
+beyond the reformulation.
+
 ## 6. Gaps (precise)
 
 1. ~~Theorem D is computed, not proved.~~ **Closed in the same session**: §1bis proves it via the left Demazure recursion.
@@ -410,7 +444,7 @@ the half-integer c/2. One D̄_n-step on e^{λ_c} gives a polynomial in c/2 with 
 3. General (λ,μ) at even c: needs the triple-intersection version (Cor. D2 plus Brion 2002), with the GQ orientation in Cor. D2
    to pin.
 4. The A→C reduction is **proved** (Theorem AC for the top pair; Cor. AC′ for d = 0 at every pair; both given (D), which rests on Motegi's biorthogonality, registry node q488-phi-inf-dual-biorthogonality). The exceptional type-A instances (d ≥ 1, non-constant) are computed only.
-5. Odd c, (OC): open.
+5. Odd c, (OC): open. Refined form: HP⁰⁺ (§5.1), computed 1366/1366, which for λ=μ=∅ is Ehrhart positivity of Demazure atoms.
 6. Cor. AC′ step 2 uses that F_λ is a Laurent GKM function (so that relative orders are ≥ 0).
    - *Laurent:* elementary. In Lemma A form the only non-monomial denominators are tail factors (x_h − w_t). The terms for H and
      for H − h + t have opposite residues along w_h = w_t, and all other factors agree there by symmetry. Checked symbolically

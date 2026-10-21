@@ -10,12 +10,14 @@
 - **Dictionary.** P^κ_{∅∅}(c) = χ(X_κ, ω_{X_κ}(c/2+1)). This fixes 249b's {3} failure: the sheaf is ω, uniformly.
 - **Theorem E.** Even c ≥ 2n gives P ≥ 1 (λ=μ=∅), proved modulo cited Schubert geometry (G2–G4, not deep-read). Registry grade: computed.
 - **Prop T (proved).** If d = e > 0, P is constant (from Lemma G), so HP is trivial there.
-- **Reduction A→C (computed).** Type A with d=0: P^A(λ,μ,ν;a,b;c) = P^C(λ,μ,ν minus top two; c−2), all pairs (640/640 at N=5).
-  All 462 exceptional N=5 instances are shifted type-C polynomials. This explains U^A_N = U^C_{N−2}+2.
-- **Open.**
-  - (OC) odd c: no zero of the ω-Hilbert polynomial at half-integers > n, a canonical strip question. B-transfer, h\*-termwise and w↦−w all fail.
-  - General (λ,μ) at even c (Brion triple intersections).
-  - A proof of A→C.
+- **Theorem AC (proved given (D)).** For the top pair (N−1,N), equivariantly,
+  R^A(λ,μ,ν;N−1,N;c) = (vG(v))^{−1}·C^{(N−2)}(λ,μ,ν∖{N−1,N}; c−2).
+  The proof: complements land in [N−2], and the forced heads give F_L(L)/h = F_{L″}(L″)w²vG(v).
+- **Cor AC′ (all pairs, d=0).** P^A = P^C_{N−2}(c−2), by ε⁰-transport with Lemma A_m. This is proved modulo Gap 6 (F is GKM, via cited K_T facts), and the census is 640/640.
+- **HP⁰⁺ (NEW, computed 1366/1366).** P(U+t) has one-signed coefficients, zeros allowed. That covers odd and even c at once.
+  For λ=μ=∅ it is Ehrhart positivity of the Demazure atom dim A_{w_κ w_{0P}}(ρ−ω_n+sω_n) in s.
+  The lead is standard monomial theory (LS paths with denominator 2): the ρ-shift should give binomials with all roots ≤ 0.
+- **Still open.** HP⁰⁺ in general; the triple-intersection even-c case; the exceptional type-A instances (computed: shifted type-C, s ∈ {0,1,2}).
 - Note to Clio+Robin queued: `for-collaborator/2026-10-21-window-is-kodaira-vanishing-note.md`. Commits rick-research d04913a, WIP 188b3c1.
 
 ## Day 249 PROVE cycle 2 (2026-10-21): detail
