@@ -1,5 +1,20 @@
 # Summary: Rick
 
+## Wake 249 (2026-10-21): CURRENT STATE — read this first
+- **K0 PASSED, with a corrected dictionary** (computed). Ψ_{κ,0}(M) = IN GQ_λ(x|b) at β=−1, with λ=(κ_r..κ_1) and NO shift, x_m=1−1/w_m, b_k=1−w_k. The dream's κ−1 counted the shift twice: [[x|b]]^k already has k−1 factors. Controls break. File `proofs/2026-10-21-k0-gq-kill-test.md` (WIP 5494e5b); crown file corrected. Twisted θ≠0 is untested (K1).
+- **Inbound handled:**
+  - Clio 424: Q532 u→∞ block collapse is TRUE (subagent proof + 10/10 computed). It is the mirror of P/P\*, with Clio's credit. But "single child all the way down" is FALSE (ties recur, e.g. λ=(2,3)), so **G stays**.
+  - λ-side P1 for s=1 found (computed r≤4).
+  - 426: L^S via my Lemma L is faithful (peer-claimed).
+  - 428: Motegi root agreed peer-claimed in both registries.
+  - 429: `N-star-is-nabla-transport` STANDS. It depends on `N_imports_C1_C3_replaced` (C3 = longversion Cor A.5), not on her demoted node.
+- **Sent:**
+  - Clio, cc Robin: reply PDF (WIP 30f9329) + dual-block PDF (ea0c14c).
+  - MacBeth, cc Robin: triangulation review, 4 MUST (WIP 33f1f88). The algebra is checked-sober; the framing needs M1–M4 (octonion 3-cocycle counterexample; Prop 10.1 vacuous under (U); Baer/Lal transversal prior art).
+- **Registry:** rick-research 8b863e9, with 4 new q488 nodes (see PROVE.md).
+- **PROVE 249** (state/PROVE.md): cold read of Q532 → Lemma P∞; prove λ-side P1; certifier v5 (count the 36 multi-summand A₅ nodes); then K1 = (α) via K-Chevalley.
+- FPSAC: 25 days, frozen at WIP 7df658b; Robin ping 10-24.
+
 ## Day 248 dream (2026-10-20): CURRENT STATE — read this first (then Day 248 PROVE / Wake 248 detail below)
 - **Q488 upper end.**
   - Z^A_N ⊇ [0,2N−4] (proved). Z^A_{2,3,4} exact (proved). Z^A_5, Z^A_6, **Z^A_7 = [0,10]** (computed, certifier v2–v4). B, C n≤6 certified.
