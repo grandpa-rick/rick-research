@@ -621,10 +621,10 @@
        {
         "id": "q488-window-is-kodaira-strip",
         "role": "attempt",
-        "trust": "hunch",
+        "trust": "computed",
         "file": "proofs/2026-10-21-window-hilbert-polynomial.md",
         "sources": [],
-        "approach": "ell_[n] = Atiyah-Bott K_T-integration on LG(n,2n) (Lemma Delta = Weyl character formula); C-window [0,2n-2] = Kodaira strip of index n+1 (a=c/2-n), c<->2n-2-c = Serre duality; P = Hilbert polynomial of Richardson-type Z, dim Z = -e; HP+ = Hilbert polynomial one-signed above last root (vanishing thms at even c). Naive dictionary P^kap(c)=chi(X_kap,O(c/2-#kap)) passes [n],{1},{2},{1,2}=Q3, FAILS {3}. Owners unread: Ikeda-Naruse 1112.5223, Brion positivity, Brion-Kumar.",
+        "approach": "ell_[n] = Atiyah-Bott K_T-integration on LG(n,2n) (Lemma Delta = Weyl character formula); C-window [0,2n-2] = Kodaira strip of index n+1 (a=c/2-n), c<->2n-2-c = Serre duality; P = Hilbert polynomial of Richardson-type Z, dim Z = -e; HP+ = Hilbert polynomial one-signed above last root (vanishing thms at even c). Naive dictionary P^kap(c)=chi(X_kap,O(c/2-#kap)) passes [n],{1},{2},{1,2}=Q3, FAILS {3}. Owners unread: Ikeda-Naruse 1112.5223, Brion positivity, Brion-Kumar. | Day 249c: SUPERSEDED/confirmed in sharper form: Theorem D (proved) makes ell_kappa Schubert integration; dictionary is omega_{X_kappa}(c/2+1) (Cor D1), not O_Z/ideal. See q488-theorem-D-demazure-dual.",
         "children": []
        },
        {
@@ -637,6 +637,69 @@
         "depends_on": [
          "q488-alternant-form"
         ],
+        "children": []
+       },
+       {
+        "id": "q488-theorem-D-demazure-dual",
+        "role": "premise",
+        "approach": "Theorem D: rho_{kappa L} = A_kappa a^kappa_L w_L^2, a^kappa = C_n Demazure localisation coefficients (w_m=y_{n+1-m}); ell_kappa = integration over Schubert variety X_kappa. Proof: left W-action Lemmas A_m/B on g=w^2F (two-term; B via 3-pole residue identity) + Demazure induction (Rec), checks (1),(2) close with A_kappa=(-1)^{|kappa|}prod W_{<=kappa_j}^{-1}. Self-contained (no Motegi, no K0). Termwise exact n<=5 (1344 pairs), controls break.",
+        "trust": "proved",
+        "file": "proofs/2026-10-21-window-is-kodaira-vanishing.md",
+        "sources": [],
+        "children": []
+       },
+       {
+        "id": "q488-lemma-phi-atoms",
+        "role": "attempt",
+        "approach": "phi∘D_i = -Dbar_i∘phi; P^kappa_00(c) = Demazure atom Dbar_w(e^{(c/2+1)omega-rho})(1).",
+        "trust": "proved",
+        "file": "proofs/2026-10-21-window-is-kodaira-vanishing.md",
+        "sources": [],
+        "children": []
+       },
+       {
+        "id": "q488-cor-D1-omega-hilbert",
+        "role": "attempt",
+        "approach": "Cor D1: P^kappa_00(c) = (-1)^{|kappa|} chi(X_kappa,O(-c/2-1)) = chi(X_kappa, omega(c/2+1)). Algebraic part = Theorem D at w=1; geometric reading needs Demazure character formula (cited, not deep-read). Engine agreement 8/8 n=3, 16/16 n=4.",
+        "trust": "computed",
+        "file": "proofs/2026-10-21-window-is-kodaira-vanishing.md",
+        "sources": [],
+        "children": []
+       },
+       {
+        "id": "q488-theorem-E-even-c-empty",
+        "role": "attempt",
+        "approach": "Theorem E: P^kappa_00(2k-2) = h^0(X_kappa, omega(k)) >= 1 for k>=n+1 (vanishing via Frobenius splitting + section p_v of O(-dY)L_rho on P/B-bundle). Modulo cited G2-G4 (Ramanathan; Brion-Kumar) NOT deep-read. Values >=1 checked n<=4.",
+        "trust": "computed",
+        "file": "proofs/2026-10-21-window-is-kodaira-vanishing.md",
+        "sources": [],
+        "children": []
+       },
+       {
+        "id": "q488-trichotomy-T",
+        "role": "attempt",
+        "approach": "Prop T: d=e>0 => P nonzero constant (HP trivial, from Lemma G); d=0 => non-equivariant chi; else exceptional. Census C: 64/49/2 (n=3), 356/349/21 (n=4).",
+        "trust": "proved",
+        "file": "proofs/2026-10-21-window-is-kodaira-vanishing.md",
+        "sources": [],
+        "children": []
+       },
+       {
+        "id": "q488-reduction-A-to-C",
+        "role": "attempt",
+        "approach": "Type A d=0: P^A(lam,mu,nu;a,b;c) = P^C(lam,mu,nu minus top two;c-2), indep of (a,b). N=4 78/78, N=5 640/640. A N=5: 4476 const, 462 EXC all proportional to C(n<=3) d=0 polys shifted by s in {0,1,2}. Explains U^A_N = U^C_{N-2}+2.",
+        "trust": "computed",
+        "file": "proofs/2026-10-21-window-is-kodaira-vanishing.md",
+        "sources": [],
+        "children": []
+       },
+       {
+        "id": "q488-odd-c-canonical-strip",
+        "role": "attempt",
+        "approach": "(OC): omega-Hilbert polynomial of Schubert/triple-intersection varieties in LG(m,2m) has no zero at half-integers k>=m+1/2 (needed for odd c). Open. Tried: h*-positivity termwise (fails), B-transfer to OG spinor (P_C^(3) = -1/8 P_B^1 + ..., not termwise positive), w->-w (no relation).",
+        "trust": "in-progress",
+        "file": "proofs/2026-10-21-window-is-kodaira-vanishing.md",
+        "sources": [],
         "children": []
        }
       ]
