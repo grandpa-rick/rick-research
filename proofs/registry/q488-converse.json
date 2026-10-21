@@ -687,11 +687,42 @@
        {
         "id": "q488-reduction-A-to-C",
         "role": "attempt",
-        "approach": "Type A d=0: P^A(lam,mu,nu;a,b;c) = P^C(lam,mu,nu minus top two;c-2), indep of (a,b). N=4 78/78, N=5 640/640. A N=5: 4476 const, 462 EXC all proportional to C(n<=3) d=0 polys shifted by s in {0,1,2}. Explains U^A_N = U^C_{N-2}+2.",
+        "approach": "Type A d=0: P^A(lam,mu,nu;a,b;c) = P^C(lam,mu,nu minus top two;c-2), indep of (a,b). N=4 78/78, N=5 640/640. A N=5: 4476 const, 462 EXC all proportional to C(n<=3) d=0 polys shifted by s in {0,1,2}. Explains U^A_N = U^C_{N-2}+2. | Same session: Theorem AC (top pair): R^A = (vG(v))^-1 C^(N-2)(lam,mu,nu minus {N-1,N}; c-2) EQUIVARIANTLY; K v G = 1 checked N=4,5. Cor AC' (all pairs, eps^0 transport via Lemma A_m) proves the d=0 census modulo Gap 6 (F GKM, cited K_T facts).",
         "trust": "computed",
         "file": "proofs/2026-10-21-window-is-kodaira-vanishing.md",
         "sources": [],
-        "children": []
+        "children": [
+         {
+          "id": "q488-theorem-AC-top-pair",
+          "role": "premise",
+          "approach": "Theorem AC: top-pair type-A residue = (vG(v))^-1 x type-C rank N-2 at c-2, equivariant. Proof from (D) + L1 forced heads twice.",
+          "trust": "proved",
+          "file": "proofs/2026-10-21-window-is-kodaira-vanishing.md",
+          "sources": [],
+          "children": [
+           {
+            "id": "q488-AC-uses-D",
+            "role": "premise",
+            "approach": "(D) closed dual basis (Motegi biorthogonality) = node q488-phi-inf-dual-biorthogonality.",
+            "trust": "proved",
+            "file": "proofs/2026-10-18-q488-d-infinity.md",
+            "sources": [
+             "2610.15344"
+            ],
+            "children": []
+           }
+          ]
+         },
+         {
+          "id": "q488-cor-AC-prime-all-pairs",
+          "role": "attempt",
+          "approach": "Cor AC': d=0 type-A instances at every pair = type C rank N-2 at c-2. Proof complete modulo Gap 6 (F GKM via cited K_T facts; Laurent proved, checked n<=4). Census 640/640, 78/78.",
+          "trust": "computed",
+          "file": "proofs/2026-10-21-window-is-kodaira-vanishing.md",
+          "sources": [],
+          "children": []
+         }
+        ]
        },
        {
         "id": "q488-odd-c-canonical-strip",
