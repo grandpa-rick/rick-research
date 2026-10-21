@@ -1,3 +1,40 @@
+## Browse 197 updates (2026-10-21, third cycle today)
+
+### Three browse cycles today converged on the same cluster — core-territory queries saturated for now
+The arXiv agent's "new leads" (Arroyo 2511.05734, Arroyo–Hamaker–Hawkes–Pan 2503.16641, Buciumas–Scrimshaw 2101.08907, Lusztig's history essay 2507.20816, Foissy 2610.06256) were all already filed, mostly from Browse 196 earlier the same day. No novelty lost, but a sign to vary keywords harder next cycle rather than re-running the Lagrangian-Grassmannian/GQ core queries again immediately.
+
+### New physics-DAHA cluster citing Sahi's duality (q-alg/9710032), independent of the combinatorics literature
+Three 2025 gauge-theory papers (2510.25168, 2505.14962, 2503.15446) re-derive type-C spherical/affine DAHA structure via Coulomb-branch quantization in 4d N=4/N=2 SYM, all citing Sahi's nonsymmetric-Koornwinder duality. A recurring channel, not a one-off — worth an occasional check if a type-C DAHA structural fact is needed and the combinatorics side is silent.
+
+### Browse-194 unconfirmed-ID lead resolved: Grantcharov = arXiv:2606.29327
+"Deformation theory of the Double Affine Hecke algebra of type (C_n^∨,C_n)" — found via the Sahi reverse-citation trail, closing the ID gap flagged in Browse 194.
+
+### Ikeda-Naruse reverse-citation trail still unreached (rate-limited twice now)
+Semantic Scholar 429'd persistently across Browse 197's citation-trail agent (and apparently a prior attempt too). Retry with explicit backoff, or try an alternate route (Google Scholar / Inspire-HEP), next cycle.
+
+### MO/SE and web: quiet on the live arc, one useful standing citation
+MO/MathSE fully quiet (~60 days) on all live-arc themes except a closed, self-answered thread on β-double Grothendieck positivity (Samuel, reduces to Lenart via Fomin–Kirillov Cauchy identity) — worth remembering as an ingredient citation. Marberg 2211.01092 (combinatorial Hopf algebras ↔ K-theoretic Schubert calculus bridge) remains unexploited outside Marberg's own self-citations — standing frontier target, not urgent.
+
+## Browse 196 updates (2026-10-21, second cycle today)
+
+### Koushik Brahma lead (and two companions) fully resolved, no scoop risk — the twisted-Grothendieck title was a near-miss
+2604.07352's "twisted factorial Grothendieck polynomials" turns out to be a type-A Plücker-weight/orbifold twist, unrelated to Theorem D's ω(c/2+1) dualizing-sheaf twist on LG(n,2n). Its companion, Brahma–Ikeda–Iwao–Yang 2603.20865, independently confirms GQ_λ(x|b) is the LG(n,2n) K-theory Schubert basis behind K0, and its transition-coefficient machinery (parameter b→c) is a plausible tool for Theorem D's open odd-c question — flagged, not urgent. Ikeda–Iwao–Shimozono 2511.20966 is the affine-level analogue, no overlap. All three resolved by both the arXiv and citation-trail agents independently (converging confirmation).
+
+### Dedup correction: the "new" MMP twisted-Cherednik cluster and Foissy 2610.06256 were already filed
+The citation-trail agent flagged 2607.09203/2602.21120/2601.19878/2601.10500 (Mironov–Morozov–Popolitov) as "not previously logged" — checked against `sources.json`, all four were already filed from Browse 178/180 (2026-10-12/13). Same for Foissy 2610.06256 (filed since Browse 185-era). No new content in either; corrected in this cycle's log so it doesn't recur as a false "new" next time.
+
+### New GQ/type-C combinatorics leads for the long-dormant Arroyo thread
+Arroyo 2511.05734 (Pieri rule for GQs via strict decomposition tableaux) and Arroyo–Hamaker–Hawkes–Pan 2503.16641 (type-C K-Stanley symmetric functions, conjectured K-theoretic Kraśkiewicz insertion, proves Lewis–Marberg's rectangle=trapezoid GQ conjecture) are both new tools in the same vein as the archived `q-arroyo-gq-pieri-specialization.md` question (Day 128/Browse 105) — worth a look if that thread reopens.
+
+### Major community event outside the live arc: OpenAI Lean-verified proof of Shareshian–Wachs, posted as an MO answer (2026-10-07)
+MO 481860's top answer reports a Lean-verified proof of the Shareshian–Wachs conjecture (q-refinement of Stanley–Stembridge), apparently independent of Hikita's and the Vienna group's proofs. Lean file at `github.com/openai/math`. Chromatic-symmetric-function territory, not GKM/Lagrangian-Grassmannian — no bearing on Theorem D, but a landmark worth remembering: an open conjecture resolved via an MO answer with an attached Lean file rather than a paper.
+
+### FPSAC 2027 page filled in: full program committee and invited-speaker list now live
+Anders Buch, Martina Lanini, Jacinta Torres on the program committee (all directly relevant to Rick's Schubert-calculus/canonical-basis territory). Invited speakers: Bouvel, Fink, Haiman (already known), Iyama, Marietti, Mishna, Yip. Deadline (2026-11-15) and AI-declaration policy unchanged.
+
+### Cross-theme hub noticed: "Shifted combinatorial Hopf algebras from K-theory" (2211.01092, 2022)
+Surfaced among Ikeda–Naruse's reverse citers. Explicitly bridges Path 1/2 (combinatorial Hopf algebras) with K-theoretic Schubert calculus — nobody has connected these two of Rick's threads before. Old (2022), not pursued this cycle, flagged for a future reread.
+
 ## Browse 193 updates (2026-10-20)
 
 ## Browse 194 updates (2026-10-20, second cycle today)
