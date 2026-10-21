@@ -1,3 +1,19 @@
+## Browse 198 updates (2026-10-21, fourth cycle today)
+
+### Headline: near-total dedup — 6 of 8 agent-reported "leads" were already filed
+Deliberately steered off the saturated LG/GQ/type-C cluster into Path 1/3 territory (CHA antipodes, general crystal theory, KL/cellular algebras, Soergel bimodules). Despite genuinely different queries and anchors, 6 of 8 arXiv-agent + citation-trail-agent picks turned out to already be in `sources.json`: Foissy 2610.06256 (Browse 194), Guilhot–Poulain d'Andecy 2602.20861 (Browse 89, July), Mackaay–Miemietz–Vaz 2507.02347 (Browse 169), Mathas–Tubbenhauer 2309.13867 (deep-read since Browse 88), Kashiwara–Kim–Oh–Park 2506.12681 (Browse 181), Jacon–Lacabanne 2601.16889. Lesson: a sub-field's hub papers get rediscovered via almost any query that touches it; topic-level steering alone doesn't prevent this — next time, hand the agent the relevant sources.json ID slice up front. Reinforced in `feedback_dedup_against_sources_json_before_new`.
+
+### Genuinely new: Jang–Scrimshaw crystal paper + two low/unconfirmed leads
+**Jang–Scrimshaw 2608.27949** (confirmed new): first uniform all-affine-types PBW-crystal construction of special Kirillov–Reshetikhin crystals B^{r,s}, reaching exceptional types (E_8^{(1)}) no prior type-specific method handled. General crystal-basis machinery, no overlap with the live arc. Also new: **Hu–Mathas–Shi–Webster**, "center conjecture for cyclotomic Hecke algebras and cohomology of quiver varieties" (2026, arXiv ID unresolved, S2 429-saturated) — a Hecke ⊕ quiver-variety-geometry crossover with Mathas as author; and **Nguyen-Dang**, "Richardson volume models for skew Schur/Schur-P/Q functions" (2026, low priority).
+
+### Community: ω-involution-through-Harish-Chandra question is a live open bridge
+Math.SE 5144987 (unanswered, mid-Oct 2026) asks whether the classical ω-involution on symmetric functions (s_λ ↦ s_{λ'}) lifts through the Harish-Chandra isomorphism Z(U(gl_n)) ≅ Λ_C to an (anti-)automorphism of U(gl_n) — exactly Rick's "same combinatorics across structures" question, posed independently in the wild. MO/MathSE otherwise near-dead on this cluster: `canonical-bases`/`kazhdan-lusztig`/`hecke-algebras` tags zero questions in 90 days; `soergel-bimodules`/`cellular-algebras`/`crystal-bases` tags don't exist on MO at all.
+
+### Web: Soergel-bimodule expository ecosystem is rich (Elias hub, Libedinsky), Milnor–Moore has a clean independent writeup
+Ben Elias's lecture-notes page (pages.uoregon.edu/belias) aggregates every Soergel-bimodule/KL masterclass since 2013 — best single on-ramp if Path 3 (Hecke algebras) goes live again. Libedinsky's "Gentle Introduction to Soergel Bimodules I" (1702.00039) is the accessible companion. nLab's own Soergel-bimodule page is a content-free stub (same thinness as stable-envelope/Koornwinder/quantum-toroidal checked in prior cycles). Idrissi's blog writeup of Milnor–Moore is a clean independent from-scratch exposition. Two live 2026 general-type crystal/canonical-basis learning seminars found (Berkeley Spring 2026, Sydney Mar–Apr 2026). New near-term conference date: CAAC 2026, Dalhousie, Jan 23–25.
+
+Full log `reading/2026-10-21-browse198.md`; sources.json +3 (423 total).
+
 ## Browse 197 updates (2026-10-21, third cycle today)
 
 ### arXiv agent's late pass: four new papers, best in a while, after the early pass's dedup-heavy results

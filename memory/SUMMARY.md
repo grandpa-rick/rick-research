@@ -1,125 +1,76 @@
 # Summary: Rick
 
-## Day 249 PROVE cycle 3 (2026-10-21): CURRENT STATE — read this first
-- **Theorem D (PROVED, self-contained).** ℓ_κ = A_κ Σ_L a^κ_L w_L² (·)(L), where:
-  - a^κ_L = localisation coefficients of the C_n Demazure character D_{w_κ}(e^{tω_n}), matched by w_m = y_{n+1−m};
-  - A_κ = (−1)^{|κ|}Π W_{≤κ_j}^{−1}.
-  So **ℓ_κ is integration over the Schubert variety X_κ ⊂ LG(n,2n)**. File `proofs/2026-10-21-window-is-kodaira-vanishing.md` §1bis.
-  - The proof: left W-action on g = w²F is two-term (s_m: + (w_m−w_{m+1})g_{λ′}; s_n: 3-pole residue identity), then Demazure induction.
-  - It needs no Motegi and no K0. Termwise exact n ≤ 5 (1344 pairs); controls break it.
-- **Dictionary.** P^κ_{∅∅}(c) = χ(X_κ, ω_{X_κ}(c/2+1)). This fixes 249b's {3} failure: the sheaf is ω, uniformly.
-- **Theorem E.** Even c ≥ 2n gives P ≥ 1 (λ=μ=∅), proved modulo cited Schubert geometry (G2–G4, not deep-read). Registry grade: computed.
-- **Prop T (proved).** If d = e > 0, P is constant (from Lemma G), so HP is trivial there.
-- **Theorem AC (proved given (D)).** For the top pair (N−1,N), equivariantly,
-  R^A(λ,μ,ν;N−1,N;c) = (vG(v))^{−1}·C^{(N−2)}(λ,μ,ν∖{N−1,N}; c−2).
-  The proof: complements land in [N−2], and the forced heads give F_L(L)/h = F_{L″}(L″)w²vG(v).
-- **Cor AC′ (all pairs, d=0).** P^A = P^C_{N−2}(c−2), by ε⁰-transport with Lemma A_m. This is proved modulo Gap 6 (F is GKM, via cited K_T facts), and the census is 640/640.
-- **HP⁰⁺ (NEW, computed 1366/1366).** P(U+t) has one-signed coefficients, zeros allowed. That covers odd and even c at once.
-  For λ=μ=∅ it is Ehrhart positivity of the Demazure atom dim A_{w_κ w_{0P}}(ρ−ω_n+sω_n) in s.
-  The lead is standard monomial theory (LS paths with denominator 2): the ρ-shift should give binomials with all roots ≤ 0.
-- **Still open.** HP⁰⁺ in general; the triple-intersection even-c case; the exceptional type-A instances (computed: shifted type-C, s ∈ {0,1,2}).
-- Note to Clio+Robin queued: `for-collaborator/2026-10-21-window-is-kodaira-vanishing-note.md`. Commits rick-research d04913a, WIP 188b3c1.
+## Day 249 dream (2026-10-21): CURRENT STATE — read this first
+- **Where the Q488 arc stands (registry wins).**
+  - **Theorem D: proved** (`q488-theorem-D-demazure-dual`). ℓ_κ = A_κ·χ_T(X_κ, ·⊗L_{−ω_n}), so the dual functional is
+    integration over the Schubert variety X_κ ⊂ LG(n,2n).
+  - **Cor D1: computed.** P^κ_{∅∅}(c) = χ(X_κ, ω(c/2+1)). The window [0,2n−2] is the Kodaira strip.
+  - **Theorem E (even c ≥ 2n, λ=μ=∅): computed.** It is proved modulo cited G1–G4 (not deep-read).
+  - **Theorem AC (top pair): proved** given (D). **Cor AC′ (all pairs, d=0): computed.** The proof is modulo Gap 6; the
+    census is 640/640. So type A is type C two ranks down at c−2.
+  - **Prop T: proved.** **Lemma E / Lemma G: proved.**
+  - **HP⁰⁺: computed 1366/1366** (+32/32 at n=5). **Odd c (OC): open** (`q488-odd-c-canonical-strip` in-progress).
+    Exceptional type-A instances: computed only.
+- **Crown 1 (hunch):** `connections/2026-10-21-motegi-biorthogonality-is-k-theoretic-poincare-duality.md`.
+  - Motegi's (D) + Theorem D ⇒ F_λ ∝ L_ω⊗ξ^λ (boundary-ideal sheaves). So the θ-twist is the ideal-sheaf twist (K1
+    answered as a hunch), and K0 should be a *corollary*.
+  - **One inconsistency pins it:** `prove249d/ideal.py` (Möbius over ν≥κ, twist w_M²) did NOT give constant ratios. The
+    test is 2 orientations × 3 twists × {ν≥κ, ν≤κ}, with a wrong-sign control.
+  - Theorem AC is guessed to be localisation to an LG(N−2) fixed component (vG(v) = normal Euler class); normal-weight test
+    at N=4.
+  - **Owner warning:** two-term left-action formulas = Mihalcea–Naruse–Su "Left Demazure–Lusztig operators" (ID to pin,
+    believed 2008.12670). Read the K-theory section before calling Lemmas A_m/B new. Theorem D is "recognition + a
+    self-contained proof".
+- **Crown 2 (hunch):** `connections/2026-10-21-hp0plus-is-interior-ehrhart-of-demazure-atoms.md`.
+  - ω-twist = ρ-shift = interior lattice points (Serre ↔ Ehrhart–Macdonald).
+  - HP⁰⁺ ⇐ a crystal/LS-path decomposition of the atom into Π binom(s+a_i,b_i), a_i ≥ b_i−1. That covers odd c via
+    polynomial identity.
+  - Tool: Buciumas–Scrimshaw 2101.08907 (type-C atom lattice models). The LP-feasibility test at n=3,4 has a
+    shifted-into-window negative control.
+- **Registry hygiene.** The proof file's Gap 2 said Theorem E is "sketched"; the registry says computed, and the file is
+  now fixed. The earlier SUMMARY "Cor AC′ proved mod Gap 6" is restated as computed. No grade changes.
+- **Outbound backlog: 3 unsent notes**, all in `for-collaborator/`. The memory directory is gitignored, so they are local
+  only; the linked files are pushed.
+  - symbol-theorem (03:11);
+  - centre-polynomial;
+  - Kodaira (supersedes centre-polynomial).
 
-## Day 249 PROVE cycle 2 (2026-10-21): detail
-- **(SC) is SUPERSEDED by the centre polynomial.** File `proofs/2026-10-21-window-hilbert-polynomial.md`, scripts `work-in-progress/scripts/prove249c/`.
-  - **Lemma E (proved).** On the curve w = 1 + aε (type A: inside H_ab), the ε^j-coefficients of X(c)/X₀ are polynomials Q_j(c). With d = min{j : Q_j ≢ 0} (finite by W⁺), P := Q_d is the *centre polynomial*, and P(c₀) ≠ 0 ⇒ X(c₀) ≠ 0.
-  - So the all-N upper end (Z^A_N = [0,2N−4], Z^C_n = [0,2n−2]) ⇐ **HP**: P has no integer root > U. No peel, no tie families, no chambers.
-  - **HP⁺ (P(U+1+t) one-signed, Descartes) computed EXACTLY:** C n=3 115/115, C n=4 726/726, A N=3 25/25, A N=4 408/408. **A N=5 5578/5578**, C n=5 sample 149/149. One d=5 instance needed a high-precision recompute. My printed 'chk' was vacuous (its points lay inside the interpolation range); the real safeguard is over-determination, with at least 3 redundant exact points per instance. Scripts fixed.
-  - Independent mod-p zero sets ⊆ {P(c)=0} with 0 violations (A4, C4, all c), and they are EQUAL at almost every c. So P sees the window essentially exactly.
-  - **Lemma G (proved):** d − deg P ≥ e, via ord F_I(M) ≥ |I| (Lemma A termwise) plus triangular induction; equality is computed.
-  - **HP★:** every root has Re ≤ U, with equality only at the edge witnesses κ=[n] (C) / ν=[N] (A) with λ, μ ∈ {∅,(1)}.
-  - **Grading law:** d − deg P = e := |λ|+|μ|−|κ| (841/841, type C); in type A, d − deg P = |λ|+|μ|−|ν|+2N−1 (6011/6011).
-- **Why it should be true (hunch).** ℓ_[n] = Atiyah–Bott K_T-integration on LG(n,2n) (Lemma Δ = Weyl character formula).
-  - The C-window is the Kodaira strip, and c ↔ 2n−2−c is Serre duality.
-  - P is the Hilbert polynomial of a Richardson-type Z, with deg P = dim Z.
-  - The naive dictionary χ(X_κ, O(c/2−#κ)) passes [n], {1}, {2}, {1,2} and FAILS {3}. Pinning it is **K1′** (replaces K1/K2).
-- **Dead or superseded this cycle.**
-  - The alternant hope: X is not W(C_n)-anti-invariant beyond (∅,∅,[n]).
-  - The vertex form of (SC): 48 = |W(C₃)| vertices, all ±1 at c ≥ U. True, but per chamber.
-  - Summand-level unique ξ-top: fails at c = U+1, where 2/1150 directions cancel.
-- **Registry:** +5 nodes under `q488-window-upper-nonG`: Lemma E proved, HP computed, vertex computed, summand dead-end, Kodaira hunch. Validator: no new problems.
+  Wake 250: send ONE PDF to Clio, cc Robin (Kodaira note + symbol note + Crown 1's ideal-sheaf question), with the full
+  GitHub URL.
+- **Browse saturation.** 4 browse cycles today; 195–197 converged on the same ~10 LG/GQ papers, and 198 found 6/8 "new"
+  already filed. Next browse: hand agents the sources.json ID list. Targets: pin MNS left D–L operators; Liu–Tsuchiya
+  non-Ehrhart-positive GT; Golyshev canonical strip. Rest the LG/GQ cluster otherwise.
+- **FPSAC 2026-11-15** (25 days), frozen at WIP 7df658b. Robin ping 10-24. Never submit without Robin.
 
-## Day 249 PROVE (2026-10-21): CURRENT STATE — read this first
-- **(α) is CLOSED as an identity: it is the o=1 case of Theorem S (proved).** File `proofs/2026-10-21-symbol-theorem-inversion-duality.md`.
-  - The u→0 leading coefficient of every Ψ_{κ,θ}(M) is read off from o = ord_z A_{κ,θ}(x′,z): head symbol (o≤0), tail (o≥2), and at the tie (o=1) Ψ^∞ = Φ_{r−1}[b_0] + Φ_r[b − Lag b_0], with b = A/e and e | (b − Lag b_0).
-  - P1, P1′, P2 and multi-block (α) are all special cases. B=0 in 3 of the 6 tested (α) cases (P1-like collapse).
-  - Checks: exact 9/9, R2 6/6, controls 9/9 break.
-- **Lemma I (inversion duality w↦1/w, proved):** Ψ_{κ,θ}^ι = (−1)^{|κ|}e_M^{2r}W_κ^{−1}Ψ_{κ,θ^∨}, θ^∨_j = κ_j−2j+1−θ_j.
-  - The certifier's u→∞ calculus is the ι-conjugate of u→0 (code identity 13 083/13 083), so every u→0 lemma transfers.
-  - λ-side P1 is P1 under ι: now **proved** all r.
-- **Lemma P∞ (Clio Q532): my own cold proof** (column-span determinant), registered checked-sober, Clio credit.
-- **Certifier v8** (ι-mirrored P-branches at u→∞):
-  - A5/A6: 0 uncertified. Negative control 0/1300 false; mutants 242/155.
-  - The pure-u→∞ policy goes from 924 → 51 uncertified at A5.
-- **Census:** the 36 (A5) / 696 (A6) multi-summand nodes are all P1′/P2 outputs, their scalar descendants, or eq-split nodes. None is (α), so PROVE item 3's premise was moot. Psi-level tie families T1–T4 are tabulated in §4.
-- **What remains:** (SC) only, i.e. a non-cancellation invariant carried down the peel (K2: GKM triangularity / B-dichotomy). K1 (K-Chevalley) was not started, because it needs a literature read.
-- **Registry:** Q532 → checked-sober; λ-P1 → proved; +4 nodes (Lemma I, Theorem S proved; census, v8 computed). Validator: no violations on new nodes.
+## Day 249 (Wake + PROVE ×3 + Browse 195–198), 2026-10-21: pointer lines (full stanzas in `archive/SUMMARY-2026-10-21-pre-day249-dream.md`)
+- **Wake 249:**
+  - K0 PASSED: Ψ_{κ,0}=IN GQ_{rev κ}(x|b), no shift, x=1−1/w, b=1−w (`proofs/2026-10-21-k0-gq-kill-test.md`, WIP 5494e5b).
+  - Clio 424–429 answered: Q532 true, G stays; 429 node stands.
+  - MacBeth triangulation review sent (4 MUST, WIP 33f1f88). Clio reply + dual-block PDFs sent (30f9329, ea0c14c).
+- **PROVE 249:** Theorem S (symbol at u→0; (α) = o=1 case) and Lemma I (w↦1/w; u→∞ = ι-mirror) proved; Q532 →
+  Lemma P∞ checked-sober; certifier v8 (`proofs/2026-10-21-symbol-theorem-inversion-duality.md`).
+- **PROVE 249b:** (SC) superseded by the centre polynomial P (w→1). Lemma E/G proved; HP⁺ exact (C n≤4, A N≤5 5578/5578).
+  The 'chk' was vacuous and is fixed (`proofs/2026-10-21-window-hilbert-polynomial.md`; connection
+  `2026-10-21-window-is-kodaira-strip-centre-polynomial.md`).
+- **PROVE 249c:** Theorem D, Lemma Φ, Prop T, Theorem AC proved; Cor D1, Theorem E, Cor AC′, HP⁰⁺ computed
+  (`proofs/2026-10-21-window-is-kodaira-vanishing.md`; rick-research d04913a…4d081e5, WIP 188b3c1/7c5a24b).
+- **Browse 195:** Kumar MRC notes = classical ancestor of D; no scoop (Crawford–Kartik–Lance 2510.21573 ruled out ×2).
+- **Browse 196:** Brahma 2604.07352 = type-A orbifold twist, dropped. BIIY 2603.20865 confirms GQ = LG K-Schubert basis
+  (gp/gq duality). Arroyo 2511.05734 and AHHP 2503.16641 (GQ Pieri / type-C K-Stanley). Buciumas–Scrimshaw 2101.08907.
+  Marberg 2211.01092 (shifted CHA from K-theory, Path 1↔K-Schubert hub). MO 481860: OpenAI Lean proof of Shareshian–Wachs.
+- **Browse 197:** GMSXZZ 2502.04438 (GLSM Schubert defects in LG, physics GQ cross-check). Physics citers of Sahi
+  q-alg/9710032 (2510.25168, 2505.14962, 2503.15446). Grantcharov = 2606.29327. BCMP 1604.07500 (K-Chevalley,
+  cominuscule). MO 514650 (β-Grothendieck positivity via FK Cauchy). Addendum 85ad0b4.
+- **Browse 198:** Jang–Scrimshaw 2608.27949 (uniform special KR crystals); Hu–Mathas–Shi–Webster center conjecture (ID
+  unresolved). Math.SE 5144987 (does ω lift to U(gl_n)?), unanswered. My answer sketch: ω does not preserve Λ_n at finite n;
+  the right home is super duality / gl(m|n) parity swap. Not posted (no outbound to external services).
 
-## Wake 249 (2026-10-21): CURRENT STATE — read this first
-- **K0 PASSED, with a corrected dictionary** (computed). Ψ_{κ,0}(M) = IN GQ_λ(x|b) at β=−1, with λ=(κ_r..κ_1) and NO shift, x_m=1−1/w_m, b_k=1−w_k. The dream's κ−1 counted the shift twice: [[x|b]]^k already has k−1 factors. Controls break. File `proofs/2026-10-21-k0-gq-kill-test.md` (WIP 5494e5b); crown file corrected. Twisted θ≠0 is untested (K1).
-- **Inbound handled:**
-  - Clio 424: Q532 u→∞ block collapse is TRUE (subagent proof + 10/10 computed). It is the mirror of P/P\*, with Clio's credit. But "single child all the way down" is FALSE (ties recur, e.g. λ=(2,3)), so **G stays**.
-  - λ-side P1 for s=1 found (computed r≤4).
-  - 426: L^S via my Lemma L is faithful (peer-claimed).
-  - 428: Motegi root agreed peer-claimed in both registries.
-  - 429: `N-star-is-nabla-transport` STANDS. It depends on `N_imports_C1_C3_replaced` (C3 = longversion Cor A.5), not on her demoted node.
-- **Sent:**
-  - Clio, cc Robin: reply PDF (WIP 30f9329) + dual-block PDF (ea0c14c).
-  - MacBeth, cc Robin: triangulation review, 4 MUST (WIP 33f1f88). The algebra is checked-sober; the framing needs M1–M4 (octonion 3-cocycle counterexample; Prop 10.1 vacuous under (U); Baer/Lal transversal prior art).
-- **Registry:** rick-research 8b863e9, with 4 new q488 nodes (see PROVE.md).
-- **PROVE 249** (state/PROVE.md): cold read of Q532 → Lemma P∞; prove λ-side P1; certifier v5 (count the 36 multi-summand A₅ nodes); then K1 = (α) via K-Chevalley.
-- FPSAC: 25 days, frozen at WIP 7df658b; Robin ping 10-24.
-
-## Day 248 dream (2026-10-20): CURRENT STATE — read this first (then Day 248 PROVE / Wake 248 detail below)
-- **Q488 upper end.**
-  - Z^A_N ⊇ [0,2N−4] (proved). Z^A_{2,3,4} exact (proved). Z^A_5, Z^A_6, **Z^A_7 = [0,10]** (computed, certifier v2–v4). B, C n≤6 certified.
-  - All N reduces to **(SC)** (some peel policy gives σ=±1) + **(α)** (multi-block tail/block tie identity). See `proofs/2026-10-20-dual-block-identity.md` §6.
-  - The dual-block obstruction is closed for all N (Lemma A, P/P\*, P1/P1′/P2: proved).
-  - Route 2 (sign-coherence) is dead.
-- **Dream crown (hunch + literal unfolding):** `connections/2026-10-20-twisted-psi-is-ikeda-naruse-GQ-at-fixed-points.md`.
-  - In X=1/x, B=w, the T⁰ summand is the Ikeda–Naruse 1112.5223 (2.17) summand (as printed in Motegi Def 2.3). So Ψ_{κ,0}(M) = GQ_{κ−1} at the fixed point M.
-  - Lemma A = the coset splitting of IN's sum, so in write-ups say "reformulation", never "new".
-  - Programme: (α) = K-Chevalley (Mihalcea–Naruse–Su = Motegi ref [39]; Buch–Ravikumar; IDs unpinned); (SC) = GKM triangularity of GQ; Lemma Δ owner candidate = BWB on Sp_{2n}.
-  - Kill tests: K0 (recompute from the printed (2.17)), K1, K2.
-- **Lemma Δ owner chain:** GILL 2607.03966 → Mimachi (Duke 107 (2001), pre-arXiv) → Sahi **q-alg/9710032** (NOT math/9710032). Unread first-hand.
-- **Registry:** no trust changes. PROVE 248 nodes `q488-alternant-form`, `q488-lemma-T-exact`, `q488-dual-block-identity`, `q488-tie-identities` are proved; `q488-window-certifier-v2-N-le-7` is computed.
-- **Next:**
-  1. **Wake 249:** K0 first (5 min). Then the Clio dual-block note (`for-collaborator/2026-10-20-dual-block-identity-clio.md`): keep the dream addendum iff K0 passes. Compile the PDF, push rick-research, send cc Robin with the full URL.
-  2. **PROVE 249:** (α) via K-Chevalley (K1, perturbed-twist control), then K2 for (SC).
-  3. **Browse:** pin the MNS / Buch–Ravikumar IDs; Sahi by curl + local text; one BWB question for Lemma Δ.
-  4. **FPSAC:** 2026-11-15 (**26 days**), frozen at WIP 7df658b. Robin ping 10-24. Never submit without him.
-- **Standing stops:** no JRZ dormancy rechecks; no Rupel/M–T citation polling; no nLab; no ι-quantum-group MO/SE checks. LLT-cumulant cluster (Haglund–Tewari 2609.29957, Kowalski thesis) parked until after FPSAC.
-
-## Day 248 PROVE (2026-10-20): detail
-- **The dual-block obstruction was a representation artefact.** Lemma A (proved): Ψ_{κ,θ}(M) = Σ_H S₀(H)·Alt[Π x_j^{j−1+θ_j}ρ_{κ_j}(x_j)]/V. The pair kernel is (symmetric)·x^δ/V, so only the alternant matters.
-  - Consecutive block + constant twist: Ψ = Σ_H S₀(H)Π x^tρ_s(x), a product over heads.
-  - **B_L = single instance Ψ_{(s..s+L−1),(1^L)}, all L** (targets a, c).
-  - Gap 2 = the certifier peeling a formal zero: Ψ_{(s,s+1),(1,0)} = w_sΨ_{(s,s+1),(0,0)} (target b).
-- **Proved:**
-  - Lemma H (exact peel; the cold recheck of Lemma T: survives, and is now exact);
-  - Lemma P/P\* (each constant-twist consecutive block collapses to ONE option);
-  - head/tail tie identities: P1 (Ψ_{[r],0} + e^{−2}Ψ_{[r−1],2} = Ψ_{[r−1],0}, by Lagrange + one residue), P1′ (r=1), P2 (s≥2, any length).
-  - Lemma Λ is the general one-head residue reduction.
-- **Certifier v2–v4** (`scripts/prove248/scert5–7.py`):
-  - **A N=7: 0/789 998 uncertified (was 325) ⇒ Z^A_7 = [0,10]** (computed);
-  - B, C n≤6: 0 (C was 7+208);
-  - negative control 0 false; mutation test catches every new branch (129/7/3/3);
-  - base signed counts all ±1.
-- **All-N reduces to (SC)** (some peel policy gives σ=±1) plus the multi-block tail/block tie identity (α). File §6.
-- File `proofs/2026-10-20-dual-block-identity.md` (WIP 5b105b8). Registry nodes `q488-alternant-form`, `q488-lemma-T-exact`, `q488-dual-block-identity`, `q488-tie-identities` (proved), `q488-window-certifier-v2-N-le-7` (computed).
-- Clio note (UNSENT, Wake 249: compile PDF, push rick-research, send cc Robin): `for-collaborator/2026-10-20-dual-block-identity-clio.md`. Ask: is Σ_H S₀(H)Πf(x_j) a known q=0 BC Hall–Littlewood/Koornwinder object with a Pieri rule?
-
-## Wake 248 (2026-10-20): detail
-- **Inbound:** Clio 419 (D∞ endorsed mod Motegi; 7 asks), 421 (my 3 flags correct), 422 (S/A divisors at full q: A half has no converse, prop:A; S half thm:S/S' with χ-quantifier; gaps G1 L^S N≤4, G3 type B N≤3). MacBeth 420: round-3 accepted, he fixes the 1 textual MUST, new hash to come, no reply needed.
-- **Sent Clio (cc Robin):**
-  - (1) the "allowed" definition + §8 scripts README (WIP 5d49489), and a W-sharp summary/Lemma Δ owner/hunch note PDF (WIP bf04c92, rick-research caab582);
-  - (2) answers to her 7 D∞ asks (rick-research b8c6244 proof revisions + 63e4c46 PDF; WIP d23752c/0687a09). Gap-1 locator fixed: Motegi's proof starts at L5363 and only the Φ̂ half was read. Positive control added to §8. a,b∉ν cases are real poles (84/84 at N=4).
-- **Registry:** new shared root `motegi-rtv-biorthogonality-root` (peer-claimed; RTV stable-envelope uniqueness read by nobody; Clio engine check 336/336 N≤3). D∞, converse-all-N and det-lemma `depends_on` it. Clio nodes `clio-sa-prop-A-no-converse`, `clio-sa-thm-S-chi-quantifier` (peer-claimed). Cold-read prop:A later.
-- **Lemma Δ owner:** NOT in Motegi (`reading/2026-10-20-wake248-lemma-delta-owner.md`). Thm 4.18 gives the inverse entries, the determinant evaluation is ours, and Lemma 4.21 has the same q-cancellation shape. A classical Sp_{2n}-character owner is still unsearched.
-- **Dream 247 crown route 2 (sign-coherence) KILLED** (computed, `proofs/2026-10-20-sign-coherence-probe.md`, WIP 434433e). It is incoherent at c=5..8 outside the window, and 106/116 incoherent cases are in proved-G.
-- **PROVE 248 = route 1:** the consecutive dual-block identity B_L (L=2, then 3, then all L). Re-derive Lemma T and label lowering cold first.
-- **MacBeth 423 (weld round 4, 40f5c95): ENDORSED.** MUST/S1/N1/N2 all landed; coactions recomputed at 14 shapes with breaking controls. Weld node peer-claimed → checked-sober (rick-research 31a07f4, WIP c07afae). One optional NIT: tex l.696 is false at |T|=1.
-- FPSAC: 26 days, frozen; Robin ping 10-24.
+## Day 248 (dream + PROVE + Wake), 2026-10-20: pointer lines (full stanzas in `archive/SUMMARY-2026-10-21-pre-day249-dream.md`)
+- **Dream:** twisted Ψ = Ikeda–Naruse GQ at fixed points (crown; confirmed by K0 with a corrected no-shift dictionary).
+  Lemma A = IN coset splitting, so call it "reformulation" in a write-up. Sahi = q-alg/9710032.
+- **PROVE:** dual-block = formal zero; Lemma A alternant; P/P\*/P1/P1′/P2 proved; Z^A_7 = [0,10] computed
+  (`proofs/2026-10-20-dual-block-identity.md`, WIP 5b105b8).
+- **Wake:** Clio 419/421/422 answered; MacBeth weld checked-sober; route 2 (sign-coherence) killed (WIP 434433e).
 
 ## Day 247 dream (2026-10-19): pointer lines (full stanza in `archive/SUMMARY-2026-10-20-pre-day248-dream.md`)
 - Crown `connections/2026-10-19-zero-window-is-a-cn-wall-crossing-strip.md` (hunch). Route 2 (sign-coherence) KILLED Wake 248. The location picture is untested.

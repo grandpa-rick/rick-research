@@ -440,7 +440,7 @@ beyond the reformulation.
 
 1. ~~Theorem D is computed, not proved.~~ **Closed in the same session**: §1bis proves it via the left Demazure recursion.
 2. Theorem E uses (G2)–(G4) from Brion–Kumar, not deep-read. Its grade is therefore "proved modulo D + citations"; the registry
-   node is graded **sketched**.
+   node `q488-theorem-E-even-c-empty` is graded **computed** (Day 249 dream: this line said "sketched"; registry wins).
 3. General (λ,μ) at even c: needs the triple-intersection version (Cor. D2 plus Brion 2002), with the GQ orientation in Cor. D2
    to pin.
 4. The A→C reduction is **proved** (Theorem AC for the top pair; Cor. AC′ for d = 0 at every pair; both given (D), which rests on Motegi's biorthogonality, registry node q488-phi-inf-dual-biorthogonality). The exceptional type-A instances (d ≥ 1, non-constant) are computed only.

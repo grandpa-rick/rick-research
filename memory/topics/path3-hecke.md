@@ -124,3 +124,12 @@ The cleanest known explicit primitive idempotent construction: Norton 1979 / Den
 - Dream 248 (hunch): unfolded against Motegi Def 2.3 (= Ikeda–Naruse 1112.5223 (2.17)) with X=1/x, B=w, the T⁰ summand IS the GQ summand, so Ψ_{κ,0}(M) = GQ_{κ−1} at the fixed point M.
   Twists ≈ line-bundle characters, so (α) is plausibly K-Chevalley and (SC) is GKM triangularity.
   Map: `connections/2026-10-20-twisted-psi-is-ikeda-naruse-GQ-at-fixed-points.md`.
+
+## Day 249 (2026-10-21): the Q488 window is classical Schubert geometry
+- Theorem D (proved): the dual functional to Motegi/Clio's twisted F-basis is χ_T-integration over X_κ ⊂ LG(n,2n). The
+  proof is a two-term left W-action plus Demazure induction.
+- The window is the Kodaira strip, and c ↔ 2n−2−c is Serre duality. Type A is type C at rank N−2 and c−2.
+- The structure-constant pole/residue calculus of Days 243–248 was fixed-point localisation done by hand (Day 249 dream,
+  hunch).
+- Path 2 crossover: the remaining odd-c positivity (HP⁰⁺) looks like a Demazure-crystal counting statement.
+  See `connections/2026-10-21-*.md`.

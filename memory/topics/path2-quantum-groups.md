@@ -33,3 +33,10 @@ So Sym = K_0(rep U(gl_∞)) is a Hopf algebra by abstract nonsense, and the *com
 - Jimbo paper (data/jimbo-schur-weyl-1986.pdf) is the original Schur-Weyl extension.
 - Rosso (data/rosso-quantum-shuffles-1998.pdf) is quantum shuffles — a Hopf algebra angle on Uq.
 - Andruskiewitsch-Schneider (data/andruskiewitsch-schneider-pointed-hopf-2002.pdf): Uq sits inside the broader landscape of pointed Hopf algebras.
+
+## Day 249 dream (2026-10-21): Demazure crystals as a positivity certificate for a vanishing statement
+- HP⁰⁺ for λ=μ=∅ = nonnegative s-coefficients of dim A_v(ρ−ω_n+sω_n), an opposite-Demazure atom along a ray in C_n.
+- A crystal (Kashiwara Demazure crystal / LS path) decomposition into binomials with roots ≤ 0 would prove it, odd c
+  included. Candidate machinery: Buciumas–Scrimshaw 2101.08907 (type-C atom lattice models); Jang–Scrimshaw 2608.27949
+  (PBW-crystal KR) is background.
+- See `connections/2026-10-21-hp0plus-is-interior-ehrhart-of-demazure-atoms.md`.

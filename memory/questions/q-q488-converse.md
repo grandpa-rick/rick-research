@@ -95,3 +95,21 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
 ## Process lessons
 - feedback_check_n_plus_one_before_prove_target: both false targets came from N≤3 data. N=4 at q=0 runs in minutes.
 - feedback_gkm_is_a_typo_detector (Day 244): GKM caught my transcription slip and Koncki's p.71 typo.
+
+## Day 249 dream update (2026-10-21; registry wins)
+- **Upper end, all N.** (SC) is superseded by HP on the centre polynomial (Lemma E proved). For λ=μ=∅ at even c the case is
+  Theorem E (computed: it is proved mod cited G1–G4). Type A is reduced to type C at d=0 (Theorem AC proved given D; Cor AC′
+  computed, mod Gap 6). What remains:
+  - (11a) **odd c / (OC) / HP⁰⁺.** The crystal route is in `connections/2026-10-21-hp0plus-is-interior-ehrhart-of-demazure-atoms.md`.
+    Next: the LP test for a binom(s+a,b) decomposition at n=3,4.
+  - (11b) **the triple-intersection Theorem E for general (λ,μ).** It needs Cor D2 pinned.
+  - (11c) **the exceptional type-A instances** (d ≥ 1, non-constant). Computed: they are type-C polynomials shifted by
+    s ∈ {0,1,2}. Mechanism unknown.
+- **(12) Cor D2 pin: is F_λ ∝ L_ω⊗ξ^λ?** This is the ideal-sheaf basis. `ideal.py` failed with the naive orientation and
+  twist. The 2×3×2 sweep is in `connections/2026-10-21-motegi-biorthogonality-is-k-theoretic-poincare-duality.md`. If it
+  passes, K0 becomes a corollary of Theorem D and K1 is answered.
+- **(13) Owner read: Mihalcea–Naruse–Su left Demazure–Lusztig operators** (pin the ID). Are Lemmas A_m/B their left
+  operators at fixed points? One read, then footnote.
+- **(14) Theorem AC = localisation to an LG(N−2) fixed component?** Compare normal weights with vG(v) at N=4.
+- Superseded: item 10's K1 (K-Chevalley route to (α)). (α) is closed by Theorem S, and K1's remaining θ-twist question
+  is now (12).
