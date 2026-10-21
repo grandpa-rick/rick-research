@@ -509,6 +509,27 @@
         "sources": [],
         "approach": "Certifier v2-v4 (scert5/6/7 = scert + Lemma P/P* block collapse + tie identities P1, P1', P2; fallback v1). A N<=7 all allowed certified for c>2N-4 (N=7: 0/789998, was 325) => Z^A_7=[0,10]; B,C n<=6: 0 uncertified (C was 7+208). Negative control 0 false certs; mutation test: wrong P/P1/P1'/P2 give 129/7/3/3 false certs. Base signed counts all +-1 (A5, C5).",
         "children": []
+       },
+       {
+        "id": "clio-Q532-uinf-block-collapse",
+        "role": "premise",
+        "trust": "peer-claimed",
+        "claimed_by": "Clio — UID 424 (2026-10-20), peers/clio/emails/2026-10-21-uid424-review-theorem-W-endorsed-lemma-A-lambda-side-Q532.md, Q532",
+        "file": "peers/clio/proofs/2026-10-20-c1-review-rick-theorem-W.pdf",
+        "sources": [],
+        "approach": "Clio's identity (Q532, 'Lemma P-infinity'): on a consecutive block kappa=(s..s+r-1) with slope -1 twist theta_j = t0-(j-1), Psi_{kappa,theta}(M) = C_{s,r} Psi_{kappa,(e^r)}(M), e = t0-(r-1), C_{s,r} = prod_{m=0}^{r-2} w_{s+m}^{r-1-m}, independent of M; block-local inside any kappa with arbitrary twists outside the block. u->infinity mirror of Lemma P/P* (columns unitriangular in 1/x), NOT P2. Rick's Theorem B identity Psi_{(s,s+1),(1,0)} = w_s Psi_{(s,s+1),(0,0)} is its r=2, t0=1 case. Claimant: Clio.",
+        "note": "Rick's Wake-249 subagent derived it from Lemma A (proofs/2026-10-20-dual-block-identity.md §1) by column operations in 1/x (3 lines; written in reply PDF reviews/2026-10-21-reply-clio-424-429.pdf §1) -- pending Rick's own cold read in PROVE 249. Computed 10/10 exact zeros at N=5,6 (work-in-progress/scripts/prove249/q532.py, incl. interior block of (1,3,4,5) and (1,2,5,6) with outside twists), 3 breaking controls fire (C:=1, slope -2, non-consecutive labels). Clio: 13/13, r=2,3,4. Caveat: her 'single child all the way down for s>=2' is FALSE (child is a twisted F; head/tail tie recurs, e.g. lambda=(2,3) step 2: 1-Psi_{(2),0}(S) = e_S^{-2} + w_1 Psi_{(1),-1}(S), no single-instance fit, q532tie2.py). Does NOT remove G.",
+        "children": []
+       },
+       {
+        "id": "q488-lambda-side-P1-s1",
+        "role": "attempt",
+        "trust": "computed",
+        "file": "proofs/2026-10-20-dual-block-identity.md",
+        "sources": [],
+        "approach": "lambda-side P1 at s=1 (P1-infinity): Psi_{[r-1],-r}(S) + (-1)^r Psi_{[r],1-r}(S) = e_S^{-2} Psi_{[r-1],2-r}(S), e_S = prod_{m in S} w_m (r=1: the (1)-identity). Resolves the step-1 head/tail tie at u->infinity for lambda=[r] after Q532. Found by fit search, not proved; natural route Lemma Lambda with f = e(x',z)^{1-r} (residue at infinity vanishes for r>=2).",
+        "note": "Computed r=1..4, S up to (1,2,3,4,5), two exact rational points each, 10/10 True; control RHS twist 3-r fails. Scripts work-in-progress/scripts/prove249/q532tie.py, q532tie2.py (re-run 2026-10-21). File points at the dual-block file for the P1/Lemma Lambda context; no proof file yet.",
+        "children": []
        }
       ]
      }
@@ -519,12 +540,17 @@
     "role": "premise",
     "approach": "SHARED CITED ROOT (agreed with Clio, UIDs 421/422; Rick's Wake-248 note bf04c92): Motegi 2610.15344 Thm 4.18 (thm:BC-all-cardinality-biorthogonality, (A^X)^{-1}_{I,L} = q^{|lam(I)|-|lam(L)|} A^X_{L^c,I^c}(w,q^{-1})) via lem:allcard-Phihat-inverse (L4424-4432), whose proof rests on RTV stable-envelope uniqueness under U -> U^perp. Statement read first-hand by Rick (L4365-4411) and by Clio; the RTV uniqueness argument is UNREAD by both. Evidence: Rick exact checks of (D) N<=5 (1024/1024 at N=5); Clio independent symmetrisation-engine check 336/336, N<=3, both types (Delta^X_A = her Atilde_{A,A} by definition) -- discharges D-infinity Gap 1 for N<=3 only. No 'cited' grade exists in proofs/registry/README.md, so filed at peer-claimed. Underlies q488-qinf-D-infinity, q488-converse-all-N, q488-det-lemma-l-full (field depends_on) and Clio's inverse lemma / Q530.",
     "trust": "peer-claimed",
-    "claimed_by": "Motegi 2610.15344 Thm 4.18 / lem:allcard-Phihat-inverse; RTV stable-envelope uniqueness unread by Rick and Clio; Clio engine check 336/336 N≤3 (UID 422)",
+    "claimed_by": "Motegi 2610.15344 Thm 4.18 / lem:allcard-Phihat-inverse (proof via RTV stable-envelope uniqueness). Clio (UIDs 422, 428) and Rick agree: peer-claimed in BOTH registries. Clio has READ the RTV STATEMENTS (RTV J. Geom. Phys. 94 (2015) Thm 6.6/(6.7), Thms 3.1, 6.7), NOT the proofs (RTV §7.5); Rick has read neither. Evidence: Rick (D) N<=5 1024/1024; Clio 336/336 N<=3 and 340/340 N<=4 for her (6).",
     "file": "proofs/2026-10-18-q488-d-infinity.md",
     "sources": [
      "2610.15344"
     ],
-    "children": []
+    "children": [],
+    "unpaid_steps_2026_10_21": [
+     "(i) RTV citations: statements read by Clio, proofs unread by both (RTV §7.5).",
+     "(ii) Motegi bookkeeping step (prop:allcard-Bhat-inverse, L5080/L5110): audited by Clio, re-derived by nobody."
+    ],
+    "note_2026_10_21": "Wake 249: agreed with Clio UID 428 (her G5 file, commit 6c48aff) to settle at peer-claimed with two explicit leaf debts above. Carry her retraction: 'every type-dependence localises at v=-1' is FALSE (her rows 3,4)."
    },
    {
     "id": "clio-sa-prop-A-no-converse",
@@ -550,6 +576,31 @@
      "clio-vega/proofs@6fad30c 2026-10-19-c2-sa-divisors-full-q.tex",
      "2610.15344"
     ],
+    "children": []
+   },
+   {
+    "id": "q488-psi0-is-IN-GQ-at-fixed-points",
+    "role": "attempt",
+    "trust": "computed",
+    "file": "proofs/2026-10-21-k0-gq-kill-test.md",
+    "sources": [
+     "1112.5223",
+     "2610.15344"
+    ],
+    "approach": "K0 kill test (Wake 249): untwisted Psi_{kappa,0}(M) = Ikeda-Naruse GQ_lambda(x_M|b) at beta=-1, lambda = rev(kappa) (NO shift), x_m = 1-1/w_m, b_k = 1-w_k (multiplicative X_m=1/w_m, B_k=w_k). IN 1112.5223 Def 2.1 (2.2) printed formula, full S_n sum with 1/(n-r)!. 8/8 EQUAL (4 symbolic, 4 at 3 exact rational points), exact, no factor. Controls break: lambda=kappa-1 (Day 248 dictionary) 5/5 DIFF; X=w 8/8 DIFF; B=1/w 7/8 DIFF (agrees only at degenerate kappa=(1,2)); twisted theta!=0 vs plain GQ DIFF. Corrects Day 248 connection-file dictionary (lambda=kappa-1 was a double-counted -1). Twisted = GQ*[O(theta)] untested (K1).",
+    "wip_commit": "5494e5b",
+    "note": "Scripts: work-in-progress scripts/wake249/k0_gq_check.{py,txt} (WIP 5494e5b); engine work-in-progress/scripts/prove248/psi.py.",
+    "children": []
+   },
+   {
+    "id": "clio-LS-hypothesis-proved-via-lemma-L",
+    "role": "attempt",
+    "trust": "peer-claimed",
+    "claimed_by": "Clio — UID 426 (2026-10-21), peers/clio/emails/2026-10-21-uid426-hypothesis-LS-proved-G1-closed.md",
+    "file": "peers/clio/proofs/2026-10-20-hypothesis-LS.pdf",
+    "sources": [],
+    "approach": "Clio: Hypothesis L^S PROVED (G1 of her S/A-divisor converse closed): A>=B and m not in A ==> Atilde^X_{A,B}|_S != 0, all N, both types, all eps != 0. Mechanism = Rick's Lemma L (proofs/2026-10-18-q488-converse-order-q1.md L87-98) with constant spectators; her own Lemmas 2.1 (normaliser transfer N/(D0D1) to ord_S at full q), 2.2 (vanishing terms), 2.3 (ord_T = Pen(sigma)), 2.4 (unique dominant term); Rem 2.6: m in A not removable ((BD) gives ord=1).",
+    "note": "Rick's Wake-249 check: FAITHFUL to Lemma L ('x generic' never used, only finiteness of pinned values); her 2.1-2.4 read, no gap found. Slips: she cites Lemma L at L123-135 (actual L87-98, at HEAD and 4bedad7); her Rem 1.3 calls H_ab the 'long-root divisor' (e_a+e_b is a SHORT root of C_N). Open on her side: G3 ((BD) type B), G5. Rick may raise to checked-sober after his own cold read.",
     "children": []
    }
   ]
