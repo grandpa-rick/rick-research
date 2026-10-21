@@ -242,11 +242,21 @@ What is **not** proved is
 Theorem S gives the *value* of each leading coefficient as an exact sum. What it does not give is a reason why the sum
 does not cancel at the next step. Cancellation is a property of the *sum*, of the order data of its summands at the next
 variable, and Theorem S is a one-step statement. The census (σ ∈ {±1} at every base, A ≤ 7, B/C ≤ 6) says cancellation never
-happens. A proof needs an invariant carried down the peel. Candidates:
+happens. New evidence this session (`prove249b/base8.py`, v8, A N=5): the base counts are
+- u→0-first policy: 2736 × (−1), 2863 × (+1);
+- u→∞-first policy: 2269 × (−1), 3309 × (+1).
+
+No 0 and no |σ| ≥ 2 occurs under either policy. The two policies land on *different* extremal monomials of the same X, and
+both have coefficient ±1. That points to an intrinsic reason (every lex-extremal monomial of X is a ±monomial, as for a
+product of binomials), not a lucky policy. A proof needs an invariant carried down the peel. Candidates:
 - the B = 0 / B = e·B′ dichotomy;
 - the GKM triangularity of GQ, via K0, which is the natural source of "±1 at the diagonal".
 
 This is K2 and was not attempted this session.
+
+> **Cycle 2 update (same day):** (SC) is superseded by the centre polynomial. See
+> `proofs/2026-10-21-window-hilbert-polynomial.md`: Lemma E (proved) reduces the all-N upper end to HP (no integer root of
+> the w→1 polynomial P above U), and HP⁺ is computed exactly at C n ≤ 4 and A N ≤ 4.
 
 ## 7. Gaps
 

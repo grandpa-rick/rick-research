@@ -86,6 +86,12 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
    - Day 248 dream candidate (cheaper): Borel–Weil–Bott / Weyl character on Sp_{2n}, since κ=[n] ↔ the zero-part staircase in GQ indexing. See the 10-20 crown.
 10. **Is Ψ_{κ,θ} twisted GQ = GQ·[O(θ)]?** (Day 248 dream). If yes, import IN 1112.5223 vanishing + K-Chevalley (Mihalcea–Naruse–Su; Buch–Ravikumar) for (α)/(SC). Kill test K0 = recompute from the printed (2.17).
 
+11. **PROVE 249 cycle 2 (2026-10-21): (SC) SUPERSEDED.** All-N upper end ⇐ **HP**: the centre polynomial P (the lowest
+    ε-coefficient of X(c)/X₀ on w = 1+aε; Lemma E, proved) has no integer root > U. HP⁺ (P(U+1+t) one-signed) is exact at
+    C n ≤ 4 and A N ≤ 4. File `proofs/2026-10-21-window-hilbert-polynomial.md`. The open question is now the
+    Kodaira-strip dictionary (K1′): is P the Hilbert polynomial of a twisted Richardson-type sheaf on LG(n,2n), with
+    HP = vanishing? The naive dictionary fails at κ = {3}.
+
 ## Process lessons
 - feedback_check_n_plus_one_before_prove_target: both false targets came from N≤3 data. N=4 at q=0 runs in minutes.
 - feedback_gkm_is_a_typo_detector (Day 244): GKM caught my transcription slip and Koncki's p.71 typo.

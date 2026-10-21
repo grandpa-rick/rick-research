@@ -440,7 +440,7 @@
       "role": "attempt",
       "trust": "computed",
       "file": "proofs/2026-10-19-theorem-W-upper-end-certifier.md",
-      "approach": "OPEN: upper end for lam or mu with a consecutive top block. u->inf in-coefficient is a signed block sum of twisted F's (+tail term if lam=[r]); no single Pi w^e F_lam' fits (e in [-6,6], n=5). Mirror obstruction: u->0 out-coefficient when max nu^c = n-1. Computed clean: N=5 c=7,8 all 5578 triples. | Day 247 cycle 2: mirror obstruction made a route. Lemma R0 (u->0 out-coefficient = u^{n-m-1} K l_{nu~} for top-clean nu^c; u^n l_[n-1] o w^-2 for nu=[n]) PROVED; R0+R_inf certify all N=5. Twisted family Psi_{kappa,theta} + label-lowering + sum certifier (iterated leading coefficient = signed count): ALL allowed A-triples nonzero for all c>2N-4 at N=4,5,6 (408/5578/68791); B upper end n<=6; C n<=4 (n=5,6: 7/208 nodes with leading cancellation). Negative control: 0 false certs over 2432 known zeros after fixing one bug (B weight on S). All-N still open. | Day 248: dual-block obstruction removed (alternant form; P/P1/P2 proved); certificate now N<=7 (A), n<=6 (B,C). All-N reduces to (SC) single-coefficient conjecture + multi-block tie identity (alpha). | PROVE 249: (alpha) is the o=1 case of Theorem S (proved, exact for every tie family); u->oo calculus = iota-conjugate (Lemma I). All-N reduces to (SC) alone (non-cancellation invariant), K2.",
+      "approach": "OPEN: upper end for lam or mu with a consecutive top block. u->inf in-coefficient is a signed block sum of twisted F's (+tail term if lam=[r]); no single Pi w^e F_lam' fits (e in [-6,6], n=5). Mirror obstruction: u->0 out-coefficient when max nu^c = n-1. Computed clean: N=5 c=7,8 all 5578 triples. | Day 247 cycle 2: mirror obstruction made a route. Lemma R0 (u->0 out-coefficient = u^{n-m-1} K l_{nu~} for top-clean nu^c; u^n l_[n-1] o w^-2 for nu=[n]) PROVED; R0+R_inf certify all N=5. Twisted family Psi_{kappa,theta} + label-lowering + sum certifier (iterated leading coefficient = signed count): ALL allowed A-triples nonzero for all c>2N-4 at N=4,5,6 (408/5578/68791); B upper end n<=6; C n<=4 (n=5,6: 7/208 nodes with leading cancellation). Negative control: 0 false certs over 2432 known zeros after fixing one bug (B weight on S). All-N still open. | Day 248: dual-block obstruction removed (alternant form; P/P1/P2 proved); certificate now N<=7 (A), n<=6 (B,C). All-N reduces to (SC) single-coefficient conjecture + multi-block tie identity (alpha). | PROVE 249: (alpha) is the o=1 case of Theorem S (proved, exact for every tie family); u->oo calculus = iota-conjugate (Lemma I). All-N reduces to (SC) alone (non-cancellation invariant), K2. | PROVE 249 cycle 2: (SC) superseded by the centre route. Lemma E (proved): on w=1+a*eps the eps^j-coefficients of X(c)/X0 are polynomials Q_j(c); Q_d(c0)!=0 => X(c0)!=0. So all-N upper end <= HP (centre polynomial P=Q_d has no integer root > U). HP+ (P(U+1+t) one-signed) computed exactly: C n<=4 (115/115, 726/726), A N<=4 (25/25, 408/408), A N=5 see file.",
       "children": [
        {
         "id": "q488-lemma-R0",
@@ -574,6 +574,57 @@
         "sources": [],
         "approach": "scert8 = scert7 + iota-conjugated P/P*/P1/P1'/P2 at u->oo. A N=5,6: 0 uncertified. Negative control A N=4,5: 0/1300 false; mutants (th^v w/o +1, child sign) 242/155 false. u->oo-only policy A5: 924 -> 51 uncertified (all nu=[5], lam or mu=(1,3,4)).",
         "note": "Scripts work-in-progress/scripts/prove249b/{scert8,run8,runinf,chk8}.py",
+        "children": []
+       },
+       {
+        "id": "q488-lemma-E-centre-polynomial",
+        "role": "premise",
+        "trust": "proved",
+        "file": "proofs/2026-10-21-window-hilbert-polynomial.md",
+        "sources": [],
+        "approach": "Lemma E: X(c)=sum_L alpha_L w_L^c; on curve w=1+a eps each eps^j coefficient of X(c)/X0 is a polynomial in c (exp(c log w_L)); d=min{j:Q_j!=0} finite (W+ at c=-1); Q_d(c0)!=0 => X(c0)!=0. Reduction: HP => Z^A_N=[0,2N-4], Z^C_n=[0,2n-2] all N (with W+, Prop Z, Cor Delta).",
+        "depends_on": [
+         "q488-theorem-W-c-minus-1",
+         "q488-weighted-theorem-W"
+        ],
+        "children": []
+       },
+       {
+        "id": "q488-HP-centre-polynomial-one-signed",
+        "role": "premise",
+        "trust": "computed",
+        "file": "proofs/2026-10-21-window-hilbert-polynomial.md",
+        "sources": [],
+        "approach": "Conjecture HP / HP+: centre polynomial P=Q_d of every allowed instance has P(U+1+t) with all nonzero t-coefficients of one sign and nonzero constant term (Descartes => no real root >= U+1). Exact (Richardson-extrapolated, rationalised, interpolated, 3 extra exact checks): C n=3 115/115, C n=4 726/726, A N=3 25/25, A N=4 408/408. Grading law d - deg P = e (=|lam|+|mu|-|kap|) 841/841 type C. THE remaining gap for all-N upper end.",
+        "children": []
+       },
+       {
+        "id": "q488-vertex-pm1-newton-polytope",
+        "role": "attempt",
+        "trust": "computed",
+        "file": "proofs/2026-10-21-window-hilbert-polynomial.md",
+        "sources": [],
+        "approach": "(SC) in polytope language: D*X (D=C_n Weyl denominator) Laurent; C n=3, c>=U: Newton polytope has 48=|W(C3)| vertices, all coefficients +-1; below U +-2 and 50-60 vertices occur. True but per-chamber; superseded by centre route.",
+        "children": []
+       },
+       {
+        "id": "q488-summand-level-unique-top",
+        "role": "attempt",
+        "trust": "dead-end",
+        "file": "proofs/2026-10-21-window-hilbert-polynomial.md",
+        "sources": [],
+        "reason": "Per-summand xi-leading coefficients are +-1 (n=3, all xi) but the xi-top L is not unique at c=U+1 (2/1150 random directions tie and cancel); configuration level fails worse (rational summand artefacts). A proof would need per-instance chamber choice + GQ degree control in every chamber. Superseded by centre polynomial.",
+        "refutation": "computed",
+        "approach": "Prove (SC) by a strict xi-degree domination of one summand T_L (degree inequality in a chosen chamber).",
+        "children": []
+       },
+       {
+        "id": "q488-window-is-kodaira-strip",
+        "role": "attempt",
+        "trust": "hunch",
+        "file": "proofs/2026-10-21-window-hilbert-polynomial.md",
+        "sources": [],
+        "approach": "ell_[n] = Atiyah-Bott K_T-integration on LG(n,2n) (Lemma Delta = Weyl character formula); C-window [0,2n-2] = Kodaira strip of index n+1 (a=c/2-n), c<->2n-2-c = Serre duality; P = Hilbert polynomial of Richardson-type Z, dim Z = -e; HP+ = Hilbert polynomial one-signed above last root (vanishing thms at even c). Naive dictionary P^kap(c)=chi(X_kap,O(c/2-#kap)) passes [n],{1},{2},{1,2}=Q3, FAILS {3}. Owners unread: Ikeda-Naruse 1112.5223, Brion positivity, Brion-Kumar.",
         "children": []
        }
       ]
