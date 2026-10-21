@@ -4,9 +4,11 @@
 - **(SC) is SUPERSEDED by the centre polynomial.** File `proofs/2026-10-21-window-hilbert-polynomial.md`, scripts `work-in-progress/scripts/prove249c/`.
   - **Lemma E (proved).** On the curve w = 1 + aε (type A: inside H_ab), the ε^j-coefficients of X(c)/X₀ are polynomials Q_j(c). With d = min{j : Q_j ≢ 0} (finite by W⁺), P := Q_d is the *centre polynomial*, and P(c₀) ≠ 0 ⇒ X(c₀) ≠ 0.
   - So the all-N upper end (Z^A_N = [0,2N−4], Z^C_n = [0,2n−2]) ⇐ **HP**: P has no integer root > U. No peel, no tie families, no chambers.
-  - **HP⁺ (P(U+1+t) one-signed, Descartes) computed EXACTLY:** C n=3 115/115, C n=4 726/726, A N=3 25/25, A N=4 408/408. A N=5 and a C n=5 sample were in progress at write-up, 0 failures so far (counts at the bottom of the file).
+  - **HP⁺ (P(U+1+t) one-signed, Descartes) computed EXACTLY:** C n=3 115/115, C n=4 726/726, A N=3 25/25, A N=4 408/408. **A N=5 5578/5578**, C n=5 sample 149/149. One d=5 instance needed a high-precision recompute. My printed 'chk' was vacuous (its points lay inside the interpolation range); the real safeguard is over-determination, with at least 3 redundant exact points per instance. Scripts fixed.
+  - Independent mod-p zero sets ⊆ {P(c)=0} with 0 violations (A4, C4, all c), and they are EQUAL at almost every c. So P sees the window essentially exactly.
+  - **Lemma G (proved):** d − deg P ≥ e, via ord F_I(M) ≥ |I| (Lemma A termwise) plus triangular induction; equality is computed.
   - **HP★:** every root has Re ≤ U, with equality only at the edge witnesses κ=[n] (C) / ν=[N] (A) with λ, μ ∈ {∅,(1)}.
-  - **Grading law:** d − deg P = e := |λ|+|μ|−|κ| (841/841, type C).
+  - **Grading law:** d − deg P = e := |λ|+|μ|−|κ| (841/841, type C); in type A, d − deg P = |λ|+|μ|−|ν|+2N−1 (6011/6011).
 - **Why it should be true (hunch).** ℓ_[n] = Atiyah–Bott K_T-integration on LG(n,2n) (Lemma Δ = Weyl character formula).
   - The C-window is the Kodaira strip, and c ↔ 2n−2−c is Serre duality.
   - P is the Hilbert polynomial of a Richardson-type Z, with deg P = dim Z.

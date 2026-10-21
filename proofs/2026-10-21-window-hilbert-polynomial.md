@@ -11,18 +11,20 @@ E, E_C) and `2026-10-19-theorem-W-sharp.md` (U^A_N = 2N−4, U^C_n = 2n−2, Lem
 |---|---|---|
 | **Lemma E** (ε-polynomiality) | On the curve w(ε) = 1 + aε (type A: inside H_ab), the ε^j-coefficient of X(c)/X₀ is a polynomial Q_j(c) in c. Let d = min{j : Q_j ≢ 0}, which is finite for allowed instances. Then Q_d(c₀) ≠ 0 ⇒ X(c₀) ≢ 0. | **proved** (§2) |
 | **Conjecture HP** | For every allowed instance, the "non-equivariant polynomial" P := Q_d has no integer root c > U. | conjecture |
-| **HP⁺** (one-sign form) | P(U+1+t) ∈ ℚ[t] has all nonzero coefficients of one sign and a nonzero constant term. Hence P ≠ 0 on the whole real ray c ≥ U+1, odd c included. | **computed, exact**: C n ≤ 3 (115/115); C n = 4 (§3); A N ≤ 4 (25/25, 408/408); A N = 5 (§3) |
-| **HP★** (root form, strongest) | Every complex root of P has Re ≤ U, with equality only at the window-edge witnesses: type C κ = [n] with λ, μ ∈ {∅, (1)}; type A ν = [N] with λ = ∅, μ ∈ {∅, (1)}, any pair. So P(U+1+t) is Hurwitz-stable, which implies HP⁺. | computed (exact P, numerical roots per irreducible factor): C n=3, 4 (max Re = U, 3 edge each), C n=5 sample (max Re 6 < 8), A N=4 (12 edge), A N=5 so far (max Re 4 < 6) |
+| **HP⁺** (one-sign form) | P(U+1+t) ∈ ℚ[t] has all nonzero coefficients of one sign and a nonzero constant term. Hence P ≠ 0 on the whole real ray c ≥ U+1, odd c included. | **computed, exact**: C n = 3 (115/115); C n = 4 (726/726); C n = 5 sample (149/149); A N ≤ 4 (25/25, 408/408); **A N = 5 (5578/5578)** |
+| **HP★** (root form, strongest) | Every complex root of P has Re ≤ U, with equality only at the window-edge witnesses: type C κ = [n] with λ, μ ∈ {∅, (1)}; type A ν = [N] with λ, μ ∈ {∅, (1)}, any pair (at N=4 only λ = ∅ occurs; at N=5 all three combinations, 30 = 10 pairs × 3). So P(U+1+t) is Hurwitz-stable, which implies HP⁺. | computed (exact P, numerical roots per irreducible factor): C n=3, 4 (max Re = U, 3 edge each), C n=5 sample (max Re 6 < 8), A N=4 (12 edge), A N=5 (max Re = 6 = U, 30 edge; 872 others < U, 4676 constant) |
 | **Reduction** | HP ⇒ (SC)'s conclusion: X ≠ 0 for every allowed instance and every c > U. With W⁺ and Prop Z this gives Z^A_N = [0, 2N−4] for all N ≥ 4 (N ≤ 3 is already proved), and with Cor. Δ Z^C_n = [0, 2n−2]. | **proved** (§2, given HP) |
-| Structure of P (type C) | **Grading law d − deg_c P = e**, where e := \|λ\| + \|μ\| − \|κ\| (\|·\| = sum of elements). It holds in 115/115 cases at n=3 and 726/726 at n=4. Generically d = max(e,0) (113/115, 705/726); otherwise both d and deg go up by one. Also P(2k) ∈ ℤ when d = 0, and P(0) = 0 for λ = μ = ∅ ≠ κ. | computed (n ≤ 4) |
+| **Lemma G** (grading inequality, type C) | Every nonzero coefficient q_{jk} of c^kε^j in X(c)(1+aε) has j − k ≥ e. Hence d ≥ e and deg P ≤ d − e. | **proved** (§2) |
+| Structure of P | **Grading law d − deg_c P = e** (equality in Lemma G), where e := \|λ\| + \|μ\| − \|κ\| (\|·\| = sum of elements). It holds in 115/115 cases at n=3 and 726/726 at n=4. Generically d = max(e,0) (113/115, 705/726); otherwise both d and deg go up by one. Also P(2k) ∈ ℤ when d = 0, and P(0) = 0 for λ = μ = ∅ ≠ κ. **Type A (per-pair normaliser):** d − deg P = \|λ\| + \|μ\| − \|ν\| + 2N − 1, for every pair (a,b): 25/25 (N=3), 408/408 (N=4), 5578/5578 (N=5). | computed (C n ≤ 4, A N ≤ 5) |
 | Vertex form of (SC) | D·X (D = C_n Weyl denominator) is a Laurent polynomial. At C n=3, c ≥ U, its Newton polytope has exactly 48 = \|W(C₃)\| vertices, every vertex coefficient is ±1 (8 instances × c ∈ {4,5}). Below U it breaks: at c = −1 and c = 3 some instances have ±2 vertex coefficients, and at c = 1 vertex counts 52 and 60 occur. | computed (n=3) |
 | Geometric reading | ℓ_[n] is K-theoretic integration on LG(n,2n) (Lemma Δ is the Weyl character formula). The C-window is the Kodaira strip, c ↔ 2n−2−c is Serre duality, and P is a Hilbert polynomial of a Richardson-type Z with dim Z = −e. HP⁺ would then be "Hilbert polynomial positivity above the a-invariant". | hunch (partial dictionary fails a named test, §4) |
 
 **Headline.** (SC) asks why an iterated leading coefficient never cancels. That is the wrong question: it is a statement about
 2^n·n! vertices, one Weyl chamber at a time. The right object is the *centre*. Send all w → 1 and the window problem becomes a
 one-variable polynomial P(c). Its zeros are where the window lives, and above U it is one-signed in the strongest possible
-sense: the Taylor coefficients at U+1 share a sign. Every allowed instance checked so far (C n ≤ 4, A N ≤ 4, A N = 5 in
-progress) satisfies this, exactly, in rational arithmetic. An all-N proof of HP⁺ is a positivity theorem about a single
+sense: the Taylor coefficients at U+1 share a sign. Every allowed instance checked satisfies this, exactly, in rational arithmetic:
+C n ≤ 4 (841), a C n = 5 sample (149), and A N ≤ 5 (25 + 408 + 5578 = 6011). The A count covers *all* of Z^A_5's
+instances, independently of the certifier. An all-N proof of HP⁺ is a positivity theorem about a single
 polynomial per instance, not about a peel tree.
 
 ## 1. Why the vertex picture is the wrong lens (what was tried first)
@@ -74,8 +76,37 @@ Call P := Q_d the **centre polynomial** of the instance. It depends on a only th
 honest limit w → 1, which is independent of the direction a). When d > 0 it is homogeneous of degree d in a, and the data
 shows it is then c-free (§3).
 
+**Lemma G (grading inequality, type C).** Let a be generic: a_i ≠ 0, a_i ≠ ±a_j. Write X(c)(w(ε)) = Σ q_{jk}c^kε^j, with
+X(c) = C(λ,μ,κ;c), unnormalised. Then q_{jk} = 0 whenever j < k + e, where e = |λ| + |μ| − |κ|. In particular d ≥ e
+and deg P ≤ d − e.
+
+*Proof.* "ord" is the ε-order on the curve.
+
+(a) ord F_I(M) ≥ |I| for every M, with equality at M = I.
+- By Lemma A, F_I(M) = w_M^{2r}·Σ_{H⊆M,|H|=r} S₀^M(H)·A_{I,θ}(x_H) with θ_j = I_j − 2j.
+- In S₀^M(H), there are r head factors 1 − x_j^{−2} (order exactly 1) and C(r,2) pair factors 1 − 1/(x_jx_k) (order exactly
+  1, since a_j + a_k ≠ 0). Each tail factor (x_j − 1/w_t)/(x_j − w_t) has order 0, a ratio of two order-1 quantities since
+  a_j ≠ ±a_t.
+- In A = det[F_j(x_i)]/V(x_H), column j is y^{j−1+θ_j}ρ_{I_j}(y), and ρ_{I_j}(y) = Π_{k<I_j}(1 − w_k/y) has order ≥ I_j − 1
+  at y = x_i. By multilinearity, ord det ≥ Σ_j(I_j − 1). Also ord V = C(r,2) exactly.
+- Each H-term therefore has order ≥ r + C(r,2) + Σ_j(I_j − 1) − C(r,2) = |I|.
+- At M = I, F_I(I) = monomial·φ⁰_I(I). This is a product of r + (|I| − C(r+1,2)) + C(r,2) = |I| factors, each of exact
+  order 1, so ord F_I(I) = |I|.
+
+(b) If ord g(M) ≥ m for all M, then ord ℓ_κ(g) ≥ m − |κ|. Solve g = Σ_I ℓ_I(g)F_I triangularly along a linear extension
+of ≤:
+  ℓ_M(g) = (g(M) − Σ_{I<M}ℓ_I(g)F_I(M))/F_M(M).
+By induction ord ℓ_I(g) + |I| ≥ m, so by (a) the numerator has order ≥ m, and the denominator has order exactly |M|.
+
+(c) w_M^c = Σ_k (c^k/k!)·ℓ_M(ε)^k, where ℓ_M(ε) := Σ_{m∈M}log(1 + a_mε) = O(ε). So X(c) = Σ_k (c^k/k!)·ℓ_κ(g_k) with
+g_k(M) = ℓ_M(ε)^kF_λ(M)F_μ(M), and ord g_k ≥ k + |λ| + |μ| by (a). Hence by (b) the c^k-part has order ≥ k + e. ∎
+
+The data (§3) shows **equality** d − deg P = e in every case. That is, the top c-coefficient of P always lies on the
+extremal line j − k = e, which is the cohomological limit. Equality is not proved. Lemma G is checked numerically for (a)
+at n ≤ 4 (`ordF.py`: 0/35 and 0/126 violations, all diagonals exact).
+
 **Reduction.** If HP holds, then X(c) ≢ 0 for all allowed instances and all integers c > U, by Lemma E(iii). With
-Prop Z (lower inclusion) and Theorem W⁺ (c ≤ −1) this gives Z^A_N = [0, 2N−4] and Z^C_n = [0, 2n−2] for all N, n. In
+Prop Z (lower inclusion) and Theorem W⁺ (c ≤ −1) this gives Z^A_N = [0, 2N−4] for all N ≥ 4 and Z^C_n = [0, 2n−2] for all n (with Cor. Δ). In
 particular, HP replaces (SC) together with the whole peel/certifier apparatus.
 
 Remark (why this is not circular). The certifier proves X(c) ≠ 0 one chamber at a time, and each chamber can tie at the
@@ -91,20 +122,34 @@ In `hpCx.py` and `hpA3x.py`, the c-free parts of each summand are computed once 
 - evaluate at δ ∈ {1, 2, 4}·10^{−20};
 - second-order Richardson extrapolation of value/δ^d;
 - rationalise (denominator ≤ 10⁹);
-- exact interpolation on dim + 4 points;
-- **consistency check at three further c (U+1, U+2, U+3)**, all exact.
+- exact interpolation on dim + 4 points (c = −2, …, dim+1);
+- **over-determination check:** a correct P has degree ≤ dim, so an interpolant of degree ≤ dim means at least 3 of the
+  dim + 4 exact values were *predicted* by the others. Every instance has at least 3 such redundant exact checks
+  (`dim + 3 − deg`). Exactly one interpolant failed this test (degree 18 at N=5, dim 15), see below.
+
+**Correction (found during the session).** The scripts' printed "chk" compared P at c = U+1, U+2, U+3. Those points lie
+*inside* the interpolation range, so that check was vacuous. The over-determination check above is the real safeguard.
+The scripts now check at c = dim+4, dim+5, dim+7, outside the range. Reruns with the corrected check reproduce identical
+polynomials: C n=3 115/115, A N=3 25/25, A N=4 408/408, C n=4 726/726 (§3.1).
+
+**The one failure.** A N=5, (a,b) = (3,4), λ = μ = (5), ν = [5], d = 5. The ε^5-values have large denominators, and the
+10⁹ rationalisation garbled them into a degree-18 interpolant. It was also the lone exception to the grading law.
+Recomputed (`fix1.py`) at δ = 10^{−40} and 10^{−60}, with rationalisation bounds 10^{30} and 10^{45}, giving the same
+answer twice and passing three genuine out-of-range checks (c = 30, 31, 40):
+P = −(29312594647/29703440000)(c − 2). That is degree 1, root 2 < U, grading law satisfied, HP⁺ passes.
 
 The certificate is HP⁺, the one-sign test (Descartes) on P(U+1+t), in exact arithmetic (`desc.py`).
 
 | type, size | allowed | chk pass | **HP⁺ pass** | notes |
 |---|---|---|---|---|
 | C, n = 3 | 115 | 115 | **115** | `hpC3x.txt` |
-| C, n = 4 | 726 | see below | see below | `hpC4x_{0,1}.txt` |
+| C, n = 4 | 726 | 726 (over-determination) | **726** | `hpC4x_{0,1}.txt` |
+| C, n = 5 | random 3% sample, 149 | 149 | **149** | `hpC5s.txt`; max Re root 6 < U = 8 |
 | A, N = 3 | 25 | 25 | **25** | Z^A_3 = {2}: the only root above 0 is c = 2 = U, at (∅,∅,[3]) |
 | A, N = 4 | 408 | 408 | **408** | `hpA4x.txt` |
-| A, N = 5 | 5578 | see below | see below | `hpA5x_{0,1,2}.txt` (3 shards) |
+| A, N = 5 | 5578 | 5578 (after the one recompute) | **5578** | `hpA5_all.txt`; grading law 5578/5578; max Re root = 6 = U, attained at 30 edge witnesses (ν = [5], λ, μ ∈ {∅,(1)}, all 10 pairs) |
 
-(The table is completed in §3.1 when the runs finish.)
+
 
 Float pre-runs (`hpe.py`, `hpA2.py`, numpy root-finding) agree. One float false alarm (C n=4, (∅,∅,{1,3,4}), "integer
 zero at 7") was a degree-8 fit artefact. Exactly, P = c(c−1)(c−2)²(c−3)(c−4)(3c²−5c+6)/80640, with max real part 4 < 6
@@ -139,6 +184,21 @@ but every real part is ≤ U. The edge instances, with a root exactly at U, are 
   **over-determined instances essentially never vanish**, which is consistent with every known window zero being
   transversal.
 
+**Negative control and independent cross-check** (`desc.py`, `zcmp.py`).
+- *Teeth.* Centre the one-sign test at U instead of U+1. It must then fail where P(U) = 0, and it does: exactly the
+  3 C n=4 edge witnesses and the 12 A N=4 edge witnesses. Centred at c = 3 for C n=4, it fails 35 times.
+- *Zero sets, A N=4, c ∈ [−2, 6], all 408 instances.* I compared {X(c) ≡ 0}, computed by the *independent* mod-p engine
+  `prove247/mp.py` at two random points, with {P(c) = 0}. Lemma E's direction "X(c) = 0 ⇒ P(c) = 0" has **0 violations**.
+  The two sets are **equal** at c = −2, −1, 0, 1, 2, 4, 5, 6 (counts 0, 0, 1, 3, 52, 12, 0, 0), and the 1/3/52/12 match
+  the Day 246 positive-control census. The only difference is c = 3: P(3) = 0 for 12 instances but X(3) = 0 for only 6 of
+  them. So the centre polynomial sees the window essentially exactly. It only over-reports at an odd c, which is a formal
+  half-integral twist in the geometric reading.
+- *Zero sets, C n=4, c ∈ [−2, 8], all 726 instances* (`zcmpC.py`).
+  - Lemma E's direction has **0 violations**.
+  - The sets are equal at c = −2, −1, 2, 4, 5, 6, 7, 8, with X-zero counts 0, 0, 126, 31, 3, 3, 0, 0.
+  - P over-reports at c = 0 (1 instance), c = 1 (45) and c = 3 (2).
+  - Zeros stop at c = 6 = U, as Z^C_4 = [0,6] requires.
+
 ### 3.2 Richardson pieces and the product decomposition (type C, `brion.py`)
 
 Non-equivariantly, F_λF_μ = Σ_ν c^ν_{λμ}(1)F_ν, where c^ν_{λμ}(1) = lim_{w→1} C(λ,μ,ν;0). By linearity of ℓ_κ,
@@ -156,7 +216,13 @@ alternating sum, as in the geometric picture with Z a triple intersection.
 
 ### 3.1 Completion of the runs
 
-(Appended at the end of the session; see the bottom of this file.)
+- **A N = 5:** 5578/5578 pass HP⁺, after the one recompute described above. Grading law d − deg P = e^A + 9: 5578/5578.
+  Root maximum Re = 6 = U, attained at 30 edge witnesses. Zero sets at c = 6, 7 on the first 3417 instances match exactly:
+  12 = 12 at c = U, and 0 = 0 at c = U+1.
+- **C n = 5 sample:** 149/149, max Re root 6 < U = 8.
+- **Reruns with genuine out-of-range checks (c = dim+4, dim+5, dim+7):** C n=3 115/115, C n=4 726/726, A N=3 25/25 and
+  A N=4 408/408. Every polynomial is identical to the first run (`hpC4x_rechk_*.txt`, `hpA4x_rechk.txt`; empty diffs).
+  A N=5 rests on over-determination (at least 3 redundant exact points per instance) plus the one high-precision recompute.
 
 ## 4. The geometric reading (hunch; why HP⁺ should be true)
 
