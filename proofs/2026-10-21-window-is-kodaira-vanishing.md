@@ -13,7 +13,7 @@ Rick, 2026-10-21, third PROVE pass on PROVE 249. This continues `proofs/2026-10-
 | **Lemma Φ** (atom form) | φ∘D_i = −D̄_i∘φ, with φ(f) = e^{−ρ}f^\*, D̄_i = D_i − 1. Hence P^κ_{∅∅}(c) = D̄_{w_κ}(e^{(c/2+1)ω_n − ρ})\|_{e=1}. | **proved** (§2) |
 | **Theorem E** (even c, λ=μ=∅) | For every κ ⊆ [n] and every even c ≥ 2n: P^κ_{∅∅}(c) ∈ ℤ_{≥1}. In particular HP holds at even c for this family. | **proved modulo Theorem D and three cited facts** (G2–G4, §3; not deep-read this session) |
 | **Prop. T** (trichotomy, type C) | Every allowed instance is one of three kinds: (i) d = e > 0, so P is a nonzero constant and **HP holds trivially**; (ii) d = 0, so P is the honest w → 1 limit, a non-equivariant Euler characteristic; (iii) *exceptional*, d > max(e,0). | (i) **proved** from Lemma G; the census is computed (n=3: 64/49/2, n=4: 356/349/21, n=5 sample: 70/77/2) |
-| **Reduction A→C** | Type A, d = 0: P^A(λ,μ,ν;a,b;c) = P^C(λ,μ,ν⁻⁻;c−2), where ν⁻⁻ is ν minus its two largest elements. This is **independent of the pair (a,b)**. | **computed, exact**: N=4 78/78, N=5 640/640 (0 mismatches) |
+| **Reduction A→C** | Type A, d = 0: P^A(λ,μ,ν;a,b;c) = P^C(λ,μ,ν⁻⁻;c−2), where ν⁻⁻ is ν minus its two largest elements. This is **independent of the pair (a,b)**. **Theorem AC:** for the top pair (N−1,N) it holds *equivariantly*: R^A = (vG(v))^{−1}C^{(N−2)}(λ,μ,ν⁻⁻;c−2). | top pair: **proved** given (D) (§4); **all pairs, d = 0: proved** (Cor. AC′, ε⁰-transport by Lemma A_m), census N=4 78/78, N=5 640/640 |
 | Exceptional instances | Every exceptional type-A instance at N=5 (462) has P proportional to a type-C (n ≤ 3) d=0 centre polynomial at c−s, s ∈ {0,1,2} (387/56/19). Exceptional type-C roots: {0, ½, 1, 2}. | computed |
 | **HP at odd c** | open. Values are non-integral, and the cleanest phrasing is a canonical-strip statement (§5). | open |
 
@@ -285,6 +285,67 @@ the full C n=3 table, 0 mismatches. Geometric reading (hunch): on H_ab the subto
 {Λ ⊇ span(e_a,f_b)} ≅ LG(N−2), and the residue is integration there. The shift c−2 is the normal/line-bundle correction. This is
 why U^A_N = 2N−4 = U^C_{N−2} + 2.
 
+**Theorem AC (top pair, proved given (D)).** Let (a,b) = (N−1, N), v := w_{N−1} (so w_N = 1/v on H), and
+G(v) := (1 − v²)(1 − v^{−2}) Π_{k≤N−2}(1 − vw_k)(1 − w_k/v). Then, as rational functions on H,
+  R^A(λ,μ,ν; N−1,N; c) = (vG(v))^{−1} · C^{(N−2)}(λ, μ, ν∖{N−1,N}; c − 2)  if ν ⊇ {N−1,N},
+and R^A = 0 otherwise. Here C^{(N−2)} is the type-C quantity in the variables w_1..w_{N−2}, and it is 0 if λ or μ ⊄ [N−2].
+After normalising by the per-pair X₀, P^A_{top pair}(c) = P^C_{N−2}(c − 2) exactly, including the d > 0 instances.
+
+*Proof.* Write L = L″ ∪ {N−1,N}. Then L ≤ ν iff ν ⊇ {N−1,N} and L″ ≤ ν⁻⁻ := ν∖{N−1,N} (top-aligned dominance).
+
+In the residue form of (D), Res_H ρ_{νL} = [τ(ν)/τ(L)]·φ⁰_{ν^c}(L^c)/(φ⁰_{L^c}(L^c)·(F_L(L)/h))|_H, compare factor by factor:
+- **Complements.** They lie in [N−2] and coincide with the complements of ν⁻⁻ and L″ in [N−2]. φ⁰ is N-free and involves no
+  w_{N−1}, w_N. So the φ⁰ factors are literally the rank-(N−2) ones.
+- **τ-ratio.** τ(ν)/τ(L) = c(L)/c(ν) = c(L″)/c(ν⁻⁻), since c is multiplicative and the {N−1,N} parts cancel.
+- **The diagonal F_L(L).** Use F_L(L) = φ⁰_L(L)·Π_j w_{L_j}^{L_j−2j+2r}, then lemma L1 twice (forced heads N, N−1):
+  φ⁰_L(L) = e⁰_N(L)·e⁰_{N−1}(L∖N)·φ⁰_{L″}(L″). The factor h = 1 − 1/(w_{N−1}w_N) sits in e⁰_N. On H:
+  - e⁰_N(L)/h · e⁰_{N−1}(L∖N) = (1−v²)(1−v^{−2}) Π_{c∈L″}(1 − v/w_c)(1 − 1/(vw_c)) Π_{k∈[N−2]∖L″}(1 − vw_k)(1 − w_k/v);
+  - (1 − v/w_c)(1 − 1/(vw_c)) = w_c^{−2}(1 − vw_c)(1 − w_c/v).
+  So this product equals G(v)·w_{L″}^{−2}.
+- **Monomials.** With r = r″ + 2, the exponents are those of L″ plus 4 on each element of L″, and N+1, N on N−1, N. On H the
+  latter give v^{N+1}v^{−N} = v. So F_L(L)/h = F_{L″}(L″)·w_{L″}^{2}·vG(v).
+
+Hence Res_H ρ_{νL} = ρ^{(N−2)}_{ν⁻⁻L″}·w_{L″}^{−2}/(vG(v)). Insert into (A), with F_λ(L″) N-free:
+R^A = (vG(v))^{−1}Σ_{L″}ρ^{(N−2)}_{ν⁻⁻L″}w_{L″}^{c−2}F_λF_μ(L″). ∎
+
+*Check.* `resAC.py`: n(L″)·w_{L″}² is constant over all L″ (N = 4, 5) and independent of ν (N = 4).
+
+**Corollary AC′ (all pairs, ε⁰ level; proved given (D)).** For every pair a < b, every instance and every c,
+  Q₀^A(λ,μ,ν; a,b)(c) = Q₀^{C,(N−2)}(λ, μ, ν∖{N−1,N})(c − 2),
+where Q₀ is the ε⁰-coefficient of the normalised quantity, and the right side is 0 if ν ⊉ {N−1,N}. In particular every d = 0
+type-A instance has P^A(c) = P^C_{N−2}(λ,μ,ν⁻⁻; c−2). This is the census statement (640/640, 78/78), now proved.
+
+*Proof.*
+1. **Transport formula.** Let s = s_m act on functions by (s·f)(L) = s(f(sL)). It is multiplicative, fixes w^c (every c) and
+   w², and sends 1_{⊇ab} to 1_{⊇s(ab)}. By Lemma A_m, s·F_λ = Σ_{λ′} c^λ_{λ′}F_{λ′} with c ∈ {1, w_{m+1}/w_m} on the diagonal
+   and c = w_m − w_{m+1} off it. Duality gives ℓ_ν(f) = Σ_κ c^κ_ν · s(ℓ_κ(s·f)). Applying Res_{H_ab} (s maps H_{s(ab)} to
+   H_ab and h_{s(ab)} to h_ab):
+     R^A_{ab}(λ,μ,ν) = Σ_{κ,λ′,μ′} [c^κ_ν s(c^λ_{λ′}) s(c^μ_{μ′})]|_{H_ab} · s[R^A_{s(ab)}(λ′,μ′,κ)].
+   Every diagonal coefficient is 1 + O(ε) and every off-diagonal one is O(ε) on the curve.
+2. **Orders.** By Theorem AC, top-pair instances are K·C^{(N−2)} with K = (vG(v))^{−1}. C^{(N−2)} has ε-order ≥ 0. For even c it
+   is Λ_κ applied to the Laurent GKM function w^{c+2}F_λF_μ (Theorem D), and left divided differences preserve Laurent GKM
+   functions. Since orders are polynomial identities in c, the even c suffice. *Input used:* F_λ is Laurent-valued and GKM.
+   Laurentness is checked symbolically at n = 3 (27/27, `laurent.py`); in general it follows from Cor. D2 (F a K_T-class).
+   It is listed as Gap 6.
+   Iterating the transport formula from the top pair (moving b up to N with s_b, …, s_{N−1}, then a up to N−1), every R^A_{ab}
+   has order ≥ ord K.
+3. **Normalisers.** The per-pair normaliser X₀^{(ab)} = R^A_{ab}(∅,∅,[N]; 2N−2) is (1 + O(ε))·s[X₀^{s(ab)}], with no
+   off-diagonal term since no κ has κ′ = [N]. So it has order exactly ord K.
+4. **Conclusion.** Relative orders are ≥ 0 for all instances. Comparing ε⁰-coefficients in the transport formula gives
+   Q₀^{ab}(λ,μ,ν) = Q₀^{s(ab)}(λ,μ,ν). Iterate to the top pair and apply Theorem AC. ∎
+
+Remark. The same formula at order ε¹ expresses Q₁^{ab} as Q₁^{s(ab)} plus first-order coefficients times Q₀'s of
+*neighbouring* instances. These are type-C polynomials at c−2. This is the mechanism behind the exceptional type-A census, all
+462 at N=5 being shifted type-C polynomials, but positivity of such combinations is not proved.
+
+*Other pairs.* `resAC2.py` searched, for each pair (a,b) ≠ top and each ν, for a single rank-(N−2) functional Res_H ρ = K·w^{−2}ρ^{(N−2)}_{ν̃}.
+- At N = 4, 42/46 instances have such a ν̃, with a ν-dependent K.
+- The other 4 do not; they are combinations.
+- The reason: for b < k the labels' ρ_k carry the pair factor (1 − w_a/y)(1 − 1/(w_ay)) on H, which the rank-(N−2) system
+  lacks. This is the source of the type-A shifts s ∈ {0,1} in the exceptional census.
+
+So for non-top pairs the reduction stays **computed** (d = 0: exact polynomial agreement, 640/640 at N=5).
+
 Type-A census, with the trivial class now "P constant" (deg P = 0):
 
 | N | constant (trivial) | d = 0 (→ C_{N−2}) | exceptional |
@@ -343,5 +404,14 @@ the half-integer c/2. One D̄_n-step on e^{λ_c} gives a polynomial in c/2 with 
    node is graded **sketched**.
 3. General (λ,μ) at even c: needs the triple-intersection version (Cor. D2 plus Brion 2002), with the GQ orientation in Cor. D2
    to pin.
-4. The A→C reduction and the exceptional proportionality are computed, not proved.
+4. The A→C reduction is **proved** (Theorem AC for the top pair; Cor. AC′ for d = 0 at every pair; both given (D), which rests on Motegi's biorthogonality, registry node q488-phi-inf-dual-biorthogonality). The exceptional type-A instances (d ≥ 1, non-constant) are computed only.
 5. Odd c, (OC): open.
+6. Cor. AC′ step 2 uses that F_λ is a Laurent GKM function (so that relative orders are ≥ 0).
+   - *Laurent:* elementary. In Lemma A form the only non-monomial denominators are tail factors (x_h − w_t). The terms for H and
+     for H − h + t have opposite residues along w_h = w_t, and all other factors agree there by symmetry. Checked symbolically
+     at n = 3, 27/27 (`laurent.py`).
+   - *GKM:* by Theorem D, F_λ ⊗ L_{−ω} satisfies the same 2^n independent linear conditions Λ_κ(·) = δ_{κλ}/A_κ as the χ_T-dual
+     basis of {[O_{X_κ}]} in K_T(LG). So it *is* that K_T-class, given the standard facts that K_T(G/P) is R(T)-free with a
+     perfect χ_T-pairing and that Λ_κ = χ_T(X_κ, ·) on K_T-classes (Demazure/AB). These are the same citation family as G2–G4,
+     not deep-read.
+   - Empirically consistent: d ≥ 0 in all 6011 type-A and 841 type-C instances.
