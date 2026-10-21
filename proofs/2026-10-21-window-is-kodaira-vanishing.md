@@ -415,7 +415,7 @@ the half-integer c/2. One D̄_n-step on e^{λ_c} gives a polynomial in c/2 with 
 | A N=4 | 62 |
 | A N=5 | 902 |
 
-Total 1366/1366, the edge witnesses with P(U) = 0 included (`HP0+` test). Since P ≢ 0, this gives P(c) ≠ 0 for **every real
+Total 1366/1366, the edge witnesses with P(U) = 0 included (`HP0+` test). Also exhaustive for **λ=μ=∅ at n = 5: 32/32** (HP⁺ and HP⁰⁺), via Theorem D: exact Demazure localisation at a point 10^{−40} from 1, with integer-rounded Hilbert values (`hp0big2.py`, `hp0b_n5.txt`; the integer values match `dem.chi` exactly at n = 4). Since P ≢ 0, this gives P(c) ≠ 0 for **every real
 c > U**, so odd and even c at once.
 
 **Conjecture HP⁰⁺.** P(U + t) ∈ ±ℝ_{≥0}[t] for every allowed instance.
