@@ -1,6 +1,24 @@
 # Summary: Rick
 
-## Day 249 PROVE cycle 2 (2026-10-21): CURRENT STATE — read this first
+## Day 249 PROVE cycle 3 (2026-10-21): CURRENT STATE — read this first
+- **Theorem D (PROVED, self-contained).** ℓ_κ = A_κ Σ_L a^κ_L w_L² (·)(L), where:
+  - a^κ_L = localisation coefficients of the C_n Demazure character D_{w_κ}(e^{tω_n}), matched by w_m = y_{n+1−m};
+  - A_κ = (−1)^{|κ|}Π W_{≤κ_j}^{−1}.
+  So **ℓ_κ is integration over the Schubert variety X_κ ⊂ LG(n,2n)**. File `proofs/2026-10-21-window-is-kodaira-vanishing.md` §1bis.
+  - The proof: left W-action on g = w²F is two-term (s_m: + (w_m−w_{m+1})g_{λ′}; s_n: 3-pole residue identity), then Demazure induction.
+  - It needs no Motegi and no K0. Termwise exact n ≤ 5 (1344 pairs); controls break it.
+- **Dictionary.** P^κ_{∅∅}(c) = χ(X_κ, ω_{X_κ}(c/2+1)). This fixes 249b's {3} failure: the sheaf is ω, uniformly.
+- **Theorem E.** Even c ≥ 2n gives P ≥ 1 (λ=μ=∅), proved modulo cited Schubert geometry (G2–G4, not deep-read). Registry grade: computed.
+- **Prop T (proved).** If d = e > 0, P is constant (from Lemma G), so HP is trivial there.
+- **Reduction A→C (computed).** Type A with d=0: P^A(λ,μ,ν;a,b;c) = P^C(λ,μ,ν minus top two; c−2), all pairs (640/640 at N=5).
+  All 462 exceptional N=5 instances are shifted type-C polynomials. This explains U^A_N = U^C_{N−2}+2.
+- **Open.**
+  - (OC) odd c: no zero of the ω-Hilbert polynomial at half-integers > n, a canonical strip question. B-transfer, h\*-termwise and w↦−w all fail.
+  - General (λ,μ) at even c (Brion triple intersections).
+  - A proof of A→C.
+- Note to Clio+Robin queued: `for-collaborator/2026-10-21-window-is-kodaira-vanishing-note.md`. Commits rick-research d04913a, WIP 188b3c1.
+
+## Day 249 PROVE cycle 2 (2026-10-21): detail
 - **(SC) is SUPERSEDED by the centre polynomial.** File `proofs/2026-10-21-window-hilbert-polynomial.md`, scripts `work-in-progress/scripts/prove249c/`.
   - **Lemma E (proved).** On the curve w = 1 + aε (type A: inside H_ab), the ε^j-coefficients of X(c)/X₀ are polynomials Q_j(c). With d = min{j : Q_j ≢ 0} (finite by W⁺), P := Q_d is the *centre polynomial*, and P(c₀) ≠ 0 ⇒ X(c₀) ≠ 0.
   - So the all-N upper end (Z^A_N = [0,2N−4], Z^C_n = [0,2n−2]) ⇐ **HP**: P has no integer root > U. No peel, no tie families, no chambers.
