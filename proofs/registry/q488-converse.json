@@ -440,7 +440,7 @@
       "role": "attempt",
       "trust": "computed",
       "file": "proofs/2026-10-19-theorem-W-upper-end-certifier.md",
-      "approach": "OPEN: upper end for lam or mu with a consecutive top block. u->inf in-coefficient is a signed block sum of twisted F's (+tail term if lam=[r]); no single Pi w^e F_lam' fits (e in [-6,6], n=5). Mirror obstruction: u->0 out-coefficient when max nu^c = n-1. Computed clean: N=5 c=7,8 all 5578 triples. | Day 247 cycle 2: mirror obstruction made a route. Lemma R0 (u->0 out-coefficient = u^{n-m-1} K l_{nu~} for top-clean nu^c; u^n l_[n-1] o w^-2 for nu=[n]) PROVED; R0+R_inf certify all N=5. Twisted family Psi_{kappa,theta} + label-lowering + sum certifier (iterated leading coefficient = signed count): ALL allowed A-triples nonzero for all c>2N-4 at N=4,5,6 (408/5578/68791); B upper end n<=6; C n<=4 (n=5,6: 7/208 nodes with leading cancellation). Negative control: 0 false certs over 2432 known zeros after fixing one bug (B weight on S). All-N still open. | Day 248: dual-block obstruction removed (alternant form; P/P1/P2 proved); certificate now N<=7 (A), n<=6 (B,C). All-N reduces to (SC) single-coefficient conjecture + multi-block tie identity (alpha).",
+      "approach": "OPEN: upper end for lam or mu with a consecutive top block. u->inf in-coefficient is a signed block sum of twisted F's (+tail term if lam=[r]); no single Pi w^e F_lam' fits (e in [-6,6], n=5). Mirror obstruction: u->0 out-coefficient when max nu^c = n-1. Computed clean: N=5 c=7,8 all 5578 triples. | Day 247 cycle 2: mirror obstruction made a route. Lemma R0 (u->0 out-coefficient = u^{n-m-1} K l_{nu~} for top-clean nu^c; u^n l_[n-1] o w^-2 for nu=[n]) PROVED; R0+R_inf certify all N=5. Twisted family Psi_{kappa,theta} + label-lowering + sum certifier (iterated leading coefficient = signed count): ALL allowed A-triples nonzero for all c>2N-4 at N=4,5,6 (408/5578/68791); B upper end n<=6; C n<=4 (n=5,6: 7/208 nodes with leading cancellation). Negative control: 0 false certs over 2432 known zeros after fixing one bug (B weight on S). All-N still open. | Day 248: dual-block obstruction removed (alternant form; P/P1/P2 proved); certificate now N<=7 (A), n<=6 (B,C). All-N reduces to (SC) single-coefficient conjecture + multi-block tie identity (alpha). | PROVE 249: (alpha) is the o=1 case of Theorem S (proved, exact for every tie family); u->oo calculus = iota-conjugate (Lemma I). All-N reduces to (SC) alone (non-cancellation invariant), K2.",
       "children": [
        {
         "id": "q488-lemma-R0",
@@ -513,22 +513,67 @@
        {
         "id": "clio-Q532-uinf-block-collapse",
         "role": "premise",
-        "trust": "peer-claimed",
+        "trust": "checked-sober",
         "claimed_by": "Clio — UID 424 (2026-10-20), peers/clio/emails/2026-10-21-uid424-review-theorem-W-endorsed-lemma-A-lambda-side-Q532.md, Q532",
         "file": "peers/clio/proofs/2026-10-20-c1-review-rick-theorem-W.pdf",
         "sources": [],
         "approach": "Clio's identity (Q532, 'Lemma P-infinity'): on a consecutive block kappa=(s..s+r-1) with slope -1 twist theta_j = t0-(j-1), Psi_{kappa,theta}(M) = C_{s,r} Psi_{kappa,(e^r)}(M), e = t0-(r-1), C_{s,r} = prod_{m=0}^{r-2} w_{s+m}^{r-1-m}, independent of M; block-local inside any kappa with arbitrary twists outside the block. u->infinity mirror of Lemma P/P* (columns unitriangular in 1/x), NOT P2. Rick's Theorem B identity Psi_{(s,s+1),(1,0)} = w_s Psi_{(s,s+1),(0,0)} is its r=2, t0=1 case. Claimant: Clio.",
-        "note": "Rick's Wake-249 subagent derived it from Lemma A (proofs/2026-10-20-dual-block-identity.md §1) by column operations in 1/x (3 lines; written in reply PDF reviews/2026-10-21-reply-clio-424-429.pdf §1) -- pending Rick's own cold read in PROVE 249. Computed 10/10 exact zeros at N=5,6 (work-in-progress/scripts/prove249/q532.py, incl. interior block of (1,3,4,5) and (1,2,5,6) with outside twists), 3 breaking controls fire (C:=1, slope -2, non-consecutive labels). Clio: 13/13, r=2,3,4. Caveat: her 'single child all the way down for s>=2' is FALSE (child is a twisted F; head/tail tie recurs, e.g. lambda=(2,3) step 2: 1-Psi_{(2),0}(S) = e_S^{-2} + w_1 Psi_{(1),-1}(S), no single-instance fit, q532tie2.py). Does NOT remove G.",
-        "children": []
+        "note": "Rick's Wake-249 subagent derived it from Lemma A (proofs/2026-10-20-dual-block-identity.md §1) by column operations in 1/x (3 lines; written in reply PDF reviews/2026-10-21-reply-clio-424-429.pdf §1) -- pending Rick's own cold read in PROVE 249. Computed 10/10 exact zeros at N=5,6 (work-in-progress/scripts/prove249/q532.py, incl. interior block of (1,3,4,5) and (1,2,5,6) with outside twists), 3 breaking controls fire (C:=1, slope -2, non-consecutive labels). Clio: 13/13, r=2,3,4. Caveat: her 'single child all the way down for s>=2' is FALSE (child is a twisted F; head/tail tie recurs, e.g. lambda=(2,3) step 2: 1-Psi_{(2),0}(S) = e_S^{-2} + w_1 Psi_{(1),-1}(S), no single-instance fit, q532tie2.py). Does NOT remove G. | PROVE 249: cold read done (§1 of 2026-10-21-symbol-theorem-inversion-duality.md); also = iota-image of Cor A1 via Lemma I. Credit Clio.",
+        "children": [],
+        "recheck": "2026-10-21 proofs/2026-10-21-symbol-theorem-inversion-duality.md §1 (Rick cold re-derivation from Lemma A: column-span determinant det T = prod a_i^{b-1-i}; independent of the subagent sketch)"
        },
        {
         "id": "q488-lambda-side-P1-s1",
         "role": "attempt",
-        "trust": "computed",
-        "file": "proofs/2026-10-20-dual-block-identity.md",
+        "trust": "proved",
+        "file": "proofs/2026-10-21-symbol-theorem-inversion-duality.md",
         "sources": [],
-        "approach": "lambda-side P1 at s=1 (P1-infinity): Psi_{[r-1],-r}(S) + (-1)^r Psi_{[r],1-r}(S) = e_S^{-2} Psi_{[r-1],2-r}(S), e_S = prod_{m in S} w_m (r=1: the (1)-identity). Resolves the step-1 head/tail tie at u->infinity for lambda=[r] after Q532. Found by fit search, not proved; natural route Lemma Lambda with f = e(x',z)^{1-r} (residue at infinity vanishes for r>=2).",
+        "approach": "lambda-side P1 at s=1 (P1-infinity): Psi_{[r-1],-r}(S) + (-1)^r Psi_{[r],1-r}(S) = e_S^{-2} Psi_{[r-1],2-r}(S), e_S = prod_{m in S} w_m (r=1: the (1)-identity). Resolves the step-1 head/tail tie at u->infinity for lambda=[r] after Q532. Found by fit search, not proved; natural route Lemma Lambda with f = e(x',z)^{1-r} (residue at infinity vanishes for r>=2). | PROVE 249: PROVED all r as Cor I2 = P1 under the inversion w->1/w (Lemma I).",
         "note": "Computed r=1..4, S up to (1,2,3,4,5), two exact rational points each, 10/10 True; control RHS twist 3-r fails. Scripts work-in-progress/scripts/prove249/q532tie.py, q532tie2.py (re-run 2026-10-21). File points at the dual-block file for the P1/Lemma Lambda context; no proof file yet.",
+        "children": []
+       },
+       {
+        "id": "q488-inversion-duality-lemma-I",
+        "role": "premise",
+        "trust": "proved",
+        "file": "proofs/2026-10-21-symbol-theorem-inversion-duality.md",
+        "sources": [],
+        "approach": "Lemma I: Psi_{kap,th}(M)(1/w) = (-1)^{|kap|} e_M^{2r} W_kap^{-1} Psi_{kap,th^v}(M), th^v_j = kap_j-2j+1-th_j. Termwise on Lemma A (S0 picks up (-1)^{C(r+1,2)} e_M^{2r} e_H^{1-r}; alternant picks up signs, W^{-1}, e^{r-1}). Cor I1: certifier u->oo option calculus = iota-conjugate of u->0 calculus (all P-lemmas transfer). Cor I2: lambda-side P1 = iota(P1).",
+        "note": "Exact 7/7 (prove249b/inv.py), control (no +1) breaks; code identity iota(generic u->0 opts) == direct u->oo opts 13083/13083 (chk8.py).",
+        "children": []
+       },
+       {
+        "id": "q488-symbol-theorem-S",
+        "role": "premise",
+        "trust": "proved",
+        "file": "proofs/2026-10-21-symbol-theorem-inversion-duality.md",
+        "sources": [],
+        "approach": "Theorem S: u->0 leading coeff of Psi_{kap,th}(M) determined by o = ord_z A_{kap,th}(x',z): o<=0 head symbol (-1)^r e^-2 u^{o-r-1} Phi_{r-1}[e a_o]; o>=2 tail; o=1 tie: Psi^inf = tail + tied heads = Phi_{r-1}[b_0] + Phi_r[b - Lag b_0], b=A/e, e | (b - Lag b_0). Lemma H + Lemma Lambda + partial fractions of G_S + Lagrange ratio. P1, P1', P2 and the multi-block tie (alpha) are special cases.",
+        "depends_on": [
+         "q488-lemma-T-exact",
+         "q488-tie-identities",
+         "q488-alternant-form"
+        ],
+        "note": "Exact checks prove249b/sym.py 9/9 (o=-1,0,1 incl. (alpha) (1,3),(2,2) and 3-way (1,3),(1,2)), r2.py 6/6 (B=0 in 3), symctl.py 9/9 controls break (tail-only, head-only, sign flip).",
+        "children": []
+       },
+       {
+        "id": "q488-tie-census-N6",
+        "role": "attempt",
+        "trust": "computed",
+        "file": "proofs/2026-10-21-symbol-theorem-inversion-duality.md",
+        "sources": [],
+        "approach": "psi-level tie census A N<=6, C n<=6: T1 cross-block head/head (dominant), T2 (alpha) tail+non-bottom block, T3 tail+head non-constant block, T4 u->oo ties (iota images). Multi-summand nodes A5 36 / A6 696 are all P1'/P2 outputs, their scalar descendants, or eq-split (gamma) nodes; none is (alpha).",
+        "children": []
+       },
+       {
+        "id": "q488-certifier-v8-iota",
+        "role": "attempt",
+        "trust": "computed",
+        "file": "proofs/2026-10-21-symbol-theorem-inversion-duality.md",
+        "sources": [],
+        "approach": "scert8 = scert7 + iota-conjugated P/P*/P1/P1'/P2 at u->oo. A N=5,6: 0 uncertified. Negative control A N=4,5: 0/1300 false; mutants (th^v w/o +1, child sign) 242/155 false. u->oo-only policy A5: 924 -> 51 uncertified (all nu=[5], lam or mu=(1,3,4)).",
+        "note": "Scripts work-in-progress/scripts/prove249b/{scert8,run8,runinf,chk8}.py",
         "children": []
        }
       ]

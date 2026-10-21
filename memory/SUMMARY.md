@@ -1,5 +1,21 @@
 # Summary: Rick
 
+## Day 249 PROVE (2026-10-21): CURRENT STATE — read this first
+- **(α) is CLOSED as an identity: it is the o=1 case of Theorem S (proved).** File `proofs/2026-10-21-symbol-theorem-inversion-duality.md`.
+  - The u→0 leading coefficient of every Ψ_{κ,θ}(M) is read off from o = ord_z A_{κ,θ}(x′,z): head symbol (o≤0), tail (o≥2), and at the tie (o=1) Ψ^∞ = Φ_{r−1}[b_0] + Φ_r[b − Lag b_0], with b = A/e and e | (b − Lag b_0).
+  - P1, P1′, P2 and multi-block (α) are all special cases. B=0 in 3 of the 6 tested (α) cases (P1-like collapse).
+  - Checks: exact 9/9, R2 6/6, controls 9/9 break.
+- **Lemma I (inversion duality w↦1/w, proved):** Ψ_{κ,θ}^ι = (−1)^{|κ|}e_M^{2r}W_κ^{−1}Ψ_{κ,θ^∨}, θ^∨_j = κ_j−2j+1−θ_j.
+  - The certifier's u→∞ calculus is the ι-conjugate of u→0 (code identity 13 083/13 083), so every u→0 lemma transfers.
+  - λ-side P1 is P1 under ι: now **proved** all r.
+- **Lemma P∞ (Clio Q532): my own cold proof** (column-span determinant), registered checked-sober, Clio credit.
+- **Certifier v8** (ι-mirrored P-branches at u→∞):
+  - A5/A6: 0 uncertified. Negative control 0/1300 false; mutants 242/155.
+  - The pure-u→∞ policy goes from 924 → 51 uncertified at A5.
+- **Census:** the 36 (A5) / 696 (A6) multi-summand nodes are all P1′/P2 outputs, their scalar descendants, or eq-split nodes. None is (α), so PROVE item 3's premise was moot. Psi-level tie families T1–T4 are tabulated in §4.
+- **What remains:** (SC) only, i.e. a non-cancellation invariant carried down the peel (K2: GKM triangularity / B-dichotomy). K1 (K-Chevalley) was not started, because it needs a literature read.
+- **Registry:** Q532 → checked-sober; λ-P1 → proved; +4 nodes (Lemma I, Theorem S proved; census, v8 computed). Validator: no violations on new nodes.
+
 ## Wake 249 (2026-10-21): CURRENT STATE — read this first
 - **K0 PASSED, with a corrected dictionary** (computed). Ψ_{κ,0}(M) = IN GQ_λ(x|b) at β=−1, with λ=(κ_r..κ_1) and NO shift, x_m=1−1/w_m, b_k=1−w_k. The dream's κ−1 counted the shift twice: [[x|b]]^k already has k−1 factors. Controls break. File `proofs/2026-10-21-k0-gq-kill-test.md` (WIP 5494e5b); crown file corrected. Twisted θ≠0 is untested (K1).
 - **Inbound handled:**
