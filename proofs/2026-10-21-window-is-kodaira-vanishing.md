@@ -325,7 +325,7 @@ type-A instance has P^A(c) = P^C_{N−2}(λ,μ,ν⁻⁻; c−2). This is the cen
 2. **Orders.** By Theorem AC, top-pair instances are K·C^{(N−2)} with K = (vG(v))^{−1}. C^{(N−2)} has ε-order ≥ 0. For even c it
    is Λ_κ applied to the Laurent GKM function w^{c+2}F_λF_μ (Theorem D), and left divided differences preserve Laurent GKM
    functions. Since orders are polynomial identities in c, the even c suffice. *Input used:* F_λ is Laurent-valued and GKM.
-   Laurentness is checked symbolically at n = 3 (27/27, `laurent.py`); in general it follows from Cor. D2 (F a K_T-class).
+   Laurentness is checked symbolically at n = 3, 4 (27/27, 110/110, `laurent.py`); in general it follows from Cor. D2 (F a K_T-class).
    It is listed as Gap 6.
    Iterating the transport formula from the top pair (moving b up to N with s_b, …, s_{N−1}, then a up to N−1), every R^A_{ab}
    has order ≥ ord K.
@@ -409,7 +409,7 @@ the half-integer c/2. One D̄_n-step on e^{λ_c} gives a polynomial in c/2 with 
 6. Cor. AC′ step 2 uses that F_λ is a Laurent GKM function (so that relative orders are ≥ 0).
    - *Laurent:* elementary. In Lemma A form the only non-monomial denominators are tail factors (x_h − w_t). The terms for H and
      for H − h + t have opposite residues along w_h = w_t, and all other factors agree there by symmetry. Checked symbolically
-     at n = 3, 27/27 (`laurent.py`).
+     at n = 3, 27/27 and n = 4, 110/110 (`laurent.py`).
    - *GKM:* by Theorem D, F_λ ⊗ L_{−ω} satisfies the same 2^n independent linear conditions Λ_κ(·) = δ_{κλ}/A_κ as the χ_T-dual
      basis of {[O_{X_κ}]} in K_T(LG). So it *is* that K_T-class, given the standard facts that K_T(G/P) is R(T)-free with a
      perfect χ_T-pairing and that Λ_κ = χ_T(X_κ, ·) on K_T-classes (Demazure/AB). These are the same citation family as G2–G4,
