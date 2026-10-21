@@ -11,9 +11,9 @@ Rick, 2026-10-21, third PROVE pass on PROVE 249. This continues `proofs/2026-10-
 | **Theorem D** (Demazure) | ρ_{κL} = A_κ · a^κ_L · w_L², **termwise** for all κ, L ⊆ [n]. Here A_κ = (−1)^{\|κ\|}Π_jW_{≤κ_j}^{−1} (equal to τ(κ) up to a κ-free constant), and a^κ_L is the localisation coefficient at L of the C_n Demazure character D_{w_κ}(e^{tω_n}), under the matching w_m = y_{n+1−m}. Equivalently, **ℓ_κ(f) = A_κ W_n · χ_T(X_κ, f ⊗ L_{−ω_n})**: the dual functional to F_κ is integration over the Schubert variety X_κ ⊂ LG(n,2n). | **PROVED** (§1bis: left W-action Lemmas A/B + Demazure induction), plus exact termwise check: n=3 64/64, n=4 256/256 (two points), n=5 1024/1024. Two controls break it: the wrong matching w_m = y_m gives 25 mismatches, and W_{<κ_j} in place of W_{≤κ_j} gives 34. |
 | **Cor. D1** (dictionary, λ=μ=∅) | P^κ_{∅∅}(c) = (−1)^{\|κ\|} χ(X_κ, O(−c/2−1)) = χ(X_κ, ω_{X_κ}(c/2+1)), as polynomials in c. | follows from D; also checked directly against the engine, 8/8 (n=3), 16/16 (n=4) |
 | **Lemma Φ** (atom form) | φ∘D_i = −D̄_i∘φ, with φ(f) = e^{−ρ}f^\*, D̄_i = D_i − 1. Hence P^κ_{∅∅}(c) = D̄_{w_κ}(e^{(c/2+1)ω_n − ρ})\|_{e=1}. | **proved** (§2) |
-| **Theorem E** (even c, λ=μ=∅) | For every κ ⊆ [n] and every even c ≥ 2n: P^κ_{∅∅}(c) ∈ ℤ_{≥1}. In particular HP holds at even c for this family. | **proved modulo Theorem D and three cited facts** (G2–G4, §3; not deep-read this session) |
+| **Theorem E** (even c, λ=μ=∅) | For every κ ⊆ [n] and every even c ≥ 2n: P^κ_{∅∅}(c) ∈ ℤ_{≥1}. In particular HP holds at even c for this family. | **proved modulo cited facts**: Demazure's character formula (G1, for the χ-reading of Theorem D) and G2–G4 (§3); none deep-read this session. Registry grade: computed. |
 | **Prop. T** (trichotomy, type C) | Every allowed instance is one of three kinds: (i) d = e > 0, so P is a nonzero constant and **HP holds trivially**; (ii) d = 0, so P is the honest w → 1 limit, a non-equivariant Euler characteristic; (iii) *exceptional*, d > max(e,0). | (i) **proved** from Lemma G; the census is computed (n=3: 64/49/2, n=4: 356/349/21, n=5 sample: 70/77/2) |
-| **Reduction A→C** | Type A, d = 0: P^A(λ,μ,ν;a,b;c) = P^C(λ,μ,ν⁻⁻;c−2), where ν⁻⁻ is ν minus its two largest elements. This is **independent of the pair (a,b)**. **Theorem AC:** for the top pair (N−1,N) it holds *equivariantly*: R^A = (vG(v))^{−1}C^{(N−2)}(λ,μ,ν⁻⁻;c−2). | top pair: **proved** given (D) (§4); **all pairs, d = 0: proved** (Cor. AC′, ε⁰-transport by Lemma A_m), census N=4 78/78, N=5 640/640 |
+| **Reduction A→C** | Type A, d = 0: P^A(λ,μ,ν;a,b;c) = P^C(λ,μ,ν⁻⁻;c−2), where ν⁻⁻ is ν minus its two largest elements. This is **independent of the pair (a,b)**. **Theorem AC:** for the top pair (N−1,N) it holds *equivariantly*: R^A = (vG(v))^{−1}C^{(N−2)}(λ,μ,ν⁻⁻;c−2). | top pair: **proved** given (D) (§4); **all pairs, d = 0: proved modulo Gap 6** (Cor. AC′, ε⁰-transport by Lemma A_m), census N=4 78/78, N=5 640/640 |
 | Exceptional instances | Every exceptional type-A instance at N=5 (462) has P proportional to a type-C (n ≤ 3) d=0 centre polynomial at c−s, s ∈ {0,1,2} (387/56/19). Exceptional type-C roots: {0, ½, 1, 2}. | computed |
 | **HP at odd c** | open. Values are non-integral, and the cleanest phrasing is a canonical-strip statement (§5). | open |
 
@@ -38,7 +38,7 @@ U^A_N = 2N−4 = U^C_{N−2} + 2. What is left of HP is genuinely different in k
 - Fixed point L ↔ v_L, and e^{t v_L}|_{y_p = w_{n+1−p}} = W_n^t w_L^{−2t}.
 - D_{w_κ}(e^{tω}) = Σ_{L ≤ κ} a^κ_L(y) e^{tv_L}, the localisation expansion (a^κ_L rational in y).
 
-**Theorem D (computed).** ρ_{κL} = A_κ a^κ_L w_L² for all κ, L, with A_κ = (−1)^{|κ|} Π_j Π_{k≤κ_j} w_k^{−1}.
+**Theorem D (proved, §1bis).** ρ_{κL} = A_κ a^κ_L w_L² for all κ, L, with A_κ = (−1)^{|κ|} Π_j Π_{k≤κ_j} w_k^{−1}.
 
 Equivalently, for every function f on subsets,
   ℓ_κ(f) = A_κ Σ_L a^κ_L w_L² f(L) = A_κ W_n · χ_T(X_κ, f ⊗ L_{−ω_n}).
@@ -78,8 +78,8 @@ F_∅ ≡ 1. So for general (λ,μ), at d = 0,
   P_{λμκ}(c) ∝ χ(O_{X_κ}·ξ^λ·ξ^μ·O(1 − c/2)),  with ξ^λ := O_{X^λ}(−∂X^λ).
 This is a triple intersection Z = X_κ ∩ gX^λ ∩ g′X^μ of dimension |κ| − |λ| − |μ| = −e, which is the grading law d − deg P = e.
 (Cited standard duality; not deep-read. A naive Möbius-inversion test against Ψ_{ν,0} in `ideal.py`/`ideal2.py` did *not*
-match, which points to a GQ orientation convention I have not pinned. Cor. D2 is therefore a hunch about F; Theorem D does not
-depend on it.)
+match. That concerns how Ψ_{ν,0} = GQ sits relative to O_{X^ν} (a torus-orientation convention I have not pinned), not F itself:
+F's identification follows from Theorem D plus the cited perfect pairing, see Gap 6. Theorem D does not depend on Cor. D2.)
 
 ## 1bis. Proof of Theorem D
 
@@ -228,6 +228,8 @@ Note that ⟨λ_c, α_i^∨⟩ = −1 for all i < n and ⟨λ_c, α_n^∨⟩ = c
   P^κ_{∅∅}(2k − 2) = h⁰(X_κ, ω_{X_κ}(k)) ≥ 1.
 
 *Cited facts* (standard; NOT deep-read this session, so this is a gap for a "proved" grade):
+- (G1) Demazure's character formula χ_T(X_w, L_λ) = D_w(e^λ) (Andersen, Ramanathan; Kumar's book ch. 8). It is used in
+  Cor. D1 to read the Demazure side of Theorem D as an Euler characteristic.
 - (G2) Schubert varieties in G/B and G/P are normal, Cohen–Macaulay, with rational singularities (Ramanathan; Brion–Kumar ch. 3).
 - (G3) For X = X_w ⊂ G/P and L ample, H^j(X, L^{−1}) = 0 for j < dim X (Frobenius-splitting Kodaira vanishing, Brion–Kumar ch. 3).
 - (G4) For a Schubert variety Y ⊂ G/B, ω_Y ≅ O_Y(−∂Y) ⊗ L_{−ρ} (Brion–Kumar ch. 3).
@@ -254,7 +256,10 @@ re-derived.
 - (a) Odd c.
 - (b) General (λ,μ) at d = 0. By Cor. D2 this needs the same two facts (vanishing, plus a section of ω_Z ⊗ ω_{LG}^{−1}|_Z) on the
   triple intersections Z, which is Brion's setting (2002 positivity paper; not read).
-- (c) The exceptional instances.
+- (c) The exceptional instances. A lead (hunch): when d = 1, P is the ε-linear term of Σ_ν c^ν_{λμ}(w)·(Richardson term P^κ_{∅ν}).
+  It is therefore a combination of Richardson polynomials whose coefficients are first derivatives of equivariant K-theory
+  structure constants, and those have signs by Anderson–Griffeth–Miller positivity (not read). Together with HP_R (Richardson
+  Taylor-positivity at U+1, computed 35/35 and 126/126), this would give HP for the exceptional instances.
 
 ## 4. The trichotomy and the reductions
 
