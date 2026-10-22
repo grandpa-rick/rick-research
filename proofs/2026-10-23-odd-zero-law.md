@@ -23,7 +23,7 @@ Scripts are in `work-in-progress/scripts/prove251/`.
 | **Lemma L** (Coxeter localisation) | For any one-variable φ: D_1⋯D_k(Π_jφ(x_j)) = Σ_i A(x_i)Π_{j≠i}B(x_j)/(x_j−x_i), with x = e^{ε}, B = xφ and A = D^{(1)}φ. Consequence: G_k(a) := D_1⋯D_k F_a = e^{−aω} − (−1)^{k−1}F_{a−1}·Σ_{s<a} h_{2s−k+1}(x). | **proved** (§6bis, algebraic induction); formula checked 20/20 (k ≤ 5, a ≤ 4) |
 | **Prop. R** (purity) | If 2a ≤ κ₁ then H_κ(−a−½) = 2^{−κ₁}H_{κ′}(−a). If 2a−1 = κ₁ then H_κ(−a−½) = 2^{−κ₁}H_{κ′}(−a) − H_{κ′}(−a+½). | **proved** given (G1): Lemma Q is the case k = 2a−1 of Lemma L. |
 | **Thm R** (residue formula) | For all c ∈ ½ℤ (indeed as a polynomial identity in c): H_κ(−c) = (−1)^{\|κ\|−ℓ} Res_{t₁=1}⋯Res_{t_ℓ=1} Π_{s=1}^{ℓ} t_s(1−ρ_s(t_s))/((t_s²−1)(t_s−1)^{κ_s}), where ρ_s(t) = t^{2c−1−s}Π_{r<s}(t_r−t)/(t_rt−1) and the residues are taken innermost (t_ℓ) first. Under t = (1+z)/(1−z) the coupling becomes the Schur-Q kernel (z_r−z_s)/(z_r+z_s). | **proved** given (G1) (§6ter: Lemma L applied block by block + nested contours); checked 70/70 (10 κ, c ∈ {½,…,7/2}) |
-| **(Z)** | the full vanishing range: H_κ(−M/2) = 0 for odd M ∈ [3, 2⌈r′/2⌉+1] | **computed** in general (63/63 m ≤ 6; per-k form m ≤ 5). **Proved given (G1)** for M = 3 (Thm C) and for all **2-separated** κ (κ_i ≥ κ_{i+1}+2; Thm Z₂, §6quater). Open for Case-B (staircase-like) shapes: the residue at t₁ = ∞ (§6quater), or equivalently the per-k vanishing **(Z_k)**. |
+| **(Z)** | the full vanishing range: H_κ(−M/2) = 0 for odd M ∈ [3, 2⌈r′/2⌉+1] | **computed** in general (63/63 m ≤ 6; per-k form m ≤ 5). **Proved given (G1)** for M = 3 (Thm C), for all κ with **ℓ(κ) ≤ 2**, and for all **2-separated** κ (κ_i ≥ κ_{i+1}+2) (Thm Z₂ and Cor. Z, §6quater). Open for Case-B (staircase-like) shapes: the residue at t₁ = ∞ (§6quater), or equivalently the per-k vanishing **(Z_k)**. |
 
 **Headline.** At half-integers the type-C operator D_m splits as a type-B operator times (1+e^{−ε_m})^{−1}. Conjugating by
 Φ = Π_i(1+y_i)^{−1} turns the whole chain back into honest type-C Demazure operators applied to an *integral* weight
@@ -320,6 +320,24 @@ in the range 2a ≤ κ₁; above it, see the remark below.
 
 *The "⇐" direction in range.* For ⌈κ₂/2⌉ < a and 2a ≤ κ₁, H_κ(−a−½) = 2^{−κ₁}H_{κ′}(−a), so we need H_{κ′}(−a) ≠ 0 for a beyond
 κ′'s integer window. That is Theorem E territory (proved there only for a ≥ m(κ′)+1).
+
+
+**Corollary Z (two rows, and a general sufficient condition; proved given (G1)).**
+1. **ℓ(κ) ≤ 2: the zeros of the odd-zero law hold.** For κ = (k₁,k₂) and 1 ≤ a ≤ ⌈k₂/2⌉ we have 2a ≤ k₂+1 ≤ k₁. Prop. M gives
+   H_κ(−a−½) = 2^{−k₁}H_{(k₂)}(−a), and Prop. M again (for the row (k₂), c = a, 2a ≤ k₂+1) gives 0.
+2. **Non-vanishing for ℓ(κ) ≤ 2, in range.** If ⌈k₂/2⌉ < a and 2a ≤ k₁, then H_κ(−a−½) = 2^{−k₁}H_{(k₂)}(−a) ≠ 0. Proof: for a
+   single row, Prop. M's ingredients give the closed form
+     H_{(k)}(−b) = 2^{−k−1}(1 + (−1)^kP), P = [z^k](1+z)^{2b−1}(1−z)^{k+1−2b}.
+   For 2b ≥ k+2 every term of P is positive and P ≥ binom(2b−1,k) ≥ 3, so H ≠ 0 with sign (−1)^k.
+3. **General sufficient condition.** The zeros of (Z) hold for κ whenever r(κ″) ≤ κ₂−1 and 2⌈r(κ′)/2⌉ ≤ κ₁, where
+   κ″ = κ minus its two largest parts. The same two applications of Prop. M work. This covers all 2-separated κ, all κ with
+   ℓ ≤ 2, and more.
+
+**A false shortcut (recorded so nobody repeats it).** The non-selected rows of Thm R decouple exactly: moving t_r's residue to
+−1 kills its kernels, and this was checked term by term, 8/8 S-terms. But H is **not** a single Schur extraction
+[z^κ]Π_s(ε_sz^{κ_s} − f_s)Π K for ℓ ≥ 3: a "decoupled" middle variable can carry cancelling kernel shifts. The correct
+statement is the subset sum Ĥ = Σ_S(−1)^{|S|}Π_{r∉S}ε_r·Ĵ_S, with each Ĵ_S a Schur-type extraction over S (hence a
+Pfaffian). Scripts: `decouple.py`, `dectest.py`, `pf.py`, `dbg*.py`.
 
 **Remarks.**
 - For κ₁ ≥ r′+2 ("Case A") the same argument reduces (Z) for κ to the integer window of κ′. For 2-separated κ the

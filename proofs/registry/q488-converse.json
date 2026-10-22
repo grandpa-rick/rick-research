@@ -996,7 +996,7 @@
           "depends_on": [
            "q488-oc-thmR-residue"
           ],
-          "approach": "Prop M (moving the t1-residue to t1=-1 and t1=1/tau; checked 32/32 incl. kernel term): for 1<=c, 2c<=kappa_1+1, H_kappa(-b)=0 (integers b<=(kappa_1+1)/2, LS-free) and H_kappa(-a-1/2)=2^{-kappa_1}H_{kappa'}(-a). Thm Z2: odd-zero law zeros PROVED for 2-separated kappa (kappa_i>=kappa_{i+1}+2). Case B (staircase-like) open: residue at t1=infinity. Erosion pattern for extra kernels computed (robust.py).",
+          "approach": "Prop M (moving the t1-residue to t1=-1 and t1=1/tau; checked 32/32 incl. kernel term): for 1<=c, 2c<=kappa_1+1, H_kappa(-b)=0 (integers b<=(kappa_1+1)/2, LS-free) and H_kappa(-a-1/2)=2^{-kappa_1}H_{kappa'}(-a). Thm Z2: odd-zero law zeros PROVED for 2-separated kappa (kappa_i>=kappa_{i+1}+2). Case B (staircase-like) open: residue at t1=infinity. Erosion pattern for extra kernels computed (robust.py). + Cor Z: (Z) zeros proved for ALL l(kappa)<=2 and whenever r(kappa'')<=kappa_2-1 and 2ceil(r(kappa')/2)<=kappa_1; (NZ) for l<=2 in range 2a<=kappa_1 via single-row closed form H_(k)(-b)=2^{-k-1}(1+(-1)^k P) (35/35). Decoupling of non-selected rows checked 8/8; single-Schur-extraction shortcut FALSE for l>=3 (cancelling shifts) -- correct form is subset sum of Pfaffians.",
           "script": "work-in-progress/scripts/prove251/propM.py, robust.py",
           "children": []
          }
