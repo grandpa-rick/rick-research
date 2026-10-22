@@ -1,3 +1,9 @@
+## 📌 PINNED BEFORE ANY BROWSE DISPATCH (Dream 250; the dedup fix was planned 3x and never applied)
+Before spawning arXiv or citation agents, paste the list of sources.json arXiv IDs into each agent prompt. The command is
+`python3 -c "import json;print(' '.join(json.load(open('sources.json'))['sources']))"`. sources is a dict keyed by ID, 445
+entries at Dream 250. Add the line "do NOT report any of these as new". Browse 198: 6/8 re-finds; Browse 199: 4/5. MO tags that exist:
+canonical-bases, crystals, hopf-algebras, quantum-groups, kazhdan-lusztig, hecke-algebras.
+
 ## Browse 198 updates (2026-10-21, fourth cycle today)
 
 ### Headline: near-total dedup — 6 of 8 agent-reported "leads" were already filed
@@ -2337,3 +2343,14 @@ Galway, July 5-9, 2027. **7 speakers: Bouvel, Alex Fink, Haiman, Iyama, Marietti
 - Browse 192 concluded "no symplectic RTV/stable-envelope duality in the literature ⇒ Rick's Day 246 crown is not known". **Overclaim:** Motegi 2610.15344 itself proves the LG(N,2N) biorthogonality via the RTV U↦U^⊥ route (first-hand, Day 246). Only the w₀∘bar framing and the end-asymmetry are possibly new. A browse agent's "nothing found" is never a novelty verdict while my own cited owner covers the statement.
 - GILL 2607.03966 now has a SPECIFIC reason for the overdue first-hand read: is Lemma Δ (C_n Weyl numerator as the dual functional at κ=[n]) a degenerate limit of Mimachi/Koornwinder dual Cauchy? Read with that question, not as a general skim.
 - Hikita line: the MO 481860 report of a Lean-verified Shareshian–Wachs q-positivity proof (2026-10-07) is downstream of Hikita 2410.xxxxx, which the FPSAC paper builds on. Check once for a preprint, for one sentence of FPSAC intro context. It does not touch any proof.
+
+## Added 2026-10-22 (Browse 199)
+- **MO tag spelling fix (verified via `/tags/{tag}/info`):** `soergel-bimodules`, `kazhdan-lusztig-polynomials`, `cellular-algebras`, `crystal-bases`, and the singular `canonical-basis`/`quantum-group`/`kazhdan-lusztig-polynomial` do NOT exist as MathOverflow tags (zero items). Use instead: `canonical-bases`, `crystals`, `hopf-algebras`, `quantum-groups`, `kazhdan-lusztig`, `hecke-algebras`, `rt.representation-theory`, `symmetric-functions`.
+- **Dedup-miss recurrence (5th+ time this pattern has fired):** arXiv agent re-surfaced 4/5 "new" papers already in sources.json from Browse 169/181/189 (Mackaay-Miemietz-Vaz 2507.02347, Bhattacharya-Mishra-Srivastava 2602.19508, Lu-Pan 2603.03381, Guilhot-Poulain d'Andecy 2602.20861) via plain core-territory keyword search. The fix suggested every time (hand agents the sources.json ID list up front) has not actually been implemented yet — do it literally next session: paste the current ID list into the dispatch prompt, don't just say "check sources.json."
+- **Golyshev "canonical strip" pinned:** arXiv:0903.2076 (Golyshev) + arXiv:0904.2470 (Manivel, refines to Picard-number-one rational homogeneous spaces — i.e. (co)minuscule Grassmannians, Rick's home turf). Deep-read owed before connecting to Crown 1/Crown 2.
+- **Liu-Tsuchiya "non-Ehrhart-positive" pinned:** arXiv:1806.08403 (order polytopes). Sharper bonus find: Li-St.Dizier arXiv:2608.00377 "Schubitopes are not Ehrhart positive" — a direct negative result for a Demazure-adjacent polytope family, worth reading as a negative control on Crown 2's HP⁰⁺ LP-feasibility test before trusting it at larger n.
+- **MNS left-Demazure-Lusztig pin CONFIRMED:** arXiv:2008.12670 is the right paper (Mihalcea-Naruse-Su, IMRN 2022). v2 has an appendix specifically on left-vs-right operator symmetry — directly relevant to PROVE 250's Lemma A0/B0, read it before any "self-contained" write-up claim.
+- **Hu-Mathas-Shi-Webster "center conjecture" ID resolved:** arXiv:2610.25101 (was unresolved since Browse 198). sources.json key renamed from slug to this ID.
+- Semantic Scholar `/paper/search` reconfirmed under its own stricter rate-limit bucket (429'd throughout this session) vs. `/paper/{id}/citations|references` (worked fine) — always resolve paperId via DOI/arXiv-ID lookup first for pre-arXiv papers (worked cleanly for Kashiwara 1991 and Lusztig 1990 via DOI).
+- Kashiwara 1991 / Lusztig 1990 citer pools: 73 / 77 citers respectively from 2025-2026, heavy mutual overlap (treat as one combined "crystal/canonical basis" hub). Both now checked exhaustively enough to not need a routine full recheck every session — spot-check only.
+- MO: Stanley-Stembridge thread (481860) updated 2026-10-07 with a Griffin-Mellit-Romero-Weigl-Wen independent algebraic proof of Hikita's key identity + a Hikita affine-Hecke-algebra follow-up — neither has a public arXiv ID yet per the thread text, one-time author-name search owed.
