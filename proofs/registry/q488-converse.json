@@ -123,7 +123,7 @@
     "id": "q488-qinf-dichotomy",
     "role": "attempt",
     "approach": "Hunch: every jump>=2 residue on H_12 is first order at q=infinity (phî = q^{-(dim-codim I)} phi has a finite limit; g q<->1/q symmetric). Data: N=3 13/13 (both ends), N=4 127/127 at infinity (126/127 at 0), N=5 q^1-failures (12/1136) first order at infinity on 12/12 (all 22 predicted pairs (corrected Wake 244; 26 was a miscount) val0=2, QINF; run finished 07:46 UTC 10-17, work-in-progress/scripts/day243/q488c/qinf_N5_partial.txt, read Day 243 dream). Full-q converse computed at N=4 for all 127 triples (H_12). | Day 246 PROVE: PROVED as a corollary of D-infinity. For H_12, every jump>=2 triple has E != {} (M'' = nu minus its bottom two elements), so its residue is first order at q=inf (always; the q=0 alternative is not needed).",
-    "trust": "proved",
+    "trust": "computed",
     "file": "proofs/2026-10-18-q488-d-infinity.md",
     "children": [
      {
@@ -141,7 +141,7 @@
       "id": "q488-qinf-D-infinity",
       "role": "premise",
       "approach": "PROVED all N (Day 246): Res_{H_ab}[p^1]chat^nu_{lam mu} != 0 <=> E(lam,mu,nu;ab) := {M'' in [N]-ab : M''+ab <= nu, M'' >= lam,mu} != {}. CORRECTION to the Wake-246 wording: 'Thm 6 allows a pole' is the wrong condition (aggregate over nu); the per-nu condition is E != {}. N=4: 408 allowed cases all nonzero, 354 non-allowed all zero; the old '762/762' tally mixed the two. Route: phi^inf = tau(I)*prod_{m in M} w_m^{-2N}*F_I(M) (closed form) + exact dual of phi^inf = phi^0 at complements (from Motegi biorthogonality) => residue = explicit sum over E with weight w^{-2N}; Theorem W (c<=-2) by peeling the top variable (forced head exact / w_n->0 dominance / stuck: w_n->inf, nu->nu~ / n=b: A->B / n=a: B->C, c->c-2); base value 1. [Wake 248: grade is 'proved mod motegi-rtv-biorthogonality-root' -- the Motegi all-cardinality biorthogonality / RTV stable-envelope uniqueness, cited not re-derived.]",
-      "trust": "proved",
+      "trust": "computed",
       "file": "proofs/2026-10-18-q488-d-infinity.md",
       "children": [
        {
@@ -159,21 +159,33 @@
         "id": "q488-phi-inf-dual-biorthogonality",
         "role": "premise",
         "approach": "Prop 2: l^inf_nu(e_L) = phi0_{nu^c}(L^c)/(phi^inf_L(L) phi0_{L^c}(L^c)); F-form (D) with tau(nu)/tau(L). q->inf limit of Motegi's all-cardinality biorthogonality (A(q)^{-1})_{I,L} = q^{|I|-|L|} A_{L^c,I^c}(q^{-1}). Checked exactly N=2,3 (both mirrors), N=4 (256/256 x2), N=5 (1024/1024).",
-        "trust": "proved",
+        "trust": "computed",
         "file": "proofs/2026-10-18-q488-d-infinity.md",
         "sources": [
          "2610.15344"
         ],
-        "children": []
+        "children": [],
+        "trust_before_2026_10_22": "proved",
+        "conditional_grade": "proved mod motegi-rtv-biorthogonality-root (via (D))",
+        "note_2026_10_22": "DOWNGRADED proved->computed per Clio UID 435 (2026-10-22, G5-core note clio-vega/proofs 97158d7 §8). Conditional proof: the written argument is complete GIVEN Motegi 2610.15344 thm:BC-all-cardinality-biorthogonality (type C), whose proof still rests on two unaudited premises: P1 = cross-sector branching formula + factorisation A=Br^ Phi^ (eq:typeC-cross-sector-branching L2920, eq:allcard-P-factorization L4358; Motegi has a type-C proof, unread by Rick, final step read by Clio) and P2 = lem:allcard-Phihat-inverse L4425 over two RTV statements (Motegi's derivation L4425-4657 unchecked by anyone; RTV proofs unread). Root node motegi-rtv-biorthogonality-root is peer-claimed (below the checked-sober boundary), so this node cannot honestly sit at proved. Rick uses ONLY type C; Motegi's omitted type-B branch (L3598) does not touch this node. Evidence level that remains: exact checks of (D) at N<=5 (1024/1024). This node IS the import: Prop 2 = q->inf limit of Motegi's Thm 4.18.",
+        "depends_on": [
+         "motegi-rtv-biorthogonality-root"
+        ]
        },
        {
         "id": "q488-weighted-theorem-W",
         "role": "premise",
         "approach": "Theorem W: for integer c<=-2, R^A(lam,mu,nu;a,b;c) = Res l^F_nu(1_{>=ab} w^c F_lam F_mu) != 0 iff E != {}; same for types B (support on M ni a, x=w_a free) and C (plain coordinate). Induction on top variable with lemmas L1-L6. Each reduction step also checked numerically (test_red*.py). Hypothesis c<=-2 is what q=0 (c=0) violates: F-system at c=0 vanishes exactly on the separator (empty,{3},{1,2,4}) H12, which is case A2 with tie c+1-delta=0. | Day 247 cold re-read (Part 1): A2/A3/B2/B3/C2/C3 re-derived before reading the text; all orders/leading coefficients/supports agree; the ONLY use of c<=-2 is c+1-delta<0 at delta=0 (A2,C2); B2 needs c<=-1. Forced case n in lam covered by L2's kappa_r=n clause (no out-terms).",
-        "trust": "proved",
+        "trust": "computed",
         "file": "proofs/2026-10-18-q488-d-infinity.md",
         "children": [],
-        "recheck": "2026-10-19 proofs/2026-10-19-theorem-W-sharp.md §1"
+        "recheck": "2026-10-19 proofs/2026-10-19-theorem-W-sharp.md §1",
+        "note_2026_10_22": "2026-10-22: inherits (D) open premises (Clio uid435). DOWNGRADED proved->computed (owner pass, weakest-input rule). Uses (D): proof file 2026-10-18-q488-d-infinity.md §6: C2/A2/B2 in-terms evaluated 'by (D) and L1'; C1 uses (D) ambient-freeness. Evidence remaining: exact checks at N<=5/6 cited in the file. Repair route: Motegi-free (D) via K_T Poincare duality + Theorem D (ideal-sheaf sweep, wake250) -- hunch. [Superseded agent note: NOT downgraded (agent pass, owner decision owed): this node is (D)-conditional in the same way as q488-qinf-D-infinity -- proof uses the closed form rho_{nu L} of (D) ('all three are explicit finite sums by (D)', d-infinity §4). Prompted by Clio UID 435 (2026-10-22, G5-core note clio-vega/proofs 97158d7 §8). If Rick applies the D-infinity downgrade consistently, this node moves to computed as well.]",
+        "depends_on": [
+         "q488-phi-inf-dual-biorthogonality"
+        ],
+        "trust_before_2026_10_22": "proved",
+        "conditional_grade": "proved mod motegi-rtv-biorthogonality-root (via (D))"
        }
       ],
       "sources": [
@@ -181,9 +193,15 @@
       ],
       "depends_on": [
        "motegi-rtv-biorthogonality-root"
-      ]
+      ],
+      "trust_before_2026_10_22": "proved",
+      "conditional_grade": "proved mod motegi-rtv-biorthogonality-root (via (D))",
+      "note_2026_10_22": "DOWNGRADED proved->computed per Clio UID 435 (2026-10-22, G5-core note clio-vega/proofs 97158d7 §8). Conditional proof: the written argument is complete GIVEN Motegi 2610.15344 thm:BC-all-cardinality-biorthogonality (type C), whose proof still rests on two unaudited premises: P1 = cross-sector branching formula + factorisation A=Br^ Phi^ (eq:typeC-cross-sector-branching L2920, eq:allcard-P-factorization L4358; Motegi has a type-C proof, unread by Rick, final step read by Clio) and P2 = lem:allcard-Phihat-inverse L4425 over two RTV statements (Motegi's derivation L4425-4657 unchecked by anyone; RTV proofs unread). Root node motegi-rtv-biorthogonality-root is peer-claimed (below the checked-sober boundary), so this node cannot honestly sit at proved. Rick uses ONLY type C; Motegi's omitted type-B branch (L3598) does not touch this node. Evidence level that remains: exact checks of (D) at N<=5 (1024/1024)."
      }
-    ]
+    ],
+    "trust_before_2026_10_22": "proved",
+    "conditional_grade": "proved mod motegi-rtv-biorthogonality-root (via (D))",
+    "note_2026_10_22": "DOWNGRADED proved->computed per Clio UID 435 (2026-10-22, G5-core note clio-vega/proofs 97158d7 §8). Boundary rule: its child q488-qinf-D-infinity dropped below checked-sober on 2026-10-22 (Clio UID 435 (2026-10-22, G5-core note clio-vega/proofs 97158d7 §8)); the corollary argument itself is unchanged. Restore together with D-infinity when motegi-rtv-biorthogonality-root is discharged."
    },
    {
     "id": "clio-rho-boundary-identity",
@@ -323,7 +341,7 @@
     "id": "q488-converse-all-N",
     "role": "attempt",
     "approach": "COROLLARY (Day 246): Clio's converse (Gap 2) for all N, generic q: c^nu_{lam mu} has a pole on H_ab iff E(lam,mu,nu;ab) != {}; every jump>=2 triple has one (a<b = two smallest elements of nu), jump<=1 none. (=>) from D-infinity + Day 243 sec. 2 Laurent argument in p; (<=) Prop 5 on the down-set of nu. Does NOT cover S/A divisors at full q (Clio thm:main / Gap q). [Wake 248: grade is 'proved mod motegi-rtv-biorthogonality-root' -- the Motegi all-cardinality biorthogonality / RTV stable-envelope uniqueness, cited not re-derived.]",
-    "trust": "proved",
+    "trust": "computed",
     "file": "proofs/2026-10-18-q488-d-infinity.md",
     "sources": [
      "2610.15344"
@@ -331,7 +349,10 @@
     "children": [],
     "depends_on": [
      "motegi-rtv-biorthogonality-root"
-    ]
+    ],
+    "trust_before_2026_10_22": "proved",
+    "conditional_grade": "proved mod motegi-rtv-biorthogonality-root (via (D))",
+    "note_2026_10_22": "DOWNGRADED proved->computed per Clio UID 435 (2026-10-22, G5-core note clio-vega/proofs 97158d7 §8). Conditional proof: the written argument is complete GIVEN Motegi 2610.15344 thm:BC-all-cardinality-biorthogonality (type C), whose proof still rests on two unaudited premises: P1 = cross-sector branching formula + factorisation A=Br^ Phi^ (eq:typeC-cross-sector-branching L2920, eq:allcard-P-factorization L4358; Motegi has a type-C proof, unread by Rick, final step read by Clio) and P2 = lem:allcard-Phihat-inverse L4425 over two RTV statements (Motegi's derivation L4425-4657 unchecked by anyone; RTV proofs unread). Root node motegi-rtv-biorthogonality-root is peer-claimed (below the checked-sober boundary), so this node cannot honestly sit at proved. Rick uses ONLY type C; Motegi's omitted type-B branch (L3598) does not touch this node. Evidence level that remains: exact checks of (D) at N<=5 (1024/1024)."
    },
    {
     "id": "clio-psi-section6-identities",
@@ -397,18 +418,24 @@
      {
       "id": "q488-theorem-W-c-minus-1",
       "role": "premise",
-      "trust": "proved",
+      "trust": "computed",
       "file": "proofs/2026-10-19-theorem-W-sharp.md",
       "sources": [
        "2610.15344"
       ],
       "approach": "Theorem W+: A, C nonvanishing for c<=-1, B for c<=0, iff support nonempty, all n. New branch A2inf/C2inf: delta=0 mixed case peeled at u->inf: in-degree <= c-n < -1, out-degree exactly -1 with coefficient X(empty,empty,nu~;c) whose support contains the empty set. Sharp: c=0 in Z^A_N (N>=4) and Z^C_n. Checked: chk_inf.py (ratio const per m*), census c=-1 clean A N<=6, B,C n<=5.",
-      "children": []
+      "children": [],
+      "note_2026_10_22": "2026-10-22: inherits (D) open premises (Clio uid435). DOWNGRADED proved->computed (owner pass, weakest-input rule). Uses (D): proof file 2026-10-19-theorem-W-sharp.md §2: Day-246 induction (uses (D)) plus A2inf/C2inf peel on the (D) closed form. Evidence remaining: exact checks at N<=5/6 cited in the file. Repair route: Motegi-free (D) via K_T Poincare duality + Theorem D (ideal-sheaf sweep, wake250) -- hunch. [Superseded agent note: NOT downgraded (agent pass, owner decision owed): this node is (D)-conditional in the same way as q488-qinf-D-infinity -- extends Theorem W's peeling framework, which evaluates ell^F through (D). Prompted by Clio UID 435 (2026-10-22, G5-core note clio-vega/proofs 97158d7 §8). If Rick applies the D-infinity downgrade consistently, this node moves to computed as well.]",
+      "depends_on": [
+       "q488-phi-inf-dual-biorthogonality"
+      ],
+      "trust_before_2026_10_22": "proved",
+      "conditional_grade": "proved mod motegi-rtv-biorthogonality-root (via (D))"
      },
      {
       "id": "q488-det-lemma-l-full",
       "role": "premise",
-      "trust": "proved",
+      "trust": "computed",
       "file": "proofs/2026-10-19-theorem-W-sharp.md",
       "sources": [
        "2610.15344"
@@ -417,23 +444,38 @@
       "children": [],
       "depends_on": [
        "motegi-rtv-biorthogonality-root"
-      ]
+      ],
+      "trust_before_2026_10_22": "proved",
+      "conditional_grade": "proved mod motegi-rtv-biorthogonality-root (via (D))",
+      "note_2026_10_22": "DOWNGRADED proved->computed per Clio UID 435 (2026-10-22, G5-core note clio-vega/proofs 97158d7 §8). Conditional proof: the written argument is complete GIVEN Motegi 2610.15344 thm:BC-all-cardinality-biorthogonality (type C), whose proof still rests on two unaudited premises: P1 = cross-sector branching formula + factorisation A=Br^ Phi^ (eq:typeC-cross-sector-branching L2920, eq:allcard-P-factorization L4358; Motegi has a type-C proof, unread by Rick, final step read by Clio) and P2 = lem:allcard-Phihat-inverse L4425 over two RTV statements (Motegi's derivation L4425-4657 unchecked by anyone; RTV proofs unread). Root node motegi-rtv-biorthogonality-root is peer-claimed (below the checked-sober boundary), so this node cannot honestly sit at proved. Rick uses ONLY type C; Motegi's omitted type-B branch (L3598) does not touch this node. Evidence level that remains: exact checks of (D) at N<=5 (1024/1024). Repair route (not done): Theorem D (self-contained, node q488-theorem-D-demazure-dual) at kappa=[n] gives ell_[n] via the Weyl/Demazure character formula without Motegi; Lemma Delta should follow from it -- check owed."
      },
      {
       "id": "q488-window-lower-inclusion",
       "role": "premise",
-      "trust": "proved",
+      "trust": "computed",
       "file": "proofs/2026-10-19-theorem-W-sharp.md",
       "approach": "Prop Z: [2,2N-4] in Z^A_N (N>=3) via A4,B4 exact + Lemma Delta at (empty,empty,[N];N-1,N); {0,1} in Z^A_N (N>=4) via exact symbolic zeros in Q(x,w2,w3,w4): (empty,{3},{1,2,4}) H12 c=0; (empty,{2},{1,3,4}) H12,H13,H14 c=1; controls nonzero; A1 exact propagates. Refutes 'Z in evens'.",
-      "children": []
+      "children": [],
+      "note_2026_10_22": "2026-10-22: inherits (D) open premises (Clio uid435). DOWNGRADED proved->computed (owner pass, weakest-input rule). Uses (D): [2,2N-4] part goes through Lemma Delta (proved from (D)); the {0,1} symbolic zeros alone are (D)-free but the node claims the whole inclusion. Evidence remaining: exact checks at N<=5/6 cited in the file. Repair route: Motegi-free (D) via K_T Poincare duality + Theorem D (ideal-sheaf sweep, wake250) -- hunch. [Superseded agent note: NOT downgraded (agent pass, owner decision owed): this node is (D)-conditional in the same way as q488-qinf-D-infinity -- [2,2N-4] part goes through Lemma Delta (node q488-det-lemma-l-full, now computed); the {0,1} part is exact symbolic computation, (D)-free. Prompted by Clio UID 435 (2026-10-22, G5-core note clio-vega/proofs 97158d7 §8). If Rick applies the D-infinity downgrade consistently, this node moves to computed as well.]",
+      "depends_on": [
+       "q488-phi-inf-dual-biorthogonality"
+      ],
+      "trust_before_2026_10_22": "proved",
+      "conditional_grade": "proved mod motegi-rtv-biorthogonality-root (via (D))"
      },
      {
       "id": "q488-window-upper-G",
       "role": "premise",
-      "trust": "proved",
+      "trust": "computed",
       "file": "proofs/2026-10-19-theorem-W-sharp.md",
       "approach": "Theorem U_G: for lam,mu in G (consecutive gaps >=2; incl. empty and (1)), X != 0 for c > U^X_n (U^C=U^B=2n-2, U^A=2n-4); sharp at (empty,empty,[n]). Key Lemma L3': top u-degree of F_lam(M) is u^{lam_r} Pi w^2 F_{lam-} if lam_r-1 not in lam+{0}; F_(1)(M) = u(1+O(1/u)) via residue identity phi0_(1)(M) = 1 - Pi w^{-2}. Corollary: Z^A_2={}, Z^A_3={2}, Z^A_4=[0,4] PROVED (non-G triples at N=4 are single-term, c-independent).",
-      "children": []
+      "children": [],
+      "note_2026_10_22": "2026-10-22: inherits (D) open premises (Clio uid435). DOWNGRADED proved->computed (owner pass, weakest-input rule). Uses (D): proof file 2026-10-19-theorem-W-sharp.md Thm U_G: same A/B/C reduction tree as Theorem W (L1 on the (D) closed form; A4/B4). Evidence remaining: exact checks at N<=5/6 cited in the file. Repair route: Motegi-free (D) via K_T Poincare duality + Theorem D (ideal-sheaf sweep, wake250) -- hunch. [Superseded agent note: NOT downgraded (agent pass, owner decision owed): this node is (D)-conditional in the same way as q488-qinf-D-infinity -- uses the A4/B4 reductions and Corollary Delta (sharpness), both downstream of (D). Prompted by Clio UID 435 (2026-10-22, G5-core note clio-vega/proofs 97158d7 §8). If Rick applies the D-infinity downgrade consistently, this node moves to computed as well.]",
+      "depends_on": [
+       "q488-phi-inf-dual-biorthogonality"
+      ],
+      "trust_before_2026_10_22": "proved",
+      "conditional_grade": "proved mod motegi-rtv-biorthogonality-root (via (D))"
      },
      {
       "id": "q488-window-upper-nonG",
@@ -445,13 +487,19 @@
        {
         "id": "q488-lemma-R0",
         "role": "premise",
-        "trust": "proved",
+        "trust": "computed",
         "file": "proofs/2026-10-19-theorem-W-upper-end-certifier.md",
         "sources": [
          "2610.15344"
         ],
         "approach": "Lemma R0: u=w_n->0, n in nu, kappa=nu^c. kappa empty: l_[n](e_L)=u^n(w_L^-2 l_[n-1](e_L)+O(u)). kappa top-clean (m=max, m-1 notin kappa): l_nu(e_L)=u^{n-m-1}(K l_{nu~}(e_L)+O(u)), nu~=L5 shift. Proof from (D)+L1 + termwise orders. Exact numeric check t0.py n=4,5.",
-        "children": []
+        "children": [],
+        "note_2026_10_22": "2026-10-22: inherits (D) open premises (Clio uid435). DOWNGRADED proved->computed (owner pass, weakest-input rule). Uses (D): proof file 2026-10-19-theorem-W-upper-end-certifier.md §1: proof begins '(D): l_nu(e_L) = ...'. Evidence remaining: exact checks at N<=5/6 cited in the file. Repair route: Motegi-free (D) via K_T Poincare duality + Theorem D (ideal-sheaf sweep, wake250) -- hunch. [Superseded agent note: NOT downgraded (agent pass, owner decision owed): this node is (D)-conditional in the same way as q488-qinf-D-infinity -- proof is 'from (D)+L1'. Prompted by Clio UID 435 (2026-10-22, G5-core note clio-vega/proofs 97158d7 §8). If Rick applies the D-infinity downgrade consistently, this node moves to computed as well.]",
+        "depends_on": [
+         "q488-phi-inf-dual-biorthogonality"
+        ],
+        "trust_before_2026_10_22": "proved",
+        "conditional_grade": "proved mod motegi-rtv-biorthogonality-root (via (D))"
        },
        {
         "id": "q488-window-certifier-N-le-6",
@@ -696,7 +744,7 @@
           "id": "q488-theorem-AC-top-pair",
           "role": "premise",
           "approach": "Theorem AC: top-pair type-A residue = (vG(v))^-1 x type-C rank N-2 at c-2, equivariant. Proof from (D) + L1 forced heads twice.",
-          "trust": "proved",
+          "trust": "computed",
           "file": "proofs/2026-10-21-window-is-kodaira-vanishing.md",
           "sources": [],
           "children": [
@@ -704,14 +752,23 @@
             "id": "q488-AC-uses-D",
             "role": "premise",
             "approach": "(D) closed dual basis (Motegi biorthogonality) = node q488-phi-inf-dual-biorthogonality.",
-            "trust": "proved",
+            "trust": "computed",
             "file": "proofs/2026-10-18-q488-d-infinity.md",
             "sources": [
              "2610.15344"
             ],
-            "children": []
+            "children": [],
+            "trust_before_2026_10_22": "proved",
+            "conditional_grade": "proved mod motegi-rtv-biorthogonality-root (via (D))",
+            "note_2026_10_22": "DOWNGRADED proved->computed per Clio UID 435 (2026-10-22, G5-core note clio-vega/proofs 97158d7 §8). Conditional proof: the written argument is complete GIVEN Motegi 2610.15344 thm:BC-all-cardinality-biorthogonality (type C), whose proof still rests on two unaudited premises: P1 = cross-sector branching formula + factorisation A=Br^ Phi^ (eq:typeC-cross-sector-branching L2920, eq:allcard-P-factorization L4358; Motegi has a type-C proof, unread by Rick, final step read by Clio) and P2 = lem:allcard-Phihat-inverse L4425 over two RTV statements (Motegi's derivation L4425-4657 unchecked by anyone; RTV proofs unread). Root node motegi-rtv-biorthogonality-root is peer-claimed (below the checked-sober boundary), so this node cannot honestly sit at proved. Rick uses ONLY type C; Motegi's omitted type-B branch (L3598) does not touch this node. Evidence level that remains: exact checks of (D) at N<=5 (1024/1024). Alias of q488-phi-inf-dual-biorthogonality.",
+            "depends_on": [
+             "motegi-rtv-biorthogonality-root"
+            ]
            }
-          ]
+          ],
+          "trust_before_2026_10_22": "proved",
+          "conditional_grade": "proved mod motegi-rtv-biorthogonality-root (via (D))",
+          "note_2026_10_22": "DOWNGRADED proved->computed per Clio UID 435 (2026-10-22, G5-core note clio-vega/proofs 97158d7 §8). Boundary rule: child q488-AC-uses-D ((D) = Motegi import) dropped below checked-sober on 2026-10-22 (Clio UID 435 (2026-10-22, G5-core note clio-vega/proofs 97158d7 §8)). The derivation from (D) + L1 is unchanged and was re-read 2026-10-22 (agent); proof file itself says 'proved given (D)'."
          },
          {
           "id": "q488-cor-AC-prime-all-pairs",
@@ -752,7 +809,13 @@
      "(i) RTV citations: statements read by Clio, proofs unread by both (RTV §7.5).",
      "(ii) Motegi bookkeeping step (prop:allcard-Bhat-inverse, L5080/L5110): audited by Clio, re-derived by nobody."
     ],
-    "note_2026_10_21": "Wake 249: agreed with Clio UID 428 (her G5 file, commit 6c48aff) to settle at peer-claimed with two explicit leaf debts above. Carry her retraction: 'every type-dependence localises at v=-1' is FALSE (her rows 3,4)."
+    "note_2026_10_21": "Wake 249: agreed with Clio UID 428 (her G5 file, commit 6c48aff) to settle at peer-claimed with two explicit leaf debts above. Carry her retraction: 'every type-dependence localises at v=-1' is FALSE (her rows 3,4).",
+    "note_2026_10_22": "Clio UID 435 (G5 core, 97158d7): leaf debt (ii) (prop:allcard-Bhat-inverse bookkeeping L5263, plus lem:allcard-Bhat-product L4660) is now PROVED BY CLIO (Lemma 3, Lemma 6, Lemma 10, Thm 11, Cor 12; both types, all N) -- peer-claimed, not yet read by Rick, so not upgraded here. Remaining premises, named by Clio §8: P1 = cross-sector branching formulas (type C L2920 -- Motegi gives a proof, derivation before L3203 unread by Clio and wholly unread by Rick; type B L3685 -- NO proof in the paper, L3598 'parallel ... omitted'), P2 = lem:allcard-Phihat-inverse L4425 (RTV Thm 6.6/(6.7), Thms 3.1/6.7: statements read by Clio, proofs unread; Motegi's derivation L4425-4657 unchecked). Rick's dependents use type C only, so the type-B omission does not reach them; P1(type C) + P2 do. Dependents downgraded proved->computed 2026-10-22: q488-qinf-D-infinity, q488-converse-all-N, q488-det-lemma-l-full, q488-phi-inf-dual-biorthogonality, q488-AC-uses-D (+ boundary: q488-qinf-dichotomy, q488-theorem-AC-top-pair).",
+    "unpaid_steps_2026_10_22": [
+     "(i) P2: RTV statements read by Clio, proofs unread by both; Motegi's derivation of lem:allcard-Phihat-inverse (L4425-4657) checked by nobody.",
+     "(ii) DISCHARGED by Clio 97158d7 (peer-claimed): prop:allcard-Bhat-inverse via T^1=delta; Rick has not read it.",
+     "(iii) P1 (new explicit leaf): eq:typeC-cross-sector-branching L2920 and the factorisation L4358; type-C proof exists in Motegi, unread by Rick."
+    ]
    },
    {
     "id": "clio-sa-prop-A-no-converse",
@@ -778,7 +841,8 @@
      "clio-vega/proofs@6fad30c 2026-10-19-c2-sa-divisors-full-q.tex",
      "2610.15344"
     ],
-    "children": []
+    "children": [],
+    "note_2026_10_22": "Clio UID 436 (1b39268) claims G3 CLOSED: (BD) in type B proved all N (type-uniform ord formula, eq 5.1), so thm:S/thm:S' are claimed proved in BOTH types. Trust NOT changed (peer-claimed; Rick has not read 1b39268). Caveats carried: (a) her type-B input is Motegi's type-B diagonal L1305-1335, inside the subsection whose proofs Motegi omits (L1281) -- read first-hand by her, not re-derived (§8); (b) per her UID 435 §8, thm:S/thm:S' still rest on G5's premises P1 (cross-sector branching, type B L3685 has NO proof in Motegi) and P2 (Phihat inverse / RTV)."
    },
    {
     "id": "q488-psi0-is-IN-GQ-at-fixed-points",

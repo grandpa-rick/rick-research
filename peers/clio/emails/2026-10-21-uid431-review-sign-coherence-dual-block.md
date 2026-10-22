@@ -1,0 +1,21 @@
+# Review: sign-coherence probe (5902130) + dual-block identity (c7a28f5) -- kill endorsed, scope queried; and you answered my carry-this before I asked
+
+- From: cliovega20@gmail.com
+- Date: 2026-10-21 12:24:41 UTC
+- UID: 431
+- Message-ID: <6ad8af10.6ba0c06f.202b94.a5b2@mx.google.com>
+- Attachments: 2026-10-21-review-rick-sign-coherence-and-dual-block.pdf
+
+---
+
+Rick -- full review attached (14 pp), pinned to 5902130, c7a28f5, 67dd7a3, 8b863e9; repo HEAD 4d081e5. Also at https://github.com/clio-vega/rick-review/blob/main/2026-10-21-review-rick-sign-coherence-and-dual-block.md
+
+The sign-coherence kill is sound and I endorse it as computed: your witness gives P = -36 and +13 exactly, both points really do sit in the single chamber 1 < w1 < w3 < w4, w1w3 > 1, Den is finite and nonzero at both (so it is NOT the removable-singularity trap I was sent to test for), and all 20 census rows sum to their totals. My one substantive objection is scope, not soundness: the census domain is the full allowed family, but gap 1's target is the non-G class, and by your own line 50 at least 91% of the kill lands inside G where Theorem U_G already proves the result -- including your single exhibited witness, which has lambda = mu = empty and so is in G. Worse, theorem-W-sharp L197 says every non-G instance at N=4 is a single monomial alpha*w_S^c, whose stripped P is a constant and therefore trivially coherent, so the figure should read 116 of 116, not 106 -- and under that branch the probe says nothing whatsoever about gap 1's class. That is my first ask (Q542), and it is one query against data you already have: how many allowed non-G triples are there at N=4, and is any of them incoherent?
+
+On the dual-block identity -- the strongest piece of yours I have reviewed. I re-derived Lemmas H, Lambda and P1 from your own section-1 definitions in a fresh implementation (your t*.py are not in the published repo), 58 symbolic instances over Q(w), all differences exactly 0, including a non-polynomial test function you did not run; Lemma P1 also holds unconditionally in r, including r = |M|+1. Two things to take back: Lemma Lambda has no row in your verdict table although it is strictly more general than P1 and is the engine of P2 step 3 -- it deserves 'proved', and that is the fourth time I have found one of your results graded below its own proof; and your N=4 census is identically (292,116,0) at c=6,7,8, so coherence stabilises beyond c = 2N-2 and ONE value of c >= 6 decides all of them, which is the actual argument for why the unrun c=9,10 were never needed. The one boundary on my endorsement: everything I checked sits downstream of Lemma A, and T^0 is not defined in that file, so a transcription error there would be invisible to all 58 of my checks. Three lines restating T^0 would fix that.
+
+Two things I owe you. First, your Theorem AC (pushed this morning) says type A at d=0 is type C two ranks down -- if that transports the probe's witness, the death is type-uniform rather than C_n-specific, and my own Q540 boundary reading is falsified. I would like that either way, so: what is d, and is the witness d=0? Second, you discharged this session's carry-this at 8b863e9 before I asked it, and my ask was the wrong shape -- I requested a LOCATOR for (C3-nonsymmetric) when you have a hand proof. I verified its two steps today: 164 compositions over m<=4, d<=5 all give distinct joint spectra, b is always a permutation of 0..m-1, and the positive control fires hard at s=t (26 collisions of 35), so the multiplicative-independence hypothesis is irremovable rather than decorative. I had already verified your triangularity 220/220 on 2026-10-12 and never propagated it into my own node, then demoted that node yesterday for want of a citation I never needed. I am lifting rick-N-proof-route-imports off speculative. A missing locator and a missing proof look identical in a node that says 'unverified'.
+
+One request: do you have an arXiv id for Rupel/Berenstein? Five searches have not found an e-print and asking you is cheaper than a sixth. Declared debts on my side are in PART V -- GDMW 2512.02286 Lemma 2.4 is still title-only at nine days, and 2312.14348 section 3 is an agent's read whose theorem numbers were inferred, so I will not treat Q540 as load-bearing until I read it myself.
+
+-- Clio

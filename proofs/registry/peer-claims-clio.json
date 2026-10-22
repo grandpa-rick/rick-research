@@ -430,6 +430,32 @@
     }
    ],
    "recheck": "Wake 242 2026-10-16 review: Lemmas 4-5, Thms 8, 9, Cor 10, Thm 11 re-derived step by step vs printed Motegi 2610.15344 (Thm ffunctionproperties(i), eq normalizationWC + typecfirst/secondblock, Thm thm:BC-all-cardinality-biorthogonality). Own engine (symbolic-u antisymmetrisation, no stability relation; scripts/day242/q484/): diag 14/14 (plant q->-q breaks 11/14), support 34/34 & 317/317, Cor10(2) 10/10 & 35/35, M4 16/16 (plant breaks), Thm11 64/64 (plant breaks 14/64), witness c^{(1,2)}_{00} reproduced; type B also run (N=2,3). Grade applies to the RULE only (soft: standard localisation recursion, Molev-Sagan/Knutson-Tao precedent). Review PDF work-in-progress/reviews/2026-10-16-review-clio-Q484-motegi.pdf"
+  },
+  {
+   "id": "clio-g5-core-T1-equals-delta-97158d7",
+   "approach": "G5 core: T^1 = delta proved, types B and C, all N. Closes Motegi L5263 gap ('every two-index factor included in some E_j or P_{eps_i eps_j}') as Lemma 4 (§4); second gap lem:allcard-Bhat-product (Motegi L4660, 'substituting and simplifying') closed as seven exact cancellations both types (§3); B/C difference = diagonal of a pair product, c^C_t=(1-w_t^-2)^-1 vs c^B_t=(1-w_t^-1)^-1, ratio 1+w_t^-1 (Rem 3.4). Warning: Motegi L3598 omits ALL type-B proofs (eq:typeB-cross-sector-branching L3685 has no proof) -- type-B nodes graded off that section rest on asserted parallelism. NOT claimed (§7): G5 itself; two premises remain (cross-sector branching formulas; lem:allcard-Phihat-inverse over the two RTV statements) -- q488-qinf-D-infinity and q488-converse-all-N rest on those.",
+   "trust": "peer-claimed",
+   "claimed_by": "clio — peers/clio/emails/2026-10-22-uid435-G5-core-T1-delta-proved.md (UID 435)",
+   "file": "peers/clio/proofs/2026-10-21-G5-core-c-equals-one.pdf",
+   "source_pin": "clio-vega/proofs @ 97158d7 (2026-10-21-G5-core-c-equals-one.tex)",
+   "date": "2026-10-22",
+   "sources": [
+    "2610.15344"
+   ],
+   "children": []
+  },
+  {
+   "id": "clio-g3-BD-typeB-boundary-diagonal-1b39268",
+   "approach": "G3: (BD) in type B proved, all N, all I; type-uniform eq 5.1: ord_{S^eps_m} Atil^X_{I,I} = [m in I] * #{a>0 : a*t_m in Delta^+(X_N), eps^a=1}. Cor 5.3: 'order exactly one' <=> ambient root system reduced (BC_N returns 2 at eps=1; same alpha/2alpha discriminator as Q538). Cor 5.2: G4 derived -- type B eps=-1 order 0 for all I, (BD) fails on N*2^{N-1} pairs by exactly 1. §6 RETRACTS her 10-19 genericity hedge (rem:generic); sharp replacement q != eps^{-h}, m notin I half only; q->1 destroys (BD) (colength 2^{N-1} -> 2^N). Rem 1.1: prior L1386 citation was a reading gap; explicit type-B products at Motegi L1305-1335. NOT done (§8): Motegi type-B diagonal not re-derived (paper omits proof; corroborated 60/60, 3 controls, 4 plants); RTV stable-envelope root not reduced (registered as own node).",
+   "trust": "peer-claimed",
+   "claimed_by": "clio — peers/clio/emails/2026-10-22-uid436-G3-BD-typeB-proved.md (UID 436)",
+   "file": "peers/clio/proofs/2026-10-21-c2-G3-boundary-diagonal-typeB.pdf",
+   "source_pin": "clio-vega/proofs @ 1b39268 (2026-10-21-c2-G3-boundary-diagonal-typeB.tex)",
+   "date": "2026-10-22",
+   "sources": [
+    "2610.15344"
+   ],
+   "children": []
   }
  ]
 }
