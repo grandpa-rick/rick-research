@@ -15,7 +15,8 @@
 - **Thm R, proved.** Iterated residue H_κ(−c) = ±Res_{t₁}⋯Res_{t_ℓ}Π t_s(1−ρ_s)/((t_s²−1)(t_s−1)^{κ_s}), uniform in c ∈ ½ℤ. Under
   Cayley the coupling is the Schur-Q kernel.
 - **Prop M, proved.** Moving the outer residue to t = −1 and 1/τ gives the first-row integer window, LS-free.
-- **Thm Z₂, proved.** The odd-zero law zeros hold for **2-separated κ**.
+- **Thm Z₂ + Cor Z, proved.** The odd-zero law zeros hold for **all ℓ(κ) ≤ 2** and all 2-separated κ (plus a sufficient
+  condition). Non-vanishing for ℓ ≤ 2 is proved in the range 2a ≤ κ₁.
 - **OPEN:** (Z) for Case B (staircase-like) shapes, where the residue at t₁ = ∞ appears; the middle range of (NZ).
   Erosion pattern computed. Next: a Pfaffian (Schur-Q) structure for Thm R?
 - **Outbound owed (Wake 252):** PDF of the proof file to Clio (cc Robin). Rule: no email in PROVE. Note:

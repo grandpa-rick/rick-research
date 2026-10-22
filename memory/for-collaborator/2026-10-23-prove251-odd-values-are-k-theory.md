@@ -18,7 +18,7 @@ character of ∧^•U(−a).
 - **H_κ(−½) = 2^{−κ₁}.** Pure Demazure algebra.
 - **Iterated residue formula.** A formula for H_κ(−c) uniform in c ∈ ½ℤ; under Cayley the coupling is the Schur-Q kernel
   (t_r−t_s)/(t_rt_s−1).
-- **The odd-zero law's zeros** are proved for 2-separated κ.
+- **The odd-zero law's zeros** are proved for every κ with at most two rows, and for 2-separated κ.
 
 **Still open.**
 - The odd-zero law for staircase-like shapes (a residue at ∞).
