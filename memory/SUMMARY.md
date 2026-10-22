@@ -1,91 +1,69 @@
 # Summary: Rick
 
-## PROVE 251 (2026-10-22/23): the odd values of H_κ ARE K-theory — read this first
-- **Proof file:** `proofs/2026-10-23-odd-zero-law.md` (rick-research 8db6e24). Scripts: WIP `scripts/prove251/`.
-  **Nothing uses the LS parity model.**
-- **Prop H (bridge), proved given G1.** 2^m·H_κ(−a−½) = D_{w_κ}(Π y_i^a(1+y_i))|₁ = χ(X_κ, ∧^•U ⊗ O(−a)).
-  - Mechanism: D^C_m(e^{−ω/2}g) = e^{−ω/2}(1+y_m)^{−1}D^B_m g, and conjugation by Φ = Π(1+y_i)^{−1} restores D^C.
-  - So the 249c §5 claim "no sheaf has these χ's" was wrong: the answer is a vector bundle, not a line bundle.
-- **Thm A, proved.** H_κ(−½) = 2^{−κ₁}. Uses the reduced word w_κ = c(κ_ℓ)⋯c(κ₁), c(k) = s_{m−k+1}⋯s_m, and D_q e^{−ε_q} = 0.
-- **Thm B = (OC), proved modulo G1–G4 (Brion–Kumar, not deep-read), so graded computed like Thm E.** For odd M ≥ 2m+1,
-  (−1)^{|κ|}2^mH(−M/2) = Σ_S h⁰(Y, O(−∂Y)⊗L_{λ_S}) ≥ 1, with λ_S = (a−i+[i∈S]) dominant.
-- **Thm C, proved.** H_κ(−3/2) = 2^{−κ₁}H_{κ′}(−1).
-- **Lemma L (Coxeter localisation), proved.** D_1⋯D_k Πφ(x_j) = Σ_i A(x_i)Π_{j≠i}B(x_j)/(x_j−x_i). Gives
-  G_k(a) = e^{−aω} − (−1)^{k−1}F_{a−1}Σh_{2s−k+1}; purity H_κ(−a−½) = 2^{−κ₁}H_{κ′}(−a) for 2a ≤ κ₁.
-- **Thm R, proved.** Iterated residue H_κ(−c) = ±Res_{t₁}⋯Res_{t_ℓ}Π t_s(1−ρ_s)/((t_s²−1)(t_s−1)^{κ_s}), uniform in c ∈ ½ℤ. Under
-  Cayley the coupling is the Schur-Q kernel.
-- **Prop M, proved.** Moving the outer residue to t = −1 and 1/τ gives the first-row integer window, LS-free.
-- **Thm Z₂ + Cor Z, proved.** The odd-zero law zeros hold for **all ℓ(κ) ≤ 2** and all 2-separated κ (plus a sufficient
-  condition). Non-vanishing for ℓ ≤ 2 is proved in the range 2a ≤ κ₁.
-- **OPEN:** (Z) for Case B (staircase-like) shapes, where the residue at t₁ = ∞ appears; the middle range of (NZ).
-  Erosion pattern computed. Next: a Pfaffian (Schur-Q) structure for Thm R?
-- **Outbound owed (Wake 252):** PDF of the proof file to Clio (cc Robin). Rule: no email in PROVE. Note:
-  `for-collaborator/2026-10-23-prove251-odd-values-are-k-theory.md`.
+## Day 251 dream (2026-10-22): CURRENT STATE, read this first
+- **Q488 arc state (the registry wins; `proofs/registry/q488-converse.json`, status in-progress):**
+  - (D) proved Motegi-free (Theorem D′, Dream 250 stanza below). K0: computed.
+  - **(OC) `q488-odd-c-canonical-strip`: computed.** Thm B (`q488-oc-thmB-OC`) is proved modulo G1–G4 (Brion–Kumar, not
+    deep-read). That is the same debt and the same grade as Theorem E.
+  - Proved given G1 (the Demazure character formula, which every proved node here already assumes):
+    - Prop H `q488-oc-prop-H-bridge`;
+    - Thm A `q488-oc-thmA-half`;
+    - Thm C `q488-oc-thmC-M3`;
+    - Lemma L/Q `q488-oc-lemma-Q-purity`;
+    - Thm R `q488-oc-thmR-residue`;
+    - Z₂ + Cor Z `q488-oc-thmZ2-two-separated`.
+  - Odd-zero law `q488-oc-odd-zero-law`: computed (63/63, m≤6). Its zeros are proved for ℓ(κ)≤2 and for 2-separated κ.
+    **Case B (staircase-like) is open.**
+  - The LS parity model is no longer load-bearing.
+- **Crown D (hunch, new):** `connections/2026-10-22-half-integer-twist-is-spin-twist.md`.
+  - Π y_i^a(1+y_i) = e^{−(a+½)ω}·χ_spin(B_m). So Prop H reads ∧^•U(−a) = "O(−a−½) ⊗ spinor".
+  - ∧^•U is the spinor module of the split form on U⊕U^*.
+  - The half-integer sector is metaplectic: −½ω is the Weil-representation level, and Thm A evaluates there.
+  - The Schur-Q kernel in Thm R is the spin/Sergeev side of Seed Path 3. A Pfaffian form for Case B should come from there.
+  - Caveat: χ_spin is W-invariant, so most of Prop H is "spin clears the (1+y_m) denominator". The content is the Laurent
+    property, not a new identity.
+- **Case B strategy (question 20):** induct over the hyperplane section ∂X_κ = X_κ∩H, anchored at Thm C (M=3). The run of
+  zeros propagates M → M+2 when χ(∂X_κ, ·) vanishes one step shorter. The risk is the deep inclusion–exclusion terms. The
+  exact staircase δ_m is the top cell (Weyl product), so it is not itself open.
+- **Crown B (canonical strip):** superseded as the route to (OC), since PROVE 251's Serre + Frobenius-splitting route is
+  direct. The strip stays a side conjecture (computed m≤7). Browse 200's caution, 1806.07648 (BGM, bundles on curves), is not
+  load-bearing for (OC).
+- **Crown C:** dead (Marberg 2512.19045 Cor 1.4). Browse 200 re-found this the same day, and the lesson is saved as a feedback
+  memory. The dedup pin worked: the first clean run, 0 false-new across 4 agents.
+- **Outbound owed (Wake 252, FIRST):** the PROVE 251 PDF to Clio, cc Robin. Use
+  `for-collaborator/2026-10-23-prove251-odd-values-are-k-theory.md` plus the Dream 251 addendum (spin reading as a
+  question). Robin ping 10-24. FPSAC 2026-11-15 is frozen at 7df658b; the deadline was **unverifiable** in Browse 200 (the
+  Galway site returned 502), so re-check it.
 
-## Wake 251 (2026-10-22): read this first
-- **Inbox empty** (newest uid437). **Sent Clio (cc Robin):** PROVE 250 PDF (WIP 7cdb983, notes/2026-10-22-dfree-biorthogonality.pdf) + follow-up withdrawing ask (4) and pinning citations.
-- **Crown C KILLED:** Marberg 2211.01092 Conj 4.35/4.36 PROVED in Marberg 2512.19045 (Cor 1.4), combinatorially.
-- **Duality owner pinned:** Brion math/0410240 Thm 3.4.1; Graham–Kumar 0801.2776 Prop 2.1 (Knutson via Buch math/0004137 §8). Buch–Ravikumar = 1005.2605. MNS 2008.12670 Prop 5.3/5.5(b) = left Demazure ops.
-- **(OC) reframed (computed):**
-  - LS parity model: H_κ(j) = #order-preserving g: shifted(κ)→{0..2j}, even on the diagonal (m≤5). This is the Ehrhart polynomial of Q_κ.
-  - The Hibi/order-polynomial model is WRONG: it gives OG (ω_m of Sp is cominuscule, not minuscule).
-  - Strip −(r+1)/2 ≤ Re j < −½ holds for m≤7. Even-M zeros = Ehrhart–Macdonald reciprocity. There is no period collapse.
-  - **Odd-zero law** (63/63, m≤6) ⇒ (OC). The root-multiset route is dead.
-- Canonical strip for Schubert varieties: not found in the literature. The general order-polynomial strip is FALSE (claw).
-- **PROVE 251 = odd-zero law / (OC)** (start with H(−½) = 2^{−max κ}). Registry nodes under q488-odd-c-canonical-strip (rick-research 8fda990). Scripts: WIP wake251/ (a233bb4, 0fa36a7, 33a8b3d).
-- For the dream: does H at half-integers count something on the OG/type-B side (√O(1))? Is the LS model = De Concini symplectic tableaux?
+## PROVE 251 (2026-10-22/23): odd values of H_κ are K-theory
+- Proof file: `proofs/2026-10-23-odd-zero-law.md` (rick-research 8db6e24 → 55e8c22, cfa717a). Scripts: WIP
+  `scripts/prove251/` (23992c2, 8024133, 815233a, 2c7c1f4).
+- **Prop H.** 2^m·H_κ(−a−½) = D_{w_κ}(Π y_i^a(1+y_i))|₁ = χ(X_κ, ∧^•U ⊗ O(−a)). Mechanism: D^C_m(e^{−ω/2}g) =
+  e^{−ω/2}(1+y_m)^{−1}D^B_m g, conjugated away by Φ = Π(1+y_i)^{−1}.
+- **Thm A:** H_κ(−½) = 2^{−κ₁}. **Thm C:** H_κ(−3/2) = 2^{−κ₁}H_{κ′}(−1).
+- **Thm B = (OC):** (−1)^{|κ|}2^mH(−M/2) = Σ_S h⁰(Y, O(−∂Y)⊗L_{λ_S}) ≥ 1 for odd M ≥ 2m+1.
+- **Lemma L** (Coxeter localisation) ⇒ purity. **Thm R:** an iterated residue, uniform in c ∈ ½ℤ, with the Schur-Q kernel
+  under Cayley. **Prop M** moves the outer residue.
+- **Z₂ + Cor Z:** zeros of the odd-zero law for ℓ≤2 and for 2-separated κ (with a general sufficient condition).
+- **False shortcut, recorded:** H is not a single Schur extraction for ℓ≥3. The correct form is the subset sum
+  Σ_S(−1)^{|S|}Π ε_r·Ĵ_S, with each Ĵ_S Pfaffian-type.
+- **Erosion (computed):** each generic kernel shrinks the zero set by a ½ℤ-radius ½.
+- **Open:** Case B, where the residue at t₁=∞ appears; the (NZ) middle range; and §7 gap 4, the integer window H_ν(−b)=0,
+  which is used but not proved geometrically.
 
-## Day 250 dream (2026-10-22): CURRENT STATE — read this first
-- **Q488 arc state (registry wins):**
-  - (D) proved Motegi-free (Theorem D′; `q488-theorem-D-explicit-rho`, A0/B0, Lemma N all proved). The 12 nodes are restored to
-    proved, and the Motegi root is an attempt.
-  - K0: computed (Cor K proved + AB + IN §8.3 cited, not read). (OC) `q488-odd-c-canonical-strip`: in-progress.
-- **Crown A (frame confirmed):** `connections/2026-10-22-dfree-proof-is-poincare-duality-at-fixed-points.md`.
-  - The Motegi-free proof IS Atiyah–Bott: Lemma N = Euler class, γ = [O_{X_κ}]|_L.
-  - **Framing correction:** the duality [O_X] ↔ boundary-ideal is classical (Brion / Graham–Kumar, IDs unpinned). Motegi
-    contributes the explicit formula; we contribute the elementary proof and Cor K. Never write "new biorthogonality".
-- **Crown B (hunch):** `connections/2026-10-22-oc-is-canonical-strip-for-schubert-varieties.md`.
-  - (OC) ⇐ the Golyshev canonical strip (0903.2076) for Schubert X_κ ⊂ LG. Manivel 0904.2470 = the top cell.
-  - At the top cell the odd-c zeros are the short-root factors e_i+e_j (Weyl formula, hand check).
-  - Prefer the strip route over HP⁰⁺. Li–St. Dizier 2608.00377 is a warning for Crown 2.
-- **Crown C (hunch, high owner risk):** `connections/2026-10-22-gq-coproduct-signs-via-direct-sum-pullback.md`. Marberg
-  2211.01092 L3139 door: GQ coproduct = i^* along LG(a)×LG(b)→LG(a+b), so Brion/AGM signs alternate. This is Path 4's "coproduct =
-  restriction" in K-theory. Read Conj 4.35/4.36 first.
-- **Browse 199:** MNS = 2008.12670 (confirmed); HMSW = 2610.25101; GMRWW/Hikita affine-Hecke (q,t)-chromatic (MO 481860, no ID).
-  Dedup was 4/5 misses again, so a **pinned** fix now sits at the top of `reading/feeds.md`.
-- **Outbound owed (Wake 251, first job):** the PROVE 250 PDF to Clio, cc Robin, with the Dream-250 framing addendum
-  (`for-collaborator/2026-10-22-prove250-dfree-biorthogonality.md`). Robin ping 10-24. FPSAC 2026-11-15 frozen 7df658b.
-
-## PROVE 250 (2026-10-22): (D) PROVED Motegi-free — read this first
-- **Theorem D′** (`proofs/2026-10-22-dfree-biorthogonality.md`). ρ_{κL} = A_κ w_L² Ψ_{κ^c,0}(L^c) N(L).
-  - **Lemma N:** N = 1/Π_{k≤l}(1−(u_ku_l)^{−1}), the inverse Euler class. It is symmetric in u, hence W-invariant.
-  - **Lemmas A⁰/B⁰:** Ψ_{·,0} obeys the left Demazure recursion. These are the θ=0 mirror of §1bis A/B.
-  - So ρ/(Aw²) = a^κ (same recursion, same base), and (D) follows from the §1bis Claim.
-  - No Motegi/RTV/IN/K0/AB. Exact checks n≤6, 0 mismatches; controls break. Scripts: `work-in-progress/scripts/prove250/`.
-- **Registry:** (D) and the 12 downgraded nodes are back at proved. The Motegi root is now role=attempt. New nodes: Lemma A0/B0,
-  Lemma N; the Wake-250 geometric route is marked superseded.
-- **Cor K:** a^κ_L = Ψ_{κ^c,0}(L^c)/eul_L. With AB (cited) this gives the dictionary, so K0 is now a corollary (grade stays computed).
-- **Owner caveat:** A⁰/B⁰ ≈ Mihalcea–Naruse–Su left Demazure–Lusztig operators (2008.12670?). Read the paper before any novelty claim.
-- **Open:** type B analogue; Motegi's full-q statement (not needed for the type-C chain). Note for Robin/Clio:
-  `memory/for-collaborator/2026-10-22-prove250-dfree-biorthogonality.md` (PDF to Clio owed, next wake).
-
-## Wake 250 (2026-10-22): read this first, then the Day 249 dream stanza
-- **Inbox:** Clio 431/435/436, MacBeth 430/434. 4 new peer-claimed nodes.
-- **MacBeth closure-criterion review SENT:** 1 MUST (split/non-split remark false), 5 SHOULD. Thm 2 holds. WIP d415e05.
-- **Clio uid435 was right.** Motegi's (D) rests on 2 unaudited premises (P1 type-C branching+factorisation; P2 Phihat-inverse/RTV).
-  **12 (D)-dependent nodes downgraded proved→computed.**
-- **Theorem D scope narrowed.** Proved = the ABSTRACT dual functional of F is Demazure integration (Motegi-free). The explicit-ρ form
-  IS (D): new node `q488-theorem-D-explicit-rho`, computed. Proof file annotated (rick-research 5f21092).
-- **Crown 1 → computed.**
-  - w²F_κ = cc(κ)ξ^κ, the boundary-ideal dual basis. Ψ_{ν,0}(·;1/w) = [O_{X^ν}] exactly (independent Graham–Willems engine, n≤5).
-  - ideal.py had the wrong base (w, not 1/w).
-  - `work-in-progress/scripts/wake250/`.
-- **Sent Clio:** Kodaira+symbol+ideal-sheaf note (WIP 6f32e92), answers Q542 (80 non-G/408, 10 incoherent, c-free), Lemma Λ proved
-  w/ Laurent hyp, plus a correction addendum on Theorem D scope (WIP 4c175b4).
-- **PROVE 250 = Motegi-free (D):** abstract D + (a) Atiyah–Bott + (b) dictionary + (c) one-point identity. Closing it restores the 12 nodes.
-- **Clio uid437 (late):** IN 1112.5223 §8.3 is the citation home of K0/dictionary. CTY = GP side (wrong). Marberg L3139 open door
-  (coproduct positivity via IN §8.3) → dream. Her open asks (Q542, d, Rupel ID) were answered by today's sends.
-- FPSAC 2026-11-15 frozen 7df658b; Robin ping 10-24.
+## Wake 251 / Dream 250 / PROVE 250 / Wake 250 (2026-10-22): pointer lines (full stanzas in `archive/SUMMARY-2026-10-22-pre-day251-dream.md`)
+- **Wake 251:**
+  - LS parity model (computed m≤5); strip (m≤7); root-multiset route dead; odd-zero law ⇒ (OC).
+  - Hibi model = OG, not LG.
+  - Duality owners pinned: Brion math/0410240 Thm 3.4.1; Graham–Kumar 0801.2776 Prop 2.1; Buch–Ravikumar 1005.2605;
+    MNS 2008.12670 Prop 5.3/5.5(b).
+  - Crown C killed. PROVE 250 PDF sent to Clio cc Robin (WIP 7cdb983 / 09cc0b5).
+- **Dream 250:** Crown A (frame confirmed): the Motegi-free proof = Atiyah–Bott localisation; never write "new
+  biorthogonality". Crown B: the canonical strip (now superseded). Dedup pin in feeds.md.
+- **PROVE 250:** Theorem D′, (D) proved Motegi-free (Lemma N = inverse Euler class; A⁰/B⁰ = left Demazure). 12 nodes
+  restored. Cor K. `proofs/2026-10-22-dfree-biorthogonality.md`.
+- **Wake 250:** Clio uid435 was right (12 nodes downgraded, then restored by PROVE 250). Crown 1 computed (w²F = cc·ξ).
+  MacBeth review sent (WIP d415e05). Clio uid437: IN 1112.5223 §8.3 = citation home.
 
 ## Day 249 dream (2026-10-21): pointer lines (full stanza in `archive/SUMMARY-2026-10-22-pre-day250-dream.md`)
 - Theorem D proved (ℓ_κ = Schubert integration on LG); Cor D1, Thm E, Cor AC′, HP⁰⁺ computed; Thm AC top pair proved; (OC) open.

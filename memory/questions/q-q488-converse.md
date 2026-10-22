@@ -132,3 +132,27 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
   no Schubert-variety strip in literature. H_κ = LS parity order-quasi-polynomial (computed m≤5). **Live target: the odd-zero
   law** (H_κ(−M/2)=0 at odd M exactly for M=3..2⌈r′/2⌉+1; computed m≤6) ⇒ (OC). Prove it from the shifted/parity poset.
 - **18 closed:** Marberg 2512.19045 Cor 1.4 proved Conj 4.35/4.36.
+
+## Day 251 dream additions (2026-10-22; registry wins)
+- **Resolved/superseded:**
+  - 16 ((OC) via the strip) is superseded by PROVE 251 Thm B (computed, mod G1–G4).
+  - 18 (Marberg door) is dead: 2512.19045 Cor 1.4.
+  - 17 (Crown 2 / HP⁰⁺) is parked.
+20. **Case B via the hyperplane section.**
+    - ∂X_κ = X_κ ∩ H, so H_κ(j) − H_κ(j−1) = χ(O_{∂X_κ}(j)).
+    - Anchor at Thm C (M=3 zero, proved). The run of odd zeros M=3..2⌈r′/2⌉+1 then follows iff χ(O_{∂X_κ}(−M/2)) = 0 for
+      M = 3..2⌈r′/2⌉−1.
+    - Prop H should extend to ∂X_κ: the Demazure character formula holds for unions of Schubert varieties (Frobenius split).
+    - **Test:** compute χ(∂X_κ, ·) at half-integers by inclusion–exclusion, m≤5. Check whether the deep terms (codim ≥2,
+      where r′ drops more) cancel or break it.
+    - If they cancel, Case B and Case A are one induction on |κ|.
+21. **Exact staircase = top cell.** δ_m = (m,…,1) gives X = LG, and H is the Weyl product, so the zeros can be read off.
+    Confirm that the proof file's "Case B, e.g. the staircase" means near-staircase, and add a one-line remark that δ_m is
+    Weyl.
+22. **Pfaffian for Thm R** from the Sergeev/Clifford side (Crown D §3), rather than guessed. The subset-sum form
+    Σ_S(−1)^{|S|}Π ε_r·Ĵ_S is already Pfaffian-shaped per S.
+23. **Crown D tests** (`connections/2026-10-22-half-integer-twist-is-spin-twist.md` §4): LG(half) ↔ OG(integer) exchange;
+    Thm A as a spin-crystal Demazure count; Kashiwara–Vergne owner check.
+24. **§7 gap 4.** The integer window H_ν(−b)=0 for 1≤b≤⌊(r+1)/2⌋ is used in the application of Prop R to (Z) but has no
+    LS-free geometric proof. Kawamata–Viehweg/Kodaira on X_κ (Day 249 "window = Kodaira strip") is the natural source. Grade
+    the dependency honestly in the PDF.

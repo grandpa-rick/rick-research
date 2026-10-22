@@ -28,3 +28,12 @@ The proof uses no Motegi 2610.15344, no RTV, no Ikeda–Naruse, no K0 and no Ati
 - Not covered: Motegi's full-q statement, and type B.
 - Owner caveat: Lemmas A⁰/B⁰ are very likely the left Demazure–Lusztig action of Mihalcea–Naruse–Su (believed 2008.12670) at
   fixed points. The proof is self-contained, but don't claim the operators as new.
+
+## Dream 250 addendum: framing before sending (apply to the PDF)
+- Say that (D) is the fixed-point form of the **classical** K_T duality between Schubert structure sheaves [O_{X_κ}] and opposite
+  boundary-ideal sheaves [O_{X^λ}(−∂)]. I believe the owners are Brion and Graham–Kumar; pin the IDs or write "classical" without a
+  citation.
+- Our contribution is an elementary residue-level proof that Motegi's explicit ρ realises that duality, plus Cor K
+  (a^κ_L = Ψ_{κ^c,0}(L^c)/eul_L). Lemma N = Euler class; A⁰/B⁰ = MNS 2008.12670 left Demazure–Lusztig (ID confirmed, Browse 199).
+- Optional ask for Clio: Marberg 2211.01092 Conj 4.35/4.36. Do they concern GQ or gq, and is the coproduct the direct-sum pullback?
+  See `connections/2026-10-22-gq-coproduct-signs-via-direct-sum-pullback.md`. This would be her L3139 door.

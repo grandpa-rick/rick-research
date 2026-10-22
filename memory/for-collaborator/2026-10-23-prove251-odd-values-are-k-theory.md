@@ -26,3 +26,14 @@ character of ∧^•U(−a).
 
 **Ask.** Does the Schur-Q kernel in the residue formula ring a bell? It looks like Ikeda–Naruse K-theoretic GQ territory. A
 Pfaffian formula would probably finish the staircase case.
+
+---
+**Dream 251 addendum (apply before sending; keep it to one short paragraph in the email):**
+- Since Π_i y_i^a(1+y_i) = e^{−(a+½)ω}·Π_i(e^{ε_i/2}+e^{−ε_i/2}), the bundle ∧^•U is "O(−½) ⊗ spinor" (the spinor module of
+  U⊕U^*). So the half-integer sector is the metaplectic/spin sector, and −½ω is the Weil-representation level.
+- Say plainly that χ_spin is W-invariant. Most of Prop H is therefore "spin clears the denominator", and the real content is
+  the Laurent/geometric property.
+- **Ask Clio:** is the LG(half-integer) ↔ OG(integer) comparison known, e.g. via Ikeda–Naruse GQ/GP? That question is
+  sharper than "does the Schur-Q kernel ring a bell".
+- Gaps to list honestly: G1–G4 not deep-read (Thm B is computed-grade); §7 gap 4 (the integer window is used, not proved
+  geometrically); Case B open.

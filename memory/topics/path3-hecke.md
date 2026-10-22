@@ -133,3 +133,19 @@ The cleanest known explicit primitive idempotent construction: Norton 1979 / Den
   hunch).
 - Path 2 crossover: the remaining odd-c positivity (HP⁰⁺) looks like a Demazure-crystal counting statement.
   See `connections/2026-10-21-*.md`.
+
+## Day 250 (2026-10-22)
+- (D) proved Motegi-free: left Demazure recursion on Ψ⁰ (A0/B0, MNS 2008.12670 owner) + Lemma N (Euler class). This is AB
+  localisation by hand. The duality's meaning is classical (Brion / Graham–Kumar). See
+  `connections/2026-10-22-dfree-proof-is-poincare-duality-at-fixed-points.md`.
+- (OC) ⇐ canonical strip for Schubert varieties (Golyshev 0903.2076, Manivel 0904.2470 top cell). Odd-c zeros = short-root
+  factors. See `connections/2026-10-22-oc-is-canonical-strip-for-schubert-varieties.md`.
+- HMSW center conjecture = 2610.25101 (Brundan–Kleshchev citer; Mathas).
+
+## Day 251 (2026-10-22): the half-integer sector of LG is K-theory, and it looks spin
+- PROVE 251 Prop H: 2^m H_κ(−a−½) = χ(X_κ, ∧^•U(−a)). Thm B = (OC) is proved modulo G1–G4 (computed). Thm R is a residue
+  formula with the Schur-Q kernel. Zeros for ℓ≤2 and 2-separated κ; Case B open.
+  `proofs/2026-10-23-odd-zero-law.md`.
+- Dream reading (hunch): Π y^a(1+y) = e^{−(a+½)ω}χ_spin(B_m), so ∧^•U is the spinor of U⊕U^*. Schur-Q kernel = Sergeev
+  (Hecke–Clifford) duality, i.e. the Seed Path 3 Schur–Weyl for Q-functions. See
+  `connections/2026-10-22-half-integer-twist-is-spin-twist.md`.
