@@ -23,7 +23,7 @@ Scripts are in `work-in-progress/scripts/prove251/`.
 | **Lemma L** (Coxeter localisation) | For any one-variable φ: D_1⋯D_k(Π_jφ(x_j)) = Σ_i A(x_i)Π_{j≠i}B(x_j)/(x_j−x_i), with x = e^{ε}, B = xφ and A = D^{(1)}φ. Consequence: G_k(a) := D_1⋯D_k F_a = e^{−aω} − (−1)^{k−1}F_{a−1}·Σ_{s<a} h_{2s−k+1}(x). | **proved** (§6bis, algebraic induction); formula checked 20/20 (k ≤ 5, a ≤ 4) |
 | **Prop. R** (purity) | If 2a ≤ κ₁ then H_κ(−a−½) = 2^{−κ₁}H_{κ′}(−a). If 2a−1 = κ₁ then H_κ(−a−½) = 2^{−κ₁}H_{κ′}(−a) − H_{κ′}(−a+½). | **proved** given (G1): Lemma Q is the case k = 2a−1 of Lemma L. |
 | **Thm R** (residue formula) | For all c ∈ ½ℤ (indeed as a polynomial identity in c): H_κ(−c) = (−1)^{\|κ\|−ℓ} Res_{t₁=1}⋯Res_{t_ℓ=1} Π_{s=1}^{ℓ} t_s(1−ρ_s(t_s))/((t_s²−1)(t_s−1)^{κ_s}), where ρ_s(t) = t^{2c−1−s}Π_{r<s}(t_r−t)/(t_rt−1) and the residues are taken innermost (t_ℓ) first. Under t = (1+z)/(1−z) the coupling becomes the Schur-Q kernel (z_r−z_s)/(z_r+z_s). | **proved** given (G1) (§6ter: Lemma L applied block by block + nested contours); checked 70/70 (10 κ, c ∈ {½,…,7/2}) |
-| **(Z)** | the full vanishing range: H_κ(−M/2) = 0 for odd M ∈ [3, 2⌈r′/2⌉+1] | **computed** (63/63 m ≤ 6; per-k form m ≤ 5). Proved for M = 3 (Thm C). Reduced to the per-k vanishing **(Z_k)**: χ(X_κ, ∧^tU(−a)) = 0 for all t, κ₁ = m, 1 ≤ a ≤ ⌈r′/2⌉ (§6). |
+| **(Z)** | the full vanishing range: H_κ(−M/2) = 0 for odd M ∈ [3, 2⌈r′/2⌉+1] | **computed** in general (63/63 m ≤ 6; per-k form m ≤ 5). **Proved given (G1)** for M = 3 (Thm C) and for all **2-separated** κ (κ_i ≥ κ_{i+1}+2; Thm Z₂, §6quater). Open for Case-B (staircase-like) shapes: the residue at t₁ = ∞ (§6quater), or equivalently the per-k vanishing **(Z_k)**. |
 
 **Headline.** At half-integers the type-C operator D_m splits as a type-B operator times (1+e^{−ε_m})^{−1}. Conjugating by
 Φ = Π_i(1+y_i)^{−1} turns the whole chain back into honest type-C Demazure operators applied to an *integral* weight
@@ -281,13 +281,64 @@ numerology ⌈r′/2⌉ = ⌊(r(κ′)+1)/2⌋. Two cautions:
 - The naive "deformation-robust window" is false: χ(X_κ, Sym^nQ(−b)) leaves the window as n grows (`symq.py`). A proof of
   (Z) needs the graded version: vanishing to order κ₁ in t₁ − 1.
 
+## 6quater. Moving the outer residue: the recursion, and (Z) for 2-separated κ
+
+Write 𝓗_κ(c;T) for the residue expression of Thm R without the sign (−1)^{|κ|−ℓ}, with extra kernels Π_{τ∈T}K(τ,t_s) put into
+every ρ_s, where K(τ,t) := (τ−t)/(τt−1). So H_κ(−c) = (−1)^{|κ|−ℓ}𝓗_κ(c;∅). Thm R is recursive:
+  𝓗_κ(c;T) = Res_{t₁=1} m_{κ₁}(t₁)(1 − t₁^{2c−2}Π_{τ∈T}K(τ,t₁))·𝓗_{κ′}(c−½; T∪{t₁}),  m_κ(t) = t/((t²−1)(t−1)^κ).
+
+**Poles in t₁.** After the inner residues, 𝓗_{κ′}(c′; T∪{t₁}) is rational in t₁. Its only pole is t₁ = 1 (from K(t₁,t_s) at
+t_s = 1), and it stays bounded as t₁ → ∞, where K(t₁,t) → 1/t. So the t₁-integrand has poles only at:
+- t₁ = 1;
+- t₁ = −1 (from m);
+- t₁ = 1/τ for τ ∈ T (from K(τ,t₁));
+- t₁ = 0 (only if c ≤ 0);
+- t₁ = ∞ (only if 2c ≥ κ₁+2).
+
+**The three useful identities.**
+- K(−1,t) = 1;
+- K(τ,−1) = −1;
+- K(τ,t)K(1/τ,t) = 1.
+
+**Prop. M (outer residue moved; proved given Thm R).** Let c ∈ ½ℤ with 1 ≤ c and 2c ≤ κ₁+1. Then
+  𝓗_κ(c;T) = −r_{κ₁}(1 − (−1)^{2c+|T|})𝓗_{κ′}(c−½;T) − (−1)^{κ₁}Σ_{τ∈T}τ^{κ₁+1−2c}(τ−1)^{−κ₁}Π_{τ′≠τ}K(τ′,1/τ)·𝓗_{κ′}(c−½;T∖{τ}),
+where r_κ = Res_{t=−1}m_κ = (−1)^κ2^{−κ−1}. In particular, for T = ∅:
+- **c = b an integer:** H_κ(−b) = 0 for 1 ≤ b ≤ (κ₁+1)/2. This is the integer window from the first row, now LS-model-free.
+- **c = a+½:** H_κ(−a−½) = 2^{−κ₁}H_{κ′}(−a) for 2a ≤ κ₁. This is Prop. R again, in two lines.
+
+*Proof.* Apply the residue theorem on ℙ¹ in t₁: the residue at 1 is minus the sum of the residues at −1, at the 1/τ, and at
+0 and ∞. The last two are absent in this range. At −1 the kernels evaluate by the identities above. At 1/τ, K(τ,t₁) has
+residue 1 − τ^{−2}, and the pair K(τ,·)K(1/τ,·) cancels inside 𝓗_{κ′}. ∎
+
+**Theorem Z₂ (odd-zero law for 2-separated κ; proved given (G1)).** Suppose κ_i ≥ κ_{i+1}+2 for all i. Then
+r(κ_{≥i}) = κ_i and r′ = κ₂. For odd M = 2a+1 ≥ 3: H_κ(−M/2) = 0 ⟺ a ≤ ⌈κ₂/2⌉. The "⇒" direction (no zeros beyond) is proved
+in the range 2a ≤ κ₁; above it, see the remark below.
+
+*Proof of the zeros.*
+1. Let 1 ≤ a ≤ ⌈κ₂/2⌉. Then 2a ≤ κ₂+1 ≤ κ₁−1, so Prop. M gives H_κ(−a−½) = 2^{−κ₁}H_{κ′}(−a).
+2. Apply Prop. M to κ′ (first row κ₂) with c = a: since 2a ≤ κ₂+1, H_{κ′}(−a) = 0. ∎
+
+*The "⇐" direction in range.* For ⌈κ₂/2⌉ < a and 2a ≤ κ₁, H_κ(−a−½) = 2^{−κ₁}H_{κ′}(−a), so we need H_{κ′}(−a) ≠ 0 for a beyond
+κ′'s integer window. That is Theorem E territory (proved there only for a ≥ m(κ′)+1).
+
+**Remarks.**
+- For κ₁ ≥ r′+2 ("Case A") the same argument reduces (Z) for κ to the integer window of κ′. For 2-separated κ the
+  reduction closes by induction.
+- When some κ_i ≤ r(κ_{>i})+1 ("Case B", e.g. the staircase), the needed c reach 2c ≥ κ₁+2. Then the residue at t₁ = ∞
+  contributes: −Res_{s=0}s^{κ₁+1−2c}(…)·𝓗_{κ′}(c−½; T∪{1/s}). Controlling it is the open part of (Z).
+- **Erosion (computed, `robust.py`).** With |T| = q generic kernels, the zero set of c ↦ 𝓗_κ(c;T) consists of the c whose
+  whole ½ℤ-neighbourhood of radius q/2 lies in the q = 0 zero set. Example: (1,2) has zeros {1, 3/2, 2} at q = 0, {3/2} at
+  q = 1, and none at q = 2. The q = 1 case at half-integers is exactly the per-t statement (Z_k), because
+  Σ_t u^tχ(∧^tU(−a)) is 𝓗 with the single kernel τ = −1/u.
+
 ## 7. Gaps (precise)
 
 1. (G1)–(G4) are cited, not deep-read. This is the same debt as Theorem E (registry node q488-theorem-E-even-c-empty, graded
    computed for exactly this reason). Thm A and Thm C need **only (G1)**; Thm B needs all four.
 2. ~~Lemma Q computed only~~: **closed**, Lemma L proves it for all a (§6bis).
-3. (Z) for a > max(1, ⌊κ₁/2⌋): open. Its exact reformulation is (Z_k). The natural tool is a Kodaira-type vanishing for
-   ∧^tU(−a) on Schubert varieties.
+3. (Z) is **proved for 2-separated κ** (Thm Z₂, §6quater), and for every κ with a ≤ ⌊κ₁/2⌋ given κ′'s integer window.
+   It remains open for Case-B shapes (staircase-like), where the residue at t₁ = ∞ must be controlled. Exact
+   reformulations: (Z_k), or the erosion statement for 𝓗_κ(c;T).
 4. The integer window H_ν(−b) = 0 for 1 ≤ b ≤ ⌊(r(ν)+1)/2⌋ is not proved here geometrically. It is used only in Prop. R's
    application to (Z).
 
