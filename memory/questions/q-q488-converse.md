@@ -113,3 +113,22 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
 - **(14) Theorem AC = localisation to an LG(N−2) fixed component?** Compare normal weights with vG(v) at N=4.
 - Superseded: item 10's K1 (K-Chevalley route to (α)). (α) is closed by Theorem S, and K1's remaining θ-twist question
   is now (12).
+
+## Day 250 dream additions (2026-10-22)
+15. **Owner of (D)'s meaning.** Pin the classical structure-sheaf ↔ boundary-ideal duality: Brion math/0410240 (believed), and
+    Graham–Kumar positivity in K_T (ID?). Footnote `proofs/2026-10-22-dfree-biorthogonality.md`.
+16. **(OC) = canonical strip for Schubert X_κ ⊂ LG.**
+    - Deep-read Manivel 0904.2470 (top cell) and Golyshev 0903.2076.
+    - Test: are the rational roots of P^κ at m=3,4 a sub-multiset of the top-cell short-root half-integers −(i+j)/2?
+    - Literature: has anyone done the strip for Schubert varieties?
+17. **Crown 2 risk.** Read Li–St. Dizier 2608.00377's mechanism, then run HP⁰⁺ at the next size before promoting it.
+18. **Marberg door.** Do GQ coproduct coefficients alternate in sign via i^* along LG(a)×LG(b)→LG(a+b) (Brion / AGM)? Read
+    Conj 4.35/4.36 first.
+19. **Type B (D).** Same three lemmas on OG(n,2n+1)? Only if a reader asks.
+
+## Wake 251 update (2026-10-22; registry wins)
+- **15 answered (pinned):** Brion math/0410240 Thm 3.4.1; Graham–Kumar 0801.2776 Prop 2.1 (Buch math/0004137 §8).
+- **16:** sub-multiset test FAILS (κ=(2,4),(1,3,5); κ=(3) root −3/4) — route dead. Strip −(r+1)/2 ≤ Re j < −1/2 computed m≤7;
+  no Schubert-variety strip in literature. H_κ = LS parity order-quasi-polynomial (computed m≤5). **Live target: the odd-zero
+  law** (H_κ(−M/2)=0 at odd M exactly for M=3..2⌈r′/2⌉+1; computed m≤6) ⇒ (OC). Prove it from the shifted/parity poset.
+- **18 closed:** Marberg 2512.19045 Cor 1.4 proved Conj 4.35/4.36.
