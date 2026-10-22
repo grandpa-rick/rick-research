@@ -953,14 +953,14 @@
          {
           "id": "q488-oc-lemma-Q-purity",
           "role": "attempt",
-          "trust": "computed",
+          "trust": "proved",
           "file": "proofs/2026-10-23-odd-zero-law.md",
           "sources": [],
           "depends_on": [
            "q488-oc-prop-H-bridge"
           ],
-          "approach": "Lemma Q: in rank 2a-1, D_1...D_{2a-1}(F_a) = e^{-aw} - F_{a-1} (computed a<=4). Proved consequences: G_k(a)=e^{-aw} for k>=2a; Prop R: kappa_1>=2a => H_kappa(-a-1/2)=2^{-kappa_1}H_{kappa'}(-a); kappa_1=2a-1 => 2^{-kappa_1}H_{kappa'}(-a) - H_{kappa'}(-a+1/2). G_k(a) not in span{F_b,e^{-bw}} for 2<=k<=2a-2.",
-          "script": "work-in-progress/scripts/prove251/pure2.py, span.py",
+          "approach": "Lemma L (Coxeter localisation, proved by induction): D_1...D_k(prod phi(x_j)) = sum_i A(x_i) prod_{j!=i} B(x_j)/(x_j-x_i), B=x phi, A=D^(1)phi. Gives G_k(a)=D_1..D_k F_a = e^{-aw} - (-1)^{k-1}F_{a-1} sum_{s<a} h_{2s-k+1}(x); Lemma Q (k=2a-1) and purity (k>=2a) PROVED. Prop R: kappa_1>=2a => H_kappa(-a-1/2)=2^{-kappa_1}H_{kappa'}(-a); kappa_1=2a-1 => 2^{-kappa_1}H_{kappa'}(-a) - H_{kappa'}(-a+1/2). Formula checked 20/20.",
+          "script": "work-in-progress/scripts/prove251/lemL.py, pure2.py, span.py",
           "children": []
          },
          {
@@ -971,6 +971,20 @@
           "sources": [],
           "approach": "(Z) reformulated: 2^m H(-a-1/2) = H(-a) + H(-a-1) + sum_{t=1}^{m-1} chi(X_kappa, wedge^t U(-a)); given the integer window, (Z) <= (Z_k): chi(X_kappa, wedge^t U(-a))=0 for all t, kappa_1=m, 1<=a<=ceil(r'/2). Computed m<=5 (per-t ranges >= ceil(r'/2), min exactly ceil(r'/2)). Open beyond a=1 / Prop R range.",
           "script": "work-in-progress/scripts/prove251/zr.py, perk.py",
+          "children": []
+         },
+         {
+          "id": "q488-oc-thmR-residue",
+          "role": "attempt",
+          "trust": "proved",
+          "file": "proofs/2026-10-23-odd-zero-law.md",
+          "sources": [],
+          "depends_on": [
+           "q488-oc-prop-H-bridge",
+           "q488-oc-lemma-Q-purity"
+          ],
+          "approach": "Thm R: H_kappa(-c) = (-1)^{|kappa|-l} Res_{t1=1}...Res_{tl=1} prod_s t_s(1-rho_s(t_s))/((t_s^2-1)(t_s-1)^{kappa_s}), rho_s(t)=t^{2c-1-s} prod_{r<s}(t_r-t)/(t_r t-1), innermost first; Cayley t=(1+z)/(1-z) gives Schur-Q kernel (z_r-z)/(z_r+z). Uniform in c in Z/2. Lemma L stagewise + nested contours. Checked 70/70. Shows half-integer window of kappa = deformed integer window of kappa' (c'=c-1/2).",
+          "script": "work-in-progress/scripts/prove251/resid.py",
           "children": []
          }
         ],

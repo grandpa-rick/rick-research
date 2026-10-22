@@ -20,7 +20,9 @@ Scripts are in `work-in-progress/scripts/prove251/`.
 | **Thm A** | H_κ(−½) = 2^{−κ₁}. | **proved** given (G1); pure Demazure algebra after Prop. H |
 | **Thm B = (OC)** | For odd M ≥ 2m+1: (−1)^{\|κ\|}·2^m·H_κ(−M/2) ∈ ℤ_{≥1}. In particular there is no zero at half-integers j ≤ −m−½. | **proved modulo (G1)–(G4)**, the same citation family as Theorem E (Brion–Kumar, not deep-read). The dual-side atom identity was checked independently 110/110, and all atoms were ≥ 0 for a ≥ m. |
 | **Thm C** (M = 3) | For κ₁ ≥ 2: H_κ(−3/2) = 2^{−κ₁}·H_{κ′}(−1), κ′ := κ∖{κ₁}; and H_{(1)}(−3/2) = −½. So H_κ(−3/2) = 0 iff ℓ(κ) ≥ 2, and = 2^{−κ₁} for one-row κ with κ₁ ≥ 2. | **proved** given (G1) |
-| **Prop. R** (purity) | If 2a ≤ κ₁ then H_κ(−a−½) = 2^{−κ₁}H_{κ′}(−a). If 2a−1 = κ₁ then H_κ(−a−½) = 2^{−κ₁}H_{κ′}(−a) − H_{κ′}(−a+½). | Reduced to one rank-(2a−1) identity, **Lemma Q** (G_{2a−1}(a) = e^{−aω} − F_{a−1}), which is **computed** for a ≤ 4. The propagation steps are proved. |
+| **Lemma L** (Coxeter localisation) | For any one-variable φ: D_1⋯D_k(Π_jφ(x_j)) = Σ_i A(x_i)Π_{j≠i}B(x_j)/(x_j−x_i), with x = e^{ε}, B = xφ and A = D^{(1)}φ. Consequence: G_k(a) := D_1⋯D_k F_a = e^{−aω} − (−1)^{k−1}F_{a−1}·Σ_{s<a} h_{2s−k+1}(x). | **proved** (§6bis, algebraic induction); formula checked 20/20 (k ≤ 5, a ≤ 4) |
+| **Prop. R** (purity) | If 2a ≤ κ₁ then H_κ(−a−½) = 2^{−κ₁}H_{κ′}(−a). If 2a−1 = κ₁ then H_κ(−a−½) = 2^{−κ₁}H_{κ′}(−a) − H_{κ′}(−a+½). | **proved** given (G1): Lemma Q is the case k = 2a−1 of Lemma L. |
+| **Thm R** (residue formula) | For all c ∈ ½ℤ (indeed as a polynomial identity in c): H_κ(−c) = (−1)^{\|κ\|−ℓ} Res_{t₁=1}⋯Res_{t_ℓ=1} Π_{s=1}^{ℓ} t_s(1−ρ_s(t_s))/((t_s²−1)(t_s−1)^{κ_s}), where ρ_s(t) = t^{2c−1−s}Π_{r<s}(t_r−t)/(t_rt−1) and the residues are taken innermost (t_ℓ) first. Under t = (1+z)/(1−z) the coupling becomes the Schur-Q kernel (z_r−z_s)/(z_r+z_s). | **proved** given (G1) (§6ter: Lemma L applied block by block + nested contours); checked 70/70 (10 κ, c ∈ {½,…,7/2}) |
 | **(Z)** | the full vanishing range: H_κ(−M/2) = 0 for odd M ∈ [3, 2⌈r′/2⌉+1] | **computed** (63/63 m ≤ 6; per-k form m ≤ 5). Proved for M = 3 (Thm C). Reduced to the per-k vanishing **(Z_k)**: χ(X_κ, ∧^tU(−a)) = 0 for all t, κ₁ = m, 1 ≤ a ≤ ⌈r′/2⌉ (§6). |
 
 **Headline.** At half-integers the type-C operator D_m splits as a type-B operator times (1+e^{−ε_m})^{−1}. Conjugating by
@@ -178,7 +180,7 @@ In particular H_κ has no zero at any half-integer j ≤ −m−½. This is (OC)
 **Purity.** Let G_k(a) := D_1D_2⋯D_k(F_a) in rank k, which is the C_k-block factor of D_{c(κ₁)}F_a when k = κ₁.
 - **Propagation (proved).** If the input to D_q is f_a(y_q)·Π_{i>q}y_i^a, the output is Π_{i≥q}y_i^a. The term y_q^ay_{q+1}^a
   has pairing 0; the term y_q^{a+1}y_{q+1}^a has pairing −1.
-- **Lemma Q (computed a ≤ 4, `pure2.py`).** G_{2a−1}(a) = e^{−aω} − F_{a−1} in rank 2a−1.
+- **Lemma Q (now proved; see §6bis).** G_{2a−1}(a) = e^{−aω} − F_{a−1} in rank 2a−1. (First found by computation for a ≤ 4, `pure2.py`.)
 - **Q ⇒ G_{2a}(a) = e^{−aω} (proved).** In rank 2a, after the last 2a−1 operators the function is
   f_a(y_1)(e^{−aω′} − F′_{a−1}). Here f_a(y_1)F′_{a−1} = y_1·F_{a−1}, with F_{a−1} fully symmetric, so
   D_1(y_1F_{a−1}) = F_{a−1}D_1(e^{−ε_1}) = 0. Propagation then gives G_k(a) = e^{−aω} for all k ≥ 2a.
@@ -186,7 +188,7 @@ In particular H_κ has no zero at any half-integer j ≤ −m−½. This is (OC)
   - For κ₁ ≥ 2a: H_κ(−a−½) = 2^{−κ₁}H_{κ′}(−a).
   - For κ₁ = 2a−1: H_κ(−a−½) = 2^{−κ₁}H_{κ′}(−a) − H_{κ′}(−a+½). The F′_{a−1} term gives 2·2^{κ₁−1}H_{κ′}(−(a−1)−½) by
     Prop. H for κ′.
-  - Both are conditional on Lemma Q for that a, which is computed for a ≤ 4.
+  - Both are now unconditional (given (G1)): Lemma Q is proved in §6bis.
 - Bott check of Lemma Q, non-equivariant. X_{(k)} is the projective cone over v₂(ℙ^{k−1}) (its Hilbert function is
   Σ_h binom(2h+k−1,k−1)). It is resolved by a ℙ¹-bundle over ℙ^{k−1}, on which U ⊃ H ≅ Ω¹(1). Bott's formula gives
   χ = 1 − 2^k at k = 2a−1, as Lemma Q predicts. The equivariant version is not written.
@@ -210,11 +212,80 @@ Proved instances:
 
 (NZ) for ⌈r′/2⌉ < a < m (the middle range) is computed only; Theorem B covers a ≥ m.
 
+## 6bis. Lemma L (Coxeter localisation) and the proof of Lemma Q
+
+Work in rank k, with D_k the long-root operator and x_j := e^{ε_j} = 1/y_j. In x-variables:
+- D_i g = (x_ig − x_{i+1}s_ig)/(x_i − x_{i+1}) for i < k;
+- D^{(1)}φ(x) := (x²φ(x) − φ(1/x))/(x² − 1) is the long-root operator on one variable.
+
+**Lemma L.** Let φ be a one-variable Laurent polynomial (or rational function, or formal family). Put B(x) := xφ(x) and
+A := D^{(1)}φ. Then
+  D_1D_2⋯D_k(Π_{j=1}^kφ(x_j)) = Σ_{i=1}^k A(x_i)·Π_{j≠i}B(x_j)/Π_{j≠i}(x_j − x_i).
+
+*Proof.* Induction on k; k = 1 is the definition of A.
+1. **Set-up.** By induction applied to variables 2..k (they form a rank-(k−1) system with the same long root),
+   D_2⋯D_k(Π_jφ(x_j)) = φ(x_1)·Σ_{i≥2}A(x_i)Π_{j≠i, j≥2}B(x_j)/Π_{j≠i, j≥2}(x_j − x_i).
+   Since φ(x_1) = B(x_1)/x_1, this is (1/x_1)Σ_{i≥2}R_i, with R_i := A(x_i)Π_{j≠i}B(x_j)/Π_{j≠i, j≥2}(x_j − x_i).
+   So D_1 of it is (Σ_{i≥2}R_i − Σ_{i≥2}s_1R_i)/(x_1 − x_2).
+2. **i ≥ 3.** R_i and s_1R_i differ only in the factor 1/(x_2 − x_i) versus 1/(x_1 − x_i). Their difference divided by
+   (x_1 − x_2) is A(x_i)Π_{j≠i}B(x_j)/Π_{j≠i}(x_j − x_i).
+3. **i = 2.** R_2/(x_1 − x_2) + s_1R_2/(x_2 − x_1) is exactly the sum of the i = 2 and i = 1 terms of the claim. ∎
+
+**Divided differences.** Write Δ_k[g] := Σ_ig(x_i)/Π_{j≠i}(x_j − x_i) = (−1)^{k−1}g[x_1,…,x_k]. Then:
+- Δ_k[t^n] = (−1)^{k−1}h_{n−k+1}(x), with h_{<0} = 0;
+- Δ_k[1/(1+t)] = 1/Π_j(1+x_j).
+
+**Proof of Lemma Q and the formula for G_k(a).** Take φ = f_a = x^{−a−1}(1+x). Then:
+- B = x^{−a}(1+x);
+- A = D^{(1)}f_a = −(x^{1−a} + … + x^{a−1}) (rank-one string);
+- A/B = −P_a(x)/(1+x) with P_a(t) = t + … + t^{2a−1}, and P_a(t)/(1+t) = (1 + t² + … + t^{2a−2}) − 1/(1+t).
+
+Lemma L gives G_k(a) = Π_jB(x_j)·Δ_k[A/B]. Also Π_jB(x_j) = e^{−aω}Π_j(1+x_j) = F_{a−1}. Hence
+  **G_k(a) = e^{−aω} − (−1)^{k−1}F_{a−1}·Σ_{s=0}^{a−1}h_{2s−k+1}(x).**
+- For k ≥ 2a all h vanish (purity).
+- For k = 2a−1 only s = a−1 survives, with h_0 = 1 (Lemma Q). ∎
+
+The same computation with φ = x^{−b} gives the single-row integer window: D_c(e^{−bω}) = 0 for 1 ≤ b ≤ (k+1)/2.
+
+## 6ter. Theorem R (iterated residue formula)
+
+Apply Lemma L stage by stage along w_κ = c(κ_ℓ)⋯c(κ₁), so the first stage is block 1 = the last κ₁ coordinates.
+1. **Contour form.** Write Lemma L as R = (−1)^{k−1}∮_{|t−1|=ε}(dt/2πi)·(A/B)(t)·Π_j B(x_j)/(t − x_j). This is valid when every
+   x_j lies inside the circle and A/B is holomorphic on the closed disc. At t = 1 the singularity is removable, because
+   B(1/t)/B(t) → 1.
+2. **Stages.** Stage s uses the product function φ^{(s−1)}, where φ^{(0)} = φ₀ and φ^{(s)}(x) = B^{(s−1)}(x)/(t_s − x).
+   Coordinates of block s that are not in block s+1 are inert from then on and are set to 1. Exchanging D with the contour
+   integral is legitimate: the integrand is jointly analytic and the D's preserve analyticity.
+3. **Nesting.** Nested radii ε_1 > ε_2 > ⋯ > ε_ℓ keep each pole t = 1/t_r outside the later circles.
+4. **Bookkeeping.** With ρ_s := B^{(s−1)}(1/t)/B^{(s−1)}(t) and ρ₀ = t^{2c−2}:
+   - φ₀ = x^{−b} (c = b) gives ρ₀ = t^{2b−2};
+   - φ₀ = f_a (c = a+½, via Prop. H) gives ρ₀ = t^{2a−1};
+   - in both cases ρ_s(t) = t^{2c−1−s}Π_{r<s}(t_r − t)/(t_rt − 1).
+   The constant prefactors are φ₀(1)^{m−κ₁}B₀(1)^{κ₁}, which equals 1 or 2^m and cancels the 2^m of Prop. H.
+   The inert evaluations give Π_r(t_r−1)^{−κ_r}.
+
+Hence
+  **H_κ(−c) = (−1)^{|κ|−ℓ}·Res_{t₁=1}⋯Res_{t_ℓ=1}Π_{s=1}^ℓ t_s(1 − ρ_s(t_s))/((t_s²−1)(t_s−1)^{κ_s}).**
+
+With t = (1+z)/(1−z), the measure t dt/((t²−1)(t−1)^κ) becomes (1+z)(1−z)^{κ−1}dz/(2^{κ+1}z^{κ+1}), and
+(t_r−t)/(t_rt−1) becomes (z_r−z)/(z_r+z), the Schur-Q kernel.
+
+Check (`resid.py`): 70/70 against the LS-model polynomial (κ ∈ {(1),(2),(3),(1,2),(1,3),(2,3),(1,2,3),(2,4),(1,2,4),(3,4)},
+c ∈ {½,1,…,7/2}).
+
+**Why this matters for (Z).** In Thm R the variables t₂…t_ℓ see κ′ at c′ = c − ½, deformed by the kernel K(t₁,·) = (t₁−·)/(t₁·−1).
+So the half-integer window of κ is the *integer* window of κ′ under deformation, and vice versa. That is exactly the
+numerology ⌈r′/2⌉ = ⌊(r(κ′)+1)/2⌋. Two cautions:
+- At t₁ = 1 the kernel equals −1, not 1. The undeformed object is the Koszul-signed variant (1+ρ′), which is the
+  λ_{−1}(U)-twist: the sub-LG {Λ ∋ v}.
+- The naive "deformation-robust window" is false: χ(X_κ, Sym^nQ(−b)) leaves the window as n grows (`symq.py`). A proof of
+  (Z) needs the graded version: vanishing to order κ₁ in t₁ − 1.
+
 ## 7. Gaps (precise)
 
 1. (G1)–(G4) are cited, not deep-read. This is the same debt as Theorem E (registry node q488-theorem-E-even-c-empty, graded
    computed for exactly this reason). Thm A and Thm C need **only (G1)**; Thm B needs all four.
-2. Lemma Q is computed for a ≤ 4 only. An equivariant Bott computation on the ℙ¹-bundle over ℙ^{2a−2} should prove it.
+2. ~~Lemma Q computed only~~: **closed**, Lemma L proves it for all a (§6bis).
 3. (Z) for a > max(1, ⌊κ₁/2⌋): open. Its exact reformulation is (Z_k). The natural tool is a Kodaira-type vanishing for
    ∧^tU(−a) on Schubert varieties.
 4. The integer window H_ν(−b) = 0 for 1 ≤ b ≤ ⌊(r(ν)+1)/2⌋ is not proved here geometrically. It is used only in Prop. R's
