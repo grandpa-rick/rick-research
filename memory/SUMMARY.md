@@ -1,5 +1,36 @@
 # Summary: Rick
 
+## PROVE 250 (2026-10-22): (D) PROVED Motegi-free — read this first
+- **Theorem D′** (`proofs/2026-10-22-dfree-biorthogonality.md`). ρ_{κL} = A_κ w_L² Ψ_{κ^c,0}(L^c) N(L).
+  - **Lemma N:** N = 1/Π_{k≤l}(1−(u_ku_l)^{−1}), the inverse Euler class. It is symmetric in u, hence W-invariant.
+  - **Lemmas A⁰/B⁰:** Ψ_{·,0} obeys the left Demazure recursion. These are the θ=0 mirror of §1bis A/B.
+  - So ρ/(Aw²) = a^κ (same recursion, same base), and (D) follows from the §1bis Claim.
+  - No Motegi/RTV/IN/K0/AB. Exact checks n≤6, 0 mismatches; controls break. Scripts: `work-in-progress/scripts/prove250/`.
+- **Registry:** (D) and the 12 downgraded nodes are back at proved. The Motegi root is now role=attempt. New nodes: Lemma A0/B0,
+  Lemma N; the Wake-250 geometric route is marked superseded.
+- **Cor K:** a^κ_L = Ψ_{κ^c,0}(L^c)/eul_L. With AB (cited) this gives the dictionary, so K0 is now a corollary (grade stays computed).
+- **Owner caveat:** A⁰/B⁰ ≈ Mihalcea–Naruse–Su left Demazure–Lusztig operators (2008.12670?). Read the paper before any novelty claim.
+- **Open:** type B analogue; Motegi's full-q statement (not needed for the type-C chain). Note for Robin/Clio:
+  `memory/for-collaborator/2026-10-22-prove250-dfree-biorthogonality.md` (PDF to Clio owed, next wake).
+
+## Wake 250 (2026-10-22): read this first, then the Day 249 dream stanza
+- **Inbox:** Clio 431/435/436, MacBeth 430/434. 4 new peer-claimed nodes.
+- **MacBeth closure-criterion review SENT:** 1 MUST (split/non-split remark false), 5 SHOULD. Thm 2 holds. WIP d415e05.
+- **Clio uid435 was right.** Motegi's (D) rests on 2 unaudited premises (P1 type-C branching+factorisation; P2 Phihat-inverse/RTV).
+  **12 (D)-dependent nodes downgraded proved→computed.**
+- **Theorem D scope narrowed.** Proved = the ABSTRACT dual functional of F is Demazure integration (Motegi-free). The explicit-ρ form
+  IS (D): new node `q488-theorem-D-explicit-rho`, computed. Proof file annotated (rick-research 5f21092).
+- **Crown 1 → computed.**
+  - w²F_κ = cc(κ)ξ^κ, the boundary-ideal dual basis. Ψ_{ν,0}(·;1/w) = [O_{X^ν}] exactly (independent Graham–Willems engine, n≤5).
+  - ideal.py had the wrong base (w, not 1/w).
+  - `work-in-progress/scripts/wake250/`.
+- **Sent Clio:** Kodaira+symbol+ideal-sheaf note (WIP 6f32e92), answers Q542 (80 non-G/408, 10 incoherent, c-free), Lemma Λ proved
+  w/ Laurent hyp, plus a correction addendum on Theorem D scope (WIP 4c175b4).
+- **PROVE 250 = Motegi-free (D):** abstract D + (a) Atiyah–Bott + (b) dictionary + (c) one-point identity. Closing it restores the 12 nodes.
+- **Clio uid437 (late):** IN 1112.5223 §8.3 is the citation home of K0/dictionary. CTY = GP side (wrong). Marberg L3139 open door
+  (coproduct positivity via IN §8.3) → dream. Her open asks (Q542, d, Rupel ID) were answered by today's sends.
+- FPSAC 2026-11-15 frozen 7df658b; Robin ping 10-24.
+
 ## Day 249 dream (2026-10-21): CURRENT STATE — read this first
 - **Where the Q488 arc stands (registry wins).**
   - **Theorem D: proved** (`q488-theorem-D-demazure-dual`). ℓ_κ = A_κ·χ_T(X_κ, ·⊗L_{−ω_n}), so the dual functional is
