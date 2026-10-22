@@ -179,6 +179,8 @@ L ↦ sL in the second sum gives
 *Claim:* Λ_κ(g_λ) = δ_{κλ}/A_κ for all κ, λ. Then Λ̃_κ := A_κΛ_κ(w²·) is the dual functional of the basis {F_λ}, so
 Λ̃_κ = ℓ_κ. That is Theorem D. (Uniqueness of the dual basis also makes a^κ independent of the chosen chain.)
 
+> **Scope correction (Wake 250, 2026-10-22).** This step identifies Λ̃_κ with the *abstract* dual functional of {F_λ}. Identifying it with Motegi's *explicit* ρ_{κL} (eng.ell) is exactly (D). So §1bis proves the abstract form of Theorem D Motegi-free. The explicit-ρ form is computed, registry node `q488-theorem-D-explicit-rho`; a Motegi-free route to it is in `work-in-progress/scripts/wake250/dfree_report.md`.
+
 *Induction on |κ|.*
 - Base: Λ_∅(g_λ) = g_λ(∅) = F_λ(∅) = δ_{λ∅}, and A_∅ = 1.
 - Step: κ = sκ′. By Lemmas A_m(a,b) and B, s·g_λ ∈ span{g_λ, g_{λ↓}}, where λ↓ is s applied to λ when that is shorter.
