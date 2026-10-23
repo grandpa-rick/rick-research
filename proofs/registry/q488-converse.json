@@ -894,7 +894,78 @@
           "approach": "ODD-ZERO LAW (live target for (OC)): at odd M, H_kappa(-M/2)=0 exactly for M = 3,5,...,2*ceil(r'/2)+1, where r' = longest chain in shifted(kappa minus its largest part); single-row kappa have no odd zeros. 63/63 m<=6. Odd-zero law => (OC). (OC) also checked directly: H(-M/2) != 0 for odd M = 2m+1..2m+39, m<=6.",
           "script": "work-in-progress/scripts/wake251/reciprocity/oddzeros.py (out_oddzeros.txt)",
           "wip_commit": "33a8b3d",
-          "children": [],
+          "children": [
+           {
+            "id": "q488-oc-caseB-boundary-telescoping",
+            "role": "attempt",
+            "trust": "computed",
+            "file": null,
+            "sources": [],
+            "depends_on": [
+             "q488-oc-thmC-M3"
+            ],
+            "approach": "Case B via hyperplane section (Wake 252): b_kappa(j)=H_kappa(j)-H_kappa(j-1)=chi(O_D(j)), D = hyperplane divisor on X_kappa (non-reduced: Chevalley multiplicity 2 off-diagonal). Odd zeros of b_kappa are exactly M=3..2*ceil(r'/2)-1 when needed; with the Thm C anchor H(-3/2)=0 this telescopes to (Z). Evidence m<=7 (31/63/127 kappa for m=5/6/7; 2 cases).",
+            "script": "work-in-progress/scripts/wake252/caseB/",
+            "wip_commit": "717fe73, 1036afe",
+            "children": []
+           },
+           {
+            "id": "q488-oc-support-rule-BR",
+            "role": "premise",
+            "trust": "computed",
+            "file": null,
+            "sources": [
+             "1005.2605"
+            ],
+            "approach": "Support rule (Buch-Ravikumar, Crelle 668 (2012), Sec. 5 Cor 5.4/Thm 5.5/Cor 5.6 with p=1): supp[O_D] = {rho strictly inside kappa : kappa/rho a rim with <=2 boxes per row and column}, coefficient (-1)^{|theta|-1} * #(1'<1 labelings, diagonal primed in dimension-indexed convention). Our coding reproduces kclass.py 46/46 (m=4,5) and exact support match m=4-7.",
+            "script": "work-in-progress/scripts/wake252/caseB/",
+            "wip_commit": "1036afe",
+            "children": []
+           },
+           {
+            "id": "q488-oc-Ind-chain-drop",
+            "role": "premise",
+            "trust": "sketched",
+            "file": null,
+            "sources": [],
+            "depends_on": [
+             "q488-oc-support-rule-BR"
+            ],
+            "approach": "Chain drop: r'(rho) >= r'(kappa)-2 for rho in supp[O_D] -- a chain meets a rim with <=2 boxes/row/col in <=2 boxes. Computed 63/63 m=6, 127/127 m=7.",
+            "script": "work-in-progress/scripts/wake252/caseB/",
+            "wip_commit": "1036afe",
+            "children": []
+           },
+           {
+            "id": "q488-oc-Z-by-induction",
+            "role": "attempt",
+            "trust": "sketched",
+            "file": null,
+            "sources": [],
+            "depends_on": [
+             "q488-oc-thmC-M3",
+             "q488-oc-Ind-chain-drop",
+             "q488-oc-support-rule-BR"
+            ],
+            "approach": "(Z) for all kappa by induction on |kappa|: Thm C anchor + Ind-chain-drop + (Z) for rho term by term (each H_rho(-M/2) term vanishes: computed 92/92 Case B m=7). Also depends on Sec. 7 gap 4 (proofs/2026-10-23-odd-zero-law.md) if the anchor needs H_{kappa'}(-1)=0.",
+            "script": "work-in-progress/scripts/wake252/caseB/",
+            "wip_commit": "1036afe",
+            "children": []
+           },
+           {
+            "id": "crownD-LG-half-vs-OG-order-poly",
+            "role": "attempt",
+            "trust": "dead-end",
+            "refutation": "computed",
+            "file": "work-in-progress/scripts/wake252/crownD.py",
+            "sources": [],
+            "approach": "Crown D test (Wake 252): H_kappa(a+1/2) as an OG/order-polynomial identity c*Omega(.)(s_c*a+s).",
+            "reason": "Clean negative: no identity c*Omega(.)(s_c*a+s) matches H_kappa(a+1/2) for proper kappa, m<=5; only the full staircase matches, and it does so at integers too (reparametrisation H_LG(m)(j)=2^{-m} Omega(P_stair,2j+2)), so nothing half-integer-specific.",
+            "script": "work-in-progress/scripts/wake252/crownD.py",
+            "wip_commit": "8234c50",
+            "children": []
+           }
+          ],
           "note_2026_10_23": "PROVE 251: M=1 (Thm A) and M=3 (Thm C) proved; (NZ) for M>=2m+1 = Thm B (mod G1-G4); middle range and (Z) for a>=2 computed (see q488-oc-Z-perk, q488-oc-lemma-Q-purity)."
          },
          {
