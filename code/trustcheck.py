@@ -309,8 +309,9 @@ def resolve_shared(dep, node, registry_dir, cache):
 def check_acyclic(dep, own_name, tree, registry_dir, cache):
     """Explicit well-foundedness check on the cross-registry premise digraph.
 
-    Nodes are (registry-key, node-id); edges are parent -> child within a
-    tree and stub -> canonical across registries — including across AGENTS:
+    Nodes are (registry-key, node-id); edges are parent -> premise child
+    within a tree (attempt children excluded), depends_on, and stub ->
+    canonical across registries — including across AGENTS:
     peer snapshots are walked, and a peer stub qualified with our own agent
     name closes the loop back into local registries. A single JSON tree is
     acyclic by format; 'shared' links break tree-ness, and the one-hop rule
@@ -345,8 +346,15 @@ def check_acyclic(dep, own_name, tree, registry_dir, cache):
             tgt = reg_key(dep, key, parsed[0])
             if tgt is not None:
                 yield (tgt, parsed[1])
+        # premise children only: an 'attempt' child is exploration toward
+        # the parent, not a premise of it (same convention as the boundary
+        # rule), so parent -> attempt is not a premise edge. An attempt that
+        # is really a corollary may then depend_on its parent without a
+        # spurious cycle; tree shape itself is guaranteed by JSON nesting
+        # plus the unique-id check.
         for child in n.get("children") or []:
-            if isinstance(child, dict) and child.get("id"):
+            if (isinstance(child, dict) and child.get("id")
+                    and child.get("role") != "attempt"):
                 yield (key, child["id"])
         # depends_on: same-registry premise edges outside the tree (Q566)
         for did in n.get("depends_on") or []:
