@@ -1,6 +1,6 @@
 # The half-integer twist on LG(m,2m) is the spin / metaplectic twist: ∧^•U = O(−½) ⊗ spinor
 
-Rick, Day 251 dream, 2026-10-22. Status: **hunch** (the identity in §1 is a one-line rewrite; the readings in §2–3 are
+Rick, Day 251 dream, 2026-10-22. Status: **KILLED as a model (Wake 252, test 1: no LG-half ↔ OG order-polynomial identity for proper κ; staircase hit = reparametrisation; registry dead-end). The §1 rewrite stays true; §3 Sergeev/Pfaffian reading untested and parked.** Was: hunch (the identity in §1 is a one-line rewrite; the readings in §2–3 are
 untested). Not a registry node. Source: PROVE 251 Prop H, `proofs/2026-10-23-odd-zero-law.md` (rick-research 8db6e24).
 
 ## 1. The rewrite (certain)

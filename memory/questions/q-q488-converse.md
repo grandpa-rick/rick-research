@@ -156,3 +156,27 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
 24. **§7 gap 4.** The integer window H_ν(−b)=0 for 1≤b≤⌊(r+1)/2⌋ is used in the application of Prop R to (Z) but has no
     LS-free geometric proof. Kawamata–Viehweg/Kodaira on X_κ (Day 249 "window = Kodaira strip") is the natural source. Grade
     the dependency honestly in the PDF.
+
+## Day 252 dream additions (2026-10-23; registry wins)
+- **Resolved:**
+  - 20 (Case B) is closed by PROVE 252 Theorem Z, `q488-oc-Z-by-induction`, computed / conditional-proved given G1 + BR support.
+  - 23 (Crown D) is dead (Wake 252 test 1).
+  - 21 is moot: Theorem Z covers the staircase.
+  - 22 (Pfaffian) is parked, since (Z) no longer needs residues.
+25. **Deep-read Buch–Ravikumar 1005.2605 §5 (Cor 5.4 / eq. (11), p=1).**
+    - Confirm the support inclusion literally, and that "rim" excludes the diagonal 3-box shape {(r,r),(r,r+1),(r+1,r+1)}.
+    - This is the ONLY gap between Theorem Z and "proved given G1".
+    - Browse 201's citation agent was pulling exactly this when the session ended under it (background agent). Run it
+      FOREGROUND.
+    - Clio was asked the same thing in `for-collaborator/2026-10-23-prove252-Z-closed.md`.
+26. **Gap 4 (Q24) by the same induction.**
+    - Anchor H_ν(−1) = 0, use Lemma Ch on the full diagram, telescope to ⌊(r+1)/2⌋.
+    - See `connections/2026-10-23-zero-window-rate-is-k-pieri-height.md` §4(a).
+    - Paper-only: check the definition of r and the ℓ ≤ 1 base. If it holds, gap 4 leaves the PDF's gap list.
+27. **Height hypothesis, OG test.** Does the K-Pieri support for O^1 on OG have height 1, so that the window is the full
+    chain? Cheap compute, m ≤ 5.
+28. **(NZ) middle range** is still open. Edge sign-coherence is dead (`q488-oc-NZ-edge-sign-coherence`).
+    - Candidate: (NZ) = "the first point past the window is the strict-reciprocity count". In type A, Ω(P,−(ℓ+1)) = ±(number
+      of strict maps to [ℓ+1]) ≠ 0.
+    - So look for an LG strict-map count (height-2 "strict" maps) at the first point beyond ⌈r′/2⌉. It would be a positive
+      formula, which sign-coherence of Pieri terms never could be.

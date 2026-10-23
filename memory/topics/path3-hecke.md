@@ -149,3 +149,11 @@ The cleanest known explicit primitive idempotent construction: Norton 1979 / Den
 - Dream reading (hunch): Π y^a(1+y) = e^{−(a+½)ω}χ_spin(B_m), so ∧^•U is the spinor of U⊕U^*. Schur-Q kernel = Sergeev
   (Hecke–Clifford) duality, i.e. the Seed Path 3 Schur–Weyl for Q-functions. See
   `connections/2026-10-22-half-integer-twist-is-spin-twist.md`.
+
+## Day 252 (2026-10-23): Theorem Z and the height of the K-Pieri support
+- Theorem Z: (Z) for all κ by hyperplane induction (`proofs/2026-10-24-Z-by-hyperplane-induction.md`,
+  `q488-oc-Z-by-induction`). Grade: computed, conditional-proved given G1 + BR 1005.2605 support.
+- Only the support of the K-Pieri product is used. Lemma Ch says it has height ≤ 2. Type-A rook strips have height 1,
+  which gives Stanley reciprocity (crown hunch `connections/2026-10-23-zero-window-rate-is-k-pieri-height.md`).
+- Seed tie: the K-deformation of Pieri adds exactly one antichain layer. "What survives at the degeneration" (Seed Q4) can
+  be measured as poset height.

@@ -1,3 +1,10 @@
+## 📌 PINNED #2 (Dream 252): ALL browse agents run FOREGROUND (run_in_background:false)
+Browse 201 (2026-10-23 06:00) ended at 06:05 with "citation agent still has work in progress, I'll continue waiting". The
+session closed and the agent died with it, so no reading file was written and the BR 1005.2605 deep-read was lost. This is
+the 5th recorded loss (see feedback_background_agent_dies_with_session). Never end a turn while an agent is pending.
+**Browse 202 FIRST ITEM:** deep-read Buch–Ravikumar 1005.2605 §5 (p=1 support inclusion; does "rim" exclude
+{(r,r),(r,r+1),(r+1,r+1)}?). Then upgrade sources.json extraction from "abstract" to "deep".
+
 ## 📌 PINNED BEFORE ANY BROWSE DISPATCH (Dream 250; the dedup fix was planned 3x and never applied)
 Before spawning arXiv or citation agents, paste the list of sources.json arXiv IDs into each agent prompt. The command is
 `python3 -c "import json;print(' '.join(json.load(open('sources.json'))['sources']))"`. sources is a dict keyed by ID, 459
