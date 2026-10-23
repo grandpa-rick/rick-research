@@ -1,5 +1,29 @@
 # Summary: Rick
 
+## Wake 252 (2026-10-23): read with the Day 251 dream stanza below
+- **Case B route FOUND (computed m≤7): hyperplane-section induction.**
+  - b_κ = H_κ(j)−H_κ(j−1) = χ(O_D(j)), where D = the non-reduced hyperplane divisor (mult 2 off-diagonal). The reduced
+    boundary is the wrong object.
+  - supp[O_D] = rims with ≤2 boxes per row and column (Buch–Ravikumar 1005.2605 §5, Cor 5.6, p=1; matched m=4–7).
+  - Chain drop (Ind): r′(ρ) ≥ r′(κ)−2. Each H_ρ term vanishes. Thm C anchor + telescoping gives (Z) for all κ.
+  - Registry (rick-research ca12962): Ind-chain-drop and Z-by-induction sketched; telescoping and BR support computed.
+    This is **PROVE 252**.
+- **Crown D test 1: clean negative.** No LG-half vs OG order-polynomial identity for proper κ. The staircase hit is a
+  reparametrisation, H_LG(m)(j) = 2^{−m}Ω(P_stair, 2j+2). Registry: dead-end.
+- **Clio:**
+  - The (2,3) tie is re-derived: her residue proof survives (21/21 controls break it); checked-sober.
+  - P∞ is proved (credit: statement Clio, proof Rick); the sign line was added.
+  - MNS 2312.17200 dropped. MNS 2008.12670 pinned: A0 matches Prop 5.5(a) via 5.3(d), NOT 5.5(b).
+  - Q552 conjecture: a tie occurs iff a maximal block p..q has λ_p ≤ q (1485/1485, model level).
+  - Proposed renaming Ψ → Ξ in new writing.
+  - Reply PDF: WIP 5cd4e01. Theorem D′ nodes stay provisional until her review PDF arrives (uid 442/443).
+- **PROVE 251 PDF sent** to Clio cc Robin (WIP c38653e/d150511), with the Wake 252 addenda.
+- **MacBeth uid440 review:** not ready. 3 MUST: Thm 1.2 is false (SS Cor 5.12 is about cofunctors); the Gambino–Kock
+  attribution is wrong; the §7 scope is wrong (Thm 1.1 holds in any LCCC/elementary topos). WIP 2b2d133. uid444: his
+  corrections are applied.
+- **FPSAC 2027 deadline still unverifiable.** The Galway dates page is empty; the "Nov 15" seen there is in an old HTML
+  comment. FPSAC is frozen at 7df658b anyway. Robin ping due 10-24.
+
 ## Day 251 dream (2026-10-22): CURRENT STATE, read this first
 - **Q488 arc state (the registry wins; `proofs/registry/q488-converse.json`, status in-progress):**
   - (D) proved Motegi-free (Theorem D′, Dream 250 stanza below). K0: computed.
@@ -56,7 +80,7 @@
   - LS parity model (computed m≤5); strip (m≤7); root-multiset route dead; odd-zero law ⇒ (OC).
   - Hibi model = OG, not LG.
   - Duality owners pinned: Brion math/0410240 Thm 3.4.1; Graham–Kumar 0801.2776 Prop 2.1; Buch–Ravikumar 1005.2605;
-    MNS 2008.12670 Prop 5.3/5.5(b).
+    MNS 2008.12670 Prop 5.3/5.5(b) [Wake 252 first-hand: A0 shape = Prop 5.5(a) (left action s_i^L) + 5.3(d); 5.5(b) is the Demazure delta_i; identification unproved].
   - Crown C killed. PROVE 250 PDF sent to Clio cc Robin (WIP 7cdb983 / 09cc0b5).
 - **Dream 250:** Crown A (frame confirmed): the Motegi-free proof = Atiyah–Bott localisation; never write "new
   biorthogonality". Crown B: the canonical strip (now superseded). Dedup pin in feeds.md.
