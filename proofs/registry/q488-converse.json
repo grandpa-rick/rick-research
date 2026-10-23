@@ -1010,12 +1010,62 @@
             "script": "work-in-progress/scripts/wake253/nz.py, nzdiag.py, nztable.py, check52.py (out_nz_m3..7.txt, out_nz_table.txt, out_nzdiag_m6.txt)",
             "wip_commit": "65c33a1",
             "children": []
+           },
+           {
+            "id": "q488-oc-anchor-H-minus-1",
+            "role": "premise",
+            "trust": "proved",
+            "file": "proofs/2026-10-24-integer-window-and-OG-twin.md",
+            "sources": [],
+            "depends_on": [],
+            "approach": "Lemma 1: H_kappa(-1)=0 for kappa!=empty on LG and OG. Minimal coset rep w!=e has right descent s_m, D_w=D_{w'}D_m, D_m e^{-omega_m}=0 since <omega_m,alpha_m^vee>=1; Lemma P (odd-zero-law file) extends (G1) to j=-1.",
+            "conditional_grade": "proved given (G1) (standard, cited, not deep-read; same debt as q488-oc-thmC-M3)",
+            "script": "work-in-progress/scripts/prove253/check.py, mono.py, drop.py, strip.py, negctl.py",
+            "children": [],
+            "wip_commit": "ecace5e"
+           },
+           {
+            "id": "q488-oc-strip-lemmaA",
+            "role": "premise",
+            "trust": "proved",
+            "file": "proofs/2026-10-24-integer-window-and-OG-twin.md",
+            "sources": [
+             "1005.2605"
+            ],
+            "depends_on": [
+             "q488-oc-support-rule-BR"
+            ],
+            "approach": "Lemma 0: r(kappa)=max_i(kappa_i+2i-2)=1+max(a+b). Lemma A: rho* = kappa minus top t antidiagonals (t=1 r odd, t=2 r even on LG; t=1 on OG) has r(rho*)<=r-t, so W(rho*)<=W-1, and c_{rho*}!=0: explicit KLG tableau (outer antidiagonal 1', inner 1; outer has odd sum when r even so no diagonal prime) via BR Cor pieriCtab; OG via BR Lemma vanishB(c). Checked vs BR h-sum formula 127/127 m=7; negative control (r odd 2-strip) 67/67, 42 zeros, m<=6.",
+            "script": "work-in-progress/scripts/prove253/check.py, mono.py, drop.py, strip.py, negctl.py",
+            "children": [],
+            "wip_commit": "ecace5e"
+           },
+           {
+            "id": "q488-oc-Zint-by-induction",
+            "role": "attempt",
+            "trust": "proved",
+            "file": "proofs/2026-10-24-integer-window-and-OG-twin.md",
+            "sources": [
+             "1005.2605"
+            ],
+            "depends_on": [
+             "q488-oc-anchor-H-minus-1",
+             "q488-oc-Ind-chain-drop",
+             "q488-oc-support-rule-BR",
+             "q488-oc-strip-lemmaA"
+            ],
+            "approach": "Theorem I (LG): s_j=(-1)^{|kappa|}H_kappa(-j) satisfies 0=s_1=...=s_W<s_{W+1}<=s_{W+2}<=..., W=ceil(r/2), r=longest chain of FULL diagram. Recursion s_{j+1}=s_j+sum|c_rho|s_j(rho) from O^1=1-[L^-1] + BR sign (-1)^{|theta|-1}; anchor 0 => monotone; Lemma Ch on full diagram => vanishing; Lemma A => strict at W+1. Gives (Z_int) = gap 4 of odd-zero-law file AND (NZ_int). LS-model-free. Checked by Demazure directly m<=4 (zero set 16/16, monotonicity 15/15).",
+            "conditional_grade": "proved given (G0) Chevalley divisor, (G1) Demazure, (BR) first-hand (Cor pieriCtab proof left to reader in BR; corroborated by BR h-sum formula m<=7)",
+            "script": "work-in-progress/scripts/prove253/check.py, mono.py, drop.py, strip.py, negctl.py",
+            "children": [],
+            "wip_commit": "ecace5e"
            }
           ],
           "note_2026_10_23": "PROVE 251: M=1 (Thm A) and M=3 (Thm C) proved; (NZ) for M>=2m+1 = Thm B (mod G1-G4); middle range and (Z) for a>=2 computed (see q488-oc-Z-perk, q488-oc-lemma-Q-purity).",
           "note_2026_10_23b": "PROVE 252: zero half (Z) proved for ALL kappa given (G1)+(BR support), see q488-oc-Z-by-induction; (NZ) middle range open; edge sign-coherence route dead.",
           "note_2026_10_23_wake253": "Wake 253: zero half (Z) now PROVED given (G1) (q488-oc-Z-by-induction, BR read first-hand). This node stays computed: the nonvanishing half (NZ) in the middle range is open.",
-          "note_2026_10_23_wake253b": "Wake 253 compute (WIP 65c33a1): (NZ) holds for LG m<=7 (all r'>=2 kappa, odd M up to 4m+7), see child q488-oc-NZ-computed-m7. Evidence only; node stays computed -- (NZ) middle range unproved."
+          "note_2026_10_23_wake253b": "Wake 253 compute (WIP 65c33a1): (NZ) holds for LG m<=7 (all r'>=2 kappa, odd M up to 4m+7), see child q488-oc-NZ-computed-m7. Evidence only; node stays computed -- (NZ) middle range unproved.",
+          "note_2026_10_23_prove253": "Gap 4 (integer window) discharged by q488-oc-Zint-by-induction."
          },
          {
           "id": "q488-oc-root-multiset-of-top-cell",
@@ -1140,7 +1190,8 @@
           "open_curiosity": "Sporadic half-integer zeros of H^OG (10 kappa at m=6, e.g. kappa=32 at -5/2, kappa=51 at -3/2) -- no pattern found.",
           "script": "work-in-progress/scripts/wake253/og.py, negctl.py (out_og_zeros_m2..6.txt)",
           "wip_commit": "65c33a1",
-          "children": []
+          "children": [],
+          "note_2026_10_23_prove253": "Superseded at proved level by q488-oc-ZOG-by-induction (zero set + nonvanishing)."
          },
          {
           "id": "q488-oc-integer-strict-reciprocity",
@@ -1155,7 +1206,26 @@
           "note_depends_on": "depends_on q488-oc-ls-parity-model is literal: nz.py computes H_kappa via the LS-parity model (wake252 gate6.py; model verified vs Demazure m<=5, jointly vs BR K-Pieri m<=7), so the m=6,7 data rest on the model; a reciprocity proof would likewise be conditional on it (as for q488-oc-even-reciprocity).",
           "script": "work-in-progress/scripts/wake253/nz.py (out_nz_m3..7.txt)",
           "wip_commit": "65c33a1",
-          "children": []
+          "children": [],
+          "note_2026_10_23_prove253": "Zero set + sign now PROVED LS-free by q488-oc-Zint-by-induction; the strict-map COUNT formula itself remains computed (rests on LS-parity model)."
+         },
+         {
+          "id": "q488-oc-ZOG-by-induction",
+          "role": "attempt",
+          "trust": "proved",
+          "file": "proofs/2026-10-24-integer-window-and-OG-twin.md",
+          "sources": [
+           "1005.2605"
+          ],
+          "depends_on": [
+           "q488-oc-anchor-H-minus-1",
+           "q488-oc-strip-lemmaA"
+          ],
+          "approach": "Theorem I_OG: same monotone induction on OG(m,2m+1) with spinor O(1); BR Lemma vanishB: support = rook strips (antichains in skew shapes, so chains meet theta in <=1 box), c=(-1)^{|theta|-1} exactly; W=r. Exact integer zero set {-1..-r} with sign (-1)^{|kappa|} beyond. Crown E (Day 252) a theorem for LG (height 2) and OG (height 1). Second proof via minuscule SMT + Stanley reciprocity (not deep-read). Checked Demazure m<=4 (16/16, monotone 15/15).",
+          "conditional_grade": "proved given (G0),(G1),(BR Lemma vanishB, proved in full in BR, first-hand)",
+          "script": "work-in-progress/scripts/prove253/check.py, mono.py, drop.py, strip.py, negctl.py",
+          "children": [],
+          "wip_commit": "ecace5e"
          }
         ],
         "note_2026_10_22_wake251": "Wake 251: H_kappa modelled by LS parity order-quasi-polynomial (computed m<=5); strip -(r+1)/2<=Re j<-1/2 computed m<=7; even-M reciprocity = Ehrhart-Macdonald for Q_kappa; odd-zero law (computed m<=6) implies (OC) -- live target. Root-multiset route dead. Node stays in-progress.",

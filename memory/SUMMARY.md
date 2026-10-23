@@ -1,5 +1,42 @@
 # Summary: Rick
 
+## PROVE 253 (2026-10-23): integer window EXACT on LG and OG, by monotone hyperplane induction. Read this first.
+- **Theorem I (LG), proved given (G0) Chevalley divisor + (G1) + (BR, first-hand):** s_j := (−1)^{|κ|}H_κ(−j) satisfies
+  0 = s_1 = ⋯ = s_W < s_{W+1} ≤ s_{W+2} ≤ ⋯, where W = ⌈r/2⌉ and r is the longest chain of the FULL diagram,
+  r = max_i(κ_i+2i−2).
+  - This gives (Z_int), which discharges gap 4 of the odd-zero-law file, AND (NZ_int) with sign (−1)^{|κ|}. It is LS-model-free.
+  - **Theorem I_OG:** the same statement with W = r. Crown E (window rate = Pieri height) is now a THEOREM on both LG and OG.
+  - File: `proofs/2026-10-24-integer-window-and-OG-twin.md`.
+- **Mechanism.** (★) s_{j+1} = s_j + Σ|c_ρ|s_j(ρ), which follows from O^1 = 1−[L^{−1}] and BR's sign (−1)^{|θ|−1}.
+  - Anchor: H(−1) = 0, since a minimal coset rep ends in s_m and D_m e^{−ω_m} = 0. No Kempf/Serre needed.
+  - Vanishing: Lemma Ch on the full diagram (drop ≤ 2 on LG, ≤ 1 on OG, since rook strips in skew shapes are antichains).
+  - Strictness, Lemma A: strip the top 1 (r odd) or 2 (r even) antidiagonals. The KLG tableau is outer 1′, inner 1; when r
+    is even the outer antidiagonal has odd sum, so no diagonal box gets a prime. Negative control: the r-odd 2-strip dies
+    in 42/67 cases, all predicted.
+- **Why half-integers failed and integers don't:** the anchor at integers is 0, so no increment of (★) can have the wrong
+  sign. (NZ) at half-integers stays open.
+- Registry nodes: `q488-oc-anchor-H-minus-1`, `q488-oc-strip-lemmaA`, `q488-oc-Zint-by-induction`, `q488-oc-ZOG-by-induction`
+  (all proved, conditional on G0/G1/BR).
+
+## Wake 253 (2026-10-23): CURRENT STATE, read this first (supersedes the Day 252 dream stanza's "only gap")
+- **BR 1005.2605 read FIRST-HAND (v1 LaTeX).** §4 defines a rim as "no box of θ strictly S and strictly E of another". §5:
+  Thm 5.5 says non-rims give 0; Cor 5.6 gives the sign (−1)^{|θ|−p}·#KLG. At p=1 this means ≤2 boxes per row/col.
+  - "No 2×2 square" would NOT suffice: the diagonal 3-box shape slips through it, and BR's rim excludes it.
+  - Registry: `support-rule-BR` → **proved**; `q488-oc-Z-by-induction` → **PROVED given G1** (rick-research 7b39a6e).
+- **Theorem Z PDF sent to Clio cc Robin** (WIP 759086a/c3bf67c), with the reply to uid445. Clio ENDORSED Theorem D′ (all 12
+  nodes, peer_reviewed annotated). Q566 is fixed: trustcheck now reads depends_on (47 edges); the attempt-child cycle
+  false positive is fixed (f29a7a3).
+- **Crown E prediction CONFIRMED (computed):** the OG p=1 support is rook strips (height 1), and the OG zero window is the
+  full chain {−1..−r}, 63/63 at m=6. Owner search: nobody owns the LG claim or the K-Pieri induction. The type-A framing is
+  owned by Bruns–Herzog 1992 a-invariant / Fong–Miyazaki 2502.09559 / Hibi; the top cell by Weyl/Manivel. Credit them.
+- **(NZ) computed m≤7:** the odd zero set is exactly {3..W}, with nothing in the middle range. Sign rule is a post-hoc hunch;
+  no count found.
+- **Integer side (computed m≤7):** zeros are exactly {−1..−⌈r/2⌉} (full chain r), and
+  H(−j) = (−1)^{|κ|}·#{strict P_κ→[2j−1], even diagonal values}, 127/127. This rests on the LS-parity model.
+- **PROVE 253 = gap 4 (Z_int) + the OG twin (Z_OG)** by the same induction, with anchor H(−1)=0 via Kempf + Serre duality.
+- **FPSAC 2027 deadline CONFIRMED 2026-11-15** (raw HTML of the Galway important_dates page). The call REQUIRES an AI
+  declaration. Robin was pinged with the frozen draft link (7df658b) and told it's his call. Nothing was submitted.
+
 ## Day 252 dream (2026-10-23): CURRENT STATE, read this first
 - **Q488 / (OC) state (the registry wins; no grade changes this dream):**
   - (Z), the vanishing half of the odd-zero law, holds for ALL κ by Theorem Z, `q488-oc-Z-by-induction`. Grade:
