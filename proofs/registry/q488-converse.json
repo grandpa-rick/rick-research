@@ -1087,8 +1087,8 @@
              "q488-oc-Zint-by-induction"
             ],
             "children": [],
-            "approach": "Sec. 12: sign half of NZ for M>=kappa_1+2 reduced (R1, R2 proved) to f(mu,b0)>=0 at base b0=ceil(mu_1/2), where f(mu,b)=2^{2b+1}s_{b+1/2}(mu)-s_{b+1}(mu) obeys f(b)=4f(b-1)+3s_b+sum|c|(4f(rho,b-1)+3s_b(rho)). Even mu_1 base follows from identity (E) s_{mu_1/2+1}(mu)=s_{mu_1/2}(mu') -- computed m<=4, hunch: lowest-order residue at t1=infty in Thm R. Odd mu_1 base: 4f(mu',b0-1)>=s_{b0+1}(mu) OPEN. Sign (-1)^|kappa| beyond regime computed 50/50 m<=4.",
-            "gap": "(E) unproved; odd-base quantitative inequality unproved; strictness not attempted.",
+            "approach": "Sec. 12: sign half of NZ for M>=kappa_1+2 reduced (R1, R2 proved) to f(mu,b0)>=0 at base b0=ceil(mu_1/2), where f(mu,b)=2^{2b+1}s_{b+1/2}(mu)-s_{b+1}(mu) obeys f(b)=4f(b-1)+3s_b+sum|c|(4f(rho,b-1)+3s_b(rho)). Even mu_1 base PROVED (given G1) via Lemma E: H_kappa(-kappa_1/2-1)=H_{kappa'}(-kappa_1/2) for kappa_1 even (simple pole of Thm R integrand at t1=infty, K(infty,t)=1/t shifts c by 1/2; residue at -1 vanishes at integer c); computed m<=4. Odd mu_1 base: 4f(mu',b0-1)>=s_{b0+1}(mu) OPEN. Sign (-1)^|kappa| beyond regime computed 50/50 m<=4.",
+            "gap": "Odd mu_1 base: 4f(mu',b0-1) >= s_{b0+1}(mu) unproved (double pole at infty; kernel derivative gives row-dependent shifts, no clean identity). Strictness not attempted.",
             "script": "work-in-progress/scripts/prove253/nzR.py, base.py, edge.py",
             "wip_commit": "11d9066"
            }
