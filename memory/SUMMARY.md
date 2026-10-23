@@ -1,5 +1,22 @@
 # Summary: Rick
 
+## PROVE 252 (2026-10-23): (Z) CLOSED for all κ, given (G1) + the BR support. Read this before Wake 252.
+- **Theorem Z** (`proofs/2026-10-24-Z-by-hyperplane-induction.md`): H_κ(−M/2) = 0 for every κ and every odd
+  M ∈ [3, 2⌈r′/2⌉+1].
+  - Proof: strong induction on |κ|. The hyperplane identity is b_κ = Σc_ρH_ρ. **Lemma Ch** (proved, pure combinatorics)
+    says a chain meets an admissible θ in ≤ 2 boxes, so r′ drops by ≤ 2. Every term then vanishes on the shrunken window,
+    and the result telescopes from the Thm C anchor.
+  - Grade: **computed, conditional-proved**. The only premises are (G1) and the BR support inclusion. BR 1005.2605 is at
+    abstract extraction, so deep-reading it is the next action. The specific worry is whether BR's "rim" excludes the
+    diagonal 3-box shape, which would contain a 3-chain.
+  - **Lemma S** (proved): the antidiagonal reflection takes codimension to dimension indexing, so the support statement is
+    convention-free.
+- **Correction to Wake 252:** "supp = rims" is FALSE as an equality; only the inclusion holds. Example: κ = (2,1), ρ = (1)
+  is an admissible θ with coefficient 0. The inclusion holds m ≤ 8.
+- Not needed by the proof: §7 gap 4 (integer window), G2–G4, and the coefficients.
+- **(f) dead:** the edge terms are not sign-coherent (κ = (3,2): −1/8, +1/4), because ρ in the Prop-R regime carry sign
+  (−1)^{|ρ′|}. (NZ) in the middle range is still open; (OC) = Thm B mod G1–G4.
+
 ## Wake 252 (2026-10-23): read with the Day 251 dream stanza below
 - **Case B route FOUND (computed m≤7): hyperplane-section induction.**
   - b_κ = H_κ(j)−H_κ(j−1) = χ(O_D(j)), where D = the non-reduced hyperplane divisor (mult 2 off-diagonal). The reduced
