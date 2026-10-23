@@ -10,7 +10,7 @@ in j (Snapper). Scripts are in `work-in-progress/scripts/wake252/caseB/` (files 
 |---|---|---|
 | **Lemma S** (reflection) | D(κ^∨) = R(Δ_m ∖ D(κ)), where R(r,c) = (m−1−c, m−1−r) | **proved** (§2), and checked m ≤ 8 |
 | **Lemma Ch** (chain drop) | if θ = D(κ)∖D(ρ) has no strictly-SE pair and ≤ 2 boxes in every row and column, then r′(ρ) ≥ r′(κ) − 2 | **proved** (§3); checked on all 3801 such pairs, m ≤ 8 |
-| **Theorem Z** | for every strict κ ⊆ [m] and every odd M with 3 ≤ M ≤ 2⌈r′(κ)/2⌉+1, H_κ(−M/2) = 0 | **proved given (G1) + (BR)**; (BR) is cited at abstract-level extraction, so it is a gap (§6) |
+| **Theorem Z** | for every strict κ ⊆ [m] and every odd M with 3 ≤ M ≤ 2⌈r′(κ)/2⌉+1, H_κ(−M/2) = 0 | **proved given (G1) + (BR)**; (BR) read first-hand from the arXiv v1 LaTeX source, Wake 253 (§8); (G1) is standard |
 | (f) edge sign-coherence | the Pieri terms of b_κ at the window edge all have one sign | **FALSE** (§5), e.g. κ = (3,2) |
 
 This **closes Case B**, conditional on the K-Pieri support statement. Case B was the only open part of (Z). Earlier partial
@@ -42,6 +42,12 @@ basis O^λ = [O_{X^λ}]:
 
   O^λ · O^1 = Σ_ν c_ν O^ν, and c_ν ≠ 0 only if λ ⊊ ν and D(ν)∖D(λ) has no two boxes in strictly-SE position and
   ≤ 2 boxes in every row and every column.
+
+Locator: BR 1005.2605 §4, def. of rim; §5 Thm 5.5, Cor 5.6. BR's definition, verbatim (§4): "The *south-east rim* of
+the shifted skew diagram θ is the set of boxes B ∈ θ such that no box of θ is located strictly south and strictly east
+of B. … We say that θ is a *rim* if θ̄ = ∅." So "θ is a rim" means exactly "no two boxes of θ are in strictly-SE
+position". Thm 5.5: "If θ is not a rim then 𝒞(θ,p) = 0." Cor 5.6 counts KLG-tableaux, whose rows and columns strictly
+increase. For p = 1 the labels lie in {1′, 1}, which forces ≤ 2 boxes per row and per column (§8).
 
 Only this **support inclusion** is used. Here is a correction to PROVE.md, which says "supp = rims": equality is FALSE.
 The coefficient also vanishes on some admissible θ. The simplest case is a vertical domino whose lower box is diagonal,
@@ -85,6 +91,12 @@ suppose a < b < c were three boxes of C ∩ θ. Every pair among them is compara
 
 So |C ∩ θ| ≤ 2. For the consequence, take a longest chain C of D(κ)₊, so |C| = r′(κ) by (1.1). Then C∖θ ⊆ D(ρ) ∩ {row ≥ 1}
 = D(ρ)₊ is a chain of size ≥ r′(κ) − 2. By (1.1) for ρ, r′(ρ) ≥ r′(κ) − 2. ∎
+
+*Remark (the definition of rim matters).* The proof uses BR's definition of rim: no two boxes strictly SE of each other
+(BR 1005.2605 §4, def. of rim; §5 Thm 5.5, Cor 5.6). The weaker condition "θ contains no 2×2 square" would **not**
+suffice for shifted diagrams. The diagonal 3-box shape {(r,r), (r,r+1), (r+1,r+1)} has no 2×2 square, since (r+1,r) is
+not a box of the shifted plane. Yet it is a 3-chain with (r+1,r+1) strictly SE of (r,r), and it has ≤ 2 boxes per row and
+per column. BR's definition excludes it (Wake 253, §8).
 
 The bound is sharp: the minimum drop over the support is exactly −2 for 1, 4, 12, 30, 70, 154 of the κ with ℓ ≥ 2 at
 m = 3, …, 8. This was recorded Wake 252 as a horizontal domino in row ≥ 1.
@@ -145,7 +157,7 @@ M = 1, 3, …, 13 (`prove252_signs.py`). The value at −9/2 is nonzero, and tha
 
 ## 6. Gaps (precise)
 
-1. **(BR) is not deep-read.** `sources.json` records 1005.2605 at extraction level "abstract", and no local copy exists.
+1. **RESOLVED Wake 253 (§8): (BR) read first-hand, and the inclusion holds literally.** Original text, kept for the record: **(BR) is not deep-read.** `sources.json` records 1005.2605 at extraction level "abstract", and no local copy exists.
    This session was no-browsing. The load-bearing statement is exactly the support inclusion stated in §1 (codimension
    form). Corroboration is computational: the true K-class (from (G1)) at m ≤ 5, the encoded formula at m ≤ 8. The
    specific concern is whether BR's "rim" excludes diagonal configurations {(r,r),(r,r+1),(r+1,r+1)}. Those contain a
@@ -160,3 +172,31 @@ Of the zero law's input, the induction only needs the **support** of the K-Pieri
 the hope was that alternation would cancel or reinforce something. It does neither: alternation buys no sign-coherence at
 the edge, so the vanishing half is cheap and the nonvanishing half is not. Before asking a Pieri rule for coefficients, ask
 whether its support is enough.
+
+## 8. Wake 253 (2026-10-23): BR first-hand
+
+Source: the arXiv:1005.2605 v1 LaTeX source (`kpieri.tex`, dated 2010-05-14), read first-hand. This discharges §6 gap 1.
+Quotes:
+
+- **§4, def. of rim** (between Lemma 4.1 and Lemma 4.2): "The south-east rim of the shifted skew diagram θ is the set of
+  boxes B ∈ θ such that no box of θ is located strictly south and strictly east of B. Let θ̄ denote the diagram obtained
+  by removing the south-east rim from θ. We say that θ is a rim if θ̄ = ∅." So a rim has **no two boxes in strictly-SE
+  position**. That is strictly stronger than "no 2×2 square" and excludes the diagonal shape
+  {(r,r),(r,r+1),(r+1,r+1)}, the §6 concern.
+- **§5 Cor 5.4**: "Let λ ⊂ ν be strict partitions with ν₁ ≤ n and let 0 ≤ p ≤ n. Then c^ν_{λ,p} = 𝒞(ν/λ, p)."
+- **§5 Thm 5.5**: "If θ is not a rim then 𝒞(θ,p) = 0."
+- **§5 KLG-tableaux**: labels from {1′<1<2′<2<⋯}. "(i) each row of θ is strictly increasing from left to right; (ii) each
+  column of θ is strictly increasing from top to bottom". There are SW conditions (iii)/(iv), and (v) "no diagonal box
+  contains a primed integer". Also: "If θ is not a rim, then there are no KLG-tableaux of shape θ."
+- **§5 Cor 5.6**: "The constant c^ν_{λ,p} for K(LG(n,2n)) is equal to (−1)^{|ν/λ|−p} times the number of KLG-tableaux
+  of shape ν/λ with content {1,2,…,p}."
+
+**Consequence for p = 1.** The labels lie in {1′, 1}. Strict rows and columns then allow ≤ 2 boxes per row and per
+column. With Thm 5.5 / Cor 5.6, c^ν_{λ,1} ≠ 0 ⟹ λ ⊊ ν and ν/λ is a rim with ≤ 2 boxes per row and per column. That is
+the (BR) support inclusion of §1, verbatim in BR's codimension indexing. Lemma S (§2) transfers it to the dimension
+indexing (BR′), because the reflection R(r,c) = (m−1−c, m−1−r) preserves the strictly-SE relation. Lemma Ch (§3) was
+already written for the strictly-SE definition. Its proof is unchanged and valid as written, and no mathematics in §§1–5
+changes.
+
+**Grade.** Theorem Z is **proved** given (G1) (standard: Demazure character formula / Kempf vanishing) and (BR) (cited
+literally above). (NZ), the nonvanishing half, stays open.

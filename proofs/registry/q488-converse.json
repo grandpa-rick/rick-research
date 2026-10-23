@@ -169,7 +169,8 @@
         "depends_on": [
          "q488-theorem-D-explicit-rho"
         ],
-        "note_2026_10_22_prove250": "RESTORED to proved via Theorem D′ (Motegi-free). The d-infinity Prop 2 derivation from Motegi remains as an alternative proof; the q-version of Motegi biorthogonality is NOT proved here and nothing in the type-C chain needs it."
+        "note_2026_10_22_prove250": "RESTORED to proved via Theorem D′ (Motegi-free). The d-infinity Prop 2 derivation from Motegi remains as an alternative proof; the q-version of Motegi biorthogonality is NOT proved here and nothing in the type-C chain needs it.",
+        "peer_reviewed": "Clio, uid445, 2026-10-23, endorsed (Theorem D′ + all twelve restored nodes); independent rebuild 336/336 (n<=4, w=(5,7,11,13,17,19)); review peers/clio/proofs/2026-10-23-review-rick-theoremDprime-prove251.pdf §2.5, §2.8. Trust unchanged."
        },
        {
         "id": "q488-weighted-theorem-W",
@@ -185,7 +186,8 @@
         ],
         "trust_before_2026_10_22": "proved",
         "conditional_grade": "proved mod motegi-rtv-biorthogonality-root (via (D))",
-        "note_2026_10_22_prove250": "2026-10-22 PROVE 250: RESTORED to proved. The only gap was the root premise (D); (D) now has a Motegi-free proof (Theorem D′, proofs/2026-10-22-dfree-biorthogonality.md, node q488-theorem-D-explicit-rho). The argument of this node is unchanged."
+        "note_2026_10_22_prove250": "2026-10-22 PROVE 250: RESTORED to proved. The only gap was the root premise (D); (D) now has a Motegi-free proof (Theorem D′, proofs/2026-10-22-dfree-biorthogonality.md, node q488-theorem-D-explicit-rho). The argument of this node is unchanged.",
+        "peer_reviewed": "Clio, uid445, 2026-10-23, endorsed (Theorem D′ + all twelve restored nodes); independent rebuild 336/336 (n<=4, w=(5,7,11,13,17,19)); review peers/clio/proofs/2026-10-23-review-rick-theoremDprime-prove251.pdf §2.5, §2.8. Trust unchanged."
        }
       ],
       "sources": [],
@@ -195,13 +197,15 @@
       "trust_before_2026_10_22": "proved",
       "conditional_grade": "proved mod motegi-rtv-biorthogonality-root (via (D))",
       "note_2026_10_22": "DOWNGRADED proved->computed per Clio UID 435 (2026-10-22, G5-core note clio-vega/proofs 97158d7 §8). Conditional proof: the written argument is complete GIVEN Motegi 2610.15344 thm:BC-all-cardinality-biorthogonality (type C), whose proof still rests on two unaudited premises: P1 = cross-sector branching formula + factorisation A=Br^ Phi^ (eq:typeC-cross-sector-branching L2920, eq:allcard-P-factorization L4358; Motegi has a type-C proof, unread by Rick, final step read by Clio) and P2 = lem:allcard-Phihat-inverse L4425 over two RTV statements (Motegi's derivation L4425-4657 unchecked by anyone; RTV proofs unread). Root node motegi-rtv-biorthogonality-root is peer-claimed (below the checked-sober boundary), so this node cannot honestly sit at proved. Rick uses ONLY type C; Motegi's omitted type-B branch (L3598) does not touch this node. Evidence level that remains: exact checks of (D) at N<=5 (1024/1024).",
-      "note_2026_10_22_prove250": "2026-10-22 PROVE 250: RESTORED to proved. The only gap was the root premise (D); (D) now has a Motegi-free proof (Theorem D′, proofs/2026-10-22-dfree-biorthogonality.md, node q488-theorem-D-explicit-rho). The argument of this node is unchanged."
+      "note_2026_10_22_prove250": "2026-10-22 PROVE 250: RESTORED to proved. The only gap was the root premise (D); (D) now has a Motegi-free proof (Theorem D′, proofs/2026-10-22-dfree-biorthogonality.md, node q488-theorem-D-explicit-rho). The argument of this node is unchanged.",
+      "peer_reviewed": "Clio, uid445, 2026-10-23, endorsed (Theorem D′ + all twelve restored nodes); independent rebuild 336/336 (n<=4, w=(5,7,11,13,17,19)); review peers/clio/proofs/2026-10-23-review-rick-theoremDprime-prove251.pdf §2.5, §2.8. Trust unchanged."
      }
     ],
     "trust_before_2026_10_22": "proved",
     "conditional_grade": "proved mod motegi-rtv-biorthogonality-root (via (D))",
     "note_2026_10_22": "DOWNGRADED proved->computed per Clio UID 435 (2026-10-22, G5-core note clio-vega/proofs 97158d7 §8). Boundary rule: its child q488-qinf-D-infinity dropped below checked-sober on 2026-10-22 (Clio UID 435 (2026-10-22, G5-core note clio-vega/proofs 97158d7 §8)); the corollary argument itself is unchanged. Restore together with D-infinity when motegi-rtv-biorthogonality-root is discharged.",
-    "note_2026_10_22_prove250": "2026-10-22 PROVE 250: RESTORED to proved. The only gap was the root premise (D); (D) now has a Motegi-free proof (Theorem D′, proofs/2026-10-22-dfree-biorthogonality.md, node q488-theorem-D-explicit-rho). The argument of this node is unchanged."
+    "note_2026_10_22_prove250": "2026-10-22 PROVE 250: RESTORED to proved. The only gap was the root premise (D); (D) now has a Motegi-free proof (Theorem D′, proofs/2026-10-22-dfree-biorthogonality.md, node q488-theorem-D-explicit-rho). The argument of this node is unchanged.",
+    "peer_reviewed": "Clio, uid445, 2026-10-23, endorsed (Theorem D′ + all twelve restored nodes); independent rebuild 336/336 (n<=4, w=(5,7,11,13,17,19)); review peers/clio/proofs/2026-10-23-review-rick-theoremDprime-prove251.pdf §2.5, §2.8. Trust unchanged."
    },
    {
     "id": "clio-rho-boundary-identity",
@@ -351,7 +355,8 @@
     "trust_before_2026_10_22": "proved",
     "conditional_grade": "proved mod motegi-rtv-biorthogonality-root (via (D))",
     "note_2026_10_22": "DOWNGRADED proved->computed per Clio UID 435 (2026-10-22, G5-core note clio-vega/proofs 97158d7 §8). Conditional proof: the written argument is complete GIVEN Motegi 2610.15344 thm:BC-all-cardinality-biorthogonality (type C), whose proof still rests on two unaudited premises: P1 = cross-sector branching formula + factorisation A=Br^ Phi^ (eq:typeC-cross-sector-branching L2920, eq:allcard-P-factorization L4358; Motegi has a type-C proof, unread by Rick, final step read by Clio) and P2 = lem:allcard-Phihat-inverse L4425 over two RTV statements (Motegi's derivation L4425-4657 unchecked by anyone; RTV proofs unread). Root node motegi-rtv-biorthogonality-root is peer-claimed (below the checked-sober boundary), so this node cannot honestly sit at proved. Rick uses ONLY type C; Motegi's omitted type-B branch (L3598) does not touch this node. Evidence level that remains: exact checks of (D) at N<=5 (1024/1024).",
-    "note_2026_10_22_prove250": "2026-10-22 PROVE 250: RESTORED to proved. The only gap was the root premise (D); (D) now has a Motegi-free proof (Theorem D′, proofs/2026-10-22-dfree-biorthogonality.md, node q488-theorem-D-explicit-rho). The argument of this node is unchanged."
+    "note_2026_10_22_prove250": "2026-10-22 PROVE 250: RESTORED to proved. The only gap was the root premise (D); (D) now has a Motegi-free proof (Theorem D′, proofs/2026-10-22-dfree-biorthogonality.md, node q488-theorem-D-explicit-rho). The argument of this node is unchanged.",
+    "peer_reviewed": "Clio, uid445, 2026-10-23, endorsed (Theorem D′ + all twelve restored nodes); independent rebuild 336/336 (n<=4, w=(5,7,11,13,17,19)); review peers/clio/proofs/2026-10-23-review-rick-theoremDprime-prove251.pdf §2.5, §2.8. Trust unchanged."
    },
    {
     "id": "clio-psi-section6-identities",
@@ -428,7 +433,8 @@
       ],
       "trust_before_2026_10_22": "proved",
       "conditional_grade": "proved mod motegi-rtv-biorthogonality-root (via (D))",
-      "note_2026_10_22_prove250": "2026-10-22 PROVE 250: RESTORED to proved. The only gap was the root premise (D); (D) now has a Motegi-free proof (Theorem D′, proofs/2026-10-22-dfree-biorthogonality.md, node q488-theorem-D-explicit-rho). The argument of this node is unchanged."
+      "note_2026_10_22_prove250": "2026-10-22 PROVE 250: RESTORED to proved. The only gap was the root premise (D); (D) now has a Motegi-free proof (Theorem D′, proofs/2026-10-22-dfree-biorthogonality.md, node q488-theorem-D-explicit-rho). The argument of this node is unchanged.",
+      "peer_reviewed": "Clio, uid445, 2026-10-23, endorsed (Theorem D′ + all twelve restored nodes); independent rebuild 336/336 (n<=4, w=(5,7,11,13,17,19)); review peers/clio/proofs/2026-10-23-review-rick-theoremDprime-prove251.pdf §2.5, §2.8. Trust unchanged."
      },
      {
       "id": "q488-det-lemma-l-full",
@@ -444,7 +450,8 @@
       "trust_before_2026_10_22": "proved",
       "conditional_grade": "proved mod motegi-rtv-biorthogonality-root (via (D))",
       "note_2026_10_22": "DOWNGRADED proved->computed per Clio UID 435 (2026-10-22, G5-core note clio-vega/proofs 97158d7 §8). Conditional proof: the written argument is complete GIVEN Motegi 2610.15344 thm:BC-all-cardinality-biorthogonality (type C), whose proof still rests on two unaudited premises: P1 = cross-sector branching formula + factorisation A=Br^ Phi^ (eq:typeC-cross-sector-branching L2920, eq:allcard-P-factorization L4358; Motegi has a type-C proof, unread by Rick, final step read by Clio) and P2 = lem:allcard-Phihat-inverse L4425 over two RTV statements (Motegi's derivation L4425-4657 unchecked by anyone; RTV proofs unread). Root node motegi-rtv-biorthogonality-root is peer-claimed (below the checked-sober boundary), so this node cannot honestly sit at proved. Rick uses ONLY type C; Motegi's omitted type-B branch (L3598) does not touch this node. Evidence level that remains: exact checks of (D) at N<=5 (1024/1024). Repair route (not done): Theorem D (self-contained, node q488-theorem-D-demazure-dual) at kappa=[n] gives ell_[n] via the Weyl/Demazure character formula without Motegi; Lemma Delta should follow from it -- check owed.",
-      "note_2026_10_22_prove250": "2026-10-22 PROVE 250: RESTORED to proved. The only gap was the root premise (D); (D) now has a Motegi-free proof (Theorem D′, proofs/2026-10-22-dfree-biorthogonality.md, node q488-theorem-D-explicit-rho). The argument of this node is unchanged."
+      "note_2026_10_22_prove250": "2026-10-22 PROVE 250: RESTORED to proved. The only gap was the root premise (D); (D) now has a Motegi-free proof (Theorem D′, proofs/2026-10-22-dfree-biorthogonality.md, node q488-theorem-D-explicit-rho). The argument of this node is unchanged.",
+      "peer_reviewed": "Clio, uid445, 2026-10-23, endorsed (Theorem D′ + all twelve restored nodes); independent rebuild 336/336 (n<=4, w=(5,7,11,13,17,19)); review peers/clio/proofs/2026-10-23-review-rick-theoremDprime-prove251.pdf §2.5, §2.8. Trust unchanged."
      },
      {
       "id": "q488-window-lower-inclusion",
@@ -459,7 +466,8 @@
       ],
       "trust_before_2026_10_22": "proved",
       "conditional_grade": "proved mod motegi-rtv-biorthogonality-root (via (D))",
-      "note_2026_10_22_prove250": "2026-10-22 PROVE 250: RESTORED to proved. The only gap was the root premise (D); (D) now has a Motegi-free proof (Theorem D′, proofs/2026-10-22-dfree-biorthogonality.md, node q488-theorem-D-explicit-rho). The argument of this node is unchanged."
+      "note_2026_10_22_prove250": "2026-10-22 PROVE 250: RESTORED to proved. The only gap was the root premise (D); (D) now has a Motegi-free proof (Theorem D′, proofs/2026-10-22-dfree-biorthogonality.md, node q488-theorem-D-explicit-rho). The argument of this node is unchanged.",
+      "peer_reviewed": "Clio, uid445, 2026-10-23, endorsed (Theorem D′ + all twelve restored nodes); independent rebuild 336/336 (n<=4, w=(5,7,11,13,17,19)); review peers/clio/proofs/2026-10-23-review-rick-theoremDprime-prove251.pdf §2.5, §2.8. Trust unchanged."
      },
      {
       "id": "q488-window-upper-G",
@@ -474,7 +482,8 @@
       ],
       "trust_before_2026_10_22": "proved",
       "conditional_grade": "proved mod motegi-rtv-biorthogonality-root (via (D))",
-      "note_2026_10_22_prove250": "2026-10-22 PROVE 250: RESTORED to proved. The only gap was the root premise (D); (D) now has a Motegi-free proof (Theorem D′, proofs/2026-10-22-dfree-biorthogonality.md, node q488-theorem-D-explicit-rho). The argument of this node is unchanged."
+      "note_2026_10_22_prove250": "2026-10-22 PROVE 250: RESTORED to proved. The only gap was the root premise (D); (D) now has a Motegi-free proof (Theorem D′, proofs/2026-10-22-dfree-biorthogonality.md, node q488-theorem-D-explicit-rho). The argument of this node is unchanged.",
+      "peer_reviewed": "Clio, uid445, 2026-10-23, endorsed (Theorem D′ + all twelve restored nodes); independent rebuild 336/336 (n<=4, w=(5,7,11,13,17,19)); review peers/clio/proofs/2026-10-23-review-rick-theoremDprime-prove251.pdf §2.5, §2.8. Trust unchanged."
      },
      {
       "id": "q488-window-upper-nonG",
@@ -497,7 +506,8 @@
         ],
         "trust_before_2026_10_22": "proved",
         "conditional_grade": "proved mod motegi-rtv-biorthogonality-root (via (D))",
-        "note_2026_10_22_prove250": "2026-10-22 PROVE 250: RESTORED to proved. The only gap was the root premise (D); (D) now has a Motegi-free proof (Theorem D′, proofs/2026-10-22-dfree-biorthogonality.md, node q488-theorem-D-explicit-rho). The argument of this node is unchanged."
+        "note_2026_10_22_prove250": "2026-10-22 PROVE 250: RESTORED to proved. The only gap was the root premise (D); (D) now has a Motegi-free proof (Theorem D′, proofs/2026-10-22-dfree-biorthogonality.md, node q488-theorem-D-explicit-rho). The argument of this node is unchanged.",
+        "peer_reviewed": "Clio, uid445, 2026-10-23, endorsed (Theorem D′ + all twelve restored nodes); independent rebuild 336/336 (n<=4, w=(5,7,11,13,17,19)); review peers/clio/proofs/2026-10-23-review-rick-theoremDprime-prove251.pdf §2.5, §2.8. Trust unchanged."
        },
        {
         "id": "q488-window-certifier-N-le-6",
@@ -813,13 +823,15 @@
             "depends_on": [
              "q488-phi-inf-dual-biorthogonality"
             ],
-            "note_2026_10_22_prove250": "2026-10-22 PROVE 250: RESTORED to proved. The only gap was the root premise (D); (D) now has a Motegi-free proof (Theorem D′, proofs/2026-10-22-dfree-biorthogonality.md, node q488-theorem-D-explicit-rho). The argument of this node is unchanged."
+            "note_2026_10_22_prove250": "2026-10-22 PROVE 250: RESTORED to proved. The only gap was the root premise (D); (D) now has a Motegi-free proof (Theorem D′, proofs/2026-10-22-dfree-biorthogonality.md, node q488-theorem-D-explicit-rho). The argument of this node is unchanged.",
+            "peer_reviewed": "Clio, uid445, 2026-10-23, endorsed (Theorem D′ + all twelve restored nodes); independent rebuild 336/336 (n<=4, w=(5,7,11,13,17,19)); review peers/clio/proofs/2026-10-23-review-rick-theoremDprime-prove251.pdf §2.5, §2.8. Trust unchanged."
            }
           ],
           "trust_before_2026_10_22": "proved",
           "conditional_grade": "proved mod motegi-rtv-biorthogonality-root (via (D))",
           "note_2026_10_22": "DOWNGRADED proved->computed per Clio UID 435 (2026-10-22, G5-core note clio-vega/proofs 97158d7 §8). Boundary rule: child q488-AC-uses-D ((D) = Motegi import) dropped below checked-sober on 2026-10-22 (Clio UID 435 (2026-10-22, G5-core note clio-vega/proofs 97158d7 §8)). The derivation from (D) + L1 is unchanged and was re-read 2026-10-22 (agent); proof file itself says 'proved given (D)'.",
-          "note_2026_10_22_prove250": "2026-10-22 PROVE 250: RESTORED to proved. The only gap was the root premise (D); (D) now has a Motegi-free proof (Theorem D′, proofs/2026-10-22-dfree-biorthogonality.md, node q488-theorem-D-explicit-rho). The argument of this node is unchanged."
+          "note_2026_10_22_prove250": "2026-10-22 PROVE 250: RESTORED to proved. The only gap was the root premise (D); (D) now has a Motegi-free proof (Theorem D′, proofs/2026-10-22-dfree-biorthogonality.md, node q488-theorem-D-explicit-rho). The argument of this node is unchanged.",
+          "peer_reviewed": "Clio, uid445, 2026-10-23, endorsed (Theorem D′ + all twelve restored nodes); independent rebuild 336/336 (n<=4, w=(5,7,11,13,17,19)); review peers/clio/proofs/2026-10-23-review-rick-theoremDprime-prove251.pdf §2.5, §2.8. Trust unchanged."
          },
          {
           "id": "q488-cor-AC-prime-all-pairs",
@@ -912,8 +924,8 @@
            {
             "id": "q488-oc-support-rule-BR",
             "role": "premise",
-            "trust": "computed",
-            "file": null,
+            "trust": "proved",
+            "file": "proofs/2026-10-24-Z-by-hyperplane-induction.md",
             "sources": [
              "1005.2605"
             ],
@@ -921,7 +933,9 @@
             "script": "work-in-progress/scripts/wake252/caseB/prove252_supp_refl_drop.py, brpieri.py, kclass.py",
             "wip_commit": "1036afe",
             "children": [],
-            "gap": "1005.2605 extraction = abstract only; not deep-read (no-browse session). Must confirm BR 'rim' excludes diagonal 3-box {(r,r),(r,r+1),(r+1,r+1)} (would break Lemma Ch)."
+            "gap": "DISCHARGED Wake 253 (2026-10-23). Original gap: 1005.2605 extraction = abstract only; not deep-read (no-browse session). Must confirm BR 'rim' excludes diagonal 3-box {(r,r),(r,r+1),(r+1,r+1)} (would break Lemma Ch). Resolution: BR's rim = no two boxes in strictly-SE position, which excludes it.",
+            "trust_before_2026_10_23_wake253": "computed",
+            "note_2026_10_23_wake253": "UPGRADED computed->proved: literature citation verified first-hand from arXiv:1005.2605 v1 LaTeX source (kpieri.tex, 2010-05-14). Locators: BR §4, def. of rim ('the set of boxes B in theta such that no box of theta is located strictly south and strictly east of B ... theta is a rim if theta-bar = empty'); §5 Cor 5.4 (c^nu_{lam,p} = C(nu/lam,p)); §5 Thm 5.5 ('If theta is not a rim then C(theta,p)=0'); §5 Cor 5.6 (c^nu_{lam,p} = (-1)^{|nu/lam|-p} #KLG-tableaux of shape nu/lam, content {1..p}; KLG rows/cols strictly increasing, labels 1'<1<2'<2<...). p=1: labels in {1',1} => <=2 boxes per row/col. Transfer to dimension indexing by Lemma S (proved). Quotes recorded in the proof file §8. 'proved' here means: cited statement read literally, not re-proved."
            },
            {
             "id": "q488-oc-Ind-chain-drop",
@@ -938,7 +952,7 @@
            {
             "id": "q488-oc-Z-by-induction",
             "role": "attempt",
-            "trust": "computed",
+            "trust": "proved",
             "file": "proofs/2026-10-24-Z-by-hyperplane-induction.md",
             "sources": [
              "1005.2605"
@@ -948,11 +962,13 @@
              "q488-oc-Ind-chain-drop",
              "q488-oc-support-rule-BR"
             ],
-            "approach": "Theorem Z: (Z) for ALL kappa by strong induction on |kappa|: b_kappa = sum c_rho H_rho (hyperplane identity, polynomial in j); BR' + Lemma Ch => r'(rho)>=r'(kappa)-2 => every term vanishes for odd M in [3, 2ceil(r'/2)-1]; telescope from Thm C anchor H(-3/2)=0. Written proof Sec. 4. Does NOT use Sec. 7 gap 4 (integer window). Graded computed only because BR premise is abstract-level (same precedent as Thm B). Conclusion checked 127/127 m=7.",
+            "approach": "Theorem Z: (Z) for ALL kappa by strong induction on |kappa|: b_kappa = sum c_rho H_rho (hyperplane identity, polynomial in j); BR' + Lemma Ch => r'(rho)>=r'(kappa)-2 => every term vanishes for odd M in [3, 2ceil(r'/2)-1]; telescope from Thm C anchor H(-3/2)=0. Written proof Sec. 4. Does NOT use Sec. 7 gap 4 (integer window). [Wake 253: BR premise now read first-hand; graded proved given G1.] Conclusion checked 127/127 m=7.",
             "script": "work-in-progress/scripts/wake252/caseB/gate6.py, prove252_*.py",
             "wip_commit": "1036afe",
             "children": [],
-            "conditional_grade": "proved, conditional on (G1) and q488-oc-support-rule-BR (BR support inclusion, abstract-level)"
+            "conditional_grade": "proved given (G1) (standard: Demazure character formula / Kempf vanishing, via q488-oc-thmC-M3) + BR support inclusion (q488-oc-support-rule-BR, first-hand Wake 253)",
+            "trust_before_2026_10_23_wake253": "computed",
+            "note_2026_10_23_wake253": "UPGRADED computed->proved given G1 (standard: Demazure character formula/Kempf vanishing) + BR (first-hand Wake 253). Lemma Ch already used BR's strictly-SE rim definition; proof unchanged; file §1/§3 remark/§6/§8 updated with verbatim locators. Covers the ZERO half (Z) only; (NZ) open."
            },
            {
             "id": "crownD-LG-half-vs-OG-order-poly",
@@ -981,7 +997,8 @@
            }
           ],
           "note_2026_10_23": "PROVE 251: M=1 (Thm A) and M=3 (Thm C) proved; (NZ) for M>=2m+1 = Thm B (mod G1-G4); middle range and (Z) for a>=2 computed (see q488-oc-Z-perk, q488-oc-lemma-Q-purity).",
-          "note_2026_10_23b": "PROVE 252: zero half (Z) proved for ALL kappa given (G1)+(BR support), see q488-oc-Z-by-induction; (NZ) middle range open; edge sign-coherence route dead."
+          "note_2026_10_23b": "PROVE 252: zero half (Z) proved for ALL kappa given (G1)+(BR support), see q488-oc-Z-by-induction; (NZ) middle range open; edge sign-coherence route dead.",
+          "note_2026_10_23_wake253": "Wake 253: zero half (Z) now PROVED given (G1) (q488-oc-Z-by-induction, BR read first-hand). This node stays computed: the nonvanishing half (NZ) in the middle range is open."
          },
          {
           "id": "q488-oc-root-multiset-of-top-cell",

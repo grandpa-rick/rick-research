@@ -348,6 +348,10 @@ def check_acyclic(dep, own_name, tree, registry_dir, cache):
         for child in n.get("children") or []:
             if isinstance(child, dict) and child.get("id"):
                 yield (key, child["id"])
+        # depends_on: same-registry premise edges outside the tree (Q566)
+        for did in n.get("depends_on") or []:
+            if isinstance(did, str):
+                yield (key, did)
 
     WHITE, GREY, BLACK = 0, 1, 2
     colour = {}
@@ -698,6 +702,42 @@ def validate_registry(dep, registry, own_name, files_dir, registry_dir,
         if f is not None and files_dir is not None:
             if not os.path.isfile(os.path.join(files_dir, f)):
                 errors.append(f"{loc}: file '{f}' not found under {files_dir}")
+
+    # depends_on (Clio Q566, UID 445): premise edges that live outside the
+    # tree. Same boundary rule as for premise children — claiming >=
+    # boundary_at requires every dependency at least boundary_at (dead
+    # ends included: building on an abandoned route is not exempt). Above
+    # the boundary, a claim exceeding a dependency's own grade is a warning
+    # (the README allows proved-on-checked-sober, but it should be seen).
+    by_id = {n.get("id"): n for n, _ in walk(tree) if n.get("id")}
+    for node, path in walk(tree):
+        deps = node.get("depends_on")
+        if deps is None:
+            continue
+        loc = "/".join(path)
+        if not (isinstance(deps, list)
+                and all(isinstance(x, str) for x in deps)):
+            errors.append(f"{loc}: 'depends_on' must be a list of node ids")
+            continue
+        trust = node.get("trust")
+        for did in deps:
+            d = by_id.get(did)
+            if d is None:
+                errors.append(f"{loc}: depends_on '{did}' is not a node of "
+                              f"this registry")
+                continue
+            dt = effective_trust(d)
+            if dep.trank(trust) < dep.trank(b_at):
+                continue
+            if dep.trank(dt) < dep.trank(b_at):
+                errors.append(
+                    f"{loc}: claims '{trust}' but depends_on '{did}' is "
+                    f"'{dt}' (boundary rule: dependencies must be at least "
+                    f"'{b_at}')")
+            elif dep.trank(dt) < dep.trank(trust):
+                warnings.append(
+                    f"{loc}: claims '{trust}' above its dependency "
+                    f"'{did}' ('{dt}')")
 
     # status should mirror the root's trust
     if registry.get("status") != tree.get("trust"):
@@ -2018,6 +2058,10 @@ def main():
     errors = iface_errors + src_problems + validate_registry(
         dep, registry, args.registry.stem, files_dir, registry_dir,
         sources, warnings)
+    if isinstance(registry.get("tree"), dict):
+        n_dep = sum(len(n.get("depends_on") or [])
+                    for n, _ in walk(registry["tree"]))
+        print(f"depends_on: {n_dep} edge(s) checked")
 
     if warnings:
         print(f"\n{len(warnings)} warning(s) in {args.registry}:")
