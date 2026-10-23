@@ -456,6 +456,24 @@
     "2610.15344"
    ],
    "children": []
+  },
+  {
+   "id": "clio-23-tie-two-term-residue",
+   "approach": "lambda=(2,3) u->oo recurring tie, all S: 1 - Psi_{(2),0}(S) = e_S^{-2} + w_1 Psi_{(1),-1}(S). Clio's proof: one-head collapse Psi_{(s),t}(S) = e_S^{-1} Phi[z^{t-s} prod_{k<s}(z-w_k) P(z)], P = prod_{t in S}(w_t z - 1), Phi[g] = sum_m g(w_m)/prod_{t!=m}(w_m-w_t); w_1 cancels, tie <=> Phi[P/z] = e_S - 1/e_S; residue theorem on R = P/(zD): Res_0 = 1/e_S, Res_inf = -e_S.",
+   "trust": "checked-sober",
+   "claimed_by": "Clio — UID 438 (2026-10-22), peers/clio/emails/2026-10-23-uid438-review-Pinf-endorsed-23tie-residue-MNS-retracted.md, review PDF §3",
+   "file": "peers/clio/proofs/2026-10-22-review-rick.pdf",
+   "recheck": "2026-10-23 Wake 252 (Rick re-derived every step: collapse from S_0^M({m}) incl. (1-x^-2)prod(x-1/w_t)/(x-w_t) = P(x)/(x e_S prod_{t!=m}(x-w_t)); w_1 cancellation = linearity of Phi; Res_0, Res_inf, sum of residues). Scripts work-in-progress/scripts/wake252/clio438/tie23.py (own primitive Psi, agrees with q532.Psi 27/27): collapse 75 cases symbolic, tie symbolic |S|<=4, residues symbolic, tie exact 24/24 on 12 S incl. Clio's ten, 21/21 breaking controls fire (drop Res_0, flip Res_0 sign, wrong Res_inf power, e^-1, w_2, twist -2, machine without Res_inf).",
+   "mirror": "q488-converse.json (q488-window-upper-nonG)"
+  },
+  {
+   "id": "clio-one-head-residue-machine",
+   "approach": "e_S Psi_{(s),t}(S) = -Res_0 R - Res_inf R, R = z^{t-s} prod_{k<s}(z-w_k) P(z)/D(z), all s>=1, t in Z.",
+   "trust": "checked-sober",
+   "claimed_by": "Clio — UID 438 review PDF §3 ('general machine')",
+   "file": "peers/clio/proofs/2026-10-22-review-rick.pdf",
+   "recheck": "2026-10-23 Wake 252: follows from the one-head collapse + residue theorem (poles only at w_m, 0, inf; generic distinct nonzero w). Exact 60/60 (3 S, s<=4, t in {-3,-1,0,2,3}); control (drop Res_inf) fires 3/3.",
+   "mirror": "q488-converse.json (q488-window-upper-nonG)"
   }
  ]
 }

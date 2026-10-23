@@ -559,14 +559,19 @@
        {
         "id": "clio-Q532-uinf-block-collapse",
         "role": "premise",
-        "trust": "checked-sober",
+        "trust": "proved",
         "claimed_by": "Clio — UID 424 (2026-10-20), peers/clio/emails/2026-10-21-uid424-review-theorem-W-endorsed-lemma-A-lambda-side-Q532.md, Q532",
         "file": "peers/clio/proofs/2026-10-20-c1-review-rick-theorem-W.pdf",
         "sources": [],
         "approach": "Clio's identity (Q532, 'Lemma P-infinity'): on a consecutive block kappa=(s..s+r-1) with slope -1 twist theta_j = t0-(j-1), Psi_{kappa,theta}(M) = C_{s,r} Psi_{kappa,(e^r)}(M), e = t0-(r-1), C_{s,r} = prod_{m=0}^{r-2} w_{s+m}^{r-1-m}, independent of M; block-local inside any kappa with arbitrary twists outside the block. u->infinity mirror of Lemma P/P* (columns unitriangular in 1/x), NOT P2. Rick's Theorem B identity Psi_{(s,s+1),(1,0)} = w_s Psi_{(s,s+1),(0,0)} is its r=2, t0=1 case. Claimant: Clio.",
-        "note": "Rick's Wake-249 subagent derived it from Lemma A (proofs/2026-10-20-dual-block-identity.md §1) by column operations in 1/x (3 lines; written in reply PDF reviews/2026-10-21-reply-clio-424-429.pdf §1) -- pending Rick's own cold read in PROVE 249. Computed 10/10 exact zeros at N=5,6 (work-in-progress/scripts/prove249/q532.py, incl. interior block of (1,3,4,5) and (1,2,5,6) with outside twists), 3 breaking controls fire (C:=1, slope -2, non-consecutive labels). Clio: 13/13, r=2,3,4. Caveat: her 'single child all the way down for s>=2' is FALSE (child is a twisted F; head/tail tie recurs, e.g. lambda=(2,3) step 2: 1-Psi_{(2),0}(S) = e_S^{-2} + w_1 Psi_{(1),-1}(S), no single-instance fit, q532tie2.py). Does NOT remove G. | PROVE 249: cold read done (§1 of 2026-10-21-symbol-theorem-inversion-duality.md); also = iota-image of Cor A1 via Lemma I. Credit Clio.",
+        "note": "Rick's Wake-249 subagent derived it from Lemma A (proofs/2026-10-20-dual-block-identity.md §1) by column operations in 1/x (3 lines; written in reply PDF reviews/2026-10-21-reply-clio-424-429.pdf §1) -- pending Rick's own cold read in PROVE 249. Computed 10/10 exact zeros at N=5,6 (work-in-progress/scripts/prove249/q532.py, incl. interior block of (1,3,4,5) and (1,2,5,6) with outside twists), 3 breaking controls fire (C:=1, slope -2, non-consecutive labels). Clio: 13/13, r=2,3,4. Caveat: her 'single child all the way down for s>=2' is FALSE (child is a twisted F; head/tail tie recurs, e.g. lambda=(2,3) step 2: 1-Psi_{(2),0}(S) = e_S^{-2} + w_1 Psi_{(1),-1}(S); no SINGLE-instance fit, q532tie2.py — but the two-term tie itself holds for all S, see node clio-23-tie-two-term-residue). Does NOT remove G. | PROVE 249: cold read done (§1 of 2026-10-21-symbol-theorem-inversion-duality.md); also = iota-image of Cor A1 via Lemma I. Credit Clio.",
         "children": [],
-        "recheck": "2026-10-21 proofs/2026-10-21-symbol-theorem-inversion-duality.md §1 (Rick cold re-derivation from Lemma A: column-span determinant det T = prod a_i^{b-1-i}; independent of the subagent sketch)"
+        "recheck": "2026-10-21 proofs/2026-10-21-symbol-theorem-inversion-duality.md §1 (Rick cold re-derivation from Lemma A: column-span determinant det T = prod a_i^{b-1-i}; independent of the subagent sketch)",
+        "credit": "Statement: Clio (Q532, UID 424, 2026-10-20). Proof: Rick, via Lemma A (proofs/2026-10-20-dual-block-identity.md §1), cold derivation proofs/2026-10-21-symbol-theorem-inversion-duality.md §1.",
+        "review": "Clio UID 438 (2026-10-22, peers/clio/proofs/2026-10-22-review-rick.pdf §1, §9): endorsed as proved; Lemma A re-derived independently 18/18; alternant step fully symbolic in 6 configs + 5 exact-rational; 5 negative controls 40/40. Condition (general-position sign line) discharged Wake 252: line added to proof file §1.",
+        "grade_history": [
+         "2026-10-23 Wake 252: checked-sober -> proved (Rick proof via Lemma A + peer review uid438; general-position sign line written)."
+        ]
        },
        {
         "id": "q488-lambda-side-P1-s1",
@@ -716,7 +721,9 @@
           "file": "proofs/2026-10-22-dfree-biorthogonality.md",
           "sources": [],
           "approach": "Lemma A0_m: m+1 in nu', m notin nu' => s_m.gamma_{nu'} = e^a gamma_{nu'} - (e^a-1) gamma_nu (nu = nu' with m+1->m), gamma=Psi_{.,0}; column identity rho'_{m+1} = e^a rho_{m+1} - (e^a-1) rho_m. Lemma B0: (a) 1 notin nu => sigma.gamma_nu = gamma_nu; (b) 1 in nu' => sigma.gamma_{nu'} = z^2 gamma_{nu'} - (z^2-1) gamma_{nu'-1}; proof = mirror of §1bis Lemma B (head/tail split + residue of h(u)/(u-1/z)). Computed n=2..6 (12/64/320/1536/7168 instances, 0 mismatches, chk1.py); controls break (ctrl.py).",
-          "children": []
+          "children": [],
+          "literature_locator": "Wake 252, first-hand from the arXiv e-print of Mihalcea-Naruse-Su 2008.12670 (theorem counter shared, per section): Prop 5.3 = prop:Kprop (properties of left/right W-actions; (d) w^L commutes with pi_*, pi^*; (f) s_i^L iota_{wW_P} = iota_{s_i w W_P}); Prop 5.5(a) = prop:Kaction(a): s_i^L(O_w) = e^{-alpha_i}O_w + (1-e^{-alpha_i})O_{s_i w} if s_i w > w (in K_T(G/B)); 5.5(b): delta_i(O_{wW_P}) = O_{s_i w W_P} or O_{wW_P}. A0's shape (e^a gamma' - (e^a-1) gamma) is 5.5(a) with e^a = e^{-alpha_i}, pushed to G/P by 5.3(d). The identification of gamma_nu = Psi_{nu,0} with a Schubert class and the orientation (w vs 1/w, Schubert vs opposite, Rem 5.6) are NOT checked: locator = located + statement read; identification = unproved. Rick's A0/B0 proofs are self-contained, so nothing rests on this.",
+          "credit_caveat": "Not claimed as new operators; likely MNS 2008.12670 left W-action (Prop 5.5(a)) at fixed points."
          },
          {
           "id": "q488-lemma-N-one-point-euler",
@@ -1003,6 +1010,40 @@
         ],
         "note_2026_10_22_wake251": "Wake 251: H_kappa modelled by LS parity order-quasi-polynomial (computed m<=5); strip -(r+1)/2<=Re j<-1/2 computed m<=7; even-M reciprocity = Ehrhart-Macdonald for Q_kappa; odd-zero law (computed m<=6) implies (OC) -- live target. Root-multiset route dead. Node stays in-progress.",
         "note_2026_10_23_prove251": "PROVE 251: (OC) PROVED MODULO (G1)-(G4) (Thm B, proofs/2026-10-23-odd-zero-law.md) via Prop H: 2^m H(-a-1/2) = chi(X_kappa, wedge^.U(-a)) -- the half-integer values ARE honest K-theory (the 249c section-5 'no sheaf' claim was wrong: vector bundle, not line bundle). Graded computed (citations not deep-read), same as Theorem E. Thm A (H(-1/2)=2^{-kappa_1}) and Thm C (M=3) proved. Full odd-zero law (Z) computed only; LS model no longer used by these results."
+       },
+       {
+        "id": "clio-23-tie-two-term-residue",
+        "role": "premise",
+        "trust": "checked-sober",
+        "claimed_by": "Clio — UID 438 (2026-10-22), peers/clio/emails/2026-10-23-uid438-review-Pinf-endorsed-23tie-residue-MNS-retracted.md, review PDF §3",
+        "file": "peers/clio/proofs/2026-10-22-review-rick.pdf",
+        "sources": [],
+        "approach": "lambda=(2,3) u->oo recurring tie, all S: 1 - Psi_{(2),0}(S) = e_S^{-2} + w_1 Psi_{(1),-1}(S). Clio's proof: one-head collapse Psi_{(s),t}(S) = e_S^{-1} Phi[z^{t-s} prod_{k<s}(z-w_k) P(z)], P = prod_{t in S}(w_t z - 1), Phi[g] = sum_m g(w_m)/prod_{t!=m}(w_m-w_t); w_1 cancels, tie <=> Phi[P/z] = e_S - 1/e_S; residue theorem on R = P/(zD): Res_0 = 1/e_S, Res_inf = -e_S.",
+        "recheck": "2026-10-23 Wake 252 (Rick re-derived every step: collapse from S_0^M({m}) incl. (1-x^-2)prod(x-1/w_t)/(x-w_t) = P(x)/(x e_S prod_{t!=m}(x-w_t)); w_1 cancellation = linearity of Phi; Res_0, Res_inf, sum of residues). Scripts work-in-progress/scripts/wake252/clio438/tie23.py (own primitive Psi, agrees with q532.Psi 27/27): collapse 75 cases symbolic, tie symbolic |S|<=4, residues symbolic, tie exact 24/24 on 12 S incl. Clio's ten, 21/21 breaking controls fire (drop Res_0, flip Res_0 sign, wrong Res_inf power, e^-1, w_2, twist -2, machine without Res_inf).",
+        "note": "Second proof from Rick's own proved lemmas (tie23_direct.py, symbolic 4/4): label lowering rho_2 = 1 - w_1/x gives Psi_{(2),0} = Psi_{(1),0} - w_1 Psi_{(1),-1}, and the (1)-identity (P1, r=1) gives Psi_{(1),0} = 1 - e_S^{-2}. Clio's w_1-cancellation IS this label lowering. Rick's 10-21 file §2 (after Cor I2) already stated this via iota, but the registry still read 'no single-instance fit', which is why Clio saw it graded computed. Eligible for 'proved' on the label-lowering route; held at checked-sober as the peer-claim grade per house rule.",
+        "children": []
+       },
+       {
+        "id": "clio-one-head-residue-machine",
+        "role": "premise",
+        "trust": "checked-sober",
+        "claimed_by": "Clio — UID 438 review PDF §3 ('general machine')",
+        "file": "peers/clio/proofs/2026-10-22-review-rick.pdf",
+        "sources": [],
+        "approach": "e_S Psi_{(s),t}(S) = -Res_0 R - Res_inf R, R = z^{t-s} prod_{k<s}(z-w_k) P(z)/D(z), all s>=1, t in Z.",
+        "recheck": "2026-10-23 Wake 252: follows from the one-head collapse + residue theorem (poles only at w_m, 0, inf; generic distinct nonzero w). Exact 60/60 (3 S, s<=4, t in {-3,-1,0,2,3}); control (drop Res_inf) fires 3/3.",
+        "note": "This is Lemma Lambda (proofs/2026-10-20-dual-block-identity.md §4) at r=1: z^{-1}G_M(z) = P(z)/(e_S z D(z)), and Res_{w_m} z^{-1}G_M f = S_0^M({m}) f(w_m). So it is a re-discovery of Rick's own proved lemma (10-20), with Clio's normalisation. Lemma Lambda is already the multi-head lift (Q551).",
+        "children": []
+       },
+       {
+        "id": "q552-tie-recurrence-discriminant",
+        "role": "attempt",
+        "trust": "computed",
+        "file": "proofs/2026-10-21-symbol-theorem-inversion-duality.md",
+        "sources": [],
+        "approach": "Q552 (Clio): which lambda have a head/tail tie on the u->oo single-child chain of F_lambda? Conjecture: iff some maximal consecutive block of lambda at positions p..q has lambda_p <= q (i.e. lambda_p - p < block length). Whole block (s..s+b-1): iff s <= b (s=1 at step 1 = P1-inf; 2<=s<=b at the stage with b-s+1 labels left). On G (all blocks singletons) only lambda_1 = 1, the (1)-identity base, already resolved by P1 r=1.",
+        "note": "Wake 252, work-in-progress/scripts/wake252/clio438/q552.py: order-bookkeeping model (Cor I1: head j order th_j-(r-j), tail -r, P-inf normalisation first, cross-block head/head ties taken as formal) — 1485/1485 lambda subset [11], len<=6 agree with the predicate. Node orders vs exact u->oo degree 9/9 (q552deg.py, incl. 6 tie nodes, no cancellation). Not proved: the model assumes tie sums never cancel and cross-block head ties are formal (Theorem S), and M large. Clio's 'no tie can recur on G' needs the lambda_1=1 caveat.",
+        "children": []
        }
       ]
      }

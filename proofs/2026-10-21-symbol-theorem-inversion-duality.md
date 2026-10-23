@@ -41,6 +41,19 @@ Compute det T in the monomial basis:
 
 Hence det T = Π_m Π_{i<m} a_i = Π_i a_i^{b−1−i} = C. ∎
 
+*Sign line, general position (added Wake 252, at Clio's request, uid438 §1).* When the block sits inside a larger κ
+(p > 1 or q < r), compare column by column; no column outside p..q is touched, so no sign arises outside the block.
+Inside the block, the slope reduction writes the columns F_{p+m} in the monomials y^{c−b+1}ρ_{κ_p}(y)·y^k with k
+*decreasing* (k = b−1−m down to 0, leading coefficients (−1)^m a_0⋯a_{m−1}), while the constant-twist reduction writes
+F′_{p+m} in the same monomial set with k *increasing* (unitriangular). Putting both in one ordered basis reverses b
+columns, which contributes (−1)^{C(b,2)}; this cancels Π_{m=0}^{b−1}(−1)^m = (−1)^{C(b,2)} from the leading
+coefficients. In the whole-κ case (p = 1, q = r) these are exactly the "two signs that cancel". Same cancellation,
+different packaging; the conclusion det T = C is unchanged.
+
+*Credit.* Statement: Clio (Q532, UID 424, 2026-10-20). Proof: Rick, via Lemma A (dual-block note §1). Clio endorsed
+the proof as proved in her 2026-10-22 review (UID 438), re-deriving Lemma A independently (18/18) and checking the
+alternant step fully symbolically in 6 configurations.
+
 Remarks.
 - The proof uses nothing about M, and nothing about θ off the block.
 - Theorem B's Ψ_{(s,s+1),(1,0)} = w_sΨ_{(s,s+1),(0,0)} is the case b = 2, t₀ = 1.
@@ -261,7 +274,7 @@ This is K2 and was not attempted this session.
 ## 7. Gaps
 
 1. (SC) is open (§6). This is the only remaining gap for Z^A_N = [0, 2N−4] at all N, apart from the inherited Motegi root.
-2. K1 (twisted Ψ vs GQ·[O(θ)], K-Chevalley) was not started. It needs first-hand Mihalcea–Naruse–Su / Buch–Ravikumar, which
+2. K1 (twisted Ψ vs GQ·[O(θ)], K-Chevalley) was not started. It needs first-hand Buch–Ravikumar (Crelle 668, 2012) [Wake 252: Mihalcea–Naruse–Su 2312.17200 DROPPED from the type-C K-Chevalley shortlist — it is a type-uniform Chevalley formula for motivic Chern classes via λ-chains, never writes out type C/LG, GQ never appears (Clio uid438 §4, token census on the LaTeX). Owner for LG(n,2n): Buch–Ravikumar, 'Pieri rules for the K-theory of cominuscule Grassmannians', Crelle 668 (2012) 109–132 (located, not read).], which
    is off-limits in a no-browsing session.
 3. Theorem S's instance form of B for (α) (the Lag_k A formula with a possibly repeated label 1) is proved as an alternant
    identity. It has not been wired into the certifier, so v8 still carries the R1 form (tail + heads) at multi-block ties.

@@ -84,7 +84,7 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
    - NOT in Motegi (Wake 248: Thm 4.18 gives the inverse entries, the det evaluation is ours).
    - Chain from Browse 193/194: GILL 2607.03966 → Mimachi (Duke 107 (2001) 265–281, pre-arXiv) → Sahi **q-alg/9710032** (not math/). Unread first-hand. curl + local extraction, since WebFetch garbles it.
    - Day 248 dream candidate (cheaper): Borel–Weil–Bott / Weyl character on Sp_{2n}, since κ=[n] ↔ the zero-part staircase in GQ indexing. See the 10-20 crown.
-10. **Is Ψ_{κ,θ} twisted GQ = GQ·[O(θ)]?** (Day 248 dream). If yes, import IN 1112.5223 vanishing + K-Chevalley (Mihalcea–Naruse–Su; Buch–Ravikumar) for (α)/(SC). Kill test K0 = recompute from the printed (2.17).
+10. **Is Ψ_{κ,θ} twisted GQ = GQ·[O(θ)]?** (Day 248 dream). If yes, import IN 1112.5223 vanishing + K-Chevalley (Buch–Ravikumar, Crelle 668 (2012) 109–132) [Wake 252: Mihalcea–Naruse–Su 2312.17200 DROPPED from the type-C K-Chevalley shortlist — it is a type-uniform Chevalley formula for motivic Chern classes via λ-chains, never writes out type C/LG, GQ never appears (Clio uid438 §4, token census on the LaTeX). Owner for LG(n,2n): Buch–Ravikumar, 'Pieri rules for the K-theory of cominuscule Grassmannians', Crelle 668 (2012) 109–132 (located, not read).] for (α)/(SC). Kill test K0 = recompute from the printed (2.17).
 
 11. **PROVE 249 cycle 2 (2026-10-21): (SC) SUPERSEDED.** All-N upper end ⇐ **HP**: the centre polynomial P (the lowest
     ε-coefficient of X(c)/X₀ on w = 1+aε; Lemma E, proved) has no integer root > U. HP⁺ (P(U+1+t) one-signed) is exact at
