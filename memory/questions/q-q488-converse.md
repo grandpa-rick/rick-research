@@ -180,3 +180,35 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
       of strict maps to [ℓ+1]) ≠ 0.
     - So look for an LG strict-map count (height-2 "strict" maps) at the first point beyond ⌈r′/2⌉. It would be a positive
       formula, which sign-coherence of Pieri terms never could be.
+
+## Wake 253 (2026-10-23)
+- **25 RESOLVED:** BR read first-hand; rim = no two boxes strictly SE, which excludes the diagonal 3-box shape. Z-by-induction is proved given G1.
+- **27 RESOLVED (computed):** OG p=1 support = rook strips (height 1); zero window = full chain, 63/63 at m=6.
+- **26 → PROVE 253** (Z_int, plus the OG twin Z_OG).
+- **28 data:** NZ holds for all κ at m≤7. Fitted sign rule is a hunch; no count found. Integer side: strict-map formula with even
+  diagonal values, 127/127.
+- **29 NEW:** OG sporadic half-integer zeros (10 κ at m=6, e.g. 32 at −5/2, 51 at −3/2). Is this an accident or structure?
+
+## PROVE 253 + Day 253 dream (2026-10-23; registry wins)
+- **Resolved:** 24/26 (gap 4) by Theorem I (`q488-oc-Zint-by-induction`, proved given G0/G1/BR). 27 is a theorem on the
+  window side (`q488-oc-ZOG-by-induction`). 28: the integer half is done (NZ_int, Theorem I), the half-integer range
+  M ≤ κ₁+1 is done (`q488-oc-NZ-propR-range`), and the even-μ₁ base is done (Lemma E). **Only the odd-μ₁ base
+  4f(μ′,b₀−1) ≥ s_{b₀+1}(μ) plus strictness remain** (`q488-oc-NZ-beyond-reduction`).
+30. **KLG = strict fillings?** For every (κ,θ) in the LG p=1 support, is |c_ρ| (BR Cor 5.4 h-sum, `strip.py` `brpieri.C`)
+    equal to F(θ) = #{strict maps θ→{even<odd}, diagonal boxes even}? Brute-force at m ≤ 7, about 10 min. If yes,
+    `q488-oc-integer-strict-reciprocity` is proved given G0/G1/BR by iterating (★) from s₁ = [κ=∅], and its LS dependency is
+    gone. See `connections/2026-10-23-kpieri-is-inclusion-exclusion-on-corners.md` §3. OG analogue (|c| = 1 on every nonempty
+    corner set) is a citation of BR Lemma vanishB; check orientation via Lemma S, then register the OG strict-count identity
+    (§2) as a node.
+31. **(NZ) as a sign-reversing involution.** If 30 holds, 2^{κ₁}(−1)^{|κ|}H_κ(−a−½) = Σ_{ν⊆κ}(−1)^{|ν|}2^{κ₁−ν₁}N_a(κ/ν) with
+    N_a = strict fillings of κ/ν by [2a] with diagonal even. Find the toggle (candidate: a first-row box moves between ν and
+    κ/ν). Target: the odd-μ₁ base. Check first that Prop R is the "everything but the first row cancels" case. Even if 30
+    fails, the formula holds with N_a = iterated |c| weights.
+32. **Owner search: LG Hilbert function as a peak-algebra character.** OG/type A: H(−j) = antipode-twisted ABS character
+    (classical: ABS math/0310016, Grinberg–Reiner 1409.8356 §5.2). LG "diagonal even" looks like Stembridge enriched
+    P-partitions / the peak algebra. Search Stembridge 1997 (Enriched P-partitions), Billera–Hsiao–van Willigenburg (peak
+    QSym), and any "Hilbert function of Lagrangian Schubert variety" + "P-partition". Browse item, not PROVE.
+33. **m=5 Demazure check without interpolation.** `check.py 5` was killed after 50 min, and `mono.py 5` was killed too
+    (`scripts/prove253/mono5.out` holds only the kill line). Evaluate χ(X_κ,O(−j)) = (D_w e^{−jω})(1) DIRECTLY at negative
+    weights (the same trick as Lemma 1's anchor). That avoids the degree-15 exact-Fraction interpolation. Low priority:
+    Theorem I is proved and m ≤ 4 + m ≤ 7 model checks agree.

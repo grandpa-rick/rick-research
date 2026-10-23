@@ -157,3 +157,17 @@ The cleanest known explicit primitive idempotent construction: Norton 1979 / Den
   which gives Stanley reciprocity (crown hunch `connections/2026-10-23-zero-window-rate-is-k-pieri-height.md`).
 - Seed tie: the K-deformation of Pieri adds exactly one antichain layer. "What survives at the degeneration" (Seed Q4) can
   be measured as poset height.
+- **Wake 253 update:** BR read first-hand, so `q488-oc-Z-by-induction` is **proved** given G1.
+
+## Day 253 (2026-10-23): Theorem I, and the K-Pieri sign is inclusion–exclusion
+- **Theorem I** (PROVE 253, `proofs/2026-10-24-integer-window-and-OG-twin.md`; `q488-oc-Zint-by-induction`,
+  `q488-oc-ZOG-by-induction`, both proved given G0/G1/BR). The integer zero set is exactly {−1..−W}, with sign (−1)^{|κ|}
+  beyond it and monotone. W = ⌈r/2⌉ on LG, W = r on OG. The mechanism: the anchor H(−1) = 0 makes (★) monotone. Crown E is
+  now a theorem on both spaces.
+- Half-integer (NZ): proved for M ≤ κ₁+1 (`q488-oc-NZ-propR-range`) and for the even-μ₁ base (Lemma E). The odd-μ₁ base is
+  open.
+- **Dream crown F** (`connections/2026-10-23-kpieri-is-inclusion-exclusion-on-corners.md`):
+  - On a minuscule Schubert variety, K-Pieri for O¹ is Möbius inversion on the Boolean lattice of corners.
+  - At negative j it becomes the strict-fiber recursion, so H^OG(−j) = ±Ω̄(P_κ, j−1). That is a near-proof with no SMT.
+  - On LG the same holds iff the BR coefficient = the number of strict even/odd fillings (Q30).
+  - Seed tie (Path 1): Serre duality ↔ the QSym antipode (ABS). The LG diagonal parity ↔ the peak algebra (hunch, Q32).

@@ -1223,7 +1223,8 @@
           "script": "work-in-progress/scripts/wake253/og.py, negctl.py (out_og_zeros_m2..6.txt)",
           "wip_commit": "65c33a1",
           "children": [],
-          "note_2026_10_23_prove253": "Superseded at proved level by q488-oc-ZOG-by-induction (zero set + nonvanishing)."
+          "note_2026_10_23_prove253": "Superseded at proved level by q488-oc-ZOG-by-induction (zero set + nonvanishing).",
+          "note_2026_10_23_dream253": "Dream 253: claim (c) (OG integer zero set = full chain) is now PROVED as q488-oc-ZOG-by-induction (given G0,G1,BR). Dream crown F (memory/connections/2026-10-23-kpieri-is-inclusion-exclusion-on-corners.md sec.2) gives a paper near-proof of H^OG(-j)=(-1)^|kappa| #strict P_kappa->[j-1] from (*) + rook strips = nonempty corner sets; not yet registered (orientation check via Lemma S pending). Grade unchanged."
          },
          {
           "id": "q488-oc-integer-strict-reciprocity",
@@ -1239,7 +1240,8 @@
           "script": "work-in-progress/scripts/wake253/nz.py (out_nz_m3..7.txt)",
           "wip_commit": "65c33a1",
           "children": [],
-          "note_2026_10_23_prove253": "Zero set + sign now PROVED LS-free by q488-oc-Zint-by-induction; the strict-map COUNT formula itself remains computed (rests on LS-parity model)."
+          "note_2026_10_23_prove253": "Zero set + sign now PROVED LS-free by q488-oc-Zint-by-induction; the strict-map COUNT formula itself remains computed (rests on LS-parity model).",
+          "note_2026_10_23_dream253": "Dream 253: the zero-set half is now PROVED (q488-oc-Zint-by-induction, LS-free). The strict-count half stays computed. It would become proved given G0/G1/BR iff |c_rho| (BR Cor 5.4) = #strict {even<odd} fillings of theta with diagonal even for every support pair (Q30; crown F sec.3). Grade unchanged."
          },
          {
           "id": "q488-oc-ZOG-by-induction",

@@ -1,109 +1,55 @@
 # Summary: Rick
 
-## PROVE 253 (2026-10-23): integer window EXACT on LG and OG, by monotone hyperplane induction. Read this first.
-- **Theorem I (LG), proved given (G0) Chevalley divisor + (G1) + (BR, first-hand):** s_j := (−1)^{|κ|}H_κ(−j) satisfies
-  0 = s_1 = ⋯ = s_W < s_{W+1} ≤ s_{W+2} ≤ ⋯, where W = ⌈r/2⌉ and r is the longest chain of the FULL diagram,
-  r = max_i(κ_i+2i−2).
-  - This gives (Z_int), which discharges gap 4 of the odd-zero-law file, AND (NZ_int) with sign (−1)^{|κ|}. It is LS-model-free.
-  - **Theorem I_OG:** the same statement with W = r. Crown E (window rate = Pieri height) is now a THEOREM on both LG and OG.
-  - File: `proofs/2026-10-24-integer-window-and-OG-twin.md`.
-- **Mechanism.** (★) s_{j+1} = s_j + Σ|c_ρ|s_j(ρ), which follows from O^1 = 1−[L^{−1}] and BR's sign (−1)^{|θ|−1}.
-  - Anchor: H(−1) = 0, since a minimal coset rep ends in s_m and D_m e^{−ω_m} = 0. No Kempf/Serre needed.
-  - Vanishing: Lemma Ch on the full diagram (drop ≤ 2 on LG, ≤ 1 on OG, since rook strips in skew shapes are antichains).
-  - Strictness, Lemma A: strip the top 1 (r odd) or 2 (r even) antidiagonals. The KLG tableau is outer 1′, inner 1; when r
-    is even the outer antidiagonal has odd sum, so no diagonal box gets a prime. Negative control: the r-odd 2-strip dies
-    in 42/67 cases, all predicted.
-- **Why half-integers failed and integers don't:** the anchor at integers is 0, so no increment of (★) can have the wrong
-  sign. (NZ) at half-integers stays open.
-- **Stretch §12:** Corollary NZ_R (proved): half-integer NZ for M ≤ κ₁+1, sign (−1)^{|κ|−κ₁}, via Prop R + Thm I(κ′).
-  The rest (M ≥ κ₁+2, sign (−1)^{|κ|}, computed m≤4) is reduced to a base inequality: even base ⇐ identity (E)
-  s_{μ₁/2+1}(μ) = s_{μ₁/2}(μ′) (computed; hunch = lowest residue at t₁=∞); the odd base is open. Nodes NZ-propR-range, NZ-beyond-reduction.
-- Registry nodes: `q488-oc-anchor-H-minus-1`, `q488-oc-strip-lemmaA`, `q488-oc-Zint-by-induction`, `q488-oc-ZOG-by-induction`
-  (all proved, conditional on G0/G1/BR).
+## Day 253 dream (2026-10-23): CURRENT STATE, read this first (registry wins; no grade changes this dream)
+- **Q488 / (OC) arc, where it stands** (`proofs/registry/q488-converse.json`):
+  - **Integer side CLOSED.** Theorem I: s_j = (−1)^{|κ|}H_κ(−j) is 0 for j ≤ W, then >0 and nondecreasing. W = ⌈r/2⌉ (LG),
+    W = r (OG), r = max_i(κ_i+2i−2). Nodes `q488-oc-Zint-by-induction`, `q488-oc-ZOG-by-induction`, `q488-oc-anchor-H-minus-1`,
+    `q488-oc-strip-lemmaA`: **proved given (G0) Chevalley divisor, (G1) Demazure, (BR) 1005.2605 first-hand.** BR leave the
+    KLG corollary's proof to the reader; it is corroborated by the BR h-sum formula for m ≤ 7.
+  - **Half-integer (Z) CLOSED** (Theorem Z, `q488-oc-Z-by-induction`, proved given G1 + BR).
+  - **Half-integer (NZ):** proved for M ≤ κ₁+1 (`q488-oc-NZ-propR-range`). For M ≥ κ₁+2 it reduces to a base inequality
+    (`q488-oc-NZ-beyond-reduction`, computed). The even-μ₁ base is proved (Lemma E, residue at t₁=∞); **the odd-μ₁ base
+    4f(μ′,b₀−1) ≥ s_{b₀+1}(μ) and strictness are the ONLY open pieces.** (OC) itself = Thm B (`q488-oc-thmB-OC`), computed
+    / proved mod G1–G4. The odd-zero law node stays computed.
+  - Crown E (window rate = Pieri height) is a THEOREM now.
+- **Dream crown F (new):** `connections/2026-10-23-kpieri-is-inclusion-exclusion-on-corners.md`.
+  - Minuscule K-Pieri for O¹ = Möbius inversion on the Boolean lattice of corners. Rook strips = nonempty sets of maximal
+    boxes, and the sign (−1)^{|θ|−1} is inclusion–exclusion.
+  - At negative j, (★) is the strict-fiber recursion. With the anchor s₁ = [κ=∅] this gives **H^OG(−j) = (−1)^{|κ|}Ω̄(P_κ,j−1)
+    with no SMT.** That is a paper near-proof; check the orientation via Lemma S, then register it.
+  - LG: the computed strict-count formula (`q488-oc-integer-strict-reciprocity`, LS-dependent) is proved iff BR's |c_ρ| =
+    #strict {even<odd} fillings of θ with the diagonal even. That is Q30, a 10-min compute.
+  - If Q30 holds, iterating (★) from H(−½) = 2^{−κ₁} turns the open (NZ) into a **sign-reversing involution** (Q31).
+  - Seed Path 1: Serre duality = the QSym antipode (ABS). LG diagonal parity ≈ the peak algebra (hunch, owner search Q32).
+- **Loose ends:** the m=5 Demazure checks were KILLED (`mono5.out` holds only the kill line). The proof file is corrected,
+  and Q33 records the interpolation-free method.
+- **Outbound owed (Wake 254):** send Clio cc Robin the PROVE 253 note `for-collaborator/2026-10-23-prove253-integer-window-exact.md`
+  (with the §12 and Dream 253 addenda) plus the GitHub URL of the proof file. Ask Q30 as a question. The FPSAC 2027 deadline
+  is 2026-11-15 (reconfirmed Browse 203; submissions open). Robin has the frozen draft (7df658b), and it's his call. 23 days left.
+- **Browse 203** (`reading/2026-10-23-browse203.md`): Aliniaeifard–van Willigenburg 2610.21289 rooted Hopf algebras (dual of
+  ABS characters; first-hand read owed; now adjacent to crown F §5); the dual-canonical-basis cluster (Shoji–Zhou 2605.14247,
+  R. Chen 2605.00013 new); Williamson's 2013 Hodge–Riemann-for-KLR problem. The dedup fix with the literal ID list worked:
+  0 false-new.
 
-## Wake 253 (2026-10-23): CURRENT STATE, read this first (supersedes the Day 252 dream stanza's "only gap")
-- **BR 1005.2605 read FIRST-HAND (v1 LaTeX).** §4 defines a rim as "no box of θ strictly S and strictly E of another". §5:
-  Thm 5.5 says non-rims give 0; Cor 5.6 gives the sign (−1)^{|θ|−p}·#KLG. At p=1 this means ≤2 boxes per row/col.
-  - "No 2×2 square" would NOT suffice: the diagonal 3-box shape slips through it, and BR's rim excludes it.
-  - Registry: `support-rule-BR` → **proved**; `q488-oc-Z-by-induction` → **PROVED given G1** (rick-research 7b39a6e).
-- **Theorem Z PDF sent to Clio cc Robin** (WIP 759086a/c3bf67c), with the reply to uid445. Clio ENDORSED Theorem D′ (all 12
-  nodes, peer_reviewed annotated). Q566 is fixed: trustcheck now reads depends_on (47 edges); the attempt-child cycle
-  false positive is fixed (f29a7a3).
-- **Crown E prediction CONFIRMED (computed):** the OG p=1 support is rook strips (height 1), and the OG zero window is the
-  full chain {−1..−r}, 63/63 at m=6. Owner search: nobody owns the LG claim or the K-Pieri induction. The type-A framing is
-  owned by Bruns–Herzog 1992 a-invariant / Fong–Miyazaki 2502.09559 / Hibi; the top cell by Weyl/Manivel. Credit them.
-- **(NZ) computed m≤7:** the odd zero set is exactly {3..W}, with nothing in the middle range. Sign rule is a post-hoc hunch;
-  no count found.
-- **Integer side (computed m≤7):** zeros are exactly {−1..−⌈r/2⌉} (full chain r), and
-  H(−j) = (−1)^{|κ|}·#{strict P_κ→[2j−1], even diagonal values}, 127/127. This rests on the LS-parity model.
-- **PROVE 253 = gap 4 (Z_int) + the OG twin (Z_OG)** by the same induction, with anchor H(−1)=0 via Kempf + Serre duality.
-- **FPSAC 2027 deadline CONFIRMED 2026-11-15** (raw HTML of the Galway important_dates page). The call REQUIRES an AI
-  declaration. Robin was pinged with the frozen draft link (7df658b) and told it's his call. Nothing was submitted.
+## PROVE 253 (2026-10-23): pointer lines (full stanza in `archive/SUMMARY-2026-10-23-pre-day253-dream.md`)
+- Theorem I (LG + OG integer window exact, monotone hyperplane induction) in `proofs/2026-10-24-integer-window-and-OG-twin.md`
+  (rick-research 1f18a70 → 418932c; WIP ecace5e → e9bfeed). Mechanism: anchor 0 ⇒ (★) monotone; Lemma Ch′; Lemma A strip.
+- §12: Cor NZ_R (proved), reductions R1/R2, Lemma E (proved); odd-μ₁ base open.
 
-## Day 252 dream (2026-10-23): CURRENT STATE, read this first
-- **Q488 / (OC) state (the registry wins; no grade changes this dream):**
-  - (Z), the vanishing half of the odd-zero law, holds for ALL κ by Theorem Z, `q488-oc-Z-by-induction`. Grade:
-    **computed**, with conditional_grade proved given (G1) + the BR support inclusion (`q488-oc-support-rule-BR`, computed,
-    1005.2605 abstract-only).
-  - Lemma Ch `q488-oc-Ind-chain-drop`: proved.
-  - (NZ): (OC) = Thm B for M ≥ 2m+1 (mod G1–G4); the middle range is open. Edge sign-coherence is a dead end.
-- **The ONLY gap to "proved given G1":** deep-read Buch–Ravikumar 1005.2605 §5 (p=1), and check that "rim" excludes
-  {(r,r),(r,r+1),(r+1,r+1)}.
-  - Browse 201 was doing exactly this and died: background agent, 5th loss, zero files.
-  - Now pinned as Browse 202's first item, FOREGROUND, in `reading/feeds.md` PINNED #2. Clio was also asked.
-- **Crown E (hunch):** `connections/2026-10-23-zero-window-rate-is-k-pieri-height.md`.
-  - Lemma Ch says the K-Pieri support has height ≤ 2.
-  - Type A: Lenart rook strips are antichains (height 1), so the same induction gives Stanley order-polynomial
-    reciprocity, with window = chain length. Theorem Z is its LG shadow; the "/2" is the multiplicity-2 divisor.
-  - Prediction: OG has height 1 (Q27).
-  - Write-up: credit type A as classical, and run an owner search before any promotion.
-- **Gap 4 should fall to the same induction** (Q26): anchor H(−1)=0, chain drop ≤ 2, ⌊(r+1)/2⌋. Paper-check in PROVE 253.
-- **(NZ) idea (Q28):** look for a positive "strict-map count" at the first point past the window, not sign-coherence.
-- **Crown D is KILLED** (Wake 252). The file header is updated; the §1 spin rewrite stays true.
-- **Outbound:** Robin ping due 10-24. The PROVE 252 note to Clio (`for-collaborator/2026-10-23-prove252-Z-closed.md`) is
-  NOT yet sent, and memory is gitignored, so push the proof URL. FPSAC 2027 deadline still unverified; frozen at 7df658b.
+## Wake 253 (2026-10-23): pointer lines (full stanza in archive, same file)
+- BR 1005.2605 read first-hand (rim = no box strictly SE of another; Thm 5.5, Cor 5.6). `support-rule-BR` and
+  `Z-by-induction` → proved (rick-research 7b39a6e).
+- Theorem Z PDF sent to Clio cc Robin (WIP 759086a/c3bf67c). Clio endorsed Theorem D′ (12 nodes). trustcheck fixes (f29a7a3).
+- OG height 1 computed (`q488-oc-OG-height-one`). Owner search: the LG claim is unowned; the type-A framing is Bruns–Herzog /
+  Fong–Miyazaki 2502.09559 / Hibi; the top cell is Weyl/Manivel. FPSAC deadline confirmed 11-15; Robin pinged.
 
-
-## PROVE 252 (2026-10-23): (Z) CLOSED for all κ, given (G1) + the BR support
-- **Theorem Z** (`proofs/2026-10-24-Z-by-hyperplane-induction.md`): H_κ(−M/2) = 0 for every κ and every odd
-  M ∈ [3, 2⌈r′/2⌉+1].
-  - Proof: strong induction on |κ|. The hyperplane identity is b_κ = Σc_ρH_ρ. **Lemma Ch** (proved, pure combinatorics)
-    says a chain meets an admissible θ in ≤ 2 boxes, so r′ drops by ≤ 2. Every term then vanishes on the shrunken window,
-    and the result telescopes from the Thm C anchor.
-  - Grade: **computed, conditional-proved**. The only premises are (G1) and the BR support inclusion. BR 1005.2605 is at
-    abstract extraction, so deep-reading it is the next action. The specific worry is whether BR's "rim" excludes the
-    diagonal 3-box shape, which would contain a 3-chain.
-  - **Lemma S** (proved): the antidiagonal reflection takes codimension to dimension indexing, so the support statement is
-    convention-free.
-- **Correction to Wake 252:** "supp = rims" is FALSE as an equality; only the inclusion holds. Example: κ = (2,1), ρ = (1)
-  is an admissible θ with coefficient 0. The inclusion holds m ≤ 8.
-- Not needed by the proof: §7 gap 4 (integer window), G2–G4, and the coefficients.
-- **(f) dead:** the edge terms are not sign-coherent (κ = (3,2): −1/8, +1/4), because ρ in the Prop-R regime carry sign
-  (−1)^{|ρ′|}. (NZ) in the middle range is still open; (OC) = Thm B mod G1–G4.
-
-## Wake 252 (2026-10-23)
-- **Case B route FOUND (computed m≤7): hyperplane-section induction.**
-  - b_κ = H_κ(j)−H_κ(j−1) = χ(O_D(j)), where D = the non-reduced hyperplane divisor (mult 2 off-diagonal). The reduced
-    boundary is the wrong object.
-  - supp[O_D] = rims with ≤2 boxes per row and column (Buch–Ravikumar 1005.2605 §5, Cor 5.6, p=1; matched m=4–7).
-  - Chain drop (Ind): r′(ρ) ≥ r′(κ)−2. Each H_ρ term vanishes. Thm C anchor + telescoping gives (Z) for all κ.
-  - Registry (rick-research ca12962): Ind-chain-drop and Z-by-induction sketched; telescoping and BR support computed.
-    This is **PROVE 252**.
-- **Crown D test 1: clean negative.** No LG-half vs OG order-polynomial identity for proper κ. The staircase hit is a
-  reparametrisation, H_LG(m)(j) = 2^{−m}Ω(P_stair, 2j+2). Registry: dead-end.
-- **Clio:**
-  - The (2,3) tie is re-derived: her residue proof survives (21/21 controls break it); checked-sober.
-  - P∞ is proved (credit: statement Clio, proof Rick); the sign line was added.
-  - MNS 2312.17200 dropped. MNS 2008.12670 pinned: A0 matches Prop 5.5(a) via 5.3(d), NOT 5.5(b).
-  - Q552 conjecture: a tie occurs iff a maximal block p..q has λ_p ≤ q (1485/1485, model level).
-  - Proposed renaming Ψ → Ξ in new writing.
-  - Reply PDF: WIP 5cd4e01. Theorem D′ nodes stay provisional until her review PDF arrives (uid 442/443).
-- **PROVE 251 PDF sent** to Clio cc Robin (WIP c38653e/d150511), with the Wake 252 addenda.
-- **MacBeth uid440 review:** not ready. 3 MUST: Thm 1.2 is false (SS Cor 5.12 is about cofunctors); the Gambino–Kock
-  attribution is wrong; the §7 scope is wrong (Thm 1.1 holds in any LCCC/elementary topos). WIP 2b2d133. uid444: his
-  corrections are applied.
-- **FPSAC 2027 deadline still unverifiable.** The Galway dates page is empty; the "Nov 15" seen there is in an old HTML
-  comment. FPSAC is frozen at 7df658b anyway. Robin ping due 10-24.
+## Day 252 dream / PROVE 252 / Wake 252 (2026-10-23): pointer lines (full stanzas in `archive/SUMMARY-2026-10-23-pre-day253-dream.md`)
+- Dream 252: Crown E (`connections/2026-10-23-zero-window-rate-is-k-pieri-height.md`, now a theorem); Crown D killed;
+  feeds.md PINNED #2 (foreground agents).
+- PROVE 252: Theorem Z (`proofs/2026-10-24-Z-by-hyperplane-induction.md`); Lemma Ch, Lemma S proved; "supp = rims" FALSE
+  as an equality (κ=(2,1), ρ=(1)); edge sign-coherence dead (κ=(3,2): −1/8, +1/4).
+- Wake 252: hyperplane DIVISOR (mult 2 off-diagonal), not the reduced boundary; Crown D test negative; Clio (2,3) tie
+  checked-sober, P∞ proved (statement Clio, proof Rick); MacBeth uid440 not ready (3 MUST, WIP 2b2d133).
 
 ## Day 251 dream + PROVE 251 (2026-10-22/23): pointer lines (full stanzas in `archive/SUMMARY-2026-10-23-pre-day252-dream.md`)
 - PROVE 251: Prop H (2^m H(−a−½) = χ(∧^•U(−a))), Thm A H(−½)=2^{−κ₁}, Thm C (M=3), Thm B = (OC) mod G1–G4, Lemma L/Q,
@@ -641,6 +587,7 @@ Rick. Combinatorial Hopf algebras, quantum groups, q-Hecke. Granddaughters Clio 
 ---
 
 ## Compression log
+- 2026-10-23 Day 253 dream: PROVE 253 / Wake 253 / Day 252 dream / PROVE 252 / Wake 252 stanzas → pointer lines under a new Day 253 dream top block (69.0 KB → 64.6 KB; archive `archive/SUMMARY-2026-10-23-pre-day253-dream.md`).
 - 2026-10-16 Day 242 dream: Browse 184–186, Day 241 PROVE/dream, Day 242 PROVE, Wake 241–242 stanzas → pointer lines; new Day 242 dream top block (archive `archive/SUMMARY-2026-10-16-pre-day242-dream.md`).
 - 2026-10-09 Day 231 dream: Days 229–230 stanzas → pointer lines (archive `archive/SUMMARY-2026-10-09-pre-day231-dream.md`).
 
