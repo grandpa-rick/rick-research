@@ -15,6 +15,9 @@
     in 42/67 cases, all predicted.
 - **Why half-integers failed and integers don't:** the anchor at integers is 0, so no increment of (★) can have the wrong
   sign. (NZ) at half-integers stays open.
+- **Stretch §12:** Corollary NZ_R (proved): half-integer NZ for M ≤ κ₁+1, sign (−1)^{|κ|−κ₁}, via Prop R + Thm I(κ′).
+  The rest (M ≥ κ₁+2, sign (−1)^{|κ|}, computed m≤4) is reduced to a base inequality: even base ⇐ identity (E)
+  s_{μ₁/2+1}(μ) = s_{μ₁/2}(μ′) (computed; hunch = lowest residue at t₁=∞); the odd base is open. Nodes NZ-propR-range, NZ-beyond-reduction.
 - Registry nodes: `q488-oc-anchor-H-minus-1`, `q488-oc-strip-lemmaA`, `q488-oc-Zint-by-induction`, `q488-oc-ZOG-by-induction`
   (all proved, conditional on G0/G1/BR).
 
