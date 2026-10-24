@@ -15,6 +15,7 @@ Rick, 2026-10-24 (PROVE 254; file name is the date PROVE.md asked for). Conventi
 | Theorem Q30_OG | OG: c_ρ = (−1)^{|θ|−1} if θ is a nonempty antichain (= nonempty set of maximal boxes of P_κ), else 0 | proved given BR Lemma vanishB (I file Lemma 2) — §3.4 |
 | **Theorem SR_LG** | (−1)^{|κ|}H_κ(−j) = #{strict order-preserving P_κ → [2j−1], diagonal values even}, all j ≥ 1 | **proved given (G0), (G1), (BR)** — §4 |
 | **Theorem SR_OG** | (−1)^{|κ|}H^OG_κ(−j) = Ω̄(P_κ, j−1) = #{strict order-preserving P_κ → [j−1]}, all j ≥ 1 | **proved given (G0), (G1), (BR)** — §5 |
+| Corollary M (models, Q36) | H_κ(j) = F_κ(2j) (LS-parity model) and H^OG_κ(j) = Ω(P_κ,j+1), all j | proved given SR_LG/SR_OG + Ehrhart–Macdonald / Stanley reciprocity (cited) — §5.1 (Wake 255) |
 | Corollary (Theorem I, combinatorial proof) | zero window, sign and monotonicity of Theorem I read off from the count | proved — §6 |
 | **Theorem HZ (odd-zero law, both halves)** | H_κ(−a−½) = 0 ⟺ a ≤ ⌈r(κ′)/2⌉; sign (−1)^{\|κ\|−κ₁} for 2a ≤ κ₁, (−1)^{\|κ\|} for 2a ≥ κ₁; \|value\| ≥ 2^{−κ₁}N_{κ′}(a) | **proved given (G0), (G1), (BR) + Thm A** — §9 |
 
@@ -201,6 +202,35 @@ s_3(2,1) = s_2(2,1) + s_2(2) = 0 + 1 = 1 ✓ (s_2(2) = N_{(2)}(2) = #{2 ≤ x < 
 
 (This is Stanley reciprocity for the order polynomial H^OG_κ(j) = Ω(P_κ, j+1) — the SMT model of the I file §9 — but
 proved without SMT.)
+
+### 5.1 Corollary M (the positive-degree models follow from reciprocity; Q36, Wake 255)
+
+For N ≥ 0 let F_κ(N) := #{order-preserving (weak) g : P_κ → {0,…,N} with g even on diagonal boxes} (the Wake 251
+LS-parity model, registry `q488-oc-ls-parity-model`), and Ω(P,n) := #{order-preserving P → [n]} (Stanley's order polynomial).
+
+**Corollary M.** Assume (G0), (G1), (BR). For every strict κ with parts in [m] and every integer j:
+(a) H_κ(j) = F_κ(2j); (b) H^OG_κ(j) = Ω(P_κ, j+1).
+
+*Proof.* Both H_κ and H^OG_κ are polynomials in j (Snapper: χ(X_κ, L^j)). It suffices to show each right-hand side is a
+polynomial in j that agrees with the left at every j ≤ −1.
+(a) Let Λ ⊂ ℝ^{P_κ} be the lattice ℤ on diagonal coordinates × ½ℤ off the diagonal, and O = {y ∈ [0,1]^{P_κ} : x ≤ x′ ⇒
+y_x ≤ y_{x′}} the order polytope (vertices = indicator vectors of up-sets, in ℤ^{P_κ} ⊂ Λ). The map g ↦ y = g/2 is a
+bijection from the maps counted by F_κ(2j) onto jO ∩ Λ (diagonal g even ⇔ diagonal y ∈ ℤ). Rescaling the off-diagonal
+coordinates by 2 maps Λ onto ℤ^{P_κ} and O onto a polytope with integer vertices, so L(j) := #(jO ∩ Λ) = F_κ(2j) is an
+Ehrhart polynomial in j of degree |κ| (O is full-dimensional). (F_κ(N) is only a quasi-polynomial in N, of period 2; we use it
+on even N only, where it is a polynomial in j.) The interior of jO is {0 < y_x < j, y_x < y_{x′} for x < x′}; under
+y = g/2 its Λ-points are the strict order-preserving g : P_κ → [2j−1] with even diagonal values. Ehrhart–Macdonald
+reciprocity for the lattice Λ: L(−t) = (−1)^{|κ|}#(int(tO) ∩ Λ) = (−1)^{|κ|}N_κ(t) for t ≥ 1, and that is H_κ(−t) by SR_LG.
+(b) Stanley's reciprocity Ω(P,−n) = (−1)^{|P|}Ω̄(P,n) (n ≥ 0) at n = t−1 gives Ω(P_κ, 1−t) = (−1)^{|κ|}Ω̄(P_κ, t−1) =
+H^OG_κ(−t) for t ≥ 1 by SR_OG. ∎
+
+Inputs beyond §4–§5: Ehrhart–Macdonald and Stanley reciprocity (textbook, cited). This promotes the LS-parity model and
+the OG Ω-model (registry caveat: checked j ≤ 3 only) from data to consequences of SR; grades are Rick's call.
+**Check** (`wake255/models_from_reciprocity.py n 6 [3]`; out_models_m{4,5,6}.txt): F_κ(2j) and Ω(P_κ,j+1) are fitted as
+polynomials on j = 0..|κ| (2 extra points confirm polynomiality), evaluated at j = −1..−6 and compared with (−1)^{|κ|}× the
+strict counts. Parts ≤ 4/5/6: 96/96, 192/192, 384/384 (κ,t) pairs, both types, 0 failures; against Demazure H(−t), t ≤ 3:
+48/48 (parts ≤ 4), 96/96 (parts ≤ 5). Controls fire (parts ≤ 5): strict alphabet [2t] 116 failures, no diagonal parity
+116, F_κ(2j+1) in place of F_κ(2j) 81, OG alphabet [t] 60.
 
 ## 6. Corollary: Theorem I, combinatorially
 
