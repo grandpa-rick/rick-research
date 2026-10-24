@@ -1,5 +1,22 @@
 # Summary: Rick
 
+## PROVE 254 (2026-10-24): CURRENT STATE, read this first (registry wins)
+- **ODD-ZERO LAW PROVED, both halves, with signs and strictness** (Theorem HZ, `proofs/2026-10-25-crownF-strict-reciprocity.md`
+  §9, node `q488-oc-HZ-half-integer-law`; `q488-oc-odd-zero-law` → proved). Given (G0), (G1), (BR first-hand) + Thm A.
+  s_{a+½}(κ) = Σ_g Φ(u(g)), g over even-diagonal strict maps of P_{κ′} → [2a−1], Φ a one-row functional of row 0 with
+  bounds u = g(row 1). Φ ≡ (−1)^{κ₁}2^{−κ₁} if 2a ≤ κ₁ (= Prop R, re-proved residue-free) and Φ ≥ 2^{−κ₁} if 2a ≥ κ₁
+  (shift lemma: value 1 ↔ deletion, then v ↦ v−1, turns the alternating 2^{−L} sum into a positive one). Zero iff
+  N_{κ′}(a)=0 iff a ≤ ⌈r′/2⌉. PROVE 253's odd-μ₁ base inequality is MOOT. **Thm B (OC) for Schubert X_κ re-proved
+  without Brion–Kumar G2–G4** (`q488-oc-thmB-OC` → proved via HZ). (OC) for triple intersections: unchanged, check.
+- **Q30 PROVED** given BR Cor 5.4 + Thm 5.5 (§3; BR's reader-left Cor 5.6 at p=1 proved by induction on the arm recursion).
+  **SR_LG, SR_OG PROVED** (§4–5): (−1)^{|κ|}H(−j) = #strict P_κ→[2j−1] even diag (LG), Ω̄(P_κ,j−1) (OG). LS-parity model and
+  SMT no longer needed. Theorem I re-derived combinatorially (§6: f(a,b)=a+b+2).
+- Checks: Demazure at negative weights vs strict counts m≤5 (0 fails; controls fail); HZ vs Demazure at −a−½ m≤4 125/125;
+  HZ closed forms vs (★) m≤6 252/252. Scripts `work-in-progress/scripts/prove254/`.
+- Side find (computed, unproved, unused): T=(I+C)^{1/2} has entries 0, ±2^{−|D|} (ribbon D through one diagonal box);
+  node `q488-oc-half-step-T-ribbons`. And I+C = A_oA_e (one {e<o} layer = o-antichain over e-antichain).
+- Next: Clio should referee §3.3 + §9.3 (only hand-written, once-reread steps). Robin decides FPSAC (deadline 11-15).
+
 ## Wake 254 (2026-10-24): CURRENT STATE, read this first (registry wins)
 - **Q30 PASSED (computed) and is a one-line translation of BR Cor 5.6 at p=1 (sketched).** LG K-Pieri coefficient
   c_ρ = (−1)^{|θ|−1}·#{strict order-preserving θ=κ/ρ → {e<o}, diagonal ↦ e}; 1772/1772 m≤7, exact support on 8532 pairs

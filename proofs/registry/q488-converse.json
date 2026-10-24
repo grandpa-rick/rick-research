@@ -896,16 +896,15 @@
          {
           "id": "q488-oc-odd-zero-law",
           "role": "attempt",
-          "trust": "computed",
-          "file": null,
+          "trust": "proved",
+          "file": "proofs/2026-10-25-crownF-strict-reciprocity.md",
           "sources": [],
           "depends_on": [
-           "q488-oc-ls-parity-model",
-           "q488-oc-even-reciprocity"
+           "q488-oc-HZ-half-integer-law"
           ],
           "approach": "ODD-ZERO LAW (live target for (OC)): at odd M, H_kappa(-M/2)=0 exactly for M = 3,5,...,2*ceil(r'/2)+1, where r' = longest chain in shifted(kappa minus its largest part); single-row kappa have no odd zeros. 63/63 m<=6. Odd-zero law => (OC). (OC) also checked directly: H(-M/2) != 0 for odd M = 2m+1..2m+39, m<=6.",
           "script": "work-in-progress/scripts/wake251/reciprocity/oddzeros.py (out_oddzeros.txt)",
-          "wip_commit": "33a8b3d",
+          "wip_commit": "f17e0cf",
           "children": [
            {
             "id": "q488-oc-caseB-boundary-telescoping",
@@ -1090,13 +1089,14 @@
             "approach": "Sec. 12: sign half of NZ for M>=kappa_1+2 reduced (R1, R2 proved) to f(mu,b0)>=0 at base b0=ceil(mu_1/2), where f(mu,b)=2^{2b+1}s_{b+1/2}(mu)-s_{b+1}(mu) obeys f(b)=4f(b-1)+3s_b+sum|c|(4f(rho,b-1)+3s_b(rho)). Even mu_1 base PROVED (given G1) via Lemma E: H_kappa(-kappa_1/2-1)=H_{kappa'}(-kappa_1/2) for kappa_1 even (simple pole of Thm R integrand at t1=infty, K(infty,t)=1/t shifts c by 1/2; residue at -1 vanishes at integer c); computed m<=4. Odd mu_1 base: 4f(mu',b0-1)>=s_{b0+1}(mu) OPEN. Sign (-1)^|kappa| beyond regime computed 50/50 m<=4.",
             "gap": "Odd mu_1 base: 4f(mu',b0-1) >= s_{b0+1}(mu) unproved (double pole at infty; kernel derivative gives row-dependent shifts, no clean identity). Strictness not attempted.",
             "script": "work-in-progress/scripts/prove253/nzR.py, base.py, edge.py",
-            "wip_commit": "11d9066"
+            "wip_commit": "11d9066",
+            "note_prove254": "SUPERSEDED by q488-oc-HZ-half-integer-law: the odd-mu1 base inequality is moot (HZ proves NZ directly). Grade left computed (the reduction itself was proved, the base open)."
            },
            {
             "id": "q488-oc-Q30-KLG-strict-fillings",
             "role": "attempt",
-            "trust": "computed",
-            "file": null,
+            "trust": "proved",
+            "file": "proofs/2026-10-25-crownF-strict-reciprocity.md",
             "sources": [
              "1005.2605"
             ],
@@ -1106,15 +1106,42 @@
             "approach": "Q30 (Wake 254): for LG, the BR K-Pieri coefficient c_rho in [O_kappa].O^1 (dimension-indexed via Lemma S) satisfies c_rho = (-1)^{|theta|-1} #{strict order-preserving maps theta=kappa/rho -> {e<o}, order = P_kappa order (a<=b iff a weakly NW of b), diagonal boxes forced to e}. 1772/1772 nonzero coefficients m<=7 (4,14,45,137,404,1168 for m=2..7), and count!=0 iff c!=0 for all 8532 pairs rho strictly inside kappa (6,27,110,430,1652,6307). Sign (-1)^{|theta|-1} 1168/1168 at m=7; theta = antidiagonal reflection of BR nu/lambda 1168/1168. Variants that FAIL: marked shifted tableaux P-rule (V1, 568/1168 at m=7) and Q-rule (V2, 280/1168), diagonal forced o on theta (V3o, 999/1168; it is the correct rule only in BR's reflected indexing), diagonal free (V3*, 869/1168), 2^{comp-diagcomp} (568/1168) and 2^{comp-1} (676/1168).",
             "note": "Answers Q30 (Dream 253 crown F sec.3) at the computed level. With q488-oc-support-rule-BR (proved) and iteration of (*) this is the planned route to proving the strict-count half of q488-oc-integer-strict-reciprocity. Owner not located (Clio uid450: 'not located').",
             "script": "work-in-progress/scripts/wake254/q30/q30.py (out_q30_m2..7.txt)",
-            "wip_commit": "4b6b7f7",
-            "children": []
+            "wip_commit": "f17e0cf",
+            "children": [],
+            "trust_before_prove254": "computed",
+            "conditional_grade": "proved given BR 1005.2605 Sec.5 Cor 5.4 + Thm 5.5 (both proved in BR, read first-hand) and Lemma S (Z file). BR Cor 5.6 (reader-left) NOT used.",
+            "note_prove254": "PROVE 254: Q30 proved (file Sec.3): Lemma R (count of {e<o} maps), Lemma T (non-rim => 3-chain; rim => comparable iff same row/col), Lemma 3.1 (reflection R), Sec.3.3 = BR Cor 5.6 at p=1 proved by induction against Thm 5.5 (cases (i)-(iv), arm geometry g1-g5). Cold re-read once in-session."
+           },
+           {
+            "id": "q488-oc-HZ-half-integer-law",
+            "role": "attempt",
+            "trust": "proved",
+            "file": "proofs/2026-10-25-crownF-strict-reciprocity.md",
+            "sources": [
+             "1005.2605"
+            ],
+            "depends_on": [
+             "q488-oc-thmA-half",
+             "q488-oc-Q30-KLG-strict-fillings",
+             "q488-oc-integer-strict-reciprocity",
+             "q488-oc-anchor-H-minus-1"
+            ],
+            "approach": "Theorem HZ (file Sec.9): I+C = A_o A_e (layer operators, from Q30); (*) as polynomial identity gives s_{a+1/2}=(A_oA_e)^{a-1}A_o eps with eps=A_e s_{1/2} supported on single rows (Thm A + toggling the bottom-row corner). Row formula s_{a+1/2}(k)=N_k(a)+sum_L (-1)^{L+1}2^{-L}N_{k/(L)}(a). Fibre over rows>=1 (=P_{k'}): s=sum_g Phi(u(g)). One-row Lemma 9.5 via shift Lemma 9.4 (a_L=b_{L+1}, value 1 <-> deletion; v->v-1): Phi = E0+sum 2^{-i-1}G_{1+i}(M-1-i;u-1-i)+2^{-n} >= 2^{-n} if 2a>=k1; Phi=(-1)^{k1}2^{-k1} if 2a<=k1. Hence H(-a-1/2)=0 iff N_{k'}(a)=0 iff a<=ceil(r'/2); sign (-1)^{|k|-k1} (2a<=k1) / (-1)^{|k|} (2a>=k1). = full odd-zero law (Z)+(NZ) with strictness; Prop R re-proved residue-free; Thm B (OC) for Schubert X_kappa re-proved without G2-G4 (a>=m => large-a case, ceil(r'/2)<=m-1), 2^{k1}H in Z.",
+            "conditional_grade": "proved given (G0), (G1), (BR first-hand) + Thm A (proved given G1)",
+            "script": "work-in-progress/scripts/prove254/halfthm.py, rowform.py, rowphi*.py, half.py",
+            "verification": "halfthm.py: Demazure (type C, interpolated to -a-1/2) vs sum_g Phi, all kappa m<=4, a<=5: 125/125; Lemma 9.5 pointwise 477/477 (m<=4). rowform.py 155/155. Hypothesis (H) load-bearing: Phi<0 without it.",
+            "children": [],
+            "wip_commit": "f17e0cf"
            }
           ],
           "note_2026_10_23": "PROVE 251: M=1 (Thm A) and M=3 (Thm C) proved; (NZ) for M>=2m+1 = Thm B (mod G1-G4); middle range and (Z) for a>=2 computed (see q488-oc-Z-perk, q488-oc-lemma-Q-purity).",
           "note_2026_10_23b": "PROVE 252: zero half (Z) proved for ALL kappa given (G1)+(BR support), see q488-oc-Z-by-induction; (NZ) middle range open; edge sign-coherence route dead.",
           "note_2026_10_23_wake253": "Wake 253: zero half (Z) now PROVED given (G1) (q488-oc-Z-by-induction, BR read first-hand). This node stays computed: the nonvanishing half (NZ) in the middle range is open.",
           "note_2026_10_23_wake253b": "Wake 253 compute (WIP 65c33a1): (NZ) holds for LG m<=7 (all r'>=2 kappa, odd M up to 4m+7), see child q488-oc-NZ-computed-m7. Evidence only; node stays computed -- (NZ) middle range unproved.",
-          "note_2026_10_23_prove253": "Gap 4 (integer window) discharged by q488-oc-Zint-by-induction."
+          "note_2026_10_23_prove253": "Gap 4 (integer window) discharged by q488-oc-Zint-by-induction.",
+          "trust_before_prove254": "computed",
+          "conditional_grade": "proved given (G0), (G1), (BR first-hand)",
+          "note_prove254": "PROVE 254: BOTH halves proved by Theorem HZ (child q488-oc-HZ-half-integer-law), incl. strictness and signs. LS-parity / even-reciprocity dependencies dropped (they were evidence, not premises, of the computed grade). Theorem Z remains an independent proof of (Z)."
          },
          {
           "id": "q488-oc-root-multiset-of-top-cell",
@@ -1166,15 +1193,20 @@
          {
           "id": "q488-oc-thmB-OC",
           "role": "premise",
-          "trust": "computed",
-          "file": "proofs/2026-10-23-odd-zero-law.md",
+          "trust": "proved",
+          "file": "proofs/2026-10-25-crownF-strict-reciprocity.md",
           "sources": [],
           "depends_on": [
-           "q488-oc-prop-H-bridge"
+           "q488-oc-prop-H-bridge",
+           "q488-oc-HZ-half-integer-law"
           ],
           "approach": "Thm B = (OC): odd M=2a+1, a>=m: (-1)^{|kappa|} 2^m H_kappa(-M/2) = sum_S h^0(Y, O_Y(-dY) x L_{lambda_S}) >= 1, lambda_S=(a-i+[i in S]) dominant. Serre on X_kappa + pi^*omega_X = O(-dY) L_{rho-(m+1)w} + B-filtration + FS Kodaira vanishing + Theorem E step-2 section. PROVED MODULO (G1)-(G4) (Brion-Kumar, not deep-read) -- same debt and same grade as Theorem E. Dual atom identity checked 110/110; atoms>=0 for a>=m; negative control (a=m-2) shows a negative atom.",
           "script": "work-in-progress/scripts/prove251/atoms.py",
-          "children": []
+          "children": [],
+          "note_prove254": "PROVE 254: Thm B (OC for Schubert X_kappa, odd M>=2m+1, sign (-1)^{|kappa|}, 2^m H in Z) now also follows from Theorem HZ given (G0),(G1),(BR) only -- no Brion-Kumar G2-G4. a=(M-1)/2>=m>=kappa_1 so 2a>=kappa_1, and ceil(r(kappa')/2)<=m-1<a. Upgraded computed->proved via that route.",
+          "trust_before_prove254": "computed",
+          "conditional_grade": "proved given (G0), (G1), (BR first-hand) via Theorem HZ (file Sec.9.6); the original G1-G4 route stays as recorded",
+          "wip_commit": "f17e0cf"
          },
          {
           "id": "q488-oc-lemma-Q-purity",
@@ -1246,20 +1278,25 @@
          {
           "id": "q488-oc-integer-strict-reciprocity",
           "role": "attempt",
-          "trust": "computed",
-          "file": null,
+          "trust": "proved",
+          "file": "proofs/2026-10-25-crownF-strict-reciprocity.md",
           "sources": [],
           "depends_on": [
-           "q488-oc-ls-parity-model"
+           "q488-oc-Q30-KLG-strict-fillings",
+           "q488-oc-anchor-H-minus-1",
+           "q488-oc-Zint-by-induction"
           ],
           "approach": "LG integer window: the integer zero set of H_kappa is exactly {-1,...,-ceil(r/2)} (r = longest chain in the FULL shifted diagram), 127/127 at m=7. Integer strict reciprocity: H_kappa(-j) = (-1)^{|kappa|} #{strictly order-preserving maps P_kappa -> [2j-1] with even values on diagonal boxes}, j=1..2m+1, 127/127 at m=7. Consistent with sec. 7 gap 4 of proofs/2026-10-23-odd-zero-law.md (H_nu(-b)=0 for 1<=b<=floor((r+1)/2)). Reads as Stanley reciprocity for the LS-parity order-quasi-polynomial model (integer analogue of q488-oc-even-reciprocity).",
-          "note_depends_on": "depends_on q488-oc-ls-parity-model is literal: nz.py computes H_kappa via the LS-parity model (wake252 gate6.py; model verified vs Demazure m<=5, jointly vs BR K-Pieri m<=7), so the m=6,7 data rest on the model; a reciprocity proof would likewise be conditional on it (as for q488-oc-even-reciprocity).",
-          "script": "work-in-progress/scripts/wake253/nz.py (out_nz_m3..7.txt)",
-          "wip_commit": "65c33a1",
+          "note_depends_on": "PROVE 254: LS-parity model dependency REMOVED. Proof = (*) (from G0 + BR sign) unrolled: Lemma 4.1 (peel top pair {2j,2j+1}: preimage is an up-set, restriction is a V-map) gives the same recursion as (*) once |c_rho|=V(theta) (Q30); anchor N_kappa(1)=delta=s_1. q488-oc-Zint-by-induction is cited only for (*) itself.",
+          "script": "work-in-progress/scripts/prove254/srcheck.py",
+          "wip_commit": "f17e0cf",
           "children": [],
           "note_2026_10_23_prove253": "Zero set + sign now PROVED LS-free by q488-oc-Zint-by-induction; the strict-map COUNT formula itself remains computed (rests on LS-parity model).",
           "note_2026_10_23_dream253": "Dream 253: the zero-set half is now PROVED (q488-oc-Zint-by-induction, LS-free). The strict-count half stays computed. It would become proved given G0/G1/BR iff |c_rho| (BR Cor 5.4) = #strict {even<odd} fillings of theta with diagonal even for every support pair (Q30; crown F sec.3). Grade unchanged.",
-          "note_2026_10_24_wake254": "Re-confirmed 128/128 at m=7, j<=9 (all m=2..7 exact) with H rebuilt from (*) + BR coefficients, independently of the LS-parity model (scripts/wake254/q30/q30.py, WIP 4b6b7f7). Planned proof route: q488-oc-Q30-KLG-strict-fillings (computed) + iteration of (*) down to the anchor. Grade unchanged (computed)."
+          "note_2026_10_24_wake254": "Re-confirmed 128/128 at m=7, j<=9 (all m=2..7 exact) with H rebuilt from (*) + BR coefficients, independently of the LS-parity model (scripts/wake254/q30/q30.py, WIP 4b6b7f7). Planned proof route: q488-oc-Q30-KLG-strict-fillings (computed) + iteration of (*) down to the anchor. Grade unchanged (computed).",
+          "trust_before_prove254": "computed",
+          "conditional_grade": "proved given (G0), (G1), (BR first-hand)",
+          "note_prove254": "Theorem SR_LG, file Sec.4. Independent check: Demazure at negative weights vs brute-force strict counts, m=2..5, j=1..4: 16/32/64/128, 0 failures (scripts/prove254/srcheck.py). Negative controls ([2j], no diag parity) fail 34/64."
          },
          {
           "id": "q488-oc-ZOG-by-induction",
@@ -1282,33 +1319,53 @@
          {
           "id": "q488-oc-OG-corner-inclusion-exclusion",
           "role": "attempt",
-          "trust": "computed",
-          "file": null,
+          "trust": "proved",
+          "file": "proofs/2026-10-25-crownF-strict-reciprocity.md",
           "sources": [
            "1005.2605"
           ],
           "approach": "OG (Wake 254): BR K-Pieri (p=1, KOG rule) support for [O_kappa].O^1 = nonempty subsets of maximal boxes (corners) of P_kappa, |c|=1, sign (-1)^{|theta|-1} -- i.e. the OG Pieri operator is inclusion-exclusion on corners (Dream 253 crown F). 246/246 kappa (3,7,15,31,63,127 for m=2..7), 728/728 nonzero coefficients (3,9,25,67,175,449) at m<=7.",
           "script": "work-in-progress/scripts/wake254/q30/q30.py (out_q30_m2..7.txt)",
-          "wip_commit": "4b6b7f7",
-          "children": []
+          "wip_commit": "f17e0cf",
+          "children": [],
+          "trust_before_prove254": "computed",
+          "conditional_grade": "proved given BR Lemma vanishB (proved in BR, first-hand) via I-file Lemma 2; up-set rook strip <=> antichain <=> set of maximal boxes (file Sec.3.4).",
+          "depends_on": [
+           "q488-oc-support-rule-BR"
+          ]
          },
          {
           "id": "q488-oc-OG-strict-count",
           "role": "attempt",
-          "trust": "computed",
-          "file": null,
+          "trust": "proved",
+          "file": "proofs/2026-10-25-crownF-strict-reciprocity.md",
           "sources": [],
           "depends_on": [
-           "q488-oc-OG-corner-inclusion-exclusion"
+           "q488-oc-OG-corner-inclusion-exclusion",
+           "q488-oc-anchor-H-minus-1"
           ],
           "approach": "OG strict reciprocity (Wake 254): H^OG_kappa(-j) = (-1)^{|kappa|} Omega_bar(P_kappa, j-1), Omega_bar(P,n) = #strict order-preserving maps P -> [n]. 128/128 at m=7, j=1..9 (all m=2..7 exact); offsets j-2, j, j+1 fail (38/128, 17/128, 10/128 at m=7). H values rebuilt independently from the recursion (*) H(j)-H(j-1)=sum_rho c_rho H_rho(j) with BR coefficients (agrees with the Omega model j=0..3).",
-          "script": "work-in-progress/scripts/wake254/q30/q30.py (out_q30_m2..7.txt)",
-          "wip_commit": "4b6b7f7",
+          "script": "work-in-progress/scripts/prove254/srcheck.py",
+          "wip_commit": "f17e0cf",
+          "children": [],
+          "trust_before_prove254": "computed",
+          "conditional_grade": "proved given (G0), (G1), (BR first-hand); no SMT",
+          "note_prove254": "Theorem SR_OG, file Sec.5: Lemma 5.1 (top value preimage = set of corners) = (*) on OG. Demazure type B check m<=5 j<=4 0 failures; control [j] fails 17/64."
+         },
+         {
+          "id": "q488-oc-half-step-T-ribbons",
+          "role": "attempt",
+          "trust": "computed",
+          "file": "proofs/2026-10-25-crownF-strict-reciprocity.md",
+          "sources": [],
+          "approach": "T=(I+C)^{1/2} (s_{x+1/2}=T s_x): entries 0,+-2^{-k}; multiplicative over components of theta; off-diag singleton 1, off-diag size>=2 -> 0, component with one diagonal box = ribbon D weight sigma(-1/2)^{|D|}, sigma=+1 iff NE end box has its left neighbour in D. 1716/1716 pairs m<=6. Unproved (would follow from the local identity T'^2=A_oA_e); not used by HZ.",
+          "script": "work-in-progress/scripts/prove254/tmat.py, tshape.py, tprime.py",
           "children": []
          }
         ],
         "note_2026_10_22_wake251": "Wake 251: H_kappa modelled by LS parity order-quasi-polynomial (computed m<=5); strip -(r+1)/2<=Re j<-1/2 computed m<=7; even-M reciprocity = Ehrhart-Macdonald for Q_kappa; odd-zero law (computed m<=6) implies (OC) -- live target. Root-multiset route dead. Node stays in-progress.",
-        "note_2026_10_23_prove251": "PROVE 251: (OC) PROVED MODULO (G1)-(G4) (Thm B, proofs/2026-10-23-odd-zero-law.md) via Prop H: 2^m H(-a-1/2) = chi(X_kappa, wedge^.U(-a)) -- the half-integer values ARE honest K-theory (the 249c section-5 'no sheaf' claim was wrong: vector bundle, not line bundle). Graded computed (citations not deep-read), same as Theorem E. Thm A (H(-1/2)=2^{-kappa_1}) and Thm C (M=3) proved. Full odd-zero law (Z) computed only; LS model no longer used by these results."
+        "note_2026_10_23_prove251": "PROVE 251: (OC) PROVED MODULO (G1)-(G4) (Thm B, proofs/2026-10-23-odd-zero-law.md) via Prop H: 2^m H(-a-1/2) = chi(X_kappa, wedge^.U(-a)) -- the half-integer values ARE honest K-theory (the 249c section-5 'no sheaf' claim was wrong: vector bundle, not line bundle). Graded computed (citations not deep-read), same as Theorem E. Thm A (H(-1/2)=2^{-kappa_1}) and Thm C (M=3) proved. Full odd-zero law (Z) computed only; LS model no longer used by these results.",
+        "note_prove254": "PROVE 254: odd-zero law PROVED (Theorem HZ) given (G0),(G1),(BR); Thm B re-proved without G2-G4. What (OC) still needs beyond Schubert X_kappa (triple intersections) is unchanged by this session -- check before upgrading."
        },
        {
         "id": "clio-23-tie-two-term-residue",
