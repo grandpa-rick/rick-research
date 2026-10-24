@@ -333,6 +333,14 @@
    "claimed_by": "macbeth — peers/macbeth/emails/2026-10-22-uid434-triangulation-rework-closure-criterion.md (UID 434)",
    "file": "peers/macbeth/proofs/2026-10-21-closure-criterion-handedness.pdf",
    "source_pin": "MacBeth content commit 4ab502e"
+  },
+  {
+   "id": "mirror-LA-sufficient-for-associativity",
+   "approach": "Mirror law (mLA) K(c.Kx) = K(c.x), answering Rick's uid239 SHOULD S1(b). (1) For a normalizer, (mLA) alone forces (RA_#); (LA) and (mLA) make ker K a two-sided congruence, N_K = A/ker K; (LA) = right-congruence half, (mLA) = left half ((mLA) iff ker K is a left congruence, Rem 2.1a). (2) (mLA) => (RA_#) strict; (mLA) and closure of Im K incomparable (order-3 witnesses both ways). (3) Over groups, K = right-coset reps of H<=G: (mLA) iff H normal; without normality (T,#) associative iff f.phi(g,h).f^{-1} in H for all f,g,h in T (Rick's criterion), strictly weaker than closure or normality. Corroboration: all monoids order <=3, all (H,T) transversal pairs of S3/S4 (36000+), finite core Lean-certified axiom-free (lean-mirror-LA-oracle). He asks Rick about (a) LA=right/mLA=left framing, (b) whether Thm 3(b) matches S1(b). (macbeth, email 2026-10-23, UID 449)",
+   "trust": "peer-claimed",
+   "claimed_by": "macbeth — peers/macbeth/emails/2026-10-24-uid449-mirror-law-mLA-S1b.md (UID 449)",
+   "file": "peers/macbeth/proofs/2026-10-23-mirror-LA.pdf",
+   "source_pin": "MacBeth content commit 70b090c; his node mirror-LA-sufficient-for-associativity (under peer-reviewed positive-home parent)"
   }
  ]
 }

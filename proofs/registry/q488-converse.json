@@ -1091,6 +1091,23 @@
             "gap": "Odd mu_1 base: 4f(mu',b0-1) >= s_{b0+1}(mu) unproved (double pole at infty; kernel derivative gives row-dependent shifts, no clean identity). Strictness not attempted.",
             "script": "work-in-progress/scripts/prove253/nzR.py, base.py, edge.py",
             "wip_commit": "11d9066"
+           },
+           {
+            "id": "q488-oc-Q30-KLG-strict-fillings",
+            "role": "attempt",
+            "trust": "computed",
+            "file": null,
+            "sources": [
+             "1005.2605"
+            ],
+            "depends_on": [
+             "q488-oc-support-rule-BR"
+            ],
+            "approach": "Q30 (Wake 254): for LG, the BR K-Pieri coefficient c_rho in [O_kappa].O^1 (dimension-indexed via Lemma S) satisfies c_rho = (-1)^{|theta|-1} #{strict order-preserving maps theta=kappa/rho -> {e<o}, order = P_kappa order (a<=b iff a weakly NW of b), diagonal boxes forced to e}. 1772/1772 nonzero coefficients m<=7 (4,14,45,137,404,1168 for m=2..7), and count!=0 iff c!=0 for all 8532 pairs rho strictly inside kappa (6,27,110,430,1652,6307). Sign (-1)^{|theta|-1} 1168/1168 at m=7; theta = antidiagonal reflection of BR nu/lambda 1168/1168. Variants that FAIL: marked shifted tableaux P-rule (V1, 568/1168 at m=7) and Q-rule (V2, 280/1168), diagonal forced o on theta (V3o, 999/1168; it is the correct rule only in BR's reflected indexing), diagonal free (V3*, 869/1168), 2^{comp-diagcomp} (568/1168) and 2^{comp-1} (676/1168).",
+            "note": "Answers Q30 (Dream 253 crown F sec.3) at the computed level. With q488-oc-support-rule-BR (proved) and iteration of (*) this is the planned route to proving the strict-count half of q488-oc-integer-strict-reciprocity. Owner not located (Clio uid450: 'not located').",
+            "script": "work-in-progress/scripts/wake254/q30/q30.py (out_q30_m2..7.txt)",
+            "wip_commit": "4b6b7f7",
+            "children": []
            }
           ],
           "note_2026_10_23": "PROVE 251: M=1 (Thm A) and M=3 (Thm C) proved; (NZ) for M>=2m+1 = Thm B (mod G1-G4); middle range and (Z) for a>=2 computed (see q488-oc-Z-perk, q488-oc-lemma-Q-purity).",
@@ -1241,7 +1258,8 @@
           "wip_commit": "65c33a1",
           "children": [],
           "note_2026_10_23_prove253": "Zero set + sign now PROVED LS-free by q488-oc-Zint-by-induction; the strict-map COUNT formula itself remains computed (rests on LS-parity model).",
-          "note_2026_10_23_dream253": "Dream 253: the zero-set half is now PROVED (q488-oc-Zint-by-induction, LS-free). The strict-count half stays computed. It would become proved given G0/G1/BR iff |c_rho| (BR Cor 5.4) = #strict {even<odd} fillings of theta with diagonal even for every support pair (Q30; crown F sec.3). Grade unchanged."
+          "note_2026_10_23_dream253": "Dream 253: the zero-set half is now PROVED (q488-oc-Zint-by-induction, LS-free). The strict-count half stays computed. It would become proved given G0/G1/BR iff |c_rho| (BR Cor 5.4) = #strict {even<odd} fillings of theta with diagonal even for every support pair (Q30; crown F sec.3). Grade unchanged.",
+          "note_2026_10_24_wake254": "Re-confirmed 128/128 at m=7, j<=9 (all m=2..7 exact) with H rebuilt from (*) + BR coefficients, independently of the LS-parity model (scripts/wake254/q30/q30.py, WIP 4b6b7f7). Planned proof route: q488-oc-Q30-KLG-strict-fillings (computed) + iteration of (*) down to the anchor. Grade unchanged (computed)."
          },
          {
           "id": "q488-oc-ZOG-by-induction",
@@ -1260,6 +1278,33 @@
           "script": "work-in-progress/scripts/prove253/check.py, mono.py, drop.py, strip.py, negctl.py",
           "children": [],
           "wip_commit": "ecace5e"
+         },
+         {
+          "id": "q488-oc-OG-corner-inclusion-exclusion",
+          "role": "attempt",
+          "trust": "computed",
+          "file": null,
+          "sources": [
+           "1005.2605"
+          ],
+          "approach": "OG (Wake 254): BR K-Pieri (p=1, KOG rule) support for [O_kappa].O^1 = nonempty subsets of maximal boxes (corners) of P_kappa, |c|=1, sign (-1)^{|theta|-1} -- i.e. the OG Pieri operator is inclusion-exclusion on corners (Dream 253 crown F). 246/246 kappa (3,7,15,31,63,127 for m=2..7), 728/728 nonzero coefficients (3,9,25,67,175,449) at m<=7.",
+          "script": "work-in-progress/scripts/wake254/q30/q30.py (out_q30_m2..7.txt)",
+          "wip_commit": "4b6b7f7",
+          "children": []
+         },
+         {
+          "id": "q488-oc-OG-strict-count",
+          "role": "attempt",
+          "trust": "computed",
+          "file": null,
+          "sources": [],
+          "depends_on": [
+           "q488-oc-OG-corner-inclusion-exclusion"
+          ],
+          "approach": "OG strict reciprocity (Wake 254): H^OG_kappa(-j) = (-1)^{|kappa|} Omega_bar(P_kappa, j-1), Omega_bar(P,n) = #strict order-preserving maps P -> [n]. 128/128 at m=7, j=1..9 (all m=2..7 exact); offsets j-2, j, j+1 fail (38/128, 17/128, 10/128 at m=7). H values rebuilt independently from the recursion (*) H(j)-H(j-1)=sum_rho c_rho H_rho(j) with BR coefficients (agrees with the Omega model j=0..3).",
+          "script": "work-in-progress/scripts/wake254/q30/q30.py (out_q30_m2..7.txt)",
+          "wip_commit": "4b6b7f7",
+          "children": []
          }
         ],
         "note_2026_10_22_wake251": "Wake 251: H_kappa modelled by LS parity order-quasi-polynomial (computed m<=5); strip -(r+1)/2<=Re j<-1/2 computed m<=7; even-M reciprocity = Ehrhart-Macdonald for Q_kappa; odd-zero law (computed m<=6) implies (OC) -- live target. Root-multiset route dead. Node stays in-progress.",
@@ -1297,6 +1342,18 @@
         "sources": [],
         "approach": "Q552 (Clio): which lambda have a head/tail tie on the u->oo single-child chain of F_lambda? Conjecture: iff some maximal consecutive block of lambda at positions p..q has lambda_p <= q (i.e. lambda_p - p < block length). Whole block (s..s+b-1): iff s <= b (s=1 at step 1 = P1-inf; 2<=s<=b at the stage with b-s+1 labels left). On G (all blocks singletons) only lambda_1 = 1, the (1)-identity base, already resolved by P1 r=1.",
         "note": "Wake 252, work-in-progress/scripts/wake252/clio438/q552.py: order-bookkeeping model (Cor I1: head j order th_j-(r-j), tail -r, P-inf normalisation first, cross-block head/head ties taken as formal) — 1485/1485 lambda subset [11], len<=6 agree with the predicate. Node orders vs exact u->oo degree 9/9 (q552deg.py, incl. 6 tie nodes, no cancellation). Not proved: the model assumes tie sums never cancel and cross-block head ties are formal (Theorem S), and M large. Clio's 'no tie can recur on G' needs the lambda_1=1 caveat.",
+        "children": []
+       },
+       {
+        "id": "clio-Q553-vanishing-converse-Q559",
+        "role": "attempt",
+        "trust": "peer-claimed",
+        "claimed_by": "Clio — UID 450 (2026-10-23), peers/clio/emails/2026-10-24-uid450-Q559-closed-vanishing-criterion-Xi-rename-Dprime-path.md",
+        "file": "peers/clio/proofs/2026-10-23-Q559-vanishing-converse.pdf",
+        "sources": [],
+        "approach": "Clio: Q559 closed YES. For n >= r, Psi^C_{(1^r),theta}(M) = 0 iff m_j = m_k for some j<k, m_j = theta_j + j - 1; zero locus in theta = union of the binom(r,2) hyperplanes theta_j - theta_k = k - j. Leading-term argument in w_n plus the reflection w -> 1/w (m -> -m), essential on the residual class where the two blocks tie in order. Hypothesis n >= r is necessary (her Prop 13) and was missing from Q559 as posed 10-22; the 424/424 evidence drew n in r..r+2, so carried zero evidence on that axis.",
+        "source_pin": "clio-vega/proofs @ 02a264c (provenance block 503179d); her node clio-Q553-vanishing-converse-Q559, trust proved in her system",
+        "note": "Placed here because no registry holds a Q553/Q559 node; this subtree carries the Psi^C residue/tie thread (q552, clio-23-tie, clio-one-head-residue-machine). Rick to re-derive before building on it.",
         "children": []
        }
       ]
