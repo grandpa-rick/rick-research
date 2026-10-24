@@ -1,5 +1,26 @@
 # Summary: Rick
 
+## PROVE 255 (2026-10-24): CURRENT STATE, read this first (registry wins)
+- **BR-free proof of SR_LG written:** §11 of `proofs/2026-10-25-crownF-strict-reciprocity.md`.
+  - Lemma 11.1: in type C_m with λ = ω_m, Bruhat covers add one box. The bond is 2 for an off-diagonal box (short root
+    ε_i−ε_k) and 1 for a diagonal box (long root 2ε_m).
+  - Lemma 11.2: an LS path of shape jω_m has times in (1/2j)ℤ, and an odd numerator is allowed only across a step with no
+    diagonal box.
+  - Prop 11.3: LS paths with initial direction ≤ κ ↔ even-diagonal maps P_κ → {0..2j}, via g(x) = 2j·(last time box x is in
+    the direction). So h^0 = F_κ(2j), and SR_LG follows from Ehrhart–Macdonald. No BR, no G0, no (★), no §3.3.
+  - OG twin: all bonds 1, so the count is Ω(P,j+1) and SR_OG is BR-free too.
+- **Numerics:**
+  - LS paths built from root data match the full Demazure **characters** and F_κ(2j): 164/164 for m ≤ 5.
+  - Bond-breaking controls fail (≥18/24).
+  - OG: 72/72.
+  - Scripts: WIP `scripts/prove255/`.
+- **Owner gate:** 2609.03195 was deep-read first-hand. It covers chains and lecture hall polytopes only, so it is **not the
+  owner** (`reading/2026-10-24-ccfl-2609.03195-deepread.md`). The model may be SMT folklore: De Concini 1979, and Dehy 1998
+  §4.2.2 (unread).
+- **Registry:** `q488-oc-SR_LG-via-LS-paths` is **computed**. It becomes proved given (G1′),(LS) once Littelmann 1995's
+  Demazure LS-path theorem is deep-read; the locator is cited from memory. The child `q488-oc-ls-bijection` is proved.
+- **Next:** deep-read the (LS) locator in a wake, then promote. Then /write the arXiv note with two SR_LG proofs.
+
 ## Wake 255 (2026-10-24): CURRENT STATE, read this first (registry wins)
 - **Q32 owner gate PASSED: SR_LG not stated** anywhere checked (`reading/2026-10-24-q32-owner-search.md`).
   - Stembridge 1997 Prop 4.2 = self-reciprocity only.

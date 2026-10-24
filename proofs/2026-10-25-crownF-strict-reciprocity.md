@@ -17,6 +17,7 @@ Rick, 2026-10-24 (PROVE 254; file name is the date PROVE.md asked for). Conventi
 | **Theorem SR_OG** | (−1)^{|κ|}H^OG_κ(−j) = Ω̄(P_κ, j−1) = #{strict order-preserving P_κ → [j−1]}, all j ≥ 1 | **proved given (G0), (G1), (BR)** — §5 |
 | Corollary M (models, Q36) | H_κ(j) = F_κ(2j) (LS-parity model) and H^OG_κ(j) = Ω(P_κ,j+1), all j | proved given SR_LG/SR_OG + Ehrhart–Macdonald / Stanley reciprocity (cited) — §5.1 (Wake 255) |
 | Corollary (Theorem I, combinatorial proof) | zero window, sign and monotonicity of Theorem I read off from the count | proved — §6 |
+| **Prop. 11.3 + SR_LG, second proof (PROVE 255)** | H_κ(j) = F_κ(2j) for j ≥ 0 via a bijection LS paths ↔ even-diagonal maps (bond 2 ⇔ off-diagonal box); then SR_LG by Ehrhart–Macdonald | **proved given (G1′), (LS)** — no BR, no (G0), no (★) — §11 |
 | **Theorem HZ (odd-zero law, both halves)** | H_κ(−a−½) = 0 ⟺ a ≤ ⌈r(κ′)/2⌉; sign (−1)^{\|κ\|−κ₁} for 2a ≤ κ₁, (−1)^{\|κ\|} for 2a ≥ κ₁; \|value\| ≥ 2^{−κ₁}N_{κ′}(a) | **proved given (G0), (G1), (BR) + Thm A** — §9 |
 
 The point: (★) of the I file is a positive recursion with a trivial anchor. Unrolled to the anchor, it IS the counting
@@ -380,3 +381,144 @@ So s_{5/2}(3,2) = 1/8, which is the value (★) gives, and it equals 2^{−κ₁
 
 Theorem HZ adds only Thm A (proved given (G1), odd-zero-law file) to the inputs of §8. §9 is self-contained otherwise.
 Lemmas 9.4/9.5 were written once and re-read once this session; nobody else has refereed them.
+
+## 11. Second proof of SR_LG, without Buch–Ravikumar: LS paths ⇒ model ⇒ Ehrhart–Macdonald (PROVE 255)
+
+Rick, 2026-10-24 (PROVE 255). Here Corollary M(a) runs backwards. The LS-parity model is proved directly from the
+Lakshmibai–Seshadri path model, and SR_LG falls out of Ehrhart–Macdonald. This uses no (BR), no (G0), no (★) and no §3.3.
+(PROVE.md asked for "§12". There is no §11, so it is §11.) Script: `work-in-progress/scripts/prove255/lspaths.py`.
+
+**Inputs.**
+- (G1′) For a Schubert variety X_w ⊂ G/P and dominant λ with stabiliser P: H^i(X_w, L_λ) = 0 for i > 0, and
+  H^0(X_w, L_λ)^* = V_w(λ) (Demazure module). This is the normality/vanishing package behind (G1): Ramanathan,
+  Andersen, Mathieu, Kumar.
+- (LS) Littelmann's path form of the Demazure character formula: char V_w(λ) = Σ e^{π(1)} over LS paths π of shape λ
+  with initial direction i(π) ≤ w. Littelmann, *Paths and root operators in representation theory*, Ann. of Math. 142
+  (1995), the Demazure-module section. For classical G this is also the Lakshmibai–Seshadri SMT conjecture/theorem.
+  **Locator not verified first-hand this session** (PROVE sessions forbid browsing). See §11.5.
+- Ehrhart–Macdonald reciprocity for a lattice polytope (textbook; already cited in §5.1).
+
+**LS paths (Littelmann's definition).** Let λ be dominant, with W^λ = W/W_λ under the Bruhat order. For σ > τ in W^λ and a
+rational a ∈ (0,1), an *a-chain* for (σ,τ) is a sequence of Bruhat covers σ = κ_0 > κ_1 > ⋯ > κ_r = τ with
+κ_{k−1} = s_{β_k}κ_k (β_k > 0) and a·⟨κ_k(λ), β_k^∨⟩ ∈ ℤ for all k. An LS path of shape λ is a pair
+(τ_1 > τ_2 > ⋯ > τ_s ; 0 = a_0 < a_1 < ⋯ < a_s = 1) such that an a_i-chain for (τ_i, τ_{i+1}) exists for 1 ≤ i ≤ s−1.
+Its initial direction is i(π) = τ_1, and π(1) = Σ_i (a_i − a_{i−1}) τ_i(λ). Call |⟨κ_k(λ), β_k^∨⟩| the *bond* of the
+cover κ_{k−1} > κ_k. (It is independent of the sign convention, because ⟨s_βμ, β^∨⟩ = −⟨μ, β^∨⟩.)
+
+### 11.1 Bruhat order and bonds for LG
+
+Take type C_m with ε-coordinates, roots ±ε_i ± ε_j and ±2ε_i, coroots (ε_i ± ε_j)^∨ = ε_i ± ε_j and (2ε_i)^∨ = ε_i, and
+λ = ω_m = (1,…,1), so L_{ω_m} = O(1) on LG(m,2m). Then W^λ ≅ W·ω_m = {±1}^m. For a sign vector μ, the cell BμP/P has
+dimension d(μ) = #{α > 0 : ⟨μ, α^∨⟩ < 0}. Counting over the three root families:
+
+  d(μ) = #{i : μ_i = −1} + #{i < k : μ_i = μ_k = −1} + #{i < k : μ_i = −1, μ_k = +1} = Σ_{i : μ_i = −1} (m − i + 1).
+
+So μ ↦ κ(μ) := strict partition with part set {m − i + 1 : μ_i = −1} is a bijection W^λ → {strict κ, parts ≤ m}, and
+dim X_μ = |κ(μ)|. (This is the convention of `prove249d/dem.py`. X_μ ≅ the I-file X_κ via w_0-translation, which is an
+isomorphism of polarised varieties, so H_κ is the same function.)
+
+**Lemma 11.1 (covers and bonds).** The Bruhat covers μ < s_βμ in W^λ are exactly the moves "κ(s_βμ) = κ(μ) plus one box".
+The bond is 1 if that box is on the diagonal and 2 if it is off the diagonal. Hence the Bruhat order on W^λ is the
+inclusion of shifted diagrams D(κ).
+
+*Proof.* Go through the reflections. Let p = m−i+1 and q = m−k+1, with i < k so p > q.
+- s_{ε_i−ε_k} swaps μ_i and μ_k. It changes d only when μ_i ≠ μ_k. In the upward direction (μ_i = +1, μ_k = −1) the part q
+  is replaced by p, and d grows by p − q. This is a cover iff p = q+1, i.e. one box added at the end of the row of length q.
+  That box is off the diagonal, since q ≥ 1. The bond is |⟨μ, ε_i − ε_k⟩| = |1 − (−1)| = 2.
+- s_{ε_i+ε_k} flips μ_i and μ_k when they are equal. Upward, it adds the two parts p and q, so d grows by p + q ≥ 3.
+  This is never a cover.
+- s_{2ε_i} flips μ_i. Upward, it adds the part p, so d grows by p. This is a cover iff p = 1, i.e. i = m: a new row of
+  length 1, whose single box is on the diagonal. The bond is |⟨μ, ε_m⟩| = 1.
+Every Bruhat cover in W^λ has the form μ < s_βμ with d increasing by 1, so the list is complete. The Bruhat order is the
+transitive closure of its covers, and adding boxes one at a time generates inclusion of shifted diagrams (add the boxes
+of D(κ′)∖D(κ) along any linear extension). ∎
+
+(Computed: `lspaths.py` builds the covers from the root data and checks the bond/diagonal rule on all 3, 8, 20, 48 covers
+for m = 2…5, with 0 violations.)
+
+### 11.2 LS paths of shape jω_m are even-diagonal maps
+
+**Lemma 11.2.** Let j ≥ 1. A pair (τ_1 ⊋ ⋯ ⊋ τ_s ; 0 < a_1 < ⋯ < a_{s−1} < 1) of shifted diagrams and rationals is an LS
+path of shape jω_m iff, for every i ≤ s−1: 2j·a_i ∈ ℤ, and if 2j·a_i is odd then D(τ_i)∖D(τ_{i+1}) contains no diagonal
+box (equivalently ℓ(τ_i) = ℓ(τ_{i+1})).
+
+*Proof.* Shape jω_m has W_{jω_m} = W_{ω_m}, and the bonds get multiplied by j. So the a-chain condition reads
+"a·j·b ∈ ℤ for the bond b ∈ {1,2} of each cover". If an a-chain exists for some i, then 2ja ∈ ℤ: the chain has at least
+one cover, and j·a·b ∈ ℤ with b ∈ {1,2} forces 2ja ∈ ℤ. If ja ∈ ℤ, every saturated chain from τ_{i+1} up to τ_i is an
+a-chain, and one exists because τ_{i+1} ⊊ τ_i (Lemma 11.1). If 2ja is odd, a cover qualifies iff its bond is 2, iff it
+adds an off-diagonal box. A chain of such covers exists iff D(τ_i)∖D(τ_{i+1}) has no diagonal box. If it has none, every
+saturated chain adds only off-diagonal boxes. If it has one, every chain adds it at some step. ∎
+
+**Proposition 11.3 (the LS-parity model, BR-free).** For a strict κ with parts ≤ m and j ≥ 0, the LS paths of shape jω_m
+with initial direction ≤ κ are in bijection with the weakly order-preserving maps G : P_κ → {0,…,2j} that are even on
+diagonal boxes. Hence, given (G1′) and (LS),
+
+  H_κ(j) = h^0(X_κ, O(j)) = F_κ(2j)   for all j ≥ 0.
+
+*Proof.* j = 0: both sides are 1 (the constant path; G ≡ 0). Let j ≥ 1. Given π = (τ_1 > ⋯ > τ_s ; a), its direction on
+(a_{i−1}, a_i) is τ_i, and D(τ_1) ⊆ D(κ) by Lemma 11.1. For a box x ∈ D(κ) put t(x) := a_{i(x)}, where
+i(x) = max{i : x ∈ D(τ_i)}, with t(x) = 0 if x ∉ D(τ_1) (and a_s = 1). Set g(x) = 2j·t(x) ∈ {0,…,2j}. This lies in ℤ
+by Lemma 11.2.
+- *Order-reversing.* The D(τ_i) are order ideals of P_κ (down-sets for the NW order). If y ≤ x, then x ∈ D(τ_i) implies
+  y ∈ D(τ_i), so i(y) ≥ i(x) and g(y) ≥ g(x).
+- *Even diagonal.* A diagonal box x with 1 ≤ i(x) ≤ s−1 lies in D(τ_{i(x)})∖D(τ_{i(x)+1}), so g(x) = 2j·a_{i(x)} is even by
+  Lemma 11.2. The values 0 and 2j are even anyway.
+Conversely, given an order-reversing g : P_κ → {0,…,2j} with even diagonal values, let v_1 < ⋯ < v_r be its distinct values
+in the open interval (0,2j). Put a_i = v_i/2j for i ≤ r, and τ_i := {x : g(x) ≥ v_i} for i ≤ r, τ_{r+1} := {x : g(x) = 2j}.
+Each τ_i is a down-set of P_κ, hence (I file §2 Fact) a shifted diagram D(τ_i) ⊆ D(κ). The τ_i strictly decrease, because
+v_i is attained, so τ_i ∖ τ_{i+1} = g^{−1}(v_i) ≠ ∅. A diagonal box in g^{−1}(v_i) has v_i even, so Lemma 11.2 holds and
+this is an LS path with initial direction τ_1 ≤ κ. (If τ_{r+1} = ∅ the last direction is the identity coset, which is
+allowed. If r = 0 the path is the single direction τ_1 = g^{−1}(2j).) The two maps are mutually inverse, because x ∈ τ_i ∖ τ_{i+1}
+⟺ g(x) = v_i ⟺ t(x) = a_i. Finally G := 2j − g is order-preserving with even diagonal values, since 2j is even.
+Counting: (G1′) gives h^0 = dim V_κ(jω_m) = χ, and (LS) gives dim = #paths. ∎
+
+**Theorem SR_LG (second proof).** Assume (G1′), (LS). For all j ≥ 1: (−1)^{|κ|}H_κ(−j) = N_κ(j).
+*Proof.* H_κ is a polynomial (Snapper). By §5.1, L(j) := #(jO ∩ Λ) = F_κ(2j) is a polynomial in j. Proposition 11.3 makes
+them agree for all j ≥ 0, so H_κ = L. Ehrhart–Macdonald reciprocity for (O, Λ), word for word as in §5.1, gives
+L(−j) = (−1)^{|κ|}#(int(jO) ∩ Λ) = (−1)^{|κ|}N_κ(j). ∎
+
+Corollary M(a) is now proved without SR_LG: it is Proposition 11.3 plus polynomiality. The logic runs
+model ⇒ reciprocity instead of reciprocity ⇒ model. The note has two independent proofs of SR_LG:
+- §4: (G0)+(G1)+(BR), K-theoretic;
+- §11: (G1′)+(LS), standard monomial theory.
+§3.3 is no longer load-bearing for SR_LG. It is still load-bearing for Q30 itself.
+
+**Remark 11.4 (where the ½ comes from, and the OG twin).** The ½-lattice Λ is the bond: off-diagonal covers have bond
+⟨τ(ω_m), (ε_i−ε_k)^∨⟩ = 2, which allows half-integer times, while diagonal covers (long roots 2ε_i) have bond 1. This is the
+same 2 as the hyperplane-divisor multiplicity off the diagonal (Wake 252) and the Chevalley coefficient. On OG(m,2m+1),
+ω_m is minuscule, all bonds are 1, Lemma 11.2 forces ja ∈ ℤ, and the same bijection gives H^OG_κ(j) = Ω(P_κ, j+1) (Hibi /
+Gonciulea–Lakshmibai; computed: `prove255/ogpaths.py` finds all type-B covers have bond 1, and LS count = Ω(P_κ,j+1) = OG Demazure on 72/72 cases, m ≤ 4, j ≤ 3, out_og.txt. The B-analogue of Lemma 11.1 (covers = one box) is not written out), hence SR_OG by Stanley reciprocity: a second, BR-free proof of SR_OG as well. On LG, the "odd value =
+primed letter" of Crown G is literally "time with odd numerator over 2j = bond-2 step".
+*Hunch, not used:* Chirivì's semi-toric degeneration (2609.03195 §7; Chirivì, Transform. Groups 5 (2000)) has one LH-toric
+component per maximal chain id < ⋯ < κ, i.e. per standard shifted tableau. Its bond vector is b ∈ {1,2}^{|κ|} (1 at diagonal
+boxes), and its LH polytope {0 ≤ x_1/b_1 ≤ ⋯ ≤ x_n/b_n ≤ 1} ∩ ℤ^n is, after y = x/b, Stanley's chain simplex of O(P_κ) in the
+lattice Λ. So the degeneration is Stanley's canonical triangulation of (O(P_κ), Λ). This was not checked against Chirivì's
+gluing.
+
+### 11.5 Verification and owner gate
+
+- `prove255/lspaths.py m J` enumerates LS paths from the **root data** (covers, bonds and a-chains computed from roots, with
+  no box dictionary). It compares (i) the full weight multiset Σ e^{π(1)} with the Demazure character from `dem.py` and (ii)
+  the count with F_κ(2j). m = 2, 3 (j ≤ 3), m = 4 (j ≤ 4), m = 5 (j ≤ 2): 12 + 24 + 64 + 64 = 164 (κ, j) cases, **0
+  failures** (out_n4j4_n5j2.txt). The time grid is restricted to (1/2j)ℤ, which is justified by the bond census plus the
+  first line of the proof of Lemma 11.2.
+- Negative controls (`out_controls.txt`) break the bond rule and must fail against Demazure. Setting all bonds to 2 fails
+  21/24 (m=3) and 30/32 (m=4). Swapping the bonds (diagonal 2, off-diagonal 1) fails 18/24 and 28/32. So the bond rule is
+  load-bearing, and the test separates.
+- Hand check κ = (1): paths with τ_1 ≤ (1): the direction ∅ alone, or (1) alone, or (1) > ∅ at a = p/2j. The box is
+  diagonal, so p must be even: j−1 choices. Total 1 + 1 + (j−1) = j+1 = H_{(1)}(j) ✓.
+- **Owner gate, 2609.03195 (Chirivì–Costa Cesari–Fang–Littelmann), read first-hand from the arXiv LaTeX, 2026-10-24.**
+  It works only with LS paths on a *totally ordered* set with bonds b (§2, \label{prop_bijection-LS-LH}: Π(b)_k ↔ k·P(b) ∩ ℤ^n,
+  lecture hall polytopes). It proves IDP (\label{theorem_IDP_LH}), Gorenstein criterion (\label{thm:Gorenstein},
+  {thm:Gorenstein-LH}; {cor:Gorenstein-open-part} = interior paths = π⁰ + Π(b) when Gorenstein), Koszul ({thm:Koszul-LH}). §7 summarises Chirivì 2000's semi-toric degeneration of X_w into LH-toric varieties. It has
+  **no statement for Schubert varieties in LG, no order-polytope/Λ model, and no reciprocity for H_κ.** Verdict: not the
+  owner. The model (Prop. 11.3) is a short consequence of the LS path model, so it may be folklore in SMT (De Concini 1979
+  symplectic tableaux; Dehy 1998 §4.2.2, cited by CCFL, is the nearest unread candidate). SR_LG as stated: no owner found
+  (Wake 255 Q32 search + this).
+
+### 11.6 Gaps
+
+- (LS) locator: Littelmann 1995 is cited from memory and not deep-read. Until it is, the grade of Prop. 11.3 and of the
+  second SR_LG proof is "proved given (G1′), (LS)" with the (LS) source at extraction level *none*. The registry reflects
+  this.
+- Remark 11.4's degeneration claim is a hunch.
