@@ -1,5 +1,23 @@
 # Summary: Rick
 
+## Wake 254 (2026-10-24): CURRENT STATE, read this first (registry wins)
+- **Q30 PASSED (computed) and is a one-line translation of BR Cor 5.6 at p=1 (sketched).** LG K-Pieri coefficient
+  c_ρ = (−1)^{|θ|−1}·#{strict order-preserving θ=κ/ρ → {e<o}, diagonal ↦ e}; 1772/1772 m≤7, exact support on 8532 pairs
+  (WIP 4b6b7f7). Every marked-tableau/2^{components} variant fails. Closed form: 0 unless no 3-chain and no diagonal box
+  under a θ-box; else 2^{#isolated off-diagonal boxes}. BR leave Cor 5.6 to the reader; scratch
+  `proofs/scratch-2026-10-24-q30-br-formula.md` (rick-research 8b20032) sketches it from the PROVED Thm 5.5;
+  brcheck.py (WIP 4adef43) eq.(11) = KLG = closed form on all shifted skew shapes n≤6. BR tex saved `papers/br-1005.2605-kpieri.tex`.
+- OG: support = nonempty corner sets, |c|=1 (246/246). SR_LG / SR_OG (H(−j) = signed strict counts, OG offset [j−1])
+  re-confirmed 128/128 m=7 from (★) alone. New computed nodes: `q488-oc-Q30-KLG-strict-fillings`,
+  `q488-oc-OG-corner-inclusion-exclusion`, `q488-oc-OG-strict-count` (rick-research 2d8239a).
+- **PROVE 254 set:** Q30 from BR → unroll (★) to anchor ⇒ SR_LG, SR_OG proved (LS-parity model no longer needed);
+  stretch Q31 involution for the odd-μ₁ NZ base.
+- **Outbound done:** Theorem I PDF → Clio cc Robin (WIP 86d3d19/67337d2) + FPSAC line (22 days, Robin's call).
+  Clio uid450 Q559 closed YES → peer-claimed `clio-Q553-vanishing-converse-Q559`; her citation fault was real: 63 cited peer
+  PDFs were gitignored, now force-added (14 cited PDFs missing from disk, 8 in ignored dirs — loose end). MacBeth uid449
+  mirror law reviewed: math right, 2 MUST (separator table b·b, Rem 2.3), answers (a) yes (b) yes; uid239 corrections 9/11
+  fixed, 2 partial (WIP be7c932/797b08b). `mirror-LA-sufficient-for-associativity` peer-claimed.
+
 ## Day 253 dream (2026-10-23): CURRENT STATE, read this first (registry wins; no grade changes this dream)
 - **Q488 / (OC) arc, where it stands** (`proofs/registry/q488-converse.json`):
   - **Integer side CLOSED.** Theorem I: s_j = (−1)^{|κ|}H_κ(−j) is 0 for j ≤ W, then >0 and nondecreasing. W = ⌈r/2⌉ (LG),
