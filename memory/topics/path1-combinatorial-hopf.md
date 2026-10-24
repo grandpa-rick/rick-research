@@ -180,3 +180,11 @@ it is the modern approach to filtered positivity. FPSAC §6 open problems should
 - **Hunch (Day 241 dream):** that twist is the Euler form of a quiver orientation, so the character is Reineke's integration map. See `connections/2026-10-15-feigin-twist-is-a-quiver-euler-form.md`.
 - **Day 242 (PROVE + dream).** Thm 4(4) proved self-contained (`proofs/2026-10-16-thm4-4-injective-self-contained.md`). Dream hunch: Lemma 2's sorted-word character = Feigin's map for the adapted Coxeter word, and Ψ_φ = Feigin for c^∞, packaged quasi-symmetrically (`connections/2026-10-16-sorted-word-character-is-feigins-coxeter-word-map.md`). The only candidate-new piece is the universal property: Feigin maps for c^k factor through QSym_{q,φ}.
 - File `proofs/2026-10-15-seed-q1-braided-terminal.md`; registry `seed-q1-braided-terminal.json`.
+
+## Day 255 (2026-10-24): peak algebra side of Crown G
+- 2610.21289 (Aliniaeifard–van Willigenburg) §2–5 first-hand: rooted Hopf algebras are dual to ABS (Thm 3.2). Group-likes ↔
+  characters (Thm 2.3). The peak algebra appears only as a §5.4 table row; there is **no** Θ-character formula.
+  Aliniaeifard–Li 2506.12868 is the only remaining lead (unread).
+- MO/SE: zero hits on peak algebra / enriched P-partitions. Nobody is asking the Crown G question.
+- Crown H: the LG/OG split is marked/unmarked = bond 2/bond 1, i.e. enriched vs ordinary P-partitions at the level of the
+  Hilbert function. The Stembridge identification is still a hunch.

@@ -52,3 +52,14 @@ So Sym = K_0(rep U(gl_∞)) is a Hopf algebra by abstract nonsense, and the *com
   Fang–He) on tensor products ("are these diagrams Cartesian?"). This is an open problem.
 - Technique echo: "embed into a bigger structure where positivity is visible" = my "conjugate the defect factor into a
   bundle" (PROVE 251) and "change the problem one level deeper" (PERSONALITY). Path 1 shadow? Open (Browse 204 question).
+
+## Day 255 (2026-10-24): LS paths enter the LG arc
+- PROVE 255 §11: Littelmann LS paths of shape jω_m (type C_m) ↔ even-diagonal order maps P_κ → {0..2j}. The bond
+  ⟨τω_m,β^∨⟩ is 2 on short roots (off-diagonal boxes) and 1 on the long root (diagonal), which gives the half-times.
+  `q488-oc-ls-bijection` is proved; the route to SR_LG is computed pending the (LS) locator (Q39). Crown H
+  (`connections/2026-10-24-the-prime-is-a-bond.md`): a primed letter is a half-time on a short-root step, and
+  minuscule = all bonds 1 = Hibi.
+- CCFL 2609.03195 (first-hand): LS paths on chains = lecture hall polytopes, Gorenstein/Koszul. NOT the LG owner.
+- Browse 205 Path-2 neighbours: Adachi–Koike 2601.13016 (semi-infinite LS paths, twisted affine), Petroulakis 2601.05369
+  (BGL symmetry for SL₃), Fang–He 2609.06676 thickening read first-hand (doubled Cartan datum, root-datum level). Sagaki
+  "Introduction to LS paths I–II" is the exposition source. MO 500059 (Sp(6) singular support, Tanisaki pointer).

@@ -27,3 +27,12 @@ work-in-progress `scripts/prove255/`. LS paths enumerated from root data match t
 3. The CCFL risk paper 2609.03195 is NOT the owner. It treats chains / lecture hall polytopes only.
 
 Not sent. Robin decides whether this goes to Clio with the PROVE 254 referee packet.
+
+## Dream 255 addendum (one paragraph, include when sending)
+The two proofs run in opposite directions. §4 goes K-theory → negative side → (Ehrhart–Macdonald) → positive model, and
+§11 goes LS paths → positive model → (E–M) → negative side. So SR_LG and the positive-degree model are equivalent, and the
+½ in the lattice is exactly the bond ⟨τω_m, β^∨⟩ = 2 of a short root. That also explains the minuscule/cominuscule split:
+OG's spinor weight has all bonds 1, so it gets Hibi's order polynomial with no parity, while LG's ω_m has short-root bond 2,
+so it gets the finer lattice. The Crown G dictionary from the PROVE 254 addendum (odd values ↔ primed letters) gets its mechanism here too: a prime is a
+half-time on a short-root step. Robin, can you make the venue call (arXiv note alone, or FPSAC 2026-11-15 as well)? The
+plan after one Littelmann locator check is to start writing.

@@ -1,98 +1,47 @@
 # Summary: Rick
 
-## PROVE 255 (2026-10-24): CURRENT STATE, read this first (registry wins)
-- **BR-free proof of SR_LG written:** §11 of `proofs/2026-10-25-crownF-strict-reciprocity.md`.
-  - Lemma 11.1: in type C_m with λ = ω_m, Bruhat covers add one box. The bond is 2 for an off-diagonal box (short root
-    ε_i−ε_k) and 1 for a diagonal box (long root 2ε_m).
-  - Lemma 11.2: an LS path of shape jω_m has times in (1/2j)ℤ, and an odd numerator is allowed only across a step with no
-    diagonal box.
-  - Prop 11.3: LS paths with initial direction ≤ κ ↔ even-diagonal maps P_κ → {0..2j}, via g(x) = 2j·(last time box x is in
-    the direction). So h^0 = F_κ(2j), and SR_LG follows from Ehrhart–Macdonald. No BR, no G0, no (★), no §3.3.
-  - OG twin: all bonds 1, so the count is Ω(P,j+1) and SR_OG is BR-free too.
-- **Numerics:**
-  - LS paths built from root data match the full Demazure **characters** and F_κ(2j): 164/164 for m ≤ 5.
-  - Bond-breaking controls fail (≥18/24).
-  - OG: 72/72.
-  - Scripts: WIP `scripts/prove255/`.
-- **Owner gate:** 2609.03195 was deep-read first-hand. It covers chains and lecture hall polytopes only, so it is **not the
-  owner** (`reading/2026-10-24-ccfl-2609.03195-deepread.md`). The model may be SMT folklore: De Concini 1979, and Dehy 1998
-  §4.2.2 (unread).
-- **Registry:** `q488-oc-SR_LG-via-LS-paths` is **computed**. It becomes proved given (G1′),(LS) once Littelmann 1995's
-  Demazure LS-path theorem is deep-read; the locator is cited from memory. The child `q488-oc-ls-bijection` is proved.
-- **Next:** deep-read the (LS) locator in a wake, then promote. Then /write the arXiv note with two SR_LG proofs.
+## Day 255 dream (2026-10-24): CURRENT STATE, read this first (registry wins)
+- **(OC)/odd-zero sub-arc: WRITE-UP GATE, now with two SR_LG proofs.**
+  - §4 (K-theory): proved given (G0) Chevalley, (G1) Demazure, (BR) 1005.2605 first-hand.
+  - §11 (LS paths): BR-free and §3.3-free. `q488-oc-ls-bijection` proved; `q488-oc-SR_LG-via-LS-paths` **computed**,
+    promote after the (LS) locator read (Q39).
+  - Also proved: Theorems I, Z, HZ, Q30, SR_OG, Thm B (OC for X_κ), Cor M (`q488-oc-ls-parity-model` proved).
+  - All in `proofs/2026-10-25-crownF-strict-reciprocity.md`. Unrefereed: §3.3, §9.3 (Clio asked in Wake 255). Theorem B is
+    not endorsed by Clio; Theorem Z is (uid451).
+- **Crown H** (`connections/2026-10-24-the-prime-is-a-bond.md`):
+  - Crown G's primed letter = a half-time on a short-root step (bond 2). Diagonal = long root, bond 1.
+  - §4 and §11 run in opposite directions, so SR_LG ⇔ LS-parity model via Ehrhart–Macdonald: K-Pieri sees the interior,
+    the crystal sees the closure, and the antipode/Serre duality swaps them (Seed Paths 2↔4).
+  - Minuscule = all bonds 1 = Hibi (explains the Wake 251 cominuscule trap).
+  - Odd quadric B_m/P_1 = the CCFL chain case (Q38, optional).
+- **Crown G status:** mechanism proved (bonds). §2 proved. §3 T = shifted MN REFUTED (Wake 255). Stembridge identification
+  still a hunch; no owner anywhere (2610.21289 negative first-hand; MO/SE silent).
+- **Registry this dream:** `q488-oc-even-reciprocity` had a stale conditional_grade, "conditional on ls-parity-model". That
+  is circular now that the model is a corollary of SR_LG. Fixed in both copies (note_dream255). No grade changed. Every
+  arc-node trust value checked against this block.
+- **Next (strict order):**
+  1. Wake 256: send the PROVE 255 note (`for-collaborator/2026-10-24-prove255-sr-lg-via-ls-paths.md` + Crown H addendum)
+     to Robin, cc Clio, with GitHub URL. **Ask Robin for the venue/FPSAC decision explicitly** (11-15 is 22 days out).
+  2. Q39: one (LS) locator read, ≤45 min, then promote.
+  3. /write the arXiv note. The De Concini/Dehy folklore risk is a footnote, not a session.
+  Q38/Q40 only after a draft exists.
 
-## Wake 255 (2026-10-24): CURRENT STATE, read this first (registry wins)
-- **Q32 owner gate PASSED: SR_LG not stated** anywhere checked (`reading/2026-10-24-q32-owner-search.md`).
-  - Stembridge 1997 Prop 4.2 = self-reciprocity only.
-  - CFL 2112.03776, Ghorpade–Raghavan, Ikeda–Naruse, Naruse–Okada do not state it.
-  - SR_OG = composite of classical facts (minuscule ASL + Stanley + Hibi). Credit, don't claim.
-  - RISK: Chirivì–Costa Cesari–Fang–Littelmann 2609.03195 (interior LS paths, Cor 5.4). PROVE 255 reads it first.
-- **Corollary M written** (§5.1 of the crownF proof file, c321c27): LS-parity model = SR_LG + Ehrhart–Macdonald (lattice ℤ
-  diag × ½ℤ off-diag); OG Ω-model = SR_OG + Stanley. `q488-oc-ls-parity-model` → **proved** (b032764). Numerics 384/384,
-  controls fail.
-- **Q34 REFUTED:** T=(I+C)^{1/2} is NOT shifted Murnaghan–Nakayama (agree at r=1 only; signs 4/8 on one-diagonal ribbons;
-  supports differ). WIP f3918f0.
-- **Mail:**
-  - PROVE 254 PDF to Clio cc Robin (WIP d22bd9a; referee §3.3, §9.3; Q32 asked).
-  - Clio uid451 ENDORSED Theorem Z given (G0),(G1),(BR). F1 (G0) back-port done (9d306cd), reply PDF answering her 3
-    questions (WIP ec3bc9e): her f(θ) = ours; 2-adic route insufficient (10/71 N even).
-  - Clio uid454 (Q569 PY hexagon = vertex star) registered peer-claimed, review owed.
-  - MacBeth uid452 Dirichlet-tensor revision reviewed (WIP f0e4543): 12/13 fixed, Comon(Poly)≃Cat slip on p.1 remains;
-    Step-3 equality OK; verdict "lemma, not note".
-- Theorem B still not endorsed by Clio.
-- **PROVE 255 = BR-free SR_LG:** Littelmann LS paths ⇒ model (M) ⇒ Ehrhart–Macdonald ⇒ SR_LG.
-- **After that: /write the arXiv note** ("Negative-degree Hilbert functions of Lagrangian and orthogonal Schubert
-  varieties"). Robin decides the venue; FPSAC 2026-11-15.
-
-## Day 254 dream (2026-10-24): CURRENT STATE, read this first (registry wins)
-- **(OC)/odd-zero sub-arc is at the WRITE-UP GATE.** Proved given (G0) Chevalley, (G1) Demazure, (BR) 1005.2605 first-hand:
-  - Theorem I (integer window).
-  - Theorem Z and Theorem HZ (half-integer law, both halves, signs).
-  - Q30, SR_LG/SR_OG.
-  - Thm B (OC for X_κ).
-  Unrefereed: §3.3 and §9.3 of `proofs/2026-10-25-crownF-strict-reciprocity.md` (Clio asked, Wake 255).
-  Still open in the sub-arc: (OC) for triple intersections, Q29 (OG sporadic half-integer zeros).
-- **Crown G** (`connections/2026-10-24-lg-diagonal-parity-is-a-marked-alphabet.md`):
-  - A_oA_e = odd/even layers. Odd value ↔ primed letter, diagonal even ↔ no primes on the diagonal (P-Schur rule).
-  - LG/OG ≈ enriched/ordinary P-partitions ≈ peak algebra/QSym (hunch, Seed Path 1).
-  - LS-parity model H_κ(j)=F_κ(2j) and OG Ω-model H^OG(j)=Ω(P,j+1) are corollaries of SR + Ehrhart–Macdonald/Stanley
-    reciprocity (sketched; promote after writing, Q36).
-  - Half-step T ribbons ≈ shifted Murnaghan–Nakayama (hunch, Q34).
-- **Registry this dream:**
-  - `q488-oc-even-reciprocity` computed → proved (literally SR_LG).
-  - Notes on `ls-parity-model` (conditional_grade), `NZ-computed-m7` (hunch sign rule proved by HZ), `OG-height-one`.
-  - Every other grade checked: SUMMARY matches `trust`.
-- **Repeats fixed by mechanism:**
-  - m=5 interpolation died with the session again; it is recorded as not run. Use Q33 direct evaluation or don't start it.
-  - Browse skipped dream-queued items; they now live in feeds.md **PINNED #3** (Q32 owner gate, 2610.21289 read, Fang–He).
-- **Next:**
-  - Wake 255: email Clio cc Robin the PROVE 254 note + dream addendum + GitHub URL; then Q36, Q34.
-  - Browse 205: PINNED #3.
-  - Then /write a short arXiv note if Q32 = "not stated". FPSAC 2026-11-15 (22 days) is Robin's call.
-- **Browse 204** (`reading/2026-10-24.md`):
-  - Fang–He 2609.06676 proves Lusztig Ḃ-positivity in simply-laced finite type.
-  - Lu–Pan 2603.01350: ıquantum dual canonical bases coincide.
-  - Chouria–Luque 2601.09357; Carvalho–Koenig–Lomp 2607.03827.
-  - Williamson KLR/HR problem live (Columbia seminar; He's "Cartesian?" question).
-  - MO 182083: Grinberg credits GPT-5.5.
-
-## PROVE 254 (2026-10-24): full stanza (registry wins)
-- **ODD-ZERO LAW PROVED, both halves, with signs and strictness** (Theorem HZ, `proofs/2026-10-25-crownF-strict-reciprocity.md`
-  §9, node `q488-oc-HZ-half-integer-law`; `q488-oc-odd-zero-law` → proved). Given (G0), (G1), (BR first-hand) + Thm A.
-  s_{a+½}(κ) = Σ_g Φ(u(g)), g over even-diagonal strict maps of P_{κ′} → [2a−1], Φ a one-row functional of row 0 with
-  bounds u = g(row 1). Φ ≡ (−1)^{κ₁}2^{−κ₁} if 2a ≤ κ₁ (= Prop R, re-proved residue-free) and Φ ≥ 2^{−κ₁} if 2a ≥ κ₁
-  (shift lemma: value 1 ↔ deletion, then v ↦ v−1, turns the alternating 2^{−L} sum into a positive one). Zero iff
-  N_{κ′}(a)=0 iff a ≤ ⌈r′/2⌉. PROVE 253's odd-μ₁ base inequality is MOOT. **Thm B (OC) for Schubert X_κ re-proved
-  without Brion–Kumar G2–G4** (`q488-oc-thmB-OC` → proved via HZ). (OC) for triple intersections: unchanged, check.
-- **Q30 PROVED** given BR Cor 5.4 + Thm 5.5 (§3; BR's reader-left Cor 5.6 at p=1 proved by induction on the arm recursion).
-  **SR_LG, SR_OG PROVED** (§4–5): (−1)^{|κ|}H(−j) = #strict P_κ→[2j−1] even diag (LG), Ω̄(P_κ,j−1) (OG). LS-parity model and
-  SMT no longer needed. Theorem I re-derived combinatorially (§6: f(a,b)=a+b+2).
-- Checks: Demazure at negative weights vs strict counts m≤5 (0 fails; controls fail); HZ vs Demazure at −a−½ m≤4 125/125;
-  HZ closed forms vs (★) m≤6 252/252. Scripts `work-in-progress/scripts/prove254/`.
-- Side find (computed, unproved, unused): T=(I+C)^{1/2} has entries 0, ±2^{−|D|} (ribbon D through one diagonal box);
-  node `q488-oc-half-step-T-ribbons`. And I+C = A_oA_e (one {e<o} layer = o-antichain over e-antichain).
-- Next: Clio should referee §3.3 + §9.3 (only hand-written, once-reread steps). Robin decides FPSAC (deadline 11-15).
-
+## Days 254–255 sessions: pointer lines (full stanzas in `archive/SUMMARY-2026-10-24-pre-day255-dream.md`)
+- **Browse 205:** 2610.21289 §2–5 has no Θ-character (Aliniaeifard–Li 2506.12868 is the last lead). Fang–He thickening =
+  doubled Cartan datum. MO/SE silent on peak algebra. 32 new 2026 IDs off the Lusztig/Kashiwara hubs. The
+  Williamson/Columbia lead is unconfirmed. 2609.16765 queued (feeds.md QUEUED). `reading/2026-10-24-browse205.md`.
+- **PROVE 255:** §11 BR-free SR_LG (Lemma 11.1 bonds 2/1, 11.2 parity, Prop 11.3 bijection). 164/164 m≤5, controls
+  fail, OG 72/72 (WIP 6bf4926; rick-research 0e4001a). CCFL 2609.03195 not the owner
+  (`reading/2026-10-24-ccfl-2609.03195-deepread.md`).
+- **Wake 255:**
+  - Q32 owner gate PASSED (`reading/2026-10-24-q32-owner-search.md`).
+  - Cor M written (c321c27). Q34 refuted (f3918f0).
+  - Mail: PROVE 254 PDF to Clio cc Robin (d22bd9a). Clio uid451 endorsed Z; reply sent (ec3bc9e). MacBeth uid452 review
+    sent (f0e4543). Clio Q569 review owed.
+- **Day 254 dream:** Crown G (`connections/2026-10-24-lg-diagonal-parity-is-a-marked-alphabet.md`). even-reciprocity →
+  proved. feeds.md pin mechanism.
+- **PROVE 254:** Theorem HZ (both halves, signs), Q30 from BR Thm 5.5, SR_LG/SR_OG, Thm B free of G2–G4.
+  T=(I+C)^{1/2} ribbons node computed. Scripts `work-in-progress/scripts/prove254/`.
 
 ## Wake 254 + Day 253 dream (2026-10-23/24): pointer lines (full stanzas in `archive/SUMMARY-2026-10-24-pre-day254-dream.md`)
 - Wake 254:

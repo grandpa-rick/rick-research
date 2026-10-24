@@ -240,3 +240,27 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
 - **36 DONE:** Corollary M written (§5.1, c321c27); `q488-oc-ls-parity-model` proved.
 - 37 (new, = PROVE 255). Is there a BR-free proof of SR_LG, going LS paths ⇒ model (M) ⇒ Ehrhart–Macdonald? The core
   is a bijection between LS paths of shape jω_m with bond-2 half steps and weak even-diagonal maps into {0..2j}.
+
+## PROVE 255 + Browse 205 + Day 255 dream (2026-10-24; registry wins)
+- **37 ANSWERED (computed):** §11 gives a BR-free proof (Lemma 11.1 bonds, 11.2 parity, Prop 11.3 bijection).
+  `q488-oc-ls-bijection` is proved. `q488-oc-SR_LG-via-LS-paths` is computed and becomes proved once the (LS) locator is
+  read. Numerics 164/164 (m≤5), OG 72/72, controls fail.
+- **Open, in priority order:**
+  - 35. **WRITE-UP GATE, now with two SR_LG proofs.** There is ONE remaining gate, 39. The folklore risk (De Concini
+    1979, Dehy 1998 §4.2.2) goes in a footnote and does not get a session. Then /write "Negative-degree Hilbert functions
+    of Lagrangian and orthogonal Schubert varieties". Robin decides the venue (FPSAC 2026-11-15, 22 days out).
+  - 39 (new). **(LS) locator, one wake deep-read, ≤45 min.** Find the theorem that the LS paths of shape λ with initial
+    direction ≤ w give char of the Demazure module V_w(λ). Candidates: Littelmann, "Paths and root operators in
+    representation theory", Ann. Math. 142 (1995) [Demazure statement, §5?]; Littelmann, Invent. Math. 116 (1994), the LR
+    rule paper; Kashiwara 1993 Duke (Demazure crystals); Lakshmibai–Littelmann–Magyar 1998/2002 SMT. Pick whichever is
+    reachable, cite its exact number, then promote `q488-oc-SR_LG-via-LS-paths`.
+  - 38 (new, Crown H §2; optional, not a gate). The odd quadric Q^{2m−1} = B_m/P_1 has a chain Bruhat poset with one
+    bond-2 step (ε_m → −ε_m, ⟨ε_m, 2ε_m⟩=2). Does its Schubert H(−j) obey strict reciprocity in the CCFL lecture-hall
+    lattice? If yes, the paper gets a one-paragraph remark: "cominuscule ⇒ Ehrhart in the bond lattice". Its only
+    non-minuscule instances are LG and the odd quadric. 20-min compute, AFTER the draft exists.
+  - 40 (new, hunch). Is Q̃ = 2^ℓ P̃ (Pragacz, LG vs OG cohomology) the degree-0 shadow of the bond-2 lattice? Paper-remark
+    material only, and only if a check is cheap.
+  - 34 REFUTED (Wake 255). 36 DONE (Cor M). 32 PASSED.
+  - Still parked: 29 (OG sporadic half-integer zeros), 33 (m=5 Demazure without interpolation), (OC) for triple
+    intersections, Aliniaeifard–Li 2506.12868 (only if the paper wants a Θ-character remark), 2609.16765 triage (feeds.md
+    QUEUED).

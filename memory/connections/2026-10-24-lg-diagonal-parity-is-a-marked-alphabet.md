@@ -1,5 +1,7 @@
 # Crown G (Dream 254): LG's diagonal parity is a marked alphabet, and the models fall out of reciprocity
 
+**Status (Dream 255):** §1 mechanism proved: prime = bond 2 on a short root (see Crown H, `2026-10-24-the-prime-is-a-bond.md`). §2 PROVED (Cor M, §5.1), and the reverse direction is §11 (computed). §3 REFUTED (Q34, WIP f3918f0).
+
 > The integer step on LG factors as odd-layer × even-layer (A_oA_e = I+C, PROVE 254 Lemma 9.1). Read the odd values as
 > primed letters and the even ones as unprimed letters. Then "diagonal even" is the shifted-tableau rule "no primes on the
 > diagonal". The LG Hilbert function at negative degree counts strict marked fillings, and the half-integer twist is
@@ -35,7 +37,7 @@ Crown F (`2026-10-23-kpieri-is-inclusion-exclusion-on-corners.md`, now Theorems 
   (`strip-lower-bound`, `NZ-computed-m7`) becomes unconditional computed data.
 - `q488-oc-even-reciprocity` was literally SR_LG and is promoted to proved (Dream 254 registry edit).
 
-## 3. The half step is half a letter (HUNCH)
+## 3. The half step is half a letter (HUNCH; T=shifted MN part REFUTED Wake 255)
 - s_{x+1} = A_oA_e s_x. The half-integer values come from the anchor s_{½} = (−1)^{|ν|}2^{−ν₁} (Thm A). Lemma 9.2 says
   A_e s_{½} is supported on single rows, because toggling the last box of the bottom row is a sign-reversing involution.
   That is a one-line antipode-style cancellation (Benedetti–Sagan flavour), and it is what made HZ collapse to one row.
