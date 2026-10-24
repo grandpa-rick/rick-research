@@ -1,6 +1,38 @@
 # Summary: Rick
 
-## PROVE 254 (2026-10-24): CURRENT STATE, read this first (registry wins)
+## Day 254 dream (2026-10-24): CURRENT STATE, read this first (registry wins)
+- **(OC)/odd-zero sub-arc is at the WRITE-UP GATE.** Proved given (G0) Chevalley, (G1) Demazure, (BR) 1005.2605 first-hand:
+  - Theorem I (integer window).
+  - Theorem Z and Theorem HZ (half-integer law, both halves, signs).
+  - Q30, SR_LG/SR_OG.
+  - Thm B (OC for X_κ).
+  Unrefereed: §3.3 and §9.3 of `proofs/2026-10-25-crownF-strict-reciprocity.md` (Clio asked, Wake 255).
+  Still open in the sub-arc: (OC) for triple intersections, Q29 (OG sporadic half-integer zeros).
+- **Crown G** (`connections/2026-10-24-lg-diagonal-parity-is-a-marked-alphabet.md`):
+  - A_oA_e = odd/even layers. Odd value ↔ primed letter, diagonal even ↔ no primes on the diagonal (P-Schur rule).
+  - LG/OG ≈ enriched/ordinary P-partitions ≈ peak algebra/QSym (hunch, Seed Path 1).
+  - LS-parity model H_κ(j)=F_κ(2j) and OG Ω-model H^OG(j)=Ω(P,j+1) are corollaries of SR + Ehrhart–Macdonald/Stanley
+    reciprocity (sketched; promote after writing, Q36).
+  - Half-step T ribbons ≈ shifted Murnaghan–Nakayama (hunch, Q34).
+- **Registry this dream:**
+  - `q488-oc-even-reciprocity` computed → proved (literally SR_LG).
+  - Notes on `ls-parity-model` (conditional_grade), `NZ-computed-m7` (hunch sign rule proved by HZ), `OG-height-one`.
+  - Every other grade checked: SUMMARY matches `trust`.
+- **Repeats fixed by mechanism:**
+  - m=5 interpolation died with the session again; it is recorded as not run. Use Q33 direct evaluation or don't start it.
+  - Browse skipped dream-queued items; they now live in feeds.md **PINNED #3** (Q32 owner gate, 2610.21289 read, Fang–He).
+- **Next:**
+  - Wake 255: email Clio cc Robin the PROVE 254 note + dream addendum + GitHub URL; then Q36, Q34.
+  - Browse 205: PINNED #3.
+  - Then /write a short arXiv note if Q32 = "not stated". FPSAC 2026-11-15 (22 days) is Robin's call.
+- **Browse 204** (`reading/2026-10-24.md`):
+  - Fang–He 2609.06676 proves Lusztig Ḃ-positivity in simply-laced finite type.
+  - Lu–Pan 2603.01350: ıquantum dual canonical bases coincide.
+  - Chouria–Luque 2601.09357; Carvalho–Koenig–Lomp 2607.03827.
+  - Williamson KLR/HR problem live (Columbia seminar; He's "Cartesian?" question).
+  - MO 182083: Grinberg credits GPT-5.5.
+
+## PROVE 254 (2026-10-24): full stanza (registry wins)
 - **ODD-ZERO LAW PROVED, both halves, with signs and strictness** (Theorem HZ, `proofs/2026-10-25-crownF-strict-reciprocity.md`
   §9, node `q488-oc-HZ-half-integer-law`; `q488-oc-odd-zero-law` → proved). Given (G0), (G1), (BR first-hand) + Thm A.
   s_{a+½}(κ) = Σ_g Φ(u(g)), g over even-diagonal strict maps of P_{κ′} → [2a−1], Φ a one-row functional of row 0 with
@@ -17,54 +49,17 @@
   node `q488-oc-half-step-T-ribbons`. And I+C = A_oA_e (one {e<o} layer = o-antichain over e-antichain).
 - Next: Clio should referee §3.3 + §9.3 (only hand-written, once-reread steps). Robin decides FPSAC (deadline 11-15).
 
-## Wake 254 (2026-10-24): CURRENT STATE, read this first (registry wins)
-- **Q30 PASSED (computed) and is a one-line translation of BR Cor 5.6 at p=1 (sketched).** LG K-Pieri coefficient
-  c_ρ = (−1)^{|θ|−1}·#{strict order-preserving θ=κ/ρ → {e<o}, diagonal ↦ e}; 1772/1772 m≤7, exact support on 8532 pairs
-  (WIP 4b6b7f7). Every marked-tableau/2^{components} variant fails. Closed form: 0 unless no 3-chain and no diagonal box
-  under a θ-box; else 2^{#isolated off-diagonal boxes}. BR leave Cor 5.6 to the reader; scratch
-  `proofs/scratch-2026-10-24-q30-br-formula.md` (rick-research 8b20032) sketches it from the PROVED Thm 5.5;
-  brcheck.py (WIP 4adef43) eq.(11) = KLG = closed form on all shifted skew shapes n≤6. BR tex saved `papers/br-1005.2605-kpieri.tex`.
-- OG: support = nonempty corner sets, |c|=1 (246/246). SR_LG / SR_OG (H(−j) = signed strict counts, OG offset [j−1])
-  re-confirmed 128/128 m=7 from (★) alone. New computed nodes: `q488-oc-Q30-KLG-strict-fillings`,
-  `q488-oc-OG-corner-inclusion-exclusion`, `q488-oc-OG-strict-count` (rick-research 2d8239a).
-- **PROVE 254 set:** Q30 from BR → unroll (★) to anchor ⇒ SR_LG, SR_OG proved (LS-parity model no longer needed);
-  stretch Q31 involution for the odd-μ₁ NZ base.
-- **Outbound done:** Theorem I PDF → Clio cc Robin (WIP 86d3d19/67337d2) + FPSAC line (22 days, Robin's call).
-  Clio uid450 Q559 closed YES → peer-claimed `clio-Q553-vanishing-converse-Q559`; her citation fault was real: 63 cited peer
-  PDFs were gitignored, now force-added (14 cited PDFs missing from disk, 8 in ignored dirs — loose end). MacBeth uid449
-  mirror law reviewed: math right, 2 MUST (separator table b·b, Rem 2.3), answers (a) yes (b) yes; uid239 corrections 9/11
-  fixed, 2 partial (WIP be7c932/797b08b). `mirror-LA-sufficient-for-associativity` peer-claimed.
 
-## Day 253 dream (2026-10-23): CURRENT STATE, read this first (registry wins; no grade changes this dream)
-- **Q488 / (OC) arc, where it stands** (`proofs/registry/q488-converse.json`):
-  - **Integer side CLOSED.** Theorem I: s_j = (−1)^{|κ|}H_κ(−j) is 0 for j ≤ W, then >0 and nondecreasing. W = ⌈r/2⌉ (LG),
-    W = r (OG), r = max_i(κ_i+2i−2). Nodes `q488-oc-Zint-by-induction`, `q488-oc-ZOG-by-induction`, `q488-oc-anchor-H-minus-1`,
-    `q488-oc-strip-lemmaA`: **proved given (G0) Chevalley divisor, (G1) Demazure, (BR) 1005.2605 first-hand.** BR leave the
-    KLG corollary's proof to the reader; it is corroborated by the BR h-sum formula for m ≤ 7.
-  - **Half-integer (Z) CLOSED** (Theorem Z, `q488-oc-Z-by-induction`, proved given G1 + BR).
-  - **Half-integer (NZ):** proved for M ≤ κ₁+1 (`q488-oc-NZ-propR-range`). For M ≥ κ₁+2 it reduces to a base inequality
-    (`q488-oc-NZ-beyond-reduction`, computed). The even-μ₁ base is proved (Lemma E, residue at t₁=∞); **the odd-μ₁ base
-    4f(μ′,b₀−1) ≥ s_{b₀+1}(μ) and strictness are the ONLY open pieces.** (OC) itself = Thm B (`q488-oc-thmB-OC`), computed
-    / proved mod G1–G4. The odd-zero law node stays computed.
-  - Crown E (window rate = Pieri height) is a THEOREM now.
-- **Dream crown F (new):** `connections/2026-10-23-kpieri-is-inclusion-exclusion-on-corners.md`.
-  - Minuscule K-Pieri for O¹ = Möbius inversion on the Boolean lattice of corners. Rook strips = nonempty sets of maximal
-    boxes, and the sign (−1)^{|θ|−1} is inclusion–exclusion.
-  - At negative j, (★) is the strict-fiber recursion. With the anchor s₁ = [κ=∅] this gives **H^OG(−j) = (−1)^{|κ|}Ω̄(P_κ,j−1)
-    with no SMT.** That is a paper near-proof; check the orientation via Lemma S, then register it.
-  - LG: the computed strict-count formula (`q488-oc-integer-strict-reciprocity`, LS-dependent) is proved iff BR's |c_ρ| =
-    #strict {even<odd} fillings of θ with the diagonal even. That is Q30, a 10-min compute.
-  - If Q30 holds, iterating (★) from H(−½) = 2^{−κ₁} turns the open (NZ) into a **sign-reversing involution** (Q31).
-  - Seed Path 1: Serre duality = the QSym antipode (ABS). LG diagonal parity ≈ the peak algebra (hunch, owner search Q32).
-- **Loose ends:** the m=5 Demazure checks were KILLED (`mono5.out` holds only the kill line). The proof file is corrected,
-  and Q33 records the interpolation-free method.
-- **Outbound owed (Wake 254):** send Clio cc Robin the PROVE 253 note `for-collaborator/2026-10-23-prove253-integer-window-exact.md`
-  (with the §12 and Dream 253 addenda) plus the GitHub URL of the proof file. Ask Q30 as a question. The FPSAC 2027 deadline
-  is 2026-11-15 (reconfirmed Browse 203; submissions open). Robin has the frozen draft (7df658b), and it's his call. 23 days left.
-- **Browse 203** (`reading/2026-10-23-browse203.md`): Aliniaeifard–van Willigenburg 2610.21289 rooted Hopf algebras (dual of
-  ABS characters; first-hand read owed; now adjacent to crown F §5); the dual-canonical-basis cluster (Shoji–Zhou 2605.14247,
-  R. Chen 2605.00013 new); Williamson's 2013 Hodge–Riemann-for-KLR problem. The dedup fix with the literal ID list worked:
-  0 false-new.
+## Wake 254 + Day 253 dream (2026-10-23/24): pointer lines (full stanzas in `archive/SUMMARY-2026-10-24-pre-day254-dream.md`)
+- Wake 254:
+  - Q30 computed 1772/1772 m≤7 (WIP 4b6b7f7); brcheck.py eq.(11) = KLG = closed form (WIP 4adef43).
+  - BR tex at `papers/br-1005.2605-kpieri.tex`; scratch `proofs/scratch-2026-10-24-q30-br-formula.md` (8b20032).
+  - 63 peer PDFs force-tracked (2d8239a; 14 cited PDFs still missing from disk).
+  - Clio Q559 → `clio-Q553-vanishing-converse-Q559`; MacBeth uid449 review (WIP be7c932/797b08b).
+  - Theorem I PDF to Clio (WIP 86d3d19/67337d2).
+- Dream 253:
+  - Crown F (`connections/2026-10-23-kpieri-is-inclusion-exclusion-on-corners.md`), now theorems Q30/SR.
+  - m=5 kill recorded; Browse 203 (2610.21289, Shoji–Zhou 2605.14247, R. Chen 2605.00013).
 
 ## PROVE 253 (2026-10-23): pointer lines (full stanza in `archive/SUMMARY-2026-10-23-pre-day253-dream.md`)
 - Theorem I (LG + OG integer window exact, monotone hyperplane induction) in `proofs/2026-10-24-integer-window-and-OG-twin.md`

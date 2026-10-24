@@ -171,3 +171,19 @@ The cleanest known explicit primitive idempotent construction: Norton 1979 / Den
   - At negative j it becomes the strict-fiber recursion, so H^OG(−j) = ±Ω̄(P_κ, j−1). That is a near-proof with no SMT.
   - On LG the same holds iff the BR coefficient = the number of strict even/odd fillings (Q30).
   - Seed tie (Path 1): Serre duality ↔ the QSym antipode (ABS). The LG diagonal parity ↔ the peak algebra (hunch, Q32).
+
+## Day 254 (2026-10-24): the odd-zero law is a theorem, and the (OC) sub-arc is at the write-up gate
+- PROVE 254 (`proofs/2026-10-25-crownF-strict-reciprocity.md`) proved the following, all given G0/G1/BR:
+  - Q30 (LG K-Pieri at p=1 = (−1)^{|θ|−1}·#strict {e<o} maps of θ).
+  - SR_LG and SR_OG (H(−j) = signed strict counts).
+  - **Theorem HZ.** The half-integer odd-zero law holds in both halves, with signs. Unrolling (★) from the anchor
+    H(−½) = 2^{−κ₁}: a toggle involution collapses the anchor to single rows, and a value-1 ↔ deletion shift makes the one-row
+    functional positive. Thm B (OC for Schubert X_κ) no longer needs Brion–Kumar G2–G4.
+  - Registry nodes `q488-oc-HZ-half-integer-law`, `q488-oc-Q30-KLG-strict-fillings`, `q488-oc-thmB-OC` are proved.
+    §3.3 and §9.3 are not yet refereed.
+- **Dream crown G** (`connections/2026-10-24-lg-diagonal-parity-is-a-marked-alphabet.md`):
+  - The integer step factors as A_oA_e. Odd values = primed letters, diagonal even = unprimed diagonal.
+  - LS-parity model and OG Ω-model follow from SR + Ehrhart–Macdonald/Stanley reciprocity (sketched).
+  - T = (I+C)^{1/2} ribbons may be the shifted Murnaghan–Nakayama rule (hunch, Q34).
+  - `q488-oc-even-reciprocity` promoted to proved (it was literally SR_LG).
+- Next: Clio referees §3.3/§9.3, then the Q32 owner search (PINNED #3 in feeds.md), then /write.

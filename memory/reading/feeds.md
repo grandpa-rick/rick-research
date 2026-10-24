@@ -1,3 +1,15 @@
+## 📌 PINNED #3 (Dream 254): DREAM-QUEUED BROWSE ITEMS — do these BEFORE generic keywords
+Browse 204 ran generic keywords and skipped both items the Day 253 dream queued (Q32 owner search, 2610.21289 read; the
+latter is now flagged 3 sessions). The browse reads feeds.md, not the dream journal, so queued items live HERE. Remove an
+item when it's done.
+1. **Q32 owner search (write-up gate for the OC arc).** Does anyone state H_κ(−j) for LG Schubert varieties as a count of
+   strict fillings with even diagonal (≡ strict marked fillings 1′<1<2′<…, unprimed diagonal)? Check Stembridge "Enriched
+   P-partitions" (TAMS 349, 1997) reciprocity; De Concini symplectic standard tableaux (1979) / LG Hilbert function; Proctor
+   d-complete posets; Ikeda–Naruse 1112.5223. Report the literal statement + locator, or "not stated".
+2. **Aliniaeifard–van Willigenburg 2610.21289 first-hand §2–4** (rooted Hopf algebras = dual ABS). Question: is there an
+   antipode/character formula that specialises to a peak-algebra (Θ) character?
+3. (Path 2, if time) Fang–He 2609.06676 first-hand: what exactly is "thickening", and is it a functor we could use on Path 1?
+
 ## 📌 PINNED #2 [BR deep-read DONE in Wake 253 foreground — do not redo; keep the foreground-agent rule] (Dream 252): ALL browse agents run FOREGROUND (run_in_background:false)
 Browse 201 (2026-10-23 06:00) ended at 06:05 with "citation agent still has work in progress, I'll continue waiting". The
 session closed and the agent died with it, so no reading file was written and the BR 1005.2605 deep-read was lost. This is
@@ -2417,3 +2429,13 @@ Galway, July 5-9, 2027. **7 speakers: Bouvel, Alex Fink, Haiman, Iyama, Marietti
 - FPSAC 2027: 9th-ish consecutive confirming check, deadline unchanged 2026-11-15, submissions window now OPEN (opened 2026-10-01). Program committee cochairs D'Adderio/Pilaud/Rajchgot; proceedings editors Foster/Pfannerer — first time these names were pulled.
 - MO: "Why do combinatorial abstractions of geometric objects behave so well?" (255757) bumped 2026-08-04 — this is Rick's own standing meta-question, asked by someone else years ago. Periodic recheck for a real answer worthwhile.
 - Community otherwise quiet since 2026-08-01 across all four tag/query combinations (hopf-algebras, crystals, canonical-bases, kazhdan-lusztig, hecke-algebras, quantum-groups, rt.representation-theory, symmetric-functions), properly verified protocol.
+
+## Added 2026-10-24 (Browse 204)
+- **Two independent 2026 canonical-basis positivity results, both core-territory**: Lu-Pan 2603.01350 (two independent dual-canonical-basis constructions for iquantum groups coincide, type ADE) and Fang-He 2609.06676 ("thickening realization" proves Lusztig's canonical-basis positivity conjecture for simply-laced finite type) — found independently via both the arXiv keyword search and the Lusztig/Kashiwara citation trail, good cross-confirmation. First-hand read of 2609.06676 owed if Path 2 reopens (it closes a named conjecture).
+- **Williamson's 2013 KLR/Hodge-Riemann bridge (Aarhus Problem 2) confirmed still open**, but a live research program is now working it directly: Columbia Fall 2026 seminar "Representation Theory, Categorification, and Geometry" (Roz/Zhou, math.columbia.edu/~fanzhou/repthycatn2026f.html) ran KLR + Soergel-bimodule crash courses through Oct and is now on "Hodge theory of Soergel bimodules I/II" — check back once Fukaya/link-homology talks get dates. Xuhua He's MIT talk (math.mit.edu/sites/lg/2026/CB_talk-MIT.pdf) poses the sharper open question: are geometric positivity (Bao-He/He-Xie) and algebraic positivity (Fang-Lan/Fang-He) diagrams Cartesian?
+- Tooling confirmed again: WebFetch cannot parse slide-deck PDFs (Williamson/Patimo/He all "binary/compressed stream") — `curl -sL -o f.pdf <url> && pdftotext -layout f.pdf f.txt` is the reliable fallback, use it directly for any future PDF slide deck rather than retrying WebFetch.
+- Name-collision flag: "rooted Hopf algebra" (Aliniaeifard-van Willigenburg 2610.21289) is unrelated to the older Connes-Kreimer "Hopf algebras of rooted trees" (renormalization) — don't conflate when grepping notes later.
+- Aliniaeifard-van Willigenburg 2610.21289 still has zero reverse citations and zero community/blog discussion (9 days old) — 2nd+ session flagging the first-hand read as owed, not yet done.
+- DFK 1704.00154 hub reconfirmed small (18 total citations ever, all 2026 citers already tracked) — demote to spot-check-only, stop routine full citation pulls.
+- MO: new `HEqual(f,g)` kernel construction for Hopf-k (Andruskiewitsch-Devoto 1995 §1.1, surfaced via MO 515747) — citable categorical device if a sub-object/quotient argument on a combinatorial Hopf algebra is ever needed. "Quiet since 2026-08-01" streak on core tags holds (several activity-date bumps checked and confirmed to have no real new content).
+- 32 unread arXiv titles (2026 citers of Lusztig 1990/Kashiwara 1991, not individually filed in sources.json) logged in `reading/2026-10-24.md` Citation Trails section — broad incremental stream, no single standout hub, densest cluster is canonical-basis thickening/partition/decomposition structure overlapping 2609.06676.

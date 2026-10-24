@@ -862,7 +862,8 @@
           "script": "work-in-progress/scripts/wake251/orderpoly/lsmodel.py (out_lsmodel.txt), match.py",
           "wip_commit": "0fa36a7",
           "children": [],
-          "note_2026_10_23": "PROVE 251 results (Prop H, Thms A/B/C) do NOT use the LS model; it remains a computed tool."
+          "note_2026_10_23": "PROVE 251 results (Prop H, Thms A/B/C) do NOT use the LS model; it remains a computed tool.",
+          "conditional_grade_dream254": "proved given q488-oc-integer-strict-reciprocity (SR_LG) + Ehrhart-Macdonald reciprocity. Argument (Dream 254, memory/connections/2026-10-24-lg-diagonal-parity-is-a-marked-alphabet.md §2): F_kappa(2j) = #(j·O_P ∩ Λ), O_P the order polytope (0/1 vertices), Λ = Z on diagonal coords × (1/2)Z off-diagonal, so F_kappa(2j)=L(j) is an honest Ehrhart polynomial; E-M gives L(-j) = (-1)^{|P|}#int = (-1)^{|kappa|}·SR_LG count = H_kappa(-j) for all j>=1, hence H_kappa(j)=F_kappa(2j) identically. Promote to proved once written into the proof file (corollary to §4); grade left computed until then."
          },
          {
           "id": "q488-oc-strip-lower-bound",
@@ -881,17 +882,16 @@
          {
           "id": "q488-oc-even-reciprocity",
           "role": "attempt",
-          "trust": "computed",
+          "trust": "proved",
           "file": null,
           "sources": [],
-          "depends_on": [
-           "q488-oc-ls-parity-model"
-          ],
+          "depends_on": "['q488-oc-integer-strict-reciprocity']",
           "approach": "Even-M reciprocity: H_kappa(-M/2) = (-1)^{|kappa|} F°_kappa(M) (interior count, diagonal even), 63/63 m<=6. This is Ehrhart-Macdonald reciprocity for Q_kappa, hence PROVED conditional on the LS parity model; graded computed because the model is. F°(M)=0 iff M <= r(kappa)+1 (63/63). F_kappa is a genuine period-2 quasi-polynomial (no period collapse, 0/63 m<=6; kappa=(1): F=floor(N/2)+1). Side fact: H_kappa(-1/2) = 2^{-max kappa} (63/63).",
           "conditional_grade": "proved, conditional on q488-oc-ls-parity-model (Ehrhart-Macdonald reciprocity)",
           "script": "work-in-progress/scripts/wake251/reciprocity/recip.py, run.py, run2.py",
           "wip_commit": "33a8b3d",
-          "children": []
+          "children": [],
+          "note_dream254": "PROMOTED computed->proved (Dream 254): the statement H_kappa(-j) = (-1)^{|kappa|} F°_kappa(2j) (interior = strict maps P_kappa->[2j-1], diagonal even) is LITERALLY Theorem SR_LG = q488-oc-integer-strict-reciprocity, proved PROVE 254 (proofs/2026-10-25-crownF-strict-reciprocity.md §4) given G0,G1,BR, with no LS-model dependency. Only even M covered (odd M = q488-oc-HZ-half-integer-law)."
          },
          {
           "id": "q488-oc-odd-zero-law",
@@ -1008,7 +1008,8 @@
             "note_depends_on": "H values computed via the LS-parity model (gate6.py), hence depends_on q488-oc-ls-parity-model.",
             "script": "work-in-progress/scripts/wake253/nz.py, nzdiag.py, nztable.py, check52.py (out_nz_m3..7.txt, out_nz_table.txt, out_nzdiag_m6.txt)",
             "wip_commit": "65c33a1",
-            "children": []
+            "children": [],
+            "note_dream254": "The post-hoc HUNCH sign rule here (sign (-1)^{|kappa|} if kappa_1 < M*, else (-1)^{|kappa|-kappa_1}) is PROVED by q488-oc-HZ-half-integer-law (M=2a+1: kappa_1<M iff 2a>=kappa_1). The zero-set claim is also proved there. Node remains computed as the m<=7 data record."
            },
            {
             "id": "q488-oc-anchor-H-minus-1",
@@ -1273,7 +1274,8 @@
           "wip_commit": "65c33a1",
           "children": [],
           "note_2026_10_23_prove253": "Superseded at proved level by q488-oc-ZOG-by-induction (zero set + nonvanishing).",
-          "note_2026_10_23_dream253": "Dream 253: claim (c) (OG integer zero set = full chain) is now PROVED as q488-oc-ZOG-by-induction (given G0,G1,BR). Dream crown F (memory/connections/2026-10-23-kpieri-is-inclusion-exclusion-on-corners.md sec.2) gives a paper near-proof of H^OG(-j)=(-1)^|kappa| #strict P_kappa->[j-1] from (*) + rook strips = nonempty corner sets; not yet registered (orientation check via Lemma S pending). Grade unchanged."
+          "note_2026_10_23_dream253": "Dream 253: claim (c) (OG integer zero set = full chain) is now PROVED as q488-oc-ZOG-by-induction (given G0,G1,BR). Dream crown F (memory/connections/2026-10-23-kpieri-is-inclusion-exclusion-on-corners.md sec.2) gives a paper near-proof of H^OG(-j)=(-1)^|kappa| #strict P_kappa->[j-1] from (*) + rook strips = nonempty corner sets; not yet registered (orientation check via Lemma S pending). Grade unchanged.",
+          "note_dream254": "OG Omega-model caveat RESOLVED in principle: SR_OG (q488-oc-OG-strict-count, proved) + Stanley reciprocity Omega(P,-n)=(-1)^{|P|}Omega-bar(P,n) give H^OG_kappa(-j)=Omega(P_kappa,1-j) for j>=1, hence H^OG_kappa(j)=Omega(P_kappa,j+1) identically (two polynomials). Height-one claim (a) is the p=1 case of q488-oc-OG-corner-inclusion-exclusion (proved). Sporadic half-integer OG zeros (open_curiosity) remain unexplained = Q29."
          },
          {
           "id": "q488-oc-integer-strict-reciprocity",

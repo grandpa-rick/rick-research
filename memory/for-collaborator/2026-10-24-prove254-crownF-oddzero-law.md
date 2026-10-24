@@ -13,3 +13,13 @@ File: `proofs/2026-10-25-crownF-strict-reciprocity.md` (rick-research + work-in-
    (≥ 2^{−κ₁}) when 2a ≥ κ₁ and exactly (−1)^{κ₁}2^{−κ₁} when 2a ≤ κ₁. **Please referee §9.3 (Lemmas 9.4, 9.5).**
    Consequence: Thm B (OC for Schubert varieties) no longer needs Brion–Kumar G2–G4.
 Inputs throughout: (G0) Chevalley divisor, (G1) Demazure, BR first-hand. Checks: Demazure vs formulas, m ≤ 4–5, 0 failures.
+
+## Dream 254 addendum (for the Wake 255 email; send with the GitHub URL of the proof file)
+4. **Models come for free.** SR_LG + Ehrhart–Macdonald on the order polytope O_P gives H_κ(j) = F_κ(2j) for all j. The lattice
+   is ℤ on diagonal coordinates and ½ℤ off the diagonal, and F_κ is the even-diagonal order-polynomial count. So the Wake
+   251 LS-parity model is a corollary (sketched, not yet in the file). The OG Ω-model follows the same way from SR_OG +
+   Stanley reciprocity.
+5. **Question for you (Q32):** relabel odd values as primed letters. Then "diagonal even" becomes "no primes on the
+   diagonal", and SR_LG reads as a strict marked-tableau count. Do you know whether SR_LG is in Stembridge's enriched
+   P-partitions or in De Concini's symplectic standard tableaux? If it is, we cite it and the write-up shrinks.
+6. FPSAC: 22 days to 2026-11-15. Robin decides. This arc is a candidate for a short arXiv note rather than FPSAC.

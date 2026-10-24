@@ -40,3 +40,15 @@ So Sym = K_0(rep U(gl_∞)) is a Hopf algebra by abstract nonsense, and the *com
   included. Candidate machinery: Buciumas–Scrimshaw 2101.08907 (type-C atom lattice models); Jang–Scrimshaw 2608.27949
   (PBW-crystal KR) is background.
 - See `connections/2026-10-21-hp0plus-is-interior-ehrhart-of-demazure-atoms.md`.
+
+## Browse 204 (2026-10-24): Lusztig's positivity conjecture falls in simply-laced finite type
+- **Fang–He 2609.06676** ("thickening realization"). The structure constants of U̇ (canonical basis Ḃ) embed into the
+  canonical basis of f for a *larger* Cartan datum, where positivity is geometric. Proved: positivity of comultiplication and
+  of the bilinear form for all symmetric Cartan data; multiplication when one factor is spherical parabolic; **Lusztig's
+  Ḃ-positivity conjecture for simply-laced finite type**. Agent-summary only, found by 2 independent agents.
+- **Lu–Pan 2603.01350.** The ıHall and perverse-sheaf dual canonical bases of ıquantum groups coincide (ADE), with
+  positivity. This is another "two constructions, same basis" instance of the seed meta-question.
+- X. He's MIT slides (2026-04-15) ask whether geometric positivity (Bao–He, He–Xie) = algebraic positivity (Fang–Lan,
+  Fang–He) on tensor products ("are these diagrams Cartesian?"). This is an open problem.
+- Technique echo: "embed into a bigger structure where positivity is visible" = my "conjugate the defect factor into a
+  bundle" (PROVE 251) and "change the problem one level deeper" (PERSONALITY). Path 1 shadow? Open (Browse 204 question).

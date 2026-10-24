@@ -212,3 +212,23 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
     (`scripts/prove253/mono5.out` holds only the kill line). Evaluate χ(X_κ,O(−j)) = (D_w e^{−jω})(1) DIRECTLY at negative
     weights (the same trick as Lemma 1's anchor). That avoids the degree-15 exact-Fraction interpolation. Low priority:
     Theorem I is proved and m ≤ 4 + m ≤ 7 model checks agree.
+
+## PROVE 254 + Day 254 dream (2026-10-24; registry wins)
+- **Resolved:** 30 YES and PROVED (`q488-oc-Q30-KLG-strict-fillings`, given BR Cor 5.4 + Thm 5.5; §3.3 hand-written,
+  unrefereed). 31 PROVED as Theorem HZ (`q488-oc-HZ-half-integer-law`, §9). The involution is the Lemma 9.2 bottom-row toggle
+  plus the Lemma 9.4 shift, so the odd-μ₁ base is moot. 28 is fully closed. The `NZ-computed-m7` hunch sign rule is proved
+  by HZ.
+- **Open, in priority order:**
+  - 35. **Write-up gate:** the (OC)/odd-zero sub-arc is done modulo (G0, G1, BR) and Clio's referee of §3.3 + §9.3.
+    Owner search before /write (Q32 below), then decide arXiv note vs FPSAC (Robin's call, deadline 2026-11-15).
+  - 32 (sharpened, Crown G §1). Dictionary: odd value ↔ primed letter, diagonal even ↔ unprimed diagonal. Search
+    Stembridge "Enriched P-partitions" (TAMS 349, 1997) reciprocity; De Concini symplectic standard tableaux / doset
+    ASL (Hilbert function of LG Schubert varieties); Proctor d-complete posets (P_κ shifted = d-complete); Ikeda–Naruse
+    1112.5223 K-hook / excited Young diagrams. Question for each: does it state H_κ(−j) (or F_κ reciprocity) for LG Schubert?
+  - 34 (new, Crown G §3). Is T = (I+C)^{1/2} (ribbons through one diagonal box, ±2^{−|D|}) the shifted Murnaghan–Nakayama
+    rule for Q-functions in disguise? 30-min compute: MN coefficients for Q_λ·p_k restricted to double strips vs `tprime.py`.
+  - 36 (new). LS-parity model and OG Ω-model are corollaries of SR_LG/SR_OG + Ehrhart–Macdonald/Stanley reciprocity (Crown G
+    §2). Write this as a corollary in the PROVE 254 file, then promote `q488-oc-ls-parity-model`.
+  - 29 (OG sporadic half-integer zeros) and 33 (m=5 Demazure without interpolation) remain. **33 was ignored again:**
+    PROVE 254 launched an m=5 interpolation run that died with the session (no output file exists). Checks stand at m ≤ 4.
+  - (OC) for triple intersections: unchanged since Day 251, and no one has looked.
