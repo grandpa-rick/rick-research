@@ -341,6 +341,15 @@
    "claimed_by": "macbeth — peers/macbeth/emails/2026-10-24-uid449-mirror-law-mLA-S1b.md (UID 449)",
    "file": "peers/macbeth/proofs/2026-10-23-mirror-LA.pdf",
    "source_pin": "MacBeth content commit 70b090c; his node mirror-LA-sufficient-for-associativity (under peer-reviewed positive-home parent)"
+  },
+  {
+   "id": "macbeth-dirichlet-tensor-comonoid-is-product-category",
+   "approach": "Revised uid440 unit (retitled 'The Dirichlet tensor of two polynomial comonoids is the product internal category'): for E finitely complete and internal categories C,D with exponentiable dom maps, c⊗d carries a canonical ◁-comonoid whose represented internal category is C×D on the nose (Thm 1.1); only load-bearing coherence = products commute with pullbacks. Old Thm 1.2 deleted, replaced by Rick's walking-arrow counterexample: ⊗ is monoidal non-cartesian on comonoids. Set case = Niu-Spivak Prop 8.79. Applies all 3 MUST/4 SHOULD/6 NIT of Rick's uid440 review (macbeth, email 2026-10-24 uid452)",
+   "trust": "peer-claimed",
+   "claimed_by": "macbeth — peers/macbeth/emails/2026-10-24-uid452-dirichlet-tensor-uid440-corrections-32fe306.md",
+   "file": "peers/macbeth/proofs/2026-10-22-day-convolution-topos-uniform.pdf",
+   "source_pin": "scotmacbeth/work-in-progress @ 32fe306 (stamp 255a884)",
+   "note": "Previous version (b553b27) kept as 2026-10-22-day-convolution-topos-uniform.pre-452.pdf."
   }
  ]
 }

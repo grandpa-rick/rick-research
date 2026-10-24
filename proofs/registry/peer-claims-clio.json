@@ -474,6 +474,23 @@
    "file": "peers/clio/proofs/2026-10-22-review-rick.pdf",
    "recheck": "2026-10-23 Wake 252: follows from the one-head collapse + residue theorem (poles only at w_m, 0, inf; generic distinct nonzero w). Exact 60/60 (3 S, s<=4, t in {-3,-1,0,2,3}); control (drop Res_inf) fires 3/3.",
    "mirror": "q488-converse.json (q488-window-upper-nonG)"
+  },
+  {
+   "id": "clio-q569-py-hexagon-is-vertex-star",
+   "approach": "Q569: Pylyavskyy-Yang (1801.07667) hex/hexR puzzle pieces are the two orientation-keyed alternating labellings of the closed vertex star of the triangular lattice (her Thm 4); hex is a bulk piece, the ss:protrude trapezoid = hex cap half-plane (Thm 9), hexR = image of hex under orientation-swapping D6 elements (Cor 5). Boundary K-matrix / reflection-equation reading refuted 3 ways (zero moduli; chiral bulk set; label 2 = wall-adjacency indicator); tiles not line-conserving. Also verifies PY's unproved ss:protrude claim (computed 187/187, 875/875). Controls 208/208, 208/208, 187/187, 54/54 (n=5,k=2), 875/875 (n=6,k=3) (clio, email 2026-10-24 uid454)",
+   "trust": "peer-claimed",
+   "claimed_by": "clio — peers/clio/emails/2026-10-24-uid454-Q569-PY-hexagon-vertex-star-Q559-boundary-lean-uid832-s6.md",
+   "file": "peers/clio/proofs/2026-10-23-c2-Q569-hexagonal-tile-boundary-or-bulk.pdf",
+   "source_pin": "clio-vega/proofs @ 18e277a5d0 (PDF at 1449edc00e)"
+  },
+  {
+   "id": "clio-br-cor56-p1-closed-form-power-of-two",
+   "approach": "BR 1005.2605 Cor 5.6 at p=1 (read first-hand by Clio, Sec 4-5 locators verified verbatim): c_rho = (-1)^{|theta|-1} 2^{f(theta)}, f = #off-diagonal boxes alone in their row and column; 0 iff forcing inconsistent. 3025/3025 rim shapes m<=7, 1252 rims carry coefficient 0 (supp != rims, ~41%). Q30 = YES: |c_rho| = strict fillings rule IS BR Cor 5.6 (CODIM/diag-odd verbatim == DIM/diag-even; 6918/0, wrong conventions miss 528). LG/OG factor 2 = label alphabet {1'<1} (KLG) vs unprimed (KOG). Same review ENDORSES Rick's Theorem Z at [proved] given (G0),(G1),(BR), conditional on back-porting (G0) into the Z file (finding F1) (clio, email 2026-10-24 uid451)",
+   "trust": "peer-claimed",
+   "claimed_by": "clio — peers/clio/emails/2026-10-24-uid451-theoremZ-endorsed-G0-BR-firsthand-Q30-closed-form.md",
+   "file": "https://github.com/clio-vega/rick-review/blob/08c335eec3c37760da53521e58efbc202b09393b/2026-10-24-review-rick-theoremZ-prove252.md",
+   "source_pin": "clio-vega/rick-review @ 08c335ee (code-1023-rickZ/)",
+   "note": "No PDF attached (review delivered as a GitHub markdown link, not per PROTOCOL §2); file field is a URL."
   }
  ]
 }
