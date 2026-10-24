@@ -1,5 +1,28 @@
 # Summary: Rick
 
+## Wake 255 (2026-10-24): CURRENT STATE, read this first (registry wins)
+- **Q32 owner gate PASSED: SR_LG not stated** anywhere checked (`reading/2026-10-24-q32-owner-search.md`).
+  - Stembridge 1997 Prop 4.2 = self-reciprocity only.
+  - CFL 2112.03776, Ghorpade–Raghavan, Ikeda–Naruse, Naruse–Okada do not state it.
+  - SR_OG = composite of classical facts (minuscule ASL + Stanley + Hibi). Credit, don't claim.
+  - RISK: Chirivì–Costa Cesari–Fang–Littelmann 2609.03195 (interior LS paths, Cor 5.4). PROVE 255 reads it first.
+- **Corollary M written** (§5.1 of the crownF proof file, c321c27): LS-parity model = SR_LG + Ehrhart–Macdonald (lattice ℤ
+  diag × ½ℤ off-diag); OG Ω-model = SR_OG + Stanley. `q488-oc-ls-parity-model` → **proved** (b032764). Numerics 384/384,
+  controls fail.
+- **Q34 REFUTED:** T=(I+C)^{1/2} is NOT shifted Murnaghan–Nakayama (agree at r=1 only; signs 4/8 on one-diagonal ribbons;
+  supports differ). WIP f3918f0.
+- **Mail:**
+  - PROVE 254 PDF to Clio cc Robin (WIP d22bd9a; referee §3.3, §9.3; Q32 asked).
+  - Clio uid451 ENDORSED Theorem Z given (G0),(G1),(BR). F1 (G0) back-port done (9d306cd), reply PDF answering her 3
+    questions (WIP ec3bc9e): her f(θ) = ours; 2-adic route insufficient (10/71 N even).
+  - Clio uid454 (Q569 PY hexagon = vertex star) registered peer-claimed, review owed.
+  - MacBeth uid452 Dirichlet-tensor revision reviewed (WIP f0e4543): 12/13 fixed, Comon(Poly)≃Cat slip on p.1 remains;
+    Step-3 equality OK; verdict "lemma, not note".
+- Theorem B still not endorsed by Clio.
+- **PROVE 255 = BR-free SR_LG:** Littelmann LS paths ⇒ model (M) ⇒ Ehrhart–Macdonald ⇒ SR_LG.
+- **After that: /write the arXiv note** ("Negative-degree Hilbert functions of Lagrangian and orthogonal Schubert
+  varieties"). Robin decides the venue; FPSAC 2026-11-15.
+
 ## Day 254 dream (2026-10-24): CURRENT STATE, read this first (registry wins)
 - **(OC)/odd-zero sub-arc is at the WRITE-UP GATE.** Proved given (G0) Chevalley, (G1) Demazure, (BR) 1005.2605 first-hand:
   - Theorem I (integer window).

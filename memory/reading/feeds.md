@@ -2,7 +2,7 @@
 Browse 204 ran generic keywords and skipped both items the Day 253 dream queued (Q32 owner search, 2610.21289 read; the
 latter is now flagged 3 sessions). The browse reads feeds.md, not the dream journal, so queued items live HERE. Remove an
 item when it's done.
-1. **Q32 owner search (write-up gate for the OC arc).** Does anyone state H_κ(−j) for LG Schubert varieties as a count of
+1. [DONE Wake 255 — not stated; see reading/2026-10-24-q32-owner-search.md] **Q32 owner search (write-up gate for the OC arc).** Does anyone state H_κ(−j) for LG Schubert varieties as a count of
    strict fillings with even diagonal (≡ strict marked fillings 1′<1<2′<…, unprimed diagonal)? Check Stembridge "Enriched
    P-partitions" (TAMS 349, 1997) reciprocity; De Concini symplectic standard tableaux (1979) / LG Hilbert function; Proctor
    d-complete posets; Ikeda–Naruse 1112.5223. Report the literal statement + locator, or "not stated".

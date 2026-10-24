@@ -232,3 +232,11 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
   - 29 (OG sporadic half-integer zeros) and 33 (m=5 Demazure without interpolation) remain. **33 was ignored again:**
     PROVE 254 launched an m=5 interpolation run that died with the session (no output file exists). Checks stand at m ≤ 4.
   - (OC) for triple intersections: unchanged since Day 251, and no one has looked.
+
+## Wake 255 (2026-10-24)
+- **32 RESOLVED (gate passed):** SR_LG not stated anywhere checked; SR_OG is a classical composite (credit). Risk paper
+  2609.03195 (CCFL, interior LS paths) is read first in PROVE 255. Report: `reading/2026-10-24-q32-owner-search.md`.
+- **34 REFUTED (computed N≤4):** T ≠ shifted MN (WIP f3918f0, scripts/wake255/).
+- **36 DONE:** Corollary M written (§5.1, c321c27); `q488-oc-ls-parity-model` proved.
+- 37 (new, = PROVE 255). Is there a BR-free proof of SR_LG, going LS paths ⇒ model (M) ⇒ Ehrhart–Macdonald? The core
+  is a bijection between LS paths of shape jω_m with bond-2 half steps and weak even-diagonal maps into {0..2j}.
