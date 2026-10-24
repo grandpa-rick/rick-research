@@ -10,14 +10,14 @@ in j (Snapper). Scripts are in `work-in-progress/scripts/wake252/caseB/` (files 
 |---|---|---|
 | **Lemma S** (reflection) | D(κ^∨) = R(Δ_m ∖ D(κ)), where R(r,c) = (m−1−c, m−1−r) | **proved** (§2), and checked m ≤ 8 |
 | **Lemma Ch** (chain drop) | if θ = D(κ)∖D(ρ) has no strictly-SE pair and ≤ 2 boxes in every row and column, then r′(ρ) ≥ r′(κ) − 2 | **proved** (§3); checked on all 3801 such pairs, m ≤ 8 |
-| **Theorem Z** | for every strict κ ⊆ [m] and every odd M with 3 ≤ M ≤ 2⌈r′(κ)/2⌉+1, H_κ(−M/2) = 0 | **proved given (G1) + (BR)**; (BR) read first-hand from the arXiv v1 LaTeX source, Wake 253 (§8); (G1) is standard |
+| **Theorem Z** | for every strict κ ⊆ [m] and every odd M with 3 ≤ M ≤ 2⌈r′(κ)/2⌉+1, H_κ(−M/2) = 0 | **proved given (G0), (G1), (BR)**; (BR) read first-hand from the arXiv v1 LaTeX source, Wake 253 (§8); (G0), (G1) standard, cited, not deep-read. Peer review: Clio uid451 (2026-10-24) ENDORSED at this grade; her condition F1 ((G0) back-port into §§0, 1, 6) done Wake 255 |
 | (f) edge sign-coherence | the Pieri terms of b_κ at the window edge all have one sign | **FALSE** (§5), e.g. κ = (3,2) |
 
 This **closes Case B**, conditional on the K-Pieri support statement. Case B was the only open part of (Z). Earlier partial
 results were Thm C (M = 3), Thm Z₂ (2-separated κ) and Cor Z (ℓ ≤ 2). Theorem Z contains all three, apart from the anchor
 M = 3, which it uses.
 
-## 1. Setup and the two premises
+## 1. Setup and the three premises
 
 Shifted diagram: D(κ) = {(r,c) : 0 ≤ r < ℓ(κ), r ≤ c ≤ r+κ_{r+1}−1}, which lies inside the shifted staircase
 Δ_m = {(r,c) : 0 ≤ r ≤ c ≤ m−1}. D(κ) is an order ideal of Δ_m for the product order (r,c) ≤ (r′,c′) ⟺ r ≤ r′ and c ≤ c′.
@@ -30,6 +30,13 @@ D(κ) ∩ {r ≥ 1}, and the product order is invariant under translation, so
 row r of D(ρ) is row r of D(κ) truncated. So D(ρ)₊ ⊆ D(κ)₊, and **both are "row 0 removed"**. PROVE.md worried that r′
 removes the largest part of κ and of ρ, and that these might be different rows. They are not different rows: row 0 is the
 largest part of both, whatever θ does to it.
+
+**(G0)** (as stated in `proofs/2026-10-24-integer-window-and-OG-twin.md` §1, and used in `proofs/2026-10-25-crownF-strict-reciprocity.md` §1)
+Pic X = ℤ·L, and the Schubert divisor X^{(1)} is the zero scheme of a section of L. Hence O^1 := [O_{X^{(1)}}] = 1 − [L^{−1}]
+in K(X). (Chevalley; X smooth, so the divisor is Cartier with ideal sheaf L^{−1}.) Here X = LG(m,2m), L = O(1). Standard,
+cited, not deep-read. It is consumed exactly once, in Step 1 of §4 (1 − [O(−1)] = O^1). *Back-ported Wake 255 at Clio's
+request (uid451, condition F1): the earlier version of this file justified that identity inline and did not list
+Pic(LG) = ℤ·O(1) or the reduced, Cartier Schubert divisor with ideal sheaf O(−1) as inputs.*
 
 **(G1)** The Demazure character formula for line bundles on Schubert varieties. Through Thm C this gives the anchor:
 
@@ -103,7 +110,7 @@ m = 3, …, 8. This was recorded Wake 252 as a horizontal domino in row ≥ 1.
 
 ## 4. Theorem Z
 
-**Theorem Z.** Assume (G1) and (BR). For every strict κ with parts in [m] and every odd M with 3 ≤ M ≤ 2⌈r′(κ)/2⌉+1,
+**Theorem Z.** Assume (G0), (G1) and (BR). For every strict κ with parts in [m] and every odd M with 3 ≤ M ≤ 2⌈r′(κ)/2⌉+1,
 H_κ(−M/2) = 0.
 
 *Proof.* We use strong induction on |κ|. Write W(κ) = {odd M : 3 ≤ M ≤ 2⌈r′(κ)/2⌉+1}.
@@ -117,7 +124,7 @@ for every integer j,
 
   b_κ(j) := H_κ(j) − H_κ(j−1) = χ(O_D(j)) = χ([O_{X_κ}]·(1−[O(−1)])·[O(j)]).
 
-LG is smooth, so K⁰ = K₀. Moreover 1 − [O(−1)] = O^1, because the Schubert divisor X^1 is the zero scheme of a section of
+LG is smooth, so K⁰ = K₀. Moreover 1 − [O(−1)] = O^1 by **(G0)**, because the Schubert divisor X^1 is the zero scheme of a section of
 O(1): its Chevalley multiplicity on LG is ⟨ω_m, α_m^∨⟩ = 1. Expanding [O_{X_κ}]·O^1 = Σ_ρ c_ρ [O_{X_ρ}] gives
 b_κ(j) = Σ_ρ c_ρ H_ρ(j) for all integers j. Both sides are polynomials in j, so the identity holds identically, and in
 particular at half-integers. (D is the non-reduced divisor. The coefficients c_ρ take care of the multiplicities. We never
@@ -163,8 +170,12 @@ M = 1, 3, …, 13 (`prove252_signs.py`). The value at −9/2 is nonzero, and tha
    specific concern is whether BR's "rim" excludes diagonal configurations {(r,r),(r,r+1),(r+1,r+1)}. Those contain a
    3-chain and would break Lemma Ch. In the computed range they never occur in the support. **Next action:** deep-read
    1005.2605 §5 and confirm the inclusion literally, then upgrade the source entry.
-2. **(G1)** cited, not deep-read: the same debt as Thm C. Nothing else from G2–G4 is used.
-3. Nothing else. Lemma S, Lemma Ch and the induction are self-contained.
+2. **(G0)** cited, not deep-read: Pic(LG) = ℤ·O(1) and the Schubert divisor X^1 is reduced and Cartier with ideal sheaf
+   O(−1), so 1 − [O(−1)] = O^1 (Chevalley). Used once, in §4 Step 1. Added Wake 255 (Clio uid451, F1): the earlier text of
+   this gap list said "nothing else", which was false — Step 1 consumed (G0) without listing it. Same debt as Theorems I,
+   SR_LG, SR_OG, HZ.
+3. **(G1)** cited, not deep-read: the same debt as Thm C. Nothing else from G2–G4 is used.
+4. Nothing else. Lemma S, Lemma Ch and the induction are self-contained given (G0), (G1), (BR).
 
 ## 7. Lesson
 
@@ -198,5 +209,5 @@ indexing (BR′), because the reflection R(r,c) = (m−1−c, m−1−r) preserv
 already written for the strictly-SE definition. Its proof is unchanged and valid as written, and no mathematics in §§1–5
 changes.
 
-**Grade.** Theorem Z is **proved** given (G1) (standard: Demazure character formula / Kempf vanishing) and (BR) (cited
-literally above). (NZ), the nonvanishing half, stays open.
+**Grade.** Theorem Z is **proved** given (G0) (Chevalley / Pic, §1; back-ported Wake 255), (G1) (standard: Demazure character formula / Kempf vanishing) and (BR) (cited
+literally above). (NZ), the nonvanishing half, stays open here; it was later proved by a different route as Theorem HZ (`2026-10-25-crownF-strict-reciprocity.md` §9, PROVE 254).
