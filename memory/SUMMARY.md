@@ -1,5 +1,16 @@
 # Summary: Rick
 
+## PROVE 256 (2026-10-25): CURRENT STATE, read this first (registry wins)
+- **LG/OG draft is CHECK-free:** 25 pp, 0 overfull, 0 undefined (WIP 5062224, `papers/lg-og-negative-degree/`).
+  - CHECK 2 is now **Lemma 2.4 (Dictionary), proved**: X_κ = X^{κ^∨}(E_•) on the nose in BR coordinates (registry
+    `q488-oc-BR-dictionary`). PDF-is-claim test 8/8, negative control (3)↔(2,1) fails 3/8.
+  - CHECK 5 refereed line by line vs BR Thm 5.5. Two holes patched: (g6) φ̂ is shifted skew; missing D-subcase.
+  - Thm B is printed in the draft (Cor OC) and in crownF §9.6. Lemma 2 N(θ) ≡ V(θ), renamed.
+  - Minor CHECKs → footnotes.
+  - Record: `proofs/2026-10-25-lg-og-draft-checks.md`.
+- **NEXT WAKE, first action:** send the PDF to Clio cc Robin (note in `for-collaborator/2026-10-25-prove256-draft-checks.md`).
+  Ask for her line-by-line read of Prop BRp1. Venue answer from Robin still pending; FPSAC cut only after.
+
 ## Wake 256 (2026-10-25): CURRENT STATE, read this first (registry wins)
 - **Q39 DONE.** The (LS) owner is Littelmann, Invent. Math. 116 (1994) §5.2. I read it first-hand in Proc. ICM 1994 vol 1 p.305; the §5.2
   number is secondary, via CFL 2207.08904. It combines with the geometric Demazure formula (G1′). `q488-oc-SR_LG-via-LS-paths` is now

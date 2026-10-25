@@ -373,6 +373,14 @@ So s_{5/2}(3,2) = 1/8, which is the value (★) gives, and it equals 2^{−κ₁
 ### 9.6 What this closes
 
 - (NZ) at half-integers: all κ, all a, with strictness. PROVE 253's open base inequality (odd μ₁) is not needed.
+- **Theorem B = (OC) for X_κ** (written out PROVE 256; previously only in the registry note `note_prove254`).
+  *Claim.* For odd M = 2a+1 ≥ 2m+1, (−1)^{|κ|} 2^m H_κ(−M/2) is a positive integer.
+  *Proof.* a ≥ m ≥ κ₁, so 2a ≥ κ₁ and Theorem HZ (§9.4, large-a case) gives s_{a+½}(κ) ≥ 2^{−κ₁} N_{κ′}(a) and
+  2^{κ₁} s_{a+½}(κ) ∈ ℤ. The parts of κ′ are ≤ m−1, so every box (a′,b′) of D(κ′) has a′+b′ ≤ (m−2)+(m−2), and
+  r(κ′) ≤ 2m−3 (Lemma chain). Hence ⌈r(κ′)/2⌉ ≤ m−1 < a, and N_{κ′}(a) > 0 (Lemma Npos; N_∅ ≡ 1). So
+  2^m s_{a+½}(κ) = 2^{m−κ₁}·(2^{κ₁}s_{a+½}(κ)) is an integer ≥ 2^{m−κ₁} ≥ 1. ∎
+  Inputs: (G0), (G1), (BR) via HZ. The older Brion–Kumar route (G1–G4, `prove251/atoms.py`) is now a remark only.
+  Printed in the draft as Corollary cor:OC (`writing/lg-og-negative-degree/main.tex` §6.4).
 - Prop. R (odd-zero-law file) gets a second, residue-free proof (§9.4 small-a case).
 - (Z) gets a second proof (zero iff N_{κ′}(a) = 0), independent of Theorem Z's induction.
 - A by-product: T := (I+C)^{1/2} (so that s_{x+½} = T s_x) has entries 0, ±2^{−k}: it is multiplicative over connected

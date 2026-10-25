@@ -91,7 +91,11 @@ BR define c^ν_{λ,p} by O^λ·O^p = Σ_ν c^ν_{λ,p} O^ν (eq. (kcoef) of §1)
 
 **Lemma 2 (dimension indexing).** Write [O_{X_κ}]·O^1 = Σ_ρ c_ρ [O_{X_ρ}] and θ := D(κ)∖D(ρ).
 - (LG) c_ρ ≠ 0 ⇒ ρ ⊊ κ, θ is a rim (no two boxes strictly SE of each other), and θ has ≤ 2 boxes in every row and column.
-  Moreover c_ρ = (−1)^{|θ|−1} N(θ), where N(θ) ≥ 0 is the number of KLG-tableaux of shape R(θ) with content {1}.
+  Moreover c_ρ = (−1)^{|θ|−1} V(θ), where V(θ) ≥ 0 is the number of KLG-tableaux of shape R(θ) with content {1}.
+  **[Reconciled PROVE 256.]** This file formerly wrote N(θ) here. That name clashes with BR's N(θ) (number of connected
+  components) and with the strict counts N_κ(j), so it is renamed. It is the SAME number as the draft's V(θ), not a different
+  choice: at content {1} the KLG conditions (iii)/(iv) are vacuous (1 is the largest label, 1′ the smallest), so
+  #KLG(R(θ), {1}) = K(R(θ)), and K(R(θ)) = V(θ) by Lemma VK (crownF §3 / draft Lemma lem:VK).
 - (OG) c_ρ ≠ 0 ⇒ ρ ⊊ κ and θ is a rook strip. Conversely c_ρ = (−1)^{|θ|−1} for **every** ρ ⊊ κ with θ a rook strip.
 - In both cases a rook strip θ = D(κ)∖D(ρ) is an antichain (no two boxes comparable).
 
@@ -104,7 +108,7 @@ involution of Δ_m that swaps rows and columns and preserves the diagonal. So R 
   LG support (rim, ≤ 2 per row/column) and the LG sign c_ρ = (−1)^{|θ|−1}·(≥0) from Theorem Q30 instead
   (`2026-10-25-crownF-strict-reciprocity.md` §3, BR Cor 5.4 + Thm 5.5 only): c_ρ = (−1)^{|θ|−1}V(θ), V = 0 on any 3-chain
   (Lemma R), and a row/column of 3 or a strictly-SE pair (Lemma T(a), Lemma 3.1) gives a 3-chain. The draft uses V(θ) (Lemma R count)
-  in place of N(θ); nonvanishing in Lemma A(iii) is handled by (iii′).
+  (= the old N(θ), see the reconciliation above); nonvanishing in Lemma A(iii) is handled by (iii′).
   See also §10 gap 2.
 - OG: Lemma vanishB (a),(b) with p = 1 < a = 2 give the support statement. (c) gives the value.
 - Antichain: suppose x = (i,j) and y = (k,l) in θ with x < y and i < k, j < l. Then (i,l) is in the shifted plane
