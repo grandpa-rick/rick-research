@@ -254,7 +254,10 @@ inputs are the same (G0), (G1), (BR) plus the full Q30, so this is a second proo
 - Negative controls at m = 4 (64 pairs): LG alphabet [2j] instead of [2j−1]: 34 failures; LG without the diagonal parity:
   34 failures; OG alphabet [j]: 17 failures. The test separates.
 - Wake 254: Q30 1772/1772 nonzero coefficients m ≤ 7, support exact on 8532 pairs (`q30.py`); `brcheck.py`: BR eq. (11)
-  = literal KLG count = Lemma R closed form on all 2225 shifted skew shapes 2 ≤ n ≤ 6.
+  = literal KLG count = Lemma R closed form on all 2225 (ν,λ) pairs, summed over n = 2..6. Each ρ_n is enumerated
+  separately, so pairs are re-counted across n. At n = 6 alone: 1652 pairs = 1330 distinct box-sets (419 rims, 911 non-rims).
+  Clio's 1243 (uid457) = the box-sets with |θ| ≤ 13 (`prove255/uid457_census.py`). Extended 2026-10-25 to n = 6: 1652/1652
+  and n = 7: 6307/6307, all shapes including non-rims (`out_brcheck_n6n7.txt`).
 
 ## 8. Gaps
 
