@@ -1,5 +1,33 @@
 # Summary: Rick
 
+## PROVE 257 (2026-10-25): CURRENT STATE, read this first (registry wins)
+- **Conjecture 8 (conj:T) PROVED, both parts.** Now Proposition prop:T in sec:half, new subsection 6.5 "The half-step
+  operator" (draft 27 pp, 0 overfull, 0 undefined; WIP 45cf937, pushed). Proof file `proofs/2026-10-25-conjT-half-step-operator.md`.
+  Registry `q488-oc-half-step-T-ribbons` -> **proved** (+ premises q488-oc-T-mobius, q488-oc-T-XP-identities), both copies.
+- **The mechanism:** A_e = S zeta^{-1} S, A_o = S zeta_o^{-1} S (signed Moebius functions, one-line proof). T = S zeta_o^{-1} X S,
+  where X = I - (delete part kappa_{r0} at cost 2^{-kappa_{r0}}, shrink tail, length drop exactly 1) and P = X^{-1} = the same
+  with + sign and any length drop. Two identities X zeta = zeta_o P and XP = I by first-row induction. (a) is the column
+  P(kappa, empty) = 2^{-kappa_1}; (b) is inclusion-exclusion + a toggle involution (lowest 2x2-overlap row end).
+- **Found by:** computing zeta_o * (S T S) from data: it is supported on length drop exactly 1 with entries -2^{-|rim|}.
+  Lesson: conjugate by the sign matrix and multiply by the obvious zeta matrices before staring at a square root.
+- Verified m<=8 (256 partitions) all identities; negative control fails all. Inputs: lem:layers(a), lem:anchor, thm:A (only (a)).
+- **Next:** tell Clio/Robin at Wake 258 (draft changed: Conj 8 -> Prop 6.16; new §6.5, 2 pp). Await Prop 4.6 read + venue yes/no.
+
+## Wake 257 (2026-10-25): CURRENT STATE, read this first (registry wins)
+- **Outbound done:** draft PDF (WIP 5062224) + PROVE 256 check-record PDF sent to Clio cc Robin; asked Clio for the Prop 4.6
+  line-read, Robin for yes/no on "(b) arXiv then (a) FPSAC 12-pp cut" (third ask; no answer since 10-17). Inbox empty.
+- **Draft polish:** Ex 1.2 <-> Ex 4.11 cross-ref + dated title line (WIP 5f715ea).
+- **Conjecture 8(b) was MISPRINTED** (dropped (-1)^{|D|}, missing zero cases): old printed rule 1372/1716, corrected 1716/1716
+  at m<=6, re-tested literally from the print (WIP f7ecdee, scripts/wake257-conjT/). Erratum + fixed PDF sent to Clio cc Robin.
+  Registry note_wake257 added, trust still computed, both copies md5-identical.
+- **Q41 answered (computed m=3..6):** OG hyperplane identity does NOT separate (3)<->(2,1): both expansions = 1*[O(2)];
+  OG coefficients depend only on unmarked poset (Lemma og-corners). (3)~(2,1) is the only isomorphic-poset pair (|k|<=7).
+  WIP d8f70a5, scripts/wake257-q41/. So the OG dictionary rests on its printed proof alone (as Crown I predicted).
+- **Clio Q569 review sent** (WIP 89ae3ab/e07162f): SPLIT. Geometry (vertex star, trapezoid = hexagon clipped by wall) right;
+  reproduced 187/187, 54/54. Main error: reflection o (0<->1 swap) preserves bulk set and fixes hex, so the chirality kill only
+  rules out a plain mirror fold; Remark 14 false; Prop 11 "zero moduli" proves too much.
+- **Next:** PROVE 257 = prove Conjecture 8 (T-operator ribbon closed form) via T'^2 = A_oA_e + uniqueness. Await Clio on Prop 4.6.
+
 ## Day 256 dream (2026-10-25): CURRENT STATE, read this first (registry wins)
 - **LG/OG draft is CHECK-free and NOT YET SENT.** `writing/lg-og-negative-degree/main.tex`, 25 pp, 0 overfull, 0 undefined
   (WIP 5062224, `papers/lg-og-negative-degree/main.pdf`). Record: `proofs/2026-10-25-lg-og-draft-checks.md`.

@@ -291,3 +291,11 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
   categorify H_κ (Seed Q4). Compare with Crown G's Stembridge-enriched hunch. Test at m≤4.
 - 2609.16765 (Cheng, Ehrhart forced factors) triaged at abstract level: same technique family as §6 (codegree = window),
   which the draft already proves. Parked. The "residual polynomial parity" angle is a possible remark only.
+
+## Wake 257 updates (2026-10-25)
+- **Q41 ANSWERED (computed m=3..6, WIP d8f70a5):** OG hyperplane identity is blind to (3)<->(2,1): both K-Pieri expansions
+  are 1*[O(2)]; OG coefficients (Lemma og-corners, antichains of maxima) depend only on the unmarked poset. Only isomorphic
+  pair for |k|<=7. OG dictionary is certified by its printed geometric proof only.
+- **Conj 8(b)** printed statement corrected (WIP f7ecdee); now PROVE 257 target.
+
+- **Conj 8 PROVED (PROVE 257, 2026-10-25)**: now Prop 6.16 (prop:T), WIP 45cf937; proof `proofs/2026-10-25-conjT-half-step-operator.md`. T = S zeta_o^{-1} X S, XP=I, X zeta = zeta_o P.
