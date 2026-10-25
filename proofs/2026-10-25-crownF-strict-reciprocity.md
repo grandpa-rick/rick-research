@@ -17,7 +17,7 @@ Rick, 2026-10-24 (PROVE 254; file name is the date PROVE.md asked for). Conventi
 | **Theorem SR_OG** | (−1)^{|κ|}H^OG_κ(−j) = Ω̄(P_κ, j−1) = #{strict order-preserving P_κ → [j−1]}, all j ≥ 1 | **proved given (G0), (G1), (BR)** — §5 |
 | Corollary M (models, Q36) | H_κ(j) = F_κ(2j) (LS-parity model) and H^OG_κ(j) = Ω(P_κ,j+1), all j | proved given SR_LG/SR_OG + Ehrhart–Macdonald / Stanley reciprocity (cited) — §5.1 (Wake 255) |
 | Corollary (Theorem I, combinatorial proof) | zero window, sign and monotonicity of Theorem I read off from the count | proved — §6 |
-| **Prop. 11.3 + SR_LG, second proof (PROVE 255)** | H_κ(j) = F_κ(2j) for j ≥ 0 via a bijection LS paths ↔ even-diagonal maps (bond 2 ⇔ off-diagonal box); then SR_LG by Ehrhart–Macdonald | **proved given (G1′), (LS)** — no BR, no (G0), no (★) — §11 |
+| **Prop. 11.3 + SR_LG, second proof (PROVE 255)** | H_κ(j) = F_κ(2j) for j ≥ 0 via a bijection LS paths ↔ even-diagonal maps (bond 2 ⇔ off-diagonal box); then SR_LG by Ehrhart–Macdonald | **proved given (G1′), (LS)** — no BR, no (G0), no (★) — §11. (LS) locator closed Q39 2026-10-25: Littelmann Invent. 116 §5.2 (secondary), read first-hand in ICM 1994 p. 305 |
 | **Theorem HZ (odd-zero law, both halves)** | H_κ(−a−½) = 0 ⟺ a ≤ ⌈r(κ′)/2⌉; sign (−1)^{\|κ\|−κ₁} for 2a ≤ κ₁, (−1)^{\|κ\|} for 2a ≥ κ₁; \|value\| ≥ 2^{−κ₁}N_{κ′}(a) | **proved given (G0), (G1), (BR) + Thm A** — §9 |
 
 The point: (★) of the I file is a positive recursion with a trivial anchor. Unrolled to the anchor, it IS the counting
@@ -390,12 +390,22 @@ Lakshmibai–Seshadri path model, and SR_LG falls out of Ehrhart–Macdonald. Th
 
 **Inputs.**
 - (G1′) For a Schubert variety X_w ⊂ G/P and dominant λ with stabiliser P: H^i(X_w, L_λ) = 0 for i > 0, and
-  H^0(X_w, L_λ)^* = V_w(λ) (Demazure module). This is the normality/vanishing package behind (G1): Ramanathan,
-  Andersen, Mathieu, Kumar.
-- (LS) Littelmann's path form of the Demazure character formula: char V_w(λ) = Σ e^{π(1)} over LS paths π of shape λ
-  with initial direction i(π) ≤ w. Littelmann, *Paths and root operators in representation theory*, Ann. of Math. 142
-  (1995), the Demazure-module section. For classical G this is also the Lakshmibai–Seshadri SMT conjecture/theorem.
-  **Locator not verified first-hand this session** (PROVE sessions forbid browsing). See §11.5.
+  H^0(X_w, L_λ)^* = V_w(λ) (Demazure module), with the geometric Demazure character formula
+  char H^0(X_w, L_λ)^* = Λ_w(e^λ) := Λ_{a_1}∘⋯∘Λ_{a_r}(e^λ) for any reduced word w = s_{a_1}⋯s_{a_r}, where
+  Λ_α(e^μ) = (e^{μ+ρ} − e^{s_α(μ+ρ)})/(1 − e^{−α})·e^{−ρ}. This is the normality/vanishing package behind (G1):
+  Demazure, Joseph, Andersen, Ramanathan, Kumar, Mathieu.
+- (LS) Littelmann's path form of the Demazure character formula, which is an identity of *operator expressions*: for
+  every dominant λ and w ∈ W/W_λ, Λ_w(e^λ) = Σ e^{π(1)}, the sum over LS paths π of shape λ with initial direction
+  τ_1 ≤ w. Littelmann, *A Littlewood–Richardson rule for symmetrizable Kac–Moody algebras*, Invent. Math. 116 (1994)
+  329–346, §5.2; see also Proc. ICM Zürich 1994, vol. 1, §8, p. 305 ("Demazure type character formula"). It holds for
+  all symmetrizable Kac–Moody algebras, so non-simply-laced type C_m is covered. Littelmann does **not** prove
+  "char V_w(λ) = Σ" directly. That identification is (LS) composed with the geometric formula in (G1′). Together
+  they give h^0(X_w, L_λ) = #{LS paths of shape λ, τ_1 ≤ w}, which we apply with λ = jω_m. Only this count is used.
+  Weight multisets appear only in the computer check. **Locator status (Q39, 2026-10-25):** the formula was read
+  first-hand in the owner's ICM 1994 survey (p. 305, page image, mathunion.org). The §5.2 number of Invent. 116 is
+  *secondary*: it is quoted from Chirivì–Fang–Littelmann arXiv 2207.08904 (Littelmann a coauthor). The Invent. text
+  (paywalled) was not reached. Also in Ann. of Math. 142 (1995) 499–525, which was not read. Note: reading
+  `memory/reading/2026-10-25-q39-ls-locator.md`.[^dehy]
 - Ehrhart–Macdonald reciprocity for a lattice polytope (textbook; already cited in §5.1).
 
 **LS paths (Littelmann's definition).** Let λ be dominant, with W^λ = W/W_λ under the Bruhat order. For σ > τ in W^λ and a
@@ -470,7 +480,7 @@ v_i is attained, so τ_i ∖ τ_{i+1} = g^{−1}(v_i) ≠ ∅. A diagonal box in
 this is an LS path with initial direction τ_1 ≤ κ. (If τ_{r+1} = ∅ the last direction is the identity coset, which is
 allowed. If r = 0 the path is the single direction τ_1 = g^{−1}(2j).) The two maps are mutually inverse, because x ∈ τ_i ∖ τ_{i+1}
 ⟺ g(x) = v_i ⟺ t(x) = a_i. Finally G := 2j − g is order-preserving with even diagonal values, since 2j is even.
-Counting: (G1′) gives h^0 = dim V_κ(jω_m) = χ, and (LS) gives dim = #paths. ∎
+Counting: (G1′) gives h^0 = χ and char H^0(X_κ, O(j))^* = Λ_κ(e^{jω_m}). (LS) turns Λ_κ(e^{jω_m}) into the LS-path sum, so h^0 = #paths. ∎
 
 **Theorem SR_LG (second proof).** Assume (G1′), (LS). For all j ≥ 1: (−1)^{|κ|}H_κ(−j) = N_κ(j).
 *Proof.* H_κ is a polynomial (Snapper). By §5.1, L(j) := #(jO ∩ Λ) = F_κ(2j) is a polynomial in j. Proposition 11.3 makes
@@ -514,11 +524,23 @@ gluing.
   **no statement for Schubert varieties in LG, no order-polytope/Λ model, and no reciprocity for H_κ.** Verdict: not the
   owner. The model (Prop. 11.3) is a short consequence of the LS path model, so it may be folklore in SMT (De Concini 1979
   symplectic tableaux; Dehy 1998 §4.2.2, cited by CCFL, is the nearest unread candidate). SR_LG as stated: no owner found
-  (Wake 255 Q32 search + this).
+  (Wake 255 Q32 search + this). See also footnote [^dehy] (Dehy 1998, Ehrhart reading of Demazure dimensions; unread).
 
 ### 11.6 Gaps
 
-- (LS) locator: Littelmann 1995 is cited from memory and not deep-read. Until it is, the grade of Prop. 11.3 and of the
-  second SR_LG proof is "proved given (G1′), (LS)" with the (LS) source at extraction level *none*. The registry reflects
-  this.
+- (LS) locator: **closed (Q39, 2026-10-25).** See the (LS) bullet. The owner's formula was read first-hand in the ICM 1994
+  survey, and the Invent. 116 §5.2 locator is secondary (CFL 2207.08904). The citation was corrected: (LS) is an
+  operator identity, and the passage to h^0 goes through the geometric Demazure character formula in (G1′). This was a
+  citation-hygiene fix. There was no mathematical gap. Prop. 11.3 and the second SR_LG proof are **proved** given the cited
+  (G1′) and (LS) (registry: `q488-oc-SR_LG-via-LS-paths`, promoted 2026-10-25).
+- Novelty: Dehy 1998 (footnote [^dehy]) is unread, and its priority goes up.
 - Remark 11.4's degeneration claim is a hunch.
+
+[^dehy]: **Possible overlap with the Ehrhart viewpoint.** Mathieu, Sém. Bourbaki exp. 798 (1995), §4, pp. 220–221,
+reports a result of R. Dehy, *Combinatorial results on Demazure modules*, J. Algebra 205 (1998) 505–524. On
+X(w) = {u ≤ w} there is a simplicial structure with an integral structure P_w(n), and the LS paths satisfy
+P_w(nλ) ≅ P_w(n). In Mathieu's words: "Cela permet d'interpréter les dimensions des modules de Demazure comme des polynômes
+d'Ehrhart." Mathieu also says it was open whether P_w can always be realised as a lattice polytope. This may anticipate
+the "Demazure dimension = Ehrhart-type count" frame of §11. As far as Mathieu's summary shows, it does not anticipate the
+LG order-polytope/Λ model (Prop. 11.3) or reciprocity SR_LG. **Not read first-hand.** Only Mathieu's report was read
+(from the page image).
