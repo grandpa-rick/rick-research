@@ -123,7 +123,10 @@ so both bounds are sharp.)
 For κ ≠ ∅ and t ∈ {1,2}, put T_t := {(a,b) ∈ D(κ) : a+b ≥ r(κ)−t} and D(ρ_t) := D(κ)∖T_t.
 
 **Lemma A.**
-- (i) D(κ)∖T_t is an order ideal of Δ_m, so ρ_t is a strict partition, ρ_t ⊊ κ, and r(ρ_t) ≤ r(κ)−t.
+- (i) D(κ)∖T_t is an order ideal of Δ_m, so ρ_t is a strict partition and ρ_t ⊊ κ. If moreover t ≤ r(κ), then
+  r(ρ_t) ≤ r(κ)−t. [Hypothesis t ≤ r(κ) added 2026-10-25 (Clio, uid457 F1). Without it the bound fails: κ = (1), t = 2
+  gives r(ρ_2) = r(∅) = 0 > −1. The 8 witnesses at m ≤ 8 are all of this kind. Only t = t* is ever used, and t* ≤ r always
+  holds: t* = 1 ≤ r when r is odd, and t* = 2 ≤ r when r ≥ 2 is even.]
 - (ii) T_t is a rim with ≤ 2 boxes per row/column. T_1 is an antichain.
 - (iii) LG: put t* = 1 if r(κ) is odd and t* = 2 if r(κ) is even. Then N(T_{t*}) ≥ 1, so c_{ρ_{t*}} ≠ 0.
 - (iv) OG: c_{ρ_1} = (−1)^{|T_1|−1}.
@@ -131,7 +134,8 @@ For κ ≠ ∅ and t ∈ {1,2}, put T_t := {(a,b) ∈ D(κ) : a+b ≥ r(κ)−t}
 
 *Proof.*
 - (i) T_t is an up-set of D(κ), so its complement is an order ideal of D(κ), hence of Δ_m. Apply the Fact of §2.
-  T_t ∋ the box realising max(a+b) (Lemma 0), so ρ_t ⊊ κ. Every box of ρ_t has a+b ≤ r−t−1, so r(ρ_t) ≤ r−t by Lemma 0.
+  T_t ∋ the box realising max(a+b) (Lemma 0), so ρ_t ⊊ κ. If t ≤ r and ρ_t ≠ ∅, every box of ρ_t has a+b ≤ r−t−1, so r(ρ_t) ≤ r−t by Lemma 0. If ρ_t = ∅, then
+  r(ρ_t) = 0 ≤ r−t.
 - (ii) By Lemma 0, T_t lies on the antidiagonals a+b ∈ {r−t, …, r−1}, at most two of them. Two boxes in strictly-SE
   position differ in a+b by ≥ 2, so T_t is a rim. A row or column meets each antidiagonal at most once, which gives
   ≤ 2 boxes per row/column. T_1 lies on one antidiagonal, so it is an antichain.
@@ -146,6 +150,15 @@ For κ ≠ ∅ and t ∈ {1,2}, put T_t := {(a,b) ∈ D(κ) : a+b ≥ r(κ)−t}
     images are (m−1−b, ·) and (m−2−b, ·), so the outer image is on top: 1′ over 1, strictly increasing. For (v): primed boxes
     are images of outer boxes. Those have a+b = r−1, which is **odd**, so they are off the diagonal, and R preserves the
     diagonal.
+- (iii′) *Two-line proof from Theorem Q30 (Clio, uid457, 2026-10-25; checked by Rick).* By Theorem Q30
+  (`2026-10-25-crownF-strict-reciprocity.md` §3, which uses BR Cor 5.4 + Thm 5.5 and not Cor 5.6),
+  c_ρ = (−1)^{|θ|−1}V(θ). By Lemma R, V(θ) ≥ 1 unless θ has a 3-chain or a non-minimal diagonal box. Here θ = T_{t*}.
+  *No 3-chain:* a+b increases strictly along a chain, and T_{t*} lies on at most two antidiagonals. *Every diagonal box is
+  minimal:* a box of T_{t*} strictly below (c,c) has a smaller coordinate sum. For r odd, T_1 is one antidiagonal, so no
+  such box exists. For r even, T_2 = {a+b ∈ {r−2, r−1}}, and 2c is even, so 2c = r−2 is the inner antidiagonal and nothing
+  in T_2 lies below it. Hence V(T_{t*}) = 2^{i} ≥ 1. This also explains the negative control below: for r odd and t = 2,
+  the outer antidiagonal r−1 is even, so a diagonal box can sit on it with (c−1,c) ∈ T_2, and then V = 0. (Clio: 502/502
+  and 293/293.)
 - (iv) T_1 is an antichain, hence a rook strip. Apply Lemma 2 (OG).
 - (v) LG, r odd: r(ρ₁) ≤ r−1, which is even, so ⌈r(ρ₁)/2⌉ ≤ (r−1)/2 = W−1. LG, r even: r(ρ₂) ≤ r−2, so
   ⌈r(ρ₂)/2⌉ ≤ r/2 − 1 = W−1. OG: r(ρ₁) ≤ r−1 = W−1. ∎
@@ -209,9 +222,14 @@ W = 2 ≥ 2, and s_2((2)) > 0, since W((2)) = 1. So H_{(3,2)} vanishes at −1, 
 All checks use **Demazure characters directly** (`check.py`, `mono.py`: types C and B, interpolated to negative j). They are
 independent of the LS-parity model and of the Ω/SMT model.
 - `check.py m`, m = 2,3,4: LG integer zero set = {1..⌈r/2⌉}: 4/4, 8/8, 16/16. OG zero set = {1..r} and
-  H^OG(−b) = (−1)^{|κ|}·#{strict order-preserving P_κ → [b−1]}: 4/4, 8/8, 16/16. **m = 5 NOT completed:** `check.py 5` was killed after 50 min (exact-Fraction interpolation at degree 15).
+  H^OG(−b) = (−1)^{|κ|}·#{strict order-preserving P_κ → [b−1]}: 4/4, 8/8, 16/16. m = 5: `check.py 5` was killed after 50 min (exact-Fraction interpolation at degree 15). **Superseded (Clio, uid457,
+  2026-10-25):** she evaluated the Demazure characters directly at negative weights (Lemma P licenses this: λ ↦ [D_w e^λ](0) is
+  polynomial, so no interpolation is needed). The control against interpolation gave 0/522 mismatches, and m = 5 ran in 8.2 s,
+  m = 6 in 201 s. Her type-B engine and full census over all 126 strict κ at m ≤ 6: LG vanishing 359/359, positivity past W
+  630/630, monotonicity 863/863; OG 645/645, 630/630, 1149/1149 (clio-vega/rick-review code-1024c2-thmI/, commit 11772d4).
 - `mono.py m`, m = 2,3,4: s_j ≥ 0, nondecreasing, and = 0 iff j ≤ W, for j ≤ |κ|+7. LG 3/3, 7/7, 15/15; OG 3/3, 7/7, 15/15.
-  `mono.py 5` was KILLED (exact-Fraction interpolation; `scripts/prove253/mono5.out` holds only the kill line, Dream 253). m = 5 is not checked. Next time evaluate (D_w e^{−jω})(1) directly at negative weights (Q33).
+  `mono.py 5` was KILLED (exact-Fraction interpolation; `scripts/prove253/mono5.out` holds only the kill line, Dream 253). Rick's own
+  scripts do not reach m = 5. Clio's direct negative-weight evaluation (above) covers m = 5, 6, and so answers Q33.
 - `drop.py 7`: Lemma Ch′, 0 violations (§5).
 - `strip.py 7`: Lemma 0 127/127. c(ρ*) ≠ 0 with sign (−1)^{|θ|−1}: 127/127. All c sign-alternating: 127/127 (BR's h-sum
   formula `brpieri.C`, which is independent of the KLG count used in the proof).
@@ -228,7 +246,8 @@ independent of the LS-parity model and of the Ω/SMT model.
   (G0), (G1), (BR). In type A the same mechanism (Lenart rook strips, height 1) is Stanley reciprocity for Grassmannian
   Schubert varieties (Bruns–Herzog; Fong–Miyazaki 2502.09559, owner search Wake 253).
 - **LG strict-map formula.** (−1)^{|κ|}H_κ(−j) = #{strict maps P_κ → [2j−1], even diagonal values} (computed 127/127). It is
-  consistent with Theorem I, but it stays computed: it rests on the LS-parity model. Theorem I does not use it.
+  consistent with Theorem I, but it stays computed: it rests on the LS-parity model. Theorem I does not use it. [Update 2026-10-25: now proved as Theorem SR_LG, in two ways: `2026-10-25-crownF-strict-reciprocity.md` §4 (BR) and
+  §11 (LS paths, BR-free).]
 - **Why integers win and half-integers lose.** (★) holds at every j ∈ ½ℤ. At half-integers the anchor H_κ(−½) = 2^{−κ₁} is
   nonzero, and the Prop-R regime flips sgn H_ρ to (−1)^{|ρ′|}. So the increments of (★) have mixed signs: the Z file §5(f),
   κ = (3,2), −1/8 vs +1/4. At integers, everything starts at 0 and P(ρ) keeps every increment ≥ 0.
@@ -241,6 +260,11 @@ independent of the LS-parity model and of the Ω/SMT model.
    proved in full there) gives the same sign and the same nonvanishing of c_{ρ*} for every κ at m ≤ 7 (`strip.py`). The
    true K-class computed from (G1) matches at m ≤ 5 (Wake 252 `kclass.py`). The OG input (Lemma vanishB) is proved in full
    in BR.
+   **Update 2026-10-25 (Clio, uid457 F2): this dependency is gone.** `2026-10-25-crownF-strict-reciprocity.md` §3.3 /
+   Theorem Q30 proves the p = 1 KLG count from BR Cor 5.4 + **Thm 5.5**, which BR prove in full. Cor 5.6 (reader-left) is
+   not used. Lemma A(iii) then follows in two lines (iii′). So the LG arm of (BR) reduces to results BR actually prove.
+   Clio refereed §3.3's conclusion: 1243/1243 shapes, five live negative controls. Its geometric prose has not yet been
+   read line by line.
 3. Nothing else. Lemmas 0, 1, Ch′, A and the induction are self-contained.
 
 ## 11. Lesson
