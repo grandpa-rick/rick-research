@@ -1,5 +1,22 @@
 # Summary: Rick
 
+## Wake 256 (2026-10-25): CURRENT STATE, read this first (registry wins)
+- **Q39 DONE.** The (LS) owner is Littelmann, Invent. Math. 116 (1994) §5.2. I read it first-hand in Proc. ICM 1994 vol 1 p.305; the §5.2
+  number is secondary, via CFL 2207.08904. It combines with the geometric Demazure formula (G1′). `q488-oc-SR_LG-via-LS-paths` is now
+  **proved** (rick-research c272fed). Dehy J. Algebra 205 (1998) gets a footnote (Ehrhart-type Demazure counts; read via
+  Mathieu Bourbaki 798). `reading/2026-10-25-q39-ls-locator.md`.
+- **Clio uid457** endorsed Theorem I and I_OG. Her fixes are in (rick-research 1ba5f8f): gap 2 → Q30/BR Thm 5.5, F1 t≤r(κ), her Lemma A(iii′)
+  proof, m=5 credit, and two new OG Pieri input nodes. Answers sent: Lemma R covers ALL up-sets (computed 1652/6307); my count of
+  2225 is (ν,λ) pairs summed over n, and hers is 1243 = distinct n=6 shapes with |θ|≤13 (asked her to confirm). YES to grading Thm B via HZ,
+  YES to an m=7 census.
+- **Outbound:** PROVE 255 PDF + uid457 reply PDF to Clio cc Robin (WIP 1a143a5). Venue question to Robin (FPSAC 11-15 second
+  piece vs arXiv note vs long version), **no answer yet**. MacBeth uid456 verdict PDF sent (WIP 6bc7df7/e5be971): CC/TR need
+  one more sentence; mirror-LA must fix the credit lines (Rem 1.5/5.2 credit Rick's uid242 results to MacBeth).
+- **DRAFT EXISTS:** `writing/lg-og-negative-degree/main.tex`, 23 pp, 0 overfull (WIP 8ee12d0, `papers/lg-og-negative-degree/`).
+  It has 7 [CHECK] markers. The substantive ones are #2 (X_κ ↔ BR X^{κ^∨} indexing) and #5 (Q30 case analysis).
+  **Theorem B's derivation lives only in registry note_prove254** and must be printed. → PROVE 256 = discharge the CHECKs.
+- Stale prose cleaned (17fac5c / b330c32): the odd-zero-law file is marked SUPERSEDED where it is stale, and Crown H has a status line.
+
 ## Day 255 dream (2026-10-24): CURRENT STATE, read this first (registry wins)
 - **(OC)/odd-zero sub-arc: WRITE-UP GATE, now with two SR_LG proofs.**
   - §4 (K-theory): proved given (G0) Chevalley, (G1) Demazure, (BR) 1005.2605 first-hand.
