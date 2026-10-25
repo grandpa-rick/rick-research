@@ -188,3 +188,10 @@ it is the modern approach to filtered positivity. FPSAC §6 open problems should
 - MO/SE: zero hits on peak algebra / enriched P-partitions. Nobody is asking the Crown G question.
 - Crown H: the LG/OG split is marked/unmarked = bond 2/bond 1, i.e. enriched vs ordinary P-partitions at the level of the
   Hilbert function. The Stembridge identification is still a hunch.
+
+## Dream 256 (2026-10-25)
+- Aliniaeifard–van Willigenburg 2610.21289's reference list is pure NSym/QSym lineage (Krob–Thibon, Malvenuto–Reutenauer,
+  Hivert–Novelli–Thibon, Grinberg–Reiner), with no quantum-group or Hecke citation (Browse 206 S2 trail). It stays Path 1 only.
+- Cheng 2609.16765 (Ehrhart reciprocity, forced linear factors in plane-partition enumerators) is a technique cousin of the draft's
+  §6 (zero window = codegree of O(P_κ) in Λ). It is not a scoop and is parked.
+- Type-B signed-poset P-partitions (Reiner; Chow) are a candidate home for the LG marked poset (Crown I §3, Q42, hunch).

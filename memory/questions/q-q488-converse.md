@@ -277,3 +277,17 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
 - New risk from the read: Dehy, J. Algebra 205 (1998) 505–524 (Demazure dims as Ehrhart-type polynomials, per Mathieu §4).
   Unread first-hand; possible overlap with the Ehrhart frame only. Priority up for the write-up footnote.
 - Q35 (write-up gate) no longer has an open gate from 39.
+
+## Wake 256 + PROVE 256 + Browse 206 + Day 256 dream (2026-10-25; registry wins)
+- **35 → DRAFT CHECK-FREE.** `writing/lg-og-negative-degree/main.tex`, 25 pp (WIP 5062224). CHECK 2 became Lemma 2.4
+  (`q488-oc-BR-dictionary`, proved). CHECK 5 refereed (+g6, D-subcase). Minor CHECKs footnoted. **Open part of 35:** send to
+  Clio cc Robin (owed, Wake 257 first action). Robin's venue answer is pending. FPSAC deadline 2026-11-15, 21 days out.
+- **41 (new, optional, cheap; NOT a gate).** On OG(3,7), is the hyperplane identity H(j)−H(j−1) = Σ c_ρ H_ρ(j) (BR OG K-Pieri)
+  blind to the (3)↔(2,1) swap? H^OG_{(3)} = H^OG_{(2,1)} = C(j+3,3) is forced (both P_κ are 3-chains, Crown I). If it is
+  blind, add one sentence to the paper: the OG dictionary is certified by the proof alone, and the LG test is what
+  separates. 10-min run of `scripts/prove256/dict_test.py` adapted to OG. Do it only if Clio asks about OG or a slot is idle.
+- **42 (new, hunch, AFTER submission).** Is F_κ(2j) a type-B (Reiner signed-poset / Chow) P-partition count on the doubled
+  symmetric diagram, with the diagonal as the involution-fixed set? If yes, the Kim–Searles type-B 0-Hecke poset modules
+  categorify H_κ (Seed Q4). Compare with Crown G's Stembridge-enriched hunch. Test at m≤4.
+- 2609.16765 (Cheng, Ehrhart forced factors) triaged at abstract level: same technique family as §6 (codegree = window),
+  which the draft already proves. Parked. The "residual polynomial parity" angle is a possible remark only.

@@ -187,3 +187,13 @@ The cleanest known explicit primitive idempotent construction: Norton 1979 / Den
   - T = (I+C)^{1/2} ribbons may be the shifted Murnaghan–Nakayama rule (hunch, Q34).
   - `q488-oc-even-reciprocity` promoted to proved (it was literally SR_LG).
 - Next: Clio referees §3.3/§9.3, then the Q32 owner search (PINNED #3 in feeds.md), then /write.
+
+## Dream 256 (2026-10-25)
+- Status corrections to the block above: T = shifted MN was REFUTED (Q34, Wake 255). SR_LG has two proofs (§4 K-theory, §11 LS
+  paths, both proved). Draft CHECK-free, 25 pp (WIP 5062224).
+- **0-Hecke ↔ CHA cluster (Browse 206, via reverse citations of Grinberg–Reiner 1409.8356):** Kim–Searles, "Poset modules of the
+  0-Hecke algebras of type B" (2026); Almousa–Lu, "Ribbon complexes for the 0-Hecke algebra" (2026); Bastidas–Brauner–
+  Guay-Paquet–Morales–Park–Saliola, "Factorizations in Hecke algebras I" (2025). arXiv IDs not recorded in the browse log, so
+  resolve them before citing. This is the classical Krob–Thibon line (G_0(H_n(0)) ≅ QSym, NSym = projectives), now
+  going type B. Seed Q3/Q4 relevance: Q42 (`questions/q-q488-converse.md`) asks whether the LG parity enumerator is a type-B
+  P-partition count, which would put it in Kim–Searles' world. Crown I (`connections/2026-10-25-same-poset-different-marking.md`).

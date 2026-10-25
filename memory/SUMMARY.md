@@ -1,58 +1,38 @@
 # Summary: Rick
 
-## PROVE 256 (2026-10-25): CURRENT STATE, read this first (registry wins)
-- **LG/OG draft is CHECK-free:** 25 pp, 0 overfull, 0 undefined (WIP 5062224, `papers/lg-og-negative-degree/`).
-  - CHECK 2 is now **Lemma 2.4 (Dictionary), proved**: X_κ = X^{κ^∨}(E_•) on the nose in BR coordinates (registry
-    `q488-oc-BR-dictionary`). PDF-is-claim test 8/8, negative control (3)↔(2,1) fails 3/8.
-  - CHECK 5 refereed line by line vs BR Thm 5.5. Two holes patched: (g6) φ̂ is shifted skew; missing D-subcase.
-  - Thm B is printed in the draft (Cor OC) and in crownF §9.6. Lemma 2 N(θ) ≡ V(θ), renamed.
-  - Minor CHECKs → footnotes.
-  - Record: `proofs/2026-10-25-lg-og-draft-checks.md`.
-- **NEXT WAKE, first action:** send the PDF to Clio cc Robin (note in `for-collaborator/2026-10-25-prove256-draft-checks.md`).
-  Ask for her line-by-line read of Prop BRp1. Venue answer from Robin still pending; FPSAC cut only after.
-
-## Wake 256 (2026-10-25): CURRENT STATE, read this first (registry wins)
-- **Q39 DONE.** The (LS) owner is Littelmann, Invent. Math. 116 (1994) §5.2. I read it first-hand in Proc. ICM 1994 vol 1 p.305; the §5.2
-  number is secondary, via CFL 2207.08904. It combines with the geometric Demazure formula (G1′). `q488-oc-SR_LG-via-LS-paths` is now
-  **proved** (rick-research c272fed). Dehy J. Algebra 205 (1998) gets a footnote (Ehrhart-type Demazure counts; read via
-  Mathieu Bourbaki 798). `reading/2026-10-25-q39-ls-locator.md`.
-- **Clio uid457** endorsed Theorem I and I_OG. Her fixes are in (rick-research 1ba5f8f): gap 2 → Q30/BR Thm 5.5, F1 t≤r(κ), her Lemma A(iii′)
-  proof, m=5 credit, and two new OG Pieri input nodes. Answers sent: Lemma R covers ALL up-sets (computed 1652/6307); my count of
-  2225 is (ν,λ) pairs summed over n, and hers is 1243 = distinct n=6 shapes with |θ|≤13 (asked her to confirm). YES to grading Thm B via HZ,
-  YES to an m=7 census.
-- **Outbound:** PROVE 255 PDF + uid457 reply PDF to Clio cc Robin (WIP 1a143a5). Venue question to Robin (FPSAC 11-15 second
-  piece vs arXiv note vs long version), **no answer yet**. MacBeth uid456 verdict PDF sent (WIP 6bc7df7/e5be971): CC/TR need
-  one more sentence; mirror-LA must fix the credit lines (Rem 1.5/5.2 credit Rick's uid242 results to MacBeth).
-- **DRAFT EXISTS:** `writing/lg-og-negative-degree/main.tex`, 23 pp, 0 overfull (WIP 8ee12d0, `papers/lg-og-negative-degree/`).
-  It has 7 [CHECK] markers. The substantive ones are #2 (X_κ ↔ BR X^{κ^∨} indexing) and #5 (Q30 case analysis).
-  **Theorem B's derivation lives only in registry note_prove254** and must be printed. → PROVE 256 = discharge the CHECKs.
-- Stale prose cleaned (17fac5c / b330c32): the odd-zero-law file is marked SUPERSEDED where it is stale, and Crown H has a status line.
-
-## Day 255 dream (2026-10-24): CURRENT STATE, read this first (registry wins)
-- **(OC)/odd-zero sub-arc: WRITE-UP GATE, now with two SR_LG proofs.**
-  - §4 (K-theory): proved given (G0) Chevalley, (G1) Demazure, (BR) 1005.2605 first-hand.
-  - §11 (LS paths): BR-free and §3.3-free. `q488-oc-ls-bijection` proved; `q488-oc-SR_LG-via-LS-paths` **computed**,
-    promote after the (LS) locator read (Q39).
-  - Also proved: Theorems I, Z, HZ, Q30, SR_OG, Thm B (OC for X_κ), Cor M (`q488-oc-ls-parity-model` proved).
-  - All in `proofs/2026-10-25-crownF-strict-reciprocity.md`. Unrefereed: §3.3, §9.3 (Clio asked in Wake 255). Theorem B is
-    not endorsed by Clio; Theorem Z is (uid451).
-- **Crown H** (`connections/2026-10-24-the-prime-is-a-bond.md`):
-  - Crown G's primed letter = a half-time on a short-root step (bond 2). Diagonal = long root, bond 1.
-  - §4 and §11 run in opposite directions, so SR_LG ⇔ LS-parity model via Ehrhart–Macdonald: K-Pieri sees the interior,
-    the crystal sees the closure, and the antipode/Serre duality swaps them (Seed Paths 2↔4).
-  - Minuscule = all bonds 1 = Hibi (explains the Wake 251 cominuscule trap).
-  - Odd quadric B_m/P_1 = the CCFL chain case (Q38, optional).
-- **Crown G status:** mechanism proved (bonds). §2 proved. §3 T = shifted MN REFUTED (Wake 255). Stembridge identification
-  still a hunch; no owner anywhere (2610.21289 negative first-hand; MO/SE silent).
-- **Registry this dream:** `q488-oc-even-reciprocity` had a stale conditional_grade, "conditional on ls-parity-model". That
-  is circular now that the model is a corollary of SR_LG. Fixed in both copies (note_dream255). No grade changed. Every
-  arc-node trust value checked against this block.
+## Day 256 dream (2026-10-25): CURRENT STATE, read this first (registry wins)
+- **LG/OG draft is CHECK-free and NOT YET SENT.** `writing/lg-og-negative-degree/main.tex`, 25 pp, 0 overfull, 0 undefined
+  (WIP 5062224, `papers/lg-og-negative-degree/main.pdf`). Record: `proofs/2026-10-25-lg-og-draft-checks.md`.
+  - Lemma 2.4 Dictionary: X_κ = X^{κ^∨}(E_•) on the nose (`q488-oc-BR-dictionary`, **proved**; PDF test 8/8, control 3/8).
+  - Prop 4.6 = BR Cor 5.6 at p=1, refereed vs BR Thm 5.5 (+g6, D-subcase). It has had no outside line-read yet (ask Clio).
+  - Thm B printed (Cor 1.6, §6.4) + crownF §9.6. Minor locators footnoted "not read first-hand".
+- **Registry:** both q488-converse.json copies md5-identical. Proved: SR_LG (two routes: §4 K-theory given G0/G1/BR; §11 LS
+  given G1′/LS = Littelmann Invent. 116 §5.2), SR_OG, Thms I/I_OG/Z/HZ/B, Q30, ls-bijection, ls-parity-model, BR-dictionary.
+  Computed only: T-operator (`q488-oc-half-step-T-ribbons`, Conjecture §8), OG LS route. Clio endorsed Z (uid451), I/I_OG (uid457).
+  Not endorsed: Thm B, Prop 4.6.
+- **Crown I** (`connections/2026-10-25-same-poset-different-marking.md`): P_{(3)}, P_{(2,1)} are both 3-chains. The PROVE 256 control,
+  the paper's §1 example and the Wake 251 cominuscule trap are one fact: only the diagonal marking (bond table, Crown H)
+  separates them. On OG, H^OG_{(3)} = H^OG_{(2,1)} is forced, so Hilbert controls may be blind there (Q41, optional). Type-B
+  signed-poset / 0-Hecke home for the marking = Q42 (hunch, post-submission).
+- **Browse 206:** Cheng 2609.16765 parked (technique cousin of §6). 0-Hecke type-B cluster (Kim–Searles 2026, Almousa–Lu 2026,
+  Bastidas et al. 2025; IDs unresolved). Williamson KLR/relative-HR still open. **Dedup regressed 5/6 → PINNED #4 in
+  feeds.md (agents grep /tmp/known_ids.txt).**
 - **Next (strict order):**
-  1. Wake 256: send the PROVE 255 note (`for-collaborator/2026-10-24-prove255-sr-lg-via-ls-paths.md` + Crown H addendum)
-     to Robin, cc Clio, with GitHub URL. **Ask Robin for the venue/FPSAC decision explicitly** (11-15 is 22 days out).
-  2. Q39: one (LS) locator read, ≤45 min, then promote.
-  3. /write the arXiv note. The De Concini/Dehy folklore risk is a footnote, not a session.
-  Q38/Q40 only after a draft exists.
+  1. Wake 257 FIRST: email Clio cc Robin the PDF URL + `for-collaborator/2026-10-25-prove256-draft-checks.md` (with Dream
+     addendum). Ask Clio for the Prop 4.6 line-read. Ask Robin for a yes/no on "(b) arXiv now, (a) FPSAC 12-pp cut from it".
+     FPSAC deadline is 2026-11-15, 21 days out. Robin has been asked twice with no answer. No posting or submitting without their yes.
+  2. Optional ≤15-min polish: cross-ref Ex 4.11 ↔ §1 (same pair of shapes).
+  3. Clio Q569 review (owed). Then Q41 if idle. Q38/Q40/Q42 only after submission.
+
+## Wake 256 + PROVE 256 (2026-10-25): pointer lines (full stanzas in `archive/SUMMARY-2026-10-25-pre-day256-dream.md`)
+- Wake 256: Q39 closed (`reading/2026-10-25-q39-ls-locator.md`; rick-research c272fed). Clio uid457 fixes (1ba5f8f). PDFs
+  to Clio (WIP 1a143a5). MacBeth uid456 verdict (WIP 6bc7df7/e5be971). First draft 23 pp (WIP 8ee12d0). Dehy 1998 footnote.
+- PROVE 256: CHECKs discharged (WIP 5062224; rick-research de630fc/ba46c4a). Lemma 2 of the integer-window file: N(θ) ≡ V(θ), renamed.
+
+## Day 255 dream (2026-10-24): pointer lines (full stanza in same archive)
+- Crown H (`connections/2026-10-24-the-prime-is-a-bond.md`): prime = short-root bond 2. §4 and §11 are opposite directions of one
+  Ehrhart identity (Seed Paths 2↔4). Minuscule = all bonds 1 = Hibi. Odd quadric = CCFL chain case (Q38).
+  even-reciprocity circular text fixed. PERSONALITY: second-proof gates get one locator read + footnote (held in Day 256).
 
 ## Days 254–255 sessions: pointer lines (full stanzas in `archive/SUMMARY-2026-10-24-pre-day255-dream.md`)
 - **Browse 205:** 2610.21289 §2–5 has no Θ-character (Aliniaeifard–Li 2506.12868 is the last lead). Fang–He thickening =
