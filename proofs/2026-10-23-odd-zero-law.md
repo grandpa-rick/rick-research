@@ -1,5 +1,10 @@
 # The odd values of H_κ are honest K-theory: H(−½) = 2^{−κ₁}, and (OC) (PROVE 251)
 
+> **SUPERSEDED IN PART (2026-10-25 note; text below is the PROVE 251 record, left as written).**
+> - **Theorem B = (OC)** is no longer "modulo (G1)–(G4)". PROVE 254 derives it from Theorem HZ (`proofs/2026-10-25-crownF-strict-reciprocity.md` §9) given (G0), (G1), (BR) only, with no Brion–Kumar (G2)–(G4). Registry `q488-oc-thmB-OC`: trust `proved`, conditional_grade "proved given (G0), (G1), (BR first-hand) via Theorem HZ (file Sec.9.6); the original G1-G4 route stays as recorded". (The crownF file states Theorem HZ, not Theorem B by name; the one-line derivation a=(M−1)/2 ≥ m ≥ κ₁ ⇒ 2a ≥ κ₁ and ⌈r(κ′)/2⌉ ≤ m−1 < a is in the registry note_prove254.)
+> - **Case B of (Z)** is closed for all κ by Theorem Z, `proofs/2026-10-24-Z-by-hyperplane-induction.md` (registry `q488-oc-Z-by-induction`: trust `proved`, "proved given (G0) Chevalley + (G1) Demazure + (BR) 1005.2605 first-hand"); a second proof is crownF §9.6 via Theorem HZ.
+> - §7 gap 4 (integer window) is closed by Theorem I, `proofs/2026-10-24-integer-window-and-OG-twin.md` (registry `q488-oc-Zint-by-induction`: proved given (G0), (G1), (BR)).
+
 Rick, 2026-10-22/23, PROVE 251. Notation and conventions follow `proofs/2026-10-21-window-is-kodaira-vanishing.md` §1:
 - C_m has simple roots α_i = ε_i − ε_{i+1} (i<m) and α_m = 2ε_m, and ω := ω_m = ε_1+…+ε_m.
 - D_i f = (f − e^{−α_i}s_i f)/(1 − e^{−α_i}).
@@ -18,7 +23,7 @@ Scripts are in `work-in-progress/scripts/prove251/`.
 |---|---|---|
 | **Prop. H** (bridge) | For every integer a ≥ 0: 2^m·H_κ(−a−½) = D_{w_κ}(Π_{i=1}^m y_i^a(1+y_i))\|_{y=1}. Geometrically, 2^m H_κ(−a−½) = χ(X_κ, ∧^•U ⊗ O(−a)), U the tautological subbundle. | **proved** given (G1); checked 110/110 against the LS model (m ≤ 4, M ≤ 9) |
 | **Thm A** | H_κ(−½) = 2^{−κ₁}. | **proved** given (G1); pure Demazure algebra after Prop. H |
-| **Thm B = (OC)** | For odd M ≥ 2m+1: (−1)^{\|κ\|}·2^m·H_κ(−M/2) ∈ ℤ_{≥1}. In particular there is no zero at half-integers j ≤ −m−½. | **proved modulo (G1)–(G4)**, the same citation family as Theorem E (Brion–Kumar, not deep-read). The dual-side atom identity was checked independently 110/110, and all atoms were ≥ 0 for a ≥ m. |
+| **Thm B = (OC)** | For odd M ≥ 2m+1: (−1)^{\|κ\|}·2^m·H_κ(−M/2) ∈ ℤ_{≥1}. In particular there is no zero at half-integers j ≤ −m−½. | **proved modulo (G1)–(G4)**, the same citation family as Theorem E (Brion–Kumar, not deep-read). **[SUPERSEDED 2026-10-25: proved given (G0), (G1), (BR) via Theorem HZ, PROVE 254 — see top note.]** The dual-side atom identity was checked independently 110/110, and all atoms were ≥ 0 for a ≥ m. |
 | **Thm C** (M = 3) | For κ₁ ≥ 2: H_κ(−3/2) = 2^{−κ₁}·H_{κ′}(−1), κ′ := κ∖{κ₁}; and H_{(1)}(−3/2) = −½. So H_κ(−3/2) = 0 iff ℓ(κ) ≥ 2, and = 2^{−κ₁} for one-row κ with κ₁ ≥ 2. | **proved** given (G1) |
 | **Lemma L** (Coxeter localisation) | For any one-variable φ: D_1⋯D_k(Π_jφ(x_j)) = Σ_i A(x_i)Π_{j≠i}B(x_j)/(x_j−x_i), with x = e^{ε}, B = xφ and A = D^{(1)}φ. Consequence: G_k(a) := D_1⋯D_k F_a = e^{−aω} − (−1)^{k−1}F_{a−1}·Σ_{s<a} h_{2s−k+1}(x). | **proved** (§6bis, algebraic induction); formula checked 20/20 (k ≤ 5, a ≤ 4) |
 | **Prop. R** (purity) | If 2a ≤ κ₁ then H_κ(−a−½) = 2^{−κ₁}H_{κ′}(−a). If 2a−1 = κ₁ then H_κ(−a−½) = 2^{−κ₁}H_{κ′}(−a) − H_{κ′}(−a+½). | **proved** given (G1): Lemma Q is the case k = 2a−1 of Lemma L. |
@@ -342,6 +347,7 @@ Pfaffian). Scripts: `decouple.py`, `dectest.py`, `pf.py`, `dbg*.py`.
 **Remarks.**
 - For κ₁ ≥ r′+2 ("Case A") the same argument reduces (Z) for κ to the integer window of κ′. For 2-separated κ the
   reduction closes by induction.
+- **[2026-10-25: Case B CLOSED by Theorem Z, `2026-10-24-Z-by-hyperplane-induction.md`; see top note.]**
 - When some κ_i ≤ r(κ_{>i})+1 ("Case B", e.g. the staircase), the needed c reach 2c ≥ κ₁+2. Then the residue at t₁ = ∞
   contributes: −Res_{s=0}s^{κ₁+1−2c}(…)·𝓗_{κ′}(c−½; T∪{1/s}). Controlling it is the open part of (Z).
 - **Erosion (computed, `robust.py`).** With |T| = q generic kernels, the zero set of c ↦ 𝓗_κ(c;T) consists of the c whose
@@ -352,13 +358,15 @@ Pfaffian). Scripts: `decouple.py`, `dectest.py`, `pf.py`, `dbg*.py`.
 ## 7. Gaps (precise)
 
 1. (G1)–(G4) are cited, not deep-read. This is the same debt as Theorem E (registry node q488-theorem-E-even-c-empty, graded
-   computed for exactly this reason). Thm A and Thm C need **only (G1)**; Thm B needs all four.
+   computed for exactly this reason). Thm A and Thm C need **only (G1)**; Thm B needs all four. **[SUPERSEDED 2026-10-25: Thm B
+   now needs only (G0), (G1), (BR) via Theorem HZ (PROVE 254, crownF §9); registry `q488-oc-thmB-OC` proved.]**
 2. ~~Lemma Q computed only~~: **closed**, Lemma L proves it for all a (§6bis).
 3. (Z) is **proved for 2-separated κ** (Thm Z₂, §6quater), and for every κ with a ≤ ⌊κ₁/2⌋ given κ′'s integer window.
    It remains open for Case-B shapes (staircase-like), where the residue at t₁ = ∞ must be controlled. Exact
-   reformulations: (Z_k), or the erosion statement for 𝓗_κ(c;T).
+   reformulations: (Z_k), or the erosion statement for 𝓗_κ(c;T). **[CLOSED 2026-10-24/25: Theorem Z,
+   `2026-10-24-Z-by-hyperplane-induction.md`, registry `q488-oc-Z-by-induction` proved given (G0), (G1), (BR).]**
 4. The integer window H_ν(−b) = 0 for 1 ≤ b ≤ ⌊(r(ν)+1)/2⌋ is not proved here geometrically. It is used only in Prop. R's
-   application to (Z).
+   application to (Z). **[CLOSED: Theorem I, `2026-10-24-integer-window-and-OG-twin.md`, registry `q488-oc-Zint-by-induction` proved.]**
 
 ## 8. Lesson
 

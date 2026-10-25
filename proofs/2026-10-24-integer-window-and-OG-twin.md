@@ -100,6 +100,12 @@ involution of Δ_m that swaps rows and columns and preserves the diagonal. So R 
 "rook strip". It also preserves |θ|, and |θ| = |κ| − |ρ|.
 - LG: Cor pieriCtab with p = 1. Labels lie in {1′,1}, and strict rows/columns allow ≤ 2 boxes per row/column. Non-rims have no
   KLG-tableaux.
+  **[Note 2026-10-25, paper-draft route.]** Cor pieriCtab (= BR Cor 5.6) is reader-left in BR. The paper draft takes both the
+  LG support (rim, ≤ 2 per row/column) and the LG sign c_ρ = (−1)^{|θ|−1}·(≥0) from Theorem Q30 instead
+  (`2026-10-25-crownF-strict-reciprocity.md` §3, BR Cor 5.4 + Thm 5.5 only): c_ρ = (−1)^{|θ|−1}V(θ), V = 0 on any 3-chain
+  (Lemma R), and a row/column of 3 or a strictly-SE pair (Lemma T(a), Lemma 3.1) gives a 3-chain. The draft uses V(θ) (Lemma R count)
+  in place of N(θ); nonvanishing in Lemma A(iii) is handled by (iii′).
+  See also §10 gap 2.
 - OG: Lemma vanishB (a),(b) with p = 1 < a = 2 give the support statement. (c) gives the value.
 - Antichain: suppose x = (i,j) and y = (k,l) in θ with x < y and i < k, j < l. Then (i,l) is in the shifted plane
   (i ≤ j < l). It is ≤ y ∈ D(κ), so it lies in D(κ). It is ≥ x ∉ D(ρ), so it is not in D(ρ). Hence (i,l) ∈ θ, in the same

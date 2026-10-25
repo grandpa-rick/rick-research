@@ -56,6 +56,13 @@ of B. … We say that θ is a *rim* if θ̄ = ∅." So "θ is a rim" means exact
 position". Thm 5.5: "If θ is not a rim then 𝒞(θ,p) = 0." Cor 5.6 counts KLG-tableaux, whose rows and columns strictly
 increase. For p = 1 the labels lie in {1′, 1}, which forces ≤ 2 boxes per row and per column (§8).
 
+> **Note 2026-10-25 (paper-draft route).** The ≤ 2 boxes per row/column part of (BR) is taken above from BR Cor 5.6,
+> whose proof BR leave to the reader. The paper draft does not use Cor 5.6. It derives the support statement from Theorem Q30
+> (`2026-10-25-crownF-strict-reciprocity.md` §3; uses only BR Cor 5.4 + Thm 5.5, both proved in BR, and Lemma S): for ρ ⊊ κ,
+> c_ρ = (−1)^{|θ|−1}V(θ), and V(θ) = 0 whenever θ has a 3-chain (Lemma R). Three boxes in one row or column form a 3-chain, and
+> a strictly-SE pair forces a 3-chain (Lemma T(a) via the order-reversing R, Lemma 3.1). So (BR′) follows, in the dimension
+> indexing directly. The proof of Theorem Z is unchanged.
+
 Only this **support inclusion** is used. Here is a correction to PROVE.md, which says "supp = rims": equality is FALSE.
 The coefficient also vanishes on some admissible θ. The simplest case is a vertical domino whose lower box is diagonal,
 e.g. κ = (2,1), ρ = (1), where the labelling count is 0. The inclusion holds for the encoded BR formula at every m ≤ 8
@@ -208,6 +215,9 @@ the (BR) support inclusion of §1, verbatim in BR's codimension indexing. Lemma 
 indexing (BR′), because the reflection R(r,c) = (m−1−c, m−1−r) preserves the strictly-SE relation. Lemma Ch (§3) was
 already written for the strictly-SE definition. Its proof is unchanged and valid as written, and no mathematics in §§1–5
 changes.
+
+> **Note 2026-10-25.** "With Thm 5.5 / Cor 5.6" above: the paper draft replaces Cor 5.6 (reader-left) by Theorem Q30
+> (crownF §3, from BR Cor 5.4 + Thm 5.5); see the note in §1.
 
 **Grade.** Theorem Z is **proved** given (G0) (Chevalley / Pic, §1; back-ported Wake 255), (G1) (standard: Demazure character formula / Kempf vanishing) and (BR) (cited
 literally above). (NZ), the nonvanishing half, stays open here; it was later proved by a different route as Theorem HZ (`2026-10-25-crownF-strict-reciprocity.md` §9, PROVE 254).

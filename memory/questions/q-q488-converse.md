@@ -244,12 +244,12 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
 ## PROVE 255 + Browse 205 + Day 255 dream (2026-10-24; registry wins)
 - **37 ANSWERED (computed):** §11 gives a BR-free proof (Lemma 11.1 bonds, 11.2 parity, Prop 11.3 bijection).
   `q488-oc-ls-bijection` is proved. `q488-oc-SR_LG-via-LS-paths` is computed and becomes proved once the (LS) locator is
-  read. Numerics 164/164 (m≤5), OG 72/72, controls fail.
+  read. **[2026-10-25: now PROVED — Q39 answered, see below.]** Numerics 164/164 (m≤5), OG 72/72, controls fail.
 - **Open, in priority order:**
   - 35. **WRITE-UP GATE, now with two SR_LG proofs.** There is ONE remaining gate, 39. The folklore risk (De Concini
     1979, Dehy 1998 §4.2.2) goes in a footnote and does not get a session. Then /write "Negative-degree Hilbert functions
     of Lagrangian and orthogonal Schubert varieties". Robin decides the venue (FPSAC 2026-11-15, 22 days out).
-  - 39 (new). **(LS) locator, one wake deep-read, ≤45 min.** Find the theorem that the LS paths of shape λ with initial
+  - 39 (new). **[ANSWERED 2026-10-25 — see section below.]** **(LS) locator, one wake deep-read, ≤45 min.** Find the theorem that the LS paths of shape λ with initial
     direction ≤ w give char of the Demazure module V_w(λ). Candidates: Littelmann, "Paths and root operators in
     representation theory", Ann. Math. 142 (1995) [Demazure statement, §5?]; Littelmann, Invent. Math. 116 (1994), the LR
     rule paper; Kashiwara 1993 Duke (Demazure crystals); Lakshmibai–Littelmann–Magyar 1998/2002 SMT. Pick whichever is
@@ -264,3 +264,16 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
   - Still parked: 29 (OG sporadic half-integer zeros), 33 (m=5 Demazure without interpolation), (OC) for triple
     intersections, Aliniaeifard–Li 2506.12868 (only if the paper wants a Θ-character remark), 2609.16765 triage (feeds.md
     QUEUED).
+
+## 2026-10-25 (Q39 locator read; registry wins)
+- **39 ANSWERED.** (LS) = Littelmann, *A Littlewood–Richardson rule for symmetrizable Kac–Moody algebras*, Invent. Math. 116
+  (1994) 329–346, §5.2 (section number SECONDARY, quoted in Chirivì–Fang–Littelmann 2207.08904; Invent. text paywalled, not
+  reached). Statement read FIRST-HAND in Littelmann, Proc. ICM Zürich 1994 vol. 1, §8, p. 305: Λ_{a1}∘⋯∘Λ_{ar}(e^λ) = Σ e^{π(1)}
+  over LS paths of shape λ with τ_1 ≤ τ. It is the Demazure-OPERATOR identity; h^0 = #paths also needs the geometric Demazure
+  character formula, which sits in (G1′). Also Mathieu, Bourbaki 798 Thm 10 (read). Report:
+  `reading/2026-10-25-q39-ls-locator.md`.
+- `q488-oc-SR_LG-via-LS-paths` promoted computed → **proved** 2026-10-25 (given (G1′), (LS)); §11 (LS) citation fixed
+  (rick-research c272fed).
+- New risk from the read: Dehy, J. Algebra 205 (1998) 505–524 (Demazure dims as Ehrhart-type polynomials, per Mathieu §4).
+  Unread first-hand; possible overlap with the Ehrhart frame only. Priority up for the write-up footnote.
+- Q35 (write-up gate) no longer has an open gate from 39.

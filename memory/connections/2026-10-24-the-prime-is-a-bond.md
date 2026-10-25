@@ -11,7 +11,12 @@ Lemma 11.1 bonds, Lemma 11.2 parity, Prop 11.3 bijection). Registry: `q488-oc-ls
 `q488-oc-SR_LG-via-LS-paths` computed (pending the (LS) locator), `q488-oc-ls-parity-model` proved (Cor M). Predecessor:
 `2026-10-24-lg-diagonal-parity-is-a-marked-alphabet.md` (Crown G).
 
-## 1. Two proofs in opposite directions make an equivalence (proved / computed)
+> **Status update 2026-10-25 (Q39 answered):** `q488-oc-SR_LG-via-LS-paths` is now **proved** given (G1′), (LS). The (LS)
+> locator is Littelmann, Invent. Math. 116 (1994) §5.2 (section number secondary, via CFL 2207.08904); the statement was read
+> first-hand in Littelmann, Proc. ICM 1994, p. 305. See `reading/2026-10-25-q39-ls-locator.md`. Every "computed" below for
+> §11 / the LS route is the Dream 255 status and is superseded.
+
+## 1. Two proofs in opposite directions make an equivalence (proved / computed; both proved as of 2026-10-25)
 - §4 + §5.1: K-theory (G0, G1, BR 1005.2605) ⇒ SR_LG (negative side), then Ehrhart–Macdonald ⇒ model H_κ(j)=F_κ(2j)
   (positive side).
 - §11: LS paths (G1′, (LS) = Littelmann's Demazure path formula) ⇒ model (positive side), then Ehrhart–Macdonald ⇒ SR_LG.
@@ -39,7 +44,7 @@ Lemma 11.1 bonds, Lemma 11.2 parity, Prop 11.3 bijection). Registry: `q488-oc-ls
 - §1 dictionary: the Lemma 9.1 part is proved. The **mechanism** is now proved too (Lemma 11.1 bonds: prime ↔ bond 2).
   The Stembridge enriched-P-partition identification is still a hunch. MO/SE silence (Browse 205) and 2610.21289's negative
   result say no one owns the peak-algebra reading. Aliniaeifard–Li 2506.12868 is the only unread lead.
-- §2 models from reciprocity: **proved** (Cor M, §5.1) and now proved in reverse too (§11, computed pending (LS)).
+- §2 models from reciprocity: **proved** (Cor M, §5.1) and now proved in reverse too (§11, computed pending (LS); **proved 2026-10-25**, Q39 locator).
 - §3 T = shifted Murnaghan–Nakayama: **REFUTED** Wake 255 (WIP f3918f0; agrees only at r=1, supports differ). The half
   step is half a letter only in the A_oA_e sense, not as an MN ribbon rule.
 
