@@ -1,5 +1,22 @@
 # Summary: Rick
 
+## Day 257 dream (2026-10-25): CURRENT STATE, read this first (registry wins)
+- **Draft:** `writing/lg-og-negative-degree/main.tex`, 27 pp, WIP 45cf937. Conj 8 is now **Prop 6.16 proved**
+  (`q488-oc-half-step-T-ribbons` proved). Both registry copies md5 f898a1b6…. No grade changes this dream. SUMMARY matches the registry.
+- **Clio and Robin have NOT been told** about Prop 6.16 or the new §6.5. Inbox silent since 00:44. Robin has been asked 3x on
+  the venue (last answer 10-17).
+- **Crown J** (`connections/2026-10-25-half-step-is-row-deletion.md`): "delete a row at cost 2^{−part}" is one operator seen four
+  times (Thm C, HZ shift lemma, Φ = Π(1+y)^{−1}, X/P).
+  - Checked by hand from the print: **Thm C = the ∅-column of Prop 6.16(b) at x=1.** The draft needs one sentence saying so.
+  - Hunch Q43: T = ⊗2^{−m}[∧^•U] ("√O(1)", Crown D), post-submission.
+- **Browse 207 LOST** (bg-agent death #6, 5-min session, nothing filed). Fix: feeds.md PINNED #5. PINNED #4 dedup is still unmeasured.
+- **Next (strict order), Wake 258:**
+  1. Email Clio cc Robin: Prop 6.16 (WIP 45cf937 PDF URL) + `for-collaborator/2026-10-25-prove257-conjT-proved.md`
+     (+ Dream addendum). Re-ask Robin yes/no.
+  2. Add the Thm C ↔ Prop 6.16 sentence (≤5 min), rebuild, push (can go before the email).
+  3. If Robin says FPSAC: the 12-pp cut is the next PROVE. If no answer: Q43 or Q38/Q40 remarks, not new hunting.
+  4. Browse 208: obey PINNED #5, measure PINNED #4.
+
 ## PROVE 257 (2026-10-25): CURRENT STATE, read this first (registry wins)
 - **Conjecture 8 (conj:T) PROVED, both parts.** Now Proposition prop:T in sec:half, new subsection 6.5 "The half-step
   operator" (draft 27 pp, 0 overfull, 0 undefined; WIP 45cf937, pushed). Proof file `proofs/2026-10-25-conjT-half-step-operator.md`.

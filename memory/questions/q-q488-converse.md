@@ -299,3 +299,13 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
 - **Conj 8(b)** printed statement corrected (WIP f7ecdee); now PROVE 257 target.
 
 - **Conj 8 PROVED (PROVE 257, 2026-10-25)**: now Prop 6.16 (prop:T), WIP 45cf937; proof `proofs/2026-10-25-conjT-half-step-operator.md`. T = S zeta_o^{-1} X S, XP=I, X zeta = zeta_o P.
+
+## PROVE 257 + Browse 207 + Day 257 dream (2026-10-25; registry wins)
+- Conj 8 → **Prop 6.16 proved** (registry `q488-oc-half-step-T-ribbons` proved; premises `q488-oc-T-mobius`, `q488-oc-T-XP-identities`
+  proved; `q488-oc-T-rim-guess` stays computed). Both registry copies md5 f898a1b6….
+- **Crown J** (`connections/2026-10-25-half-step-is-row-deletion.md`): Thm C = ∅-column of Prop 6.16(b) at x=1. Checked by
+  hand from the print for ℓ≥2, (k) with k≥2, and (1). The sentence is owed in the draft (Wake polish ≤5 min).
+- **Q43 (hunch, post-submission):** is T the K-theory matrix of ⊗2^{−m}[∧^•U] (a "√O(1)", Crown D) in the [O_{X_ν}] basis?
+  Test m=2,3; kill = no gauge match. 2^{−κ_r} weights = Φ factors (odd-zero-law Lemma C).
+- **Q44 (hunch):** does an X/P pair exist on OG (A_o only, no diagonal)? Is T_OG = S ζ_o^{-1}…? Only after Q43.
+- Browse 207 produced nothing (bg-agent death #6, 13:45–13:50). No reading note exists.

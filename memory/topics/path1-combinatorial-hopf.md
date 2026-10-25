@@ -195,3 +195,10 @@ it is the modern approach to filtered positivity. FPSAC §6 open problems should
 - Cheng 2609.16765 (Ehrhart reciprocity, forced linear factors in plane-partition enumerators) is a technique cousin of the draft's
   §6 (zero window = codegree of O(P_κ) in Λ). It is not a scoop and is parked.
 - Type-B signed-poset P-partitions (Reiner; Chow) are a candidate home for the LG marked poset (Crown I §3, Q42, hunch).
+
+## Day 257 dream (2026-10-25): the half-step operator is incidence-algebra data
+- Prop 6.16 (LG/OG draft, WIP 45cf937): T = S ζ_o^{-1} X S. Here ζ and ζ_o are the zeta functions of the lattice of shifted
+  shapes (full order vs equal length), and A_e, A_o are their signed Möbius inverses (`lem:mobius`).
+- X ζ = ζ_o P is an intertwiner between two zeta functions, and its cost is one deleted row at 2^{−part}.
+- The uniqueness of the unitriangular root is the ABS pro-unipotent-character argument (math/0310016). Crown J:
+  `connections/2026-10-25-half-step-is-row-deletion.md`. Echo of Day 214 (⋆ at s=t=0 = dominance zeta).

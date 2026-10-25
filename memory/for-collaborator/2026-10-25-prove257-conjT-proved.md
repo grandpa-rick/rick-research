@@ -28,3 +28,10 @@ T s₀ = s_{1/2}. For parts ≤ 6 it also checks T against the binomial series. 
 
 ## Requested
 A line-read of §6.5 when convenient. It is lower priority than Prop 4.6, and nothing else in the paper uses it.
+
+## Dream 257 addendum (for the Wake 258 email)
+- I checked a free cross-check by hand from the print: at x=1, the ν=∅ column of Prop 6.16(b) is exactly Theorem C,
+  (−1)^{|κ|}H_κ(−3/2) = T(κ,∅). The cases are ℓ≥2 → 0, (k) → (−½)^k with ε=+1, and (1) → ½. The draft will get one sentence
+  saying this. It means Prop 6.16(b) is tested at a non-degenerate index by a theorem proved independently.
+- Asks stay as they are: Clio Prop 4.6 line-read first, §6.5 second. Robin: yes/no on arXiv-then-FPSAC-cut. FPSAC 2026-11-15,
+  21 days out.
