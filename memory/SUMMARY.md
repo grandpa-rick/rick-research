@@ -1,5 +1,35 @@
 # Summary: Rick
 
+## PROVE 259 (2026-10-26): Q45 PROVED, the weighted peel. Theorem Q30 now BR-FREE via T-equivariance
+- Proof: `proofs/2026-10-27-weighted-peel.md` (12.5 KB). Scripts `work-in-progress/scripts/prove259/`.
+- **Box weight** β(a,b) = ε_m on the diagonal, ε_{m−d}−ε_{m+1−d} at offset d = b−a ≥ 1. It telescopes along rows, so
+  Σ_{D(τ)}β = Σ_{p∈τ} ε_{m+1−p} and LS π(1) is LINEAR in the map. **Thm A:** ch_κ(j) = Σ_G x^{j w_κω + ΣGβ}.
+  **Thm B:** n_κ(j) = (−1)^{|κ|}ch_κ(−j) = Σ_f x^{−j w_κω − Σfβ}. The proof uses (LS) + Stanley cone reciprocity +
+  the exponential form of D_w e^{jω}. **Thm C:** lem:peel is weight-preserving, P_{κρ} = Σ_{V-maps g} x^{−w_κω − Σ_{g=o}β}.
+  So P is positive with V(θ) monomials, and Wake 259's C = S P^{−1} S (22/22 entries, m = 3).
+- **Lemma D:** the T-characters ch_ρ(·) are linearly independent over Q(x) (ℓ-grading, ℓ(β) = 1 per box, Vandermonde),
+  although the H_ρ are not (Crown K). **Thm E:** [O_κ⊗L^{−1}]_T = Σ ψ((−1)^{|θ|}P_{κρ})[O_ρ]_T. At x = 1 this gives
+  **Q30 c_ρ = (−1)^{|θ|−1}V(θ) from (G0)+(G1)+(LS)+(KT), no BR.** Crown K's obstruction is gone at the T-level.
+- Verified V1/V2/V3 for m ≤ 5; the negative control (perturbed β) fails. Registry: Q45 node proved, new
+  `q488-Q45-strict-character` (premise, proved) and `q488-Q45-Q30-BR-free` (proved mod (KT) locator). md5 f6d172b2… both copies.
+- Owner: K_T-Chevalley (Lenart–Shimozono 1203.3237 Cor 3.4, Lenart–Postnikov) must agree by uniqueness. The literal ω_m
+  read is NOT done (footnote). Draft untouched; candidate post-submission Remark only.
+
+## Wake 259 (2026-10-26)
+- **Outbound:** PROVE 258 note+PDF sent to Clio cc Robin (`mail/sent/20261026_090721_cliovega20.json`; cover PDF in WIP
+  `for-collaborator/`). Robin still silent on venue (5th ask). Inbox empty since uid458.
+- **Q40 → Remark 3.6 `rem:degrees`** (WIP 6f29c35, 28 pp, 0 overfull); Pragacz LNM 1478 now `\cite{Pra91}` (verified,
+  DOI 10.1007/BFb0083503). Degree identity deg X_κ = 2^{|κ|−ℓ}e(P_κ) computed m≤5, 3 routes (3395ab8; node `q488-degree-identity`).
+- **Q38** already in draft as Question `q:cominuscule`.
+- **MacBeth "credit lines"** = MacBeth's own fix to HIS mirror-LA note (Rem 1.5/§5, uid242 credit), already requested in
+  sent mail 20261026_003820. Ball in his court; NOT a task on our paper.
+- **Browse 209** (`reading/2026-10-26-browse209.md`): FPSAC rule first-hand: numbered \cite in body OK, no \cite only in the
+  abstract; 6–12 pp incl. bib, excluding the mandatory AI declaration; deadline 2026-11-15. Browse 208 claim refuted.
+- **Q45 computed** (node `q488-Q45-equivariant-peel-lift`): the lift exists, strict-side P(x) is positive, one monomial per
+  V-map. The equivariant step is owned by Lenart–Shimozono 1203.3237 et al. Gillespie–Levinson–Purbhoo 1706.09969 (doubled
+  crystal on shifted tableaux) is close to Crown G, a cite candidate.
+- **PROVE 259** = Q45 weighted peel (see `state/PROVE.md`).
+
 ## Day 258 dream (2026-10-26): CURRENT STATE, read this first (registry wins)
 - **Paper:** `writing/lg-og-negative-degree/main.tex`, 27 pp, 0 undefined, 0 overfull, **WIP d118e27** (pushed). Stanley-type
   reciprocity for LG/OG Schubert Hilbert functions in negative degree. Registry `proofs/registry/q488-converse.json`, both
@@ -21,7 +51,7 @@
   4x with no answer since 10-17. Inbox silent since uid458 (MacBeth ack). FPSAC deadline is **2026-11-15** (20 days),
   re-confirmed in Browse 208. 12 pp including the bibliography, first-hand Wake 258. Cut skeleton is at WIP cf8868e/5a2fa86
   `papers/lg-og-fpsac-cut/`.
-- **MacBeth uid456:** 2nd check-pass PDF sent (WIP bd1ae96/9231fcb). MUST: his credit lines (Rem 1.5/§5/abstract).
+- **MacBeth uid456:** 2nd check-pass PDF sent (WIP bd1ae96/9231fcb). Credit lines Rem 1.5/§5/abstract (his fix, requested 10-26).
 - **Browse 208** (`reading/2026-10-26-browse208.md`): PINNED #4 dedup measured clean (13/13). PINNED #5 held. Notable:
   2610.31655 (cluster-Lusztig dual canonical basis), 2609.24957 (symplectic Grothendieck/CM regularity, nearest neighbour,
   no scoop). The "poset zeta function" phrase has zero arXiv hits, so Crown J's framing looks unclaimed. Seed Path 4 trails
@@ -30,7 +60,7 @@
   1. Email Clio cc Robin: PROVE 258 note (+ addendum) with the d118e27 PDF URL. Re-ask Robin yes/no on "(b) arXiv then (a)
      FPSAC cut". No posting or submitting without his yes.
   2. If yes → PROVE = fill the FPSAC cut proofs (check FPSAC2027.cls/citation rule FIRST-HAND, the Browse 208 claim is
-     unverified). If silent → MacBeth credit lines, then Q38/Q40 remarks. No new hunting (Q43/Q44/Q45 are post-submission).
+     unverified). If silent → MacBeth credit lines (his fix, requested 10-26), then Q38/Q40 remarks. No new hunting (Q43/Q44/Q45 are post-submission).
   3. Browse 209: obey feeds.md QUEUED block (crystal-side Path 4 trail, Q45 owner locator, FPSAC rule first-hand).
 
 ## Days 256–258 sessions: pointer lines (full stanzas in `archive/SUMMARY-2026-10-26-pre-day258-dream.md`)
