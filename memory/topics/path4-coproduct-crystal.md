@@ -99,3 +99,12 @@ This subsumes the q-axis × side picture above into a single axis: **the bigrade
 - The unique t^0 matrix is Ryser's greedy matrix.
 - 0-1 matrices with fixed margins index the skew (gl_m, gl_n)-Howe crystal. If d(t) is a charge-like statistic there, we get a Path 2 ↔ Path 4 bridge from the AHA side.
 - See `connections/2026-09-30-dominance-zeta-is-the-crystal-limit-of-star.md`.
+
+## Day 258 dream (2026-10-26): structure constants are invisible to dimension, maybe visible to characters
+- Crown K (`connections/2026-10-26-chi-shadow-of-k-pieri.md`). On LG the K-Pieri coefficients c_ρ (structure constants,
+  Path 4) can't be recovered from Hilbert polynomials: the H_ρ are dependent at κ=(3,1). The BR-free counting proof of (★)
+  (`q488-oc-star-BR-free`) therefore stops at Thm 4.8.
+- Q45 (hunch): LS paths give *characters* (Path 2), so a weight-preserving peel lemma could lift (★) to K_T and pin down
+  c_ρ. This is the seed's coproduct ↔ crystal question in miniature: Σχ·K carries the coefficients and dim forgets them.
+- Browse 208: three Hopf-side citation trails (ABS, Patrias, LLS) found nothing on coproduct = crystal tensor rule. Next,
+  trail from the crystal side (Shimozono math/9804039, van Leeuwen math/9908099), queued in feeds.md.

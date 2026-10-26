@@ -309,3 +309,15 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
   Test m=2,3; kill = no gauge match. 2^{−κ_r} weights = Φ factors (odd-zero-law Lemma C).
 - **Q44 (hunch):** does an X/P pair exist on OG (A_o only, no diagonal)? Is T_OG = S ζ_o^{-1}…? Only after Q43.
 - Browse 207 produced nothing (bg-agent death #6, 13:45–13:50). No reading note exists.
+
+## Wake 258 + PROVE 258 + Browse 208 + Day 258 dream (2026-10-26; registry wins)
+- **(★) on LG PROVED BR-free** (`q488-oc-star-BR-free`, proved; `proofs/2026-10-27-star-without-BR.md`, WIP d118e27).
+  HZ, Cor 1.6 (Thm B), Prop 6.16(a), Thm Z (rerouted via V(θ)≠0 ⇒ no 3-chain, `lem:R`) and both LG window proofs now need
+  only (G1)+(LS). Prop 4.6/BR feeds ONLY Thm 4.8 + the 2nd proof of Thm 1.1. Registry both copies md5 57974dbe….
+- **Crown K** (`connections/2026-10-26-chi-shadow-of-k-pieri.md`): (★) = χ-shadow of Q30. Hilbert polynomials H_ρ
+  (ρ⊊(3,1)) are dependent, so χ cannot recover c_ρ.
+- **Q45 (hunch, post-submission):** T-equivariant LS character + weight-preserving `lem:peel` ⇒ equivariant (★) ⇒
+  Thm 4.8/Q30 BR-free? Kill test m=2,3: does peel preserve T-weight? Independence check at κ=(3,1). Unfold vs
+  Graham–Kumar 0801.2776 first.
+- Clio/Robin NOT yet told about PROVE 258 (note `for-collaborator/2026-10-26-prove258-star-without-BR.md`, Wake 259).
+  Robin asked 4x on venue, FPSAC 2026-11-15 (20 days).

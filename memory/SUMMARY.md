@@ -1,73 +1,52 @@
 # Summary: Rick
 
-## Day 257 dream (2026-10-25): CURRENT STATE, read this first (registry wins)
-- **Draft:** `writing/lg-og-negative-degree/main.tex`, 27 pp, WIP 45cf937. Conj 8 is now **Prop 6.16 proved**
-  (`q488-oc-half-step-T-ribbons` proved). Both registry copies md5 f898a1b6…. No grade changes this dream. SUMMARY matches the registry.
-- **Clio and Robin have NOT been told** about Prop 6.16 or the new §6.5. Inbox silent since 00:44. Robin has been asked 3x on
-  the venue (last answer 10-17).
-- **Crown J** (`connections/2026-10-25-half-step-is-row-deletion.md`): "delete a row at cost 2^{−part}" is one operator seen four
-  times (Thm C, HZ shift lemma, Φ = Π(1+y)^{−1}, X/P).
-  - Checked by hand from the print: **Thm C = the ∅-column of Prop 6.16(b) at x=1.** The draft needs one sentence saying so.
-  - Hunch Q43: T = ⊗2^{−m}[∧^•U] ("√O(1)", Crown D), post-submission.
-- **Browse 207 LOST** (bg-agent death #6, 5-min session, nothing filed). Fix: feeds.md PINNED #5. PINNED #4 dedup is still unmeasured.
-- **Next (strict order), Wake 258:**
-  1. Email Clio cc Robin: Prop 6.16 (WIP 45cf937 PDF URL) + `for-collaborator/2026-10-25-prove257-conjT-proved.md`
-     (+ Dream addendum). Re-ask Robin yes/no.
-  2. Add the Thm C ↔ Prop 6.16 sentence (≤5 min), rebuild, push (can go before the email).
-  3. If Robin says FPSAC: the 12-pp cut is the next PROVE. If no answer: Q43 or Q38/Q40 remarks, not new hunting.
-  4. Browse 208: obey PINNED #5, measure PINNED #4.
+## Day 258 dream (2026-10-26): CURRENT STATE, read this first (registry wins)
+- **Paper:** `writing/lg-og-negative-degree/main.tex`, 27 pp, 0 undefined, 0 overfull, **WIP d118e27** (pushed). Stanley-type
+  reciprocity for LG/OG Schubert Hilbert functions in negative degree. Registry `proofs/registry/q488-converse.json`, both
+  copies md5 57974dbe…. No grade changes this dream.
+- **Proved (registry):** SR_LG (two routes: §4 K-theory via G0/G1/BR; §11 LS via G1′ + Littelmann Invent. 116 §5.2), SR_OG,
+  Thms I/I_OG/Z/HZ/B, Q30, BR-dictionary, ls-bijection, ls-parity-model, Prop 6.16 (`q488-oc-half-step-T-ribbons` +
+  `q488-oc-T-mobius`, `q488-oc-T-XP-identities`), **(★) BR-free (`q488-oc-star-BR-free`, PROVE 258)**.
+  Computed only: `q488-oc-T-rim-guess`, OG LS route.
+- **Dependency picture after PROVE 258:** HZ, Cor 1.6 (= Thm B), Prop 6.16(a), Thm Z (rerouted via V(θ)≠0 ⇒ no 3-chain,
+  `lem:R`) and both LG window proofs need only (G1)+(LS). **Prop 4.6 (BR 1005.2605 Cor 5.6 at p=1, no outside line-read)
+  now feeds ONLY Thm 4.8 (closed c_ρ) + the 2nd proof of Thm 1.1.** FPSAC cut risk #1 resolved.
+- **Endorsements:** Clio endorsed Z (uid451), I/I_OG (uid457). Not endorsed: Thm B, Prop 4.6, Prop 6.16, (★)-BR-free.
+- **Crown K** (`connections/2026-10-26-chi-shadow-of-k-pieri.md`): (★) is the χ-shadow (pushforward to a point) of Q30. The
+  H_ρ for ρ⊊(3,1) are dependent, so counting can't recover c_ρ. That is why the cheap proof stops at Thm 4.8.
+  **Hunch Q45:** an equivariant LS-character version of `lem:peel` would lift (★) to K_T and give Thm 4.8 BR-free (Seed
+  Paths 2↔4). Post-submission.
+- **Outbound state:** Clio cc Robin HAVE Prop 6.16 cover + draft b2fb272 (Wake 258). They have NOT been told PROVE 258
+  (note `for-collaborator/2026-10-26-prove258-star-without-BR.md` + Dream addendum). Robin has been asked about the venue
+  4x with no answer since 10-17. Inbox silent since uid458 (MacBeth ack). FPSAC deadline is **2026-11-15** (20 days),
+  re-confirmed in Browse 208. 12 pp including the bibliography, first-hand Wake 258. Cut skeleton is at WIP cf8868e/5a2fa86
+  `papers/lg-og-fpsac-cut/`.
+- **MacBeth uid456:** 2nd check-pass PDF sent (WIP bd1ae96/9231fcb). MUST: his credit lines (Rem 1.5/§5/abstract).
+- **Browse 208** (`reading/2026-10-26-browse208.md`): PINNED #4 dedup measured clean (13/13). PINNED #5 held. Notable:
+  2610.31655 (cluster-Lusztig dual canonical basis), 2609.24957 (symplectic Grothendieck/CM regularity, nearest neighbour,
+  no scoop). The "poset zeta function" phrase has zero arXiv hits, so Crown J's framing looks unclaimed. Seed Path 4 trails
+  came up blank 3/3.
+- **Next (strict order), Wake 259:**
+  1. Email Clio cc Robin: PROVE 258 note (+ addendum) with the d118e27 PDF URL. Re-ask Robin yes/no on "(b) arXiv then (a)
+     FPSAC cut". No posting or submitting without his yes.
+  2. If yes → PROVE = fill the FPSAC cut proofs (check FPSAC2027.cls/citation rule FIRST-HAND, the Browse 208 claim is
+     unverified). If silent → MacBeth credit lines, then Q38/Q40 remarks. No new hunting (Q43/Q44/Q45 are post-submission).
+  3. Browse 209: obey feeds.md QUEUED block (crystal-side Path 4 trail, Q45 owner locator, FPSAC rule first-hand).
 
-## PROVE 257 (2026-10-25): CURRENT STATE, read this first (registry wins)
-- **Conjecture 8 (conj:T) PROVED, both parts.** Now Proposition prop:T in sec:half, new subsection 6.5 "The half-step
-  operator" (draft 27 pp, 0 overfull, 0 undefined; WIP 45cf937, pushed). Proof file `proofs/2026-10-25-conjT-half-step-operator.md`.
-  Registry `q488-oc-half-step-T-ribbons` -> **proved** (+ premises q488-oc-T-mobius, q488-oc-T-XP-identities), both copies.
-- **The mechanism:** A_e = S zeta^{-1} S, A_o = S zeta_o^{-1} S (signed Moebius functions, one-line proof). T = S zeta_o^{-1} X S,
-  where X = I - (delete part kappa_{r0} at cost 2^{-kappa_{r0}}, shrink tail, length drop exactly 1) and P = X^{-1} = the same
-  with + sign and any length drop. Two identities X zeta = zeta_o P and XP = I by first-row induction. (a) is the column
-  P(kappa, empty) = 2^{-kappa_1}; (b) is inclusion-exclusion + a toggle involution (lowest 2x2-overlap row end).
-- **Found by:** computing zeta_o * (S T S) from data: it is supported on length drop exactly 1 with entries -2^{-|rim|}.
-  Lesson: conjugate by the sign matrix and multiply by the obvious zeta matrices before staring at a square root.
-- Verified m<=8 (256 partitions) all identities; negative control fails all. Inputs: lem:layers(a), lem:anchor, thm:A (only (a)).
-- **Next:** tell Clio/Robin at Wake 258 (draft changed: Conj 8 -> Prop 6.16; new §6.5, 2 pp). Await Prop 4.6 read + venue yes/no.
-
-## Wake 257 (2026-10-25): CURRENT STATE, read this first (registry wins)
-- **Outbound done:** draft PDF (WIP 5062224) + PROVE 256 check-record PDF sent to Clio cc Robin; asked Clio for the Prop 4.6
-  line-read, Robin for yes/no on "(b) arXiv then (a) FPSAC 12-pp cut" (third ask; no answer since 10-17). Inbox empty.
-- **Draft polish:** Ex 1.2 <-> Ex 4.11 cross-ref + dated title line (WIP 5f715ea).
-- **Conjecture 8(b) was MISPRINTED** (dropped (-1)^{|D|}, missing zero cases): old printed rule 1372/1716, corrected 1716/1716
-  at m<=6, re-tested literally from the print (WIP f7ecdee, scripts/wake257-conjT/). Erratum + fixed PDF sent to Clio cc Robin.
-  Registry note_wake257 added, trust still computed, both copies md5-identical.
-- **Q41 answered (computed m=3..6):** OG hyperplane identity does NOT separate (3)<->(2,1): both expansions = 1*[O(2)];
-  OG coefficients depend only on unmarked poset (Lemma og-corners). (3)~(2,1) is the only isomorphic-poset pair (|k|<=7).
-  WIP d8f70a5, scripts/wake257-q41/. So the OG dictionary rests on its printed proof alone (as Crown I predicted).
-- **Clio Q569 review sent** (WIP 89ae3ab/e07162f): SPLIT. Geometry (vertex star, trapezoid = hexagon clipped by wall) right;
-  reproduced 187/187, 54/54. Main error: reflection o (0<->1 swap) preserves bulk set and fixes hex, so the chirality kill only
-  rules out a plain mirror fold; Remark 14 false; Prop 11 "zero moduli" proves too much.
-- **Next:** PROVE 257 = prove Conjecture 8 (T-operator ribbon closed form) via T'^2 = A_oA_e + uniqueness. Await Clio on Prop 4.6.
-
-## Day 256 dream (2026-10-25): CURRENT STATE, read this first (registry wins)
-- **LG/OG draft is CHECK-free and NOT YET SENT.** `writing/lg-og-negative-degree/main.tex`, 25 pp, 0 overfull, 0 undefined
-  (WIP 5062224, `papers/lg-og-negative-degree/main.pdf`). Record: `proofs/2026-10-25-lg-og-draft-checks.md`.
-  - Lemma 2.4 Dictionary: X_κ = X^{κ^∨}(E_•) on the nose (`q488-oc-BR-dictionary`, **proved**; PDF test 8/8, control 3/8).
-  - Prop 4.6 = BR Cor 5.6 at p=1, refereed vs BR Thm 5.5 (+g6, D-subcase). It has had no outside line-read yet (ask Clio).
-  - Thm B printed (Cor 1.6, §6.4) + crownF §9.6. Minor locators footnoted "not read first-hand".
-- **Registry:** both q488-converse.json copies md5-identical. Proved: SR_LG (two routes: §4 K-theory given G0/G1/BR; §11 LS
-  given G1′/LS = Littelmann Invent. 116 §5.2), SR_OG, Thms I/I_OG/Z/HZ/B, Q30, ls-bijection, ls-parity-model, BR-dictionary.
-  Computed only: T-operator (`q488-oc-half-step-T-ribbons`, Conjecture §8), OG LS route. Clio endorsed Z (uid451), I/I_OG (uid457).
-  Not endorsed: Thm B, Prop 4.6.
-- **Crown I** (`connections/2026-10-25-same-poset-different-marking.md`): P_{(3)}, P_{(2,1)} are both 3-chains. The PROVE 256 control,
-  the paper's §1 example and the Wake 251 cominuscule trap are one fact: only the diagonal marking (bond table, Crown H)
-  separates them. On OG, H^OG_{(3)} = H^OG_{(2,1)} is forced, so Hilbert controls may be blind there (Q41, optional). Type-B
-  signed-poset / 0-Hecke home for the marking = Q42 (hunch, post-submission).
-- **Browse 206:** Cheng 2609.16765 parked (technique cousin of §6). 0-Hecke type-B cluster (Kim–Searles 2026, Almousa–Lu 2026,
-  Bastidas et al. 2025; IDs unresolved). Williamson KLR/relative-HR still open. **Dedup regressed 5/6 → PINNED #4 in
-  feeds.md (agents grep /tmp/known_ids.txt).**
-- **Next (strict order):**
-  1. Wake 257 FIRST: email Clio cc Robin the PDF URL + `for-collaborator/2026-10-25-prove256-draft-checks.md` (with Dream
-     addendum). Ask Clio for the Prop 4.6 line-read. Ask Robin for a yes/no on "(b) arXiv now, (a) FPSAC 12-pp cut from it".
-     FPSAC deadline is 2026-11-15, 21 days out. Robin has been asked twice with no answer. No posting or submitting without their yes.
-  2. Optional ≤15-min polish: cross-ref Ex 4.11 ↔ §1 (same pair of shapes).
-  3. Clio Q569 review (owed). Then Q41 if idle. Q38/Q40/Q42 only after submission.
+## Days 256–258 sessions: pointer lines (full stanzas in `archive/SUMMARY-2026-10-26-pre-day258-dream.md`)
+- **PROVE 258:** (★) BR-free by Thm 1.1(b) at all j≥1 + `lem:peel` + polynomiality. Checks prove258/star_poly.py (m≤4, 0
+  fails; neg. control 143/143). New proof of Prop 4.12, `rem:deps` opens §6. Registry edges fixed (half-step-T depends_on;
+  Z-by-induction rerouted).
+- **Wake 258:** Prop 6.16 cover (b166a28) + draft (b2fb272) sent. Thm C = ∅-column remark added. Crown J corrected:
+  Thm A's 2^{−κ₁} is the column Ts_0 = S·P(·,∅) at x=0, NOT the same fact as Thm C (T((3),∅)=−1/8, P=+1/8). FPSAC
+  skeleton cf8868e. The (★) BR-free audit (sketched) became PROVE 258.
+- **Day 257 dream:** Crown J (`connections/2026-10-25-half-step-is-row-deletion.md`). Q43 (T=√O(1)) and Q44 (OG X/P)
+  hunches. PINNED #5 after Browse 207 died (bg-agent death #6).
+- **PROVE 257:** Conj 8 → Prop 6.16 (T = Sζ_o⁻¹XS, Xζ=ζ_oP, XP=I; m≤8). `proofs/2026-10-25-conjT-half-step-operator.md`.
+- **Wake 257:** draft PDF (5062224) sent. Conj 8(b) misprint caught (1372→1716/1716), erratum f7ecdee. Q41: OG blind to
+  (3)/(2,1) (d8f70a5). Clio Q569 review SPLIT (89ae3ab/e07162f).
+- **Day 256 dream:** Crown I (`connections/2026-10-25-same-poset-different-marking.md`). Draft CHECK-free (25 pp then).
+  Dedup → PINNED #4 (now measured clean).
 
 ## Wake 256 + PROVE 256 (2026-10-25): pointer lines (full stanzas in `archive/SUMMARY-2026-10-25-pre-day256-dream.md`)
 - Wake 256: Q39 closed (`reading/2026-10-25-q39-ls-locator.md`; rick-research c272fed). Clio uid457 fixes (1ba5f8f). PDFs
@@ -146,143 +125,15 @@
 - **Wake 250:** Clio uid435 was right (12 nodes downgraded, then restored by PROVE 250). Crown 1 computed (w²F = cc·ξ).
   MacBeth review sent (WIP d415e05). Clio uid437: IN 1112.5223 §8.3 = citation home.
 
-## Day 249 dream (2026-10-21): pointer lines (full stanza in `archive/SUMMARY-2026-10-22-pre-day250-dream.md`)
-- Theorem D proved (ℓ_κ = Schubert integration on LG); Cor D1, Thm E, Cor AC′, HP⁰⁺ computed; Thm AC top pair proved; (OC) open.
-- Crown 1 (Poincaré duality) is confirmed in structure at Dream 250. Crown 2 (HP⁰⁺ = interior Ehrhart) is a hunch, with a
-  Schubitope warning at Dream 250.
-- FPSAC 2026-11-15 frozen 7df658b; never submit without Robin.
-
-## Day 249 (Wake + PROVE ×3 + Browse 195–198), 2026-10-21: pointer lines (full stanzas in `archive/SUMMARY-2026-10-21-pre-day249-dream.md`)
-- **Wake 249:**
-  - K0 PASSED: Ψ_{κ,0}=IN GQ_{rev κ}(x|b), no shift, x=1−1/w, b=1−w (`proofs/2026-10-21-k0-gq-kill-test.md`, WIP 5494e5b).
-  - Clio 424–429 answered: Q532 true, G stays; 429 node stands.
-  - MacBeth triangulation review sent (4 MUST, WIP 33f1f88). Clio reply + dual-block PDFs sent (30f9329, ea0c14c).
-- **PROVE 249:** Theorem S (symbol at u→0; (α) = o=1 case) and Lemma I (w↦1/w; u→∞ = ι-mirror) proved; Q532 →
-  Lemma P∞ checked-sober; certifier v8 (`proofs/2026-10-21-symbol-theorem-inversion-duality.md`).
-- **PROVE 249b:** (SC) superseded by the centre polynomial P (w→1). Lemma E/G proved; HP⁺ exact (C n≤4, A N≤5 5578/5578).
-  The 'chk' was vacuous and is fixed (`proofs/2026-10-21-window-hilbert-polynomial.md`; connection
-  `2026-10-21-window-is-kodaira-strip-centre-polynomial.md`).
-- **PROVE 249c:** Theorem D, Lemma Φ, Prop T, Theorem AC proved; Cor D1, Theorem E, Cor AC′, HP⁰⁺ computed
-  (`proofs/2026-10-21-window-is-kodaira-vanishing.md`; rick-research d04913a…4d081e5, WIP 188b3c1/7c5a24b).
-- **Browse 195:** Kumar MRC notes = classical ancestor of D; no scoop (Crawford–Kartik–Lance 2510.21573 ruled out ×2).
-- **Browse 196:** Brahma 2604.07352 = type-A orbifold twist, dropped. BIIY 2603.20865 confirms GQ = LG K-Schubert basis
-  (gp/gq duality). Arroyo 2511.05734 and AHHP 2503.16641 (GQ Pieri / type-C K-Stanley). Buciumas–Scrimshaw 2101.08907.
-  Marberg 2211.01092 (shifted CHA from K-theory, Path 1↔K-Schubert hub). MO 481860: OpenAI Lean proof of Shareshian–Wachs.
-- **Browse 197:** GMSXZZ 2502.04438 (GLSM Schubert defects in LG, physics GQ cross-check). Physics citers of Sahi
-  q-alg/9710032 (2510.25168, 2505.14962, 2503.15446). Grantcharov = 2606.29327. BCMP 1604.07500 (K-Chevalley,
-  cominuscule). MO 514650 (β-Grothendieck positivity via FK Cauchy). Addendum 85ad0b4.
-- **Browse 198:** Jang–Scrimshaw 2608.27949 (uniform special KR crystals); Hu–Mathas–Shi–Webster center conjecture (ID
-  unresolved). Math.SE 5144987 (does ω lift to U(gl_n)?), unanswered. My answer sketch: ω does not preserve Λ_n at finite n;
-  the right home is super duality / gl(m|n) parity swap. Not posted (no outbound to external services).
-
-## Day 248 (dream + PROVE + Wake), 2026-10-20: pointer lines (full stanzas in `archive/SUMMARY-2026-10-21-pre-day249-dream.md`)
-- **Dream:** twisted Ψ = Ikeda–Naruse GQ at fixed points (crown; confirmed by K0 with a corrected no-shift dictionary).
-  Lemma A = IN coset splitting, so call it "reformulation" in a write-up. Sahi = q-alg/9710032.
-- **PROVE:** dual-block = formal zero; Lemma A alternant; P/P\*/P1/P1′/P2 proved; Z^A_7 = [0,10] computed
-  (`proofs/2026-10-20-dual-block-identity.md`, WIP 5b105b8).
-- **Wake:** Clio 419/421/422 answered; MacBeth weld checked-sober; route 2 (sign-coherence) killed (WIP 434433e).
-
-## Day 247 dream (2026-10-19): pointer lines (full stanza in `archive/SUMMARY-2026-10-20-pre-day248-dream.md`)
-- Crown `connections/2026-10-19-zero-window-is-a-cn-wall-crossing-strip.md` (hunch). Route 2 (sign-coherence) KILLED Wake 248. The location picture is untested.
-- Killed in that dream: "endpoints = W⁺ reflected by w₀" (every interval is symmetric about its own midpoint).
-- Browse 192's novelty overclaim corrected (Motegi proves the biorthogonality via RTV himself).
-## Day 247 PROVE (2 cycles) + Wake 247 + Browse 191/192 + Day 246 dream: pointer lines (full stanzas in `archive/SUMMARY-2026-10-19-pre-day247-dream.md`)
-- **PROVE 247:**
-  - The cold re-read of W A2/A3 passed; the only use of c ≤ −2 is c+1−δ<0 at δ=0.
-  - W⁺ via u→∞ at δ=0. Lemma Δ. Prop Z. U_G via L3′ + φ⁰_{(1)} = 1−Πw^{−2}.
-  - Pushed rick-research 0c881e5, WIP 1f8d0d2.
-- **PROVE 247b:**
-  - Lemma R0 and Lemma T (leading options for Ψ_{κ,θ}), plus label lowering.
-  - The sum certifier is sound (it can't certify a zero). The negative control caught the B weight-on-S bug.
-  - Pushed rick-research a393617, WIP 7abdb87.
-- **Wake 247:**
-  - D∞ note sent (WIP 5ee1873).
-  - Clio 416/417 answered (20b68d0; F1 write-up only, F2 UFD step written out).
-  - MacBeth 418 round 3: 1 MUST (Remark 4 / Intro l.136 / Example 1).
-  - 4 Clio peer-claimed nodes added.
-- **Browse 191** (`reading/2026-10-19.md`):
-  - Shtotland 2601.22846, KKOP 2608.15020, Ma 2601.03871, Lin 2410.08657 (agent-summary).
-  - GILL 2607.03966 = a DFK 2303.04276 citer.
-  - MO 481860: Lean proof of Shareshian–Wachs (downstream of Hikita).
-  - BHMPS "missing corner" slides.
-- **Browse 192** (`reading/2026-10-19-browse192.md`):
-  - Crawford–Kartik–Lance 2510.21573 new (type A only).
-  - 3 dedup misses; the citation agent re-ran the morning's anchors.
-  - nLab has no stable-envelope page.
-- **Day 246 dream:** the w₀∘bar crown (`connections/2026-10-18-q0-qinf-are-w0-bar-duals-and-only-one-end-is-clean.md`, now with a scorecard). DFK hub = citers of 1704.00154.
-
-## Day 246 PROVE + Wake 246 + Browse 190 + Day 245 dream (2026-10-18): pointer lines (full stanzas in `archive/SUMMARY-2026-10-18-pre-day246-dream.md`)
-- PROVE 246: as above. The PROVE.md wording "pairs Thm 6 allows" was wrong (Thm 6 is an aggregate over ν); "762/762" = 408 allowed nonzero + 354 non-allowed zero. Control: the q=0 F-system vanishes exactly on the separator (∅,{3},{1,2,4}) H12.
-- Wake 246:
-  - Sent Clio the Theorem Ψ PDF (0ba106c/f74cb81).
-  - ψ = the E^B j=k diagonal factor missing from E^C (`q488-psi-is-motegi-EC-diagonal-completion`, sketched; `reading/2026-10-18-wake246-psi-owner.md`). The K-matrix hunch is killed.
-  - The bar/w⁻¹ transport is a tautology (`q488-mirror-transport-formal`, sketched).
-  - φ^∞ is not a Weyl image (computed). WIP 3c264a0, 6a875fd.
-- Browse 190 (`reading/2026-10-18-browse190.md`): Berry 2601.04008 (√q-free affine q-Schur cellular), Martin–Senécal–Spencer 2601.17445 (TL cell modules, mixed char), Mackaay–Miemietz–Vaz 2604.20604, Nakaoka 2501.11559 (all agent-summary). DFK 1505.01657 is dormant. MO quiet.
-- Day 245 dream: Theorem Ψ (Clio's ψ gauge, proved all N); crown `connections/2026-10-18-psi-is-a-c2-levi-gauge-monomial-at-both-ends.md`; Q488 lives in a C₂ Levi.
-
-## Day 245 PROVE + Wake 245 + Browse 189 + Day 244 dream (2026-10-17/18): pointer lines (full stanzas in `archive/SUMMARY-2026-10-18-pre-day245-dream.md`)
-- PROVE 245: Theorem Ψ (above). The w=−1 component uses evenness Ã(−w)=Ã(w) with unpadded n. Laurentness is cited from Motegi L3305 (read first-hand). N=3 line test: Â 0 poles; raw Ã 13/8/4 on H12/H13/H23. ψ is NOT unique (ψ·x^{2k}).
-- Wake 245:
-  - Ψ-renorm honest at N=3 (symbolic) and N=4 (edge-local) (`q488-psi-renorm-honest-n3-n4`, computed).
-  - Short-root naming fix (8e9ea91). Already-sent PDFs still say "long".
-  - Sent: Clio Koncki note + UID 411 reply; MacBeth 412 review (2 MUST: retract e not λ-equivariant; clause (2) false at (1,2), (1,3)).
-- Browse 189:
-  - Micheli 2507.15841, degenerate LG(n,2n) GKM, type-C juggling order (agent-summary).
-  - Lu–Pan 2603.03381 / CLPRW 2601.00524: two routes, same theorem.
-  - MO 500059.
-  - DFK pull 429'd.
-  - MO tag fixes: canonical-bases, crystals, kazhdan-lusztig.
-  - Log `reading/2026-10-18-browse189.md`.
-- Day 244 dream: g bar-invariant, with g−1 zeros at both ends (`connections/2026-10-17-g-bar-invariant-two-zeros-dichotomy.md`). Q488 reframed as change-of-basis; that is now superseded by the vertex gauge.
-
-## Day 244 PROVE + Wake 244 + Browse 188 (2026-10-17): pointer lines (full stanzas in `archive/SUMMARY-2026-10-17-pre-day244-dream.md`)
-- PROVE 244: the Koncki test passed (T1 15/16, T2 odd entry as predicted, T3 ratio = g, Prop K). Controls 8, 10, 13/16. Koncki thesis typo p.71 (23)|e13 α=0, sty→s²ty. Own compare.py slip caught via GKM. WIP a18b239, projects 0d93ab2.
-- Wake 244:
-  - Clio got the order-q¹ note (91534ea) and the Ask-1 correction (62d9ed4: 22 pole pairs; the λ-witness is in-stratum, the μ-witness out). Ask-1 data in WIP 0513ceb.
-  - Koncki LG(2,4) table at `reading/2026-10-17-koncki-LG24-table.md`; the PDF needs `curl -A Mozilla/5.0`.
-  - MacBeth 409 needs no reply.
-- Browse 188: AMSS/KW×2/MNS×2/FRW/IN IDs all confirmed. Jeon 2509.24348 is a new lead (agent-summary). MO/SE quiet for the 10th time.
-
-## Day 243 dream + PROVE (2026-10-17): pointer lines (full stanzas in `archive/SUMMARY-2026-10-17-pre-day244-dream.md`)
-- PROVE 243, `proofs/2026-10-18-q488-converse-order-q1.md`:
-  - (b) and (c) are FALSE at N=4.
-  - Proved, all N: (a), **Lemma QC** (on H_ab, Ã_{M,I}=g·Ã_{M∖ab,I}), q=0 formula + Lemma L, Thm 6 aggregate converse, Thm 7 residue, Thms 9/9', Thm 10 (d).
-  - Computed: N=4 full-q 127/127.
-- Hunch `q488-qinf-dichotomy`: N=5 12/12 first order at ∞, 22 predicted pairs. φ^∞ has sign (−1)^{codim κ} but is not monomial·zeta.
-- Dream 243 crown, `connections/2026-10-17-q488-poles-are-motegis-geometric-correction.md`: predictions 1+2 were confirmed by PROVE 244.
-- φ⁰ = GQ is literature-supported (Motegi L5645).
-- The Seed Q1 braided arc is CLOSED (JRZ/Rupel/Berenstein own all of it; universal phrasing plausibly Rosso's).
-
-## Wake 243 + Day 242 dream: pointer lines (full stanzas in `archive/SUMMARY-2026-10-17-pre-day243-dream.md`)
-- **Wake 243:**
-  - Long version PUBLISHED, 857d772 (source WIP 70db4a4, stamp 324e97a, 39 pp). Robin emailed per §4.3.
-  - Seed Q1 braided arc CLOSED: Thm 2 = JRZ 0908.0083 Prop 12, Lemma B = JRZ Thm 4, Lemma 2 = Rupel 1401.4338 Thm 6.12. The forcing is folklore-elementary. Registry 6522e3a / WIP bf2dc9b.
-  - MacBeth UID 405 weld = regular bicomodule graded sketched (3 MUST, clio-review 7d07cfc).
-  - Q488 opened (WIP bbcb171, note f702446).
-- **Day 242 dream:** sorted-word character = Feigin's Coxeter-word map (`connections/2026-10-16-sorted-word-character-is-feigins-coxeter-word-map.md`), so Lemma 2 is owned. Rule 11 fired in the owner-hunt room.
-
-## 2026-10-15/16 pointer lines (full stanzas in `archive/SUMMARY-2026-10-16-pre-day242-dream.md`)
-- **Browse 186:**
-  - Euler-form hunch literature-confirmed twice (LRZ 2502.09430 §1.1; Fu–Zhang 2511.14240 L5.3). Deeper owners Ringel 1990 / Green 1995 (from Reineke math/0204059 refs).
-  - Rupel 1401.4338 lead found. Westerland 2406.13874 has no ABS-terminal statement.
-  - S2 slash-form ID fix. First trustworthy MO/SE quiet. Log `reading/2026-10-16-browse186.md`.
-- **Browse 185:**
-  - LRZ 2502.09430 surfaced by 2 agents. Reineke = math/0204059.
-  - SE `fromdate` filters creation_date: all prior quiet checks were unverified. Fixed protocol: sort=activity, filter locally.
-  - OEIS json broken (use HTML). JRZ dormant 4th time; stop re-checking. Log `reading/2026-10-16-browse185.md`.
-- **Day 242 PROVE:**
-  - Thm 4(4) proved self-contained (`proofs/2026-10-16-thm4-4-injective-self-contained.md`, WIP 3efc7ab/5814e22, rick-research 31329e6/0591776).
-  - Lemma 2 sorted-word character. Lemma D citation-free (ker Θ = rad Lusztig form).
-  - A_3 separator computed: wrong twist → rank too BIG; ν=α1+α2+α3 separates nothing. q=1 gives S(V), not U(n).
-- **Wake 242:**
-  - 5 inbound answered. Clio 207b repairs applied (longversion 39 pp, 3168db1). Clio Q473 checked-sober / sketched, Q484 checked-sober (7724208).
-  - MacBeth A/B/C landed (0 MUSTs).
-- **Day 241 dream:** Euler-form crown (`connections/2026-10-15-feigin-twist-is-a-quiver-euler-form.md`, now superseded by the 10-16 crown). Browse-from-stale-queue miss.
-- **Browse 184:** JRZ dormant; DFK trail active; Watanabe 2608.30780 QSP coideal non-grouplike.
-- **Day 241 PROVE:** Thm 2 braided ABS proved; Prop 3 no character group; Thm 4 Feigin twist forced (`proofs/2026-10-15-seed-q1-braided-terminal.md`).
-- **Wake 241:** Clio Y-match correction sent (bf85c76); Q460 checked-sober; bridge (I) = DFK19 (6.7)+L2.16+Thm 2.17, credited l.189.
-- **Day 240 dream:** Y-inversion = antipode Z/2 (DFK-owned); QSP branching = Gaussian skew (`connections/2026-10-15-symmetric-pair-branching-is-a-gaussian-skew.md`).
+## Days 240–249 (2026-10-15..21): pointer lines (full stanzas in `archive/SUMMARY-2026-10-26-pre-day258-dream.md` and older archives)
+- **249:** Theorem D proved (ℓ_κ = Schubert integration on LG, P=χ(X_κ,ω(c/2+1))); Thm S; K0 PASSED; sign-coherence killed.
+- **246–248:** (D∞) all N; Theorem W sharp; dual-block B_L; Lemma R0 certifier.
+- **244–245:** Koncki p.71 typo via GKM; Theorem Ψ all N.
+- **243:** long version PUBLISHED 857d772 (39 pp); Seed Q1 braided arc CLOSED (JRZ 0908.0083 Prop 12 / Thm 4, Rupel
+  1401.4338 Thm 6.12); Q488 opened (WIP bbcb171).
+- **240–242:** Y-match/bridge (I) = DFK19; Thm 2 braided ABS, Thm 4 Feigin twist; sorted-word character = Feigin Coxeter-word
+  map (`connections/2026-10-16-sorted-word-character-is-feigins-coxeter-word-map.md`); Euler-form owners LRZ 2502.09430,
+  Fu–Zhang 2511.14240, Reineke math/0204059.
 
 ## Day 239 dream (2026-10-14): pointer line (full block in `archive/SUMMARY-2026-10-15-pre-day240-dream.md`)
 - ι route fully dead (s=1 vacuous). M–T 2309.13867 = class (C). Seed Q1 classical at generic q, live form braided (crown `connections/2026-10-14-seed-q1-is-classical-at-generic-q-the-live-form-is-braided.md`).
@@ -663,6 +514,7 @@ Rick. Combinatorial Hopf algebras, quantum groups, q-Hecke. Granddaughters Clio 
 ---
 
 ## Compression log
+- 2026-10-26 Day 258 dream: PROVE 258 → Day 256 dream stanzas → one top block + pointer lines; Days 240–249 stanzas → 5 pointer lines (74.4 KB → 57.8 KB; archive `archive/SUMMARY-2026-10-26-pre-day258-dream.md`).
 - 2026-10-23 Day 253 dream: PROVE 253 / Wake 253 / Day 252 dream / PROVE 252 / Wake 252 stanzas → pointer lines under a new Day 253 dream top block (69.0 KB → 64.6 KB; archive `archive/SUMMARY-2026-10-23-pre-day253-dream.md`).
 - 2026-10-16 Day 242 dream: Browse 184–186, Day 241 PROVE/dream, Day 242 PROVE, Wake 241–242 stanzas → pointer lines; new Day 242 dream top block (archive `archive/SUMMARY-2026-10-16-pre-day242-dream.md`).
 - 2026-10-09 Day 231 dream: Days 229–230 stanzas → pointer lines (archive `archive/SUMMARY-2026-10-09-pre-day231-dream.md`).

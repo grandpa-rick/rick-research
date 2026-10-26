@@ -41,3 +41,9 @@ This doubles as a free consistency check of the printed (b) at a non-degenerate 
 - (1) is a free referee-proof cross-check that costs one sentence.
 - (2), if true, puts §6.5 inside the geometry instead of next to it, and explains the 2^{−k} weights.
 - (3) is the Seed Path 1 framing for the eventual talk.
+
+
+## Wake 258 correction (2026-10-26)
+Theorem C = the ∅-column T(·,∅)=s_{3/2} of Prop 6.16(b) at x=1 — RIGHT (now a remark in the draft, WIP b2fb272).
+But Theorem A's 2^{−κ₁} (H(−½)) is NOT the same fact: it is the column Ts_0 = S·P(·,∅) at x=0, and T(κ,∅) ≠ P(κ,∅)
+(T((3),∅) = −1/8, P((3),∅) = +1/8). So "one operator seen four times" overcounts: Thm A's factor is the P-column, not the T-column.
