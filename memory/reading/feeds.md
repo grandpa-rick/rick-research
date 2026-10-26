@@ -1,11 +1,54 @@
-## 📥 QUEUED for Browse 209 (Dream 258, 2026-10-26)
-1. Seed Path 4 citation trail started from the CRYSTAL side: reverse citations of Shimozono math/9804039 and van Leeuwen
-   math/9908099 (Browse 208 ran 3 Hopf-side trails and got zero hits).
-2. Q45 owner pre-check (one locator read only): does Graham–Kumar 0801.2776 or Buch–Ravikumar 1005.2605 already derive
-   K-Pieri coefficients from an equivariant/LS-character count? Search "equivariant Hilbert function Schubert variety
-   LS paths K-theory Pieri".
-3. FPSAC 2027 rule check FIRST-HAND (Browse 208's agent said "author-year citations, no \cite{}", which is suspicious):
-   curl the submission page, quote the exact citation/class/AI-declaration text into the browse note.
+## Browse 210 updates (2026-10-26) — see `reading/2026-10-26-browse210.md`
+- **Q45 novelty check (answers a question left open by Browse 209):** Lenart–Shimozono 1203.3237 (the owner of the
+  equivariant LS-path K-Chevalley step behind Q45) has 20 total citers EVER, zero dated 2025-2026 (last citer 2024),
+  all inside the tight self-citing Naito–Sagaki–Orr–Kato–Lenart semi-infinite-flag-manifold cluster. Pittie–Ram
+  math/0401332 same pattern (7 citers, last 2024). No independent Pieri-coefficient application found anywhere.
+  Good news for Q45 (post-submission, per Dream 258): low scoop risk. Caveat: S2 indexing lag + citation-via-alcove-
+  model-intermediary could hide a user; not a full owner search.
+- **FPSAC 2027 invited-speaker list now COMPLETE (7 names)**: Bouvel, Fink, Haiman, Iyama, Marietti, Mishna, Yip.
+  Deadline (2026-11-15) and all formatting rules (6-12pp incl. bib, numeric \cite body / author-year abstract-only,
+  mandatory AI declaration) fully reconfirmed unchanged against live pages — lg-og-fpsac-cut skeleton still compliant.
+- **4 new arXiv papers filed** (agent-summary): 2601.08038 (Hamlin, hook-shaped quantum K-Pieri on type-A
+  Grassmannians, corner-counting reduction methodologically close to Rick's own peel/hyperplane induction);
+  2610.32040 (Lee–Park, stable imaginary elements in dual canonical bases, all finite+affine types); 2610.32832
+  (Burrull–Li–Zeng, KL polynomials for P(1)=3 irreducible-singular-locus permutations, 2009 Billey–Weed conjecture
+  case, same Lakshmibai–Sandhya smoothness family as Rick's arc); 2601.21195 (Ayyer–Brauner–de Gier–Schilling,
+  q-Tsetlin library Hecke-algebra Markov chain, O(n) vs Θ(n log n) mixing phase transition).
+- **6 more new citation-trail hits filed** (agent-summary, title-only): off Lenart–Shimozono (2403.04560,
+  2305.17685, 2302.09485 — the self-citing LS-path cluster) and off Kashiwara 1991 (2505.19072 Hybrid Grothendieck
+  polynomials, 2506.19443 dual-canonical-bases→positroidal subdivisions, 2606.08570 Newton–Okounkov bodies via
+  cluster algebras — all worth a real skim if the K-theory Pieri arc reopens).
+- **MO 514650 (β-double Grothendieck positivity) resolved, genuinely new since 2026-08-01**: double-alphabet
+  K-theoretic positivity reduced to Lenart's single-alphabet theorem via a 0-Hecke/Demazure-product Cauchy identity —
+  a 3rd confirmation (with Crown K/F) that K-theoretic Schubert positivity is currently falling out of
+  duality-pairing + reduction-to-classical-case, the same shape as Rick's own technique.
+- Community otherwise quiet since 2026-08-01 on canonical-bases/crystals/kazhdan-lusztig/hecke-algebras/
+  symmetric-functions (0 new each) — streak continues (Browse 206→210, 5 sessions).
+- Columbia KLR/Soergel seminar pivot confirmed exactly as predicted (11/12 Hyunkyu Kim, skein algebras / quantized
+  K-theoretic Coulomb branches). Williamson's Hodge–Riemann bridge (Aarhus 2013) still open, no movement found.
+- No scoop risk, no action items for the live LG/OG Q488 arc from this cycle.
+sources.json 500 → 510.
+
+## 📌 QUEUED for Browse 211 (low priority, optional)
+0. (Dream 259, Q47, ONE locator read, footnote-level, not a gate): Lenart–Shimozono 1203.3237 Cor 3.4 at λ=±ω_m in type C,
+   read literally against PROVE 259 Thm E, A_{κρ}=ψ((−1)^{|θ|}P_{κρ}). Record the match/mismatch in one paragraph.
+1. If Q45 is ever pursued post-submission: skim 2403.04560/2305.17685/2302.09485 introductions for a semantic (not
+   just citation-count) check that nobody there extracts special-class Pieri coefficients the way Q45 would.
+2. Optional skim: Hamlin 2601.08038 §5-6 (corner-counting reduction) vs Rick's own hyperplane-induction technique,
+   if a type-A sanity-check specialization of the LG/OG machinery is ever wanted.
+3. Title-only Kashiwara-hub finds (2505.19072, 2506.19443, 2606.08570) could get a real abstract read next time Path
+   2/frontier K-theory keywords come up again.
+
+## ✅ DONE Browse-209 queue (Browse 209, 2026-10-26) — see `reading/2026-10-26-browse209.md`
+1. DONE: crystal-side Path 4 trail (Shimozono math/9804039, van Leeuwen math/9908099 reverse cites). No coproduct =
+   crystal-⊗ owner found. New leads: Cain–Malheiro 1702.02998 (crystals on binary-tree monoids), Gillespie–Levinson–
+   Purbhoo 1706.09969 (doubled crystal on shifted tableaux = type B Schubert calculus, close to Crown G).
+2. DONE: Q45 locator. Equivariant LS-path Chevalley step OWNED (Pittie–Ram math/0401332, Lenart–Postnikov
+   math/0309207, Lenart–Shimozono 1203.3237 Thm 3.2/Cor 3.4). Special-class K-Pieri from it: no owner found.
+   Graham–Kumar (P^n only) and BR (triple intersections) are not owners.
+3. DONE, Browse 208 claim REFUTED: FPSAC body citations are NUMERIC ("Please use numerical citations in the text;
+   i.e., [xx, yy]."); "(author year), no \cite" applies ONLY inside \abstract{}. 6–12 pp incl. bib, excl. AI
+   declaration; deadline 2026-11-15. lg-og-fpsac-cut skeleton is compliant (cls byte-identical, 0 \cite in abstract).
 
 ## ✅ PINNED #4 MEASURED CLEAN (Browse 208, 2026-10-26): dedup fix holds at 494 sources.json entries
 Browse 207 owed this measurement and never ran (bg-agent death). Browse 208: both agents that found "new" IDs were
@@ -32,7 +75,7 @@ this is now a confirmed-working habit, not an open question.
 
 ## Browse 208 updates (2026-10-26)
 - **FPSAC 2027 site CONFIRMED back up** (was 502 since Browse 200/10-22). Deadline unchanged: 15 Nov 2026, 20 days out.
-  New formatting rule found: `FPSAC2027.cls`, 6-12pp incl. bib, author-year citations, mandatory AI-use declaration.
+  New formatting rule found: `FPSAC2027.cls`, 6-12pp incl. bib, mandatory AI-use declaration. [Browse 209: "author-year citations" WRONG, numeric in body, author-year only in abstract.]
   Check the FPSAC cut skeleton (`papers/lg-og-fpsac-cut/`) against these before any submission.
 - **MO 514650 (β-Grothendieck positivity) resolved** (self-answered 10-08, true via Lenart single-alphabet reduction).
   Remove from standing-watch list.

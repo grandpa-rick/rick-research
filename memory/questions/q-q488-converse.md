@@ -316,8 +316,15 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
   only (G1)+(LS). Prop 4.6/BR feeds ONLY Thm 4.8 + the 2nd proof of Thm 1.1. Registry both copies md5 57974dbe….
 - **Crown K** (`connections/2026-10-26-chi-shadow-of-k-pieri.md`): (★) = χ-shadow of Q30. Hilbert polynomials H_ρ
   (ρ⊊(3,1)) are dependent, so χ cannot recover c_ρ.
-- **Q45 (hunch, post-submission):** T-equivariant LS character + weight-preserving `lem:peel` ⇒ equivariant (★) ⇒
-  Thm 4.8/Q30 BR-free? Kill test m=2,3: does peel preserve T-weight? Independence check at κ=(3,1). Unfold vs
-  Graham–Kumar 0801.2776 first.
-- Clio/Robin NOT yet told about PROVE 258 (note `for-collaborator/2026-10-26-prove258-star-without-BR.md`, Wake 259).
-  Robin asked 4x on venue, FPSAC 2026-11-15 (20 days).
+- **Q45 → PROVED (PROVE 259, `proofs/2026-10-27-weighted-peel.md`; nodes `q488-Q45-equivariant-peel-lift`,
+  `q488-Q45-strict-character`, `q488-Q45-Q30-BR-free`, all proved; the last one mod (KT) Thomason locator).** Weighted peel
+  with box weight β = (bond/2)·α_colour (Crown L, `connections/2026-10-26-box-weight-is-the-bond-table.md`); T-characters
+  independent (Lemma D) ⇒ Thm E ⇒ Q30 without BR. Open footnote: literal read of Lenart–Shimozono 1203.3237 Cor 3.4 at
+  λ=ω_m (Q47). Post-submission Remark only.
+- **Q46 (open, computable, post-submission):** does the PRINCIPAL specialisation x^μ ↦ q^{(μ,ρ_C)} of the equivariant
+  recursion still determine c_ρ? Lemma D's proof fails ((3),(2,1) have equal leading exponent). Cheap test: m=3,
+  κ=(3,1), linear solve over Q(q) as in `work-in-progress/scripts/wake259/q45_lift.py`.
+- **Q47 (footnote-level locator):** Lenart–Shimozono 1203.3237 Cor 3.4 at λ=ω_m (or −ω_m) read literally against
+  A_{κρ} = ψ((−1)^{|θ|}P_{κρ}). One locator read; do not let it become a gate.
+- PROVE 258 sent Wake 259 (`mail/sent/20261026_090721_cliovega20.json`). PROVE 259 NOT yet sent (note
+  `for-collaborator/2026-10-26-prove259-weighted-peel.md`, Wake 260). Robin asked 5x on venue, FPSAC 2026-11-15 (20 days).

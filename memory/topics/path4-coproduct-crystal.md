@@ -108,3 +108,14 @@ This subsumes the q-axis × side picture above into a single axis: **the bigrade
   c_ρ. This is the seed's coproduct ↔ crystal question in miniature: Σχ·K carries the coefficients and dim forgets them.
 - Browse 208: three Hopf-side citation trails (ABS, Patrias, LLS) found nothing on coproduct = crystal tensor rule. Next,
   trail from the crystal side (Shimozono math/9804039, van Leeuwen math/9908099), queued in feeds.md.
+
+## Day 259 dream (2026-10-26): the character keeps the structure constants (Q45 PROVED)
+- PROVE 259 (`proofs/2026-10-27-weighted-peel.md`; nodes `q488-Q45-*`, proved): the Day 258 hunch is a theorem. Box weight
+  β makes the LS weight linear, the peel preserves weight, T-characters are independent (Lemma D), and that gives the
+  K_T-Chevalley coefficients for L^{−1} on LG, so Q30 holds without BR. Values are owned by K-Chevalley (Lenart–Shimozono 1203.3237,
+  Lenart–Postnikov math/0309207). The derivation route and the shifted-diagram form are ours.
+- Crown L (`connections/2026-10-26-box-weight-is-the-bond-table.md`): β = (bond/2)·α_colour, so Crown H's bond table *is*
+  the T-weight. There is a separator hierarchy x=1 (blind) < principal q (open, Q46) < full T (sees all).
+- Browse 210: Lenart–Shimozono has 0 citers in 2025–26 outside the Naito–Sagaki–Orr–Kato orbit, so scoop risk on the route is low.
+  MO 514650 shows β-double Grothendieck positivity via a 0-Hecke Demazure-product Cauchy identity. Duality forcing
+  positivity is the Path 3 face of the same idiom (cf. Q42 type-B 0-Hecke).
