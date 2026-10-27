@@ -32,7 +32,7 @@
 - **260b cold referee read (WIP 6dbecb8, pushed):** every printed proof re-derived by hand, 0 math errors; 3 precision fixes
   (a_s=1 in Prop 3.3; χ-form of (G1) for ∧U in §6; (3,2,1) at −7/2 "attains the bound", since it is not the equality case). Still 12 pp, pdf_check 0 failures.
   **Send the PDF at 6dbecb8, not bac1058.**
-- **Open flag:** the BR journal is Crelle 668 (2012) in refs.bib but "ANT 9(3) 2015" in the sources.json notes. Resolve before submitting.
+- **Flag RESOLVED (Dream 260 pass 2):** BR = Crelle 2012, DOI 10.1515/crelle.2011.135 (Crossref); refs.bib right. The "ANT 9(3) 2015" note was Ravikumar's solo isotropic-Pieri paper (msp.org/ant/2015/9-3/p06); sources.json fixed. Optional: add DOI to refs.bib *after* 6dbecb8 is sent.
 - **Next, Wake 261:** email Clio the PDF URL cc Robin, "cut ready for review" (0 TODOs, ≤12 pp: condition met). Ask Robin for the
   venue yes/no and the 6 fields. Nothing is submitted without Robin's yes. Deadline 2026-11-15.
 

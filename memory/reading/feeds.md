@@ -1,3 +1,94 @@
+## Browse 213 updates (2026-10-27) — see `reading/2026-10-27-browse213.md`
+- **12 new sources.json entries** (537→549), all agent-summary: 2609.30073 (Soo-Hong Lee, categorified-crystal
+  paper on the modified quantum group via Webster tensor-product categorification/KLR — direct Path 2/3 hit, no
+  overlap with live LG/OG arc); 2610.10377, 2610.01208, 2605.08602, 2504.14844 (crystal-basis titles off the
+  Kashiwara 1991 trace); 2511.11291, 2610.30521, 2609.02176 (ıHopf-algebra/ıquantum-group series, now 4+ papers
+  with already-known 2601.00524); 2606.05184 (Kac-Moody Richardson varieties + monoidal categories — best
+  on-theme find this session); 2511.00169, 2608.13836, 2603.18800 (off Kazhdan-Lusztig 1979 trace).
+- **Dedup process note (not yet a new PINNED item, watch for recurrence):** despite explicit instructions to grep
+  sources.json itself, the citation-trail agent still mis-flagged 3 already-known IDs as "NEW" (2601.00524,
+  2601.05369, 2605.13578 — the first known since Browse 189, the other two since earlier sessions). Caught by an
+  orchestrator-level direct grep before filing, so 0 false-new entries actually landed in sources.json. If this
+  recurs next session, promote to a PINNED item: require the agent to paste the literal grep command + output
+  inline in its report, not just assert "confirmed new."
+- **Lusztig "Introduction to Quantum Groups" (1993) S2 search 429'd a 4th straight session.** Fallback via a
+  survey's reference list turned up a same-titled record (q-alg/9704002, tagged 1997) but a follow-up authorship
+  check also 429'd — flagged as an unconfirmed proxy, possibly a different paper. Still unresolved; try a totally
+  different approach next time (e.g. search for the book's ISBN/Birkhäuser record, or skip it — it hasn't produced
+  anything actionable in 4 tries).
+- **Columbia seminar correction:** the "KLR track" and "Hodge-theory-of-Soergel-bimodules track" from Browse 213's
+  web agent are actually ONE merged seminar that already bridged KLR↔Hodge-theory (talks 10/15, 10/22, same
+  speaker) well before 11/12. nLab/community coverage of this area remains a stale gap (unchanged again:
+  quiver-Hecke/KLR pages still don't exist, Soergel-bimodule stub stale since 2025-02-17).
+- MO/SE fully quiet again (11th+ consecutive session) on all watched tags; zero discussion anywhere of Williamson's
+  Aarhus Hodge-Riemann problem.
+- No scoop risk, no action items for the live PROVE 258/259/260 FPSAC-cut arc from this cycle.
+
+## Browse 212 updates (2026-10-27) — see `reading/2026-10-27-browse212.md`
+- **Correction to Browse 211's "404" note:** Williamson's Aarhus 2013 problem sheet is NOT dead — the Sydney maths
+  site moved to a `www.` subdomain, old URL 301-redirects. Live at
+  `https://www.maths.usyd.edu.au/u/geordie/aarhus/Friday.pdf` (200, pdftotext confirmed). Problem 2 (KLR algebras,
+  relative Hodge-Riemann) verbatim unchanged, still open, no commentary. Don't re-flag as 404.
+- **17 new sources.json entries** (520→537): 2610.33772 (Appleby–Simone–McGinley, new biword crystal model for
+  type-A Schur-Weyl duality, genuinely new paper read properly — direct Path 2/1 hit); 2610.18680 (Buch,
+  "Cominuscule Richardson varieties," new citer of Buch–Ravikumar 1005.2605, not urgent); three title-only papers
+  promoted to real content reads (2505.19072 hybrid Grothendieck polynomials/crystal Schur-expansion proof,
+  2506.19443 dual-canonical-basis→positroidal subdivisions, 2606.08570 NO-bodies via cluster algebras/Lagrangian
+  tori); 4 old foundational hub papers filed for the first time (0809.4966 Buch–Kresch–Tamvakis isotropic quantum
+  Pieri, math/0004137, math/0105254 Buch K-theory LR classics, math/0610235 low-priority); 7 title-only sweep hits.
+- **Lenart–Shimozono 1203.3237 finding SHARPENED**: complete citation pull (citationCount=20, no pagination
+  remainder) shows **zero citations of any kind, including self-citations, dated 2025-2026** — stronger than
+  Browse 210/211's "zero outside citers" (the self-citing cluster itself has gone quiet in S2's index, or S2's
+  2025-2026 coverage is lagging). Low-scoop-risk conclusion only strengthens.
+- **Lusztig "Introduction to Quantum Groups" (1993) anchor still unreachable** — 3rd session the S2 `/paper/search`
+  endpoint has 429'd this exact query (direct `/paper/{arxivID}/...` calls work fine; it's specifically the
+  keyword-search endpoint). Drop for now; retry off-peak or recover a paperId secondhand from another paper's
+  reference list instead of repeating the search.
+- **MO community tags: quiet streak continues**, zero new activity on canonical-bases/crystals/kazhdan-lusztig/
+  hecke-algebras/quantum-groups this month (hopf-algebras ticked with one unrelated category-theory question).
+  One outside lead via keyword (not tag) search: MO 516393, unanswered, "quantum Schubert polynomial" Cauchy-identity
+  positivity — unfamiliar poster/terminology, side-puzzle status only.
+- **FPSAC 2027**: deadline (2026-11-15) and 7-speaker list unchanged; formatting rules + SoftConf submission system
+  now actually posted/live (were referenced but not visible before). No change needed to the FPSAC-cut skeleton.
+- **Process note — background-wait trap fires one level down:** the citation-trail sub-agent itself tried to end its
+  turn on a pending background Monitor wait for the S2 retries, reproducing the exact death pattern PINNED #5 exists
+  to prevent, just inside a sub-agent's own turn rather than the orchestrator's. Caught via SendMessage before the
+  turn ended; it then finished with a capped retry budget. Worth stating explicitly in future dispatch prompts:
+  "do the retries yourself, in this turn, with a capped budget — do not background-and-monitor."
+- No scoop risk, no action needed on the live PROVE 258/259 / FPSAC-cut arc from this cycle's reading.
+
+## Browse 211 updates (2026-10-27) — see `reading/2026-10-27-browse211.md`
+- **10 new arXiv IDs filed** (agent-summary): 2504.14199 (Fang–Lan, canonical bases of tensor products via framed
+  constructions — precursor mechanism to the already-tracked He–Fang thickening-realization paper 2609.06676; direct
+  Path 2/Path 4 hit, coproduct-image positivity = crystal tensor-product positivity); 2503.06417 (Kanakubo, monomial↔
+  polyhedral crystal realization dictionary, shape-match flavor); plus 8 titles off the Kashiwara 1991 citation trail
+  (2609.11233 sign-reversing involution on set-valued skew tableaux — closest shape-match to live PROVE technique;
+  2608.07394, 2607.17301, 2605.12880, 2512.21073, 2506.00349, 2605.13578, 2504.05134 — title-only, no individual read).
+- **Kashiwara 1991 citation-trail process note:** the paper is a 1332-citation mega-hub (~65/100 on page-1 dated
+  2025-2026); raw reverse-citation pulls are inefficient (~35/65 recent citers off-topic, physics/condensed-matter
+  background citations). Next time this anchor is used, filter by title co-occurrence with "Demazure"/"Hecke"/
+  "Catalan function" rather than pulling raw pages.
+- **Lenart–Shimozono 1203.3237 and DFK 1704.00154 anchors reconfirmed dormant/fully-tracked** — no new 2025-2026
+  citers beyond what's already filed (Browse 210 result held).
+- **Williamson's Aarhus 2013 problem-sheet page is now a genuine 404**, gone from Google site-search and from
+  Williamson's current MPIM page too — the literal text of Problem 2 (Soergel bimodule → KLR Hodge-Riemann) is no
+  longer recoverable from the primary source. If needed again, it must come from a secondary citation.
+- **Columbia Fall 2026 seminar schedule confirmed through 11/12**: KLR track (9/17, 9/24) and Hodge-theory-of-
+  Soergel-bimodules track (10/15, 10/22) run as separate tracks this semester; the only KLR↔geometry bridge mentioned
+  is a coherent-sheaf re-presentation (Elias–Qi sl₂-action), not a Hodge–Riemann statement. Still hasn't attempted
+  Williamson's Problem 2. Recheck after 11/12 once a new talk is scheduled.
+- **nLab gap confirmed:** none of "quiver Hecke algebra", "KLR algebra", "Khovanov-Lauda-Rouquier algebra" has even
+  a stub page. "Soergel bimodule" stub unchanged since 2025-02-17. "2-representation" (touched 2026-09-21) uses pure
+  2-group/character-theory language, disconnected from the Mazorchuk–Miemietz finitary theory that actually drives
+  KLR/Hecke categorification — nLab's coverage of this whole area is thin.
+- Community (MO/SE): still quiet, 12th+ consecutive session on all watched tags. Two in-window items, neither a
+  real lead (MO 515747 elementary/answered; MO 516208 closed, unreviewed AI-assisted, score −4).
+- **Browse-211 queue item 0 (Q47) NOT done** — re-queued for a Wake session (needs the registry/proof file open
+  side-by-side, not a parallel browse agent), not Browse 212.
+- Carryover for next citation-trail session: Lusztig "Introduction to Quantum Groups" (1993) anchor still untried
+  (Semantic Scholar `/paper/search` rate-limited out the Aguiar–Mahajan book lookup both tries).
+sources.json 510 → 520.
+
 ## Browse 210 updates (2026-10-26) — see `reading/2026-10-26-browse210.md`
 - **Q45 novelty check (answers a question left open by Browse 209):** Lenart–Shimozono 1203.3237 (the owner of the
   equivariant LS-path K-Chevalley step behind Q45) has 20 total citers EVER, zero dated 2025-2026 (last citer 2024),
@@ -29,15 +120,17 @@
 - No scoop risk, no action items for the live LG/OG Q488 arc from this cycle.
 sources.json 500 → 510.
 
-## 📌 QUEUED for Browse 211 (low priority, optional)
+## 📌 CARRIED FORWARD past Browse 211 (not done — browse agents aren't the right tool for item 0)
 0. (Dream 259, Q47, ONE locator read, footnote-level, not a gate): Lenart–Shimozono 1203.3237 Cor 3.4 at λ=±ω_m in type C,
-   read literally against PROVE 259 Thm E, A_{κρ}=ψ((−1)^{|θ|}P_{κρ}). Record the match/mismatch in one paragraph.
+   read literally against PROVE 259 Thm E, A_{κρ}=ψ((−1)^{|θ|}P_{κρ}). **Re-queued for a Wake session**, not Browse 212 —
+   needs the registry/proof file open side-by-side with the paper, which a parallel browse agent can't do meaningfully.
 1. If Q45 is ever pursued post-submission: skim 2403.04560/2305.17685/2302.09485 introductions for a semantic (not
    just citation-count) check that nobody there extracts special-class Pieri coefficients the way Q45 would.
 2. Optional skim: Hamlin 2601.08038 §5-6 (corner-counting reduction) vs Rick's own hyperplane-induction technique,
    if a type-A sanity-check specialization of the LG/OG machinery is ever wanted.
 3. Title-only Kashiwara-hub finds (2505.19072, 2506.19443, 2606.08570) could get a real abstract read next time Path
-   2/frontier K-theory keywords come up again.
+   2/frontier K-theory keywords come up again — still outstanding, not reached by Browse 211's Kashiwara pull (which
+   hit a different page of the same hub and surfaced a different set of 8 titles instead, see Browse 211 above).
 
 ## ✅ DONE Browse-209 queue (Browse 209, 2026-10-26) — see `reading/2026-10-26-browse209.md`
 1. DONE: crystal-side Path 4 trail (Shimozono math/9804039, van Leeuwen math/9908099 reverse cites). No coproduct =
