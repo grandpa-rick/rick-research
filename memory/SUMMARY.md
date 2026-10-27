@@ -1,5 +1,29 @@
 # Summary: Rick
 
+## PROVE 260 (2026-10-27): CURRENT STATE — FPSAC CUT FILLED, read this first
+- **Cut is complete:** `work-in-progress/papers/lg-og-fpsac-cut/main.tex` + PDF at **WIP bac1058** (pushed, reachable).
+  0 TODOs, **12 counted pp** (refs end at ~85% of p12, ~6 lines of slack), AI declaration pp13–14. 6 blue `\robin{}` fields left
+  (authorship, affiliation, acks, AI-decl wording, model list, human role).
+- Route as printed: LG main line from (G1)+(LS) only (Thm 1.1, (★) = Prop 4.3, window, HZ, Cor 1.6). BR is cited only in
+  Rem 4.4 (c_ρ = p=1 of Cor 5.6, pointer to Lenart–Shimozono [LS12] plus the planned T-equivariant proof) and Rem 4.5 (OG K-sketch).
+  Thm 1.3 (OG) is classical-cited. Novelty claimed: 1.1(b),(c) and 1.5 only.
+- PDF-is-the-claim: `work-in-progress/scripts/prove260/pdf_check.py` (fresh Demazure engine, from the printed statements), 0 failures.
+  Record: `proofs/2026-10-27-fpsac-cut-fill.md`.
+- **Open flag:** the BR journal is Crelle 668 (2012) in refs.bib but "ANT 9(3) 2015" in the sources.json notes. Resolve before submitting.
+- **Next, Wake 261:** email Clio the PDF URL cc Robin, "cut ready for review" (0 TODOs, ≤12 pp: condition met). Ask Robin for the
+  venue yes/no and the 6 fields. Nothing is submitted without Robin's yes. Deadline 2026-11-15.
+
+## Wake 260 (2026-10-27): CURRENT STATE — cut being filled
+- **Outbound:** PROVE 259 cover PDF (`work-in-progress/for-collaborator/2026-10-27-prove259-weighted-peel.pdf`, printed hash
+  76c28bf, reachable; head 867a64e) sent to Clio cc Robin (`mail/sent/20261027_000307_cliovega20.json`), with the venue default:
+  "cut ready for your review by 2026-11-08 unless you object; nothing submitted without your yes". Inbox empty since uid458.
+- **FPSAC cut lives in `work-in-progress/papers/lg-og-fpsac-cut/`** (NOT projects/papers; `writing/lg-og-fpsac-cut/` is a stale
+  untracked duplicate). Skeleton compiles: 11 pp (10 counted + AI decl), 45 TODOs. `FILL-PLAN.md` + Wake 260 decisions (WIP 455ab2f):
+  LG BR-free main line; OG cites BR Lemma 4.5; Thm 4.8 → Remark crediting BR Cor 5.6 p=1 (no novelty claim); degree identity out.
+- **Registry** (md5 d31cd33b…, rick-research de5d625): Q30-BR-free node now has explicit `conditional_on` (KT); HZ text says
+  (G1)+(LS) via PROVE 258. BR = Buch–Ravikumar (an agent nearly wrote "Brion–Rimányi"; the subagent caught it).
+- **PROVE 260 = fill the cut** (state/PROVE.md). No Q43/Q44/Q46/Q47 before 11-15.
+
 ## Day 259 dream (2026-10-26): CURRENT STATE, read this first (registry wins)
 - **Paper:** `writing/lg-og-negative-degree/main.tex`, 28 pp, 0 overfull (WIP 53675c2). FPSAC deadline **2026-11-15** (20 days).
   The cut `papers/lg-og-fpsac-cut/` (cf8868e/5a2fa86) is still a skeleton. FPSAC rule first-hand (Browse 209/210): numeric
