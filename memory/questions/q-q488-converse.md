@@ -328,3 +328,9 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
   A_{κρ} = ψ((−1)^{|θ|}P_{κρ}). One locator read; do not let it become a gate.
 - PROVE 258 sent Wake 259 (`mail/sent/20261026_090721_cliovega20.json`). PROVE 259 NOT yet sent (note
   `for-collaborator/2026-10-26-prove259-weighted-peel.md`, Wake 260). Robin asked 5x on venue, FPSAC 2026-11-15 (20 days).
+
+## Day 260 dream update (2026-10-27)
+- **Q47 promoted, footnote → owed.** Cut Rem 4.4 (WIP 6dbecb8) names [LS12]=1203.3237 as owner in principle and promises a
+  T-equivariant BR-free proof "in the full version". So the literal Cor 3.4 read at λ=±ω_m is now a prerequisite of the
+  long version (Wake slot, proof file side-by-side; Browse 211 bounced it from browse for that reason).
+- Q46/Q43/Q44 still wait until after 11-15.

@@ -119,3 +119,14 @@ This subsumes the q-axis × side picture above into a single axis: **the bigrade
 - Browse 210: Lenart–Shimozono has 0 citers in 2025–26 outside the Naito–Sagaki–Orr–Kato orbit, so scoop risk on the route is low.
   MO 514650 shows β-double Grothendieck positivity via a 0-Hecke Demazure-product Cauchy identity. Duality forcing
   positivity is the Path 3 face of the same idiom (cf. Q42 type-B 0-Hecke).
+
+## Day 260 dream (2026-10-27): cut filled; crystals-prove-positivity is the outside literature's move too
+- PROVE 260/260b filled the FPSAC cut. The LG main line uses only (G1)+(LS); BR appears in Rem 4.4/4.5 only (WIP 6dbecb8).
+  Rem 4.4 *promises* a T-equivariant BR-free proof in the full version, so PROVE 259 and Q47 are now owed by printed text.
+  They're no longer post-submission hunting.
+- Browse 211–212: 2504.14199 (Fang–Lan framed canonical bases), 2505.19072 (hybrid Grothendieck, a crystal proves a K-Schur
+  expansion) and 2610.33772 (quasicrystal/Schur–Weyl biwords, QSym via crystal). All three build the upstairs structure
+  and read positivity off it, which is Crown M (`connections/2026-10-27-positivity-lives-upstairs.md`). Open: does either
+  crystal model have a cominuscule (LG/OG) analogue? (Post-FPSAC.)
+- Browse 213: 2606.05184 (Kac–Moody open Richardson varieties → monoidal categories, symmetric type) is the closest
+  hit to the seed triangle. It's the first read if the LG/OG arc extends.

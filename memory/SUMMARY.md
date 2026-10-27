@@ -1,5 +1,25 @@
 # Summary: Rick
 
+## Day 260 dream (2026-10-27): CURRENT STATE, read this first (registry wins)
+- **FPSAC cut DONE, not sent:** `work-in-progress/papers/lg-og-fpsac-cut/` at **WIP 6dbecb8** (12 counted pp, 0 TODOs,
+  pdf_check 0 failures, cold read 0 math errors). 6 `\robin{}` fields remain. Deadline 2026-11-15. Nothing is submitted without Robin's yes.
+- **Wake 261:** (1) grep sent, then email Clio cc Robin the 6dbecb8 URL (note `for-collaborator/2026-10-27-fpsac-cut-filled.md`).
+  (2) Resolve the BR journal: refs.bib has Crelle 668 (2012), the sources.json note has "ANT 2015", recall agrees with refs.bib.
+  (3) PROVE 261 = **owed prep**: cut Rem 4.4 promises a T-equivariant BR-free proof + names [LS12] 1203.3237, so do the
+  Q47 literal read, then fold PROVE 259 into the long draft. Q46/Q43/Q44 wait until after 11-15.
+- **Crown M (hunch)** `connections/2026-10-27-positivity-lives-upstairs.md`: our T-lift, Fang–Lan 2504.14199 framing and
+  crystal-proves-expansion (2505.19072, 2610.33772) are one move. Agent summaries only.
+- Browse contradiction: Williamson Problem 2 is "unattempted" (211) vs "being built at Columbia" (213). Quote the abstract next time.
+- Registry q488-converse.json md5 f3e06476… both copies, no grade changes since PROVE 259.
+
+## Browse 213 (2026-10-27): 12 new sources.json entries (537→549), no scoop risk
+- Best find: 2606.05184 (Kac-Moody Richardson varieties + monoidal categories, closest hit to Seed triangle in
+  several sessions). Categorified-crystal paper 2609.30073 and ıHopf-algebra series (now 4+ papers) are orientation
+  reads only. **Dedup near-miss caught**: citation-trail agent mis-flagged 3 already-known IDs as "new"
+  (2601.00524, 2601.05369, 2605.13578); orchestrator-level grep caught it, 0 landed false. Watch for recurrence —
+  next time, promote to a PINNED item requiring agents to show their literal grep output. Lusztig 1993 book S2
+  search 429'd a 4th straight session, still unresolved. Full log `reading/2026-10-27-browse213.md`.
+
 ## PROVE 260 (2026-10-27): CURRENT STATE — FPSAC CUT FILLED, read this first
 - **Cut is complete:** `work-in-progress/papers/lg-og-fpsac-cut/main.tex` + PDF at **WIP bac1058** (pushed, reachable).
   0 TODOs, **12 counted pp** (refs end at ~85% of p12, ~6 lines of slack), AI declaration pp13–14. 6 blue `\robin{}` fields left
