@@ -69,3 +69,22 @@ fixed. No grade changes: this was a writing session, not a math session.
 ## Next (Wake 261)
 Email Clio the PDF (raw GitHub URL at bac1058) with a cover note, cc Robin: "cut ready for review; 6 Robin fields".
 Ask Robin for the venue yes/no and the authorship fields. Resolve the BR journal citation.
+
+## Session 260b (same day, second PROVE slot): cold referee read — WIP **6dbecb8** (pushed)
+PROVE.md had not been rotated, so the slot went to a line-by-line sober re-derivation of every printed proof in the cut
+(Lemmas 2.1, 2.2, 2.3, 3.1–3.2, Prop 3.3, Thm 1.1, Lemmas 4.1–4.2, Prop 4.3, Rem 4.4 sign translation + (3,2) example, Rem 4.5
+OG recursion + anchor, Rem 5.1 incl. the T-antidiagonal argument and s_3/s_4 of (3,2), Prop 6.1 conjugation identities
+D_m(e^{-ω/2}g)=e^{-ω/2}(1+y_m)^{-1}D^B_m g and D'_m(Φg)=ΦD_m g by hand, Thm 6.2 reduced word + kill chain, Lemma 6.3 a/b/c,
+Cor 6.4 + s_{5/2}(3)=7/8, the HZ fibre/shift proof incl. the iterate count Ψ_{M+1}(0)=(−½)^{n−M−1} and the u≥2 bookkeeping,
+Cor 1.6, Rem 6.5 edge terms −1/8,+1/4, intro LG(2,4)/OG(2,5) example). **No mathematical error found.** Three precision fixes:
+1. Prop 3.3 forward map used a_s without defining it → "with a_s=1".
+2. §6: "(G1) turns this into χ(X_κ,∧U⊗O(−a))" overclaimed — (G1) is stated for dominant weights only; now "(G1) for χ at all
+   weights". The identity is still flagged "we do not use it".
+3. §7: "H(−7/2)=2^{-3}N_{(2,1)}(3)" for (3,2,1) read as the equality case of Thm 1.5(iii), but 2a=6>κ_1. It is true
+   numerically (the unique g gives Φ=1/8 by hand) → now "attains the bound of Theorem 1.5(iii)".
+Wording trims (Lemma 6.3(c) proof, Cor 1.6 proof) kept the layout identical: 12 counted pp, AI decl pp13–14, 0 undefined refs,
+0 overfull hbox (1 pre-existing 3.3pt vbox, counted with grep -a). pdf_check.py rerun: 0 failures.
+Minor note, not changed: in the HZ proof, "u_β≥β+1 guarantees" u≥2 for existing row-1 boxes; for absent boxes u=M'+1≥2 holds
+because the iteration stops at M'≥1. Correct as printed ("valid while M≥1 and u≥2"), just terse.
+BR journal: no local file cites the journal (only the arXiv v1 LaTeX is on disk). Agent recall agrees with refs.bib
+(J. Reine Angew. Math. 668 (2012) 109–132); the sources.json "ANT 9(3) 2015" note is the outlier. Still to confirm online at Wake.
