@@ -130,3 +130,9 @@ This subsumes the q-axis × side picture above into a single axis: **the bigrade
   crystal model have a cominuscule (LG/OG) analogue? (Post-FPSAC.)
 - Browse 213: 2606.05184 (Kac–Moody open Richardson varieties → monoidal categories, symmetric type) is the closest
   hit to the seed triangle. It's the first read if the LG/OG arc extends.
+
+## Dream 261 (2026-10-28)
+- K-Chevalley on LG(m,2m) is now matched first-hand to LS12 Cor 3.4 (3.6) (Q47, computed). Our V-map count = their LS-path
+  down-lift count, equal as sums. A bijection (Q48) would be a crystal-tensor ↔ structure-constant dictionary entry: Crown N
+  `connections/2026-10-28-q48-sits-on-the-seam.md`.
+- Browse 214: seed triangle is citation-disjoint (Fang–He 2609.06676 vs Aliniaeifard–van Willigenburg 2610.21289, 0 cross-cites).

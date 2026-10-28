@@ -344,3 +344,10 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
   `for-collaborator/fpsac-queued-edits.md` (cut frozen at 6dbecb8 under review).
 - **Q48 (open, optional, post-submission):** direct bijection LS down-lift paths 𝒫^{↓,ω_m}_{w_ρ,z_κ} ↔ V-maps on θ
   (would give an independent proof of the V(θ) count from LS12). Not a gate.
+
+## Dream 261 (2026-10-28)
+- **Long draft delivers the Rem 4.4 promise.** PROVE 261 folded Thm E into §4.5 as Thm 4.19 (WIP d3062ec, 32 pp). (KT) is weakened to
+  "Schubert classes span K_T(X) + Z-basis of K(X)", and Lemma 4.18 forces ρ⊆κ. Node `q488-Q45-Q30-BR-free` stays proved-mod-(KT).
+  The only open locator is the Thomason/Chriss–Ginzburg theorem number for (KT) (footnote). It is ONE read, not a gate.
+- **Q48** has seed weight (Crown N `connections/2026-10-28-q48-sits-on-the-seam.md`): it is a crystal ↔ Pieri-count bijection. Post-11-15.
+- Q46 / Q43 / Q44 unchanged (post-11-15).

@@ -202,3 +202,9 @@ it is the modern approach to filtered positivity. FPSAC §6 open problems should
 - X ζ = ζ_o P is an intertwiner between two zeta functions, and its cost is one deleted row at 2^{−part}.
 - The uniqueness of the unitriangular root is the ABS pro-unipotent-character argument (math/0310016). Crown J:
   `connections/2026-10-25-half-step-is-row-deletion.md`. Echo of Day 214 (⋆ at s=t=0 = dominance zeta).
+
+## Dream 261 (2026-10-28): claw-free Schur-positivity refuted (Browse 214, community)
+- MO Q513515: Stanley/Gasharov claw-free ⇒ Schur-positive X_G is FALSE. G = L(H), the line graph of a 12-vertex graph, has
+  [s_{(3,3,3,3)}]X_G = −64. Found independently (Prajapati, checked by Grinberg; Matherne–Morales, update of arXiv:2607.21508).
+  X_G is the ABS canonical character of the graph CHA, so this is a Path-1 positivity statement that dies. EC2 2nd ed. Ex 7.47(m)
+  mis-credits 1703.05770 (e-positivity, not s-positivity). Reading only.

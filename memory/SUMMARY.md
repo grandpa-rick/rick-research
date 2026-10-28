@@ -1,131 +1,40 @@
 # Summary: Rick
 
-## Browse 214 (2026-10-28): seed-triangle disjointness confirmed by citation data, no scoop risk
-4 new sources.json entries (549→553): 2511.18518 (periodic KL = Ext-dims in modular cat O), 2608.19798 (explicit
-p-cell data, all classical types), 2608.02187 (Hazi strips 2 diagrammatic-Hecke-category hypotheses), 2606.02164
-(Thurston's band-basis conjecture proved). **Headline:** full reference-list pulls on the two newest
-"universal"-framed papers (Fang-He 2609.06676 quantum-group side, Aliniaeifard-van Willigenburg 2610.21289
-combinatorial-Hopf-algebra side) show **zero cross-citation either direction** — sharpens Seed Q1 from "unwritten"
-to "actively not cross-cited by the newest work on both sides." Columbia seminar's Hodge-theory-of-Soergel-bimodules
-talks confirmed expository (not new research); Williamson's Problem 2 bridge itself still stated nowhere. Stale
-"Lusztig 1993 book = q-alg/9704002" proxy note (Browse 213) RESOLVED WRONG — that's a different paper
-(Podlés–Müller); don't propagate. Full log `reading/2026-10-28-browse214.md`, feeds.md updated.
+## Day 261 dream (2026-10-28): CURRENT STATE, read this first (registry wins)
+- **FPSAC cut SENT and FROZEN.** Paper `work-in-progress/papers/lg-og-fpsac-cut/` at **WIP 6dbecb8** (12 pp, pdf_check 0 fail) went to Clio
+  cc Robin in Wake 261 (`mail/sent/20261028_000828_cliovega20.json`, cover a392930). Queued edits (incl. Rem 4.4 LS12 sentence) are in
+  gitignored `for-collaborator/fpsac-queued-edits.md`, local only. Deadline **2026-11-15**. Nothing is submitted without Robin's yes. Robin has been silent
+  since 10-17 (venue asked 6x). Inbox: nothing new since the 10-25 files (uid458).
+- **Long draft delivers the Rem 4.4 promise.** `work-in-progress/papers/lg-og-negative-degree/` WIP **d3062ec**, 32 pp: §4.5 Thm 4.19 =
+  equivariant Chevalley for L⁻¹, BR-free Thm 4.8 mod (KT); Rem 4.20 = LS12 1203.3237 Cor 3.4 (3.6) dictionary; Q48 posed in §8.
+  (KT) is weakened to spanning + Z-basis, and its Thomason locator is unchecked (footnote). Record `proofs/2026-10-28-longdraft-fold-thmE.md`.
+- **Registry** q488-converse.json md5 49de89f4… in both copies (checked Dream 261). Grades: `q488-Q45-Q30-BR-free` proved mod (KT);
+  `q488-Q47-LS12-cor34-dictionary` computed. No grade changes this dream.
+- **Unsent:** `for-collaborator/2026-10-28-longdraft-thmE-folded.md` (Thm E folded, asks Clio for a (KT) locator).
+  **Recommendation for Wake 262:** don't send a separate email while Clio is mid-review. Attach it as one paragraph to the next reply,
+  or send it on **11-04** if there's no inbound by then, together with a single binary venue question to Robin
+  ("FPSAC yes/no by 11-10; silence = we don't submit"). There's no point making a 7th open-ended ask.
+- **Crowns:** M (positivity lives upstairs) gains a first-hand owner row, LS12. **N (hunch, new)**
+  `connections/2026-10-28-q48-sits-on-the-seam.md`: Q48 (LS paths ↔ V-maps) is a Path-4 crystal↔structure-constant bijection at one
+  weight, sitting on the seam Browse 214 measured.
+- **Browse 214** (`reading/2026-10-28-browse214.md`): seed triangle citation-disjoint (Fang–He 2609.06676 vs AvW 2610.21289, 0 cross-cites);
+  claw-free Schur-positivity REFUTED (MO Q513515, [s_{3333}]X_{L(H)} = −64); Williamson Problem 2 still unstated, and the Columbia seminar was expository
+  (contradiction dissolved); "Lusztig 1993 = q-alg/9704002" proxy is WRONG (Podlés–Müller). sources.json 553.
+- **Next.** Wake 262: inbox first; respond to any Clio review same-session (edits go to the queued file, then a new cut hash).
+  With prep paid, a *bounded* post-submission question is allowed (PERSONALITY, Dream 261): Q46 (principal specialisation, cheap)
+  or Q48. Never touch 6dbecb8 except to answer review.
 
-## PROVE 261 (2026-10-28): CURRENT STATE — Thm E FOLDED into long draft (registry wins)
-- Long draft §4.5 `ssec:equivariant` (WIP **d3062ec**, 32 pp, 0 overfull, writing/ copy synced) now hosts the BR-free
-  T-equivariant proof: Lemma 4.14 telescoping, 4.15 weighted LS model, Prop 4.16 strict characters, Prop 4.17 weighted peel,
-  Lemma 4.18 independence, **Thm 4.19** (equivariant Chevalley for L^{-1} ⇒ Thm 4.8 c_ρ=(−1)^{|θ|−1}V(θ) w/o BR), Rem 4.20 LS12
-  Cor 3.4 (3.6) dictionary, new open Question = Q48. Cut Rem 4.4 promise DELIVERED. FPSAC cut untouched (6dbecb8).
-- (KT) weakened: only "Schubert classes span K_T(X)" (+ K(X) basis) needed; support ρ⊆κ now forced by Lemma 4.18. Locator
-  (Thomason 1987) unchecked → footnote; registry node q488-Q45-Q30-BR-free stays proved-mod-(KT), `paper`/`pdf_check` fields added.
-- PDF check `scripts/prove261/pdfcheck.py` m≤3 0 fail, neg control fails; rank 8 vs 7 at e=1. Record: `proofs/2026-10-28-longdraft-fold-thmE.md`.
-- Draft note for Clio (UNSENT, Wake 262 decides): `for-collaborator/2026-10-28-longdraft-thmE-folded.md`.
-
-## Wake 261 (2026-10-28): CURRENT STATE, read this first (registry wins)
-- **FPSAC cut SENT** to Clio cc Robin: paper at WIP **6dbecb8** + 1-page cover `work-in-progress/for-collaborator/2026-10-28-fpsac-cut-cover.pdf`
-  (cover commit a392930), record `mail/sent/20261028_000828_cliovega20.json`. Asked Clio for line-reads (§3, Prop 4.3, §6 HZ, AI decl); asked
-  Robin for venue yes/no + 6 fields. Deadline 2026-11-15. **Cut FROZEN** until review returns; queued edits in `for-collaborator/fpsac-queued-edits.md` (gitignored, local only).
-- Inbox empty (latest uid458).
-- **Q47 DONE** (`proofs/2026-10-28-q47-ls12-cor34-read.md`, node `q488-Q47-LS12-cor34-dictionary`, computed): A_{κρ} = LS12 Cor 3.4 **antidominant (3.6)**
-  at −ω_m pulled back to G/B (w₀=−1), once down-lift paths are matched with V-maps on θ. That matching is not in LS12, so it's opened as **Q48** (optional). Brute force m≤4 matches;
-  the no-w₀ control fails. LS12 = G/B only. Long-draft bib lacks LS12. WIP 3f6156c, rick-research ff039c2, registry md5 f7bc8d52… both copies.
-- **PROVE 261** = fold PROVE 259 weighted peel (Thm E, mod KT) into the long draft `work-in-progress/papers/lg-og-negative-degree/` + the LS12 remark (owed by Rem 4.4).
-
-## Day 260 dream (2026-10-27): CURRENT STATE, read this first (registry wins)
-- **FPSAC cut DONE, not sent:** `work-in-progress/papers/lg-og-fpsac-cut/` at **WIP 6dbecb8** (12 counted pp, 0 TODOs,
-  pdf_check 0 failures, cold read 0 math errors). 6 `\robin{}` fields remain. Deadline 2026-11-15. Nothing is submitted without Robin's yes.
-- **Wake 261:** (1) grep sent, then email Clio cc Robin the 6dbecb8 URL (note `for-collaborator/2026-10-27-fpsac-cut-filled.md`).
-  (2) Resolve the BR journal: refs.bib has Crelle 668 (2012), the sources.json note has "ANT 2015", recall agrees with refs.bib.
-  (3) PROVE 261 = **owed prep**: cut Rem 4.4 promises a T-equivariant BR-free proof + names [LS12] 1203.3237, so do the
-  Q47 literal read, then fold PROVE 259 into the long draft. Q46/Q43/Q44 wait until after 11-15.
-- **Crown M (hunch)** `connections/2026-10-27-positivity-lives-upstairs.md`: our T-lift, Fang–Lan 2504.14199 framing and
-  crystal-proves-expansion (2505.19072, 2610.33772) are one move. Agent summaries only.
-- Browse contradiction: Williamson Problem 2 is "unattempted" (211) vs "being built at Columbia" (213). Quote the abstract next time.
-- Registry q488-converse.json md5 f3e06476… both copies, no grade changes since PROVE 259.
-
-## Browse 213 (2026-10-27): 12 new sources.json entries (537→549), no scoop risk
-- Best find: 2606.05184 (Kac-Moody Richardson varieties + monoidal categories, closest hit to Seed triangle in
-  several sessions). Categorified-crystal paper 2609.30073 and ıHopf-algebra series (now 4+ papers) are orientation
-  reads only. **Dedup near-miss caught**: citation-trail agent mis-flagged 3 already-known IDs as "new"
-  (2601.00524, 2601.05369, 2605.13578); orchestrator-level grep caught it, 0 landed false. Watch for recurrence —
-  next time, promote to a PINNED item requiring agents to show their literal grep output. Lusztig 1993 book S2
-  search 429'd a 4th straight session, still unresolved. Full log `reading/2026-10-27-browse213.md`.
-
-## PROVE 260 (2026-10-27): CURRENT STATE — FPSAC CUT FILLED, read this first
-- **Cut is complete:** `work-in-progress/papers/lg-og-fpsac-cut/main.tex` + PDF at **WIP bac1058** (pushed, reachable).
-  0 TODOs, **12 counted pp** (refs end at ~85% of p12, ~6 lines of slack), AI declaration pp13–14. 6 blue `\robin{}` fields left
-  (authorship, affiliation, acks, AI-decl wording, model list, human role).
-- Route as printed: LG main line from (G1)+(LS) only (Thm 1.1, (★) = Prop 4.3, window, HZ, Cor 1.6). BR is cited only in
-  Rem 4.4 (c_ρ = p=1 of Cor 5.6, pointer to Lenart–Shimozono [LS12] plus the planned T-equivariant proof) and Rem 4.5 (OG K-sketch).
-  Thm 1.3 (OG) is classical-cited. Novelty claimed: 1.1(b),(c) and 1.5 only.
-- PDF-is-the-claim: `work-in-progress/scripts/prove260/pdf_check.py` (fresh Demazure engine, from the printed statements), 0 failures.
-  Record: `proofs/2026-10-27-fpsac-cut-fill.md`.
-- **260b cold referee read (WIP 6dbecb8, pushed):** every printed proof re-derived by hand, 0 math errors; 3 precision fixes
-  (a_s=1 in Prop 3.3; χ-form of (G1) for ∧U in §6; (3,2,1) at −7/2 "attains the bound", since it is not the equality case). Still 12 pp, pdf_check 0 failures.
-  **Send the PDF at 6dbecb8, not bac1058.**
-- **Flag RESOLVED (Dream 260 pass 2):** BR = Crelle 2012, DOI 10.1515/crelle.2011.135 (Crossref); refs.bib right. The "ANT 9(3) 2015" note was Ravikumar's solo isotropic-Pieri paper (msp.org/ant/2015/9-3/p06); sources.json fixed. Optional: add DOI to refs.bib *after* 6dbecb8 is sent.
-- **Next, Wake 261:** email Clio the PDF URL cc Robin, "cut ready for review" (0 TODOs, ≤12 pp: condition met). Ask Robin for the
-  venue yes/no and the 6 fields. Nothing is submitted without Robin's yes. Deadline 2026-11-15.
-
-## Wake 260 (2026-10-27): CURRENT STATE — cut being filled
-- **Outbound:** PROVE 259 cover PDF (`work-in-progress/for-collaborator/2026-10-27-prove259-weighted-peel.pdf`, printed hash
-  76c28bf, reachable; head 867a64e) sent to Clio cc Robin (`mail/sent/20261027_000307_cliovega20.json`), with the venue default:
-  "cut ready for your review by 2026-11-08 unless you object; nothing submitted without your yes". Inbox empty since uid458.
-- **FPSAC cut lives in `work-in-progress/papers/lg-og-fpsac-cut/`** (NOT projects/papers; `writing/lg-og-fpsac-cut/` is a stale
-  untracked duplicate). Skeleton compiles: 11 pp (10 counted + AI decl), 45 TODOs. `FILL-PLAN.md` + Wake 260 decisions (WIP 455ab2f):
-  LG BR-free main line; OG cites BR Lemma 4.5; Thm 4.8 → Remark crediting BR Cor 5.6 p=1 (no novelty claim); degree identity out.
-- **Registry** (md5 d31cd33b…, rick-research de5d625): Q30-BR-free node now has explicit `conditional_on` (KT); HZ text says
-  (G1)+(LS) via PROVE 258. BR = Buch–Ravikumar (an agent nearly wrote "Brion–Rimányi"; the subagent caught it).
-- **PROVE 260 = fill the cut** (state/PROVE.md). No Q43/Q44/Q46/Q47 before 11-15.
-
-## Day 259 dream (2026-10-26): CURRENT STATE, read this first (registry wins)
-- **Paper:** `writing/lg-og-negative-degree/main.tex`, 28 pp, 0 overfull (WIP 53675c2). FPSAC deadline **2026-11-15** (20 days).
-  The cut `papers/lg-og-fpsac-cut/` (cf8868e/5a2fa86) is still a skeleton. FPSAC rule first-hand (Browse 209/210): numeric
-  \cite in the body, none in the abstract, 6–12 pp incl. bib.
-- **New since Dream 258:** Q45 PROVED (PROVE 259, nodes `q488-Q45-equivariant-peel-lift`, `q488-Q45-strict-character`,
-  `q488-Q45-Q30-BR-free`, all graded proved; the last one mod (KT) Thomason locator). So Q30/Thm 4.8 has a BR-free route via
-  T-equivariant independence. Post-submission Remark only, and the draft is untouched.
-- **Crown L** (`connections/2026-10-26-box-weight-is-the-bond-table.md`): β = (bond/2)·α_colour, so Crowns G/H and the
-  PROVE 259 weight are one table. Separator hierarchy: x=1 blind < principal q (open, **Q46**) < full T (Lemma D).
-  **Q47** = Lenart–Shimozono 1203.3237 Cor 3.4 literal read (footnote, queued Browse 211).
-- **Outbound:** Clio cc Robin have PROVE 258 (Wake 259). PROVE 259 is NOT sent (note `for-collaborator/2026-10-26-prove259-weighted-peel.md`).
-  Robin has been asked about the venue 5x, silent since 10-17. MacBeth credit lines are his fix (ball in his court). Inbox silent since uid458.
-- **Discipline note:** Wake 259 broke the "no new hunting" plan, and it paid off. The cut still hasn't moved.
-  PERSONALITY now says: preparing is reversible, only posting needs a yes.
-- **Next (strict), Wake 260:** (1) email the PROVE 259 note + URL to Clio cc Robin, with the default "cut ready for review by
-  11-08 unless you object; nothing submitted without yes" (grep mail/sent first). (2) PROVE 260 = fill the FPSAC cut
-  (PROVE 258 BR-free route for the main theorems, cite BR for Thm 4.8, one-line pointer to the T-equivariant proof).
-  (3) No Q43/Q44/Q46 before 11-15.
-
-## PROVE 259 (2026-10-26): Q45 PROVED, the weighted peel. Theorem Q30 now BR-FREE via T-equivariance
-- Proof: `proofs/2026-10-27-weighted-peel.md` (12.5 KB). Scripts `work-in-progress/scripts/prove259/`.
-- **Box weight** β(a,b) = ε_m on the diagonal, ε_{m−d}−ε_{m+1−d} at offset d = b−a ≥ 1. It telescopes along rows, so
-  Σ_{D(τ)}β = Σ_{p∈τ} ε_{m+1−p} and LS π(1) is LINEAR in the map. **Thm A:** ch_κ(j) = Σ_G x^{j w_κω + ΣGβ}.
-  **Thm B:** n_κ(j) = (−1)^{|κ|}ch_κ(−j) = Σ_f x^{−j w_κω − Σfβ}. The proof uses (LS) + Stanley cone reciprocity +
-  the exponential form of D_w e^{jω}. **Thm C:** lem:peel is weight-preserving, P_{κρ} = Σ_{V-maps g} x^{−w_κω − Σ_{g=o}β}.
-  So P is positive with V(θ) monomials, and Wake 259's C = S P^{−1} S (22/22 entries, m = 3).
-- **Lemma D:** the T-characters ch_ρ(·) are linearly independent over Q(x) (ℓ-grading, ℓ(β) = 1 per box, Vandermonde),
-  although the H_ρ are not (Crown K). **Thm E:** [O_κ⊗L^{−1}]_T = Σ ψ((−1)^{|θ|}P_{κρ})[O_ρ]_T. At x = 1 this gives
-  **Q30 c_ρ = (−1)^{|θ|−1}V(θ) from (G0)+(G1)+(LS)+(KT), no BR.** Crown K's obstruction is gone at the T-level.
-- Verified V1/V2/V3 for m ≤ 5; the negative control (perturbed β) fails. Registry: Q45 node proved, new
-  `q488-Q45-strict-character` (premise, proved) and `q488-Q45-Q30-BR-free` (proved mod (KT) locator). md5 f6d172b2… both copies.
-- Owner: K_T-Chevalley (Lenart–Shimozono 1203.3237 Cor 3.4, Lenart–Postnikov) must agree by uniqueness. The literal ω_m
-  read is NOT done (footnote). Draft untouched; candidate post-submission Remark only.
-
-## Wake 259 (2026-10-26)
-- **Outbound:** PROVE 258 note+PDF sent to Clio cc Robin (`mail/sent/20261026_090721_cliovega20.json`; cover PDF in WIP
-  `for-collaborator/`). Robin still silent on venue (5th ask). Inbox empty since uid458.
-- **Q40 → Remark 3.6 `rem:degrees`** (WIP 6f29c35, 28 pp, 0 overfull); Pragacz LNM 1478 now `\cite{Pra91}` (verified,
-  DOI 10.1007/BFb0083503). Degree identity deg X_κ = 2^{|κ|−ℓ}e(P_κ) computed m≤5, 3 routes (3395ab8; node `q488-degree-identity`).
-- **Q38** already in draft as Question `q:cominuscule`.
-- **MacBeth "credit lines"** = MacBeth's own fix to HIS mirror-LA note (Rem 1.5/§5, uid242 credit), already requested in
-  sent mail 20261026_003820. Ball in his court; NOT a task on our paper.
-- **Browse 209** (`reading/2026-10-26-browse209.md`): FPSAC rule first-hand: numbered \cite in body OK, no \cite only in the
-  abstract; 6–12 pp incl. bib, excluding the mandatory AI declaration; deadline 2026-11-15. Browse 208 claim refuted.
-- **Q45 computed** (node `q488-Q45-equivariant-peel-lift`): the lift exists, strict-side P(x) is positive, one monomial per
-  V-map. The equivariant step is owned by Lenart–Shimozono 1203.3237 et al. Gillespie–Levinson–Purbhoo 1706.09969 (doubled
-  crystal on shifted tableaux) is close to Crown G, a cite candidate.
-- **PROVE 259** = Q45 weighted peel (see `state/PROVE.md`).
+## Days 259–261 sessions: pointer lines (full stanzas in `archive/SUMMARY-2026-10-28-pre-day261-dream.md`)
+- **Browse 214 (10-28):** 4 new sources (549→553); see top block.
+- **PROVE 261 (10-28):** Thm E → long draft §4.5 Thm 4.19 (WIP d3062ec); pdfcheck m≤3 0 fail, neg control fails; m=4 timed out.
+- **Wake 261 (10-28):** cut 6dbecb8 sent; Q47 DONE (LS12 (3.6) antidominant at −ω_m via G/B pullback, m≤4 match, no-w₀ control 36 mismatches); Q48 opened.
+- **Dream 260 (10-27):** Crown M hunch; printed promises = debt; BR journal = Crelle 2012 DOI 10.1515/crelle.2011.135.
+- **Browse 213 (10-27):** 12 sources (537→549); 2606.05184 best find; dedup near-miss caught (fixed in 214 by pasting full ID list).
+- **PROVE 260/260b (10-27):** FPSAC cut filled 45→0 TODOs, 12 pp, cold read 0 math errors → 6dbecb8.
+- **Wake 260 (10-27):** PROVE 259 cover sent; fill plan 455ab2f (LG BR-free, OG cites BR, Thm 4.8 → Remark).
+- **Dream 259 (10-26):** Crown L β=(bond/2)·α_colour; PERSONALITY "preparing is reversible".
+- **PROVE 259 (10-26):** Q45 weighted peel PROVED; Lemma D T-independence; Thm E ⇒ Q30 BR-free mod (KT) (`proofs/2026-10-27-weighted-peel.md`).
+- **Wake 259 (10-26):** PROVE 258 sent; Q40 → Rem 3.6; Pragacz LNM 1478 cited.
 
 ## Day 258 dream (2026-10-26): pointer lines (full stanza in `archive/SUMMARY-2026-10-26-pre-day259-dream.md`)
 - Crown K (`connections/2026-10-26-chi-shadow-of-k-pieri.md`): (★) = χ-shadow of Q30, the H_ρ are dependent ⇒ counting can't give c_ρ
