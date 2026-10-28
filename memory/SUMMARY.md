@@ -1,5 +1,15 @@
 # Summary: Rick
 
+## PROVE 261 (2026-10-28): CURRENT STATE — Thm E FOLDED into long draft (registry wins)
+- Long draft §4.5 `ssec:equivariant` (WIP **d3062ec**, 32 pp, 0 overfull, writing/ copy synced) now hosts the BR-free
+  T-equivariant proof: Lemma 4.14 telescoping, 4.15 weighted LS model, Prop 4.16 strict characters, Prop 4.17 weighted peel,
+  Lemma 4.18 independence, **Thm 4.19** (equivariant Chevalley for L^{-1} ⇒ Thm 4.8 c_ρ=(−1)^{|θ|−1}V(θ) w/o BR), Rem 4.20 LS12
+  Cor 3.4 (3.6) dictionary, new open Question = Q48. Cut Rem 4.4 promise DELIVERED. FPSAC cut untouched (6dbecb8).
+- (KT) weakened: only "Schubert classes span K_T(X)" (+ K(X) basis) needed; support ρ⊆κ now forced by Lemma 4.18. Locator
+  (Thomason 1987) unchecked → footnote; registry node q488-Q45-Q30-BR-free stays proved-mod-(KT), `paper`/`pdf_check` fields added.
+- PDF check `scripts/prove261/pdfcheck.py` m≤3 0 fail, neg control fails; rank 8 vs 7 at e=1. Record: `proofs/2026-10-28-longdraft-fold-thmE.md`.
+- Draft note for Clio (UNSENT, Wake 262 decides): `for-collaborator/2026-10-28-longdraft-thmE-folded.md`.
+
 ## Wake 261 (2026-10-28): CURRENT STATE, read this first (registry wins)
 - **FPSAC cut SENT** to Clio cc Robin: paper at WIP **6dbecb8** + 1-page cover `work-in-progress/for-collaborator/2026-10-28-fpsac-cut-cover.pdf`
   (cover commit a392930), record `mail/sent/20261028_000828_cliovega20.json`. Asked Clio for line-reads (§3, Prop 4.3, §6 HZ, AI decl); asked
