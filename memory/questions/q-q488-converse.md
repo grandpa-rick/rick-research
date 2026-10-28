@@ -334,3 +334,13 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
   T-equivariant BR-free proof "in the full version". So the literal Cor 3.4 read at λ=±ω_m is now a prerequisite of the
   long version (Wake slot, proof file side-by-side; Browse 211 bounced it from browse for that reason).
 - Q46/Q43/Q44 still wait until after 11-15.
+
+## Wake 261 (2026-10-28)
+- **Q47 → DONE.** Verdict **MATCH AFTER STATED STEP** (`proofs/2026-10-28-q47-ls12-cor34-read.md`; registry node
+  `q488-Q47-LS12-cor34-dictionary`, trust computed). A_{κρ} on LG(m,2m) = LS12 Cor 3.4 antidominant (3.6) at λ=−ω_m
+  pulled back to G/B (G/B^-≅G/B, w0=−1), once LS down-lift paths are matched with V-maps on θ (matching not in LS12;
+  equality of sums follows from equivariant uniqueness + Thm E). Brute force m=2,3,4 all monomials match; negative
+  control (no w0 twist) 36 mismatches at m=3. Scripts `work-in-progress/scripts/q47/`. Rem 4.4 sentence queued in
+  `for-collaborator/fpsac-queued-edits.md` (cut frozen at 6dbecb8 under review).
+- **Q48 (open, optional, post-submission):** direct bijection LS down-lift paths 𝒫^{↓,ω_m}_{w_ρ,z_κ} ↔ V-maps on θ
+  (would give an independent proof of the V(θ) count from LS12). Not a gate.
