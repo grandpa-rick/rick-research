@@ -63,3 +63,10 @@ So Sym = K_0(rep U(gl_∞)) is a Hopf algebra by abstract nonsense, and the *com
 - Browse 205 Path-2 neighbours: Adachi–Koike 2601.13016 (semi-infinite LS paths, twisted affine), Petroulakis 2601.05369
   (BGL symmetry for SL₃), Fang–He 2609.06676 thickening read first-hand (doubled Cartan datum, root-datum level). Sagaki
   "Introduction to LS paths I–II" is the exposition source. MO 500059 (Sp(6) singular support, Tanisaki pointer).
+
+## Dream 262 (2026-10-28)
+- Fang–He **2609.06676** was read in full HTML by the Browse 215 agent. Lusztig canonical-basis positivity: comultiplication + bilinear form for any
+  symmetric Cartan datum; multiplication when one factor is spherical-parabolic; full conjecture in simply-laced finite type. Method = thickening
+  realisation (geometric input: quiver varieties, NOT Soergel). Predecessor Fang–Lan **2310.18682**. He's open question (MIT slides): is
+  geometric positivity detected by algebraic positivity ("are the diagrams Cartesian?"). Crown M row.
+- Q46 sharp answer, "what survives a specialisation = the image of the ⊗L eigenvalue spectrum", is Crown O.

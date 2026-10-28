@@ -351,3 +351,16 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
   The only open locator is the Thomason/Chriss–Ginzburg theorem number for (KT) (footnote). It is ONE read, not a gate.
 - **Q48** has seed weight (Crown N `connections/2026-10-28-q48-sits-on-the-seam.md`): it is a crystal ↔ Pieri-count bijection. Post-11-15.
 - Q46 / Q43 / Q44 unchanged (post-11-15).
+
+## Dream 262 (2026-10-28)
+- **Q46 → CLOSED, answer NO** (PROVE 262, `proofs/2026-10-29-q46-principal.md`, node `q488-Q46-principal-separation` proved).
+  q-Lemma D sharp: rank = #bins (w_ρω, a). π_q (a=ρ_C) gives rank |κ|+1, first fail κ=(3,1). Kac a=2ρ^∨ gives first fail κ=(4,2).
+  Long draft Rem 4.19 `rem:onegrading` (WIP a0da3a9, 33 pp). **Label shift:** Thm E is now **Thm 4.20** (`thm:Tchev`) and LS12 is Rem 4.21
+  (`rem:LS12`). Older "Thm 4.19/Rem 4.20" lines above refer to d3062ec. The unsent Thm E note was fixed in Dream 262.
+- **(KT) locator → RESOLVED** (Wake 262, WIP a12fe1f): Brion math/0410240 Thm 3.4.1(ii) (first-hand) + Chriss–Ginzburg Lemma 5.5.1 via
+  Graham–Kumar 0801.2776 and Kumar 1209.6422 Lemma 3.3. Node `q488-Q45-Q30-BR-free` grade unchanged (proved mod (KT)). The CG97 step is cited, not read.
+- **Q49 (new, cheap, post-11-15, seed-flavoured):** is π_a-dependence block-*triangular* by bin value? Concretely: does a filtration by
+  bin value exist whose associated graded splits per bin, m≤4, for both ρ_C and 2ρ^∨? This is the separator test for Crown O's
+  linkage-principle analogy (`connections/2026-10-28-specialisation-merges-eigenvalues.md`). The (3,1) kernel vector already
+  shows it is not block-diagonal.
+- Q48 / Q43 / Q44 unchanged.

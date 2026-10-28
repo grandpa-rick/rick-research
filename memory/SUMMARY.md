@@ -1,5 +1,22 @@
 # Summary: Rick
 
+## Day 262 dream (2026-10-28): CURRENT STATE, read this first (registry wins)
+- **Nothing blocked on me.** Cut **6dbecb8** sent and frozen (deadline 2026-11-15). No inbound since 10-25 (uid458). Plan: **11-04**, if still
+  silent, send the Thm E note + the Q46 note + ONE binary question to Robin ("FPSAC yes/no by 11-10; silence = we don't submit").
+- **Long draft** `work-in-progress/papers/lg-og-negative-degree/` WIP **a0da3a9**, 33 pp. (KT) locator resolved (a12fe1f, Brion first-hand,
+  CG97 via Graham–Kumar/Kumar). **Labels shifted:** Rem 4.19 = `rem:onegrading` (Q46), **Thm E = Thm 4.20** `thm:Tchev`, LS12 = Rem 4.21.
+  The unsent note `for-collaborator/2026-10-28-longdraft-thmE-folded.md` was fixed this dream (it said 4.19/4.20).
+- **Registry** q488-converse.json md5 c20b3d8c… in both copies. Grades: `q488-Q46-principal-separation` proved (new, PROVE 262);
+  `q488-Q45-Q30-BR-free` proved mod (KT); `q488-Q47-LS12-cor34-dictionary` computed. No grade changes this dream.
+- **Crown O (new hunch on a proved theorem)** `connections/2026-10-28-specialisation-merges-eigenvalues.md`: ch_ρ(j) is an exponential
+  polynomial in j whose bases are the eigenvalues of ⊗L at the fixed points. A specialisation merges eigenvalues, so rank = #bins. This corrects Crown M's
+  hierarchy: principal q is exactly as blind as x=1. Seed Path 3 analogy: linkage principle / blocks = residue fibres (Brundan–Kleshchev
+  0808.2032). It's only block-triangular, so the test is Q49.
+- **Browse 215:** Williamson Aarhus Problem 2 still open (Xie–Zhou 2610.33490, Columbia seminar, lead 2610.26764), watch only. Fang–He 2609.06676 was
+  read in full text by the agent. Dedup slug-vs-ID miss merged (2610.21289). sources.json 569.
+- **Next.** Wake 263: inbox first. Clio review → respond same session. A bounded jewel is still allowed: Q49 (cheap) or Q48 (Crown N).
+  Before any send, check the note's labels against main.aux.
+
 ## PROVE 262 (2026-10-28): Q46 answered NO, with a sharp q-Lemma D
 - **Principal specialisation does NOT separate** {ch_ρ : ρ⊆κ}. Theorem: for any regular grading a, the rank equals the number of distinct (w_ρω,a)
   ("bins"). Under π_q the bins are |ρ|, so rank = |κ|+1. The first failure is κ=(3,1) ((3)~(2,1)); the family is independent iff κ=(k) or (2,1).
@@ -15,7 +32,7 @@
   as cited by Graham–Kumar 0801.2776 §2/Thm 5.1 and Kumar JEMS 19 (2017) 1209.6422 Lemma 3.3 (both first-hand). Unsent Clio note updated, so its ask is gone.
 - PROVE 262 = Q46 (principal specialisation separation), `state/PROVE.md`. Cut 6dbecb8 untouched.
 
-## Day 261 dream (2026-10-28): CURRENT STATE, read this first (registry wins)
+## Day 261 dream (2026-10-28): previous state block (superseded by Day 262 above)
 - **FPSAC cut SENT and FROZEN.** Paper `work-in-progress/papers/lg-og-fpsac-cut/` at **WIP 6dbecb8** (12 pp, pdf_check 0 fail) went to Clio
   cc Robin in Wake 261 (`mail/sent/20261028_000828_cliovega20.json`, cover a392930). Queued edits (incl. Rem 4.4 LS12 sentence) are in
   gitignored `for-collaborator/fpsac-queued-edits.md`, local only. Deadline **2026-11-15**. Nothing is submitted without Robin's yes. Robin has been silent

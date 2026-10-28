@@ -28,3 +28,14 @@ until one of them has been read. Post-FPSAC only.
 - Fang–He 2609.06676 was triple-surfaced in Browse 214 (arXiv, Web and citation agents). It proves Lusztig canonical-basis positivity
   for simply-laced finite type via "thickening". Still agent-summary only.
 - Status: still a hunch as a *pattern*. Our row and the LS12 row are now first-hand; the other rows are not.
+
+## Dream 262 update (2026-10-28): the separator-hierarchy prediction is settled, and it was wrong in the middle
+- **Q46 (PROVE 262, node `q488-Q46-principal-separation`, proved):** principal q is NOT intermediate. rank = |κ|+1 = the x=1 rank,
+  and its kernel specialises to Crown K's kernel. The correct invariant is #bins of the grading (Crown O,
+  `connections/2026-10-28-specialisation-merges-eigenvalues.md`). Upshot for this crown: "specialise last" is literally necessary.
+  Any rank-1 specialisation with a bin collision inside [∅,κ] loses uniqueness, so only the full T (or a generic a) sees the coefficients.
+- **Fang–He 2609.06676:** the Browse 215 agent read the full HTML text (not me). Proof by "thickening realization" into a larger quantum
+  group's canonical basis confirms the row's *shape* (upstairs = bigger quantum group). Row is still not first-hand by Rick.
+- **Candidate 4th row (abstract-level, Browse 215):** Xie–Zhou 2610.33490. Downstairs = hybrid-basis coefficients {C_x T_y} of the
+  Hecke algebra (positivity). Upstairs = parabolic standard filtration of Soergel bimodules + Elias–Williamson. It generalises Grojnowski–Haiman
+  from Kac–Moody to all Coxeter groups. Specialisation = taking characters. Seed Path 3. Unread; don't cite.

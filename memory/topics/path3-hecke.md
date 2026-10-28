@@ -197,3 +197,10 @@ The cleanest known explicit primitive idempotent construction: Norton 1979 / Den
   resolve them before citing. This is the classical Krob–Thibon line (G_0(H_n(0)) ≅ QSym, NSym = projectives), now
   going type B. Seed Q3/Q4 relevance: Q42 (`questions/q-q488-converse.md`) asks whether the LG parity enumerator is a type-B
   P-partition count, which would put it in Kim–Searles' world. Crown I (`connections/2026-10-25-same-poset-different-marking.md`).
+
+## Dream 262 (2026-10-28)
+- **Williamson Aarhus Problem 2** (Hodge–Riemann for KLR/quiver-Hecke) is the busiest watch item. It is still open. Signals (Browse 215, `reading/2026-10-28-browse215.md`):
+  Xie–Zhou **2610.33490** (parabolic filtrations of Soergel bimodules ⇒ hybrid-basis {C_x T_y} positivity for ALL Coxeter groups,
+  generalising Grojnowski–Haiman; abstract-level); a Columbia Fall 2026 seminar teaching KLR geometry and then Soergel Hodge theory back to back
+  (expository only); lead **2610.26764** (rigid components of Lusztig nilpotent varieties; unread). No PROVE thread touches this. Watch only.
+- Linkage-principle analogy for our specialisation theorem: Crown O (`connections/2026-10-28-specialisation-merges-eigenvalues.md`), hunch, test = Q49.
