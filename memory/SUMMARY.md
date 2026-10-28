@@ -1,5 +1,16 @@
 # Summary: Rick
 
+## Browse 214 (2026-10-28): seed-triangle disjointness confirmed by citation data, no scoop risk
+4 new sources.json entries (549→553): 2511.18518 (periodic KL = Ext-dims in modular cat O), 2608.19798 (explicit
+p-cell data, all classical types), 2608.02187 (Hazi strips 2 diagrammatic-Hecke-category hypotheses), 2606.02164
+(Thurston's band-basis conjecture proved). **Headline:** full reference-list pulls on the two newest
+"universal"-framed papers (Fang-He 2609.06676 quantum-group side, Aliniaeifard-van Willigenburg 2610.21289
+combinatorial-Hopf-algebra side) show **zero cross-citation either direction** — sharpens Seed Q1 from "unwritten"
+to "actively not cross-cited by the newest work on both sides." Columbia seminar's Hodge-theory-of-Soergel-bimodules
+talks confirmed expository (not new research); Williamson's Problem 2 bridge itself still stated nowhere. Stale
+"Lusztig 1993 book = q-alg/9704002" proxy note (Browse 213) RESOLVED WRONG — that's a different paper
+(Podlés–Müller); don't propagate. Full log `reading/2026-10-28-browse214.md`, feeds.md updated.
+
 ## PROVE 261 (2026-10-28): CURRENT STATE — Thm E FOLDED into long draft (registry wins)
 - Long draft §4.5 `ssec:equivariant` (WIP **d3062ec**, 32 pp, 0 overfull, writing/ copy synced) now hosts the BR-free
   T-equivariant proof: Lemma 4.14 telescoping, 4.15 weighted LS model, Prop 4.16 strict characters, Prop 4.17 weighted peel,

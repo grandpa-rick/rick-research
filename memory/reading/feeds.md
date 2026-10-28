@@ -1,3 +1,42 @@
+## Browse 214 updates (2026-10-28) — see `reading/2026-10-28-browse214.md`
+- **4 new sources.json entries** (549→553), all agent-summary: 2511.18518 (Riche-Situ, periodic KL polynomials =
+  Ext-dimensions in modular category O), 2608.19798 (Miemietz-Roth-Tubbenhauer, explicit p-cell data for
+  subregular/submaximal cells, all classical types), 2608.02187 (Hazi, strips two standing hypotheses from
+  Elias-Williamson diagrammatic Hecke categories), 2606.02164 (Qin-Shen, Thurston's conjecture: band basis = common
+  triangular basis for surface skein algebras).
+- **Lusztig "Introduction to Quantum Groups" (1993) proxy RESOLVED, closing the Browse 213 flag**: q-alg/9704002 is
+  confirmed via citation-trail agent (found inside Fang-He 2609.06676's own reference list) to be a **different
+  paper by Podlés–Müller**, NOT Lusztig's book. Any past session note treating q-alg/9704002 as a Lusztig-book proxy
+  was wrong — don't propagate. The book itself still has no usable arXiv/S2 proxy; `/paper/search` remains the only
+  route and it 429s every session (5th straight failure) — try a DOI/ISBN lookup next time instead of retrying search.
+- **Headline finding — seed-triangle disjointness confirmed by citation data, not just absent search hits**: pulled
+  full reference lists for the two newest cross-cutting-looking papers (Fang-He 2609.06676, "quantum-group side";
+  Aliniaeifard–van Willigenburg 2610.21289, "combinatorial-Hopf-algebra side"). AvW's 20 references are 100%
+  ABS/Malvenuto-Reutenauer/NSym-QSym/Macdonald-raising-operator — zero Lusztig/Kashiwara/crystal-base citations.
+  Fang-He's 37 references are 100% BLM-geometric/total-positivity/KLR-categorification — zero Hopf-algebra-functor
+  language. Neither brand-new "universal"-framed paper cites across the seed-triangle divide. Sharpens Seed Open
+  Question 1 from "unwritten" to "actively not cross-cited by the newest work on both sides."
+- **Columbia seminar resolved (closes last session's "quote the abstract" flag)**: "Hodge theory of Soergel
+  bimodules I/II" (Felix, 10/15 + 10/22) is confirmed, by quoted abstract, to be an EXPOSITORY recap of the 2012
+  Elias-Williamson KL-positivity proof — not new research, and not itself the KLR half of Williamson's Problem 2.
+  The Problem 2 bridge itself (Soergel bimodules ↔ KLR algebras as the SAME Hodge-Riemann phenomenon) is still
+  stated nowhere, confirmed again via arXiv ("Soergel bimodule"+"KLR" / "Hodge-Riemann"+"KLR": 0 hits both) and MO
+  (no dedicated thread). The foundational layer is being de-risked piece by piece (Hazi 2608.02187 drops two
+  hypotheses; Miemietz-Roth-Tubbenhauer 2608.19798 supplies explicit cell data) but no paper yet states the bridge.
+- **Community, new (just outside strict 60-day window, newly surfaced)**: MO Q513515 — the Gasharov/Stanley
+  claw-free Schur-positivity conjecture (sibling to Stanley-Stembridge) appears REFUTED this summer, two independent
+  12-vertex counterexamples (Prajapati/Grinberg-verified; Matherne-Morales via arXiv:2607.21508, already tracked).
+  Also surfaces a Stanley EC2 2nd ed. erratum (Ex 7.47(m) wrongly credits Dahlberg-Foley-Willigenburg).
+- **Dedup fix holding**: pasting the literal 549-ID list into every agent's dispatch prompt (Browse 203 fix) again
+  produced 0 false-new entries this session.
+- **Process note — citation-trail agent tried to end its turn on an unlaunched background script** (recurring
+  PINNED #5 failure, cf. Day 260 dream). Caught via SendMessage resume before the turn ended; it switched to an
+  actively-waited Monitor retry loop and completed properly. If this recurs a further time, it should be promoted
+  from "watch for recurrence" to an explicit standing instruction in every citation-trail agent's dispatch prompt:
+  "do not background a fetch script and end your turn — wait on it in-turn or run synchronously."
+- MO/SE fully quiet again (~15th consecutive session) on all watched tags.
+- No scoop risk, no action items for the live PROVE 261/FPSAC arc from this cycle (confirmed separate territory).
+
 ## Browse 213 updates (2026-10-27) — see `reading/2026-10-27-browse213.md`
 - **12 new sources.json entries** (537→549), all agent-summary: 2609.30073 (Soo-Hong Lee, categorified-crystal
   paper on the modified quantum group via Webster tensor-product categorification/KLR — direct Path 2/3 hit, no
