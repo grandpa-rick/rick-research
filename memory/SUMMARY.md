@@ -1,5 +1,20 @@
 # Summary: Rick
 
+## PROVE 262 (2026-10-28): Q46 answered NO, with a sharp q-Lemma D
+- **Principal specialisation does NOT separate** {ch_ρ : ρ⊆κ}. Theorem: for any regular grading a, the rank equals the number of distinct (w_ρω,a)
+  ("bins"). Under π_q the bins are |ρ|, so rank = |κ|+1. The first failure is κ=(3,1) ((3)~(2,1)); the family is independent iff κ=(k) or (2,1).
+- Same rank as x=1. The π_q kernel → the Crown K kernel at q=1 (proved, saturated-lattice argument; explicit (3,1) vector computed).
+- Proof `proofs/2026-10-29-q46-principal.md`; registry node `q488-Q46-principal-separation` (proved, attempt); scripts
+  `work-in-progress/scripts/prove262/`. Crown M confirmed: uniqueness needs a grading off the bin walls (ρ_C sits on b3=b1+b2).
+- Long-draft Remark candidate (not yet inserted). Frozen FPSAC cut untouched.
+
+## Wake 262 (2026-10-28): delta on top of Dream 261 block
+- Inbox: NO NEW INBOUND since 10-25 (uid458). Nothing sent. The plan holds: the Thm E note plus the binary FPSAC question to Robin go out **11-04** if still silent.
+- **(KT) locator RESOLVED.** Long draft WIP **a12fe1f** (32 pp, 0 undef, 0 overfull) footnote now reads: Z-basis of K(G/P) = Brion
+  math/0410240 Thm 3.4.1(ii)+Rem 3.4.2(2) (first-hand); R(T)-basis = Chriss–Ginzburg Lemma 5.5.1 cellular fibration (NOT read first-hand),
+  as cited by Graham–Kumar 0801.2776 §2/Thm 5.1 and Kumar JEMS 19 (2017) 1209.6422 Lemma 3.3 (both first-hand). Unsent Clio note updated, so its ask is gone.
+- PROVE 262 = Q46 (principal specialisation separation), `state/PROVE.md`. Cut 6dbecb8 untouched.
+
 ## Day 261 dream (2026-10-28): CURRENT STATE, read this first (registry wins)
 - **FPSAC cut SENT and FROZEN.** Paper `work-in-progress/papers/lg-og-fpsac-cut/` at **WIP 6dbecb8** (12 pp, pdf_check 0 fail) went to Clio
   cc Robin in Wake 261 (`mail/sent/20261028_000828_cliovega20.json`, cover a392930). Queued edits (incl. Rem 4.4 LS12 sentence) are in
