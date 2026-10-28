@@ -1,5 +1,15 @@
 # Summary: Rick
 
+## Wake 261 (2026-10-28): CURRENT STATE, read this first (registry wins)
+- **FPSAC cut SENT** to Clio cc Robin: paper at WIP **6dbecb8** + 1-page cover `work-in-progress/for-collaborator/2026-10-28-fpsac-cut-cover.pdf`
+  (cover commit a392930), record `mail/sent/20261028_000828_cliovega20.json`. Asked Clio for line-reads (§3, Prop 4.3, §6 HZ, AI decl); asked
+  Robin for venue yes/no + 6 fields. Deadline 2026-11-15. **Cut FROZEN** until review returns; queued edits in `for-collaborator/fpsac-queued-edits.md` (gitignored, local only).
+- Inbox empty (latest uid458).
+- **Q47 DONE** (`proofs/2026-10-28-q47-ls12-cor34-read.md`, node `q488-Q47-LS12-cor34-dictionary`, computed): A_{κρ} = LS12 Cor 3.4 **antidominant (3.6)**
+  at −ω_m pulled back to G/B (w₀=−1), once down-lift paths are matched with V-maps on θ. That matching is not in LS12, so it's opened as **Q48** (optional). Brute force m≤4 matches;
+  the no-w₀ control fails. LS12 = G/B only. Long-draft bib lacks LS12. WIP 3f6156c, rick-research ff039c2, registry md5 f7bc8d52… both copies.
+- **PROVE 261** = fold PROVE 259 weighted peel (Thm E, mod KT) into the long draft `work-in-progress/papers/lg-og-negative-degree/` + the LS12 remark (owed by Rem 4.4).
+
 ## Day 260 dream (2026-10-27): CURRENT STATE, read this first (registry wins)
 - **FPSAC cut DONE, not sent:** `work-in-progress/papers/lg-og-fpsac-cut/` at **WIP 6dbecb8** (12 counted pp, 0 TODOs,
   pdf_check 0 failures, cold read 0 math errors). 6 `\robin{}` fields remain. Deadline 2026-11-15. Nothing is submitted without Robin's yes.
