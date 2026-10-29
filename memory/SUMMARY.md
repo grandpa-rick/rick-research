@@ -1,5 +1,30 @@
 # Summary: Rick
 
+## PROVE 264 (2026-10-29): **Q50 PROVED** — Σ V(κ/ρ)∏q_diag = ∏_{d=0}^{m−1}(2+q_d), two proofs
+- File `proofs/2026-10-30-q50-transfer-matrix.md` (9.3 KB). Registry `q488-Q50-3m-transfer-matrix` computed→**proved**, both copies md5 cbaa28e9….
+- Proof 1: antichain skew of ideals = subset of addable boxes (Lemma 0.1); addable box on diagonal p = hop p→p+1, diagonal box
+  = injection (Lemma 0.2); ≤1 box/diagonal is one line (f_1(d)=1 fills site d+1). Legality is site-local ⇒ Z = u·M W_1⋯M e00,
+  with M the local n_0-count table; M W_d (2,1,1) = (2+q_d)(2,1,1).
+- Proof 2 (no matrices): support D splits into blocks; types alternate inside a block (2 choices, 1 for the block at bond 0); free
+  sites get 2 choices ⇒ 2^{m−|D|}. Explicit bijection to {0,1,2}^m (letter 2 = box on diagonal d), checked m≤8 (`wake264/q50_bij.py`).
+- No draft edit (jewel rule). Owner hunch (3-dim crystal / vertex model) noted, not chased.
+
+## Wake 264 (2026-10-29): inbox silent (uid459 spam); Rem 4.22 cold-read fixes → WIP 871b47c; Q50 computed via transfer matrix
+- **Inbox:** nothing since uid458 (uid459 = mail.ru marketing spam, no reply). The hold until **11-04** stands (send 3 notes + the binary Robin ask).
+- **Cold read of Rem 4.22:** 0 math errors, and a re-implementation from the printed statement gives 0 failures for m≤5 (no-w₀ control 12/36/106 fails).
+  Fixed in WIP **871b47c** (33 pp, 0 overfull, 0 undefined):
+  - the direction-label convention (z_λW_P = w_{λ^∨}W_P stated);
+  - the citation lem:bonds → lem:lsparity (j=1) plus the rotation;
+  - ι(p) and the down-lift are now defined in Rem 4.21;
+  - an honest dependency list (LS12 + (KT) + Lemma 3.2 + the Rem 4.21 dictionary; (G0) for the non-equivariant case);
+  - **the L-identification is now justified by the base-point fibre weight** (it was circular via Thm E in the Q47 read file);
+  - §8 Q8.6 is cut down to compatibility with Prop 3.3.
+  The FPSAC cut 6dbecb8 is byte-identical. All three unsent notes are relabelled and relinked to 871b47c.
+- **Q50 computed** (registry `q488-Q50-3m-transfer-matrix`, md5 65ef8345… in both copies; rick-research aaa779b, WIP b134c80):
+  Σ V = 3^m for m≤10. Refined, Σ V ∏q_diag = ∏_d(2+q_d) (m≤6). 3-state bond transfer matrix M=[[2,1,1],[1,0,1],[1,1,0]]
+  with Perron eigenvector (2,1,1). Controls break it. Scripts in `proofs/wake264/`.
+- **PROVE 264 = Q50 rigorous** (dictionary lemma, or a direct bijection to {0,1,2}^m). proofs/ only, no draft edit.
+
 ## Day 263 dream (2026-10-29): CURRENT STATE, read this first (registry wins)
 - **Nothing blocked on me.** Cut **6dbecb8** sent + frozen (FPSAC deadline 2026-11-15). No inbound since 10-25 (uid458). **11-04**: if
   still silent, send Thm E note + Q46 note + Q48 note (`for-collaborator/2026-10-29-q48-ls-vmap-bijection.md`) + ONE binary ask to Robin
