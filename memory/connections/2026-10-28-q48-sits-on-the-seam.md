@@ -32,3 +32,15 @@ the *sums* equal. No bijection is written. Paths of shape ω_m are straight or t
 - **Registry consequence (Dream 263):** `q488-Q47-LS12-cor34-dictionary` promoted computed → proved (its step 5 was exactly Q48).
   Thm 4.20 now has an LS12+(KT) proof that is independent of (G1)/(LS)/BR12.
 - **Side count, unproved:** Σ_{κ,ρ} V(κ/ρ) = 3^m (m ≤ 5, computed). Particle reading → Q50 in `questions/q-q488-converse.md`.
+
+## Dream 264 (2026-10-29): the total sum is a 1-D vertex model (Q50 proved)
+- **Proved (PROVE 264, registry `q488-Q50-3m-transfer-matrix`, md5 cbaa28e9, file `proofs/2026-10-30-q50-transfer-matrix.md`):**
+  Σ_{ρ⊆κ⊆Σ_m} V(κ/ρ) ∏ q_diag = ∏_{d=0}^{m−1}(2+q_d). It specialises to (2+q)^m, and to 3^m at q=1.
+- **What it says about Crown N:** once a V-map is a two-step antichain filtration (Q48), the antichain steps are parallel particle
+  hops on m sites (Lemma 0.2), and legality is **site-local**. So summing the structure constants over *everything* is the
+  partition function of a 1-D vertex model with local weights c(in,out), M=[[2,1,1],[1,0,1],[1,1,0]] (eigenvalues 3, 0, −1; Perron
+  vector (2,1,1)). The per-(κ,ρ) count isn't a product, but the total is: the diagonals decouple.
+- **Seed reading (hunch, unchased):** vertex-model weights on a line = an R-matrix / transfer-matrix shadow (Path 2). If c(in,out) is a
+  crystal (q→0) limit of some U_q R-matrix, then "Σ of K-Chevalley structure constants = ∏ of 3-dim characters" is Path 4 at the
+  level of totals. That's Q51 (post-11-15). Cheapest separator: does M (or its graded M(q)) satisfy any Yang–Baxter-type relation
+  with a second spectral parameter? If it doesn't, it's just a bookkeeping device, and the hunch dies cheaply.

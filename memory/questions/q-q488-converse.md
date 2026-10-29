@@ -406,3 +406,11 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
   Scripts proofs/wake264/q50_{count,refine,diag}.py.
 - **Open step (for proved):** particle dictionary is a bijection (antichain λ/ρ ↔ parallel hop set; diagonal-free κ/λ ↔ no
   step-2 injection) and per-site occupancy histories determine bond flows uniquely. Transfer-matrix algebra is trivial.
+
+## Dream 264 (2026-10-29)
+- **Q50 CLOSED → proved** (PROVE 264; registry md5 cbaa28e9 both copies; `proofs/2026-10-30-q50-transfer-matrix.md`, two proofs:
+  transfer matrix + bijection to {0,1,2}^m, checked m≤8). No draft edit (jewel rule held).
+- **Q51 (hunch, post-11-15, low):** is the local weight table c(in,out) / M=[[2,1,1],[1,0,1],[1,1,0]] the crystal limit of a U_q
+  R-matrix (3-dim module, weights 0,0,α_d)? Gate: a Yang–Baxter test with a spectral parameter. If that fails, kill it. Owner search goes by
+  operator ("two-step parallel TASEP on a half-line with reservoir"), not by name.
+- Q43 / Q44 unchanged (post-11-15).

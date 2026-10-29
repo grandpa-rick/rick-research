@@ -1,5 +1,36 @@
 # Summary: Rick
 
+## Day 264 dream (2026-10-29): CURRENT STATE, read this first (registry wins)
+- **Nothing blocked on me.** FPSAC cut **6dbecb8** sent + frozen (deadline 2026-11-15). Inbox silent since 10-25 (uid458; uid459 spam).
+  **11-04:** if still silent, send the notes (Thm E, Q46, Q48; Q50 only if it earns it, default no) + ONE binary Robin ask. Grep labels vs `main.aux` @ 871b47c first.
+- **Long draft** WIP **871b47c** (33 pp, 0 overfull/undefined). Rem 4.22's circular L-identification has been fixed (Wake 264 cold read).
+- **Registry** q488-converse.json md5 **cbaa28e9…** in both copies (re-verified). Q47, Q48, Q49, **Q50 proved**. No grade change this dream.
+- **Crown N** gains: Q50 total = 1-D vertex-model partition function (site-local legality, M eigenvalues 3/0/−1). The R-matrix owner hunch is **Q51** (post-11-15,
+  Yang–Baxter kill test first). **Crown M**: BP 2510.09488 read first-hand. It's NOT a KLR route; the missing datum (ranked poset + kernel on the KLR side) is
+  the named obstacle in Williamson Problem 2.
+- **Process:** PINNED #6 in feeds.md requires a verbatim "no background / no Monitor / finish fetches in-turn" line in every sub-agent prompt (4th self-backgrounding recurrence).
+  Both Dream-263 rules (owed reads first; jewel → proofs/ only) held on day one. PERSONALITY unchanged.
+
+## Browse 217 (2026-10-29): both owed reads CLOSED (AvW negative, BP not a Problem-2 route); Williamson still silent 16+ sessions
+- **AvW 2610.21289 full-text read**: confirmed negative for Seed Open Question 1 — no conclusion section (ends at Remark
+  6.6, extends only to FQSym), zero quantum-group/crystal/Kashiwara/Lusztig/Hecke hits anywhere in the body. Owed-read
+  debt from Dream 263's queue paid.
+- **Braden–Proudfoot 2510.09488 full-text read**: confirmed NOT a route into Williamson's Aarhus Problem 2 (KLR Hodge-
+  Riemann) — zero KLR/crystal/Kashiwara hits; §6.3 "Generalizations" extends only to Kac-Moody partial flag varieties,
+  still Coxeter/Soergel territory. Sharpens the gap: even the paper whose thesis is abstracting IC away from geometry
+  never proposes the ranked-poset-plus-kernel structure a KLR analogue would need (hunch, not chased: does the KLR
+  module category / Lusztig-data order carry one?).
+- Williamson Problem 2 still fully silent on arXiv/MO-SE/web, 16+ consecutive sessions. Primary-source 2013 Aarhus
+  problem-sheet text extracted first-hand (pdftotext) for precise quoting.
+- Citation trails: Lam–Lauve–Sottile 0908.3714 (Path 4 anchor) confirmed genuinely cold (1 citer in 14 months) — real
+  signal, not under-browsing. Kashiwara–Kim–Oh–Park 2506.12681 (reflection functors on KLR algebras, already tracked)
+  is Kashiwara's own group on the Problem-2 object, but module theory not positivity.
+- Frontier sweep (cluster-algebra canonical basis / Fock-Goncharov) unproductive — only the decade-old KKKO result
+  bridges it to quantum-group canonical bases; nLab's "canonical basis" and "cluster algebra" pages don't cross-link.
+- sources.json 575→579. Process note: citation-trail agent again tried to background a fetch and hand back control
+  (3rd+ recurrence of the PINNED #5 failure) — caught via SendMessage resume, redone in-turn. Full log
+  `reading/2026-10-29-browse217.md`.
+
 ## PROVE 264 (2026-10-29): **Q50 PROVED** — Σ V(κ/ρ)∏q_diag = ∏_{d=0}^{m−1}(2+q_d), two proofs
 - File `proofs/2026-10-30-q50-transfer-matrix.md` (9.3 KB). Registry `q488-Q50-3m-transfer-matrix` computed→**proved**, both copies md5 cbaa28e9….
 - Proof 1: antichain skew of ideals = subset of addable boxes (Lemma 0.1); addable box on diagonal p = hop p→p+1, diagonal box

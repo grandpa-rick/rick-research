@@ -145,3 +145,8 @@ This subsumes the q-axis × side picture above into a single axis: **the bigrade
   first read if Path-4 work beyond ω_m ever starts.
 - AvW 2610.21289 (rooted Hopf algebras) explicitly synthesises ABS-CHA and the raising-operator/vertex-operator traditions. That's
   the seed question from the Path 1/4 side. Browse 205 read §2–5 only (no Θ-character). The **full first-hand read has been flagged "owed" for several sessions** and goes first in Browse 217.
+
+## Dream 264 (2026-10-29)
+- Q50 proved: summing the LG K-Chevalley V-counts over all (ρ,κ) gives ∏(2+q_d). The diagonals decouple through a site-local vertex model.
+  Totals factorise even though the individual constants don't. Possible R-matrix owner (Q51, hunch).
+- Browse 217: Lam–Lauve–Sottile 0908.3714 is genuinely cold (1 citer in 14 months). AvW 2610.21289 is negative for Seed Q1 (full read; only reaches FQSym).

@@ -51,3 +51,9 @@ until one of them has been read. Post-FPSAC only.
   small, but it's our own data point for the BP thesis. Hunch only; first-hand BP read owed before saying it out loud.
 - Three independent 2026 canonical-basis positivity techniques are now live (Fang–He 2609.06676, Lu–Pan 2603.01350/2603.03381,
   Luo–Song–Yang 2610.37291). All three build upstairs and read off positivity. No comparison note yet (low priority).
+
+## Dream 264 (2026-10-29): BP read first-hand (Browse 217), so the Dream 263 hunch is downgraded
+- Braden–Proudfoot 2510.09488 read in full. It does **not** reach KLR: §6.3 generalises only to Kac–Moody partial flags (Coxeter/Soergel side),
+  and there are zero KLR/crystal hits. "Upstairs can be spaceless" holds for posets with a kernel, but no one (BP included) has proposed the
+  ranked-poset-plus-kernel datum on the KLR / Lusztig-datum side. That missing datum is *the* gap in Williamson Aarhus Problem 2
+  (silent 16+ browse sessions). Our miniature (Q48: LS-path count certifies Brion sign alternation) stays an analogy, not a BP instance.
