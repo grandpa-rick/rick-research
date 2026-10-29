@@ -9,4 +9,4 @@
 - **Same rank as x=1**, and the π_q kernel specialises at q=1 to the x=1 (Crown K) kernel. Explicitly, at (3,1):
   ch_{21} − (q²−q+1)/(q²+1)·ch_3 − q/((q+1)(q²+1))·ch_2 − q²/((q+1)(q²+1))·ch_1  →  ch_{21} − ½ch_3 − ¼ch_2 − ¼ch_1.
 - Moral: uniqueness needs a grading that separates (3) from (2,1). The bad locus is the hyperplanes Σ_{ρ∖σ} b_k = Σ_{σ∖ρ} b_k,
-  and most of these are not root hyperplanes. Possible one-Remark addition to the long draft (after Lemma D).
+  and most of these are not root hyperplanes. Now in the long draft as Rem 4.19 (`rem:onegrading`, WIP a0da3a9), right after Lemma D.

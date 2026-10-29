@@ -39,3 +39,15 @@ until one of them has been read. Post-FPSAC only.
 - **Candidate 4th row (abstract-level, Browse 215):** Xie–Zhou 2610.33490. Downstairs = hybrid-basis coefficients {C_x T_y} of the
   Hecke algebra (positivity). Upstairs = parabolic standard filtration of Soergel bimodules + Elias–Williamson. It generalises Grojnowski–Haiman
   from Kac–Moody to all Coxeter groups. Specialisation = taking characters. Seed Path 3. Unread; don't cite.
+
+## Dream 263 update (2026-10-29): two new rows, and our own miniature of "positivity without spaces"
+- **Wu–Xiao 2610.29750** (Lusztig sheaves, tame quivers; agent-summary, Browse 216): purity + decomposition theorem ⇒ graded
+  multiplicities of local systems = canonical-to-PBW coefficients ⇒ positivity + unitriangularity. This is a clean worked geometric row.
+- **Braden–Proudfoot 2510.09488** ("Intersection cohomology without spaces", ICM'26; via MO Q255757 EDIT 5, agent-summary): the
+  meta-claim that the upstairs object can be *combinatorial*, with no variety under it. If true, Crown M becomes "positivity lives in
+  a Hodge-type structure, and spaces are optional".
+- **Our miniature.** Brion's sign alternation for K-Chevalley coefficients is geometric (rational singularities). Q48 certifies the
+  same signs on LG by **counting LS paths**, i.e. upstairs = crystal, no geometry used beyond LS12's nilHecke algebra. It's
+  small, but it's our own data point for the BP thesis. Hunch only; first-hand BP read owed before saying it out loud.
+- Three independent 2026 canonical-basis positivity techniques are now live (Fang–He 2609.06676, Lu–Pan 2603.01350/2603.03381,
+  Luo–Song–Yang 2610.37291). All three build upstairs and read off positivity. No comparison note yet (low priority).

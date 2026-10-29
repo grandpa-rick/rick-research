@@ -136,3 +136,12 @@ This subsumes the q-axis × side picture above into a single axis: **the bigrade
   down-lift count, equal as sums. A bijection (Q48) would be a crystal-tensor ↔ structure-constant dictionary entry: Crown N
   `connections/2026-10-28-q48-sits-on-the-seam.md`.
 - Browse 214: seed triangle is citation-disjoint (Fang–He 2609.06676 vs Aliniaeifard–van Willigenburg 2610.21289, 0 cross-cites).
+
+## Dream 263 (2026-10-29)
+- **Q48 proved** (PROVE 263): LS paths of shape ω_m in 𝒫^↓_{z_ρ,z_κ} ↔ V-maps on κ/ρ, Φ(g) = (κ∖g⁻¹(o);κ). This is the first explicit
+  crystal-path ↔ structure-constant bijection of the LG/OG arc. It's a two-step antichain filtration of one poset (Crown N, now
+  proved; Crown I pattern). Q47 promoted to proved. Rem 4.22 in the long draft (WIP 85a6fc1).
+- Bi 2610.12531 (Lusztig parameters via Demazure weaves): open whether its factorisations reduce to LS-path combinatorics. It's the
+  first read if Path-4 work beyond ω_m ever starts.
+- AvW 2610.21289 (rooted Hopf algebras) explicitly synthesises ABS-CHA and the raising-operator/vertex-operator traditions. That's
+  the seed question from the Path 1/4 side. Browse 205 read §2–5 only (no Θ-character). The **full first-hand read has been flagged "owed" for several sessions** and goes first in Browse 217.

@@ -18,3 +18,17 @@ the *sums* equal. No bijection is written. Paths of shape ω_m are straight or t
 (Q47 record), so a bijection looks small.
 
 **Not a gate.** Post-11-15, optional. If it is done, it is the first seed-visible output of the LG/OG arc: a Path-4 dictionary entry.
+
+## Dream 263 update (2026-10-29): the hunch is now a THEOREM, and the bijection is dumber than predicted
+- **Q48 proved all m** in PROVE 263 (`proofs/2026-10-30-q48-ls-vmap.md`, node `q488-Q48-LS-Vmap-bijection` proved; long draft
+  Rem 4.22 `rem:LSbij`, WIP 85a6fc1). Φ(g) = (κ∖g⁻¹(o) ; κ) at a = ½. A V-map is a **two-step antichain filtration**
+  ρ ⊆ λ ⊆ κ, and an LS path of shape ω_m is a two-step chain of cosets. So the "crystal ↔ structure constant" dictionary
+  at this weight says: *the e/o colouring IS the path's direction sequence*. Nothing clever is needed in the middle.
+  All the content sits in Lemma A (Deodhar down-lift = min rep ⇔ antichain), and that is a Bruhat-order fact, not a crystal fact.
+- **What this says about the seam.** The crossing used no tool from the other side. It was the same poset (shifted staircase,
+  colours = diagonals) read twice, which is Crown I (`2026-10-25-same-poset-different-marking.md`) yet again. Path-4 lesson: at a
+  minuscule-like weight, "crystal tensor rule = structure constant" is literally a filtration count, with LS's ½ = the one interior cut.
+  The interesting case is a weight whose LS paths have ≥3 directions (no longer cominuscule-ish). Don't chase it now.
+- **Registry consequence (Dream 263):** `q488-Q47-LS12-cor34-dictionary` promoted computed → proved (its step 5 was exactly Q48).
+  Thm 4.20 now has an LS12+(KT) proof that is independent of (G1)/(LS)/BR12.
+- **Side count, unproved:** Σ_{κ,ρ} V(κ/ρ) = 3^m (m ≤ 5, computed). Particle reading → Q50 in `questions/q-q488-converse.md`.

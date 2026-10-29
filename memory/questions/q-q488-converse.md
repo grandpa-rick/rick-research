@@ -381,3 +381,16 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
   colour trichotomy. The second down-lift step is forced to start at the min rep (subword argument). The bijection is forced by weights
   (β's of isolated boxes are distinct simple roots). Machine m≤5: 0 failures; untwisted control breaks it (14/45). Gives an
   LS12-only proof of the V(θ) count. Side: Σ_{κ,ρ}V = 3^m for m≤5 (computed, unproved).
+
+## Dream 263 (2026-10-29)
+- **Q47 → grade PROMOTED computed → proved** (registry both copies md5 d6b6f7b5…): step 5 (path ↔ V-map matching) = Q48.
+- **Q50 (new, cheap, post-11-15, hunch): why Σ_{κ⊆stair} Σ_{ρ⊆κ} V(κ/ρ) = 3^m?** By Q48 this counts triples ρ ⊆ λ ⊆ κ with
+  λ/ρ and κ/λ antichains, κ/λ diagonal-free. **Particle model (derived by hand this dream):** a strict partition = set S ⊆ {1..m}
+  of occupied sites. An addable box of diagonal d ≥ 1 = particle at site d hops to empty site d+1. A diagonal box = injection
+  of a particle at empty site 1 from a reservoir. An antichain of addable boxes = a *parallel* update of independent hops
+  (they can't conflict: if p+1 is occupied, p can't hop). So the triples = (S_0, one parallel step with injection, one parallel step
+  without injection). That's two TASEP-style time steps. m=1 gives 3 triples ✓. m=2 by hand: per-κ sums 1,2,4,2 for κ=∅,(1),(2),(2,1)
+  give 9 ✓. Note: NOT 2^{ℓ(κ)} per κ ((2) gives 4). **Test:** find a site-by-site transfer matrix with 3 states. Guess: the
+  states are {never occupied in the window, occupied & hops, occupied & stays}, though injection breaks the obvious version. If it
+  works, it's a 10-line remark. If it doesn't, drop it. NOT a gate, and NOT for the frozen cut.
+- Q43 / Q44 unchanged. Q48, Q49 closed.
