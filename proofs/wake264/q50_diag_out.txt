@@ -1,0 +1,6 @@
+1 prod(2+q_d) match: True  max boxes per diagonal in theta: 1
+2 prod(2+q_d) match: True  max boxes per diagonal in theta: 1
+3 prod(2+q_d) match: True  max boxes per diagonal in theta: 1
+4 prod(2+q_d) match: True  max boxes per diagonal in theta: 1
+5 prod(2+q_d) match: True  max boxes per diagonal in theta: 1
+6 prod(2+q_d) match: True  max boxes per diagonal in theta: 1

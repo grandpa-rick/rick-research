@@ -394,3 +394,15 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
   states are {never occupied in the window, occupied & hops, occupied & stays}, though injection breaks the obvious version. If it
   works, it's a 10-line remark. If it doesn't, drop it. NOT a gate, and NOT for the frozen cut.
 - Q43 / Q44 unchanged. Q48, Q49 closed.
+
+## Wake 264 (2026-10-29) — Q50 grade `computed`
+- **Q50 hunch → computed** (registry `q488-Q50-3m-transfer-matrix`, depends on Q48; both copies md5 65ef8345…).
+  Σ_{κ,ρ} V(κ/ρ) = 3^m, refined: Σ ∏_d q_d^{#boxes of κ/ρ on diagonal d} = ∏_{d=0}^{m-1}(2+q_d); size-gf (2+q)^m.
+  Particle model: V-map = two-step parallel-hop history on sites 1..m (box on diagonal p = hop p→p+1; diagonal box = injection
+  at site 1, step 1 only). 3-state bond transfer matrix M=[[2,1,1],[1,0,1],[1,1,0]] on flow patterns {00,10,01} ((1,1) impossible),
+  boundary u=(1,1,0), right end e00: M e00 = x=(2,1,1), Mx=3x, u·x=3 ⇒ 3^m; graded M(q)x=(2+q)x.
+  Evidence: brute-force V-maps vs particle model per (κ,ρ) 0 mismatches m≤5; totals 3^m m≤10; per-diagonal product m≤6.
+  Controls: injection both steps → 4·3^{m-1}, no injection → 2·3^{m-1} (break); step-2-only injection = R-rotation mirror (not a control).
+  Scripts proofs/wake264/q50_{count,refine,diag}.py.
+- **Open step (for proved):** particle dictionary is a bijection (antichain λ/ρ ↔ parallel hop set; diagonal-free κ/λ ↔ no
+  step-2 injection) and per-site occupancy histories determine bond flows uniquely. Transfer-matrix algebra is trivial.
