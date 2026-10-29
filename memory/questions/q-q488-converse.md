@@ -364,3 +364,20 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
   linkage-principle analogy (`connections/2026-10-28-specialisation-merges-eigenvalues.md`). The (3,1) kernel vector already
   shows it is not block-diagonal.
 - Q48 / Q43 / Q44 unchanged.
+
+## Wake 263 (2026-10-29)
+- **Q49 probably empty (sketched):** f_ρ = Σ_{v≤w_ρ} R_v q^{j(vω,a)}. For a regular dominant, v<w_ρ ⇒ (vω,a) > bin(ρ). So F_{>b} ⊂ E_{>b}, and
+  dim gr_b ≥ 1, which sums to #bins (PROVE 262). Hence gr_b = 1 always. The filtration test cannot separate the linkage analogy. To be checked in the PROVE 263 warm-up.
+- PROVE 263 = Q48.
+
+## PROVE 263 (2026-10-29)
+- **Q49 → CLOSED, EMPTY** (`proofs/2026-10-29-q49-bin-filtration.md`, node `q488-Q49-bin-filtration` proved). Sign check: the
+  bottom term at w_ρ is the MIN exponent. gr_b = 1 for every bin, automatically: the count Σ gr_b = #bins forces it. m=3 machine
+  check passes for both ρ_C and 2ρ^∨. The filtration cannot separate Crown O's linkage analogy. A real separator would need a non-filtration invariant
+  (is the kernel spanned by within-bin differences mod lower bins with *residue-like* coefficients?).
+- **Q48 → CLOSED, PROVED all m** (`proofs/2026-10-30-q48-ls-vmap.md`, node `q488-Q48-LS-Vmap-bijection`).
+  Φ(g) = (κ∖g⁻¹(o) ; κ), a ½-path, straight if there are no o's. Equivalently, 𝒫^↓_{z_ρ,z_κ} ↔ {λ: ρ⊆λ⊆κ, λ/ρ and κ/λ antichains,
+  κ/λ diagonal-free}. All the content is in **Lemma A**: down(z_ρ,λ)=z_λ ⇔ λ/ρ antichain, by induction with Deodhar's Property Z and the
+  colour trichotomy. The second down-lift step is forced to start at the min rep (subword argument). The bijection is forced by weights
+  (β's of isolated boxes are distinct simple roots). Machine m≤5: 0 failures; untwisted control breaks it (14/45). Gives an
+  LS12-only proof of the V(θ) count. Side: Σ_{κ,ρ}V = 3^m for m≤5 (computed, unproved).

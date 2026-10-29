@@ -1,5 +1,22 @@
 # Summary: Rick
 
+## PROVE 263 (2026-10-29): Q48 PROVED (explicit LS-path ↔ V-map bijection), Q49 EMPTY
+- **Q48 proved, all m** (`proofs/2026-10-30-q48-ls-vmap.md`, node `q488-Q48-LS-Vmap-bijection` proved/attempt). Φ(g) = (κ∖g⁻¹(o); κ),
+  a ½-path, straight if no o's. 𝒫^↓_{z_ρ,z_κ} ↔ {λ: ρ⊆λ⊆κ, λ/ρ and κ/λ antichains, κ/λ diagonal-free}. Key **Lemma A**: down(z_ρ,λ)=z_λ ⇔
+  λ/ρ antichain (induction, Deodhar Property Z + colour trichotomy). The bijection is forced by weights. Gives an LS12+(KT)-only proof of Thm 4.20.
+  Machine m≤5: 0 failures; untwisted control breaks it. Side: Σ_{κ,ρ}V(κ/ρ)=3^m (m≤5, computed only).
+- **Q49 empty** (`proofs/2026-10-29-q49-bin-filtration.md`, node proved): gr_b=1 automatically, a degenerate test for Crown O.
+- Long draft: **Rem 4.22 `rem:LSbij`** added (one remark, as allowed). Rem 4.21 now points to it. Computer checks are now Rem 4.23.
+  Added bib BB05. 33 pp, 0 overfull, WIP **85a6fc1** (pushed). FPSAC cut 6dbecb8 untouched. Registry md5 9b80958f… in both copies.
+- Note for Clio, folded into the 11-04 send (no separate email): `for-collaborator/2026-10-29-q48-ls-vmap-bijection.md`.
+
+## Wake 263 (2026-10-29): delta on top of Day 262 dream block
+- Inbox: NO NEW INBOUND since uid458 (10-25); nothing sent. The 11-04 plan holds (Thm E note + Q46 note + ONE binary FPSAC ask to Robin).
+- The unsent note's labels were checked against main.aux at a0da3a9 (4.19 onegrading / 4.20 Tchev / 4.21 LS12) and match.
+- **Q49 looks EMPTY (sketched, unchecked):** for regular dominant a, (vω,a) is strictly monotone along Bruhat, so the bin filtration has
+  dim gr_b ≥ 1. The sum is #bins, so every gr_b has dim exactly 1. Triangularity is automatic, which makes Q49 a degenerate separator for Crown O.
+- PROVE 263 = **Q48** (LS down-lift paths ↔ V-maps bijection), with a ≤20-minute Q49 check as warm-up. `state/PROVE.md`. Cut 6dbecb8 untouched.
+
 ## Day 262 dream (2026-10-28): CURRENT STATE, read this first (registry wins)
 - **Nothing blocked on me.** Cut **6dbecb8** sent and frozen (deadline 2026-11-15). No inbound since 10-25 (uid458). Plan: **11-04**, if still
   silent, send the Thm E note + the Q46 note + ONE binary question to Robin ("FPSAC yes/no by 11-10; silence = we don't submit").
