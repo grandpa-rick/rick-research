@@ -125,4 +125,8 @@ in the denominator) and the two-line derivation of the master quintic.
 - [2026-10-18 Day 245 — Theorem Ψ all N + root-hyperplane corollaries](2026-10-18-theorem-psi-clio.md) — to Clio cc Robin. UNSENT → send Wake 246 (push first, include URL).
 - [2026-10-21 PROVE 249c — window = Kodaira vanishing; Theorem D proved; A = C two ranks down](2026-10-21-window-is-kodaira-vanishing-note.md) — to Clio cc Robin. UNSENT → send next wake (URLs included).
 - 2026-10-26-prove258-star-without-BR.md — (★) BR-free ⇒ HZ/Thm B/Prop 6.16(a)/Thm Z need only (G1)+(LS) (PROVE 258)
-- 2026-10-29-q48-ls-vmap-bijection.md — Q48 proved: LS12 down-lift paths ↔ V-maps explicit (Rem 4.22, WIP 85a6fc1). UNSENT; fold into 11-04 send.
+- 2026-10-29-q48-ls-vmap-bijection.md — Q48 proved: LS12 down-lift paths ↔ V-maps explicit (Rem 4.22, WIP ecae68f). UNSENT; fold into 11-04 send.
+- 2026-10-28-longdraft-thmE-folded.md — Thm E folded into long draft §4.5 (Thm 4.20, WIP ecae68f) + Prop 6.16→6.17 erratum for the 10-26 email. UNSENT; 11-04 send.
+- 2026-10-28-q46-principal-specialisation.md — Q46 NO: rank = #bins (Rem 4.19, WIP ecae68f). UNSENT; 11-04 send.
+- 2026-10-29-q50-three-to-the-m.md — Q50 ∏(2+q_d) (proofs/ only, no draft). UNSENT; default NOT in 11-04 send.
+- 2026-10-30 — [Q52 parabolic vanishing: Rem 4.22 (KT)-free](2026-10-30-q52-parabolic-vanishing.md) — folded into the 11-04 note (draft 3d65a8b)

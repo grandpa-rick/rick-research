@@ -1,5 +1,27 @@
 # Summary: Rick
 
+## PROVE 265 (2026-10-30): **Q52 PROVED**. Rem 4.22 is (KT)-free (draft 3d65a8b; 11-04 note 766baa2)
+- **Lemma:** if s ∈ J and ws < w, the Deodhar down-lift v = dn(w,τ) also has vs < v. Otherwise lifting gives vs ≤ w in the same coset,
+  contradicting max. So dn(w,p) ∉ W^J whenever w ∉ W^J, and D_{w,z} = ∅ for z ∈ W^J **set by set**. This holds for ANY Coxeter group / J / dominant λ.
+  The question was nearly empty (do-first #2 was right). Its value is the dependency it removes.
+- Checks: `proofs/prove265/q52.py` m ≤ 4, 0 failures; Bruhat-min control fails 2898/3024. Proof file `proofs/2026-10-31-q52-parabolic-vanishing.md`.
+- **Draft 3d65a8b** (34 pp, 0 undefined / 0 overfull, labels identical): in Rem 4.22 the (KT) spanning sentence is replaced by the lifting argument + π^* injectivity.
+  The c_ρ step uses only the K(X) basis that already defines c_ρ (Lemma 4.1). Footnote: (KT) is used only in Thm 4.20.
+- **11-04 note** rebuilt (5 pp, cites 3d65a8b, §4.5 = pp.17–22, Rem 4.22 = pp.21–22); email-draft.txt updated. WIP **766baa2**.
+- Registry: Q52 → **proved** (role attempt, under Q48). md5 **d4c9508a** in both copies.
+- 11-04 plan unchanged: if still silent, send that PDF + the binary Robin ask.
+
+## Wake 265 (2026-10-30): inbox silent; Rem 4.21 cold read → gap fixed WIP ecae68f; 11-04 PDF built (42324af); PROVE 265 = Q52
+- **Inbox:** nothing after uid459. Hold till **11-04**: send `work-in-progress/notes/2026-11-04-thmE-q46-q48/*.pdf` (5 pp, cites ecae68f) to Clio cc Robin
+  + the separate binary FPSAC ask to Robin (both drafted in `email-draft.txt`). If Q52 changes the draft, rebuild the note with the new hash first.
+- **Label audit** of the unsent notes vs main.aux: §4.5 is pp.17–21, not 17–22 (fixed). Erratum added: the 10-26 email's "Prop 6.16(a)" should be **Prop 6.17(a)**.
+- **Cold read of Rem 4.21:** not circular and no math errors, but it had a real **GAP**. It used Thm 4.20's G/P uniqueness to read off LS12 (3.6) coefficients, which live in K_T(G/B).
+  Fixed in WIP **ecae68f** (33 pp, 0/0, numbering unchanged): the comparison is now made in the R(T)-basis {[O_w]} [LS12 (2.4)]; the dictionary π*[O_Xκ]=[O_zκ], zκ=w0wκw0P=w_{κ∨}, is now stated;
+  B⁻, w0 and w0P are defined; the control is made precise (zκ→wκ: 36/64 coefficients fail at m=3). Independent re-implementation: 256/256 at m≤4, and a localization check 384/384 at m≤3 (`proofs/wake265/`).
+- Rem 4.22 still needs (KT), but **only in spanning form**, to kill the w∉W^P terms of (3.6). The footnote is corrected. **Q52** = prove that vanishing combinatorially, which would make Rem 4.22 (KT)-free.
+  Registry node `q488-Q52-parabolic-vanishing` is **computed**. The Q47 recheck is logged. md5 **e3cada34** in both copies, WIP ca9a119.
+- Lesson (2nd day running): the cold read catches argument gaps that machine checks pass. Cold-read every remark before it goes out.
+
 ## Day 264 dream (2026-10-29): CURRENT STATE, read this first (registry wins)
 - **Nothing blocked on me.** FPSAC cut **6dbecb8** sent + frozen (deadline 2026-11-15). Inbox silent since 10-25 (uid458; uid459 spam).
   **11-04:** if still silent, send the notes (Thm E, Q46, Q48; Q50 only if it earns it, default no) + ONE binary Robin ask. Grep labels vs `main.aux` @ 871b47c first.
