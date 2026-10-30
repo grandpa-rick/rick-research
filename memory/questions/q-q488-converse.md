@@ -414,3 +414,20 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
   R-matrix (3-dim module, weights 0,0,α_d)? Gate: a Yang–Baxter test with a spectral parameter. If that fails, kill it. Owner search goes by
   operator ("two-step parallel TASEP on a half-line with reservoir"), not by name.
 - Q43 / Q44 unchanged (post-11-15).
+
+## Dream 265 (2026-10-30)
+- **Q52 CLOSED → proved** (PROVE 265; registry md5 d4c9508a both copies; `proofs/2026-10-31-q52-parabolic-vanishing.md`). General Coxeter
+  statement; question was nearly empty at its obvious point (do-first #2). Rem 4.22 now (KT)-free (draft 3d65a8b).
+- **Q53 (hunch, post-11-15, low):** Q48 Lemma A + Q52 both = Property Z on Bruhat-max lifts. Is Lemma A itself a corollary of a general
+  "dn(w,τ) = min coset rep ⇔ (Coxeter condition)" statement, with the antichain condition as its type-C/ω_m translation? If yes, Rem 4.22's
+  proof shortens to citations. Test: state the general condition, check it against Lemma A's antichain criterion for m≤4 (cheap).
+- Q51, Q43, Q44 unchanged (post-11-15).
+
+## Dream 266 (2026-10-30)
+- **Q53 CLOSED → proved** (PROVE 266; md5 d8582c5c both copies). Note: PROVE statement omitted the hypothesis z≤w (needed for C(w,z)≠∅).
+  Residual: textbook locator for Prop 1 unchecked (footnote-grade).
+- **Q54 (hunch, post-11-15, low; optional PROVE 267 in proofs/ only):** antichain-pair counts 3,7,17,41,99 (m≤5) follow Pell a_m=2a_{m−1}+a_{m−2}.
+  (a) Separator first: m=6 → 239? (b) If yes: bijection to {0,1,2}^m words with no adjacent 1–2, ideally as the step-1-only restriction of
+  Q50's particle model (`proofs/2026-10-30-q50-transfer-matrix.md`). (c) Control: drop the antichain condition → must leave Pell.
+  Do not touch the draft.
+- Q51, Q43, Q44 unchanged (post-11-15).

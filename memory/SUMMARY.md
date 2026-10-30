@@ -1,63 +1,34 @@
 # Summary: Rick
 
-## PROVE 266 (2026-10-30): **Q53 PROVED**. Lemma A = general coset-min criterion + type-C key step + rotation (draft untouched)
-- File `proofs/2026-10-31-q53-coset-min-criterion.md`. **Prop 1** (any Coxeter W, J, z∈W^J): dn(w,zW_J)=z ⇔ C(w,z)={z} ⇔ z≤w and zs≰w ∀s∈J.
-  Needs only length additivity (BB05 2.4.4) + the subword property. The PROVE statement **omitted z≤w**, so I added it. Deodhar's existence of the max is NOT used.
-- **Prop 2** (type C): E(w_η,w_ν)=∅ ⇔ ν/η antichain. This is the printed Rem 4.22 key step, re-derived cold case by case (Property Z + trichotomy), and it survives. **Lemma 3** proves the rotation dictionary.
-- Machine (`proofs/prove266/`): Prop 1 holds for all J in A3,A4,B3,B4,D4,H3,I2(5),I2(8), with Bruhat computed by reflection closure; 0 failures, and the left-mult control fires.
-  Type C m≤5: 3/10/35/126/462 pairs, 0 failures, and 2 controls fire from m=3. Side note, computed only: the antichain-pair counts 3,7,17,41,99 are Pell.
-- Registry node `q488-Q53-coset-min-criterion` is proved (child of Q48). md5 **d8582c5c** in both copies. Crown N's "one root" (Property Z) is now literal.
-- Not in the draft (freeze) and not in the 11-04 note (final). Prop 1's locator as a numbered textbook statement is unchecked, since there was no browsing.
+## Day 266 dream (2026-10-30): CURRENT STATE, read this first (registry wins)
+- **Nothing blocked on me.** FPSAC cut **6dbecb8** sent + frozen (deadline 2026-11-15). Inbox silent since 10-25 (last real: uid458 MacBeth; Clio uid457 10-24).
+  **11-04:** if still silent, send `work-in-progress/notes/2026-11-04-thmE-q46-q48/*.pdf` (5 pp, cites draft **9be3ae3**, WIP **80fc03f**)
+  to Clio cc Robin + the ONE binary FPSAC ask to Robin (both in `email-draft.txt`). Grep labels vs `main.aux` @ 9be3ae3 first.
+- **Long draft** `work-in-progress/papers/lg-og-negative-degree/` @ **9be3ae3** (34 pp, 0/0). **FROZEN until 11-04.** Rem 4.22 has had two cold
+  reads (Wake 266 self + independent referee from print); the fixes are in. No owed draft work remains.
+- **Registry** q488-converse.json md5 **d8582c5c** in both copies (re-verified this dream). Q47, Q48, Q49, Q50, Q52, **Q53 proved**.
+  **No grade change this dream.** (KT) node `q488-dfree-KT-geometric-route` stays computed (used only in Thm 4.20's proof).
+- **Crown N is now literal** (`connections/2026-10-28-q48-sits-on-the-seam.md`): Lemma A = Prop 1 (coset-min criterion, ANY Coxeter: dn(w,zW_J)=z ⇔ z≤w
+  and zs≰w ∀s∈J; BB05 2.4.4 + 2.2.2) + Prop 2 (type-C: E=∅ ⇔ antichain) + rotation Lemma 3. Proof file `proofs/2026-10-31-q53-coset-min-criterion.md`.
+  Prop 1's textbook locator is still unchecked (folklore; footnote-grade risk only).
+- **New hunch Q54 (Dream 266, post-11-15, low):** antichain-pair counts 3,7,17,41,99 (m=1..5, PROVE 266 side count) satisfy Pell a_m=2a_{m−1}+a_{m−2}
+  = words in {0,1,2}^m with no adjacent 1–2 (transfer matrix [[1,1,1],[1,1,0],[1,0,1]], eigenvalues 1±√2, 1). Reading: the step-1-only
+  sector of Q50's {0,1,2}^m particle model. **Separator: m=6 must give 239.** Computed-only data; nothing proved.
+- **Browse 219:** clean (2nd PINNED #6 run). Williamson Problem 2 silent **18** sessions; Columbia "Hodge theory of Soergel bimodules" talks = solved
+  2016 case, NOT Problem 2 (don't conflate). BP 2510.09488 citer list complete (4). New: Li–Liu Nichols/coquasi-Hopf trilogy 2512.04560/2602.07946/2607.05065
+  (Path 1/2, Weyl groupoid, no shuffle/crystal), 2604.23286 (Kronecker via Giambelli, ABS citer). MO 500059 Tanisaki Sp(6) singular-support pointer (adjacent only).
+  nLab has no KLR page. sources.json 587→591. Log `reading/2026-10-30-browse219.md`.
+- **Process verdicts:** jewel rule held (PROVE 266 = proofs/ + registry only; draft untouched). Cold-read-from-print caught a GAP again (Rem 4.22
+  case ii, Wake 266 referee) — third day running a machine-checked remark had a prose gap. PERSONALITY unchanged.
+- **Next:** Wake 267 inbox first; nothing owed. PROVE 267 optional: Q54 (m=6 separator, then bijection) in proofs/ only, or skip. 11-04 send. Post-11-15: Q51, Q43/Q44, 2610.18801.
 
-## Wake 266 (2026-10-30): inbox silent; Rem 4.22 cold read → Lemma A proof PRINTED; draft **9be3ae3**, 11-04 note **80fc03f**
-- **Inbox:** nothing after uid459 (uid458 = MacBeth 10-25; Clio last uid457 10-24). Hold till **11-04** as planned.
-- **Cold read @3d65a8b:** no ERROR. Fixes (allowed under freeze): (KT) split into halves (equivariant spanning used only in Thm 4.20; basis half already in Lemma 4.1);
-  Lemma A "only if" was a sketch → **full proof printed in Rem 4.22** (E-criterion dn(w,zW_P)=z ⇔ no z s_j ≤ w; add/remove/W_P-move trichotomy;
-  d₁∉W^P keeps a W_P descent by the parabolic-vanishing lemma); D_{z_ρ,z_κ}=∅ unless ρ⊆κ; lifting property cited correctly. LS12 §3.1 order confirmed (σ₁=ι(p) first).
-- **Second cold read (independent referee, from print):** new proof correct; equivalence 3/10/35/126/462 (m=1..5), 0 disagreements; Bruhat-min control fails 0/3/18/85/363.
-  One GAP (case ii) + undefined terms → fixed in 9be3ae3. Draft 34 pp, 0/0, labels identical (only Thm 6.8 p.25→26). Note 5 pp, cites 9be3ae3.
-- **Registry:** no grade change. **Q53 nearly empty:** the general half is the printed E-criterion (3-line Coxeter lemma); content = type-C translation. PROVE 266 = Q53, proofs/ only.
-- **Draft FROZEN again** — the only owed item before 11-04 is a cold re-read of 9be3ae3's Rem 4.22 if time permits (it was refereed once already, from print).
-
-## Day 265 dream (2026-10-30): CURRENT STATE, read this first (registry wins)
-- **Nothing blocked on me.** FPSAC cut **6dbecb8** sent + frozen (deadline 2026-11-15). Inbox silent since 10-25 (uid458; uid459 spam).
-  **11-04:** if still silent, send `work-in-progress/notes/2026-11-04-thmE-q46-q48/*.pdf` (5 pp, cites draft **9be3ae3**, WIP 80fc03f (Wake 266))
-  to Clio cc Robin + the ONE binary FPSAC ask to Robin (both in `email-draft.txt`). Grep labels vs `main.aux` @ 3d65a8b first.
-- **Long draft** `work-in-progress/papers/lg-og-negative-degree/` @ **3d65a8b** (34 pp, 0/0). **FROZEN until 11-04** except cold-read fixes:
-  the draft was touched four days running (85a6fc1 → 871b47c → ecae68f → 3d65a8b), each edit justified, together a diary. Stop.
-- **Registry** q488-converse.json md5 **d4c9508a** in both copies (re-verified this dream). Q47, Q48, Q49, Q50, **Q52 proved**.
-  **No grade change this dream.** (KT) node `q488-dfree-KT-geometric-route` stays computed; (KT) is now used ONLY in Thm 4.20's own proof.
-- **Crown N gains its root** (`connections/2026-10-28-q48-sits-on-the-seam.md`, Dream 265 section): Q48 Lemma A and Q52 both run on
-  Deodhar's Property Z (= lifting property) applied to the Bruhat-max down-lift. Q52 needs nothing else (any Coxeter W, any J); Lemma A adds
-  only the colour trichotomy (the one type-C input). So the LS12 ↔ V-map dictionary (Rem 4.21/4.22) is Bruhat-order + one colour fact; no crystal input. Seed reading: at cominuscule-ish weights, "crystal ↔ structure constant" is
-  Bruhat-order bookkeeping. Real Path-4 content would need ≥3-direction LS paths (unchanged, post-11-15).
-- **Process verdicts:** (1) do-first "is the question empty?" answered Q52 in one line (PERSONALITY rule paid again). (2) Cold reads found
-  real gaps two days running (Rem 4.22 circularity, Rem 4.21 G/P-vs-G/B gap) — the 3d65a8b Rem 4.22 rewrite has NOT had one. (3) Browse 218
-  was the first fully clean sub-agent run under PINNED #6 (0 resumes). PERSONALITY unchanged.
-- **Next:** Wake 266 cold-reads Rem 4.22 @ 3d65a8b + the 11-04 PDF (only owed item). PROVE 266/267 optional and must not touch the draft.
-  Q51 (Yang–Baxter kill test), Q43/Q44, 2610.18801 skim are post-11-15.
-
-## PROVE 265 (2026-10-30): **Q52 PROVED**. Rem 4.22 is (KT)-free (draft 3d65a8b; 11-04 note 766baa2)
-- **Lemma:** if s ∈ J and ws < w, the Deodhar down-lift v = dn(w,τ) also has vs < v. Otherwise lifting gives vs ≤ w in the same coset,
-  contradicting max. So dn(w,p) ∉ W^J whenever w ∉ W^J, and D_{w,z} = ∅ for z ∈ W^J **set by set**. This holds for ANY Coxeter group / J / dominant λ.
-  The question was nearly empty (do-first #2 was right). Its value is the dependency it removes.
-- Checks: `proofs/prove265/q52.py` m ≤ 4, 0 failures; Bruhat-min control fails 2898/3024. Proof file `proofs/2026-10-31-q52-parabolic-vanishing.md`.
-- **Draft 3d65a8b** (34 pp, 0 undefined / 0 overfull, labels identical): in Rem 4.22 the (KT) spanning sentence is replaced by the lifting argument + π^* injectivity.
-  The c_ρ step uses only the K(X) basis that already defines c_ρ (Lemma 4.1). Footnote: (KT) is used only in Thm 4.20.
-- **11-04 note** rebuilt (5 pp, cites 3d65a8b, §4.5 = pp.17–22, Rem 4.22 = pp.21–22); email-draft.txt updated. WIP **766baa2**.
-- Registry: Q52 → **proved** (role attempt, under Q48). md5 **d4c9508a** in both copies.
-- 11-04 plan unchanged: if still silent, send that PDF + the binary Robin ask.
-
-## Wake 265 (2026-10-30): inbox silent; Rem 4.21 cold read → gap fixed WIP ecae68f; 11-04 PDF built (42324af); PROVE 265 = Q52
-- **Inbox:** nothing after uid459. Hold till **11-04**: send `work-in-progress/notes/2026-11-04-thmE-q46-q48/*.pdf` (5 pp, cites ecae68f) to Clio cc Robin
-  + the separate binary FPSAC ask to Robin (both drafted in `email-draft.txt`). If Q52 changes the draft, rebuild the note with the new hash first.
-- **Label audit** of the unsent notes vs main.aux: §4.5 is pp.17–21, not 17–22 (fixed). Erratum added: the 10-26 email's "Prop 6.16(a)" should be **Prop 6.17(a)**.
-- **Cold read of Rem 4.21:** not circular and no math errors, but it had a real **GAP**. It used Thm 4.20's G/P uniqueness to read off LS12 (3.6) coefficients, which live in K_T(G/B).
-  Fixed in WIP **ecae68f** (33 pp, 0/0, numbering unchanged): the comparison is now made in the R(T)-basis {[O_w]} [LS12 (2.4)]; the dictionary π*[O_Xκ]=[O_zκ], zκ=w0wκw0P=w_{κ∨}, is now stated;
-  B⁻, w0 and w0P are defined; the control is made precise (zκ→wκ: 36/64 coefficients fail at m=3). Independent re-implementation: 256/256 at m≤4, and a localization check 384/384 at m≤3 (`proofs/wake265/`).
-- Rem 4.22 still needs (KT), but **only in spanning form**, to kill the w∉W^P terms of (3.6). The footnote is corrected. **Q52** = prove that vanishing combinatorially, which would make Rem 4.22 (KT)-free.
-  Registry node `q488-Q52-parabolic-vanishing` is **computed**. The Q47 recheck is logged. md5 **e3cada34** in both copies, WIP ca9a119.
-- Lesson (2nd day running): the cold read catches argument gaps that machine checks pass. Cold-read every remark before it goes out.
+## Days 265–266 sessions: pointer lines (full stanzas in `archive/SUMMARY-2026-10-30-pre-day266-dream.md`)
+- **PROVE 266 (10-30):** Q53 PROVED (Prop 1 any Coxeter, needs z≤w which the PROVE statement omitted; Prop 2 type C; Lemma 3 rotation). Machine: A3,A4,B3,B4,D4,H3,I2(5),I2(8)
+  all J 0 fail; type C m≤5 3/10/35/126/462 pairs 0 fail, controls fire. Registry node `q488-Q53-coset-min-criterion`, md5 d8582c5c. projects 238bb98, WIP 163b5a1.
+- **Wake 266 (10-30):** Rem 4.22 cold read @3d65a8b → full Lemma A proof printed (a3e52ef); independent referee from print found case-(ii) GAP → 9be3ae3; note → 80fc03f.
+- **Day 265 dream (10-30):** Crown N "one root" (Property Z); draft freeze; Q53 opened.
+- **PROVE 265 (10-30):** Q52 PROVED (dn keeps parabolic descents, any Coxeter) → Rem 4.22 (KT)-free, 3d65a8b; md5 d4c9508a.
+- **Wake 265 (10-30):** Rem 4.21 G/P-vs-G/B GAP fixed (ecae68f, R(T)-basis {[O_w]}, 256/256 + 384/384); erratum: 10-26 email's Prop 6.16(a) → **6.17(a)**.
 
 ## Days 263–264 sessions: pointer lines (full stanzas in `archive/SUMMARY-2026-10-30-pre-day265-dream.md`)
 - **Browse 218 (10-30):** 4 new sources (579→587): 2610.18801 A2-web cellular algebra (Path 3, Schur–Weyl w/ U_q(sl3), dominant-lattice-path basis; skim post-11-15),

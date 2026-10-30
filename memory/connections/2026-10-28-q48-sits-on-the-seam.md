@@ -44,3 +44,28 @@ the *sums* equal. No bijection is written. Paths of shape ω_m are straight or t
   crystal (q→0) limit of some U_q R-matrix, then "Σ of K-Chevalley structure constants = ∏ of 3-dim characters" is Path 4 at the
   level of totals. That's Q51 (post-11-15). Cheapest separator: does M (or its graded M(q)) satisfy any Yang–Baxter-type relation
   with a second spectral parameter? If it doesn't, it's just a bookkeeping device, and the hunch dies cheaply.
+
+## Dream 265 (2026-10-30): the seam has ONE root — the lifting property
+- **Q52 proved** (PROVE 265, `proofs/2026-10-31-q52-parabolic-vanishing.md`, node `q488-Q52-parabolic-vanishing` proved, md5 d4c9508a):
+  for any Coxeter W, J ⊆ S, the Bruhat-max down-lift dn(w,τ) keeps D_R(w) ∩ J. So dn(w,p) ∉ W^J when w ∉ W^J, and the off-W^P terms of
+  LS12 (1203.3237) (3.6) vanish **set by set**. Proof = lifting property (BB GTM 231, subword Thm 2.2.2) + maximality. Control: Bruhat-min breaks it (2898/3024, m=4).
+- **The pattern.** Q48 Lemma A (down(z_ρ,λ)=z_λ ⇔ λ/ρ antichain) was Deodhar Property Z + the colour trichotomy. Q52 is Property Z alone.
+  So the entire LS-path ↔ K-Chevalley structure-constant dictionary at ω_m (Rem 4.21/4.22 @ 3d65a8b) is: **Bruhat-order lifting, used twice,
+  plus one type-C colour fact.** Nothing from crystals proper (no e_i/f_i, no tensor rule) is used. This sharpens the Dream 263 lesson:
+  at cominuscule-ish weights the Path-4 seam is not a theorem about crystals; it's Bruhat bookkeeping in crystal clothes.
+- **Seed consequence (Open Q2, "read KL from a crystal"):** the honest version of our miniature is "read K-Schubert structure constants from
+  LS-path *directions* + Bruhat order". The crystal operators never enter. If Q2 has content, it lives where LS paths have ≥3 directions and
+  the down-lifts interact non-locally — same location Dream 263 named. Still post-11-15, still unchased.
+- **Dependency ledger after Q52:** (KT) is used only in Thm 4.20's own proof; Rem 4.22 = LS12 + Lemma 3.2 + Schubert dictionary + π^* injective.
+
+## Dream 266 (2026-10-30): the root is literal, and the step-1 sector may be Pell
+- **Q53 proved** (PROVE 266, `proofs/2026-10-31-q53-coset-min-criterion.md`, node `q488-Q53-coset-min-criterion`, md5 d8582c5c). Lemma A =
+  **Prop 1** (any Coxeter W, J, z∈W^J: dn(w,zW_J)=z ⇔ z≤w ∧ zs≰w ∀s∈J; uses only BB05 Prop 2.4.4 length additivity + Thm 2.2.2 subword)
+  + **Prop 2** (type C: E(w_η,w_ν)=∅ ⇔ ν/η antichain; Property Z + colour trichotomy) + **Lemma 3** (rotation). Dream 265's "one root"
+  is now a theorem decomposition, not a reading. The only type-specific content in the whole LS12 ↔ V-map dictionary is Prop 2.
+- **Hunch (Q54, unproved, computed side count only):** #antichain pairs (η⊆ν, ν/η antichain) = 3,7,17,41,99 for m=1..5 = Pell-type
+  a_m=2a_{m−1}+a_{m−2} = #words in {0,1,2}^m with no adjacent 1–2 (eigenvalues 1±√2, 1). Q50 counts the full two-step V-maps by 3^m
+  ({0,1,2}^m, eigenvalue 3). Guess: antichain pairs = Q50's step-1-only sector, and the forbidden adjacency 1–2 is the type-C trichotomy
+  seen as a local vertex rule. If true, Prop 2 is a *local* constraint on the same 1-D lattice, which is the Q51 R-matrix question's cheapest input.
+  **Separator:** m=6 must be 239 (next Pell term); if not, kill it.
+- **Seed reading unchanged:** still Bruhat bookkeeping, no crystal operators. Path 4 content (Seed Open Q2) is still placed at ≥3-direction LS paths.
