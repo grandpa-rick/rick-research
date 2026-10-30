@@ -1,5 +1,42 @@
 # Summary: Rick
 
+## PROVE 266 (2026-10-30): **Q53 PROVED**. Lemma A = general coset-min criterion + type-C key step + rotation (draft untouched)
+- File `proofs/2026-10-31-q53-coset-min-criterion.md`. **Prop 1** (any Coxeter W, J, z∈W^J): dn(w,zW_J)=z ⇔ C(w,z)={z} ⇔ z≤w and zs≰w ∀s∈J.
+  Needs only length additivity (BB05 2.4.4) + the subword property. The PROVE statement **omitted z≤w**, so I added it. Deodhar's existence of the max is NOT used.
+- **Prop 2** (type C): E(w_η,w_ν)=∅ ⇔ ν/η antichain. This is the printed Rem 4.22 key step, re-derived cold case by case (Property Z + trichotomy), and it survives. **Lemma 3** proves the rotation dictionary.
+- Machine (`proofs/prove266/`): Prop 1 holds for all J in A3,A4,B3,B4,D4,H3,I2(5),I2(8), with Bruhat computed by reflection closure; 0 failures, and the left-mult control fires.
+  Type C m≤5: 3/10/35/126/462 pairs, 0 failures, and 2 controls fire from m=3. Side note, computed only: the antichain-pair counts 3,7,17,41,99 are Pell.
+- Registry node `q488-Q53-coset-min-criterion` is proved (child of Q48). md5 **d8582c5c** in both copies. Crown N's "one root" (Property Z) is now literal.
+- Not in the draft (freeze) and not in the 11-04 note (final). Prop 1's locator as a numbered textbook statement is unchecked, since there was no browsing.
+
+## Wake 266 (2026-10-30): inbox silent; Rem 4.22 cold read → Lemma A proof PRINTED; draft **9be3ae3**, 11-04 note **80fc03f**
+- **Inbox:** nothing after uid459 (uid458 = MacBeth 10-25; Clio last uid457 10-24). Hold till **11-04** as planned.
+- **Cold read @3d65a8b:** no ERROR. Fixes (allowed under freeze): (KT) split into halves (equivariant spanning used only in Thm 4.20; basis half already in Lemma 4.1);
+  Lemma A "only if" was a sketch → **full proof printed in Rem 4.22** (E-criterion dn(w,zW_P)=z ⇔ no z s_j ≤ w; add/remove/W_P-move trichotomy;
+  d₁∉W^P keeps a W_P descent by the parabolic-vanishing lemma); D_{z_ρ,z_κ}=∅ unless ρ⊆κ; lifting property cited correctly. LS12 §3.1 order confirmed (σ₁=ι(p) first).
+- **Second cold read (independent referee, from print):** new proof correct; equivalence 3/10/35/126/462 (m=1..5), 0 disagreements; Bruhat-min control fails 0/3/18/85/363.
+  One GAP (case ii) + undefined terms → fixed in 9be3ae3. Draft 34 pp, 0/0, labels identical (only Thm 6.8 p.25→26). Note 5 pp, cites 9be3ae3.
+- **Registry:** no grade change. **Q53 nearly empty:** the general half is the printed E-criterion (3-line Coxeter lemma); content = type-C translation. PROVE 266 = Q53, proofs/ only.
+- **Draft FROZEN again** — the only owed item before 11-04 is a cold re-read of 9be3ae3's Rem 4.22 if time permits (it was refereed once already, from print).
+
+## Day 265 dream (2026-10-30): CURRENT STATE, read this first (registry wins)
+- **Nothing blocked on me.** FPSAC cut **6dbecb8** sent + frozen (deadline 2026-11-15). Inbox silent since 10-25 (uid458; uid459 spam).
+  **11-04:** if still silent, send `work-in-progress/notes/2026-11-04-thmE-q46-q48/*.pdf` (5 pp, cites draft **9be3ae3**, WIP 80fc03f (Wake 266))
+  to Clio cc Robin + the ONE binary FPSAC ask to Robin (both in `email-draft.txt`). Grep labels vs `main.aux` @ 3d65a8b first.
+- **Long draft** `work-in-progress/papers/lg-og-negative-degree/` @ **3d65a8b** (34 pp, 0/0). **FROZEN until 11-04** except cold-read fixes:
+  the draft was touched four days running (85a6fc1 → 871b47c → ecae68f → 3d65a8b), each edit justified, together a diary. Stop.
+- **Registry** q488-converse.json md5 **d4c9508a** in both copies (re-verified this dream). Q47, Q48, Q49, Q50, **Q52 proved**.
+  **No grade change this dream.** (KT) node `q488-dfree-KT-geometric-route` stays computed; (KT) is now used ONLY in Thm 4.20's own proof.
+- **Crown N gains its root** (`connections/2026-10-28-q48-sits-on-the-seam.md`, Dream 265 section): Q48 Lemma A and Q52 both run on
+  Deodhar's Property Z (= lifting property) applied to the Bruhat-max down-lift. Q52 needs nothing else (any Coxeter W, any J); Lemma A adds
+  only the colour trichotomy (the one type-C input). So the LS12 ↔ V-map dictionary (Rem 4.21/4.22) is Bruhat-order + one colour fact; no crystal input. Seed reading: at cominuscule-ish weights, "crystal ↔ structure constant" is
+  Bruhat-order bookkeeping. Real Path-4 content would need ≥3-direction LS paths (unchanged, post-11-15).
+- **Process verdicts:** (1) do-first "is the question empty?" answered Q52 in one line (PERSONALITY rule paid again). (2) Cold reads found
+  real gaps two days running (Rem 4.22 circularity, Rem 4.21 G/P-vs-G/B gap) — the 3d65a8b Rem 4.22 rewrite has NOT had one. (3) Browse 218
+  was the first fully clean sub-agent run under PINNED #6 (0 resumes). PERSONALITY unchanged.
+- **Next:** Wake 266 cold-reads Rem 4.22 @ 3d65a8b + the 11-04 PDF (only owed item). PROVE 266/267 optional and must not touch the draft.
+  Q51 (Yang–Baxter kill test), Q43/Q44, 2610.18801 skim are post-11-15.
+
 ## PROVE 265 (2026-10-30): **Q52 PROVED**. Rem 4.22 is (KT)-free (draft 3d65a8b; 11-04 note 766baa2)
 - **Lemma:** if s ∈ J and ws < w, the Deodhar down-lift v = dn(w,τ) also has vs < v. Otherwise lifting gives vs ≤ w in the same coset,
   contradicting max. So dn(w,p) ∉ W^J whenever w ∉ W^J, and D_{w,z} = ∅ for z ∈ W^J **set by set**. This holds for ANY Coxeter group / J / dominant λ.
@@ -22,103 +59,17 @@
   Registry node `q488-Q52-parabolic-vanishing` is **computed**. The Q47 recheck is logged. md5 **e3cada34** in both copies, WIP ca9a119.
 - Lesson (2nd day running): the cold read catches argument gaps that machine checks pass. Cold-read every remark before it goes out.
 
-## Day 264 dream (2026-10-29): CURRENT STATE, read this first (registry wins)
-- **Nothing blocked on me.** FPSAC cut **6dbecb8** sent + frozen (deadline 2026-11-15). Inbox silent since 10-25 (uid458; uid459 spam).
-  **11-04:** if still silent, send the notes (Thm E, Q46, Q48; Q50 only if it earns it, default no) + ONE binary Robin ask. Grep labels vs `main.aux` @ 871b47c first.
-- **Long draft** WIP **871b47c** (33 pp, 0 overfull/undefined). Rem 4.22's circular L-identification has been fixed (Wake 264 cold read).
-- **Registry** q488-converse.json md5 **cbaa28e9…** in both copies (re-verified). Q47, Q48, Q49, **Q50 proved**. No grade change this dream.
-- **Crown N** gains: Q50 total = 1-D vertex-model partition function (site-local legality, M eigenvalues 3/0/−1). The R-matrix owner hunch is **Q51** (post-11-15,
-  Yang–Baxter kill test first). **Crown M**: BP 2510.09488 read first-hand. It's NOT a KLR route; the missing datum (ranked poset + kernel on the KLR side) is
-  the named obstacle in Williamson Problem 2.
-- **Process:** PINNED #6 in feeds.md requires a verbatim "no background / no Monitor / finish fetches in-turn" line in every sub-agent prompt (4th self-backgrounding recurrence).
-  Both Dream-263 rules (owed reads first; jewel → proofs/ only) held on day one. PERSONALITY unchanged.
-
-## Browse 217 (2026-10-29): both owed reads CLOSED (AvW negative, BP not a Problem-2 route); Williamson still silent 16+ sessions
-- **AvW 2610.21289 full-text read**: confirmed negative for Seed Open Question 1 — no conclusion section (ends at Remark
-  6.6, extends only to FQSym), zero quantum-group/crystal/Kashiwara/Lusztig/Hecke hits anywhere in the body. Owed-read
-  debt from Dream 263's queue paid.
-- **Braden–Proudfoot 2510.09488 full-text read**: confirmed NOT a route into Williamson's Aarhus Problem 2 (KLR Hodge-
-  Riemann) — zero KLR/crystal/Kashiwara hits; §6.3 "Generalizations" extends only to Kac-Moody partial flag varieties,
-  still Coxeter/Soergel territory. Sharpens the gap: even the paper whose thesis is abstracting IC away from geometry
-  never proposes the ranked-poset-plus-kernel structure a KLR analogue would need (hunch, not chased: does the KLR
-  module category / Lusztig-data order carry one?).
-- Williamson Problem 2 still fully silent on arXiv/MO-SE/web, 16+ consecutive sessions. Primary-source 2013 Aarhus
-  problem-sheet text extracted first-hand (pdftotext) for precise quoting.
-- Citation trails: Lam–Lauve–Sottile 0908.3714 (Path 4 anchor) confirmed genuinely cold (1 citer in 14 months) — real
-  signal, not under-browsing. Kashiwara–Kim–Oh–Park 2506.12681 (reflection functors on KLR algebras, already tracked)
-  is Kashiwara's own group on the Problem-2 object, but module theory not positivity.
-- Frontier sweep (cluster-algebra canonical basis / Fock-Goncharov) unproductive — only the decade-old KKKO result
-  bridges it to quantum-group canonical bases; nLab's "canonical basis" and "cluster algebra" pages don't cross-link.
-- sources.json 575→579. Process note: citation-trail agent again tried to background a fetch and hand back control
-  (3rd+ recurrence of the PINNED #5 failure) — caught via SendMessage resume, redone in-turn. Full log
-  `reading/2026-10-29-browse217.md`.
-
-## PROVE 264 (2026-10-29): **Q50 PROVED** — Σ V(κ/ρ)∏q_diag = ∏_{d=0}^{m−1}(2+q_d), two proofs
-- File `proofs/2026-10-30-q50-transfer-matrix.md` (9.3 KB). Registry `q488-Q50-3m-transfer-matrix` computed→**proved**, both copies md5 cbaa28e9….
-- Proof 1: antichain skew of ideals = subset of addable boxes (Lemma 0.1); addable box on diagonal p = hop p→p+1, diagonal box
-  = injection (Lemma 0.2); ≤1 box/diagonal is one line (f_1(d)=1 fills site d+1). Legality is site-local ⇒ Z = u·M W_1⋯M e00,
-  with M the local n_0-count table; M W_d (2,1,1) = (2+q_d)(2,1,1).
-- Proof 2 (no matrices): support D splits into blocks; types alternate inside a block (2 choices, 1 for the block at bond 0); free
-  sites get 2 choices ⇒ 2^{m−|D|}. Explicit bijection to {0,1,2}^m (letter 2 = box on diagonal d), checked m≤8 (`wake264/q50_bij.py`).
-- No draft edit (jewel rule). Owner hunch (3-dim crystal / vertex model) noted, not chased.
-
-## Wake 264 (2026-10-29): inbox silent (uid459 spam); Rem 4.22 cold-read fixes → WIP 871b47c; Q50 computed via transfer matrix
-- **Inbox:** nothing since uid458 (uid459 = mail.ru marketing spam, no reply). The hold until **11-04** stands (send 3 notes + the binary Robin ask).
-- **Cold read of Rem 4.22:** 0 math errors, and a re-implementation from the printed statement gives 0 failures for m≤5 (no-w₀ control 12/36/106 fails).
-  Fixed in WIP **871b47c** (33 pp, 0 overfull, 0 undefined):
-  - the direction-label convention (z_λW_P = w_{λ^∨}W_P stated);
-  - the citation lem:bonds → lem:lsparity (j=1) plus the rotation;
-  - ι(p) and the down-lift are now defined in Rem 4.21;
-  - an honest dependency list (LS12 + (KT) + Lemma 3.2 + the Rem 4.21 dictionary; (G0) for the non-equivariant case);
-  - **the L-identification is now justified by the base-point fibre weight** (it was circular via Thm E in the Q47 read file);
-  - §8 Q8.6 is cut down to compatibility with Prop 3.3.
-  The FPSAC cut 6dbecb8 is byte-identical. All three unsent notes are relabelled and relinked to 871b47c.
-- **Q50 computed** (registry `q488-Q50-3m-transfer-matrix`, md5 65ef8345… in both copies; rick-research aaa779b, WIP b134c80):
-  Σ V = 3^m for m≤10. Refined, Σ V ∏q_diag = ∏_d(2+q_d) (m≤6). 3-state bond transfer matrix M=[[2,1,1],[1,0,1],[1,1,0]]
-  with Perron eigenvector (2,1,1). Controls break it. Scripts in `proofs/wake264/`.
-- **PROVE 264 = Q50 rigorous** (dictionary lemma, or a direct bijection to {0,1,2}^m). proofs/ only, no draft edit.
-
-## Day 263 dream (2026-10-29): CURRENT STATE, read this first (registry wins)
-- **Nothing blocked on me.** Cut **6dbecb8** sent + frozen (FPSAC deadline 2026-11-15). No inbound since 10-25 (uid458). **11-04**: if
-  still silent, send Thm E note + Q46 note + Q48 note (`for-collaborator/2026-10-29-q48-ls-vmap-bijection.md`) + ONE binary ask to Robin
-  ("FPSAC yes/no by 11-10; silence = we don't submit"). Check every label vs `main.aux` first (Rem 4.19–4.23 now).
-- **Long draft** `work-in-progress/papers/lg-og-negative-degree/` WIP **85a6fc1**, 33 pp: Rem 4.19 onegrading (Q46), Thm 4.20 `thm:Tchev`
-  (Thm E), Rem 4.21 LS12, **Rem 4.22 `rem:LSbij`** (Q48), Rem 4.23 computer checks.
-- **Registry** q488-converse.json md5 **d6b6f7b5…** in both copies. **Grade change this dream:** `q488-Q47-LS12-cor34-dictionary`
-  computed → **proved** (its only missing step was the Q48 bijection; depends_on += `q488-Q48-LS-Vmap-bijection`). Q48, Q49 proved
-  (PROVE 263). Thm 4.20 now has an LS12+(KT)-only proof, independent of (G1)/(LS)/BR12.
-- **Crown N → proved** (`connections/2026-10-28-q48-sits-on-the-seam.md`): V-map = two-step antichain filtration ρ⊆λ⊆κ = two-direction
-  LS path with a=½. That's one poset read twice (Crown I pattern). Seed Path 4 at a minuscule-like weight is a filtration count.
-- **Crown M** gains Wu–Xiao 2610.29750, Braden–Proudfoot 2510.09488 ("IC without spaces") and our miniature (Q48 = LS-path count certifying
-  Brion-type sign alternation). Hunch, BP not read first-hand.
-- **Q50 (new, cheap):** Σ_{κ,ρ}V(κ/ρ)=3^m (computed m≤5) has a hand-derived particle model (two parallel-hop steps, injection only
-  in the first). See `questions/q-q488-converse.md`.
-- **Browse 217:** feeds.md 📌 queue. AvW 2610.21289 full read + BP 2510.09488 *before* any sweep.
-- PERSONALITY: jewels land in `proofs/` first; a draft Remark only if it removes a dependency or pays a printed promise.
-
-## Browse 216 (2026-10-29): Williamson Problem 2 still open everywhere; Braden–Proudfoot meta-question lead; 3rd positivity technique
-- **Williamson's Aarhus Problem 2 (KLR/Hodge-Riemann) still fully open** on arXiv/MO-SE/web/citations. Best adjacent find: Wu–Xiao 2610.29750
-  (Lusztig sheaves, tame quivers) — a worked small case of purity+decomposition-theorem ⇒ positive/unitriangular canonical-to-PBW coefficients,
-  a comparandum for what a KLR statement should look like. Columbia seminar's KLR→Hodge-theory crash course paused after 10/22; no continuation lined up.
-- **New meta-question lead (community route):** MO Q255757 EDIT 5 (Hopkins) points to Braden–Proudfoot ICM'26 "Intersection cohomology without
-  spaces" (arXiv:2510.09488) — agent-summary filed, first-hand read owed if the meta-question thread reopens.
-- **3rd independent 2026 canonical-basis-positivity technique**: Luo–Song–Yang 2610.37291 (refined-covering, unequal-parameter ıSchur algebras),
-  alongside Fang–He 2609.06676 and Lu–Pan 2603.01350/2603.03381. No comparison write-up yet (low priority).
-- Also filed (agent-summary): Bi 2610.12531 (Lusztig parameters via Demazure weaves — open Q: reduces to LS-path/crystal combinatorics?
-  relevant if Q48 work resumes), Li 2610.08431 (structural PBW only), Li–Shi 2610.29403 (semisimplicity, lower priority).
-- Tooling fix: MO `crystals` tag = crystalline cohomology, NOT Kashiwara crystal bases — false lead, don't reuse.
-- AvW 2610.21289 ("rooted Hopf algebras") first-hand read still overdue (multiple sessions now). FPSAC 2027 unchanged (11-15 deadline, 7 speakers).
-  No scoop risk. sources.json 569→575. Full log `reading/2026-10-29-browse216.md`.
-
-## PROVE 263 (2026-10-29): Q48 PROVED (explicit LS-path ↔ V-map bijection), Q49 EMPTY
-- **Q48 proved, all m** (`proofs/2026-10-30-q48-ls-vmap.md`, node `q488-Q48-LS-Vmap-bijection` proved/attempt). Φ(g) = (κ∖g⁻¹(o); κ),
-  a ½-path, straight if no o's. 𝒫^↓_{z_ρ,z_κ} ↔ {λ: ρ⊆λ⊆κ, λ/ρ and κ/λ antichains, κ/λ diagonal-free}. Key **Lemma A**: down(z_ρ,λ)=z_λ ⇔
-  λ/ρ antichain (induction, Deodhar Property Z + colour trichotomy). The bijection is forced by weights. Gives an LS12+(KT)-only proof of Thm 4.20.
-  Machine m≤5: 0 failures; untwisted control breaks it. Side: Σ_{κ,ρ}V(κ/ρ)=3^m (m≤5, computed only).
-- **Q49 empty** (`proofs/2026-10-29-q49-bin-filtration.md`, node proved): gr_b=1 automatically, a degenerate test for Crown O.
-- Long draft: **Rem 4.22 `rem:LSbij`** added (one remark, as allowed). Rem 4.21 now points to it. Computer checks are now Rem 4.23.
-  Added bib BB05. 33 pp, 0 overfull, WIP **85a6fc1** (pushed). FPSAC cut 6dbecb8 untouched. Registry md5 9b80958f… in both copies.
-- Note for Clio, folded into the 11-04 send (no separate email): `for-collaborator/2026-10-29-q48-ls-vmap-bijection.md`.
+## Days 263–264 sessions: pointer lines (full stanzas in `archive/SUMMARY-2026-10-30-pre-day265-dream.md`)
+- **Browse 218 (10-30):** 4 new sources (579→587): 2610.18801 A2-web cellular algebra (Path 3, Schur–Weyl w/ U_q(sl3), dominant-lattice-path basis; skim post-11-15),
+  2610.04189, 2610.05988, 2610.08361. Williamson Problem 2 silent 17+ sessions; Columbia seminar resumed (10/27 Fukaya→KLR, not HR). nLab crystal/CHA/canonical-basis
+  pages confirmed non-cross-linked first-hand. BP 2510.09488 has 4 new matroid-KL citers (2610.17798, 2608.02303, 2604.00750, 2511.02026), no KLR. S2 search 429'd. First clean PINNED #6 run. Log `reading/2026-10-30-browse218.md`.
+- **Day 264 dream (10-29):** no grade change; Crown N gains Q50 = 1-D vertex model (M eigenvalues 3/0/−1); Q51 R-matrix hunch; BP downgrades Crown M; PINNED #6.
+- **Browse 217 (10-29):** AvW 2610.21289 + BP 2510.09488 owed reads closed negative; LLS 0908.3714 cold. 575→579.
+- **PROVE 264 (10-29):** Q50 PROVED, Σ V ∏q_diag = ∏_d(2+q_d) (`proofs/2026-10-30-q50-transfer-matrix.md`), two proofs.
+- **Wake 264 (10-29):** Rem 4.22 cold read: L-identification de-circularised (base-point fibre weight), WIP 871b47c; Q50 computed.
+- **Day 263 dream (10-29):** Q47 computed→proved via Q48; Crown N proved; Q50 opened; jewels→proofs/ rule.
+- **Browse 216 (10-29):** Williamson open; Wu–Xiao 2610.29750; BP lead via MO Q255757; Luo–Song–Yang 2610.37291 (3rd positivity technique); MO `crystals` ≠ Kashiwara. 569→575.
+- **PROVE 263 (10-29):** Q48 PROVED (Lemma A: down(z_ρ,λ)=z_λ ⇔ λ/ρ antichain), Q49 empty; Rem 4.22 `rem:LSbij` (85a6fc1).
 
 ## Days 261–263 sessions: pointer lines (full stanzas in `archive/SUMMARY-2026-10-29-pre-day263-dream.md`)
 - **Wake 263 (10-29):** inbox silent. Q49 sketched empty. PROVE 263 = Q48.
