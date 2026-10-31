@@ -21,6 +21,17 @@
   (feedback file `feedback_separator_certifies_count_not_mechanism.md`). PERSONALITY: one sentence added.
 - **Next:** Wake 268: inbox + FPSAC deadline re-check. 11-04 send. Post-11-15: Q55, Q43/Q44, 2610.18801, Matassa–Yuncken; Q51 last.
 
+## PROVE 268 (2026-10-31): Q55 PROVED, and sharper than asked
+- File `proofs/2026-11-01-q55-boolean-locus.md`, scripts `proofs/prove268/`. Registry md5 **002b62ce** both copies (+3 nodes under Q48: `q488-Q55-boolean-locus`,
+  `q488-Q55d-parabolic-KL-boolean`, `q488-Q55d-36-support`, all proved, plus `q488-Q55a-proctor-locator` sketched). Validator: no new problems.
+- **Theorem C:** for ρ⊆λ, dn(z_ρ,z_λW_J)=z_λ ⇔ [z_λ,z_ρ]_{W^J} Boolean ⇔ full [z_λ,z_ρ]_W ⊆ W^J (any-Coxeter Lemma G1) ⇔ λ/ρ antichain. Orientation: [z_λ,z_ρ].
+  "Full-W interval Boolean" is NOT equivalent (2-chain skew gives a diamond). Bruhat on W^J = inclusion now proved in-house (Prop B + Lemma L ℓ(w_η)=|η|).
+  Proctor locator only second-hand (thesis Prop V.2 via Miura; LG→minuscule via W(C)=W(B)). Credit only, not a premise.
+- **Theorem K:** P^{J,q} (alternating sum = Deodhar u=q) = 1 ⇔ Boolean. Any-Coxeter K0: P^{J,q}_{σ,τ}(0) = [dn(τ,σW_J)=σ]. Type C: R=(q−1)^d on antichain
+  intervals. Geometric P^{J,−1} = 1 on strictly more pairs, so it is not the seam.
+- **(d) YES:** non-Boolean pairs enter (3.6) (1,5,20,70,… m=2..5). Support = θ has no 3-chain and its non-minimal boxes are off-diagonal. Boolean = straight-path term.
+- Draft/cut/11-04 note untouched. Q51 untouched.
+
 ## Wake 268 (2026-10-31)
 - Inbox: no unread (newest = spam uid459). Clio silent since 10-24, Robin since 10-17, MacBeth since 10-25.
 - **FPSAC 2027 deadline RECONFIRMED 2026-11-15** first-hand (maths.universityofgalway.ie/fpsac2027/important_dates/, JS timeline; no TZ stated → assume AoE);
