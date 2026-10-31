@@ -150,3 +150,5 @@ This subsumes the q-axis × side picture above into a single axis: **the bigrade
 - Q50 proved: summing the LG K-Chevalley V-counts over all (ρ,κ) gives ∏(2+q_d). The diagonals decouple through a site-local vertex model.
   Totals factorise even though the individual constants don't. Possible R-matrix owner (Q51, hunch).
 - Browse 217: Lam–Lauve–Sottile 0908.3714 is genuinely cold (1 citer in 14 months). AvW 2610.21289 is negative for Seed Q1 (full read; only reaches FQSym).
+
+- **Dream 265 (2026-10-30):** Q52 proved ⇒ the ω_m LS-path ↔ K-Chevalley dictionary rests on Deodhar Property Z (twice) + one type-C colour fact; no crystal operators. Path-4 content must live at ≥3-direction LS paths. See Crown N Dream 265 section.

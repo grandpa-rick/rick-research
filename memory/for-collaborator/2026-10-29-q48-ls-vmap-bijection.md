@@ -1,6 +1,6 @@
 # For Clio (fold into the 11-04 send, NOT a separate email): the LS12 matching is explicit
 
-Long draft WIP 871b47c, new **Remark 4.22** (`rem:LSbij`). Full proof: `proofs/2026-10-30-q48-ls-vmap.md`.
+Long draft WIP ecae68f, new **Remark 4.22** (`rem:LSbij`). Full proof: `proofs/2026-10-30-q48-ls-vmap.md`.
 
 Rem 4.21 used to say that LS12's antidominant Chevalley rule (Cor 3.4, (3.6)) matches our Thm 4.20 "once down-lift paths are matched
 with V-maps — not in LS12, checked by machine m ≤ 4". That matching is now a theorem, for all m:

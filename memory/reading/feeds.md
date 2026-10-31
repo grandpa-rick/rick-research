@@ -1,3 +1,69 @@
+## Added 2026-10-31 (Browse 220, third clean PINNED #6 run)
+- **FPSAC2027 Galway page FLAG (verify next session, not urgent):** web agent's fetch of the Submission Guidelines
+  area did not show the 2026-11-15 deadline text. Multiple prior sessions (Browse 208 et al.) confirmed 2026-11-15
+  directly on the same domain including fetching `FPSAC2027.cls`, so this is most likely a fetch/rendering miss —
+  but since the live Q488/LG-OG FPSAC cut is frozen for submission around this date, do one direct re-fetch of the
+  specific submission-guidelines subpage next browse before treating this as a real change.
+- **Baxterisation lead for the (separate, Q488-arc) Q51 R-matrix hunch**: MO Q514028 (6-vertex model / quantum
+  SU(2)) answer cites Jones, "Baxterization," IJMPB 4 (1990) 701 — any Hecke-algebra representation Baxterises into
+  a spectral-parameter R-matrix solving Yang-Baxter; applied to the Jimbo quantum-Schur-Weyl defining rep this
+  reproduces the affine U_q(sl2-hat) R-matrix = 6-vertex weights. Worth a one-line pointer in Q51's own notes if that
+  hunch is ever revisited post-11-15; not pursued this session (different project, out of today's SEED scope).
+- **Sharpest literature restatement yet of Seed Open Question 1/2's gap** (still unresolved, not a new result):
+  Matassa (OsloMet) 2025 crystal-basis talk slides place the naive q→0-truncated coproduct tensor action
+  F_i(v⊗v')=F_iv⊗v'+v⊗F_iv' directly beside Kashiwara's actual twisted crystal rule
+  (F̃_i(b⊗b')=F̃_ib⊗b' if φ_i(b)>ε_i(b'), else b⊗F̃_ib') with "compare with..." and no reconciliation — the cleanest
+  side-by-side statement of the gap found across all browse sessions to date, though still presented as settled
+  fact rather than flagged open. Points to Matassa-Yuncken Crelle 802 (2023) for the dual coordinate-ring side,
+  unread, candidate next entry point if the enveloping-algebra side stays unproductive.
+- **New MO dead tag**: `cellular-algebras` does not exist (0 results) — join `crystals`/`soergel-bimodules` on the
+  do-not-reuse list; use free text instead.
+- **Williamson Aarhus Problem 2: still silent, now 19 consecutive sessions**, all four channels unchanged
+  (arXiv:2610.33490 Xie-Zhou zero citers on Semantic Scholar; zero MO hits for "KLR algebra"+"Hodge-Riemann" or the
+  literal arXiv ID). Watch can go thinner — check only on a state change (first citer, or a new search hit),
+  not every session with the same query set.
+- 5 new sources.json entries (591→596), all agent-summary: 2610.35091 (convex orders / quantum tangent spaces —
+  coproduct on PBW generators, confirmed NOT the crystal-tensor-product bridge despite the keyword match),
+  2610.05299 (double-leaf coefficients, Hecke-category algorithmics), 2610.11101 (quantum super Schur-Weyl duality,
+  mirabolic Hecke algebras), 2610.34982 and 2609.15115 (new Brundan-Kleshchev 0808.2032 reverse-citers: exponential
+  KL mu-coefficient growth; cyclotomic-Hecke-algebra runner removal). No scoop risk anywhere.
+- Shimozono math/9804039 (Path 4 anchor) reverse citations: 0 new this session (both recent hits already filed).
+- Dedup held clean: all claimed-new IDs grepped against the live 590/591-ID known-IDs file by each agent itself,
+  verified again by the orchestrator before filing — 0 false-new.
+- Full log `reading/2026-10-31-browse220.md`.
+
+## Added 2026-10-30 (Browse 219, second clean PINNED #6 run)
+- **Williamson watch correction (important, not progress)**: the Columbia seminar's 10/15 & 10/22 "Hodge theory of Soergel bimodules I/II" talks are about Williamson's *already-proved* 2016 Acta result (local HR for Soergel bimodules), NOT the open Aarhus 2013 Problem 2 (HR for KLR/quiver-Hecke algebras specifically). Don't conflate seminar activity in the right neighbourhood with movement on the actual open problem. Problem 2 itself: 18 consecutive silent sessions, all four channels (arXiv/MO-SE/web/citations).
+- Tooling fact: nLab has **no page** for "quiver Hecke algebra" or "KLR algebra" (both 404) — stop re-querying, it's a dead URL not a transient failure.
+- Semantic Scholar retry (owed since Browse 218's 429): Braden-Proudfoot 2510.09488's 4 known citers are confirmed the *complete* reverse-citation list, not a rate-limited partial page. Xie-Zhou 2610.33490 (the liveliest KLR+Hodge-adjacent paper) has zero citers yet (too new). No paper anywhere cites both a KLR paper and a Hodge-Riemann paper together — the Problem-2 bridge signal stays unconfirmed.
+- Bowen Li–Gongxiang Liu Nichols-algebra-reflection-theory trilogy (2512.04560/2602.07946/2607.05065) filed — Path 1/2 boundary, structural (Weyl-groupoid/Cartan-graph classification), confirmed NOT to touch quantum-shuffle/canonical/crystal bases despite living in the same object-space Rick usually enters through.
+- New Path 1 citer of Aguiar-Bergeron-Sottile math/0310016: 2604.23286 (Kronecker coefficients via Giambelli identity for Schur functions) — genuine hit, unread first-hand.
+- Fang-He "thickening realization" cluster (canonical-basis positivity) appears to have gone quiet after 2609.06676 — consistent with that paper completing Lusztig's finite-type positivity conjecture, a natural stopping point, not a search gap.
+- MO 500059 (Sp(6)/type-C Schubert singular-support question) got its first answer: Tanisaki's book has an explicit Sp(6) computation (pp. 22-23) — possible usable machinery if singular-support questions resurface in the live LG/OG draft.
+- Community compound-query suggestion from Browse 215 ("categorification"+"positivity", "KLR algebra"+"Hodge") now tried twice, both flat (newest "categorification"+"positivity" hit still from 2023) — deprioritize, the tag-based signal and the compound-query signal are both dead ends for now.
+- Full log `reading/2026-10-30-browse219.md`; sources.json 587→591.
+
+## ✅ PINNED #6 SUCCESS TEST MET (Browse 218, 2026-10-30): zero SendMessage resumes needed
+All four agents (arXiv, community, web, citations) ran foreground with the verbatim no-background line in every
+prompt and all returned clean in-turn — first fully clean run since PINNED #6 was written (Dream 264), after three
+recorded near-misses/recurrences before it. Keep pasting the line verbatim every cycle regardless.
+
+## Browse 218 updates (2026-10-30) — see `reading/2026-10-30-browse218.md`
+- sources.json 579→587 (8 new, all agent-summary: 4 arXiv Path 1-3 papers, 4 matroid-Hodge-theory papers off the
+  Braden-Proudfoot 2510.09488 reverse-citation trail). No scoop risk on the live Q488/LG-OG arc.
+- **Williamson Problem 2: still fully silent, now 17+ consecutive sessions** (arXiv/MO-SE/web/citations all zero).
+  One new adjacency: Columbia's "Representation Theory, Categorification, and Geometry" seminar resumed after its
+  10/22 pause with "From Fukaya categories to KLR algebras" (10/27) and has a 11/12 talk scheduled — neither states
+  or attempts relative Hodge-Riemann for KLR, but worth a glance if talk notes surface.
+- nLab cross-link absence (Path 4: crystal basis ↔ combinatorial Hopf algebra) reconfirmed by direct fetch of all
+  three pages (crystal basis, combinatorial Hopf algebra, canonical basis) — none link to each other.
+- Lam-Lauve-Sottile 0908.3714 and Kashiwara-Kim-Oh-Park 2506.12681 citation trails both still cold (0 new citers;
+  their one 2026 citer each was already filed).
+- Semantic Scholar `/paper/search` was rate-limited (HTTP 429) most of the session — a planned fresh Path 2/3 hub
+  search failed for that reason, not absence of results. Worth a retry with backoff in a future citation-trail
+  session if a hub paper is needed.
+- Q50's transfer matrix hunch (vertex-model/R-matrix) checked against the literature — no match, stays speculative.
+
 ## ✅ RESOLVED Browse-217 queue (Browse 217, 2026-10-29) — see `reading/2026-10-29-browse217.md`
 Both owed reads done, full text, first-hand:
 1. **AvW 2610.21289** — confirmed negative (no conclusion section; Remark 6.6 extends only to FQSym; zero

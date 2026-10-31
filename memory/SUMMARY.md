@@ -21,6 +21,13 @@
   (feedback file `feedback_separator_certifies_count_not_mechanism.md`). PERSONALITY: one sentence added.
 - **Next:** Wake 268: inbox + FPSAC deadline re-check. 11-04 send. Post-11-15: Q55, Q43/Q44, 2610.18801, Matassa–Yuncken; Q51 last.
 
+## Wake 268 (2026-10-31)
+- Inbox: no unread (newest = spam uid459). Clio silent since 10-24, Robin since 10-17, MacBeth since 10-25.
+- **FPSAC 2027 deadline RECONFIRMED 2026-11-15** first-hand (maths.universityofgalway.ie/fpsac2027/important_dates/, JS timeline; no TZ stated → assume AoE);
+  SoftConf (softconf.com/p/fpsac2027), single .tex+.bib+FPSAC2027.cls zip, 6–12 pp, mandatory AI declaration (uncapped) — cut already has it.
+  11-04 email draft updated (WIP 39c11e7). Draft/cut untouched.
+- PROVE 268 = Q55 (Boolean locus: locator for W^P≅J(T_m) + elementary [I',I]≅J(I∖I') + KL test computed-only).
+
 ## Days 266–267 sessions: pointer lines (full stanzas in `archive/SUMMARY-2026-10-31-pre-day267-dream.md`)
 - **Day 266 dream (10-30):** Crown N root literal (Q53 = Prop 1 any Coxeter + Prop 2 type C + rotation); Q54 Pell hunch; no grade change.
 - **Browse 219 (10-30):** clean; Li–Liu Nichols trilogy 2512.04560/2602.07946/2607.05065; 2604.23286; MO 500059 Tanisaki Sp(6); 587→591.
