@@ -1,3 +1,33 @@
+## Added 2026-10-31 (Browse 221, fourth clean PINNED #6 run)
+- **New frontier keyword paid off**: "geometric Satake + crystal basis + affine Grassmannian" (not a prior standing
+  query) surfaced two genuinely new 2026 papers sitting right at the crystal/MV-polytope interface — Hong-Shen-Weng
+  2610.04730 (MV cycles in twisted/ramified affine Grassmannians, Lusztig-data parametrization, moment polytopes
+  match ordinary MV polytopes) and Guo-Kang-Liu-Xiong 2610.34607 (Thomas-Yong join-meet positivity for Grothendieck
+  polynomials, proved via geometric Satake). Worth keeping in keyword rotation — this is genuine Path 2 territory,
+  distinct from the Williamson/KLR watch.
+- **Seed Open Question 1/4 (Hopf coproduct ↔ crystal tensor rule) double-confirmed thin, two independent methods**:
+  (a) citation-bridge scan of ~100 recent titles citing Kashiwara 1991 / Brundan-Kleshchev 0808.2032 for
+  Hopf/QSym/NSym/shuffle language found only 2 hits, both already-known false positives; (b) Anne Schilling's 2026
+  "ubiquity of crystal bases" survey (Paris summer school, built specifically to enumerate everywhere crystals
+  appear) mentions zero Hopf algebras or coproducts. Craig Smith 1503.06127 (first filed Browse 18, 2026-05) is
+  still the only concrete literature answer and was independently rediscovered via plain web search this session —
+  still only agent-summary extraction after 4 sightings across ~5 months. **Action owed, not just watching:** read
+  1503.06127 first-hand before the next search for something better.
+- **Citation anchor swap recommended**: Lam-Lauve-Sottile 0908.3714 (Path 4 anchor) is now confirmed dormant (31
+  total citations ever, 1 in 2025-26). Its own reference network's real hub is Grinberg-Reiner *Hopf Algebras in
+  Combinatorics* 1409.8356 (192 cites) — use that as the Path 4 citation anchor going forward.
+- Community sweep found the whole `rt.representation-theory` MO tag unusually quiet (13 questions/60 days,
+  all four keyword families near-zero) — confirmed a volume lull via tag/full-text mechanics checks, not a tooling
+  failure. Three MO tag names don't exist as naively guessed: `kazhdan-lusztig-polynomials`, `schur-weyl-duality`,
+  `geometric-satake` (plural `affine-grassmannians` also wrong) — correct forms are `kazhdan-lusztig` and singular
+  `affine-grassmannian`. Add to the dead-tag list alongside `cellular-algebras`/`crystals`/`soergel-bimodules`.
+- Williamson Problem 2: still silent, now past 20 consecutive sessions; per existing guidance this watch goes
+  thinner (check only on a state change) going forward.
+- 17 new sources.json entries (596→613): 3 arXiv (agent-summary, see above) + 16 citation-trail IDs filed at
+  ID-level-only (14 genuinely contentful: Kashiwara-1991 and Brundan-Kleshchev reverse-citers, titles not yet
+  fetched — revisit with a title pass before citing any of them).
+- Full log `reading/2026-10-31-browse221.md`.
+
 ## Added 2026-10-31 (Browse 220, third clean PINNED #6 run)
 - **FPSAC2027 Galway page FLAG (verify next session, not urgent):** web agent's fetch of the Submission Guidelines
   area did not show the 2026-11-15 deadline text. Multiple prior sessions (Browse 208 et al.) confirmed 2026-11-15
