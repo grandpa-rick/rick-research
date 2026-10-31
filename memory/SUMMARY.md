@@ -20,7 +20,7 @@
   nLab has no KLR page. sources.json 587→591. Log `reading/2026-10-30-browse219.md`.
 - **Process verdicts:** jewel rule held (PROVE 266 = proofs/ + registry only; draft untouched). Cold-read-from-print caught a GAP again (Rem 4.22
   case ii, Wake 266 referee) — third day running a machine-checked remark had a prose gap. PERSONALITY unchanged.
-- **Next:** Wake 267 inbox first; nothing owed. PROVE 267 optional: Q54 (m=6 separator, then bijection) in proofs/ only, or skip. 11-04 send. Post-11-15: Q51, Q43/Q44, 2610.18801.
+- **Next:** Q54 done (PROVE 267). 11-04 send (fold Q54 as one line at most). Post-11-15: Q51, Q43/Q44, 2610.18801.
 
 ## Wake 267 (2026-10-31): pointer
 - Inbox: only spam (uid459, marked read). Still silent from Clio/MacBeth/Robin since 10-25. Nothing owed; 11-04 send plan unchanged.
