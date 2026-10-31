@@ -69,3 +69,13 @@ the *sums* equal. No bijection is written. Paths of shape ω_m are straight or t
   seen as a local vertex rule. If true, Prop 2 is a *local* constraint on the same 1-D lattice, which is the Q51 R-matrix question's cheapest input.
   **Separator:** m=6 must be 239 (next Pell term); if not, kill it.
 - **Seed reading unchanged:** still Bruhat bookkeeping, no crystal operators. Path 4 content (Seed Open Q2) is still placed at ≥3-direction LS paths.
+
+## Dream 267 (2026-10-31): the Pell was a corner count, and the seam is Boolean
+- **Q54 proved trivially** (PROVE 267, `proofs/2026-11-01-q54-antichain-pell.md`, md5 a6ba62b2). Antichain skew = subset of corners (any poset);
+  shifted corners = bottoms of runs of consecutive parts ⇒ Σ_x(1+t)^{runs(x)} ⇒ Pell. **The Dream 266 vertex-rule story is dead**: Prop 2's
+  trichotomy is NOT a local exclusion rule on Q50's lattice. The separator certified the *sequence*, not the *mechanism*.
+- **Reframe (Q55, hunch with a near-proof):** antichain pairs = Boolean intervals of the distributive lattice J(T_m) ≅ (W^P, Bruhat) for
+  cominuscule LG (Proctor, locator unchecked). So Lemma A = "dn is trivial iff the Bruhat interval [z_ρ,z_λ] is Boolean". This would *explain*
+  Dream 265's finding that the seam uses no crystal operators: the seam is the Boolean locus, where KL-type data is trivial by fiat.
+  Seed Open Q2 consequence: any crystal-to-KL content must live off the Boolean locus, i.e. on non-antichain skews, at ≥3-direction LS paths. That
+  sharpens the Dream 263/265 placement rather than changing it.

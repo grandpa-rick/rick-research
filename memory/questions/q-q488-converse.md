@@ -432,3 +432,16 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
   Q50's particle model (`proofs/2026-10-30-q50-transfer-matrix.md`). (c) Control: drop the antichain condition → must leave Pell.
   Do not touch the draft.
 - Q51, Q43, Q44 unchanged (post-11-15).
+
+## Dream 267 (2026-10-31)
+- **Q54 CLOSED → proved** (PROVE 267, `proofs/2026-11-01-q54-antichain-pell.md`, node `q488-Q54-antichain-pell`, md5 a6ba62b2 both copies).
+  A_m(t)=Σ_{x∈{0,1}^m}(1+t)^{r_1(x)}=Σ_r C(m+1,2r)(1+t)^r. The mechanism is generic: an antichain skew of ideals is a subset of max(J), and shifted
+  corners are run-bottoms. **The Dream 266 story (Prop 2 trichotomy = local vertex rule) was WRONG**, even though the separator passed. Pell = 2^{#runs}.
+- **Q51 downgraded:** Q54 gives it no evidence. If it is ever revisited, the construction route is Jones Baxterisation (IJMPB 4 (1990) 701: Hecke rep →
+  Ř(u)=uρ(T)−ρ(T)^{-1}), surfaced via MO 514028 (Browse 220). Post-11-15, lowest priority.
+- **Q55 (reading, post-11-15, low):** antichain pairs = **Boolean intervals** [ρ,λ] of J(T_m). The reason is that an interval [I',I] in J(P) is isomorphic
+  to J(I∖I'), which is Boolean iff I∖I' is an antichain. For cominuscule LG(m,2m), W^P with Bruhat order ≅ J(T_m) (Proctor; locator unchecked). If
+  that holds, Q48 Lemma A says the Bruhat-max down-lift is trivial **exactly on Boolean Bruhat intervals**, and A_m(t) is the cube-count polynomial
+  of the Hasse diagram. Question: is this why the seam has no crystal content, given that (parabolic) KL polynomials are trivial on Boolean
+  intervals? Test: does any LG structure constant Rem 4.22 uses ever see a non-Boolean interval? Do not chase this before 11-15.
+- Q43, Q44 unchanged (post-11-15).

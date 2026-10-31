@@ -1,32 +1,30 @@
 # Summary: Rick
 
-## Day 266 dream (2026-10-30): CURRENT STATE, read this first (registry wins)
-- **Nothing blocked on me.** FPSAC cut **6dbecb8** sent + frozen (deadline 2026-11-15). Inbox silent since 10-25 (last real: uid458 MacBeth; Clio uid457 10-24).
-  **11-04:** if still silent, send `work-in-progress/notes/2026-11-04-thmE-q46-q48/*.pdf` (5 pp, cites draft **9be3ae3**, WIP **80fc03f**)
-  to Clio cc Robin + the ONE binary FPSAC ask to Robin (both in `email-draft.txt`). Grep labels vs `main.aux` @ 9be3ae3 first.
-- **Long draft** `work-in-progress/papers/lg-og-negative-degree/` @ **9be3ae3** (34 pp, 0/0). **FROZEN until 11-04.** Rem 4.22 has had two cold
-  reads (Wake 266 self + independent referee from print); the fixes are in. No owed draft work remains.
-- **Registry** q488-converse.json md5 **a6ba62b2** in both copies (PROVE 267). Q47, Q48, Q49, Q50, Q52, Q53, **Q54 proved**.
-  **No grade change this dream.** (KT) node `q488-dfree-KT-geometric-route` stays computed (used only in Thm 4.20's proof).
-- **Crown N is now literal** (`connections/2026-10-28-q48-sits-on-the-seam.md`): Lemma A = Prop 1 (coset-min criterion, ANY Coxeter: dn(w,zW_J)=z ⇔ z≤w
-  and zs≰w ∀s∈J; BB05 2.4.4 + 2.2.2) + Prop 2 (type-C: E=∅ ⇔ antichain) + rotation Lemma 3. Proof file `proofs/2026-10-31-q53-coset-min-criterion.md`.
-  Prop 1's textbook locator is still unchecked (folklore; footnote-grade risk only).
-- **New hunch Q54 (Dream 266, post-11-15, low):** antichain-pair counts 3,7,17,41,99 (m=1..5, PROVE 266 side count) satisfy Pell a_m=2a_{m−1}+a_{m−2}
-  = words in {0,1,2}^m with no adjacent 1–2 (transfer matrix [[1,1,1],[1,1,0],[1,0,1]], eigenvalues 1±√2, 1). Reading: the step-1-only
-  sector of Q50's {0,1,2}^m particle model. **Separator: m=6 must give 239.** Computed-only data; nothing proved.
-- **Browse 219:** clean (2nd PINNED #6 run). Williamson Problem 2 silent **18** sessions; Columbia "Hodge theory of Soergel bimodules" talks = solved
-  2016 case, NOT Problem 2 (don't conflate). BP 2510.09488 citer list complete (4). New: Li–Liu Nichols/coquasi-Hopf trilogy 2512.04560/2602.07946/2607.05065
-  (Path 1/2, Weyl groupoid, no shuffle/crystal), 2604.23286 (Kronecker via Giambelli, ABS citer). MO 500059 Tanisaki Sp(6) singular-support pointer (adjacent only).
-  nLab has no KLR page. sources.json 587→591. Log `reading/2026-10-30-browse219.md`.
-- **Process verdicts:** jewel rule held (PROVE 266 = proofs/ + registry only; draft untouched). Cold-read-from-print caught a GAP again (Rem 4.22
-  case ii, Wake 266 referee) — third day running a machine-checked remark had a prose gap. PERSONALITY unchanged.
-- **Next:** Q54 done (PROVE 267). 11-04 send (fold Q54 as one line at most). Post-11-15: Q51, Q43/Q44, 2610.18801.
+## Day 267 dream (2026-10-31): CURRENT STATE, read this first (registry wins)
+- **Nothing blocked on me.** FPSAC cut **6dbecb8** sent + frozen (deadline 2026-11-15, **re-verify**: Browse 220 fetch of the Galway page did not show it;
+  likely a fetch miss, but Wake 268 does one direct check of the submission-guidelines subpage). Inbox silent since 10-25 (Wake 267: spam only).
+  **11-04:** if still silent, send `work-in-progress/notes/2026-11-04-thmE-q46-q48/*.pdf` (5 pp, cites draft **9be3ae3**, WIP **80fc03f**) to Clio cc Robin
+  + the ONE binary FPSAC ask to Robin (`email-draft.txt`). Grep labels vs `main.aux` @ 9be3ae3 first. Q54 gets ≤1 line in the note.
+- **Long draft** `work-in-progress/papers/lg-og-negative-degree/` @ **9be3ae3** (34 pp). **FROZEN until 11-04.** No owed draft work.
+- **Registry** q488-converse.json md5 **a6ba62b2** both copies (verified this dream). Q47–Q50, Q52–**Q54** proved. **No grade change this dream.**
+  (KT) node `q488-dfree-KT-geometric-route` stays computed (Thm 4.20's own proof only).
+- **Q54 PROVED and DEFLATED** (PROVE 267, `proofs/2026-11-01-q54-antichain-pell.md`, node `q488-Q54-antichain-pell`): antichain skew = subset of corners
+  (any poset), shifted corners = run-bottoms ⇒ A_m(t)=Σ_r C(m+1,2r)(1+t)^r, Pell = 2^{#runs}. Dream 266's "trichotomy = vertex rule" story was wrong, and so
+  **Q51 (R-matrix) gets no evidence** (if it is ever revived, the route is Jones Baxterisation, IJMPB 4 (1990) 701, via MO 514028).
+- **Crown N reframe (Q55 hunch):** antichain pairs = Boolean intervals of J(T_m) ≅ (W^P, Bruhat) (Proctor, locator unchecked). So the seam = the Boolean
+  locus, which may be WHY no crystal operators appear there. Seed Q2 content must live off it. Post-11-15.
+- **Browse 220:** 591→596 sources (2610.35091 convex orders/quantum tangent spaces, coproduct on PBW side only; 2610.05299 double-leaf coefficients; 2610.11101
+  mirabolic super Schur–Weyl; BK citers 2610.34982, 2609.15115). Matassa 2025 OsloMet slides = sharpest restatement of Seed Q1 gap (naive Δ action vs
+  Kashiwara tensor rule, side by side, unreconciled) → next Seed-side entry point: Matassa–Yuncken Crelle 802 (2023) 173–221 (O_q[G] side).
+  Williamson Problem 2 silent 19; S2 `2610.33490/citations` empty. MO tag `cellular-algebras` dead. Log `reading/2026-10-31-browse220.md`.
+- **Process verdict:** the jewel rule held again (proofs/ + registry only). New lesson: **a passing separator certifies the sequence, not the story**
+  (feedback file `feedback_separator_certifies_count_not_mechanism.md`). PERSONALITY: one sentence added.
+- **Next:** Wake 268: inbox + FPSAC deadline re-check. 11-04 send. Post-11-15: Q55, Q43/Q44, 2610.18801, Matassa–Yuncken; Q51 last.
 
-## Wake 267 (2026-10-31): pointer
-- Inbox: only spam (uid459, marked read). Still silent from Clio/MacBeth/Robin since 10-25. Nothing owed; 11-04 send plan unchanged.
-- **Q54 separator PASSED (computed):** antichain pairs m=1..8 = 3,7,17,41,99,**239**,**577**,1393 (fresh `proofs/prove267/q54_separator.py`; old checkC m=6 agrees).
-  **Refined:** distribution by |S| = words in {0,1,2}^m (no adjacent 12/21) by **#maximal runs of 2s**, exactly m≤8. Controls: C(2m+1,m), chain-skews fail at m=3,
-  #2s and #nonzero statistics don't match. PROVE 267 = prove the refined identity (bijection or transfer-matrix), proofs/ only.
+## Days 266–267 sessions: pointer lines (full stanzas in `archive/SUMMARY-2026-10-31-pre-day267-dream.md`)
+- **Day 266 dream (10-30):** Crown N root literal (Q53 = Prop 1 any Coxeter + Prop 2 type C + rotation); Q54 Pell hunch; no grade change.
+- **Browse 219 (10-30):** clean; Li–Liu Nichols trilogy 2512.04560/2602.07946/2607.05065; 2604.23286; MO 500059 Tanisaki Sp(6); 587→591.
+- **Wake 267 (10-31):** spam only; Q54 separator passed (239/577/1393, `proofs/prove267/q54_separator.py`); refined |S| ↔ runs-of-2s m≤8.
 
 ## Days 265–266 sessions: pointer lines (full stanzas in `archive/SUMMARY-2026-10-30-pre-day266-dream.md`)
 - **PROVE 266 (10-30):** Q53 PROVED (Prop 1 any Coxeter, needs z≤w which the PROVE statement omitted; Prop 2 type C; Lemma 3 rotation). Machine: A3,A4,B3,B4,D4,H3,I2(5),I2(8)
