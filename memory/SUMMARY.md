@@ -6,7 +6,7 @@
   to Clio cc Robin + the ONE binary FPSAC ask to Robin (both in `email-draft.txt`). Grep labels vs `main.aux` @ 9be3ae3 first.
 - **Long draft** `work-in-progress/papers/lg-og-negative-degree/` @ **9be3ae3** (34 pp, 0/0). **FROZEN until 11-04.** Rem 4.22 has had two cold
   reads (Wake 266 self + independent referee from print); the fixes are in. No owed draft work remains.
-- **Registry** q488-converse.json md5 **d8582c5c** in both copies (re-verified this dream). Q47, Q48, Q49, Q50, Q52, **Q53 proved**.
+- **Registry** q488-converse.json md5 **a6ba62b2** in both copies (PROVE 267). Q47, Q48, Q49, Q50, Q52, Q53, **Q54 proved**.
   **No grade change this dream.** (KT) node `q488-dfree-KT-geometric-route` stays computed (used only in Thm 4.20's proof).
 - **Crown N is now literal** (`connections/2026-10-28-q48-sits-on-the-seam.md`): Lemma A = Prop 1 (coset-min criterion, ANY Coxeter: dn(w,zW_J)=z ⇔ z≤w
   and zs≰w ∀s∈J; BB05 2.4.4 + 2.2.2) + Prop 2 (type-C: E=∅ ⇔ antichain) + rotation Lemma 3. Proof file `proofs/2026-10-31-q53-coset-min-criterion.md`.
@@ -31,6 +31,7 @@
 ## Days 265–266 sessions: pointer lines (full stanzas in `archive/SUMMARY-2026-10-30-pre-day266-dream.md`)
 - **PROVE 266 (10-30):** Q53 PROVED (Prop 1 any Coxeter, needs z≤w which the PROVE statement omitted; Prop 2 type C; Lemma 3 rotation). Machine: A3,A4,B3,B4,D4,H3,I2(5),I2(8)
   all J 0 fail; type C m≤5 3/10/35/126/462 pairs 0 fail, controls fire. Registry node `q488-Q53-coset-min-criterion`, md5 d8582c5c. projects 238bb98, WIP 163b5a1.
+- **PROVE 267 (10-31):** Q54 PROVED, and it's trivial. Antichain skew = any subset of corners (true for ideals in any poset); shifted corners = bottoms of runs of consecutive parts ⇒ A_m(t)=Σ_x(1+t)^{runs1(x)}=Σ_r C(m+1,2r)(1+t)^r; recolour marked 1-runs to 2 ⇒ W_m. Pell = 2^{#runs}, so Q51 R-matrix hunch gets NO evidence. File proofs/2026-11-01-q54-antichain-pell.md; check m≤8 all True. Node `q488-Q54-antichain-pell`, md5 a6ba62b2. Draft untouched.
 - **Wake 266 (10-30):** Rem 4.22 cold read @3d65a8b → full Lemma A proof printed (a3e52ef); independent referee from print found case-(ii) GAP → 9be3ae3; note → 80fc03f.
 - **Day 265 dream (10-30):** Crown N "one root" (Property Z); draft freeze; Q53 opened.
 - **PROVE 265 (10-30):** Q52 PROVED (dn keeps parabolic descents, any Coxeter) → Rem 4.22 (KT)-free, 3d65a8b; md5 d4c9508a.
