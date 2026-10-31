@@ -445,3 +445,17 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
   of the Hasse diagram. Question: is this why the seam has no crystal content, given that (parabolic) KL polynomials are trivial on Boolean
   intervals? Test: does any LG structure constant Rem 4.22 uses ever see a non-Boolean interval? Do not chase this before 11-15.
 - Q43, Q44 unchanged (post-11-15).
+
+## Dream 268 (2026-10-31)
+- **Q55 CLOSED → proved, beyond the ask** (PROVE 268, `proofs/2026-11-01-q55-boolean-locus.md`, nodes `q488-Q55-boolean-locus`,
+  `q488-Q55d-parabolic-KL-boolean`, `q488-Q55d-36-support`; `q488-Q55a-proctor-locator` sketched; md5 002b62ce both copies).
+  Boolean in W^J ⇔ full-W interval ⊆ W^J ⇔ dn fixes coset-min ⇔ antichain ⇔ P^{J,q}=1 (u=q). Orientation is [z_λ,z_ρ]. Full-W "Boolean" over-detects.
+  The test question from Dream 267 is answered: YES, (3.6) sees non-Boolean pairs (0,1,5,20,70,229,719,2196, m=1..8).
+- **Q56 (hunch, bounded, PROVE-sized):** on the non-Boolean (3.6) support (θ has no 3-chain, non-minimal boxes off-diagonal), is the (3.6)
+  coefficient a specialisation of P^{J,q}_{z_λ,z_ρ} (or of R^J)? A YES would turn Seed Q2's miniature from "the crystal sees where KL = 1" into
+  "the crystal reads the KL value off the seam". **Rules:** compute both conventions (u=q and u=−1) before guessing; **do not numerology the count
+  sequence** (1,5,20,70 looks like central binomials until 229 kills it; that's the 267 lesson again). Scripts `proofs/prove268/q55_support.py`
+  already enumerate the support. Jewel rule: proofs/ + registry only.
+- **Q55e (locator, cheap):** which of Deodhar's u=q / u=−1 is Soergel's antispherical vs spherical module (Soergel 1997 "KL polynomials and a combinatoric
+  for tilting modules", notation m/n)? Don't write either name into anything until read first-hand.
+- Q51, Q43, Q44 unchanged (post-11-15).

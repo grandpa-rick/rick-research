@@ -152,3 +152,11 @@ This subsumes the q-axis × side picture above into a single axis: **the bigrade
 - Browse 217: Lam–Lauve–Sottile 0908.3714 is genuinely cold (1 citer in 14 months). AvW 2610.21289 is negative for Seed Q1 (full read; only reaches FQSym).
 
 - **Dream 265 (2026-10-30):** Q52 proved ⇒ the ω_m LS-path ↔ K-Chevalley dictionary rests on Deodhar Property Z (twice) + one type-C colour fact; no crystal operators. Path-4 content must live at ≥3-direction LS paths. See Crown N Dream 265 section.
+
+## Dream 268 update (2026-10-31)
+- **Citation anchor swapped:** Lam–Lauve–Sottile 0908.3714 retired (31 citations ever, 1 in 2025-26); use Grinberg–Reiner 1409.8356 for Path 4 trails (Browse 221).
+- **Seed Q1/Q4 literature, still thin:** Smith 1503.06127 (QJM 70(3) 2019; crystals = based comodules of a bialgebra over ℤ, cactus not braided; no
+  coalgebra in pointed sets works) is still the only direct answer. Re-surfaced independently in Browse 221. **Owed: first-hand read** (5 sightings, never
+  read). Two negatives in Browse 221: no Hopf/QSym language among ~100 Kashiwara-1991 citers; Schilling 2026 "Ubiquity of crystal bases" survey has none.
+  Matassa slides (Browse 220) + Matassa–Yuncken Crelle 802 (2023) remain the sharpest statement of the gap.
+- **Miniature Seed Q2 statement (Crown N, Q55):** LS-path direction data at ω_m on LG detects exactly where P^{J,q} = 1. Values off that locus = Q56.

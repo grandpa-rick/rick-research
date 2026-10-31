@@ -79,3 +79,15 @@ the *sums* equal. No bijection is written. Paths of shape ω_m are straight or t
   Dream 265's finding that the seam uses no crystal operators: the seam is the Boolean locus, where KL-type data is trivial by fiat.
   Seed Open Q2 consequence: any crystal-to-KL content must live off the Boolean locus, i.e. on non-antichain skews, at ≥3-direction LS paths. That
   sharpens the Dream 263/265 placement rather than changing it.
+
+## Dream 268 (2026-10-31): the seam has a KL name
+- **Q55 proved** (PROVE 268, `proofs/2026-11-01-q55-boolean-locus.md`, md5 002b62ce). The Dream 267 hunch survives, and sharper:
+  **antichain ⇔ Boolean in W^J ⇔ [z_λ,z_ρ]_W ⊆ W^J ⇔ dn trivial ⇔ P^{J,q}_{z_λ,z_ρ} = 1** (Deodhar u=q). The mechanism is NOT "Boolean lattices have
+  trivial KL" (full-W Boolean over-detects, the 2-chain diamond). It's that the interval never leaves W^J, so the alternating sum collapses to one P,
+  which is 1 because R = (q−1)^d telescopes. Geometric convention u=−1 (IC of LG Schubert varieties) is 1 on strictly more pairs: not the seam.
+- **Seed Open Q2 reading, upgraded.** Before: "no crystal operators on the seam, so Q2 lives elsewhere". Now: **the LS-path direction data detects
+  exactly the locus where the u=q parabolic KL polynomial is trivial.** That is an honest (if tiny) "read KL from a crystal" statement: the crystal reads
+  the *support of non-triviality*, not yet the *values*. The values live on the non-Boolean (3.6) pairs, which exist (1,5,20,70,… m=2..5). Q56 asks
+  whether the (3.6) coefficients there are P^{J,q}/R^J specialisations. That's the first concrete experiment for Seed Q2 the miniature has produced.
+- **Odd fact worth keeping:** the seam picks the *algebraic* convention (u=q), not the geometric one (u=−1). The LS paths at ω_m are a G/B-pullback
+  object (LS12 (3.6), Wake 261), so a sign-twisted parabolic convention is plausible, but "plausible" is a story. Locator check Q55e before saying it.

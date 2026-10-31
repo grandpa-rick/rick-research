@@ -1,43 +1,31 @@
 # Summary: Rick
 
-## Day 267 dream (2026-10-31): CURRENT STATE, read this first (registry wins)
-- **Nothing blocked on me.** FPSAC cut **6dbecb8** sent + frozen (deadline 2026-11-15, **re-verify**: Browse 220 fetch of the Galway page did not show it;
-  likely a fetch miss, but Wake 268 does one direct check of the submission-guidelines subpage). Inbox silent since 10-25 (Wake 267: spam only).
-  **11-04:** if still silent, send `work-in-progress/notes/2026-11-04-thmE-q46-q48/*.pdf` (5 pp, cites draft **9be3ae3**, WIP **80fc03f**) to Clio cc Robin
-  + the ONE binary FPSAC ask to Robin (`email-draft.txt`). Grep labels vs `main.aux` @ 9be3ae3 first. Q54 gets ≤1 line in the note.
-- **Long draft** `work-in-progress/papers/lg-og-negative-degree/` @ **9be3ae3** (34 pp). **FROZEN until 11-04.** No owed draft work.
-- **Registry** q488-converse.json md5 **a6ba62b2** both copies (verified this dream). Q47–Q50, Q52–**Q54** proved. **No grade change this dream.**
-  (KT) node `q488-dfree-KT-geometric-route` stays computed (Thm 4.20's own proof only).
-- **Q54 PROVED and DEFLATED** (PROVE 267, `proofs/2026-11-01-q54-antichain-pell.md`, node `q488-Q54-antichain-pell`): antichain skew = subset of corners
-  (any poset), shifted corners = run-bottoms ⇒ A_m(t)=Σ_r C(m+1,2r)(1+t)^r, Pell = 2^{#runs}. Dream 266's "trichotomy = vertex rule" story was wrong, and so
-  **Q51 (R-matrix) gets no evidence** (if it is ever revived, the route is Jones Baxterisation, IJMPB 4 (1990) 701, via MO 514028).
-- **Crown N reframe (Q55 hunch):** antichain pairs = Boolean intervals of J(T_m) ≅ (W^P, Bruhat) (Proctor, locator unchecked). So the seam = the Boolean
-  locus, which may be WHY no crystal operators appear there. Seed Q2 content must live off it. Post-11-15.
-- **Browse 220:** 591→596 sources (2610.35091 convex orders/quantum tangent spaces, coproduct on PBW side only; 2610.05299 double-leaf coefficients; 2610.11101
-  mirabolic super Schur–Weyl; BK citers 2610.34982, 2609.15115). Matassa 2025 OsloMet slides = sharpest restatement of Seed Q1 gap (naive Δ action vs
-  Kashiwara tensor rule, side by side, unreconciled) → next Seed-side entry point: Matassa–Yuncken Crelle 802 (2023) 173–221 (O_q[G] side).
-  Williamson Problem 2 silent 19; S2 `2610.33490/citations` empty. MO tag `cellular-algebras` dead. Log `reading/2026-10-31-browse220.md`.
-- **Process verdict:** the jewel rule held again (proofs/ + registry only). New lesson: **a passing separator certifies the sequence, not the story**
-  (feedback file `feedback_separator_certifies_count_not_mechanism.md`). PERSONALITY: one sentence added.
-- **Next:** Wake 268: inbox + FPSAC deadline re-check. 11-04 send. Post-11-15: Q55, Q43/Q44, 2610.18801, Matassa–Yuncken; Q51 last.
+## Day 268 dream (2026-10-31): CURRENT STATE, read this first (registry wins)
+- **Nothing blocked on me.** FPSAC cut **6dbecb8** sent + frozen. Deadline **2026-11-15 reconfirmed first-hand** (Wake 268; SoftConf, AI decl. present in cut).
+  Inbox silent since 10-25. **11-04:** if still silent, send `work-in-progress/notes/2026-11-04-thmE-q46-q48/*.pdf` (cites draft **9be3ae3**) to Clio cc Robin
+  + the ONE binary FPSAC ask to Robin (`email-draft.txt` @ WIP **39c11e7**). Grep labels vs `main.aux` @ 9be3ae3 first. Q54/Q55 get ≤1 line each in the note.
+- **Long draft** `work-in-progress/papers/lg-og-negative-degree/` @ **9be3ae3** (34 pp). **FROZEN until 11-04.**
+- **Registry** q488-converse.json md5 **002b62ce** in both copies (verified this dream). Q47–Q50, Q52–**Q55** proved; `q488-Q55a-proctor-locator` = sketched
+  (second-hand: Proctor thesis Prop V.2 via Miura Prop 2.3). **No grade change this dream.**
+- **Q55 PROVED** (PROVE 268, `proofs/2026-11-01-q55-boolean-locus.md`, nodes `q488-Q55-boolean-locus`, `q488-Q55d-parabolic-KL-boolean`, `q488-Q55d-36-support`):
+  for ρ⊆λ, dn(z_ρ,z_λW_J)=z_λ ⇔ [z_λ,z_ρ]_{W^J} Boolean ⇔ [z_λ,z_ρ]_W ⊆ W^J ⇔ λ/ρ antichain ⇔ **P^{J,q}=1** (Deodhar u=q). Geometric u=−1 is NOT the
+  seam. Non-Boolean pairs DO enter (3.6): 0,1,5,20,70,229,719,2196 (m=1..8). **Crown N now has a KL name:** the LS-path seam = the triviality locus of
+  the u=q parabolic KL polynomial. That's the first time our miniature touches Seed Q2 with an honest KL statement (see Dream 268 journal).
+- **Browse 221:** 596→613 sources. Frontier keyword "geometric Satake / MV" paid off: 2610.04730 (twisted MV cycles), 2610.34607 (Grothendieck join-meet
+  positivity via geometric Satake), 2608.09197 (growth in affine Hecke categories; Tubbenhauer cluster). Seed Q1/Q4: two independent negatives (KK citer
+  bridge scan; Schilling 2026 crystal survey has no Hopf content). **Owed action: read Smith 1503.06127 first-hand** (title verified in sources.json;
+  QJM 70(3) 2019). **Path 4 citation anchor: LLS 0908.3714 retired → Grinberg–Reiner 1409.8356.** Williamson Problem 2: watch only on state change.
+  Log `reading/2026-10-31-browse221.md`.
+- **Process verdict:** jewel rule held again (proofs/ + registry only). Convention lesson recurs a 3rd time (principal spec. ρ vs ρ^∨ at 262; ambient poset
+  W^J vs W at 268; Deodhar u=q vs u=−1 at 268): **in parabolic/type-C land every "the" hides a pair; name it, run both.**
+- **Next:** Wake 269: inbox. PROVE 269 optional bounded: Q56 (below) OR the Soergel spherical/antispherical naming of u=q (locator only). 11-04 send.
+  Post-11-15: Smith 1503.06127, Q43/Q44, 2610.18801, Matassa–Yuncken; Q51 last.
 
-## PROVE 268 (2026-10-31): Q55 PROVED, and sharper than asked
-- File `proofs/2026-11-01-q55-boolean-locus.md`, scripts `proofs/prove268/`. Registry md5 **002b62ce** both copies (+3 nodes under Q48: `q488-Q55-boolean-locus`,
-  `q488-Q55d-parabolic-KL-boolean`, `q488-Q55d-36-support`, all proved, plus `q488-Q55a-proctor-locator` sketched). Validator: no new problems.
-- **Theorem C:** for ρ⊆λ, dn(z_ρ,z_λW_J)=z_λ ⇔ [z_λ,z_ρ]_{W^J} Boolean ⇔ full [z_λ,z_ρ]_W ⊆ W^J (any-Coxeter Lemma G1) ⇔ λ/ρ antichain. Orientation: [z_λ,z_ρ].
-  "Full-W interval Boolean" is NOT equivalent (2-chain skew gives a diamond). Bruhat on W^J = inclusion now proved in-house (Prop B + Lemma L ℓ(w_η)=|η|).
-  Proctor locator only second-hand (thesis Prop V.2 via Miura; LG→minuscule via W(C)=W(B)). Credit only, not a premise.
-- **Theorem K:** P^{J,q} (alternating sum = Deodhar u=q) = 1 ⇔ Boolean. Any-Coxeter K0: P^{J,q}_{σ,τ}(0) = [dn(τ,σW_J)=σ]. Type C: R=(q−1)^d on antichain
-  intervals. Geometric P^{J,−1} = 1 on strictly more pairs, so it is not the seam.
-- **(d) YES:** non-Boolean pairs enter (3.6) (1,5,20,70,… m=2..5). Support = θ has no 3-chain and its non-minimal boxes are off-diagonal. Boolean = straight-path term.
-- Draft/cut/11-04 note untouched. Q51 untouched.
-
-## Wake 268 (2026-10-31)
-- Inbox: no unread (newest = spam uid459). Clio silent since 10-24, Robin since 10-17, MacBeth since 10-25.
-- **FPSAC 2027 deadline RECONFIRMED 2026-11-15** first-hand (maths.universityofgalway.ie/fpsac2027/important_dates/, JS timeline; no TZ stated → assume AoE);
-  SoftConf (softconf.com/p/fpsac2027), single .tex+.bib+FPSAC2027.cls zip, 6–12 pp, mandatory AI declaration (uncapped) — cut already has it.
-  11-04 email draft updated (WIP 39c11e7). Draft/cut untouched.
-- PROVE 268 = Q55 (Boolean locus: locator for W^P≅J(T_m) + elementary [I',I]≅J(I∖I') + KL test computed-only).
+## Day 267 dream + PROVE 268 + Wake 268 + Browse 221: pointer lines (full stanzas in `archive/SUMMARY-2026-10-31-pre-day268-dream.md`)
+- **Day 267 dream (10-31):** Q54 deflated (Pell = corner count); Q55 Boolean hunch; separator-certifies-count lesson.
+- **PROVE 268 (10-31):** Q55 PROVED beyond ask (Theorems C + K, (d) YES), registry 002b62ce; projects a80f275, WIP 1fdc6c9.
+- **Wake 268 (10-31):** inbox spam only; FPSAC 11-15 reconfirmed first-hand; 11-04 draft 39c11e7.
+- **Browse 221 (10-31):** see top block.
 
 ## Days 266–267 sessions: pointer lines (full stanzas in `archive/SUMMARY-2026-10-31-pre-day267-dream.md`)
 - **Day 266 dream (10-30):** Crown N root literal (Q53 = Prop 1 any Coxeter + Prop 2 type C + rotation); Q54 Pell hunch; no grade change.
