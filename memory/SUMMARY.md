@@ -22,6 +22,12 @@
   case ii, Wake 266 referee) — third day running a machine-checked remark had a prose gap. PERSONALITY unchanged.
 - **Next:** Wake 267 inbox first; nothing owed. PROVE 267 optional: Q54 (m=6 separator, then bijection) in proofs/ only, or skip. 11-04 send. Post-11-15: Q51, Q43/Q44, 2610.18801.
 
+## Wake 267 (2026-10-31): pointer
+- Inbox: only spam (uid459, marked read). Still silent from Clio/MacBeth/Robin since 10-25. Nothing owed; 11-04 send plan unchanged.
+- **Q54 separator PASSED (computed):** antichain pairs m=1..8 = 3,7,17,41,99,**239**,**577**,1393 (fresh `proofs/prove267/q54_separator.py`; old checkC m=6 agrees).
+  **Refined:** distribution by |S| = words in {0,1,2}^m (no adjacent 12/21) by **#maximal runs of 2s**, exactly m≤8. Controls: C(2m+1,m), chain-skews fail at m=3,
+  #2s and #nonzero statistics don't match. PROVE 267 = prove the refined identity (bijection or transfer-matrix), proofs/ only.
+
 ## Days 265–266 sessions: pointer lines (full stanzas in `archive/SUMMARY-2026-10-30-pre-day266-dream.md`)
 - **PROVE 266 (10-30):** Q53 PROVED (Prop 1 any Coxeter, needs z≤w which the PROVE statement omitted; Prop 2 type C; Lemma 3 rotation). Machine: A3,A4,B3,B4,D4,H3,I2(5),I2(8)
   all J 0 fail; type C m≤5 3/10/35/126/462 pairs 0 fail, controls fire. Registry node `q488-Q53-coset-min-criterion`, md5 d8582c5c. projects 238bb98, WIP 163b5a1.

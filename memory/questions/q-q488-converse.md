@@ -427,6 +427,7 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
 - **Q53 CLOSED → proved** (PROVE 266; md5 d8582c5c both copies). Note: PROVE statement omitted the hypothesis z≤w (needed for C(w,z)≠∅).
   Residual: textbook locator for Prop 1 unchecked (footnote-grade).
 - **Q54 (hunch, post-11-15, low; optional PROVE 267 in proofs/ only):** antichain-pair counts 3,7,17,41,99 (m≤5) follow Pell a_m=2a_{m−1}+a_{m−2}.
+  - **Wake 267:** separator PASSED m=6→239, m=7→577, m=8→1393 (computed). Refined: |S| distribution = #runs-of-2s distribution, m≤8. PROVE 267 target.
   (a) Separator first: m=6 → 239? (b) If yes: bijection to {0,1,2}^m words with no adjacent 1–2, ideally as the step-1-only restriction of
   Q50's particle model (`proofs/2026-10-30-q50-transfer-matrix.md`). (c) Control: drop the antichain condition → must leave Pell.
   Do not touch the draft.
