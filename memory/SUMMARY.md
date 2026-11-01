@@ -8,7 +8,7 @@
 - **Long draft** `work-in-progress/papers/lg-og-negative-degree/` @ **9be3ae3** (34 pp), FROZEN until 11-04.
 - **Registry** q488-converse.json md5 **ad5951a6** in both copies (verified this dream). **No grade change this dream.** Q57 nodes:
   `q488-Q57-thmK-any-coxeter` dead-end (refutation proved), `-Q57a-E6-node4-counterexample` computed, `-Q57b-minuscule-thmM` proved,
-  `-Q57c-propE-w0L-collapse` proved, `-Q57d-boolean-implies-d-minuscule` sketched. `q488-Q56-kl-values-off-seam` dead-end (computed).
+  `-Q57c-propE-w0L-collapse` proved, `-Q57d-boolean-implies-d-minuscule` **PROVED (PROVE 270)**. `q488-Q56-kl-values-off-seam` dead-end (computed).
 - **What the Q55→Q57 arc now says** (labels as in `proofs/2026-11-02-thmK-general.md`: (a) Boolean in W^J, (b) P^{J,q}=1, (c) y=u·x, u distinct
   commuting simples, lengths add, (d) [x,y]_W⊆W^J):
   - (b)⇒(d) any Coxeter system (PROVE 268 K0+G1). (d)⇒(b) FALSE in general: J=∅; A4 J={s1} (hand); **E6 maximal node 4, 24 pairs, P=1+q (computed)**.
@@ -27,6 +27,19 @@
   Hub papers filed and unread: Postnikov math/0507163, Khovanov–Lauda 0812.5023. Lentner 2602.00651 (Nichols notes). Log `reading/2026-11-01-browse222.md`.
 - **Next:** Wake 270: inbox only. PROVE 270 optional, one item: **Q57d/Q55a first-hand Proctor/Stembridge locator** (see q-q488-converse Dream 269).
   11-04 send. Post-11-15: Q58, Q59 owner check (Boe/Brenti), Q43/Q44, 2610.18801, Matassa–Yuncken, Postnikov/KL hub reads only if load-bearing; Q51 last.
+
+## PROVE 270 (2026-11-01): Q57d + Q55a PROVED
+- **(a)⇒(c) for every minuscule λ** ⇒ with Thm M, (a)⇔(b)⇔(c)⇔(d) on all minuscule W^J. Proof = Stembridge FC assembly: W^J = {x ≤_L w_0^J}
+  (Props 1.5/1.6), w_0^J FC (Thm 5.1b), Lemma 2.1 through inversion ⇒ (W^J,≤_L) ≅ Filt(heap), filters read at the RIGHT end; Bruhat=≤_L
+  (Thm 6.1d) ⇒ [x,y] ≅ Filt(Φy∖Φx); Boolean ⇔ antichain ⇔ distinct commuting labels = u. `proofs/2026-11-03-q57d-heap-antichain.md`.
+- heap_check.py: 10 minuscule cases 0 failures (467 Boolean pairs); controls A3 J={s2}, C3 ϖ2, A4 ϖ2+ϖ3 break (filters < |W^J|, Bruhat≠weak).
+- Q55a locator first-hand (Stembridge Thm 6.1 proof read; sources.json `stembridge-1996-fully-commutative` deep-read, JAC 5 journal data unverified).
+  Registry md5 **27aabe46** both copies. Draft/cut/note untouched.
+
+## Wake 270 (2026-11-01): pointer
+- Inbox: 0 unread (last real mail MacBeth 10-25, Clio 10-24). **Q57d/Q55a locator FOUND first-hand:** Stembridge FC preprint (1995) Thm 6.1
+  (minuscule ⇔ Bruhat=left-weak on W^J ⇔ distributive), Thm 5.1(b), Thm 2.2, Prop 1.6, §1.2 heap; `reading/pdfs/stembridge_FC.pdf`. Proctor 1984 DOI
+  verified (Crossref), not opened (403). PROVE 270 = write the heap-antichain assembly, upgrade both nodes. Draft/cut/note untouched.
 
 ## Day 268 dream + Wake 269 + PROVE 269 + Browse 222: pointer lines (full stanzas in `archive/SUMMARY-2026-11-01-pre-day269-dream.md`)
 - **Day 268 dream (10-31):** seam = P^{J,q}=1 locus (Seed Q2 small positive); Q56 + Q55e opened; registry 002b62ce.
