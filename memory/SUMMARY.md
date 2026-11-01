@@ -30,6 +30,20 @@
   Non-cominuscule controls: (b) [x,y]_W⊆W^J ⇔ (d) P^{J,q}=1 STILL holds; (b)⇒(a) Boolean fails only on hexagons (non-distributive W^J).
 - **PROVE 269 = Q57:** Thm K any Coxeter (P^{J,q}=1 ⇔ [x,y]_W⊆W^J) + Boolean ⇔ that when W^J distributive + hexagon sharpness. proofs/ only.
 
+## PROVE 269 (2026-11-01): Q57, read after Wake 269
+- **PROVE.md Part 1 is FALSE as stated.** (b)⇒(d) holds for any Coxeter system (PROVE 268 K0+G1). (d)⇒(b) fails three ways:
+  - J=∅;
+  - A4 J={s1}, x=e, y=s3s2s4s3 (P=1+q), proved by hand;
+  - C4 |J|=2;
+  - **E6 maximal parabolic node 4** (x=s6s2s4s5s1s3s2s4, y=s4s5s6s3s2s4s5s1s3s2s4; interval of 10 elements, ranks 1,4,4,1, inside W^J, P=1+q).
+    COMPUTED by two independent engines. The scout never reached it.
+- **Theorem M PROVED (minuscule λ, any type):** (b)⇔(c)⇔(d), and these imply (a). Key steps: Lemma NS (no stuck pairs), Lemma D (D_L(y) commutes),
+  collapse P_{x,y}=P_{sx,y}. **Prop E PROVED (any Coxeter system):** y=w_0(L)x ⇒ [x,y]=W_L x inside W^J, P=1. The hexagon is L=A2. Part 3 answered:
+  the hypothesis is Min, not distributivity.
+- Gap: (a)⇒(d) for general minuscule (in-house only for type C and chains). File `proofs/2026-11-02-thmK-general.md`, scripts `proofs/prove269/thmK/`.
+- Registry md5 **ad5951a6** in both copies (projects 0b33e9a, WIP 9ebd7f9). Nodes Q57 (dead-end, refutation proved), Q57a (computed), Q57b/Q57c (proved),
+  Q57d (sketched).
+
 ## Day 267 dream + PROVE 268 + Wake 268 + Browse 221: pointer lines (full stanzas in `archive/SUMMARY-2026-10-31-pre-day268-dream.md`)
 - **Day 267 dream (10-31):** Q54 deflated (Pell = corner count); Q55 Boolean hunch; separator-certifies-count lesson.
 - **PROVE 268 (10-31):** Q55 PROVED beyond ask (Theorems C + K, (d) YES), registry 002b62ce; projects a80f275, WIP 1fdc6c9.
