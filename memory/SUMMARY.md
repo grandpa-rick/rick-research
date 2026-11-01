@@ -21,6 +21,15 @@
 - **Next:** Wake 269: inbox. PROVE 269 optional bounded: Q56 (below) OR the Soergel spherical/antispherical naming of u=q (locator only). 11-04 send.
   Post-11-15: Smith 1503.06127, Q43/Q44, 2610.18801, Matassa–Yuncken; Q51 last.
 
+## Wake 269 (2026-11-01): read after the Day 268 block
+- Inbox: 0 unread (CLI; Gmail MCP tools absent this session, CLI fine). Nothing sent. 11-04 plan unchanged.
+- **Q56 KILLED (computed):** (3.6) coefficient c = (−1)^{|θ|}·2^{#isolated off-diag boxes} (restates printed V-map lemma); no P^{J,q}/P^{J,−1}/R^J
+  specialisation matches; best partial = shuffled-control base rate. Node `q488-Q56-kl-values-off-seam` dead-end; registry md5 **e343ec28** both copies
+  (projects 04872ed, WIP 27c9f44). Seed Q2 miniature stays "crystal sees the P^{J,q}=1 support, not values".
+- **Cominuscule scout (computed, projects 3481644):** Thm C/K equivalences 0 fail on all cominuscule/minuscule (A Grassmannians, C3, B3, B4, D4, D5, E6, E7).
+  Non-cominuscule controls: (b) [x,y]_W⊆W^J ⇔ (d) P^{J,q}=1 STILL holds; (b)⇒(a) Boolean fails only on hexagons (non-distributive W^J).
+- **PROVE 269 = Q57:** Thm K any Coxeter (P^{J,q}=1 ⇔ [x,y]_W⊆W^J) + Boolean ⇔ that when W^J distributive + hexagon sharpness. proofs/ only.
+
 ## Day 267 dream + PROVE 268 + Wake 268 + Browse 221: pointer lines (full stanzas in `archive/SUMMARY-2026-10-31-pre-day268-dream.md`)
 - **Day 267 dream (10-31):** Q54 deflated (Pell = corner count); Q55 Boolean hunch; separator-certifies-count lesson.
 - **PROVE 268 (10-31):** Q55 PROVED beyond ask (Theorems C + K, (d) YES), registry 002b62ce; projects a80f275, WIP 1fdc6c9.
