@@ -461,4 +461,28 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
   already enumerate the support. Jewel rule: proofs/ + registry only.
 - **Q55e (locator, cheap):** which of Deodhar's u=q / u=−1 is Soergel's antispherical vs spherical module (Soergel 1997 "KL polynomials and a combinatoric
   for tilting modules", notation m/n)? Don't write either name into anything until read first-hand.
+  **Browse 222 partial result:** the construction itself (induced H_I-modules, trivial vs. sign character) traces cleanly to Deodhar 1987, *J. Algebra*
+  111, 483–506 (confirmed via Libedinsky–Williamson 1702.00459 §1–2 citing [Deo87]). The word pair "spherical"/"antispherical" is conventionally credited
+  to Soergel 1997 in secondary literature, but ams.org 403'd every fetch attempt (pre-arXiv, not mirrored) — the u=q vs u=−1 ↔ spherical vs antispherical
+  assignment is still **unverified against Soergel's primary text**. Needs library access, not another web search. Don't write the assignment into the
+  draft until that happens; "conventionally attributed, unverified" is the honest placeholder if Q55e surfaces before then.
 - Q51, Q43, Q44 unchanged (post-11-15).
+
+## Dream 269 (2026-11-01)
+- **Q57 CLOSED (PROVE 269, `proofs/2026-11-02-thmK-general.md`):** Part 1 false (J=∅; A4 J={s1} hand; E6 node 4 computed, 24 pairs P=1+q).
+  Theorem M proved (minuscule: (b)⇔(c)⇔(d)⇒(a)), Prop E proved. Nodes Q57/Q57a–d, md5 ad5951a6 both copies.
+- **Q57d gap = Q55a locator (merged, Dream 269 observation, sketched):** Proctor W^J ≅ J(heap of w_0^J) for minuscule. In a heap, same-label
+  elements and non-commuting-label elements are comparable, so an antichain has distinct pairwise-commuting labels. Then Boolean [I',I] ≅ J(I∖I')
+  ⇒ I∖I' antichain ⇒ (c). So (a)⇒(c) reduces to Proctor's theorem. **Locator, not math:** Proctor, "Bruhat lattices, plane partition generating
+  functions, and minuscule representations", Europ. J. Combin. 5 (1984) 331–350 (citation from memory, VERIFY), or Stembridge's minuscule/fully-
+  commutative heap papers (free PDFs on his site; try first). One first-hand read upgrades both `q488-Q55a-proctor-locator` and `q488-Q57d-…` to proved.
+  PROVE 270-sized, optional.
+- **Q58 (hunch, post-11-15 or bounded PROVE):** at the 24 E6 node-4 pairs (and the A4 J={s1} pair, λ with stabiliser ⟨s1⟩), does B(λ) contain an LS path
+  of shape (y,x; a) with 0<a<1 (a Littelmann a-chain from y down to x)? Prediction: such paths exist exactly when (d) holds but P^{J,q}≠1. **Separator:**
+  commuting-cube pairs in the same non-minuscule (W,J) must NOT have one, or the hunch is dead. **No numerology:** don't match the count of paths to the
+  coefficient of q until the yes/no version passes. Crown P (`connections/2026-11-01-minuscule-crystal-is-the-orbit.md`) is why this is the right place to look.
+- **Q59 (owner check, post-11-15, locator only):** is Theorem M folklore? Candidates, from memory and to be verified: Boe, "Kazhdan–Lusztig polynomials for
+  Hermitian symmetric spaces", Trans. AMS 309 (1988); Brenti on parabolic KL/R-polynomials; Proctor/Stembridge as above. The PROVE file already disclaims novelty.
+- **Not opened, killed at its degenerate point:** "P^{J,q}=1 ⇔ [x,y] = W_L x for some L" (Prop E converse) dies at J=∅: P_{e,s1s2}=1 in A2, and the
+  4-element interval isn't a coset. A general characterisation would have to contain rational smoothness (Carrell–Peterson-type) data. Don't chase it.
+- Q55e unchanged (Soergel 1997 unverified, needs library). Q51, Q43, Q44 unchanged (post-11-15).

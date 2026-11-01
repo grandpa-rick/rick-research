@@ -160,3 +160,17 @@ This subsumes the q-axis × side picture above into a single axis: **the bigrade
   read). Two negatives in Browse 221: no Hopf/QSym language among ~100 Kashiwara-1991 citers; Schilling 2026 "Ubiquity of crystal bases" survey has none.
   Matassa slides (Browse 220) + Matassa–Yuncken Crelle 802 (2023) remain the sharpest statement of the gap.
 - **Miniature Seed Q2 statement (Crown N, Q55):** LS-path direction data at ω_m on LG detects exactly where P^{J,q} = 1. Values off that locus = Q56.
+
+## Browse 222 (2026-11-01) — Smith owed-read CLOSED, off-target
+First-hand read (ar5iv HTML body), 5th sighting, first read. Confirmed theorem numbers: Cor 3.12 (no coalgebra in `Set•` has comodules equivalent to
+`Crys_𝔤`), Def 4.3 + Thm 4.16 (a ℤ-bialgebra B whose *based* comodules ARE equivalent to `Crys_𝔤` as a monoidal category, conjectured = Lusztig's quantum
+group at v=∞), Prop 4.8 (𝔰𝔩₂ case). **Verdict: this is Tannaka-duality reconstruction, not an ABS/species-style combinatorial Hopf algebra** — zero
+engagement with species, QSym, or antipode-formula combinatorics anywhere in the text. Downgrade from "the only direct answer" to "adjacent, answers a
+different question than Seed Q1/Q4 asks." Three independent negatives now agree (citation-bridge scan, Schilling survey silence, Smith's own text): the
+gap between combinatorial-Hopf-algebra coproducts and crystal tensor rules looks like a genuinely unoccupied spot in the literature, not an unindexed one.
+No further owed-read action on this paper.
+
+## Dream 269 (2026-11-01): miniature Seed Q2 extended to all minuscule types
+- Crown P (`connections/2026-11-01-minuscule-crystal-is-the-orbit.md`): for minuscule λ, P^{J,q}_{x,y}=1 ⇔ x,y span an orthogonal-colour cube in B(λ)
+  (Theorem M (c), `q488-Q57b-minuscule-thmM`). Thin case: crystal = orbit = poset. Theorem M breaks at E6 ϖ_4, where B(λ) has off-orbit LS paths → Q58.
+- Smith 1503.06127 closed off-target (above). Seed Q1/Q4 gap: three negatives, treat as unoccupied.

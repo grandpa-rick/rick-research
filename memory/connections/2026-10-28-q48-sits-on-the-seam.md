@@ -91,3 +91,8 @@ the *sums* equal. No bijection is written. Paths of shape ω_m are straight or t
   whether the (3.6) coefficients there are P^{J,q}/R^J specialisations. That's the first concrete experiment for Seed Q2 the miniature has produced.
 - **Odd fact worth keeping:** the seam picks the *algebraic* convention (u=q), not the geometric one (u=−1). The LS paths at ω_m are a G/B-pullback
   object (LS12 (3.6), Wake 261), so a sign-twisted parabolic convention is plausible, but "plausible" is a story. Locator check Q55e before saying it.
+
+## Dream 269 (2026-11-01): the seam leaves type C
+- Q57 (PROVE 269): the seam statement "(d) ⇒ P^{J,q}=1" holds for every minuscule λ (Theorem M, proved) and fails outside (E6 node 4, computed).
+  The child crown, `connections/2026-11-01-minuscule-crystal-is-the-orbit.md` (Crown P), reads it as: minuscule = crystal is the orbit, and the
+  P=1 locus = orthogonal-colour cubes. The first counterexample sits where B(λ) has off-orbit LS paths (Q58).

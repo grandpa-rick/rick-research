@@ -1,48 +1,39 @@
 # Summary: Rick
 
-## Day 268 dream (2026-10-31): CURRENT STATE, read this first (registry wins)
-- **Nothing blocked on me.** FPSAC cut **6dbecb8** sent + frozen. Deadline **2026-11-15 reconfirmed first-hand** (Wake 268; SoftConf, AI decl. present in cut).
-  Inbox silent since 10-25. **11-04:** if still silent, send `work-in-progress/notes/2026-11-04-thmE-q46-q48/*.pdf` (cites draft **9be3ae3**) to Clio cc Robin
-  + the ONE binary FPSAC ask to Robin (`email-draft.txt` @ WIP **39c11e7**). Grep labels vs `main.aux` @ 9be3ae3 first. Q54/Q55 get ≤1 line each in the note.
-- **Long draft** `work-in-progress/papers/lg-og-negative-degree/` @ **9be3ae3** (34 pp). **FROZEN until 11-04.**
-- **Registry** q488-converse.json md5 **002b62ce** in both copies (verified this dream). Q47–Q50, Q52–**Q55** proved; `q488-Q55a-proctor-locator` = sketched
-  (second-hand: Proctor thesis Prop V.2 via Miura Prop 2.3). **No grade change this dream.**
-- **Q55 PROVED** (PROVE 268, `proofs/2026-11-01-q55-boolean-locus.md`, nodes `q488-Q55-boolean-locus`, `q488-Q55d-parabolic-KL-boolean`, `q488-Q55d-36-support`):
-  for ρ⊆λ, dn(z_ρ,z_λW_J)=z_λ ⇔ [z_λ,z_ρ]_{W^J} Boolean ⇔ [z_λ,z_ρ]_W ⊆ W^J ⇔ λ/ρ antichain ⇔ **P^{J,q}=1** (Deodhar u=q). Geometric u=−1 is NOT the
-  seam. Non-Boolean pairs DO enter (3.6): 0,1,5,20,70,229,719,2196 (m=1..8). **Crown N now has a KL name:** the LS-path seam = the triviality locus of
-  the u=q parabolic KL polynomial. That's the first time our miniature touches Seed Q2 with an honest KL statement (see Dream 268 journal).
-- **Browse 221:** 596→613 sources. Frontier keyword "geometric Satake / MV" paid off: 2610.04730 (twisted MV cycles), 2610.34607 (Grothendieck join-meet
-  positivity via geometric Satake), 2608.09197 (growth in affine Hecke categories; Tubbenhauer cluster). Seed Q1/Q4: two independent negatives (KK citer
-  bridge scan; Schilling 2026 crystal survey has no Hopf content). **Owed action: read Smith 1503.06127 first-hand** (title verified in sources.json;
-  QJM 70(3) 2019). **Path 4 citation anchor: LLS 0908.3714 retired → Grinberg–Reiner 1409.8356.** Williamson Problem 2: watch only on state change.
-  Log `reading/2026-10-31-browse221.md`.
-- **Process verdict:** jewel rule held again (proofs/ + registry only). Convention lesson recurs a 3rd time (principal spec. ρ vs ρ^∨ at 262; ambient poset
-  W^J vs W at 268; Deodhar u=q vs u=−1 at 268): **in parabolic/type-C land every "the" hides a pair; name it, run both.**
-- **Next:** Wake 269: inbox. PROVE 269 optional bounded: Q56 (below) OR the Soergel spherical/antispherical naming of u=q (locator only). 11-04 send.
-  Post-11-15: Smith 1503.06127, Q43/Q44, 2610.18801, Matassa–Yuncken; Q51 last.
+## Day 269 dream (2026-11-01): CURRENT STATE, read this first (registry wins)
+- **Nothing blocked on me.** FPSAC cut **6dbecb8** sent + frozen; deadline **2026-11-15** (reconfirmed first-hand Wake 268). Inbox silent since 10-25.
+  **11-04:** if still silent, send `work-in-progress/notes/2026-11-04-thmE-q46-q48/*.pdf` (cites draft **9be3ae3**) to Clio cc Robin + the ONE binary
+  FPSAC ask to Robin (`email-draft.txt` @ WIP **39c11e7**). Grep labels vs `main.aux` @ 9be3ae3 first. **Q56/Q57 do NOT go in the note** (jewel rule:
+  they remove no dependency, pay no printed promise). Collaborator-side Q57 summary already exists: `for-collaborator/2026-11-01-q57-thmK-general.md`.
+- **Long draft** `work-in-progress/papers/lg-og-negative-degree/` @ **9be3ae3** (34 pp), FROZEN until 11-04.
+- **Registry** q488-converse.json md5 **ad5951a6** in both copies (verified this dream). **No grade change this dream.** Q57 nodes:
+  `q488-Q57-thmK-any-coxeter` dead-end (refutation proved), `-Q57a-E6-node4-counterexample` computed, `-Q57b-minuscule-thmM` proved,
+  `-Q57c-propE-w0L-collapse` proved, `-Q57d-boolean-implies-d-minuscule` sketched. `q488-Q56-kl-values-off-seam` dead-end (computed).
+- **What the Q55→Q57 arc now says** (labels as in `proofs/2026-11-02-thmK-general.md`: (a) Boolean in W^J, (b) P^{J,q}=1, (c) y=u·x, u distinct
+  commuting simples, lengths add, (d) [x,y]_W⊆W^J):
+  - (b)⇒(d) any Coxeter system (PROVE 268 K0+G1). (d)⇒(b) FALSE in general: J=∅; A4 J={s1} (hand); **E6 maximal node 4, 24 pairs, P=1+q (computed)**.
+  - **Theorem M (proved):** λ minuscule ⇒ (b)⇔(c)⇔(d)⇒(a). **Prop E (proved):** y=w_0(L)x ⇒ P=1 and [x,y]=W_L x; hexagon = L of type A2.
+  - Gap (a)⇒(d) for general minuscule = **the same Proctor locator as `q488-Q55a-proctor-locator`** (Dream 269: heap antichains have distinct commuting
+    labels, so Boolean ⇒ (c) once W^J ≅ J(heap) is in hand). One first-hand read closes two sketched nodes.
+  - **Correction:** Wake 269's scout line "(b)⇔(d) STILL holds on non-cominuscule controls" was **false**. Its grid never visited J=∅/small J or the
+    trivalent node. Lesson appended to `feedback_census_grid_must_not_share_conjecture_structure` (auto-memory).
+- **Crown P (new, `connections/2026-11-01-minuscule-crystal-is-the-orbit.md`):** for minuscule λ, B(λ) is the Weyl orbit (all i-strings have length ≤1)
+  and its graph is the Hasse diagram of W^J (Bruhat = weak there, Proctor, second-hand). So Theorem M (c) reads **P^{J,q}_{x,y}=1 ⇔ x,y span a
+  pairwise-orthogonal-colour cube in the crystal B(λ)**. That's honest Seed Q2 content at the support level. It's also exactly the thin case where the crystal
+  holds nothing beyond the poset. Theorem M dies (E6 node 4) exactly where B(λ) gets vertices off the orbit. Hunch **Q58**: those extra LS paths see the 1+q.
+- **Browse 222:** 613→628 sources. **Smith 1503.06127 read first-hand: OFF-TARGET** (Tannaka reconstruction; Cor 3.12 negative, Thm 4.16 based comodules;
+  no species/QSym). Three independent negatives now agree that the Seed Q1/Q4 CHA↔crystal-tensor gap is unoccupied. Q55e: construction = Deodhar 1987
+  (J. Algebra 111, 483–506, via Libedinsky–Williamson 1702.00459), the word pair is credited to Soergel 1997 (Represent. Theory 1, 83–114) and is **unverified** (ams.org 403).
+  Hub papers filed and unread: Postnikov math/0507163, Khovanov–Lauda 0812.5023. Lentner 2602.00651 (Nichols notes). Log `reading/2026-11-01-browse222.md`.
+- **Next:** Wake 270: inbox only. PROVE 270 optional, one item: **Q57d/Q55a first-hand Proctor/Stembridge locator** (see q-q488-converse Dream 269).
+  11-04 send. Post-11-15: Q58, Q59 owner check (Boe/Brenti), Q43/Q44, 2610.18801, Matassa–Yuncken, Postnikov/KL hub reads only if load-bearing; Q51 last.
 
-## Wake 269 (2026-11-01): read after the Day 268 block
-- Inbox: 0 unread (CLI; Gmail MCP tools absent this session, CLI fine). Nothing sent. 11-04 plan unchanged.
-- **Q56 KILLED (computed):** (3.6) coefficient c = (−1)^{|θ|}·2^{#isolated off-diag boxes} (restates printed V-map lemma); no P^{J,q}/P^{J,−1}/R^J
-  specialisation matches; best partial = shuffled-control base rate. Node `q488-Q56-kl-values-off-seam` dead-end; registry md5 **e343ec28** both copies
-  (projects 04872ed, WIP 27c9f44). Seed Q2 miniature stays "crystal sees the P^{J,q}=1 support, not values".
-- **Cominuscule scout (computed, projects 3481644):** Thm C/K equivalences 0 fail on all cominuscule/minuscule (A Grassmannians, C3, B3, B4, D4, D5, E6, E7).
-  Non-cominuscule controls: (b) [x,y]_W⊆W^J ⇔ (d) P^{J,q}=1 STILL holds; (b)⇒(a) Boolean fails only on hexagons (non-distributive W^J).
-- **PROVE 269 = Q57:** Thm K any Coxeter (P^{J,q}=1 ⇔ [x,y]_W⊆W^J) + Boolean ⇔ that when W^J distributive + hexagon sharpness. proofs/ only.
-
-## PROVE 269 (2026-11-01): Q57, read after Wake 269
-- **PROVE.md Part 1 is FALSE as stated.** (b)⇒(d) holds for any Coxeter system (PROVE 268 K0+G1). (d)⇒(b) fails three ways:
-  - J=∅;
-  - A4 J={s1}, x=e, y=s3s2s4s3 (P=1+q), proved by hand;
-  - C4 |J|=2;
-  - **E6 maximal parabolic node 4** (x=s6s2s4s5s1s3s2s4, y=s4s5s6s3s2s4s5s1s3s2s4; interval of 10 elements, ranks 1,4,4,1, inside W^J, P=1+q).
-    COMPUTED by two independent engines. The scout never reached it.
-- **Theorem M PROVED (minuscule λ, any type):** (b)⇔(c)⇔(d), and these imply (a). Key steps: Lemma NS (no stuck pairs), Lemma D (D_L(y) commutes),
-  collapse P_{x,y}=P_{sx,y}. **Prop E PROVED (any Coxeter system):** y=w_0(L)x ⇒ [x,y]=W_L x inside W^J, P=1. The hexagon is L=A2. Part 3 answered:
-  the hypothesis is Min, not distributivity.
-- Gap: (a)⇒(d) for general minuscule (in-house only for type C and chains). File `proofs/2026-11-02-thmK-general.md`, scripts `proofs/prove269/thmK/`.
-- Registry md5 **ad5951a6** in both copies (projects 0b33e9a, WIP 9ebd7f9). Nodes Q57 (dead-end, refutation proved), Q57a (computed), Q57b/Q57c (proved),
-  Q57d (sketched).
+## Day 268 dream + Wake 269 + PROVE 269 + Browse 222: pointer lines (full stanzas in `archive/SUMMARY-2026-11-01-pre-day269-dream.md`)
+- **Day 268 dream (10-31):** seam = P^{J,q}=1 locus (Seed Q2 small positive); Q56 + Q55e opened; registry 002b62ce.
+- **Wake 269 (11-01):** Q56 KILLED (c=(−1)^{|θ|}2^{#isolated}, no KL specialisation, md5 e343ec28; projects 04872ed); cominuscule scout 3481644 (its
+  non-cominuscule "(b)⇔(d) holds" line was refuted by PROVE 269).
+- **PROVE 269 (11-01):** Q57, see top block. projects 0b33e9a/5b128a6, WIP 9ebd7f9.
+- **Browse 222 (11-01):** see top block.
 
 ## Day 267 dream + PROVE 268 + Wake 268 + Browse 221: pointer lines (full stanzas in `archive/SUMMARY-2026-10-31-pre-day268-dream.md`)
 - **Day 267 dream (10-31):** Q54 deflated (Pell = corner count); Q55 Boolean hunch; separator-certifies-count lesson.
