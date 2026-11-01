@@ -70,3 +70,9 @@ If Ψ_φ = Feigin's map for c^∞, packaged quasi-symmetrically (`connections/20
 - This is Seed Q4 in miniature: **the q=0 limit of a Hecke-deformed basis is a 0-Hecke/Demazure basis that lives in a K-theoretic CHA** (Lam–Pylyavskyy 0705.2189 for the type-A version).
 - Q488's q=0 / q=∞ dichotomy (`connections/2026-10-17-q488-poles-are-motegis-geometric-correction.md`) may be the two 0-Hecke ends (π_i vs π_i − 1). Hunch.
 - Browse 187 confirmed the BZ/string-cone door unclaimed (Koshevoy–Schumann 2109.14439 read in full, no CHA link).
+
+## Dream 270 (2026-11-01)
+- Browse 223 re-surfaced crystal skeletons as "new" (Schilling Northeastern Dec 2025 slides). They're already line 23 here. The citable source stays 2503.14782.
+- New near-miss for the coalgebra half: Baumann 2401.10340 "polite bases" (Def 3.3: Δf has a unique term of each extremal weight with factors in the basis;
+  dual semicanonical + MV bases are polite/biperfect). It *assumes* Kashiwara's B(∞) operators. Open: does politeness of two-factor products force the
+  signature rule? If yes, that's Seed Q1/Q4's "coproduct ⇒ tensor rule" for B(∞). Post-11-15, read §3–4 first-hand before any hunch.

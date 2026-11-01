@@ -96,3 +96,10 @@ the *sums* equal. No bijection is written. Paths of shape ω_m are straight or t
 - Q57 (PROVE 269): the seam statement "(d) ⇒ P^{J,q}=1" holds for every minuscule λ (Theorem M, proved) and fails outside (E6 node 4, computed).
   The child crown, `connections/2026-11-01-minuscule-crystal-is-the-orbit.md` (Crown P), reads it as: minuscule = crystal is the orbit, and the
   P=1 locus = orthogonal-colour cubes. The first counterexample sits where B(λ) has off-orbit LS paths (Q58).
+
+## Dream 270 (2026-11-01): seam closed in every minuscule type
+- PROVE 270 proved the Q55 reframe beyond type C: on any minuscule W^J, Bruhat = left weak = Filt(heap of w_0^J) (Stembridge FC Thm 6.1d + Lemma 2.1),
+  and Boolean ⇔ difference antichain ⇔ commuting cube ⇔ P^{J,q}=1 (`q488-Q57d-boolean-implies-d-minuscule`, `q488-Q55a-proctor-locator`, both proved, md5 27aabe46).
+- **Verdict on Crown N:** Lemma A (Q48), Q54, Q55 and Q57d all land on one textbook criterion: an interval [I',I] of J(P) is Boolean iff I∖I' is an antichain.
+  Lemma A's own content (Property Z + colour trichotomy) is what gets you onto that criterion. The seam is antichain bookkeeping in the minuscule heap. It's honest,
+  it's proved, and it's probably folklore (Q59). No further Q(n+1) on the seam. The open edge is off the seam / off the orbit (Q58).

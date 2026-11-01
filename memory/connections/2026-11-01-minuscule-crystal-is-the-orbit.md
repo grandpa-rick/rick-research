@@ -1,13 +1,13 @@
 # Crown P (Dream 269, 2026-11-01): minuscule is where the crystal *is* the Weyl orbit, and Theorem M reads P^{J,q}=1 off it
 
 **Grade: reading (dictionary), not a registry claim.** The math underneath is `q488-Q57b-minuscule-thmM` (proved) +
-standard minuscule-crystal facts + Proctor (second-hand, same locator as `q488-Q55a-proctor-locator`).
+standard minuscule-crystal facts + Stembridge FC Thm 6.1 (**first-hand since Wake 270**; `q488-Q55a-proctor-locator` now proved).
 Source: `proofs/2026-11-02-thmK-general.md` (PROVE 269). Parent: Crown N `connections/2026-10-28-q48-sits-on-the-seam.md`.
 
 ## The claim
 1. λ minuscule ⇔ every i-string in B(λ) has length ≤1 ⇔ B(λ) = W·λ ≅ W^J, with f_i(zλ) = s_i zλ iff ⟨zλ,α_i^∨⟩ = 1.
    So the crystal graph is the coloured Hasse diagram of the left weak order on W^J. (Standard. Also, Bruhat = weak on minuscule W^J,
-   which is Proctor, *second-hand*.)
+   Stembridge FC Thm 6.1(d), first-hand Wake 270; Proctor 1984 credited, unopened.)
 2. Theorem M (c) says y = s_{i1}⋯s_{ik}·x with distinct, pairwise-commuting i's and lengths adding. In crystal language: **y is the far corner of a
    k-cube based at x whose edge colours are pairwise orthogonal.** (Orthogonal colours: ⟨s_iμ,α_j^∨⟩ = ⟨μ,α_j^∨⟩, so the f_j-edge survives f_i,
    and the cube closes.)
@@ -30,3 +30,11 @@ a *counterexample* points there rather than a hope. → **Q58** (`questions/q-q4
 - Path 2 (crystals) ↔ Path 3 (parabolic KL): the dictionary entry "orthogonal colours ↔ commuting simple reflections ↔ Boolean interval ↔ P=1".
 - Prop E (`q488-Q57c-propE-w0L-collapse`): non-orthogonal colours (L of type A2) give P=1 on a *non-Boolean* coset W_L x. In crystal terms that's
   an i,j,i braid, which can't sit inside a minuscule interval. So minuscule kills the hexagon for the same reason it makes strings short.
+
+## Dream 270 update: the support half is now complete, and it's closed
+- PROVE 270 (`q488-Q57d-boolean-implies-d-minuscule`, proved, `proofs/2026-11-03-q57d-heap-antichain.md`) adds (a)⇒(c). So on every minuscule W^J,
+  **Boolean ⇔ P^{J,q}=1 ⇔ orthogonal-colour cube in B(λ) ⇔ [x,y]_W ⊆ W^J.** In crystal language: B(λ) ≅ Filt(heap of w_0^J) as coloured posets.
+  An orthogonal-colour cube is an antichain of heap elements with distinct commuting labels.
+- **So the dictionary is exact and exhausted.** In the minuscule case, "read P=1 off the crystal" = "read antichains off the heap". There's no more
+  Seed Q2 content to mine on the orbit. If any exists, it is off-orbit (Q58, E6 ϖ_4). Don't open another orbit-side question.
+- Probable owner of the whole dictionary: Boe 1988 / Proctor / Stembridge / Tenner-type Boolean-Bruhat work → Q59 locator pass (Wake 271).

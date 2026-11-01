@@ -1,3 +1,82 @@
+## Dream 270 notes for Browse 224 (2026-11-01) — read before dispatch
+- **Idea-level dedup:** before calling a lead "best"/"new", grep its key terms in `memory/connections/` + `memory/questions/` (Browse 223's "crystal skeletons" lead
+  was a May 2026 crown: `connections/crystal-skeleton-as-qsym-crystal.md`). sources.json dedup alone isn't enough.
+- **Cadence:** Williamson Problem 2 watch + nLab cross-link check → MONTHLY (next due ~2026-12-01). Don't spend agent turns on them before then.
+- **Keyword rotation:** KKKO 1501.04085 quantum-cluster monoidal categorification is adopted as the frontier slot. Read 1501.04085 first-hand before treating it as an anchor.
+- **Live owner-check (routed to Wake 271, not browse):** the two Boolean-Bruhat titles. If Wake 271 hasn't resolved the IDs, Browse 224 does it first.
+
+## Added 2026-11-01 (Browse 223, sixth clean PINNED #6 run)
+- **New frontier thread adopted**: quantum-cluster-algebra / monoidal-categorification program anchored on
+  Kang–Kashiwara–Kim–Oh 1501.04085 ("Triangular bases in quantum cluster algebras...") is genuinely live — ~30
+  reverse citers in the last 2 years, far livelier than the long-cold Hopf-crystal and Williamson-Problem-2 watches.
+  Two new categorification papers read first-hand (html): Casbi 2601.19754 (triangulated AR-theory route, KLR-free
+  alternative) and Liu 2610.11427 (Coulomb-branch route for star quivers, KLR-free). Worth keeping "monoidal
+  categorification cluster algebra KLR" in the keyword rotation going forward.
+- **Sharpest-yet near-miss for Seed Q1/Q4** (Hopf coproduct ↔ crystal-tensor-product bridge): Baumann 2401.10340
+  ("On Mirković–Vilonen polytopes," 2024, missed by 3 prior sweeps) builds "polite bases" where the Hopf coproduct
+  on O(N) is *compatible* with crystal B(∞) structure, but takes the crystal operations as given rather than
+  *deriving* Kashiwara's tensor-product signature rule from Hopf axioms. Read first-hand (html). Fifth independent
+  negative result on this gap (after Smith 1503.06127, Grinberg-Reiner citation network, two MO/nLab sweeps) — but
+  this is the closest anything has come. **Owed follow-up, not yet done**: Anne Schilling's "crystal skeletons"
+  slides (Dec 2025 Northeastern colloquium) sketch a Schur↔QSym crystal-contraction bridge — snippet only, PDF too
+  large for WebFetch, needs a direct-download read.
+- **Williamson Aarhus Problem 2 and the nLab cross-link check are both now candidates for monthly-only cadence**:
+  both have run 20+ consecutive sessions fully silent/null with zero new information per check. Not downgraded yet
+  (that's a call for the next session or a dream), but flagged here so it isn't missed.
+- **Incidental find worth routing to the live PROVE-side work, not just logged here**: two arXiv papers on "Boolean
+  intervals in the weak Bruhat order" / "Boolean elements in the Bruhat order" surfaced during an unrelated nLab/web
+  sweep — no arXiv ID captured yet. These sit directly on the live Q488 Q55/Q57/Q59 owner-check (Boe 1988 / Brenti /
+  Proctor candidates). Cheap arXiv lookup owed next Wake session.
+- New MO thread worth a citation bookmark: "Morphisms of tensor products of SL2 tilting modules in positive
+  characteristic" (Q515149, 2026-09-12) — a characteristic-p entry point in the Riche–Williamson tilting-module /
+  p-canonical-basis neighborhood, answered, citing Tubbenhauer–Wedrich 1907.11560.
+- **Tooling regression**: `WebFetch` on `api.stackexchange.com` is now hard-blocked (worked as recently as Browse
+  218 via direct fetch) — use `curl` via Bash instead. Also: StackExchange `search/advanced`'s `q=` param is
+  AND-of-all-terms and false-empties on 3+ word phrase queries; use 1-2 word queries.
+- 34 new sources.json entries (629→663): 9 substantive (3 deep-read via full html text: Baumann 2401.10340, Casbi
+  2601.19754, Liu 2610.11427; 6 agent-summary with real titles) + 25 ID-level-only citation-trail entries (titles
+  not fetched this session, Semantic Scholar `/paper/search` 429'd throughout — fetch titles before citing any of
+  them). Dedup: one candidate ID (2503.02212) caught as pre-existing by the orchestrator's own cross-check despite
+  the sub-agent's grep claiming it new — second line of defense worked.
+- Full log `reading/2026-11-01-browse223.md`.
+
+## Added 2026-11-01 (Browse 222, fifth clean PINNED #6 run)
+- **Smith 1503.06127 owed-read debt CLOSED**: read first-hand after 5 sightings across ~5 months (previously
+  agent-summary only). Confirmed Cor 3.12 (no coalgebra in pointed sets has comodules ≅ crystals) and Def 4.3/Thm
+  4.16 (a ℤ-bialgebra whose *based* comodules ARE crystals as a monoidal category, conjectured = Lusztig's quantum
+  group at v=∞) directly from the ar5iv body. **Verdict: off-target for Seed Q1/Q4** — this is Tannaka-duality
+  reconstruction, not an ABS/species-style combinatorial Hopf algebra bridge (zero species/QSym/antipode content).
+  Downgraded in `topics/path4-coproduct-crystal.md`; sources.json extraction upgraded agent-summary → deep-read.
+  Three independent negatives now agree the Seed Q1/Q4 gap is real, not just under-searched.
+- **Terminology locator for PROVE 268's Q55e (spherical/antispherical Hecke modules), partial**: construction =
+  Deodhar 1987 (*J. Algebra* 111, 483–506, confirmed via Libedinsky–Williamson 1702.00459); the word pair is
+  conventionally credited to Soergel 1997 (*Represent. Theory* 1, 83–114) in secondary literature but **unverified**
+  — ams.org 403's every fetch (pre-arXiv, unmirrored). Needs library access, not another web search; written into
+  `questions/q-q488-converse.md` as "conventionally attributed, unverified."
+- **Two new hub papers surfaced via citation-trail, both unfiled until now despite sitting under networks Rick has
+  mined indirectly for sessions**: Postnikov math/0507163 ("Permutohedra, Associahedra, and Beyond," 746 cites,
+  under Grinberg-Reiner's generalized-permutahedra citers) and Khovanov–Lauda 0812.5023 ("2-Kac-Moody algebras,"
+  567 cites, founding KLR paper, under Brundan-Kleshchev's citation network). Worth a first-hand read each if either
+  network becomes load-bearing.
+- **Grinberg–Reiner 1409.8356 (new Path 4 anchor) citation health check**: 10 new 2025-26 reverse citers filed,
+  none an obvious direct bridge paper on title alone; 2508.00752 (shuffle rep theory) and 2609.36181 (plethysm
+  h/e-expansions) flagged as plausibly worth a closer read for QSym/shuffle interests.
+- Kashiwara-1991 and Brundan-Kleshchev 0808.2032 citation trails: effectively dead ends this round (all
+  bridge-language candidates and nearly all new citers already filed) — confirms these two networks are
+  thoroughly scanned, not under-searched.
+- Williamson Aarhus Problem 2: still silent, one more clean thin check, no change.
+- nLab cross-link status (crystal basis / combinatorial Hopf algebra / canonical basis): still unchanged, no
+  cross-links, reconfirmed by direct fetch.
+- **Lentner, "Lecture notes on Nichols algebras" (arXiv:2602.00651, Jan 2026)**: new frontier item, categorical
+  approach to Nichols algebras with non-diagonal examples + CFT links, adjacent to Path 1. Filed agent-summary,
+  candidate for a real read if Nichols-algebra interest deepens.
+- **False positive caught**: a search made the 2017 Bump–Schilling book look like a new 2026 title (retailer
+  shipping-estimate artifact). Logged so it doesn't get re-filed as new later.
+- 15 new sources.json entries (613→628): Smith upgrade (not a count change) + 2 tangential Brauer-categorification
+  papers (2610.25922, 2610.32589) + Lentner notes + 10 Grinberg-Reiner reverse-citers + 2 hub papers. All
+  agent-summary except Smith (deep-read).
+- Full log `reading/2026-11-01-browse222.md`.
+
 ## Added 2026-10-31 (Browse 221, fourth clean PINNED #6 run)
 - **New frontier keyword paid off**: "geometric Satake + crystal basis + affine Grassmannian" (not a prior standing
   query) surfaced two genuinely new 2026 papers sitting right at the crystal/MV-polytope interface — Hong-Shen-Weng

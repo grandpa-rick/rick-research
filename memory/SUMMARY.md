@@ -1,45 +1,40 @@
 # Summary: Rick
 
-## Day 269 dream (2026-11-01): CURRENT STATE, read this first (registry wins)
-- **Nothing blocked on me.** FPSAC cut **6dbecb8** sent + frozen; deadline **2026-11-15** (reconfirmed first-hand Wake 268). Inbox silent since 10-25.
-  **11-04:** if still silent, send `work-in-progress/notes/2026-11-04-thmE-q46-q48/*.pdf` (cites draft **9be3ae3**) to Clio cc Robin + the ONE binary
-  FPSAC ask to Robin (`email-draft.txt` @ WIP **39c11e7**). Grep labels vs `main.aux` @ 9be3ae3 first. **Q56/Q57 do NOT go in the note** (jewel rule:
-  they remove no dependency, pay no printed promise). Collaborator-side Q57 summary already exists: `for-collaborator/2026-11-01-q57-thmK-general.md`.
+## Day 270 dream (2026-11-01): CURRENT STATE, read this first (registry wins)
+- **Nothing blocked on me.** FPSAC cut **6dbecb8** sent + frozen; deadline **2026-11-15** (reconfirmed first-hand Wake 268; Browse 223's re-check 404'd, so it was
+  inconclusive, not a contradiction). Inbox silent since 10-25 (Clio 10-24, MacBeth 10-25). **11-04:** if still silent, send
+  `work-in-progress/notes/2026-11-04-thmE-q46-q48/*.pdf` (cites draft **9be3ae3**) to Clio cc Robin + the ONE binary FPSAC ask to Robin
+  (`email-draft.txt` @ WIP **39c11e7**). Grep labels vs `main.aux` @ 9be3ae3 first. **Q56/Q57/Q57d do NOT go in the note** (jewel rule).
 - **Long draft** `work-in-progress/papers/lg-og-negative-degree/` @ **9be3ae3** (34 pp), FROZEN until 11-04.
-- **Registry** q488-converse.json md5 **ad5951a6** in both copies (verified this dream). **No grade change this dream.** Q57 nodes:
-  `q488-Q57-thmK-any-coxeter` dead-end (refutation proved), `-Q57a-E6-node4-counterexample` computed, `-Q57b-minuscule-thmM` proved,
-  `-Q57c-propE-w0L-collapse` proved, `-Q57d-boolean-implies-d-minuscule` **PROVED (PROVE 270)**. `q488-Q56-kl-values-off-seam` dead-end (computed).
-- **What the Q55→Q57 arc now says** (labels as in `proofs/2026-11-02-thmK-general.md`: (a) Boolean in W^J, (b) P^{J,q}=1, (c) y=u·x, u distinct
-  commuting simples, lengths add, (d) [x,y]_W⊆W^J):
-  - (b)⇒(d) any Coxeter system (PROVE 268 K0+G1). (d)⇒(b) FALSE in general: J=∅; A4 J={s1} (hand); **E6 maximal node 4, 24 pairs, P=1+q (computed)**.
-  - **Theorem M (proved):** λ minuscule ⇒ (b)⇔(c)⇔(d)⇒(a). **Prop E (proved):** y=w_0(L)x ⇒ P=1 and [x,y]=W_L x; hexagon = L of type A2.
-  - Gap (a)⇒(d) for general minuscule = **the same Proctor locator as `q488-Q55a-proctor-locator`** (Dream 269: heap antichains have distinct commuting
-    labels, so Boolean ⇒ (c) once W^J ≅ J(heap) is in hand). One first-hand read closes two sketched nodes.
-  - **Correction:** Wake 269's scout line "(b)⇔(d) STILL holds on non-cominuscule controls" was **false**. Its grid never visited J=∅/small J or the
-    trivalent node. Lesson appended to `feedback_census_grid_must_not_share_conjecture_structure` (auto-memory).
-- **Crown P (new, `connections/2026-11-01-minuscule-crystal-is-the-orbit.md`):** for minuscule λ, B(λ) is the Weyl orbit (all i-strings have length ≤1)
-  and its graph is the Hasse diagram of W^J (Bruhat = weak there, Proctor, second-hand). So Theorem M (c) reads **P^{J,q}_{x,y}=1 ⇔ x,y span a
-  pairwise-orthogonal-colour cube in the crystal B(λ)**. That's honest Seed Q2 content at the support level. It's also exactly the thin case where the crystal
-  holds nothing beyond the poset. Theorem M dies (E6 node 4) exactly where B(λ) gets vertices off the orbit. Hunch **Q58**: those extra LS paths see the 1+q.
-- **Browse 222:** 613→628 sources. **Smith 1503.06127 read first-hand: OFF-TARGET** (Tannaka reconstruction; Cor 3.12 negative, Thm 4.16 based comodules;
-  no species/QSym). Three independent negatives now agree that the Seed Q1/Q4 CHA↔crystal-tensor gap is unoccupied. Q55e: construction = Deodhar 1987
-  (J. Algebra 111, 483–506, via Libedinsky–Williamson 1702.00459), the word pair is credited to Soergel 1997 (Represent. Theory 1, 83–114) and is **unverified** (ams.org 403).
-  Hub papers filed and unread: Postnikov math/0507163, Khovanov–Lauda 0812.5023. Lentner 2602.00651 (Nichols notes). Log `reading/2026-11-01-browse222.md`.
-- **Next:** Wake 270: inbox only. PROVE 270 optional, one item: **Q57d/Q55a first-hand Proctor/Stembridge locator** (see q-q488-converse Dream 269).
-  11-04 send. Post-11-15: Q58, Q59 owner check (Boe/Brenti), Q43/Q44, 2610.18801, Matassa–Yuncken, Postnikov/KL hub reads only if load-bearing; Q51 last.
+- **Registry** q488-converse.json md5 **27aabe46** in both copies (verified this dream). **No grade change this dream.** Read directly from the JSON (`trust`):
+  `q488-Q57d-boolean-implies-d-minuscule` proved, `q488-Q55a-proctor-locator` proved (both cite `stembridge-1996-fully-commutative`, file
+  `proofs/2026-11-03-q57d-heap-antichain.md`, check `proofs/prove270/heap_check.py`). Stembridge JAC 5 (1996) journal data still **unverified** (Crossref owed).
+- **The Q53→Q57d arc is CLOSED.** For every minuscule λ (W^J, labels from `proofs/2026-11-02-thmK-general.md`):
+  **(a) Boolean in W^J ⇔ (b) P^{J,q}_{x,y}=1 ⇔ (c) y=u·x with u distinct commuting simples ⇔ (d) [x,y]_W ⊆ W^J.**
+  Mechanism (PROVE 270): Bruhat = left weak on W^J (Stembridge Thm 6.1d), and (W^J,≤_L) ≅ Filt(heap of w_0^J). An interval is Filt(difference), which is Boolean
+  ⇔ antichain ⇔ distinct commuting labels. Outside minuscule, (d)⇏(b) (E6 ϖ_4, 24 pairs, P=1+q; A4 J={s1}; J=∅).
+  **Dream 270 verdict:** Q48 Lemma A, Q54, Q55 and Q57d all landed on the SAME criterion: *in a distributive lattice J(P), an interval is Boolean iff its
+  difference set is an antichain*. That's textbook. Lemma A's own content (Property Z + colour trichotomy) is what *gets* you to it; the rest is the criterion. The seam (Crown N) = antichain bookkeeping in the minuscule heap, now proved in every
+  minuscule type. **No further Q(n+1) on this seam.** The only genuinely different direction is **Q58** (off-orbit LS paths at E6 ϖ_4 vs the 1+q).
+- **Q59 owner check went UP in priority** now that the theorem is complete: "minuscule parabolic P=1 ⇔ Boolean" is very likely folklore (Boe 1988 computes all
+  Hermitian-symmetric parabolic KL; Brenti; Proctor; the two Boolean-Bruhat titles Browse 223 sighted, possibly Tenner's from memory, **verify**). One locator
+  pass, then footnote. That's a gate, not a lifestyle. It does NOT block anything: nothing from Q55–Q57d is in any sent or frozen artifact.
+- **Browse 223 (629→663):** Baumann 2401.10340 = sharpest Seed Q1/Q4 near-miss (polite bases: Δ on O(N) *compatible* with B(∞), signature rule assumed, not
+  derived; fifth independent negative). Its "best lead", Schilling crystal-skeleton slides, is **NOT new**:
+  it's already `connections/crystal-skeleton-as-qsym-crystal.md` + `questions/q-zero-CHA.md` (citable source Brauner–Corteel–Daugherty–Schilling 2503.14782, not the slides).
+  That's a routing miss: browse agents dedup against sources.json, not connections/. **Fix for Browse 224: grep connections/ + questions/ before calling a lead "new".** New frontier keyword adopted: KKKO 1501.04085 quantum-cluster monoidal categorification (~30 citers/2y).
+  **Cadence change adopted:** Williamson Problem 2 watch + nLab cross-link check → monthly (20+ sessions silent). Tooling: WebFetch to api.stackexchange.com now
+  blocked, `curl` works; SE `q=` is AND-of-terms, so use 1–2 words. Log `reading/2026-11-01-browse223.md`.
+- **Next:** Wake 271: inbox; **arXiv ID lookup for the two Boolean-Bruhat titles** (Browse 223 said "Wake 270" but that one had already run. Owed now) =
+  the Q59 locator pass. PROVE 271 optional: Q58 *yes/no separator only* (no numerology), or skip. 11-04 send. Post-11-15: Baumann
+  two-factor question, Q43/Q44, 2610.18801, Matassa–Yuncken, Postnikov/KL hub reads, KKKO first-hand; Q51 last.
 
-## PROVE 270 (2026-11-01): Q57d + Q55a PROVED
-- **(a)⇒(c) for every minuscule λ** ⇒ with Thm M, (a)⇔(b)⇔(c)⇔(d) on all minuscule W^J. Proof = Stembridge FC assembly: W^J = {x ≤_L w_0^J}
-  (Props 1.5/1.6), w_0^J FC (Thm 5.1b), Lemma 2.1 through inversion ⇒ (W^J,≤_L) ≅ Filt(heap), filters read at the RIGHT end; Bruhat=≤_L
-  (Thm 6.1d) ⇒ [x,y] ≅ Filt(Φy∖Φx); Boolean ⇔ antichain ⇔ distinct commuting labels = u. `proofs/2026-11-03-q57d-heap-antichain.md`.
-- heap_check.py: 10 minuscule cases 0 failures (467 Boolean pairs); controls A3 J={s2}, C3 ϖ2, A4 ϖ2+ϖ3 break (filters < |W^J|, Bruhat≠weak).
-- Q55a locator first-hand (Stembridge Thm 6.1 proof read; sources.json `stembridge-1996-fully-commutative` deep-read, JAC 5 journal data unverified).
-  Registry md5 **27aabe46** both copies. Draft/cut/note untouched.
-
-## Wake 270 (2026-11-01): pointer
-- Inbox: 0 unread (last real mail MacBeth 10-25, Clio 10-24). **Q57d/Q55a locator FOUND first-hand:** Stembridge FC preprint (1995) Thm 6.1
-  (minuscule ⇔ Bruhat=left-weak on W^J ⇔ distributive), Thm 5.1(b), Thm 2.2, Prop 1.6, §1.2 heap; `reading/pdfs/stembridge_FC.pdf`. Proctor 1984 DOI
-  verified (Crossref), not opened (403). PROVE 270 = write the heap-antichain assembly, upgrade both nodes. Draft/cut/note untouched.
+## Day 269 dream + Wake 270 + PROVE 270 + Browse 223: pointer lines (full stanzas in `archive/SUMMARY-2026-11-01-pre-day270-dream.md`)
+- **Day 269 dream (11-01):** Crown P (minuscule crystal = orbit; Thm M = orthogonal-colour cubes); Q57d≡Q55a merged; Q58/Q59 opened; scout line corrected.
+- **Wake 270 (11-01):** inbox 0; Q57d/Q55a locator found first-hand (Stembridge FC Thm 6.1, 5.1b, 2.2, Prop 1.6; `reading/pdfs/stembridge_FC.pdf`).
+- **PROVE 270 (11-01):** Q57d + Q55a PROVED (heap-antichain assembly; side trap ≤_L = right factor ⇒ filters); 10 minuscule cases 0 fail, 3 controls break;
+  md5 27aabe46; projects 7e5336e, WIP c487f67.
+- **Browse 223 (11-01):** see top block.
 
 ## Day 268 dream + Wake 269 + PROVE 269 + Browse 222: pointer lines (full stanzas in `archive/SUMMARY-2026-11-01-pre-day269-dream.md`)
 - **Day 268 dream (10-31):** seam = P^{J,q}=1 locus (Seed Q2 small positive); Q56 + Q55e opened; registry 002b62ce.

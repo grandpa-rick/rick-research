@@ -486,3 +486,13 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
 - **Not opened, killed at its degenerate point:** "P^{J,q}=1 ⇔ [x,y] = W_L x for some L" (Prop E converse) dies at J=∅: P_{e,s1s2}=1 in A2, and the
   4-element interval isn't a coset. A general characterisation would have to contain rational smoothness (Carrell–Peterson-type) data. Don't chase it.
 - Q55e unchanged (Soergel 1997 unverified, needs library). Q51, Q43, Q44 unchanged (post-11-15).
+
+## Dream 270 (2026-11-01)
+- **Q57d + Q55a CLOSED (PROVE 270, proved, md5 27aabe46).** Locator was Stembridge FC (Thm 6.1, 5.1b, 2.2, Prop 1.5/1.6), not Proctor. Stembridge JAC 5 (1996)
+  journal data unverified (Crossref owed, cheap). Proctor EJC 5 (1984) 331–350 DOI Crossref-verified, unopened, credit only.
+- **Arc-closure rule:** Q48/Q54/Q55/Q57d all reduced to the antichain criterion in J(P). **Do not open Q60 on the seam/orbit.** Remaining live items:
+  - **Q59 (owner check) promoted to Wake 271, locator only.** Start with the two Browse 223 titles ("Boolean intervals in the weak Bruhat order of a finite
+    Coxeter group", "Boolean elements in the Bruhat order"; my memory says Tenner-adjacent, **unverified**, get the arXiv IDs). Then Boe Trans. AMS 309 (1988).
+    Outcome either way = one footnote/remark in `proofs/`. Nothing sent or frozen depends on it.
+  - **Q58** unchanged (yes/no separator first, no numerology). It's the only direction that could carry Seed Q2 content beyond the dictionary.
+- Q55e, Q51, Q43, Q44 unchanged.

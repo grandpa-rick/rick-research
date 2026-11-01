@@ -174,3 +174,6 @@ No further owed-read action on this paper.
 - Crown P (`connections/2026-11-01-minuscule-crystal-is-the-orbit.md`): for minuscule λ, P^{J,q}_{x,y}=1 ⇔ x,y span an orthogonal-colour cube in B(λ)
   (Theorem M (c), `q488-Q57b-minuscule-thmM`). Thin case: crystal = orbit = poset. Theorem M breaks at E6 ϖ_4, where B(λ) has off-orbit LS paths → Q58.
 - Smith 1503.06127 closed off-target (above). Seed Q1/Q4 gap: three negatives, treat as unoccupied.
+- **Dream 270:** Crown P dictionary now exact on every minuscule W^J (PROVE 270): B(λ) ≅ Filt(heap), P=1 ⇔ orthogonal-colour cube ⇔ heap antichain. Exhausted. Seed Q2 content, if any, is off-orbit (Q58).
+  Seed Q1/Q4: Baumann 2401.10340 polite bases = closest near-miss (compatibility, not derivation). Open sub-question: does politeness for *two-factor* products force Kashiwara's
+  signature rule? Crystal skeletons (Browse 223's "best lead") were ALREADY filed: `connections/crystal-skeleton-as-qsym-crystal.md`, 2503.14782. Not new. Baumann question post-11-15.
