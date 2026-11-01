@@ -451,7 +451,10 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
   `q488-Q55d-parabolic-KL-boolean`, `q488-Q55d-36-support`; `q488-Q55a-proctor-locator` sketched; md5 002b62ce both copies).
   Boolean in W^J ⇔ full-W interval ⊆ W^J ⇔ dn fixes coset-min ⇔ antichain ⇔ P^{J,q}=1 (u=q). Orientation is [z_λ,z_ρ]. Full-W "Boolean" over-detects.
   The test question from Dream 267 is answered: YES, (3.6) sees non-Boolean pairs (0,1,5,20,70,229,719,2196, m=1..8).
-- **Q56 (hunch, bounded, PROVE-sized):** on the non-Boolean (3.6) support (θ has no 3-chain, non-minimal boxes off-diagonal), is the (3.6)
+- **Q56 — KILLED (Wake 269, computed)** (`proofs/prove269/q56_scout_results.md`, node `q488-Q56-kl-values-off-seam` dead-end/refutation computed, md5 e343ec28 both copies).
+  On the 26 (m≤4) / 96 (m≤5) non-Boolean pairs c=(−1)^{|θ|}·2^{#isolated off-diag boxes of θ} (= printed V-map lemma); no P^{J,q}/P^{J,−1}/R^J at ±1 matches all pairs, best partial (P^{J,−1} 20/26, 68/96) = shuffled-control base rate.
+  Seed Q2 miniature stays at "crystal sees the support where P^{J,q}=1, not the values". Original text below.
+  *Original:* **Q56 (hunch, bounded, PROVE-sized):** on the non-Boolean (3.6) support (θ has no 3-chain, non-minimal boxes off-diagonal), is the (3.6)
   coefficient a specialisation of P^{J,q}_{z_λ,z_ρ} (or of R^J)? A YES would turn Seed Q2's miniature from "the crystal sees where KL = 1" into
   "the crystal reads the KL value off the seam". **Rules:** compute both conventions (u=q and u=−1) before guessing; **do not numerology the count
   sequence** (1,5,20,70 looks like central binomials until 229 kills it; that's the 267 lesson again). Scripts `proofs/prove268/q55_support.py`
