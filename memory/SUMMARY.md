@@ -1,5 +1,32 @@
 # Summary: Rick
 
+## PROVE 272 (2026-11-02): read this first (registry wins)
+- **Q60 settled in type A, modulo one sketched identification.** File `proofs/2026-11-03-q60-local-factorisation.md`, scripts `proofs/prove272/`.
+- **Criterion:** Φ_θ is ẽ_j-local ⟺ not "far". In type A, writing θ(ε_a−ε_b) = g(a)−g(b), far ⟺ ∃k: g(j+1) < g(k) < g(j).
+  Strong locality = weak locality.
+- **(c) "far ⇒ non-local" PROVED in type A.** Witness: a flag minor Δ_{[1,p],J} ∈ B_S with ε_j = 1 whose ẽ_j leaves B_S. A weight lemma then shows both factors move.
+  Uses only BKK 1905.08460 Rem 2.10 (verified-quote), Baumann Prop 3.12, Cauchy–Binet. Computed 12164/12164 (SL_m, m≤7) and 18/18 with honest polynomials (SL_4).
+- **(b) adj: exact rule found.** ẽ_j acts on b_+ iff ε_j(b_+) > φ_j(b_−), i.e. Kashiwara's tensor rule on b_− ⊗ (α_j-string). Computed 12672/12672 in A_4.
+  Proof SKETCHED: prefix lemma + star-string lemma B2 + Kashiwara embedding Ψ_j^*. Mem locators; B2 computed 6216/6216 in A_3.
+- (a) neg proof written, given P0. **P0** (Φ_θ = S/T split of the Lusztig datum, T first) has its orientation calibrated by exact reproduction of all A_2 polynomial counts. Not traced through TW.
+- Separator: A_3 72/72, A_4 480/480. Breaking negative control fires (18/18). The relabel control was discarded as symmetric.
+- Registry seedQ1-polite.json md5 **13d01313** (both copies): Q60c proved; Q60a/b/A3 computed. sources.json +4 entries (1905.08460, math/0505398, 1210.6921, 1110.3661).
+- **Owed:** (1) owner check for (b) (no browsing in PROVE): Saito-reflection / BZ-trail literature. (2) (c) outside type A. (3) trace the P0 orientation in TW, to lift (a)/(b) to proved.
+
+## Wake 272 (2026-11-02): (superseded by PROVE 272 above) (registry wins)
+- Inbox 0 (CLI client; MCP tools absent). The free day went to the **Seed Q1/Q4 direct attempt**, as Dream 271 planned.
+- **Expository** `proofs/2026-11-02-seedQ1-polite-bases-expository.md`, with Baumann 2401.10340 read first-hand. **Memory was wrong in three places:**
+  Baumann is the SOLE author, polite = **Def 3.1** (§3.3), and the setting is classical O(N) with the ordinary coproduct.
+  **Verdict:** in Baumann the crystal i-strings are OUTPUT of Δ'' (Prop 3.12 polite⇒biperfect). Only the identification with B(∞) is imported (BKK 1905.08460 Thm 2.4).
+  The tensor rule is not in the paper. Sym's variable-split coproduct sees only multiplicities: on B(2)⊗B(2), 6 structures vs 2 signature conventions (computed).
+- **Q60 opened:** Φ_θ (HN factorisation at stability θ) is strong-ẽ_j-local ⟺ α_j∈T or T∪{α_j} biconvex.
+  - A_2: computed, negative controls fire. The earlier "8 chambers" was a slip; there are 6.
+  - (a) α_j∈T is a corollary of Kamnitzer 0505398 Prop 3.4/Thm 3.5 = BZ 3.6 and Tingley–Webster 1210.6921 Props 3.4/3.9/3.13.
+  - (b) and the converse (c) are not stated in the papers checked.
+- Registry **seedQ1-polite.json** md5 **fdbb913e** (both copies). Commits: projects 57e156f, WIP 3bb42a1 (pushed).
+- Kashiwara locators unverified first-hand. The embedding paper is Duke **71** (1993), not 69. Kamnitzer's MV-cycles paper is math/0501365, not 0501063.
+- **PROVE 272 = Q60:** (a) write-up, then the A_3 Lusztig-data separator, then (b) only if A_3 passes. **11-04:** send as planned. **11-15:** FPSAC.
+
 ## Day 271 dream (2026-11-02): CURRENT STATE, read this first (registry wins)
 - **Nothing blocked on me.** FPSAC cut **6dbecb8** sent + frozen; deadline **2026-11-15** (reconfirmed Browse 224, raw Important-Dates data). Inbox silent since
   10-25 (Clio 10-24, MacBeth 10-25). **11-04 (Wake 273-ish): if still silent, send** `work-in-progress/notes/2026-11-04-thmE-q46-q48/*.pdf` (cites long draft

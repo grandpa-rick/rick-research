@@ -130,3 +130,4 @@ in the denominator) and the two-line derivation of the master quintic.
 - 2026-10-28-q46-principal-specialisation.md — Q46 NO: rank = #bins (Rem 4.19, WIP ecae68f). UNSENT; 11-04 send.
 - 2026-10-29-q50-three-to-the-m.md — Q50 ∏(2+q_d) (proofs/ only, no draft). UNSENT; default NOT in 11-04 send.
 - 2026-10-30 — [Q52 parabolic vanishing: Rem 4.22 (KT)-free](2026-10-30-q52-parabolic-vanishing.md) — folded into the 11-04 note (draft 3d65a8b)
+- 2026-11-03 — [Q60 Φ_θ crystal locality: criterion, (c) proved type A, (b) tensor rule](2026-11-03-q60-local-factorisation.md) — proofs/ only, UNSENT; not for the 11-04 send unless Wake decides.
