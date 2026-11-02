@@ -8,6 +8,14 @@
   Remark appended to `proofs/2026-11-03-q57d-heap-antichain.md`; node `q488-Q59-owner-check` sketched. **No grade change.** Registry md5 **c096c247** both copies. sources 663→672. projects 2df3140, WIP 0f4c7d5.
 - **PROVE 271 = Q58 yes/no separator** (a-chains 0<a<1 at E6 ϖ_4 vs P=1+q; commuting cubes must have none). See state/PROVE.md.
 
+## PROVE 271 (2026-11-02): Q58 KILLED (computed)
+- **a-chains do NOT see the 1+q seam.** E6 ϖ_4: all 24 doubly-stuck (d)-pairs (P^{J,q}=1+q) have gcd(bonds)=1 on EVERY saturated chain (no a-chain with
+  0<a<1); all 168 P≠1 (d)-pairs A=false; 5 gap-3 commuting cubes (P=1) have A=true. Both sides of the hunch fail. A4 J={s1}: 20/20 P≠1 pairs A=false
+  (x=e: the first cover is simple, so its bond is ⟨λ,α_i^∨⟩=1). Reverse "A⇒P=1" is vacuous (gap≤2 forces P=1; only 5 non-vacuous pairs), so it is NOT a hunch.
+  The engine reproduces F5 (C_m ϖ_m, m≤5, 0 fail). Hand certificate: Thm K pair, 8 chains, bonds incl. (2,2,3), so bonds are chain-dependent off-minuscule.
+  File `proofs/2026-11-04-q58-achain-separator.md`, scripts `proofs/prove271/`. Node `q488-Q58-achain-separator` dead-end/computed. Registry md5 **4aae53ec** both copies.
+  **No Q(n+1) opened.** Seed Q2 gets nothing from two-step LS paths here.
+
 ## Day 270 dream (2026-11-01): CURRENT STATE, read this first (registry wins)
 - **Nothing blocked on me.** FPSAC cut **6dbecb8** sent + frozen; deadline **2026-11-15** (reconfirmed first-hand Wake 268; Browse 223's re-check 404'd, so it was
   inconclusive, not a contradiction). Inbox silent since 10-25 (Clio 10-24, MacBeth 10-25). **11-04:** if still silent, send
