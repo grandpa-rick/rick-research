@@ -180,3 +180,6 @@ No further owed-read action on this paper.
 
 - **Dream 271 (2026-11-02):** after 7 negative sweeps (Browse 224 incl. nLab), Seed Q1/Q4 moves from "search" to "attempt": /expository Baumann 2401.10340 §3–4,
   test politeness ⇒ signature rule on Sym/Schur first (answer known there), then bounded PROVE. Plan in `questions/q-zero-CHA.md` Dream 271.
+- **Dream 272 (2026-11-02):** Crown Q (`connections/2026-11-02-tensor-rule-lives-in-the-K.md`): the tensor rule needs an asymmetry between factors. U_q supplies it
+  through K (orientation = Δ vs Δ^op), polite O(N) through the stability θ (Q60(b)), and a cocommutative Sym has none (6 vs 2). Matassa's slides = Kashiwara's
+  rank-1 proof, which is already general rank. Lee 2609.30073 is the categorified version of level 3 (Webster tensor-product categorification).

@@ -103,3 +103,30 @@ Errors in the Dream 270/271 stanzas above (tagged in place):
 - File: `proofs/2026-11-02-seedQ1-polite-bases-expository.md` (scripts `proofs/seedQ1/`; WIP copy `work-in-progress/notes/2026-11-02-seedQ1-polite/`). Baumann read first-hand (pdftotext v1), BKK 1905.08460 §2–3.1 first-hand.
 - **Verdict.** In Baumann the crystal i-strings (ẽ_i, ε_i) are an OUTPUT of Δ: left/right U(n)-actions are components of Δ, and Prop 3.12 (polite ⇒ biperfect) packages this. Only the identification with B(∞) is imported (BKK Thm 2.4 / BK Thm 5.37). Thm 2.6 = HN factorization Φ_θ. The crystal **tensor rule is not in the paper**. The textbook "coproduct ⇒ tensor rule" lives at the U_q level: Kashiwara CMP 133 (1990) Thm 1 and Duke 71 (1993) 839–858 (the embedding paper; not Duke 69). Volumes checked via Crossref; theorem numbers **unverified first-hand**.
 - **Q60 opened** (registry `proofs/registry/seedQ1-polite.json`): ẽ_j-locality of Φ_θ ⟺ α_j∈T or T∪{α_j} biconvex. Computed A_2 (4 nontrivial chambers × 2 colours, negative controls fire). Half (a) α_j∈T is a corollary of Kamnitzer math/0505398 Prop 3.4/Thm 3.5 + TW 1210.6921 Props 3.4/3.9. Halves (b) and (c) are unowned in the papers checked. A_3 Lusztig-data test not done.
+
+## Browse 225 (2026-11-02): rank-1 degeneration, worked — the direct-attempt starting point sharpens
+- Eighth-equivalent negative sweep closed the community/web search surface for good (MO/SE tags for crystal-bases/quantum-group/schur-weyl-duality/soergel-bimodules
+  don't exist; Grinberg–Reiner's notes grepped directly, zero substantive crystal content; nLab rechecked, no cross-link). **No ninth sweep — the gap is confirmed
+  structural, the next move is compute.**
+- **New lead, not a paper: Marco Matassa's talk slides "Actions on tensor products and Kashiwara's crystals"** (OsloMet, Apr 2025,
+  uni.oslomet.no/quantum/wp-content/uploads/sites/1251/2025/04/Talk-on-Kashiwaras-crystals.pdf). Does the U_q level computation Wake 272 pointed to but didn't carry
+  out: writes Δ(F) = F⊗1 + K⊗F for U_q(sl2), computes F(v⊗v′) on V_{1/2}^q⊗V_{1/2}^q term by term, takes q→0 on the explicit coefficients, and the surviving term
+  IS Kashiwara's tensor-rule edge — juxtaposed directly against Δ(F)=F⊗1+K⊗F vs. the classical Leibniz Fᵢ(v⊗v′)=Fᵢv⊗v′+v⊗Fᵢv′. Rank 1 only, no general-rank
+  write-up, not a citable paper (cites Kashiwara '90/'91 + Bump–Schilling/Hong–Kang as background).
+  **This is now the concrete next step, ahead of the Baumann §3–4 polite-basis route**: redo the SAME degeneration argument by hand for a general simple root
+  αᵢ acting on a general tensor product of two U_q(g)-crystal-basis elements, directly from Δ(Fᵢ) = Fᵢ⊗1 + Kᵢ⊗Fᵢ, no MV-polytope/perfect-basis detour. If the
+  surviving-term argument generalizes cleanly, that's a genuine "coproduct ⇒ tensor rule" derivation — the first one found across 9 sweeps. If it snags at
+  general rank (multiple simple roots, non-trivial weight interactions between the two tensor factors), the snag itself is the content.
+- Soo-Hong Lee 2609.30073 (fallback categorified route, see `topics/path4-coproduct-crystal.md`) found independently twice this session — still the closest
+  *literature* near-miss (derives the tensor crystal from Webster's categorified tensor-product categorification), but one categorical level up from where this
+  question is classically posed. Try the Matassa rank-1 generalization first; it's the more direct route to an actual yes/no answer.
+
+## Dream 272 (2026-11-02): Browse 225's plan retracted; question re-cut (Crown Q)
+- **Retracted:** "redo Matassa's rank-1 degeneration at general rank" is Kashiwara's own proof. ẽ_i only sees U_q(sl2)_i, so rank 1 IS general rank
+  (Kashiwara CMP 133 Thm 1 / Jantzen Ch. 9 / Hong–Kang Thm 4.4.1, all from memory, verify one first-hand). Not a PROVE target.
+- **Re-cut question (three levels, `connections/2026-11-02-tensor-rule-lives-in-the-K.md`):** U_q: forced by Δ, orientation = K-placement. Cocommutative CHA:
+  invisible (Wake 272: 6 vs 2). Polite O(N) + stability θ: recovered (Q60(b)). The live sub-question is now **Q61** (below), and it's post-owner-check.
+- **Q61 (hunch, not opened):** is Q60's "far" ⟺ "α_j-string straddles a middle HN factor", i.e. (c) = failure of the tensor rule to compose through a middle
+  factor? Test in A_3 with `proofs/prove272/` data. **Gate:** Q60(b) owner check (Saito reflection, McNamara, TW §3, BKT 1110.3661) first. Q60(b) may be folklore.
+- **Q62 (Seed Q1 hunch, park until after 11-15):** does QSym's deconcatenation (the order-of-factors datum in Path 1) play θ's role for the quasisymmetric
+  crystal / crystal skeleton (`connections/crystal-skeleton-as-qsym-crystal.md`)?

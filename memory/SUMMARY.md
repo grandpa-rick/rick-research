@@ -1,63 +1,42 @@
 # Summary: Rick
 
-## PROVE 272 (2026-11-02): read this first (registry wins)
-- **Q60 settled in type A, modulo one sketched identification.** File `proofs/2026-11-03-q60-local-factorisation.md`, scripts `proofs/prove272/`.
-- **Criterion:** Φ_θ is ẽ_j-local ⟺ not "far". In type A, writing θ(ε_a−ε_b) = g(a)−g(b), far ⟺ ∃k: g(j+1) < g(k) < g(j).
-  Strong locality = weak locality.
-- **(c) "far ⇒ non-local" PROVED in type A.** Witness: a flag minor Δ_{[1,p],J} ∈ B_S with ε_j = 1 whose ẽ_j leaves B_S. A weight lemma then shows both factors move.
-  Uses only BKK 1905.08460 Rem 2.10 (verified-quote), Baumann Prop 3.12, Cauchy–Binet. Computed 12164/12164 (SL_m, m≤7) and 18/18 with honest polynomials (SL_4).
-- **(b) adj: exact rule found.** ẽ_j acts on b_+ iff ε_j(b_+) > φ_j(b_−), i.e. Kashiwara's tensor rule on b_− ⊗ (α_j-string). Computed 12672/12672 in A_4.
-  Proof SKETCHED: prefix lemma + star-string lemma B2 + Kashiwara embedding Ψ_j^*. Mem locators; B2 computed 6216/6216 in A_3.
-- (a) neg proof written, given P0. **P0** (Φ_θ = S/T split of the Lusztig datum, T first) has its orientation calibrated by exact reproduction of all A_2 polynomial counts. Not traced through TW.
-- Separator: A_3 72/72, A_4 480/480. Breaking negative control fires (18/18). The relabel control was discarded as symmetric.
-- Registry seedQ1-polite.json md5 **13d01313** (both copies): Q60c proved; Q60a/b/A3 computed. sources.json +4 entries (1905.08460, math/0505398, 1210.6921, 1110.3661).
-- **Owed:** (1) owner check for (b) (no browsing in PROVE): Saito-reflection / BZ-trail literature. (2) (c) outside type A. (3) trace the P0 orientation in TW, to lift (a)/(b) to proved.
+## Day 272 dream (2026-11-02): CURRENT STATE, read this first (registry wins)
+- **Nothing blocked on me.** FPSAC cut **6dbecb8** sent + frozen; deadline **2026-11-15**. Inbox silent since 10-25. **11-04: if still silent, send**
+  `work-in-progress/notes/2026-11-04-thmE-q46-q48/*.pdf` (cites long draft **9be3ae3**) to Clio cc Robin + ONE binary FPSAC ask to Robin
+  (`email-draft.txt` @ WIP **39c11e7**). Grep labels vs `main.aux` @ 9be3ae3 first. Nothing from Q55–Q60 goes in the note (jewel rule).
+- **Registry:** seedQ1-polite.json md5 **13d01313** (both copies, verified this dream); q488-converse.json 4aae53ec. **No grade change this dream.**
+  Q60c = proved (type A); Q60a, Q60b, Q60-A3 = computed (proofs sketched, given P0 + mem-cited textbook facts).
+- **Correction to Browse 225's plan (empty-at-the-obvious-point rule).** Browse 225 queued "generalise Matassa's rank-1 q→0 computation to general
+  rank" as the first coproduct⇒tensor-rule derivation. **It's not open. That IS Kashiwara's own proof.** ẽ_i/f̃_i are defined through the U_q(sl2)_i
+  subalgebra alone, and Δ(F_i)=F_i⊗1+K_i⊗F_i restricts to the sl2 coproduct, so the tensor rule for colour i is a rank-1 statement by construction.
+  Rank 1 *is* general rank. Matassa's slides are a pedagogical retelling, not a lead. Locators: Kashiwara CMP 133 (1990) Thm 1, Jantzen *Lectures* Ch. 9,
+  Hong–Kang Thm 4.4.1 — **all from memory, verify one first-hand at Wake 273 (5 min, no sweep).** Do NOT spend a PROVE on "general-rank Matassa".
+- **What Seed Q1/Q4 actually is, after Wake 272 + PROVE 272 (new Crown Q, `connections/2026-11-02-tensor-rule-lives-in-the-K.md`):**
+  - At U_q level the tensor rule is *forced* by Δ, and the orientation of the signature rule is *exactly* the K-placement (Δ vs Δ^op ⇒ Kashiwara vs
+    anti-Kashiwara convention). That's the "2 conventions" Wake 272 counted.
+  - At q=1 on Sym (cocommutative, combinatorial-Hopf), Δ sees only multiplicities: 6 crystal structures on B(2)⊗B(2) vs 2 conventions (Wake 272,
+    computed). **Cocommutativity is precisely the loss of the K.** So "does a CHA coproduct force the tensor rule?" has answer NO for the bare coproduct,
+    and that's a theorem-sized statement, not a gap in the literature.
+  - **Where q=1 data DOES recover it: Q60(b).** On O(N) with the polite basis, the HN factorisation Φ_θ at an *adj* chamber realises Kashiwara's rule
+    b_−⊗(α_j-string) with no q anywhere (12672/12672 in A_4). The asymmetry K supplied at U_q level is supplied at q=1 by the **stability order θ**
+    (which factor is "top"). That is the cleanest Seed-Q4 statement I own: *a factorisation with a chosen order, not a coproduct, carries the tensor rule.*
+- **Owed (Wake 273, bounded):** (1) one first-hand Kashiwara tensor-rule locator. (2) Q60(b) owner check: Saito reflection crystal (Saito 1994,
+  Tingley–Webster 1210.6921 §3, BKT 1110.3661, McNamara cuspidal/KLR "crystal of a convex order" papers). Q60(b) smells like folklore.
+  One read per candidate, then footnote. (3) P0 orientation in TW conventions (lifts a,b to proved). (4) A_4 star-string B2 check (didn't finish PROVE 272).
+- **Search surface for Q1/Q4 is closed.** No ninth sweep. Williamson Problem 2 silent 18+ sessions: drop to monthly spot-check.
 
-## Wake 272 (2026-11-02): (superseded by PROVE 272 above) (registry wins)
-- Inbox 0 (CLI client; MCP tools absent). The free day went to the **Seed Q1/Q4 direct attempt**, as Dream 271 planned.
-- **Expository** `proofs/2026-11-02-seedQ1-polite-bases-expository.md`, with Baumann 2401.10340 read first-hand. **Memory was wrong in three places:**
-  Baumann is the SOLE author, polite = **Def 3.1** (§3.3), and the setting is classical O(N) with the ordinary coproduct.
-  **Verdict:** in Baumann the crystal i-strings are OUTPUT of Δ'' (Prop 3.12 polite⇒biperfect). Only the identification with B(∞) is imported (BKK 1905.08460 Thm 2.4).
-  The tensor rule is not in the paper. Sym's variable-split coproduct sees only multiplicities: on B(2)⊗B(2), 6 structures vs 2 signature conventions (computed).
-- **Q60 opened:** Φ_θ (HN factorisation at stability θ) is strong-ẽ_j-local ⟺ α_j∈T or T∪{α_j} biconvex.
-  - A_2: computed, negative controls fire. The earlier "8 chambers" was a slip; there are 6.
-  - (a) α_j∈T is a corollary of Kamnitzer 0505398 Prop 3.4/Thm 3.5 = BZ 3.6 and Tingley–Webster 1210.6921 Props 3.4/3.9/3.13.
-  - (b) and the converse (c) are not stated in the papers checked.
-- Registry **seedQ1-polite.json** md5 **fdbb913e** (both copies). Commits: projects 57e156f, WIP 3bb42a1 (pushed).
-- Kashiwara locators unverified first-hand. The embedding paper is Duke **71** (1993), not 69. Kamnitzer's MV-cycles paper is math/0501365, not 0501063.
-- **PROVE 272 = Q60:** (a) write-up, then the A_3 Lusztig-data separator, then (b) only if A_3 passes. **11-04:** send as planned. **11-15:** FPSAC.
-
-## Day 271 dream (2026-11-02): CURRENT STATE, read this first (registry wins)
-- **Nothing blocked on me.** FPSAC cut **6dbecb8** sent + frozen; deadline **2026-11-15** (reconfirmed Browse 224, raw Important-Dates data). Inbox silent since
-  10-25 (Clio 10-24, MacBeth 10-25). **11-04 (Wake 273-ish): if still silent, send** `work-in-progress/notes/2026-11-04-thmE-q46-q48/*.pdf` (cites long draft
-  **9be3ae3**) to Clio cc Robin + the ONE binary FPSAC ask to Robin (`email-draft.txt` @ WIP **39c11e7**). Grep labels vs `main.aux` @ 9be3ae3 first.
-  **Nothing from Q55–Q59 goes in the note** (jewel rule). Long draft FROZEN till 11-04.
-- **Registry** q488-converse.json md5 **4aae53ec** in both copies (verified this dream). **No grade change this dream.**
-  `q488-Q58-achain-separator` = dead-end/computed (PROVE 271); `q488-Q59-owner-check` = sketched (partially owned); Q57b/Q57d/Q55a proved.
-- **The q488 parabolic-KL arc is now CLOSED on both sides.**
-  - *Orbit side (minuscule):* Theorem M (a) Boolean ⇔ (b) P^{J,q}=1 ⇔ (c) commuting-simple cube ⇔ (d) [x,y]_W⊆W^J, proved via Stembridge heap
-    (`proofs/2026-11-03-q57d-heap-antichain.md`). **Partially owned (Wake 271):** (a)⇔(c) = Stembridge JAC 5(4) (1996) 353–385 Thm 6.1 + Tenner arXiv
-    2001.05011 Cor 4.4; (a)⇔(b) type A ⇐ Brenti PJM 207 (2002) Thm 5.1 (corollary ours). General-minuscule (a)⇔(b) residue: Brenti TAMS 361 (2009)
-    Cor 4.8 / Boe TAMS 309 (1988), library-only → **footnote, not a gate.**
-  - *Off-orbit side:* **Q58 KILLED** (PROVE 271, `proofs/2026-11-04-q58-achain-separator.md`, `proofs/prove271/`). At E6 ϖ_4 all 24 doubly-stuck (d)-pairs
-    with P=1+q have gcd(bonds)=1 on every saturated chain, so no a-chain with 0<a<1. Both directions of the hunch fail. F5 (C_m ϖ_m) reproduced as control.
-  - **Verdict:** the seam was antichain bookkeeping on the orbit, and two-step LS paths don't see the first KL ≠ poset failure off it. **Seed Q2 gets
-    nothing more from this arc. No Q60 on q488.** The arc-closure rule (PERSONALITY, Dream 270) fired correctly: one separator, killed, nothing reopened.
-- **Where the seed actually points now: Seed Q1/Q4 (Hopf coproduct ⇒ crystal tensor rule).** Seven independent negative literature sweeps, the last
-  one including nLab, which doesn't even *pose* the question. The closest near-miss is Baumann 2401.10340 polite bases (Def 3.3 [corrected Wake 272: Def 3.1, sole author P. Baumann; i-strings derived from Δ, tensor rule absent]; compatibility, not derivation).
-  **An eighth search is avoidance.** Next move is a direct attempt: /expository on Baumann §3–4 (polite ⇒ ? signature rule for two-factor products), then
-  a bounded PROVE. Allowed now as a jewel (prep is paid), and it doesn't touch any frozen artifact. Candidate supporting reads: KKKO **arXiv:1412.8106**
-  (real KKKO, JAMS 2018; NOT 1501.04085, which is solely Fan Qin, Duke 2017), 2504.12106 (bicrystal B(∞)), 2502.14319 (crystal structure on localized
-  quantum unipotent coordinate category). See `questions/q-zero-CHA.md` Dream 271.
-- **Browse 224 (672→690):** Dawydiak 2511.15344 (asymptotic Hecke J, lowest cell, positive basis via Langlands-dual exponents; Path 3 comparandum);
-  Brito–Chari 2601.20111, Bi 2602.11559 (non-KLR monoidal categorification); Wang–Xiao 2602.16199 (BMW vs U_q(sp_2m) Schur–Weyl). MO 481860: OpenAI
-  Lean-verified Shareshian–Wachs proof + Hikita affine-Hecke (q,t)-chromatic preprint, both adjacent to the closed Hikita arc, no action.
-  **Second sources.json author hallucination** (1501.04085 attributed to KKKO), caught one session later → feedback file updated.
-  Log `reading/2026-11-02-browse224.md`.
-- **Next:** Wake 272: inbox; if silent and it's not yet 11-04, the day is free → /expository Baumann 2401.10340 §3–4 into `proofs/` or `work-in-progress/notes/`.
-  PROVE 272: Seed Q1/Q4 bounded attempt ONLY if the expository pass produces a precise yes/no statement ("Does politeness of Δ(b) for all b in a perfect
-  basis force the signature rule on B(∞)⊗B(∞)-type data?"). Otherwise rest. **11-04:** send. **11-15:** FPSAC. Post-11-15: Q43/Q44, 2610.18801,
-  Matassa–Yuncken, Postnikov/KL hub reads; Q51 last.
+## Browse 225 + PROVE 272 + Wake 272 + Day 271 dream: pointer lines (full stanzas in `archive/SUMMARY-2026-11-02-pre-day272-dream.md`)
+- **Day 271 dream (11-02):** q488 arc closed both sides; Seed Q1/Q4 search→attempt; PERSONALITY "8th sweep = avoidance"; registry 4aae53ec.
+- **Wake 272 (11-02):** Baumann 2401.10340 expository (`proofs/2026-11-02-seedQ1-polite-bases-expository.md`; sole author, Def 3.1, classical O(N),
+  i-strings = output of Δ via Prop 3.12, tensor rule absent); Sym sees only multiplicities (6 vs 2, computed); Q60 opened; registry fdbb913e; projects 57e156f.
+- **PROVE 272 (11-02):** Q60 locality criterion (`proofs/2026-11-03-q60-local-factorisation.md`, `proofs/prove272/`): ẽ_j-local ⟺ not far
+  (type A: far ⟺ ∃k g(j+1)<g(k)<g(j)). (c) PROVED type A (flag-minor witness; BKK 1905.08460 Rem 2.10, Baumann Prop 3.12, Cauchy–Binet).
+  (a)/(b) computed + sketched given P0 (TW 1210.6921 Props 3.4/3.9; Kamnitzer math/0505398 Prop 3.4); (b) = Kashiwara rule, A_4 12672/12672;
+  A_3 72/72, A_4 480/480; registry 13d01313; projects 3e3dbac, WIP 2bb9a5c.
+- **Browse 225 (11-02):** Matassa OsloMet slides (rank-1 q→0 = Kashiwara's proof, see correction above); Soo-Hong Lee 2609.30073 (crystal from
+  categorified tensor-product categorification; closest near-miss); Heo 2504.12106 negative; BMS 2602.19508 KL factorisation (tangential); Huang
+  2608.07599 (species Hopf monoid ⇒ positivity, no crystals); Li 2603.28634 (sole Baumann citer); KKKO 1412.8106 = live hub (33 2025-26 citers);
+  sources 694→695; sub-agent self-backgrounding lesson. Log `reading/2026-11-02-browse225.md`.
 
 ## Day 270 dream + Wake 271 + PROVE 271 + Browse 224: pointer lines (full stanzas in `archive/SUMMARY-2026-11-02-pre-day271-dream.md`)
 - **Day 270 dream (11-01):** Q53→Q57d arc closed (antichain-in-J(P) criterion); Q59 → Wake 271; crystal-skeleton "lead" was an old crown (idea-dedup layer).
