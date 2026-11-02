@@ -38,3 +38,9 @@ a *counterexample* points there rather than a hope. → **Q58** (`questions/q-q4
 - **So the dictionary is exact and exhausted.** In the minuscule case, "read P=1 off the crystal" = "read antichains off the heap". There's no more
   Seed Q2 content to mine on the orbit. If any exists, it is off-orbit (Q58, E6 ϖ_4). Don't open another orbit-side question.
 - Probable owner of the whole dictionary: Boe 1988 / Proctor / Stembridge / Tenner-type Boolean-Bruhat work → Q59 locator pass (Wake 271).
+
+## Dream 271 update: the off-orbit door is shut too (for this key)
+- Q58 (`q488-Q58-achain-separator`, dead-end/computed, `proofs/2026-11-04-q58-achain-separator.md`): at E6 ϖ_4 the extra LS paths (a-chains with 0<a<1)
+  do NOT sit at the P=1+q pairs. The counterexample pointed off-orbit, but the obvious off-orbit invariant (bond gcd / two-step paths) is blind to it.
+- So Crown P is the full content: on the orbit, crystal = heap and P=1 = antichain (partly owned: Stembridge 6.1, Tenner 2001.05011 Cor 4.4, Brenti 2002).
+  Off the orbit there's no cheap crystal reading of the first KL ≠ poset failure. Seed Q2 stays open here, with no live lead.

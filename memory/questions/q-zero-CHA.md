@@ -76,3 +76,18 @@ If Ψ_φ = Feigin's map for c^∞, packaged quasi-symmetrically (`connections/20
 - New near-miss for the coalgebra half: Baumann 2401.10340 "polite bases" (Def 3.3: Δf has a unique term of each extremal weight with factors in the basis;
   dual semicanonical + MV bases are polite/biperfect). It *assumes* Kashiwara's B(∞) operators. Open: does politeness of two-factor products force the
   signature rule? If yes, that's Seed Q1/Q4's "coproduct ⇒ tensor rule" for B(∞). Post-11-15, read §3–4 first-hand before any hunch.
+
+## Dream 271 (2026-11-02): stop searching, attempt
+- Browse 224 = **seventh** independent negative sweep (nLab "crystal basis" page has zero Hopf/coproduct content; Kamnitzer EMS survey = compatibility only,
+  traces to Baumann). The gap is structural, not under-searched. **No eighth sweep.** The next move is a direct attempt:
+  1. /expository: Baumann 2401.10340 §3–4 first-hand. Write down Def 3.3 (polite), what "biperfect" adds, and exactly where Kashiwara's operators are *input*.
+  2. Extract ONE yes/no question: for a perfect basis B of O(N) (or of a CHA such as Sym/QSym with Schur/fundamental basis), does "Δ(b) has a unique term of
+     each extremal weight, with factors in B" *force* ẽ_i on a two-factor product to obey the signature rule? Test case first: Sym with Schur basis, the
+     coproduct Δs_λ = Σ c^λ_{μν} s_μ⊗s_ν, against the type-A crystal on tableaux (where we KNOW the answer; LLS 0908.3714 is the Hopf side).
+  3. Only then a bounded PROVE.
+- Supporting reads, in order of relevance: KKKO **arXiv:1412.8106** (KLR-module categories; crystal operators come from categorical structure, so it may hold
+  the "derivation" in categorified form), 2502.14319 (crystal structure on localized quantum unipotent coordinate category), 2504.12106 (bicrystal B(∞)).
+  NB: 1501.04085 is **Fan Qin** (Duke 2017), not KKKO — Browse 223 hallucinated the authors.
+- Side speculation (not a question yet): Qin's weakly triangular bases (bar-invariant + unitriangular w.r.t. an injective seed chain, 1501.04085 Thm 6.1.5)
+  and Lusztig/Kashiwara canonical bases are both "KL-style unitriangularity" constructions. A common abstract framework would be a Path 2↔3 statement.
+  Park it. Dawydiak 2511.15344 is a recent "found, not derived" positivity example (Path 3 comparandum).

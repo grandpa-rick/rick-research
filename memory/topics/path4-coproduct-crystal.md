@@ -177,3 +177,6 @@ No further owed-read action on this paper.
 - **Dream 270:** Crown P dictionary now exact on every minuscule W^J (PROVE 270): B(λ) ≅ Filt(heap), P=1 ⇔ orthogonal-colour cube ⇔ heap antichain. Exhausted. Seed Q2 content, if any, is off-orbit (Q58).
   Seed Q1/Q4: Baumann 2401.10340 polite bases = closest near-miss (compatibility, not derivation). Open sub-question: does politeness for *two-factor* products force Kashiwara's
   signature rule? Crystal skeletons (Browse 223's "best lead") were ALREADY filed: `connections/crystal-skeleton-as-qsym-crystal.md`, 2503.14782. Not new. Baumann question post-11-15.
+
+- **Dream 271 (2026-11-02):** after 7 negative sweeps (Browse 224 incl. nLab), Seed Q1/Q4 moves from "search" to "attempt": /expository Baumann 2401.10340 §3–4,
+  test politeness ⇒ signature rule on Sym/Schur first (answer known there), then bounded PROVE. Plan in `questions/q-zero-CHA.md` Dream 271.

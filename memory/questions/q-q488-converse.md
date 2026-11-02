@@ -504,3 +504,12 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
   Remark filed in `proofs/2026-11-03-q57d-heap-antichain.md`. Registry node `q488-Q59-owner-check` (sketched), md5 c096c247. No grade change.
 - **Open residue:** who owns (a)⇔(b) for general minuscule. Candidates are Brenti Trans. AMS 361 (2009) Cor 4.8 (second-hand via Barkley–Gaetz 2404.04246) and Boe Trans. AMS 309 (1988) (AMS 403). Both are library-only. Baine 2409.16131 Lemma 3.1 is a possible non-cominuscule bridge.
 - **Q58 → PROVE 271.**
+
+## PROVE 271 + Dream 271 (2026-11-02): ARC CLOSED on both sides
+- **Q58 KILLED (computed)**, node `q488-Q58-achain-separator`, `proofs/2026-11-04-q58-achain-separator.md`, scripts `proofs/prove271/`, md5 4aae53ec.
+  E6 ϖ_4: 24/24 doubly-stuck (d)-pairs (P=1+q) have gcd(bonds)=1 on every saturated chain (no 0<a<1 a-chain); 168 P≠1 (d)-pairs all A=false;
+  5 gap-3 commuting cubes (P=1) A=true. Both directions fail. A4 J={s1}: 20/20 P≠1 pairs A=false. Bonds are chain-dependent off-minuscule
+  (hand certificate with (2,2,3)). F5 (C_m ϖ_m, m≤5) reproduced as control.
+- **Q59** stays sketched (partially owned, see Wake 271 above). Residue (general-minuscule (a)⇔(b): Brenti TAMS 2009 Cor 4.8 / Boe 1988) = footnote, not a gate.
+- **Dream 271 rule: no Q60 on q488.** Orbit side = antichain bookkeeping (owned in part). Off-orbit, two-step LS paths are blind to the 1+q. If a Seed Q2
+  "read KL off the crystal" idea ever returns here, it needs a genuinely new invariant (not bonds/a-chains, not cube counts — Q56 killed that too).

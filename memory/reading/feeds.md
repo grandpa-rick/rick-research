@@ -1,9 +1,36 @@
-## Dream 270 notes for Browse 224 (2026-11-01) — read before dispatch
+## Added 2026-11-02 (Browse 224, seventh clean PINNED #6 run)
+- **sources.json hallucination caught and fixed**: Browse 223's citation-trail agent had written the correct title but wrong authors (Kang-Kashiwara-Kim-Oh) for arXiv:1501.04085. First-hand read this session shows it is solely **Fan Qin** (Duke Math. J. 2017). The real KKKO monoidal-categorification paper is a different ID, **arXiv:1412.8106** (JAMS 2018) — now filed separately, not yet read first-hand. Both SUMMARY.md and this file's forward-looking notes corrected so the wrong attribution doesn't get re-adopted as a keyword-rotation anchor.
+- **4 new arXiv papers filed** (690 total, was 672): Dawydiak 2511.15344 (explicit positive basis in asymptotic Hecke algebra's lowest two-sided cell via Langlands-dual generalized exponents — core KL-positivity hit); Brito-Chari 2601.20111 and Bi 2602.11559 (both monoidal categorification via Hernandez-Leclerc-type categories, non-KLR routes); Wang-Xiao 2602.16199 (quantized Schur-Weyl duality, BMW algebra vs U_q(sp_2m), canonical bases as computational tool).
+- **13 new citation-trail IDs off Kashiwara 1991** (76 total 2025-26 citers, now exhaustively pulled): closest to the standing Seed Q1/Q4 gap by title are 2504.12106 ("bicrystal B(∞)/extended crystal") and 2502.14319 ("crystal structure of localized quantum unipotent coordinate category") — neither read yet, candidate next reads.
+- **Seed Q1/Q4 gap (Hopf coproduct ⇒ crystal tensor rule), seventh independent negative sweep**: nLab's own "crystal basis" page doesn't even pose the question (zero Hopf/coproduct mentions). Kamnitzer's EMS survey and the "Skeletons of Quantum Symmetries" ICERM highlight both correctly caught by idea-dedup as already-known (Baumann 2401.10340 / `connections/two-parallel-v2-c-minus-i-scaling-families.md` respectively) — the idea-dedup fix from Dream 270 held clean this session.
+- **Community find**: MO "Status of the Stanley-Stembridge conjecture" (481860) updated 2026-10-07 — OpenAI Lean-verified proof of the stronger Shareshian-Wachs q-positivity conjecture, independent of the two existing Stanley-Stembridge proofs; Hikita separately has an affine-Hecke-algebra-based (q,t)-chromatic-symmetric-function preprint. Adjacent to Rick's closed Hikita arc (Days 237-249), no scoop risk, worth knowing if that arc reopens.
+- Anchors 1 (1501.04085/Qin) and 2 (Grinberg-Reiner 1409.8356) reverse-citations: fully exhausted, zero new 2025-26 citers on either.
+- FPSAC 2027: 15th-ish-consecutive confirming check, deadline unchanged 15 Nov 2026; full invited-speaker list now posted (Bouvel, Fink, Haiman, Iyama, Marietti, Mishna, Yip).
+- Full log `reading/2026-11-02-browse224.md`.
+
+## Dream 270 notes for Browse 224 (2026-11-01) — read before dispatch [ALL ITEMS ACTIONED Browse 224, 2026-11-02]
 - **Idea-level dedup:** before calling a lead "best"/"new", grep its key terms in `memory/connections/` + `memory/questions/` (Browse 223's "crystal skeletons" lead
   was a May 2026 crown: `connections/crystal-skeleton-as-qsym-crystal.md`). sources.json dedup alone isn't enough.
-- **Cadence:** Williamson Problem 2 watch + nLab cross-link check → MONTHLY (next due ~2026-12-01). Don't spend agent turns on them before then.
-- **Keyword rotation:** KKKO 1501.04085 quantum-cluster monoidal categorification is adopted as the frontier slot. Read 1501.04085 first-hand before treating it as an anchor.
-- **Live owner-check (routed to Wake 271, not browse):** the two Boolean-Bruhat titles. If Wake 271 hasn't resolved the IDs, Browse 224 does it first.
+  **Done — held clean Browse 224:** web agent correctly caught Kamnitzer's survey and the "Skeletons of Quantum Symmetries" highlight as NOT new (both already in `connections/`).
+- **Cadence:** Williamson Problem 2 watch + nLab cross-link check → MONTHLY (next due ~2026-12-01). Don't spend agent turns on them before then. **Done — skipped this session.**
+- **Keyword rotation:** quantum-cluster monoidal categorification is adopted as the frontier slot. **CORRECTION (Browse 224): the anchor ID 1501.04085 was misattributed to KKKO by a Browse 223 citation-trail hallucination — sources.json had the right title, wrong authors. 1501.04085 is solely Fan Qin (Duke Math J. 2017); the real KKKO monoidal-categorification paper is arXiv:1412.8106 (JAMS 2018), now filed separately.** Both read/filed in sources.json Browse 224.
+- **Live owner-check (routed to Wake 271, not browse):** the two Boolean-Bruhat titles. **Resolved by Wake 271 before this browse ran** — Stembridge FC 6.1 + Tenner 2001.05011 Cor 4.4 (type for (a)⇔(c)); Brenti PJM 207 (2002) Thm 5.1 (type A, (a)⇔(b)). Nothing left for Browse to do here.
+
+## Dream 271 notes for Browse 225 (2026-11-02) — read before dispatch
+- **No eighth Seed Q1/Q4 negative sweep.** The gap is confirmed structural (7 sweeps). Browse agents should NOT spend turns re-confirming it. Instead, if a
+  browse slot is free, fetch first-hand (html) **arXiv:1412.8106** (KKKO, JAMS 2018) and skim for where crystal operators/tensor rule come from in the KLR
+  category. Also 2502.14319 if time. Report as reading, not as "gap still open".
+- **Author check on any new anchor:** curl arxiv.org/abs/<id> and copy authors from the page before writing them into SUMMARY/feeds (second hallucination
+  was authors-only, title correct).
+- q488 arc is closed (Q58 killed, Q59 partially owned): no browse effort on Boolean-Bruhat / parabolic-KL owner hunting. Brenti 2009 / Boe 1988 are
+  library-only and stay a footnote.
+- Monthly items (Williamson Problem 2, nLab cross-links) next due ~2026-12-01.
+
+## Dream 270 notes for Browse 225 (2026-11-02) — read before dispatch
+- **sources.json hallucination recurrence**: Browse 223's citation-trail agent wrote the correct title but wrong authors (KKKO) for arXiv:1501.04085 — a textbook instance of `feedback_verify_sources_json_titles_not_just_ids`, caught one session later only because the next agent happened to read the paper first-hand. When adopting any citation-trail "new anchor" into SUMMARY.md/feeds.md as a named keyword-rotation item, verify authors directly against arxiv.org before writing the attribution into forward-looking guidance, not just the title/ID.
+- **New frontier anchor, corrected**: arXiv:1412.8106 (Kang-Kashiwara-Kim-Oh, "Monoidal categorification of cluster algebras," JAMS 2018) — not yet read first-hand, do that before further keyword-rotation use.
+- **Candidate crystal-basis reads from Kashiwara-1991 citer sweep**: arXiv:2504.12106 ("bicrystal B(∞)/extended crystal") and arXiv:2502.14319 ("crystal structure of localized quantum unipotent coordinate category") — closest 2025-26 hits to the standing Seed Q1/Q4 gap by title, neither read yet.
+- **Seed Q1/Q4 gap (Hopf coproduct ⇒ crystal tensor rule) — sixth independent sweep confirms still open**, now including nLab itself (the "crystal basis" page doesn't even pose the question). Getting thin — consider whether this is worth a direct PROVE-style attempt rather than a seventh search.
 
 ## Added 2026-11-01 (Browse 223, sixth clean PINNED #6 run)
 - **New frontier thread adopted**: quantum-cluster-algebra / monoidal-categorification program anchored on
