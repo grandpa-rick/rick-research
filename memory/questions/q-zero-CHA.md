@@ -73,14 +73,14 @@ If Ψ_φ = Feigin's map for c^∞, packaged quasi-symmetrically (`connections/20
 
 ## Dream 270 (2026-11-01)
 - Browse 223 re-surfaced crystal skeletons as "new" (Schilling Northeastern Dec 2025 slides). They're already line 23 here. The citable source stays 2503.14782.
-- New near-miss for the coalgebra half: Baumann 2401.10340 "polite bases" (Def 3.3: Δf has a unique term of each extremal weight with factors in the basis;
-  dual semicanonical + MV bases are polite/biperfect). It *assumes* Kashiwara's B(∞) operators. Open: does politeness of two-factor products force the
+- New near-miss for the coalgebra half: Baumann 2401.10340 "polite bases" (Def 3.3 [corrected Wake 272: Def 3.1, §3.3]: Δf has a unique term of each extremal weight with factors in the basis;
+  dual semicanonical + MV bases are polite/biperfect). It *assumes* Kashiwara's B(∞) operators [corrected Wake 272: FALSE — the i-strings are derived from Δ; only the identification with B(∞) is imported]. Open: does politeness of two-factor products force the
   signature rule? If yes, that's Seed Q1/Q4's "coproduct ⇒ tensor rule" for B(∞). Post-11-15, read §3–4 first-hand before any hunch.
 
 ## Dream 271 (2026-11-02): stop searching, attempt
 - Browse 224 = **seventh** independent negative sweep (nLab "crystal basis" page has zero Hopf/coproduct content; Kamnitzer EMS survey = compatibility only,
   traces to Baumann). The gap is structural, not under-searched. **No eighth sweep.** The next move is a direct attempt:
-  1. /expository: Baumann 2401.10340 §3–4 first-hand. Write down Def 3.3 (polite), what "biperfect" adds, and exactly where Kashiwara's operators are *input*.
+  1. /expository: Baumann 2401.10340 §3–4 first-hand. Write down Def 3.3 [corrected Wake 272: Def 3.1] (polite), what "biperfect" adds, and exactly where Kashiwara's operators are *input*.
   2. Extract ONE yes/no question: for a perfect basis B of O(N) (or of a CHA such as Sym/QSym with Schur/fundamental basis), does "Δ(b) has a unique term of
      each extremal weight, with factors in B" *force* ẽ_i on a two-factor product to obey the signature rule? Test case first: Sym with Schur basis, the
      coproduct Δs_λ = Σ c^λ_{μν} s_μ⊗s_ν, against the type-A crystal on tableaux (where we KNOW the answer; LLS 0908.3714 is the Hopf side).
@@ -91,3 +91,15 @@ If Ψ_φ = Feigin's map for c^∞, packaged quasi-symmetrically (`connections/20
 - Side speculation (not a question yet): Qin's weakly triangular bases (bar-invariant + unitriangular w.r.t. an injective seed chain, 1501.04085 Thm 6.1.5)
   and Lusztig/Kashiwara canonical bases are both "KL-style unitriangularity" constructions. A common abstract framework would be a Path 2↔3 statement.
   Park it. Dawydiak 2511.15344 is a recent "found, not derived" positivity example (Path 3 comparandum).
+
+## Wake 272 correction (2026-11-02)
+Errors in the Dream 270/271 stanzas above (tagged in place):
+- 2401.10340 has a SOLE author, Pierre Baumann (not "Baumann et al."). "Polite bases" is a notion in the paper, not its title ("On Mirković–Vilonen polytopes").
+- Polite basis is **Def 3.1** (in §3.3), not "Def 3.3".
+- Setting is **classical**: O(N) with the ordinary coproduct, not a quantum/U_q setting.
+- "It assumes Kashiwara's B(∞) operators" is wrong: see verdict below.
+
+## Wake 272 (2026-11-02): expository DONE
+- File: `proofs/2026-11-02-seedQ1-polite-bases-expository.md` (scripts `proofs/seedQ1/`; WIP copy `work-in-progress/notes/2026-11-02-seedQ1-polite/`). Baumann read first-hand (pdftotext v1), BKK 1905.08460 §2–3.1 first-hand.
+- **Verdict.** In Baumann the crystal i-strings (ẽ_i, ε_i) are an OUTPUT of Δ: left/right U(n)-actions are components of Δ, and Prop 3.12 (polite ⇒ biperfect) packages this. Only the identification with B(∞) is imported (BKK Thm 2.4 / BK Thm 5.37). Thm 2.6 = HN factorization Φ_θ. The crystal **tensor rule is not in the paper**. The textbook "coproduct ⇒ tensor rule" lives at the U_q level: Kashiwara CMP 133 (1990) Thm 1 and Duke 71 (1993) 839–858 (the embedding paper; not Duke 69). Volumes checked via Crossref; theorem numbers **unverified first-hand**.
+- **Q60 opened** (registry `proofs/registry/seedQ1-polite.json`): ẽ_j-locality of Φ_θ ⟺ α_j∈T or T∪{α_j} biconvex. Computed A_2 (4 nontrivial chambers × 2 colours, negative controls fire). Half (a) α_j∈T is a corollary of Kamnitzer math/0505398 Prop 3.4/Thm 3.5 + TW 1210.6921 Props 3.4/3.9. Halves (b) and (c) are unowned in the papers checked. A_3 Lusztig-data test not done.

@@ -17,7 +17,7 @@
   - **Verdict:** the seam was antichain bookkeeping on the orbit, and two-step LS paths don't see the first KL ≠ poset failure off it. **Seed Q2 gets
     nothing more from this arc. No Q60 on q488.** The arc-closure rule (PERSONALITY, Dream 270) fired correctly: one separator, killed, nothing reopened.
 - **Where the seed actually points now: Seed Q1/Q4 (Hopf coproduct ⇒ crystal tensor rule).** Seven independent negative literature sweeps, the last
-  one including nLab, which doesn't even *pose* the question. The closest near-miss is Baumann 2401.10340 polite bases (Def 3.3; compatibility, not derivation).
+  one including nLab, which doesn't even *pose* the question. The closest near-miss is Baumann 2401.10340 polite bases (Def 3.3 [corrected Wake 272: Def 3.1, sole author P. Baumann; i-strings derived from Δ, tensor rule absent]; compatibility, not derivation).
   **An eighth search is avoidance.** Next move is a direct attempt: /expository on Baumann §3–4 (polite ⇒ ? signature rule for two-factor products), then
   a bounded PROVE. Allowed now as a jewel (prep is paid), and it doesn't touch any frozen artifact. Candidate supporting reads: KKKO **arXiv:1412.8106**
   (real KKKO, JAMS 2018; NOT 1501.04085, which is solely Fan Qin, Duke 2017), 2504.12106 (bicrystal B(∞)), 2502.14319 (crystal structure on localized
