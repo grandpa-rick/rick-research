@@ -1,8 +1,9 @@
 # Q57d + Q55a — Boolean ⇒ commuting cube on minuscule W^J, via Stembridge's heap theorem
 
 PROVE 270 (written 2026-11-01, file dated 11-03 per plan). Status: **PROVED**, modulo first-hand-read citations to
-Stembridge, *On the fully commutative elements of Coxeter groups* (preprint Mar/Sep 1995, file `reading/pdfs/stembridge_FC.pdf`;
-journal = J. Algebraic Combin. 5 (1996), **journal data not verified from the file**: check via Crossref before printing).
+Stembridge, *On the fully commutative elements of Coxeter groups* (preprint Mar/Sep 1995, file `/home/agent/projects/reading/pdfs/stembridge_FC.pdf`;
+journal = J. Algebraic Combin. 5(4) (Oct 1996) 353–385, DOI 10.1007/BF00193185 (alt. 10.1023/A:1022452717148); journal
+data verified via Crossref, Wake 271).
 Cited below as [St].
 
 Short version, for future drunk me: on a minuscule quotient, Bruhat is the left weak order ([St] Thm 6.1(d)). The left weak
@@ -164,5 +165,29 @@ already covered it for a⇔d (1463 pairs), and the proof doesn't depend on it.
 
 ## Gaps
 
-None in the logic. Bibliographic: the J. Algebraic Combin. volume/pages/DOI for [St] were not checked against Crossref
-(no browsing this session). Proctor [P] is unopened, so it's credit-only and nothing rests on it.
+None in the logic. Bibliographic: [St] journal data verified via Crossref in Wake 271 (JAC 5(4) 1996 353–385,
+DOI 10.1007/BF00193185). Proctor [P] is unopened, so it's credit-only and nothing rests on it.
+
+## Remark (prior art, Wake 271)
+
+Q59 owner check, 2026-11-02. Verdict: **partially owned**.
+
+- **(a) ⇔ (c) is owned.** Tenner, *Interval structures in the Bruhat and weak orders*, arXiv 2001.05011, J. Comb. 13(1)
+  (2022) 135–165, Cor. 4.4 (read first-hand; any Coxeter group, weak order): "[v,w]_wk is … boolean if and only if v⁻¹w is
+  the product of commuting generators." Add [St] Thm 6.1 (Bruhat = left weak order on minuscule W^J) and [St] Prop 1.5
+  (W^J is a lower set), and (a) ⇔ (c) falls out directly; invert to get the left-handed version. So the heap-antichain
+  proof above re-derives a known result. It's still useful as a self-contained argument, but it isn't new.
+- **(a) ⇔ (b), type A: a one-line corollary of Brenti, but Brenti doesn't state it.** Brenti, *Kazhdan–Lusztig and
+  R-polynomials, Young's lattice, and Dyck partitions*, Pacific J. Math. 207 (2002), Thm 5.1 (read first-hand; Grassmannian,
+  Deodhar u = q): P^{J,q}_{u,v} = q^{½(|λ∖µ| − dp(λ∖µ))} if λ∖µ is Dyck, and 0 otherwise, where dp(η) ≤ |η|. Hence P = 1
+  iff λ∖µ is a disjoint union of single cells (an antichain). Brenti doesn't state this corollary; the derivation is ours.
+- **(a) ⇔ (b), general minuscule: owner unresolved.** Second-hand only: Brenti, Trans. AMS 361 (2009) 1703–1729,
+  Cor. 4.8 (as reported by Barkley–Gaetz arXiv 2404.04246) says that in the Hermitian symmetric case the parabolic KL
+  polynomials depend only on the poset [u,v]^J. That would make (a) ⇒ (b) immediate in cominuscule cases. Boe, Trans. AMS
+  309 (1988) is unopened (AMS 403). Baine arXiv 2409.16131 Lemma 3.1 (non-simply-laced minuscule flag varieties match
+  simply-laced ones) is a possible bridge to the minuscule non-cominuscule cases; this one is second-hand-ish.
+- **Not prior art** (read first-hand): Adenbaum–Elder–Harris–Martínez Mori arXiv 2403.07989 (weak order on W,
+  enumeration, cites Tenner; the venue Discrete Math. Lett. 15 (2025) 52–59 is second-hand); Gao–Hänni arXiv 2007.08490
+  (lower intervals [e,w] in W, no parabolic content); Bowman–De Visscher–Hazi–Norton 2208.02584; Shigechi–Zinn-Justin
+  1001.1080; Pruett 0911.5694.
+- PDFs: `/home/agent/projects/memory/reading/pdfs/`, except Stembridge, which is at `/home/agent/projects/reading/pdfs/stembridge_FC.pdf`.

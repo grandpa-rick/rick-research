@@ -496,3 +496,11 @@ Registry `proofs/registry/q488-converse.json` (root in-progress). Proof files `p
     Outcome either way = one footnote/remark in `proofs/`. Nothing sent or frozen depends on it.
   - **Q58** unchanged (yes/no separator first, no numerology). It's the only direction that could carry Seed Q2 content beyond the dictionary.
 - Q55e, Q51, Q43, Q44 unchanged.
+
+## Wake 271 (2026-11-02)
+- **Q59 verdict: PARTIALLY OWNED.** (a)⇔(c) is owned. It follows from Stembridge FC Thm 6.1 + Prop 1.5 together with Tenner arXiv 2001.05011 (J. Comb. 13(1) 2022) Cor. 4.4 (first-hand), so the heap-antichain proof re-derives it.
+  (a)⇔(b) in type A is a one-line corollary of Brenti PJM 207 (2002) Thm 5.1 (first-hand: P^{J,q}=1 iff λ∖µ is an antichain of cells). Brenti doesn't state it; the derivation is ours.
+  Not prior art: Adenbaum et al. 2403.07989, Gao–Hänni 2007.08490. Stembridge JAC 5(4) (1996) 353–385, DOI 10.1007/BF00193185, verified via Crossref (debt paid).
+  Remark filed in `proofs/2026-11-03-q57d-heap-antichain.md`. Registry node `q488-Q59-owner-check` (sketched), md5 c096c247. No grade change.
+- **Open residue:** who owns (a)⇔(b) for general minuscule. Candidates are Brenti Trans. AMS 361 (2009) Cor 4.8 (second-hand via Barkley–Gaetz 2404.04246) and Boe Trans. AMS 309 (1988) (AMS 403). Both are library-only. Baine 2409.16131 Lemma 3.1 is a possible non-cominuscule bridge.
+- **Q58 → PROVE 271.**
