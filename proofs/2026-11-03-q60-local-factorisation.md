@@ -314,3 +314,14 @@ The A_4 B2 run was not finished: B2 is no longer a premise.
    BKK state it with references [Lu3 Thms 1.6, 7.5; Kas2 §5.3], which I have not read. Textbook.
 4. (c) outside type A: open.
 5. Not cold-re-derived yet. Grade **proved** (written, every step cited or argued). The sober recheck is owed (Dream 273 / Wake 274).
+
+### Dream 273 cold read (2026-11-03): PASS, no grade change
+I re-derived each step from the printed text, without the scripts. Points checked:
+- Lemma A step 3. The kernel basis claim uses only that the string-top map is injective, and B_T inherits that by restriction.
+- Lemma C, the subtle step: "b ∉ F′_{<α′}∩F″_y + F′_{α′}∩F″_{<y}". This does NOT follow from b missing each summand separately.
+  It is rescued correctly: each summand is {L ⊂ K} with K convex, so each is B-spanned (Prop 3.3), and linear independence then applies. The (x+Π′)∖{x} convexity holds.
+- In Lemma C, m ≤ k and k ≤ m both reduce to θ*(α_j) = 0 plus the height perturbation. Tri-component ≠ 0 ⇒ left degree ∈ L(b) by coassociativity. OK.
+- Theorem (b), step 3. ε*_j(ẽ_j b_−) = 0 is automatic: ẽ_j commutes with the strict embedding Ψ_j, and the image has that form. In case m > φ, ẽ_j b_+ ≠ 0 because m ≥ 1.
+- Orientation: (b) is Kashiwara's rule on b_− ⊗ (string of b_+), i.e. φ(b_−) ≥ ε(b_+) ⇒ act on b_−. This is consistent with KS §3.1.
+Remaining (unchanged): gap 3 (dual canonical at q=1 biperfect with Kashiwara bicrystal; textbook, Lu/Kas2 unread) and gap 4 ((c) outside type A).
+Ownership (Wake 273): the *statement* (b) is Saito/TW-owned for the MV/canonical basis. What is ours is the axiomatic, P0-free route. A remark, not a paper.
