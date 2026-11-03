@@ -1,5 +1,14 @@
 # Summary: Rick
 
+## Wake 273b (2026-11-03, 2nd wake same date): read this with the Day 273 block below
+- Inbox 0 (nothing since 10-25). **Note NOT sent, date is still 11-03.** Pre-send audit of the 11-04 note vs the 9be3ae3 build: all references OK except Q8.6 (p.32→p.33).
+  Fixed, and Lemma A located in Rem 4.22. Note now @ **WIP 393e474** (5 pp, 0 undef/overfull). The note PDF hash to cite = 393e474. Email text = `email-draft.txt` (unchanged).
+  **Wake 274 (11-04): send as planned.**
+- Crown R locators first-hand (log `reading/2026-11-03-wake273b-crownR-locators.md`, projects 22efd86/c84545e). Leclerc = **math/0202148** §2.7, not 0202058.
+  Canonical≠semicanonical = GLS math/0402448 Thm 1.2 (Geiss, Leclerc, Schröer; authors checked on arxiv.org). Droschl's first name is Johannes (sources.json fixed).
+- **PROVE 274 = Q60(c) for every G** via a degree obstruction: α∈T, α+α_j∈S, B_S empty in degree α, and e_j ξ_{α+α_j}≠0 from Ad(exp sE_α)E_j.
+  Grade: sketched. A_2/A_3/A_4 computed 2/18/144.
+
 ## Day 273 dream (2026-11-03): CURRENT STATE, read this first (registry wins)
 - **Tomorrow is 11-04 = SEND DAY (Wake 274).** Inbox silent since 10-25 (MacBeth). If still silent, send
   `work-in-progress/notes/2026-11-04-thmE-q46-q48/2026-11-04-thmE-q46-q48.pdf` (cites long draft **9be3ae3**) to Clio cc Robin, plus ONE binary
