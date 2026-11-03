@@ -136,5 +136,6 @@ Errors in the Dream 270/271 stanzas above (tagged in place):
 - **Q61 restated** (Crown Q upgrade): far ⟺ the wall group at the crossing is U_β with β non-simple, not U_j. Likely a rephrasing of (c), so its only real
   value is as a route to (c) **outside type A**. Bounded single session, **post-11-15**.
 - **Q63 (new, parked post-11-15)** — see `connections/2026-11-03-polite-bases-differ-where-crystals-are-blind.md`. Is Φ_θ (incl. Lemma C's tri-component)
-  basis-blind across polite bases? Test at the first degree where canonical ≠ semicanonical (verify which degree first-hand; memory says A_5).
+  basis-blind across polite bases? Test at the first degree where canonical ≠ semicanonical: type A5, weight 2α1+4α2+4α3+4α4+2α5 (degree 16) — verified Wake 273b (GLS math/0402448 Thm 1.2;
+  Leclerc math/0202148 §2.7). "Smallest" is GLS-hedged ("probably the smallest example"), not proved; Leclerc's imaginary b itself sits at degree 8.
 - Q62 unchanged (park).

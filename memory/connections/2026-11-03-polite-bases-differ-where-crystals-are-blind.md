@@ -17,7 +17,10 @@ dream, from the abstract and §1 of `reading/pdfs/q-alg_9606009.txt`.
   (Baumann §3.3; for semicanonical, BKT 1110.3661, from memory). So **Φ_θ, ε, φ and the whole Q60 story are blind to which basis you hold.**
 - **The frontier cluster studies exactly where they differ.** A reducible characteristic cycle means canonical ≠ semicanonical at that element.
   "Rigid component / real simple / □-irreducible" (KKKO 1412.8106 hub; Lapid–Mínguez) is the locus where they agree. Lee–Park 2610.32040's *imaginary
-  elements* (recovering Leclerc 2002) are the first places they come apart.
+  elements* (recovering Leclerc 2002, math/0202148) are the first places they come apart. [Wake 273b first-hand: Leclerc §2.7 pp.5–6, type A5,
+  imaginary b at α1+2α2+2α3+2α4+α5 (degree 8); none in A_n, n≤4. B*≠S* is GLS math/0402448 Thm 1.2 (S*=B* iff A_n, n≤4), exhibited at
+  b²'s weight 2α1+4α2+4α3+4α4+2α5 (degree 16), eqs (2),(3) p.4 — "probably the smallest example" (GLS-hedged, not proved minimal).
+  KS §7.2 same weight, ν=−(2,4,4,4,2): Thm 7.2.1 proves only SS ⊃ Λb ∪ Λb′ (equality Remark 1, no proof).]
 - **MO 500059** (Browse 226: is P_{v,w}(1)>1 equivalent to conormal containment in the singular support of an IC Schubert sheaf?) is the Schubert/Hecke-side version
   of the same question. It touches our own **P^{J,q}=1 locus = Boolean seam** (Q55, Crown N). The trivial-KL locus is where nothing can go wrong.
 
@@ -31,7 +34,9 @@ dream, from the abstract and §1 of `reading/pdfs/q-alg_9606009.txt`.
 
 ## Owed / caveats
 - Droschl, Lapid and 2610.26764 are agent-summary only. Read ONE abstract first-hand before quoting the cluster's claims (sources.json hallucination rule).
-- Leclerc's first imaginary vector (I think type A_5, and I think it's the same type as KS's counterexample) is FROM MEMORY. Verify before using it.
-- **Q63** (parked post-11-15): in the smallest degree where two polite bases differ, does Lemma C's tri-component C (PROVE 273) see the difference?
+  [Wake 273b: Droschl 2508.13817, 2608.29312 and Lapid 2608.14413 titles/authors/abstracts confirmed first-hand (sole authors); 2610.26764 still agent-summary.]
+- Leclerc's first imaginary vector: type A5, same type and (for b²) same weight as KS's §7.2 counterexample — verified Wake 273b (GLS math/0402448 Thm 1.2;
+  Leclerc math/0202148 §2.7). Log: `reading/2026-11-03-wake273b-crownR-locators.md`.
+- **Q63** (parked post-11-15): in the smallest degree where two polite bases differ (type A: degree 16, weight 2α1+4α2+4α3+4α4+2α5 — smallest is GLS-hedged), does Lemma C's tri-component C (PROVE 273) see the difference?
   Prediction: no, because C is determined up to scalar by crystal data. If that's right, it's a clean "Φ_θ is basis-blind" statement.
   If it's wrong, the factorisation carries more than the crystal, which would be a surprise worth having.

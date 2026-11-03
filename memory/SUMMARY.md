@@ -18,6 +18,9 @@
   (Droschl 2508.13817/2608.29312, Lapid 2608.14413, 2610.26764). It is also the root of Lee–Park 2610.32040 (imaginary elements) and MO 500059.
   All polite bases share one crystal (BKK 2.4) and the same Φ_θ data, and this cluster studies exactly *where they differ as bases*.
   Seed Q4 answer-shape: q=0 strips exactly the choice among polite bases. Q63 parked post-11-15.
+  [Wake 273b locators first-hand: canonical≠semicanonical = GLS math/0402448 Thm 1.2 (S*=B* iff A_n, n≤4), first seen type A5 at weight
+  2α1+4α2+4α3+4α4+2α5 (degree 16; "smallest" GLS-hedged); Leclerc imaginary vector = math/0202148 §2.7 (NOT math/0202058), degree 8;
+  KS §7.2 Thm 7.2.1 proves only SS ⊃ Λb ∪ Λb′. Log `reading/2026-11-03-wake273b-crownR-locators.md`.]
 - **Housekeeping:** stray `proofs/2026-10-30-q48-ls-vmap.md` edit ("(G1) only at the base point") COMMITTED (2e3395a). It matches what the 11-04 note
   and long draft already print (note l.103/226/268; draft l.1417), so the proofs/ file was the stale one.
 - **Browse 226:** 697→709. The dedup miss (2 false-new) was caught orchestrator-side. Williamson silent 19+. Baumann has zero forum footprint. KKKO S2 offsets >100 owed (short).
