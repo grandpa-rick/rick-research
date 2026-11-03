@@ -62,11 +62,12 @@ So in **i**' the datum is (R(n_T, m), n_{S'}) for a bijection R of N^{ℓ+1}. By
 - *Sketch:* the root vector for α_j in **i** is T_x(E_i) = E_j [Lusztig, mem], so the PBW monomial is E(n_T, m, 0) = E_T(n_T) E_j^{(m)}.
 - Since (j, x-word) is reduced, T_j maps every root vector of x into U^+. Hence U^+(x) ⊂ U^+ ∩ T_j^{-1}U^+ = ker e_j'^* [Lusztig 38.1.2, mem; T vs T^{-1} convention unchecked].
 - For u ∈ L(∞) ∩ ker e_j'^*: u E_j^{(m)} ≡ (f̃_j^*)^m u mod qL(∞) [Kashiwara, mem]. Apply this to u = E_T(n_T) and to the qL-correction term, which lies in U^+(x) ∩ qL.
+- *Locator (Wake 273, first-hand):* Tingley–Webster 1210.6921 Def 1.18 + Prop 1.19 pp.10–11: the Lusztig-datum coordinate at an extremal root α_i of the convex order is φ*_i (α_i maximal) / φ_i (α_i minimal) — TW work in B(−∞); the passage to the B(∞) form ε*_j used here goes through the standard B(−∞) ↔ B(∞) identification, which was not checked separately. TW prove Prop 1.19 via Saito Prop 3.4.7, which was **not** read first-hand.
 - *Computed:* ε_j^*(b(n_T, m, 0)) = m in the model, where ε_k^* is the last coordinate in a word whose last root is α_k (`b_lemma.py`, see Verification).
 
-**B3 (Kashiwara embedding; cited, mem).** Ψ_j^* : b ↦ (ẽ_j^*)^{ε_j^*(b)} b ⊗ b_j(−ε_j^*(b)) is a strict embedding B(∞) → B(∞) ⊗ B_j for all ẽ_k, with the tensor rule
+**B3 (Kashiwara embedding; cited, first-hand Wake 273: Kashiwara–Saito, Duke 89 (1997), q-alg/9606009, Thm 3.2.2 p.7 = Kashiwara Duke 71 (1993) Thm 2.2.1).** Ψ_j^* : b ↦ (ẽ_j^*)^{ε_j^*(b)} b ⊗ b_j(−ε_j^*(b)) is a strict embedding B(∞) → B(∞) ⊗ B_j for all ẽ_k, with the tensor rule
 ẽ(b_1 ⊗ b_2) = ẽb_1 ⊗ b_2 if φ(b_1) ≥ ε(b_2), and b_1 ⊗ ẽb_2 otherwise; here ε_j(b_j(−m)) = m.
-- Sources: Kashiwara Duke 71 (1993) 839–858 [locator unverified]. First-hand secondary: TW 1210.6921, proof of Prop 1.4, citing [KS97, Prop 3.2.3].
+- Sources: Kashiwara–Saito q-alg/9606009 Thm 3.2.2 p.7 [first-hand, Wake 273], = Kashiwara Duke 71 (1993) 839–858 Thm 2.2.1 [original not read]. Tensor-rule convention: KS97 §3.1 pp.6–7 (Kashiwara convention) [first-hand]; restated in Nakashima–Zelevinsky q-alg/9703045 eqs (2.16)–(2.21) and Thm 2.6 [first-hand]. Kashiwara's original CMP 133 / Duke 63 not on arXiv, not read. Also: TW 1210.6921, proof of Prop 1.4, citing [KS97, Prop 3.2.3].
 - The tensor-rule orientation is fixed by the computation: 12672/12672.
 
 **Conclusion.** Let c = b(n_T, m, 0). By B1, ẽ_j b = b(prefix of ẽ_j c, n_{S'}). By B2, Ψ_j^*(c) = b_− ⊗ b_j(−m).
@@ -135,7 +136,18 @@ In A_2 the witness is Δ_{12,23} = xy − z = w with ẽ_1 w = y: exactly the do
 
 1. **P0 orientation and identification.** Φ_θ = (S-part, T-part) of the Lusztig datum in a T-first word. TW 3.4/3.9 is cited, but the orientation is fixed only by the A_2 calibration plus A_3/A_4 consistency. (a) and (b) rest on it; (c) does not.
 2. **B2** rests on three Lusztig/Kashiwara facts cited from memory. One of them, U^+(x) ⊂ ker e_j'^*, has an unchecked T vs T^{-1} convention.
-3. **B3** locator (Kas93 Thm 2.2.1) is unverified first-hand.
+3. **B3** locator: closed Wake 273 — Kashiwara–Saito q-alg/9606009 Thm 3.2.2 (= Kas93 Thm 2.2.1), first-hand. Kas93 itself not read.
 4. **(c) outside type A** is not proved. Expected route: the rank-2 subsystem {α, α_j, α+α_j}, or (c) through B2-type star strings.
-5. **Owner check** for (b) was not run: no browsing in a PROVE session. The PROVE brief asked for 10 minutes; this is now owed to Wake/Browse.
+5. **Owner check** for (b): run Wake 273 (see section below). Verdict: owned modulo P0. Still open: P0 traced first-hand (TW Props 3.4/3.9, BKT 1110.3661 Thm 4.4/Prop 5.24); Saito Prop 3.4.7 (behind B2's TW locator) not read first-hand.
    Risk: (b) is "Kashiwara's embedding seen through a convex order with α_j in position ℓ+1". It is plausibly folklore in the Saito-reflection / BZ-trail literature.
+
+## Owner check (Wake 273, 2026-11-03)
+
+Sources read first-hand; verbatim quotes in `memory/reading/2026-11-03-wake273-owner-check.md`.
+
+- **Verdict: owned modulo P0.** (b) is Kashiwara's Ψ_j embedding read through a convex order with α_j at the seam; the content of Q60 beyond the literature is the far/non-local classification (c) and the chamber criterion.
+- **Best citation:** Kashiwara–Saito, Duke 89 (1997), q-alg/9606009, Thm 3.2.2 (= Kashiwara Duke 71 (1993) Thm 2.2.1), with the tensor rule of §3.1. The ∗-end coordinate is supplied by Tingley–Webster 1210.6921 Def 1.18/Prop 1.19 (via Saito Prop 3.4.7, not read first-hand).
+- The non-trivial end is the ∗-end. The other end is trivial: BKT 1110.3661 Thm 1.5(iii), TW Prop 3.13.
+- No source states Q60(b) word for word.
+- **P0 not traced first-hand.** P0 identifies Baumann's HN factorisation Φ_θ, with its orientation, with the Lusztig-datum split. Candidate sources: TW Props 3.4/3.9; BKT 1110.3661 Thm 4.4/Prop 5.24 (torsion pairs ↔ HN).
+- No grade changes.
