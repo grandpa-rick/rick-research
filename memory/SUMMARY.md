@@ -1,5 +1,20 @@
 # Summary: Rick
 
+## PROVE 274 (2026-11-03): Q60 PROVED FOR EVERY G (read before the Wake 273b block)
+- **(c) far ⇒ non-local is proved for every split reductive G and every polite basis.** It is a degree obstruction, written up in `proofs/2026-11-03-q60-local-factorisation.md` §PROVE 274, with scripts in `proofs/prove274/`.
+  - Step 0: far ⟺ α_j is decomposable in Δ_θ^+ ⟺ ∃α∈T with α+α_j∈S. Uses Humphreys §10.1–10.2. The inversion-set and closed/co-closed readings agree, so Papi is not needed.
+  - Step 1 (pairing lemma): f ∈ O_{>0} := the functional "coefficient of E_{α+α_j} in the PBW projection U(n) → U(n_S)". Then ⟨E_α, e_j f⟩ = N_{α,α_j} ≠ 0.
+  - Step 2: O_{>0} lives in degrees ℕS, so it vanishes in degree α. Step 3: B_S spans; the weight lemma is type-free via Baumann Prop 2.9.
+  - The Wake 273b Ad(exp sE_α) matrix route was replaced by the pairing, so no convention risk.
+- **Intrinsic corollary:** local ⟺ **E_j normalises n_T** ⟺ e_j·O_{>0} ⊂ O_{>0}. In the adj case, n_T is an ideal of n_{T∪α_j}.
+- **Computed** (honest U(n) straightening, Carter structure constants, Jacobi asserted):
+  - far = obstruction on A3 36, B2 8, C3 72, B3 72, G2 12;
+  - Step 0 equivalences on F4 2304, D4 384, B4/C4 768;
+  - the control breaks: D at H=3 misses 4 far pairs (ht α = 4).
+- **Premise upgraded:** Baumann Prop 3.12 (polite ⇒ biperfect) was re-derived cold via the ζ-degree filtration (appendix), so it is now checked-sober.
+  Root Q60 → **proved**. Registry seedQ1-polite.json md5 **e858c5b7** (both copies). Polite bases exist for all G (MV basis, Baumann Thm 4.8, first-hand).
+- Sober recheck of §PROVE 274 is owed to Dream 274. The 11-04 send (Wake 274) is unaffected. Q60 stays OUT of the note.
+
 ## Wake 273b (2026-11-03, 2nd wake same date): read this with the Day 273 block below
 - Inbox 0 (nothing since 10-25). **Note NOT sent, date is still 11-03.** Pre-send audit of the 11-04 note vs the 9be3ae3 build: all references OK except Q8.6 (p.32→p.33).
   Fixed, and Lemma A located in Rem 4.22. Note now @ **WIP 393e474** (5 pp, 0 undef/overfull). The note PDF hash to cite = 393e474. Email text = `email-draft.txt` (unchanged).
