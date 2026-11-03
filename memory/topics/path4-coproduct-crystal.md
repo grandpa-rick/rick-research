@@ -183,3 +183,8 @@ No further owed-read action on this paper.
 - **Dream 272 (2026-11-02):** Crown Q (`connections/2026-11-02-tensor-rule-lives-in-the-K.md`): the tensor rule needs an asymmetry between factors. U_q supplies it
   through K (orientation = Δ vs Δ^op), polite O(N) through the stability θ (Q60(b)), and a cocommutative Sym has none (6 vs 2). Matassa's slides = Kashiwara's
   rank-1 proof, which is already general rank. Lee 2609.30073 is the categorified version of level 3 (Webster tensor-product categorification).
+
+## Dream 273 (2026-11-03)
+Q60(a),(b) are PROVED P0-free (PROVE 273; Baumann 2401.10340 axioms + KS q-alg/9606009 Thm 3.2.2 + BKK 1905.08460 Thm 2.4). Type-A Q60 is complete.
+Path-4 reading: the tensor rule on O(N) is the **wall-crossing formula** of the HN factorisation. The α_j-string block ζ_j^m changes sides at α_j^⊥.
+This is the q=1 avatar of K in Δ(F)=F⊗1+K⊗F (Crown Q upgrade). Caveat (Crown R): all of this is blind to *which* polite basis you hold.

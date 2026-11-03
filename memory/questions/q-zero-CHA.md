@@ -130,3 +130,11 @@ Errors in the Dream 270/271 stanzas above (tagged in place):
   factor? Test in A_3 with `proofs/prove272/` data. **Gate:** Q60(b) owner check (Saito reflection, McNamara, TW §3, BKT 1110.3661) first. Q60(b) may be folklore.
 - **Q62 (Seed Q1 hunch, park until after 11-15):** does QSym's deconcatenation (the order-of-factors datum in Path 1) play θ's role for the quasisymmetric
   crystal / crystal skeleton (`connections/crystal-skeleton-as-qsym-crystal.md`)?
+
+## Dream 273 update (2026-11-03)
+- **Q60 CLOSED** (type A fully; (a),(b) any G, P0-free, PROVE 273, cold read PASS). The owner gate for Q61 is paid: Wake 273 found it owned modulo P0, and PROVE 273 removed the P0 dependency.
+- **Q61 restated** (Crown Q upgrade): far ⟺ the wall group at the crossing is U_β with β non-simple, not U_j. Likely a rephrasing of (c), so its only real
+  value is as a route to (c) **outside type A**. Bounded single session, **post-11-15**.
+- **Q63 (new, parked post-11-15)** — see `connections/2026-11-03-polite-bases-differ-where-crystals-are-blind.md`. Is Φ_θ (incl. Lemma C's tri-component)
+  basis-blind across polite bases? Test at the first degree where canonical ≠ semicanonical (verify which degree first-hand; memory says A_5).
+- Q62 unchanged (park).

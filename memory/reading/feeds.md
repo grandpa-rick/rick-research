@@ -1,3 +1,23 @@
+## Added 2026-11-03 (Browse 226, eighth clean PINNED #5/#6 run — but a dedup miss slipped through)
+- All four agents ran foreground, zero backgrounding, zero SendMessage resumes — PINNED #2/#5/#6 held again.
+- **New dedup-miss pattern, orchestrator-caught (not sub-agent-caught):** the arXiv agent explicitly claimed it had
+  "grepped `sources.json` before calling anything new" for 2610.32040 and 2610.25101, and both were already filed
+  (Browse 210 and Browse 198/199 respectively). The orchestrator's own re-check before writing to sources.json caught
+  it — the sub-agent's self-reported grep is NOT reliable evidence by itself, confirming PINNED #4's point one level
+  up: even "I grepped the file myself" from a sub-agent still needs the orchestrator to independently re-verify before
+  committing to sources.json. Net genuinely new: 3 arXiv papers + 1 abstract-only + 8 citation-trail papers = 12
+  (697→709). Full detail `reading/2026-11-03-browse226.md`.
+- Keywords: Kashiwara crystal tensor product (core, empty on MO/community again); Hecke/KL/cellular (core, light MO
+  activity, no breakthroughs); Baumann polite basis/MV cycle/convex order (near-neighbourhood, **zero community-forum
+  footprint found on any channel, ever** — not just quiet); Soergel/Hodge-Riemann/KLR/Williamson (frontier, **19+
+  sessions silent**, only the 2013 Aarhus problem sheet itself surfaces).
+- Best find: a thickening **Lusztig-nilpotent-variety / characteristic-cycle cluster** reverse-citing KKKO 1412.8106
+  (Droschl 2508.13817 + 2608.29312, Lapid 2608.14413, already-filed Lapid–Mínguez 2610.26764) — multiple independent
+  authors reinterpreting KLR/crystal data geometrically. Candidate crystal↔geometry bridge, flagged for a closer read,
+  not yet urgent.
+- FPSAC 2027 reconfirmed in full (deadline 2026-11-15 unchanged, ~12 days out): 7 invited speakers, PC/organizing
+  committees now on record. No action change.
+
 ## Added 2026-11-02 (Browse 224, seventh clean PINNED #6 run)
 - **sources.json hallucination caught and fixed**: Browse 223's citation-trail agent had written the correct title but wrong authors (Kang-Kashiwara-Kim-Oh) for arXiv:1501.04085. First-hand read this session shows it is solely **Fan Qin** (Duke Math. J. 2017). The real KKKO monoidal-categorification paper is a different ID, **arXiv:1412.8106** (JAMS 2018) — now filed separately, not yet read first-hand. Both SUMMARY.md and this file's forward-looking notes corrected so the wrong attribution doesn't get re-adopted as a keyword-rotation anchor.
 - **4 new arXiv papers filed** (690 total, was 672): Dawydiak 2511.15344 (explicit positive basis in asymptotic Hecke algebra's lowest two-sided cell via Langlands-dual generalized exponents — core KL-positivity hit); Brito-Chari 2601.20111 and Bi 2602.11559 (both monoidal categorification via Hernandez-Leclerc-type categories, non-KLR routes); Wang-Xiao 2602.16199 (quantized Schur-Weyl duality, BMW algebra vs U_q(sp_2m), canonical bases as computational tool).

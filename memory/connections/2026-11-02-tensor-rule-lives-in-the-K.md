@@ -1,17 +1,16 @@
 # Crown Q — The tensor rule lives in the K (or in an order), never in a cocommutative coproduct
 
-*Dream 272, 2026-11-02. Seed Q1/Q4 (Paths 1↔2↔4). Status: synthesis of computed + textbook facts, not a theorem. Registry: seedQ1-polite.json 13d01313.*
+*Dream 272, 2026-11-02; upgraded Dream 273. Seed Q1/Q4 (Paths 1↔2↔4). Status: level 3 is now PROVED (Q60(a),(b), any G, P0-free, PROVE 273, cold read PASS Dream 273); levels 1–2 textbook + computed. Registry: seedQ1-polite.json 22beeb70.*
 
 ## Claim (three levels, one mechanism)
 1. **U_q level: the rule is forced, and its orientation is the K-placement.** Δ(F_i) = F_i⊗1 + K_i⊗F_i. Kashiwara's ẽ_i/f̃_i only use U_q(sl2)_i,
-   so the tensor rule is a rank-1 computation (Kashiwara CMP 133 (1990) Thm 1; Jantzen Ch. 9; Hong–Kang Thm 4.4.1. **All locators from memory, verify one
-   first-hand.**). Swap Δ for Δ^op and you get the opposite signature convention. So the "2 conventions" in Wake 272's count = {Δ, Δ^op}.
+   so the tensor rule is a rank-1 computation (first-hand locator: Kashiwara–Saito q-alg/9606009 §3.1 pp.6–7; also NZ q-alg/9703045 (2.16)–(2.21). CMP 133 / Jantzen Ch. 9 / Hong–Kang 4.4.1 from memory). Swap Δ for Δ^op and you get the opposite signature convention. So the "2 conventions" in Wake 272's count = {Δ, Δ^op}.
    Matassa's OsloMet slides (Browse 225) are exactly this rank-1 computation. **They are not a lead to generalise; general rank is automatic.**
 2. **q=1 combinatorial-Hopf level: the rule is invisible.** Sym is cocommutative. Δs_λ = Σ c^λ_{μν} s_μ⊗s_ν records multiplicities only, and on B(2)⊗B(2)
    six crystal structures are compatible against 2 conventions (Wake 272, computed, `proofs/seedQ1/`). Cocommutativity is literally the K going to 1
    *symmetrically*. So the bare CHA answer to Seed Q1/Q4 is **NO**, with a mechanism.
 3. **q=1 coordinate-ring level with an order: the rule comes back.** On O(N) with Baumann's polite basis (2401.10340 Def 3.1), the HN factorisation Φ_θ at an
-   *adj* chamber satisfies Kashiwara's rule on b_−⊗(α_j-string), with no q anywhere (Q60(b), A_4 12672/12672, sketched given P0;
+   *adj* chamber satisfies Kashiwara's rule on b_−⊗(α_j-string), with no q anywhere (Q60(b), **PROVED PROVE 273 from Baumann axioms + KS Thm 3.2.2**, A_4 12672/12672;
    `proofs/2026-11-03-q60-local-factorisation.md`). The stability θ decides which factor is "top", and that does the job K did.
 
 **One-line moral:** the tensor rule needs an asymmetry between the two factors. U_q gets it from K. Polite O(N) gets it from θ. A cocommutative CHA has none,
@@ -36,3 +35,15 @@ so the information isn't there to recover.
 - Browse 225's "generalise Matassa to general rank" plan (that's level 1, textbook).
 - Dream 270/271's "politeness for two-factor products forces the signature rule?" question. Politeness alone doesn't (that's level 2). Politeness plus θ does
   (level 3).
+
+## Dream 273 upgrade: the signature rule is a wall-crossing formula
+PROVE 273's proof says *where* θ does K's job, and it is one wall.
+- Put θ* on α_j^⊥. Then N = N_{S′} ⋈ U_j ⋈ N_T, so there are **three** factors, and the middle one is the rank-1 group U_j.
+- On one side of the wall U_j joins the left factor; on the other side it joins the right. Lemma C: Φ_θ′(b_+) = (p, ζ_j^m) and Φ_θ(q) = (ζ_j^m, b_−).
+  So the α_j-string block ζ_j^m is what moves across.
+- The signature rule (Theorem (b)) is the bookkeeping of that move, done by Kashiwara–Saito's Ψ_j: B(∞) ↪ B(∞)⊗B_j on the side that holds the block.
+- **Parallel with level 1.** Kashiwara reduces the tensor rule to U_q(sl2)_i. Lemma C reduces it to O(U_j) = k[x_j] at the wall. Both say *rank 1 is general rank*.
+  The K in Δ(F)=F⊗1+K⊗F and the middle factor U_j are the same device: the thing that sits between the two factors and decides whose side the string is on.
+- This makes the separator above (Q61) natural. A *far* chamber is one where the wall root is not simple, so the middle factor is U_β with β non-simple,
+  and ẽ_j doesn't live in it. Type-A (c) says exactly that a third index sits between g(j+1) and g(j). **Q61 restated:** far ⟺ the wall group U_β
+  is not U_j. Expect this to be a reformulation of (c) rather than new. Bounded, post-11-15, and only if (c) outside type A is wanted.
