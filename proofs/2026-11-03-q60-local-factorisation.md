@@ -151,3 +151,166 @@ Sources read first-hand; verbatim quotes in `memory/reading/2026-11-03-wake273-o
 - No source states Q60(b) word for word.
 - **P0 not traced first-hand.** P0 identifies Baumann's HN factorisation Φ_θ, with its orientation, with the Lusztig-datum split. Candidate sources: TW Props 3.4/3.9; BKT 1110.3661 Thm 4.4/Prop 5.24 (torsion pairs ↔ HN).
 - No grade changes.
+
+---
+
+## PROVE 273 (2026-11-03): P0-free proof of (a) and (b)
+
+**Change of problem.** PROVE 273 was meant to trace P0, the identification of Φ_θ with the Lusztig-datum split, through
+TW/BKT conventions. P0 turns out to be **unnecessary**. (a) and (b) follow directly from Baumann's axioms
+(Def 3.1, Thm 2.6, Prop 2.9, Prop 3.3, Cor 3.5, Prop 3.12) together with Kashiwara–Saito Thm 3.2.2. No Lusztig data,
+no PBW bases, no TW/BKT. All Baumann locators were read first-hand today in `reading/pdfs/2401.10340.pdf` (pdftotext).
+P0 is demoted to a side remark (§P0 below). The proof holds for **every polite basis** and every G (not only simply laced),
+because B3 is a statement about the bicrystal B(∞), which is the same for all biperfect bases.
+
+### Conventions (Baumann §3.1–3.2, first-hand)
+
+- n·f = f(?n) (left action = right translation), f·n = f(n?). ⟨x, f⟩ = (x·f)(1).
+- x·f = (id ⊗ ⟨x,·⟩)Δf and f·x = (⟨x,·⟩ ⊗ id)Δf. Also Δ(x·f) = (id ⊗ x·)Δf, because (x·f)(gh) = ∂_t f(gh e^{tx}).
+- Degrees are written in Q_+ (deg f = −weight). L(f) is the set of left degrees of Δf, and Pol(f) = conv L(f).
+- For θ: S = {θ > 0}, T = {θ < 0}. N_{<0} = N_T, N_{>0} = N_S, and N = N_S ⋈ N_T (Zappa–Szép, §3.2).
+  O_{>0} = ^{N_T}O is the set of functions with f(gn) = f(g) for n ∈ N_T, i.e. functions of u_S in g = u_S u_T.
+  O_{≤0} = O^{N_S} is the set of functions with f(ng) = f(g) for n ∈ N_S, i.e. functions of u_T.
+  Multiplication O_{>0} ⊗ O_{≤0} → O is an algebra isomorphism (Thm 2.6 grouped by Prop 2.7, or directly from Zappa–Szép).
+- Γ_θ-degree (r, d) = (ht, θ). The order is x_1 ≤′ x_2 ⟺ d_1 < d_2 or (d_1 = d_2 and r_1 ≥ r_2). F′_x = span{f : L(f) ⊂ x + Π′}.
+  The **level** of b is the ≤′-maximum of L(b).
+  Polite (iii): the (level, ν − level) component of Δb is b_+ ⊗ b_−, with b_+ ∈ B_S := B ∩ O_{>0} and b_− ∈ B_T := B ∩ O_{≤0}.
+  Φ_θ : B → B_S × B_T, b ↦ (b_+, b_−), is a degree-additive bijection.
+- **Φ_θ depends only on the Weyl chamber of θ.** For generic θ and b ∈ B, the θ-max of the GGMS polytope Pol(b) (Cor 3.5) is a
+  single vertex α. It is the ≤′-maximum of L(b), and b_+ is the left factor of the (α, ν−α) component.
+- **Crystal.** B is biperfect (Prop 3.12). The string map b ↦ (e_j^{(ℓ)}·b, ℓ), with ℓ = ℓ_j(b) := max{n : e_j^n·b ≠ 0}, is a
+  bijection B → (B ∩ ker e_j) × ℕ (proof of Prop 3.12, quoted). Define ẽ_j b as the element with the same string top and ℓ − 1.
+  This agrees with BKK Def 2.1's ẽ_j, because e_j^{(ε)}·b = ẽ_j^{ε} b [BKK §2.3, first-hand]. Define ẽ*_j in the same way via ·e_j.
+- ζ_j^k is the unique element of B of degree kα_j, because O_{−kα_j} = kζ_j^k (α_j is simple). Also ⟨e_j^{(k)}, ζ_j^k⟩ = 1.
+
+### Lemma A (string lemma). If α_j ∈ T, then ℓ_j(b) = ℓ_j(b_−) for all b ∈ B, and Φ_θ(e_j^{(ℓ)}·b) = (b_+, e_j^{(ℓ)}·b_−) for ℓ = ℓ_j(b).
+
+*Proof.*
+1. **e_j acts on the second factor.** E_j ∈ n_T, so e_j· kills O_{>0} (right N_T-invariants). e_j· is a derivation, and it
+   preserves O_{≤0}, since right translations commute with left translations. So under O ≅ O_{>0} ⊗ O_{≤0}, e_j = id ⊗ e_j.
+2. **Leading component.** Let α be the level of b. Δ(e_j^{(n)}·b) = (id ⊗ e_j^{(n)})Δb, so L(e_j^{(n)}·b) ⊂ L(b), and the
+   (α, ·) component of Δ(e_j^{(n)}·b) is b_+ ⊗ e_j^{(n)}·b_−.
+   - If e_j^{(n)}·b_− ≠ 0, then e_j^{(n)}·b ≠ 0, so ℓ_j(b) ≥ ℓ_j(b_−) pointwise.
+   - If moreover e_j^{(n)}·b ∈ B, then its level is α and Φ_θ(e_j^{(n)}·b) = (b_+, e_j^{(n)}·b_−).
+3. **Counting.** For a perfect basis, B ∩ ker e_j^{n+1} = {ℓ_j ≤ n} is a basis of ker e_j^{n+1}. (If f = Σ c_b b ∈ ker e^{n+1} and
+   m = max ℓ over the support is > n, then e^{(m)}f is a nonzero combination of distinct basis elements; contradiction.)
+   - The same holds for B_T inside O_{≤0}: it is a basis of O_{≤0} by polite (iii), and it is e_j-perfect because e_j^{(ℓ)} maps
+     B_T into B ∩ O_{≤0}.
+   - By step 1, ker(e_j^{n+1}) ≅ O_{>0} ⊗ ker(e_j^{n+1}|O_{≤0}).
+   - Using the bijection Φ_θ in each degree ν:
+     #{b ∈ B_ν : ℓ_j(b_−) ≤ n} = Σ_α dim O_{>0,α} · dim ker(e_j^{n+1}|O_{≤0})_{ν−α} = dim ker(e_j^{n+1})_ν = #{b ∈ B_ν : ℓ_j(b) ≤ n}.
+   - Since ℓ_j(b) ≥ ℓ_j(b_−) pointwise, {ℓ_j(b) ≤ n} ⊂ {ℓ_j(b_−) ≤ n}. The two sets have equal cardinality, so they are equal.
+     Hence ℓ_j(b) = ℓ_j(b_−).
+4. With ℓ = ℓ_j(b) = ℓ_j(b_−), e_j^{(ℓ)}·b ∈ B by perfectness, and step 2 gives the formula. ∎
+
+### Theorem (a). If α_j ∈ T and ẽ_j b ≠ 0, then Φ_θ(ẽ_j b) = (b_+, ẽ_j b_−). Also ε_j(b) = ε_j(b_−).
+
+*Proof.* Let b′ = ẽ_j b, ℓ = ℓ_j(b). Then ℓ_j(b′) = ℓ − 1 and e_j^{(ℓ−1)}·b′ = e_j^{(ℓ)}·b.
+By Lemma A applied to b and to b′:
+(b′_+, e_j^{(ℓ−1)}·b′_−) = Φ_θ(e_j^{(ℓ−1)}·b′) = Φ_θ(e_j^{(ℓ)}·b) = (b_+, e_j^{(ℓ)}·b_−).
+So b′_+ = b_+. Also b′_− and b_− are elements of B with the same string top, and ℓ_j(b′_−) = ℓ − 1, ℓ_j(b_−) = ℓ.
+Hence b′_− = ẽ_j b_−. ∎
+
+### Lemma C (coherence across a wall). Let T′ = T ⊔ {α_j} be biconvex (the "adj" case for θ), with θ′ in the T′-chamber.
+For b ∈ B write Φ_θ′(b) = (p, q) and Φ_θ(b) = (b_+, b_−). Then there is m ≥ 0 such that
+  Φ_θ′(b_+) = (p, ζ_j^m),  Φ_θ(q) = (ζ_j^m, b_−),  m = ε_j(b_+) = ε*_j(q),  b_− = q·e_j^{(m)}.
+
+*Proof.*
+- **Choice of θ*.** The T- and T′-chambers share the wall α_j^⊥. Pick θ* on that wall, generic on it (θ*(β) ≠ 0 for β ≠ α_j).
+  For small η > 0, θ* + η·ht lies in the T-chamber and θ* − η·ht in the T′-chamber. By chamber-independence, take θ = θ* + η·ht and θ′ = θ* − η·ht.
+  For θ*: N_{>0} = N_{S′} with S′ = S ∖ {α_j}, N_0 = U_j, N_{<0} = N_T, and N = N_{S′} ⋈ U_j ⋈ N_T (§3.2).
+- **The face.** Let F be the θ*-max face of Pol(b). Pol(b) is GGMS (Cor 3.5), so its normal cone at F contains the Weyl wall cone through θ*,
+  whose span is α_j^⊥. Hence F ⊂ α + ℝα_j: F is a segment [α′, α] with α − α′ = mα_j, m ∈ ℤ_{≥0}.
+  Here α is the endpoint of larger height (the θ-max vertex) and α′ the endpoint of smaller height (the θ′-max vertex).
+  Every point of L(b) with θ* = max lies on F.
+- **Bilevel.** For θ*:
+  - the F′-level of b (max θ*, ties broken by smallest height) is α′;
+  - the F″-level (Baumann §2.3: ≤″-max of R(b), i.e. min θ* of the right degree, ties broken by smallest height) is y := ν − α.
+- **Δ₂-injectivity, proved here from Thm 2.6 (Prop 2.11's proof is omitted in the paper).**
+  Fix homogeneous bases of the A_{[μ]} and use the ordered-monomial basis of Thm 2.6, grouped as A_{>0} ⊗ A_0 ⊗ A_{<0} ≅ A.
+  - By Lemma 2.4(i), an ordered monomial a_+ a_0 a_− has ≤′-max left degree |a_+|: the left end of the slope-0 segment of its rim.
+    By the proof of Prop 2.9 (F′_x is spanned by ordered monomials with Pol∧ ⊂ x + Π′), F′_x = ⊕_{x′ ≤′ x} A_{>0,x′} ⊗ A_0 ⊗ A_{<0}.
+  - Mirror: F″_y = ⊕_{y′ ≤″ y} A_{>0} ⊗ A_0 ⊗ A_{<0,y′}. The R-condition is an L-condition on a convex region containing the chord, so Prop 2.5 applies.
+  - For homogeneous a_± and a_0, the (|a_+|, |a_0|, |a_−|) component of (Δ⊗id)Δ(a_+a_0a_−) is a_+ ⊗ a_0 ⊗ a_−.
+    This is the d-coordinate argument: R(a_+) has d > 0 or is 0, A_0 has d = 0, and L(a_−) has d < 0 or is 0.
+    Monomials with x′ <′ x, or with y′ <″ y, have no (x, ·, y) component.
+  - Hence the (x, ·, y) tri-component map has kernel exactly F′_{<x} ∩ F″_y + F′_x ∩ F″_{<y} on F′_x ∩ F″_y.
+- **Basis compatibility.** F′_x ∩ F″_y ∩ O_ν, F′_{<x} ∩ F″_y ∩ O_ν and F′_x ∩ F″_{<y} ∩ O_ν each have the form {f : L(f) ⊂ K} with K convex.
+  (Note (x + Π′) ∖ {x} is convex.) So each equals O_ν ∩ S(conv(K ∩ M_ν)), and by Prop 3.3 it is spanned by its intersection with B.
+  b has exact bilevel (α′, y), so b ∉ F′_{<α′} ∩ F″_y + F′_{α′} ∩ F″_{<y} (linear independence of B).
+  Therefore the tri-component C := [(Δ⊗id)Δb]_{(α′, mα_j, ν−α)} ≠ 0.
+- **Reading C two ways** (coassociativity).
+  From θ: C = [Δb_+]_{(α′, mα_j)} ⊗ b_− = (e_j^{(m)}·b_+) ⊗ ζ_j^m ⊗ b_−.
+  From θ′: C = p ⊗ [Δq]_{(mα_j, ν−α)} = p ⊗ ζ_j^m ⊗ (q·e_j^{(m)}).
+  The two middle factors are ζ_j^m because O_{−mα_j} = kζ_j^m; the outer factors follow from the two action formulas.
+- **b_+ side.** b_+ is a function of u_S. Right factors of Δb_+ are right N_T-invariant. The θ′-right factor of b_+ is also
+  left N_{S′}-invariant, hence a function of the U_j-coordinate, i.e. ζ_j^k with k = ε_j(b_+).
+  So Φ_θ′(b_+) = (p′, ζ_j^k) at level α − kα_j.
+  - C ≠ 0 gives α′ ∈ L(b_+), so θ′(α′) ≤ θ′(α − kα_j), i.e. m ≤ k.
+  - p′ ⊗ ζ^k ⊗ b_− is a nonzero tri-component of b at (α − kα_j, kα_j, ν−α). Hence α − kα_j ∈ L(b) on F, so k ≤ m.
+  - So k = m, and p′ ⊗ ζ^m ⊗ b_− = C = p ⊗ ζ^m ⊗ q·e_j^{(m)}. Hence p′ = p (two elements of B that are proportional are equal)
+    and q·e_j^{(m)} = b_−.
+- **q side.** Symmetrically, Φ_θ(q) = (ζ_j^{k′}, q·e_j^{(k′)}) with k′ = ε*_j(q). Left factors of q are left N_{S′}-invariant,
+  and the θ-left factor is also right N_T-invariant.
+  - C ≠ 0 gives mα_j ∈ L(q), so k′ ≥ m.
+  - α′ + k′α_j ∈ L(b) on F, so k′ ≤ m. Hence k′ = m. ∎
+
+### Theorem (b). Assume adj (T ∪ {α_j} biconvex, α_j ∈ S). If ẽ_j b ≠ 0, then
+  Φ_θ(ẽ_j b) = (ẽ_j b_+, b_−) if ε_j(b_+) > φ_j(b_−), and (b_+, ẽ_j b_−) otherwise, where φ_j(c) = ε_j(c) + ⟨h_j, wt c⟩.
+
+*Proof.* Take θ′ and the notation of Lemma C; m = ε_j(b_+).
+1. **On B_{T′}, Φ_θ is the ∗-string decomposition.** For c ∈ B_{T′} = B ∩ O^θ′_{≤0}: Φ_θ(c) = (ζ_j^{ε*_j(c)}, (ẽ*_j)^{max} c).
+   This is the q-side argument of Lemma C, which only used c ∈ B_{T′}.
+2. **Reduce to B_{T′}.** α_j ∈ T′, so (a) for θ′ gives ẽ_j b = Φ_θ′^{-1}(p, ẽ_j q) with ẽ_j q ∈ B_{T′}, and ẽ_j q ≠ 0.
+3. **B3.** [Kashiwara–Saito q-alg/9606009 Thm 3.2.2, first-hand today, pp.6–7.]
+   - Ψ_j : B(∞) ↪ B(∞) ⊗ B_j is a strict embedding.
+   - Ψ_j(c) = c′ ⊗ f̃_j^n b_j with n = ε_j(c*), ε_j(c′*) = 0, c = f̃*_j^n c′.
+   - Tensor rule (§3.1): ẽ(b_1 ⊗ b_2) = ẽb_1 ⊗ b_2 if φ(b_1) ≥ ε(b_2), and b_1 ⊗ ẽb_2 otherwise. Also ε_j(f̃_j^n b_j) = n.
+   - It applies to (B, ẽ, ẽ*): by BKK 1905.08460 Thm 2.4 [first-hand] the bicrystal of a biperfect basis is unique, hence is the
+     bicrystal of the dual canonical basis, i.e. Kashiwara's (B(∞), ẽ, ẽ*). If the identification swaps ẽ and ẽ*, compose with ∗.
+   - With c = q, n = m and c′ = b_−:
+     - if m ≤ φ_j(b_−): ẽ_j q = f̃*_j^m ẽ_j b_− with ε*_j(ẽ_j b_−) = 0, so by step 1, Φ_θ(ẽ_j q) = (ζ^m, ẽ_j b_−);
+     - if m > φ_j(b_−): ẽ_j q = f̃*_j^{m−1} b_−, so Φ_θ(ẽ_j q) = (ζ^{m−1}, b_−).
+4. **Apply Lemma C to ẽ_j b.** We have Φ_θ′(ẽ_j b) = (p, ẽ_j q), so Φ_θ(ẽ_j b) = (Φ_θ′^{-1}(p, (ẽ_j q)_+), (ẽ_j q)_−).
+   - Case m ≤ φ: this is (Φ_θ′^{-1}(p, ζ^m), ẽ_j b_−) = (b_+, ẽ_j b_−).
+   - Case m > φ: this is (Φ_θ′^{-1}(p, ζ^{m−1}), b_−). By (a) for θ′ applied to b_+, using Φ_θ′(b_+) = (p, ζ^m) and ẽ_j ζ^m = ζ^{m−1},
+     we get Φ_θ′^{-1}(p, ζ^{m−1}) = ẽ_j b_+.
+   - Finally ε_j(b_+) = ε_j(ζ^m) = m (Lemma A for θ′). ∎
+
+**Scope.** (a) and (b) hold for every polite basis of O(N), G any split reductive group (Baumann's setting), and every generic θ.
+Simply-lacedness is not used. Together with (c) (type A, first-hand), Theorem Q60 is now **proved in type A**:
+locality ⟺ not far, with the exact tensor rule. Outside type A, (c) is still open (gap 4).
+
+### P0, demoted
+P0 (Lusztig-datum split) is no longer a premise of anything. What is now proved is its intrinsic form.
+Iterating Lemma C over a maximal chain of cuts gives the "HN datum" (the edge lengths of Pol(b) along the path), and Φ_θ splits it.
+- The generalisation of Lemma C to non-simple walls β is the same proof with ζ_j^m replaced by the B-elements of O(U_β) = k[x_β]. Not written out.
+- Identifying the HN datum with Kamnitzer-convention Lusztig data is Kamnitzer's MV-polytope theorem plus Baumann §3.3 (Pol(B) = MV polytopes).
+  Not traced; not needed.
+- The orientation anchor is first-hand anyway: for T = {α_j}, Baumann's proof of Prop 3.12 gives Φ(b) = (e_j^{(ε)}·b, ζ_j^ε).
+  So b_− carries ε_j = the n_1 of a T-first word (Kamnitzer Prop 3.4), which is P0's orientation.
+
+### Verification (PROVE 273, `proofs/prove273/`)
+
+| check | result | script |
+|---|---|---|
+| Lemma A on honest A_2 polynomials (Φ from Δ, BKK Ex 2.3 basis, h ≤ 5): ε_j(b) = ε_j(b_−) for α_j ∈ T | 204/204 | `a2_coherence.py` |
+| control (breaks): ε_j(b) = ε_j(b_+) | 72/204 (fails) | same |
+| Lemma C, all adjacent chamber pairs, simple and non-simple walls | 204/204 | same |
+| control (breaks): b_− = q (no second split) | 90/204 (fails) | same |
+| Lemma C numerics: m = ε_j(b_+) = ε*_j(q) on simple walls | 136/136 | same |
+| Lusztig model, exact (b) rule, A_3 h ≤ 6 | 2160/2160 | `q60_checks_rev.py 3 6` |
+| **negative control (breaks), split REVERSED** (b_+ = T-part) | rule 845/2160 (fails); classification still 72/72 (it is swap-symmetric, as noted in PROVE 272) | `q60_checks_rev.py 3 6 REV` |
+
+The reversed-split control breaks the exact rule, so the P0 orientation (b_− = T-part) is the only one consistent with (b).
+The "indep failures 2640" line in the REV run is an artefact: the independence check hard-codes the unreversed split. Ignore it.
+The A_4 B2 run was not finished: B2 is no longer a premise.
+
+### Gaps after PROVE 273
+1. ~~P0~~: no longer needed.
+2. ~~B2~~: no longer needed (replaced by Lemma C).
+3. B3 is cited first-hand (KS97 Thm 3.2.2). BKK Thm 2.4 is cited first-hand.
+   Remaining non-first-hand link: "the dual canonical basis at q = 1 is biperfect with bicrystal = Kashiwara's B(∞)".
+   BKK state it with references [Lu3 Thms 1.6, 7.5; Kas2 §5.3], which I have not read. Textbook.
+4. (c) outside type A: open.
+5. Not cold-re-derived yet. Grade **proved** (written, every step cited or argued). The sober recheck is owed (Dream 273 / Wake 274).

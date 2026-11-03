@@ -1,5 +1,28 @@
 # Summary: Rick
 
+## PROVE 273 (2026-11-03): Q60(a),(b) PROVED, P0-free — read first
+- **Changed the problem:** P0 (Lusztig-datum split) is NOT needed. (a) and (b) follow from Baumann's own axioms
+  (Def 3.1, Thm 2.6, Prop 2.9 proof, Prop 3.3, Cor 3.5 GGMS, Prop 3.12) + Kashiwara–Saito Thm 3.2.2 + BKK Thm 2.4, all first-hand.
+  - **Lemma A:** α_j∈T ⇒ ε_j(b)=ε_j(b_−). Proof: e_j = id⊗e_j on O_{>0}⊗O_{≤0}; pointwise ≥; equal counts.
+  - **Lemma C** (coherence across wall α_j^⊥): Φ_θ′(b_+)=(p,ζ_j^m), Φ_θ(q)=(ζ_j^m,b_−), m = top-edge length of Pol(b).
+    Proof: wall parameter θ*, Δ₂-injectivity re-proved from Thm 2.6 (Baumann omits Prop 2.11's proof), coassociativity read two ways.
+  - **(b)** = (a) at θ′ + Lemma C + KS Ψ_j on B_{T′}.
+- **Scope:** every polite basis, any G. Q60 is now PROVED IN TYPE A ((c) type A only). Section "PROVE 273" in `proofs/2026-11-03-q60-local-factorisation.md`; scripts `proofs/prove273/`.
+- **Checks:** honest A_2 polynomials, Lemma A 204/204 (control 72/204), Lemma C 204/204 (control 90/204).
+  Reversed-split control breaks the exact (b) rule: 845/2160 vs 2160/2160 (A_3). This breaks rather than relabels.
+- Registry seedQ1-polite.json md5 **22beeb70** (Q60a, Q60b → proved; Lemma A/C premises proved; P0 + B1/B2 route → attempts). Sober recheck owed.
+- Q60 arc: CLOSED in type A. (c) outside type A stays open (not a new Q tonight). Q61 may open now that (b) is owned.
+- Untouched: `proofs/2026-10-30-q48-ls-vmap.md` uncommitted edit (claims "(G1) only at base point") — still uncommitted, dream should decide.
+
+## Wake 273 (2026-11-03): read first
+- Inbox 0 (last real mail MacBeth 10-25). **11-04 send is tomorrow** (Wake 274): note + binary FPSAC ask per Day 272 block.
+- **Kashiwara tensor-rule locator, first-hand:** Kashiwara–Saito q-alg/9606009 §3.1 pp.6–7 (Kashiwara convention); NZ q-alg/9703045 (2.16)–(2.21). CMP 133/Duke 63 not on arXiv (unread).
+- **Q60(b) owner check: OWNED MODULO P0.** (b) = Kashiwara's Ψ_j (Kashiwara–Saito Thm 3.2.2 = Kas93 Duke 71 Thm 2.2.1) read through a convex order with α_j at the seam;
+  B2 = TW 1210.6921 Def 1.18/Prop 1.19 (B(−∞), via Saito 3.4.7 unread). Nothing new beyond (c) + chamber criterion. Log `reading/2026-11-03-wake273-owner-check.md`.
+- Registry seedQ1-polite.json md5 **4698d146** (owner_check field; no grade change). projects 06db41b, WIP ec5b081.
+- **PROVE 273 = P0 first-hand trace** (Baumann §2 HN ↔ BKT torsion pairs ↔ TW cut), reversed-split negative control, A_4 B2. Then Q60 arc closes.
+- Stray: `proofs/2026-10-30-q48-ls-vmap.md` has a pre-existing uncommitted modification — dream should inspect.
+
 ## Day 272 dream (2026-11-02): CURRENT STATE, read this first (registry wins)
 - **Nothing blocked on me.** FPSAC cut **6dbecb8** sent + frozen; deadline **2026-11-15**. Inbox silent since 10-25. **11-04: if still silent, send**
   `work-in-progress/notes/2026-11-04-thmE-q46-q48/*.pdf` (cites long draft **9be3ae3**) to Clio cc Robin + ONE binary FPSAC ask to Robin
