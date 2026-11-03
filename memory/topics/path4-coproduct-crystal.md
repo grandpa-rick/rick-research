@@ -188,3 +188,9 @@ No further owed-read action on this paper.
 Q60(a),(b) are PROVED P0-free (PROVE 273; Baumann 2401.10340 axioms + KS q-alg/9606009 Thm 3.2.2 + BKK 1905.08460 Thm 2.4). Type-A Q60 is complete.
 Path-4 reading: the tensor rule on O(N) is the **wall-crossing formula** of the HN factorisation. The α_j-string block ζ_j^m changes sides at α_j^⊥.
 This is the q=1 avatar of K in Δ(F)=F⊗1+K⊗F (Crown Q upgrade). Caveat (Crown R): all of this is blind to *which* polite basis you hold.
+
+## Dream 274 (2026-11-03): Q60 proved for every G; the tensor rule = a primitive derivation
+Q60 is proved for every split reductive G and every polite basis (PROVE 274, cold read PASS Dream 274; registry seedQ1-polite.json e858c5b7).
+Criterion: Φ_θ is ẽ_j-local ⟺ E_j normalises n_T. e_j always preserves O_{≤0}, so locality ⟺ e_j acts by Leibniz (primitively) on O_{>0}·O_{≤0}.
+This is the cleanest Path 4 statement on file: **coproduct-primitive operator across a factorisation ⇒ crystal tensor rule; a factor that isn't stable ⇒ no rule.**
+See Crown Q, Dream 274 section. Q61 closed (subsumed); Q64 (BK perfect-basis owner check) parked post-11-15.

@@ -447,3 +447,20 @@ BKK 1905.08460 Def 2.1 (first-hand) asks for three things: 1 ∈ B; weight vecto
 6. **Mirror.** Use −θ_i. Then O^{−θ}_{>0} = ^{N_S}O = k[ζ_i], O^{−θ}_{≤0} = O^{U_i}, and ·e_i acts as d/dζ ⊗ id, since (f·x)(1) = (x·f)(1) gives ζ_i·e_i = 1.
    The same steps, with left and right swapped, give perfectness for the right action. So B is biperfect. ∎
 Imported, not re-proved: BKK Thm 2.4 (the bicrystal of a biperfect basis is Kashiwara's B(∞)). This is used only in (b), via KS97.
+
+### Dream 274 cold read of §PROVE 274 (2026-11-03): PASS, no grade change
+Re-derived from the printed text only, without the scripts.
+- **Step 0.** (i): one summand must be negative (α_j simple, sum positive), so γ = −α with α ∈ T and δ = α+α_j ∈ S. OK. (ii) ⇒: γ, δ ≠ α_j, so both lie in Δ_{θ′}^+, but θ′(α_j) < 0. OK.
+- **Step 1.** U(n)n_T = U(n_S)U(n_T)n_T = U(n_S)U(n_T)^+, which uses only that S and T are closed. E_αE_j = E_jE_α + [E_α,E_j], with the first term in U(n)n_T and the second = N·E_{α+α_j} ∈ n_S. OK.
+  The sign of N doesn't matter, only N ≠ 0.
+- **Step 2.** x − π(x) = Σ x′y with y ∈ n_T, and ⟨x′y, g⟩ = ⟨x′, y·g⟩ = 0. OK.
+- **Step 3.** The real content is that *any* b ∈ B_S with ẽ_j b ≠ 0 and θ(deg b − α_j) < 0 is a witness. Step 1 only guarantees one exists. The weight lemma needs Φ_θ injective and degree-additive (Def 3.1(iii)). OK.
+  Locality would force Φ(ẽ_j b) = (ẽ_j b, 1) because ẽ_j 1 = 0, so even the "one coordinate" form dies. OK.
+- **Corollary.** In the adj case the ideal property uses closedness of the inversion set X. OK.
+- **Appendix (Prop 3.12).** Step 3 bound: θ(left degree of Δ(a_kζ^k)) ≤ θ(ν) + k − j. ζ_i is primitive (degree α_i, counit). Equality forces right degree 0 in ℕS. OK.
+  Step 5: e_i b − Kẽ_i b ∈ G_{K−2}, and G_{K−2} is spanned by {b′ : ℓ_i(b′) ≤ K−2}, which is BKK's "ε(b′) < ε(b) − 1". OK.
+- **Cosmetic:** the Statement block still says "G simply laced … dual canonical"; the grades paragraph overrides it. Left as is (historical).
+- **Verdict:** PASS. Q60 = proved, all G, every polite basis. Registry seedQ1-polite.json e858c5b7 is unchanged (both copies verified md5).
+- **Free observation (→ Crown Q, Dream 274):** e_j acts on the right and O_{≤0} = O^{N_S} is a left invariant, so e_j preserves O_{≤0} for every θ.
+  So "not far" ⟺ e_j preserves *both* factors of O = O_{>0}·O_{≤0}. e_j is a derivation, so in that case it acts on the factorisation by the Leibniz rule,
+  i.e. primitively. Locality ⟺ e_j is primitive for the HN factorisation.

@@ -139,3 +139,11 @@ Errors in the Dream 270/271 stanzas above (tagged in place):
   basis-blind across polite bases? Test at the first degree where canonical ≠ semicanonical: type A5, weight 2α1+4α2+4α3+4α4+2α5 (degree 16) — verified Wake 273b (GLS math/0402448 Thm 1.2;
   Leclerc math/0202148 §2.7). "Smallest" is GLS-hedged ("probably the smallest example"), not proved; Leclerc's imaginary b itself sits at degree 8.
 - Q62 unchanged (park).
+
+## Dream 274 (2026-11-03)
+- **Q60 PROVED, every G and every polite basis** (PROVE 274 degree obstruction; Dream 274 cold read PASS; registry seedQ1-polite.json e858c5b7).
+  Intrinsic criterion: local ⟺ E_j normalises n_T.
+- **Q61 CLOSED (subsumed).** Its only value was as a route to (c) outside type A, and PROVE 274 did that directly. "Wall root non-simple" = [E_j,E_α] ∉ n_T.
+- **Q64 (new hunch, park post-11-15, owner first):** is Theorem (b) = Berenstein–Kazhdan perfect-basis tensor rule (math/0601391, locator from memory)
+  applied to the e_j-stable factorisation O_{>0}·O_{≤0}? If yes, the Q60 arc's own contribution is just the stability criterion. One locator read decides it.
+- Q62, Q63 unchanged (parked).

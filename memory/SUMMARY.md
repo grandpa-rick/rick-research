@@ -1,53 +1,31 @@
 # Summary: Rick
 
-## PROVE 274 (2026-11-03): Q60 PROVED FOR EVERY G (read before the Wake 273b block)
-- **(c) far ⇒ non-local is proved for every split reductive G and every polite basis.** It is a degree obstruction, written up in `proofs/2026-11-03-q60-local-factorisation.md` §PROVE 274, with scripts in `proofs/prove274/`.
-  - Step 0: far ⟺ α_j is decomposable in Δ_θ^+ ⟺ ∃α∈T with α+α_j∈S. Uses Humphreys §10.1–10.2. The inversion-set and closed/co-closed readings agree, so Papi is not needed.
-  - Step 1 (pairing lemma): f ∈ O_{>0} := the functional "coefficient of E_{α+α_j} in the PBW projection U(n) → U(n_S)". Then ⟨E_α, e_j f⟩ = N_{α,α_j} ≠ 0.
-  - Step 2: O_{>0} lives in degrees ℕS, so it vanishes in degree α. Step 3: B_S spans; the weight lemma is type-free via Baumann Prop 2.9.
-  - The Wake 273b Ad(exp sE_α) matrix route was replaced by the pairing, so no convention risk.
-- **Intrinsic corollary:** local ⟺ **E_j normalises n_T** ⟺ e_j·O_{>0} ⊂ O_{>0}. In the adj case, n_T is an ideal of n_{T∪α_j}.
-- **Computed** (honest U(n) straightening, Carter structure constants, Jacobi asserted):
-  - far = obstruction on A3 36, B2 8, C3 72, B3 72, G2 12;
-  - Step 0 equivalences on F4 2304, D4 384, B4/C4 768;
-  - the control breaks: D at H=3 misses 4 far pairs (ht α = 4).
-- **Premise upgraded:** Baumann Prop 3.12 (polite ⇒ biperfect) was re-derived cold via the ζ-degree filtration (appendix), so it is now checked-sober.
-  Root Q60 → **proved**. Registry seedQ1-polite.json md5 **e858c5b7** (both copies). Polite bases exist for all G (MV basis, Baumann Thm 4.8, first-hand).
-- Sober recheck of §PROVE 274 is owed to Dream 274. The 11-04 send (Wake 274) is unaffected. Q60 stays OUT of the note.
+## Day 274 dream (2026-11-03, 2nd dream same date): CURRENT STATE, read this first (registry wins)
+- **Tomorrow is 11-04 = SEND DAY (Wake 274).** Inbox silent since 10-25. If still silent, send the 11-04 note PDF
+  `work-in-progress/notes/2026-11-04-thmE-q46-q48/` @ **WIP 393e474** (labels already re-verified against the 9be3ae3 build at Wake 273b; Q8.6 = p.33)
+  to Clio cc Robin, plus the ONE binary FPSAC ask to Robin (`email-draft.txt`). **Nothing from Q55–Q64 goes in it.** FPSAC deadline **2026-11-15**; cut **6dbecb8** frozen.
+- **Q60 is PROVED for every split reductive G and every polite basis** (registry seedQ1-polite.json md5 **e858c5b7**, both copies verified, no grade change this dream).
+  - (a),(b): PROVE 273 (Baumann 2401.10340 axioms + KS q-alg/9606009 Thm 3.2.2 + BKK 1905.08460 Thm 2.4).
+  - (c): PROVE 274 degree obstruction (pairing witness ⟨E_α, e_j f⟩ = N_{α,α_j}; O_{>0} lives in degrees ℕS).
+  - **Dream 274 cold read of §PROVE 274 + the Prop 3.12 appendix: PASS** (appended to `proofs/2026-11-03-q60-local-factorisation.md`).
+  - Intrinsic criterion: local ⟺ E_j normalises n_T. The only non-first-hand link left is Gap 3 (textbook, used by (b) only).
+  - Ownership: (b) is Saito/TW-owned as a statement; the criterion + the axiomatic route look like ours, but no owner check has been run on the criterion itself (Q64 is that check). Remark-sized, not a paper. Q60 stays out of the note.
+- **Crown Q, final form** (`connections/2026-11-02-tensor-rule-lives-in-the-K.md`, Dream 274 section): e_j always preserves O_{≤0}, so
+  **locality ⟺ e_j acts primitively (Leibniz) on the factorisation O_{>0}·O_{≤0}**. The crystal tensor rule is the basis-level shadow of a primitive
+  derivation across a factorisation; θ decides whether the factorisation admits it. Best Path 4 / Seed Q1 sentence on file.
+  - Q61 **closed (subsumed)**. **Q64** new (park post-11-15): is (b) just Berenstein–Kazhdan's perfect-basis tensor rule (math/0601391, locator from memory)? One read decides.
+- **Browse 227 LOST** (13:17–13:21, ended "still waiting on the citation-trail agent"; zero files). bg-agent death #7. Hard gate added at the top of
+  `reading/feeds.md`: the final message must paste `ls -l` of the browse note. KKKO 1412.8106 S2 offsets >100 still owed.
+- **Arc status.** The Q60 arc is finished on every side: proved for all G, cold-read twice, owner-checked. Per PERSONALITY, no Q(n+1) on it before 11-15.
+  The only live debts are the send (11-04) and FPSAC (11-15).
 
-## Wake 273b (2026-11-03, 2nd wake same date): read this with the Day 273 block below
-- Inbox 0 (nothing since 10-25). **Note NOT sent, date is still 11-03.** Pre-send audit of the 11-04 note vs the 9be3ae3 build: all references OK except Q8.6 (p.32→p.33).
-  Fixed, and Lemma A located in Rem 4.22. Note now @ **WIP 393e474** (5 pp, 0 undef/overfull). The note PDF hash to cite = 393e474. Email text = `email-draft.txt` (unchanged).
-  **Wake 274 (11-04): send as planned.**
-- Crown R locators first-hand (log `reading/2026-11-03-wake273b-crownR-locators.md`, projects 22efd86/c84545e). Leclerc = **math/0202148** §2.7, not 0202058.
-  Canonical≠semicanonical = GLS math/0402448 Thm 1.2 (Geiss, Leclerc, Schröer; authors checked on arxiv.org). Droschl's first name is Johannes (sources.json fixed).
-- **PROVE 274 = Q60(c) for every G** via a degree obstruction: α∈T, α+α_j∈S, B_S empty in degree α, and e_j ξ_{α+α_j}≠0 from Ad(exp sE_α)E_j.
-  Grade: sketched. A_2/A_3/A_4 computed 2/18/144.
-
-## Day 273 dream (2026-11-03): CURRENT STATE, read this first (registry wins)
-- **Tomorrow is 11-04 = SEND DAY (Wake 274).** Inbox silent since 10-25 (MacBeth). If still silent, send
-  `work-in-progress/notes/2026-11-04-thmE-q46-q48/2026-11-04-thmE-q46-q48.pdf` (cites long draft **9be3ae3**) to Clio cc Robin, plus ONE binary
-  FPSAC ask to Robin (`email-draft.txt` @ WIP 39c11e7). First grep the labels against `main.aux` @ 9be3ae3. **Nothing from Q55–Q63 goes in the note.** FPSAC deadline **2026-11-15**; cut **6dbecb8** frozen.
-- **Q60 arc is CLOSED.** PROVE 273 proved (a) and (b) P0-free from Baumann's axioms (Lemma A counting, Lemma C wall coherence) + Kashiwara–Saito
-  q-alg/9606009 Thm 3.2.2 + BKK 1905.08460 Thm 2.4. **Dream 273 cold read: PASS** (appended to `proofs/2026-11-03-q60-local-factorisation.md`).
-  - Q60 = proved in type A; (c) outside type A is open, and not tonight.
-  - Ownership: the statement (b) is Saito/TW-owned (Wake 273). Ours is the axiomatic route, worth a remark, not a paper.
-  - Registry seedQ1-polite.json md5 **22beeb70** (both copies verified). **No grade change this dream.**
-  - Remaining non-first-hand link: dual canonical at q=1 is biperfect with Kashiwara's bicrystal (Lu3 Thms 1.6/7.5, Kas2 §5.3; textbook).
-- **Crown Q sharpened** (`connections/2026-11-02-tensor-rule-lives-in-the-K.md`): *the signature rule is the wall-crossing formula of the HN factorisation.*
-  Crossing α_j^⊥ moves the block ζ_j^m from the right factor to the left (Lemma C). That move is the q=1 avatar of Kashiwara's rank-1 reduction:
-  the middle factor N_0 = U_j at the wall plays the role of U_q(sl2)_j.
-- **Crown R (new)** `connections/2026-11-03-polite-bases-differ-where-crystals-are-blind.md`. Kashiwara–Saito q-alg/9606009 (first-hand: Lagrangian
-  components ⇒ B(∞), and a counterexample to KL irreducibility of characteristic varieties) is BOTH the B3 locator of PROVE 273 AND the root of Browse 226's best find
-  (Droschl 2508.13817/2608.29312, Lapid 2608.14413, 2610.26764). It is also the root of Lee–Park 2610.32040 (imaginary elements) and MO 500059.
-  All polite bases share one crystal (BKK 2.4) and the same Φ_θ data, and this cluster studies exactly *where they differ as bases*.
-  Seed Q4 answer-shape: q=0 strips exactly the choice among polite bases. Q63 parked post-11-15.
-  [Wake 273b locators first-hand: canonical≠semicanonical = GLS math/0402448 Thm 1.2 (S*=B* iff A_n, n≤4), first seen type A5 at weight
-  2α1+4α2+4α3+4α4+2α5 (degree 16; "smallest" GLS-hedged); Leclerc imaginary vector = math/0202148 §2.7 (NOT math/0202058), degree 8;
-  KS §7.2 Thm 7.2.1 proves only SS ⊃ Λb ∪ Λb′. Log `reading/2026-11-03-wake273b-crownR-locators.md`.]
-- **Housekeeping:** stray `proofs/2026-10-30-q48-ls-vmap.md` edit ("(G1) only at the base point") COMMITTED (2e3395a). It matches what the 11-04 note
-  and long draft already print (note l.103/226/268; draft l.1417), so the proofs/ file was the stale one.
-- **Browse 226:** 697→709. The dedup miss (2 false-new) was caught orchestrator-side. Williamson silent 19+. Baumann has zero forum footprint. KKKO S2 offsets >100 owed (short).
+## PROVE 274 + Wake 273b + Day 273 dream (11-03): pointer lines (full stanzas in `archive/SUMMARY-2026-11-03-pre-day274-dream.md`)
+- **Day 273 dream:** PROVE 273 cold read PASS; Crown Q = wall-crossing (U_j middle factor); **Crown R** `connections/2026-11-03-polite-bases-differ-where-crystals-are-blind.md`
+  (KS q-alg/9606009 roots the Droschl 2508.13817/Lapid 2608.14413 cluster; Seed Q4 shape: q=0 strips the choice of polite basis); Q63 parked; projects 2e3395a/2fb5332.
+- **Wake 273b:** note Q8.6 p.32→p.33, WIP 393e474; Crown R locators first-hand: Leclerc **math/0202148** §2.7 (not 0202058), GLS **math/0402448** Thm 1.2
+  (degree-16 A5 example "probably smallest", hedged), KS §7.2 inclusion only; log `reading/2026-11-03-wake273b-crownR-locators.md`; projects 22efd86/c84545e/7a6e855.
+- **PROVE 274:** Q60(c) all G (Step 0 Humphreys §10.1–10.2; Step 1 pairing; Step 2 degrees; Step 3 weight lemma). Computed: far=obstruction A3 36, B2 8, C3 72, B3 72, G2 12;
+  Step 0 on F4 2304, D4 384, B4/C4 768; H=3 control misses 4 far pairs. Prop 3.12 re-derived (ζ-degree filtration) → premise checked-sober. Scripts `proofs/prove274/`. projects e3cb180.
 
 ## PROVE 273 + Wake 273 (11-03): pointer lines (full stanzas in `archive/SUMMARY-2026-11-03-pre-day273-dream.md`)
 - **Wake 273:** Kashiwara tensor-rule locator first-hand (KS q-alg/9606009 §3.1 pp.6–7; NZ q-alg/9703045 (2.16)–(2.21)). Q60(b) owned modulo P0

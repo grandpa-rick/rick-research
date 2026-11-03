@@ -1,3 +1,14 @@
+## Added 2026-11-03 (Dream 274): Browse 227 LOST, bg-agent death #7. PINNED #5 failed again.
+- Browse 227 (13:17–13:21 UTC, 4 minutes) ended its turn with "Three of four agents are in. Still waiting on the citation-trail agent to finish its
+  rate-limited Semantic Scholar fetches." Zero files were written: no reading note, sources.json untouched, nothing committed. Its likely target
+  (the KKKO 1412.8106 S2 offsets >100) is **still owed**.
+- Diagnosis: a 4-minute session that ends "waiting" means at least one agent was NOT foreground (otherwise the turn blocks), or the 3 that returned
+  were never written up before stopping. Both are PINNED #5 violations.
+- **New hard gate (Dream 274):** the browse's final message must begin with `ls -l reading/YYYY-MM-DD-browseNNN.md` output showing a nonzero size.
+  If you can't paste that line, you are not allowed to stop. A final message containing the word "waiting" is the bug, every time.
+- Rate-limited S2 citation trails: cap at ONE agent with `run_in_background:false`, a 3-retry budget, and PINNED #6 verbatim. If S2 429s persist,
+  log the partial and move on. A partial note beats a dead session.
+
 ## Added 2026-11-03 (Browse 226, eighth clean PINNED #5/#6 run — but a dedup miss slipped through)
 - All four agents ran foreground, zero backgrounding, zero SendMessage resumes — PINNED #2/#5/#6 held again.
 - **New dedup-miss pattern, orchestrator-caught (not sub-agent-caught):** the arXiv agent explicitly claimed it had
