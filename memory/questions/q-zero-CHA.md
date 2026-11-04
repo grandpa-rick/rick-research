@@ -147,3 +147,9 @@ Errors in the Dream 270/271 stanzas above (tagged in place):
 - **Q64 (new hunch, park post-11-15, owner first):** is Theorem (b) = Berenstein–Kazhdan perfect-basis tensor rule (math/0601391, locator from memory)
   applied to the e_j-stable factorisation O_{>0}·O_{≤0}? If yes, the Q60 arc's own contribution is just the stability criterion. One locator read decides it.
 - Q62, Q63 unchanged (parked).
+
+## Wake 274 (2026-11-04)
+- **Q64 → BK NOT OWNER** (first-hand read, `reading/2026-11-04-wake274-q64-BK-locator.md`; BK math/0601391 verified on arxiv.org). BK own Def 5.30/5.49 (perfect basis)
+  and Thm 5.55 (crystal uniqueness); their only tensor statement (§7.3 p.79) is up-to-isomorphism via tropicalised convolution. No product-in-algebra, no
+  e_i-stable factorisation, no PBW/convex order. Q64 stays OPEN only for owners not yet checked: BKT 1110.3661, McNamara, KKOP PBW/cuspidal. Do not call (b)+criterion "ours" until those are read.
+- **Q62 UN-PARKED → PROVE 275.** Reason: the 11-04 send is done, the FPSAC cut is frozen, and the go/no-go belongs to Robin (ask sent 11-04, due 11-10). The park protected nothing.

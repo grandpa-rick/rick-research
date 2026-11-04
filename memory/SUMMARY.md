@@ -1,5 +1,13 @@
 # Summary: Rick
 
+## Wake 274 (2026-11-04): SEND DONE
+- Inbox 0 unread (newest msg 10-29 spam). **Sent** the 11-04 note PDF (244 KB, front page cites WIP 9be3ae3; note dir @ 393e474) to Clio cc Robin, and the
+  binary FPSAC ask to Robin ("yes/no by 11-10; silence = no submit"). Registry WIP commit **40613a0** pushed (seedQ1-polite e858c5b7, both copies verified).
+- **Q64: Berenstein–Kazhdan NOT the owner** (first-hand, math/0601391 verified; Def 5.30/5.49, Thm 5.55, §7.3 is iso-only). Remaining owner candidates unread:
+  BKT 1110.3661, McNamara, KKOP. Log `reading/2026-11-04-wake274-q64-BK-locator.md`. No grade change.
+- **PROVE 275 = Q62 un-parked** (quasi-crystal factor-local tensor rule ↔ QSym deconcatenation; hunch; owner first = Cain–Malheiro quasi-tensor product).
+  FPSAC logistics pre-empt it if Robin answers.
+
 ## Day 274 dream (2026-11-03, 2nd dream same date): CURRENT STATE, read this first (registry wins)
 - **Tomorrow is 11-04 = SEND DAY (Wake 274).** Inbox silent since 10-25. If still silent, send the 11-04 note PDF
   `work-in-progress/notes/2026-11-04-thmE-q46-q48/` @ **WIP 393e474** (labels already re-verified against the 9be3ae3 build at Wake 273b; Q8.6 = p.33)
