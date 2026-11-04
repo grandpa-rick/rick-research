@@ -1,5 +1,22 @@
 # Summary: Rick
 
+## PROVE 276 (2026-11-04, 11-05 slot): Q65 + Q66 PROVED, read first
+- **Q65 TRUE, all parts** (`proofs/2026-11-05-q65-quasicrystal-K0-QSym.md`, scripts `proofs/prove276/`). (i) connected isoclasses ↔ compositions ℓ≤n. Injective because the unique ë-source has
+  weight α. (ii) K_0(𝒬_n) ≅ QSym_n as rings, stable n→n+1. Free corollary: Q⊗̈Q' ≅ Q'⊗̈Q with no commutor. (iii) Levi slice ψ(w)=(w|≤a, w|>a −a) is an iso onto C_σ1⊠C_σ2, so it induces f(x≤a;x>a)=Δ, and Res_a is a ring map.
+- **Q66 TRUE, more general than asked.** Defect identity **δ(x⊗y)=δx+δy+min(ε̃x,φ̃y)** with δ=wt_{i+1}−ε̃_i ≥0 for polynomial weights. So Q_{B⊗B'}=Q_B⊗̈Q_{B'} for ALL
+  seminormal polynomial crystals. The kill clause IS the min term. Sharp: gl_2 det⁻¹⊗det (ε̈ 0 vs ∞), and B(0,−1)⊗B(2,1)⊃B(2,0) (alive string vs all dead). Computed 5418 elements, 0 failures; swapped-kill control 4500 failures.
+- Owner check NOT done (no browsing): Maas-Gariépy 2302.07694 and BCDS 2503.14782, one locator each. Content of (i)–(iii) is Gessel/MR-classical, and (iv) is probably folklore. Registry Q65/Q66 → proved.
+
+## Wake 275 (2026-11-04): read first, then Day 275 dream below
+- **Inbox 0.** Robin has not answered FPSAC (due 11-10, silence = no submit). Do not nudge.
+- **Q62 owner convention: RESOLVED, MATCH modulo word reversal (first-hand, verified-quote).** CGM 2301.00271 Def 6.9 p.30–31 reads x1⊗̈…⊗̈xk as the word
+  x1…xk with kill φ̈(u)>0 ∧ ε̈(v)>0. That is the literal **mirror** of ours. The bridge is CMRR 2309.14898 p.10: "x ⊗̈ y is identified with the word yx". Under it,
+  CGM Thm 5.1 = our Theorem A. 2309.14887 Def 2.13 already uses our convention. Caveat: word-reverse anything cited from CGM §6–9. Registry Q62-defn-owner → checked-sober.
+  sources: 2301.00271 and 2309.14898 → verified-quote (scope: the convention claim only); 2309.14887 authors fixed (Cain was missing).
+- **Q65 NOT owned** by CGM or either CMRR paper (agent text-search). They own char(component)=F_α (Gessel) and quasification Q_C (2309.14898 Def 4.5, Cor 4.10).
+  Q65 + new **Q66** (quasification strict monoidal in type A, sketch via reading-word embedding) registered **sketched**. Registry md5 a87a8426, projects 5e1b964, WIP f6a41c8 (pushed).
+- **PROVE 276 = Q65/Q66** assembly + monoidality (see state/PROVE.md). Maas-Gariépy MG23 is an unchecked possible owner. Log `reading/2026-11-04-wake275-cgm-convention-q65.md`.
+
 ## Day 275 dream (2026-11-04): CURRENT STATE, read this first (registry wins)
 - **Debts.** FPSAC deadline **2026-11-15**; cut **6dbecb8** frozen. The 11-04 note was **SENT** at Wake 274 (Clio cc Robin, PDF @ WIP 393e474), together with the binary FPSAC
   ask to Robin: **yes/no by 11-10, silence = no submit.** Until then, nothing to grind. Check the inbox each Wake and don't re-serve.
