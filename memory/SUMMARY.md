@@ -1,31 +1,28 @@
 # Summary: Rick
 
-## Wake 274 (2026-11-04): SEND DONE
-- Inbox 0 unread (newest msg 10-29 spam). **Sent** the 11-04 note PDF (244 KB, front page cites WIP 9be3ae3; note dir @ 393e474) to Clio cc Robin, and the
-  binary FPSAC ask to Robin ("yes/no by 11-10; silence = no submit"). Registry WIP commit **40613a0** pushed (seedQ1-polite e858c5b7, both copies verified).
-- **Q64: Berenstein–Kazhdan NOT the owner** (first-hand, math/0601391 verified; Def 5.30/5.49, Thm 5.55, §7.3 is iso-only). Remaining owner candidates unread:
-  BKT 1110.3661, McNamara, KKOP. Log `reading/2026-11-04-wake274-q64-BK-locator.md`. No grade change.
-- **PROVE 275 = Q62 un-parked** (quasi-crystal factor-local tensor rule ↔ QSym deconcatenation; hunch; owner first = Cain–Malheiro quasi-tensor product).
-  FPSAC logistics pre-empt it if Robin answers.
+## Day 275 dream (2026-11-04): CURRENT STATE, read this first (registry wins)
+- **Debts.** FPSAC deadline **2026-11-15**; cut **6dbecb8** frozen. The 11-04 note was **SENT** at Wake 274 (Clio cc Robin, PDF @ WIP 393e474), together with the binary FPSAC
+  ask to Robin: **yes/no by 11-10, silence = no submit.** Until then, nothing to grind. Check the inbox each Wake and don't re-serve.
+- **Q60 proved for every G** (registry seedQ1-polite.json e858c5b7, unchanged). Q64 owner check: BK math/0601391 is **NOT** the owner (Wake 274, first-hand). Still unread: BKT 1110.3661, McNamara, KKOP.
+- **Q62 closed** (PROVE 275; registry `seedQ1-qsym-quasicrystal.json`, md5 **f22c4c4e** after the Dream 275 edit, committed this dream). PROVE 275's printed 5ef07bfe was stale: the file
+  was rewritten at 02:34:18 and never committed. Same lesson as "printed hashes: commit first, read second".
+  - (a) proved+computed: quasi-tensor rule = signature rule + kill clause (ε_u>0 ∧ φ_v>0 ⇒ ∞), 152928/152928, controls break (50694 / 9120).
+  - (b) literal premise **false**: tensor ⇒ QSym product, Levi branching ⇒ coproduct; separator C_(21) ⊂ C_(1)⊗C_(2), F_1⊗F_2 ∉ ΔF_21.
+  - (c) local by **deletion**, not primitivity.
+  - **Owner of (a): Cain–Guilherme–Malheiro 2301.00271 §5.2 Prop 5.9** (Browse 228 sub-agent + Guilherme slides 2023-02-16). The sources.json grade was **demoted deep-read →
+    agent-summary** (the sub-agent did the reading, not me). **Convention hazard:** CGM kill = φ(x)>0 ∧ ε(x')>0 for x⊗̈x', ours = ε(left)>0 ∧ φ(right)>0 for the word uv. The match needs
+    CGM's ⊗ ↔ word order to be reversed. One first-hand look is owed before printing a citation. (b)/(c) owner candidates 2309.14887, 2309.14898 are unread.
+- **Crown S (new, best Path-4 sentence since Crown Q):** `connections/2026-11-04-tensor-and-branching-split-in-QSym.md`. Path 4's "coproduct = restriction AND tensor rule" names two
+  operations (positions vs values, swapped by σ↔σ⁻¹ = FQSym self-duality, MR 1995), and Sym's self-duality makes them indistinguishable. Quasi-crystals separate them.
+  Seed Q1/Q4 hunch: K_0(quasi-crystals) ≅ QSym, with Sym ⊂ QSym = forgetful crystals → quasi-crystals. That is **Q65**, parked, owner almost surely 2309.14887, a citation not a PROVE.
+- **Arc status.** Q60 is finished. Q62 is finished. Neither gets a Q(n+1) before 11-15. Crown Q now has two locality mechanisms: primitivity (Q60) and deletion (Q62).
 
-## Day 274 dream (2026-11-03, 2nd dream same date): CURRENT STATE, read this first (registry wins)
-- **Tomorrow is 11-04 = SEND DAY (Wake 274).** Inbox silent since 10-25. If still silent, send the 11-04 note PDF
-  `work-in-progress/notes/2026-11-04-thmE-q46-q48/` @ **WIP 393e474** (labels already re-verified against the 9be3ae3 build at Wake 273b; Q8.6 = p.33)
-  to Clio cc Robin, plus the ONE binary FPSAC ask to Robin (`email-draft.txt`). **Nothing from Q55–Q64 goes in it.** FPSAC deadline **2026-11-15**; cut **6dbecb8** frozen.
-- **Q60 is PROVED for every split reductive G and every polite basis** (registry seedQ1-polite.json md5 **e858c5b7**, both copies verified, no grade change this dream).
-  - (a),(b): PROVE 273 (Baumann 2401.10340 axioms + KS q-alg/9606009 Thm 3.2.2 + BKK 1905.08460 Thm 2.4).
-  - (c): PROVE 274 degree obstruction (pairing witness ⟨E_α, e_j f⟩ = N_{α,α_j}; O_{>0} lives in degrees ℕS).
-  - **Dream 274 cold read of §PROVE 274 + the Prop 3.12 appendix: PASS** (appended to `proofs/2026-11-03-q60-local-factorisation.md`).
-  - Intrinsic criterion: local ⟺ E_j normalises n_T. The only non-first-hand link left is Gap 3 (textbook, used by (b) only).
-  - Ownership: (b) is Saito/TW-owned as a statement; the criterion + the axiomatic route look like ours, but no owner check has been run on the criterion itself (Q64 is that check). Remark-sized, not a paper. Q60 stays out of the note.
-- **Crown Q, final form** (`connections/2026-11-02-tensor-rule-lives-in-the-K.md`, Dream 274 section): e_j always preserves O_{≤0}, so
-  **locality ⟺ e_j acts primitively (Leibniz) on the factorisation O_{>0}·O_{≤0}**. The crystal tensor rule is the basis-level shadow of a primitive
-  derivation across a factorisation; θ decides whether the factorisation admits it. Best Path 4 / Seed Q1 sentence on file.
-  - Q61 **closed (subsumed)**. **Q64** new (park post-11-15): is (b) just Berenstein–Kazhdan's perfect-basis tensor rule (math/0601391, locator from memory)? One read decides.
-- **Browse 227 LOST** (13:17–13:21, ended "still waiting on the citation-trail agent"; zero files). bg-agent death #7. Hard gate added at the top of
-  `reading/feeds.md`: the final message must paste `ls -l` of the browse note. KKKO 1412.8106 S2 offsets >100 still owed.
-- **Arc status.** The Q60 arc is finished on every side: proved for all G, cold-read twice, owner-checked. Per PERSONALITY, no Q(n+1) on it before 11-15.
-  The only live debts are the send (11-04) and FPSAC (11-15).
+## PROVE 275 + Browse 228 + Wake 274 + Day 274 dream (11-03/04): pointer lines (full stanzas in `archive/SUMMARY-2026-11-04-pre-day275-dream.md`)
+- **Day 274 dream (11-03):** PROVE 274 cold read PASS; Crown Q final = locality ⟺ e_j primitive on O_{>0}·O_{≤0}; Q61 subsumed; Browse 227 lost (bg death #7) → `ls -l` gate.
+- **Wake 274 (11-04):** inbox 0; 11-04 note + FPSAC ask SENT; registry WIP 40613a0; Q64 BK NOT owner (Def 5.30/5.49, Thm 5.55, §7.3 iso-only; `reading/2026-11-04-wake274-q64-BK-locator.md`).
+- **PROVE 275 (11-04):** Q62 (see top). File `proofs/2026-11-04-q62-quasi-crystal-tensor-rule.md`, scripts `proofs/prove275/`. PROVE.md's 1702.02998 pointer was wrong (sylvester/Baxter).
+- **Browse 228 (11-04):** clean (4 agents foreground, PINNED held). CGM 2301.00271 owner; BFPS 2112.00524 geometric RSK (closest Seed Q4 analogue under the literal keyword);
+  nLab crystal/CHA/canonical-basis still not cross-linked; Williamson silent 20+; FPSAC 11-15 reconfirmed (ignore the dead "2023" HTML comment); sources 711→719. Log `reading/2026-11-04-browse228.md`.
 
 ## PROVE 274 + Wake 273b + Day 273 dream (11-03): pointer lines (full stanzas in `archive/SUMMARY-2026-11-03-pre-day274-dream.md`)
 - **Day 273 dream:** PROVE 273 cold read PASS; Crown Q = wall-crossing (U_j middle factor); **Crown R** `connections/2026-11-03-polite-bases-differ-where-crystals-are-blind.md`

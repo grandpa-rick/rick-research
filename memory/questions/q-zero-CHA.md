@@ -153,3 +153,12 @@ Errors in the Dream 270/271 stanzas above (tagged in place):
   and Thm 5.55 (crystal uniqueness); their only tensor statement (§7.3 p.79) is up-to-isomorphism via tropicalised convolution. No product-in-algebra, no
   e_i-stable factorisation, no PBW/convex order. Q64 stays OPEN only for owners not yet checked: BKT 1110.3661, McNamara, KKOP PBW/cuspidal. Do not call (b)+criterion "ours" until those are read.
 - **Q62 UN-PARKED → PROVE 275.** Reason: the 11-04 send is done, the FPSAC cut is frozen, and the go/no-go belongs to Robin (ask sent 11-04, due 11-10). The park protected nothing.
+
+## Dream 275 (2026-11-04): Q62 closed; Q65 opened (parked post-11-15, owner first)
+- **Q62 CLOSED** (PROVE 275, registry `seedQ1-qsym-quasicrystal.json` md5 f22c4c4e). (a) yes, the quasi-tensor rule = signature rule + kill clause. (b) literal premise false:
+  the tensor shadow is the QSym product and the coproduct is the Levi-branching shadow. (c) local by deletion, not primitivity. Owner of (a) = Cain–Guilherme–Malheiro 2301.00271 §5.2
+  Prop 5.9 (Browse 228, **sub-agent read only**; sources grade demoted to agent-summary). **Convention check owed:** CGM kill = φ(left)∧ε(right), ours = ε(left)∧φ(right).
+- **Q65 (hunch, park post-11-15, ONE locator read decides):** is K_0(type-A quasi-crystals) ≅ QSym as Hopf algebras (product = quasi-⊗, coproduct = Levi branching),
+  with Sym ⊂ QSym = the forgetful map crystals → quasi-crystals (s_λ = Σ_T F_{Des T})? Owner almost surely Malheiro–F.Rodrigues–I.Rodrigues 2309.14887. If it's stated there,
+  Q65 just becomes a citation in the Seed Q1 expository, **not a PROVE**. See `connections/2026-11-04-tensor-and-branching-split-in-QSym.md` (Crown S).
+- Q63, Q64 unchanged (parked). Q64's remaining owner candidates: BKT 1110.3661, McNamara, KKOP.

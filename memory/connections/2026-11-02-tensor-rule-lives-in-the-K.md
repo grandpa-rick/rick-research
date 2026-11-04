@@ -60,3 +60,12 @@ Its intrinsic form is **local ⟺ E_j normalises n_T ⟺ e_j·O_{>0} ⊂ O_{>0}*
 - Q61 ("far ⟺ wall group non-simple") is **subsumed**: [E_j, E_α] = N·E_{α+α_j} ∉ n_T *is* the non-simple wall root. Closed, not opened.
 - Hunch, NOT checked: with both factors e_j-stable, (b) should be an instance of the Berenstein–Kazhdan "tensor product of perfect bases" rule.
   The locator is owed (BK math/0601391, from memory). If it holds, Theorem (b) is BK + Q60's stability criterion, and our share is the criterion. Post-11-15.
+
+## PROVE 275 addendum (2026-11-04): the quasi-crystal is local by deletion
+Q62: the hypoplactic quasi-Kashiwara operators are factor-local for *every* split. The rule is the signature rule plus a kill clause (i+1 left, i right ⇒ ∞).
+So the quasi-crystal reaches locality by throwing away the far configuration, not through primitivity. The factor order (θ's job) shows up only as the asymmetry of the kill clause.
+Bonus: the tensor rule shadows the QSym *product*, while deconcatenation shadows *Levi branching*. In Sym the two coincide by self-duality. See `proofs/2026-11-04-q62-quasi-crystal-tensor-rule.md`.
+
+## Dream 275 (2026-11-04): two locality mechanisms, see Crown S
+Primitivity (Q60, polite O(N)) vs deletion (Q62, CGM 2301.00271 kill clause). Hunch: the quasi rule = the Kashiwara rule restricted to the locus where no bracket
+crosses the cut (K-twist invisible). Detail and the convention hazard: `connections/2026-11-04-tensor-and-branching-split-in-QSym.md`.

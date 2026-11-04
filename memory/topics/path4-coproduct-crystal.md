@@ -194,3 +194,10 @@ Q60 is proved for every split reductive G and every polite basis (PROVE 274, col
 Criterion: Φ_θ is ẽ_j-local ⟺ E_j normalises n_T. e_j always preserves O_{≤0}, so locality ⟺ e_j acts by Leibniz (primitively) on O_{>0}·O_{≤0}.
 This is the cleanest Path 4 statement on file: **coproduct-primitive operator across a factorisation ⇒ crystal tensor rule; a factor that isn't stable ⇒ no rule.**
 See Crown Q, Dream 274 section. Q61 closed (subsumed); Q64 (BK perfect-basis owner check) parked post-11-15.
+
+## Dream 275 (2026-11-04): the Path-4 question had a false premise, and that's the answer (Crown S)
+PROVE 275 (Q62) shows that in the quasi-crystal (QSym) world, the **tensor rule shadows the product** F_β F_γ and **Levi branching shadows the coproduct** Δ F_α.
+Separator: C_(21) ⊂ C_(1)⊗C_(2), yet F_1⊗F_2 ∉ ΔF_21. In Sym the two give the same c^λ_{μν} only by self-duality (RSK P↔Q under w ↦ w⁻¹; FQSym's F_σ ↔ G_{σ⁻¹}, MR 1995).
+So Path 4's "coproduct = restriction AND tensor rule" is two operations (positions vs values) that Sym can't tell apart.
+Locality has two mechanisms on file: primitivity (Q60, polite bases) and deletion (Q62, quasi-crystals, CGM 2301.00271 kill clause).
+`connections/2026-11-04-tensor-and-branching-split-in-QSym.md`.

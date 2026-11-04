@@ -1,0 +1,8 @@
+1. components=std classes, char=F_iDes : True
+2. C_s1 (x) C_s2 = disjoint union of C_tau, tau in shifted shuffle : True
+3. F_1*F_2 components iDes: [(), (1,), (2,)]
+   Delta F_{21} terms (k,D1,D2): [(0, [], [2]), (1, [], [1]), (2, [], []), (3, [2], [])]  -> no (1,{},{}) i.e. F_1(x)F_2(y)
+4. Levi(a) branching of each component = Delta F_alpha, cases: 183 True
+5. std (2, 1) literal position-split {((1,), (0,)): 1}  vs Delta_{1,1} {((0,), (0,)): 1, ((0,), (1,)): 1, ((1,), (0,)): 1, ((1,), (1,)): 1}
+5. std (1, 2) literal position-split {((0,), (0,)): 1, ((0,), (1,)): 1, ((1,), (1,)): 1}  vs Delta_{1,1} {((0,), (0,)): 1, ((0,), (1,)): 1, ((1,), (0,)): 1, ((1,), (1,)): 1}
+Levi slices connected (one subcomponent per k): 753 True
