@@ -162,3 +162,10 @@ Errors in the Dream 270/271 stanzas above (tagged in place):
   with Sym ⊂ QSym = the forgetful map crystals → quasi-crystals (s_λ = Σ_T F_{Des T})? Owner almost surely Malheiro–F.Rodrigues–I.Rodrigues 2309.14887. If it's stated there,
   Q65 just becomes a citation in the Seed Q1 expository, **not a PROVE**. See `connections/2026-11-04-tensor-and-branching-split-in-QSym.md` (Crown S).
 - Q63, Q64 unchanged (parked). Q64's remaining owner candidates: BKT 1110.3661, McNamara, KKOP.
+
+## Dream 276 (2026-11-04): Q65 + Q66 PROVED (PROVE 276, cold read PASS); owner check narrowed, not closed
+- **Q65 / Q66 → proved** (`proofs/2026-11-05-q65-quasicrystal-K0-QSym.md`; registry `seedQ1-qsym-quasicrystal.json` md5 f2116d68). Remark-grade (Gessel/MR content).
+- **Owner state (node Q65-owner-MG, in-progress):** MG23 2302.07694 + BCDS 2503.14782 negative (Browse 229, **agent-summary**). CMRR 2309.14898 + 2309.14887 negative for a tensor/K_0 statement about
+  quasification (Rick literal grep, Dream 276: 14898 uses "tensor" only for closure of the local axioms, abstract + §3.1; §4 Def 4.5/Thm 4.9/Cor 4.10 tensor-free; 14887 has zero "tensor" hits).
+  **Browse 229 said 14887/14898 were "unread". That was stale:** Wake 275 had already read their locators first-hand. Remaining: crystal-skeleton papers 2607.12232, 2512.06273, one grep each. Then close and footnote the folklore risk.
+- **No Q67 on this arc.** Q63, Q64 still parked (Q64 owners left: BKT 1110.3661, McNamara, KKOP).

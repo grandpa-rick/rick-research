@@ -102,10 +102,14 @@
       "role": "attempt",
       "trust": "in-progress",
       "file": null,
-      "approach": "Owner check owed: Maas-Gariepy 2302.07694 (CMRR p.16: 'equivalent construction') and Brauner-Corteel-Daugherty-Schilling 2503.14782 may own (iv)/K_0; agent-summary only; one locator read each next Browse.",
+      "approach": "Owner check, negative so far, NOT closed. (1) Browse 229: Maas-Gariepy 2302.07694 (Thm 1 per-shape vertex correspondence, Thm 5 single-shape skeleton stabilisation) and BCDS 2503.14782 (Thm 4.11 single-top-letter branching, graph iso) contain no K_0/ring/monoidal statement -- agent-summary (sub-agent full-text grep), not Rick-first-hand. (2) Dream 276: Rick literal grep of 2309.14898.txt (tensor/monoidal/Grothendieck): tensor appears only for closure of local axioms under CGM quasi-tensor (abstract l.8, §3.1 l.522-548); §4 quasification (Def 4.5, Thm 4.9, Cor 4.10) has no tensor statement => Q66 not stated there. 2309.14887.txt: no 'tensor'/'Grothendieck' hits. (3) Remaining: crystal-skeleton papers 2607.12232, 2512.06273 (agent-summary in sources.json). Decision (gate rule): one literal grep each, then close; residual folklore risk (Gessel / Malvenuto-Reutenauer / Krob-Thibon) goes in a footnote.",
       "sources": [
        "2302.07694",
-       "2503.14782"
+       "2503.14782",
+       "2309.14898",
+       "2309.14887",
+       "2607.12232",
+       "2512.06273"
       ],
       "children": []
      }

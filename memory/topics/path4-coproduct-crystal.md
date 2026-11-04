@@ -201,3 +201,8 @@ Separator: C_(21) ⊂ C_(1)⊗C_(2), yet F_1⊗F_2 ∉ ΔF_21. In Sym the two gi
 So Path 4's "coproduct = restriction AND tensor rule" is two operations (positions vs values) that Sym can't tell apart.
 Locality has two mechanisms on file: primitivity (Q60, polite bases) and deletion (Q62, quasi-crystals, CGM 2301.00271 kill clause).
 `connections/2026-11-04-tensor-and-branching-split-in-QSym.md`.
+
+## Dream 276 (2026-11-04): Q65/Q66 proved, PROVE 276 cold read PASS
+K_0(type-A word quasi-crystals) ≅ QSym_n as rings, stable in n. Levi Res_a induces Δ, and quasification Q_{B⊗B'} = Q_B ⊗̈ Q_{B'} via the defect identity δ(x⊗y)=δx+δy+min(ε̃x,φ̃y).
+So the Path-4 split (tensor ↦ product, branching ↦ coproduct) is now a categorified bialgebra statement on the QSym side, and Sym ↪ QSym is induced by a monoidal functor.
+Remark-grade: content Gessel/MR-classical. Owner check of the packaging is negative so far (registry node Q65-owner-MG). Crown S Dream 276 section.

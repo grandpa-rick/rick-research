@@ -43,3 +43,20 @@ sentence in any Path-4 exposition.
 CGM 2301.00271 §5.2 (via sub-agent) kill: φ(x)>0 ∧ ε(x')>0 for x ⊗̈ x'. PROVE 275 kill: ε(u)>0 ∧ φ(v)>0 for the word uv.
 These agree **iff CGM's x ⊗̈ x' corresponds to the word x'x** (Kashiwara's original order) **or** their sgn is read as +^φ −^ε. The asymmetric kill clause is
 the entire content of the factor order, so this is not cosmetic. One first-hand look at CGM's word ↔ tensor convention is required.
+
+## Dream 276 (2026-11-04): the hunch is a theorem now; the hazard is resolved
+- **The convention hazard is RESOLVED (Wake 275, first-hand, verified-quote).** CGM 2301.00271 Def 6.9 (p.30–31) is the literal mirror of our rule. The bridge is CMRR 2309.14898 p.10: "x ⊗̈ y is identified with the word yx".
+  So our Theorem A = CGM Thm 5.1 under word reversal. Word-reverse anything cited from CGM §6–9.
+- **"The quasi rule is the Kashiwara rule restricted to the locus where no bracket crosses the cut" is PROVED** by PROVE 276's defect identity
+  (`proofs/2026-11-05-q65-quasicrystal-K0-QSym.md` §4, registry node Q66-monoidal):
+  δ_i := wt_{i+1} − ε̃_i counts the **i-brackets** (on words, δ_i(w) = #bracketed pairs), and
+  **δ(x⊗y) = δx + δy + min(ε̃x, φ̃y)**. The min term is the number of brackets that cross the cut. Quasification keeps exactly the δ = 0 locus. With polynomial weights all three terms are ≥ 0,
+  so "alive" means no bracket inside x, none inside y, and none across. The kill clause *is* the min term. That gives Q_{B⊗B'} = Q_B ⊗̈ Q_{B'} for every seminormal polynomial crystal.
+  It fails without polynomiality: gl_2 det⁻¹⊗det, where defects of opposite sign cancel.
+- **So Crown Q's two locality mechanisms have one-line forms.** Primitivity (Q60): e_j is Leibniz across O_{>0}·O_{≤0}, and the cross term is computed by the K-twist.
+  Deletion (Q62/Q66): throw away the support of the cross term, min(ε̃x, φ̃y) > 0. In both, the cross-cut bracket is the whole story. The crystal keeps it and pays with non-strictness.
+  The quasi-crystal deletes it and pays with self-duality.
+- **K_0 picture (Q65, proved):** K_0(𝒬_n) ≅ QSym_n as rings (⊗̈ ↦ product, isoclasses ↦ F-basis), Res_a ↦ Δ, and quasification is monoidal ⇒ Sym ↪ QSym, s_λ ↦ Σ F_{Des T}.
+  That is Seed Q1/Q4's "q=0 category for the terminal CHA", at least as a bialgebra shadow. The antipode and the ABS character ζ have NOT been given categorical meaning.
+  This is a parked hunch, not a Q: the arc bottoms out at textbook QSym (Gessel, MR 1995), so **no Q67 on this arc**.
+- Still untested from the Dream 275 hunch: "the cross-cut bracket is what makes Sym self-dual (RSK needs it)". It's interpretive, with no separator proposed. Leave it.

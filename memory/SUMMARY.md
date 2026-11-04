@@ -1,38 +1,24 @@
 # Summary: Rick
 
-## PROVE 276 (2026-11-04, 11-05 slot): Q65 + Q66 PROVED, read first
-- **Q65 TRUE, all parts** (`proofs/2026-11-05-q65-quasicrystal-K0-QSym.md`, scripts `proofs/prove276/`). (i) connected isoclasses ↔ compositions ℓ≤n. Injective because the unique ë-source has
-  weight α. (ii) K_0(𝒬_n) ≅ QSym_n as rings, stable n→n+1. Free corollary: Q⊗̈Q' ≅ Q'⊗̈Q with no commutor. (iii) Levi slice ψ(w)=(w|≤a, w|>a −a) is an iso onto C_σ1⊠C_σ2, so it induces f(x≤a;x>a)=Δ, and Res_a is a ring map.
-- **Q66 TRUE, more general than asked.** Defect identity **δ(x⊗y)=δx+δy+min(ε̃x,φ̃y)** with δ=wt_{i+1}−ε̃_i ≥0 for polynomial weights. So Q_{B⊗B'}=Q_B⊗̈Q_{B'} for ALL
-  seminormal polynomial crystals. The kill clause IS the min term. Sharp: gl_2 det⁻¹⊗det (ε̈ 0 vs ∞), and B(0,−1)⊗B(2,1)⊃B(2,0) (alive string vs all dead). Computed 5418 elements, 0 failures; swapped-kill control 4500 failures.
-- Owner check NOT done (no browsing): Maas-Gariépy 2302.07694 and BCDS 2503.14782, one locator each. Content of (i)–(iii) is Gessel/MR-classical, and (iv) is probably folklore. Registry Q65/Q66 → proved.
+## Day 276 dream (2026-11-04): CURRENT STATE, read this first (registry wins)
+- **Debts.** FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**, and silence = no submit. Inbox was 0 at Wake 275. Don't nudge.
+- **Q65 + Q66 PROVED** (PROVE 276; cold read PASS this dream; `proofs/2026-11-05-q65-quasicrystal-K0-QSym.md`, scripts `proofs/prove276/`, projects 9052cdd).
+  K_0(𝒬_n) ≅ QSym_n as rings (isoclasses ↦ F_α, injective via the unique ë-source of weight α), stable n→n+1. Res_a induces Δ (slice iso ψ(w)=(w|≤a, w|>a−a)).
+  **Defect identity δ(x⊗y)=δx+δy+min(ε̃x,φ̃y)**, δ_i=wt_{i+1}−ε̃_i = #i-brackets ≥0 for polynomial weights ⇒ Q_{B⊗B'}=Q_B⊗̈Q_{B'} for every seminormal polynomial crystal. Sharp: gl_2 det⁻¹⊗det.
+  Remark-grade: content Gessel/MR (1995). Registry `seedQ1-qsym-quasicrystal.json` md5 **f2116d68** (Dream 276 edit, committed; WIP copy identical).
+- **Owner check (node Q65-owner-MG, in-progress):** MG23 2302.07694 + BCDS 2503.14782 negative (Browse 229, **agent-summary**). CMRR 2309.14898/2309.14887 have no tensor statement about quasification
+  (Rick literal grep, Dream 276). Left: crystal-skeleton 2607.12232, 2512.06273, one grep each, then close and footnote the folklore.
+  **Browse 229's "4 unread candidates" was stale.** Wake 275 had already read 14887/14898 first-hand. Browse built its queue from the Dream 275 plan, not the latest Wake log.
+- **Crown S, Dream 276 section:** the Dream 275 hunch "quasi rule = Kashiwara rule with no bracket across the cut" is PROVED (min term = cross-cut brackets). Crown Q's two locality
+  mechanisms (primitivity Q60, deletion Q62/Q66) both live on the cross-cut bracket. **Arc finished: no Q67.** Q63/Q64 parked (Q64 owners left: BKT 1110.3661, McNamara, KKOP).
+- **Q60 proved for every G** (registry seedQ1-polite.json e858c5b7, unchanged). Q62 closed (owner CGM 2301.00271 Thm 5.1/Prop 5.9 mod word reversal, checked-sober, Wake 275).
 
-## Wake 275 (2026-11-04): read first, then Day 275 dream below
-- **Inbox 0.** Robin has not answered FPSAC (due 11-10, silence = no submit). Do not nudge.
-- **Q62 owner convention: RESOLVED, MATCH modulo word reversal (first-hand, verified-quote).** CGM 2301.00271 Def 6.9 p.30–31 reads x1⊗̈…⊗̈xk as the word
-  x1…xk with kill φ̈(u)>0 ∧ ε̈(v)>0. That is the literal **mirror** of ours. The bridge is CMRR 2309.14898 p.10: "x ⊗̈ y is identified with the word yx". Under it,
-  CGM Thm 5.1 = our Theorem A. 2309.14887 Def 2.13 already uses our convention. Caveat: word-reverse anything cited from CGM §6–9. Registry Q62-defn-owner → checked-sober.
-  sources: 2301.00271 and 2309.14898 → verified-quote (scope: the convention claim only); 2309.14887 authors fixed (Cain was missing).
-- **Q65 NOT owned** by CGM or either CMRR paper (agent text-search). They own char(component)=F_α (Gessel) and quasification Q_C (2309.14898 Def 4.5, Cor 4.10).
-  Q65 + new **Q66** (quasification strict monoidal in type A, sketch via reading-word embedding) registered **sketched**. Registry md5 a87a8426, projects 5e1b964, WIP f6a41c8 (pushed).
-- **PROVE 276 = Q65/Q66** assembly + monoidality (see state/PROVE.md). Maas-Gariépy MG23 is an unchecked possible owner. Log `reading/2026-11-04-wake275-cgm-convention-q65.md`.
-
-## Day 275 dream (2026-11-04): CURRENT STATE, read this first (registry wins)
-- **Debts.** FPSAC deadline **2026-11-15**; cut **6dbecb8** frozen. The 11-04 note was **SENT** at Wake 274 (Clio cc Robin, PDF @ WIP 393e474), together with the binary FPSAC
-  ask to Robin: **yes/no by 11-10, silence = no submit.** Until then, nothing to grind. Check the inbox each Wake and don't re-serve.
-- **Q60 proved for every G** (registry seedQ1-polite.json e858c5b7, unchanged). Q64 owner check: BK math/0601391 is **NOT** the owner (Wake 274, first-hand). Still unread: BKT 1110.3661, McNamara, KKOP.
-- **Q62 closed** (PROVE 275; registry `seedQ1-qsym-quasicrystal.json`, md5 **f22c4c4e** after the Dream 275 edit, committed this dream). PROVE 275's printed 5ef07bfe was stale: the file
-  was rewritten at 02:34:18 and never committed. Same lesson as "printed hashes: commit first, read second".
-  - (a) proved+computed: quasi-tensor rule = signature rule + kill clause (ε_u>0 ∧ φ_v>0 ⇒ ∞), 152928/152928, controls break (50694 / 9120).
-  - (b) literal premise **false**: tensor ⇒ QSym product, Levi branching ⇒ coproduct; separator C_(21) ⊂ C_(1)⊗C_(2), F_1⊗F_2 ∉ ΔF_21.
-  - (c) local by **deletion**, not primitivity.
-  - **Owner of (a): Cain–Guilherme–Malheiro 2301.00271 §5.2 Prop 5.9** (Browse 228 sub-agent + Guilherme slides 2023-02-16). The sources.json grade was **demoted deep-read →
-    agent-summary** (the sub-agent did the reading, not me). **Convention hazard:** CGM kill = φ(x)>0 ∧ ε(x')>0 for x⊗̈x', ours = ε(left)>0 ∧ φ(right)>0 for the word uv. The match needs
-    CGM's ⊗ ↔ word order to be reversed. One first-hand look is owed before printing a citation. (b)/(c) owner candidates 2309.14887, 2309.14898 are unread.
-- **Crown S (new, best Path-4 sentence since Crown Q):** `connections/2026-11-04-tensor-and-branching-split-in-QSym.md`. Path 4's "coproduct = restriction AND tensor rule" names two
-  operations (positions vs values, swapped by σ↔σ⁻¹ = FQSym self-duality, MR 1995), and Sym's self-duality makes them indistinguishable. Quasi-crystals separate them.
-  Seed Q1/Q4 hunch: K_0(quasi-crystals) ≅ QSym, with Sym ⊂ QSym = forgetful crystals → quasi-crystals. That is **Q65**, parked, owner almost surely 2309.14887, a citation not a PROVE.
-- **Arc status.** Q60 is finished. Q62 is finished. Neither gets a Q(n+1) before 11-15. Crown Q now has two locality mechanisms: primitivity (Q60) and deletion (Q62).
+## PROVE 276 + Wake 275 + Browse 229 + Day 275 dream (11-04): pointer lines (full stanzas in `archive/SUMMARY-2026-11-04-pre-day276-dream.md`)
+- **Day 275 dream:** Crown S (tensor ↦ QSym product, branching ↦ coproduct; Sym self-duality hides the split) `connections/2026-11-04-tensor-and-branching-split-in-QSym.md`; Q62 registry hash lesson (printed 5ef07bfe stale); 2301.00271 deep-read → agent-summary.
+- **Wake 275:** inbox 0; CGM convention MATCH mod word reversal (CGM Def 6.9 p.30–31 + CMRR 2309.14898 p.10, verified-quote); Q65/Q66 registered; log `reading/2026-11-04-wake275-cgm-convention-q65.md`.
+- **PROVE 276:** Q65/Q66 (see top). Computed 752 components 0 collisions; 434 Levi slices; 5418 tensor elements 0 failures, swapped-kill control 4500 failures.
+- **Browse 229:** MG23/BCDS negative (agent); Schilling crystal-skeleton route surfaced (2607.12232, 2512.06273, both already in sources); new 2605.22750 (Nadeau–Spink–Tewari grove polynomials, low priority);
+  MO/SE quiet since 2026-08-01; 3 of 4 agents run in background (citation agent stalled, scratch files salvaged). Log `reading/2026-11-04-browse229.md`.
 
 ## PROVE 275 + Browse 228 + Wake 274 + Day 274 dream (11-03/04): pointer lines (full stanzas in `archive/SUMMARY-2026-11-04-pre-day275-dream.md`)
 - **Day 274 dream (11-03):** PROVE 274 cold read PASS; Crown Q final = locality ⟺ e_j primitive on O_{>0}·O_{≤0}; Q61 subsumed; Browse 227 lost (bg death #7) → `ls -l` gate.
