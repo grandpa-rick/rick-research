@@ -1,0 +1,745 @@
+             A crystalizable version of Uq(glN ) 
+                     Daniel    Krob y       and       Jean-Yves    Thibon z
+                      Dedicated to the memory of Marcel{Paul Schutzenberger
+
+Abstract: We interpret quasi-symmetric functions and noncommutative symmetric functions as
+characters of a degenerate quantum group obtained by putting q = 0 in a variant of Uq (glN ).
+Resume: Nous interpretons les fonctions quasi-symetriques et les fonctions symetriques non commu-
+tatives comme caracteres d'un groupe quantique degenere obtenu en posant q = 0 dans une variante
+de Uq (glN ).
+
+1 Introduction
+This paper is a sequel to the series [6, 4, 17, 28] devoted to the representation the-
+oretical interpretations of the algebras of quasi-symmetric functions (see [10]) and of
+noncommutative symmetric functions [8], two di erent generalizations of the classical
+theory of symmetric functions which eventually turned out to be dual to each other
+[23].
+    The new theories are very similar to the classical one, the main di erence being that
+the r^ole of partitions is in both cases played by compositions. Both algebras possess
+distinguished bases which can be regarded as analogues of Schur functions. In particu-
+lar, the structure constants in these bases are nonnegative integers, which suggests the
+existence of representation-theoretical interpretations similar to the relation between
+symmetric functions, symmetric groups and general linear groups.
+    The analogue of the relation between Schur functions and representations of the
+symmetric group was found to be provided by the 0-Hecke algebra Hn (0) of type A [6,
+4, 17]. The known q-analogue of the Schur-Weyl duality between generic Hecke algebras
+Hn (q) and the quantum groups associated with general linear groups [12] suggested
+the existence of an interpretation of quasi-symmetric functions and noncommutative
+symmetric functions as characters of some quantum group at q = 0.
+    However one has to be careful since the standard quantum groups are not de ned
+for q = 0. Indeed, their presentations are generally symmetric in q and q , and               1
+
+
+      Partially supported by GDR/PRC AMI.
+   y   LITP { Universite Paris 7 { 2, place Jussieu { 75251 Paris Cedex 05 { France { e-mail :
+dk@litp.ibp.fr
+   zIGM { Universite de Marne{la{Vallee { 2, rue de la Butte Verte { 93166 Noisy-le-Grand Cedex {
+France { e-mail : jyt@univ-mlv.fr
+
+                                                  1
+have no limit for q ! 0. The theory of crystal bases [13] which is sometimes loosely
+referred to as \the theory of quantum groups at q = 0" allows only to set q = 0 in
+certain formulas, obtained from the generic case, and involving only polynomials after
+some normalization. That is to say, the theory of crystal bases does not deal with a
+degenerate case, but rather describes the combinatorial aspects of the generic case (e.g.
+the combinatorics of Young tableaux in the case of glN ). The relation between quantum
+groups at q = 0 and classical combinatorics was rst pointed out in [2].
+    One can associate two kinds of quantum algebras to a classical group G. First a
+q analogue Fq (G) of the algebra of polynomial functions on the group (cf. [7]) whose
+comodules are in duality with polynomial representations of the group. Second a q-
+analogue Uq (g) of the universal enveloping algebra of its Lie algebra [12].
+    There exists a non-standard version of Fq (GLN ), due to Dipper and Donkin [3] in
+which the specialization q = 0 is possible. This allowed us to intepret quasi-symmetric
+functions and noncommutative symmetric functions as characters of F (GLN ) comod-
+                                                                            0
+ules, an exact analogue of the relation between Schur functions and polynomial rep-
+resentations of GLN [17]. Moreover this point of view leads to an intepretation of
+quasi-symmetric functions similar to the plactic interpretation of symmetric functions
+introduced by Lascoux and Schutzenberger in [20].
+    The Dipper-Donkin version of Fq (GLN ) and the standard one are in fact special-
+izations of a two-parameter quantization discovered by Takeuchi [27], who also gives
+the corresponding family U ; (glN ) of quantized enveloping algebras. Jimbo's quanti-
+zation corresponds to Uq;q (glN ), and the one appropriate to the Dipper-Donkin algebra
+is U ;q (glN ).
+    1
+    The specialization related to quasi-symmetric functions and noncommutative sym-
+metric functions is U (glN ) = U ; (glN ). It is this algebra that we study in this paper.
+                      0           01
+We describe the basic properties of Uq; (glN ), including the quantum Schur-Weyl du-
+                                            1
+ality in the generic case, and study the degeneracy at q = 0. We can then prove
+that distinguished bases of quasi-symmetric functions and of noncommutative symmet-
+ric functions are actually characters of irreducible and of indecomposable polynomial
+modules over the degenerate algebra and we give the classi cation of such modules.
+
+2 Notations and background
+A composition of n is a sequence I = (i ; : : :; ir ) of positive integers whose sum is equal
+                                            1
+to n. The length of I is `(I ) = r. A composition can be represented by a skew Young
+diagram called a ribbon diagram of shape I . For example, the ribbon diagram of shape
+I = (3; 2; 1; 4) is
+
+
+
+The mirror image of I is I = (ir ; : : :; i ). The conjugate composition I  of I is obtained
+                                        1
+by reading from right to left the heights of the columns of the ribbon diagram of I . For
+example, (3; 2; 1; 4) = (1; 1; 1; 3; 2; 1; 1).
+    One associates with a composition I = (i ; : : :; ir) of n the subset D(I ) of [1; n 1]
+                                                        1
+de ned by D(I ) = f i ; i + i ; : : :; i + : : : + ir g. The reverse re nement order,
+                         1   1         2     1                  1
+denoted , on the set of all compositions of the same integer n is de ned by I  J i
+D(I )  D(J ). For example (3; 2; 6)  (2; 1; 2; 3; 1; 2). One associates to a permutation
+ of Sn a composition C () of n called the descent composition of , whose ribbon
+diagram is called the shape of . The descent composition of  encodes its descent set
+D() = fi 2 [1; n 1] j (i) > (i + 1)g. That is, D(C ()) = D(). For example,
+C (245316) = (3; 1; 2) and D(245316) = f3; 4g..
+    The set DI of all permutations  2 Sn having I as descent composition is an interval
+[ (I ); !(I )] for the weak order (permutohedron) of Sn , where (I ) is the permutation
+obtained by lling the columns of the ribbon diagram of shape I from bottom to top
+and from left to right with 1; 2; : : : ; n and !(I ) is the permutation obtained by lling the
+rows of the ribbon diagram of shape I from left to right and from bottom to top with
+1; 2; : : : ; n. For example, (2; 2; 1; 1; 3) = 132765489 and !(2; 2; 1; 1; 3) = 896754123.
+    Let (A; <) be a totally ordered alphabet. A tableau of ribbon shape I is a skew
+Young tableau obtained by lling a ribbon diagram R of shape I by letters of A in such
+a way that each row of r is nondecreasing from left to right and each column of r is
+strictly increasing from bottom to top. A word w is said to be of ribbon shape I if it
+can be obtained by reading from top to bottom and from left to right the columns of a
+tableau of ribbon shape I , which amounts to say that the descent composition of w is I .
+For example, the ribbon shape of w = aacbacdcd is (3; 1; 3; 2). A quasi-tableau of ribbon
+shape I is an object obtained by lling a ribbon diagram r of shape I by letters of A
+in such a way that each row of r is nondecreasing from left to right and each column
+of r is strictly increasing from top to bottom. A word is said to be a quasi-ribbon word
+of shape I if it can be obtained by reading from bottom to top and from left to right
+the columns of a quasi-tableau of shape I . For example, the word u = aacbabbac is
+not a quasi-ribbon word since the planar representation of u obtained by writing its
+decreasing factors as columns is not a quasi-tableau. On the other hand, the word
+v = aacbacdcd is a quasi-ribbon word of shape (3; 1; 3; 2).
+    The algebra of noncommutative symmetric functions [8] is the free associative alge-
+bra Sym = QhS ; S ; : : :i generated by an in nite sequence of noncommutative indeter-
+                 1   2
+minates Sk , called complete symmetric functions. For a composition I = (i ; i ; : : : ; ir),
+                                                                                1   2
+one sets S I = Si1 Si2 : : : Sir . The family (S I ) is a linear basis of Sym. Although it is
+convenient to de ne Sym as an abstract algebra, a useful realisation can be obtained
+by taking an in nite alphabet A = f a ; a ; : : : g and de ning its complete homogeneous
+                                             1     2
+symmetric functions by the generating function
+                                                        !
+                                       tn Sn (A) =           (1 t ai) :
+                                 X                     Y
+                                                                       1
+                                                                                          (1)
+                                 n0                   i1
+The noncommutative ribbon Schur functions RI can be de ned by
+                                                   ( 1)` I ` J S J :
+                                            X
+                                   RI =                  ( )   ( )
+                                                                                          (2)
+                                            J I
+The RI form a basis of Sym. In the realization of Sym given by equation (1), RI
+reduces to the sum of all words of shape I [8].
+   The algebra of noncommutative symmetric functions is in natural duality with the
+algebra of quasi-symmetric functions introduced by Gessel in [10] (cf. [8, 23]). Let
+X = f x ; x ; : : : g be an in nite totally ordered set of commutative indeterminates. An
+        1    2
+element f 2 C [X ] is said to be a quasi-symmetric function i for each composition
+K = (k ; : : :; kr ) all monomials xki11 xki22    xkirr with i < i < : : : < ir have the same
+        1                                                              1     2
+coecient in f . The quasi-symmetric functions form a subalgebra of C [X ] denoted by
+QSym. The quasi-monomial functions
+                                                         xij11 : : : xijrr
+                                              X
+                                  MI =
+                                           j1 <:::<jr
+(labelled by compositions I ) form a basis of QSym. Another important basis of QSym
+is given by the quasi-ribbon functions
+                                          FI =            MJ ;
+                                                  X
+
+
+                                                  I J
+e.g., F = M + M + M + M . It is important to note that FI is the
+       122       122       1112    1211          11111
+commutative image of the sum of all quasi-ribbon words of shape I . The pairing h; i
+between Sym and QSym is de ned by hS I ; MJ i = IJ or equivalently hRI ; FJ i =
+IJ (cf. [23, 8]). This duality can be interpreted as the canonical duality between
+the Grothendieck groups respectively associated with nite dimensional and projective
+modules over 0-Hecke algebras [6, 17].
+
+3 The hypoplactic algebra
+The plactic algebra [20] on the totally ordered alphabet A is the C -algebra Pl(A) de ned
+as the quotient of C hAi by the relations
+                      aba = baa ; bba = bab
+                       (
+                                                       for a < b ;
+                       acb = cab ; bca = bac           for a < b < c :
+These relations, due to Knuth [18], generate the equivalence relation that identi es two
+words which have the same P -symbol under the Robinson-Schensted correspondence.
+The associated monoid structure on the set of tableaux was studied by Lascoux and
+Schutzenberger [20] under the name \plactic monoid". Their point of view is now
+illuminated by Kashiwara's theory of crystal bases [13, 14] which also leads to the
+de nition of plactic algebras associated with the classical Lie algebras [19, 22]. Other
+interpretations of the plactic relations in terms of quantum groups can be found in
+[2, 21].
+    The hypoplactic algebra is a quotient of the plactic algebra where ribbon quasi-
+tableaux play the same r^ole as Young tableaux in the plactic case. This algebra was
+introduced in [17] where it is shown that a remarkable commutative subalgebra of
+the hypoplactic algebra is isomorphic to the character ring of a degenerate quantum
+group and provides a hypoplactic realization of the algebra of quasi-symmetric functions
+analogous to the plactic interpretation of ordinary symmetric functions discovered by
+Lascoux and Schutzenberger [20]. We will see in Section 8 that the same result holds
+when one rather considers polynomial modules over the crystalization of the version of
+Uq (glN ) introduced in Section 4.
+De nition 3.1 The hypoplactic algebra HPl(A) is the quotient of the plactic algebra
+Pl(A) by the quartic relations
+                  baba = abab ; baca = abac
+                   8
+                   >
+                   >
+                   <
+                                                         for a < b < c ;
+                   cacb = acbc ; cbab = bacb
+                   >
+                                                         for a < b < c ;
+                  badc = dbca ; acbd = cdab              for a < b < c < d :
+                   >
+                   :
+
+
+
+    The hypoplactic monoid has the same properties as the plactic monoid with respect
+to a Robinson-Schensted type correspondence where tableaux are replaced by ribbon
+quasi-tableaux [17]. The insertion algorithm is as follows. Let Q be a ribbon quasi-
+tableau and let a 2 A. Denote by Q0 be the quasi-tableau obtained from Q by deleting
+its last row and let x (resp. z) be the rst (resp. last) letter of the last row of Q.
+The result Q of the insertion of a in Q is de ned by the following rules: 1) If z  a,
+Q is obtained by adding a box containing a at the end of the last row of Q; 2) if
+x  a < z, let y be the rst letter of the last row of Q which is strictly greater than a.
+The quasi-tableau Q is then
+                                  :::
+                                      .
+                                  Q0 ..
+                                          :::  x             a
+                                                    ::: ;    y           z
+
+
+    3) if a < x, Q is obtained by inserting a in Q0 and glueing under the quasi-ribbon
+tableau obtained in this way the last row of Q.
+    Let now w = a : : : an be a word of length n. One associates with w a pair (Q; R),
+                       1
+where Q is a quasi-tableau of ribbon shape I and where R is a standard ribbon tableau
+of the same shape. Q is obtained by inserting the letters of w (from left to right)
+starting from an empty diagram and R is constructed by putting at each step i 2 [1; n]
+of the insertion algorithm the number i in the box that contains at this moment in Q
+the letter ai inserted at this step. Let us illustrate this process on w = baccb.
+
+(;; ;) -               -               -                         -                           -
+                           a       2       a           2             a               2           a           2
+           b   ,   1       b   ,   1       b c     ,   1 3           b c     c   ,   1 3 4       b b     ,   1 5
+                                                                                                   c c           3 4
+
+
+The correspondence w ! (Q; R) is a bijection, and we have the following quasi-ribbon
+analogue of Knuth's theorem (cf. [18]).
+Proposition 3.2 [17] Two words u; v 2 A  are mapped to the same quasi-tableau Q by
+the above insertion process i u  v with respect to the hypoplactic congruence.
+    We also recall the quasi-ribbon version of the cross-section theorem of [20].
+Theorem 3.3 [17] The classes of quasi-ribbon words form a linear basis of the hy-
+poplactic algebra.
+   Other combinatorial properties of the hypoplactic monoid have been investigated
+by Novelli [25].
+
+4 The quantum enveloping algebra Uq(glN )
+In this section, we introduce a variant of the quantized enveloping algebra Uq (gln )
+which displays the same behaviour for generic q, but can also be specialized at q = 0.
+To allow this specialization, we have to modify a little Takeuchi's Uq; (glN ), that is, to      1
+use non-invertible generators for the Cartan part, and to de ne it only as a bialgebra
+(no antipode). This algebra, as well as other multiparameter deformations, can be
+realized by specialization of the di erence operators of [9].
+De nition 4.1 Let q be an indeterminate or a complex parameter. The crystalizable
+quantum analogue Uq (glN ) of the universal enveloping algebra of the Lie algebra glN is
+the algebra over C (q ) generated by the elements (ei )1iN 1 , (fi )1iN 1 and (ki )1iN
+with relations :
+                            ki kj = kj ki for 1  i; j  N ;                              (3)
+                         q ki ei 1 = ei 1 ki for 2  i  N 1 ;
+                    8
+                    >
+                    >
+                    <
+                              ki ei = q ei ki for 1  i  N 1 ;                           (4)
+                                                for j 6= i 1; i ;
+                    >
+                    >
+                    :
+                              ki ej = ej ki
+                         ki fi 1 = q fi 1 ki for 2  i  N 1 ;
+                    8
+                    >
+                    >
+                    <
+                          q ki fi = fi ki       for 1  i  N 1 ;                         (5)
+                                                for j 6= i 1; i ;
+                    >
+                    >
+                    :
+                            ki fj = fj ki
+                             [ei; fj ] = ij kiq k1i            +1
+                                                                            for 1  i; j  N ;             (6)
+              q ei ei (1 + q) ei ei ei + ei ei = 0 for 1  i  N                                     2;
+        (
+                         2                                      2
+                   +1                             +1
+
+            q ei ei (1 + q) ei ei ei + ei ei = 0 for 1  i  N
+              2
+                                                                      +1
+                                                                      2
+                                                                                                     2;    (7)
+               +1                           +1         +1              +1
+
+             fi fi (1 + q) fi fi fi + q fi fi = 0 for 1  i  N                                      2;
+       (
+                     2                                          2
+              +1                                 +1
+
+            fi fi (1 + q) fi fi fi + q fi fi = 0 for 1  i  N
+             2
+                                                                      +1
+                                                                      2
+                                                                                                     2;    (8)
+             +1                         +1            +1              +1
+
+                            [ei; ej ] = 0 for ji j j > 1 ;
+                                   (
+
+
+                            [fi; fj ] = 0 for ji j j > 1 ;                                                 (9)
+                    ei ei ki = ki ei ei         for 1  i  N 2 ;
+                   (
+                                  +1   +1
+
+                    fi fi ki = ki fi fi for 1  i  N 2 :
+                                                           +1        +1
+                                                                                                          (10)
+                             +1        +1                  +1   +1
+Relations (10) are consequences of the other relations when q 6= 0 and do not play any
+r^ole in the generic case. One adds them in order to endow Uq (glN ) with a bialgebra
+structure at q = 0. Not also that the q-Serre relations (7) are exactly those obtained
+by Ringel [26] in his construction of Uq (n ) via the Hall algebras associated to quivers.
+                                                    +
+In this construction, the parameter q is the cardinality of a nite eld.
+Proposition 4.2 Let q 2 C . Then Uq (glN ) is a C -bialgebra for the comultiplication ,
+with counity " de ned by
+            (ei) = 1 ei + ei ki; "(ei) = 0 for 1  i  N 1 ;
+        8
+        >
+        >
+        <
+            (fi) = ki   +1   fi + fi 1; "(fi) = 0 for 1  i  N 1 ;
+                                            "(ki ) = 1 for 1  i  N :
+        >
+        >
+        :
+            (ki) = ki ki;
+    Let (i) iN be the canonical basis of V = C N , and let Eij be the endomorphism
+            1
+Eij k = jk i. One can de ne an algebra morphism V of Uq (glN ) in EndC (V ) by setting
+                                                   for 1  i  N 1 ;
+                8
+                >
+                >
+                >
+                     V (ei) = Ei;i   +1
+
+                     V (fi) = Ei ;i               for 1  i  N 1 ;
+                >
+                <
+                                      +1
+
+                                            Ej;j for 1  i  N :
+                                                 X
+                >
+                >
+                >
+                >
+                :
+                     V (ki) = q Ei;i +
+                                                 j 6=i
+The pair (V ; V ) is called the fundamental representation (or vector representation) of
+Uq (glN ). Since Uq (glN ) is a bialgebra, one can de ne for every n  2 its n-th tensor
+power (n;N ; V n ) by n;N = V n   n : Uq (glN ) ! EndC (V n ), where  n denotes
+                                           ( )                                       ( )
+
+the n-fold comultiplication Uq (glN ) ! Uq (glN ) n .
+
+5 The quantum matrix algebra Aq(N )
+We denote by Aq(N ) the C (q)-algebra generated by N elements (xij ) i;jN subject
+                                                               2
+                                                                                 1
+to the de ning relations :
+              xil xjk = q xjk xil          for 1  i  j  N; 1  k < l  N ;
+  8
+  >
+  >
+  <
+              xik xjk = xjk xik            for 1  i; j; k  N ;                    (11)
+      xjl xik xik xjl = (q 1) xjk xil for 1  i < j  N; 1  k < l  N :
+  >
+  >
+  :
+
+
+
+This algebra is a quantization of the bialgebra of polynomial functions on the variety
+of N  N matrices over C . It is the specialization GLq; (N ) of Takeuchi's algebra
+                                                                   1
+[27]. Up to the symmetry xij $ xji, Aq (N ) is the quantization introduced by Dipper
+and Donkin in [3]. It is not isomorphic to the more familiar quantization of Faddev-
+Reshetikhin-Takhtadzhyan [7]. Although for generic values of q both versions have the
+same representation theory, an essential di erence is that Aq (N ) is de ned for q = 0.
+    One can endow Aq (N ) with a bialgebra structure whose comultiplication  and
+counity  are de ned by
+                                N
+                    (xij ) =         xik xkj                  (xij ) = ij :
+                                X
+                                                         and
+                                k=1
+An important subalgebra of Aq (N ) is the quantum diagonal algebra (or quantum torus)
+q (N ). It is a q-analogue of the algebra of polynomial functions on a maximal torus
+of GLN . As such, it occurs in the character theory of Hecke algebras, of Aq (N ) and of
+Uq (glN ) (cf. Section 7 and [17]).
+De nition 5.1 The quantum diagonal algebra q(N ) is the subalgebra of Aq (N ) gen-
+erated by the diagonal elements x11; : : : ; xNN .
+   We propose a conjecture that would give a presentation of q(N ) in the generic
+case. Let (A; <) be a totally ordered alphabet. We de ne the quantum pseudoplactic
+algebra PPlq (A) as the quotient of C (q)hAi by the relations
+               8
+               >
+               <
+                   q a a b (q + 1) a b a + b a a = 0       for a < b ;
+                   q a b b (q + 1) b a a + b b a = 0       for a < b ;
+                     cab acb bca + bac = 0                 for a < b < c :
+               >
+               :
+
+
+
+
+Conjecture 5.2 [17] Let A = f a < : : : < aN g. For q 62 f0; 1g, the mapping ' : ai !
+                                     1
+xii induces an isomorphism between PPlq (A) and q (N ).
+For q = 1 the diagonal algebra  (N ) is just an algebra of commutative polynomials.
+                                     1
+The case q = 0 is more interesting:
+Theorem 5.3 [17] The ring homomorphism de ned by ' : ai ! xii is an isomorphism
+between the hypoplactic algebra HPl(A) and the quantum diagonal algebra 0(N ) at
+q = 0.
+    For any q 2 C , the bialgebras Aq (N ) and Uq (glN ) are in duality, in a sense to
+be made precise below. According to the general theory of bialgebras (cf. [15]), the
+dual Uq (glN ) of Uq (glN ) has a canonical algebra structure, de ned by the convolution
+product
+                                   '  =   (' )  
+for '; 2 Uq (glN ), where  is the multiplication map (g h) = g h, g; h 2 Uq (glN ).
+    De ne linear functionals (aij ) i;jN 2 Uq (glN ) as the matrix coecients of the
+                                    1
+vector representation, i.e. V (g) = (aij (g)) i;jN for g 2 Uq (glN ).
+                                              1
+
+
+Theorem 5.4 [27] The N linear functionals (aij ) i;jN of Uq (glN ) satisfy the quan-
+                             2
+                                                       1
+tum relations (11).
+Therefore, the map : Aq(N ) ! Uq (glN ) de ned by (xij ) = aij for 1  i; j  N
+is an algebra morphism. The duality of bialgebras between Aq(N ) and Uq (glN ) is given
+by the pairing hx; gi = (x)(g) (x 2 Aq(N ), g 2 Uq (glN )).
+6 Quantum Schur-Weyl duality
+A fundamental property of the standard version of Uq (glN ) is the existence of a q-
+analogue of the Schur-Weyl duality involving the Hecke algebra instead of the symmetric
+group [12]. Such a duality can also be worked out for Uq (glN ). The double commutant
+theorem will break down at q = 0, but one can still give a weaker statement, which
+will allow us to interpret quasi-symmetric functions and noncommutative symmetric
+functions as characters of U (glN ).
+                             0
+    The (Iwahori) Hecke algebra Hn (q) of type An is the C (q)-algebra generated by
+                                                     1
+the n 1 elements (Ti) in with relations
+                        1        1
+
+
+                           Ti = (q 1) Ti + q        for 1  i  n 1 ;
+                8
+                             2
+                >
+                >
+                <
+                    Ti Ti Ti = Ti Ti Ti
+                        +1           +1    +1       for 1  i  n 2 ;
+                                                    for ji j j > 1 :
+                >
+                >
+                :
+                         Ti Tj = Tj Ti
+For generic complex values of q, the Hecke algebra Hn (q) is isomorphic to C [Sn ] (the
+standard presentation is obtained for q = 1) and hence semi-simple, except when q = 0
+or when q is a root of unity.
+    Following [3, 5], we introduce a variant of Jimbo's right action of Hn (q) on V n (cf.
+[12]) which is de ned by setting
+                       v  Ti = vi               if ki < ki ;
+                    8
+                    >
+                    >                                           +1
+
+                       v  Ti = q v
+                    <
+                                                  if ki = ki ;  +1
+
+                       v  Ti = q v i + (q 1) v if ki > ki ;
+                    >
+                    >
+                    :                                          +1
+
+
+for v = k1        kn 2 V n (where vi denotes the tensor obtained from v by
+permuting the i and i+1-th factors). We denote by n;N the representation of Hn (q) in
+EndC (V n ) de ned by this action. One can check that n;N commutes with n;N . For
+generic q, one has a stronger property:
+Theorem 6.1 Let q be a nonzero complex number which is not a non trivial k-th
+root of unity for some k  n. The two subalgebras n;N (Hn (q )) and n;N (Uq (glN ))
+of EndC (V n ) are then the commutant of each other.
+
+7 Polynomial Uq(glN )-modules and their characters
+In the classical case, the character of a polynomial representation of GLN can be re-
+garded as a polynomial function on the group GLN . In the quantum case, it is natural
+to de ne the character as an element of the deformed function algebra Aq (N ).
+De nition 7.1 A polynomial Uq (glN )-module of degree n is a submodule of V n .
+In this section we assume that q is a complex number which is neither zero nor a non
+trivial k-th root of unity for some k  n. For a partition  of n, let Y(q) 2 Hn (q)
+be a q-Young idempotent. It will be convenient to use the version introduced in [5].
+The family (Hn (q) Y(q))`n is a complete system of Hn (q)-irreducible modules. Since
+Hn (q) is semi-simple, it follows from Theorem 6.1 that the family of Uq (glN )-modules
+                                      S(   V ; q) = V n  Y(q) ;
+where  runs over all partitions of n, is a complete system of irreducible polynomial
+Uq (glN )-modules of degree n.
+    Let now M be a polynomial Uq (glN )-module of degree n and let (mi) im be a               1
+C (q )-linear basis of M . Since M is a Uq (glN )-module, there exists a family (ij ) i;j m       1
+of linear functionals of Uq (glN ) such that for g 2 Uq (glN )
+                                                     m
+                                      g  mi =            ij (g) mj :
+                                                   X
+
+
+                                                   j =1
+One can check that the trace of the action of Uq (glN ) on M , i.e. the element
+                                                 m
+                                                        ii 2 Uq (glN )
+                                                X
+                                   c(M ) =
+                                                i=1
+is independent on the choice of the basis. Moreover c(M ) belongs to the subalgebra
+generated by the (aij ) i;jN . Indeed, for I 2 [1; N ]n,
+                        1
+
+
+                                   g  I =                    aJI (g) J
+                                                     X
+
+
+                                                 J 2[1;N ]n
+where aJI = aj1i1 : : : ajnin . It follows that there exists elements pIJ (q) of C (q) such that
+                                                  X
+                                  c(M ) =                      pIJ (q) aIJ :
+                                               I;J 2[1;N ]n
+Since the map (de ned at the end of Section 5) is injective on the linear subspace
+of Aq (N ) spanned by homogeneous elements of xed length, we can lift this formula
+to Aq(N ) (according to Theorem 5.4). Let now xIJ be the monomial xi1 j1 : : : xinjn 2
+Aq (N ). The element                                 X
+                            (M ) =          pIJ (q) xIJ
+                                                I;J 2[1;N ]n
+of Aq(N ) will be called the character of the polynomial Uq (glN )-module M .
+Theorem 7.2 [17] For q 6= 1 , (M ) belongs to the diagonal algebra q (n).
+The proof of Theorem 7.2 relies on an interesting formula which expresses the quantum
+determinant in Aq (N ) in terms of the diagonal generators xii of Aq (N ):
+ x x
+   11    12   ::: x N
+                   1
+ x x          ::: x N                                                          1
+                                   "() x               : : : x N N =            [x ; [: : :; [x ; x ]q : : :]q ]q ;
+                                  X
+   21
+  ... ...
+         22        2
+              . . . ...   = def
+
+                             2S N
+                                                 (1)1            (   )
+                                                                            (1 q)N NN 1               22   11
+
+
+ xN xn
+    1     2   : : : xNN q
+where "() is the signature of  and [a; b]q = ab qba.
+   One can show that the commutative character of S(V ; q) is the Schur function s.
+Hence the characters in our sense are quantum analogues of Schur functions. One can
+check that
+                        (Sn(V ; q)) =            xi1 : : : xiNN
+                                                              N ;
+                                                   X
+                                                                 11
+                                               i1 +:::+iN =n
+
+          (S n(V ; q)) = (1 1q)n
+                                                   X
+               1                       1
+                                                    [xinin ; [: : :; [xi2i2 ; xi1i1 ]q : : :]q ]q
+                                     i1 <:::<in N
+                                           1
+
+for all n. These quantum Schur functions form a linear basis of a commutative sub-
+algebra of q (N ) which is isomorphic to the algebra of ordinary symmetric functions
+[17].
+
+8 Polynomial U0(glN )-modules
+From now on, we set q = 0. It follows from Theorem 7.2 and from Theorem 5.3 that
+the character of a polynomial U (glN )-module is an element of the hypoplactic algebra.
+                                   0
+However, n;N (U (glN )) is not semisimple, the modules S(V ; 0) of the preceding section
+                   0
+are in general no longer irreducible, and we have to look for the simple composition
+factors of V n (the irreducible polynomial modules) and its indecomposable direct
+summands. These modules can be constructed in the same way as the irreducible
+modules and the principal indecomposable projective modules of the 0-Hecke algebra.
+    For i 2 [1; n 1], let 2i = 1 + Ti considered here as an element of Hn (0). These
+elements satisfy the braid relations, together with 2i = 2i so that one can de ne, for
+                                                                      2
+
+ 2 Sn, the element 2 = 2i1 : : : 2ir where i1 : : : ir is any reduced decomposition
+of .
+    Let us now see how to construct a complete family of irreducible polynomial U (glN )-0
+modules. For I a composition of n one de nes the element
+                                       I = T! I 2 I  ( )   (   )
+
+
+of Hn (0). Norton [24] showed that the Hn (0) I form a complete family of irreducible
+Hn (0)-modules (see also [1, 17]). As the action of U (glN ) on V n commutes with the
+                                                                     0
+right action of Hn (0), one can use I to construct the U (glN )-module   0
+
+
+                                       DI = V n  I :
+Proposition 8.1 DI is an irreducible U (glN )-module. Its character is equal to the
+                                                   0
+sum FI (x ; : : :; xNN ) of all quasi-ribbon words over f x < : : : < xNN g.
+          11                                                              11
+
+
+The character of DI is therefore a hypoplactic analogue of the quasisymmetric function
+FI . The modules DI have a simple combinatorial structure, described by a quasi-
+crystal graph, whose vertices are quasi-ribbons. It has been recently shown by Hivert
+[11] that the ordinary characters FI (x ; : : : ; xn) can be obtained by a version of the
+                                               1
+Weyl character formula, re nable into a Demazure type formula. This formalism also
+provides quasi-symmetric and noncommutative analogues of Hall-Littlewood functions.
+   To construct the indecomposable summand of V n labelled by the composition I of
+n, we consider the element
+                                 I = T I 2 I  :
+                                               ( )       (   )
+
+These elements generate a complete family (Hn (0) I ) of indecomposable projective left
+Hn (0)-modules [1, 24]. We can construct the U (glN )-module
+                                                         0
+
+
+                                        NI = V N  I :
+These modules are indecomposable, and their characters are hypoplactic analogues of
+ribbon Schur functions.
+Proposition 8.2 NI is an indecomposable U (glN )-module. Its character is the sum
+                                                     0
+RI (x ; : : : ; xNN ) of all words of ribbon shape I over f x < : : : < xNN g.
+     11                                                          11
+
+
+   Using the decomposition
+                                        V n=             NI
+                                                 M
+                                                                                              (12)
+                                                  I `n
+as U (glN )-modules, we can now give the complete classi cation of irreductible polyno-
+    0
+mial U (glN )-modules and of the indecomposable direct summands of V n .
+        0
+
+
+Proposition 8.3 (i) The DI form a complete family of irreducible polynomial U (glN )-     0
+modules.
+(ii)The NI form a complete family of indecomposable polynomial U (glN )-modules which
+                                                                          0
+are direct summands of some V n .
+The noncommutative analogues of quasi-ribbon functions arising in Proposition 8.3
+form a linear basis of a commutative subalgebra of the hypoplactic algebra. This sub-
+algebra is isomorphic to the algebra of quasi-symmetric functions and plays therefore
+the r^ole of the character ring of polynomial U (glN )-modules. Similarly, the algebra of
+                                                     0
+noncommutative symmetric functions is a Grothendieck ring for \projective" polyno-
+mial U (glN )-modules (i.e. direct summands of some V n ). The noncommutativity of
+          0
+this ring re ects the fact that at q = 0, the tensor products M N and N M are
+actually not isomorphic.
+
+References
+ [1] Carter R.W., Representation theory of the 0-Hecke algebra, J. Algebra, 15, 89{103, 1986.
+ [2] Date E., Jimbo M., Miwa T., Representations of Uq (glN ) at q = 0 and the Robinson-Schensted
+     correspondence, in \Physics and mathematics of strings, Memorial volume of V. Knizhnik", L.
+     Brink, D. Friedan, A.M. Polyakov eds., World Scienti c, 1990.
+ [3] Dipper R., Donkin S., Quantum GLn , Proc. London Math. Soc., 63, 165{211, 1991.
+ [4] Duchamp G., Klyachko A., Krob D., Thibon J.-Y., Noncommutative symmetric functions
+     III : Deformations of Cauchy and convolution algebras, Disc. Math. and Theor. Comput. Sci. (to
+     appear).
+ [5] Duchamp G., Krob D., Lascoux A., Leclerc B., Scharf T., Thibon J.Y., Euler-
+     Poincare characteristic and polynomial representations of Iwahori-Hecke algebras, Publ. RIMS,
+     Kyoto Univ., 31, 179{201, 1995.
+ [6] Duchamp G., Krob D., Leclerc B. ,Thibon J.-Y., Fonctions quasi-symetriques, fonctions
+     symetriques non commutatives, et algebres de Hecke a q = 0, C.R. Acad. Sci. Paris, 322, 107{112,
+     1996.
+ [7] Faddeev L.D., Reshetikin N.Y., Takhtadzhyan L.A., Quantization of Lie groups and Lie
+     algebras, Leningrad Math. J., 1, 193{225, 1990.
+ [8] Gelfand I.M., Krob D., Leclerc B., Lascoux A., Retakh V.S., Thibon J.-Y., Noncom-
+     mutative symmetric functions, Adv. in Math., 112, 218{348, 1995.
+ [9] Gelfand I.M., Spirin A., Some analogues of di erential operators on quantum spaces and the
+     correspondent multiparametric `quantum' deformation of general linear groups, preprint, 1993.
+[10] Gessel I., Multiparttte P-partitions and inner products of skew Schur functions, [in \Combina-
+     torics and algebra", C. Greene, Ed.], Contemporary Mathematics, 34, 289{301, 1984.
+[11] Hivert F., Weyl and Demazure type character formulas for quasi-symmetric functions, preprint,
+     1997.
+[12] Jimbo M., A q-Analogue of Uq (gl(N + 1)), Hecke Algebra, and the Yang-Baxter Equation, Lett.
+     Math. Phys., 11, 247{252, 1986.
+[13] Kashiwara M., On Crystal Bases of the q-Analogue of Universal Enveloping Algebras, Duke
+     Math. J., 63, 465{516, 1991.
+[14] Kashiwara M., Nakashima T., Crystal graphs for representations of the q-analogue of classical
+     Lie algebras, J. Algebra, 165, 295{345, 1994.
+[15] Kassel C., Quantum groups, Springer, 1991.
+[16] Krob D., Leclerc B., Thibon J.-Y., Noncommutative symmetric functions II : Transforma-
+     tions of alphabets, Int. J. of Alg. and Comput. (to appear).
+[17] Krob D., Thibon J.-Y., Noncommutative symmetric functions IV : Quantum linear groups and
+     Hecke algebras at q = 0, J. Alg. Comb. (to appear).
+[18] Knuth D.E., Permutations, matrices and generalized Young tableaux, Paci c J. Math., 34, 709{
+     727, 1970.
+[19] Lascoux A., Leclerc B., Thibon J.-Y., Crystal graphs and q-analogues of weight multiplicities
+     for the root system An , Lett. Math. Phys., 35, 359{374, 1995.
+[20] Lascoux A., Schutzenberger M.P., Le monode plaxique, Quad. del. Ric. Sci., 109, 129{156,
+     1981.
+[21] Leclerc B., Thibon J.-Y., The Robinson-Schensted correspondence, crystal bases, and the
+     quantum straightening at q = 0, The Electronic J. of Combinatorics, 3, # 11, 1996.
+[22] Littelman P., A plactic algebra for semisimple Lie algebras, preprint, 1994.
+[23] Malvenuto C., Reutenauer C., Duality between quasi-symmetric functions and Solomon de-
+     scent algebra, J. Algebra, 177, 967{982, 1995.
+[24] Norton P.N., 0-Hecke algebras, J. Austral. Math. Soc., A, 27, 337{357, 1979.
+[25] Novelli J.-C., On the hypoplactic monoid, these proceedings.
+[26] Ringel C.M., Hall algebras and quantum groups, Invent. Math., 101, 583{592, 1990.
+[27] Takeuchi M., A two-parameter quantization of GL(n), Proc. Japan Acad., 66, Ser. A, 112{114,
+     1990.
+[28] Thibon J.-Y., Ung B.-C.-V., Quantum quasi-symmetric functions and Hecke algebras, J. Phys.
+     A: Math. Gen., 29, 7337{7348, 1996.
+

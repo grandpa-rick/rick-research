@@ -1,0 +1,2239 @@
+P1: RPS/PCY        P2: MVG/ASH       QC: MVG
+Journal of Algebraic Combinatorics    KL472-03-Krob        August 6, 1997      10:34
+
+
+
+
+                                                                  Journal of Algebraic Combinatorics 6 (1997), 339–376
+                                                   °
+                                                   c 1997 Kluwer Academic Publishers. Manufactured in The Netherlands.
+
+
+
+
+              Noncommutative Symmetric Functions IV:
+              Quantum Linear Groups and Hecke Algebras at q = 0
+              DANIEL KROB                                                                                     dk@litp.ibp.fr
+              LIAFA (CNRS), Université Paris 7, 2, place Jussieu, 75251 Paris Cedex 05, France
+
+
+              JEAN-YVES THIBON                                                                               jyt@univ-mlv.fr
+              IGM, Université de Marne-la-Vallée, 2, rue de la Butte-Verte, 93166 Noisy-le-Grand Cedex, France
+
+              Received March 28 , 1996; Revised July 30, 1996
+
+
+              Abstract. We present representation theoretical interpretations of quasi-symmetric functions and noncommu-
+              tative symmetric functions in terms of quantum linear groups and Hecke algebras at q = 0. We obtain in this
+              way a noncommutative realization of quasi-symmetric functions analogous to the plactic symmetric functions of
+              Lascoux and Schützenberger. The generic case leads to a notion of quantum Schur function.
+
+              Keywords: quasisymmetric function, quantum group, Hecke algebra
+
+
+
+              1.    Introduction
+
+              This paper, which is intended as a sequel to [6, 9, 21], is devoted to the representation
+              theoretical interpretation of noncommutative symmetric functions and quasi-symmetric
+              functions. These objects, which are two different generalizations of ordinary symmetric
+              functions [9, 10], build up two Hopf algebras dual to each other, and have been shown
+              to provide a Frobenius type theory for Hecke algebras of type A at q = 0, playing the
+              same rôle as the classical correspondence between symmetric functions and characters of
+              symmetric groups [7] (which extends to the case of the generic Hecke algebra).
+                 In the classical case, the interpretation of symmetric functions in terms of representations
+              of symmetric groups is equivalent, via Schur-Weyl duality, to the fact that Schur functions
+              are the characters of the irreducible polynomial representations of general linear groups.
+              Equivalently, instead of working with polynomial representations of GL(n), one can use
+              comodules over the Hopf algebra of polynomial functions over GL(n) [11]. This Hopf
+              algebra is known to admit interesting q-deformations (quantized function algebras; see [8]
+              for instance) to which Schur-Weyl duality can be extended for generic values of q, the
+              symmetric group being replaced by the Hecke algebra.
+                 The standard version of the quantum linear group is not defined for q = 0. The theory of
+              crystal bases [16], which allows to “take the limit q → 0” in certain modules by working
+              with renormalized operators modulo a lattice, describes the combinatorial aspects of the
+              generic case, and provides illuminating interpretations of classical constructions such as
+              the Robinson-Schensted correspondence, the Littlewood-Richardson rule and the plactic
+              monoid [3, 17, 24, 26].
+P1: RPS/PCY        P2: MVG/ASH       QC: MVG
+Journal of Algebraic Combinatorics    KL472-03-Krob             August 6, 1997   10:34
+
+
+
+
+              340                                                                             KROB AND THIBON
+
+
+                 However, another version exists [4] which plays an equivalent rôle for generic values of
+              q, but in which one can specialize q to 0. This specialization is quite different of what is
+              obtained with crystal bases, and leads to an new interpretation of quasi-symmetric functions
+              and noncommutative symmetric functions analogous to the interpretation of ordinary sym-
+              metric functions as polynomial characters of GL(n). Moreover, this interpretation allows
+              to give a realization of quasi-symmetric functions similar to the plactic interpretation of
+              symmetric functions (see Section 6.2). The plactic algebra is here replaced by one of its
+              quotients, and instead of ordinary Young tableaux one has to use skew tableaux of ribbon
+              shape, and dual objects called quasi-ribbons, for which Schensted type algorithms can be
+              constructed. In fact, most aspects of the classical theory can be adapted to this highly
+              degenerate case. As this is an example of a non-semisimple case for which everything can
+              be worked out explicitely, one can expect that this treatment could serve as a guide for
+              understanding the more complicated degeneracies at roots of unity.
+                 This paper is structured as follows. We first recall the basic definitions concerning non-
+              commutative symmetric functions and quasisymmetric functions (Section 2) and review the
+              Frobenius correspondence for the generic Hecke algebras (Section 3). Next we introduce
+              the Dipper-Donkin version of the quantized function algebra of the space of n × n matrices
+              (Section 4). We describe some interesting subspaces (Sections 4.5 and 4.6), and prove that
+              the q = 0 specialization of the diagonal subalgebra is a quotient of the plactic algebra,
+              which we call the hypoplactic algebra (Section 4.7). Next, we review the representation
+              theory of the 0-Hecke algebra and its interpretation in terms of quasi-symmetric functions
+              and noncommutative symmetric functions, providing the details which were omitted in [7].
+              In Section 6, we introduce a notion of noncommutative character for Aq (n)-comodules, and
+              prove that these characters live in the diagonal subalgebra. For generic q, the characters of
+              irreducible comodules are quantum analogues of Schur functions. For q = 0, we show that
+              hypoplactic analogues of the fundamental quasi-symmetric functions FI (quasi-ribbons)
+              can be obtained as the characters of irreducible A0 (n) comodules, and give a similar con-
+              struction for the ribbon Schur functions. These constructions lead to degenerate versions
+              of the Robinson-Schensted correspondence, which are discussed in Section 7.
+
+              2.     Noncommutative symmetric functions and quasi-symmetric functions
+
+              2.1.    Noncommutative symmetric functions
+
+              The algebra of noncommutative symmetric functions [9] is the free associative algebra
+              Sym = QhS1 , S2 , . . .i generated by an infinite sequence of noncommutative indetermi-
+              nates Sk , called the complete symmetric functions. One defines S I = Si1 Si2 · · · Sir for any
+              composition I = (i 1 , i 2 , . . . , ir ) ∈ (N∗ )r . The family (S I ) is a linear basis of Sym. Although
+              it is convenient to define Sym as an abstract algebra, a useful realisation can be obtained
+              by taking an infinite alphabet A = {a1 , a2 , . . .} and defining its complete homogeneous
+              symmetric functions by
+
+                      Y
+                      −→                     X
+                            (1 − tai )−1 =         t n Sn (A)                                                      (1)
+                      i≥1                    n≥0
+P1: RPS/PCY      P2: MVG/ASH          QC: MVG
+Journal of Algebraic Combinatorics         KL472-03-Krob   August 6, 1997    10:34
+
+
+
+
+              NONCOMMUTATIVE SYMMETRIC FUNCTIONS IV                                                                 341
+
+
+              Although these elements are not symmetric for the usual action of permutations on the
+              free algebra, they are invariant under the Lascoux-Schützenberger action of the symmetric
+              group [23], which can now be interpreted as a particular case of Kashiwara’s action of the
+              Weyl group on the Uq (sln )-crystal graph of the tensor algebra [24].
+                 The set of all compositions of a given integer n is equipped with the reverse refinement
+              order, denoted ¹. For instance, the compositions J of 4 such that J ¹ (1, 2, 1) are exactly
+              (1, 2, 1), (3, 1), (1, 3) and (4). The ribbon Schur functions (R I ) can then be defined by
+                            X                          X
+                     SI =        RJ       or     RI =     (−1)`(I )−`(J ) S J ,
+                            J ¹I                           J ¹I
+
+              where `(I ) denotes the length of I . The family (R I ) is another homogeneous basis of Sym.
+                 The commutative image of a noncommutative symmetric function F is the ordinary
+              symmetric function f obtained by applying to F the algebra morphism which maps Sn to
+              the complete homogeneous function h n (our notations for commutative symmetric functions
+              will be those of [28]). The ribbon Schur function R I is then mapped to the corresponding
+              ordinary ribbon Schur function, which will be denoted by r I .
+                Ordinary symmetric functions are endowed with an extra product ∗, called the internal
+              product, which corresponds to the multiplication of central functions on the symmetric
+              group. A noncommutative analog of this product can be defined, the character ring of Sn
+              being replaced by its descent algebra [35] (see also below) .
+                 Recall that i is said to be a descent of σ ∈ Sn if σ (i) > σ (i + 1). The set Des(σ ) of
+              these integers is called the descent set of σ . If I = (i 1 , . . . , ir ) is a composition of n, one
+              associates with it the subset D(I ) = {d1 , . . . , dr −1 } of [1, n−1] defined by dk = i 1 + · · · + i k
+              for k ∈ [1, r − 1]. Let D I be the sum in Z[Sn ] of all permutations with descent set D(I ).
+              As shown by Solomon [35], the D I form a basis of a subalgebra of Z[Sn ] called the descent
+              algebra of Sn and denoted by 6n . One can define an isomorphism of graded vector spaces
+                                  M                  M
+                    α : Sym =         Symn → 6 =            6n
+                                     n≥0                   n≥0
+
+
+              by setting α(R I ) = D I . Observe that α(S I ) is then equal to D⊆I , i.e., to the sum of all
+              permutations of Sn whose descent set is contained in D(I ).
+
+              2.2.    Quasi-symmetric functions
+
+              As proved in [29] (see also [9]), the algebra of noncommutative symmetric functions is
+              in natural duality with the algebra of quasi-symmetric functions, introduced by Gessel in
+              [10]. Let X = {x1 , x2 , . . . , xn · · ·} be a totally ordered set of commutative indeterminates.
+              An element f ∈ C[X ] is said to be a quasi-symmetric function if for each composition
+              K = (k1 , . . . , km ) all the monomials xik11 xik22 · · · xikmm with i 1 < i 2 < · · · < i m have the same
+              coefficient in f . The quasi-symmetric functions form a subalgebra QSym of C[X ].
+                 One associates with a composition I = (i 1 , . . . , i m ) the quasi-monomial function
+                                X
+                    MI =               x ij11 · · · x ijmm .
+                             j1 <···< jm
+P1: RPS/PCY        P2: MVG/ASH          QC: MVG
+Journal of Algebraic Combinatorics       KL472-03-Krob           August 6, 1997    10:34
+
+
+
+
+              342                                                                          KROB AND THIBON
+
+
+              The family of quasi-monomial functions is clearly a basis of QSym. Another important
+              basis of QSym is formed by quasi-ribbon functions which are defined by
+                          X
+                    FI =     MJ ,
+                                I ¹J
+
+
+              e.g., F122 = M122 + M1112 + M1211 + M11111 . The pairing h·, ·i between Sym and QSym
+              [29] is then defined by hS I , M J i = δIJ or equivalently by hR I , FJ i = δIJ . This duality is
+              essentially equivalent to the noncommutative Cauchy identity
+                            Ã                        !
+                      Y
+                      −→        Y
+                                −→                           X
+                                   (1 − xi a j )−1       =       FI (X )R I (A),                           (2)
+                      i≥1       j≥1                          I
+
+
+              and can also be interpreted as the canonical duality between Grothendieck groups asociated
+              to 0-Hecke algebras [7] (see Section 5).
+
+
+              3.     Hecke algebras and their representations
+
+              3.1.    Hecke algebras
+
+              The Hecke algebra HN (q) of type A N −1 is the C(q)-algebra generated by N − 1 elements
+              (Ti )i=1,N −1 with relations
+                       2
+                       Ti = (q − 1)Ti + q                   for i ∈ [1, N − 1],
+                        Ti Ti+1 Ti = Ti+1 Ti Ti+1            for i ∈ [1, N − 2],
+                      
+                        Ti T j = T j Ti                      for |i − j| > 1.
+
+              The Hecke algebra HN (q) is a deformation of the C-algebra of the symmetric group S N
+              (obtained for q = 1). For generic complex values of q, it is isomorphic to C[S N ] (and
+              hence semi-simple) except when q = 0 or when q is a root of unity. The first relation is
+              often replaced by
+
+                      Ti2 = (q − q −1 )Ti + 1                                                              (3)
+
+              which is invariant under the substitution q → −q −1 and is more convenient for working
+              with Kazhdan-Lusztig polynomials and canonical bases. However the convention adopted
+              here, i.e.,
+
+                      Ti2 = (q − 1)Ti + q,                                                                 (4)
+
+              is the natural one when q is interpreted as the cardinality of a finite field and HN (q) as
+              the endomorphism algebra of the permutation representation of GL N (Fq ) on the set on
+              complete flags [14]. Moreover one can specialize q = 0 in relation (4). In the modular
+              representation theory of GL N (Fq ), the Hecke algebra corresponding to this specialization
+P1: RPS/PCY      P2: MVG/ASH         QC: MVG
+Journal of Algebraic Combinatorics      KL472-03-Krob     August 6, 1997   10:34
+
+
+
+
+              NONCOMMUTATIVE SYMMETRIC FUNCTIONS IV                                                      343
+
+
+              occurs when q is a power of the characteristic of the ground field. For this reason, among
+              others, it is interesting to consider the 0-Hecke algebra HN (0) which is the C-algebra
+              obtained by specialization of the generic Hecke algebra HN (q) at q = 0. This algebra is
+              therefore presented by
+                      2
+                      Ti = −Ti                         for i ∈ [1, N − 1],
+                       Ti Ti+1 Ti = Ti+1 Ti Ti+1        for i ∈ [1, N − 2],
+                     
+                       Ti T j = T j Ti                  for |i − j| > 1.
+
+              The representation theory of HN (0) was investigated by Norton who obtained a fairly
+              complete picture [31]. Important specific features of the type A are described by Carter
+              in [1]. The 0-Hecke algebra can also be realized as an algebra of operators acting on the
+              equivariant Grothendieck ring of the flag manifold [22].
+
+
+              3.2.    The Frobenius correspondence
+
+              We will see that the 0-Hecke algebra is the right object for giving a representation theoretical
+              interpretation of noncommutative symmetric functions and of quasi-symmetric functions.
+              To emphasize the parallel with the well-known correspondence between representations of
+              the symmetric group and symmetric functions, we first recall the main points of the classical
+              theory.
+                 Let Sym be the ring of symmetric functions and let
+                              M
+                     R[S] =         R[S N ]
+                                 N ≥0
+
+
+              be the ring of equivalence classes of finitely generated C[S N ]-modules (with sum and
+              product corresponding to direct sum and induction product). We know from the work of
+              Frobenius that the character theory of the symmetric group S N can be described in terms
+              of the characteristic map F : R[S] → Sym which sends the class of a Specht module Vλ
+              to the Schur function sλ . The first point is that F is a ring homomorphism. That is,
+                      ³                    ´
+                                 S
+                     F [U ⊗ V ] ↑S NN +M
+                                      ×S M
+                                             = F([U ]) F([V ])
+
+              for a S N -module U and a S M -module V . The second one is the character formula,
+              which can be stated as follows: for any finite dimensional S N -module V , the value of the
+              chararacter of V on a permutation of the conjugacy class labelled by the partition µ is equal
+              to the scalar product
+
+                     χ(µ) = hF (V ), pµ i
+
+              where pµ is the product of power sums pµ1 · · · pµr .
+                 This theory can be extended to the Hecke algebra HN (q) when q is neither 0 nor a root
+              of unity. The characteristic map is independent of q, and still maps the q-Specht module
+P1: RPS/PCY        P2: MVG/ASH       QC: MVG
+Journal of Algebraic Combinatorics     KL472-03-Krob       August 6, 1997       10:34
+
+
+
+
+              344                                                                                 KROB AND THIBON
+
+
+              Vλ (q) to the Schur function sλ . The induction formula remains valid and the character
+              formula has to be modified as follows (see [2, 18, 19, 32, 36, 37]). Define for a partition
+              µ = (µ1 , µ2 , . . . , µr ) of N the element
+                          ¡               ¢¡                      ¢     ¡                               ¢
+                      wµ = σ1 · · · σµ1 −1 σµ1 +1 · · · σµ1 +µ2 −1 · · · σµ1 +···+µr −1 +1 · · · σ N −1
+
+              (where σi is the elementary transposition (i i + 1)). The character formula for HN (q) gives
+              the value χµλ on Twµ of the character of the irreducible q-Specht module Vλ (q). It reads
+
+                                    ¡ ¢
+                      χµλ = trVλ (q) Twµ = hF(Vλ (q)), Cµ (q)i = hsλ , Cµ (q)i
+
+              where Cµ (q) = (q − 1)l(µ) h µ ((q − 1)X ) (in λ-ring notation, h µ ((q − 1)X ) denotes the
+              image of the homogeneous symmetric function h µ (X ) under the ring homomorphism pk 7→
+              (q k − 1) pk ).
+
+
+              4.     The quantum coordinate ring Aq (n)
+
+              4.1.    Tensor representations of HN (q)
+
+              Let E = {e1 , . . . , en } be a finite set and let
+
+                            M
+                            n
+                      V =         C(q) ei
+                            i=1
+
+
+              be the C(q)-vector space with basis (ei ). For v = ek1 ⊗· · ·⊗ek N ∈ V ⊗N and i ∈ [1, N − 1],
+              we define vσi by setting
+
+                      vσi = ek1 ⊗ · · · eki−1 ⊗ eki+1 ⊗ eki ⊗ eki+2 ⊗ · · · ⊗ ek N .
+
+              Following [4, 5, 15], one defines a right action of HN (q) on V ⊗ N by
+                      
+                       v · Ti = vσi                       if ki < ki+1 ,
+                        v · Ti = qv                        if ki = ki+1 ,
+                      
+                        v · Ti = qvσi + (q − 1) v          if ki > ki+1 .
+
+              This is a variant of Jimbo’s action [15] itself defined by
+                      
+                       v · Ti = q 1/2 vσi                     if ki < ki+1 ,
+                        v · Ti = qv                            if ki = ki+1 ,
+                      
+                        v · Ti = q 1/2 vσi + (q − 1) v         if ki > ki+1 .
+P1: RPS/PCY      P2: MVG/ASH          QC: MVG
+Journal of Algebraic Combinatorics      KL472-03-Krob   August 6, 1997   10:34
+
+
+
+
+              NONCOMMUTATIVE SYMMETRIC FUNCTIONS IV                                                           345
+
+
+               Let (ei∗ )1≤i≤n be the basis of V ∗ dual to the basis (ei ) of V . The dual (right) action of
+              HN (q) on (V ∗ )⊗N is given by
+                    ∗
+                    v · Ti = q(v∗ )σi                 if ki < ki+1 ,
+                      v∗ · Ti = qv∗                    if ki = ki+1 ,
+                    ∗
+                      v · Ti = (v∗ )σi + (q − 1) v∗ if ki > ki+1 .
+
+              Example 4.1 Let V = C(q) e1 ⊕ C(q) e2 . The matrices describing the right action of T1
+              on V ⊗ V and on V ∗ ⊗ V ∗ in the canonical bases of these spaces are
+                                                                                 
+                            q        0   0  0                       q    0     0  0
+                          0         0   q  0                     0    0     1  0
+                     Ř = 
+                          0
+                                              ,           Ř ∗ =                  .
+                                     1 q −1 0                    0     q   q −1 0
+                            0        0   0  q                       0    0     0  q
+
+                 We also need the left actions of HN (q) on V ⊗N and (V ∗ )⊗N defined by
+                     ½
+                         Ti · v = −qv · Ti−1 = −v · Ti + (q − 1) v,
+                         Ti · v∗ = −qv∗ · Ti−1 = −v∗ · Ti + (q − 1) v∗ .
+
+              Equivalently, for v = ek1 ⊗ · · · ⊗ ek N ∈ (V )⊗N and v∗ = ek∗1 ⊗ · · · ⊗ ek∗N ∈ (V ∗ )⊗N ,
+                     
+                      Ti · v = −vσi + (q − 1) v,       Ti · v∗ = −q (v∗ )σi + (q − 1) v∗    if ki < ki+1 ,
+                       Ti · v = −v,                     Ti · v∗ = −v∗                        if ki = ki+1 ,
+                     
+                       Ti · v = −qvσi ,                 Ti · v∗ = −(v∗ )σi                   if ki > ki+1 .
+
+              4.2.    The Hopf algebra Aq (n)
+
+              The quantum group Aq (n) is the C(q)-algebra generated by the n 2 elements (xi j )1≤i, j≤n
+              subject to the defining relations
+                    
+                     x jk xil = q xil x jk                  for i < j, k ≤ l,
+                       xik xil = xil xik                     for every i, k, l,
+                    
+                       x jl xik − xik x jl = (q − 1)xil x jk for i < j, k < l.
+
+              This algebra is a quantization of the Hopf algebra of polynomial functions on the variety
+              of n × n matrices introduced by Dipper and Donkin in [4]. It is not isomorphic to the
+              classical quantization of Faddeev-Reshetikin-Takhtadzhyan [8], and although for generic
+              values of q both versions play essentially the same rôle, an essential difference is that the
+              Dipper-Donkin algebra is defined for q = 0.
+                 Aq (n) is a Hopf algebra with comultiplication 1 defined by
+
+                                  X
+                                  n
+                     1(xi j ) =         xik ⊗ xk j .
+                                  k=1
+P1: RPS/PCY      P2: MVG/ASH             QC: MVG
+Journal of Algebraic Combinatorics         KL472-03-Krob     August 6, 1997       10:34
+
+
+
+
+              346                                                                                    KROB AND THIBON
+
+
+              Moreover one can define a left coaction δ of Aq (n) on V ⊗N by
+
+                                   X
+                                   n
+                     δ(ei ) =            xi j ⊗ e j
+                                   j=1
+
+
+              and the following property shows that Aq (n) is related to the Hecke algebras in a similar
+              way as GLn and the symmetric groups.
+
+              Proposition 4.2 [4] The left coaction δ of Aq (n) on V ⊗N commutes with the right action
+              of HN (q) on V ⊗N . That is, the following diagram is commutative
+
+                                                             δ ⊗N
+                                                      V ⊗N          → Aq (n) ⊗ V ⊗N
+
+                                                      h                            Id ⊗ h
+
+                                                       ↓                     ↓
+                                                      V ⊗N          → Aq (n) ⊗ V
+                                                                                 ⊗N
+
+                                                             δ ⊗N
+
+
+              for every element h ∈ HN (q) considered as an endomorphism of V ⊗N .
+
+                 This property still holds for q = 0. Thus, for any h ∈ HN (0), V ⊗N h will be a sub-
+              A0 (n)-comodule of V ⊗N . This is this property which will allow us to define a plactic-like
+              realization of quasi-symmetric functions. For later reference, note that the defining relations
+              of A0 (n) are
+                     
+                      x jk xil = 0                   for i < j, k ≤ l,
+                       xik xil = xil xik              for every i, k, l,                                  (5)
+                     
+                       x jl xik = xik x jl − xil x jk for i < j, k < l.
+
+              4.3.    Some notations for the elements of Aq (n)
+
+              Each generator xi j of Aq (n) will be identified with a two row array and with an element of
+              V ⊗ V ∗ modulo certain relations as described below:
+                          · ¸
+                           i
+                   xi j =       = ei ⊗ e∗j .
+                           j
+
+              For i = (i 1 , . . . , ir ), j = ( j1 , . . . , jr ) ∈ [1, n]r , let ei = ei1 ⊗ · · · ⊗ eir and ej∗ = e∗j1 ⊗ · · ·
+              ⊗ e∗jr . One can then identify the monomial xij = xi1 j1 · · · xir jr of Aq (n) with the two row
+              array
+                     ·                          ¸
+                         i1   i2     ···     ir
+                                                  ,
+                         j1   j2     ···     jr
+P1: RPS/PCY      P2: MVG/ASH          QC: MVG
+Journal of Algebraic Combinatorics     KL472-03-Krob       August 6, 1997    10:34
+
+
+
+
+              NONCOMMUTATIVE SYMMETRIC FUNCTIONS IV                                                       347
+
+
+              itself regarded as the class of the tensor ei ⊗ ej∗ ∈ T r (V ⊗ V ∗ ) modulo the relations
+                     (
+                         ei ⊗ ej∗ ≡ eiσr ⊗ (ej∗ · Tr )   for each r such that ir > ir +1 ,
+                                                                                                          (6)
+                         ei ⊗ ej∗ ≡ ei ⊗ (ej∗ )σr        for each r such that ir = ir +1 .
+
+              These relations are equivalent to
+
+                     ei ⊗ ej∗ ≡ −Tr · ei ⊗ (ej∗ )σr      for each r such that jr ≤ jr +1 .                (7)
+
+              4.4.    Linear bases of Aq (n)
+
+              For every i = (i 1 , . . . , ir ) ∈ [1, n]r , let I (i) ∈ Nn be defined by
+
+                     I (i) p = Card{i k , k ∈ [1, r ] , i k = p}
+
+              for p ∈ [1, n]. For I, J ∈ Nn , set
+                                     X
+                    Aq (I, J ) =              C(q) xij .
+                                     I (i)=I, I ( j)=J
+
+              Observe that (Aq (I, J )) I,J ∈Nn defines a grading of Aq (n) compatible with multiplication.
+                A monomial basis compatible with this grading is constructed in [4]. The basis vectors,
+              which are labelled by matrices M = (m i j )1≤i, j≤n ∈ Mn (N) are
+                          ¡ m 11 m 12       m 1n ¢      ¡ m n1 m n2           ¢
+                   x M = x11    x12 · · · x1n      · · · xn1  xn2 · · · xnn
+                                                                         m nn
+                                                                                ∈ Aq (n).
+
+              It will be useful to introduce another monomial basis (x M ) of Aq (n), labelled by the same
+              matrices, and defined by
+                            ¡ m 1n m 2n           ¢      ¡ m 11 m 21      m n1 ¢
+                     x M = x1n    x2n · · · xnn
+                                             m nn
+                                                    · · · x11  x21 · · · xn1     ∈ Aq (n).
+
+              Proposition 4.3 For any q ∈ C, the family (x M ) M∈Mn (N) is a homogeneous linear basis
+              of Aq (n).
+
+              Proof: It is clearly sufficient to prove that each basis element x M can be expressed in
+              terms of the x N . Using the array and tensor notations, such an element can be represented
+              by
+                           ·                    ¸
+                             · · · i1 i2 · · ·
+                    xM =                          = ei ⊗ ej∗ ,
+                             · · · j1 j2 · · ·
+
+              where j1 is the maximal element of the second row of this array and where i 1 ≤ i 2 . The
+              maximality of j1 and relation (7) imply
+                                                µ              ¶ ·                   ¸
+                                                  (−1)l(σ ) Tσ     i · · · i2 · · ·
+                   x M = (−1)`(σ ) Tσ ei ⊗ ej =                 · 1
+                                                      Id           j1 · · · j2 · · ·
+P1: RPS/PCY      P2: MVG/ASH             QC: MVG
+Journal of Algebraic Combinatorics        KL472-03-Krob         August 6, 1997    10:34
+
+
+
+
+              348                                                                         KROB AND THIBON
+
+
+              for some permutation σ . By induction on the length of x M , there exists some other permu-
+              tation τ such that
+                           µ              ¶ ·                                  ¸
+                             (−1)l(τ ) Tτ     i 1 · · · ir · · · k1 · · · ks
+                     xM =                  ·                                     .
+                                 Id           j1 · · · j1 · · · 1 · · · 1
+
+              Going back to the definition of the left action of HN (q) and to relations (6), this implies
+              that x M is a Z[q]-linear combination of elements of the form
+                     ·                                           ¸
+                         i1   · · · ir     · · · k1     · · · ks
+                                                                   ,
+                         n    ··· n        ··· 1        ··· 1
+
+              from which the conclusion follows immediately.                                            2
+
+
+              4.5.    The standard subspace of Aq (n)
+
+              The restrictions to the standard component of Aq (n) of the transition matrices between the
+              two bases (x M ) and (x M ) have an interesting description.
+
+              Definition 4.4         The standard subspace Sq (n) of Aq (n) is
+                                                      M
+                     Sq (n) = Aq (1n , 1n ) =                 C(q) xσ
+                                                      σ ∈Sn
+
+
+              where xσ = x1σ (1) x2σ (2) · · · xnσ (n) for σ ∈ Sn .
+
+                 The following result is an immediate consequence of Proposition 4.3.
+
+              Proposition 4.5 One has
+                                  M
+                     Sq (n) =             C(q)x σ
+                                 σ ∈S n
+
+
+              where x σ = xσ (n)n · · · xσ (2)2 xσ (1)1 .
+
+                The elements of the transition matrices between the two bases (xσ )σ ∈Sn and (x σ )σ ∈Sn
+              of Sq (n) are R-polynomials. Recall that the family (Rτ,σ (q))σ,τ ∈Sn of R-polynomials is
+              defined by
+                                                      X
+                     (Tσ −1 )−1 = ε(σ ) q −l(σ )              ε(τ ) Rτ,σ (q)Tτ ∈ Hn (q)
+                                                      τ ≤σ
+
+
+              for σ ∈ Sn (cf. [13]). The R-polynomial Rτ,σ (q) is in Z[q], has degree l(σ ) − l(τ ) and
+              its constant term is ε(σ τ ).
+P1: RPS/PCY      P2: MVG/ASH             QC: MVG
+Journal of Algebraic Combinatorics         KL472-03-Krob                August 6, 1997           10:34
+
+
+
+
+              NONCOMMUTATIVE SYMMETRIC FUNCTIONS IV                                                            349
+
+
+              Proposition 4.6 The bases (x σ ) and (xσ ) are related by
+                         X                                   X
+                   xσ =      Rτ,σ (q)xωτ     and      xσ =        Rτ,σ (−q)x ωτ
+                            τ ≤σ                                                        τ ≤σ
+
+
+              where ω = (n n −1 · · · 1) and where ≤ is the Bruhat order.
+
+              Proof: In the notation of Section 4.3, we can write
+                                         σ
+                      x σ = eσ ⊗ eω∗ = e12···n  ⊗ eω∗ ≡ e12···n ⊗ eω∗ · Tσ −1
+                                                                        Ã                       !
+                                                                          X
+                                           l(σ ) −1    ∗
+                          ≡ e12···n ⊗ (−q) Tσ −1 · eω ≡ e12···n ⊗              ε(τ ) Rτ,σ (q) Tτ · eω∗
+                                      Ã                   !               τ ≤σ
+                                        X                       X
+                                                       ∗
+                          ≡ e12···n ⊗        Rτ,σ (q) eωτ =           Rτ,σ (q) xωτ .
+                                                τ ≤σ                               τ ≤σ
+
+
+              The second relation can be proved in the same way.                                                2
+
+              Corollary 4.7 In A0 (n), one has
+                         X                                                           X
+                   xσ =     ε(σ τ )xωτ     and                              xσ =            ε(σ τ )xωτ .
+                            τ ≤σ                                                     τ ≤σ
+
+
+              4.6.    Decomposition of left and right standard subspaces at q = 0
+
+              In the array notation, the standard subspace is spanned by arrays whose both rows are
+              permutations. If one requires one row to be a fixed permutation σ , one obtains the left and
+              right subcomodules of Aq (n) which are independent of σ for generic q, but not for q = 0.
+
+              Definition 4.8 The left and right standard subspaces of Aq (n), respectively denoted by
+              L q (n) and Rq (n), are defined by
+                                          M
+                     L q (n) =                             C(q)x1, j1 x2, j2 · · · xn, jn ,
+                                   J =( j1 ,..., jn )∈Nn
+                                         M
+                     Rq (n) =                              C(q)xin ,n · · · xi2 ,2 xi1 ,1 .
+                                   I =(i 1 ,...,ir )∈Nr
+
+
+                 We associate with a permutation σ ∈ Sn the subspaces of Aq (n)
+                                               X
+                     L q (n; σ ) =                              C(q)xσ (1), j1 xσ (2), j2 · · · xσ (n), jn ,
+                                        J =( j1 ,..., jn )∈Nn
+                                               X
+                     Rq (n; σ ) =                               C(q)xin ,σ (n) · · · xi2 ,σ (2) xi1 ,σ (1) .
+                                        I =(i 1 ,...,ir )∈Nr
+
+
+              For generic q, all the left (resp. right) subspaces are the same.
+P1: RPS/PCY      P2: MVG/ASH            QC: MVG
+Journal of Algebraic Combinatorics        KL472-03-Krob                August 6, 1997          10:34
+
+
+
+
+              350                                                                                              KROB AND THIBON
+
+
+              Proposition 4.9 If q ∈ C is nonzero and not a root of unity,
+
+                     L q (n; σ ) = L q (n)               and            Rq (n; σ ) = Rq (n).
+
+
+              Proof: Using the tensor notation of Section 4.3, we can write
+
+                     eσ ⊗ e∗J = e12···n
+                                 σ
+                                        ⊗ e∗J ≡ e12···n ⊗ e∗J · Tσ −1 ≡ (e12···n ⊗ e∗J ) · (Id ⊗ Tσ −1 )
+
+              for every J ∈ Nn , so that L q (n; σ ) ⊂ L q (n). Moreover the asumptions on q imply that
+              Tσ −1 is invertible. The previous relation can therefore be read as
+
+                     e12...n ⊗ e∗J ≡ (eσ ⊗ e∗J ) · (Id ⊗ (Tσ −1 )−1 ),
+
+              from which we get that L q (n) ⊂ L q (n; σ ). The second equality is obtained in the same
+              way.                                                                                    2
+
+                 When q = 0, the subspaces L 0 (n; σ ) and R0 (n; σ ) are not equal to L 0 (n) and R0 (n).
+              However, the proof of Proposition 4.9 shows that L 0 (n; σ ) ⊂ L 0 (n) and R0 (n; σ ) ⊂ R0 (n).
+              The subspaces L 0 (n; σ ) (resp. R0 (n; σ ) are right (resp. left) sub-A0 (n)-comodules of L 0 (n)
+              (resp. R0 (n)), of which they form a filtration with respect to the weak order on the symmetric
+              group. To prove this, let us introduce some notations. We associate to an integer vector
+              I = (i 1 , . . . , i n ) of Nn the two sets
+
+                     Inv(I ) = {(k, l), 1 ≤ k < l ≤ n − 1, i k > il },
+                     Pos(I ) = {(k, l), 1 ≤ k < l ≤ n − 1, i k < il }.
+
+              Proposition 4.10 For every permutation σ ∈ Sn , one has
+                                 M
+                   L 0 (n; σ ) =          C xσ (1), j1 · · · xσ (n), jn ,
+                                        J =( j1 ,..., jn )
+                                       Inv(σ )⊂Inv(J )
+                                             M
+                     R0 (n; σ ) =                            C xin ,σ (n) · · · xi1 ,σ (1) .
+                                        I =(i 1 ,...,i n )
+                                       Pos(I )⊂Pos(σ )
+
+
+              Proof: We only show the first identity, the second one being proved in the same way.
+
+              Lemma 4.11 Let l ≥ 1 be such that σ (i) > σ (i + l) and ji ≤ ji+l . Then, in A0 (n)
+
+                     x σ (i), ji · · · xσ (i+l), ji+l = 0.
+
+              Proof of the lemma: The result is obvious when l = 1. Let then l ≥ 2 and suppose that
+              the result holds for l − 1. Two cases are to be considered.
+
+              1) σ (i + l − 1) > σ (i + l). If ji+l−1 ≤ ji+l , one clearly has
+
+                         xσ (i), ji · · · xσ (i+l), ji+l = xσ (i), ji · · · xσ (i+l−1), ji+l−1 xσ (i+l), ji+l = 0.
+P1: RPS/PCY      P2: MVG/ASH           QC: MVG
+Journal of Algebraic Combinatorics       KL472-03-Krob            August 6, 1997          10:34
+
+
+
+
+              NONCOMMUTATIVE SYMMETRIC FUNCTIONS IV                                                                 351
+
+
+                  On the other hand, if ji+l−1 > ji+l , we can write
+
+                         xσ (i), ji · · · xσ (i+l), ji+l = xσ (i), ji · · · xσ (i+l), ji+l xσ (i+l−1), ji+l−1
+                                                           − xσ (i), ji · · · xσ (i+l), ji+l−1 xσ (i+l−1), ji+l .
+
+                 We have here ji ≤ ji+l−1 so that the right hand side is zero, as required.
+              2) σ (i + l − 1) < σ (i + l). Thus σ (i) > σ (i + l − 1) and we just have to check the case
+                 ji > ji+l−1 . Then, ji+l−1 < ji+l so that
+
+                         xσ (i), ji · · · xσ (i+l), ji+l = xσ (i), ji · · · xσ (i+l), ji+l xσ (i+l−1), ji+l−1
+                                                           + xσ (i), ji · · · xσ (i+l−1), ji+l xσ (i+l), ji+l−1 ,
+
+                  which is indeed zero by induction.                                                                 2
+
+                 It follows from the lemma that
+                                      X
+                      L 0 (n; σ ) =         C xσ (1), j1 · · · xσ (n), jn ,
+                                        J =( j1 ,..., jn )
+                                       Inv(σ )⊂Inv(J )
+
+
+              and it remains to prove that the sum is direct. Let J = ( j1 , . . . , jn ) ∈ Nn such that Inv(σ ) ⊂
+              Inv(J ). Using the same argument as in the proof of Proposition 4.6 we can write
+
+                     x σ (1), j1 · · · xσ (n), jn = eσ ⊗ e∗J = e12···n
+                                                                 σ
+                                                                        ⊗ e∗J ≡ e12···n ⊗ (e∗J · Tσ −1 )
+                                                    X
+                                                  =     ε(σ τ ) e12···n ⊗ e J ·τ
+                                                     τ ≤σ
+
+
+              where ≤ is the Bruhat order on Sn and J · τ = ( jτ (1) , . . . , jτ (n) ). This last formula clearly
+              shows that the family (xσ (1), j1 · · · xσ (n), jn )Inv(σ )⊂Inv(J ) is free.                      2
+
+                 We can now prove that the “left cells” L 0 (n; σ ) form a filtration of the right comodule
+              L 0 (n) with respect to the weak order.
+
+              Proposition 4.12 Let σ ∈ Sn and let i ∈ [1, n − 1] such that σ (i) > σ (i + 1). Then
+              L 0 (n; σ ) is strictly included into L 0 (n; σ σi ).
+
+              Proof: The inclusion L 0 (n; σ ) ⊂ L 0 (n; σ σi ) is immediate. Thus it suffices to show that
+              this inclusion is strict. One can easily construct an element x ∈ L 0 (n; σ σi ) of the form x =
+              · · · xσ (i+1),k xσ (i),k · · · Using the formalism of Section 4.3, one checks that (Ti ⊗ Id) · x =
+              −x 6= 0. On the other hand, (Ti ⊗ Id) · L 0 (n; σ ) = 0. Thus x ∈      / L 0 (n; σ ).             2
+
+              4.7.    The diagonal subalgebra and the quantum pseudoplactic algebra
+
+              Definition 4.13 The quantum diagonal algebra 1q (n) is the subalgebra of Aq (n) gener-
+              ated by x11 , . . . , xnn .
+P1: RPS/PCY      P2: MVG/ASH         QC: MVG
+Journal of Algebraic Combinatorics    KL472-03-Krob    August 6, 1997   10:34
+
+
+
+
+              352                                                                     KROB AND THIBON
+
+
+                The character theory of Aq (n)-comodules described in Section 6 will show that the
+              noncommutative algebra 1q (n) contains a subalgebra isomorphic to the algebra of ordinary
+              symmetric polynomials, exactly as in the case of the plactic algebra.
+
+              Definition 4.14 Let A be a totally ordered alphabet. The quantum pseudoplactic algebra
+              PPlq (A) is the quotient of C(q)hAi by the relations
+                     
+                      qaab − (q + 1) aba + baa = 0          for a < b,
+                       qabb − (q + 1) baa + bba = 0          for a < b,
+                     
+                       cab − acb − bca + bac = 0             for a < b < c.
+
+                 The third relation is the Lie relation [[a, c], b] = 0 where [x, y] is the usual commutator
+              xy − yx. For q = 1, the first two relations become [a, [a, b]] = [b, [b, a]] = 0 and PPl1 (A)
+              is the universal enveloping algebra of the Lie algebra defined by these relations.
+                 It should be noted that the classical plactic algebra is not obtained by any specialization
+              of PPlq (A). The motivation for the introduction of PPlq (A) comes from the following
+              conjecture.
+
+              Conjecture 4.15 Let A = {a1 , . . . , an } be a totally ordered alphabet of cardinality n.
+              For generic q, the mapping ϕ : ai → xii induces an isomorphism between PPlq (A) and the
+              diagonal algebra 1q (n).
+
+                 Our conjecture is stated for generic values of q, i.e., when q is considered as a free
+              variable, or avoiding a discrete set in C. It is clearly not true for arbitrary complex values
+              of q. For example, for q = 1, the diagonal algebra 11 (n) is an algebra of commutative
+              polynomials. The diagonal algebra at q = 0 is also particularly interesting, and its structure
+              will be investigated in the forthcoming section.
+
+
+              4.8.    The hypoplactic algebra
+
+              Let again A be a totally ordered alphabet. We recall that the plactic algebra on A is the
+              C-algebra Pl(A), quotient of ChAi by the relations
+                     ½
+                         aba = baa,    bba = bab      for a < b,
+                         acb = cab,    bca = bac      for a < b < c.
+
+              These relations, which were obtained by Knuth [20], generate the equivalence relation
+              identifying two words which have the same P-symbol under the Robinson-Schensted cor-
+              respondence. Though Schensted had shown that the construction of the P-symbol is an
+              associative operation on words, the monoid structure on the set of tableaux has been mostly
+              studied by Lascoux and Schützenberger [23] under the name ‘plactic monoid’. These au-
+              thors showed, for example, that the Littlewood-Richardson rule is essentially equivalent to
+              the fact that plactic Schur functions, defined as sums of all tableaux with a given shape,
+              are the basis of a commutative subalgebra of the plactic algebra. This point of view is now
+P1: RPS/PCY      P2: MVG/ASH         QC: MVG
+Journal of Algebraic Combinatorics   KL472-03-Krob    August 6, 1997   10:34
+
+
+
+
+              NONCOMMUTATIVE SYMMETRIC FUNCTIONS IV                                                       353
+
+
+              explained by Kashiwara’s theory of crystal bases [16, 17], which also leads to the definition
+              of plactic algebras associated to all classical simple Lie algebras [24, 27]. Other interpreta-
+              tions of the Robinson-Schensted correspondence and of the plactic relations can be found
+              in [3, 26].
+                 Kashiwara’s crystallization process describes the generic situation modulo a certain lat-
+              tice, but does not amount to putting q = 0 in the defining relations of quantum groups,
+              which is generally impossible due to the symmetric rôles played by q and q −1 . The special-
+              ization q = 0 in Aq (n) or in HN (q) leads to a different combinatorics, and describes a truly
+              degenerate case, rather than combinatorial aspects of the generic situation. In particular,
+              the specialization of the diagonal algebra is a remarkable quotient of the plactic algebra that
+              we shall now introduce.
+
+              Definition 4.16 The hypoplactic algebra HPl(A) is the quotient of the plactic algebra
+              Pl(A) by the quartic relations
+                   
+                    baba = abab, baca = abac for a < b < c,
+                       cacb = acbc, cbab = bacb for a < b < c,
+                   
+                      badc = dbca, acbd = cdab for a < b < c < d.
+
+                 The combinatorial objects playing the rôle of Young tableaux are the so-called ribbons and
+              quasi-ribbons. We recall first that a ribbon diagram is a skew Young diagram containing no
+              2 × 2 block of boxes. A ribbon diagram with n boxes is naturally encoded by a composition
+              I = (i 1 , . . . , ir ) of n, called the shape of the diagram, whose parts are the lengths of its
+              rows (starting from the top). For instance, the following skew diagram is a ribbon diagram
+              of shape (3, 1, 3, 2, 3).
+
+
+
+
+              Let I be a composition. A quasi-ribbon tableau of shape I is then obtained by filling a
+              ribbon diagram r of shape I by letters of A in such a way that
+
+              • each row of r is nondecreasing from left to right;
+              • each column of r is strictly increasing from top to bottom.
+
+              A word is said to be a quasi-ribbon word of shape I if it can be obtained by reading from
+              bottom to top and from left to right the columns of a quasi-ribbon diagram of shape I .
+              Observe that this convention allows to read the shape of a quasi-ribbon word on the word
+              itself.
+
+              Example 4.17 The word u = aacbabbac is not a quasi-ribbon word since the planar
+              representation of u obtained by writing its decreasing factors as columns is not a quasi-ribbon
+P1: RPS/PCY      P2: MVG/ASH         QC: MVG
+Journal of Algebraic Combinatorics    KL472-03-Krob             August 6, 1997       10:34
+
+
+
+
+              354                                                                                            KROB AND THIBON
+
+
+              tableau, as one can see on the picture. On the other hand, the word v = aacbacdcd is
+              a quasi-ribbon word of shape (3, 1, 3, 2). The quasi-ribbon tableau corresponding to v is
+              also given below.
+
+                                        a   a     a                              a   a     a
+                                                  b                                        b
+                                                  c   b     a                              c   c     c
+                                                            b    c                                   d   d
+
+                                                aacbabbac                                aacbacdcd
+
+                 The central result of this section is the following.
+
+              Theorem 4.18 The classes of the quasi-ribbon words form a linear basis of the hypoplactic
+              algebra HPl(A).
+
+              Proof: We first prove that every word w of A∗ is equivalent to some quasi-ribbon word
+              with respect to the hypoplactic congruence ≡. It is sufficient to prove this for standard words
+              (i.e., permutations), since the hypoplactic congruence is compatible with standardization.
+              The standardized std(w) of a word w is the permutation obtained by the following process.
+              Reading w from left to right, label 1, 2, . . . the successive occurrences of the smallest letter
+              a of w, then do the same with the next letter b, and so on. One obtains in this way a word
+              in distinct labelled letters ai regarded as elements of the alphabet A × N endowed with the
+              lexicographic order. Then replace each labelled letter by the integers 1, 2, . . . , according
+              to its rank in the lexicographic order, as in the following example:
+
+                     w = ababca → a1 b1 a2 b2 c1 a3 → std(w) = 142563.
+
+              This standardization process, due to Schensted [34], is compatible with the plactic relations
+              [23]. One can also check that it is compatible with the quartic hypoplactic relations (used
+              in connection with the usual plactic relations). The standardization of the first hypoplactic
+              relation baba = abab leads for instance to b1 a1 b2 a2 = a1 b1 a2 b2 which is a consequence
+              of a plactic relation (bac = bca) and of the last hypoplactic relation (cdab = acbd):
+
+                     b1 a1 b2 a2 = b1 b2 a1 a2 = a1 b1 a2 b2 .
+
+              The other verifications are done in the same way. This implies therefore that u ≡ v iff
+              std(u) ≡ std(v).
+                 Thus, if we assume that the theorem holds for standard words, std(w) is equivalent to
+              some standard quasi-ribbon word r . Compatibility with the hypoplactic congruence imply
+              that w ≡ r 0 where r 0 is the word obtained from r by replacing each integer i ∈ [1, n] by the
+              letter of A occupying the ith position in std(w)−1 . But in a standard word, the hypoplactic
+              relations preserve the relative order of all pairs (i, i + 1). It follows that the image in r 0 of a
+              column of the ribbon diagram of r is still a strictly decreasing sequence of letters, so that r 0
+              is still a quasi-ribbon word of the same shape as r . Hence w is equivalent to a quasi-ribbon
+              word.
+P1: RPS/PCY      P2: MVG/ASH           QC: MVG
+Journal of Algebraic Combinatorics       KL472-03-Krob      August 6, 1997          10:34
+
+
+
+
+              NONCOMMUTATIVE SYMMETRIC FUNCTIONS IV                                                                  355
+
+
+              Example 4.19            Let again w = ababca. Then we have std(w) = 142563 and
+
+                     142563 ≡ 142536 ≡ 124356
+
+              (the places where a rewriting rule has been applied are underlined). Hence std(w) is
+              equivalent to the standard quasi-ribbon word r = 124356 of shape (3, 3). The compatibility
+              of the standardization process with ≡ implies that w ≡ r 0 = aababc. The quasi-ribbon
+              representation of r 0 is
+
+                                                           a   a        a
+                                                                        b   b   c
+
+
+
+                 We now turn back to the standard case. We have to prove that every permutation of Sn
+              (considered as a word over [1, n]) is equivalent to some (standard) quasi-ribbon word over
+              [1, n]. The proof proceeds by induction on n. Suppose that the result is true up to some
+              n ≥ 1, and let w = ua be a permutation of Sn+1 where |u| = n and a ∈ [1, n + 1]. Applying
+              the induction hypothesis to u, we can write w ≡ ra where r is a standard quasi-ribbon word
+              over [1, n + 1] − {a}. Decompose r as r = c1 · · · cl where ci is the word obtained by
+              reading from bottom to top the ith column of the quasi-ribbon tableau associated with r .
+              Thus w ≡ c1 · · · cl a. Since r is a quasi-ribbon word, the first column c1 has to be of one of
+              the following two types:
+
+              1. c1 = j j−1 · · · 1 for some j ∈ [1, n +1]. In this case, the conclusion follows by applying
+                 the induction hypothesis to c2 · · · cl a.
+              2. c1 = j j − 1 · · · i + 1 i − 1 · · · 1 for some j ∈ [1, n + 1]. In this case, the induction
+                 hypothesis allows us to write c2 · · · cl i ≡ d2 · · · dm where d2 · · · dm is the column de-
+                 composition of some standard quasi-ribbon word. Since i is the minimal letter of this last
+                 word, we must have d2 = d20 i, and the conclusion is implied by the following lemma.
+
+              Lemma 4.20 Let 1 ≤ i < j ≤ n. Then,
+
+                     ( j · · · i + 1 i − 1 · · · 1)(n · · · j + 1 i) ≡ (i − 1 · · · 1)( j · · · i)(n · · · j + 1),
+
+              where x · · · y denotes the concatenation of the elements of the interval [x, y], which is the
+              empty word for x > y.
+
+
+              Proof of the lemma: We argue by induction on n. For n = 3, the two possible situations
+              covered by the lemma correspond exactly to the two standard plactic relations written as
+
+                      3           1     3       2   3   2
+                              ≡           ,           ≡             .
+                      1   2             2           1   1       3
+P1: RPS/PCY      P2: MVG/ASH           QC: MVG
+Journal of Algebraic Combinatorics      KL472-03-Krob         August 6, 1997          10:34
+
+
+
+
+              356                                                                                    KROB AND THIBON
+
+
+              The standard quartic hypoplactic relations are also special instances of the lemma:
+
+                      4         2
+                                                 3    4     1          3
+                      2     3 ≡ 1      4,                 ≡                       .
+                                                      1 2              2      4
+                            1          3
+                 Let now n ≥ 4 and suppose that the lemma holds up to order n − 1. Suppose first that
+              i = 1. If j + 1 = n, the formula is obtained by application of a single plactic relation. So,
+              we can suppose that j + 1 < n. In this case, the result follows by successively applying a
+              plactic relation, the induction hypothesis and a hypoplactic relation as shown below
+
+                     ( j · · · 2) (n n − 1 · · · j + 1 1) ≡ ( j · · · 3) (n 2) (n − 1 · · · j + 1 1)
+                         ≡ ( j · · · 3) (n 2 1) (n − 1 · · · j + 1) ≡ ( j · · · 2 1) (n n − 1 · · · j + 1 1).
+
+                 Consider now the case i = 2. Suppose first that j = 3. For n = 4, the result to be
+              proved is exactly one of the standard hypoplactic relations. Thus we can assume that n > 4.
+              Using successively the fact that (3 1) (n · · · 4 2) is plactically equivalent to (n · · · 3 1) (4 2),
+              a hypoplactic relation and then a plactic relation, we obtain
+
+                     (3 1) (n · · · 4 2) ≡ (n · · · 3 1) (4 2) ≡ (n · · · 1) (3 2) (4) ≡ (n · · · 3 1) (2) (4).
+
+              Applying twice the induction hypothesis, we can rewrite the right hand side as
+
+                     (n · · · 3 1) (2) (4) ≡ (1) (n · · · 3 2) (4) ≡ (1) (3 2) (n · · · 4).
+
+              If j > 3, we reach the desired conclusion by first applying the induction hypothesis and
+              then the fact that j · · · 1 3 is plactically equivalent to 1 j · · · 3 as described below
+
+                     ( j · · · 3 1) (n · · · j + 1 2) ≡ ( j · · · 1) (3 2) (n · · · j + 1)
+                                                      ≡ (1) ( j · · · 3 2) (n · · · j + 1).
+
+                 The general case i ≥ 3 follows then by iterated applications of the induction hypothesis
+              as described below
+
+                     ( j · · · i + 1 i − 1 · · · 2 1) (n · · · j + 1 i) ≡ ( j · · · i + 1 i − 1 · · · 2) (n · · · j + 1 i 1)
+                          ≡ (i − 1 · · · 2) ( j · · · i) (n · · · j + 1 1) ≡ (i − 1 · · · 2) ( j · · · i 1) (n · · · j + 1)
+                          ≡ (i − 1 · · · 2 1) ( j · · · i) (n · · · j + 1).                                                   2
+
+                 At this point, we have shown that every word of A∗ is equivalent to some quasi-ribbon
+              word. To conclude the proof of the theorem, it remains to show that the hypoplactic classes
+              of quasi-ribbon words are linearly independent. Again, by the standardization argument, it
+              suffices to see that the family Bn of all standard quasi-ribbon words of fixed length n is free.
+              Thus we can suppose that A = [1, n] for some n ≥ 1. The point is now that the hypoplactic
+              relations are satisfied by the generators of the 0-diagonal algebra 10 (n). Hence one can
+              define a morphism ϕ from HPl(A) onto 10 (n) by ϕ(i) = xii for every i ∈ A = [1, n].
+                 Let w ∈ Sn be a standard quasi-ribbon word of length n over [1, n]. By definition,
+              there exists a strictly increasing sequence 1 = k1 < k2 < · · · < kl+1 = n + 1 such that
+P1: RPS/PCY        P2: MVG/ASH       QC: MVG
+Journal of Algebraic Combinatorics     KL472-03-Krob         August 6, 1997    10:34
+
+
+
+
+              NONCOMMUTATIVE SYMMETRIC FUNCTIONS IV                                                       357
+
+
+              w = c1 · · · cl with ci = ki+1 − 1 · · · ki for i ∈ [1, l]. Consider the Young subgroup Sw =
+              S[k1 ,k2 −1] × · · · × S[kl ,kl+1 −1] of Sn . Applying Corollary 4.7 to each strictly decreasing
+              word ci , one obtains that
+                                 X             ·                               ¸
+                                                     1       2   ···     n
+                      ϕ(w) =           ε(σ )
+                                                   σ (1)   σ (2) · · · σ (n)
+                               σ ∈Sn
+
+
+              in the notation of Section 4.3. Observe that w is the unique permutation of maximal length
+              occuring in the sum. This property implies immediately that ϕ(Bn ) is free in 10 (n). It
+              follows that Bn is itself free in HPl(A) as desired.                                    2
+
+                 Let C(σ ) be the unique composition I such that D(σ ) = D(I ). By the evaluation ev (w)
+              of a word w ∈ A∗ , we mean the vector ev (w) = (|w|a )a∈A ∈ N A whose entries are just the
+              different numbers of occurences of each letter a ∈ A in w.
+                 As an interesting consequence of the proof of Theorem 4.18 and of Lemma 4.20, we
+              obtain:
+
+              Proposition 4.21 Let w be a word over a totally ordered alphabet A, let λ be its evaluation
+              and let σ = std(w). The unique quasi-ribbon word to which w is equivalent with respect to
+              the hypoplactic congruence is the unique quasi-ribbon word of evaluation λ and of shape
+              C(σ −1 ).
+
+              Example 4.22 Consider again w = ababca. Then λ = (3, 2, 1) and std(w) = σ = 142563.
+              Hence σ −1 = 136245 and C(σ −1 ) = (3, 3). The unique quasi-ribbon word of evaluation
+              (3, 2, 1) and of shape (3, 3) is aababc. Thus w ≡ aababc as already seen in Example 4.19.
+
+                 The importance of the hypoplactic algebra comes from the following isomorphism, wich
+              follows directly from the previous considerations.
+
+              Theorem 4.23 The ring homomorphism defined by ϕ : ai → xii is an isomorphism bet-
+              ween the hypoplactic algebra HPl(A) and the crystal limit 10 (n) of the quantum diagonal
+              algebra.
+
+                We have already seen that the quantum diagonal algebra 1q (n) is not isomorphic to the
+              quantum plactic algebra when q ∈ {0, 1}. We conjecture that these two degenerate cases
+              are the only exceptions.
+
+
+              5.     Characteristics of HN (0)-modules
+
+              5.1.    Grothendieck rings associated with finitely generated HN (0)-modules
+
+              Let G 0 (HN (q)) be the Grothendieck group of the category of finitely generated HN (q)-
+              modules and let K 0 (HN (q)) be the Grothendieck group of equivalence classes of finitely
+              generated projective HN (q)-modules. When q is not 0 and not a root of unity, the Hecke
+P1: RPS/PCY      P2: MVG/ASH           QC: MVG
+Journal of Algebraic Combinatorics      KL472-03-Krob       August 6, 1997     10:34
+
+
+
+
+              358                                                                           KROB AND THIBON
+
+
+              algebra HN (q) is semi-simple and these two groups coincide. Moreover their direct sum for
+              all n ≥ 0 endowed with the induction product is isomorphic to the ring Sym of (commutative)
+              symmetric functions.
+                 When q = 0, HN (0) is not semi-simple. In particular, indecomposable HN (0)-modules
+              are not necessarily irreducible, and the Grothendieck rings
+                           M                                          M
+                     G=            G 0 (HN (0))      and       K=            K 0 (HN (0))
+                           N ≥0                                       N ≥0
+
+
+              are not isomorphic. We will see that G and K are respectively isomorphic to the rings QSym of
+              quasi-symmetric functions and Sym of noncommutative symmetric functions. The duality
+              between Sym and QSym (cf. Section 2.2) can therefore be traced back to a general fact in
+              representation theory.
+
+
+              5.2.    Simple HN (0)-modules
+
+              There are 2 N −1 simple HN (0)-modules, all of dimension 1 [1, 31]. To see this, it is sufficient
+              to observe that (Ti Ti+1 − Ti+1 Ti )2 = 0. Thus, all the commutators [Ti , T j ] are in the radical
+              of HN (0). But the quotient of HN (0) by the ideal generated by these elements is the
+              commutative algebra generated by N − 1 elements t1 , . . . , t N −1 subject to ti2 = −ti . It is
+              easy to check that this algebra has no nilpotent elements, so that it is HN (0)/rad(HN (0)).
+              The irreducible representations are thus obtained by sending a set of generators to −1 and its
+              complement to 0. We shall however label these representations by compositions rather than
+              by subsets. Let I be a composition of N and let D(I ) the associated subset of [1, N − 1].
+              The irreducible representation ϕ I of HN (0) is then defined by
+                                   ½
+                                       −1   if i ∈ D(I ),
+                     ϕ I (Ti ) =
+                                       0    if i ∈
+                                                 / D(I ).
+
+              The associated HN (0)-module will be denoted by C I . These modules (when I runs over
+              all compositions of N ) form a complete system of simple HN (0)-modules.
+                 The simple modules can also be realized as minimal left ideals of HN (0). To describe
+              the generators, we associate with a composition I of N two permutations α(I ) and ω(I ) of
+              S N defined by
+
+              • α(I ) is the permutation obtained by filling the columns of the skew Young diagram of
+                ribbon shape I from bottom to top and from left to right with the numbers 1, 2, . . . , N ,
+                i.e., the standard quasi-ribbon word of shape I ;
+              • ω(I ) is the permutation obtained by filling the rows of the skew Young diagram of ribbon
+                shape I from left to right and from bottom to top with the numbers 1, 2, . . . , N .
+
+              Example 5.1 Consider the composition I = 22113 of 9. The fillings of the ribbon
+              diagram of shape I corresponding to α(I ) and ω(I ) are
+P1: RPS/PCY      P2: MVG/ASH         QC: MVG
+Journal of Algebraic Combinatorics   KL472-03-Krob              August 6, 1997       10:34
+
+
+
+
+              NONCOMMUTATIVE SYMMETRIC FUNCTIONS IV                                                             359
+
+
+                                             1     3                             8   9
+                                                   2   7                             6   7
+                                                       6                                 5
+                                                       5                                 4
+                                                       4    8    9                       1   2   3
+
+                                                 α(22113)                        ω(22113)
+
+              Thus α(22113) = 132765489 and ω(22113) = 896754123.
+
+                 Recall that the permutohedron of order N is the Hasse diagram of the weak order on
+              S N , that is, the graph whose vertices are the elements of S N and where an edge labelled
+              i ∈ [1, N − 1] between σ and τ means that τ = σi σ .
+
+              Lemma 5.2 Let I be a composition of N . The descent class D I = {σ ∈ S N , D(σ ) =
+              D(I )} is the interval [α(I ), ω(I )] for the weak order on S N .
+
+                 For i ∈ [1, N − 1], let 2i = 1 + Ti . These elements verify the relations
+                     2
+                     2i = 2i                       for i ∈ [1, N − 1],
+                       2i 2 j = 2 j 2i              for |i − j| > 1,
+                    
+                       2i 2i+1 2i = 2i+1 2i 2i+1 for i ∈ [1, N − 2].
+
+              In particular, the morphism defined by Ti → −2i is an involution of HN (0). As the 2i
+              satisfy the braid relations, one can associate to each permutation σ ∈ S N the element 2σ of
+              HN (0) defined by 2σ = 2i1 · · · 2ir where σi1 · · · σir is an arbitrary reduced decomposition
+              of σ .
+                 For a composition I = (i 1 , . . . , ir ) we denote by I¯ = (ir , . . . , i 1 ) its mirror image and
+              by I ∼ its conjugate composition, i.e., the composition obtained by writing from right to left
+              the lengths of the columns of the ribbon diagram of I . For instance, (3, 2, 1) = (1, 2, 3)
+              and (3, 2, 1)∼ = (2, 2, 1, 1).
+
+              Proposition 5.3 The simple HN (0) module C I is isomorphic to the minimal left ideal
+              HN (0) η I of HN (0) where η I = Tω( I¯) 2α(I ∼ ) .
+
+              Proof: Observe first that ω( I¯)−1 = ω(I ) and α(I ) = ω(I ∼ ) ω N (where ω N is the maximal
+              permutation of S N ). It follows that Des(ω( I¯)−1 ) = D(I ) and Des(α(I ∼ )−1 ) = [1, n −1]
+              − D( I¯). Thus, taking into account the fact that Ti 2i = 0, one checks that η I is different
+              from 0 and that
+                                          ½
+                                            −Tω( I¯) 2α(I ∼ ) if i ∈ D(I ),
+                    Ti Tω( I¯) 2α(I ∼ ) =                                                                2
+                                            0                 if i ∈
+                                                                   / D(I ).
+
+              5.3.    Indecomposable projective HN (0)-modules
+
+              The indecomposable projective HN (0)-modules have also been classified by Norton (cf.
+              [1, 31]). One associates with a composition I of N the unique indecomposable projective
+P1: RPS/PCY      P2: MVG/ASH         QC: MVG
+Journal of Algebraic Combinatorics       KL472-03-Krob        August 6, 1997   10:34
+
+
+
+
+              360                                                                              KROB AND THIBON
+
+
+              HN (0)-module M I such that M I /rad(M I ) ≃ C I . This module can be realized as the left
+              ideal
+
+                     M I = HN (0) ν I
+
+              where ν I = Tα(I ) 2α( I¯∼ ) . Since α(I ∼ )−1 = ωn ω( I¯), one gets D(α( I¯∼ )−1 ) = [1, n − 1] −
+              D(I ). It follows that the generator ν I of M I is different from 0 and that a basis of M I is
+              given by
+
+                     {Tσ 2α( I¯∼ ) , Des(σ ) = D(I )} = {Tσ 2α( I¯∼ ) , σ ∈ [α(I ), ω(I )]},
+
+              according to Lemma 5.2. Hence the dimension of M I is equal to the cardinality of the descent
+              class D I . Also, every interval of the form [α(I ), ω(I )] in the permutohedron can be inter-
+              preted as the “graph” of some indecomposable projective HN (0)-module (cf. Example 5.4
+              below). The family (M I )|I |=N forms a complete system of projective indecomposable
+              HN (0)-modules, and
+                                M
+                    Hn (0) =         MI .                                                                (8)
+                                |I |=N
+
+
+              Example 5.4 Let I = (1, 1, 2). Then I ∼ = (1, 3), I¯ = (2, 1, 1), I¯∼ = (3, 1), α(I ) =
+              3214 and α( I¯∼ ) = 1243. Hence ν112 = T2 T1 T2 23 . The module M112 can be described
+              by the following automaton. An arrow labelled Ti going from f to g means that Ti · f = g,
+              and a loop on the vertex f labelled Ti | ² (with ² = 0 or ² = −1) means that Ti · f = ² f .
+                                                     
+                                                     e  T1 |−1
+                                                       T2 |−1
+
+                                                            T3
+
+
+                                                    ?
+                                                                     T |−1
+                                                     T3 e         T13 |−1
+                                                    
+
+                                                            T2
+
+
+                                                   ?                  T1 |0
+                                                    T2 T3 e        T2 |−1
+                                                                     T3 |−1
+
+
+              This is also the graph of the interval [3214, 4312] = D112 in the permutohedron of S4 . The
+              (−1)-loops correspond to the descents of the inverse permutation.
+
+              5.4.    A Frobenius type characteristic for finite dimensional HN (0)-modules
+
+              Let M be a finite dimensional HN (0)-module and consider a composition series for M, i.e.,
+              a decreasing sequence M1 = M ⊃ M2 ⊃ · · · ⊃ Mk ⊃ Mk+1 = C of submodules where
+P1: RPS/PCY      P2: MVG/ASH            QC: MVG
+Journal of Algebraic Combinatorics         KL472-03-Krob        August 6, 1997         10:34
+
+
+
+
+              NONCOMMUTATIVE SYMMETRIC FUNCTIONS IV                                                                      361
+
+
+              the successive quotients Mi /Mi+1 are simple. Therefore each Mi /Mi+1 is isomorphic to
+              some C Ii , and the Jordan-Hölder theorem ensures that the quasi-symmetric function
+
+                                  X
+                                  k
+                     F(M) =                FI i
+                                  i=1
+
+
+              is independent of the choice of the composition series. This quasi-symmetric function is
+              called the characteristic of M. Its properties are quite similar to those of the usual Frobenius
+              characteristic of a S N -module [7]. However, the characteristic F(M) of a HN (0)-module
+              M does not specify it up to isomorphism.
+                 The character formula for HN (0)-modules can be stated in a form similar to the Frobenius
+              character formula. For a composition I , we denote by C I (q) the noncommutative symmetric
+              function C I (q) = (q−1)l(I ) S I ((q−1)A), in the noncommutative λ-ring notation introduced
+              in [21]. Let also w J be the permutation of the Young subgroup S J defined by
+
+                     w J = (σ1 · · · σ j1 −1 ) (σ j1 +1 · · · σ j1 + j2 −1 ) · · · ( σ j1 +···+ jr −1 +1 · · · σn−1 ).
+
+              The character of a module M is then determined by its values χ M (Tw J ) = tr M (Tw J ) on the
+              special elements Tw J .
+
+              Proposition 5.5 [7] (Character formula) The character of M is given by
+
+                     χ M (Tw J ) = hF(M) , C J (0)i
+
+              where h, i is the pairing between QSym and Sym.
+
+               One can refine F into a graded version of the characteristic, at least when M is a cyclic
+              module i.e., when M = HN (0) e. In this case, the length filtration
+                                        M
+                     HN (0)(k) =                  C Tσ
+                                      l(σ )≥k
+
+
+              of the 0-Hecke algebra induces a filtration (M (k) )k∈N of M by setting M (k) = HN (0)(k) e.
+              This suggests to introduce the graded characteristic Fq (M) of M defined by
+                                     X
+                     Fq (M) =               q k F(M (k) /M (k+1) ).
+                                     k≥0
+
+
+              The ordinary characteristic F (M) is then the specialization of Fq (M) at q = 1.
+                The graded characteristic is in particular defined for the modules induced by tensor
+              products of simple 1-dimensional modules
+
+                                                              Hn +···+n (0)
+                     M I1 ,...,Ir = C I1 ⊗ · · · ⊗ C Ir ↑ Hn1 (0)⊗···⊗H
+                                                                  r
+                                                                       nr (0)
+                                                                              ,
+                                                                1
+P1: RPS/PCY      P2: MVG/ASH          QC: MVG
+Journal of Algebraic Combinatorics      KL472-03-Krob              August 6, 1997           10:34
+
+
+
+
+              362                                                                                       KROB AND THIBON
+
+
+              the characteristic of which being equal to the product FI1 · · · FIr . The induction formula can
+              be stated in terms of the graded characteristic, which leads to a q-analogue of the algebra
+              of quasi-symmetric functions. This q-analogue is defined in terms of the q-shuffle product
+              [6]. Let A be an alphabet and let q be an indeterminate commuting with A. The q-shuffle
+              is the bilinear operation of N[q]hAi denoted by ¯q and recursively defined on words by the
+              relations
+                     ½
+                       1 ¯q u = u ¯q 1 = u,
+                       (a u) ¯q (b v) = a (u ¯q b v) + q |au| b (a u ¯q v),
+
+              where 1 is the empty word, u, v ∈ A∗ and a, b ∈ A. One can show that ¯q is associative
+              (cf. [6]).
+
+              Example 5.6 Let M(11),(2) denote the H4 (0)-module obtained by inducing to H4 (0) the
+              H2 (0) ⊗ H2 (0)-module C11 ⊗ C2 , identifying H2 (0) ⊗ H2 (0) with the subalgebra of H4 (0)
+              generated by T1 and T3 . This H4 (0)-module is generated by a single element e on which
+              T1 and T3 act by T1 · e = −e and by T3 · e = 0. The following automaton gives a complete
+              description of this module. The states (vertices) correspond to the images of e under the
+              action of some element of H4 (0), which form a linear basis of M(11),(2) .
+                                                          
+                                                          e  TT13|−1
+                                                                    |0                                  0
+                                                          
+
+                                                                   T2
+
+                                                              ?
+                                                           T2 ·e T2 |−1                               1
+                                                               @
+                                                T1              @ T3
+                                                                   @
+                                                                      @R
+                                                                        @                   
+                       T1 |−1                                                                  T |0
+                       T2 |−1   -
+                                    T1 T2 ·e                                    T3 T2 ·e    T32|−1   2
+                                        @
+                                            T@                                 T1
+                                                @
+                                             3
+
+
+                                                     @
+                                                     R
+                                                     @                  
+                                                                           T |−1
+                                                         T1 T3 T2 ·e     T13 |−1                      3
+
+                                                                   T2
+
+                                                              ?           T1 |0
+                                                     T2 T1 T3 T2 ·e       T2 |−1                      4
+                                                                              T3 |−1
+
+
+              The automaton is graded by the distance d( f ) of a state f to the initial state e as indicated
+              on the picture. This grading is precisely the one described by Fq . That is, if we associate
+P1: RPS/PCY      P2: MVG/ASH            QC: MVG
+Journal of Algebraic Combinatorics       KL472-03-Krob           August 6, 1997      10:34
+
+
+
+
+              NONCOMMUTATIVE SYMMETRIC FUNCTIONS IV                                                                        363
+
+
+              with each state f the composition I ( f ) of 4 whose associated subset of [1, 3] is D( f ) =
+              {i ∈ [1, 3] | Ti · f = − f }, we find
+                                          X
+                     Fq (M(11,2) ) =              q d( f ) FI ( f ) = F13 + q F22 + q 2 (F112 + F31 ) + q 3 F121 + q 4 F211 .
+                                              f
+
+
+              This equality can also be read on the q-shuffle of 21 and 34:
+
+                     21 ¯q 34 = 2134 + q2314 + q 2 2341 + q 2 3214 + q 3 3241 + q 4 3421.
+
+              One obtains the graded characteristic by replacing each permutation σ in this expansion by
+              the quasi-symmetric function FC(σ ) .
+
+                This example illustrates the general fact that the graded characteristic of an induced
+              module as above is always given by the q-shuffle. As it is an associative operation, one
+              obtains in this way a q-deformation of the ring of quasi-symmetric functions.
+
+              Proposition 5.7 [6, 7] Let I and J be compositions of N and M. Let also σ ∈ S[1,N ]
+              and τ ∈ S[N +1,N +M] be such that Des(σ ) = D(I ) and Des(τ ) = D(J ). The HN +M (0)-
+              module obtained by inducing to HN +M (0) the HN (0)⊗ HM (0)-module C I ⊗C J (identifying
+              HN (0) ⊗ HM (0) to the subalgebra of HN +M (0) generated by T1 , . . . , TN −1 , TN +1 , . . . ,
+              TN +M−1 ) is cyclic, and its graded characteristic is given by
+                       ³                           ´   X
+                                    H      (0)
+                     Fq C I ⊗ C J ↑ HNN +M
+                                        (0)⊗HM (0)   =                      q d(ν) FC(ν)
+                                                                 ν∈S N +M
+
+
+              where C(ν) denotes the composition associated with the descent set of ν and where
+                                       X
+                     σ ¯q τ =                     q d(ν) ν.
+                                     ν∈S N +M
+
+
+                 For q = 1, we obtain the following result [7].
+
+              Corollary 5.8 The characteristic F is an isomorphism between G and the Z-algebra of
+              quasi-symmetric functions.
+
+
+              5.5.    A noncommutative characteristic for finite dimensional projective HN (0)-modules
+
+              Let M be a finite dimensional projective HN (0)-module. Hence M is isomorphic to a direct
+              sum of indecomposable projective modules
+
+                            M
+                            m
+                     M=              M Ii .
+                             i=1
+P1: RPS/PCY      P2: MVG/ASH             QC: MVG
+Journal of Algebraic Combinatorics          KL472-03-Krob       August 6, 1997        10:34
+
+
+
+
+              364                                                                                          KROB AND THIBON
+
+
+              The noncommutative Frobenius characteristic of M is the noncommutative symmetric
+              function R(M) defined by
+
+                                   X
+                                   m
+                      R(M) =                R Ii .
+                                   i=1
+
+
+              The characteristic R(M) does characterize every finite dimensional projective HN (0)-
+              module M up to isomorphism, and is therefore stronger than F. The following proposition,
+              which is a reformulation of Carter’s expression of the Cartan invariants of HN (0) shows in
+              particular how to compute F(M) from R(M).
+
+              Proposition 5.9 [7] Let M be a finite dimensional projective HN (0)-module. Then the
+              characteristic F (M) of M is a symmetric function which is the commutative image of
+              R(M).
+
+              Proof: It suffices to prove the result when M = M I . In this case,
+                                     X
+                      F (M I ) =             c I J FJ ,
+                                     J `N
+
+
+              where the Cartan invariant cIJ is equal to the number of permutations σ of S N such that
+              D(σ ) = I and D(σ −1 ) = J (see [1]). On the other hand, by a formula of Gessel [10], we
+              have cIJ = (r I , r J ) = hr I , R J i, where (·, ·) denotes the usual scalar product of commutative
+              symmetric functions (see [28]) and where r I is the commutative image of the ribbon Schur
+              function R I . Using the fact that the quasi-ribbons FI and noncommutative ribbon Schur
+              functions R J are dual bases, it follows that F (M I ) = r I .                                    2
+
+                 The induction from a tensor product of projective modules is described by the product
+              of noncommutative symmetric functions.
+
+              Proposition 5.10 Let I = (i 1 , . . . , ir ) and J = ( j1 , . . . , js ) be compositions of N and
+              M. Then,
+                       ³                           ´
+                                    H      (0)
+                      R M I ⊗ M J ↑ HNN +M
+                                        (0)⊗HM (0)   = R I R J = R I ·J + R I FJ ,                                                  (9)
+
+              where we set I · J = (i 1 , . . . , ir , j1 , . . . , js ) and I F J = (i 1 , . . . , ir −1 , ir + j1 , j2 , . . . , js ).
+
+              Proof: The formula for the product of two noncommutative ribbon Schur functions is
+              proved in [9], and we just have to show that
+
+                                       H        (0)
+                      M I ⊗ M J ↑ HNN +M
+                                      (0)⊗HM (0) ≃ M I ·J ⊕ M I FJ .
+P1: RPS/PCY        P2: MVG/ASH          QC: MVG
+Journal of Algebraic Combinatorics          KL472-03-Krob           August 6, 1997   10:34
+
+
+
+
+              NONCOMMUTATIVE SYMMETRIC FUNCTIONS IV                                                     365
+
+
+              Using the duality between simple modules and indecomposable projective modules, we
+              obtain
+
+                                        H     (0)
+                                                            M
+                      M I ⊗ M J ↑ HNN +M
+                                      (0)⊗HM (0) ≃                      dim Hom HN +M (0)
+                                                        K `N +M
+                                                         ³                                 ´
+                                                                      H      (0)
+                                                        × M I ⊗ M J ↑ HNN +M
+                                                                          (0)⊗HM (0) , M K   MK .
+
+              By Frobenius reciprocity, we have
+
+                                        H     (0)
+                                                            M
+                      M I ⊗ M J ↑ HNN +M
+                                      (0)⊗HM (0) ≃                      dim Hom HN (0)⊗HM (0)
+                                                        K `N +M
+                                                         ³                                ´
+                                                                            H      (0)
+                                                        × M I ⊗ M J , C K ↓ HNN +M
+                                                                                (0)⊗HM (0) M K .
+
+
+              Observe now that the description of the family (M I ) given in Section 5.3 implies that
+                                                            ½
+                                                                1     if I = J,
+                      dim Hom HN (0) (M J , C I ) =
+                                                                0     if I 6= J,
+
+              so that
+                                           ³                                 ´
+                                                              H      (0)
+                      dim Hom HN (0)⊗HM (0) M I ⊗ M J , C K ↓ HNN +M
+                                                                  (0)⊗HM (0)
+
+
+              is equal to 0 if D(K ) ∩ [1, N ] 6= D(I ) or D(K ) ∩ [N + 1, N + M] 6= N + D(J ) and equal
+              to 1 when D(K ) ∩ [1, N ] = D(I ) and D(K ) ∩ [N + 1, N + M] = N + D(J ), i.e., when
+              K = I · J or K = I F J as desired.                                                      2
+
+                Thus, we have the following interpretation of the algebra of noncommutative symmetric
+              functions.
+
+              Corollary 5.11 The characteristic map R is an isomorphism between the Grothendieck
+              ring K and the Z-algebra of noncommutative functions.
+
+
+              6.     Hypoplactic characters of A0 (n)-comodules
+
+              6.1.    The character of an Aq (n)-comodule
+
+              Let M be a finite dimensional Aq (n)-comodule with coaction δ. Let (m i )i=1,m be a basis
+              of M. There exist elements (a(i, j))1≤i, j≤m of Aq (n) such that
+
+                                  X
+                                  m
+                      δ(m i ) =         a(i, j) ⊗ m j
+                                  j=1
+P1: RPS/PCY      P2: MVG/ASH          QC: MVG
+Journal of Algebraic Combinatorics     KL472-03-Krob          August 6, 1997       10:34
+
+
+
+
+              366                                                                                      KROB AND THIBON
+
+
+              for i ∈ [1, m]. The element
+
+                     X
+                     m
+                            a(i, i)
+                      i=1
+
+
+              of Aq (n) is independent of the choice of the basis (m i ). It will be denoted by χ(M) and
+              called the character of the Aq (n)-comodule M.
+
+              Proposition 6.1 Let M, N , M 0 , M 00 be Aq (n)-comodules.
+              1. If 0 → M 0 → M → M 00 → 0 is a short exact sequence, χ (M) = χ(M 0 ) + χ(M 00 );
+              2. χ(M ⊗ N ) = χ(M) χ(N );
+              3. if M ≃ N , then χ(M) = χ (N ).
+
+                 It happens that for generic values of q, the character of an Aq (n)-comodule is always an
+              element of the quantum diagonal algebra.
+
+              Theorem 6.2 Let q be an indeterminate and let M be an Aq (n)-comodule. Then the
+              character χ(M) belongs to the diagonal algebra 1q (n).
+
+              Proof: The basic observation is the following lemma.
+
+              Lemma 6.3 The quantum determinant of Aq (n) can be expressed by means of q-commu-
+              tators as follows:
+                      ¯                           ¯
+                      ¯ x11    x12    ...    x1n ¯¯
+                      ¯
+                      ¯ x21    x22    ...    x2n ¯¯ def X
+                      ¯
+                      ¯ ..      ..    ..      .. ¯ =           ε(σ ) x1σ (1) · · · xnσ (n)
+                      ¯ .        .       .     . ¯¯
+                      ¯                                 σ ∈Sn
+                      ¯ xn1    xn2    ...    xnn ¯q
+                                                              1
+                                                    =                 [xnn , [. . . , [x22 , x11 ]q · · ·]q ]q
+                                                        (1 − q)n−1
+
+              where [P, Q]q = P Q − q Q P.
+
+              Proof of the lemma: Observe first that the lemma is equivalent to the identity
+                           ¯                          ¯      ¯                                  ¯
+                           ¯ x11      . . . x1,n−1 ¯¯        ¯ x11              ...     x1,n−1 ¯¯
+                           ¯                                 ¯
+                           ¯                          ¯      ¯ ..                               ¯
+                       xnn ¯ ...      ..
+                                          .
+                                                 ..
+                                                  .   ¯ −  q ¯ .                ..
+                                                                                   .
+                                                                                           ..
+                                                                                            .   ¯ xnn
+                           ¯                          ¯      ¯                                  ¯
+                           ¯ xn−1,1   . . . xn−1,n−1  ¯      ¯ xn−1,1           ...    xn−1,n−1 ¯
+                                      ¯                  ¯
+                                      ¯ x11 . . . x1,n ¯
+                                      ¯                  ¯
+                                      ¯              .. ¯ .
+                            = (1 − q) ¯ ...   ..
+                                                 .    . ¯¯
+                                      ¯
+                                      ¯ xn1 . . . xnn ¯
+P1: RPS/PCY      P2: MVG/ASH          QC: MVG
+Journal of Algebraic Combinatorics      KL472-03-Krob            August 6, 1997       10:34
+
+
+
+
+              NONCOMMUTATIVE SYMMETRIC FUNCTIONS IV                                                            367
+
+
+              Using the tensor notation of Section 4.3, this can be rewritten as
+                                                                                          
+                             Ã                           !
+                                X                              X                          
+                     (1 − q)          ε(σ ) e12···n ⊗ eσ∗ + q 
+                                                                      ε(σ ) e12···n ⊗ eσ∗ 
+                                                                                           
+                                     σ ∈Sn                                      σ ∈Sn
+                                                                               σ (n)=n
+                               X
+                                                            ∗
+                          =             ε(σ ) en12···n−1 ⊗ enσ ,
+                              σ ∈Sn−1
+
+              which is itself equivalent to
+                                                        
+                                X           
+                       (−1)n−1 
+                                  ε(σ ) eσ∗ 
+                                              · T1 T2 · · · Tn−1
+                                       σ ∈Sn
+                                      σ (1)=n
+                                                                                             
+                                         Ã                       !
+                                             X                           X           
+                          = (1 − q)                  ε(σ ) eσ∗       +q 
+                                                                           ε(σ ) eσ∗ 
+                                                                                      .
+                                             σ ∈Sn                           σ ∈Sn
+                                                                            σ (n)=n
+
+              This last formula is now easily proved by induction on n.                                          2
+
+                 As a consequence of Lemma 6.3, we obtain that the character of the r th exterior power
+              3rq (V ) of V (cf. [4]) is equal to
+                       ¡       ¢
+                     χ 3rq (V ) = 3r (q; 1)
+                                                  Ã                                                                !
+                                  def      1            X             £       £       £               ¤       ¤ ¤
+                                  =                                     xi i , . . . , xi2 i2 , xi1 i1 q . . . q q
+                                      (1 − q)n−1 1 ≤ i1 < ··· < ir ≤ n r r
+
+              where 1 = {x11 , . . . , xnn }. Let now λ = (1l1 , . . . , n ln ) be a partition of n. It follows then
+              from Proposition 6.1 that the character of the comodule
+
+                     Mλ,q = V ⊗l1 ⊗ 3q2 (V )⊗l2 ⊗ · · · ⊗ 3qn (V )⊗ln
+
+              is also in the diagonal algebra 1q (n).
+                 On the other hand, it has been shown by Dipper and Donkin [4] that one can associate
+              with every partition λ of n an irreducible Aq (n)-comodule L λ,q and that the family (L λ,q )λ`n
+              forms a complete system of irreducible Aq (n)-comodules. They also proved that for an
+              appropriate ordering < on partitions of n, the products of exterior powers decompose as
+                                      M
+                     Mλ,q ≃ L λ,q ⊕        aµ L µ,q .
+                                             µ<λ
+
+              Applying Proposition 6.1, we see that the matrix giving the decomposition of (χ (Mλ,q ))λ`n
+              on (χ(L λ,q ))λ`n is unitriangular. It follows that the character χ(L λ,q ) is a linear combination
+              of elements of the family (χ(Mλ,q ))λ`n . Hence χ(L λ,q ) ∈ 1q (n).                               2
+P1: RPS/PCY      P2: MVG/ASH         QC: MVG
+Journal of Algebraic Combinatorics   KL472-03-Krob      August 6, 1997       10:34
+
+
+
+
+              368                                                                            KROB AND THIBON
+
+
+              Note 6.4 The commutative image of χ(M) is the formal commutative character introduced
+              in [4]. But the formal character of L λ,q is the Schur function Sλ . Thus the characters (in
+              our sense) of the irreducible Aq (n)-comodules are quantum analogues of Schur functions.
+
+              Note 6.5 Let CharZ (q; n) denote the Z-lattice of 1n (q) spanned by characters of Aq (n)-
+              comodules. The proof of Theorem 6.2 shows that CharZ (q; n) is the subring of 1n (q)
+              generated by the n quantum elementary functions 3r (q; 1) with 1 ≤ r ≤ n. Moreover since
+              the composition series of the two An (q)-comodules 3rq (V ) ⊗ 3qs (V ) and 3qs (V ) ⊗ 3rq (V )
+              are the same, these quantum elementary functions commute. It follows that CharZ (q; n) is
+              a commutative Z-algebra isomorphic to the algebra of symmetric functions in n variables.
+
+              Note 6.6 Although Theorem 6.2 has been stated for generic values of q, it is not difficult
+              to see that it holds for q ∈ C − {0, 1}. In the usual commutative case (i.e., q = 1), the
+              result becomes false. On the other hand we conjecture that it still holds for q = 0 (cf.
+              Conjecture 6.13).
+
+
+              6.2.    A family of irreducible A0 (n)-comodules
+
+              Let I be a composition of N . The element η I = Tω( I¯) 2α(I ∼ ) of HN (0) generates the
+              one-dimensional left HN (0)-module C I . One can use it to construct the A0 (n)-comodule
+
+                     D I = V ⊗N · η I .
+
+                Let A be a noncommutative totally ordered alphabet and let I be a composition. We
+              denote by FI (A) the sum of all quasi-ribbon words of shape I . According to a result of
+              Gessel [10], the commutative image of FI (A) is the quasi-symmetric function FI .
+
+              Example 6.7 The quasi-ribbon tableaux of shape I = (2, 1) over {a < b < c} are
+
+                                          a   a        a   a         a   b           b   b
+                                              b            c             c               c
+
+
+              Thus F21 (a, b, c) = aba + aca + acb + bcb. The commutative image of F21 (a, b, c) is
+              clearly equal to M21 + M111 = F21 , as desired.
+
+              Proposition 6.8 Let I be a composition of N . Then χ(D I ) = FI (x11 , . . . , xnn ).
+
+              Proof: Let QR(I ) be the set of all quasi-ribbon words of shape I . We associate with every
+              word w = ak1 · · · akn of A∗ the tensor w = ak1 ⊗ · · · ⊗ akn of V ⊗n .
+
+              Lemma 6.9        The family (w · η I )w∈Q R(I ) is a linear basis of the A0 (n)-comodule D I .
+
+              Proof of the lemma: Define the natural reading n(r ) of a quasi-ribbon tableau r of shape I
+              as the word obtained by reading r from left to right. If w is the quasi-ribbon word associated
+P1: RPS/PCY      P2: MVG/ASH            QC: MVG
+Journal of Algebraic Combinatorics       KL472-03-Krob           August 6, 1997           10:34
+
+
+
+
+              NONCOMMUTATIVE SYMMETRIC FUNCTIONS IV                                                      369
+
+
+              with r , we also denote by n(w) the natural reading of r . For example, n(ababdc) = aabbcd
+              is the natural reading of the quasi-ribbon tableau
+                                                                    a     a
+                                                                          b   b   c
+                                                                                  d   .
+
+                 Let now i ∈ D(I ). By definition of η I , one has Ti η I = −η I . Hence, we get
+                                                        ½
+                                                            0                 if ki = ki+1 ,
+                     v · η I = − (v · Ti ) · η I =
+                                                            − vσi · η I       if ki < ki+1 ,
+
+              for every v = ak1 ⊗ · · · ⊗ ak N ∈ V ⊗N . In particular,
+
+                     v · η I = −vσi · η I                                                               (10)
+
+              when ki 6= ki+1 . Suppose now that i ∈
+                                                   / D(I ). Then Ti η I = 0. Thus we can write
+
+                     v · η I = (vσi · Ti ) · η I = vσi · Ti η I = 0
+
+              for every v = ak1 ⊗ · · · ⊗ ak N ∈ V ⊗N such that ki > ki+1 . It follows that the family of
+              all tensors of the form (ak1 ⊗ · · · ⊗ ak N ) · η I with ki ≤ ki+1 when i ∈
+                                                                                        / D(I ) and ki < ki+1
+              when i ∈ D(I ) spans the comodule D I . In other words, we get a generating family of
+              D I by taking the set R formed of all w · η I where w runs over the natural readings of all
+              quasi-ribbon tableaux of shape I . Moreover it is easy to see that these elements are not
+              zero.
+                 Now, there is at most one increasing word of a given evaluation which can be the natural
+              reading of some quasi-ribbon tableau of shape I . It follows that R is a linear basis of
+              D I . Finally, formula (10) shows that w · η I = ±n(w) · η I for a quasi-ribbon word w of
+              shape I .                                                                                    2
+
+                 We are now in position to compute χ(D I ). In the notation of Section 4.3,
+                            X
+                   δ(w) =         (w ⊗ u ∗ ) ⊗ u
+                               |u|=|w|
+
+
+              for every w ∈ A∗ . Hence, according to Proposition 4.2,
+                                  X
+                    δ(w · η I ) =    (w ⊗ u ∗ ) ⊗ u · η I ,
+                                       |u|=|w|
+
+
+              and from Lemma 6.9,
+                                                                         
+                                       X           X                 
+                     χ(D I ) =                                 w ⊗ u∗ .                               (11)
+                                     w∈Q R(I )    |u|=|w|
+                                                 u·η I =w·η I
+P1: RPS/PCY      P2: MVG/ASH              QC: MVG
+Journal of Algebraic Combinatorics        KL472-03-Krob        August 6, 1997   10:34
+
+
+
+
+              370                                                                             KROB AND THIBON
+
+
+                  Let now w be a quasi-ribbon word of shape I . Let also u = ak1 · · · ak N be a word distinct
+              from w such that w · η I = u · η I . Let r (u) be the ribbon diagram of shape I obtained by
+              filling the boxes from left to right by the letters of u. Let then r 0 (u) be the quasi-ribbon
+              tableau of shape I obtained from r (u) by sorting all columns in increasing order from top
+              to bottom. Let us finally denote by v(u) the word obtained by reading from left to right
+              the letters of r 0 (u). Using again the arguments of the proof of Lemma 6.9, we see that
+              v(u) · η I = 0 if v(u) is not the natural reading of a quasi-ribbon tableau of shape I . It
+              follows that the alphabets of all columns of r (u) and r (w) must coincide. Since u 6= w,
+              there must exist integers i < j and k < l such that
+                                      ·                    ¸
+                            ··· l
+                               ∗                 k   ···
+                      w⊗u =
+                            ··· i                j   ···
+
+              which is therefore equal to 0. Hence, we have
+                      X
+                              w ⊗ u ∗ = w ⊗ w∗ .
+                       |u|=|w|
+                      u·η I =w·η I
+
+
+              Going back to formula (11), we see that
+                               X
+                   χ(D I ) =         w ⊗ w ∗ = FI (x11 , . . . , xnn ).                                    2
+                                     w∈Q R(I )
+              Note 6.10 The same argument as in Note 6.5 shows that the noncommutative quasi-
+              ribbon functions FI (A) span a commutative subalgebra of the hypoplactic algebra HPl(A),
+              isomorphic to the algebra of quasi-symmetric functions over a commutative alphabet of the
+              same cardinality as A. This property can in fact also be proved in a purely combinatorial
+              way.
+
+              Example 6.11 Let n = 3, N = 4 and I = (3, 1). Then η31 = T3 T2 T1 (1 + T2 ) (1 + T3 )
+              (1 + T2 ) and D31 = V ⊗4 · η31 . By computing the images under η31 of the canonical basis
+              vectors of V ⊗4 , one gets
+
+                      D31 = C a1 a2 a3 a2 · η31 ⊕ C a2 a2 a3 a2 · η31 ⊕ C a1 a1 a3 a2 · η31
+                            ⊕ C a1 a1 a3 a1 · η31 ⊕ C a1 a1 a2 a1 · η31 .
+
+              Thus,
+
+                      χ (D31 ) = x22 x11 x11 x11 + x33 x11 x11 x11 + x33 x22 x22 x22
+                                 + x33 x11 x11 x22 + x33 x11 x22 x22
+                               = x11 x11 x22 x11 + x11 x11 x33 x11 + x22 x22 x33 x22
+                                 + x11 x11 x33 x22 + x11 x22 x33 x22 .
+
+              This last expression is exactly the sum of the quasi-ribbons words associated with the five
+              quasi-ribbon tableaux
+P1: RPS/PCY      P2: MVG/ASH             QC: MVG
+Journal of Algebraic Combinatorics        KL472-03-Krob           August 6, 1997   10:34
+
+
+
+
+              NONCOMMUTATIVE SYMMETRIC FUNCTIONS IV                                                            371
+
+
+                             1    1   1           1   1   1            1   1   2      1    2   2   2   2   2
+                                      2                   3                    3               3           3
+
+
+              Hence χ (D31 ) = F31 (x11 , x22 , x33 ) as desired.
+
+              Proposition 6.12 The D I are irreducible, pairwise non-isomorphic A0 (n)-comodules.
+
+              Proof: Propositions 6.1 and 6.8 imply that the D I are pairwise non-isomorphic. We just
+              have to prove that these comodules are irreducible. Let I be a composition of N and let
+              M be a nonzero subcomodule of D I . According to Lemma 6.9, there exists a family R of
+              quasi-ribbon words of shape I and a family (m w )w∈R of nonzero complex numbers such
+              that
+                         X
+                    m=        m w w · η I ∈ M.
+                            w∈R
+
+              Using the tensor formalism of Section 4.3, it follows that
+                                          Ã                       !
+                                  X           X
+                                                              ∗
+                     δ(m) =                       mw w ⊗ u            ⊗ u · η I ∈ A0 (n) ⊗ M.
+                                 |u|=N    w∈R
+
+
+              As there is at most one quasi-ribbon word of shape I and of a given evaluation, we deduce
+              by homogeneity with respect to the first component of A0 (n) that
+                              X
+                    δ(w) =         (w ⊗ u ∗ ) ⊗ u · η I ∈ A0 (n) ⊗ M
+                                 |u|=N
+
+
+              for every w ∈ R. Let now w be an arbitrary quasi-ribbon word of R and let u = ak1 · · · u k N
+              be a word of length N . Note that w ⊗ u ∗ = 0 if ki ≤ ki+1 when i ∈ D(I ). On the other
+              hand, u · η I = 0 if ki > ki+1 and i ∈/ D(I ) according to the proof of Lemma 6.9. Hence
+                               X
+                    δ(w) =            (w ⊗ u ∗ ) ⊗ u · η I .
+                                 u∈Q R(I )
+
+
+              The monomials w ⊗ u ∗ , where u runs over all quasi-ribbon words of shape I , are nonzero
+              and pairwise distincts elements of A0 (n). Since δ(w) ∈ A0 (n) ⊗ M, all the tensors u · η I
+              are M. According to Lemma 6.9, this shows that M = D I .                                2
+
+              Conjecture 6.13 The family (D I ) I (where I runs through all compositions) is a complete
+              system of irreducible A0 (n)-comodules.
+
+              Note 6.14 Conjecture 6.13 would imply that the character of every A0 (n)-comodule is an
+              element of 10 (n), showing therefore that Theorem 6.2 is still valid when q = 0. Moreover
+              according to Note 6.10, it would also imply that the character ring CharZ (0; n) is isomorphic
+              to the Z-algebra of quasi-symmetric functions over an n-letter alphabet.
+P1: RPS/PCY      P2: MVG/ASH          QC: MVG
+Journal of Algebraic Combinatorics    KL472-03-Krob        August 6, 1997     10:34
+
+
+
+
+              372                                                                        KROB AND THIBON
+
+
+              6.3.    Another family of A0 (n)-comodules
+
+              Let I be a composition of N . The element ν I = Tα(I ) 2α( I¯∼ ) of the 0-Hecke algebra gen-
+              erates the indecomposable projective left Hn (0)-module M I . One can also use to construct
+              the A0 (n)-comodule N I defined by
+
+                     N I = V ⊗N · ν I .
+
+                 A word will be said to be of ribbon shape I (where I is a composition) if it can be obtained
+              by reading from left to right and from top to bottom the columns of a skew Young tableau
+              of ribbon shape I . We denote by R I (A) the sum of all words of A∗ of ribbon shape I .
+
+              Proposition 6.15 Let I be a composition of N . Then χ(N I ) = R I (x11 , . . . , xnn ).
+
+              Proof: We use the same notation as in the proof of Proposition 6.8. Let also R(I ) be the
+              set of all words of ribbon shape I .
+
+              Lemma 6.16 The family (w · 2α( I¯∼ ) )w∈R(I ) is a linear basis of the A0 (n)-comodule N I .
+
+              Proof of the lemma: Note that Ti ν I = −ν I for i ∈ D(I ). It follows that
+                                             
+                                             0          if ki = ki+1 ,
+                   v · ν I = −(v · Ti ) ν I = −vσi · ν I if ki < ki+1 ,
+                                             
+                                               v · νI    if ki > ki+1 ,
+
+              for i ∈ D(I ) and v = ak1 ⊗ · · · ⊗ ak N ∈ V ⊗N . Hence we can rewrite (up to a sign) every
+              v·ν I in such a way that ki > ki+1 for i ∈ D(I ). The structure of the right action of HN (0) on
+              V ⊗N implies that such an element is equal to w · 2α( I¯∼ ) where we still have w = ak1 · · · ak N
+              with ki > ki+1 for i ∈ D(I ). Let now i ∈  / D(I ). Then 2α( I¯∼ ) = 2i 2α( I¯∼ ) . Hence
+
+                     w · 2α( I¯∼ ) = w · 2i 2α( I¯∼ ) = wσi · Ti 2i 2α( I¯∼ ) = 0
+
+              when ki > ki+1 . Every v · ν I can therefore be rewritten as ±w · 2α( I¯∼ ) where w ∈ R(I ).
+              In other words, the family (w · 2α( I¯∼ ) )w∈R(I ) spans N I .
+                 Now, it follows from (8) that
+                             X
+                    V ⊗N =        NI .                                                               (12)
+                               I `N
+
+
+              Since any word of A N has a unique ribbon shape, we deduce that
+                    X                         X              X
+                        |R( I¯)| = dim V ⊗N ≤      dim N I ≤     |R( I¯)|
+                     I `N                           I `N               I `N
+
+
+              from which we get that dim N I is equal to the number of words of ribbon shape I .             2
+P1: RPS/PCY        P2: MVG/ASH        QC: MVG
+Journal of Algebraic Combinatorics    KL472-03-Krob        August 6, 1997   10:34
+
+
+
+
+              NONCOMMUTATIVE SYMMETRIC FUNCTIONS IV                                                    373
+
+
+                 This argument also shows that decomposition (12) is in fact a direct sum. Arguing as in
+              the proof of Proposition 6.8, we see that
+                                       X
+                    δ(w · 2α(I ∼ ) ) =      (w ⊗ u ∗ ) u · 2α(I ∼ )
+                                        u∈R( I¯)
+
+
+              for w ∈ R(I ), whence the theorem.                                                         2
+
+              Example 6.17 Let n = 3, N = 4 and I = (1, 1, 2). Then ν112 = T1 T2 T1 (1 + T3 ) and
+              N112 = V ⊗4 · ν112 . By computing the action of ν211 on the standard basis of V ⊗4 , one gets
+
+                      N112 = Ca3 a2 a1 a1 · ν112 ⊕ Ca3 a2 a1 a2 · ν112 ⊕ Ca3 a2 a1 a3 · ν112 .
+
+              Then,
+
+                      χ(N112 ) = x33 x22 x11 x11 + x33 x22 x11 x22 + x33 x22 x11 x33 .
+
+              This expression is the sum of the ribbon words associated with the 3 ribbon tableaux
+
+                                                   3             3               3
+                                                   2             2               2
+                                                   1   1         1   2           1   3
+
+
+              and χ(N112 ) = R112 (x11 , x22 , x33 ) as desired.
+
+              Note 6.18 Using the same kind of argument as in Section 6.2, one can prove that N I is an
+              indecomposable An (q)-comodule.
+
+              7.     Robinson-Schensted type correspondences
+
+              In the classical case (corresponding to q = 1), the Robinson-Schensted correspondence is
+              the combinatorial counterpart of the decomposition of V ⊗N into GLn (C) × S N -bimodules.
+              On the other hand, for q = 0, there are two natural ways of decomposing V ⊗N into
+              A0 (n) × HN (0)-bicomodules. This leads to two different Robinson-Schensted type corres-
+              pondences, involving here ribbon and quasi-ribbon diagrams.
+
+              7.1.    A first Robinson-Schensted type correspondence
+
+              The first combinatorial algorithm corresponds to the decomposition
+                            M
+                    V ⊗N =       NI                                                                   (13)
+                               I `N
+
+
+              (cf. the proof of Proposition 6.15). Recall that any right HN (0)-submodule of V ⊗N can
+              also be regarded as a left module, the action being given by vTi = −2i v. It follows then
+P1: RPS/PCY      P2: MVG/ASH         QC: MVG
+Journal of Algebraic Combinatorics       KL472-03-Krob          August 6, 1997       10:34
+
+
+
+
+              374                                                                                    KROB AND THIBON
+
+
+              from Lemma 6.16 that N I is a left HN (0)-module whose all composition factors are equal
+              to C I¯∼ . This observation gives us a basis of V ⊗N indexed by pairs (r, qr ) where r is a
+              word of ribbon shape I and where qr is the (unique) standard quasi-ribbon word of shape
+              I¯∼ . The corresponding Robinson-Schensted map is therefore trivial. It just associates to a
+              word w its ribbon diagram. It can clearly be recursively defined by an insertion process as
+              follows.
+                 Let r be the ribbon diagram of w, let x be the letter which is in the last box of r and let
+              a ∈ A. The ribbon diagram of wa is then obtained from r by glueing a at the end of the
+              last row of r if x ≤ a or under the last box of the last row of r if a < x. For example, with
+              w = baccb, we have
+
+                        ∅    -       b      -     b        -        b            -     b             -   b
+                                                  a                 a    c             a     c   c       a   c   c
+                                                                                                                 b
+
+
+              This construction is clearly bijective (the standard quasi-ribbon does not bring here any
+              supplementary information).
+
+              7.2.    A second Robinson-Schensted type correspondence
+
+              The second Robinson-Schensted type algorithm is related to the composition factors of
+              V ⊗N . Using Lemmas 6.9 and 6.16, one can see that these compositions factors are exactly
+              the comodules D I each of them occuring |Q R(I )| times. But D I considered as a left
+              HN (0)-module is isomorphic to M I . It follows that there exists a basis of V ⊗N indexed by
+              pairs (Q, R) where Q is a quasi-ribbon word of shape I and where R is a standard ribbon
+              word of the same shape. The corresponding Robinson-Schensted type algorithm which
+              associates to each word w ∈ A∗ the pair (Q, R) is described below.
+                 Let Q be a quasi-ribbon diagram and let a ∈ A. Let Q 0 be the diagram obtained from Q
+              by deleting its last row and let x (resp. z) be the first (resp. last) letter of the last row of Q.
+              The result Q of the insertion of a in Q is defined by the following rules:
+
+              • if z ≤ a, Q is obtained by adding a box containing a at the end of the last row of Q
+              • if x ≤ a < z, let y be the first letter of the last row of Q which is strictly greater than a.
+                The quasi-ribbon diagram Q is then
+                                                   ...
+                                                           ..
+                                                      Q0    .
+                                                           x       ...       a
+                                                                             y   ...         z
+                                                                                                 ;
+                                                                         0
+              • if a < x, Q is obtained by inserting a in Q and glueing under the quasi-ribbon obtained
+                in this way the last row of Q.
+
+                Let w = a1 · · · an be a word of length n. The pair (Q, R) associated with w can be
+              defined as follows. The quasi-ribbon diagram Q is obtained by inserting the letters of w
+P1: RPS/PCY      P2: MVG/ASH         QC: MVG
+Journal of Algebraic Combinatorics     KL472-03-Krob        August 6, 1997      10:34
+
+
+
+
+              NONCOMMUTATIVE SYMMETRIC FUNCTIONS IV                                                                        375
+
+
+              (from left to right), starting from an empty diagram. The standard ribbon diagram R is
+              iteratively constructed by putting at each step i ∈ [1, n] of the algorithm the number i in
+              the box that contains at this moment in Q the letter ai inserted at this step. Let us illustrate
+              again this correspondence on w = baccb.
+                                           a    2          a       2            a          2              a          2
+              (∅, ∅) -     b   , 1 -       b   , 1 -       b c   , 1 3 -        b c c   , 1 3 4 -         b b      , 1 5
+                                                                                                            c c          3 4
+
+                 The correspondence w → (Q, R) is clearly a bijection. In fact, the quasi-ribbon diagram
+              Q associated with w is of shape C(σ −1 ) where σ = std(w). Going back to Proposition 4.21,
+              this gives the following property, which is the quasi-ribbon version of Knuth’s theorem [20].
+
+              Proposition 7.1 Let u, v ∈ A∗ . Then, u and v correspond to the same quasi-ribbon Q
+              under the second algorithm iff u ≡ v with respect to the hypoplactic congruence.
+
+                 In other words, the hypoplactic relations play, for quasi-ribbons, the same rôle as the
+              plactic relations for Young tableaux.
+
+
+              References
+
+               1. R.W. Carter, “Representation theory of the 0-Hecke algebra,” J. Algebra 15 (1986), 89–103.
+               2. I.V. Cherednik, “An analogue of the character formula for Hecke algebras,” Funct. Anal. Appl. 21 (1987),
+                  172–174.
+               3. E. Date, M. Jimbo, and T. Miwa, “Representations of Uq (gln ) at q = 0 and the Robinson-Schensted corre-
+                  spondence,” in Physics and Mathematics of Strings, Memorial Volume of V. Knizhnik, L. Brink, D. Friedan,
+                  and A.M. Polyakov (Eds.), World Scientific, 1990.
+               4. R. Dipper and S. Donkin, “Quantum GLn ,” Proc. London Math. Soc. Vol. 63, pp. 165–211, 1991.
+               5. G. Duchamp, D. Krob, A. Lascoux, B. Leclerc, T. Scharf, and J.-Y. Thibon, “Euler-Poincaré characteristic
+                  and polynomial representations of Iwahori-Hecke algebras,” Publ. RIMS, Kyoto Univ. 31 (1995), 179–201.
+               6. G. Duchamp, A. Klyachko, D. Krob, and J.-Y. Thibon, Noncommutative Symmetric Functions III: Deforma-
+                  tions of Cauchy and Convolution Algebras, LITP preprint 96/08, Paris, 1996.
+               7. G. Duchamp, D. Krob, B. Leclerc, and J.-Y. Thibon, “Fonctions quasi-symétriques, fonctions symétriques
+                  non-commutatives, et algèbres de Hecke à q = 0,” C.R. Acad. Sci. Paris 322 (1996), 107–112.
+               8. L.D. Faddeev, N.Y. Reshetikin, and L.A. Takhtadzhyan, “Quantization of Lie groups and Lie algebras,”
+                  Leningrad Math. J. 1 (1990), 193–225.
+               9. I.M. Gelfand, D. Krob, A. Lascoux, B. Leclerc, V.S. Retakh, and J.-Y. Thibon, “Noncommutative symmetric
+                  functions,” Adv. in Math. 112 (1995), 218–348.
+              10. I. Gessel, “Multipartite P-partitions and inner product of skew Schur functions,” Contemp. Math. 34 (1984),
+                  289–301.
+              11. J.A. Green, “Polynomial representations of GLn ,” Springer Lecture Notes in Math. 830, 1980.
+              12. N. Hoefsmit, “Representations of Hecke algebras of finite groups with BN-pairs of classical types,” Thesis,
+                  University of British Columbia, 1974.
+              13. J.E. Humphreys, Reflection Groups and Coxeter Groups, Cambridge University Press, 1990.
+              14. N. Iwahori, On the structure of the Hecke ring of a Chevalley group over a finite field,” J. Fac. Sci. Univ.
+                  Tokyo Sect. I 10 (1964), 215–236.
+              15. M. Jimbo, “A q-analogue of U (gl(N + 1)), Hecke algebra and the Yang-Baxter equation,” Lett. Math. Phys.
+                  11 (1986), 247–252.
+              16. M. Kashiwara, “On crystal bases of the q-analogue of universal enveloping algebras,” Duke Math. J. 63
+                  (1991), 465–516.
+P1: RPS/PCY      P2: MVG/ASH          QC: MVG
+Journal of Algebraic Combinatorics      KL472-03-Krob         August 6, 1997       10:34
+
+
+
+
+              376                                                                                      KROB AND THIBON
+
+
+              17. M. Kashiwara and T. Nakashima, “Crystal graphs for representations of the q-analogue of classical Lie
+                  algebras,” J. Algebra 165 (1994), 295–345.
+              18. S.V. Kerov and A.M. Vershik, “Characters and realizations of representations of an infinite dimensional Hecke
+                  algebra, and knot invariants,” Soviet Math. Dokl. 38 (1989), 134–137.
+              19. R.C. King and B.G. Wybourne, “Representations and trace of the Hecke algebra Hn (q) of type An−1 ,” J.
+                  Math. Phys. 33 (1992), 4–14.
+              20. D.E. Knuth, “Permutations, matrices and generalized Young tableaux,” Pacific J. Math. 34 (1970), 709–727.
+              21. D. Krob, B. Leclerc, and J.-Y. Thibon, Noncommutative Symmetric Functions II: Transformations of Alpha-
+                  bets, International J. Alg. Comput. 7 (1997), 181–264.
+              22. A. Lascoux, “Anneau de Grothendieck de la variété de drapeaux,” in The Grothendieck Festschrift, P. Cartier
+                  et al. (Eds.), Birkhäuser, pp. 1–34, 1990.
+              23. A. Lascoux and M.P. Schützenberger, “Le monoı̈de plaxique,” Quad. del. Ric. Sci. 109 (1981), 129–156.
+              24. A. Lascoux, B. Leclerc, and J.-Y. Thibon, “Crystal graphs and q-analogues of weight multiplicities for the
+                  root system An ,” Lett. Math. Phys. 35 (1995), 359–374.
+              25. A. Lascoux, B. Leclerc, and J.-Y. Thibon, “Une conjecture pour le calcul des matrices de décomposition des
+                  algèbres de Hecke de type A aux racines de l’unité,” C.R. Acad. Sci. Paris, Ser. A 321, (1995), 511–516.
+              26. B. Leclerc and J.-Y. Thibon, “The Robinson-Schensted correspondence, crystal bases, and the quantum
+                  straightening at q = 0,” Electronic J. Combinatorics 3 (1996), # 11.
+              27. P. Littelman, “A Plactic Algebra for Semisimple Lie Algebras,” Adv. in Math. 124 (1996), 312–331.
+              28. I.G. Macdonald, Symmetric Functions and Hall Polynomials, Oxford, 1979; 2nd edition, 1995.
+              29. C. Malvenuto and C. Reutenauer, “Duality between quasi-symmetric functions and the Solomon descent
+                  algebra,” J. Algebra 177 (1995), 967–982.
+              30. C. Malvenuto and C. Reutenauer, “Plethysm and Conjugation of Quasi-Symmetric Functions,” preprint, 1995.
+              31. P.N. Norton, “0-Hecke algebras,” J. Austral. Math. Soc. Ser. A 27 (1979), 337–357.
+              32. A. Ram, “A Frobenius formula for the characters of the Hecke algebras,” Invent. Math. 106 (1991), 461–488.
+              33. C. Reutenauer, Free Lie Algebras, Oxford, 1993.
+              34. C. Schensted, “Longest increasing and decreasing subsequences,” Canad. J. Math. 13 (1961), 179–191.
+              35. L. Solomon, “A Mackey formula in the group ring of a Coxeter group,” J. Algebra 41 (1976), 255–268.
+              36. A.J. Starkey, “Characters of the generic Hecke algebra of a system of BN-pairs,” Thesis, University of
+                  Warwick, 1975.
+              37. K. Ueno and Y. Shibukawa, “Character table of Hecke algebra of type A N +1 and representations of the
+                  quantum group Uq (gln+1 ),” in Infinite Analysis, A. Tsuchiya, T. Eguchi, and M. Jimbo (Eds.), World Scientific,
+                  Singapore, Part B, pp. 977–984, 1992.
+
