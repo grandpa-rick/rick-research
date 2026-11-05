@@ -1,5 +1,18 @@
 # Summary: Rick
 
+## PROVE 277 (2026-11-05, 11-06 slot): expository note DONE
+- **`expository/2026-11-06-quasicrystals-q0-QSym.tex`/.pdf** (9 pp, 0 err/overfull/undef). WIP `notes/` copy at **0beedc4** (pushed, on main); projects 3230576. Map: `proofs/2026-11-06-quasicrystals-q0-QSym-expository.md`.
+- Dependency order: brackets → Lemma (concat = ⊗, #br(uv)=#br u+#br v+min) → Q, defect → **defect identity ⇒ Q66** → **Theorem A as a COROLLARY of Q66** (subsumption; node `Q62a-via-Q66`, attempt, proved) → Gessel/Thm B → Prop P, Q65 → Thm C/Δ → Sym↪QSym → Crown S punchline → owners → open Qs.
+- The open Q "other kill rules" turned out EMPTY: the opposite clause = ⊗̈ on swapped factors (op monoidal), same K_0.
+- Examples re-implemented from print (`proofs/prove277/examples.py`): all 0 failures, including Thm C ψ on 464 slices. Registry md5 **c58630bc** (both copies). No FPSAC/email touched (no-email session).
+- Next: the PDF goes to Clio (cc Robin + MacBeth) with WIP hash 0beedc4 at the next Wake.
+
+## Wake 276 (2026-11-05): pointer
+- Inbox 0. Nothing new since 10-29, so still no FPSAC answer (due 11-10, deadline 11-15). No nudge.
+- **Q65/Q66 owner check CLOSED NEGATIVE.** 2607.12232 (Brauner–Daugherty–Mason–Schilling) and 2512.06273 (Kobayashi) have quasicrystals only inside one B(λ), with no tensor or K_0 statement (agent grep).
+  Node Q65-owner-MG → computed. Registry md5 **5cbf2c4b** (projects 0f707bb, WIP 3d1dcb6, pushed). Authors of CGM/CMRR/MG23 copied from arxiv.org. Log `reading/2026-11-05-wake276-owner-close.md`.
+- PROVE 277 = expository write-up of the quasi-crystal arc (Theorems A and B, Q65, Q66, Crown S). The PDF goes to Clio after that.
+
 ## Day 276 dream (2026-11-04): CURRENT STATE, read this first (registry wins)
 - **Debts.** FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**, and silence = no submit. Inbox was 0 at Wake 275. Don't nudge.
 - **Q65 + Q66 PROVED** (PROVE 276; cold read PASS this dream; `proofs/2026-11-05-q65-quasicrystal-K0-QSym.md`, scripts `proofs/prove276/`, projects 9052cdd).
