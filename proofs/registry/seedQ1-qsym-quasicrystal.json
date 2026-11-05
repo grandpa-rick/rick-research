@@ -125,6 +125,40 @@
               "KrobThibon1999_NCSF_V"
             ],
             "children": []
+          },
+          {
+            "id": "Q67",
+            "role": "attempt",
+            "trust": "proved",
+            "file": "proofs/2026-11-05-q67-quasi-schur-weyl.md",
+            "depends_on": [
+              "Q62-B"
+            ],
+            "approach": "PROVE 278. (a) If |std(w)_j-std(w)_{j+1}|>=2 then s_j is the IDENTITY in Gessel b-coordinates C_sigma -> C_{sigma s_j} (same iDes), hence a quasi-crystal iso (definedness+value); path-independent system Phi_{tau sigma}. (b) [n]^k ~= disjoint union over alpha of Q_alpha box L_alpha (L_alpha = linear-extension swap graph of ribbon alpha; classical connectivity Lemma L2 proved). (c) consecutive labels: s_j changes iDes / splits C_sigma; exact defect T_j f'' - f'' T_j = [(x_j,x_{j+1})=(i,i+1)] e_{s_j x}, x=f''_i w, via f''_i = f_i mod B_i (i-inverted span), T_j(B_i) in B_i. Same for e''. (d) F_1^k = sum beta_k(D) F_alpha.",
+            "attribution": "Set-level decomposition: Krob-Thibon/Novelli quasi-ribbon RS (KT FPSAC'97 Thm 3.2; NCSF V Prop 7.1 eq.(18)) + Gessel. Graph form with explicit swaps + exact defect formula: ours in this packaging, likely folklore. Crystal template: Appleby-Simone-McGinley 2610.33772 Thm 6.6/6.7 (read first-hand l.2253-2330, not cited as premise).",
+            "notes": "(c) cites KT NCSF V sec.7 l.873 (U_0 commutes with H_n(0)), read first-hand + computed 17776/17776; e_i linear formula is a dual reading (computed). Verification proofs/prove278/q67.py: 0/9414 non-consecutive failures, control 1602/8362 consecutive failures; defect formula 17776/17776 f and e.",
+            "children": [
+              {
+                "id": "Q67-owner",
+                "role": "attempt",
+                "trust": "checked-sober",
+                "file": "proofs/2026-11-05-q67-quasi-schur-weyl.md",
+                "approach": "Owner grep first-hand over papers/ (2309.14887, 2610.33772, KT IV, KT V, KT FPSAC97): crystal version only in ASM; set-level quasi decomposition in KT/Novelli RS; no graph-level quasi statement found. MG23/BCDS25/CMRR2 full texts not local -> footnote.",
+                "sources": [
+                  "2309.14887"
+                ],
+                "recheck": "2026-11-05 proofs/2026-11-05-q67-quasi-schur-weyl.md",
+                "children": []
+              },
+              {
+                "id": "Q67-norton-projective",
+                "role": "attempt",
+                "trust": "hunch",
+                "file": "proofs/2026-11-05-q67-quasi-schur-weyl.md",
+                "approach": "Seed Q3: S-side multiplicity space L_alpha (size beta_k(D)) is a basis shadow of Norton's projective P_alpha of H_k(0), not the 1-dim simple; quasi-crystal sees simple top on U_0 side, projective on H_k(0) side (Crown S asymmetry again). Recall-only (Norton 1979).",
+                "children": []
+              }
+            ]
           }
         ],
         "sources": [

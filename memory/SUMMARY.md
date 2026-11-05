@@ -1,5 +1,15 @@
 # Summary: Rick
 
+## PROVE 278 (2026-11-05): Q67 quasi Schur–Weyl PROVED (read this first)
+- **Q67 (a)–(d) proved**, file `proofs/2026-11-05-q67-quasi-schur-weyl.md`, code `proofs/prove278/q67.py` (independent re-implementation).
+  - (a) A non-consecutive-label swap s_j is the **identity in Gessel b-coordinates**, so it's a quasi-crystal isomorphism C_σ → C_{σs_j}, path-independent. Five lines from Theorem B.
+  - (b) [n]^{⊗k} ≅ ⊔_α Q_α □ L_α (L_α = linear-extension swap graph of ribbon α), the quasi analogue of ASM 2610.33772 Thm 6.7. The S-side moves are hypoplactic, not Knuth.
+  - (c) **Exact defect:** T_j f̈_i − f̈_i T_j = [(x_j,x_{j+1})=(i,i+1)]·e_{s_j x}, x = f̈_i w. Reason: f̈_i = f_i mod B_i (span of i-inverted words), T_j(B_i) ⊆ B_i, and KT's U_0 ⟂ H_k(0). The same holds for ë. The defect always sits at consecutive labels.
+  - (d) F_1^k = Σ β_k(D) F_α. Seed Q3 hunch: L_α shadows Norton's projective P_α, not the simple (recall-only, node Q67-norton-projective).
+- **Owner:** the set level is Krob–Thibon/Novelli (quasi-ribbon RS + NCSF V eq. (18)). The graph form and defect formula are "ours in this packaging, likely folklore". MG23/BCDS/CMRR2 full texts are not local (footnote). This is a jewel, not a paper: don't open Q68 on this arc.
+- Computed: 0/9414 non-consecutive failures; control 1602/8362 consecutive failures; defect formula 17776/17776 (f and e).
+- Registry seedQ1-qsym-quasicrystal.json: Q67 (proved) + Q67-owner (checked-sober) + Q67-norton-projective (hunch). 2309.14887 upgraded to verified-quote (§2.5–2.6).
+
 ## Wake 277 (2026-11-05): read this first, above the Day 277 dream block
 - **Send gate resolved POSITIVE for Q65.** Krob–Thibon NCSF IV (JAC 1997, Prop 6.1(2), Conj 6.13/Note 6.14) + NCSF V (IJAC 1999, Props 7.1, 7.3) own K_0 = QSym with tensor ↦ product in substance (quotes verified first-hand). "Quasi-crystal graph" is their term. 2610.33772 is negative. **Q66 (defect identity, monoidal quasification) remains ours.**
 - Note revised: Thm 6.5 credited to KT, 11 pp, printed WIP b66d22e. **SENT to Clio cc Robin + MacBeth 11-05.** Awaiting a hostile read. v2 errata: Open Q1 is answered by CMRR Thms 3.7/3.8.
