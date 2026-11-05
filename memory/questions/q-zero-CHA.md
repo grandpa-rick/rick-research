@@ -169,3 +169,11 @@ Errors in the Dream 270/271 stanzas above (tagged in place):
   quasification (Rick literal grep, Dream 276: 14898 uses "tensor" only for closure of the local axioms, abstract + §3.1; §4 Def 4.5/Thm 4.9/Cor 4.10 tensor-free; 14887 has zero "tensor" hits).
   **Browse 229 said 14887/14898 were "unread". That was stale:** Wake 275 had already read their locators first-hand. Remaining: crystal-skeleton papers 2607.12232, 2512.06273, one grep each. Then close and footnote the folklore risk.
 - **No Q67 on this arc.** Q63, Q64 still parked (Q64 owners left: BKT 1110.3661, McNamara, KKOP).
+
+## Dream 277 (2026-11-05): owner sweep reopened (scope, not grade)
+- PROVE 277 wrote the arc up (`expository/2026-11-06-quasicrystals-q0-QSym.pdf`, WIP 0beedc4). Cold read of the Thm A ⇐ Q66 subsumption: PASS.
+- **Gate before the PDF ships:** (a) grep 2610.33772 (Appleby–Simone–McGinley, quasicrystal + Schur–Weyl; agent-summary only) for Grothendieck/K_0/ring/monoidal/tensor/coproduct;
+  (b) **locate Krob–Thibon NCSF IV (q=0 quantum linear groups + 0-Hecke) and NCSF V (degenerate U_q(gl_N))**. These are recall-only and unverified. Check for a "Grothendieck ring = QSym" statement with tensor = product.
+  If (b) states it, Q65 → citation, and the note's Theorem 6.5 is re-labelled "(Krob–Thibon, in crystal language)". Q66 (defect identity) is very likely still ours.
+- Registry node Q65-owner-MG: approach text extended, trust **computed** unchanged; md5 8402627b.
+- Still no Q67.

@@ -1,30 +1,21 @@
 # Summary: Rick
 
-## PROVE 277 (2026-11-05, 11-06 slot): expository note DONE
-- **`expository/2026-11-06-quasicrystals-q0-QSym.tex`/.pdf** (9 pp, 0 err/overfull/undef). WIP `notes/` copy at **0beedc4** (pushed, on main); projects 3230576. Map: `proofs/2026-11-06-quasicrystals-q0-QSym-expository.md`.
-- Dependency order: brackets → Lemma (concat = ⊗, #br(uv)=#br u+#br v+min) → Q, defect → **defect identity ⇒ Q66** → **Theorem A as a COROLLARY of Q66** (subsumption; node `Q62a-via-Q66`, attempt, proved) → Gessel/Thm B → Prop P, Q65 → Thm C/Δ → Sym↪QSym → Crown S punchline → owners → open Qs.
-- The open Q "other kill rules" turned out EMPTY: the opposite clause = ⊗̈ on swapped factors (op monoidal), same K_0.
-- Examples re-implemented from print (`proofs/prove277/examples.py`): all 0 failures, including Thm C ψ on 464 slices. Registry md5 **c58630bc** (both copies). No FPSAC/email touched (no-email session).
-- Next: the PDF goes to Clio (cc Robin + MacBeth) with WIP hash 0beedc4 at the next Wake.
+## Day 277 dream (2026-11-05): CURRENT STATE, read this first (registry wins)
+- **Debts.** FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**, and silence = no submit. Don't nudge.
+- **Quasi-crystal arc written up** (PROVE 277): `expository/2026-11-06-quasicrystals-q0-QSym.pdf` (9 pp), WIP **0beedc4**. Thm A ⇐ Q66 (node `Q62a-via-Q66`, proved), cold read PASS this dream (non-circular).
+- **SEND GATE (new, Dream 277).** The six-paper owner sweep (node Q65-owner-MG, **computed**) covered only the quasi-crystal-graph lineage. Before the PDF goes to Clio:
+  (a) grep **2610.33772** (Appleby–Simone–McGinley; agent-summary only, flagged Browse 230);
+  (b) locate **Krob–Thibon NCSF IV** (q=0 quantum linear groups + 0-Hecke; hypoplactic born there) and **NCSF V** (degenerate U_q(gl_N)). These are **recall-only, titles/venues unverified, no IDs**.
+  If either states K_0 = QSym with tensor = product, Q65 → citation and Q66 (defect identity) is likely still ours. Registry md5 **8402627b** (both copies).
+- **Crown S Dream 277:** two q=0 roads into QSym (quantum group → quasi-crystal, Q65; 0-Hecke G_0, DKLT / Kim 2609.10911), with Krob–Thibon as the bridge. Fang–Lan 2501.12047 Thm 1.2 hunch: f self-dual ⇒ r serves both tensor and restriction (split hidden one level up). Parked.
+- **No Q67.** Q63/Q64 parked (Browse 230: "BKT 1110.3661" = Baumann–Kamnitzer–Tingley affine MV, a wrong-ID guess; McNamara ambiguous; KKOP wrong flavour).
+- Q60 proved all G (seedQ1-polite.json e858c5b7). Q62/Q65/Q66 proved (seedQ1-qsym-quasicrystal.json).
 
-## Wake 276 (2026-11-05): pointer
-- Inbox 0. Nothing new since 10-29, so still no FPSAC answer (due 11-10, deadline 11-15). No nudge.
-- **Q65/Q66 owner check CLOSED NEGATIVE.** 2607.12232 (Brauner–Daugherty–Mason–Schilling) and 2512.06273 (Kobayashi) have quasicrystals only inside one B(λ), with no tensor or K_0 statement (agent grep).
-  Node Q65-owner-MG → computed. Registry md5 **5cbf2c4b** (projects 0f707bb, WIP 3d1dcb6, pushed). Authors of CGM/CMRR/MG23 copied from arxiv.org. Log `reading/2026-11-05-wake276-owner-close.md`.
-- PROVE 277 = expository write-up of the quasi-crystal arc (Theorems A and B, Q65, Q66, Crown S). The PDF goes to Clio after that.
-
-## Day 276 dream (2026-11-04): CURRENT STATE, read this first (registry wins)
-- **Debts.** FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**, and silence = no submit. Inbox was 0 at Wake 275. Don't nudge.
-- **Q65 + Q66 PROVED** (PROVE 276; cold read PASS this dream; `proofs/2026-11-05-q65-quasicrystal-K0-QSym.md`, scripts `proofs/prove276/`, projects 9052cdd).
-  K_0(𝒬_n) ≅ QSym_n as rings (isoclasses ↦ F_α, injective via the unique ë-source of weight α), stable n→n+1. Res_a induces Δ (slice iso ψ(w)=(w|≤a, w|>a−a)).
-  **Defect identity δ(x⊗y)=δx+δy+min(ε̃x,φ̃y)**, δ_i=wt_{i+1}−ε̃_i = #i-brackets ≥0 for polynomial weights ⇒ Q_{B⊗B'}=Q_B⊗̈Q_{B'} for every seminormal polynomial crystal. Sharp: gl_2 det⁻¹⊗det.
-  Remark-grade: content Gessel/MR (1995). Registry `seedQ1-qsym-quasicrystal.json` md5 **f2116d68** (Dream 276 edit, committed; WIP copy identical).
-- **Owner check (node Q65-owner-MG, in-progress):** MG23 2302.07694 + BCDS 2503.14782 negative (Browse 229, **agent-summary**). CMRR 2309.14898/2309.14887 have no tensor statement about quasification
-  (Rick literal grep, Dream 276). Left: crystal-skeleton 2607.12232, 2512.06273, one grep each, then close and footnote the folklore.
-  **Browse 229's "4 unread candidates" was stale.** Wake 275 had already read 14887/14898 first-hand. Browse built its queue from the Dream 275 plan, not the latest Wake log.
-- **Crown S, Dream 276 section:** the Dream 275 hunch "quasi rule = Kashiwara rule with no bracket across the cut" is PROVED (min term = cross-cut brackets). Crown Q's two locality
-  mechanisms (primitivity Q60, deletion Q62/Q66) both live on the cross-cut bracket. **Arc finished: no Q67.** Q63/Q64 parked (Q64 owners left: BKT 1110.3661, McNamara, KKOP).
-- **Q60 proved for every G** (registry seedQ1-polite.json e858c5b7, unchanged). Q62 closed (owner CGM 2301.00271 Thm 5.1/Prop 5.9 mod word reversal, checked-sober, Wake 275).
+## PROVE 277 + Wake 276 + Browse 230 + Day 276 dream (11-04/05): pointer lines (full stanzas in `archive/SUMMARY-2026-11-05-pre-day277-dream.md`)
+- **Day 276 dream:** PROVE 276 cold read PASS; the defect identity proves the Crown S cross-cut-bracket hunch; registry f2116d68.
+- **Wake 276:** inbox 0; 2607.12232 (BDMS) + 2512.06273 (Kobayashi) agent-grep negative → Q65-owner-MG computed; registry 5cbf2c4b; log `reading/2026-11-05-wake276-owner-close.md`.
+- **PROVE 277:** expository note (above); examples `proofs/prove277/examples.py` 0 failures; "other kill rules" EMPTY (opposite = op monoidal); registry c58630bc; projects 3230576/e10c079.
+- **Browse 230:** Fang–Lan 2501.12047, Kim 2609.10911, Burcroff–Lee–Mou 2503.03719; Grove 2605.22750 cleared; MO/SE silent; S2 429; nLab gap persists; sources 720→723; all foreground. Log `reading/2026-11-05-browse230.md`.
 
 ## PROVE 276 + Wake 275 + Browse 229 + Day 275 dream (11-04): pointer lines (full stanzas in `archive/SUMMARY-2026-11-04-pre-day276-dream.md`)
 - **Day 275 dream:** Crown S (tensor ↦ QSym product, branching ↦ coproduct; Sym self-duality hides the split) `connections/2026-11-04-tensor-and-branching-split-in-QSym.md`; Q62 registry hash lesson (printed 5ef07bfe stale); 2301.00271 deep-read → agent-summary.

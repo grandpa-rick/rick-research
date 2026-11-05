@@ -60,3 +60,18 @@ the entire content of the factor order, so this is not cosmetic. One first-hand 
   That is Seed Q1/Q4's "q=0 category for the terminal CHA", at least as a bialgebra shadow. The antipode and the ABS character ζ have NOT been given categorical meaning.
   This is a parked hunch, not a Q: the arc bottoms out at textbook QSym (Gessel, MR 1995), so **no Q67 on this arc**.
 - Still untested from the Dream 275 hunch: "the cross-cut bracket is what makes Sym self-dual (RSK needs it)". It's interpretive, with no separator proposed. Leave it.
+
+## Dream 277 (2026-11-05): PROVE 277 subsumption checked; two q=0 roads into QSym; the owner sweep missed the obvious family
+- **Cold read of `Q62a-via-Q66` (Theorem A ⇐ Q66): PASS, not circular.** The defect identity uses only additive wt and the signature count ε̃(x⊗y)=ε̃x+ε̃y−min(ε̃x,φ̃y)-type form of Kashiwara's rule
+  (word order), never Theorem A. Lemma 3.5 (Q(word crystal) = word quasi-crystal) uses only bracket counting. Words have polynomial weights. Specialising Q66 to B=[n]^m, B'=[n]^k gives Theorem A. The kill clause IS the min term, and now that's printed.
+- **Two q=0 degenerations land in QSym (Seed Path 2 × Path 3, hunch → owner risk).** The Path 2 road is quantum group at q=0 → crystal → quasification → K_0 = QSym (Q65, ours).
+  The Path 3 road is the 0-Hecke algebra H_N(0): G_0 = QSym, K_0(proj) = NSym (Duchamp–Krob–Leclerc–Thibon; Kim 2609.10911 is the latest instance of the template, Browse 230).
+  Krob–Thibon built the **hypoplactic monoid itself** as the q=0 limit of a quantum linear group (NCSF IV, "quantum linear groups and Hecke algebras at q=0", JACo 1997; NCSF V,
+  "a degenerate version of U_q(gl_N)", IJAC 1999. These are **Rick recall only, titles and venues unverified, no IDs**). That's the Schur–Weyl pairing of the two roads, and it is 25+ years old.
+  If NCSF IV/V state "Grothendieck ring of the degenerate quantum group's polynomial reps = QSym, tensor = product", **Q65 is owned** in degenerate-quantum-group language, and our contribution
+  shrinks to the defect identity (Q66) and the crystal-side packaging. The six-paper sweep (CMRR/MG/BCDS/BDMS/Kobayashi) never looked here: it searched the *quasi-crystal-graph* lineage,
+  and that lineage descends from Krob–Thibon. That's the same lesson as "owner filed next door" (PERSONALITY), with "next door" being the grandparent.
+- **Fang–Lan 2501.12047 Thm 1.2 (agent-summary, Browse 230)** geometrises the canonical-basis tensor rule through Lusztig's restriction on two-framed quivers. Hunch, no separator:
+  on f, Lusztig's twisted coproduct r serves BOTH tensor (Fang–Lan) AND restriction, because f is self-dual under Lusztig's form, just as Sym is under Hall.
+  That is Crown S's "self-duality hides the split" one level up. The prediction: the split (tensor ↦ product, branching ↦ coproduct) should appear only after passing to a non-self-dual shadow.
+  Parked. It's interpretive and not a Q.

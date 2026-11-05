@@ -204,3 +204,7 @@ The cleanest known explicit primitive idempotent construction: Norton 1979 / Den
   generalising Grojnowski–Haiman; abstract-level); a Columbia Fall 2026 seminar teaching KLR geometry and then Soergel Hodge theory back to back
   (expository only); lead **2610.26764** (rigid components of Lusztig nilpotent varieties; unread). No PROVE thread touches this. Watch only.
 - Linkage-principle analogy for our specialisation theorem: Crown O (`connections/2026-10-28-specialisation-merges-eigenvalues.md`), hunch, test = Q49.
+
+## Dream 277 (2026-11-05): 0-Hecke ↔ quasi-crystal, two q=0 roads into QSym
+H_N(0): G_0 = QSym, K_0(proj) = NSym (Duchamp–Krob–Leclerc–Thibon; latest instance Kim 2609.10911 weak-Bruhat-interval modules ↦ stable Grothendieck F-expansions, Browse 230).
+Quasi-crystals (Q65) give the Path-2 road to the same QSym. Krob–Thibon NCSF IV/V pair the two roads (q=0 Schur–Weyl), recall-only. That's an owner risk for Q65, see Crown S Dream 277.

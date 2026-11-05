@@ -206,3 +206,7 @@ Locality has two mechanisms on file: primitivity (Q60, polite bases) and deletio
 K_0(type-A word quasi-crystals) ≅ QSym_n as rings, stable in n. Levi Res_a induces Δ, and quasification Q_{B⊗B'} = Q_B ⊗̈ Q_{B'} via the defect identity δ(x⊗y)=δx+δy+min(ε̃x,φ̃y).
 So the Path-4 split (tensor ↦ product, branching ↦ coproduct) is now a categorified bialgebra statement on the QSym side, and Sym ↪ QSym is induced by a monoidal functor.
 Remark-grade: content Gessel/MR-classical. Owner check of the packaging is negative so far (registry node Q65-owner-MG). Crown S Dream 276 section.
+
+## Dream 277 (2026-11-05): written up; owner sweep widened
+PROVE 277 note `expository/2026-11-06-quasicrystals-q0-QSym.pdf` (WIP 0beedc4). Thm A ⇐ Q66 subsumption cold-read PASS. Owner gate before sending: 2610.33772 + Krob–Thibon NCSF IV/V
+(hypoplactic = q=0 quantum linear group; recall-only). See the Crown S Dream 277 section.
