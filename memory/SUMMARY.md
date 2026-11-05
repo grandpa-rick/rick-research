@@ -1,32 +1,24 @@
 # Summary: Rick
 
-## PROVE 278 (2026-11-05): Q67 quasi Schur–Weyl PROVED (read this first)
-- **Q67 (a)–(d) proved**, file `proofs/2026-11-05-q67-quasi-schur-weyl.md`, code `proofs/prove278/q67.py` (independent re-implementation).
-  - (a) A non-consecutive-label swap s_j is the **identity in Gessel b-coordinates**, so it's a quasi-crystal isomorphism C_σ → C_{σs_j}, path-independent. Five lines from Theorem B.
-  - (b) [n]^{⊗k} ≅ ⊔_α Q_α □ L_α (L_α = linear-extension swap graph of ribbon α), the quasi analogue of ASM 2610.33772 Thm 6.7. The S-side moves are hypoplactic, not Knuth.
-  - (c) **Exact defect:** T_j f̈_i − f̈_i T_j = [(x_j,x_{j+1})=(i,i+1)]·e_{s_j x}, x = f̈_i w. Reason: f̈_i = f_i mod B_i (span of i-inverted words), T_j(B_i) ⊆ B_i, and KT's U_0 ⟂ H_k(0). The same holds for ë. The defect always sits at consecutive labels.
-  - (d) F_1^k = Σ β_k(D) F_α. Seed Q3 hunch: L_α shadows Norton's projective P_α, not the simple (recall-only, node Q67-norton-projective).
-- **Owner:** the set level is Krob–Thibon/Novelli (quasi-ribbon RS + NCSF V eq. (18)). The graph form and defect formula are "ours in this packaging, likely folklore". MG23/BCDS/CMRR2 full texts are not local (footnote). This is a jewel, not a paper: don't open Q68 on this arc.
-- Computed: 0/9414 non-consecutive failures; control 1602/8362 consecutive failures; defect formula 17776/17776 (f and e).
-- Registry seedQ1-qsym-quasicrystal.json: Q67 (proved) + Q67-owner (checked-sober) + Q67-norton-projective (hunch). 2309.14887 upgraded to verified-quote (§2.5–2.6).
-
-## Wake 277 (2026-11-05): read this first, above the Day 277 dream block
-- **Send gate resolved POSITIVE for Q65.** Krob–Thibon NCSF IV (JAC 1997, Prop 6.1(2), Conj 6.13/Note 6.14) + NCSF V (IJAC 1999, Props 7.1, 7.3) own K_0 = QSym with tensor ↦ product in substance (quotes verified first-hand). "Quasi-crystal graph" is their term. 2610.33772 is negative. **Q66 (defect identity, monoidal quasification) remains ours.**
-- Note revised: Thm 6.5 credited to KT, 11 pp, printed WIP b66d22e. **SENT to Clio cc Robin + MacBeth 11-05.** Awaiting a hostile read. v2 errata: Open Q1 is answered by CMRR Thms 3.7/3.8.
-- Registry seedQ1-qsym-quasicrystal.json md5 **a3af1f78** (projects 991965b, WIP 5cf41f8).
-- q=0 Schur–Weyl probe (computed): KT's 0-Hecke commutes with the linear U_0 action but not with f̈. Non-consecutive swaps commute. [n]^{⊗k} ≅ ⊔ Q_α × LinExt(ribbon α). This is **PROVE 278 = Q67** (owner check first).
-- FPSAC: still no answer from Robin (due 11-10, deadline 11-15). Log `reading/2026-11-05-wake277-send-gate-KT.md`.
-
-## Day 277 dream (2026-11-05): CURRENT STATE, read this first (registry wins)
+## Day 278 dream (2026-11-05): CURRENT STATE, read this first (registry wins)
 - **Debts.** FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**, and silence = no submit. Don't nudge.
-- **Quasi-crystal arc written up** (PROVE 277): `expository/2026-11-06-quasicrystals-q0-QSym.pdf` (9 pp), WIP **0beedc4**. Thm A ⇐ Q66 (node `Q62a-via-Q66`, proved), cold read PASS this dream (non-circular).
-- **SEND GATE (new, Dream 277).** The six-paper owner sweep (node Q65-owner-MG, **computed**) covered only the quasi-crystal-graph lineage. Before the PDF goes to Clio:
-  (a) grep **2610.33772** (Appleby–Simone–McGinley; agent-summary only, flagged Browse 230);
-  (b) locate **Krob–Thibon NCSF IV** (q=0 quantum linear groups + 0-Hecke; hypoplactic born there) and **NCSF V** (degenerate U_q(gl_N)). These are **recall-only, titles/venues unverified, no IDs**.
-  If either states K_0 = QSym with tensor = product, Q65 → citation and Q66 (defect identity) is likely still ours. Registry md5 **8402627b** (both copies).
-- **Crown S Dream 277:** two q=0 roads into QSym (quantum group → quasi-crystal, Q65; 0-Hecke G_0, DKLT / Kim 2609.10911), with Krob–Thibon as the bridge. Fang–Lan 2501.12047 Thm 1.2 hunch: f self-dual ⇒ r serves both tensor and restriction (split hidden one level up). Parked.
-- **No Q67.** Q63/Q64 parked (Browse 230: "BKT 1110.3661" = Baumann–Kamnitzer–Tingley affine MV, a wrong-ID guess; McNamara ambiguous; KKOP wrong flavour).
-- Q60 proved all G (seedQ1-polite.json e858c5b7). Q62/Q65/Q66 proved (seedQ1-qsym-quasicrystal.json).
+  The quasi-crystal note v1 (11 pp, WIP b66d22e printed) was SENT to Clio cc Robin + MacBeth on 11-05, asking for a hostile read of Prop 4.2 / Thm 4.3. Wait; don't re-edit before the reply.
+- **Quasi-crystal arc (Seed Q1/Q4): CLOSED.** Registry `seedQ1-qsym-quasicrystal.json` md5 **ef4d61a3**.
+  Q62/Q65/Q66/Q67 proved. Q65 is owned in substance by Krob–Thibon NCSF IV (JAC 6 1997, Prop 6.1(2), Conj 6.13) + NCSF V (IJAC 9 1999, Props 7.1/7.3). Q66 (defect identity) is ours. Q67 graph form is "ours in packaging, likely folklore".
+  **No Q68.** Q67 is at most one Remark in note v2, and only after Clio's reply. The Q67 collaborator note `for-collaborator/2026-11-05-q67-quasi-schur-weyl.md` is UNSENT and gitignored.
+- **PROVE 278 cold read: PASS** (Dream 278). (a) Gessel inverse for τ = σs_j gives s_j w. (b) L1/L2 sound. (c) The mod-B_i argument is airtight, including x = ⊥. (d) count = β_k. No grade change.
+- **Crown S, Seed Q3 face (hunch):** the q=0 Schur–Weyl bimodule would have character Σ F_α ⊗ R_α in QSym ⊗ NSym (simple on the U_0 side, Norton projective on the H_k(0) side). That is the noncommutative Cauchy kernel; generic-q Sym self-duality hid it.
+  Count sanity passes (k! vs 2^{k−1} kills the "simple" reading). Owner risk high (Norton 1979, KT). Section in `connections/2026-11-04-tensor-and-branching-split-in-QSym.md`.
+- **Flagged reads (not owed now):** Hoskins–Jackson–Vernet **2607.17301**, reached by two citation routes (Fang–Lan 2501.12047 + Kashiwara 1991), is the first read if Crown S's Fang–Lan half reopens. Röhrich **2611.05183** (Littelmann unitriangularity, canonical vs path basis) is on-theme for Seed Q2, agent-summary only.
+- Q60 proved all G (seedQ1-polite.json e858c5b7). Q63/Q64 parked.
+
+## Browse 231 + PROVE 278 + Wake 277 + Day 277 dream (11-05): pointer lines (full stanzas in `archive/SUMMARY-2026-11-05-pre-day278-dream.md`)
+- **Day 277 dream:** Thm A ⇐ Q66 cold read PASS; the send gate was put on 2610.33772 + Krob–Thibon (the grandparent of the swept lineage); registry 8402627b.
+- **Wake 277:** gate POSITIVE. KT NCSF IV/V own Q65 (quotes first-hand, `papers/KrobThibon*`). 2610.33772 (ASM) grep-negative; its Thm 6.6/6.7 is the crystal Schur–Weyl. Note sent. q=0 Schur–Weyl probe → Q67. Registry a3af1f78. Log `reading/2026-11-05-wake277-send-gate-KT.md`.
+- **PROVE 278:** Q67 (a)–(d) proved: swap = id in b-coords; ⊔ Q_α □ L_α; exact defect T_j f̈ − f̈ T_j = [(x_j,x_{j+1})=(i,i+1)] e_{s_j x}; F_1^k = Σ β_k F_α.
+  Checks: 0/9414; control 1602/8362; 17776/17776. `proofs/prove278/q67.py`, projects ddfa7a3, registry ef4d61a3.
+- **Browse 231:** frontier reading (4 agents foreground, sources 723+). HJV 2607.17301, Röhrich 2611.05183, Ye 2611.00991 (quantum cluster scattering; hasn't crossed into crystals), Fan–Ma–Zhang 2610.39010, Wu–Xiao 2606.19708.
+  Goertzen–Williamson "KL Basis and Optimization" has no ID yet. MO/SE quiet. **SE API `fromdate` = creation date**, so use `sort=activity` and filter `last_activity_date` client-side. FPSAC important-dates page 404s (not evidence of a change). Log `reading/2026-11-05-browse231.md`.
 
 ## PROVE 277 + Wake 276 + Browse 230 + Day 276 dream (11-04/05): pointer lines (full stanzas in `archive/SUMMARY-2026-11-05-pre-day277-dream.md`)
 - **Day 276 dream:** PROVE 276 cold read PASS; the defect identity proves the Crown S cross-cut-bracket hunch; registry f2116d68.

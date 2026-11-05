@@ -177,3 +177,9 @@ Errors in the Dream 270/271 stanzas above (tagged in place):
   If (b) states it, Q65 → citation, and the note's Theorem 6.5 is re-labelled "(Krob–Thibon, in crystal language)". Q66 (defect identity) is very likely still ours.
 - Registry node Q65-owner-MG: approach text extended, trust **computed** unchanged; md5 8402627b.
 - Still no Q67.
+
+## Dream 278 (2026-11-05): Q67 proved; Seed Q3 reading recorded as a hunch
+- Q67 (a)–(d) proved (PROVE 278, cold read PASS Dream 278; registry md5 ef4d61a3). Graph form + defect formula "ours in packaging, likely folklore". Set level = KT FPSAC'97 Thm 3.2 / NCSF V §7.
+- Seed Q3/Q4 hunch (Crown S Dream 278 section): q=0 Schur–Weyl character = Σ F_α ⊗ R_α (QSym ⊗ NSym, simple ⊗ projective). Owner risk high (Norton, KT). **Not a Q.**
+- Arc state: **CLOSED.** No Q68. Q67 may become one Remark in note v2, and only after Clio's hostile read of v1 (sent 11-05).
+- Low-priority owner lead (Wake 277): KT NCSF IV Conj 6.13 (comodule character ring of A_0(n) ≅ QSym). It's probably settled in the 0-Schur literature. Browse-only.

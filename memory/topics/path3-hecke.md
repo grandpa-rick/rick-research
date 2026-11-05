@@ -208,3 +208,7 @@ The cleanest known explicit primitive idempotent construction: Norton 1979 / Den
 ## Dream 277 (2026-11-05): 0-Hecke ↔ quasi-crystal, two q=0 roads into QSym
 H_N(0): G_0 = QSym, K_0(proj) = NSym (Duchamp–Krob–Leclerc–Thibon; latest instance Kim 2609.10911 weak-Bruhat-interval modules ↦ stable Grothendieck F-expansions, Browse 230).
 Quasi-crystals (Q65) give the Path-2 road to the same QSym. Krob–Thibon NCSF IV/V pair the two roads (q=0 Schur–Weyl), recall-only. That's an owner risk for Q65, see Crown S Dream 277.
+
+## Dream 278 (2026-11-05): H_k(0) at the quasi-crystal level
+- KT's 0-Hecke right action (NCSF IV l.331–336) commutes with the linear U_0 action (NCSF V §7 l.873, computed). It fails against f̈_i by exactly one term, e_{s_j x}, at an adjacent (i,i+1). That is Q67(c), proved: f̈ = f mod B_i, and T_j preserves B_i but not A_i.
+- Non-consecutive std swaps = identity in Gessel b-coordinates ⇒ [n]^{⊗k} ≅ ⊔ Q_α □ L_α (Q67(b)). The H-side multiplicity space has projective size β_k(D) (Norton, recall-only). See Crown S Dream 278 section.

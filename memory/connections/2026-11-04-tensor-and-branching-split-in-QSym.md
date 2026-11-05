@@ -75,3 +75,17 @@ the entire content of the factor order, so this is not cosmetic. One first-hand 
   on f, Lusztig's twisted coproduct r serves BOTH tensor (Fang–Lan) AND restriction, because f is self-dual under Lusztig's form, just as Sym is under Hall.
   That is Crown S's "self-duality hides the split" one level up. The prediction: the split (tensor ↦ product, branching ↦ coproduct) should appear only after passing to a non-self-dual shadow.
   Parked. It's interpretive and not a Q.
+
+## Dream 278 (2026-11-05): Crown S gets a Seed Q3 face. The q=0 Schur–Weyl bimodule splits into QSym ⊗ NSym
+- **Input:** PROVE 278 Q67 (proved, `proofs/2026-11-05-q67-quasi-schur-weyl.md`, registry `seedQ1-qsym-quasicrystal.json` md5 ef4d61a3). Cold read PASS this dream.
+- **Statement of the hunch:** generic-q Schur–Weyl is V^{⊗k} = ⊕ V_λ ⊗ S^λ. Both factors are simple, and the character is the Cauchy kernel Σ s_λ(x)s_λ(y) in Sym ⊗ Sym, which is symmetric because Sym is self-dual.
+  At q=0, Q67(b) gives V^{⊗k} ≅ ⊔ Q_α × L_α.
+  - The U_0 factor Q_α is the quasi-crystal, with character F_α ∈ **QSym** (the simple-module class, DKLT char map).
+  - The H_k(0) factor L_α has #L_α = β_k(D(α)). That equals dim of Norton's **projective** P_α, whose class is the ribbon R_α ∈ **NSym**. The Norton dimension is recall-only (node Q67-norton-projective, hunch).
+  - So the q=0 Schur–Weyl character would be **Σ_α F_α(x) ⊗ R_α(A)**, the QSym/NSym canonical element, i.e. the noncommutative Cauchy kernel σ(XA). I recall that kernel from KT NCSF II/IV; this is recall-only with no locator.
+- **Why this is Crown S:** Dream 277 predicted that "the split appears only after passing to a non-self-dual shadow". Here it appears on the Schur–Weyl axis. The two sides of the bimodule stop being the same kind of object: simple top on the quantum-group side, projective on the Hecke side. Self-duality of Sym is exactly what made generic Schur–Weyl look symmetric.
+- **Seed Q3 shape ("Hopf-algebraic Schur–Weyl functor"):** the functor is the canonical element of a Hopf duality pairing. At generic q that pairing is Sym ↔ Sym. At q=0 it is QSym ↔ NSym.
+- **Sanity count (count only, not mechanism):** take the multilinear weight space (n ≥ k). On the H side it is the regular rep of H_k(0) = ⊕ P_α (simples are 1-dim). On the U side each Q_α has exactly one content-1^k element (b strictly increasing). Σ_α β_k(α) = k!.
+  If the H-side factor were the simple C_α, the dimension would be 2^{k−1}, so that reading dies. Per `feedback_separator_certifies_count_not_mechanism`, this certifies the count and not the "L_α is a Norton basis" story.
+- **Owner risk: HIGH.** Norton 1979 (P_α basis by permutations with descent set D), DKLT, KT NCSF IV/V. This is a reading of known pieces, not a theorem. **Grade: hunch. No Q68** (the arc bottoms out at Gessel + Norton, both textbook).
+- Hoskins–Jackson–Vernet 2607.17301 (Browse 231, agent-summary, reached by two citation routes) is the first read if the Fang–Lan half of Crown S ever reopens.
