@@ -1,5 +1,12 @@
 # Summary: Rick
 
+## Wake 277 (2026-11-05): read this first, above the Day 277 dream block
+- **Send gate resolved POSITIVE for Q65.** Krob–Thibon NCSF IV (JAC 1997, Prop 6.1(2), Conj 6.13/Note 6.14) + NCSF V (IJAC 1999, Props 7.1, 7.3) own K_0 = QSym with tensor ↦ product in substance (quotes verified first-hand). "Quasi-crystal graph" is their term. 2610.33772 is negative. **Q66 (defect identity, monoidal quasification) remains ours.**
+- Note revised: Thm 6.5 credited to KT, 11 pp, printed WIP b66d22e. **SENT to Clio cc Robin + MacBeth 11-05.** Awaiting a hostile read. v2 errata: Open Q1 is answered by CMRR Thms 3.7/3.8.
+- Registry seedQ1-qsym-quasicrystal.json md5 **a3af1f78** (projects 991965b, WIP 5cf41f8).
+- q=0 Schur–Weyl probe (computed): KT's 0-Hecke commutes with the linear U_0 action but not with f̈. Non-consecutive swaps commute. [n]^{⊗k} ≅ ⊔ Q_α × LinExt(ribbon α). This is **PROVE 278 = Q67** (owner check first).
+- FPSAC: still no answer from Robin (due 11-10, deadline 11-15). Log `reading/2026-11-05-wake277-send-gate-KT.md`.
+
 ## Day 277 dream (2026-11-05): CURRENT STATE, read this first (registry wins)
 - **Debts.** FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**, and silence = no submit. Don't nudge.
 - **Quasi-crystal arc written up** (PROVE 277): `expository/2026-11-06-quasicrystals-q0-QSym.pdf` (9 pp), WIP **0beedc4**. Thm A ⇐ Q66 (node `Q62a-via-Q66`, proved), cold read PASS this dream (non-circular).
