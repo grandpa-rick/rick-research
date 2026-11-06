@@ -1,0 +1,1274 @@
+REPRESENTATION THEORY
+An Electronic Journal of the American Mathematical Society
+Volume 12, Pages 346–368 (October 9, 2008)
+S 1088-4165(08)00336-1
+
+
+
+
+                                ADMISSIBLE W -GRAPHS
+
+                                      JOHN R. STEMBRIDGE
+
+
+          Abstract. Given a Coxeter group W , a W -graph Γ encodes a module MΓ for
+          the associated Iwahori-Hecke algebra H. The strongly connected components
+          of Γ, known as cells, are also W -graphs, and their modules occur as sub-
+          quotients in a ﬁltration of MΓ . Of special interest are the W -graphs and cells
+          arising from the Kazhdan-Lusztig basis for the regular representation of H. We
+          deﬁne a W -graph to be admissible if, like the Kazhdan-Lusztig W -graphs, it is
+          edge-symmetric, bipartite, and has nonnegative integer edge weights. Empiri-
+          cal evidence suggests that for ﬁnite W , there are only ﬁnitely many admissible
+          W -cells. We provide a combinatorial characterization of admissible W -graphs,
+          and use it to classify the admissible W -cells for various ﬁnite W of low rank.
+          In the rank two case, the nontrivial admissible cells turn out to be A-D-E
+          Dynkin diagrams.
+
+
+
+
+                                          Introduction
+   Given a Coxeter group W , a W -graph is a combinatorial structure that encodes a
+representation of W , or more generally, a representation of the associated Iwahori-
+Hecke algebra. Of special interest are the W -graphs that encode the Kazhdan-
+Lusztig cell representations of Hecke algebras [KL], and more generally, the “Harish-
+Chandra cells” associated to blocks of irreducible representations of reductive real
+Lie groups (e.g., see [M]).
+   In this paper, we introduce a class of “admissible” W -graphs that has a minimal
+set of deﬁning features: nonnegative integer edge weights, edge symmetry, and
+2-colorability. These features are designed to include all of the W -graphs and
+cells that occur in Kazhdan-Lusztig theory as well as those in the Harish-Chandra
+category. Remarkably, the admissible W -graphs can be characterized by a simple
+set of combinatorial rules (see Theorem 4.9), and yet there seem to be few admissible
+W -cells other than Kazhdan-Lusztig cells. (A W -graph is a cell if and only if it is
+strongly connected.) In particular, (1) most Harish-Chandra cells for irreducible W
+appear to be Kazhdan-Lusztig cells (for contrary examples, see [M]), and (2) the
+evidence we have accumulated supports the hypothesis that there are only ﬁnitely
+many admissible W -cells for each ﬁnite Coxeter group W . This evidence also makes
+plausible the hope that Kazhdan-Lusztig cells might be computable (as explicit
+graphs, not merely as representations up to isomorphism) without the need to ﬁrst
+compute Kazhdan-Lusztig polynomials. Similarly, it may be possible to determine
+Harish-Chandra cells without computing Kazhdan-Lusztig-Vogan polynomials.
+   The paper is structured as follows.
+
+   Received by the editors June 8, 2008.
+   2000 Mathematics Subject Classiﬁcation. Primary 20F55, 20C15; Secondary 05E99.
+   This work was supported by NSF Grant DMS–0554278.
+                                                                      2008
+                                                                      c      American Mathematical Society
+                                                         Reverts to public domain 28 years from publication
+                                                   346
+                                    ADMISSIBLE W -GRAPHS                                347
+
+
+   After two preliminary sections on W -graphs and their properties, we show in
+Section 3 that the nontrivial admissible cells in rank 2 Coxeter groups are A-D-
+E Dynkin diagrams (Theorem 3.4). In Section 4, we provide the combinatorial
+characterization of admissible W -graphs mentioned previously; it is interesting to
+note that similar properties were used by Lusztig in [L] to deﬁne a class of inﬁnite
+W -graphs. In the ﬁnal section, we use this characterization to classify the admissible
+cells for several low-rank groups, including B3 , H3 , A4 and D4 . In a sequel to this
+paper, we will analyze the structure of admissible W -graphs in much greater detail,
+and use this analysis to classify admissible cells for various higher rank groups.
+
+                                   1. General W -graphs
+  Fix a ﬁnite index set I. An I-labeled graph is a triple Γ = (V, m, τ ), where
+     (i) V is a ﬁnite vertex set,
+    (ii) m is a map V × V → Z[q ±1/2 ] (i.e., a matrix),
+   (iii) τ is a map V → {subsets of I}.
+The value of τ at a vertex v is referred to as the τ invariant of v. (This terminology
+is intended to suggest a connection with the Borho-Jantzen-Duﬂo τ invariant asso-
+ciated with annihilators of irreducible representations of semisimple Lie algebras.)
+    To emphasize the interpretation of these objects as directed graphs, we use
+the notation m(u → v) to refer to the (u, v)-entry of the matrix m. This entry
+should be viewed as the weight of an edge directed from vertex u to vertex v. (If
+m(u → v) = 0, then there is no such edge.) Many of the I-labeled graphs under
+consideration here will have nonnegative integer edge weights; for these graphs one
+may alternatively view the edges as unweighted, and instead interpret m(u → v)
+as the number of edges directed from u to v.
+    In illustrations of I-labeled graphs, such as Figure 1.1, we adopt the convention
+that unlabeled edges have weight 1, and an edge without an orientation represents
+a pair of edges of equal weight in both directions.
+    Now let W be a Coxeter group relative to a generating set of the form S =
+{si : i ∈ I}, and let {Ti : i ∈ I} denote the corresponding set of generators of
+the associated Iwahori-Hecke algebra H = H(W, S) over the ground ring Z[q ±1/2 ].
+Letting pij denote the order of si sj in W , one should recall that the deﬁning
+relations of H are the quadratic relations (Ti −q)(Ti +1) = 0 and the braid relations
+                       (Ti Tj )p/2 = (Tj Ti )p/2                  if p = pij is even,
+                              (p−1)/2                   (p−1)/2
+                Ti (Tj Ti )             = Tj (Ti Tj )             if p = pij is odd,
+
+
+for all distinct i, j ∈ I such that pij < ∞.
+   An I-labeled graph Γ is a W -graph if the Z[q ±1/2 ]-module MΓ freely generated
+by the vertex set V may be given an H-module structure such that for all u ∈ V ,
+                         
+                                         qu                if i ∈
+                                                                / τ (u),
+(1.1)           Ti (u) =              
+                           −u + q 1/2
+                                           / (v) m(u → v)v if i ∈ τ (u).
+                                        v:i∈τ
+
+It is easy to check that the quadratic relations (Ti − q)(Ti + 1) = 0 hold on MΓ for
+all graphs Γ; the content of this deﬁnition is that the braid relations should hold
+as well.
+348                              JOHN R. STEMBRIDGE
+
+
+                                     2            2
+
+
+                                           12
+
+
+                                     1            1
+
+
+
+
+                      Figure 1.1. A fake A2 -graph at q = 1.
+
+Remark 1.1. (a) The matrices implicit in (1.1) are transposed from the ones used
+in the original Kazhdan-Lusztig deﬁnition of W -graphs [KL]. However, the class of
+ﬁnite dimensional matrix representations of H is transpose-closed, so this diﬀerence
+is harmless.
+   (b) The Coxeter systems we are primarily interested in are ﬁnite Weyl groups,
+so our requirement that all I-labeled graphs are ﬁnite is reasonable. However, for
+more general Coxeter systems, this assumption is likely to eliminate too much that
+is of interest. One possible relaxation is to assume that each vertex has ﬁnite out-
+degree, so that the sums in (1.1) are ﬁnite. For an even weaker hypothesis, see the
+appendix to [L].
+   (c) If we set q = 1, the H-action on MΓ specializes to a W -action, so if Γ is a
+W -graph, one may think of MΓ as an H-module and a ZW -module simultaneously.
+
+   (d) There exist I-labeled graphs such that the operators deﬁned in (1.1) do not
+satisfy the braid relations for generic q, but do satisfy them at q = 1 (thus yielding
+a ZW -module). An example of this for the Weyl group A2 is provided in Figure 1.1.
+   It is important to note that if τ (u) ⊆ τ (v), then the value of m(u → v) has
+no eﬀect on the operators deﬁned in (1.1). Thus there is no loss of generality in
+restricting our attention to W -graphs that are reduced in the sense that
+(1.2)                  m(u → v) = 0 whenever τ (u) ⊆ τ (v).
+Henceforth, all W -graphs in this paper will be implicitly assumed to be reduced.
+   For many W -graphs of interest, the matrix of edge weights is symmetric, at least
+to the extent permitted by (1.2). Thus if
+(1.3)       m(u → v) = m(v → u) whenever τ (u)  τ (v) and τ (v)  τ (u),
+then we say that Γ is edge-symmetric.
+
+A. Parabolic restriction. Given J ⊂ I and an I-labeled graph Γ = (V, m, τ ), let
+Γ↓J denote the J-labeled graph obtained from Γ by: (1) restricting the τ invariants
+to J; (i.e., replacing τ (v) with J ∩ τ (v) for all v ∈ V ), and (2) deleting those edges
+of Γ (replacing certain entries of the matrix m with 0’s) necessary to bring the
+resulting graph into compliance with (1.2). It is clear that if Γ is a W -graph, then
+the restricted graph Γ↓J is a WJ -graph, where WJ denotes the parabolic subgroup
+of W generated by {si : i ∈ J}.
+
+B. Outer products. If the Coxeter system (W, S) is reducible, then there is some
+J ⊂ I such that W is the direct product of the parabolic subgroups WJ and WI−J ,
+                               ADMISSIBLE W -GRAPHS                                 349
+
+
+and H is isomorphic to the tensor product of the corresponding subalgebras HJ
+and HI−J . Under these circumstances, if Γ is a WJ -graph on the vertex set V and
+Γ is a WI−J -graph on the vertex set V  , then we may deﬁne a W -graph Γ × Γ on
+the Cartesian product V V  by setting
+                                τ (vv  ) = τ (v) ∪ τ (v  ),
+                 m(uu → vv  ) = m(u → v)δu ,v + m(u → v  )δu,v
+for all u, v ∈ V and u , v  ∈ V  . We call Γ × Γ the outer product of Γ and Γ .
+Note that this construction is designed so that MΓ×Γ is isomorphic to the tensor
+product MΓ ⊗ MΓ (as a module for H = HJ ⊗ HI−J ).
+
+C. Cells and subquotients. Let Γ = (V, m, τ ) be a W -graph. When does U ⊂ V
+span an H-submodule of MΓ ?
+   It is not hard to show that for this to happen it is necessary and suﬃcient that
+U is a “forward-closed” subset of V ; i.e., for all u ∈ U and v ∈ V , m(u → v) = 0
+implies v ∈ U . (This relies on (1.2) in an essential way, and justiﬁes the use of this
+convention.)
+   Given that U spans an H-submodule, it follows that the I-labeled subgraphs
+Γ(U ) and Γ(V − U ) induced by U and V − U (with edge weights and τ invariants
+inherited from Γ) are themselves W -graphs, and
+                     MΓ(V −U) ∼
+                              = MΓ /MΓ(U)           (as H-modules).
+More generally, given a nested sequence U1 ⊂ U2 ⊂ V of forward-closed subsets,
+we call the W -graph Γ(U2 − U1 ) a subquotient of Γ, the point being that the corre-
+sponding H-module is a quotient of a submodule of MΓ .
+   If Γ has no (nonempty) proper subquotients, then it is called a cell.
+   A subset U of V is the vertex set of a subquotient of Γ if and only if it is path-
+convex in the sense that for all u, u ∈ U , every v ∈ V that occurs along a directed
+path from u to u also belongs to U . If we deﬁne an equivalence relation on V by
+declaring u ∼ v if there are directed paths in Γ from u to v and v to u, then the
+equivalence classes are path-convex, and moreover, these are the (unique) smallest
+subquotients of Γ: if u ∼ v, then u and v must appear together or not at all in
+every subquotient of Γ. In the language of graph theory, the equivalence classes are
+the strongly connected components of Γ.
+   Thus Γ is a cell if and only if Γ is strongly connected.
+   Note that MΓ has a ﬁltration 0 = M 0 ⊂ M 1 ⊂ · · · ⊂ M l = MΓ of H-submodules
+in which the subquotients M i /M i−1 are isomorphic to the modules induced by the
+strongly connected components (i.e., cells) of Γ. However, this will generally not
+be a composition series, since the H-modules corresponding to cells need not be
+irreducible.
+
+D. Duality. Let a → a∗ denote the unique ring automorphism of Z[q ±1/2 ] such
+that q 1/2 → −q −1/2 .
+   We deﬁne the dual of an I-labeled graph Γ = (V, m, τ ) to be the I-labeled graph
+Γ̄ = (V, (m∗ )T , τ̄ ), where (m∗ )T (u → v) = m(v → u)∗ and τ̄ (v) = I − τ (v) (i.e.,
+reverse all edges, apply ∗ to all edge weights, and complement all τ invariants).
+   Note that if Γ has (nonnegative) integer edge weights, then so does its dual.
+Proposition 1.2. If Γ is a W -graph, then Γ̄ is also a W -graph.
+350                             JOHN R. STEMBRIDGE
+
+
+Proof. If we order the vertex set of Γ = (V, m, τ ) so that those v ∈ V with i ∈
+                                                                               / τ (v)
+precede those with i ∈ τ (v), then the matrix of Ti on MΓ has the form
+                                                  
+                                        q q 1/2 mi
+                                 Ei =                ,
+                                       0     −1
+where mi is a submatrix of m. If we maintain this vertex ordering, but recognize
+that τ̄ reverses membership, we obtain that the matrix of Ti on MΓ̄ is
+                                                    
+                                ∗ T        −1      0
+                          −q(Ei ) = 1/2 ∗ T            .
+                                        q (mi )    q
+Given that the matrices {Ei : i ∈ I} satisfy the braid relations, it follows easily
+that the same must be true for {−q(Ei∗ )T : i ∈ I}, and thus Γ̄ is a W -graph.   
+
+Remark 1.3. If Γ has integer edge weights (so that m∗ = m), one can see from
+the above proof that the W -representations aﬀorded by MΓ and MΓ̄ at q = 1 are
+sign-twisted duals of each other.
+
+                            2. Admissible W -graphs
+   In this section, we assume W is ﬁnite for simplicity.
+   Following [KL], one knows that the Iwahori-Hecke algebra H has a distinguished
+basis {Cw : w ∈ W } (the Kazhdan-Lusztig basis), and the set of matrices repre-
+senting the left action of the generators Ti on this basis (or rather the transposed
+matrices, given our conventions) may be encoded by a W -graph ΓW as follows. The
+vertex set is the Coxeter group W , the τ invariant of a vertex v ∈ W is the left
+descent set; i.e.,
+                      τ (v) := τL (v) = {i ∈ I : (si v) < (v)},
+where (·) denotes the length function on (W, S), and the edge weights are
+                             
+                               µ(u, v) + µ(v, u) if τL (u)  τL (v),
+(2.1)          m(u → v) :=
+                                       0         if τL (u) ⊆ τL (v),
+
+where µ(u, v) is by deﬁnition the coeﬃcient of q ((v)−(u)−1)/2 in the Kazhdan-
+Lusztig polynomial Pu,v (q). Note that since Pv,v (q) = 1, and Pu,v (q) = 0 only if
+u ⩽ v in the Bruhat order, we have either µ(u, v) = 0 or µ(v, u) = 0 for all u, v ∈ W
+(often both).
+   It should be noted that the exceptional (zero) values for m(u → v) that occur
+when τL (u) ⊆ τL (v) are necessary only to ﬁt our convention that all W -graphs must
+be reduced as in (1.2). Kazhdan and Lusztig do not follow this convention and use
+symmetrized edge multiplicities of the form µ(u, v) + µ(v, u) without exception.
+Regardless of convention, the Kazhdan-Lusztig W -graphs are edge-symmetric in
+the sense of (1.3).
+   It is well known that for ﬁnite W , the polynomials Pu,v (q) have nonnegative
+integer coeﬃcients, so these W -graphs have nonnegative integer edge weights.
+   Since Kazhdan-Lusztig polynomials are polynomials in q (rather than q 1/2 ), it
+follows that µ(u, v) and m(u → v) can be nonzero only if the lengths of u and v
+have opposite parity. Therefore, these W -graphs are bipartite.
+   Abstracting these common features, we are led to the following.
+                                 ADMISSIBLE W -GRAPHS                              351
+
+
+Deﬁnition 2.1. An I-labeled graph is said to be admissible if
+  (a) it has nonnegative integer edge weights,
+  (b) it is edge-symmetric as in (1.3), and
+   (c) it has a bipartition.
+   Of course, the Kazhdan-Lusztig graphs ΓW are admissible. Note also that re-
+strictions, outer products, subquotients, and duals of admissible graphs are again
+admissible.
+Remark 2.2. Gyoja has proved that for every ﬁnite Weyl group W , every irre-
+ducible W -representation may be realized by means of a W -graph with integer edge
+weights [G]. Furthermore, thanks to recent work of Y. Yin and R. Howlett [Y], we
+now have explicit graphs available for download1 that realize the irreducible repre-
+sentations of E7 and E8 . However, it should be noted that these W -graphs cannot
+be admissible in general. For example, one cannot realize the reﬂection represen-
+tation of B2 in an edge-symmetric way (over Z), and the 6-dimensional irreducible
+representation of D4 cannot be realized with nonnegative integer edge weights.
+Remark 2.3. For each real Lie group G whose complex form has Weyl group W ,
+Lusztig and Vogan have constructed W -graphs that are similar to the Kazhdan-
+Lusztig graphs ΓW [LV]. The vertex sets of these W -graphs are blocks of irreducible
+representations of G. One block occurs for each choice of a real form for the dual
+group, and the edge weights are obtained from the leading coeﬃcients of certain
+Kazhdan-Lusztig-Vogan polynomials. Furthermore, these W -graphs are admissible.
+Remark 2.4. The W -graph ΓW is constructed by Kazhdan and Lusztig as a par-
+abolic restriction of a W × W -graph ΓLRW = (W, m, τLR ) arising from the left and
+right actions of the generators Ti on H. Here, τ = τLR tracks descents on both the
+left and right; i.e.,
+                τLR (v) = {iL : (si v) < (v)} ∪ {iR : (vsi ) < (v)},
+where {iL : i ∈ I} and {iR : i ∈ I} denote disjoint index sets for the left and right
+copies of W in the direct product W × W . Also, the matrix of edge weights m is
+deﬁned as in (2.1), but with τLR replacing τL . If G is a complex semisimple Lie
+group with Weyl group W , the “two-sided” graph ΓLR    W is a Lusztig-Vogan graph
+as in the previous remark, if we view G as a real Lie group; the complexiﬁcation of
+this real group has Weyl group W × W .
+  In our project to understand and classify admissible W -graphs, one of the fun-
+damental questions raised by the data we have gathered so far is the following.
+Question 2.5. If W is a ﬁnite Coxeter group, are there only ﬁnitely many admis-
+sible W-cells up to isomorphism?
+   We have aﬃrmative answers to this question for W of rank ⩽ 3, as well as for
+the Weyl groups An (n ⩽ 9), Dn (n ⩽ 6), and E6 .
+Remark 2.6. If W is reducible, it is not true in general that all admissible W -cells
+are outer products of cells for the irreducible factors of W .2 For example, the cells
+of the W × W -graph ΓLR W discussed in Remark 2.4 need not be outer products of
+pairs of W -cells. Indeed, any cell of ΓW that generates a reducible representation
+  1 See www.maths.usyd.edu.au/u/bobh/yy/.
+  2 We thank D. Vogan for pointing this out.
+352                             JOHN R. STEMBRIDGE
+
+
+of W cannot be contained in a W × W -cell that is an outer product, since the
+W × W -action on CW decomposes into the sum of outer tensor squares of all
+irreducible CW -modules. Thus in order to resolve questions about the classiﬁcation
+of admissible W -graphs, it is not suﬃcient to consider only irreducible groups.
+   The data we have accumulated so far indicates that there is a distinct tendency
+for the W -representations generated by admissible cells to be combinatorially rigid.
+By this we mean that admissible cells that generate isomorphic representations of
+W (over C, say) tend to be isomorphic as I-labeled graphs. Although there are
+instances where this tendency fails (e.g., see Remark 5.2), the data we have supports
+an aﬃrmative answer to the following.
+Question 2.7. Assume that Γ and Γ are both cells of the Kazhdan-Lusztig graph
+ΓW such that MΓ ∼
+                = MΓ (as CW -modules). Is it true that Γ ∼= Γ ?
+   It is interesting to note that this fails if we allow one of the cells to merely be
+admissible, not necessarily a Kazhdan-Lusztig cell. The one instance of this failure
+we have found is a 150-dimensional representation of E6 that is realized by nine
+combinatorially distinct admissible cells, only one of which occurs as a cell of the
+Kazhdan-Lusztig graph.
+   The empirical results we have for the symmetric groups W = An are quite strik-
+ing. In this case, it is a well-known result of Kazhdan and Lusztig that the repre-
+sentations generated by the cells of ΓW are precisely the irreducible representations
+of W , and this particular class of cells is combinatorially rigid (see Theorem 1.4
+of [KL]). On the other hand, we have found that there are no other admissible
+An -cells for n ⩽ 9.
+Question 2.8. Is every admissible An -cell a Kazhdan-Lusztig cell?
+  Although it is tempting to conjecture an aﬃrmative answer to this question, the
+work of McLarnan and Warrington shows that Kazhdan-Lusztig cells in type A
+have interesting features that emerge only in high rank [MW]. In particular, they
+have shown that the Kazhdan-Lusztig graph ΓW for W = An has edge weights
+> 1 for n ⩾ 9, and there are individual cells of ΓW that have edge weights > 1 for
+n ⩾ 15.
+
+                              3. Cells in rank two
+    Let W = I2 (p) be the rank 2 Coxeter group deﬁned by a braid relation of length
+p ⩾ 2. In order to classify the admissible W -cells, let us ﬁrst consider necessary
+and suﬃcient conditions for an arbitrary (reduced, but not necessarily admissible)
+{1, 2}-labeled graph Γ to be a W -cell. (Note that the inﬁnite rank 2 Coxeter group
+I2 (∞) has no braid relation, so every {1, 2}-labeled graph is an I2 (∞)-graph.)
+    For J ⊆ {1, 2}, let VJ denote the set of vertices of Γ with τ invariant J. Given
+that Γ is reduced, the only possible orientations for edges in Γ are as indicated
+in Figure 3.1. If Γ is a W -graph, each vertex in V∅ has out-degree 0 and thus
+necessarily spans a singleton cell aﬀording the trivial representation of W , and
+each vertex in V{1,2} has in-degree 0 and spans a singleton cell aﬀording the sign
+representation. More generally in any Coxeter system, a cell with a vertex whose
+τ invariant is full or empty is necessarily a singleton.
+    Leaving aside these trivial cells, all other W -cells must be strongly connected
+graphs whose τ invariants (either {1} or {2}) provide a proper 2-coloring (i.e.,
+                                  ADMISSIBLE W -GRAPHS                                 353
+
+
+                                            V{1,2}
+
+
+
+                                   V{1}                 V{2}
+
+
+                                              V∅
+
+
+                                          Figure 3.1
+
+the endpoints of all edges have distinct labels). In particular, all such cells are
+necessarily bipartite.
+Proposition 3.1. Let Γ be a reduced {1, 2}-labeled graph such that every vertex
+has τ invariant {1} or {2}. If m is the matrix of edge weights of Γ, then Γ is an
+I2 (p)-graph if and only if φp (m) = 0, where φr (t) is deﬁned by the recurrence
+(3.1)                           φr+1 (t) = tφr (t) − φr−1 (t)
+and the initial conditions φ0 (t) = 0, φ1 (t) = 1.
+  Note that φr (2t) is a Chebyshev polynomial of the second kind.
+  To prove the above result, let us ﬁrst consider an arbitrary pair of operators T1
+and T2 that satisfy the quadratic relations (Ti − q)(Ti + 1) = 0. For each r ⩾ 0, let
+∆r denote the length r “braid commutator” of T1 and T2 ; i.e.,
+                   
+                            (T1 T2 )r/2 − (T2 T1 )r/2          if r is even,
+             ∆r =
+                     T1 (T2 T1 ) (r−1)/2
+                                         − T2 (T1 T2 ) (r−1)/2
+                                                               if r is odd.
+In particular, ∆0 = 0 and ∆1 = T1 − T2 .
+Lemma 3.2. If T1 , T2 and ∆r are as above, then for all r ⩾ 0, we have
+                         ∆r = (−1)r−1 q (r−1)/2 φr (A)(T1 − T2 ),
+where A = q −1/2 (T1 + T2 − (q − 1)).
+Proof. The result is clear when r = 0 or 1. For r ⩾ 1, consider that
+  (T1 + T2 )∆r = (T1 + T2 )((T1 T2 · · · ) − (T2 T1 · · · ))
+                 = −∆r+1 + (T12 T2 · · · ) − (T22 T1 · · · )
+                 = −∆r+1 + (((q − 1)T1 + q)T2 T1 · · · ) − (((q − 1)T2 + q)T1 T2 · · · )
+                 = −∆r+1 + (q − 1)∆r − q∆r−1 .
+Thus by induction with respect to r, we obtain
+        ∆r+1 = −q 1/2 A ∆r − q∆r−1 = (−1)r q r/2 (Aφr (A) − φr−1 (A))(T1 − T2 ).
+Since φr+1 (A) = Aφr (A) − φr−1 (A) by deﬁnition, the result follows.                      
+Proof of Proposition 3.1. If we order the vertex set of Γ so that the vertices with
+τ invariant {1} precede those with τ invariant {2}, then the edge weight matrix
+m, as well as the representing matrices for T1 and T2 on MΓ , have a 2 × 2 block
+structure; namely,
+                                                                
+                     0 B               −1    0             q q 1/2 B
+(3.2)        m=             , T1 = 1/2          , T2 =                 ,
+                    A 0               q A q                0   −1
+354                             JOHN R. STEMBRIDGE
+
+
+                         1             2       1             2
+
+
+
+                        Figure 3.2. Asymmetric B2 -cells.
+
+
+for certain matrices A and B. Hence m = q −1/2 (T1 + T2 − (q − 1)), and Lemma 3.2
+implies that T1 and T2 satisfy the braid relation of length p if and only if
+                                 φp (m)(T1 − T2 ) = 0.
+To see that this is equivalent to the vanishing of φp (m), note that φr (t) is either
+an even or odd polynomial function of t depending on the parity of r, therefore,
+                                                       
+                                    0 Br          Ar 0
+                         φr (m) =            or
+                                    Ar 0           0 Br
+for certain matrices Ar and Br . On the other hand, T1 − T2 has the scalars ±(q + 1)
+on its two diagonal blocks, so included among the block entries of φr (m)(T1 − T2 )
+are scalar multiples of Ar and Br , for all r ⩾ 1.                                
+
+Remark 3.3. (a) Since φ2 (t) = t, the above proposition implies that all A1 ×A1 -cells
+have no edges (and thus are singletons), and conversely, a singleton with any of the
+four possible τ invariants is an A1 × A1 -cell. Note that all such cells are admissible.
+   (b) For A2 = I2 (3), we have φ3 (t) = t2 − 1. It follows that if Γ has an edge
+weight matrix m as in (3.2), then Γ is an A2 -cell if and only if AB = BA = 1 (i.e.,
+m2 = 1). This condition is fulﬁlled precisely when A and B are an inverse pair of
+(necessarily square) matrices over Z[q ±1/2 ]. Generically, such pairs have no nonzero
+entries, and thus the corresponding graphs are generically cells. This suggests that
+it would be futile to attempt a classiﬁcation of all Weyl group cells without regard
+to admissibility.
+   However, if m has nonnegative integer entries, then A and B must be permu-
+tation matrices such that A = B T , and thus Γ is edge symmetric. As a graph,
+this amounts to a disjoint union of bidirected edges. Breaking such a graph into
+strongly connected components, we conclude that there is a unique nontrivial ad-
+missible A2 -cell: it consists of two vertices u and v with τ (u) = {1}, τ (v) = {2},
+and m(u → v) = m(v → u) = 1.
+   (c) For B2 = I2 (4), we have φ4 (t) = t3 −2t. Unlike the previous case, nonnegative
+integer edge weights in a B2 -cell are not suﬃcient to force edge symmetry. For
+example, the edge weight matrices of the two asymmetric graphs in Figure 3.2 are
+both roots of φ4 , and it is easy to check that they both generate the reﬂection
+representation of B2 .
+   Now suppose that Γ is an admissible I2 (p)-cell. As noted above, if we assume
+that Γ is not one of the trivial singletons with full or empty τ invariant, then Γ is
+properly 2-colored: every vertex has τ invariant {1} or {2}, and the τ invariants at
+the endpoints of every edge are distinct. In particular, since there are no nontrivial
+inclusions of τ invariants, it follows that edge-symmetry in this case amounts to
+the condition that m = mT .
+   Encoding each pair of edges u → v and v → u of weight k ∈ Z⩾0 with k
+undirected edges between u and v, one may thus regard Γ as a properly 2-colored
+multigraph.
+                                 ADMISSIBLE W -GRAPHS                                    355
+
+
+                                             2                   2               2
+               1         2
+                                     1               1                   1
+
+
+                   Figure 3.3. The nontrivial admissible B2 -cells.
+
+                                                                     2               2
+                         2                       1
+  1        1
+                                                             1               1           1
+                         1                       2                   1               1
+  2        2
+                   2            2        1               1
+                                                             2               2           2
+
+
+                   Figure 3.4. The nontrivial admissible G2 -cells.
+
+Theorem 3.4. A properly 2-colored multigraph is an (admissible) I2 (p)-cell if and
+only if it is a connected simply-laced Dynkin diagram of ﬁnite type whose Coxeter
+number divides p. In particular, no such graph has edge multiplicities > 1.
+   More explicitly, the Dynkin diagrams in question are those for An (n ⩾ 1), Dn
+(n ⩾ 4), E6 , E7 , and E8 ; their respective Coxeter numbers are n + 1, 2n − 2, 12,
+18, and 30.
+   Considering B2 = I2 (4) and G2 = I2 (6) for example, the Dynkin diagrams with
+Coxeter number dividing 4 are those for A1 and A3 ; for 6, they are A1 , A2 , D4 ,
+and A5 . The corresponding cells are illustrated in Figures 3.3 and 3.4.
+   The nontrivial Kazhdan-Lusztig cells for I2 (p) are 2-colorings of Ap−1 -diagrams.
+
+
+Proof. Let Γ be a properly 2-colored multigraph, viewed as an admissible {1, 2}-
+labeled graph with a symmetric edge-weight matrix m. By Proposition 3.1, we have
+that Γ is an I2 (p)-cell if and only if Γ is connected and φp (m) = 0. Since
+                       sin(r + 1)θ = 2 cos θ sin rθ − sin(r − 1)θ,
+it follows that φp (2 cos θ) = sin pθ/ sin θ. Bearing in mind that φp (t) is a polynomial
+of degree p − 1, we conclude that its roots are 2 cos(kπ/p) for 1 ⩽ k < p.
+    Noting that the roots of φp (t) are strictly less than 2, it follows that if φp (m) = 0,
+then the eigenvalues of 2 − m are strictly positive, and thus 2 − m is a symmetric
+Cartan matrix of ﬁnite type. In other words, m must be the adjacency matrix of
+an A-D-E Dynkin diagram.
+    Conversely, if Γ is a connected, properly 2-colored simply-laced Dynkin diagram
+of ﬁnite type, it remains to determine for which p (if any) the corresponding graph
+operators T1 and T2 satisfy the braid relation of length p. Given Proposition 3.1
+and our knowledge of the roots of φp (t), this is equivalent to determining when the
+eigenvalues of the Cartan matrix 2 − m of Γ are of the form 2 − 2 cos(kπ/p) for
+suitable integers k.
+    The easiest way to resolve this is to use Exercise V.6.4 in [B]: the eigenvalues of an
+irreducible Cartan matrix C of ﬁnite type (simply-laced or not) are 2−2 cos(ej π/h),
+where e1 , e2 , . . . are the exponents of C and h is the Coxeter number. Since 1 is
+356                                JOHN R. STEMBRIDGE
+
+
+always an exponent, we conclude that the length p braid relation holds if and only
+if h divides p.
+   Alternatively, let WΓ be a Weyl group with Dynkin diagram Γ, and let c1 and
+c2 denote the products of the generators of WΓ corresponding to vertices that are
+colored with the τ invariants {1} and {2}, respectively. It follows that c1 c2 is a
+Coxeter element of WΓ , and thus (by deﬁnition) has order equal to the Coxeter
+number h. In particular, the actions of c1 and c2 in any faithful representation of
+WΓ satisfy the length p braid relations if and only if h divides p.
+   Now consider the (faithful) reﬂection representation of WΓ . Since c1 and c2 both
+act as products of commuting reﬂections, it is an easy calculation to show that the
+matrices for the action of c1 and c2 on a set of simple roots for WΓ have the form
+                                                                   
+                  −1 AT               1    0                     0 AT
+           c1 =             , c2 =             , where m =                .
+                   0   1             A −1                        A 0
+Comparing with (3.2), we see that the matrices for c1 and c2 are transposed from
+the q = 1 specializations of T1 and T2 . However, given that m does not depend on
+q, one can see from the proof of Proposition 3.1 that T1 and T2 satisfy a length r
+braid relation for some special value of q ∈/ {0, −1} only if they satisfy the same
+braid relation for generic q. Thus, the pairs (c1 , c2 ) and (T1 , T2 ) satisfy the same
+braid relations.                                                                       
+
+                       4. Combinatorial characterization
+    Now assume that (W, S) is a general Coxeter system, not necessarily ﬁnite.
+    In the following, we will describe four rules that characterize in simple combina-
+torial terms when an admissible (and reduced) I-labeled graph Γ = (V, m, τ ) is a
+W -graph.
+    As a starting point, note that Γ is a W -graph if and only if for all distinct i, j ∈ I,
+the restriction Γ↓{i,j} is a W{i,j} -graph; i.e., Ti and Tj satisfy the appropriate braid
+relation. Thus Theorem 3.4 provides strong constraints on the structure of Γ,
+but it is not a complete characterization, since it concerns only the cells of such
+restrictions.
+    To simplify the exposition, we will assume that (W, S) is braid-ﬁnite; i.e., every
+pair of generators satisﬁes a braid relation of ﬁnite length. If there do exist pairs
+i, j ∈ I such that si and sj do not satisfy a braid relation, then there are no
+constraints to impose on the {i, j}-restrictions of I-labeled graphs, and it is an easy
+exercise for the reader to modify the rules below to account for this possibility.
+
+A. The compatibility and simplicity rules. Suppose temporarily that Γ is a
+general W -graph, not necessarily admissible.
+   If there is an edge u → v (i.e., m(u → v) = 0), then for every i ∈ τ (u) − τ (v)
+and j ∈ τ (v) − τ (u) (which is possible only if τ (u) and τ (v) are incomparable), the
+vertices of Γ↓{i,j} with τ invariant {i} or {j} span a subquotient that includes u
+and v. Applying Proposition 3.1 with p = 2, we see that this can happen only if si
+and sj do not commute. That is, nodes i and j must be bonded3 in the diagram of
+(W, S). This condition also holds vacuously when τ (u) and τ (v) are comparable,
+since either i or j cannot exist in such cases. In summary, this yields
+
+  3 In order to avoid confusion with edges in I-labeled graphs, we refer to adjacencies in the
+
+Coxeter diagram of (W, S) as bonds.
+                               ADMISSIBLE W -GRAPHS                                 357
+
+
+Proposition 4.1 (The Compatibility Rule). If u → v is an edge in any W -graph,
+then every i ∈ τ (u) − τ (v) must be bonded to every j ∈ τ (v) − τ (u).
+    The above rule may be reformulated in terms of a graph homomorphism as
+follows. Deﬁne the compatibility graph Comp(W, S) to be the directed graph whose
+vertices are the subsets of I and whose edges are of the form J → K, where J and K
+range over all subsets of I such that J  K and every j ∈ J − K is bonded to every
+k ∈ K −J in the diagram of (W, S). Given that Γ is reduced, the Compatibility Rule
+is equivalent to the statement that τ is a graph homomorphism Γ → Comp(W, S).
+That is, if u → v is an edge of Γ with nonzero weight, then τ (u) → τ (v) is an edge
+of Comp(W, S).
+    The compatibility graphs for A3 , A4 and D4 are displayed in Figure 4.1. In
+these ﬁgures, we have omitted all of the edges J → K such that J ⊃ K, since
+this Boolean algebra of set inclusions is present in the compatibility graph of every
+Coxeter system. All other edges are between incomparable pairs and are symmetric
+(i.e., J → K implies K → J); these pairs of edges are represented in the ﬁgures by
+single unoriented edges. We have also omitted the vertices I and ∅, since they are
+not the endpoints of any symmetric edges.
+    Now assume that Γ is admissible (and reduced).
+    Continuing the hypothesis that u and v are vertices such that m(u → v) = 0 in
+Γ, note that τ (u) ⊃ τ (v) forces m(v → u) = 0. In such cases, we say that u → v is
+an arc of Γ.
+    Since Γ is admissible and hence edge-symmetric, the remaining possibility is that
+τ (u) and τ (v) are incomparable, and m(v → u) = m(u → v) = 0. It follows that
+u and v belong to the same cell of Γ↓{i,j} for all choices of indices i ∈ τ (u) − τ (v)
+and j ∈ τ (v) − τ (u) (and such choices exist). Given that (W, S) is braid-ﬁnite, we
+see that Theorem 3.4 forces the edge multiplicity in both directions to be exactly
+one. In this case, we say that there is a simple edge between u and v. This yields
+Proposition 4.2 (The Simplicity Rule). If (W, S) is braid-ﬁnite, then every ad-
+missible W -graph Γ = (V, m, τ ) is comprised of arcs and simple edges; i.e., for all
+u, v ∈ V such that m(u → v) = 0, either
+     (a) τ (u)  τ (v) and m(v → u) = 0, or
+    (b) τ (u) and τ (v) are incomparable and m(u → v) = m(v → u) = 1.
+  Note that simple edges connect vertices that must belong to the same W -cell.
+Remark 4.3. If (W, S) is simply-laced, then every W -graph with nonnegative integer
+edge weights satisﬁes the Simplicity Rule, even if it fails to be admissible. Indeed,
+this follows by the above reasoning, together with the observation from Remark 3.3
+that all A1 × A1 -cells, and all A2 -cells with nonnegative integer edge weights, are
+admissible.
+B. The bonding rule. We now introduce an edge labeling of Comp(W, S) as
+follows. For each bonded pair of nodes in the diagram of (W, S), say j and k, we
+use the bond b = {j, k} as a label for all edges J → K of Comp(W, S) such that
+j ∈ J − K and k ∈ K − J or vice-versa. As a result, only the symmetric edges
+of Comp(W, S) are assigned labels, and some edges may receive multiple labels as
+illustrated in Figure 4.1.
+    We may transport this edge labeling to every W -graph Γ by declaring that
+each edge u → v inherits the labels of the corresponding edge τ (u) → τ (v) of
+Comp(W, S).
+358                                     JOHN R. STEMBRIDGE
+
+                                                                       b                         a
+                                                             12                 13                       23
+                       a                b
+                   1            2           3                                       ab
+
+                                                             1                      2                    3
+                                                                       a                         b
+
+
+
+
+                                                             c                                   b                         a
+                                                123                124                                           134           234
+
+
+                                                                  bc                            23                ab
+                                                                                a                            c
+          a        b            c               12                 13                                            24            34
+      1       2        3                4                    b                                                             b
+                                                                                c                            a
+                                                                                                14
+                                                                  ab                                                  bc
+
+
+                                                    1                  2                                          3            4
+                                                             a                                   b                         c
+
+
+
+
+                                                023                013                          012
+
+                                                             a             b            c
+
+                                                                   123
+
+                                                         ab                ac               bc
+                        3
+                                                    03                 02                        01
+                                                         a                      a
+                            c                   b                                                    b           abc
+                                                         c                      c
+                        0                           23                 13                        12
+                   a                b
+               1                        2                bc                ac           ab
+
+                                                                       0
+
+                                                         a                 b                c
+
+                                                    1                  2                         3
+
+
+      Figure 4.1. Diagrams and compatibility graphs for A3 , A4 , and D4 .
+
+
+   Deﬁne the frontier of a vertex v in Γ, denoted Fr(v), to be the set of bonded
+pairs {i, j} in the diagram of (W, S) such that i ∈ τ (v) and j ∈        / τ (v) or vice-
+versa. Equivalently, this is the set of labels that occur on the edges of Comp(W, S)
+incident to τ (v). Each vertex that has {i, j} in its frontier restricts to a vertex with
+τ invariant {i} or {j} in Γ↓{i,j} , so one may reformulate the remaining consequences
+of Theorem 3.4 as follows.
+Proposition 4.4 (The Bonding Rule). If Γ is an admissible W -graph and {i, j}
+is a bond in the diagram of (W, S) such that si sj has order p < ∞ in W , then the
+vertices of Γ with {i, j} in their frontier, together with the edges of Γ that include
+                               ADMISSIBLE W -GRAPHS                                  359
+
+
+                     13                      13                      13
+
+
+
+            12       14       23       124             23        2        14
+
+
+         Figure 4.2. Simple neighborhoods in an admissible A4 -graph.
+
+                                       13
+
+                 1        2        3              12        13       23        123
+
+                                        2
+
+
+                      Figure 4.3. The admissible A3 -cells.
+
+
+the label {i, j}, form a disjoint union of A-D-E Dynkin diagrams whose Coxeter
+numbers divide p.
+   In particular, if p = 3, then for every vertex u such that i ∈ τ (u) and j ∈
+                                                                              / τ (u),
+there is a unique adjacent vertex v such that j ∈ τ (v) and i ∈
+                                                              / τ (v).
+
+   For example, referring to Figure 4.1, suppose that v is a vertex of an admissible
+A4 -graph with τ (v) = {1, 3}. The frontier of v is {a, b, c}, so by examining the
+neighborhood of {1, 3} in Comp(A4 ), we see that the possible τ invariants of the
+neighbors of v connected along simple edges are {2}, {1, 2}, {1, 4}, {2, 3} and
+{1, 2, 4}, and the respective labels along these edges are ab, b, c, a and bc. By
+the Bonding Rule, each of the labels a, b, and c in Fr(v) must each occur exactly
+once among the edges incident to v, so there are three possibilities for the simple
+neighborhood of v as indicated in Figure 4.2.
+
+Remark 4.5. The rules we have accumulated so far (Compatibility, Simplicity, and
+Bonding) are already quite strong. For example, by examining Comp(A3 ) in Fig-
+ure 4.1, one sees that these rules force the simple edges of any admissible A3 -graph
+to be disjoint unions of copies of the graphs in Figure 4.3. Of course, an A3 -graph
+may also have arcs u → v such that τ (u)  τ (v). However, all such arcs must be
+directed right-to-left among the graphs in Figure 4.3, and there are no inclusions
+of τ invariants internal to these graphs, so we conclude that no admissible A3 -cell
+can have arcs, and the graphs in Figure 4.3 are the only possibilities for admissible
+cells. Conversely, each of these graphs is an A3 -graph (e.g., by Theorem 4.9 below),
+so this classiﬁes the admissible A3 -cells.
+
+C. The polygon rule. If one orders the vertices of a {1, 2}-labeled graph so
+that the τ invariants occur in the order ∅, {1}, {2} and {1, 2}, then the matrices
+representing T1 and T2 have a 4 × 4 block structure; namely,
+               ⎡                        ⎤         ⎡                       ⎤
+                 q q 1/2 B1 0 q 1/2 D               q 0 q 1/2 B2 q 1/2 D
+               ⎢0     −1      0     0 ⎥           ⎢0 q q 1/2 A2 q 1/2 C2 ⎥
+(4.1)     T1 = ⎢                        ⎥         ⎢
+               ⎣0 q 1/2 A1 q q 1/2 C1 ⎦ , T2 = ⎣0 0
+                                                                          ⎥,
+                                                            −1        0 ⎦
+                 0     0      0    −1              0 0       0       −1
+
+for certain submatrices A1 , A2 , B1 , B2 , C1 , C2 and D of the edge weight matrix m.
+360                               JOHN R. STEMBRIDGE
+
+
+Lemma 4.6. If T1 and T2 are as above, then their length r braid commutator is
+                                   ⎡                             ⎤
+                                     0    Bφr (A)J        −ψr
+               ∆r = (−1)r−1 q r/2 ⎣0 φr (A)(A − t)J −φr (A)JC ⎦ ,
+                                     0        0             0
+                                                         
+where t = q 1/2 + q −1/2 , φr is deﬁned as in (3.1), ψr = r−1
+                                                           i=1 Bφi (t)φr−i (A)JC,
+                                                                 
+                0 A2                1 0                              C2
+        A=                , J=             , B = B1 B2 , C =             ,
+                A1 0                0 −1                             C1
+and the block sizes of J match those of A.
+Proof. If we deﬁne matrices E1 and E2 by setting
+                                              ⎡         ⎤
+                                                t B 2D
+                          T1 + T2 − (q − 1) ⎣
+                    E1 =                    = 0 A C ⎦,
+                                  q 1/2         0 0 −t
+                                        ⎡              ⎤
+                                          0 BJ      0
+                          T1 − T2
+                    E2 =             = ⎣0 (A − t)J −JC ⎦ ,
+                            q 1/2         0  0      0
+
+then Lemma 3.2 implies ∆r = (−1)r−1 q r/2 φr (E1 )E2 . Thus it suﬃces to evaluate
+φr (E1 )E2 .
+   The evaluation is trivial when r = 0 or 1, and an induction for r ⩾ 1 yields
+ φr+1 (E1 )E2 = E1 φr (E1 )E2 − φr−1 (E1 )E2
+      ⎡           ⎤⎡                               ⎤
+        t B 2D         0     Bφr (A)J        −ψr
+   = ⎣0 A C ⎦ ⎣0 φr (A)(A − t)J −φr (A)JC ⎦
+        0 0 −t         0          0           0
+                  ⎡                                  ⎤
+                   0       Bφr−1 (A)J        −ψr−1
+               − ⎣0 φr−1 (A)(A − t)J −φr−1 (A)JC ⎦
+                   0            0              0
+      ⎡                                                                    ⎤
+        0 B(tφr (A) + φr (A)(A − t) − φr−1 (A))J −tψr − Bφr (A)JC + ψr−1
+   = ⎣0      Aφr (A)(A − t)J − φr−1 (A)(A − t)J    −(Aφr (A) − φr−1 (A))JC ⎦ .
+        0                      0                              0
+The blocks in the positions (1, 2), (2, 2) and (2, 3) above simplify to Bφr+1 (A)J,
+φr+1 (A)(A − t)J and −φr+1 (A)JC, respectively. For the (1, 3)-block, we have
+        tψr + Bφr (A)JC − ψr−1
+                                      
+                                      r−1                       
+                                                                r−1                   
+                       = B φr (A) +         tφi (t)φr−i (A) −         φi−1 (t)φr−i (A) JC
+                                      i=1                       i=1
+                                      
+                                      r−1                   
+                       = B φr (A) +         φi+1 (t)φr−i (A) JC = ψr+1 ,
+                                      i=1
+
+which completes the induction.                                                              
+
+      Given an I-labeled graph Γ = (V, m, τ ) and disjoint subsets J, K ⊆ I, let
+                       VJ/K = {v ∈ V : J ⊆ τ (v), τ (v) ∩ K = ∅}.
+                                       ADMISSIBLE W -GRAPHS                           361
+
+
+In the following, we may also use abbreviated notation such as (for example) Vi/j
+in place of V{i}/{j} . For distinct i, j ∈ I, we deﬁne a directed path
+                                   u → v1 → · · · → vr−1 → v
+in Γ of length r ⩾ 2 to be alternating of type (i, j) if
+(4.2)     u ∈ Vij/∅ , vk ∈ Vi/j for k odd, vk ∈ Vj/i for k even, and v ∈ V∅/ij .
+     r
+Let Nij (Γ; u, v) denote the edge-weighted count of all such paths from u to v; i.e.,
+                     
+   r
+  Nij (Γ; u, v) :=              m(u → v1 )m(v1 → v2 ) · · · m(vr−2 → vr−1 )m(vr−1 → v),
+                 v1 ,...,vr−1
+
+where the vertices vk are restricted as in (4.2). Note that if Γ is an admissible
+W -graph (and (W, S) is braid-ﬁnite), then the Simplicity Rule implies that all of
+the internal edges in an alternating path are simple and thus have unit weight; only
+the initial and terminal edges u → v1 and vr−1 → v may be arcs of weight > 1.
+Proposition 4.7 (The Polygon Rule). If Γ is a W -graph with integer edge weights
+and si sj has ﬁnite order p ⩾ 2 in W , then Nij r
+                                                  (Γ; u, v) = Njir
+                                                                   (Γ; u, v) for 2 ⩽ r ⩽ p
+and all vertices u, v with i, j ∈ τ (u) and i, j ∈/ τ (v); i.e., the weighted counts of
+alternating paths of length r of types (i, j) and (j, i) from u to v are the same for
+all r ⩽ p.
+Proof. The matrices representing the action of Ti and Tj have the form indicated
+in (4.1), if we identify Ti with T1 and Tj with T2 (say). By hypothesis, Ti and Tj
+satisfy a braid relation of length p, so Lemma 4.6 implies
+                                       
+                                       p−1
+                                ψp =         Bφr (t)φp−r (A)JC = 0,
+                                       r=1
+using the notation introduced previously.
+   Since Γ is assumed to have integer edge weights, the entries of A, B, C (and J)
+are scalars independent of q or t. Noting that φr (t) is a polynomial in t of degree
+r − 1, it follows that ψp vanishes only if Bφr (A)JC = 0 for 1 ⩽ r < p. Using the
+same feature of φr a second time, we conclude that ψp vanishes only if BAr JC = 0
+for 0 ⩽ r ⩽ p − 2.
+   However, a simple calculation reveals that
+                
+                       B1 (A2 A1 )r/2 C2 − B2 (A1 A2 )r/2 C1          if r is even,
+    BAr JC =
+                  B2 A1 (A2 A1 )(r−1)/2 C2 − B1 A2 (A1 A2 )(r−1)/2 C1 if r is odd,
+and the matrix entries of these products are edge-weighted counts of certain re-
+stricted paths in Γ. For example, A1 is the submatrix of m obtained by selecting
+the columns from Vi/j and rows from Vj/i , and similarly C2 has the columns of
+Vij/∅ and the rows of Vi/j . From this it is easy to deduce that the (v, u)-entry of
+BAr JC is Nijr+2
+                 (Γ; u, v) − Nji
+                              r+2
+                                  (Γ; u, v) for all u ∈ Vij/∅ and all v ∈ V∅/ij . 
+    Note that in the special case r = 2, the Polygon Rule applies to all distinct pairs
+i, j ∈ I (assuming that (W, S) is braid-ﬁnite), and amounts to a Diamond Rule that
+relates counts of alternating 2-step paths forming a diamond shape.
+Example 4.8. Consider the 4-cycle in the center of Comp(A4 ) (see Figure 4.1).
+By winding around this cycle one or more times, it is easy to construct arbitrarily
+large admissible I-labeled graphs that satisfy the Compatibility, Simplicity, and
+362                             JOHN R. STEMBRIDGE
+
+
+                                                     34
+
+
+                         12           23      24
+
+
+                               13                    14
+
+
+
+
+                               14                    13
+
+
+                                      24       23           12
+
+
+                               34
+
+
+                          Figure 4.4. Not an A4 -graph.
+
+Bonding Rules, such as the graph in Figure 4.4. However, if u is one of the vertices
+with τ = {2, 4}, then there is exactly one alternating path of length 2 and type
+(2, 4) starting at u, and one of type (4, 2), but these two paths terminate at two
+distinct vertices with τ invariant {1, 3}. This violates the 2-step Polygon Rule, so
+this graph is not an A4 -graph.
+   We claim that the rules collected so far yield the following characterization of
+admissible W -graphs. Note that the ingredients of this characterization (especially
+the Polygon Rule) are closely related to the W -graph deﬁnition used by Lusztig in
+the appendix to [L].
+Theorem 4.9. If (W, S) is braid-ﬁnite, then an admissible I-labeled graph is a
+W -graph if and only if it satisﬁes
+    (a) the Compatibility Rule (Proposition 4.1),
+   (b) the Simplicity Rule (Proposition 4.2),
+    (c) the Bonding Rule (Proposition 4.4), and
+   (d) the Polygon Rule (Proposition 4.7).
+Proof. We know that the four stated conditions are necessary. For suﬃciency, we
+need to show that if Γ = (V, m, τ ) is admissible and satisﬁes (a)–(d), then for all
+i, j ∈ I, the operators Ti and Tj satisfy the braid relations on MΓ . From the proof
+of Proposition 4.7, it is clear that if the Polygon Rule is satisﬁed, then the quantity
+ψp deﬁned in Lemma 4.6 vanishes, where p is the order of si sj in W . Furthermore,
+if the Bonding and Simplicity Rules are satisﬁed, then Theorem 3.4 implies that
+the subgraph Γ of Γ↓{i,j} spanned by the vertices in Vi/j ∪ Vj/i is a W{i,j} -graph.
+(In the case p = 2, this requires use of the Compatibility Rule.) Letting A denote
+the edge weight matrix of Γ , it follows that φp (A) = 0 (Proposition 3.1), and hence
+Lemma 4.6 implies that Ti and Tj satisfy the length p braid relation.                
+
+Remark 4.10. Recalling that admissible W -graphs are bipartite, it follows that in
+the generic case, an admissible A2 -graph Γ has eight types of vertices, corresponding
+to the four possible τ invariants and a choice of parity. The possible orientations of
+edges among these eight types are illustrated in Figure 4.5. In these terms, Γ may be
+interpreted as a special type of commutative diagram. More precisely, each oriented
+                                ADMISSIBLE W -GRAPHS                                 363
+
+
+                                                     1
+
+
+                                      12       2
+
+
+
+
+                                      1
+
+
+                               2                     12
+
+
+                  Figure 4.5. The generic admissible A2 -graph.
+
+edge (both dotted and solid) should be viewed as a nonnegative integer matrix
+deﬁning a map in the indicated direction, each unoriented edge should be viewed as
+an identity map in both directions (as forced by the Simplicity and Bonding Rules),
+and the Polygon Rule amounts to the condition that the subdiagram formed by the
+solid edges is commutative.
+
+                        5. Admissible cells in low rank
+  As an application of Theorem 4.9, we claim the following classiﬁcation results.
+Proposition 5.1. A complete set of admissible W -cells for W = A3 , B3 , H3 , A4
+and D4 appear in Figures 4.3 and 5.1–5.4, respectively.
+   Before beginning the proof, we ﬁrst outline a general classiﬁcation strategy. In
+a sequel to this paper, we will describe a much more reﬁned approach to the cell
+classiﬁcation problem that is suitable for larger Coxeter systems.
+
+Step 1. Compile a list L = L(W, S) of all isomorphism classes of I-labeled graphs
+that are (a) admissible, (b) comprised only of simple edges (no arcs), (c) connected,
+and (d) satisfy the Compatibility and Bonding Rules. This list will usually be
+inﬁnite, even though there may only be ﬁnitely many admissible W -cells.
+   Any admissible W -cell may be obtained by selecting a multiset M = {Γ1 , . . . , Γl }
+from L, properly 2-coloring the vertices of each component Γi , inserting arcs be-
+tween various pairs of vertices of opposite color (the coloring is used to guarantee
+that the result is bipartite), and adjusting the weights on the arcs so that the
+Polygon Rule is satisﬁed.
+   In some cases, by judicious application of the Polygon Rule, we can eliminate in
+advance the use of certain members of L in the multisets M.
+
+Step 2. To narrow the range of possibilities for M, impose a directed graph struc-
+ture on the list L by declaring Γ ≺ Γ if there is a strict inclusion τ (u) ⊂ τ (u )
+between a vertex u in Γ and u in Γ . Every arc in an admissible cell supported
+on the multiset M must be directed from a vertex in Γi to a vertex in Γj such
+that Γj ≺ Γi , so a necessary condition on M is that it spans a strongly connected
+subgraph of L.
+   The Polygon Rule may be used in some cases to delete edges from L in advance.
+   For Coxeter systems of low rank, most of the strongly connected subgraphs of L
+are singletons {Γ}. In such cases, one cannot use more than one copy of the graph
+Γ to construct a W -cell unless there is a loop at Γ (i.e., Γ ≺ Γ).
+364                              JOHN R. STEMBRIDGE
+
+
+                       3         12                     3
+
+              2
+                                                                                      13      23
+                       2         13                     2
+
+      1       3
+                                             1                        1               2       13
+                       1         23
+                                                        12
+      23     12
+                                                                                      1        2
+                       2         13
+                                                        13
+      123    13
+
+                       3         12          23                      23
+
+            (a) uniform                                                             (b) nonuniform
+
+                       Figure 5.1. The admissible B3 -cells.
+
+
+Step 3. Use the Polygon Rule to identify all remaining multisets M that can be
+bound together by arcs into W -cells.
+
+Proof of Proposition 5.1 (sketch). We have previously described how to classify the
+admissible A3 -cells (see Remark 4.5). In this case, the list L(A3 ) is ﬁnite and its
+graph structure has no loops or cycles. Thus the members of L are the only possible
+admissible A3 -cells, and they are A3 -cells because the Polygon Rule holds vacuously:
+there are no alternating paths of length ⩾ 2 of any type in any of these graphs.
+(See Figure 4.3.)
+   B3 and H3 . For these groups, we can number the generators so that they share
+the same compatibility graph with A3 (see Figure 4.1) and (s1 s2 )4 = 1 (for B3 ) or
+(s1 s2 )5 = 1 (for H3 ). Here, according to the Bonding Rule, the nontrivial cells that
+may occur in {1, 2}-restrictions are Dynkin diagrams of types A1 or A3 (for B3 ) or
+A4 (for H3 ).
+   In generating L, it is helpful to separately identify the graphs whose τ invariants
+have uniform cardinality from those that are nonuniform (and therefore have at
+least one simple edge of the form {2} {1, 3}). Given the limited possibilities for
+inclusions of τ invariants in rank 3, one sees a priori that the only possible loops
+or cycles in L must occur among the nonuniform graphs. Also, the uniform graphs
+have no alternating paths (a special feature in rank 3), so each one is an admissible
+cell; these are listed in Figures 5.1(a) and 5.2(a).
+   The nonuniform graphs in L(B3 ) are
+                                Γ1 = {1}          {2}   {1, 3},
+                               Γ2 = {2}      {1, 3}         {2, 3},
+and in L(H3 ) the three nonuniform graphs are
+                           Γ3 = {3}    {2}        {1}   {2}      {1, 3},
+                            Γ4 = {1}    {2}        {1, 3}      {2, 3},
+                     Γ5 = {2}     {1, 3}     {2, 3}         {1, 3}        {1, 2}.
+                                ADMISSIBLE W -GRAPHS                                 365
+
+
+                                               13                               12
+
+                                                          23          23
+
+              2        3         13       12   2                                13
+
+                                                          13          13
+
+              1                  23            1                                23
+
+                                                          2           2
+
+  123         2        3         13       12   2                                13
+
+                                                          1           1
+
+              1                  23            3                                 2
+
+                  (a) uniform                             (b) nonuniform
+
+                      Figure 5.2. The admissible H3 -cells.
+
+
+We have Γ2 ≺ Γ1 , so the only cycles in L(B3 ) are the two loops involving Γ1 and Γ2 .
+The one inclusion of τ invariants in Γ1 (namely {1} ⊂ {1, 3}) involves two vertices
+at an even distance, so any arcs must be directed between distinct copies of Γ1 .
+However, such an arc would create an alternating path of length 2 and type (1, 3),
+with no possibility of an alternating path of type (3, 1). Thus by the Polygon Rule,
+no such arc can occur. Similar reasoning applies to Γ2 . Since these two graphs have
+no alternating paths, we conclude that both are cells, and that they are the only
+remaining possibilities for B3 .
+   In the case of H3 , we claim that the edges Γ4 ≺ Γ3 and Γ5 ≺ Γ4 may be
+deleted from L. In the former case, the one inclusion of τ invariants has the form
+{1} ⊂ {1, 3}, and an arc directed between the corresponding pair of vertices creates
+an alternating path of length 2 and type (1, 3), with no possibility of an alternating
+path of type (3, 1). Similar reasoning applies in the second case.
+   The remaining possibilities for the support of an admissible H3 -cell involve mul-
+tiple copies of a single nonuniform graph. In the case of Γ3 or Γ5 , one cannot add
+arcs between two copies of either graph without violating the Polygon Rule, and
+without arcs, there are no alternating paths, so both graphs are H3 -cells. On the
+other hand, the graph Γ4 has an alternating 3-step path of type (3, 2). The only
+way to create an alternating 3-step path of the opposite type is to add arcs linking
+this graph with a second copy of Γ4 ; further applications of the Polygon Rule force
+a conﬁguration of arcs as indicated in Figure 5.2(b). Also, one can show that there
+cannot be additional copies of Γ4 linked to this graph without violating the Polygon
+Rule. For example, an arc of the form {1, 3} → {1} from the ﬁrst copy of Γ4 to a
+third copy would create an alternating 3-step path of type (2, 3) from the second
+copy to the third without the possibility of any alternating paths of type (3, 2).
+After checking that the 8-vertex graph in Figure 5.2(b) satisﬁes the Polygon Rule,
+one concludes that it is the only remaining H3 -cell.
+   A4 . In this case, we claim that every graph Γ in L(A4 ) that has more than one
+vertex with τ = {2, 4} (or by symmetry, τ = {1, 3}) can be eliminated. Indeed,
+the only closed paths through {2, 4} in Comp(A4 ) that do not violate the Bond-
+ing Rule necessarily contain the 4-cycle {2, 4} {1, 4} {1, 3} {2, 3} {2, 4} (see
+366                                     JOHN R. STEMBRIDGE
+
+
+                                                                             23
+               1             2         3         4
+
+                                                         12         13             24           34
+
+      1234     234          134        124      123
+                                                                             14
+
+
+                                  14                                 23
+
+
+                     13                 24                    24              13
+
+
+
+
+                        2                  3                  134            124
+
+
+                            Figure 5.3. The admissible A4 -cells.
+
+
+Figure 4.1). If the endpoints of this cycle lift to distinct vertices in Γ, then there
+are alternating 2-step paths of type (1, 3) and (3, 1) that originate at the vertex
+with τ = {1, 3} and terminate at distinct vertices, and one can show that there is
+no possibility of alternating paths of the opposite types with the same endpoints.
+   It is easy to check that the only members of L(A4 ) that are not eliminated by
+the above restriction are the graphs listed in Figure 5.3 (omitting the arcs from
+the two 5-vertex graphs). In the ≺-subgraph they span in L(A4 ), the only cycles
+are loops involving the two 5-vertex graphs. By reasoning similar to the previous
+cases, one can use the Polygon Rule to eliminate the possibility of binding two or
+more copies of either graph into a cell and conﬁrm that the graphs in Figure 5.3
+are the only admissible A4 -cells.
+   D4 . Using the compatibility graph in Figure 4.1, it is not hard to check that
+L(D4 ) consists of the 11 graphs with ⩽ 3 vertices in Figure 5.4, along with a cycle
+of length 6k for each k ⩾ 1 in which the τ invariants follow the period 6 pattern
+         ···   {0, 1}       {1, 2}     {0, 2}   {2, 3}   {0, 3}     {1, 3}    {0, 1}    ··· .
+The graph structure of L(D4 ) has no loops, and there are three strongly connected
+components that are not singletons: two components each with three 3-vertex
+graphs, and a third involving the 2-vertex graph {0} {1, 2, 3} and the 6k-cycles.
+One may use the Polygon Rule to eliminate the possibility of arcs binding together
+any two or more of the 3-vertex graphs in the ﬁrst two components. Furthermore,
+since the 3-vertex graphs have no alternating paths, they each form cells.
+   In the third component, note that the 2-vertex graph is itself a cell (it has no
+alternating paths), whereas the 6k-cycles each have alternating 3-step paths of type
+(1, 0) and none of type (0, 1) (for example). Thus any such cycle must be bound to at
+least one copy of the 2-vertex graph by arcs of the form {0, 1} → {0} and {1, 2, 3} →
+{2, 3}, thereby creating alternating 3-step paths of type (0, 1). Application of the
+2-step Polygon Rule shows that all of the arcs of the form {0, i} → {0} (1 ⩽ i ⩽ 3)
+binding this pair of graphs together must have the same weight, and the same is
+true for the arcs of the form {1, 2, 3} → {i, j} (1 ⩽ i < j ⩽ 3). This prevents the
+2-vertex graph from being bound by arcs to any other cycle; otherwise, there would
+be alternating 3-step paths of type (0, 1) whose endpoints are in diﬀerent cycles,
+                                                ADMISSIBLE W -GRAPHS                                        367
+
+
+with no possibility of a 3-step path of type (1, 0) connecting them. This also forces
+the cycle to have length 6 or 12; otherwise, there would be vertices suﬃciently far
+apart that cannot be connected by 3-step paths of type (1, 0), even though they are
+endpoints of 3-step paths of type (0, 1).
+
+
+                                                          1                     023
+
+                                     123
+
+                                                          0                     123
+
+                0123                 0
+                                                 2                   3    013                   012
+
+
+
+                           23              13        12             01    02          03
+
+
+
+
+                           0               0         0              123   123     123
+
+
+
+
+                           1               2         3              023   013     012
+
+
+
+         123        123                                             123                               123
+
+
+
+
+    12         13               23                   12             13    23               12         13    23
+
+
+
+
+    01         02               03                   01             02    03               01         02    03
+
+
+
+          0            0                                             0                                0
+
+
+
+
+                                                              123
+
+
+
+
+                           12              13        23             23    13      12
+
+
+
+
+                           01              02        03             03    02          01
+
+
+
+
+                                                               0
+
+
+                                Figure 5.4. The admissible D4 -cells.
+368                                JOHN R. STEMBRIDGE
+
+
+   If the cycle has length 6, then there are two 3-step paths of type (1, 0) between
+the vertices with τ = {0, 1} and τ = {2, 3}. Thus there must either be two 2-vertex
+graphs bound to it by arcs, all with weight 1, or there is only one such graph, with
+inbound arcs having weight 2 and outbound arcs having weight 1, or vice-versa.
+Otherwise, if the cycle has length 12, then there is a unique 3-step path of type
+(1, 0) connecting each pair of vertices with τ = {0, 1} and τ = {2, 3}, so the cycle
+must be bound by arcs of weight 1 to one copy of the 2-vertex graph.
+   This accounts for all of the remaining graphs in Figure 5.4.                    
+Remark 5.2. Among the admissible cells classiﬁed here, the only ones that are
+not Kazhdan-Lusztig cells are the two singleton B3 -cells with τ = {1} and τ =
+{2, 3}, the two doubleton B3 -cells, the doubleton D4 -cell, and the two 8-vertex
+D4 -cells. The latter two cells are noteworthy not only for the fact that they have
+edge weights > 1, but also for the fact that the representations of D4 that they
+generate are isomorphic, thus providing an example where combinatorial rigidity
+fails (cf. Question 2.7). It is also interesting that the work of Garﬁnkle and Vogan
+[GV] on coherent continuation representations shows that these two cells cannot
+occur in any D4 -restrictions of Kazhdan-Lusztig cells or Harish-Chandra cells.
+
+                                        References
+[B]  N. Bourbaki, Groupes et Algèbres de Lie, Chp. IV–VI, Masson, Paris, 1981. MR647314
+     (83g:17001)
+[GV] D. Garﬁnkle and D. A. Vogan, On the structure of Kazhdan-Lusztig cells for branched
+     Dynkin diagrams, J. Algebra 153 (1992), 91–120. MR1195408 (94d:22015)
+[G]  A. Gyoja, On the existence of a W -graph for an irreducible representation of a Coxeter
+     group, J. Algebra 86 (1984), 422–438. MR732258 (85k:20144b)
+[KL] D. Kazhdan and G. Lusztig, Representations of Coxeter groups and Hecke algebras, Invent.
+     Math. 53 (1979), 165–184. MR560412 (81j:20066)
+[LV] G. Lusztig and D. A. Vogan, Singularities of closures of K-orbits on ﬂag manifolds, Invent.
+     Math. 71 (1983), 365–379. MR689649 (84h:14060)
+[L]  G. Lusztig, Periodic W -graphs, Represent. Theory 1 (1997), 207–279. MR1464171
+     (99a:20042)
+[M]  W. M. McGovern, Cells of Harish-Chandra modules for real classical groups, Amer. J.
+     Math. 120 (1998), 211–228. MR1600284 (98j:22022)
+[MW] T. J. McLarnan and G. S. Warrington, Counterexamples to the 0-1 conjecture, Represent.
+     Theory 7 (2003), 181–195. MR1973372 (2004h:05129)
+[Y]  Yunchuan Yin, W -graph representations for Coxeter groups and Hecke algebras, Ph. D.
+     Thesis, University of Sydney, 2004.
+
+   Department of Mathematics, University of Michigan, Ann Arbor, Michigan 48109-
+1043
+   E-mail address: jrs@umich.edu
+

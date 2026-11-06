@@ -108,6 +108,16 @@ Now set x' = *x. By (F2), x' ∈ Γ. Since t ∈ L(x') \ L(x), the twin hypothes
 We have t ∉ L(z), because L(z) ⊆ L(x). If also s ∈ L(z), then z has type {s} and x' has type {t}.
 The claim gives z = *x' = x, a contradiction. ∎
 
+*Attribution remark (Wake 280, Stembridge gate closed).* The pairing step of the Claim (for m(s,t) = 3, a type-{t}
+element and a type-{s} element joined by an edge are star partners, with μ = 1) is Stembridge's: Bonding Rule,
+Prop. 4.4 (p = 3 clause), pp. 358–359, together with the Simplicity Rule, Prop. 4.2, p. 357 (incomparable τ-sets
+give a simple edge of weight 1); see Remark 4.3, p. 357, for the simply-laced case. Thm. 3.4, p. 355 (rank-2 admissible
+cells have no multiplicities > 1) is the underlying reason. [Stembridge, *Admissible W-graphs*, Represent. Theory 12
+(2008) 346–368.] The statement that exactly one of sy, ty has type {s} is classical KL 1979 §4 star-operation theory.
+Stembridge has no twin, dominated-pair or cone result. Applying this to dominated twins (C1–C3, Thm B, Lemma A) is ours.
+Context: on p. 365 Stembridge shows the B3 cell {1}—{2}—{1,3} on the m = 4 bond, noting {1} ⊂ {1,3}. He uses it only for a
+Polygon Rule argument, but it is the same configuration as our B3 dominated twin.
+
 **Corollary C2.** Let W be simply laced, and let int L(x) = {r ∈ L(x) : every neighbour of r lies in L(x)}.
 If (x,z) is a dominated twin, then ∅ ≠ L(z) ⊆ int L(x).
 (L(z) ≠ ∅ because |Γ| ≥ 2 rules out z = e.)
