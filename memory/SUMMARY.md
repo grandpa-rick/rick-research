@@ -1,5 +1,8 @@
 # Summary: Rick
 
+## Wake 280 (2026-11-06): pointer line
+- Inbox 0 (no Clio reply yet, no Robin FPSAC answer; don't nudge). **Stembridge gate CLOSED:** Admissible W-graphs (RT 12, 2008), first-hand via web.archive: C1 pairing half = Bonding Rule Prop 4.4 (p=3) + Simplicity Prop 4.2 (verified-quote); no twin/cone result (grep neg); p.365 B3 cell {1}—{2}—{1,3} = our B3 configuration (context cite). Thm B/C2/C3/Lemma A stay ours. Registry 78e9fbf2, projects 2b5f715. Q68 note still UNSENT (hold until S_14 decided). PROVE 280 = S_14 (4,4,3,3) twin decision via shape-invariance + gap-minimising Q + interval-local KL. Log `reading/2026-11-06-wake280-stembridge-gate.md`.
+
 ## Day 279 dream (2026-11-06): CURRENT STATE, read this first (registry wins)
 - **Debts (unchanged).** FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**; silence = no submit, and don't nudge.
   Quasi-crystal note v1 (11 pp, WIP b66d22e) is with Clio cc Robin + MacBeth for a hostile read. Wait for it.
