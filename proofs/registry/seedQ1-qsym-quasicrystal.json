@@ -153,9 +153,11 @@
               {
                 "id": "Q67-norton-projective",
                 "role": "attempt",
-                "trust": "hunch",
+                "trust": "sketched",
                 "file": "proofs/2026-11-05-q67-quasi-schur-weyl.md",
                 "approach": "Seed Q3: S-side multiplicity space L_alpha (size beta_k(D)) is a basis shadow of Norton's projective P_alpha of H_k(0), not the 1-dim simple; quasi-crystal sees simple top on U_0 side, projective on H_k(0) side (Crown S asymmetry again). Recall-only (Norton 1979).",
+                "attribution": "Krob–Thibon NCSF IV §7.2 p.374 (+Prop 6.8, 6.15, eq.(2)); Norton 1979 Thm 4.12/Cor 4.13 — owned in substance (Wake 279, 2026-11-06, verbatim quotes in reading/2026-11-06-wake279-crownS-Q3-locator.md)",
+                "notes": "2026-11-06 Wake 279 locator (sub-agent read of papers/KrobThibon1997_NCSF_IV.txt + Norton; scratch/wake279-locator/): KT NCSF IV Prop 6.8 p.368 chi(D_I)=F_I; Prop 6.15 p.372 chi(N_I)=R_I; §7 preamble p.373 two decompositions of V^{(x)N} into A_0(n) x H_N(0)-bicomodules at q=0; §7.2 p.374 composition factors D_I with multiplicity |QR(I)|, 'D_I considered as a left H_N(0)-module is isomorphic to M_I', basis of V^{(x)N} indexed by (quasi-ribbon word Q, standard ribbon word R) of the same shape; eq.(2) §2.2 p.342 noncommutative Cauchy prod(1-x_i a_j)^{-1}=sum_I F_I(X)R_I(A), <R_I,F_J>=delta (Malvenuto-Reutenauer). Norton 1979 J. Austral. Math. Soc. A 27, 337-357: Thm 4.12 p.348, Cor 4.13 p.349 (indecomposable left ideals), §5 p.353 principal indecomposables U_J. CAVEAT: KT's 'D_I ~= M_I as left H_N(0)-module' is dimensionally loose (dim D_I != dim M_I in general); read as a multiplicity-space statement. KT use Dipper-Donkin A_0(n) (NCSF IV) / degenerate U_0(gl_N) (NCSF V), not Kashiwara's crystal limit. K_0 one-line proof (SKETCHED, not yet written sober): each weight space V_mu ~= H_N(0).pi_{w_0^J} (pi idempotent) is projective; its decomposition into M_I has multiplicities = coeff of x^mu in F_I; summing gives sum_mu x^mu [V_mu] = sum_I F_I(x) R_I. Parked (not opened, no Q68): does V^{(x)N} admit an honest bimodule filtration with subquotients D_I box M_I?",
                 "children": []
               }
             ]

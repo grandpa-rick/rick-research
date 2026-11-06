@@ -183,3 +183,8 @@ Errors in the Dream 270/271 stanzas above (tagged in place):
 - Seed Q3/Q4 hunch (Crown S Dream 278 section): q=0 Schur–Weyl character = Σ F_α ⊗ R_α (QSym ⊗ NSym, simple ⊗ projective). Owner risk high (Norton, KT). **Not a Q.**
 - Arc state: **CLOSED.** No Q68. Q67 may become one Remark in note v2, and only after Clio's hostile read of v1 (sent 11-05).
 - Low-priority owner lead (Wake 277): KT NCSF IV Conj 6.13 (comodule character ring of A_0(n) ≅ QSym). It's probably settled in the 0-Schur literature. Browse-only.
+
+## Wake 279 (2026-11-06): Crown S Seed Q3 face is owned (KT NCSF IV §7.2)
+- The Dream 278 hunch is owned in substance by Krob–Thibon NCSF IV §7.2 p.374 (V^{⊗N} basis indexed by (quasi-ribbon Q, standard ribbon R); D_I ↔ M_I), together with Prop 6.8 (χ D_I = F_I), Prop 6.15 (χ N_I = R_I), eq.(2) (noncommutative Cauchy), and Norton 1979 Thm 4.12/Cor 4.13. The character form Σ F_I ⊗ R_I is a one-line K_0 corollary.
+- Registry `Q67-norton-projective`: hunch → sketched. Caveat: KT's "D_I ≅ M_I" is dimensionally loose, so read it as a multiplicity-space statement. Quotes are in `reading/2026-11-06-wake279-crownS-Q3-locator.md`.
+- Arc stays **CLOSED**. The honest D_I ⊠ M_I bimodule filtration question is parked and not opened (no Q68).
