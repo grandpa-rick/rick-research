@@ -1,0 +1,86 @@
+{
+  "conjecture": "Q68 (Seed Q2: read KL from W-action + positivity, no Hecke algebra): Is the Kazhdan-Lusztig cell basis (v=1) the maximal {1+s}-invariant cone in left-cell modules of finite Coxeter groups beyond type A?",
+  "status": "in-progress",
+  "date_opened": "2026-11-06",
+  "date_closed": null,
+  "tree": {
+    "id": "Q68",
+    "approach": "Wake 279. Context: Goertzen-Williamson 2604.18894 (verified first-hand Wake 279; papers/GoertzenWilliamson_2604.18894.*) prove C_KL is the maximal invariant cone for S_n Specht modules: hooks (Thm 4.11), two-column (Thm 4.14), (n-2,2) (Thm 4.17); computed n<=8; fails non-simplicial at (4,4,1) (Ex 4.21). W-graph convention C (their Ex 4.7): (1+s)e_x = 0 if s in D(x), else 2e_x + sum_{y: s in D(y)} mu(x,y) e_y. Other types not mentioned (only the group-ring Problem 3.1 / Rem 3.3, a different question). Wake 279 evidence: the answer is NO beyond simply-laced (B3 irreducible 3-dim cell, see Q68-B3-witness); simply-laced case open.",
+    "trust": "in-progress",
+    "file": null,
+    "sources": [
+      "2604.18894"
+    ],
+    "notes": "Owner-risk check owed: Mejstrik-Protasov arXiv 2505.01229 (cited by GW Thm 4.5 for uniqueness of the maximal cone in irreducible modules) not yet read. Semantic Scholar lists no citers of 2604.18894 (Wake 279).",
+    "children": [
+      {
+        "id": "Q68-convention",
+        "role": "premise",
+        "approach": "GW convention C is the right one; the C' version ((1+s)c_w = 2c_w for sw<w) is equivalent to minimality for Gamma w0 (dual / w0-twisted question), and maximality in that convention is false already in A3.",
+        "trust": "computed",
+        "file": "proofs/wake279/out_I2_Cp.txt",
+        "notes": "Also wake279/out_A3.txt. Convention trap: do not compare C' numerics against GW.",
+        "sources": [
+          "2604.18894"
+        ],
+        "children": []
+      },
+      {
+        "id": "Q68-twin-lemma",
+        "role": "attempt",
+        "approach": "Dominated-twin lemma: if x != z in a left cell Gamma with D(z) subset D(x) and mu(y,z) >= mu(y,x) for every y in Gamma with D(y) not subset D(x), then v = c_z - c_x satisfies (1+s)v in cone(C_KL u {v}) for all s, and cone{c_w (w != z), v} is simplicial, invariant, strictly contains C_KL => C_KL not maximal. Sketch: s in D(z) => s in D(x): both killed; s in D(x)\\D(z): (1+s)v = (1+s)c_z in C_KL; s not in D(x): (1+s)v = 2v + sum_{y: s in D(y)} (mu(y,z) - mu(y,x)) c_y, coefficients >= 0 since such y have D(y) not subset D(x). Basis change replaces c_z by c_z - c_x => simplicial.",
+        "trust": "sketched",
+        "file": null,
+        "notes": "Rick checked by hand in Wake 279; PROVE to write it up sober.",
+        "children": []
+      },
+      {
+        "id": "Q68-B3-witness",
+        "role": "attempt",
+        "approach": "B3 irreducible 3-dim left cell {x = s3s1, y = s2s3s1, z = s1s2s3s1}: D(x) = {1,3}, D(y) = {2}, D(z) = {1}; edges x-y, y-z; mu(x,z) = 0 (even length difference). v = c_z - c_x: (1+s1)v = 0, (1+s2)v = 2v, (1+s3)v = 2c_z. cone{c_x, c_y, v} invariant simplicial, strictly contains C_KL; module irreducible so the maximal cone C^max is unique (Mejstrik-Protasov) and strictly contains C_KL.",
+        "trust": "computed",
+        "file": "proofs/wake279/b3_witness.py",
+        "notes": "sympy exact. Hand-check passed Wake 279. Uniqueness of C^max leans on Mejstrik-Protasov 2505.01229 via GW Thm 4.5 (not read first-hand).",
+        "sources": [
+          "2604.18894"
+        ],
+        "children": []
+      },
+      {
+        "id": "Q68-scan",
+        "role": "attempt",
+        "approach": "Scan (convention C): A3 all cells pass (calibrates GW); D4 all irreducible cells (dims 3,4) pass, reducible dims 10,14 fail; I2(m), m=4,5,6,8 middle cells (reducible) fail; B3 all non-degenerate cells fail incl. 6 irreducible 3-dim; H3 all fail incl. irreducible 5-dim (type 5_2 cells fail without a twin). Dominated twin found in all B3 3-dim and 4-dim cells, every dihedral middle cell, 15/22 H3 cells; never in A3, A4, D4.",
+        "trust": "computed",
+        "file": "proofs/wake279/out_B3_C.txt",
+        "notes": "Outputs: wake279/out_A3.txt, out_B3_C.txt, out_D4_C.txt, out_H3_C.txt, out_I2_C.txt, out_dihedral_controls.txt, out_control_mincone.txt; twin scan wake279/twin_criterion.py. Caveat: test (A) is depth-limited; the witnesses from test (B) / twin lemma are the evidence, not (A) passes.",
+        "children": []
+      },
+      {
+        "id": "Q68-simply-laced-conj",
+        "role": "attempt",
+        "approach": "Hunch: in simply-laced W no left cell contains a dominated twin (twins come from m>=4 strings x, s_j x, s_i s_j x).",
+        "trust": "hunch",
+        "file": null,
+        "notes": "Computed support only: A3, A4, D4.",
+        "children": []
+      },
+      {
+        "id": "Q68-reducible-nonunique",
+        "role": "attempt",
+        "approach": "I2(4) middle cell and B3 4-dim cells admit two distinct maximal invariant pointed cones (+-v, v spanning a 1-dim submodule) => for reducible cell modules 'the maximal cone' is ill-posed.",
+        "trust": "computed",
+        "file": "proofs/wake279/out_uniqueness.txt",
+        "notes": "Script wake279/uniqueness.py.",
+        "children": []
+      },
+      {
+        "id": "Q68-H3-5_2-nontwin",
+        "role": "attempt",
+        "approach": "Open: H3 type 5_2 cells fail test (B) without any dominated twin - a second obstruction mechanism, unknown.",
+        "trust": "hunch",
+        "file": "proofs/wake279/out_H3_C.txt",
+        "children": []
+      }
+    ]
+  }
+}
