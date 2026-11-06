@@ -1,0 +1,24 @@
+=== A3 conv=C |W|=24 cells=10
+         e d=1 irr=1_0 <chi,chi>=1.0 commKLdiag=True perronF^T mult=1 inv=True A:1/1 (unreached []) B:all pairs collapse [0.1s]
+    123121 d=1 all 1+s = 0 (degenerate)
+        31 d=2 irr=2_1 <chi,chi>=1.0 commKLdiag=True perronF^T mult=1 inv=True A:2/2 (unreached []) B:all pairs collapse [0.1s]
+       312 d=2 irr=2_1 <chi,chi>=1.0 commKLdiag=True perronF^T mult=1 inv=True A:2/2 (unreached []) B:all pairs collapse [0.1s]
+         1 d=3 irr=3_2 <chi,chi>=1.0 commKLdiag=True perronF^T mult=1 inv=True A:3/3 (unreached []) B:all pairs collapse [3.2s]
+         2 d=3 irr=3_2 <chi,chi>=1.0 commKLdiag=True perronF^T mult=1 inv=True A:3/3 (unreached []) B:all pairs collapse [3.2s]
+         3 d=3 irr=3_2 <chi,chi>=1.0 commKLdiag=True perronF^T mult=1 inv=True A:3/3 (unreached []) B:all pairs collapse [3.2s]
+       121 d=3 irr=3_3 <chi,chi>=1.0 commKLdiag=True perronF^T mult=1 inv=True A:3/3 (unreached []) B:all pairs collapse [0.1s]
+       232 d=3 irr=3_3 <chi,chi>=1.0 commKLdiag=True perronF^T mult=1 inv=True A:3/3 (unreached []) B:all pairs collapse [0.1s]
+      2321 d=3 irr=3_3 <chi,chi>=1.0 commKLdiag=True perronF^T mult=1 inv=True A:3/3 (unreached []) B:all pairs collapse [0.1s]
+irreps seen: 4 dims [1, 2, 3, 3] sum d^2=23
+=== A3 conv=Cp |W|=24 cells=10
+         e d=1 all 1+s = 0 (degenerate)
+    123121 d=1 irr=1_0 <chi,chi>=1.0 commKLdiag=True perronF^T mult=1 inv=True A:1/1 (unreached []) B:all pairs collapse [0.1s]
+        31 d=2 irr=2_1 <chi,chi>=1.0 commKLdiag=True perronF^T mult=1 inv=True A:0/2 (unreached [0, 1]) B:2 survivors e.g. [(0, 1, 1, True), (1, 0, 1, True)] [0.1s]
+       312 d=2 irr=2_1 <chi,chi>=1.0 commKLdiag=True perronF^T mult=1 inv=True A:0/2 (unreached [0, 1]) B:2 survivors e.g. [(0, 1, 1, True), (1, 0, 1, True)] [0.1s]
+         1 d=3 irr=3_2 <chi,chi>=1.0 commKLdiag=True perronF^T mult=1 inv=True A:0/3 (unreached [0, 1, 2]) B:2 survivors e.g. [(1, 0, 1, True), (1, 2, 1, True)] [0.1s]
+         2 d=3 irr=3_2 <chi,chi>=1.0 commKLdiag=True perronF^T mult=1 inv=True A:0/3 (unreached [0, 1, 2]) B:2 survivors e.g. [(0, 1, 1, True), (0, 2, 1, True)] [0.1s]
+         3 d=3 irr=3_2 <chi,chi>=1.0 commKLdiag=True perronF^T mult=1 inv=True A:0/3 (unreached [0, 1, 2]) B:2 survivors e.g. [(1, 0, 1, True), (1, 2, 1, True)] [0.1s]
+       121 d=3 irr=3_3 <chi,chi>=1.0 commKLdiag=True perronF^T mult=1 inv=True A:0/3 (unreached [0, 1, 2]) B:6 survivors e.g. [(0, 1, 8, True), (0, 2, 9, True), (1, 0, 1, True)] [3.4s]
+       232 d=3 irr=3_3 <chi,chi>=1.0 commKLdiag=True perronF^T mult=1 inv=True A:0/3 (unreached [0, 1, 2]) B:6 survivors e.g. [(0, 1, 8, True), (0, 2, 9, True), (1, 0, 1, True)] [3.4s]
+      2321 d=3 irr=3_3 <chi,chi>=1.0 commKLdiag=True perronF^T mult=1 inv=True A:0/3 (unreached [0, 1, 2]) B:6 survivors e.g. [(0, 1, 9, True), (0, 2, 8, True), (1, 0, 9, True)] [3.4s]
+irreps seen: 4 dims [1, 2, 3, 3] sum d^2=23

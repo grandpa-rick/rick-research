@@ -1,0 +1,8 @@
+3 Q posdef True dual-basis cone invariant True testA reached 0 / 3 testB survivors 6
+3 Q posdef True dual-basis cone invariant True testA reached 0 / 3 testB survivors 6
+3 Q posdef True dual-basis cone invariant True testA reached 0 / 3 testB survivors 6
+2 Q posdef True dual-basis cone invariant True testA reached 0 / 2 testB survivors 2
+3 Q posdef True dual-basis cone invariant True testA reached 0 / 3 testB survivors 2
+2 Q posdef True dual-basis cone invariant True testA reached 0 / 2 testB survivors 2
+3 Q posdef True dual-basis cone invariant True testA reached 0 / 3 testB survivors 2
+3 Q posdef True dual-basis cone invariant True testA reached 0 / 3 testB survivors 2

@@ -1,0 +1,99 @@
+--- I2(4) middle cell, basis by length, words: ['1', '21', '121']
+  descents: [[1], [2], [1]]
+  1+s1 =
+ [[0. 1. 0.]
+ [0. 2. 0.]
+ [0. 1. 0.]]
+  1+s2 =
+ [[2. 0. 0.]
+ [1. 0. 1.]
+ [0. 0. 2.]]
+  1-dim submodule spanned by [ 1.  0. -1.] eigs [np.float64(1.0023981841298926e-32), np.float64(2.0)]
+  testB witness: cone(C_KL, c_0 - 0.05 c_2) closure pointed & invariant=True
+    eps=0.1: orbit size 2, pointed=True, invariant=True
+    eps=0.3: orbit size 2, pointed=True, invariant=True
+    eps=0.5: orbit size 2, pointed=True, invariant=True
+    eps=0.9: orbit size 2, pointed=True, invariant=True
+    eps=1.0: orbit size 1, pointed=True, invariant=True
+    eps=1.1: orbit size 4, pointed=False, invariant=True
+    eps=1.5: orbit size 4, pointed=False, invariant=True
+--- I2(5) middle cell, basis by length, words: ['1', '21', '121', '2121']
+  descents: [[1], [2], [1], [2]]
+  1+s1 =
+ [[0. 1. 0. 0.]
+ [0. 2. 0. 0.]
+ [0. 1. 0. 1.]
+ [0. 0. 0. 2.]]
+  1+s2 =
+ [[2. 0. 0. 0.]
+ [1. 0. 1. 0.]
+ [0. 0. 2. 0.]
+ [0. 0. 1. 0.]]
+  testB witness: cone(C_KL, c_0 - 0.05 c_2) closure pointed & invariant=True
+    eps=0.1: orbit size 3, pointed=True, invariant=True
+    eps=0.3: orbit size 3, pointed=True, invariant=True
+    eps=0.5: orbit size 3, pointed=True, invariant=True
+    eps=0.9: orbit size 9, pointed=False, invariant=True
+    eps=1.0: orbit size 9, pointed=False, invariant=True
+    eps=1.1: orbit size 9, pointed=False, invariant=True
+    eps=1.5: orbit size 9, pointed=False, invariant=True
+--- I2(6) middle cell, basis by length, words: ['1', '21', '121', '2121', '12121']
+  descents: [[1], [2], [1], [2], [1]]
+  1+s1 =
+ [[0. 1. 0. 0. 0.]
+ [0. 2. 0. 0. 0.]
+ [0. 1. 0. 1. 0.]
+ [0. 0. 0. 2. 0.]
+ [0. 0. 0. 1. 0.]]
+  1+s2 =
+ [[2. 0. 0. 0. 0.]
+ [1. 0. 1. 0. 0.]
+ [0. 0. 2. 0. 0.]
+ [0. 0. 1. 0. 1.]
+ [0. 0. 0. 0. 2.]]
+  1-dim submodule spanned by [-1.  0.  1. -0. -1.] eigs [np.float64(1.55679305708315e-29), np.float64(2.0)]
+  testB witness: cone(C_KL, c_0 - 0.05 c_2) closure pointed & invariant=True
+    eps=0.1: orbit size 4, pointed=True, invariant=True
+    eps=0.3: orbit size 4, pointed=True, invariant=True
+    eps=0.5: orbit size 4, pointed=True, invariant=True
+    eps=0.9: orbit size 9, pointed=False, invariant=True
+    eps=1.0: orbit size 9, pointed=False, invariant=True
+    eps=1.1: orbit size 9, pointed=False, invariant=True
+    eps=1.5: orbit size 9, pointed=False, invariant=True
+--- I2(8) middle cell, basis by length, words: ['1', '21', '121', '2121', '12121', '212121', '1212121']
+  descents: [[1], [2], [1], [2], [1], [2], [1]]
+  1+s1 =
+ [[0. 1. 0. 0. 0. 0. 0.]
+ [0. 2. 0. 0. 0. 0. 0.]
+ [0. 1. 0. 1. 0. 0. 0.]
+ [0. 0. 0. 2. 0. 0. 0.]
+ [0. 0. 0. 1. 0. 1. 0.]
+ [0. 0. 0. 0. 0. 2. 0.]
+ [0. 0. 0. 0. 0. 1. 0.]]
+  1+s2 =
+ [[2. 0. 0. 0. 0. 0. 0.]
+ [1. 0. 1. 0. 0. 0. 0.]
+ [0. 0. 2. 0. 0. 0. 0.]
+ [0. 0. 1. 0. 1. 0. 0.]
+ [0. 0. 0. 0. 2. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 1.]
+ [0. 0. 0. 0. 0. 0. 2.]]
+  1-dim submodule spanned by [ 1. -0. -1. -0.  1.  0. -1.] eigs [np.float64(2.1882057129745447e-29), np.float64(2.0)]
+  testB witness: cone(C_KL, c_0 - 0.05 c_2) closure pointed & invariant=True
+    eps=0.1: orbit size 6, pointed=True, invariant=True
+    eps=0.3: orbit size 8, pointed=True, invariant=True
+    eps=0.5: orbit size 9, pointed=False, invariant=False
+    eps=0.9: orbit size 9, pointed=False, invariant=True
+    eps=1.0: orbit size 9, pointed=False, invariant=True
+    eps=1.1: orbit size 9, pointed=False, invariant=True
+    eps=1.5: orbit size 9, pointed=False, invariant=True
+
+=== negative controls, A3 conv C
+KL basis: A: 3 /3, B survivors: []
+ basis c_0+c_1: invariant=False, testA reached=None, testB survivors=n/a
+ basis c_1+c_0: invariant=False, testA reached=None, testB survivors=n/a
+ basis c_0+c_2: invariant=False, testA reached=None, testB survivors=n/a
+ basis c_2+c_1: invariant=False, testA reached=None, testB survivors=n/a
+ mu(0,1) for s1 -> 0.5: still a rep=False, testA reached=3/3, testB survivors=0
+ mu(0,1) for s1 -> 2.0: still a rep=False, testA reached=3/3, testB survivors=0
+ basis = columns of positive matrix (cone strictly inside C_KL): invariant=False 
