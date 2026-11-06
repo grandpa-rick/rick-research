@@ -212,3 +212,10 @@ Quasi-crystals (Q65) give the Path-2 road to the same QSym. Krob–Thibon NCSF I
 ## Dream 278 (2026-11-05): H_k(0) at the quasi-crystal level
 - KT's 0-Hecke right action (NCSF IV l.331–336) commutes with the linear U_0 action (NCSF V §7 l.873, computed). It fails against f̈_i by exactly one term, e_{s_j x}, at an adjacent (i,i+1). That is Q67(c), proved: f̈ = f mod B_i, and T_j preserves B_i but not A_i.
 - Non-consecutive std swaps = identity in Gessel b-coordinates ⇒ [n]^{⊗k} ≅ ⊔ Q_α □ L_α (Q67(b)). The H-side multiplicity space has projective size β_k(D) (Norton, recall-only). See Crown S Dream 278 section.
+
+## Dream 279 (2026-11-06): Q68, the KL cone beyond type A (Seed Q2 arc, live)
+- GW 2604.18894: C_KL is the maximal {1+s}-invariant cone for S_n hooks, two-column shapes and (n−2,2); it fails at S_9 (4,4,1) (Ex 4.21). They work in convention C (Ex 4.7).
+- PROVE 279: Lemma A (dominated twin ⇒ not maximal), **Thm B** (m ≥ 4 ⇒ twin, all finite W), C1/C2 star kill ⇒ (★), **C3** (no twins in S_n for n ≤ 13). (★) fails at S_14 (4,4,3,3), where the twin is undecided.
+  Dream 279 cold read: PASS, no grade change.
+- Two maximality-failure mechanisms: twins (Thm B), and non-twin (GW (4,4,1); H3 5_2). Crown T.
+- Owner gate before writing: Stembridge, "Admissible W-graphs" (2008), the bonding/simplicity rules. Recall-only, read first-hand.

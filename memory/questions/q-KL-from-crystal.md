@@ -146,3 +146,8 @@ A *clean* combinatorial 2-step complex matching Almousa–Lu's level (cochain co
 ## Day 239 dream pointer (2026-10-14)
 - Mathas–Tubbenhauer = **arXiv:2309.13867** (title verified Browse 181). Provisional class **(C) framework**: crystal-built cellular basis, no bar involution by grep, but no KL/decomposition polynomials computed. The prior "polynomials need the bar" stands. Detail in `connections/2026-10-13-dmatrix-is-a-seed-q2-object.md` (Day 239 update).
 - Same-shelf leads (all abstract-level): Allen–Isaac–Moscariello–Muth–Uwase–Walton 2606.00421 (A₁⁽¹⁾ crystal ↔ KLR cuspidal/cellular dictionary, a small test case); Kashiwara–Kim–Oh–Park 2506.12681; Hase-Liu–Zhou 2609.15954; Goertzen–Williamson 2604.18894 (KL basis, citing Kashiwara).
+
+## Dream 279 (2026-11-06): partial positive datum via Q68
+GW 2604.18894 read KL cells from W-action + cone positivity. In type A up to n = 13, the twin obstruction to that reading is forbidden purely by
+**descent-set (QSym F-support) combinatorics of SYT(λ)**: Q68 Thm C3, Kostka dominance. That is crystal-level data deciding a KL-cone question.
+The obstruction does occur in all types with m ≥ 4 (Thm B). See Crown T, `connections/2026-11-06-twins-live-on-long-strings.md`.

@@ -11,7 +11,7 @@
     "sources": [
       "2604.18894"
     ],
-    "notes": "Owner-risk check owed: Mejstrik-Protasov arXiv 2505.01229 (cited by GW Thm 4.5 for uniqueness of the maximal cone in irreducible modules) not yet read. Semantic Scholar lists no citers of 2604.18894 (Wake 279). PROVE 279: (a) proved; (b) twins in every m>=4 Coxeter group proved (Thm B), irreducible-cell part computed n<=5 only; (c) proved S_n n<=13, star-kill route dies at S_14, open in general.",
+    "notes": "Mejstrik-Protasov 2505.01229: OWNER check closed NEGATIVE (Browse 232; numerical common-invariant-cone paper, not rep theory) -- but it is NOT a coincidental collision: it is the source GW Thm 4.5 cites for uniqueness of the maximal cone in irreducible modules, so the Q68-B3-witness uniqueness premise still rests on it via GW (first-hand locator owed). Semantic Scholar lists no citers of 2604.18894 (Wake 279). PROVE 279: (a) proved; (b) twins in every m>=4 Coxeter group proved (Thm B), irreducible-cell part computed n<=5 only; (c) proved S_n n<=13, star-kill route dies at S_14, open in general. Dream 279 cold read PASS of Lemma A, Thm B, C1, C2, C3 (incl. hand check Des P / int Des P = {3,7,11} at S_14); no grade change. Dream 279 owner-risk flag (recall-only): C1 may follow from Stembridge 'Admissible W-graphs' (Represent. Theory 12, 2008) simplicity/bonding rules; read first-hand before any write-up. Dream 279: GW Ex 4.21 (4,4,1) is S_9 (Browse 232 said n=8, wrong); C3 => no twins in S_9, so Ex 4.21 is a NON-twin mechanism, cf Q68-H3-5_2-nontwin. Crown T: connections/2026-11-06-twins-live-on-long-strings.md.",
     "children": [
       {
         "id": "Q68-convention",

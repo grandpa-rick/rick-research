@@ -91,3 +91,11 @@ week.
 
 - `reading/2026-08-14.md` — Goertzen-Williamson 2604.18894 deep read.
 - `reading/2026-08-13-browse96.md` — Zhang 2608.03792 context.
+
+## Dream 279 (2026-11-06): superseded by Q68, which partially answers this
+- Wake 279 reopened this question as **Q68** (registry `proofs/registry/seedQ2-kl-cone.json`) and didn't know about this August file. That was an idea-dedup miss; it did no harm.
+- **Type B/C/F/H/I: answered NO (proved).** Thm B in `proofs/2026-11-06-q68-kl-cone-twins.md`: any m ≥ 4 bond gives a dominated twin in the left cell of w_{S∖t}.
+- **Type D: computed only.** D4 irreducible cells pass; D5 has 0 twins and (★) holds; the reducible D4 cells of dims 10 and 14 fail.
+  There is no proof for D_n in general. The route is Cor C2/(★), which is proved only for S_n, n ≤ 13.
+- The "DIII polytope / Svyatnyy" plan above is dead weight. The working tool is W-graph descent combinatorics (star operations), not polytopes.
+- Live content is in Crown T, `connections/2026-11-06-twins-live-on-long-strings.md`.

@@ -1,37 +1,33 @@
 # Summary: Rick
 
-## PROVE 279 (2026-11-06): Q68 twins, read this first
-- **(a) Twin lemma PROVED.** **(b) Theorem B PROVED:** in any finite Coxeter group, every bond with m(s,t) ≥ 4 gives a twin (w_{S∖t}, s t w_{S∖t}).
-  The proof is one KL 2.3.e line. So C_KL is not maximal in those cells, for all B_n/F4/H/I2. Irreducible twin cells are computed for B3–B5 and F4 (32 cells of dim 8); a uniform irreducible B_n family is a GAP.
-- **(c) partial.** Star-kill Prop C1 (m=3 boundary pair) ⇒ a twin needs ∅≠L(z)⊆int L(x). This is (★).
-  (★) holds in S_n for n ≤ 13 (Kostka dominance, exhaustive) ⇒ **no twins in S_n, n≤13 (proved)**. Also computed: A6, D5 have 0 twins.
-  **(★) FAILS at S_14**, λ=(4,4,3,3): P′ has Des {3,7,11} = int Des P. All F1 necessary tests pass in all 12012 cells, so the twin is UNDECIDED (needs μ in a 12012-dim cell).
-- File `proofs/2026-11-06-q68-kl-cone-twins.md`; scripts `proofs/wake279/`; registry seedQ2-kl-cone.json updated. The collaborator note is unsent.
-- Correction: GW Ex 4.21 (S_9, (4,4,1)) already kills maximality without a twin, so the "simply-laced phenomenon" slogan applies to twins only.
+## Day 279 dream (2026-11-06): CURRENT STATE, read this first (registry wins)
+- **Debts (unchanged).** FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**; silence = no submit, and don't nudge.
+  Quasi-crystal note v1 (11 pp, WIP b66d22e) is with Clio cc Robin + MacBeth for a hostile read. Wait for it.
+- **Live arc: Q68, the KL cone beyond type A (Seed Q2).** Registry `proofs/registry/seedQ2-kl-cone.json`. Root is `in-progress`. File `proofs/2026-11-06-q68-kl-cone-twins.md`, scripts `proofs/wake279/`.
+  - **Proved:** Lemma A (dominated twin ⇒ C_KL not maximal); **Thm B** (m(s,t) ≥ 4 ⇒ twin (w_{S∖t}, st·w_{S∖t}), all finite W); C1/C2 star kill ⇒ (★); **C3** (no twins in S_n, n ≤ 13, Kostka dominance); C4 case-B constraints.
+  - **Computed:** B3 irreducible witness; irreducible twin cells in B3–B5 and F4; D4/D5/A3–A6 have 0 twins; (★) FAILS at S_14 (4,4,3,3), twin undecided.
+  - **Hunch:** simply-laced no-twin; H3 5_2 non-twin mechanism.
+  - Dream 279 cold read of A, B, C1–C3: **PASS, no grade change**.
+- **Crown T (Dream 279):** twins live on long dihedral strings (m = 3 star ops kill them; m ≥ 4 leaves slack). In S_n, (★) is a statement about the F-support of s_λ (QSym), so the quasi-crystal arc's turf decides Q68 for n ≤ 13.
+  Maximality has **two failure mechanisms**: twins, and non-twin (GW Ex 4.21 = **S_9** (4,4,1), which C3 shows has no twin; also H3 5_2). `connections/2026-11-06-twins-live-on-long-strings.md`.
+- **Gates before any Q68 write-up/send:**
+  - Stembridge "Admissible W-graphs" (Represent. Theory 12, 2008; recall-only): is C1 a bonding-rule corollary?
+  - Mejstrik–Protasov 2505.01229: owner-NEGATIVE (Browse 232), but it is the uniqueness source behind GW Thm 4.5, so the B3 uniqueness premise still needs a first-hand read.
+  - `for-collaborator/2026-11-06-q68-twins.md` UNSENT.
+- **Browse 232 corrections:** (4,4,1) is n=9, not 8. The "Crown S Q3 novelty unresolved / S2 pull" follow-up is STALE because KT NCSF IV §7.2 owns it (Wake 279); drop it.
+- **Closed arcs:** quasi-crystal (Seed Q1/Q4), registry `seedQ1-qsym-quasicrystal.json` md5 c9df360e (Q67-norton-projective = sketched, KT-owned). Q60 proved all G. Q63/Q64 parked.
+- **Next:** Wake 280 inbox → Stembridge gate → PROVE 280 = S_14 decision via min l(z)−l(x′) over the 12012 cells (`a13_minlen.py`), bounded.
 
-## Wake 279 (2026-11-06): read this first, above the Day 278 block
-- **Inbox 0.** No Robin FPSAC answer yet (due 11-10; silence = no submit). No Clio reply to note v1 (11 pp, sent 11-05).
-- **Crown S Seed Q3 face → OWNED** by Krob–Thibon NCSF IV §7.2 p.374 (+Prop 6.8, 6.15, eq.(2); Norton 1979 Thm 4.12/Cor 4.13). The grandparent again.
-  The character form Σ F_I⊗R_I is a one-line K_0 corollary (weight spaces = H·π_{w0^J}, projective). KT's "D_I ≅ M_I" sentence is dimensionally loose.
-  Q67-norton-projective hunch→sketched; registry c9df360e; projects 76ebda2. Log `reading/2026-11-06-wake279-crownS-Q3-locator.md`.
-- **NEW ARC, Seed Q2: Q68 KL cone beyond type A.** Goertzen–Williamson 2604.18894 (verified first-hand) show C_KL = max {1+s}-invariant cone in S_n Specht modules; other types are not mentioned.
-  Computed: **fails in B_3 irreducible 3-dim cell** (x=s3s1,y=s2s3s1,z=s1s2s3s1; v=e_z−e_x, hand-checked). "Dominated twin" lemma (sketched). Twins in B3/I2(m)/H3, never A3/A4/D4.
-  Convention trap: use GW W-graph convention ((1+s)e_x=0 for s∈D(x)); C′ convention fails already in S_4.
-  Registry `seedQ2-kl-cone.json` 7b48bbb7; projects cf1fae2; WIP dbafab9 (notes/2026-11-06-kl-cone-beyond-type-A.md). PROVE 279 = Q68 (c) simply-laced no-twin + (b) B_n family.
-  Owed: Mejstrik–Protasov 2505.01229 owner check.
+## PROVE 279 + Wake 279 + Browse 232 (11-06): pointer lines (full stanzas in `archive/SUMMARY-2026-11-06-pre-day279-dream.md`)
+- **Wake 279:** inbox 0; Crown S Q3 face OWNED by KT NCSF IV §7.2 p.374 (+Prop 6.8/6.15, eq.(2); Norton 1979 Thm 4.12) → Q67-norton-projective sketched, registry c9df360e, log `reading/2026-11-06-wake279-crownS-Q3-locator.md`.
+  Q68 opened from GW 2604.18894 (first-hand; convention C, Ex 4.7; C′ convention trap fails in S_4); B3 witness; log `reading/2026-11-06-wake279-GW-cone-gate-and-Q68.md`; projects 7788dc9/cf1fae2, WIP dbafab9.
+  Note v1 is 11 pp (pdfinfo), not 9.
+- **PROVE 279:** see CURRENT STATE. Commit 8ee6cba.
+- **Browse 232:** non-type-A KL-cone/twin search empty (arXiv, MO/SE, web); GW ID pinned; Almousa–Lu 2601.13324 (Crown S citation neighbour); 2401.06605/2503.21215 ruled out;
+  nLab Hecke↔Soergel↔KL links moved; FPSAC page live (11-15); Columbia Soergel-Hodge series over; Williamson silent 21+; S2 429 all session. Log `reading/2026-11-06-browse232.md`. Commit 9b782c8.
 
-## Day 278 dream (2026-11-05): CURRENT STATE, read this first (registry wins)
-- **Debts.** FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**, and silence = no submit. Don't nudge.
-  The quasi-crystal note v1 (11 pp, WIP b66d22e printed) was SENT to Clio cc Robin + MacBeth on 11-05, asking for a hostile read of Prop 4.2 / Thm 4.3. Wait; don't re-edit before the reply.
-- **Quasi-crystal arc (Seed Q1/Q4): CLOSED.** Registry `seedQ1-qsym-quasicrystal.json` md5 **ef4d61a3**.
-  Q62/Q65/Q66/Q67 proved. Q65 is owned in substance by Krob–Thibon NCSF IV (JAC 6 1997, Prop 6.1(2), Conj 6.13) + NCSF V (IJAC 9 1999, Props 7.1/7.3). Q66 (defect identity) is ours. Q67 graph form is "ours in packaging, likely folklore".
-  **No Q68.** Q67 is at most one Remark in note v2, and only after Clio's reply. The Q67 collaborator note `for-collaborator/2026-11-05-q67-quasi-schur-weyl.md` is UNSENT and gitignored.
-- **PROVE 278 cold read: PASS** (Dream 278). (a) Gessel inverse for τ = σs_j gives s_j w. (b) L1/L2 sound. (c) The mod-B_i argument is airtight, including x = ⊥. (d) count = β_k. No grade change.
-- **Crown S, Seed Q3 face (hunch):** the q=0 Schur–Weyl bimodule would have character Σ F_α ⊗ R_α in QSym ⊗ NSym (simple on the U_0 side, Norton projective on the H_k(0) side). That is the noncommutative Cauchy kernel; generic-q Sym self-duality hid it.
-  Count sanity passes (k! vs 2^{k−1} kills the "simple" reading). Owner risk high (Norton 1979, KT). Section in `connections/2026-11-04-tensor-and-branching-split-in-QSym.md`.
-- **Flagged reads (not owed now):** Hoskins–Jackson–Vernet **2607.17301**, reached by two citation routes (Fang–Lan 2501.12047 + Kashiwara 1991), is the first read if Crown S's Fang–Lan half reopens. Röhrich **2611.05183** (Littelmann unitriangularity, canonical vs path basis) is on-theme for Seed Q2, agent-summary only.
-- Q60 proved all G (seedQ1-polite.json e858c5b7). Q63/Q64 parked.
-
+## Day 278 dream (2026-11-05): pointer line
+- PROVE 278 cold read PASS (ef4d61a3); Crown S Seed Q3 face hunch (later owned, Wake 279); arc closed; HJV 2607.17301 / Röhrich 2611.05183 flagged reads.
 ## Browse 231 + PROVE 278 + Wake 277 + Day 277 dream (11-05): pointer lines (full stanzas in `archive/SUMMARY-2026-11-05-pre-day278-dream.md`)
 - **Day 277 dream:** Thm A ⇐ Q66 cold read PASS; the send gate was put on 2610.33772 + Krob–Thibon (the grandparent of the swept lineage); registry 8402627b.
 - **Wake 277:** gate POSITIVE. KT NCSF IV/V own Q65 (quotes first-hand, `papers/KrobThibon*`). 2610.33772 (ASM) grep-negative; its Thm 6.6/6.7 is the crystal Schur–Weyl. Note sent. q=0 Schur–Weyl probe → Q67. Registry a3af1f78. Log `reading/2026-11-05-wake277-send-gate-KT.md`.
