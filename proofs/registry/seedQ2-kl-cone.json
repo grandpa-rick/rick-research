@@ -11,7 +11,7 @@
     "sources": [
       "2604.18894"
     ],
-    "notes": "Mejstrik-Protasov 2505.01229: OWNER check closed NEGATIVE (Browse 232; numerical common-invariant-cone paper, not rep theory) -- but it is NOT a coincidental collision: it is the source GW Thm 4.5 cites for uniqueness of the maximal cone in irreducible modules, so the Q68-B3-witness uniqueness premise still rests on it via GW (first-hand locator owed). Semantic Scholar lists no citers of 2604.18894 (Wake 279). PROVE 279: (a) proved; (b) twins in every m>=4 Coxeter group proved (Thm B), irreducible-cell part computed n<=5 only; (c) proved S_n n<=13, star-kill route dies at S_14, open in general. Dream 279 cold read PASS of Lemma A, Thm B, C1, C2, C3 (incl. hand check Des P / int Des P = {3,7,11} at S_14); no grade change. Dream 279 owner-risk flag (recall-only): C1 may follow from Stembridge 'Admissible W-graphs' (Represent. Theory 12, 2008) simplicity/bonding rules; read first-hand before any write-up. Dream 279: GW Ex 4.21 (4,4,1) is S_9 (Browse 232 said n=8, wrong); C3 => no twins in S_9, so Ex 4.21 is a NON-twin mechanism, cf Q68-H3-5_2-nontwin. Crown T: connections/2026-11-06-twins-live-on-long-strings.md. Wake 280: Stembridge gate CLOSED (first-hand read, Represent. Theory 12 (2008) 346-368). Verdict: PARTIALLY OWNED -- C1 pairing half = Stembridge Prop 4.4 (Bonding Rule, p=3) + Prop 4.2 (Simplicity Rule), Rem 4.3; other C1 half classical KL79 sec.4 (recall-only). Stembridge has NO twin/dominated-pair/cone result (grep 'twin','domina' negative). p.365 exhibits the B3 cell {1}--{2}--{1,3} on the m=4 bond with '{1} subset {1,3}', used only for a Polygon Rule argument -- same configuration as Q68-B3-witness dominated twin; cite as context. Thm B, C2, C3, Lemma A remain ours; Q68 core not owned. Next: PROVE 280 = S_14 (4,4,3,3) decision.",
+    "notes": "Mejstrik-Protasov 2505.01229: OWNER check closed NEGATIVE (Browse 232; numerical common-invariant-cone paper, not rep theory) -- but it is NOT a coincidental collision: it is the source GW Thm 4.5 cites for uniqueness of the maximal cone in irreducible modules, so the Q68-B3-witness uniqueness premise still rests on it via GW (first-hand locator owed). Semantic Scholar lists no citers of 2604.18894 (Wake 279). PROVE 279: (a) proved; (b) twins in every m>=4 Coxeter group proved (Thm B), irreducible-cell part computed n<=5 only; (c) proved S_n n<=13, star-kill route dies at S_14, open in general. Dream 279 cold read PASS of Lemma A, Thm B, C1, C2, C3 (incl. hand check Des P / int Des P = {3,7,11} at S_14); no grade change. Dream 279 owner-risk flag (recall-only): C1 may follow from Stembridge 'Admissible W-graphs' (Represent. Theory 12, 2008) simplicity/bonding rules; read first-hand before any write-up. Dream 279: GW Ex 4.21 (4,4,1) is S_9 (Browse 232 said n=8, wrong); C3 => no twins in S_9, so Ex 4.21 is a NON-twin mechanism, cf Q68-H3-5_2-nontwin. Crown T: connections/2026-11-06-twins-live-on-long-strings.md. Wake 280: Stembridge gate CLOSED (first-hand read, Represent. Theory 12 (2008) 346-368). Verdict: PARTIALLY OWNED -- C1 pairing half = Stembridge Prop 4.4 (Bonding Rule, p=3) + Prop 4.2 (Simplicity Rule), Rem 4.3; other C1 half classical KL79 sec.4 (recall-only). Stembridge has NO twin/dominated-pair/cone result (grep 'twin','domina' negative). p.365 exhibits the B3 cell {1}--{2}--{1,3} on the m=4 bond with '{1} subset {1,3}', used only for a Polygon Rule argument -- same configuration as Q68-B3-witness dominated twin; cite as context. Thm B, C2, C3, Lemma A remain ours; Q68 core not owned. Next: PROVE 280 = S_14 (4,4,3,3) decision. PROVE 280: Q68(c) at S_14 DECIDED YES: dominated twins exist in type A, first at n=14 (4 shapes); simply-laced hunch refuted; Lemma S (KL79 Thm 4.2, m=3) proved in-file.",
     "children": [
       {
         "id": "Q68-convention",
@@ -59,9 +59,9 @@
         "id": "Q68-simply-laced-conj",
         "role": "attempt",
         "approach": "Hunch: in simply-laced W no left cell contains a dominated twin (twins come from m>=4 strings x, s_j x, s_i s_j x).",
-        "trust": "hunch",
-        "file": null,
-        "notes": "Computed support only: A3, A4, D4. PROVE 279: reduced to (*) via star kill (C1/C2); (*) proved type A n<=13 (Thm C3), FALSE at S_14; see Q68-c-* nodes.",
+        "trust": "dead-end",
+        "file": "proofs/2026-11-06-q68c-s14-twin.md",
+        "notes": "Computed support only: A3, A4, D4. PROVE 279: reduced to (*) via star kill (C1/C2); (*) proved type A n<=13 (Thm C3), FALSE at S_14; see Q68-c-* nodes. PROVE 280: refuted in type A at n=14, shapes (4,4,3,3),(5,3,3,3),(4,4,4,2),(4,4,4,1,1).",
         "children": [
           {
             "id": "Q68-c-star-kill",
@@ -89,7 +89,7 @@
             "trust": "computed",
             "file": "proofs/wake279/a13_caseB.py",
             "reason": "dead end for the star-kill-only proof route of (c)",
-            "notes": "Explicit SYT verified. Case-B necessary conditions (Lemma C4: x'<z Bruhat, l(z)>l(x'), L(x') contains L(z)) pass in all 12012 left cells; twin undecided - needs mu in a 12012-dim cell.",
+            "notes": "Explicit SYT verified. Case-B necessary conditions (Lemma C4: x'<z Bruhat, l(z)>l(x'), L(x') contains L(z)) pass in all 12012 left cells; twin undecided - needs mu in a 12012-dim cell. PROVE 280: decided YES - the pair IS a dominated twin (Q68-c-S14-twin).",
             "children": []
           },
           {
@@ -107,8 +107,38 @@
             "trust": "computed",
             "file": "proofs/wake279/out_twin_D5.txt",
             "children": []
+          },
+          {
+            "id": "Q68-c-S14-twin",
+            "role": "attempt",
+            "approach": "Thm T14: in the left cell Q=[[1,2,3,4],[5,6,7,14],[8,9,10],[11,12,13]] of S_14, (x,z)=((P,Q),(P',Q)) for lam=(4,4,3,3) is a dominated twin: F1 + SYT Des-exclusion reduce the y-check to the 4 star images x'_i=s x (s=2,5,9,12); each mu(x'_i,z)=1 via explicit simultaneous-star certificate paths (Lemma S) ending at a gap-1 Bruhat-comparable pair. C_KL(S^(4,4,3,3)) not maximal.",
+            "trust": "proved",
+            "file": "proofs/2026-11-06-q68c-s14-twin.md",
+            "notes": "Certificates prove280/certs_1.json, independent replay prove280/verify.py (own RSK, own star, rank-matrix Bruhat), out_verify.txt. Decision procedure control vs full KL S_5,S_6: 3906 cell pairs, 0 wrong (out_control_S5S6.txt). Uses Lemma S (proved) and Lemma A (proved).",
+            "children": [
+              {
+                "id": "Q68-lemmaS-star-invariance",
+                "role": "premise",
+                "approach": "Lemma S = KL79 Thm 4.2 (m=3): mu~(y,w)=mu~(*y,*w) for y,w in D_L(s,t); proved in-file by 4-form case split: different types via C1 Claim, same form (S-i) via (2.2.c) with two-term cancellation, mixed form (S-ii, gap-changing) via (2.2.c)+(2.3.g) with F1 killing the z-sum.",
+                "trust": "proved",
+                "file": "proofs/2026-11-06-q68c-s14-twin.md",
+                "notes": "Rests on KL79 (2.2.c),(2.3.g),(F1) recall-only basics (same footing as F1 in the main file). Machine control: S_5,S_6 all D_L pairs 941k, 0 violations (prove280/test_star.py). KL79 not on disk; Thm 4.2 citation is attribution, not a premise.",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": "Q68-c-S14-all",
+            "role": "attempt",
+            "approach": "Thm T14': the (*)-violating (lam,A) at n=14 are exactly 4 (lam=(4,4,3,3),(5,3,3,3) with A={2,3,4,6,7,8,10,11,12}; (4,4,4,2),(4,4,4,1,1) with A={1,2,4,5,6,8,9,10,12,13}); each has a unique candidate (P_x,P_z) and each is a dominated twin. So 14 is the least n with type-A twins, and these are all S_14 twins (by P).",
+            "trust": "proved",
+            "file": "proofs/2026-11-06-q68c-s14-twin.md",
+            "notes": "list14.py (exhaustive Kostka dominance), twin14.py, certs_2..4.json replayed by verify.py. Every-cell (Q-independence) is computed only: prove280/out_allcells_*.txt; proof would need dual-equivalence connectivity (recall-only).",
+            "children": []
           }
-        ]
+        ],
+        "reason": "REFUTED PROVE 280: S_14 has dominated twins (Thm T14/T14', proofs/2026-11-06-q68c-s14-twin.md); first n=14, sharp by C3.",
+        "refutation": "proved"
       },
       {
         "id": "Q68-reducible-nonunique",

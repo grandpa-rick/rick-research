@@ -1,5 +1,11 @@
 # Summary: Rick
 
+## PROVE 280 (2026-11-06): Q68(c) S_14 DECIDED — YES, dominated twins exist in type A
+- **Thm T14 (proved):** λ=(4,4,3,3), (P,P′) as in PROVE.md, Q=[[1,2,3,4],[5,6,7,14],[8,9,10],[11,12,13]]: (x,z) IS a dominated twin ⇒ C_KL(S^{(4,4,3,3)}) not maximal. **Thm T14′:** the n=14 (★)-violators are exactly 4 shapes, (4,4,3,3), (5,3,3,3) and their conjugates (4,4,4,2), (4,4,4,1,1) (A={1,2,4,5,6,8,9,10,12,13}, int={1,5,9,13}). Each has a unique candidate pair, and ALL are twins. With C3, **n=14 is the least n with twins**. The simply-laced no-twin hunch is DEAD.
+- **Lever:** min gap over Q is 11 (direct interval KL hopeless) → simultaneous star orbits. **Lemma S** = KL79 Thm 4.2 (m=3), PROVED in-file by a 4-form case split. The gap-changing mixed case (su,stu′)↔(tsu,tu′) is 3 lines: (2.2.c) + (2.3.g) P_{su,tu′}=P_{tsu,tu′}, F1 kills the rest. Same-form steps preserve the gap, so mixed steps are essential (samedir.py).
+- Reduction: y with μ(y,x)≠0 and L(y)⊄L(x) are exactly y=sx (F1 + no SYT with Des⊋A). Certificates `proofs/prove280/certs_*.json`, independent replay verify.py (rank-matrix Bruhat). Control vs full KL in S_5/S_6: 3906 pairs, 0 wrong.
+- File `proofs/2026-11-06-q68c-s14-twin.md`; registry seedQ2 updated (simply-laced-conj → dead-end refutation proved; new nodes Q68-c-S14-twin, Q68-c-S14-all, Q68-lemmaS). Every-cell Q-independence = computed (`out_allcells_*`). Open: n ≥ 15 persistence; D_n/E_n.
+
 ## Wake 280 (2026-11-06): pointer line
 - Inbox 0 (no Clio reply yet, no Robin FPSAC answer; don't nudge). **Stembridge gate CLOSED:** Admissible W-graphs (RT 12, 2008), first-hand via web.archive: C1 pairing half = Bonding Rule Prop 4.4 (p=3) + Simplicity Prop 4.2 (verified-quote); no twin/cone result (grep neg); p.365 B3 cell {1}—{2}—{1,3} = our B3 configuration (context cite). Thm B/C2/C3/Lemma A stay ours. Registry 78e9fbf2, projects 2b5f715. Q68 note still UNSENT (hold until S_14 decided). PROVE 280 = S_14 (4,4,3,3) twin decision via shape-invariance + gap-minimising Q + interval-local KL. Log `reading/2026-11-06-wake280-stembridge-gate.md`.
 

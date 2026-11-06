@@ -169,7 +169,10 @@ the second alternative for the other pair needs l(z) > l(x′) ≥ l(x) − 1. �
 
 ## Gaps (precise)
 
-1. **(c) open in general.** No twins is proved for S_n with n ≤ 13 and computed for D4, D5 and A6. The proof route
+0. **PROVE 280 update: (c) is FALSE in type A.** The S_14 pair below IS a dominated twin (Thm T14,
+   `proofs/2026-11-06-q68c-s14-twin.md`), and so are the other three (★)-violators at n=14 (Thm T14'). This uses
+   Lemma S (KL79 Thm 4.2 for m=3, proved there) and explicit star-path certificates. Item 1 below is superseded.
+1. **(c) open in general.** [superseded by item 0] No twins is proved for S_n with n ≤ 13 and computed for D4, D5 and A6. The proof route
    (C1 ⇒ (★)) breaks at S_14. The concrete undecided instance is the pair (P, P′) above: is
    μ(x′_i, z) ≥ 1 for the 4 star images, together with every other y having L(y) ⊄ L(x)?
 2. **(b) irreducible family for all n.** Twins in B_n are proved for all n (Theorem B). An irreducible left cell with

@@ -1,0 +1,2 @@
+n 5 pairs 19200 star-invariance violations 0 max mu 1
+n 6 pairs 921600 star-invariance violations 0 max mu 1

@@ -1,0 +1,30 @@
+L(x) [2, 3, 4, 6, 7, 8, 10, 11, 12] L(z) [3, 7, 11] l(x) 55 l(z) 67 shape [4, 4, 3, 3]
+y=sx in cell with L(y)!<=L(x): [2, 5, 9, 12]
+ s=2 path-len 11 end lengths 59,60  comparable-gap1: True
+ s=5 path-len 9 end lengths 59,60  comparable-gap1: True
+ s=9 path-len 9 end lengths 59,60  comparable-gap1: True
+ s=12 path-len 11 end lengths 61,62  comparable-gap1: True
+#SYT with Des strictly containing L(x): 0  total SYT 12012
+VERIFIED
+L(x) [2, 3, 4, 6, 7, 8, 10, 11, 12] L(z) [3, 7, 11] l(x) 45 l(z) 63 shape [5, 3, 3, 3]
+y=sx in cell with L(y)!<=L(x): [1, 5, 9, 12]
+ s=1 path-len 12 end lengths 54,55  comparable-gap1: True
+ s=5 path-len 12 end lengths 54,55  comparable-gap1: True
+ s=9 path-len 11 end lengths 53,54  comparable-gap1: True
+ s=12 path-len 14 end lengths 52,53  comparable-gap1: True
+#SYT with Des strictly containing L(x): 0  total SYT 15015
+VERIFIED
+L(x) [1, 2, 4, 5, 6, 8, 9, 10, 12, 13] L(z) [1, 5, 9, 13] l(x) 45 l(z) 63 shape [4, 4, 4, 2]
+y=sx in cell with L(y)!<=L(x): [3, 7, 11]
+ s=3 path-len 11 end lengths 53,54  comparable-gap1: True
+ s=7 path-len 12 end lengths 54,55  comparable-gap1: True
+ s=11 path-len 12 end lengths 54,55  comparable-gap1: True
+#SYT with Des strictly containing L(x): 0  total SYT 12012
+VERIFIED
+L(x) [1, 2, 4, 5, 6, 8, 9, 10, 12, 13] L(z) [1, 5, 9, 13] l(x) 46 l(z) 64 shape [4, 4, 4, 1, 1]
+y=sx in cell with L(y)!<=L(x): [3, 7, 11]
+ s=3 path-len 11 end lengths 54,55  comparable-gap1: True
+ s=7 path-len 12 end lengths 55,56  comparable-gap1: True
+ s=11 path-len 12 end lengths 55,56  comparable-gap1: True
+#SYT with Des strictly containing L(x): 0  total SYT 15015
+VERIFIED
