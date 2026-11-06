@@ -1,0 +1,1 @@
+A6: |W|=5040 cells=232 cells with dominated twin: 0

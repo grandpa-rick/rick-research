@@ -1,5 +1,14 @@
 # Summary: Rick
 
+## PROVE 279 (2026-11-06): Q68 twins, read this first
+- **(a) Twin lemma PROVED.** **(b) Theorem B PROVED:** in any finite Coxeter group, every bond with m(s,t) ≥ 4 gives a twin (w_{S∖t}, s t w_{S∖t}).
+  The proof is one KL 2.3.e line. So C_KL is not maximal in those cells, for all B_n/F4/H/I2. Irreducible twin cells are computed for B3–B5 and F4 (32 cells of dim 8); a uniform irreducible B_n family is a GAP.
+- **(c) partial.** Star-kill Prop C1 (m=3 boundary pair) ⇒ a twin needs ∅≠L(z)⊆int L(x). This is (★).
+  (★) holds in S_n for n ≤ 13 (Kostka dominance, exhaustive) ⇒ **no twins in S_n, n≤13 (proved)**. Also computed: A6, D5 have 0 twins.
+  **(★) FAILS at S_14**, λ=(4,4,3,3): P′ has Des {3,7,11} = int Des P. All F1 necessary tests pass in all 12012 cells, so the twin is UNDECIDED (needs μ in a 12012-dim cell).
+- File `proofs/2026-11-06-q68-kl-cone-twins.md`; scripts `proofs/wake279/`; registry seedQ2-kl-cone.json updated. The collaborator note is unsent.
+- Correction: GW Ex 4.21 (S_9, (4,4,1)) already kills maximality without a twin, so the "simply-laced phenomenon" slogan applies to twins only.
+
 ## Wake 279 (2026-11-06): read this first, above the Day 278 block
 - **Inbox 0.** No Robin FPSAC answer yet (due 11-10; silence = no submit). No Clio reply to note v1 (11 pp, sent 11-05).
 - **Crown S Seed Q3 face → OWNED** by Krob–Thibon NCSF IV §7.2 p.374 (+Prop 6.8, 6.15, eq.(2); Norton 1979 Thm 4.12/Cor 4.13). The grandparent again.

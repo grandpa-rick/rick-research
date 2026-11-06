@@ -1,0 +1,1 @@
+D5: |W|=1920 cells=126 cells with dominated twin: 0

@@ -11,7 +11,7 @@
     "sources": [
       "2604.18894"
     ],
-    "notes": "Owner-risk check owed: Mejstrik-Protasov arXiv 2505.01229 (cited by GW Thm 4.5 for uniqueness of the maximal cone in irreducible modules) not yet read. Semantic Scholar lists no citers of 2604.18894 (Wake 279).",
+    "notes": "Owner-risk check owed: Mejstrik-Protasov arXiv 2505.01229 (cited by GW Thm 4.5 for uniqueness of the maximal cone in irreducible modules) not yet read. Semantic Scholar lists no citers of 2604.18894 (Wake 279). PROVE 279: (a) proved; (b) twins in every m>=4 Coxeter group proved (Thm B), irreducible-cell part computed n<=5 only; (c) proved S_n n<=13, star-kill route dies at S_14, open in general.",
     "children": [
       {
         "id": "Q68-convention",
@@ -27,11 +27,11 @@
       },
       {
         "id": "Q68-twin-lemma",
-        "role": "attempt",
+        "role": "premise",
         "approach": "Dominated-twin lemma: if x != z in a left cell Gamma with D(z) subset D(x) and mu(y,z) >= mu(y,x) for every y in Gamma with D(y) not subset D(x), then v = c_z - c_x satisfies (1+s)v in cone(C_KL u {v}) for all s, and cone{c_w (w != z), v} is simplicial, invariant, strictly contains C_KL => C_KL not maximal. Sketch: s in D(z) => s in D(x): both killed; s in D(x)\\D(z): (1+s)v = (1+s)c_z in C_KL; s not in D(x): (1+s)v = 2v + sum_{y: s in D(y)} (mu(y,z) - mu(y,x)) c_y, coefficients >= 0 since such y have D(y) not subset D(x). Basis change replaces c_z by c_z - c_x => simplicial.",
-        "trust": "sketched",
-        "file": null,
-        "notes": "Rick checked by hand in Wake 279; PROVE to write it up sober.",
+        "trust": "proved",
+        "file": "proofs/2026-11-06-q68-kl-cone-twins.md",
+        "notes": "PROVE 279: written sober (Lemma A). Needs only mu>=0 (Elias-Williamson) and the GW convention-C action.",
         "children": []
       },
       {
@@ -61,8 +61,53 @@
         "approach": "Hunch: in simply-laced W no left cell contains a dominated twin (twins come from m>=4 strings x, s_j x, s_i s_j x).",
         "trust": "hunch",
         "file": null,
-        "notes": "Computed support only: A3, A4, D4.",
-        "children": []
+        "notes": "Computed support only: A3, A4, D4. PROVE 279: reduced to (*) via star kill (C1/C2); (*) proved type A n<=13 (Thm C3), FALSE at S_14; see Q68-c-* nodes.",
+        "children": [
+          {
+            "id": "Q68-c-star-kill",
+            "role": "attempt",
+            "approach": "Prop C1: twin (x,z), s in L(x), t notin L(x), m(s,t)=3 => s notin L(z). Uses KL (2.3.e) and star operations only. Cor C2: simply-laced twin => {} != L(z) subset int L(x).",
+            "trust": "proved",
+            "file": "proofs/2026-11-06-q68-kl-cone-twins.md",
+            "notes": "Valid in any Coxeter group for the m=3 pairs.",
+            "children": []
+          },
+          {
+            "id": "Q68-c-typeA-le13",
+            "role": "attempt",
+            "approach": "Thm C3: S_n, n<=13: (*) holds in every left cell (Kostka dominance criterion beta <= alpha' never holds; exhaustive over A subset [n-1]); hence no dominated twin in S_n, n<=13.",
+            "trust": "proved",
+            "file": "proofs/2026-11-06-q68-kl-cone-twins.md",
+            "notes": "Computer-assisted exhaustive check (dominance_star.py, exact integers), cross-checked against direct SYT enumeration n<=11 (syt_interior.py). Relies on RSK descent facts + Kostka positivity (textbook).",
+            "children": []
+          },
+          {
+            "id": "Q68-c-star-fails-S14",
+            "role": "attempt",
+            "approach": "(*) FALSE at S_14: lam=(4,4,3,3), P=[[1,2,6,10],[3,7,11,14],[4,8,12],[5,9,13]] (Des {2,3,4,6,7,8,10,11,12}), P'=[[1,2,3,7],[4,5,6,11],[8,9,10],[12,13,14]] (Des {3,7,11}=int). Star-kill route cannot prove (c) in general.",
+            "trust": "computed",
+            "file": "proofs/wake279/a13_caseB.py",
+            "reason": "dead end for the star-kill-only proof route of (c)",
+            "notes": "Explicit SYT verified. Case-B necessary conditions (Lemma C4: x'<z Bruhat, l(z)>l(x'), L(x') contains L(z)) pass in all 12012 left cells; twin undecided - needs mu in a 12012-dim cell.",
+            "children": []
+          },
+          {
+            "id": "Q68-c-caseB-lemma",
+            "role": "attempt",
+            "approach": "Lemma C4: in a simply-laced twin, for each boundary pair (s,t) of x with x'=*x: either z=tx' (x=stu,z=u) or x'<z with x'=rz for r in L(z)\\L(x'); >=2 boundary pairs => second alternative always, l(z)>=l(x).",
+            "trust": "proved",
+            "file": "proofs/2026-11-06-q68-kl-cone-twins.md",
+            "children": []
+          },
+          {
+            "id": "Q68-c-scan2",
+            "role": "attempt",
+            "approach": "Twin scan: A5 0/76, A6 0/232, D5 0/126 cells; (*) holds in all cells of A3-A5, D4, D5. Controls B4 24/50, F4 44/72.",
+            "trust": "computed",
+            "file": "proofs/wake279/out_twin_D5.txt",
+            "children": []
+          }
+        ]
       },
       {
         "id": "Q68-reducible-nonunique",
@@ -79,6 +124,15 @@
         "approach": "Open: H3 type 5_2 cells fail test (B) without any dominated twin - a second obstruction mechanism, unknown.",
         "trust": "hunch",
         "file": "proofs/wake279/out_H3_C.txt",
+        "children": []
+      },
+      {
+        "id": "Q68-b-thmB",
+        "role": "attempt",
+        "approach": "Theorem B: any finite Coxeter W, s,t with m(s,t)>=4, J=S\\{t}: (w_J, s t w_J) is a dominated twin in the left cell of w_J, so C_KL is not maximal there. Proof: only y with mu(y,w_J)!=0 and L(y) not in J is t w_J (KL 2.3.e + subword property), and mu(t w_J, s t w_J)=1.",
+        "trust": "proved",
+        "file": "proofs/2026-11-06-q68-kl-cone-twins.md",
+        "notes": "Computed confirmation thmB_check.py: I2(4,5,6),B3,H3,B4,F4 all ordered m>=4 pairs. Generalises Q68-B3-witness. Irreducibility of the cell: computed only (B3 both; B4 t=s2 irr, t=s1 reducible; B5 t=s2 reducible, t=s1 irr; H3 t=s2 irr dim 5). Uniform irreducible B_n family for all n = OPEN GAP.",
         "children": []
       }
     ]

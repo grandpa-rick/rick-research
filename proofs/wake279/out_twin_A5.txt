@@ -1,0 +1,1 @@
+A5: |W|=720 cells=76 cells with dominated twin: 0
