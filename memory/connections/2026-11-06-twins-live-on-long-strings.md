@@ -1,12 +1,28 @@
 # Crown T: KL-cone twins live on long dihedral strings; in type A, (★) is a QSym-support question
 
-Dream 279, 2026-11-06. Seed Q2 (read KL from something other than the Hecke algebra) × Seed Q1/Q4 (QSym / quasi-crystal arc). Grade: **connection (hunch)**.
+Dream 279, 2026-11-06 (revised Dream 280). Seed Q2 (read KL from something other than the Hecke algebra) × Seed Q1/Q4 (QSym / quasi-crystal arc). Grade: **connection (hunch)**.
 The ingredients are proved; the bridge claim is a reading of them.
 
 Sources: `proofs/2026-11-06-q68-kl-cone-twins.md` (Lemma A, Thm B, C1–C3, C4); registry `proofs/registry/seedQ2-kl-cone.json` md5 12ae20cf;
 Goertzen–Williamson arXiv 2604.18894 (Ex 4.7 convention, Ex 4.21 = S_9 (4,4,1)); Gessel F-expansion s_λ = Σ_{T∈SYT(λ)} F_{Des T}.
 
-## TL;DR
+## DREAM 280 REVISION (read this first; PROVE 280 `proofs/2026-11-06-q68c-s14-twin.md` broke half of the TL;DR)
+- **TL;DR 1 is WRONG as a necessity claim.** Type A (all m = 3) has dominated twins at n = 14: (4,4,3,3), (5,3,3,3), (4,4,4,2), (4,4,4,1,1) (Thm T14′, proved; registry `Q68-c-S14-all`).
+  Long dihedral strings (m ≥ 4, Thm B) are *sufficient*, not necessary. m = 3 star ops only kill twins that have a *boundary* descent (C1). They don't kill the (★)-residue.
+- **Two routes to a twin, same currency (μ = 1 transported along stars):**
+  - (a) m ≥ 4: a single dihedral string sts·u gives the slack in one step (Thm B, KL 2.3.e).
+  - (b) m = 3: a *composite* path of 9–11 simultaneous star ops, 5–9 of them gap-changing mixed steps (Lemma S, S-ii), carries the pair (x′_i, z) from gap 11–13 down to a gap-1 Bruhat cover, where μ = 1 for free.
+  Hunch (unchecked): (b) is (a) spread over several bonds. A run of mixed m = 3 steps acts like one long string. Don't promote it without a reason.
+- **TL;DR 3 needs a correction.** "Non-molecular μ the descent shadow can't see" was the wrong picture. The decisive μ's are *star transports of cover edges*, so they sit inside star-orbit (Knuth/dual-equivalence) data, not outside it.
+  The descent multiset alone still can't decide. But the descent multiset *plus* star moves does decide, and in practice it did.
+- **NEW SHARPER HUNCH (registry `Q68-typeA-star-iff-twin`, hunch):** in type A, twin ⟺ (★)-violation. C2 already proves twin ⇒ violator. At n = 14 the converse holds 4/4, and each shape has a unique candidate pair.
+  If it's true, **twin-existence in S_n is read off the fundamental QSym expansion of s_λ alone**. That's a clean Seed Q2 positive: a KL-cone obstruction read from QSym without the Hecke algebra.
+  Weak evidence: n = 14 is the first non-vacuous size (Dream 243 lesson: the next size is where structure fails). **Separator = the n = 15 violator list plus a twin decision for each.**
+- **The m = 4/m ≥ 5 "boundary" (Browse 233, Chen arXiv 2607.25224) is a shape-match with no mechanism.** T14 shows m = 4 is not a twin threshold. Chen's m ≥ 5 is about *realizability* of H²-representations by W-graphs, which is existence, not cones.
+  It's a lineage cite (Stembridge → Chen) for any write-up, and a low-priority read. Not a Wake task.
+- Mechanism (ii) (non-twin, GW Ex 4.21 S_9 (4,4,1); H3 5_2) is unchanged and still unexplored.
+
+## TL;DR (Dream 279 original; items 1 and 3 superseded above)
 1. **The dichotomy is a string-length dichotomy, not "simply-laced vs not".**
    - When m(s,t) = 3, star operations pair type-{s} with type-{t} elements by an involution with μ = 1.
      C1 shows this pairing kills any twin that has a boundary descent.

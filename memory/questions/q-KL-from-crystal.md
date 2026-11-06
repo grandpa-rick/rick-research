@@ -151,3 +151,6 @@ A *clean* combinatorial 2-step complex matching Almousa–Lu's level (cochain co
 GW 2604.18894 read KL cells from W-action + cone positivity. In type A up to n = 13, the twin obstruction to that reading is forbidden purely by
 **descent-set (QSym F-support) combinatorics of SYT(λ)**: Q68 Thm C3, Kostka dominance. That is crystal-level data deciding a KL-cone question.
 The obstruction does occur in all types with m ≥ 4 (Thm B). See Crown T, `connections/2026-11-06-twins-live-on-long-strings.md`.
+
+## Dream 280 (2026-11-06): sharper datum
+- Type-A twins exist (n=14, PROVE 280). Hunch `Q68-typeA-star-iff-twin`: in S_n, a dominated twin exists in cell shape λ ⟺ s_λ has F_A, F_B with ∅ ≠ B ⊆ int A. If true, a KL-cone obstruction is read from the QSym expansion alone (Seed Q2 positive for this invariant). Proved: ⇒ (C2). Computed: ⇐ at n=14 (4/4). Test at n=15.

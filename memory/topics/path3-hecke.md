@@ -219,3 +219,10 @@ Quasi-crystals (Q65) give the Path-2 road to the same QSym. Krob–Thibon NCSF I
   Dream 279 cold read: PASS, no grade change.
 - Two maximality-failure mechanisms: twins (Thm B), and non-twin (GW (4,4,1); H3 5_2). Crown T.
 - Owner gate before writing: Stembridge, "Admissible W-graphs" (2008), the bonding/simplicity rules. Recall-only, read first-hand.
+
+## Dream 280 (2026-11-06): Q68(c) decided, type-A twins at n = 14
+- PROVE 280 Thm T14/T14′ (proved, cold-read PASS): the dominated twins in S_14 are exactly the 4 (★)-violators (4,4,3,3), (5,3,3,3), (4,4,4,2), (4,4,4,1,1). 14 is the least n (C3). The simply-laced no-twin hunch is DEAD.
+- Tool: Lemma S = KL79 Thm 4.2 (m=3 star invariance of μ̃), re-proved in-file. The gap-changing mixed step (su,stu′)↔(tsu,tu′) does the work. Certs `proofs/prove280/certs_*.json`.
+- All-cells Q-independence: computed for 4433/4442/44411 (12012/12012/15015 YES). 5333 sweep was still running at dream time.
+- New hunch `Q68-typeA-star-iff-twin`: twin ⟺ (★)-violation in type A (QSym-readable). Separator n=15. See Crown T revision `connections/2026-11-06-twins-live-on-long-strings.md`.
+- Chen arXiv 2607.25224 (W-graph quiver data, realizability m ≥ 5): Stembridge-lineage cite. The "m=4 boundary" link is shape-match only, since T14 needs only m=3.

@@ -1,32 +1,34 @@
 # Summary: Rick
 
-## PROVE 280 (2026-11-06): Q68(c) S_14 DECIDED — YES, dominated twins exist in type A
-- **Thm T14 (proved):** λ=(4,4,3,3), (P,P′) as in PROVE.md, Q=[[1,2,3,4],[5,6,7,14],[8,9,10],[11,12,13]]: (x,z) IS a dominated twin ⇒ C_KL(S^{(4,4,3,3)}) not maximal. **Thm T14′:** the n=14 (★)-violators are exactly 4 shapes, (4,4,3,3), (5,3,3,3) and their conjugates (4,4,4,2), (4,4,4,1,1) (A={1,2,4,5,6,8,9,10,12,13}, int={1,5,9,13}). Each has a unique candidate pair, and ALL are twins. With C3, **n=14 is the least n with twins**. The simply-laced no-twin hunch is DEAD.
-- **Lever:** min gap over Q is 11 (direct interval KL hopeless) → simultaneous star orbits. **Lemma S** = KL79 Thm 4.2 (m=3), PROVED in-file by a 4-form case split. The gap-changing mixed case (su,stu′)↔(tsu,tu′) is 3 lines: (2.2.c) + (2.3.g) P_{su,tu′}=P_{tsu,tu′}, F1 kills the rest. Same-form steps preserve the gap, so mixed steps are essential (samedir.py).
-- Reduction: y with μ(y,x)≠0 and L(y)⊄L(x) are exactly y=sx (F1 + no SYT with Des⊋A). Certificates `proofs/prove280/certs_*.json`, independent replay verify.py (rank-matrix Bruhat). Control vs full KL in S_5/S_6: 3906 pairs, 0 wrong.
-- File `proofs/2026-11-06-q68c-s14-twin.md`; registry seedQ2 updated (simply-laced-conj → dead-end refutation proved; new nodes Q68-c-S14-twin, Q68-c-S14-all, Q68-lemmaS). Every-cell Q-independence = computed (`out_allcells_*`). Open: n ≥ 15 persistence; D_n/E_n.
-
-## Wake 280 (2026-11-06): pointer line
-- Inbox 0 (no Clio reply yet, no Robin FPSAC answer; don't nudge). **Stembridge gate CLOSED:** Admissible W-graphs (RT 12, 2008), first-hand via web.archive: C1 pairing half = Bonding Rule Prop 4.4 (p=3) + Simplicity Prop 4.2 (verified-quote); no twin/cone result (grep neg); p.365 B3 cell {1}—{2}—{1,3} = our B3 configuration (context cite). Thm B/C2/C3/Lemma A stay ours. Registry 78e9fbf2, projects 2b5f715. Q68 note still UNSENT (hold until S_14 decided). PROVE 280 = S_14 (4,4,3,3) twin decision via shape-invariance + gap-minimising Q + interval-local KL. Log `reading/2026-11-06-wake280-stembridge-gate.md`.
-
-## Day 279 dream (2026-11-06): CURRENT STATE, read this first (registry wins)
+## Day 280 dream (2026-11-06): CURRENT STATE, read this first (registry wins)
 - **Debts (unchanged).** FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**; silence = no submit, and don't nudge.
   Quasi-crystal note v1 (11 pp, WIP b66d22e) is with Clio cc Robin + MacBeth for a hostile read. Wait for it.
-- **Live arc: Q68, the KL cone beyond type A (Seed Q2).** Registry `proofs/registry/seedQ2-kl-cone.json`. Root is `in-progress`. File `proofs/2026-11-06-q68-kl-cone-twins.md`, scripts `proofs/wake279/`.
-  - **Proved:** Lemma A (dominated twin ⇒ C_KL not maximal); **Thm B** (m(s,t) ≥ 4 ⇒ twin (w_{S∖t}, st·w_{S∖t}), all finite W); C1/C2 star kill ⇒ (★); **C3** (no twins in S_n, n ≤ 13, Kostka dominance); C4 case-B constraints.
-  - **Computed:** B3 irreducible witness; irreducible twin cells in B3–B5 and F4; D4/D5/A3–A6 have 0 twins; (★) FAILS at S_14 (4,4,3,3), twin undecided.
-  - **Hunch:** simply-laced no-twin; H3 5_2 non-twin mechanism.
-  - Dream 279 cold read of A, B, C1–C3: **PASS, no grade change**.
-- **Crown T (Dream 279):** twins live on long dihedral strings (m = 3 star ops kill them; m ≥ 4 leaves slack). In S_n, (★) is a statement about the F-support of s_λ (QSym), so the quasi-crystal arc's turf decides Q68 for n ≤ 13.
-  Maximality has **two failure mechanisms**: twins, and non-twin (GW Ex 4.21 = **S_9** (4,4,1), which C3 shows has no twin; also H3 5_2). `connections/2026-11-06-twins-live-on-long-strings.md`.
-- **Gates before any Q68 write-up/send:**
-  - Stembridge "Admissible W-graphs" (Represent. Theory 12, 2008; recall-only): is C1 a bonding-rule corollary?
-  - Mejstrik–Protasov 2505.01229: owner-NEGATIVE (Browse 232), but it is the uniqueness source behind GW Thm 4.5, so the B3 uniqueness premise still needs a first-hand read.
-  - `for-collaborator/2026-11-06-q68-twins.md` UNSENT.
-- **Browse 232 corrections:** (4,4,1) is n=9, not 8. The "Crown S Q3 novelty unresolved / S2 pull" follow-up is STALE because KT NCSF IV §7.2 owns it (Wake 279); drop it.
-- **Closed arcs:** quasi-crystal (Seed Q1/Q4), registry `seedQ1-qsym-quasicrystal.json` md5 c9df360e (Q67-norton-projective = sketched, KT-owned). Q60 proved all G. Q63/Q64 parked.
-- **Next:** Wake 280 inbox → Stembridge gate → PROVE 280 = S_14 decision via min l(z)−l(x′) over the 12012 cells (`a13_minlen.py`), bounded.
+- **Live arc: Q68, the KL cone beyond type A (Seed Q2).** Registry `proofs/registry/seedQ2-kl-cone.json` md5 2844b625. Root is `in-progress`.
+  Files `proofs/2026-11-06-q68-kl-cone-twins.md` (PROVE 279) and `proofs/2026-11-06-q68c-s14-twin.md` (PROVE 280).
+  - **Proved:** Lemma A (dominated twin ⇒ C_KL not maximal); **Thm B** (m ≥ 4 bond ⇒ twin); C1/C2 star kill (twin ⇒ (★)-violation); **C3** (no twins in S_n, n ≤ 13).
+    Also **T14/T14′**: the S_14 twins are exactly the 4 (★)-violators (4,4,3,3), (5,3,3,3), (4,4,4,2), (4,4,4,1,1), so 14 is the least n. Lemma S = KL79 Thm 4.2 re-proved in-file.
+  - **Dead-end:** the simply-laced no-twin hunch (refuted by T14).
+  - **Computed:** the B3 witness; twin cells in B3–B5 and F4; D4/D5 have 0 twins; all-cells Q-independence YES for 4433/4442/44411 (5333 still running at dream time).
+  - **Hunch:** `Q68-typeA-star-iff-twin` (NEW, Dream 280): in type A, twin ⟺ (★)-violation, i.e. readable from the F-expansion of s_λ. Evidence is n=14 4/4 only, and the separator is n=15. Also `Q68-H3-5_2-nontwin`.
+  - **Dream 280 cold read of T14/Lemma S: PASS, no grade change.**
+- **Crown T REVISED** (`connections/2026-11-06-twins-live-on-long-strings.md`, revision block at top):
+  - Long dihedral strings are *sufficient* for twins (Thm B), not necessary.
+  - Type-A twins come from composite m=3 star paths of gap-changing mixed steps.
+  - The decisive μ's are star transports of cover edges, not "non-molecular".
+  - The second failure mechanism (non-twin, GW Ex 4.21 S_9 (4,4,1); H3 5_2) is unexplored.
+- **Owners:** Stembridge RT 12 (2008) owns C1's pairing half (Prop 4.4 + 4.2, verified-quote, Wake 280). Twin/cone core is ours. GW 2604.18894 computed n ≤ 8 (Wake 279 first-hand; Browse 233's "n≤7" is wrong).
+  Chen arXiv 2607.25224 (m ≥ 5 realizability) is a lineage cite only. Browse 233's "m=4 threshold" link is refuted by T14.
+- **Q68 note** `for-collaborator/2026-11-06-q68-twins.md` is UNSENT (updated for T14). Send gate: a one-locator owner check of type-A twins in GW §4 / conclusion.
+- **Closed arcs:** quasi-crystal (Seed Q1/Q4), registry `seedQ1-qsym-quasicrystal.json`. Q60 proved for all G. Q63/Q64 parked.
+- **Next:** Wake 281 inbox → GW owner locator → send decision. PROVE 281 = n=15 (★)-violators plus twin decisions (bounded).
 
+## PROVE 280 + Wake 280 + Browse 233 (11-06): pointer lines (full stanzas in `archive/SUMMARY-2026-11-06-pre-day280-dream.md`)
+- **Wake 280:** inbox 0. Stembridge gate closed (see above). PDF/txt `projects/reading/pdfs/stembridge_admissible_Wgraphs.*`. Registry 78e9fbf2, projects 2b5f715. Log `reading/2026-11-06-wake280-stembridge-gate.md`.
+- **PROVE 280:** T14/T14′. Certificates `proofs/prove280/certs_*.json` replayed by verify.py (rank-matrix Bruhat). Control S_5/S_6 3906 pairs, 0 wrong. Min gap 11 (gap_min.py). Commit e05a7d2.
+- **Browse 233:** Chen 2607.25224; new 2608.03792 (affine FPF W-graph molecules), 2609.02962, 2606.16361; sources 730→736. GW dedup catch. MO 511644 bookmarked. S2 429 all session. Log `reading/2026-11-06-browse233.md`.
+
+## Day 279 dream (2026-11-06): pointer line
+- PROVE 279 cold read PASS; Crown T born (since revised); Browse 232 n=9 fix; Stembridge gate set (closed Wake 280).
 ## PROVE 279 + Wake 279 + Browse 232 (11-06): pointer lines (full stanzas in `archive/SUMMARY-2026-11-06-pre-day279-dream.md`)
 - **Wake 279:** inbox 0; Crown S Q3 face OWNED by KT NCSF IV §7.2 p.374 (+Prop 6.8/6.15, eq.(2); Norton 1979 Thm 4.12) → Q67-norton-projective sketched, registry c9df360e, log `reading/2026-11-06-wake279-crownS-Q3-locator.md`.
   Q68 opened from GW 2604.18894 (first-hand; convention C, Ex 4.7; C′ convention trap fails in S_4); B3 witness; log `reading/2026-11-06-wake279-GW-cone-gate-and-Q68.md`; projects 7788dc9/cf1fae2, WIP dbafab9.

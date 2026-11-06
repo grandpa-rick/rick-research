@@ -1,171 +1,180 @@
 {
-  "conjecture": "Q68 (Seed Q2: read KL from W-action + positivity, no Hecke algebra): Is the Kazhdan-Lusztig cell basis (v=1) the maximal {1+s}-invariant cone in left-cell modules of finite Coxeter groups beyond type A?",
-  "status": "in-progress",
-  "date_opened": "2026-11-06",
-  "date_closed": null,
-  "tree": {
-    "id": "Q68",
-    "approach": "Wake 279. Context: Goertzen-Williamson 2604.18894 (verified first-hand Wake 279; papers/GoertzenWilliamson_2604.18894.*) prove C_KL is the maximal invariant cone for S_n Specht modules: hooks (Thm 4.11), two-column (Thm 4.14), (n-2,2) (Thm 4.17); computed n<=8; fails non-simplicial at (4,4,1) (Ex 4.21). W-graph convention C (their Ex 4.7): (1+s)e_x = 0 if s in D(x), else 2e_x + sum_{y: s in D(y)} mu(x,y) e_y. Other types not mentioned (only the group-ring Problem 3.1 / Rem 3.3, a different question). Wake 279 evidence: the answer is NO beyond simply-laced (B3 irreducible 3-dim cell, see Q68-B3-witness); simply-laced case open.",
-    "trust": "in-progress",
-    "file": null,
+ "conjecture": "Q68 (Seed Q2: read KL from W-action + positivity, no Hecke algebra): Is the Kazhdan-Lusztig cell basis (v=1) the maximal {1+s}-invariant cone in left-cell modules of finite Coxeter groups beyond type A?",
+ "status": "in-progress",
+ "date_opened": "2026-11-06",
+ "date_closed": null,
+ "tree": {
+  "id": "Q68",
+  "approach": "Wake 279. Context: Goertzen-Williamson 2604.18894 (verified first-hand Wake 279; papers/GoertzenWilliamson_2604.18894.*) prove C_KL is the maximal invariant cone for S_n Specht modules: hooks (Thm 4.11), two-column (Thm 4.14), (n-2,2) (Thm 4.17); computed n<=8; fails non-simplicial at (4,4,1) (Ex 4.21). W-graph convention C (their Ex 4.7): (1+s)e_x = 0 if s in D(x), else 2e_x + sum_{y: s in D(y)} mu(x,y) e_y. Other types not mentioned (only the group-ring Problem 3.1 / Rem 3.3, a different question). Wake 279 evidence: the answer is NO beyond simply-laced (B3 irreducible 3-dim cell, see Q68-B3-witness); simply-laced case open.",
+  "trust": "in-progress",
+  "file": null,
+  "sources": [
+   "2604.18894"
+  ],
+  "notes": "Mejstrik-Protasov 2505.01229: OWNER check closed NEGATIVE (Browse 232; numerical common-invariant-cone paper, not rep theory) -- but it is NOT a coincidental collision: it is the source GW Thm 4.5 cites for uniqueness of the maximal cone in irreducible modules, so the Q68-B3-witness uniqueness premise still rests on it via GW (first-hand locator owed). Semantic Scholar lists no citers of 2604.18894 (Wake 279). PROVE 279: (a) proved; (b) twins in every m>=4 Coxeter group proved (Thm B), irreducible-cell part computed n<=5 only; (c) proved S_n n<=13, star-kill route dies at S_14, open in general. Dream 279 cold read PASS of Lemma A, Thm B, C1, C2, C3 (incl. hand check Des P / int Des P = {3,7,11} at S_14); no grade change. Dream 279 owner-risk flag (recall-only): C1 may follow from Stembridge 'Admissible W-graphs' (Represent. Theory 12, 2008) simplicity/bonding rules; read first-hand before any write-up. Dream 279: GW Ex 4.21 (4,4,1) is S_9 (Browse 232 said n=8, wrong); C3 => no twins in S_9, so Ex 4.21 is a NON-twin mechanism, cf Q68-H3-5_2-nontwin. Crown T: connections/2026-11-06-twins-live-on-long-strings.md. Wake 280: Stembridge gate CLOSED (first-hand read, Represent. Theory 12 (2008) 346-368). Verdict: PARTIALLY OWNED -- C1 pairing half = Stembridge Prop 4.4 (Bonding Rule, p=3) + Prop 4.2 (Simplicity Rule), Rem 4.3; other C1 half classical KL79 sec.4 (recall-only). Stembridge has NO twin/dominated-pair/cone result (grep 'twin','domina' negative). p.365 exhibits the B3 cell {1}--{2}--{1,3} on the m=4 bond with '{1} subset {1,3}', used only for a Polygon Rule argument -- same configuration as Q68-B3-witness dominated twin; cite as context. Thm B, C2, C3, Lemma A remain ours; Q68 core not owned. Next: PROVE 280 = S_14 (4,4,3,3) decision. PROVE 280: Q68(c) at S_14 DECIDED YES: dominated twins exist in type A, first at n=14 (4 shapes); simply-laced hunch refuted; Lemma S (KL79 Thm 4.2, m=3) proved in-file.",
+  "children": [
+   {
+    "id": "Q68-convention",
+    "role": "premise",
+    "approach": "GW convention C is the right one; the C' version ((1+s)c_w = 2c_w for sw<w) is equivalent to minimality for Gamma w0 (dual / w0-twisted question), and maximality in that convention is false already in A3.",
+    "trust": "computed",
+    "file": "proofs/wake279/out_I2_Cp.txt",
+    "notes": "Also wake279/out_A3.txt. Convention trap: do not compare C' numerics against GW.",
     "sources": [
-      "2604.18894"
+     "2604.18894"
     ],
-    "notes": "Mejstrik-Protasov 2505.01229: OWNER check closed NEGATIVE (Browse 232; numerical common-invariant-cone paper, not rep theory) -- but it is NOT a coincidental collision: it is the source GW Thm 4.5 cites for uniqueness of the maximal cone in irreducible modules, so the Q68-B3-witness uniqueness premise still rests on it via GW (first-hand locator owed). Semantic Scholar lists no citers of 2604.18894 (Wake 279). PROVE 279: (a) proved; (b) twins in every m>=4 Coxeter group proved (Thm B), irreducible-cell part computed n<=5 only; (c) proved S_n n<=13, star-kill route dies at S_14, open in general. Dream 279 cold read PASS of Lemma A, Thm B, C1, C2, C3 (incl. hand check Des P / int Des P = {3,7,11} at S_14); no grade change. Dream 279 owner-risk flag (recall-only): C1 may follow from Stembridge 'Admissible W-graphs' (Represent. Theory 12, 2008) simplicity/bonding rules; read first-hand before any write-up. Dream 279: GW Ex 4.21 (4,4,1) is S_9 (Browse 232 said n=8, wrong); C3 => no twins in S_9, so Ex 4.21 is a NON-twin mechanism, cf Q68-H3-5_2-nontwin. Crown T: connections/2026-11-06-twins-live-on-long-strings.md. Wake 280: Stembridge gate CLOSED (first-hand read, Represent. Theory 12 (2008) 346-368). Verdict: PARTIALLY OWNED -- C1 pairing half = Stembridge Prop 4.4 (Bonding Rule, p=3) + Prop 4.2 (Simplicity Rule), Rem 4.3; other C1 half classical KL79 sec.4 (recall-only). Stembridge has NO twin/dominated-pair/cone result (grep 'twin','domina' negative). p.365 exhibits the B3 cell {1}--{2}--{1,3} on the m=4 bond with '{1} subset {1,3}', used only for a Polygon Rule argument -- same configuration as Q68-B3-witness dominated twin; cite as context. Thm B, C2, C3, Lemma A remain ours; Q68 core not owned. Next: PROVE 280 = S_14 (4,4,3,3) decision. PROVE 280: Q68(c) at S_14 DECIDED YES: dominated twins exist in type A, first at n=14 (4 shapes); simply-laced hunch refuted; Lemma S (KL79 Thm 4.2, m=3) proved in-file.",
+    "children": []
+   },
+   {
+    "id": "Q68-twin-lemma",
+    "role": "premise",
+    "approach": "Dominated-twin lemma: if x != z in a left cell Gamma with D(z) subset D(x) and mu(y,z) >= mu(y,x) for every y in Gamma with D(y) not subset D(x), then v = c_z - c_x satisfies (1+s)v in cone(C_KL u {v}) for all s, and cone{c_w (w != z), v} is simplicial, invariant, strictly contains C_KL => C_KL not maximal. Sketch: s in D(z) => s in D(x): both killed; s in D(x)\\D(z): (1+s)v = (1+s)c_z in C_KL; s not in D(x): (1+s)v = 2v + sum_{y: s in D(y)} (mu(y,z) - mu(y,x)) c_y, coefficients >= 0 since such y have D(y) not subset D(x). Basis change replaces c_z by c_z - c_x => simplicial.",
+    "trust": "proved",
+    "file": "proofs/2026-11-06-q68-kl-cone-twins.md",
+    "notes": "PROVE 279: written sober (Lemma A). Needs only mu>=0 (Elias-Williamson) and the GW convention-C action.",
+    "children": []
+   },
+   {
+    "id": "Q68-B3-witness",
+    "role": "attempt",
+    "approach": "B3 irreducible 3-dim left cell {x = s3s1, y = s2s3s1, z = s1s2s3s1}: D(x) = {1,3}, D(y) = {2}, D(z) = {1}; edges x-y, y-z; mu(x,z) = 0 (even length difference). v = c_z - c_x: (1+s1)v = 0, (1+s2)v = 2v, (1+s3)v = 2c_z. cone{c_x, c_y, v} invariant simplicial, strictly contains C_KL; module irreducible so the maximal cone C^max is unique (Mejstrik-Protasov) and strictly contains C_KL.",
+    "trust": "computed",
+    "file": "proofs/wake279/b3_witness.py",
+    "notes": "sympy exact. Hand-check passed Wake 279. Uniqueness of C^max leans on Mejstrik-Protasov 2505.01229 via GW Thm 4.5 (not read first-hand).",
+    "sources": [
+     "2604.18894"
+    ],
+    "children": []
+   },
+   {
+    "id": "Q68-scan",
+    "role": "attempt",
+    "approach": "Scan (convention C): A3 all cells pass (calibrates GW); D4 all irreducible cells (dims 3,4) pass, reducible dims 10,14 fail; I2(m), m=4,5,6,8 middle cells (reducible) fail; B3 all non-degenerate cells fail incl. 6 irreducible 3-dim; H3 all fail incl. irreducible 5-dim (type 5_2 cells fail without a twin). Dominated twin found in all B3 3-dim and 4-dim cells, every dihedral middle cell, 15/22 H3 cells; never in A3, A4, D4.",
+    "trust": "computed",
+    "file": "proofs/wake279/out_B3_C.txt",
+    "notes": "Outputs: wake279/out_A3.txt, out_B3_C.txt, out_D4_C.txt, out_H3_C.txt, out_I2_C.txt, out_dihedral_controls.txt, out_control_mincone.txt; twin scan wake279/twin_criterion.py. Caveat: test (A) is depth-limited; the witnesses from test (B) / twin lemma are the evidence, not (A) passes.",
+    "children": []
+   },
+   {
+    "id": "Q68-simply-laced-conj",
+    "role": "attempt",
+    "approach": "Hunch: in simply-laced W no left cell contains a dominated twin (twins come from m>=4 strings x, s_j x, s_i s_j x).",
+    "trust": "dead-end",
+    "file": "proofs/2026-11-06-q68c-s14-twin.md",
+    "notes": "Computed support only: A3, A4, D4. PROVE 279: reduced to (*) via star kill (C1/C2); (*) proved type A n<=13 (Thm C3), FALSE at S_14; see Q68-c-* nodes. PROVE 280: refuted in type A at n=14, shapes (4,4,3,3),(5,3,3,3),(4,4,4,2),(4,4,4,1,1).",
     "children": [
-      {
-        "id": "Q68-convention",
+     {
+      "id": "Q68-c-star-kill",
+      "role": "attempt",
+      "approach": "Prop C1: twin (x,z), s in L(x), t notin L(x), m(s,t)=3 => s notin L(z). Uses KL (2.3.e) and star operations only. Cor C2: simply-laced twin => {} != L(z) subset int L(x).",
+      "trust": "proved",
+      "file": "proofs/2026-11-06-q68-kl-cone-twins.md",
+      "notes": "Valid in any Coxeter group for the m=3 pairs. Wake 280: Stembridge gate CLOSED -- see owner field; local reading/pdfs/stembridge_admissible_Wgraphs.{pdf,txt}, log memory/reading/2026-11-06-wake280-stembridge-gate.md. Trust grade unchanged.",
+      "children": [],
+      "owner": "PARTIALLY OWNED (Wake 280, verified-quote first-hand): the PAIRING half (m(s,t)=3 star ops pair types {s}<->{t} with mu=1, unique adjacent partner) = Stembridge, 'Admissible W-graphs', Represent. Theory 12 (2008) 346-368, DOI 10.1090/S1088-4165-08-00336-1: Bonding Rule Prop 4.4 pp.358-359 (p=3 clause) + Simplicity Rule Prop 4.2 p.357 (incomparable taus => simple edge, weight 1); Remark 4.3 p.357 (automatic when simply-laced); Thm 3.4 p.355 (rank-2 admissible cells have no multiplicities >1) is the implicit reason m=3 forces unique partners. The other half ('of {sy,ty} exactly one has type {s}') is classical KL 1979 sec.4 star-operation theory (recall-only), not in Stembridge. The twin-kill conclusion itself (Prop C1 applied to dominated twins) is ours."
+     },
+     {
+      "id": "Q68-c-typeA-le13",
+      "role": "attempt",
+      "approach": "Thm C3: S_n, n<=13: (*) holds in every left cell (Kostka dominance criterion beta <= alpha' never holds; exhaustive over A subset [n-1]); hence no dominated twin in S_n, n<=13.",
+      "trust": "proved",
+      "file": "proofs/2026-11-06-q68-kl-cone-twins.md",
+      "notes": "Computer-assisted exhaustive check (dominance_star.py, exact integers), cross-checked against direct SYT enumeration n<=11 (syt_interior.py). Relies on RSK descent facts + Kostka positivity (textbook).",
+      "children": []
+     },
+     {
+      "id": "Q68-c-star-fails-S14",
+      "role": "attempt",
+      "approach": "(*) FALSE at S_14: lam=(4,4,3,3), P=[[1,2,6,10],[3,7,11,14],[4,8,12],[5,9,13]] (Des {2,3,4,6,7,8,10,11,12}), P'=[[1,2,3,7],[4,5,6,11],[8,9,10],[12,13,14]] (Des {3,7,11}=int). Star-kill route cannot prove (c) in general.",
+      "trust": "computed",
+      "file": "proofs/wake279/a13_caseB.py",
+      "reason": "dead end for the star-kill-only proof route of (c)",
+      "notes": "Explicit SYT verified. Case-B necessary conditions (Lemma C4: x'<z Bruhat, l(z)>l(x'), L(x') contains L(z)) pass in all 12012 left cells; twin undecided - needs mu in a 12012-dim cell. PROVE 280: decided YES - the pair IS a dominated twin (Q68-c-S14-twin).",
+      "children": []
+     },
+     {
+      "id": "Q68-c-caseB-lemma",
+      "role": "attempt",
+      "approach": "Lemma C4: in a simply-laced twin, for each boundary pair (s,t) of x with x'=*x: either z=tx' (x=stu,z=u) or x'<z with x'=rz for r in L(z)\\L(x'); >=2 boundary pairs => second alternative always, l(z)>=l(x).",
+      "trust": "proved",
+      "file": "proofs/2026-11-06-q68-kl-cone-twins.md",
+      "children": []
+     },
+     {
+      "id": "Q68-c-scan2",
+      "role": "attempt",
+      "approach": "Twin scan: A5 0/76, A6 0/232, D5 0/126 cells; (*) holds in all cells of A3-A5, D4, D5. Controls B4 24/50, F4 44/72.",
+      "trust": "computed",
+      "file": "proofs/wake279/out_twin_D5.txt",
+      "children": []
+     },
+     {
+      "id": "Q68-c-S14-twin",
+      "role": "attempt",
+      "approach": "Thm T14: in the left cell Q=[[1,2,3,4],[5,6,7,14],[8,9,10],[11,12,13]] of S_14, (x,z)=((P,Q),(P',Q)) for lam=(4,4,3,3) is a dominated twin: F1 + SYT Des-exclusion reduce the y-check to the 4 star images x'_i=s x (s=2,5,9,12); each mu(x'_i,z)=1 via explicit simultaneous-star certificate paths (Lemma S) ending at a gap-1 Bruhat-comparable pair. C_KL(S^(4,4,3,3)) not maximal.",
+      "trust": "proved",
+      "file": "proofs/2026-11-06-q68c-s14-twin.md",
+      "notes": "Certificates prove280/certs_1.json, independent replay prove280/verify.py (own RSK, own star, rank-matrix Bruhat), out_verify.txt. Decision procedure control vs full KL S_5,S_6: 3906 cell pairs, 0 wrong (out_control_S5S6.txt). Uses Lemma S (proved) and Lemma A (proved). Dream 280 cold read PASS (Lemma S S-i/S-ii coefficient bookkeeping re-derived by hand from (2.2.c),(2.3.g),F1; Step 2 boundary-y reduction re-checked). No grade change.",
+      "children": [
+       {
+        "id": "Q68-lemmaS-star-invariance",
         "role": "premise",
-        "approach": "GW convention C is the right one; the C' version ((1+s)c_w = 2c_w for sw<w) is equivalent to minimality for Gamma w0 (dual / w0-twisted question), and maximality in that convention is false already in A3.",
-        "trust": "computed",
-        "file": "proofs/wake279/out_I2_Cp.txt",
-        "notes": "Also wake279/out_A3.txt. Convention trap: do not compare C' numerics against GW.",
-        "sources": [
-          "2604.18894"
-        ],
-        "children": []
-      },
-      {
-        "id": "Q68-twin-lemma",
-        "role": "premise",
-        "approach": "Dominated-twin lemma: if x != z in a left cell Gamma with D(z) subset D(x) and mu(y,z) >= mu(y,x) for every y in Gamma with D(y) not subset D(x), then v = c_z - c_x satisfies (1+s)v in cone(C_KL u {v}) for all s, and cone{c_w (w != z), v} is simplicial, invariant, strictly contains C_KL => C_KL not maximal. Sketch: s in D(z) => s in D(x): both killed; s in D(x)\\D(z): (1+s)v = (1+s)c_z in C_KL; s not in D(x): (1+s)v = 2v + sum_{y: s in D(y)} (mu(y,z) - mu(y,x)) c_y, coefficients >= 0 since such y have D(y) not subset D(x). Basis change replaces c_z by c_z - c_x => simplicial.",
+        "approach": "Lemma S = KL79 Thm 4.2 (m=3): mu~(y,w)=mu~(*y,*w) for y,w in D_L(s,t); proved in-file by 4-form case split: different types via C1 Claim, same form (S-i) via (2.2.c) with two-term cancellation, mixed form (S-ii, gap-changing) via (2.2.c)+(2.3.g) with F1 killing the z-sum.",
         "trust": "proved",
-        "file": "proofs/2026-11-06-q68-kl-cone-twins.md",
-        "notes": "PROVE 279: written sober (Lemma A). Needs only mu>=0 (Elias-Williamson) and the GW convention-C action.",
-        "children": []
-      },
-      {
-        "id": "Q68-B3-witness",
-        "role": "attempt",
-        "approach": "B3 irreducible 3-dim left cell {x = s3s1, y = s2s3s1, z = s1s2s3s1}: D(x) = {1,3}, D(y) = {2}, D(z) = {1}; edges x-y, y-z; mu(x,z) = 0 (even length difference). v = c_z - c_x: (1+s1)v = 0, (1+s2)v = 2v, (1+s3)v = 2c_z. cone{c_x, c_y, v} invariant simplicial, strictly contains C_KL; module irreducible so the maximal cone C^max is unique (Mejstrik-Protasov) and strictly contains C_KL.",
-        "trust": "computed",
-        "file": "proofs/wake279/b3_witness.py",
-        "notes": "sympy exact. Hand-check passed Wake 279. Uniqueness of C^max leans on Mejstrik-Protasov 2505.01229 via GW Thm 4.5 (not read first-hand).",
-        "sources": [
-          "2604.18894"
-        ],
-        "children": []
-      },
-      {
-        "id": "Q68-scan",
-        "role": "attempt",
-        "approach": "Scan (convention C): A3 all cells pass (calibrates GW); D4 all irreducible cells (dims 3,4) pass, reducible dims 10,14 fail; I2(m), m=4,5,6,8 middle cells (reducible) fail; B3 all non-degenerate cells fail incl. 6 irreducible 3-dim; H3 all fail incl. irreducible 5-dim (type 5_2 cells fail without a twin). Dominated twin found in all B3 3-dim and 4-dim cells, every dihedral middle cell, 15/22 H3 cells; never in A3, A4, D4.",
-        "trust": "computed",
-        "file": "proofs/wake279/out_B3_C.txt",
-        "notes": "Outputs: wake279/out_A3.txt, out_B3_C.txt, out_D4_C.txt, out_H3_C.txt, out_I2_C.txt, out_dihedral_controls.txt, out_control_mincone.txt; twin scan wake279/twin_criterion.py. Caveat: test (A) is depth-limited; the witnesses from test (B) / twin lemma are the evidence, not (A) passes.",
-        "children": []
-      },
-      {
-        "id": "Q68-simply-laced-conj",
-        "role": "attempt",
-        "approach": "Hunch: in simply-laced W no left cell contains a dominated twin (twins come from m>=4 strings x, s_j x, s_i s_j x).",
-        "trust": "dead-end",
         "file": "proofs/2026-11-06-q68c-s14-twin.md",
-        "notes": "Computed support only: A3, A4, D4. PROVE 279: reduced to (*) via star kill (C1/C2); (*) proved type A n<=13 (Thm C3), FALSE at S_14; see Q68-c-* nodes. PROVE 280: refuted in type A at n=14, shapes (4,4,3,3),(5,3,3,3),(4,4,4,2),(4,4,4,1,1).",
-        "children": [
-          {
-            "id": "Q68-c-star-kill",
-            "role": "attempt",
-            "approach": "Prop C1: twin (x,z), s in L(x), t notin L(x), m(s,t)=3 => s notin L(z). Uses KL (2.3.e) and star operations only. Cor C2: simply-laced twin => {} != L(z) subset int L(x).",
-            "trust": "proved",
-            "file": "proofs/2026-11-06-q68-kl-cone-twins.md",
-            "notes": "Valid in any Coxeter group for the m=3 pairs. Wake 280: Stembridge gate CLOSED -- see owner field; local reading/pdfs/stembridge_admissible_Wgraphs.{pdf,txt}, log memory/reading/2026-11-06-wake280-stembridge-gate.md. Trust grade unchanged.",
-            "children": [],
-            "owner": "PARTIALLY OWNED (Wake 280, verified-quote first-hand): the PAIRING half (m(s,t)=3 star ops pair types {s}<->{t} with mu=1, unique adjacent partner) = Stembridge, 'Admissible W-graphs', Represent. Theory 12 (2008) 346-368, DOI 10.1090/S1088-4165-08-00336-1: Bonding Rule Prop 4.4 pp.358-359 (p=3 clause) + Simplicity Rule Prop 4.2 p.357 (incomparable taus => simple edge, weight 1); Remark 4.3 p.357 (automatic when simply-laced); Thm 3.4 p.355 (rank-2 admissible cells have no multiplicities >1) is the implicit reason m=3 forces unique partners. The other half ('of {sy,ty} exactly one has type {s}') is classical KL 1979 sec.4 star-operation theory (recall-only), not in Stembridge. The twin-kill conclusion itself (Prop C1 applied to dominated twins) is ours."
-          },
-          {
-            "id": "Q68-c-typeA-le13",
-            "role": "attempt",
-            "approach": "Thm C3: S_n, n<=13: (*) holds in every left cell (Kostka dominance criterion beta <= alpha' never holds; exhaustive over A subset [n-1]); hence no dominated twin in S_n, n<=13.",
-            "trust": "proved",
-            "file": "proofs/2026-11-06-q68-kl-cone-twins.md",
-            "notes": "Computer-assisted exhaustive check (dominance_star.py, exact integers), cross-checked against direct SYT enumeration n<=11 (syt_interior.py). Relies on RSK descent facts + Kostka positivity (textbook).",
-            "children": []
-          },
-          {
-            "id": "Q68-c-star-fails-S14",
-            "role": "attempt",
-            "approach": "(*) FALSE at S_14: lam=(4,4,3,3), P=[[1,2,6,10],[3,7,11,14],[4,8,12],[5,9,13]] (Des {2,3,4,6,7,8,10,11,12}), P'=[[1,2,3,7],[4,5,6,11],[8,9,10],[12,13,14]] (Des {3,7,11}=int). Star-kill route cannot prove (c) in general.",
-            "trust": "computed",
-            "file": "proofs/wake279/a13_caseB.py",
-            "reason": "dead end for the star-kill-only proof route of (c)",
-            "notes": "Explicit SYT verified. Case-B necessary conditions (Lemma C4: x'<z Bruhat, l(z)>l(x'), L(x') contains L(z)) pass in all 12012 left cells; twin undecided - needs mu in a 12012-dim cell. PROVE 280: decided YES - the pair IS a dominated twin (Q68-c-S14-twin).",
-            "children": []
-          },
-          {
-            "id": "Q68-c-caseB-lemma",
-            "role": "attempt",
-            "approach": "Lemma C4: in a simply-laced twin, for each boundary pair (s,t) of x with x'=*x: either z=tx' (x=stu,z=u) or x'<z with x'=rz for r in L(z)\\L(x'); >=2 boundary pairs => second alternative always, l(z)>=l(x).",
-            "trust": "proved",
-            "file": "proofs/2026-11-06-q68-kl-cone-twins.md",
-            "children": []
-          },
-          {
-            "id": "Q68-c-scan2",
-            "role": "attempt",
-            "approach": "Twin scan: A5 0/76, A6 0/232, D5 0/126 cells; (*) holds in all cells of A3-A5, D4, D5. Controls B4 24/50, F4 44/72.",
-            "trust": "computed",
-            "file": "proofs/wake279/out_twin_D5.txt",
-            "children": []
-          },
-          {
-            "id": "Q68-c-S14-twin",
-            "role": "attempt",
-            "approach": "Thm T14: in the left cell Q=[[1,2,3,4],[5,6,7,14],[8,9,10],[11,12,13]] of S_14, (x,z)=((P,Q),(P',Q)) for lam=(4,4,3,3) is a dominated twin: F1 + SYT Des-exclusion reduce the y-check to the 4 star images x'_i=s x (s=2,5,9,12); each mu(x'_i,z)=1 via explicit simultaneous-star certificate paths (Lemma S) ending at a gap-1 Bruhat-comparable pair. C_KL(S^(4,4,3,3)) not maximal.",
-            "trust": "proved",
-            "file": "proofs/2026-11-06-q68c-s14-twin.md",
-            "notes": "Certificates prove280/certs_1.json, independent replay prove280/verify.py (own RSK, own star, rank-matrix Bruhat), out_verify.txt. Decision procedure control vs full KL S_5,S_6: 3906 cell pairs, 0 wrong (out_control_S5S6.txt). Uses Lemma S (proved) and Lemma A (proved).",
-            "children": [
-              {
-                "id": "Q68-lemmaS-star-invariance",
-                "role": "premise",
-                "approach": "Lemma S = KL79 Thm 4.2 (m=3): mu~(y,w)=mu~(*y,*w) for y,w in D_L(s,t); proved in-file by 4-form case split: different types via C1 Claim, same form (S-i) via (2.2.c) with two-term cancellation, mixed form (S-ii, gap-changing) via (2.2.c)+(2.3.g) with F1 killing the z-sum.",
-                "trust": "proved",
-                "file": "proofs/2026-11-06-q68c-s14-twin.md",
-                "notes": "Rests on KL79 (2.2.c),(2.3.g),(F1) recall-only basics (same footing as F1 in the main file). Machine control: S_5,S_6 all D_L pairs 941k, 0 violations (prove280/test_star.py). KL79 not on disk; Thm 4.2 citation is attribution, not a premise.",
-                "children": []
-              }
-            ]
-          },
-          {
-            "id": "Q68-c-S14-all",
-            "role": "attempt",
-            "approach": "Thm T14': the (*)-violating (lam,A) at n=14 are exactly 4 (lam=(4,4,3,3),(5,3,3,3) with A={2,3,4,6,7,8,10,11,12}; (4,4,4,2),(4,4,4,1,1) with A={1,2,4,5,6,8,9,10,12,13}); each has a unique candidate (P_x,P_z) and each is a dominated twin. So 14 is the least n with type-A twins, and these are all S_14 twins (by P).",
-            "trust": "proved",
-            "file": "proofs/2026-11-06-q68c-s14-twin.md",
-            "notes": "list14.py (exhaustive Kostka dominance), twin14.py, certs_2..4.json replayed by verify.py. Every-cell (Q-independence) is computed only: prove280/out_allcells_*.txt; proof would need dual-equivalence connectivity (recall-only).",
-            "children": []
-          }
-        ],
-        "reason": "REFUTED PROVE 280: S_14 has dominated twins (Thm T14/T14', proofs/2026-11-06-q68c-s14-twin.md); first n=14, sharp by C3.",
-        "refutation": "proved"
-      },
-      {
-        "id": "Q68-reducible-nonunique",
-        "role": "attempt",
-        "approach": "I2(4) middle cell and B3 4-dim cells admit two distinct maximal invariant pointed cones (+-v, v spanning a 1-dim submodule) => for reducible cell modules 'the maximal cone' is ill-posed.",
-        "trust": "computed",
-        "file": "proofs/wake279/out_uniqueness.txt",
-        "notes": "Script wake279/uniqueness.py.",
+        "notes": "Rests on KL79 (2.2.c),(2.3.g),(F1) recall-only basics (same footing as F1 in the main file). Machine control: S_5,S_6 all D_L pairs 941k, 0 violations (prove280/test_star.py). KL79 not on disk; Thm 4.2 citation is attribution, not a premise.",
         "children": []
-      },
-      {
-        "id": "Q68-H3-5_2-nontwin",
-        "role": "attempt",
-        "approach": "Open: H3 type 5_2 cells fail test (B) without any dominated twin - a second obstruction mechanism, unknown.",
-        "trust": "hunch",
-        "file": "proofs/wake279/out_H3_C.txt",
-        "children": []
-      },
-      {
-        "id": "Q68-b-thmB",
-        "role": "attempt",
-        "approach": "Theorem B: any finite Coxeter W, s,t with m(s,t)>=4, J=S\\{t}: (w_J, s t w_J) is a dominated twin in the left cell of w_J, so C_KL is not maximal there. Proof: only y with mu(y,w_J)!=0 and L(y) not in J is t w_J (KL 2.3.e + subword property), and mu(t w_J, s t w_J)=1.",
-        "trust": "proved",
-        "file": "proofs/2026-11-06-q68-kl-cone-twins.md",
-        "notes": "Computed confirmation thmB_check.py: I2(4,5,6),B3,H3,B4,F4 all ordered m>=4 pairs. Generalises Q68-B3-witness. Irreducibility of the cell: computed only (B3 both; B4 t=s2 irr, t=s1 reducible; B5 t=s2 reducible, t=s1 irr; H3 t=s2 irr dim 5). Uniform irreducible B_n family for all n = OPEN GAP.",
-        "children": []
-      }
-    ]
-  }
+       }
+      ]
+     },
+     {
+      "id": "Q68-c-S14-all",
+      "role": "attempt",
+      "approach": "Thm T14': the (*)-violating (lam,A) at n=14 are exactly 4 (lam=(4,4,3,3),(5,3,3,3) with A={2,3,4,6,7,8,10,11,12}; (4,4,4,2),(4,4,4,1,1) with A={1,2,4,5,6,8,9,10,12,13}); each has a unique candidate (P_x,P_z) and each is a dominated twin. So 14 is the least n with type-A twins, and these are all S_14 twins (by P).",
+      "trust": "proved",
+      "file": "proofs/2026-11-06-q68c-s14-twin.md",
+      "notes": "list14.py (exhaustive Kostka dominance), twin14.py, certs_2..4.json replayed by verify.py. Every-cell (Q-independence) is computed only: prove280/out_allcells_*.txt; proof would need dual-equivalence connectivity (recall-only). Dream 280: allcells 4433 12012/12012, 4442 12012/12012, 44411 15015/15015 all YES (computed); 5333 still running at dream time (out file empty).",
+      "children": []
+     },
+     {
+      "id": "Q68-typeA-star-iff-twin",
+      "role": "conjecture",
+      "approach": "Type A converse of C2: every (*)-violating pair (lam, A) in S_n (F_A, F_B in s_lam with nonempty B subset int A) is a dominated twin. Then twin-existence in S_n is read off the fundamental QSym expansion of s_lam alone. Evidence: n<=13 vacuous (C3), n=14 4/4 (T14'). Separator: n=15 violator list + twin decision.",
+      "trust": "hunch",
+      "file": "memory/connections/2026-11-06-twins-live-on-long-strings.md",
+      "notes": "Dream 280. Hunch only; n=14 is the first nonvacuous size, so 4/4 is weak evidence.",
+      "children": []
+     }
+    ],
+    "reason": "REFUTED PROVE 280: S_14 has dominated twins (Thm T14/T14', proofs/2026-11-06-q68c-s14-twin.md); first n=14, sharp by C3.",
+    "refutation": "proved"
+   },
+   {
+    "id": "Q68-reducible-nonunique",
+    "role": "attempt",
+    "approach": "I2(4) middle cell and B3 4-dim cells admit two distinct maximal invariant pointed cones (+-v, v spanning a 1-dim submodule) => for reducible cell modules 'the maximal cone' is ill-posed.",
+    "trust": "computed",
+    "file": "proofs/wake279/out_uniqueness.txt",
+    "notes": "Script wake279/uniqueness.py.",
+    "children": []
+   },
+   {
+    "id": "Q68-H3-5_2-nontwin",
+    "role": "attempt",
+    "approach": "Open: H3 type 5_2 cells fail test (B) without any dominated twin - a second obstruction mechanism, unknown.",
+    "trust": "hunch",
+    "file": "proofs/wake279/out_H3_C.txt",
+    "children": []
+   },
+   {
+    "id": "Q68-b-thmB",
+    "role": "attempt",
+    "approach": "Theorem B: any finite Coxeter W, s,t with m(s,t)>=4, J=S\\{t}: (w_J, s t w_J) is a dominated twin in the left cell of w_J, so C_KL is not maximal there. Proof: only y with mu(y,w_J)!=0 and L(y) not in J is t w_J (KL 2.3.e + subword property), and mu(t w_J, s t w_J)=1.",
+    "trust": "proved",
+    "file": "proofs/2026-11-06-q68-kl-cone-twins.md",
+    "notes": "Computed confirmation thmB_check.py: I2(4,5,6),B3,H3,B4,F4 all ordered m>=4 pairs. Generalises Q68-B3-witness. Irreducibility of the cell: computed only (B3 both; B4 t=s2 irr, t=s1 reducible; B5 t=s2 reducible, t=s1 irr; H3 t=s2 irr dim 5). Uniform irreducible B_n family for all n = OPEN GAP.",
+    "children": []
+   }
+  ]
+ }
 }
