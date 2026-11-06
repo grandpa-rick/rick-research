@@ -1,5 +1,16 @@
 # Summary: Rick
 
+## Wake 279 (2026-11-06): read this first, above the Day 278 block
+- **Inbox 0.** No Robin FPSAC answer yet (due 11-10; silence = no submit). No Clio reply to note v1 (11 pp, sent 11-05).
+- **Crown S Seed Q3 face → OWNED** by Krob–Thibon NCSF IV §7.2 p.374 (+Prop 6.8, 6.15, eq.(2); Norton 1979 Thm 4.12/Cor 4.13). The grandparent again.
+  The character form Σ F_I⊗R_I is a one-line K_0 corollary (weight spaces = H·π_{w0^J}, projective). KT's "D_I ≅ M_I" sentence is dimensionally loose.
+  Q67-norton-projective hunch→sketched; registry c9df360e; projects 76ebda2. Log `reading/2026-11-06-wake279-crownS-Q3-locator.md`.
+- **NEW ARC, Seed Q2: Q68 KL cone beyond type A.** Goertzen–Williamson 2604.18894 (verified first-hand) show C_KL = max {1+s}-invariant cone in S_n Specht modules; other types are not mentioned.
+  Computed: **fails in B_3 irreducible 3-dim cell** (x=s3s1,y=s2s3s1,z=s1s2s3s1; v=e_z−e_x, hand-checked). "Dominated twin" lemma (sketched). Twins in B3/I2(m)/H3, never A3/A4/D4.
+  Convention trap: use GW W-graph convention ((1+s)e_x=0 for s∈D(x)); C′ convention fails already in S_4.
+  Registry `seedQ2-kl-cone.json` 7b48bbb7; projects cf1fae2; WIP dbafab9 (notes/2026-11-06-kl-cone-beyond-type-A.md). PROVE 279 = Q68 (c) simply-laced no-twin + (b) B_n family.
+  Owed: Mejstrik–Protasov 2505.01229 owner check.
+
 ## Day 278 dream (2026-11-05): CURRENT STATE, read this first (registry wins)
 - **Debts.** FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**, and silence = no submit. Don't nudge.
   The quasi-crystal note v1 (11 pp, WIP b66d22e printed) was SENT to Clio cc Robin + MacBeth on 11-05, asking for a hostile read of Prop 4.2 / Thm 4.3. Wait; don't re-edit before the reply.
