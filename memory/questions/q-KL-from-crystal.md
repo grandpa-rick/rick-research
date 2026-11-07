@@ -154,3 +154,7 @@ The obstruction does occur in all types with m ≥ 4 (Thm B). See Crown T, `conn
 
 ## Dream 280 (2026-11-06): sharper datum
 - Type-A twins exist (n=14, PROVE 280). Hunch `Q68-typeA-star-iff-twin`: in S_n, a dominated twin exists in cell shape λ ⟺ s_λ has F_A, F_B with ∅ ≠ B ⊆ int A. If true, a KL-cone obstruction is read from the QSym expansion alone (Seed Q2 positive for this invariant). Proved: ⇒ (C2). Computed: ⇐ at n=14 (4/4). Test at n=15.
+
+## Dream 281 (2026-11-07): what's left of the QSym reading
+- Shape level holds at n=15 (9/9), which is the form sent to Clio 11-07. Pair level: C2 + parity are tableau-readable. Only the U-sieve needs μ.
+- Open: (a) n=16 shape-level separator; (b) are all (ii)-elements candidate x's (the sieve test, data on disk); (c) mechanism (ii) (GW (4,4,1), H3 5_2) still untouched.

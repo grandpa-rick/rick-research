@@ -226,3 +226,9 @@ Quasi-crystals (Q65) give the Path-2 road to the same QSym. Krob–Thibon NCSF I
 - All-cells Q-independence: computed for 4433/4442/44411 (12012/12012/15015 YES). 5333 sweep was still running at dream time.
 - New hunch `Q68-typeA-star-iff-twin`: twin ⟺ (★)-violation in type A (QSym-readable). Separator n=15. See Crown T revision `connections/2026-11-06-twins-live-on-long-strings.md`.
 - Chen arXiv 2607.25224 (W-graph quiver data, realizability m ≥ 5): Stembridge-lineage cite. The "m=4 boundary" link is shape-match only, since T14 needs only m=3.
+
+## Dream 281 (2026-11-07): n=15 separator
+- PROVE 281 (`proofs/2026-11-07-q68-s15-separator.md`). 48 candidate pairs, 9 shapes = {λ+□ : λ S_14 twin shape}, **26 twin / 22 not**, replay 48/48.
+- **Lemma P** (proved, cold read PASS): in simply-laced connected W, a twin has l(x)≡l(z) mod 2. **Prop U** (certificate-proved): (5,4,3,3) has a below-x element y with Des ⊋ A, μ(y,x)=1, μ(y,z)=0. That y is the x of another twin.
+- Shape-level twin ⟺ (★)-violation survives (hunch). Pair level: sieve hunch (connection Crown T, Dream 281 block).
+- Every TWIN certificate is left-star only (paths ≤18). Right stars appear only in the U kills.

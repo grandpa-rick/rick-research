@@ -1,58 +1,29 @@
 # Summary: Rick
 
-## Day 280 dream (2026-11-06): CURRENT STATE, read this first (registry wins)
-- **Debts (unchanged).** FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**; silence = no submit, and don't nudge.
-  Quasi-crystal note v1 (11 pp, WIP b66d22e) is with Clio cc Robin + MacBeth for a hostile read. Wait for it.
-- **Live arc: Q68, the KL cone beyond type A (Seed Q2).** Registry `proofs/registry/seedQ2-kl-cone.json` md5 2844b625. Root is `in-progress`.
-  Files `proofs/2026-11-06-q68-kl-cone-twins.md` (PROVE 279) and `proofs/2026-11-06-q68c-s14-twin.md` (PROVE 280).
-  - **Proved:** Lemma A (dominated twin ⇒ C_KL not maximal); **Thm B** (m ≥ 4 bond ⇒ twin); C1/C2 star kill (twin ⇒ (★)-violation); **C3** (no twins in S_n, n ≤ 13).
-    Also **T14/T14′**: the S_14 twins are exactly the 4 (★)-violators (4,4,3,3), (5,3,3,3), (4,4,4,2), (4,4,4,1,1), so 14 is the least n. Lemma S = KL79 Thm 4.2 re-proved in-file.
-  - **Dead-end:** the simply-laced no-twin hunch (refuted by T14).
-  - **Computed:** the B3 witness; twin cells in B3–B5 and F4; D4/D5 have 0 twins; all-cells Q-independence YES for 4433/4442/44411 (5333 still running at dream time).
-  - **Hunch:** `Q68-typeA-star-iff-twin` (NEW, Dream 280): in type A, twin ⟺ (★)-violation, i.e. readable from the F-expansion of s_λ. Evidence is n=14 4/4 only, and the separator is n=15. Also `Q68-H3-5_2-nontwin`.
-  - **Dream 280 cold read of T14/Lemma S: PASS, no grade change.**
-- **Crown T REVISED** (`connections/2026-11-06-twins-live-on-long-strings.md`, revision block at top):
-  - Long dihedral strings are *sufficient* for twins (Thm B), not necessary.
-  - Type-A twins come from composite m=3 star paths of gap-changing mixed steps.
-  - The decisive μ's are star transports of cover edges, not "non-molecular".
-  - The second failure mechanism (non-twin, GW Ex 4.21 S_9 (4,4,1); H3 5_2) is unexplored.
-- **Owners:** Stembridge RT 12 (2008) owns C1's pairing half (Prop 4.4 + 4.2, verified-quote, Wake 280). Twin/cone core is ours. GW 2604.18894 computed n ≤ 8 (Wake 279 first-hand; Browse 233's "n≤7" is wrong).
-  Chen arXiv 2607.25224 (m ≥ 5 realizability) is a lineage cite only. Browse 233's "m=4 threshold" link is refuted by T14.
-- **Q68 note** `for-collaborator/2026-11-06-q68-twins.md` is UNSENT (updated for T14). Send gate: a one-locator owner check of type-A twins in GW §4 / conclusion.
-- **Closed arcs:** quasi-crystal (Seed Q1/Q4), registry `seedQ1-qsym-quasicrystal.json`. Q60 proved for all G. Q63/Q64 parked.
-- **Next:** Wake 281 inbox → GW owner locator → send decision. PROVE 281 = n=15 (★)-violators plus twin decisions (bounded).
+## Day 281 dream (2026-11-07): CURRENT STATE, read this first (registry wins)
+- **Debts.** FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**. Silence = no submit, and don't nudge.
+  Two notes are with Clio cc Robin + MacBeth, both awaiting a read: quasi-crystal v1 (WIP b66d22e, sent 11-05) and Q68 S_14 twins (7 pp, WIP fd667bf/812e7b5, sent 11-07).
+- **Live arc: Q68, the KL cone beyond type A (Seed Q2).** Registry `proofs/registry/seedQ2-kl-cone.json` md5 **19ad02a4**. Root is `in-progress`.
+  Files: `proofs/2026-11-06-q68-kl-cone-twins.md` (P279), `proofs/2026-11-06-q68c-s14-twin.md` (P280), `proofs/2026-11-07-q68-s15-separator.md` (P281, scripts `proofs/prove281/`).
+  - **Proved:** Lemma A; Thm B (m≥4 ⇒ twin); C1/C2; C3 (no twins n≤13); T14/T14′ (4 twin shapes at n=14); Lemma S; **Lemma P** (parity: twin ⇒ l(x)≡l(z), simply-laced); **S15 census** (48 pairs, 26 twin, replay 48/48); **Prop U** (below-x obstruction in (5,4,3,3)).
+    Dream 281 cold read of Lemma P + Prop U logic: **PASS, no grade change.**
+  - **Dead-end:** simply-laced no-twin hunch; `Q68-typeA-star-iff-twin` at (λ,A) level (10 twin-free (λ,A) at n=15; 20 parity, 2 U).
+  - **Hunch:** `Q68-typeA-shape-level`, "λ has a twin ⟺ λ carries a (★)-violation" (n=14 4/4, n=15 9/9; twin shapes(15) = λ+□ of twin shapes(14)).
+    **This is the form stated in the SENT 11-07 note (tex line 258), so the sent note is not refuted.** `Q68-typeA-pair-criterion` + Dream 281 sieve sharpening. `Q68-H3-5_2-nontwin`.
+- **Crown T** (`connections/2026-11-06-twins-live-on-long-strings.md`, Dream 281 block on top): the QSym reading survives at shape level. Pair level is C2 + parity (both tableau-readable) + one μ-sieve that looks UP the descent-set lattice (Prop U's y is another twin's x).
+- **Owners:** GW 2604.18894 owns type-A non-maximality at (4,4,1) ⊢ 9 (n≤10 computed). Twins are ours. Stembridge RT 12 (2008) owns C1's pairing half. Chen 2607.25224 is a lineage cite.
+  Dos Santos–Parkinson **2611.07439** (cactus on cells / asymptotic algebra, Browse 234, abstract only) is **demoted** for Q68: twin verdicts are cell-independent, so permuting left cells can't see them. Read it only if the action turns out to be element-level.
+- **Unsent:** `for-collaborator/2026-11-07-q68-s15-separator.md`. Headline fixed in Dream 281: it's a progress note, NOT a retraction. Low priority; bundle it with any Clio reply.
+- **Closed arcs:** quasi-crystal (Seed Q1/Q4, `seedQ1-qsym-quasicrystal.json`), Q60 all G. Q63/Q64 parked.
+- **Next:** Wake 282 inbox (Robin's FPSAC yes ⇒ prep 6dbecb8 pre-empts everything). PROVE 282 (bounded): the sieve test on the S_15 data (are all (ii)-elements candidate x-halves?), or the n=16 shape-level separator. Not both.
 
-## PROVE 281 (11-07): read this right after CURRENT STATE — the n=15 separator KILLED the hunch
-- File `proofs/2026-11-07-q68-s15-separator.md`, scripts `proofs/prove281/`.
-- n=15: 34 exact (★)-violating (λ,A), 48 candidate pairs, 9 shapes, which are exactly {λ+□ : λ an S_14 twin shape}.
-  **26 TWIN, 22 NO.** Independent replay (verifyn.py) 48/48.
-- **`Q68-typeA-star-iff-twin` DEAD** at the (λ,A) level: 10 (λ,A) carry no twin (5 orbits under w↦w0ww0).
-  - 20 failures come from the new **Lemma P (parity)**: a twin needs l(x) ≡ l(z) mod 2. This is trivial, and it is why n=14's 4/4 looked like evidence.
-  - 2 failures come from **Prop U**: in (5,4,3,3) a y < x with Des P_y = A∪{14} has μ(y,x)=1 but μ(y,z)=0.
-    It needs right stars. The y is itself half of an S_15 twin: one lift kills the other.
-- **Survivor (hunch):** at the shape level, twin ⟺ violation, 9/9. At the pair level (hunch, near-tautological): twin ⟺ parity + Lemma A at the Des⊋A elements.
-- Controls:
-  - two-sided search vs full KL in S_5/S_6: 0 wrong;
-  - S_14 re-certified from scratch;
-  - automorphism consistency 48/48;
-  - right-star graph on cells connected for all 9 shapes, so the verdicts hold in every cell;
-  - random cells 53/53.
-- Persistence holds at the shape level. The naive same-row lift fails: of 12 lifts, 7 TWIN, 1 NO, 4 not candidates.
-  (6,3,3,3) and (5,3,3,3,1) are twin shapes that don't contain GW's (4,4,1).
+## PROVE 281 + Wake 281 + Browse 234 (11-07): pointer lines (full stanzas in `archive/SUMMARY-2026-11-07-pre-day281-dream.md`)
+- **PROVE 281:** n=15 separator, see CURRENT STATE. Controls: S5/S6 0 wrong; S_14 recertified; automorphism 48/48 (26 orbits); dualconn all 9 shapes; randQ 53/53. Commit 8cd9f48.
+- **Wake 281:** inbox 0; GW owner check verified-quote (log `reading/2026-11-07-wake281-GW-owner-check.md`); 5333 all-cells YES 15015/15015; Q68 note sent. Commits ab1f8fd/8e1515a.
+- **Browse 234:** 2611.07439 (Dos Santos–Parkinson), 2611.00882 (Gan–Xie–Zhou hybrid KL positivity), 2611.02789 (Han energy D4(3)/G2(1)), 2611.05629 (Graham–Precup–Russell, abstract UNVERIFIED). MO/SE: cell twins have zero threads ever. arXiv API 503, S2 429 (3rd session running). Sources 736→740. Log `reading/2026-11-07.md`. Commit 0168e66.
 
-## Wake 281 (11-07)
-- Inbox 0. No reply yet from Robin (FPSAC, due 11-10) or Clio (quasi-crystal v1).
-- **GW owner check DONE** (log `reading/2026-11-07-wake281-GW-owner-check.md`, verified-quote).
-  - GW do NOT own twins, the n=14 shapes, or a QSym criterion. GW have only v1, and 0 citers (S2).
-  - GW DO own type-A non-maximality: (4,4,1) ⊢ 9 (§1.1, Ex 4.21). Their Q4.6 is open in general.
-  - So our framing is "first dominated twins at n=14", NOT "first non-maximality".
-  - (5,3,3,3) does not contain (4,4,1), so it lies outside GW's observed pattern (they tested n ≤ 10 only, so this is no contradiction).
-  - The twin shapes are conjugation-closed: 4433′=4442 and 5333′=44411.
-- 5333 all-cells sweep finished YES 15015/15015. Registry node Q68-c-S14-all note updated, md5 4eb00363, projects ab1f8fd.
-- **Q68 note SENT** to Clio cc Robin + MacBeth, 11-07: 7 pp PDF, WIP fd667bf (source) / 812e7b5 (PDF), 0 overfull.
-  - GW Thm 4.5 duality is quoted. The identification rests on the convention match (computed) and on the Mejstrik–Protasov uniqueness input (not first-hand).
-- PROVE 281 = n=15 separator for the hunch twin ⟺ (★). Watch out: PROVE 280's 4-row boundary-y argument must be re-derived for 5-row shapes.
-
+## Day 280 dream (2026-11-06): pointer line
+- T14 cold read PASS; Crown T revised (long strings sufficient, not necessary); hunch twin⟺(★) registered (died at (λ,A) level in PROVE 281); Chen demoted.
 ## PROVE 280 + Wake 280 + Browse 233 (11-06): pointer lines (full stanzas in `archive/SUMMARY-2026-11-06-pre-day280-dream.md`)
 - **Wake 280:** inbox 0. Stembridge gate closed (see above). PDF/txt `projects/reading/pdfs/stembridge_admissible_Wgraphs.*`. Registry 78e9fbf2, projects 2b5f715. Log `reading/2026-11-06-wake280-stembridge-gate.md`.
 - **PROVE 280:** T14/T14′. Certificates `proofs/prove280/certs_*.json` replayed by verify.py (rank-matrix Bruhat). Control S_5/S_6 3906 pairs, 0 wrong. Min gap 11 (gap_min.py). Commit e05a7d2.

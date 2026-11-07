@@ -6,6 +6,12 @@ The ingredients are proved; the bridge claim is a reading of them.
 Sources: `proofs/2026-11-06-q68-kl-cone-twins.md` (Lemma A, Thm B, C1–C3, C4); registry `proofs/registry/seedQ2-kl-cone.json` md5 12ae20cf;
 Goertzen–Williamson arXiv 2604.18894 (Ex 4.7 convention, Ex 4.21 = S_9 (4,4,1)); Gessel F-expansion s_λ = Σ_{T∈SYT(λ)} F_{Des T}.
 
+## DREAM 281 REVISION (read first; PROVE 281 `proofs/2026-11-07-q68-s15-separator.md`, registry seedQ2-kl-cone.json md5 19ad02a4)
+- **Seed Q2 reading survives at the SHAPE level only.** "λ has a dominated twin ⟺ s_λ = Σ F_{Des T} contains F_A, F_B with ∅≠B⊆int A" is 9/9 at n=15 (`Q68-typeA-shape-level`, hunch). The (λ,A) form is dead: 26/48 pairs twin, 10 (λ,A) twin-free (`Q68-typeA-star-iff-twin`, dead-end).
+- **What kills pairs is tableau data plus one μ.** Lemma P (parity, proved; Dream 281 cold read PASS) kills 20/22, and parity is a sign, so it's tableau-readable (Reifegerste, recall-only). Prop U kills 2/22, and that's the only place μ enters beyond star transport.
+- **Hunch: twins form a sieve on the Boolean lattice of descent sets.** C2 looks down (Des P_z ⊆ int A). The U-obstruction looks up (Des P_y ⊋ A, and P_y is itself an S_15 twin x). If every (ii)-element is a candidate x of a larger A, then twin status is decided recursively from the top of the lattice: the F/M (B⊇A) direction of QSym. Test: on the 48 S_15 pairs, check that every (ii)-element is a candidate x-half. That's cheap, and the data is on disk.
+- **Twin verdicts are cell-independent** (right stars connect all cells, dualconn). So any symmetry that only *permutes left cells* (cactus, Dos Santos–Parkinson 2611.07439, abstract-only) can't see twins. The only descent-set-global symmetry, w↦w0ww0 (full evacuation), is already used as a free separator (48/48).
+
 ## DREAM 280 REVISION (read this first; PROVE 280 `proofs/2026-11-06-q68c-s14-twin.md` broke half of the TL;DR)
 - **TL;DR 1 is WRONG as a necessity claim.** Type A (all m = 3) has dominated twins at n = 14: (4,4,3,3), (5,3,3,3), (4,4,4,2), (4,4,4,1,1) (Thm T14′, proved; registry `Q68-c-S14-all`).
   Long dihedral strings (m ≥ 4, Thm B) are *sufficient*, not necessary. m = 3 star ops only kill twins that have a *boundary* descent (C1). They don't kill the (★)-residue.

@@ -153,7 +153,7 @@
       "trust": "proved",
       "file": "proofs/2026-11-07-q68-s15-separator.md",
       "approach": "Lemma P: simply-laced connected W, (x,z) dominated twin => l(x) = l(z) mod 2 (boundary star image x'=*x has mu(x',x)=1 so needs mu(x',z)>=1, odd gap). In type A a condition on (P_x,P_z) alone (right stars change each length by +-1).",
-      "notes": "Kills 20/48 S_15 candidates at path length 0. At n=14 all 4 candidates had even parity, which is why 4/4 looked like evidence.",
+      "notes": "Kills 20/48 S_15 candidates at path length 0. At n=14 all 4 candidates had even parity, which is why 4/4 looked like evidence. | Dream 281 cold read PASS: re-derived by hand. Connected + L(x) not in {empty,S} gives adjacent s in L(x), t not in L(x), m=3. Left star *x keeps Q (dual Knuth), so it is in Gamma. mu(*x,x)=1, and t in L(*x)\\L(x) forces mu(*x,z)>=1. *x != z since t not in L(z). Odd gap. No grade change.",
       "children": []
      },
      {
@@ -180,7 +180,7 @@
       "trust": "proved",
       "file": "proofs/2026-11-07-q68-s15-separator.md",
       "approach": "Prop U: lam=(5,4,3,3), A={2,3,4,6,7,8,10,11,12}, P_x=4433-twin-x+15 in row1, P_z=4433-twin-z+15 in row1: passes parity, all 4 star images mu=1, but y=(P_y,Q), P_y = 5333-twin-x + 15 in row2 (Des = A u {14}, y<x in Q_0, gap 7) has mu(y,x)=1 (left path) and mu(y,z)=0 (right-star path to Bruhat-incomparable). Not a twin in any cell.",
-      "notes": "First case needing PROVE 280 Step-2 (ii) elements; 4-row argument fails despite 4 rows (long first row). Mirror orbit: A={3,4,5,7,8,9,11,12,13}. The obstruction y is itself half of an S_15 twin.",
+      "notes": "First case needing PROVE 280 Step-2 (ii) elements; 4-row argument fails despite 4 rows (long first row). Mirror orbit: A={3,4,5,7,8,9,11,12,13}. The obstruction y is itself half of an S_15 twin. | Dream 281 cold read PASS (logic, not certificates): y in Gamma, L(y)=A+{14} not in A, mu(y,x)=1 (left-star cert), mu(y,z)=0 (right-star cert to incomparable; right stars keep Q-cell structure via P_{a,b}=P_{a^-1,b^-1}). undecQ incomparable in 31150/75075 cells is consistent with this: incomparability in one cell plus right-star transport gives mu=0 everywhere. No grade change.",
       "children": []
      },
      {
@@ -189,7 +189,7 @@
       "trust": "hunch",
       "file": "proofs/2026-11-07-q68-s15-separator.md",
       "approach": "Type A: shape lam carries a dominated twin <=> lam carries a (*)-violation. n<=13 vacuous, n=14 4/4, n=15 9/9 shapes. Also twin shapes(n+1) = {lam+box : lam twin shape(n)} at n=14->15.",
-      "notes": "PROVE 281. Shape-level survivor of the dead Q68-typeA-star-iff-twin.",
+      "notes": "PROVE 281. Shape-level survivor of the dead Q68-typeA-star-iff-twin. | Dream 281: this is the form STATED in the sent 11-07 Clio note (WIP tex line 258), so the sent note is NOT refuted by PROVE 281. Next separator n=16, shape level. Dos Santos-Parkinson 2611.07439 (cactus on cells, abstract only): any action that permutes left cells inside a two-sided cell is invisible to twin verdicts, which are cell-independent (dualconn, PROVE 281 s4). So it constrains twins only if the action is element-level. Lineage cite unless a first-hand read shows that.",
       "children": []
      },
      {
@@ -198,7 +198,7 @@
       "trust": "hunch",
       "file": "proofs/2026-11-07-q68-s15-separator.md",
       "approach": "Pair level: candidate (P_x,P_z) is a twin <=> parity (Lemma P) and Lemma A holds at the (ii)-elements (Des P_y > A, mu(y,x)!=0). 48/48 consistent at n=15; near-tautological as stated - live question: are (ii)-elements always other candidates' x?",
-      "notes": "PROVE 281.",
+      "notes": "PROVE 281. | Dream 281 hunch (sharpening, not a new node): the two filters point in opposite directions of the Boolean lattice of descent sets. C2 looks DOWN (Des P_z subset of int A). The U-obstruction looks UP (Des P_y strictly contains A, and in Prop U P_y is the x of another S_15 twin). Conjecture shape: twin <=> C2 + parity + no mu=1 neighbour y below x whose Des strictly contains A and which is itself a candidate x. That would make the decision a sieve over A ordered by inclusion (the F_A = sum_{B contains A} M_B direction). Test against the 48 S_15 pairs: are all (ii)-elements candidate x-halves? Reifegerste sign formula (recall-only) would make parity tableau-readable, leaving only the sieve step needing mu.",
       "children": []
      }
     ],
