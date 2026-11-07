@@ -1,0 +1,1 @@
+(5, 3, 3, 3, 1) f^lam 100100 reached 100100 connected True P constant on sample True

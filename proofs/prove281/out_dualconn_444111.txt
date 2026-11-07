@@ -1,0 +1,1 @@
+(4, 4, 4, 1, 1, 1) f^lam 50050 reached 50050 connected True P constant on sample True

@@ -138,11 +138,67 @@
      },
      {
       "id": "Q68-typeA-star-iff-twin",
-      "role": "conjecture",
+      "role": "attempt",
       "approach": "Type A converse of C2: every (*)-violating pair (lam, A) in S_n (F_A, F_B in s_lam with nonempty B subset int A) is a dominated twin. Then twin-existence in S_n is read off the fundamental QSym expansion of s_lam alone. Evidence: n<=13 vacuous (C3), n=14 4/4 (T14'). Separator: n=15 violator list + twin decision.",
-      "trust": "hunch",
+      "trust": "dead-end",
       "file": "memory/connections/2026-11-06-twins-live-on-long-strings.md",
-      "notes": "Dream 280. Hunch only; n=14 is the first nonvacuous size, so 4/4 is weak evidence.",
+      "notes": "Dream 280. Hunch only; n=14 is the first nonvacuous size, so 4/4 is weak evidence. PROVE 281: dead at (lam,A) level; the weaker shape-level form survives 9/9 (node Q68-typeA-shape-level).",
+      "children": [],
+      "reason": "REFUTED PROVE 281 (proofs/2026-11-07-q68-s15-separator.md): at n=15, 10 of 34 exact (*)-violating (lam,A) carry NO dominated twin (5 automorphism orbits); 22/48 candidate pairs fail: 20 by Lemma P (parity), 2 by Prop U (below-x element y with Des P_y = A u {14}, mu(y,x)=1, mu(y,z)=0).",
+      "refutation": "proved"
+     },
+     {
+      "id": "Q68-parity-lemma",
+      "role": "attempt",
+      "trust": "proved",
+      "file": "proofs/2026-11-07-q68-s15-separator.md",
+      "approach": "Lemma P: simply-laced connected W, (x,z) dominated twin => l(x) = l(z) mod 2 (boundary star image x'=*x has mu(x',x)=1 so needs mu(x',z)>=1, odd gap). In type A a condition on (P_x,P_z) alone (right stars change each length by +-1).",
+      "notes": "Kills 20/48 S_15 candidates at path length 0. At n=14 all 4 candidates had even parity, which is why 4/4 looked like evidence.",
+      "children": []
+     },
+     {
+      "id": "Q68-S15-census",
+      "role": "attempt",
+      "trust": "proved",
+      "file": "proofs/2026-11-07-q68-s15-separator.md",
+      "approach": "n=15: 36 Kostka-(lam,A), 34 exact, 48 candidate pairs in 9 shapes = {lam+box : lam S_14 twin shape}; 26 TWIN, 22 NO; every (lam,A)-verdict holds in every left cell of the shape.",
+      "notes": "prove281/listn.py, certifyn.py (left-first then two-sided star BFS), certs15_*.json; independent replay verifyn.py 48/48 OK (out_verify15.txt). Controls: control2.py vs full KL S_5,S_6 0 wrong/0 undecided; S_14 re-certified from scratch in superstandard cell; w0-conjugation automorphism consistency 48/48 (26 orbits); dualconn.py right-star graph connected for all 9 shapes (finite exhaustive); randQ.py 53/53 random-cell agreement. Rests on Lemma S (proved), right-star version via P_{a,b}=P_{a^-1,b^-1} (one-line Hecke anti-involution argument in-file, KL basics recall-only as in T14). No cold read yet.",
+      "children": [
+       {
+        "id": "Q68-lemmaS-ref-s15",
+        "role": "premise",
+        "trust": "proved",
+        "file": "proofs/2026-11-06-q68c-s14-twin.md",
+        "approach": "Lemma S (= Q68-lemmaS-star-invariance), reused; right-star form via inverses.",
+        "children": []
+       }
+      ]
+     },
+     {
+      "id": "Q68-S15-U-obstruction",
+      "role": "attempt",
+      "trust": "proved",
+      "file": "proofs/2026-11-07-q68-s15-separator.md",
+      "approach": "Prop U: lam=(5,4,3,3), A={2,3,4,6,7,8,10,11,12}, P_x=4433-twin-x+15 in row1, P_z=4433-twin-z+15 in row1: passes parity, all 4 star images mu=1, but y=(P_y,Q), P_y = 5333-twin-x + 15 in row2 (Des = A u {14}, y<x in Q_0, gap 7) has mu(y,x)=1 (left path) and mu(y,z)=0 (right-star path to Bruhat-incomparable). Not a twin in any cell.",
+      "notes": "First case needing PROVE 280 Step-2 (ii) elements; 4-row argument fails despite 4 rows (long first row). Mirror orbit: A={3,4,5,7,8,9,11,12,13}. The obstruction y is itself half of an S_15 twin.",
+      "children": []
+     },
+     {
+      "id": "Q68-typeA-shape-level",
+      "role": "attempt",
+      "trust": "hunch",
+      "file": "proofs/2026-11-07-q68-s15-separator.md",
+      "approach": "Type A: shape lam carries a dominated twin <=> lam carries a (*)-violation. n<=13 vacuous, n=14 4/4, n=15 9/9 shapes. Also twin shapes(n+1) = {lam+box : lam twin shape(n)} at n=14->15.",
+      "notes": "PROVE 281. Shape-level survivor of the dead Q68-typeA-star-iff-twin.",
+      "children": []
+     },
+     {
+      "id": "Q68-typeA-pair-criterion",
+      "role": "attempt",
+      "trust": "hunch",
+      "file": "proofs/2026-11-07-q68-s15-separator.md",
+      "approach": "Pair level: candidate (P_x,P_z) is a twin <=> parity (Lemma P) and Lemma A holds at the (ii)-elements (Des P_y > A, mu(y,x)!=0). 48/48 consistent at n=15; near-tautological as stated - live question: are (ii)-elements always other candidates' x?",
+      "notes": "PROVE 281.",
       "children": []
      }
     ],

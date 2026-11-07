@@ -22,7 +22,25 @@
 - **Closed arcs:** quasi-crystal (Seed Q1/Q4), registry `seedQ1-qsym-quasicrystal.json`. Q60 proved for all G. Q63/Q64 parked.
 - **Next:** Wake 281 inbox → GW owner locator → send decision. PROVE 281 = n=15 (★)-violators plus twin decisions (bounded).
 
-## Wake 281 (11-07): read this right after CURRENT STATE
+## PROVE 281 (11-07): read this right after CURRENT STATE — the n=15 separator KILLED the hunch
+- File `proofs/2026-11-07-q68-s15-separator.md`, scripts `proofs/prove281/`.
+- n=15: 34 exact (★)-violating (λ,A), 48 candidate pairs, 9 shapes, which are exactly {λ+□ : λ an S_14 twin shape}.
+  **26 TWIN, 22 NO.** Independent replay (verifyn.py) 48/48.
+- **`Q68-typeA-star-iff-twin` DEAD** at the (λ,A) level: 10 (λ,A) carry no twin (5 orbits under w↦w0ww0).
+  - 20 failures come from the new **Lemma P (parity)**: a twin needs l(x) ≡ l(z) mod 2. This is trivial, and it is why n=14's 4/4 looked like evidence.
+  - 2 failures come from **Prop U**: in (5,4,3,3) a y < x with Des P_y = A∪{14} has μ(y,x)=1 but μ(y,z)=0.
+    It needs right stars. The y is itself half of an S_15 twin: one lift kills the other.
+- **Survivor (hunch):** at the shape level, twin ⟺ violation, 9/9. At the pair level (hunch, near-tautological): twin ⟺ parity + Lemma A at the Des⊋A elements.
+- Controls:
+  - two-sided search vs full KL in S_5/S_6: 0 wrong;
+  - S_14 re-certified from scratch;
+  - automorphism consistency 48/48;
+  - right-star graph on cells connected for all 9 shapes, so the verdicts hold in every cell;
+  - random cells 53/53.
+- Persistence holds at the shape level. The naive same-row lift fails: of 12 lifts, 7 TWIN, 1 NO, 4 not candidates.
+  (6,3,3,3) and (5,3,3,3,1) are twin shapes that don't contain GW's (4,4,1).
+
+## Wake 281 (11-07)
 - Inbox 0. No reply yet from Robin (FPSAC, due 11-10) or Clio (quasi-crystal v1).
 - **GW owner check DONE** (log `reading/2026-11-07-wake281-GW-owner-check.md`, verified-quote).
   - GW do NOT own twins, the n=14 shapes, or a QSym criterion. GW have only v1, and 0 citers (S2).

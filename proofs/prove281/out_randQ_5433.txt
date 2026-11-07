@@ -1,0 +1,36 @@
+[2, 3, 4, 6, 7, 8, 10, 11, 12] [1, 2, 3, 7, 11] stored NO randomQ NO agree True
+[2, 3, 4, 6, 7, 8, 10, 11, 12] [1, 2, 3, 7, 11] stored NO randomQ NO agree True
+[2, 3, 4, 6, 7, 8, 10, 11, 12] [1, 2, 3, 7, 11] stored NO randomQ NO agree True
+[2, 3, 4, 6, 7, 8, 10, 11, 12] [1, 2, 3, 7, 15] stored NO randomQ NO agree True
+[2, 3, 4, 6, 7, 8, 10, 11, 12] [1, 2, 3, 7, 15] stored NO randomQ NO agree True
+[2, 3, 4, 6, 7, 8, 10, 11, 12] [1, 2, 3, 7, 15] stored NO randomQ NO agree True
+[2, 3, 4, 6, 7, 8, 11, 12, 13] [1, 2, 3, 7, 12] stored NO randomQ NO agree True
+[2, 3, 4, 6, 7, 8, 11, 12, 13] [1, 2, 3, 7, 12] stored NO randomQ NO agree True
+[2, 3, 4, 6, 7, 8, 11, 12, 13] [1, 2, 3, 7, 12] stored NO randomQ NO agree True
+[2, 3, 4, 6, 7, 8, 11, 12, 13] [1, 2, 3, 7, 12] stored TWIN randomQ TWIN agree True
+[2, 3, 4, 6, 7, 8, 11, 12, 13] [1, 2, 3, 7, 12] stored TWIN randomQ TWIN agree True
+[2, 3, 4, 6, 7, 8, 11, 12, 13] [1, 2, 3, 7, 12] stored TWIN randomQ TWIN agree True
+[2, 3, 4, 7, 8, 9, 11, 12, 13] [1, 2, 3, 7, 8] stored TWIN randomQ TWIN agree True
+[2, 3, 4, 7, 8, 9, 11, 12, 13] [1, 2, 3, 7, 8] stored TWIN randomQ TWIN agree True
+[2, 3, 4, 7, 8, 9, 11, 12, 13] [1, 2, 3, 7, 8] stored TWIN randomQ TWIN agree True
+[2, 3, 4, 7, 8, 9, 11, 12, 13] [1, 2, 3, 7, 8] stored NO randomQ NO agree True
+[2, 3, 4, 7, 8, 9, 11, 12, 13] [1, 2, 3, 7, 8] stored NO randomQ NO agree True
+[2, 3, 4, 7, 8, 9, 11, 12, 13] [1, 2, 3, 7, 8] stored NO randomQ NO agree True
+[3, 4, 5, 7, 8, 9, 11, 12, 13] [1, 2, 3, 4, 8] stored NO randomQ NO agree True
+[3, 4, 5, 7, 8, 9, 11, 12, 13] [1, 2, 3, 4, 8] stored NO randomQ NO agree True
+[3, 4, 5, 7, 8, 9, 11, 12, 13] [1, 2, 3, 4, 8] stored NO randomQ NO agree True
+[3, 4, 5, 7, 8, 9, 11, 12, 13] [1, 2, 3, 4, 12] stored NO randomQ NO agree True
+[3, 4, 5, 7, 8, 9, 11, 12, 13] [1, 2, 3, 4, 12] stored NO randomQ NO agree True
+[3, 4, 5, 7, 8, 9, 11, 12, 13] [1, 2, 3, 4, 12] stored NO randomQ NO agree True
+[1, 3, 4, 5, 7, 8, 9, 11, 12, 13] [1, 2, 3, 4, 8] stored NO randomQ NO agree True
+[1, 3, 4, 5, 7, 8, 9, 11, 12, 13] [1, 2, 3, 4, 8] stored NO randomQ NO agree True
+[1, 3, 4, 5, 7, 8, 9, 11, 12, 13] [1, 2, 3, 4, 8] stored NO randomQ NO agree True
+[1, 3, 4, 5, 7, 8, 9, 11, 12, 13] [1, 2, 3, 4, 12] stored TWIN randomQ TWIN agree True
+[1, 3, 4, 5, 7, 8, 9, 11, 12, 13] [1, 2, 3, 4, 12] stored TWIN randomQ TWIN agree True
+[1, 3, 4, 5, 7, 8, 9, 11, 12, 13] [1, 2, 3, 4, 12] stored TWIN randomQ TWIN agree True
+[2, 3, 4, 6, 7, 8, 10, 11, 12, 14] [1, 2, 3, 7, 11] stored TWIN randomQ TWIN agree True
+[2, 3, 4, 6, 7, 8, 10, 11, 12, 14] [1, 2, 3, 7, 11] stored TWIN randomQ TWIN agree True
+[2, 3, 4, 6, 7, 8, 10, 11, 12, 14] [1, 2, 3, 7, 11] stored TWIN randomQ TWIN agree True
+[2, 3, 4, 6, 7, 8, 10, 11, 12, 14] [1, 2, 3, 7, 15] stored NO randomQ NO agree True
+[2, 3, 4, 6, 7, 8, 10, 11, 12, 14] [1, 2, 3, 7, 15] stored NO randomQ NO agree True
+[2, 3, 4, 6, 7, 8, 10, 11, 12, 14] [1, 2, 3, 7, 15] stored NO randomQ NO agree True

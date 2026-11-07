@@ -1,0 +1,2 @@
+n 5 cells 26 pairs mu=1 120 mu=0 118 agree {'mu=1': 120, 'kill': 118} WRONG 0 undecided 0 shape-invariance violations 0
+n 6 cells 76 pairs mu=1 1118 mu=0 2550 agree {'mu=1': 1118, 'kill': 2550} WRONG 0 undecided 0 shape-invariance violations 0

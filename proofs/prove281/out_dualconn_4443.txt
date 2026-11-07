@@ -1,0 +1,1 @@
+(4, 4, 4, 3) f^lam 24024 reached 24024 connected True P constant on sample True

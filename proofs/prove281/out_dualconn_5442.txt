@@ -1,0 +1,1 @@
+(5, 4, 4, 2) f^lam 81081 reached 81081 connected True P constant on sample True

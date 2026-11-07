@@ -1,0 +1,8 @@
+[2, 3, 4, 6, 7, 8, 10, 11, 12] [1, 2, 3, 7, 11, 15] stored TWIN randomQ TWIN agree True
+[2, 3, 4, 6, 7, 8, 10, 11, 12] [1, 2, 3, 7, 11, 15] stored TWIN randomQ TWIN agree True
+[2, 3, 4, 6, 7, 8, 11, 12, 13] [1, 2, 3, 7, 11, 12] stored TWIN randomQ TWIN agree True
+[2, 3, 4, 6, 7, 8, 11, 12, 13] [1, 2, 3, 7, 11, 12] stored TWIN randomQ TWIN agree True
+[2, 3, 4, 7, 8, 9, 11, 12, 13] [1, 2, 3, 7, 8, 12] stored TWIN randomQ TWIN agree True
+[2, 3, 4, 7, 8, 9, 11, 12, 13] [1, 2, 3, 7, 8, 12] stored TWIN randomQ TWIN agree True
+[3, 4, 5, 7, 8, 9, 11, 12, 13] [1, 2, 3, 4, 8, 12] stored TWIN randomQ TWIN agree True
+[3, 4, 5, 7, 8, 9, 11, 12, 13] [1, 2, 3, 4, 8, 12] stored TWIN randomQ TWIN agree True
