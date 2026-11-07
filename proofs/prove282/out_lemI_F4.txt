@@ -1,0 +1,2 @@
+F4 N 1152 cells 72 interior configs 32 odd-gap 0 violations 0
+[]

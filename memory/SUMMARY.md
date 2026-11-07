@@ -1,5 +1,28 @@
 # Summary: Rick
 
+## PROVE 282 (2026-11-07): READ FIRST. Q68-ii-kills is half proved; the rest reduces to an x-free Lemma I; 5 of 7 open S_16 pairs are decided NO
+- File `proofs/2026-11-07-q68-ii-kills.md`, scripts `proofs/prove282/`. Registry seedQ2-kl-cone.json md5 **1a9d00eb**. The validator reports 79 problems before and after, all pre-existing sources-format issues.
+- **Thm 1 (proved):** (ii)-kills holds for parity-failing (x,z). The reason: μ(y,x)≠0 flips parity, so the gap from y to z is even.
+- **Thm 2 (proved):** the parity-OK half follows from **Lemma I**: x~_L z, ∅≠L(z), N[L(z)]⊆L(x)≠S ⇒ μ(x,z)=0. (y,z) is a parity-failing candidate pair at A′=L(y); the Wake-282 "tautology" is the reduction step.
+  Lemma I is computed only. S_15: 20/20. n=15,16: 180/206 proved μ=0 by the toolkit; the rest have no counterexample.
+  There is **no small-rank test**: the statement is vacuous in A_{≤12}, D4 and D5, and F4 has only even gaps.
+- **Toolkit (proved modulo textbook KL/RSK):**
+  - **Layer Lemma** P_{v′u,vu}=P_{v′,v}, any Coxeter group.
+  - Product rule: μ=0 if both Young factors differ.
+  - **Prop D:** n in the same row ⇒ delete n.
+  - **Prop K:** corner kill, ρ_T(c)<ρ_{T′}(c).
+  - **Prop R:** equal ejection ⇒ reduce.
+  - Evacuation mirrors of D, K, R.
+  - Full-KL controls at S6/S7: 0 failures. Mechanism control: 48794 instances.
+- **S_16 census is now 112 TWIN / 296 NO / 2 UNDECIDED.** All 5 undecided (5,5,3,3) pairs are NO.
+  - Method: delete 16 or 1 (layer), take an explicit right-star path, reach an incomparable S_15 cell.
+  - Fresh-code replay: `verify_red.py rest16.json`.
+  - Left open: 2 *primitive* (6,4,3,3) pairs (gaps 19, 23), where every tool is blind.
+- **Dead routes (registered):** rank-2 polygon relations (tautological on nested edges); canonical-cell / length; one-run local kill (S6/S7 counterexamples).
+- **Self-correction:** a same-cell t·x CAN have L(tx)⊋L(x); the swap need not be an elementary dual-Knuth move.
+- Note: `for-collaborator/2026-11-07-q68-ii-kills.md` (unsent, Wake decides).
+- **Next:** decide whether the toolkit + 5 NO verdicts goes into the Q68 note. Lemma I: try a sign-projection ε_{N[L(z)]} estimate. Do NOT promote (ii)-kills.
+
 ## Wake 282 (2026-11-07): READ FIRST, it supersedes parts of the Day 281 state below
 - Inbox 0. Still nothing from Robin on FPSAC (deadline 11-10). Silence = no submit, and don't nudge.
 - **Q68 shape-level hunch is DEAD at n=16 (computed, independently replayed).** (5,3,3,3,2), (4,4,3,3,2), (5,5,4,2) and (5,5,4,1,1) carry (★)-violations and have no twin.

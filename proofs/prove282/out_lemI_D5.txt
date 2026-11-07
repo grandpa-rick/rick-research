@@ -1,0 +1,2 @@
+D5 N 1920 cells 126 interior configs 0 odd-gap 0 violations 0
+[]
