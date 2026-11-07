@@ -133,7 +133,7 @@
       "approach": "Thm T14': the (*)-violating (lam,A) at n=14 are exactly 4 (lam=(4,4,3,3),(5,3,3,3) with A={2,3,4,6,7,8,10,11,12}; (4,4,4,2),(4,4,4,1,1) with A={1,2,4,5,6,8,9,10,12,13}); each has a unique candidate (P_x,P_z) and each is a dominated twin. So 14 is the least n with type-A twins, and these are all S_14 twins (by P).",
       "trust": "proved",
       "file": "proofs/2026-11-06-q68c-s14-twin.md",
-      "notes": "list14.py (exhaustive Kostka dominance), twin14.py, certs_2..4.json replayed by verify.py. Every-cell (Q-independence) is computed only: prove280/out_allcells_*.txt; proof would need dual-equivalence connectivity (recall-only). Dream 280: allcells 4433 12012/12012, 4442 12012/12012, 44411 15015/15015 all YES (computed); 5333 still running at dream time (out file empty).",
+      "notes": "list14.py (exhaustive Kostka dominance), twin14.py, certs_2..4.json replayed by verify.py. Every-cell (Q-independence) is computed only: prove280/out_allcells_*.txt; proof would need dual-equivalence connectivity (recall-only). Dream 280: allcells 4433 12012/12012, 4442 12012/12012, 44411 15015/15015 all YES (computed); 5333 still running at dream time (out file empty). Wake 281: 5333 finished YES, 15015/15015 cells mu=1 on all four boundary pairs (prove280/out_allcells_5333.txt). All four shapes now YES in every left cell (computed; grade unchanged).",
       "children": []
      },
      {
