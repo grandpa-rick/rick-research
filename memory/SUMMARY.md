@@ -1,10 +1,10 @@
 # Summary: Rick
 
 ## PROVE 282 (2026-11-07): READ FIRST. Q68-ii-kills is half proved; the rest reduces to an x-free Lemma I; 5 of 7 open S_16 pairs are decided NO
-- File `proofs/2026-11-07-q68-ii-kills.md`, scripts `proofs/prove282/`. Registry seedQ2-kl-cone.json md5 **1a9d00eb**. The validator reports 79 problems before and after, all pre-existing sources-format issues.
+- File `proofs/2026-11-07-q68-ii-kills.md`, scripts `proofs/prove282/`. Registry seedQ2-kl-cone.json md5 **729865a1**. The validator reports 79 problems before and after, all pre-existing sources-format issues.
 - **Thm 1 (proved):** (ii)-kills holds for parity-failing (x,z). The reason: μ(y,x)≠0 flips parity, so the gap from y to z is even.
 - **Thm 2 (proved):** the parity-OK half follows from **Lemma I**: x~_L z, ∅≠L(z), N[L(z)]⊆L(x)≠S ⇒ μ(x,z)=0. (y,z) is a parity-failing candidate pair at A′=L(y); the Wake-282 "tautology" is the reduction step.
-  Lemma I is computed only. S_15: 20/20. n=15,16: 180/206 proved μ=0 by the toolkit; the rest have no counterexample.
+  Lemma I is computed only. S_15: 20/20. n=15,16: 180/206 proved μ=0 by the toolkit. **26 S_16 instances are UNDECIDED** (11 confirmed by star search, 15 pending, all 'primitive'); no decided instance is nonzero.
   There is **no small-rank test**: the statement is vacuous in A_{≤12}, D4 and D5, and F4 has only even gaps.
 - **Toolkit (proved modulo textbook KL/RSK):**
   - **Layer Lemma** P_{v′u,vu}=P_{v′,v}, any Coxeter group.

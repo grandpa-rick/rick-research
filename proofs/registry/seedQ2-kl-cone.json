@@ -246,7 +246,7 @@
         "trust": "computed",
         "file": "proofs/2026-11-07-q68-ii-kills.md",
         "sources": [],
-        "approach": "Lemma I: x~_L z, nonempty L(z), N[L(z)] in L(x) != S => mu(x,z)=0. Type A content = parity-failing candidate pairs. S15 20/20 mu=0 (star certs); n=15,16: 180/206 proved mu=0 by Young-layer toolkit (reduce2.py); no counterexample. Vacuous: A_{n<=12}, D4, D5; A5,B4,H3 no configs; F4 32 configs all even gap => no small-rank test exists.",
+        "approach": "Lemma I: x~_L z, nonempty L(z), N[L(z)] in L(x) != S => mu(x,z)=0. Type A content = parity-failing candidate pairs. S15 20/20 mu=0 (star certs); n=15,16: 180/206 proved mu=0 by Young-layer toolkit (reduce2.py); 26 S16 instances UNDECIDED (primitive; 11 confirmed by exhausted star orbits, 15 pending); no decided instance nonzero. Vacuous: A_{n<=12}, D4, D5; A5,B4,H3 no configs; F4 32 configs all even gap => no small-rank test exists.",
         "children": [
          {
           "id": "Q68-lemmaI-rank2-polygon",
