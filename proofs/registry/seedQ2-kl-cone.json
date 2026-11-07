@@ -281,7 +281,8 @@
           "approach": "Attempt: a local one-run interior kill.",
           "children": []
          }
-        ]
+        ],
+        "notes": "Dream 282: background star search out_muxz16.txt COMPLETED 186/186 parity-failing S16 pairs: 150 kill-incomparable, 36 exhausted; xref.py rerun: (incomparable,KILL)=150, (exhausted,KILL)=10, (exhausted,OPEN)=26. The 26 star-undecided pairs are EXACTLY the toolkit's 26 OPEN (open26.json); star search decides a strict subset of the toolkit's 160. The '15 pending' are closed: 26 undecided by every method. Gaps of the 26: {19,21,23} only. Owner lead: Lemma I is an ARC-exclusion rule in Stembridge's decomposition of admissible W-graphs into simple edges + arcs (reading/pdfs/stembridge_admissible_Wgraphs.txt, Prop 4.2 Simplicity Rule, arcs = nested tau, line ~604; Step 1-2 cell classification ~965-985). Owner check owed: Stembridge's sequel on molecules/arcs (title/ID recall-only, unverified)."
        },
        {
         "id": "Q68-ii-parity-half",
@@ -290,7 +291,8 @@
         "file": "proofs/2026-11-07-q68-ii-kills.md",
         "sources": [],
         "approach": "Thm 1: (x,z) parity-failing => mu(y,z)=0 for every (ii)-element y (mu(y,x)!=0 forces l(y)!=l(x) mod 2, so l(y)=l(z)).",
-        "children": []
+        "children": [],
+        "notes": "Dream 282 cold read PASS."
        },
        {
         "id": "Q68-ii-reduce-to-lemmaI",
@@ -299,7 +301,8 @@
         "file": "proofs/2026-11-07-q68-ii-kills.md",
         "sources": [],
         "approach": "Thm 2: Lemma I on parity-failing candidate pairs => Q68-ii-kills ((y,z) is a parity-failing candidate pair at A'=L(y)).",
-        "children": []
+        "children": [],
+        "notes": "Dream 282 cold read PASS (int monotone; L(y)=S impossible since w0 is a singleton cell)."
        },
        {
         "id": "Q68-layer-lemma",
@@ -316,9 +319,11 @@
           "file": "proofs/2026-11-07-q68-ii-kills.md",
           "sources": [],
           "approach": "Type A: Prop D (n same row => mu_lam(T,T')=mu(T\\n,T'\\n)), Prop K (corner kill rho_T(c)<rho_T'(c) with forced comparability => mu=0), Prop R (equal ejection => reduce), evac mirrors. Uses textbook RSK (R1)-(R3) (exhaustive n<=8, rskfacts.py) + cell-independence (recall-only). Controls: D full KL S6/S7 1428/25676 pairs 0 mismatch; K mechanism 48794 instances 0 violations.",
-          "children": []
+          "children": [],
+          "notes": "Dream 282 cold read PASS: D (shared position of n via reverse-bump of Q at c), K (tableau criterion at k=n-1: x<=z needs x(n)>=z(n)), R logic. No grade change."
          }
-        ]
+        ],
+        "notes": "Dream 282 cold read PASS (induction via KL79 (2.2.c) + Deodhar projection; z in [x,w1] forced into the layer by z^K=u). Likely FOLKLORE (KL polynomials invariant on a parabolic coset layer); owner check owed before any public claim of novelty. No grade change."
        },
        {
         "id": "Q68-S16-5533-decided",

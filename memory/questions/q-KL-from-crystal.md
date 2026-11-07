@@ -158,3 +158,8 @@ The obstruction does occur in all types with m ≥ 4 (Thm B). See Crown T, `conn
 ## Dream 281 (2026-11-07): what's left of the QSym reading
 - Shape level holds at n=15 (9/9), which is the form sent to Clio 11-07. Pair level: C2 + parity are tableau-readable. Only the U-sieve needs μ.
 - Open: (a) n=16 shape-level separator; (b) are all (ii)-elements candidate x's (the sieve test, data on disk); (c) mechanism (ii) (GW (4,4,1), H3 5_2) still untouched.
+
+## Dream 282 (2026-11-07): the question gets a concrete form
+- The crystal / dual-equivalence data gives the *simple edges* (Stembridge Prop 4.2). What KL adds beyond that is the *arcs* (nested τ).
+- Seed Q2 sharpened: **which arcs does the molecule force or forbid?** Lemma I (`Q68-lemmaI`, computed) is a candidate first rule: no upward arc z→x with N[L(z)] ⊆ L(x).
+- Owner check owed before building on it: Stembridge's sequel on molecules / cell classification, and Chmutov–Lewis–Pylyavskyy. See Crown U.

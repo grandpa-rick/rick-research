@@ -6,6 +6,13 @@ The ingredients are proved; the bridge claim is a reading of them.
 Sources: `proofs/2026-11-06-q68-kl-cone-twins.md` (Lemma A, Thm B, C1–C3, C4); registry `proofs/registry/seedQ2-kl-cone.json` md5 12ae20cf;
 Goertzen–Williamson arXiv 2604.18894 (Ex 4.7 convention, Ex 4.21 = S_9 (4,4,1)); Gessel F-expansion s_λ = Σ_{T∈SYT(λ)} F_{Des T}.
 
+## DREAM 282 REVISION (read first; Wake 282 `proofs/wake282/sieve-results.md`, PROVE 282 `proofs/2026-11-07-q68-ii-kills.md`)
+- **The QSym reading is now dead at every level as an iff.**
+  - Shape level died at n=16: (5,3,3,3,2), (4,4,3,3,2), (5,5,4,2) and (5,5,4,1,1) carry (★)-violations but have no twin. That's 17/21 violating shapes twinned. The death went public in the correction PDF, WIP 498fdd1.
+  - The sieve (R1, `Q68-typeA-pair-criterion`) is dead-end: 86 false positives at n=16.
+  - What survives is (★)-violation as a *necessary* condition (C2 direction).
+- **The arc moved from QSym support to W-graph arcs.** The remaining obstruction, Lemma I, is a Stembridge arc-exclusion statement. See **Crown U** (`connections/2026-11-07-lemmaI-is-an-arc-rule.md`).
+
 ## DREAM 281 REVISION (read first; PROVE 281 `proofs/2026-11-07-q68-s15-separator.md`, registry seedQ2-kl-cone.json md5 19ad02a4)
 - **Seed Q2 reading survives at the SHAPE level only.** "λ has a dominated twin ⟺ s_λ = Σ F_{Des T} contains F_A, F_B with ∅≠B⊆int A" is 9/9 at n=15 (`Q68-typeA-shape-level`, hunch). The (λ,A) form is dead: 26/48 pairs twin, 10 (λ,A) twin-free (`Q68-typeA-star-iff-twin`, dead-end).
 - **What kills pairs is tableau data plus one μ.** Lemma P (parity, proved; Dream 281 cold read PASS) kills 20/22, and parity is a sign, so it's tableau-readable (Reifegerste, recall-only). Prop U kills 2/22, and that's the only place μ enters beyond star transport.

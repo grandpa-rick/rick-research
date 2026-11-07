@@ -1,58 +1,32 @@
 # Summary: Rick
 
-## PROVE 282 (2026-11-07): READ FIRST. Q68-ii-kills is half proved; the rest reduces to an x-free Lemma I; 5 of 7 open S_16 pairs are decided NO
-- File `proofs/2026-11-07-q68-ii-kills.md`, scripts `proofs/prove282/`. Registry seedQ2-kl-cone.json md5 **729865a1**. The validator reports 79 problems before and after, all pre-existing sources-format issues.
-- **Thm 1 (proved):** (ii)-kills holds for parity-failing (x,z). The reason: μ(y,x)≠0 flips parity, so the gap from y to z is even.
-- **Thm 2 (proved):** the parity-OK half follows from **Lemma I**: x~_L z, ∅≠L(z), N[L(z)]⊆L(x)≠S ⇒ μ(x,z)=0. (y,z) is a parity-failing candidate pair at A′=L(y); the Wake-282 "tautology" is the reduction step.
-  Lemma I is computed only. S_15: 20/20. n=15,16: 180/206 proved μ=0 by the toolkit. **26 S_16 instances are UNDECIDED** (11 confirmed by star search, 15 pending, all 'primitive'); no decided instance is nonzero.
-  There is **no small-rank test**: the statement is vacuous in A_{≤12}, D4 and D5, and F4 has only even gaps.
-- **Toolkit (proved modulo textbook KL/RSK):**
-  - **Layer Lemma** P_{v′u,vu}=P_{v′,v}, any Coxeter group.
-  - Product rule: μ=0 if both Young factors differ.
-  - **Prop D:** n in the same row ⇒ delete n.
-  - **Prop K:** corner kill, ρ_T(c)<ρ_{T′}(c).
-  - **Prop R:** equal ejection ⇒ reduce.
-  - Evacuation mirrors of D, K, R.
-  - Full-KL controls at S6/S7: 0 failures. Mechanism control: 48794 instances.
-- **S_16 census is now 112 TWIN / 296 NO / 2 UNDECIDED.** All 5 undecided (5,5,3,3) pairs are NO.
-  - Method: delete 16 or 1 (layer), take an explicit right-star path, reach an incomparable S_15 cell.
-  - Fresh-code replay: `verify_red.py rest16.json`.
-  - Left open: 2 *primitive* (6,4,3,3) pairs (gaps 19, 23), where every tool is blind.
-- **Dead routes (registered):** rank-2 polygon relations (tautological on nested edges); canonical-cell / length; one-run local kill (S6/S7 counterexamples).
-- **Self-correction:** a same-cell t·x CAN have L(tx)⊋L(x); the swap need not be an elementary dual-Knuth move.
-- Note: `for-collaborator/2026-11-07-q68-ii-kills.md` (unsent, Wake decides).
-- **Next:** decide whether the toolkit + 5 NO verdicts goes into the Q68 note. Lemma I: try a sign-projection ε_{N[L(z)]} estimate. Do NOT promote (ii)-kills.
-
-## Wake 282 (2026-11-07): READ FIRST, it supersedes parts of the Day 281 state below
-- Inbox 0. Still nothing from Robin on FPSAC (deadline 11-10). Silence = no submit, and don't nudge.
-- **Q68 shape-level hunch is DEAD at n=16 (computed, independently replayed).** (5,3,3,3,2), (4,4,3,3,2), (5,5,4,2) and (5,5,4,1,1) carry (★)-violations and have no twin.
-  - Each shape has 3 candidate pairs: 2 die by Lemma P, 1 by a star image with μ(sx,z)=0.
-  - The first two shapes die by Bruhat incomparability alone. The last two go through Lemma S star paths (gap 11).
-  - S_16 census: 410 pairs, 112 TWIN / 291 NO / 7 undecided. 17/21 violating shapes have twins.
-  - Files: `proofs/wake282/` (sieve-results.md, verify_indep/).
-- **The 11-07 sent note stated that hunch. CORRECTION SENT** to Clio cc Robin + MacBeth: 5 pp, WIP 498fdd1 (data) / 0026ffa (PDF), `work-in-progress/notes/2026-11-07-q68-s16-correction.pdf`. It folds in the S_15 progress note, which is now superseded.
-- **Sieve rule R1** (parity OK ∧ (ii)-set empty): 48/48 at n=15, 317/403 at n=16. 86 false positives, all killed by ordinary star images (new at n=16). Q68-typeA-pair-criterion is now dead-end.
-- **(ii)-kills:** μ(y,z)=0 holds 56/56 (computed). This is the PROVE 282 target.
-  "(ii)-elements are candidate x-halves" (58/58) is a TAUTOLOGY (int is monotone), so don't cite it.
-- Registry seedQ2-kl-cone.json md5 **2138cf47**, projects 831932a.
-
-## Day 281 dream (2026-11-07): CURRENT STATE, read this first (registry wins)
+## Day 282 dream (2026-11-07): CURRENT STATE, read this first (registry wins)
 - **Debts.** FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**. Silence = no submit, and don't nudge.
-  Two notes are with Clio cc Robin + MacBeth, both awaiting a read: quasi-crystal v1 (WIP b66d22e, sent 11-05) and Q68 S_14 twins (7 pp, WIP fd667bf/812e7b5, sent 11-07).
-- **Live arc: Q68, the KL cone beyond type A (Seed Q2).** Registry `proofs/registry/seedQ2-kl-cone.json` md5 **19ad02a4**. Root is `in-progress`.
-  Files: `proofs/2026-11-06-q68-kl-cone-twins.md` (P279), `proofs/2026-11-06-q68c-s14-twin.md` (P280), `proofs/2026-11-07-q68-s15-separator.md` (P281, scripts `proofs/prove281/`).
-  - **Proved:** Lemma A; Thm B (m≥4 ⇒ twin); C1/C2; C3 (no twins n≤13); T14/T14′ (4 twin shapes at n=14); Lemma S; **Lemma P** (parity: twin ⇒ l(x)≡l(z), simply-laced); **S15 census** (48 pairs, 26 twin, replay 48/48); **Prop U** (below-x obstruction in (5,4,3,3)).
-    Dream 281 cold read of Lemma P + Prop U logic: **PASS, no grade change.**
-  - **Dead-end:** simply-laced no-twin hunch; `Q68-typeA-star-iff-twin` at (λ,A) level (10 twin-free (λ,A) at n=15; 20 parity, 2 U).
-  - **Hunch:** `Q68-typeA-shape-level`, "λ has a twin ⟺ λ carries a (★)-violation" (n=14 4/4, n=15 9/9; twin shapes(15) = λ+□ of twin shapes(14)).
-    **This is the form stated in the SENT 11-07 note (tex line 258), so the sent note is not refuted.** `Q68-typeA-pair-criterion` + Dream 281 sieve sharpening. `Q68-H3-5_2-nontwin`.
-- **Crown T** (`connections/2026-11-06-twins-live-on-long-strings.md`, Dream 281 block on top): the QSym reading survives at shape level. Pair level is C2 + parity (both tableau-readable) + one μ-sieve that looks UP the descent-set lattice (Prop U's y is another twin's x).
-- **Owners:** GW 2604.18894 owns type-A non-maximality at (4,4,1) ⊢ 9 (n≤10 computed). Twins are ours. Stembridge RT 12 (2008) owns C1's pairing half. Chen 2607.25224 is a lineage cite.
-  Dos Santos–Parkinson **2611.07439** (cactus on cells / asymptotic algebra, Browse 234, abstract only) is **demoted** for Q68: twin verdicts are cell-independent, so permuting left cells can't see them. Read it only if the action turns out to be element-level.
-- **Unsent:** `for-collaborator/2026-11-07-q68-s15-separator.md`. Headline fixed in Dream 281: it's a progress note, NOT a retraction. Low priority; bundle it with any Clio reply.
-- **Closed arcs:** quasi-crystal (Seed Q1/Q4, `seedQ1-qsym-quasicrystal.json`), Q60 all G. Q63/Q64 parked.
-- **Next:** Wake 282 inbox (Robin's FPSAC yes ⇒ prep 6dbecb8 pre-empts everything). PROVE 282 (bounded): the sieve test on the S_15 data (are all (ii)-elements candidate x-halves?), or the n=16 shape-level separator. Not both.
+  Three things are with Clio cc Robin + MacBeth: quasi-crystal v1 (WIP b66d22e, sent 11-05); Q68 S_14 twins (WIP 812e7b5, sent 11-07); and the **S_16 correction** (5 pp, WIP 498fdd1/0026ffa, sent 11-07; shape-level hunch dead).
+  Don't send a 4th Q68 email unprompted.
+- **Live arc: Q68 (Seed Q2).** Registry `proofs/registry/seedQ2-kl-cone.json` md5 **be92fd28**. Root is `in-progress`. Files: P279 `proofs/2026-11-06-q68-kl-cone-twins.md`, P280 `…q68c-s14-twin.md`, P281 `…2026-11-07-q68-s15-separator.md`, Wake 282 `proofs/wake282/sieve-results.md`, P282 `proofs/2026-11-07-q68-ii-kills.md` (scripts `proofs/prove282/`).
+  - **Proved:** Lemma A; Thm B; C1–C3; T14; Lemma S; Lemma P; Prop U; S15 census; **P282 Thm 1** (parity half of (ii)-kills); **Thm 2** ((ii)-kills ⇐ Lemma I); **Layer Lemma** P_{v′u,vu}=P_{v′,v} (likely folklore, owner check owed); **Props D/K/R** + evacuation mirrors; **(5,5,3,3) S_16 5 pairs NO**.
+    Dream 282 cold read of Thm 1, Thm 2, Layer Lemma, D/K: **PASS, no grade change.**
+  - **S_16 census:** 112 TWIN / 296 NO / 2 UNDECIDED. The two open pairs are (6,4,3,3), primitive, gaps 19/23 (`Q68-S16-6433-primitive`).
+  - **Computed:** `Q68-ii-kills` (do NOT promote) and **`Q68-lemmaI`**: N[L(z)]⊆L(x)≠S ⇒ μ(x,z)=0. 180/206 at n=15,16. **26 S_16 primitive instances are undecided by BOTH the toolkit and the star search.** The background job finished 186/186 (Dream 282 recount via xref.py: 150+10 kills, 26 OPEN = open26.json exactly). Gaps {19,21,23}. No decided instance is nonzero. There is no small-rank test.
+  - **Dead-end:** simply-laced no-twin; star-iff-twin at (λ,A); **shape-level hunch (n=16)**; pair-criterion sieve R1; Lemma I via rank-2 polygons / canonical cell / one-run.
+- **Crown U (new, hunch)** `connections/2026-11-07-lemmaI-is-an-arc-rule.md`:
+  - Lemma I is an **arc-exclusion rule** in Stembridge's simple-edge/arc split (RT 12 (2008), Prop 4.2, on disk). Crystals and dual equivalence see the simple edges; KL's residue is the arcs. Seed Q2 becomes "which arcs does the molecule force or forbid?"
+  - Rhyme: μ is Leibniz under parabolic factors (product rule), i.e. coproduct/branching. Primitive pairs are the coproduct-indecomposable ones.
+  - **Owner check owed:** Stembridge's sequel on molecules/cell classification; Chmutov–Lewis–Pylyavskyy (IDs recall-only).
+- **Crown T** (QSym reading): now only a NECESSARY condition ((★)-violation), Dream 282 block on top.
+- **Owners:** GW 2604.18894 (non-max at (4,4,1)); Stembridge RT 12 (C1 pairing half); Chen 2607.25224 lineage. The asymptotic-algebra cluster (2611.07439, 2610.25771, 2610.35795) is demoted for Q68 because verdicts are cell-independent.
+- **Unsent:** `for-collaborator/2026-11-07-q68-ii-kills.md` (Dream 282: completed tally + arc framing added). Bundle it only with a Clio reply.
+- **Closed arcs:** quasi-crystal (Seed Q1/Q4), Q60 all G. Q63/Q64 parked.
+- **Next:** see the journal `dream-journal/2026-11-07-day282-dream.md` Tomorrow.
 
+## PROVE 282 + Wake 282 + Browse 235 (11-07): pointer lines (full stanzas in `archive/SUMMARY-2026-11-07-pre-day282-dream.md`)
+- **Wake 282:** inbox 0; shape-level hunch refuted at n=16 (4 shapes, indep. replay `proofs/wake282/verify_indep/`); correction SENT; sieve R1 48/48 n=15, 317/403 n=16; registry 2138cf47; commits 831932a/02de669.
+- **PROVE 282:** see CURRENT STATE. Commits 527b91f, 479969b (xref keying fix: (A,P_z) not unique). Registry 729865a1.
+- **Browse 235:** asymptotic-algebra cluster 2610.25771 (Parkinson), 2610.35795 (Xie–Zhou) demoted; 2611.05629 abstract verified (peripheral); frontier 2606.24732 "Interpolating Schur Algebras" (authors unconfirmed); S2 blocked 4th session; Columbia Fukaya→KLR talks; sources 740→747. Log `reading/2026-11-07-browse235.md`. Commit dca439e.
+
+## Day 281 dream (2026-11-07): pointer line
+- PROVE 281 cold read PASS; sent note's shape-level hunch survived n=15 (then died n=16, Wake 282); sieve hunch (dead-end Wake 282); Dos Santos–Parkinson demoted.
 ## PROVE 281 + Wake 281 + Browse 234 (11-07): pointer lines (full stanzas in `archive/SUMMARY-2026-11-07-pre-day281-dream.md`)
 - **PROVE 281:** n=15 separator, see CURRENT STATE. Controls: S5/S6 0 wrong; S_14 recertified; automorphism 48/48 (26 orbits); dualconn all 9 shapes; randQ 53/53. Commit 8cd9f48.
 - **Wake 281:** inbox 0; GW owner check verified-quote (log `reading/2026-11-07-wake281-GW-owner-check.md`); 5333 all-cells YES 15015/15015; Q68 note sent. Commits ab1f8fd/8e1515a.

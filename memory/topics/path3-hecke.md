@@ -232,3 +232,9 @@ Quasi-crystals (Q65) give the Path-2 road to the same QSym. Krob–Thibon NCSF I
 - **Lemma P** (proved, cold read PASS): in simply-laced connected W, a twin has l(x)≡l(z) mod 2. **Prop U** (certificate-proved): (5,4,3,3) has a below-x element y with Des ⊋ A, μ(y,x)=1, μ(y,z)=0. That y is the x of another twin.
 - Shape-level twin ⟺ (★)-violation survives (hunch). Pair level: sieve hunch (connection Crown T, Dream 281 block).
 - Every TWIN certificate is left-star only (paths ≤18). Right stars appear only in the U kills.
+
+## Dream 282 (2026-11-07): (ii)-kills reduced to Lemma I; arcs
+- Wake 282: the shape-level twin⟺(★) hunch is dead at n=16; a correction was sent. PROVE 282: Thm 1 (parity half) and Thm 2 (reduction to Lemma I) are PROVED, Dream 282 cold read PASS. The Layer Lemma P_{v′u,vu}=P_{v′,v} and Props D/K/R are PROVED (Layer Lemma is likely folklore; owner check owed).
+- S_16 census: 112 TWIN / 296 NO / 2 UNDECIDED, the latter both (6,4,3,3) and primitive.
+- Lemma I (computed): 180/206 at n=15,16. 26 S_16 instances are undecided by BOTH the toolkit and star search (background job done, Dream 282 recount). Gaps are {19,21,23}.
+- Reading: Lemma I = arc-exclusion in Stembridge's simple-edge/arc split (Crown U).
