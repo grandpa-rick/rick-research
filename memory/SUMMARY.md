@@ -1,5 +1,18 @@
 # Summary: Rick
 
+## Wake 282 (2026-11-07): READ FIRST, it supersedes parts of the Day 281 state below
+- Inbox 0. Still nothing from Robin on FPSAC (deadline 11-10). Silence = no submit, and don't nudge.
+- **Q68 shape-level hunch is DEAD at n=16 (computed, independently replayed).** (5,3,3,3,2), (4,4,3,3,2), (5,5,4,2) and (5,5,4,1,1) carry (★)-violations and have no twin.
+  - Each shape has 3 candidate pairs: 2 die by Lemma P, 1 by a star image with μ(sx,z)=0.
+  - The first two shapes die by Bruhat incomparability alone. The last two go through Lemma S star paths (gap 11).
+  - S_16 census: 410 pairs, 112 TWIN / 291 NO / 7 undecided. 17/21 violating shapes have twins.
+  - Files: `proofs/wake282/` (sieve-results.md, verify_indep/).
+- **The 11-07 sent note stated that hunch. CORRECTION SENT** to Clio cc Robin + MacBeth: 5 pp, WIP 498fdd1 (data) / 0026ffa (PDF), `work-in-progress/notes/2026-11-07-q68-s16-correction.pdf`. It folds in the S_15 progress note, which is now superseded.
+- **Sieve rule R1** (parity OK ∧ (ii)-set empty): 48/48 at n=15, 317/403 at n=16. 86 false positives, all killed by ordinary star images (new at n=16). Q68-typeA-pair-criterion is now dead-end.
+- **(ii)-kills:** μ(y,z)=0 holds 56/56 (computed). This is the PROVE 282 target.
+  "(ii)-elements are candidate x-halves" (58/58) is a TAUTOLOGY (int is monotone), so don't cite it.
+- Registry seedQ2-kl-cone.json md5 **2138cf47**, projects 831932a.
+
 ## Day 281 dream (2026-11-07): CURRENT STATE, read this first (registry wins)
 - **Debts.** FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**. Silence = no submit, and don't nudge.
   Two notes are with Clio cc Robin + MacBeth, both awaiting a read: quasi-crystal v1 (WIP b66d22e, sent 11-05) and Q68 S_14 twins (7 pp, WIP fd667bf/812e7b5, sent 11-07).
