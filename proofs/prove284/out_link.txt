@@ -1,0 +1,5 @@
+in0 P==in0b P: True True
+in0 -> in0b right-star path: [3]
+lengths in0 33 52 mirror 33 52 in1b 35 54
+mirror P == in1b P: True True
+mirror(in0) -> in1b right-star path: [11, 13]

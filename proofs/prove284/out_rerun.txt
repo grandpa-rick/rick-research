@@ -1,0 +1,102 @@
+== wake282/certs14_4433.json
+      1 OK TWIN
+== wake282/certs14_44411.json
+      1 OK TWIN
+== wake282/certs14_4442.json
+      1 OK TWIN
+== wake282/certs14_5333.json
+      1 OK TWIN
+== prove281/certs15_44331.json
+      2 OK NO
+      1 OK TWIN
+== prove281/certs15_444111.json
+      4 OK TWIN
+== prove281/certs15_44421.json
+      6 OK NO
+      6 OK TWIN
+== prove281/certs15_4443.json
+      4 OK TWIN
+== prove281/certs15_53331.json
+      2 OK NO
+      1 OK TWIN
+== prove281/certs15_5433.json
+      8 OK NO
+      4 OK TWIN
+== prove281/certs15_54411.json
+      2 OK NO
+      1 OK TWIN
+== prove281/certs15_5442.json
+      2 OK NO
+      1 OK TWIN
+== prove281/certs15_6333.json
+      4 OK TWIN
+== wake282/certs16_443311.json
+      5 OK NO
+      1 OK TWIN
+== wake282/certs16_44332.json
+      3 OK NO
+== wake282/certs16_4441111.json
+     10 OK TWIN
+== wake282/certs16_444211.json
+     36 OK NO
+     18 OK TWIN
+== wake282/certs16_44422.json
+      9 OK NO
+      9 OK TWIN
+== wake282/certs16_44431.json
+     28 OK NO
+     15 OK TWIN
+== wake282/certs16_4444.json
+      4 OK TWIN
+== wake282/certs16_533311.json
+      5 OK NO
+      1 OK TWIN
+== wake282/certs16_53332.json
+      3 OK NO
+== wake282/certs16_54331.json
+     42 OK NO
+      6 OK TWIN
+== wake282/certs16_544111.json
+      8 OK NO
+      4 OK TWIN
+== wake282/certs16_54421.json
+     42 OK NO
+      6 OK TWIN
+== wake282/certs16_5443.json
+     34 OK NO
+      9 OK TWIN
+== wake282/certs16_5533.json
+      9 OK NO
+      4 OK TWIN
+      5 OK UNDECIDED
+== wake282/certs16_55411.json
+      3 OK NO
+== wake282/certs16_5542.json
+      3 OK NO
+== wake282/certs16_63331.json
+      8 OK NO
+      4 OK TWIN
+== wake282/certs16_6433.json
+     43 OK NO
+      9 OK TWIN
+      2 OK UNDECIDED
+== wake282/certs16_64411.json
+      5 OK NO
+      1 OK TWIN
+== wake282/certs16_6442.json
+      5 OK NO
+      1 OK TWIN
+== wake282/certs16_7333.json
+     10 OK TWIN
+== prove283/certs16_6433_ext.json
+      2 OK NO
+      2 OK TWIN
+== 5533 layer certs
+[6, 4, 3, 3] no certificate
+[6, 4, 3, 3] no certificate
+[6, 4, 3, 3] no certificate
+[5, 5, 3, 3] right-star path length 48 reaches Q*; endpoint incomparable: True
+[5, 5, 3, 3] right-star path length 33 reaches Q*; endpoint incomparable: True
+[5, 5, 3, 3] right-star path length 48 reaches Q*; endpoint incomparable: True
+[5, 5, 3, 3] right-star path length 33 reaches Q*; endpoint incomparable: True
+[5, 5, 3, 3] right-star path length 19 reaches Q*; endpoint incomparable: True

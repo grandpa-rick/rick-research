@@ -19,8 +19,9 @@ All three are verdict NO by parity. Census full-cell lengths are 59/82, 71/90 an
 **None of them is a (ii)-instance, or an (i)-instance, of any S_16 candidate pair.**
 - The full-key join on (λ, P_y, P_z) over every (i) and (ii) element in `sieve16.json` gives no hit for 11, 13 or 14.
 - The only open26 instances that are (ii)-instances are **0 and 1**.
-  - Inst 0 is the (ii)-element of pairs 352 (NO) and 353 (UNDECIDED).
-  - Inst 1 is the (ii)-element, which is also the (i), s = 6 element, of pairs 364 (UNDECIDED) and 365 (NO).
+  - Inst 0 is the (ii)-element of pairs 352 (NO) and 353 (UNDECIDED); for **352** it is also the (i), s = 10 element.
+  - Inst 1 is the (ii)-element of pairs 364 (UNDECIDED) and 365 (NO); it is also the (i), s = 6 element for **364 only**.
+  - [Corrected PROVE 284 per twin-verdict-check.md §b; no verdict changes.]
   - These are the (6,4,3,3) pairs.
 
 **Proof that 11, 13, 14 cannot be (ii)-instances.** All three are *tight*: A = N[L(z)].

@@ -153,7 +153,7 @@
       "trust": "proved",
       "file": "proofs/2026-11-07-q68-s15-separator.md",
       "approach": "Lemma P: simply-laced connected W, (x,z) dominated twin => l(x) = l(z) mod 2 (boundary star image x'=*x has mu(x',x)=1 so needs mu(x',z)>=1, odd gap). In type A a condition on (P_x,P_z) alone (right stars change each length by +-1).",
-      "notes": "Kills 20/48 S_15 candidates at path length 0. At n=14 all 4 candidates had even parity, which is why 4/4 looked like evidence. | Dream 281 cold read PASS: re-derived by hand. Connected + L(x) not in {empty,S} gives adjacent s in L(x), t not in L(x), m=3. Left star *x keeps Q (dual Knuth), so it is in Gamma. mu(*x,x)=1, and t in L(*x)\\L(x) forces mu(*x,z)>=1. *x != z since t not in L(z). Odd gap. No grade change.",
+      "notes": "Kills 20/48 S_15 candidates at path length 0. At n=14 all 4 candidates had even parity, which is why 4/4 looked like evidence. | Dream 281 cold read PASS: re-derived by hand. Connected + L(x) not in {empty,S} gives adjacent s in L(x), t not in L(x), m=3. Left star *x keeps Q (dual Knuth), so it is in Gamma. mu(*x,x)=1, and t in L(*x)\\L(x) forces mu(*x,z)>=1. *x != z since t not in L(z). Odd gap. No grade change. | PROVE 284: = Cor W2 of Q68-witness-completeness (parity is implied by the witness inequality at *x).",
       "children": []
      },
      {
@@ -211,7 +211,7 @@
       "trust": "computed",
       "file": "proofs/wake282/sieve-results.md",
       "approach": "n=16: listn.py 16 gives 227 (lam,A), 21 shapes, 410 candidate pairs; certifyn decides 112 TWIN, 291 NO, 7 UNDECIDED (star orbit exhausted before a decidable endpoint). UPDATE PROVE 282: 5 of 7 UNDECIDED (all (5,5,3,3)) decided NO by layer certificates (Q68-S16-5533-decided); now 112/296/2. UPDATE PROVE 283: last 2 UNDECIDED ((6,4,3,3) pairs 353, 364) are TWIN (Q68-S16-6433-primitive). CENSUS CLOSED: 114 TWIN / 296 NO / 0 UNDECIDED.",
-      "notes": "Wake 282. certs16_*.json, out_cert16_*.txt; verifyn_u.py replays 410/410 verdicts OK (verify_certs16_*.json.txt). Shape table out_shapes16.txt: NO split 186 parity, 19 with (ii), 86 (i)-only. Fresh independent verifier verify_indep/ (own RSK/star/Bruhat) PASS on the 4 no-twin shapes; controls S_14 (4,4,3,3), S_15 (6,3,3,3) twins reproduced, S_5/S_6 star search vs full KL 0 wrong (out_controls.txt). Rests on Lemma S (proved, KL79 recursion recall-only) and cell-independence (recall-level for n=16; dualconn not rerun at n=16 unless stated). Direct KL not run at n=16. | PROVE 283: closed at 114/296/0; the 2 new TWIN verdicts rest on computed mu (dyer2.c + independent Deodhar replay for inst 0). See proofs/2026-11-08-q68-lemmaI-false-s16-closed.md, proofs/prove283/twin-verdict-check.md.",
+      "notes": "Wake 282. certs16_*.json, out_cert16_*.txt; verifyn_u.py replays 410/410 verdicts OK (verify_certs16_*.json.txt). Shape table out_shapes16.txt: NO split 186 parity, 19 with (ii), 86 (i)-only. Fresh independent verifier verify_indep/ (own RSK/star/Bruhat) PASS on the 4 no-twin shapes; controls S_14 (4,4,3,3), S_15 (6,3,3,3) twins reproduced, S_5/S_6 star search vs full KL 0 wrong (out_controls.txt). Rests on Lemma S (proved, KL79 recursion recall-only) and cell-independence (recall-level for n=16; dualconn not rerun at n=16 unless stated). Direct KL not run at n=16. | PROVE 283: closed at 114/296/0; the 2 new TWIN verdicts rest on computed mu (dyer2.c + independent Deodhar replay for inst 0). See proofs/2026-11-08-q68-lemmaI-false-s16-closed.md, proofs/prove283/twin-verdict-check.md. | PROVE 284: cell independence now PROVED (Q68-cell-independence); the 2 ext verdicts both rest on the single value mu(in0) (Q68-inst-link); all n=14,15,16 certs replayed again 2026-11-08 (prove284/out_rerun.txt). See Q68-typeA-closure.",
       "children": [
        {
         "id": "Q68-lemmaS-ref-s16",
@@ -380,6 +380,53 @@
     "file": "proofs/2026-11-06-q68-kl-cone-twins.md",
     "notes": "Computed confirmation thmB_check.py: I2(4,5,6),B3,H3,B4,F4 all ordered m>=4 pairs. Generalises Q68-B3-witness. Irreducibility of the cell: computed only (B3 both; B4 t=s2 irr, t=s1 reducible; B5 t=s2 reducible, t=s1 irr; H3 t=s2 irr dim 5). Uniform irreducible B_n family for all n = OPEN GAP.",
     "children": []
+   },
+   {
+    "id": "Q68-typeA-closure",
+    "role": "attempt",
+    "trust": "computed",
+    "file": "proofs/2026-11-08-q68-typeA-closure.md",
+    "approach": "PROVE 284 stable closure of type A: census n<=16 (0/4/26/114 twins) is certificate-complete modulo textbook KL/RSK basics, enumeration code, and ONE computed KL value mu(x0,z0)=1 (in0), used only by TWIN 353/364. WIP PDF notes/2026-11-08-q68-typeA-closure.tex. No Q69 on this arc.",
+    "notes": "Grade computed (not proved) only because of mu(x0,z0) and the trusted enumeration code; every other verdict is a replayed certificate (rerun 2026-11-08, prove284/out_rerun.txt).",
+    "sources": [],
+    "children": [
+     {
+      "id": "Q68-witness-completeness",
+      "role": "premise",
+      "trust": "proved",
+      "file": "proofs/2026-11-08-q68-typeA-closure.md",
+      "approach": "Thm W (any finite W): y in Gamma, L(y) not in L(x), mu(y,x)!=0 => y in W_i(x)={sx in Gamma, L(sx) not in A} or W_ii(x)={y<x, L(y) strictly contains A}; twin <=> witness inequality on W_i u W_ii. Proof = F1 + mu>=0. Cor W2: parity (Lemma P) is implied, not an extra conjunct. Answers PROVE 284 completeness hunch: TRUE, parity redundant. Lemma S not needed for completeness; it is what makes each certificate sound.",
+      "sources": [],
+      "children": [],
+      "notes": "Recall-only inputs: KL79 (2.3.e) F1, recall-only"
+     },
+     {
+      "id": "Q68-cell-independence",
+      "role": "premise",
+      "trust": "proved",
+      "file": "proofs/2026-11-08-q68-typeA-closure.md",
+      "approach": "Prop Q: right stars on S_n = elementary Knuth moves (Lemma K); with Knuth's theorem + Lemma S(right) + strong connectivity of left cells under <=_L links, get bijection Gamma_Q -> Gamma_Q' preserving P, L, mu~; twin-ness depends only on (P_x,P_z). Replaces recall-only Haiman dual equivalence / computed dualconn.py.",
+      "sources": [],
+      "children": [],
+      "notes": "Recall-only inputs: Knuth's theorem (textbook, recall-only); KL79 left preorder definition"
+     },
+     {
+      "id": "Q68-inst-link",
+      "role": "premise",
+      "trust": "proved",
+      "file": "proofs/2026-11-08-q68-typeA-closure.md",
+      "approach": "Prop M: in0b = rho_3(in0); in1b = rho_13 rho_11 (w0 in0 w0) (prove284/link.py, out_link.txt). So mu(in0b)=mu(in1b)=mu(in0) by Lemma S + diagram automorphism. Upgrades 'inst 1 dyer2-only' caveat.",
+      "children": []
+     },
+     {
+      "id": "Q68-mu-in0",
+      "role": "premise",
+      "trust": "computed",
+      "file": "proofs/prove283/verify_indep/RESULT_inst0.md",
+      "approach": "mu(x0,z0)=1, x0=[5,4,3,1,9,8,7,2,15,14,11,6,13,10,12,16], z0=[14,8,4,1,15,9,5,2,16,10,6,3,11,7,12,13]; dyer2.c and independent Deodhar parabolic KL agree on full P (deg 9, |[x,z]|=894344). Codes validated only to S_6.",
+      "children": []
+     }
+    ]
    }
   ]
  }
