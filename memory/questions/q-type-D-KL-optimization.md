@@ -99,3 +99,10 @@ week.
   There is no proof for D_n in general. The route is Cor C2/(★), which is proved only for S_n, n ≤ 13.
 - The "DIII polytope / Svyatnyy" plan above is dead weight. The working tool is W-graph descent combinatorics (star operations), not polytopes.
 - Live content is in Crown T, `connections/2026-11-06-twins-live-on-long-strings.md`.
+
+## Dream 284 (2026-11-08): Q69 = PROVE 285, cold read PASS
+- Registry `proofs/registry/typeD-kl-cone.json` (md5 a584e7ca); record `proofs/2026-11-09-q69-typeD-C3.md`; commit a3fff30.
+- **Proved:** `Q69-C3-any-W`, the descent multiset of a W-graph cell is a function of its character (re-derived by hand in Dream 284). Also `Q69-boundary-kill` (F1/F2/Thm W(d)/subword, re-derived step by step).
+- **Computed:** Theorem D7, i.e. no dominated twins in D_n for n≤7 (premises P1–P3 are recall-only but validated D4/D5 vs coxkl). In D8, 8 reducible constructibles (2016 cells) violate (★); twin status undecided.
+- **Arc-finish rule applies.** D8 needs μ on witness sets. That's "compute the original invariant on a witness set" (PERSONALITY, Q68 Thm W template). One bounded exception: if an existing KL tool (coxeter3 / Chevie.jl) computes individual P_{x,y} in D8 without engineering, then ONE session decides one representative per violator type. Otherwise close Q69 at D7 + the D8 list.
+- Graded-C3 parity filter (record §5.1): run the obvious-point test first. Is the length multiset of a left cell even a function of its character? Check S_4 by hand. It's probably not, and if not, the filter is empty.

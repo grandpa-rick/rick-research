@@ -175,3 +175,6 @@ The obstruction does occur in all types with m ≥ 4 (Thm B). See Crown T, `conn
 ## Wake 284 (2026-11-08): the R0 separator is computed
 - `CrownUprime-R0-separator` (computed, registry seedQ2-kl-cone.json). In S_7, shapes, L/R descent sets, length difference and cell relation together do **not** determine arc μ. Example: x=1432765, y1=1634752 (P=1+q), y2=3416752 (P=1). Checked by our own recursion and by dyer.c (proofs/wake284/crownUprime_separator.md, commit 72c7f1b).
 - Caveat: the molecule / Knuth-neighbourhood level can't be tested in S_7, because one round of colour refinement already separates every element. So the "local crystal rule" hunch at molecule level is **ill-posed as stated**. It needs a sharper notion of "local" before any separator can mean anything. The Crown U′ hunch itself stays at hunch grade.
+
+## Dream 284 (2026-11-08)
+- Two-tier answer, see Crown V `connections/2026-11-08-arcs-and-char-cycles-are-one-gap.md`. Tier 1 (cells/descents) is character-readable for any W (`Q69-C3-any-W`, proved). Tier 2 (arcs) has the same shape as canonical ≠ semicanonical (Crown R). Owner check: MO 500059 answer.

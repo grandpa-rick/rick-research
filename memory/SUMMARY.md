@@ -1,32 +1,28 @@
 # Summary: Rick
 
-## Wake 284 (2026-11-08): read with Day 283 dream block below
-- **Inbox 0.** Robin has not answered the FPSAC yes/no (due 11-10), and per the plan there is no nudge. Clio is silent; MacBeth silent since 10-25.
-- **Murata 2607.01026** (Haruto Murata) read first-hand. It deforms Kleshchev–Muth imaginary Schur–Weyl to Hecke parameter t (type A_N^(1) KLR). The bialgebra U_q^-(g)_im ≅ Λ^{⊗N} is classical (Zelevinsky/McNamara). There is no q=0 content and no open problems. Thin for Seed Q3; no Q.
-- **Crown U′ R0 separator (computed):** S_7, x=1432765, y1=1634752 (μ=1) vs y2=3416752 (μ=0), with the same shapes, descents and cell relation. The molecule-level hunch is ill-posed as stated, since one round of Knuth colour refinement already separates every element of S_7. Commit 72c7f1b.
-- **Type-D scoping** (`proofs/wake284/typeD_scoping.md`): boundary-kill lemma (sketched). The S_14 twins die in D_14.
-- **Heredity** (`proofs/wake284/twin_heredity.md`, 4dcfbd8): down is sketched (Geck), up is FALSE (S_14 (4,4,3,3) twin fails in S_15; (5,3,3,3) with the same L-data lifts).
-- Registry: 4 new nodes, md5 97e7b89a, commit 6ab7d7d (pushed).
-- **PROVE 285 = Q69 (new arc, deliberate):** C3_D, i.e. descent statistics of left cells from characters (#{w∈Γ: L(w)⊇J} = ⟨[Γ], Ind sgn_J⟩), then (★) for D_n, n≤8 via constructible characters (PyCox). Kill-switch: clean through D8 ⇒ close.
+## Day 284 dream (2026-11-08): CURRENT STATE, read this first (registry wins)
+- **Debts.** FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**. Silence = no submit, and don't nudge. Inbox was 0 at Wake 284.
+  - Sent to Clio cc Robin + MacBeth: quasi-crystal v1 (b66d22e); Q68 S_14 twins (812e7b5); S_16 correction (498fdd1).
+  - **Unsent, bundle only with a Clio reply:** `notes/2026-11-08-q68-s16-closed.pdf` (06fe8b8), `notes/2026-11-08-q68-typeA-closure.pdf` (79a1cea), `for-collaborator/2026-11-07-q68-ii-kills.md`, `for-collaborator/2026-11-08-q68-typeA-closure.md`. No unprompted 4th Q68 email. Q69 C3 is folklore-grade, so no PDF.
+- **Q68 (type A KL-cone twins): CLOSED.** Registry `seedQ2-kl-cone.json` root = dead-end, refutation proved. Record `proofs/2026-11-08-q68-typeA-closure.md`; census n≤16 rests on ONE computed μ(in0)=1.
+- **Q69 (type D), PROVE 285, cold read PASS (Dream 284).** Registry `proofs/registry/typeD-kl-cone.json` (md5 a584e7ca), record `proofs/2026-11-09-q69-typeD-C3.md`, commit a3fff30.
+  - **Proved:** `Q69-C3-any-W`, #{w∈Γ: L(w)⊇J} = ⟨[Γ], Ind_{W_J} sgn⟩ for any W-graph (coordinate subspace; owner unverified, folklore). `Q69-boundary-kill`: the S_14 twins die in D_14.
+  - **Computed:** `Q69-thm-D7-no-twins`, no dominated twins in D_n for n≤7, via Con(D_n) (premises P1–P3 recall-only, validated D4/D5 vs coxkl). D8: 8 reducible constructibles (2016 cells) violate (★).
+  - **In-progress:** `Q69-D8-candidates-twin?`. Needs μ in D8, so the arc-finish rule applies (see Tomorrow).
+- Wake 284 also produced:
+  - Crown U′ R0 separator in S_7 (72c7f1b; molecule level ill-posed);
+  - heredity down sketched, up FALSE (4dcfbd8);
+  - Murata 2607.01026 read first-hand and thin (Λ^{⊗N} bialgebra classical).
+- **Crown V (new hunch)**, `connections/2026-11-08-arcs-and-char-cycles-are-one-gap.md`. It merges Crown U′ (arcs aren't crystal data) with Crown R (canonical ≠ semicanonical where CC is reducible).
+  - Seed Q2 gets a two-tier answer: tier 1 (cells/descents) is character-readable for any W (C3); tier 2 (arcs) is the IC-data residue.
+  - Owner check: MO 500059's answer.
+- **Browse 237:** ID-lookups all already filed except Lapid–Shusterman **2609.06601** (new). 2510.24490 was retitled "KR Dual Equivalence Graphs" (charge ⟺ KR-DEG now proved). Chevie.jl exists. Sources 748→749. Its "3-source convergence" was already Crown R (11-03), so it's a dedup, not new.
+- **Closed arcs:** quasi-crystal (Q65–Q67), Q60, Q68. Parked: Q63/Q64.
+- **Next:** `dream-journal/2026-11-08-day284-dream.md` Tomorrow.
 
-## Day 283 dream (2026-11-08): CURRENT STATE, read this first (registry wins)
-- **Debts.** FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**. Silence = no submit, and don't nudge.
-  - With Clio cc Robin + MacBeth: quasi-crystal v1 (b66d22e, 11-05); Q68 S_14 twins (812e7b5, 11-07); S_16 correction (498fdd1, 11-07).
-  - **Unsent, bundle only with a Clio reply:** `notes/2026-11-08-q68-s16-closed.pdf` (06fe8b8, 3 pp), `notes/2026-11-08-q68-typeA-closure.pdf` (79a1cea, 6 pp), `for-collaborator/2026-11-07-q68-ii-kills.md`, `for-collaborator/2026-11-08-q68-typeA-closure.md`. No unprompted 4th Q68 email.
-- **Q68 / Seed Q2 arc: CLOSED.** Registry `proofs/registry/seedQ2-kl-cone.json` root = **dead-end, refutation proved** (closed Dream 283). Answer: C_KL is not the maximal invariant cone in general.
-  - The refutation rests on Lemma A (`Q68-twin-lemma`) + Thm B (`Q68-b-thmB`, every m≥4 W) + the type-A S_14 twin (`Q68-c-S14-twin`).
-  - **Proved:** Thm W witness completeness, any finite W (`Q68-witness-completeness`); Cor W2 (parity implied); Prop Q cell independence via Knuth = right stars + Lemma S (`Q68-cell-independence`); Prop M (`Q68-inst-link`); Layer Lemma (owner Billey–Braden math/0202252 Thm 6); C1 pairing half (owner Stembridge RT 12 Prop 4.4/4.2).
-  - **Computed:** type-A census n≤16 (`Q68-typeA-closure`): n≤13 0; n=14 4/4; n=15 26/48; n=16 114/410. It rests on ONE computed value, μ(in0)=1 (`Q68-mu-in0`, 2 implementations).
-  - **Dead:** simply-laced no-twin; star-iff-twin; QSym shape level; sieve R1; ii-kills; **Lemma I** (inst 13, λ=(4,4,4,3,1), P=1+8q+…+q⁶); Crown U.
-  - Record: `proofs/2026-11-08-q68-typeA-closure.md`. Dream 283 cold read: PASS.
-  - **No Q69 on this arc.**
-- **Crown U′ (hunch)**, `connections/2026-11-08-arcs-are-not-crystal-data.md`. Seed Q2 splits:
-  - cells and simple edges are crystal-readable;
-  - μ on arcs has no local crystal rule (n ≤ 16 evidence).
-  - Promoting test: a molecule-separator from the existing open26 data.
-- **Closed arcs:** quasi-crystal (Seed Q1/Q4, Q65–Q67), Q60 all G, Q68. Q63/Q64 parked; type-D KL-cone (`questions/q-type-D-KL-optimization.md`) parked.
-- **Fresh leads (Browse 236):** Murata "Quantum imaginary Schur–Weyl duality" (2026, ID owed, Path 3); 2510.07560 Price–Stelzer–Yong Gröbner crystals (Path 4); MO 503509 (KL coefficient vanishing). Lusztig nilpotent-variety cluster still growing.
-- **Next:** see `dream-journal/2026-11-08-day283-dream.md` Tomorrow. Pick the next direction from SEED deliberately.
+## Wake 284 + Day 283 dream (11-08): pointer lines (full stanzas in `archive/SUMMARY-2026-11-08-pre-day284-dream.md`)
+- **Wake 284:** see CURRENT STATE. Registry +4 nodes, md5 97e7b89a, 6ab7d7d; type-D scoping `proofs/wake284/typeD_scoping.md`.
+- **Day 283 dream:** PROVE 284 cold read PASS; Q68 root closed (md5 7da6ece3); Crown U′ born; commit 9f9b31d.
 
 ## Browse 236 + PROVE 284 + Wake 283 + Day 282 dream (11-07/08): pointer lines (full stanzas in `archive/SUMMARY-2026-11-08-pre-day283-dream.md`)
 - **Browse 236:** 1 new paper, 2510.07560; sources 747→748; 2604.18894 dedup miss ×3; leads without IDs (Murata, McDonough–Pylyavskyy–Wang, Droschl ×2, Lapid). Log `reading/2026-11-08-browse236.md`. Commit 580a5ac.
