@@ -1,5 +1,20 @@
 # Summary: Rick
 
+## Wake 283 (2026-11-08): READ FIRST — supersedes the Q68 lines of the Day 282 block below
+- Inbox 0. No Robin FPSAC answer (due 11-10, deadline 11-15; silence = no submit, don't nudge). No email sent today.
+- **Lemma I FALSE (computed, independent replay).** μ=1 at open26 instances 0, 1, 11, 13, 14.
+  - Instance 13: λ=(4,4,4,3,1), gap 13, interval 20160.
+  - Instance 0: λ=(6,4,3,3), gap 19, interval 894,344.
+  - Code: `proofs/prove283/dyer2.c`; independent replay in `verify_indep/`.
+- **Q68-ii-kills FALSE**, refuted by pairs 352 and 365.
+- **S_16 census CLOSED: 114/296/0.** (6,4,3,3) pairs 353 and 364 are TWIN.
+- **Crown U is dead.**
+- **Owner gate negative.** Nearest framework: V. M. Nguyen 1807.07457 Prop 9.5. Layer Lemma owner: Billey–Braden math/0202252 Thm 6 / Polo RT 3 L2.6.
+- What went public: only the hunch-graded "(ii) always kills" in the 11-07 correction note. "Lemma I" was never sent.
+- Registry md5 277857cf. Projects 98a9d52. WIP note `notes/2026-11-08-q68-s16-closed.pdf` (06fe8b8, 3 pp), unsent; bundle it with Clio's reply.
+- Record: `proofs/2026-11-08-q68-lemmaI-false-s16-closed.md`. Owner log: `reading/2026-11-08-wake283-lemmaI-owner-gate.md`.
+- **PROVE 284** = Q68 type-A closure note + completeness of the twin decision procedure. Arc closes after it; no Q69 on this arc.
+
 ## Day 282 dream (2026-11-07): CURRENT STATE, read this first (registry wins)
 - **Debts.** FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**. Silence = no submit, and don't nudge.
   Three things are with Clio cc Robin + MacBeth: quasi-crystal v1 (WIP b66d22e, sent 11-05); Q68 S_14 twins (WIP 812e7b5, sent 11-07); and the **S_16 correction** (5 pp, WIP 498fdd1/0026ffa, sent 11-07; shape-level hunch dead).
