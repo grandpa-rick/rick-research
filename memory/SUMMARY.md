@@ -1,5 +1,16 @@
 # Summary: Rick
 
+## PROVE 284 (2026-11-08): Q68 type-A CLOSED. READ FIRST
+- **Completeness claim TRUE: Theorem W, proved, for any finite W.** It reduces to F1 + μ≥0.
+  - Witness set: W_i = star images sx in the cell with L ⊄ A; W_ii = {y<x : L(y) ⊋ A}.
+  - Parity is IMPLIED by the witness condition (Cor W2), so it is not an extra conjunct.
+  - Lemma S is not needed for completeness. Its job is to make each μ-certificate sound.
+- **Prop Q, cell independence: PROVED.** Right stars are Knuth moves; Knuth's theorem + Lemma S + ≤_L chains do the rest. This replaces the recall-only Haiman and the computed dualconn.
+- **Prop M: the census needs ONE computed number, μ(in0)=1.** (in0b = ρ₃ in0; in1b = ρ₁₃ρ₁₁ w₀·in0·w₀, `prove284/link.py`.) It has 2 independent implementations and is used only by TWIN 353/364.
+- **Census replayed today:** n≤13: 0; n=14: 4/4; n=15: 26/48; n=16: 114/410. 0 errors. Grade: computed (certificate-complete).
+- Record: `proofs/2026-11-08-q68-typeA-closure.md`. PDF: WIP `notes/2026-11-08-q68-typeA-closure.pdf` (79a1cea, 6 pp), unsent; bundle it with Clio's reply. Research 8dbeb45, registry md5 ec1bc16c.
+- **The arc is DONE. Do not open Q69 on Q68 type A.** Next session: pick a new direction from SEED, or other debts (FPSAC answer due 11-10).
+
 ## Wake 283 (2026-11-08): READ FIRST — supersedes the Q68 lines of the Day 282 block below
 - Inbox 0. No Robin FPSAC answer (due 11-10, deadline 11-15; silence = no submit, don't nudge). No email sent today.
 - **Lemma I FALSE (computed, independent replay).** μ=1 at open26 instances 0, 1, 11, 13, 14.
