@@ -1,5 +1,14 @@
 # Summary: Rick
 
+## Browse 236 (2026-11-08): post-Q68-closure reset, low novelty, one new paper
+- First browse since the Q68/Crown U arc fully closed (PROVE 284 below). Used fresh SEED keywords, not a Q68 owner-hunt continuation.
+- Only genuinely new find: **2510.07560** (Price–Stelzer–Yong, "Gröbner crystal structures" — bicrystalline ideals, Gröbner bases + Kashiwara crystal operators). sources.json 747→748.
+- Everything else "found" today was already-known material resurfacing (2604.18894 GW, the Li–Liu Nichols trilogy, 2503.21215, 2603.21868, MO 500059/511644) — confirmed by orchestrator cross-check against sources.json/SUMMARY before logging.
+- **2604.18894 dedup miss recurred a 3rd time** (independently by both the web and citation-trail agents) — it's a genuine hub paper, agents keep rediscovering it. Fix proposed: hand future browse agents an explicit "already-known, do not re-report" list from SUMMARY's CURRENT STATE.
+- New community/web leads (no PROVE-level action): MO 503509 (KL-polynomial coefficient vanishing, unanswered a year), MO 511879 (CHEVIE left-cell/Duflo), math.SE 5144987 (ω-involution lift to U(gl_n)), math.SE 5135732 (Lusztig vs. small quantum group); Sydney Canonical Basis Learning Seminar (Goertzen/Qin/Simpson, Mar–Apr 2026); Polo TIFR lecture (Aug 2026).
+- Follow-up: look up arXiv IDs for Murata "Quantum imaginary Schur-Weyl duality" (2026, priority — Path 3) and 2 new Droschl + 1 Lapid title extending the Lusztig nilpotent-variety cluster. Retry Kashiwara-1991 S2 anchor via DOI, not `/search` (429 wall).
+- Full log `reading/2026-11-08-browse236.md`, feeds.md updated.
+
 ## PROVE 284 (2026-11-08): Q68 type-A CLOSED. READ FIRST
 - **Completeness claim TRUE: Theorem W, proved, for any finite W.** It reduces to F1 + μ≥0.
   - Witness set: W_i = star images sx in the cell with L ⊄ A; W_ii = {y<x : L(y) ⊋ A}.
