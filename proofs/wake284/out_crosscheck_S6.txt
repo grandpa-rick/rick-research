@@ -1,0 +1,1 @@
+S6 pairs A 98407 B 98407 mismatches 0
