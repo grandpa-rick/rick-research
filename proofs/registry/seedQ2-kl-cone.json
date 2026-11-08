@@ -1,17 +1,17 @@
 {
  "conjecture": "Q68 (Seed Q2: read KL from W-action + positivity, no Hecke algebra): Is the Kazhdan-Lusztig cell basis (v=1) the maximal {1+s}-invariant cone in left-cell modules of finite Coxeter groups beyond type A?",
- "status": "in-progress",
+ "status": "dead-end",
  "date_opened": "2026-11-06",
- "date_closed": null,
+ "date_closed": "2026-11-08",
  "tree": {
   "id": "Q68",
   "approach": "Wake 279. Context: Goertzen-Williamson 2604.18894 (verified first-hand Wake 279; papers/GoertzenWilliamson_2604.18894.*) prove C_KL is the maximal invariant cone for S_n Specht modules: hooks (Thm 4.11), two-column (Thm 4.14), (n-2,2) (Thm 4.17); computed n<=8; fails non-simplicial at (4,4,1) (Ex 4.21). W-graph convention C (their Ex 4.7): (1+s)e_x = 0 if s in D(x), else 2e_x + sum_{y: s in D(y)} mu(x,y) e_y. Other types not mentioned (only the group-ring Problem 3.1 / Rem 3.3, a different question). Wake 279 evidence: the answer is NO beyond simply-laced (B3 irreducible 3-dim cell, see Q68-B3-witness); simply-laced case open.",
-  "trust": "in-progress",
+  "trust": "dead-end",
   "file": null,
   "sources": [
    "2604.18894"
   ],
-  "notes": "Mejstrik-Protasov 2505.01229: OWNER check closed NEGATIVE (Browse 232; numerical common-invariant-cone paper, not rep theory) -- but it is NOT a coincidental collision: it is the source GW Thm 4.5 cites for uniqueness of the maximal cone in irreducible modules, so the Q68-B3-witness uniqueness premise still rests on it via GW (first-hand locator owed). Semantic Scholar lists no citers of 2604.18894 (Wake 279). PROVE 279: (a) proved; (b) twins in every m>=4 Coxeter group proved (Thm B), irreducible-cell part computed n<=5 only; (c) proved S_n n<=13, star-kill route dies at S_14, open in general. Dream 279 cold read PASS of Lemma A, Thm B, C1, C2, C3 (incl. hand check Des P / int Des P = {3,7,11} at S_14); no grade change. Dream 279 owner-risk flag (recall-only): C1 may follow from Stembridge 'Admissible W-graphs' (Represent. Theory 12, 2008) simplicity/bonding rules; read first-hand before any write-up. Dream 279: GW Ex 4.21 (4,4,1) is S_9 (Browse 232 said n=8, wrong); C3 => no twins in S_9, so Ex 4.21 is a NON-twin mechanism, cf Q68-H3-5_2-nontwin. Crown T: connections/2026-11-06-twins-live-on-long-strings.md. Wake 280: Stembridge gate CLOSED (first-hand read, Represent. Theory 12 (2008) 346-368). Verdict: PARTIALLY OWNED -- C1 pairing half = Stembridge Prop 4.4 (Bonding Rule, p=3) + Prop 4.2 (Simplicity Rule), Rem 4.3; other C1 half classical KL79 sec.4 (recall-only). Stembridge has NO twin/dominated-pair/cone result (grep 'twin','domina' negative). p.365 exhibits the B3 cell {1}--{2}--{1,3} on the m=4 bond with '{1} subset {1,3}', used only for a Polygon Rule argument -- same configuration as Q68-B3-witness dominated twin; cite as context. Thm B, C2, C3, Lemma A remain ours; Q68 core not owned. Next: PROVE 280 = S_14 (4,4,3,3) decision. PROVE 280: Q68(c) at S_14 DECIDED YES: dominated twins exist in type A, first at n=14 (4 shapes); simply-laced hunch refuted; Lemma S (KL79 Thm 4.2, m=3) proved in-file.",
+  "notes": "Mejstrik-Protasov 2505.01229: OWNER check closed NEGATIVE (Browse 232; numerical common-invariant-cone paper, not rep theory) -- but it is NOT a coincidental collision: it is the source GW Thm 4.5 cites for uniqueness of the maximal cone in irreducible modules, so the Q68-B3-witness uniqueness premise still rests on it via GW (first-hand locator owed). Semantic Scholar lists no citers of 2604.18894 (Wake 279). PROVE 279: (a) proved; (b) twins in every m>=4 Coxeter group proved (Thm B), irreducible-cell part computed n<=5 only; (c) proved S_n n<=13, star-kill route dies at S_14, open in general. Dream 279 cold read PASS of Lemma A, Thm B, C1, C2, C3 (incl. hand check Des P / int Des P = {3,7,11} at S_14); no grade change. Dream 279 owner-risk flag (recall-only): C1 may follow from Stembridge 'Admissible W-graphs' (Represent. Theory 12, 2008) simplicity/bonding rules; read first-hand before any write-up. Dream 279: GW Ex 4.21 (4,4,1) is S_9 (Browse 232 said n=8, wrong); C3 => no twins in S_9, so Ex 4.21 is a NON-twin mechanism, cf Q68-H3-5_2-nontwin. Crown T: connections/2026-11-06-twins-live-on-long-strings.md. Wake 280: Stembridge gate CLOSED (first-hand read, Represent. Theory 12 (2008) 346-368). Verdict: PARTIALLY OWNED -- C1 pairing half = Stembridge Prop 4.4 (Bonding Rule, p=3) + Prop 4.2 (Simplicity Rule), Rem 4.3; other C1 half classical KL79 sec.4 (recall-only). Stembridge has NO twin/dominated-pair/cone result (grep 'twin','domina' negative). p.365 exhibits the B3 cell {1}--{2}--{1,3} on the m=4 bond with '{1} subset {1,3}', used only for a Polygon Rule argument -- same configuration as Q68-B3-witness dominated twin; cite as context. Thm B, C2, C3, Lemma A remain ours; Q68 core not owned. Next: PROVE 280 = S_14 (4,4,3,3) decision. PROVE 280: Q68(c) at S_14 DECIDED YES: dominated twins exist in type A, first at n=14 (4 shapes); simply-laced hunch refuted; Lemma S (KL79 Thm 4.2, m=3) proved in-file. Dream 283: PROVE 284 cold read PASS (Thm W, Cor W2, Lemma K, Prop Q steps 1-6, Prop M statement); root closed dead-end/refutation proved; no other grade change.",
   "children": [
    {
     "id": "Q68-convention",
@@ -428,6 +428,8 @@
      }
     ]
    }
-  ]
+  ],
+  "refutation": "proved",
+  "reason": "Answer NO (Dream 283 close-out). Lemma A (Q68-twin-lemma, proved): a dominated twin makes C_KL non-maximal. Thm B (Q68-b-thmB, proved): every finite W with some m(s,t)>=4 has a twin (w_J, st w_J). Simply-laced is no refuge: type A has twins from S_14 (Q68-c-S14-twin, proved). Type-A census n<=16 closed (Q68-typeA-closure, computed: one computed mu, Q68-mu-in0). Not addressed: types D/E, n>=17."
  }
 }

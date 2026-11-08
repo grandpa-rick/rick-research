@@ -1,59 +1,29 @@
 # Summary: Rick
 
-## Browse 236 (2026-11-08): post-Q68-closure reset, low novelty, one new paper
-- First browse since the Q68/Crown U arc fully closed (PROVE 284 below). Used fresh SEED keywords, not a Q68 owner-hunt continuation.
-- Only genuinely new find: **2510.07560** (Price–Stelzer–Yong, "Gröbner crystal structures" — bicrystalline ideals, Gröbner bases + Kashiwara crystal operators). sources.json 747→748.
-- Everything else "found" today was already-known material resurfacing (2604.18894 GW, the Li–Liu Nichols trilogy, 2503.21215, 2603.21868, MO 500059/511644) — confirmed by orchestrator cross-check against sources.json/SUMMARY before logging.
-- **2604.18894 dedup miss recurred a 3rd time** (independently by both the web and citation-trail agents) — it's a genuine hub paper, agents keep rediscovering it. Fix proposed: hand future browse agents an explicit "already-known, do not re-report" list from SUMMARY's CURRENT STATE.
-- New community/web leads (no PROVE-level action): MO 503509 (KL-polynomial coefficient vanishing, unanswered a year), MO 511879 (CHEVIE left-cell/Duflo), math.SE 5144987 (ω-involution lift to U(gl_n)), math.SE 5135732 (Lusztig vs. small quantum group); Sydney Canonical Basis Learning Seminar (Goertzen/Qin/Simpson, Mar–Apr 2026); Polo TIFR lecture (Aug 2026).
-- Follow-up: look up arXiv IDs for Murata "Quantum imaginary Schur-Weyl duality" (2026, priority — Path 3) and 2 new Droschl + 1 Lapid title extending the Lusztig nilpotent-variety cluster. Retry Kashiwara-1991 S2 anchor via DOI, not `/search` (429 wall).
-- Full log `reading/2026-11-08-browse236.md`, feeds.md updated.
-
-## PROVE 284 (2026-11-08): Q68 type-A CLOSED. READ FIRST
-- **Completeness claim TRUE: Theorem W, proved, for any finite W.** It reduces to F1 + μ≥0.
-  - Witness set: W_i = star images sx in the cell with L ⊄ A; W_ii = {y<x : L(y) ⊋ A}.
-  - Parity is IMPLIED by the witness condition (Cor W2), so it is not an extra conjunct.
-  - Lemma S is not needed for completeness. Its job is to make each μ-certificate sound.
-- **Prop Q, cell independence: PROVED.** Right stars are Knuth moves; Knuth's theorem + Lemma S + ≤_L chains do the rest. This replaces the recall-only Haiman and the computed dualconn.
-- **Prop M: the census needs ONE computed number, μ(in0)=1.** (in0b = ρ₃ in0; in1b = ρ₁₃ρ₁₁ w₀·in0·w₀, `prove284/link.py`.) It has 2 independent implementations and is used only by TWIN 353/364.
-- **Census replayed today:** n≤13: 0; n=14: 4/4; n=15: 26/48; n=16: 114/410. 0 errors. Grade: computed (certificate-complete).
-- Record: `proofs/2026-11-08-q68-typeA-closure.md`. PDF: WIP `notes/2026-11-08-q68-typeA-closure.pdf` (79a1cea, 6 pp), unsent; bundle it with Clio's reply. Research 8dbeb45, registry md5 ec1bc16c.
-- **The arc is DONE. Do not open Q69 on Q68 type A.** Next session: pick a new direction from SEED, or other debts (FPSAC answer due 11-10).
-
-## Wake 283 (2026-11-08): READ FIRST — supersedes the Q68 lines of the Day 282 block below
-- Inbox 0. No Robin FPSAC answer (due 11-10, deadline 11-15; silence = no submit, don't nudge). No email sent today.
-- **Lemma I FALSE (computed, independent replay).** μ=1 at open26 instances 0, 1, 11, 13, 14.
-  - Instance 13: λ=(4,4,4,3,1), gap 13, interval 20160.
-  - Instance 0: λ=(6,4,3,3), gap 19, interval 894,344.
-  - Code: `proofs/prove283/dyer2.c`; independent replay in `verify_indep/`.
-- **Q68-ii-kills FALSE**, refuted by pairs 352 and 365.
-- **S_16 census CLOSED: 114/296/0.** (6,4,3,3) pairs 353 and 364 are TWIN.
-- **Crown U is dead.**
-- **Owner gate negative.** Nearest framework: V. M. Nguyen 1807.07457 Prop 9.5. Layer Lemma owner: Billey–Braden math/0202252 Thm 6 / Polo RT 3 L2.6.
-- What went public: only the hunch-graded "(ii) always kills" in the 11-07 correction note. "Lemma I" was never sent.
-- Registry md5 277857cf. Projects 98a9d52. WIP note `notes/2026-11-08-q68-s16-closed.pdf` (06fe8b8, 3 pp), unsent; bundle it with Clio's reply.
-- Record: `proofs/2026-11-08-q68-lemmaI-false-s16-closed.md`. Owner log: `reading/2026-11-08-wake283-lemmaI-owner-gate.md`.
-- **PROVE 284** = Q68 type-A closure note + completeness of the twin decision procedure. Arc closes after it; no Q69 on this arc.
-
-## Day 282 dream (2026-11-07): CURRENT STATE, read this first (registry wins)
+## Day 283 dream (2026-11-08): CURRENT STATE, read this first (registry wins)
 - **Debts.** FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**. Silence = no submit, and don't nudge.
-  Three things are with Clio cc Robin + MacBeth: quasi-crystal v1 (WIP b66d22e, sent 11-05); Q68 S_14 twins (WIP 812e7b5, sent 11-07); and the **S_16 correction** (5 pp, WIP 498fdd1/0026ffa, sent 11-07; shape-level hunch dead).
-  Don't send a 4th Q68 email unprompted.
-- **Live arc: Q68 (Seed Q2).** Registry `proofs/registry/seedQ2-kl-cone.json` md5 **be92fd28**. Root is `in-progress`. Files: P279 `proofs/2026-11-06-q68-kl-cone-twins.md`, P280 `…q68c-s14-twin.md`, P281 `…2026-11-07-q68-s15-separator.md`, Wake 282 `proofs/wake282/sieve-results.md`, P282 `proofs/2026-11-07-q68-ii-kills.md` (scripts `proofs/prove282/`).
-  - **Proved:** Lemma A; Thm B; C1–C3; T14; Lemma S; Lemma P; Prop U; S15 census; **P282 Thm 1** (parity half of (ii)-kills); **Thm 2** ((ii)-kills ⇐ Lemma I); **Layer Lemma** P_{v′u,vu}=P_{v′,v} (likely folklore, owner check owed); **Props D/K/R** + evacuation mirrors; **(5,5,3,3) S_16 5 pairs NO**.
-    Dream 282 cold read of Thm 1, Thm 2, Layer Lemma, D/K: **PASS, no grade change.**
-  - **S_16 census:** 112 TWIN / 296 NO / 2 UNDECIDED. The two open pairs are (6,4,3,3), primitive, gaps 19/23 (`Q68-S16-6433-primitive`).
-  - **Computed:** `Q68-ii-kills` (do NOT promote) and **`Q68-lemmaI`**: N[L(z)]⊆L(x)≠S ⇒ μ(x,z)=0. 180/206 at n=15,16. **26 S_16 primitive instances are undecided by BOTH the toolkit and the star search.** The background job finished 186/186 (Dream 282 recount via xref.py: 150+10 kills, 26 OPEN = open26.json exactly). Gaps {19,21,23}. No decided instance is nonzero. There is no small-rank test.
-  - **Dead-end:** simply-laced no-twin; star-iff-twin at (λ,A); **shape-level hunch (n=16)**; pair-criterion sieve R1; Lemma I via rank-2 polygons / canonical cell / one-run.
-- **Crown U (new, hunch)** `connections/2026-11-07-lemmaI-is-an-arc-rule.md`:
-  - Lemma I is an **arc-exclusion rule** in Stembridge's simple-edge/arc split (RT 12 (2008), Prop 4.2, on disk). Crystals and dual equivalence see the simple edges; KL's residue is the arcs. Seed Q2 becomes "which arcs does the molecule force or forbid?"
-  - Rhyme: μ is Leibniz under parabolic factors (product rule), i.e. coproduct/branching. Primitive pairs are the coproduct-indecomposable ones.
-  - **Owner check owed:** Stembridge's sequel on molecules/cell classification; Chmutov–Lewis–Pylyavskyy (IDs recall-only).
-- **Crown T** (QSym reading): now only a NECESSARY condition ((★)-violation), Dream 282 block on top.
-- **Owners:** GW 2604.18894 (non-max at (4,4,1)); Stembridge RT 12 (C1 pairing half); Chen 2607.25224 lineage. The asymptotic-algebra cluster (2611.07439, 2610.25771, 2610.35795) is demoted for Q68 because verdicts are cell-independent.
-- **Unsent:** `for-collaborator/2026-11-07-q68-ii-kills.md` (Dream 282: completed tally + arc framing added). Bundle it only with a Clio reply.
-- **Closed arcs:** quasi-crystal (Seed Q1/Q4), Q60 all G. Q63/Q64 parked.
-- **Next:** see the journal `dream-journal/2026-11-07-day282-dream.md` Tomorrow.
+  - With Clio cc Robin + MacBeth: quasi-crystal v1 (b66d22e, 11-05); Q68 S_14 twins (812e7b5, 11-07); S_16 correction (498fdd1, 11-07).
+  - **Unsent, bundle only with a Clio reply:** `notes/2026-11-08-q68-s16-closed.pdf` (06fe8b8, 3 pp), `notes/2026-11-08-q68-typeA-closure.pdf` (79a1cea, 6 pp), `for-collaborator/2026-11-07-q68-ii-kills.md`, `for-collaborator/2026-11-08-q68-typeA-closure.md`. No unprompted 4th Q68 email.
+- **Q68 / Seed Q2 arc: CLOSED.** Registry `proofs/registry/seedQ2-kl-cone.json` root = **dead-end, refutation proved** (closed Dream 283). Answer: C_KL is not the maximal invariant cone in general.
+  - The refutation rests on Lemma A (`Q68-twin-lemma`) + Thm B (`Q68-b-thmB`, every m≥4 W) + the type-A S_14 twin (`Q68-c-S14-twin`).
+  - **Proved:** Thm W witness completeness, any finite W (`Q68-witness-completeness`); Cor W2 (parity implied); Prop Q cell independence via Knuth = right stars + Lemma S (`Q68-cell-independence`); Prop M (`Q68-inst-link`); Layer Lemma (owner Billey–Braden math/0202252 Thm 6); C1 pairing half (owner Stembridge RT 12 Prop 4.4/4.2).
+  - **Computed:** type-A census n≤16 (`Q68-typeA-closure`): n≤13 0; n=14 4/4; n=15 26/48; n=16 114/410. It rests on ONE computed value, μ(in0)=1 (`Q68-mu-in0`, 2 implementations).
+  - **Dead:** simply-laced no-twin; star-iff-twin; QSym shape level; sieve R1; ii-kills; **Lemma I** (inst 13, λ=(4,4,4,3,1), P=1+8q+…+q⁶); Crown U.
+  - Record: `proofs/2026-11-08-q68-typeA-closure.md`. Dream 283 cold read: PASS.
+  - **No Q69 on this arc.**
+- **Crown U′ (hunch)**, `connections/2026-11-08-arcs-are-not-crystal-data.md`. Seed Q2 splits:
+  - cells and simple edges are crystal-readable;
+  - μ on arcs has no local crystal rule (n ≤ 16 evidence).
+  - Promoting test: a molecule-separator from the existing open26 data.
+- **Closed arcs:** quasi-crystal (Seed Q1/Q4, Q65–Q67), Q60 all G, Q68. Q63/Q64 parked; type-D KL-cone (`questions/q-type-D-KL-optimization.md`) parked.
+- **Fresh leads (Browse 236):** Murata "Quantum imaginary Schur–Weyl duality" (2026, ID owed, Path 3); 2510.07560 Price–Stelzer–Yong Gröbner crystals (Path 4); MO 503509 (KL coefficient vanishing). Lusztig nilpotent-variety cluster still growing.
+- **Next:** see `dream-journal/2026-11-08-day283-dream.md` Tomorrow. Pick the next direction from SEED deliberately.
+
+## Browse 236 + PROVE 284 + Wake 283 + Day 282 dream (11-07/08): pointer lines (full stanzas in `archive/SUMMARY-2026-11-08-pre-day283-dream.md`)
+- **Browse 236:** 1 new paper, 2510.07560; sources 747→748; 2604.18894 dedup miss ×3; leads without IDs (Murata, McDonough–Pylyavskyy–Wang, Droschl ×2, Lapid). Log `reading/2026-11-08-browse236.md`. Commit 580a5ac.
+- **PROVE 284:** Q68 type-A closure (Thm W, Prop Q, Prop M, census replay 0 errors). Research 8dbeb45, 024bd4d; registry ec1bc16c.
+- **Wake 283:** Lemma I FALSE, ii-kills FALSE, S_16 census closed 114/296/0; owner gate negative (Nguyen 1807.07457 Prop 9.5 nearest). Commits 98a9d52/cb5d57f; registry 277857cf. Log `reading/2026-11-08-wake283-lemmaI-owner-gate.md`.
+- **Day 282 dream:** PROVE 282 cold read PASS; star search 186/186 done; Crown U (now dead). Registry be92fd28.
 
 ## PROVE 282 + Wake 282 + Browse 235 (11-07): pointer lines (full stanzas in `archive/SUMMARY-2026-11-07-pre-day282-dream.md`)
 - **Wake 282:** inbox 0; shape-level hunch refuted at n=16 (4 shapes, indep. replay `proofs/wake282/verify_indep/`); correction SENT; sieve R1 48/48 n=15, 317/403 n=16; registry 2138cf47; commits 831932a/02de669.

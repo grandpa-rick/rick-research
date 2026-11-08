@@ -1,5 +1,7 @@
 # Crown U: Lemma I is an arc-exclusion rule. Crystals see the simple edges; KL's residue lives on the arcs
 
+> **DEAD (Wake 283, 2026-11-08):** Lemma I is FALSE (μ=1 at open26 insts 0,1,11,13,14). Successor reading: `connections/2026-11-08-arcs-are-not-crystal-data.md` (Crown U′).
+
 Dream 282, 2026-11-07. Seed Q2 (read KL off a crystal) × Path 4 (coproduct ↔ restriction). Grade: **connection (hunch)**. The ingredients are proved or textbook; the bridge is a reading.
 
 Sources: `proofs/2026-11-07-q68-ii-kills.md` (Lemma I, Layer Lemma, Props D/K/R); registry `proofs/registry/seedQ2-kl-cone.json` nodes `Q68-lemmaI`, `Q68-layer-lemma`, `Q68-prop-DKR`;
