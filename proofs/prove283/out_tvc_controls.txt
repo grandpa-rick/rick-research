@@ -1,0 +1,12 @@
+inst0 P(xd)==open26 Px True P(zd)==open26 Pz True Q equal True lengths 34 53 rpath len 54
+inst1 P(xd)==open26 Px True P(zd)==open26 Pz True Q equal True lengths 35 54 rpath len 19
+352 Lz [3, 7, 13] Lz<=intA True DesPy\A [10] DesPy>A True P_y==inst [True, False] P_z==inst [True, False] l(x),l(z),l(y) 57 81 58
+353 Lz [3, 7, 13] Lz<=intA True DesPy\A [10] DesPy>A True P_y==inst [True, False] P_z==inst [True, False] l(x),l(z),l(y) 63 81 58
+364 Lz [3, 9, 13] Lz<=intA True DesPy\A [6] DesPy>A True P_y==inst [False, True] P_z==inst [False, True] l(x),l(z),l(y) 53 73 54
+365 Lz [3, 9, 13] Lz<=intA True DesPy\A [6] DesPy>A True P_y==inst [False, True] P_z==inst [False, True] l(x),l(z),l(y) 57 73 54
+CONTROL 353 verdict flipped to NO -> REJECTED: AssertionError: ('TWIN', 'NO')
+CONTROL 364 verdict flipped to UNDECIDED -> REJECTED: AssertionError: ('TWIN', 'UNDECIDED')
+CONTROL 353 ext rpath truncated -> REJECTED: AssertionError: star endpoint != ext pair
+CONTROL 353 ext pointed at inst1 data -> REJECTED: AssertionError: star endpoint != ext pair
+CONTROL 353 ext y dropped -> REJECTED: AssertionError: y-set mismatch
+CONTROL 353 source mu edited to 0 -> REJECTED: AssertionError
