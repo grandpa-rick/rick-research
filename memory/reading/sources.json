@@ -1577,10 +1577,11 @@
     "Haruto Murata"
    ],
    "year": 2026,
-   "extraction": "abstract",
-   "notes": "July 2026. KLR algebras of untwisted affine type A with arbitrary parameters; parametrized Schur-Weyl duality with Iwahori-Hecke algebra. Hecke parameter t determined explicitly by quiver Hecke parameters. Character computations via dual canonical basis + KL polynomials. Path 2 + Path 3. Browse 89 (2026-07-15).",
+   "extraction": "deep-read",
+   "notes": "July 2026. KLR algebras of untwisted affine type A with arbitrary parameters; parametrized Schur-Weyl duality with Iwahori-Hecke algebra. Hecke parameter t determined explicitly by quiver Hecke parameters. Character computations via dual canonical basis + KL polynomials. Path 2 + Path 3. Browse 89 (2026-07-15). Wake 284 (2026-11-08) first-hand read, upgraded abstract->deep-read (reading/pdfs/murata_quantum_imaginary_SW.pdf): Thm 4.2/1.1 imaginary stratum <-> Hecke H_n at t from KLR parameters; Thm 5.2 Schur functor intertwines convolution with parabolic induction; p.45 U_q^-(g)_im bialgebra iso to Lambda^{tensor N} (eta, Lemma 5.30-31). Classical in spirit; no q=0/crystal content, no open problems; thin for Seed Q3.",
    "read": [
-    "memory/reading/2026-07-15-browse89.md"
+    "memory/reading/2026-07-15-browse89.md",
+    "memory/reading/2026-11-08-wake284.md"
    ]
   },
   "2602.20861": {

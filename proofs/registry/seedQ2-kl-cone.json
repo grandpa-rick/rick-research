@@ -427,6 +427,52 @@
       "children": []
      }
     ]
+   },
+   {
+    "id": "Q68-boundary-kill",
+    "role": "attempt",
+    "date": "2026-11-08",
+    "approach": "Post-closure (Wake 284). Boundary-kill lemma: J proper subset of S, x,z in W_J, some s in L(x) adjacent (m=3) to t not in J => (x,z) is not a dominated twin in W. Proof via F1, F2, Thm W (Q68-witness-completeness), subword property.",
+    "trust": "sketched",
+    "file": "proofs/wake284/typeD_scoping.md",
+    "notes": "Proof in typeD_scoping.md sec.3 is a sub-agent proof, read once by Rick; awaiting in-file proof / cold read. Evidence: 36/60 census embeddings killed, 0 violations (proofs/wake284/twin_heredity.md, out_twin_heredity.txt, commit 4dcfbd8).",
+    "sources": [],
+    "children": []
+   },
+   {
+    "id": "Q68-heredity-down",
+    "role": "attempt",
+    "date": "2026-11-08",
+    "approach": "Post-closure (Wake 284). Downward heredity: if (x,z) is a twin in W with x,z in W_J, then it is a twin in W_J. Sketch: Geck 2003 induction of KL cells (X_J.Gamma' is a union of left cells of W) gives Gamma_W(x) cap W_J = Gamma_{W_J}(x); P-polynomials and descent sets of elements of W_J agree in W_J and W; so the W_J witness inequalities are a subset of the W ones.",
+    "trust": "sketched",
+    "file": "proofs/wake284/typeD_scoping.md",
+    "notes": "Geck 2003 (induction of Kazhdan-Lusztig cells) statement is recall-only; first-hand locator owed. Computed evidence: 15/15 parabolic twins in the S_15, S_16 census are images of lower twins (proofs/wake284/twin_heredity.md).",
+    "sources": [],
+    "children": []
+   },
+   {
+    "id": "Q68-heredity-up-converse",
+    "role": "attempt",
+    "date": "2026-11-08",
+    "approach": "Post-closure (Wake 284). Converse of boundary kill: boundary generator not in L(x) => embedded twin stays a twin in W.",
+    "trust": "dead-end",
+    "refutation": "computed",
+    "file": "proofs/wake284/twin_heredity.md",
+    "reason": "FALSE. S_14 (4,4,3,3) twin x=[5,9,13,14,1,4,8,12,3,7,11,2,6,10], z=[8,12,13,14,4,9,10,11,5,6,7,1,2,3]: both embeddings into S_15 are NO, while the (5,3,3,3) twin with identical L(x), L(z) lifts under both. Upward heredity depends on new witnesses, not descent data. Census tally 16 support / 8 against.",
+    "notes": "Script proofs/wake284/twin_heredity.py, output out_twin_heredity.txt (commit 4dcfbd8).",
+    "sources": [],
+    "children": []
+   },
+   {
+    "id": "CrownUprime-R0-separator",
+    "role": "attempt",
+    "date": "2026-11-08",
+    "approach": "Crown U' (arcs are not crystal data; q-KL-from-crystal). R0 separator: in S_7, shapes + left/right descent sets + length difference + cell relation do not determine the arc mu: x=1432765, y1=1634752 (P=1+q), y2=3416752 (P=1).",
+    "trust": "computed",
+    "file": "proofs/wake284/crownUprime_separator.md",
+    "notes": "Checked by own recursion and dyer.c (verify_sep_dyer.py; commit 72c7f1b). Caveat: the molecule/Knuth-neighbourhood level is untestable in S_7 because one round of colour refinement already separates every element, so the 'local crystal rule' hunch at molecule level is ill-posed as stated. The Crown U' hunch itself stays hunch (memory/connections/2026-11-08-arcs-are-not-crystal-data.md). No separate Crown U registry exists; filed here.",
+    "sources": [],
+    "children": []
    }
   ],
   "refutation": "proved",
