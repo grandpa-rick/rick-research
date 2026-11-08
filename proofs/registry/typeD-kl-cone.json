@@ -1,0 +1,96 @@
+{
+ "conjecture": "Q69: dominated twins / (*) in type D_n via constructible characters",
+ "status": "computed",
+ "date_opened": "2026-11-08",
+ "date_closed": null,
+ "tree": {
+  "id": "Q69",
+  "approach": "Type-D dominated twins: (*) via left-cell characters (C3_D) instead of KL; decide D_n, n<=8",
+  "trust": "computed",
+  "file": "proofs/2026-11-09-q69-typeD-C3.md",
+  "sources": [],
+  "children": [
+   {
+    "id": "Q69-C3-any-W",
+    "role": "premise",
+    "approach": "#{w in Gamma: L(w) contains J} = <[Gamma], Ind_{W_J} sgn>: sgn_J-isotypic part of a W-graph module = coordinate subspace span{e_x: J in L(x)}",
+    "trust": "proved",
+    "file": "proofs/2026-11-09-q69-typeD-C3.md",
+    "sources": [],
+    "children": []
+   },
+   {
+    "id": "Q69-P1-lusztig-constructible",
+    "role": "premise",
+    "approach": "Left-cell characters of a Weyl group = constructible characters (Lusztig Orange book 5.25/12.15); recall-only, validated D4/D5 vs coxkl",
+    "trust": "computed",
+    "file": "proofs/2026-11-09-q69-typeD-C3.md",
+    "sources": [],
+    "children": []
+   },
+   {
+    "id": "Q69-P2-split-chars",
+    "role": "premise",
+    "approach": "D_n split characters: chi+ - chi- = 2^{l(nu)} chi^alpha(nu) on split class (2nu)+ (GP 10.4 recall); validated: orthogonality n<=8, D4 KL match, sign-control breaks integrality at D4",
+    "trust": "computed",
+    "file": "proofs/2026-11-09-q69-typeD-C3.md",
+    "sources": [],
+    "children": []
+   },
+   {
+    "id": "Q69-P3-a-symbols",
+    "role": "premise",
+    "approach": "a-value from symbols = sum of pairwise mins minus trivial-symbol constant; validated a(sgn)=n(n-1), no a-violations n<=8, D4/D5 KL match",
+    "trust": "computed",
+    "file": "proofs/2026-11-09-q69-typeD-C3.md",
+    "sources": [],
+    "children": []
+   },
+   {
+    "id": "Q69-validate-D4D5",
+    "role": "premise",
+    "approach": "Predicted descent distributions of Con(D4), Con(D5) = actual coxkl left cells (12/12, 16/16); left-cell counts 36, 126 match",
+    "trust": "computed",
+    "file": "proofs/prove285/validate_kl.py",
+    "sources": [],
+    "children": []
+   },
+   {
+    "id": "Q69-star-table-n8",
+    "role": "premise",
+    "approach": "(*) over Con(D_n): 0 violators n=4..7; D8: 8 reducible constructibles (2016 left cells) violate",
+    "trust": "computed",
+    "file": "proofs/prove285/out_star_table.txt",
+    "sources": [],
+    "children": []
+   },
+   {
+    "id": "Q69-thm-D7-no-twins",
+    "role": "attempt",
+    "approach": "Theorem D7: no dominated twins in D_n, n<=7 (C2 + C3 + table)",
+    "trust": "computed",
+    "file": "proofs/2026-11-09-q69-typeD-C3.md",
+    "sources": [],
+    "children": []
+   },
+   {
+    "id": "Q69-boundary-kill",
+    "role": "attempt",
+    "approach": "Parabolic twin with a descent adjacent to S\\J is not a twin in W (F1,F2,Thm W(d), subword property); S_14 twins die in D_14",
+    "trust": "proved",
+    "file": "proofs/2026-11-09-q69-typeD-C3.md",
+    "sources": [],
+    "children": []
+   },
+   {
+    "id": "Q69-D8-candidates-twin?",
+    "role": "attempt",
+    "approach": "Are any D8 candidate pairs actual twins? needs mu on witness sets (KL in D8) -- undecided",
+    "trust": "in-progress",
+    "file": "proofs/2026-11-09-q69-typeD-C3.md",
+    "sources": [],
+    "children": []
+   }
+  ]
+ }
+}

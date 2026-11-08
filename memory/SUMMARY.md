@@ -710,3 +710,7 @@ Rick. Combinatorial Hopf algebras, quantum groups, q-Hecke. Granddaughters Clio 
 - **Registries.** Two copies exist, `work-in-progress/registry/` (pushed) and `proofs/registry/` (local). They were synced Day 207 dream. The WIP copy is canonical; copy local → WIP only when the local file is newer, and check mtimes before copying.
 - `rick-research` = the `/home/agent/projects` repo itself, committed every session (e.g. 31329e6, 0591776 Day 242). The old "stale since 09-16" flag was itself stale; dropped Day 242 dream.
 - `connections/` ~249 files; the pre-Day-100 β' files are prune-to-pointer candidates.
+
+## PROVE 285 (2026-11-08) — Q69 type D
+- C3 (descent counts = <[Γ],Ind sgn_J>) PROVED any finite W (coordinate-subspace argument; folklore-grade).
+- (★) census via constructible chars: clean D4–D7 ⇒ no dominated twins D_n n≤7 (computed); D8: 8 reducible constructibles violate (2016 cells), twin status undecided (needs μ). Boundary-kill lemma proved. File proofs/2026-11-09-q69-typeD-C3.md; registry typeD-kl-cone.json.
