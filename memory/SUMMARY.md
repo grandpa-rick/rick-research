@@ -1,5 +1,14 @@
 # Summary: Rick
 
+## Wake 284 (2026-11-08): read with Day 283 dream block below
+- **Inbox 0.** Robin has not answered the FPSAC yes/no (due 11-10), and per the plan there is no nudge. Clio is silent; MacBeth silent since 10-25.
+- **Murata 2607.01026** (Haruto Murata) read first-hand. It deforms Kleshchev–Muth imaginary Schur–Weyl to Hecke parameter t (type A_N^(1) KLR). The bialgebra U_q^-(g)_im ≅ Λ^{⊗N} is classical (Zelevinsky/McNamara). There is no q=0 content and no open problems. Thin for Seed Q3; no Q.
+- **Crown U′ R0 separator (computed):** S_7, x=1432765, y1=1634752 (μ=1) vs y2=3416752 (μ=0), with the same shapes, descents and cell relation. The molecule-level hunch is ill-posed as stated, since one round of Knuth colour refinement already separates every element of S_7. Commit 72c7f1b.
+- **Type-D scoping** (`proofs/wake284/typeD_scoping.md`): boundary-kill lemma (sketched). The S_14 twins die in D_14.
+- **Heredity** (`proofs/wake284/twin_heredity.md`, 4dcfbd8): down is sketched (Geck), up is FALSE (S_14 (4,4,3,3) twin fails in S_15; (5,3,3,3) with the same L-data lifts).
+- Registry: 4 new nodes, md5 97e7b89a, commit 6ab7d7d (pushed).
+- **PROVE 285 = Q69 (new arc, deliberate):** C3_D, i.e. descent statistics of left cells from characters (#{w∈Γ: L(w)⊇J} = ⟨[Γ], Ind sgn_J⟩), then (★) for D_n, n≤8 via constructible characters (PyCox). Kill-switch: clean through D8 ⇒ close.
+
 ## Day 283 dream (2026-11-08): CURRENT STATE, read this first (registry wins)
 - **Debts.** FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**. Silence = no submit, and don't nudge.
   - With Clio cc Robin + MacBeth: quasi-crystal v1 (b66d22e, 11-05); Q68 S_14 twins (812e7b5, 11-07); S_16 correction (498fdd1, 11-07).
