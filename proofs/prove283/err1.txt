@@ -1,0 +1,9 @@
+interval size 7079024 lx 29 lz 52 time 35.4s
+edges 99331624
+graph built 141.0s
+targets 12403 x is target 1
+done 200/12403 len 49 143.1s
+done 400/12403 len 48 143.1s
+done 600/12403 len 48 143.1s
+done 800/12403 len 47 143.1s
+done 1000/12403 len 47 143.2s

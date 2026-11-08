@@ -1,0 +1,760 @@
+                                                          TYPE A MOLECULES ARE KAZHDAN-LUSZTIG
+
+                                                                                   MICHAEL CHMUTOV
+
+                                                 Abstract. Let (W, S) be a Coxeter system. A W -graph is an encoding of a representation
+                                                 of the corresponding Iwahori-Hecke algebra. Especially important examples include the
+arXiv:1307.8354v1 [math.CO] 31 Jul 2013
+
+
+
+
+                                                 W -graph corresponding to the action of the Iwahori-Hecke algebra on the Kazhdan-Lusztig
+                                                 basis, as well as this graph’s strongly connected components (cells). In 2008, Stembridge
+                                                 identified some common features of the Kazhdan-Lusztig graphs and gave a combinatorial
+                                                 characterization of all W -graphs that have these features. He conjectured, and checked up
+                                                 to n = 9, that all such An -cells are Kazhdan-Lusztig cells. The current paper provides a
+                                                 first step toward a potential proof of the conjecture. More concretely, we prove that the
+                                                 connected subgraphs of An -cells consisting of simple (i.e. directed both ways) edges are the
+                                                 same as in the Kazhdan-Lusztig cells.
+
+
+
+                                                                                    1. Introduction
+                                             Let (W, S) be a Coxeter system. A W -graph is a directed graph with additional structure
+                                          that encodes a representation of the corresponding Iwahori-Hecke algebra. In the paper
+                                          [KL79], such graphs were introduced for the regular representation, and it was shown that
+                                          the strongly connected components (called “cells”) also yield representations. Stembridge
+                                          identified several common features of the Kazhdan-Lusztig graphs, namely, they are bipartite,
+                                          (nearly) edge-symmetric, and their edge weights are non-negative integers (collectively he
+                                          called these features “admissibility”). He proceeded to describe, via four combinatorial rules,
+                                          when an admissible graph is a W -graph ([Ste08a]). One hopes that the characterization
+                                          will allow one to construct the Kazhdan-Lusztig cells without having to compute Kazhdan-
+                                          Lusztig polynomials (a notoriously difficult task). A piece of evidence suggesting that the
+                                          definition of a general admissible W -cell approximates a Kazhdan-Lusztig cell is a more
+                                          recent result of Stembridge that there are only finitely many admissible W -cells for each
+                                          finite W ([Ste12]).
+                                             There are no known examples of admissible An -cells besides the Kazhdan-Lusztig cells
+                                          (Stembridge checked it up to n = 9). A possible strategy of proof is as follows:
+                                              (1) An An -cell is a strongly connected directed graph. It turns out that the simple, i.e.
+                                                   directed both ways, edges are considerably easier to understand than the rest of the
+                                                   edges. Consider the induced subgraphs which are connected via simple edges (of
+                                                   course these are strongly connected on their own, but a cell may contain several of
+                                                   them). The subgraphs satisfy combinatorial rules slightly weaker than those satisfied
+                                                   by a cell; a graph satisfying these rules is called a molecule. The first step is to show
+                                                   that the simple edges of any An -molecule appear in the Kazhdan-Lusztig graph.
+                                              (2) It is known that a Kazhdan-Lusztig An -cell is connected via simple edges, and these
+                                                   edges are well understood (they are called dual Knuth moves). The second step is
+                                            Key words and phrases. Iwahori-Hecke algebra, W -graphs, W -molecules, dual equivalence graphs,
+                                          Kazhdan-Lusztig cells.
+                                                                                              1
+        to prove that no cell may have multiple molecules. The fact that no two Kazhdan-
+        Lusztig An -molecules may be connected inside a cell has been checked for n ⩽ 12
+        ([Ste11]).
+    (3) The last part is to prove that there can be only one An -graph with a given underlying
+        molecule. For Kazhdan-Lusztig molecules this has been checked for n ⩽ 13 ([Ste11]).
+   In this paper we complete the first part of the above program. Together with the above
+computations, this result implies that all An -cells up to n = 12 are Kazhdan-Lusztig. The
+main ingredient of the proof is the axiomatization of graphs on tableaux generated by dual
+Knuth moves ([Ass08]). Five of the axioms follow easily from the molecules axioms, but the
+last one presents a challenge. Recently Roberts suggested a revised version of the last axiom
+([Rob13]). Using it one can give a short computerized proof of our result.
+   The paper is structured as follows. Section 2 introduces the W -molecule world. Section 3
+discusses Assaf’s dual equivalence graphs and connects them to molecules. The last section
+is devoted to the proof of the main theorem that the simple part of any An -molecule is a
+dual equivalence graph.
+
+                            2. Molecules and arc transport
+  This section summarizes the required W -molecules terminology as described in [Ste08a,
+Ste08b].
+  Let (W, S) be a finite simply-laced Coxeter system. The papers are mostly concerned
+with W -graphs, i.e. graphs that encode certain representations of the corresponding Iwahori-
+Hecke algebra. It turns out that the simple (i.e. directed both ways) edges of these graphs are
+much easier to understand than other edges. Thus we consider induced subgraphs connected
+by simple edges. These subgraphs are not necessarily W -graphs (i.e. they do not encode
+representations), but they satisfy certain combinatorial rules which are slightly weaker than
+Stembridge’s W -graph rules. More specifically, to get the W -graph rules one needs to omit
+the conditions on τ -invariants of u and v in the (LPR2) and (LPR3) sections of Definition
+2.1 below. We begin this paper by formalizing the definitions and presenting the rules. See
+the above papers for more details regarding the relationship of W -molecules with W -graphs
+and representation theory. A significant part of this section extends to multiply-laced types;
+again, see the above two papers.
+2.1. Definitions and Axioms. An admissible S-labeled graph is a tuple G = (V, m, τ ),
+where V is a set (vertices), m : V × V → Z⩾0 , and τ : V → 2S such that
+    (1) as a directed graph (with edges given by pairs of vertices with non-zero m value), G
+        is bipartite,
+    (2) if τ (u) ⊆ τ (v) then m(u, v) = 0,
+    (3) if τ (u) and τ (v) are incomparable, then m(u, v) = m(v, u).
+The function τ will be referred to as the τ -invariant. We will most of the time omit the
+word “admissible” since we consider no other S-labeled graphs. By a simple edge we mean a
+pair of vertices (v1 , v2 ) such that neither m(v1 , v2 ) nor m(v2 , v1 ) are 0. In diagrams we draw
+these as undirected edges (see the left side of Figure 1). By an arc v1 → v2 we mean a pair
+of vertices (v1 , v2 ) such that m(v1 , v2 ) 6= 0, but m(v2 , v1 ) = 0. Notice that if u → v is an
+arc, then τ (u) ⊃ τ (v). If (u, v) is a simple edge then τ (u) and τ (v) are incomparable, and
+m(u, v) = m(v, u).
+                                                 2
+     We refer to an edge of the Coxeter graph of (W, S) as a bond to distinguish it from edges
+ of S-labeled graphs. A simple edge (u, v) activates a bond (i, j) if precisely one of τ (u) and
+ τ (v) contains i, and precisely the other one contains j.
+     For distinct i, j ∈ S, a directed path (possibly involving simple edges) u → v1 → v2 →
+ · · · → vr−1 → v in G is alternating of type (i, j) if
+        • i, j ∈ τ (u) and i, j ∈   / τ (v),
+        • i ∈ τ (vk ), j ∈/ τ (vk ) for odd k,
+        • i∈ / τ (vk ), j ∈ τ (vk ) for even k.
+ Let                                         X
+                          Nijr (G; u, v) :=     m(u, v1 )m(v1 , v2 ) . . . m(vr−1 , v),
+                                      v1 ,...,vr−1
+
+ where the sum is over the set of alternating paths of type (i, j) from u to v.
+ Definition 2.1. An S-labeled graph is called a molecular graph if it satisfies
+  (SR) If (u, v) is a simple edge then m(u, v) = m(v, u) = 1. Thus we will omit the weights
+        of simple edge in our diagrams.
+  (CR) If u → v is an edge, i.e. m(u, v) 6= 0, then every i ∈ τ (u) \ τ (v) is bonded to every
+        j ∈ τ (v) \ τ (u).
+  (BR) Suppose (i, j) is a bond in the Coxeter graph of (W, S). Any vertex u with i ∈ τ (u)
+        and j ∈/ τ (u) is adjacent to precisely one edge which activates (i, j).
+(LPR2) For any i, j ∈ S for any u, v ∈ V with i, j ∈ τ (u), i, j ∈  / τ (v) and τ (v) \ τ (u) 6= ∅, we
+        have
+                                   Nij2 (G; u, v) = Nji2 (G; u, v).
+(LPR3) Let k, i, j, l ∈ S be a copy of A4 in the Coxeter graph: k − i − j − l. For any u, v ∈ V
+       with i, j ∈ τ (u), i, j ∈
+                               / τ (v), k, l ∈
+                                             / τ (u), k, l ∈ τ (v), we have
+                                     Nij3 (G; u, v) = Nji3 (G; u, v).
+   The rules are called, respectively, simplicity rule, compatibility rule, bonding rule, and
+ local polygon rules.
+ Definition 2.2. An S-labeled graph is called a molecule if it is a molecular graph, and there
+ is a path of simple edges between any pair of vertices.
+ Example 2.3. It is easy to classify all the A3 -molecules. Because of admissibility, a vertex
+ whose τ -invariant is ∅ cannot be connected to any other vertex by a simple edge. Similarly
+ for a vertex whose τ -invariant is {1, 2, 3}.
+     Suppose we have a vertex v1 , whose τ -invariant is {1}. By BR, it is connected by a simple
+ edge to a vertex v2 whose τ -invariant contains 2, but not 1. By CR, 3 ∈     / τ (v2 ), and hence
+ τ (v2 ) = {2}. By BR, v2 is connected by a simple edge to a vertex v3 whose τ -invariant
+ contains 3, but not 2. We already know v3 6= v1 . By BR, τ (v3 ) = {3}. There are no other
+ simple edges possible, and this is a complete molecule. The same analysis works for v1 having
+ τ -invariants of {3}, {1, 2}, {2, 3}.
+     Suppose we have a vertex v1 , whose τ -invariant is {2}. By BR, it is connected by a simple
+ edge to a vertex v2 whose τ -invariant contains 1, but not 2. The case of τ (v2 ) = {1} was
+ described above, so the only choice is τ (v2 ) = {1, 3}. This yields a complete molecule. The
+ same argument works for v1 having τ -invariant of {1, 3}.
+                                                     3
+               Figure 1. Molecules and dual equivalence graphs for type A4
+                                     1
+
+                                                                                 bc             a           c             ab
+                124         13           23          24         134        124         13             23             24         134
+
+
+                                                     1
+                             1
+                                                                                 ab             c           a             bc
+                2           13           14          24         3          2           13             14             24         3
+
+
+                                                     1
+
+                                         23                                                           23
+                                                                                            a                    c
+
+                                                                                  b                                       b
+                12          13                       24         34         12          13                            24         34
+
+                                                                                            c                    a
+                                         14                                                           14
+
+
+
+                                                                                       c              b              a
+                      123        124          134         234                    123            124        134            234
+
+
+
+                                                                                       a              b              c
+                      1          2             3          4                       1             2           3             4
+
+
+                                              1234                                                         1234
+
+
+
+
+  This completes the classification:
+                                              123                     12         13             23
+
+                                              2            13         1          2               3
+
+
+
+Example 2.4. The classification of A4 -molecules is slightly more involved (see [Ste08a]). The
+result is shown on the left side of Figure 1.
+Remark 2.5. We would like to comment on the structure of alternating paths involved in the
+local polygon rules. A priori only the first and the last edges of an alternating path could
+be arcs. In fact, the additional assumptions on the τ -invariants of the starting and ending
+vertices force one of these edges to be simple. So any alternating path involved in the local
+polygon rules contains at most one arc.
+
+   The simple part of a molecule is the graph formed by erasing all the arcs. We usually
+view it as an undirected graph. A morphism of molecules ϕ : M → N is a map between the
+vertex sets which
+   (1) is a graph morphism of the simple parts,
+   (2) preserves τ -invariants.
+Notice that a morphism does not need to respect arcs.
+
+2.2. Restriction. Let J ⊆ S and let WJ be the corresponding parabolic subgroup.
+  Let M = (V, m, τ ) be a W -molecular graph. The WJ -restriction of M is N = (V, m′ , τ ′ ),
+with
+   (1) for all v ∈ V , τ ′ (v) = τ (v) ∩ J,
+                                                                      4
+   (2) for all u, v ∈ V ,
+                                            (
+                                                 0, if τ ′ (u) ⊆ τ ′ (v),
+                              m′ (u, v) =
+                                                 m(u, v), otherwise.
+The WJ -restriction of M is a WJ -molecular graph. A WJ -submolecule of M is a WJ -molecule
+(i.e. component connected by simple edges) of the WJ -restriction of M. There is a natural
+inclusion map of a WJ -submolecule into the original molecular graph. Sometimes, abusing
+notation, we refer to the image of this map as a WJ -submolecule. The sense in which we use
+the word should be clear from the context.
+Remark 2.6. It is sometimes convenient to think of the local polygon rules in terms of
+restriction. For LPR2, suppose k ∈ τ (v) \ τ (u). Then LPR2 holds for an S-labeled graph if
+and only if it holds for the W{i,j,k} restriction. Similarly, LPR3 holds for an S-labeled graph
+if and only if it holds for the W{i,j,k,l} restriction.
+2.3. Arc transport. The following three propositions follow from the local polygon rules.
+In fact, although we do not need it, for simply laced types they are equivalent to the local
+polygon rules.
+  Before proceeding we would like to make a small comment about the bipartition require-
+ment of admissible S-labeled graphs. The proposition makes a statement that certain edges
+have equal weights. Since we are only shown parts of the graph, it is unclear whether the
+indicated edges break bipartition. However the edges are allowed or disallowed simultane-
+ously. In case the edges are disallowed, the statements of the propositions are trivial. So in
+the proofs we assume that the edges are, in fact, allowed.
+Proposition 2.7. Suppose M is a W -molecular graph. Suppose (x, y) and (x′ , y ′) are simple
+edges that activate the same bond, say (i, j). Without loss of generality, i ∈ τ (x) ∩ τ (x′ ) and
+j ∈ τ (y) ∩ τ (y ′ ). Suppose moreover that there exists k such that k ∈ τ (x) ∩ τ (y) and
+  / τ (x′ ) ∪ τ (y ′ ). Then m(x, x′ ) = m(y, y ′). In picture notation (after restriction to the
+k ∈
+parabolic subgroup generated by J = {i, j, k}), the blue (dashed) edges have the same weight:
+                                            k, i                 k, j
+                                                   x        y
+
+
+                                                   x’       y’
+                                             i                    j
+
+
+Proof. There are two evident instances of LPR2, namely
+                                   2
+                                  Nki (M, x, y ′ ) = Nik
+                                                      2
+                                                         (M, x, y ′),
+and
+                                   2
+                                  Nkj (M, y, x′ ) = Njk
+                                                     2
+                                                        (M, y, x′ ).
+   Consider the first of these. Let us analyze when could there be other possible alternating
+paths besides the ones pictured. First look at alternating paths of type (k, i). They must
+pass through a vertex z 6= y with k ∈ τ (z) and i ∈      / τ (z). Since z 6= y and (x, z) is an edge,
+BR tells us that j ∈ / τ (z). Now (z, y ′ ) must be an edge, so by CR we have that (j, k) is a
+bond. Hence Nki 2
+                  (M, x, y ′ ) = m(y, y ′) unless (j, k) is a bond.
+   Now look at alternating paths of type (i, k). They must pass through a vertex z 6= x′ with
+                / τ (z). Since z 6= x′ and (z, y ′ ) is and edge, BR tells us that j ∈ τ (z). Now
+i ∈ τ (z) and k ∈
+                                                        5
+(x, z) must be an edge, so by CR we have that (j, k) is a bond. Hence Nik  2
+                                                                             (M, x, y ′ ) = m(x, x′ )
+unless (j, k) is a bond.
+   Thus the first instance of LPR2 give the desired result unless (j, k) is a bond. By the same
+argument with i and j switched, the second instance of LPR2 give the desired result unless
+(i, k) is a bond. But the Coxeter graph cannot contain triangles, so at least one of (i, k) and
+(j, k) cannot be a bond. This finishes the proof.                                                 
+Proposition 2.8. Suppose M is an A3 -molecular graph which contains the simple edges of
+one of the two pictures:
+                                13              2                           13         2
+
+
+
+                      1                  2           3    ,            23         13                   12   .
+Then the weights of the two blue (dashed) edges are equal.
+Proof. Apply the only evident instance of LPR2. By Remark 2.5 we are seeing all the possible
+paths involved, so the desired equality follows.                                          
+Proposition 2.9. Suppose M is an A4 -molecular graph which contains the simple edges of
+one of the two pictures:
+                          23                                                                      23
+     12         13                        24        34                 12        13                             24   34
+                          14                                                                      14
+
+     124        13        23              24        134   ,            2         13               14            24   3    .
+Then the weights of the two blue (dashed) edges are equal.
+Proof. We will just treat the left picture; the right one is done in the same way.
+  Label some of the vertices as follows:
+                                                              23
+                                    12         13                           24        34
+                               w1                                  y                       w2
+                                                              14
+
+                                    124        13             23            24    134
+                                          z1              x                                z2 .
+
+
+Applying LPR3 with regard to paths from x to y gives m(z1 , y) = m(z2 , y); as in the proof
+of Proposition 2.8 we can see all the possible paths. Now Proposition 2.8 itself gives us
+that m(z1 , y) = m(z1 , w1 ) (to apply the proposition we restrict M to the parabolic subgroup
+generated by J = {2, 3, 4}), and m(z2 , y) = m(z2 , w2 ). This finishes the proof.           
+
+                                     3. Dual equivalence graphs
+  This section summarizes the relevant definitions and results of [Ass08]. The results are
+restated to make the similarity with the W -molecule world more apparent.
+  Fix n ∈ Z>0 . Let (W, S) be a Coxeter system of type An . Identify S in a natural way
+with {1, . . . , n}. Define ai to be the bond (i, i + 1). Then B := {a1 , . . . , an−1 } is the set of all
+bonds. For examples with small n we will use the notation a, b, c, . . . instead of a1 , a2 , a3 , . . . .
+                                                               6
+Definition 3.1. A signed colored graph of type n + 1 is a tuple (V, E, τ, β), where (V, E) is
+a finite undirected simple graph, τ : V → 2S , and β : E → 2B .
+
+  Denote by Ei the set of edges with label i (i.e. such that the corresponding value of β
+contains i); we call these i-colored edges. This is a slight reindexing from Assaf’s original
+definition; in the original Ei was the set of edges whose label contains i − 1.
+  We start by constructing a family, indexed by partitions, of signed colored graphs.
+
+
+
+
+3.1. “Standard” dual equivalence graphs. Let λ be a partition of n+ 1. Let SY T (λ) be
+the set of standard Young tableaux of shape λ. Using the English convention for tableaux,
+the left-descent set of a tableau T is
+
+
+             τ (T ) := {1 ⩽ i ⩽ n : i is located in a higher row than i + 1 in T }.
+
+
+The set of vertices of our graph is V := SY T (λ) (see Example 3.2).
+   By a diagonal of a tableau we mean a NW − SE diagonal. A dual Knuth move is the
+exchange of i and i+1 in a standard tableau, provided that either i−1 or i+2 lies (necessarily
+strictly) between the diagonals containing i and i+1. This corresponds to dual Knuth moves
+on the symmetric group via, for example, the “content reading word” (reading each diagonal
+from top to bottom, and concatenating in order of increasing height of the diagonals). The
+dual Knuth moves define the edges of our graph:
+
+
+                E := {(T, U) : T and U are related by a dual Knuth move}.
+
+
+  A dual Knuth move between tableaux T and U activates the bond ai if i lies in precisely
+                                                                                           ai
+one of τ (T ) and τ (U), and i + 1 lies precisely in the other. Denote this condition by T − U.
+For (T, U) ∈ E, let
+
+                                                         ai
+                                β(T, U) := {ai ∈ B : T − U}.
+
+
+    The graph Gλ := (V, E, τ, β) is a signed colored graph of type n + 1.
+    One can give a slightly more explicit description of activations on tableaux. Notice that
+                                                                                         ai
+i, i + 1, and i + 2 have to lie on three distinct diagonals in any tableau. We have T − U
+precisely when T and U differ by switching the two of the above entries on the outside
+diagonals, provided that the middle diagonal does not contain i + 1.
+
+                                               7
+Example 3.2. Here are two standard dual equivalence graphs, corresponding to the shapes
+311 and 32.
+                                             1   2    5
+                               a             3                          c
+
+                                             4
+                                                      23
+   1   4    5         1   3    5                                        1    2     4             1    2      3
+                 b                                                                        b
+   2                  2                                                 3                        4
+   3                  4                                                 5                        5
+            12                 13                                                  24                        34
+                                             1   3    4
+
+                               c             2                      a
+                                             5                                                                      1       2       3       4
+                                                      14
+                                                                                                                        a       b       c
+
+
+
+
+   1   2    5    ab   1   3    5    c        1   3    4        a        1    2     4      bc     1    2      3
+   3   4              2   4                  2   5                      3    5                   4    5
+             2                 13                     14                           24                         3
+
+The values of τ are shown in red in the lower right-hand corner of each vertex.
+3.2. Axiomatics. Now we review Assaf’s axiomatization of the above construction.
+  A vertex w of a signed colored graph is said to admit an i-neighbor if precisely one of i
+and i + 1 lies in τ (w).
+Definition 3.3. A dual equivalence graph of type n + 1 is a signed colored graph (V, E, τ, β)
+such that for any 1 ⩽ i < n:
+   (1) For w ∈ V , w admits an i-neighbor if and only if there exists x ∈ V which is connected
+       to w by an edge of color i. In this case x must be unique.
+   (2) Suppose (w, x) is an i-colored edge. Then i ∈ τ (w) iff i ∈     / τ (x), i + 1 ∈ τ (w) iff
+       i+1∈   / τ (x), and if h < i − 1 or h > i + 2 then h ∈ τ (w) iff h ∈ τ (x).
+          In other words, going along an i-colored edge switches i and i+1 in the τ -invariant,
+       and does not affect any labels except i − 1, i, i + 1, and i + 2.
+   (3) Suppose (w, x) is an i-colored edge. If i − 1 ∈ τ (w)∆τ (x) then (i − 1 ∈ τ (w) iff
+       i + 1 ∈ τ (w)), where ∆ is the symmetric difference. If i + 2 ∈ τ (w)∆τ (x) then
+       (i + 2 ∈ τ (w) iff i ∈ τ (w)).
+   (4) If i < n − 2, consider the subgraph on all the vertices and i- and (i + 1)-colored edges.
+       Each of its connected components has the form:
+                                                      a i +1       ai                          a i a i+1
+                                                                                                              .
+           If i < n−3, consider the subgraph on all the vertices and i-, (i+1)-, and (i+2)-colored
+           edges. Each of its connected components has the form:
+                                               a i a i+1 a i +2 ai    a i+1 a i+2
+
+
+                                                                                 a i +2          ai
+                          a i +2    a i +1       ai                 a i +1                                 a i +1
+                                                                                   ai            a i +2             .
+                                                                        8
+   (5) Suppose (w, x) ∈ Ei , (x, y) ∈ Ej , and |i − j| ⩾ 3. Then there exists v ∈ V such that
+       (w, v) ∈ Ej , (v, y) ∈ Ei .
+   (6) Consider a connected component of the subgraph on all the vertices and edges of
+       colors ⩽ i. If we erase all the i-colored edges it breaks down into several components.
+       Any two of these were connected by an i-colored edge.
+
+
+  Examples of A4 dual equivalence graphs can be found on the right of Figure 1.
+  A morphism of signed colored graphs is a map on vertex sets which preserves τ and β.
+
+
+Proposition 3.4. The graph Gλ is a dual equivalence graph. Moreover, {Gλ }λ is a complete
+collection of isomorphism class representatives of dual equivalence graphs.
+
+
+
+
+Proof. The references are to [Ass08]. The first statement is Proposition 3.5. The second is
+a combination of Theorem 3.9 and Proposition 3.11.                                       
+
+
+Remark 3.5. There is some redundancy in the definition as presented. Namely, β can be
+calculated from τ : an edge (u, v) is i-colored if and only if i lies in precisely one of τ (u) and
+τ (v), while i + 1 lies in precisely the other. Assaf needed a slightly more general definition,
+so β was not redundant. We think of β as a piece of data about a dual equivalence graph,
+and keep it as part of the definition to be consistent with the original.
+
+
+  A weak dual equivalence graph is a signed colored graph satisfying 1 − 5 of the above.
+
+
+
+
+3.3. Restriction. Suppose G is a signed colored graph of type n + 1. For 0 ⩽ k < n + 1,
+a (k + 1)-restriction of G consists of the same vertex set V , the τ function post-composed
+with intersection with {1, . . . , k}, and the β function post-composed with restriction to
+{a1 , . . . , ak−1 }. The (k + 1)-restriction of G is a signed colored graph of type k + 1. The
+property of being a (weak) dual equivalence graph is preserved by restriction. By a (k + 1)-
+component of G we mean either the connected component of the restriction, or the induced
+subgraph of G on vertices corresponding to such connected component. It should be clear
+from the context which of these we are talking about.
+   The n-components of Gλ are obtained by fixing the position of n + 1 in the tableau. Such
+a component is isomorphic to Gµ , where µ is formed from λ by erasing the outer corner
+which contained n + 1. On the above examples this looks as follows:
+
+
+                                                 9
+Example 3.6.
+                                 1   2   5
+                            a    3
+                                 4
+                                         23
+  1   4   5         1   3   5                            1   2   4       1   2   3
+               b                                                     b
+  2                 2                                    3               4
+  3                 4                                    5               5
+          12                13                                   2               3
+                                 1   3   4
+                                 2                   a
+                                 5                                                       1       2       3
+                                             1
+                                                                                             a       b
+
+
+
+
+  1   2   5    ab   1   3   5    1   3   4       a       1   2   4   b   1   2   3
+  3   4             2   4        2   5                   3   5           4   5
+          2                 13               1                   2                   3
+
+   The condition of being a weak dual equivalence graph is already quite powerful. The
+following lemma is relevant to us. It essentially says that a weak dual equivalence graph
+with a nice restriction property is necessarily a cover of a dual equivalence graph.
+Lemma 3.7. Suppose G is a weak dual equivalence graph of type n + 1. Suppose moreover
+that each n-component is a dual equivalence graph. Then there is a surjective morphism
+ϕ : G → Gλ for some partition λ of n + 1, which restricts to an isomorphism on the n-
+components.
+  Let C ∼ = Gµ be an n-component. Then for any partition ν 6= µ of n with ν ⊂ λ, there
+exists a unique n-component D with ϕ(D) = Gν which is connected to C by an En−1 edge.
+Also, two n-components which are isomorphic to Gµ are not connected by an En−1 edge.
+Proof. The references are again to [Ass08]. The existence of the morphism is shown in
+Theorem 3.14. Its surjectivity follows by Remark 3.8. The fact that it restricts to an
+isomorphism on then n-components follows from the proof of Theorem 3.14. The covering
+properties from the second paragraph are shown in Corollary 3.15, though the last one is
+not explicitly mentioned.                                                             
+3.4. Molecules and dual equivalence graphs.
+Proposition 3.8. The simple part of an An -molecule, with the corresponding τ function and
+edges labeled by activated bonds, is a weak dual equivalence graph.
+Proof. Axioms (1), (2), (3) follow directly from SR, BR, and CR. Axiom (4) was demon-
+strated in Examples 2.3 and 2.4. Axiom (5) is a weaker version of the local polygon rule. 
+  Consider the graph Gλ . It is clear that (viewed as a directed graph with edge weights of
+1) it is an admissible S-labeled graph for the An root system. It is well known that it forms
+the simple part of an An -molecule (the left Kazhdan-Lusztig cell) which we call Gλ .
+Definition 3.9. An An -molecule is Kazhdan-Lusztig if it is isomorphic to Gλ , i.e. if its
+simple part is a dual equivalence graph.
+                                                     10
+Remark 3.10. We can explicitly describe the simple edges of the parabolic restriction of Gλ .
+Let J = {j1 , . . . , jk }. Then the relevant tableau entries are J ′ := {j1 , j1 +1, j2, j2 +1, . . . , jk +
+1}. The simple edges of the WJ -restriction of Gλ are dual Knuth moves that exchange two
+entries of J ′ provided the “witness” between them is also in J ′ .
+
+
+
+                                          4. Main theorem
+   In this section we show that any An -molecule is Kazhdan-Lusztig. The proof will proceed
+by induction on n, so the preliminary results will start with an An -molecule whose An−1 -
+submolecules are Kazhdan-Lusztig.
+   The first of these results states that if two such An−1 -submolecules are connected by a
+simple edge, then the connected An−2 -submolecules are isomorphic and there is a “cabling”
+of edges (possibly arcs) of weight 1 between them:
+
+
+                                     An
+
+
+
+
+                                                                An−1
+
+
+                                                     An−1
+
+
+                                                                       .
+
+Lemma 4.1. Let M be an An -molecule whose An−1 -submolecules are Kazhdan-Lusztig. Sup-
+pose A and B are two such submolecules which are joined by a simple edge (in M), namely
+there exist x ∈ A, y ∈ B such that the edge (x, y) is simple. Let A′ (resp. B ′ ) be the An−2 -
+submolecule of M containing x (resp. y). Then there is an isomorphism ψ between A′ and
+B ′ such that ψ(x) = y. Moreover, if n ∈ τ (x) then m(z, ψ(z)) = 1 for all z ∈ A′ .
+
+Proof. By Lemma 3.7 we know that there is a surjective morphism ϕ : M → Gλ for some
+λ. Then ϕ(A) ∼ = Gµ and ϕ(B) ∼   = Gν , for some µ, ν which are formed from λ by erasing an
+outer corner (these outer corners must be different since no two molecules corresponding to
+the same shape may be connected; Lemma 3.7).
+   Let T = ϕ(x), U = ϕ(y). Thus T has n + 1 in position λ \ µ and U has n + 1 in position
+λ \ ν. Now there is a simple edge between T and U, i.e. one is obtained from the other
+by a Knuth move. The only Knuth move in An which moves n + 1 is one that exchanges
+n and n + 1, in the presence of n − 1 between them. Hence T has n in position λ \ ν and
+U has n in position λ \ µ. Hence the An−2 -molecule containing T has standard tableaux on
+λ \ (µ ∪ ν) as vertices, and Knuth moves between them as edges. The same is true for the
+An−2 molecule containing U. Thus the two molecules are isomorphic and the isomorphism is
+given by switching n and n+1. Now we can use ϕ to lift it up to an isomorphism ψ : A′ → B ′ .
+   Suppose n ∈ τ (x). Then n ∈ / τ (y). So for any x′ ∈ A′ , we have n ∈ τ (x′ ), and similarly for
+      ′    ′          ′
+any y ∈ B , n ∈ / τ (y ). Then repeated application of Proposition 2.7 shows that the weight
+of the edge between z ∈ A′ and ψ(z) is the same as between x and y, namely 1.                    
+                                                     11
+  The second preliminary result shows that if, out of three An−1 -submolecules, two pairs
+(satisfying some conditions) are connected by simple edges, then the third pair is also con-
+nected by a simple edge:
+
+                                                             ?
+                                                 A
+                                                                   B
+
+
+
+
+                                                         C
+
+
+                                                        .
+The conditions will later be removed to show that any two An−1 -submolecules of an An -
+molecule are connected by a simple edge.
+Lemma 4.2. Let M be an An -molecule whose An−1 -submolecules are Kazhdan-Lusztig. By
+Lemma 3.7, there is a surjective morphism ϕ : M → Gλ for some partition λ of n + 1. Let
+A, B, C be An−1 -submolecules of M such that A and B are both connected to C by simple
+edges. Then A ∼ = Gµ , B ∼
+                         = Gν , C ∼
+                                  = Gη , for some partitions formed by deleting outer corners
+of λ. The three partitions have to be different by Lemma 3.7. Suppose moreover that the
+deleted corner for η was the highest of the three, namely:
+
+                         µ                           ν                       η
+
+
+
+
+  Then A and B are connected by a simple edge.
+Proof. Notice that the role of A and B is symmetric, so without loss of generality we may
+assume that the deleted corner for µ was the lowest of the three.
+   To prove the existence of an edge between A and B, we will choose a simple edge of C and
+show, using arc transport rules, that its weight is equal to the weight of an edge between a
+vertex of A and a vertex of B whose τ invariants are incomparable. This will show that the
+edge in question is simple.
+   Consider a simple edge in Gλ (which happens to lie in the submolecule isomorphic to Gη )
+of the form:
+                                   n−4   n−3   n+1                     n−4   n−2   n+1
+
+
+                             n−2    n                            n−3   n
+
+
+                             n−1                                 n−1
+
+                                                                    .
+Let us describe precisely the kind of tableau we are looking for on the left. We want n + 1
+to occupy the cell λ \ η, n to occupy the cell λ \ ν, and n − 1 to occupy the cell λ \ µ. There
+exists an outer corner of µ ∩ ν ∩ η which now lies on a diagonal between n and n + 1; place
+n − 3 there. Place n − 2 in the outer corner of µ ∩ ν ∩ η between n − 1 and n. Similarly,
+place n − 4 between n − 2 and n − 3. Fill in the rest of the tableau in an arbitrary way. The
+two resulting tableaux differ by a Knuth move: one may flip n − 2 and n − 3 since n − 4 is
+between them. So this is indeed a simple edge in Gλ .
+                                                         12
+                             Figure 2. Transport along A4 molecules in Gλ .
+
+                                                                     n−4   n−3   n
+
+
+                                                               n−2   n−1
+
+
+                                                               n+1
+           n−4   n−3   n+1          n−4   n−3    n+1                                                     n−4   n−2   n         n−4   n−2   n−1
+
+
+     n−2   n                  n−2   n−1                                                        n−3       n−1             n−3   n                 Gµ
+
+     n−1                      n                                                                n+1                       n+1
+
+                                                                     n−4   n−2   n+1
+
+
+                                                               n−3   n−1
+
+
+                                                               n
+Gη
+
+
+
+
+           n−4   n−2   n+1          n−4   n−1    n+1                 n−4   n−1   n                       n−4   n−2   n         n−4   n−2   n−1
+
+
+     n−3   n                  n−3   n                          n−3   n+1                       n−3       n+1             n−3   n+1
+                                                                                                                                                 Gν
+     n−1                      n−2                              n−2                             n−1                       n
+
+
+
+
+                              Figure 3. Transport along a cabling in Gλ .
+
+                                                 n−4   n−2   n−1                       n−4   n−2   n−3
+
+
+                                           n−3    n                              n−1   n
+
+
+                                           n+1                                   n+1
+
+
+
+
+                                                 n−4   n−2   n−1                       n−4   n−2   n−3
+
+
+                                           n−3   n+1                             n−1   n+1
+
+
+                                            n                                     n
+
+
+
+
+  Now look at the A4 -molecules involved after restricting to the rightmost copy of A4 in
+An . The restriction corresponds to allowing Knuth moves that exchange entries ⩾ n − 3
+provided the “witness” between them is also ⩾ n − 3 (in particular, the original simple edge
+will become directed in the restriction). These are shown in Figure 2. The weight of the left
+blue (directed) edge is 1 since it was a simple edge before the restriction. It is equal to the
+weight of the right blue (dashed) edge by Proposition 2.9.
+  In the original Gλ , before restriction, we may then use the cabling of Lemma 4.1, to further
+transport this edge weight as in Figure 3. Thus we have shown that the weight of the right
+blue edge in this figure is 1.
+                                                                      13
+  In Gλ this is not very interesting since the two tableaux are seen to be related by a Knuth
+move; let us lift our sequence of moves up to M. Our original simple edge was located
+in the submolecule isomorphic to Gη . The preimage under ϕ of that simple edge lies in
+C. Now consider the preimages of the two A4 -molecules. The preimage of the right end of
+the molecule on the top will lie in A since it is the only molecule isomorphic to Gµ which is
+connected to C by a simple edge (Lemma 3.7). Similarly, the preimage of the right end of the
+molecule on the bottom is in B. So there is an edge of weight 1 from A to B. The transport
+along a cabling does not change the An−1 -molecules involved, however the τ -invariants of
+the right blue edge in Figure 3 are manifestly incomparable (one has n − 1 while the other
+has n). This produces a simple edge between A and B.                                       
+  We can now finish the proof of the theorem.
+Theorem 4.3. Any An -molecule is Kazhdan-Lusztig.
+Proof. We know that the simple part of an An -molecule is a weak dual equivalence graph.
+It remains to show that it satisfies the axiom (6), namely that any two An−1 -submolecules
+are connected by a simple edge.
+     Proceed by induction on n, the case n = 1 being trivial. Let M be an An -molecule. By
+inductive assumption, all An−1 -molecules are Kazhdan-Lusztig. So, according to Lemma 3.7
+there is a covering M → Gλ , for some partition λ of n + 1.
+     Choose two of these An−1 -submolecules of M, A and Z. Choose a path of simple edges
+between them which goes through the fewest number of submolecules. If it does not go
+through other submolecules, then we are done. Suppose that is not so. Let A, B, C be the
+first three submolecules on the path (it may happen that Z = C). The partitions µ, ν, η
+corresponding to A, B, and C are formed by removing outer corners of λ; they are all distinct
+by Lemma 3.7.
+     Consider the following string of submolecules connected by simple edges: A−B −C −A′ −
+B , with A ∼
+   ′
+              = A′ , B ∼
+                       = B ′ , and some of these possibly equalities (this is possible by Lemma
+3.7). Out of µ, ν, and η choose the partition which is formed by removing the highest box of
+λ. In the above string, choose a copy of the corresponding submolecule with submolecules
+attached on both sides (for example, if λ \ µ was highest of the three, then we should choose
+A′ ). Then the triple consisting of this submolecule and the two adjacent ones satisfies the
+condition of the Lemma 4.2 (in the example, it would be the triple C − A′ − B ′ ). Applying
+the lemma we get that A′ = A, and B ′ = B. But then A is connected to C, contradicting
+our assumption that the path went through a minimal number of submolecules.
+     So any two An−1 -submolecules are connected by an edge, finishing the proof.             
+Remark 4.4. In [Rob13], Roberts gives a revised version of Assaf’s axiom 6 which is more
+suitable for computer calculations. Proving our theorem using this alternate axiomatization
+amounts to checking that all the A5 -molecules are Kazhdan-Lusztig. This provides a simple
+computerized proof of our result.
+
+
+
+
+                                              14
+                                      References
+  [Ass08] Sami H. Assaf, Dual Equivalence Graphs I: A combinatorial proof of LLT and Mac-
+           donald positivity, arXiv:1005.3759, 2008.
+  [KL79] David Kazhdan and George Lusztig, Representations of Coxeter groups and Hecke
+           algebras, Invent. Math. 53 (1979), no. 2, 165–184.
+ [Rob13] Austin Roberts, Dual equivalence graphs revisited and the explicit Schur expansion
+           of a family of LLT polynomials, Journal of Algebraic Combinatorics (2013), 1–40.
+[Ste08a] John R. Stembridge, Admissible W -graphs, Representation Theory 12 (2008), 346–
+           368.
+[Ste08b]          , More W -graphs and cells: molecular components and cell synthesis,
+           http://atlas.math.umd.edu/papers/summer08/stembridge08.pdf, 2008.
+   [Ste11]        , Personal communication, 2011.
+   [Ste12]        , A finiteness theorem for W -graphs, Advances in Mathematics 229 (2012),
+           2405 – 2414.
+  Department of Mathematics, University of Michigan, 2074 East Hall, 530 Church St.,
+Ann Arbor, MI 48109
+
+
+
+
+                                            15
+

@@ -1,0 +1,2421 @@
+                                             MONODROMY IN KAZHDAN-LUSZTIG CELLS IN AFFINE TYPE A.
+
+                                                     MICHAEL CHMUTOV, JOEL BREWSTER LEWIS, AND PAVLO PYLYAVSKYY
+
+                                                  Abstract. We use the affine Robinson-Schensted correspondence to describe the structure
+                                                  of bidirected edges in the Kazhdan-Lusztig cells in affine type A. Equivalently, we give a
+arXiv:1706.00471v2 [math.CO] 27 Jun 2017
+
+
+
+
+                                                  comprehensive description of the Knuth equivalence classes of affine permutations.
+
+
+
+
+                                                                                        Contents
+                                             1. Introduction                                                                                    1
+                                             2. Background                                                                                      3
+                                             3. Knuth moves, descents, and inverses under AMBC                                                 11
+                                             4. Signs                                                                                          21
+                                             5. Charge                                                                                         28
+                                             6. Symmetries                                                                                     33
+                                             7. Monodromy                                                                                      33
+                                             8. Components of KL DEGs                                                                          44
+                                             9. Crystals                                                                                       48
+                                             References                                                                                        49
+
+
+
+                                                                                    1. Introduction
+                                           1.1. Cells in Kazhdan-Lusztig theory. In a groundbreaking paper [KL89], Kazhdan and
+                                           Lusztig laid a basis for a new approach to representation theory of Hecke algebras. Since
+                                           then, this approach has been significantly developed, and is called Kazhdan-Lusztig theory.
+                                           (For a nice introduction to Kazhdan-Lusztig theory, see [Hum90, Ch. 7].) Of particular
+                                           importance in this theory are the objects called cells. Briefly, their definition is as follows.
+                                           Each Hecke algebra is associated with a Coxeter group W . Kazhdan and Lusztig define a
+                                           pre-order ≤L on elements of W . Some pairs v, w of elements of W satisfy both v ≤L w and
+                                           w ≤L v, in which case we say that they are left-equivalent, denoted v ∼L w. Similarly one
+                                           can define right equivalence ∼R . The respective equivalence classes are called the left cells
+                                           and the right cells.
+                                             Another way to describe cells is via the Kazhdan-Lusztig W -graph; it is a certain directed
+                                           graph whose vertices are the elements of W . The graph has the property that v ≤L w
+                                           precisely when there is a directed path from v to w. Thus the cells are the strongly connected
+                                           components of the W -graph. Some edges of the W -graph are bidirected, i.e., between a pair
+
+                                              M.C. was partially supported by NSF grant DMS-1503119. J.B.L. was partially supported by NSF grant
+                                           DMS-1401792. P.P. was partially supported by NSF grants DMS-1148634, DMS-1351590, and a Sloan
+                                           Fellowship.
+                                                                                              1
+of vertices v and w there is an edge v → w and an edge w → v. In this case, of course, v
+and w belong to the same Kazhdan-Lusztig cell.
+
+1.2. Type A. In (finite) type A, when W is the symmetric group, the Kazhdan-Lusztig
+cell structure corresponds to something very familiar to combinatorialists, the Robinson-
+Schensted correspondence. This is a bijective correspondence between elements of the sym-
+metric group and pairs (P, Q) of standard Young tableaux of the same shape. It is well
+known [BV82, KL89, GM88, Ari99] that
+      • two permutations lie in the same left cell if and only if they have the same recording
+        tableau Q, and
+      • two permutations lie in the same right cell if and only if they have the same insertion
+        tableau P .
+The bidirected edges of the Kazhdan-Lusztig graph in this case are called Knuth moves,
+and one can go between any two permutations with the same insertion tableau (and hence
+between any two choices of the recording tableau Q) via a series of Knuth moves.
+
+1.3. Affine type A. In affine type A, when W is an affine symmetric group, Chmutov,
+Pylyavskyy, and Yudovina [CPY15] described, via a combinatorial algorithm called the Affine
+Matrix Ball Construction (AMBC), a bijection W → Ωdom , where Ωdom is the set of triples
+(P, Q, ρ) such that P and Q are tabloids of the same shape and ρ is an integer vector (called
+a dominant weight) satisfying certain inequalities that depend on P and Q. Relying on the
+work of Shi on Kazhdan-Lusztig cells in affine type A, they show that this bijection affords
+a description of cells analogous to the non-affine case: fixing the tabloid Q gives all affine
+permutations in a left cell while fixing the tabloid P gives all affine permutations in a right
+cell. The bidirected edges in this case (what Shi called star operations [Shi91]) are natural
+analogues of Knuth moves – see Section 3.3.1 for the definition.
+
+1.4. Summary of results. The main accomplishment of this paper is to precisely describe
+the Knuth equivalence classes of affine permutations, i.e., the equivalence classes of the
+relation generated by Knuth moves. In the language of [Ste08], we describe the Kazhdan-
+Lusztig molecules. Unlike the case of finite type A, most Kazhdan-Lusztig cells are composed
+of many molecules. This multiplicity comes in two varieties. First, while Knuth moves
+preserve the P tabloid, not all Q tabloids can be reached from a given one using Knuth
+moves; the description of which ones can be reached, given in Section 8, is in terms of a
+variant of the charge statistic. Second, even among affine permutations having the same P
+and Q tabloids, one cannot reach every dominant weight ρ from every other using Knuth
+moves; the different vectors ρ that can be reached are the subject of Section 7, and they
+depend on the shape of the tabloids.
+   Along the way, we improve our understanding of some combinatorial aspects of AMBC
+analogous to the combinatorics of the Robinson-Schensted correspondence. We show how
+to read off the left and right descent sets of an affine permutation from its image under
+AMBC (Proposition 3.6), as well as how to read off its sign (Theorem 4.4). We describe
+precisely how taking the inverse of or doing a Knuth move on an affine permutation affects
+its image under AMBC (Proposition 3.1 and Theorem 3.11). In Section 6, we briefly discuss
+how the symmetry of the Dynkin diagram appears in our setting. Finally, we give a better
+description, in terms of charge, for the inequalities satisfied by an integer vector for it to
+                                               2
+be dominant (Theorem 5.10). The appearance of charge suggests a connection to crystal
+graphs, which we describe in Section 9.
+   Section 2 contains the background information, including a summary of the main results
+of [CPY15], essential to understanding the rest of the paper. Sections 3 and 4 improve our
+understanding of the various combinatorial aspects of AMBC. Sections 5, 7 and 8 describe
+the Knuth equivalence classes of permutations in terms of AMBC; these sections rely heavily
+on the material in Section 3 but may be read independently of Section 4.
+   There is a program available to compute AMBC [Chm15]; the reader may want to use it
+to explore additional examples.
+
+                                       2. Background
+2.1. Notational preliminaries. For the duration of this paper, n will be a fixed positive
+integer. Let [n] := {1, . . . , n}. For each i ∈ Z, denote by i the residue class i + nZ, and let
+[n] := {1, . . . , n}.
+   The symmetric group Sn is the Weyl group of type An−1 . We may variously think of its
+elements as bijections [n] → [n], as words of length n containing each element of [n] exactly
+once, or as n × n permutation matrices. The extended affine symmetric group Sfn is the
+extended affine Weyl group of type A     e
+                                           n−1 ; it consists of bijections w : Z → Z such that
+
+                               w(i + n) = w(i) + n         for all i.
+The elements of Sfn are called extended affine permutations. We typically abbreviate this
+term to permutations, and we distinguish the elements of Sn by the name finite permutations.
+                                                                               e
+Denote by Sen0 the affine symmetric group, i.e., the affine Weyl group of type A n−1 ; it consists
+                       f
+of permutations w ∈ Sn such that
+                                       n
+                                       X
+                                             (w(i) − i) = 0.
+                                       i=1
+
+Note that Sn naturally embeds into Sen0 ( Sfn : a finite permutation w can be sent to the
+unique affine permutation that takes the same values as w on [n].
+   A partial (extended affine) permutation is a pair (U, w) where U ⊆ Z has the property
+that (x ∈ U) ⇔ (x + n ∈ U) and w : U → Z an injection such that w(i + n) = w(i) + n. We
+suppress the explicit mention of the subset U in the notation and just refer to the partial
+permutation w. Any permutation may be viewed as a partial permutation with U = Z.
+   A permutation is determined by its values on 1, . . . , n. The window notation for a per-
+mutation w is [w(1), . . . , w(n)]. A partial permutation w is also determined by its values on
+1, . . . , n, except it may not be defined on some of them.
+   We often think of permutations in terms of pictures such as the one in Figure 2, extending
+the notion of a permutation matrix to the affine case. More precisely, on the plane we draw an
+infinite matrix; the rows are labeled by Z, increasing downward, and the columns are labeled
+by Z, increasing to the right (usual matrix coordinates). The positions in this matrix are
+called cells; there will never be confusion with cells of the Kazhdan-Lusztig variety. To
+distinguish the 0-th row, figures have a solid red line between the 0-th and 1-st rows, and
+similarly for columns. We also put dashed red lines every n rows and columns. If w(i) = j
+then we place a ball in the i-th row and j-th column. For example, the cell (1, 4) in Figure
+2 contains a ball. The balls of a partial permutation will also be referred to by their matrix
+                                                  3
+         1 2 3          3 1 2           4 5 6             6 1 2         1 4 6          3 6 2
+         4 5            5 4             2 3               4 5           2 5            4 1
+         6              6               1                 3             3              5
+
+       Figure 1. Several tabloids of shape h3, 2, 1i. The first two tabloids are equal,
+       since they differ only by permuting elements within rows.
+
+coordinates. Thus, formally, both balls and cells are just ordered pairs of integers, and we
+use the word “ball” to indicate that the relevant partial permutation takes a certain value
+on a certain input. For a partial permutation w, we denote by Bw the collection of balls of
+w (a subset of Z × Z).
+   For an integer k and a ball b = (i, j), the ball b′ = b + k(n, n) = (i + kn, j + kn) is the
+k(n, n)-translate of b. Two balls b and b′ are translates if for some k one is a k(n, n)-translate
+of the other. The set of all translates of a ball or set of balls is a translation class.
+   We often assign numbers to balls of permutations, as well as to other cells of Z × Z. For
+a partial permutation w, a numbering of w is a function d : Bw → Z. A numbering d of w
+is semi-periodic with period m if we have d(b + (n, n)) = d(b) + m for every b ∈ Bw . When
+referring to a numbering in pictures, we write the number d(b) inside the ball b as in Figure
+2, where we show a semi-periodic numbering of period 3.
+   We frequently use compass directions (north, east, etc.) to describe relative positions of
+balls or cells, with north being toward the top of the page (smaller row numbers) and east
+being toward the right of the page (larger column numbers). Adding the modifier “directly”
+constrains one of the two coordinates: a cell (i, j) is directly south of (i′ , j ′ ) if i ⩾ i′ and
+j = j ′ . By a composite direction (e.g., northeast) we mean north and east. The relations
+are weak by default: a cell (i, j) is southwest of (i′ , j ′ ) if i ⩾ i′ and j ⩽ j ′ . Directions define
+partial orders on Z × Z: we say (i, j) ⩽SW (i′ , j ′) if (i, j) is southwest of (i′ , j ′ ).
+   A partition λ is a finite, weakly decreasing sequence of positive integers. We typically treat
+a partition λ = hλ1 , λ2 , . . .i as equivalent to its Young diagram, a left-justified collection of
+rows of boxes with top row having λ1 boxes, the row below it having λ2 boxes, and so on.
+The number of rows of λ is denoted ℓ(λ).
+   Given a partition λ having n boxes, a tabloid of shape λ is an equivalence class of fillings
+of the Young diagram of λ with [n], where two fillings are considered equivalent when one is
+obtained from the other by permuting elements within rows.1 Some examples are shown of
+Figure 1; we draw representatives of the equivalence classes and keep in mind that entries
+within rows can be permuted. Throughout this paper, all tabloids will be filled with distinct
+residue classes.
+   Several special tabloids will be important in this paper. The first is the reverse row
+superstandard tabloid of shape λ = hλ1 , . . . , λk i with start at i: this is the tabloid whose last
+row has entries
+                                       i, i + 1, . . . , i + λk − 1,
+whose next-to-last row has entries
+                             i + λk , i + λk + 1, . . . , i + λk + λk−1 − 1,
+  1Classically, one considers fillings with integers, but nothing is lost by this slightly nonstandard choice.
+                                                      4
+and so on. Thus the third and fourth tabloids in Figure 1 are the reverse row superstandard
+tabloids of shape h3, 2, 1i with starts at 1 and 3, respectively. Similarly, one can define the
+column superstandard tabloid of shape λ with start at i as the tabloid that has i in the first
+row, i + 1 in the second row, . . . , i + ℓ(λ) − 1 in the last row, i + ℓ(λ) in the first row, and so
+on. The last two tabloids in the figure are column superstandard tabloids of shape h3, 2, 1i
+with starts at 1 and 3, respectively.
+   If T is a tabloid then we denote by Ti the i-th row of T , viewed as a one-row tabloid or,
+equivalently, as a subset of [n]. Similarly, we denote by Ti,i+1 the tabloid consisting of the
+i-th and (i + 1)-st rows of T , and by T[i,j] the tabloid consisting of all rows of T with indices
+between i and j, inclusive.
+
+2.2. An analogue of the Robinson-Schensted correspondence. The paper [CPY15]
+describes a bijection
+                                Φ : Sfn → Ωdom ,
+where Ωdom is the set of triples (P, Q, ρ) such that P and Q are tabloids of the same shape
+of size n and ρ is an integer vector satisfying certain inequalities depending on P and Q.
+In this section, we give the relevant definitions and outline the construction of the bijection
+via an algorithm called the Affine Matrix-Ball Construction (AMBC). A detailed summary
+of these results occupies the first part of [CPY15]; while the present work is not completely
+independent of that part of [CPY15], we hope that the short version provided here is sufficient
+to understand most of the new results in the present paper.
+   Define Ω to be the collection of triples (P, Q, ρ) where P and Q are tabloids of the same
+shape λ of size n and ρ ∈ Zℓ(λ) . Suppose (P, Q, ρ) ∈ Ω and P and Q have shape λ. For i
+such that λi−1 = λi , there are associated integers ri (P, Q) called offset constants (which are
+defined precisely in Definition 5.9). If (P, Q, ρ) satisfies the conditions ρi ⩾ ρi−1 + ri (P, Q)
+then we say that ρ is dominant with respect to (P, Q); the pair (P, Q) is usually clear from
+the context. We define
+                            Ωdom = {(P, Q, ρ) ∈ Ω : ρ is dominant}.
+   A second algorithm [CPY15, §4], referred to as the backward algorithm, gives a surjection
+Ψ : Ω → Sfn . By [CPY15, Thms. 5.11 & 6.3], the restriction of Ψ to Ωdom is equal to Φ−1 .
+   We now briefly describe AMBC, which is closely related to Viennot’s geometric construc-
+tion [Vie77] for the Robinson-Schensted correspondence, called the Matrix-Ball Construction
+by Fulton [Ful97]. The first step is to produce a special numbering of the balls of the permu-
+tation, called a channel numbering, as in Figure 2. This numbering partitions the balls into
+equivalence classes having the same number; for each class, we form the zig-zag having those
+balls as inner corners, as in Figures 5 and 6. We get a new partial permutation from the
+outer corners of the zig-zags, and we iterate. At each step of the iteration, we record basic
+data about the back corner-posts of the zig-zags (illustrated by ∗’s in Figures 5 and 6): their
+column-indices are recorded in a row of P , the row-indices in a row of Q, and their altitude (a
+shift parameter distinguishing among the collections occupying the same collection of rows
+and columns) in an entry of ρ. The remainder of this section is concerned with providing
+the details behind this summary.
+
+2.2.1. Channel numberings.
+                                                 5
+                                   1
+                       1
+                                       2
+                                                               3
+                           2
+                               3
+                                                           4
+                                           4
+                                                                   5
+                                                                         6
+                                               5
+                                                   6
+
+
+
+       Figure 2. A proper numbering for the (extended, affine) permutation
+       [4, 1, 6, 11, 2, 3]. The numbering is semi-periodic with period 3.
+
+Definition 2.1. Suppose we have a collection C of cells that is invariant under translation
+by (n, n) and forms a chain in the partial ordering ⩽SE . Then the density of C is the number
+of distinct translation classes in C.
+  In Figure 2, the collection consisting of balls (2, 1), (5, 2), (6, 3), and their translates has
+density 3.
+Definition 2.2. Suppose w is a partial permutation. Then C ⊆ Bw is a channel if all of the
+following hold:
+      • C is invariant under translation by (n, n),
+      • C forms a chain in the partial ordering ⩽SE , and
+      • the density of C is maximal among all subsets of Bw satisfying the first two conditions.
+   In Figure 2, the collection consisting of balls (2, 1), (5, 2), (6, 3), and their translates is a
+channel. On the other hand, balls (1, 4) and (3, 6) are not part of any channel, since no
+translation-invariant chain of the ordering ⩽SE with density 3 passes through both.
+   A curious fact about channels is that the collection of southwest-most (or northeast-most)
+balls of a union of two channels is again a channel (see [CPY15, Prop. 3.13] and the comment
+following it). Thus there is always a southwest-most channel (in Figure 2, it is the channel
+formed by taking the balls (2, 1), (5, 2), (6, 3) and their translates) and a northeast-most
+channel. In AMBC, we need to pick a distinguished channel at each step; we pick the
+southwest one.
+   To perform a step of AMBC requires a special kind of numbering of a permutation, which
+we define now.
+Definition 2.3. For a partial permutation w, a function d : Bw → Z is a proper numbering
+if it is
+       • monotone: for any b, b′ ∈ Bw , if b lies strictly northwest of b′ then d(b) < d(b′ ), and
+       • continuous: for any b′ ∈ Bw there exists b northwest of it with d(b) = d(b′ ) − 1.
+                                                       6
+                                                                          ck
+           back corner-post
+
+          inner corner-posts
+
+
+                                                                          outer corner-posts
+                          c1
+                          c2
+
+                        Figure 3. The different corner-posts of a zig-zag.
+
+  An example of a proper numbering is given in Figure 2.
+Proposition 2.4 ([CPY15, Prop. 3.4]). Given a partial permutation w, let m(w) denote
+the density of the channels of w. All proper numberings of w are semi-periodic with period
+m(w).
+Definition 2.5. Suppose w is a partial permutation and C is a channel of w. For a ball
+b ∈ Bw and k ∈ Z⩾0 , a path of length k from b to C is a sequence of balls (b0 , b1 , . . . , bk ) such
+that b0 = b, bk ∈ C, and bi+1 lies strictly northwest of bi for all i.
+  Suppose we have a channel C of some partial permutation w. We can ignore all other
+balls of w and ask for proper numberings of just C itself. It is clear that up to an overall
+shift there is just one of them, with the balls numbered consecutively by all the integers as
+one moves from northwest to southeast. We can use this proper numbering of C to produce
+a proper numbering of all the balls of w.
+Definition 2.6. Suppose C is a channel of w and d˜ is a proper numbering of C. Define the
+channel numbering dC  w : Bw → Z of w by
+
+                              dC (b) := max max (d(b ˜ k ) + k),
+                                 w
+                                            k   (b0 ,b1 ,...,bk )
+
+where the second maximum is taken over all paths from b to C.
+  Because the number of paths is infinite, it seems a priori that d(b ˜ k )+k could be unbounded
+         C
+and so dw (b) undefined; however, by [CPY15, Prop. 3.9] this is not the case. Once we know
+that dC                                                       C
+      w (b) is finite for any ball b, it is easy to see that dw is, in fact, a proper numbering.
+
+Remark 2.7. Given a channel, there is an infinite family of channel numberings associated
+with it: they differ by shifting the numbers of all balls by the same amount. In this paper,
+the distinctions between these numberings never matter, and we will use the phrase “the
+channel numbering” to refer to a (locally fixed, but) arbitrary choice among them.
+2.2.2. Zig-zags. The definition of AMBC involves certain collections of cells called zig-zags.
+Definition 2.8. A zig-zag is a non-empty sequence (c1 , c2 , . . . , ck ) of cells such that both of
+the following hold:
+      • for 1 ⩽ i < k, ci+1 is adjacent to and either directly north or directly east of ci , and
+      • if k ⩾ 2, then c2 is directly east of c1 and ck is directly north of ck−1 .
+                                                     7
+        Figure 4. Streams of altitude −1 (green), 0 (purple), and 1 (blue) for A =
+        {1, 3, 6} and B = {2, 4, 5}.
+
+Given a zig-zag Z = (c1 , c2 , . . . , ck ), we say that
+      • the back corner-post is the cell in the same column as c1 and the same row as ck ,
+      • the inner corner-posts are the cells of Z such that no cell directly north or directly
+        west of them is in Z, and
+      • if k ⩾ 2, the outer corner-posts are the cells of Z such that no cell directly south or
+        directly east of them is in Z; if k = 1 then there are no outer corner-posts of Z.
+   These definitions are illustrated in Figure 3. Notice that the inner and outer corner-posts
+are always part of the zig-zag. The back-corner post is not usually part of the zig-zag; the
+only exception is a degenerate zig-zag with one cell, whose back corner-post coincides with
+its inner corner-post (and which has no outer corner-post).
+   The zig-zags that appear in AMBC are attached to a proper numbering of a permutation.
+Definition 2.9. Given a proper numbering d of a partial permutation w, the collection of
+zig-zags corresponding to d is the collection {Zi }i∈Z where Zi is the unique zig-zag whose
+inner corner-posts are precisely the balls of w labeled i by d.
+   The number of translation classes of zig-zags is the number m(w) appearing in Proposi-
+tion 2.4.
+
+2.2.3. Streams. The definition of AMBC involves a certain collection of cells called a stream:
+a set that is invariant under translation by (n, n) and forms a chain in the partial ordering
+⩽SE . Since streams are translation-invariant, if a stream has a cell with column k, then it
+has cells in all the columns of k.
+Definition 2.10. For any cell c = (c1 , c2 ), let D(c) be the block diagonal of c,
+                                                                
+                                                 c2   c1
+                                         D(c) :=    −    .
+                                                 n    n
+  Thus, if one of the translates of c is in [n] × [n] then D(c) = 0; if a translate is in
+{n + 1, n + 2, . . . , 2n} × [n] then D(c) = −1; etc.
+                                                       8
+                  1
+                      2
+
+                                        *                           4
+                               3
+                                                          4
+
+                                            *                           5
+
+                                                     *                       6
+                                        4
+                                            5
+
+                                                              *
+                                                     6
+                                                                                 7
+
+
+
+        Figure 5. First step of AMBC for w = [1, 2, 17, 5, 14, 18, 20]. The southwest
+        channel numbering is shown with the balls in the channel numbered in red.
+        The balls of fw(w) are shown in green. The cells of st(w) are marked by ∗’s.
+
+Definition 2.11. For any translation-invariant collection X of cells, we define D(X) =
+P
+   x∈Y D(x), where Y is a subset of X containing one representative of each translation class.
+If X is a stream, we call D(X) the altitude of X.
+  In [CPY15, §3.4], a different definition was given of altitude of a stream; however, it is
+an easy exercise to see that they are equivalent. The following result shows that the set of
+rows, set of columns, and altitude uniquely specify a stream.
+Proposition 2.12 (essentially [CPY15, Lem. 3.23 & Prop. 3.24]). Given two subsets A, B
+of [n] of the same size and an integer r, there is a unique stream of altitude r whose balls lie
+in rows indexed by A and in columns indexed by B.
+    This stream will be denoted str (A, B); the triple A, B, r is called its defining data.
+Example 2.13. Let n = 6, A = {1, 3, 6}, and B = {2, 4, 5}. The streams st−1 (A, B),
+st0 (A, B), and st1 (A, B) are shown in Figure 4. The stream st0 (A, B) is the unique choice
+with all of its cells in translations of [n] × [n]; st1 (A, B) is obtained from st0 (A, B) by moving
+                                                                                      S
+the cell in every row from its column east into the next available column in B.
+    The streams that appear in AMBC come from a proper numbering of a permutation.
+Definition 2.14. Suppose w is a partial permutation and d : Bw → Z is the southwest
+channel numbering; let {Zi }i∈Z be the collection of zig-zags corresponding to d. For each i,
+let bi be the back corner-post of Zi . Then st(w) := {bi }i∈Z is a stream.
+2.2.4. The algorithm. We now define the algorithm AMBC, giving the map Φ : Sfn → Ω.
+Definition 2.15. Suppose w is a partial permutation and d : Bw → Z is the southwest
+channel numbering. Define fw(w) to be the permutation whose balls are located at the outer
+corner-posts of all the zig-zags corresponding to d.
+    The algorithm is as follows.
+                                                 9
+                                    1
+
+                                               *2
+
+                                                      *3
+                                                           *       4
+
+
+
+
+                                                           4
+
+                                                                       *5
+
+                                                                            *6
+                                                                                 *
+
+
+              Figure 6. Second step of AMBC for w = [1, 2, 17, 5, 14, 18, 20].
+
+     • Input w ∈ Sfn .
+     • Initialize (P, Q, ρ) to (∅, ∅, ∅).
+     • Repeat until w is the empty partial permutation:
+         – Record the defining data of st(w) in the next row of P , Q, and ρ.
+         – Reset w to fw(w).
+     • Output (P, Q, ρ) ∈ Ω.
+Example 2.16. Let n = 7 and consider the permutation w = [1, 2, 17, 5, 14, 18, 20]. In the
+first step of AMBC, shown in Figure 5, w is numbered in the SW channel numbering; the
+stream consisting of the back corner-posts for the zig-zags corresponding to this numbering
+has elements in rows 3, 6, and 7 and columns 1, 2, and 5, and has altitude 3. Thus, the first
+row of P is 1 2 5 , the first row of Q is 3 6 7 , and the first row of ρ is 3. The second
+step is shown in Figure 6, and produces second rows 4 6 7 , 2 4 5 and 3 for P , Q, and
+ρ. Finally, the third step begins with the outer corner-posts from the second step; these form
+a partial permutation whose balls are exactly the translates of (1, 10). Thus the stream for
+this permutation also consists of translates of the single cell (1, 10), and so at the end of this
+step we set the third row of P to 3 , the third row of Q to 1 , and the third row of ρ to 1.
+The resulting triple (P, Q, ρ) is
+                                                                
+                              1 2 5            7 3 6             3
+                                                                
+                             7 4 6     ,      2 4 5       ,     3  .
+                              3                1                 1
+
+2.3. Zig-zags from a proper numbering. The following simple facts about how the zig-
+zags associated to a proper numbering lie in the plane will occur repeatedly in the arguments
+that follow. Both halves of the result are illustrated in Figure 7.
+Proposition 2.17. Suppose that w is a partial permutation, with balls labeled by a proper
+numbering d. Divide the balls into zig-zags according to d.
+                                                10
+       Figure 7. The blue zig-zag has balls of w with lower value of d than the red
+       zig-zag. The two zig-zag positions shown on the left cannot occur: the first
+       satisfies condition (b) of Proposition 2.17 but violates condition (a), while the
+       second satisfies condition (a) but violates condition (b). The two positions on
+       the right are valid.
+
+(a) If b = (k, w(k)) and c = (ℓ, w(ℓ)) are consecutive balls in a zig-zag of w and k < ℓ, then
+    there are no balls of w having larger value of d northwest of the cell (ℓ, w(k)).
+(b) If b is the northeast (resp. southwest) ball of one zig-zag and c is the northeast (resp.
+    southwest) ball of another zig-zag and d(b) < d(c), then c lies strictly south (resp. east)
+    of b.
+Proof. For part (a), suppose for contradiction that there is such a ball a. By continuity of d
+(possibly applied many times), there is a ball northwest of a with label d(b) = d(c) < d(a).
+Since b and c are given as consecutive balls in their zig-zag, this ball cannot be in the
+rectangle having b and c as vertices; however, by the monotonicity of d it also cannot be
+northwest of b or of c. But every cell northwest of (ℓ, w(k)) falls into one of these three sets;
+this is a contradiction, so no such a exists, as claimed.
+  For part (b), suppose that c is the northeast ball in its zig-zag and d(b) < d(c). By
+continuity of d, there is some ball b′ of w northwest of c such that d(b′ ) = d(b). The
+northeast ball in this zig-zag is at least as far north as b′ , hence is north of c, as claimed. 
+
+              3. Knuth moves, descents, and inverses under AMBC
+   The main result of this section is Theorem 3.11, which describes precisely how making
+a Knuth move to a permutation affects its image under AMBC. It was already shown in
+[CPY15, Lem. 12.3] that the P -tabloid does not change; we furthermore show that the Q-
+tabloid changes by a Knuth move and that ρ changes in a predictable way. This result is
+crucial to our analysis of the Kazhdan-Lusztig dual equivalence graph in Sections 7 and 8.
+   Theorem 3.11 is also interesting in that it provides evidence that AMBC is the “correct”
+analogue of the Robinson-Schensted correspondence, as it interacts in the appropriate ways
+with other combinatorial constructions. The first steps towards the proof also are of this
+form, showing that AMBC respects inverses and descent sets of permutations in the same
+way as the Robinson-Schensted correspondence.
+
+3.1. Inverses. In the finite case, it is a classical result of Schützenberger [Sch63] (or see
+[Sta99, Thm. 7.13.1]) that taking the inverse of a permutation w exchanges the insertion
+and recording tableaux in its image under the Robinson-Schensted correspondence. Here we
+show the analogous result for AMBC.
+                                                11
+Proposition 3.1. Suppose Φ(w) = (P, Q, ρ). Then Φ(w −1 ) = (Q, P, (−ρ)′ ), where (−ρ)′ is
+the dominant representative of −ρ in the fiber under Ψ(Q, P, −).
+Proof. Inverting a permutation reflects its matrix across the main diagonal; this switches
+rows for columns, switches “SW” for “NE,” and switches “E” for “S.” Moreover, given a
+stream, reflecting it in the main diagonal negates the altitude of the stream. Thus, when we
+apply each step of AMBC to the inverse permutation w −1 , using the NE channel numbering
+(instead of the usual SW channel numbering) at each step, we recover exactly the same steps
+as applying AMBC to w using the SW channel numbering, with the following adjustments:
+first, because the roles of rows and columns are switched, data recorded for w in the P -
+tabloid is recorded for w −1 in the Q-tabloid and vice-versa; and second, because altitudes
+of streams are negated, each entry of ρ(w −1 ) is the negation of the corresponding entry in
+ρ(w). It follows from a strong form of the inverse relationship between Φ and Ψ [CPY15,
+Prop. 5.2] that Ψ(Q, P, −ρ) = w −1 . Finally, we have by [CPY15, Thm. 6.3] that Φ(w −1 ) =
+Φ(Ψ(Q, P, −ρ)) = (Q, P, (−ρ)′ ) where (−ρ)′ is the dominant representative of −ρ.          
+Remark 3.2. It is not obvious from the definition of dominance that applying the operation
+(P, Q, ρ) 7→ (Q, P, (−ρ)′ ) twice returns the original triple (as it must do, since (w −1 )−1 = w):
+the operation “take the dominant representative” depends on P and Q in a nontrivial way.
+This oddity is explained in Section 5, following the description of the offset constants in
+Theorem 5.10.
+3.2. Descent sets and the τ -invariant. In the finite case, the descent set (appropriately
+defined) of the Q-tableau of w is equal to the (right) descent set of w (i.e., the set of integers
+i such that w(i) > w(i + 1)), and the descent set of the P -tableau is the descent set of w −1
+[Sta99, Lem. 7.23.1]. Here we show the analogous result for affine permutations and AMBC.
+Definition 3.3. For a partial permutation w, the right descent set R(w) of w is defined by
+                               R(w) = {i ∈ [n] : w(i) > w(i + 1)}.
+Similarly, the left descent set L(w) is defined by
+                             L(w) = {i ∈ [n] : w −1(i) > w −1 (i + 1)}.
+   So i is in R(w) (resp. L(w)) precisely when the ball in the (i + 1)-st row (resp. column)
+is west (resp. north) of the ball in the i-th row (resp. column). These definitions agree with
+the usual notions from Coxeter theory.
+   We call the analogue of the descent set for tabloids the τ -invariant, in reference to Vogan’s
+(generalized) τ -invariant [Vog79].
+Definition 3.4. For a tabloid T filled with all the elements of [n], define the τ -invariant by
+               τ (T ) := {i ∈ [n] : i lies in a strictly higher row of T than i + 1}.
+Example 3.5. The tabloid
+                                               2 9 5
+                                          T := 8 7 6
+                                               3 1
+                                               4
+has τ (T ) = {2, 3, 5, 9}.
+                                                 12
+Proposition 3.6. For any permutation w, L(w) = τ (P (w)) and R(w) = τ (Q(w)).
+Proof. It is sufficient to show L(w) = τ (P (w)); the other statement follows from Proposi-
+tion 3.1.
+   First, suppose i ∈ L(w), so that the ball b in the i-th column is south of the ball c in the
+(i + 1)-st column. It follows that every ball strictly northwest of c is also northwest of b,
+and so by the continuity and monotonicity of the southwest channel numbering d we have
+d(c) ⩽ d(b).
+   Consider the application of a single forward step of AMBC to w. The numbering d
+induces a set of zig-zags. Since b is west of c, we have by Proposition 2.17(b) that c is not
+the southwest ball in its zig-zag, and so there is a ball of fw(w) in the (i + 1)-st column;
+moreover, by Proposition 2.17(a) this ball is north of b. Either b is the southwest ball of its
+zig-zag, or not. In the first case, i appears in the first row of P (w) while i + 1 appears in a
+lower row. In the second case, neither i nor i + 1 appears in the first row of P (w), and the
+ball in the i-th column of fw(w) is south of the ball in the (i + 1)-st column; thus we can
+repeat the argument until we end up in the first case.
+   Conversely, if i ∈
+                    / L(w) then the ball b in the i-th column is north of the ball c in the (i+1)-
+st column. In this case d(b) < d(c) by monotonicity. If c is the southwest ball of its zig-zag
+then i + 1 appears in the first row of P (w); thus i ∈ / τ (P (w)), as claimed. Alternatively, c is
+not the southwest ball of its zig-zag. Then the ball c′ southwest of c in its zig-zag is west of
+b, and by Proposition 2.17(b) b is not the southwest ball of its zig-zag. Moreover, it follows
+from Proposition 2.17(a) that the ball of fw(w) in the i-th column must be north of the ball
+in the (i + 1)-st column. Thus we can repeat the argument to see that i + 1 cannot lie in a
+lower row of P (w) than i, as claimed.                                                           
+3.3. Knuth moves. Graphs whose vertices are combinatorial objects such as permutations
+or tableaux and whose edges are analogues of Knuth moves occur frequently in the study
+of the symmetric group – see, for example, [HRT15, Ass15, BF17]. In the affine setting, we
+deal with two kinds of such graphs, one on the set of permutations and one on the set of
+tabloids.
+3.3.1. Knuth moves for permutations and tabloids. In the finite setting, Knuth moves are
+certain elementary operations on finite permutations, interchanging adjacent entries if one
+of the neighboring entries is numerically between them – see [Sta99, Ch. 7 App. 1]. The
+definition of Knuth moves in the affine case is extremely similar.
+Definition 3.7. Let i ∈ Z. Two partial permutations w and w ′ are connected by a Knuth
+move at position i if all of the following hold:
+    • for all j such that j ≡ i (mod n), we have w ′(j) = w(j + 1) and w ′ (j + 1) = w(j);
+    • for all j such that j 6≡ i (mod n), j 6≡ i + 1 (mod n), we have w ′ (j) = w(j); and
+    • at least one of w(i + 2) and w(i − 1) is numerically between w(i) and w(i + 1).
+  For example, the permutation w = [3, 1, 2] is connected by a Knuth move to [1, 3, 2]
+(because w(3) = 2 has value between w(1) = 3 and w(2) = 1) and to [−1, 1, 6] (because
+w(2) = 1 has value between w(0) = −1 and w(1) = 3) but not to [3, 2, 1] (because neither
+w(1) = 3 nor w(4) = 6 have value between w(2) = 1 and w(3) = 2).
+  We call the translation class of the ball (i + 2, w(i + 2)) or (i − 1, w(i − 1)) mentioned in
+the last part of the definition a witness to the Knuth move.
+                                                13
+   An alternative way to describe the condition when exchanging the i-th and (i + 1)-st
+entries of a finite permutation constitutes a Knuth move is via the right descent set. It is
+not difficult to see that the condition on the witness precisely means that the right descent
+sets of of the two permutations are incomparable under the containment partial ordering.
+Similarly, we can give an alternate condition in the affine case.
+
+Proposition 3.8. Suppose w is a partial permutation such that w(i), w(i+1), and w(i+2) are
+defined, and precisely one of i and i + 1 is in R(w). Then there exists a unique permutation
+w ′ connected to w by a Knuth move whose right descent set contains precisely the other of i
+and i + 1.
+
+Proof. If exactly one of i, i + 1 belongs to R(w) then w(i + 1) is either the largest or smallest
+of w(i), w(i + 1), w(i + 2), and so one of w(i), w(i + 2) lies numerically between w(i + 1) and
+the other. Thus a Knuth move that switches w(i + 1) with one of w(i), w(i + 2) is possible,
+witnessed by the other of w(i), w(i + 2). It is straightforward to verify that this has the
+desired effect on the descent set R, and that no other Knuth move can have this effect. 
+
+  In the finite case, Knuth moves preserve the Robinson-Schensted insertion tableau and
+induce transpositions of entries (which are also called Knuth moves) in the recording tableau.
+We give the corresponding definition of Knuth moves on tabloids.
+
+Definition 3.9. Two tabloids T and T ′ are connected by a Knuth move if T ′ is obtained from
+T by exchanging i and i + 1 and τ (T ) and τ (T ′ ) are incomparable with respect to inclusion.
+
+Example 3.10. The tabloid
+                                                2 1 5
+                                         T ′ := 8 7 6
+                                                3 9
+                                                4
+is connected by a Knuth move to the tabloid T from Example 3.5: it is obtained by ex-
+changing 9 and 10 = 1, and τ (T ′ ) = {2, 3, 5, 8} is not contained in and does not contain
+τ (T ) = {2, 3, 5, 9}.
+
+3.3.2. Knuth moves and AMBC. In this section we describe how a Knuth move on permu-
+tations looks after taking images under AMBC.
+
+Theorem 3.11. Suppose w is a partial permutation and w ′ differs from w by a Knuth move.
+Then P (w) = P (w ′) and Q(w ′ ) differs from Q(w) by a Knuth move. Moreover, if the Knuth
+move on the Q-tabloids exchanges i and i + 1 for some i 6= n then ρ(w) = ρ(w ′); if instead
+i = n is in row k of Q(w) while i + 1 = 1 is in row k ′ , then ρ(w ′ ) differs from ρ(w) by
+subtracting 1 from row k and adding 1 to row k ′ .
+
+Example 3.12. Consider the permutation w = [1, 4, 6, 2, 5, 3]; under AMBC it corresponds to
+                                                            
+                                      1 2 3                 0
+                                                           
+                                P =Q= 4 5   ,         ρ = 0 .
+                                      6                     0
+                                               14
+              *
+                                                       *
+                                                           *
+
+
+
+                                                                           *
+                           *
+                                                                               *
+                                                                                   *
+
+
+
+
+                                           *
+
+
+       Figure 8. Streams for the permutation w = [1, 4, 6, 2, 5, 3] (+’s) and its image
+       [−3, 4, 6, 2, 5, 7] (∗’s) under a Knuth move; see Remark 3.14. On the left, the
+       streams S, S ′ encoded by the third row of the images under AMBC. On the
+       right, the streams T, T ′ encoded by the first row.
+
+Since w(4) < w(2) < w(3), we can apply a Knuth move at position 3.                     This yields
+[1, 4, 2, 6, 5, 3], which corresponds under AMBC to the triple
+                                                                    
+                             1 2 3              1 2 4                  0
+                                                                    
+                         P = 4 5   ,       Q′ = 3 5   ,        ρ = 0 .
+                             6                  6                      0
+Example 3.13. Again consider w = [1, 4, 6, 2, 5, 3]. Since w(6) < w(5) < w(7) = 7, we can
+apply a Knuth move to w at position 6. This yields [−3, 4, 6, 2, 5, 7], which corresponds under
+AMBC to the triple
+                                                                              
+                            1 2 3              6 2 3                  1
+                        P = 4 5   ,      Q′′ = 4 5   ,         ρ′ =     
+                                                                     0 .
+                            6                  1                      −1
+Remark 3.14. The condition on how the weight changes may be formulated in terms of the
+streams encoded by the rows. Suppose that Q and Q′ differ by a Knuth move exchanging i
+and i + 1, that i is in row k of Q, and that and i + 1 is in row k ′ of Q. Suppose ρ′ differs
+from ρ as described in the theorem. Then the stream S ′ represented by row k of (P, Q′ , ρ′ )
+differs from the stream S represented by row k of (P, Q, ρ) by shifting the elements with row
+indices in i south by one cell, and similarly the stream T ′ encoded by row k ′ of (P, Q′ , ρ′ )
+differs from the stream T represented by row k ′ of (P, Q, ρ) by shifting the elements with
+row indices in i + 1 north by one cell.
+   For example, with w as in Example 3.13, the streams S and S ′ (shown on the left of
+Figure 8) are encoded by the third row of the triples, while the streams T and T ′ (shown on
+the right of the figure) are encoded by the first row of the triples. The stream S contains
+only one translation class of cells, in row n; to obtain the stream S ′ , one shifts each of those
+elements one cell south. The stream T contains three translation classes of cells; to obtain
+the stream T ′ , one shifts the elements in rows indexed by 1 one cell north.
+                                                15
+                                             w(k + 1)               w(k)
+
+
+
+                                              b′                    c
+                                   k
+                                 k+1
+                                              b                     c′
+
+
+
+       Figure 9. The positions of the balls in Section 3.3.3. At least one of the
+       dashed balls must be present as a witness for the Knuth move.
+
+3.3.3. The proof of Theorem 3.11. We fix some notation for the duration of this section. Let
+w be a partial permutation and let w ′ be the permutation obtained from it by a Knuth move,
+affecting balls in rows k and k + 1. Without loss of generality, assume w(k + 1) < w(k).
+Let b = (k + 1, w(k + 1)) ∈ Bw , c = (k, w(k)) ∈ Bw , b′ = (k, w(k + 1)) ∈ Bw′ , and
+c′ = (k + 1, w(k)) ∈ Bw′ . This situation is shown in Figure 9.
+   Let d be the southwest channel numbering of w. Since every ball strictly northwest of b is
+also northwest of c, we have by the properness of the numbering that d(c) ⩾ d(b). Define a
+semi-periodic numbering d′ of w ′ as follows: for a ∈ Bw′ ,
+                    d′ (a) = d(a)             if a is not a translate of b′ or c′ ,
+                    d′ (b′ ) = d(b),          and
+                                 
+                                 d(c)         if d(c) > d(b),
+                    d′ (c′ ) =
+                                 d(c) + 1     if d(c) = d(b),
+and extend the numbering to all other balls by semi-periodicity. In other words, to get from
+w to w ′, we shift b (together with its translates) one cell north and shift c one cell south;
+the numbering d′ is obtained by keeping the numbering of the balls being shifted, unless
+d(b) = d(c) (in which case keeping the numbering would yield a non-monotone numbering).
+As the next lemma shows, this adjustment results in a proper numbering.
+Definition 3.15. The proofs that follow are divided into cases. We denote by A (for after)
+the case when w(k + 2) is between w(k) and w(k + 1), and by B (for before) the case when
+w(k −1) is between w(k) and w(k +1). We denote by S (for same) the case when d(b) = d(c),
+and by D (for different) the case when d(c) > d(b).
+   A priori the preceding definition allows four sub-cases. However, the case BS is impossible
+when d is proper: using Proposition 2.17, one can show that for a witness a in the row before
+b and c, one must have d(b) ⩽ d(a) < d(c), and this contradicts d(b) = d(c).
+Lemma 3.16. The numbering d′ described above is proper.
+Proof. We must check the monotonicity and continuity of the function d′ . In case D, this
+is straightforward: no ball numbers change and no relation a ⩽SE a′ between two balls is
+destroyed, so d′ is continuous; and the only newly created relations in the SE order are
+translates of b′ >SE c′ , and these are compatible with monotonicity since d′ (b′ ) = d(b) <
+d(c) = d′ (c′ ).
+                                                    16
+   Suppose instead that we are in case AS. Let a = (k + 2, w(k + 2)). Every ball strictly
+northwest of a is strictly northwest of b, strictly northwest of c, or is b itself. Since d(b) = d(c),
+the largest label of such a ball is d(b), and thus d′ (a) = d(a) = d(b) + 1 = d′ (c′ ). Then to
+check continuity and monotonicity of d′ it suffices to observe that every ball southeast of c′
+in w ′ is also southeast of a.                                                                      
+Definition 3.17. We denote by f the natural bijection f : Bw → Bw′ that commutes with
+translation by (n, n), has f (b) = b′ and f (c) = c′ , and is the identity on balls that do not lie
+in rows congruent to k or k + 1 modulo n.
+Lemma 3.18. If C is the southwest channel of w then f (C) is a channel of w ′ that intersects
+the southwest channel of w ′ .
+Proof. Let C1 be any channel of w. For any two balls a, a′ in Bw such that a <SE a′ , one
+also has f (a) <SE f (a′ ). Thus C1′ := f (C1 ) forms a chain in the southeast ordering. By
+Lemma 3.16, the numbering d′ is proper, so by Proposition 2.4 w ′ has the same channel
+density as w. Since C1 has this density, C1′ does as well, and so C1′ is a channel for w ′ .
+          ′
+    Let CSW   be the southwest channel of w ′. By [CPY15, Prop. 3.13] and the surrounding
+                                            ′
+discussion, it follows that every ball of CSW  is weakly southwest of some ball in C1′ . Suppose
+furthermore that C1′ ∩ CSW ′
+                               = ∅, so that we may replace the word “weakly” in the preceding
+sentence with “strictly.” We will show that there is a channel of w that contains a ball strictly
+southwest of some ball of C1 .
+                         ′
+    Suppose first that CSW   contains at most one of b′ and c′ . Then f −1 (CSW
+                                                                             ′
+                                                                                ) is a channel of
+w. The map f is order-preserving for the order <SW , so in this case every ball of f −1 (CSW
+                −1                                                                           ′
+                                                                                                )
+                                              −1    ′
+is strictly southwest of some ball of C1 = f (C1 ), as desired.
+                             ′
+    Suppose instead that CSW     contains both b′ and c′ . Then C1′ contains neither, and so
+C1 = C1 . In case B, removing b′ and c′ from CSW
+  ′                                               ′
+                                                      and replacing them with (k − 1, w(k − 1))
+and c gives the desired channel of w. Similarly, in case A, removing b′ and c′ from CSW   ′
+                                                                                             and
+replacing them with b and (k + 2, w(k + 2)) gives the desired channel of w.
+    We now take the contrapositive: if C1 = C is the southwest channel of w then (again by
+[CPY15, Prop. 3.13]) there is no channel of w that contains a ball strictly southwest of some
+ball of C, and so C1′ = f (C) must have nonempty intersection with CSW    ′
+                                                                             , as claimed.     
+  Recall from Definition 2.5 that a path in a permutation w is a sequence of balls of w in
+which each ball is strictly northwest of the preceding one.
+Lemma 3.19. The numbering d′ is the southwest channel numbering of w ′ .
+Proof. Let C be the southwest channel of w. First, we show that for any x′ ∈ Bw′ , there is
+a path in Bw′ from x′ to f (C) along which d′ decreases by 1 at each step.
+   Fix x′ ∈ Bw′ and let x = f −1 (x′ ). By [CPY15, Rem. 11.7], there is a path p = (x0 =
+x, x1 , . . . , xk ) in w beginning at x and ending at xk ∈ C with d decreasing by 1 at each step.
+By [CPY15, Rem. 11.2], we may choose p so that it does not contain any pair of balls in the
+same translation class. Then p′ = (f (x0 ), . . . , f (xk )) is a path from x′ = f (x) to f (C) in w ′ .
+   In case D, we have d(xi ) = d′ (f (xi )) and so d′ decreases by 1 at each step of p′ , as desired.
+   In case AS, if p does not contain a translate of c then d′ (f (xi )) = d(xi ) and so d′ decreases
+by 1 at each step of p, as desired. Otherwise, we assume without loss of generality that c is
+part of p. In this case, c must be the first entry of p: if c = xi+1 were northwest of xi and
+d(c) + 1 = d(xi ), then c′ would be northwest of f (xi ) and d′ (c′ ) = d(c) + 1 = d(xi ); but this
+                                                  17
+                                   b′                    c
+
+
+
+                                   b                     c′
+                                              a
+
+       Figure 10. The case AD of the proof of Lemma 3.20 when c is not the
+       northeast ball of its zig-zag.
+
+contradicts the monotonicity of d′ (Lemma 3.16). Finally, we consider the possibility x′ = c′ .
+In this case, b′ is northwest of c′ and d′ (b′ ) = d′ (c′ ) − 1, and it follows from the preceding
+arguments in case AS that there is a path from b′ to f (C) with d′ decreasing by 1 at each
+step; prepending c′ to this path gives the desired one.
+   By [CPY15, Rem. 11.7], it follows that d′ is the channel numbering of w ′ with respect to
+f (C). Finally, since (by Lemma 3.18) f (C) intersects the southwest channel of w ′ , we have
+by [CPY15, Rmk. 11.7 & Lem. 3.15] that d′ is the southwest channel numbering of w ′ , as
+claimed.                                                                                        
+Lemma 3.20. Precisely one of the following holds:
+   • st(w) = st(w ′) and fw(w) differs from fw(w ′ ) by a Knuth move, or
+   • for some ℓ ∈ Z, st(w) differs from st(w ′ ) by raising or lowering the cells in rows ℓ
+     by one row, and fw(w) differs from fw(w ′ ) by respectively lowering the balls in rows
+     ℓ − 1 or raising those in rows ℓ + 1 by one row.
+Proof. We begin with some preliminaries before moving on to case-analysis. By Lemma 3.19,
+the numbering d′ is the southwest channel numbering of w ′ , so the stream st(w ′) and per-
+mutation fw(w ′ ) are computed in terms of this numbering. Thus, in all cases, we consider
+the balls of w and w ′ to be divided into zig-zags corresponding to the numberings d and d′ ,
+respectively. The position of every ball of fw(w) and every cell of st(w) is determined by
+two balls of w, and similarly for w ′ ; we call these the parents. Finally, since d(b) ⩽ d(c) and
+c is northeast of b, it follows from Proposition 2.17(b) that b is never the northeast ball in
+its zig-zag.
+   Case AD. Since we are in case D, for every x ∈ Bw , we have d(x) = d′ (f (x)). Therefore,
+if a zig-zag Z induced by d does not contain a translate of b or c, the same zig-zag (with the
+same inner-, outer-, and back-corner posts) is induced by d′ .
+   Let Zb be the zig-zag containing b induced by balls of w and let Zb′ be the zig-zag containing
+b induced by balls of w ′ . As noted above, b is not the northeast ball in Zb . Thus, the east
+ ′
+
+parents of the back-corner posts of Zb and Zb′ are the same, while their south parents are
+either the same (if b is not the southwest ball of Zb ) or lie in the same column; thus the
+back-corner posts are equal. Similarly, except the ball whose west parent is b, every ball of
+fw(w) in Zb has west parent unchanged by f and north parent whose column is unchanged
+by f ; thus, each of these balls is also a ball of fw(w ′ ). Finally, the balls of fw(w), fw(w ′ ) with
+west parents b, b′ have the same north parent, so any ball with row index in k + 1 in Bfw(w)
+moves up one cell to be a ball of Bfw(w′) .
+   Now consider the zig-zags Zc and Zc′ . Suppose first that c is not the northeast ball of its
+zig-zag. Then the same is true of c′ . As in the previous paragraph, in this case Zc and Zc′
+                                                  18
+have the same back-corner post, while any ball with row index in k in Bfw(w) moves down one
+cell to be a ball of Bfw(w′ ) . Therefore in this case st(w) = st(w ′ ) and the permutations fw(w)
+and fw(w ′ ) differ by moving the balls in rows k + 1 up into row k and moving the balls in
+rows k down into row k + 1, just as w and w ′ do (see Figure 10). It remains to show that
+this is a Knuth move. Let a = (k + 2, w(k + 2)) ∈ Bw be the witness for the Knuth move
+between w and w ′ . Aside from b, every ball northwest of a is also northwest of c; thus by
+continuity of d we have d(b) < d(a) while by monotonicity we have d(a) ⩽ d(c). Using this
+last inequality together with Proposition 2.17(b), a is not the northeast ball in its zig-zag.
+Then it follows from Proposition 2.17(a) that (fw(w))(k) < (fw(w))(k + 2) < (fw(w))(k + 1).
+Thus the ball in row k + 2 of fw(w) and fw(w ′ ) is a witness for the fact that fw(w) differs
+from fw(w ′ ) by a Knuth move in position k.
+   If instead c is the northeast ball of its zig-zag, then the outer-corner posts of Zc and Zc′
+are equal, so fw(w ′ ) differs from fw(w) by shifting the ball in row k + 1 north by one cell,
+while the back-corner post of Zc′ is in row k + 1 instead of row k, so st(w ′ ) is obtained from
+st(w) by shifting the element in row k south by one cell.
+   Case BD. This case is similar to AD; the difference arises when choosing a witness in the
+case that c is not the northeast ball in its zig-zag. Let a = (k − 1, w(k − 1))). In this case we
+have d(b) ⩽ d(a) < d(c). The ball northeast of c in its zig-zag is also north of a, so a must
+not be the northeast ball in its own zig-zag. This implies (fw(w))(k + 1) < (fw(w))(k − 1) <
+(fw(w))(k), and so there is a ball in row k − 1 of fw(w) and fw(w ′ ) that witnesses the claimed
+Knuth move.
+   Case AS. This case is more intricate because f affects parenthood in a nontrivial way.
+Let a be the ball (of both w and w ′) in row k + 2, which witnesses the Knuth move. It was
+shown in the proof of Lemma 3.16 that in this case d(a) = d(b) + 1 = d(c) + 1. We will now
+use this to show that fw(w) and fw(w ′) differ at most in rows k + 1 and k + 2.
+   Zig-zags that do not contain a, b, c or their translates are unaffected by the Knuth move.
+Thus, we may restrict our attention to the two pairs of affected zig-zags. The first pair
+consists of the zig-zags Zb,c , containing b and c induced by balls of w, and Zb′ , containing b′
+induced by balls of w ′ . These two zig-zags differ by removing two consecutive balls (k, w(k))
+and (k + 1, w(k + 1)) and replacing them with a single ball (k, w(k + 1)). This operation
+results in the deletion of the outer-corner post (k + 1, w(k)), while the back-corner post and
+every other outer-corner post stays the same.
+   The second pair consists of the zig-zags Za , containing a induced by balls of w, and Za,c′ ,
+containing a and c′ and induced by balls of w ′ . We have two cases to consider. If a is not
+the northeast ball in Za , suppose that the next ball northeast of a is (j, w(j)). Necessarily
+j < k. Thus c′ is not the northeast ball in Za,c′ , and the back-corner posts of Za,c′ and Za
+coincide. Therefore in this case st(w) = st(w ′). Moreover, inserting the new inner-corner
+post c′ between a and (j, w(j)) results in the deletion of their child at position (k + 2, w(j))
+and the creation of two new outer-corner posts at positions (k + 2, w(k)) and (k + 1, w(j)).
+Combining this we the previous paragraph, we have that fw(w ′ ) differs from fw(w) by moving
+the ball in row k + 1 south one cell into row k + 2 and moving the ball in row k + 2 north one
+cell into row k + 1. Finally, we must show that this is a Knuth move. Since (j, w(j)) ∈ Za ,
+we have by Proposition 2.17(b) that c is not the northeast ball in Zb,c , and so also b′ is not
+the northeast ball in Zb′ . Thus fw(w) and fw(w ′ ) contain some ball (k, y) in row k, and by
+
+                                                19
+Proposition 2.17(a) we have w(k) < y < w(j). Thus this ball is a witness to the fact that w
+and w ′ differ by a Knuth move in position k + 1.
+   Alternatively, suppose that a is the northeast ball in its zig-zag in Bw . By an analysis
+similar to the preceding one, we see that fw(w) r fw(w ′ ) consists of all translates of (k +
+1, w(k)), while fw(w ′ ) r fw(w) consists of all translates of (k + 2, w(k)), and that st(w) has
+an element in row k + 2 while in st(w ′ ) this element appears one cell north, in row k + 1.
+This is precisely the second situation in the proposition statement.                          
+  With these preliminary results in hand, we move to the proof of the main result of this
+section.
+Proof of Theorem 3.11. Fix a partial permutation w, related to the partial permutation w ′ by
+a Knuth move. Begin applying forward moves of AMBC to both w and w ′ . By Lemma 3.20,
+we may have for several forward steps that the streams of the two permutations remain
+equal while the resulting permutations differ by a Knuth move; thus, the corresponding rows
+of P (w), Q(w) and ρ(w) are respectively equal to those of P (w ′), Q(w ′ ) and ρ(w ′ ). Since
+w 6= w ′ and AMBC is a bijection, we must at some point reach a forward step where we fall
+into the second case of Lemma 3.20; without loss of generality, we may assume that this is
+the first step, and that for some ℓ ∈ Z, st(w) differs from st(w ′ ) by raising the elements in
+rows ℓ by one cell, and fw(w) differs from fw(w ′ ) by lowering the balls in rows ℓ − 1 by one
+cell (as in Example 3.12).
+   In this case, the first rows of P (w) and P (w ′) are equal, the first rows of Q(w) and Q(w ′ )
+differ by swapping ℓ − 1 with ℓ, and fw(w) differs from fw(w ′ ) by moving balls between rows
+ℓ − 1 and ℓ (leaving the other row empty). If ℓ 6= 1 then the elements of st(w) have the same
+block diagonals as the corresponding elements of st(w), and so in this case the first rows of
+ρ(w) and ρ(w ′ ) are equal. If instead ℓ = 1 then the element of the stream that moves also
+decreases its block diagonal by 1, and so the first rows of ρ(w) and ρ(w ′ ) differ by 1 in this
+case (as in Example 3.13).
+   It is straightforward to check from the definition of AMBC that if u and u′ are partial
+permutations such that u′ is obtained from u by shifting the the balls in rows ℓ − 1 down by
+one cell into an empty row, then P (u) = P (u′) and Q(u′ ) is obtained from Q(u) by replacing
+ℓ − 1 with ℓ. If ℓ 6= 1 then the corresponding streams of both permutations have the same
+altitudes and so ρ(u′ ) = ρ(u); if instead ℓ = 1 then at the forward step that places ℓ into
+Q(u′ ) and ℓ − 1 into Q(u), the stream coming from u′ has altitude one less than the stream
+coming from u.
+   Finally, it follows from the preceding discussion that P (w ′) = P (w), Q(w ′ ) differs from
+Q(w) be exchanging the two entries ℓ and ℓ − 1, and ρ(w ′ ) differs from ρ(w) as described in
+the theorem. The fact that the change from Q(w) to Q(w ′ ) is a Knuth move is a consequence
+of Proposition 3.6.                                                                           
+
+3.4. Covering. In this short section we prove that any Knuth move on tabloids can be
+realized as the change in Q-tabloids under a Knuth move on permutations.
+Definition 3.21. For a partition λ, the Kazhdan-Lusztig dual equivalence graph (KL DEG)
+Aλ of shape λ is the graph whose vertices are the tabloids of shape λ and whose edges are
+the Knuth moves. Say that a permutation w has shape λ if the tabloids in its image under
+AMBC are of shape λ.
+                                                20
+           3 4 5 6                                                                           1 4 5 6
+           2           1 3 4 5                                                  2 4 5 6      3
+              {6}                                                                               {1}
+           1           2                          1 2 4 5                       3            2
+                          {1, 5}                  3                                {2, 6}
+                       6                             {2, 5}                     1
+                                                  6
+                               1 2 4 6                                  1 2 3 5
+                               3                  1 2 3 6               4
+                                  {2, 4}                                   {3, 5}
+                               5                  4                     6
+                 1 3 4 6                             {3, 4}                           2 3 5 6
+                                                  5
+                 2                                                                    4
+                    {1, 4}                                                               {3, 6}
+                 5                         1 2 5 6          1 2 3 4                   1
+                                           3                5
+                                              {2, 3}           {4, 5}
+      2 3 4 5    2 3 4 6      1 3 5 6      4                6             2 3 4 6      1 3 5 6     1 2 5 6
+      1          1            2                                           5            4           4
+         {5}        {4, 6}       {1, 3}                                      {4, 6}       {1, 3}      {2}
+      6          5            4            1 4 5 6          2 3 4 5       1            2           3
+                                           2                6
+                                              {1, 2}           {5, 6}
+                 2 3 5 6                   3                1                         1 3 4 6
+                 1                                                                    5
+                    {3, 6}                        3 4 5 6                                {1, 4}
+                 4                                                                    2
+                               2 4 5 6            1                     1 3 4 5
+                                                     {1, 6}
+                               1                  2                     6
+                                  {2, 6}                                   {1, 5}
+                               3                                        2
+                                                  1 2 4 5
+                       1 2 3 5                    6                             1 2 4 6
+           1 2 3 4     6                             {2, 5}                     5            1 2 3 6
+                          {3, 5}                  3                                {2, 4}
+           6           4                                                        3            5
+              {4}                                                                               {3}
+           5                                                                                 4
+
+
+
+           Figure 11. The KL DEG Ah4,1,1i . The τ -invariants are shown in red.
+
+  The KL DEG Ah4,1,1i is shown in Figure 11.
+Lemma 3.22. Consider the graph on permutations of shape λ whose edges are Knuth moves.
+The map w 7→ Q(w) is a graph covering of Aλ .
+Proof. By Theorem 3.11, this map is a surjective graph morphism; we only need to check
+that it is an isomorphism around each vertex. Consider a permutation w. Suppose for some
+i, exactly one of i and i + 1 is in R(w). By Proposition 3.8, there exists a unique Knuth
+move to a permutation w ′ with exactly the other of i and i + 1 is in R(w ′ ). By considering
+the various possible relative locations of i − 1, i, i + 1, and i + 2, it is easy to show that the
+same is true for tabloids with respect to τ . Combined with the fact that R(w) = τ (Q(w))
+(Proposition 3.6), this finishes the proof.                                                     
+  In fact, the following stronger statement follows from the proof of Lemma 3.22.
+Proposition 3.23. If tabloids Q and Q′ are related by a Knuth move, then for any tabloid
+P and any weight ρ, the permutation w = Ψ(P, Q, ρ) is related by a Knuth move to a
+permutation w ′ with Q(w ′ ) = Q′ .
+
+                                                4. Signs
+  It is well known that recovering the length (i.e., number of inversions) of a finite per-
+mutation from its image under the Robinson-Schensted correspondence is hard. However,
+Reifegerste showed how to recover the sign of a permutation from its image [Rei04]. In this
+section, we prove an analogous result in the affine case.
+                                                       21
+  Reifegerste’s theorem statement requires two definitions. First, given a standard Young
+tableau T of size n, define the inversion number inv(T ) to be the number of pairs (i, j)
+such that i < j and i appears strictly below j in T . Second, given a partition λ, define its
+inversion number inv(λ) to be the sum λ2 + λ4 + . . . of its even-indexed parts.
+Theorem 4.1 (Reifegerste). Given a finite permutation w ∈ Sn , let (P, Q) be the pair of
+standard Young tableaux associated to w by the Robinson-Schensted correspondence, both
+having shape λ. The sign of w is given by
+                                   sgn(w) = (−1)inv(P )+inv(Q)+inv(λ) .
+  Define the length ℓ(w) of a permutation w in Sfn to be the number of inversions, that is,
+translation classes of pairs (a, b) of balls of w with a northeast of b. Define the sign sgn(w) of
+w to be (−1)ℓ(w) . If w belongs to the (non-extended) affine Weyl group Sen0 , these definitions
+agree with the usual Coxeter length and sign of w; moreover, they extend naturally to give
+the sign and the length of any partial permutation.
+  To state our generalization of Theorem 4.1, we need some additional definitions.
+Definition 4.2. There is a natural cyclic order on [n]. In this section it is convenient to
+“break” this order into a linear order, as follows:
+                                               1 < 2 < · · · < n.
+We refer to this total ordering as the broken order. (See Section 6 for more on this symmetry-
+breaking.)
+Definition 4.3. Given a tabloid T , define the inversion number inv(T ) to be the number
+of pairs (i, j) such that 1 ⩽ i < j ⩽ n in the broken order and i appears strictly below j in
+T . Given a shape λ and a weight ρ ∈ Zℓ(λ) , define the inversion number invλ (ρ) to be the
+sum of the entries of ρ that correspond to rows of λ of odd length. The inversion number
+inv(λ) of a partition continues to have the same meaning as above.
+Theorem 4.4. Given w ∈ Sfn , let (P, Q, ρ) be the triple associated to w by AMBC, with P
+and Q of shape λ. The sign of w is given by
+                                     Pn
+                                             (w(i)−i)
+(1)                  sgn(w) · (−1)     i=1              = (−1)inv(P )+inv(Q)+inv(λ)+invλ (ρ) .
+Remark 4.5. In the case that w belongs to the (non-extended) affine Weyl group Sen0 , we have
+    P
+that ni=1 (w(i) − i) = 0 and that sgn(w) agrees with the usual notion of sign in a Coxeter
+group. In this case, Theorem 4.4 becomes
+                             sgn(w) = (−1)inv(P )+inv(Q)+inv(λ)+invλ (ρ) .
+In the case that w belongs to the finite symmetric group Sn , we have that ρ is the all-zero
+vector, so invλ (ρ) = 0, and we recover Theorem 4.1.
+  The proof makes use of a variation of the following result from [CPY15]. Denote by ∼ the
+translation equivalence relation.
+Lemma 4.6. For a cell c = (c1 , c2 ), let D(c) denote the diagonal of c, i.e., D(c) = c2 − c1 .
+If w ∈ Sfn with Φ(w) = (P, Q, ρ), P and Q having shape λ, then
+                                                                                                       
+            n                                       ℓ(λ)                                      ℓ(λ)
+            X                     X                 X                X                            X
+                  (w(i) − i) =             D(b) =                                  D(c) = n          ρi  .
+            i=1                  b∈Bw /∼            i=1        c∈stρi (Pi ,Qi )/∼                 i=1
+                                                           22
+Proof. The first equality is the definition of D. The second equality is a repeated use of
+[CPY15, Lem. 10.3], as described in the paragraph following its proof. The third equality is
+[CPY15, Lem. 10.4].                                                                       
+
+  The same exact arguments can be applied to block diagonals (the reader may wish to
+recall the relevant definition from Section 2.2.3) to get the following result.
+
+Lemma 4.7. Suppose w ∈ Sfn and Φ(w) = (P, Q, ρ), where P and Q have shape λ. Then
+                                               ℓ(λ)                          ℓ(λ)
+                                               X                             X
+                                   D(w) =             D(stρi (Pi , Qi )) =          ρi .
+                                               i=1                           i=1
+
+That is, the sum of block diagonals of translate classes of balls of a permutation is equal
+to the sum of block diagonals of translate classes of cells of all the streams involved in the
+application of AMBC to the permutation.
+  We now give the proof of the main theorem of this section. The reader may wish to consult
+Example 4.8 below while reading the proof.
+
+Proof of Theorem 4.4. In order to make an argument by induction, we carefully track how
+the two sides of (1) change in the application of a single forward step of AMBC.
+   A monotone numbering of a partial permutation corresponds to a division of the balls into
+zig-zags. This also induces a division of the inversions of the partial permutation into two
+classes: those that occur between balls in the same zig-zag and those that occur between
+balls in different zig-zags. We give the corresponding counts names, as follows: for the partial
+permutation w with numbering d : Bw → Z and corresponding zig-zags {Zi }i∈Z , the internal
+inversion number is
+                                  X
+                int(w) :=               |{a, b ∈ Z ∩ Bw : a is strictly northeast of b}| ,
+                                  Z/∼
+
+a sum over translation classes of zig-zags, and the external inversion number is
+                       X
+         ext(w) :=                |{a ∈ Z ∩ Bw , b ∈ Z ′ ∩ Bw : a is strictly northeast of b}| ,
+                     (Z,Z ′ )/∼
+
+a sum over translation classes of pairs of zig-zags.
+    Fix a partial permutation w. The balls of w will be numbered by its southwest channel
+numbering d. Let w ′ = fw(w) be the partial permutation that results from a single forward
+step of AMBC. Let d′ be the numbering of balls of w ′ induced from this step, i.e., the balls
+of w ′ numbered i are precisely the ones contained in Zi . (This numbering is monotone by
+Proposition 2.17(a).) We count internal and external inversions of w relative to d, and of w ′
+relative to d′ .
+    First, we consider the internal inversions of w. Choose a zig-zag Z of w, and suppose
+it
+ includes k balls in Bw . Any pair of these balls forms an inversion. Thus Z contributes
+  k
+  2
+     internal inversions to w. Obviously Z includes exactly k − 1 balls in Bw′ , and so the
+                                                      
+number of inversions of w ′ in Z is k−1 2
+                                           . The difference between these two numbers is
+k − 1 = |Z ∩ Bw | − 1. Let λ be the shape of w. The number of translation classes of balls in
+                                                           23
+w is |λ| and the number of translation classes of zig-zags is λ1 , so
+                                                         !
+                                     X      |Z ∩ Bw |
+                         int(w) =
+                                     Z/∼
+                                               2
+                                                                                      !
+                                     X                             X     |Z ∩ Bw′ |
+                                 =         (|Z ∩ Bw | − 1) +
+                                     Z/∼                           Z/∼
+                                                                             2
+                                                               ′
+                                 = |λ| − λ1 + int(w )
+                                                 X
+(2)                              = int(w ′ ) +          λi .
+                                                 i>1
+
+  Next, we consider external inversions. For a pair of integers i < j, we partition the
+collection of inversions of w between the i-th and j-th zig-zags into four parts. Recall that,
+by definition, to say that (a, b) is an inversion is to say that a is strictly northeast of b, and
+recall also the notation a <SW b means that a is strictly southwest of b. Define
+           E1i,j = {(a, b) ∈ Bw2 : b <SW a, a ∈ Zi , b is the southwest ball of Zj },
+           E2i,j = {(a, b) ∈ Bw2 : b <SW a, a ∈ Zi , b is not the southwest ball of Zj },
+           E3i,j = {(b, a) ∈ Bw2 : a <SW b, a ∈ Zi , b is the northeast ball of Zj }, and
+           E4i,j = {(b, a) ∈ Bw2 : a <SW b, a ∈ Zi , b is not the northeast ball of Zj }.
+                                                 S
+Note that this really is a partition, in that 4k=1 Eki,j is the collection of all inversions between
+the i-th and j-th zig-zags and the Eki,j pairwise do not intersect.
+   Suppose that (b′ , a′ ) is an inversion of w ′ with a′ ∈ Zi, b′ ∈ Zj . Let a, b be the balls of w
+in the same rows as a′ , b′ , respectively, so a is directly west of a′ and b directly west of b′ .
+It follows from Proposition 2.17(a) that (b, a) is an inversion in w. Moreover, b is not the
+northeast ball of Zj , so (b, a) ∈ E4i,j . Conversely, it follows from Proposition 2.17 that every
+inversion (b, a) ∈ E4i,j arises from an inversion of w ′ in this way.
+   By the same argument, inversions (a′ , b′ ) of w ′ with a′ ∈ Zi , b′ ∈ Zj are in bijection with
+  i,j
+E2 . Thus the number of inversions of w ′ with one ball in Zi and the other one in Zj is
+ E4i,j + E2i,j . Summing this over all translation classes of pairs (Zi , Zj ) of zig-zags with i < j
+gives
+                               X                                       X                   
+(3)              ext(w ′ ) =        E4i,j + E2i,j       = ext(w) −            E1i,j + E3i,j       .
+We turn our attention to the summands in this last expression.
+   If a, b are balls of w and d(a) < d(b) then, by monotonicity of d, a cannot lie southeast
+of b. Consequently (a, b) is an inversion if and only if a lies to the east of b. When b is
+the southwest ball of its zig-zag Zj , a ball a lies to the east of b if and only if it lies to
+the east of the back-corner post cj of Zj . Thus, E1i,j is equal to the number of balls in
+Zi ∩ Bw lying strictly east of cj . Similarly, when b is the northeast ball of Zj , (b, a) is an
+inversion if and only if a lies to the south of b, and so E3i,j is equal to the number of balls
+of Zi ∩ Bw lying strictly south of cj . Also note that Zi has no balls which share a row or a
+column with cj (since i 6= j). Combining the above observations, we have that E1i,j + E3i,j
+is congruent modulo 2 to the number of balls of Zi ∩ Bw that lie either strictly northeast or
+strictly southwest of cj .
+                                                        24
+          0     1      1
+
+         −1     * cj 0                  0
+         −1     0      0                                        *
+                                                                                            b
+
+
+       Figure 12. The de-                           Figure 13. Counting translates of b ly-
+       pendence of fix(b, j) on                     ing northeast of cj when D(b)−D(cj ) = 1
+       the congruence classes                       (solid), D(b) − D(cj ) = 2 (dashed), and
+       of rows and columns of                       D(b) − D(cj ) = 3 (dotted).
+       b relative to cj .
+
+
+   Now we sum this expression over all translation classes of pairs (Zi , Zj ) with i < j. We
+choose as representatives the pairs i < j such that 1 ⩽ j ⩽ m, where m is the number
+of translation classes of zig-zags (i.e., the number appearing in Proposition 2.4). By the
+                       X
+preceding paragraph,         E1i,j + E3i,j is congruent modulo 2 to the number of pairs (j, b)
+such that 1 ⩽ j ⩽ m, b ∈ Bw , d(b) < j, and b is either strictly northeast or strictly southwest
+of cj . By Proposition 2.17(b), if i ⩾ j then Zi contains no balls either strictly northeast or
+strictly southwest of cj . Hence we may drop the condition d(b) < j and, using the notation
+≡ for congruence modulo 2, conclude that
+              X                    
+                    E1i,j + E3i,j       ≡ |{(j, b) ∈ [m] × Bw : b <SW cj or b >SW cj }| .
+
+  Now fix j and a ball b = (b1 , b2 ) of w. Let the coordinates of cj be given by cj = (cj,1 , cj,2).
+We claim that the number of translates of b that lie either strictly northeast or strictly
+southwest of cj is equal to |D(b) − D(cj ) + fix(b, j)|, where
+                                                                           
+                                    1        if b1 < cj,1  1 if b2 < cj,2 
+(4)                   fix(b, j) :=                         −
+                                    0        if b1 ⩾ cj,1    0 if b2 ⩾ cj,2
+
+
+and the inequalities between equivalence classes are in the broken order. (This is illustrated
+in Figure 12: the coordinates of b and cj are reduced modulo n so that they lie in the same
+n × n square, and then the value of fix(b, j) is determined by the relative positions of the
+two.) Since each of row and column congruence class of b can be either smaller, equal, or
+greater than the corresponding class for cj , in principle there are nine cases of this claim to
+consider. The cases are very similar, so we only discuss two of them in detail.
+   First, consider the case when b1 > cj,1 and b2 > cj,2 in broken order. Without loss of
+generality, assume that D(b) ⩾ D(cj ), so that translates of b can be northeast but not
+southwest of cj (see Figure 13 for examples with D(b) − D(cj ) being 1, 2, and 3). The
+translate b + k(n, n) is northeast of cj if and only if cj,1 > b1 + kn and cj,2 < b2 + kn (where
+now we are comparing integers, not residue classes). Thus, the number of translates of b
+                                                     25
+northeast of cj is equal to the number of integer solutions k to the inequalities
+                                           cj,1 − b1     cj,2 − b2
+                                                     >k>           .
+                                               n             n
+Since b1 > cj,1, the largest integer smaller than (cj,1 − b1 )/n is ⌈cj,1/n⌉ − ⌈b1 /n⌉ − 1, while
+since b2 > cj,2 the smallest integer larger than (cj,2 − b2 )/n is ⌈cj,2/n⌉ − ⌈b2 /n⌉; thus, the
+displayed inequalities are equivalent to
+                                            &       '                                 &       '
+                                 cj,1   b1        cj,2   b2
+                                      −    −1⩾k ⩾      −    .
+                                  n     n          n     n
+The number of solutions k is
+              &   '   !                           &     '!
+          cj,1   b1                   cj,2   b2
+               −    −1 −                   −                     + 1 = D(b) − D(cj ) = |D(b) − D(cj ) + 0| .
+           n     n                     n     n
+Finally, in this case fix(b, cj ) = 0, as needed.
+  Second, consider the case that b1 < cj,1 in broken order and b2 = cj,2 . Since b2 = cj,2 , the
+ball b is a translate of the ball in the same column as cj . By the definition of AMBC, this
+ball lies directly south of cj , so necessarily D(b) < D(cj ) and we seek translates of b that
+are strictly southwest of cj . By the same analysis as in the previous case, these translates
+correspond to integer solutions of
+                                 cj,1 − b1        cj,2 − b2
+                                           <k<              .
+                                     n                n
+By the hypotheses on the relative values of the bi and cj,i, this is equivalent to
+                                        &       '                                 &       '
+                             cj,1   b1        cj,2   b2
+                                  −    +1⩽k ⩽      −    − 1.
+                              n     n          n     n
+Thus in this case the number of solutions is D(cj ) − D(b) − 1 = |D(b) − D(cj ) + 1|. Since
+fix(b, cj ) = 1, this gives the desired result.
+   The other seven cases are extremely similar to these two.
+   We now plug the claim in to (3). Since |x| ≡ x ≡ −x, we can drop absolute values and
+extra negative signs to get
+                                      X           m
+                                                  X
+     ext(w) − ext(fw(w)) ≡                                |D(b) − D(cj ) + fix(b, j)|
+                                 b∈(Bw /∼) j=1
+                                                                                                                               
+                                              X                           m
+                                                                          X                           X           m
+                                                                                                                  X
+                             = λ1 ·                       D(b) + |λ| ·            D(cj ) +                             fix(b, j) .
+                                          b∈(Bw /∼)                       j=1                     b∈(Bw /∼)       j=1
+                                                               P
+   By Lemma 4.7, the first sum is equal to i ρi . The second sum is the definition of the
+altitude of st(w), and so is equal to ρ1 . For the third sum, we break it into two pieces
+as in (4), one involving the row indices and one involving the column indices. The sum
+involving the row indices is equal to the number of pairs of a ball b and a stream cell cj such
+that b1 < cj,1. Note that the numbers cj,1 constitute the first row of Q, while the other rows
+of balls will necessarily appear in the lower rows of Q. Thus the desired number of pairs
+is precisely equal to inv1 (Q), where invi (T ) is the number of inversions of a tabloid T such
+                                                                 26
+that the top row involved is row i. The same analysis applies to the other piece, and so the
+last sum in the previous displayed equation simplifies to inv1 (Q) − inv1 (P ). Therefore
+                                                                              X
+                ext(w) − ext(fw(w)) ≡ |λ| ρ1 + λ1                                   ρi + inv1 (Q) + inv1 (P ).
+                                                                              i⩾1
+
+Combining this with (2) yields
+                                               X                  X
+(5)           ℓ(w) − ℓ(fw(w)) ≡                      λi + λ1            ρi + |λ| ρ1 + inv1 (Q) + inv1 (P ).
+                                               i>1                i⩾1
+
+   Now suppose w ∈ Sfn . The congruence (5) holds at each step of AMBC, with appropriate
+adjustments to the indexing (i.e., the first row of P (fw(w)) should be numbered 2, not 1);
+after the last step of AMBC, we are left with the empty permutation, which has 0 inversions.
+Thus
+  P
+       the sum
+             P
+                 of the left side of (5) over all the steps gives ℓ(w). By Lemma 4.6, we have
+n i⩾1 ρi = ni=1 (w(i) − i), and so
+                                                                                                         
+                       ℓ(λ)
+                       X          X                  X                  X
+             ℓ(w) ≡                    λi + λj            ρi + ρj            λi + invj (Q) + invj (P )
+                       j=1        i>j                i⩾j                i⩾j
+                                                                                           
+                       ℓ(λ)                        ℓ(λ)
+                       X                           X             X                  X
+                   =          (i − 1)λi +                  λj         ρi + ρj            λi  + inv(Q) + inv(P )
+                       i=1                         j=1           i⩾j                i⩾j
+                                                                             
+                                        ℓ(λ)
+                                        X                          X
+                   ≡ inv(λ) +                  λj ρj + λj               ρi  + inv(Q) + inv(P )
+                                        j=1                        i⩾1
+                                        ℓ(λ)
+                                        X                     X
+                   = inv(λ) +                  λj ρj + n            ρi + inv(Q) + inv(P )
+                                        j=1                   i⩾1
+                                                           n
+                                                           X
+                   ≡ inv(λ) + invλ (ρ) +                         (w(i) − i) + inv(Q) + inv(P ).
+                                                           i=1
+Raising −1 to the power of each side yields the desired result.                                                     
+Example 4.8. The permutation w = [7, 2, 4, 1] in S       f is shown in Figure 14. For readability,
+                                                          4
+we label inversions using only the column index, so that the seven inversions of w are (7, 2),
+(7, 4), (7, 1), (7, 6), (7, 5), (2, 1), and (4, 1). Under AMBC, w corresponds to the triple
+                                                                                                 
+                                  1 4              1 3             0
+                                                                   
+                            P = 2      ,      Q= 2      ,    ρ =  0 ,
+                                  3                4               1
+having inv(P ) = 2, inv(Q) = 1, inv(λ) = 1, and invλ (ρ) = 1. Thus in this case, Theorem 4.4
+asserts that (−1)7 · (−1)4 = (−1)5 . Of the seven inversions, (7, 2), (7, 1), and (2, 1) are
+internal, while w ′ = fw(w) has a single internal inversion (7, 2); the difference 3 − 1 is equal
+to |λ| − λ1 = 2. The four external inversions of w are partitioned as follows: E11,2 = {(7, 4)},
+E21,3 = {(7, 6)}, E11,3 = {(7, 5)}, and E31,2 = {(4, 1)}. The inversion (7, 6) corresponds to the
+unique external inversion (7, 6) in w ′ . Finally, we note that fix(b, j) = 0 except for the case
+b = (4, 1) and j = 2 (with c2 = (3, 4)).
+Remark 4.9. Reifegerste proves Theorem 4.1 by induction, using a result of Beissinger [Bei87]
+to show that it holds for an element in each Knuth equivalence class and then proving that
+                                                                    27
+                              *                           1
+                                  1
+
+                                       *2
+                              1
+
+                                            *                       3
+                                                 3
+
+                                                              *4
+                                            3
+
+
+
+      Figure 14. One forward step of AMBC, starting with the permutation [7, 2, 4, 1].
+
+its validity is preserved under Knuth moves. The second half of this argument (the inductive
+step) is straightforward using Theorem 3.11; however, it is not clear what Knuth class
+representatives could play the role of Beissinger and Reifegerste’s involutions for the base
+case.
+
+                                            5. Charge
+   The purpose of this section is to introduce a statistic on tabloids we call local charge.
+Charge (originally defined in [LS79]; see also [Man01] for an exposition) is a classical statistic
+for tableaux, which generalizes naturally to tabloids. What is most useful to us is a “local”
+version that depends on a pair of adjacent rows, rather than the entire tabloid, and in this
+section we only define it in this context. This statistic arises in two ways in our theory. First,
+the instance we deal with in this section, is that it plays a crucial role in understanding the
+offset constants the the definition of dominance (see Proposition 3.1 and Remark 3.2). This
+is captured in Theorem 5.10, the main result of this section. Second, as will be described in
+Section 8, it appears in the description of the connected components of the KL DEG Aλ .
+
+5.1. Definitions and basic properties.
+Definition 5.1. Suppose T is a tabloid of shape hm, mi. An activation ordering for T is a
+bijection o : [m] → T1 ( [n]. We think of activation orderings as linear orderings of the entries
+of the top row of T . The standard activation ordering is the activation ordering in which
+the entries of the top row are arranged to increase in the broken order (see Definition 4.2).
+  Whenever an activation ordering is needed but not specified, we assume that the standard
+activation ordering is used.
+Definition 5.2. Suppose T is a tabloid whose k-th and (k + 1)-st rows have the same size
+m, and o is an activation ordering for Tk,k+1 (the tabloid consisting of the k-th and (k + 1)-st
+rows of T ). Then the charge matching between rows k and k + 1 of T with ordering o is the
+matching of entries in row k with entries in row k + 1 defined as follows. Suppose
+                                                 a1 a2 . . .am
+(6)                                   Tk,k+1 =                  ,
+                                                 b1 b2 . . . bm
+                                                     28
+where ai = o(i) for all i. For i = 1, 2, . . . , m, match ai with the smallest (in broken order)
+unmatched bj such that bj > ai , if such a bj exists; otherwise, match ai to the smallest
+unmatched bj .
+Definition 5.3. Suppose T is a tabloid whose k-th and (k + 1)-st rows have the same size
+m, and o is an activation ordering of Tk,k+1. The local charge in row k of T , denoted lchok (T ),
+is the number of elements a of the k-th row of T such that a is matched to b and a > b. We
+may say that such an entry a (or the corresponding b, or the pair (a, b)) contributes to the
+charge. If o is the standard ordering, we omit o from the notation and write lchk (T ).
+Example 5.4. Consider the tabloid
+                                             2 4 6 10
+                                       T = 3 7 8        .
+                                             1 5 9
+The local charge lch1 (T ) is not defined since the first and second rows of T have different
+lengths. With the standard activation ordering, the charge matching between the second
+and third rows is 3 ↔ 5, 7 ↔ 9, 8 ↔ 1. The only pair that contributes to charge is (8, 1), so
+lch2 (T ) = 1.
+   Suppose now we use non-standard activation ordering between the second and third rows,
+say, o(1) = 8, o(2) = 7, o(3) = 3. Then the charge matching is 8 ↔ 9, 7 ↔ 1, 3 ↔ 5. For
+this o, the only pair that contributes to the charge is (7, 1), and so lcho2 (T ) = 1.
+  We now show that the coincidence in the example above is not an accident: local charge
+does not depend on the choice of activation ordering.
+Lemma 5.5. Suppose T is a tabloid whose k-th and (k + 1)-st rows have the same size m.
+Then lchok (T ) = lchk (T ) for every activation ordering o.
+Proof. Suppose Tk,k+1 is as in (6) with o(i) = ai for 1 ⩽ i ⩽ m. Since any permutation is a
+                                                                                     ′
+product of adjacent transpositions, it is sufficient to prove that lchok (T ) = lchok (T ), where o′
+is the ordering defined by
+                         o′ (j) = aj+1,
+                     o′ (j + 1) = aj ,                      and
+                           ′
+                          o (i) = ai                        if i 6= j or j + 1.
+Furthermore, with this choice, the entries a1 , . . . , aj−1 match to the same elements of the
+second row in the charge matchings with orderings o, o′ . Thus, we may as well remove these
+j − 1 entries from both the first and second rows, and consider the case j = 1. As a final
+simplification, we may assume that a1 < a2 : if not, switch the roles of o and o′ .
+  Let bi1 and bi2 be the elements of the second row with which a1 and a2 match in the charge
+matching with ordering o. We seek to show that in the charge matching with ordering o′ ,
+a1 and a2 still match (in some order) to bi1 and bi2 in a way that preserves the number of
+contributing pairs.
+  A priori, there are 12 possible orders for the four values a1 , a2 , bi1 , bi2 in broken order;
+however, six of these are incompatible with the fact that a1 matches to bi1 in the matching
+with ordering o. This leaves six cases to check; we present the two most complicated here,
+and leave the other four to the reader.
+                                                 29
+   Suppose a1 < bi1 < bi2 < a2 . Since a2 matches to bi2 in the matching with ordering o,
+there are no values in Tk+1 larger than a2 , and the only value in Tk+1 smaller than bi2 is bi1 .
+It follows that in the matching with ordering o′ , a2 matches to bi1 and a1 matches to bi2 .
+Then a1 does not contribute to charge in either matching and a2 contributes to the charge
+in both matchings.
+   Suppose bi2 < a1 < a2 < bi1 . Since a1 matches to bi1 in the matching with ordering o, bi1 is
+the smallest value in Tk+1 larger than a1 , and hence is the smallest value in Tk+1 larger than
+a2 . Moreover, since a2 matches to bi2 , there can be no other values in Tk+1 larger than a2 ,
+and therefore none larger than a1 ; and bi2 is the smallest value in Tk+1 . Thus in the charge
+matching with ordering o′ , a2 matches to bi1 and a1 matches to bi2 . Thus bi2 contributes to
+the charge in both matchings, while bi1 does not contribute to the charge in either.
+   Since the same two elements in the second row are paired to {a1 , a2 } in the matchings
+corresponding to o and o′ , it follows that all pairs involving ai for i > 2 are also the same in
+both matchings. Thus the two local charges are equal, as claimed.                              
+5.2. A formula for the offset constants. Recall the discussion of the offset constants
+in Section 2.2. The goal of this section is to give a formula for these constants in terms of
+local charge. Before we can do that, we need to precisely define the constants. We use the
+following convention: whenever we have a stream S and a proper numbering of its cells, we
+let S (i) denote the cell numbered i.
+Proposition-Definition 5.6. Suppose S and T are streams of the same density m such
+that no cell of S shares a row or a column with a cell of T , and S is properly numbered.
+Then there is a unique proper numbering of T with the following properties:
+   (1) for all i, S (i) is northwest of T (i) , and
+   (2) for some j, S (j+1) is not northwest of T (j) .
+This numbering is called the backward numbering of T with respect to S.
+Proof. A different definition of the backward numbering is given in [CPY15]; the proof
+proceeds by showing they are equivalent. The proof may be skipped without harming un-
+derstanding of the rest of this section.
+   Let d be the backward numbering of T constructed in [CPY15, §4.1]. By construction, d
+is monotone and it satisfies point (1). As described in [CPY15, Rem. 13.3], it also satisfies
+point (2). Thus such numberings exist. Let d′ be any numbering satisfying (1) and (2). By
+[CPY15, Rem. 13.1], d′ (x) ⩽ d(x) for every x ∈ T . Since d′ satisfies (2), it must coincide with
+d on at least one translation class of cells. However, [CPY15, Prop. 13.2] states that d is, in
+fact, proper (i.e., T is numbered by consecutive integers). Thus any monotone numbering
+that coincides with it on a translate class must coincide with it everywhere, so d′ = d.       
+  Condition (2) in the definition of the backward numbering may be met in two different
+ways: T (j) might be either north or west of S (j+1) . The situation when both occur simulta-
+neously is special.
+Definition 5.7 ([CPY15, Def. 5.4]). Suppose S and T are streams of the same density
+m, and no cell of S shares a row or a column with a cell of T . Number S with a proper
+numbering and number T with the backward numbering with respect to S. Then T is said
+to be concurrent to S if there exist i and j (possibly equal) such that T (i) is north of S (i+1)
+and T (j) is west of S (j+1) .
+                                               30
+         a1 a2 a3         ···         aℓ aℓ+1 · · · am             a1 a2 a3       ···         aℓ aℓ+1   · · · am
+                                ···                                                     ···
+
+         b1   b2   b3 · · · bi3 · · ·     biℓ · · · bm                 b2   b3 · · · bi3 · · · biℓ · · · bm b′
+
+       Figure 15. A figure illustrating the proof of Lemma 5.11. The red lines
+       represent inequalities between an element aj of A and a larger element B
+       (left) or B ′ (right). In this example, i1 = 1 and i2 = 2, while i3 > 3.
+
+Proposition 5.8 ([CPY15, Prop. 5.6]). Suppose A, B, A′ , B ′ are equinumerous subsets of
+[n] with A ∩ A′ = B ∩ B ′ = ∅. Then there exists a unique integer r such that str (A′ , B ′ ) is
+concurrent to st0 (A, B).
+Definition 5.9 ([CPY15, Def. 5.8]). Suppose P and Q are tabloids of the same shape λ,
+and that λi = λi+1 . The dominance constant ri+1 (P, Q) is the unique integer r such that
+str (Pi+1 , Qi+1 ) is concurrent to st0 (Pi , Qi ). The weight ρ is dominant for P, Q if and only if
+                                                ρi+1 ⩾ ρi + ri+1 (P, Q)
+for every i such that λi = λi+1 .
+Theorem 5.10. Suppose that P and Q are two tabloids of shape λ and λi = λi+1 . Then the
+dominance constants are given by
+                                          ri+1 (P, Q) = lchi (P ) − lchi (Q).
+  Before proceeding with the proof we need a technical lemma.
+Lemma 5.11. Fix m ∈ Z>0 . Suppose we have two sets of integers A = {a1 , a2 , . . . , am } and
+B = {b1 , b2 , . . . , bm } with 1 ⩽ a1 < · · · < am and 1 ⩽ b1 < · · · < bm . Define ℓ(A, B) to be
+the maximal integer such that there exist indices 1 ⩽ i1 < i2 < · · · < iℓ(A,B) ⩽ m satisfying
+                                a1 < bi1 ,      a2 < bi2 ,    ...,     aℓ(A,B) < biℓ(A,B) .
+Choose b′ > am , bm , and let B ′ = {b2 , . . . , bm , b′ }. If ℓ(A, B) < m then ℓ(A, B ′ ) = ℓ(A, B)+1.
+Proof. The proof is illustrated in Figure 15. Let k be the largest non-negative integer such
+that ik = k (and if i1 > 1 then take k = 0). For 1 ⩽ j ⩽ k, define b′ij = bij +1 (= bj+1 ). For
+k + 1 ⩽ j ⩽ ℓ(A, B), define b′ij = bij . Define b′iℓ(A,B)+1 = b′ . Since ik+1 > k + 1 = ik + 1, the b′ij
+are distinct. For 1 ⩽ j ⩽ ℓ(A, B), we have aj < bij ⩽ b′ij , and also aℓ(A,B)+1 ⩽ am < b′iℓ(A,B) +1 .
+Thus ℓ(A, B ′ ) ⩾ ℓ(A, B) + 1.
+  Conversely, if for some integer k there are inequalities
+                                       a1 < b′i1 ,   a2 < b′i2 ,     ...,   ak < b′ik
+such that the right sides are distinct elements of B ′ , then removing the inequality involving
+b′m = b′ , if it exists, leaves k − 1 inequalities between elements of A and elements of B, so
+ℓ(A, B ′ ) ⩽ ℓ(A, B) + 1. This completes the proof.                                           
+  We are now prepared for the proof of the main result of this section.
+Proof of Theorem 5.10. Both sides of the desired equality depend only on a pair of adjacent
+rows of the same size. Hence, in the remainder of the proof we assume that P and Q are
+tabloids of shape hm, mi with entries in [n] for some m ⩽ n/2.
+                                                             31
+   Consider S := st0 (P1 , Q1 ). Number S properly so that the north-most ball southeast of
+the origin is numbered 1, and therefore S (1) , . . . , S (m) lie in [n] × [n]. Let r = lch1 P − lch1 Q
+and T = str (P2 , Q2 ). We must show that T is concurrent to S. First, we give a description
+of the backward numbering of T .
+   Denote P1 = {a1 , . . . , am }, P2 = {b1 , . . . , bm }, Q1 = {a′1 , . . . , a′m }, and Q2 = {b′1 , . . . , b′m },
+with representatives chosen so that 1 ⩽ a1 < a2 < · · · < am ⩽ n, and similarly for the other
+                                                                                         S
+three rows. Extend the indices to all of Z via ai+m = ai + n, so that P1 = {· · · < a−1 <
+a0 < a1 < · · · } and a0 ⩽ 0 < a1 , and similarly for the other rows. With this choice, we have
+S (i) = (a′i , ai ) for all i. Define a numbering of T as follows: the ball numbered i is
+                                                                    
+                                           b′i+lch1 (Q) , bi+lch1 (P ) =: T (i) .
+This is clearly a proper numbering of T ; we claim that this is the backward numbering of
+T with respect to S. To prove this, we must show that S (i) is northwest of T (i) for every i,
+and that S (j+1) is not northwest of T (j) for some j.
+   Define the local charge on a pair of equinumerous sets of integers (rather than equivalence
+classes modulo n) in the obvious way, so that lch({a1 , a2 , . . . , am }, {b1 , b2 , . . . , bm }) = lch1 (P ).
+We apply Lemma 5.11 repeatedly, each time replacing the smallest entry bi in the second
+row with bi+m = bi + n; this yields
+                         lch({a1 , a2 , . . . , am }, {b1+lch1 (P ) , . . . , bm+lch1 (P ) }) = 0.
+Therefore ai < bi+lch1 (P ) for all i, and so S (i) is west of T (i) for all i. Applying the same
+argument to Q (mutatis mutandis) yields that S (i) is north of T (i) for all i.
+  For the second half of the claim, we apply Lemma 5.11 one fewer time2 to conclude that
+                           lch({a1 , . . . , am }, {blch1 (P ) , . . . , bm−1+lch1 (P ) }) = 1.
+Therefore there is some j such that bj−1+lch1 (P ) < aj , and so S (j) is not west (and a fortiori
+not northwest) of T (j−1) . This completes the proof that the numbering described is the
+backward numbering of T with respect to S.
+  Moreover, applying the same argument as in the previous paragraph to Q instead of
+P yields that there is some j such that S (j) is not north of T (j−1) . Together, these two
+paragraphs establish that T is concurrent to S.                                                 
+5.3. Resolving a conundrum. As described in Section 2.2, the composite map Φ ◦ Ψ is
+a surjection from Ω to Ωdom , and the image of (P, Q, ρ) is a triple (P, Q, ρ′ ) where ρ′ is the
+dominant representative of ρ. In this section, we use Theorem 5.10 to resolve a mystery
+mentioned in Remark 3.2: why does applying the operation (P, Q, ρ) 7→ (Q, P, (−ρ)′ ) twice
+return the original triple?
+  In this context, it is convenient to define the symmetrized offset constants
+                                                             i
+                                                             X
+                                           si (P, Q) :=              rj (P, Q),
+                                                           j=i′ +1
+
+where i′ is the smallest integer such that λi′ = λi . We may reformulate Definition 5.9 in
+terms of these constants: ρ is dominant if for each 1 ⩽ i < ℓ(λ) one of the following holds:
+  2There is a subtlety here in the case that the original local charge is 0.
+                                                                         In this case, we need a variant
+of Lemma 5.11 in which the largest element in the bottom row is replaced by a new minimal element; the
+proof is no harder.
+                                                            32
+      • λi > λi+1 , or
+      • λi = λi+1 and (ρ − s)i+1 ⩾ (ρ − s)i ,
+where s = (si (P, Q))1⩽i⩽ℓ(λ) . Suppose that λ has k distinct part sizes, occurring with mul-
+tiplicities m1 , . . . , mk ; let m′i := m1 + . . . + mi . According to [CPY15, §6], the dominant
+representative of ρ can be computed as follows:
+      • Let x = ρ − s.
+      • For each 1 ⩽ j ⩽ k, let (ym′j−1 +1 , ym′j−1 +2 , . . . , ym′j ) be the increasing rearrangement
+         of (xm′j−1 +1 , xm′j−1 +2 , . . . , xm′j ).
+      • Let ρ′ = y + s.
+    We now resolve the mystery: by Theorem 5.10, ri (Q, P ) = −ri (P, Q) for all i, and so also
+sk (Q, P ) = −sk (P, Q). If λi = λi+1 = . . . = λj is a maximal string of equal part sizes then
+for any i ⩽ k ⩽ j, there exists i ⩽ ℓ ⩽ j such that (−ρ)′k = −ρℓ − sℓ (P, Q) + sk (P, Q).
+Therefore (−(−ρ)′ )k = ρℓ + sℓ (P, Q) − sk (P, Q). To take the dominant representative of this
+vector, we subtract sk (Q, P ) = −sk (P, Q), giving a vector whose k-th entry is ρℓ + sℓ (P, Q);
+since ρ is dominant, this is the ℓ-th largest of these numbers, so after rearranging we add
+sℓ (Q, P ) = −sℓ (P, Q), returning the value ρℓ , as desired.
+
+                                          6. Symmetries
+   The definition of the extended affine symmetric group (as in Section 2.1) gives no special
+standing to the interval [n] over any other interval of n consecutive integers. This indifference
+can be seen in the expression Sfn = Sen0 ⋊Z for Sfn as a semidirect product of the non-extended
+affine Weyl group Sen0 and the infinite cyclic subgroup generated by the “shift” permutation
+s = [2, 3, . . . , n + 1]. It may also be seen in the Dynkin diagram of the group Sen0 , which is a
+cycle on n vertices, each vertex representing a simple transposition: conjugation of Sen0 by s
+is equivalent to rotating the Dynkin diagram by one position.
+   The broken order of Sections 4 and 5 breaks this symmetry by giving special standing to the
+link from n to 1. This corresponds to other broken symmetries in our setting: the definition
+of altitude of a stream (and so everything that follows from it) gives special standing to the
+square [n] × [n].
+   The shift permutation s has a natural action on tabloids, sending i to i + 1 for all i.
+Proposition 6.1. Fix a partition λ. The action of s is a graph automorphism of the KL
+DEG Aλ .
+Proof. It is immediate from the definitions that s commutes with Knuth moves.                       
+
+                                         7. Monodromy
+   In this section and the next, we study the Kazhdan-Lusztig molecules of Sfn : given a
+permutation w corresponding to a triple (P, Q, ρ) under AMBC, we specify exactly which
+triples (P ′ , Q′ , ρ′ ) correspond to a permutation w ′ in the same Knuth equivalence class as
+w. By Theorem 3.11, it is necessary that P ′ = P . In this section, we ask which values of ρ′
+are possible if also Q′ = Q; in the next section, we consider which tabloids Q′ are possible.
+Together, the answers to these questions provide a complete classification.
+   Our approach is to use Lemma 3.22: if there is a sequence (w = w1 , w2 , . . . , wk = w ′ ) of
+permutations in which each consecutive pair is connected by a Knuth move and Q(w) =
+                                                  33
+                                           0
+                1 4                 1      0 1 2          0                 3 4
+                3                   0      0 3            0                 2
+                2              2 4 −1        4            0 1 3             1
+                               3                            2        0
+                                                                     0
+                               1                            4        0
+                1   2 3                                                  1 4
+                0   4                                                    2
+               −1   1                                                    3
+                               1 3                           2 4     2
+                                                                    −1
+                               4                             1      −1
+                1 2            2      1       3 4            3                 2 3
+                                                         2
+                4                     0       1    2    −1                     1
+                3                    −1       2   −1    −1                     4
+                                                  −1
+
+        Figure 16. A loop in Ah2,1,1i and the corresponding weight change vector.
+
+Q(w ′ ), we may project this sequence via wi 7→ Q(wi ) =: Ti to a sequence L = (T1 , . . . , Tk )
+of tabloids in the KL DEG Aλ for the associated shape λ. By Lemma 3.22, consecutive
+elements of L are connected by Knuth moves, and by hypothesis T1 = Tk , so this sequence
+is a loop (i.e., a closed walk on the graph). Moreover, by Theorem 3.11, the weight change
+vector ρ(w ′ ) − ρ(w) depends only on the loop L. This suggests the following definition.
+Definition 7.1. Given a permutation w ∈ Sfn , the monodromy group Gw based at w is the
+set
+                           Gw := {ρ(wk ) − ρ(w)}(w=w1,...,wk ) ,
+where the indexing tuple (w1 , . . . , wk ) runs over all sequences of permutations such that
+Q(wk ) = Q(w) and wi+1 is connected by a Knuth move to wi for all i.
+   Implicit in this definition is the fact that Gw is an (abelian) group under vector addition.
+This is easy to see using Theorem 3.11: the concatenation of two loops in a KL DEG has a
+lift whose monodromy group element is the sum of the lifts of the two individual loops.
+Example 7.2. Figure 16 shows a loop in the KL DEG of shape h2, 1, 1i, beginning and ending
+at the column superstandard tabloid with start at 1. The red vectors give the weight change
+at each step of the loop. The monodromy element of any lift of the loop is (2, −1, −1).
+Remark 7.3. If Q(w) and Q(w ′ ) are connected in the KL DEG, then it follows by the standard
+topological argument (again, using Theorem 3.11) that Gw = Gw′ as subsets of Zℓ(λ) . Thus
+monodromy is base-point independent on connected components of KL DEGs. (In fact, one
+consequence of Theorem 7.28, the main result of this section, is that Gw only depends on
+the shape of Q(w).)
+  The next lemma shows it suffices to understand Gw when Q(w) is column superstandard.
+Lemma 7.4. Every connected component of a KL DEG contains reverse row superstandard
+tabloid and a column superstandard tabloid.
+                                               34
+Proof. The Shi combing procedure (originally from [Shi91], and explained in our language in
+[CPY15, §9]) produces a sequence of Knuth moves from any permutation to a permutation
+whose right descent set is a singleton. By Theorem 3.11 and Proposition 3.6, this can be
+used to produce a sequence of Knuth moves from any tabloid to a tabloid whose τ -invariant
+is a singleton. The tabloids with a unique descent are exactly the reverse row superstandard
+tabloids. This completes the first claim.
+   By the first claim, each column superstandard tabloid lies in the same connected compo-
+nent as some reverse row superstandard tabloid. The automorphism s of Proposition 6.1 acts
+transitively on the classes of column superstandard and reverse row superstandard tabloids;
+applying it to our sequence of Knuth move shows that, in fact, every reverse row super-
+standard tabloid has a column superstandard tabloid in its connected component. This
+completes the second claim.                                                               
+7.1. Bounding the monodromy group from above. In this section, we establish some
+restrictions on the monodromy group which, in particular, imply that the monodromy group
+for rectangular shapes in trivial. In the next section, we will prove that these are the only
+restrictions.
+Proposition 7.5. Suppose λ is a partition and w is a permutation of shape λ. Suppose
+α ∈ Gw . If λi = λi+1 then αi = αi+1 .
+  For example, in Example 7.2 the coordinates of the monodromy element corresponding to
+the two rows of length 1 are equal.
+Proof. If this were not the case then repeating the monodromy or its inverse would eventually
+lead to a weight ρ for which the difference ρi − ρi+1 is arbitrarily large. From Definition 5.9,
+such a weight is non-dominant. However, since the image of AMBC is Ωdom , it follows from
+Theorem 3.11 that Knuth moves preserve dominance.                                             
+  This result has an interesting corollary.
+Corollary 7.6. If λ is a rectangle then for any w of shape λ, the monodromy group Gw is
+trivial and the Knuth equivalence class of w is finite.
+Proof. Each Knuth move preserves the sum of the entries of ρ. Thus, every element in Gw
+has sum of coordinates 0. By Proposition 7.5, if λ has parts of a unique size, then every
+element in Gw has all coordinates equal. Putting the two together gives the first half of the
+claim. For the second half, there are only finitely many choices of a tabloid Q of a given
+shape, and by the first half of the claim there is at most one choice of ρ in the equivalence
+class once P, Q are fixed.                                                                 
+  We will see as part of Theorem 7.28 that for any non-rectangular shape, there exists a
+non-trivial monodromy, so the corresponding Kazhdan-Lusztig molecule is infinite.
+Definition 7.7. Suppose λ = hr1m1 , . . . , rkmk i is a partition whose distinct row-lengths are
+r1 > · · · > rk > 0, of multiplicities m1 , . . . , mk , and let m′i = m1 + . . . + mi be the distinct
+part-sizes of λ′ . For 1 ⩽ i ⩽ k, let ei ∈ Zℓ(λ) be the vector with 1’s in its first m′i rows and
+0’s afterward. Define
+                              ( k                                    k
+                                                                                        )
+                               X                                     X
+(7)                   Gup
+                       λ =           ai ei a1 , . . . , ak ∈ Z and         ai m′i = 0       ,
+                               i=1                                   i=1
+                                                    35
+Example 7.8. For the shape λ = h32 , 23 , 1i, one has e1 = (1, 1, 0, 0, 0, 0), e2 = (1, 1, 1, 1, 1, 0),
+and e3 = (1, 1, 1, 1, 1, 1). The space Gup
+                                        λ consists of vectors in the Z-span of the ei whose
+sum of coordinates is 0, such as 3e1 − 6e2 + 4e3 = (1, 1, −2, −2, −2, 4).
+Proposition 7.9. We have Gw ⊆ Gup
+                               λ .
+
+Proof. Taking e0 = 0 by convention, the vector ei − ei−1 has 1’s exactly in those indices for
+which the corresponding row of λ has length ri . Thus, Gup λ contains all integer vectors α
+with entry sum 0 such that αi = αi+1 whenever λi = λi+1 . Then the result follows from
+Proposition 7.5.                                                                           
+  The next section is devoted to proving the reverse inclusion Gw ⊇ Gup
+                                                                     λ , and thus equality.
+
+7.2. Explicit description of monodromy generators. In this section, we construct an
+explicit set of monodromies that generate all of Gupλ . We start by describing a Z-basis for
+the lattice of solutions of a linear Diophantine equation in many variables.
+7.2.1. Linear Diophantine equations in many variables. Let m′1 , . . . , m′k ∈ Z. Consider the
+lattice (in Zk ) of solutions to the equation
+                                            k
+                                            X
+(8)                                               m′i xi = 0.
+                                            i=1
+Some solutions of this equation are obvious.
+Definition 7.10. For 1 ⩽ i < j ⩽ k, define x(i,j) ∈ Zk by
+                                         
+                                               m′j
+                                         
+                                          −                if l = i,
+                                          gcd(m′i ,m′j )
+                                         
+                                  (i,j)     mi ′
+                                 xl =  gcd(m′ ,m′ )        if l = j,
+                                         
+                                                 i    j
+                                         
+                                         0                 otherwise.
+  The main result of this section is that these obvious solutions generate the full lattice.
+(We suspect that this result is known, but have not been able to find it in the literature.)
+Proposition 7.11. The lattice of solutions of (8) is the Z-span of x(i,j) .
+Example 7.12. Consider the equation
+                                         3x + 2y + 6z = 0.
+The three obvious solutions are (−2, 3, 0), (0, −3, 1), and (−2, 0, 1). The claim is that these
+three vectors span the (2-dimensional) lattice of solutions.
+  We begin the proof of Proposition 7.11 with a technical lemma.
+Lemma 7.13. For any integers m′1 , . . . , m′j , we have
+                                                                !
+                        m′1                   m′j−1                   gcd(m′1 , . . . , m′j−1)
+                gcd                 ,...,                           =                          .
+                    gcd(m′1 , m′j )       gcd(m′j−1, m′j )             gcd(m′1 , . . . , m′j )
+Proof. Consider a prime p. For each 1 ⩽ i ⩽ j, denote by vi the maximal power of p dividing
+                                                                         m′
+m′i . First, suppose that vj > vi for some i. Then p does not divide gcd(m′i,m′ ) , and similarly
+                                                                                           i   j
+                    gcd(m′1 ,...,m′j−1 )
+p does not divide    gcd(m′1 ,...,m′j )
+                                         . Thus p does not divide either side of the claimed equality.
+                                                      36
+   Second, suppose vj ⩽ min{v1 , . . . , vj−1 }. Then the maximal power of p that divides the
+right-hand side is min{v1 , . . . , vj−1} − vj , while the maximal power of p that divides the
+left-hand side is min{v1 − vj , . . . , vj−1 − vj } = min{v1 , . . . , vj−1 } − vj . Since these are equal
+and p is arbitrary, the result follows.                                                                 
+                                                                                      (0)       (0)
+Proof of Proposition 7.11. Suppose we have some solution x(0) = (x1 , . . . , xk ) of (8).
+             (0)                                                (0)               gcd(m′ ,...,m′ )
+Clearly m′k xk is divisible by gcd(m′1 , . . . , m′k−1 ). Thus xk is divisible by gcd(m1 ′ ,...,mk−1
+                                                                                                  ′) .
+                                                                                         1        k
+By Lemma 7.13 and the Euclidean algorithm, there are integers c1 , . . . , ck−1 such that
+                                       k−1
+                                       X                m′i          (0)
+                                             ci ·        ′    ′
+                                                                  = xk .
+                                       i=1          gcd(mi , mk )
+Then
+                                                                 k−1
+                                                                 X
+                                       x(1) := x(0) −                  ci · x(i,k)
+                                                                 i=1
+                                                      (1)
+is a solution of (8) with the last entry xk = 0. Repeating the argument to successively
+eliminate coordinates produces an expression for x(0) as an integer linear combination of the
+x(i,j) , as desired.                                                                       
+
+7.2.2. Column rebases. In this section and the next, we provide the building blocks necessary
+to produce an explicit set of paths in Aλ that, when lifted to permutations, correspond to
+elements in the monodromy group Gw and generate Gup       λ . By Remark 7.3 and Lemma 7.4, it
+suffices to understand the situation in which we start with a column superstandard tabloid.
+Thus, our constructions are adapted to this case.
+   It is convenient to work not with tabloids but with associated tableaux, filled with equiv-
+alence classes modulo n, that arise by ordering the entries of each row into columns. We use
+usual matrix coordinates to refer to entries of tableaux, so that (1, 3) is the entry in the first
+(= top = longest) row and third column.
+   Our first construction, called a column rebase, is defined below; the definition is illustrated
+in Example 7.15 and Figure 17.
+
+Definition 7.14. Suppose that T is a tabloid and Te is a corresponding tableau such that,
+for some column indices c1 , c2 and some nonnegative integers i, k, l, column c1 of Te is filled
+(in order from top to bottom) with the elements i + 1, i + 2, . . . , i + k + l and column c2 is
+filled with the elements i + k + l + 1, i + k + l + 2, . . . , i + k + 2l. Then the forward column
+rebase of type (i, k, l) of Te is the sequence of tableaux (Te = Te0 , Te1 , . . . , Te(k+l)·l ), where Tej is
+formed from Tej−1 by switching the elements in positions ((k + l)m − j + 1, c1 ) and (m, c2 ),
+where m = ⌈j/(k + l)⌉ is the unique integer such that
+                               (k + l) · (m − 1) + 1 ≤ j ≤ (k + l) · m.
+
+We say that the reversed sequence is the backward column rebase of Te ′ := Te(k+l)·l . The
+forward column rebase of T is the sequence of tabloids that we get by forgetting the row
+orders in every tableau in the forward column rebase of Te , and similarly for the backward
+column rebase of the tabloid T ′ associated to Te ′ .
+                                                            37
+       k+l                                2(k + l)
+
+
+                            l
+
+
+        2                                   k+l+2
+            1                                k+l+1
+                            k
+
+
+
+        Figure 17. Sequence in which                           Figure 18. A cyclic order on
+        exchanges are to be performed.                         the cells of two columns.
+
+Example 7.15. Below is a forward column rebase of type (6, 2, 2). The affected columns are
+the first and third ones.
+                7 6 2   7 6 1   7 6 9   7 6 8   8 6 7
+                8 4 3 → 8 4 3 → 8 4 3 → 9 4 3 → 9 4 3
+                9 5     9 5     1 5     1 5     1 5
+                1       2       2       2       2
+                                       8 6 7   8 6 7   8 6 7   9 6 7
+                                     → 9 4 2 → 9 4 1 → 1 4 9 → 1 4 8
+                                       1 5     2 5     2 5     2 5
+                                       3       3       3       3
+
+Proposition 7.16. In the forward column rebase (T0 , . . . , T(k+l)·l ) of type (i, k, l) of the
+tabloid T0 , every two consecutive tabloids are either equal or connected by a Knuth move.
+Proof. Let (Te0 , . . . , Te(k+l)·l ) be the associated sequence of tableaux, and let c1 and c2 be the
+indices of the relevant columns. Choose j ∈ [1, (k + l) · l] and write j = (k + l) · (m−1) + j ′ for
+integers m, j ′ with 1 ⩽ m ⩽ l and 1 ⩽ j ′ ⩽ k + l. It is straightforward to show by induction
+that column c1 of tableau Tej consists of the entries
+  i + m, i + m + 1, . . . , i + m + k + l − j ′ − 1,
+                                i + m + k + l − j ′ + 1, i + m + k + l − j ′ + 2, . . . , i + m + k + l
+in order from top to bottom, while column c2 consists of the entries
+  i + 1, i + 2, . . . , i + m − 1,      i + m + k + l − j ′,
+                                               i + m + k + l + 1, i + m + k + l + 2, . . . , i + k + 2l.
+The last swap taken was between the entries i + m + k + l − j ′ and i + m + k + l − j ′ + 1
+in positions (k + l − j ′ + 1, c1 ) and (m, c2 ). If k + l − j ′ + 1 = m then the corresponding
+tabloids are equal. If k + l − j ′ + 1 > m then τ (Tj−1 ) includes i + m + k + l − j ′ − 1 but
+not i + m + k + l − j ′ while τ (Tj ) includes i + m + k + l − j ′ but not i + m + k + l − j ′ − 1,
+and so the swap is a Knuth move. Similarly, if k + l − j ′ + 1 < m then τ (Tj−1 ) includes
+i + m + k + l − j ′ but not i + m + k + l − j ′ + 1 while τ (Tj ) includes i + m + k + l − j ′ + 1
+but not i + m + k + l − j ′ , and so the swap is a Knuth move. This completes the proof. 
+                                                     38
+   It follows from the preceding proof that in the final tabloid T(k+l)·l of a forward column
+rebase, the shorter column c2 is filled (in order from top to bottom) with the elements i + 1,
+i + 2, . . . , i + l while the longer column c1 is filled with the elements i + l + 1, i + l + 2, . . . ,
+i + k + 2l.
+   We now describe how weight changes under a column rebase. We will need two pieces of
+notation.
+Definition 7.17. Suppose we have a partition λ and a positive integer l ⩽ ℓ(λ). Let
+ulcol ∈ Zℓ(λ) be the vector with 1 in the first l rows and 0 in the remaining rows. (There will
+never be ambiguity about the shape λ, so we suppress it from the notation.)
+   The second piece is somewhat more involved. Consider a tableau Te of shape λ such that
+                                                                                  e,l
+one can apply a column rebase of type (i, k, l). Informally, the vector uTdisp        keeps track of
+how far 1 shifts in the process of a column rebase. If 1 does not lie in the two columns of
+                   e,l
+interest, define uTdisp := ulcol . If 1 does lie in one of these columns, consider the cyclic order
+on the columns shown in Figure 18. Let F be the set of l cells following the cell containing
+                                                                      e,l
+1 in this cyclic order, not including the cell itself, and define uTdisp  ∈ Zℓ(λ) by
+                                     
+                               e,l
+                             uTdisp       := number of cells of F in row m.
+                                      m
+
+Example 7.18. Consider the column rebase from Example 7.15, so l = 2. In this case the
+collection F consists of the second and third cell in the first column. Thus
+                                                           
+                                        1                     0
+                                       1                  1
+                                                   e       
+                              ulcol =   and uTdisp   ,l
+                                                          =  .
+                                       0                  1
+                                        0                     0
+Proposition 7.19. Suppose T is a tabloid of shape λ to which one can apply a forward
+column rebase of type (i, k, l), with associated tableau Te . Then the weight change vector of
+the rebase is
+                                                    e,l
+                                          ulcol − uTdisp .
+Proof. If 1 is not in either of the two columns involved in the rebase, then by Theorem 3.11
+the weight change is 0 at each step, as claimed. Otherwise, 1 lies somewhere in the two
+columns of interest. There are three cases, depending on the position of 1; these are pictured
+in Figure 19. The three cases involve similar considerations, so we provide a detailed analysis
+of just one of them.
+   Suppose that 1 is in the shorter of the two relevant columns in Te , i.e., the column that
+does not contain i + 1, and let r be the index of the row in which it appears. (In Figure 19,
+this is the blue region; in Figure 20, it corresponds to the right panel.) The first (k +l)·(r−1)
+steps of the column rebase do not involve the cell containing 1, and so by Theorem 3.11 do
+not change the weight. In step (k + l) · (r − 1) + 1, the entry 1 in row r is swapped with
+the entry n in row k + l; this adds 1 to ρr and subtracts 1 from ρk+l . The next k + l − 1
+swaps to do not involve the entry 1. Finally, for m = 1, . . . , l − r, we have that in the mth
+remaining set of k + l swaps, the entry 1 begins in row k + l − m + 1, is swapped with the
+entry 2 in row r + m, and then is swapped with entry n in row k + l − m. This last swap
+is the only one that affects the weight ρ: it adds 1 to ρm+r and subtracts 1 from ρk+l−m .
+                                                    39
+                                                      −1 +1                     +1
+                                                      −1 +1                −1 +1
+                                        r   1                              −1 +1     r       1        +1
+                                                                           −1 +1                      +1
+                                                                           −1
+                                                              r   1                              −1
+                                                                                                 −1
+
+
+
+
+       Figure 19. The cases                     Figure 20. The action of a forward col-
+       for the position of 1 in                 umn rebase on weights, depending on the
+       the proof of Proposi-                    initial position of 1.
+       tion 7.19.
+
+(This is illustrated in Figure 20.) The net effect of these additions is to add 1 to ρ in rows
+r, r + 1, . . . , l and to subtract 1 from ρ in rows k + l, k + l − 1, . . . , k + r. This coincides
+                          e,l
+exactly with ulcol − uTdisp   .                                                                   
+
+7.2.3. Column cycles. In this section, we make a second step towards explicit monodromy
+generators by stitching column rebases together into longer paths in the KL DEG. Again,
+for the terminological convenience of being able to talk about columns, we often deal with
+tableaux.
+Definition 7.20. Suppose λ is a partition and i ∈ Z. Let λ′ be the conjugate partition
+of λ. The column superstandard tableau of shape λ with start i is the tableau with whose
+first column contains in order from top to bottom the entries i, i + 1, . . . , i + λ′1 − 1, whose
+second column contains i + λ′1 , i + λ′1 + 1, . . . , i + λ′1 + λ′2 − 1, and so on.
+  Note that our definition differs slightly from the usual one, in which there is only a single
+column superstandard tableau of each shape (with start 1). For every column superstandard
+tabloid, it is possible to assign the entries of each row to columns in order to produce a
+column superstandard tableau, and forgetting the row assignments in a column superstan-
+dard tableau leaves a column superstandard tabloid. An example of a column superstandard
+tableau is given in Figure 22.
+Definition 7.21. Suppose T is the column superstandard tabloid of shape λ with start i,
+and Te is the corresponding tableau. The forward column cycle of Te with respect to column
+j is the following sequence of tableaux: it is the concatenation of the forward column rebase
+of Te on the (j − 1)-st and j-th columns, the forward column rebase of the resulting tableau
+on the (j − 2)-nd and j-th columns, etc., through a forward column rebase on the first and
+j-th columns, followed by the reverse column rebase on the j-th and λ1 -th (last) columns,
+then the reverse column rebase on the j-th and (λ1 − 1)-st columns, etc., through the reverse
+column rebase on the j-th and (j + 1)-st columns.
+   The forward column cycle on T is the sequence of tabloids that one gets by forgetting the
+row orders in every tableau in the forward column cycle of Te . The reversed sequences of
+tableaux and tabloids are called reverse column cycles.
+Example 7.22. A forward column cycle of a tableau with respect to the second column is
+shown below; the first step is a forward column rebase, and the latter two are reverse column
+                                                 40
+                                                                  10   3    7   9
+                                                                  11   4    8
+                                                                   1   5
+                                                                   2   6
+
+       Figure 21. The cyclic order                        Figure 22. The column su-
+       on the partition h4, 3, 22i.                       perstandard tableau of shape
+                                                          h4, 3, 22i with start at 10. The
+                                                          four cells following 1 are boxed
+                                                          in red.
+
+rebases:
+                   10 3 7 9   3 10 7 9   3 9 7 2   3 7 11 2
+                   11 4 8   → 4 11 8   → 4 10 8  → 4 8 1    .
+                   1 5        5 1        5 11      5 9
+                   2 6        6 2        6 1       6 10
+Proposition 7.23. Forward column cycles are well defined. Furthermore, if Te is the column
+superstandard tableau of shape λ and start i, then the last tableau in the forward column cycle
+of Te is the column superstandard tableau of shape λ and start i + λ′j .
+Proof. It is conceptually straightforward but notationally cumbersome to check by induction
+that, after each rebase, every column consists of an interval in [n] and the two columns that
+are relevant for the next rebase have entries that are related in the appropriate way. We
+leave the details to the reader.                                                           
+   Now we describe the effect of a column cycle on the weight. As before, we start by
+introducing a vector tracking the displacement of 1. Suppose Te is a column superstandard
+tableau of shape λ and k is an integer. Consider the cyclic order on the cells of λ illustrated
+in Figure 21: every cell not in the first row is followed by the cell directly above it, the top
+cell in the first column is followed by the bottom cell in the last column, and the top cell in
+every other column is followed by the bottom cell in the previous column. Denote by F the
+                                                                                    e,k
+collection of k cells following the cell of Te containing 1 in this order. Define vTdisp ∈ Zℓ(λ) by
+                                   
+                             e,k
+                           vTdisp       := number of cells of F in row m.
+                                    m
+
+Example 7.24. Suppose Te is the column superstandard tableau of shape h4, 3, 22i with start
+10; it is shown in Figure 22. The
+                                 four
+                                    cells following the cell with 1 are shown in the figure
+                                  2
+                                2
+                          e,4    
+with red squares. Thus vTdisp =  .
+                                0
+                                  0
+Proposition 7.25. Suppose T is a column superstandard tabloid of shape λ, with corre-
+sponding tableau Te . Consider performing a forward column cycle with respect to the j-th
+                                                  41
+column. Then the weight change vector is
+                                                    λ′           Te,λ′
+                                          ∆wt = ucolj − vdispj .
+Example 7.26. Consider the column cycle of Example 7.22. Computing the weight change
+for the three column rebases via Proposition 7.19, the total weight change vector is
+                                                                         
+                                    0     −1     0     −1
+                                   0  0  −1    −1
+                                                   
+                             ∆wt =   +   +   =   .
+                                   0  1   0     1 
+                                    0      0     1      1
+                                      e
+On the other hand, the vector vTdisp
+                                  ,4
+                                     was computed in Example 7.24. Since we are dealing
+                                             λ′
+with the longest column, the vector ucol1 consists of all 1’s. Thus by Proposition 7.25, the
+weight change is                                      
+                                       1        2       −1
+                                      1  2        −1
+                              ∆wt =       
+                                      − =
+                                                          
+                                                           .
+                                      1  0         1 
+                                       1        0        1
+Proof of Proposition 7.25. There are five cases, depending on where 1 is in the tabloid:
+whether it is in the first λ′j rows or not, and if so whether it is in the first column, be-
+tween column 1 and column j, in column j, or in a larger-numbered column. These are
+illustrated in Figure 23; we refer to them below by their color in this figure. (If j = 2, the
+blue case does not occur; if j = 1, the blue and purple cases do not occur.)
+   The green case, when 1 is in a row lower than λ′j , is the easiest one; in this case 1 is only
+                                                                                Te,λ′   Te,λ′
+involved in a single column rebase, and it is easy to see that udispj = vdispj . This gives the
+desired result.
+   In the blue case, when 1 is in the first λ′j rows in a column between column 1 and column
+j, there are two column rebases affecting 1. The first one is of the kind portrayed on the left
+                                                    λ′              Te,λ′
+of Figure 20; in such a rebase, the vectors ucolj and udispj are equal, and so the weight does
+not change. In the second rebase, the shorter column involved has length λ′j . In addition, in
+this rebase the longer column is directly to the right of the one in which 1 originally started;
+        Te,λ′                                        Te,λ′
+thus, udispj for the second rebase is equal to vdispj . This gives the desired result.
+   If 1 is in the purple region (so j > 1) then only one rebase affects the position of 1 and it
+is exactly the same as the second rebase of the blue case.
+   In the red and yellow cases, the position of 1 can be affected by more than two column
+rebases, making these more complicated to analyze. These cases are very similar, so we will
+only consider the yellow case in detail. Suppose that 1 begins in the yellow region, say in
+column j ′ > j and in row r. Then the weight does not change until the reverse rebase between
+column j and column j ′ ; during this rebase, 1 moves from column j ′ to column j and remains
+in row r. What follows is several (possibly none) reverse rebases during which 1 moves lower
+in column j: after the first one it will be in row r + λ′j ′ −1 , then in row r + λ′j ′ −1 + λ′j ′−2 , etc.
+Let j ′′ be the last column for which the reverse rebase affects the weight. This can happen
+in one of two ways: either j ′′ = j + 1 and the algorithm ends with 1 in column j, or the
+rebase transfers 1 into column j ′′ , where it stays until the end. Let r ′′ be the final row of 1.
+                                                    42
+                                                                              j
+
+
+
+
+                        Figure 23. The cases in the proof of Proposition 7.25.
+
+   If 1 ends up in column j, then λ′j ⩾ r ′′ = r +λj+1 +. . .+λj ′ −1 and so by direct examination
+of the cyclic order on cells of λ we have
+                                                                                                                               
+                 λ′           Te,λ′        λ′
+                                          r−1
+                                                                       λ′ ′                      λ′          λ′             ′′
+                ucolj − vdispj = ucolj − ucol + ucolj −1 + . . . + ucolj+1 + ucolj − urcol−1
+                                            ′′             λ′             λ′                      λ′ ′
+                                      = urcol−1 − ucolj+1 − ucolj+2 − . . . − ucolj −1 − ucol
+                                                                                          r−1
+                                                                                              .
+Otherwise,
+           λ′         Te,λ′           λ′    r −1
+                                                 λ′ ′′           ′′                  λ′ ′′       λ′ ′′
+                                                                                               r−1
+                                                                                                                     λ′ ′
+         ucolj − vdispj = ucolj − (ucolj − ucol  ) − ucolj +1 − ucolj +2 − . . . − ucolj −1 − ucol .
+  On the other hand, we can track the weight change at each stage of the column cycle
+using Proposition 7.19. Since we are doing reverse column rebases, the contributions from
+the col-vectors are negated relative to the proposition, and they sum to
+                                                          λ′ ′        λ′ ′                   λ′ ′′
+                                                  −ucolj − ucolj −1 − . . . − ucolj .
+By tracking the position of 1 after each column rebase, we have that if 1 ends up in column
+j, then the total contribution from the disp-vectors is
+                                                                                            
+                                                            ′′                λ′ ′
+                                                         urcol−1 + ucolj − ucol
+                                                                            r−1
+                                                                                .
+                                                                                                                                     
+                                                                                      ′′                           λ′j ′                      λ′
+If instead 1 ends up in column j                   ′′
+                                                         6 j, this contribution is urcol−1 +
+                                                          =                                                               r−1
+                                                                                                                  ucol − ucol             + ucolj . In
+                                                                                                                    λ′           Te,λ′
+both cases, the resulting weight change matches the computed value ucolj − vdispj .                                                                
+
+Corollary 7.27. The weight change vectors associated to column cycles with respect to
+different columns of the same length are equal.
+7.2.4. Building monodromy group generators from column cycles. Consider the partition λ =
+hr1m1 , . . . , rkmk i. For 1 ⩽ i ⩽ k, let m′i = m1 + . . . + mi be the distinct part-sizes of λ′ . Recall
+the space Gup      λ from Definition 7.7.
+
+Theorem 7.28. Suppose λ is a partition and w is a permutation of shape λ. Then Gw = Gup
+                                                                                     λ .
+
+Proof. By Proposition 7.9, Gw ⊆ Gup λ . We now prove the opposite containment. By (7),
+there is a natural bijection between elements of Gup
+                                                  λ and integer solutions (ai )1≤i≤k of the
+          Pk       ′
+equation i=1 ai mi = 0. By Proposition 7.11, the solution set of this equation is the Z-span
+                                                                             43
+of the vectors x(i,j) ∈ Zk defined in Definition 7.10. The map associating an element of Gup
+                                                                                          λ
+to a solution is obviously Z-linear, so it is sufficient to show that
+                                          m′i                m′j
+                            v(i,j) :=                e′
+                                                        −              e′
+                                      gcd(m′i , m′j ) j gcd(m′i , m′j ) i
+is an element of Gw .
+   As explained in Remark 7.3, by Lemma 7.4, we may restrict ourselves to the case when
+Q(w) is column superstandard. Given such a tabloid T , consider the following concatenation
+of column cycles in Aλ :
+                           m′
+   (1) a sequence of gcd(m′j,m′ ) reverse column cycles with respect to a column of size m′i ,
+                            i  j
+       followed by
+                         m′
+   (2) a sequence of gcd(m′i,m′ ) forward column cycles with respect to a column of size m′j .
+                            i       j
+
+(By Corollary 7.27, it doesn’t matter which columns of the given lengths are selected.) By
+Proposition 7.23, the final tabloid of this sequence of tabloids is equal to the initial tabloid T ,
+i.e., this sequence is a loop in Aλ . By Proposition 7.25, the weight change vector associated
+to this loop is equal to
+                                        m′j / gcd(m′i ,m′j )−1
+              m′j         m′i                   X                 Te+km′i ,m′i
+  ∆wt = −                u    +                                  vdisp           +
+          gcd(m′i , m′j ) col                   k=0
+                                                                        ′       ′   ′
+                                                                                                                 
+                                                        mi / gcd(mi ,mj )−1
+                                     m′i         m′j           X            Te+m′i m′j / gcd(m′i ,m′j )−km′j ,m′j 
+                                                u    −                     v                                      ,
+                                  gcd(m′i , m′j ) col           k=0
+                                                                             disp
+
+
+
+where by Te + m we mean the result of adding m to every entry of the tableau Te . Observe
+that the two sums of disp-vectors cancel exactly: the reverse cycles and the forward cycles
+                                    m′ m′j
+deal with the same (multi)set of gcd(mi ′ ,m′ ) consecutive cells in the cyclic order. Thus
+                                                     i   j
+
+              m′i         m′j     m′j         m′i     m′i         ′     m′j
+    ∆wt =                u    −              u    =              e  −              e′ = v(i,j) .
+          gcd(m′i , m′j ) col gcd(m′i , m′j ) col gcd(m′i , m′j ) j gcd(m′i , m′j ) i
+Lifting this cycle from Aλ to the graph on permutations shows that v(i,j) ∈ Gw for every
+1 ⩽ i < j ⩽ k. This completes the proof.                                              
+                                    8. Components of KL DEGs
+   In this section, we finish the description of the Knuth equivalence classes of permutations
+by describing which tabloids can be reached from a given one by Knuth moves. Using the
+machinery from the previous section, it is easy to see that certain column superstandard
+tabloids are connected by Knuth moves; together with the fact that every Knuth class
+of tabloids contains a superstandard tabloid, this gives an upper bound on the number of
+connected components. Then we use the charge statistic to produce a matching lower bound.
+Definition 8.1. For a partition λ, define
+                                                dλ := gcd(λ′1 , λ′2 , . . . ),
+where λ′ is the conjugate partition of λ. Equivalently, dλ is the greatest common divisor of
+the multiplicities of parts of λ.
+                                                                  44
+Proposition 8.2. The number of connected components of Aλ is no larger than dλ .
+Proof. Column cycles are walks in Aλ that take a column superstandard tabloid to another
+one, related by adding λ′j to each entry for some j. Since dλ is a Z-linear combination of the
+λ′j ’s, two column superstandard tabloids that differ by dλ are in the same connected compo-
+nent. By Lemma 7.4, every connected component of Aλ contains a column superstandard
+tabloid, so there are at most dλ connected components.                                      
+   We seek to prove that this upper bound is in fact the correct value. Our proof makes use
+of the charge statistic, which was partially introduced in Section 5.
+Definition 8.3. Given a tabloid T of shape λ, extend Definition 5.3 of local charge by
+defining lchi (T ) = 0 if λi 6= λi+1 . The charge of T is defined by
+                                                 ℓ(λ)−1
+                                                  X
+                                 charge(T ) :=            i · lchi (T ).
+                                                  i=1
+
+Remark 8.4. The definition of charge given here is not the conventional one (as in, e.g.,
+[DM13, §5]). However, it is straightforward to see using Lemma 5.5 that our definition of
+the charge of a tabloid T differs by a multiple of dλ from the conventional charge of the
+word whose i-th letter is the index of the row of T containing i. In light of the statement of
+Theorem 8.6 below, this is sufficient for our purposes, and the present definition is easier to
+work with.
+  Before finishing the description of the connected components of Aλ , we need a lemma
+regarding the charges of column superstandard tabloids.
+Lemma 8.5. Suppose λ is a partition of n and 1 ⩽ i ⩽ n. Let T be the column superstandard
+tabloid of shape λ starting at i, and T ′ be the column superstandard tabloid of shape λ starting
+at i + 1. Then charge(T ′ ) ≡ charge(T ) − 1 (mod dλ ).
+Proof. By construction, all the local charges for a column superstandard tabloid are 0, except
+if n is located in the row directly above the row containing 1 and the two rows have the
+same size, in which case the local charge is 1. If n is in row r of T and λr−1 = λr = λr+1
+then charge(T ) = r + 1 and charge(T ′ ) = r, and the result holds. If λr−1 = λr > λr+1 or
+if r = ℓ(λ) then charge(T ) = 0 and charge(T ′ ) = r − 1. In this case, r = λ′i for some i, so
+r ≡ 0 (mod dλ ) and the result holds. Similar considerations apply if λr−1 < λr = λr+1 or if
+r = 1. Finally, if λr−1 < λr < λr+1 then dλ = 1 and the result is trivial.                  
+Theorem 8.6. Let λ be a partition and T, T ′ be tabloids of shape λ. Then T and T ′ are in
+the same connected component of Aλ if and only if
+                             charge(T ) ≡ charge(T ′ )        (mod dλ ).
+Proof. We will show that if T and T ′ are two tabloids of shape λ connected by a Knuth
+move, then charge(T ) ≡ charge(T ′ ) (mod dλ ). The “only if” direction of the claimed result
+follows immediately by induction. The “if” direction then follows using Proposition 8.2 and
+Lemma 8.5.
+   Suppose the Knuth move between T and T ′ exchanges the entries i and i + 1; without
+loss of generality, we may assume that i is in a higher row of T than i + 1. We consider two
+cases, depending on the value of i.
+                                                 45
+   Case i 6= n. In this case, i and i + 1 are either both larger or both smaller in broken
+order than each other entry in the tabloid. Thus, if these entries lie in non-adjacent rows
+then the local charge between each pair of adjacent rows is the same in T and T ′ , and so
+charge(T ) = charge(T ′ ). Suppose instead that i and i + 1 lie in adjacent rows r, r + 1. The
+only local charge that could differ between T and T ′ is lchr , and so the only interesting case
+is when λr = λr+1 . Moreover, the only way the local charge lchr could differ between T and
+T ′ is if i is matched with i + 1 in the charge matching in T . By Lemma 5.5, the local charge
+does not depend on the activation ordering, so it suffices to produce an activation ordering
+for T in which i is not matched with i + 1.
+   In order for the swap of i and i + 1 to be a Knuth move, the descent sets τ (T ) and τ (T ′ )
+must be incomparable. This is possible only if Tr contains i − 1 or Tr+1 contains i + 2 (or
+both). Suppose first that Tr contains i − 1. In this case, take an activation ordering that
+begins with i − 1: if i 6= 1, then i + 1 is the smallest value larger than i − 1 in broken order,
+so (i − 1, i + 1) belongs to the charge matching; if i = 1 then i − 1 = n matches to the
+smallest element of T2 , which is 2 = i + 1. Since i − 1 matches with i + 1 in both cases, 1
+does not, as needed.
+   Now suppose instead that Tr+1 contains i + 2. In this case, take an activation ordering
+that ends with i: if i 6= n − 1 then i + 2 gets matched strictly after i + 1 does, so i + 1 is
+matched to something earlier that i; if i = n − 1 then the second row contains i + 2 = 1,
+which again gets matched strictly after i + 1 = n. In both cases, i does not match to i + 1,
+as needed.
+   Case i = n. Suppose that n is in row r1 in T and 1 is in row r2 > r1 . Then lchj (T ) =
+lchj (T ′ ) for every j 6∈ {r1 −1, r1 , r2 −1, r2 }, and so the charge difference charge(T )−charge(T ′ )
+depends only on those four or fewer local charges. For convenience, define ∆j := j lchj (T ) −
+j lchj (T ′ ). We have numerous possible cases to consider: whether or not λj = λj+1 for each
+j ∈ {r1 − 1, r1 , r2 − 1, r2 }, and whether r2 = r1 + 1 or not.
+   Suppose that λr1 −1 = λr1 . Then we have by Lemma 5.11 that lchr1 −1 (T ) = lchr1 −1 (T ′ ) − 1,
+and so ∆r1 −1 = 1 − r1 . If instead λr1 −1 < λr1 or r1 = 1 then r1 ≡ 1 (mod dλ ) and so
+∆r1 −1 = 0 ≡ 1 − r1 (mod dλ ) in this case as well.
+   It is not hard to modify the proof of Lemma 5.11 to the situation in which the largest
+and smallest elements are swapped out of the top, rather than bottom, row; it follows from
+this modified lemma and an argument identical to the preceding paragraph that ∆r2 ≡ −r2
+(mod dλ ).
+   Suppose now that rows r1 and r2 are not adjacent, so that Tr2 −1 = Tr′2 −1 . If λr2 −1 = λr2
+then by Lemma 5.11 we have lchr2 −1 (T ′ ) = lchr2 −1 (T ) − 1, and so ∆r2 −1 = r2 − 1. As before,
+if λr2 −1 > λr2 then r2 ≡ 1 (mod dλ ) and so ∆r2 −1 = 0 ≡ r2 − 1 (mod dλ ) in this case as well.
+Similarly, as in the preceding paragraph we have ∆r1 ≡ r1 (mod dλ ).
+   Combining the results of the previous three paragraphs, when r1 < r2 − 1 we have that
+charge(T )−charge(T ′ ) = ∆r1 −1 +∆r1 +∆r2 −1 +∆r2 ≡ (1−r1 )+r1 −r2 +(r2 −1) ≡ 0             (mod dλ ),
+as claimed.
+  In the remainder of the proof, we consider the case that r := r1 is equal to r2 − 1, so that 1
+and n lie in adjacent rows in T and T ′ . In this case, there are (at most) three contributions
+to the charge difference: charge(T ) − charge(T ′ ) = ∆r−1 + ∆r + ∆r+1 . The analyses of the
+second and third paragraphs of the case i = n still apply in this setting, giving ∆r−1 ≡ 1 − r
+and ∆r+1 ≡ −1 − r modulo dλ .
+                                                   46
+                               T                                                  T′
+
+   r         ∗       ∗     ∗       ∗   n−1       n            1       ∗       ∗        ∗    ∗    n−1
+         2       3       ···   k−1 k         1            k       2       3        ···     k−1 1
+
+r+1          1       ∗     ∗       ∗    ∗        ∗            ∗       ∗       ∗        ∗    ∗      n
+
+
+   r         ∗       ∗     ∗       ∗    ∗        n            1       ∗       ∗        ∗    ∗      ∗
+         2       3       ···   k−1 k         1            k       1       2        3       ···   k−1
+
+r+1          1       2     ∗       ∗    ∗        ∗            2       ∗       ∗        ∗    ∗      n
+
+
+       Figure 24. Activation orders used in the proof of Theorem 8.6 in the case
+       that n and 1 are swapped and lie in adjacent rows. Black numbers are tabloid
+       entries; black ∗’s represent entries whose values are irrelevant; and red numbers
+       represent the activation order.
+
+   First, suppose that λr > λr+1 . Then ∆r = 0, and so ∆r−1 + ∆r + ∆r+1 ≡ −2r ≡ 0
+(mod dλ ), as needed.
+   Second (and last), suppose that λr = λr+1 =: k. We claim that lchr (T ) − lchr (T ′ ) = 2.
+Since the swap of n and 1 is a Knuth move, either n − 1 is in row r of T or 2 is in row
+r + 1. We use different activation orders depending on which situation we are in; they are
+illustrated in Figure 24. We analyze the case when n − 1 is in row r (the top half of the
+figure). Since the other case is similar, we omit the details, but we do provide the relevant
+illustration in the bottom half of the figure.
+   In T , we use the activation order that begins with n first, then proceeds through the other
+values in some order, then ends with n − 1. With this ordering, n matches with 1 in row
+r + 1 and contributes 1 to the local charge. The next k − 2 entries match in some order to
+k − 2 of the elements in row r + 1. Finally, in the last activation in T , n − 1 contributes 1 to
+the local charge (since the only entry of T larger than n − 1 is n, and it is not in row r + 1).
+In T ′ , we use the order that begins with n − 1, then proceeds through the other values in the
+same order as in T , then ends with 1. With this activation ordering, n − 1 matches to n in
+row r + 1 and does not contribute to the local charge. At this point, the unmatched entries
+in row r + 1 of T ′ are exactly the same as the unmatched entries in row r + 1 of T after the
+first pair are matched; hence the next k − 2 edges of the charge matching are exactly the
+same in T ′ as in T , with the same contribution to charge. Finally, the last match is between
+1 and something larger in broken order, with no contribution to local charge. Thus indeed
+the local charge between these rows is 2 less for T ′ .
+   Putting everything together, we have in this case that ∆r = 2r and so
+  charge(T ) − charge(T ′ ) = ∆r−1 + ∆r + ∆r+1 ≡ (1 − r) + 2r + (−1 − r) = 0 (mod dλ ),
+as claimed. This completes all cases.                                                                  
+
+  One interesting corollary is that we can determine exactly when a Kazhdan-Lusztig cell
+consists of a single Knuth equivalence class.
+                                                     47
+Corollary 8.7. The Kazhdan-Lusztig cell containing the permutation w consists of a single
+Knuth equivalence class if and only if the shape λ of w has all rows distinct.
+Proof. Choose a permutation w ∈ Sfn of shape λ. If λ has a repeated part, say λr = λr+1 ,
+then by Theorem 7.28, the difference ρ(w ′ )r − ρ(w ′ )r+1 is the same for every w ′ in the Knuth
+equivalence class of w. However, from the definition of Ωdom , this is not the case for every
+w ′ in the same Kazhdan-Lusztig cell as w. Thus distinct rows is a necessary condition. On
+the other hand, if all rows of λ are distinct then by Theorem 8.6, the Knuth class contains
+permutations with every possible Q-tabloid of shape λ, and by Theorem 7.28, for each Q-
+tabloid the Knuth class contains permutations with every possible weight vector ρ. Thus in
+this case the Knuth class is equal to the Kazhdan-Lusztig cell.                                
+Remark 8.8. The results of this section combined with Proposition 6.1 imply that the ac-
+tion of the shift permutation s = [2, 3, . . . , n, n + 1] on tabloids of shape λ provides graph
+isomorphisms between the dλ connected components of Aλ .
+                                           9. Crystals
+   In this section, we briefly describe a connection to affine crystals that is suggested by the
+importance of the charge statistic; the finite version of the connection has been developed
+by Assaf [Ass08]. We use notation for affine crystals from [Shi05, §4], except we label crystal
+operators fi and ei by residue classes modulo n as opposed to by the representatives of these
+classes from {0, 1, . . . , n − 1}.
+   There is a reading word map RW from the set of tabloids of shape λ = hλ1 , λ2 , . . . , λℓ i to
+the set of vertices of B := B 1,λℓ ⊗ B 1,λℓ−1 ⊗ · · · ⊗ B 1,λ1 : it reads the rows from bottom to top
+and takes representatives in [n] for all residue classes. For example,
+                                      
+                            2 3 7
+                                     
+                   RW  1 4
+                                     
+                                       =       6 ⊗ 5 ⊗ 1 4 ⊗ 2 3 7 .
+                           5         
+                            6
+The image of this map is precisely the set of vertices of B where each element of [n] is used
+exactly once; call this set of vertices V . For i ∈ [n], let Ki be the composition of crystal
+operators ei ei+1 fi fi+1 .
+Proposition 9.1. Suppose T and T ′ are tabloids of the same shape. Then T and T ′ are
+connected by a Knuth move if and only if RW (T ) 6= RW (T ′ ) and the two reading words are
+connected by some Ki .
+Proof sketch. Suppose T and T ′ are connected by a Knuth move that exchanges i and i + 1;
+without loss of generality i ∈
+                             / τ (T ). Suppose i is in row k of T and i + 1 is in row ℓ; so k > ℓ.
+Since the exchange of i and i + 1 is a Knuth move, we know that either i − 1 lies in a row
+weakly below ℓ and strictly above k, or i + 2 lies in a row strictly below ℓ and weakly above
+k. We treat the first of these cases; the second is identical. One easily checks by definition of
+the crystal operators that Ki−1 (RW (T )) = RW (T ′ ) (the computation depends on whether
+i = 1, i = n, or neither).
+   Now suppose that RW (T ) 6= RW (T ′ ) and Ki (RW (T )) = RW (T ′ ). One needs to check
+that whatever the positions of (the representatives in [n] of) i, i + 1 and i + 2 in RW (T ),
+the result of the action by Ki yields either the reading word of a tabloid related to T by
+                                                 48
+a Knuth move, or RW (T ) again, or some vertex of B that is not in V . The computation
+depends on whether i = n, i = n − 1, or neither.                                     
+   Finally, we give a simple application of the crystal connection. Notice that the definition
+of KL DEGs Aµ does not rely on the shape µ being a partition.
+Proposition 9.2. Suppose µ is a composition and λ is the partition formed from µ by
+sorting. Then there is a graph isomorphism ϕ : Aλ → Aµ .
+Proof. It is sufficient to show that Aµ is isomorphic to Aµ′ where µ′ is obtained from µ
+by switching two adjacent parts. By [Shi05, Thm. 4.8], there is an isomorphism between
+B 1,r ⊗B 1,s and B 1,s ⊗B 1,r for any r and s (it is called the combinatorial R-matrix). Moreover,
+the explicit description of this morphism in the same section shows that it preserves the
+number of times each letter appears in the tableaux. Applying this morphism to two adjacent
+factors of B and pulling back the results using Proposition 9.1 (which also does not rely on
+the shape being a partition) finishes the proof.                                                
+
+                                             References
+[Ari99] S. Ariki. Robinson-Schensted correspondence and left cells. arXiv:math/9910117, 1999.
+[Ass08] S. H. Assaf. A combinatorial realization of Schur-Weyl duality via crystal graphs and dual equiva-
+        lence graphs. Discrete Mathematics & Theoretical Computer Science (FPSAC 2008), 2008.
+[Ass15] S. H. Assaf. Dual equivalence graphs I: A new paradigm for Schur positivity. Forum Math. Sigma,
+        3:e12, 33, 2015.
+[Bei87] J. S. Beissinger. Similar constructions for Young tableaux and involutions, and their application
+        to shiftable tableaux. Discrete Math., 67(2):149–163, 1987.
+[BF17] J. Blasiak and S. Fomin. Noncommutative Schur functions, switchboards, and Schur positivity.
+        Selecta Math. (N.S.), 23(1):727–766, 2017.
+[BV82] D. Barbasch and D. Vogan. Primitive ideals and orbital integrals in complex classical groups. Math.
+        Ann., 259:153–199, 1982.
+[Chm15] M.        Chmutov.         Affine       Matrix-Ball        Construction         Java        program.
+        https://sites.google.com/site/affiners/ (also included in the arXiv distribution), 2015.
+[CPY15] M. Chmutov, P. Pylyavskyy, and E. Yudovina. Matrix-Ball Construction of affine Robinson-
+        Schensted correspondence. arXiv:1511.05861v1, 2015.
+[DM13] A. J. Dalal and J. Morse. A t-generalization for Schubert representatives of the affine Grassmannian.
+        In 25th International Conference on Formal Power Series and Algebraic Combinatorics (FPSAC
+        2013), Discrete Math. Theor. Comput. Sci. Proc., AS, pages 1125–1136. Assoc. Discrete Math.
+        Theor. Comput. Sci., Nancy, 2013.
+[Ful97] W. Fulton. Young tableaux: with applications to representation theory and geometry, volume 35 of
+        London Mathematical Society Student Texts. Cambridge University Press, 1997.
+[GM88] A. M. Garsia and T. J. McLarnan. Relations between Young’s natural and the Kazhdan-Lusztig
+        representations of Sn . Advances in Mathematics, 69(1):32–92, 1988.
+[HRT15] M. Housley, H. M. Russell, and J. Tymoczko. The Robinson-Schensted correspondence and A2 -web
+        bases. J. Algebraic Combin., 42(1):293–329, 2015.
+[Hum90] J. E. Humphreys. Reflection groups and Coxeter groups, volume 29 of Cambridge Studies in Ad-
+        vanced Mathematics. Cambridge University Press, Cambridge, 1990.
+[KL89] D. Kazhdan and G. Lusztig. Representations of Coxeter groups and Hecke algebras. Invent. Math.,
+        53:165–184, 1989.
+[LS79] A. Lascoux and M.-P. Schützenberger. Croissance des polynômes de Foulkes-Green. CR Acad. Sci.
+        Paris, 228:95–98, 1979.
+[Man01] L. Manivel. Symmetric functions, Schubert polynomials and degeneracy loci, volume 6 of SMF/AMS
+        Texts and Monographs. American Mathematical Society, Providence, RI; Société Mathématique de
+                                                    49
+        France, Paris, 2001. Translated from the 1998 French original by John R. Swallow, Cours Spécialisés
+        [Specialized Courses], 3.
+[Rei04] A. Reifegerste. Permutation sign under the Robinson-Schensted correspondence. Annals of Com-
+        binatorics, 8(1):103–112, 2004.
+[Sch63] M. P. Schützenberger. Quelques remarques sur une construction de Schensted. Math. Scand.,
+        12:117–128, 1963.
+[Shi91] J. Y. Shi. The generalized Robinson-Schensted algorithm on the affine Weyl group of type An−1 .
+        Journal of Algebra, 139(2):364–394, 1991.
+[Shi05] M. Shimozono. Crystals for Dummies. http://www.aimath.org/WWN/kostka/crysdumb.pdf, 2005.
+[Sta99] R. P. Stanley. Enumerative combinatorics. Vol. 2, volume 62 of Cambridge Studies in Advanced
+        Mathematics. Cambridge University Press, Cambridge, 1999. With a foreword by Gian-Carlo Rota
+        and appendix 1 by Sergey Fomin.
+[Ste08] J. R. Stembridge. More W -graphs and cells: Molecular components and cell synthesis. In Notes
+        from the AIM workshop, Palo Alto. The Atlas of Lie Groups, July 2008.
+[Vie77] G. Viennot. Une forme géométrique de la correspondance de Robinson-Schensted. Combinatoire et
+        représentation du groupe symétrique, pages 29–58, 1977.
+[Vog79] D. A. Vogan, Jr. A generalized τ -invariant for the primitive spectrum of a semisimple Lie algebra.
+        Math. Ann., 242(3):209–224, 1979.
+
+  Department of Mathematics, University of Minnesota, Minneapolis, MN 55455, USA
+  E-mail address: mchmutov@umn.edu
+
+  Department of Mathematics, University of Minnesota, Minneapolis, MN 55455, USA
+  E-mail address: jblewis@umn.edu
+
+  Department of Mathematics, University of Minnesota, Minneapolis, MN 55455, USA
+  E-mail address: ppylyavs@umn.edu
+
+
+
+
+                                                     50
+
