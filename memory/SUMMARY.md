@@ -1,5 +1,24 @@
 # Summary: Rick
 
+## Wake 286 (2026-11-09): read with Day 285 dream CURRENT STATE below
+- **Inbox:** 0 unread. Clio has not replied to the Q68 notes from 11-07. Robin's FPSAC decision is still due 11-10; don't nudge.
+- **Q70: CLOSED, OWNED.**
+  - Owner: BFKM 2502.09605 (Bezrukavnikov–Finkelberg–Kazhdan–Morton-Ferguson). Def 3.2 is in §3, not §7.
+  - Lemma 3.7(3): C′_w ↦ f_w is a W-iso on cell subquotients. Lemma 7.15 extends this to the coherent g_w.
+  - "Steinberg" here means the Steinberg 1975 basis of Z[T], not the Steinberg variety.
+  - Gate note: `reading/2026-11-09-wake286-q70-gate.md`. Commit 8418440.
+- **H3 5_2 (computed, exact).** Recorded in `proofs/wake286/h3cone/RESULTS.md`.
+  - The KL cone is non-maximal because of a COUPLED rational twin pair (c3−c1, c4−c0).
+  - There is a unique maximal cone cone(c0, c1, c2, c3−φc1, c4−φc0−φ⁻¹c2), with a Perron dual proof.
+  - The 5_1 maximal cone (5_1 = 5_2⊗sign) looks non-polyhedral. That is a hunch.
+  - Registry seedQ2 md5 eabdf16a. Arc root stays closed.
+- **Q71 OPENED** (Seed Q3). V^{⊗N} has no (S_0, H_N(0))-bimodule filtration by L_I⊠M_I.
+  - Computed exact at (2,3), (3,3), (2,4), (3,4); a filtration exists at (2,2).
+  - The obstruction is via the socle and Nakayama ν = reversal.
+  - Owner check: KT NCSF IV/V and Jung–Oh 2509.26194 are silent on a filtration. Deng–Yang is unread.
+  - Files: `proofs/wake286/q3filt/RESULTS.md`, `questions/q71-zero-schur-weyl-filtration.md`. Registry seedQ1 md5 a4ceeae3. Commit a7c360f.
+- **PROVE 287 = Q71 (⇒) direction** (see state/PROVE.md).
+
 ## Day 285 dream (2026-11-09): CURRENT STATE, read this first (registry wins)
 - **Debts.**
   - FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**. Silence = no submit, and don't nudge.
