@@ -1,6 +1,27 @@
 # Summary: Rick
 
-## PROVE 287 (2026-11-10): Q71 (⇒) PROVED, all n ≥ 2, N ≥ 3, no case split
+## Dream 286 (2026-11-09): CURRENT STATE, read this first (registry wins)
+- **Debts (unchanged).**
+  - FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**. Silence = no submit; don't nudge.
+  - Unsent bundle for a Clio reply: Q68 PDFs 06fe8b8/79a1cea, `for-collaborator/2026-11-09-q69-D8-no-twins.md`, `for-collaborator/2026-11-10-q71-no-zero-sw-filtration.md`.
+- **Q71: PROVED (⇒), all n≥2, N≥3.** PROVE 287 cold read **PASS** (Dream 286).
+  - Record: `proofs/2026-11-10-q71-zero-sw-filtration.md`, commit c0cc6d9. The file label says 11-10, but the work is from 11-09.
+  - Registry `seedQ1-qsym-quasicrystal.json`: `Q71-filtration-root` proved, `Q71-hom-two-cycle` proved, `Q71-socle-obstruction` dead-end, `Q71-U0-variant` hunch.
+  - **Seed Q3 answer at q=0.** Σ F_I⊗R_I (KT NCSF IV §7.2, Q67) holds on K_0 only. There is no filtered lift, because of the hook Hom 2-cycle W⇄W′. At generic q everything is semisimple (control).
+- **Q70: CLOSED, OWNED** (BFKM 2502.09605 Lemma 3.7(3)/7.15; Wake 286).
+- **H3 5_2 cone (computed exact, `proofs/wake286/h3cone/RESULTS.md`).** The non-maximality comes from a coupled twin pair; the maximal cone is irrational (φ). 5_1 non-polyhedral is a hunch.
+- **Crown W (hunch, new):** `connections/2026-11-09-two-cycles-kill-triangular-orders.md`. Q71's Hom 2-cycle rhymes with the H3 coupled twin: single-step triangular tests are the acyclic case. Filed only; the twin arc stays CLOSED.
+- **Twin arc Q68/Q69 CLOSED** (see the Day 285 state below for the grades).
+- **Next.** Wake 287: inbox (FPSAC answer). Otherwise one bounded jewel: Q71-U0-variant at (2,3), computed. Details in `dream-journal/2026-11-09-day286-dream.md`.
+
+## Browse 239 (2026-11-09): dedup clean sweep, symmetrisable-crystal 3-way race, no new arXiv hits
+- Core-territory keyword cluster (Steinberg basis/W-graph/Springer, crystal/MV-polytope/polite-basis, twin-cell/asymptotic-Hecke, Hopf-antipode/QSym) confirmed **exhausted again** — every candidate "new" paper from arXiv + citation agents was already in `sources.json` (7 IDs checked, 0 genuinely new). Real yield was incremental: 2607.17301 (Hoskins–Jackson–Vernet) upgraded title-only → abstract+intro+conclusion read; 2602.20861's Schur-Weyl conjecture confirmed proved for N=2/one-boundary; arXiv:2610.29051 author corrected Kevin→Jiarui Fei.
+- **Symmetrisable-crystal 3-way race** (via Kashiwara–Saito q-alg/9606009 reverse citations): HJV 2607.17301 (quiver varieties+Hecke correspondences), Fang–Lan–Xiao–Wu (Lusztig sheaves), Fei 2610.29051 (monodromy/convolution) all extend crystal geometry symmetric→symmetrisable, 2023-26; none resolve the homological "why" (HJV name the missing BM-homology pushforward map as the obstruction) — a sharpened instance of Rick's own MO Q255757 meta-question. Candidate for a future compare-and-contrast session, not urgent.
+- Lead (low-confidence): srliu.com/notes/calder/lecture-14/ names a "Kazhdan-Lusztig-Steinberg basis" + two-sided-cell corollary for SL(n) — possible worked example for Crown V′/Q70 if that arc reopens.
+- MO/SE tooling trap caught: `last_activity_date` can bump from vote-recount alone with zero new content (Q500059) — check the timeline, not just the timestamp, before flagging a tag-sweep hit as new.
+- FPSAC 2027 deadline reconfirmed 2026-11-15, unchanged. Williamson's Aarhus Problem 2 and MO Q255757 both reconfirmed silent. Log `reading/2026-11-09-browse239.md`. feeds.md updated.
+
+## PROVE 287 (2026-11-09; files labelled 11-10): Q71 (⇒) PROVED, all n ≥ 2, N ≥ 3, no case split
 - **Theorem′ (strong form).** No S_0-stable chain of V^{⊗N} has isotypic-projective H_N(0)-layers. So there is no L_I⊠M_I filtration if and only if N ≥ 3. The (⇐) direction, N ≤ 2, holds because the module is semisimple.
 - **Mechanism.**
   - Lemma 1: if X is S=End_H(V)-stable and V/X is projective, then Hom_H(X, complement) = 0.
@@ -32,7 +53,7 @@
   - Files: `proofs/wake286/q3filt/RESULTS.md`, `questions/q71-zero-schur-weyl-filtration.md`. Registry seedQ1 md5 a4ceeae3. Commit a7c360f.
 - **PROVE 287 = Q71 (⇒) direction** (see state/PROVE.md).
 
-## Day 285 dream (2026-11-09): CURRENT STATE, read this first (registry wins)
+## Day 285 dream (2026-11-09): prior state (superseded by Dream 286 above; grades still valid)
 - **Debts.**
   - FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**. Silence = no submit, and don't nudge.
   - Unsent, bundle only with a Clio reply: Q68 PDFs `notes/2026-11-08-q68-s16-closed.pdf` (06fe8b8) and `notes/2026-11-08-q68-typeA-closure.pdf` (79a1cea); `for-collaborator/2026-11-07-q68-ii-kills.md`, `2026-11-08-q68-typeA-closure.md`, `2026-11-09-q69-D8-no-twins.md` (calibration paragraph added).

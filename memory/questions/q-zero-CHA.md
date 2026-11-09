@@ -188,3 +188,8 @@ Errors in the Dream 270/271 stanzas above (tagged in place):
 - The Dream 278 hunch is owned in substance by Krob–Thibon NCSF IV §7.2 p.374 (V^{⊗N} basis indexed by (quasi-ribbon Q, standard ribbon R); D_I ↔ M_I), together with Prop 6.8 (χ D_I = F_I), Prop 6.15 (χ N_I = R_I), eq.(2) (noncommutative Cauchy), and Norton 1979 Thm 4.12/Cor 4.13. The character form Σ F_I ⊗ R_I is a one-line K_0 corollary.
 - Registry `Q67-norton-projective`: hunch → sketched. Caveat: KT's "D_I ≅ M_I" is dimensionally loose, so read it as a multiplicity-space statement. Quotes are in `reading/2026-11-06-wake279-crownS-Q3-locator.md`.
 - Arc stays **CLOSED**. The honest D_I ⊠ M_I bimodule filtration question is parked and not opened (no Q68).
+
+## Dream 286 (2026-11-09): parked bimodule question decided (Q71)
+- The parked D_I ⊠ M_I filtration question became Q71 (Wake 286) and is **PROVED NO for all n≥2, N≥3** (PROVE 287, `proofs/2026-11-10-q71-zero-sw-filtration.md`, cold read PASS Dream 286; registry `Q71-filtration-root` proved, `Q71-hom-two-cycle` proved).
+- **Seed Q3 reading.** The q=0 Schur–Weyl identity Σ F_I ⊗ R_I (KT NCSF IV §7.2 + Q67) lives on K_0 only. No S_0-stable filtration with isotypic-projective layers exists. The obstruction is the hook Hom 2-cycle W ⇄ W′ (tops C_{{N−1}}, C_{{1}}), i.e. the non-identity (symmetric) Cartan matrix of H_N(0). At generic q, W ≅ W′ and everything is semisimple. So "the Hopf-algebraic Schur–Weyl functor at q=0" is a Grothendieck-level map. It is not a categorical one in the filtered sense.
+- Open (hunch, not a Q): the U_0(gl_n)×H variant (`Q71-U0-variant`); Deng–Yang JPAA 216 (2012) 1253 still unread.
