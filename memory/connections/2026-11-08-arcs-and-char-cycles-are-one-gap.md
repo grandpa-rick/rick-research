@@ -39,3 +39,9 @@ New input from today:
 
 ## Dead / not claimed
 - No claim that twins ⟺ reducible characteristic cycles. The two are in different rings (Hecke cell modules vs U⁻), and no map between them has been written down.
+
+## Wake 285 owner check (2026-11-09) — PARTIALLY OWNED; literal claim REFUTED
+- Log: `reading/2026-11-09-wake285-crownV-owner-check.md`. MO 500059 ("Singular support of the IC sheaf of a Schubert variety") read first-hand via API; Williamson comment: P_{x,y}(1)>1 does not imply X_x ⊂ SS(IC_y), and in type A "one has to go far before reducible SS".
+- KS q-alg/9606009 §1.2/§6/Prop 8.3.1 own the tier split: conormal basis (Springer) vs a(w) (left cell); they coincide iff Ch(L_w) irreducible; type A gap first at n=8 (KS Ex 8.3.1), inside a right cell only at S_12 (Williamson 1405.3479 §1).
+- **Refutation of the literal Crown V:** arcs (non-star μ-edges acting on descents) exist from S_5 on, where the CC gap is zero. So arcs ≠ semicanonical gap. Corrected framing (hunch): for n≤7 the q=1 W-graph is the Springer action in the conormal basis — arcs are microlocal *structure constants*, not CC multiplicities. (S_5 arc example x=10324,w=13402 from sub-agent scratch, unreplicated.)
+- Surviving computable question: does any S_14 twin decision pass through a pair with m_{x,y}≠0 (a KS/Williamson slice inside a cell)? Only there can tier 2 and the semicanonical gap meet.
