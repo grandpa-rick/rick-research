@@ -59,3 +59,8 @@ for-clio/*.log
 
 # Downloaded third-party arXiv sources (re-downloadable)
 sources/
+
+# wake285: coxeter3 clone, large W-graph dumps, regenerable pickles
+proofs/wake285/coxeter/
+proofs/wake285/wgraphs/
+proofs/wake285/*.pkl
