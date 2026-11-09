@@ -1,0 +1,1113 @@
+                                              A GEOMETRIC REALISATION OF 0-SCHUR AND 0-HECKE ALGEBRAS
+
+                                                                               BERNT TORE JENSEN AND XIUPING SU
+
+
+                                                    Abstract. We define a new product on orbits of pairs of flags in a vector space, using open orbits
+                                                    in certain varieties of pairs of flags. This new product defines an associative Z-algebra, denoted
+                                                    by G(n, r). We show that G(n, r) is a geometric realisation of the 0-Schur algebra S0 (n, r) over
+                                                    Z, which is the q-Schur algebra Sq (n, r) at q = 0. We view a pair of flags as a pair of projective
+                                                    resolutions for a quiver of type A with linear orientation, and study q-Schur algebras from this point
+arXiv:1207.6769v1 [math.RT] 29 Jul 2012
+
+
+
+
+                                                    of view. This allows us to understand the relation between q-Schur algebras and Hall algebras and
+                                                    construct bases of q-Schur algebras, which are used in the proof of the main results. Using the
+                                                    geometric realisation, we construct idempotents and multiplicative bases for 0-Schur algebras. We
+                                                    also give a geometric realisation of 0-Hecke algebras and a presentation of the q-Schur algebra over
+                                                    a base ring where q is not invertible.
+
+
+
+
+                                                                                              Introduction
+                                             Let k be a finite or an algebraically closed field. When k is finite, we denote by q the number of
+                                          elements in k. Let n ≥ 1 and r ≥ 1 be integers and let F denote the variety of partial r-step flags
+                                          in an n-dimensional vector space V . The general linear group GL(V ) acts on F by change of basis
+                                          on V and the orbits under this action are denoted by Fd , where d is a decomposition of the integer
+                                          n into r parts.
+                                             Beilinson, Lusztig and MacPherson [1] (see also Du [11] and Green [16]) construct the q-Schur
+                                          algebra Sq (n, r) on the basis of GL(V )-orbits in F × F , where GL(V ) acts diagonally on F × F by
+                                          change of basis on V . This algebra can be defined using the pair of maps
+                                                                                                  ∆    /
+                                                                        F ×F ×F                                   (F × F ) × (F × F )
+                                                                               π
+                                                                             
+                                                                           F ×F
+                                          where ∆(f, f ′ , f ′′ ) = ((f, f ′ ), (f ′ , f ′′ )) and π(f, f ′ , f ′′ ) = (f, f ′′ ), and the structure constant in front
+                                          of an orbit [g, g ′ ] = GL(V )(g, g ′ ) in the product of [f, f ′ ] and [f ′ , f ′′ ] is the number of elements in
+                                          the set
+                                                                                       π −1 (g, g ′ ) ∩ ∆−1 ([f, f ′ ] × [f ′ f ′′ ]).
+                                          The structure constants are given by polynomials evaluated at q for any finite field. Beilinson, Lusztig
+                                          and MacPherson construct a limit of these finite dimensional algebras to give a geometric realisation
+                                          of the quantised enveloping algebra of gln .
+                                             In this paper we take the point of view that a pair of flags is a pair of projective resolutions for
+                                          a quiver of type A with linear orientation. We show that a pair of flags and its corresponding pair
+                                          of projective resolutions uniquely determine each other. We then construct bases and prove results
+                                          that will be used in the subsequent parts of the paper.
+                                             The main goal of this paper is to give a geometric realisation of 0-Schur algebras, which are q-
+                                          Schur algebras at q = 0. We define a new algebra G(n, r) on the same basis as Sq (n, r) by defining
+                                          the product of [f, f ′ ] and [f ′ , f ′′ ] to be the unique open orbit (see Section 6) in
+                                                                                         π∆−1 ([f, f ′ ] × [f ′ , f ′′ ]),
+                                          and obtain the following main result.
+                                          Theorem 1. As Z-algebras, G(n, r) is isomorphic to Sq (n, r)q=0 .
+                                             We remark that the definition of the new product is similar to the one defined by Reineke [21] for
+                                          Hall algebras and the main result generalises the main result in [24].
+                                             To prove Theorem 1, we first give a presentation of G(n, r) using quivers and relations and then
+                                          use the presentation to prove the isomorphism in the theorem. We remark that Deng and Yang [6]
+                                          have independently given a similar presentation for S0 (n, r), using a different approach.
+                                                                                                           1
+2                                BERNT TORE JENSEN AND XIUPING SU
+
+
+   Among applications of the geometric realisation, we obtain a multiplicative basis for S0 (n, r) and
+using open orbits we construct a block in S0 (n, r) isomorphic to a matrix algebra and families of
+idempotents. Also, we give a presentation of Sq (n, r) over a base ring where q is not invertible. In
+the special case n = r, we obtain a geometric realisation of the 0-Hecke algebra H0 (n)
+   The paper is organised as follows. In Section 1 we recall the construction of Beilinson, Lusztig
+and MacPherson and in Section 2 we describe orbits in F × F using representations of linear quivers
+of type A. In Section 3 we recall the definition of the positive and negative parts of the q-Schur
+algebras and their relationship to the Hall algebra, and use this description to construct a basis of
+the q-Schur algebra in Section 4. In Section 5 we give a describe quantised Schur algebras using
+quivers and relations. We define the generic algebra in Section 6 and show that it is isomorphic to
+the 0-Schur-algebra in Section 7. In Section 8 we consider the degeneration order of orbits in F × F ,
+and use open orbits to construct idempotents for the 0-Schur algebra in Section 9. Finally, we discuss
+0-Hecke algebras in Section 10.
+
+                            1. Flag varieties and q-Schur algebras
+   In this section we fix notation and recall some definitions and results of Beilinson, Lusztig and
+MacPherson [1] on q-Schur algebras. We also recall the definition of the 0-Schur algebra.
+   Let n, r ≥ 1 be integers and V an r-dimensional vector space over a field k. Denote by F the set
+of all n-steps flags
+                                  f : {0} = V0 ⊆ V1 ⊆ · · · ⊆ Vn = V
+in V . The general linear group GL(V ) acts on F by change of basis on V .
+   For any f ∈ F , define di = dim Vi − dim Vi−1 for i = 1, · · · , n. Then
+                                             d = d1 + · · · + dn
+is a decomposition of r into n parts. Two flags f and g are isomorphic, i.e. they are in the same
+GL(V )-orbit, if and only if they have the same decomposition. Let D(n, r) denote the set of all
+decompositions of r in n parts, and let Fd ⊆ F denote the orbit corresponding to d ∈ D(n, r).
+   Let GL(V ) act diagonally on F × F , i.e. by change of basis on V . Given a pair of flags (f, f ′ ) ∈
+F × F,
+                                   f : {0} = V0 ⊆ V1 ⊆ · · · ⊆ Vn = V
+and
+                                  f ′ : {0} = V0′ ⊆ V1′ ⊆ · · · ⊆ Vn′ = V,
+define a matrix A = A(f, f ′ ) = (Aij ), with
+                         Aij = dim(Vi−1 + Vi ∩ Vj′ ) − dim(Vi−1 + Vi ∩ Vj−1
+                                                                         ′
+                                                                            ).
+This defines a bijection between the GL(V )-orbits in F × F and matrices of non-negative integers
+with entries which sum to r. We denote the GL(V )-orbit of (f, f ′ ) by [f, f ′ ] and by eA if we want
+to emphasize the matrix A = A(f, f ′ ). Two pairs of flags (f, f ′ ) and (g, g ′ ) are isomorphic if they
+belong to the same GL(V )-orbit and we write (f, f ′ ) ≃ (g, g ′ ) in this case.
+   Let eA , eA′ , eA′′ ∈ F × F /GL(V ) and (f1 , f2 ) ∈ eA′′ . Let
+                         S(A, A′ , A′′ ) = {f ∈ F | (f1 , f ) ∈ eA , (f, f2 ) ∈ eA′ }.
+Following Proposition 1.1 in [1], there exists a polynmial gA,A′ ,A′′ ∈ Z[q], such that
+                                      gA,A′ ,A′′ (q) = |S(A, A′ , A′′ )|,
+for all finite fields. The projection F × F × F → F onto the middle factor maps ∆−1 (eA × eA′ ) ∩
+π −1 (f1 , f2 ) bijectively onto S(A, A′ , A′′ ), and so these two sets have the same cardinality.
+   Recall [1] that the q-Schur algebra Sq (n, r) is the free Z[q]-module with basis F × F /GL(V ), and
+associative multiplication given by
+                                                      X
+                                    e A e A′ =                  gA,A′ ,A′′ eA′′ .
+                                           eA′′ ∈F ×F /GL(V )
+
+    Although, in general it is difficult to compute the polynomial gA,A′ ,A′′ , the following lemma from
+[1], dealing with special A and A′ , gives clear multiplication rules. Also, Deng and Yang give a
+recursive formula of gA,A′ ,A′′ using Hall polynomials [14].
+    Let
+                                           qm − 1
+                                    [m] =         = q m−1 + · · · + q + 1
+                                            q−1
+                                             0-SCHUR ALGEBRAS                                                 3
+
+
+for m ∈ N and let Ei,j denote the (i, j)′ th elementary matrix.
+Lemma 1.1. [1] Assume that 1 ≤ h < n. Let eA ⊆ Fe × Ff . Assume that eB ⊆ Fd × Fe
+and eC ⊆ Fd′ × Fe such that B − Eh,h+1 , C − Eh+1,h are diagonal matrices. Then the following
+multiplication formuli hold in Sq (n, r),
+                                          X  P
+                             eB eA =        q j>p Ah,j [Ah,p + 1]eX ,
+                                         {p|Ah+1,p >0}
+                                           X              P
+                              eC eA =                 q    j<p Ah+1,j   [Ah+1,p + 1]eY ,
+                                        {p|Ah,p >0}
+where X = A + Eh,p − Eh+1,p and Y = A − Eh,p + Eh+1,p .
+   The classical Schur algebra
+                                    S(n, r) = S(n, r) ⊗Z[q] Z[q]/(q − 1)
+is obtained by evaluating the structure constants gA,A′ ,A′′ at q = 1, and the 0-Schur algebra
+                                     S0 (n, r) = Sq (n, r) ⊗Z[q] Z[q]/(q)
+is obtained by evaluating the structure constants gA,A′ ,A′′ at q = 0.
+
+                               2. Representations of linear quivers
+    In this section we describe orbits of pairs of flags using representations of a linear quiver Λ = Λ(n)
+of type An ,
+                                      Λ(n) : 1       /2     / ···      /n.
+    A representation X of Λ consists of vector spaces Xi , i = 1, · · · , n, and linear maps Xα : Xi →
+Xi+1 , α : i → i + 1, i = 1, · · · , n − 1. A homomorphism h : X → Y between two representations X
+and Y is a collection of linear maps hi : Xi → Yi , satisfying hi+1 Xα = Yα hi . A homomorphism h is
+an isomorphism if hi is a linear isomorphism for all i = 1, · · · , n, and we write X ≃ Y if X and Y are
+isomorphic. A direct sum of representations is a direct sum of vector spaces and maps. A nonzero
+representation is indecomposable if it is not isomorphic to a direct sum of non-zero representations.
+    The dimension vector of X is denoted by dimX = (dim Xi )i . If we fix each vector space     Q Xi we
+may parameterise representations of Λ by the vector space of all maps (Xα )α on which i GL(Xi )
+acts by change of basis, such that the orbits correspond to isomorphism classes of representations
+with dimension vector dimX.
+    Let Mij , for j ≥ i, be the indecomposable representation supported on the interval of vertices
+[i, j] = {i, · · · , j}, with vector spaces in the support equal to k and all non-zero maps equal to the
+identity. Any representation M decomposes uniquely, up to isomorphism, as
+                                                     M
+                                                M≃      (Mij )dij
+                                                          i,j
+
+for non-negative integers dij . For each vertex i, let Si = Mii and Pi = Min be the simple and
+indecomposable projective representation at i, respectively. A representation P is projective if and
+only if each map Pα is injective.
+   For each decomposition d ∈ D(n, r), let P (d) be the projective representation defined by
+                                           M        d
+                                   P (d) =     (Pi ) i , P (d)n = V.
+                                                  i
+By taking images of the maps P (d)i → P (d)n = V we get a n-step flag in Fd . We will view any
+projective representation P (d) as a flag in Fd .
+   An n-step flag in V is a projective representation of Λ, with maps equal to the the inclusions
+Vi ⊆ Vi+1 . Two flags are isomorphic if and only if they are isomorphic as representations. If f is a
+flag in U and f ′ is a flag in U ′ then f ⊕ f ′ denotes the flag in V = U ⊕ U ′ with vector space at each
+vertex i equal to Ui ⊕ Ui′ .
+   A pair of flags (g, f ) with g ⊆ f can be viewed as a projective resolution
+                                           0 → g → f → f /g → 0.
+If (f1 , f2 ), (f1′ , f2′ ) ∈ F × F , with f1 ⊆ f2 and f1′ ⊆ f2′ , then (f1 , f2 ) ≃ (f1′ , f2′ ) if and only if
+f2 /f1 ≃ f2′ /f1′ and f2 ≃ f2′ . This fact generalises to arbitrary pairs, and this is the main lemma of
+this section.
+4                                     BERNT TORE JENSEN AND XIUPING SU
+
+
+Lemma 2.1. Let (f1 , f2 ), (f1′ , f2′ ) ∈ F × F . The following are equivalent.
+     i) (f1 , f2 ) ≃ (f1′ , f2′ ).
+    ii) (f1 + f2 )/fi ≃ (f1′ + f2′ )/fi′ for i = 1, 2, and f1 + f2 ≃ f1′ + f2′ .
+   iii) (fi , f1 + f2 ) ≃ (fi′ , f1′ + f2′ ) for i = 1, 2.
+Proof. The implication from i) to ii) is trivial.
+  We prove that ii) implies i). By ii), fi /(f1 ∩ f2 ) ≃ fi′ /(f1′ ∩ f2′ ), and f1 ∩ f2 ≃ f1′ ∩ f2′ .
+  Let gi : fi /f1 ∩ f2 → fi′ /f1′ ∩ f2′ be isomorphisms. Consider the following diagram,
+                                                 π       / (f1 /f1 ∩ f2 ) ⊕ (f2 /f1 ∩ f2 )
+                               f1 + f2
+                                                                                          
+                                                                                g1     0
+                                    ∃h                                           0    g2
+                                                π′
+                                                                              
+                               f1′ + f2′                 / (f1′ /f1′ ∩ f2′ ) ⊕ (f2′ /f1′ ∩ f2′ ),
+
+where π and π ′ are natural projections. Since f1 + f2 and f1′ + f2′ are isomorphic projective rep-
+resentations, there is an isomorphism h such that the above diagram commutes. Thus h(f1 ) ⊆
+(π ′ )−1 (f1′ /f1′ ∩ f2′ ) = f1′ . Therefore h(f1 ) = f1′ . Similarly h(f2 ) = f2′ . Hence (f1 , f2 ) and (f1′ , f2′ ) are
+in the same orbit. This proves i)
+    iii) is a reformulation of ii). This finishes the proof.                                                            
+   We mention that it is possible to restate the lemma by replacing the inclusions fi ⊆ f1 + f2 by the
+inclusions f1 ∩ f2 ⊆ fi . Also, the condition f1 + f2 ≃ f1′ + f2′ in part ii) can be replaced by f1 ≃ f1′
+and f2 ≃ f2′ .
+   We give some consequences of the lemma. The lemma shows that pairs of flags in F × F are
+determined up to isomorphism by triples (d, [M ], [N ]), where d ∈ D(n, r) and [M ], [N ] are isomor-
+phism classes of representations of Λ with a surjection P (d) → M ⊕ N . Conversely, given a triple
+(d, [M ], [N ]) with d ∈ D(n, r) and a surjection φ : P (d) → M ⊕ N we construct a corresponding
+pair (g1 , g2 ) as follows. Recall that a surjective homomorphism ψ : P → M from a projective rep-
+resentation P is a projective cover if kerψ ⊆ radP where radP denotes the Jacobson radical of P .
+Decompose
+                                            P (d) = f1 ⊕ f2 ⊕ c
+such that φ|f1 is a projective cover of M and φ|f2 is a projective cover of N . Then the kernel kerφ
+decomposes as
+                                            kerφ = f1′ ⊕ f2′ ⊕ c
+where fi′ = kerφ|fi . Now let
+                                         (g1 , g2 ) = (f1 ⊕ f2′ ⊕ c, f1′ ⊕ f2 ⊕ c).
+Then g1 +g2 = f1 ⊕f2 ⊕c, g1 ∩g2 = f1′ ⊕f2′ ⊕c and f1′ ⊆ radf1 , f2′ ⊆ radf2 , g1 +g2 /g2 ≃ g1 /g1 ∩g2 ≃ M
+and g1 + g2 /g1 ≃ g2 /g1 ∩ g2 ≃ N .
+   Given a pair of flags (f, f ′ ) ∈ F ×F , we have the following descripton of the matrix A corresponding
+to the orbit eA = [f, f ′ ].
+Lemma 2.2. Let eA = [f, f ′ ]. Then
+     i) if i < j, then Aij is the multiplicity of Mi−1,j as a direct summand in f /f ∩ f ′ ,
+    ii) if i > j, then Aij is the multiplicity of Mj,i−1 as a direct summand in f ′ /f ∩ f ′ , and
+   iii) Aii is the multiplicity of Min → Min as a contractible summand in the projective resolution
+        f ∩ f ′ ⊆ f + f ′.
+Proof. Let (f, f ′ ) ∈ F × F , and f ′′ = f ∩ f ′ be given by f : {0} = V0 ⊆ V1 ⊆ · · · ⊆ Vn , f ′ : {0} =
+V0′ ⊆ V1′ ⊆ · · · ⊆ Vn′ , and f ′′ : {0} = V0′′ ⊆ V1′′ ⊆ · · · ⊆ Vn′′ . We have
+                                                           Vi−1 + Vi ∩ Vj′
+                                             Aij = dim                  ′  .
+                                                          Vi−1 + Vi ∩ Vj−1
+    Then for i < j let eB = [f, f ′′ ]. We have
+                                            Vi−1 + Vi ∩ Vj′′        Vi−1 + Vi ∩ Vj′
+                             Bij = dim                   ′′  = dim               ′
+                                           Vi−1 + Vi ∩ Vj−1        Vi−1 + Vi ∩ Vj−1
+                                 Vi−1 + Vi ∩ Vj ∩ Vj′         Vi−1 + Vi ∩ Vj′
+                      = dim                         ′  = dim               ′  = Aij .
+                               Vi−1 + Vi ∩ Vj−1 ∩ Vj−1       Vi−1 + Vi ∩ Vj−1
+                                                0-SCHUR ALGEBRAS                                          5
+
+
+But Bij is the multiplicity of Mi−1,j as a direct summand in f /f ′′ , which proves i).
+  The proof of ii) is similar.
+  For the diagonal of A, we have
+                                               Vi−1 + Vi ∩ Vi′
+                                       Aii =                ′ .
+                                              Vi−1 + Vi ∩ Vi−1
+Write Vi ∩Vi′ = U ⊕W where U ⊆ Vi−1 and W ∩Vi−1 = 0. Now W = W1 ⊕W2 , W1 ⊆ Vi ∩Vi−1          ′
+                                                                                               +Vi−1
+                   ′
+and W2 ∩ (Vi ∩ Vi−1 + Vi−1 ) = 0. Therefore Aii = dim W2 which is the multiplicity of Min → Min
+as a contractible summand in the projective resolution f ∩ f ′ → f + f ′ . This proves iii).      
+
+                              3. The non-negative q-Schur algebra
+   In this section we describe the non-negative part of a q-Schur algebra as a Hall algebra of projective
+resolutions of representations of the linear quiver Λ = Λ(n), defined in Section 2. We also include
+some easy lemmas on the computation of Hall numbers for the linear quiver which are needed in
+subsequent sections. For deeper connections between Hall numbers and the structure constants of
+the q-Schur algebra, please see [14].
+   An orbit [f, f ′ ] ∈ F × F /GL(V ) with f ′ ⊆ f decomposes as
+                                            [f, f ′ ] = [c ⊕ g, c ⊕ g ′ ]
+where f /f ′ ≃ g/g ′ and g ′ ⊆ radg. Such an orbit can be viewed as a choice of a projective resolution
+of g/g ′ obtained by adding a contractible summand c to the minimal projective resolution 0 → g ′ →
+g → g/g ′ → 0.
+   The non-negative Z[q]-subalgebra Sq+ (n, r) is the subalgebra of Sq (n, r) with basis consisting of all
+orbits [f, f ′ ] with f ′ ⊆ f . Similarly, the non-positive q-Schur algebra Sq− (n, r) has the corresponding
+basis of all orbits [f ′ , f ] with f ′ ⊆ f .
+   Recall that the Hall number hL        MN defined by Ringel [22] is the number of submodules X ⊆ L
+satisfying X ≃ N and L/X ≃ M .
+Lemma 3.1. Let f1 ⊇ f2 ⊇ f3 be flags and let eA = [f1 , f2 ], eA′ = [f2 , f3 ], eA′′ = [f1′ , f3′ ] with
+f1′ ⊇ f3′ , f1′ ≃ f1 and f3′ ≃ f3 , M = f1 /f2 , N = f2 /f3 and L = f1′ /f3′ . Then
+                                                gA,A′ ,A′′ = hL
+                                                              MN .
+
+Proof. Let U = {X ⊆ L | X ≃ N, L/X ≃ M }. We will define two mutually inverse maps between
+U and S(A, A′ , A′′ ). Given f2′ ∈ S(A, A′ , A′′ ), we have the following commutative diagram of short
+exact sequences
+
+                              0         / f′           / f′           /0              /0
+                                           3              3
+
+
+                                                                       
+                              0         / f2′          / f1′       / f1′ /f2′         /0
+
+                                                           π
+                                                                       
+                              0       / f2′ /f3′        /L         / f1′ /f2′        / 0,
+with f1 /f2 ≃ f1′ /f2′ ≃ M and f2 /f3 ≃ f2′ /f3′ ≃ N .
+   Define maps S(A, A′ , A′′ ) → U by f2′ 7→ π(f2′ ) and U → S(A, A′ , A′′ ) by X 7→ π −1 (X). It is easy
+to check that these two maps are mutually inverse, and so the equality follows since hL   MN = |U |. 
+
+   Denote the (non-twisted) Ringel-Hall algebra [22] by Hq (Λ). That is, Hq (Λ) is the free Z[q]-module
+with basis isomorphism classes [M ] of representations of Λ and multiplication
+                                                  X
+                                       [M ][N ] =     hL
+                                                       MN [L].
+                                                          L
+Mapping modules to choices of projective resolutions induces an algebra homomorphism
+                                                                  X
+              Θ+ : Hq (Λ) → Sq+ (n, r) defined by [M ] 7→                  [f, f ′ ]
+                                                                       {[f,f ′ ]|f ′ ⊆f,f /f ′ ≃M}
+
+with kernel spanned by those [M ] with the number of indecomposable direct summands bigger than
+r [16]. There is a similar map Θ− : Hq (Λ) → Sq− (n, r).
+6                                     BERNT TORE JENSEN AND XIUPING SU
+
+
+   As a conseqence, we have the following special cases of Corollary 4.5 in [1] (see also Proposition
+14.1 in [12]). The assumptions are as in Lemma 3.1.
+Corollary 3.2. We have
+                                   gA+D,A′ +D,A′′ +D = hL      M,N ,
+for any diagonal matrix D = diag(d1 , · · · , dn ) with di ≥ 0.
+    This yields a different proof of Theorem 14.27 in [12], which we restate here as follows.
+Theorem 3.3. Hall algebra Hq (Λ) is isomorphic to the algebra with basis all formal sums
+                                   X
+                                {       [f, g] | M ∈ modkQ},
+                                            f /g∼
+                                                =M
+
+over all decompositions of r into n parts and for all r ≥ 1, and the multiplication as in Sq (n, r).
+   As before, let Mij be the indecomposable representation of Λ supported on the interval [i, j]. Let
+Mij ≤ Mi′ j ′ if j < j ′ or i ≤ i′ if j = j ′ . This is a total order on the indecomposable representations
+of Λ. Observe that if Mij ≤ Mi′ j ′ then Ext1 (Mi′ j ′ , Mij ) = 0, but that the converse is not true in
+general. We state a lemma which follows easily from Lemma 3.1 and the corresponding computations
+in the Ringel-Hall algebra.
+                                                                     m
+Lemma 3.4. Suppose flags f ⊇ g with f /g = ⊕ij Mij ij . Then there exists a filtration f = fn ⊃
+fn−1 ⊃ · · · ⊃ f1 = g ⊃ 0 with indecomposable factors fi /fi−1 ≤ fi+1 /fi for all i, such that
+                                                                          Y
+                                [fn , fn−1 ] · · · [f2 , f1 ] = [fn , f1 ] [mij ]!
+and mij is the multiplicity of Mij as a subfactor in the filtration.
+
+                                               4. Bases of Sq (n, r)
+   In this section we describe a basis for Sq (n, r) using the non-negative and non-positive subalgebras
+defined in the previous section. Let
+                          B = {[f1 , f1 + f2 ][f1 + f2 , f2 ] | [f1 , f2 ] ∈ F × F /GL(V )}.
+Lemma 2.1 shows that the map F × F /GL(V ) → B given by
+                                        [f1 , f2 ] 7→ [f1 , f1 + f2 ][f1 + f2 , f2 ]
+is a well defined surjection of sets. We shall see that B is a Z[q]-basis of Sq (n, r). Note that there is
+a similar basis B ′ of Sq (n, r) consisting of elements of the form [f1 , f1 ∩ f2 ][f1 ∩ f2 , f2 ].
+Lemma 4.1. Let (f1 , f2 ) ∈ F × F and let eA = [f1 , f1 + f2 ] and eA′ = [f1 + f2 , f2 ]. Then
+                                                          X
+         [f1 , f1 + f2 ][f1 + f2 , f2 ] = [f1 , f2 ] +                   gA,A′ ,A′′ [f1′ , f2′ ].
+                                                           {eA′′ =[f1′ ,f2′ ]|f1′ +f2′ (f1 +f2 }
+
+Proof. Suppose that [f1′ , f2′ ] is one of the terms with a non-zero coefficient in the sum
+                                                                X
+                               [f1 , f1 + f2 ][f1 + f2 , f2 ] =   gA,A′ ,A′′ [f1′ , f2′ ].
+Then there exists an f ∈ F such that (f1′ , f ) ≃ (f1 , f1 + f2 ) and (f, f2′ ) ≃ (f1 + f2 , f2 ). Thus
+f1′ , f2′ ⊆ f and so f1′ +f2′ ⊆ f . Note that if f1′ +f2′ = f , then (f1′ , f ) = (f1′ , f1′ +f2′ ) ≃ (f1 , f1 +f2 ) and
+(f, f2′ ) = (f1′ + f2′ , f2′ ) ≃ (f1 + f2 , f2 ). Therefore (f1′ + f2′ )/fi′ ≃ (f1 + f2 )/fi for i = 1, 2. By Lemma
+2.1, (f1′ , f2′ ) ≃ (f1 , f2 ). Moreover gA,A′ ,A′′ = 1 for eA = [f1 , f2 ]. The lemma follows.                        
+    There is a similar formula for the product [f1 , f1 ∩ f2 ][f1 ∩ f2 , f2 ].
+Theorem 4.2. The set B is a Z[q]-basis of Sq (n, r).
+Proof. By induction on the size of f1 + f2 and Lemma 4.1, any basis element [f1 , f2 ] can be written
+as a Z[q]-linear combination of elements in B. This proves that B spans Sq (n, r) as a Z[q]-module.
+Then B is in bijection with the basis F × F /GL(V ), which proves that B is a basis of Sq (n, r). 
+    Each basis element in B has a decomposition
+                               [c ⊕ f1′ ⊕ f2 , c ⊕ f1 ⊕ f2 ][c ⊕ f1 ⊕ f2 , c ⊕ f1 ⊕ f2′ ]
+where f1′ ⊆ radf1 and f2′ ⊆ radf2 .
+                                               0-SCHUR ALGEBRAS                                         7
+
+
+Lemma 4.3. Let f1 ⊆ g ⊇ f2 be flags in F . Then (f1 , g) ≃ (h1 , h1 + h2 ) and (g, f2 ) ≃ (h1 + h2 , h2 )
+for a pair of flags h1 , h2 ∈ F , if and only if there is a surjective map g → g/f1 ⊕ g/f2 .
+Proof. Assume that φ : g → g/f1 ⊕ g/f2 is surjective. Let h1 = φ−1 (g/f2 ) and h2 = φ−1 (g/f1 ).
+Then (h1 , g) ≃ (f1 , g) and (g, h2 ) ≃ (g, f2 ) and g = φ−1 (g/f1 ⊕ g/f2) = h1 + h2 .
+  The converse follows since the map π : h1 + h2 → (h1 + h2 )/h1 ⊕ (h1 + h2 )/h2 is surjective. 
+  In particular the lemma shows that a surjective map g → g/f1 ⊕ g/f2 implies [f1 , g][g, f2 ] ∈ B.
+The following example shows that the converse is not true.
+Example 4.4. Let n = 2, r = 2, V = span{x1 , x2 }, fi : 0 ⊆ kxi for i = 1, 2, and g : V ⊆ V . Then
+                    [f1 , g][g, f2 ] = [f1 , f2 ] + [f1 , f1 ] = [f1 , f1 + f2 ][f1 + f2 , f2 ] ∈ B,
+with no surjective map g → g/f1 ⊕ g/f2 . In this case g 6≃ f1 + f2 .
+
+                        5. Quiver and relations for q-Schur algebras
+   In this section we present an algebra using quivers and binomial relations, which will be shown to
+be the 0-Schur algebra in Section 7. This will lead to a presentation of the q-Schur over a base ring
+where q is not invertible. Also, following from the relations, the 0-Schur algebra has a multiplicative
+basis of paths which will be constructed geometrically in Section 6 and 7.
+   As before, let D(n, r) be the set of decompositions of r into n parts. For d ∈ D(n, r), we define
+d + αi by                                          
+                                                    di + 1, if i = j,
+                                      (d + αi )j =
+                                                      dj , if i 6= j.
+   Let Σ(n, r) be the quiver with vertices Kd and arrows Ei,d and Fi,d ,
+                                                       Fi,d+αi −αi+1
+
+                                                                            *
+                                 Kd+αi −αi+1                                      Kd
+                                                   j
+                                                           Ei,d
+
+where d, d + αi − αi+1 ∈ D(n, r). The vertices can be drawn on a simplex, where the vertices Kd
+with di = 0 for some i = 0 are on the boundary, and vertices Kd with di 6= 0 for all i are in the
+interior of the simplex.
+   To simplify our formulas we define
+                                                
+                                                d 6∈ D(n, r),
+                                    Ei,d = 0 if    i = n, or ,
+                                                
+                                                    di+1 = 0
+                                                
+                                                d 6∈ D(n, r),
+                                    Fi,d = 0 if    i = n, or ,
+                                                
+                                                     di = 0
+                                      Kd = 0 if d 6∈ D(n, r),
+                                       X                  X
+                                 Ei =      Ei,d and Fi =      Fi,d .
+                                                d                      d
+   For a commutative ring R, denote by RΣ(n, r) the path R-algebra of Σ(n, r), which is the free
+R-module with basis all paths in Σ(n, r), and multiplication given by composition of paths. The
+vertices Kd form an orthogonal set of idempotents in RΣ(n, r) and the composition of two paths
+p and q is pq, if q ends where p starts, and zero otherwise. Recall that a relation in RΣ(n, r) is a
+R-linear combination of paths with common starting and ending vertex
+                                        X
+                                   ρ=      ri pi , ri ∈ R, pi a path.
+                                               i
+  Let I(n, r) ⊆ Z[q]Σ(n, r) be the ideal generated by the relations
+                                              Pij,d = Kd+pij Pij Kd ,
+                                         Nij,d = Kd−pij Nij Kd , and
+                                     Cij,d = Kd+αi +αj+1 −αi+1 −αj Cij Kd ,
+8                                   BERNT TORE JENSEN AND XIUPING SU
+
+
+where                               
+                                     2αi + αj − 2αi+1 − αj+1 , if |i − j| = 1,
+                              pij =
+                                      αi + αj − αi+1 − αj+1 , if |i − j| > 1;
+                                  2
+                                 Ei Ej − (q + 1)Ei Ej Ei + qEj Ei2 for i = j − 1,
+                          Pij = qEi2 Ej − (q + 1)Ei Ej Ei + Ej Ei2 for i = j + 1,
+                                 
+                                             Ei Ej − Ej Ei , otherwise;
+                                   2
+                                  qFi Fj − (q + 1)Fi Fj Fi + Fj Fi2 for i = j − 1,
+                          Nij = Fi2 Fj − (q + 1)Fi Fj Fi + qFj Fi2 for i = j + 1,
+                                  
+                                             Fi Fj − Fj Fi , otherwise;
+and
+                                                             X q di − q di+1
+                                Cij = Ei Fj − Fj Ei − δij                      Kd .
+                                                                    q−1
+                                                              d
+    Let
+                          ei,d = [f, f ′ ], fi,d+αi −αi+1 = [f ′ , f ] and kd = [h, h]
+where (f, f ′ ) ∈ F × F with f ′ ⊆ f , f /f ′ ≃ Si , and f ′ , h ∈ Fd .
+Lemma 5.1. There is a homomorphism of Z[q]-algebras
+                                      φ : Z[q]Σ(n, r)/I(n, r) → Sq (n, r)
+defined by
+                               φ(Ei,d ) = ei,d , φ(Fi,d ) = fi,d and φ(Kd ) = kd .
+Proof. By Lemma 1.1, the relations Pij , Nij and Cij hold in Sq (n, r), and so φ is an algebra homo-
+morphism.                                                                                         
+   We remark that the relations Pij and Nij hold in Sq (n, r) also follows from Lemma 3.1 and the
+proposition in Section 2 of [23], and that the lemma can be deduced from Lemma 5.6 in [1].
+   The homomorphism φ not surjective in general, and so this is not a presentation of the q-Schur
+algebra over Z[q], since for instance [m] is not invertible in Z[q].
+5.1. Change of rings. We need the following change of rings lemma for presentations of algebras
+using quivers with relations. The proof is similar to an argument at the end of Chapter 5 in [17]. Let
+ψ : R → S be a homomorphism of commutative rings, which gives S the structure of an R-algebra.
+Let Σ be a quiver, and let I ⊆ RΣ be an ideal. There are induced map of R-algebras ψ : RΣ → SΣ
+and RΣ/I → SΣ/Sψ(I), where Sψ(I) ⊆ SΣ is the ideal generated by ψ(I).
+Lemma 5.2. The induced map (RΣ/I) ⊗R S → SΣ/Sψ(I) is an isomorphism of R-algebras.
+Proof. The natural isomorphism R ⊗R S → S of R-algebras induces an R-algebra isomorphism
+                                             m : RΣ ⊗R S → SΣ.
+Applying the functor − ⊗R S to the short exact sequence
+                                                  i
+                                          0 → I → RΣ → RΣ/I → 0
+gives us the exact sequence
+                                              j
+                               I ⊗R S → SΣ → (RΣ/I) ⊗R S → 0
+where j = m ◦ (i ⊗ S), which shows that
+                                    (RΣ/I) ⊗R S ≃ SΣ/im(m ◦ (i ⊗ S)).
+As im(m ◦ (i ⊗ S)) = Sψ(I), the proof is complete.                                                  
+                                             0-SCHUR ALGEBRAS                                              9
+
+                                        √
+5.2. Coefficients in Q(v). Let v =       q and
+                                      Sv (n, r) = Sq (n, r) ⊗Z[q] Q(v).
+Lemma 5.3. There is an isomorphism of Q(v)-algebras Q(v)Σ(n, r)/Q(v)I(n, r) → Sv (n, r), where
+Ei,d 7→ ei,d , Fi,d 7→ fi,d and Kd 7→ kd .
+                     P                     P
+Proof. Let Ẽi = d v −di +1 ei,d , F̃i = d v −di+1 +1 fi,d and K̃d = kd , and by abuse of notation, in
+                           P           P
+this proof we let Ei = d ei,d , Fi = d fi,d and Kd = kd . Then both {Ẽi , F̃j , K̃d } and {Ei , Fj , Kd }
+generate Sv (n, r). Moreover, by a straightforward computation, Ẽi , F̃j , K̃d satisfy the defining rela-
+tions in Theorem 4’ in [10] if and only if Ei , Fj , Kd satisfy the relations Pij , Nij and Cij . Therefore
+we have the isomorphism as required.                                                                     
+Proposition 5.4. The induced map φ ⊗ Q(v) : Z[q]Σ(n, r)/I(n, r) ⊗Z[q] Q(v) → Sq (n, r) ⊗Z[q] Q(v)
+is a Q(v)-algebra isomorphism, where φ is as in Lemma 5.1.
+Proof. By Lemma 5.2, the natural inclusion ψ : Z[q] → Q(v), induces an isomorphism
+                       Z[q]Σ(n, r)/I(n, r) ⊗Z[q] Q(v) ≃ Q(v)Σ(n, r)/Q(v)I(n, r),
+which composed with the isomorphism in Lemma 5.3 is φ ⊗ Q(v). Thus the proposition follows. 
+  Since q is invertible in Sv (n, r), we cannot obtain the 0-Schur algebra by specialising q = 0.
+5.3. A presentation of q-Schur algebra over Q. Now we choose an intermediate ring Z[q] ⊆ Q ⊆
+Q(v) such that q is non-invertible in Q, and we will prove in Section 7 that φ ⊗ Q is an isomorphism.
+   Let Q be obtained from Z[q] by inverting all polynomials of the form 1 + qf (q). In particular, all
+[m] for m ∈ N are inverted. Clearly, Z[q] ⊆ Q ⊆ Q(q). Note that q is not invertible in Q and so the
+specialisation q = 0 is possible.
+Proposition 5.5. The induced map φ ⊗ Q : Z[q]Σ(n, r)/I(n, r) ⊗Z[q] Q → Sq (n, r) ⊗Z[q] Q is a
+surjective Q-algebra homomorphism.
+Proof. The image of φ ⊗ Q is the subalgebra of Sq (n, r) ⊗Z[q] Q generated by the set of all ei,d , fi,d
+and kd . Lemma 3.4 shows that the Z[q]-subalgebra of Sq+ (n, r) generated by all ei,d and kd contains
+all                                             Y
+                                          [f, g] [mij ]!
+where g ⊆ f and mij is the multiplicity of Mij as a direct summand in f /g. Since [m] is invertible
+in Q for any m, the image contains Sq+ (n, r) ⊗Z[q] Q. Similarly, the image contains Sq− (n, r) ⊗Z[q] Q.
+By Theorem 4.2 the map is surjective.                                                                 
+  By Lemma 5.2, QΣ(n, r)/QI(n, r) ≃ Z[q]Σ(n, r)/I(n, r) ⊗Z[q] Q. We have the following theorem,
+which will be proven in Section 7.
+Theorem 5.6. The induced map φ⊗ Q : Z[q]Σ(n, r)/I(n, r)⊗Z[q] Q → Sq (n, r)⊗Z[q] Q is a Q-algebra
+isomorphism.
+
+                                         6. A generic algebra
+   In this section let k be algebraically closed. We define a generic multiplication of orbits in F × F
+and obtain a Z-algebra G(n, r), which we call a generic algebra. This multiplication generalises the
+one for positive 0-Schur algebras in [24] and is similar to the product defined by Reineke [21] for Hall
+algebras. We also give generators for G(n, r).
+   Let ∆ : F × F × F → (F × F ) × (F × F ) be the morphism given by
+                                    ∆(p1 , p2 , p3 ) = ((p1 , p2 ), (p2 , p3 )).
+Let
+                                        π :F ×F ×F →F ×F
+be the projection onto the left and right component. The map π is open, and ∆ is a closed embedding.
+   Given two orbits eA and eA′ , define
+                                       S(A, A′ ) = π∆−1 (eA × eA′ )
+That is, S(A, A′ ) is the union of the orbits with non-zero coefficient in the product eA ·eA′ in Sq (n, r).
+Lemma 6.1. The closure of S(A, A′ ) in F × F is irreducible.
+10                                      BERNT TORE JENSEN AND XIUPING SU
+
+
+Proof. Let [f1 , f2 ] = eA , [f3 , f4 ] = eA′ , and S = ∆−1 (eA × eA′ ). We first show that S is irreducible.
+If f2 6≃ f3 then S is empty, and we are done. So we may assume that f2 = f3 . Let (p1 , p2 , p3 ) ∈ S
+then there exists g ∈ GL(V ) such that (p2 , p3 ) = g(f3 , f4 ) and g(g −1 p1 , f3 , f4 ) = (p1 , p2 , p3 ), where
+GL(V ) acts diagonally. Since (g −1 p1 , f3 ) ≃ (f1 , f3 ), there is an a ∈ Autf3 such that g −1 p1 = af1 .
+Hence S is the image of the morphism
+                                           Autf3 × GL(V ) → F × F × F
+given by
+                                     (a, g) 7→ (gaf1 , gf3 , gf4 )
+and is therefore irreducible. Now S(A, A′ ) = π(S), and so its closure is irreducible.                                  
+   Since there are only finitely many orbits in S(A, A′ ), as a consequence of Lemma 6.1, we have the
+following corollary.
+Corollary 6.2. There is a unique open GL(V )-orbit in S(A, A′ ).
+     We we define a new multiplication
+                                           eA ⋆ eA′ = eA′′ ,
+if S(A, A ) is non-empty and eA′′ is the open orbit in S(A, A′ ), and
+           ′
+
+                                                       e A ⋆ e A′ = 0
+           ′
+if S(A, A ) is empty.
+Proposition 6.3. The free Z-module G(n, r) with the product ⋆ is a Z-algebra.
+Proof. We need only to show that ⋆ is associative, that is, for any [f1 , f2 ], [f3 , f4 ], [f5 , f6 ] ∈ F ×
+F /GL(V ),
+                       ([f1 , f2 ] ⋆ [f3 , f4 ]) ⋆ [f5 , f6 ] = [f1 , f2 ] ⋆ ([f3 , f4 ] ⋆ [f5 , f6 ])
+   Following the definition, we see that if one side of the equality is zero, then so is the other side.
+We now suppose that both sides are not zero, that is, f2 ≃ f3 and f4 ≃ f5 . By change of basis we
+may assume that f2 = f3 and f4 = f5 . Let
+
+        T1 = {(p1 , p2 , p3 , p4 ) | (p1 , p2 ) ≃ (f1 , f2 ), (p2 , p3 ) ≃ (f3 , f4 ), (p3 , p4 ) ≃ (f5 , f6 )},
+        T2 = {(p1 , p3 , p4 ) | ∃ p such that (p1 , p) ≃ (f1 , f2 ), (p, p3 ) ≃ (f3 , f4 ), (p3 , p4 ) ≃ (f5 , f6 )},
+        T3 = {(p1 , p2 , p4 ) | ∃ p such that (p1 , p2 ) ≃ (f1 , f2 ), (p2 , p) ≃ (f3 , f4 ), (p, p4 ) ≃ (f5 , f6 )},
+        T4 = {(p1 , p4 ) | ∃ p, p′ such that (p1 , p) ≃ (f1 , f2 ), (p, p′ ) ≃ (f3 , f4 ), (p′ , p4 ) ≃ (f5 , f6 )}.
+     We have natural surjections
+                                                    πij : Ti → Tj
+for (i, j) = (1, 2), (1, 3), (2, 4), (3, 4). Similar to the proof of Lemma 6.1, we see that T1 is irreducible,
+and so the closures of all the Ti are irreducible. In particular, there is a unique open orbit O in
+                −1
+T4 . Then π24       (O) intersects with the open subset of T2 , consisting of triples (p1 , p3 , p4 ) with [p1 , p3 ]
+open in S(A, A′ ). That is, ([f1 , f2 ] ⋆ [f3 , f4 ]) ⋆ [f5 , f6 ] is the open orbit O in T4 . Similarly, [f1 , f2 ] ⋆
+([f3 , f4 ] ⋆ [f5 , f6 ]) is also the open orbit O. Therefore the equality holds and so ⋆ is associative. 
+     The following is a direct consequence of the definition of the product in G(n, r).
+Corollary 6.4. The set F × F /GL(V ) is a multiplicative basis of G(n, r).
+   In addition to the basis of G(n, r) consisting of orbits [f1 , f2 ] we can also consider bases analogous
+to the bases B and B ′ defined in Section 4 for the q-Schur algebra. We conclude this section by
+showing that these three bases of G(n, r) coincide.
+Lemma 6.5. Let (f1 , f2 ) ∈ F ×F . Then [f1 , f1 +f2 ]⋆[f1 +f2 , f2 ] = [f1 , f2 ] = [f1 , f1 ∩f2 ]⋆[f1 ∩f2 , f2 ].
+Proof. We prove the first equality. Let eA = [f1 , f1 + f2 ] and eA′ = [f1 + f2 , f2 ]. We prove that the
+orbit [f1 , f2 ] is open in S(A, A′ ). For any (f1′ , f2′ ) ∈ S(A, A′ ), f1′ + f2′ is isomorphic to a subflag of
+f1 + f2 . By Lemma 4.1, for (f1′ , f2′ ) ∈ S(A, A′ ), we have (f1′ , f2′ ) ≃ (f1 , f2 ) if and only if f1′ + f ′ ≃
+f1 +f2 . That the dimension of f1′ +f2′ is maximal is an open condition, and therefore eA ⋆eA′ = [f1 , f2 ].
+   Similarly, [f1 , f1 ∩ f2 ] ⋆ [f1 ∩ f2 , f2 ] = [f1 , f2 ].                                                    
+   We now prove that the Z-algebra G(n, r) is generated by the orbits ei,d , fi,d and kd . Recall that
+a representation X is said to be a generic extension of N by M , if the stabiliser of X is minimal
+among all representations that are extensions of N by M .
+                                                              0-SCHUR ALGEBRAS                                                      11
+
+
+Lemma 6.6. [24] Let f ⊇ g ⊇ h be flags. Then [f, h] = [f, g] ⋆ [g, h] if and only if f /h is a generic
+extension of f /g by g/h.
+    For an interval [i, j] in {1, · · · , n} and d ∈ D(n, r) with d − αj+1 non-negative, let
+                                                e(i, j, d) = ei,d+αi+1 −αj+1 ⋆ · · · ⋆ ej,d .
+Similaly, let f (i, j, d) = fj,d−αi+1 +αj+1 ⋆ · · · ⋆ fi,d for d − αi+1 non-negative.
+Lemma 6.7. Let f ⊇ h be flags with h ∈ Fd and f /h ≃ Mij . Then [f, h] = e(i, j, d) and [h, f ] =
+f (i, j, d + αi − αj+1 ).
+Proof. If i = j, then [f, h] = ei,d . Now assume j > i. Then there is f ⊇ g ⊇ h with f /g ≃ Mi,j−1
+and g/h ≃ Mjj . Since f /h is a generic extension of f /g by the simple g/h, the lemma follows from
+Lemma 6.6 by induction.                                                                           
+     Using the order ≤ on representations defined in Section 3, we can write each orbit [f, g] with
+f ⊇ g as a product over indecomposable summands of f /g.
+                                               Lt
+Lemma 6.8. Let f ⊇ g be flags with f /g ≃ i=1 Mi and Mi ≤ Mi+1 . Then there is a filtration
+f = ft ⊃ ft−1 ⊃ · · · ⊃ f0 = g ⊃ 0 with indecomposable factors Mi = fi /fi−1 and [f, g] = [ft , ft−1 ] ⋆
+· · · ⋆ [f1 , f0 ].
+Proof. The lemma follows from the vanishing of extension groups along the filtration and Lemma
+6.6.                                                                                         
+Lemma 6.9. The Z-algebra G(n, r) is generated by the orbits ei,d , fi,d and kd .
+Proof. Lemma 6.7 and Lemma 6.8 imply that any orbit [f, g] with f ⊇ g is in the subalgebra of
+G(n, r) generated by ei,d and kd . The lemma now follows from Lemma 6.5.
+                                                                                           
+    Following Lemma 6.5, 6.7 and 6.8, we obtain the following basis of G(n, r) in terms the generators
+ei,d and fi,d .
+Lemma 6.10. The Z-algebra G(n, r) has a basis consisting of all kd and all non-zero monomials
+                    e(is , js , ds ) ⋆ · · · ⋆ e(i1 , j1 , d1 ) ⋆ f (i′1 , j1′ , d′1 ) ⋆ · · · ⋆ f (i′t , jt′ , d′t ),
+                                                                     P                    P
+where Mil jl ≤ Mil+1 jl+1 , Mi′l jl′ ≤ Mi′l+1 jl+1
+                                                 ′     and d1 ≥ l αjl +1 + l αjl′ +1 .
+Proof. We need only show that for any such monomial
+                             e(is , js , ds ) ⋆ · · · ⋆ e(i1 , j1 , d1 ) ⋆ f (i′1 , j1′ , d′1 ) ⋆ · · · ⋆ f (i′t , jt′ , d′t )
+there is an orbit [f, g] such that
+         [f, f ∩ g] = e(is , js , ds ) ⋆ · · · ⋆ e(i1 , j1 , d1 ) and [f ∩ g, g] = f (i′1 , j1′ , d′1 ) ⋆ · · · ⋆ f (i′t , jt′ , d′t ).
+                                                P                        P
+Write d = c + d′ + d′′ , where d′ = l αjl +1 and d′′ = l αjl′ +1 . Consider P (d) as a flag in V , and
+decompose as P (d) = P (c) ⊕ P (d′ ) ⊕ P (d′′ ). Let Q(d′ ) and Q(d′′ ) be flags containing P (d′ ) and
+P (d′′ ), respectively, such that
+                                                  M                                      M
+                            Q(d′ )/P (d′ ) ≃             Mil jl and Q(d′′ )/P (d′′ ) ≃           Mi′l jl′ .
+Let f = P (c) ⊕ Q(d′ ) ⊕ P (d′′ ) and g = P (c) ⊕ P (d′ ) ⊕ Q(d′′ ), then [f, g] is an orbit as required. 
+    We compute the multiplication in G(n, r) of an arbitrary element with a generator.
+Lemma 6.11. Let eA ⊆ Fd × F .
+    i) If di+1 > 0, then ei,d ⋆ eA = eX where X = A + Ei,p − Ei+1,p and p = max{j | Ai+1,j > 0}.
+   ii) If di > 0, then fi,d ⋆ eA = eY where Y = A − Ei,p + Ei+1,p and p = min{j | Ai,j > 0}.
+Proof. We prove i). By Lemma 1.1, the orbit eX has a non-zero coefficient in the product ei,d · eA in
+Sq (n, r). Now, by Lemma 2.2 in [1], among all terms A + Ei,j − Ei+1,j with Ai+1,j > 0, the elements
+in the orbit eX has the smallest stabiliser, and so ei,d ⋆ eA = eX .
+   The proof of ii) is similar.                                                                    
+12                                         BERNT TORE JENSEN AND XIUPING SU
+
+
+                         7. A geometric realisation of the 0-Schur algebra
+   In this section we first give a presentation of G(n, r) using quivers and relations. Then we show
+that S0 (n, r) and G(n, r) are isomorphic as Z-algebras by an isomorphism which is the identity on
+the closed orbits ei,d , fi,d and kd . Finally, we prove Theorem 5.6.
+7.1. A presentation of G(n, r). Let Σ(n, r), Ei and Fi be as in Section 5. Let
+                                    2
+                                    Ei Ej − Ei Ej Ei for i = j − 1,
+                         Pij (0) = −Ei Ej Ei + Ej Ei2 for i = j + 1,
+                                   
+                                         Ei Ej − Ej Ei , otherwise;
+                                   
+                                   −Fi Fj Fi + Fj Fi2 for i = j − 1,
+                         Nij (0) =     F 2 Fj − Fi Fj Fi for i = j + 1,
+                                    i
+                                         Fi Fj − Fj Fi , otherwise;
+and                                                     X
+                         Cij (0) = Ei Fj − Fi Ej − δij      λij (d) · Kd ,
+                                                                                 d
+where                                          
+                                                1 if di > di+1 = 0,
+                                      λij (d) = −1 if di+1 > di = 0,
+                                               
+                                                    0 otherwise.
+That is, Pij (0), Nij (0) and Cij (0) are obtained by evaluating Pij , Nij and Cij at q = 0.
+  Let I0 (n, r) ⊆ ZΣ(n, r) be the ideal generated by Pij,d (0), Nij,d (0), and Cij,d (0).
+Lemma 7.1. ZΣ(n, r)/I0 (n, r) has a multiplicative basis of paths in Σ(n, r).
+Proof. The lemma holds since each relation Pij,d (0), Nij,d (0), and Cij,d (0) is a binomial in Ei,d , Fi,d
+and Kd . This is obvious for Pij,d (0), Nij,d (0). For Cij,d (0), if the coefficient of Kd is nonzero then
+either Cij,d (0) = Kd Ei Fj Kd − Kd or Cij,d (0) = Kd Fi Ej Kd − Kd .                                    
+     For an interval [i, j] in {1, · · · , n} and d ∈ D(n, r) with d − αj+1 non-negative, let
+                                             E(i, j, d) = Ei,d+αi+1 −αj+1 · · · Ej,d
+and F (i, j, d) = Fj,d−αi+1 +αj+1 · · · Fi,d for d − αi+1 non-negative.
+Theorem 7.2. The map η : ZΣ(n, r)/I0 (n, r) → G(n, r) given by η(Ei,d ) = ei,d , η(Fi,d ) = fi,d and
+η(Kd ) = kd is an isomorphism of Z-algebras.
+Proof. By Lemma 6.11, it is straightforward to check that ei,d , fi,d , and kd satisfy the relations
+Pij,d (0), Nij,d (0), and Cij,d (0). Thus η is well-defined. Also, Lemma 6.9 implies that the map is
+surjective. It remains to prove that η is injective.
+   We claim that, modulo the relations in I0 (n, r), any path p in Σ(n, r) is either equal to kd or a
+path of the form
+                          E(is , js , ds ) · · · E(i1 , j1 , d1 )F (i′1 , j1′ , d′1 ) · · · F (i′t , jt′ , d′t ),
+satisfying the conditions in Lemma 6.10. Note that such a path is mapped onto one of monomial
+basis elements of Lemma 6.10, and so η is injective.
+   We prove the claim by induction on the length of p. If p has length less than or equal to one, it is
+equal to kd or one of the arrows Fi,d and Ei,d , and so the claim follows. Assume that p has length
+greater than one. Then we have
+                                                 p = p′ Fi,c or p = p′ Ei,c
+where p′ is a non-trivial path of smaller length, and so by induction has the required form
+                      p′ = EF = E(is , js , ds ) · · · E(i1 , j1 , d1 )F (i′1 , j1′ , d′1 ) · · · F (i′t , jt′ , d′t ),
+where E and F are products of Ej,d and Fj,d , respectively.
+   We first consider p = p′ Ei,c . If p′ contains no Fj,d , then the claim follows using the relations
+Pab,d (0). Otherwise, by the relations Cab,d (0), either p = EF ′ with the length of F ′ smaller than
+that of F or p = EEi,d1 −αi +αi+1 F ′ with each factor F (i′l , jl′ , d′l ) in F replaced with a factor F (i′l , jl′ , c′l ).
+In the first case, the claim follows by induction. Otherwise, by the relations Pab,d (0), there are two
+possibilities. First, there exists a minimal m with jm = i − 1. Then EEi,d1 −αi +αi+1 F ′ is equal to
+      E(is , js , ds ) · · · E(im−1 , jm−1 , dm−1 )E(im , jm + 1, cm )E(im+1 , jm+1 , cm+1 ) · · · E(i1 , j1 , c1 )F ′ .
+                                                  0-SCHUR ALGEBRAS                                                           13
+
+
+We have
+                                 X                              X                 X                          X
+     c1 = d1 − αi + αi+1 ≥             αjl +1 − αi + αi+1 +           αjl′ +1 =          αjl +1 + αjm +1 +       αjl′ +1 .
+                                   l                              l               l6=m                       l
+
+Moreover, again using the relations Pab,d (0), the factors can be reordered (up to change of dl , cm ) to
+obtain a path of the required form.
+  Second, there is no such m with jm = i − 1. Then
+EEi,d1 −αi +αi+1 F ′ = E(is , js , ds ) · · · E(im , jm , dm )E(i, i, cm )E(im−1 , jm−1 , cm−1 ) · · · E(i1 , j1 , c1 )F ′ ,
+with jm−1 ≤ i and jm > i. In order to show that this path is of the required form, we need only to
+prove the inequality
+                                             X                   X
+                      c1 = d1 − αi + αi+1 ≥     αjl +1 + αi+1 +      αjl′ +1 .
+                                                           l                         l
+Clearly, the
+          P inequality holds for each component different from i. Since there are no m with jm = i−1,
+the sum l αjl +1 containPno αi . Since F Ei,c = Ei,c1 F ′ with the length of F ′ equal to that of F , we
+must have (d1 − αi )i ≥ ( l αjl′ +1 )i and so the inequality follows.
+   Finally, we consider p = p′ Fi,c , where p′ is a path of the required form p′ = EF as above. If there
+are no factor Ej,d in p′ , then the claim follows from the relations Nab,d (0). Otherwise p = E ′ Ej,d1 F ,
+which following Cab,d (0) is either p = E ′ F ′ with F ′ shorter than F , or p = E ′ F ′ Ej,c which is then
+the case showed above. So the claim holds.                                                                
+7.2. A geometric realisation of S0 (n, r). We now prove the main result of this section.
+Theorem 7.3. The map
+                                             ψ : G(n, r) → S0 (n, r)
+defined by ψ(ei,d ) = ei,d , ψ(fi,d ) = fi,d and ψ(kd ) = kd is an isomorphism of Z-algebras.
+Proof. From Proposition 5.5, we have the surjective Q-algebra homomorphism
+                                       QΣ(n, r)/QI(n, r)) → Sq (n, r) ⊗Z[q] Q,
+which, since Q/qQ ≃ Z, induces a surjective Z-algebra homomorphism
+                        QΣ(n, r)/QI(n, r)) ⊗Q Q/qQ → Sq (n, r) ⊗Z[q] Q ⊗Q Q/qQ.
+  Following the definition of S0 (n, r) and the isomorphisms Q/qQ ≃ Z[q]/qZ[q] ≃ Z, we have
+                                        Sq (n, r) ⊗Z[q] Q ⊗Q Q/qQ = S0 (n, r)
+and by Lemma 5.2
+                          (QΣ(n, r)/QI(n, r)) ⊗Q Q/qQ ≃ (ZΣ(n, r)/I0 (n, r)).
+So there is a surjective Z-algebra homomorphism ZΣ(n, r)/I0 (n, r)) → S0 (n, r) given by Ei,d 7→ ei,d ,
+Fi,d 7→ fi,d , Ki,d 7→ ki,d . The theorem now follows from Theorem 7.2, since G(n, r) = S0 (n, r) as
+Z-modules.                                                                                          
+Corollary 7.4. The set ψ(F × F /GL(V )) is a multiplicative basis for S0 (n, r).
+7.3. Proof of Theorem 5.6. By Proposition 5.5, the map φ ⊗ Q induces a short exact sequence
+                            0 → K → QΣ(n, r)/QI(n, r) → Sq (n, r) ⊗Z[q] Q → 0.
+Since Sq (n, r) ⊗Z[q] Q is a free Q-module, applying − ⊗Q Q/qQ gives the exact sequence
+        0 → K ⊗Q Q/qQ → QΣ(n, r)/QI(n, r) ⊗Q Q/qQ → Sq (n, r) ⊗Z[q] Q ⊗Q Q/qQ → 0.
+   As in the proof of Theorem 7.3, we have isomorphisms Sq (n, r) ⊗Z[q] Q ⊗Q Q/qQ = S0 (n, r) and
+(QΣ(n, r)/QI(n, r)) ⊗Q Q/qQ ≃ (ZΣ(n, r)/I0 (n, r)). Furthermore, via these two isomorphisms the
+map φ ⊗ Q ⊗ Q/qQ is the composition of the isomorphism ZΣ(n, r)/I0 (n, r) ≃ G(n, r) in Theorem
+7.2 and the isomorphism G(n, r) ≃ S0 (n, r) in Theorem 7.3. Therefore K ⊗Q Q/qQ = K/qK = 0.
+Now by Nakayama’s lemma there is an element r = 1 + qf (q) ∈ Q such that rK = 0. Since r is
+invertible in Q, we have K = 0. Thus φ ⊗ Q is an isomorphism.
+14                                 BERNT TORE JENSEN AND XIUPING SU
+
+
+                          8. The degeneration order on pairs of flags
+   In this section let k be algebraically closed. We describe the degeneration order on GL(V )-orbits
+in F × F using quivers and the symmetric group Sr .
+   Let Γ = Γ(n) be the quiver of type A2n−1 ,
+                    Γ : 1L       / 2L      / ···    /no      ··· o    2R o      1R
+constructed by joining two linear quivers ΛL = ΛL (n) and ΛR = ΛR (n) at the vertex n. Often it
+will be clear from the context which side of Γ we are considering, and then we drop the subscripts
+on the vertices.
+   A pair (f, f ′ ) ∈ F × F is a representation of Γ, where f is supported on ΛL , f ′ is supported on
+ΛR . Conversely, any representation M of Γ with dimMn = r, which is projective when restricted to
+both ΛL and ΛR determines uniquely an orbit of pair of flags [f, f ′ ] ∈ F × F /GL(V ). Moreover, two
+pairs of flags are isomorphic if and only if the corresponding representations are isomorphic.
+   For integers i, j ∈ {1, · · · , n}, let Nij be the indecomposable representation of Γ which is equal
+to the indecomposable projective representations Min and Mjn when restricted to ΛL and ΛR ,
+respectively. A representation N of Γ which is projective when restricted to ΛL and ΛR , and
+dim Nn = r, decomposes up to isomorphism as
+                                                     M r
+                                                N≃       Nil jl .
+                                                     l=1
+In this section we always assume that j1 ≤ j2 ≤ · · · ≤ jr . The variety of representations that has
+such a decomposition is an open subset of the variety of representations of Γ with dimension vector
+the same as N . We shall view representations in this subvariety as pairs of flags in V .
+   Let ≤deg denote the degeneration order on isomorphism classes of representations of Γ. That is,
+M ≤deg N for two representations M and N , if N is contained in the closure of the orbit of M in
+the space of all representations. The degeneration order on pairs of flags is also denoted by ≤deg ,
+since there is a degeneration between two pair of flags if and only if there is a degeneration between
+the corresponding representations of Γ.
+   Since Γ is a Dynkin quiver, by a result of Bongartz [2], the degeneration ≤deg is the same as the
+degeneration ≤ext given by a sequence of extensions. That is, if there is an extension
+                               0         / N′       /M        / N ′′        /0,
+                ′    ′′
+then M ≤ext N ⊕ N , and more generally ≤ext is the transitive closure.
+   The symmetric group
+                  Lr Sr of permutations of the set {1, · · · , r} acts on representations with a
+decomposition N = l=1 Nil jl by
+                                           M r
+                                     σN =       Niσl jl
+                                                     l=1
+for σ ∈ Sr .
+   The following facts are the key lemmas on degenerations in F × F . For the sake of completeness
+we include a brief sketch of the proofs.
+                          Lr
+Lemma 8.1. Let N =           l=1 Nil jl be a decomposition as above, and let (t, s) with t < s be a
+transposition. Then N <deg (t, s)N if and only if it > is .
+Proof. Assume that it > is . There is a short exact sequence
+                      0       / Nit js     / Nit jt ⊕ Nis js / Nis jt             /0.
+
+Since every extension degenerates to the trivial extension we have
+                                     Nit jt ⊕ Nis js ≤deg Nit js ⊕ Nis jt
+and therefore N <deg (t, s)N .
+  Conversely, assume that it ≤ is . By comparing the dimensions of the stabilisers of N and (t, s)N
+we see that N 6<deg (t, s)N .                                                                     
+    We say that a degeneration M ≤deg N is minimal if M 6≃ N and M ≤deg X ≤deg N implies
+X ≃ M or X ≃ N .
+                          Lr
+Lemma 8.2. Let N =          l=1 Nil jl and M ≤deg N be minimal. Then there exists a transposition
+(t, s) such that M ≃ (t, s)N .
+                                                   0-SCHUR ALGEBRAS                                            15
+
+
+Proof. Since M ≤deg N is minimal, there is a non-split extension
+                                    0          / N′       /M         / N ′′      / 0,
+
+where N ≃ N ′ ⊕N ′′ . We may choose summands Nis js and Nit jt of N ′ and N ′′ , respectively, such that
+taking pushout along the projection N ′ → Nis js and then pullback along the inclusion Nit jt → N ′′
+gives us a non-split extension
+                                0           / Nis js      / M′        / Nit jt        / 0.
+
+This extension is of the form of the extension in the proof of Lemma 8.1. Hence
+                                                M ′ <deg Nis js ⊕ Nit jt ,
+and so
+         M ′ ⊕ (N ′ /Nis js ) ⊕ (N ′′ /Nit jt ) <deg (N ′ /Nis js ) ⊕ (N ′′ /Nit jt ) ⊕ Nis js ⊕ Nit jt ≃ N.
+By the construction of M ′ ,
+                                    M ≤deg M ′ ⊕ (N ′ /Nis js ) ⊕ (N ′′ /Nit jt ),
+so by the minimality of the degeneration,
+                                        M ≃ M ′ ⊕ (N ′ /Nis js ) ⊕ (N ′′ /Nit jt ),
+and so the lemma follows.                                                                                      
+   There is a unique closed orbit in Fd × Fe . We describe a corresponding representation.
+LemmaL8.3. The orbit of a pair of flags corresponding to a representation N is closed, if and only
+          r
+if N ≃ l=1 Nil jl with il ≤ il+1 for all l = 1, · · · , r − 1.
+                                  Lr
+Proof. A representation N =         l=1 Nil jl with il ≤ il+1 does not have degenerations according to
+Lemma 8.1. Hence N , and therefore also the corresponding pair of flags, has a closed orbit.
+   Conversely, if il > il+1 , then N has a degeneration again by Lemma 8.1, and so the orbit of N is
+not closed.                                                                                         
+   Alternatively,
+     Lr           we may prove the lemma by observing that among all representations of the form
+N = l=1 Nil jl the representation with il ≤ il+1 has a stabiliser of maximal dimension, and so this
+representation has a closed orbit. The stabiliser in this case is a parabolic in GL(V ).
+   There is a unique open orbit in Fd × Fe with a corresponding representation given as follows. The
+proof is similar to the proof of the previous lemma.
+LemmaLr 8.4. The orbit of a pair of flags corresponding to a representation N is open, if and only if
+N ≃ l=1 Nil jl with il ≥ il+1 for all l = 1, · · · , r − 1.
+                                                                          Lr
+   Similar to the closed orbit, a representation of the form N ≃            l=1 Nil jl with il ≥ il+1 has a
+stabiliser of minimal dimension, and so the orbit is open. The stabiliser in this case is the intersection
+of two opposite parabolics in GL(V ). Such stabilisers are called biparabolic or seaweeds [5]. The
+stabiliser of an arbitrary pair of flags is equal to the intersection of two parabolics in GL(V ).
+   Let od,e denote the unique open orbit and kd,e the unique closed orbit in Fd × Fe . Then kd = kd,d
+and we let od = od,d . Let τ ∈ Sr , then τ od,e ∈ F ×L      F /GL(V ) denotes the orbit of pairs of flag
+                                                              r
+corresponding to the representation τ N , where N =           l=1 Nil jl with il+1 ≤ il , d = i1 + · · · + in
+and eL = j1 + · · · + jn . Similarly, we let τ kd,e be defined as the orbit corresponding to τ N , where
+         r
+N = l=1 Nil jl with il+1 ≥ il .
+
+                                    9. Idempotents from open orbits
+   Let M (n, r) be the submodule of G(n, r) with basis the open orbits in F × F . In this section we
+prove that M (n, r) is a subalgebra G(n, r) which is also a direct factor. We also show that M (n, r)
+is isomorphic to the Z-algebra of |D(n, r)| × |D(n, r)|-matrices, where |D(n, r)| is the number of
+decompositions of r into n parts.
+   We start with two lemmas relating degeneration and multiplication in G(n, r). Let ≤deg be the
+degeneration order on orbits in (F × F ) × (F × F ) with the action of GL(V ) × GL(V ).
+Lemma 9.1. If eB × eB ′ ≤deg eA × eA′ , then eB ⋆ eB ′ ≤deg eA ⋆ eA′
+16                                BERNT TORE JENSEN AND XIUPING SU
+
+
+Proof. Since eB × eB ′ ⊆ eA × eA′ we have S(B, B ′ ) ⊆ S(A, A′ ). By Corollary 6.2, we have that
+S(A, A′ ) is the orbit closure of eA ⋆ eA′ and S(B, B ′ ) is the orbit closure of eB ⋆ eB ′ , the lemma
+follows.                                                                                              
+     We have the following key lemma on degeneration and multiplication in G(n, r).
+Lemma 9.2. Let σ ∈ Sr , eB ′ ⊆ Fd × Fe and eB ⊆ Ff × Fg . Then eB ′ ⋆ (σoe,f ) ⋆ eB ≤deg σod,g .
+Proof. By Lemma 9.1, it suffices to consider the case where eB and eB ′ are closed orbits. By Lemma
+8.3, we may choose the representation
+                                              Mr
+                                                  Njl kl ,
+                                                l=1
+where kl+1 ≥ kl and jl+1 ≥ jl for the orbit eB . Similarly, oe,f is the orbit corresponding to the
+representation
+                                           Mr
+                                               Nil jl ,
+                                                l=1
+where il ≥ il+1 by Lemma 8.4. Then the coefficient of σoe,g in the product (σoe,f ) · eB in Sq (n, r) is
+non-zero, and so
+                                      (σoe,f ) ⋆ eB ≤deg σoe,g .
+Similarly,
+                                       eB ′ ⋆ σoe,g ≤deg σod,g .
+By Lemma 9.1,
+                           eB ′ ⋆ σoe,f ⋆ eB ≤deg eB ′ ⋆ σoe,g ≤deg od,g ,
+as required.                                                                                          
+Corollary 9.3. Let σ ∈ Sr , eB ′ ⊆ Fd × Fe and eB ⊆ Ff × Fg . Then eB ′ ⋆ (σke,f ) ⋆ eB ≤deg σkd,g .
+Proof. The corollary follows from the previous lemma since σkd,g = σιod,e , where ι(i) = n−i+1. 
+Corollary 9.4. Let eB ′ ⊆ Fd × Fe and eB ⊆ Ff × Fg . Then eB ′ ⋆ oe,f ⋆ eB = od,g . In particular,
+od,e ⋆ oe,f = od,f .
+Proof. By the lemma we know that eB ′ ⋆ oe,f ⋆ eB ≤deg od,g . Since od,g is the unique dense open
+orbit in Fd × Fg , the equality follows.                                                       
+Corollary 9.5. M (n, r) is a two-sided ideal in G(n, r).
+Proof. The previous corollary shows that the Z-submodule M (n, r) ⊆ G(n, r) is closed under multi-
+plication from both sides with elements from G(n, r), and so it is a two-sided ideal.           
+  We will now show that M (n, r) is a direct factor of G(n, r).
+                  S
+Lemma 9.6. {od }d {kd − od }d is a set of pairwise orthogonal idempotents in G(n, r).
+Proof. By Corollary 9.4, (od )2 = od , (kd − od )od = od − od = 0, od (kd − od ) = od − od = 0, and
+(kd − od )2 = (kd − od − od + od ) = kd − od . All other orthogonality relations follow from the definition
+of multiplication in Sq (n, r).                                                                           
+     Let M (D(n, r)) be the algebra of |D(n, r)| × |D(n, r)|-matrices over Z. Let
+                                      ω0 : M (n, r) → M (D(n, r))
+be the Z-linear map where ω0 (od,e ) = Ed,e is the (d, e)’th elementary matrix in M (D(n, r)).
+Lemma 9.7. The map ω0 : M (n, r) → M (D(n, r)) is a Z-algebra isomorphism.
+Proof. The proposition is an immediate consequence of Lemma 9.6 and Corollary 9.4.                       
+     We construct a section to the inclusion M (n, r) ⊆ G(n, r).
+Lemma 9.8. The map ω : G(n, r) → M (n, r) defined by
+                                              ω(eA ) = od,e
+for all eA ⊆ Fd × Fe is a surjective Z-algebra homomorphism.
+                                                0-SCHUR ALGEBRAS                                            17
+
+
+Proof. The map is clearly a surjective Z-module homomorphism. Let eA ⊆ Fd ×Fe and eB ⊆ Fe ×Ff .
+Then ω(eA ⋆eB ) is the unique open orbit in Fd ×Ff , which is equal to ω(eA )⋆ω(eB ), by Corollary 9.4.
+                           P         P
+Moreover, ω(1G(n,r) ) = ω( d kd ) = d od = 1M(n,r) . This completes the proof of the lemma.          
+   We can now prove the main result of this section.
+Theorem 9.9. We have an isomorphism of Z-algebras G(n, r) → M (n, r) × (G(n, r)/M (n, r)) given
+by eA 7→ (ω(eA ), eA ).
+Proof. By Corollary 9.4, we have
+                                                  X             X
+                                      M (n, r) = (  od )G(n, r)(  od ).
+                                                       d                   d
+                 P                                              P
+Now, 1G(n,r) = d kd , and again by Corollary 9.4, d od is a central idempotent in G(n, r). This
+proves that M (n, r) is a direct factor in G(n, r), and so the theorem follows.              
+       e n denote the preprojective algebra of type An . See [4] for the definition and properties of
+   Let A
+preprojective algebras.
+                                       e r−1
+Corollary 9.10. S0 (2, r) ≃ M (2, r) × A
+Proof. We need to show that
+                              X                   X
+                             (   kd − od )G(n, r)(                e r−1 .
+                                                      kd − od ) ≃ A
+                    P                 P
+First observe that ( kd − od )G(n, r)( kd − od ) is generated by e1,d − od−α2 +α1 ,d , f1,d − od+α2 −α1 ,d
+and kd − od . A direct computation shows that the generators satisfy the preprojective relations. By
+comparing dimensions we get the required isomorphism.                                                  
+   Let n = n1 + · · · + nl and r = r1 + · · · + rl be decompositions of n and r, respectively, into l parts,
+                           Pi−1
+where ni > 0. Let mi = j=1 nj , where m1 = 0.
+   There is a map φj of flags of length nj to flags of length n given by φj (f )l = 0 for l ≤ mj ,
+φj (f )l = fl−mj for mj < l ≤ mj+1 and φj (f )l = fnj for l > mj+1 . The corresponding map on orbits
+of pairs of flags
+                                          [f, f ′ ] 7→ [φj (f ), φj (f ′ )]
+is also denoted by φj .
+   Let
+                               φn,r : G(n1 , r1 ) × · · · × G(nl , rl ) → G(n, r)
+be the Z-linear map defined by
+                                   (N1 , · · · , Nl ) 7→ φ1 (N1 ) ⊕ · · · ⊕ φl (Nl ).
+Lemma 9.11. The map
+                                φn,r : G(n1 , r1 ) × · · · × G(nl , rl ) → G(n, r)
+is an injective Z-algebra homomorphism. Moreover, φn,r (N1 , · · · , Nl ) ≤deg φn,r (N1′ , · · · , Nl′ ) if and
+only if Ni ≤deg Ni′ for all i.
+Proof. Since φn,r is injective on basis elements, it is an injective Z-linear map. By Lemma 2.2, in
+terms of matrices, the map is given by
+                                       φn,r (eA1 , · · · , eAl ) = eA1 ⊕···⊕Al .
+Following Lemma 6.11, the map φn,r preserves multiplication and thus is an injective Z-algebra
+homomorphism.
+   Let
+                           N = φn,r (N1 , · · · , Nl ) and N ′ = φn,r (N1′ , · · · , Nl′ ),
+and N ≤deg N ′ . We may assume that the degeneration is minimal. By Lemma 8.2, N ′ = (t, s)N
+for a transposition (t, s). Then the transposition (t, s) must act within one Ni , since the off-diagonal
+blocks of the matrices of both N and N ′ are zero, and so
+                          (t, s)N = φn,r (N1 , · · · , Ni−1 , (t′ , s′ )Ni , Ni+1 , · · · , Nl )
+for a transposition (t′ , s′ ). This shows that Ni ≤deg Ni′ for all i.
+   The converse also follows from Lemma 8.2.                                                                 
+18                                 BERNT TORE JENSEN AND XIUPING SU
+
+
+  Let n, r and mi be as above. Let r i = dmi +1 + · · · + dmi+1 , a decomposition of ri into ni parts,
+and d = d1 + · · · + dn , which is an element in D(n, r). Let
+                                          o(d,n) = φ(or1 , · · · , orl ),
+which is an idempotent, by Lemma 9.11. Note that kd = o(d,1+···+1) and that od = o(d,n) , where n
+denotes the trivial decomposition of n into 1 part.
+   For a given d, there is one idempotent for each decomposition n, and so this produces 2n−1
+idempotents in kd G(n, r)kd , if kd is in the interior of the quiver of G(n, r) viewed as an (n − 1)-
+simplex. If kd is on the boundary, but in the interior of a t-simplex, then there are 2t idempotents.
+In particular, on a line we get the two idempotents kd and od , and for the vertices of the simplex we
+have the unique idempotent kd = od .
+Lemma 9.12. If o(d,n) ≤deg N , then o(d,n) ⋆ N = N ⋆ o(d,n) = o(d,n) .
+Proof. We have o(d,n) = o(d,n) ⋆ o(d,n) ≤deg N ⋆ o(d,n) ≤deg kd ⋆ o(d,n) = o(d,n) by Lemma 9.1. The
+proof of the other equality is similar.                                                          
+
+                        10. Geometric realisation of 0-Hecke algebras
+   In this section let n = r and d = 1 + · · · + 1. In this case Fd is the complete flag variety. The
+idempotent kd is then the unique interior vertex in the quiver of G(n, n). Let H0 (n) = kd G(n, n)kd .
+The Z-algebra H0 (n) is called the 0-Hecke algebra [3, 9, 20, 19], and we give a proof of this fact in
+this section.
+   From the previous section we have 2n−1 distinct idempotents o(d,n) , one for each decomposition
+n = n1 + · · · + nl of n with ni > 0.
+   Let
+                                          ti = (i, i + 1)kd .
+We have
+                                               ti = o(d,n) ,
+where n = n1 + · · · + nr−1 with ni = 2 and nj = 1 for j 6= i, and so ti is an idempotent. Also
+                                 ti = fd+αi −αi+1 ⋆ ei,d = ed−αi +αi+1 ⋆ fi,d .
+     For a permutation σ and a transposition (i, i + 1), define
+                                         
+                                          (i, i + 1)σ if (i, i + 1)σ ≤deg σ and
+                        (i, i + 1) ⋆ σ =
+                                                σ              otherwise.
+Write τ ≤⋆ σ if τ = (i, i + 1) ⋆ σ for some i, and denote the closure as a partial order also by ≤⋆ . We
+clearly have that τ ≤⋆ σ implies τ ≤deg σ.
+Lemma 10.1. ti ⋆ σkd = ((i, i + 1) ⋆ σ)kd
+Proof. Let A be a matrix such that eA = σkd . The matrix A is a permutation matrix. We assume
+that Ai,r = Ai+1,s = 1. By Lemma 6.11,
+                                                                
+                                                                  eA   if r > s
+                         ti ⋆ σkd = fi,d+αi −αi+1 ⋆ ei,d ⋆ eA =
+                                                                 eA′ if r < s,
+where A′ is obtained from A by swapping the i’th and (i + 1)’th rows. The lemma follows since
+eA′ = (i, i + 1)σkd and since r < s if and only if (i, i + 1)σ ≤deg σ.                      
+  Although it can be deduced from a bubble sort algorithm that the ti generate H0 (n) as an algebra,
+we will give an explicit construction of each of the basis element using the multiplication in H0 (n).
+Lemma 10.2. Suppose i < j. Then ti ⋆ ti+1 ⋆ · · · ⋆ tj−1 = (i, i + 1, · · · , j)kd , where (i, i + 1, · · · , j)
+is a cycle in Sn .
+Proof. The corollary follows from the previous lemma by induction, since (i, i + 1, · · · , j) = (i, i +
+1)(i + 1, · · · , j) = (i, i + 1) ⋆ (i + 1, · · · , j).                                                
+                                               0-SCHUR ALGEBRAS                                                   19
+
+
+   Let σ be a permutation. Let
+                                               tσ = tσ,n ⋆ · · · ⋆ tσ,1
+be defined by
+                                         tσ,1 = t1 ⋆ t2 ⋆ · · · ⋆ tσ−1 (1)−1
+and then
+                                      tσ,i = ti ⋆ ti+1 ⋆ · · · ⋆ tτi−1 σ−1 (i)−1 ,
+where τi−1 is given by
+                                           τi−1 kd = tσ,i−1 ⋆ · · · ⋆ tσ,1 .
+Theorem 10.3. With the notation above, tσ = σkd . Consequently, the set of all tσ for σ ∈ Sn is a
+multiplicative basis of H0 (n).
+Proof. By the previous lemma, tσ,1 = (1, · · · , σ −1 (1))kd . As a representation τ1 kd = tσ,1 has the
+summand N1,σ−1 (1) , which is fixed by any ti for i > 1, and therefore by tσ,i for i > 1. By induction
+τi kd has the summands Nj,σ−1 (j) for j = 1, · · · , i, which are fixed by tσ,j for j > i. Therefore
+tσ = σKd .                                                                                           
+  We construct the idempotents o(d,n) using the generators ti . Let [i, j] be an interval in [1, · · · , n].
+Define t[i,j] by induction as follows. Let t[i,i] = kd and
+                                         t[i,j] = t[i+1,j] ⋆ ti ⋆ · · · ⋆ tj−1 .
+To each decomposition n = n1 + · · · + nl we have the element
+                                      tn = t[m1 +1,m2 ] ⋆ · · · ⋆ t[ml +1,ml+1 ]
+              Pi−1
+where mi =       j=1 nj and m1 = 0.
+
+Corollary 10.4. tn = O(d,n) .
+  We end this section by giving a proof of the fact that H0 (n) is the 0-Hecke algebra given with
+generators and relations for instance in [19]. Now recall the 0-Hecke algebra, denoted by H0 (n),
+which is an C-algebra generated by Ti for i = 1, · · · , n − 1 with generating relations
+      i) Ti2 = −Ti ,
+     ii) Ti Ti+1 Ti = Ti+1 Ti Ti+1 and
+    iii) Ti Tj = Tj Ti for |i − j| > 1.
+  The algebra H0 (n) is a specialisation of the q-Hecke algebra at q = 0 and has dimension n!.
+Theorem 10.5. H0 (n) ⊗Z C ≃ H0 (n)
+Proof. Let
+                                        h : H0 (n) → H0 (n) ⊗Z C
+be given by h(Ti ) = −ti . A direct computation in H0 (n) shows that −ti satisfy the 0-Hecke relations
+i), ii) and iii) above, so the map is well defined. The two algebras have the same dimension over C,
+and so it suffices to know that the map is surjective. But the ti are generators of H0 (n) by Theorem
+10.3 and so the proof is complete.                                                                  
+
+                                                   References
+ [1] Beilinson, A. A., Lusztig, G. and MacPherson, R., A geometric setting for the quantum deformation of GLn ,
+     Duke Math. J. 61 (1990), no. 2, 655–677.
+ [2] Bongartz, K. Degenerations for representations of tame quivers, Ann. Sci. Ecole Normale Sup. 28 (1995), 647-668.
+ [3] Carter, R. W., Representation theory of the 0-Hecke algebra, J. Algebra 104 (1986), no. 1, 89-103.
+ [4] Crawley-Boevey, W., Preprojective algebras, differential operators and a Conze embedding for deformations of
+     Kleinian singularities, Comment. Math. Helv. 74 (1999), no. 4, 548-574.
+ [5] Dergachev, V. and Kirillov, A., Index of Lie algebras of seaweed type, J. Lie Theory 10 (2000), no. 2, 331-343
+ [6] Deng B. and Yang G. On zero-Schur algebras, Preprint 2010.
+ [7] Dipper, R. and James, G., The q-Schur algebra, Proc. London Math. Soc. (3) 59 (1989), no. 1, 23–50
+ [8] Dipper, R. and James, G., q-tensor space and q-Weyl modules, Trans. Amer. Math. Soc. 327 (1991), no. 1,
+     251–282.
+ [9] Donkin, S., The q-Schur algebra, London Mathematical Society Lecture Note Series, 253. Cambridge University
+     Press, Cambridge, 1998. x+179 pp.
+[10] Doty, S., Giaquinto, A., Generators and relations for Schur algebras. Electron. Res. Announc. Amer. Math. Soc.
+     7 (2001), 54-62
+[11] Du, J., A note on quantised Weyl reciprocity at roots of unity, Algebra Colloq. 2 (1995), no. 4, 363–372.
+20                                   BERNT TORE JENSEN AND XIUPING SU
+
+
+[12] Deng, B., Du, J., Parshall, B., and Wang, J., Finite dimensional algebras and quantum groups, Mathematical
+     Surveys and Monographs, 150. American Mathematical Society, Providence, RI, 2008. xxvi+759 pp.
+[13] Du, J., Parshall, B., Monomial bases for q-Schur algebras. Trans. Amer. Math. Soc. 355 (2003), no. 4, 1593-1620.
+[14] Deng B. and Yang G., Quantum Schur algebras revisited, J. Pure Appl. Algebra 215 (2011), no. 7, 1769-1781.
+[15] Green, J. A., Polynomial representations of GLn . Algebra, Carbondale 1980 (Proc. Conf., Southern Illinois Univ.,
+     Carbondale, Ill., 1980), pp. 124–140, Lecture Notes in Math., 848, Springer, Berlin, 1981.
+[16] Green, R. M., q-Schur algebras as quotients of quantised enveloping algebras, J. Algebra 185 (1996), no. 3,
+     660–687.
+[17] Jantzen, J. C., Lectures on quantum groups, Graduate Studies in Mathematics, 6. American Mathematical Society,
+     Providence, RI, 1996. viii+266 pp.
+[18] Jensen, B. T., Su, X. and Yu, R. W. T., Rigid representations of a double quiver to type A, and Richardson
+     elements in seaweed Lie algebras, Bull. Lond. Math. Soc. 41 (2009), no. 1, 115.
+[19] Krob, D. and Thibon, J. Y., Noncommutative symmetric functions IV, Quantum linear groups and Hecke algebras
+     at q = 0. J. Algebraic Combin. 6 (1997), no. 4, 339-376.
+[20] Norton, P. N., 0-Hecke algebras, J. Austral. Math. Soc. Ser. A 27 (1979), no. 3, 337-357.
+[21] Reineke, M., Generic extensions and multiplicative bases of quantum groups at q = 0, Represent. Theory 5 (2001),
+     147–163.
+[22] Ringel, C. M., Hall algebras, Topics in algebra, Part 1 (Warsaw, 1988), 433–447, Banach Center Publ., 26, Part
+     1, PWN, Warsaw, 1990.
+[23] Ringel, C. M., Hall algebras and quantum groups, Invent. Math. 101 (1990), no. 3, 583–591.
+[24] Su, X., A generic multiplication in quantized Schur algebras, Q J Math (2010) 61 (4): 437-435.
+[25] Zwara, G., Degenerations of finite-dimensional modules are given by extensions, Compositio Math. 121 (2000),
+     no. 2, 205–218.
+

@@ -1,0 +1,916 @@
+                                                    PROJECTIVE MODULES OF 0-SCHUR ALGEBRAS
+
+                                                          BERNT TORE JENSEN, XIUPING SU, AND GUIYU YANG
+
+                                                 Abstract. We study the structure of the 0-Schur algebra S0 (n, r) following the
+                                                 geometric construction of S0 (n, r) by Jensen and Su [12]. The main results are the
+                                                 construction and classification of indecomposable projective modules. In addition,
+arXiv:1312.5487v3 [math.RA] 31 Dec 2015
+
+
+
+
+                                                 we construct bases of these modules and their homomorphism spaces. We also give
+                                                 a filtration of projective modules, which leads to a decomposition of S0 (n, r) into
+                                                 indecomposable left modules.
+
+
+
+                                                                               1. Introduction
+                                             Using double flag varieties, Beilinson, Lusztig and MacPherson [1] gave a geometric
+                                          construction of certain finite dimensional quotients of the quantised enveloping algebra
+                                          Uq (gln ). Du [7] remarked that these quotients are isomorphic to the q-Schur algebras
+                                          Sq (n, r) defined by Dipper and James [5].
+                                             The 0-Schur algebra S0 (n, r), defined by Donkin [6], is obtained by specialising the
+                                          q-Schur algebra at q = 0, i.e.
+                                                                           S0 (n, r) = Sq (n, r) ⊗Z[q] Z.
+                                          As 0-Schur algebras are also endomorphism algebras of direct sums of permutation
+                                          modules of 0-Hecke algebras (see [3]), these two classes of algebras are closely related
+                                          and have been studied by various people. For instance, Donkin [6] proved that the
+                                          0-Schur algebra S0 (n, r) and 0-Hecke algebra H0 (r) are Morita-equivalent when n ≥ r.
+                                          Norton [13] classified simple H0 (r)-modules and proved that H0 (r) is a basic algebra.
+                                          Duchamp, Hivert and Thibon [9] computed extensions of simple H0 (r)-modules, and
+                                          their results were generalised to 0-Hecke algebras of other Coxeter groups by Fayers
+                                          [10]. Deng and Yang [3, 4] studied the representation type of S0 (n, r) and H0 (r). We
+                                          also mention that Stembridge [14] used the 0-Hecke algebra to give a new proof for
+                                          the Möbius function of the Bruhat order and He [11] used 0-Hecke algebras to give
+                                          an elementary construction of a monoid studied by Berenstein and Kazhdan [2].
+                                             In this paper, we will focus on understanding the projective S0 (n, r)-modules for
+                                          any n and r, using the geometric construction of S0 (n, r) due to Jensen and Su
+                                          [12]. In particular, we classify idempotent orbits in S0 (n, r) and show that they
+                                          are parameterised by pairs (λ, m), where λ is a composition of r into n parts and
+                                          m is a certain decomposition of n, which is said to be maximal with respect to λ.
+                                          Each idempotent orbit, denoted by oλ,m , generates a projective S0 (n, r)-module. Two
+                                          projective modules S0 (n, r)oλ,m and S0 (n, r)oµ,p are shown to be isomorphic if and
+                                          only if c(λ, m) = c(µ, p), where c(λ, m) and c(µ, p) are compositions of r constructed
+                                          from λ, m and µ, p, respectively. We also compute bases of these modules and their
+                                          homomorphism spaces.
+                                             We then construct a family of indecomposable projective S0 (n, r)-modules Pλ in-
+                                          dexed by compositions λ of r into n parts. There is an equivalence relation on the set
+                                            Date: June 17, 2018.
+                                            This work was supported by the EPSRC Grant EP/1022317/1.
+
+                                                                                          1
+2                  BERNT TORE JENSEN, XIUPING SU, AND GUIYU YANG
+
+of compositions and we show that the isomorphism classes of indecomposable projec-
+tive S0 (n, r)-modules are indexed by the equivalence classes. Further, by constructing
+a filtration of projective modules, we show that
+                                           MM
+                               S0 (n, r) ∼
+                                         =        Pc(λ,m)
+                                                 λ   m
+
+as left modules, where the sums are over compositions λ of r into n parts and decom-
+positions m that are maximal with respect to λ.
+  We remark that using the results in this paper, we are able to construct explicit
+choices of irreducible maps between indecomposable projective modules. This gives a
+new account on the extensions of simple H0 (r)-modules from [9]. Using our approach,
+we can compute Gabriel quivers with relations of basic algebras that are Morita-
+equivalent to 0-Schur algebras, including S0 (3, 5), S0 (4, 5) and S0 (5, 5). These results
+will appear elsewhere.
+  The remainder of the paper is organised as follows. In Section 2 we recall necessary
+results on 0-Schur algebras. We classify idempotent orbits in Section 3 and study
+the associated projective modules in Section 4. In Section 5 we prove results on
+indecomposable projective modules and the decomposition of S0 (n, r).
+                       2. Background on 0-Schur algebras.
+2.1. Pairs of flags and matrices. Let V be an r-dimensional vector space over an
+algebraically closed field. Let F denote the variety of n-step flags in V . A flag f in
+F is denoted by
+                              f : {0} = V0 ⊆ V1 ⊆ · · · ⊆ Vn = V.
+The general linear group GL(V ) acts naturally on V and there is an induced action
+on F . Let GL(V ) act diagonally on F × F . For any f ∈ F , let λi = dim Vi − dim Vi−1
+for i = 1, · · · , n. Then
+                                       λ = (λ1 , · · · , λn )
+is a composition of r into n parts. Two flags are in the same GL(V )-orbit if and only
+if they have the same composition. Let Λ(n, r) denote the set of all compositions of
+r into n parts, and let Fλ ⊆ F denote the orbit corresponding to λ ∈ Λ(n, r).
+   Any pair of flags (f, f ′ ) ∈ F × F ,
+    f : {0} = V0 ⊆ V1 ⊆ · · · ⊆ Vn = V         and f ′ : {0} = V0′ ⊆ V1′ ⊆ · · · ⊆ Vn′ = V,
+determines a matrix A = (aij )ij with
+                    aij = dim(Vi−1 + Vi ∩ Vj′ ) − dim(Vi−1 + Vi ∩ Vj−1
+                                                                    ′
+                                                                       )
+                           = dim Vi ∩ Vj′ − dim(Vi ∩ Vj−1
+                                                       ′
+                                                          + Vi−1 ∩ Vj′ ).
+This defines a bijection between the set of orbits F × F /GL(V ) and the set of n × n
+matrices of non-negative integers with sum of all entries equal to r. We often denote
+the GL(V )-orbit [f, f ′ ] of (f, f ′ ) by eA , where A is the matrix corresponding to (f, f ′ ).
+    Given a matrix A, the row vector ro(A) of A is the vector with ith component equal
+to the sum of the entries in the ith row of A. Similarly, the ith component of the
+column vector co(A) is equal to the sum of the entries in the ith column of A. That
+is,                                           !                                        !
+                    X                    X                      X                 X
+         ro(A) =           a1i , . . . ,   ani and co(A) =          ai1 , . . . ,   ain .
+                       i              i                         i             i
+We have eA ⊆ Fλ × Fµ if and only if ro(A) = λ and co(A) = µ.
+                                   0-SCHUR ALGEBRAS                                      3
+
+2.2. The 0-Schur algebra. Let ∆ and π be the maps
+                                       ∆
+                  F ×F ×F                  /      (F × F ) × (F × F )
+                            π
+                        
+                     F ×F
+with ∆(f, f ′ , f ′′ ) = ((f, f ′ ), (f ′, f ′′ )) and π(f, f ′ , f ′′ ) = (f, f ′′ ).
+  Following [12], the 0-Schur algebra S0 (n, r) can be defined as the associative Z-
+algebra with basis F × F /GL(V ) and multiplication given by
+                                                 
+                                                    eC if ro(B) = co(A),
+                               eA · eB =
+                                                    0 otherwise,
+where eC is the unique open orbit in π∆−1 (eA ×eB ). The 0-Schur algebra is isomorphic
+to the q-Schur algebra of Beilinson, Lusztig and MacPherson specialised at q = 0.
+  Since S0 (n, r) is defined over the integers, we can define 0-Schur algebras over any
+commutative ring by extension of scalars. In particular, we have finite dimensional
+0-Schur algebras over any field.
+2.3. The fundamental multiplication rules. We denote by ei,λ (resp. fj,λ) the
+orbit corresponding to the matrix that has column vector λ, and one non-zero off-
+diagonal entry, equal to 1, at (i, i + 1) (resp. (j + 1, j)). Denote by kλ the idempotent
+corresponding to the diagonal matrix with column vector λ. Note that ei,λ , fi,λ and
+kλ , where 1 ≤ i ≤ n − 1 and λ ∈ Λ(n, r), generate S0 (n, r) as an algebra. Let
+                                    X                 X
+                             ei =       ei,λ and fi =      fi,λ .
+                                   λ                 λ
+
+Denote by Eij the elementary matrix with a single non-zero entry, equal to 1, at (i, j).
+The following formulas are called the fundamental multiplication rules in S0 (n, r).
+Lemma 2.1 (Lemma 6.11) [12]). Let eA ⊆ Fλ × Fµ .
+  (1) If λi+1 > 0, then ei eA = eX , where X = A + Ei,p − Ei+1,p with p = max{j |
+      ai+1,j > 0}.
+  (2) If λi > 0, then fi eA = eY , where Y = A − Ei,p + Ei+1,p with p = min{j | ai,j >
+      0}.
+  We will also need multiplication rules with ei and fj on the right, which follow from
+Lemma 2.1 by symmetry.
+Lemma 2.2. Let eA ⊆ Fλ × Fµ .
+  (1) If µi+1 > 0, then eA fi = eX , where X = A + Ep,i − Ep,i+1 with p = max{j |
+      aj,i+1 > 0}.
+  (2) If µi > 0, then eA ei = eY , where Y = A − Ep,i + Ep,i+1 with p = min{j | aj,i >
+      0}.
+2.4. Degeneration of orbits. We say that an orbit eA degenerates to eB , denoted
+by eA ≤ eB , if eB is contained in the orbit closure of eA . We first recall a result from
+[12], showing that the degeneration order is preserved by multiplication.
+Lemma 2.3 (Lemma 9.1, Corollary 9.4 [12]). Let eA1 , eB1 ⊆ Fλ × Fµ and eA2 , eB2 ⊆
+Fµ × Fα with eAi ≤ eBi for i = 1, 2.
+   (1) eA1 eA2 ≤ eB1 eB2 .
+   (2) If eA1 or eA2 is open, then eA1 eA2 is open.
+4                  BERNT TORE JENSEN, XIUPING SU, AND GUIYU YANG
+
+  For any n × n-matrix A = (aij )ij and any s, t ∈ {1, . . . , n}, define AN E,s,t and
+ASW,s,t to be the sum of the entries in the north-east compartment and south-west
+compartment with respect to the (s, t)-position, respectively. That is,
+                              X                           X
+                   AN E,s,t =      axy and ASW,s,t =           axy .
+                                x≤s,y≥t                     x≥s,y≤t
+
+The numbers AN E,s,t and ASW,s,t characterise degeneration of orbits.
+Proposition 2.4 (Proposition 5.4 [8]). Let eA , eB ⊆ Fλ × Fµ . Then eA ≤ eB if and
+only if BN E,s,t ≤ AN E,s,t and BSW,s,t ≤ ASW,s,t for all s, t.
+Example 2.5. Let
+                                                               
+                    0 1 0              1 0 0                 0 0 1
+             A = 1 1 0 , B = 0 0 2 and C = 0 0 2 .
+                    0 0 3              0 2 1                 1 2 0
+  Then AN E,2,2 = 2 and ASW,1,2 = 3. Following Proposition 2.4, it is easy to see that
+eC degenerates to eA and eB , and that there is no degeneration between eA and eB .
+2.5. Open and closed orbits. We recall the construction of the unique open and
+unique closed orbit in Fλ × Fµ . Let {v1 , · · · , vr } be an ordered basis of the vector
+space V . The following lemma is a reformulation of Lemma 8.3 and 8.4 in [12] in
+terms of flags.
+Lemma 2.6. Let (f, f ′ ) ∈ Fλ × Fµ .
+  (1) If Vi = span{v1 , · · · , vni } and Vi′ = span{v1 , · · · , vmi }, where ni − ni−1 = λi
+      and mi − mi−1 = µi , then [f, f ′ ] is closed.
+  (2) If Vi = span{v1 , · · · , vni } and Vi′ = span{vmi , · · · , vr }, where ni − ni−1 = λi
+      and mi−1 − mi = µi , then [f, f ′ ] is open.
+   The open orbit in Fλ × Fµ is denoted by λ oµ and we let oλ = λ oλ . The closed orbit
+in Fλ × Fµ is denoted by λ kµ and λ kλ = kλ .
+   We say that a matrix A is open (resp. closed) if the corresponding orbit eA is open
+(resp. closed). The following lemma is a direct application of the characterisation
+of degeneration in Proposition 2.4, and is a reformulation of Lemma 2.6 in terms of
+matrices.
+Lemma 2.7. Let eA ⊆ F × F .
+  (1) eA is open if and only if every 2 × 2-submatrix has at least one zero diagonal
+      entry.
+  (2) eA is closed if and only if every 2 × 2-submatrix has at least one zero anti-
+      diagonal entry.
+2.6. Idempotent orbits. A composition λ that has only non-zero entries is also
+called a decomposition. Let D(n) denote the set of decompositions of n. We denote
+a decomposition of n by m = (m1 , · · · , ms ). Associated to each pair (λ, m), where
+λ = (λ1 , . . . , λn ) ∈ Λ(n, r) and m ∈ D(n), there is an idempotent orbit in S0 (n, r)
+denoted by oλ,m . We recall the construction from [12].
+  A matrix A is said to be blocked with respect to m, if A is a direct sum of matrices
+Av of size mv × mv . Each block Av determines an orbit
+                                     eAv ∈ S(mv , rv ),
+                                   0-SCHUR ALGEBRAS                                  5
+
+where rv is the sum of the entries in Av . If B is another matrix blocked with respect
+to m, then eA · eB can be computed blockwise.
+  Now, let the matrix of the idempotent oλ,m be the direct sum of matrices of open
+orbits oλv , where λv = (λPv−1 mj +1 , . . . , λPvj=1 mj ). In particular,
+                           j=1
+                   
+                    kλ                               if m = (1, . . . , 1),
+            oλ,m =    o λ                             if m = (n),
+                    λi+1 λi+1           λi λi
+                      fi ei kλ = ei fi kλ if m = (1, . . . , 1, 2, 1, . . . , 1),
+where in the last case mi = 2 and mj = 1 for j 6= i.
+Example 2.8. Let λ = (1, 2, 3), l = (2, 1) and m = (1, 2). Then oλ,l , oλ,m and oλ
+correspond to the matrices,
+                                                     
+                      0 1 0       1 0 0           0 0 1
+                    1 1 0 , 0 0 2 and 0 0 2 .
+                      0 0 3       0 2 1           1 2 0
+                   3. Classification of idempotent orbits
+   In this section we will show that the only idempotent orbits in S0 (n, r) are the
+orbits oλ,m . More precisely, we will prove that e2A 6= eA for any eA not of the form
+oλ,m , by constructing a proper degeneration from e2A to eA . We start with an easy
+observation on the symmetry of north-east and south-west compartments.
+Lemma 3.1. Let eA ⊆ Fλ × Fλ . Then AN E,s,s+1 = ASW,s+1,s for all s.
+Proof. The lemma follows from the fact that the row and column vectors of A are
+equal.                                                                       
+  The degeneration from e2A to eA is constructed using the following technical lemma.
+Lemma 3.2. Let eA ⊆ Fλ × Fλ with λi λs > 0, where i < s. Suppose
+   (1) alm = 0 for l > m and s > l > i;
+   (2) auv ≥ 1 for some (u, v) with u ≤ i and v ≥ s.
+Then
+                            eA ≤ fs−1 . . . fi ei . . . es−1 kλ .
+Proof. By the fundamental multiplication rules
+                              fs−1 . . . fi ei . . . es−1 kλ = eB
+with
+                   B = diag(λ1 , . . . , λn ) − Eii − Ess + Eis + Esi .
+By Proposition 2.4, to prove eA ≤ eB , we need to show that for any l, m,
+                     AN E,l,m ≥ BN E,l,m and ASW,l,m ≥ BSW,l,m.
+  First, we compare the north-east compartments. There are two cases to consider.
+  (NE1) l < m. Then
+                                   
+                                     1 if i ≤ l < m ≤ s,
+                        BN E,l,m =
+                                     0 otherwise.
+If i ≤ l < m ≤ s, then AN E,l,m ≥ auv ≥ 1, by (2). So AN E,l,m ≥ BN E,l,m.
+6                   BERNT TORE JENSEN, XIUPING SU, AND GUIYU YANG
+
+    (NE2) l ≥ m. Then
+     AN E,l,m = (AN E,l,m − AN E,m−1,m ) + AN E,m−1,m
+             = (AN E,l,m − AN E,m−1,m ) + ASW,m,m−1 (by Lemma 3.1)
+             = (AN E,l,m − AN E,m−1,m ) + (ASW,m,m−1 − ASW,l+1,m−1) + ASW,l+1,m−1
+                X X
+             =           axy + ASW,l+1,m−1
+                m≤x≤l   y
+             = λm + · · · + λl + ASW,l+1,m−1
+If i < m ≤ l < s, then ASW,l+1,m−1 = ASW,m,m−1 by (1), and ASW,m,m−1 = AN E,m−1,m ≥
+auv ≥ 1 by Lemma 3.1 and (2). So AN E,l,m ≥ λm + · · · λl + 1 = BN E,l,m . Otherwise,
+AN E,l,m ≥ λm + · · · + λl = BN E,l,m.
+   Next, we compare the south-west compartments.
+   (SW1) l > m. Then
+                                       
+                                         1 if i ≤ m < l ≤ s,
+                            BSW,l,m =
+                                         0 otherwise.
+We may assume i ≤ m < l ≤ s. Then
+                            ASW,l,m = ASW,m+1,m (by (1))
+                                    = AN E,m,m+1 (by Lemma 3.1)
+                                    ≥ auv ≥ 1 = BSW,l,m.
+    (SW2) l ≤ m. By an argument similar to (NE2), ASW,l,m ≥ BSW,l,m.
+    This finishes the proof.                                                              
+    We now prove the main result of this section.
+Proposition 3.3. Let eA ⊆ Fλ × Fλ . Then eA is an idempotent if and only if
+eA = oλ,m for some m ∈ D(n).
+Proof. First, by Lemma 9.12 in [12], oλ,m is an idempotent. Now assume that eA 6=
+oλ,m for any decomposition m. Note that if A is blocked, then eA · eA can be computed
+blockwise. It follows by induction on the size of A, that eA is not an idempotent. So
+we assume that A is not blocked. In particular, λ1 6= 0. Let c be maximal with
+a1c 6= 0. There are two cases to consider.
+   (1) c < n. As A is not blocked, we must have ast 6= 0 for some (s, t) with s ≤ c < t
+or s > c ≥ t. In fact by the symmetry in Lemma 3.1, there is such (s, t) with s ≤ c < t.
+Choose (s, t) with s ≤ c < t and (i, j) with i, j ≤ c such that aij ast 6= 0 and s − i > 0
+minimal with respect to these properties. By Lemma 3.2, with (u, v) = (1, c),
+                                 eA ≤ fs−1 . . . fi ei . . . es−1 kλ .
+  (2) c = n. As A is not open, by Lemma 2.7, there is a 2 × 2-submatrix with
+both diagonal entries aij and ast different from zero. Choose the submatrix such that
+s − i > 0 is minimal. Using Lemma 3.2 with (u, v) = (1, n), we have
+                                 eA ≤ fs−1 . . . fi ei . . . es−1 kλ .
+    In both cases
+                            e2A ≤ fs−1 . . . fi ei . . . es−1 kλ · eA ,
+by Lemma 2.3. By the fundamental multiplication rules fs−1 . . . fi ei . . . es−1 eA 6= eA ,
+and so there is a proper degeneration from e2A to eA . Therefore eA is not an idempotent.
+                                                                                         
+                                     0-SCHUR ALGEBRAS                                        7
+
+          4. Projective modules generated by idempotent orbits
+  Since oλ,m is an idempotent, the left S0 (n, r)-module S0 (n, r)oλ,m is projective. In
+this section we determine when two such projective modules are isomorphic, compute
+bases of these modules, and study homomorphisms between them.
+4.1. A filtration of S0 (n, r)kλ. Let p, m ∈ D(n) with p = (p1 , · · · , pt ) and m =
+(m1 , · · · , ms ). We write p ≤ m if m is a refinement of p, i.e., there exist 0 = i0 < i1 <
+· · · < it = s such that                       X
+                                       pl =         mj
+                                            il−1 <j≤il
+for l = 1, · · · , t. The order ≤ gives D(n) the structure of a poset.
+Example 4.1. Let n = 8 and m = (1, 1, 3, 2, 1). Then m is a refinement of both
+(1 + 1, 3, 2 + 1) = (2, 3, 3) and (1, 1, 3 + 2 + 1) = (1, 1, 6), but not a refinement of
+(4, 3, 1).
+   Two decompositions m and p can produce identical idempotents for some λ. A
+decomposition p is said to be maximal with respect to λ, if there is no m > p with
+oλ,m = oλ,p . Note that for any oλ,m there is a unique m′ which is maximal with
+respect to λ such that oλ,m = oλ,m′ . So for any λ, there is a bijection between the
+set of idempotents oλ,p and the set of decompositions p of n which are maximal with
+respect to λ. All decompositions are maximal with respect to a composition without
+zero entries.
+Example 4.2. Let r = 5 and λ = (0, 1, 1, 0, 2, 0, 1, 0). Then m = (2, 3, 3) is not
+maximal with respect to λ. The entries 2, 3 and 3 in m correspond to the subsequences
+(0, 1), (1, 0, 2) and (0, 1, 0) of λ. The maximal decomposition is obtained by splitting
+of zeroes at the front and back of these subsequences, and so m′ = (1, 1, 3, 1, 1, 1) with
+entries corresponding to the subsequences (0), (1), (1, 0, 2), (0), (1) and (0) of λ.
+Lemma 4.3. If eA = oλ,m , then A is symmetric.
+Proof. The diagonal blocks of A are open matrices. That open matrices are symmetric
+follows from the construction of open orbits in Lemma 2.6.                       
+Lemma 4.4. Let λ ∈ Λ(n, r) and p, m ∈ D(n). If m is maximal with respect to λ,
+then the following are equivalent.
+   (1) p ≤ m.
+   (2) oλ,p ≤ oλ,m .
+   (3) oλ,p oλ,m = oλ,p .
+   (4) oλ,m oλ,p = oλ,p .
+Proof. (1)⇒(2). Assume p ≤ m. Then the matrix of oλ,m is blocked with respect to
+p and the blocks of the matrix of oλ,p are open. As degeneration and multiplication
+can be computed blockwise, (2) follows from Lemma 9.11 in [12].
+  (2)⇒(3). Assume oλ,p ≤ oλ,m . Then
+                      oλ,p = oλ,p · oλ,p ≤ oλ,p · oλ,m ≤ oλ,p · kλ = oλ,p
+by Lemma 2.3. So (3) follows.
+   (3)⇒(1). Let eA = oλ,m and eB = oλ,p . Assume that m is not a refinement of p and
+let s be the largest integer such that (m1 , · · · , ms−1 , 1, · · · , 1) is a refinement of p.
+8                 BERNT TORE JENSEN, XIUPING SU, AND GUIYU YANG
+
+  As m is maximal with respect to λ, there is a non-zero entry aij in the sth diagonal
+block of A, such that (i, j) is not contained in any of the diagonal blocks of B. By
+Lemma 4.3, aji = aij , so we may assume that i < j.
+  Let C be the matrix with ro(C) = co(C) = λ, cij = cji = 1 and all other off-diagonal
+entries equal to 0. By the fundamental multiplication rules in Lemma 2.2,
+                             eC = ei . . . ej−1 fj−1 . . . fi kλ .
+Moreover, eA ≤ eC , since C is blocked with respect to m, and the blocks of A are
+open matrices.
+   As the column and row vectors of B are also equal to λ, there exist non-zero entries
+bxi and byj in B. We assume that x is minimal. Let
+                                       eD = eB eC .
+The fundamental multiplication rules imply
+                                         dx′′ j = 1,
+for some x ≤ x. As (i, j) is not contained in any of the blocks of B, nor is (x′′ , j).
+           ′′
+
+So bx′′ j = 0 and thus
+                                           eB 6= eD .
+By Lemma 2.3,
+                                  eD = eB eC < eB kλ = eB
+and
+                       oλ,p oλ,m ≤ oλ,p eC = eB eC = eD < eB = oλ,p ,
+showing that (3) does not hold. This proves that (3) implies (1).
+   This proves that (1), (2) and (3) are equivalent. Similarly, (4) is equivalent to (1)
+and (2). This finishes the proof.                                                     
+  We remark that the maximality of m in the above lemma is only needed for the
+implications (3) and (4) to (1).
+Lemma 4.5. Let λ ∈ Λ(n, r) and let p ≤ m be decompositions of n. Then there is a
+split inclusion
+                          S0 (n, r)oλ,p ⊆ S0 (n, r)oλ,m
+of projective modules.
+Proof. Let m′ be maximal with respect to λ so that oλ,m′ = oλ,m . Then S0 (n, r)oλ,m′ =
+S0 (n, r)oλ,m and p ≤ m ≤ m′ . By (1) and (2) of Lemma 4.4, we have oλ,p oλ,m′ = oλ,p ,
+and so the inclusion follows. Right multiplication with oλ,p gives the splitting of the
+inclusion.                                                                            
+   Let m ∧ p be the largest decomposition that is smaller than both m and p in the
+refinement order ≤. Note that if p and m are maximal with respect to λ, then p ∧ m
+is also maximal with respect to λ.
+Lemma 4.6. Let m, p ∈ D(n) be maximal with respect to λ ∈ Λ(n, r). Then
+                     S0 (n, r)oλ,m ∩ S0 (n, r)oλ,p = S0 (n, r)oλ,m∧p .
+                                               0-SCHUR ALGEBRAS                                           9
+
+Proof. Since m ∧ p ≤ m and m ∧ p ≤ p, we have
+            S0 (n, r)oλ,m∧p ⊆ S0 (n, r)oλ,m            and         S0 (n, r)oλ,m∧p ⊆ S0 (n, r)oλ,p .
+It remains to prove that
+                               S0 (n, r)oλ,p ∩ S0 (n, r)oλ,m ⊆ S0 (n, r)oλ,p∧m .
+There is an a > 0 such that (oλ,m oλ,p )x = (oλ,m oλ,p )x+1 for all x ≥ a. Therefore
+(oλ,m oλ,p )a is an idempotent and so, by Proposition 3.3, equal to oλ,l for some l.
+Furthermore,
+                           oλ,l oλ,m = oλ,l and oλ,l oλ,p = oλ,l ,
+so by Lemma 4.4,
+                                       oλ,l ≤ oλ,m∧p .
+  Let X be an orbit in S0 (n, r)oλ,p ∩ S0 (n, r)oλ,m . Then
+                                              Xoλ,m = X = Xoλ,p
+and so
+                                               X = X(oλ,m oλ,p )a .
+This shows that
+                                                X ∈ S0 (n, r)oλ,l ,
+and therefore
+                       S0 (n, r)oλ,p ∩ S0 (n, r)oλ,m ⊆ S0 (n, r)oλ,l ⊆ S0 (n, r)oλ,p∧m ,
+as required.                                                                                              
+Lemma 4.7. Let λ1 , · · · , λs , µ ∈ Λ(n, r) and m1 , · · · , ms , p ∈ D(n). Then
+                s
+                X                                            s
+                                                             X
+            (         S0 (n, r)oλi ,mi ) ∩ S0 (n, r)oµ,p =         (S0 (n, r)oλi ,mi ∩ S0 (n, r)oµ,p ).
+                i=1                                          i=1
+
+Proof. The inclusion ⊇ is trivial. The other inclusion follows by observing that all
+modules S0 (n, r)oη,l have bases consisting of orbits.                            
+Lemma 4.8. Let λ ∈ Λ(n, r) and p1 , . . . , ps ∈ D(n). Then the inclusion
+                                       s
+                                       X
+                                              S0 (n, r)oλ,pi ⊆ S0 (n, r)kλ
+                                        i=1
+is split.
+Proof. Without loss of generality, we may assume that the decompositions p1 , . . . , ps
+are maximal with respect to λ. We prove that the inclusion is split by induction on
+s. The case s = 1 is a special case of Lemma 4.5 with p = p1 and oλ,m = kλ for
+m = (1, · · · , 1). Now assume s ≥ 2. We have the short exact sequence
+                             Ms                   s
+                                                  X
+                    0→K→         S0 (n, r)oλ,pi →   S0 (n, r)oλ,pi → 0.
+                                       i=1                         i=1
+
+It suffices to prove that K is projective, as then K is also injective, since S0 (n, r)
+is
+Pas self-injective algebra (see for example [3]), so the sequence splits. Consequently,
+   i=1 S0 (n, r)oλ,pi is projective and thus injective. So the lemma follows.
+   For 1 ≤ i ≤ s, let K i be the submodule,
+                                   K i = {x ∈ K|xj = 0 for j > i} ⊆ K.
+10                    BERNT TORE JENSEN, XIUPING SU, AND GUIYU YANG
+
+Then
+                               0 = K 1 ⊆ K 2 ⊆ · · · ⊆ K s = K.
+Define a homomorphism
+                                   X
+          K i → S0 (n, r)oλ,pi ∩           S0 (n, r)oλ,pj by (x1 , . . . , xi , 0, . . . , 0) 7→ xi .
+                                   j<i
+                                            P                                P
+This map is well-defined and surjective, as j≤i xj = 0 implies that xi = − j<i xj
+is in the intersection for any x = (xj )j ∈ K i . Furthermore, there is a short exact
+sequence                                           X
+                0 → K i−1 → K i → S0 (n, r)oλ,pi ∩    S0 (n, r)oλ,pj → 0.
+                                                                  j<i
+By Lemma 4.7 and Lemma 4.6,
+                 X                  X                                     X
+S0 (n, r)oλ,pi ∩   S0 (n, r)oλ,pj =   (S0 (n, r)oλ,pi ∩S0 (n, r)oλ,pj ) =   S0 (n, r)oλ,pi ∧pj ,
+                j<i                      j<i                                           j<i
+
+which is projective by the induction hypothesis. This shows that each K i is projective.
+In particular, K = K s is projective, as required.                                    
+   Let the length of a composition λ, denoted by |λ|, be the number of non-zero entries
+in λ. Let O |λ| be the set of all idempotents oλ,m and define
+                          O i = {oλ,m | oλ,m < o for some o ∈ O i+1 }
+recursively downwards for i = |λ| − 1, · · · , 2, 1. Let oi = O i \O i−1. Note that o|λ| =
+{kλ } and o1 = {oλ }. Moreover, it can be shown that o ∈ oi if and only if there is a
+chain of |λ| − i proper degenerations o < · · · < kλ , or equivalently, a chain of i − 1
+proper degenerations oλ < · · · < o. If λ has no zero entries, then oi is the set of
+idempotents with matrices having exactly i diagonal blocks.
+Example 4.9. Let λ = (1, 0, 1, 0, 1, 0, 1), and so |λ| = 4. We have the following
+lattice of maximal decompositions. The decompositions in the i-th level, starting from
+the bottom, determine the idempotents in oi .
+
+              o4 :                                (1, 1, 1, 1, 1, 1, 1)
+                                                                    ◗◗◗
+                                                 ♠♠♠                   ◗◗◗
+                                            ♠♠♠♠♠                         ◗◗◗
+                                          ♠♠                                 ◗◗◗
+                                       ♠♠♠                                      ◗
+              o3 :       (3, 1, 1, 1, 1)             (1, 1, 3, 1, 1)            (1, 1, 1, 1, 3)
+                                                                    ◗◗◗
+                                                 ♠♠♠                   ◗◗◗
+                                            ♠♠♠♠♠                         ◗◗◗
+                                          ♠♠                                 ◗◗◗
+                                       ♠♠♠                                      ◗
+              o2 :         (5, 1, 1)                                                (1, 1, 5)
+                                       ◗◗◗
+                                          ◗◗◗                                 ♠♠♠
+                                             ◗◗◗                         ♠♠♠♠♠
+                                                ◗◗◗                     ♠
+                                                   ◗◗◗               ♠♠♠
+                                                                  ♠♠♠
+              o1 :                                          (7)
+Theorem 4.10. Let λ ∈ Λ(n, r). We have a filtration,
+                            X              X
+      S0 (n, r)oλ ⊂ · · · ⊂   S0 (n, r)o ⊂   S0 (n, r)o ⊂ · · · ⊂ S0 (n, r)kλ ,
+                                o∈oi                     o∈oi+1
+where each inclusion is split and
+                   P
+                         i+1 S0 (n, r)o              S0 (n, r)o
+                                          M
+                    Po∈o                =      P                         ′
+                                                                           .
+                       o∈oi S0 (n, r)o     i+1  o′ ∈oi ,o′ <o S0 (n, r)o
+                                                   o∈o
+                                                 0-SCHUR ALGEBRAS                                                             11
+
+Proof. If oλ,m ∈ oi , then m ≤ l for some oλ,l ∈ oi+1 , and so the filtration exists by
+Lemma 4.5. Moreover, the inclusions in the filtration are split by Lemma 4.8. We
+show that the inclusions are proper. Let z ∈ O i+1 be maximal with respect to the
+degeneration P order on O i+1 . Then z 6∈ O i , and so the inclusion O i ⊆ O i+1 is proper.
+Now, if z ∈ o∈oi S0 (n, r)o, then z degenerates to o′ for some o′ ∈ O i , which is a
+contradiction, since z ∈ oi+1 . So the inclusions are all proper.
+  Let oλ,m , oλ,l ∈ oi+1 be two distinct idempotents with m and l maximal with respect
+to λ. By Lemma 4.6,
+                             S0 (n, r)oλ,m ∩ S0 (n, r)oλ,l = S0 (n, r)oλ,m∧l .
+Furthermore,                                                        X
+                                       S0 (n, r)oλ,m∧l ⊆                   S0 (n, r)o,
+                                                                    o∈oi
+and therefore P
+                           i+1 S0 (n, r)o   M                S0 (n, r)o
+                  Po∈o                    =       P                                  .
+                         o∈oi S0 (n, r)o     i+1
+                                                 ( o′ ∈oi S0 (n, r)o′ ) ∩ S0 (n, r)o
+                                                   o∈o
+  The theorem now follows from Lemma 4.7 and 4.6.                                                                             
+  We remark that there is a similar filtration of S0 (n, r)oλ,m for any oλ,m .
+4.2. Isomorphism of projective modules. For λ ∈ Λ(n, r) and l ∈ D(n), let
+                     l1
+                     X                           1 +l2
+                                                lX                                          n
+                                                                                            X
+          λ[l] = (         λj , 0, . . . , 0,            λj , 0, . . . , 0, . . . ,                     λj , 0, . . . , 0).
+                                                                                           Ps−1
+                     j=1                        j=l +1
+                     |           {z       } | 1            {z            }            j=    a=1 la +1
+                                                                                      |             {z                 }
+                                 l1                        l2                                       ls
+
+  Recall that µ oλ is the unique open orbit in Fµ × Fλ .
+Lemma 4.11. Let λ, µ ∈ Λ(n, r) and l ∈ D(n). If λ[l] = µ[l], then
+                          S0 (n, r)oµ,l ∼
+                                        = S0 (n, r)oλ,l .
+In particular, S0 (n, r)oλ,l ∼
+                             = S0 (n, r)kλ[l] .
+Proof. By Lemma 2.3, the multiplication of two open orbits is either zero or open. So
+for any λ, µ ∈ Λ(n, r)
+                         µ oλ oλ = µ oλ ,         oµ µ oλ = µ oλ , and λ oµ µ oλ = oλ .
+Therefore, the homomorphism
+                              (∗) S0 (n, r)oµ −→ S0 (n, r)oλ , oµ 7→ µ oλ
+is an isomorphism. Similarly, for λ, µ ∈ Λ(n, r) and decomposition l satisfying λ[l] =
+µ[l], we have an isomorphism
+                                         S0 (n, r)oµ,l −→ S0 (n, r)oλ,l
+by applying (∗) blockwise.                                                                                                    
+  Recall that µ kλ is the closed orbit in Fµ × Fλ and that λ kλ = kλ .
+Lemma 4.12. Let λ, µ ∈ Λ(n, r). Suppose there are s and t such that
+   (1) λi 6= 0 for i ≤ s and λi = 0 for i > s,
+   (2) µi 6= 0 for i ≤ t and µi = 0 for i > t.
+  Then S0 (n, r)kλ ∼= S0 (n, r)kµ if and only if λ = µ.
+12                  BERNT TORE JENSEN, XIUPING SU, AND GUIYU YANG
+
+Proof. It suffices to prove that S0 (n, r)kλ ∼     6= S0 (n, r)kµ if λ 6= µ. Assume λ 6= µ. Note
+that if S0 (n, r)kλ ∼
+                    = S0 (n, r)kµ, then there are orbits eA ⊆ Fλ × Fµ and eB ⊆ Fµ × Fλ
+such that eA eB = kλ . We prove that S0 (n, r)kλ ∼          6= S0 (n, r)kµ by showing that eA eB <
+kλ , for any choice of eA and eB .
+   As eA ≤ λ kµ and eB ≤ µ kλ , we have eA eB ≤ λ kµ · µ kλ by Lemma 2.3. Since λ 6= µ,
+there is a smallest i such that λi 6= µi . We may assume λi < µi . Let (f, f ′ ) ∈ λ kµ be the
+pair of flags constructed in Lemma 2.6 with respect to the ordered basis {v1 , · · · , vr }.
+Let f ′′ : {0} = v0′ ⊆ V1′ ⊆ · · · ⊆ Vn′ = V be the flag constructed from f by swapping
+vni and vni +1 . That is Vi′′ = {v1 , . . . , vni −1 , vni +1 }, Vj′′ = Vi′′ if Vj = Vi and Vj′′ = Vj
+otherwise. Then (f ′ , f ′′ ) ∈ kµ,λ and the orbit [f, f ′′ ] is not closed, so by the definition
+of the multiplication in S0 (n, r),
+                                                          ′′
+                                    λ kµ · µ kλ ≤ [f, f
+                                                  ] < kλ .
+                      ′′                   ∼
+Hence eA eB ≤ [f, f ] < kλ and S0 (n, r)kλ 6= S0 (n, r)kµ .                                       
+  Given λ ∈ Λ(n, r) and a decomposition l ∈ D(n), let c(λ, l) ∈ Λ(n, r) be the
+composition of r obtained by moving all non-zero entries in λ[l] to the left, and all
+zero entries to the right.
+Example 4.13. Let n = 6, λ = (0, 3, 0, 0, 1, 1) and l = (1, 1, 2, 2). Then
+                     λ[l] = (0, 3, 0, 0, 2, 0) and c(λ, l) = (3, 2, 0, 0, 0, 0).
+  We will prove that S0 (n, r)oλ,l is isomorphic to S0 (n, r)oµ,m if and only if c(λ, l) =
+c(µ, m).
+Lemma 4.14. Let λ ∈ Λ(n, r) and m ∈ D(n). Then
+                       S0 (n, r)oλ,m ∼
+                                     = S0 (n, r)kc(λ,m) .
+Proof. By Lemma 4.11, we have S0 (n, r)oλ,m ∼    = S0 (n, r)kλ[m] . We may assume that
+λ[m] 6= c(λ, m) and so there is an i such that λ[m]i = 0 and λ[m]i+1 6= 0. Let l be
+the decomposition of n with lj = 1 for j 6= i and li = 2. Then oλ[m],l = kλ[m] , and by
+Lemma 4.11 we have an isomorphism S0 (n, r)kλ[m] ∼      = S0 (n, r)kλ′ , where λ′j = λ[m]j
+for j 6= i, i + 1, λ′i = λ[m]i+1 and λ′i+1 = λ[m]i . In other words, λ′ is obtained from
+λ[l] by swapping the zero entry λ[m]i with the non-zero entry λ[m]i+1 . By repeating
+this construction we get the required isomorphism.                                      
+Theorem 4.15. Let λ, µ ∈ Λ(n, r) and l, m ∈ D(n). Then
+           S0 (n, r)oλ,l ∼
+                         = S0 (n, r)oµ,m if and only if c(λ, l) = c(µ, m).
+Proof. Assume c(λ, l) = c(µ, m). Then S0 (n, r)oλ,l ∼      = S0 (n, r)oµ,m by Lemma 4.14.
+                             ∼
+Conversely, if S0 (n, r)oλ,l = S0 (n, r)oµ,m , then S0 (n, r)kc(λ,l) ∼
+                                                                     = S0 (n, r)kc(µ,m) and so
+c(λ, l) = c(µ, m) by Lemma 4.12. This completes the proof.                                  
+   We say that λ and µ are equivalent, denoted by λ ∼ µ, if c(λ, p) = c(µ, p) for
+p = (1, 1, · · · , 1). If λ has no zero entries, then λ ∼ µ if and only if λ = µ. Denote by
+[λ] the equivalence class of λ. Let
+                                 C(n, r) = {[λ] | λ ∈ Λ(n, r)}.
+Theorem 4.15 implies the following.
+Corollary 4.16. Let λ, µ ∈ Λ(n, r). Then S0 (n, r)kλ ∼
+                                                     = S0 (n, r)kµ if and only if
+λ ∼ µ.
+                                     0-SCHUR ALGEBRAS                                           13
+
+4.3. Bases of projective modules. Let eA ⊆ F ×F and m = (m1 , . . . , ms ) ∈ D(n).
+Let Av be the matrix that is equal to A on the vth column block ofP  A with respect to
+m, i.e. the mv consecutive columns starting from column number ( v−1   t=1 mt ) + 1, and
+equal to zero elsewhere. Similarly, with respect to rows we define Av to be the matrix
+                                                                          Pv−1
+that is equal to A on the mv consecutive rows starting from row number ( t=1 mt )+1,
+and equal to zero elsewhere. As a sum of matrices,
+                                     X         X
+                                 A=       Av =     Av .
+                                          v          v
+
+Lemma 4.17. Let eA , eB ⊆ F × F and m ∈ D(n). If B is blocked with respect to m,
+then
+                   (eA eB )v = eAv eBv and (eB eA )v = eBv eAv .
+Proof. We prove the first equality. The vth diagonal block in B is a product of ep and
+          P                      Pv
+fp with ( v−1
+            j=1 mj ) + 1 ≤ p ≤ (    j=1 mj ) − 1, so by the fundamental multiplication
+rules in Lemma 2.2, the multiplication eA eB can be computed blockwise, with only
+the vth column block of A affected by the vth diagonal block of B. The equality
+follows.
+   The proof of the other equality is similar and we skip the details.               
+  We say that A is open on columns with respect to m if Av is an open matrix for all
+v = 1, · · · , s. Similarly, A is open on rows with respect to m if Av is open for all v.
+  Let
+         Bλ,m = {eA |co(A) = λ, A is open on columns with respect to m} and
+         Bλ,m = {eA |ro(A) = λ, A is open on rows with respect to m}.
+Proposition 4.18. Let λ ∈ Λ(n, r) and m ∈ D(n).
+  (1) Bλ,m is a Z-basis of S0 (n, r)oλ,m .
+  (2) Bλ,m is a Z-basis of oλ,m S0 (n, r).
+Proof. (1) If A is open on columns with respect to m, then since products of open orbits
+are open, we have (eA · oλ,m ) = eA by Lemma 4.17. This shows that eA ∈ S0 (n, r)oλ,m.
+  Suppose that eB = eA oλ,m ∈ S0 (n, r)oλ,m . Then eBv is the product of eAv with an
+open orbit, and so eBv is open. By Lemma 4.17, eB is open on columns with respect
+to m and (1) follows.
+  The proof of (2) is similar.                                                        
+4.4. Bases for homomorphisms. Recall that there is a natural isomorphism
+                   Hom(S0 (n, r)x, S0 (n, r)y) ∼
+                                               = xS0 (n, r)y,
+where x, y ∈ S0 (n, r) are idempotents. We identify the elements in xS0 (n, r)y with
+the corresponding homomorphisms. In particular, any orbit eA with ro(A) = λ and
+co(A) = µ defines a non-zero homomorphism
+                               eA : S0 (n, r)kλ → S0 (n, r)kµ
+by right mulitiplication with eA .
+Proposition 4.19. Let λ, µ ∈ Λ(n, r) and m, p ∈ D(n). Then Bλ,m ∩Bµ,p is a Z-basis
+of Hom(S0 (n, r)oλ,m, S0 (n, r)oµ,p ).
+Proof. Note that
+   Hom(S0 (n, r)oλ,m, S0 (n, r)oµ,p ) ∼
+                                      = oλ,m S0 (n, r)oµ,p = oλ,m S0 (n, r) ∩ S0 (n, r)oµ,p .
+Since Bλ,m ∩ Bµ,p is a basis of oλ,m S0 (n, r) ∩ S0 (n, r)oµ,p , the proposition follows.       
+14               BERNT TORE JENSEN, XIUPING SU, AND GUIYU YANG
+
+Corollary 4.20. Let λ ∈ Λ(n, r) and m ∈ D(n). Then
+          Hom(S0 (n, r)oλ , S0 (n, r)oλ,m) and Hom(S0 (n, r)oλ,m , S0 (n, r)oλ )
+are spanned by oλ . Consequently, there are no non-zero homomorphisms between
+S0 (n, r)oλ and S0 (n, r)oλ,m /S0 (n, r)oλ .
+                   5. Indecomposable projective modules.
+   In this section, we construct indecomposable projective modules, their multiplica-
+tive bases and classify them up to isomorphism. We also decompose S0 (n, r)kλ into a
+direct sum of indecomposable summands.
+5.1. Construction of indecomposable projective modules. Let λ ∈ Λ(n, r) and
+let                        X
+                     Xλ =      S0 (n, r)oλ,m ⊂ S0 (n, r)kλ .
+                              oλ,m <kλ
+
+Choose an idempotent xλ ∈ S0 (n, r)kλ that splits the inclusion Xλ ⊂ S0 (n, r)kλ by
+right multiplication. The existence of xλ follows from Lemma 4.8. This allows us to
+identify the projective quotient module
+                                         S0 (n, r)kλ
+                                  Pλ =
+                                             Xλ
+with S0 (n, r)(kλ − xλ ).
+Theorem 5.1. The projective S0 (n, r)-module Pλ is indecomposable.
+Proof. We have
+                       End Pλ ∼
+                              = (kλ − xλ )S0 (n, r)(kλ − xλ ).
+We prove that there are no non-zero idempotents in (kλ − xλ )S0 (n, r)(kλ − xλ ) other
+than kλ − xλ and consequently we have the indecomposability of Pλ . Let
+                             Xm
+                         y=      yi (kλ − xλ )eAi (kλ − xλ ),
+                                i=1
+with yi ∈ Z. We may assume that xλ is a linear combination of orbits eA with
+ro(A) = co(A) = λ and eA 6= kλ . We also assume that for any yi 6= 0,
+                            (∗) (kλ − xλ )eAi (kλ − xλ ) 6= 0,
+which implies that ro(Ai ) = co(Ai ) = λ. Order the terms in y such that for i < j,
+eAj < eAi or they are non-comparable. Then by Lemma 2.3, for any i and j,
+                            eAi eAj ≤ eAj and eAi eAj ≤ eAi .
+Furthermore, when i < j,
+                            eAi eAj < eAi and eAj eAi < eAi .
+  We claim that if y 6= 0 and eA1 6= kλ , then y is not an idempotent. Indeed, as
+eA1 6= kλ , then eAi 6= kλ for all i. For any z ∈ S0 (n, r)xλ + xλ S0 (n, r), we have
+                               (kλ − xλ )z(kλ − xλ ) = 0,
+and so by assumption (∗), eAi 6∈ S0 (n, r)xλ + xλ S0 (n, r). Note that eAi 6= kλ and
+oλ,m ∈ Xλ = S0 (n, r)xλ for any idempotent orbit oλ,m different from kλ . So by
+Proposition 3.3, eAi is not an idempotent.
+   Write                             Pm
+                                y =    i=1 yi (eAi + Zi )
+                                   0-SCHUR ALGEBRAS                                       15
+
+and                     P
+                  y 2 = Pi,j yi yj (kλ − xλ )eAi (kλ − xλ )eAj (kλ − xλ )
+                      =  i,j yi yj (eAi eAj + eAi xλ eAj + Zij ),
+where Zi , Zij ∈ S0 (n, r)xλ + xλ S0 (n, r). So eA1 does not appear in y 2, by the choice
+of the ordering of the eAi . Consequently, y is not an idempotent, as claimed.
+   Now assume that y 6= 0 is an idempotent. Then eA1 = kλ and y1 = 1. As
+                                     yxλ = xλ y = 0,
+kλ − xλ − y is an idempotent, with the leading term eA1 different from kλ . By the
+above claim,
+                        kλ − xλ − y = 0, i.e. y = kλ − xλ
+as required.                                                                    
+5.2. Bases for indecomposable projective modules. Recall that a basis of an
+algebra A is multiplicative if the product of two basis elements is a basis element or
+zero. A basis of an A-module M is multiplicative (with respect to a multiplicative
+basis of A) if for any two basis elements x ∈ A and y ∈ M, we have that xy is zero or
+belongs to the basis of M. By definition, S0 (n, r) has a multiplicative basis consisting
+of orbits, and S0 (n, r)oλ,m has a multiplicative basis Bλ,m given in Proposition 4.18.
+   Let λ ∈ Λ(n, r),
+                                                    [
+                           Bλ = {eA |co(A) = λ}\         Bλ,m ,
+                                                   oλ,m <kλ
+                                                      [
+                           Bλ = {eA |ro(A) = λ}\               Bλ,m
+                                                    oλ,m <kλ
+
+  and let Bλ · (kλ − xλ ) = {eA · (kλ − xλ )|eA ∈ Bλ }.
+Proposition 5.2. Bλ · (kλ − xλ ) is a multiplicative Z-basis of Pλ .
+Proof. We have eA (kλ −xλ ) = 0 for any eA ∈ Bλ,m with oλ,m < kλ , and so Bλ ·(kλ −xλ )
+spans Pλ . Each element in Bλ · (kλ − xλ ) is of the form eA + Z with Z ∈ Xλ , and
+eA 6∈ Xλ . These are linearly independent because the eA are linearly independent. So
+Bλ · (kλ − xλ ) is a basis of Pλ . The basis is multiplicative by definition.       
+5.3. Bases for homomorphisms.
+Proposition 5.3. Let λ, µ ∈ Λ(n, r). Then (kλ − xλ )(Bλ ∩ Bµ )(kµ − xµ ) is a Z-basis
+of Hom(Pλ , Pµ ).
+Proof. We have
+                        Hom(Pλ , Pµ ) = (kλ − xλ )S0 (n, r)(kµ − xµ ).
+If eA 6∈ Bλ , then (kλ − xλ )eA = 0, and if eA 6∈ Bµ , then eA (kµ − xµ ) = 0. So
+(kλ − xλ )(Bλ ∩ Bµ )(kµ − xµ ) spans Hom(Pλ , Pµ ).
+   Each element in (kλ − xλ )(Bλ ∩ Bµ )(kµ − xµ ) is of the form eA + Z, where Z ∈
+S0 (n, r)xµ + xλ S0 (n, r) and eA 6∈ S0 (n, r)xµ + xλ S0 (n, r). These elements are linearly
+independent, since the eA are linearly independent in S0 (n, r).                          
+16                 BERNT TORE JENSEN, XIUPING SU, AND GUIYU YANG
+
+5.4. Classification of indecomposable projective modules.
+Lemma 5.4. Let oλ,m , oµ,l be idempotent orbits such that S0 (n, r)oλ,m ∼= S0 (n, r)oµ,l .
+Then there is an isomorphism φ : S0 (n, r)oλ,m → S0 (n, r)oµ,l such that
+                            X                  X
+                        φ(       S0 (n, r)o) =    S0 (n, r)o
+                              o<oλ,m              o<oµ,l
+
+Proof. As S0 (n, r)oλ,m ∼  = S0 (n, r)oµ,l , there are x ∈ oλ,m S0 (n, r)oµ,l and
+y ∈ oµ,l S0 (n, r)oλ,m such that xy = oλ,m . Since the orbits form a multiplicative basis
+of S0 (n, r), there must be eA ∈ oλ,m S0 (n, r)oµ,l and eB ∈ oµ,l S0 (n, r)oλ,m such that
+eA · eB = oλ,m . Let φ be the split injection given by right multiplication by eA , which
+is in fact an isomorphism since the two modules are isomorphic. If o ∈ S0 (n, r)oλ,m
+is an idempotent, then φ(eB o) = eB oeA ∈ S0 (n, r)oµ,l is also an idempotent. So φ
+induces a bijection between the idempotent orbits in S0 (n, r)oλ,m and the idempotent
+orbits in S0 (n, r)oµ,l , with φ(oλ,m ) = oµ,l . The lemma follows.                    
+  Recall that two compositions λ and µ are equivalent, λ ∼ µ, if c(λ, p) = c(µ, p) for
+p = (1, 1, · · · , 1) and
+                             C(n, r) = {[λ] | λ ∈ Λ(n, r)},
+where [λ] denotes the equivalence class of λ. We have the following version of Corollary
+4.16 for indecomposable modules.
+Proposition 5.5. Let λ, µ ∈ Λ(n, r). Then Pλ ∼   = Pµ if and only if λ ∼ µ.
+Proof. If λ ∼ µ, then there is an isomorphism from S0 (n, r)kλ to S0 (n, r)kµ, by Corol-
+lary 4.16. By Lemma 5.4, Pλ ∼   = Pµ .
+    Assume that Pλ ∼  = µP   . So  there is x′ = x(kλ − xλ ) ∈ S0 (n, r)(kλ − xλ ) and
+z ′ = (kλ − xλ )z(kµ − xµ ) ∈ (kλ − xλ )S0 (n, r)(kµ − xµ ) such that
+                     x′ z ′ = xz − xxλ z − xzxµ + xxλ zxµ = kµ − xµ .
+By comparing terms on each side of the equality, there exists orbits eA ⊆ Fµ × Fλ
+and eB ⊆ Fλ × Fµ such that eA · eB = kµ . A similar expression exists for kλ , and so
+S0 (n, r)kλ ∼
+            = S0 (n, r)kµ. Then λ ∼ µ, by Corollary 4.16, and the proof is complete. 
+   For the classification of indecomposable projective modules we use the Krull-Schmidt
+property, and so we consider S0 (n, r) defined over a field. Let λ1 , . . . , λc be a complete
+list of representatives in C(n, r). We may choose compositions λ such that if λi = 0,
+then λj = 0 for j > i.
+Theorem 5.6. Let S0 (n, r) be defined over a field. The modules Pλ1 , . . . , Pλc form a
+complete set of representatives of indecomposable projective S0 (n, r)-modules.
+Proof. First, following Theorem 5.1, each Pλi is an indecomposable projective module.
+Moreover, by Proposition 5.5, the Pλi are pairwise non-isomorphic. Also, given λ ∈
+Λ(n, r), we have λ ∼ λi for some i, and therefore Pλ ∼ = Pλi by Proposition 5.5.
+   Let P be an indecomposable projective module. Then it is isomorphic to a summand
+of some S0 (n, r)kξ . We show that P is isomorphic to some Pλ by induction on the
+length of ξ. If the length of ξ is 1, then Pξ = S0 (n, r)kξ , and we are done. If P
+is not isomorphic to Pξ , then it is isomorphic to a summand of S0 (n, r)oξ,l for some
+decomposition l with oξ,l < kξ , by the Krull-Schmidt theorem for finite dimensional
+algebras. By Lemma 4.11, S0 (n, r)oξ,l ∼ = S0 (n, r)kξ[l] , where ξ[l] has smaller length
+than ξ. So P ∼ = Pλ for some λ, by induction. This completes the proof.                
+                                      0-SCHUR ALGEBRAS                               17
+
+   The choice of representatives from C(n, r) was arbitrary. We give an example below
+illustrating the isomorphisms for different choices of representatives.
+Example 5.7. Consider S = S0 (3, 5). Let λ = (2, 0, 3) and µ = (2, 3, 0).
+  (1) Skλ = Soλ ⊕ S(kλ − oλ ) and Skµ = Soµ ⊕ S(kµ − oµ ).
+  (2) kλ f23 e32 = kλ and kµ e32 f23 = kµ . So the maps
+               φ : Skµ → Skλ , kµ 7→ kµ e32 and ψ : Skλ → Skµ , kλ 7→ kλ f23
+       are isomorphisms.
+   (3) f23 oµ e32 = oλ and e32 oλ f23 = oµ . So
+                             φ(Soµ ) = Soλ and ψ(Soλ ) = Soµ .
+   (4) f23 (kµ − oµ )e32 = kλ − oλ and e32 (kλ − oλ )f23 = kµ − oµ . So
+             φ(S(kµ − oµ )) = S(kλ − oλ ) and ψ(S(kλ − oλ )) = S(kµ − oµ ).
+5.5. Decomposition of S0 (n, r)kλ .
+Theorem 5.8. Let λ ∈ Λ(n, r). Then
+                                                   M
+                                   S0 (n, r)kλ ∼
+                                               =          Pc(λ,m) ,
+                                                    m
+
+where the sum is over all m maximal with respect to λ.
+Proof. There is an isomorphism from S0 (n, r)oλ,m to S0 (n, r)kc(λ,m) by Lemma 4.14.
+Using Lemma 5.4, we get an isomorphism
+                        S0 (n, r)oλ,m         ∼ S0 (n, r)kc(λ,m)
+                  P                           =                  = Pc(λ,m) .
+                     oλ,l <oλ,m S0 (n, r)oλ,l       Xc(λ,m)
+The theorem now follows from the filtration in Theorem 4.10.                         
+  We remark that there is a similar decomposition of S0 (n, r)oλ,l for any l ∈ D(n).
+This can be proved similarly, or using S0 (n, r)oλ,m ∼
+                                                     = S0 (n, r)kc(λ,m) .
+Corollary 5.9. There is a decomposition of S0 (n, r) into left modules
+                                         M
+                             S0 (n, r) =    Pc(λ,m) ,
+                                                  (λ,m)
+
+where the sum is over all pairs (λ, m) ∈ Λ(n, r) × D(n) such that m is maximal with
+respect to λ.
+  Norton [13] described indecomposable projective modules of the 0-Hecke algebra
+H0 (r), and showed that they are indexed by subsets of a set determined by λ ∈ Λ(n, r).
+We remark that the decomposition in Theorem 5.8 for n = r and λ = (1, . . . , 1)
+                                                                             | {z }
+                                                                                 r
+coincides with the description of Norton.
+Example 5.10. Let S = S0 (4, 7), λ = (2, 0, 3, 2) and µ = (2, 1, 3, 1). We have the
+following Hasse-diagram of degenerations.
+18                       BERNT TORE JENSEN, XIUPING SU, AND GUIYU YANG
+
+
+
+                  o
+                  ⑧ λ❄❄❄
+                                                               o ❖
+                                                           ♦♦♦♦ µ ❖❖❖❖❖
+                ⑧⑧      ❄❄                              ♦ ♦               ❖❖❖
+              ⑧⑧          ❄❄                         ♦♦♦                      ❖❖❖
+            ⑧                                    ♦♦♦
+       oλ,(3,1)
+           ⑧
+             ❄❄         o λ,(1,3)           oµ,(3,1)❖❖       oµ,(2,2)❖❖       oµ,(1,3)
+                ❄❄      ⑧⑧                            ❖❖♦❖♦♦♦          ❖❖♦❖♦♦♦
+                  ❄ ⑧⑧⑧                                ♦  ❖
+                                                     ♦♦ ❖❖❖❖ ♦♦♦♦ ❖❖❖❖  ♦  ❖
+                                                 ♦♦♦
+                  kλ                       oµ,(2,1,1)
+                                                    ❖❖❖ oµ,(1,2,1)
+                                                                  ♦
+                                                                             oµ,(1,1,2)
+                                                       ❖❖❖                 ♦♦♦
+                                                            ❖❖❖      ♦♦ ♦♦
+                                                                  ♦♦
+                                                               kµ
+So
+                                         Soλ,(3,1)   Soλ,(1,3)
+                              Skλ ∼
+                                  = Pλ ⊕ So   λ
+                                                   ⊕ So   λ
+                                                               ⊕ Soλ
+                                  ∼
+                                  = Pλ ⊕ P(5,2,0,0) ⊕ P(2,5,0,0) ⊕ P(7,0,0,0) .
+and similarly
+ Skµ ∼
+     = Pµ ⊕ P(3,3,1,0) ⊕ P(2,4,1,0) ⊕ P(2,1,4,0) ⊕ P(6,1,0,0) ⊕ P(3,4,0,0) ⊕ P(2,5,0,0) ⊕ P(7,0,0,0) .
+We match the summands of Skµ to the description by Norton [13, Corollary 4.14].
+The decomposition µ determines the set J = {2 = µ1 , 3 = µ1 + µ2 , 6 = µ1 + µ2 + µ3 }.
+The summands in the decomposition of Skµ above correspond to the indecomposable
+projective modules determined by the subsets J, {3, 6}, {2, 6}, {2, 3}, {6}, {3}, {2} and
+∅, respectively.
+                                              References
+ [1] Beilinson, A. A., Lusztig, G. and MacPherson, R., A geometric setting for the quantum defor-
+     mation of GLn , Duke Math. J. 61 (1990), 655-677.
+ [2] Berenstein, A., Kazhdan, D., Geometric and unipotent crystals. II. From unipotent bicrystals to
+     crystal bases, Quantum groups, 13-88, Contemp. Math., 433, Amer. Math. Soc., Providence,
+     RI, 2007.
+ [3] Deng, B. and Yang, G., On 0-Schur algebras, J. Pure Appl. Algebra. 216 (2012), 1253-1267.
+ [4] Deng, B. and Yang, G., Representation type of 0-Hecke algebras, Sci. China Ser. A, 54(2011),
+     411-420.
+ [5] Dipper, R. and James, G., The q-Schur algebra, Proc. London Math. Soc. (3) 59 (1989), 23-50
+ [6] Donkin, S., The q-Schur algebra, London Mathematical Society Lecture Note Series, 253. Cam-
+     bridge University Press, Cambridge, 1998. x+179 pp.
+ [7] Du, J., A note on quantised Weyl reciprocity at roots of unity, Algebra Colloq. 2 (1995), 363-372.
+ [8] Du, J. and Parshall, B., Linear quivers and the geometric setting of quantum GLn , Indag. Math.
+     (N.S.) 13 (2002), 459-481.
+ [9] Duchamp, G., Hivert, F. and Thibon, J., Noncommutative symmetric functions. VI. Free quasi-
+     symmetric functions and related algebras, Internat. J. Algebra Comput. 12 (2002), 671-717.
+[10] Fayers M., 0-Hecke algebras of finite Coxeter groups, J. Pure Appl. Algebra 199 (2005), 27-41.
+[11] He, Xuhua, A subalgebra of 0-Hecke algebra, J. Algebra 322 (2009), 4030-4039.
+[12] Jensen, B. T. and Su, X., A geometric realisation of 0-Schur and 0-Hecke algebras, J. Pure
+     Appl. Algebra 219 (2015), 277-307.
+[13] Norton, P. N., 0-Hecke algebras, J. Austral. Math. Soc. Ser. A 27 (1979), 337-357.
+[14] Stembridge, John R., A short derivation of the Möbius function for the Bruhat order. J. Alge-
+     braic Combin. 25 (2007), 141-148.
+
+     BTJ: Gjøvik University College, Teknologvn. 22, 2815 Gjøvik, Norway
+     E-mail address: bernt.jensen@hig.no
+
+     XS: Mathematical Sciences, Univ. of Bath, Bath BA2 7AY, U.K.
+     E-mail address: xs214@bath.ac.uk
+
+     GY: School of Science, Shandong University of Technology, Zibo 255049 , China
+     E-mail address: yanggy@mail.bnu.edu.cn
+

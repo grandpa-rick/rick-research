@@ -1,0 +1,867 @@
+                                                 ON τ -TILTING FINITENESS OF SYMMETRIC ALGEBRAS OF
+                                                                  POLYNOMIAL GROWTH
+
+                                                                           KENGO MIYAMOTO AND QI WANG
+arXiv:2207.03079v4 [math.RT] 28 Aug 2024
+
+
+
+
+                                                  Abstract. In this paper, we report on the τ -tilting ﬁniteness of some classes of ﬁnite-
+                                                  dimensional algebras over an algebraically closed ﬁeld, including symmetric algebras of
+                                                  polynomial growth, 0-Hecke algebras and 0-Schur algebras. Consequently, we ﬁnd that de-
+                                                  rived equivalence preserves the τ -tilting ﬁniteness over symmetric algebras of polynomial
+                                                  growth, and self-injective cellular algebras of polynomial growth are τ -tilting ﬁnite. Fur-
+                                                  thermore, the representation-ﬁniteness and τ -tilting ﬁniteness over 0-Hecke algebras and
+                                                  0-Schur algebras (with few exceptions) coincide.
+
+
+
+
+                                                                                    1. Introduction
+                                              Throughout this paper, we will use the symbol k to denote an algebraically closed field. An
+                                           algebra is assumed to be an associative basic connected finite-dimensional k-algebra, unless
+                                           otherwise specified. Modules are always finitely generated and right. For an algebra A, we
+                                           denote by mod-A (resp. proj-A) the category of modules (resp. projective modules) over A.
+                                           We also denote by Kb (proj-A) the perfect derived category of A. Finally, we use the symbols
+                                           D and τ for the standard k-dual and the Auslander-Reiten translation, respectively.
+                                              Recently, Adachi, Iyama and Reiten proposed τ -tilting theory in [AIR14] to classify torsion
+                                           classes in mod-A. They introduced a new class of A-modules called support τ -tilting modules
+                                           (see Section 2 for the definition), which are in bijective correspondence with several sets
+                                           of important objects arising in representation theory, such as two-term silting complexes
+                                           in Kb (proj-A) ([AIR14]), functorially finite torsion classes in mod-A ([AIR14]), left finite
+                                           semibricks in mod-A ([As20]), wide subcategories of mod-A ([MS17]), some t-structures and
+                                           co-t-structures in Kb (proj-A) ([KY14]), and so on. In this context, those algebras admitting
+                                           only finitely many support τ -tilting modules, which are said to be τ -tilting finite, have been
+                                           actively researched, for example, see [Ad16(2), AAC18, AH21, AHMW21, MW21, W22(1),
+                                           Z20]. Demonet, Iyama, and Jasso originally studied τ -tilting finite algebras and characterized
+                                           such algebras in [DIJ19].
+                                              It is known that τ -tilting finiteness is preserved under Morita equivalence, but usually
+                                           not preserved under derived equivalence. Examples are easy to find: a path algebra A of
+                                           a Euclidean quiver is τ -tilting infinite; taking a tilting A-module M having both a prepro-
+                                           jective and a preinjective direct summand, then the endomorphism algebra B = EndA M is
+                                           representation-finite (see [ASS06, VIII, Proposition 4.4]) and hence, τ -tilting finite.
+
+                                             Date: August 29, 2024.
+                                             Key words and phrases. Symmetric algebras, 0-Hecke algebras, 0-Schur algebras, τ -tilting ﬁnite.
+                                             2020 Mathematics Subject Classification. 16G10, 16G60, 16D80.
+                                                                                               1
+2                                  K. MIYAMOTO AND Q. WANG
+
+   The notion of symmetric algebras plays a prominent role in representation theory. An
+algebra A is said to be symmetric if there exists a non-degenerate symmetric k-bilinear form
+(−, −) : A × A → k such that (ab, c) = (a, bc), for all a, b, c ∈ A. Classical examples
+of symmetric algebras include group algebras of finite groups, Brauer graph algebras, and
+trivial extension algebras. Here, the trivial extension Triv(A) of an algebra A is defined by
+Triv(A) := A ⋉ D(A) with multiplication (a, f )(b, g) = (ab, ag + f b) for a, b ∈ A, f, g ∈ D(A).
+One may easily find that each algebra A is a certain quotient of its trivial extension Triv(A),
+indicating the significance of symmetric algebras in representation theory.
+   One may expect thorough research on the behavior of symmetric algebras in τ -tilting
+theory. There are outcomes for some subclasses of symmetric algebras: Aihara shows in
+[Ai13] that any representation-finite symmetric algebra is tilting-connected; Adachi, Aihara
+and Chan provide in [AAC18] a combinatorial classification of two-term tilting complexes
+for Brauer graph algebras; Asashiba, Mizuno and Nakashima in [AMN20] along with Aoki
+in [Ao21] use different approaches to determine the number of two-term tilting complexes
+for Brauer tree algebras; Koshio and Kozakai classify in [KK21] support τ -tilting modules
+for certain block algebras of finite groups; Li and Zhang study in [LZ22] support τ -tilting
+modules over trivial extension algebras; Adachi and Aoki compute in [AA23] the number of
+two-term silting complexes for symmetric algebras with radical cube zero; to name a few.
+   We have learned from [AAC18] that the τ -tilting finiteness of Brauer graph algebras
+is preserved under derived equivalence. From this result, it is reasonable to consider the
+following question:
+Question 1.1. Does derived equivalence preserve the τ -tilting finiteness over symmetric
+algebras?
+   In this paper, the main strategy addressing Question 1.1 is given in terms of the rep-
+resentation type of symmetric algebras. Due to Drozd’s Tame-Wild Dichotomy [Dr80], a
+finite-dimensional algebra over an algebraically closed field is either tame or wild. We then
+consider the τ -tilting finiteness of symmetric algebras in different types outlined in the fol-
+lowing hierarchy (see [S06, (1.5)] for more details).
+                                               Finite
+                                             Domestic
+
+                                         Polynomial growth
+                                               Tame
+
+It is well-known that each of the inclusions above is proper. We mention a crucial prop-
+erty from [R89(2)] that the tameness and the hierarchy above are preserved by the derived
+equivalence of symmetric algebras (or more generally, self-injective algebras, see [Asa99]).
+   In the case of representation-finite symmetric algebras, a positive answer to Question 1.1
+is straightforward, since any representation-finite algebra is τ -tilting finite. As the first main
+result in this paper, we provide an affirmative answer to Question 1.1 for representation-
+infinite symmetric algebras of polynomial growth, as follows.
+                     ON τ -TILTING FINITENESS OF SYMMETRIC ALGEBRAS                              3
+
+Theorem 1 (= Theorem 3.12). Let A and B be two representation-infinite symmetric alge-
+bras of polynomial growth. If A is derived equivalent to B, then the following conditions are
+equivalent.
+   (1) A is τ -tilting finite.
+   (2) B is τ -tilting finite.
+   (3) The Cartan matrix CA (or equivalently, CB ) is non-singular.
+   It is noteworthy that Question 1.1 remains unanswered for tame symmetric algebras of
+non-polynomial growth and wild symmetric algebras.
+   As an application of Theorem 1, one can determine the τ -tilting finiteness of self-injective
+cellular algebras of polynomial growth, which are classified in [AKMW20] up to Morita
+equivalence (under the assumption that the characteristic of k is not 2).
+Corollary 2 (= Corollary 3.14). Suppose the characteristic of k is not 2. Then, any algebra
+which is Morita equivalent to a self-injective cellular algebra of polynomial growth is τ -tilting
+finite.
+   Another motivation of this paper is to determine the τ -tilting finiteness of 0-Hecke algebras
+and 0-Schur algebras, see Section 4 for precise definitions. This may be independent of
+Question 1.1, but this is meaningful for the research related to Hecke algebras and q-Schur
+algebras. In fact, the τ -tilting finiteness of Hecke algebras of type A and classical Schur
+algebras has already been determined in [ALS23, AW21, W22(2)].
+   Let q be an indeterminate element. For a finite Coxeter system (W, S), the Iwahori-Hecke
+algebra Hk,q (W ) is the k-algebra generated by {Ts | s ∈ S} with quadratic relations and
+braid relations. Then, H0 (W ) := Hk,0 (W ) is called the 0-Hecke algebra. The structure
+and the representation theory of H0 (W ) have been extensively studied, for example, see
+[Ca86, F05, N79]. As the second main result in this paper, we classify 0-Hecke algebras in
+terms of τ -tilting finiteness as follows.
+Theorem 3 (= Theorem 4.4). Let W be an irreducible finite Coxeter group. Then, the
+following statements are equivalent.
+   (1) The 0-Hecke algebra H0 (W ) is τ -tilting finite.
+   (2) W is one of types A1 , A2 , B2 and I2 (m), for any m ≥ 5.
+   We denote by Sr the symmetric group of degree r, which is actually a Coxeter group of
+type Ar−1 . According to [DY12, (4.3.3)], the 0-Schur algebra S0 (n, r) is Morita equivalent to
+a certain idempotent truncation of the 0-Hecke algebra H0 (Sr ), for any n, r ≥ 2. This class
+of algebras has been studied by various authors, such as Donkin [Do98], Su [Su10], Deng
+and Yang [DY12], etc. As the third main result in this paper, we determine the τ -tilting
+finiteness of 0-Schur algebras as follows.
+Theorem 4 (= Theorem 4.8). The following assertions hold.
+   (1) For n ≥ 3, the 0-Schur algebra S0 (n, r) is τ -tilting finite if and only if r = 2, 3.
+   (2) For n = 2 and r ≥ 2, the 0-Schur algebra S0 (2, r) is τ -tilting finite.
+4                                    K. MIYAMOTO AND Q. WANG
+
+                                          2. Preliminaries
+   Any finite-dimensional k-algebra A can be presented as a bound quiver algebra kQ/I,
+where Q is a finite (connected) quiver and I is an admissible ideal of the path algebra kQ.
+                                                                                          α
+A quiver is said to be acyclic if it admits no oriented cycle. We will commonly write a −→b
+to indicate that an arrow α has source a and target b. We refer to some textbooks, e.g.,
+[ASS06], for more background materials on the representation theory of quivers.
+   We recall some crucial properties of symmetric algebras. It is well-known that any algebra
+that is derived equivalent to a symmetric algebra is also symmetric, see [R91, Corollary
+5.3]. Moreover, the following fact is the reason why we can consider symmetric algebras in
+different hierarchies of representation types.
+Proposition 2.1 ([R89(2), Corollary 2.2] and [KZ00, Corollary 2]). Let A be a symmet-
+ric algebra and B an algebra that is derived equivalent to A. If A is tame (respectively,
+representation-finite, domestic, of polynomial growth), then B has the same property.
+   We then review the basic definitions in τ -tilting theory and collect some results on τ -tilting
+finite algebras, which are needed for this paper. We refer to [AIR14, DIJ19, DIRRT17,
+EJR18] for more aspects related to τ -tilting theory.
+Definition 2.2. Let M ∈ mod-A and |M| be the number of isomorphism classes of inde-
+composable direct summands of M.
+    (1) M is τ -rigid if HomA (M, τ M) = 0.
+    (2) M is τ -tilting if it is τ -rigid with |M| = |A|.
+    (3) M is support τ -tilting if there is an idempotent e ∈ A such that M is a τ -tilting
+        module over A/AeA.
+   We denote by sτ -tilt A the set of isomorphism classes of basic support τ -tilting A-modules;
+it admits a poset structure, see [AIR14, Subsection 2.4] for details. We recall that A is
+called τ -tilting finite if sτ -tilt A is a finite set, and otherwise, A is said to be τ -tilting infinite.
+According to [DIJ19], an algebra A is τ -tilting finite if and only if A has only finitely many
+isomorphism classes of bricks.
+Example 2.3. We give some examples of τ -tilting finite/infinite algebras.
+    (1) A local algebra A has exactly two basic support τ -tilting modules A and 0. Thus,
+        any local algebra is τ -tilting finite.
+    (2) A representation-finite algebra is τ -tilting finite.
+    (3) Any module lying on a preprojective (or preinjective) component is a brick. Thus,
+        representation-infinite algebras with preprojective components are τ -tilting infinite
+        (see [Mo23, Remark 2.8]). Moreover, the path algebra kQ of an acyclic quiver Q is
+        τ -tilting finite if and only if Q is a Dynkin quiver (see [Ad16(2), Theorem 2.6]).
+   Let I be a two-sided ideal of A and e an idempotent of A. By considering the following
+fully faithful functors
+         − ⊗A/I A/I : mod-(A/I) → mod-A,              HomeAe (Ae, −) : mod-eAe → mod-A,
+                    ON τ -TILTING FINITENESS OF SYMMETRIC ALGEBRAS                           5
+
+we have the fact that τ -tilting finiteness is preserved under taking quotient (or factor) and
+idempotent truncation, see [DIJ19, DIRRT17, P19].
+  The Cartan matrix CA of an algebra A = kQ/I is the matrix whose (i, j)-entry is
+dimk HomA (Pi , Pj ), where Pi is the indecomposable projective A-module associated with
+the vertex i in Q. If the determinant of CA is equal to zero, it is referred to as a singular
+matrix ; otherwise, it is termed as a non-singular matrix. If A is symmetric, then CA is a
+symmetric matrix and furthermore, CA is said to be positive definite if all eigenvalues of CA
+are positive. The following statement is a well-known fact, e.g., see [R89(1)].
+
+Proposition 2.4. Let A be a symmetric algebra and B an algebra which is derived equivalent
+to A. If the Cartan matrix CA is positive definite, then so is CB .
+
+Proof. For an algebra Λ, we denote by K0 (proj-Λ) and K0 (Kb (proj-Λ)) the Grothendieck
+groups of proj-Λ and Kb (proj-Λ), respectively. Then it is well-known that the canonical
+                                                                         ∼
+embedding proj-Λ → Kb (proj-Λ) induces an isomorphism K0 (proj-Λ) −−→ K0 (Kb (proj-Λ))
+(e.g., see [G72]). For a complex M in Kb (proj-Λ), we write [M] for the equivalence class
+of M in the Grothendieck group K0 (Kb (proj-Λ)). Let h−, −iΛ : K0 (Kb (proj-Λ)) → Z be the
+bilinear form defined by
+                                    P∞
+                       h[M], [N]iΛ = (−1)ℓ dimk HomΛ ([M], Σℓ [N]),
+                                      ℓ=0
+
+where Σ is the shift functor on Kb (proj-Λ). It determines a bilinear form h−, −iΛ :
+K0 (proj-Λ) → Z, which is represented by CΛ with respect to the basis obtained by the
+isomorphism classes of indecomposable projective Λ-modules.
+   Let A be a symmetric algebra. If A and B are derived equivalent, then it follows from
+[R89(1), Theorem 6.4] that there exists a triangle equivalence F : Kb (proj-A) → Kb (proj-B).
+The triangle equivalence induces an isomorphism K0 (Kb (proj-A)) → K0 (Kb (proj-B)) which
+preserves the bilinear forms. Indeed, for [M], [N] ∈ K0 (Kb (proj-A)), we have
+                                    P∞
+                   hF [M], F [N]iB = (−1)ℓ dimk HomB (F [M], Σℓ (F [N]))
+                                      ℓ=0
+                                      P∞
+                                  =     (−1)ℓ dimk HomB (F [M], F (Σℓ [N]))
+                                      ℓ=0
+                                      P∞
+                                  =     (−1)ℓ dimk HomA ([M], Σℓ [N])
+                                      ℓ=0
+                                  = h[M], [N]iA .
+This implies that there is an invertible matrix P such that CB = t P CA P , where t P is the
+transpose of P . Therefore, if CA is positive definite, then so is CB .                   
+
+                  3. Symmetric algebras of polynomial growth
+   As mentioned in the introduction, we only focus on representation-infinite symmetric
+algebras of polynomial growth. We display by Table 1 (originally from [S06]) the complete
+classifications of these algebras up to Morita and derived equivalences, in which one may
+6                                 K. MIYAMOTO AND Q. WANG
+
+refer to the corresponding reference for the definitions of relevant algebras. Here, we follow
+the convention in [S06, (1.8)] that an algebra A is called standard if there exists a Galois
+covering Â → Â/G = A such that Â is a simply connected locally bounded category, and G
+is an admissible torsion-free group of k-linear automorphisms of Â. In the table, D stands
+for representation-infinite domestic and PG stands for non-domestic polynomial growth.
+
+           Standard     Cartan matrix      Morita equivalence         Derived equivalence
+                                          Trivial extensions of        T (p, q), T (2, 2, r)∗,
+                           Singular        Euclidean algebras         T (3, 3, 3), T (2, 4, 4),
+                                                 ([BoS05])             T (2, 3, 6) ([HS06])
+              Yes                          Λ(T, v1 , v2 ), Λ′ (T ),
+    D
+                                          Γ(0) (T, v), Γ(1) (T, v),   A(p, q), Λ(m), Γ(n)
+                        Non-singular
+                                              Γ(2) (T, v1 , v2 )            ([HS06])
+                                                 ([BoS05])
+              No        Non-singular        Ω(T ) ([BoS06])            Ω(n) ([BoHS07])
+                                     Trivial extensions of          Trivial extensions of
+                      Singular          tubular algebras         canonical tubular algebras
+          Yes                               ([BiS03])                      ([S06])
+    PG                               {Ai | i = 1, 2, . . . , 16} {Ai | i = 1, 2, 3, 4, 5, 12}
+                   Non-singular
+                                       ([BiS03, BoHS04])               ([BiHS03(1)])
+                                      {Λi | i = 1, 2, . . . , 9}     {Λi | i = 1, 3, 4, 9}
+          No       Non-singular
+                                            ([BiS04])                  ([BiHS03(2)])
+       Table 1. Representation-infinite symmetric algebras of polynomial growth
+
+
+
+3.1. Reduction methods. We need the following two crucial lemmas.
+
+Lemma 3.1. Let A be a symmetric algebra whose Cartan matrix CA is positive definite.
+Assume that the entries of the Cartan matrix CB are bounded for any algebra B which is
+derived equivalent to A, that is, there is a positive integer m such that all entries of CB are
+less than m. Then, all algebras which are derived equivalent to A are τ -tilting finite.
+
+Proof. By our assumption, it follows from [EJR18, Theorem 13] that A is τ -tilting finite.
+Let B be an algebra that is derived equivalent to A. Then, by Proposition 2.4, we deduce
+that CB is also positive definite. We apply [EJR18, Theorem 13] again and conclude that B
+is τ -tilting finite.                                                                   
+
+Lemma 3.2. Let A be a τ -tilting infinite algebra. Then, so is Triv(A).
+
+Proof. Since there is a surjective algebra homomorphism Triv(A) → A, the assertion follows
+immediately.                                                                            
+                                             ON τ -TILTING FINITENESS OF SYMMETRIC ALGEBRAS                                                                                                                          7
+
+3.2. Non-domestic symmetric algebras of polynomial growth. In [AHMW21], the
+authors have shown that any non-domestic symmetric algebra of polynomial growth whose
+Cartan matrix is non-singular is τ -tilting finite. Here, we omit the quiver and relations of Ai
+(i = 1, 2, . . . , 16) and Λi (i = 1, 2, . . . , 9). The definitions of these algebras are summarised
+in, for example, [AHMW21].
+
+Proposition 3.3 ([AHMW21, Theorems 3.1 and 3.3]). Let A be a non-domestic symmetric
+algebra of polynomial growth whose Cartan matrix is non-singular. Then, any algebra B
+which is derived equivalent to A is τ -tilting finite.
+
+  In this subsection, the remaining algebras are the non-domestic symmetric algebras of
+polynomial growth with a singular Cartan matrix. Then, we have
+
+Proposition 3.4. Let A be a non-domestic symmetric algebra of polynomial growth whose
+Cartan matrix is singular. Then, any algebra B which is derived equivalent to A is τ -tilting
+infinite.
+
+Proof. By Propositions 2.1 and 2.4, B must be a non-domestic symmetric algebra of poly-
+nomial growth with a singular Cartan matrix. Then B is isomorphic to a trivial extension
+of a tubular algebra (see Table 1). Since any tubular algebra admits a unique preprojective
+component with infinitely many vertices (for example, see [SS07, XIX, Theorem 3.20]), B is
+τ -tilting infinite by Lemma 3.2.                                                        
+
+
+3.3. Representation-infinite domestic symmetric algebras. In this subsection, we
+first recall the complete list of representatives for the derived equivalence classes of
+representation-infinite domestic symmetric algebras. Then, we determine the τ -tilting finite-
+ness of these representatives. Lastly, we use Lemmas 3.1 and 3.2 to deal with the algebras
+which are derived equivalent to these representatives.
+   Now, we define the following quivers to recall such derived equivalence classes.
+
+                          (I): ∆(p, q) with p, q ≥ 1                                                   (II): ∆(p, q, r) with p, q, r ≥ 1
+                                                                                                                     r                                                                                 , ✱
+                                                                                                                 ✒           α3     •h                                                    6•     β3
+                                 •m                                   1•
+                                                                                                             ✒                                                                                               ✱
+                      }    α3          α2                      β2          β3     !                                                      α2                                          β2                          ✱
+                                             •[           C•
+                                                                                                         ✒
+                                                                                                                                                       •[
+                  ✠                                                                   ✺
+                                                                                                                     αp−2                                            C•                           βq−2
+              ✏                               α1
+                                                                                          ✳
+                                                          β1                                                             (                             α1            β1
+          ✖                                                                                   ✭                              •    αp−1                                                    βq−1    •v
+                                                                                                   ✦                                              αp                      βq
+      ✢
+      ★                                            •M Q                                                                                  .•                 3 • `k                   •p
+                                                                                                  ✛
+          ✮                                   αp          βq                                  ✕                                                         γ1      γr
+              ✴                                                                           ✎
+                                                                                                                                                  •                        •V
+                          αp−2        αp−1   ;•            • c βq−1        βq−2
+                                 -•                                                                                                               γ2                  γr−1
+                                                                      •q
+                                                                                                                                              
+                                                                                                                                              •                                 •N
+                                                                                                                                                  γ3                 γr−2
+
+                                                                                                                                                       ❴ ❴ ❴
+8                                                                          K. MIYAMOTO AND Q. WANG
+
+          (III): Σ(p, q) with p, q ≥ 1                                                                             (IV): Θ(r) with r ≥ 2
+                                      •m                                         1•                                                               1•
+                                                                                                                                                   N
+                                α3          α2                              β2         β3                                                    γ2        γ3
+                           }                     •d                    :•                     !                            •X✵ ✵✵           A•        σ2
+                                                                                                                                                              !
+                       ✞                                                                          ✺                          ✵✵ ✵                                 ✺
+                                                  α1                  β1                              ✳                          ✵✵✵✵ α2 γ          •                 ✳
+                   ✎                                                                                                       α1 ✵✵ ✵   ✵      1     >
+               ✖                                           •O O                                           ✭                          ✵ ✵                                 ✭
+                                                                                                               ✦                               σ1                              ✦
+           ✢
+           ✩
+                                                       γ          σ                                                                   F •S
+                                                           •I U                                               ✛                     ✍✍ ✍                                      ✛
+               ✯                                                                                          ✕                β2 ✍✍ ✍✍        γq                             ✕
+                                                                                                                                    ✍
+                   ✶                              αp                  βq
+                                                                                                      ✎                       ✍✍✍✍ β1                                 ✎
+                                                                                                                            ✍✍ ✍✍
+                               αp−2        αp−1 ; •                    • c βq−1        βq−2                                •                  • c γq−1 γq−2
+                                      -•                                          •q                                                                  •q
+
+Definition 3.5. We define some symmetric algebras as follows.
+    (1) Set A(p, q) := k∆(p, q)/I1 (p, q) for any 1 ≤ p ≤ q, where I1 (p, q) is generated by
+          • α1 α2 · · · αp β1 β2 · · · βq = β1 β2 · · · βq α1 α2 · · · αp ,
+          • αp α1 = βq β1 = 0,
+          • αi αi+1 · · · αp β1 β2 · · · βq α1 α2 · · · αi = 0, for any 2 ≤ i ≤ p − 1,
+          • βj βj+1 · · · βq α1 α2 · · · αp β1 β2 · · · βj = 0, for any 2 ≤ j ≤ q − 1.
+    (2) Set Λ(m) := k∆(1, m)/I2 (m) for any m ≥ 2, where I2 (m) is generated by
+          • α12 = (β1 β2 · · · βm )2 ,
+          • α1 β1 = βm α1 = 0,
+          • βj βj+1 · · · βm β1 β2 · · · βm β1 β2 · · · βj = 0, for any 2 ≤ j ≤ m − 1.
+    (3) Set Γ(n) := k∆(2, 2, n)/I3 (n) for any n ≥ 1, where I3 (n) is generated by
+          • α1 α2 = (γ1 γ2 · · · γn )2 = β1 β2 ,
+          • α2 γ1 = β2 γ1 = γn α1 = γn β1 = α2 β1 = β2 α1 = 0,
+          • γj γj+1 · · · γn γ1 γ2 · · · γn γ1 γ2 · · · γj = 0, for any 2 ≤ j ≤ n − 1.
+    (4) Set T (p, q, r) := k∆(p, q, r)/I4 (p, q, r) for any 2 ≤ p ≤ q ≤ r, where I4 (p, q, r) is
+        generated by
+          • α1 α2 · · · αp = β1 β2 · · · βq = γ1 γ2 · · · γr ,
+          • αp γ1 = βq γ1 = γr α1 = γr β1 = αp β1 = βq α1 = 0,
+          • αi αi+1 · · · αp α1 α2 · · · αi = 0, for any 2 ≤ i ≤ p − 1,
+          • βj βj+1 · · · βq β1 β2 · · · βj = 0, for any 2 ≤ j ≤ q − 1,
+          • γk γk+1 · · · γr γ1 γ2 · · · γk = 0, for any 2 ≤ k ≤ r − 1.
+    (5) Set T (p, q) := kΣ(p, q)/I5 (p, q) for any 1 ≤ p ≤ q, where I5 (p, q) is generated by
+          • α1 α2 · · · αp γ = β1 β2 · · · βq σ,
+          • γα1 α2 · · · αp = σβ1 β2 · · · βq ,
+          • αp σ = σα1 = βq γ = γβ1 = 0,
+          • αi αi+1 · · · αp γα1 α2 · · · αi = 0, for any 2 ≤ i ≤ p − 1,
+          • βj βj+1 · · · βq σβ1 β2 · · · βj = 0, for any 2 ≤ j ≤ q − 1.
+    (6) Set T (2, 2, r)∗ := kΘ(r)/I6 (r) for any 2 ≤ r, where I6 (r) is generated by
+          • α1 α2 = β1 β2 = γ1 γ2 · · · γr ,
+          • γr α1 = β2 α1 = γr β1 = α2 β1 = α2 γ1 = α2 σ1 = β2 γ1 = β2 σ1 = 0,
+          • α2 α1 α2 = β2 β1 β2 = 0,
+          • γ2 γ3 · · · γr σ1 = σ2 γ3 · · · γr γ1 = 0,
+          • γk γk+1 · · · γr γ1 γ2 · · · γk = 0, for any 3 ≤ k ≤ r − 1.
+                      ON τ -TILTING FINITENESS OF SYMMETRIC ALGEBRAS                                                  9
+
+   (7) Set Ω(n) := k∆(1, n)/I7 (n) for any n ≥ 1, where I7 (n) is generated by
+         • α1 β1 β2 · · · βn = β1 β2 · · · βn α1 ,
+         • α12 = α1 β1 β2 · · · βn ,
+         • βn β1 = 0,
+         • βk βk+1 · · · βn α1 β1 β2 · · · βk = 0, for any 2 ≤ k ≤ n − 1.
+  We have the following results related to standard domestic symmetric algebras. Note that
+not all T (p, q, r)’s are domestic algebras.
+Lemma 3.6. The following statements hold.
+   (1) For any 1 ≤ p ≤ q, the algebra A(p, q) is τ -tilting finite.
+   (2) For any m ≥ 2, the algebra Λ(m) is τ -tilting finite.
+Proof. Observe that the algebras A(p, q) and Λ(m) are isomorphic to the Brauer graph
+algebras with respect to the following Brauer graphs G1 and G2 , respectively.
+                                                                                                   •
+                                                                                                  /.-,
+                                                                                                  ()*+
+                             • ❏❏              t•                                     • ❏❏❏                    t•
+                                  ❏❏p+q     2 ttt                                            ❏❏❏ 1        2 ttt
+                                    ❏❏                                                                     t
+                                      ❏❏ ttt 3 ❜❜                                               ❏❏
+                                                                                                        ttt 3
+                    G1 =   • ❜❜❜❜p+2
+                                    ❜❜
+                                      t
+                                       ❜ t❜❜❜❜❜❜❜ •
+                                  ❜❜ t • ❏❏
+                                           ❏❏ p
+                                                           1   ,       G2 = •               m
+                                                                                          m−1 ②②
+                                                                                                    •❊
+                                                                                                   /.-,
+                                                                                                   ()*+
+                                                                                                         ❊❊ 4
+                                                                                                                  •
+                                    tt        ❏❏                                               ②           ❊❊
+                                  tt            ❏❏                                            ②
+                                                                                             ② m−2           ❊❊
+                                tt p+1                                                      ②                  ❊
+                             •                  •                                         ②②
+                                                                                      •                      •
+
+
+
+Here, the circled vertices have multiplicity 2. We then apply [AAC18, Theorem 6.7] to
+deduce that A(p, q) and Λ(m) are τ -tilting finite.                                
+Lemma 3.7. For any n ≥ 1, the algebra Γ(n) is τ -tilting finite.
+Proof. The Cartan matrix CΓ(n) is a square matrix of size n + 2 of the form
+                                                                                 
+                                         2      0     1        0    ···   0    0
+                                        0      2     1        0    ···   0    0
+                                                                                 
+                                        1      1     3        2    ···   2    2
+                                                                                 
+                                        0      0     2        3    ···   2    2 .
+                                        .      ..    ..       ..          .   .. 
+                                         ..     .     .        .   · · · ..    .
+                                                                                 
+                                        0      0     2        2    ··· 3      2
+                                         0      0     2        2    ··· 2      3
+It is easy to check that CΓ(n) is positive definite and det(CΓ(n) ) = 8. Let B be an algebra
+derived equivalent to Γ(n). By [BoS05, Theorem 3.1] (see also [BoS03, Theorem 1]), one
+knows that B is isomorphic to one of Γ(0) (T, v), Γ(1) (T, v) and Γ(2) (T, v1 , v2 ) (see [BoS05]
+for the definitions). The algebras Γ(0) (T, v), Γ(1) (T, v) and Γ(2) (T, v1 , v2 ) are determined by
+a Brauer graph T whose vertex has at most multiplicity 2. Since there are only finitely
+many such Brauer graphs with n + 2 edges, we have only finitely many choices of Γ(0) (T, v),
+Γ(1) (T, v) and Γ(2) (T, v1 , v2 ) having n + 2 simple modules. Thus, the entries of the Cartan
+matrix CB are bounded. Then, we deduce the statement by Lemma 3.1.                                
+Lemma 3.8. The following statements hold.
+   (1) For any 1 ≤ p ≤ q, the algebra T (p, q) is τ -tilting infinite.
+10                                    K. MIYAMOTO AND Q. WANG
+
+     (2) For any r ≥ 2, the algebra T (2, 2, r)∗ is τ -tilting infinite.
+     (3) The algebras T (3, 3, 3), T (3, 4, 4), T (2, 3, 6) are τ -tilting infinite.
+                                                                               /
+Proof. (1) We notice that there is a surjection T (p, q) → k( •                  / • ). Since the Kronecker
+                     /
+algebra k( •        / • ) is τ -tilting infinite, so is T (p, q).
+   (2) For any r ≥ 2, there is a surjection T (2, 2, r)∗ → kD          e 4 . Thus, T (2, 2, r)∗ is τ -tilting
+infinite.
+   (3) We set A1 := T (3, 3, 3), A2 := T (3, 4, 4) and A3 := T (2, 3, 6). Then there is a surjection
+from Ai to k∆i , where ∆1 = E          e 6 , ∆2 = Ee 7 and ∆3 = E e 8 . Hence, we conclude that Ai is
+τ -tilting infinite for i = 1, 2, 3.                                                                       
+   Note that the non-standard domestic symmetric algebras occur only when the character-
+istic of k is 2. In this case, a symmetric algebra A is non-standard domestic if and only if
+A is derived equivalent to Ω(n), for some n ≥ 1 ([BoHS07]). Moreover, the algebras Ω(n)’s
+form a complete set of representatives of pairwise different derived equivalence classes of
+representation-infinite non-standard domestic symmetric algebras ([HS06, Theorem 2.2]).
+Lemma 3.9. For any n ≥ 1, the algebra Ω(n) is τ -tilting finite.
+Proof. We notice that Ω(n) and A(1, n) are socle equivalent, that is, Ω(n)/soc Ω(n) and
+A(1, n)/soc A(1, n) are isomorphic. It follows from [Ad16(1), Theorem 3.3 (2)] that there
+are poset isomorphisms
+     sτ -tilt Ω(n) ≃ sτ -tilt (Ω(n)/soc Ω(n)) ≃ sτ -tilt (A(1, n)/soc A(1, n)) ≃ sτ -tilt A(1, n).
+By Lemma 3.6, Ω(n) is τ -tilting finite.                                                                  
+  We recall from Table 1 that the complete list of derived equivalence classes of
+representation-infinite domestic symmetric algebras is divided into the following cases:
+       • standard representation-infinite domestic symmetric algebras with singular Cartan
+         matrix, i.e., T (p, q), T (2, 2, r)∗, T (3, 3, 3), T (2, 4, 4), T (2, 3, 6);
+       • standard representation-infinite domestic symmetric algebras with non-singular Car-
+         tan matrix, i.e., A(p, q), Λ(m), Γ(n);
+       • non-standard representation-infinite domestic symmetric algebras with non-singular
+         Cartan matrix, i.e., Ω(n).
+Proposition 3.10. Any algebra A which is derived equivalent to one of algebras T (p, q),
+T (2, 2, r)∗, T (3, 3, 3), T (2, 4, 4) and T (2, 3, 6) is τ -tilting infinite.
+Proof. Let A be a symmetric algebra which is derived equivalent to one of the algebras
+T (p, q), T (2, 2, r)∗, T (3, 3, 3), T (2, 4, 4) and T (2, 3, 6). Then, it follows from [BoS05, Theorem
+2] that the algebra A is isomorphic to a trivial extension Triv(B), where B is a representation-
+infinite tilted algebra of Euclidean type. Since B is τ -tilting infinite (see [Z20]), the assertion
+follows from Lemma 3.2.                                                                               
+Proposition 3.11. Any algebra B which is derived equivalent to one of algebras A(p, q),
+Λ(m), Γ(n) and Ω(n) is τ -tilting finite.
+                     ON τ -TILTING FINITENESS OF SYMMETRIC ALGEBRAS                          11
+
+Proof. Let A ∈ {A(p, q), Λ(m), Γ(n), Ω(n)}. Then, it follows from [BoHS04, Theorems 1.1
+and 1.2] that A has a non-singular Cartan matrix. Moreover, the entries of the Cartan
+matrices of algebras which are derived equivalent to A are bounded. (Same arguments in
+the proof of Lemma 3.7 work for A(p, q), Λ(m), and Ω(n).) Then the assertion follows from
+Lemmas 3.6, 3.7, 3.9 and Proposition 2.4.                                               
+
+  Summing up the above statements, we can give the main result of this section.
+
+Theorem 3.12. Let A and B be two representation-infinite symmetric algebras of polynomial
+growth. If A is derived equivalent to B, then the following conditions are equivalent.
+   (1) A is τ -tilting finite.
+   (2) B is τ -tilting finite.
+   (3) The Cartan matrix CA (or equivalently, CB ) is non-singular.
+
+Proof. We divide representation-infinite symmetric algebras of polynomial growth into the
+following subclasses,
+     • representation-infinite domestic symmetric algebras with singular Cartan matrix;
+     • representation-infinite domestic symmetric algebras with non-singular Cartan matrix;
+     • non-domestic symmetric algebras of polynomial growth with singular Cartan matrix;
+     • non-domestic symmetric algebras of polynomial growth with non-singular Cartan
+       matrix.
+Then the statement follows from Propositions 3.3, 3.4, 3.10, and 3.11                        
+
+   A self-injective algebra A is said to be tilting-discrete if, for any n ≥ 1, there are only
+finitely many isomorphism classes of basic n-term tilting complexes of Kb (proj-A).
+
+Corollary 3.13. A symmetric algebra of polynomial growth whose Cartan matrix is non-
+singular is tilting-discrete.
+
+Proof. The statement follows from Theorem 3.12 and [AM17, Corollary 2.11].                   
+
+  As another application of Theorem 3.12, we find that any self-injective cellular algebra of
+polynomial growth is τ -tilting finite.
+
+Corollary 3.14. Suppose the characteristic of k is not 2. Then, any (not necessarily basic)
+algebra which is Morita equivalent to a self-injective cellular algebra of polynomial growth is
+τ -tilting finite.
+
+Proof. Since the characteristic of the base field k is not 2, cellularity is preserved under
+Morita equivalence so that we may assume that algebras are basic.
+  Any basic indecomposable self-injective cellular algebra of polynomial growth is symmetric
+by [AKMW20, Theorem 1]. Since any cellular algebra has a non-singular Cartan matrix
+[GL96, Theorem 3.7], the assertion follows from Theorem 3.12.                             
+12                                    K. MIYAMOTO AND Q. WANG
+
+                       4. 0-Hecke algebras and 0-Schur algebras
+  In this section, we focus on 0-Hecke algebras and 0-Schur algebras. We mention that these
+algebras are not necessarily connected and symmetric. In particular, a characterization of
+0-Hecke algebras being symmetric is given in [F05, Proposition 4.5].
+
+4.1. 0-Hecke algebras. We recall some background of Coxeter groups and Hecke algebras.
+We refer to the textbook [BB05] for more details.
+  Let W be a Coxeter group with the generating set S = {s1 , s2 , . . . , sn }, that is, the group
+with a presentation of the form
+
+                                W = hs1 , s2 , . . . , sn | (si sj )mij = 1i,
+
+where mii = 1 and mij ∈ {2, 3, 4, . . .} for i 6= j. The pair (W, S) is called a Coxeter system.
+We assign to a Coxeter system (W, S) a Coxeter diagram Γ(W, S) as follows: the vertex
+set of Γ(W, S) is in bijection with S; two vertices si and sj of Γ(W, S) are joined by an
+edge whenever mij ≥ 3, then this edge is labeled by mij and we omit the label on the
+edge si      sj if mij = 3. A Coxeter system (W, S) is said to be irreducible if its Coxeter
+diagram Γ(W, S) is connected. A Coxeter system (W, S) is said to be finite if Γ(W, S) is a
+disjoint union of types An (n ≥ 1), Bn = Cn (n ≥ 2), Dn (n ≥ 4), E6 , E7 , E8 , F4 , H3 , H4
+and I2 (m) (m ≥ 5); this gives a complete classification of finite Coxeter groups, see [Co91].
+   Let (W, S) be a finite Coxeter system and q an indeterminate element. The Iwahori-Hecke
+algebra (or briefly, Hecke algebra) Hk,q (W ) is the k-algebra generated by {Ts | s ∈ S} with
+the following two kinds of relations:
+     • Quadratic relations: Ts2 = (q − 1)Ts + q, for any s ∈ S.
+     • Braid relations: Ts Tt Ts Tt · · · = Tt Ts Tt Ts · · ·, for any s, t ∈ S.
+                        |     {z       } |        {z       }
+                             mst factors       mts factors
+
+It is well-known that if w = s1 s2 · · · sr is a reduced expression of w ∈ W , then Tw =
+Ts1 Ts2 · · · Tsr is well-defined. The Hecke algebra Hk,q (W ) is a q-deformation of the group
+algebra kW . Indeed, Hk,1 (W ) ≃ kW if q = 1. Another natural specialization of Hk,q (W ) is
+the case q = 0. We call H0 (W ) := Hk,0 (W ) the 0-Hecke algebra.
+   Our aim in this subsection is to classify H0 (W ) by τ -tilting finiteness. To do this, it
+suffices to check the quiver of H0 (W ), say QW , as we shall explain below.
+   Let (W, S) be a finite Coxeter system with S = {si | i ∈ I} and I = {1, 2, . . . , n}.
+According to [N79, Theorem 4.21] and [F05, Theorem 5.1], the quiver QW of H0 (W ) is
+obtained as follows:
+     • The vertex set is {vJ | J ⊆ I}.
+     • We draw an arrow vJ → vK whenever neither J nor K is contained in the other, and
+       mjk ≥ 3, for any j ∈ J \ K and k ∈ K \ J.
+Obviously, v∅ and vI are two isolated vertices in QW , that is, there is no arrow starting or
+ending at v∅ and vI .
+                      ON τ -TILTING FINITENESS OF SYMMETRIC ALGEBRAS                                                                     13
+
+Example 4.1. Let W = S3 be the symmetric group of degree 3 and S = {s1 , s2 , s3 }. Then,
+the Coxeter diagram of (S3, S) is displayed as
+                                               s1                     s2                  s3
+and (mij )i,j∈{1,2,3} is given by
+                                                
+                                         2 3 2
+                                       3 2 3 .
+                                         2 3 2
+Therefore, the quiver QW consists of the following three components.
+                                                        /                                 /
+                      v∅            v{1} o                  v{2} o                            v{3}                v{1,2,3}
+                                                              O
+
+                                                    /                                /
+                                    v{1,2} o                v{1,3} o                          v{2,3}
+
+   The following observations effectively show the τ -tilting finiteness of algebras. Indeed,
+the following lemmas allow us to prove that a bound quiver algebra A ≃ kQ/I is τ -tilting
+infinite only by the shape of Q.
+
+Lemma 4.2 ([W22(2), Lemma 2.15]). Any bound quiver algebra A = kQ/I is τ -tilting
+infinite if Q is ∆1 or ∆2 in the following.
+                                      /             /       /
+                              ◦O o       ◦O      ◦o    ◦O o     ◦
+                       ∆1 =                 ∆2 =
+                                       /            /      /
+                              ◦o         ◦       ◦o    ◦o       ◦
+                                                                                                  α      /
+Lemma 4.3 ([MW21, Proposition 3.1]). Let A := k( ◦ o                                                         ◦ )/hαβ, βαi. Then, the tensor
+                                                                                                  β
+product algebra A ⊗k A is τ -tilting infinite.
+
+  We now formulate our main result in this subsection as follows.
+
+Theorem 4.4. Let W be an irreducible finite Coxeter group. Then, the following statements
+are equivalent.
+   (1) The 0-Hecke algebra H0 (W ) is τ -tilting finite.
+   (2) W is of type A1 , A2 , B2 or I2 (m) for m ≥ 5.
+
+Proof. We first show that (2) implies (1). H0 (S1 ) is τ -tilting finite since it is semisimple.
+Suppose that W is of type A2 , B2 or I2 (m). Then the quiver QW is given by
+                                                                           /
+                               v∅              v{1} o                          v{2}                    v{1,2} .
+                                                                                      /
+It is known from [BG81] that any finite-dimensional algebra with quiver ◦ o             ◦ is
+representation-finite. We deduce that H0 (W ) is representation-finite.
+   Suppose that W is one of types An (n ≥ 3), Bn = Cn (n ≥ 3), Dn (n ≥ 4), E6 , E7 , E8 , F4 ,
+H3 or H4 . In this case, the quiver QW admits ∆2 , which is described in Lemma 4.2, as a full
+subquiver since the Coxeter diagram contains A3 as a subgraph. We conclude that H0 (W )
+is τ -tilting infinite.                                                                    
+14                                 K. MIYAMOTO AND Q. WANG
+
+   We are able to determine the τ -tilting finiteness of H0 (W ) for an arbitrary finite Coxeter
+group W . If W is a product of irreducible Coxeter groups W1 , W2 , . . . , Wn , then H0 (W ) is
+isomorphic to the tensor product H0 (W1 ) ⊗ H0 (W2 ) ⊗ · · · ⊗ H0 (Wn ). By combining Lemma
+4.3 and Theorem 4.4, we have the following result.
+Corollary 4.5. Assume that W = W1 × W2 × · · · × Wn is a finite Coxeter group, where
+n ≥ 2 and W1 , W2 , . . . , Wn are irreducible. Then, H0 (W ) is τ -tilting finite if and only if one
+of the following conditions holds.
+     (1) W1 , W2 , . . . , Wn are of type A1 .
+     (2) There is precisely one Wi such that it is one of types A2 , B2 or I2 (m), and the others
+         are of type A1 .
+  Thanks to the results given by Deng and Yang in [DY11], we can give a new class of
+algebras in which τ -tilting finiteness and representation-finiteness are equivalent.
+Corollary 4.6. Let W be an arbitrary finite Coxeter group. Then, the 0-Hecke algebra
+H0 (W ) is τ -tilting finite if and only if it is representation-finite.
+4.2. 0-Schur algebras. In this subsection, we consider the finite Coxeter group of type
+Ar−1 , i.e., the symmetric group Sr . We write Hq (Sr ) for the Hecke algebra Hk,q (Sr ). We
+recall the definition of q-Schur algebras introduced by Dipper and James [DJ89] as follows.
+   Let r be a positive integer. A composition of r is a sequence λ = (λ1 , λ2 , . . .) of non-
+                                    P
+negative integers such that i∈N λi = r. The entries λi , for i ≥ 1, are called parts of λ. If
+λi = 0 for all i > n, we identify λ with (λ1 , λ2 , . . . , λn ), and we call it a composition of r
+with at most n parts. We denote by Ω(r) the set of all compositions of r and by Ω(n, r) the
+set of all compositions of r with at most n parts.
+   For λ = (λ1 , λ2 , . . . , λn ) ∈ Ω(n, r), the corresponding Young subgroup Sλ of the symmetric
+group Sr is defined as Sλ = Sλ1 × Sλ2 × · · · × Sλn . Then, the q-Schur algebra associated
+with Hq (Sr ) is the endomorphism algebra
+                                                                         
+                                                          M
+                               Sq (n, r) := EndHq (Sr )       xλ Hq (Sr ) ,
+                                                    λ∈Ω(n,r)
+              P
+where xλ = w∈Sλ Tw . We call the degeneration at q = 0 of Sq (n, r) the 0-Schur algebra,
+and denote it by S0 (n, r). When q = 1, the algebra S1 (n, r) is the so-called classical Schur
+algebra.
+   For J ⊂ {1, 2, . . . , r − 1}, let eJ be the idempotent of H0 (Sr ) associated with the vertex
+vJ ∈ QSr . Then, {eJ | J ⊆ {1, 2, . . . , r − 1}} is a complete set of primitive orthogonal
+idempotents of H0 (Sr ) as we mentioned in the previous subsection. Let |J| be the number
+of elements in J.
+Lemma 4.7 ([DY12, (4.3.3)]). For any n ≥ 2 and r ≥ 2, the 0-Schur algebra S0 (n, r) is
+Morita equivalent to e[n]H0 (Sr )e[n], where
+                                              P
+                                       e[n] =   eJ .
+                                                |J|≤n−1
+                     ON τ -TILTING FINITENESS OF SYMMETRIC ALGEBRAS                            15
+
+  Now, we are able to classify τ -tilting finite 0-Schur algebras as follows.
+
+Theorem 4.8. The following assertions hold.
+   (1) For any n ≥ 3, the 0-Schur algebra S0 (n, r) is τ -tilting finite if and only if r = 2, 3.
+   (2) For n = 2 and r ≥ 2, the 0-Schur algebra S0 (2, r) is τ -tilting finite.
+
+Proof. (1) We show the necessity. When r ≤ n, S0 (n, r) is τ -tilting finite if and only if
+H0 (Sr ) is τ -tilting finite by Lemma 4.7, and so is S0 (n, r) with r ≤ 3.
+  We now show the sufficiency. Suppose r ≥ 4. In this case, the quiver of e[n]H0 (Sr )e[n]
+admits the following full subquiver:
+                                             /                  /
+                                 v{1,2} o            v{1,3} o           v{2,3}
+                                                       O
+
+                                                 /                 /
+                                 v{1} o              v{2} o             v{3}
+
+Thus, S0 (n, r) is τ -tilting infinite by Lemma 4.2.
+   (2) It is known from [DY12, Section 5] that, for any r ≥ 2, the 0-Schur algebra S0 (2, r) is
+Morita equivalent to the preprojective algebra of Dynkin type Ar−1 , which is τ -tilting finite
+following [Mi14, Theorem 2.21].                                                              
+
+   We mention that the representation type of S0 (n, r) is determined in [DY12]. Then,
+the relation between representation finiteness and τ -tilting finiteness of 0-Schur algebras is
+displayed as follows.
+
+Corollary 4.9. Let n ≥ 3. Then, the 0-Schur algebra S0 (n, r) is τ -tilting finite if and only
+if it is representation-finite.
+
+Proof. Combine Theorem 4.8 and [DY12, Theorem 4.6].                                            
+
+
+                                      Acknowledgment
+   The authors would like to express their gratitude to Professor Susumu Ariki for introducing
+them to this area of research and for his valuable comments and suggestions. Additionally,
+the authors are deeply thankful to Ryoichi Kase for his insightful suggestions, this paper
+would not have been complete without his comments. KM was partly supported by JSPS
+Grant-in-Aid for Early-Career Scientists (Grant No. 20K14302 and 24K16885), Grant-in-Aid
+for Scientific Research (A) (Grant No. 23H00479) and FY 2023 Research Project Expense
+Subsidy Program: Research Network Formation Project (National Institute of Technol-
+ogy, Japan). QW is partially supported by JSPS Grant-in-Aid for JSPS Fellows (Grant
+No. 20J10492), National Key Research and Development Program of China (Grant No.
+2020YFA0713000) and China Postdoctoral Science Foundation (Grant No. YJ20220119 and
+No. 2023M731988).
+16                                    K. MIYAMOTO AND Q. WANG
+
+                                             References
+[Ad16(1)] T. Adachi, The classiﬁcation of τ -tilting modules over Nakayama algebras, J. Algebra, 452 (2016),
+          227–262.
+[Ad16(2)] T. Adachi, Characterizing τ -rigid ﬁnite algebras with radical square zero, Proc. Amer. Math.
+          Soc., 144 (2016), no. 11, 4673–4685.
+[AA23]    T. Adachi and T. Aoki, The number of two-term tilting complexes over symmetric algebras with
+          radical cube zero, Ann. Comb., 27 (2023), no. 1, 149167.
+[AIR14] T. Adachi, O. Iyama and I. Reiten, τ -tilting theory, Compos. Math., 150 (2014), no. 3, 415–452.
+[AAC18] T. Adachi, T. Aihara and A. Chan, Classiﬁcation of two-term tilting complexes over Brauer graph
+          algebras, Math. Z., 290 (2018), no. 2, 1–36.
+[Ai13]    T. Aihara, Tilting-connected symmetric algebras, Algebr. Represent. Theory, 16 (2013), no. 3,
+          873-–894.
+[AH21]    T. Aihara and T. Honma, τ -tilting triangular matrix algebras, J. Pure Appl. algebra, 225 (2021),
+          no 12.
+[AHMW21] T. Aihara, T. Honma, K. Miyamoto and Q. Wang, Report on the ﬁniteness of silting objects,
+          Proc. Edinburgh Math. Soc., 64 (2021), no. 2, 217–233.
+[AM17]    T. Aihara and Y. Mizuno, Classifying tilting complexes over preprojective algebras of Dynkin
+          type, Algeb. Num. Theory, 11 (6) (2017), 1287–1315.
+                                                   
+[Ao21]    T. Aoki, Brauer tree algebras have 2n   n 2-tilting complexes, Preprint (2021), arXiv: 2104.12974.
+[AW21]    T. Aoki and Q. Wang, On τ -tilting ﬁniteness of blocks of Schur algebras, Preprint, (2021), arXiv:
+          2110.02000.
+[ALS23] S. Ariki, S. Lyle and L. Speyer, Schurian-ﬁniteness of blocks of type A Hecke algebras, J. Lond.
+          Math. Soc. (2), 108 (2023), no.6, 2333–2376.
+[AKMW20] S. Ariki, R. Kase, K. Miyamoto and K. Wada, Self-injective cellular algebras whose representa-
+          tion type are tame of polynomial growth, Algebr. Represent. Theory, 23 (2020), 833–871.
+[As20]    S. Asai, Semibricks, Int. Math. Res. Not., 16 (2020), 4993–5054.
+[Asa99]   H. Asashiba, The derived equivalence classiﬁcation of representation-ﬁnite selﬁnjective algebras,
+          J. of Algebra, 214 (1) (1999), 182–221.
+[AMN20] H. Asashiba, Y. Mizuno and K. Nakashima, Simplicial complexes and tilting theory for Brauer
+          tree algebras, J. Algebra, 557 (2020), 119–153.
+[ASS06] I. Assem, D. Simson and A. Skowroński, Elements of the representation theory of associative
+          algebras, vol 1, Techniques of Representation Theory, London Mathematical Society Student
+          Texts, 65, Cambridge University Press, 2006.
+[BiS03]   J. Bialkowski and A. Skowroński, On tame weakly symmetric algebras having only periodic mod-
+          ules, Arch. Math. (Basel), 81 (2003), 142–154.
+[BiS04]   J. Bialkowski and A. Skowroński, Socle deformations of selﬁnjective algebras of tubular type, J.
+          Math. Soc. Japan, 56 (2004), 687–716.
+[BiHS03(1)] J. Bialkowski, T. Holm and A. Skowroński, Derived equivalences for tame weakly symmetric
+          algebras having only periodic modules, J. Algebra, 269 (2003), 652–668.
+[BiHS03(2)] J. Bialkowski, T. Holm and A. Skowroński, On nonstandard tame selﬁnjective algebras having
+          only periodic modules, Colloq. Math., 97 (2003), 33–47.
+[BB05]    A. Björner and F. Brenti, Combinatorics of Coxeter groups, Graduate Texts in Mathematics, 231.
+          Springer, New York, (2005), xiv+363 pp.
+[BG81]    K. Bongartz and P. Gabriel, Covering spaces in representation-theory, Invent. Math., 65
+          (1981/82), no. 3, 331–378.
+                        ON τ -TILTING FINITENESS OF SYMMETRIC ALGEBRAS                                      17
+
+[BoHS04] R. Bocian, T. Holm and A. Skowroński, Derived equivalence classiﬁcation of weakly symmetric
+         algebras of Euclidean type, J. Pure Appl. Algebra, 191 (2004), 43–74.
+[BoHS07] R. Bocian, T. Holm and A. Skowroński, Derived equivalence classiﬁcation of nonstandard algebras
+         of domestic type, Comm. Algebra, 35 (2007), no. 2, 515–526.
+[BoS03] R. Bocian and A. Skowroński, Symmetric special biserial algebras of Euclidean type, Colloq.
+         Math., 96 (2003), 121–148.
+[BoS05] R. Bocian and A. Skowroński, Weakly symmetric algebras of Euclidean type, J. reine angew.
+         Math., 580 (2005), 157–199.
+[BoS06] R. Bocian and A. Skowroński, Socle deformations of selﬁnjective algebras of Euclidean type,
+         Comm. Algebra, 34 (2006), no. 12, 4235–4257.
+[Ca86]   R.W. Carter, Representation theory of the 0-Hecke algebra, J. Algebra, 104 (1986), no. 1, 89–103.
+[Co91]   H. S. M. Coxeter, Discrete groups generated by reﬂections, Ann. of Math., 84 (1991), 241–265.
+[DIJ19]  L. Demonet, O. Iyama and G. Jasso, τ -tilting ﬁnite algebras, bricks and g-vectors, Int. Math.
+         Res. Not. IMRN, 3 (2019), 852–892.
+[DIRRT17] L. Demonet, O. Iyama, N. Reading, I. Reiten and H. Thomas, Lattice theory of torsion classes:
+         beyond τ -tilting theory, Trans. Amer. Math. Soc. Ser. B, 10 (2023), 542–612.
+[DY11]   B. Deng and G. Yang, Representation type of 0-Hecke algebras, Sci. China Math., 54 (2011),
+         no.3, 411–420.
+[DY12]   B. Deng and G. Yang, On 0-Schur algebras, J. Pure Appl. Algebra, 216 (2012), no.6, 1253–1267.
+[DJ89]   R. Dipper and G. James, The q-Schur algebra, Proc. London Math. Soc., (3) 59 (1989), no.1,
+         23–50.
+[Dr80]   YU. A. Drozd, Tame and wild matrix problems, Representation Theory II, Lecture Notes in
+         Math., vol 832, Springer Verlag, 1980, 242–258.
+[Do98]   S. Donkin, The q-Schur algebra, London Mathematical Society Lecture Note Series, 253, Cam-
+         bridge University Press, Cambridge (1998).
+[EJR18] F. Eisele, G. Janssens and T. Raedschelders, A reduction theorem for τ -rigid modules, Math. Z.,
+         290 (2018), no. 3–4, 1377–1413.
+[F05]    M. Fayers, 0-Hecke algebras of ﬁnite Coxeter groups, J. Pure Appl. Algebra, 199 (2005), no. 1–3,
+         27–41.
+[GL96]   J. Graham and G. Lehrer, Cellular algebras, Invent. Math., 123 (1996), 1–34.
+[G72]    A. Grothendieck, Groupes de classes de catégories abeliennes et triangulées, Complexes parfait,
+         Lect. Notes Math. 589, Springer-Verlag (1972), 351–371.
+[HS06]   T. Holm and A. Skowroński, Derived equivalence classiﬁcation of symmetric algebras of domestic
+         type, J. Math. Soc. Japan, 58 (2006), no. 4 1133–1149.
+[KK21]   R. Koshio and Y. Kozakai, On support τ -tilting modules over blocks covering cyclic blocks, J.
+         Algebra, 580 (2021), 84—103.
+[KX00]   S. Koenig and C. C. Xi, A self-injective cellular algebra is weakly symmetric, J. Algebra, 228
+         (2000), 51–59.
+[KY14]   S. Koenig and D. Yang, Silting objects, simple-minded collections, t-structures and co-t-structures
+         for ﬁnite-dimensional algebras, Doc. Math., 19 (2014), 403–438.
+[KZ00]   H. Krause and G. Zwar, Stable equivalence and generic modules, Bull. Lond. Math. Soc., 32
+         (2000), 615–618.
+[LZ22]   Z. Li and X. Zhang, τ -tilting modules over trivial extensions, Internat. J. Algebra Comput., 32
+         (2022), no. 3, 617–628.
+[MS17]   F. Marks and J. S̆t̆ovı́c̆ek, Torsion classes, wide subcategories and localisations, Bull. Lond. Math.
+         Soc,, 49 (2017), no.3, 405–416.
+18                                    K. MIYAMOTO AND Q. WANG
+
+[MW21]   K. Miyamoto and Q. Wang, Representation-ﬁnite tensor product of simply connected algebras,
+         Preprint (2021), arXiv: 2106.06423.
+[Mi14]   Y. Mizuno, Classifying τ -tilting modules over preprojective algebras of Dynkin type, Math. Z.,
+         277 (2014), no.3, 665–690.
+[Mo23]   K. Mousavand, τ -tilting ﬁniteness of biserial algebras, Algebr. Represent. Theory, 26 (2023), no.6,
+         2485–2522.
+[N79]    P. N. Norton, 0-Hecke algebras, J. Austral. Math. Soc. Ser. A, 27 (1979), no. 3, 337–357.
+[P19]    P. G. Plamondon, τ -tilting ﬁnite gentle algebras are representation-ﬁnite, Pacific J. Math., 302
+         (2019), no.2, 709–716.
+[R89(1)] J. Rickard, Morita theory for derived categories, J. London Math. Soc. (2), 39 (1989), no. 3,
+         436–456.
+[R89(2)] J. Rickard, Derived category and stable equivalence, J. Pure Appl. Algebra, 61 (1989), 303–317.
+[R91]    J. Rickard, Derived equivalences as derived functors, J. London Math. Soc. (2), 43 (1991), 37–48.
+[SS07]   D. Simson and A. Skowroński, Elements of the Representation Theory of Associative Algebras,
+         vol 3, Representation-Inﬁnite Tilted Algebras, London Mathematical Society Student Texts, 72,
+         Cambridge University Press, 2007.
+[S06]    A. Skowroński, Selﬁnjective algebras: ﬁnite and tame type, Trends in Representation Theory of
+         Algebras and Related Topics, 169–238, Contemp. Math. 406, Amer. Math. Soc., 2006.
+[SY17]   A. Skowroński and K. Yamagata, Frobenius Algebras II, Tilted and Hochschild Extension Alge-
+         bras, European Mathematical Society Textbooks in Mathematics, European Mathematical Society,
+         2017.
+[Su10]   X. Su, A generic multiplication in quantized Schur algebras, Quart. J. Math., 61 (2010), no. 4,
+         497–510.
+[W22(1)] Q. Wang, On τ -tilting ﬁnite simply connected algebras, Tsukuba J. Math. (1) 46 (2022), 1–37.
+[W22(2)] Q. Wang, On τ -tilting ﬁniteness of the Schur algebra, J. Pure Appl. Algebra, 226 (1) (2022),
+         106818.
+[Z20]    S. Zito, τ -tilting ﬁnite cluster-tilted algebras, Proc. Edinburgh Math. Soc., 63 (2020), no. 4,
+         950–955.
+
+  Department of Computer and Information Science, Graduate School of Science and En-
+gineering, Ibaraki University, Hitachi, Ibaraki 316-8511, Japan.
+  Email address: kengo.miyamoto.uz63@vc.ibaraki.ac.jp
+
+     Yau Mathematical Sciences Center, Tsinghua University, Beijing 100084, China.
+     Email address: infinite-wang@outlook.com
+

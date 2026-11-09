@@ -1,0 +1,67 @@
+{
+ "2,2": {
+  "n": 2,
+  "N": 2,
+  "dimH_image": 2,
+  "H_indepQ": true,
+  "dimS0": 10,
+  "classical": 10,
+  "dimU0_image": 10,
+  "U0_indepQ": true,
+  "dim_commutant_U0": 2,
+  "commU0_exact": true,
+  "t": 0.0
+ },
+ "2,3": {
+  "n": 2,
+  "N": 3,
+  "dimH_image": 5,
+  "H_indepQ": true,
+  "dimS0": 20,
+  "classical": 20,
+  "dimU0_image": 19,
+  "U0_indepQ": true,
+  "dim_commutant_U0": 7,
+  "commU0_exact": true,
+  "t": 0.0
+ },
+ "3,3": {
+  "n": 3,
+  "N": 3,
+  "dimH_image": 6,
+  "H_indepQ": true,
+  "dimS0": 165,
+  "classical": 165,
+  "dimU0_image": 165,
+  "U0_indepQ": true,
+  "dim_commutant_U0": 6,
+  "commU0_exact": true,
+  "t": 0.2
+ },
+ "2,4": {
+  "n": 2,
+  "N": 4,
+  "dimH_image": 14,
+  "H_indepQ": true,
+  "dimS0": 35,
+  "classical": 35,
+  "dimU0_image": 31,
+  "U0_indepQ": true,
+  "dim_commutant_U0": 28,
+  "commU0_exact": true,
+  "t": 0.0
+ },
+ "3,4": {
+  "n": 3,
+  "N": 4,
+  "dimH_image": 23,
+  "H_indepQ": true,
+  "dimS0": 495,
+  "classical": 495,
+  "dimU0_image": 493,
+  "U0_indepQ": true,
+  "dim_commutant_U0": 29,
+  "commU0_exact": false,
+  "t": 21.5
+ }
+}

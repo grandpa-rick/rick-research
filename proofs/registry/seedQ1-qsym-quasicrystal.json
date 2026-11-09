@@ -158,7 +158,49 @@
                 "approach": "Seed Q3: S-side multiplicity space L_alpha (size beta_k(D)) is a basis shadow of Norton's projective P_alpha of H_k(0), not the 1-dim simple; quasi-crystal sees simple top on U_0 side, projective on H_k(0) side (Crown S asymmetry again). Recall-only (Norton 1979).",
                 "attribution": "Krob–Thibon NCSF IV §7.2 p.374 (+Prop 6.8, 6.15, eq.(2)); Norton 1979 Thm 4.12/Cor 4.13 — owned in substance (Wake 279, 2026-11-06, verbatim quotes in reading/2026-11-06-wake279-crownS-Q3-locator.md)",
                 "notes": "2026-11-06 Wake 279 locator (sub-agent read of papers/KrobThibon1997_NCSF_IV.txt + Norton; scratch/wake279-locator/): KT NCSF IV Prop 6.8 p.368 chi(D_I)=F_I; Prop 6.15 p.372 chi(N_I)=R_I; §7 preamble p.373 two decompositions of V^{(x)N} into A_0(n) x H_N(0)-bicomodules at q=0; §7.2 p.374 composition factors D_I with multiplicity |QR(I)|, 'D_I considered as a left H_N(0)-module is isomorphic to M_I', basis of V^{(x)N} indexed by (quasi-ribbon word Q, standard ribbon word R) of the same shape; eq.(2) §2.2 p.342 noncommutative Cauchy prod(1-x_i a_j)^{-1}=sum_I F_I(X)R_I(A), <R_I,F_J>=delta (Malvenuto-Reutenauer). Norton 1979 J. Austral. Math. Soc. A 27, 337-357: Thm 4.12 p.348, Cor 4.13 p.349 (indecomposable left ideals), §5 p.353 principal indecomposables U_J. CAVEAT: KT's 'D_I ~= M_I as left H_N(0)-module' is dimensionally loose (dim D_I != dim M_I in general); read as a multiplicity-space statement. KT use Dipper-Donkin A_0(n) (NCSF IV) / degenerate U_0(gl_N) (NCSF V), not Kashiwara's crystal limit. K_0 one-line proof (SKETCHED, not yet written sober): each weight space V_mu ~= H_N(0).pi_{w_0^J} (pi idempotent) is projective; its decomposition into M_I has multiplicities = coeff of x^mu in F_I; summing gives sum_mu x^mu [V_mu] = sum_I F_I(x) R_I. Parked (not opened, no Q68): does V^{(x)N} admit an honest bimodule filtration with subquotients D_I box M_I?",
-                "children": []
+                "children": [
+                  {
+                    "id": "Q71-filtration-root",
+                    "role": "attempt",
+                    "approach": "Q71 (Wake 286, Seed Q3): does V^{(x)N} (V=C^n) as (S_0(n,N),H_N(0))-bimodule have a filtration with subquotients D_I box M_I (D_I simple S_0-mod, char F_I; M_I projective indecomposable H_N(0)-mod, KT NCSF IV p.360) — iff it is semisimple? Conjectured answer: NO filtration for all n>=2, N>=3 (the Q67 K_0 identity sum F_I R_I does not lift).",
+                    "trust": "hunch",
+                    "file": "proofs/wake286/q3filt/RESULTS.md",
+                    "attribution": "Owner check (Wake 286): KT NCSF IV §7 (p.373-374) gives composition factors |QR(I)| and a (Q,R)-basis only, no bimodule filtration claimed; Jung-Oh arXiv 2509.26194 (S_0 = End_H(V^{(x)r}) (4.7), Thm 4.13, Cor 4.15 soc P) nearest modern source, silent on filtration and on (S_0,H) double centralizer; Deng-Yang JPAA 216 (2012) 1253 UNREAD. Also checked: 1207.6769, 1312.5487, 1705.06084, 1511.04135, 2207.03079 (silent). Appears unowned.",
+                    "notes": "Status: OPEN (in-progress), opened Wake 286 2026-11-09. Memory: memory/questions/q71-zero-schur-weyl-filtration.md. Next: PROVE 287. General statement graded hunch (4 non-semisimple cases).",
+                    "children": [
+                      {
+                        "id": "Q71-small-cases",
+                        "role": "attempt",
+                        "trust": "computed",
+                        "file": "proofs/wake286/q3filt/RESULTS.md",
+                        "approach": "Exact over Q (python-flint): (2,3),(3,3),(2,4),(3,4) admit NO D_I box M_I filtration; (2,2) YES (semisimple). Table (n,N): n^N / dim rho(H) / dim S_0 / dim J(S_0) / Loewy dims: (2,2) 4/2/10/0/4,0; (2,3) 8/5/20/2/8,2,0; (3,3) 27/6/165/32/27,8,0; (2,4) 16/14/35/7/16,8,3,0; (3,4) 81/23/495/192/81,48,18,0.",
+                        "notes": "Wake 286 sub-agent; scripts wake286/q3filt/core.py, step1b.py, step1_endS.py, step2.py, step3.py (+ step*.json). Top layer = sum L_I box C_I, socle layer = sum L_I box C_{nu(I)} (nu = reversal); composition factors match sum L_I box M_I; J(S_0) mixes S-labels in middle layers (e.g. (3,4) rad^2: L_22 box C_13 and L_121 box C_22). S-labels via F_J character expansion (cites char L_J = F_J). (3,3): 1-dim end pieces forced, peeling either order leaves no allowed piece.",
+                        "children": []
+                      },
+                      {
+                        "id": "Q71-socle-obstruction",
+                        "role": "attempt",
+                        "trust": "sketched",
+                        "file": "proofs/wake286/q3filt/RESULTS.md",
+                        "approach": "Obstruction: a bottom piece L_I box M_I lies in ann J(S)=Soc_S(V); soc(H)·piece = L_I box soc(M_I) = L_I box C_{nu(I)}, nu(I)=I reversed (Nakayama); dually tops survive in (V/J(S)V)·soc(H). Only dim M_I=1 pieces (I=(N), and (1^N) if n>=N) can be bottom/top; for n<N both must be (N), contradiction with >=2 pieces.",
+                        "notes": "End-piece restriction to dim M_I=1 is computed in the 4 cases, not proved in general — that is the gap for PROVE 287.",
+                        "children": []
+                      },
+                      {
+                        "id": "Q71-DC-S0-H",
+                        "role": "attempt",
+                        "trust": "computed",
+                        "file": "proofs/wake286/q3filt/RESULTS.md",
+                        "approach": "Double centralizer for (S_0(n,N),H_N(0)) on V^{(x)N} holds in all 5 cases (dim End_{S_0}(V)=dim rho(H)); for (U_0,H) it fails exactly where rho(U_0) < S_0 ((2,3): 19<20; (2,4): 31<35; (3,4): 493*<=..<=495, *mod-p with 493 certified independent over Q). General (S_0,H) DC: hunch (standard Morita for n>=N).",
+                        "attribution": "(U_0,H) failure owned: KT NCSF V §5.3 Note 5.7 (reproduced 19/20 and 5/7 at C^2,N=3; KT text label 'n=3' looks like a slip, check PDF); restated Jung-Oh 2509.26194 Rem 4.3.",
+                        "sources": [
+                          "2509.26194"
+                        ],
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           }

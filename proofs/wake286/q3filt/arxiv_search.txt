@@ -1,0 +1,25 @@
+### abs:%220-Schur%22
+1705.06084v2 | Degenerate 0-Schur algebras and Nil-Temperley-Lieb algebras | Bernt Tore Jensen, Xiuping Su, Guiyu Yang
+0812.0688v1 | A generic multiplication in quantised Schur algebras | Xiuping Su
+2207.03079v4 | On $τ$-tilting finiteness of symmetric algebras of polynomial growth | Kengo Miyamoto, Qi Wang
+1207.6769v1 | A geometric realisation of 0-Schur and 0-Hecke algebras | Bernt Tore Jensen, Xiuping Su
+1312.5487v3 | Projective modules of $0$-Schur algebras | Bernt Tore Jensen, Xiuping Su, Guiyu Yang
+2509.26194v2 | Representation Theory of $0$-Schur Algebras and Related Categories | Woo-Seok Jung, Young-Tak Oh
+2205.05184v3 | Equivariant K-theory of the space of partial flags | Sergey Arkhipov, Mikhail Mazin
+### ti:%220-Schur%22
+1312.5487v3 | Projective modules of $0$-Schur algebras | Bernt Tore Jensen, Xiuping Su, Guiyu Yang
+1207.6769v1 | A geometric realisation of 0-Schur and 0-Hecke algebras | Bernt Tore Jensen, Xiuping Su
+1705.06084v2 | Degenerate 0-Schur algebras and Nil-Temperley-Lieb algebras | Bernt Tore Jensen, Xiuping Su, Guiyu Yang
+2509.26194v2 | Representation Theory of $0$-Schur Algebras and Related Categories | Woo-Seok Jung, Young-Tak Oh
+### abs:%220-Hecke%22+AND+abs:Schur-Weyl
+1511.04135v2 | Presenting Hecke endomorphism algebras by Hasse quivers with relations | Jie Du, Bernt Tore Jensen, Xiuping Su
+### abs:%220-Hecke%22+AND+abs:centralizer
+0804.3781v3 | Hecke group algebras as quotients of affine Hecke algebras at level 0 | Florent Hivert, Anne Schilling, Nicolas M. Thiéry
+### abs:%22q-Schur%22+AND+abs:%22q%3D0%22
+1207.6769v1 | A geometric realisation of 0-Schur and 0-Hecke algebras | Bernt Tore Jensen, Xiuping Su
+2505.09775v2 | Irrationality and transcendence questions in the "poor man's adèle ring" | Florian Luca, Wadim Zudilin
+### abs:%220-Hecke%22+AND+abs:%22tensor%22
+math/0602043v2 | Noncommutative Bessel symmetric functions | Jean-Christophe Novelli, Jean-Yves Thibon
+1108.4379v1 | Excursions into Algebra and Combinatorics at $q=0$ | Tom Denton
+### abs:%22degenerate%22+AND+abs:%22quantum%22+AND+abs:%220-Hecke%22
+2509.26194v2 | Representation Theory of $0$-Schur Algebras and Related Categories | Woo-Seok Jung, Young-Tak Oh

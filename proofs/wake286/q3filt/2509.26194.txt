@@ -1,0 +1,1751 @@
+                                                 REPRESENTATION THEORY OF 0-SCHUR ALGEBRAS AND
+                                                              RELATED CATEGORIES
+
+                                                                       WOO-SEOK JUNG AND YOUNG-TAK OH
+arXiv:2509.26194v2 [math.RT] 17 Nov 2025
+
+
+
+
+                                                  Abstract. Jensen, Su, and Yang described the projective indecomposable modules of
+                                                  the 0-Schur algebra S0 (n, r) using its geometric realization. In this paper, the simple
+                                                  modules of S0 (n, r) are identified by computing the tops of the projective indecomposable
+                                                  modules. Furthermore, functorial relations among the module categories Hr (0)-mod,
+                                                  S0 (n, r)-mod, and U0 (gln )-mod are examined, where Hr (0) denotes the 0-Hecke algebra
+                                                  and U0 (gln ) denotes the degenerate quantum group.
+
+
+
+
+                                                                                        Contents
+                                             1. Introduction                                                                                    2
+                                             2. Preliminaries                                                                                   3
+                                             2.1. Weak and strong compositions                                                                  3
+                                             2.2. The 0-Schur algebra S0 (n, r)                                                                 4
+                                             2.3. A Z-basis and a presentation for S0 (n, r)                                                    5
+                                             3. Simple modules of the 0-Schur algebra S0 (n, r)                                                 7
+                                             3.1. Projective indecomposable S0 (n, r)-modules                                                   8
+                                             3.2. Construction of simple S0 (n, r)-modules                                                     10
+                                             4. Functorial Relations Among Module Categories                                                   15
+                                             4.1. The 0-Hecke algebra Hr (0) and its representation theory                                     16
+                                             4.2. The degenerate quantum group U0 (gln ) and its polynomial modules                            18
+                                             4.3. Functorial relations among U0 (gln )-mod, S0 (n, r)-mod, and Hr (0)-mod                      21
+                                             4.4. Proof of Lemma 4.11                                                                          29
+                                             5. Symmetries of the Cartan matrix of S0 (n, r)                                                   34
+                                             6. Further avenues                                                                                38
+                                             References                                                                                        38
+
+
+                                              Date: November 18, 2025.
+                                              2020 Mathematics Subject Classification. 20G43, 20C08, 20G42, 20C25.
+                                              Key words and phrases. quantum Schur algebra, 0-Schur algebra, 0-Hecke algebra, degenerate quantum
+                                           group.
+                                                                                              1
+2                                   W.-S. JUNG AND Y.-T. OH
+
+                                      1. Introduction
+  Let n and r be nonnegative integers, and let q be an indeterminate. In 1989, Dipper and
+James [7] introduced the quantum Schur algebra Sq (n, r) as the endomorphism algebra
+                                              Ñ                é
+                                                M
+                        Sq (n, r) = EndHr (q)         xλ Hr (q) ,
+                                                  λ∈Λ(n,r)
+
+where Hr (q) is the Hecke algebra of type A over Z[q] (see Subsection 2.2). It plays a
+central role in the representation theory of Hecke algebras and quantum groups, being
+closely connected with Schur–Weyl duality. The specialization of Sq (n, r) at q = 0 gives
+rise to the 0-Schur algebra S0 (n, r).
+   Beilinson, Lusztig, and MacPherson [2] constructed certain finite-dimensional quotients
+of the quantized enveloping algebra Uq (gln ) using double flag varieties. Du [9] subsequently
+proved that these quotients are isomorphic to the q-Schur algebras Sq (n, ·), thereby pro-
+viding a geometric realization of Sq (n, r). In parallel, Jensen and Su [12] established a
+geometric realization of the 0-Schur algebra S0 (n, r).
+   Let S0 (n, r) := S0 (n, r) ⊗Z[q] C and H0 (r) := H0 (r) ⊗Z[q] C. Jensen, Su, and Yang [13]
+employed the realization in [12] to construct its projective indecomposable S0 (n, r)- mod-
+ules. More precisely, they provided a complete set {Pλ | λ ∈ Λ• (n, r)} of representatives
+of the isomorphism classes of projective indecomposable S0 (n, r)-modules, where Λ• (n, r)
+is the set of weak compositions (λ1 , λ2 , . . . , λn ) such that if λi = 0 for some i, then λj = 0
+for all j > i.
+   In Section 3, we construct simple S0 (n, r)-modules {Sλ | λ ∈ Λ• (n, r)} by determining
+the tops of the projective indecomposable modules (Theorem 3.11). We present a basis
+of Sλ parametrized by column block diagonal matrices, and we show that this basis has
+several notable properties (Lemma 3.9). As an immediate consequence of Theorem 3.11,
+we obtain an explicit description of the radicals of projective indecomposable S0 (n, r)-
+modules (Corollary 3.12).
+   In Section 4, we investigate functorial relations among the module categories U0 (gln )-mod,
+S0 (n, r)-mod, and Hr (0)-mod. Here, U0 (gln ) denotes the degenerate analogue of the quan-
+tum group Uq (gln ) introduced by Krob and Thibon [17]. Letting V0 := Cn , the tensor space
+V0 ⊗r carries the structure of a (U0 (gln ), Hr (0))-bimodule, which defines the functor
+               Fn,r : Hr (0)-mod −→ U0 (gln )-mod, M 7→ V0 ⊗r ⊗Hr (0) M.
+By virtue of the isomorphism S0 (n, r) ∼
+                                       = EndH (0) V0 ⊗r , we also define the functor
+                                                       
+                                                   r
+
+
+                Gn,r : Hr (0)-mod −→ S0 (n, r)-mod,          M 7→ V0 ⊗r ⊗Hr (0) M.
+Moreover, because the image of the representation of U0 (gln ) in EndC (V0 ⊗r ) is contained
+in the subalgebra EndHr (0) (V0 ⊗r ), we obtain the functor
+                            Ψn,r : S0 (n, r)-mod −→ U0 (gln )-mod.
+       REPRESENTATION THEORY OF 0-SCHUR ALGEBRAS AND RELATED CATEGORIES                        3
+
+These functors satisfy the relation Ψn,r ◦ Gn,r ∼ = Fn,r .
+   In [17], Krob and Thibon studied the images of simple and projective Hr (0)-modules
+under the functor Fn,r . Here, we investigate the images of simple and projective modules
+under the functors Gn,r and Ψn,r . To begin, we recall the simple and projective inde-
+composable Hr (0)-modules, which are naturally indexed by the strong compositions of r.
+For each strong composition α of r, we denote by Fα and Rα the simple and projective
+indecomposable Hr (0)-modules corresponding to α (for details, see Subsection 4.1). As a
+first step, for each λ ∈ Λ• (n, r), we establish a U0 (gln )-module isomorphism
+                                 Ψn,r (Sλ ) ∼
+                                            = V0 ⊗r ⊗Hr (0) Fλ+
+(Proposition 4.12). Building on this result, for each strong composition of r with ℓ(α) ≤ n,
+we obtain S0 (n, r)-module isomorphisms
+                         Gn,r (Fα ) ∼
+                                    = S α•   and     Gn,r (Rα ) ∼
+                                                                = P α• ,
+where α• ∈ Λ• (n, r) is the composition obtained by appending zeros to α so that its
+length becomes n (Theorem 4.13). By combining the second isomorphism with the relation
+Ψn,r ◦ Gn,r ∼
+            = Fn,r , we deduce that, for each λ ∈ Λ• (n, r), there exists a U0 (gln )-module
+isomorphism
+                               Ψn,r (Pλ ) ∼
+                                          = V0 ⊗r ⊗Hr (0) Rλ+ ,
+where λ+ is the strong composition obtained by removing all zero entries from λ (Corol-
+lary 4.14). We close this section by establishing the existence of a functor
+                                   ξn,r : C → S0 (n, r)-mod
+satisfying Ψn,r ◦ ξn,r = id, where C denotes the full subcategory of U0 (gln )-mod consisting
+of polynomial U0 (gln )-modules of degree r (Corollary 4.19).
+   In Section 5, we discuss the symmetries of the Cartan matrix of H0 (n, r) and its relation
+to the Cartan matrix of S0 (n, r). By applying (anti)involution twists, we first show that
+the Cartan matrix of H0 (n, r) is constant on each D4 ×Z2 -orbit (Proposition 5.4). Next, we
+prove that for 0 ≤ n ≤ r, the Cartan matrix of S0 (n, r) can be obtained from that of Hr (0)
+by restricting the index set from all strong compositions of r to Λ• (n, r) (Theorem 5.5).
+
+                                     2. Preliminaries
+  Throughout this section, let r be a nonnegative integer.
+
+2.1. Weak and strong compositions. A weak composition     Pn        of r is a finite sequence of
+nonnegative integers λ = (λ1 , λ2 , . . . , λn ) such that i=1 λi = r. Each λi is called a part
+of λ. The integer ℓ(λ) := n is referred to as the length of λ, and |λ| := r as the size of λ.
+The empty composition ∅ is defined to be the unique weak composition of size and length
+zero. Let Λ(n, r) denote the set of weak compositions of r of length n.
+4                                     W.-S. JUNG AND Y.-T. OH
+
+   A weak composition λ = (λ1 , λ2 , . . . , λn ) of r is called a strong composition of r if each
+part λi is a positive integer. Let Λ+ (n, r) denote the set of strong compositions of r of
+length n and set                                  G
+                                 Λ+ (r) :=             Λ+ (n, r).
+                                                  0≤n≤r
+                                          +
+  Given λ = (λ1 , λ2 , . . . , λn ) ∈ Λ (r) and I = {i1 < i2 < · · · < ik } ⊂ [r − 1] :=
+{1, 2, . . . , r − 1}, define
+                set(λ) := {λ1 , λ1 + λ2 , . . . , λ1 + λ2 + · · · + λn−1 } ⊂ [r − 1],
+and
+                       comp(I) := (i1 , i2 − i1 , i3 − i2 , . . . , r − ik ).
+Then the set of strong compositions of r is in bijection with the power set of [r − 1] via
+the correspondence λ 7→ set(λ) (or I 7→ comp(I)).
+  Let Λ• (n, r) ⊂ Λ(n, r) denote the set of compositions (λ1 , λ2 , . . . , λn ) such that λi = 0
+implies λj = 0 for all j > i. For λ ∈ Λ• (n, r), let λ+ denote the strong composition
+obtained by removing all zero entries from λ. For example, (3, 1, 2, 0, 0, 0)+ = (3, 1, 2).
+Conversely, for α ∈ Λ+ (r) with ℓ(α) ≤ n, let α• ∈ Λ• (n, r) be the composition obtained
+by appending zeros to α so that its length becomes n. If ℓ(α) > n, we set α• = ∅. Then
+there are natural bijections
+                                     ∼
+                                         G
+                          Λ• (n, r) −−→       Λ+ (ℓ, r), λ 7→ λ+ ,
+                                              0≤ℓ≤n
+                              G                  ∼
+                                                                                            (2.1)
+                                     Λ (ℓ, r) −−→ Λ• (n, r),
+                                      +
+                                                                    α 7→ α• .
+                             0≤ℓ≤n
+
+    Let α = (α1 , α2 , . . . , αn ) ∈ Λ+ (r). Define the reverse composition αr of α by
+                                      αr := (αn , αn−1 , . . . , α1 ).
+The complement αc of α is the unique composition of r satisfying
+                                     set(αc ) = [r − 1] \ set(α).
+The conjugate composition αt of α is defined by
+                                          αt := (αr )c = (αc )r .
+2.2. The 0-Schur algebra S0 (n, r). Let Sr be the symmetric group on {1, 2, . . . , r} and
+q be an indeterminate. The Hecke algebra Hr (q) associated with Sr is the Z[q]-algebra
+with unity generated by Ti (i = 1, 2, . . . , r − 1) subject to the following defining relations:
+                      
+                          2
+                      Ti = (q − 1)Ti + q,
+                                                      for 1 ≤ i ≤ r − 1,
+                        Ti Tj = Tj Ti ,                for |i − j| > 1,
+                      
+                      T T T = T T T , for 1 ≤ i < r − 1.
+                         i i+1 i        i+1 i i+1
+         REPRESENTATION THEORY OF 0-SCHUR ALGEBRAS AND RELATED CATEGORIES                       5
+
+Let si denote the simple transposition (i i + 1) for 1 ≤ i ≤ r − 1. For w ∈ Sr , choose a
+reduced expression w = si1 · · · sit and define Tw := Ti1 · · · Tit . It is well known that Tw is
+independent of the choice of reduced expressions. Moreover, Hr (q) is a free Z[q]-algebra
+with basis {Tw | w ∈ Sr }.
+  For a weak composition λ = (λ1 , λ2 , . . . , λn ) ∈ Λ(n, r), the corresponding Young sub-
+group Sλ of Sr is defined by
+                                   Sλ1 × Sλ2 × · · · × Sλn .
+Define                                     X
+                                   xλ :=          Tw ∈ Hr (q).
+                                           w∈Sλ
+
+Following Dipper and James [7], the q-Schur algebra Sq (n, r) is defined as the endomor-
+phism algebra over Z[q]
+                                               Ñ             é
+                                                 M
+                        Sq (n, r) := EndHr (q)      xλ Hr (q) .
+                                                    λ∈Λ(n,r)
+
+The 0-Schur algebra S0 (n, r) arises as a degeneration of Sq (n, r) at q = 0, given by
+                    S0 (n, r) = Sq (n, r) ⊗Z[q] Z ∼
+                                                  = Sq (n, r) ⊗Z[q] Z[q]/(q).
+This algebra has been studied in various works, including [8, 5, 12, 13, 14].
+
+2.3. A Z-basis and a presentation for S0 (n, r). This subsection introduces a basis for
+S0 (n, r), describes the multiplication rules among its elements, and presents a defining
+presentation of the algebra.
+   Beilinson, Lusztig, and MacPherson [2] provided a geometric construction of certain
+finite-dimensional quotients of the quantized enveloping algebra Uq (gln ) using double flag
+varieties. Later, Du [9] observed that these quotients are isomorphic to the q-Schur alge-
+bras Sq (n, ·), thereby giving a geometric realization of Sq (n, r).
+   In a similar manner, Jensen and Su [12] provided a geometric realization of the 0-Schur
+algebra S0 (n, r). Specifically, they constructed a Z-algebra that is isomorphic to S0 (n, r),
+with a basis given by the set F × F/GL(V ) of GL(V )-orbits in the double flag variety
+F ×F. Here, V is an r-dimensional vector space over C, and F is the variety of n-step flags
+in V over C. Since there exists a natural one-to-one correspondence between F ×F/GL(V )
+and the set Mn (r) of n × n matrices with nonnegative integer entries whose total sum of
+entries is r, it follows that S0 (n, r) admits a basis indexed by elements of Mn (r), given by
+                                      {eA | A ∈ Mn (r)}.                                   (2.2)
+The precise definition of eA can be found in [12, Section 1]. In the present paper, this
+basis is referred to as the standard basis for S0 (n, r).
+6                                    W.-S. JUNG AND Y.-T. OH
+
+  Next, we describe the multiplication rule for the elements of the standard basis. For
+A ∈ Mn (r), set                                                       !
+                                 X          X                  X
+                   row(A) :=         a1,j ,     a2,j , . . . ,   an,j
+                                     1≤j≤n            1≤j≤n                    1≤j≤n
+                                                                                              !
+                                      X               X                        X
+                       col(A) :=             ai,1 ,           ai,2 , . . . ,           ai,n       .
+                                     1≤j≤n            1≤j≤n                    1≤j≤n
+
+In other words, row(A) and col(A) represent the row-sum vector and column-sum vector
+of the matrix A, respectively. It was shown in [12, Corollary 7.2.2] that the standard basis
+satisfies the following multiplication rule: for A, B ∈ Mn (r),
+                                     ®
+                                       eC , if col(A) = row(B),
+                             eA eB =                                                   (2.3)
+                                       0,    otherwise,
+for a uniquely determined matrix C ∈ Mn (r). In some special cases, C admits a simple
+description. For each λ = (λ1 , λ2 , . . . , λn ) ∈ Λ(n, r), we write kλ for eDλ , where Dλ is the
+diagonal matrix Dλ = diag(λ1 , λ2 , . . . , λn ). By [14, Eq. 4], we have
+                   ®                                             ®
+                     eA , if λ = row(A)                             eA , if λ = col(A)
+           kλ eA =                                 and eA kλ =                               (2.4)
+                     0,   otherwise                                 0,   otherwise.
+It follows from (2.4) that
+                                                  X
+                                                          kλ
+                                               λ∈Λ(n,r)
+
+is the identity element of S0 (n, r). For 1 ≤ i ≤ n − 1 and λ ∈ Λ(n, r), set
+                  ei,λ := eDλ −Ei+1,i+1 +Ei,i+1        and        fi,λ := eDλ −Ei,i +Ei+1,i ,
+where Ea,b denotes the n × n matrix with 1 in the (a, b)-position and 0s elsewhere for
+1 ≤ a, b ≤ n. We then set
+                             X                       X
+                       ei :=     ei,λ and fi :=            fi,λ .
+                                λ∈Λ(n,r)                                λ∈Λ(n,r)
+
+In view of (2.3), for A ∈ Mn (r), one has that
+                        ei eA = ei,row(A) eA      and          fi eA = fi,row(A) eA .
+The following lemma presents the multiplication rule for ei eA and fi eA .
+Lemma 2.1. ([12, Lemma 6.11]) Let A ∈ Mn (r) with row(A) = (λ1 , λ2 , . . . , λn ).
+  (1) If λi+1 > 0, then
+                              ei eA = eA+Ei,p −Ei+1,p ,
+      where p = max{1 ≤ j ≤ n − 1 | ai+1,j > 0}.
+        REPRESENTATION THEORY OF 0-SCHUR ALGEBRAS AND RELATED CATEGORIES                        7
+
+   (2) If λi > 0, then
+                                fi eA = eA−Ei,q +Ei+1,q ,
+        where q = min{1 ≤ j ≤ n − 1 | ai,j > 0}.
+  It is worth noting that for A, B ∈ Mn (r), the explicit form of C in (2.3) can be deter-
+mined by combining Lemma 2.1 with [14, Lemma 2.7].
+  Finally, we introduce the presentation of S0 (n, r) as given in [5, 12]. Set
+                                   ith
+               ϵi := (0, . . . , 0, 1 , 0, 0, . . . , 0) ∈ Zn ,           (1 ≤ i ≤ n),
+              ai := ϵi − ϵi+1 ,                                           (1 ≤ i ≤ n − 1),
+                     ®
+                       2ai + aj          if i = j ± 1,
+             pi,j :=                                                      (1 ≤ i, j ≤ n − 1).
+                       ai + aj           otherwise
+With this notation, the desired presentation for S0 (n, r) is given as follows.
+Theorem 2.2. ([5, 12]) As a Z-algebra, S0 (n, r) is generated by ei , fi (1 ≤ i ≤ n − 1) and
+kλ (λ ∈ Λ(n, r)) with the following defining relations: for 1 ≤ i, j ≤ n − 1 and λ ∈ Λ(n, r),
+                                            kλ+pi,j Pi,j kλ = 0,
+                                            kλ−pi,j Ni,j kλ = 0,
+                                            kλ+ai −aj Ci,j kλ = 0.
+Here,
+                             
+                                 2
+                             ei ej − ei ej ei
+                                                   for i = j − 1,
+                                               2
+                      Pi,j = −ei ej ei + ej ei for i = j + 1,
+                             
+                             e e − e e
+                                 i j     j i        otherwise,
+                             
+                                                  2
+                             −fi fj fi + fj fi for i = j − 1,
+                             
+                      Ni,j = fi2 fj − fi fj fi       for i = j + 1,
+                             
+                             f f − f f
+                                  i j     j i        otherwise,
+                                                   Ñ                   é
+                                                       X           X
+                      Ci,j = ei fj − fj ei − δi,j            kµ −    kµ .
+                                                         µ:µi+1 =0      µ:µi =0
+
+
+               3. Simple modules of the 0-Schur algebra S0 (n, r)
+  Let r and n be nonnegative integers. Hereafter, all modules and algebras are defined
+over C, and we consider the C-algebra
+                                         S0 (n, r) := S0 (n, r) ⊗Z C.
+Given an S0 (n, r)-module M , we denote its radical by rad(M ) and define the top of M as
+                                          top(M ) := M/ rad(M ).
+8                                         W.-S. JUNG AND Y.-T. OH
+
+There is a canonical bijection between the set of isomorphism classes of projective inde-
+composable S0 (n, r)-modules and that of simple S0 (n, r)-modules, given by
+                                                     P 7→ top(P )
+(for example, see [18] or [1, Section 1]).
+   The purpose of this section is to provide a direct construction of simple modules for
+S0 (n, r). As a consequence, we obtain an explicit description of the radicals of projective
+indecomposable S0 (n, r)-modules. We begin by recalling the construction of projective
+indecomposable S0 (n, r)-modules as given in [13].
+3.1. Projective indecomposable S0 (n, r)-modules. Let
+               λ = (λ1 , λ2 , . . . , λn ) ∈ Λ(n, r),          α = (α1 , α2 , . . . , αs ) ∈ Λ+ (n).
+Then λ can be decomposed into subsequences as follows:
+              (λ1 , . . . , λα1 ), (λα1 +1 , . . . , λα1 +α2 ), . . . , (λP1≤i≤s−1 αi +1 , . . . , λn ).
+If each subsequence in this decomposition is either equal to (0), or has neither its first
+nor last entry equal to zero, then α is said to be maximal with respect to λ. Let max(λ)
+denote the set of such strong compositions. For example, if λ = (3, 0, 2, 0, 1) ∈ Λ(5, 6),
+then
+                      max(λ) = {(5), (3, 1, 1), (1, 1, 3), (1, 1, 1, 1, 1)}.
+This set admits the following simple description. For β = (β1 , β2 , . . . , βk ) ∈ Λ+ (l) with
+l ≤ n, let β · 1n−l denote the concatenation of β with 1n−l , that is,
+                                  β · 1n−l = (β1 , β2 , . . . , βk , 1, . . . , 1).
+                                                                     | {z }
+                                                                       n−l times
+
+Then
+                                                           +
+                          max(λ) = {β · 1n−ℓ(λ ) | β ∈ Λ+ (ℓ(λ+ ))}.                (3.1)
+    Similarly, we can decompose an n × n matrix A into s n × n matrices as follows:
+                                      A(α; 1), A(α; 2), . . . , A(α; s),
+where, for 1 ≤ v ≤ s,
+                                          ®              Pv−1              Pv
+                                (i)           A(i)    if  t=1 αt + 1 ≤ i ≤  t=1 αt ,
+                      A(α; v)         =
+                                              0      otherwise.
+Here, B (i) denotes the ith column of B for any square matrix B. An n×n matrix A is called
+open if every 2 × 2 submatrix of A has at least one zero on its diagonal. Additionally, A is
+called open on columns with respect to α if A(α; v) is an open matrix for all v = 1, . . . , s.
+  Let
+           B λ,α := {eA | co(A) = λ and A is open on columns with respect to α}
+       REPRESENTATION THEORY OF 0-SCHUR ALGEBRAS AND RELATED CATEGORIES                           9
+
+and let                                                       [
+                      B λ := {eA | col(A) = λ} \                              B λ,α .
+                                                     α∈max(λ)\{(1,1,...,1)}
+
+From (3.1) it follows that
+                                                             [
+                B λ = {eA | col(A) = λ} \                                           B λ,α .   (3.2)
+                                                         +
+                                              α∈{β·1n−ℓ(λ ) |β∈Λ+ (ℓ(λ+ ))}\{1n }
+
+Following [13], we define an S0 (n, r)-action on the C-span of B λ as follows: for A ∈ B λ
+and b ∈ {ei , fi , kλ },
+                                ®
+                                  eB if b · eA = eB in S0 (n, r) and eB ∈ B λ ,
+                      b · eA :=                                                      (3.3)
+                                  0  otherwise.
+This indeed defines an S0 (n, r)-module, denoted by Pλ .
+Theorem 3.1. ([13, Theorem 5.1]) For each λ ∈ Λ(n, r), the module Pλ is a projective
+indecomposable S0 (n, r)-module.
+  Recall that Λ• (n, r) is the set of compositions (λ1 , λ2 , . . . , λn ) ∈ Λ(n, r) such that if
+λi = 0 for some i, then λj = 0 for all j > i (see (2.1)). Indeed, this set serves as
+a complete set of representatives for the equivalence classes of Λ(n, r)/ ∼, where the
+equivalence relation ∼ is defined in [13, Section 5.4].
+Theorem 3.2. ([13, Theorem 5.6]) The set {Pλ | λ ∈ Λ• (n, r)} forms a complete set of
+representatives for the isomorphism classes of projective indecomposable S0 (n, r)-modules.
+Example 3.3. Let λ = (2, 1, 0) ∈ Λ• (3, 3). Then
+                     +
+          {β · 1n−ℓ(λ ) | β ∈ Λ+ (ℓ(λ+ ))} = {β · 11 | β ∈ Λ+ (2)} = {(2, 1), (1, 1, 1)}.
+It follows that B λ consists of the basis elements eA , where the matrices A are given by
+                                                                
+                     2 0 0         2 0 0         1 0 0          1 0 0
+                   0 1 0 , 0 0 0 , 1 1 0 , 1 0 0 ,
+                     0 0 0         0 1 0         0 0 0          0 1 0
+                                                                
+                     1 0 0         0 0 0         1 0 0          0 0 0
+                   0 1 0 , 2 0 0 , 0 0 0 , 1 0 0 .
+                     1 0 0         0 1 0         1 1 0          1 1 0
+The actions of ei , fi on eA for each A ∈ B λ are illustrated in Figure 3.1. In the figure,
+each node labeled by a matrix A represents the element eA ∈ β λ . If there is a directed
+edge labeled by b ∈ {ei , fi } from A to B, it indicates that b · eA = eB . Moreover, if for a
+node labeled by A there is no directed edge labeled by b with source A, it signifies that
+b · eA = 0. The action of kµ ∈ Λ(3, 3) is the same as in (2.4).
+10                                   W.-S. JUNG AND Y.-T. OH
+
+                                                   200
+                                                   010
+                                                   000            f2
+                                            f1
+                                                       e2
+                                     100                           200
+                                     110                           000
+                                     000                           010
+
+                                e2           f2   e2        e1           f1
+
+                                     100                           100
+                                     010                           100
+                                     100                           010
+
+                                e1           f2   f2        e1           f1
+
+                                     100                           000
+                                     000                           200
+                                     110          f1               010
+                                                             f2
+                                       e1
+                                                   000
+                                                   100
+                                                   110
+
+
+                       Figure 3.1. The S0 (3, 3)C -action on P(2,1,0)
+
+3.2. Construction of simple S0 (n, r)-modules. This bijection is given by Pλ 7→ top(Pλ )
+for all λ ∈ Λ• (n, r). However, to the best of the authors’ knowledge, an explicit description
+of rad(Pλ ) has not yet been provided.
+   In this section, we present a direct construction of simple modules for S0 (n, r). Using this
+construction, we also describe the radicals of projective indecomposable S0 (n, r)-modules.
+Definition 3.4. A column block diagonal matrix is a finite matrix A = (ai,j ) with non-
+negative integer entries satisfying the condition that if ai,j > 0, then ar,s = 0 for all r ≤ i
+and s > j.
+  For λ ∈ Λ• (n, r), let CB(λ) denote the set of n × n column block diagonal matrices A
+satisfying col(A) = λ.
+Example 3.5. Let λ = (2, 1, 0) ∈ Λ• (3, 3). The set CB(λ) consists of the following
+matrices:                                               
+                2 0 0        2 0 0          1 0 0       0 0 0
+              0 1 0 , 0 0 0 , 1 0 0 , 2 0 0 .
+                0 0 0        0 1 0          0 1 0       0 1 0
+   Let λ = (λ1 , . . . , λt , 0, . . . , 0) where λi > 0 for 1 ≤ i ≤ t and A ∈ CB(λ). Then the
+following conditions hold by construction.
+         REPRESENTATION THEORY OF 0-SCHUR ALGEBRAS AND RELATED CATEGORIES                       11
+
+      (1) For each 1 ≤ j ∈ t, the jth column contains at least one nonzero entry.
+      (2) For each 1 ≤ i ≤ n, the ith row contains at most one nonzero entry.
+      (3) For each 1 ≤ i ≤ n, if ai,j > 0 and ai+1,k > 0, then j ≤ k.
+Set
+                     
+                     1
+                                                             if j = 1,
+                mj := the smallest index i such that ai,j > 0 if 2 ≤ j ≤ t,                 (3.4)
+                     
+                     n + 1                                   if j = t + 1.
+For each 1 ≤ j ≤ t, we define the jth column block of A, denoted Bj (A), to be the
+submatrix of A consisting of the rows from mj to mj+1 − 1 in column j. Then A takes
+the form
+                              B1 (A)     0   ···   0
+                          Ü                                ê
+                                 0    B2 (A) · · · 0
+                     A=          ..      ..  ..    ..     0 ,                 (3.5)
+                                  .       .      .  .
+                                     0        0     · · · Bt (A)
+which justifies the terminology column block diagonal matrix.
+  We now define
+                                 β λ := {eA | A ∈ CB(λ)}.
+Since the diagonal matrix diag(λ1 , λ2 , . . . , λn ) lies in CB(λ), the basis element kλ is con-
+tained in β λ . Moreover, as β λ ⊆ B λ,(1,1,...,1) , it follows that β λ ⊆ B λ .
+Proposition 3.6. For each λ ∈ Λ• (n, r), the C-span of B λ \ β λ forms an S0 (n, r)-
+submodule of Pλ .
+Proof. Let eA ∈ B λ \ β λ . For the assertion, we only to see that b · eA ∈ (B λ \ β λ ) ∪ {0} for
+b ∈ {ei , fi | 1 ≤ i ≤ n − 1} ∪ {kµ | µ ∈ Λ(n, r)}.
+   For the sake of contradiction, assume that ei · eA ∈ β λ . Then every row of A, except for
+the ith and (i + 1)th rows, can have at most one nonzero entry. Recall that acting with ei
+on the left decreases the rightmost nonzero entry of the (i + 1)th row by 1 and increases
+the entry of the ith row in the same column by 1 (see Lemma 2.1 and (3.3)). This implies
+that the (i + 1)th row of A can also have at most one nonzero entry. If it has two or more
+nonzero entries, then the action of ei will result in ei · eA ∈/ β λ . Therefore the following
+two cases are possible.
+Case 1. The (i + 1)st row of A is zero. Then ei · eA = 0 by definition.
+Case 2. The (i + 1)st row has a unique nonzero entry at position (i + 1, s). Consider the
+ith row of A. Let B ∈ CB(λ) such that ei · eA = eB .
+      • Suppose that the ith row of A is zero. Then B has a unique nonzero entry in each
+         of the ith and (i + 1)st rows in the same column. This implies eA = fi · eB and
+         A ∈ CB(λ), contradicting the assumption.
+12                                   W.-S. JUNG AND Y.-T. OH
+
+       • Suppose that the ith row of A contains a nonzero entry, say at position (i, t). If
+          t ̸= s, then B has nonzero entries in row i + 1 at (i + 1, t) and (i + 1, s). But
+          this cannot occur since B ∈ CB(λ). This tells us that t = s and both the ith and
+          (i + 1)st rows of A have unique nonzero entries in the same column. From this it
+          follows that A ∈ CB(λ), which contradicts the assumption that A ∈   / CB(λ).
+                           λ   λ
+     Therefore, ei · eA ∈ B \ β ∪ {0} in all cases.
+     A similar argument shows that fi · eA also lies in the same set. And, from
+                                           ®
+                                             eA if row(A) = µ,
+                                kµ · e A =
+                                             0  otherwise,
+it follows that kµ · eA ∈ (B λ \ β λ ) ∪ {0}.                                                  □
+     For λ ∈ Λ• (n, r), let Nλ denote the submodule C[B λ \ β λ ] of Pλ . Let
+                                          Sλ := Pλ /Nλ .
+Then
+                                {eA := eA + Nλ | A ∈ CB(λ)}
+forms a basis for Sλ . The action of S0 (n, r) on this basis is given by
+                                  ®
+                                    eB if b · eA = eB and eB ∈ β λ ,
+                         b · eA =
+                                    0    otherwise,
+for b ∈ {ei , fi | 1 ≤ i ≤ n − 1} ∪ {kµ | µ ∈ Λ(n, r)}.
+Example 3.7. Let λ = (2, 1, 0) ∈ Λ• (3, 3). The actions of ei and fi on the basis {eA |
+A ∈ CB(λ)} are illustrated in Figure 3.2.
+   Given two weak compositions µ = (µ1 , . . . , µn ) and λ = (λ1 , . . . , λn ) of r, we say that
+µ is a refinement of λ, written µ ⪯ λ, if µ can be obtained by subdividing the parts of λ
+in order. Let
+                              Λ(n, r)⪯λ := {µ ∈ Λ(n, r) | µ ⪯ λ}.                           (3.6)
+Proposition 3.8. For each λ ∈ Λ• (n, r), the map
+                            row : CB(λ) → Λ(n, r)⪯λ ,      A 7→ row(A)
+is a bijection. Here, row(A) is the row-sum vector of A.
+Proof. Let A ∈ CB(λ) and let {Bj (A)} denote the column blocks of A. Then the row-sum
+vector of A is given by
+                                                   êT
+                                            B1 (A)
+                                        Ü
+                                            B2 (A)
+                              row(A) =         ..      .
+                                                .
+                                                  Bt (A)
+       REPRESENTATION THEORY OF 0-SCHUR ALGEBRAS AND RELATED CATEGORIES                13
+
+                                                     200
+                                                     010
+                                                     000
+
+                                                e2         f2
+
+                                                     200
+                                                     000
+                                                     010
+
+                                                e1         f1
+
+                                                     100
+                                                     100
+                                                     010
+
+                                                e1         f1
+
+                                                     000
+                                                     200
+                                                     010
+
+
+                        Figure 3.2. The S0 (3, 3)C -action on S(2,1,0)
+
+  To show that row is a bijection, we construct its inverse. Let µ = (µ1 , . . . , µn ) ∈
+Λ(n, r)⪯λ . Since µ ⪯ λ, there exists a unique sequence of indices
+                                1 = i1 < i2 < · · · < it+1 = n + 1
+such that
+                    λk = µik + µik +1 + · · · + µik+1 −1        for each 1 ≤ k ≤ t,
+and µik > 0 for all 2 ≤ k ≤ t.
+  Define the matrix Aµ = (bi,j ) by
+                                            ®
+                                                µi   if ij ≤ i < ij+1 ,
+                                  bi,j :=
+                                                0    otherwise.
+Then Aµ ∈ CB(λ) satisfies row(Aµ ) = µ, and for any A ∈ CB(λ), we have Arow(A) = A.
+Hence, the map µ 7→ Aµ defines the inverse of row.                               □
+  We introduce several remarkable properties of the basis β λ of Sλ .
+Lemma 3.9. Let λ ∈ Λ• (n, r), and let A ∈ CB(λ).
+  (1) There exist indices 1 ≤ i1 , i2 , . . . , il ≤ n − 1 such that
+                                      ei1 ei2 · · · eil · eA = kλ .
+14                                       W.-S. JUNG AND Y.-T. OH
+
+      (2) The identity in (1) holds if and only if
+                                          eA = fil · · · fi2 fi1 · kλ .
+      (3) Suppose
+                          eA = fil · · · fi2 fi1 · kλ = fjs · · · fj2 fj1 · kλ .
+          Then the multisets {i1 , . . . , il } and {j1 , . . . , js } are equal. In particular, l = s.
+Proof. (1) Suppose that A has column blocks as defined in (3.5). Since the action of ei
+transfers a unit from row i + 1 to row i within the same column, one can successively
+apply suitable ei ’s to move all nonzero entries in each column block upward. In this way,
+we obtain a matrix B with the same indices mj as in (3.4), and whose row-sum vector is
+given by
+                    row(B) = (λ1 , 0, . . . , 0, λ2 , 0, . . . , 0, . . . , λt , 0, . . . , 0).
+By further applying appropriate ei ’s to eB , we obtain kλ , which proves the assertion.
+   (2) Suppose fi · eM = eN for some M, N ∈ CB(λ). By the multiplication rule, this
+implies that the ith row of M and the (i + 1)st row of N each have a unique nonzero
+entry in the same column j. The operator fi decreases the (i, j)-entry and increases the
+(i + 1, j)-entry, while ei reverses this transformation. Thus,
+                                                ei · eN = eM .
+The converse follows by symmetry. This completes the proof of (2).
+  (3) Whenever fi · eM = eN , the row-sum vector changes by
+                           row(N ) = row(M ) + (0, . . . , 0, −1, 1, 0, . . . , 0).                   (3.7)
+                                                | {z }
+                                                            i−1
+
+Therefore, the number of times fi appears in the expression fil · · · fi1 · kλ is equal to the
+coefficient of (0, . . . , 0, −1, 1, 0, . . . , 0) in the difference of the vectors λ − row(A). This
+                | {z }
+                     i−1
+determines the multiset {i1 , . . . , il } uniquely.                                                      □
+     By Lemma 3.9 (1), (2), every element eA ∈ β λ can be written as
+                                           eA = fil · · · fi2 fi1 · kλ
+for some indices 1 ≤ i1 , . . . , il ≤ n − 1. By Lemma 3.9 (3), the length l is uniquely
+determined; we denote it by ℓ(eA ) := l.
+   The following lemma will be used in the proof of the main theorem in this section.
+Lemma 3.10. Let λ ∈ Λ• (n, r) and A, B ∈ CB(λ). If
+                              eA = fil · · · fi2 fi1 · kλ       and      ℓ(eB ) ≤ l,
+then                                                        ®
+                                                                kλ   if B = A,
+                                 ei1 ei2 · · · eil · eB =
+                                                                0    otherwise.
+       REPRESENTATION THEORY OF 0-SCHUR ALGEBRAS AND RELATED CATEGORIES                         15
+
+Proof. Suppose eA = fil · · · fi2 fi1 · kλ and let B ∈ CB(λ).
+  First, observe that for any N ∈ CB(λ) and any 1 ≤ i ≤ n − 1, we have
+                          ℓ(fi · eN ) = ℓ(eN ) − 1 unless fi · eN = 0.
+
+In particular, since ei · kλ = 0 for all i, it follows that
+                              ei1 ei2 · · · eil · eB = 0 if ℓ(eB ) < l.
+
+  Now assume ℓ(eB ) = ℓ(eA ) = l. Then applying ei1 ei2 · · · eil to eB is either kλ or 0, since
+kλ is the unique element in β λ of length 0.
+  If ei1 ei2 · · · eil · eB = kλ , then by Lemma 3.9 (2), we have
+
+                                  eB = fil · · · fi2 fi1 · kλ = eA .
+Hence A = B.                                                                                    □
+
+  We are now ready to state the main result of this section.
+Theorem 3.11. The set {Sλ | λ ∈ Λ• (n, r)} forms a complete set of representatives of
+the isomorphism classes of simple S0 (n, r)-modules.
+Proof. Let λ ∈ Λ• (n, r), and let c ∈ Sλ be a nonzero element. Denote by C the S0 (n, r)C -
+submodule of Sλ generated by c. It suffices to show that C = Sλ .
+  Write c = c1 v1 + c2 v2 + · · · + ck vk for some k ∈ Z>0 , where each ci ∈ C \ {0} and vi ∈ β λ .
+Without loss of generality, assume that v1 has maximal length among {ℓ(vi ) | 1 ≤ i ≤ k}.
+  Suppose v1 = fil · · · fi2 fi1 · kλ . Then, by Lemma 3.10, we have
+
+                                     ei1 ei2 · · · eil · c = c1 kλ .
+
+Hence kλ ∈ C. Since Sλ is generated by kλ , it follows that C = Sλ . Thus Sλ is simple.
+  Finally, since each projective indecomposable module Pλ has a unique simple quotient,
+the assertion follows from Theorem 3.2.                                                 □
+
+   Theorem 3.11 tells us that Sλ = top(Pλ ). This immediately yields the following corol-
+lary.
+Corollary 3.12. For each λ ∈ Λ• (n, r), the submodule Nλ of Pλ is the radical of Pλ .
+
+
+              4. Functorial Relations Among Module Categories
+   As before, we fix nonnegative integers r and n. For a C-algebra A, let A-mod denote
+the category of finite-dimensional left A-modules. In this section, we investigate functorial
+relations among three module categories U0 (gln )-mod, S0 (n, r)-mod, and Hr (0)-mod.
+16                                     W.-S. JUNG AND Y.-T. OH
+
+4.1. The 0-Hecke algebra Hr (0) and its representation theory. The 0-Hecke alge-
+bra Hr (0) is the associative C-algebra with 1 generated by the elements π 1 , π 2 , . . . , π r−1
+subject to the following relations:
+                                     π 2i = −π i for 1 ≤ i ≤ r − 1,
+                            π i π i+1 π i = π i+1 π i π i+1 for 1 ≤ i ≤ r − 2,                     (4.1)
+                                πiπj = πj πi     if |i − j| ≥ 2.
+Another set of generators consists of πi := π i + 1 for i = 1, 2, . . . , r − 1 with the same
+relations as above except that πi2 = πi .
+   For any reduced expression si1 si2 · · · sip for σ ∈ Sn , let π σ := π i1 π i2 · · · π ip and πσ :=
+πi1 πi2 · · · πip . It is well known that these elements are independent of the choices of reduced
+expressions, and both {π σ | σ ∈ Sr } and {πσ | σ ∈ Sr } are C-bases for Hr (0).
+   According to [19], there are 2r−1 pairwise inequivalent simple Hr (0)-modules and 2r−1
+pairwise inequivalent projective indecomposable Hr (0)-modules, which are naturally in-
+dexed by strong compositions of r. Let us explain this in more detail. For S ⊆ [n − 1],
+let SS be the parabolic subgroup of Sn generated by {si | i ∈ S} and w0 (S) the longest
+element in SS . When S = [n − 1], we simply write w0 for w0 (S). An element w ∈ Sn
+can be written uniquely as w = zu, where z ∈ SS and u ∈ SS , with the property that
+ℓ(w) = ℓ(z) + ℓ(u). Here SS := {z ∈ Sn | Des(z) ⊆ S c } is the set of minimal length
+representatives for left SS -cosets, where S c = [n − 1] \ S.
+Lemma 4.1. ([4, Theorem 6.2]) Given S ⊆ T ⊆ [n−1], the set {w ∈ Sn | S ⊆ Des(w) ⊆
+T } is exactly the weak Bruhat interval [w0 (S), w1 (T )]L , where w0 (S) is the longest element
+                                                 c
+in SS and w1 (T ) is the longest element in ST .
+   Let α be a strong composition of r. The simple Hr (0)-module corresponding to α is
+given by Fα := Hr (0)π w1 (set(α)r ) πw0 (set(α)t ) . This module is one-dimensional, with basis
+element vα := π w1 (set(α)r ) πw0 (set(α)t ) . The action of Hr (0) on vα is given, for each i ∈ [r − 1],
+by                                                ®
+                                                    −vα , i ∈ set(α),
+                                      π i (vα ) =
+                                                    0,      i∈
+                                                             / set(α).
+And, the projective indecomposable Hr (0)-module corresponding to α is given by the
+submodule Rα := Hr (0)π w0 (set(α)) πw0 (set(α)c ) of the regular representation of Hr (0). Then
+it holds that top(Rα ) ∼ = Fα .
+   For later use, we introduce the two involutions ϕ, θ and the anti-involution χ of Hr (0)
+introduced by Fayers in [10], defined as follows:
+                    ϕ : Hr (0) → Hr (0), πi 7→ πn−i for 1 ≤ i ≤ r − 1,
+                     θ : Hr (0) → Hr (0),      πi 7→ −π i     for 1 ≤ i ≤ r − 1,                   (4.2)
+                     χ : Hr (0) → Hr (0),       πi 7→ πi    for 1 ≤ i ≤ r − 1.
+These morphisms commute with each other.
+       REPRESENTATION THEORY OF 0-SCHUR ALGEBRAS AND RELATED CATEGORIES                       17
+
+  In the rest of this subsection, we explain the relation between Hr (0) and S0 (n, r). To
+begin with, let
+                                  Hr (q) := Hr (q) ⊗Z[q] C[q],
+                                Sq (n, r) := Sq (n, r) ⊗Z[q] C[q].
+Let Vq := C[q]n , and let (ξi )1≤i≤n denote the standard basis for Vq . There is a right action
+of Hr (q) on the tensor space Vq ⊗r defined by
+                                    
+                                       σ
+                                    v i
+                                                      if ki < ki+1 ,
+                          v · Ti = qv                  if ki = ki+1 ,                     (4.3)
+                                    
+                                    qvσi + (q − 1)v if k > k ,
+                                                           i    i+1
+
+where v = ξk1 ⊗· · ·⊗ξkr ∈ V ⊗r , and vσi denotes the tensor obtained from v by interchang-
+ing the i-th and (i + 1)-st tensor factors. Under this action, there is a right Hr (q)-module
+isomorphism                           M                ∼
+                                                       =
+                                ϕq :        xλ Hr (q) −→ Vq ⊗r                           (4.4)
+                                     λ∈Λ(n,r)
+
+(for instance, see [6, Corollary 3.1.5]). Since
+                   Ñ                  é                       Ñ            é
+
+                             xλ Hr (q) ⊗Z[q] C[q] ∼
+                       M                                        M
+         EndHr (q)                                = EndHr (q)     xλ Hr (q) ,
+                     λ∈Λ(n,r)                                        λ∈Λ(n,r)
+
+the isomorphism in (4.4) induces a C[q]-algebra isomorphism
+                              Sq (n, r) ∼
+                                        = EndH (q) Vq ⊗r .
+                                                        
+                                                     r
+
+
+   Let V0 := Cn , and let (ξ¯i )1≤i≤n denote the standard basis for V0 . There is a right action
+of Hr (0) on the tensor space V0 ⊗r defined by
+                                            
+                                               σ
+                                            v i if ki < ki+1 ,
+                                            
+                                   v · π̄i = 0     if ki = ki+1 ,                          (4.5)
+                                            
+                                            −v if k > k ,
+                                                       i    i+1
+
+where v = ξ¯k1 ⊗ · · · ⊗ ξ¯kr ∈ V ⊗r , and vσi denotes the tensor obtained from v by inter-
+changing the i-th and (i + 1)-st tensor factors. For λ ∈ Λ(n, r), let
+                                           X
+                                    x̄λ :=      π̄w ∈ Hr (0).
+                                          w∈Sλ
+
+It follows from [19, Lemma 4.3] that x̄λ = πw0 (set(λ)) . Tensoring with C[q]/(q) over C[q] is
+right exact, the isomorphism ϕq induces a right Hr (0)-module isomorphism
+                                         M                   ∼
+                                                             =
+                        ϕ0 := ϕq ⊗ id :         x̄λ Hr (0) −→ V0 ⊗r .                   (4.6)
+                                          λ∈Λ(n,r)
+18                                       W.-S. JUNG AND Y.-T. OH
+
+Combining (4.6) with the isomorphism
+                                     Ñ                        é
+
+            S0 (n, r) ∼
+                                             M
+                      = EndHr (0)                    x̄λ Hr (0)    (by [5, Remark 2.5])
+                                          λ∈Λ(n,r)
+
+
+yields a C-algebra isomorphism
+
+                                   S0 (n, r) ∼
+                                             = EndHr (0) V0 ⊗r .
+                                                              
+                                                                                            (4.7)
+
+
+4.2. The degenerate quantum group U0 (gln ) and its polynomial modules. In [17],
+Krob and Thibon introduced a degenerate analogue of the quantum group Uq (gln ), de-
+noted U0 (gln ), which was further investigated by Hivert [11] and shown to arise as a
+specialization of the two-parameter quantum enveloping algebra defined by Takeuchi [20].
+
+Definition 4.2. ([17]) The degenerate quantum group U0 (gln ) is the unital C-algebra
+generated by elements {ei , fi | 1 ≤ i ≤ n − 1} and {ki | 1 ≤ i ≤ n}, subject to the
+following relations:
+
+                          ki kj = k j ki                            for 1 ≤ i, j ≤ n,
+                        ei−1 ki = 0                                 for 2 ≤ i ≤ n − 1,
+                          ki e i = 0                                for 1 ≤ i ≤ n − 1,
+                          ki e j = e j k i                          for j ̸= i − 1, i,
+                        ki fi−1 = 0                                 for 2 ≤ i ≤ n − 1,
+                           fi ki = 0                                for 1 ≤ i ≤ n − 1,
+                          ki f j = f j k i                          for j ̸= i − 1, i,
+                         [ei , fj ] = δij (ki+1 − ki )              for 1 ≤ i, j ≤ n − 1,
+           e2i ei+1 − ei ei+1 ei = 0                                for 1 ≤ i ≤ n − 2,
+           ei+1 e2i − ei ei+1 ei = 0                                for 1 ≤ i ≤ n − 2,
+             fi+1 fi2 − fi fi+1 fi = 0                              for 1 ≤ i ≤ n − 2,
+             fi2 fi+1 − fi fi+1 fi = 0                              for 1 ≤ i ≤ n − 2,
+                        [ei , ej ] = 0                              for |i − j| > 1,
+                          [fi , fj ] = 0                            for |i − j| > 1,
+                      ei ei+1 ki = ki+1 ei ei+1                     for 1 ≤ i ≤ n − 2,
+                    fi+1 fi ki+1 = ki fi+1 fi                       for 1 ≤ i ≤ n − 2.
+      REPRESENTATION THEORY OF 0-SCHUR ALGEBRAS AND RELATED CATEGORIES                      19
+
+ The degenerate quantum group U0 (gln ) admits a bialgebra structure given by the co-
+multiplication ∆ and counit ϵ, defined on the generators by
+                  ∆(ei ) = 1 ⊗ ei + ei ⊗ ki ,                    ϵ(ei ) = 0,
+                   ∆(fi ) = ki+1 ⊗ fi + fi ⊗ 1,                  ϵ(fi ) = 0,
+                  ∆(ki ) = ki ⊗ ki ,                             ϵ(ki ) = 1,
+for all 1 ≤ i ≤ n − 1 (and 1 ≤ i ≤ n in the case of ki ).
+  As before, let (ξ¯i )1≤i≤n denote the standard basis for the complex vector space V0 = Cn .
+For each 1 ≤ i, j ≤ n, define the linear operator Eij ∈ EndC (V0 ) by
+                                         Eij (ξ¯k ) = δjk ξ¯i .
+These operators yield a representation of the quantum enveloping algebra U0 (gln ) via an
+algebra homomorphism
+                               ρV0 : U0 (gln ) −→ EndC (V0 )
+given explicitly by
+                          ρV (ei ) = Ei,i+1     for 1 ≤ i ≤ n − 1,
+                           ρV (fi ) = Ei+1,i  for 1 ≤ i ≤ n − 1,
+                                      X
+                           ρV (ki ) =    Ej,j for 1 ≤ i ≤ n.
+                                       j̸=i
+  We briefly review the results on polynomial U0 (gln )-modules presented in [16]. The
+representation ρV of U0 (gln ) on V0 naturally extends to a U0 (gln )-module structure on
+the tensor space V0 ⊗r via the comultiplication. The actions of U0 (gln ) and the 0-Hecke
+algebra Hr (0) on V0 ⊗r , as given in (4.3), commute with each other. Consequently, V0 ⊗r
+admits the structure of a (U0 (gln ), Hr (0))-bimodule. Therefore we derive a functor
+                 Fn,r : Hr (0)-mod → U0 (gln )-mod,   M 7→ V0 ⊗r ⊗Hr (0) M.              (4.8)
+Remark 4.3. In contrast to the classical Schur–Weyl duality, the double commutant
+property fails for the (U0 (gln ), Hr (0))-bimodule V0 ⊗r (see [17, Note 5.7]).
+   We call a U0 (gln )-submodule of V0 ⊗r a polynomial U0 (gln )-module of degree r. For each
+α ∈ Λ+ (r), let
+                       Dα := V0⊗r ⊗Hr (0) Fα ,   Nα := V0⊗r ⊗Hr (0) Rα .
+   The module Dα admits a basis indexed by certain combinatorial objects called quasi-
+ribbon tableaux. Let n be a positive integer and α ∈ Λ+ (r). A quasi-ribbon tableau of shape
+α is a filling of the ribbon diagram of shape α with entries in the alphabet {1, 2, . . . , n}
+such that the entries weakly increase from left to right in each row and strictly increase
+from top to bottom in each column. Let QRT(n, α) denote the set of quasi-ribbon tableaux
+of shape α with entries in {1, 2, . . . , n}.
+Remark 4.4. By definition, QRT(n, α) = ∅ if ℓ(α) > n, and is a singleton if ℓ(α) = n.
+20                                     W.-S. JUNG AND Y.-T. OH
+
+   For T ∈ QRT(n, α), define read(T ) to be the word obtained by reading the entries of T
+column by column, from bottom to top and from left to right. A word w over {1, 2, . . . , n}
+is called a quasi-ribbon word of shape α if w = read(T ) for some T ∈ QRT(n, α). Let
+QRW(n, α) denote the set of quasi-ribbon words of shape α. The sets QRT(n, α) and
+QRW(n, α) are naturally in bijection via the map
+                                  read : QRT(n, α) → QRW(n, α),
+whose inverse is denoted by
+                                  tab : QRW(n, α) → QRT(n, α).
+Here, tab(w) is defined by placing the letters of w into the shape α column by column,
+from bottom to top and from left to right. For example, the word u = 112213312 is not a
+quasi-ribbon word, as its decreasing factorization does not correspond to any quasi-ribbon
+tableau. In contrast, the word v = 153216767 is a quasi-ribbon word of shape (2, 1, 1, 3, 2),
+corresponding to the tableau
+                                       1 1
+                                          2
+                                          3
+                                          5 6 6
+                                                 7 7
+   Following [17], we define a U0 (gln )-module structure on the C-span of QRT(n, α) using
+Kashiwara crystal operators ẽi and f˜i , defined on words in {1, 2, . . . , n} as follows. Given
+w ∈ QRW(n, α), let w(i) denote the subword consisting of the letters i and i + 1, in their
+original order. Perform the cancellation process that removes every adjacent pair (i + 1)i
+from w(i) , proceeding from left to right. The result is a reduced word of the form ir (i + 1)s
+for some r, s ≥ 0. The operator ẽi changes the leftmost occurrence of i + 1 in the reduced
+subword to i, while f˜i changes the rightmost i to i + 1. If no such letter exists (i.e., if
+s = 0 for ẽi or r = 0 for f˜i ), the result is defined to be zero. The induced U0 (gln )-action
+on QRT(n, α) is given by:
+                             tab(f˜i (read(T ))) if f˜i (read(T )) ∈ QRW(n, α),
+                           ®
+                  fi · T =
+                             0                    otherwise,
+and similarly,
+                            ®
+                                tab(ẽi (read(T ))) if ẽi (read(T )) ∈ QRW(n, α),
+                 ei · T =
+                                0                   otherwise.
+The action of ki is defined by
+                                     ®
+                                         T   if T has no entry equal to i,
+                         ki · T =                                                          (4.9)
+                                         0   otherwise.
+      REPRESENTATION THEORY OF 0-SCHUR ALGEBRAS AND RELATED CATEGORIES                      21
+
+This equips C[QRT(n, α)], the C-span of QRT(n, α), with the structure of a U0 (gln )-
+module.
+Proposition 4.5. ([17, Proposition 7.1]) Let α ∈ Λ+ (r). With the above U0 (gln )-action,
+C[QRT(n, α)] is isomorphic to Dα as U0 (gln )-modules.
+   From Remark 4.4, it follows that Dα = 0 if ℓ(α) > n, and Dα is a one-dimensional
+trivial U0 (gln )-module if ℓ(α) = n.
+Proposition 4.6. (cf. [17, Proposition 7.3]) Let n, r be nonnegative integers. Then we
+have
+   (1) Every simple polynomial U0 (gln )-module of degree r is isomorphic to Dα for some
+       α ∈ Λ+ (r) with ℓ(α) ≤ n.
+   (2) Every indecomposable polynomial U0 (gln )-module of degree r is isomorphic to Nα
+       for some α ∈ Λ+ (r).
+   By [17, Proposition 7.1], the hypoplactic character of Dα is equal to the sum of all quasi-
+ribbon words of shape α over x11 < · · · < xnn , and its image in the ring of quasi-symmetric
+functions is the fundamental quasi-symmetric function Fα . And, by [17, Proposition 7.1],
+the hypoplactic character of Nα is equal to the sum of all words of ribbon shape α over
+x11 < · · · < xnn , and its image in the the ring of noncommutative symmetric functions
+is the ribbon Schur function Rα . It follows that for α, β ∈ Λ+ (r) with ℓ(α), ℓ(β) ≤ n and
+α ̸= β, we have Dα ∼  ̸= Dβ and Nα ≁= Nβ .
+   Unlike Dα , Nα may not be zero even when ℓ(α) > n. Since Fn,r is exact, every simple
+quotient arising from a composition series of Nα is of the form Dβ for some β ∈ Λ+ (r). It
+implies that
+                                         ®
+                                           [Rα : Fβ ] if ℓ(β) ≤ n,
+                            [Nα : Dβ ] =
+                                           0           otherwise,
+and therefore
+                                           X
+                         ch(Nα ) =                       [Rα : Fβ ]ch(Dβ ).
+                                     β∈ 0≤l≤n Λ+ (l,r)
+                                       S
+
+
+
+4.3. Functorial relations among U0 (gln )-mod, S0 (n, r)-mod, and Hr (0)-mod. In the
+previous subsection, we introduced a functor
+                             Fn,r : Hr (0)-mod → U0 (gln )-mod.
+Here, we introduce two more functors
+                            Gn,r : Hr (0)-mod −→ S0 (n, r)-mod,
+                            Ψn,r : S0 (n, r)-mod → U0 (gln )-mod.
+22                                 W.-S. JUNG AND Y.-T. OH
+
+First, observe that the actions of Hr (0) and EndHr (0) (V0 ⊗r ) on V0 ⊗r commute. Hence, the
+tensor space V0 ⊗r admits the structure of a (EndHr (0) (V0 ⊗r ), Hr (0))-bimodule. Identifying
+S0 (n, r) with EndHr (0) (V0 ⊗r ) as in (4.7), this yields a functor
+                Gn,r : Hr (0)-mod −→ S0 (n, r)-mod,       M 7→ V0 ⊗r ⊗Hr (0) M.
+Next, observe that the actions of U0 (gln ) and Hr (0) on V0 ⊗r commute. Hence, the image
+of the representation of U0 (gln ) in EndC (V0 ⊗r ) lies in the subalgebra EndH0 (r) (V0 ⊗r ) by
+definition. We denote the induced algebra homomorphism by
+                                  ψn,r : U0 (gln ) → S0 (n, r).                          (4.10)
+It should be noted that, in contrast to the generic case, ψn,r is not surjective in general
+(see [17, Note 5.7]). Then, we define
+                             Ψn,r : S0 (n, r)-mod → U0 (gln )-mod
+to be the pullback functor induced by the map ψn,r : U0 (gln ) → S0 (n, r). It is straightfor-
+ward to verify that
+                                      Ψn,r ◦ Gn,r = Fn,r .                               (4.11)
+More precisely, for any finite-dimensional Hr (0)-module M , the following diagram com-
+mutes:
+                                           M
+                                   Gn,r                  Fn,r
+
+
+                                              Ψn,r
+                       V0 ⊗r ⊗Hr (0) M                    V0 ⊗r ⊗Hr (0) M
+
+Let α ∈ Λ+ (r) with ℓ(α) ≤ n. Combining the commutativity of the diagram with Propo-
+sition 4.6, it follows that Gn,r (Fα ) is a simple S0 (n, r)-module, and Gn,r (Rα ) is an inde-
+composable S0 (n, r)-module.
+
+4.3.1. Projectivity of Gn,r (Rα ). We here show that, for each α ∈ Λ+ (r) with ℓ(α) ≤ n,
+the module Gn,r (Rα ) is projective over S0 (n, r). Let {eα | α ∈ Λ+ (r)} be a complete set
+of primitive orthogonal idempotents of Hr (0) such that Rα = Hr (0)eα . Let
+                                             X
+                                       e :=         eα ,                             (4.12)
+                                             α∈Λ+ (r)
+                                              ℓ(α)≤n
+
+It was remarked in [5, Section 4] that S0 (n, r) is Morita equivalent to eHr (0)e. Let us
+explain this in more detail. Put
+                                Q := EndHr (0) (eHr (0), V0 ⊗r ).
+      REPRESENTATION THEORY OF 0-SCHUR ALGEBRAS AND RELATED CATEGORIES                       23
+
+EndHr (0) (eHr (0)) acts on Q from the right via post-composition, while EndHr (0) (V0 ⊗r )
+acts on Q from the left via pre-composition, and thus Q is an (S0 (n, r), EndHr (0) (eHr (0)))-
+bimodule. Define
+                       Φ : EndHr (0) (V0 ⊗r ) −→ EndEndHr (0) (eHr (0)) Q
+                                                                         
+
+by
+                     Φ(φ)(g) := φ ◦ g        (φ ∈ EndHr (0) (V0 ⊗r ), g ∈ Q).
+One can easily see that it is a C-algebra isomorphism. Recall that
+                       EndH (0) (eHr (0)) ∼
+                                r          = eHr (0)e (as C-algebras).
+Via the C-vector space isomorphism
+                                           ∼
+                                           =
+                                        Q → V0 ⊗r e,        φ 7→ φ(e),
+let us view V0 ⊗r e as an (S0 (n, r), eHr (0)e)-bimodule. Define
+                             Φ : EndHr (0) (V0 ⊗r ) −→ EndeHr (0)e V0 ⊗r e
+                                                                          
+
+by
+                 Φ(φ)(xe) := φ(x)e        (φ ∈ EndHr (0) (V0 ⊗r ), x ∈ V0 ⊗r ).
+One can easily see that it is a C-algebra isomorphism. Endow V0 ⊗r e with a left eHr (0)e-
+action
+                        h · x := x · χ(h) (h ∈ eHr (0)e, x ∈ V0 ⊗r e).
+The resulting left eHr (0)e-module is denoted by (V0 ⊗r e)op . Then
+                                                               op
+                             S0 (n, r) ∼
+                                       = EndeH (0)e (V0 ⊗r e)op .
+                                                        r
+
+To see that (V0 ⊗r e)op is a progenerator of (eHr (0)e)-mod, let
+                                                     dα
+        V0 ⊗r ∼          xλ Hr (0) ∼
+                  M                   M
+              =                    =        eα Hr (0)    (as right Hr (0)-modules),
+                  λ∈Λ(n,r)                α∈Λ+ (r)
+
+where dα is the multiplicity of eα Hr (0). As right (eHr (0)e)-modules, we have the isomor-
+phism
+                                                           dα
+                               V0 ⊗r e ∼
+                                           M
+                                       =         eα Hr (0)e .
+                                                α∈Λ+ (r)
+
+From the eHr (0)e-module isomorphism
+                                            ∼
+                                            =
+                         (eα Hr (0)e)op → eHr (0)eα ,            eα ae 7→ eχ(a)eα ,
+it follows that
+                                                ∼
+                                                =
+                                                     M                     dα
+                                    (V0 ⊗r e)op →              eHr (0)eα         .
+                                                    α∈Λ+ (r)
+
+It was shown in [5, Proposition 4.2] that
+                              dα = {λ ∈ Λ(n, r) | set(α) ⊆ set(λ+ )}
+24                                 W.-S. JUNG AND Y.-T. OH
+
+and dα > 0 precisely when ℓ(α) ≤ n. It follows that (V0 ⊗r e)op is a progenerator for
+eHr (0)e-mod.
+   For the subsequent discussion, however, we shall work with the progenerator (V0 ⊗r e)∗
+for eHr (0)e-mod, rather than (V0 ⊗r e)op . To this end, following [10, Section 4], consider
+the standard Frobenius linear functional
+                                               ®
+                                                 1, w = w0 ,
+                 ε : Hr (0) → C,      ε(πw ) =                   (w ∈ Sr ).
+                                                 0, w ̸= w0 ,
+Define a C-linear map
+                          Θ : eHr (0) ϕ(eα ) −→ ( eα Hr (0)e )∗ ,
+by Θ(eh ϕ(eα ))(x) = ε(xh) for all x ∈ eα Hr (0)e and h ∈ Hr (0).
+Lemma 4.7. Θ is a well defined left eHr (0)e-module isomorphism.
+Proof. First, we prove that Θ is well defined. Suppose that eh ϕ(eα ) = eh′ ϕ(eα ). For
+x ∈ eα Hr (0)e, since x = eα xe, one has
+                            ε(xh) = ε((eα xe)h) = ε(eα (xeh)).
+By [10, Proposition 4.2], the map
+                  ϕ : Hr (0) −→ Hr (0),      πi 7→ πr−i   (1 ≤ i ≤ r − 1),
+is the Nakayama automorphism of Hr (0) associated with ε. Hence,
+               ε(xh) = ε(xeh ϕ(eα )) = ε(xeh′ ϕ(eα )) = ε(eα xeh′ ) = ε(xh′ ).
+Thus Θ is well defined.
+  Next, we prove that Θ is a left eHr (0)e-module homomorphism. For y ∈ eHr (0)e,
+h ∈ Hr (0) and x ∈ eα Hr (0)e, we have
+          Θ y · (ehϕ−1 (eα )) (x) = Θ yhϕ−1 (eα ) (x) = ε x (yh) = ε (xy) h
+                                                                          
+
+                                  = Θ ehϕ−1 (eα ) (xy) = y · Θ(ehϕ−1 (eα )) (x).
+                                                                          
+
+   Finally, we show that Θ is a C-isomorphism. Suppose Θ(ehϕ−1 (eα )) = 0. Then ε(xh) =
+0 for all x ∈ eα e. By the Nakayama property ε(ab) = ε(bϕ(a)), this is equivalent to
+                         ε(h ϕ(x)) = 0       for all x ∈ eα Hr (0)e.
+Hence ε(hy) = 0 for all y ∈ ϕ(eα )Hr (0)e. Since the Frobenius form (u, v) 7→ ε(uv) is
+nondegenerate, the condition above forces hϕ(eα )e = 0. Thus ker Θ = 0, so Ψ is injective.
+Now, the assertion follows since both spaces have equal dimension.                      □
+   From the isomorphism Hr (0)ϕ(eα ) ∼  = Hr (0)eαr , we obtain the left eHr (0)e-module
+isomorphisms
+               (V0 ⊗r e)∗ ∼       ((eα Hr (0)e)dα )∗ ∼
+                             M                         M
+                          =                          =     (eHr (0)eαr )dα .
+                            α∈Λ+ (r)                   α∈Λ+ (r)
+      REPRESENTATION THEORY OF 0-SCHUR ALGEBRAS AND RELATED CATEGORIES                    25
+
+It shows that (V0 ⊗r e)∗ is a progenerator for eHr (0)e-mod and
+                                                               op
+                              S0 (n, r) ∼
+                                        = EndeH (0)e (V0 ⊗r e)∗ .
+                                                   r
+
+This gives rise to the following equivalence of eHr (0)e-mod and S0 (n, r)-mod:
+        HomeHr (0)e ((V0 ⊗r e)∗ , eHr (0)e) ⊗eH0 (r)e − : eHr (0)e-mod → S0 (n, r)-mod.
+This functor turns out be naturally isomorphic to
+                 An,r := V0 ⊗r e ⊗eHr (0)e − : eHr (0)e-mod → S0 (n, r)-mod.
+Indeed, given an object M in eHr (0)e-mod, we have S0 (n, r)-module isomorphisms
+                         HomeHr (0)e ((V0 ⊗r e)∗ , eHr (0)e) ⊗eHr (0)e M
+                         ∼
+                         = V0 ⊗r e ⊗eH (0)e eHr (0)e ⊗eH (0)e M
+                                       r                       r
+
+                          ∼
+                          = V0 ⊗r e ⊗eHr (0)e M.
+Consider the functor
+                       Bn,r : Hr (0)-mod → eHr (0)e-mod,            M 7→ eM,
+which is naturally isomorphic to HomHr (0) (Hr (0)e, −).
+Theorem 4.8. The following hold:
+  (1) Bn,r ◦ An,r and Gn,r are naturally isomorphic.
+  (2) For each α ∈ Λ+ (r) with ℓ(α) ≤ n, eHr (0)eα is a projective indecomposable
+      eHr (0)e-module.
+  (3) For each α ∈ Λ+ (r) with ℓ(α) ≤ n, Gn,r (Rα ) is a projective indecomposable
+      S0 (n, r)-module.
+Proof. (1) We will define a natural transformation η : Bn,r ◦ An,r → Gn,r as follows:
+  Given an object M in Hr (0)-mod, define
+              ηM : V0 ⊗r e ⊗eHr (0)e eM → V0 ⊗r ⊗Hr (0) M,         ve ⊗ em 7→ v ⊗ m.
+One can see that ηM is an S0 (n, r)-module isomorphism and its inverse is given by v ⊗m 7→
+ve ⊗ em. Also, given an Hr (0)-homomorphism f : M → N , the following diagram
+                                                       ηM
+                          V0 ⊗r e ⊗eHr (0)e eM              V0 ⊗r ⊗Hr (0) M
+                               id⊗f                                 id⊗f
+                                                       ηN
+                          V0 ⊗r e ⊗eHr (0)e eN              V0 ⊗r ⊗Hr (0) N
+is commutative since
+                  (id ⊗ f ) ◦ ηM (ve ⊗ em) = (id ⊗ f )(v ⊗ m) = v ⊗ f (m),
+                  ηN ◦ (id ⊗ f )(ve ⊗ em) = ηN (ve ⊗ ef (m)) = v ⊗ f (m).
+26                                   W.-S. JUNG AND Y.-T. OH
+
+     (2) From                                         M
+                               eHr (0)e =                               eHr (0)eα
+                                                             Λ+ (l,r)
+                                                 S
+                                            α∈       0≤l≤n
+
+it follows that eHr (0)eα for ℓ(α) ≤ n is a projective eHr (0)e-module. Now, note that
+                     Gn,r (Rα ) = Bn,r ◦ An,r (Hr (0)eα ) = Bn,r (eHr (0)eα ).                (4.13)
+Since Gn,r (Rα ) is indecomposable, it follows that eHr (0)eα is also indecomposable.
+  (3) Due to (4.13), the assertion follows from (2)                                                □
+4.3.2. Images of simple and projective indecomposable Hr (0)-modules under the functor
+Gn,r . We begin with some preparatory definitions and lemmas.
+Definition 4.9. Let α ∈ Λ+ (r) with ℓ(α) ≤ n. For each T ∈ QRT(n, α), define its weight
+vector wt(T ) = (wt(T )1 , wt(T )2 , . . . , wt(T )n ) ∈ Zn≥0 by
+                    wt(T )i := #{ entries equal to i in T } for 1 ≤ i ≤ n.
+  Recall that for α ∈ Λ+ (r) with ℓ(α) ≤ n, the composition α• ∈ Λ• (n, r) is obtained by
+appending zeros to α so that its length is equal to n (see (2.1)).
+Lemma 4.10. For α ∈ Λ+ (r) with ℓ(α) ≤ n, the map
+                         wt : QRT(n, α) → Λ(n, r)⪯α• ,                    T 7→ wt(T )
+is a bijection. For the definition of the codomain, see (3.6).
+Proof. It follows directly from the definition of quasi-ribbon tableaux that wt(T ) ∈ Λ(n, r)⪯α•
+for any T ∈ QRT(n, α).
+   To construct the inverse, let α = (α1 , . . . , αℓ(α) ) and let µ = (µ1 , . . . , µn ) ∈ Λ(n, r)⪯α• .
+Since µ ⪯ α• , there exists a unique sequence of indices
+                               1 = i1 < i2 < · · · < iℓ(α)+1 = n + 1
+such that
+                   αk = µik + µik +1 + · · · + µik+1 −1 for all 1 ≤ k ≤ ℓ(α),
+and µik > 0 for all 2 ≤ k ≤ ℓ(α). Define the tableau Tµ by filling the k-th row with the
+entries
+                          µi
+                         ik k , (ik + 1)µik +1 , . . . , (ik+1 − 1)µik+1 −1 ,
+that is, the letter j appears µj times in the k-th row for each ik ≤ j < ik+1 . Then the
+map µ 7→ Tµ defines the inverse of wt, completing the proof.                          □
+Lemma 4.11. The map ψn,r : U0 (gln ) → S0 (n, r) in (4.10) satisfies the following identi-
+ties:
+                    ψn,r (ei ) = ei        for 1 ≤ i ≤ n − 1,
+                             ψn,r (fi ) = fi    for 1 ≤ i ≤ n − 1,
+                                          X
+                             ψn,r (ki ) =    kµ for 1 ≤ i ≤ n.
+                                         µi =0
+       REPRESENTATION THEORY OF 0-SCHUR ALGEBRAS AND RELATED CATEGORIES                     27
+
+  The proof of Lemma 4.11 appears in Subsection 4.4.
+  From the natural equivalence in (4.11), it follows that Ψn,r (Gn,r (Fα )) ∼
+                                                                            = Dα . The fol-
+                                                   •
+lowing proposition establishes that, for each λ ∈ Λ (n, r), the modules Gn,r (Fα ) and Sλ
+have isomorphic images under Ψn,r .
+Proposition 4.12. For each λ ∈ Λ• (n, r), we have U0 (gln )-module isomorphisms
+                                 Ψn,r (Sλ ) ∼
+                                            = Dλ+ .
+Proof. Note that (λ+ )• = λ. Hence, by Proposition Proposition 3.8 and Lemma Lemma 4.10,
+we obtain a bijection
+                            row−1 ◦ wt : QRT(n, λ+ ) → CB(λ).
+Let Γ : Dλ → Ψn,r (Sλ ) be the linear map induced by extending this bijection between the
+respective bases.
+  Let T ∈ QRT(n, λ+ ). Since wt(fi · T ) = wt(T ) − (0, . . . , 0, −1, 1, 0, . . . , 0), we have
+                                                        | {z }
+                                                               i−1
+Γ(fi · T ) = fi · Γ(T ) by (3.7) and Lemma 4.11. Similarly, Γ(ei · T ) = ei · Γ(T ).
+  By (4.9), we have                         ®
+                                              T if wt(T )i = 0,
+                                   ki · T =
+                                              0 otherwise.
+On the other hand, for A ∈ CB(λ), it follows from (2.4) that
+                                              ®
+                               X                eA if row(A)i = 0,
+                                    kµ · eA =
+                               µ =0
+                                                0  otherwise.
+                              i
+
+This shows Γ(ki · T ) = ki · Γ(T ) by Lemma 4.11. Hence, Γ is an isomorphism.               □
+  Now, we are ready to state the main theorem.
+Theorem 4.13. For α ∈ Λ+ (r) with ℓ(α) ≤ n, we have the S0 (n, r)-module isomorphisms
+                    Gn,r (Fα ) ∼
+                               = Sα• and Gn,r (Rα ) ∼  = Pα • .
+Proof. By (4.11), we see that Gn,r (Fα ) is simple. Assume that Gn,r (Fα ) ∼
+                                                                           = Sβ • for some
+      +
+β ∈ Λ (r) with ℓ(β) ≤ n. By Proposition 4.12, we see that
+                        Dα ∼= Ψn,r (Gn,r (Fα )) ∼
+                                                = Ψn,r (Sβ • ) ∼
+                                                               = Dβ
+as U0 (gln )-modules. This shows that α = β.
+  Let π 1 : Rα ↠ Fα be the projective cover (hence an essential epimorphism). By right
+exactness of Gn,r , applying Gn,r to the exact sequence
+                                            π1
+                                      Rα −−→ Fα −→ 0
+yields an exact sequence
+                                        Gn,r (π 1 )
+                             Gn,r (Rα ) −−−−−→ Gn,r (Fα ) −→ 0,
+28                                        W.-S. JUNG AND Y.-T. OH
+
+so Gn,r (π 1 ) : Gn,r (Rα ) ↠ Gn,r (Fα ) ∼
+                                         = Sα• is an epimorphism. Set Q := Gn,r (Rα ). By
+Theorem 4.8, Q = Gn,r (Rα ) is a projective indecomposable S0 (n, r)-module.
+  Let π 2 : Pα• ↠ Sα• be the projective cover (hence an essential epimorphism). By the
+universal property of projective covers, there exists a morphism
+                            g : Q −→ Pα•        such that π 2 ◦ g = Gn,r (π 1 ).
+Since π 2 is essential and π 2 ◦ g is surjective, it follows that g is surjective. As Pα• is projec-
+tive, the surjection g splits, so Pα• is a direct summand of Q. Since Q is indecomposable,
+we conclude Q ∼  = Pα • .
+   And, by Theorem 4.8, we see that Gn,r (Rα ) is a projective indecomposable S0 (n, r)-
+module. Thus, the desired result can be obtained in the same manner as above.                     □
+
+  The following corollary follows immediately from the combination of Theorem 4.13 and
+(4.11).
+Corollary 4.14. For each λ ∈ Λ• (n, r), we have U0 (gln )-module isomorphisms
+                                              Ψn,r (Pλ ) ∼
+                                                         = Nλ+ .
+  As a second corollary of Theorem 4.13, we determine the socles of the projective inde-
+composable Sn,r -modules. Let A be a C-algebra and M a finite-dimensional A-module.
+The socle of M , denoted soc(M ), is defined as the sum of all simple submodules of M .
+For λ = (λ1 , λ2 , . . . , λl , 0, . . . , 0) in Λ• (n, r), let λr = (λl , . . . , λ2 , λ1 , 0, . . . , 0) and thus
+λr = ((λ+ )r )• .
+Corollary 4.15. Let λ ∈ Λ• (n, r). Then we have the S0 (n, r)-module isomorphism
+                                                soc(Pλ ) ∼
+                                                         = Sλr .
+
+Proof. Since V0 ⊗r is a projective H0 (r)-module, the functor
+                                          Gn,r := V0 ⊗r ⊗H0 (r) (−)
+is exact. Thus Theorem 4.13 implies that
+                                   Gn,r (soc(Rλ+ )) ⊆ soc(Gn,r (Rλ+ )).
+
+Using the isomorphisms soc(Rλ+ ) ∼
+                                 = F(λ+ )r and V0 ⊗r ⊗H0 (r) Rλ+ ∼
+                                                                 = Pλ , it follows that
+                                        S((λ+ )r )• = Sλr ,→ soc(Pλ ).
+Since S0 (n, r) is self-injective by [5, Proposition 4.4], [3, Section 1.6, Exercises 2] implies
+that the socle of the projective indecomposable module Pλ is simple. Therefore, soc(Pλ ) ∼    =
+Sλr , as desired.                                                                             □
+        REPRESENTATION THEORY OF 0-SCHUR ALGEBRAS AND RELATED CATEGORIES                                     29
+
+4.4. Proof of Lemma 4.11. We adopt the notation of [5], summarized as follows.
+     • For λ = (λ1 , . . . , λn ) ∈ Λ(n, r) and 1 ≤ i ≤ n, set
+                       Riλ = { x | λ1 + · · · + λi−1 + 1 ≤ x ≤ λ1 + · · · + λi },
+         with the convention that Riλ = ∅ if λi = 0. This yields a disjoint union decompo-
+         sition
+                            {1, 2, . . . , r} = R1λ ∪ R2λ ∪ · · · ∪ Rnλ .
+       • For each A ∈ Mn (r), let λ = row(A) and µ = col(A). Choose wA ∈ Sr such that
+         for 1 ≤ i, j ≤ n,
+                                     ai,j = |Riλ ∩ (wA Rjµ )|.
+       • Let dA denote the shortest element in the double coset Sλ wA Sµ .
+       • Define                                     X
+                                     x̄Sλ wSµ =            π̄x .
+                                                             x∈Sλ wSµ
+       • For λ, µ ∈ Λ(n, r) and w ∈ Sr , define
+                   M                    M
+           ϕw
+            λ,µ :      x̄ ν H0 (r) −→         x̄ν H0 (r),                       x̄ν h 7−→ δµ,ν x̄Sλ wSµ h.
+                   ν∈Λ(n,r)                     ν∈Λ(n,r)
+
+   By [5, (2.1.2)], for each A ∈ Mn (r) we have
+                                              eA = ϕdrow(A),
+                                                      A
+                                                             col(A) .
+
+For a word i = [i1 , . . . , ir ] with ij ∈ {1, 2, . . . , n}, set
+                                           ξ¯i := ξ¯i ⊗ · · · ⊗ ξ¯ir ,
+                                                         1
+
+and for λ ∈ Λ(n, r), define
+                                       iλ := [1, . . . , 1, . . . , n, . . . , n].
+                                              | {z }                | {z }
+                                                    λ1                  λn
+
+For example, ξ¯i(2,0,1) = ξ¯1 ⊗ ξ¯1 ⊗ ξ¯3 . The isomorphism
+                                            M                ∼
+                                                             =
+                                    ϕ0 :         x̄λ Hr (0) −→ V0 ⊗r
+                                            λ∈Λ(n,r)
+
+from (4.6) is given by
+                                       x̄λ h 7→ ξ¯iλ h,           h ∈ Hr (0)
+(see [5, Remark 2.5]).
+   For λ ∈ Λ(n, r), let (V0⊗r )λ ⊆ V0⊗r be the C-span of {ξ¯i | cont(i) = λ}, where
+                                    cont(i) = (#1 in i, . . . , #n in i).
+Then                                                         M
+                                           V0⊗r =                (V0⊗r )λ ,
+                                                      λ∈Λ(n,r)
+30                                        W.-S. JUNG AND Y.-T. OH
+
+and ϕ0 restricts to an isomorphism
+                                                                 ∼
+                                                                 =
+                                    ϕ0 |x̄λ Hr (0) : x̄λ Hr (0) −→ (V0⊗r )λ .
+     By conjugating ϕ0 , we may regard each eA ∈ S0 (n, r) as an element of EndHr (0) (V0⊗r ).
+Lemma 4.16. For λ ∈ Λ(n, r) and i = [i1 , . . . , ir ] a word with ij ∈ {1, 2, . . . , n}, we have
+                                       ξ¯i , if cont(i) = λ,
+                                     ®
+                              ¯
+                          kλ (ξi ) =
+                                       0, otherwise.
+Proof. Let A = Dλ . Then row(A) = col(A) = λ, wA = id and dA = id. Therefore
+                                            x̄Srow(A) wA Scol(A) = x̄λ ,
+and thus
+                                      ϕdrow(A),
+                                         A
+                                                col(A) (x̄ν h) = δλ,ν x̄λ h
+for any ν ∈ Λ(n, r) and h ∈ Hr (0). This proves the assertion.                                          □
+   Let i = [i1 , . . . , ir ] be a word with ij ∈ {1, 2, . . . , n}. To study the elements ei,λ , fi,λ ∈
+S0 (n, r), we introduce the notions of ei - and fi -descendants associated with i.
+Definition 4.17.
+    • A word j = [j1 , . . . , jr ] with jk ∈ {1, 2, . . . , n} is called ei -descendant of i the
+       following conditions hold:
+          – There exists exactly one position k such that ik = i + 1 and jk = i.
+          – For all ℓ > k, we have iℓ ̸= i.
+          – For all other positions m ̸= k, we have jm = im .
+       We denote by Ei (i) the set of all ei -descendants of i.
+    • A word j = [j1 , . . . , jr ] with jk ∈ {1, 2, . . . , n} is called fi -descendant of i the
+       following conditions hold:
+          – There exists exactly one position k such that ik = i and jk = i + 1.
+          – For all ℓ < k, we have iℓ ̸= i + 1.
+          – For all other positions m ̸= k, we have jm = im .
+       We denote by Fi (i) the set of all fi -descendants of i.
+     For instance,
+              E3 ([1, 3, 4, 3, 1, 4, 2, 4]) = { [1, 3, 4, 3, 1, 3, 2, 4], [1, 3, 4, 3, 1, 4, 2, 3] },
+              F3 ([1, 3, 4, 3, 1, 4, 2, 4]) = { [1, 4, 4, 3, 1, 4, 2, 4] }.
+Lemma 4.18. Let λ ∈ Λ(n, r), 1 ≤ i ≤ n − 1, and let i = [i1 , . . . , ir ] be a word with
+ij ∈ {1, 2, . . . , n}. Then
+                                                        ¯ if cont(i) = λ,
+                                           ®P
+                                               j∈Ei (i) ξj ,
+                             ei,λ (ξ¯i ) =
+                                            0,               otherwise,
+        REPRESENTATION THEORY OF 0-SCHUR ALGEBRAS AND RELATED CATEGORIES                                                 31
+
+and
+                                                                      ¯
+                                                ®P
+                                                         j∈Fi (i) ξj ,        if cont(i) = λ,
+                              fi,λ (ξ¯i ) =
+                                                  0,                          otherwise.
+Proof. Let A = Dλ − Ei+1,i+1 + Ei,i+1 . Set λi− := (λ1 , . . . , λi + 1, λi+1 − 1, . . . , λn ). Then
+row(A) = λi− , col(A) = λ, and wA = id. Thus dA = id. Therefore
+                                                            X
+                      x̄Srow(A) wA Scol(A) = x̄Sλi− id Sλ =           π̄w ,
+                                                                                 w∈Sλi− id Sλ
+
+which factors as
+                     Ñ                 éÖ                             è             Ö                            è
+                         X                        X                                          X
+                                π̄w                            π̄w        = x̄λi−                          π̄w       ,
+                       w∈Sλi−                       λi−                                         λi−
+                                               w∈         Sλ                               w∈         Sλ
+
+where
+            µ
+                Sλ := { w ∈ Sλ | ℓ(sw) > ℓ(w) for all simple reflections s in Sµ }.
+  One verifies that
+                                       λi−
+                                             Sλ = { x0 , x1 , . . . , xλi+1 −1 },
+where x0 = id and
+                         xj = sbi +1 sbi +2 · · · sbi +j                      (1 ≤ j ≤ λi+1 − 1),
+with bi = λ1 + · · · + λi . Hence eA acts by
+                                                               Ñ                           é
+                                                                          X
+                                ξ¯iν h 7−→ δλ,ν ξ¯ii−                               π̄xj         h.
+                                                          λ
+                                                                      0≤j≤λi+1 −1
+
+  For a word i with cont(i) = λ and 1 ≤ k ≤ λi+1 , define
+   i(i,k) := the word obtained from i by replacing the k-th occurrence of i + 1 with i.
+Then
+                                                  ξ¯i i− π̄xj = ξ¯i(i,j+1) ,
+                                                     λ                    λ
+
+so that                                Ñ                              é
+                                                X                                X
+                              ξ¯i i−                           π̄xj       =                ξ¯i(i,k) .
+                                 λ                                                           λ
+                                         0≤j≤λi+1 −1                           1≤k≤λi+1
+
+  If a word i satisfies cont(i) = λ, then there exists a unique permutation w ∈ Sr such
+that
+                                        ξ¯i = ξ¯iλ π̄w .
+32                                           W.-S. JUNG AND Y.-T. OH
+
+Here w is the unique minimal-length permutation sending the ordered word
+                                 iλ = [1, . . . , 1, 2, . . . , 2, . . . , n, . . . , n]
+                                       | {z } | {z }                       | {z }
+                                                  λ1                    λ2     λn
+
+to i, and it can be obtained by successively applying simple transpositions at positions
+where the entries are strictly increasing (cf. (4.5)).
+  Let p := bi + k be the position of the k-th occurrence of i+1 in iλ . In any reduced
+expression w = sj1 · · · sjt adapted to iλ → i (i.e. each sjα swaps an increasing adjacent
+pair), the letter i+1 starting at position p moves left across an i exactly as many times
+as there are i’s to the right of the k-th i+1 in i. Consequently:
+      • If there is no i to the right of the k-th i+1 in i, then this letter never crosses an i
+        along w, and hence
+                                       ξ¯i(i,k) π̄w = ξ¯i(i,k) .
+                                                          λ
+
+        • If there is at least one i to its right, then along w there is a first swap that moves
+          this i+1 past an i. Starting instead from ξ¯i(i,k) , the two entries at that position
+                                                              λ
+          are (i, i), so that factor of π̄ kills the vector by the equal–entries branch of (4.5);
+          hence
+                                            ξ¯i(i,k) π̄w = 0.
+                                                              λ
+
+This proves the claim for ei,λ , and the statement for fi,λ follows analogously.                 □
+Proof of Lemma 4.11. From the coproduct formulas of U0 (gln ) one obtains, for r ≥ 1 and
+1 ≤ i ≤ n − 1,
+                      ∆(r) (ki ) = k⊗r
+                                    i ,
+                                     r
+                                     X
+                        (r)
+                      ∆ (ei ) =              1 ⊗ · · · ⊗ 1 ⊗ ei ⊗ ki ⊗ · · · ⊗ ki ,
+                                             | {z }               |    {z       }
+                                       t=1             t−1                          r−t
+                                     r
+                                     X
+                      ∆(r) (fi ) =           k ⊗ · · · ⊗ ki+1 ⊗ fi ⊗ 1 ⊗ · · · ⊗ 1 .
+                                             | i+1 {z       }        | {z }
+                                       t=1                        t−1                      r−t
+
+     It follows that the action on a simple tensor ξ¯i is given by
+                                      ξ¯i , if i contains no entry equal to i,
+                                    ®
+                         ki · ξ¯i =
+                                      0, otherwise,
+                                     X
+                         ei · ξ¯i =         ξ¯j ,
+                                       j∈Ei (i)
+                                        X
+                          fi · ξ¯i =              ξ¯j .
+                                       j∈Fi (i)
+       REPRESENTATION THEORY OF 0-SCHUR ALGEBRAS AND RELATED CATEGORIES                        33
+
+   Comparing these identities with Lemma 4.16 and Lemma 4.18, the desired identities
+follow.                                                                           □
+  We end this subsection with an easy but important corollary of Lemma 4.16.
+Corollary 4.19. The following hold:
+  (1) Let C be the full subcategory of U0 (gln )-mod consisting of polynomial U0 (gln )-
+      modules of degree r. Then there exists a functor
+                                       ξn,r : C → S0 (n, r)-mod
+       such that Ψn,r ◦ ξn,r = id.
+   (2) The functor ξn,r preserves the socle; more precisely, for every polynomial U0 (gln )-
+       module M of degree r,
+                                   ξn,r (soc(M )) = soc(ξn,r (M )).
+   (3) On the image of ξn,r , the functor Ψn,r preserves the socle;; more precisely, for every
+       polynomial U0 (gln )-module M of degree r,
+                                  Ψn,r (soc(ξn,r (M ))) = soc(M ).
+        In particular, for each α ∈ Λ+ (r), we have
+                                 soc(Nα ) = Ψn,r (soc(Gn,r (Rα ))).
+        If ℓ(α) ≤ n, then soc(Nα ) = Dαr .
+Proof. (1) For each λ ∈ Λ(n, r), the idempotent kλ ∈ S0 (n, r) acts on V0⊗r as P
+                                                                               in Lemma 4.16.
+Since {kλ | λ ∈ Λ(n, r)} is a set of orthogonal idempotents of S0 (n, r) with λ∈Λ(n,r) kλ =
+1, we obtain
+                                    M
+                            M=            Mλ ,     Mλ := kλ (M ),
+                                       λ∈Λ(n,r)
+
+so each kλ also acts on M . By Lemma 4.11,
+                                                                              X
+                   ψn,r (ei ) = ei ,       ψn,r (fi ) = fi ,   ψn,r (ki ) =           kµ .
+                                                                              µi =0
+
+Hence, on the same underlying vector space M , we define the actions of ei , fi in the same
+way as ei , fi . Together with the kλ -action described above, these operators endow M with
+a natural S0 (n, r)-module structure. Define ξn,r (M ) to be the resulting S0 (n, r)-module.
+By construction, we have Ψn,r (ξn,r (M )) = M .
+  (2) In general, soc(M ) is contained in Ψn,r (soc(ξn,r (M ))). If the inclusion is strict, then
+by (1) the image ξn,r (soc(M )) contains soc(ξn,r (M )), which yields a contradiction.
+  (3) The first assertion follows from (2). The second assertion can be obtained by com-
+bining this result with Corollary 4.15.                                                        □
+34                                   W.-S. JUNG AND Y.-T. OH
+
+                   5. Symmetries of the Cartan matrix of S0 (n, r)
+     The Cartan matrix of S0 (n, r) is defined by the matrix
+                                      C = (cλ,µ )λ,µ∈Λ• (n,r) ,
+where cλ,µ = dimC HomS0 (n,r)C (Pλ , Pµ ).
+Lemma 5.1. [3, 1.7.6 and 1.7.7] Let A be a finite dimensional algebra over C and M be
+a finite dimensional A-module.
+    (1) Let P be a projective indecomposable A-module. Then dim∆ HomA (P, M ) equals
+        the multiplicity [M : top(P )] of top(P ) as a composition factor of M , where ∆ =
+        EndA (top(P )).
+    (2) Let IS denote the injective hull of a simple A-module S and ∆ = EndA (S). Then
+        dim∆ HomA (M, IS ) equals the multiplicity [M : S] of S as a composition factor of
+        M.
+  Since C is algebraically closed, EndS0 (n,r)C (Sλ ) ∼
+                                                      = C as C-spaces for all λ ∈ Λ• (n, r).
+Thus, by Lemma 5.1 (1), cλ,µ equals [Pµ : Sλ ]. For each µ ∈ Λ(n, r), define
+                                                        [
+                   Bµ := {eA | row(A) = µ} \                     Bµ,α ,
+                                                     α∈max(µ)\{(1,1,...,1)}
+
+where
+             Bµ,α := {eA | row(A) = µ and A is open on rows with respect to α}
+(see [13, Section 5.2] for the precise definition). With this notation, it was shown in [13,
+Proposition 5.3] that
+                                      cλ,µ = |B λ ∩ Bµ |.
+  The purpose of this section is to introduce certain symmetries of the Cartan matrix C.
+To this end, it is necessary to recall the symmetries of the Cartan matrix of the 0-Hecke
+algebra H0 (r).
+  Let
+                                     D = (dα,β )α,β∈Λ+ (r)
+denote the Cartan matrix of H0 (r), that is, dα,β = dimC HomH0 (r) (Rα , Rβ ).
+  Let f : H0 (r) → H0 (r) be an automorphism. For any H0 (r)-module M , let f [M ] be the
+H0 (r)-module with the same underlying vector space as M , where the action is twisted
+by f via
+                       b ·f v := f (b) · v for all b ∈ H0 (r), v ∈ M.
+Similarly, given an anti-isomorphism g : H0 (r) → H0 (r), let g[M ] be the H0 (r)-module
+with underlying space M ∗ , the dual of M , and action ·g defined by
+                  (b ·g δ)(v) := δ(g(b) · v) for all b ∈ H0 (r), δ ∈ M ∗ , v ∈ M.      (5.1)
+       REPRESENTATION THEORY OF 0-SCHUR ALGEBRAS AND RELATED CATEGORIES                               35
+
+                                         ϕ-twist               θ-twist       χ-twist
+
+                                    Fα            F αr          F αc           Fα
+                                   Rα             Rαr           R αc           R αr
+
+                        Table 5.1. (Anti-)involution twists of Fα and Rα
+
+Let
+                          T+
+                           f : H0 (r)-mod → H0 (r)-mod,                          M 7→ f [M ]       (5.2)
+be the covariant functor induced by the automorphism f , and
+                          T−
+                           g : H0 (r)-mod → H0 (r)-mod,                          M 7→ g[M ]        (5.3)
+be the contravariant functor induced by the anti-isomorphism g. The functors T+   f and
+  −
+Tg are called the f -twist and g-twist, respectively.
+   For the (anti-)involutions ϕ, θ, and χ in (4.2), the corresponding twists on simple
+modules and projective indecomposable modules are listed in Table 5.1.1 These (anti-
+)involution twists yield the following symmetries of the Cartan matrix of H0 (r).
+Lemma 5.2. For α, β ∈ Λ+ (r), the following hold.
+  (1) dα,β = dαr ,β r , dα,β = dβ r ,αr , and dα,β = dβ,α
+  (2) dα,β = dαc ,β c
+  (3) dα,β = dβ r ,α
+Proof. (1) Combining Table 5.1 with the fact that T+   ϕ is an equivalence of categories, we
+obtain C-vector space isomorphisms
+         HomH (0) (Rα , Rβ ) ∼
+                    r        = HomH (0) (T+ (Rα ), T+ (Rβ )) ∼
+                                              r          ϕ   = HomH (0) (Rαr , Rβ r ).
+                                                                         ϕ                 r
+
+
+Combining Table 5.1 with the fact that T−χ is a duality functor, we obtain C-vector space
+isomorphisms
+        HomH (0) (Rα , Rβ ) ∼
+                    r       = HomH (0) (T− (Rβ ), T− (Rα )) ∼
+                                              r          χ  = HomH (0) (Rβ r , Rαr ).
+                                                                         χ                 r
+
+
+Finally, by combining (1) and (2), we see that dα,β = dβ,α . From the representation-
+theoretical viewpoint,it can be derived from C-vector space isomorphisms
+        HomH (0) (Rα , Rβ ) ∼
+                r           = HomH (0) (T− (Rα ), T− (Rβ )) ∼
+                                          r              χ◦ϕ= HomH (0) (Rβ , Rα ).
+                                                                         χ◦ϕ                   r
+
+
+  (2) Combining Table 5.1 with the fact that T+    θ is an equivalence, we obtain C-vector
+space isomorphisms
+         HomH (0) (Rα , Rβ ) ∼
+                    r        = HomH (0) (T+ (Rα ), T+ (Rβ )) ∼
+                                              r          θ   = HomH (0) (Rαc , Rβ c ).
+                                                                       θ                   r
+
+
+  1For additional (anti-)involutions, see [15, Table 2, Section 3.4].
+36                                       W.-S. JUNG AND Y.-T. OH
+
+     (3) Since Rβ is the injective hull of Fβ r , it follows from Lemma 5.1 (2) that
+                            dα,β = dimC HomHr (0) (Rα , Rβ ) = [Rα : Fβ r ]
+On the other hand, Lemma 5.1 (1) says that
+                          [Rα : Fβ r ] = dimC HomHr (0) (Rβ r , Rα ) = dβ r ,α .
+                                                                                                       □
+     Define bijective maps
+                            ex : Λ+ (r)2 → Λ+ (r)2 ,      (α, β) 7→ (β, α)
+                                c : Λ+ (r)2 → Λ+ (r)2 ,   (α, β) 7→ (αc , β c )
+                                η : Λ+ (r)2 → Λ+ (r)2 ,   (α, β) 7→ (β r , α).
+Then η 2 ((α, β)) = ((αr , β r )). The orders of ex and c divide 2 and that of η divides 4.
+Furthermore, they satisfy the relations
+                        η ◦ ex = ex ◦ η 3 ,    ex ◦ c = c ◦ ex,    η ◦ c = c ◦ η.
+This implies that there is a surjection from D4 × Z2 to < ex, c, η >, where D4 is the
+dihedral group of order 8. Thus D4 × Z2 acts on Λ+ (r)2 .
+Example 5.3. (1) Let r = 4. In this case, < ex, c, η >∼
+                                                      = D4 × Z2 , and Λ+ (4)2 has exactly
+64 elements grouped into 15 orbits (see Table 5.2).
+
+                            Orbit size Number of orbits Total elements
+                               1              1                1
+                               2              3                6
+                               4              7               28
+                               8              4               32
+                             Total        12 orbits      64 elements
+
+          Table 5.2. Orbit decomposition of Λ+ (4)2 under the action of ⟨ex, c, η⟩
+
+For instance, the unique orbit of size 1 is {((2, 2), (2, 2))}, and the orbit of ((3, 1), (1, 1, 2))
+is
+                            η                      η                      η                       ex
+         ((3, 1), (1, 1, 2)) → ((2, 1, 1), (3, 1)) → ((1, 3), (2, 1, 1)) → ((1, 1, 2), (1, 3)) →
+                            η                      η                      η
+         ((1, 3), (1, 1, 2)) → ((2, 1, 1), (1, 3)) → ((3, 1), (2, 1, 1)) → ((1, 1, 2), (3, 1)).
+   (2) When r = 6, one can find an orbit consisting of 16 elements; for instance, the orbit
+of ((1, 2, 3), (1, 3, 2)) has cardinality 16.
+     With the above group action, we derive the following theorem from Lemma 5.2.
+       REPRESENTATION THEORY OF 0-SCHUR ALGEBRAS AND RELATED CATEGORIES                       37
+
+Proposition 5.4. The Cartan matrix of S0 (n, r) is constant on each D4 × Z2 -orbit. More
+precisely, for every pair (α, β) in the same D4 × Z2 -orbit, the entry dα,β takes the same
+value.
+  In (2.1), we introduced the bijections
+                                          ∼
+                                               G
+                           Λ• (n, r) −−→               Λ+ (ℓ, r),     λ 7→ λ+ ,
+                                              0≤ℓ≤n
+                                                   ∼
+                             G
+                                     Λ (ℓ, r) −−→ Λ• (n, r),
+                                      +
+                                                                      α 7→ α• .
+                           0≤ℓ≤n
+
+Via these bijections, we regard Λ• (n, r) as a subset of Λ+ (ℓ, r).
+Theorem 5.5. For 0 ≤ n ≤ r, the Cartan matrix
+                                          C = (cλ,µ )λ,µ∈Λ• (n,r)
+of S0 (n, r) is obtained from the Cartan matrix
+                                          D = (dα,β )α,β∈Λ+ (r)
+of Hr (0) by restricting the index set from Λ+ (r) to Λ• (n, r). In particular, the two matrices
+coincide when n = r.
+Proof. Let
+                         0 = M0 ⊂ M1 ⊂ M2 ⊂ · · · ⊂ Ms = Rµ+
+be a composition series of Rµ+ . Since the functor Gn,r : H0 (r)-mod → S0 (n, r)-mod is
+exact, it follows from Theorem 4.13 that
+              0 = Gn,r (M0 ) ⊂ Gn,r (M1 ) ⊂ Gn,r (M2 ) ⊂ · · · ⊂ Gn,r (Ms ) = Pµ
+is a composition series of Pµ . Furthermore,
+                                                           ®
+                                                               Sτ •   if ℓ(τ ) ≤ n
+                        Gn,r (Mi )/Gn,r (Mi−1 ) ∼
+                                                =
+                                                               0      if ℓ(τ ) > n.
+This tells us that cλ,µ = dλ+ ,µ+ completing the proof.                                       □
+  Note that Λ• (n, r)2 is not closed under the map c, in general. So we only consider the
+group < ex, η >, which is a quotient group of D4 . Thus D4 acts on Λ• (n, r)2 .
+Example 5.6. Consider the case where r = 3. Then < ex, c, η >-orbit of ((21), 3) in
+Λ+ (3)2 is
+                             η                 η                 η
+                   ((21), 3) → (3, (21)) → ((12), 3) → (3, (12))
+                        ↓c
+                                 η                     η                 η
+                   ((12), 111) → (111, (12)) → ((21), 111) → (111, (21)).
+38                                    W.-S. JUNG AND Y.-T. OH
+
+On the other hand, < ex, η >-orbit of ((21), 3) in Λ• (2, 3)2 is
+                                  η               η                    η
+                     ((21), (3)) → ((3), (21)) → ((12), (3)) → ((3), (12)).
+
+                                      6. Further avenues
+     (1) We have an S0 (n, r)-module isomorphism
+                                S0 (n, r) ∼
+                                            M
+                                          =      Pλdim Sλ ,
+                                                λ∈Λ• (n,r)
+
+         and hence
+                                 rad(S0 (n, r)) ∼
+                                                        M
+                                                =                  Nλdim Sλ
+                                                      λ∈Λ• (n,r)
+
+         (see Corollary 3.12). However, despite this structural decomposition, an explicit
+         description of rad(S0 (n, r)) as a subspace of S0 (n, r) is not available. As in the
+         case of Nλ , it would be nice to have a combinatorial basis for rad(S0 (n, r)).
+     (2) If ℓ(α) > n, then Gn,r (Rα ) and Nα are no longer projective. It would be nice to
+         describe their projective covers and injective hulls. In particular, by Corollary 4.19,
+         the socle of Gn,r (Rα ) is mapped to that of Nα under the functor Ψn,r .
+     (3) The symmetries of the Cartan matrix of H0 (r) in Lemma 5.2 (1) arise from ap-
+         plying (anti-)involution twists. Hence, it is natural to expect that an analogous
+         phenomenon may occur for the Cartan matrix of S0 (n, r).
+Funding statement. The first author was supported by Basic Science Research Program
+through the National Research Foundation of Korea(NRF) funded by the Ministry of
+Education(No. 2024-00451844). The second author was supported by NRF grant funded
+by the Korea government(MSIT) (No. RS-2024-00342349).
+
+                                           References
+ [1] M. Auslander, I. Reiten, and S. Smalø. Representation theory of Artin algebras, volume 36 of Cam-
+     bridge Studies in Advanced Mathematics. Cambridge University Press, Cambridge, 1995.
+ [2] A. A. Beilinson, G. Lusztig, and R. MacPherson. A geometric setting for the quantum deformation
+     of GLn . Duke Math. J., 61(2):655–677, 1990.
+ [3] D. J. Benson. Representations and cohomology. I, volume 30 of Cambridge Studies in Advanced
+     Mathematics. Cambridge University Press, Cambridge, 1991. Basic representation theory of finite
+     groups and associative algebras.
+ [4] A. Björner and M. L. Wachs. Generalized quotients in Coxeter groups. Trans. Amer. Math. Soc.,
+     308(1):1–37, 1988.
+ [5] B. Deng and G. Yang. On 0-Schur algebras. J. Pure Appl. Algebra, 216(6):1253–1267, 2012.
+ [6] R. Dipper and S. Donkin. Quantum GLn . Proc. London Math. Soc. (3), 63(1):165–211, 1991.
+ [7] R. Dipper and G. James. The q-Schur algebra. Proc. London Math. Soc. (3), 59(1):23–50, 1989.
+ [8] S. Donkin. The q-Schur algebra, volume 253 of London Mathematical Society Lecture Note Series.
+     Cambridge University Press, Cambridge, 1998.
+       REPRESENTATION THEORY OF 0-SCHUR ALGEBRAS AND RELATED CATEGORIES                              39
+
+ [9] J. Du. A note on quantized Weyl reciprocity at roots of unity. Algebra Colloq., 2(4):363–372, 1995.
+[10] M. Fayers. 0-Hecke algebras of finite Coxeter groups. J. Pure Appl. Algebra, 199(1-3):27–41, 2005.
+[11] F. Hivert. Hecke algebras, difference operators, and quasi-symmetric functions. Adv. Math.,
+     155(2):181–238, 2000.
+[12] B. T. Jensen and X. Su. A geometric realisation of 0-Schur and 0-Hecke algebras. J. Pure Appl.
+     Algebra, 219(2):277–307, 2015.
+[13] B. T. Jensen, X. Su, and G. Yang. Projective modules of 0-Schur algebras. J. Algebra, 454:181–205,
+     2016.
+[14] B. T. Jensen, X. Su, and G. Yang. Degenerate 0-Schur algebras and nil-Temperley-Lieb algebras.
+     Algebr. Represent. Theory, 23(3):1177–1196, 2020.
+[15] W.-S. Jung, Y.-H. Kim, S.-Y. Lee, and Y.-T. Oh. Weak Bruhat interval modules of the 0-Hecke
+     algebra. Math. Z., 301(4):3755–3786, 2022.
+[16] D. Krob and J.-Y. Thibon. Noncommutative symmetric functions. IV. Quantum linear groups and
+     Hecke algebras at q = 0. J. Algebraic Combin., 6(4):339–376, 1997.
+[17] D. Krob and J.-Y. Thibon. Noncommutative symmetric functions. V. A degenerate version of
+     Uq (glN ). Internat. J. Algebra Comput., 9(3-4):405–430, 1999.
+[18] T. Leinster. The bijection between projective indecomposable and simple modules. Bull. Belg. Math.
+     Soc. Simon Stevin, 22(5):725–735, 2015.
+[19] P. N. Norton. 0-Hecke algebras. J. Austral. Math. Soc. Ser. A, 27(3):337–357, 1979.
+[20] M. Takeuchi. A two-parameter quantization of GL(n) (summary). Proc. Japan Acad. Ser. A Math.
+     Sci., 66(5):112–114, 1990.
+
+  Department of Mathematics, University of Seoul, Seoul 02504, Republic of Korea
+  Email address: jungws@uos.ac.kr
+
+  Department of Mathematics/Institute for Mathematical and Data Sciences, Sogang
+University, Seoul 04107, Republic of Korea
+  Email address: ytoh@sogang.ac.kr
+

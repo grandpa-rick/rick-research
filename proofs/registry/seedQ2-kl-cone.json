@@ -367,10 +367,21 @@
    {
     "id": "Q68-H3-5_2-nontwin",
     "role": "attempt",
-    "approach": "Open: H3 type 5_2 cells fail test (B) without any dominated twin - a second obstruction mechanism, unknown.",
-    "trust": "hunch",
-    "file": "proofs/wake279/out_H3_C.txt",
-    "children": []
+    "approach": "Wake 286: H3 5_2 cells fail KL-cone maximality via a COUPLED rational twin pair: basis T={c0,c1,c2,c3-c1,c4-c0} has T^{-1}(1+s)T>=0 for all s (simplicial invariant pointed cone strictly containing C_KL); neither substitution alone works ((1+s3)(c4-c0) leaks c3-c1 and vice versa), so wake279 'no twin' meant only 'no single twin pair'. Unique maximal invariant cone C_max=cone(c0,c1,c2,c3-phi c1,c4-phi c0-phi^{-1} c2) (irrational twin system over Q(sqrt5)); maximality via dual Perron-eigenvector argument: dual K_0 simplicial, rays = Perron vectors of words s1s3s2,s1s3,s1s2,s2s1,s2s1s2s3 in B_s=(1+s)^T (eigenvalues 2,4,phi^2,phi^2,phi^2, simple, strictly dominant, exact), so every invariant pointed cone containing C_KL lies in K_0^*=C_max. All five 5_2 cells identical (integer matrices, path W-graph mu=1).",
+    "trust": "computed",
+    "file": "proofs/wake286/h3cone/RESULTS.md",
+    "children": [
+     {
+      "id": "Q68-H3-5_1-nonpolyhedral",
+      "role": "attempt",
+      "approach": "H3 5_1 cells (= 5_2 (x) sign): unique maximal invariant cone K_0^* exists by the same Perron forcing, but appears NON-POLYHEDRAL: extreme-ray count 13,20,27,32 at word length L=4,6,8,10, still growing, ray ratios -> phi.",
+      "trust": "hunch",
+      "file": "proofs/wake286/h3cone/RESULTS.md",
+      "notes": "Numerical only (wake286/h3cone/k0_51.py). Wake 286 sub-agent.",
+      "children": []
+     }
+    ],
+    "notes": "Sub-agent compute, Wake 286 (2026-11-09), exact sympy: scripts wake286/h3cone/tsys.py (coupled pair, unique minimal 0/1 unipotent T), exact_max52.py + nice.py (C_max), dualK0.py + words52.py (Perron forcing), verify_phi.py (family c4-t c2 invariant pointed iff t<=1/phi). Perron forcing is a proof modulo the code; not yet re-derived sober. 5_1 = 5_2 (x) sign (complementary descent sets), NOT a Galois conjugate - both rational. 5_1 fails via Thm B single twin c2->c2-c0 (pair (0,2), exact). Root Q68 stays closed."
    },
    {
     "id": "Q68-b-thmB",
