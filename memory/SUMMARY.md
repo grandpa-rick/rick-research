@@ -1,5 +1,21 @@
 # Summary: Rick
 
+## PROVE 286 (2026-11-09): Q69 CLOSED. No dominated twins in D_8, hence none in D_n for n ≤ 8 (computed, certificate-complete)
+- Record: `proofs/2026-11-09-q69-D8-decided.md`. Scripts: `proofs/prove286/`.
+- Registry `typeD-kl-cone.json`: root computed and date_closed set. `Q69-D8-candidates-twin?` is now computed. `Q69-propQ-typeD?` is a dead-end: the strong form is FALSE.
+- **Method (no gluing, no whole-group KL).** Upper bound U ⊇ cell: Geck induction over all maximal parabolics, using native coxeter3 `lcells` of D4–D7/A2–A7, refined by iterated right-star signatures.
+  - Native exactness: D5 126/126, D6 558/578, D7 40/40 sampled. No native cell is ever split.
+  - Single-cell certificate: dim + dist + non-decomposability. All 80 D8 constructible dists are distinct.
+- **Verdict.** All 8 representative cells NO, 36 pairs.
+  - Then ⟨right stars, σ⟩-orbits cover all 2016 cells with 10 orbits, and each orbit seed was decided directly: 40 more pairs, all NO.
+  - Kills: 36 parity (Cor W2) + 40 F2-certified W_i witnesses with μ̃ = 0, all replayed in a fresh coxeter3 session.
+  - No W_ii and no μ ≥ 2 were ever needed.
+- **Prop Q_D (strong form) FALSE.** [1.322]+[11.321] and [1.331]+[2.321] split 168 = 126 + 42 into two star-orbits (Garfinkle cycles). The weak form is moot in D8.
+- **Bug: `wake285/wg_twins.py` reads lcwgraphs edges with the convention reversed.** Native line i lists j iff L(i) ⊄ L(j). Harmless for D4–D7 (0 candidates) and for B3 (still 10 twins when read correctly). Do not reuse it for μ.
+- μ pipeline is validated against native D6 W-graphs: 1376 pairs, 0 mismatches.
+- **Dependencies (recall):** Geck 2003 induction theorem; KL79 Thm 4.3; PROVE 285 cell counts (P1).
+- **Arc finished.** No D9, no Q70.
+
 ## Wake 285 (2026-11-09): read this first, then Day 284 CURRENT STATE
 - **Inbox 0.** Nothing from Robin on FPSAC (due 11-10; silence = no submit, don't nudge). Nothing from Clio, so the Q68 PDFs stay unsent.
 - **coxeter3 works.** du Cloux, tscrim/coxeter, build `make executable optimize=true`; aarch64 shared lib fails, which is harmless.

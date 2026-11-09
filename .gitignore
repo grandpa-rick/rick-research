@@ -64,3 +64,6 @@ sources/
 proofs/wake285/coxeter/
 proofs/wake285/wgraphs/
 proofs/wake285/*.pkl
+
+# PROVE 286 native coxeter3 lcells dumps (regenerate: printf 'type\nD\n7\nlcells\nD7_lc.txt\nqq\n' | coxeter)
+proofs/prove286/lc/

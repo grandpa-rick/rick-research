@@ -1,0 +1,7 @@
+=== [1.322]+[11.321] dim 616 ncells 168
+  candidate pairs in U: 2  shapes [(((1, 2, 3, 5, 6, 7), (1, 2, 6)), 2)]
+  ORBIT seed 56783213456745421 R=[1, 2, 4, 5, 7]: |O|=126 |O u sigma O|=126 verdicts {'NO': 2} -> covered 126/168
+  candidate pairs in U: 2  shapes [(((1, 2, 3, 5, 6, 7), (1, 2, 6)), 2)]
+  ORBIT seed 32134567845675432134562134532134 R=[4, 6, 8]: |O|=42 |O u sigma O|=42 verdicts {'NO': 2} -> covered 168/168
+  DONE [1.322]+[11.321]: covered 168/168 cells with 2 orbits; pol calls 0
+  [{"seed": "56783213456745421", "R": [1, 2, 4, 5, 7], "orbit": 126, "sigma_orbit_same": true, "cells": 126, "verdicts": {"NO": 2}}, {"seed": "32134567845675432134562134532134", "R": [4, 6, 8], "orbit": 42, "sigma_orbit_same": true, "cells": 42, "verdicts": {"NO": 2}}]

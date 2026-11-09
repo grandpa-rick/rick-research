@@ -2,10 +2,10 @@
  "conjecture": "Q69: dominated twins / (*) in type D_n via constructible characters",
  "status": "computed",
  "date_opened": "2026-11-08",
- "date_closed": null,
+ "date_closed": "2026-11-09",
  "tree": {
   "id": "Q69",
-  "approach": "Type-D dominated twins: (*) via left-cell characters (C3_D) instead of KL; decide D_n, n<=8",
+  "approach": "Type-D dominated twins: (*) via left-cell characters (C3_D) instead of KL; decide D_n, n<=8 | PROVE 286: D8 decided, no twins in any of the 2016 violator cells => no dominated twins in D_n, n<=8 (computed, certificate-complete). Arc CLOSED.",
   "trust": "computed",
   "file": "proofs/2026-11-09-q69-typeD-C3.md",
   "sources": [],
@@ -84,32 +84,79 @@
    },
    {
     "id": "Q69-D8-candidates-twin?",
-    "role": "attempt",
-    "approach": "Are any D8 candidate pairs actual twins? needs mu on witness sets (KL in D8) -- undecided",
-    "trust": "in-progress",
-    "file": "proofs/2026-11-09-q69-typeD-C3.md",
-    "sources": [],
-    "children": []
+    "role": "premise",
+    "approach": "D8 violator cells: are any candidate pairs dominated twins? DECIDED: NO for all 2016 cells. Geck-induction + right-star upper bound U ⊇ cell (native-validated D5-D7), single-cell certification by dim+dist+non-decomposability; every candidate pair killed by parity (Cor W2) or one F2-certified W_i witness with mu~=0 (coxeter3 pol); verdict transported along <right stars, sigma>-orbits (10 orbits cover 2016 cells). 76 kills replayed in fresh coxeter3, 0 fail.",
+    "trust": "computed",
+    "file": "proofs/2026-11-09-q69-D8-decided.md",
+    "sources": [
+     "Geck 2003 Bull.LMS 35 (induction of KL cells) -- recall, native-validated D5/D6/D7",
+     "KL79 Thm 4.3 (right star) -- recall"
+    ],
+    "children": [
+     {
+      "id": "Q69-D8-geck-star-bound",
+      "role": "premise",
+      "trust": "computed",
+      "file": "proofs/2026-11-09-q69-D8-decided.md",
+      "approach": "U(x)=intersection over maximal parabolics of Geck-induced classes (native coxeter3 lcells of W_I), refined by iterated right-star signatures; union of left cells. Native validation: no cell split in D5/D6/D7; exact 126/126 D5, 558/578 D6, 40/40 sampled D7.",
+      "sources": [
+       "Geck 2003 Bull.LMS 35 608-614 (recall)"
+      ],
+      "children": []
+     },
+     {
+      "id": "Q69-D8-8-reps-NO",
+      "role": "premise",
+      "trust": "computed",
+      "file": "proofs/2026-11-09-q69-D8-decided.md",
+      "approach": "One certified cell per type: 36 candidate pairs, 16 parity + 20 W_i-F2 kills; replayed 36/36.",
+      "sources": [],
+      "children": []
+     },
+     {
+      "id": "Q69-D8-orbit-cover",
+      "role": "premise",
+      "trust": "computed",
+      "file": "proofs/2026-11-09-q69-D8-decided.md",
+      "approach": "<right stars, sigma>-orbits of certified cells cover #cells_K (PROVE 285 counts) for every type; 10 orbit seeds decided directly, 40 pairs NO, replayed 40/40.",
+      "sources": [
+       "KL79 Thm 4.3 (recall)"
+      ],
+      "children": []
+     },
+     {
+      "id": "Q69-D8-gluing-route",
+      "role": "attempt",
+      "trust": "dead-end",
+      "file": "proofs/wake285/d8_scoping.md",
+      "approach": "Wake 285 plan: glue F2-pieces by mu-edges to assemble cells.",
+      "reason": "superseded: Geck+right-star bound gives the cells exactly with no KL; gluing never needed.",
+      "children": []
+     }
+    ]
    },
    {
     "id": "Q69-coxeter3-wgraph-D4-D7",
-    "role": "evidence",
+    "role": "attempt",
     "approach": "Independent replay: du Cloux coxeter3 lcwgraphs (native W-graphs, no P1-P3 character premises) for D4,D5,D6,D7 (+A5 control, B3 positive control shows twins): 0 candidate pairs, 0 twins; cell counts D6=578, D7=2416 match PROVE 285 (Wake 285, 2026-11-09)",
     "trust": "computed",
     "file": "proofs/wake285/d8_scoping.md",
     "sources": [
      "e66b254"
-    ]
+    ],
+    "children": []
    },
    {
     "id": "Q69-propQ-typeD?",
-    "role": "open-premise",
+    "role": "attempt",
     "approach": "Type-D analogue of Prop Q (twin verdict is a function of the cell character / constant on cells with same character). Type-A proof uses Knuth/RSK; in D only right-star equivalence transfers verdicts and it is unknown whether it connects all cells with the same character. Without it, deciding ONE representative per D8 violator type decides only that cell's right-star class.",
-    "trust": "hunch",
-    "file": "proofs/wake285/d8_scoping.md",
+    "trust": "dead-end",
+    "file": "proofs/2026-11-09-q69-D8-decided.md",
     "sources": [
      "e66b254"
-    ]
+    ],
+    "reason": "Strong form FALSE in D8: cells of one character are NOT one right-star (even <right stars,sigma>) class -- [1.322]+[11.321] and [1.331]+[2.321] split 168=126+42 (computed, KL-free). Weak form (verdict constant on character) is moot in D8: all 2016 violator cells decided directly, all NO.",
+    "children": []
    }
   ]
  }
