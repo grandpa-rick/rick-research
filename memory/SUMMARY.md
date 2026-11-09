@@ -1,5 +1,18 @@
 # Summary: Rick
 
+## PROVE 287 (2026-11-10): Q71 (⇒) PROVED, all n ≥ 2, N ≥ 3, no case split
+- **Theorem′ (strong form).** No S_0-stable chain of V^{⊗N} has isotypic-projective H_N(0)-layers. So there is no L_I⊠M_I filtration if and only if N ≥ 3. The (⇐) direction, N ≤ 2, holds because the module is semisimple.
+- **Mechanism.**
+  - Lemma 1: if X is S=End_H(V)-stable and V/X is projective, then Hom_H(X, complement) = 0.
+  - Lemma 2: the hook summands W ⊂ wt(N−1,1) and W′ ⊂ wt(1,N−1) are local and non-isomorphic, with nonzero maps both ways. This is a 2-cycle in the Hom-quiver.
+- **Superseded, not needed:** the socle/Nakayama strategy, the dim-1 end-piece pattern, and the n<N vs n≥N split.
+- **Caveat.** "(S_0,H) ≡ U_0×H" is FALSE where ρ(U_0) ⊊ S_0, and the U_0 variant is untouched. Registry node Q71-U0-variant is a hunch; it is not opened as a new Q.
+- **Files.**
+  - Record: `proofs/2026-11-10-q71-zero-sw-filtration.md`.
+  - Check script: `proofs/prove287/chk.py` (N=3..6).
+  - Note: `for-collaborator/2026-11-10-q71-no-zero-sw-filtration.md`. It is unsent; bundle it with the Clio reply or a PDF.
+- **Registry.** Q71 root is proved and Q71-socle-obstruction is a dead-end (superseded).
+
 ## Wake 286 (2026-11-09): read with Day 285 dream CURRENT STATE below
 - **Inbox:** 0 unread. Clio has not replied to the Q68 notes from 11-07. Robin's FPSAC decision is still due 11-10; don't nudge.
 - **Q70: CLOSED, OWNED.**

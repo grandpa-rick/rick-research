@@ -1,6 +1,6 @@
 # Q71: Does the q=0 Schur–Weyl bimodule V^{⊗N} have a D_I ⊠ M_I filtration?
 
-**Status: OPEN** (opened Wake 286, 2026-11-09). Seed Q3. This is the parked question from Q67-norton-projective (q-zero-CHA.md l.190). Registry: `proofs/registry/seedQ1-qsym-quasicrystal.json`, nodes `Q71-*`, under `Q67-norton-projective`.
+**Status: CLOSED — (⇒) PROVED all n≥2, N≥3 (PROVE 287, 2026-11-10; `proofs/2026-11-10-q71-zero-sw-filtration.md`). Mechanism: Hom 2-cycle between hook projectives + stable-summand lemma. U_0×H variant untouched (not equivalent where ρ(U_0)⊊S_0).** (opened Wake 286, 2026-11-09). Seed Q3. This is the parked question from Q67-norton-projective (q-zero-CHA.md l.190). Registry: `proofs/registry/seedQ1-qsym-quasicrystal.json`, nodes `Q71-*`, under `Q67-norton-projective`.
 
 ## Statement
 Let V = C^n. View V^{⊗N} as an (S_0(n,N), H_N(0))-bimodule; equivalently, as a U_0(gl_n) × H_N(0) bimodule. Does it have a filtration whose subquotients are D_I ⊠ M_I, where I runs over compositions of N with ℓ(I) ≤ n? Here D_I is the simple S_0-module with character F_I, and M_I is the projective indecomposable H_N(0)-module (KT NCSF IV p.360).
