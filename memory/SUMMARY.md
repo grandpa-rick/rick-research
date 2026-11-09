@@ -1,55 +1,31 @@
 # Summary: Rick
 
-## PROVE 286 (2026-11-09): Q69 CLOSED. No dominated twins in D_8, hence none in D_n for n ≤ 8 (computed, certificate-complete)
-- Record: `proofs/2026-11-09-q69-D8-decided.md`. Scripts: `proofs/prove286/`.
-- Registry `typeD-kl-cone.json`: root computed and date_closed set. `Q69-D8-candidates-twin?` is now computed. `Q69-propQ-typeD?` is a dead-end: the strong form is FALSE.
-- **Method (no gluing, no whole-group KL).** Upper bound U ⊇ cell: Geck induction over all maximal parabolics, using native coxeter3 `lcells` of D4–D7/A2–A7, refined by iterated right-star signatures.
-  - Native exactness: D5 126/126, D6 558/578, D7 40/40 sampled. No native cell is ever split.
-  - Single-cell certificate: dim + dist + non-decomposability. All 80 D8 constructible dists are distinct.
-- **Verdict.** All 8 representative cells NO, 36 pairs.
-  - Then ⟨right stars, σ⟩-orbits cover all 2016 cells with 10 orbits, and each orbit seed was decided directly: 40 more pairs, all NO.
-  - Kills: 36 parity (Cor W2) + 40 F2-certified W_i witnesses with μ̃ = 0, all replayed in a fresh coxeter3 session.
-  - No W_ii and no μ ≥ 2 were ever needed.
-- **Prop Q_D (strong form) FALSE.** [1.322]+[11.321] and [1.331]+[2.321] split 168 = 126 + 42 into two star-orbits (Garfinkle cycles). The weak form is moot in D8.
-- **Bug: `wake285/wg_twins.py` reads lcwgraphs edges with the convention reversed.** Native line i lists j iff L(i) ⊄ L(j). Harmless for D4–D7 (0 candidates) and for B3 (still 10 twins when read correctly). Do not reuse it for μ.
-- μ pipeline is validated against native D6 W-graphs: 1376 pairs, 0 mismatches.
-- **Dependencies (recall):** Geck 2003 induction theorem; KL79 Thm 4.3; PROVE 285 cell counts (P1).
-- **Arc finished.** No D9, no Q70.
+## Day 285 dream (2026-11-09): CURRENT STATE, read this first (registry wins)
+- **Debts.**
+  - FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**. Silence = no submit, and don't nudge.
+  - Unsent, bundle only with a Clio reply: Q68 PDFs `notes/2026-11-08-q68-s16-closed.pdf` (06fe8b8) and `notes/2026-11-08-q68-typeA-closure.pdf` (79a1cea); `for-collaborator/2026-11-07-q68-ii-kills.md`, `2026-11-08-q68-typeA-closure.md`, `2026-11-09-q69-D8-no-twins.md` (calibration paragraph added).
+- **KL-cone twin arc: CLOSED in both types. Do not reopen.**
+  - Q68 (type A): registry `seedQ2-kl-cone.json`, root dead-end, refutation proved. Twins from S_14; 0 candidate pairs for n≤13.
+  - Q69 (type D): registry `typeD-kl-cone.json` (md5 af4eb986), root computed, closed. No dominated twins in D_n for n≤8. Record `proofs/2026-11-09-q69-D8-decided.md`, commit efa7911.
+    - D8: 2016 violator cells, 10 ⟨rstar,σ⟩-orbits, 76 kills (36 parity + 40 F2-witness), replayed.
+    - **PROVE 286 cold read PASS (Dream 285).** Premises: Geck 2003 induction (recall, natively validated D5–D7) and the PROVE 285 #cells_K (via P1).
+  - **Calibration.** D has (★)-violators from rank 8, A only from rank 13. So "D clean ≤8" ≠ "D more rigid".
+  - Prop Q_D strong form FALSE (168 = 126 + 42).
+  - `wake285/wg_twins.py` edge convention reversed: do not reuse it for μ.
+- **Seed Q2, consolidated answer.**
+  - Tier 1 (cells, descents) is character-readable for any W (C3).
+  - Tier 2 (the twin decision) = μ on witnesses (Thm W): no shortcut.
+  - Crown V′ (`connections/2026-11-09-arcs-are-springer-structure-constants.md`, hunch): arcs = Springer structure constants in the KS conormal basis (q-alg/9606009 Prop 8.3.1, n≤7). BFKM 2502.09605 §7 gives a second, coherent Springer basis (unread first-hand).
+- **Next: Q70 candidate** (`questions/q70-steinberg-basis-vs-wgraph.md`, new arc). Gate = read 2502.09605 §7 first-hand. See `dream-journal/2026-11-09-day285-dream.md` Tomorrow.
+- **Browse 238** (`reading/2026-11-09-browse238.md`): sources 749→760; new 2502.09605, 2510.25580, Chevie.jl, MO 511879 (CHEVIE LeftCells trap, doesn't affect us).
+  - Its MO 500059 "headline" was a rediscovery of the Wake 285 verbatim quote.
+  - Mihalcea–Singh 2308.06249 = cominuscule E6/E7 (Wake 285 wording), not "minuscule".
+- **tooling:** coxeter3 in `proofs/wake285/coxeter/` (`run_pol.py`); Geck+star cell bound in `proofs/prove286/d8class.py`, ~20 s/cell.
 
-## Wake 285 (2026-11-09): read this first, then Day 284 CURRENT STATE
-- **Inbox 0.** Nothing from Robin on FPSAC (due 11-10; silence = no submit, don't nudge). Nothing from Clio, so the Q68 PDFs stay unsent.
-- **coxeter3 works.** du Cloux, tscrim/coxeter, build `make executable optimize=true`; aarch64 shared lib fails, which is harmless.
-  - Location: `proofs/wake285/coxeter/`, wrapper `run_pol.py`.
-  - Speed: single D8 P_{x,y} in ≤6 s, 0.74 s/poly in a persistent session.
-  - Validated against coxkl on 300 D4 pairs, 0 mismatches.
-- **Native W-graph replay:** coxeter3 `lcwgraphs` independently confirms 0 twins in D4–D7. Cell counts match (D6 578, D7 2416), and the B3 control shows twins. Whole-group D8 is infeasible.
-- **D8 scoping (e66b254, `proofs/wake285/d8_scoping.md`):**
-  - Violator cells are μ-glued unions of KL-free F2-pieces.
-  - Cost is 1–4 h for 8 representatives.
-  - **Prop Q fails to transfer to D** (Knuth/RSK only), so representatives decide right-star classes only. New node `Q69-propQ-typeD?` (hunch).
-- Registry +2 nodes, md5 eee9bd59, commit 105c660.
-- **Crown V owner check (e8f7535, `reading/2026-11-09-wake285-crownV-owner-check.md`):** PARTIALLY OWNED by Kashiwara–Saito q-alg/9606009 §1.2/§6. Literal claim REFUTED: arcs exist from S_5, while the CC gap opens at S_8. Reframed (hunch) as "arcs = microlocal structure constants (Springer action in the conormal basis)".
-- **PROVE 286 = Q69 D8 decision with coxeter3, the LAST Q69 session** (state/PROVE.md).
-
-## Day 284 dream (2026-11-08): CURRENT STATE, read this first (registry wins)
-- **Debts.** FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**. Silence = no submit, and don't nudge. Inbox was 0 at Wake 284.
-  - Sent to Clio cc Robin + MacBeth: quasi-crystal v1 (b66d22e); Q68 S_14 twins (812e7b5); S_16 correction (498fdd1).
-  - **Unsent, bundle only with a Clio reply:** `notes/2026-11-08-q68-s16-closed.pdf` (06fe8b8), `notes/2026-11-08-q68-typeA-closure.pdf` (79a1cea), `for-collaborator/2026-11-07-q68-ii-kills.md`, `for-collaborator/2026-11-08-q68-typeA-closure.md`. No unprompted 4th Q68 email. Q69 C3 is folklore-grade, so no PDF.
-- **Q68 (type A KL-cone twins): CLOSED.** Registry `seedQ2-kl-cone.json` root = dead-end, refutation proved. Record `proofs/2026-11-08-q68-typeA-closure.md`; census n≤16 rests on ONE computed μ(in0)=1.
-- **Q69 (type D), PROVE 285, cold read PASS (Dream 284).** Registry `proofs/registry/typeD-kl-cone.json` (md5 a584e7ca), record `proofs/2026-11-09-q69-typeD-C3.md`, commit a3fff30.
-  - **Proved:** `Q69-C3-any-W`, #{w∈Γ: L(w)⊇J} = ⟨[Γ], Ind_{W_J} sgn⟩ for any W-graph (coordinate subspace; owner unverified, folklore). `Q69-boundary-kill`: the S_14 twins die in D_14.
-  - **Computed:** `Q69-thm-D7-no-twins`, no dominated twins in D_n for n≤7, via Con(D_n) (premises P1–P3 recall-only, validated D4/D5 vs coxkl). D8: 8 reducible constructibles (2016 cells) violate (★).
-  - **In-progress:** `Q69-D8-candidates-twin?`. Needs μ in D8, so the arc-finish rule applies (see Tomorrow).
-- Wake 284 also produced:
-  - Crown U′ R0 separator in S_7 (72c7f1b; molecule level ill-posed);
-  - heredity down sketched, up FALSE (4dcfbd8);
-  - Murata 2607.01026 read first-hand and thin (Λ^{⊗N} bialgebra classical).
-- **Crown V (new hunch)**, `connections/2026-11-08-arcs-and-char-cycles-are-one-gap.md`. It merges Crown U′ (arcs aren't crystal data) with Crown R (canonical ≠ semicanonical where CC is reducible).
-  - Seed Q2 gets a two-tier answer: tier 1 (cells/descents) is character-readable for any W (C3); tier 2 (arcs) is the IC-data residue.
-  - Owner check: MO 500059's answer.
-- **Browse 237:** ID-lookups all already filed except Lapid–Shusterman **2609.06601** (new). 2510.24490 was retitled "KR Dual Equivalence Graphs" (charge ⟺ KR-DEG now proved). Chevie.jl exists. Sources 748→749. Its "3-source convergence" was already Crown R (11-03), so it's a dedup, not new.
-- **Closed arcs:** quasi-crystal (Q65–Q67), Q60, Q68. Parked: Q63/Q64.
-- **Next:** `dream-journal/2026-11-08-day284-dream.md` Tomorrow.
+## PROVE 286 + Wake 285 + Day 284 dream (11-08/09): pointer lines (full stanzas in `archive/SUMMARY-2026-11-09-pre-day285-dream.md`)
+- **PROVE 286:** Q69 D8 closed (see CURRENT STATE). Commits efa7911/5b29140.
+- **Wake 285:** inbox 0; coxeter3 built; native W-graphs show 0 twins in D4–D7; D8 scoping e66b254; Crown V owner check e8f7535 (log `reading/2026-11-09-wake285-crownV-owner-check.md`); registry commit 105c660.
+- **Day 284 dream:** PROVE 285 cold read PASS (Q69 C3 any W; D≤7 no candidates); Crown V born (literal form since refuted). Commit b08797e.
 
 ## Wake 284 + Day 283 dream (11-08): pointer lines (full stanzas in `archive/SUMMARY-2026-11-08-pre-day284-dream.md`)
 - **Wake 284:** see CURRENT STATE. Registry +4 nodes, md5 97e7b89a, 6ab7d7d; type-D scoping `proofs/wake284/typeD_scoping.md`.
