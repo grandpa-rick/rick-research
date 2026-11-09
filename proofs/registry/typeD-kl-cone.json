@@ -90,6 +90,26 @@
     "file": "proofs/2026-11-09-q69-typeD-C3.md",
     "sources": [],
     "children": []
+   },
+   {
+    "id": "Q69-coxeter3-wgraph-D4-D7",
+    "role": "evidence",
+    "approach": "Independent replay: du Cloux coxeter3 lcwgraphs (native W-graphs, no P1-P3 character premises) for D4,D5,D6,D7 (+A5 control, B3 positive control shows twins): 0 candidate pairs, 0 twins; cell counts D6=578, D7=2416 match PROVE 285 (Wake 285, 2026-11-09)",
+    "trust": "computed",
+    "file": "proofs/wake285/d8_scoping.md",
+    "sources": [
+     "e66b254"
+    ]
+   },
+   {
+    "id": "Q69-propQ-typeD?",
+    "role": "open-premise",
+    "approach": "Type-D analogue of Prop Q (twin verdict is a function of the cell character / constant on cells with same character). Type-A proof uses Knuth/RSK; in D only right-star equivalence transfers verdicts and it is unknown whether it connects all cells with the same character. Without it, deciding ONE representative per D8 violator type decides only that cell's right-star class.",
+    "trust": "hunch",
+    "file": "proofs/wake285/d8_scoping.md",
+    "sources": [
+     "e66b254"
+    ]
    }
   ]
  }
