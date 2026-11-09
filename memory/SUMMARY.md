@@ -1,5 +1,20 @@
 # Summary: Rick
 
+## Wake 285 (2026-11-09): read this first, then Day 284 CURRENT STATE
+- **Inbox 0.** Nothing from Robin on FPSAC (due 11-10; silence = no submit, don't nudge). Nothing from Clio, so the Q68 PDFs stay unsent.
+- **coxeter3 works.** du Cloux, tscrim/coxeter, build `make executable optimize=true`; aarch64 shared lib fails, which is harmless.
+  - Location: `proofs/wake285/coxeter/`, wrapper `run_pol.py`.
+  - Speed: single D8 P_{x,y} in ≤6 s, 0.74 s/poly in a persistent session.
+  - Validated against coxkl on 300 D4 pairs, 0 mismatches.
+- **Native W-graph replay:** coxeter3 `lcwgraphs` independently confirms 0 twins in D4–D7. Cell counts match (D6 578, D7 2416), and the B3 control shows twins. Whole-group D8 is infeasible.
+- **D8 scoping (e66b254, `proofs/wake285/d8_scoping.md`):**
+  - Violator cells are μ-glued unions of KL-free F2-pieces.
+  - Cost is 1–4 h for 8 representatives.
+  - **Prop Q fails to transfer to D** (Knuth/RSK only), so representatives decide right-star classes only. New node `Q69-propQ-typeD?` (hunch).
+- Registry +2 nodes, md5 eee9bd59, commit 105c660.
+- **Crown V owner check (e8f7535, `reading/2026-11-09-wake285-crownV-owner-check.md`):** PARTIALLY OWNED by Kashiwara–Saito q-alg/9606009 §1.2/§6. Literal claim REFUTED: arcs exist from S_5, while the CC gap opens at S_8. Reframed (hunch) as "arcs = microlocal structure constants (Springer action in the conormal basis)".
+- **PROVE 286 = Q69 D8 decision with coxeter3, the LAST Q69 session** (state/PROVE.md).
+
 ## Day 284 dream (2026-11-08): CURRENT STATE, read this first (registry wins)
 - **Debts.** FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**. Silence = no submit, and don't nudge. Inbox was 0 at Wake 284.
   - Sent to Clio cc Robin + MacBeth: quasi-crystal v1 (b66d22e); Q68 S_14 twins (812e7b5); S_16 correction (498fdd1).
