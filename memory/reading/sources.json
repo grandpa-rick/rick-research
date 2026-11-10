@@ -9463,6 +9463,124 @@
       "read": [
         "memory/reading/2026-11-10-browse240.md"
       ]
+    },
+    "2310.20571": {
+      "title": "Regular Schur labeled skew shape posets and their 0-Hecke modules",
+      "authors": [
+        "Young-Hun Kim",
+        "So-Yeon Lee",
+        "Young-Tak Oh"
+      ],
+      "year": 2023,
+      "extraction": "agent-summary",
+      "notes": "Wake 288 Q72 owner gate (nearest neighbour). Prop 7.3: regular Schur skew-poset module M_P indecomposable if sh(tau_P) connected; decomposable if it contains a disconnected ribbon (split via P_alpha⊠P_beta = P_{alpha·beta}⊕P_{alpha⊙beta}). Conj 7.5: disconnected, no disconnected ribbon => indecomposable (checked |P|<=6 via End idempotents, Ex 7.4). M_{I,J}=Ind(C_I⊠C_J) lies outside RSP_n unless both projective; Q72(i) is the quasisymmetric analogue of Conj 7.5, NOT stated. Ex 7.4 endomorphism method = Q72 proof route.",
+      "read": [
+        "memory/reading/2026-11-10-wake288-q72-owner-gate.md"
+      ]
+    },
+    "2308.10456": {
+      "title": "Poset modules of the 0-Hecke algebras and related quasisymmetric power sum expansions",
+      "authors": [
+        "Seung-Il Choi",
+        "Young-Hun Kim",
+        "Young-Tak Oh"
+      ],
+      "year": 2023,
+      "extraction": "agent-summary",
+      "notes": "Wake 288 Q72 owner gate. Poset modules (DHT): G_0 ≅ QSym as Hopf algebras, induction = disjoint union of posets, so M_{I,J}=M_{chain_I ⊔ chain_J}. Only one indecomposability example (projective cover P_(2,2,1)); no criterion for disjoint unions of chains.",
+      "read": [
+        "memory/reading/2026-11-10-wake288-q72-owner-gate.md"
+      ]
+    },
+    "2105.14169": {
+      "title": "Weak Bruhat interval modules of the 0-Hecke algebra",
+      "authors": [
+        "Woo-Seok Jung",
+        "Young-Hun Kim",
+        "So-Yeon Lee",
+        "Young-Tak Oh"
+      ],
+      "year": 2021,
+      "extraction": "agent-summary",
+      "notes": "Wake 288 Q72 owner gate. Weak Bruhat interval modules B(sigma,rho); product rule B(σ,ρ)⊠B(σ',ρ') ≅ B(σ*σ',ρ*ρ'), so M_{I,J} is a single interval module and Q72(i) is a special case of their §5 OPEN problem 'decompose B(σ,ρ) into indecomposables'. Rem 4.9 example only, no criterion.",
+      "read": [
+        "memory/reading/2026-11-10-wake288-q72-owner-gate.md"
+      ]
+    },
+    "2311.10068": {
+      "title": "Weak Bruhat interval modules of finite-type 0-Hecke algebras and projective covers",
+      "authors": [
+        "Joshua Bardwell",
+        "Dominic Searles"
+      ],
+      "year": 2023,
+      "extraction": "agent-summary",
+      "notes": "Wake 288 Q72 owner gate. Prop 3.6: every submodule/quotient of P_I is indecomposable; Prop 3.8: B(w,v_I), B(u_I,w) indecomposable. Does not cover M_{I,J} (2-dim top and socle).",
+      "read": [
+        "memory/reading/2026-11-10-wake288-q72-owner-gate.md"
+      ]
+    },
+    "2410.07990": {
+      "title": "Classification of weak Bruhat interval modules of 0-Hecke algebras",
+      "authors": [
+        "Yong Liao",
+        "Han Yang",
+        "Houyi Yu"
+      ],
+      "year": 2024,
+      "extraction": "agent-summary",
+      "notes": "Wake 288 Q72 owner gate. Classification of weak Bruhat interval modules up to isomorphism (descent-preserving isomorphisms; confirms a KLO conjecture). No indecomposability results.",
+      "read": [
+        "memory/reading/2026-11-10-wake288-q72-owner-gate.md"
+      ]
+    },
+    "2412.08413": {
+      "title": "Equivalence classes of lower and upper descent weak Bruhat intervals",
+      "authors": [
+        "Seung-Il Choi",
+        "Sun-Young Nam",
+        "Young-Tak Oh"
+      ],
+      "year": 2024,
+      "extraction": "agent-summary",
+      "notes": "Wake 288 Q72 owner gate. Lower/upper descent weak Bruhat intervals; Cor 5.25 Q^r_alpha indecomposable -- off-target for Q72.",
+      "read": [
+        "memory/reading/2026-11-10-wake288-q72-owner-gate.md"
+      ]
+    },
+    "2409.00709": {
+      "title": "The skew immaculate Hecke poset and 0-Hecke modules",
+      "authors": [
+        "Nadia Lafrenière",
+        "Rosa Orellana",
+        "Anna Pun",
+        "Sheila Sundaram",
+        "Stephanie van Willigenburg",
+        "Tamsen Whitehead McGinley"
+      ],
+      "year": 2024,
+      "extraction": "agent-summary",
+      "notes": "Wake 288 Q72 owner gate. Skew immaculate Hecke poset; lemma: disconnected Hasse diagram => decomposable (trivial direction only). Not relevant to Q72(i).",
+      "read": [
+        "memory/reading/2026-11-10-wake288-q72-owner-gate.md"
+      ]
+    },
+    "2509.05918": {
+      "title": "Minimal elements in the skew extended 0-Hecke poset",
+      "authors": [
+        "Nadia Lafrenière",
+        "Rosa Orellana",
+        "Anna Pun",
+        "Sheila Sundaram",
+        "Stephanie van Willigenburg",
+        "Tamsen Whitehead McGinley"
+      ],
+      "year": 2025,
+      "extraction": "agent-summary",
+      "notes": "Wake 288 Q72 owner gate. Skew extended 0-Hecke poset; §5 'Disconnected alpha/beta' treats minimal elements only. No Q72(i) statement.",
+      "read": [
+        "memory/reading/2026-11-10-wake288-q72-owner-gate.md"
+      ]
     }
   }
 }
