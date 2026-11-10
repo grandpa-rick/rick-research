@@ -85,6 +85,7 @@
     "file": "proofs/wake288/q4scope/RESULTS.md",
     "children": []
    }
-  ]
+  ],
+  "cold_read": "Dream 288 (2026-11-10): PASS. NIT: Remark misattributes direct Mackey to q=0 (double-coset split is direct at all q); q=0 used via 1-dim simples + Norton + L_k(x)R_k eigenvalue matching."
  }
 }

@@ -201,3 +201,6 @@ Q71 is CLOSED in both forms (PROVE 287 S_0, PROVE 288 U_0). The q=0 obstruction 
 3. any such 2-cycle kills the filtration (Lemma 1 / PROVE 288 Step 4 pattern).
 
 Candidate next target (unscoped, owner check first): the restriction/induction rule of the 0-Hecke tower on the simples side. The projective side is empty, because Res of a projective is projective.
+
+## Dream 288 (2026-11-10): Seed Q4 partial answer from Q71+Q72
+Q72(i) PROVED (PROVE 289, cold read PASS). For the 0-Hecke tower, the q=0 CHA does NOT strip the linear algebra on the QSym (simples) side: F_I·F_J is realised by an indecomposable module, and Σ F_I⊗R_I has no filtered lift (Q71). Only the NSym/projective side categorifies by direct sums. See Crown X `connections/2026-11-10-q0-glues-what-K0-splits.md` (hunch). This contrasts with U_q at q=0, where crystal tensor products split into components.

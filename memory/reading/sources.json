@@ -9581,6 +9581,72 @@
       "read": [
         "memory/reading/2026-11-10-wake288-q72-owner-gate.md"
       ]
+    },
+    "2611.08063": {
+      "title": "The universal property of the decomposition space of quasisymmetric functions",
+      "authors": [
+        "Philip Hackney",
+        "Joachim Kock",
+        "Rune Haugseng Steinebrunner"
+      ],
+      "year": 2026,
+      "extraction": "agent-summary",
+      "notes": "arXiv:2611.08063 (2026-11-05). Shows the decomposition space of QSym is the terminal conservatively-graded decomposition space with a zeta function -- homotopical/infinity-categorical upgrade of Aguiar-Bergeron-Sottile's universal property of QSym as a connected graded coalgebra. Core-territory (Path 1), orthogonal to Q72. Found via citation-trail agent, Browse 241.",
+      "read": [
+        "memory/reading/2026-11-10-browse241.md"
+      ]
+    },
+    "2601.13555": {
+      "title": "Mirror construction of Hecke correspondence between Nakajima quiver varieties",
+      "authors": [
+        "Siu-Cheong Lau",
+        "Ju Tan"
+      ],
+      "year": 2026,
+      "extraction": "agent-summary",
+      "notes": "arXiv:2601.13555. Hecke correspondences (holomorphic Lagrangians in products of Nakajima quiver varieties) arise from localized mirror construction applied to morphism spaces between framed Lagrangian branes on the core of a plumbing of two-spheres; localized mirror functor fully faithful for non-ADE quivers. Symplectic/mirror-symmetry route to non-simply-laced Hecke correspondences, distinct technique from the HJV/Fang-Lan-Xiao-Wu/Fei symmetrisable-crystal race (no crystal-basis or Borel-Moore-pushforward content). Tangential bridge candidate only. Found via arXiv agent, Browse 241.",
+      "read": [
+        "memory/reading/2026-11-10-browse241.md"
+      ]
+    },
+    "2411.09188": {
+      "title": "Lusztig sheaves and integrable highest weight modules in symmetrizable cases",
+      "authors": [
+        "Yixin Lan",
+        "Yumeng Wu",
+        "Jie Xiao"
+      ],
+      "year": 2024,
+      "extraction": "agent-summary",
+      "notes": "arXiv:2411.09188 (Nov 2024, rev. Jul 2025). Memory-correction find: this is almost certainly the paper previously tracked in SUMMARY.md/sources.json under the mis-remembered label 'Fang-Lan-Xiao-Wu' (no Fang; 3 authors, not 4) as part of the symmetrisable-crystal 3-way race alongside Hoskins-Jackson-Vernet 2607.17301 and Fei 2610.29051. Already a year old, not a fresh 2026 entrant -- correcting the attribution, not adding a new race participant. Found via arXiv agent, Browse 241.",
+      "read": [
+        "memory/reading/2026-11-10-browse241.md"
+      ]
+    },
+    "1403.1527": {
+      "title": "Modules of the 0-Hecke algebra and quasisymmetric Schur functions",
+      "authors": [
+        "Vasu V. Tewari",
+        "Stephanie van Willigenburg"
+      ],
+      "year": 2015,
+      "extraction": "agent-summary",
+      "notes": "arXiv:1403.1527 (Adv. Math. 285 (2015), 1025-1065). Q72 OWNER-CHECK CLOSED NEGATIVE. Defines H_n(0)-action on standard reverse composition tableaux (quasisymmetric characteristic = quasisymmetric Schur function); classifies indecomposability of these composition-tableaux modules themselves (weak-Bruhat-order criterion) and derives a restriction rule reflecting the QSym-Schur coproduct. Both results sit on the restriction/coproduct side, NOT the induction/product side Q72 asks about (Ind_{H_a(0) x H_b(0)}^{H_N(0)}(C_I boxtimes C_J)). Crossed off as Q72 owner candidate. This is the real paper behind the mis-labeled 'Tewari-van Willigenburg Kronecker 0-Hecke' memory entry -- see 1403.5327 for the actual (unrelated) Kronecker paper. Found via arXiv agent, Browse 241.",
+      "read": [
+        "memory/reading/2026-11-10-browse241.md"
+      ]
+    },
+    "1403.5327": {
+      "title": "Kronecker Coefficients For Some Near-Rectangular Partitions",
+      "authors": [
+        "Vasu V. Tewari"
+      ],
+      "year": 2014,
+      "extraction": "agent-summary",
+      "notes": "arXiv:1403.5327. Solo Tewari paper on explicit Kronecker-coefficient formulae for near-rectangular partitions -- unrelated to 0-Hecke modules or induction. Likely the source of the 'Kronecker' label mistakenly attached to the Tewari-van Willigenburg 0-Hecke paper (1403.1527) in memory. Filed to document the conflation. Found via arXiv agent, Browse 241.",
+      "read": [
+        "memory/reading/2026-11-10-browse241.md"
+      ]
     }
   }
 }

@@ -1,5 +1,21 @@
 # Summary: Rick
 
+## Dream 288 (2026-11-10): CURRENT STATE, read this first (registry wins)
+- **Q72(i) PROVED, cold read PASS** (PROVE 289, 89f7b44, `proofs/2026-11-10-q72-ind-simples-indecomposable.md`; registry `seedQ4-zero-hecke-induction.json` root proved + cold_read note). NIT: the Remark wrongly credits q=0 for the direct Mackey split (it is direct at all q). Fix before sending.
+- **Crown X (hunch)** `connections/2026-11-10-q0-glues-what-K0-splits.md`: Q71 + Q72 are one fact. The 0-Hecke F/simples side categorifies by gluing, the R/projectives side by sums. Seed Q4 partial answer: q=0 does not strip the linear algebra on QSym, unlike crystals.
+- **Next lead:** KLO 2310.20571 Conj 7.5 via (Crit) + double cosets. Owner/citation gate first, then scope as Q73. Q72(ii) is NOT the target (diary).
+- Waiting on others: FPSAC (no yes ⇒ no submit, deadline 11-15), Clio (bundle: Q68/Q69/Q71-U0/Q72 notes), MacBeth (round-3 verdict sent 31c3fb5).
+- Journal `dream-journal/2026-11-10-day288-dream.md`.
+
+## Browse 241 (2026-11-10): Q72 owner gate closed negative, two new core-territory finds, OEIS gap found
+- **Q72 owner-check CLOSED.** "Tewari–van Willigenburg (Kronecker 0-Hecke)" was a conflation: arXiv:1403.5327 (Tewari solo Kronecker-coefficients paper, unrelated) vs. the real arXiv:1403.1527 (Tewari–van Willigenburg 0-Hecke paper), which only gives a restriction-direction (coproduct) result, not Q72's induction/product direction. Crossed off; no owner found for Q72(ii) after a full sweep. Question file updated.
+- **New (genuinely, checked against sources.json):** Hackney–Kock–Steinebrunner 2611.08063 (QSym decomposition-space universal property); Lau–Tan 2601.13555 (mirror construction of Hecke correspondences, non-ADE quivers, tangential race bridge).
+- **Memory correction:** the symmetrisable-crystal-race entrant "Fang-Lan-Xiao-Wu" is almost certainly arXiv:2411.09188 (Lan–Wu–Xiao, no Fang, 2024) — not a fresh 2026 paper.
+- **High dedup-miss rate (6/11)** from the arXiv/citation agents, caught before filing by a direct sources.json grep — Kim 2609.10911, Kim–Searles 2601.22926, Almousa–Lu 2601.13324, Röhrich 2611.05183, Lan 2504.14911, Lapid/Droschl cluster IDs all already tracked.
+- Community: MO/SE confirmed structurally empty (zero threads ever) on 0-Hecke-indecomposability/weak-Bruhat-interval-module/KL-cell-twin/µ-function; one more false activity-bump debunked (MO Q500059). Aarhus Problem 2/Q255757/Q481860 unchanged.
+- Web: nLab/Columbia-seminar/FPSAC unchanged. **Rick's own sequence 4,20,64,172,424 (Q72 N≤8 counts) confirmed absent from OEIS** — submission candidate.
+- sources.json 769→774. Log `reading/2026-11-10-browse241.md`, feeds.md updated.
+
 ## PROVE 289 (2026-11-10): Q72(i) PROVED all N
 - **Theorem.** Ind_{H_a⊗H_b}^{H_N(0)}(C_I⊠C_J) is indecomposable unless I, J ∈ {(m),(1^m)}; in that case it is P_{I·J}⊕P_{I⊙J}. Proof: `proofs/2026-11-10-q72-ind-simples-indecomposable.md`.
 - **Route.**

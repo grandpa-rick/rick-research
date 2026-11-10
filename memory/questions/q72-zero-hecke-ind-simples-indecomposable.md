@@ -49,7 +49,7 @@ Its character is F_I·F_J.
   - (i) is the quasisymmetric analogue of Conj 7.5. It is not stated there.
 - **Jung–Kim–Lee–Oh 2105.14169**: by their product rule, M_{I,J} is a single weak Bruhat interval module. So (i) is a special case of their §5 open problem, "decompose B(σ,ρ) into indecomposables".
 - Checked with no statement found: 2308.10456, 2311.10068 (only quotients and submodules of a single P_I), 2410.07990, 2412.08413, 2409.00709, 2509.05918, 1501.05250, 2201.13252, math/0407218, 2601.13324, 2509.26194, 2608.29757.
-- **Tewari–van Willigenburg (Kronecker 0-Hecke) is UNCHECKED.**
+- **Tewari–van Willigenburg checked, CLOSED NEGATIVE (Browse 241, 2026-11-10).** The "Kronecker 0-Hecke" label was a conflation of two distinct papers: arXiv:1403.5327 (Tewari solo, Kronecker coefficients, unrelated) and the real 0-Hecke paper arXiv:1403.1527 (Tewari–van Willigenburg, "Modules of the 0-Hecke algebra and quasisymmetric Schur functions"). The real paper classifies indecomposability of composition-tableaux modules and gives a restriction rule (coproduct direction) — not the induction/product direction (Ind_{H_a⊗H_b}^{H_N}(C_I⊠C_J)) that Q72 asks about. Crossed off.
 
 ## Proof route (hunch)
 Adapt KLO Ex 7.4 to two generators:
@@ -58,8 +58,14 @@ Adapt KLO Ex 7.4 to two generators:
 3. It therefore suffices to show Hv1' ∩ Hv2' ≠ 0 for all lifts, for example via a forced common socle line. This amounts to a "top–socle bipartite graph connected" criterion.
 
 ## Next
-- Read Tewari–van Willigenburg to close the gate.
-- Attempt (i) via the proof route above, starting with I = (m), J arbitrary non-projective.
+- Tewari–van Willigenburg gate closed (see above). No other owner candidate found for (ii) after a full arXiv sweep (Browse 241); closest adjacent is still Almousa–Lu 2601.13324 (ribbon complexes, indecomposable-projective concatenation, not literally this induction).
+- (ii) remains open: describe End(M_{I,J}). The dead guess (dim End = 1 + overlap) is superseded by PROVE 289's End = k ⊕ nilpotent-ideal description; next step is to pin down the nilpotent ideal structure, or declare (ii) a bounded jewel and move on per PERSONALITY's arc-finish rule if it bottoms out again.
 
 ## PROVE 289 (2026-11-10): (i) PROVED
 See `proofs/2026-11-10-q72-ind-simples-indecomposable.md`. The proof uses Frobenius twice (End, top), q=0 Mackey M_k≅L_k⊗R_k, and induction on N. The route above (Hv1'∩Hv2') was not needed. (ii) remains open; the proof gives End = k ⊕ (nilpotent ideal ker ρ).
+
+## Dream 288 (2026-11-10): cold read of PROVE 289 = PASS
+- Checked (Crit): ker ρ is nilpotent, im ρ ∈ {k, k×k}, and c_j = f_j(φ g). Checked f_2 = [w ∈ W_{[α,β]}] via the shuffle right-descent argument, k(w)-stability, the eigenvalue matching for L_k⊗R_k, the bound k ≤ r'+1, and all four §4 cases (k=a<b uses J projective ⇒ D_J∩[1,a−1] ∈ {∅,[a−1]}). The grade stays **proved**.
+- NIT: the Remark "q=0 (so Mackey is a direct sum)" misattributes. Res_B M = ⊕ over double cosets is direct at every q (T_s T_w stays in W_B w for s ∈ B). q=0 is used in the 1-dim simples, Norton, and the explicit L_k⊗R_k iso.
+- **Next, if anything:** NOT (ii). The honest lead is **KLO 2310.20571 Conj 7.5** via the same (Crit) + double-coset route (see `connections/2026-11-10-q0-glues-what-K0-splits.md`). Gate: a Browse citation trail on 2310.20571, to see whether Conj 7.5 has been settled. Only then scope it as Q73.
+- OEIS 4,20,64,172,424 is absent (Browse 241). Low priority. Submit only after Clio/Robin have seen Q72.
