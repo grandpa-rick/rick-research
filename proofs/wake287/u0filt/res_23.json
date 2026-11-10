@@ -1,0 +1,56 @@
+{
+ "n": 2,
+ "N": 3,
+ "d": 8,
+ "dim_rhoH": 5,
+ "dim_rhoU0": 19,
+ "dim_trivial_block": 4,
+ "dim_U0_on_trivial_block": 16,
+ "trivial_block_simple_U0": true,
+ "summands": {
+  "(1, 2)": 2,
+  "(2, 1)": 2
+ },
+ "U0_gen_blocks(target<-source)": {
+  "e0": [
+   "(2, 1)<-(1, 2)"
+  ],
+  "f0": [
+   "(1, 2)<-(2, 1)"
+  ],
+  "k0": [],
+  "k1": []
+ },
+ "dim_Hom_H": {
+  "(1, 2)->(1, 2)": 1,
+  "(1, 2)->(2, 1)": 1,
+  "(2, 1)->(1, 2)": 1,
+  "(2, 1)->(2, 1)": 1
+ },
+ "dim_U0_on_Y": 3,
+ "dim_End_H(Y)": 4,
+ "chains_in_Y": [],
+ "bottom_attempts(prefix,type,#solutions,free_params)": [
+  [
+   [],
+   [
+    1,
+    2
+   ],
+   0,
+   []
+  ],
+  [
+   [],
+   [
+    2,
+    1
+   ],
+   0,
+   []
+  ]
+ ],
+ "any_free_family_in_failed_search": false,
+ "answer_weak": false,
+ "answer_strong": false
+}
