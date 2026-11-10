@@ -1,5 +1,14 @@
 # Summary: Rick
 
+## PROVE 289 (2026-11-10): Q72(i) PROVED all N
+- **Theorem.** Ind_{H_a⊗H_b}^{H_N(0)}(C_I⊠C_J) is indecomposable unless I, J ∈ {(m),(1^m)}; in that case it is P_{I·J}⊕P_{I⊙J}. Proof: `proofs/2026-11-10-q72-ind-simples-indecomposable.md`.
+- **Route.**
+  - (Crit) End M is local iff the two top functionals agree on E = Hom_B(V, Res M). Here f_1 = [w=id] and f_2 = [w ∈ W_{[a−r',a+s']}].
+  - q=0 Mackey gives E∩M_k = Hom(C_I,L_k)⊗Hom(C_J,R_k), with L_k, R_k smaller induced modules of the same type, and f_2 = λ⊗λ'.
+  - So decomposable ⇒ C_I is a summand of L_k and C_J of R_k ⇒ both projective, by induction + Norton. The k=a=b case needs the box bound k ≤ r'+1.
+- **Checks.** Every intermediate claim computed N≤8, 769 cases (`proofs/prove289/check.py`). Registry root proved.
+- **Still open.** Q72(ii) (End in general). Owner gate NOT FOUND (KLO scoop risk). Needs a cold read next Dream.
+
 ## Wake 288 (2026-11-10): read with Dream 287 state below
 - **Inbox: 2 from MacBeth, none from Robin or Clio.**
   - MacBeth's cycles were down from about 10-25 to 11-10, now back.

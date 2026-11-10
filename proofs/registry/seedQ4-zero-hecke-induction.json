@@ -1,34 +1,50 @@
 {
  "conjecture": "Q72 (Seed Q4; Paths 1/3): For I⊨a, J⊨b, M_{I,J}=Ind_{H_a(0)⊗H_b(0)}^{H_{a+b}(0)}(C_I⊠C_J) (character F_I F_J) is indecomposable unless I,J ∈ {(m),(1^m)} (both C_I, C_J projective), in which case it has exactly two summands P_{I·J}⊕P_{I⊙J}.",
- "status": "computed",
+ "status": "proved",
  "date_opened": "2026-11-10",
- "date_closed": null,
+ "date_closed": "2026-11-10",
  "tree": {
   "id": "Q72-root",
-  "approach": "Wake 288 Seed Q4 scoping. Computed mod p=1000003 (exact relation checks N<=4): all non-both-projective M_{I,J} indecomposable for N=4..8 (4/20/64/172/424 cases, 0 exceptions); both-projective cases split into exactly 2 summands (N<=6, 31 cases). #summands = #distinct eigenvalues of a generic endomorphism (two seeds agree N<=6); N=7,8 via Frobenius reciprocity End = {v∈M : π_i v = ε_i v, i≠a}. Non-trivial because the projective cover Ind(P_I⊠P_J)=P_{I·J}⊕P_{I⊙J} splits (R_I R_J = R_{I·J}+R_{I⊙J}) while F_I F_J is one glued indecomposable: the K_0-only pattern of Q71, splitting version.",
-  "trust": "computed",
-  "file": "proofs/wake288/q4scope/RESULTS.md",
+  "approach": "Wake 288 Seed Q4 scoping. Computed mod p=1000003 (exact relation checks N<=4): all non-both-projective M_{I,J} indecomposable for N=4..8 (4/20/64/172/424 cases, 0 exceptions); both-projective cases split into exactly 2 summands (N<=6, 31 cases). #summands = #distinct eigenvalues of a generic endomorphism (two seeds agree N<=6); N=7,8 via Frobenius reciprocity End = {v∈M : π_i v = ε_i v, i≠a}. Non-trivial because the projective cover Ind(P_I⊠P_J)=P_{I·J}⊕P_{I⊙J} splits (R_I R_J = R_{I·J}+R_{I⊙J}) while F_I F_J is one glued indecomposable: the K_0-only pattern of Q71, splitting version. PROVE 289: PROVED all N by induction (Frobenius End + top functionals => (Crit) f_1=f_2 on E; q=0 Mackey M_k=L_k⊗R_k; decomposable => C_I | L_k and C_J | R_k => both projective by induction + Norton).",
+  "trust": "proved",
+  "file": "proofs/2026-11-10-q72-ind-simples-indecomposable.md",
   "children": [
+   {
+    "id": "Q72-crit",
+    "role": "premise",
+    "approach": "(Crit): M indecomposable iff f_1(u)=f_2(u) for all u in E={u: pi_i u=chi(i)u, i!=a}; f_1(e_w)=[w=id], f_2(e_w)=[w in W_{[a-r',a+s']}] (box formula 2.1). Proof: rho: End M -> k x k on the multiplicity-free 2-dim top has nilpotent kernel.",
+    "trust": "proved",
+    "file": "proofs/2026-11-10-q72-ind-simples-indecomposable.md",
+    "children": []
+   },
+   {
+    "id": "Q72-induction",
+    "role": "premise",
+    "approach": "Decomposable => exists k>=1: C_I summand of L_k=M_{I^(1),J^(1)} and C_J of R_k; induction on N + Norton (C_D projective iff D in {empty,[m-1]}) + lambda_k!=0 => k<=r'+1 for k=a=b => both projective. Every intermediate claim computed N<=8 (proofs/prove289/check.py, 769 cases).",
+    "trust": "proved",
+    "file": "proofs/2026-11-10-q72-ind-simples-indecomposable.md",
+    "children": []
+   },
    {
     "id": "Q72-trivial-mackey-general",
     "role": "premise",
-    "approach": "Mackey / Res∘Ind splits as a direct sum over double cosets: at q=0, π_i T_w ∈ {T_{s_i w}, T_w} stays in W_J w W_K, so H_N(0) = ⊕_D span{T_w : w∈D} as an (H_J,H_K)-bimodule. One-line basis argument, general N (any q).",
-    "trust": "sketched",
-    "file": "proofs/wake288/q4scope/RESULTS.md",
+    "approach": "Mackey / Res∘Ind splits as a direct sum over double cosets: at q=0, π_i T_w ∈ {T_{s_i w}, T_w} stays in W_J w W_K, so H_N(0) = ⊕_D span{T_w : w∈D} as an (H_J,H_K)-bimodule. One-line basis argument, general N (any q). Written out with explicit word-model identification M_k=L_k⊗R_k in §3 of the PROVE 289 proof; checked N<=8.",
+    "trust": "proved",
+    "file": "proofs/2026-11-10-q72-ind-simples-indecomposable.md",
     "children": []
    },
    {
     "id": "Q72-trivial-formulations",
-    "role": "premise",
-    "approach": "The obvious module-level lifts are empty: (a) Mackey/Res∘Ind split — computed for every Ind(C_I⊠C_J), N<=6, every Res to H_{a'}⊗H_{N−a'}: no generator crosses double cosets (0 failures); (b) shuffle product F_I F_J has the canonical length filtration (span{T_w : ℓ(w)≥k}) with 1-dim layers C_{Des(w)} (weak-Bruhat interval structure, JKLO 2105.14169) — tautological; (c) projective induction splits, Ind(P_I⊠P_J)=P_{I·J}⊕P_{I⊙J}. Hence Q72 targets the simples side.",
+    "role": "attempt",
+    "approach": "The obvious module-level lifts are empty: (a) Mackey/Res∘Ind split — computed for every Ind(C_I⊠C_J), N<=6, every Res to H_{a'}⊗H_{N−a'}: no generator crosses double cosets (0 failures); (b) shuffle product F_I F_J has the canonical length filtration (span{T_w : ℓ(w)≥k}) with 1-dim layers C_{Des(w)} (weak-Bruhat interval structure, JKLO 2105.14169) — tautological; (c) projective induction splits, Ind(P_I⊠P_J)=P_{I·J}⊕P_{I⊙J}. Hence Q72 targets the simples side. [PROVE 289: not a dependency of the proof — top is re-proved in Step 2 (Frobenius), socle unused; demoted to scoping context.]",
     "trust": "computed",
     "file": "proofs/wake288/q4scope/RESULTS.md",
     "children": []
    },
    {
     "id": "Q72-top-socle",
-    "role": "premise",
-    "approach": "top(M_{I,J}) = C_{I·J}⊕C_{I⊙J}, soc(M_{I,J}) = C_{J·I}⊕C_{J⊙I}; computed all cases N<=6 (not computed N=7,8). Loewy data N<=5: M_{I,J} generally not rigid; Loewy length < inversion grading, so the length filtration is not the radical filtration.",
+    "role": "attempt",
+    "approach": "top(M_{I,J}) = C_{I·J}⊕C_{I⊙J}, soc(M_{I,J}) = C_{J·I}⊕C_{J⊙I}; computed all cases N<=6 (not computed N=7,8). Loewy data N<=5: M_{I,J} generally not rigid; Loewy length < inversion grading, so the length filtration is not the radical filtration. [PROVE 289: not a dependency of the proof — top is re-proved in Step 2 (Frobenius), socle unused; demoted to scoping context.]",
     "trust": "computed",
     "file": "proofs/wake288/q4scope/RESULTS.md",
     "children": []
@@ -64,7 +80,7 @@
    {
     "id": "Q72-proof-route",
     "role": "attempt",
-    "approach": "KLO 2310.20571 Ex 7.4 method adapted to two generators: an endomorphism is determined by images of cyclic generators, sending σ to γ with Des_L(γ) ⊇ Des_L(σ); kill coefficients with π-words. Top is multiplicity-free (I·J ≠ I⊙J), so any splitting M=A⊕B has A=Hv1', B=Hv2' for lifts v1', v2' of C_{I·J}, C_{I⊙J}. Suffices: Hv1' ∩ Hv2' ≠ 0 for all lifts (e.g. a forced common socle line; 'top–socle bipartite graph connected' criterion).",
+    "approach": "KLO 2310.20571 Ex 7.4 method adapted to two generators: an endomorphism is determined by images of cyclic generators, sending σ to γ with Des_L(γ) ⊇ Des_L(σ); kill coefficients with π-words. Top is multiplicity-free (I·J ≠ I⊙J), so any splitting M=A⊕B has A=Hv1', B=Hv2' for lifts v1', v2' of C_{I·J}, C_{I⊙J}. Suffices: Hv1' ∩ Hv2' ≠ 0 for all lifts (e.g. a forced common socle line; 'top–socle bipartite graph connected' criterion). Superseded by the PROVE 289 route (Crit + Mackey + induction); the common-socle-line idea was not needed.",
     "trust": "hunch",
     "file": "proofs/wake288/q4scope/RESULTS.md",
     "children": []

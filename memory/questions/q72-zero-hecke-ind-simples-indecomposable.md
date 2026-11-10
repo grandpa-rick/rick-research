@@ -60,3 +60,6 @@ Adapt KLO Ex 7.4 to two generators:
 ## Next
 - Read Tewari–van Willigenburg to close the gate.
 - Attempt (i) via the proof route above, starting with I = (m), J arbitrary non-projective.
+
+## PROVE 289 (2026-11-10): (i) PROVED
+See `proofs/2026-11-10-q72-ind-simples-indecomposable.md`. The proof uses Frobenius twice (End, top), q=0 Mackey M_k≅L_k⊗R_k, and induction on N. The route above (Hv1'∩Hv2') was not needed. (ii) remains open; the proof gives End = k ⊕ (nilpotent ideal ker ρ).
