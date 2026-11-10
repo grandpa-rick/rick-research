@@ -1,0 +1,133 @@
+2 (1,) (1,) dim 2 dimEnd 2 #summands 2 2 MackeySplitBasis True
+3 (1,) (2,) dim 3 dimEnd 2 #summands 2 2 MackeySplitBasis True
+3 (1,) (1, 1) dim 3 dimEnd 2 #summands 2 2 MackeySplitBasis True
+3 (2,) (1,) dim 3 dimEnd 2 #summands 2 2 MackeySplitBasis True
+3 (1, 1) (1,) dim 3 dimEnd 2 #summands 2 2 MackeySplitBasis True
+4 (1,) (3,) dim 4 dimEnd 2 #summands 2 2 MackeySplitBasis True
+4 (1,) (1, 2) dim 4 dimEnd 1 #summands 1 1 MackeySplitBasis True
+4 (1,) (2, 1) dim 4 dimEnd 1 #summands 1 1 MackeySplitBasis True
+4 (1,) (1, 1, 1) dim 4 dimEnd 2 #summands 2 2 MackeySplitBasis True
+4 (2,) (2,) dim 6 dimEnd 3 #summands 2 2 MackeySplitBasis True
+4 (2,) (1, 1) dim 6 dimEnd 2 #summands 2 2 MackeySplitBasis True
+4 (1, 1) (2,) dim 6 dimEnd 2 #summands 2 2 MackeySplitBasis True
+4 (1, 1) (1, 1) dim 6 dimEnd 3 #summands 2 2 MackeySplitBasis True
+4 (3,) (1,) dim 4 dimEnd 2 #summands 2 2 MackeySplitBasis True
+4 (1, 2) (1,) dim 4 dimEnd 1 #summands 1 1 MackeySplitBasis True
+4 (2, 1) (1,) dim 4 dimEnd 1 #summands 1 1 MackeySplitBasis True
+4 (1, 1, 1) (1,) dim 4 dimEnd 2 #summands 2 2 MackeySplitBasis True
+5 (1,) (4,) dim 5 dimEnd 2 #summands 2 2 MackeySplitBasis True
+5 (1,) (1, 3) dim 5 dimEnd 1 #summands 1 1 MackeySplitBasis True
+5 (1,) (2, 2) dim 5 dimEnd 1 #summands 1 1 MackeySplitBasis True
+5 (1,) (3, 1) dim 5 dimEnd 1 #summands 1 1 MackeySplitBasis True
+5 (1,) (1, 1, 2) dim 5 dimEnd 1 #summands 1 1 MackeySplitBasis True
+5 (1,) (1, 2, 1) dim 5 dimEnd 1 #summands 1 1 MackeySplitBasis True
+5 (1,) (2, 1, 1) dim 5 dimEnd 1 #summands 1 1 MackeySplitBasis True
+5 (1,) (1, 1, 1, 1) dim 5 dimEnd 2 #summands 2 2 MackeySplitBasis True
+5 (2,) (3,) dim 10 dimEnd 3 #summands 2 2 MackeySplitBasis True
+5 (2,) (1, 2) dim 10 dimEnd 1 #summands 1 1 MackeySplitBasis True
+5 (2,) (2, 1) dim 10 dimEnd 1 #summands 1 1 MackeySplitBasis True
+5 (2,) (1, 1, 1) dim 10 dimEnd 2 #summands 2 2 MackeySplitBasis True
+5 (1, 1) (3,) dim 10 dimEnd 2 #summands 2 2 MackeySplitBasis True
+5 (1, 1) (1, 2) dim 10 dimEnd 1 #summands 1 1 MackeySplitBasis True
+5 (1, 1) (2, 1) dim 10 dimEnd 1 #summands 1 1 MackeySplitBasis True
+5 (1, 1) (1, 1, 1) dim 10 dimEnd 3 #summands 2 2 MackeySplitBasis True
+5 (3,) (2,) dim 10 dimEnd 3 #summands 2 2 MackeySplitBasis True
+5 (3,) (1, 1) dim 10 dimEnd 2 #summands 2 2 MackeySplitBasis True
+5 (1, 2) (2,) dim 10 dimEnd 1 #summands 1 1 MackeySplitBasis True
+5 (1, 2) (1, 1) dim 10 dimEnd 1 #summands 1 1 MackeySplitBasis True
+5 (2, 1) (2,) dim 10 dimEnd 1 #summands 1 1 MackeySplitBasis True
+5 (2, 1) (1, 1) dim 10 dimEnd 1 #summands 1 1 MackeySplitBasis True
+5 (1, 1, 1) (2,) dim 10 dimEnd 2 #summands 2 2 MackeySplitBasis True
+5 (1, 1, 1) (1, 1) dim 10 dimEnd 3 #summands 2 2 MackeySplitBasis True
+5 (4,) (1,) dim 5 dimEnd 2 #summands 2 2 MackeySplitBasis True
+5 (1, 3) (1,) dim 5 dimEnd 1 #summands 1 1 MackeySplitBasis True
+5 (2, 2) (1,) dim 5 dimEnd 1 #summands 1 1 MackeySplitBasis True
+5 (3, 1) (1,) dim 5 dimEnd 1 #summands 1 1 MackeySplitBasis True
+5 (1, 1, 2) (1,) dim 5 dimEnd 1 #summands 1 1 MackeySplitBasis True
+5 (1, 2, 1) (1,) dim 5 dimEnd 1 #summands 1 1 MackeySplitBasis True
+5 (2, 1, 1) (1,) dim 5 dimEnd 1 #summands 1 1 MackeySplitBasis True
+5 (1, 1, 1, 1) (1,) dim 5 dimEnd 2 #summands 2 2 MackeySplitBasis True
+6 (1,) (5,) dim 6 dimEnd 2 #summands 2 2 MackeySplitBasis True
+6 (1,) (1, 4) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1,) (2, 3) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1,) (3, 2) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1,) (4, 1) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1,) (1, 1, 3) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1,) (1, 2, 2) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1,) (1, 3, 1) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1,) (2, 1, 2) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1,) (2, 2, 1) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1,) (3, 1, 1) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1,) (1, 1, 1, 2) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1,) (1, 1, 2, 1) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1,) (1, 2, 1, 1) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1,) (2, 1, 1, 1) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1,) (1, 1, 1, 1, 1) dim 6 dimEnd 2 #summands 2 2 MackeySplitBasis True
+6 (2,) (4,) dim 15 dimEnd 3 #summands 2 2 MackeySplitBasis True
+6 (2,) (1, 3) dim 15 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (2,) (2, 2) dim 15 dimEnd 2 #summands 1 1 MackeySplitBasis True
+6 (2,) (3, 1) dim 15 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (2,) (1, 1, 2) dim 15 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (2,) (1, 2, 1) dim 15 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (2,) (2, 1, 1) dim 15 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (2,) (1, 1, 1, 1) dim 15 dimEnd 2 #summands 2 2 MackeySplitBasis True
+6 (1, 1) (4,) dim 15 dimEnd 2 #summands 2 2 MackeySplitBasis True
+6 (1, 1) (1, 3) dim 15 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1, 1) (2, 2) dim 15 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1, 1) (3, 1) dim 15 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1, 1) (1, 1, 2) dim 15 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1, 1) (1, 2, 1) dim 15 dimEnd 2 #summands 1 1 MackeySplitBasis True
+6 (1, 1) (2, 1, 1) dim 15 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1, 1) (1, 1, 1, 1) dim 15 dimEnd 3 #summands 2 2 MackeySplitBasis True
+6 (3,) (3,) dim 20 dimEnd 4 #summands 2 2 MackeySplitBasis True
+6 (3,) (1, 2) dim 20 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (3,) (2, 1) dim 20 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (3,) (1, 1, 1) dim 20 dimEnd 2 #summands 2 2 MackeySplitBasis True
+6 (1, 2) (3,) dim 20 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1, 2) (1, 2) dim 20 dimEnd 3 #summands 1 1 MackeySplitBasis True
+6 (1, 2) (2, 1) dim 20 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1, 2) (1, 1, 1) dim 20 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (2, 1) (3,) dim 20 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (2, 1) (1, 2) dim 20 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (2, 1) (2, 1) dim 20 dimEnd 3 #summands 1 1 MackeySplitBasis True
+6 (2, 1) (1, 1, 1) dim 20 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1, 1, 1) (3,) dim 20 dimEnd 2 #summands 2 2 MackeySplitBasis True
+6 (1, 1, 1) (1, 2) dim 20 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1, 1, 1) (2, 1) dim 20 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1, 1, 1) (1, 1, 1) dim 20 dimEnd 4 #summands 2 2 MackeySplitBasis True
+6 (4,) (2,) dim 15 dimEnd 3 #summands 2 2 MackeySplitBasis True
+6 (4,) (1, 1) dim 15 dimEnd 2 #summands 2 2 MackeySplitBasis True
+6 (1, 3) (2,) dim 15 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1, 3) (1, 1) dim 15 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (2, 2) (2,) dim 15 dimEnd 2 #summands 1 1 MackeySplitBasis True
+6 (2, 2) (1, 1) dim 15 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (3, 1) (2,) dim 15 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (3, 1) (1, 1) dim 15 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1, 1, 2) (2,) dim 15 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1, 1, 2) (1, 1) dim 15 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1, 2, 1) (2,) dim 15 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1, 2, 1) (1, 1) dim 15 dimEnd 2 #summands 1 1 MackeySplitBasis True
+6 (2, 1, 1) (2,) dim 15 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (2, 1, 1) (1, 1) dim 15 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1, 1, 1, 1) (2,) dim 15 dimEnd 2 #summands 2 2 MackeySplitBasis True
+6 (1, 1, 1, 1) (1, 1) dim 15 dimEnd 3 #summands 2 2 MackeySplitBasis True
+6 (5,) (1,) dim 6 dimEnd 2 #summands 2 2 MackeySplitBasis True
+6 (1, 4) (1,) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (2, 3) (1,) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (3, 2) (1,) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (4, 1) (1,) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1, 1, 3) (1,) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1, 2, 2) (1,) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1, 3, 1) (1,) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (2, 1, 2) (1,) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (2, 2, 1) (1,) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (3, 1, 1) (1,) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1, 1, 1, 2) (1,) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1, 1, 2, 1) (1,) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1, 2, 1, 1) (1,) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (2, 1, 1, 1) (1,) dim 6 dimEnd 1 #summands 1 1 MackeySplitBasis True
+6 (1, 1, 1, 1, 1) (1,) dim 6 dimEnd 2 #summands 2 2 MackeySplitBasis True
+
+real	0m6.641s
+user	0m6.633s
+sys	0m0.251s

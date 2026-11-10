@@ -1,0 +1,16 @@
+endformula mismatch (3,) (2, 2) 2 0
+endformula mismatch (1, 1, 1) (1, 2, 1) 2 0
+endformula mismatch (2, 2) (3,) 2 0
+endformula mismatch (1, 2, 1) (1, 1, 1) 2 0
+7 {'brick': 168, 'indec': 172, 'bad': [], 'endformula_bad': 4, 'n': 172}
+endformula mismatch (1, 2) (1, 2, 2) 2 0
+endformula mismatch (2, 1) (2, 2, 1) 2 0
+endformula mismatch (4,) (2, 2) 2 0
+endformula mismatch (2, 2) (4,) 2 0
+endformula mismatch (2, 2) (2, 2) 4 2
+endformula mismatch (1, 2, 1) (1, 2, 1) 4 2
+endformula mismatch (1, 2, 1) (1, 1, 1, 1) 2 0
+endformula mismatch (1, 1, 1, 1) (1, 2, 1) 2 0
+endformula mismatch (1, 2, 2) (1, 2) 2 0
+endformula mismatch (2, 2, 1) (2, 1) 2 0
+8 {'brick': 406, 'indec': 424, 'bad': [], 'endformula_bad': 10, 'n': 424}

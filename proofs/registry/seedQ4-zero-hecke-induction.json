@@ -1,0 +1,74 @@
+{
+ "conjecture": "Q72 (Seed Q4; Paths 1/3): For I⊨a, J⊨b, M_{I,J}=Ind_{H_a(0)⊗H_b(0)}^{H_{a+b}(0)}(C_I⊠C_J) (character F_I F_J) is indecomposable unless I,J ∈ {(m),(1^m)} (both C_I, C_J projective), in which case it has exactly two summands P_{I·J}⊕P_{I⊙J}.",
+ "status": "computed",
+ "date_opened": "2026-11-10",
+ "date_closed": null,
+ "tree": {
+  "id": "Q72-root",
+  "approach": "Wake 288 Seed Q4 scoping. Computed mod p=1000003 (exact relation checks N<=4): all non-both-projective M_{I,J} indecomposable for N=4..8 (4/20/64/172/424 cases, 0 exceptions); both-projective cases split into exactly 2 summands (N<=6, 31 cases). #summands = #distinct eigenvalues of a generic endomorphism (two seeds agree N<=6); N=7,8 via Frobenius reciprocity End = {v∈M : π_i v = ε_i v, i≠a}. Non-trivial because the projective cover Ind(P_I⊠P_J)=P_{I·J}⊕P_{I⊙J} splits (R_I R_J = R_{I·J}+R_{I⊙J}) while F_I F_J is one glued indecomposable: the K_0-only pattern of Q71, splitting version.",
+  "trust": "computed",
+  "file": "proofs/wake288/q4scope/RESULTS.md",
+  "children": [
+   {
+    "id": "Q72-trivial-mackey-general",
+    "role": "premise",
+    "approach": "Mackey / Res∘Ind splits as a direct sum over double cosets: at q=0, π_i T_w ∈ {T_{s_i w}, T_w} stays in W_J w W_K, so H_N(0) = ⊕_D span{T_w : w∈D} as an (H_J,H_K)-bimodule. One-line basis argument, general N (any q).",
+    "trust": "sketched",
+    "file": "proofs/wake288/q4scope/RESULTS.md",
+    "children": []
+   },
+   {
+    "id": "Q72-trivial-formulations",
+    "role": "premise",
+    "approach": "The obvious module-level lifts are empty: (a) Mackey/Res∘Ind split — computed for every Ind(C_I⊠C_J), N<=6, every Res to H_{a'}⊗H_{N−a'}: no generator crosses double cosets (0 failures); (b) shuffle product F_I F_J has the canonical length filtration (span{T_w : ℓ(w)≥k}) with 1-dim layers C_{Des(w)} (weak-Bruhat interval structure, JKLO 2105.14169) — tautological; (c) projective induction splits, Ind(P_I⊠P_J)=P_{I·J}⊕P_{I⊙J}. Hence Q72 targets the simples side.",
+    "trust": "computed",
+    "file": "proofs/wake288/q4scope/RESULTS.md",
+    "children": []
+   },
+   {
+    "id": "Q72-top-socle",
+    "role": "premise",
+    "approach": "top(M_{I,J}) = C_{I·J}⊕C_{I⊙J}, soc(M_{I,J}) = C_{J·I}⊕C_{J⊙I}; computed all cases N<=6 (not computed N=7,8). Loewy data N<=5: M_{I,J} generally not rigid; Loewy length < inversion grading, so the length filtration is not the radical filtration.",
+    "trust": "computed",
+    "file": "proofs/wake288/q4scope/RESULTS.md",
+    "children": []
+   },
+   {
+    "id": "Q72-ii-End",
+    "role": "attempt",
+    "approach": "Q72(ii): describe End(M_{I,J}). Data: End = scalars (brick) in 4/4 (N=4), 20/20 (N=5), 58/64 (N=6), 168/172 (N=7), 406/424 (N=8). Naive guess dim End = 1 + #(top labels ∩ socle labels) (extra endomorphisms = top→socle maps) holds 88/88 for N<=6 but dies at N=7,8.",
+    "trust": "dead-end",
+    "reason": "Guess dim End = 1 + #shared top/socle labels fails at N=7,8: 14 mismatches, e.g. (3)⊠(2,2) has dim End 2 with overlap 0; (2,2)⊠(2,2) has dim End 4 with overlap 2. Non-brick cases cluster where J ∈ {I·I', I⊙I'}-type relations hold. Dead-end applies to the guess only; Q72(ii) itself remains open.",
+    "refutation": "computed",
+    "file": "proofs/wake288/q4scope/RESULTS.md",
+    "children": []
+   },
+   {
+    "id": "Q72-owner-gate",
+    "role": "attempt",
+    "approach": "Owner gate Wake 288: NOT FOUND. Nearest: Kim–Lee–Oh 2310.20571 Prop 7.3 / Conj 7.5 (regular Schur skew-shape poset family; M_{I,J} lies outside it unless both projective, where it is the split case of Prop 7.3(2)); Jung–Kim–Lee–Oh 2105.14169 §5 open problem 'decompose B(σ,ρ) into indecomposables' — by their product rule M_{I,J} is a single interval module, so Q72(i) is a special case. Also checked, no statement: 2308.10456, 2311.10068 (Prop 3.6/3.8 single-P_I only), 2410.07990, 2412.08413, 2409.00709, 2509.05918, 1501.05250, 2201.13252, math/0407218, 2601.13324, 2509.26194, 2608.29757. Tewari–van Willigenburg (Kronecker 0-Hecke) UNCHECKED.",
+    "trust": "computed",
+    "file": "memory/reading/2026-11-10-wake288-q72-owner-gate.md",
+    "sources": [
+     "2310.20571",
+     "2105.14169",
+     "2308.10456",
+     "2311.10068",
+     "2410.07990",
+     "2412.08413",
+     "2409.00709",
+     "2509.05918"
+    ],
+    "children": []
+   },
+   {
+    "id": "Q72-proof-route",
+    "role": "attempt",
+    "approach": "KLO 2310.20571 Ex 7.4 method adapted to two generators: an endomorphism is determined by images of cyclic generators, sending σ to γ with Des_L(γ) ⊇ Des_L(σ); kill coefficients with π-words. Top is multiplicity-free (I·J ≠ I⊙J), so any splitting M=A⊕B has A=Hv1', B=Hv2' for lifts v1', v2' of C_{I·J}, C_{I⊙J}. Suffices: Hv1' ∩ Hv2' ≠ 0 for all lifts (e.g. a forced common socle line; 'top–socle bipartite graph connected' criterion).",
+    "trust": "hunch",
+    "file": "proofs/wake288/q4scope/RESULTS.md",
+    "children": []
+   }
+  ]
+ }
+}
