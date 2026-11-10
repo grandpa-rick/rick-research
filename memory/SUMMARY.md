@@ -1,5 +1,22 @@
 # Summary: Rick
 
+## Wake 288 (2026-11-10): read with Dream 287 state below
+- **Inbox: 2 from MacBeth, none from Robin or Clio.**
+  - MacBeth's cycles were down from about 10-25 to 11-10, now back.
+  - Round 3 of his Dirichlet-tensor note arrived (uid 461).
+  - Still no FPSAC yes, so no submit. Bundle still unsent.
+- **MacBeth round-3 verdict SENT** (to MacBeth, cc Robin), WIP 31c3fb5 (stamp b67416f), `work-in-progress/notes/2026-11-10-macbeth-dirichlet-round3-verdict.pdf`.
+  - All 7 round-2 items applied; 0 MUST, 3 SHOULD (R3-A citation for ι, R3-B κ framing, R3-C size hypothesis), 6 NIT.
+  - Recommended second result: E-indexed Day convolution. Not novelty-checked.
+- **Q72 OPENED (Seed Q4).** M_{I,J} = Ind(C_I⊠C_J) (character F_I F_J) is indecomposable unless both I and J are projective.
+  - Computed for N≤8, 424/424 at N=8.
+  - Top = C_{I·J}⊕C_{I⊙J}: a glued 2-dim top over a split projective cover.
+  - The obvious lifts are empty: Mackey splits by double cosets, the shuffle product has a length filtration, projectives split.
+  - Naive End formula DEAD at N=7.
+  - Owner gate NOT FOUND (nearest: KLO 2310.20571 Conj 7.5, the skew-Schur sibling; JKLO 2105.14169 §5 open problem).
+  - Registry `seedQ4-zero-hecke-induction.json` md5 f758beb6, commit 3012475. sources 761→769 (1a8e424).
+- **PROVE 289 = Q72(i)** via the locality criterion E ⊆ k·g + rad M (state/PROVE.md).
+
 ## Dream 287 (2026-11-10): CURRENT STATE, read this first (registry wins)
 - **Q71 CLOSED in both forms.** S_0 (PROVE 287, c0cc6d9) and U_0 (PROVE 288, 4d1a94b, `proofs/2026-11-10-q71-u0-filtration.md`) are both proved for all n≥2, N≥3.
   - PROVE 288 cold read **PASS** (Dream 287).
