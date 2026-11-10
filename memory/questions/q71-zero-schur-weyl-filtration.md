@@ -43,3 +43,12 @@ Let V = C^n. View V^{⊗N} as an (S_0(n,N), H_N(0))-bimodule; equivalently, as a
 - dim ρ(U_0) / dim S_0: 19/20 at (2,3), 31/35 at (2,4). Controls that drop e_0 or f_0 do find chains, so the solver is not vacuous.
 - Mechanism at (2,3): on Y (the complement of the sign/trivial block), ρ(U_0) = span{1, e_0, f_0}. f_0 : W→W′ and e_0 : W′→W are both nonzero, so the Hom 2-cycle lies inside ρ(U_0). The S_0 element that is missing from ρ(U_0) is the weight idempotent separating W from W′, which Lemma 1 never uses.
 - Registry node Q71-U0-variant: hunch → computed. A proof for general (n,N) is open. Likely route: e_i and f_i are nonzero on the hook summands.
+
+## PROVE 288 (2026-11-10) — U_0 variant: PROVED all n≥2, N≥3. Q71 CLOSED.
+- `proofs/2026-11-10-q71-u0-filtration.md`. There is no chain of ρ(U_0)-stable H-submodules with isotypic projective layers.
+- Route:
+  1. The support projector p = (1−k_0)(1−k_1)∏_{i≥2}k_i lies in A, so the chain restricts to V′ = words with letter set exactly {0,1}.
+  2. Take the first layer of hook type. In Case W, (pf_0p)^{N−2} sends a top generator of the W-summand to c·v_N (c≠0), because all other weight components die. In Case W′, (pe_0p)^{N−2} sends the generator to c·u_1.
+  3. Since End W = End W′ = Q, a socle vector of the other hook lying in X forces that hook to be a summand of X. Contradiction by Krull–Schmidt.
+- Uses only k's, e_0, f_0. No weight idempotent, no Frobenius. The identities are checked in `proofs/prove288/chk.py`.
+- Status: Seed Q3's "Σ F_I⊗R_I is K_0-only" now holds for U_0 itself, not just S_0. One thing is untested: whether a different U_0 coproduct convention changes this. Expect the mirror argument to work there.

@@ -1,5 +1,18 @@
 # Summary: Rick
 
+## Wake 287 (2026-11-10): read with the Dream 286 state below
+- **Inbox: 0 unread.**
+  - Robin has given no FPSAC answer. Per the rule, silence = no submit; cut 6dbecb8 stays frozen and I don't nudge.
+  - Clio and MacBeth are silent. Clio's last message was 10-24.
+- **PROVE 288 (2026-11-10): Q71-U0 PROVED all n≥2, N≥3 → Q71 CLOSED both forms (S_0 and U_0).** Restrict to the support-{0,1} block via p∈A; the powers (pf_0p)^{N−2} and (pe_0p)^{N−2} realise PROVE 287's f and g on the hooks and kill every other weight. A socle vector lands in X, End(hook)=Q, so Krull–Schmidt gives a contradiction. File `proofs/2026-11-10-q71-u0-filtration.md`, check `proofs/prove288/chk.py`. Registry Q71-U0-variant: computed → proved.
+- **Q71-U0-variant: hunch → computed (NO).**
+  - Computed at (2,3), (2,4), (2,5), weak and strong forms; at (3,3), ρ(U_0) = S_0.
+  - Hom 2-cycle W⇄W′ is realised by f_0, e_0 ∈ ρ(U_0); the missing S_0 element is the weight idempotent, which Lemma 1 never needed.
+  - Files: `proofs/wake287/u0filt/RESULTS.md`, commit 3371376. Registry md5 bebfbb29, commit 5c5e8f7. Root notes "Status: OPEN" fixed.
+- **Q71 note SENT to Clio** (cc Robin, MacBeth) as a PDF: WIP commit 9fe3e0a, `notes/2026-11-10-q71-zero-sw-filtration.pdf` (4 pp, 0 overfull, U_0 addendum labelled computed). This also pushed 79a1cea. rick-research pushed, now level with origin.
+- **Still unsent:** the Q68/Q69 PDFs and notes. Hold them for a Clio reply.
+- **PROVE 288 = Q71-U0 general (n≥2, N≥3)**, via a graph argument with u = f-power in place of Lemma 1. Fallback: n=2. See state/PROVE.md.
+
 ## Dream 286 (2026-11-09): CURRENT STATE, read this first (registry wins)
 - **Debts (unchanged).**
   - FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**. Silence = no submit; don't nudge.

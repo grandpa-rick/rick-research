@@ -212,11 +212,20 @@
            {
             "id": "Q71-U0-variant",
             "role": "attempt",
-            "trust": "computed",
-            "file": "proofs/wake287/u0filt/RESULTS.md",
-            "approach": "Open side caveat: U_0(gl_n) x H filtration (U_0-stable submodules) is NOT equivalent to the S_0 question where rho(U_0)<S_0 (e.g. (2,3) 19<20); Lemma 1 does not apply. Not opened as a new Q.",
-            "notes": "Wake 287 (2026-11-10), exact over Q, commit 3371376, proofs/wake287/u0filt/RESULTS.md: NO (U_0, H_N(0)) filtration (weak = rho(U_0)-stable chain with H-projective isotypic layers, and strong = bimodule L box M layers) at (n,N)=(2,3),(2,4),(2,5); at (3,3) rho(U_0)=S_0 (dim 165) so PROVE 287 Theorem′ applies directly. dims rho(U_0)/S_0: (2,3) 19/20, (2,4) 31/35. Mechanism (2,3): on Y (non-sign-block), rho(U_0)=span{1,e_0,f_0}; f_0: W->W′ and e_0: W′->W nonzero — the Hom 2-cycle lies inside rho(U_0); missing S_0 element is the weight idempotent separating W,W′, unused by Lemma 1. Controls (drop e_0/f_0) find chains (control.py). General (n,N) proof: open.",
-            "children": []
+            "trust": "proved",
+            "file": "proofs/2026-11-10-q71-u0-filtration.md",
+            "approach": "PROVE 288: no chain of rho(U_0)-stable H-submodules with isotypic projective layers, all n>=2, N>=3. Restrict to support-{0,1} words via p=(1-k0)(1-k1)prod_{i>=2}k_i in A; first hook layer case split; f^{N-2}=(p f0 p)^{N-2} sends a top generator of a W-summand to c*v_N (kills other weights), e^{N-2} sends W' generator to c*u_1; End W=End W'=Q + socle vector in X forces the other hook as a summand (Krull-Schmidt). No Frobenius, no weight idempotent needed.",
+            "notes": "Wake 287 (2026-11-10), exact over Q, commit 3371376, proofs/wake287/u0filt/RESULTS.md: NO (U_0, H_N(0)) filtration (weak = rho(U_0)-stable chain with H-projective isotypic layers, and strong = bimodule L box M layers) at (n,N)=(2,3),(2,4),(2,5); at (3,3) rho(U_0)=S_0 (dim 165) so PROVE 287 Theorem′ applies directly. dims rho(U_0)/S_0: (2,3) 19/20, (2,4) 31/35. Mechanism (2,3): on Y (non-sign-block), rho(U_0)=span{1,e_0,f_0}; f_0: W->W′ and e_0: W′->W nonzero — the Hom 2-cycle lies inside rho(U_0); missing S_0 element is the weight idempotent separating W,W′, unused by Lemma 1. Controls (drop e_0/f_0) find chains (control.py). General (n,N) proof: open. | PROVE 288 2026-11-10: PROVED by hand; operator identities checked prove288/chk.py n=2 N=3..7, n=3 N=3..5; agrees with Wake 287 search (2,3),(2,4),(2,5). Uses only k's, e0, f0 (matches controls).",
+            "children": [
+             {
+              "id": "Q71-U0-support-restriction",
+              "role": "premise",
+              "trust": "proved",
+              "file": "proofs/2026-11-10-q71-u0-filtration.md",
+              "approach": "Step 1: p in A ⇒ chain restricts to V' (support {0,1}) with isotypic projective layers; Step 3(iii) operator identities f^{N-2}u_{N-1}=v_N, e^{N-2}v_2=u_1 with vanishing on other weights.",
+              "children": []
+             }
+            ]
            }
           ]
          }
