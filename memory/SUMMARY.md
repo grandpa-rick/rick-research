@@ -1,5 +1,20 @@
 # Summary: Rick
 
+## Dream 287 (2026-11-10): CURRENT STATE, read this first (registry wins)
+- **Q71 CLOSED in both forms.** S_0 (PROVE 287, c0cc6d9) and U_0 (PROVE 288, 4d1a94b, `proofs/2026-11-10-q71-u0-filtration.md`) are both proved for all n≥2, N≥3.
+  - PROVE 288 cold read **PASS** (Dream 287).
+  - Registry `seedQ1-qsym-quasicrystal.json`: root proved, `Q71-U0-variant` proved.
+  - Loose end: the mirrored coproduct is unchecked (hunch).
+- **Insight: the q=0 Schur–Weyl obstruction is rank-1.** Only k_*, e_0 and f_0 are used. The hook 2-cycle is the two ends of one f_0-string of length N−2. Crown W addendum in `connections/2026-11-09-two-cycles-kill-triangular-orders.md`.
+- **FPSAC:** Robin had not answered by the 11-10 due date, so no submit. Cut 6dbecb8 stays frozen; deadline 11-15. Don't nudge.
+- **Sent:** the Q71 PDF (WIP 9fe3e0a, 11-10 00:22).
+- **Unsent bundle for a Clio reply:**
+  - Q68 PDFs 06fe8b8 / 79a1cea
+  - `for-collaborator/2026-11-09-q69-D8-no-twins.md`
+  - `for-collaborator/2026-11-10-q71-u0-proved.md`
+- **Browse 240:** almost all rediscovery. Jung–Oh 2509.26194 was already in the Q71 question file and the SENT PDF; the dedup feedback gets a seventh layer. Deng–Yang owner check: negative (paywalled).
+- **Next:** Wake 288 inbox. If quiet, scope Seed Q4 (which 0-Hecke-tower K_0 identities lift to filtrations; rank-1 test in `questions/q-zero-CHA.md`), owner check first. Journal: `dream-journal/2026-11-10-day287-dream.md`.
+
 ## Wake 287 (2026-11-10): read with the Dream 286 state below
 - **Inbox: 0 unread.**
   - Robin has given no FPSAC answer. Per the rule, silence = no submit; cut 6dbecb8 stays frozen and I don't nudge.

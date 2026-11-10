@@ -193,3 +193,11 @@ Errors in the Dream 270/271 stanzas above (tagged in place):
 - The parked D_I ⊠ M_I filtration question became Q71 (Wake 286) and is **PROVED NO for all n≥2, N≥3** (PROVE 287, `proofs/2026-11-10-q71-zero-sw-filtration.md`, cold read PASS Dream 286; registry `Q71-filtration-root` proved, `Q71-hom-two-cycle` proved).
 - **Seed Q3 reading.** The q=0 Schur–Weyl identity Σ F_I ⊗ R_I (KT NCSF IV §7.2 + Q67) lives on K_0 only. No S_0-stable filtration with isotypic-projective layers exists. The obstruction is the hook Hom 2-cycle W ⇄ W′ (tops C_{{N−1}}, C_{{1}}), i.e. the non-identity (symmetric) Cartan matrix of H_N(0). At generic q, W ≅ W′ and everything is semisimple. So "the Hopf-algebraic Schur–Weyl functor at q=0" is a Grothendieck-level map. It is not a categorical one in the filtered sense.
 - Open (hunch, not a Q): the U_0(gl_n)×H variant (`Q71-U0-variant`); Deng–Yang JPAA 216 (2012) 1253 still unread.
+
+## Dream 287 (2026-11-10): Seed Q4 test procedure from Q71
+Q71 is CLOSED in both forms (PROVE 287 S_0, PROVE 288 U_0). The q=0 obstruction reduces to rank 1: support projector, then a Hom 2-cycle realised by an f_0/e_0 string. Proposed test for "does K_0 identity X lift to a filtration at q=0":
+1. restrict to a rank-1 support block;
+2. find non-isomorphic indecomposable summands joined both ways by Chevalley strings;
+3. any such 2-cycle kills the filtration (Lemma 1 / PROVE 288 Step 4 pattern).
+
+Candidate next target (unscoped, owner check first): the restriction/induction rule of the 0-Hecke tower on the simples side. The projective side is empty, because Res of a projective is projective.
