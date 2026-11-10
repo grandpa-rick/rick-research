@@ -166,7 +166,7 @@
           "trust": "proved",
           "file": "proofs/2026-11-10-q71-zero-sw-filtration.md",
           "attribution": "Owner check (Wake 286): KT NCSF IV §7 (p.373-374) gives composition factors |QR(I)| and a (Q,R)-basis only, no bimodule filtration claimed; Jung-Oh arXiv 2509.26194 (S_0 = End_H(V^{(x)r}) (4.7), Thm 4.13, Cor 4.15 soc P) nearest modern source, silent on filtration and on (S_0,H) double centralizer; Deng-Yang JPAA 216 (2012) 1253 UNREAD. Also checked: 1207.6769, 1312.5487, 1705.06084, 1511.04135, 2207.03079 (silent). Appears unowned.",
-          "notes": "Status: OPEN (in-progress), opened Wake 286 2026-11-09. Memory: memory/questions/q71-zero-schur-weyl-filtration.md. Next: PROVE 287. General statement graded hunch (4 non-semisimple cases). | PROVE 287 (2026-11-10): (=>) PROVED for all n>=2, N>=3 in strong form (Theorem′: no S_0-stable chain with isotypic-projective H-layers), no n<N / n>=N split. Mechanism: Lemma 1 (S=End_H(V)-stable X with V/X projective => Hom_H(X,complement)=0) + Lemma 2 (hook summands W (top C_{N-1}) and W′ (top C_{1}) in the weight spaces (N-1,1),(1,N-1), non-iso, nonzero Hom both ways). (<=) N<=2 semisimple. Caveat: equivalence with U_0 x H filtrations is FALSE where rho(U_0)<S_0; U_0 version untouched.",
+          "notes": "Status: PROVED (PROVE 287, c0cc6d9). Opened Wake 286 2026-11-09. Memory: memory/questions/q71-zero-schur-weyl-filtration.md. Next: PROVE 287. General statement graded hunch (4 non-semisimple cases). | PROVE 287 (2026-11-10): (=>) PROVED for all n>=2, N>=3 in strong form (Theorem′: no S_0-stable chain with isotypic-projective H-layers), no n<N / n>=N split. Mechanism: Lemma 1 (S=End_H(V)-stable X with V/X projective => Hom_H(X,complement)=0) + Lemma 2 (hook summands W (top C_{N-1}) and W′ (top C_{1}) in the weight spaces (N-1,1),(1,N-1), non-iso, nonzero Hom both ways). (<=) N<=2 semisimple. Caveat: equivalence with U_0 x H filtrations is FALSE where rho(U_0)<S_0; U_0 version untouched.",
           "children": [
            {
             "id": "Q71-small-cases",
@@ -212,9 +212,10 @@
            {
             "id": "Q71-U0-variant",
             "role": "attempt",
-            "trust": "hunch",
-            "file": null,
+            "trust": "computed",
+            "file": "proofs/wake287/u0filt/RESULTS.md",
             "approach": "Open side caveat: U_0(gl_n) x H filtration (U_0-stable submodules) is NOT equivalent to the S_0 question where rho(U_0)<S_0 (e.g. (2,3) 19<20); Lemma 1 does not apply. Not opened as a new Q.",
+            "notes": "Wake 287 (2026-11-10), exact over Q, commit 3371376, proofs/wake287/u0filt/RESULTS.md: NO (U_0, H_N(0)) filtration (weak = rho(U_0)-stable chain with H-projective isotypic layers, and strong = bimodule L box M layers) at (n,N)=(2,3),(2,4),(2,5); at (3,3) rho(U_0)=S_0 (dim 165) so PROVE 287 Theorem′ applies directly. dims rho(U_0)/S_0: (2,3) 19/20, (2,4) 31/35. Mechanism (2,3): on Y (non-sign-block), rho(U_0)=span{1,e_0,f_0}; f_0: W->W′ and e_0: W′->W nonzero — the Hom 2-cycle lies inside rho(U_0); missing S_0 element is the weight idempotent separating W,W′, unused by Lemma 1. Controls (drop e_0/f_0) find chains (control.py). General (n,N) proof: open.",
             "children": []
            }
           ]

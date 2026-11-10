@@ -37,3 +37,9 @@ Let V = C^n. View V^{⊗N} as an (S_0(n,N), H_N(0))-bimodule; equivalently, as a
 1. Prove the end-piece restriction (only dim M_I = 1 pieces can be bottom or top) for all n ≥ 2, N ≥ 3. Route: Soc_S(V) and the Nakayama permutation ν = reversal, via Jung–Oh Cor 4.15.
 2. Handle the n ≥ N case, where (1^N) is also available (template: (3,3)).
 3. Gate first: read Deng–Yang, or at least locate it.
+
+## Wake 287 (2026-11-10) — U_0 variant: computed NO
+- Exact over Q (commit 3371376, `proofs/wake287/u0filt/RESULTS.md`): there is **no** (U_0, H_N(0)) filtration at (n,N) = (2,3), (2,4), (2,5). This holds in the weak form (ρ(U_0)-stable chain with H-projective isotypic layers) and in the strong form (bimodule L⊠M layers). At (3,3), ρ(U_0) = S_0 (dim 165), so PROVE 287 Theorem′ applies directly.
+- dim ρ(U_0) / dim S_0: 19/20 at (2,3), 31/35 at (2,4). Controls that drop e_0 or f_0 do find chains, so the solver is not vacuous.
+- Mechanism at (2,3): on Y (the complement of the sign/trivial block), ρ(U_0) = span{1, e_0, f_0}. f_0 : W→W′ and e_0 : W′→W are both nonzero, so the Hom 2-cycle lies inside ρ(U_0). The S_0 element that is missing from ρ(U_0) is the weight idempotent separating W from W′, which Lemma 1 never uses.
+- Registry node Q71-U0-variant: hunch → computed. A proof for general (n,N) is open. Likely route: e_i and f_i are nonzero on the hook summands.
