@@ -1,5 +1,33 @@
 # Summary: Rick
 
+## PROVE 291 (2026-11-11): Q74 ANSWERED, one-box criterion PROVED. Read this first.
+- **Theorem.** Let X and Y be indecomposable 0-Hecke modules with multiplicity-free tops. Then X⊠Y is decomposable ⟺ X⊠□ and □⊠Y are both decomposable (□ = C_(1)). Equivalently: R_1(X) and L_1(Y), where R_k(X) means X | Ind(Res_{H_{a−k}}X ⊠ C_{[k−1]}).
+  - **Necessity.** Q73 Lemma 3 plus its rotation mirror (same k).
+  - **Sufficiency (new).** An explicit witness through M_k ≅ a twisted outer induction.
+  - **R_k ⇒ R_1.** Via w_0(S_k) = s_1⋯s_{k−1}·w_0(S_{k−1}).
+- **Prop S.** Under (H∞), the hereditary multiplicity-free-top hypothesis, which skew shapes satisfy: R_1(X) ⟺ X ≅ X'⊠P with P a nonzero projective.
+  - So (G*) fails exactly through associativity: P⊠(□⊠S) = (P⊠□)⊠S.
+  - The 4 Wake-290 special Y are □⊠S, with S a non-projective simple of H_3.
+- **Correction.** Wake 290's "none of size 5/6" was an mmax=4 artifact: there are 58 (+58 mirror) at m=5.
+- **Data.** Intervals m ≤ 5: the R_1 set equals the iso-form set exactly, every nonempty R_k set contains 1, and box.py checks pairs with a+b ≤ 8. See the proof file §4.
+- **Files.** Proof `proofs/2026-11-11-q74-gstar-box-criterion.md`. Registry `q74-gstar-failure.json`. Question file `questions/q74-gstar-failure-diagnostic.md`. Collaborator note (UNSENT) `for-collaborator/2026-11-11-q74-one-box-criterion.md`. Scripts `proofs/prove291/`.
+- **Next.** A cold read (YELLOW: B.2 twisted M_k, the twist bookkeeping in Step A, transitivity in C.1). An owner check (JKLO / Choi–Kim–Nam–Oh interval-module papers). The arc is finished: no Q75 on this.
+
+## Wake 290 (2026-11-11): CURRENT STATE, read this first (registry wins)
+- **FPSAC is OFF.** Robin (uid 465, 11-11 00:43) can't attend Galway in person, so he won't submit. Dream 289 never saw this mail; it arrived unread.
+  - Replied: no venue action. I suggested direct readers, Buch (Buch–Ravikumar K-Pieri match) and Littelmann/Fang (LS paths + CCFL), and proposed moving the paper to publishable-result after Clio's review.
+  - The Pass C fixes were applied anyway: WIP 9fa6b0c, 0 overfull, 0 undefined, 12 pp + AI declaration. The vbox fix was a headheight tweak, because the template's own sample shows the same warning.
+- **Clio:** told her the 11-13 deadline is off.
+  - Sent her two PDFs (cc Robin): Q72(i)+Q73 bundle, WIP 3ab7f44 / source 25705bf, 14 pp, with the Mackey, generator-interval and Huang NITs fixed; and my referee read of her Q565/Q576/Q559, WIP 2564542 / source 466cc05.
+  - All three of her notes are sound, 0 MUST. They are now checked-sober in `peer-claims-clio.json`.
+- **Q73 owner gate NOT FOUND (2nd sweep).**
+  - Defant–Searles 2404.04961 read first-hand: no overlap.
+  - 12 citers/related papers full-text grepped, 0 hits.
+  - Liao–Yang–Yu 2410.07990 proves KLO Conj **7.2**, which is a different conjecture.
+  - Our statement matches KLO §7.2 literally. Log `reading/2026-11-11-wake290-q73-owner-gate.md`. Commit 5c2d4a9.
+- **PROVE 291 = Q74:** the (G*)-failure diagnostic. All 56 counterexamples are projective ⊠ one of 4 special H_4(0) interval modules (plus 4 mirrors). Target: classify them, and test or prove (G**) from the Q73 Key Lemma.
+- Still pending: Robin's choice of direct readers; Clio's LG review, which gates publishable-result; Q73 routing (ask Robin once Clio has reviewed).
+
 ## Dream 289 (2026-11-11): CURRENT STATE, read this first (registry wins)
 - **FPSAC is GO.** Robin said yes (sole author, Independent Researcher, AI footnote).
   - The package went to Robin from WIP c6ab93c (`papers/lg-og-fpsac-submit/`). The deadline is **Sun 2026-11-15**, via https://softconf.com/p/fpsac2027/.

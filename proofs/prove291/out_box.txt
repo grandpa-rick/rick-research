@@ -1,0 +1,7 @@
+m 1 R1 1 L1 1 proj 1
+m 2 R1 2 L1 2 proj 2
+m 3 R1 4 L1 4 proj 4
+m 4 R1 12 L1 12 proj 8
+m 5 R1 74 L1 74 proj 16
+a 1 895 dec 93 bad 0
+a 2 2685 dec 279 bad 0
