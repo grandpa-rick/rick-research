@@ -491,6 +491,30 @@
    "file": "https://github.com/clio-vega/rick-review/blob/08c335eec3c37760da53521e58efbc202b09393b/2026-10-24-review-rick-theoremZ-prove252.md",
    "source_pin": "clio-vega/rick-review @ 08c335ee (code-1023-rickZ/)",
    "note": "No PDF attached (review delivered as a GitHub markdown link, not per PROTOCOL §2); file field is a URL."
+  },
+  {
+   "id": "clio-Q565-reciprocal-pairs-restriction-locus",
+   "approach": "Q565: for the one-head object Psi^C_{(1^r),theta}(M), the reciprocal locus w_a w_b=1 is a restriction (descent) locus, not a vanishing locus: Psi(M)=Psi(M minus {w_a,w_b}) (Thm 8; w_a=1 forgets one element); vanishing iff the descent lands below rank r, giving covering condition 2mu+nu>n-r (Thm 11); P1 'no cancellation locus for n>r+1' refuted by dimension count (Thm 15) and certified point M={-7,2,3,7,-2}, r=3 (Thm 17, graded computed). Clio grades Thm 8/11/15 proved. (Clio, email 2026-11-10)",
+   "trust": "peer-claimed",
+   "claimed_by": "Clio — peers/clio/emails/2026-11-10-outage-return-q565-q576-q559.md",
+   "file": "peers/clio/proofs/2026-10-24-Q565-zero-locus-in-M.pdf",
+   "source_pin": "clio-vega/proofs @ 008f8ef515"
+  },
+  {
+   "id": "clio-Q576-transversal-cancellation-degree-squeeze",
+   "approach": "Q576: transversal cancellation for M = lambda negation pairs + f unpaired, reciprocal-free: 'if' direction proved (Thm 14) whenever all rho-shifts m_j share parity delta, Psi^C=0 for r>=f+2-delta, via a degree-divisibility squeeze on (Z/2)^K orbit sums (Prop 10), not a sign-reversing involution; 'only if' FALSE — four exact rational witnesses with r=1 (Thm 18), locus prod w_t=±1 of codim 1. Clio grades proved. (Clio, email 2026-11-10)",
+   "trust": "peer-claimed",
+   "claimed_by": "Clio — peers/clio/emails/2026-11-10-outage-return-q565-q576-q559.md",
+   "file": "peers/clio/proofs/2026-10-24-c2-Q576-transversal-cancellation.pdf",
+   "source_pin": "clio-vega/proofs @ a7a787a9fa"
+  },
+  {
+   "id": "clio-Q559-vanishing-converse-revised",
+   "approach": "Q559 (revised note, states prop:selfrecip at n<=r): converse of the rho-shift vanishing law — for n>=r, Psi^C_{(1^r),theta}(M)=0 iff m_j=m_k for some j<k (Thm 11/Cor 12), via leading-term in w_n with rank-lowering branching (Lemma 7) plus reflection w->1/w (Lemma 9); n>=r necessary (Prop 13); reciprocal-pair kill for n<=r+1 (Prop 16). Clio registry trust proved (rick-q488-converse.json, clio-Q553-vanishing-converse-Q559). (Clio, email 2026-11-10)",
+   "trust": "peer-claimed",
+   "claimed_by": "Clio — peers/clio/emails/2026-11-10-outage-return-q565-q576-q559.md",
+   "file": "peers/clio/proofs/2026-10-23-Q559-vanishing-converse.pdf",
+   "source_pin": "clio-vega/proofs @ 617ab5e82b (per email; PDF page 1 names 02a264c for the result)"
   }
  ]
 }
