@@ -87,10 +87,10 @@ So decomposable ⟹ both projective.
 **Converse.** If I and J are projective, then C_I = P_I and C_J = P_J. M = Ind(P_I ⊠ P_J) is projective, since H_N is B-free. Its multiplicity of P_Z equals dim Hom(M, C_Z), which is 1 exactly for Z ∈ {Z_1, Z_2} by Step 2. So M ≅ P_{I·J} ⊕ P_{I⊙J}. ∎
 
 ## Remarks
-- The proof is just Frobenius applied twice: once to End, once to the top. Mackey (split at q=0) then reduces the gluing question to "does C_I split off a smaller induced module L_k?", and induction answers that.
+- The proof is just Frobenius applied twice: once to End, once to the top. Mackey then reduces the gluing question to "does C_I split off a smaller induced module L_k?", and induction answers that. (Cold-read NIT fixed 2026-11-11: the Mackey decomposition Res_B M = ⊕_k M_k is the standard double-coset decomposition and is a direct sum at EVERY q; q=0 is not what makes it direct. What q=0 supplies is the specific shape of the pieces: the 0-Hecke word-model rules of §0 identify M_k ≅ L_k ⊗ R_k, a tensor product of smaller induced 0-Hecke modules of the same type with matched eigenvalues.)
 - The constraint k ≤ r'+1 is used only in the k = a = b case. It is what excludes, e.g., I = J = (2,2) (dim End = 4 but indecomposable).
 - **Negative control (step 4 of the route).** In the both-projective case the witness k exists. For example, k = 1 with a, b ≥ 2 has L_1, R_1 projective and containing C_I, C_J. The hypothesis that fails in the non-projective case is "C_I is a summand of L_k". The wake's guess ("I has both an ascent and a descent") is the k < a shadow of this condition, via Fact N.
-- Hypotheses used: q = 0 (so Mackey is a direct sum, §3), the 2-block parabolic, and 1-dim modules. Q72(ii), describing End in general, is untouched. The proof does describe the rad-part: End M = k ⊕ ker ρ.
+- Hypotheses used: q = 0 (for the shape of the Mackey pieces M_k ≅ L_k ⊗ R_k with the 0-Hecke action, §3, for the 1-dim simples C_D, and for Norton's Fact N — NOT for directness of Mackey, which holds at all q), the 2-block parabolic, and 1-dim modules. Q72(ii), describing End in general, is untouched. The proof does describe the rad-part: End M = k ⊕ ker ρ.
 
 ## Verification
 `proofs/prove289/check.py 8`:

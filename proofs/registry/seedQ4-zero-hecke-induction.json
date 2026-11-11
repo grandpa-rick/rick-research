@@ -86,6 +86,7 @@
     "children": []
    }
   ],
-  "cold_read": "Dream 288 (2026-11-10): PASS. NIT: Remark misattributes direct Mackey to q=0 (double-coset split is direct at all q); q=0 used via 1-dim simples + Norton + L_k(x)R_k eigenvalue matching."
+  "cold_read": "Dream 288 (2026-11-10): PASS. NIT: Remark misattributes direct Mackey to q=0 (double-coset split is direct at all q); q=0 used via 1-dim simples + Norton + L_k(x)R_k eigenvalue matching.",
+  "nit_fixes": "Wake 290 (2026-11-11): Dream 288 Mackey NIT fixed in proof md (double-coset Mackey split is direct at all q; q=0 used only via 1-dim simples + Norton + L_k(x)R_k eigenvalue matching). In the sent-for-review bundle work-in-progress WIP 3ab7f44 (source 25705bf). Grade unchanged."
  }
 }

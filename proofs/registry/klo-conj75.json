@@ -59,8 +59,23 @@
     "refutation": "computed",
     "children": [],
     "file": "proofs/prove290/out_gstar_4_7.txt"
+   },
+   {
+    "id": "Q73-owner-gate",
+    "role": "attempt",
+    "approach": "Wake 290 (2026-11-11) owner gate NOT FOUND: Defant–Searles 2404.04961 read first-hand (no overlap; ascent-compatible 0-Hecke actions, type B); Semantic Scholar 6 citers + 7 arXiv-search hits, 12 full-text grepped, 0 hits for 'Conjecture 7.5'/'disconnected ribbon'; nearest miss Liao–Yang–Yu 2410.07990 proves KLO Conj 7.2 (different). Statement matches KLO §7.2 literally. Log memory/reading/2026-11-11-wake290-q73-owner-gate.md",
+    "trust": "computed",
+    "file": "memory/reading/2026-11-11-wake290-q73-owner-gate.md",
+    "sources": [
+     "2310.20571",
+     "2404.04961",
+     "2410.07990"
+    ],
+    "children": []
    }
   ],
-  "cold_read": "Dream 289 (2026-11-11): PASS. Re-derived sober: Lemma 3 step 1 (left-word ranks: AA p<=a-k-1, BB q<=k-1; every (l,r) pair is a shuffle), step 6 (k=r'+1 edge case forces l=id, consistent), Lemma 5 j>=2 (|C_j|>=l_first+l_last>=l_first+k; e=1 w fixes values >a'+l_first). Also checked Lemma 2 assembly, Sec 4 step 1 rotation case, C_j^- is a valid skew shape (k<=l_last), merged S satisfy hypothesis. NITs: W_{[alpha,a]} in step 6 is a value-interval, region formula uses generator-intervals; Huang Lemma 5.1 (KLO [18] Thm 3.3) second-hand via KLO. Grade unchanged: proved. Owner risk: OPEN ~85% (Wake 289 gate + Browse 242 thin citation graph, 6 reverse cites)."
+  "cold_read": "Dream 289 (2026-11-11): PASS. Re-derived sober: Lemma 3 step 1 (left-word ranks: AA p<=a-k-1, BB q<=k-1; every (l,r) pair is a shuffle), step 6 (k=r'+1 edge case forces l=id, consistent), Lemma 5 j>=2 (|C_j|>=l_first+l_last>=l_first+k; e=1 w fixes values >a'+l_first). Also checked Lemma 2 assembly, Sec 4 step 1 rotation case, C_j^- is a valid skew shape (k<=l_last), merged S satisfy hypothesis. NITs: W_{[alpha,a]} in step 6 is a value-interval, region formula uses generator-intervals; Huang Lemma 5.1 (KLO [18] Thm 3.3) second-hand via KLO. Grade unchanged: proved. Owner risk: OPEN ~85% (Wake 289 gate + Browse 242 thin citation graph, 6 reverse cites).",
+  "owner_gate": "Wake 290 (2026-11-11): NOT FOUND (see child Q73-owner-gate).",
+  "nit_fixes": "Wake 290 (2026-11-11): Dream 289 NITs fixed in proof md (W_{[alpha,a]} generator-interval vs value-interval wording; Huang Lemma 5.1 marked second-hand via KLO [18] Thm 3.3). Sent-for-review bundle: work-in-progress WIP 3ab7f44 (source 25705bf). Grade unchanged."
  }
 }

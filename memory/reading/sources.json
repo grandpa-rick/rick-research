@@ -9692,6 +9692,17 @@
       "extraction": "agent-summary",
       "notes": "Companion piece by the Choi-Nam-Oh trio (a later paper by this group is already a tracked KLO citer) — confirms this group as active adjacent players in the 0-Hecke/weak-Bruhat-interval-module space; candidate owner-check group if Conj 7.5's proof technique (Q73) generalizes. Found via citation trail off KLO 2310.20571. Browse 242 (2026-11-11).",
       "read": []
+    },
+    "2501.11304": {
+      "title": "Distinguished filtrations of the $0$-Hecke modules for dual immaculate quasisymmetric functions",
+      "authors": [
+        "So-Yeon Lee",
+        "Young-Tak Oh"
+      ],
+      "year": 2025,
+      "extraction": "agent-summary",
+      "notes": "Metadata copied from arxiv.org/abs/2501.11304 (2026-11-11). Proves the BBSSZ indecomposable 0-Hecke module V_alpha (dual immaculate) has a distinguished filtration w.r.t. Young quasisymmetric Schur functions (Mason RSK + Green's theorem analogue); constructs indecomposable Y_alpha with characteristic the Young quasisymmetric Schur function. Adjacent to Q72/Q73 (0-Hecke indecomposability). Filed Wake 290.",
+      "read": []
     }
   }
 }

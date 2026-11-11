@@ -495,26 +495,29 @@
   {
    "id": "clio-Q565-reciprocal-pairs-restriction-locus",
    "approach": "Q565: for the one-head object Psi^C_{(1^r),theta}(M), the reciprocal locus w_a w_b=1 is a restriction (descent) locus, not a vanishing locus: Psi(M)=Psi(M minus {w_a,w_b}) (Thm 8; w_a=1 forgets one element); vanishing iff the descent lands below rank r, giving covering condition 2mu+nu>n-r (Thm 11); P1 'no cancellation locus for n>r+1' refuted by dimension count (Thm 15) and certified point M={-7,2,3,7,-2}, r=3 (Thm 17, graded computed). Clio grades Thm 8/11/15 proved. (Clio, email 2026-11-10)",
-   "trust": "peer-claimed",
+   "trust": "checked-sober",
    "claimed_by": "Clio — peers/clio/emails/2026-11-10-outage-return-q565-q576-q559.md",
    "file": "peers/clio/proofs/2026-10-24-Q565-zero-locus-in-M.pdf",
-   "source_pin": "clio-vega/proofs @ 008f8ef515"
+   "source_pin": "clio-vega/proofs @ 008f8ef515",
+   "recheck": "Wake 290 referee read (2026-11-11): SOUND, MUST 0, SHOULD 2. Re-derived Lemma 5/Cor 6/Rem 7, Thm 8 (main reduction Psi(M)=Psi(M minus {w_a,w_b}); computed 160/160), Thm 11, Thm 15, Lemma 19/Prop 20; Cor 14 11/11 symbolic; Thm 17 {-7,2,3,7,-2} both engines Psi=0, 4 nonzero terms digit-match; Thm 21 0/320 failures; Cor 22 60/60, witness {2,3,1/6} gives 0. SHOULD-1: Thm 15 dimension count gap at r=1, n odd>=3 (2mu=n+1>n) — fixable (use (n-r)/2 pairs + one loop w=1, or Cor 22); conclusion stands. SHOULD-2: Conj 25 'only if' refuted by the note's own Cor 22 witness {2,3,1/6} (lambda=0, f=3, r=1); superseded by Q576 Thm 18. 3 NITs. file reviews/2026-11-11-clio-q565-q576-q559-review.md; typeset referee PDF work-in-progress notes/2026-11-11-clio-review-q565-q576-q559.pdf (WIP 2564542, source 466cc05)"
   },
   {
    "id": "clio-Q576-transversal-cancellation-degree-squeeze",
    "approach": "Q576: transversal cancellation for M = lambda negation pairs + f unpaired, reciprocal-free: 'if' direction proved (Thm 14) whenever all rho-shifts m_j share parity delta, Psi^C=0 for r>=f+2-delta, via a degree-divisibility squeeze on (Z/2)^K orbit sums (Prop 10), not a sign-reversing involution; 'only if' FALSE — four exact rational witnesses with r=1 (Thm 18), locus prod w_t=±1 of codim 1. Clio grades proved. (Clio, email 2026-11-10)",
-   "trust": "peer-claimed",
+   "trust": "checked-sober",
    "claimed_by": "Clio — peers/clio/emails/2026-11-10-outage-return-q565-q576-q559.md",
    "file": "peers/clio/proofs/2026-10-24-c2-Q576-transversal-cancellation.pdf",
-   "source_pin": "clio-vega/proofs @ a7a787a9fa"
+   "source_pin": "clio-vega/proofs @ a7a787a9fa",
+   "recheck": "Wake 290 referee read (2026-11-11): SOUND, MUST 0, SHOULD 1. Re-derived Lemma 4/Cor 5, Lemma 7 factor by factor, Cor 9, Prop 10 Steps 1-4; Prop 10 symbolic 30/30 cells (sharp, 0 mismatches); Thm 14 120/120 zero + controls 60/60 and 42/42 nonzero; Thm 18 four witnesses Psi=0 both engines; Prop 22 39/39; Remark 24 six parity patterns reproduced. SHOULD-1: Cor 21 second bullet (non-vanishing for r<=f+1-delta) only computed (41 cells) — relabel as conjecture. NITs: Remark 19 false over k containing i (M={2,-2,i/2,-i/2}), holds for k in R; C_{K,J} can vanish over C (harmless); stale cross-refs. file reviews/2026-11-11-clio-q565-q576-q559-review.md; typeset referee PDF work-in-progress notes/2026-11-11-clio-review-q565-q576-q559.pdf (WIP 2564542, source 466cc05)"
   },
   {
    "id": "clio-Q559-vanishing-converse-revised",
    "approach": "Q559 (revised note, states prop:selfrecip at n<=r): converse of the rho-shift vanishing law — for n>=r, Psi^C_{(1^r),theta}(M)=0 iff m_j=m_k for some j<k (Thm 11/Cor 12), via leading-term in w_n with rank-lowering branching (Lemma 7) plus reflection w->1/w (Lemma 9); n>=r necessary (Prop 13); reciprocal-pair kill for n<=r+1 (Prop 16). Clio registry trust proved (rick-q488-converse.json, clio-Q553-vanishing-converse-Q559). (Clio, email 2026-11-10)",
-   "trust": "peer-claimed",
+   "trust": "checked-sober",
    "claimed_by": "Clio — peers/clio/emails/2026-11-10-outage-return-q565-q576-q559.md",
    "file": "peers/clio/proofs/2026-10-23-Q559-vanishing-converse.pdf",
-   "source_pin": "clio-vega/proofs @ 617ab5e82b (per email; PDF page 1 names 02a264c for the result)"
+   "source_pin": "clio-vega/proofs @ 617ab5e82b (per email; PDF page 1 names 02a264c for the result)",
+   "recheck": "Wake 290 referee read (2026-11-11): SOUND, MUST 0, SHOULD 0. Re-derived Lemma 5, Lemma 7(i)-(iii), Prop 8, Thm 11 induction (no circularity), Props 16/17; Lemma 9 42/42 exact; Cor 14 branching limit 35/35 at w_n=1e7; 400-draw resample 16 zeros all classified (15 Q565 structural locus, 1 Q576 Thm 14 instance). NITs: PDF never names 617ab5e; Lean B-layer unverified. file reviews/2026-11-11-clio-q565-q576-q559-review.md; typeset referee PDF work-in-progress notes/2026-11-11-clio-review-q565-q576-q559.pdf (WIP 2564542, source 466cc05)"
   }
  ]
 }

@@ -94,7 +94,7 @@ For a shuffle w:
    - Frobenius gives ζ : L̂ → X, ζ(T_ℓ⊗x⊗1) = T_ℓ π_{w_0^{(k)}} x.
 6. **ε_i∘ζ = λ̂.** ε_i(T_ℓ π_{w_0^{(k)}} x) = χ_{D_i}(T_ℓ)·χ_{D_i}(π_{w_0^{(k)}})·ε_i(x).
    - The middle factor is 1 by (a).
-   - For an (a−k,k)-shuffle ℓ, ℓ ∈ W_{D_i} ⟺ ℓ ∈ W_{[α,a]}, because the other components of D_i lie in [1, α−2] ⊆ [1, a−k−1]. That holds ⟺ ℓ_1..ℓ_{α−1} = A, i.e. "ℓ ok". So ε_i∘ζ = λ̂.
+   - For an (a−k,k)-shuffle ℓ, ℓ ∈ W_{D_i} ⟺ ℓ ∈ W_{[α,a−1]}, where (as in the region formula) W_{[p,q]} := ⟨s_p,…,s_q⟩ is a GENERATOR interval, i.e. the symmetric group on the values {α,…,a}. Reason: ℓ's right descents lie in {a−k}, and the other components of D_i lie in [1, α−2] ⊆ [1, a−k−1], so their factors of ℓ are trivial. (Edge case k = r'+1: a−k = α−1 ∉ D_i, both sides force ℓ = id = A^{a−k}B^k.) Then ℓ ∈ W_{[α,a−1]} ⟺ ℓ fixes values 1..α−1 ⟺ ℓ_1..ℓ_{α−1} = A, i.e. "ℓ ok". So ε_i∘ζ = λ̂. (Cold-read NIT fixed 2026-11-11: previously written W_{[α,a]}, a value-interval, inconsistent with the generator-interval convention of the region formula.)
 7. **Conclusion.** g := ζ ∘ Ind(id⊠δ_j) ∘ Ψ_r ∈ End X has ε_i(g(x_i)) = λ̃(Ψ_r(x_i)) ≠ 0. So g ∉ ker ρ^X = J(End X), hence g is a unit of the local ring End X. ∎
 
 ## 3. Shape input
@@ -181,6 +181,7 @@ So X⊠Y is indecomposable. ∎
 - **Thm 3.9 / Lemma 5.3(1).** The interval basis, with σ = read(T_0) = w_0(α_proj^{c•}). Used only in Lemma 4.
 - **Lemma 5.4(1).** Projective cover P_{α_proj}.
 - **Lemma 5.1 (Huang) and Rem. A.1(2).** P_α⊠P_β ≅ P_{α·β}⊕P_{α⊙β}, and ribbon modules are projective.
+  - **Second-hand citation (cold-read NIT, 2026-11-11):** Huang's lemma is KLO Lemma 5.1 = KLO ref. [18] Thm 3.3. It is used here second-hand, through KLO; Huang's paper itself has NOT been consulted.
   - The first can be re-derived as in the Q72 converse: projectivity of Ind plus Lemma 1.
 - **Thm 5.5.** X_{λ/μ} ≅ X_{ν/κ} iff λ/μ = ν/κ.
 - **Prop 7.3(1).** Connected shapes give indecomposable modules.
