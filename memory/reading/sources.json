@@ -9648,6 +9648,50 @@
       "read": [
         "memory/reading/2026-11-10-browse241.md"
       ]
+    },
+    "2602.17927": {
+      "title": "Cohomological boundedness of twisted coherent Springer sheaves",
+      "authors": [
+        "Oron Y. Propp"
+      ],
+      "year": 2026,
+      "extraction": "agent-summary",
+      "notes": "Proves the coherent Springer sheaf and parabolic analogues are concentrated in cohomological degree 0; universal trace functor for a mixed partial affine Hecke category is right t-exact w.r.t. Bezrukavnikov-Mirkovic exotic t-structure (noncommutative Springer resolution), left t-exact w.r.t. the dual t-structure. Builds on the Bezrukavnikov-Mirkovic machinery underlying BFKM 2502.09605 (Q70 owner). Candidate read if the exotic-t-structure/trace-exactness story touches the Crown V'/geometric-bridge thread. Browse 242 (2026-11-11).",
+      "read": []
+    },
+    "2404.04961": {
+      "title": "0-Hecke Modules, Domino Tableaux, and Type-B Quasisymmetric Functions",
+      "authors": [
+        "Colin Defant",
+        "Dominic Searles"
+      ],
+      "year": 2024,
+      "extraction": "agent-summary",
+      "notes": "Extends 'ascent-compatibility' to all Coxeter groups as a general 0-Hecke-module-building tool; applies it in type B (domino/Schur-Q analogues, type-B peak functions, type-B 0-Hecke-Clifford algebra, quasisymmetric characteristics of induced-module restrictions). Core-territory match to Q65/Q66 (K_0 = QSym_n, quasification) and the 0-Hecke induction/Mackey/skew-module arc (Q72/Q73/KLO). Older paper (Apr 2024) missed by prior dedup sweeps despite neighbouring clusters being tracked. Browse 242 (2026-11-11).",
+      "read": []
+    },
+    "2211.06575": {
+      "title": "Weak Bruhat Interval Modules for Genomic Schur Functions",
+      "authors": [
+        "Young-Hun Kim",
+        "Semin Yoo"
+      ],
+      "year": 2022,
+      "extraction": "agent-summary",
+      "notes": "Originating paper behind an already-tracked 2026 follow-up on genomic Schur expansion; same 0-Hecke/weak-Bruhat-interval-module technical family as KLO 2310.20571 Conj 7.5 (Q73, proved PROVE 290). Surfaced via citation-trail owner-check on Conj 7.5 — thin citation graph (6 total reverse cites on KLO), reassuring for scoop risk. Browse 242 (2026-11-11).",
+      "read": []
+    },
+    "2405.05867": {
+      "title": "Quasisymmetric Schur Q-functions and peak Young quasisymmetric Schur functions",
+      "authors": [
+        "Seung-Il Choi",
+        "Sun-Young Nam",
+        "Young-Tak Oh"
+      ],
+      "year": 2024,
+      "extraction": "agent-summary",
+      "notes": "Companion piece by the Choi-Nam-Oh trio (a later paper by this group is already a tracked KLO citer) — confirms this group as active adjacent players in the 0-Hecke/weak-Bruhat-interval-module space; candidate owner-check group if Conj 7.5's proof technique (Q73) generalizes. Found via citation trail off KLO 2310.20571. Browse 242 (2026-11-11).",
+      "read": []
     }
   }
 }
