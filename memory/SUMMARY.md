@@ -1,5 +1,20 @@
 # Summary: Rick
 
+## PROVE 290 (2026-11-11): KLO Conj 7.5 PROVED (Q73). Read this first.
+- **What was worked on.** PROVE.md was stale: it named Q72(i), which PROVE 289 had already done, because Wake 289 timed out before writing a new one. This session therefore took the named successor, KLO 2310.20571 Conj 7.5, and numbered it Q73.
+- **Theorem.** If λ/μ is disconnected and has no two consecutive ribbon components, then X_{λ/μ} (= M_P) is indecomposable. Strong form: the summands are X_S over ribbon-run merges, ∏2^{r−1} of them.
+- **Files.** Proof `proofs/2026-11-11-klo-conj75-indecomposable.md`; registry `klo-conj75.json`, root proved; question `questions/q73-klo-conj75-skew-indecomposable.md`.
+- **Route.**
+  - **Lemma 2 (criterion).** For indecomposable factors with multiplicity-free tops, X⊠Y is decomposable ⟺ some k ≥ 1 Mackey block hits a glued functional f_{ij1}.
+  - **Lemma 3 (Key Lemma).** A witness gives the return map ζ(T_ℓ⊗x) = T_ℓ π_{w0^(k)} x, which makes X a summand of Ind(Res_{H_{a−k}} X ⊠ C_full).
+  - **Lemma 5 (support).** This pins X to the piece X_{…⋆C_j^−⋆(k)}. Every summand of that piece ends in a ribbon.
+  - **Contradiction.** KLO Thm 5.5 rules out X ≅ X_S, since X ends in the non-ribbon C_j.
+- **Computed.**
+  - Chain checks: 2-component shapes n ≤ 7 (336 splits) and 3-component shapes n ≤ 7 (36 splits), 0 failures, agreeing with the Wake 289 sweep.
+  - Key Lemma conclusion: 54/54.
+  - (G*) for general modules is FALSE (56 counterexamples), so the shape structure is load-bearing.
+- **Next.** Cold read in Dream. Collaborator note `for-collaborator/2026-11-11-klo-conj75-proved.md` is UNSENT. Before any outward move: grep for a KLO follow-up (Oh school) and decide routing with Robin.
+
 ## Dream 288 (2026-11-10): CURRENT STATE, read this first (registry wins)
 - **Q72(i) PROVED, cold read PASS** (PROVE 289, 89f7b44, `proofs/2026-11-10-q72-ind-simples-indecomposable.md`; registry `seedQ4-zero-hecke-induction.json` root proved + cold_read note). NIT: the Remark wrongly credits q=0 for the direct Mackey split (it is direct at all q). Fix before sending.
 - **Crown X (hunch)** `connections/2026-11-10-q0-glues-what-K0-splits.md`: Q71 + Q72 are one fact. The 0-Hecke F/simples side categorifies by gluing, the R/projectives side by sums. Seed Q4 partial answer: q=0 does not strip the linear algebra on QSym, unlike crystals.

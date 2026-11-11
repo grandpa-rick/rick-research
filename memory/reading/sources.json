@@ -9472,10 +9472,11 @@
         "Young-Tak Oh"
       ],
       "year": 2023,
-      "extraction": "agent-summary",
-      "notes": "Wake 288 Q72 owner gate (nearest neighbour). Prop 7.3: regular Schur skew-poset module M_P indecomposable if sh(tau_P) connected; decomposable if it contains a disconnected ribbon (split via P_alpha⊠P_beta = P_{alpha·beta}⊕P_{alpha⊙beta}). Conj 7.5: disconnected, no disconnected ribbon => indecomposable (checked |P|<=6 via End idempotents, Ex 7.4). M_{I,J}=Ind(C_I⊠C_J) lies outside RSP_n unless both projective; Q72(i) is the quasisymmetric analogue of Conj 7.5, NOT stated. Ex 7.4 endomorphism method = Q72 proof route.",
+      "extraction": "deep-read",
+      "notes": "Wake 288 Q72 owner gate (nearest neighbour). Prop 7.3: regular Schur skew-poset module M_P indecomposable if sh(tau_P) connected; decomposable if it contains a disconnected ribbon (split via P_alpha⊠P_beta = P_{alpha·beta}⊕P_{alpha⊙beta}). Conj 7.5: disconnected, no disconnected ribbon => indecomposable (checked |P|<=6 via End idempotents, Ex 7.4). M_{I,J}=Ind(C_I⊠C_J) lies outside RSP_n unless both projective; Q72(i) is the quasisymmetric analogue of Conj 7.5, NOT stated. Ex 7.4 endomorphism method = Q72 proof route. PROVE 290: deep-read §5, §7.2, App A first-hand; Conj 7.5 PROVED (proofs/2026-11-11-klo-conj75-indecomposable.md).",
       "read": [
-        "memory/reading/2026-11-10-wake288-q72-owner-gate.md"
+        "memory/reading/2026-11-10-wake288-q72-owner-gate.md",
+        "memory/reading/2026-11-11-prove290-klo-deepread.md"
       ]
     },
     "2308.10456": {

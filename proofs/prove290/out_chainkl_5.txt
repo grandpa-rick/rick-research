@@ -1,0 +1,4 @@
+KL n 2 tot 1 bad 0
+KL n 3 tot 5 bad 0
+KL n 4 tot 18 bad 0
+KL n 5 tot 54 bad 0

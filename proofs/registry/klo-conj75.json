@@ -1,0 +1,65 @@
+{
+  "conjecture": "Q73 = KLO 2310.20571 Conjecture 7.5: for P in RSP_n with sh(tau_P) disconnected and containing no disconnected ribbon (no two consecutive components both ribbons), M_P (= X_{sh}) is indecomposable. Strong form: X_{lambda/mu} = sum over ribbon-run merges of indecomposable X_S, #summands = prod 2^{r-1}.",
+  "status": "proved",
+  "date_opened": "2026-11-11",
+  "date_closed": "2026-11-11",
+  "tree": {
+    "id": "Q73-root",
+    "approach": "PROVE 290. Induction on n. Split X_{lambda/mu} = X (x) Y at a non-ribbon component C_j, j<m (rotation T->T° handles R,N). Lemma 2 (Frobenius + multiplicity-free top functionals): decomposable iff some Mackey block M_k (k>=1) carries u in Hom_B(V,M_k) hitting a glued functional f_{ij1}. Lemma 3 (Key Lemma): a witness makes X a direct summand of Ind(Res_{H_{a-k}}X [x] C_{[k-1]}) via the return map zeta(T_l (x) x) = T_l pi_{w0^(k)} x. Lemma 5 (support) pins it to the single piece X_{C_1*...*C_j^- * (k)}, whose summands (strong form, size a<n) all end in a ribbon; KLO Thm 5.5 contradicts since C_j is non-ribbon.",
+    "trust": "proved",
+    "file": "proofs/2026-11-11-klo-conj75-indecomposable.md",
+    "sources": [
+      "2310.20571"
+    ],
+    "children": [
+      {
+        "id": "Q73-crit",
+        "role": "premise",
+        "approach": "Lemma 2: X,Y indecomposable with multiplicity-free tops; rho: End(X(x)Y) -> k^{top} has nilpotent kernel; k=0 Mackey block contributes a constant (End X, End Y local), f_{ij0} vanish on M_k (k>=1); so decomposable iff a k>=1 block hits f_{ij1}. Computed: witness <=> decomposable <=> disconnected ribbon, 2-comp n<=7, 3-comp n<=7 (chain2.py), agrees with Wake 289 sweep.",
+        "trust": "proved",
+        "file": "proofs/2026-11-11-klo-conj75-indecomposable.md",
+        "children": []
+      },
+      {
+        "id": "Q73-keylemma",
+        "role": "premise",
+        "approach": "Lemma 3: M_k|_{H_a} = sum over right words of Ind_{H_{a-k} x H_k}(X| [x] Y|); witness forces [a-k+1,a-1] in D_i, [1,k-1] in E_j and X | Ind(Res_{H_{a-k}}X [x] C_full) (eps_i o zeta = lambda-hat). Computed: 54/54 witness cases n<=5 have X a summand (chain.py kl).",
+        "trust": "proved",
+        "file": "proofs/2026-11-11-klo-conj75-indecomposable.md",
+        "children": []
+      },
+      {
+        "id": "Q73-support",
+        "role": "premise",
+        "approach": "Lemma 5: for C_j non-ribbon and top functional label containing [a-k+1,a-1], support lies in the restriction piece nu_0 (top k values in last k cells of bottom row); uses Lemma 4 (connected top functional = [T=T_0], via KLO Lemma 5.4(1) + Thm 3.9 interval model).",
+        "trust": "proved",
+        "file": "proofs/2026-11-11-klo-conj75-indecomposable.md",
+        "sources": [
+          "2310.20571"
+        ],
+        "children": []
+      },
+      {
+        "id": "Q73-classification-input",
+        "role": "premise",
+        "approach": "KLO Thm 5.5 (X_S iso X_S' iff S=S'), Lemma 5.1 (Huang: P_a [x] P_b = P_{a.b}+P_{a(.)b}), Rem A.1(2) (ribbons projective), Prop 7.3(1) (connected indecomposable). Read first-hand (sec 5, 7.2, App A) PROVE 290.",
+        "trust": "proved",
+        "file": "proofs/2026-11-11-klo-conj75-indecomposable.md",
+        "sources": [
+          "2310.20571"
+        ],
+        "children": []
+      },
+      {
+        "id": "Q73-Gstar",
+        "role": "attempt",
+        "approach": "(G*) 'Ind of two indecomposable H(0)-modules is indecomposable unless both projective' would prove Conj 7.5 by associativity.",
+        "trust": "dead-end",
+        "reason": "FALSE: 56 counterexamples among indecomposable weak-Bruhat interval modules, a+b<=7 (prove290/gstar.py, out_gstar_4_7.txt), e.g. C_(1) [x] Y decomposable for non-projective interval Y of H_4(0). Shape structure (support Lemma 5 + Thm 5.5) is essential.",
+        "refutation": "computed",
+        "children": [],
+        "file": "proofs/prove290/out_gstar_4_7.txt"
+      }
+    ]
+  }
+}

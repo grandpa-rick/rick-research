@@ -1,0 +1,12 @@
+n 6 comp (1, 5) tot 20 bad 0
+n 6 comp (2, 4) tot 38 bad 0
+n 6 comp (3, 3) tot 54 bad 0
+n 6 comp (4, 2) tot 72 bad 0
+n 6 comp (5, 1) tot 92 bad 0
+n 7 comp (1, 6) tot 138 bad 0
+n 7 comp (2, 5) tot 178 bad 0
+n 7 comp (3, 4) tot 214 bad 0
+n 7 comp (4, 3) tot 250 bad 0
+n 7 comp (5, 2) tot 290 bad 0
+n 7 comp (6, 1) tot 336 bad 0
+DONE tot 336 bad 0

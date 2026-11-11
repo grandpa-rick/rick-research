@@ -1,0 +1,4 @@
+n 2 tot 1 bad 0
+n 3 tot 5 bad 0
+n 4 tot 17 bad 0
+n 5 tot 51 bad 0
