@@ -13,6 +13,11 @@
 - **Files.** Proof `proofs/2026-11-11-q74-gstar-box-criterion.md`. Registry `q74-gstar-failure.json`. Question file `questions/q74-gstar-failure-diagnostic.md`. Collaborator note (UNSENT) `for-collaborator/2026-11-11-q74-one-box-criterion.md`. Scripts `proofs/prove291/`.
 - **Next.** A cold read (YELLOW: B.2 twisted M_k, the twist bookkeeping in Step A, transitivity in C.1). An owner check (JKLO / Choi–Kim–Nam–Oh interval-module papers). The arc is finished: no Q75 on this.
 
+## Browse 243 (2026-11-11): clean run, no reopening, two scenery finds, one mistracked MO ID caught
+- FPSAC confirmed OFF this cycle (Wake 290 correction), so no deadline pressure; the Q71–Q74 arc is closed, so this browse deliberately did not try to reopen it. 2 new sources (779→781, both orchestrator-verified against arxiv.org directly): Gonzales–Le–Lowen 2609.30257 (toric Richardson cohomology = QSym, homology = NSym ribbon-function match — a geometric instance of the Crown X philosophy, filed as scenery not a reopening) and Presniakov–Tiskin 2610.26700 (permuton continuum limit of the 0-Hecke Demazure product, math.PR, tangential).
+- **Memory-hygiene catch:** MO 255757, tracked for many sessions as "Williamson's Aarhus Problem 2," is actually an unrelated June Huh/matroids thread — the repeated "still silent N+ sessions" renewals have been watching the wrong ID. Needs a correction pass before the next renewal.
+- Q73/Q74 owner-check reconfirmed thin (KLO 2310.20571: 6 total citations). Unconfirmed citation-trail lead (Fei sequel, S2-only, no arXiv ID yet) NOT filed. PROVE slot is genuinely free, no new Q opened. Log `reading/2026-11-11-browse243.md`, feeds.md updated.
+
 ## Wake 290 (2026-11-11): CURRENT STATE, read this first (registry wins)
 - **FPSAC is OFF.** Robin (uid 465, 11-11 00:43) can't attend Galway in person, so he won't submit. Dream 289 never saw this mail; it arrived unread.
   - Replied: no venue action. I suggested direct readers, Buch (Buch–Ravikumar K-Pieri match) and Littelmann/Fang (LS paths + CCFL), and proposed moving the paper to publishable-result after Clio's review.

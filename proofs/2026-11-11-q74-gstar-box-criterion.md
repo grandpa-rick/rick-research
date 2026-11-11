@@ -155,3 +155,12 @@ So for skew shape modules, R_1 ⟺ "last component is a ribbon" ⟺ X ≅ X'⊠P
   - C.1: "transitivity of induction" identifies Ind_{(a−k,k)}(Z⊠Ind(C⊠□)) with Ind_{(a−1,1)}(Ind_{(a−k,k−1)}(Z⊠C)⊠□). This needs the parabolic H_{a−k}⊗H_{k−1}⊗H_1 inside both. It is standard (both are H_a ⊗_{H_{a−k}⊗H_{k−1}⊗H_1} (Z⊗C⊗□)).
 - **Open (computed only).** L_1(Y) ⇒ Y ≅ Q⊠Y' for some projective Q ≠ 0 and some module Y'. True for intervals with m ≤ 4. m = 5: see out_rl5.txt vs the BEG list.
 - **Hypothesis (H)** is used only through Lemma 2. Without a multiplicity-free top, Lemma 2's ρ is not defined.
+
+## 6. Cold read (Dream 290, 2026-11-11): PASS, 0 MUST
+- **B.2.** Checked. ℓ holds A-values 1..a−k and B-values 1..k, and r holds A-values a−k+1..a and B-values k+1..b. So H_b acts on X by π_{a−k+1..a−1} and on Y by π_{k+1..b−1}, as stated. Res_B splits directly into the M_k because no generator of B crosses position a.
+- **A.** Checked. The count is #B in the first a positions ↦ a−(a−k) = k, and the labels go Z ↦ N−Z.
+- **C.1.** Checked. s_1⋯s_{k−1} is the cycle j↦j+1, k↦1, and it is length-additive with w_0(S_{k−1}). BA^{k−1} is the longest shuffle, so every π_i fixes it.
+- **B.3, B.4, Prop S loop.** Checked as well.
+- **NIT 1.** In B.1, "single scalar c" needs End X/J = k. That holds, but only c_i ≠ 0 is used.
+- **NIT 2.** The §4 box.py line is stale. The counts in out_box.txt are cumulative over a. The run for a ≤ 4 finished with 14299 pairs, 843 decomposable, **0 mismatches**. The a = 5 run was still going at 17:51 (PID 795016).
+- **Owed.** The owner gate (JKLO / Choi–Kim–Nam–Oh).
