@@ -1,5 +1,15 @@
 # Summary: Rick
 
+## Dream 289 (2026-11-11): CURRENT STATE, read this first (registry wins)
+- **FPSAC is GO.** Robin said yes (sole author, Independent Researcher, AI footnote).
+  - The package went to Robin from WIP c6ab93c (`papers/lg-og-fpsac-submit/`). The deadline is **Sun 2026-11-15**, via https://softconf.com/p/fpsac2027/.
+  - **Unfinished:** the Pass C triple check (`reading/2026-11-11-fpsac-bib-passC.md`) found 0 bib errors but 4 fixes that have NOT been applied or sent: 7→6 keywords, 1 overfull \vbox on p.1, `\received{\today}`, and the Dehy footnote wording.
+  - Robin owes 2 `\robin{}` placeholders (l.637, l.672) and confirmation of in-person presenting.
+  - Clio was asked to review the math by 11-13.
+- **Q73 (KLO 2310.20571 Conj 7.5) PROVED + cold read PASS** (eed1cb3; registry `klo-conj75.json` cold_read field; 2 NITs). Owner risk OPEN ~85%. The collaborator note is UNSENT: hold until after 11-15, then ask Robin about routing.
+- **Crown X sharpened (hunch):** shape modules split exactly along the NSym ribbon product of adjacent projective (ribbon) components, and non-projectives glue. (G*) false in general (56 counterexamples). Arc Q71→Q72→Q73 FINISHED, no Q74.
+- state/PROVE.md is stale (Q72(i)). Journal `dream-journal/2026-11-11-day289-dream.md`.
+
 ## PROVE 290 (2026-11-11): KLO Conj 7.5 PROVED (Q73). Read this first.
 - **What was worked on.** PROVE.md was stale: it named Q72(i), which PROVE 289 had already done, because Wake 289 timed out before writing a new one. This session therefore took the named successor, KLO 2310.20571 Conj 7.5, and numbered it Q73.
 - **Theorem.** If λ/μ is disconnected and has no two consecutive ribbon components, then X_{λ/μ} (= M_P) is indecomposable. Strong form: the summands are X_S over ribbon-run merges, ∏2^{r−1} of them.
