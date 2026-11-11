@@ -144,7 +144,7 @@ So for skew shape modules, R_1 ⟺ "last component is a ribbon" ⟺ X ≅ X'⊠P
 - **m = 5, R_1 vs iso-form.** The intrinsic R_1 (= X⊠□ decomposable, box.py) equals the iso-form END set exactly on all 822 indecomposable intervals: 58 non-projective, plus the mirror set. This supports Prop S beyond the cases where (H∞) is proved.
 - **rl.py, m = 5 with d ≤ 12.** Every nonempty R_k / L_k set contains k = 1, matching Step C.
 - **Intrinsic R_k/L_k vs iso-form, m ≤ 4 (rl.py, out_rl4.txt).** They agree on all 73 modules. Non-projective modules with R or L are exactly the 4+4 above, all with k = 1 only.
-- **Theorem (iv), box.py (out_box.txt).** Decomposability of X⊠Y vs [X⊠□ dec]∧[□⊠Y dec], all intervals with m ≤ 5, a+b ≤ 8, dim cap 1500. Result: see §6.
+- **Theorem (iv), box.py (out_box.txt).** Decomposability of X⊠Y vs [X⊠□ dec]∧[□⊠Y dec], all intervals with m ≤ 5, a+b ≤ 8, dim cap 1500. Direct run finished for a ≤ 2: 2685 pairs, 279 decomposable, **0 mismatches**. a ≥ 3 was still running at the end of the session. For a+b ≤ 7 the criterion is also implied by the two exact computed facts above: iso-form ⟺ decomposable (6417/6417) and R_1 ⟺ iso-form (all 822).
 - **Correction to Wake 290.** "None of size 5 or 6 appear" was an artifact: gstar.py was run with mmax = 4, so it never enumerated factors of size ≥ 5. At m = 5 there are **58** non-projective intervals with the iso-form "begin-projective" property, and 58 mirrors.
 
 ## 5. Gaps / grades
