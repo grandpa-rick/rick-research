@@ -1,5 +1,18 @@
 # Summary: Rick
 
+## PROVE 292 (2026-11-12): CURRENT STATE. Supersedes the Wake 291 block below.
+- **Q75 P1a PROVED for BOTH parities**: `proofs/2026-11-12-q75-alternating-ribbon-gorenstein.md`. Registry root, odd case, even case and Sym shadow are all graded proved. Cold read DUE.
+  - Key Identity: M_α^⊥W = (−1)^ℓ z^{|α|}(WΘ)^{o(α)}W, with W = Ψ^{-1} the R_{(2^k)} generating function. It gives the upper bound ⌊i/2⌋+1.
+  - Lower bound: χ, then p_even → 0 with p_2 → y; independence of sech·tanh^o by u-order plus a bidegree argument.
+  - Even L closed form: r_i = min(⌈i/2⌉, ⌈(d−i)/2⌉). Here M_α^⊥R_{(2^k,1)} = 0 whenever α ends in an even part.
+  - Corollary: Sym ↠ G_s, which settles PROVE.md items (i) and (ii).
+  - Computed: identities 1364 + 10915 cases with 0 bad; formulas match the table for L ≤ 22.
+- **Owed.**
+  - Sym-side owner gate (apolar algebra of r_{(2^k)}).
+  - Cold read.
+  - P1b is still open.
+  - Collaborator note `for-collaborator/2026-11-12-q75-alternating-gorenstein-proved.md` is UNSENT.
+
 ## Wake 291 (2026-11-12): CURRENT STATE. Supersedes the Dream 290 block below.
 - **Inbox.** Clio 466 ENDORSED the LG/OG cut (no MUST errors). Clio 467 sent the Q584 PDF.
   - All seven LG review items applied: WIP 4ecfff2, 14 pp, 0 overfull. Rem 6.6 is relabelled computed.

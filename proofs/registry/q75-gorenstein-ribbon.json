@@ -1,21 +1,88 @@
 {
  "conjecture": "Q75: Hilbert function of the Gorenstein quotient G_s = QSym_Q / Ann(R_s), Ann(R_s) = {f : <fg,R_s> = 0 for all g} (Macaulay inverse system of the ribbon R_s in NSym). r_i = rank of (u,v) -> [F_s] F_u F_v on QSym_i x QSym_{d-i}. Source: Gonzales-Le-Lowen 2609.30257 cap product on toric-Richardson X_s (meeting point graded sketched). Odd alternating L=2k-1: Hilb = [floor(k/2)+1]_{q^2} [2 ceil(k/2)+1]_q, i.e. r_i = min(floor(i/2), floor((d-i)/2)) + 1.",
- "status": "open",
+ "status": "proved",
  "date_opened": "2026-11-12",
  "date_closed": null,
- "owner_gate": {"date": "2026-11-12", "verdict": "NOT FOUND (QSym side)", "nearest": "2604.24903 (BGST QGr, no Poincare duality; cite), 2009.13002 (BMMN complete homogeneous dual generators, polynomial ring, adjacent)", "open_risk": "Sym side: Gorenstein quotient of Sym with dual generator ribbon Schur r_(2^k) under Hall pairing not yet gated", "log": "proofs/wake291/gs-owner-gate-and-controls.md"},
+ "owner_gate": {
+  "date": "2026-11-12",
+  "verdict": "NOT FOUND (QSym side)",
+  "nearest": "2604.24903 (BGST QGr, no Poincare duality; cite), 2009.13002 (BMMN complete homogeneous dual generators, polynomial ring, adjacent)",
+  "open_risk": "Sym side: Gorenstein quotient of Sym with dual generator ribbon Schur r_(2^k) under Hall pairing not yet gated",
+  "log": "proofs/wake291/gs-owner-gate-and-controls.md"
+ },
  "tree": {
   "id": "Q75-root",
-  "approach": "Wake 291 scoping (proofs/wake291/hjv-scoping.md). Target PROVE 292: P1a odd alternating L.",
-  "trust": "computed",
+  "approach": "Wake 291 scoping (proofs/wake291/hjv-scoping.md). Target PROVE 292: P1a odd alternating L. PROVE 292: P1a odd+even PROVED (file 2026-11-12-q75-alternating-ribbon-gorenstein.md); P1b open (unproved, computed).",
+  "trust": "proved",
   "file": "proofs/wake291/hjv-scoping.md",
-  "sources": ["2609.30257"],
+  "sources": [],
   "children": [
-   {"id": "Q75-P1a-odd", "approach": "Odd alternating L=2k-1 formula; matches L=1..13 (L=13 blind) and L<=20 with fast engine (rank mod 2 primes = lower bound; agreed with brute force on 6042 entries L<=6).", "trust": "computed", "file": "proofs/wake291/gs-owner-gate-and-controls.md", "children": []},
-   {"id": "Q75-P1a-even", "approach": "Fitted even-L formula (hjv-scoping.md); blind L=14 [1,1,1,2,2,3,3,4,4,3,3,2,2,1,1,1] matched, L=15..20 predicted+matched.", "trust": "computed", "file": "proofs/wake291/gs-owner-gate-and-controls.md", "children": []},
-   {"id": "Q75-P1b", "approach": "r_2 = 1 iff s constant or alternating of even length; 0 violations all strings L<=14.", "trust": "computed", "file": "proofs/wake291/gs-owner-gate-and-controls.md", "children": []},
-   {"id": "Q75-Sym-shadow", "approach": "For alternating s, Hilb(Sym/Ann(r_s), Hall pairing) = Hilb(G_s) for L<=11 and = formula for L<=16; differs for non-alternating (0100110: QSym 1,1,2,4,8 vs Sym 1,1,2,3,5). Suggests Sym ->> G_s for alternating s.", "trust": "computed", "file": "proofs/wake291/gs-owner-gate-and-controls.md", "children": []},
-   {"id": "Q75-controls", "approach": "Negative controls break P1a for L>=4: S^alpha, Lambda^alpha (Fibonacci-type), Psi^alpha (1,0,1,..), perturbed R_s, random (generic max). Max-rank/Lefschetz guess false for 110/255 strings; Poincare duality only for constant s.", "trust": "computed", "file": "proofs/wake291/gs-owner-gate-and-controls.md", "children": []}
-  ]
+   {
+    "id": "Q75-P1a-odd",
+    "approach": "Odd alternating L=2k-1 formula; matches L=1..13 (L=13 blind) and L<=20 with fast engine (rank mod 2 primes = lower bound; agreed with brute force on 6042 entries L<=6). PROVE 292: PROVED all k. Key Identity M_alpha^perp W = (-1)^l z^i (W Theta)^o W (W=Psi^{-1}, Psi/Theta = even/odd parts of sigma(z)) gives upper bound floor(i/2)+1; lower bound via chi then p_even->0 (p_2->y) and an order/bidegree argument. Cold read due.",
+    "trust": "proved",
+    "file": "proofs/2026-11-12-q75-alternating-ribbon-gorenstein.md",
+    "children": [
+     {
+      "id": "Q75-keyid-odd",
+      "role": "premise",
+      "approach": "M_alpha^perp R_(2^k) = (-1)^{k+l}[z^{2k-i}](W Theta)^{o(alpha)} W; ordered-position Leibniz (L1-L3) + even-part collapse W Psi = 1. Computed 1364/1364 k<=5 (prove292/ident.py).",
+      "trust": "proved",
+      "file": "proofs/2026-11-12-q75-alternating-ribbon-gorenstein.md",
+      "children": []
+     },
+     {
+      "id": "Q75-lower-odd",
+      "role": "premise",
+      "approach": "pi chi image e^{-yz^2/2} sech(A) tanh^o(A): distinct u-orders + bidegree (y^b, p-degree n) separation; [z^j]A^n nonzero homogeneous. Computed d<=14 (tri.py).",
+      "trust": "proved",
+      "file": "proofs/2026-11-12-q75-alternating-ribbon-gorenstein.md",
+      "children": []
+     },
+     {
+      "id": "Q75-lower-euler-hankel",
+      "role": "attempt",
+      "approach": "Alternative lower bound: (x,y)-specialisation reduces to Hankel (E_{2(eps+a+b)}) PD via sech-distribution moments. Works (lower.py k<=7) but superseded by the triangular argument.",
+      "trust": "computed",
+      "file": "proofs/prove292/lower.py",
+      "children": []
+     }
+    ],
+    "role": "premise"
+   },
+   {
+    "id": "Q75-P1a-even",
+    "approach": "Fitted even-L formula (hjv-scoping.md); blind L=14 [1,1,1,2,2,3,3,4,4,3,3,2,2,1,1,1] matched, L=15..20 predicted+matched. PROVE 292: closed form r_i = min(ceil(i/2), ceil((d-i)/2)) for 0<i<d PROVED (WTheta = sum (-1)^k z^{2k+1} R_(2^k,1); M_alpha^perp kills R when alpha ends in an even part; else (WTheta)^{o+1}-(WTheta)^{o-1}). Matches table L<=22. Identity computed 10915/10915. Cold read due.",
+    "trust": "proved",
+    "file": "proofs/2026-11-12-q75-alternating-ribbon-gorenstein.md",
+    "children": [],
+    "role": "attempt"
+   },
+   {
+    "id": "Q75-P1b",
+    "approach": "r_2 = 1 iff s constant or alternating of even length; 0 violations all strings L<=14. [sibling question, not a premise of the root; still open]",
+    "trust": "computed",
+    "file": "proofs/wake291/gs-owner-gate-and-controls.md",
+    "children": [],
+    "role": "attempt"
+   },
+   {
+    "id": "Q75-Sym-shadow",
+    "approach": "For alternating s, Hilb(Sym/Ann(r_s), Hall pairing) = Hilb(G_s) for L<=11 and = formula for L<=16; differs for non-alternating (0100110: QSym 1,1,2,4,8 vs Sym 1,1,2,3,5). Suggests Sym ->> G_s for alternating s. PROVE 292 Corollary: Sym ->> G_s for all alternating s (both parities); Sym-shadow Hilb = formula. Owner gate on Sym side still NOT run.",
+    "trust": "proved",
+    "file": "proofs/2026-11-12-q75-alternating-ribbon-gorenstein.md",
+    "children": [],
+    "role": "attempt"
+   },
+   {
+    "id": "Q75-controls",
+    "approach": "Negative controls break P1a for L>=4: S^alpha, Lambda^alpha (Fibonacci-type), Psi^alpha (1,0,1,..), perturbed R_s, random (generic max). Max-rank/Lefschetz guess false for 110/255 strings; Poincare duality only for constant s. [evidence only, not a premise]",
+    "trust": "computed",
+    "file": "proofs/wake291/gs-owner-gate-and-controls.md",
+    "children": [],
+    "role": "attempt"
+   }
+  ],
+  "context": "Motivation only (not load-bearing): GLL 2609.30257 cap product on X_s. Proof uses only textbook QSym/NSym duality, ribbon coarsening formula, p_n^perp = n d/dp_n (Macdonald I.5 Ex.3)."
  }
 }
