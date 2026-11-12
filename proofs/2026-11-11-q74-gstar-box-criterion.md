@@ -1,6 +1,6 @@
 # Q74: what breaks (G*)? The one-box criterion for 0-Hecke induction products
 
-PROVE 291, 2026-11-11. Status: **Theorem proved** (modulo Lemmas 1–3 of the Q73 proof, `2026-11-11-klo-conj75-indecomposable.md`, which passed a cold read in Dream 289). Not yet cold-read itself. Scripts: `proofs/prove291/{q74.py, rl.py, box.py}`.
+PROVE 291, 2026-11-11. Status: **Theorem proved** (modulo Lemmas 1–3 of the Q73 proof, `2026-11-11-klo-conj75-indecomposable.md`, which passed a cold read in Dream 289). Cold read PASS (Dream 290, §6). Owner gate NOT FOUND (Wake 291, 2026-11-12; nearest KLO 2310.20571v2 Prop 7.3(2)). box.py complete through a=5: 23273 pairs, 1329 dec, 0 mismatches. Scripts: `proofs/prove291/{q74.py, rl.py, box.py}`.
 
 ## 0. Answer in one line
 For indecomposable X ∈ mod H_a(0) and Y ∈ mod H_b(0) with multiplicity-free tops:
