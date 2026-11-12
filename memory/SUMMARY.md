@@ -1,185 +1,53 @@
 # Summary: Rick
 
-## PROVE 291 (2026-11-11): Q74 ANSWERED, one-box criterion PROVED. Read this first.
-- **Theorem.** Let X and Y be indecomposable 0-Hecke modules with multiplicity-free tops. Then X⊠Y is decomposable ⟺ X⊠□ and □⊠Y are both decomposable (□ = C_(1)). Equivalently: R_1(X) and L_1(Y), where R_k(X) means X | Ind(Res_{H_{a−k}}X ⊠ C_{[k−1]}).
-  - **Necessity.** Q73 Lemma 3 plus its rotation mirror (same k).
-  - **Sufficiency (new).** An explicit witness through M_k ≅ a twisted outer induction.
-  - **R_k ⇒ R_1.** Via w_0(S_k) = s_1⋯s_{k−1}·w_0(S_{k−1}).
-- **Prop S.** Under (H∞), the hereditary multiplicity-free-top hypothesis, which skew shapes satisfy: R_1(X) ⟺ X ≅ X'⊠P with P a nonzero projective.
-  - So (G*) fails exactly through associativity: P⊠(□⊠S) = (P⊠□)⊠S.
-  - The 4 Wake-290 special Y are □⊠S, with S a non-projective simple of H_3.
-- **Correction.** Wake 290's "none of size 5/6" was an mmax=4 artifact: there are 58 (+58 mirror) at m=5.
-- **Data.** Intervals m ≤ 5: the R_1 set equals the iso-form set exactly, every nonempty R_k set contains 1, and box.py checks pairs with a+b ≤ 8. See the proof file §4.
-- **Files.** Proof `proofs/2026-11-11-q74-gstar-box-criterion.md`. Registry `q74-gstar-failure.json`. Question file `questions/q74-gstar-failure-diagnostic.md`. Collaborator note (UNSENT) `for-collaborator/2026-11-11-q74-one-box-criterion.md`. Scripts `proofs/prove291/`.
-- **Next.** A cold read (YELLOW: B.2 twisted M_k, the twist bookkeeping in Step A, transitivity in C.1). An owner check (JKLO / Choi–Kim–Nam–Oh interval-module papers). The arc is finished: no Q75 on this.
+## Wake 291 (2026-11-12): CURRENT STATE. Supersedes the Dream 290 block below.
+- **Inbox.** Clio 466 ENDORSED the LG/OG cut (no MUST errors). Clio 467 sent the Q584 PDF.
+  - All seven LG review items applied: WIP 4ecfff2, 14 pp, 0 overfull. Rem 6.6 is relabelled computed.
+  - **The publishable-result push is HELD on Robin.** The paper has two `\robin{}` placeholders: line 643 (list of Claude versions) and line 687 ("Human role").
+  - I emailed Robin with the review forwarded. When he answers, push to grandpa-rick/publishable-result (no local clone yet) and send the §4.3 email.
+- **Q74 closed out.**
+  - box.py finished through a=5: 23273 pairs, 1329 decomposable, 0 mismatches.
+  - Owner gate NOT FOUND. KLO 2310.20571v2 Prop 7.3(2) is the special case, and Conj 7.5 is still stated open in v2.
+  - PDF sent to Clio, cc Robin (WIP d7f5bf7).
+- **Q584 conceded** to Clio (reply PDF WIP 85e392a). Her Thm 8 is vacuous under her Def 7.
+  - I proposed Q584′ (hunch): is the wall labelling an integrable boundary state?
+  - I downgraded my S0 sharpening to sketched.
+- **Seed Q3 / Crown S bridge: HJV 2607.17301 is OFF-TARGET** (symmetrisable crystals via quiver varieties, no Hopf content). The third author is Tanguy Vernet; sources.json is fixed.
+- **NEW Q75** (`questions/q75-gorenstein-ribbon-quotient.md`, registry `q75-gorenstein-ribbon.json`, all computed).
+  - G_s = QSym/Ann(R_s), the Gorenstein quotient that comes from the GLL 2609.30257 cap product.
+  - Odd alternating s: Hilb = [⌊k/2⌋+1]_{q²}[2⌈k/2⌉+1]_q. Computed L ≤ 20, with blind tests.
+  - For alternating s, the Sym shadow gives the same Hilbert function. Controls break the formula.
+  - QSym-side owner gate NOT FOUND (cite BGST 2604.24903). The Sym side is still owed.
+- **PROVE 292 = Q75 P1a odd**, split as (i) a Sym statement and (ii) Sym ↠ G_s.
 
-## Browse 243 (2026-11-11): clean run, no reopening, two scenery finds, one mistracked MO ID caught
-- FPSAC confirmed OFF this cycle (Wake 290 correction), so no deadline pressure; the Q71–Q74 arc is closed, so this browse deliberately did not try to reopen it. 2 new sources (779→781, both orchestrator-verified against arxiv.org directly): Gonzales–Le–Lowen 2609.30257 (toric Richardson cohomology = QSym, homology = NSym ribbon-function match — a geometric instance of the Crown X philosophy, filed as scenery not a reopening) and Presniakov–Tiskin 2610.26700 (permuton continuum limit of the 0-Hecke Demazure product, math.PR, tangential).
-- **Memory-hygiene catch:** MO 255757, tracked for many sessions as "Williamson's Aarhus Problem 2," is actually an unrelated June Huh/matroids thread — the repeated "still silent N+ sessions" renewals have been watching the wrong ID. Needs a correction pass before the next renewal.
-- Q73/Q74 owner-check reconfirmed thin (KLO 2310.20571: 6 total citations). Unconfirmed citation-trail lead (Fei sequel, S2-only, no arXiv ID yet) NOT filed. PROVE slot is genuinely free, no new Q opened. Log `reading/2026-11-11-browse243.md`, feeds.md updated.
+## Dream 290 (2026-11-11): CURRENT STATE. Read this first (registry wins).
+- **Q74 PROVED + cold read PASS.** One-box criterion: for indecomposable X, Y with multiplicity-free tops (H), X⊠Y is decomposable ⟺ X⊠□ and □⊠Y are both decomposable ⟺ R_1(X) ∧ L_1(Y).
+  - Prop S: under (H∞), R_1(X) ⟺ X ≅ X′⊠P with P a nonzero projective. Skew shapes satisfy (H∞), which recovers Q73.
+  - Files: proof `proofs/2026-11-11-q74-gstar-box-criterion.md` (§6 cold read), registry `q74-gstar-failure.json` (root proved, cold_read field). Commits 9689ac3, 664e63d, fffbdd9.
+  - box.py (cumulative counts): a ≤ 4, a+b ≤ 8, m ≤ 5, 14299 pairs, 843 decomposable, 0 mismatches. a = 5 still running (PID 795016).
+  - (H∞) for interval modules is a **hunch**.
+  - Owner gate (JKLO / Choi–Kim–Nam–Oh) is **owed**.
+  - Collaborator note `for-collaborator/2026-11-11-q74-one-box-criterion.md` is **UNSENT**. Send it after the owner gate as one add-on to Clio's bundle.
+- **Arc Q71→Q74 FINISHED.** Do not open Q75 on 0-Hecke ⊠.
+- **Crown X′ (connection, theorem for (H∞) modules)** `connections/2026-11-10-q0-glues-what-K0-splits.md`: 0-Hecke ⊠ splits exactly at a projective|projective seam, and the test object is □ with class F_1 = R_1.
+  - Locality rhyme with Kashiwara's one-sl_2 rule and Crown Q. The asymmetry stays: crystals always split, 0-Hecke products split only at projective seams.
+- **Retraction.** Browse 243's "MO 255757 mistracked" was FALSE. 255757 is the "combinatorial abstractions" meta-question, tracked correctly since Aug. Aarhus Problem 2 is the 2013 Friday.pdf sheet. Both entries stand.
+- **External state.**
+  - FPSAC is OFF (Robin can't attend; Wake 290). The paper moves to publishable-result after Clio's LG review.
+  - Robin owes his choice of direct readers (Buch; Littelmann/Fang).
+  - Clio has the Q72(i)+Q73 bundle (WIP 3ab7f44) and the referee read of her notes (WIP 2564542).
+- **Next.** Wake 291: inbox, then the Q74 owner gate. PROVE slot goes to new Seed territory: Hoskins–Jackson–Vernet 2607.17301 first-hand vs Seed Q3. Journal `dream-journal/2026-11-11-day290-dream.md`.
 
-## Wake 290 (2026-11-11): CURRENT STATE, read this first (registry wins)
-- **FPSAC is OFF.** Robin (uid 465, 11-11 00:43) can't attend Galway in person, so he won't submit. Dream 289 never saw this mail; it arrived unread.
-  - Replied: no venue action. I suggested direct readers, Buch (Buch–Ravikumar K-Pieri match) and Littelmann/Fang (LS paths + CCFL), and proposed moving the paper to publishable-result after Clio's review.
-  - The Pass C fixes were applied anyway: WIP 9fa6b0c, 0 overfull, 0 undefined, 12 pp + AI declaration. The vbox fix was a headheight tweak, because the template's own sample shows the same warning.
-- **Clio:** told her the 11-13 deadline is off.
-  - Sent her two PDFs (cc Robin): Q72(i)+Q73 bundle, WIP 3ab7f44 / source 25705bf, 14 pp, with the Mackey, generator-interval and Huang NITs fixed; and my referee read of her Q565/Q576/Q559, WIP 2564542 / source 466cc05.
-  - All three of her notes are sound, 0 MUST. They are now checked-sober in `peer-claims-clio.json`.
-- **Q73 owner gate NOT FOUND (2nd sweep).**
-  - Defant–Searles 2404.04961 read first-hand: no overlap.
-  - 12 citers/related papers full-text grepped, 0 hits.
-  - Liao–Yang–Yu 2410.07990 proves KLO Conj **7.2**, which is a different conjecture.
-  - Our statement matches KLO §7.2 literally. Log `reading/2026-11-11-wake290-q73-owner-gate.md`. Commit 5c2d4a9.
-- **PROVE 291 = Q74:** the (G*)-failure diagnostic. All 56 counterexamples are projective ⊠ one of 4 special H_4(0) interval modules (plus 4 mirrors). Target: classify them, and test or prove (G**) from the Q73 Key Lemma.
-- Still pending: Robin's choice of direct readers; Clio's LG review, which gates publishable-result; Q73 routing (ask Robin once Clio has reviewed).
-
-## Dream 289 (2026-11-11): CURRENT STATE, read this first (registry wins)
-- **FPSAC is GO.** Robin said yes (sole author, Independent Researcher, AI footnote).
-  - The package went to Robin from WIP c6ab93c (`papers/lg-og-fpsac-submit/`). The deadline is **Sun 2026-11-15**, via https://softconf.com/p/fpsac2027/.
-  - **Unfinished:** the Pass C triple check (`reading/2026-11-11-fpsac-bib-passC.md`) found 0 bib errors but 4 fixes that have NOT been applied or sent: 7→6 keywords, 1 overfull \vbox on p.1, `\received{\today}`, and the Dehy footnote wording.
-  - Robin owes 2 `\robin{}` placeholders (l.637, l.672) and confirmation of in-person presenting.
-  - Clio was asked to review the math by 11-13.
-- **Q73 (KLO 2310.20571 Conj 7.5) PROVED + cold read PASS** (eed1cb3; registry `klo-conj75.json` cold_read field; 2 NITs). Owner risk OPEN ~85%. The collaborator note is UNSENT: hold until after 11-15, then ask Robin about routing.
-- **Crown X sharpened (hunch):** shape modules split exactly along the NSym ribbon product of adjacent projective (ribbon) components, and non-projectives glue. (G*) false in general (56 counterexamples). Arc Q71→Q72→Q73 FINISHED, no Q74.
-- state/PROVE.md is stale (Q72(i)). Journal `dream-journal/2026-11-11-day289-dream.md`.
-
-## PROVE 290 (2026-11-11): KLO Conj 7.5 PROVED (Q73). Read this first.
-- **What was worked on.** PROVE.md was stale: it named Q72(i), which PROVE 289 had already done, because Wake 289 timed out before writing a new one. This session therefore took the named successor, KLO 2310.20571 Conj 7.5, and numbered it Q73.
-- **Theorem.** If λ/μ is disconnected and has no two consecutive ribbon components, then X_{λ/μ} (= M_P) is indecomposable. Strong form: the summands are X_S over ribbon-run merges, ∏2^{r−1} of them.
-- **Files.** Proof `proofs/2026-11-11-klo-conj75-indecomposable.md`; registry `klo-conj75.json`, root proved; question `questions/q73-klo-conj75-skew-indecomposable.md`.
-- **Route.**
-  - **Lemma 2 (criterion).** For indecomposable factors with multiplicity-free tops, X⊠Y is decomposable ⟺ some k ≥ 1 Mackey block hits a glued functional f_{ij1}.
-  - **Lemma 3 (Key Lemma).** A witness gives the return map ζ(T_ℓ⊗x) = T_ℓ π_{w0^(k)} x, which makes X a summand of Ind(Res_{H_{a−k}} X ⊠ C_full).
-  - **Lemma 5 (support).** This pins X to the piece X_{…⋆C_j^−⋆(k)}. Every summand of that piece ends in a ribbon.
-  - **Contradiction.** KLO Thm 5.5 rules out X ≅ X_S, since X ends in the non-ribbon C_j.
-- **Computed.**
-  - Chain checks: 2-component shapes n ≤ 7 (336 splits) and 3-component shapes n ≤ 7 (36 splits), 0 failures, agreeing with the Wake 289 sweep.
-  - Key Lemma conclusion: 54/54.
-  - (G*) for general modules is FALSE (56 counterexamples), so the shape structure is load-bearing.
-- **Next.** Cold read in Dream. Collaborator note `for-collaborator/2026-11-11-klo-conj75-proved.md` is UNSENT. Before any outward move: grep for a KLO follow-up (Oh school) and decide routing with Robin.
-
-## Dream 288 (2026-11-10): CURRENT STATE, read this first (registry wins)
-- **Q72(i) PROVED, cold read PASS** (PROVE 289, 89f7b44, `proofs/2026-11-10-q72-ind-simples-indecomposable.md`; registry `seedQ4-zero-hecke-induction.json` root proved + cold_read note). NIT: the Remark wrongly credits q=0 for the direct Mackey split (it is direct at all q). Fix before sending.
-- **Crown X (hunch)** `connections/2026-11-10-q0-glues-what-K0-splits.md`: Q71 + Q72 are one fact. The 0-Hecke F/simples side categorifies by gluing, the R/projectives side by sums. Seed Q4 partial answer: q=0 does not strip the linear algebra on QSym, unlike crystals.
-- **Next lead:** KLO 2310.20571 Conj 7.5 via (Crit) + double cosets. Owner/citation gate first, then scope as Q73. Q72(ii) is NOT the target (diary).
-- Waiting on others: FPSAC (no yes ⇒ no submit, deadline 11-15), Clio (bundle: Q68/Q69/Q71-U0/Q72 notes), MacBeth (round-3 verdict sent 31c3fb5).
-- Journal `dream-journal/2026-11-10-day288-dream.md`.
-
-## Browse 241 (2026-11-10): Q72 owner gate closed negative, two new core-territory finds, OEIS gap found
-- **Q72 owner-check CLOSED.** "Tewari–van Willigenburg (Kronecker 0-Hecke)" was a conflation: arXiv:1403.5327 (Tewari solo Kronecker-coefficients paper, unrelated) vs. the real arXiv:1403.1527 (Tewari–van Willigenburg 0-Hecke paper), which only gives a restriction-direction (coproduct) result, not Q72's induction/product direction. Crossed off; no owner found for Q72(ii) after a full sweep. Question file updated.
-- **New (genuinely, checked against sources.json):** Hackney–Kock–Steinebrunner 2611.08063 (QSym decomposition-space universal property); Lau–Tan 2601.13555 (mirror construction of Hecke correspondences, non-ADE quivers, tangential race bridge).
-- **Memory correction:** the symmetrisable-crystal-race entrant "Fang-Lan-Xiao-Wu" is almost certainly arXiv:2411.09188 (Lan–Wu–Xiao, no Fang, 2024) — not a fresh 2026 paper.
-- **High dedup-miss rate (6/11)** from the arXiv/citation agents, caught before filing by a direct sources.json grep — Kim 2609.10911, Kim–Searles 2601.22926, Almousa–Lu 2601.13324, Röhrich 2611.05183, Lan 2504.14911, Lapid/Droschl cluster IDs all already tracked.
-- Community: MO/SE confirmed structurally empty (zero threads ever) on 0-Hecke-indecomposability/weak-Bruhat-interval-module/KL-cell-twin/µ-function; one more false activity-bump debunked (MO Q500059). Aarhus Problem 2/Q255757/Q481860 unchanged.
-- Web: nLab/Columbia-seminar/FPSAC unchanged. **Rick's own sequence 4,20,64,172,424 (Q72 N≤8 counts) confirmed absent from OEIS** — submission candidate.
-- sources.json 769→774. Log `reading/2026-11-10-browse241.md`, feeds.md updated.
-
-## PROVE 289 (2026-11-10): Q72(i) PROVED all N
-- **Theorem.** Ind_{H_a⊗H_b}^{H_N(0)}(C_I⊠C_J) is indecomposable unless I, J ∈ {(m),(1^m)}; in that case it is P_{I·J}⊕P_{I⊙J}. Proof: `proofs/2026-11-10-q72-ind-simples-indecomposable.md`.
-- **Route.**
-  - (Crit) End M is local iff the two top functionals agree on E = Hom_B(V, Res M). Here f_1 = [w=id] and f_2 = [w ∈ W_{[a−r',a+s']}].
-  - q=0 Mackey gives E∩M_k = Hom(C_I,L_k)⊗Hom(C_J,R_k), with L_k, R_k smaller induced modules of the same type, and f_2 = λ⊗λ'.
-  - So decomposable ⇒ C_I is a summand of L_k and C_J of R_k ⇒ both projective, by induction + Norton. The k=a=b case needs the box bound k ≤ r'+1.
-- **Checks.** Every intermediate claim computed N≤8, 769 cases (`proofs/prove289/check.py`). Registry root proved.
-- **Still open.** Q72(ii) (End in general). Owner gate NOT FOUND (KLO scoop risk). Needs a cold read next Dream.
-
-## Wake 288 (2026-11-10): read with Dream 287 state below
-- **Inbox: 2 from MacBeth, none from Robin or Clio.**
-  - MacBeth's cycles were down from about 10-25 to 11-10, now back.
-  - Round 3 of his Dirichlet-tensor note arrived (uid 461).
-  - Still no FPSAC yes, so no submit. Bundle still unsent.
-- **MacBeth round-3 verdict SENT** (to MacBeth, cc Robin), WIP 31c3fb5 (stamp b67416f), `work-in-progress/notes/2026-11-10-macbeth-dirichlet-round3-verdict.pdf`.
-  - All 7 round-2 items applied; 0 MUST, 3 SHOULD (R3-A citation for ι, R3-B κ framing, R3-C size hypothesis), 6 NIT.
-  - Recommended second result: E-indexed Day convolution. Not novelty-checked.
-- **Q72 OPENED (Seed Q4).** M_{I,J} = Ind(C_I⊠C_J) (character F_I F_J) is indecomposable unless both I and J are projective.
-  - Computed for N≤8, 424/424 at N=8.
-  - Top = C_{I·J}⊕C_{I⊙J}: a glued 2-dim top over a split projective cover.
-  - The obvious lifts are empty: Mackey splits by double cosets, the shuffle product has a length filtration, projectives split.
-  - Naive End formula DEAD at N=7.
-  - Owner gate NOT FOUND (nearest: KLO 2310.20571 Conj 7.5, the skew-Schur sibling; JKLO 2105.14169 §5 open problem).
-  - Registry `seedQ4-zero-hecke-induction.json` md5 f758beb6, commit 3012475. sources 761→769 (1a8e424).
-- **PROVE 289 = Q72(i)** via the locality criterion E ⊆ k·g + rad M (state/PROVE.md).
-
-## Dream 287 (2026-11-10): CURRENT STATE, read this first (registry wins)
-- **Q71 CLOSED in both forms.** S_0 (PROVE 287, c0cc6d9) and U_0 (PROVE 288, 4d1a94b, `proofs/2026-11-10-q71-u0-filtration.md`) are both proved for all n≥2, N≥3.
-  - PROVE 288 cold read **PASS** (Dream 287).
-  - Registry `seedQ1-qsym-quasicrystal.json`: root proved, `Q71-U0-variant` proved.
-  - Loose end: the mirrored coproduct is unchecked (hunch).
-- **Insight: the q=0 Schur–Weyl obstruction is rank-1.** Only k_*, e_0 and f_0 are used. The hook 2-cycle is the two ends of one f_0-string of length N−2. Crown W addendum in `connections/2026-11-09-two-cycles-kill-triangular-orders.md`.
-- **FPSAC:** Robin had not answered by the 11-10 due date, so no submit. Cut 6dbecb8 stays frozen; deadline 11-15. Don't nudge.
-- **Sent:** the Q71 PDF (WIP 9fe3e0a, 11-10 00:22).
-- **Unsent bundle for a Clio reply:**
-  - Q68 PDFs 06fe8b8 / 79a1cea
-  - `for-collaborator/2026-11-09-q69-D8-no-twins.md`
-  - `for-collaborator/2026-11-10-q71-u0-proved.md`
-- **Browse 240:** almost all rediscovery. Jung–Oh 2509.26194 was already in the Q71 question file and the SENT PDF; the dedup feedback gets a seventh layer. Deng–Yang owner check: negative (paywalled).
-- **Next:** Wake 288 inbox. If quiet, scope Seed Q4 (which 0-Hecke-tower K_0 identities lift to filtrations; rank-1 test in `questions/q-zero-CHA.md`), owner check first. Journal: `dream-journal/2026-11-10-day287-dream.md`.
-
-## Wake 287 (2026-11-10): read with the Dream 286 state below
-- **Inbox: 0 unread.**
-  - Robin has given no FPSAC answer. Per the rule, silence = no submit; cut 6dbecb8 stays frozen and I don't nudge.
-  - Clio and MacBeth are silent. Clio's last message was 10-24.
-- **PROVE 288 (2026-11-10): Q71-U0 PROVED all n≥2, N≥3 → Q71 CLOSED both forms (S_0 and U_0).** Restrict to the support-{0,1} block via p∈A; the powers (pf_0p)^{N−2} and (pe_0p)^{N−2} realise PROVE 287's f and g on the hooks and kill every other weight. A socle vector lands in X, End(hook)=Q, so Krull–Schmidt gives a contradiction. File `proofs/2026-11-10-q71-u0-filtration.md`, check `proofs/prove288/chk.py`. Registry Q71-U0-variant: computed → proved.
-- **Q71-U0-variant: hunch → computed (NO).**
-  - Computed at (2,3), (2,4), (2,5), weak and strong forms; at (3,3), ρ(U_0) = S_0.
-  - Hom 2-cycle W⇄W′ is realised by f_0, e_0 ∈ ρ(U_0); the missing S_0 element is the weight idempotent, which Lemma 1 never needed.
-  - Files: `proofs/wake287/u0filt/RESULTS.md`, commit 3371376. Registry md5 bebfbb29, commit 5c5e8f7. Root notes "Status: OPEN" fixed.
-- **Q71 note SENT to Clio** (cc Robin, MacBeth) as a PDF: WIP commit 9fe3e0a, `notes/2026-11-10-q71-zero-sw-filtration.pdf` (4 pp, 0 overfull, U_0 addendum labelled computed). This also pushed 79a1cea. rick-research pushed, now level with origin.
-- **Still unsent:** the Q68/Q69 PDFs and notes. Hold them for a Clio reply.
-- **PROVE 288 = Q71-U0 general (n≥2, N≥3)**, via a graph argument with u = f-power in place of Lemma 1. Fallback: n=2. See state/PROVE.md.
-
-## Dream 286 (2026-11-09): CURRENT STATE, read this first (registry wins)
-- **Debts (unchanged).**
-  - FPSAC deadline **2026-11-15**, cut **6dbecb8** frozen. Robin's yes/no is due **11-10**. Silence = no submit; don't nudge.
-  - Unsent bundle for a Clio reply: Q68 PDFs 06fe8b8/79a1cea, `for-collaborator/2026-11-09-q69-D8-no-twins.md`, `for-collaborator/2026-11-10-q71-no-zero-sw-filtration.md`.
-- **Q71: PROVED (⇒), all n≥2, N≥3.** PROVE 287 cold read **PASS** (Dream 286).
-  - Record: `proofs/2026-11-10-q71-zero-sw-filtration.md`, commit c0cc6d9. The file label says 11-10, but the work is from 11-09.
-  - Registry `seedQ1-qsym-quasicrystal.json`: `Q71-filtration-root` proved, `Q71-hom-two-cycle` proved, `Q71-socle-obstruction` dead-end, `Q71-U0-variant` hunch.
-  - **Seed Q3 answer at q=0.** Σ F_I⊗R_I (KT NCSF IV §7.2, Q67) holds on K_0 only. There is no filtered lift, because of the hook Hom 2-cycle W⇄W′. At generic q everything is semisimple (control).
-- **Q70: CLOSED, OWNED** (BFKM 2502.09605 Lemma 3.7(3)/7.15; Wake 286).
-- **H3 5_2 cone (computed exact, `proofs/wake286/h3cone/RESULTS.md`).** The non-maximality comes from a coupled twin pair; the maximal cone is irrational (φ). 5_1 non-polyhedral is a hunch.
-- **Crown W (hunch, new):** `connections/2026-11-09-two-cycles-kill-triangular-orders.md`. Q71's Hom 2-cycle rhymes with the H3 coupled twin: single-step triangular tests are the acyclic case. Filed only; the twin arc stays CLOSED.
-- **Twin arc Q68/Q69 CLOSED** (see the Day 285 state below for the grades).
-- **Next.** Wake 287: inbox (FPSAC answer). Otherwise one bounded jewel: Q71-U0-variant at (2,3), computed. Details in `dream-journal/2026-11-09-day286-dream.md`.
-
-## Browse 239 (2026-11-09): dedup clean sweep, symmetrisable-crystal 3-way race, no new arXiv hits
-- Core-territory keyword cluster (Steinberg basis/W-graph/Springer, crystal/MV-polytope/polite-basis, twin-cell/asymptotic-Hecke, Hopf-antipode/QSym) confirmed **exhausted again** — every candidate "new" paper from arXiv + citation agents was already in `sources.json` (7 IDs checked, 0 genuinely new). Real yield was incremental: 2607.17301 (Hoskins–Jackson–Vernet) upgraded title-only → abstract+intro+conclusion read; 2602.20861's Schur-Weyl conjecture confirmed proved for N=2/one-boundary; arXiv:2610.29051 author corrected Kevin→Jiarui Fei.
-- **Symmetrisable-crystal 3-way race** (via Kashiwara–Saito q-alg/9606009 reverse citations): HJV 2607.17301 (quiver varieties+Hecke correspondences), Fang–Lan–Xiao–Wu (Lusztig sheaves), Fei 2610.29051 (monodromy/convolution) all extend crystal geometry symmetric→symmetrisable, 2023-26; none resolve the homological "why" (HJV name the missing BM-homology pushforward map as the obstruction) — a sharpened instance of Rick's own MO Q255757 meta-question. Candidate for a future compare-and-contrast session, not urgent.
-- Lead (low-confidence): srliu.com/notes/calder/lecture-14/ names a "Kazhdan-Lusztig-Steinberg basis" + two-sided-cell corollary for SL(n) — possible worked example for Crown V′/Q70 if that arc reopens.
-- MO/SE tooling trap caught: `last_activity_date` can bump from vote-recount alone with zero new content (Q500059) — check the timeline, not just the timestamp, before flagging a tag-sweep hit as new.
-- FPSAC 2027 deadline reconfirmed 2026-11-15, unchanged. Williamson's Aarhus Problem 2 and MO Q255757 both reconfirmed silent. Log `reading/2026-11-09-browse239.md`. feeds.md updated.
-
-## PROVE 287 (2026-11-09; files labelled 11-10): Q71 (⇒) PROVED, all n ≥ 2, N ≥ 3, no case split
-- **Theorem′ (strong form).** No S_0-stable chain of V^{⊗N} has isotypic-projective H_N(0)-layers. So there is no L_I⊠M_I filtration if and only if N ≥ 3. The (⇐) direction, N ≤ 2, holds because the module is semisimple.
-- **Mechanism.**
-  - Lemma 1: if X is S=End_H(V)-stable and V/X is projective, then Hom_H(X, complement) = 0.
-  - Lemma 2: the hook summands W ⊂ wt(N−1,1) and W′ ⊂ wt(1,N−1) are local and non-isomorphic, with nonzero maps both ways. This is a 2-cycle in the Hom-quiver.
-- **Superseded, not needed:** the socle/Nakayama strategy, the dim-1 end-piece pattern, and the n<N vs n≥N split.
-- **Caveat.** "(S_0,H) ≡ U_0×H" is FALSE where ρ(U_0) ⊊ S_0, and the U_0 variant is untouched. Registry node Q71-U0-variant is a hunch; it is not opened as a new Q.
-- **Files.**
-  - Record: `proofs/2026-11-10-q71-zero-sw-filtration.md`.
-  - Check script: `proofs/prove287/chk.py` (N=3..6).
-  - Note: `for-collaborator/2026-11-10-q71-no-zero-sw-filtration.md`. It is unsent; bundle it with the Clio reply or a PDF.
-- **Registry.** Q71 root is proved and Q71-socle-obstruction is a dead-end (superseded).
-
-## Wake 286 (2026-11-09): read with Day 285 dream CURRENT STATE below
-- **Inbox:** 0 unread. Clio has not replied to the Q68 notes from 11-07. Robin's FPSAC decision is still due 11-10; don't nudge.
-- **Q70: CLOSED, OWNED.**
-  - Owner: BFKM 2502.09605 (Bezrukavnikov–Finkelberg–Kazhdan–Morton-Ferguson). Def 3.2 is in §3, not §7.
-  - Lemma 3.7(3): C′_w ↦ f_w is a W-iso on cell subquotients. Lemma 7.15 extends this to the coherent g_w.
-  - "Steinberg" here means the Steinberg 1975 basis of Z[T], not the Steinberg variety.
-  - Gate note: `reading/2026-11-09-wake286-q70-gate.md`. Commit 8418440.
-- **H3 5_2 (computed, exact).** Recorded in `proofs/wake286/h3cone/RESULTS.md`.
-  - The KL cone is non-maximal because of a COUPLED rational twin pair (c3−c1, c4−c0).
-  - There is a unique maximal cone cone(c0, c1, c2, c3−φc1, c4−φc0−φ⁻¹c2), with a Perron dual proof.
-  - The 5_1 maximal cone (5_1 = 5_2⊗sign) looks non-polyhedral. That is a hunch.
-  - Registry seedQ2 md5 eabdf16a. Arc root stays closed.
-- **Q71 OPENED** (Seed Q3). V^{⊗N} has no (S_0, H_N(0))-bimodule filtration by L_I⊠M_I.
-  - Computed exact at (2,3), (3,3), (2,4), (3,4); a filtration exists at (2,2).
-  - The obstruction is via the socle and Nakayama ν = reversal.
-  - Owner check: KT NCSF IV/V and Jung–Oh 2509.26194 are silent on a filtration. Deng–Yang is unread.
-  - Files: `proofs/wake286/q3filt/RESULTS.md`, `questions/q71-zero-schur-weyl-filtration.md`. Registry seedQ1 md5 a4ceeae3. Commit a7c360f.
-- **PROVE 287 = Q71 (⇒) direction** (see state/PROVE.md).
+## 11-09 → 11-11 stanzas, compressed into pointer lines (full text in `archive/SUMMARY-2026-11-11-pre-day290-dream.md`)
+- **PROVE 291 (11-11).** Q74 one-box criterion + Prop S. Corrected Wake 290's mmax=4 artifact (58 special modules at m=5). The 4 special Y are □⊠S.
+- **Browse 243 (11-11).** Clean run. Gonzales–Le–Lowen 2609.30257 (toric Richardson H* = QSym / H_* = NSym, Crown X scenery) and Presniakov–Tiskin 2610.26700. sources.json 779→781. The MO flag is retracted (above).
+- **Wake 290 (11-11).** FPSAC OFF. Pass C fixes applied (WIP 9fa6b0c). Clio sent the bundle 3ab7f44 + review 2564542 (her 3 notes sound; `peer-claims-clio.json` checked-sober). Q73 owner gate NOT FOUND ×2 (log `reading/2026-11-11-wake290-q73-owner-gate.md`; Liao–Yang–Yu 2410.07990 = KLO Conj 7.2, a different conjecture). Commit 5c2d4a9.
+- **Dream 289 (11-11).** Q73 cold read PASS (2 NITs). Its FPSAC GO is superseded by Wake 290.
+- **PROVE 290 (11-11).** Q73 = KLO 2310.20571 Conj 7.5 PROVED all n + strong form (∏2^{r−1} summands), eed1cb3, registry `klo-conj75.json`. (G*) is false (56 counterexamples), now explained by Q74.
+- **Dream 288 (11-10).** Q72(i) cold read PASS (NIT: the Mackey split is direct at all q, fixed in 5c2d4a9). Crown X born.
+- **Browse 241 (11-10).** Q72 owner gate negative: Tewari–vW 1403.1527 is restriction-only (1403.5327 is a different paper). Hackney–Kock–Steinebrunner 2611.08063, Lau–Tan 2601.13555. The OEIS gap 4,20,64,172,424 is a submission candidate.
+- **PROVE 289 (11-10).** Q72(i) PROVED all N: Ind(C_I⊠C_J) is indecomposable unless I, J ∈ {(m),(1^m)}. 89f7b44, registry `seedQ4-zero-hecke-induction.json`.
+- **Wake 288 / Dream 287 / Wake 287 / Dream 286 / Browse 239 / PROVE 287 / Wake 286 (11-09..10).** MacBeth round-3 verdict sent 31c3fb5. Q71 (⇒) + Q71-U0 PROVED (c0cc6d9, 4d1a94b). Q70 owned by BFKM 2502.09605 L3.7(3). Symmetrisable-crystal 3-way race (HJV 2607.17301 / Lan–Wu–Xiao 2411.09188 / Fei 2610.29051).
 
 ## Day 285 dream (2026-11-09): prior state (superseded by Dream 286 above; grades still valid)
 - **Debts.**

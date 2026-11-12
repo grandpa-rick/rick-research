@@ -1,0 +1,72 @@
+L 1 alpha [2] P1a/even pred [1, 1, 1]
+   R_s (sanity)                   [1, 1, 1] MATCH
+   S^alpha                        [1, 1, 1] MATCH
+   Lambda^alpha                   [1, 1, 1] MATCH
+   Psi^alpha                      [1, 0, 1] differs
+   random int NSym_d              [1, 1, 1] MATCH
+   R_s + R_(d) (perturb)          [1, 1, 1] MATCH
+   R_s + R_{s flipped last bit}   [1, 1, 1] MATCH
+L 2 alpha [2, 1] P1a/even pred [1, 1, 1, 1]
+   R_s (sanity)                   [1, 1, 1, 1] MATCH
+   S^alpha                        [1, 1, 1, 1] MATCH
+   Lambda^alpha                   [1, 1, 1, 1] MATCH
+   Psi^alpha                      [1, 1, 1, 1] MATCH
+   random int NSym_d              [1, 1, 1, 1] MATCH
+   R_s + R_(d) (perturb)          [1, 1, 1, 1] MATCH
+   R_s + R_{s flipped last bit}   [1, 1, 1, 1] MATCH
+L 3 alpha [2, 2] P1a/even pred [1, 1, 2, 1, 1]
+   R_s (sanity)                   [1, 1, 2, 1, 1] MATCH
+   S^alpha                        [1, 1, 2, 1, 1] MATCH
+   Lambda^alpha                   [1, 1, 2, 1, 1] MATCH
+   Psi^alpha                      [1, 0, 1, 0, 1] differs
+   random int NSym_d              [1, 1, 2, 1, 1] MATCH
+   R_s + R_(d) (perturb)          [1, 1, 2, 1, 1] MATCH
+   R_s + R_{s flipped last bit}   [1, 1, 1, 1, 1] differs
+L 4 alpha [2, 2, 1] P1a/even pred [1, 1, 1, 1, 1, 1]
+   R_s (sanity)                   [1, 1, 1, 1, 1, 1] MATCH
+   S^alpha                        [1, 1, 2, 2, 1, 1] differs
+   Lambda^alpha                   [1, 1, 2, 2, 1, 1] differs
+   Psi^alpha                      [1, 1, 1, 1, 1, 1] MATCH
+   random int NSym_d              [1, 1, 2, 2, 1, 1] differs
+   R_s + R_(d) (perturb)          [1, 1, 2, 2, 1, 1] differs
+   R_s + R_{s flipped last bit}   [1, 1, 2, 2, 1, 1] differs
+L 5 alpha [2, 2, 2] P1a/even pred [1, 1, 2, 2, 2, 1, 1]
+   R_s (sanity)                   [1, 1, 2, 2, 2, 1, 1] MATCH
+   S^alpha                        [1, 1, 2, 3, 2, 1, 1] differs
+   Lambda^alpha                   [1, 1, 2, 3, 2, 1, 1] differs
+   Psi^alpha                      [1, 0, 1, 0, 1, 0, 1] differs
+   random int NSym_d              [1, 1, 2, 4, 2, 1, 1] differs
+   R_s + R_(d) (perturb)          [1, 1, 2, 3, 2, 1, 1] differs
+   R_s + R_{s flipped last bit}   [1, 1, 1, 2, 1, 1, 1] differs
+L 6 alpha [2, 2, 2, 1] P1a/even pred [1, 1, 1, 2, 2, 1, 1, 1]
+   R_s (sanity)                   [1, 1, 1, 2, 2, 1, 1, 1] MATCH
+   S^alpha                        [1, 1, 2, 3, 3, 2, 1, 1] differs
+   Lambda^alpha                   [1, 1, 2, 3, 3, 2, 1, 1] differs
+   Psi^alpha                      [1, 1, 1, 1, 1, 1, 1, 1] differs
+   random int NSym_d              [1, 1, 2, 4, 4, 2, 1, 1] differs
+   R_s + R_(d) (perturb)          [1, 1, 2, 3, 3, 2, 1, 1] differs
+   R_s + R_{s flipped last bit}   [1, 1, 2, 3, 3, 2, 1, 1] differs
+L 7 alpha [2, 2, 2, 2] P1a/even pred [1, 1, 2, 2, 3, 2, 2, 1, 1]
+   R_s (sanity)                   [1, 1, 2, 2, 3, 2, 2, 1, 1] MATCH
+   S^alpha                        [1, 1, 2, 3, 5, 3, 2, 1, 1] differs
+   Lambda^alpha                   [1, 1, 2, 3, 5, 3, 2, 1, 1] differs
+   Psi^alpha                      [1, 0, 1, 0, 1, 0, 1, 0, 1] differs
+   random int NSym_d              [1, 1, 2, 4, 8, 4, 2, 1, 1] differs
+   R_s + R_(d) (perturb)          [1, 1, 2, 3, 4, 3, 2, 1, 1] differs
+   R_s + R_{s flipped last bit}   [1, 1, 1, 2, 3, 2, 1, 1, 1] differs
+L 8 alpha [2, 2, 2, 2, 1] P1a/even pred [1, 1, 1, 2, 2, 2, 2, 1, 1, 1]
+   R_s (sanity)                   [1, 1, 1, 2, 2, 2, 2, 1, 1, 1] MATCH
+   S^alpha                        [1, 1, 2, 3, 5, 5, 3, 2, 1, 1] differs
+   Lambda^alpha                   [1, 1, 2, 3, 5, 5, 3, 2, 1, 1] differs
+   Psi^alpha                      [1, 1, 1, 1, 1, 1, 1, 1, 1, 1] differs
+   random int NSym_d              [1, 1, 2, 4, 8, 8, 4, 2, 1, 1] differs
+   R_s + R_(d) (perturb)          [1, 1, 2, 3, 3, 3, 3, 2, 1, 1] differs
+   R_s + R_{s flipped last bit}   [1, 1, 2, 3, 4, 4, 3, 2, 1, 1] differs
+L 9 alpha [2, 2, 2, 2, 2] P1a/even pred [1, 1, 2, 2, 3, 3, 3, 2, 2, 1, 1]
+   R_s (sanity)                   [1, 1, 2, 2, 3, 3, 3, 2, 2, 1, 1] MATCH
+   S^alpha                        [1, 1, 2, 3, 5, 8, 5, 3, 2, 1, 1] differs
+   Lambda^alpha                   [1, 1, 2, 3, 5, 8, 5, 3, 2, 1, 1] differs
+   Psi^alpha                      [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1] differs
+   random int NSym_d              [1, 1, 2, 4, 8, 16, 8, 4, 2, 1, 1] differs
+   R_s + R_(d) (perturb)          [1, 1, 2, 3, 4, 4, 4, 3, 2, 1, 1] differs
+   R_s + R_{s flipped last bit}   [1, 1, 1, 2, 3, 4, 3, 2, 1, 1, 1] differs

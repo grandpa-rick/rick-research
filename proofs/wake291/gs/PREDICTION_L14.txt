@@ -1,0 +1,4 @@
+Blind prediction written 2026-11-12 BEFORE running L=14 (even-L fitted formula from hjv-scoping.md):
+L=14, k=7, d=15, m=floor((k+1)/2)=4, P=1+q^3+q^5+q^7
+Hilb = (P(q) - q^16 P(1/q))/(1-q) = (1+q^3+q^5+q^7-q^9-q^11-q^13-q^16)/(1-q)
+=> r = [1,1,1,2,2,3,3,4,4,3,3,2,2,1,1,1]  (sum 34)

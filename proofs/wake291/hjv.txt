@@ -1,0 +1,2312 @@
+                                                   Nilpotent quiver varieties with multiplicities and
+                                                               symmetrisable crystals
+                                                      Victoria Hoskins∗             Joshua Jackson†             Tanguy Vernet‡
+
+
+                                                                                        Abstract
+                                                   We construct analogues of Nakajima’s nilpotent quiver varieties for quivers with multi-
+                                               plicities, by developing new stability conditions for framed nilpotent quiver representations
+                                               with multiplicities and exploiting their interplay with Hecke correspondences. Using these
+                                               new quiver varieties, we extend Saito’s geometric construction of Kashiwara crystals of
+                                               irreducible highest-weight representations of Kac–Moody algebras from the symmetric to
+arXiv:2607.17301v1 [math.RT] 19 Jul 2026
+
+
+
+
+                                               the symmetrisable case.
+
+                                               Mathematics Subject Classification 14L30 - 16G20 - 17B67
+
+                                               1 Introduction                                                                             1
+
+                                               2 Prerequisites on quiver moduli                                                           4
+
+                                               3 Construction of nilpotent quiver varieties                                              13
+
+                                               4 Prerequisites on crystals                                                               23
+
+                                               5 Geometric construction of crystals                                                      30
+
+
+                                               1     Introduction
+                                               Quiver varieties, introduced by Nakajima in [Nak94], are a cornerstone of the geometric
+                                               representation theory of Kac–Moody algebras. Given a symmetric Kac–Moody algebra g,
+                                               one obtains a quiver by adding an orientation to its Dynkin diagram. Nakajima showed
+                                               that highest-weight irreducible representations of g can be reconstructed from top-degree
+                                               homology groups of so-called nilpotent quiver varieties associated to that quiver [Nak98].
+                                               The Kashiwara crystals [Kas91] of these irreducible representations were subsequently
+                                               constructed by Saito from irreducible components of the same nilpotent quiver varieties
+                                               [Sai02]. These results were further generalised to symmetric Borcherds and Borcherds-
+                                               Bozec algebras in [KKS12; Boz16].
+                                                   These results are now understood as part of several interrelated geometric constructions
+                                               of Kac–Moody algebras. Nilpotent quiver varieties are linked to Ringel-Hall algebras
+                                               of quivers via a microlocal construction [Rin90; Lus91; KS97; Hen24; FL25], and the
+                                               action of g on their homology extends to an action of a BPS Lie algebra built from the
+                                               preprojective cohomological Hall algebra of the quiver [SV13a; YZ18; Dav25; DHS23].
+                                               Poincaré polynomials of (nilpotent) quiver varieties are also related to Kac polynomials
+                                           ∗
+                                             Universität Duisburg-Essen Germany, victoria.hoskins@uni-due.de
+                                           †
+                                             St John’s College, University of Cambridge, jjj26@cam.ac.uk
+                                           ‡
+                                             Institute of Science and Technology Austria, tanguy.vernet@ist.ac.at
+
+
+
+                                                                                            1
+of quivers and can be expressed in terms of Cartan data of Kac–Moody algebras [CV04;
+HLR13; Hau10; BS19; BSV20; Dav23; DHS23].
+    In this paper, we are concerned with geometric realisations of representations of a
+symmetrisable Kac–Moody algebra g. Some of the above constructions have been gen-
+eralised to the symmetrisable case over the past decade. In order to account for Cartan
+data with non-trivial symmetriser, one should consider quivers with additional structure.
+Geiss–Leclerc–Schröer obtained a realisation of the enveloping algebra of g by generalising
+the Ringel–Hall approach to quivers with multiplicities [GLS16]. Moreover, the construc-
+tion of the Kashiwara crystal attached to the quantised universal enveloping algebra of g
+[KS97] was extended to the symmetrisable case in several works, using graphs with au-
+tomorphisms [Sav05], species [NT18] and quivers with multiplicities [GLS18]. Geometric
+realisations of the Yangian and of the (shifted) quantum loop group associated to g were
+also provided by Yang–Zhao, Varagnolo–Vasserot and Cao–Okounkov–Zhou–Zhou using
+quivers with potential [YZ22; VV23; Cao+26]. These quivers with potential appear in
+[HL16; Neg25] in a related context.
+    Following Geiss–Leclerc–Schröer’s approach [GLS18], we give a geometric construction
+of the crystals of irreducible highest-weight representations of any symmetrisable Kac–
+Moody algebra g (see Theorem B below). This builds on the results of Geiss–Leclerc–
+Schröer [GLS18] in a similar way to how Saito’s construction [Sai02] expands on his earlier
+work with Kashiwara [KS97].
+    To carry out our construction, we introduce analogues of Nakajima’s nilpotent quiver
+varieties [Nak94] for quivers with multiplicities (see Theorem A below). These quiver
+varieties are constructed in the spirit of Geometric Invariant Theory (GIT), as quotients of
+stable loci in the representation spaces of a framed quiver with multiplicities associated to
+g and a fixed highest weight by a non-reductive group. We identify a stability condition on
+quiver representations with multiplicities, which allows us to generalise Saito’s construction
+[Sai02] to the symmetrisable case. In our previous work on moduli of quiver representations
+with multiplicities [HJV25], we introduced new stability conditions and constructed moduli
+spaces of quiver representations with multiplicities in a general setup, using tools from non-
+reductive GIT [HHJ]. However, these stability conditions coming from GIT do not fit our
+needs for the construction of crystals, so we instead define a new notion of stability and
+recursively construct nilpotent quiver varieties using slices. Our construction of slices relies
+on so-called Hecke correspondences (see below), which parametrise Hecke modifications of
+quiver representations at a vertex and induce Hecke (or crystal) operators on the set of
+irreducible components of nilpotent quiver varieties.
+
+Main results We fix a quiver with multiplicities (Q, m), where m is a collection of
+positive integers labelled by the vertices of Q. We assume throughout that Q has no loop
+arrows. Let r be a rank vector and f be a framing vector. We consider the framed quiver
+Qf and the analogue Λr := ΛQf ,m,b b r of Lusztig’s nilpotent cone [Lus91] for quivers with
+multiplicities, which was introduced by Geiss–Leclerc–Schröer [GLS18]. This is a (very
+reducible) lagrangian subscheme of the cotangent bundle of the representation space of
+(Qf , m).
+      b We refer to Section 2 for precise definitions.
+    Given the above data, we construct a nilpotent quiver variety as the quotient of a
+certain stable locus Λsr ⊂ Λr under the action of a group GLm,r , which is a product of
+general linear groups with coefficients in rings of truncated power series. This stability
+condition is similar to Nakajima’s original stability condition for classical quiver varieties
+[Nak94]. The following result is proved in Section 3:
+
+Theorem A (Proposition 3.6, Theorem 3.11). The quotient stack [Λsr / GLm,r ] is an alge-
+braic space. Moreover, for each irreducible component Z ⊂ Λsr , there is an explicit dense
+                               s ⊂ Z (see Definition 3.1) which admits a geometric quo-
+open GLm,r -invariant subset Zfilt
+tient, such that the quotient map is a Zariski-locally trivial principal GLm,r -bundle.
+
+
+
+                                               2
+    As mentioned above, the proof is by induction on r, and our inductive proof relies
+heavily on the fact that we are working inside the analogue of the nilpotent cone, so all
+representations are E-filtered (i.e. built as iterative extensions of representations concen-
+trated at a single vertex). As observed in [Lus91; GLS18], the irreducible components of
+Λr can be obtained from those of Λr′ , for various smaller rank vectors r′ < r, via so-called
+Hecke correspondences:
+                                          q          p
+                                     Λr′ ←− Λr′ ,r −→ Λr ,
+where Λr′ ,r parametrises nested representations of (Qf , m).
+                                                            b Given an irreducible compo-
+nent Z ⊂ Λr , we can find r′ < r such that p restricts to a principal bundle over an open
+subset Zfilt ⊂ Z (see Remark 3.17 for details). We can then construct the non-reductive
+            s / GL                                                            −1  s        s
+quotient Zfilt     m,r in a relative fashion, by analysing the map q : p (Zfilt ) → Λr′ ,filt
+                                                 s
+and exploiting the existence of the quotient Λr′ ,filt / GLm,r′ . This boils down to construct-
+ing certain partial flag varieties (over rings of truncated power series) as relative quo-
+tients, by providing explicit slices (see Section 3.2). Roughly speaking, these flag varieties
+parametrise the vector spaces underlying nested quiver representations in Λr′ ,r .
+    This iteration of relative quotients produces new stability conditions compared to our
+previous work [HJV25], but also more intricate quotients. It would be interesting to
+describe the geometry of these quiver varieties more precisely (embeddings in projective
+spaces over a base, cell decompositions, etc.). We hope to return to this in future works.
+    We now explain our results concerning geometric realisations of crystals. One can
+attach to (Q, m) a symmetrisable Cartan matrix C and the corresponding Kac–Moody
+algebra g. Let λ be the integral dominant weight whose coordinates in the basis of funda-
+mental weights are given by f . Then there is an irreducible module L(λ) of highest weight
+λ over the quantised universal enveloping algebra Uq (g). Let B(C; λ) be the Kashiwara
+crystal attached to L(λ) [Kas91]; this can be viewed as a combinatorial skeleton of L(λ).
+Its elements correspond to the vectors of the crystal basis of L(λ) [Kas91; Lus91; GL93].
+    Following [Sai02; GLS18], in Section 4, we endow the following set of irreducible com-
+ponents in the stable locus with a Kashiwara crystal structure:
+                                              G
+                                       Bfs :=    Irr(Λsr ).
+                                              r
+
+The crystal structure is obtained using the above Hecke correspondences Λr′ ,r , which were
+introduced by Geiss–Leclerc–Schröer in [GLS18]. Our second main result is then:
+Theorem B (Theorem 5.4). There is an isomorphism of crystals Bfs ≃ B(C; λ).
+    Our proof follows the strategy of [Sai02]. By forgetting the framing arrows of Qf ,
+we obtain a morphism of crystals relating Bfs and the geometric realisation of the crys-
+tal of Uq− (g) built by Geiss–Leclerc–Schröer in [GLS18]. We then show that, under this
+morphism, our stability condition selects precisely the irreducible components of Λr cor-
+responding to the crystal basis vectors of Uq− (g) which are mapped to B(C; λ) via the
+homomorphism Uq− (g) ↠ L(λ). The latter statement is proved in Section 5.
+    Since the irreducible components of nilpotent quiver varieties with multiplicities match
+the crystals of the representations L(λ), it is natural to ask whether one can construct
+the representations themselves from the Borel–Moore homology of quiver varieties in the
+symmetrisable case, as Nakajima did in the symmetric case [Nak98]. Some difficulties arise
+in the case of quivers with multiplicities due to the lack of a convenient proper pushforward
+map in homology. We plan to return to this question in future works.
+
+Relation to other works Varagnolo–Vasserot and Cao–Okounkov–Zhou–Zhou con-
+struct certain representations of non-symmetric (shifted) quantum loop groups and Yan-
+gians from critical quiver varieties attached to a tripled quiver with potential and a stability
+condition from reductive GIT [VV23; Cao+26]. Cyclic derivatives of this potential yield
+the defining equations of our nilpotent quiver varieties, as noted in [GLS17]. However,
+
+                                               3
+there seems to be no straightforward relation between our quiver varieties (nor between
+the topological invariants we study). Indeed, these authors use critical K-theory (or co-
+homology), whereas our approach is related to usual (top-degree) Borel–Moore homology
+and those do not relate by dimensional reduction in the case of quivers with multiplicities
+(see [Dav17; Păd22; VV22] for comparison in the case of quivers without multiplicities).
+Moreover, working with locally free representations amounts to prescribing certain Jordan
+types for loop arrows in the triple quiver from [VV23; Cao+26], which seems at odds with
+usual GIT techniques.
+    Let us also mention that there is an analogue of nilpotent quiver varieties in the set-
+ting of Higgs bundles on a smooth projective curve: the global nilpotent cone [Lau88].
+Irreducible components of the global nilpotent cone and Hecke operators also play an im-
+portant rôle in that setting: for instance in the study of CoHAs of Higgs sheaves [Min20;
+SS20] and in mirror symmetry [HH22]. Spaces of Hecke modifications can be viewed as
+non-reductive quotients in that setup as well, as in the forthcoming thesis [Mar26]. In
+this work, the author studies the nilpotent cone in moduli spaces of Higgs bundles, by
+considering Hecke modifications of rank two vector bundles on a smooth projective curve,
+along a suitably chosen non-reduced divisor.
+
+Notation and conventions Throughout the paper, we work over an algebraically
+closed base field k of arbitrary characteristic. Given a scheme X, we call Irr(X) the set of
+irreducible components of X. Given an action of an algebraic group G on a scheme X, we
+say that X admits a Zariski-locally trivial G-quotient if it admits a categorical quotient (in
+the category of schemes) such that the quotient map is a Zariski-locally trivial principal
+G-bundle. General definitions in Sections 2.1-2.2 are given for arbitrary quivers Q. From
+Section 2.4 on, we always assume that Q has no loop arrows.
+
+Acknowledgements We would like to thank Olivier Schiffmann, Michela Varagnolo
+and Éric Vasserot for helpful discussions on the topics of the paper. T.V. was supported
+by the European Union’s Horizon 2020 research and innovation programme under the
+Marie Sklodowska-Curie Grant Agreement No. 101034413. He thanks Tamás Hausel for
+his support.
+
+
+2      Prerequisites on quiver moduli
+In this section, we gather background definitions and results concerning representations
+of quivers with multiplicities, framings and E-filtered representations of the associated
+preprojective algebras, following [GLS18; HJV25].
+
+
+2.1      Quiver with multiplicities and moment maps
+We recall basic definitions concerning quivers with multiplicities and the associated mo-
+ment maps. We refer to [GLS17; Ver24; HJV25] for a more detailed discussion.
+   Let Q be a quiver with vertex set Q0 and arrow set Q1 . We will call s, t : Q1 → Q0
+the source and target maps. We fix a collection of positive integers m = (mi )i∈Q0 , called
+multiplicities, and refer to (Q, m) as a quiver with multiplicities.
+
+Notation 2.1. For m ∈ Z>0 , let km := k[ϵ]/(ϵm ). For multiplicities m = (mi )i∈Q0 , we
+introduce the following notation (consistent with [GLS17]) for i, j ∈ Q0 :
+    • mij := gcd(mi , mj ),
+    • fji := m
+             mi
+               ij
+                  .
+
+
+
+
+                                              4
+We view kmi as a kmij -algebra via the k-algebra homomorphism kmij → kmi given by
+ϵ 7→ ϵfji . For an arrow a : i → j in Q, we define the following kmi − kmj -bimodule:
+
+                                      ka := kmi ⊗kmij kmj .
+
+Definition 2.2. A representation of (Q, m) is a tuple M = (Mi , i ∈ Q0 ; Ma , a ∈ Q1 ) where
+Mi are kmi -modules and for a : i → j, the map Ma : Mi → Mj is kmij -linear. We say M is
+locally free and finitely generated if the kmi -module Mi is free and finitely generated for
+all i ∈ Q0 . In this case, the rank vector of M is rk(M ) := (rk Mi )i∈Q0 .
+    A morphism f : M → M ′ between representations of (Q, m) is a collection of kmi -linear
+maps fi : Mi → Mi′ which commute with the arrow morphisms.
+
+    In this paper, we will mostly consider locally free representations of finite rank. For
+i ∈ Q0 , we let αi ∈ ZQ0 be the unit coordinate rank vector concentrated at vertex i.
+
+Definition 2.3. For a rank vector r ∈ ZQ  0
+                                         ≥0 , the representation space of (Q, m) with rank
+r is the following affine space over k:
+                                                                 
+                                                        ⊕ri ⊕rj
+                                        Y
+                          R(Q, m; r) :=     Homkmij km    i
+                                                            , kmj   .
+                                          a∈Q1
+
+This space is endowed with a conjugation action of the following algebraic group:
+                                          Y
+                                GLm,r :=      GLmi ,ri ,
+                                                 i∈Q0
+
+                                                       ⊕r .
+where GLm,r := GLr (km ) is the automorphism group of km
+
+    This action induces a Hamiltonian GLm,r -action on the cotangent bundle with moment
+map µ(Q,m),r : T∗ R(Q, m; r) ≃ R(Q, m; r) ⊕ R(Q, m; r)∨ → gl∨  m,r , which is characterised
+as follows:
+
+              ∀(x, y, ξ) ∈ T∗ R(Q, m; r) × glm,r , ⟨ξ · x, y⟩ = ⟨ξ, µ(Q,m),r (x, y)⟩.
+
+Let Q be the doubled quiver associated to Q. In order to explicitly describe the moment
+map, we identify gl∨   ∼            ∗           ∼
+                   m,r = glm,r and T R(Q, m; r) = R(Q, m; r) using the trace pairing (see
+[GLS17, §8][Ver24, §1.2][HJV25, §2.6]).
+
+Proposition 2.4. Under the above identifications, the moment map is described as follows.
+For (x, y) ∈ R(Q, m; r):
+                                                                          
+                            fji −1                         ji −1
+                         X X                           X fX
+                                             fji −1−f
+                                    f
+                                                                 ϵf ya xa ϵfji −1−f 
+                                                                                    
+      µ(Q,m),r (x, y) = 
+                                  ϵ  x  y
+                                        a a ϵ         −                                       .
+                          a∈Q1 f =0                       a∈Q1 f =0
+                         a : j→i                         a : i→j                        i∈Q0
+
+
+2.2     Framed quiver representations with multiplicities
+From the perspective of geometric invariant theory, it is useful to introduce a framing to
+eliminate a global stabiliser from the action and construct moduli spaces. In a represen-
+tation theoretic context, the framing will correspond to the highest weight vector, and so
+also plays an important rôle.
+
+Definition 2.5. An f -framed representation of (Q, m) is a pair (M, s) consisting of a
+                                                                                   ⊕fi
+representation M of (Q, m) and framing data s consisting of kmi -linear maps si : km i → Mi
+for each i ∈ Q0 . We say (M, s) is locally free (resp. finitely generated) if M is, and refer
+to rk M as the rank vector of (M, s).
+
+
+                                                 5
+    A morphism h : (M, s) → (M ′ , s′ ) of f -framed representations of (Q, m) is a morphism
+h : M → M ′ of (Q, m)-representations that is compatible with the framing data in the
+sense that for all i ∈ Q0 , the following diagram commutes:
+
+                                          ⊕fi     si
+                                         kmi            Mi
+                                                           hi
+
+                                          ⊕fi     s′i
+                                         kmi            Mi′ .
+
+    One can describe moduli of framed representations by adding an additional framing
+vertex and fi arrows from the framing vertex to each vertex i as follows (see [Cra01][HJV25,
+§2.3.2]).
+
+Definition 2.6. Given (Q, m) and framing vector f and rank vector r ∈ NQ0 , we define
+the associated framed quiver with multiplicities (Qf , m)
+                                                       b and rank vector b
+                                                                         r for Qf by:
+   • (Qf )0 := Q0 ⊔ {∞} and (Qf )1 := Q1 ⊔ i∈Q0 {bi,f : ∞ → i, 1 ≤ f ≤ fi },
+                                            F
+             
+                mi i ∈ Q0 ,
+   • mb i :=
+                1   i = ∞.
+           
+              ri i ∈ Q0 ,
+   • rbi =
+              1 i = ∞.
+
+    This paper primarily concerns the action of GLm,r on T∗ R(Qf , m; r) ∼
+                                                                    b b  = R(Qf , m;b br),
+where Qf is the doubled quiver obtained by adding an opposite arrow for each arrow in
+Qf . We decompose this space as follows:
+                                         Y                                             
+                                                       ⊕fi ⊕ri                ⊕ri ⊕fi
+R(Qf , m;
+       b br) = R(Q, m; r)×R(Qop , m; r)×      Homkmi (kmi
+                                                          , kmi ) × Hom    (k
+                                                                        kmi mi   , kmi )
+                                                i∈Q0
+
+and write points as (x, y, (si , ti )i∈Q0 ). We also write s = (si )i∈Q0 and t = (ti )i∈Q0 .
+
+Notation 2.7. Given a closed point (x, y, s, t) ∈ R(Qf , m;
+                                                          b br) (resp. (x, y) ∈ R(Q, m; r)),
+we let M (x, y, s, t) (resp. M (x, y)) denote the corresponding representation of (Qf , m)
+                                                                                         b
+(resp. (Q, m)).
+
+
+2.3     Quivers with multiplicities as modulated graphs
+Let (Q, m) be a quiver with multiplicities. In this section, we recall how representations
+of quivers with multiplicities can be interpreted as representations of certain modulated
+graphs, following [GLS17, §5]. We will use this language throughout the paper, in order
+to describe Hecke modifications of nilpotent quiver representations of (Q, m) at a vertex
+(see Section 2.4).
+    Recall the bimodules ka , a ∈ Q1 from Notation 2.1. Together with the rings kmi for
+i ∈ Q0 , these bimodules yield a modulation of the graph underlying (Q, m), as explained
+in [GLS17, §5].
+
+Lemma 2.8. [GLS17, Prop. 5.1] Let a : i → j be an arrow in Q. Given a kmi -module Mi
+and a kmj -module Mj , there are functorial isomorphisms of k-vector spaces:
+
+        Homkmi (Mi , ka ⊗kmj Mj ) ≃ Homkmij (Mi , Mj ) ≃ Homkmj (Mi ⊗kmi ka , Mj ).
+
+    The following maps are key to formulate modifications of representations of (Q, m) at
+a vertex in Geiss–Leclerc–Schröer’s work (known as reflection functors or Hecke modifica-
+tions, see [GLS17; GLS18]).
+
+
+
+                                                  6
+Definition 2.9. Let M be a representation of (Q, m) and i ∈ Q0 . Define the following
+maps:
+                                     Ma
+                                         M
+                         Mi,out : Mi −→      ka ⊗kmij Mj ,
+                                                   a:i→j
+
+                                                                M
+                                        M                     a
+                             Mi,in :             Mj ⊗kmij ka −→ Mi ,
+                                       a : j→i
+
+which are induced from M using Lemma 2.8. We further define the kmi -modules:
+
+                   subi (M ) := Ker(Mi,out ),           faci (M ) := Coker(Mi,in ).
+
+Finally, let Ci (M ) (resp. Ki (M )) denote the smallest quotient M ↠ M ′′ (resp. the smallest
+subrepresentation M ′ ⊂ M ) such that Ker(M ↠ M ′′ ) (resp. M/M ′ ) is concentrated at
+vertex i.
+
+Notation 2.10. We will sometimes denote by subi (M ) (resp. faci (M )) the representation
+N of (Q, m) concentrated at vertex i, with Ni = subi (M ) (resp. Ni = faci (M )).
+
+    The following lemma is straightforward. A similar statement can be found in [GLS18,
+§4.2] for representations of preprojective algebras of quivers with multiplicities.
+
+Lemma 2.11. Let M be a representation of (Q, m) and i ∈ Q0 . Then there are short
+exact sequences of representations of (Q, m):
+
+                             0 → subi (M ) → M → Ci (M ) → 0
+
+                         (resp. 0 → Ki (M ) → M → faci (M ) → 0).
+
+    Finally, the maps Mi,in and Mi,out can be used to rewrite moment map equations for
+quivers with multiplicities in a compact way. We will make use of this formulation in
+Section 5 to analyse the behaviour of stable representations of the preprojective algebra
+of (Q, m) under Hecke modifications. We first need to twist the map Mi,in by a sign.
+
+Definition 2.12. Let (Q, m) be the doubled quiver associated to (Q, m). For a ∈ Q1 , let
+us define sgn(a) := 1 and sgn(a∗ ) := −1. For i ∈ Q0 , we define the sign-twist of Mi,in by
+                                       M                     sgn(a)Ma
+                           M
+                           fi,in :           Mj ⊗kmij ka       −→       Mi .
+                                     a:j→i
+                                     a∈Q1
+
+
+Lemma 2.13. [GLS17, Prop. 5.2] For r ∈ ZQ     0
+                                             ≥0 and (x, y) ∈ R(Q, m; r), let M := M (x, y).
+                                              fi,in ◦ Mi,out = 0 for every i ∈ Q0 .
+Then µQ,m;r (x, y) = 0 if and only if we have M
+
+
+2.4     E-filtered representations and crystal components
+Let (Q, m) be a quiver with multiplicities. From this point on, we assume that Q has no
+loop arrows. In this section, we recall the notion of E-filtered quiver representations with
+multiplicities from [GLS18]. Those are the analogues of nilpotent quiver representations
+for quivers with multiplicities. We then recall the definition of Geiss–Leclerc–Schröer’s
+analogue nilE (ΠQ,m ) of Lusztig’s nilpotent variety [Lus91, §12]. Unlike Lusztig’s original
+variety, this one is not equidimensional and we recall the characterisation by Geiss–Leclerc–
+Schröer of the top-dimensional irreducible components of nilE (ΠQ,m ) in terms of crystal
+representations of (Q, m) and how those components can be obtained by Hecke modifica-
+tion from the zero representation, following [GLS18, §4].
+    The following definition of E-filtered representations comes from [GLS18, §2.1].
+
+
+
+                                                    7
+Definition 2.14. For i ∈ Q0 , let Ei be the locally free representation of (Q, m) given by:
+                                          
+                                            kmi j = i
+                                 (Ei )j =                 .
+                                            0     j ̸= i
+
+A (locally free) representation M of (Q, m) is E-filtered if there exist subrepresentations
+
+                        0 = Mn+1 ⊊ Mn ⊊ . . . ⊊ M0 = M, n ∈ Z≥0
+
+such that, for all 0 ≤ l ≤ n, there exists il ∈ Q0 such that Ml /Ml+1 ≃ Eil .
+    An E-filtered representation is necessarily locally free, as it is an extension of locally
+free representations, namely of the representations Ei for i ∈ Q0 . By construction, any
+E-filtered representation of (Q, m) can be obtained from a representation of smaller rank
+by Hecke modification.
+Lemma 2.15. [GLS18, Lem. 3.1] Let M be an E-filtered representation of (Q, m). Then
+there exists i ∈ Q0 such that the kmi -module faci (M ) (resp. subi (M )) contains a non-zero
+free direct summand.
+   The following notion was introduced by Geiss–Leclerc–Schröer in order to characterise
+top-dimensional components of nilE (ΠQ,m ) [GLS18, §4].
+Definition 2.16. Let M be an E-filtered representation of (Q, m). We say that M is
+crystal if M ≃ 0 or if, for every i ∈ Q0 , the kmi -modules subi (M ) and faci (M ) are free
+and, if non-isomorphic to M , the representations Ki (M ) and Ci (M ) are also crystal.
+    Note that, given i ∈ Q0 , if subi (M ) (resp. faci (M )) is locally free, then Ci (M ) (resp.
+Ki (M )) is locally free and E-filtered. We now define the loci of E-filtered and crystal
+representations in ΠQ,m -modules, and the analogue ΛQ,m of Lusztig’s nilpotent variety.
+
+Definition 2.17. Let r ∈ ZQ 0
+                          ≥0 . We define
+
+                              nilr := nilE (ΠQ,m , r) ⊂ µ−1
+                                                         Q,m;r (0)
+
+as the reduced GLm,r -invariant constructible subscheme whose points correspond to E-
+filtered representations.
+     Let Z ⊂ nilE (ΠQ,m , r) be an irreducible component. We say that Z is a crystal
+component if there is a non-empty open subset Z ′ ⊂ Z such that, for all (x, y) ∈ Z ′ , the
+representation M (x, y) is crystal.
+     We also define
+                               Λr := ΛQ,m;r ⊂ nilE (ΠQ,m , r)
+as the union of all crystal components of nilE (ΠQ,m , r). We let Λcr  r ⊂ Λr be the reduced
+GLm,r -invariant constructible subscheme whose points correspond to crystal representa-
+tions. In particular, Λr is the closure of Λcr
+                                            r . Finally, we will consider the following locally
+of finite type schemes:             G                     G
+                             Λ :=        Λr and Λcr :=        Λcr
+                                                                r .
+                                      Q                     Q
+                                   r∈Z≥00                r∈Z≥00
+
+    Note that all orbits corresponding to crystal representations are contained in Λ (see
+Remark 2.28 below). Constructibility can be checked by viewing nilE (ΠQ,m , r) as the
+image of the projection from a quiver flag variety with multiplicities (similarly to [Lus91,
+§1.5]) and noting that for i ∈ Q0 , the condition that subi (M ) (resp. faci (M )) is free over
+kmi is constructible (for instance, it is equivalent to dimk (subi (M )) = mi rk(ϵmi −1 •)).
+Notation 2.18. Throughout the paper, given an irreducible scheme Z, we will say that
+a general point in Z satisfies a certain property (P) if there exists a non-empty (hence
+dense) open subset Z ′ ⊂ Z such that all points z ∈ Z ′ satisfy property (P).
+
+                                               8
+    An important result by Geiss–Leclerc–Schröer asserts that crystal components are ex-
+actly the top-dimensional components of nilE (ΠQ,m , r).
+
+Proposition 2.19. [GLS18, Thm. 4.1, Prop. 4.4] Let r ∈ ZQ 0
+                                                        ≥0 and Z ⊂ nilr be an irre-
+ducible component. Then:
+                                                          1
+                         dim Z ≤ dim R(Q, m; r) =           dim R(Q, m; r)
+                                                          2
+and equality holds if and only if Z is a crystal component.
+
+Example 2.20. [GLS18, §8.2.2] Let us consider the quiver with multiplicities (Q, m), where
+
+                                          Q = •1 −→ •2
+
+and m = (m1 , m2 ) = (1, 2). For r ∈ ZQ 0
+                                      ≥0 , we have a GLm,r -equivariant isomorphism:
+
+                         R(Q, m; r) ≃ Matr2 ×r1 (k2 ) × Matr1 ×r2 (k2 ),
+
+where GLm,r acts on the right-hand side by left-right multiplication. Under this isomor-
+phism, for (A, B) ∈ Matr2 ×r1 (k2 ) × Matr1 ×r2 (k2 ), we have:
+
+                                µ(Q,m),r (A, B) = (−BA[ϵ], AB),
+
+where BA[ϵ] denotes the matrix obtained by extracting the coefficients of ϵ from BA ∈
+Matr1 ×r1 (k2 ). From this description, we can compute the irreducible components of
+nilE (ΠQ,m , r) for small values of r.
+    Fix r = (1, 2). Then the action GLm,r ↷ R(Q, m; r) admits three orbits, represented
+respectively by ( 10 ), ( 0ϵ ) and 0. The projection µ−1     (Q,m),r (0) → R(Q, m; r) restricts to a
+vector bundle over each of those orbits (its conormal bundle, see [Gin12, Prop. 4.1.3.ii]),
+with respective fibres {0}, ϵMatr1 ×r2 (k2 ) (at ( 0ϵ )) and R(Q, m; r)∨ . The conormal bundles
+of the first and third orbits consist of E-filtered representations. Moreover, the subset of
+E-filtered representations in the conormal bundle of GLm,r ·( 0ϵ ) is the sub-bundle formed
+by the orbits of (( 0ϵ ), ( 0 ϵ )) and (( 0ϵ ), 0). Note that the corresponding representations are
+not crystal, as in both cases fac2 is not free over k2 .
+    Therefore, we obtain two crystal components, R(Q, m; r) ⊂ Λr and R(Q, m; r)∨ ⊂ Λr ,
+and one non-crystal component, the orbit closure of (( 0ϵ ), ( 0 ϵ )). A direct computation
+shows that its dimension is 3 < 4 = dim R(Q, m; r). This is consistent with [GLS18, §8.2.2]
+(note that the dimensions computed in loc. cit. differ from ours by 8, since quiver moduli
+are presented in a different, although equivalent fashion, see [GLS18, §2.2-2.3]).
+   As a consequence of Proposition 2.19, we can show that Λr ⊂ T∗ R(Q, m; r) is a la-
+grangian subscheme. This generalises results of Lusztig’s to quivers with multiplicities
+[Lus91; Lus92]. Our proof follows the argument given in [Sch12, Thm. 4.12].
+
+Proposition 2.21. Let r ∈ ZQ0                       ∗
+                           ≥0 . The subscheme Λr ⊂ T R(Q, m; r) is lagrangian.
+
+Proof. Since, by Proposition 2.19, Λr has pure dimension 21 T∗ R(Q, m; r), it remains to
+check that it is an isotropic subscheme. To do this, we show that Λr lies in the image of
+an isotropic subscheme under a well-chosen lagrangian correspondence and apply [CG97,
+Prop. 1.3.30, Prop. 2.7.51].                                                       F
+   Let us write for short G := GLm,r , g := glm,r , X := R(Q, m; r), Y := i G/P         Pi where
+the disjoint union runs over the set of sequences i = {i1 , . . . , i|r| }, where |r| := i∈Q0 ri
+and Pi is the stabiliser of a fixed flag of locally free submodules
+                                                  M
+                                                          ⊕ri
+                                         Ni,• ⊂          km i
+                                                  i∈Q0
+
+
+
+                                                  9
+of shape i. Thus Y parametrises flags N• = (N0 ⊃ N1 ⊃ . . .) of locally free submodules
+with subquotients of rank 1, of all possible shapes. Let Z ⊂ X × Y be the subscheme
+parametrising pairs (x, N• ) ∈ X × Y such that x(N• ) ⊂ N•+1 . Note that the projection
+Z → Y is a vector bundle, so Z is smooth. Then we claim that:
+                                                                          
+                                                      x(N• ) ⊂ N•+1 ,     
+          T∗Z (X × Y ) ≃ (x, y, N• , z) ∈ T∗ X × Y × g y(N• ) ⊂ N• ,          .
+                                                       z = −µQ,m;r (x, y).
+                                                                          
+
+Then the projection of T∗Z (X × Y ) ∩ (T∗ X × Y ) on T∗ X contains Λr . Since Z ⊂ T∗ Z and
+(T∗ X × Y )|Z ⊂ T∗ Z × T∗ X × T∗ Y × T∗ X are isotropic, this projection also is, by [CG97,
+Prop. 2.7.51] (applied to M1 = pt, M2 = T∗ Z × T∗ X × T∗ Y , M3 = T∗ X, Z12 = Z and
+Z23 = (T∗ X × Y )|Z in the notation of loc. cit. ).
+   Let us now prove the claim. As in [Lus91, §13.4], the tangent space of Z at (x, g) ∈
+X × G/Pi is identified with the kernel of the following map:
+
+                                   X × g/g · pi → X/g · Xi
+                                        (x′ , ξ) 7→ −ξ · x + x′ ,
+
+where Xi ⊂ X denotes the affine subspace defined by the condition x(Ni,• ) ⊂ Ni,•+1 .
+Therefore, the conormal space of Z at (x, g) is the subspace of X ∨ × g · p⊥
+                                                                           i spanned by
+vectors of the form (y, −µQ,m;r (x, y)), where y ∈ (g · Xi )⊥ .
+
+Remark 2.22. The proof of [Sch12, Thm. 4.12] relies on [KS90, Prop. 8.3.11] instead of
+[CG97, Prop. 2.7.51] and assumes properness of Y (in the case of quivers without multi-
+plicities). That assumption is not necessary, since, in [KS90, Prop. 8.3.11], properness is
+only assumed so that lagrangian correspondences preserve subanalytic subsets, but is not
+used in the proof of isotropy.
+   In order to understand how crystal components are permuted under the operators of
+Hecke modification, it is necessary to examine certain loci where faci (M ) is of fixed type.
+
+Definition 2.23. Let r ∈ ZQ 0
+                          ≥0 , c ∈ Z≥0 and i ∈ Q0 . We define
+
+                                nilr,cαi ⊂ nilr     (resp. Λr,cαi ⊂ Λr )
+
+as the reduced GLm,r -invariant constructible subscheme whose points correspond to rep-
+                                       ⊕c (resp. the union of irreducible components in
+resentations M satisfying faci (M ) ≃ km i
+nilr,cαi of dimension dim Λr ).
+
+Notation 2.24. When c = 0, we will still write nilr,0αi (resp. Λr,0αi ) in order to keep
+track of the vertex i where faci (M ) = 0.
+
+   In particular, we have Λr,cαi ⊂ nilr,cαi ∩ Λr and the inclusion can be strict.
+Example 2.25. Fix (Q, m) as in Example 2.20 and r = (2, 2). Then there are finitely many
+orbits for the action GLm,r ↷ R(Q, m; r), represented respectively by:
+
+ A1 = ( 10 01 ), A2 = ( 10 0ϵ ), A3 = ( 10 0ϵ ), A4 = ( 10 00 ), A5 = ( 0ϵ 0ϵ ), A6 = ( 0ϵ 00 ) and A7 = 0.
+
+In order to describe the conormal spaces, we let
+
+                            B3 := ( 01 00 ), B4 := ( 00 −ϵ
+                                                        1 ) and B7 := A1 .
+
+Then the conormal space Ci at Ai , when non-zero and generically crystal, is given by:
+
+                  C3 = {yB3 | y ∈ k2 } , C4 = {B4 (y1 , y2 ) | y1 ∈ k, y2 ∈ k2 } ,
+
+
+
+                                                    10
+and C7 = R(Q, m; r)∨ . Therefore, the crystal components are the respective orbit closures
+of (A1 , 0), (A3 , B3 ), (A4 , B4 (1, 0)) and (0, B7 ). Let us now consider:
+
+                                        Λ3 = GLm,r ·(A3 , B3 ) ⊂ Λr .
+
+Then Λ3 ∩ nilr,α1 is the orbit closure of (A3 , ϵB3 ), which is not contained in any other
+crystal component and whose dimension is smaller than dim Λ3 = dim Λr . Therefore, we
+have found an irreducible component of Λr ∩ nilr,α1 which is not top-dimensional, hence
+not contained in Λr,α1 .
+    Over Λr,cαi , the spaces of Hecke modifications, which consist of nested representations
+M ′ ⊂ M of ΠQ,m satisfying M/M ′ ≃ Ei for some i ∈ Q0 , are geometrically well-behaved.
+
+Definition 2.26. Let r ∈ ZQ 0
+                          ≥0 , c, l ∈ Z≥0 and i ∈ Q0 . We define the closed subscheme:
+
+                   nilr,r+lαi ;(c+l)αi ⊆ nilr+lαi ,(c+l)αi × Hominj  ⊕ri ⊕(ri +l)
+                                                                km (kmi , kmi     )
+                                                                      i
+
+
+of tuples ((x, y), φ) ∈ nilr,r+lαi ;(c+l)αi such that Im(M (x, y)i,in ) ⊂ Im(φ). We further
+define the following maps:
+                                    q                        p
+                         nilr,cαi ←− nilr,r+lαi ;(c+l)αi −→ nilr+lαi ,(c+l)αi ,
+
+where p is induced by the projection ((x, y), φ) 7→ (x, y) and q maps ((x, y), φ) to the
+restriction of (x, y) along φ. We refer to such diagrams as Hecke correspondences.
+
+Remark 2.27. By [GLS18, Lem. 3.4-3.6], in the above notation, the maps p and q are
+surjective, smooth, with connected fibres, and satisfy:
+
+                     dim(q) − dim(p) = dim(nilr+lαi ,(c+l)αi ) − dim(nilr,cαi ).
+
+Therefore for any irreducible component Z ′ ⊂ nilr,cαi (resp. Z ⊂ nilr+lαi ,(c+l)αi ), we have
+that p(q −1 (Z ′ )) (resp. q(p−1 (Z))) is an irreducible component of nilr+lαi ,(c+l)αi (resp.
+nilr,cαi ) of dimension dim Z ′ + dim(q) − dim(p) (resp. dim Z + dim(p) − dim(q)) and these
+two constructions are inverse bijections. From Proposition 2.19, we obtain that p and q
+restrict as follows:
+                                  q                    p
+                          Λr,cαi ←− Λr,r+lαi ;(c+l)αi −→ Λr+lαi ,(c+l)αi ,
+where Λr,r+lαi ;(c+l)αi ⊂ nilr,r+lαi ;(c+l)αi is the union of irreducible components of dimen-
+sion dim Λr,cαi + dim(q) = dim Λr+lαi ,(c+l)αi + dim(p).
+Remark 2.28. The above observations imply that all points (x, y) ∈ nilr such that M (x, y)
+is crystal lie in Λr . In other words, the crystal locus is contained in the union of crystal
+components.
+    Indeed, suppose that M := M (x, y) is crystal for a given (x, y) ∈ nilr . Then (x, y) ∈
+nilr,cαi for some i ∈ Q0 and c = faci (M ) > 0. With the notation of Remark 2.27, there
+exists (x′ , y ′ ) ∈ nilr−cαi ,0αi such that (x, y) ∈ p(q −1 (x′ , y ′ )). Since M ′ := M (x′ , y ′ ) is also
+crystal, we may assume that (x′ , y ′ ) is contained in a crystal component Z ′ ⊂ Λr , by induc-
+tion on r. Since faci (M ′ ) = 0 is an open condition, we obtain that Z ′ ∩ nilr−cαi ,0αi ⊂ Z ′ is
+open (and dense). Therefore Z := p(q −1 (Z ′ ∩ nilr−cαi ,0αi )) has dimension dim R(Q, m; r),
+hence Z ⊂ nilr is a crystal component by Proposition 2.19, and (x, y) ∈ Z.
+
+
+2.5      General filtrations of E-filtered representations
+In this section, we define a dense locus in Λ, where representations of ΠQ,m admit a well-
+behaved filtration with subquotients of the form Ei for i ∈ Q0 . This will be key in our
+construction of nilpotent quiver varieties with multiplicities (see Section 3.3). We encode
+the combinatorics of such filtrations by a ‘type’ as follows. Recall that we assume Q has
+no loop arrows.
+
+                                                     11
+                                                                             P for 1 ≤ t ≤ s,
+Definition 2.29. A type is an ordered tuple F = (c1 αi1 , . . . , cs αis ), where
+we have ct ∈ Z≥0 and it ∈ Q0 . The associated rank vector of F is r = st=1 ct αit .
+   We say a representation M of (Q, m) of rank r is of type F if
+                   ⊕c1 and
+  i) faci1 (M ) ≃ km i1
+ ii) Ki1 (M ) has type F ′ := (c2 αi2 , . . . , cs αis ).
+    Note that, for any F , all representations of type F are E-filtered. A representation M
+of rank r may be of type F for several tuples F , or none. If M is crystal, then there exists
+at least one such tuple. Furthermore, in a given crystal component Z, there is at least one
+such tuple which works for general representations parametrised by Z.
+Lemma 2.30. For every irreducible component Z ⊂ nilr and type F = (c1 αi1 , . . . , cs αis ),
+there exists a reduced, constructible subscheme ZF ⊂ Z whose points correspond to repre-
+sentations of type F . If Z is moreover crystal, then there is at least one such tuple such
+that ZF ⊂ Z is open and dense.
+
+Proof. Let Z ⊂ nilr be an irreducible component and F be a tuple as above. Then ZF
+is the locus of points (x, y) ∈ Zi1 ,cαi1 such that M := M (x, y) satisfies condition ii) from
+Definition 2.29. Let us show that condition ii) is constructible. By Remark 2.27, there is
+an irreducible component Z ′ ⊂ nilr−c1 αi1 such that we have a diagram:
+                                         q                 p
+                            Zi′1 ,0αi ←− p−1 (Zi1 ,cαi1 ) −→ Zi1 ,cαi1 ,
+                                     1
+
+where p, q are smooth, surjective maps with connected fibres. Then the locus cut out by
+condition ii) is p(q −1 (ZF ′ ∩ Zi′1 ,0αi )). Thus, condition ii) is constructible, by induction on
+                                         1
+the length of F .
+    Suppose
+        S now that Z is crystal. Since all crystal representations admit a type, we have
+Z cr = F ZFcr . Thus there exists at least one tuple F such that ZFcr ⊂ Z is dense, as
+Z cr ⊂ Z is irreducible and dense.
+    Let F be such a tuple and let us show that ZF ⊂ Z is open. Since ZF ⊂ Z is
+dense, the generic (minimal) dimension of faci1 (M ) is mi1 c1 , so condition i) is equivalent
+to dimk faci1 (M ) ≤ mi1 c1 and rk(ϵmi1 −1 • | faci1 (M )) ≥ c1 . This is an open condition,
+by Chevalley’s semicontinuity theorem [Gro66, Thm. 13.1.3]. Finally, we may assume
+by induction that ZF′ ′ ⊂ Z ′ is open. Then, with the notation of the above diagram,
+p(q −1 (ZF ′ ∩ Zi′1 ,0αi )) ⊂ Z is open as p is open (see Remark 2.27). This finishes the
+                        1
+proof.
+
+    We finish with the definitions of the various loci we will work with during the construc-
+tion of nilpotent quiver varieties with multiplicities.
+Definition 2.31. Let B := Irr(Λ). For b ∈ B, let us denote by Zb the corresponding
+irreducible component. For a type F , let BF := {b ∈ B | Zb,F ⊂ Zb is dense}. We will
+consider the following (reduced) subscheme of Λ:
+                                           [
+                                    ΛF :=      Zb,F .
+                                                b∈BF
+
+We define Λfilt and Zb,filt for b ∈ B as follows:
+                                [                             [
+                Λcr ⊂ Λfilt :=     ΛF ⊂ Λ ; Zbcr ⊂ Zb,filt :=   Zb,F ⊂ Z.                      (1)
+                                 F                                 BF ∋b
+
+Remark 2.32. Let F be an ordered tuple as above. It follows from Remark 2.27 (by
+induction on the length of F ) that ΛF is irreducible. In other words, for every F , there
+exists a unique crystal component Z ⊂ Λ such that ZF ⊂ Z is dense, hence ZF = ΛF . In
+representation-theoretic terms, that irreducible component is the one obtained by applying
+the sequence of crystal operators determined by F to the unique irreducible component of
+Λ0 = pt (see Section 4.2).
+
+                                                12
+Remark 2.33. The following phenomenon frequently occurs: there exist distinct crystal
+components Z, Z ′ ⊂ Λr , which respectively admit generic types F, F ′ and such that:
+
+                                        ∅ ̸= ZF′ ′ ∩ Z ⊂ Z \ ZF .
+
+We will later construct explicit Zariski-locally trivial quotients of stable loci in ZF , ZF′ ′
+under the action of GLm,r (see Section 3), when Q is a framed quiver. The above phe-
+nomenon shows that neither ZF nor ZF′ ′ is an open neighbourhood of ZF′ ′ ∩ Z in Λ. It
+is therefore impractical to glue the various quotients ZFs / GLm,r into a quotient of some
+subset of Λr .
+    More precisely, for (Q, m) as in Example 2.20 and r = (2, 2), consider the framed
+quiver (Qf , m),
+             b where f = (2, 2). A typical example of the above situation arises when
+                                            Y
+                 Z ′ = ZF′ ′ = R(Q, m; r) ×     Homkmi (km ⊕ri ⊕fi
+                                                             i
+                                                               , kmi ) ⊂ Λbr ,
+                                                   i∈Q0
+
+where F ′ = (2α1 , 2α2 , α∞ ) and Z is any crystal component for which F ′ is not a generic
+type, e.g. Z is the closure of
+                                              Y
+                                                         ⊕ri ⊕fi
+                          GLm,r ·(A3 , B3 ) ×   Homkmi (kmi
+                                                            , kmi )
+                                                  i∈Q0
+
+where (A3 , B3 ) are as in Example 2.25. In this example, we have:
+
+                                       Hominj
+                                   Y
+                                                  ⊕ri ⊕fi       ′ s
+                      R(Q, m; r) ×          km (kmi , kmi ) ⊂ (ZF ′ ) ,
+                                                       i
+                                        i∈Q0
+
+                                                      Hominj
+                                               Y
+                                                              ⊕ri ⊕fi       s
+                       GLm,r ·(A3 , B3 ) ×               km (kmi , kmi ) ⊂ ZF ,
+                                                            i
+                                               i∈Q0
+
+so that ZF′ ′ ∩ Z meets the stable locus (see Definition 3.1).
+
+
+3      Construction of nilpotent quiver varieties
+In this section, we introduce stability conditions for framed quiver representations with
+multiplicities and construct analogues of Nakajima’s nilpotent quiver varieties, as in The-
+orem A. As above, we assume that Q has no loop arrows.
+
+
+3.1      Stability conditions
+In this section, we introduce the stability condition which we will use to construct nilpo-
+tent quiver varieties for framed quivers with multiplicities. We also collect a number of
+properties of stable, framed, E-filtered quiver representations with multiplicities, which we
+will use throughout our quotient construction in the following sections. Let (Q, m) be a
+quiver with multiplicities. Let r ∈ ZQ   0                             Q0
+                                        ≥0 be a rank vector and f ∈ Z≥0 a framing vector
+with associated framed quiver with multiplicities (Qf , m).
+                                                         b
+Definition 3.1. Let M be a locally free, rank b                              b Let ti : Mi →
+                                                   r representation of (Qf , m).
+ ⊕fi
+km i be the map   obtained  by  collecting  the fi arrows  i →  ∞  as in Section 2.2. We say
+that M is stable if, for any collection of submodules Ni ⊂ Mi , i ∈ Q0 such that:
+    • for all i ∈ Q0 , Ni ⊂ Ker(ti ),
+    • in restriction to (Q, m), the modules Ni for i ∈ Q0 form a subrepresentation of M ,
+we have Ni = 0 for all i ∈ Q0 .
+   For any subscheme T ⊂ R(Qf , m;b br), we let T s denote the set of points corresponding
+to stable representations. In particular, we have ΛQ  s             s , where Z
+                                                               and Zfilt        filt is as in
+                                                        f ,m;b
+                                                           b r
+Definition 2.31.
+
+                                                      13
+   As one would expect, the stable locus is an open subset of R(Qf , m;
+                                                                     b br).
+
+Lemma 3.2. The subset R(Qf , m;
+                             b br)s ⊂ R(Qf , m;
+                                             b br) is open and GLm,r -invariant.
+
+Proof. We claim that R(Qf , m;
+                            b br)s is the open complement of the (closed) image of the
+morphism               G
+                   Z⊂     Grd,m (M ) × R(Qf , m; r) → R(Qf , m;
+                                               b b           b br),
+                          d
+
+where Grd,m (M ) is the Grassmannian of (not necessarily locally free) kmi -submodules
+Ni ⊂ Mi of dimension di over k (for i ∈ Q0 ) and Z is the (say, reduced) closed subscheme
+of pairs (N, x) such that xa (Ni ) ⊂ Nj for all a : i → j, a ∈ Q1 and Ni ⊂ Ker(ti ). The
+disjoint union runs over the dimension vectors d such that di ≤ mi ri for all i ∈ Q0 .
+    Since Grd,m (M ) is proper, the image of this morphism is closed. The closed points of
+its open complement correspond exactly to stable, rank b  r representations of (Qf , m),
+                                                                                     b by
+construction.
+
+   We now collect a few lemmas on the behaviour of stability under Hecke modifications.
+This is crucial for our inductive quotient procedure (see Section 3.3).
+
+Lemma 3.3. Let M be a locally free, rank b  r representation of (Qf , m).
+                                                                      b   If M is stable,
+then for all i ∈ Q0 , the homomorphism of kmi -modules
+                                           M
+                             Mi,out : Mi →       ka ⊗kmj Mj
+                                           a∈(Qf )1
+                                            a : i→j
+
+is injective.
+
+Proof. The claim follows from the fact that subi (M ) = Ker(Mi,out ) is a subrepresentation
+of M concentrated at vertex i (see Lemma 2.11). In particular it is a subrepresentation
+of M under restriction to (Q, m), and is contained in Ker(ti ). Therefore, stability implies
+that Ker(Mi,out ) = 0.
+
+Lemma 3.4. Let M be a locally free, rank b    r representation of (Qf , m).
+                                                                        b   Suppose that
+M ′ ⊂ M is a locally free subrepresentation such that M/M ′ ≃ Ei⊕r for some i ∈ Q0 and
+r ≥ 1. Then the following are equivalent:
+  i) M is stable,
+  ii) M ′ is stable and Mi,out is an injective homomorphism of kmi -modules.
+
+Proof. Let us first prove i) ⇒ ii). Suppose that M is stable. Then M ′ is also stable, since
+any collection of submodules Nj ⊂ Mj′ satisfying Nj ⊂ Ker(tj ) for all j ∈ Q0 and forming
+a subrepresentation of M ′ under restriction to (Q, m)
+                                                    b has the same property with respect
+to M . Moreover, stability implies Ker(Mi,out ) = 0 by Lemma 3.3.
+    Conversely, suppose that M ′ is stable and Mi,out is injective. Consider a collection of
+submodules Nj ⊂ Mj satisfying Nj ⊂ Ker(tj ) for all j ∈ Q0 and forming a subrepresen-
+                                    b Then, since M ′ is stable, we have Nj ∩ Mj′ = 0 for
+tation of M in restriction to (Q, m).
+all j ∈ Q0 . Therefore, we have Ni ⊂ Ker(Mi,out ), hence Ni = 0. This shows that M is
+stable.
+
+   A converse to Lemma 3.3 holds for E-filtered representations.
+
+Lemma 3.5. Let M be a locally free, rank b        r representation of (Qf , m).
+                                                                            b Suppose that M
+is E-filtered. If Mi,out is injective for all i ∈ Q0 , then M is stable.
+
+
+
+
+                                            14
+Proof. We prove the claim by induction on rk M . Since M is E-filtered, there exists
+a (locally free) subrepresentation M ′ ⊂ M such that M/M ′ ≃ Ei⊕r for some integer
+r ≥ 1. By induction, we may assume that M ′ is stable. Then the conclusion follows from
+Lemma 3.4.
+
+   This characterisation of stable E-filtered representations has the following favourable
+consequence.
+                                       h                 i
+Proposition 3.6. The quotient stack ΛsQf ,m;bb r / GLm,r   is an algebraic space.
+
+Proof. By [Con06, Thm.  h 2.2.5], it is sufficient
+                                          i         to show that the stabiliser group schemes
+                           s
+of geometric points of ΛQf ,m;bb r / GLm,r are all trivial.
+    Let κ be an algebraically closed field containing k, let (x, y, s, t) ∈ ΛsQf ,m;b
+                                                                                  b r (κ) and M =
+M (x, y, s, t). Since M is E-filtered, there exists a chain of (locally free) subrepresentations
+
+                                     M ⊋ M1 ⊋ . . . ⊋ Mn = 0
+
+such that, for all 1 ≤ l ≤ n, we have M l−1 /M l ≃ Eil for some il ∈ Q0 . Since Q has no
+loop arrows, Lemma 3.3 yields a chain of injective kmi -linear maps for every i ∈ Q0 :
+                     M
+   κ⊕r       ⊕fi
+     mi ,→ κmi ⊕
+       i
+                         κa ⊗j1 Mj11 ,→ . . .
+                    a:i→j1
+                                                                                           
+                     M                  ⊕fj           ⊕fjn−1         M
+         ,→ κ⊕f
+             mi ⊕
+               i
+                               κa1 ⊗j1 κmj11 ⊕ . . . κmjn−1  ⊕                 κan ⊗jn Mjnn  ,
+                                                                                              
+                    a1 :i→j1                                       an :jn−1   →j
+                                                                                 |    {z    }
+                                                                                n
+                                                                                      =0
+
+where we write ⊗i for ⊗κmi to avoid clutter. The above chain of linear maps is obtained
+by composing Mjl ,out for l = 0, . . . , n − 2 (with the convention j0 = i). Note that all tensor
+products involve free modules, hence preserve injectivity of linear maps.
+    We have thus obtained an injective κmi -linear map Φi = Φi (x, y, s, t) defined by:
+                                                                                           
+                    M                     ⊕fj                 M                      ⊕f jn−1
+Φi : κ⊕ri    ⊕fi
+      mi ,→ κmi ⊕          κa1 ⊗j1 κmj11 ⊕ . . . . . .               κan−1 ⊗jn−1 κmjn−1     .
+                    a1 :i→j1                              an−1 :jn−2 →jn−1
+
+
+Now let R be a κ-algebra. If g · (x, y, s, t) = (x, y, s, t) for some g ∈ GLm,r (R), then we
+have
+                           Φi (x, y, s, t) = Φi (x, y, s, t) ◦ gi−1
+for all i ∈ Q0 . Since Φi (x, y, s, t) is injective, it admits a left-inverse (over κ, hence over
+R), we obtain g = e as required.
+
+    Finally, we show that for stable E-filtered representations of (Qf , m),
+                                                                         b the framing maps
+starting from the vertex ∞ vanish. This is crucial to relate the geometric constructions
+of B(C; ∞) and B(C; λ) (see Section 4.3). We will also use this for the base case of our
+quotient construction (see Proposition 3.12).
+
+Lemma 3.7. Let M be a stable, E-filtered representation of (Qf , m)
+                                                                  b of rank b  r. Then M
+admits a subrepresentation isomorphic to E∞ . In particular, si = 0 for all i ∈ Q0 .
+
+Proof. By assumption, M is E-filtered, so there exist locally free subrepresentations M ′′ ⊂
+M ′ ⊂ M such that M ′ /M ′′ ≃ E∞ . Then, in restriction to (Q, m), the modules Mi′′ for
+i ∈ Q0 form a subrepresentation of M and we further have Mi′′ ⊂ Ker(ti ). Therefore,
+stability implies that M ′′ = 0, hence M ′ ≃ E∞ is a subrepresentation.
+
+
+
+                                                 15
+3.2     A toy model for the quotienting procedure
+For natural numbers n and N with n < N , consider the action of the reductive group
+
+                               GLn ↷ Xn := Homk (k ⊕n , k ⊕N )
+
+by g ·x = xg −1 . For the character θ := det−1 : GLn → Gm , the twisted affine GIT quotient
+is a Zariski-locally trivial quotient
+
+                                                             = GLN /Pn,N ∼
+      Xnθ−(s)s = Xninj := {x ∈ Xn : rk(x) = n} → Xninj / GLn ∼           = Gr(n, N )
+
+where Gr(n, N ) is the Grassmannian of n-dimensional subspaces in k ⊕N and Pn,N < GLN
+is the parabolic subgroup of automorphisms preserving the inclusion k ⊕n ⊂ k ⊕N as the
+first n coordinates. The above isomorphisms holds as we can embed Xninj ,→ GLN as the
+first n columns, and then the action induces an isomorphism Xninj ×GLn Pn,N ∼   = GLN .
+    We will now restrict this action to a parabolic subgroup of GLn and construct a quotient
+by this non-reductive action. For this, we fix decompositions n = n′ +n′′ and let P := Pn′ ,n
+                                              ′
+be the parabolic subgroup preserving k ⊕n ⊂ k ⊕n . More precisely, this is the parabolic
+group associated to the one-parameter subgroup
+                                            0                
+                                              t In′    0
+                                 λn′ (t) =
+                                                0    t−1 In′′
+
+and P corresponds to block upper triangular matrices. We have P = U ⋊ (G′ × G′′ ), where
+U is its unipotent radical and the Levi factors are given by G′ = GLn′ and G′′ = GLn′′ . We
+will write points in Xn = Xn′ × Xn′′ as pairs x = (x′ , x′′ ), and let f denote the projection
+onto the first factor. Then there is an equivariant action
+                                                           f
+                               (P ↠ G′ × G′′ ) ↷ (Xn → Xn′ )                                (2)
+
+where G′′ acts trivially on Xn′ . We will construct a quotient of the P -action on X by
+explicitly finding slices for the unipotent group action, and we will show this coincides
+with the relative non-reductive GIT quotient in [HHJ].
+
+Lemma 3.8. For the action of the parabolic subgroup P on Xn , the open subset Xninj
+admits a Zariski-locally trivial P -quotient
+
+                                     Xninj → Fl(n′ , n, N )
+
+where Fl(n′ , n, N ) is the flag variety parametrising flags in k ⊕N of dimension n′ < n < N .
+                                                       f
+Proof. We simplify notation and write X := Xn → Z := Xn′ . First we perform a base
+change over the stable locus Z ′ := Z θ−s (G′ ) = Xninj′ and denote this by f ′ : X ′ → Z ′ . We
+claim there is a Zariski-locally trivial U -quotient qU : X ′ → Y := X ′ /U that is relative to
+Z ′ by producing slices locally. The stable locus Z ′ is covered by open subschemes
+
+                             ZS = {z ∈ Z : S ⊕ Im(z) = k ⊕N },
+
+where dim S = N − n′ . Then we claim that for the U -action on XS := X ×Z ZS , there is
+a U -slice in XS relative to ZS given by
+                                                                   ′′
+                      YS := ZS × FS ,    where     FS := Hom(k ⊕n , S).
+
+Indeed, the action of u ∈ U on x = (x′ |x′′ ) ∈ XS is given by u · x = (x′ |x′′ − x′ u), and so
+there is a unique element u ∈ U such that the image of (u · x)′′ lies in the complement S
+to the image of x′ . In particular, we obtain trivial U -quotients relative to ZS
+
+                                  XS → XZ /U ∼
+                                             = YS → ZS
+
+                                              16
+which glue to give the claimed quotient qU .
+    The open locus YSinj := ZS × FSinj ⊂ YS admits a Zariski-locally trivial G′′ -quotient
+relative to ZS , with fibre Gr(n′′ , S). The group G′ acts freely and equivariantly on the
+morphism
+                             YSinj /G′′ = ZS × Gr(n′′ , S) → ZS
+with Zariski-locally trivial quotient
+
+                   YSinj /(G′ × G′′ ) ∼
+                                      = Gr(n′ , N ) × Gr(n′′ , S) ,→ Fl(n′ , n, N )
+
+relative to the open subset ZS /G′ ⊂ Gr(n′ , N ). We claim that
+
+                                          qU−1 (YSinj ) = Xninj
+                                        [
+                                Xn′′ :=                                                        (3)
+                                            S
+
+and thus Xninj has a Zariski-locally trivial P -quotient given by
+
+                                     = GLN /Pn′ ,n,N ∼
+                            Xninj /P ∼               = Fl(n′ , n, N ),
+
+where the first isomorphism follows as GLN =    ∼ Xninj ×P Pn′ ,n,N . To prove Eq. (3), we need
+to show for x = (x′ , x′′ ) ∈ X ′ that x is injective if and only if (u · x)′′ is injective for all
+u ∈ U . We note that if there exists u ∈ U such that (u · x)′′ = (x′′ − x′ u) is not injective,
+                            ′′
+then there exists w ∈ k ⊕n such that (x′′ − x′ u)(w) = 0. This is equivalent to the existence
+              ′                ′′
+v = uw ∈ k ⊕n and w ∈ k ⊕n such that x′ (v) = x′′ (w), which shows that the images of x′
+and x′′ have non-zero intersection, and so x = (x′ , x′′ ) is not injective.
+
+Remark 3.9. The above explicitly constructed quotient coincides with a relative non-
+reductive quotient associated to the equivariant action Eq. (2) on the affine morphism
+f : Xn → Xn′ in the sense of [HHJ]. Indeed this action is (internally) graded by λn′ and
+the relative quotient is performed with respect to the reductive GIT quotient q : Xn′ ′ :=
+    ′
+XnG′ −ss (θ) = Xninj′ → Xn′ //θ G′ = Gr(n, N ) and the character ρ : P → Gm given by
+ρ(g ′ , g ′′ ) := det(g ′′ )−1 . Using the non-reductive Hilbert–Mumford criterion, one can show
+that
+                                            Xn(s)s (f ; q, ρ) = Xninj
+admits a Zariski-locally trivial P -quotient that is projective over Xn′ //θ G′ = Gr(n, N ).
+   We now consider a jet version of the above set up and look at the action
+                                                     ⊕n ⊕N
+                             GLm,n ↷ Xm,n := Homkm (km , km ).                                 (4)
+
+In [HJV25, §4.6.1], we use relative non-reductive GIT to construct a Zariski-locally triv-
+                                inj
+ial quotient of the open set Xm,n     which is equal to the jet Grassmannian Grm (n, N )
+parametrising free rank n submodules of km   ⊕N . In fact, this is the bundle of m-jets over
+
+Gr(n, N ) and as GLm,n is special, this quotient is Zariski-locally trivial.
+    As above, we write n = n′ + n′′ and restrict our attention to the action of the jet
+parabolic subgroup Pm := Pm;n′ ,n . We can write Pm = Um ⋊ (G′m × G′′m ), where G′m :=
+GLm,n′ and G′′m := GLm,n′′ are non-reductive groups, and we view their product as a
+mock-Levi subgroup of Pm , as it is the centraliser subgroup of the one-parameter subgroup
+λn′ : Gm → GLn ,→ GLm,n .
+Lemma 3.10. The following statements hold for the action of Pm on Xm,n .
+                      inj
+  i) The open subset Xm,n admits a Zariski-locally trivial (Um ⋊ G′′m )-quotient
+                                       inj
+                                      Xm,n    inj
+                                           → Xm,n /(Um ⋊ G′′m ),
+                                            inj
+     which is G′m -equivariant relative to Xm,n ′ , with fibres given by jet Grassmannians
+           ′′       ′
+     Grm (n , N − n ).
+
+                                                 17
+                                                       inj
+  ii) There is a Zariski-locally trivial Pm -quotient Xm,n → Flm (n′ , n, N ) given by the jet
+      flag variety parametrising flags in km of free submodules of ranks n′ < n < N .
+                                           ⊕N
+
+
+Proof. As in Lemma 3.8 above, we consider the projection f : X := Xm,n → Z := Xm,n′ .
+                  inj                                                     ⊕N
+The open set Xm,n     ′ is covered by ZS := {z ∈ Z : S ⊕ Im(z) = km }, where S is a free
+
+submodule of rank N − n′ . The same argument shows that there is a Um -slice on XS =
+f −1 (ZS ) given by YS := ZS × FS , where FS := Homkm (km      ⊕n′′ , S). Then Y inj = Z × F inj
+                                                                                S       S    S
+admits a Zariski-locally trivial G′′m -quotient, which is relative and G′m -equivariant over ZS
+with fibres Grm (n′′ , S). The first claim then follows by taking the preimage of the loci
+YSinj under the U -quotient, and the second claim follows by additionally quotienting by
+G′m exactly as in Lemma 3.8.
+
+
+3.3     A recursive quotienting procedure
+From now on, we fix a quiver with multiplicities (Qf , m),  b where f ∈ ZQ     0
+                                                                             ≥0 is a framing
+vector. We will construct a quotient of the stable locus in Λfilt by using the decomposition
+in Eq. (1) by the type F , which encodes how the E-filtered representation is constructed
+as a sequence of Hecke modifications (see Definition 2.29). Our strategy is to prove this
+by induction on the length of the type F . The main result is as follows.
+
+Theorem 3.11. For a type F = (c1 αi1 , . . . , cs αis ) with rank vector r := st=1 ct αit , the
+                                                                              P
+GLm,r -action on ΛsF admits a Zariski-locally trivial quotient such that the quotient map is
+a Zariski-locally trivial principal GLm,r -bundle. As a consequence, the same holds for the
+action GLm,r ↷ Zfilts , for any crystal component Z ⊂ Λ .
+                                                           r
+                                                           b
+
+Proof. This result is proved by induction on the length s of F , where the base case is
+Proposition 3.12 and the inductive step is Proposition 3.18 below.
+
+   Both the base case and the inductive step use the above toy model. Note that, by
+Lemma 3.7, ΛsF ̸= ∅ if and only if the last entry of F is α∞ . Therefore, we take as our
+base case F = (cαi , α∞ ) for some i ∈ Q0 and c ∈ Z≥1 .
+
+Proposition 3.12 (Base case). Let c ∈ Z≥1 , i ∈ Q0 and r := cαi . Then the action
+GLmi ,c ↷ Λbsr admits a Zariski-locally trivial quotient.
+
+Proof. A stable E-filtered rank b  r representation of Qf satisfying the moment map equations
+is given by an injective linear map km      ⊕c → k ⊕fi , as by Lemma 3.7 the maps from the
+                                             i     m∞
+framing vertex ∞ to i are all zero. Hence we are considering the action of GLmi ,c on
+Λbr = Homkmi (km⊕c , k ⊕fi ) as in Eq. (4). By [HJV25, §4.6.1], there is a Zariski-locally trivial
+                 i    mi
+GLmi ,c -quotient of Λbsr = Hominj  ⊕c ⊕fi
+                               km (kmi , kmi ) given by the jet Grassmannian Grm (c, fi )
+                                    i
+                                         ⊕fi
+parametrising free rank c submodules of km   .
+
+Notation 3.13. For the rest of this section, we fix a type F of length s and write F =
+(cαi , F ′ ) where F ′ is a type of length s − 1. We let r and r′ denote the rank vectors
+associated to the types F and F ′ , so that r = r′ + cαi .
+                                                 ⊕ri of rank r − c and an isomorphism
+Definition 3.14. For a free kmi -submodule Ni ⊂ kmi           i
+       ⊕(r −c)
+Ni ≃ kmi i    , we consider the affine subspace:
+                     
+ R(Qf , m;
+        b br, Ni ) := (x, y, s, t) ∈ R(Qf , m;
+                                            b br) | Im(M (x, y, s, t)i,in ) ⊂ Ni ⊂ R(Qf , m;
+                                                                                          b br).
+
+Then we define YF = YF (Ni ) := ΛF ∩R(Qf , m;
+                                           b br, Ni ) and let Pm;r,cαi = Pm,r (Ni ) ⊂ GLm,r
+denote the subgroup of GLm,r stabilising the flag Ni ⊂ km ⊕ri .
+                                                            i
+
+
+
+
+                                               18
+    Note that both YF and Pm;r,cαi depend on Ni , but as we will fix Ni below, we suppress
+this in the notation. The action GLm,r ↷ ΛF induces an action Pm;r,cαi ↷ YF . The first
+step in the inductive procedure replaces the former action with the latter, by relating their
+quotient stacks. First, we verify that the group Pm;r,cαi is special.
+Lemma 3.15. Let r ∈ ZQ0
+                     ≥0 and (c, i) ∈ Z≥0 × Q0 . The group Pm;r,cαi is special.
+
+Proof. The group Pm;r,cαi is an extension of GLm,r′ × GLmi ,c by a unipotent algebraic
+group. Thus by [Ser58, Lem. 6, Prop. 14], it is enough to show that GLm,r′ × GLmi ,c is
+special. This in turn follows from [Ser58, Lem. 6, Prop. 14] and the fact that the general
+linear group is special [Mil80, Lem. III.4.10].
+   We can relate the two actions by showing the quotient stacks are isomorphic.
+Lemma 3.16. There is a GLm,r -equivariant isomorphism of schemes:
+                                  ΛF ≃ GLm,r ×Pm;r,cα YF .
+In particular, there is an isomorphism of stacks [ΛF / GLm,r ] ∼
+                                                               = [YF /Pm;r,cα ].
+Proof. Let us write Y := YF , X := ΛF , P := Pm;r,cαi and G := GLm,r for short. The
+action G ↷ X induces a P -invariant map G × Y → X (for the diagonal action p · (g, y) =
+(gp−1 , p · y)), hence a map G ×P Y → X. Note that the quotient G ×P Y is a scheme, as
+P is special by Lemma 3.15.
+    To construct an inverse morphism, let V ⊂ G/P be a trivialising open for the principal
+P -bundle G → G/P , let s : V ,→ G be the associated section and U ⊂ X be the inverse
+image of V under the morphism
+                                              h
+                                    X −→ G/P
+                           (x, y, s, t) 7→ Im(M (x, y, s, t)i,in ).
+Then we obtain a morphism:
+                           U → G×Y
+                           p 7→ (s ◦ h)(p), (s ◦ h)−1 (p) · p .
+                                                             
+
+After composing with the quotient map G × Y → G ×P Y , the above maps (for covering
+trivialising opens V ⊂ G/P ) glue to a morphism X → G ×P Y , which is the required
+inverse.
+Remark 3.17. As we hinted in the Introduction, the map p : Λr′ ,r;cαi → Λr;cαi restricts to
+a principal GLmi ,ri′ -bundle above ΛF , whose fibres parametrise isomorphisms:
+                                              ⊕r′
+                                        φ : kmi i ≃ Im(Mi,in ).
+Therefore, we obtain a Hecke correspondence:
+                                    q                                     ∼
+                  [ΛF ′ / GLm,r′ ] ←− ΛF ′ ,F := p−1 (ΛF )/ GLmi ,ri′ −→ ΛF ,
+where q is GLm,r -invariant. The projection ΛF ′ ,F → GLm,r /Pm;r,cαi , M 7→ Im(φ) is a
+fibre bundle with fibre isomorphic to YF . Reducing to the quotient stack [YF /Pm;r,cαi ]
+amounts to fixing Im(Mi,in ) = Ni , as shown in the above lemma. This is summarised in
+the following diagram, where we quotient by GLm,r :
+                                         ∼                      
+                      [YF /Pm;r,cαi ]            ΛF ′ ,F / GLm,r
+
+
+                                          ∼
+                        BPm;r,cαi                   [GLm,r \ GLm,r /Pm;r,cαi ]
+
+This kind of reduction is common in the study of Hecke correspondences and Hall algebras,
+see for instance [SV13b; Hen24] or more recently [GGS26].
+
+                                                     19
+Proposition 3.18 (Inductive step). Let F = (cαi , F ′ ) be a type with rank vector r and
+r′ := r − cαi be the rank vector of the type F ′ . Suppose that the action GLm,r′ ↷ ΛsF ′
+admits a Zariski-locally trivial GLm,r′ -quotient. Then the action Pm;r,cαi ↷ YFs admits
+a Zariski-locally trivial Pm;r,cαi -quotient. Consequently, there is a Zariski-locally trivial
+GLm,r -quotient of ΛsF .
+    The following subsection is devoted to the proof of this proposition.
+
+
+3.4      Proof of the inductive step
+We continue to write the type as F = (cαi , F ′ ) as in Notation 3.13, and let r and r′
+                                                                            ⊕(r −c)
+denote the rank vectors of F and F ′ . Using the fixed isomorphism Ni ≃ kmi i       (see
+Definition 3.14), we can define a restriction map:
+                                                      Φ
+                            R(Qf , m;
+                                   b br, Ni ) −→ R(Qf , m;b b r′ )         ,
+                                  (x, y, s, t) 7→ (x|N , y|N , s|N , t|N )
+                                                                    ⊕r
+where N denotes the collection of submodules Nj ⊂ kmjj , j ∈ Q0 given by:
+                                       
+                                         Ni j = i,
+                                 Nj :=
+                                         Mj j ̸= i.
+
+    As in Notation 2.24, we will write 0αi to keep track of the vertex i ∈ Q0 where
+faci (M ) = 0. In particular, ΛF ′ ,0αi is the open subscheme of ΛF ′ consisting of representa-
+tions M such that Mi,in is surjective.
+Lemma 3.19. The restriction map Φ : R(Qf , m;
+                                           b br, Ni ) −→ R(Qf , m;
+                                                                b br′ ) induces a vector
+bundle
+                                 YF → ΛF ′ ,0αi ,
+which is equivariant with respect to the morphism of algebraic groups Pm;r,cαi → GLm,r′ .
+
+Proof. Note that the map Φ is a trivial vector bundle with fibre:
+                                                           
+                                                        ⊕r
+                                            M
+                                      ⊕c
+                         Homkmi km     i
+                                          ,    ka ⊗kmj kmjj  .
+                                                  a:i→j
+
+Consider the pullback of that vector bundle to ΛF ′ ,0αi :
+
+                                  Φ−1 (ΛF ′ ,0αi )                ΛF ′ ,0αi
+                                                  ⌜
+                                                           Φ
+                                R(Qf , m;
+                                       b br, Ni )              R(Qf , m;
+                                                                      b br′ ).
+
+Then it suffices to prove that YF ⊂ Φ−1 (ΛF ′ ,0αi ) is a subbundle.
+   By construction, we have:
+
+                   Φ−1 (ΛF ′ ,0αi ) ∩ nilbr = Φ−1 (ΛF ′ ,0αi ) ∩ µ−1
+                                                                  Q ,m;b
+                                                                     b r
+                                                                         (0) ⊂ nilbr,cαi ,
+                                                                      f
+
+
+i.e. (x, y, s, t) ∈ Φ−1 (ΛF ′ ,0αi ) lies in nilbr if and only if µQf ,m;b
+                                                                       b r (x, y, s, t) = 0 and in that case,
+(x, y, s, t) ∈ nilbr,cαi . In particular, for (x, y, s, t) ∈ Φ−1 (ΛF ′ ,0αi ) ∩ nilbr , the representation
+M (x, y, s, t) has type F . Consider now the (reduced) subscheme:
+                                                                                ⊕ri
+                                                                                       
+          nilbr,Ni ;cαi := nilbr′ ,br;cαi ∩ R(Qf , m;
+                                                    b br, Ni ) × {φi : Ni ,→ km    i
+                                                                                     }   ⊂ nilbr′ ,br;cαi .
+
+The restriction of the map p : nilbr′ ,br;cαi → nilbr,cαi (see Definition 2.26) to nilbr,Ni ;cαi co-
+incides with the restriction of the closed immersion R(Qf , m;      b br, Ni ) ,→ R(Qf , m;
+                                                                                          b b  r) to
+
+                                                          20
+nilbr,Ni ;cαi . Likewise, the restrictions of the maps q : nilbr′ ,br;cαi → nilbr′ ,0αi and Φ to nilbr,Ni ;cαi
+coincide. By Remark 2.27, we thus obtain:
+                                                                        −1
+                      YF = Φ−1 (ΛF ′ ,0αi ) ∩ Λbr = Φ−1 (ΛF ′ ,0αi ) ∩ µQ ,m;b
+                                                                           b r
+                                                                               (0).
+                                                                                     f
+
+
+Now, given (x, y, s, t) ∈ Φ−1 (ΛF ′ ,0αi ) and the associated representation M = M (x, y, s, t),
+we have µQf ,m;bb r (x, y, s, t) = 0 if and only if Mi,in ◦ Mi,out = 0, by Lemma 2.13. The
+                                                     f
+operator
+                                                                   
+                                                                 ⊕r
+                                                    M
+                                              ⊕c                                 ⊕c ⊕(ri −c)
+M
+fi,in (x|N , y|N , s|N , t|N )◦(−) : Homk km
+                                          mi    i
+                                                  ,    ka ⊗kmj kmjj → Homkmi (km i
+                                                                                    , kmi      )
+                                                         a:i→j
+
+
+has constant rank on ΛF ′ ,0αi , since M
+                                       fi,in (x|N , y|N , s|N , t|N ) has constant rank, equal to
+                                  −1                −1
+ri − c. This shows that YF = Φ (ΛF ′ ,0αi ) ∩ µQ            (0) ⊂ Φ−1 (ΛF ′ ,0αi ) is the subbundle
+                                                     f ,m;b
+                                                        b r
+Ker(Mfi,in ◦ (−)), as required.
+
+    We will need the following well-known lemma in the following proofs.
+Lemma 3.20. Let G be an algebraic group and f : X → Y a G-equivariant map of G-
+schemes. Suppose that the action G ↷ Y admits a Zariski-locally trivial G-quotient. Then
+so does the action G ↷ X.
+
+Proof. This amounts to providing G-slices for certain covering G-invariant opens in X. We
+argue that these can be obtained by pulling back such slices from Y . Indeed, suppose that
+V ⊂ Y is a G-invariant open subset endowed with a G-equivariant isomorphism V ≃ G×S,
+v 7→ (g(v), s(v)). Then the map
+
+                             f −1 (V ) → G × f −1 (S)
+                                    u 7→ (g ◦ f )(u), (g ◦ f )(u)−1 · u
+                                                                        
+
+is an isomorphism.
+
+    We first take a partial quotient by the following normal subgroup of Pm;r,cαi .
+Notation 3.21. Let Um;r,cαi ⊂ Pm;r,cαi be the normal subgroup such that the following
+decomposition holds:
+
+                             Pm;r,cαi := Um;r,cαi ⋊ (GLm,r′ × GLmi ,c ).
+
+Lemma 3.22. The vector bundle YF → ΛF ′ ,0αi induces a map YFs → ΛsF ′ ,0αi , which in
+turn induces a fibrewise, Zariski-locally trivial quotient:
+
+                                     YFs /(Um;r,cαi ⋊ GLmi ,c ) → ΛsF ′ ,0αi .                                (5)
+
+Proof. Recall that, by the proof of Lemma 3.19, the map Φ : YF → ΛF ′ ,0αi may be iden-
+tified with the vector bundle:
+                                                                                    
+                                                                                  ⊕r
+                                                                       M
+Ker(M fi,in ◦(−)) = Homk (k ⊕c , Ker(M
+                                     fi,in )) ⊂ ΛF ′ ,0α ×Homk k ⊕c ,   ka ⊗km kmjj  .
+                         m   m   i      i               i     m   m              i           i            j
+                                                                                                 a:i→j
+
+
+   Let V ⊂ ΛF ′ ,0αi be a trivialising open subset for Ker(M
+                                                           fi,in ). Let p := rkk (Ker(M
+                                                                                mi
+                                                                                      fi,in )).
+Then, by Lemma 3.4, we have the following diagram:
+                                                                           Φ
+               Φ−1 (V s )s                           Φ−1 (V s )                                   Vs
+                             ⌜                                    ⌜
+
+         Hominj  ⊕ri ⊕p                     Ψ−1 (Hominj       ⊕p           Ψ
+                                                                                         Hominj       ⊕p
+            km (kmi , kmi )
+                  i                                 km (Ni , kmi ))
+                                                          i                                 km (Ni , kmi ),
+                                                                                                  i
+
+
+
+                                                        21
+where Ψ : Homkmi (km  ⊕ri , k ⊕p ) → Hom           ⊕p
+                        i    mi         kmi (Ni , kmi ) is the restriction morphism and the
+vertical arrows are the (Um;r,cαi ⋊ GLmi ,c )-equivariant maps forgetting arrows of Q with
+source different from i. By combining Lemma 3.10 and Lemma 3.20 applied to the leftmost
+arrow in the above diagram, we obtain a Zariski-locally trivial (Um;r,cαi ⋊GLmi ,c )-quotient:
+
+                                   Φ−1 (V s )s /(Um;r,cαi ⋊ GLmi ,c ).
+
+By gluing these quotients for different trivialising opens V , we obtain the required quotient
+YFs /(Um;r,cαi ⋊ GLmi ,c ).
+
+Proof of Proposition 3.18. By assumption there is a Zariski-locally trivial GLm,r′ -quotient
+of ΛsF ′ , and thus also of the open invariant subset ΛsF ′ ,0αi . Then the result about the
+Pm;r,cαi -quotient follows by applying Lemma 3.20 to the GLm,r′ -equivariant morphism
+(5) constructed in Lemma 3.22. The last statement follows by Lemma 3.16.
+
+   This completes the proof of Theorem 3.11.
+Remark 3.23. The above proofs implies that the map:
+
+                            ΛF / GLm,r ≃ YF /Pm;r,cαi → ΛF ′ ,0αi / GLm,r′
+
+is a Zariski-locally trivial fibration with the same fibres as the map:
+
+                 Hominj  ⊕ri ⊕p                                inj       ⊕p
+                    km (kmi , kmi )/(Um;r,cαi ⋊ GLmi ,c ) → Homkm (Ni , kmi ),
+                        i                                                         i
+
+
+which, by Lemma 3.10, are isomorphic to:
+                                                               *                 +
+                                                                        X
+            ⊕c       f′ )/ Im(M ′ ) = Grm (c, p − r′ ) = Grm c, hi , λ −
+Grmi       kmi
+               , Ker(M i,in    i,out     i         i        i               rj′ αj  ,
+                                                                                       j∈Q0
+
+where M ′ is the representation corresponding to the base point in ΛF ′ ,0αi / GLm,r′ . Indeed,
+by surjectivity of M
+                   fi,in , we have:
+                                           X                        X
+              p = rk Ker(M  fi,in ) = fi +   cij rj − ri + c = fi +   cij rj′ − ri′ .
+                                             j̸=i                               j̸=i
+
+Note that fibres are non-empty if, and only if
+                                    *                                   +
+                                                        X
+                                      c≤    hi , λ −           rj′ αj       ,
+                                                        j∈Q0
+
+which is consistent with Proposition 5.3 below (note that, in the notation of that Propo-
+sition, c = 0 and l in the Proposition correspond to c in this Remark).
+Example 3.24. Consider the quiver (Q, m) as in Example 2.20 and fix r = (2, 2), f = (2, 2).
+Then ΛsQf ,m;b
+           b r parametrises representations of the form:
+
+                                                    A
+                                           k ⊕2            k2⊕2
+                                                    B
+                                              t1                t2
+
+                                           k ⊕2           k2⊕2 ,
+
+which satisfy (but are not characterised by) the following properties: AB = 0, BA[ϵ] = 0
+and the linear maps
+                                                    (A,t1 )
+                                  M1,out : k ⊕2     −→          k2⊕2 ⊕ k ⊕2
+                                                    (B,t2 )
+                                  M2,out : k2⊕2     −→          k2⊕2 ⊕ k2⊕2
+
+                                                    22
+are injective. Note that the forgetful map ΛsQf ,m;b
+                                                 b r → ΛQ,m;r induces an injection on
+irreducible components (see Proposition 4.22 below for a general proof).
+    Consider the component Z ⊂ ΛsQf ,m;b
+                                     b r lying above the orbit closure of
+
+                                    (A0 , B0 ) = (( 10 00 ), ( 01 00 )),
+which is a crystal component of ΛQ,m;r as discussed in Example 2.25. Then a general repre-
+sentation M (A, B, t) for (A, B, t) ∈ Z admits filtrations of types F1 = (α2 , α1 , α2 , α1 , α∞ )
+and F2 = (α1 , 2α2 , α1 , α∞ ). One can check that ZF1 is the locus where (A, B) lies in the
+orbit of (A0 , B0 ), whereas ZF2 is the locus where fac1 (M ) has rank 1. Therefore, we have
+ZF1 ⊊ ZF2 . Note that, since ri ≤ fi for all i ∈ Q0 , the map
+                                      Z → GLm,r ·(A0 , B0 )
+is surjective (the maps ti for i ∈ Q0 can be chosen to be injective).
+    For the type F = F2 , let us construct the quotient ZF / GLm,r . inductively. We set
+F = (2α2 , α1 , α∞ ), r′ = (1, 2) and F ′′ = (α1 , α∞ ), r′′ = (1, 0). By (the proof of)
+  ′
+
+Proposition 3.12, we have ZF ′′ / GLm,r′′ ≃ P1 . Moreover, for any (x, y, s, t) ∈ ZF ′′ and
+M ′′ = M (x, y, s, t) we have that M2,in
+                                       ′′                     ′′
+                                          is surjective, Im(M2,out                  ′′ ) =
+                                                                   ) = 0 and Ker(M2,in
+k2 ⊕ k2⊕2 . Therefore, by Remark 3.23, the map
+                            ZF ′ / GLm,r′ → ZF ′′ ,0α2 / GLm,r′′ ≃ P1
+is a fibration, with fibres isomorphic to Gr2 (2, 3) ≃ TP2 , parametrising the subspace
+(B ′ , t′2 ) : k2⊕2 ,→ k2 ⊕ k2⊕2 . Finally, for (x, y, s, t) ∈ ZF ′ and M ′ = M (x, y, s, t) we have
+(x, y, s, t) ∈ ZF ′ ,0α1 if and only if B ′ : k2⊕2 → k2 is surjective. Furthermore, we have:
+                              ′
+                          Im(M1,out ) = Im(t′1 ) ⊂ k2⊕2 ⊕ k ⊕2
+                               ′
+                          Ker(M1,in ) = Ker(B ′ ) ⊕ k ⊕2 ⊂ k2⊕2 ⊕ k ⊕2 .
+Therefore, ZF ′ ,0α1 ⊂ ZF ′ is the open subset of the above TP2 -fibration which restricts on
+fibres to the locus where the map k2⊕2 ,→ k2 ⊕ k2⊕2 ↠ k2 is surjective. Likewise, the map
+                                 ZF / GLm,r → ZF ′ ,0α1 / GLm,r′
+is a P3 -fibration, whose fibres parametrise the subspace (A, t1 ) : k ,→ Ker(B ′ ) ⊕ Coker(t′1 ).
+    Summing up, ZF / GLm,r is a tower of two fibrations over P1 , with respective fibres an
+open locus in TP2 and P3 .
+
+
+4     Prerequisites on crystals
+In this section, we collect prerequiste results concerning crystals and their geometric re-
+alisations [KS97; Sai02; GLS18]. In particular, we adapt Saito’s strategy for constructing
+crystals of irreducible highest-weight representations of Kac–Moody algebras [Sai02] to the
+setting of quivers with multiplicities. Recall that we assume Q has no loop arrows.
+
+4.1     Kashiwara crystals
+In this section, we recall basic facts concerning Kashiwara crystals attached to a sym-
+metrisable Cartan datum. In particular, we recall a characterisation of the crystals of
+highest-weight irreducible representations of Kac–Moody algebras.
+   Let C = (cij )i,j∈I be a symmetrisable generalised Cartan matrix indexed by I, let g be
+the associated Kac–Moody algebra and P be its weight lattice (see [Kac95] for background).
+For i ∈ I, let αi (resp. hi , ϖi ) denote the corresponding simple root (resp. simple coroot,
+fundamental weight) of g. In particular, we have the following pairings, for all i, j ∈ I:
+                                            ⟨hi , αj ⟩ = cij ,                                  (6)
+                                           ⟨hi , ϖj ⟩ = δij .
+
+                                                    23
+Definition 4.1. A g-crystal is the datum of a set B, along with maps:
+   • wt : B → P (which we refer to as a weight function),
+   • ei , fi : B → B ⊔ {0} for every i ∈ I (which we refer to as raising and lowering
+     operators),
+   • ϵi , ϕi : B → Z ⊔ {−∞} for every i ∈ I,
+satisfying the following axioms:
+(C1) For all i ∈ I, b ∈ B, we have ϕi (b) = ϵi (b) + ⟨hi , wt(b)⟩,
+                                                   
+                                                    wt(ei (b)) = wt(b) + αi
+(C2) For all b ∈ B such that ei (b) ∈ B, we have      ϵi (ei (b)) = ϵi (b) − 1  ,
+                                                      ϕi (ei (b)) = ϕi (b) + 1
+                                                   
+                                                   
+                                                    wt(fi (b)) = wt(b) − αi
+(C3) For all b ∈ B such that fi (b) ∈ B, we have       ϵi (fi (b)) = ϵi (b) + 1 ,
+                                                       ϕi (fi (b)) = ϕi (b) − 1
+                                                   
+
+(C4) For all i ∈ I, b, b′ ∈ B we have b = ei (b′ ) ⇔ b′ = fi (b),
+(C5) If ϵi (b) = −∞ (or equivalently, if ϕi (b) = −∞), then ei (b) = fi (b) = 0.
+
+Remark 4.2. By (C4), the operators ei are determined by the operators fi , and vice versa
+(see for instance [BK10, §7]). Similarly, when the weight function is specified, by (C1) the
+functions ϵi and determined by the functions ϕi , and vice versa.
+
+Notation 4.3. Given a crystal B, a weight λ ∈ P and i ∈ Q0 , c ∈ Z, we use the following
+notation: B[λ] := wt−1 (λ) and B[λ]i,c := B[λ] ∩ ϵ−1
+                                                  i (c).
+
+    The crystals we will consider in this paper all come from highest-weight representations
+of the quantised universal enveloping algebra of g. We will next introduce highest-weight
+crystals, and show that such a crystal is completely determined by its highest-weight
+elements and the lowering operators fi , as we will use this result later in our proofs.
+
+Definition 4.4. A g-crystal B is called highest-weight if there exists a distinguished
+element b+ ∈ B, called the highest-weight element, such that:
+   • for every b ∈ B, there exist s ≥ 0 and a (possibly empty) sequence (i1 , . . . , is ) ∈ I s
+     such that b = (fi1 ◦ . . . ◦ fis )(b+ ),
+   • for all b ∈ B, for all i ∈ I, we have ϵi (b) = max{k ≥ 0 | eki (b) ̸= 0}.
+
+Lemma 4.5. Let B be a highest-weight g-crystal with highest-weight element b+ . Then the
+crystal structure on B is uniquely determined by the weight wt(b+ ) of the highest-weight
+element, and the lowering operators fi for all i ∈ I.
+
+Proof. The weight function is determined by its value  P on b+ , as for any b ∈ B, we can
+write b = fi1 ◦ . . . fis (b+ ), then wt(b) = wt(b+ ) − st=1 αt . As noted in Remark 4.2, the
+operators ei are determined by the operators fi , and the functions ϕi are determined by
+ϵi . The latter is already known, as the functions ϵi are determined by the operators ei as
+per the second part of the definition of a highest-weight crystal.
+
+    The next examples introduce the two main crystals which we consider in this paper
+and their properties. One is attached to irreducible highest-weight representations of the
+quantised universal enveloping algebra of g, whereas the other is attached to the negative
+part of that quantum algebra. We will also make use of an auxiliary crystal T (λ), which
+allows us to shift weights by λ using a tensor product of crystals.
+
+
+
+
+                                               24
+Example 4.6. There is a highest-weight g-crystal B(C; ∞) (of highest weight 0) associated
+to the crystal basis of the quantised enveloping algebra Uq− (g). We denote by b(∞) its
+highest-weight element. The crystal basis was constructed by Kashiwara in [Kas91]. It
+satisfies the following property: for all b ∈ B and i ∈ I, we have:
+
+                              ϵi (b) = max{k ≥ 0 | eki (b) ̸= 0}.
+
+Moreover, for all i ∈ I, we have fi (B(C; ∞)) ⊂ B(C; ∞).
+Example 4.7. Let λ ∈ P be a dominant (integral) weight. There is a highest-weight g-
+crystal B(C; λ) (of highest weight λ) associated to the crystal basis of the simple highest-
+weight module L(λ) over the quantised enveloping algebra Uq (g). We denote by b(λ) its
+highest-weight element. The crystal basis was also constructed in [Kas91]. It satisfies the
+following property: for all b ∈ B and i ∈ I, we have:
+
+                               ϵi (b) = max{k ≥ 0 | eki (b) ̸= 0},
+                              ϕi (b) = max{k ≥ 0 | fik (b) ̸= 0}.
+
+Example 4.8. Given an (integral) weight λ ∈ P , there is an auxiliary crystal T (λ) with
+underlying set {t(λ)}. The crystal operators are given by ei (t(λ)) = fi (t(λ)) = 0, for i ∈ I
+and the functions wt, ϵi , ϕi for i ∈ I are given by wt(t(λ)) = λ and ϵi (t(λ)) = ϕi (t(λ)) =
+−∞.
+    There is a notion of tensor product of crystals (see [Kas95, §7.3]) encoding the com-
+patibility of crystal bases with tensor products of modules over the quantised enveloping
+algebra. We will only use the following tensor product by T (λ) in this paper. Note that
+the tensor product bifunctor on the category of crystals is not symmetric.
+
+Definition 4.9. Let B be a g-crystal and λ ∈ P be an (integral) weight. We define
+B ⊗ T (λ) as the crystal with underlying set B, crystal operators ei , fi for i ∈ Q0 being
+those of B and functions wt′ , ϵ′i , ϕ′i for i ∈ Q0 given by:
+
+                                   wt′ (b) = wt(b) + λ
+                                  
+
+                                        ϵ′ (b) = ϵi (b)            ,
+                                   i′
+                                        ϕi (b) = ϕi (b) + ⟨hi , λ⟩
+
+for all b ∈ B. Given b ∈ B, we denote by b ⊗ t(λ) the corresponding element in B ⊗ T (λ).
+
+   Our geometric realisation of B(C; λ) will rely on a projection between two crystals.
+
+Definition 4.10. Let B1 , B2 be g-crystals. A morphism of g-crystals from B1 to B2 is a
+map ψ : B1 ⊔ {0} → B2 ⊔ {0} satisfying the following conditions:
+   • ψ(0) = 0,
+                                         
+                                          wt(ψ(b)) = wt(b)
+   • for all b ∈ B1 , if ψ(b) ̸= 0, then   ϵi (ψ(b)) = ϵi (b) ,
+                                           ϕi (ψ(b)) = ϕi (b)
+                                         
+
+   • for every b ∈ B1 such that ψ(b) ̸= 0 and ψ(ei (b)) ̸= 0 (resp. ψ(= fi (b)) ̸= 0), we have
+     ei (ψ(b)) = ψ(ei (b)) (resp. fi (ψ(b)) = ψ(fi (b))).
+The morphism ψ is called strict if it commutes with ei , fi for all i ∈ I (with the convention
+that ei (0) = fi (0) = 0).
+
+   The following characterisation of B(C; λ) is key to Saito’s geometric construction of
+B(C; λ) from the construction of B(C; ∞) by Kashiwara–Saito in the symmetric case
+[KS97; Sai02]. We will closely follow this strategy in the symmetrisable case.
+
+Proposition 4.11. [Sai02, Prop. 2.3.1] Let B be a g-crystal. Let λ ∈ P be a dominant
+(integral) weight and bλ ∈ B be an element of weight λ. Suppose that:
+
+                                              25
+  i) bλ is the unique element of B with weight λ;
+ ii) there is a strict surjective morphism of crystals
+                                  Φ : B(C; ∞) ⊗ T (λ) ⊔ {0} → B ⊔ {0}
+      mapping b(∞) ⊗ t(λ) to bλ ;
+ iii) Φ induces a bijection between B and {b ⊗ t(λ) ∈ B(C; ∞) ⊗ T (λ) | Φ(b ⊗ t(λ)) ̸= 0};
+ iv) for all b ∈ B and i ∈ I, we have:
+                                    ϵi (b) = max{k ≥ 0 | eki (b) ̸= 0},
+                                    ϕi (b) = max{k ≥ 0 | fik (b) ̸= 0}.
+
+Then Φ induces an isomorphism of crystals B(C; λ) ≃ B.
+
+4.2     Geometric crystal operators
+In this section, we recall Geiss–Leclerc–Schröer’s construction of B(C; ∞) for symmetris-
+able Cartan data using quiver representations with multiplicities [GLS18], generalising
+[KS97]. We also set up a geometric crystal construction for framed quivers with multiplic-
+ities, from which we will extract B(C; λ) in Section 4.3.
+    Let (Q, m) be a quiver with multiplicities without loop arrows. The datum of (Q, m),
+up to orientation of arrows, is equivalent to that of a symmetrisable Cartan matrix, via
+the following construction (see [GLS17]).
+Definition 4.12. The symmetrisable Cartan matrix associated to (Q, m) is the square
+matrix C = (cij )i,j∈Q0 with the following entries:
+                      (
+                         2                                          i=j
+               cij =       m                                               ,
+                         − mijj × #{a ∈ Q1 | {s(a), t(a)} = {i, j}} i ̸= j
+
+for i, j ∈ Q0 . This matrix is symmetrisable with symmetriser D = diag(mi , i ∈ Q0 ). We
+let g = gQ,m denote the associated symmetrisable Kac–Moody algebra.
+   Note that, for i, j ∈ Q0 , we have:
+                                
+                    M                mj
+     rkkmi                   ka  =     × #{a ∈ Q1 | {s(a), t(a)} = {i, j}} = −cij .
+                                     mij
+              {s(a),t(a)}={i,j}
+
+   Let us now recall Geiss–Leclerc–Schröer’s construction of the gQ,m -crystal B(C; ∞).
+Elements of the crystal are given by crystal components of ΛQ,m (see Section 2.4), whereas
+the raising and lowering operators are determined by Hecke correspondences.
+Definition 4.13. [GLS18, §3.7, §5.3, Thm. 5.4] Let B(Q, m; ∞) be the set Irr(Λ), endowed
+with the following gQ,m -crystal structure: for r ∈ ZQ 0
+                                                     ≥0 , i ∈ Q0 and Z ∈ Irr(Λr ), define:
+                                                X
+                                    wt(Z) := −      ri αi ,
+                                                      i∈Q0
+
+                                        ϵi (Z) := rk faci (M ),
+for M = M (x, y) and (x, y) ∈ Z general. If c := ϵi (Z), we define
+                                   
+                                     0                     c=0
+                         ei (Z) :=      −1
+                                     q(p (Z ∩ Λr,cαi )) c > 0,
+where
+                                             q                    p
+                           Λr−αi ,(c−1)αi ←− Λr−αi ,r;cαi −→ Λr,cαi ,
+and, by convention, the two leftmost terms are empty if c = 0. By Remark 4.2 this data
+completely determines the crystal structure.
+
+                                                 26
+Notation 4.14. Given b ∈ B(Q, m; ∞), we let Zb ⊂ Λ denote the corresponding irre-
+ducible component. Moreover, for i ∈ Q0 and c ≥ 0, we will use the following notation:
+                                                            
+                                                   X
+                   B(Q, m; ∞)r := B(Q, m; ∞) −        ri αi  ,
+                                                           i∈Q0
+                                                                          
+                                                               X
+                       B(Q, m; ∞)r,cαi := B(Q, m; ∞) −               ri αi      .
+                                                               i∈Q0
+                                                                            i,c
+
+Remark 4.15. Note that Geiss–Leclerc–Schröer construct the lowest-weight crystal associ-
+ated to the upper half of the quantised enveloping algebra of g [GLS18, §5]. One obtains
+instead the highest-weight crystal B(C; ∞) as introduced in Example 4.7 using the lower
+half of the quantised enveloping algebra by exchanging raising and lowering operators.
+   The main result of [GLS18] is the following.
+Theorem 4.16. [GLS18, Thm. 5.4] Let (Q, m) be a quiver with multiplicities without loops
+and let C be the associated symmetrisable Cartan matrix and gQ,m be the corresponding
+Kac–Moody algebra. Then there is an isomorphism of gQ,m -crystals:
+
+                                  B(Q, m; ∞) ≃ B(C; ∞).
+
+   We finish by defining a g-crystal for framed quivers associated to (Q, m). This will be
+used in Section 4.3 in our construction of B(C; λ).
+Definition 4.17. For a quiver with multiplicities (Q, m) and framing vector f ∈ ZQ 0
+                                                                                 ≥0 , let
+                                            G
+                        B(Q, f , m; ∞) :=        B(Qf , m; ∞)br
+                                                    Q
+                                               r∈Z≥00
+
+with the crystal structure induced by the crystal operators ei , fi for i ∈ Q0 of B(Qf , m; ∞).
+Notation 4.18. In what follows, given r ∈ ZQ 0
+                                           ≥0 , we will write for short:
+
+                              B(Q, f , m; ∞)r := B(Qf , m; ∞)br .
+
+                                                  b ∞)0̂ .
+We denote by bf ,0 the unique element of B(Q, f , m;
+
+
+4.3       Selecting crystal components
+In this section, we adapt Saito’s construction of B(C; λ) from the symmetric case to the
+symmetrisable case [Sai02]. We proceed in a very similar way, by relating a certain subset
+of crystal components in ΛQf ,mb to crystal components of ΛQ,m . These components will be
+selected by the stability condition defined in Section 3. Here, we extract from [Sai02] the
+abstract requirements that stable crystal components should meet for Saito’s argument to
+work. We will check that these properties are satisfied in Section 5.
+                                                                                        Q0
+    From nowP on, we fix a quiver with multiplicities (Q, m) and a framing vector f ∈ Z≥0 .
+Let λ :=      i∈Q0 fi ϖi denote the corresponding weight. Below we will describe which
+crystal components of ΛQf ,m b are relevant for the geometric construction of the crystal
+B(C; λ), but first we show that any subset has an induced crystal structure.
+Proposition 4.19. Any subset B ⊂ B(Q, f , m; ∞)⊗T (λ) has an induced crystal structure
+defined by restricting the functions wt, ϕi and ϵi from B(Q, f , m; ∞) ⊗ T (λ) to B and
+defining restricted raising and lowering operators as follows
+      ei |B :   B → B ⊔ {0}                     fi |B :   B → B ⊔ {0}
+                       ei (b) if ei (b) ∈ B,                      fi (b) if fi (b) ∈ B,
+                b 7→                                       b 7→
+                       0      else.                               0      else.
+
+                                               27
+Proof. The defining axioms of crystals can be checked immediately.
+
+Notation 4.20. From now on, we write ei , fi for ei |B , fi |B for i ∈ Q0 . Moreover, for
+i ∈ Q0 and c ≥ 0, we will use the following notation:
+                                                     
+                                             X
+                              Br := B λ −      ri αi  ,
+                                                 i∈Q0
+                                                                 
+                                                      X
+                               Br,cαi := B λ −              ri αi      .
+                                                      i∈Q0
+                                                                   i,c
+                                                 P
+Note that for b ∈ Br , we have wt(b) = λ −        i∈Q0 ri αi .
+
+    Under the following conditions, B is a highest-weight crystal of highest weight λ, which
+allows us to use Lemma 4.5. We will denote by bλ ∈ B the highest-weight element.
+
+Proposition 4.21. Let B be a subset of B(Q, f , m; ∞) with its induced crystal structure
+as in Proposition 4.19. If:
+ (i) bf ,0 ∈ B,
+(ii) for every b ∈ B \ {bf ,0 }, there exists i ∈ Q0 such that ϵi (b) > 0,
+(iii) for all i ∈ Q0 and c ∈ Z≥0 , for all r ∈ ZQ 0
+                                                ≥0 , whenever Br,cαi ̸= ∅, we have:
+
+                                       eci (Br,cαi ) = Br−cαi ,0 ,
+
+then B is a highest-weight crystal of highest weight λ.
+                                                               P
+Proof. We prove the claim for b ∈ Br by induction on |r| := i∈Q0 ri . The case where
+r = 0 is satisfied by assumption (i). Consider now b ∈ Br , where r > 0. By assumption
+(ii), there exists i ∈ Q0 such that ϵi (b) > 0, thus, by assumption (iii), there exists b′ ∈
+Br−αi such that b = fi (b′ ). The claim then follows from the induction hypothesis, as
+|r − αi | < |r|.
+
+   The following proposition closely follows Saito’s geometric construction of B(C; λ) in
+the symmetric setting [Sai02].
+
+Proposition 4.22. Suppose that the following hold:
+ (1) bf ,0 ∈ B;
+ (2) for every b ∈ B \ {bf ,0 }, there exists i ∈ Q0 such that ϵi (b) > 0;
+ (3) for every b ∈ B, for all (x, y, s, t) ∈ Zb , we have s = 0;
+ (4) for all i ∈ Q0 and c ∈ Z≥0 such that Br,cαi ̸= ∅, for all l ∈ Z, we have:
+                                                       *                   +
+                                                                  X
+                    Br+lαi ,(c+l)αi ̸= ∅ ⇔ −c ≤ l ≤ c + hi , λ −      rj αj ;
+                                                                             j∈Q0
+
+
+     when this is the case, we further have Br+lαi ,(c+l)αi = fil (Br,cαi ) if l ≥ 0 (resp.
+     Br+lαi ,(c+l)αi = e−l
+                        i (Br,cαi ) if l < 0).
+Then we have an isomorphism of crystals B ≃ B(λ; C).
+
+Proof. We check the criteria in Proposition 4.11. Note that the first two assumptions
+coincide with those of Proposition 4.21, and Assumption (4) implies Assumption (iii) of
+Proposition 4.21, so B is a highest-weight crystal of highest weight λ.
+
+
+                                                 28
+   Let us now construct a strict morphism of crystals
+
+                            Φ : B(C; ∞) ⊗ T (λ) ⊔ {0} → B ⊔ {0}
+
+such that: i) Φ(b(∞) ⊗ t(λ)) = bλ , ii) Im(Φ) = B ⊔ {0} and iii) Φ induces a bijection:
+                                                                 ∼
+                           {b ∈ B(C; ∞) ⊗ T (λ) | Φ(b) ̸= 0} → B.
+
+We first construct an injection of sets ι : B ,→ B(Q, m; ∞). Consider the subscheme:
+
+           Λ̃Qf ,m                          b | (x, y) ∈ ΛQ,m and s = 0} ⊂ ΛQf ,m
+                 b = {(x, y, s, t) ∈ R(Qf , m)                                  b.           (7)
+
+By Assumption (3), for every b ∈ B, there is an open subset Ub ⊂ Zb which is contained
+in Λ̃Qf ,m
+         b , so the closure of Ub in Λ̃Qf ,m
+                                           b is an irreducible component. Moreover, the for-
+getful map Λ̃Qf ,m b →  ΛQ,m  (forgetting  framing maps) is a trivial affine fibration of (local)
+              1
+dimension 2 (dim R(Qf , m) b − dim R(Q, m)), so the set of top-dimensional irreducible com-
+ponents of Λ̃Qf ,mb is in bijection with B(Q, m; ∞). We thus obtain the required injection
+ι : B ,→ B(Q, m; ∞).
+    We now define Φ. Consider the following map of sets:
+
+                     B(Q, m; ∞) ⊗ T (λ) → B ⊔−1
+                                               {0}
+                                             ι (b) if b ∈ Im(ι),
+                               b ⊗ t(λ) 7→
+                                             0     else.
+
+We define Φ to be the composition of the above map with the isomorphism of crystals
+B(C; ∞) ⊗ T (λ) ≃ B(Q, m; ∞) ⊗ T (λ) (see Theorem 4.16).
+     By Lemma 4.23 below, Φ is a strict morphism of crystals. We further claim that
+Φ satisfies i), ii) and iii). Part i) of the claim holds by construction, as b0 (resp. bλ )
+corresponds to the unique irreducible component of ΛQ,m;0 (resp. ΛQf ,m;0
+                                                                       b ). Parts ii) and
+iii) hold by construction and because ι provides an inverse.
+     Finally, let us check that, for all i ∈ Q0 and b ∈ B, we have:
+
+                               ϕi (b) = max{k ≥ 0 | fik (b) ̸= 0},
+                               ϵi (b) = max{k ≥ 0 | eki (b) ̸= 0}.
+
+By definition of Φ and since it is a strict crystal morphism, the above property for ϵi
+(i ∈ Q0 ) is inherited from B(C; ∞) ⊗ T (λ), see Example 4.6. Let us now check it for ϕi
+(i ∈ Q0 ). Firstly, Assumption (4) implies that, for all r ∈ ZQ0
+                                                              ≥0 , i ∈ Q0 , c, k ∈ Z≥0 , and for
+every b ∈ Br,cαi , we have:
+
+                               fik (b) ̸= 0 ⇔ Br+kαi ,(c+k)αi ̸= ∅.
+
+Secondly, given b ∈ Br,cαi (so that ϵi (b) = c), Assumption (4) also gives:
+                                                    *                 +
+                                                            X
+                   Br+kαi ,(c+k)αi ̸= ∅ ⇔ k ≤ c + hi , λ −       rj αj .
+                                                                j∈Q0
+                   P
+Since c + ⟨hi , λ − j∈Q0 rj αj ⟩ = ϵi (b) + ⟨hi , wt(b)⟩ = ϕi (b) (recall the weights are shifted
+by λ, see Notation 4.20), we obtain that ϕi (b) = max{k ≥ 0 | fik (b) ̸= 0}, as required.
+This finishes the proof.
+
+Lemma 4.23. Let Φ : B(C; ∞) ⊗ T (λ) ⊔ {0} → B ⊔ {0} be the map constructed above.
+Then Φ is a strict morphism of crystals.
+
+
+
+
+                                               29
+Proof. Recall the map ι : B ,→ B(Q, m; ∞) constructed above. We first show that ι
+commutes with the lowering operators fi , i ∈ Q0 . More precisely, for all i ∈ Q0 , for all
+b, b′ ∈ B, we have b′ = fi (b) ⇒ ι(b′ ) = fi (ι(b)).
+     Let b, b′ ∈ B and i ∈ Q0 such that b′ = fi (b). Set c := ϵi (b) and r ∈ ZQ  0
+                                                                               ≥0 such that
+               P
+wt(b) = λ − i∈Q0 ri αi . For the sake of conciseness, let us write Λ := ΛQf ,m
+                                                                             b , Λ̃ := Λ̃Qf ,m
+                                                                                             b
+as in (7) and Λ′ := ΛQ,m . Consider the following diagram:
+                                 q                          p
+                      Λbr,cαi         Λbr,br+αi ;(c+1)αi         Λbr+αi ,(c+1)αi
+
+                                       ⌜                ⌝
+                                 q̃                         p̃
+                      Λ̃br,cαi        Λ̃br,br+αi ;(c+1)αi        Λ̃br+αi ,(c+1)αi .
+                          πr                                             πr+αi
+                                 q′                         p′
+                      Λ′r,cαi         Λ′r,r+αi ;(c+1)αi          Λ′r+αi ,(c+1)αi
+
+In the above diagram, the horizontal arrows induce bijections between sets of irreducible
+components (see [GLS18, Lem. 3.6]). The vertical arrows between the top and the middle
+row are closed immersions between schemes of equal dimensions, so they induce injec-
+tions between sets of top-dimensional irreducible components. Finally, the vertical arrows
+between the middle and the bottom row are trivial affine fibrations of suitable relative
+dimension, so that they induce bijections between sets of top-dimensional irreducible com-
+ponents.
+     Let Zb , Zb′ be the irreducible components of Λ corresponding to b, b′ . By definition,
+we have Zb′ = p(q −1 (Zb )). Since Zb , Zb′ are contained in Λ̃, we obtain Zb′ = p̃(q̃ −1 (Zb )).
+Commutativity of the bottom squares then implies πr+αi (Zb′ ) = p′ ((q ′ )−1 (πr (Zb ))), hence
+ι(b′ ) = fi (ι(b)). This proves that ι commutes with lowering operators.
+     Let us now check that Φ is a strict morphism of crystals. The above reasoning shows
+that fi (Φ(b)) = Φ(fi (b)) for b ∈ B(Q, m; ∞) ⊗ T (λ) and i ∈ Q0 , whenever Φ(b) ̸= 0 and
+Φ(fi (b)) ̸= 0. By Remark 4.2, a similar statement holds for the operators ei for i ∈ Q0 .
+     We further show that, for any i ∈ Q0 and b ∈ B(Q, m; ∞) ⊗ T (λ), we have fi (Φ(b)) = 0
+if and only if Φ(fi (b)) = 0. Indeed, suppose that fi (Φ(b)) = 0. If Φ(b) = 0, then
+Φ(fi (b)) = 0 as otherwise, fi (b) ∈ Im(ι) and ϵi (fi (b)) > 0, so b = ei (fi (b)) ∈ Im(ι) by
+Assumption (4), which contradicts Φ(b) = 0. If Φ(b) ̸= 0, then Φ(fi (b)) = 0 as otherwise
+Φ(fi (b)) = fi (Φ(b)) ̸= 0, which also gives a contradiction. Conversely, suppose that
+Φ(fi (b)) = 0. If Φ(b) = 0, then fi (Φ(b)) = 0, trivially. If Φ(b) ̸= 0, then fi (Φ(b)) = 0
+as otherwise, fi (b) = ι(fi (Φ(b))) since fi commutes with ι in that case, which contradicts
+Φ(fi (b)) = 0. Consequently, Φ always commutes with lowering operators fi for i ∈ Q0 .
+     Since both B(C; ∞) ⊗ T (λ) and B are highest-weight crystals and since Φ preserves
+the weight of highest-weight elements, this implies that Φ is a strict morphism of crystals
+(see Lemma 4.5).
+
+
+5     Geometric construction of crystals
+In this section, we complete the geometric construction of the crystal B(C; λ) using the
+stability condition
+                P defined in Section 3. We keep working with the framed quiver (Qf , m),
+                                                                                     b
+such that λ = i∈Q0 fi ϖi , and continue to assume that Q has no loop arrows. To prove
+Theorem B, it remains to check that the stable crystal components of ΛQf ,mb satisfy the
+requirements of Proposition 4.22.
+    We start with the definition of the subcrystal Bfs ⊂ B(Q, f , m; ∞), which we will
+identify with B(C; λ).
+Definition 5.1. Let B s = Bfs ⊂ B(Q, f , m; ∞) be the subset of irreducible components
+Z ⊂ Λ such that Z s ̸= ∅, which we endow with the induced crystal structure from Propo-
+sition 4.19.
+
+                                                  30
+   We will check that Bfs ⊂ B(Q, f , m; ∞) satisfies the assumptions in Proposition 4.22.
+Assumption (3) holds by Lemma 3.7, and we next check Assumption (2).
+
+Proposition 5.2. Let r ∈ ZQ   0
+                             ≥0 \ {0} and M be a stable crystal representation of (Qf , m)
+                                                                                        b
+          r. Then there exists i ∈ Q0 such that rk faci (M ) > 0.
+with rank b
+
+Proof. Since M is E-filtered, there exists i ∈ Q0 ⊔ {∞} such that rk faci (M ) > 0. By
+contradiction, if i = ∞, then there exists a subrepresentation M ′ ⊂ M such that M/M ′ ≃
+faci (M ) is concentrated at vertex ∞. This contradicts stability, as M ′ ̸= 0.
+
+    We now check Assumption (4) in Proposition 4.22.
+
+Proposition 5.3. Let i ∈ Q0 and c ∈ Z≥0 . Suppose that Λbsr,cαi ̸= ∅. Then, for l ∈ Z, we
+have:                                               *                 +
+                                                              X
+               Λbsr+lαi ,(c+l)αi ̸= ∅ ⇔ −c ≤ l ≤ c + hi , λ −    rj αj .
+                                                                        j∈Q0
+                                                  s
+Moreover, when this is the case, we further have Br+lα           = fil (Br,cα
+                                                                         s      ) if l ≥ 0 (resp.
+                                                      i ,(c+l)αi              i
+ s
+Br+lαi ,(c+l)αi
+                = e−l  s
+                   i (Br,cαi ) if l < 0).
+
+Proof. To avoid any possible confusion between the lowering operators fi and the framing
+vector f , we shall write f = (λi )i∈Q0 in this proof.
+   Let us prove the forwards implication in the first assertion. Suppose Λbsr+lαi ,(c+l)αi ̸= ∅.
+For (x, y, s, t) ∈ Λbcr,s
+                     r+lαi ,(c+l)αi ̸= ∅, consider M = M (x, y, s, t) and the following linear
+maps:
+                                    Mi,out M             Mfi,in
+                                Mi →           ka ⊗kmj Mj → Mi .
+                                          a:i→j
+
+                                             fi,in ) ≥ 0. The moment map equation at
+By Definition 4.13, we have c + l = rk Coker(M
+vertex i reads Mi,in ◦ Mi,out = 0. Moreover, by stability, Mi,out must be injective (see
+               f
+Lemma 3.5). Hence Mi ≃ Im(Mi,out ) ⊂ ker(M fi,in ) and we have
+                      
+       M
+  rk      ka ⊗kmj Mj  = rk Mi − rk Coker(M                 fi,in ) ≥ 2(ri + l) − (c + l).
+                                            fi,in ) + rk Ker(M
+       a:i→j
+                                                                                P
+We can expressing this in terms of the pairing using (6) and λ =                     i∈Q0 λi ϖi as
+                                                                *                         +
+                                          X                                  X
+                  l ≤ c + λi − 2ri +            cij rj  = c +   hi , λ −          rj αj       .
+                                          i̸=j                               j∈Q0
+                                                          P
+     Conversely, assume that −c ≤ l ≤ c + ⟨hi , λ − j∈Q0 rj αj ⟩. We directly prove the
+second assertion, which implies the backwards implication of the first assertion, as we
+assumed Λbsr,cαi ̸= ∅. Consider M = M (x, y, s, t) for some (x, y, s, t) ∈ Λbcr,s  r,cαi . We start by
+constructing a point in nilbsr+lαi ,(c+l)αi from M .
+     Suppose first that −c ≤ l ≤ 0. By assumption, rk Coker(Mi,in ) = c. Therefore, we may
+choose a free kmi -submodule Mi′ ⊂ Mi of rank ri + l, which contains Im(M              fi,in ). Setting
+Mj = Mj for j ̸= i, we obtain a subrepresentation M ⊂ M . By Lemma 3.4, M ′ is also
+   ′                                                        ′
+
+stable. Moreover, M ′ is E-filtered and satisfies the moment map equation M          f′ ◦M ′
+                                                                                       i,in    i,out = 0,
+                            ′                                  s
+by construction. Thus M corresponds to an       P orbit in nilbr+lαi ,(c+l)αi , as required.
+     Suppose nowPthat 0 ≤ l ≤ c + ⟨hi , λ − j∈Q0 rj αj ⟩. By assumption, rk Ker(Mi,in ) =
+ri + c + ⟨hi , λ − j∈Q0 rj αj ⟩. We may thus choose a free kmi -submodule Mi′ of rank ri + l:
+
+                                         M
+                                         i,out
+                                     Mi ,→ Mi′ ⊂ Ker(M
+                                                     fi,in )
+
+                                                     31
+and as above let M ′ be the subrepresentation of M of rank b
+                                                           r + lαi with Mj′ = Mj for
+j ̸= i. Then
+                            M                 M
+                ′
+             Mi,out : Mi′ ⊂    ka ⊗kmj Mj =       ka ⊗kmj Mj′ ,
+                                   a:i→j                      a:i→j
+                          M                       M                       M
+                                                                          fi,in   Mi,out
+                  ′
+                M
+                fi,in :           ka ⊗kmj Mj′ =           ka ⊗kmj Mj → Mi ,→ Mi′ .
+                          a:j→i                   a:j→i
+
+
+By construction, M ′ is E-filtered and satisfies the moment map equations M
+                                                                          f′ ◦M ′
+                                                                            i,in i,out = 0.
+             ′                                           ′
+Moreover, Mi,out is injective and M is stable, hence M is stable by Lemma 3.4.
+   Now consider the following diagram:
+                                   q                      p
+                      Λr,cαi ←− Λr,r+lαi ;(c+l)αi −→ Λr+lαi ,(c+l)αi if l ≥ 0
+                                             q                        p
+                   (resp. Λr+lαi ,(c+l)αi ←− Λr+lαi ,r;cαi −→ Λr,cαi if l < 0).
+    Let us show that fil (Br,cα
+                           s
+                                i
+                                       s
+                                  ) ⊂ Br+lαi ,(c+l)αi
+                                                      if l ≥ 0 (resp. e−l  s          s
+                                                                       i (Br,cαi ) ⊂ Br+lαi ,(c+l)αi
+if l < 0). For b ∈ Br,cα s
+                            i
+                              , consider b′ = fil (b) ∈ B(Q, f , m; ∞) if l ≥ 0 (resp. b′ = e−l   i (b) ∈
+B(Q, f , m; ∞) if l < 0). Note that b′ ̸= 0, since the operator fi does not vanish on B(C; ∞)
+(resp. −l ≤ ϵi (b) = c); see Example 4.6 and Theorem 4.16. Let Zb and Zb′ denote the
+associated irreducible components of Λ. By [GLS18, Lem. 3.9], we have Zb′ = p(q −1 (Zb ))
+if l ≥ 0 (resp. Zb′ = q(p−1 (Zb )) if l < 0). Moreover, for a stable point (x, y, s, t) ∈ Zb ,
+general points in p(q −1 (x, y, s, t)) (resp. q(p−1 (x, y, s, t))) correspond to stable represen-
+tations M ′ ⊃ M (x, y, s, t) if l ≥ 0 (resp. stable subrepresentations M ′ ⊂ M (x, y, s, t) if
+l < 0), as constructed above. Thus, a general point in Zb′ is stable (and crystal), hence
+b′ ∈ Br+lα
+        s
+            i ,(c+l)αi
+                       . In particular, Λbcr,s
+                                          r+lαi ,(c+l)αi ̸= ∅, as the previous construction generi-
+cally yields crystal representations.
+     Let us now show that Br,cα    s
+                                      i
+                                        surjects onto Br+lαs
+                                                               i ,(c+l)αi
+                                                                          . Let b′ ∈ Br+lα
+                                                                                      s
+                                                                                          i ,(c+l)αi
+                                                                                                     and
+b = eli (b′ ) ∈ B(Q, f , m; ∞) if l ≥ 0 (resp. b = fi−l (b′ ) ∈ B(Q, f , m; ∞) if l < 0). Note
+that b ̸= 0, as l ≤ ϵi (b′ ) = c + l (resp. the operator fi does not vanish on B(C; ∞)); see
+Example 4.6 and Theorem 4.16. By [GLS18, Lem. 3.9], we have Zb = q(p−1 (Zb′ )) if l ≥ 0
+(resp. Zb = p(q −1 (Zb′ )) if l < 0). As previously, for a stable point (x, y, s, t) ∈ Zb′ , general
+points in q(p−1 (x, y, s, t)) (resp. p(q −1 (x, y, s, t))) correspond to stable subrepresentations
+M ′ ⊂ M (x, y, s, t) if l ≥ 0 (resp. stable representations M ′ ⊃ M (x, y, s, t) if l < 0)
+constructed above. Thus, a general point in Zb is stable, hence b′ ∈ Br,cα    s
+                                                                                  i
+                                                                                    . It follows that
+ ′    l     s             ′    −l   s
+b ∈ fi (Br,cαi ) (resp. b ∈ ei (Br,cαi )). This finishes the proof.
+
+    We can now bring all the pieces together and complete the construction of B(C; λ).
+
+Theorem 5.4 (Theorem B). Suppose that (Q, m) is a quiver with multiplicities with asso-
+ciated symmetrisable generalised Cartan matrix C and f is a framing vector corresponding
+to an integral dominant weight λ of the associated Kac–Moody algebra g. Then there is an
+isomorphism of g-crystals Bfs ≃ B(C; λ).
+
+Proof. In order to apply Proposition 4.22 we need to check the Assumptions (1) - (4).
+Assumption (1) holds, as the irreducible component Zbf ,0 consists of a single stable point.
+Assumptions (2) - (4) follow from Proposition 5.2, Lemma 3.7 and Proposition 5.3 respec-
+tively. Hence by Proposition 4.22, we obtain the desired isomorphism.
+
+
+References
+[BK10]        Arkady Berenstein and David Kazhdan. “Geometric and unipotent crystals”. In: Vi-
+              sions in Mathematics. Birkhäuser Basel, 2010, pp. 188–236. doi: 10.1007/978- 3-
+              0346-0422-2_8.
+
+
+                                                     32
+[Boz16]    Tristan Bozec. “Quivers with loops and generalized crystals”. In: Compositio Math-
+           ematica 152.10 (2016), pp. 1999–2040. doi: 10.1112/S0010437X1600751X.
+[BS19]     Tristan Bozec and Olivier Schiffmann. “Counting absolutely cuspidals for quivers”.
+           In: Mathematische Zeitschrift 292.1 (2019), pp. 133–149. doi: 10.1007/s00209-018-
+           2155-5.
+[BSV20]    Tristan Bozec, Olivier Schiffmann, and Eric Vasserot. “On the number of points
+           of nilpotent quiver varieties over finite fields”. In: Annales Scientifiques de l’École
+           Normale Supérieure 53.6 (2020), pp. 1501–1544. doi: 10.24033/asens.2452.
+[Cao+26]   Yalong Cao et al. “Shifted quantum groups via critical stable envelopes”. In: https:
+           // arxiv. org/ abs/ 2601. 01518 (2026).
+[CG97]     Neil Chriss and Victor Ginzburg. Representation theory and complex geometry. Birkhäuser,
+           1997.
+[Con06]    Brian Conrad. “Arithmetic moduli of generalized elliptic curves”. In: Journal of
+           the Institute of Mathematics of Jussieu 6.2 (2006), pp. 209–278. doi: 10 . 1017 /
+           s1474748006000089.
+[Cra01]    William Crawley-Boevey. “Geometry of the moment map for representations of quiv-
+           ers”. In: Compositio Mathematica 126.3 (2001), pp. 257–293. doi: 10 . 1023 / A :
+           1017558904030.
+[CV04]     William Crawley-Boevey and Michel Van den Bergh. “Absolutely indecomposable
+           representations and Kac-Moody Lie algebras”. In: Inventiones Mathematicae 155.3
+           (2004). With an appendix by Hiraku Nakajima, pp. 537–559. doi: 10.1007/s00222-
+           003-0329-0.
+[Dav17]    Ben Davison. “The critical CoHA of a quiver with potential”. In: Quarterly Journal
+           of Mathematics 68.2 (2017), pp. 635–703. doi: 10.1093/qmath/haw053.
+[Dav23]    Ben Davison. “The integrality conjecture and the cohomology of preprojective stacks”.
+           In: Journal für die reine und angewandte Mathematik 804 (2023), pp. 105–154. doi:
+           10.1515/crelle-2023-0065.
+[Dav25]    Ben Davison. “BPS Lie algebras and the less perverse filtration on the preprojective
+           CoHA”. In: Advances in Mathematics 463 (2025), p. 110114. doi: 10.1016/j.aim.
+           2025.110114.
+[DHS23]    Ben Davison, Lucien Hennecart, and Sebastian Schlegel-Mejia. “BPS algebras and
+           generalised Kac-Moody algebras from 2-Calabi-Yau categories”. In: https: // arxiv.
+           org/ abs/ 2303. 12592 (2023).
+[FL25]     Jiepeng Fang and Yixin Lan. “Lusztig sheaves, characteristic cycles and the Borel-
+           Moore homology of Nakajima’s quiver varieties”. In: https: // arxiv. org/ abs/
+           2501. 12047 (2025).
+[GGS26]    Nicolle González, Eugene Gorsky, and José Simental. “Smooth correspondences be-
+           tween quiver varieties”. In: https: // arxiv. org/ abs/ 2601. 22287 (2026).
+[Gin12]    Viktor Ginzburg. “Lectures on Nakajima’s quiver varieties”. In: Geometric methods
+           in representation theory. Ed. by Michel Brion. Vol. 24. Collection S. M. F. 1. Société
+           Mathématique de France, 2012, pp. 143–197. isbn: 9782856293560.
+[GL93]     Ian Grojnowski and George Lusztig. “A comparison of bases of quantized enveloping
+           algebras”. In: Linear algebraic groups and their representations. Ed. by Richard S.
+           Elman, Murray M. Schacher, and V. S. Varadarajan. Vol. 153. Contemporary Math-
+           ematics. American Mathematical Society, 1993, pp. 11–19. doi: 10.1090/conm/153.
+[GLS16]    Christof Geiss, Bernard Leclerc, and Jan Schröer. “Quivers with relations for sym-
+           metrizable Cartan matrices III: Convolution algebras”. In: Representation Theory of
+           the American Mathematical Society 20.13 (2016), pp. 375–413. doi: 10.1090/ert/
+           487.
+[GLS17]    Christof Geiss, Bernard Leclerc, and Jan Schröer. “Quivers with relations for sym-
+           metrizable Cartan matrices I: Foundations”. In: Inventiones Mathematicae 209.1
+           (2017), pp. 61–158. doi: 10.1007/s00222-016-0705-1.
+
+
+
+
+                                              33
+[GLS18]   Christof Geiss, Bernard Leclerc, and Jan Schröer. “Quivers with relations for sym-
+          metrizable Cartan matrices IV: Crystal graphs and semicanonical functions”. In: Se-
+          lecta Mathematica 24.4 (2018), pp. 3283–3348. doi: 10.1007/s00029-018-0412-4.
+[Gro66]   Alexander Grothendieck. “Éléments de géométrie algébrique: IV. Étude locale des
+          schémas et des morphismes de schémas, Troisième partie”. In: Publications mathématiques
+          de l’IHES 28 (1966), pp. 5–255.
+[Hau10]   Tamás Hausel. “Kac’s conjecture from Nakajima quiver varieties”. In: Inventiones
+          Mathematicae 181.1 (2010), pp. 21–37. doi: 10.1007/s00222-010-0241-3.
+[Hen24]   Lucien Hennecart. “On geometric realizations of the unipotent enveloping algebra of
+          a quiver”. In: Advances in Mathematics 441 (2024), p. 109536. doi: 10.1016/j.aim.
+          2024.109536.
+[HH22]    Tamás Hausel and Nigel Hitchin. “Very stable Higgs bundles, equivariant multiplicity
+          and mirror symmetry”. In: Inventiones Mathematicae 228.2 (2022), pp. 893–989. doi:
+          10.1007/s00222-021-01093-7.
+[HHJ]     Eloise Hamilton, Victoria Hoskins, and Joshua Jackson. Relative GIT: reductive and
+          non-reductive. To appear (2026).
+[HJV25]   Victoria Hoskins, Joshua Jackson, and Tanguy Vernet. “Moduli spaces of represen-
+          tations of quivers with multiplcities via non-reductive GIT”. In: https: // arxiv.
+          org/ abs/ 2510. 24559 (2025).
+[HL16]    David Hernandez and Bernard Leclerc. “A cluster algebra approach to q-characters
+          of Kirillov–Reshetikhin modules”. In: Journal of the European Mathematical Society
+          18.5 (2016), pp. 1113–1159. doi: 10.4171/jems/609.
+[HLR13]   Tamás Hausel, Emmanuel Letellier, and Fernando Rodriguez-Villegas. “Positivity for
+          Kac polynomials and DT-invariants of quivers”. In: Annals of Mathematics (2) 177.3
+          (2013), pp. 1147–1168. doi: 10.4007/annals.2013.177.3.8.
+[Kac95]   Victor Kac. Infinite-dimensional Lie algebras. Cambridge University Press, 1995.
+[Kas91]   Masaki Kashiwara. “On crystal bases of the Q-analogue of universal enveloping alge-
+          bras”. In: Duke Mathematical Journal 63.2 (1991). doi: 10.1215/s0012-7094-91-
+          06321-0.
+[Kas95]   Masaki Kashiwara. “On crystal bases”. In: Representations of Groups, Proceedings
+          of the 1994 Annual Seminar of the Canadian Mathematical Society. Ed. by Bruce
+          Allison and Gerald Cliff. Vol. 16. 1995, pp. 155–197.
+[KKS12]   Seok-Jin Kang, Masaki Kashiwara, and Olivier Schiffmann. “Geometric construction
+          of highest weight crystals for quantum generalized Kac–Moody algebras”. In: Math-
+          ematische Annalen 354.1 (2012), pp. 193–208. doi: 10.1007/s00208-011-0725-5.
+[KS90]    Masaki Kashiwara and Pierre Schapira. Sheaves on manifolds. Vol. 292. Grundlehren
+          der mathematischen Wissenschaften. Springer, 1990.
+[KS97]    Masaki Kashiwara and Yoshihisa Saito. “Geometric construction of crystal bases”.
+          In: Duke Mathematical Journal 89.1 (1997), pp. 9–36. doi: 10.1215/S0012-7094-
+          97-08902-X.
+[Lau88]   Gérard Laumon. “Un analogue global du cône nilpotent”. In: Duke Mathematical
+          Journal 57.2 (1988). doi: 10.1215/s0012-7094-88-05729-8.
+[Lus91]   George Lusztig. “Quivers, perverse sheaves and quantized enveloping algebras”. In:
+          Journal of the American Mathematical Society 4.2 (1991), pp. 365–421. doi: 10 .
+          2307/2939279.
+[Lus92]   George Lusztig. “Affine quivers and canonical bases”. In: Publications mathématiques
+          de l’IHÉS 76.1 (1992), pp. 111–163. doi: 10.1007/bf02699432.
+[Mar26]   Gabriel Martinho. “Hecke modifications and the nilpotent cone”. PhD thesis, forth-
+          coming. PhD thesis. Faculdade de Ciências da Universidade do Porto, Universidade
+          do Porto, 2026.
+[Mil80]   James Milne. Etale cohomology. Princeton University Press, 1980. doi: 10 . 1515 /
+          9781400883981.
+
+
+
+                                             34
+[Min20]    Alexandre Minets. “Cohomological Hall algebras for Higgs torsion sheaves, moduli of
+           triples and sheaves on surfaces”. In: Selecta Mathematica 26.2 (2020). doi: 10.1007/
+           s00029-020-00553-x.
+[Nak94]    Hiraku Nakajima. “Instantons on ALE spaces, quiver varieties and Kac-Moody alge-
+           bras”. In: Duke Mathematical Journal 76.2 (1994), pp. 365–416. doi: 10.1215/S0012-
+           7094-94-07613-8.
+[Nak98]    Hiraku Nakajima. “Quiver varieties and Kac-Moody algebras”. In: Duke Mathemat-
+           ical Journal 91.3 (1998), pp. 515–560. doi: 10.1215/S0012-7094-98-09120-7.
+[Neg25]    Andrei Neguţ. “Quiver moduli and quantum loop algebras”. In: https: // arxiv.
+           org/ abs/ 2509. 20815 (2025).
+[NT18]     Vinoth Nandakumar and Peter Tingley. “Quiver varieties and crystals in symmetriz-
+           able type via modulated graphs”. In: Mathematical Research Letters 25.1 (2018),
+           pp. 159–180. doi: 10.4310/mrl.2018.v25.n1.a7.
+[Păd22]   Tudor Pădurariu. “Categorical and K-theoretic Hall algebras for quivers with poten-
+           tial”. In: Journal of the Institute of Mathematics of Jussieu 22.6 (2022), pp. 2717–
+           2747. doi: 10.1017/s1474748022000111.
+[Rin90]    Claus Ringel. “Hall algebras and quantum groups”. In: Inventiones Mathematicae
+           101.1 (1990), pp. 583–591. doi: 10.1007/BF01231516.
+[Sai02]    Yoshihisa Saito. “Crystal bases and quiver varieties”. In: Mathematische Annalen
+           324.4 (2002), pp. 675–688. doi: 10.1007/s00208-002-0332-6.
+[Sav05]    Alistair Savage. “Infinite-dimensional aspects of representation theory and applica-
+           tions”. In: vol. 392. American Mathematical Society, 2005. Chap. A geometric con-
+           struction of crystal graphs using quiver varieties: extension to the non-simply laced
+           case. doi: 10.1090/conm/392.
+[Sch12]    Olivier Schiffmann. “Lectures on canonical and crystal bases of Hall algebras”. In:
+           Geometric methods in representation theory. Vol. 24. Séminaires et congrès II. Soc.
+           Math. Fr., 2012, pp. 143–258.
+[Ser58]    Jean-Pierre Serre. “Espaces fibrés algébriques”. In: Séminaire Claude Chevalley 3.1
+           (1958), pp. 1–37.
+[SS20]     Francesco Sala and Olivier Schiffmann. “Cohomological Hall algebra of Higgs sheaves
+           on a curve”. In: Algebraic Geometry (2020), pp. 346–376. doi: 10.14231/AG-2020-
+           010.
+[SV13a]    Olivier Schiffmann and Éric Vasserot. “Cherednik algebras, W-algebras and the equiv-
+           ariant cohomology of the moduli space of instantons on A2 ”. In: Publications mathématiques
+           de l’IHÉS 118.1 (2013), pp. 213–342. doi: 10.1007/s10240-013-0052-3.
+[SV13b]    Olivier Schifmann and Éric Vasserot. “The elliptic Hall algebra and the K-theory of
+           the Hilbert scheme of A2”. In: Duke Mathematical Journal 162.2 (2013), pp. 279–366.
+[Ver24]    Tanguy Vernet. “Counting representations of quivers with multiplicities”. PhD thesis.
+           École Polytechnique Fédérale de Lausanne, 2024. doi: 10.48550/arXiv.2405.14914.
+[VV22]     Michela Varagnolo and Éric Vasserot. “K-theoretic Hall algebras, quantum groups
+           and super quantum groups”. In: Selecta Mathematica 28.1 (2022). doi: 10.1007/
+           s00029-021-00723-5.
+[VV23]     Michela Varagnolo and Éric Vasserot. “Non symmetric quantum loop groups and
+           K-theory”. In: https: // arxiv. org/ abs/ 2308. 01809 (2023).
+[YZ18]     Yaping Yang and Gufang Zhao. “The cohomological Hall algebra of a preprojective
+           algebra”. In: Proceedings of the London Mathematical Society 116.5 (2018), pp. 1029–
+           1074. doi: 10.1112/plms.12111.
+[YZ22]     Yaping Yang and Gufang Zhao. “The cohomological Hall algebras of a preprojective
+           algebra with symmetrizer”. In: Algebras and Representation Theory (2022). url:
+           https://doi.org/10.1007/s10468-022-10125-6.
+
+
+
+
+                                             35
+

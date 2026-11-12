@@ -1,0 +1,13 @@
+L 2 r2 counts {1: 4} P1b violations 0 [] t 0
+L 3 r2 counts {1: 2, 2: 6} P1b violations 0 [] t 0
+L 4 r2 counts {1: 4, 2: 12} P1b violations 0 [] t 0
+L 5 r2 counts {1: 2, 2: 30} P1b violations 0 [] t 0
+L 6 r2 counts {1: 4, 2: 60} P1b violations 0 [] t 0
+L 7 r2 counts {1: 2, 2: 126} P1b violations 0 [] t 0
+L 8 r2 counts {1: 4, 2: 252} P1b violations 0 [] t 0
+L 9 r2 counts {1: 2, 2: 510} P1b violations 0 [] t 0
+L 10 r2 counts {1: 4, 2: 1020} P1b violations 0 [] t 0
+L 11 r2 counts {1: 2, 2: 2046} P1b violations 0 [] t 1
+L 12 r2 counts {1: 4, 2: 4092} P1b violations 0 [] t 3
+L 13 r2 counts {1: 2, 2: 8190} P1b violations 0 [] t 7
+L 14 r2 counts {1: 4, 2: 16380} P1b violations 0 [] t 16

@@ -1,0 +1,2656 @@
+THE QUASISYMMETRIC GRASSMANNIAN
+
+arXiv:2604.24903v2 [math.AG] 4 Nov 2026
+
+NANTEL BERGERON, LUCAS GAGNON, HUNTER SPINK, AND VASU TEWARI
+A BSTRACT. We construct a complex of toric varieties we call the quasisymmetric Grassmannian inside the Grassmannian of r-planes in Cn . Each irreducible component is a positroid variety and an
+Sn translate of a toric Richardson variety of ribbon shape. We describe it as the vanishing locus of
+equations ∆A ∆A1 “ 0 in Plücker coordinates determined by a new noncrossing combinatorial object
+we call the quasisymmetric Johnson graph. We give an affine paving, and show that its cohomology
+ring is a quasisymmetric modification of the Borel presentation of the Grassmannian’s cohomology,
+with fundamental quasisymmetric polynomials playing the role of Schur polynomials.
+
+1. I NTRODUCTION
+There is a rich connection between symmetric polynomials and the Grassmannian manifold
+Grpr; nq of r-planes in Cn . Let Partr,n be the set of integer partitions contained in an r ˆ pn ´ rq
+rectangle. Every Grpr; nq is stratified by Schubert cells tX̊ λ | λ P Partr,n u, and the Kronecker dual
+of the homology basis of Schubert cycles X λ :“ X̊ λ is the cohomology basis of Schur symmetric
+polynomials sλ px1 , . . . , xr q P H ‚ pGrpr; nqq in the negative Chern roots x1 , . . . , xr of the tautological
+subbundle. This fact is intimately tied to two equivalent and classical cohomology presentations:
+H ‚ pGrpr; nqq –
+
+Symr b Symn´r
+Symr
+–
+xsλ px1 , . . . , xr q | λ R Partr,n y
+xf ´ f p0q | f P Symn y
+
+where Symk is the ring of symmetric polynomials in k variables. In fact, the ideal in the first
+presentation has a free Z-basis tsλ px1 , . . . , xr q | ℓpλq ď r, λ R Partr,n u.
+Our aim is to give a parallel construction adapted to the quasisymmetric polynomials, the quasisymmetric Grassmannian. This will be an equidimensional algebraic variety QGrpr; nq Ă Grpr; nq
+` ˘
+composed of n´2
+r´1 many pn ´ 1q-dimensional torus-orbit closures.
+For an integer composition α “ pα1 , . . . , αℓ q of m, the fundamental quasisymmetric polynomial is
+ÿ
+ř
+Fα px1 , . . . , xr q “
+x i1 x i2 ¨ ¨ ¨ x im
+where Despαq “ t ki“1 αi | 1 ď k ă ℓu.
+1ďi1 ď¨¨¨ďim ďr
+ik ă ik`1 if k P Despαq
+
+2020 Mathematics Subject Classification. Primary 14M15; Secondary 05E05, 05E14, 14M25.
+NB was supported by the Natural Sciences and Engineering Research Council of Canada (NSERC) and York Research Chair in Applied Algebra. HS and VT acknowledge the support from NSERC, respectively [RGPIN-2024-04181]
+and [RGPIN-2024-05433].
+1
+
+2
+
+NANTEL BERGERON, LUCAS GAGNON, HUNTER SPINK, AND VASU TEWARI
+
+Stanley [32] identified a natural decomposition of Schur polynomials into fundamental quasisymmetric polynomials, and Gessel [14] observed that the tFα px1 , . . . , xr q | ℓpαq ď ru span a ring
+containing Symr , the ring of quasisymmetric polynomials QSymr . In order to state the main result, let
+Compr,n be the set of compositions whose ribbon diagram is contained in an r ˆ pn ´ rq rectangle.
+Theorem A (Theorems 8.2 and 8.7). The variety QGrpr; nq Ď Grpr; nq has
+H ‚ pQGrpr; nqq –
+
+QSymr b QSymn´r
+QSymr
+–
+.
+xFα px1 , . . . , xr q | α R Compr,n y
+xf ´ f p0q | f P QSymn y
+
+In fact, the ideal in the first presentation has a free Z-basis tFα px1 , . . . , xr q | ℓpαq ď r, α R Compr,n u.
+The definition of QGrpr; nq follows naturally from the authors’ work with P. Nadeau on the
+quasisymmetric flag variety QFln [6], an equidimensional toric complex inside the complete flag
+variety Fln . The cohomology compares with that of the flag variety as follows.
+Borel’s theorem [10] states:
+[6, Theorem A] states:
+
+L
+H ‚ pFln q – Zrx1 , . . . , xn s xf ´ f p0q | f P Symn y,
+L
+H ‚ pQFln q – Zrx1 , . . . , xn s xf ´ f p0q | f P QSymn y.
+
+and
+
+This geometrically realizes the “quasisymmetric coinvariants” first studied in [3]. In contrast, the
+quasisymmetric Grassmannian gives a direct cohomological interpretation of QSymr .
+`
+˘
+Definition 1.1. The Quasisymmetric Grassmannian QGrpr; nq is the projection π QFln Ď Grpr; nq
+under the natural projection map π : Fln Ñ Grpr; nq.
+Morally, one can view elements of H ‚ pQGrpr; nqq as quasisymmetric polynomials in the Chern
+roots of the tautological subbundle on QGrpr; nq. As the containment Symr Ă QSymr is proper
+for r ě 2, these classes often do not come from the pullback H ‚ pGrpr; nqq Ñ H ‚ pQGrpr; nqq.
+Quasisymmetry is a specialization of a stronger condition called equivariant quasisymmetry on
+polynomials in two sets of variables f px1 , . . . , xr ; t1 , . . . , tn q introduced by us and P. Nadeau [5].
+The incidence structure of T -invariant curves in QGrpr; nq imposes constraints on its T -equivariant
+cohomology via GKM theory [15], which corresponds to equivariant quasisymmetry.
+Our construction substantially differs from the infinite-dimensional James space ΩΣP8 of Baker–
+Richter [4], Oesinghaus [26], and Pechenik–Satriano [27, 28], which realizes its cohomology ring
+as quasisymmetric power series. The primary difference is that the James space construction
+has a natural cohomological basis corresponding to the monomial quasisymmetric functions Mα “
+ř
+αℓ
+α1
+i1 ă¨¨¨ăiℓ xi1 ¨ ¨ ¨ xiℓ . Our construction of QGrpr; nq Ă Grpr; nq allows us to leverage the relationship between Schur and fundamental quasisymmetric polynomials; see Section 1.2.
+Question 1.2. Is there a geometric relationship between the constructions QGrpr; nq and ΩΣP8 ?
+
+THE QUASISYMMETRIC GRASSMANNIAN
+
+3
+
+1.1. Structure and characterizations. Beyond Definition 1.1, we give two intrinsic characterizations of QGrpr; nq. Each exploits the fact that the incidences of T -invariant curves in Grpr; nq are
+encoded by the Johnson graph Jr,n on r-element subsets of t1, . . . , nu, with edges given by singleelement swaps. In Section 3 we define a spanning subgraph, the quasisymmetric Johnson graph
+QJr,n encoding the incidences of curves in QGrpr; nq by removing all edges that violate a certain
+non-crossing condition; see Figure 4 or the 1-skeleton of Figure 1 for an example.
+` ˘
+Our first characterization of QGrpr; nq makes use of the nr -many Plücker coordinates on Grpr; nq,
+which we write as ∆A for each vertex A of the Johnson graph.
+Theorem B (Theorem 5.1). As a subvariety of Grpr; nq, QGrpr; nq is the common vanishing locus
+of the Plücker coordinate products t∆A ∆B | AB P EpJr,n qzEpQJr,n qu.
+For the second characterization, we write λA P Partr,n for the partition canonically associated
+to A P V pJr,n q, as recalled in Section 2. If we orient Jr,n according to inclusion of partitions, then
+the incoming edges to A correspond precisely to the boxes in λA , which index the coordinates of
+λ to be the coordiX̊ λA – A|λA | . We then define the quasisymmetric Grassmannian Schubert cell X̊NC
+λ is
+nate subspace of X̊ λ corresponding to the incoming edges from QJr,n . The dimension of X̊NC
+the outer hook length OHLpλq “ λ1 ` ℓpλq ´ 1, the length of the longest hook.
+Theorem C (Theorem 5.1). There is an affine paving of QGrpr; nq by quasisymmetric Grassmannian Schubert cells,
+ğ
+λ
+λ
+QGrpr; nq “
+X̊NC
+with
+X̊NC
+– AOHLpλq .
+λPPartr,n
+
+Consequently, the odd Betti numbers of QGrpr; nq vanish and the even Betti numbers are
+ˆ
+˙
+ÿ
+k´1
+dim H2k pQGrpr; nqq “
+.
+a´1
+aďr, bďn´r,
+and a ` b “ k ` 1
+λ
+λ which
+:“ X̊NC
+From this result we see that QGrpr; nq is the union of the cell closures XNC
+we call quasisymmetric Grassmannian Schubert cycles. We find that they are positroid varieties in the
+sense of Knutson–Lam–Speyer [18], the complex closures of Postnikov’s positroid cells that stratify
+the totally nonnegative Grassmannian [29], and use this to show that the complex of moment
+polytopes faithfully captures the combinatorics of QGrpr; nq as a complex of toric varieties.
+
+1.2. A geometric meaning for Fα . We conclude with a re-interpretation of the transition from
+Schur polynomials to fundamental quasisymmetric polynomials. By Theorem C, the cell closures
+λ give a homology basis for QGrpr; nq. While QGrpr; nq does not enjoy Poincaré duality, we
+XNC
+find a Kronecker dual of this basis under the natural pairing H k pQGrpr; nqq b Hk pQGrpr; nqq Ñ Z,
+exactly paralleling the Kronecker duality between the bases of sλ px1 , . . . , xr q and X λ for Grpr; nq.
+In Section 3 we introduce an apparently novel bijection α ÞÑ λα from compositions to partitions.
+
+4
+
+NANTEL BERGERON, LUCAS GAGNON, HUNTER SPINK, AND VASU TEWARI
+{3,4}
+
+{2,4}
+{1,4}
+
+{2,3}
+{1,3}
+
+{1,2}
+
+F IGURE 1. QGrp2; 4q is the union of two isomorphic 3-dimensional singular projective toric varieties whose moment polytopes are square pyramids. The intersection
+corresponds to their common faces, two triangles which share an edge, which is
+geometrically two P2 s sharing a P1 . The 1-skeleton of this complex is the quasisymmetric Johnson graph QJ2,4 , and QGrp2; 4q “ t∆34 ∆23 “ 0u Ă Grp2; 4q.
+Theorem D (Theorem 8.8). The cohomological basis tFα px1 , . . . , xr q | α P Compr,n u Ă H ‚ pQGrpr; nqq
+λ s | λ P Part u Ă H pQGrpr; nqq, or equivalently
+is Kronecker dual to the homology basis trXNC
+r,n
+‚
+ż
+λβ
+s, Fα px1 , . . . , xr qyQGrpr;nq “ δα,β .
+Fα px1 , . . . , xr q “ xrXNC
+λ
+β
+XNC
+
+This statement allows us to generalize a classical result of Gessel [14]. If we interpret a polynomial f px1 , . . . , xr q P QSymr as an element of H ‚ pQGrpr; nqq, then the Kronecker duality implies
+ż
+f “ rFα spf q
+where
+rFα sf – the coefficient of Fα in f .
+λα
+XNC
+
+For f P Symr , Gessel [14] shows (in combinatorial language) that the same equation holds if we
+λ by a Richardson variety X η Ă Grpr; nq with η{ν of ribbon shape α, so
+replace XNC
+ν
+ÿ
+λ
+rXNC
+s “ prFα ssµ qrX µ s “ rXνη s P H‚ pGrpr; nqq.
+µ
+λ is in fact an S -translate of X η , a
+This coincidence is satisfactorily explained by the fact that XNC
+ν
+n
+computation that was essentially carried out in [24] which we shall recall in Section 6.
+
+1.3. Outline. Section 2 recalls the classic combinatorics of Grpr; nq and Section 3 introduces new
+“noncrossing” generalizations thereof. Sections 4 and 5 give alternative characterizations of QGrpr; nq
+by affine paving and Plücker equations. Section 6 relates the paving strata to positroid and translated Richardson varieties before establishing a rigidity theorem for QGrpr; nq. Section 7 recalls
+properties of quasisymmetric polynomials for Section 8, which proves all cohomological claims.
+Section 9 establishes the equidimensionality of QGrpr; nq and describes its moment polytopes.
+
+THE QUASISYMMETRIC GRASSMANNIAN
+
+5
+
+2. C OMBINATORICS OF THE G RASSMANNIAN
+This section recalls the essential combinatorics of Grassmannian Schubert calculus, including
+r-subsets, partitions, and Grassmannian permutations [2, 9, 23, 33, 34]. We let n be a nonnegative
+integer, rns :“ t1, . . . , nu, and Sn be the symmetric group on n letters, generated by the simple
+transpositions si “ pi, i ` 1q for 1 ď i ď n ´ 1.
+` ˘
+Our primary combinatorial objects will be r-element subsets A Ď rns, and we denote by rns
+r
+` ˘
+the collection of all such subsets. We sometimes represent A P rns
+using
+the
+sets
+r
+L :“ rrszA “ tak ă ¨ ¨ ¨ ă a1 u
+
+R :“ Azrrs “ tb1 ă ¨ ¨ ¨ ă bk u,
+
+and
+
+which necessarily have the same size, and whose union is the symmetric difference of A and rrs.
+We will use the notation A “ pL |r Rq, and from this representation we recover A “ prrszLq \ R.
+` ˘
+The Johnson graph Jr,n is the graph on vertex set rns
+r with edges AB whenever B “ pAzjq Y i
+for i ‰ j. See Figure 2 for an example. Section 4.1 explains how Jr,n encodes the geometry of the
+Grassmannian Grpr; nq by identifying vertices and edges with torus-invariant points and curves.
+` ˘
+The inversion set of A P rns
+r is
+InvpAq :“ tpi, jq | i ă j, j P A and i R Au.
+` ˘
+The Gale order ď is the partial order on rns
+r generated by A ą B if B “ pAzjq Y i for pi, jq P InvpAq.
+In this ordering the minimum is rrs, the maximum is tn ´ r ` 1, . . . , nu, and
+if
+
+AďB
+
+|A X rks| ě |B X rks|
+
+for all 1 ď k ď n.
+
+Lemma 2.1. Let A “ pak , . . . , a1 |r b1 , . . . , bk q and set b0 :“ r. Then InvpAq consists of:
+(1) pi, bp q where i R A and i ă bp , for 1 ď p ď k;
+(2) pap , jq where j P A X rrs and ap ă j, for 1 ď p ď k.
+Proof. Cases (1) and (2) describe those pi, jq P InvpAq with r ă j and r ě j respectively.
+
+□
+
+{3,4}
+
+13
+
+24
+
+23
+14
+
+{2,4}
+
+12
+
+{1,4}
+
+34
+
+34
+12
+
+{1,3}
+
+14
+24
+
+{2,3}
+
+23
+
+{1,2}
+
+1
+
+13
+
+2
+
+3
+
+4
+
+λA
+
+5
+
+6
+
+7
+
+{3, 5, 7} = (1, 2 |3 5, 7)
+
+357 1246
+
+A
+
+wA
+
+J2,4
+
+F IGURE 2. The Johnson graph J2,4 (left) and an example of the bijections Partr,n Ø
+`rns˘
+r Ø Grassr,n (right) for r “ 3, n “ 7.
+
+6
+
+NANTEL BERGERON, LUCAS GAGNON, HUNTER SPINK, AND VASU TEWARI
+
+In addition to r-subsets of rns, partitions and Grassmannian permutations are also used in the
+study of the Grassmannian. We now recall the bijections between these equivalent combinatorial
+structures; see Figure 2 for an example. As in the introduction, let Partr,n be the set of partitions
+λ “ pλ1 ě λ2 ě ¨ ¨ ¨ ě λr ě 0q with λ1 ď n ´ r. There is a bijection
+`rns˘
+Ñ Partr,n
+r
+`
+˘
+(2.1)
+ti1 ă i2 ă ¨ ¨ ¨ ă ir u “ A ÞÑ λA – ir ´ r, . . . , i2 ´ 2, i1 ´ 1 .
+Under the bijection A Ø λA , Gale order corresponds to inclusion order, and each box of λA
+corresponds to an inversion of A. Reading the boundary of λ from bottom left to top right as
+shown in Figure 2, A indexes the north steps, and each pi, jq P InvpAq determines a box of λA in
+the row of north step j and column of east step i.
+We can also characterize edges in the Johnson graph using rim hooks [34, Chapter 7.17], which
+are connected skew shapes containing no 2 ˆ 2 square. For pi, jq P InvpAq, the partition λpAzjqYi is
+obtained from λA by removing the rim hook of boundary boxes between steps i and j.
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+≥
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+F IGURE 3. Rim hook removal corresponding to inversion p1, 5q from λA where A “ t3, 5, 7u
+The Frobenius symbol [23, Chapter I.1] of λ records arm and leg sizes of each box b on the main
+diagonal of λ (not including b itself in the sizes). If A “ pL|r Rq, the Frobenius symbol of λA is
+˜
+¸ ˜
+¸
+Arm1 ¨ ¨ ¨ Armk
+bk ´ r ´ 1 ¨ ¨ ¨ b1 ´ r ´ 1
+(2.2)
+“
+.
+Leg1 ¨ ¨ ¨ Legk
+r ´ ak
+¨¨¨
+r ´ a1
+` ˘
+We now describe the combinatorial equivalence between rns
+r and Grassmannian permutations.
+For w P Sn , the (left) inversion set and length of w are
+Invpwq :“ tpi, jq | i ă j, w´1 piq ą w´1 pjqu
+
+and
+
+ℓpwq :“ | Invpwq|.
+
+The Bruhat order u ď v on Sn is generated by u ą pi, jqu for pi, jq P Invpuq. The descent set of w is
+Despwq :“ ti | wpiq ą wpi ` 1qu. If k P Despwq then wsk ă w and wsk w´1 P Invpwq. Let Grassr,n be
+the set of r-Grassmannian permutations tw P Sn | Despwq Ď truu. There is a bijection
+`rns˘
+A “ twA p1q ă ¨ ¨ ¨ ă wA prqu, and
+Ñ Grassr,n
+r
+(2.3)
+defined by
+A ÞÑ wA
+rnszA “ twA pr ` 1q ă ¨ ¨ ¨ ă wA pnqu
+`rns˘
+There is a natural action of Sn on r . By construction wA is the unique minimal length permu´1
+´1
+tation with wA ¨ rrs “ A and each inversion pi, jq P InvpwA q satisfies wA
+piq ě r ą wA
+pjq. By
+construction InvpwA q “ InvpAq and the inversions of wA correspond to boxes of λA as above.
+
+THE QUASISYMMETRIC GRASSMANNIAN
+
+7
+
+3. C OMBINATORICS OF THE Q UASISYMMETRIC G RASSMANNIAN
+This section introduces the combinatorial objects essential for the quasisymmetric Grassmannian including noncrossing partitions, the quasisymmetric Johnson graph, quasigrassmannian
+permutations, and compositions, analogous to the constructions recalled in Section 2.
+3.1. Noncrossing partitions and the quasisymmetric Johnson graph. A set partition of rns is a
+collection of non-empty disjoint subsets B1 , . . . , Bk , called blocks, whose union is rns. A crossing is
+a 4-tuple a ă b ă c ă d in rns such that a, c belong to one block and b, d belong to another. A set
+partition is noncrossing if it has no crossing.
+Coxeter-Catalan combinatorics, when specialized to the product of simple transpositions for
+the standard Coxeter element sn´1 ¨ ¨ ¨ s1 “ pn n ´ 1 . . . 1q, transforms the noncrossing set partitions into a collection NCn Ď Sn as follows. From a noncrossing set partition of rns, each block
+B “ tb1 ă ¨ ¨ ¨ ă bs u determines a backwards cycle pbs , bs´1 , . . . , b1 q. The product of these (disjoint) cycles over all blocks is an (algebraic) noncrossing partition and NCn is the set of all algebraic
+noncrossing partitions. Given this bijection we shall use the terms blocks and cycles interchangeably. For example, the noncrossing set partition with blocks tt1, 5, 6u, t2, 3u, t4uu of r6s gives the
+algebraic noncrossing partition p6 5 1qp3 2q “ 632415 P NC6 .
+The Kreweras order [21] is the partial order on NCn induced by refinement of set partitions, with
+id at the bottom and pn n ´ 1 . . . 1q at the top. We are primarily concerned with the Hasse diagram
+of this order, so we describe its covering relations: u, w P NCn have a covering relation if there is
+a transposition τ “ pi jq such that τ u “ w. See Figure 4 for an example of the Kreweras order on
+NC4 .
+Definition 3.1. The quasisymmetric Johnson graph QJr,n is the spanning subgraph of Jr,n with edges
+` ˘
+from vertices A to B if and only if under the natural action of Sn on rns
+r we have
+A “ w ¨ rrs
+
+and
+
+B “ u ¨ rrs
+
+for some w, u P NCn Kreweras-adjacent.
+
+See Figure 4 for an example of QJ4,2 .
+We define the quasisymmetric inversion set of A P
+
+`rns˘
+r
+
+to be
+
+InvQ pAq :“ tpi, jq | pi, jq P InvpAq and AB P QJr,n for B “ pAzjq Y iu.
+The structure of QJr,n and each InvQ pAq is controlled by the fibers
+NCA
+n :“ tw P NCn | w ¨ rrs “ Au,
+` ˘
+each of which is nonempty: if A “ pak , . . . , a1 |r b1 , . . . , bk q P rns
+then the permutation w “
+r
+ś
+A
+pa
+,
+b
+q
+is
+noncrossing
+and
+also
+has
+w
+¨
+rrs
+“
+A,
+so
+w
+P
+NC
+.
+n
+1ďiďk i i
+
+8
+
+NANTEL BERGERON, LUCAS GAGNON, HUNTER SPINK, AND VASU TEWARI
+(4 3 2 1)
+
+{3,4}
+
+(3 2 1)
+
+(2 1)(4 3)
+
+13
+
+(4 1)(3 2)
+
+(4 3 1)
+
+(4 2 1)
+
+(4 3 2)
+
+23
+14
+
+{2,4}
+
+12
+
+{1,4}
+
+34
+
+34
+
+{1,3}
+
+14
+24
+
+(2 1)
+
+(3 2)
+
+23
+
+13
+
+(4 1)
+
+(3 1)
+
+(4 2)
+
+(4 3)
+
+{2,3}
+
+12
+
+{1,2}
+
+QJ2,4
+
+NC4
+
+id
+
+F IGURE 4. The Kreweras lattice NC4 (left) written using cycle notation and the
+Quasisymmetric Johnson graph QJ2,4 (right), with color denoting the fibers NCA
+4.
+3.2. Quasigrassmannian permutations, Compr,n , and Partr,n . For w P NCn , the noncrossing descent set of u is defined to be
+DesNC pwq :“ tk P Despwq | wsk P NCn u.
+Fact 3.2 ([5, Lemma 7.4]). For w P NCn and i P Despwq, we have i P DesNC pwq Ø i P twpiq, wpi`1qu.
+We now introduce the noncrossing analogue of Grassmannian permutations.
+Definition 3.3. A permutation w P NCn is r-Quasigrassmannian if DesNC pwq Ď tru. Denote the set
+of Quasigrassmannian permutations by QGrassr,n Ă NCn .
+Despite the similar definitions, we emphasize here that Quasigrassmannian permutations are
+not in general Grassmannian; for example w “ 4321 “ p41qp32q P QGrass2,4 is not Grassmannian.
+Lemma 3.4. With b0 :“ r, the map
+`rns˘
+
+(3.1)
+
+Ñ QGrassr,n
+˘
+ś `
+A “ pak , . . . , a1 |r b1 , . . . , bk q Ñ
+Þ
+zA :“ ki“1 bi pbi ´ 1q . . . pbi´1 ` 1q ai ,
+r
+
+is a bijection. We will henceforth call zA the quasigrassmannian permutation associated to A.
+Proof. Either zA “ id or DespzA q “ ta1 , . . . , ak , r, bk´1 , . . . , b1 u. Of these descents, only r meets the
+criterion of Fact 3.2, so zA P QGrassr,n . On the other hand, zA ¨ rrs “ A, giving an inverse.
+□
+For example, if n “ 10, r “ 4, and A “ t1, 3, 7, 9u “ p2, 4|4 7, 9q then zA “ p9 8 2qp7 6 5 4q.
+` ˘
+A
+A
+Lemma 3.5. For A P rns
+r , zA belongs to the fiber NCn , and every noncrossing partition in NCn
+can be reduced to zA by a sequence of transformations u ÞÑ usk with k P DesNC puq. In particular,
+zA is the unique Bruhat-minimal element of NCA
+n.
+
+THE QUASISYMMETRIC GRASSMANNIAN
+
+9
+
+Proof. The first claim is immediate. The second follows from induction on length, as every element
+of NCn z QGrassr,n has a noncrossing descent in rnsztru.
+□
+Remark 3.6. It is shown in [5, Corollary 7.9] that NCn is the equivalence class of the identity
+permutation under the equivalence relation on Sn where w „ wsi whenever i P twpiq, wpi ` 1qu.
+Lemma 3.5 and Fact 3.2 then say that if we restrict this relation to i ‰ r then the equivalences
+classes are the fibers NCA
+n.
+As in the introduction, let Compr,n denote the set of compositions α “ pα1 , . . . , αk q whose
+ř
+ribbon diagrams fit in an r ˆ pn ´ rq box, i.e. with k ď r and αi ´ k ` 1 ď n ´ r.
+Lemma 3.7. For zA P QGrassr,n , let Bi be the block with minpBi q “ i for 1 ď i ď r. The map
+QGrassr,n Ñ Compr,n
+zA ÞÑ αA :“ p|Bak | ´ 1, |Bpak q`1 |, . . . , |Br´1 |, |Br |q
+
+(3.2)
+is a bijection.
+
+Proof. This map is the composition of the bijections in [5, Def. 7.10] and [25, Theorem 8.3].
+□
+` ˘
+As Compr,n and Partr,n are both in bijection with rns
+r , we obtain a direct bijection which appears to be new; see Figure 5. Define the outer hook length OHLpλq “ λ1 `ℓpλq´1 (and OHLp∅q “ 0).
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+1
+
+λA = (5, 4, 1)
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+zA = (9 8 2)(7 6 5 4)
+
+10
+
+αA = (2, 1, 4)
+
+F IGURE 5. Bijections Part4,10 Ø QGrass4,10 Ø Comp4,10 for A “ t1, 3, 7, 9u Ă r10s.
+Theorem 3.8. The composite bijection Compr,n Ñ Partr,n , α ÞÑ λα is described as follows.
+(1) Each α P Compr,n can be written as α “ d1 1e1 ´1 pd2 ` 1q1e2 ´1 ¨ ¨ ¨ pdk ` 1q1ek ´1 for numbers
+d1 , . . . , dk , e1 , . . . , ek ě 1. (If α starts with 1a then d1 “ 1 and e1 “ a.) Using Frobenius
+notation for partitions, the bijection takes
+˜ř
+¸
+řk
+k
+p
+d
+q
+´
+1
+p
+d
+q
+´
+1
+¨
+¨
+¨
+d
+´
+1
+i
+i
+k
+ři“2
+α “ d1 1e1 ´1 ¨ ¨ ¨ pdk ` 1q1ek ´1 ÞÑ λα – ři“1
+.
+p ki“1 ei q ´ 1 p ki“2 ei q ´ 1 ¨ ¨ ¨ ek ´ 1
+˜
+¸
+A1 ¨ ¨ ¨ A k
+(2) The inverse map Partr,n Ñ Compr,n takes a partition λ “
+to
+L1 ¨ ¨ ¨ Lk
+pA1 ´ A2 q1L1 ´L2 ´1 pA2 ´ A3 ` 1q ¨ ¨ ¨ 1Lk´2 ´Lk´1 ´1 pAk´1 ´ Ak ` 1q1Lk´1 ´Lk ´1 pAk ` 2q1Lk
+
+10
+
+NANTEL BERGERON, LUCAS GAGNON, HUNTER SPINK, AND VASU TEWARI
+
+if k ě 2 and pA1 ` 1q1L1 if k “ 1.
+Under this bijection, if α corresponds to λ then |α| “ OHLpλq, the outer hook length of λ.
+Proof. We omit the proof of the bijections as it is a matter of carefully composing previous bijections. The union of blocks of zA for A “ pak , . . . , a1 |r b1 , . . . , bk q is the closed interval rak , bk s, and
+the outer hook length of λA is given by bk ´ak by (2.2), so we conclude |αA | “ OHLpλq by (3.2). □
+3.3. Quasisymmetric inversions and noncrossing inversions. We now relate the quasisymmet` ˘
+ric inversions of A P rns
+with a distinguished subset of ordinary inversions defined for NCn ,
+r
+following [5, Section 8.3].
+Definition 3.9. For w P NCn , define the set of noncrossing inversions by
+InvNC pwq :“ tpi, jq P Invpwq | pi, jqw P NCn u.
+Explicitly we have pi, jq P InvNC pwq if and only if j is the largest element in its cycle and either
+(1) i belongs to the same cycle as j, or
+(2) i ă j ă w´1 piq and i is maximal with respect to this property.
+Remark 3.10. Note that [5, Section 8.3] defines noncrossing inversions as right inversions, which
+in the present notation would be the set of pw´1 piq, w´1 pjqq “ w´1 pi, jqw for pi, jq P InvNC pwq. The
+content of the second half of Definition 3.9 is then [5, Proposition 8.16].
+Lemma 3.11. Let A “ pak , . . . , a1 |r b1 , . . . , bk q and set a0 :“ r ` 1, b0 :“ r. The noncrossing
+inversions of zA are:
+(1) (Split) for 1 ď p ď k, pap , bp q and
+(2) (Merge) pap`1 , bp q for 1 ď p ď k ´ 1,
+
+pq, bp q where bp´1 ă q ă bp ;
+and pap`1 , qq where ap`1 ă q ă ap for 0 ď p ď k ´ 1.
+
+In particular | InvNC pzA q| “ OHLpλA q.
+Proof. The combinatorial criterion in Definition 3.9 implies the description of the noncrossing inversions. As for the cardinality of InvNC pzA q, observe that we have bk ´ r noncrossing inversions
+in item (1) and r ´ ak noncrossing inversions in item (2). Their sum bk ´ ak equals OHLpλA q. □
+Remark 3.12. The labels refer to the effect of left-multiplying zA by the corresponding transposition: the inversions in (1) split a cycle into two, while those in (2) merge two cycles into one.
+The description in Lemma 3.11 implies that InvNC pzA q Ď InvpwA q “ InvpAq. Therefore the
+set InvNC pzA q identifies a distinguished collection of boxes of λA under the usual correspondence
+between boxes and InvpwA q “ InvpAq. Let k be the number of boxes along the main diagonal of λA .
+Then Lemma 3.11 translates to the following: noncrossing inversions in (1) (resp. (2)) correspond
+to the boxes along the main diagonal (resp. subdiagonal) of λA as well as boxes in the first k rows
+(resp. columns) that do not have a box below them (resp. to their right) in λA .
+
+THE QUASISYMMETRIC GRASSMANNIAN
+
+11
+
+Figure 6 lists the noncrossing inversions for the zA in Figure 5 and identifies them with a subset
+of boxes in λA . The dots (resp. crosses) in Figure 6 represent inversions in (1) (resp. (2)).
+
+λA =
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+InvNC (zA ) = {(2,3),(2,7)} ∪ {(2,9),(4,7),(5,7),(6,7),(8,9)}
+
+F IGURE 6. Noncrossing inversions of zA and the corresponding boxes in λA .
+The next proposition cements the role of r-Quasigrassmannian permutations as the correct noncrossing analogue of Grassmannian permutations.
+` ˘
+Q
+Theorem 3.13. For A P rns
+r , we have | Inv pAq| “ OHLpλA q and
+InvQ pAq “ InvNC pzA q.
+We shall prove this theorem after a preparatory lemma. Say that a block B of a noncrossing set
+partition extends over r if min B ď r ă max B.
+Lemma 3.14. For w P NCn with associated noncrossing set partition P, order the blocks extending
+over r as B1 , . . . , Bk so that ai :“ maxpBi X rrsq satisfies a1 ą ¨ ¨ ¨ ą ak , and set bi :“ max Bi . Then
+b1 ă ¨ ¨ ¨ ă bk and
+w ¨ rrs “ pak , . . . , a1 |r b1 , . . . , bk q.
+Proof. First note if j ą i and bj ă bi , then aj ă ai ă bj ă bi is a crossing between Bi and Bj , a
+contradiction. Therefore b1 ă ¨ ¨ ¨ ă bk .
+The backwards cycle of a block B is supported on B, so blocks not extending over r fix rrs
+setwise. For a block Bi extending over r with B X rrs “ tc1 ă ¨ ¨ ¨ ă cp “ ai u and Bzrrs “ td1 ă
+¨ ¨ ¨ ă dq “ bi u, the backwards cycle pdq , . . . , d1 , cp , . . . , c1 q sends cj ÞÑ cj´1 for j ě 2 and c1 ÞÑ dq ,
+so the image of Bi X rrs is ppBi X rrsqzai q Y bi .
+Since distinct blocks act on disjoint sets, these replacements are independent, giving w ¨ rrs “
+prrszta1 , . . . , ak uq Y tb1 , . . . , bk u “ pak , . . . , a1 |r b1 , . . . , bk q as desired.
+□
+Call a block B in a noncrossing set partition nested if there exists another block B 1 containing
+i, j so that for all k P B we have i ă k ă j. If this happens we say B is nested below B 1 .
+Proof of Theorem 3.13. The equality | InvQ pAq| “ OHLpλA q follows from Lemma 3.11 once we show
+InvQ pAq “ InvNC pzA q. As the noncrossing inversions described in Lemma 3.11 are a subset of the
+inversions described in Lemma 2.1, we know InvNC pzA q Ă InvpAq. The inclusion InvNC pzA q Ď
+InvQ pAq then follows as zA P NCA
+n and
+ď
+InvQ pAq “
+pInvNC puq X InvpAqq.
+uPNCA
+n
+
+12
+
+NANTEL BERGERON, LUCAS GAGNON, HUNTER SPINK, AND VASU TEWARI
+
+We prove the reverse inclusion. Let pi, jq P InvQ pAq, so there exists w P NCA
+n with pi, jq P
+InvNC pwq X InvpAq. Fix such a w. In what follows we let Bs be the block of w extending over r
+with
+pmaxpBs X rrsq, max Bs q “ pas , bs q
+from Lemma 3.14. By Lemma 3.11, the element j P A is the maximal element of its cycle B. There
+are two cases in this lemma and we address both.
+Suppose first that i R A has i P B. Then B extends over r as it is neither contained in A, nor
+is disjoint from A. This allows us to deduce that B “ Bp for some 1 ď p ď k, and that j “ bp .
+Furthermore, as i R A we know that i ě ap , so either i “ ap , in which case pi, jq P InvNC pzA q by
+the first part of Lemma 3.11(1), or r ă i ă bp (as ap “ max Bp X rrs). But in this latter case because
+Bp´1 is nested inside Bp we know that Bp X rap´1 , bp´1 s “ ∅ so in fact bp´1 ă i ă bp , establishing
+pi, jq P InvNC pzA q by the second part of Lemma 3.11(1).
+Suppose now that i R A lies in a different cycle B 1 to B, and is the maximal element such that
+i ă j ă w´1 piq. For j P A we must have min B ď r. The condition i ă j ă w´1 piq forces B to be
+nested below B 1 , so we must have i ď min B and hence i ď r. As i R A, we can only have i ď r
+if B 1 “ Bp`1 extends over r for some 0 ď p ď k ´ 1, and i “ ap`1 . On the one hand if B extends
+over r then B “ Bp1 for some p1 ď p. But we cannot have p1 ă p as then ap is a larger element
+than i with ap ă i ă w´1 pap q. We deduce p1 “ p and so s “ bp , implying pi, jq P InvNC pzA q by
+the first part of Lemma 3.11(2). If on the other hand B does not extend over r then we claim that
+ap`1 ă j ă ap . Indeed, if not then ap ă j ď r and we arrive at a contradiction that i ă ap has
+ap ă j ă w´1 pap q. We conclude from ap`1 ă j ă ap that pi, jq P InvNC pzA q by the second part of
+Lemma 3.11(2).
+□
+` ˘
+Theorem 3.15. For A, B P rns
+r , we have zA ě zB in the Bruhat order if and only if A ě B.
+Proof. For the order statement, recall that x ě y in Bruhat order if and only if x ¨ ris is elementwise
+at least as large as y ¨ ris for all 1 ď i ď n. Since zA ¨ rrs “ A and zA1 ¨ rrs “ A1 , the condition at i “ r
+gives zA ě zA1 whenever A ě A1 .
+For the converse, it suffices to treat the case B Ì A, so that AB P QJr,n by Lemma 3.11 (see also
+the discussion after Remark 3.12 where we can see clearly that each removable corner belongs to
+InvQ pAq). By Theorem 3.13 we conclude there exists pi, jq P InvNC pzA q with B “ pAzjq Y i. We
+B
+then have pi, jqzA P NCB
+□
+n , so by minimality of zB P NCn we conclude that zA ą pi jqzA ě zB .
+4. P LÜCKER VANISHING AND QJr,n
+In this section we define two subsets
+PVG Ď
+
+ğ
+APprns
+r q
+
+A
+X̊NC
+Ă Grpr; nq
+
+THE QUASISYMMETRIC GRASSMANNIAN
+
+13
+
+of the Grassmannian, and when G “ QJr,n , we will show in the next section are both equal to
+QGrpr; nq.
+4.1. Recollections on the Grassmannian. The Grassmannian Grpr; nq is the space of all r-planes
+in Cn , which we identify with its image under the Plücker embedding
+Ź
+Grpr; nq ãÑ Pp r Cn q
+for tv1 , v2 . . . , vr u a basis of V .
+V ÞÑ xv1 ^ v2 ^ ¨ ¨ ¨ ^ vr y
+This map is equivariant with respect to the standard actions of T “ pC˚ qn on Grpr; nq and PpΛr Cn q.
+For A “ ti1 ă ¨ ¨ ¨ ă ir u, let
+Ź
+eA “ ei1 ^ ei2 ^ ¨ ¨ ¨ ^ eir P r Cn .
+The T -fixed points of Grpr; nq are represented by the coordinate r-planes xeA y, and the T -invariant
+` ˘
+curves are xeA , eA1 y for AA1 P EpJr,n q. We denote by t∆A | A P rns
+r u the coordinate functions of
+the eA , which are defined up to simultaneous scaling.
+Each point xv1 ^ v2 ^ ¨ ¨ ¨ ^ vr y P Grpr; nq can be represented by the full-rank n ˆ r matrix
+with columns v1 , v2 , . . . , vr P Cn , which is unique up to right multiplication by GLr pCq. Denoting
+Mat˝nˆr Ă Matnˆr for the subset of full column rank nˆr matrices, we may thus identify Grpr; nq “
+Mat˝nˆr { GLr pCq. We will transpose all n ˆ r matrix representatives for the sake of space, so the
+entry pi, jq in the transposed matrix represents the entry in the ith column and jth row.
+The Grassmannian Grpr; nq has a stratification into Schubert cells, which we write as either
+` ˘
+A
+X̊ “ X̊ λ depending on whether we index with A P rns
+or λ P Partr,n . For each A “ ta1 ă
+r
+`rns˘
+A
+¨ ¨ ¨ ă ar u P r , the Grassmannian Schubert cell X̊ is the subset represented by matrices with
+1’s in the positions pai , iq, ˚ (arbitrary entries) in the positions pi, jq for pi, aj q P InvpAq, and 0’s
+elsewhere. The ˚ in X̊ λA – X̊ A bijectively correspond to the boxes of the Young diagram for λA .
+Example 4.1. For n “ 10 and r “ 4, let A “ t1, 3, 7, 9u and λ “ p5, 4, 1q. Then
+»
+fiJ
+1 1 0 0 0 0 0 0 0 0 0
+ffi
+3—
+—0 ˚ 1 0 0 0 0 0 0 0ffi
+– A10 .
+X̊ t1,3,7,9u “ —
+ffi “ X̊
+7 –0 ˚ 0 ˚ ˚ ˚ 1 0 0 0fl
+9 0 ˚ 0 ˚ ˚ ˚ 0 ˚ 1 0
+In terms of a matrix representative M of a point in Grpr; nq, the Plücker coordinates ∆A can be
+simultaneously computed as ∆A “ detpMi,j qiPA, jPrrs . This gives the following result.
+Fact 4.2. At any point of X̊ A we have ∆A1 “ 0 if A1 ­ď A, ∆A ‰ 0, and if pi, aj q P InvpAq and we set
+L
+A1 “ pAzaj q Y i then ∆A1 ∆A “ ˘Mi,j for M the canonical matrix representative of our point.
+Recall that an affine paving of a variety X is a sequence ∅ “ X0 Ă X1 Ă ¨ ¨ ¨ Ă Xk “ X of
+closed subvarieties such that each Xi zXi´1 is isomorphic to an affine space. We have A| InvpAq| –
+
+14
+
+NANTEL BERGERON, LUCAS GAGNON, HUNTER SPINK, AND VASU TEWARI
+
+X̊ A “ X̊ λA – A|λA | , and the Schubert cells listed in any linear extension of the Gale order induce
+an affine paving
+ğ
+ğ
+X̊ A “
+X̊ λ .
+Grpr; nq “
+λPPartr,n
+APprns
+r q
+4.2. Plücker vanishing and Quasisymmetric Schubert cells. For any subgraph G Ď Jr,n , we
+define an associated Plücker vanishing variety by
+¨
+˛ ¨
+˛
+č
+č
+PVG :“ ˝
+t∆A “ 0u‚X ˝
+t∆A ∆B “ 0u‚ Ă Grpr; nq.
+APV pJr,n qzV pGq
+
+ABPEpJr,n qzEpGq
+
+Write InvG pAq for the set of inversions pi, jq of A such that for B “ pAzjqYi we have AB P EpGq.
+From its definition there is a natural union of affine subspaces of the Schubert cells which always
+contains PVG . For A “ ta1 ă ¨ ¨ ¨ ă ar u P V pGq, let
+G
+
+A
+:“ tM P X̊ A | Mi,j “ 0 for pi, aj q P InvpAqz InvG pAqu – A| Inv pAq| .
+X̊G
+
+See Example 4.5 for the application of this construction to G “ QJr,n .
+A “ X̊ A X
+Proposition 4.3. We have X̊G
+
+Ş
+
+pi,jqPInvpAqz InvG pAq t∆pAzjqYi “ 0u and
+
+PVG Ď
+
+ğ
+
+A
+X̊G
+Ă Grpr; nq
+
+APV pGq
+
+Proof. The equality follows directly from Fact 4.2. We now show the containment of PVG . Since
+Ť
+∆A ‰ 0 on X̊ A , we have PVG Ă APV pGq X̊ A , so it suffices to show for A P V pGq that PVG XX̊ A Ă
+A . By Fact 4.2 we have ∆ ‰ 0 on X̊ A , so for pi, jq P InvpAqz InvG pAq we have ∆
+X̊G
+A
+pAzjqYi “ 0 is
+A
+equivalent to ∆A ∆pAzjqYi “ 0 on X̊ , and this is a defining relation for PVG .
+□
+
+Now consider G “ QJr,n . Then InvG pAq “ InvQ pAq has size OHLpλq (Theorem 3.13) and
+č
+PVQJr,n “
+t∆A ∆A1 “ 0u.
+AA1 PEpJr,n qzEpQJr,n q
+A – A| OHLpλA q| to be the subspace of X̊ A
+Definition 4.4. Define the quasisymmetric Schubert cell X̊NC
+obtained by setting to zero all matrix entries Mj,i for pai , jq P InvpAqz InvQ pAq.
+A “ X̊ A for G “ QJ . Under the correspondence between boxes of λ and ˚’s
+Equivalently X̊NC
+r,n
+G
+in X̊ λ , these entries are characterized by the results of Section 3.2.
+
+Example 4.5. Continuing Example 4.1, we have InvpAqz InvQ pAq “ tp4, 9q, p5, 9q, p6, 9qu corresponding to the unfilled cells in Figure 6, and additionally
+
+THE QUASISYMMETRIC GRASSMANNIAN
+
+»
+1 1
+3—
+—0
+A
+X̊NC
+“ —
+7 –0
+9 0
+
+0
+˚
+˚
+˚
+
+0
+1
+0
+0
+
+0
+0
+˚
+0
+
+0
+0
+˚
+0
+
+0
+0
+˚
+0
+
+0
+0
+1
+0
+
+0
+0
+0
+˚
+
+15
+
+fiJ
+0
+0ffi
+ffi
+ffi – A7 .
+0fl
+0
+
+0
+0
+0
+1
+
+Corollary 4.6. We have
+PVQJr,n Ď
+
+ğ
+
+A
+X̊NC
+Ă Grpr; nq.
+
+APprns
+r q
+
+What is special about QJr,n is that this first containment is an equality, and we will show in the
+next section that these are equal to the quasisymmetric Grassmannian QGrpr; nq.
+5. T HE Q UASISYMMETRIC G RASSMANNIAN
+The complete flag variety Fln parametrizes flags of subspaces t0 Ĺ V1 Ĺ ¨ ¨ ¨ Ĺ Vn´1 Ĺ Cn u. The
+quasisymmetric flag variety of [5] is a complex of projective toric varieties QFln Ă Fln . The natural
+projection map π : Fln Ñ Grpr; nq sends the flag V‚ to the subspace Vr . Recalling Definition 1.1,
+the quasisymmetric Grassmannian is defined to be the projection
+QGrpr; nq :“ πpQFln q.
+Since π is proper and T -equivariant, QGrpr; nq Ă Grpr; nq is also a complex of projective toric
+λ from Section 4.2.
+varieties. Recall the sets PVQJr,n and X̊NC
+Theorem 5.1. We have the equalities
+QGrpr; nq “ PVQJr,n “
+
+ğ
+
+λ
+X̊NC
+“
+
+ď
+
+λ
+XNC
+.
+
+λ give an affine paving of QGrpr; nq under any
+Furthermore the quasisymmetric Schubert cells X̊NC
+linear extension of the Gale order ď.
+
+The proof of Theorem 5.1 is given at the end of the section; we first recall an affine paving of
+λ in Section 5.2.
+QFln in Section 5.1 and relate this paving to the cells X̊NC
+5.1. Noncrossing Schubert cells in QFln . We identify Fln with GLn {B, where B Ă GLn is the
+subgroup of upper triangular matrices. The flag associated to a coset M B P GLn {B is obtained
+by taking Vi to be the span of the first i columns of M . The matrix representative of the projection
+πpM Bq P Grpr; nq is the principle n ˆ r submatrix pMi,j q1ďiďn , or any right GLr -multiple thereof.
+1ďjďr
+
+For w P Sn , the Schubert cell X̊ w is BwB{B. The Bruhat decomposition states
+ğ
+GLn {B “
+X̊ w with X̊ w – Aℓpwq ,
+wPSn
+
+16
+
+NANTEL BERGERON, LUCAS GAGNON, HUNTER SPINK, AND VASU TEWARI
+
+and this gives an affine paving of Fln under any linear extension of the Bruhat order. Furthermore
+every Schubert variety X w “ X̊ w is a union of Schubert cells, though this is not required by the
+definition of an affine paving.
+Each X̊ w has a canonical affine chart that can be represented as a t0, 1, ˚u matrix in the manner
+of Section 4.1. Beginning with the permutation matrix for w, which has 1’s in positions pwpjq, jq
+and 0’s elsewhere, fill each position which is not below or right of a 1 with ˚, representing a free
+coordinate. This amounts to placing an ˚ in position pi, w´1 pjqq for each inversion pi, jq P Invpwq.
+w for w P NC to be the
+Following [6, Definition 9.6], define the noncrossing Schubert cell1 X̊NC
+n
+subspace of X̊ w obtained by zeroing out the ˚ in positions pi, w´1 pjqq for pi, jq R InvNC pwq. Also
+w “ X̊ w .
+define the noncrossing Schubert cycle XNC
+NC
+
+Example 5.2. Let w “ 53214, so that InvNC pwq “ tp1 3q, p1 5q, p2 3q, p4 5qu and Invpwqz InvNC pwq “
+tp1 2q, p2 5q, p3 5qu. Then we have
+fi
+»
+fi
+»
+˚ ˚ 0 1 0
+˚ ˚ ˚ 1 0
+ffi
+—
+ffi
+—
+— 0 ˚ 1 0 0ffi
+—˚ ˚ 1 0 0ffi
+ffi
+—
+ffi
+—
+53214
+ffi – A7 and X̊NC
+— 0 1 0 0 0ffi – A4 .
+“
+X̊ 53214 “ —
+˚
+1
+0
+0
+0
+ffi
+—
+ffi
+—
+ffi
+—
+ffi
+—
+– ˚ 0 0 0 1fl
+–˚ 0 0 0 1fl
+1 0 0 0 0
+1 0 0 0 0
+In [6] these cells were shown to induce an affine paving of QFln with respect to any linear
+extension of the Bruhat order restricted to NCn :
+ğ
+w
+w
+QFln “
+X̊NC
+with X̊NC
+– A| InvNC pwq| .
+wPNCn
+w are strictly contained in
+Unlike the paving of Fln by Schubert cells, some of the cell closures XNC
+(and are not equal to) a union of noncrossing Schubert cells.
+
+5.2. Projection of noncrossing Schubert cells in Fln . For w P Sn , if w ¨ rrs “ A “ ta1 ă ¨ ¨ ¨ ă ar u
+then the projection π maps X̊ w onto X̊ A . More specifically, InvpAq Ď Invpwq and π|X̊ w is the
+coordinate projection sending the pi, w´1 pjqq-coordinate subspace of X̊ w to zero unless w´1 pjq ď
+r ă w´1 piq, in which case pi, jq “ pi, ak q P InvpAq and the pi, w´1 pjqq-coordinate subspace maps to
+the pi, kq-coordinate subspace of X̊ A .
+u
+A
+Theorem 5.3. If u P NCA
+n , then πpX̊NC q Ď X̊ . Moreover:
+A ; and
+(1) if u “ zA , then π|X̊ u is an isomorphism onto X̊NC
+NC
+(2) if u ‰ zA then π|X̊ u has positive-dimensional fibers.
+NC
+
+1Noncrossing Schubert cells are called noncrossing Bruhat cells in [6].
+
+THE QUASISYMMETRIC GRASSMANNIAN
+
+17
+
+u
+A
+Proof. By definition u P NCA
+n has u ¨ rrs “ A, so the remarks above imply that πpX̊NC q Ď X̊ .
+u contains none of the linear
+If u “ zA , Theorem 3.13 tells us that InvNC puq “ InvQ pAq, so X̊NC
+A .
+subspaces which generate kerpπ|X̊ u q and maps onto X̊NC
+u intersect the kernel kerpπ| u q nontrivially. Indeed, by Lemma 3.5
+If u ‰ zA , we show that XNC
+X
+there is some i P DesNC puqztru, and pupi ` 1q, upiqq P InvNC puq with upi ` 1q, upiq ď r or r ă
+u is in the kernel of π| u .
+upi ` 1q, upiq. Then the corresponding coordinate subspace in X̊NC
+□
+X
+
+Example 5.4. Let λ “ p3, 3, 2q. Then A “ t3, 5, 6u, zA “ 653241, and the noncrossing inversions are
+InvNC pzA q “ tp1, 6q, p1, 5q, p4, 5q, p2, 5q, p2, 3qu. We then compute
+´1
+tpi, zA
+pjqq | pi, jq P InvNC pzA qu “ tp1, 1q, p1, 2q, p4, 2q, p2, 2q, p2, 3qu,
+
+so the associated noncrossing Schubert cell is given by
+»
+0
+˚
+˚
+0
+—
+˚
+˚
+1
+—0
+—
+—
+0
+0
+1
+0
+zA
+“—
+X̊NC
+—0
+˚
+0
+0
+—
+—
+1
+0
+0
+–0
+1
+0
+0
+0
+
+0
+0
+0
+1
+0
+0
+
+fi
+1
+ffi
+0ffi
+ffi
+0ffi
+ffi – A5 .
+0ffi
+ffi
+ffi
+0fl
+0
+
+λ Ă Grp3; 6q.
+The column span of the first 3 columns then gives the isomorphic projection to X̊NC
+This agrees with the earlier construction: InvpAqz InvQ pAq “ tp2, 6q, p4, 6q, p1, 3qu and
+
+1 2 4
+6 ‚
+5 ‚ ‚ ‚
+‚
+3
+
+Ñ
+
+»
+3 0
+—
+A
+X̊NC
+“ 5– ˚
+6 ˚
+
+˚
+˚
+0
+
+1
+0
+0
+
+0
+˚
+0
+
+fiJ
+0 0
+ffi
+1 0fl – A5 .
+0 1
+
+We now consider the (noncrossing) Schubert cells under the action of the subgroup T Ď GLn of
+diagonal matrices. We will denote by χi the character of T that maps Diagph1 , . . . , hn q P T to hi ,
+and write Cχ for the corresponding one-dimensional representation.
+The left action of T on GLn {B makes X̊ w into a linear T -representation, and this action scales
+the ˚ in entry pi, w´1 pjqq by the character χi {χj . We therefore have
+à
+à
+u
+X̊ w –
+Cχi {χj
+and
+X̊NC
+–
+Cχi {χj .
+pi,jqPInvpwq
+
+pi,jqPInvNC puq
+
+` ˘
+A
+The T action on Grassmannian Schubert cells is similar: for A P rns
+r , T acts on X̊ by scaling the
+˚ corresponding to pi, jq P InvpAq by χi {χj , so that
+à
+à
+A
+X̊ A –
+Cχi {χj
+–
+Cχi {χj .
+and
+X̊NC
+pi,jqPInvpAq
+
+pi,jqPInvQ pAq
+
+18
+
+NANTEL BERGERON, LUCAS GAGNON, HUNTER SPINK, AND VASU TEWARI
+
+u Ñ X̊ A by sending
+The projection map π : Fln Ñ Grpr; nq induces maps X̊ w Ñ X̊ w¨rrs and X̊NC
+NC
+Cχi {χj to either Cχi {χj or 0 according to whether pi, jq P InvpAq.
+
+Proof of Theorem 5.1. By Proposition 4.3 and Theorem 5.3 we know that
+ď
+ğ
+λ
+λ
+X̊NC
+Ď
+XNC
+Ď QGrpr; nq,
+PVQJr,n Ď
+so what remains is to show that QGrpr; nq Ď PVQJr,n .
+We start by showing that any 1-dimensional T -orbit closure in QGrpr; nq is of the form xeA , eB y
+Ť
+u q. Since no two charwith AB P EpQJr,n q. By definition QGrpr; nq “ πpQFln q “ uPNCn πpX̊NC
+A
+u
+acters of X̊ are linearly dependent, any 1-dimensional T -orbit in πpX̊NC q is the T -orbit of an
+interior point x on a coordinate line xeA , eB y. Moreover π|X̊ u is a coordinate projection onto a
+NC
+
+A for A “ u ¨ rrs. Using the coordinate projection property we can find
+coordinate subspace of X̊NC
+u such that πpzq “ x and z lies in the interior of a coordinate line connecting u to
+a point z P X̊NC
+some pi jqu with pi, jq P InvNC puq. We therefore have
+
+T ¨ x “ xeA , eB y,
+
+A “ u ¨ rrs,
+
+B “ pi jqu ¨ rrs,
+
+A .
+and pi, jq P InvQ pAq by the definition of X̊NC
+To show QGrpr; nq Ă PVQJr,n , by the definition of PVQJr,n it suffices to show that for any
+x P QGrpr; nq and any edge AB P EpJr,n qzEpQJr,n q, we have p∆A ∆B qpxq “ 0. Suppose on the
+contrary that p∆A ∆B qpxq ‰ 0. Writing B “ pAzjq Y i, consider the cocharacter ρ : C˚ Ñ T defined
+by
+
+ρptq “ pt´b1 , . . . , t´bn q
+
+where
+
+bk “ δkPA ` δkPB .
+
+Then x1 “ limtÑ0 ρptqx P QGrpr; nq because QGrpr; nq “ πpQFln q is closed and T -invariant (as π
+is proper and T -equivariant). This x1 lies in the interior of xeA , eB y, as in PpΛr Cn q the cocharacter
+ρptq scales each eC by t´NC with
+NC “ 2|C X pA X Bq| ` |C X ti, ju|,
+a quantity that is maximized simultaneously at C P tA, Bu. But then xeA , eB y “ T ¨ x1 Ă QGrpr; nq,
+contradicting the fact that every 1-dimensional T -orbit closure in QGrpr; nq satisfies AB P EpQJr,n q.
+λ – AOHLpλq it suffices to show that under the total
+For the affine paving statement, since X̊NC
+Ů
+λi
+ordering ∅ “ λ1 , λ2 , . . . we have Xk :“ iďk X̊NC
+is closed. This follows as
+Xk “ QGrpr; nq X
+
+k
+ğ
+
+X̊
+
+λi
+
+“ QGrpr; nq X
+
+i“1
+
+where the last equality uses the fact that X λ “
+
+k
+ď
+
+X λi ,
+
+i“1
+
+Ů
+
+λ1 Ăλ X̊
+
+λ1 .
+
+□
+
+THE QUASISYMMETRIC GRASSMANNIAN
+
+19
+
+See Figure 7 which shows the affine paving
+«
+ffJ
+˚
+˚
+1
+0
+12
+13
+14
+23
+24
+QGrp2; 4q “ loX̊
+omoon \ loX̊
+omoon \ loX̊
+omoon \ loX̊
+omoon \ loX̊
+omoon \
+˚ 0 0 1
+looooooooomooooooooon
+A0
+A1
+A2
+A2
+A3
+34 –A3
+X̊NC
+
+24 “ X 24 and X 34
+in terms of moment polytopes: the closures of the top-dimensional cells XNC
+NC
+correspond respectively to the blue and yellow pyramids.
+34
+X̊NC
+
+X̊ 24
+
+X̊ 12
+
+X̊ 13
+
+X̊ 14
+
+X̊ 23
+
+F IGURE 7. Paving QGrp2; 4q with quasisymmetric Schubert cells. The T -orbits
+ij
+ij
+correspond to faces of the moment polytope for X̊NC
+added by the affine cell X̊NC
+that touch vertex ij. The union of the new faces is homeomorphic to a half-open
+cube.
+6. P OSITROIDS , R ICHARDSONS , AND C OMBINATORIAL R IGIDITY
+In this section we connect the quasisymmetric Schubert cycles to positroid varieties and Richardson varieties. Using these connections we show that the complex of moment polytopes determines
+the inclusion relations between the T -orbit closures in QGrpr; nq.
+6.1. Positroids. We now recall both geometric and combinatorial notions pertaining to total positivity as first described by Postnikov [29] and further developed by Knutson–Lam–Speyer [18];
+see also [31, 35] for a survey of the various mathematical fields this touches.
+Definition 6.1. A matrix M P M at˝nˆr with real entries is totally nonnegative if all its maximal
+minors satisfy ∆A pM q ě 0. Its positroid is
+` ˘
+ApM q :“ t A P rns
+r | ∆A pM q ą 0 u.
+`rns˘
+A subset A Ď r is a positroid if A “ ApM q for some totally nonnegative M . The totally nonnegative Grassmannian Grpr; nqě0 is the set of real linear spaces determined by the column spans
+of the totally nonnegative matrices. A positroid variety is the closure in the complex Grassmannian
+Grpr; nq of the points in Grpr; nqě0 with the same positroid.
+Positroids admit a combinatorial description in terms of Le diagrams [29, Definition 6.1]. We
+isolate a subset of such diagrams that is relevant to us.
+
+20
+
+NANTEL BERGERON, LUCAS GAGNON, HUNTER SPINK, AND VASU TEWARI
+
+Definition 6.2. A subset L Ď λ is called a noncrossing Le diagram if it satisfies the following two
+conditions:
+(1) (Le condition) If a square in λ lies strictly below a square of L in the same column and strictly
+to the right of a square of L in the same row, then it also belongs to L.
+(2) (noncrossing condition) For every box b P L, either there is no box of L strictly above b in its
+column, or there is no box of L strictly to the left of b in its row.
+Remark 6.3. Every noncrossing Le diagram determines a unique noncrossing alternating forest in
+the sense of [1]. Suppose that L Ă λA for λA P Partr,n and consider the subset of InvpAq determined by the boxes of L. If we represent each inversion pi, jq by an arc from i to j, as shown in
+Figure 8, the result is a noncrossing alternating forest. If L is maximal under inclusion, then the
+corresponding forest will be a noncrossing alternating tree [13, 30] with OHLpλq-many arcs.
+10
+9
+8
+
+10
+
+7
+4
+
+5
+
+6
+
+9
+
+3
+2
+
+8
+
+1
+7
+4
+
+5
+
+6
+
+3
+2
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9 10
+
+1
+
+F IGURE 8. Clockwise from the top left: a noncrossing Le diagram L Ď λ “ p5, 4, 1q
+marked by ‚, the Γ-network for L, and the noncrossing alternating forest for L.
+Proposition 6.4. For a noncrossing Le diagram L, let X̊Lλ Ď X̊ λ be the subspace with all coordinates outside L equal to zero. Then XLλ “ X̊Lλ is the positroid variety with Le diagram L.
+Proof. Each Le diagram defines an acyclic directed planar “Γ-network” on the vertices rns Y L; see
+Figure 8. Recall by Fact 4.2 that in the coordinitization of X̊ λ , the ˚ corresponding to the inversion
+pi, jq P InvpAλ q is given by ˘∆pAλ zjqYi {∆Aλ . The positroid variety associated to L is the closure of
+a subset of X̊ λ parametrized by ⃗c P pC˚ qL , whose coordinates are uniquely determined by
+ÿ
+∆pAλ zjqYi {∆Aλ “
+wtP p⃗cq,
+P : jÑi
+
+where the sum above is over directed walks P from j to i in the network and wtP p⃗cq is the product
+of cb for each b P L entered on a horizontal edge in P . If L is noncrossing, there is a walk P : j Ñ i
+only if pi, jq P InvQ pAq, in which case P is unique and wtP p⃗cq is the product of cb weakly right of
+
+THE QUASISYMMETRIC GRASSMANNIAN
+
+21
+
+the box corresponding to pi, jq. This parametrizes a dense subset of X̊Lλ (where the ˚ are nonzero),
+so the closure XLλ is the positroid variety associated to L.
+□
+λ and replacing
+Every T -orbit in QGrpr; nq is obtained by taking the 0, 1, ˚ chart for some XNC
+each ˚ with either a ˆ to represent a nonzero indeterminate C˚ or a 0. Furthermore, it is immediate to check that the inversions in QGrpr; nq satisfy the noncrossing Le condition. We therefore
+conclude the following.
+
+Corollary 6.5. The Le diagram of the associated positroid varieties in QGrpr; nq are precisely the
+λ occupied by ˆ as described above.
+noncrossing Le diagrams associated to the subset of X̊NC
+6.2. Projected and Translated Richardsons. Let wo P Sn be the longest permutation. For u ď v in
+Bruhat order, the Richardson variety Xuv Ă Fln is defined by
+Xuv “ X v X wo X u ,
+the intersection of a Schubert and an opposite Schubert variety. In the Grassmannian, one defines
+analogously the Richardson varieties Xην “ X ν X wo X η for η Ă ν.
+λ is related to Richardson varieties. First, by [18, 19], each
+We describe two ways in which XNC
+λ Ă Grpr; nq is a projected Richardson variety of the form
+positroid stratum XNC
+`
+˘
+λ
+XNC
+“ π Xuwλ ,
+where π|Xuwλ is birational onto its image. Here wλ is the r-Grassmannian permutation wA for
+` ˘
+A P rns
+corresponding to λ, introduced in Section 2. The permutation u is read from the Le
+r
+diagram as a pipe dream [29, Section 19]: replace each box of L with an elbow tile and each box
+of λzL with a cross tile, then follow the strands from the south-east boundary to the north-west to
+obtain u in one-line notation. See Figure 9, where this procedure yields u “ 123485679 10.
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+8
+
+5
+
+6
+
+7
+
+9 10
+
+4
+3
+2
+1
+
+F IGURE 9. The Le diagram determining the permutation u via a pipe dream construction
+λ is a projected Richardson variety πpX wλ q for u as described above.
+Corollary 6.6. XNC
+u
+λ is in fact a translated Richardson variety. This follows
+Now we give an alternate description: XNC
+from an analysis carried out in [24, Section 10] that applies to the noncrossing Schubert cycle
+
+22
+
+NANTEL BERGERON, LUCAS GAGNON, HUNTER SPINK, AND VASU TEWARI
+
+zA
+XNC
+where zA P QGrassr,n corresponds to λ. We record the details of the construction in the
+terminology of the present paper.
+Let α P Compr,n be the composition associated to λ under the bijection of Theorem 3.8. Suppose
+η{ν is the skew shape associated to the ribbon α (i.e. η{ν is a rimhook with ηi ´νi “ αi ). We choose
+η and ν so that η{ν has its extreme boxes in the first column and first row. Set w “ 12 ¨ ¨ ¨ pr ´
+ℓpαqqrpr ´ 1q ¨ ¨ ¨ pr ´ ℓpαq ` 1qpr ` 1qpr ` 2q ¨ ¨ ¨ , and suppose further that wη and wν are the rGrassmannian permutations associated with η and ν respectively. Then for px, yq “ pwν w, wη wq
+we have that
+zA
+XNC
+“ x´1 Xxy .
+
+As discussed in [24, Proposition 10.5], since the same w P Sr ˆ Sn´r is applied on the right to both
+wµ and wη to obtain x, y, we have
+w
+
+πpXxy q “ πpXwνη q “ Xνη .
+We thus obtain the following.
+λ “ x´1 X η .
+Theorem 6.7. With notation as before, we have the equality XNC
+ν
+
+Corollary 6.8. Every T -orbit closure in QGrpr; nq is a translated Richardson variety.
+Proof. This follows from Theorem 6.7 and the fact that every T -orbit closure contained in a toric
+Richardson variety is a toric Richardson variety [7, Proposition 8.1].
+□
+Figure 10 shows the relevant information for λ “ p4, 3, 1q P Part4,9 corresponding to α “
+p2, 1, 3q P Comp4,9 under the bijection from Theorem 3.8.
+ν
+
+η
+α = (2, 1, 3)
+
+wη = 156823479
+wν = 125634789
+w = 143256789
+
+x = 165234789
+y = 186523479
+
+(4, 3, 3) / (2,2)
+p4,3,1q
+
+F IGURE 10. The data of η, ν, and x determining the translated Richardson for XNC
+6.3. Rigidity. Using equivariant rigidity theorems we now show the following.
+Theorem 6.9. Each T -orbit closure in QGrpr; nq is
+
+(1) uniquely determined as a T -invariant subvariety of Grpr; nq by its T -fixed point set, and
+(2) containment of T -orbit closures in QGrpr; nq corresponds to containment of T -fixed points.
+
+THE QUASISYMMETRIC GRASSMANNIAN
+
+23
+
+Proof. To show (1) and (2) it suffices to show that if X is a T -orbit closure in QGrpr; nq and Y Ă
+Grpr; nq is a T -invariant subvariety with Y T Ă X then Y Ă X. This follows either by the fact that
+these T -orbit closures are positroid varieties (Corollary 6.5) by [11, Corollary 6.4], or the fact that
+they are translates of Richardson varieties (Corollary 6.8) by [11, Theorem 6.3].
+□
+These facts imply that if a face is common to two moment polytopes then the corresponding
+T -orbit closures share the same sub-T -orbit closure, and so the “moment complex” of QGrpr; nq
+completely determines the combinatorics of how it is assembled as a toric complex.
+7. E QUIVARIANTLY QUASISYMMETRIC POLYNOMIALS
+This section summarizes the essential facts about fundamental and double fundamental polynomials from [5, 6]. In what follows we let x “ px1 , x2 , . . .q and t “ pt1 , t2 , . . .q be infinite variable
+sets, and let xk “ px1 , . . . , xk q and tk “ pt1 , . . . , tk q be their finite truncations, obtained by setting
+xk`1 “ ¨ ¨ ¨ “ 0 and tk`1 “ ¨ ¨ ¨ “ 0. The adjective non-equivariant will mean that only x variables
+are used, and equivariant will mean that x and t variables are used. To pass from equivariant to
+non-equivariant we will set t “ 0.
+The quasisymmetric polynomials QSymn Ă Zrxn s are those polynomials which satisfy the coefficient equality of xa11 ¨ ¨ ¨ xakk and xai11 ¨ ¨ ¨ xaikk for every increasing sequence i1 ă ¨ ¨ ¨ ă ik . There
+is an equivalent condition defining quasisymmetric polynomials that we now recall. Define the
+Bergeron–Sottile map [8, 25] to be the map
+Ri f pxq “ f px1 , . . . , xi´1 , 0, xi , xi`1 , . . .q.
+In particular because of the reindexing we have Ri f pxn q P Zrxn´1 s for 1 ď i ď n. Then f pxn q P
+QSymn if and only if Ri f pxn q “ Ri`1 f pxn q for i “ 1, . . . , n ´ 1 [25, Theorem 2.1].
+In [5] we introduced with P. Nadeau a deformation of the above equivalent definition of quasisymmetry. Define the equivariant Bergeron–Sottile operations are the maps
+R´
+i f px; tq “ f px1 , . . . , xi´1 , ti , xi , xi`1 , . . . ; tq
+R`
+i f px; tq “ f px1 , . . . , xi´1 , xi , ti , xi`1 , . . . ; tq.
+`
+We say that f px1 , . . . , xr ; tq is equivariantly quasisymmetric if R´
+i f “ Ri f for i “ 1, . . . , r ´ 1.
+
+Definition 7.1. Write EQSymr for the set of equivariantly quasisymmetric polynomials f pxr ; tr q,
+and write EQSymr rtr`1 , . . . , tn s :“ EQSymr b Zrtr`1 , . . . , tn s.
+In analogy to the fundamental basis of QSymr , [5] constructs a family of double fundamental
+quasisymmetric polynomials Fα pxr ; tq indexed by compositions, which specialize to the fundamental
+polynomials recalled in the introduction when t “ 0. Here we consider only their truncations at
+tn`1 “ tn`2 “ ¨ ¨ ¨ “ 0, which we denote by Fα pxr ; tn q (when α P Compr,n it turns out that Fα had
+no dependence on the variables outside of xr and tn before truncation).
+
+24
+
+NANTEL BERGERON, LUCAS GAGNON, HUNTER SPINK, AND VASU TEWARI
+
+Fact 7.2 ([5, Theorem 4.14]). The ring EQSymr rtr`1 , . . . , tn s has a free Zrtn s-basis of double fundamental polynomials tFα pxr ; tn q | ℓpαq ď ru.
+The second result is one of the main theorems of [5]; we restate the special case for quasigrassmannian permutations only. Identifying Sn as a subset of Sn`1 in the usual way makes the
+r-quasigrassmannian permutations into a tower
+QGrassr,r`1 Ď QGrassr,r`2 Ď ¨ ¨ ¨ .
+Let QGrassr,8 to be the union of all QGrassr,n under this identification. We then have the following
+consequence of the “AJS–Billey”-type formula for double forest polynomials.
+Fact 7.3 ([5, Theorem 8.3]). Let u P QGrassr,8 , and let α be the composition corresponding to u
+under the bijection of (3.2), which is unique up to trailing zeros. Then
+ź
+Fα ptup1q , tup2q , . . . , tuprq ; tn q “
+ptj ´ ti q,
+pi,jqPInvNC puq
+
+and if w P QGrassr,8 with w ­ě u in Bruhat order, then Fα ptwp1q , twp2q , . . . , twprq ; tn q “ 0.
+8. C OHOMOLOGY
+This section proves Theorems A and D, about the cohomology of QGrpr; nq and quasisymmetric
+polynomials. In order to do so, we first prove several results of independent interest about the
+equivariant cohomology ring HT‚ pQGrpr; nqq with respect to the standard torus T “ pC˚ qn . We
+identify the T -equivariant cohomology of a point with the polynomial ring
+HT‚ pptq “ Sym‚ CharpT q “ Zrtn s,
+where we take the standard convention used in double Schubert calculus that ti is the generator
+corresponding to χ´1
+i , the inverse of the i’th standard character of T . This convention ensures for
+example that double Schur polynomials sλ pxr ; tn q P HT‚ pGrpr; nqq are T -equivariantly Kronecker
+dual to the T -equivariant homology classes of Grassmannian Schubert cycles X λ in H‚T pGrpr; nqq.
+8.1. Graph Cohomology Rings. Let G be a finite simple graph with a labelling χ that assigns a
+linear form χpuvq P Zrtn s to each edge uv P EpGq. The equivariant graph cohomology ring associated
+to G and χ is the Zrtn s-algebra
+ˇ
+!
+)
+ˇ
+HT‚ pGq :“ pfv qvPV pGq P Zrtn sV pGq ˇ χpvwq divides fv ´ fw for all vw P EpGq .
+with pointwise addition, multiplication, and scaling. We define the singular graph cohomology ring
+L
+H ‚ pGq :“ HT‚ pGq pt1 , t2 , . . . , tn q,
+where ti denotes the constant assignment in HT‚ pGq with value ti .
+
+THE QUASISYMMETRIC GRASSMANNIAN
+
+25
+
+Goresky–Kottwitz–MacPherson [15] show that graph cohomology rings compute the T -equivariant
+and singular cohomology rings of suitably nice T -spaces. For example, taking G to be the Johnson
+graph Jr,n with edge labelling
+(8.1)
+
+χpABq “ tj ´ ti
+
+if B “ pAzjq Y i for pi, jq P InvpAq,
+
+produces T -equivariant and ordinary cohomology rings of the Grassmannian Grpr; nq, i.e.
+HT‚ pGrpr; nqq – HT‚ pJr,n q
+
+and
+
+H ‚ pGrpr; nqq – H ‚ pJr,n q.
+
+Recall from Section 4.1 that V pJr,n q and EpJr,n q can be identified with the T -fixed points and T invariant curves in Grpr; nq. For X Ď Grpr; nq, the moment graph of X is the subgraph of Jr,n with
+vertex set X T and edges the T -invariant curves in X. By the proof of Theorem 5.1, the moment
+graph of QGrpr; nq is the quasisymmetric Johnson graph QJr,n .
+Theorem 8.1. With the edge labellings from Equation (8.1),
+HT‚ pQGrpr; nqq – HT‚ pQJr,n q
+
+and
+
+H ‚ pQGrpr; nqq – H ‚ pQJr,n q.
+
+Proof. A standard application of GKM theory gives the above isomorphisms for any variety X Ď
+Grpr; nq and its moment graph provided certain conditions hold. A simple statement of these conditions appears under the name“good affine paving” in [6, §11.1 items (1)–(3)], adapted from [17].
+A
+The affine paving of QGrpr; nq in Theorem 5.1 is “good” in this sense, as each affine cell X̊NC
+decomposes into T -representations with characters χi {χj for pi, jq P InvQ pAq, no two characters in
+the same chart divide one another, and each standard character χi appears in each character with
+an exponent of ˘1 or 0.
+□
+8.2. A map from quasisymmetric polynomials. We now state an equivariant version of the first
+presentation in Theorem A. Recall the ring EQSymn and the polynomials Fα pxn ; tn q from Section 7.
+Theorem 8.2. The variety QGrpr; nq Ď Grpr; nq has
+HT‚ pQGrpr; nqq –
+
+EQSymr rtr`1 , . . . , tn s
+,
+xFα pxr ; tn q | α R Compr,n y
+
+and the ideal has a free Zrtn s-basis tFα pxr ; tn q | ℓpαq ď r, α R Compr,n u. As a consequence, the first
+presentation of Theorem A holds.
+Theorem 8.2 is proved at the end of the subsection. We construct an isomorphism from the right
+hand side of the theorem to the graph cohomology ring HT‚ pQJr,n q. For f pxn ; tn q P Zrtn srxn s and
+w P Sn , let
+fw “ f ptwp1q , twp2q , . . . , twpnq ; tn q P Zrtn s.
+` ˘
+Now recall the element zA P QGrassr,n Ď Sn from Section 3.2 associated to A P rns
+r . In what
+follows when we write EQSymr b EQSymn´r , the elements from the factor EQSymn´r are to be
+considered as polynomials f pxr`1 , . . . , xn ; tr`1 , . . . , tn q.
+
+26
+
+NANTEL BERGERON, LUCAS GAGNON, HUNTER SPINK, AND VASU TEWARI
+
+Lemma 8.3. If f pxn ; tn q P EQSymr b EQSymn´r and w P NCA
+n then fw “ fzA .
+Proof. By Lemma 3.5 there is a sequence w1 “ w, . . . , wℓ “ zA in NCn such that for each 1 ď k ă ℓ,
+wk`1 “ wk sik for ik P DesNC pwk qztru. By Fact 3.2, each ik P twk pik q, wk pik `1qu, so by the definition
+□
+of equivariant quasisymmetry fwk “ fwk`1 .
+Now define a map
+rns
+Ψ : EQSymr b EQSymn´r Ñ Zrtn s‘p r q
+` ˘
+f pxn ; tn q ÞÑ fzA APprnsq .
+r
+
+Proposition 8.4. The image of Ψ is contained in the equivariant graph cohomology ring HT‚ pQJr,n q.
+Proof. We show that each f P EQSymr b EQSymn´r satisfies the divisibility condition for each
+edge AB with B “ pAzjq Y i and pi, jq P InvQ pAq. Let w “ pi jqzA , so that w ¨ rrs “ B and
+Lemma 8.3 implies fw “ fzB . Then fzA ´ fzB “ fzA ´ fw , which must be divisible by tj ´ ti .
+□
+We now show that Ψ surjects EQSymr onto HT‚ pQJr,n q. For an edge labeled graph G as in the
+previous section, a collection of elements tf pvq P HT‚ pGq | v P V pGqu is a flowup basis with respect
+to an ordering ă on V pGq [6, Section 11.2] if:
+ź
+fupvq “ 0 whenever v ł u
+and
+fvpvq “
+χpuvq.
+uvPEpGq
+uăv
+
+If a flowup basis exists, then it is a free Zrtn s-basis for HT‚ pGq [6, Proposition 11.9].
+Proposition 8.5. The map Ψ sends the set tFα pxr ; tn q | α P Compr,n u to a flowup basis of HT‚ pQJr,n q
+with respect to the Gale order. Further, if α R Compr,n then ΨpFα pxr ; tn qq “ 0.
+Proof. As A ď B if and only if zA ď zB by Theorem 3.15 and InvQ pAq “ InvNC pzA q by Theorem 3.13, the first claim follows from Fact 7.3. The second claim also follows from Fact 7.3: if
+α R Compr,n then the associated noncrossing partition Z does not belong to NCn , and therefore
+cannot precede any element of QGrassr,n in the Bruhat order.
+□
+Proof of Theorem 8.2. As EQSymr rtr`1 , . . . , tn s has a free Zrtn s-basis of double fundamental quasisymmetric polynomials, Theorem 8.1 and Proposition 8.5 immediately imply that
+HT‚ pQGrpr; nqq –
+
+EQSymr rtr`1 , . . . , tn s
+,
+xFα pxr ; tn q | α R Compr,n y
+
+and moreover that the ideal has a free Zrtn s-basis tFα pxr ; tn q | α R Compr,n u. Quotienting by
+pt1 , . . . , tn q then gives the first isomorphism in Theorem A.
+□
+
+THE QUASISYMMETRIC GRASSMANNIAN
+
+27
+
+Example 8.6. Figure 11 depicts show the GKM graph for QGrp2; 4q as well as examples of flowup
+basis elements obtained by evaluating double fundamental quasisymmetric polynomials. The
+combinatorial vine model introduced in [5, Section 5] implies the following expansions
+F21 px2 ; t4 q “ px1 ´ t3 qpx1 ´ t1 qpx2 ´ t1 q
+F2 px2 ; t4 q “ x22 ` x1 x2 ´ x2 t3 ´ x2 t2 ` x21 ´ x1 t3 ´ x1 t2 ` t2 t3 ´ x2 t1 ´ x1 t1 ` t1 t3 ` t1 t2
+using which the reader can check that evaluations at elements in QGrass2,4 produces the polynomials highlighted in red.
+α34 α14 α13
+
+{3,4}
+
+13
+
+α24 α14
+
+23
+14
+
+α34 α14 α12
+
+{2,4}
+
+12
+
+{1,4}
+
+34
+
+34
+
+0
+
+12
+
+{1,3}
+23
+
+α34 α14
+
+α34 α24
+0
+
+0
+
+0
+14
+
+24
+
+{2,3}
+
+0
+
+13
+
+0
+
+{1,2}
+
+GKM graph for QGr(2; 4)
+
+GKM data for F(2,1) (x1 , x2 ; t4 )
+
+0
+GKM data for F(2) (x1 , x2 ; t4 )
+
+F IGURE 11. Examples of flowup basis elements from evaluations of Fα pxr ; tn q,
+where αij :“ tj ´ ti .
+
+8.3. A quasisymmetric Borel presentation. We now give the second presentation in Theorem A.
+As in the previous section, we state an equivariant version which implies the ordinary version.
+Theorem 8.7. The variety QGrpr; nq Ď Grpr; nq has
+HT‚ pQGrpr; nqq –
+
+EQSymr b EQSymn´r
+.
+xf pxn ; tn q ´ f ptn ; tn q | f P EQSymn y
+
+As a consequence, the second presentation of Theorem A holds.
+Proof. By Proposition 8.5, composing the map Ψ with the isomorphism of Theorem 8.1 gives a surjection from EQSymr bEQSymn´r onto HT‚ pQGrpr; nqq. We therefore only need to show that every
+element of EQSymr b EQSymn´r can be written modulo the ideal as a Zrtn s-linear combination of
+tFα pxr ; tn q | α P Compr,n u.
+By Fact 7.2, the top xn -degree part of any element of EQSymr b EQSymn´r is an ordinary
+quasisymmetric polynomial. Thus by induction on xn -degree, it is sufficient to show that every
+element of QSymr bQSymn´r can be written as a linear combination of the ordinary fundamentals
+
+28
+
+NANTEL BERGERON, LUCAS GAGNON, HUNTER SPINK, AND VASU TEWARI
+
+tFα pxr q | α P Compr,n u modulo the ideal xf ´ f p0q | f P QSymn y. The coproduct formula for
+fundamental quasisymmetric polynomials Fβ pxn q induces an upper triangular change of basis
+tFα pxr qFβ pxr`1 , . . . , xn q | ℓpαq ď r, ℓpβq ď n ´ ru Ñ tFα pxr qFβ pxn q | ℓpαq ď r, ℓpβq ď n ´ ru
+with respect to |β|. The elements Fα pxr qFβ pxn q belong to our ideal if |β| ą 0, so we need only
+reduce the elements Fα pxr q modulo the ideal.
+To do so, we appeal to the algorithm constructed in [25, §9.2]; while this algorithm was originally phrased in the language of forest polynomials, we summarize the relevant case using compositions. Every α R Compr,n determines two compositions β “ pβ1 , . . . , βk q P Compr,n and
+γ “ pγ1 , . . . , γℓ q ‰ ∅ so that α “ pγ1 , . . . , γℓ ` β1 , . . . , βk q and |β| is as large as possible. Then the
+proofs of [25, Theorem 9.7, Lemma 9.8] show that we can write
+ÿ
+Fα pxr q “ Fβ pxr qFγ pxn q `
+Fθ pxr qfθ pxn q
+with fθ pxn q P QSymn of degree |α| ´ |θ|.
+θPCompr,n
+|θ|ă|β|
+
+As |α| ´ |θ| ą |γ| ą 0, each term on the right is contained in xf ´ f p0q | f P QSymn y.
+
+□
+
+8.4. Kronecker duality and positivity. We conclude the section with a proof of Theorem D. If X
+is a projective (not necessarily irreducible) variety with a T -action, then there are Kronecker pairings
+x´, ´yTX : H‚T pXq bH ‚ pptq HT‚ pXq Ñ HT‚ pptq “ Zrtn s
+and
+x´, ´yX : H‚ pXq b H ‚ pXq Ñ H ‚ pptq “ Z,
+where HT‚ pXq and H‚T pXq are T -equivariant cohomology and T -equivariant Borel–Moore homology respectively. The pairing is defined to be zero if the cohomological degree and homological dimension differ. If Y Ă X is a projective toric variety in X, then for cohomology classes fr P HT‚ pXq
+and f P H ‚ pXq we can express the Kronecker pairings
+żT
+xrY s, fryTX “
+
+ż
+fr P HT‚ pptq “ Zrtn s
+
+Y
+
+and
+
+f P H ‚ pptq “ Z,
+
+xrY s, fryX “
+Y
+
+where fr and f are considered in HT‚ pY q and H ‚ pY q via pullback from the inclusion Y ãÑ X, and
+şT
+ş
+the degree maps Y and Y are computed directly on Y by κ˚ ρ˚ , where ρ : Yr Ñ Y is any toric
+resolution and κ : Yr Ñ pt is the projection.
+` ˘
+A | A P rns u into T -representations from Theorem 5.1. A stanRecall the affine paving tX̊NC
+r
+A “ X̊ A determine a free Z-basis for
+dard property of affine pavings implies the cell closures XNC
+NC
+H‚ pQGrpr; nqq [12, Ex. 19.1.11(b)] and a free Zrtn s basis for H‚T pQGrpr; nqq [16, Proposition 2.1].
+
+THE QUASISYMMETRIC GRASSMANNIAN
+
+29
+
+Theorem 8.8. The cohomological basis tFα pxr ; tn q | α P Compr,n u is Kronecker dual to the homol` ˘
+A s | A P rns u, or equivalently
+ogy basis trXNC
+r
+$
+żT
+&1 if A “ A ,
+α
+A
+Fα pxr ; tn q “
+xXNC
+, Fα pxr ; tn qyTQGrpr;nq “
+%
+A
+X
+0 otherwise.
+NC
+
+Passing to singular cohomology, this implies Theorem D.
+Proof. In [6, Theorem 11.11] we show that the map evNC : HT‚ pQFln q – Zrtn srxn s{xf pxn ; tn q ´
+f ptn ; tn q | f P EQSymn y Ñ Zrtn s‘ NCn given by f pxn ; tn q ÞÑ pfw qwPNCn is an injection. Then by
+Theorem 8.1 we have a commutative diagram
+zA
+q
+HT‚ pXNC
+π˚
+
+HT‚ pQFln q
+
+evNC
+
+Zrtn s‘ NCn
+
+Ψ
+
+Zrtn s‘p r q
+
+π˚
+
+A q
+HT‚ pXNC
+
+HT‚ pQGrpr; nqq
+
+rns
+
+where the unlabeled horizontal arrows are pullbacks of inclusions and the unlabeled vertical arrow sends pfA qAPprnsq to pfw¨rrs qwPNCn .
+r
+
+Now we claim that the middle vertical arrow sends f pxr ; tn q P EQSymr to f pxr ; tn q P HT‚ pQFln q.
+By Lemma 8.3, fw “ fzA for A “ w ¨ rrs, so evNC pf q is the image of Ψpf q under the right vertical
+arrow. The right three maps are injective so this determines the middle arrow by commutativity.
+zA
+A is T -equivariant and birational. Thus by the push-pull
+By Theorem 5.3 the map π : XNC
+Ñ XNC
+formula and the commutativity of the left part of the diagram, we have
+żT
+żT
+Fα pxr ; tn q “ z Fα pxr ; tn q,
+A
+XNC
+
+A
+XNC
+
+where the Fα pxr ; tn q on the right is pulled back from HT‚ pQFln q. By [6, Theorem 12.12] this is the
+indicator function for whether zA corresponds to α under the bijection QGrassr,n Ñ Compr,n . □
+We conclude by considering the degree operations of other cohomology classes. Recall that
+f P Zrt1 , . . . , tn s is Graham-positive if f P Nrt2 ´ t1 , . . . , tn ´ tn´1 s.2 The T -equivariant homology
+class of every T -invariant subvariety Z Ď Grpr; nq can be written as
+ÿ
+rZs “
+aη ptn qrX η s
+with
+aη ptn q “ xrZs, sη pxr ; tn qyTGrpr;nq ,
+ηPPartr,n
+
+where sη pxr ; tn q is the double Schur polynomial. Graham showed [16] that for any Z, the aη ptn q
+above are Graham-positive. For Z “ Xµλ , the coefficients are the Littlewood–Richardson coefficients cλµ,η ptn q for double Schur polynomial multiplication [20], which recover the usual Littlewood–
+Richardson after passing to singular cohomology.
+2Each t
+
+´1
+i`1 ´ ti corresponds to a positive root χi {χi`1 under our convention that ti corresponds to χi .
+
+30
+
+NANTEL BERGERON, LUCAS GAGNON, HUNTER SPINK, AND VASU TEWARI
+
+Theorem 8.9. For any T -orbit closure Z Ă QGrpr; nq, the Graham-positive quantity
+żT
+sλ pxr ; tn q “ xrZs, sλ pxr ; tn qyTGrpr;nq P Nrt2 ´ t1 , . . . , tn ´ tn´1 s
+Z
+
+can be computed with a manifestly positive combinatorial rule.
+Proof. First, we claim that Z “ T ¨ x Ă QGrpr; nq is the birational projection of a T -orbit closure
+Ů A
+(Theorem 5.1) and the projection π restricts to
+Z 1 “ T ¨ y Ă QFln . Indeed, QGrpr; nq “ X̊NC
+zA
+A
+A we can take the preimage y P X̊ zA .
+an isomorphism X̊NC – X̊NC (Theorem 5.3), so if x P X̊NC
+NC
+şT
+şT
+The push-pull formula shows Z sλ pxr ; tn q “ Z 1 sλ pxr ; tn q, and combinatorially positive rules for
+degrees of sλ pxr ; tn q on T -orbit closures in QFln were computed in [6, Corollary 12.14].
+□
+λ , this gives that
+Applied to each XNC
+żT
+λ
+sη pxr ; tn q “ xrXNC
+s, sλ pxr ; tn qyTGrpr;nq “ rFα pxr ; tn qssη pxr ; tn q
+λ
+XNC
+
+is Graham-positive, a special case of the double Schubert into double forest Graham-positivity [5].
+9. F ORESTS , M OMENT POLYTOPES , AND EQUIDIMENSIONALITY
+λ and prove that the moment complex
+We now describe the moment polytope of each cell XNC
+of QGrpr; nq is equidimensional. We do so by drawing on similar results for QFln from [5, 6].
+
+9.1. Forests and noncrossing partitions. We first recall some essential combinatorics about indexed forests. A plane binary tree is a tree T in which each node is either a leaf or an internal node
+v P INpT q with one left child vL and one right child vR . The size of T is |T | :“ | INpT q|. There is a
+unique tree ˚ of size 0, consisting of a single node.
+A plane binary indexed forest is a sequence F “ pT1 , T2 , . . . q of plane binary trees such that all but
+finitely many Ti are equal to ˚. Let Forest denote the set of all such forests, and let Forestn denote
+the subset consisting of those indexed forests whose nontrivial components have leaf labels in rns.
+There is a bijection
+ForToNC : Forestn ÝÑ NCn
+constructed as follows: for each internal node v P INpF q that is a right child, delete the edge
+joining v to its left child vL . Consider the resulting connected components. To each one assign a
+cycle written in decreasing order on its set of leaf labels.
+For z P QGrassr,n , the associated tree T P Zigzagr,n is called a zigzag tree. These trees are in
+bijection with compositions in a manner compatible with the bijection zA ÞÑ αA , see Figure 12. We
+say that T P Zigzagr,n is maximal if |T | “ n ´ 1.
+
+THE QUASISYMMETRIC GRASSMANNIAN
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+31
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+10
+
+F IGURE 12. Mapping p2, 1, 4q P Comp4,10 to a zigzag tree in Zigzag4,10 and then to
+the associated permutation in QGrass4,10 .
+λ in terms of hyperplanes.
+9.2. Moment Polytopes. We describe the moment polytopes of the XNC
+` ˘
+λA
+Theorem 9.1. Let A “ pak , . . . , a1 |r b1 , . . . , bk q P rns
+r . The moment polytope of XNC is the subset
+of r0, 1sn X tz1 ` ¨ ¨ ¨ ` zn “ ru cut out by:
+
+(i) the equalities zi “ 1 for 1 ď i ă ak and zi “ 0 for bk ă i ď n;
+(ii) zai ` zai `1 ` ¨ ¨ ¨ ` zbi ď r ` 1 ´ ai for 1 ď i ď k;
+(iii) zq ` zq`1 ` ¨ ¨ ¨ ` zbi´1 ě r ´ q for q P rrs with ai ď q ă ai´1 ,
+where we set a0 “ r ` 1 and b0 “ r by convention.
+Proof. This follows by specializing [6, Theorem 7.6] which gives an explicit description of the mou Ă Fl for u P NC as a polypositroid [22]. More precisely we set the regular
+ment polytope of XNC
+n
+n
+dominant weight in the description in [6, Theorem 7.6] to the vector p1r , 0n´r q.
+□
+We can also give an explicit vertex description for the moment polytopes once we set up some
+more notation. It will be convenient for us to use compositions as our indexing objects. Let α P
+Compr,n . As in Theorem 3.8, parse α uniquely as d1 1e1 ´1 pd2 ` 1q1e2 ´1 ¨ ¨ ¨ pdk ` 1q1ek ´1 subject to
+the constraints di , ei ě 1 for 1 ď i ď k. This datum determines a decomposition of the interval
+tr ´ ℓpαq ` 1, . . . , r ´ ℓpαq ` 1 ` |α|u into disjoint intervals from left to right:
+(9.1)
+
+tr ´ ℓpαq ` 1, . . . , r ´ ℓpαq ` 1 ` |α|u “ pE1 \ ¨ ¨ ¨ \ Ek q \ pDk \ ¨ ¨ ¨ \ D1 q ,
+
+where |Ei | “ ei , |Di | “ di for 1 ď i ď k, so that
+tr ´ ℓpαq ` 1, . . . , ru “ E1 \ ¨ ¨ ¨ Ek and tr ` 1, . . . , r ` 1 ´ ℓpαq ` |α|u “ Dk \ ¨ ¨ ¨ \ D1 .
+` ˘
+Definition 9.2. Fix α P Compr,n . Let A “ pam , . . . , a1 |r b1 , . . . , bm q P rns
+r where r ´ ℓpαq ` 1 ď am
+and bm ď r ´ ℓpαq ` 1 ` |α|. Then the data E1 , . . . , Ek , Dk , . . . , D1 as in (9.1) determines unique
+indices pi1 , j1 q, pi2 , j2 q, . . . , pim , jm q such that ap P Eip and bp P Djp for all 1 ď p ď m. We say that
+A is α-admissible if:
+j1 ď i1 ă j2 ď i2 ă ¨ ¨ ¨ ă jm ď im .
+
+32
+
+NANTEL BERGERON, LUCAS GAGNON, HUNTER SPINK, AND VASU TEWARI
+
+Figure 13 gives an example of an α-admissible set A and an α-inadmissible set B for α “
+p2, 1, 4q P Comp4,10 . For B “ p3, 4 |4 5, 6q we have, in terms of the notation in Definition 9.2,
+that pi1 , j1 q “ p1, 2q and pi2 , j2 q “ p2, 2q. Since j1 ą i1 we have B is α-inadmissible.
+A = (3, 4 |4 5, 8)
+1
+
+2
+
+3
+
+4
+
+E1
+
+E2
+
+5
+
+6
+
+7
+
+D2
+
+8
+
+9
+
+10
+
+D1
+
+B = (3, 4 |4 5, 6)
+1
+
+2
+
+3
+
+4
+
+E1
+
+E2
+
+5
+
+6
+D2
+
+7
+
+8
+
+9
+
+D1
+
+10
+1
+
+2
+
+3
+
+4
+
+E1
+
+E2
+
+5
+
+6
+
+7
+
+D2
+
+8
+
+9
+
+10
+
+D1
+
+F IGURE 13. For α “ p2, 1, 4q P Comp4,10 we have α-admissible A and αinadmissible B . The arcs connect i{j-indices determined as in Definition 9.2.
+λα
+Theorem 9.3. Let α P Compr,n . The T -fixed points of XNC
+are
+ˇ
+!
+)
+`
+˘
+rns ˇ
+λα T
+pXNC q “ A P r ˇ A is α-admissible .
+
+Proof. We outline the argument, referring the reader to [5] for any errant terminology about indexed forests. Let Z P Zigzagr,n correspond to α. For v P INpZq, let τv be the transposition pi jq
+where i is the rightmost leaf descended from vL and j is the rightmost leaf descended from v. Order the internal nodes v1 , v2 , . . . P INpF q in the unique order from root to terminal node. Then [6,
+` ˘
+λα
+is given by the following subset of rns
+Theorem 6.3] implies that the set of T -fixed points of XNC
+r :
+(9.2)
+
+tτvi1 τvi2 ¨ ¨ ¨ τvik ¨ rrs | 1 ď i1 ă i2 ă ¨ ¨ ¨ ă ik ď n ´ 1u.
+
+Concretely, the products τvi1 τvi2 ¨ ¨ ¨ τvik correspond to deleting all left edges emanating from internal nodes in INpZqztvi1 , . . . , vik u, and then multiplying the backward cycles on the leaves for each
+connected component. This perspective, in conjunction with Lemma 3.14, implies the claim.
+□
+`r4s˘
+For α “ p2, 1q P Comp2,4 we have five T -fixed points corresponding to the elements in 2
+except t3, 4u which is α-inadmissible. These in turn give the vertices of the blue pyramid in Figure 1. Figure 14 show how these admissible sets arise following the left edge deletion procedure
+described in the preceding proof.
+Corollary 9.4. QGrpr; nq is an equidimensional complex of pn ´ 1q-dimensional toric varieties.
+` ˘
+Proof. Let TA and TB be zigzag trees associated to sets A, B P rns
+r . By (9.2), if TB is obtained by
+B qT Ă
+iteratively deleting the root vertex of TA (i.e. it is a lower ideal of the tree TA ), then pXNC
+A qT , which then implies X B Ă X A by Theorem 6.9. As dim X A “ |T |, equidimensionality
+pXNC
+A
+NC
+NC
+NC
+follows because we can extend any zigzag tree to a maximal one, possibly in many ways. If B
+
+THE QUASISYMMETRIC GRASSMANNIAN
+(3,4)
+
+(3,4)
+
+(3,4)
+
+(1,3)
+
+(1,3)
+(2,3)
+
+1
+
+2
+
+3
+
+(4,3,2,1)
+
+(1,3)
+
+(2,3)
+
+4
+
+1
+
+2
+
+3
+
+(4,3,2)
+
+33
+
+(2,3)
+
+4
+
+1
+
+2
+
+3
+
+4
+
+1
+
+(4,3,1)
+
+2
+
+3
+
+(3,2)
+
+4
+
+1
+
+2
+
+3
+
+(3,1)
+
+4
+
+1
+
+2
+
+3
+
+4
+
+id
+
+F IGURE 14. Z P Zigzag2,4 for α “ p2, 1q and the subproducts giving distinct T -fixed points
+corresponds to the composition α “ pα1 , . . . , αk q then one uniform choice is to have A correspond
+to pa, 1b , α1 , . . . , αk q with b “ r ´ k ´ 1 and a “ n ´ 1 ´ b ´ |α|.
+□
+R EFERENCES
+[1] M. Albenque and P. Nadeau. Growth function for a class of monoids. In 21st International Conference on Formal
+Power Series and Algebraic Combinatorics (FPSAC 2009), Discrete Math. Theor. Comput. Sci. Proc., AK, pages 25–38.
+Assoc. Discrete Math. Theor. Comput. Sci., Nancy, 2009. 20
+[2] D. Anderson and W. Fulton. Equivariant cohomology in algebraic geometry, volume 210 of Cambridge Studies in Advanced Mathematics. Cambridge University Press, Cambridge, 2024. 5
+[3] J.-C. Aval, F. Bergeron, and N. Bergeron. Ideals of quasi-symmetric functions and super-covariant polynomials for
+Sn . Adv. Math., 181(2):353–367, 2004. 2
+[4] A. Baker and B. Richter. Quasisymmetric functions from a topological point of view. Math. Scand., 103(2):208–242,
+2008. 2
+[5] N. Bergeron, L. Gagnon, P. Nadeau, H. Spink, and V. Tewari. Equivariant quasisymmetry and noncrossing partitions, 2025, 2504.15234. 2, 8, 9, 10, 15, 23, 24, 27, 30, 32
+[6] N. Bergeron, L. Gagnon, P. Nadeau, H. Spink, and V. Tewari. The quasisymmetric flag variety: a toric complex on
+noncrossing partitions, 2025, 2508.12171. 2, 16, 23, 25, 26, 29, 30, 31, 32
+[7] N. Bergeron, L. Gagnon, H. Spink, and V. Tewari. The Coxeter Flag Variety, 2026, 2601.23111. 22
+[8] N. Bergeron and F. Sottile. Schubert polynomials, the Bruhat order, and the geometry of flag manifolds. Duke Math.
+J., 95(2):373–423, 1998. 23
+[9] A. Björner and F. Brenti. Combinatorics of Coxeter groups, volume 231 of Graduate Texts in Mathematics. Springer, New
+York, 2005. 5
+[10] A. Borel. Sur la cohomologie des espaces fibrés principaux et des espaces homogènes de groupes de Lie compacts.
+Ann. of Math. (2), 57:115–207, 1953. 2
+[11] A. S. Buch, P.-E. Chaput, and N. Perrin. Equivariant rigidity of Richardson varieties. Pacific J. Math., 338(2):209–229,
+2025. 23
+[12] W. Fulton. Intersection theory, volume 2 of Ergebnisse der Mathematik und ihrer Grenzgebiete. 3. Folge. A Series of Modern
+Surveys in Mathematics [Results in Mathematics and Related Areas. 3rd Series. A Series of Modern Surveys in Mathematics]. Springer-Verlag, Berlin, second edition, 1998. 28
+[13] I.M. Gelfand, M.I. Graev, and A. Postnikov. Combinatorics of hypergeometric functions associated with positive
+roots. In The Arnold-Gelfand mathematical seminars, pages 205–221. Birkhäuser Boston, Boston, MA, 1997. 20
+[14] I. M. Gessel. Multipartite P -partitions and inner products of skew Schur functions. In Combinatorics and algebra
+(Boulder, Colo., 1983), volume 34 of Contemp. Math., pages 289–317. Amer. Math. Soc., Providence, RI, 1984. 2, 4
+[15] M. Goresky, R. Kottwitz, and R. MacPherson. Equivariant cohomology, Koszul duality, and the localization theorem. Invent. Math., 131(1):25–83, 1998. 2, 25
+
+34
+
+NANTEL BERGERON, LUCAS GAGNON, HUNTER SPINK, AND VASU TEWARI
+
+[16] W. Graham. Positivity in equivariant Schubert calculus. Duke Math. J., 109(3):599–614, 2001. 28, 29
+[17] M. Harada, A. Henriques, and T. S. Holm. Computation of generalized equivariant cohomologies of Kac-Moody
+flag varieties. Adv. Math., 197(1):198–221, 2005. 25
+[18] A. Knutson, T. Lam, and D. E. Speyer. Positroid varieties: juggling and geometry. Compos. Math., 149(10):1710–1752,
+2013. 3, 19, 21
+[19] A. Knutson, T. Lam, and D. E. Speyer. Projections of Richardson varieties. J. Reine Angew. Math., 687:133–157, 2014.
+21
+[20] A. Knutson and T. Tao. Puzzles and (equivariant) cohomology of Grassmannians. Duke Math. J., 119(2):221–260,
+2003. 29
+[21] G. Kreweras. Sur les partitions non croisées d’un cycle. Discrete Math., 1(4):333–350, 1972. 7
+[22] T. Lam and A. Postnikov. Polypositroids. Forum Math. Sigma, 12:Paper No. e42, 67 pp, 2024. 31
+[23] I. G. Macdonald. Symmetric functions and Hall polynomials. Oxford Mathematical Monographs. The Clarendon
+Press, Oxford University Press, New York, second edition, 1995. With contributions by A. Zelevinsky, Oxford
+Science Publications. 5, 6
+[24] P. Nadeau, H. Spink, and V. Tewari. The geometry of quasisymmetric coinvariants, 2024, 2410.12643. 4, 21, 22
+[25] P. Nadeau, H. Spink, and V. Tewari. Quasisymmetric divided differences, 2024, 2406.01510. 9, 23, 28
+[26] J. Oesinghaus. Quasisymmetric functions and the Chow ring of the stack of expanded pairs. Res. Math. Sci., 6(1):Paper No. 5, 18 pp, 2019. 2
+[27] O. Pechenik and M. Satriano. Quasisymmetric Schubert calculus, 2023, 2205.12415. 2
+[28] O. Pechenik and M. Satriano. James reduced product schemes and double quasisymmetric functions. Adv. Math.,
+449:Paper No. 109737, 28, 2024. 2
+[29] A. Postnikov. Total positivity, grassmannians, and networks, 2006, math/0609764. 3, 19, 21
+[30] A. Postnikov. Permutohedra, associahedra, and beyond. Int. Math. Res. Not. IMRN, (6):1026–1106, 2009. 20
+[31] A. Postnikov. Positive Grassmannian and polyhedral subdivisions. In Proceedings of the International Congress of
+Mathematicians—Rio de Janeiro 2018. Vol. IV. Invited lectures, pages 3181–3211. World Sci. Publ., Hackensack, NJ,
+2018. 19
+[32] R. P. Stanley. Ordered structures and partitions. Memoirs of the American Mathematical Society, No. 119. American
+Mathematical Society, Providence, R.I., 1972. 2
+[33] R. P. Stanley. Enumerative combinatorics. Volume 1, volume 49 of Cambridge Studies in Advanced Mathematics. Cambridge University Press, Cambridge, second edition, 2012. 5
+[34] R. P. Stanley. Enumerative combinatorics. Vol. 2, volume 208 of Cambridge Studies in Advanced Mathematics. Cambridge
+University Press, Cambridge, [2024] ©2024. Second edition [of 1676282], With an appendix by Sergey Fomin. 5, 6
+[35] L. K. Williams. The positive Grassmannian, the amplituhedron, and cluster algebras. In ICM—International Congress of Mathematicians. Vol. 6. Sections 12–14, pages 4710–4737. EMS Press, Berlin, [2023] ©2023. 19
+
+THE QUASISYMMETRIC GRASSMANNIAN
+
+35
+
+D EPT. OF M ATH . AND S TAT., Y ORK U NIVERSITY, T ORONTO , ON M3J 1P3, C ANADA
+Email address: bergeron@yorku.ca
+D EPARTMENT OF M ATHEMATICS , U NIVERSITY OF S OUTHERN C ALIFORNIA , L OS A NGELES , CA 90089, USA
+Email address: lgagnon@usc.edu
+D EPARTMENT OF M ATHEMATICS , U NIVERSITY OF T ORONTO , T ORONTO , ON M5S 2E4, C ANADA
+Email address: hunter.spink@utoronto.ca
+D EPARTMENT OF M ATHEMATICAL AND C OMPUTATIONAL S CIENCES , U NIVERSITY OF T ORONTO M ISSISSAUGA ,
+M ISSISSAUGA , ON L5L 1C6, C ANADA
+Email address: vasu.tewari@utoronto.ca
+
+

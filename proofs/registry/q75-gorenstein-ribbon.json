@@ -1,0 +1,21 @@
+{
+ "conjecture": "Q75: Hilbert function of the Gorenstein quotient G_s = QSym_Q / Ann(R_s), Ann(R_s) = {f : <fg,R_s> = 0 for all g} (Macaulay inverse system of the ribbon R_s in NSym). r_i = rank of (u,v) -> [F_s] F_u F_v on QSym_i x QSym_{d-i}. Source: Gonzales-Le-Lowen 2609.30257 cap product on toric-Richardson X_s (meeting point graded sketched). Odd alternating L=2k-1: Hilb = [floor(k/2)+1]_{q^2} [2 ceil(k/2)+1]_q, i.e. r_i = min(floor(i/2), floor((d-i)/2)) + 1.",
+ "status": "open",
+ "date_opened": "2026-11-12",
+ "date_closed": null,
+ "owner_gate": {"date": "2026-11-12", "verdict": "NOT FOUND (QSym side)", "nearest": "2604.24903 (BGST QGr, no Poincare duality; cite), 2009.13002 (BMMN complete homogeneous dual generators, polynomial ring, adjacent)", "open_risk": "Sym side: Gorenstein quotient of Sym with dual generator ribbon Schur r_(2^k) under Hall pairing not yet gated", "log": "proofs/wake291/gs-owner-gate-and-controls.md"},
+ "tree": {
+  "id": "Q75-root",
+  "approach": "Wake 291 scoping (proofs/wake291/hjv-scoping.md). Target PROVE 292: P1a odd alternating L.",
+  "trust": "computed",
+  "file": "proofs/wake291/hjv-scoping.md",
+  "sources": ["2609.30257"],
+  "children": [
+   {"id": "Q75-P1a-odd", "approach": "Odd alternating L=2k-1 formula; matches L=1..13 (L=13 blind) and L<=20 with fast engine (rank mod 2 primes = lower bound; agreed with brute force on 6042 entries L<=6).", "trust": "computed", "file": "proofs/wake291/gs-owner-gate-and-controls.md", "children": []},
+   {"id": "Q75-P1a-even", "approach": "Fitted even-L formula (hjv-scoping.md); blind L=14 [1,1,1,2,2,3,3,4,4,3,3,2,2,1,1,1] matched, L=15..20 predicted+matched.", "trust": "computed", "file": "proofs/wake291/gs-owner-gate-and-controls.md", "children": []},
+   {"id": "Q75-P1b", "approach": "r_2 = 1 iff s constant or alternating of even length; 0 violations all strings L<=14.", "trust": "computed", "file": "proofs/wake291/gs-owner-gate-and-controls.md", "children": []},
+   {"id": "Q75-Sym-shadow", "approach": "For alternating s, Hilb(Sym/Ann(r_s), Hall pairing) = Hilb(G_s) for L<=11 and = formula for L<=16; differs for non-alternating (0100110: QSym 1,1,2,4,8 vs Sym 1,1,2,3,5). Suggests Sym ->> G_s for alternating s.", "trust": "computed", "file": "proofs/wake291/gs-owner-gate-and-controls.md", "children": []},
+   {"id": "Q75-controls", "approach": "Negative controls break P1a for L>=4: S^alpha, Lambda^alpha (Fibonacci-type), Psi^alpha (1,0,1,..), perturbed R_s, random (generic max). Max-rank/Lefschetz guess false for 110/255 strings; Poincare duality only for constant s.", "trust": "computed", "file": "proofs/wake291/gs-owner-gate-and-controls.md", "children": []}
+  ]
+ }
+}
