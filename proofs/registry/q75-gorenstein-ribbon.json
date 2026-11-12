@@ -63,7 +63,7 @@
    },
    {
     "id": "Q75-P1b",
-    "approach": "r_2 = 1 iff s constant or even alternating (d>=4). PROVE 293: PROVED. Cut Lemma (D_m=M_(m)^perp on ribbons = local window rule r w u -> (-1)^{#u w} eps, via change of dual basis {r,u}<->{r,eps}); M_11^perp = (D_1^2-D_2)/2 = corner pairs + ruu cuts; top-#u and top-#r graded components give disjoint supports (Separation Lemma) => rank 2 whenever M_2^perp R_s != 0, except hooks and r u^b r^a u (done by hand). Bonus: M_2^perp R_s = 0 iff s even alternating. Computed L<=14 all checks. Same-session; cold read due. [sibling question, not a premise of the root]",
+    "approach": "r_2 = 1 iff s constant or even alternating (d>=4). PROVE 293: PROVED. Cut Lemma (D_m=M_(m)^perp on ribbons = local window rule r w u -> (-1)^{#u w} eps, via change of dual basis {r,u}<->{r,eps}); M_11^perp = (D_1^2-D_2)/2 = corner pairs + ruu cuts; top-#u and top-#r graded components give disjoint supports (Separation Lemma) => rank 2 whenever M_2^perp R_s != 0, except hooks and r u^b r^a u (done by hand). Bonus: M_2^perp R_s = 0 iff s even alternating. Computed L<=14 all checks. Cold read PASS Dream 292 (0 MUST, 3 NIT). [sibling question, not a premise of the root]",
     "trust": "proved",
     "file": "proofs/2026-11-12-q75-p1b-r2-classification.md",
     "children": [
@@ -92,7 +92,26 @@
       "children": []
      }
     ],
-    "role": "attempt"
+    "role": "attempt",
+    "cold_read": {
+     "date": "2026-11-12",
+     "session": "Dream 292",
+     "verdict": "PASS, 0 MUST, 3 NIT",
+     "checked_by_hand": [
+      "Cut Lemma dual-basis change r*_{ru}=r*_{re}+e*_{re}, u*_{ru}=e*_{re}, (r*-u*)->r*; block-shortening = D_m on S^beta incl. front/end padding",
+      "Lemma B new-corner accounting (rru via y=u, ruu via y=r; validity at ends)",
+      "#u/#r top components, exclusions I_A,I_B,I'_A,I'_B, injectivity of w(a') incl. a'_i=0",
+      "Separation Lemma both projections",
+      "Sec 3 four alternating cases (X_1=Y_m word for (2,2))",
+      "Hooks a,b>=2 need a+b>=5 for X!=Y",
+      "Family T: #u of W1,W2,W3 = b+1,b-1,b"
+     ],
+     "nits": [
+      "'R_empty = 1' is a slip: the empty {r,u}-word is the 1-cell ribbon S_1; only the fully collapsed padded word evaluates to 1 (engine uses the right convention; Cut Lemma at L=1 needs it)",
+      "Sec 4 'B has nonnegative coefficients': say why (B=C+sum Y, each Ev(..eps..) a 0/1 sum of ribbons)",
+      "Owner gate for the Cut Lemma not run: sharp phrase = NSym/noncommutative Murnaghan-Nakayama for skewing by M_(m) on ribbons (Tewari's MN rule for noncommutative Schur functions is the nearest suspect; ID unverified)"
+     ]
+    }
    },
    {
     "id": "Q75-Sym-shadow",

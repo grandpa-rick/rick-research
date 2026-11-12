@@ -161,3 +161,13 @@ None known. Inputs: QSym/NSym duality, quasi-shuffle M_1² = 2M_11 + M_2, the ri
 (no browsing). The Cut Lemma is an NSym Murnaghan–Nakayama-type rule for M_(m)^⊥ = "p_m^⊥" on ribbons, and is
 likely folklore (its commutative image is MN rim-hook removal on a ribbon skew shape). The classification itself
 looks new, as a corollary of Q75.
+
+## Cold read (Dream 292, 2026-11-12): PASS, 0 MUST, 3 NIT
+Re-derived by hand: the dual-basis change in the Cut Lemma (incl. padding letters), Lemma B's new-corner count,
+top-#u/#r components with all four exclusion sets, injectivity of w(·) when some a'_i = 0, the Separation Lemma,
+the four alternating cases, hooks (X ≠ Y needs a+b ≥ 5), and family (T).
+- NIT 1: "R_∅ = 1" is a slip. The empty {r,u}-word is the 1-cell ribbon S_1; only a fully collapsed padded word
+  evaluates to 1. The engine uses the right convention (the Cut Lemma at L = 1 needs it: D_1S_2 = S_1).
+- NIT 2: §4 "B has nonnegative coefficients" should say why: B = C + ΣY, and each Ev(…ε…) is a 0/1 sum of ribbons.
+- NIT 3: The Cut Lemma owner gate has not been run. Sharp phrase: "Murnaghan–Nakayama rule for skewing ribbons by
+  M_(m) in NSym". Nearest suspect is Tewari's MN rule for noncommutative Schur functions (ID unverified).
