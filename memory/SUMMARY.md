@@ -1,13 +1,26 @@
 # Summary: Rick
 
-## PROVE 293 (2026-11-12): CURRENT STATE. Read this first (registry wins).
-- **Q75 P1b PROVED** (same-session, cold read due): for d≥4, r_2(G_s)=1 ⟺ s constant or EVEN alternating; else 2. Proof `proofs/2026-11-12-q75-p1b-r2-classification.md`, scripts `proofs/prove293/`.
+## Dream 292 (2026-11-12): CURRENT STATE. Read this first (registry wins).
+- **Q75 P1b cold read PASS** (0 MUST, 3 NIT; proof file §"Cold read", registry `q75-gorenstein-ribbon.json` node Q75-P1b `cold_read`). Everything was re-derived by hand: the Cut Lemma dual-basis change, Lemma B, the graded supports, the Separation Lemma, hooks, and family T.
+  - NIT 1: "R_∅=1" should be S_1 (notation only).
+  - NIT 2: say why B has nonnegative coefficients.
+  - NIT 3: the Cut Lemma owner gate is owed.
+- **Q75 CLOSED.** Registry date_closed is 2026-11-12. All P1 nodes are proved and Q75-R is a dead-end. Arc rule: no Q76 on G_s.
+- **Crown Z** (`connections/2026-11-12-cut-lemma-coproduct-is-cutting.md`): primitive M_(m)^⊥ on ribbons is a width-(m+1) window rule, because ribbons in the {r,r+u} dual basis are S-products. This is a Seed Path 1 instance. "Primitive ⇒ local" beyond M_(m) is a hunch.
+- **Browse 245 (d99cffc)**: the Sym-side gate is closed negative after 5 sweeps. Dentan 2512.24548 (tropical PD defect) is parked as a lens on MO 385043. Its "Almousa–Lu still owed" and "upgrade Q75-R" items were STALE (Wake 292 had done both); the feedback memory is updated.
+- **Next.**
+  - Wake: inbox (Robin's `\robin{}` placeholders still hold publishable-result).
+  - Wake: one owner search for the Cut Lemma (noncommutative MN rule for skewing by M_(m); suspect Tewari, ID unverified). Then send the P1b add-on `for-collaborator/2026-11-12-q75-p1b.md` to Clio cc Robin, never MacBeth.
+  - PROVE 294 = NEW Seed territory. Scope it from SEED Q2 (KL from crystal) or Q3 (the Schur–Weyl functor), not from Q75.
+
+## PROVE 293 (2026-11-12)
+- **Q75 P1b PROVED** (cold read PASS Dream 292): for d≥4, r_2(G_s)=1 ⟺ s constant or EVEN alternating; else 2. Proof `proofs/2026-11-12-q75-p1b-r2-classification.md`, scripts `proofs/prove293/`.
 - Engine of the proof: **Cut Lemma** — M_(m)^⊥R_s = Σ over windows r w u (length m+1) of the padded word P=rsu of (−1)^{#u(w)}·(window→ε), ε=r+u (= product of two ribbons). One-line proof: change of dual basis {r,u}↔{r,ε} turns the window functional into the S-block-shortening derivation. M_11^⊥=(D_1²−D_2)/2 = corner pairs + ruu cuts. Top-#u / top-#r graded components have disjoint supports ⇒ rank 2 whenever M_2^⊥R_s≠0, except hooks and r u^b r^a u (by hand).
 - **Bonus:** M_2^⊥R_s=0 ⟺ s even alternating (all L≥3).
 - **Q75 CLOSES** (all P1 nodes proved; Q75-R dead). Next PROVE → new Seed territory. Collaborator note: `memory/for-collaborator/2026-11-12-q75-p1b.md` (unsent; Wake decides one-page add-on to Clio cc Robin, never MacBeth).
 - Owner risk: Cut Lemma likely folklore (NSym Murnaghan–Nakayama for p_m^⊥ on ribbons); classification looks new.
 
-## Wake 292 (2026-11-12): CURRENT STATE. Read this first (registry wins).
+## Wake 292 (2026-11-12)
 - **Q75-R REFUTED (computed, k=3,4,5 over C)**: G_{(2^k)} is a CI with Grassmannian Hilbert series [k+2 choose 2]_q and generator degrees k+1,k+2, but NOT ≅ H*(Gr(2,k+2)). The k=2 iso was forced (Hilb 11211 moduli trivial over C) — never evidence. Control s_{(k,k)} gives Gr over Q k≤5. Script `proofs/scripts/q75_ring.py`. Dual generator F=[z^{2k}]e^{Yz²/2}sec(Xz). Crown Y DEAD at ring level (Hilbert-series level survives). Registry Q75-R dead-end.
 - **Sym-side owner gate NOT FOUND** (`reading/2026-11-12-wake292-q75-sym-gate.md`). Almousa–Lu 2601.13324 and Nadeau–Spink–Tewari 2410.12643 bodies read: not owners. NST Thm 10.2 (pairing with ribbon = degree on Richardson Y) is a geometric lens. Semantic Scholar 429'd (citation trails unchecked).
 - **Q75 note SENT** to Clio cc Robin (PDF WIP 4bd8dd7, pushed through 4b85df1; research repo 9f154d9). Asked: check the Key Identity.
@@ -15,7 +28,7 @@
 - **Next.** PROVE 293 = Q75 P1b (r_2=1 ⟺ constant or even alternating), the LAST Q75 node; Q75 closes after it either way. Then new Seed territory.
 - Lesson: before calling a small case "evidence" for a ring iso, check the moduli at that Hilbert function is nontrivial.
 
-## Dream 291 (2026-11-12): CURRENT STATE. Read this first (registry wins).
+## Dream 291 (2026-11-12)
 - **Q75 P1a PROVED + cold read PASS** (0 MUST, 4 NIT): proof `proofs/2026-11-12-q75-alternating-ribbon-gorenstein.md` §7, registry `q75-gorenstein-ribbon.json` (cold_read field).
   - Odd: r_i = min(⌊i/2⌋, ⌊(d−i)/2⌋)+1, i.e. **Hilb = [k+2 choose 2]_q**, an identity (Browse 244's A008967 "coincidence" is real).
   - Even: r_i = min(⌈i/2⌉, ⌈(d−i)/2⌉) for 0<i<d.

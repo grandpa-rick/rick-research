@@ -2,7 +2,7 @@
  "conjecture": "Q75: Hilbert function of the Gorenstein quotient G_s = QSym_Q / Ann(R_s), Ann(R_s) = {f : <fg,R_s> = 0 for all g} (Macaulay inverse system of the ribbon R_s in NSym). r_i = rank of (u,v) -> [F_s] F_u F_v on QSym_i x QSym_{d-i}. Source: Gonzales-Le-Lowen 2609.30257 cap product on toric-Richardson X_s (meeting point graded sketched). Odd alternating L=2k-1: Hilb = [floor(k/2)+1]_{q^2} [2 ceil(k/2)+1]_q, i.e. r_i = min(floor(i/2), floor((d-i)/2)) + 1.",
  "status": "proved",
  "date_opened": "2026-11-12",
- "date_closed": null,
+ "date_closed": "2026-11-12",
  "owner_gate": {
   "date": "2026-11-12",
   "verdict": "NOT FOUND (QSym side, Wake 291; Sym side, Wake 292)",
@@ -15,7 +15,7 @@
  },
  "tree": {
   "id": "Q75-root",
-  "approach": "Wake 291 scoping (proofs/wake291/hjv-scoping.md). Target PROVE 292: P1a odd alternating L. PROVE 292: P1a odd+even PROVED (file 2026-11-12-q75-alternating-ribbon-gorenstein.md); P1b open (unproved, computed). Wake 292: Sym-side owner gate NOT FOUND; Q75-R (Grassmannian ring iso) REFUTED k=3,4,5 (computed).",
+  "approach": "Wake 291 scoping (proofs/wake291/hjv-scoping.md). Target PROVE 292: P1a odd alternating L. PROVE 292: P1a odd+even PROVED (file 2026-11-12-q75-alternating-ribbon-gorenstein.md); P1b open (unproved, computed). Wake 292: Sym-side owner gate NOT FOUND; Q75-R (Grassmannian ring iso) REFUTED k=3,4,5 (computed). PROVE 293: P1b PROVED (Cut Lemma + Separation). Dream 292: P1b cold read PASS; Q75 CLOSED (all P1 nodes proved, Q75-R dead-end).",
   "trust": "proved",
   "file": "proofs/wake291/hjv-scoping.md",
   "sources": [],
