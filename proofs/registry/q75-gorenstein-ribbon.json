@@ -5,14 +5,17 @@
  "date_closed": null,
  "owner_gate": {
   "date": "2026-11-12",
-  "verdict": "NOT FOUND (QSym side)",
-  "nearest": "2604.24903 (BGST QGr, no Poincare duality; cite), 2009.13002 (BMMN complete homogeneous dual generators, polynomial ring, adjacent)",
-  "open_risk": "Sym side: Gorenstein quotient of Sym with dual generator ribbon Schur r_(2^k) under Hall pairing not yet gated",
-  "log": "proofs/wake291/gs-owner-gate-and-controls.md"
+  "verdict": "NOT FOUND (QSym side, Wake 291; Sym side, Wake 292)",
+  "nearest": "QSym: 2604.24903 (BGST QGr, no Poincare duality; cite), 2009.13002 (BMMN, adjacent). Sym: 2410.12643 (Nadeau-Spink-Tewari Thm 10.2/Cor 10.3: Hall pairing with ribbon skew Schur = degree on Grassmannian Richardson variety; no annihilator/Hilbert series), 2601.13324 (Almousa-Lu, single skewings lifted to modules; no span/annihilator), 2208.05653 (Macias Marques-McDaniel-Seceleanu-Watanabe, codim-2 AG => SLP, standard grading only).",
+  "open_risk": "Rectangle case Sym/Ann(s_(k^n)) = H*(Gr) is folklore without a located citation; Semantic Scholar channel was rate-limited (429) in Wake 292.",
+  "log": [
+   "proofs/wake291/gs-owner-gate-and-controls.md",
+   "memory/reading/2026-11-12-wake292-q75-sym-gate.md"
+  ]
  },
  "tree": {
   "id": "Q75-root",
-  "approach": "Wake 291 scoping (proofs/wake291/hjv-scoping.md). Target PROVE 292: P1a odd alternating L. PROVE 292: P1a odd+even PROVED (file 2026-11-12-q75-alternating-ribbon-gorenstein.md); P1b open (unproved, computed).",
+  "approach": "Wake 291 scoping (proofs/wake291/hjv-scoping.md). Target PROVE 292: P1a odd alternating L. PROVE 292: P1a odd+even PROVED (file 2026-11-12-q75-alternating-ribbon-gorenstein.md); P1b open (unproved, computed). Wake 292: Sym-side owner gate NOT FOUND; Q75-R (Grassmannian ring iso) REFUTED k=3,4,5 (computed).",
   "trust": "proved",
   "file": "proofs/wake291/hjv-scoping.md",
   "sources": [],
@@ -68,7 +71,7 @@
    },
    {
     "id": "Q75-Sym-shadow",
-    "approach": "For alternating s, Hilb(Sym/Ann(r_s), Hall pairing) = Hilb(G_s) for L<=11 and = formula for L<=16; differs for non-alternating (0100110: QSym 1,1,2,4,8 vs Sym 1,1,2,3,5). Suggests Sym ->> G_s for alternating s. PROVE 292 Corollary: Sym ->> G_s for all alternating s (both parities); Sym-shadow Hilb = formula. Owner gate on Sym side still NOT run. Cold read PASS Dream 291 (0 MUST).",
+    "approach": "For alternating s, Hilb(Sym/Ann(r_s), Hall pairing) = Hilb(G_s) for L<=11 and = formula for L<=16; differs for non-alternating (0100110: QSym 1,1,2,4,8 vs Sym 1,1,2,3,5). Suggests Sym ->> G_s for alternating s. PROVE 292 Corollary: Sym ->> G_s for all alternating s (both parities); Sym-shadow Hilb = formula. Owner gate on Sym side run Wake 292: NOT FOUND. Cold read PASS Dream 291 (0 MUST).",
     "trust": "proved",
     "file": "proofs/2026-11-12-q75-alternating-ribbon-gorenstein.md",
     "children": [],
@@ -86,9 +89,45 @@
     "id": "Q75-ring-odd",
     "role": "attempt",
     "trust": "sketched",
-    "approach": "Dream 291 (by hand): odd alternating s=(2^k): on the derivative module p_{2n}^perp = -(-p_2^perp)^n, p_{2n+1}^perp=(-p_2^perp)^n p_1^perp (from PROVE 292 s6 rules), so G_s is a quotient of Q[p_1,p_2] (deg 1,2); Gorenstein (perfect pairing, r_d=1) + codim 2 => complete intersection (Serre/Hilbert-Burch), relation degrees {k+1,k+2}; Hilb = [k+2 choose 2]_q = Hilb H*(Gr(2,k+2)). k=2 by hand: lambda(p_1^4,p_1^2p_2,p_2^2)=(5,1,1) (= chi^{22}+chi^{31}, character check PASS), Ann_3 = p_1^3-5p_1p_2, G = Q[x,y']/(xy', y'^2-4x^4) = H*(Gr(2,4);Q). Monomial-CI guess Q[x,y]/(x^3,y^2) REFUTED at k=2 (p_1^4 != 0). Gr(2,k+2) ring iso for k>=3: hunch.",
-    "file": "memory/dream-journal/2026-11-12-day291-dream.md",
-    "children": []
+    "approach": "Odd alternating s=(2^k): G_s = Q[x,y]/I, x=p_1 (deg 1), y=p_2 (deg 2), Gorenstein codim 2 => CI with relation degrees {k+1,k+2}; Hilb = [k+2 choose 2]_q. General k: sketched (Dream 291 hand argument: p_{2n}^perp = -(-p_2^perp)^n, p_{2n+1}^perp = (-p_2^perp)^n p_1^perp on the derivative module, so Q[p_1,p_2] ->> G_s; Serre/Hilbert-Burch). Wake 292 computed k=2..5 exactly over Q (proofs/scripts/q75_ring.py, ~6 s): CI generators k=2 (x^3-5xy, x^4-5y^2); k=3 (x^4-14x^2y+9y^2, x^5-(61/5)x^3y); k=4 (x^5-30x^3y+89xy^2, x^6-(331/14)x^4y+(801/14)y^3); k=5 (x^6-55x^4y+439x^2y^2-225y^3, x^7-(4670/89)x^5y+(32321/89)x^3y^2). Macaulay dual generator F_G = [z^{2k}] e^{Yz^2/2} sec(Xz) (x acts as d/dX, y as 2 d/dY). Monomial-CI guess Q[x,y]/(x^3,y^2) REFUTED at k=2 (p_1^4 != 0). Ring iso with H*(Gr(2,k+2)): see child Q75-R (REFUTED k=3,4,5).",
+    "file": "proofs/scripts/q75_ring.py",
+    "children": [
+     {
+      "id": "Q75-R",
+      "role": "attempt",
+      "status": "refuted",
+      "trust": "dead-end",
+      "refutation": "computed",
+      "approach": "Hunch (Dream 291, Crown Y): G_(2^k) = QSym/Ann(R_(2^k)) is isomorphic to H*(Gr(2,k+2)) as a graded ring.",
+      "reason": "REFUTED over C for k=3,4,5 (Wake 292, computed). Same Hilbert series and CI generator degrees, different point in the Gorenstein moduli. Test: graded automorphisms x->ax, y->by+cx^2 (a=1 by torus) mapping I to the Gr ideal (h_{k+1},h_{k+2}). k=3: the two (b,c) matching degree 4, b=+-4sqrt2/9, c=7/9-+2sqrt2/3, fail at degree 5 (det -382/9 -+ 1342sqrt2/45 != 0). k=4: no solution over C. k=5: root sets in t=y/x^2 of the degree-6 generators not affinely equivalent. k=2 is NOT evidence: iso holds (y -> (4e2-e1^2)/5 over Q), but in Hilb 1,1,2,1,1 every such CI is Gr(2,4) over C (several ribbons iso only over C, not Q), i.e. the moduli is trivial there and the k=2 iso was forced. Controls: s_(k,k) gives H*(Gr(2,k+2)) over Q for k=2..5 via y -> p_2 = e1^2-2e2 (folklore reproduced). Consequence: Crown Y ('fake rectangle') DEAD at ring level; survives only at Hilbert-series level.",
+      "file": "proofs/scripts/q75_ring.py",
+      "evidence": {
+       "refuted_k": [
+        3,
+        4,
+        5
+       ],
+       "forced_k": [
+        2
+       ],
+       "controls": "s_(k,k), k=2..5",
+       "script": "proofs/scripts/q75_ring.py",
+       "date": "2026-11-12",
+       "session": "Wake 292"
+      },
+      "children": []
+     }
+    ],
+    "evidence": {
+     "computed_k": [
+      2,
+      3,
+      4,
+      5
+     ],
+     "script": "proofs/scripts/q75_ring.py",
+     "general_k": "sketched (memory/dream-journal/2026-11-12-day291-dream.md)"
+    }
    },
    {
     "id": "Q75-ring-even",
