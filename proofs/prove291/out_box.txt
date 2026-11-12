@@ -5,3 +5,7 @@ m 4 R1 12 L1 12 proj 8
 m 5 R1 74 L1 74 proj 16
 a 1 895 dec 93 bad 0
 a 2 2685 dec 279 bad 0
+a 3 9777 dec 619 bad 0
+a 4 14299 dec 843 bad 0
+a 5 23273 dec 1329 bad 0
+TOTAL 23273 dec 1329 bad 0

@@ -23,7 +23,7 @@
    {
     "id": "Q74-sufficiency",
     "role": "premise",
-    "approach": "Step B: R_k(X), L_k(Y) => witness at level k. Uses Fact F (Hom(L-hat,X) = {zeta_theta}) and M_k = Ind_{H_{a-k}xH_kxH_kxH_{b-k}}(V^tw). Computed: box.py, m<=5, a+b<=8. box.py (out_box.txt, cumulative): a<=4, a+b<=8, m<=5, dcap 1500: 14299 pairs, 843 dec, 0 mismatches (Dream 290 read).",
+    "approach": "Step B: R_k(X), L_k(Y) => witness at level k. Uses Fact F (Hom(L-hat,X) = {zeta_theta}) and M_k = Ind_{H_{a-k}xH_kxH_kxH_{b-k}}(V^tw). Computed: box.py, m<=5, a+b<=8. box.py (out_box.txt, cumulative): a<=4, a+b<=8, m<=5, dcap 1500: 14299 pairs, 843 dec, 0 mismatches (Dream 290 read). a=5 run FINISHED (out_box.txt, cumulative, complete through a=5): TOTAL 23273 pairs, 1329 dec, 0 mismatches (a<=4: 14299/843/0). Special modules m=5: R1=L1=74 (16 projective, 58 non-projective).",
     "trust": "proved",
     "file": "proofs/2026-11-11-q74-gstar-box-criterion.md",
     "children": []
@@ -63,5 +63,57 @@
    }
   ]
  },
- "cold_read": "Dream 290 (2026-11-11): PASS, 0 MUST. YELLOW spots checked: B.2 (ell holds A-values 1..a-k and B-values 1..k, r holds A-values a-k+1..a and B-values k+1..b, so H_b acts on X by pi_{a-k+1..a-1} and on Y by pi_{k+1..b-1}; Mackey split direct since B-generators never cross position a); A (phi: pi_i->pi_{N-i}, #B in first a -> a-(a-k)=k, labels Z->N-Z, f_{ij1}->f'_{ji1}); C.1 (transitivity is H_a (x)_{H_{a-k}(x)H_{k-1}(x)H_1}; s_1..s_{k-1} = k-cycle j->j+1, k->1, length-additive with w0(S_{k-1}); BA^{k-1} is the longest shuffle so all pi fix it). Also checked: B.3 psi B''-linear factor by factor; B.4 epsilon_i(T z)=chi_{D_i}(T)epsilon_i(z) since top functionals are H-linear; Prop S loop (summand of Res Z is summand of Res_{H_{a-t-1}}X; Krull-Schmidt; Huang). NITs: (1) B.1 'single scalar c' needs End X/J = k (true: J = ker rho, image 1-dim); only c_i != 0 is used anyway. (2) Sec 4 box.py line is stale: out_box.txt counts are CUMULATIVE over a; a<=4 finished: 14299 pairs, 843 dec, 0 bad (a=1: 895/93, a<=2: 2685/279, a<=3: 9777/619). a=5 (b<=3) still running PID 795016 at 17:51. Owner gate (JKLO / Choi-Kim-Nam-Oh) still owed."
+ "cold_read": "Dream 290 (2026-11-11): PASS, 0 MUST. YELLOW spots checked: B.2 (ell holds A-values 1..a-k and B-values 1..k, r holds A-values a-k+1..a and B-values k+1..b, so H_b acts on X by pi_{a-k+1..a-1} and on Y by pi_{k+1..b-1}; Mackey split direct since B-generators never cross position a); A (phi: pi_i->pi_{N-i}, #B in first a -> a-(a-k)=k, labels Z->N-Z, f_{ij1}->f'_{ji1}); C.1 (transitivity is H_a (x)_{H_{a-k}(x)H_{k-1}(x)H_1}; s_1..s_{k-1} = k-cycle j->j+1, k->1, length-additive with w0(S_{k-1}); BA^{k-1} is the longest shuffle so all pi fix it). Also checked: B.3 psi B''-linear factor by factor; B.4 epsilon_i(T z)=chi_{D_i}(T)epsilon_i(z) since top functionals are H-linear; Prop S loop (summand of Res Z is summand of Res_{H_{a-t-1}}X; Krull-Schmidt; Huang). NITs: (1) B.1 'single scalar c' needs End X/J = k (true: J = ker rho, image 1-dim); only c_i != 0 is used anyway. (2) Sec 4 box.py line is stale: out_box.txt counts are CUMULATIVE over a; a<=4 finished: 14299 pairs, 843 dec, 0 bad (a=1: 895/93, a<=2: 2685/279, a<=3: 9777/619). a=5 (b<=3) still running PID 795016 at 17:51. Owner gate (JKLO / Choi-Kim-Nam-Oh) still owed.",
+ "computation_box": {
+  "file": "proofs/prove291/out_box.txt",
+  "scope": "indecomposable interval modules m<=5, a+b<=8, dim cap 1500, End-locality over F_32003",
+  "cumulative_by_a": {
+   "1": [
+    895,
+    93,
+    0
+   ],
+   "2": [
+    2685,
+    279,
+    0
+   ],
+   "3": [
+    9777,
+    619,
+    0
+   ],
+   "4": [
+    14299,
+    843,
+    0
+   ],
+   "5": [
+    23273,
+    1329,
+    0
+   ]
+  },
+  "columns": [
+   "pairs",
+   "decomposable",
+   "mismatches"
+  ],
+  "status": "complete",
+  "trust": "computed"
+ },
+ "owner_gate": {
+  "date": "2026-11-12",
+  "verdict": "NOT FOUND",
+  "nearest": "2310.20571v2 Prop 7.3(2) special case",
+  "detail": "KLO 2310.20571 v2 (20 Jan 2025) Prop 7.3(2): disconnected ribbon in sh(tau_P) => M_P not indecomposable, via P_alpha[x]P_beta = P_{alpha.beta}+P_{alpha(.)beta} (Huang Thm 3.3); = both-factors-projective case of sufficiency. Conj 7.5 still open in v2. Checked: JKLO 2105.14169; CKNO 2003.11225, 2008.06830, 2201.13252; CKO 2308.10456; citers 2609.10911, 2412.08413, 2410.07990, 2405.05867, 2311.10068, 2211.06575."
+ },
+ "writeup": {
+  "date": "2026-11-12",
+  "wip_pdf": "notes/2026-11-12-q74-one-box-criterion.pdf",
+  "wip_commit": "d7f5bf7",
+  "wip_source_commit": "fb9badb",
+  "pages": 4,
+  "sent": false
+ }
 }
