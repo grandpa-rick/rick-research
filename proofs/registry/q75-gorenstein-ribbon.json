@@ -19,7 +19,7 @@
   "children": [
    {
     "id": "Q75-P1a-odd",
-    "approach": "Odd alternating L=2k-1 formula; matches L=1..13 (L=13 blind) and L<=20 with fast engine (rank mod 2 primes = lower bound; agreed with brute force on 6042 entries L<=6). PROVE 292: PROVED all k. Key Identity M_alpha^perp W = (-1)^l z^i (W Theta)^o W (W=Psi^{-1}, Psi/Theta = even/odd parts of sigma(z)) gives upper bound floor(i/2)+1; lower bound via chi then p_even->0 (p_2->y) and an order/bidegree argument. Cold read due.",
+    "approach": "Odd alternating L=2k-1 formula; matches L=1..13 (L=13 blind) and L<=20 with fast engine (rank mod 2 primes = lower bound; agreed with brute force on 6042 entries L<=6). PROVE 292: PROVED all k. Key Identity M_alpha^perp W = (-1)^l z^i (W Theta)^o W (W=Psi^{-1}, Psi/Theta = even/odd parts of sigma(z)) gives upper bound floor(i/2)+1; lower bound via chi then p_even->0 (p_2->y) and an order/bidegree argument. Cold read due. Cold read PASS Dream 291 (0 MUST).",
     "trust": "proved",
     "file": "proofs/2026-11-12-q75-alternating-ribbon-gorenstein.md",
     "children": [
@@ -52,7 +52,7 @@
    },
    {
     "id": "Q75-P1a-even",
-    "approach": "Fitted even-L formula (hjv-scoping.md); blind L=14 [1,1,1,2,2,3,3,4,4,3,3,2,2,1,1,1] matched, L=15..20 predicted+matched. PROVE 292: closed form r_i = min(ceil(i/2), ceil((d-i)/2)) for 0<i<d PROVED (WTheta = sum (-1)^k z^{2k+1} R_(2^k,1); M_alpha^perp kills R when alpha ends in an even part; else (WTheta)^{o+1}-(WTheta)^{o-1}). Matches table L<=22. Identity computed 10915/10915. Cold read due.",
+    "approach": "Fitted even-L formula (hjv-scoping.md); blind L=14 [1,1,1,2,2,3,3,4,4,3,3,2,2,1,1,1] matched, L=15..20 predicted+matched. PROVE 292: closed form r_i = min(ceil(i/2), ceil((d-i)/2)) for 0<i<d PROVED (WTheta = sum (-1)^k z^{2k+1} R_(2^k,1); M_alpha^perp kills R when alpha ends in an even part; else (WTheta)^{o+1}-(WTheta)^{o-1}). Matches table L<=22. Identity computed 10915/10915. Cold read due. Cold read PASS Dream 291 (0 MUST).",
     "trust": "proved",
     "file": "proofs/2026-11-12-q75-alternating-ribbon-gorenstein.md",
     "children": [],
@@ -68,7 +68,7 @@
    },
    {
     "id": "Q75-Sym-shadow",
-    "approach": "For alternating s, Hilb(Sym/Ann(r_s), Hall pairing) = Hilb(G_s) for L<=11 and = formula for L<=16; differs for non-alternating (0100110: QSym 1,1,2,4,8 vs Sym 1,1,2,3,5). Suggests Sym ->> G_s for alternating s. PROVE 292 Corollary: Sym ->> G_s for all alternating s (both parities); Sym-shadow Hilb = formula. Owner gate on Sym side still NOT run.",
+    "approach": "For alternating s, Hilb(Sym/Ann(r_s), Hall pairing) = Hilb(G_s) for L<=11 and = formula for L<=16; differs for non-alternating (0100110: QSym 1,1,2,4,8 vs Sym 1,1,2,3,5). Suggests Sym ->> G_s for alternating s. PROVE 292 Corollary: Sym ->> G_s for all alternating s (both parities); Sym-shadow Hilb = formula. Owner gate on Sym side still NOT run. Cold read PASS Dream 291 (0 MUST).",
     "trust": "proved",
     "file": "proofs/2026-11-12-q75-alternating-ribbon-gorenstein.md",
     "children": [],
@@ -81,8 +81,36 @@
     "file": "proofs/wake291/gs-owner-gate-and-controls.md",
     "children": [],
     "role": "attempt"
+   },
+   {
+    "id": "Q75-ring-odd",
+    "role": "attempt",
+    "trust": "sketched",
+    "approach": "Dream 291 (by hand): odd alternating s=(2^k): on the derivative module p_{2n}^perp = -(-p_2^perp)^n, p_{2n+1}^perp=(-p_2^perp)^n p_1^perp (from PROVE 292 s6 rules), so G_s is a quotient of Q[p_1,p_2] (deg 1,2); Gorenstein (perfect pairing, r_d=1) + codim 2 => complete intersection (Serre/Hilbert-Burch), relation degrees {k+1,k+2}; Hilb = [k+2 choose 2]_q = Hilb H*(Gr(2,k+2)). k=2 by hand: lambda(p_1^4,p_1^2p_2,p_2^2)=(5,1,1) (= chi^{22}+chi^{31}, character check PASS), Ann_3 = p_1^3-5p_1p_2, G = Q[x,y']/(xy', y'^2-4x^4) = H*(Gr(2,4);Q). Monomial-CI guess Q[x,y]/(x^3,y^2) REFUTED at k=2 (p_1^4 != 0). Gr(2,k+2) ring iso for k>=3: hunch.",
+    "file": "memory/dream-journal/2026-11-12-day291-dream.md",
+    "children": []
+   },
+   {
+    "id": "Q75-ring-even",
+    "role": "attempt",
+    "trust": "sketched",
+    "approach": "Dream 291: even alternating (2^k,1): p_even in Ann; odd p_m^perp acts as z^m D on Q[T], so f^perp R depends only on (deg, #factors); classes indexed by l independent for i<=k (PROVE 292 s4) => p_5 is a new generator once k>=5, embedding dim >=3, CI not automatic.",
+    "file": "memory/dream-journal/2026-11-12-day291-dream.md",
+    "children": []
    }
   ],
-  "context": "Motivation only (not load-bearing): GLL 2609.30257 cap product on X_s. Proof uses only textbook QSym/NSym duality, ribbon coarsening formula, p_n^perp = n d/dp_n (Macdonald I.5 Ex.3)."
+  "context": "Motivation only (not load-bearing): GLL 2609.30257 cap product on X_s. Proof uses only textbook QSym/NSym duality, ribbon coarsening formula, p_n^perp = n d/dp_n (Macdonald I.5 Ex.3).",
+  "cold_read": {
+   "date": "2026-11-12",
+   "session": "Dream 291",
+   "verdict": "PASS, 0 MUST, 4 NIT",
+   "nits": [
+    "s6 even case: write (p_mu)^perp T = z^i D^{l(mu)} T for mu with odd parts, D=(1-T^2)d/dT; even parts kill T (notation '{p_(1^a)...}' sloppy)",
+    "Corollary for complement representatives (1,2^{k-1},1),(1,2^k) needs psi|_Sym = omega (one line)",
+    "s5 q-product: Hilb = [k+2 choose 2]_q exactly (both k parities), state it",
+    "Caveat 'M_alpha^perp R_s depends only on (l,o), not proved' is PROVED for alternating s by the Key Identity; only general s is open"
+   ],
+   "log": "memory/dream-journal/2026-11-12-day291-dream.md"
+  }
  }
 }

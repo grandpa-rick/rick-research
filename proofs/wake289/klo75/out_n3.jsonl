@@ -1,0 +1,9 @@
+{"lam": [1, 1, 1], "mu": [0, 0, 0], "lab": "CONN", "comps": [[0, 1, 2]], "rib": [true], "m": 1, "srcW": 1, "dimEnd": 1, "dimJ": 0, "dimEndJ": 1, "sec": 0.0}
+{"lam": [2, 1, 1], "mu": [1, 0, 0], "lab": "RIBBON-PAIR", "comps": [[0], [1, 2]], "rib": [true, true], "m": 3, "srcW": 1, "dimEnd": 2, "dimJ": 0, "dimEndJ": 2, "sec": 0.0}
+{"lam": [2, 2, 1], "mu": [1, 1, 0], "lab": "RIBBON-PAIR", "comps": [[0, 1], [2]], "rib": [true, true], "m": 3, "srcW": 1, "dimEnd": 2, "dimJ": 0, "dimEndJ": 2, "sec": 0.0}
+{"lam": [3, 2, 1], "mu": [2, 1, 0], "lab": "RIBBON-PAIR", "comps": [[0], [1], [2]], "rib": [true, true, true], "m": 6, "srcW": 1, "dimEnd": 6, "dimJ": 2, "dimEndJ": 4, "sec": 0.0}
+{"lam": [2, 2], "mu": [1, 0], "lab": "CONN", "comps": [[0, 1]], "rib": [true], "m": 2, "srcW": 1, "dimEnd": 1, "dimJ": 0, "dimEndJ": 1, "sec": 0.0}
+{"lam": [3, 2], "mu": [2, 0], "lab": "RIBBON-PAIR", "comps": [[0], [1]], "rib": [true, true], "m": 3, "srcW": 1, "dimEnd": 2, "dimJ": 0, "dimEndJ": 2, "sec": 0.0}
+{"lam": [2, 1], "mu": [0, 0], "lab": "CONN", "comps": [[0, 1]], "rib": [true], "m": 2, "srcW": 1, "dimEnd": 1, "dimJ": 0, "dimEndJ": 1, "sec": 0.0}
+{"lam": [3, 1], "mu": [1, 0], "lab": "RIBBON-PAIR", "comps": [[0], [1]], "rib": [true, true], "m": 3, "srcW": 1, "dimEnd": 2, "dimJ": 0, "dimEndJ": 2, "sec": 0.0}
+{"lam": [3], "mu": [0], "lab": "CONN", "comps": [[0]], "rib": [true], "m": 1, "srcW": 1, "dimEnd": 1, "dimJ": 0, "dimEndJ": 1, "sec": 0.0}

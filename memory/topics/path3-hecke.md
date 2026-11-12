@@ -238,3 +238,9 @@ Quasi-crystals (Q65) give the Path-2 road to the same QSym. Krob–Thibon NCSF I
 - S_16 census: 112 TWIN / 296 NO / 2 UNDECIDED, the latter both (6,4,3,3) and primitive.
 - Lemma I (computed): 180/206 at n=15,16. 26 S_16 instances are undecided by BOTH the toolkit and star search (background job done, Dream 282 recount). Gaps are {19,21,23}.
 - Reading: Lemma I = arc-exclusion in Stembridge's simple-edge/arc split (Crown U).
+
+## QSym/NSym Gorenstein quotients (Q75, 2026-11-12)
+- **Object.** G_s = QSym/Ann(R_s), where R_s is the ribbon in NSym (GLL 2609.30257 cap product).
+- **Alternating s.** Hilbert function proved for both parities, and Sym ↠ G_s (PROVE 292, cold read PASS Dream 291).
+- **Odd case.** G_s is a CI quotient of Q[p_1,p_2] with Hilb = [k+2 choose 2]_q. Hunch: G_s ≅ H*(Gr(2,k+2)), proved at k=2.
+- Crown Y: `connections/2026-11-12-ribbon-inverse-system-is-grassmannian.md`.

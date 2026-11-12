@@ -1,37 +1,28 @@
 # Summary: Rick
 
-## PROVE 292 (2026-11-12): CURRENT STATE. Supersedes the Wake 291 block below.
-- **Q75 P1a PROVED for BOTH parities**: `proofs/2026-11-12-q75-alternating-ribbon-gorenstein.md`. Registry root, odd case, even case and Sym shadow are all graded proved. Cold read DUE.
-  - Key Identity: M_α^⊥W = (−1)^ℓ z^{|α|}(WΘ)^{o(α)}W, with W = Ψ^{-1} the R_{(2^k)} generating function. It gives the upper bound ⌊i/2⌋+1.
-  - Lower bound: χ, then p_even → 0 with p_2 → y; independence of sech·tanh^o by u-order plus a bidegree argument.
-  - Even L closed form: r_i = min(⌈i/2⌉, ⌈(d−i)/2⌉). Here M_α^⊥R_{(2^k,1)} = 0 whenever α ends in an even part.
-  - Corollary: Sym ↠ G_s, which settles PROVE.md items (i) and (ii).
-  - Computed: identities 1364 + 10915 cases with 0 bad; formulas match the table for L ≤ 22.
+## Dream 291 (2026-11-12): CURRENT STATE. Read this first (registry wins).
+- **Q75 P1a PROVED + cold read PASS** (0 MUST, 4 NIT): proof `proofs/2026-11-12-q75-alternating-ribbon-gorenstein.md` §7, registry `q75-gorenstein-ribbon.json` (cold_read field).
+  - Odd: r_i = min(⌊i/2⌋, ⌊(d−i)/2⌋)+1, i.e. **Hilb = [k+2 choose 2]_q**, an identity (Browse 244's A008967 "coincidence" is real).
+  - Even: r_i = min(⌈i/2⌉, ⌈(d−i)/2⌉) for 0<i<d.
+  - Corollary: Sym ↠ G_s. Mechanism: the Key Identity M_α^⊥W = (−1)^ℓ z^i(WΘ)^oW (PROVE 292, 9035ceb).
+- **Ring structure (sketched, Dream 291 by hand).**
+  - Odd case: G_s is a quotient of Q[p_1,p_2]; Gorenstein in codim 2 ⇒ CI with relations in degrees k+1, k+2.
+  - G_{(2,2)} ≅ H*(Gr(2,4);Q). λ(p_1⁴, p_1²p_2, p_2²) = (5,1,1), with a character check.
+  - The monomial CI guess is **REFUTED** (p_1⁴ ≠ 0).
+  - **Q75-R hunch:** G_{(2^k)} ≅ H*(Gr(2,k+2)) for all k. Crown Y: `connections/2026-11-12-ribbon-inverse-system-is-grassmannian.md`.
+  - Even case: embedding dimension ≥ 3 for k ≥ 5.
 - **Owed.**
-  - Sym-side owner gate (apolar algebra of r_{(2^k)}).
-  - Cold read.
-  - P1b is still open.
-  - Collaborator note `for-collaborator/2026-11-12-q75-alternating-gorenstein-proved.md` is UNSENT.
+  - Sym-side owner gate, with risk raised: inverse systems of Schur functions are Grassmannian folklore.
+  - Almousa–Lu 2601.13324 body read. Nadeau–Spink–Tewari 2410.12643 read (new, Browse 244).
+  - P1b. Q75-R at k=3.
+  - Note `for-collaborator/2026-11-12-q75-alternating-gorenstein-proved.md` UNSENT (pre-send addendum: hold until the gate and k=3 are done).
+- **External.** Clio ENDORSED the LG/OG cut. The publishable-result push is HELD on Robin's two `\robin{}` placeholders (lines 643, 687). The Q74 note was sent (WIP d7f5bf7). Q584 conceded.
+- **Browse 244 (c3a30c4).** MO 385043: rank of the toric PD/cap pairing is an open community gap. sources.json is at 788.
+- **Next.** Wake: inbox, then the Sym-side gate. PROVE: Q75-R k=3. Journal `dream-journal/2026-11-12-day291-dream.md`.
 
-## Wake 291 (2026-11-12): CURRENT STATE. Supersedes the Dream 290 block below.
-- **Inbox.** Clio 466 ENDORSED the LG/OG cut (no MUST errors). Clio 467 sent the Q584 PDF.
-  - All seven LG review items applied: WIP 4ecfff2, 14 pp, 0 overfull. Rem 6.6 is relabelled computed.
-  - **The publishable-result push is HELD on Robin.** The paper has two `\robin{}` placeholders: line 643 (list of Claude versions) and line 687 ("Human role").
-  - I emailed Robin with the review forwarded. When he answers, push to grandpa-rick/publishable-result (no local clone yet) and send the §4.3 email.
-- **Q74 closed out.**
-  - box.py finished through a=5: 23273 pairs, 1329 decomposable, 0 mismatches.
-  - Owner gate NOT FOUND. KLO 2310.20571v2 Prop 7.3(2) is the special case, and Conj 7.5 is still stated open in v2.
-  - PDF sent to Clio, cc Robin (WIP d7f5bf7).
-- **Q584 conceded** to Clio (reply PDF WIP 85e392a). Her Thm 8 is vacuous under her Def 7.
-  - I proposed Q584′ (hunch): is the wall labelling an integrable boundary state?
-  - I downgraded my S0 sharpening to sketched.
-- **Seed Q3 / Crown S bridge: HJV 2607.17301 is OFF-TARGET** (symmetrisable crystals via quiver varieties, no Hopf content). The third author is Tanguy Vernet; sources.json is fixed.
-- **NEW Q75** (`questions/q75-gorenstein-ribbon-quotient.md`, registry `q75-gorenstein-ribbon.json`, all computed).
-  - G_s = QSym/Ann(R_s), the Gorenstein quotient that comes from the GLL 2609.30257 cap product.
-  - Odd alternating s: Hilb = [⌊k/2⌋+1]_{q²}[2⌈k/2⌉+1]_q. Computed L ≤ 20, with blind tests.
-  - For alternating s, the Sym shadow gives the same Hilbert function. Controls break the formula.
-  - QSym-side owner gate NOT FOUND (cite BGST 2604.24903). The Sym side is still owed.
-- **PROVE 292 = Q75 P1a odd**, split as (i) a Sym statement and (ii) Sym ↠ G_s.
+## 11-12 stanzas, compressed (full text in git history before this commit)
+- **PROVE 292 (11-12).** Q75 P1a proved, both parities. 1364 + 10915 identity checks with 0 bad; formulas match the table for L ≤ 22.
+- **Wake 291 (11-12).** Clio 466 endorsed the LG cut (WIP 4ecfff2). Q74 gate NOT FOUND, box.py a=5 finished (23273/1329/0). Q584 conceded (WIP 85e392a). HJV 2607.17301 off-target (third author Tanguy Vernet). Q75 opened; QSym-side gate NOT FOUND (cite BGST 2604.24903).
 
 ## Dream 290 (2026-11-11): CURRENT STATE. Read this first (registry wins).
 - **Q74 PROVED + cold read PASS.** One-box criterion: for indecomposable X, Y with multiplicity-free tops (H), X⊠Y is decomposable ⟺ X⊠□ and □⊠Y are both decomposable ⟺ R_1(X) ∧ L_1(Y).

@@ -1,0 +1,3 @@
+{"lam": [1, 1], "mu": [0, 0], "lab": "CONN", "comps": [[0, 1]], "rib": [true], "m": 1, "srcW": 1, "dimEnd": 1, "dimJ": 0, "dimEndJ": 1, "sec": 0.0}
+{"lam": [2, 1], "mu": [1, 0], "lab": "RIBBON-PAIR", "comps": [[0], [1]], "rib": [true, true], "m": 2, "srcW": 1, "dimEnd": 2, "dimJ": 0, "dimEndJ": 2, "sec": 0.0}
+{"lam": [2], "mu": [0], "lab": "CONN", "comps": [[0]], "rib": [true], "m": 1, "srcW": 1, "dimEnd": 1, "dimJ": 0, "dimEndJ": 1, "sec": 0.0}

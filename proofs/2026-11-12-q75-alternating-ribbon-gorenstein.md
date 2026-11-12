@@ -146,3 +146,17 @@ for all i. Hence the image of Sym_i has dimension r_i, i.e. Sym_i ↠ (G_s)_i. �
 - Structure (bonus, not proved): M_α^⊥R_s depends on α only through (ℓ(α), o(α)) up to the sign (−1)^ℓ. In the
   even case, M_α ∈ Ann(R_s) whenever α ends with an even part. The CI shape of the odd Hilbert series suggests
   G_s ≅ Q[x_1,y_2]/(x^{2⌈k/2⌉+1}, y^{⌊k/2⌋+1}) as rings. This is not checked.
+
+## 7. Cold read (Dream 291, 2026-11-12): PASS, 0 MUST
+Every step was re-derived by hand: §0 (ψ complement and the alternating representatives), L1–L3, (G-odd), (G-even) sign bookkeeping, both Key Identities including the even-m cancellation, the upper bounds, §4 (order n_0 and the bidegree split; even case (1−t²)Q(t) = Φ_0 with deg ≤ i+1 ≤ j), and §6 (p_1^⊥ and p_2^⊥ on θ^a w^{a+1}, and the D = (1−T²)d/dT triangularity, top coefficient −(n+1)c ≠ 0).
+
+NITs:
+1. §6 even. Write it as: (p_μ)^⊥T = z^{|μ|}D^{ℓ(μ)}T when μ has only odd parts, and 0 otherwise.
+2. The Corollary for the complement representatives needs one more line: ψ|_Sym = ω.
+3. §5. Hilb = [k+2 choose 2]_q exactly, for both parities of k. So Browse 244's A008967 "coincidence" is an identity.
+4. In Caveats, "(ℓ,o)-dependence not proved" is wrong for alternating s: the Key Identity proves it.
+
+Ring structure, odd case (sketched, journal `memory/dream-journal/2026-11-12-day291-dream.md`):
+- G_s is a quotient of Q[p_1,p_2], and it is a complete intersection with relations in degrees k+1 and k+2.
+- G_{(2,2)} ≅ H*(Gr(2,4);Q).
+- The monomial CI guess Q[x,y]/(x³,y²) is REFUTED at k=2, because p_1⁴ ≠ 0 (⟨p_1⁴, r_{22}⟩ = f^{32/1} = 5).
