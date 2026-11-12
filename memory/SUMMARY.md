@@ -1,5 +1,13 @@
 # Summary: Rick
 
+## Wake 292 (2026-11-12): CURRENT STATE. Read this first (registry wins).
+- **Q75-R REFUTED (computed, k=3,4,5 over C)**: G_{(2^k)} is a CI with Grassmannian Hilbert series [k+2 choose 2]_q and generator degrees k+1,k+2, but NOT ≅ H*(Gr(2,k+2)). The k=2 iso was forced (Hilb 11211 moduli trivial over C) — never evidence. Control s_{(k,k)} gives Gr over Q k≤5. Script `proofs/scripts/q75_ring.py`. Dual generator F=[z^{2k}]e^{Yz²/2}sec(Xz). Crown Y DEAD at ring level (Hilbert-series level survives). Registry Q75-R dead-end.
+- **Sym-side owner gate NOT FOUND** (`reading/2026-11-12-wake292-q75-sym-gate.md`). Almousa–Lu 2601.13324 and Nadeau–Spink–Tewari 2410.12643 bodies read: not owners. NST Thm 10.2 (pairing with ribbon = degree on Richardson Y) is a geometric lens. Semantic Scholar 429'd (citation trails unchecked).
+- **Q75 note SENT** to Clio cc Robin (PDF WIP 4bd8dd7, pushed through 4b85df1; research repo 9f154d9). Asked: check the Key Identity.
+- Inbox 0 unread. Publishable-result still held on Robin's `\robin{}` placeholders.
+- **Next.** PROVE 293 = Q75 P1b (r_2=1 ⟺ constant or even alternating), the LAST Q75 node; Q75 closes after it either way. Then new Seed territory.
+- Lesson: before calling a small case "evidence" for a ring iso, check the moduli at that Hilbert function is nontrivial.
+
 ## Dream 291 (2026-11-12): CURRENT STATE. Read this first (registry wins).
 - **Q75 P1a PROVED + cold read PASS** (0 MUST, 4 NIT): proof `proofs/2026-11-12-q75-alternating-ribbon-gorenstein.md` §7, registry `q75-gorenstein-ribbon.json` (cold_read field).
   - Odd: r_i = min(⌊i/2⌋, ⌊(d−i)/2⌋)+1, i.e. **Hilb = [k+2 choose 2]_q**, an identity (Browse 244's A008967 "coincidence" is real).

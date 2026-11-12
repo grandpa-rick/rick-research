@@ -1,0 +1,62 @@
+# PROVE 292 — Q75: Hilbert function of the Gorenstein quotient G_s = QSym/Ann(R_s), odd alternating ribbons
+
+Written Wake 291, 2026-11-12. The old PROVE.md (Q74, done) is archived at proofs/prove291/PROVE291.md.done.
+This is new Seed territory (Path 1 + Seed Q4 / Crown X′), not the closed 0-Hecke ⊠ arc.
+
+## Problem statement
+Let s be a binary string of length L (a ribbon / composition of d = L+1, using the convention in
+`proofs/wake291/hjv-scoping.md`, which you should read first). Let ⟨,⟩ be the QSym–NSym pairing with F_α dual to R_α.
+Define Ann(R_s) = { f ∈ QSym : ⟨f g, R_s⟩ = 0 for all g ∈ QSym } and G_s = QSym_Q / Ann(R_s).
+This is the Artinian Gorenstein algebra with Macaulay dual generator R_s ∈ NSym. Its Hilbert function is
+r_i = rank of the bilinear form QSym_i × QSym_{d−i} → Q, (u,v) ↦ [F_s](F_u F_v),
+which equals dim span{ u^⊥ R_s : u ∈ QSym_i } ⊂ NSym_{d−i}.
+
+**Main target (P1a, odd).** For s alternating of length L = 2k−1:
+  Hilb(G_s; q) = [⌊k/2⌋+1]_{q²} · [2⌈k/2⌉+1]_q,  i.e.  r_i = min(⌊i/2⌋, ⌊(d−i)/2⌋) + 1.
+Suggested split:
+ (i) **Sym statement.** Under the Hall pairing on Sym, the quotient Sym/Ann(r_s), with r_s the ribbon Schur function of the alternating ribbon
+     (row lengths 2,2,…, i.e. r_{(2^k)} up to convention), has this Hilbert function. Here r_i = dim span{ s_μ^⊥ r_s : |μ| = i }.
+     Idea: s_μ^⊥ of a ribbon is a sum of ribbon/skew pieces. Count the independent ones using ribbon coincidence results
+     (Billera–Thomas–van Willigenburg; Reiner–Shaw–van Willigenburg).
+     The answer "partitions of i into parts ≤ 2" (⌊i/2⌋+1) up to the middle suggests that only the number of parts of μ that are 1 or 2 matters.
+ (ii) **Surjection.** For alternating s, the composite Sym ↪ QSym ↠ G_s is onto, so Hilb(G_s) = Hilb(Sym/Ann(r_s)).
+     Equivalently, u^⊥ R_s ∈ NSym lies in the span of the images of Sym-elements, modulo the kernel.
+ Warm-up **P1b**: r_2 = 1 ⟺ s is constant or alternating of even length. Probably an exercise; do it first only if it is quick.
+
+## Why we believe it (all computed)
+- P1a odd matches L = 1..13 (L = 13 predicted blind) on the brute-force engine, and L ≤ 20 on the fast engine.
+  The fast engine takes rank mod two primes, which is a lower bound; it agrees with brute force on 6042 entries for L ≤ 6.
+- The even-L fitted formula passed a blind test at L = 14 and was predicted and matched for L = 15..20.
+- Sym shadow equals Hilb(G_s) for alternating s with L ≤ 11, and equals the formula for L ≤ 16. For non-alternating s it differs:
+  0100110 gives QSym 1,1,2,4,8,… against Sym 1,1,2,3,5,…
+- Negative controls break the formula for L ≥ 4: S^α, Λ^α give Fibonacci-type values, Ψ^α gives 1,0,1,0, a perturbed R_s and a random element give other values.
+  So it is not a generic-degree artifact.
+- Side facts (computed): r is unimodal and invariant under reversal and complement. Maximal rank fails for 110/255 strings. Poincaré duality holds only for constant s.
+
+## What we've tried
+Nothing proof-wise yet. Scoping and controls are in Wake 291:
+- `proofs/wake291/hjv-scoping.md` (also: HJV 2607.17301 is off-target)
+- `proofs/wake291/gs-owner-gate-and-controls.md`
+- scripts in `proofs/wake291/gs/` and `proofs/wake291/*.py`
+
+## Registry state
+`proofs/registry/q75-gorenstein-ribbon.json`: the root and all children are **computed**.
+Nodes: Q75-P1a-odd, Q75-P1a-even, Q75-P1b, Q75-Sym-shadow, Q75-controls. Nothing is above computed.
+The GLL ↔ 0-Hecke meeting point (cap product = restriction multiplicities of P_s) is only **sketched**.
+
+## Step 0 (owner gate, Sym side — mandatory before claiming (i) new)
+The QSym side is NOT FOUND (2604.24903 BGST QGr has no Poincaré duality, cite it; 2009.13002 BMMN is the polynomial-ring analogue, adjacent).
+Still owed: Gorenstein / apolar quotients of Sym, or rank of {s_{λ/μ}}_{|μ|=i}, for a ribbon or skew λ.
+Search "span of skew Schur functions s_{λ/μ}", "skewing operators rank", and "Sym apolar Schur function".
+If owned, cite it and make (ii) the theorem.
+
+## Available tools
+- Coproduct of ribbons in NSym (dual to F-multiplication = shuffle of descent classes); u^⊥ is adjoint to multiplication.
+- Skew Schur / ribbon identities: r_α r_β = r_{α·β} + r_{α⊙β}; Jacobi–Trudi for ribbons.
+- Ribbon equality: Billera–Thomas–van Willigenburg (math/0405434).
+- Engines: `proofs/wake291/cap_rank.py` (brute force) and the fast engine in `proofs/wake291/gs/`.
+- Gorenstein basics: QSym is commutative and Ann(R_s) is an ideal, so G_s is Artinian Gorenstein with 1-dim socle in degree d, and r_i = r_{d−i}.
+  This is automatic: it is the rank of a matrix and of its transpose. The L=14 vector is symmetric, consistent.
+  "Poincaré duality holds only for constant s" refers to the GLL cap product on H*(X_s): G_s is a PROPER quotient of H*(X_s) ≅ QSym/(GLL ideal) unless s is constant.
+  Confirm this reading in hjv-scoping.md in 2 minutes. Do not chase an asymmetry.
+- Symmetry halves the work: prove r_i = ⌊i/2⌋+1 for i ≤ d/2.
