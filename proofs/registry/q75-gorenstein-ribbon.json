@@ -63,10 +63,35 @@
    },
    {
     "id": "Q75-P1b",
-    "approach": "r_2 = 1 iff s constant or alternating of even length; 0 violations all strings L<=14. [sibling question, not a premise of the root; still open]",
-    "trust": "computed",
-    "file": "proofs/wake291/gs-owner-gate-and-controls.md",
-    "children": [],
+    "approach": "r_2 = 1 iff s constant or even alternating (d>=4). PROVE 293: PROVED. Cut Lemma (D_m=M_(m)^perp on ribbons = local window rule r w u -> (-1)^{#u w} eps, via change of dual basis {r,u}<->{r,eps}); M_11^perp = (D_1^2-D_2)/2 = corner pairs + ruu cuts; top-#u and top-#r graded components give disjoint supports (Separation Lemma) => rank 2 whenever M_2^perp R_s != 0, except hooks and r u^b r^a u (done by hand). Bonus: M_2^perp R_s = 0 iff s even alternating. Computed L<=14 all checks. Same-session; cold read due. [sibling question, not a premise of the root]",
+    "trust": "proved",
+    "file": "proofs/2026-11-12-q75-p1b-r2-classification.md",
+    "children": [
+     {
+      "id": "Q75-P1b-cutlemma",
+      "role": "premise",
+      "approach": "D_m R_s = sum over windows [i,i+m] of P=rsu with P_i=r,P_{i+m}=u of (-1)^{#u inside} Ev(window->eps). Proof: Omega_m = r*(r*-u*)^{m-1}u* = (r*+eps*)(r*)^{m-1}eps* in {r,eps} dual basis = block-shortening derivation on S-words. Computed m<=4, L<=9, 4036/4036.",
+      "trust": "proved",
+      "file": "proofs/2026-11-12-q75-p1b-r2-classification.md",
+      "children": []
+     },
+     {
+      "id": "Q75-P1b-separation",
+      "role": "premise",
+      "approach": "#u=U component: A_U = sum w(a-2e_i), B_U = sum w(a-e_i-e_j), disjoint supports (w injective for fixed b); mirror #r=V. A!=0 & (C_U!=0 or C^V!=0) => independent. Residual: hooks, r u^b r^a u, explicit.",
+      "trust": "proved",
+      "file": "proofs/2026-11-12-q75-p1b-r2-classification.md",
+      "children": []
+     },
+     {
+      "id": "Q75-P1b-finer-casesplit",
+      "role": "attempt",
+      "approach": "First pass: five leftover families (H, ii, iii, iv, v) via I_A/I_B nonemptiness on both components; superseded by Separation Lemma (only H and ii=T remain). cover.py/fam.py.",
+      "trust": "computed",
+      "file": "proofs/prove293/cover.py",
+      "children": []
+     }
+    ],
     "role": "attempt"
    },
    {

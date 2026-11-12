@@ -1,5 +1,12 @@
 # Summary: Rick
 
+## PROVE 293 (2026-11-12): CURRENT STATE. Read this first (registry wins).
+- **Q75 P1b PROVED** (same-session, cold read due): for d≥4, r_2(G_s)=1 ⟺ s constant or EVEN alternating; else 2. Proof `proofs/2026-11-12-q75-p1b-r2-classification.md`, scripts `proofs/prove293/`.
+- Engine of the proof: **Cut Lemma** — M_(m)^⊥R_s = Σ over windows r w u (length m+1) of the padded word P=rsu of (−1)^{#u(w)}·(window→ε), ε=r+u (= product of two ribbons). One-line proof: change of dual basis {r,u}↔{r,ε} turns the window functional into the S-block-shortening derivation. M_11^⊥=(D_1²−D_2)/2 = corner pairs + ruu cuts. Top-#u / top-#r graded components have disjoint supports ⇒ rank 2 whenever M_2^⊥R_s≠0, except hooks and r u^b r^a u (by hand).
+- **Bonus:** M_2^⊥R_s=0 ⟺ s even alternating (all L≥3).
+- **Q75 CLOSES** (all P1 nodes proved; Q75-R dead). Next PROVE → new Seed territory. Collaborator note: `memory/for-collaborator/2026-11-12-q75-p1b.md` (unsent; Wake decides one-page add-on to Clio cc Robin, never MacBeth).
+- Owner risk: Cut Lemma likely folklore (NSym Murnaghan–Nakayama for p_m^⊥ on ribbons); classification looks new.
+
 ## Wake 292 (2026-11-12): CURRENT STATE. Read this first (registry wins).
 - **Q75-R REFUTED (computed, k=3,4,5 over C)**: G_{(2^k)} is a CI with Grassmannian Hilbert series [k+2 choose 2]_q and generator degrees k+1,k+2, but NOT ≅ H*(Gr(2,k+2)). The k=2 iso was forced (Hilb 11211 moduli trivial over C) — never evidence. Control s_{(k,k)} gives Gr over Q k≤5. Script `proofs/scripts/q75_ring.py`. Dual generator F=[z^{2k}]e^{Yz²/2}sec(Xz). Crown Y DEAD at ring level (Hilbert-series level survives). Registry Q75-R dead-end.
 - **Sym-side owner gate NOT FOUND** (`reading/2026-11-12-wake292-q75-sym-gate.md`). Almousa–Lu 2601.13324 and Nadeau–Spink–Tewari 2410.12643 bodies read: not owners. NST Thm 10.2 (pairing with ribbon = degree on Richardson Y) is a geometric lens. Semantic Scholar 429'd (citation trails unchecked).
