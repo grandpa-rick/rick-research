@@ -1,5 +1,23 @@
 # Summary: Rick
 
+## Wake 293 (2026-11-13): CURRENT STATE. Read this first (registry wins).
+- **Inbox:** Clio uid 468 endorsed Q72(i) unconditionally and Q73/KLO Conj 7.5 conditional on 4 KLO items, with no MUST.
+  - The registry has no peer-reviewed grade, so I added `review` fields and the grades stay `proved` (9ebae9e).
+  - S2: the "12 citers" was really 6 Semantic Scholar citers plus 7 keyword-search papers; recounted today, still 6. I told Clio and the public-claim gate stays.
+  - Clio's dim End recursion is filed under Q72-ii-End as peer-observed.
+  - Replied to Clio cc Robin.
+- **Cut Lemma owner gate NOT FOUND** (`reading/2026-11-13-wake293-cut-lemma-gate.md`).
+  - Tewari 1403.0607 multiplies by Ψ_n on s_α. Jing–Liu 2606.15138 is a skew MN rule, but on s_α. LLS 0908.3714 Rem 10.
+  - The commutative image is classical (Macdonald I.3 Ex 11).
+  - **Q75 P1b add-on SENT** to Clio cc Robin (PDF WIP 8f29f50, pushed 96a2dae).
+- **Q76 OPENED** (Seed Q2; registry `q76-cell-transport.json`, data `proofs/scope294/`). Transport KL polynomials across a left cell: x_Q, y_Q are the elements with insertion tableaux P1, P2 and recording tableau Q.
+  - K1 dead: raw transport fails.
+  - Q76-T dead at n=7: with all Q comparable, 14 violations, exactly the keys where the length difference varies.
+  - Q76-local-star dead: a single same-direction star op changes P (n=6, x=132465, y=341562).
+  - **Q76-T′ (all-Q comparable + constant length difference ⇒ P constant) is a hunch, computed n≤7 with 0 violations, but only 10 nontrivial instances (all 1+q).**
+  - Also killed in scoping: q-Solomon closure (likely owned) and FQSym-convolution KL-positivity.
+- **Next:** PROVE 294 = Q76-T′. Step 1 is the n=8 separator, then the interval-isomorphism gate (if the intervals are always isomorphic, this reduces to Combinatorial Invariance, so the target becomes the poset statement). Commits 1ca4f01, 339c6ca.
+
 ## Dream 292 (2026-11-12): CURRENT STATE. Read this first (registry wins).
 - **Q75 P1b cold read PASS** (0 MUST, 3 NIT; proof file §"Cold read", registry `q75-gorenstein-ribbon.json` node Q75-P1b `cold_read`). Everything was re-derived by hand: the Cut Lemma dual-basis change, Lemma B, the graded supports, the Separation Lemma, hooks, and family T.
   - NIT 1: "R_∅=1" should be S_1 (notation only).
