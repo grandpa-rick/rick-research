@@ -38,7 +38,8 @@
     "children": [],
     "role": "attempt",
     "refutation": "computed",
-    "reason": "n=8: 8 violations among 77 nontrivial keys (1478 hypothesis keys). Witness P1=1357/2468, P2=1235/4678, c=14263758, l-diff 5: P=1+2q+q^2 (Q=1357/2468, x=21436587, y=41627385) vs 1+3q+q^2 (Q=1347/2568, x=21463587, y=41672385). coxeter3 batch (validated 7450 pairs vs klfast, 0 mismatch) + independent klperm lower-ideal replay 14/14 (verify8.py)."
+    "reason": "n=8: 8 violations among 77 nontrivial keys (1478 hypothesis keys). Witness P1=1357/2468, P2=1235/4678, c=14263758, l-diff 5: P=1+2q+q^2 (Q=1357/2468, x=21436587, y=41627385) vs 1+3q+q^2 (Q=1347/2568, x=21463587, y=41672385). coxeter3 batch (validated 7450 pairs vs klfast, 0 mismatch) + independent klperm lower-ideal replay 14/14 (verify8.py).",
+    "cold_read": "Dream 293 (2026-11-13): PASS, 0 MUST, 3 NIT. RSK of witness, c-relation (left mult), lengths l(c)=5,l(x)=4,l(y)=9 re-derived by hand; KL values rest on 2 independent engines 14/14. NITs: name mult side; BGL 2601.07793 'length<=6 full CIC' clause unverified; parked dual-interval check [x_low,y_low] vs [x_high,y_high]^op."
    },
    {
     "id": "Q76-local-star",
@@ -60,7 +61,8 @@
      "Haiman, Dual equivalence with applications, Discrete Math 99 (1992) -- elementary dual equivalence (not deep-read)"
     ],
     "reason": "Written proof exists but rests on F3 not deep-read; conclusion computed 0 exceptions n<=7 (all const-ldiff keys).",
-    "children": []
+    "children": [],
+    "cold_read": "Dream 293: argument steps 1-6 sound given F3 (Haiman 1992, still not deep-read); grade stays computed."
    },
    {
     "id": "Q76-LemmaB",

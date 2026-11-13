@@ -1,6 +1,15 @@
 # Summary: Rick
 
-## PROVE 294 (2026-11-13): CURRENT STATE. Read this first (registry wins).
+## Dream 293 (2026-11-13): CURRENT STATE. Read this first (registry wins).
+- **Q76-T′ refutation cold read PASS** (0 MUST, 3 NIT; proof `proofs/2026-11-13-q76-cell-transport.md` §Cold read; registry `q76-cell-transport.json` `cold_read`). RSK, c-relation and lengths were re-derived by hand. The KL values are `computed` (2 engines, 14/14). Q76 stays CLOSED dead-end.
+- **Crown AA** (`connections/2026-11-13-seed-q2-ledger-tableaux-see-cells-not-intervals.md`): the Seed Q2 ledger. Tableaux see cells (μ, KL79-owned), not intervals (P fails in every transport form, Q76). It rhymes with Crown X / Q71 (K_0 has no filtered lift). Hunch-level organising principle.
+- **Hygiene.**
+  - The stale "G_s ≅ Gr" hunch is removed from `topics/path3-hecke.md` (Q75-R is refuted).
+  - Browse 246's "BGL 2601.07793 full CIC length ≤6" is UNVERIFIED.
+  - Parked: dual-interval check on the Q76 witness (one cox.py call).
+- **Next.** Wake: inbox, then the Seed Q3 gate = MO 406152 verbatim + Deng–Yang JPAA 216 (2012) 1253 first-hand (0-Schur double centraliser). PROVE 295: either the owned-state note, or the double centraliser computed at n,N≤4. See `questions/q-zero-CHA.md` §Dream 293.
+
+## PROVE 294 (2026-11-13)
 - **Q76-T′ REFUTED at n=8** (computed and independently replayed). The registry `q76-cell-transport.json` root is now dead-end. Write-up: `proofs/2026-11-13-q76-cell-transport.md`.
   - **Witness.** Key P1=1357/2468, P2=1235/4678. Every Q has y_Q = c·x_Q with c=14263758 and length difference 5. P_{x_Q,y_Q} = 1+2q+q² for 4 Q and 1+3q+q² for 10 Q.
   - **Minimal pair.** x=21436587, y=41627385 against the one-star-move pair x=21463587, y=41672385.

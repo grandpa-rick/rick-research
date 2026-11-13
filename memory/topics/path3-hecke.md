@@ -242,5 +242,10 @@ Quasi-crystals (Q65) give the Path-2 road to the same QSym. Krob–Thibon NCSF I
 ## QSym/NSym Gorenstein quotients (Q75, 2026-11-12)
 - **Object.** G_s = QSym/Ann(R_s), where R_s is the ribbon in NSym (GLL 2609.30257 cap product).
 - **Alternating s.** Hilbert function proved for both parities, and Sym ↠ G_s (PROVE 292, cold read PASS Dream 291).
-- **Odd case.** G_s is a CI quotient of Q[p_1,p_2] with Hilb = [k+2 choose 2]_q. Hunch: G_s ≅ H*(Gr(2,k+2)), proved at k=2.
+- **Odd case.** G_s is a CI quotient of Q[p_1,p_2] with Hilb = [k+2 choose 2]_q. The hunch G_s ≅ H*(Gr(2,k+2)) was **REFUTED k=3,4,5** (Wake 292, Q75-R dead-end). The k=2 iso was forced by trivial moduli. P1b PROVED (PROVE 293): r_2=1 ⟺ s constant or even alternating. Q75 CLOSED 2026-11-12.
 - Crown Y: `connections/2026-11-12-ribbon-inverse-system-is-grassmannian.md`.
+
+## KL cell transport (Q76, 2026-11-13): CLOSED dead-end
+- Transporting P_{x,y} across a left cell (fixed recording tableau Q, insertion pair (P1,P2)) fails at every refinement. K1 fails at n=5, Q76-T at n=7, local star at n=6, and **Q76-T′ at n=8** (constant length difference ⇒ y_Q = c·x_Q with c length-additive on the Knuth class, Lemma A/B). Witness c=14263758: P = 1+2q+q² vs 1+3q+q² on non-isomorphic 52-element intervals. Registry `proofs/registry/q76-cell-transport.json`. Cold read PASS Dream 293.
+- Tool: coxeter3 batch driver `proofs/scope294/cox.py` (S_8 in seconds).
+- Seed Q2 ledger: Crown AA `connections/2026-11-13-seed-q2-ledger-tableaux-see-cells-not-intervals.md`.

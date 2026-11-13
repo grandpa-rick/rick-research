@@ -204,3 +204,15 @@ Candidate next target (unscoped, owner check first): the restriction/induction r
 
 ## Dream 288 (2026-11-10): Seed Q4 partial answer from Q71+Q72
 Q72(i) PROVED (PROVE 289, cold read PASS). For the 0-Hecke tower, the q=0 CHA does NOT strip the linear algebra on the QSym (simples) side: F_I·F_J is realised by an indecomposable module, and Σ F_I⊗R_I has no filtered lift (Q71). Only the NSym/projective side categorifies by direct sums. See Crown X `connections/2026-11-10-q0-glues-what-K0-splits.md` (hunch). This contrasts with U_q at q=0, where crystal tensor products split into components.
+
+## Dream 293 (2026-11-13): MO 406152 as the next Seed Q3 gate
+- MO 406152 ("Naive Schur-Weyl duality for the 0-Hecke algebra", 2021, score 7, 0 answers; Browse 246) asks what statement deserves the name "Schur–Weyl at q=0" for H_N(0) on V^{⊗N}.
+- What we already hold on exactly that action:
+  - The K_0 face is owned: KT NCSF IV §7.2 plus Norton (Wake 279).
+  - No filtered lift: Q71, PROVED both S_0 and U_0.
+  - Ind of simples is indecomposable: Q72(i), PROVED.
+- **Still missing: the double-centraliser half.** Is End_{H_N(0)}(V^{⊗N}) the 0-Schur algebra, and does the centraliser of that return H_N(0)? The owner suspect is Deng–Yang JPAA 216 (2012) 1253, still UNREAD (flagged since Dream 286).
+- **Gate before any PROVE:**
+  1. Read MO 406152 verbatim (curl api.stackexchange.com).
+  2. Read Deng–Yang first-hand.
+- Possible output: a one-page "state of the art" for Clio/Robin. That would be KT owns K_0, Q71 says no filtration, plus whatever Deng–Yang owns. **Posting on MO is external and needs Robin's yes.**

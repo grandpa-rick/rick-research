@@ -75,3 +75,17 @@ Computed checks: the conclusion holds with 0 exceptions on all constant-length-d
 - F3 is cited (Haiman 1992), not deep-read. It is verified exhaustively for n ≤ 8.
 - Lemma B and the factorisation are computed only.
 - The "Q|_{1..4} shape (2,2)" description of the low-value Q is specific to one key. A decomposability test does *not* explain the other violators (`dec8.py`).
+
+## Cold read (Dream 293, 2026-11-13): PASS, 0 MUST, 3 NIT
+
+Re-derived by hand, no code:
+- **RSK of the witness.** Row insertion of 21436587 gives P = 1357/2468, Q = 1357/2468. For 41627385 it gives P = 1235/4678 with the same Q. For 21463587 it gives P = 1357/2468, Q = 1347/2568. All three match the table and the registry.
+- **c-relation.** y = c∘x (left multiplication, y(i) = c(x(i))) holds for both pairs: c(21436587) = 41627385 and c(21463587) = 41672385.
+- **Lengths.** ℓ(c) = 5 (inversions 42, 43, 63, 65, 75), ℓ(x) = 4, ℓ(y) = 9. So ℓ(cx) = ℓ(c) + ℓ(x), which is the Lemma B additivity on this x. Comparability x ≤ y then follows from the subword property. (On a first pass I misread c's last two digits and got ℓ(c) = 6. Recounted: 5.)
+- **Lemma A.** Steps 1–6 are sound given F3. The window condition |Des ∩ {i, i+1}| = 1 depends only on Des(Q), so κ_i is defined for x_Q and y_Q simultaneously. κ_i(w) ≠ w and P is fixed, so D_i(Q) ≠ Q, and the ±2 jump argument is complete.
+- **NOT hand-checkable: the KL values themselves** (length-5 intervals in S_8). They rest on two independent engines (coxeter3 batch, klperm lower-ideal recursion), 14/14 agreement. That is the right standard for a `computed` refutation.
+
+NITs:
+1. Name the multiplication side in the table caption ("y_Q = c∘x_Q, left multiplication: values relabelled"). The text says "left multiplier" but the table shows only one-line forms.
+2. Browse 246 says Barkley–Gaetz–Lam 2601.07793 gives "full CIC for intervals of length ≤ 6". Our witness intervals have length 5. This doesn't matter, because they are non-isomorphic. But the "≤ 6" clause is **unverified** (sources.json only says "q-coefficient, all Coxeter groups"). Do not cite it until it has been read from the abstract.
+3. **Parked (not a Q):** the two rank profiles are exact reverses of each other, (1,8,18,17,7,1) vs (1,7,17,18,8,1). Test whether [x_low, y_low] ≅ [x_high, y_high]^op ≅ [y_high·w0, x_high·w0]. If it is, then CIC on that pair predicts P_{x_low,y_low} = P_{y_high w0, x_high w0}, an *inverse*-KL value of the high pair. So the 1+2q+q² vs 1+3q+q² split would be a "P vs inverse-P" split. This costs one cox.py call. It is a hygiene check on the witness only and does not reopen transport.

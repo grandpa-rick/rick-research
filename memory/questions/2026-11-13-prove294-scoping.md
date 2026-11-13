@@ -1,5 +1,7 @@
 # PROVE 294 scoping (2026-11-13). Seed Q2 / Q3, new territory
 
+**Status: CLOSED (PROVE 294).** Candidate A / Q76-T′ REFUTED at n=8 (cold read PASS Dream 293). Registry `q76-cell-transport.json` is dead-end. Do not reopen transport variants.
+
 Scripts: `proofs/scope294/` (cellinv*.py, qsolomon.py, qsol2.py, qsol3.py, klfqsym.py). They reuse `proofs/prove281/klperm.py`, whose S_4 nontrivial-P count is 6, which is correct. All numbers below are **computed**. None of them is proved.
 
 ## Kills found while scoping (do not reopen)
