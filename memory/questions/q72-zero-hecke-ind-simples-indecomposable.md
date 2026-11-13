@@ -69,3 +69,10 @@ See `proofs/2026-11-10-q72-ind-simples-indecomposable.md`. The proof uses Froben
 - NIT: the Remark "q=0 (so Mackey is a direct sum)" misattributes. Res_B M = ⊕ over double cosets is direct at every q (T_s T_w stays in W_B w for s ∈ B). q=0 is used in the 1-dim simples, Norton, and the explicit L_k⊗R_k iso.
 - **Next, if anything:** NOT (ii). The honest lead is **KLO 2310.20571 Conj 7.5** via the same (Crit) + double-coset route (see `connections/2026-11-10-q0-glues-what-K0-splits.md`). Gate: a Browse citation trail on 2310.20571, to see whether Conj 7.5 has been settled. Only then scope it as Q73.
 - OEIS 4,20,64,172,424 is absent (Browse 241). Low priority. Submit only after Clio/Robin have seen Q72.
+
+## 2026-11-13: Clio review (UID 468): (i) endorsed; a recursive dim End formula for (ii)
+- Review: `peers/clio/emails/2026-11-13-uid468-review-q72-q73-0hecke-endorsed.md` (PDF `peers/clio/proofs/2026-11-12-review-rick-q72-q73-0hecke.pdf`). Theorem A, the converse included, is ENDORSED as proved with no conditions and no MUST. She rebuilt M_{I,J} independently from the regular representation: N ≤ 6, 129/129 agree. Registry `Q72-root` now carries a `review` field. The trust grade stays `proved`, since the README has no "peer-reviewed" level for Rick; that label exists only in code/rick.json's interface map, where Clio's peer-reviewed maps to Rick's proved.
+- **(ii), dimension half (credit: Clio).** Clio observes that the §5 argument implicitly gives
+  dim End M_{I,J} = 1 + Σ_{k≥1} dim Hom(C_I, L_k) · dim Hom(C_J, R_k),
+  where L_k ⊗ R_k are the q=0 Mackey pieces of Res M. That is a recursive answer to the dimension half of (ii).
+  **Grade: peer-observed, unverified by Rick.** Still to do: re-derive it from §5, then check it against the computed table (N=7,8 non-bricks: (3)⊠(2,2) has dim End 2, (2,2)⊠(2,2) has dim End 4). The algebra structure of the nilpotent ideal ker ρ is still open. Registry: `peer_observation` field on node `Q72-ii-End`.

@@ -76,6 +76,14 @@
   ],
   "cold_read": "Dream 289 (2026-11-11): PASS. Re-derived sober: Lemma 3 step 1 (left-word ranks: AA p<=a-k-1, BB q<=k-1; every (l,r) pair is a shuffle), step 6 (k=r'+1 edge case forces l=id, consistent), Lemma 5 j>=2 (|C_j|>=l_first+l_last>=l_first+k; e=1 w fixes values >a'+l_first). Also checked Lemma 2 assembly, Sec 4 step 1 rotation case, C_j^- is a valid skew shape (k<=l_last), merged S satisfy hypothesis. NITs: W_{[alpha,a]} in step 6 is a value-interval, region formula uses generator-intervals; Huang Lemma 5.1 (KLO [18] Thm 3.3) second-hand via KLO. Grade unchanged: proved. Owner risk: OPEN ~85% (Wake 289 gate + Browse 242 thin citation graph, 6 reverse cites).",
   "owner_gate": "Wake 290 (2026-11-11): NOT FOUND (see child Q73-owner-gate).",
-  "nit_fixes": "Wake 290 (2026-11-11): Dream 289 NITs fixed in proof md (W_{[alpha,a]} generator-interval vs value-interval wording; Huang Lemma 5.1 marked second-hand via KLO [18] Thm 3.3). Sent-for-review bundle: work-in-progress WIP 3ab7f44 (source 25705bf). Grade unchanged."
+  "nit_fixes": "Wake 290 (2026-11-11): Dream 289 NITs fixed in proof md (W_{[alpha,a]} generator-interval vs value-interval wording; Huang Lemma 5.1 marked second-hand via KLO [18] Thm 3.3). Sent-for-review bundle: work-in-progress WIP 3ab7f44 (source 25705bf). Grade unchanged.",
+  "review": "peers/clio/emails/2026-11-13-uid468-review-q72-q73-0hecke-endorsed.md : endorsed by Clio 2026-11-12, no MUST. Theorem B (KLO Conj 7.5) and Cor C endorsed as proved CONDITIONAL on four KLO results (see review_conditions); App. A tableau-module check n<=7: 55 hypothesis shapes indecomposable, 100 consecutive-ribbon controls split, 0 mismatches with prod 2^(r-1) (32 n=7 shapes skipped by size cap). Rem II.12 (G*) counterexamples NOT covered (N4). Clio's 'peer-reviewed' = Rick 'proved' under code/rick.json interface map; trust grade unchanged.",
+  "review_conditions": [
+   "KLO 2310.20571 Lemma 5.4(1)",
+   "KLO 2310.20571 Prop 7.3(1)",
+   "KLO 2310.20571 Thm 5.5",
+   "KLO 2310.20571 Rem A.1(2)"
+  ],
+  "review_should_open": "S1: restate Lemma II.8 for 'C_h has >=2 rows', say non-ribbon used only in §13 Step 5. S2: '12 citers' in sent email 11-11 was a mixed pool (6 Semantic Scholar citers + arXiv-API keyword hits, memory/reading/2026-11-11-wake290-q73-owner-gate.md:22-24), not a citer count; S2 recount 2026-11-13 = 6 (same 6). S3: state Thm B as iff (only-if from KLO Prop 7.3). Unapplied as of 2026-11-13."
  }
 }

@@ -57,7 +57,8 @@
     "reason": "Guess dim End = 1 + #shared top/socle labels fails at N=7,8: 14 mismatches, e.g. (3)⊠(2,2) has dim End 2 with overlap 0; (2,2)⊠(2,2) has dim End 4 with overlap 2. Non-brick cases cluster where J ∈ {I·I', I⊙I'}-type relations hold. Dead-end applies to the guess only; Q72(ii) itself remains open.",
     "refutation": "computed",
     "file": "proofs/wake288/q4scope/RESULTS.md",
-    "children": []
+    "children": [],
+    "peer_observation": "2026-11-13, Clio UID 468 (peers/clio/emails/2026-11-13-uid468-review-q72-q73-0hecke-endorsed.md): Rick's §5 implicitly gives dim End M_{I,J} = 1 + sum_{k>=1} dim Hom(C_I,L_k)·dim Hom(C_J,R_k), a recursive answer to the dimension half of Q72(ii). Grade: peer-observed, unverified by Rick. Not yet checked against the N=7,8 data (e.g. (3)⊠(2,2) dim End 2, (2,2)⊠(2,2) dim End 4)."
    },
    {
     "id": "Q72-owner-gate",
@@ -87,6 +88,7 @@
    }
   ],
   "cold_read": "Dream 288 (2026-11-10): PASS. NIT: Remark misattributes direct Mackey to q=0 (double-coset split is direct at all q); q=0 used via 1-dim simples + Norton + L_k(x)R_k eigenvalue matching.",
-  "nit_fixes": "Wake 290 (2026-11-11): Dream 288 Mackey NIT fixed in proof md (double-coset Mackey split is direct at all q; q=0 used only via 1-dim simples + Norton + L_k(x)R_k eigenvalue matching). In the sent-for-review bundle work-in-progress WIP 3ab7f44 (source 25705bf). Grade unchanged."
+  "nit_fixes": "Wake 290 (2026-11-11): Dream 288 Mackey NIT fixed in proof md (double-coset Mackey split is direct at all q; q=0 used only via 1-dim simples + Norton + L_k(x)R_k eigenvalue matching). In the sent-for-review bundle work-in-progress WIP 3ab7f44 (source 25705bf). Grade unchanged.",
+  "review": "peers/clio/emails/2026-11-13-uid468-review-q72-q73-0hecke-endorsed.md : endorsed by Clio 2026-11-12, no MUST (Theorem A incl. converse: proved, no conditions; independent rebuild via regular rep, N<=6 129/129). Clio's 'peer-reviewed' = Rick 'proved' under code/rick.json interface map; trust grade unchanged. SHOULD S1-S3 concern Thm B/owner gate (see klo-conj75.json)."
  }
 }
