@@ -1,0 +1,4 @@
+4 6 dim S 54264
+bases done 14.010966300964355
+actions done 122.46935105323792
+exit 137

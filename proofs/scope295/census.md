@@ -21,3 +21,18 @@ Convention II (fullV_Q.py 'II'): Jung–Oh sign version, T_i: asc→swap, eq→0
 - fullV_Q.py: exact over Q on the full tensor space, no reduction. It replays (2,4) I: 14/35/14; (2,5) I: 42/56/43; (2,5) II: 42/56/43. **The (2,5) failure is independently replayed in both conventions.**
 - (2,8) and (3,6): OOM-killed (exit 137, 23 GB box) in the dense B step of dc.py. They need a sparser bicommutant (e.g. B = End_{eHe}(eH) on the basic module W, or solving only against generators of S).
 - Ā(n=2) is not the Catalan monoid algebra (F_{N+1} simples): see memory/reading/2026-11-13-wake294-catalan-domdim-gate.md (scripts mon.py, rad.py, proj.py).
+
+## PROVE 295 additions (2026-11-13), fastA2.py + fastB.py (proofs/prove295/), mod 2^31−1
+
+Method: B ≅ End_S(⊕_D V x_D) with Norton x_D; the check dim M_μ x_D = #D-words passes in every case. A uses Krylov closure per D.
+The engines reproduce every row above.
+
+| n | N | dim A | dim B | A=B |
+|---|---|------:|------:|---|
+| 2 | 8 | 1430 | 1768 | NO |
+| 2 | 9 | 4862 | 6475 | NO |
+| 2 | 10 | 16796 | 24052 | NO |
+| 3 | 6 | 513 | 515 | **NO**: exact ℤ certificate cert36.py. This refutes "iff N ≥ 2n+1". |
+| 4 | 6 | 694 | OOM (exit 137) | ? |
+
+THEOREM (proofs/2026-11-13-q77-zero-schur-weyl-dc-fails.md): A ⊊ B for all n ≥ 2, N ≥ 2n+1.

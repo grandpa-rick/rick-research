@@ -1,0 +1,11 @@
+2 7 dim S 120
+bases done 0.12185382843017578
+actions done 0.1553177833557129
+2 7 dim B = 493  time 0.4
+2 8 dim S 165
+bases done 0.6292798519134521
+actions done 0.7294924259185791
+2 8 dim B = 1768  time 1.9
+4 5 dim S 15504
+bases done 0.7471117973327637
+actions done 7.242644786834717

@@ -249,3 +249,11 @@ Quasi-crystals (Q65) give the Path-2 road to the same QSym. Krob–Thibon NCSF I
 - Transporting P_{x,y} across a left cell (fixed recording tableau Q, insertion pair (P1,P2)) fails at every refinement. K1 fails at n=5, Q76-T at n=7, local star at n=6, and **Q76-T′ at n=8** (constant length difference ⇒ y_Q = c·x_Q with c length-additive on the Knuth class, Lemma A/B). Witness c=14263758: P = 1+2q+q² vs 1+3q+q² on non-isomorphic 52-element intervals. Registry `proofs/registry/q76-cell-transport.json`. Cold read PASS Dream 293.
 - Tool: coxeter3 batch driver `proofs/scope294/cox.py` (S_8 in seconds).
 - Seed Q2 ledger: Crown AA `connections/2026-11-13-seed-q2-ledger-tableaux-see-cells-not-intervals.md`.
+
+## q=0 Schur–Weyl reverse centraliser (Q77, 2026-11-13): A ⊊ B for N ≥ 2n+1 (PROVED, cold read PASS Dream 294)
+- Setup: H_N(0) acts on (kⁿ)^{⊗N} (sort-up idempotents). A = image, S = End_H = S_0(n,N) (owned: Deng–Yang JPAA 216 (2012) Rem 2.5; Jung–Oh 2509.26194 (4.7)), B = End_S ⊇ A.
+- **Theorem** (`proofs/2026-11-13-q77-zero-schur-weyl-dc-fails.md`). For n ≥ 2 and N ≥ 2n+1, A ⊊ B. The witness (v·1_C)·h with h = π̄_{w0[1,n−1]}π̄_{w0[N−n+1,N−1]} is a det-sandwich (Crown AB, `connections/2026-11-13-det-sandwich-two-q0s.md`). dim B/A ≥ C(N−n−1,n−1)−1.
+- Computed: A = B at (2,≤4), (3,4), (3,5), (4,5) and for n ≥ N (proved). Exact certificates of A ⊊ B at (3,6) and (4,8) (N = 2n, the a_n bridge family). (4,6) and (4,7) are UNDECIDED.
+- Hunches: H1 A=B ⟺ N ≤ n+2; H2 A=B ⟺ N ≤ 2n−1 (n ≥ 3). (4,7) separates them.
+- n=2: dim A = Catalan(N). dim B = 43, 142, 493, 1768, 6475, 24052 (N=5..10), closed form open. Ā is NOT the Catalan monoid algebra (F_{N+1} simples).
+- Answers MO 406152 (0 answers since 2021) in the negative for N ≥ 2n+1. **Posting needs Robin's yes.**

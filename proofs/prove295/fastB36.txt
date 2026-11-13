@@ -1,0 +1,4 @@
+3 6 dim S 3003
+bases done 1.529616355895996
+actions done 3.7096292972564697
+3 6 dim B = 515  time 171.5

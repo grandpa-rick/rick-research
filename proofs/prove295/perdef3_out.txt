@@ -1,0 +1,209 @@
+2 10 dim A = 16796 time 116.1
+2 10 dim S 286
+bases done 20.09525442123413
+actions done 21.1648211479187
+2 10 dim B = 24052  time 54.1
+== 2 10 dimA 16796 dimB 24052 defect 7256
+   D (1, 4) eA 110 eB 116 def 6
+   D (1, 5) eA 200 eB 235 def 35
+   D (1, 6) eA 242 eB 346 def 104
+   D (1, 7) eA 200 eB 399 def 199
+   D (1, 8) eA 110 eB 372 def 262
+   D (1, 9) eA 35 eB 254 def 219
+   D (2, 5) eA 275 eB 285 def 10
+   D (2, 6) eA 407 eB 463 def 56
+   D (2, 7) eA 407 eB 562 def 155
+   D (2, 8) eA 275 eB 538 def 263
+   D (2, 9) eA 110 eB 372 def 262
+   D (3, 6) eA 407 eB 419 def 12
+   D (3, 7) eA 497 eB 560 def 63
+   D (3, 8) eA 407 eB 562 def 155
+   D (3, 9) eA 200 eB 399 def 199
+   D (4, 7) eA 407 eB 419 def 12
+   D (4, 8) eA 407 eB 463 def 56
+   D (4, 9) eA 242 eB 346 def 104
+   D (5, 8) eA 275 eB 285 def 10
+   D (5, 9) eA 200 eB 235 def 35
+   D (6, 9) eA 110 eB 116 def 6
+   D (1, 3, 5) eA 75 eB 80 def 5
+   D (1, 3, 6) eA 165 eB 195 def 30
+   D (1, 3, 7) eA 207 eB 295 def 88
+   D (1, 3, 8) eA 165 eB 322 def 157
+   D (1, 3, 9) eA 75 eB 238 def 163
+   D (1, 4, 6) eA 165 eB 195 def 30
+   D (1, 4, 7) eA 297 eB 406 def 109
+   D (1, 4, 8) eA 297 eB 518 def 221
+   D (1, 4, 9) eA 165 eB 420 def 255
+   D (1, 5, 7) eA 207 eB 295 def 88
+   D (1, 5, 8) eA 297 eB 518 def 221
+   D (1, 5, 9) eA 207 eB 490 def 283
+   D (1, 6, 8) eA 165 eB 322 def 157
+   D (1, 6, 9) eA 165 eB 420 def 255
+   D (1, 7, 9) eA 75 eB 238 def 163
+   D (2, 4, 6) eA 165 eB 173 def 8
+   D (2, 4, 7) eA 297 eB 342 def 45
+   D (2, 4, 8) eA 297 eB 414 def 117
+   D (2, 4, 9) eA 165 eB 322 def 157
+   D (2, 5, 7) eA 297 eB 342 def 45
+   D (2, 5, 8) eA 429 eB 574 def 145
+   D (2, 5, 9) eA 297 eB 518 def 221
+   D (2, 6, 8) eA 297 eB 414 def 117
+   D (2, 6, 9) eA 297 eB 518 def 221
+   D (2, 7, 9) eA 165 eB 322 def 157
+   D (3, 5, 7) eA 207 eB 216 def 9
+   D (3, 5, 8) eA 297 eB 342 def 45
+   D (3, 5, 9) eA 207 eB 295 def 88
+   D (3, 6, 8) eA 297 eB 342 def 45
+   D (3, 6, 9) eA 297 eB 406 def 109
+   D (3, 7, 9) eA 207 eB 295 def 88
+   D (4, 6, 8) eA 165 eB 173 def 8
+   D (4, 6, 9) eA 165 eB 195 def 30
+   D (4, 7, 9) eA 165 eB 195 def 30
+   D (5, 7, 9) eA 75 eB 80 def 5
+   D (1, 3, 5, 7) eA 90 eB 111 def 21
+   D (1, 3, 5, 8) eA 132 eB 196 def 64
+   D (1, 3, 5, 9) eA 90 eB 182 def 92
+   D (1, 3, 6, 8) eA 132 eB 196 def 64
+   D (1, 3, 6, 9) eA 132 eB 252 def 120
+   D (1, 3, 7, 9) eA 90 eB 182 def 92
+   D (1, 4, 6, 8) eA 132 eB 196 def 64
+   D (1, 4, 6, 9) eA 132 eB 252 def 120
+   D (1, 4, 7, 9) eA 132 eB 252 def 120
+   D (1, 5, 7, 9) eA 90 eB 182 def 92
+   D (2, 4, 6, 8) eA 132 eB 160 def 28
+   D (2, 4, 6, 9) eA 132 eB 196 def 64
+   D (2, 4, 7, 9) eA 132 eB 196 def 64
+   D (2, 5, 7, 9) eA 132 eB 196 def 64
+   D (3, 5, 7, 9) eA 90 eB 111 def 21
+   D (1, 3, 5, 7, 9) eA 42 eB 70 def 28
+2 11 dim A = 58786 time 1401.7
+2 11 dim S 364
+bases done 121.52024388313293
+actions done 125.4701189994812
+2 11 dim B = 90249  time 282.7
+== 2 11 dimA 58786 dimB 90249 defect 31463
+   D (1, 4) eA 154 eB 161 def 7
+   D (1, 5) eA 319 eB 364 def 45
+   D (1, 6) eA 451 eB 601 def 150
+   D (1, 7) eA 451 eB 780 def 329
+   D (1, 8) eA 319 eB 837 def 518
+   D (1, 9) eA 154 eB 755 def 601
+   D (1, 10) eA 44 eB 510 def 466
+   D (2, 5) eA 429 eB 441 def 12
+   D (2, 6) eA 726 eB 801 def 75
+   D (2, 7) eA 858 eB 1096 def 238
+   D (2, 8) eA 726 eB 1212 def 486
+   D (2, 9) eA 429 eB 1110 def 681
+   D (2, 10) eA 154 eB 755 def 601
+   D (3, 6) eA 726 eB 741 def 15
+   D (3, 7) eA 1023 eB 1113 def 90
+   D (3, 8) eA 1023 eB 1290 def 267
+   D (3, 9) eA 726 eB 1212 def 486
+   D (3, 10) eA 319 eB 837 def 518
+   D (4, 7) eA 858 eB 874 def 16
+   D (4, 8) eA 1023 eB 1113 def 90
+   D (4, 9) eA 858 eB 1096 def 238
+   D (4, 10) eA 451 eB 780 def 329
+   D (5, 8) eA 726 eB 741 def 15
+   D (5, 9) eA 726 eB 801 def 75
+   D (5, 10) eA 451 eB 601 def 150
+   D (6, 9) eA 429 eB 441 def 12
+   D (6, 10) eA 319 eB 364 def 45
+   D (7, 10) eA 154 eB 161 def 7
+   D (1, 3, 5) eA 110 eB 116 def 6
+   D (1, 3, 6) eA 275 eB 315 def 40
+   D (1, 3, 7) eA 407 eB 541 def 134
+   D (1, 3, 8) eA 407 eB 694 def 287
+   D (1, 3, 9) eA 275 eB 694 def 419
+   D (1, 3, 10) eA 110 eB 492 def 382
+   D (1, 4, 6) eA 275 eB 315 def 40
+   D (1, 4, 7) eA 572 eB 736 def 164
+   D (1, 4, 8) eA 704 eB 1100 def 396
+   D (1, 4, 9) eA 572 eB 1212 def 640
+   D (1, 4, 10) eA 275 eB 912 def 637
+   D (1, 5, 7) eA 407 eB 541 def 134
+   D (1, 5, 8) eA 704 eB 1100 def 396
+   D (1, 5, 9) eA 704 eB 1408 def 704
+   D (1, 5, 10) eA 407 eB 1164 def 757
+   D (1, 6, 8) eA 407 eB 694 def 287
+   D (1, 6, 9) eA 572 eB 1212 def 640
+   D (1, 6, 10) eA 407 eB 1164 def 757
+   D (1, 7, 9) eA 275 eB 694 def 419
+   D (1, 7, 10) eA 275 eB 912 def 637
+   D (1, 8, 10) eA 110 eB 492 def 382
+   D (2, 4, 6) eA 275 eB 285 def 10
+   D (2, 4, 7) eA 572 eB 636 def 64
+   D (2, 4, 8) eA 704 eB 904 def 200
+   D (2, 4, 9) eA 572 eB 952 def 380
+   D (2, 4, 10) eA 275 eB 694 def 419
+   D (2, 5, 7) eA 572 eB 636 def 64
+   D (2, 5, 8) eA 1001 eB 1246 def 245
+   D (2, 5, 9) eA 1001 eB 1526 def 525
+   D (2, 5, 10) eA 572 eB 1212 def 640
+   D (2, 6, 8) eA 704 eB 904 def 200
+   D (2, 6, 9) eA 1001 eB 1526 def 525
+   D (2, 6, 10) eA 704 eB 1408 def 704
+   D (2, 7, 9) eA 572 eB 952 def 380
+   D (2, 7, 10) eA 572 eB 1212 def 640
+   D (2, 8, 10) eA 275 eB 694 def 419
+   D (3, 5, 7) eA 407 eB 419 def 12
+   D (3, 5, 8) eA 704 eB 776 def 72
+   D (3, 5, 9) eA 704 eB 904 def 200
+   D (3, 5, 10) eA 407 eB 694 def 287
+   D (3, 6, 8) eA 704 eB 776 def 72
+   D (3, 6, 9) eA 1001 eB 1246 def 245
+   D (3, 6, 10) eA 704 eB 1100 def 396
+   D (3, 7, 9) eA 704 eB 904 def 200
+   D (3, 7, 10) eA 704 eB 1100 def 396
+   D (3, 8, 10) eA 407 eB 694 def 287
+   D (4, 6, 8) eA 407 eB 419 def 12
+   D (4, 6, 9) eA 572 eB 636 def 64
+   D (4, 6, 10) eA 407 eB 541 def 134
+   D (4, 7, 9) eA 572 eB 636 def 64
+   D (4, 7, 10) eA 572 eB 736 def 164
+   D (4, 8, 10) eA 407 eB 541 def 134
+   D (5, 7, 9) eA 275 eB 285 def 10
+   D (5, 7, 10) eA 275 eB 315 def 40
+   D (5, 8, 10) eA 275 eB 315 def 40
+   D (6, 8, 10) eA 110 eB 116 def 6
+   D (1, 3, 5, 7) eA 165 eB 195 def 30
+   D (1, 3, 5, 8) eA 297 eB 406 def 109
+   D (1, 3, 5, 9) eA 297 eB 518 def 221
+   D (1, 3, 5, 10) eA 165 eB 420 def 255
+   D (1, 3, 6, 8) eA 297 eB 406 def 109
+   D (1, 3, 6, 9) eA 429 eB 714 def 285
+   D (1, 3, 6, 10) eA 297 eB 672 def 375
+   D (1, 3, 7, 9) eA 297 eB 518 def 221
+   D (1, 3, 7, 10) eA 297 eB 672 def 375
+   D (1, 3, 8, 10) eA 165 eB 420 def 255
+   D (1, 4, 6, 8) eA 297 eB 406 def 109
+   D (1, 4, 6, 9) eA 429 eB 714 def 285
+   D (1, 4, 6, 10) eA 297 eB 672 def 375
+   D (1, 4, 7, 9) eA 429 eB 714 def 285
+   D (1, 4, 7, 10) eA 429 eB 924 def 495
+   D (1, 4, 8, 10) eA 297 eB 672 def 375
+   D (1, 5, 7, 9) eA 297 eB 518 def 221
+   D (1, 5, 7, 10) eA 297 eB 672 def 375
+   D (1, 5, 8, 10) eA 297 eB 672 def 375
+   D (1, 6, 8, 10) eA 165 eB 420 def 255
+   D (2, 4, 6, 8) eA 297 eB 342 def 45
+   D (2, 4, 6, 9) eA 429 eB 574 def 145
+   D (2, 4, 6, 10) eA 297 eB 518 def 221
+   D (2, 4, 7, 9) eA 429 eB 574 def 145
+   D (2, 4, 7, 10) eA 429 eB 714 def 285
+   D (2, 4, 8, 10) eA 297 eB 518 def 221
+   D (2, 5, 7, 9) eA 429 eB 574 def 145
+   D (2, 5, 7, 10) eA 429 eB 714 def 285
+   D (2, 5, 8, 10) eA 429 eB 714 def 285
+   D (2, 6, 8, 10) eA 297 eB 518 def 221
+   D (3, 5, 7, 9) eA 297 eB 342 def 45
+   D (3, 5, 7, 10) eA 297 eB 406 def 109
+   D (3, 5, 8, 10) eA 297 eB 406 def 109
+   D (3, 6, 8, 10) eA 297 eB 406 def 109
+   D (4, 6, 8, 10) eA 165 eB 195 def 30
+   D (1, 3, 5, 7, 9) eA 132 eB 196 def 64
+   D (1, 3, 5, 7, 10) eA 132 eB 252 def 120
+   D (1, 3, 5, 8, 10) eA 132 eB 252 def 120
+   D (1, 3, 6, 8, 10) eA 132 eB 252 def 120
+   D (1, 4, 6, 8, 10) eA 132 eB 252 def 120
+   D (2, 4, 6, 8, 10) eA 132 eB 196 def 64

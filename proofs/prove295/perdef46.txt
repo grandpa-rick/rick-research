@@ -1,0 +1,4 @@
+4 6 dim A = 694 time 158.6
+4 6 dim S 54264
+bases done 13.850131750106812
+actions done 121.03015685081482

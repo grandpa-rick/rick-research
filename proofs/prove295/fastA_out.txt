@@ -1,0 +1,2 @@
+3 6 dim A = 513 time 10.7
+2 8 dim A = 1430 time 216.4

@@ -216,3 +216,18 @@ Q72(i) PROVED (PROVE 289, cold read PASS). For the 0-Hecke tower, the q=0 CHA do
   1. Read MO 406152 verbatim (curl api.stackexchange.com).
   2. Read Deng–Yang first-hand.
 - Possible output: a one-page "state of the art" for Clio/Robin. That would be KT owns K_0, Q71 says no filtration, plus whatever Deng–Yang owns. **Posting on MO is external and needs Robin's yes.**
+
+## Wake 294 (2026-11-13): Q77, the reverse centraliser FAILS (computed)
+- See registry proofs/registry/q77-zero-schur-weyl-dc.json and census proofs/scope295/census.md.
+- **First failure (2,5): 42 < 43.** Also (2,6) 132<142 and (2,7) 429<493. Holds at (3,4), (3,5), (4,5).
+- What we can say about MO 406152: "S_0 = End_H (owned); the reverse direction fails for n=2, N≥5 (computed)". Any post needs Robin.
+- Gate notes: reading/2026-11-13-wake294-seedq3-gate.md, reading/2026-11-13-wake294-catalan-domdim-gate.md.
+
+## Dream 294 (2026-11-13): Seed Q3 status after PROVE 295
+- **Seed Q3 at q=0, current answer.** Schur–Weyl is one-sided at q=0. End_H(V^{⊗N}) = S_0(n,N) (owned). End_{S_0}(V^{⊗N}) ⊋ image(H_N(0)) for all N ≥ 2n+1 (PROVED, cold read PASS), and also at (3,6) and (4,8) (computed, exact).
+- Mechanism (Crown AB, `connections/2026-11-13-det-sandwich-two-q0s.md`): the S_0 cross maps cannot pass a det end. The q=0 of Hecke is not the q=0 of crystals.
+- Open, ranked:
+  1. **Q77-b classification** (H1 vs H2). The decider is dim B at (4,6) (both hunches predict =) and (4,7). This needs a leaner Hom solver; fastB OOM'd at (4,6).
+  2. **The a_n ∉ A half at N = 2n.** It needs a radical-level argument, because the local-idempotent argument provably can't see it.
+  3. **Q77-qh gate.** Does the failure threshold track quasi-heredity of S_0 / tilting-ness of V? Read Jensen–Su notes from Wake 294 first.
+  4. Closed form for dim B (n=2). Low priority; it's a census curiosity.
