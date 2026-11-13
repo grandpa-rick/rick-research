@@ -42,3 +42,8 @@ Conventions: right star = {s_i,s_{i+1}} on POSITIONS (right desc i: w[i-1]>w[i])
   Q76-T' survives anyway because these pairs do not lie in all-Q-comparable const-length keys.
 - **R-interval:** same-dir all pairs non-iso n=5 397/2000, n=7 825/2000 (half sampled nontrivial-P). Same-dir cell:
   n=4 0/44, n=5 0/528, n=6 42/2000, n=7 82/2000 (sizes e.g. 20 vs 22; printed non-iso examples at n=6 are P-changing pairs -- coincidence with Pdiff set NOT checked).
+
+## PROVE 294 (2026-11-13): n=8 separator -- Q76-T' REFUTED (computed + independent replay)
+1478 hypothesis keys (keys8.py direct = good8.py c-form); l(c)>=3: 114, nontrivial 77, VIOLATIONS 8 (all l(c) in {5,6}).
+Witness P1=1357/2468, c=14263758: P in {1+2q+q^2 (4 Q), 1+3q+q^2 (10 Q)}; verify8.py (klperm lower ideal) = coxeter3 14/14.
+Lemma A (const l-diff => y_Q x_Q^-1 const) proved mod F3 (f3check.py exhaustive n<=8). Write-up: proofs/2026-11-13-q76-cell-transport.md.

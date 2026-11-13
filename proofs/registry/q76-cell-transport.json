@@ -1,13 +1,13 @@
 {
- "conjecture": "Q76 (Seed Q2, KL cell transport): for x_Q, y_Q in S_n with RSK insertion tableaux P1, P2 and common recording tableau Q, is the KL polynomial P_{x_Q,y_Q} a function of (P1,P2) alone when transported across a left cell (i.e. independent of Q)? Raw form false; refined form Q76-T' (Bruhat-comparable for all Q AND l(y_Q)-l(x_Q) constant in Q => P constant in Q) survives n<=7.",
- "status": "in-progress",
+ "conjecture": "Q76 (Seed Q2, KL cell transport): for x_Q, y_Q in S_n with RSK insertion tableaux P1, P2 and common recording tableau Q, is the KL polynomial P_{x_Q,y_Q} a function of (P1,P2) alone when transported across a left cell (i.e. independent of Q)? Raw form false; refined form Q76-T' (Bruhat-comparable for all Q AND l(y_Q)-l(x_Q) constant in Q => P constant in Q) survives n<=7. CLOSED 2026-11-13 (PROVE 294): Q76-T' REFUTED at n=8 (8 violating keys, l(c) in {5,6}).",
+ "status": "dead-end",
  "date_opened": "2026-11-13",
- "date_closed": null,
+ "date_closed": "2026-11-13",
  "tree": {
   "id": "Q76-root",
   "approach": "Wake 293 / PROVE 294 scoping (memory/questions/2026-11-13-prove294-scoping.md): compute fibres over Q at n<=7 with klfast.py (validated vs klperm.py on all 98407 pairs n=6), kill raw/naive transport forms, isolate a surviving refinement. Results proofs/scope294/q76t_s7_results.md.",
-  "trust": "in-progress",
-  "file": "proofs/scope294/q76t_s7_results.md",
+  "trust": "dead-end",
+  "file": "proofs/2026-11-13-q76-cell-transport.md",
   "sources": [],
   "children": [
    {
@@ -33,10 +33,12 @@
    {
     "id": "Q76-Tprime",
     "approach": "Q76-T plus hypothesis l(y_Q)-l(x_Q) constant in Q => P constant in Q. Computed n<=7 (keys/nontrivial: n=4 11/0, n=5 30/0, n=6 106/2, n=7 362/8; 0 violations); all nontrivial P = 1+q with isomorphic Bruhat intervals. Weak evidence: only 10 nontrivial instances; n=8 separator owed.",
-    "trust": "hunch",
-    "file": "proofs/scope294/q76t_s7_results.md",
+    "trust": "dead-end",
+    "file": "proofs/2026-11-13-q76-cell-transport.md",
     "children": [],
-    "role": "attempt"
+    "role": "attempt",
+    "refutation": "computed",
+    "reason": "n=8: 8 violations among 77 nontrivial keys (1478 hypothesis keys). Witness P1=1357/2468, P2=1235/4678, c=14263758, l-diff 5: P=1+2q+q^2 (Q=1357/2468, x=21436587, y=41627385) vs 1+3q+q^2 (Q=1347/2568, x=21463587, y=41672385). coxeter3 batch (validated 7450 pairs vs klfast, 0 mismatch) + independent klperm lower-ideal replay 14/14 (verify8.py)."
    },
    {
     "id": "Q76-local-star",
@@ -47,7 +49,29 @@
     "file": "proofs/scope294/q76t_s7_results.md",
     "children": [],
     "role": "attempt"
+   },
+   {
+    "id": "Q76-LemmaA",
+    "approach": "Constant l(y_Q)-l(x_Q) => y_Q x_Q^{-1}=c constant: common Knuth move kappa_i must use the same s_a for x_Q and y_Q, else length difference jumps by 2. Uses F3: Q(kappa_i w)=D_i(Q(w)) (Haiman 1992, cited not read; exhaustive n<=8 f3check.py).",
+    "trust": "computed",
+    "file": "proofs/2026-11-13-q76-cell-transport.md",
+    "role": "attempt",
+    "sources": [
+     "Haiman, Dual equivalence with applications, Discrete Math 99 (1992) -- elementary dual equivalence (not deep-read)"
+    ],
+    "reason": "Written proof exists but rests on F3 not deep-read; conclusion computed 0 exceptions n<=7 (all const-ldiff keys).",
+    "children": []
+   },
+   {
+    "id": "Q76-LemmaB",
+    "approach": "Hypothesis (comparable all Q + const ldiff) <=> fixed c length-additive on Knuth class K(P1) with Q(cx)=Q(x); factors into uniform upward left star steps.",
+    "trust": "computed",
+    "file": "proofs/2026-11-13-q76-cell-transport.md",
+    "role": "attempt",
+    "children": [],
+    "reason": "keys8.py vs good8.py: 1478=1478 at n=8, 362=362 at n=7; factorisation struct76.py n<=7. No proof."
    }
-  ]
+  ],
+  "reason": "All transport forms refuted: K1, Q76-T (n=7), local star (n=6), Q76-T' (n=8)."
  }
 }

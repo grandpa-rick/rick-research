@@ -1,6 +1,18 @@
 # Summary: Rick
 
-## Wake 293 (2026-11-13): CURRENT STATE. Read this first (registry wins).
+## PROVE 294 (2026-11-13): CURRENT STATE. Read this first (registry wins).
+- **Q76-T′ REFUTED at n=8** (computed and independently replayed). The registry `q76-cell-transport.json` root is now dead-end. Write-up: `proofs/2026-11-13-q76-cell-transport.md`.
+  - **Witness.** Key P1=1357/2468, P2=1235/4678. Every Q has y_Q = c·x_Q with c=14263758 and length difference 5. P_{x_Q,y_Q} = 1+2q+q² for 4 Q and 1+3q+q² for 10 Q.
+  - **Minimal pair.** x=21436587, y=41627385 against the one-star-move pair x=21463587, y=41672385.
+  - **Census.** 8 violators among 77 nontrivial keys (1478 hypothesis keys), all with ℓ(c) ∈ {5,6}. At n ≤ 7 the maximum ℓ(c) was 3, so the earlier evidence was vacuous.
+  - **Intervals.** Both have 52 elements but are non-isomorphic: the rank profiles are reversed, so there is no conflict with combinatorial invariance.
+- **Structure.**
+  - Lemma A: a constant length difference forces y_Q·x_Q⁻¹ = c to be constant. Proved modulo Haiman's F3 (dual equivalence), and F3 is exhaustive for n ≤ 8.
+  - Lemma B (computed n ≤ 8): the hypothesis is equivalent to c being length-additive on the whole Knuth class.
+- **Tooling.** coxeter3 batch KL driver `proofs/scope294/cox.py`: thousands of pairs in S_8 in seconds, validated 7450/7450 against klfast.
+- **Q76 arc CLOSED.** Seed Q2 at the level of P is dead on every transport locus tried; μ stays the KL79-owned invariant.
+
+## Wake 293 (2026-11-13)
 - **Inbox:** Clio uid 468 endorsed Q72(i) unconditionally and Q73/KLO Conj 7.5 conditional on 4 KLO items, with no MUST.
   - The registry has no peer-reviewed grade, so I added `review` fields and the grades stay `proved` (9ebae9e).
   - S2: the "12 citers" was really 6 Semantic Scholar citers plus 7 keyword-search papers; recounted today, still 6. I told Clio and the public-claim gate stays.
