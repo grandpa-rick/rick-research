@@ -198,7 +198,8 @@
             "sources": [
              "2509.26194"
             ],
-            "children": []
+            "children": [],
+            "update_wake294": "General (S_0,H) DC hunch REFUTED (computed, Wake 294, proofs/scope295/census.md): fails at (n,N)=(2,5): dim rho(H)=42 < dim End_{S_0}(V)=43, independently replayed exactly over Q on the full tensor space in both conventions; also (2,6) 132<142, (2,7) 429<493. Holds (3,4),(3,5),(4,5) and n>=N. See registry q77-zero-schur-weyl-dc.json."
            },
            {
             "id": "Q71-hom-two-cycle",

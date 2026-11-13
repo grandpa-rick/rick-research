@@ -1,0 +1,56 @@
+{
+ "conjecture": "Q77 (Seed Q3; MO 406152 'Naive Schur-Weyl duality for the 0-Hecke algebra'): for the 0-Hecke algebra H_N(0) acting on V^{(x)N}, dim V=n (q->0 Jimbo action), with A=image of H_N(0), S=End_H(V^{(x)N})=S_0(n,N) (owned: Deng-Yang JPAA 216 (2012) Rem 2.5 via Jung-Oh 2509.26194 (4.7)), does the reverse centraliser B=End_S(V^{(x)N}) equal A? Answer: NO in general; first failure (n,N)=(2,5).",
+ "status": "open",
+ "date_opened": "2026-11-13",
+ "tree": {
+  "id": "Q77-root",
+  "approach": "Classify (n,N) with A=B; explain the n=2 failure.",
+  "trust": "computed",
+  "file": "proofs/scope295/census.md",
+  "sources": [
+   "2509.26194",
+   "1312.5487"
+  ],
+  "children": [
+   {
+    "id": "Q77-fail-2-5",
+    "role": "attempt",
+    "trust": "computed",
+    "approach": "DC fails at (n,N)=(2,5): dim A=42 (=Cat 5), dim B=43, dim S=56=C(8,5). dc.py (mod p=1000003, weight-block reduction) and fullV_Q.py (exact over Q, full tensor space, both conventions I: pi_i sort-up idempotent, II: Jung-Oh sign T^2=-T) agree.",
+    "file": "proofs/scope295/census.md",
+    "children": []
+   },
+   {
+    "id": "Q77-census",
+    "role": "attempt",
+    "trust": "computed",
+    "approach": "dims (A,B): (2,3)5,5 (2,4)14,14 (2,5)42,43 (2,6)132,142 (2,7)429,493; (3,4)23,23 (3,5)103,103 (4,5)119,119; controls (3,3)6,6 (4,4)24,24. dim S = C(n^2+N-1,N) every case. dim A at n=2 is Catalan(N).",
+    "file": "proofs/scope295/census.md",
+    "children": []
+   },
+   {
+    "id": "Q77-not-Catalan-monoid",
+    "role": "attempt",
+    "trust": "computed",
+    "approach": "Abar=H/Ann for n=2 is NOT kC_N (Catalan monoid) despite dim Cat(N): Abar has F_{N+1} simples (3,5,8,13 for N=3..6) vs 2^{N-1}. V ~= (N+1)P_empty + sum_j P_{j} as H-module (N=3..7).",
+    "file": "memory/reading/2026-11-13-wake294-catalan-domdim-gate.md",
+    "children": []
+   },
+   {
+    "id": "Q77-MT-reformulation",
+    "role": "attempt",
+    "trust": "hunch",
+    "approach": "V is projective-injective (H Frobenius, V proj) and faithful over Abar, so A=B <=> exists 0->Abar->M0->M1 with Mi in add V (Morita-Tachikawa/codominant dim w.r.t. V >=2). Equivalence to domdim Abar>=2 only if add V contains all proj-inj Abar-modules (unchecked).",
+    "children": []
+   },
+   {
+    "id": "Q77-owner-gate",
+    "role": "attempt",
+    "trust": "computed",
+    "approach": "Literature gate: NOT FOUND (Jung-Oh full text, Jensen-Su(-Yang) x3 full text, HNT math/0506546, MO 406152 0 answers). Deng-Yang 2012 full text UNREAD (ScienceDirect 403 from container); Donkin book unchecked.",
+    "file": "memory/reading/2026-11-13-wake294-seedq3-gate.md",
+    "children": []
+   }
+  ]
+ }
+}

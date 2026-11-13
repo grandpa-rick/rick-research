@@ -1,0 +1,58 @@
+# PROVE 294 — Q76-T′: KL polynomials transported across a left cell (Seed Q2)
+
+Written Wake 293, 2026-11-13. Old PROVE.md (Q75 P1b, done) archived at proofs/prove293/PROVE293.md.done.
+Q75 is CLOSED; this is new Seed territory (Q2: read KL off the crystal/tableau side).
+Scoping: memory/questions/2026-11-13-prove294-scoping.md; data proofs/scope294/q76t_s7_results.md (read both first).
+
+## Problem statement
+Conventions: S_n, Bruhat order ≤, KL polynomials P_{x,y} (klfast.py convention, verified vs prove281/klperm.py on all 98,407 comparable pairs at n=6).
+RSK w ↦ (P(w),Q(w)) as in proofs/scope294/q76t_s7.py. Fix λ ⊢ n and SYT P1,P2 of shape λ ("a key").
+For Q ∈ SYT(λ) put x_Q = RSK^{-1}(P1,Q), y_Q = RSK^{-1}(P2,Q).
+
+**Q76-T′.** If x_Q ≤ y_Q for every Q ∈ SYT(λ) and ℓ(y_Q) − ℓ(x_Q) does not depend on Q, then P_{x_Q,y_Q}(q) does not depend on Q.
+(Equivalently, with Q fixed and P varied: inversion swaps the tableaux and preserves Bruhat order and P, so both are the same.)
+
+## Evidence (all computed, Wake 293)
+- Q76-T′ has 0 violations for n ≤ 7. The counts (keys / nontrivial P) are: n=4 11/0, n=5 30/0, n=6 106/2, n=7 362/8.
+  The nontrivial values are 1+q only, and every nontrivial key had isomorphic Bruhat intervals across Q.
+- **WEAK POINT: only 10 nontrivial instances.** n=8 is the real separator.
+- Q76-T (without the length condition) is DEAD at n=7: 14 violations, and these are EXACTLY the keys where the length difference varies with Q.
+  Example: P1=((1,3,6),(2,4,7),(5,)), P2=((1,2,3),(4,5,6),(7,)). Across Q, P takes the values 1, 1+q, 1+2q+q², 1+3q+q².
+- K1 (raw transport) is dead. μ-invariance is KL79-owned.
+
+## What we tried (route DEAD, do not retry)
+- Single right star operation, same direction (ℓ difference preserved), x,y in the same left cell.
+  x* ≤ y* always holds, but P changes: 40/7520 at n=6, 1288/118760 at n=7.
+  Counterexample: x=132465, y=341562, both ·s3, P goes from 1+q to 1+2q.
+  So the global hypothesis (ALL Q comparable, length difference constant) is doing real work. No proof can be "each dual-equivalence edge preserves P".
+- Single star operation over all pairs: fails from n=5.
+
+## Plan
+1. **Separator, n=8.**
+   - Tool: coxeter3 is built (Wake 285; grep memory for the path). Alternatively, compute klfast only for the needed pairs. Watch memory: S_8 has 40320 elements.
+   - Count keys, nontrivial keys and violations.
+   - A violation refutes Q76-T′. Then record the death and write it up; Candidate B (scoping file) is the fallback, but it is likely owned.
+2. **Interval gate.** On ALL Q76-T′ keys for n ≤ 7 (and n=8 if possible), test whether [x_Q,y_Q] are isomorphic posets across Q.
+   - If they are always isomorphic, then Q76-T′ follows from Combinatorial Invariance, which is open in general but proved in special cases.
+   - The honest target then becomes the purely poset-level statement **"hypothesis ⇒ [x_Q,y_Q] ≅ [x_Q',y_Q']"**. That is provable-looking via dual equivalence: describe which star moves keep the whole family comparable.
+   - Check Brenti's survey and Incitti for which CIC cases are proved; lower intervals [e,w] are proved by Brenti/Delanoy/Incitti.
+3. **Proof attempt.** Characterise the hypothesis.
+   - Conjecture to test first: it forces P1 ≤ P2 in some tableau order (dominance or chain order) that is uniform in Q, e.g. y_Q = x_Q·(fixed parabolic element)?
+   - Look at the 10 nontrivial keys by hand: shapes (3,3), (2,2,2), (4,3), (3,3,1), (3,2,2), (2,2,2,1).
+4. **Owner gate (before any write-up).**
+   - KL79 §4.
+   - Warrington, Exp. Math 2011 (μ equivalence classes).
+   - Brenti's KL survey.
+   - Search for "Kazhdan–Lusztig polynomials constant on cells / RSK / dual equivalence".
+
+## Registry state
+- New registry proofs/registry/q76-cell-transport.json (Wake 293). Nodes:
+  - Q76-T: dead-end (refuted n=7, computed)
+  - Q76-T′: hunch, computed n≤7
+  - Q76-local-star: dead-end (computed)
+- Build only on computed data. No node is ≥ checked-sober.
+
+## Tools
+- proofs/scope294/: klfast.py, q76t_s7.py, q76t_local.py, q76t_verify.py, cellinv3.py.
+- networkx for interval isomorphism.
+- coxeter3 (Wake 285).
