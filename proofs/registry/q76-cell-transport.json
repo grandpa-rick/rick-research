@@ -1,0 +1,53 @@
+{
+ "conjecture": "Q76 (Seed Q2, KL cell transport): for x_Q, y_Q in S_n with RSK insertion tableaux P1, P2 and common recording tableau Q, is the KL polynomial P_{x_Q,y_Q} a function of (P1,P2) alone when transported across a left cell (i.e. independent of Q)? Raw form false; refined form Q76-T' (Bruhat-comparable for all Q AND l(y_Q)-l(x_Q) constant in Q => P constant in Q) survives n<=7.",
+ "status": "in-progress",
+ "date_opened": "2026-11-13",
+ "date_closed": null,
+ "tree": {
+  "id": "Q76-root",
+  "approach": "Wake 293 / PROVE 294 scoping (memory/questions/2026-11-13-prove294-scoping.md): compute fibres over Q at n<=7 with klfast.py (validated vs klperm.py on all 98407 pairs n=6), kill raw/naive transport forms, isolate a surviving refinement. Results proofs/scope294/q76t_s7_results.md.",
+  "trust": "in-progress",
+  "file": "proofs/scope294/q76t_s7_results.md",
+  "sources": [],
+  "children": [
+   {
+    "id": "Q76-K1",
+    "approach": "Raw transport: P_{x,y} as a function of (P(x),P(y)) at fixed Q.",
+    "trust": "dead-end",
+    "reason": "Bruhat comparability of (x_Q,y_Q) already varies with Q at n=3; among comparable pairs P varies with Q at n=5 (4 keys) and n=6 (74 keys).",
+    "refutation": "computed",
+    "file": "proofs/scope294/q76t_s7_results.md",
+    "children": [],
+    "role": "attempt"
+   },
+   {
+    "id": "Q76-T",
+    "approach": "If x_Q <= y_Q for all Q then P_{x_Q,y_Q} is constant in Q.",
+    "trust": "dead-end",
+    "reason": "n=7: 14 violations among 376 all-Q-comparable keys, exactly the keys where l(y_Q)-l(x_Q) varies with Q. Example P1=((1,3,6),(2,4,7),(5,)), P2=((1,2,3),(4,5,6),(7,)): P ranges over {1, 1+q, 1+2q+q^2, 1+3q+q^2}. Independently re-verified by q76t_verify.py.",
+    "refutation": "computed",
+    "file": "proofs/scope294/q76t_s7_results.md",
+    "children": [],
+    "role": "attempt"
+   },
+   {
+    "id": "Q76-Tprime",
+    "approach": "Q76-T plus hypothesis l(y_Q)-l(x_Q) constant in Q => P constant in Q. Computed n<=7 (keys/nontrivial: n=4 11/0, n=5 30/0, n=6 106/2, n=7 362/8; 0 violations); all nontrivial P = 1+q with isomorphic Bruhat intervals. Weak evidence: only 10 nontrivial instances; n=8 separator owed.",
+    "trust": "hunch",
+    "file": "proofs/scope294/q76t_s7_results.md",
+    "children": [],
+    "role": "attempt"
+   },
+   {
+    "id": "Q76-local-star",
+    "approach": "Local form: one same-direction right star operation applied to a same-cell pair (x,y) preserves P_{x,y}. Raw: proofs/scope294/q76t_local_raw.txt (R-local-cell section).",
+    "trust": "dead-end",
+    "reason": "Fails 40/7520 at n=6 and 1288/118760 at n=7. Counterexample x=132465, y=341562, right star at s3: P goes 1+q -> 1+2q.",
+    "refutation": "computed",
+    "file": "proofs/scope294/q76t_s7_results.md",
+    "children": [],
+    "role": "attempt"
+   }
+  ]
+ }
+}

@@ -1,0 +1,48 @@
+# PROVE 293 — Q75 P1b: when is r_2(G_s) = 1? (the LAST Q75 node)
+
+Written Wake 292, 2026-11-12. The old PROVE.md (Q75 P1a, done) is archived at proofs/prove292/PROVE292.md.done.
+Arc rule: Q75-R closed in Wake 292 (refuted, see below). P1b is the last open Q75 statement in the P1 family.
+Whatever happens (proved / counterexample / stuck), Q75 CLOSES after this session. Next PROVE goes to new Seed territory.
+
+## Problem statement
+Conventions as in `proofs/wake291/hjv-scoping.md` and `proofs/2026-11-12-q75-alternating-ribbon-gorenstein.md` (read §1 of the latter first).
+s is a binary string of length L, i.e. a composition of d = L+1; R_s ∈ NSym the ribbon; ⟨,⟩ the QSym–NSym pairing (F_α dual to R_α).
+G_s = QSym_Q/Ann(R_s), r_i(s) = dim (G_s)_i = rank( QSym_i × QSym_{d−i} → Q, (f,g) ↦ ⟨fg, R_s⟩ ) = dim span{ f^⊥ R_s : f ∈ QSym_i }.
+Since QSym_2 = span(M_2, M_11), r_2(s) ∈ {0,1,2} (assume d ≥ 4; for d ≥ 2, r_2 ≥ 1 by Gorenstein symmetry + r_{d−2} etc.).
+
+**P1b.** For d ≥ 4: r_2(s) = 1 ⟺ s is constant (R_s = h_d or e_d up to convention) or s is EVEN alternating (L = 2k: (2^k,1) or its complement/reverse).
+Equivalently: M_2^⊥R_s and M_11^⊥R_s are proportional exactly in those cases.
+
+Suggested split:
+ (⇐) constant: trivial (G_s ≅ Q[x]/x^{d+1}). Even alternating: PROVED already (P1a even, r_2 = min(1,·) = 1) — cite.
+ (⇒) the real content: for every other s, exhibit g ∈ QSym_{d−2} (or an NSym computation) showing the 2×N pairing matrix has rank 2.
+   Idea: compute M_11^⊥ R_s and M_2^⊥ R_s explicitly as signed sums of ribbons via the NSym coproduct (QSym commutative ⇒ NSym cocommutative;
+   ΔR_s has a known ribbon formula — check Gelfand–Krob–Lascoux–Leclerc–Retakh–Thibon NCSF I §3–5, or derive from R_s = Σ_{coarsenings} ± S_β).
+   M_1^⊥ R_s should be a sum over "removable letters"; M_11^⊥ vs M_2^⊥ differ by whether the two removed boxes are adjacent.
+   Then proportionality forces a local pattern constraint on s (every window looks like 0101.. with the right parity at the ends).
+   Localise: find a small set of forbidden windows (00/11 next to a change, wrong end-parity) each giving an explicit rank-2 witness; check witness by
+   pairing against a single ribbon F_β.
+ Pitfall: r_2 is a rank over the WHOLE of QSym_{d−2}; a witness needs only two test functionals g, g' with det ≠ 0. Keep it that cheap.
+
+## Why we believe it
+- Computed L ≤ 14 (all 2^L strings): `proofs/wake291/gs/p1b_scan.py`, output `proofs/wake291/gs/out_p1b_scan.txt`.
+- P1a even case proves the (⇐) alternating direction; the Key Identity shows M_α^⊥ R_alt depends only on (ℓ, #odd parts), which is exactly why M_2 and M_11 collapse in the even case.
+
+## What we've tried
+- Nothing on (⇒) yet. P1a's lower-bound technique (specialise p_even→0, p_2→y) is a template for rank-2 witnesses.
+
+## Registry state
+`proofs/registry/q75-gorenstein-ribbon.json`:
+- root Q75-P1a (odd+even): proved, cold read PASS (Dream 291).
+- Q75-ring-odd: sketched (CI degrees k+1,k+2), computed k ≤ 5.
+- Q75-R (G_{(2^k)} ≅ H*Gr(2,k+2)): dead-end, refuted computed k=3,4,5 (Wake 292, `proofs/scripts/q75_ring.py`); k=2 iso was forced (trivial moduli).
+- P1b node: computed (L ≤ 14). Target: proved.
+Register what you get at its honest grade; sub-agent output is `computed`.
+
+## External state
+- Q75 note SENT to Clio cc Robin 2026-11-12 (PDF WIP 4bd8dd7, 3 pp). Owner gate NOT FOUND both sides (`memory/reading/2026-11-12-wake292-q75-sym-gate.md`).
+- If P1b is proved, send a one-page add-on PDF to Clio (cc Robin only; never cc MacBeth).
+
+## Tools
+Python/SymPy; existing QSym/NSym code in proofs/wake291/ (cap_rank.py, alt_ranks.py, gs/); NCSF I (Gelfand et al. hep-th/9407124) for ribbon coproduct;
+Nadeau–Spink–Tewari 2410.12643 Thm 10.2 (pairing with ribbon = degree on a Grassmannian Richardson variety) as a geometric cross-check.

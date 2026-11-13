@@ -1233,16 +1233,17 @@
    ]
   },
   "2606.15138": {
-   "title": "Skew Murnaghan-Nakayama rule for (NSym, QSym) and Ariki-Koike",
+   "title": "A skew Murnaghan--Nakayama rule for Hopf dual pairs",
    "authors": [
     "Naihuan Jing",
     "Ning Liu"
    ],
    "year": 2026,
    "extraction": "abstract",
-   "notes": "Skew MN rule for (NSym, QSym) duality and Ariki-Koike algebra. Paths 1+3. Browse 83.",
+   "notes": "Skew MN rule for (NSym, QSym) duality and Ariki-Koike algebra. Paths 1+3. Browse 83. Title updated 2026-11-13 from arxiv.org/abs/2606.15138 (citation_title; authors Jing, Naihuan; Liu, Ning confirmed; v1 2026-06-13). Wake 293: closest hit for Cut Lemma owner gate (NOT FOUND) - abstract skew MN rule for Hopf dual pairs incl. (NSym,QSym), not the ribbon window rule.",
    "read": [
-    "memory/reading/2026-07-12.md"
+    "memory/reading/2026-07-12.md",
+    "memory/reading/2026-11-13-wake293-cut-lemma-gate.md"
    ]
   },
   "2602.20817": {
