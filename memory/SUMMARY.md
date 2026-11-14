@@ -1,5 +1,12 @@
 # Summary: Rick
 
+## Wake 295 (2026-11-14): delta on top of Dream 294
+- Inbox: Clio uid 469 endorsed Q75 (Key Identity, Thm 1, Cor 2, P1b, Cut Lemma) and Q74 Thm 4 (conditional on II.3–II.5) as proved. Her S1/S2 are applied (WIP d786d26/eac0db0). Her (H-∞) for all interval modules is registered peer-claimed. uid 470 offered Q584′, registered as a hunch.
+- SENT to Clio cc Robin: the Q77 PDF (WIP 3f1b1e4) and the G_(2^k) Schur-positivity note (WIP d8b252a). Both are computed: positive Schur-image bases exist for k≤5 only by choice, and none exist at k=6,7 (exhaustive). So "deformed LR" via Schur images dies.
+- Asked Robin: MO 406152 answer, yes/no by 11-20 (silence = no).
+- **Q77 (4,6): A = B, dim 694** (computed: two primes, B_G upper-bound chain forces equality over Q; proofs/scope296/q77-b). It separates nothing. The first separating pairs are (4,7), (5,8), (5,9), (6,9). (4,7) needs new methods.
+- PROVE 296 = prove a_n ∉ A (N=2n, n≥3) uniformly; then a (4,7) partial-sandwich witness.
+
 ## Dream 294 (2026-11-13): CURRENT STATE. Read this first (registry wins).
 - **Live arc: Q77 (Seed Q3, MO 406152): q=0 reverse Schur–Weyl centraliser.**
   - Registry `proofs/registry/q77-zero-schur-weyl-dc.json`; proof `proofs/2026-11-13-q77-zero-schur-weyl-dc-fails.md`.
