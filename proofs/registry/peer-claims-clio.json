@@ -544,14 +544,14 @@
     "clio-q569-py-hexagon-is-vertex-star"
    ]
   },
- {
-  "id": "clio-Q585-G4-purbhoo-cor53-rotation-map-is-switching-after-revrot",
-  "statement": "Theorem 6 (G4, hw-free form): for every LR tableau f on A/B in an R x C box, Phi(f) = Sigma(revrot f), where Phi is Purbhoo's Cor 5.3 recipe (arXiv:0705.1184 \u00a75.1; typing fixed from step 1: reverse-standardise + rotate to f~, reverse-slide the boxes of f~ through the straight tableau u_{A^vee}) and Sigma is inward tableau switching against the row-superstandard tableau of the inner shape. Corollary 8 (given the coplactic lemma, recalled, locator unverified): Phi = Sigma o K, K = hw o revrot, exponent +1 forced by typing. Also: evacuation explanation of the backward journey/slide pairing REFUTED (pre-registered falsifier, 74 journeys).",
-  "approach": "Purbhoo's Cor 5.3 rotation map f -> g~ equals inward tableau switching after revrot on every LR tableau, via std commutes with slides + std o revrot = f~ + inward = outward switching (growth-diagram argument written out); hw-raised version Sigma o K only computed (606/606 + 129693/129693) pending coplactic-lemma locator (Clio, email 2026-11-14)",
-  "trust": "peer-claimed",
-  "claimed_by": "peers/clio/emails/2026-11-14-uid471-q585-g4.md",
-  "file": "peers/clio/proofs/2026-11-13c2-Q585-G4-evacuation.pdf",
-  "source_pin": "clio-vega/proofs @ 751f4098e14d (code-1113c2-Q585-G4/); Clio registry q585-ybe-train-vs-commutor.json nodes H1-G4-rotation-map-is-switching (proved) and H1-G4-with-K (computed)"
- }
+  {
+   "id": "clio-Q585-G4-purbhoo-cor53-rotation-map-is-switching-after-revrot",
+   "statement": "Theorem 6 (G4, hw-free form): for every LR tableau f on A/B in an R x C box, Phi(f) = Sigma(revrot f), where Phi is Purbhoo's Cor 5.3 recipe (arXiv:0705.1184 \u00a75.1; typing fixed from step 1: reverse-standardise + rotate to f~, reverse-slide the boxes of f~ through the straight tableau u_{A^vee}) and Sigma is inward tableau switching against the row-superstandard tableau of the inner shape. Corollary 8 (given the coplactic lemma, recalled, locator unverified): Phi = Sigma o K, K = hw o revrot, exponent +1 forced by typing. Also: evacuation explanation of the backward journey/slide pairing REFUTED (pre-registered falsifier, 74 journeys).",
+   "approach": "Purbhoo's Cor 5.3 rotation map f -> g~ equals inward tableau switching after revrot on every LR tableau, via std commutes with slides + std o revrot = f~ + inward = outward switching (growth-diagram argument written out); hw-raised version Sigma o K only computed (606/606 + 129693/129693) pending coplactic-lemma locator (Clio, email 2026-11-14)",
+   "trust": "peer-claimed",
+   "claimed_by": "peers/clio/emails/2026-11-14-uid471-q585-g4.md",
+   "file": "peers/clio/proofs/2026-11-13c2-Q585-G4-evacuation.pdf",
+   "source_pin": "clio-vega/proofs @ 751f4098e14d (code-1113c2-Q585-G4/); Clio registry q585-ybe-train-vs-commutor.json nodes H1-G4-rotation-map-is-switching (proved) and H1-G4-with-K (computed)"
+  }
 ]
 }
