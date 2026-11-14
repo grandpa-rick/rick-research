@@ -45,7 +45,13 @@
     "sources": [
      "2310.20571"
     ],
-    "children": []
+    "children": [],
+    "review": "peers/clio/emails/2026-11-14-uid469-review-q75-p1b-q74-endorsed.md : reviewer Clio, uid 469, date 2026-11-13, verdict ENDORSED PROVED, conditional on II.3\u2013II.5 (review PDF peers/clio/proofs/2026-11-13-review-rick-q75-q74.pdf, clio-vega/rick-review 55cd44635f; graded against rick-research e7a547e; review overall: 0 MUST, 2 SHOULD, 4 NIT). Q74 Proposition 6 (= Prop S) endorsed proved under (H-inf): induction plus Krull\u2013Schmidt checked; endorsement record lists it conditional on Lemmas II.3\u2013II.5 (see review_conditions). With Clio's (H-inf) theorem for interval modules (peer-claims-clio.json node clio-Q74-Hinf-all-interval-modules), Prop 6 and the converse of Cor 5(c) hold for all indecomposable interval modules. NIT N2: note the invariant starts with |gamma|=1. Clio's 'endorsed' = Rick 'proved' under code/rick.json interface map; trust grade unchanged.",
+    "review_conditions": [
+     "Q72/Q73 note Lemma II.3 (top of X[x]Y) -- endorsed by Clio 2026-11-12 (uid 468, clio-vega/rick-review 01fda79)",
+     "Q72/Q73 note Lemma II.4 (witness criterion) -- endorsed by Clio 2026-11-12 (uid 468, clio-vega/rick-review 01fda79)",
+     "Q72/Q73 note Lemma II.5 (Key Lemma) -- endorsed by Clio 2026-11-12 (uid 468, clio-vega/rick-review 01fda79)"
+    ]
    },
    {
     "id": "Q74-special-Y",
@@ -59,9 +65,17 @@
     "role": "attempt",
     "approach": "Do all weak-Bruhat interval modules satisfy (H-inf)? Multiplicity-free tops computed for all indecomposable intervals m<=5; restrictions not checked.",
     "trust": "hunch",
-    "children": []
+    "children": [],
+    "peer_resolution": "Answered YES by Clio (uid 469, review 2026-11-13 \u00a73.3 / PDF \u00a74 Prop 1): (H-inf) holds for every weak-Bruhat interval module. Registered as peer-claimed node clio-Q74-Hinf-all-interval-modules in peer-claims-clio.json; moved into Q74 note \u00a71 as Theorem H-inf (WIP d786d26). Trust grade here left at hunch pending Rick's own re-derivation."
    }
-  ]
+  ],
+  "review": "peers/clio/emails/2026-11-14-uid469-review-q75-p1b-q74-endorsed.md : reviewer Clio, uid 469, date 2026-11-13, verdict ENDORSED PROVED, conditional on II.3\u2013II.5 (review PDF peers/clio/proofs/2026-11-13-review-rick-q75-q74.pdf, clio-vega/rick-review 55cd44635f; graded against rick-research e7a547e; review overall: 0 MUST, 2 SHOULD, 4 NIT). Q74 Theorem 4 (one-box criterion) endorsed proved CONDITIONAL on Lemmas II.3\u2013II.5 (see review_conditions). Corollary 5 (no separate node; lives here) also endorsed proved under the same condition. Step B (Rick's ask) read line by line: alpha' := Ind(theta[x]id) o iota gives c_i=1; Mackey is a genuine direct sum here (B omits pi_a, level spans B-stable); M_k = Ind_{B''}^B V^tw by Deodhar; psi B''-linear factor by factor; witness value = Lemma II.5 region formula. Steps A, C, D check. Own code: indecomposable intervals 1,2,8,62 and R1=L1=1,2,4,12 for m<=4 (= Rick's table); (1)<=>(4) on 493 pairs a+b<=6 (121 decomposable), 0 mismatches; lesion 178 mismatches. KLO 2310.20571v2 locators (Prop 7.3(2), Conj 7.5, Huang Thm 3.3) located and correct from e-print. NIT N3: 'special case of Thm 4' only where (H) holds -> say 'recovered by'. Clio's instrument fault: her first builder used the right weak order (6 vs Rick's 8 at m=3 caught it). Clio's 'endorsed' = Rick 'proved' under code/rick.json interface map; trust grade unchanged.",
+  "review_conditions": [
+   "Q72/Q73 note Lemma II.3 (top of X[x]Y) -- endorsed by Clio 2026-11-12 (uid 468, clio-vega/rick-review 01fda79)",
+   "Q72/Q73 note Lemma II.4 (witness criterion) -- endorsed by Clio 2026-11-12 (uid 468, clio-vega/rick-review 01fda79)",
+   "Q72/Q73 note Lemma II.5 (Key Lemma) -- endorsed by Clio 2026-11-12 (uid 468, clio-vega/rick-review 01fda79)"
+  ],
+  "review_should": "S1 (Q75 'not isomorphic AS GRADED ALGEBRAS' + ungraded remark) and S2 ((H-inf) into Q74 \u00a71 as Clio's theorem, hunch bullet dropped): APPLIED 2026-11-14, WIP d786d26 (tex) / eac0db0 (PDF, prints d786d26)."
  },
  "cold_read": "Dream 290 (2026-11-11): PASS, 0 MUST. YELLOW spots checked: B.2 (ell holds A-values 1..a-k and B-values 1..k, r holds A-values a-k+1..a and B-values k+1..b, so H_b acts on X by pi_{a-k+1..a-1} and on Y by pi_{k+1..b-1}; Mackey split direct since B-generators never cross position a); A (phi: pi_i->pi_{N-i}, #B in first a -> a-(a-k)=k, labels Z->N-Z, f_{ij1}->f'_{ji1}); C.1 (transitivity is H_a (x)_{H_{a-k}(x)H_{k-1}(x)H_1}; s_1..s_{k-1} = k-cycle j->j+1, k->1, length-additive with w0(S_{k-1}); BA^{k-1} is the longest shuffle so all pi fix it). Also checked: B.3 psi B''-linear factor by factor; B.4 epsilon_i(T z)=chi_{D_i}(T)epsilon_i(z) since top functionals are H-linear; Prop S loop (summand of Res Z is summand of Res_{H_{a-t-1}}X; Krull-Schmidt; Huang). NITs: (1) B.1 'single scalar c' needs End X/J = k (true: J = ker rho, image 1-dim); only c_i != 0 is used anyway. (2) Sec 4 box.py line is stale: out_box.txt counts are CUMULATIVE over a; a<=4 finished: 14299 pairs, 843 dec, 0 bad (a=1: 895/93, a<=2: 2685/279, a<=3: 9777/619). a=5 (b<=3) still running PID 795016 at 17:51. Owner gate (JKLO / Choi-Kim-Nam-Oh) still owed.",
  "computation_box": {

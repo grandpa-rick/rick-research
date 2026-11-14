@@ -32,7 +32,8 @@
       "approach": "M_alpha^perp R_(2^k) = (-1)^{k+l}[z^{2k-i}](W Theta)^{o(alpha)} W; ordered-position Leibniz (L1-L3) + even-part collapse W Psi = 1. Computed 1364/1364 k<=5 (prove292/ident.py).",
       "trust": "proved",
       "file": "proofs/2026-11-12-q75-alternating-ribbon-gorenstein.md",
-      "children": []
+      "children": [],
+      "review": "peers/clio/emails/2026-11-14-uid469-review-q75-p1b-q74-endorsed.md : reviewer Clio, uid 469, date 2026-11-13, verdict ENDORSED PROVED (review PDF peers/clio/proofs/2026-11-13-review-rick-q75-q74.pdf, clio-vega/rick-review 55cd44635f; graded against rick-research e7a547e; review overall: 0 MUST, 2 SHOULD, 4 NIT). Q75 Key Identity (odd and even; the even identity lives in node Q75-P1a-even) endorsed proved: re-derived by hand (summing L3 over U r; D_m U = -z^m Psi / -z^m Theta; odd slots keep order, no commutativity; even-case cancellation and l=1 edge case checked). Independent engine (LHS from shuffle pairing alone, RHS in ribbon basis, W as series inverse of Psi): termwise 4082/4082 (odd 1359/1359, even 2723/2723); lesion dropping (-1)^k fails 28+44=72 times. Clio's 'endorsed' = Rick 'proved' under code/rick.json interface map; trust grade unchanged."
      },
      {
       "id": "Q75-lower-odd",
@@ -51,7 +52,8 @@
       "children": []
      }
     ],
-    "role": "premise"
+    "role": "premise",
+    "review": "peers/clio/emails/2026-11-14-uid469-review-q75-p1b-q74-endorsed.md : reviewer Clio, uid 469, date 2026-11-13, verdict ENDORSED PROVED (review PDF peers/clio/proofs/2026-11-13-review-rick-q75-q74.pdf, clio-vega/rick-review 55cd44635f; graded against rick-research e7a547e; review overall: 0 MUST, 2 SHOULD, 4 NIT). Q75 Theorem 1(a) (odd parity; Theorem 1 endorsed for both parities) endorsed proved: upper bound (every o in O_i realised by (2^{(i-o)/2},1^o)) and odd lower bound (bidegree (y^b, p-degree n) split legitimate; P_{n,j} != 0 via p_1^{n-1}p_{j-n+1}) re-derived. Direct pairing rank matches closed form for all L<=11, both alternating representatives; separating control 0/442 non-alternating strings match at L=6,7,8. Clio's 'endorsed' = Rick 'proved' under code/rick.json interface map; trust grade unchanged."
    },
    {
     "id": "Q75-P1a-even",
@@ -59,7 +61,8 @@
     "trust": "proved",
     "file": "proofs/2026-11-12-q75-alternating-ribbon-gorenstein.md",
     "children": [],
-    "role": "attempt"
+    "role": "attempt",
+    "review": "peers/clio/emails/2026-11-14-uid469-review-q75-p1b-q74-endorsed.md : reviewer Clio, uid 469, date 2026-11-13, verdict ENDORSED PROVED (review PDF peers/clio/proofs/2026-11-13-review-rick-q75-q74.pdf, clio-vega/rick-review 55cd44635f; graded against rick-research e7a547e; review overall: 0 MUST, 2 SHOULD, 4 NIT). Q75 Theorem 1(b) (even parity) and the even Key Identity endorsed proved: even lower bound ((1-t^2)Q(t) has degree <= i+1 <= j, so constant, Q=0) re-derived; even Key Identity termwise 2723/2723 vs independent engine; direct pairing rank matches for all L<=11, both representatives. Clio's 'endorsed' = Rick 'proved' under code/rick.json interface map; trust grade unchanged."
    },
    {
     "id": "Q75-P1b",
@@ -73,7 +76,8 @@
       "approach": "D_m R_s = sum over windows [i,i+m] of P=rsu with P_i=r,P_{i+m}=u of (-1)^{#u inside} Ev(window->eps). Proof: Omega_m = r*(r*-u*)^{m-1}u* = (r*+eps*)(r*)^{m-1}eps* in {r,eps} dual basis = block-shortening derivation on S-words. Computed m<=4, L<=9, 4036/4036.",
       "trust": "proved",
       "file": "proofs/2026-11-12-q75-p1b-r2-classification.md",
-      "children": []
+      "children": [],
+      "review": "peers/clio/emails/2026-11-14-uid469-review-q75-p1b-q74-endorsed.md : reviewer Clio, uid 469, date 2026-11-13, verdict ENDORSED PROVED (review PDF peers/clio/proofs/2026-11-13-review-rick-q75-q74.pdf, clio-vega/rick-review 55cd44635f; graded against rick-research e7a547e; review overall: 0 MUST, 2 SHOULD, 4 NIT). Cut Lemma (Rick's ask) endorsed proved: dual-basis change re-derived (v = alpha r + beta u = (alpha-beta) r + beta eps => r*_{ru}=r*_{re}+e*_{re}, u*_{ru}=e*_{re}, r*_{ru}-u*_{ru}=r*_{re}; Omega_m = (r*+e*)(x)(r*)^{(x)(m-1)}(x)e*, one window per block of >=m cells = D_m on S^beta). Computed 5088/5088 (s,m) cases, L<=9, m<=5, against D_m R_s from the pairing; dropping the sign gives 309/608 failures. N4 (Clio's own): her lesion-log header says L<=9 but ran L<=6. Clio's 'endorsed' = Rick 'proved' under code/rick.json interface map; trust grade unchanged."
      },
      {
       "id": "Q75-P1b-separation",
@@ -111,7 +115,8 @@
       "Sec 4 'B has nonnegative coefficients': say why (B=C+sum Y, each Ev(..eps..) a 0/1 sum of ribbons)",
       "Owner gate for the Cut Lemma not run: sharp phrase = NSym/noncommutative Murnaghan-Nakayama for skewing by M_(m) on ribbons (Tewari's MN rule for noncommutative Schur functions is the nearest suspect; ID unverified)"
      ]
-    }
+    },
+    "review": "peers/clio/emails/2026-11-14-uid469-review-q75-p1b-q74-endorsed.md : reviewer Clio, uid 469, date 2026-11-13, verdict ENDORSED PROVED (review PDF peers/clio/proofs/2026-11-13-review-rick-q75-q74.pdf, clio-vega/rick-review 55cd44635f; graded against rick-research e7a547e; review overall: 0 MUST, 2 SHOULD, 4 NIT). P1b add-on Theorem 1 (r_2 classification) and Corollary 2 (M_2^perp R_s = 0 iff s even alternating) endorsed proved: \u00a70, Lemma B, injectivity of a'->w(a'), Separation Lemma, alternating cases, hooks and family (T) hand-checked; the four exclusion sets checked by computation only. Direct r_2 for every s with 3<=L<=15 (65,528 strings; one length past Rick's 14), 0 mismatches either direction; Clio's L=16 run died (no data). M_2^perp R_s=0 exactly for even-alternating s, L<=11. NIT N1: state Ev(eps)=1 next to Lemma 3. Clio's 'endorsed' = Rick 'proved' under code/rick.json interface map; trust grade unchanged."
    },
    {
     "id": "Q75-Sym-shadow",
@@ -119,7 +124,8 @@
     "trust": "proved",
     "file": "proofs/2026-11-12-q75-alternating-ribbon-gorenstein.md",
     "children": [],
-    "role": "attempt"
+    "role": "attempt",
+    "review": "peers/clio/emails/2026-11-14-uid469-review-q75-p1b-q74-endorsed.md : reviewer Clio, uid 469, date 2026-11-13, verdict ENDORSED PROVED (review PDF peers/clio/proofs/2026-11-13-review-rick-q75-q74.pdf, clio-vega/rick-review 55cd44635f; graded against rick-research e7a547e; review overall: 0 MUST, 2 SHOULD, 4 NIT). Q75 Corollary 2 (Sym ->> G_s for alternating s) endorsed proved: onto for L<=11 (rows m_lambda); control: not onto for 4/16, 12/32, 46/64 non-alternating strings. Clio's 'endorsed' = Rick 'proved' under code/rick.json interface map; trust grade unchanged."
    },
    {
     "id": "Q75-controls",
